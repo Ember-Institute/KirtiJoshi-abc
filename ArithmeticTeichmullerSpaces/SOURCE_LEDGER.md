@@ -26,15 +26,16 @@
 
 | source-id | Declaration | File | Status |
 | --- | --- | --- | --- |
-| `JT-DATA-001` | `ASTData` and carrier structures | `ArithmeticTeichmullerSpaces/Foundations/Carriers.lean` | type-checked data layer |
-| `JT-AST0-001` | `AST₀` | `ArithmeticTeichmullerSpaces/Act2/Foundation.lean` | proposition specification |
-| `JT-FIRST-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Act2/Foundation.lean` | proposition specification |
-| `JT-C312-001` | `Corollary312` | `ArithmeticTeichmullerSpaces/Act2/Foundation.lean` | proposition specification |
-| `JT-A1-FIN-001` | arithmetic progression averages and finite weighted averages | `ArithmeticTeichmullerSpaces/Foundations/FiniteAverages.lean` | copied, adapted and type-checked |
-| `JT-A1-LOG-001` | nonarchimedean logarithmic error bounds | `ArithmeticTeichmullerSpaces/Foundations/LogError.lean` | copied, adapted and type-checked |
+| `JT-M-NF-FINPLACE` | `NumberField.FinitePlace` | mathlib `NumberField/Completion/FinitePlace.lean` | imported mathlib type |
+| `JT-ATS-III-DATA-001` | `ThetaPilotData`, `PacketHullData`, `AdelicThetaLinkData` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | type-checked data layer |
+| `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
+| `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
+| `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
+| `JT-ATS-III-CONTRACT-004` | `PacketCollationHull` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
+| `JT-ATS-III-CONTRACT-005` | `VolumeTransfer` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 
-`AST₀` contains structural conditions only. `Corollary312` is not represented as a
-proved theorem until Act1 supplies the explicit intermediate contracts.
+The Prologue boundary does not declare Corollary 3.12.  Its four construction theorems
+are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`.
 
 ## IUT reference boundary
 
