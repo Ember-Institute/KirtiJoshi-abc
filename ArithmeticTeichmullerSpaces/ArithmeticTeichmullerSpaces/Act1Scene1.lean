@@ -5,5 +5,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.QFamilyBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QNormTateBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.VolumeNormalizationBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.TransferQLowerBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.TransferQAccounting
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
