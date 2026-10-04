@@ -26,8 +26,6 @@ structure AdelicThetaLink (D : AdelicThetaLinkData K) : Prop where
       D.qNorm w ^ (j * j) = w (D.qParameter ^ (j * j))
   theta_scaling :
     Theta.ThetaPilotScalingLaws D.theta D.thetaBase
-  frobenius_compatibility :
-    ∀ i, D.theta.norm (D.theta.frobenius i) = D.theta.norm i ^ 2
   period_map :
     ∀ i, D.theta.period i = D.theta.liftedLog i
   normalization :

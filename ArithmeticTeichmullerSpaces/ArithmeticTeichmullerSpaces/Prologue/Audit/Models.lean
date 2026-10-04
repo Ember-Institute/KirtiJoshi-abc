@@ -171,8 +171,6 @@ theorem adelicThetaLink_model :
   · exact auditTheta_scaling_laws 7 7
   · intro i
     simp [auditData, auditTheta]
-  · intro i
-    simp [auditData, auditTheta]
   · change (7 : ℝ) = ∑ _ : Fin 1, (7 : ℝ)
     norm_num
 

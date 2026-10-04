@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Prologue.Interfaces
+import ArithmeticTeichmullerSpaces.Prologue.Candidate.FrobeniusSquare
 import Mathlib.Data.Fintype.Lattice
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
@@ -10,28 +11,31 @@ open scoped BigOperators
 variable {K : Type*} [Field K] [NumberField K]
 
 /-!
-source-id: JT-ATS-AUDIT-JOINT-CONSISTENCY
+source-id: JT-ATS-AUDIT-REJECT-FROBENIUS-SQUARE
 source: mathlib `Mathlib/Data/Fintype/Lattice.lean`, `Finite.exists_max` and
 `Finite.exists_min`; contract semantics from `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`,
 `th:adelic-theta-link` (1139--1166), `def:additive-theta-pilot-object`
 (1492--1502), `le:volume-lemma3` (3576--3583), and `cor:cor312`
 (3647--3650)
-fidelity: derived consistency audit; this is not a new Prologue contract
-boundary: Prologue/Audit only
+fidelity: rejection audit for a stronger candidate; this is not a Core contract
+boundary: Prologue/Candidate and Prologue/Audit only
 
-Joint consistency audit for the current Prologue contracts.
+Rejection audit for the former Frobenius square norm interpretation.
 
-The Frobenius square law, positivity, and finiteness force every theta norm to
-be `1`.  The log-shell and normalization laws then force the supplied
-`logVolume` to be `0`.  Consequently a nonempty positive packet or hull is
-incompatible with `VolumeTransfer`.  These are audit conclusions only: no
-Core contract is changed here.
+The candidate Frobenius square norm law, positivity, and finiteness force every
+theta norm to be `1`.  The log-shell and normalization laws then force the
+supplied `logVolume` to be `0`.  Consequently a nonempty positive packet or
+hull is incompatible with `VolumeTransfer`.  These conclusions justify
+rejecting the candidate; the sourced `j^2` scaling remains in
+`ThetaPilotScalingLaws`.
 -/
 
-theorem theta_norm_eq_one_of_firstAxiom_adelicThetaLink
+open JoshiTeich.Prologue.Candidate
+
+theorem theta_norm_eq_one_of_firstAxiom_frobeniusSquareCandidate
     (D : AdelicThetaLinkData K)
     (hFirst : FirstAxiom D)
-    (hLink : AdelicThetaLink D)
+    (hCandidate : FrobeniusSquareNormLaw D)
     (hIndex : Nonempty D.theta.index) :
     ∀ i, D.theta.norm i = 1 := by
   letI := D.theta.indexFintype
@@ -45,13 +49,13 @@ theorem theta_norm_eq_one_of_firstAxiom_adelicThetaLink
     calc
       D.theta.norm iMax ^ 2 = D.theta.norm (D.theta.frobenius iMax) := by
         symm
-        exact hLink.frobenius_compatibility iMax
+        exact hCandidate.norm_square iMax
       _ ≤ D.theta.norm iMax := hMax (D.theta.frobenius iMax)
   have hMinLeSq : D.theta.norm iMin ≤ D.theta.norm iMin ^ 2 := by
     calc
       D.theta.norm iMin ≤ D.theta.norm (D.theta.frobenius iMin) :=
         hMin (D.theta.frobenius iMin)
-      _ = D.theta.norm iMin ^ 2 := hLink.frobenius_compatibility iMin
+      _ = D.theta.norm iMin ^ 2 := hCandidate.norm_square iMin
   have hMaxLeOne : D.theta.norm iMax ≤ 1 := by
     nlinarith
   have hOneLeMin : 1 ≤ D.theta.norm iMin := by
@@ -61,27 +65,29 @@ theorem theta_norm_eq_one_of_firstAxiom_adelicThetaLink
   have hUpper : D.theta.norm i ≤ 1 := le_trans (hMax i) hMaxLeOne
   exact le_antisymm hUpper hLower
 
-theorem logVolume_eq_zero_of_firstAxiom_adelicThetaLink_thetaLiftLog
+theorem logVolume_eq_zero_of_firstAxiom_frobeniusSquareCandidate_thetaLiftLog
     (D : AdelicThetaLinkData K)
     (hFirst : FirstAxiom D)
     (hLink : AdelicThetaLink D)
+    (hCandidate : FrobeniusSquareNormLaw D)
     (hLog : ThetaLiftLog D)
     (hIndex : Nonempty D.theta.index) :
     D.logVolume = 0 := by
   letI := D.theta.indexFintype
   letI := hIndex
   have hNorm : ∀ i, D.theta.norm i = 1 :=
-    theta_norm_eq_one_of_firstAxiom_adelicThetaLink D hFirst hLink hIndex
+    theta_norm_eq_one_of_firstAxiom_frobeniusSquareCandidate D hFirst hCandidate hIndex
   rw [hLink.normalization]
   apply Finset.sum_eq_zero
   intro i hi
   rw [hLink.period_map, hLog.log_shell, hNorm i]
   simp
 
-theorem false_of_volumeTransfer_of_nonempty_packet
+theorem false_of_volumeTransfer_of_nonempty_packet_with_frobeniusSquareCandidate
     (D : AdelicThetaLinkData K)
     (hFirst : FirstAxiom D)
     (hLink : AdelicThetaLink D)
+    (hCandidate : FrobeniusSquareNormLaw D)
     (hLog : ThetaLiftLog D)
     (hVolume : VolumeTransfer D)
     (hPacket : Nonempty D.packetHull.packet) :
@@ -92,7 +98,8 @@ theorem false_of_volumeTransfer_of_nonempty_packet
     rcases hPacket with ⟨p⟩
     exact ⟨D.packetHull.packetToPilot p⟩
   have hZero : D.logVolume = 0 :=
-    logVolume_eq_zero_of_firstAxiom_adelicThetaLink_thetaLiftLog D hFirst hLink hLog hIndex
+    logVolume_eq_zero_of_firstAxiom_frobeniusSquareCandidate_thetaLiftLog
+      D hFirst hLink hCandidate hLog hIndex
   have hPacketSum : 0 < ∑ p, D.packetHull.packetWeight p := by
     exact Finset.sum_pos (fun p hp => hFirst.packet_weight_positive p) Finset.univ_nonempty
   have hHullSum : 0 ≤ ∑ h, D.packetHull.hullWeight h := by
@@ -100,10 +107,11 @@ theorem false_of_volumeTransfer_of_nonempty_packet
   rw [hVolume.transferred_volume] at hZero
   nlinarith
 
-theorem false_of_volumeTransfer_of_nonempty_hull
+theorem false_of_volumeTransfer_of_nonempty_hull_with_frobeniusSquareCandidate
     (D : AdelicThetaLinkData K)
     (hFirst : FirstAxiom D)
     (hLink : AdelicThetaLink D)
+    (hCandidate : FrobeniusSquareNormLaw D)
     (hLog : ThetaLiftLog D)
     (hVolume : VolumeTransfer D)
     (hHull : Nonempty D.packetHull.hull) :
@@ -114,7 +122,8 @@ theorem false_of_volumeTransfer_of_nonempty_hull
     rcases hHull with ⟨h⟩
     exact ⟨D.packetHull.packetToPilot (D.packetHull.hullToPacket h)⟩
   have hZero : D.logVolume = 0 :=
-    logVolume_eq_zero_of_firstAxiom_adelicThetaLink_thetaLiftLog D hFirst hLink hLog hIndex
+    logVolume_eq_zero_of_firstAxiom_frobeniusSquareCandidate_thetaLiftLog
+      D hFirst hLink hCandidate hLog hIndex
   have hPacketSum : 0 ≤ ∑ p, D.packetHull.packetWeight p := by
     exact Finset.sum_nonneg (fun p hp => (hFirst.packet_weight_positive p).le)
   have hHullSum : 0 < ∑ h, D.packetHull.hullWeight h := by

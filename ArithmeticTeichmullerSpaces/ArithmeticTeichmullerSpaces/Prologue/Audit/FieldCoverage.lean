@@ -105,7 +105,6 @@ open JoshiTeich.Prologue.Theta
 #check FirstAxiom.hull_weight_positive
 #check AdelicThetaLink.valuation_scaling
 #check AdelicThetaLink.theta_scaling
-#check AdelicThetaLink.frobenius_compatibility
 #check AdelicThetaLink.period_map
 #check AdelicThetaLink.normalization
 #check ThetaLiftLog.log_shell

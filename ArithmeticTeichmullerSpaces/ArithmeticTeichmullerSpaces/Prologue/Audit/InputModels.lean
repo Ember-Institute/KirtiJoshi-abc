@@ -40,8 +40,6 @@ theorem padicTwo_input_link_model :
   · exact auditTheta_scaling_laws 0 0
   · intro i
     simp [auditData, auditTheta]
-  · intro i
-    simp [auditData, auditTheta]
   · change (0 : ℝ) = ∑ _ : Fin 1, (0 : ℝ)
     norm_num
 

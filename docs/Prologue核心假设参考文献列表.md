@@ -80,7 +80,7 @@
 | `JT-ATS-III-ARITHMETIC-LINK` | `AdelicThetaLinkData.heightData`、`ramification`、`qNorm`、`height` | `Prologue/Interfaces/Carriers.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 2.5.md` 与 `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 4.md` | 上述 Arithmetic Core 条目 | sourced projections；不是任意的 `K → ℝ` 占位符 |
 | `JT-ATS-III-PROLOGUE-INPUT` | `PrologueInputData`、`PrologueInputLaws` | `Prologue/Interfaces/Input.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`；底层 Perfectoid 来源为 `mathlib` 和 `JoshiTeich: refer/JoshiTeich/index-Arithmetic Holomorphic Structures.md` | 本地 bundle 组合；无单独 3.12 结论 | explicit input bundle；共同 laws 仍是条件参数 |
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 2.5.md`、`refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`、`refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 4.md` | height、q、theta、ramification 字段的组合来源 | conditional interface；不是全局 Lean axiom |
-| `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `th:adelic-theta-link` 1139--1166；相关 valuation 陈述 1170--1174 | conditional interface；构造列在 `Obligations` |
+| `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `th:adelic-theta-link` 1139--1166；相关 valuation 陈述 1170--1174 | conditional interface；只保留 sourced `j^2` theta scaling、period map 和 normalization；构造列在 `Obligations` |
 | `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `def:additive-theta-pilot-object` 1492--1502；`le:elem-lemma` 3398--3425 | conditional interface；log-shell relation remains explicit |
 | `JT-ATS-III-CONTRACT-004` | `PacketCollationHull` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `pr:general-cohomology-set-const` 3261--3271；`th:thetam-construction` 3296--3346 | conditional interface；finite support and nonzero weights only |
 | `JT-ATS-III-CONTRACT-005` | `VolumeTransfer` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `le:volume-lemma3` 3576--3583；`cor:cor312` 3647--3650 | conditional interface；目标相关性须在 3.12 形式化后复审 |
@@ -97,6 +97,16 @@
   反向提供 Prologue 数学事实。
 - `iut`。本版没有从 `iut` 复制文件、导入模块或接受其数学结论；若未来直接复用
   `iut` 代码，来源栏必须原样写 `iut`，并另行登记原文件、提交和许可证。
+
+### 7.1 被拒的 Candidate
+
+| source-id | 候选声明 | 文件 | 具体来源 | 拒绝理由 |
+| --- | --- | --- | --- | --- |
+| `JT-ATS-CANDIDATE-FROBENIUS-SQUARE-NORM` | `FrobeniusSquareNormLaw D : Prop`, 即 `∀ i, D.theta.norm (D.theta.frobenius i) = D.theta.norm i ^ 2` | `Prologue/Candidate/FrobeniusSquare.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `th:adelic-theta-link` 1139--1166 | 原文给出第 `j` 个分量的 `j^2` 赋值缩放和 Frobenius 稳定性，不给出该跨 Frobenius 的范数平方律；该律与正性、有限性联立会把所有范数压成 `1`，并与非空正 packet/hull 的体积传递冲突。 |
+
+该候选只由 `Prologue/Audit/JointConsistency.lean` 导入作拒绝审计，`Interfaces`、
+`Act1Scene1` 和 `Act1Scene2` 均不导入它。Core 中的 Frobenius 字段仍是载体数据，实际
+的 `j^2` 关系由 `ThetaPilotScalingLaws` 单独承载。
 
 ## 8. 使用和变更规则
 
