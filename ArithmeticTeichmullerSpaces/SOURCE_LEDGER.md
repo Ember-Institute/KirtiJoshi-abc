@@ -45,6 +45,7 @@
 | `JT-ATS-III-DATA-001` | `ThetaPilotData`, `PacketHullData`, `AdelicThetaLinkData` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | type-checked data layer |
 | `JT-ATS-III-ARITHMETIC-LINK` | `AdelicThetaLinkData.heightData`, `AdelicThetaLinkData.ramification`, `AdelicThetaLinkData.qNorm`, `AdelicThetaLinkData.height` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | D-integration of II.5/IV arithmetic profiles; norm and height are sourced projections, not free functions |
 | `JT-ATS-III-PERFECTOID-BRIDGE` | `PerfectoidPlaceData`, `PerfectoidPlaceLaws`, `PerfectoidBridgeData`, `PerfectoidBridgeLaws` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/PerfectoidBridge.lean` | D-interface making the number-field place, local `O`, prime `p`, coefficient map and Perfectoid laws explicit |
+| `JT-ATS-III-PROLOGUE-INPUT` | `PrologueInputData`, `PrologueInputLaws` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Input.lean` | explicit bundle joining adelic link data and one Perfectoid bridge; common input laws remain separate from downstream volume contracts |
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface including explicit theta-pilot scaling |
 | `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
@@ -54,6 +55,7 @@
 | `JT-ATS-AUDIT-MODEL-002` | satisfying and violating model theorems | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled audit witnesses |
 | `JT-ATS-AUDIT-ARITH-001` | `auditHeight`, `auditConductor`, `auditRamificationProfile` | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled arithmetic model data and positivity witnesses |
 | `JT-ATS-AUDIT-PERFECTOID-BRIDGE` | `padicTwoPlaceData`, `padicTwoBridgeData`, `padicTwo_bridge_model`, `zero_bridge_violates_laws` | `ArithmeticTeichmullerSpaces/Prologue/Audit/PerfectoidBridgeModels.lean` | compiled `(2)`-place/`ℤ_[2]` bridge model and bundled-law violation witness |
+| `JT-ATS-AUDIT-PROLOGUE-INPUT` | `padicTwoInputData`, `padicTwo_input_laws`, `badInputData`, `badInput_violates_laws` | `ArithmeticTeichmullerSpaces/Prologue/Audit/InputModels.lean` | compiled common-law input bundle and nonzero-parameter violation witness |
 
 The Prologue boundary does not declare Corollary 3.12.  Its four construction theorems
 are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`.
