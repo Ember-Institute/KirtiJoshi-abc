@@ -10,6 +10,7 @@ import ArithmeticTeichmullerSpaces.Prologue.Audit.PerfectoidBridgeModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.InputModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.TateModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.PilotModels
+import ArithmeticTeichmullerSpaces.Prologue.Audit.JointConsistency
 
 namespace JoshiTeich.Prologue.Audit
 
@@ -69,5 +70,9 @@ open scoped NumberField
 #check auditTateData_violation
 #check auditScalingTheta_laws
 #check zeroScalingTheta_violates_laws
+#check theta_norm_eq_one_of_firstAxiom_adelicThetaLink
+#check logVolume_eq_zero_of_firstAxiom_adelicThetaLink_thetaLiftLog
+#check false_of_volumeTransfer_of_nonempty_packet
+#check false_of_volumeTransfer_of_nonempty_hull
 
 end JoshiTeich.Prologue.Audit

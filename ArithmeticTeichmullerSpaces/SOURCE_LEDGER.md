@@ -63,6 +63,7 @@
 | `JT-ATS-AUDIT-OBLIGATIONS` | `registeredSourceIds`, constructor declaration and axiom checks | `ArithmeticTeichmullerSpaces/Prologue/Obligations/Audit.lean` | D-audit entry point; checks all four named `sorry` constructors and exposes their expected `sorryAx` dependencies without importing them into public interfaces |
 | `JT-ATS-AUDIT-FIELD-COVERAGE` | field-level projection checks | `ArithmeticTeichmullerSpaces/Prologue/Audit/FieldCoverage.lean` | D-audit entry point; every public carrier and contract projection is checked against the grouped source mapping below |
 | `JT-ATS-AUDIT-MODEL-COVERAGE` | satisfying/violating model matrix and arithmetic model obligations | `ArithmeticTeichmullerSpaces/Prologue/Audit/ModelCoverage.lean` | D-audit entry point; checks ten compiled interface pairs and three explicit Type-level model obligations |
+| `JT-ATS-AUDIT-JOINT-CONSISTENCY` | theta norm collapse, zero log-volume consequence, and nonempty packet/hull contradiction theorems | `ArithmeticTeichmullerSpaces/Prologue/Audit/JointConsistency.lean` | `mathlib` `Data/Fintype/Lattice.lean` (`Finite.exists_max`, `Finite.exists_min`); contract semantics from `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `th:adelic-theta-link` 1139-1166, `def:additive-theta-pilot-object` 1492-1502, `le:volume-lemma3` 3576-3583, `cor:cor312` 3647-3650; derived audit only |
 
 ### 字段级覆盖审计
 
