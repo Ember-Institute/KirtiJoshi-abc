@@ -49,6 +49,7 @@ def auditTheta (period liftedLog : ℝ) : ThetaPilotData ℚ where
   indexFintype := inferInstance
   value := fun _ => 2
   norm := fun _ => 1
+  scalingIndex := fun _ => 1
   frobenius := fun i => i
   period := fun _ => period
   liftedLog := fun _ => liftedLog

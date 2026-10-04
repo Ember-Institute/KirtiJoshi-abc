@@ -18,6 +18,7 @@ structure ThetaPilotData (K : Type uK) [Field K] where
   indexFintype : Fintype index
   value : index → K
   norm : index → ℝ
+  scalingIndex : index → ℕ
   frobenius : index → index
   period : index → ℝ
   liftedLog : index → ℝ
