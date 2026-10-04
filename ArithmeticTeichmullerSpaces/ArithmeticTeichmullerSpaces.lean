@@ -1,1 +1,3 @@
 import ArithmeticTeichmullerSpaces.Act2.Foundation
+import ArithmeticTeichmullerSpaces.Foundations.FiniteAverages
+import ArithmeticTeichmullerSpaces.Foundations.LogError
