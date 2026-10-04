@@ -27,12 +27,15 @@
 | source-id | Declaration | File | Status |
 | --- | --- | --- | --- |
 | `JT-M-NF-FINPLACE` | `NumberField.FinitePlace` | mathlib `NumberField/Completion/FinitePlace.lean` | imported mathlib type |
+| `JT-M-RAT-RINGINT` | `Rat.ringOfIntegersEquiv` | mathlib `NumberTheory/NumberField/Basic.lean` | imported mathlib equivalence |
 | `JT-ATS-III-DATA-001` | `ThetaPilotData`, `PacketHullData`, `AdelicThetaLinkData` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | type-checked data layer |
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-004` | `PacketCollationHull` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-005` | `VolumeTransfer` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
+| `JT-ATS-AUDIT-MODEL-001` | `rationalTwoPlace`, `auditData` | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled non-degenerate model data |
+| `JT-ATS-AUDIT-MODEL-002` | satisfying and violating model theorems | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled audit witnesses |
 
 The Prologue boundary does not declare Corollary 3.12.  Its four construction theorems
 are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`.
@@ -40,14 +43,7 @@ are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`
 ## IUT reference boundary
 
 The reference checkout is `refer/iut` at commit `d9465c111ec4073709f67e9fccec7e3eb374a816`.
-The A1 files copied from its Iut4Sec1 subtree were taken from source commit
-`696cc65b687b9d296abfa05d3d91fa43bcece986`:
-
-- `Iut4Sec1/Combinatorics/RangeAverages.lean` and `WeightedAverage.lean` →
-  `Foundations/FiniteAverages.lean`;
-- `Iut4Sec1/Real/LogError.lean` → `Foundations/LogError.lean`.
-
-Each file retains its Apache-2.0 copyright header, is under the `JoshiTeich.A1`
-namespace, and imports only mathlib. No Lean module imports `refer/iut`. Any future
-copied file must add a row here with its source path, source commit, license, copyright
-notice, destination path and modification summary before it is used.
+No IUT file is copied into the current tree and no Lean module imports `refer/iut`.
+The checkout remains an API and statement reference only. Any future copied file must add
+its source path, source commit, license, copyright notice, destination path and modification
+summary before it is used.
