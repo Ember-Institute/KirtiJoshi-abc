@@ -32,6 +32,10 @@
 | `JT-ATS-II5-ARITH-DIVISOR` | `FinitePlaceDivisor`, `logDegree` | `ArithmeticTeichmullerSpaces/Prologue/Arithmetic/Basic.lean` | D-interface from II.5 arithmetic degree data |
 | `JT-ATS-II5-HEIGHT` | `HeightData`, `HeightData.value_nonneg` | `ArithmeticTeichmullerSpaces/Prologue/Arithmetic/Basic.lean` | finite-place height interface from II.5 `def:heights` |
 | `JT-ATS-IV-RAMIFICATION` | `RamificationProfile`, `differentLog`, `logTotal` | `ArithmeticTeichmullerSpaces/Prologue/Arithmetic/Basic.lean` | D-interface for IV log-different/log-conductor chain |
+| `JT-M-PRETILT-UNTILT` | `PreTilt.untilt`, `PreTilt.mk_untilt_eq_coeff_zero`, `PreTilt.untilt_iterate_frobeniusEquiv_symm_pow` | mathlib `RingTheory/Perfectoid/Untilt.lean` | imported untilt map and reduction/Frobenius laws |
+| `JT-M-FONTAINE-THETA` | `WittVector.fontaineTheta`, `WittVector.fontaineTheta_teichmuller` | mathlib `RingTheory/Perfectoid/FontaineTheta.lean` | imported Fontaine theta map and Teichmuller compatibility |
+| `JT-ATS-PROLOGUE-PERFECTOID` | `untiltMap`, `thetaMap`, `UntiltingLaws`, `FontaineThetaLaws` and canonical law theorems | `ArithmeticTeichmullerSpaces/Prologue/Perfectoid/Untilts.lean` | D-adapter preserving explicit untilt, reduction, Frobenius and theta laws |
+| `JT-ATS-AUDIT-PERFECTOID` | `padicTwoUntilt`, `padicTwoTheta`, zero countermodels and audit theorems | `ArithmeticTeichmullerSpaces/Prologue/Audit/PerfectoidModels.lean` | compiled non-degenerate `ℤ_[2]` model and law-violation witnesses |
 | `JT-ATS-III-DATA-001` | `ThetaPilotData`, `PacketHullData`, `AdelicThetaLinkData` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | type-checked data layer |
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
