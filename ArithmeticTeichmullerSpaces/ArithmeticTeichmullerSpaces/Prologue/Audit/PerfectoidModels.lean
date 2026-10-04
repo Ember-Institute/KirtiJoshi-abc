@@ -32,6 +32,12 @@ noncomputable def padicTwoTheta :
   @thetaMap ℤ_[2] inferInstance 2 inferInstance padicTwo_not_unit
     padicTwo_is_adic_complete
 
+noncomputable def padicTwoPerfectoidData :
+    @PerfectoidData ℤ_[2] inferInstance 2 := {
+  untilt := padicTwoUntilt
+  theta := padicTwoTheta
+}
+
 theorem padicTwo_untilting_model :
     @UntiltingLaws ℤ_[2] inferInstance 2 inferInstance padicTwo_not_unit
       padicTwoUntilt := by
@@ -43,6 +49,12 @@ theorem padicTwo_theta_model :
       padicTwoUntilt padicTwoTheta := by
   exact @canonicalFontaineThetaLaws ℤ_[2] inferInstance 2 inferInstance
     padicTwo_not_unit padicTwo_is_adic_complete
+
+theorem padicTwo_perfectoid_model :
+    @PerfectoidLaws ℤ_[2] inferInstance 2 inferInstance padicTwo_not_unit
+      padicTwoPerfectoidData := by
+  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := padicTwo_not_unit
+  exact ⟨padicTwo_untilting_model, padicTwo_theta_model⟩
 
 theorem padicTwo_parameter_nontrivial : (2 : ℕ) ≠ 1 := by norm_num
 
@@ -58,6 +70,12 @@ theorem zeroUntilt_violates_laws :
 
 noncomputable def zeroTheta : WittVector 2 (PreTilt ℤ_[2] 2) → ℤ_[2] := fun _ => 0
 
+noncomputable def zeroPerfectoidData :
+    @PerfectoidData ℤ_[2] inferInstance 2 := {
+  untilt := zeroUntilt
+  theta := zeroTheta
+}
+
 theorem zeroTheta_violates_laws :
     ¬ @FontaineThetaLaws ℤ_[2] inferInstance 2 inferInstance padicTwo_not_unit
       padicTwoUntilt zeroTheta := by
@@ -67,5 +85,12 @@ theorem zeroTheta_violates_laws :
     inferInstance padicTwo_not_unit padicTwoUntilt zeroTheta h
     (1 : PreTilt ℤ_[2] 2)
   simp [zeroTheta, padicTwoUntilt] at hone
+
+theorem zeroPerfectoidData_violates_laws :
+    ¬ @PerfectoidLaws ℤ_[2] inferInstance 2 inferInstance padicTwo_not_unit
+      zeroPerfectoidData := by
+  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := padicTwo_not_unit
+  intro h
+  exact zeroUntilt_violates_laws h.untilting
 
 end JoshiTeich.Prologue.Audit
