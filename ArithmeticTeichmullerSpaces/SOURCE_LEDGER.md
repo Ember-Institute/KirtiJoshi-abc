@@ -60,6 +60,30 @@
 | `JT-ATS-V1-SCENE1-BOUNDARY` | `Act1Scene1.Scene1Input`, `Scene1Input.ofExplicit` | `ArithmeticTeichmullerSpaces/Act1Scene1/Boundary.lean` | D-boundary declaration; all Prologue data and contracts remain explicit parameters; no Corollary 3.12 statement or proof |
 | `JT-ATS-V1-SCENE2-BOUNDARY` | `Act1Scene2.Scene2Input` | `ArithmeticTeichmullerSpaces/Act1Scene2/Boundary.lean` | D-boundary declaration; post-3.12 propositions are explicit slots only; no bridge theorem or `abc` result |
 | `JT-ATS-AUDIT-OBLIGATIONS` | `registeredSourceIds`, constructor declaration and axiom checks | `ArithmeticTeichmullerSpaces/Prologue/Obligations/Audit.lean` | D-audit entry point; checks all four named `sorry` constructors and exposes their expected `sorryAx` dependencies without importing them into public interfaces |
+| `JT-ATS-AUDIT-FIELD-COVERAGE` | field-level projection checks | `ArithmeticTeichmullerSpaces/Prologue/Audit/FieldCoverage.lean` | D-audit entry point; every public carrier and contract projection is checked against the grouped source mapping below |
+
+### 字段级覆盖审计
+
+`FieldCoverage.lean` 使用 Lean projection 名称逐项检查下列字段。每个字段组的语义
+来源沿用对应的 declaration-level source-id；该表不把审计检查误记为数学证明。
+
+| source-id | 字段组 | 文件 | 状态 |
+| --- | --- | --- | --- |
+| `JT-ATS-III-DATA-001` | `ThetaPilotData.index`, `indexFintype`, `value`, `norm`, `scalingIndex`, `frobenius`, `period`, `liftedLog`; `PacketHullData.packet`, `packetFintype`, `packetToPilot`, `packetWeight`, `hull`, `hullFintype`, `hullToPacket`, `hullWeight` | `Prologue/Interfaces/Carriers.lean` | projection audit passed |
+| `JT-ATS-III-ARITHMETIC-LINK` | `AdelicThetaLinkData.places`, `qParameter`, `tate`, `theta`, `thetaBase`, `packetHull`, `heightData`, `ramification`, `logVolume`, `processionLength` | `Prologue/Interfaces/Carriers.lean` | projection audit passed |
+| `JT-ATS-II5-ARITH-DIVISOR` | `FinitePlaceDivisor.support`, `exponent`, `exponent_ne_zero`; `HeightData.places`, `weight`, `weight_nonneg`, `value`, `value_eq` | `Prologue/Arithmetic/Basic.lean` | projection audit passed |
+| `JT-ATS-IV-RAMIFICATION` | `RamificationProfile.conductor`, `different_log`, `conductor_log`, `different_log_nonneg`, `conductor_log_nonneg` | `Prologue/Arithmetic/Basic.lean` | projection audit passed |
+| `JT-ATS-PROLOGUE-PERFECTOID` | `UntiltingLaws.one`, `reduction`, `frobenius_scaling`; `FontaineThetaLaws.teichmuller` | `Prologue/Perfectoid/Untilts.lean` | projection audit passed |
+| `JT-ATS-PROLOGUE-PERFECTOID-DATA` | `PerfectoidData.untilt`, `theta`; `PerfectoidLaws.untilting`, `theta_compatibility` | `Prologue/Perfectoid/Data.lean` | projection audit passed |
+| `JT-ATS-II-TATE-PARAMETER` | `TateParameterData.places`, `parameter`, `norm`; `TateParameterLaws.places_nonempty`, `parameter_nonzero`, `norm_eq`, `norm_pos`, `norm_lt_one` | `Prologue/Theta/Tate.lean` | projection audit passed |
+| `JT-ATS-II-THETA-PILOT-SCALING` | `ThetaPilotScalingLaws.base_scalingIndex`, `value_nonzero`, `norm_positive`, `norm_scaling` | `Prologue/Theta/Pilot.lean` | projection audit passed |
+| `JT-ATS-III-PERFECTOID-BRIDGE` | `PerfectoidPlaceData.place`, `data`; `PerfectoidPlaceLaws.perfectoid`; `PerfectoidBridgeData.coefficientMap`; `PerfectoidBridgeLaws.place_supported`, `local_laws` | `Prologue/Interfaces/PerfectoidBridge.lean` | projection audit passed |
+| `JT-ATS-III-PROLOGUE-INPUT` | `PrologueInputData.link`, `placeData`, `bridge`; `PrologueInputLaws.first_axiom`, `tate_parameter`, `adelic_theta_link`, `perfectoid_bridge` | `Prologue/Interfaces/Input.lean` | projection audit passed |
+| `JT-ATS-III-CONTRACT-001` | `FirstAxiom.places_nonempty`, `q_parameter_nonzero`, `q_norm_positive`, `height_nonnegative`, `theta_norm_positive`, `packet_weight_positive`, `hull_weight_positive` | `Prologue/Interfaces/Contracts.lean` | projection audit passed |
+| `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink.valuation_scaling`, `theta_scaling`, `frobenius_compatibility`, `period_map`, `normalization` | `Prologue/Interfaces/Contracts.lean` | projection audit passed |
+| `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog.log_shell`, `value_nonzero` | `Prologue/Interfaces/Contracts.lean` | projection audit passed |
+| `JT-ATS-III-CONTRACT-004` | `PacketCollationHull.packet_supported`, `hull_supported`, `packet_weights_nonzero`, `hull_weights_nonzero` | `Prologue/Interfaces/Contracts.lean` | projection audit passed |
+| `JT-ATS-III-CONTRACT-005` | `VolumeTransfer.transferred_volume` | `Prologue/Interfaces/Contracts.lean` | projection audit passed |
 
 The Prologue boundary does not declare Corollary 3.12.  Its four construction theorems
 are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`.

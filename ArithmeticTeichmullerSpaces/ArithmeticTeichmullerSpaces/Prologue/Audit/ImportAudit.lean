@@ -2,6 +2,7 @@ import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
 import ArithmeticTeichmullerSpaces.Prologue.Perfectoid
 import ArithmeticTeichmullerSpaces.Prologue.Theta
 import ArithmeticTeichmullerSpaces.Prologue.Interfaces
+import ArithmeticTeichmullerSpaces.Prologue.Audit.FieldCoverage
 import ArithmeticTeichmullerSpaces.Prologue.Audit.Models
 import ArithmeticTeichmullerSpaces.Prologue.Audit.PerfectoidModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.PerfectoidBridgeModels
