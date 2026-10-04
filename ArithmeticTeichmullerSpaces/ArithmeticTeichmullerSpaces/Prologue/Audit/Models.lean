@@ -1,9 +1,11 @@
 import ArithmeticTeichmullerSpaces.Prologue.Interfaces
+import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic
 import Mathlib.NumberTheory.NumberField.Basic
 
 namespace JoshiTeich.Prologue.Audit
 
 open JoshiTeich.Prologue
+open JoshiTeich.Prologue.Arithmetic
 open scoped BigOperators NumberField
 
 /-!
@@ -169,5 +171,46 @@ theorem volumeTransfer_violation :
   change (6 : ℝ) =
     (∑ _ : Fin 1, (2 : ℝ)) + ∑ _ : Fin 1, (3 : ℝ) at hv
   norm_num at hv
+
+noncomputable def auditConductor : FinitePlaceDivisor ℚ where
+  support := {rationalTwoPlace}
+  exponent := fun _ => 3
+  exponent_ne_zero := by
+    intro w hw
+    simp only [Finset.mem_singleton] at hw
+    subst w
+    norm_num
+
+theorem auditConductor_logDegree_pos : 0 < auditConductor.logDegree := by
+  apply FinitePlaceDivisor.logDegree_pos_of_nonempty
+  simp [auditConductor]
+
+noncomputable def auditHeight : HeightData ℚ where
+  places := {rationalTwoPlace}
+  weight := fun _ => 2
+  weight_nonneg := by
+    intro w hw
+    norm_num
+  value := fun x => 2 * Real.log (max (rationalTwoPlace x) 1)
+  value_eq := by
+    intro x
+    simp
+
+theorem auditHeight_nonneg (x : ℚ) : 0 ≤ auditHeight.value x :=
+  HeightData.value_nonneg auditHeight x
+
+noncomputable def auditRamificationProfile : RamificationProfile ℚ where
+  conductor := auditConductor
+  different_log := differentLog (K := ℚ)
+  conductor_log := auditConductor.logDegree
+  different_log_nonneg := differentLog_nonneg (K := ℚ)
+  conductor_log_nonneg := FinitePlaceDivisor.logDegree_nonneg auditConductor
+
+theorem auditRamificationProfile_logTotal_pos :
+    0 < auditRamificationProfile.logTotal := by
+  have hcond : 0 < auditRamificationProfile.conductor_log := by
+    simpa [auditRamificationProfile] using auditConductor_logDegree_pos
+  exact add_pos_of_nonneg_of_pos
+    auditRamificationProfile.different_log_nonneg hcond
 
 end JoshiTeich.Prologue.Audit

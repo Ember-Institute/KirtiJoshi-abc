@@ -28,6 +28,10 @@
 | --- | --- | --- | --- |
 | `JT-M-NF-FINPLACE` | `NumberField.FinitePlace` | mathlib `NumberField/Completion/FinitePlace.lean` | imported mathlib type |
 | `JT-M-RAT-RINGINT` | `Rat.ringOfIntegersEquiv` | mathlib `NumberTheory/NumberField/Basic.lean` | imported mathlib equivalence |
+| `JT-M-DIFFERENT-IDEAL` | `differentIdeal`, `NumberField.absNorm_differentIdeal` | mathlib `NumberTheory/NumberField/Discriminant/Different.lean` | imported ideal and norm theorem |
+| `JT-ATS-II5-ARITH-DIVISOR` | `FinitePlaceDivisor`, `logDegree` | `ArithmeticTeichmullerSpaces/Prologue/Arithmetic/Basic.lean` | D-interface from II.5 arithmetic degree data |
+| `JT-ATS-II5-HEIGHT` | `HeightData`, `HeightData.value_nonneg` | `ArithmeticTeichmullerSpaces/Prologue/Arithmetic/Basic.lean` | finite-place height interface from II.5 `def:heights` |
+| `JT-ATS-IV-RAMIFICATION` | `RamificationProfile`, `differentLog`, `logTotal` | `ArithmeticTeichmullerSpaces/Prologue/Arithmetic/Basic.lean` | D-interface for IV log-different/log-conductor chain |
 | `JT-ATS-III-DATA-001` | `ThetaPilotData`, `PacketHullData`, `AdelicThetaLinkData` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | type-checked data layer |
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
@@ -36,6 +40,7 @@
 | `JT-ATS-III-CONTRACT-005` | `VolumeTransfer` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-AUDIT-MODEL-001` | `rationalTwoPlace`, `auditData` | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled non-degenerate model data |
 | `JT-ATS-AUDIT-MODEL-002` | satisfying and violating model theorems | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled audit witnesses |
+| `JT-ATS-AUDIT-ARITH-001` | `auditHeight`, `auditConductor`, `auditRamificationProfile` | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled arithmetic model data and positivity witnesses |
 
 The Prologue boundary does not declare Corollary 3.12.  Its four construction theorems
 are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`.
