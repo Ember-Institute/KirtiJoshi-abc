@@ -10,7 +10,7 @@ universe uK
 
 /-!
 source-id: JT-ATS-III-COR312-TARGET
-source: JoshiTeich, `refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`,
+source: `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`,
   `cor:cor312`, lines 3647-3650; preceding volume form `th:moccor-Mochizuki-form2`,
   lines 3617-3632
 fidelity: exact analytic inequality shape; the theta-volume realization and the
@@ -45,6 +45,10 @@ variable [IsAdicComplete (Ideal.span {(p : O)}) O]
 def qLogSum (T : Corollary312Data K O p) : ℝ :=
   letI := T.qIndexFintype
   ∑ i, T.qLogTerm i
+
+def qProduct (T : Corollary312Data K O p) (qFactor : T.qIndex → ℝ) : ℝ :=
+  letI := T.qIndexFintype
+  ∏ i, qFactor i ^ T.ellStar
 
 end Corollary312Data
 
