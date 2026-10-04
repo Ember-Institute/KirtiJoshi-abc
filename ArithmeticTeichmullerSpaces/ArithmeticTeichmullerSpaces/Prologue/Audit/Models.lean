@@ -82,6 +82,47 @@ noncomputable def auditTateData : TateParameterData ℚ where
   parameter := fun _ => 2
   norm := fun w => w (2 : ℚ)
 
+noncomputable def auditConductor : FinitePlaceDivisor ℚ where
+  support := {rationalTwoPlace}
+  exponent := fun _ => 3
+  exponent_ne_zero := by
+    intro w hw
+    simp only [Finset.mem_singleton] at hw
+    subst w
+    norm_num
+
+theorem auditConductor_logDegree_pos : 0 < auditConductor.logDegree := by
+  apply FinitePlaceDivisor.logDegree_pos_of_nonempty
+  simp [auditConductor]
+
+noncomputable def auditHeight : HeightData ℚ where
+  places := {rationalTwoPlace}
+  weight := fun _ => 2
+  weight_nonneg := by
+    intro w hw
+    norm_num
+  value := fun x => 2 * Real.log (max (rationalTwoPlace x) 1)
+  value_eq := by
+    intro x
+    simp
+
+theorem auditHeight_nonneg (x : ℚ) : 0 ≤ auditHeight.value x :=
+  HeightData.value_nonneg auditHeight x
+
+noncomputable def auditRamificationProfile : RamificationProfile ℚ where
+  conductor := auditConductor
+  different_log := differentLog (K := ℚ)
+  conductor_log := auditConductor.logDegree
+  different_log_nonneg := differentLog_nonneg (K := ℚ)
+  conductor_log_nonneg := FinitePlaceDivisor.logDegree_nonneg auditConductor
+
+theorem auditRamificationProfile_logTotal_pos :
+    0 < auditRamificationProfile.logTotal := by
+  have hcond : 0 < auditRamificationProfile.conductor_log := by
+    simpa [auditRamificationProfile] using auditConductor_logDegree_pos
+  exact add_pos_of_nonneg_of_pos
+    auditRamificationProfile.different_log_nonneg hcond
+
 noncomputable def auditData (q : ℚ) (period liftedLog logVolume packetWeight hullWeight : ℝ) :
     AdelicThetaLinkData ℚ where
   places := {rationalTwoPlace}
@@ -90,8 +131,8 @@ noncomputable def auditData (q : ℚ) (period liftedLog logVolume packetWeight h
   theta := auditTheta period liftedLog
   thetaBase := (0 : Fin 1)
   packetHull := auditPacketHull packetWeight hullWeight
-  qNorm := fun w => w (2 : ℚ)
-  height := fun _ => 0
+  heightData := auditHeight
+  ramification := auditRamificationProfile
   logVolume := logVolume
   processionLength := 1
 
@@ -104,7 +145,8 @@ theorem firstAxiom_model :
     change 0 < w (2 : ℚ)
     exact NumberField.FinitePlace.pos_iff.mpr (by norm_num)
   · intro x
-    norm_num [auditData]
+    change 0 ≤ auditHeight.value x
+    exact auditHeight_nonneg x
   · intro i
     change 0 < (1 : ℝ)
     norm_num
@@ -194,46 +236,5 @@ theorem volumeTransfer_violation :
   change (6 : ℝ) =
     (∑ _ : Fin 1, (2 : ℝ)) + ∑ _ : Fin 1, (3 : ℝ) at hv
   norm_num at hv
-
-noncomputable def auditConductor : FinitePlaceDivisor ℚ where
-  support := {rationalTwoPlace}
-  exponent := fun _ => 3
-  exponent_ne_zero := by
-    intro w hw
-    simp only [Finset.mem_singleton] at hw
-    subst w
-    norm_num
-
-theorem auditConductor_logDegree_pos : 0 < auditConductor.logDegree := by
-  apply FinitePlaceDivisor.logDegree_pos_of_nonempty
-  simp [auditConductor]
-
-noncomputable def auditHeight : HeightData ℚ where
-  places := {rationalTwoPlace}
-  weight := fun _ => 2
-  weight_nonneg := by
-    intro w hw
-    norm_num
-  value := fun x => 2 * Real.log (max (rationalTwoPlace x) 1)
-  value_eq := by
-    intro x
-    simp
-
-theorem auditHeight_nonneg (x : ℚ) : 0 ≤ auditHeight.value x :=
-  HeightData.value_nonneg auditHeight x
-
-noncomputable def auditRamificationProfile : RamificationProfile ℚ where
-  conductor := auditConductor
-  different_log := differentLog (K := ℚ)
-  conductor_log := auditConductor.logDegree
-  different_log_nonneg := differentLog_nonneg (K := ℚ)
-  conductor_log_nonneg := FinitePlaceDivisor.logDegree_nonneg auditConductor
-
-theorem auditRamificationProfile_logTotal_pos :
-    0 < auditRamificationProfile.logTotal := by
-  have hcond : 0 < auditRamificationProfile.conductor_log := by
-    simpa [auditRamificationProfile] using auditConductor_logDegree_pos
-  exact add_pos_of_nonneg_of_pos
-    auditRamificationProfile.different_log_nonneg hcond
 
 end JoshiTeich.Prologue.Audit

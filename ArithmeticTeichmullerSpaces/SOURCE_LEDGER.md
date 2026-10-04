@@ -43,6 +43,7 @@
 | `JT-ATS-AUDIT-THETA-PILOT` | `auditScalingTheta_laws`, `zeroScalingTheta_violates_laws` | `ArithmeticTeichmullerSpaces/Prologue/Audit/PilotModels.lean` | compiled two-index scaling model with exponents `1, 2` and norms `1/2, 1/16`, plus zero-value countermodel |
 | `JT-ATS-III-THETA-SCALING-LINK` | `AdelicThetaLinkData.thetaBase`, `AdelicThetaLink.theta_scaling` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean`, `Interfaces/Contracts.lean` | D-integration of the sourced theta-pilot `j^2` law into the explicit theta-link contract |
 | `JT-ATS-III-DATA-001` | `ThetaPilotData`, `PacketHullData`, `AdelicThetaLinkData` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | type-checked data layer |
+| `JT-ATS-III-ARITHMETIC-LINK` | `AdelicThetaLinkData.heightData`, `AdelicThetaLinkData.ramification`, `AdelicThetaLinkData.qNorm`, `AdelicThetaLinkData.height` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | D-integration of II.5/IV arithmetic profiles; norm and height are sourced projections, not free functions |
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface including explicit theta-pilot scaling |
 | `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |

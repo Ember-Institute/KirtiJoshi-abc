@@ -1,4 +1,5 @@
 import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
+import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic
 import ArithmeticTeichmullerSpaces.Prologue.Theta.Tate
 
 namespace JoshiTeich.Prologue
@@ -40,14 +41,21 @@ structure AdelicThetaLinkData (K : Type uK) [Field K] [NumberField K] where
   theta : ThetaPilotData K
   thetaBase : theta.index
   packetHull : PacketHullData theta.index
-  qNorm : NumberField.FinitePlace K → ℝ
-  height : K → ℝ
+  heightData : Arithmetic.HeightData K
+  ramification : Arithmetic.RamificationProfile K
   logVolume : ℝ
   processionLength : ℕ
 
 namespace AdelicThetaLinkData
 
 variable {K : Type*} [Field K] [NumberField K]
+
+def qNorm (D : AdelicThetaLinkData K)
+    (w : NumberField.FinitePlace K) : ℝ :=
+  w D.qParameter
+
+def height (D : AdelicThetaLinkData K) : K → ℝ :=
+  D.heightData.value
 
 def placeNorm (D : AdelicThetaLinkData K)
     (w : NumberField.FinitePlace K) : ℝ :=
