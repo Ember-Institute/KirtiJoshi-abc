@@ -38,6 +38,7 @@ structure AdelicThetaLinkData (K : Type uK) [Field K] [NumberField K] where
   qParameter : K
   tate : Theta.TateParameterData K
   theta : ThetaPilotData K
+  thetaBase : theta.index
   packetHull : PacketHullData theta.index
   qNorm : NumberField.FinitePlace K → ℝ
   height : K → ℝ

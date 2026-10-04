@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Prologue.Interfaces.Carriers
+import ArithmeticTeichmullerSpaces.Prologue.Theta.Pilot
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
@@ -23,6 +24,8 @@ structure AdelicThetaLink (D : AdelicThetaLinkData K) : Prop where
   valuation_scaling :
     ∀ w ∈ D.places, ∀ j : ℕ,
       D.qNorm w ^ (j * j) = w (D.qParameter ^ (j * j))
+  theta_scaling :
+    Theta.ThetaPilotScalingLaws D.theta D.thetaBase
   frobenius_compatibility :
     ∀ i, D.theta.norm (D.theta.frobenius i) = D.theta.norm i ^ 2
   period_map :

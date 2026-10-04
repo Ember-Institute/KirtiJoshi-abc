@@ -40,9 +40,10 @@
 | `JT-ATS-AUDIT-TATE` | `auditTateData_laws`, `auditTateData_violation` | `ArithmeticTeichmullerSpaces/Prologue/Audit/TateModels.lean` | compiled `q = 2` model at the genuine `(2)` place and zero-parameter countermodel |
 | `JT-ATS-II-THETA-PILOT-SCALING` | `ThetaPilotData.scalingIndex`, `ThetaPilotScalingLaws` | `ArithmeticTeichmullerSpaces/Prologue/Theta/Pilot.lean` and `Interfaces/Carriers.lean` | D-interface for nonzero theta-pilot values and `j^2` norm scaling; based on II `pr:lift-vals`, II `pr:teichmuller-lift-B`, and III `th:adelic-theta-link` |
 | `JT-ATS-AUDIT-THETA-PILOT` | `auditScalingTheta_laws`, `zeroScalingTheta_violates_laws` | `ArithmeticTeichmullerSpaces/Prologue/Audit/PilotModels.lean` | compiled two-index scaling model with exponents `1, 2` and norms `1/2, 1/16`, plus zero-value countermodel |
+| `JT-ATS-III-THETA-SCALING-LINK` | `AdelicThetaLinkData.thetaBase`, `AdelicThetaLink.theta_scaling` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean`, `Interfaces/Contracts.lean` | D-integration of the sourced theta-pilot `j^2` law into the explicit theta-link contract |
 | `JT-ATS-III-DATA-001` | `ThetaPilotData`, `PacketHullData`, `AdelicThetaLinkData` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | type-checked data layer |
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
-| `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
+| `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface including explicit theta-pilot scaling |
 | `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-004` | `PacketCollationHull` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-005` | `VolumeTransfer` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |

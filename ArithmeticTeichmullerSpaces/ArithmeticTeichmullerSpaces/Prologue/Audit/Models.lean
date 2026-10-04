@@ -54,6 +54,19 @@ def auditTheta (period liftedLog : ℝ) : ThetaPilotData ℚ where
   period := fun _ => period
   liftedLog := fun _ => liftedLog
 
+theorem auditTheta_scaling_laws (period liftedLog : ℝ) :
+    ThetaPilotScalingLaws (auditTheta period liftedLog) (0 : Fin 1) := by
+  refine ⟨by rfl, ?_, ?_, ?_⟩
+  · intro i
+    change (2 : ℚ) ≠ 0
+    norm_num
+  · intro i
+    change 0 < (1 : ℝ)
+    norm_num
+  · intro i
+    change (1 : ℝ) = 1 ^ (1 * 1)
+    norm_num
+
 def auditPacketHull (packetWeight hullWeight : ℝ) : PacketHullData (Fin 1) where
   packet := Fin 1
   packetFintype := inferInstance
@@ -75,6 +88,7 @@ noncomputable def auditData (q : ℚ) (period liftedLog logVolume packetWeight h
   qParameter := q
   tate := auditTateData
   theta := auditTheta period liftedLog
+  thetaBase := (0 : Fin 1)
   packetHull := auditPacketHull packetWeight hullWeight
   qNorm := fun w => w (2 : ℚ)
   height := fun _ => 0
@@ -112,6 +126,7 @@ theorem adelicThetaLink_model :
   · intro w hw j
     change w (2 : ℚ) ^ (j * j) = w ((2 : ℚ) ^ (j * j))
     exact (map_pow w (2 : ℚ) (j * j)).symm
+  · exact auditTheta_scaling_laws 7 7
   · intro i
     simp [auditData, auditTheta]
   · intro i
