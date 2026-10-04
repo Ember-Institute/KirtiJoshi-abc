@@ -61,6 +61,7 @@
 | `JT-ATS-V1-SCENE2-BOUNDARY` | `Act1Scene2.Scene2Input` | `ArithmeticTeichmullerSpaces/Act1Scene2/Boundary.lean` | D-boundary declaration; post-3.12 propositions are explicit slots only; no bridge theorem or `abc` result |
 | `JT-ATS-AUDIT-OBLIGATIONS` | `registeredSourceIds`, constructor declaration and axiom checks | `ArithmeticTeichmullerSpaces/Prologue/Obligations/Audit.lean` | D-audit entry point; checks all four named `sorry` constructors and exposes their expected `sorryAx` dependencies without importing them into public interfaces |
 | `JT-ATS-AUDIT-FIELD-COVERAGE` | field-level projection checks | `ArithmeticTeichmullerSpaces/Prologue/Audit/FieldCoverage.lean` | D-audit entry point; every public carrier and contract projection is checked against the grouped source mapping below |
+| `JT-ATS-AUDIT-MODEL-COVERAGE` | satisfying/violating model matrix and arithmetic model obligations | `ArithmeticTeichmullerSpaces/Prologue/Audit/ModelCoverage.lean` | D-audit entry point; checks ten compiled interface pairs and three explicit Type-level model obligations |
 
 ### 字段级覆盖审计
 
@@ -84,6 +85,26 @@
 | `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog.log_shell`, `value_nonzero` | `Prologue/Interfaces/Contracts.lean` | projection audit passed |
 | `JT-ATS-III-CONTRACT-004` | `PacketCollationHull.packet_supported`, `hull_supported`, `packet_weights_nonzero`, `hull_weights_nonzero` | `Prologue/Interfaces/Contracts.lean` | projection audit passed |
 | `JT-ATS-III-CONTRACT-005` | `VolumeTransfer.transferred_volume` | `Prologue/Interfaces/Contracts.lean` | projection audit passed |
+
+### 模型覆盖矩阵
+
+`ModelCoverage.lean` 检查下列满足/违反 witness。`FinitePlaceDivisor`、`HeightData` 和
+`RamificationProfile` 将不变量直接放在 Type 的构造字段中，因此登记为明确的模型义务，
+不伪造一个不能 inhabit 这些字段的反模型。
+
+| 接口 | 满足模型 | 违反模型 | 状态 |
+| --- | --- | --- | --- |
+| `FirstAxiom` | `firstAxiom_model` | `firstAxiom_violation` | compiled pair |
+| `AdelicThetaLink` | `adelicThetaLink_model` | `adelicThetaLink_violation` | compiled pair |
+| `ThetaLiftLog` | `thetaLiftLog_model` | `thetaLiftLog_violation` | compiled pair |
+| `PacketCollationHull` | `packetCollationHull_model` | `packetCollationHull_violation` | compiled pair |
+| `VolumeTransfer` | `volumeTransfer_model` | `volumeTransfer_violation` | compiled pair |
+| `TateParameterLaws` | `auditTateData_laws` | `auditTateData_violation` | compiled pair |
+| `ThetaPilotScalingLaws` | `auditScalingTheta_laws` | `zeroScalingTheta_violates_laws` | compiled pair |
+| `PerfectoidLaws` | `padicTwo_perfectoid_model` | `zeroPerfectoidData_violates_laws` | compiled pair |
+| `PerfectoidBridgeLaws` | `padicTwo_bridge_model` | `zero_bridge_violates_laws` | compiled pair |
+| `PrologueInputLaws` | `padicTwo_input_laws` | `badInput_violates_laws` | compiled pair |
+| Type-level arithmetic profiles | `auditHeight`, `auditConductor`, `auditRamificationProfile` | constructor obligations | explicit model obligation |
 
 The Prologue boundary does not declare Corollary 3.12.  Its four construction theorems
 are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`.
