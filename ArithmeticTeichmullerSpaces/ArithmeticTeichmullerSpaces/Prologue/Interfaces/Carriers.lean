@@ -1,4 +1,5 @@
 import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
+import ArithmeticTeichmullerSpaces.Prologue.Theta.Tate
 
 namespace JoshiTeich.Prologue
 
@@ -34,6 +35,7 @@ structure PacketHullData (Pilot : Type uK) where
 structure AdelicThetaLinkData (K : Type uK) [Field K] [NumberField K] where
   places : Finset (NumberField.FinitePlace K)
   qParameter : K
+  tate : Theta.TateParameterData K
   theta : ThetaPilotData K
   packetHull : PacketHullData theta.index
   qNorm : NumberField.FinitePlace K → ℝ

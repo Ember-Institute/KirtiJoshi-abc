@@ -36,6 +36,8 @@
 | `JT-M-FONTAINE-THETA` | `WittVector.fontaineTheta`, `WittVector.fontaineTheta_teichmuller` | mathlib `RingTheory/Perfectoid/FontaineTheta.lean` | imported Fontaine theta map and Teichmuller compatibility |
 | `JT-ATS-PROLOGUE-PERFECTOID` | `untiltMap`, `thetaMap`, `UntiltingLaws`, `FontaineThetaLaws` and canonical law theorems | `ArithmeticTeichmullerSpaces/Prologue/Perfectoid/Untilts.lean` | D-adapter preserving explicit untilt, reduction, Frobenius and theta laws |
 | `JT-ATS-AUDIT-PERFECTOID` | `padicTwoUntilt`, `padicTwoTheta`, zero countermodels and audit theorems | `ArithmeticTeichmullerSpaces/Prologue/Audit/PerfectoidModels.lean` | compiled non-degenerate `ℤ_[2]` model and law-violation witnesses |
+| `JT-ATS-II-TATE-PARAMETER` | `TateParameterData`, `TateParameterLaws` | `ArithmeticTeichmullerSpaces/Prologue/Theta/Tate.lean` | D-interface for the finite-place Tate parameter function, nonzero parameter, and `0 < |q| < 1` local condition; based on II `th:tate-parameter-as-a-function`, III `pr:admissible-lifts-tate-params`, and II `se:tate-setup` |
+| `JT-ATS-AUDIT-TATE` | `auditTateData_laws`, `auditTateData_violation` | `ArithmeticTeichmullerSpaces/Prologue/Audit/TateModels.lean` | compiled `q = 2` model at the genuine `(2)` place and zero-parameter countermodel |
 | `JT-ATS-III-DATA-001` | `ThetaPilotData`, `PacketHullData`, `AdelicThetaLinkData` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Carriers.lean` | type-checked data layer |
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |

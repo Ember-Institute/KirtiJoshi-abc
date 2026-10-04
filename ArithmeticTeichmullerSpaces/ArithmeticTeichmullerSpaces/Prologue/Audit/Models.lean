@@ -6,6 +6,7 @@ namespace JoshiTeich.Prologue.Audit
 
 open JoshiTeich.Prologue
 open JoshiTeich.Prologue.Arithmetic
+open JoshiTeich.Prologue.Theta
 open scoped BigOperators NumberField
 
 /-!
@@ -62,10 +63,16 @@ def auditPacketHull (packetWeight hullWeight : ℝ) : PacketHullData (Fin 1) whe
   hullToPacket := fun _ => 0
   hullWeight := fun _ => hullWeight
 
+noncomputable def auditTateData : TateParameterData ℚ where
+  places := {rationalTwoPlace}
+  parameter := fun _ => 2
+  norm := fun w => w (2 : ℚ)
+
 noncomputable def auditData (q : ℚ) (period liftedLog logVolume packetWeight hullWeight : ℝ) :
     AdelicThetaLinkData ℚ where
   places := {rationalTwoPlace}
   qParameter := q
+  tate := auditTateData
   theta := auditTheta period liftedLog
   packetHull := auditPacketHull packetWeight hullWeight
   qNorm := fun w => w (2 : ℚ)
