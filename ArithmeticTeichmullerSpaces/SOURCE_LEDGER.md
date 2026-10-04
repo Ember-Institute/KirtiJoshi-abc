@@ -56,6 +56,9 @@
 | `JT-ATS-AUDIT-ARITH-001` | `auditHeight`, `auditConductor`, `auditRamificationProfile` | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled arithmetic model data and positivity witnesses |
 | `JT-ATS-AUDIT-PERFECTOID-BRIDGE` | `padicTwoPlaceData`, `padicTwoBridgeData`, `padicTwo_bridge_model`, `zero_bridge_violates_laws` | `ArithmeticTeichmullerSpaces/Prologue/Audit/PerfectoidBridgeModels.lean` | compiled `(2)`-place/`ℤ_[2]` bridge model and bundled-law violation witness |
 | `JT-ATS-AUDIT-PROLOGUE-INPUT` | `padicTwoInputData`, `padicTwo_input_laws`, `badInputData`, `badInput_violates_laws` | `ArithmeticTeichmullerSpaces/Prologue/Audit/InputModels.lean` | compiled common-law input bundle and nonzero-parameter violation witness |
+| `JT-ATS-AUDIT-IMPORT` | public Prologue import audit and declaration checks | `ArithmeticTeichmullerSpaces/Prologue/Audit/ImportAudit.lean` | D-audit entry point; imports public Prologue modules and checks carriers, contracts, and model witnesses; excludes `Obligations` |
+| `JT-ATS-V1-SCENE1-BOUNDARY` | `Act1Scene1.Scene1Input`, `Scene1Input.ofExplicit` | `ArithmeticTeichmullerSpaces/Act1Scene1/Boundary.lean` | D-boundary declaration; all Prologue data and contracts remain explicit parameters; no Corollary 3.12 statement or proof |
+| `JT-ATS-V1-SCENE2-BOUNDARY` | `Act1Scene2.Scene2Input` | `ArithmeticTeichmullerSpaces/Act1Scene2/Boundary.lean` | D-boundary declaration; post-3.12 propositions are explicit slots only; no bridge theorem or `abc` result |
 
 The Prologue boundary does not declare Corollary 3.12.  Its four construction theorems
 are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`.
