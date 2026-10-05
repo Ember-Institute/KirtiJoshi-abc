@@ -27,6 +27,25 @@ kept here: the source place set and weights are explicit fields, while the
 construction of the admissible `V_p^oss` locus is still a later Scene1 task.
 -/
 
+/-!
+The finite-support carrier from `Prologue.Arithmetic` can now be attached to
+the q-pilot without asserting that every norm-bad locus is the paper's
+`V_p^oss`.  The element and its support equality remain explicit Scene1
+construction data.
+-/
+
+structure Corollary312NormBadLocus
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p) where
+  /-- The global element whose finite-place norm support is being measured. -/
+  element : K
+  /-- The measured norm-bad support is exactly the current link-place carrier. -/
+  support_eq :
+    Arithmetic.normGtOneFinset element = T.scene1.data.link.places
+
 structure Corollary312QPilotData
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)
@@ -59,6 +78,27 @@ noncomputable def Corollary312QPilotData.ofArithmeticWeights
   refine
     { badFinset := T.scene1.data.link.places
       badFinset_spec := rfl
+      weight := Arithmetic.qPilotWeight
+      weight_pos := ?_
+      compatibility := hCompat }
+  intro w hw
+  exact Arithmetic.qPilotWeight_pos w
+
+/-- Build the concrete q-pilot carrier from an explicitly supplied norm-bad
+locus.  The support equality is the remaining Scene1 construction obligation;
+the arithmetic weight and positivity proof are derived here. -/
+noncomputable def Corollary312QPilotData.ofNormBadLocus
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (hCompat : QNormTateCompatibility T.scene1.data.link)
+    (B : Corollary312NormBadLocus p T) :
+    Corollary312QPilotData p T := by
+  refine
+    { badFinset := Arithmetic.normGtOneFinset B.element
+      badFinset_spec := B.support_eq
       weight := Arithmetic.qPilotWeight
       weight_pos := ?_
       compatibility := hCompat }
