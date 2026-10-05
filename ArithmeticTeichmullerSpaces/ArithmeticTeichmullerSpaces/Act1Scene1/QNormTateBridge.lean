@@ -77,6 +77,58 @@ theorem qNorm_pos_lt_one_of_tate
   · rw [hCompat.norm_eq D hTate w hw]
     exact hTate.norm_lt_one w hwTate
 
+/-!
+The normalized-order file in `TateCurvesTheta` identifies the norm of `q` with
+the corresponding power of a uniformizer norm.  The local project does not yet
+carry the uniformizer/valuation construction, so the identification is an
+explicit Scene1 compatibility proposition.  The logarithmic consequences are
+proved here and can be consumed by the q-family accounting once that
+compatibility is constructed.
+-/
+structure TateOrderNormCompatibility
+    {K : Type uK} [Field K] [NumberField K]
+    (D : AdelicThetaLinkData K) : Prop where
+  uniformizerNorm : NumberField.FinitePlace K → ℝ
+  uniformizerNorm_pos : ∀ w ∈ D.places, 0 < uniformizerNorm w
+  uniformizerNorm_lt_one : ∀ w ∈ D.places, uniformizerNorm w < 1
+  norm_eq_pow_order : ∀ w ∈ D.places,
+    D.tate.norm w = uniformizerNorm w ^ D.tate.qOrder w
+
+theorem TateOrderNormCompatibility.qNorm_log_eq_order_mul
+    {K : Type uK} [Field K] [NumberField K]
+    (D : AdelicThetaLinkData K)
+    (hTate : Theta.TateParameterLaws D.tate)
+    (hCompat : QNormTateCompatibility D)
+    (hOrder : TateOrderNormCompatibility D) :
+    ∀ w ∈ D.places,
+      -Real.log (D.qNorm w) =
+        (D.tate.qOrder w : ℝ) * -Real.log (hOrder.uniformizerNorm w) := by
+  intro w hw
+  rw [hCompat.norm_eq D hTate w hw, hOrder.norm_eq_pow w hw, Real.log_pow]
+  push_cast
+  ring
+
+theorem TateOrderNormCompatibility.qFactor_log_eq_order_mul
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p ell : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : AdelicThetaLinkData K)
+    (hTate : Theta.TateParameterLaws D.tate)
+    (hCompat : QNormTateCompatibility D)
+    (hOrder : TateOrderNormCompatibility D)
+    (hEll : 0 < ell) :
+    ∀ w ∈ D.places,
+      -Real.log (D.qNorm w ^ (1 / (2 * (ell : ℝ)))) =
+        (1 / (2 * (ell : ℝ))) *
+          ((D.tate.qOrder w : ℝ) * -Real.log (hOrder.uniformizerNorm w)) := by
+  intro w hw
+  have hq : 0 < D.qNorm w := (qNorm_pos_lt_one_of_tate D hTate hCompat w hw).1
+  rw [Real.log_rpow hq, hCompat.norm_eq D hTate w hw,
+    hOrder.norm_eq_pow w hw, Real.log_pow]
+  push_cast
+  ring
+
 def Corollary312QFamily.ofTateCompatibility
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)

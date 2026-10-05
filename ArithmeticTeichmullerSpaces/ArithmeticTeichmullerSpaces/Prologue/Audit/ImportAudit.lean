@@ -96,6 +96,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.rationalPrime_liesOver
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.tate_place
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.q_order_coprime
+#check JoshiTeich.Act1Scene1.TateOrderNormCompatibility
+#check JoshiTeich.Act1Scene1.TateOrderNormCompatibility.qNorm_log_eq_order_mul
+#check JoshiTeich.Act1Scene1.TateOrderNormCompatibility.qFactor_log_eq_order_mul
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder_pos
 #check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping
