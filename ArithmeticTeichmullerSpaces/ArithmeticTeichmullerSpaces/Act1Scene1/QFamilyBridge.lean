@@ -79,6 +79,35 @@ lemma mem_sourcePlacesOver_iff_liesOver
       (p := Ideal.span {(q : ℤ)}) (q : ℤ)).mp hq_mem
 
 /-!
+The source-side q-family uses exactly the finite-place filter above.  These
+two lemmas consume the Prologue arithmetic adapter without identifying this
+carrier with the paper's `V_p^oss`; that identification remains a separate
+Initial Theta Data obligation.
+-/
+lemma sourcePlacesOver_localDeg_sum_le_finrank
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p q : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (hq : q.Prime) (T : Corollary312Data K O p) :
+    ∑ w ∈ Corollary312SourcePlacesOver p T q, Arithmetic.localDeg w ≤
+      Module.finrank ℚ K := by
+  simpa [Corollary312SourcePlacesOver] using
+    (Arithmetic.localDeg_sum_le_finrank_of_residueChar_filter
+      T.scene1.data.link.places q hq)
+
+lemma sourcePlacesOver_qPilotWeight_sum_le_one
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p q : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (hq : q.Prime) (T : Corollary312Data K O p) :
+    ∑ w ∈ Corollary312SourcePlacesOver p T q, Arithmetic.qPilotWeight w ≤ 1 := by
+  simpa [Corollary312SourcePlacesOver] using
+    (Arithmetic.qPilotWeight_sum_le_one_of_residueChar_filter
+      T.scene1.data.link.places q hq)
+
+/-!
 The paper writes the finite q-family as pairs `(p,w)` with a rational prime
 `p` and a finite place `w`.  The place subtype above remains the target's
 local carrier; this structure makes the rational-prime label and the finite

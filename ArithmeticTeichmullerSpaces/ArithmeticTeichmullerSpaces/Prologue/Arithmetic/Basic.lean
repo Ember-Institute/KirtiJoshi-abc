@@ -1,5 +1,6 @@
 import Mathlib.NumberTheory.NumberField.Discriminant.Different
 import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
+import Mathlib.RingTheory.RamificationInertia.Basic
 
 namespace JoshiTeich.Prologue.Arithmetic
 
@@ -105,6 +106,100 @@ lemma residueChar_liesOver (w : NumberField.FinitePlace K) :
   unfold residueChar
   simpa [Ideal.ringChar_quot] using
     (Int.liesOver_span_absNorm w.maximalIdeal.asIdeal)
+
+/-!
+The finite-place index dictionary used by the `iut` arithmetic layer is now
+closed for the frozen mathlib carrier.  Filtering any explicit finite set by
+the residue characteristic gives a subset of the primes over `(q)`, so the
+Dedekind-domain fundamental identity supplies the local-degree bound.
+-/
+lemma localDeg_sum_le_finrank_of_residueChar_filter
+    (S : Finset (NumberField.FinitePlace K)) (q : ℕ) (hq : q.Prime) :
+    ∑ w ∈ S.filter (fun w => residueChar w = q), localDeg w ≤
+      Module.finrank ℚ K := by
+  classical
+  set p : Ideal ℤ := Ideal.span {(q : ℤ)} with hp
+  haveI hmax : p.IsMaximal := by
+    haveI hprime : p.IsPrime := by
+      rw [hp]
+      exact (Ideal.span_singleton_prime (by exact_mod_cast hq.ne_zero)).2
+        (Nat.prime_iff_prime_int.1 hq)
+    exact IsPrime.to_maximal_ideal (by
+      rw [hp, ne_eq, Ideal.span_singleton_eq_bot]
+      exact_mod_cast hq.ne_zero)
+  have hp0 : p ≠ ⊥ := by
+    rw [hp, ne_eq, Ideal.span_singleton_eq_bot]
+    exact_mod_cast hq.ne_zero
+  have hsum :
+      ∑ P ∈ IsDedekindDomain.primesOverFinset p (𝓞 K),
+          P.ramificationIdx ℤ * P.inertiaDeg ℤ = Module.finrank ℚ K := by
+    have hsum0 := Ideal.sum_ramification_inertia_eq_finrank p (𝓞 K)
+    classical
+    calc
+      ∑ P ∈ IsDedekindDomain.primesOverFinset p (𝓞 K),
+          P.ramificationIdx ℤ * P.inertiaDeg ℤ =
+          ∑ Q : p.primesOver (𝓞 K),
+            Q.1.ramificationIdx ℤ * Q.1.inertiaDeg ℤ := by
+        symm
+        refine Finset.sum_bij (fun Q _ => Q.1) ?_ ?_ ?_ ?_
+        · intro Q _
+          exact (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mpr Q.2
+        · intro Q₁ _ Q₂ _ hQ
+          exact Subtype.ext hQ
+        · intro P hP
+          have hP' := (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mp hP
+          exact ⟨⟨P, hP'⟩, Finset.mem_univ _, rfl⟩
+        · intro Q _
+          rfl
+      _ = Module.finrank ℚ K := by
+        simpa only [NumberField.RingOfIntegers.rank] using hsum0
+  set T := S.filter (fun w => residueChar w = q) with hT
+  have hle : ∀ w ∈ T,
+      localDeg w ≤
+        w.maximalIdeal.asIdeal.ramificationIdx ℤ *
+          w.maximalIdeal.asIdeal.inertiaDeg ℤ := by
+    intro w hw
+    unfold localDeg ramIdx inertDeg
+    exact Nat.le_refl _
+  have hsub : T.image (fun w : NumberField.FinitePlace K =>
+      w.maximalIdeal.asIdeal) ⊆
+      IsDedekindDomain.primesOverFinset p (𝓞 K) := by
+    intro P hP
+    rw [Finset.mem_image] at hP
+    obtain ⟨w, hw, rfl⟩ := hP
+    rw [hT, Finset.mem_filter] at hw
+    haveI : Ideal.LiesOver w.maximalIdeal.asIdeal p := by
+      rw [hp, ← hw.2]
+      exact residueChar_liesOver w
+    exact (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mpr
+      ⟨inferInstance, inferInstance⟩
+  have hinj : Set.InjOn
+      (fun w : NumberField.FinitePlace K => w.maximalIdeal.asIdeal) T := by
+    intro w₁ _ w₂ _ h
+    exact NumberField.FinitePlace.maximalIdeal_injective
+      (IsDedekindDomain.HeightOneSpectrum.ext h)
+  calc
+    ∑ w ∈ T, localDeg w ≤
+        ∑ w ∈ T,
+          w.maximalIdeal.asIdeal.ramificationIdx ℤ *
+            w.maximalIdeal.asIdeal.inertiaDeg ℤ :=
+      Finset.sum_le_sum hle
+    _ = ∑ P ∈ T.image (fun w : NumberField.FinitePlace K =>
+          w.maximalIdeal.asIdeal),
+          P.ramificationIdx ℤ * P.inertiaDeg ℤ :=
+      (Finset.sum_image
+        (f := fun P => P.ramificationIdx ℤ * P.inertiaDeg ℤ) hinj).symm
+    _ ≤ ∑ P ∈ IsDedekindDomain.primesOverFinset p (𝓞 K),
+          P.ramificationIdx ℤ * P.inertiaDeg ℤ :=
+      Finset.sum_le_sum_of_subset hsub
+    _ = Module.finrank ℚ K := hsum
+
+lemma qPilotWeight_sum_le_one_of_residueChar_filter
+    (S : Finset (NumberField.FinitePlace K)) (q : ℕ) (hq : q.Prime) :
+    ∑ w ∈ S.filter (fun w => residueChar w = q), qPilotWeight w ≤ 1 := by
+  exact qPilotWeight_sum_le_one_of_localDeg_sum_le
+    (S.filter (fun w => residueChar w = q))
+    (localDeg_sum_le_finrank_of_residueChar_filter S q hq)
 
 /-!
 The following two lemmas are the local arithmetic part of the `iut`

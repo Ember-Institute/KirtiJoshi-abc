@@ -47,6 +47,8 @@ open scoped NumberField
 #check Arithmetic.qPilotWeight
 #check Arithmetic.qPilotWeight_pos
 #check Arithmetic.qPilotWeight_sum_le_one_of_localDeg_sum_le
+#check Arithmetic.localDeg_sum_le_finrank_of_residueChar_filter
+#check Arithmetic.qPilotWeight_sum_le_one_of_residueChar_filter
 #check Arithmetic.natCast_mem_maximalIdeal_iff
 #check Arithmetic.residueChar_eq_of_liesOver
 #check Arithmetic.HeightData
@@ -103,6 +105,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.grouping_place_eq
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair
 #check JoshiTeich.Act1Scene1.Corollary312SourcePlacesOver
+#check JoshiTeich.Act1Scene1.sourcePlacesOver_localDeg_sum_le_finrank
+#check JoshiTeich.Act1Scene1.sourcePlacesOver_qPilotWeight_sum_le_one
 #check JoshiTeich.Act1Scene1.mem_sourcePlacesOver_iff
 #check JoshiTeich.Act1Scene1.mem_sourcePlacesOver_iff_liesOver
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.rationalPrime_eq_residueChar
