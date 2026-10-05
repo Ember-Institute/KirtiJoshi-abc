@@ -145,6 +145,12 @@ variable {T : Corollary312Data K O p}
 
 variable (Q : Corollary312QPilotData p T)
 
+lemma filter_eq_sourcePlacesOver (q : ℕ) :
+    Q.badFinset.filter (fun w => Arithmetic.residueChar w = q) =
+      Corollary312SourcePlacesOver p T q := by
+  rw [Q.badFinset_spec]
+  rfl
+
 lemma mem_bad {w : NumberField.FinitePlace K} (hw : w ∈ Q.badFinset) :
     w ∈ T.scene1.data.link.places := by
   rw [← Q.badFinset_spec]
