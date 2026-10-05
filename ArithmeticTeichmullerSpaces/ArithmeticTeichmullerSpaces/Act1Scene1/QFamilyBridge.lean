@@ -47,6 +47,11 @@ structure Corollary312SourceQPair
   place : Corollary312SourceQIndex p T
   rationalPrime_eq_residueChar :
     rationalPrime = Arithmetic.residueChar place.1
+  /-- The source pair is represented by a place carrying a Tate parameter. -/
+  tate_place : place.1 ∈ T.scene1.data.link.tate.places
+  /-- Coprimality of `ell` with the normalized Tate q-order, ported from
+  `AdmissiblePrimeData.q_order_coprime` in `iut`. -/
+  q_order_coprime : Nat.Coprime T.ell (T.scene1.data.link.tate.qOrder place.1)
 
 namespace Corollary312SourceQPair
 
@@ -62,10 +67,9 @@ parameter replaced by the Prologue carrier's `orderNat` field. -/
 noncomputable def qOrder (self : Corollary312SourceQPair p T) : ℕ :=
   T.scene1.data.link.tate.qOrder self.place.1
 
-lemma qOrder_pos (self : Corollary312SourceQPair p T)
-    (hw : self.place.1 ∈ T.scene1.data.link.tate.places) : 0 < self.qOrder p := by
+lemma qOrder_pos (self : Corollary312SourceQPair p T) : 0 < self.qOrder p := by
   unfold qOrder
-  exact T.scene1.input_laws.tate_parameter.orderNat_pos self.place.1 hw
+  exact T.scene1.input_laws.tate_parameter.orderNat_pos self.place.1 self.tate_place
 
 end Corollary312SourceQPair
 

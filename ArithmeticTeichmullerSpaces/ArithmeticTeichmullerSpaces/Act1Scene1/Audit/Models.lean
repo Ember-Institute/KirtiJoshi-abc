@@ -310,7 +310,13 @@ noncomputable def sceneSourcePair :
     { rationalPrime := Arithmetic.residueChar sceneSourcePlace.1
       rationalPrime_prime := Arithmetic.residueChar_prime sceneSourcePlace.1
       place := sceneSourcePlace
-      rationalPrime_eq_residueChar := rfl }
+      rationalPrime_eq_residueChar := rfl
+      tate_place := by
+        change rationalTwoPlace ∈ sceneTateData.places
+        simp [sceneTateData]
+      q_order_coprime := by
+        change Nat.Coprime 5 1
+        norm_num }
 
 noncomputable def scene_qFamily :
     @Corollary312TateQFamily ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
