@@ -29,6 +29,24 @@ structure QNormTateCompatibility
   places_eq : D.places = D.tate.places
   parameter_eq : ∀ w ∈ D.places, D.qParameter w = D.tate.parameter w
 
+theorem qNormTateCompatibility_of_tateParameters
+    {K : Type uK} [Field K] [NumberField K]
+    (tate : Theta.TateParameterData K)
+    (theta : ThetaPilotData K)
+    (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData K)
+    (ramification : Arithmetic.RamificationProfile K)
+    (logVolume : ℝ)
+    (processionLength : ℕ) :
+    QNormTateCompatibility
+      (AdelicThetaLinkData.ofTateParameters tate theta thetaBase packetHull
+        heightData ramification logVolume processionLength) := by
+  constructor
+  · rfl
+  · intro w hw
+    rfl
+
 theorem QNormTateCompatibility.norm_eq
     {K : Type uK} [Field K] [NumberField K]
     (D : AdelicThetaLinkData K)

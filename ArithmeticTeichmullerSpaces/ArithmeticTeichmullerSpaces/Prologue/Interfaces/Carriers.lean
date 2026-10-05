@@ -55,6 +55,32 @@ def qNorm (D : AdelicThetaLinkData K)
     (w : NumberField.FinitePlace K) : ℝ :=
   w (D.qParameter w)
 
+/-!
+This constructor is the explicit carrier path used when the adelic q-family is
+obtained from the Tate-parameter family.  It makes the place set and local
+parameter function definitionally the corresponding Tate fields; arbitrary
+legacy carriers still use the Scene1 compatibility proposition.
+-/
+def ofTateParameters
+    (tate : Theta.TateParameterData K)
+    (theta : ThetaPilotData K)
+    (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData K)
+    (ramification : Arithmetic.RamificationProfile K)
+    (logVolume : ℝ)
+    (processionLength : ℕ) : AdelicThetaLinkData K :=
+  { places := tate.places
+    qParameter := tate.parameter
+    tate := tate
+    theta := theta
+    thetaBase := thetaBase
+    packetHull := packetHull
+    heightData := heightData
+    ramification := ramification
+    logVolume := logVolume
+    processionLength := processionLength }
+
 def height (D : AdelicThetaLinkData K) : K → ℝ :=
   D.heightData.value
 
