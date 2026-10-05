@@ -14,6 +14,7 @@ import ArithmeticTeichmullerSpaces.Prologue.Audit.JointConsistency
 import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.Models
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
 
 namespace JoshiTeich.Prologue.Audit
 
@@ -115,6 +116,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312QPilotSourceNormalization
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.normalizedLogTerm
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.normalizedLogTerm_eq_sourceQFactorLog
+#check JoshiTeich.Act1Scene1.Corollary312QPilotSourceIndexBridge
+#check JoshiTeich.Act1Scene1.Corollary312QPilotSourceIndexBridge.absLogQ_eq_sourceQLogSum
 #check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping
 #check JoshiTeich.Act1Scene1.Corollary312GroupedSourceQFactor
 #check JoshiTeich.Act1Scene1.Corollary312TateQAccounting
