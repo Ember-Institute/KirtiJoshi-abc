@@ -130,6 +130,33 @@ lemma completionNorm_eq_residueChar_pow_of_valued
   rw [NNReal.coe_zpow, NNReal.coe_natCast, absNorm_eq_pow_residueChar,
     Nat.cast_pow]
 
+/-- A canonical completion uniformizer obtained from the finite-place
+valuation API. -/
+noncomputable def completionUniformizer (w : NumberField.FinitePlace K) :
+    w.maximalIdeal.adicCompletion K :=
+  (Classical.choose (w.maximalIdeal.valuation_exists_uniformizer K) : K)
+
+lemma completionUniformizer_valued (w : NumberField.FinitePlace K) :
+    Valued.v (completionUniformizer w) = exp (-1 : ℤ) := by
+  rw [completionUniformizer,
+    IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_eq_valuation']
+  exact Classical.choose_spec (w.maximalIdeal.valuation_exists_uniformizer K)
+
+lemma completionUniformizer_norm_eq_residueChar_pow_neg_one
+    (w : NumberField.FinitePlace K) :
+    ‖completionUniformizer w‖ =
+      ((residueChar w : ℝ) ^ inertDeg w) ^ (-1 : ℤ) := by
+  exact completionNorm_eq_residueChar_pow_of_valued w
+    (completionUniformizer w) (-1) (completionUniformizer_valued w)
+
+lemma negLog_completionUniformizer_norm_eq_inertDeg_mul_log_residueChar
+    (w : NumberField.FinitePlace K) :
+    -Real.log ‖completionUniformizer w‖ =
+      (inertDeg w : ℝ) * Real.log (residueChar w) := by
+  rw [completionUniformizer_norm_eq_residueChar_pow_neg_one,
+    Real.log_zpow, Real.log_pow]
+  ring
+
 /-!
 The finite-support fact used by the `iut` bad-place layer is independent of
 the elliptic-curve presentation: for a nonzero field element, only finitely
