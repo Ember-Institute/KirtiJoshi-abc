@@ -44,6 +44,8 @@ open JoshiTeich.Prologue.Theta
 #check AdelicThetaLinkData.processionLength
 
 -- Arithmetic profile fields.
+#check Arithmetic.natCast_mem_maximalIdeal_iff
+#check Arithmetic.residueChar_eq_of_liesOver
 #check Arithmetic.FinitePlaceDivisor.support
 #check Arithmetic.FinitePlaceDivisor.exponent
 #check Arithmetic.FinitePlaceDivisor.exponent_ne_zero

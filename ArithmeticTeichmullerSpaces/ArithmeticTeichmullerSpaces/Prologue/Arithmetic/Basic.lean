@@ -35,6 +35,38 @@ lemma residueChar_liesOver (w : NumberField.FinitePlace K) :
     (Int.liesOver_span_absNorm w.maximalIdeal.asIdeal)
 
 /-!
+The following two lemmas are the local arithmetic part of the `iut`
+`CurveArithmetic` layer.  They make the rational-prime label recoverable from
+the ideal relation, and preserve that label across a finite-place extension.
+-/
+
+lemma natCast_mem_maximalIdeal_iff (w : NumberField.FinitePlace K)
+    {q : ℕ} (hq : q.Prime) :
+    (q : 𝓞 K) ∈ w.maximalIdeal.asIdeal ↔ residueChar w = q := by
+  rw [← Ideal.Quotient.eq_zero_iff_mem, map_natCast,
+    CharP.cast_eq_zero_iff (𝓞 K ⧸ w.maximalIdeal.asIdeal) (ringChar _)]
+  exact Nat.prime_dvd_prime_iff_eq (residueChar_prime w) hq
+
+lemma residueChar_eq_of_liesOver
+    {k K : Type*} [Field k] [NumberField k] [Field K] [NumberField K]
+    [Algebra k K] {w : NumberField.FinitePlace K}
+    {v : NumberField.FinitePlace k}
+    (hwv : Ideal.LiesOver w.maximalIdeal.asIdeal v.maximalIdeal.asIdeal) :
+    residueChar w = residueChar v := by
+  haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv
+  haveI : v.maximalIdeal.asIdeal.IsMaximal :=
+    v.maximalIdeal.isPrime.isMaximal v.maximalIdeal.ne_bot
+  letI : Field (𝓞 k ⧸ v.maximalIdeal.asIdeal) := Ideal.Quotient.field _
+  haveI : CharP (𝓞 k ⧸ v.maximalIdeal.asIdeal) (residueChar v) :=
+    ringChar.of_eq rfl
+  haveI : CharP (𝓞 K ⧸ w.maximalIdeal.asIdeal) (residueChar v) :=
+    charP_of_injective_algebraMap
+      (algebraMap (𝓞 k ⧸ v.maximalIdeal.asIdeal)
+        (𝓞 K ⧸ w.maximalIdeal.asIdeal)).injective
+      (residueChar v)
+  exact ringChar.eq _ (residueChar v)
+
+/-!
 Finite-place divisors are the arithmetic support used by the height and
 different/conductor interfaces.  The support and exponents are data; the
 nonzero-exponent condition prevents an empty encoding of a supported divisor.

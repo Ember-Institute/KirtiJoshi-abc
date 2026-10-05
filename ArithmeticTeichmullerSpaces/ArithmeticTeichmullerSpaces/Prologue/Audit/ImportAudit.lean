@@ -34,6 +34,8 @@ open scoped NumberField
 #check Arithmetic.residueChar
 #check Arithmetic.residueChar_prime
 #check Arithmetic.residueChar_liesOver
+#check Arithmetic.natCast_mem_maximalIdeal_iff
+#check Arithmetic.residueChar_eq_of_liesOver
 #check Arithmetic.HeightData
 #check Arithmetic.RamificationProfile
 
