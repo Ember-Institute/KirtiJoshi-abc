@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.QNormDegreeBridge
 
 namespace JoshiTeich.Act1Scene1
 
@@ -60,17 +60,15 @@ structure IutQPilotSource
   /-- Uniformizer normalization supplied by the IUT Tate/q-order source. -/
   orderCompatibility : TateOrderNormCompatibility T.scene1.data.link
   /--
-  The source-side normalized uniformizer norm is the global-degree normalized
-  norm of the canonical completion uniformizer.  This is the primitive
-  certificate from which the q-pilot logarithm law is derived.  The current
-  `AdelicThetaLinkData.qNorm` remains the raw finite-place norm, while IUT's
-  `QPilotInputs.qPilot` uses `inertDeg / [K : ℚ]`.
+  The raw finite-place norm of the source uniformizer is the norm of the
+  canonical completion uniformizer.  The current `AdelicThetaLinkData.qNorm`
+  and `TateOrderNormCompatibility` use this raw norm.  The degree-normalized
+  q-pilot presentation is derived separately below.
   -/
-  uniformizerNorm_eq_degreeNormalizedCompletionNorm :
+  uniformizerNorm_eq_completionNorm :
     ∀ w, w ∈ badPlacesOver →
       orderCompatibility.uniformizerNorm w =
-        ‖Arithmetic.completionUniformizer w‖ ^
-          (1 / (Module.finrank ℚ K : ℝ))
+        ‖Arithmetic.completionUniformizer w‖
 
 namespace IutQPilotSource
 
@@ -123,12 +121,15 @@ lemma source_norm_eq_uniformizer_pow_order
   rw [S.qOrder_eq_link w hw]
   exact S.orderCompatibility.norm_eq_pow_order w hwLink
 
-lemma toSceneQPilot_sourceNormalization
+lemma toSceneQPilot_rawQNormDegreeNormalization
     (S : IutQPilotSource p T)
     (hCompat : QNormTateCompatibility T.scene1.data.link) :
-    Corollary312QPilotSourceNormalization p T S.orderCompatibility
+    Corollary312RawQNormDegreeNormalization p T S.orderCompatibility
       (S.toSceneQPilot p hCompat) := by
-  refine { uniformizer_log_eq_weighted_residueChar_log := ?_ }
+  refine
+    { weight_eq_qPilotWeight := fun w => by
+        rfl
+      uniformizer_log_eq_residueDegree_log := ?_ }
   intro w hw
   have hwBad : w ∈ S.badPlacesOver := by
     have h := hw
@@ -137,25 +138,8 @@ lemma toSceneQPilot_sourceNormalization
       Finset.mem_coe.mpr h
     rw [S.badFinset_spec] at hSet
     exact hSet
-  change -Real.log (S.orderCompatibility.uniformizerNorm w) =
-    Arithmetic.qPilotWeight w * Real.log (Arithmetic.residueChar w)
-  rw [S.uniformizerNorm_eq_degreeNormalizedCompletionNorm w hwBad]
-  have hπ_ne_zero : Arithmetic.completionUniformizer w ≠ 0 := by
-    have hv : Valued.v (Arithmetic.completionUniformizer w) ≠ 0 := by
-      rw [Arithmetic.completionUniformizer_valued]
-      exact WithZero.exp_ne_zero
-    exact (Valuation.ne_zero_iff (Valued.v : Valuation _ _)).mp hv
-  calc
-    -Real.log (‖Arithmetic.completionUniformizer w‖ ^
-        (1 / (Module.finrank ℚ K : ℝ))) =
-        (1 / (Module.finrank ℚ K : ℝ)) *
-          (-Real.log ‖Arithmetic.completionUniformizer w‖) := by
-      rw [Real.log_rpow (norm_pos_iff.mpr hπ_ne_zero)]
-      ring
-    _ = Arithmetic.qPilotWeight w * Real.log (Arithmetic.residueChar w) := by
-      rw [Arithmetic.negLog_completionUniformizer_norm_eq_inertDeg_mul_log_residueChar]
-      unfold Arithmetic.qPilotWeight
-      ring
+  rw [S.uniformizerNorm_eq_completionNorm w hwBad]
+  exact Arithmetic.negLog_completionUniformizer_norm_eq_inertDeg_mul_log_residueChar w
 
 lemma toSceneQPilot_weight_eq_arithmetic
     (S : IutQPilotSource p T)
