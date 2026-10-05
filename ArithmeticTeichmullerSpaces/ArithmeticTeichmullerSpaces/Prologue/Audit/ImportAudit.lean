@@ -11,6 +11,7 @@ import ArithmeticTeichmullerSpaces.Prologue.Audit.InputModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.TateModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.PilotModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.JointConsistency
+import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.Models
 
 namespace JoshiTeich.Prologue.Audit
 
@@ -74,5 +75,10 @@ open scoped NumberField
 #check logVolume_eq_zero_of_firstAxiom_frobeniusSquareCandidate_thetaLiftLog
 #check false_of_volumeTransfer_of_nonempty_packet_with_frobeniusSquareCandidate
 #check false_of_volumeTransfer_of_nonempty_hull_with_frobeniusSquareCandidate
+
+-- Scene1 joint models: one satisfying witness and one normalization countermodel.
+#check JoshiTeich.Act1Scene1.Audit.sceneInput
+#check JoshiTeich.Act1Scene1.Audit.scene_satisfying_model
+#check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
 
 end JoshiTeich.Prologue.Audit
