@@ -169,20 +169,14 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
 #check JoshiTeich.Act1Scene1.Audit.scene_explicit_audit_corollary312
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
-#check JoshiTeich.Act1Scene1.Audit.scene_qPilot
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_residueChar
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_inertDeg
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_two
-#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_normalization
-#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_index_bridge
-#check JoshiTeich.Act1Scene1.Audit.scene_qPilotData
-#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_explicit_audit_corollary312
 #check JoshiTeich.Act1Scene1.Audit.scene_tate_order_compatibility
 #check JoshiTeich.Act1Scene1.Audit.scene_qNorm_log_eq_order_mul
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
-#print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_explicit_audit_corollary312
 
 end JoshiTeich.Prologue.Audit

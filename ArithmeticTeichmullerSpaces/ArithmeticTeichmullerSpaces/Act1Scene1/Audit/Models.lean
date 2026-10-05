@@ -508,54 +508,6 @@ noncomputable def sceneSourcePair :
         change Nat.Coprime 5 4
         norm_num }
 
-noncomputable def scene_iut_qPilot_source :
-    @IutQPilotSource ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
-      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget := by
-  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
-  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
-    scene_padicTwo_is_adic_complete
-  exact
-    { badFinset := sceneTarget.scene1.data.link.places
-      badFinset_spec := rfl }
-
-noncomputable def scene_qPilot :
-    @Corollary312QPilotData ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
-      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget := by
-  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
-  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
-    scene_padicTwo_is_adic_complete
-  exact scene_iut_qPilot_source.toSceneQPilot 2 sceneLink_tate_compatibility
-
-/-! The source normalization now uses the arithmetic q-pilot itself.  The
-explicit rational-place facts above provide the local numerical bridge; no
-weight is defined by solving the normalization equation. -/
-theorem scene_qPilot_source_normalization :
-    @Corollary312QPilotSourceNormalization ℚ inferInstance inferInstance ℤ_[2]
-      inferInstance 2 inferInstance scene_padicTwo_not_unit
-      scene_padicTwo_is_adic_complete sceneTarget
-      scene_tate_order_compatibility scene_qPilot := by
-  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
-  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
-    scene_padicTwo_is_adic_complete
-  refine { uniformizer_log_eq_weighted_residueChar_log := ?_ }
-  intro w hw
-  have hwLink : w ∈ sceneLinkData.places := by
-    rw [← sceneTarget_link_eq]
-    exact Corollary312QPilotData.mem_bad 2 scene_qPilot hw
-  have hwEq : w = rationalTwoPlace := by
-    simpa [sceneLinkData, AdelicThetaLinkData.ofTateParameters, sceneTateData]
-      using hwLink
-  subst w
-  change -Real.log (rationalTwoPlace (2 : ℚ)) =
-    Arithmetic.qPilotWeight rationalTwoPlace *
-      Real.log (Arithmetic.residueChar rationalTwoPlace)
-  rw [rationalTwoPlace_two, rationalTwoPlace_residueChar]
-  unfold Arithmetic.qPilotWeight
-  rw [rationalTwoPlace_inertDeg]
-  norm_num [Arithmetic.qPilotWeight]
-  rw [show (1 / 2 : ℝ) = (2 : ℝ)⁻¹ by norm_num, Real.log_inv]
-  ring
-
 noncomputable def scene_qFamily :
     @Corollary312TateQFamily ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
       inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget sceneVolume := by
@@ -613,17 +565,6 @@ noncomputable def scene_qFamily :
           -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
         rw [scene_qFactor_source]
         rfl }
-
-noncomputable def scene_qPilot_source_index_bridge :
-    @Corollary312QPilotSourceIndexBridge ℚ inferInstance inferInstance ℤ_[2]
-      inferInstance 2 inferInstance scene_padicTwo_not_unit
-      scene_padicTwo_is_adic_complete sceneTarget sceneVolume scene_qPilot
-      scene_qFamily := by
-  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
-  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
-    scene_padicTwo_is_adic_complete
-  exact Corollary312QPilotSourceIndexBridge.ofGrouping 2 sceneTarget
-    sceneVolume scene_qPilot scene_qFamily
 
 theorem scene_normalization :
     @Corollary312VolumeNormalization ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
@@ -749,30 +690,6 @@ noncomputable def sceneData :
       ell_ge_five := by norm_num [sceneTarget]
       ellStar_eq_half_sub_one := by norm_num [sceneTarget]
       ellStar_pos := by norm_num [sceneTarget] }
-
-noncomputable def scene_qPilotData :
-    @Corollary312Scene1QPilotData ℚ inferInstance inferInstance ℤ_[2]
-      inferInstance 2 inferInstance scene_padicTwo_not_unit
-      scene_padicTwo_is_adic_complete :=
-  by
-    letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
-    letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
-      scene_padicTwo_is_adic_complete
-    exact
-      { base := sceneData
-        source := scene_iut_qPilot_source
-        orderCompatibility := scene_tate_order_compatibility
-        sourceNormalization := scene_qPilot_source_normalization
-        sourceIndexBridge := scene_qPilot_source_index_bridge }
-
-theorem scene_qPilot_explicit_audit_corollary312 :
-    @Corollary312 ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
-      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget := by
-  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
-  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
-    scene_padicTwo_is_adic_complete
-  simpa [scene_qPilotData, sceneData] using
-    (JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data 2 scene_qPilotData)
 
 theorem scene_explicit_audit_corollary312 :
     @Corollary312 ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
