@@ -47,6 +47,10 @@ structure Corollary312SourceQPair
   place : Corollary312SourceQIndex p T
   rationalPrime_eq_residueChar :
     rationalPrime = Arithmetic.residueChar place.1
+  /-- The finite place lies over the rational prime ideal labelled by the pair. -/
+  rationalPrime_liesOver :
+    Ideal.LiesOver place.1.maximalIdeal.asIdeal
+      (Ideal.span {(rationalPrime : ℤ)})
   /-- The source pair is represented by a place carrying a Tate parameter. -/
   tate_place : place.1 ∈ T.scene1.data.link.tate.places
   /-- Coprimality of `ell` with the normalized Tate q-order, ported from

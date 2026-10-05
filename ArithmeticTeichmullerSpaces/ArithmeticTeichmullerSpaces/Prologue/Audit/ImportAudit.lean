@@ -33,6 +33,7 @@ open scoped NumberField
 #check Arithmetic.FinitePlaceDivisor
 #check Arithmetic.residueChar
 #check Arithmetic.residueChar_prime
+#check Arithmetic.residueChar_liesOver
 #check Arithmetic.HeightData
 #check Arithmetic.RamificationProfile
 
@@ -87,6 +88,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.grouping_place_eq
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.rationalPrime_eq_residueChar
+#check JoshiTeich.Act1Scene1.Corollary312SourceQPair.rationalPrime_liesOver
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.tate_place
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.q_order_coprime
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder

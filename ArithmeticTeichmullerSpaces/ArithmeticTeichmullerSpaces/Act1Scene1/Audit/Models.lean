@@ -311,6 +311,7 @@ noncomputable def sceneSourcePair :
       rationalPrime_prime := Arithmetic.residueChar_prime sceneSourcePlace.1
       place := sceneSourcePlace
       rationalPrime_eq_residueChar := rfl
+      rationalPrime_liesOver := Arithmetic.residueChar_liesOver sceneSourcePlace.1
       tate_place := by
         change rationalTwoPlace ∈ sceneTateData.places
         simp [sceneTateData]

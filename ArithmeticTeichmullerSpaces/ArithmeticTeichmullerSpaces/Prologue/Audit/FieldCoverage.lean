@@ -71,13 +71,11 @@ open JoshiTeich.Prologue.Theta
 #check TateParameterData.parameter
 #check TateParameterData.norm
 #check TateParameterData.orderNat
-#check TateParameterData.orderNat
 #check TateParameterLaws.places_nonempty
 #check TateParameterLaws.parameter_nonzero
 #check TateParameterLaws.norm_eq
 #check TateParameterLaws.norm_pos
 #check TateParameterLaws.norm_lt_one
-#check TateParameterLaws.orderNat_pos
 #check TateParameterLaws.orderNat_pos
 #check ThetaPilotScalingLaws.base_scalingIndex
 #check ThetaPilotScalingLaws.value_nonzero
