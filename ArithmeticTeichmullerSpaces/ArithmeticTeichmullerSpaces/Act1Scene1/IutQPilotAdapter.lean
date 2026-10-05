@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 
 namespace JoshiTeich.Act1Scene1
 
@@ -59,6 +59,11 @@ structure IutQPilotSource
     qOrder w = T.scene1.data.link.tate.qOrder w
   /-- Uniformizer normalization supplied by the IUT Tate/q-order source. -/
   orderCompatibility : TateOrderNormCompatibility T.scene1.data.link
+  /-- IUT normalized degree identifies the uniformizer logarithm with the q-pilot weight. -/
+  uniformizer_log_eq_weighted_residueChar_log :
+    ∀ w, w ∈ badPlacesOver →
+      -Real.log (orderCompatibility.uniformizerNorm w) =
+        Arithmetic.qPilotWeight w * Real.log (Arithmetic.residueChar w)
 
 namespace IutQPilotSource
 
@@ -110,6 +115,24 @@ lemma source_norm_eq_uniformizer_pow_order
     T.scene1.input_laws.tate_parameter hCompat w hwLink]
   rw [S.qOrder_eq_link w hw]
   exact S.orderCompatibility.norm_eq_pow_order w hwLink
+
+lemma toSceneQPilot_sourceNormalization
+    (S : IutQPilotSource p T)
+    (hCompat : QNormTateCompatibility T.scene1.data.link) :
+    Corollary312QPilotSourceNormalization p T S.orderCompatibility
+      (S.toSceneQPilot p hCompat) := by
+  refine { uniformizer_log_eq_weighted_residueChar_log := ?_ }
+  intro w hw
+  have hwBad : w ∈ S.badPlacesOver := by
+    have h := hw
+    change w ∈ S.badFinset at h
+    have hSet : w ∈ (↑S.badFinset : Set (NumberField.FinitePlace K)) :=
+      Finset.mem_coe.mpr h
+    rw [S.badFinset_spec] at hSet
+    exact hSet
+  change -Real.log (S.orderCompatibility.uniformizerNorm w) =
+    Arithmetic.qPilotWeight w * Real.log (Arithmetic.residueChar w)
+  exact S.uniformizer_log_eq_weighted_residueChar_log w hwBad
 
 lemma toSceneQPilot_weight_eq_arithmetic
     (S : IutQPilotSource p T)

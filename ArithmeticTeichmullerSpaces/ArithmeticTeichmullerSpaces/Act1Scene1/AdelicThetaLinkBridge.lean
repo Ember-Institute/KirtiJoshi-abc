@@ -55,9 +55,6 @@ structure Corollary312Scene1QPilotData
   base : Corollary312Scene1Data (K := K) (O := O) p
   /-- IUT-shaped q-pilot source; the local q-pilot is derived from this field. -/
   source : IutQPilotSource p base.target
-  sourceNormalization :
-    Corollary312QPilotSourceNormalization p base.target
-      source.orderCompatibility (source.toSceneQPilot p base.qFamily.compatibility)
   sourceIndexBridge :
     Corollary312QPilotSourceIndexBridge p base.target base.volume
       (source.toSceneQPilot p base.qFamily.compatibility)
@@ -103,7 +100,9 @@ theorem cor312_of_scene1_qPilot_data
   exact corollary312_of_qPilot_accounting p D.base.target D.base.volume
     D.base.qFamily D.base.normalization D.base.accounting
     (Corollary312Scene1QPilotData.qPilot p D)
-    D.source.orderCompatibility D.sourceNormalization D.base.ell_prime.pos
+    D.source.orderCompatibility
+      (D.source.toSceneQPilot_sourceNormalization p D.base.qFamily.compatibility)
+      D.base.ell_prime.pos
     D.sourceIndexBridge D.base.ell_prime D.base.ell_ge_five
     D.base.ellStar_eq_half_sub_one D.base.ellStar_pos
 

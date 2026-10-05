@@ -140,7 +140,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.tateParameter_eq_link
 #check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_eq_link
 #check JoshiTeich.Act1Scene1.IutQPilotSource.orderCompatibility
+#check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizer_log_eq_weighted_residueChar_log
 #check JoshiTeich.Act1Scene1.IutQPilotSource.source_norm_eq_uniformizer_pow_order
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_sourceNormalization
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_weight_eq_arithmetic
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus
@@ -179,6 +181,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
 #check JoshiTeich.Act1Scene1.Audit.scene_explicit_audit_corollary312
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
+#check JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_residueChar
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_inertDeg
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_two
@@ -188,5 +191,6 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
+#print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 
 end JoshiTeich.Prologue.Audit

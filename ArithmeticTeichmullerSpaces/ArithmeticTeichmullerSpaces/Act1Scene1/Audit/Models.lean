@@ -725,6 +725,50 @@ theorem scene_bad_normalization_violation :
     Real.exp_pos _
   linarith
 
+/-!
+The Prologue contracts, including `AdelicThetaLink`, do not determine the
+target-specific theta volume.  This countermodel keeps the complete satisfying
+`sceneInput` and changes only `thetaVolume`; the resulting target violates
+Corollary 3.12.  It is the executable audit witness that the old
+`cor312_of_adelicThetaLink` reading was invalid.
+-/
+noncomputable def sceneAdelicLinkOnlyBadTarget :
+    @Corollary312Data ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
+      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete :=
+  by
+    letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
+    letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
+      scene_padicTwo_is_adic_complete
+    exact { sceneTarget with thetaVolume := Real.exp (4 * sceneQTerm) }
+
+theorem scene_adelicThetaLink_only_countermodel :
+    letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
+    letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
+      scene_padicTwo_is_adic_complete
+    ¬ @Corollary312 ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
+      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete
+      sceneAdelicLinkOnlyBadTarget := by
+  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
+  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
+    scene_padicTwo_is_adic_complete
+  intro h
+  change -(1 / (sceneAdelicLinkOnlyBadTarget.ellStar : ℝ)) *
+      |Real.log sceneAdelicLinkOnlyBadTarget.thetaVolume| ≥
+    -Corollary312Data.qLogSum 2 sceneAdelicLinkOnlyBadTarget at h
+  have hLogVolume :
+      Real.log sceneAdelicLinkOnlyBadTarget.thetaVolume = 4 * sceneQTerm := by
+    simp [sceneAdelicLinkOnlyBadTarget]
+  have hQLogSum :
+      Corollary312Data.qLogSum 2 sceneAdelicLinkOnlyBadTarget = sceneQTerm := by
+    change (∑ _ : Fin 1, sceneQTerm) = sceneQTerm
+    simp
+  rw [hLogVolume, hQLogSum] at h
+  have hAbs : |(4 : ℝ) * sceneQTerm| = 4 * sceneQTerm := by
+    rw [abs_of_nonneg (mul_nonneg (by norm_num) sceneQTerm_pos.le)]
+  rw [hAbs] at h
+  norm_num [sceneAdelicLinkOnlyBadTarget, sceneTarget] at h
+  linarith [sceneQTerm_pos]
+
 end SceneInstances
 
 end JoshiTeich.Act1Scene1.Audit
