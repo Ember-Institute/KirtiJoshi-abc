@@ -81,6 +81,7 @@ noncomputable def auditTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
   parameter := fun _ => 2
   norm := fun w => w (2 : ℚ)
+  orderNat := fun _ => 1
 
 noncomputable def auditConductor : FinitePlaceDivisor ℚ where
   support := {rationalTwoPlace}

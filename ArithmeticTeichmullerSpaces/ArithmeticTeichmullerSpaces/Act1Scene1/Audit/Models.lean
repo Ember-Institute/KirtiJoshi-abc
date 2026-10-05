@@ -28,6 +28,7 @@ noncomputable def sceneTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
   parameter := fun _ => 16
   norm := fun w => w (16 : ℚ)
+  orderNat := fun _ => 1
 
 theorem sceneTateData_laws : TateParameterLaws sceneTateData := by
   constructor
@@ -59,6 +60,8 @@ theorem sceneTateData_laws : TateParameterLaws sceneTateData := by
       exact map_natCast (algebraMap (𝓞 ℚ) ℚ) 16
     rw [hmap] at hnorm
     exact hnorm
+  · intro w hw
+    simp [sceneTateData]
 
 noncomputable def sceneQNorm : ℝ := sceneTateData.norm rationalTwoPlace
 

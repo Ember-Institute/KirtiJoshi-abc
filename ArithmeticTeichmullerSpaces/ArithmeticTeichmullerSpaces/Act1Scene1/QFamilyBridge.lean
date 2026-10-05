@@ -48,6 +48,27 @@ structure Corollary312SourceQPair
   rationalPrime_eq_residueChar :
     rationalPrime = Arithmetic.residueChar place.1
 
+namespace Corollary312SourceQPair
+
+variable {K : Type uK} [Field K] [NumberField K]
+variable {O : Type uK} [CommRing O] (p : ℕ)
+variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+variable [IsAdicComplete (Ideal.span {(p : O)}) O]
+variable {T : Corollary312Data K O p}
+
+/-- The normalized Tate q-order attached to the pair's finite place.  This is the
+`AdmissiblePrimeData.qOrder` projection in `iut`, with the external ordered Tate
+parameter replaced by the Prologue carrier's `orderNat` field. -/
+noncomputable def qOrder (self : Corollary312SourceQPair p T) : ℕ :=
+  T.scene1.data.link.tate.qOrder self.place.1
+
+lemma qOrder_pos (self : Corollary312SourceQPair p T)
+    (hw : self.place.1 ∈ T.scene1.data.link.tate.places) : 0 < self.qOrder p := by
+  unfold qOrder
+  exact T.scene1.input_laws.tate_parameter.orderNat_pos self.place.1 hw
+
+end Corollary312SourceQPair
+
 structure Corollary312SourceQGrouping
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)

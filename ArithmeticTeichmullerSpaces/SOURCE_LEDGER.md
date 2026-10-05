@@ -38,7 +38,8 @@
 | `JT-ATS-PROLOGUE-PERFECTOID` | `untiltMap`, `thetaMap`, `UntiltingLaws`, `FontaineThetaLaws` and canonical law theorems | `ArithmeticTeichmullerSpaces/Prologue/Perfectoid/Untilts.lean` | D-adapter preserving explicit untilt, reduction, Frobenius and theta laws |
 | `JT-ATS-PROLOGUE-PERFECTOID-DATA` | `PerfectoidData`, `PerfectoidLaws`, `canonicalPerfectoidData` and its law theorem | `ArithmeticTeichmullerSpaces/Prologue/Perfectoid/Data.lean` | bundled untilt/theta carrier with explicit law boundary |
 | `JT-ATS-AUDIT-PERFECTOID` | `padicTwoPerfectoidData`, bundled law model, zero bundled countermodel and audit theorems | `ArithmeticTeichmullerSpaces/Prologue/Audit/PerfectoidModels.lean` | compiled non-degenerate `ℤ_[2]` model and law-violation witnesses |
-| `JT-ATS-II-TATE-PARAMETER` | `TateParameterData`, `TateParameterLaws` | `ArithmeticTeichmullerSpaces/Prologue/Theta/Tate.lean` | D-interface for the finite-place Tate parameter function, nonzero parameter, and `0 < |q| < 1`; II `th:tate-parameter-as-a-function`, lines 609-630; III `pr:admissible-lifts-tate-params`, lines 1530-1539 |
+| `JT-ATS-II-TATE-PARAMETER` | `TateParameterData`, `TateParameterLaws` | `ArithmeticTeichmullerSpaces/Prologue/Theta/Tate.lean` | D-interface for the finite-place Tate parameter function, nonzero parameter, `0 < |q| < 1`, and positive normalized order; II `th:tate-parameter-as-a-function`, lines 609-630; III `pr:admissible-lifts-tate-params`, lines 1530-1539 |
+| `IUT-COR312-Q-ORDER` | `TateParameterData.qOrder`, `TateParameterData.qOrder_pos`, `Corollary312SourceQPair.qOrder`, `Corollary312SourceQPair.qOrder_pos` | `Prologue/Theta/Tate.lean`, `Act1Scene1/QFamilyBridge.lean` | `iut`; port of `Iut.AdmissiblePrimeData.qOrder` and `qOrder_pos` from `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`, with `OrderedTateParameter.orderNat` adapted to the frozen Prologue `orderNat` carrier; the pair-level positivity theorem requires explicit Tate-place support |
 | `JT-ATS-AUDIT-TATE` | `auditTateData_laws`, `auditTateData_violation` | `ArithmeticTeichmullerSpaces/Prologue/Audit/TateModels.lean` | compiled `q = 2` model at the genuine `(2)` place and zero-parameter countermodel |
 | `JT-ATS-II-THETA-PILOT-SCALING` | `ThetaPilotData.scalingIndex`, `ThetaPilotScalingLaws` | `ArithmeticTeichmullerSpaces/Prologue/Theta/Pilot.lean` and `Interfaces/Carriers.lean` | D-interface for nonzero theta-pilot values and `j^2` norm scaling; II `pr:lift-vals`, lines 820-836; `pr:teichmuller-lift-B`, lines 968-975; III `th:adelic-theta-link`, lines 1139-1166 |
 | `JT-ATS-AUDIT-THETA-PILOT` | `auditScalingTheta_laws`, `zeroScalingTheta_violates_laws` | `ArithmeticTeichmullerSpaces/Prologue/Audit/PilotModels.lean` | compiled two-index scaling model with exponents `1, 2` and norms `1/2, 1/16`, plus zero-value countermodel |
@@ -125,7 +126,8 @@ are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`
 ## IUT reference boundary
 
 The reference checkout is `refer/iut` at commit `d9465c111ec4073709f67e9fccec7e3eb374a816`.
-No IUT file is copied into the current tree and no Lean module imports `refer/iut`.
-The checkout remains an API and statement reference only. Any future copied file must add
-its source path, source commit, license, copyright notice, destination path and modification
-summary before it is used.
+The current tree does not import `refer/iut` as a Lake dependency. Individual APIs may be
+ported after adaptation to the frozen mathlib boundary; each port records its source path,
+source commit, license/copyright status, destination path and modification summary in this
+ledger. The q-order port above is such an adapted API, not a wholesale copy of the
+`TateCurvesTheta`-dependent admissible-prime module.
