@@ -54,6 +54,37 @@ lemma placeWeight_pos (w : NumberField.FinitePlace K) : 0 < placeWeight w := by
 lemma qPilotWeight_pos (w : NumberField.FinitePlace K) : 0 < qPilotWeight w := by
   exact div_pos (by exact_mod_cast inertDeg_pos w) finrank_pos
 
+/-!
+The `iut` q-pilot uses residue degrees, while the standard finite-place
+identity controls the larger local degrees `e_w f_w`.  This bridge records the
+part that is independent of the place-to-`primesOver` indexing dictionary:
+any finite set whose local degrees sum to at most `[K : ℚ]` has total q-pilot
+weight at most one.
+-/
+lemma qPilotWeight_sum_le_one_of_localDeg_sum_le
+    (S : Finset (NumberField.FinitePlace K))
+    (hS : ∑ w ∈ S, localDeg w ≤ Module.finrank ℚ K) :
+    ∑ w ∈ S, qPilotWeight w ≤ 1 := by
+  have hPoint : ∀ w ∈ S, (inertDeg w : ℝ) ≤ (localDeg w : ℝ) := by
+    intro w hw
+    unfold localDeg
+    exact_mod_cast Nat.le_mul_of_pos_left _ (ramIdx_pos w)
+  have hInert :
+      ∑ w ∈ S, (inertDeg w : ℝ) ≤ (Module.finrank ℚ K : ℝ) := by
+    calc
+      ∑ w ∈ S, (inertDeg w : ℝ) ≤ ∑ w ∈ S, (localDeg w : ℝ) := by
+        exact Finset.sum_le_sum fun w hw => hPoint w hw
+      _ ≤ (Module.finrank ℚ K : ℝ) := by
+        exact_mod_cast hS
+  have hRank : (0 : ℝ) < Module.finrank ℚ K := finrank_pos
+  unfold qPilotWeight
+  rw [← Finset.sum_div]
+  calc
+    (∑ w ∈ S, (inertDeg w : ℝ)) / Module.finrank ℚ K ≤
+        (Module.finrank ℚ K : ℝ) / Module.finrank ℚ K :=
+      div_le_div_of_nonneg_right hInert hRank.le
+    _ = 1 := by field_simp
+
 noncomputable def residueChar (w : NumberField.FinitePlace K) : ℕ :=
   ringChar (𝓞 K ⧸ w.maximalIdeal.asIdeal)
 

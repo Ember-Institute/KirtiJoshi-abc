@@ -46,6 +46,7 @@ open scoped NumberField
 #check Arithmetic.placeWeight_pos
 #check Arithmetic.qPilotWeight
 #check Arithmetic.qPilotWeight_pos
+#check Arithmetic.qPilotWeight_sum_le_one_of_localDeg_sum_le
 #check Arithmetic.natCast_mem_maximalIdeal_iff
 #check Arithmetic.residueChar_eq_of_liesOver
 #check Arithmetic.HeightData
