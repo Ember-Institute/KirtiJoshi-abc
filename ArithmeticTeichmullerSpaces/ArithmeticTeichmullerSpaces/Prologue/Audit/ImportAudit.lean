@@ -143,6 +143,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Audit.scene_satisfying_model
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilot
+#check JoshiTeich.Act1Scene1.Audit.scene_tate_order_compatibility
+#check JoshiTeich.Act1Scene1.Audit.scene_qNorm_log_eq_order_mul
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 

@@ -29,7 +29,7 @@ noncomputable def sceneTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
   parameter := fun _ => 16
   norm := fun w => w (16 : ℚ)
-  orderNat := fun _ => 1
+  orderNat := fun _ => 4
 
 theorem sceneTateData_laws : TateParameterLaws sceneTateData := by
   constructor
@@ -129,11 +129,70 @@ noncomputable def sceneLinkData : AdelicThetaLinkData ℚ :=
   AdelicThetaLinkData.ofTateParameters sceneTateData sceneTheta (0 : Fin 2)
     scenePacketHull auditHeight auditRamificationProfile (2 * sceneQTerm) 1
 
+noncomputable def scene_tate_order_compatibility :
+    TateOrderNormCompatibility sceneLinkData := by
+  refine
+    { uniformizerNorm := fun w => w (2 : ℚ)
+      uniformizerNorm_pos := ?_
+      uniformizerNorm_lt_one := ?_
+      norm_eq_pow_order := ?_ }
+  · intro w hw
+    simp only [sceneLinkData, AdelicThetaLinkData.ofTateParameters,
+      sceneTateData, Finset.mem_singleton] at hw
+    subst w
+    exact NumberField.FinitePlace.pos_iff.mpr (by norm_num)
+  · intro w hw
+    simp only [sceneLinkData, AdelicThetaLinkData.ofTateParameters,
+      sceneTateData, Finset.mem_singleton] at hw
+    subst w
+    change ‖NumberField.FinitePlace.embedding rationalTwoHeightOne (2 : ℚ)‖ < 1
+    have hnorm :
+        ‖NumberField.FinitePlace.embedding rationalTwoHeightOne
+            (algebraMap (𝓞 ℚ) ℚ (2 : 𝓞 ℚ))‖ < 1 :=
+      (NumberField.FinitePlace.norm_lt_one_iff_mem ℚ rationalTwoHeightOne
+        (2 : 𝓞 ℚ)).2 (by
+          change (2 : 𝓞 ℚ) ∈ rationalTwoPrimeIdeal
+          change Rat.ringOfIntegersEquiv (2 : 𝓞 ℚ) ∈ Ideal.span {(2 : ℤ)}
+          have hmap : Rat.ringOfIntegersEquiv (2 : 𝓞 ℚ) = (2 : ℤ) := by
+            apply Rat.ringOfIntegersEquiv.symm.injective
+            apply NumberField.RingOfIntegers.ext
+            simp [Rat.ringOfIntegersEquiv_apply_coe]
+          rw [hmap]
+          exact Ideal.mem_span_singleton_self _)
+    have hmap : algebraMap (𝓞 ℚ) ℚ (2 : 𝓞 ℚ) = (2 : ℚ) := by
+      exact map_natCast (algebraMap (𝓞 ℚ) ℚ) 2
+    rw [hmap] at hnorm
+    exact hnorm
+  · intro w hw
+    simp only [sceneLinkData, AdelicThetaLinkData.ofTateParameters,
+      sceneTateData, Finset.mem_singleton] at hw
+    subst w
+    change rationalTwoPlace (16 : ℚ) =
+      (rationalTwoPlace (2 : ℚ)) ^ (4 : ℕ)
+    rw [show (16 : ℚ) = (2 : ℚ) ^ (4 : ℕ) by norm_num, map_pow]
+
 theorem sceneLink_tate_compatibility :
     QNormTateCompatibility sceneLinkData := by
   exact qNormTateCompatibility_of_tateParameters sceneTateData sceneTheta
     (0 : Fin 2) scenePacketHull auditHeight auditRamificationProfile
     (2 * sceneQTerm) 1
+
+theorem scene_qNorm_log_eq_order_mul :
+    -Real.log sceneQNorm =
+      (4 : ℝ) *
+        -Real.log (scene_tate_order_compatibility.uniformizerNorm rationalTwoPlace) := by
+  have hw : rationalTwoPlace ∈ sceneLinkData.places := by
+    simp [sceneLinkData, AdelicThetaLinkData.ofTateParameters, sceneTateData]
+  have hqNorm : sceneLinkData.qNorm rationalTwoPlace = sceneQNorm := by
+    rw [sceneLink_tate_compatibility.norm_eq sceneLinkData sceneTateData_laws
+      rationalTwoPlace hw]
+    rfl
+  have h := TateOrderNormCompatibility.qNorm_log_eq_order_mul
+    sceneLinkData sceneTateData_laws sceneLink_tate_compatibility
+      scene_tate_order_compatibility rationalTwoPlace hw
+  rw [hqNorm] at h
+  simpa [sceneQNorm, sceneLinkData, AdelicThetaLinkData.ofTateParameters,
+    sceneTateData, TateParameterData.qOrder] using h
 
 theorem sceneLink_first_axiom : FirstAxiom sceneLinkData := by
   constructor
@@ -317,7 +376,7 @@ noncomputable def sceneSourcePair :
         change rationalTwoPlace ∈ sceneTateData.places
         simp [sceneTateData]
       q_order_coprime := by
-        change Nat.Coprime 5 1
+        change Nat.Coprime 5 4
         norm_num }
 
 noncomputable def scene_qPilot :
