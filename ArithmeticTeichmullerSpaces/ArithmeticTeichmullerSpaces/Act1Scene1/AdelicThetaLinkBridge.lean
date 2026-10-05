@@ -44,8 +44,8 @@ structure Corollary312Scene1Data
 /-!
 The q-pilot route has additional construction obligations which are not part
 of the generic Scene1 assembly.  Keeping them in a separate bundle makes the
-route explicit: a caller must provide the Tate order/norm compatibility, the
-local q-pilot normalization, and the finite source-index equivalence.
+route explicit: the IUT source must provide Tate order/norm compatibility,
+the local q-pilot normalization, and the finite source-index equivalence.
 -/
 structure Corollary312Scene1QPilotData
     {K : Type uK} [Field K] [NumberField K]
@@ -55,10 +55,9 @@ structure Corollary312Scene1QPilotData
   base : Corollary312Scene1Data (K := K) (O := O) p
   /-- IUT-shaped q-pilot source; the local q-pilot is derived from this field. -/
   source : IutQPilotSource p base.target
-  orderCompatibility : TateOrderNormCompatibility base.target.scene1.data.link
   sourceNormalization :
     Corollary312QPilotSourceNormalization p base.target
-      orderCompatibility (source.toSceneQPilot p base.qFamily.compatibility)
+      source.orderCompatibility (source.toSceneQPilot p base.qFamily.compatibility)
   sourceIndexBridge :
     Corollary312QPilotSourceIndexBridge p base.target base.volume
       (source.toSceneQPilot p base.qFamily.compatibility)
@@ -104,7 +103,7 @@ theorem cor312_of_scene1_qPilot_data
   exact corollary312_of_qPilot_accounting p D.base.target D.base.volume
     D.base.qFamily D.base.normalization D.base.accounting
     (Corollary312Scene1QPilotData.qPilot p D)
-    D.orderCompatibility D.sourceNormalization D.base.ell_prime.pos
+    D.source.orderCompatibility D.sourceNormalization D.base.ell_prime.pos
     D.sourceIndexBridge D.base.ell_prime D.base.ell_ge_five
     D.base.ellStar_eq_half_sub_one D.base.ellStar_pos
 

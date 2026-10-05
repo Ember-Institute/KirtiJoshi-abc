@@ -19,8 +19,11 @@ boundary: Scene1/Derived
 `iut` stores the bad-place enumeration and its positive weights in
 `QPilotData`. Its concrete constructor `QPilotInputs.qPilot` supplies the
 weight `inertDeg / [K : ℚ]`; this adapter derives that same weight instead of
-accepting it as a free field. It does not construct `InitialThetaData`, `TateFamily`, or
-the equality between `badPlacesOver` and the local `AdelicThetaLink` carrier.
+accepting it as a free field. The source certificate below keeps the actual
+`InitialThetaData` obligations visible: the `badPlacesOver` carrier, its
+Tate parameter and q-order data, and the identifications with the local
+Scene1 carrier are all supplied by the caller. No constructor from a norm-bad
+element is provided here.
 -/
 
 structure IutQPilotSource
@@ -29,11 +32,33 @@ structure IutQPilotSource
     [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
     [IsAdicComplete (Ideal.span {(p : O)}) O]
     (T : Corollary312Data K O p) where
+  /-- The `badPlacesOver` carrier exported by the IUT initial Theta data. -/
+  badPlacesOver : Set (NumberField.FinitePlace K)
+  /-- Finiteness of the IUT bad-place carrier (`QPilotInputs.bad_finite`). -/
+  badPlacesOver_finite : badPlacesOver.Finite
+  /-- The Tate parameter attached to each place by the IUT Theta data. -/
+  tateParameter : NumberField.FinitePlace K → K
+  /-- The normalized integer q-order attached to each bad place. -/
+  qOrder : NumberField.FinitePlace K → ℕ
+  /-- The IUT q-order is positive on the bad carrier. -/
+  qOrder_pos : ∀ w, w ∈ badPlacesOver → 0 < qOrder w
+  /-- The Tate parameter is nonzero on the bad carrier. -/
+  tateParameter_ne_zero : ∀ w, w ∈ badPlacesOver → tateParameter w ≠ 0
   /-- The finite carrier exported by the IUT q-pilot construction. -/
   badFinset : Finset (NumberField.FinitePlace K)
-  /-- Adapter obligation: the exported carrier is the Scene1 link carrier. -/
-  badFinset_spec : (↑badFinset : Set (NumberField.FinitePlace K)) =
+  /-- The finite enumeration is exactly `badPlacesOver`. -/
+  badFinset_spec : (↑badFinset : Set (NumberField.FinitePlace K)) = badPlacesOver
+  /-- The IUT bad-place carrier is the Scene1 link carrier. -/
+  badPlacesOver_eq_link : badPlacesOver =
     (↑T.scene1.data.link.places : Set (NumberField.FinitePlace K))
+  /-- The IUT Tate parameter agrees with the local Tate parameter. -/
+  tateParameter_eq_link : ∀ w, w ∈ badPlacesOver →
+    tateParameter w = T.scene1.data.link.tate.parameter w
+  /-- The IUT q-order agrees with the local Tate q-order. -/
+  qOrder_eq_link : ∀ w, w ∈ badPlacesOver →
+    qOrder w = T.scene1.data.link.tate.qOrder w
+  /-- Uniformizer normalization supplied by the IUT Tate/q-order source. -/
+  orderCompatibility : TateOrderNormCompatibility T.scene1.data.link
 
 namespace IutQPilotSource
 
@@ -47,15 +72,14 @@ lemma badFinset_eq_link_places (S : IutQPilotSource p T) :
     S.badFinset = T.scene1.data.link.places := by
   apply Finset.ext
   intro w
-  have h := Set.ext_iff.mp S.badFinset_spec w
+  have h := Set.ext_iff.mp (S.badFinset_spec.trans S.badPlacesOver_eq_link) w
   simpa using h
 
-/-! This is the local analogue of the `iut` concrete q-pilot constructor after
-the bad-place carrier has been identified with a norm-bad support. -/
-noncomputable def ofNormBadLocus
-    (B : Corollary312NormBadLocus p T) : IutQPilotSource p T := by
-  refine { badFinset := Arithmetic.normGtOneFinset B.element, badFinset_spec := ?_ }
-  rw [B.support_eq]
+lemma mem_badPlacesOver_iff_link (S : IutQPilotSource p T)
+    (w : NumberField.FinitePlace K) :
+    w ∈ S.badPlacesOver ↔ w ∈ T.scene1.data.link.places := by
+  change w ∈ S.badPlacesOver ↔ w ∈ (↑T.scene1.data.link.places : Set _)
+  rw [S.badPlacesOver_eq_link]
 
 noncomputable def toSceneQPilot
     (S : IutQPilotSource p T)
@@ -69,6 +93,23 @@ noncomputable def toSceneQPilot
         intro w hw
         exact Arithmetic.qPilotWeight_pos w
       compatibility := hCompat }
+
+lemma source_norm_eq_uniformizer_pow_order
+    (S : IutQPilotSource p T)
+    (hCompat : QNormTateCompatibility T.scene1.data.link)
+    (w : NumberField.FinitePlace K) (hw : w ∈ S.badPlacesOver) :
+    w (S.tateParameter w) =
+      S.orderCompatibility.uniformizerNorm w ^ S.qOrder w := by
+  rw [S.tateParameter_eq_link w hw]
+  have hwLink : w ∈ T.scene1.data.link.places :=
+    (S.mem_badPlacesOver_iff_link p w).mp hw
+  have hParam := hCompat.parameter_eq w hwLink
+  rw [← hParam]
+  change T.scene1.data.link.qNorm w = _
+  rw [QNormTateCompatibility.norm_eq T.scene1.data.link
+    T.scene1.input_laws.tate_parameter hCompat w hwLink]
+  rw [S.qOrder_eq_link w hw]
+  exact S.orderCompatibility.norm_eq_pow_order w hwLink
 
 lemma toSceneQPilot_weight_eq_arithmetic
     (S : IutQPilotSource p T)
