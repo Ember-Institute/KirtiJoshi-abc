@@ -59,7 +59,13 @@ structure IutQPilotSource
     qOrder w = T.scene1.data.link.tate.qOrder w
   /-- Uniformizer normalization supplied by the IUT Tate/q-order source. -/
   orderCompatibility : TateOrderNormCompatibility T.scene1.data.link
-  /-- IUT normalized degree identifies the uniformizer logarithm with the q-pilot weight. -/
+  /--
+  IUT normalized degree identifies the uniformizer logarithm with the q-pilot
+  weight.  This is an explicit open source obligation: the current
+  `AdelicThetaLinkData.qNorm` is the raw finite-place norm, while IUT's
+  `QPilotInputs.qPilot` uses `inertDeg / [K : ℚ]`; no degree normalization is
+  inferred by this adapter.
+  -/
   uniformizer_log_eq_weighted_residueChar_log :
     ∀ w, w ∈ badPlacesOver →
       -Real.log (orderCompatibility.uniformizerNorm w) =
