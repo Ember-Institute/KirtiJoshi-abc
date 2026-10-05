@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.TransferQAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotAdapter
 
 namespace JoshiTeich.Act1Scene1
 
@@ -52,14 +53,29 @@ structure Corollary312Scene1QPilotData
     [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
     [IsAdicComplete (Ideal.span {(p : O)}) O] where
   base : Corollary312Scene1Data (K := K) (O := O) p
-  qPilot : Corollary312QPilotData p base.target
+  /-- IUT-shaped q-pilot source; the local q-pilot is derived from this field. -/
+  source : IutQPilotSource p base.target
   orderCompatibility : TateOrderNormCompatibility base.target.scene1.data.link
   sourceNormalization :
     Corollary312QPilotSourceNormalization p base.target
-      orderCompatibility qPilot
+      orderCompatibility (source.toSceneQPilot p base.qFamily.compatibility)
   sourceIndexBridge :
-    Corollary312QPilotSourceIndexBridge p base.target base.volume qPilot
+    Corollary312QPilotSourceIndexBridge p base.target base.volume
+      (source.toSceneQPilot p base.qFamily.compatibility)
       base.qFamily
+
+namespace Corollary312Scene1QPilotData
+
+noncomputable def qPilot
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : Corollary312Scene1QPilotData (K := K) (O := O) p) :
+    Corollary312QPilotData p D.base.target :=
+  D.source.toSceneQPilot (K := K) (O := O) p D.base.qFamily.compatibility
+
+end Corollary312Scene1QPilotData
 
 /-- Conditional assembly from complete Scene1 data.  In particular, this
 theorem consumes target-specific volume, q-family, normalization, and
@@ -86,7 +102,8 @@ theorem cor312_of_scene1_qPilot_data
     (D : Corollary312Scene1QPilotData (K := K) (O := O) p) :
     Corollary312 p D.base.target := by
   exact corollary312_of_qPilot_accounting p D.base.target D.base.volume
-    D.base.qFamily D.base.normalization D.base.accounting D.qPilot
+    D.base.qFamily D.base.normalization D.base.accounting
+    (Corollary312Scene1QPilotData.qPilot p D)
     D.orderCompatibility D.sourceNormalization D.base.ell_prime.pos
     D.sourceIndexBridge D.base.ell_prime D.base.ell_ge_five
     D.base.ellStar_eq_half_sub_one D.base.ellStar_pos

@@ -13,6 +13,7 @@ import ArithmeticTeichmullerSpaces.Prologue.Audit.PilotModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.JointConsistency
 import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.Models
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
@@ -128,6 +129,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312NormBadLocus
 #check JoshiTeich.Act1Scene1.Corollary312NormBadLocus.mem_link_iff
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofArithmeticWeights
+#check JoshiTeich.Act1Scene1.IutQPilotSource
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_weight_eq_arithmetic
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus_weight_sum_le_one
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.filter_eq_sourcePlacesOver
@@ -160,8 +164,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312SideConditions.ellStar_eq_half_sub_one
 #check JoshiTeich.Act1Scene1.cor312_of_scene1_data
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData
+#check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.qPilot
 #check JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
-#check JoshiTeich.Act1Scene1.Audit.scene_satisfying_model
+#check JoshiTeich.Act1Scene1.Audit.scene_explicit_audit_corollary312
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilot
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_residueChar
@@ -170,12 +175,13 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_normalization
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_index_bridge
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilotData
-#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_satisfying_model
+#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_explicit_audit_corollary312
 #check JoshiTeich.Act1Scene1.Audit.scene_tate_order_compatibility
 #check JoshiTeich.Act1Scene1.Audit.scene_qNorm_log_eq_order_mul
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
-#print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_satisfying_model
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
+#print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_explicit_audit_corollary312
 
 end JoshiTeich.Prologue.Audit
