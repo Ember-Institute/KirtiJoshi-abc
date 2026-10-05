@@ -26,8 +26,46 @@ def Corollary312SourceQIndex
     {O : Type uK} [CommRing O] (p : ℕ)
     [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
     [IsAdicComplete (Ideal.span {(p : O)}) O]
-    (T : Corollary312Data K O p) : Type uK :=
+  (T : Corollary312Data K O p) : Type uK :=
   {w // w ∈ T.scene1.data.link.places}
+
+/-!
+The paper writes the finite q-family as pairs `(p,w)` with a rational prime
+`p` and a finite place `w`.  The place subtype above remains the target's
+local carrier; this structure makes the rational-prime label and the finite
+pair indexing explicit before a real Initial Theta Data construction is
+available.
+-/
+structure Corollary312SourceQPair
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p) where
+  rationalPrime : ℕ
+  rationalPrime_prime : Nat.Prime rationalPrime
+  place : Corollary312SourceQIndex p T
+
+structure Corollary312SourceQGrouping
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p) where
+  pair : Type uK
+  pairFintype : Fintype pair
+  pairData : pair → Corollary312SourceQPair p T
+  indexEquiv : T.qIndex ≃ pair
+
+noncomputable def Corollary312GroupedSourceQFactor
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (G : Corollary312SourceQGrouping p T)
+    (i : G.pair) : ℝ :=
+  (T.scene1.data.link.qNorm (G.pairData i).place.1) ^ (1 / (2 * (T.ell : ℝ)))
 
 noncomputable def Corollary312SourceQFactor
     {K : Type uK} [Field K] [NumberField K]

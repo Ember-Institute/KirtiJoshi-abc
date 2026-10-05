@@ -115,7 +115,10 @@ structure Corollary312TateQFamily
     (T : Corollary312Data K O p)
     (V : Corollary312VolumeData p T) where
   compatibility : QNormTateCompatibility T.scene1.data.link
+  grouping : Corollary312SourceQGrouping p T
   indexEquiv : T.qIndex ≃ Corollary312SourceQIndex p T
+  grouping_place_eq : ∀ i,
+    (grouping.pairData (grouping.indexEquiv i)).place = indexEquiv i
   qFactor_eq : ∀ i, V.qFactor i =
     Corollary312SourceQFactor p T (indexEquiv i)
   qLogTerm_eq : ∀ i, T.qLogTerm i =

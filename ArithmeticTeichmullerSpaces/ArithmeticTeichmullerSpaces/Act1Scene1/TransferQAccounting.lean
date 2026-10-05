@@ -70,9 +70,9 @@ noncomputable def Corollary312PacketSourceQLogSum
     (T : Corollary312Data K O p)
     (V : Corollary312VolumeData p T)
     (Q : Corollary312TateQFamily p T V)
-    (f : T.scene1.data.link.packetHull.packet → T.qIndex) : ℝ :=
+    (f : T.scene1.data.link.packetHull.packet → Q.grouping.pair) : ℝ :=
   letI := T.scene1.data.link.packetHull.packetFintype
-  ∑ x, -Real.log (Corollary312SourceQFactor p T (Q.indexEquiv (f x)))
+  ∑ x, -Real.log (Corollary312GroupedSourceQFactor p T Q.grouping (f x))
 
 noncomputable def Corollary312HullSourceQLogSum
     {K : Type uK} [Field K] [NumberField K]
@@ -82,9 +82,9 @@ noncomputable def Corollary312HullSourceQLogSum
     (T : Corollary312Data K O p)
     (V : Corollary312VolumeData p T)
     (Q : Corollary312TateQFamily p T V)
-    (f : T.scene1.data.link.packetHull.hull → T.qIndex) : ℝ :=
+    (f : T.scene1.data.link.packetHull.hull → Q.grouping.pair) : ℝ :=
   letI := T.scene1.data.link.packetHull.hullFintype
-  ∑ x, -Real.log (Corollary312SourceQFactor p T (Q.indexEquiv (f x)))
+  ∑ x, -Real.log (Corollary312GroupedSourceQFactor p T Q.grouping (f x))
 
 noncomputable def Corollary312SourceQLogSum
     {K : Type uK} [Field K] [NumberField K]
@@ -94,8 +94,8 @@ noncomputable def Corollary312SourceQLogSum
     (T : Corollary312Data K O p)
     (V : Corollary312VolumeData p T)
     (Q : Corollary312TateQFamily p T V) : ℝ :=
-  letI := T.qIndexFintype
-  ∑ i, -Real.log (Corollary312SourceQFactor p T (Q.indexEquiv i))
+  letI := Q.grouping.pairFintype
+  ∑ i, -Real.log (Corollary312GroupedSourceQFactor p T Q.grouping i)
 
 structure Corollary312TateQAccounting
     {K : Type uK} [Field K] [NumberField K]
@@ -105,17 +105,17 @@ structure Corollary312TateQAccounting
     (T : Corollary312Data K O p)
     (V : Corollary312VolumeData p T)
     (Q : Corollary312TateQFamily p T V) where
-  packet_qIndex : T.scene1.data.link.packetHull.packet → T.qIndex
-  hull_qIndex : T.scene1.data.link.packetHull.hull → T.qIndex
+  packet_pair : T.scene1.data.link.packetHull.packet → Q.grouping.pair
+  hull_pair : T.scene1.data.link.packetHull.hull → Q.grouping.pair
   packet_weight_le_source_qLogTerm :
     ∀ x, T.scene1.data.link.packetHull.packetWeight x ≤
-      -Real.log (Corollary312SourceQFactor p T (Q.indexEquiv (packet_qIndex x)))
+      -Real.log (Corollary312GroupedSourceQFactor p T Q.grouping (packet_pair x))
   hull_weight_le_source_qLogTerm :
     ∀ x, T.scene1.data.link.packetHull.hullWeight x ≤
-      -Real.log (Corollary312SourceQFactor p T (Q.indexEquiv (hull_qIndex x)))
+      -Real.log (Corollary312GroupedSourceQFactor p T Q.grouping (hull_pair x))
   q_accounting :
-    Corollary312PacketSourceQLogSum p T V Q packet_qIndex +
-        Corollary312HullSourceQLogSum p T V Q hull_qIndex =
+    Corollary312PacketSourceQLogSum p T V Q packet_pair +
+        Corollary312HullSourceQLogSum p T V Q hull_pair =
       (T.ellStar : ℝ) * Corollary312SourceQLogSum p T V Q
 
 def Corollary312TateQAccounting.toAccounting
@@ -131,44 +131,72 @@ def Corollary312TateQAccounting.toAccounting
   letI := T.scene1.data.link.packetHull.packetFintype
   letI := T.scene1.data.link.packetHull.hullFintype
   letI := T.qIndexFintype
+  letI := Q.grouping.pairFintype
+  have hPlace (a : Q.grouping.pair) :
+      (Q.grouping.pairData a).place =
+        Q.indexEquiv (Q.grouping.indexEquiv.symm a) := by
+    have h := Q.grouping_place_eq (Q.grouping.indexEquiv.symm a)
+    simpa using h
   refine
-    { packet_qIndex := A.packet_qIndex
-      hull_qIndex := A.hull_qIndex
+    { packet_qIndex := fun x => Q.grouping.indexEquiv.symm (A.packet_pair x)
+      hull_qIndex := fun x => Q.grouping.indexEquiv.symm (A.hull_pair x)
       packet_weight_le_qLogTerm := ?_
       hull_weight_le_qLogTerm := ?_
       q_accounting := ?_ }
   · intro x
     rw [Q.qLogTerm_eq]
+    rw [← hPlace (A.packet_pair x)]
     exact A.packet_weight_le_source_qLogTerm x
   · intro x
     rw [Q.qLogTerm_eq]
+    rw [← hPlace (A.hull_pair x)]
     exact A.hull_weight_le_source_qLogTerm x
   · have hPacket :
-        Corollary312PacketQLogSum p T A.packet_qIndex =
-          Corollary312PacketSourceQLogSum p T V Q A.packet_qIndex := by
+        Corollary312PacketQLogSum p T
+            (fun x => Q.grouping.indexEquiv.symm (A.packet_pair x)) =
+          Corollary312PacketSourceQLogSum p T V Q A.packet_pair := by
       unfold Corollary312PacketQLogSum Corollary312PacketSourceQLogSum
       apply Finset.sum_congr rfl
       intro x hx
-      exact Q.qLogTerm_eq (A.packet_qIndex x)
+      rw [Q.qLogTerm_eq]
+      rw [← hPlace (A.packet_pair x)]
+      rfl
     have hHull :
-        Corollary312HullQLogSum p T A.hull_qIndex =
-          Corollary312HullSourceQLogSum p T V Q A.hull_qIndex := by
+        Corollary312HullQLogSum p T
+            (fun x => Q.grouping.indexEquiv.symm (A.hull_pair x)) =
+          Corollary312HullSourceQLogSum p T V Q A.hull_pair := by
       unfold Corollary312HullQLogSum Corollary312HullSourceQLogSum
       apply Finset.sum_congr rfl
       intro x hx
-      exact Q.qLogTerm_eq (A.hull_qIndex x)
+      rw [Q.qLogTerm_eq]
+      rw [← hPlace (A.hull_pair x)]
+      rfl
     have hTotal :
         Corollary312Data.qLogSum p T =
           Corollary312SourceQLogSum p T V Q := by
       unfold Corollary312Data.qLogSum Corollary312SourceQLogSum
-      apply Finset.sum_congr rfl
-      intro i hi
-      exact Q.qLogTerm_eq i
+      calc
+        (∑ i : T.qIndex, T.qLogTerm i) =
+            ∑ i : T.qIndex,
+              -Real.log (Corollary312GroupedSourceQFactor p T Q.grouping
+                (Q.grouping.indexEquiv i)) := by
+          apply Finset.sum_congr rfl
+          intro i hi
+          rw [Q.qLogTerm_eq]
+          rw [← Q.grouping_place_eq i]
+          rfl
+        _ = ∑ a : Q.grouping.pair,
+              -Real.log (Corollary312GroupedSourceQFactor p T Q.grouping a) :=
+          by
+            simpa using Q.grouping.indexEquiv.sum_comp
+              (fun a => -Real.log (Corollary312GroupedSourceQFactor p T Q.grouping a))
     calc
-      Corollary312PacketQLogSum p T A.packet_qIndex +
-          Corollary312HullQLogSum p T A.hull_qIndex =
-          Corollary312PacketSourceQLogSum p T V Q A.packet_qIndex +
-            Corollary312HullSourceQLogSum p T V Q A.hull_qIndex := by
+      Corollary312PacketQLogSum p T
+            (fun x => Q.grouping.indexEquiv.symm (A.packet_pair x)) +
+          Corollary312HullQLogSum p T
+            (fun x => Q.grouping.indexEquiv.symm (A.hull_pair x)) =
+          Corollary312PacketSourceQLogSum p T V Q A.packet_pair +
+            Corollary312HullSourceQLogSum p T V Q A.hull_pair := by
               rw [hPacket, hHull]
       _ = (T.ellStar : ℝ) * Corollary312SourceQLogSum p T V Q := A.q_accounting
       _ = (T.ellStar : ℝ) * Corollary312Data.qLogSum p T := by

@@ -297,6 +297,17 @@ theorem scene_qFactor_source :
     (sceneTateData.norm rationalTwoPlace) ^ (1 / 10 : ℝ)
   congr 1 <;> norm_num [sceneTarget, sceneLinkData, sceneTateData]
 
+noncomputable def sceneSourcePair :
+    @Corollary312SourceQPair ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
+      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget := by
+  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
+  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
+    scene_padicTwo_is_adic_complete
+  exact
+    { rationalPrime := 2
+      rationalPrime_prime := Nat.prime_two
+      place := sceneSourcePlace }
+
 noncomputable def scene_qFamily :
     @Corollary312TateQFamily ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
       inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget sceneVolume := by
@@ -322,9 +333,25 @@ noncomputable def scene_qFamily :
           simpa [sceneLinkData, AdelicThetaLinkData.ofTateParameters, sceneTateData]
             using hiProp
         exact hi.symm }
+  let groupingEquiv : sceneTarget.qIndex ≃ Fin 1 :=
+    { toFun := fun _ => 0
+      invFun := fun _ => qZero
+      left_inv := by intro i; fin_cases i <;> rfl
+      right_inv := by intro i; fin_cases i <;> rfl }
+  let grouping : Corollary312SourceQGrouping 2 sceneTarget :=
+    { pair := Fin 1
+      pairFintype := inferInstance
+      pairData := fun _ => sceneSourcePair
+      indexEquiv := groupingEquiv }
   exact
     { compatibility := sceneLink_tate_compatibility
+      grouping := grouping
       indexEquiv := iEquiv
+      grouping_place_eq := by
+        intro i
+        fin_cases i
+        change sceneSourcePlace = sceneSourcePlace
+        rfl
       qFactor_eq := by
         intro i
         fin_cases i
@@ -359,39 +386,92 @@ noncomputable def scene_accounting :
   letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
     scene_padicTwo_is_adic_complete
   letI := sceneTarget.qIndexFintype
+  letI := scene_qFamily.grouping.pairFintype
+  letI := sceneTarget.scene1.data.link.packetHull.packetFintype
+  letI := sceneTarget.scene1.data.link.packetHull.hullFintype
   let qZero : sceneTarget.qIndex := by
     change Fin 1
     exact 0
+  let pairZero : scene_qFamily.grouping.pair :=
+    scene_qFamily.grouping.indexEquiv qZero
+  have hqZero : qZero = (by
+      change Fin 1
+      exact 0) := by
+    rfl
   have hIndex : scene_qFamily.indexEquiv qZero = sceneSourcePlace := by
     rfl
-  let f : sceneLinkData.packetHull.packet → sceneTarget.qIndex := fun _ => qZero
-  let g : sceneLinkData.packetHull.hull → sceneTarget.qIndex := fun _ => qZero
+  have hGrouped :
+      Corollary312GroupedSourceQFactor 2 sceneTarget scene_qFamily.grouping pairZero =
+        Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace := by
+    unfold Corollary312GroupedSourceQFactor Corollary312SourceQFactor
+    rw [show pairZero = scene_qFamily.grouping.indexEquiv qZero by rfl]
+    rw [scene_qFamily.grouping_place_eq qZero, hIndex]
+  let f : sceneTarget.scene1.data.link.packetHull.packet → scene_qFamily.grouping.pair :=
+    fun _ => pairZero
+  let g : sceneTarget.scene1.data.link.packetHull.hull → scene_qFamily.grouping.pair :=
+    fun _ => pairZero
   exact
-    { packet_qIndex := f
-      hull_qIndex := g
+    { packet_pair := f
+      hull_pair := g
       packet_weight_le_source_qLogTerm := by
         intro x
         change sceneQTerm ≤
-          -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
+          -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+            scene_qFamily.grouping pairZero)
+        rw [hGrouped]
         rw [← hIndex]
         rw [← scene_qFamily.qLogTerm_eq qZero]
         rfl
       hull_weight_le_source_qLogTerm := by
         intro x
         change sceneQTerm ≤
-          -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
+          -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+            scene_qFamily.grouping pairZero)
+        rw [hGrouped]
         rw [← hIndex]
         rw [← scene_qFamily.qLogTerm_eq qZero]
         rfl
       q_accounting := by
-        change
-          (∑ _ : Fin 1,
-              -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)) +
-              ∑ _ : Fin 1,
-                -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace) =
-            (2 : ℝ) *
-              ∑ _ : Fin 1,
-                -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
+        unfold Corollary312PacketSourceQLogSum Corollary312HullSourceQLogSum
+          Corollary312SourceQLogSum
+        have hGroupSum :
+            (∑ a : scene_qFamily.grouping.pair,
+                -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+                  scene_qFamily.grouping a)) =
+              -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+                scene_qFamily.grouping pairZero) := by
+          calc
+            (∑ a : scene_qFamily.grouping.pair,
+                -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+                  scene_qFamily.grouping a)) =
+                ∑ i : sceneTarget.qIndex,
+                  -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+                    scene_qFamily.grouping (scene_qFamily.grouping.indexEquiv i)) :=
+              (scene_qFamily.grouping.indexEquiv.sum_comp _).symm
+            _ = -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+                scene_qFamily.grouping
+                  (scene_qFamily.grouping.indexEquiv qZero)) := by
+              change
+                (∑ _ : Fin 1,
+                    -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+                      scene_qFamily.grouping (scene_qFamily.grouping.indexEquiv _))) = _
+              simp [hqZero, id]
+            _ = -Real.log (Corollary312GroupedSourceQFactor 2 sceneTarget
+                scene_qFamily.grouping pairZero) := by
+              rfl
+        rw [hGroupSum, hGrouped]
+        simp [f, g]
+        have hPacketCard :
+            Fintype.card sceneTarget.scene1.data.link.packetHull.packet = 1 := by
+          change Fintype.card (Fin 1) = 1
+          simp
+        have hHullCard :
+            Fintype.card sceneTarget.scene1.data.link.packetHull.hull = 1 := by
+          change Fintype.card (Fin 1) = 1
+          simp
+        rw [hPacketCard, hHullCard]
+        norm_num [sceneTarget]
+        rw [hGrouped]
         ring }
 
 noncomputable def sceneData :
