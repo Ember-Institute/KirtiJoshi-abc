@@ -46,6 +46,21 @@ structure Corollary312NormBadLocus
   support_eq :
     Arithmetic.normGtOneFinset element = T.scene1.data.link.places
 
+namespace Corollary312NormBadLocus
+
+variable {K : Type uK} [Field K] [NumberField K]
+variable {O : Type uK} [CommRing O] (p : ℕ)
+variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+variable [IsAdicComplete (Ideal.span {(p : O)}) O]
+variable {T : Corollary312Data K O p}
+
+lemma mem_link_iff (B : Corollary312NormBadLocus p T)
+    (w : NumberField.FinitePlace K) :
+    w ∈ T.scene1.data.link.places ↔ 1 < w B.element := by
+  rw [← B.support_eq, Arithmetic.mem_normGtOneFinset_iff]
+
+end Corollary312NormBadLocus
+
 structure Corollary312QPilotData
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)
@@ -104,6 +119,21 @@ noncomputable def Corollary312QPilotData.ofNormBadLocus
       compatibility := hCompat }
   intro w hw
   exact Arithmetic.qPilotWeight_pos w
+
+theorem Corollary312QPilotData.ofNormBadLocus_weight_sum_le_one
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (hCompat : QNormTateCompatibility T.scene1.data.link)
+    (B : Corollary312NormBadLocus p T)
+    (q : ℕ) (hq : q.Prime) :
+    let Q := Corollary312QPilotData.ofNormBadLocus p T hCompat B
+    ∑ w ∈ Q.badFinset.filter (fun w => Arithmetic.residueChar w = q), Q.weight w ≤ 1 := by
+  dsimp [Corollary312QPilotData.ofNormBadLocus]
+  exact Arithmetic.qPilotWeight_sum_le_one_of_residueChar_filter
+    (Arithmetic.normGtOneFinset B.element) q hq
 
 namespace Corollary312QPilotData
 

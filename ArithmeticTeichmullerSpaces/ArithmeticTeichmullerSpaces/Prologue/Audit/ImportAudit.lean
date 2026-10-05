@@ -124,8 +124,10 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder_pos
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData
 #check JoshiTeich.Act1Scene1.Corollary312NormBadLocus
+#check JoshiTeich.Act1Scene1.Corollary312NormBadLocus.mem_link_iff
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofArithmeticWeights
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus_weight_sum_le_one
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.mem_bad
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.mem_tate
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.qOrder_pos
