@@ -16,6 +16,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 
 namespace JoshiTeich.Prologue.Audit
 
@@ -140,6 +141,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312SideConditions.ell_ge_five
 #check JoshiTeich.Act1Scene1.Corollary312SideConditions.ellStar_eq_half_sub_one
 #check JoshiTeich.Act1Scene1.cor312_of_adelicThetaLink
+#check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData
+#check JoshiTeich.Act1Scene1.cor312_of_adelicThetaLink_qPilot
 #check JoshiTeich.Act1Scene1.Audit.scene_satisfying_model
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilot
@@ -147,5 +150,6 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Audit.scene_qNorm_log_eq_order_mul
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
+#print axioms JoshiTeich.Act1Scene1.cor312_of_adelicThetaLink_qPilot
 
 end JoshiTeich.Prologue.Audit

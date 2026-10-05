@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.TransferQAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
 
 namespace JoshiTeich.Act1Scene1
 
@@ -39,6 +40,27 @@ structure Corollary312Scene1Data
   ellStar_eq_half_sub_one : target.ellStar = (target.ell - 1) / 2
   ellStar_pos : 0 < target.ellStar
 
+/-!
+The q-pilot route has additional construction obligations which are not part
+of the generic Scene1 assembly.  Keeping them in a separate bundle makes the
+route explicit: a caller must provide the Tate order/norm compatibility, the
+local q-pilot normalization, and the finite source-index equivalence.
+-/
+structure Corollary312Scene1QPilotData
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O] where
+  base : Corollary312Scene1Data (K := K) (O := O) p
+  qPilot : Corollary312QPilotData p base.target
+  orderCompatibility : TateOrderNormCompatibility base.target.scene1.data.link
+  sourceNormalization :
+    Corollary312QPilotSourceNormalization p base.target
+      orderCompatibility qPilot
+  sourceIndexBridge :
+    Corollary312QPilotSourceIndexBridge p base.target base.volume qPilot
+      base.qFamily
+
 theorem cor312_of_adelicThetaLink
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)
@@ -49,5 +71,18 @@ theorem cor312_of_adelicThetaLink
   exact corollary312_of_transfer_q_accounting p D.target D.volume D.qFamily.toQFamily
     D.normalization D.accounting.toAccounting D.ell_prime D.ell_ge_five
     D.ellStar_eq_half_sub_one D.ellStar_pos
+
+theorem cor312_of_adelicThetaLink_qPilot
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : Corollary312Scene1QPilotData (K := K) (O := O) p) :
+    Corollary312 p D.base.target := by
+  exact corollary312_of_qPilot_accounting p D.base.target D.base.volume
+    D.base.qFamily D.base.normalization D.base.accounting D.qPilot
+    D.orderCompatibility D.sourceNormalization D.base.ell_prime.pos
+    D.sourceIndexBridge D.base.ell_prime D.base.ell_ge_five
+    D.base.ellStar_eq_half_sub_one D.base.ellStar_pos
 
 end JoshiTeich.Act1Scene1
