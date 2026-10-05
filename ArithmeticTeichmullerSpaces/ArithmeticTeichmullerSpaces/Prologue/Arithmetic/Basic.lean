@@ -16,11 +16,11 @@ imported as a dependency.
 
 /-- The ramification index of a finite place over its residue characteristic. -/
 noncomputable def ramIdx (w : NumberField.FinitePlace K) : ℕ :=
-  Ideal.ramificationIdx w.maximalIdeal.asIdeal (𝓞 K)
+  Ideal.ramificationIdx w.maximalIdeal.asIdeal ℤ
 
 /-- The residue degree of a finite place over its residue characteristic. -/
 noncomputable def inertDeg (w : NumberField.FinitePlace K) : ℕ :=
-  Ideal.inertiaDeg w.maximalIdeal.asIdeal (𝓞 K)
+  Ideal.inertiaDeg w.maximalIdeal.asIdeal ℤ
 
 /-- The local degree `[K_w : ℚ_p] = e_w f_w`. -/
 noncomputable def localDeg (w : NumberField.FinitePlace K) : ℕ :=
@@ -37,10 +37,10 @@ noncomputable def qPilotWeight (w : NumberField.FinitePlace K) : ℝ :=
   (inertDeg w : ℝ) / Module.finrank ℚ K
 
 lemma ramIdx_pos (w : NumberField.FinitePlace K) : 0 < ramIdx w := by
-  exact w.maximalIdeal.asIdeal.ramificationIdx_pos (𝓞 K)
+  exact w.maximalIdeal.asIdeal.ramificationIdx_pos ℤ
 
 lemma inertDeg_pos (w : NumberField.FinitePlace K) : 0 < inertDeg w := by
-  exact w.maximalIdeal.asIdeal.inertiaDeg_pos (𝓞 K)
+  exact w.maximalIdeal.asIdeal.inertiaDeg_pos ℤ
 
 lemma localDeg_pos (w : NumberField.FinitePlace K) : 0 < localDeg w := by
   exact Nat.mul_pos (ramIdx_pos w) (inertDeg_pos w)
