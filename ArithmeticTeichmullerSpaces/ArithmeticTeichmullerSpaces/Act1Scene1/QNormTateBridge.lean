@@ -129,6 +129,26 @@ theorem TateOrderNormCompatibility.qFactor_log_eq_order_mul
   push_cast
   ring
 
+theorem TateOrderNormCompatibility.groupedSourceQFactor_log_eq_order_mul
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (G : Corollary312SourceQGrouping p T)
+    (hTate : Theta.TateParameterLaws T.scene1.data.link.tate)
+    (hCompat : QNormTateCompatibility T.scene1.data.link)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hEll : 0 < T.ell) :
+    ∀ i, -Real.log (Corollary312GroupedSourceQFactor p T G i) =
+      (1 / (2 * (T.ell : ℝ))) *
+        ((T.scene1.data.link.tate.qOrder (G.pairData i).place.1 : ℝ) *
+          -Real.log (hOrder.uniformizerNorm (G.pairData i).place.1)) := by
+  intro i
+  simpa [Corollary312GroupedSourceQFactor] using
+    hOrder.qFactor_log_eq_order_mul p T.ell T.scene1.data.link hTate hCompat hOrder hEll
+      (G.pairData i).place.1 (G.pairData i).place.2
+
 def Corollary312QFamily.ofTateCompatibility
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)
