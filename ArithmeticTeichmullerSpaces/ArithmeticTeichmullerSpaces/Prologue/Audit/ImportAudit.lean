@@ -86,6 +86,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.grouping
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.grouping_place_eq
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair
+#check JoshiTeich.Act1Scene1.Corollary312SourceQPair.rationalPrime_eq_residueChar
 #check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping
 #check JoshiTeich.Act1Scene1.Corollary312GroupedSourceQFactor
 #check JoshiTeich.Act1Scene1.Corollary312TateQAccounting

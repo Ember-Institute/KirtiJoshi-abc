@@ -45,6 +45,8 @@ structure Corollary312SourceQPair
   rationalPrime : ℕ
   rationalPrime_prime : Nat.Prime rationalPrime
   place : Corollary312SourceQIndex p T
+  rationalPrime_eq_residueChar :
+    rationalPrime = Arithmetic.residueChar place.1
 
 structure Corollary312SourceQGrouping
     {K : Type uK} [Field K] [NumberField K]
