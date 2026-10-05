@@ -50,6 +50,13 @@ lemma badFinset_eq_link_places (S : IutQPilotSource p T) :
   have h := Set.ext_iff.mp S.badFinset_spec w
   simpa using h
 
+/-! This is the local analogue of the `iut` concrete q-pilot constructor after
+the bad-place carrier has been identified with a norm-bad support. -/
+noncomputable def ofNormBadLocus
+    (B : Corollary312NormBadLocus p T) : IutQPilotSource p T := by
+  refine { badFinset := Arithmetic.normGtOneFinset B.element, badFinset_spec := ?_ }
+  rw [B.support_eq]
+
 noncomputable def toSceneQPilot
     (S : IutQPilotSource p T)
     (hCompat : QNormTateCompatibility T.scene1.data.link) :

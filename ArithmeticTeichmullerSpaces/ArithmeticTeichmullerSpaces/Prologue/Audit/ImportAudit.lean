@@ -130,6 +130,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312NormBadLocus.mem_link_iff
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofArithmeticWeights
 #check JoshiTeich.Act1Scene1.IutQPilotSource
+#check JoshiTeich.Act1Scene1.IutQPilotSource.ofNormBadLocus
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_weight_eq_arithmetic
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus
