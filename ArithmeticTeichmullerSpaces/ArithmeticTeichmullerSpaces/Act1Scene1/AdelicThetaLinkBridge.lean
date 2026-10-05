@@ -31,7 +31,7 @@ structure Corollary312Scene1Data
     [IsAdicComplete (Ideal.span {(p : O)}) O] where
   target : Corollary312Data K O p
   volume : Corollary312VolumeData p target
-  qFamily : Corollary312QFamily p target volume
+  qFamily : Corollary312TateQFamily p target volume
   normalization : Corollary312VolumeNormalization p target
   accounting : Corollary312TransferQAccounting p target
   ell_prime : Nat.Prime target.ell
@@ -46,7 +46,7 @@ theorem cor312_of_adelicThetaLink
     [IsAdicComplete (Ideal.span {(p : O)}) O]
     (D : Corollary312Scene1Data (K := K) (O := O) p) :
     Corollary312 p D.target := by
-  exact corollary312_of_transfer_q_accounting p D.target D.volume D.qFamily
+  exact corollary312_of_transfer_q_accounting p D.target D.volume D.qFamily.toQFamily
     D.normalization D.accounting D.ell_prime D.ell_ge_five
     D.ellStar_eq_half_sub_one D.ellStar_pos
 

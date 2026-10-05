@@ -298,7 +298,7 @@ theorem scene_qFactor_source :
   congr 1 <;> norm_num [sceneTarget, sceneLinkData, sceneTateData]
 
 noncomputable def scene_qFamily :
-    @Corollary312QFamily ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
+    @Corollary312TateQFamily ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
       inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget sceneVolume := by
   letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
   letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
@@ -322,21 +322,22 @@ noncomputable def scene_qFamily :
           simpa [sceneLinkData, AdelicThetaLinkData.ofTateParameters, sceneTateData]
             using hiProp
         exact hi.symm }
-  exact Corollary312QFamily.ofTateCompatibility 2 sceneTarget sceneVolume
-    sceneLink_tate_compatibility iEquiv
-    (by
-      intro i
-      fin_cases i
-      change sceneQFactor =
-        Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace
-      exact scene_qFactor_source.symm)
-    (by
-      intro i
-      fin_cases i
-      change sceneQTerm =
-        -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
-      rw [scene_qFactor_source]
-      rfl)
+  exact
+    { compatibility := sceneLink_tate_compatibility
+      indexEquiv := iEquiv
+      qFactor_eq := by
+        intro i
+        fin_cases i
+        change sceneQFactor =
+          Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace
+        exact scene_qFactor_source.symm
+      qLogTerm_eq := by
+        intro i
+        fin_cases i
+        change sceneQTerm =
+          -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
+        rw [scene_qFactor_source]
+        rfl }
 
 theorem scene_normalization :
     @Corollary312VolumeNormalization ℚ inferInstance inferInstance ℤ_[2] inferInstance 2

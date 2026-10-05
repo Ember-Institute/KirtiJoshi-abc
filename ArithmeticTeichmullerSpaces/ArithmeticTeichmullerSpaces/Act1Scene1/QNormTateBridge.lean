@@ -101,4 +101,36 @@ def Corollary312QFamily.ofTateCompatibility
   intro w
   exact (hRange w.1 w.2).2.le
 
+/-!
+This carrier is the public Scene1 assembly form for a q-family obtained from
+the Tate parameter data.  It keeps the compatibility proof and the source
+index/equality data visible, while deriving `qNorm_le_one` through
+`ofTateCompatibility` instead of accepting that bound as an unrelated field.
+-/
+structure Corollary312TateQFamily
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (V : Corollary312VolumeData p T) where
+  compatibility : QNormTateCompatibility T.scene1.data.link
+  indexEquiv : T.qIndex ≃ Corollary312SourceQIndex p T
+  qFactor_eq : ∀ i, V.qFactor i =
+    Corollary312SourceQFactor p T (indexEquiv i)
+  qLogTerm_eq : ∀ i, T.qLogTerm i =
+    -Real.log (Corollary312SourceQFactor p T (indexEquiv i))
+
+def Corollary312TateQFamily.toQFamily
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    {T : Corollary312Data K O p}
+    {V : Corollary312VolumeData p T}
+    (Q : Corollary312TateQFamily p T V) :
+    Corollary312QFamily p T V :=
+  Corollary312QFamily.ofTateCompatibility p T V Q.compatibility Q.indexEquiv
+    Q.qFactor_eq Q.qLogTerm_eq
+
 end JoshiTeich.Act1Scene1
