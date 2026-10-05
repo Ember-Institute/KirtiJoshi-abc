@@ -89,6 +89,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.grouping
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.grouping_place_eq
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair
+#check JoshiTeich.Act1Scene1.Corollary312SourcePlacesOver
+#check JoshiTeich.Act1Scene1.mem_sourcePlacesOver_iff
+#check JoshiTeich.Act1Scene1.mem_sourcePlacesOver_iff_liesOver
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.rationalPrime_eq_residueChar
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.rationalPrime_liesOver
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.tate_place

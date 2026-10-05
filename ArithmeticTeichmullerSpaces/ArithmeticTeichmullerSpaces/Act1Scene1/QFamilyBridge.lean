@@ -30,6 +30,55 @@ def Corollary312SourceQIndex
   {w // w ∈ T.scene1.data.link.places}
 
 /-!
+This is the finite-support adapter available before the paper's
+`V_p^oss` construction is realized.  It filters the already supplied finite
+place carrier by residue characteristic; the ideal-over characterization below
+keeps the rational-prime label explicit without claiming the source bad-place
+construction has been completed.
+-/
+def Corollary312SourcePlacesOver
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p) (q : ℕ) :
+    Finset (NumberField.FinitePlace K) :=
+  T.scene1.data.link.places.filter (fun w => Arithmetic.residueChar w = q)
+
+lemma mem_sourcePlacesOver_iff
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p q : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p) (w : NumberField.FinitePlace K) :
+    w ∈ Corollary312SourcePlacesOver p T q ↔
+      w ∈ T.scene1.data.link.places ∧ Arithmetic.residueChar w = q := by
+  simp [Corollary312SourcePlacesOver]
+
+lemma mem_sourcePlacesOver_iff_liesOver
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p q : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (hq : q.Prime) (T : Corollary312Data K O p)
+    (w : NumberField.FinitePlace K) :
+    w ∈ Corollary312SourcePlacesOver p T q ↔
+      w ∈ T.scene1.data.link.places ∧
+        Ideal.LiesOver w.maximalIdeal.asIdeal
+          (Ideal.span {(q : ℤ)}) := by
+  rw [mem_sourcePlacesOver_iff p q T w]
+  constructor
+  · rintro ⟨hw, hq_char⟩
+    exact ⟨hw, hq_char ▸ Arithmetic.residueChar_liesOver w⟩
+  · rintro ⟨hw, hwq⟩
+    refine ⟨hw, ?_⟩
+    apply (Arithmetic.natCast_mem_maximalIdeal_iff w hq).mp
+    have hq_mem : (q : ℤ) ∈ Ideal.span {(q : ℤ)} := by
+      exact Ideal.mem_span_singleton.mpr ⟨1, by simp⟩
+    exact (Ideal.mem_of_liesOver (P := w.maximalIdeal.asIdeal)
+      (p := Ideal.span {(q : ℤ)}) (q : ℤ)).mp hq_mem
+
+/-!
 The paper writes the finite q-family as pairs `(p,w)` with a rational prime
 `p` and a finite place `w`.  The place subtype above remains the target's
 local carrier; this structure makes the rational-prime label and the finite
