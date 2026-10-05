@@ -40,8 +40,9 @@
 | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 4.md` | different/conductor 的 ramification profile；3.12 之后的主界链只作背景 | specification / 后续阶段 |
 | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Holomorphic Structures.md` | untilt、算术全纯结构和 Perfectoid 语义背景 | specification / 背景 |
 
-`refer/iut` 只保留为 API 和陈述参考。本版没有从 `iut` 复制文件，也没有把 `iut`
-写入任何 Core 声明的来源栏。
+`refer/iut` 既作为 API 和陈述参考，也允许对局部已证明事实进行逐项移植。本版没有
+把 `iut` 作为 Lake 依赖；下表明确标出的声明记录了原文件、行号和本地 mathlib 适配
+边界。
 
 ## 3. Arithmetic Core
 
@@ -50,6 +51,9 @@
 | `JT-M-NF-FINPLACE` | `NumberField.FinitePlace` | `Prologue/Interfaces/Carriers.lean` | `mathlib` | `Mathlib/NumberTheory/NumberField/Completion/FinitePlace.lean` | imported mathlib type |
 | `JT-M-RAT-RINGINT` | `Rat.ringOfIntegersEquiv` | `Prologue/Audit/Models.lean` | `mathlib` | `Mathlib/NumberTheory/NumberField/Basic.lean` | 仅用于实际模型和环整数识别 |
 | `JT-M-DIFFERENT-IDEAL` | `differentIdeal`、`NumberField.absNorm_differentIdeal` | `Prologue/Arithmetic/Basic.lean` | `mathlib` | `Mathlib/NumberTheory/NumberField/Discriminant/Different.lean` | imported ideal/norm theorem |
+| `IUT-COR312-RESIDUE-CHAR` | `Arithmetic.residueChar`、`Arithmetic.residueChar_prime` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean`；`ThetaData/Places` residue-characteristic layer | ported local finite-place definition and primality proof; no `iut` import |
+| `IUT-COR312-RESIDUE-NORM` | `Arithmetic.absNorm_eq_pow_residueChar` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:84-87` | ported finite-place norm identity; not a q-pilot/global-degree normalization theorem |
+| `IUT-COR312-COMPLETION-NORM-ZPOW` | `Arithmetic.completionNorm_eq_residueChar_pow_of_valued` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:97-103` | ported completion norm expansion over the local `adicCompletion`; the valuation certificate remains an explicit input |
 | `JT-ATS-II5-ARITH-DIVISOR` | `FinitePlaceDivisor`、`logDegree` | `Prologue/Arithmetic/Basic.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 2.5.md` | `def:arith-deg-ideloid`，lines 1176--1182 | D-adapter；支持数据，不是 3.12 结论 |
 | `JT-ATS-II5-HEIGHT` | `HeightData`、`HeightData.value_nonneg` | `Prologue/Arithmetic/Basic.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 2.5.md` | `def:heights`，lines 1657--1663 | finite-place height interface；archimedean 部分未被伪装补齐 |
 | `JT-ATS-IV-RAMIFICATION` | `RamificationProfile`、`differentLog`、`logTotal` | `Prologue/Arithmetic/Basic.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 4.md` | `pr:basic-ramification-data` 1430--1440；`re:diff-rmk` 1496--1502；`pr:tate-divisor` 1542--1563；`th:diff-cond-thm` 1661--1753 | D-adapter；主界链仍属于 Scene2 |

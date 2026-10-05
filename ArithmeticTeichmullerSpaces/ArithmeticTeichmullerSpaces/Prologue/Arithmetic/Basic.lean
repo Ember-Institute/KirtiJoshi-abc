@@ -5,6 +5,7 @@ import Mathlib.RingTheory.RamificationInertia.Basic
 namespace JoshiTeich.Prologue.Arithmetic
 
 open scoped BigOperators NumberField
+open WithZero
 
 variable {K : Type*} [Field K] [NumberField K]
 
@@ -114,6 +115,20 @@ lemma absNorm_eq_pow_residueChar (w : NumberField.FinitePlace K) :
     Ideal.absNorm w.maximalIdeal.asIdeal = residueChar w ^ inertDeg w := by
   haveI := residueChar_liesOver w
   exact (Ideal.pow_inertiaDeg (residueChar w) w.maximalIdeal.asIdeal).symm
+
+/-- The completion norm of an element with discrete valuation `exp m` is the
+residue-characteristic norm raised to that valuation.  This is the local
+completion identity used by the `iut` uniformizer layer. -/
+lemma completionNorm_eq_residueChar_pow_of_valued
+    (w : NumberField.FinitePlace K)
+    (x : w.maximalIdeal.adicCompletion K) (m : ℤ)
+    (hx : Valued.v x = exp m) :
+    ‖x‖ = ((residueChar w : ℝ) ^ inertDeg w) ^ m := by
+  rw [NumberField.FinitePlace.norm_def, hx,
+    WithZeroMulInt.toNNReal_neg_apply _ exp_ne_zero]
+  simp only [WithZero.log_exp]
+  rw [NNReal.coe_zpow, NNReal.coe_natCast, absNorm_eq_pow_residueChar,
+    Nat.cast_pow]
 
 /-!
 The finite-support fact used by the `iut` bad-place layer is independent of

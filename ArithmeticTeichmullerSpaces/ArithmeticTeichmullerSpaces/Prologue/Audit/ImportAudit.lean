@@ -43,6 +43,7 @@ open scoped NumberField
 #check Arithmetic.residueChar_prime
 #check Arithmetic.residueChar_liesOver
 #check Arithmetic.absNorm_eq_pow_residueChar
+#check Arithmetic.completionNorm_eq_residueChar_pow_of_valued
 #check Arithmetic.finite_places_norm_gt_one
 #check Arithmetic.normGtOneFinset
 #check Arithmetic.mem_normGtOneFinset_iff
