@@ -121,25 +121,24 @@ noncomputable def scenePacketHull : PacketHullData (Fin 2) where
   hullToPacket := fun _ => 0
   hullWeight := fun _ => sceneQTerm
 
-noncomputable def sceneLinkData : AdelicThetaLinkData ℚ where
-  places := {rationalTwoPlace}
-  qParameter := fun _ => 16
-  tate := sceneTateData
-  theta := sceneTheta
-  thetaBase := (0 : Fin 2)
-  packetHull := scenePacketHull
-  heightData := auditHeight
-  ramification := auditRamificationProfile
-  logVolume := 2 * sceneQTerm
-  processionLength := 1
+noncomputable def sceneLinkData : AdelicThetaLinkData ℚ :=
+  AdelicThetaLinkData.ofTateParameters sceneTateData sceneTheta (0 : Fin 2)
+    scenePacketHull auditHeight auditRamificationProfile (2 * sceneQTerm) 1
+
+theorem sceneLink_tate_compatibility :
+    QNormTateCompatibility sceneLinkData := by
+  exact qNormTateCompatibility_of_tateParameters sceneTateData sceneTheta
+    (0 : Fin 2) scenePacketHull auditHeight auditRamificationProfile
+    (2 * sceneQTerm) 1
 
 theorem sceneLink_first_axiom : FirstAxiom sceneLinkData := by
   constructor
-  · simp [sceneLinkData]
+  · simp [sceneLinkData, AdelicThetaLinkData.ofTateParameters, sceneTateData]
   · intro w hw
-    simp only [sceneLinkData, Finset.mem_singleton] at hw
-    subst w
-    norm_num [sceneLinkData]
+    have hwTate : w ∈ sceneTateData.places := by
+      simpa [sceneLinkData, AdelicThetaLinkData.ofTateParameters] using hw
+    change sceneTateData.parameter w ≠ 0
+    exact sceneTateData_laws.parameter_nonzero w hwTate
   · intro w hw
     change 0 < w (16 : ℚ)
     exact NumberField.FinitePlace.pos_iff.mpr (by norm_num)
@@ -234,7 +233,9 @@ theorem sceneInput_laws :
     @PerfectoidBridgeLaws.mk ℚ inferInstance inferInstance sceneLinkData
       ℤ_[2] inferInstance 2 inferInstance scene_padicTwo_not_unit
       scene_padicTwo_is_adic_complete scenePlaceData sceneBridgeData
-      (by simp [scenePlaceData, padicTwoPlaceData, sceneLinkData]) hlocal
+      (by
+        simp [scenePlaceData, padicTwoPlaceData, sceneLinkData,
+          AdelicThetaLinkData.ofTateParameters, sceneTateData]) hlocal
   exact @PrologueInputLaws.mk ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
     inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete
     sceneInputData sceneLink_first_axiom sceneTateData_laws sceneLink_model hbridge
@@ -278,7 +279,7 @@ noncomputable def sceneSourcePlace :
       scene_padicTwo_is_adic_complete
     change rationalTwoPlace ∈ sceneTarget.scene1.data.link.places
     rw [sceneTarget_link_eq]
-    simp [sceneLinkData]⟩
+    simp [sceneLinkData, AdelicThetaLinkData.ofTateParameters, sceneTateData]⟩
 
 theorem scene_qFactor_source :
     @Corollary312SourceQFactor ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
@@ -318,32 +319,24 @@ noncomputable def scene_qFamily :
         have hi : i.1 = rationalTwoPlace := by
           have hiProp := i.property
           change i.1 ∈ sceneLinkData.places at hiProp
-          simpa [sceneLinkData] using hiProp
+          simpa [sceneLinkData, AdelicThetaLinkData.ofTateParameters, sceneTateData]
+            using hiProp
         exact hi.symm }
-  exact
-    { indexEquiv := iEquiv
-      qNorm_le_one := by
-        intro w
-        have hw : w.1 = rationalTwoPlace := by
-          have hwProp := w.property
-          change w.1 ∈ sceneLinkData.places at hwProp
-          simpa [sceneLinkData] using hwProp
-        rw [hw]
-        change sceneQNorm ≤ 1
-        exact sceneQNorm_lt_one.le
-      qFactor_eq := by
-        intro i
-        fin_cases i
-        change sceneQFactor =
-          Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace
-        exact scene_qFactor_source.symm
-      qLogTerm_eq := by
-        intro i
-        fin_cases i
-        change sceneQTerm =
-          -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
-        rw [scene_qFactor_source]
-        rfl }
+  exact Corollary312QFamily.ofTateCompatibility 2 sceneTarget sceneVolume
+    sceneLink_tate_compatibility iEquiv
+    (by
+      intro i
+      fin_cases i
+      change sceneQFactor =
+        Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace
+      exact scene_qFactor_source.symm)
+    (by
+      intro i
+      fin_cases i
+      change sceneQTerm =
+        -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
+      rw [scene_qFactor_source]
+      rfl)
 
 theorem scene_normalization :
     @Corollary312VolumeNormalization ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
@@ -355,7 +348,7 @@ theorem scene_normalization :
   change sceneTarget.thetaVolume =
     Real.exp (-sceneTarget.scene1.data.link.logVolume)
   rw [sceneTarget_link_eq]
-  simpa [sceneTarget, sceneLinkData]
+  simpa [sceneTarget, sceneLinkData, AdelicThetaLinkData.ofTateParameters]
 
 noncomputable def scene_accounting :
     @Corollary312TransferQAccounting ℚ inferInstance inferInstance ℤ_[2] inferInstance 2

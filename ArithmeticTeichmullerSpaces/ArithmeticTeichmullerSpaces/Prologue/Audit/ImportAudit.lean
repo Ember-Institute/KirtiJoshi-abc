@@ -78,6 +78,7 @@ open scoped NumberField
 
 -- Scene1 joint models: one satisfying witness and one normalization countermodel.
 #check JoshiTeich.Act1Scene1.Audit.sceneInput
+#check JoshiTeich.Act1Scene1.Audit.sceneLink_tate_compatibility
 #check JoshiTeich.Act1Scene1.Audit.scene_satisfying_model
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
 
