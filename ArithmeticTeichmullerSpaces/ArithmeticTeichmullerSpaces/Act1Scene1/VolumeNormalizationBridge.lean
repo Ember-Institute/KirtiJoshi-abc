@@ -90,10 +90,14 @@ theorem sideConditions_of_volume_normalization
     (T : Corollary312Data K O p)
     (N : Corollary312VolumeNormalization p T)
     (hEllPrime : Nat.Prime T.ell)
+    (hEllGeFive : 5 ≤ T.ell)
+    (hEllStarEq : T.ellStar = (T.ell - 1) / 2)
     (hEllStarPos : 0 < T.ellStar) :
     Corollary312SideConditions p T := by
   exact
     { ell_prime := hEllPrime
+      ell_ge_five := hEllGeFive
+      ellStar_eq_half_sub_one := hEllStarEq
       ellStar_pos := hEllStarPos
       thetaVolume_pos := thetaVolume_pos_of_normalization p N }
 
@@ -107,10 +111,13 @@ theorem corollary312_of_q_family_normalized_lower_bound
     (Q : Corollary312QFamily p T V)
     (N : Corollary312VolumeNormalization p T)
     (hEllPrime : Nat.Prime T.ell)
+    (hEllGeFive : 5 ≤ T.ell)
+    (hEllStarEq : T.ellStar = (T.ell - 1) / 2)
     (hEllStarPos : 0 < T.ellStar)
     (hLower : T.thetaVolume ≥ Corollary312Data.qProduct p T V.qFactor) :
     Corollary312 p T := by
-  have hSide := sideConditions_of_volume_normalization p T N hEllPrime hEllStarPos
+  have hSide := sideConditions_of_volume_normalization p T N hEllPrime hEllGeFive
+    hEllStarEq hEllStarPos
   have hLog := logVolume_nonneg_of_scene1 p T
   have hThetaVolume := thetaVolume_le_one_of_normalization p N hLog
   exact corollary312_of_q_family_lower_bound p T hSide V Q hThetaVolume hLower

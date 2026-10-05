@@ -62,7 +62,7 @@ theorem sceneTateData_laws : TateParameterLaws sceneTateData := by
 
 noncomputable def sceneQNorm : ℝ := sceneTateData.norm rationalTwoPlace
 
-noncomputable def sceneQFactor : ℝ := sceneQNorm ^ (1 / 4 : ℝ)
+noncomputable def sceneQFactor : ℝ := sceneQNorm ^ (1 / 10 : ℝ)
 
 noncomputable def sceneQTerm : ℝ := -Real.log sceneQFactor
 
@@ -253,7 +253,7 @@ noncomputable def sceneTarget :
       inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete :=
   @Corollary312Data.mk ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
     inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete
-    sceneInput 2 2 (Fin 1) inferInstance (fun _ => sceneQTerm)
+    sceneInput 5 2 (Fin 1) inferInstance (fun _ => sceneQTerm)
     (Real.exp (-2 * sceneQTerm))
 
 noncomputable def sceneVolume :
@@ -291,10 +291,10 @@ theorem scene_qFactor_source :
   unfold Corollary312SourceQFactor sceneQFactor sceneQNorm
   change (sceneTarget.scene1.data.link.qNorm sceneSourcePlace.1) ^
       (1 / (2 * (sceneTarget.ell : ℝ))) =
-    (sceneTateData.norm rationalTwoPlace) ^ (1 / 4 : ℝ)
+    (sceneTateData.norm rationalTwoPlace) ^ (1 / 10 : ℝ)
   change (sceneLinkData.qNorm rationalTwoPlace) ^
       (1 / (2 * (sceneTarget.ell : ℝ))) =
-    (sceneTateData.norm rationalTwoPlace) ^ (1 / 4 : ℝ)
+    (sceneTateData.norm rationalTwoPlace) ^ (1 / 10 : ℝ)
   congr 1 <;> norm_num [sceneTarget, sceneLinkData, sceneTateData]
 
 noncomputable def scene_qFamily :
@@ -390,7 +390,9 @@ noncomputable def sceneData :
       qFamily := scene_qFamily
       normalization := scene_normalization
       accounting := scene_accounting
-      ell_prime := by exact Nat.prime_two
+      ell_prime := by exact Nat.prime_five
+      ell_ge_five := by norm_num [sceneTarget]
+      ellStar_eq_half_sub_one := by norm_num [sceneTarget]
       ellStar_pos := by norm_num [sceneTarget] }
 
 theorem scene_satisfying_model :

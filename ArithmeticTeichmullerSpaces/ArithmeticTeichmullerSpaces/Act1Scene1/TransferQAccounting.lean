@@ -103,9 +103,11 @@ theorem corollary312_of_transfer_q_accounting
     (N : Corollary312VolumeNormalization p T)
     (A : Corollary312TransferQAccounting p T)
     (hEllPrime : Nat.Prime T.ell)
+    (hEllGeFive : 5 ≤ T.ell)
+    (hEllStarEq : T.ellStar = (T.ell - 1) / 2)
     (hEllStarPos : 0 < T.ellStar) :
     Corollary312 p T := by
   exact corollary312_of_transfer_log_bound p T V Q N
-    (transferLogBound_of_qAccounting p T A) hEllPrime hEllStarPos
+    (transferLogBound_of_qAccounting p T A) hEllPrime hEllGeFive hEllStarEq hEllStarPos
 
 end JoshiTeich.Act1Scene1

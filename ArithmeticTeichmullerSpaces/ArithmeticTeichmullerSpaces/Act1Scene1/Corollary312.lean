@@ -75,6 +75,8 @@ structure Corollary312SideConditions
     [IsAdicComplete (Ideal.span {(p : O)}) O]
     (T : Corollary312Data K O p) : Prop where
   ell_prime : Nat.Prime T.ell
+  ell_ge_five : 5 ≤ T.ell
+  ellStar_eq_half_sub_one : T.ellStar = (T.ell - 1) / 2
   ellStar_pos : 0 < T.ellStar
   thetaVolume_pos : 0 < T.thetaVolume
 

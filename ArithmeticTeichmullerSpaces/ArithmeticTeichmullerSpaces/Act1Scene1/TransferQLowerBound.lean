@@ -134,10 +134,12 @@ theorem corollary312_of_transfer_log_bound
     (N : Corollary312VolumeNormalization p T)
     (L : Corollary312TransferLogBound p T)
     (hEllPrime : Nat.Prime T.ell)
+    (hEllGeFive : 5 ≤ T.ell)
+    (hEllStarEq : T.ellStar = (T.ell - 1) / 2)
     (hEllStarPos : 0 < T.ellStar) :
     Corollary312 p T := by
   have hLower := thetaVolume_lower_bound_of_transfer_log_bound p T V Q N L
   exact corollary312_of_q_family_normalized_lower_bound
-    p T V Q N hEllPrime hEllStarPos hLower
+    p T V Q N hEllPrime hEllGeFive hEllStarEq hEllStarPos hLower
 
 end JoshiTeich.Act1Scene1
