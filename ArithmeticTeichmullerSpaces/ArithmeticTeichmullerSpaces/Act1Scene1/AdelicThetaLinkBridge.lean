@@ -61,7 +61,10 @@ structure Corollary312Scene1QPilotData
     Corollary312QPilotSourceIndexBridge p base.target base.volume qPilot
       base.qFamily
 
-theorem cor312_of_adelicThetaLink
+/-- Conditional assembly from complete Scene1 data.  In particular, this
+theorem consumes target-specific volume, q-family, normalization, and
+accounting fields; `AdelicThetaLink` alone does not imply the target. -/
+theorem cor312_of_scene1_data
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)
     [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
@@ -72,7 +75,10 @@ theorem cor312_of_adelicThetaLink
     D.normalization D.accounting.toAccounting D.ell_prime D.ell_ge_five
     D.ellStar_eq_half_sub_one D.ellStar_pos
 
-theorem cor312_of_adelicThetaLink_qPilot
+/-- Conditional q-pilot assembly.  The q-pilot normalization and source-index
+bridge are construction inputs; this theorem is not a consequence of
+`AdelicThetaLink` alone. -/
+theorem cor312_of_scene1_qPilot_data
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)
     [Fact p.Prime] [Fact (¬ IsUnit (p : O))]

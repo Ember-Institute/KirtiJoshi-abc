@@ -577,7 +577,8 @@ theorem scene_satisfying_model :
   letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
   letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
     scene_padicTwo_is_adic_complete
-  simpa [sceneData] using (cor312_of_adelicThetaLink 2 sceneData)
+  simpa [sceneData] using
+    (JoshiTeich.Act1Scene1.cor312_of_scene1_data 2 sceneData)
 
 noncomputable def sceneBadTarget :
     @Corollary312Data ℚ inferInstance inferInstance ℤ_[2] inferInstance 2

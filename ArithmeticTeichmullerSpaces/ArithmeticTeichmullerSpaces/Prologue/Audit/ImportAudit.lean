@@ -99,7 +99,8 @@ open scoped NumberField
 #check false_of_volumeTransfer_of_nonempty_packet_with_frobeniusSquareCandidate
 #check false_of_volumeTransfer_of_nonempty_hull_with_frobeniusSquareCandidate
 
--- Scene1 joint models: one satisfying witness and one normalization countermodel.
+-- Generic Scene1 models: one satisfying witness and one normalization
+-- countermodel.  No complete q-pilot satisfying model is exported here.
 #check JoshiTeich.Act1Scene1.Audit.sceneInput
 #check JoshiTeich.Act1Scene1.Audit.sceneLink_tate_compatibility
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
@@ -156,9 +157,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312SourceQLogSum
 #check JoshiTeich.Act1Scene1.Corollary312SideConditions.ell_ge_five
 #check JoshiTeich.Act1Scene1.Corollary312SideConditions.ellStar_eq_half_sub_one
-#check JoshiTeich.Act1Scene1.cor312_of_adelicThetaLink
+#check JoshiTeich.Act1Scene1.cor312_of_scene1_data
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData
-#check JoshiTeich.Act1Scene1.cor312_of_adelicThetaLink_qPilot
+#check JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
 #check JoshiTeich.Act1Scene1.Audit.scene_satisfying_model
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilot
@@ -166,6 +167,6 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Audit.scene_qNorm_log_eq_order_mul
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
-#print axioms JoshiTeich.Act1Scene1.cor312_of_adelicThetaLink_qPilot
+#print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
 
 end JoshiTeich.Prologue.Audit
