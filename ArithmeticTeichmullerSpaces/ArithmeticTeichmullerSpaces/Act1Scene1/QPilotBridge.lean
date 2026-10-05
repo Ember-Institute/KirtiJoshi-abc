@@ -9,7 +9,8 @@ universe uK
 
 /-!
 source-id: IUT-COR312-Q-PILOT-LHS
-source: `iut`: `refer/iut/Iut/Cor312/LeftHandSide.lean`,
+source: `iut`: `refer/iut/Iut/Cor312/LeftHandSide.lean` and
+`refer/iut/Iut/Concrete/LocalTheory.lean`,
 `QPilotData`; semantic normalization: IUT I, Example 3.2(iv), and IUT IV,
 Theorem 1.10; the target-side q-family remains sourced from
 `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`,
@@ -42,6 +43,27 @@ structure Corollary312QPilotData
   weight_pos : ∀ w ∈ badFinset, 0 < weight w
   /-- The q-norm/Tate place identification consumed by q-order calculations. -/
   compatibility : QNormTateCompatibility T.scene1.data.link
+
+/-- Construct the q-pilot carrier with the normalized finite-place weights used
+by the concrete `iut` implementation.  The finite support is the Tate-place
+carrier already present in the Scene1 link; `hCompat` identifies it with the
+link's place enumeration. -/
+noncomputable def Corollary312QPilotData.ofArithmeticWeights
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (hCompat : QNormTateCompatibility T.scene1.data.link) :
+    Corollary312QPilotData p T := by
+  refine
+    { badFinset := T.scene1.data.link.places
+      badFinset_spec := rfl
+      weight := Arithmetic.placeWeight
+      weight_pos := ?_
+      compatibility := hCompat }
+  intro w hw
+  exact Arithmetic.placeWeight_pos w
 
 namespace Corollary312QPilotData
 

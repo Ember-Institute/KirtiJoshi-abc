@@ -15,6 +15,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.Models
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
 
 namespace JoshiTeich.Prologue.Audit
 
@@ -37,6 +38,11 @@ open scoped NumberField
 #check Arithmetic.residueChar
 #check Arithmetic.residueChar_prime
 #check Arithmetic.residueChar_liesOver
+#check Arithmetic.ramIdx
+#check Arithmetic.inertDeg
+#check Arithmetic.localDeg
+#check Arithmetic.placeWeight
+#check Arithmetic.placeWeight_pos
 #check Arithmetic.natCast_mem_maximalIdeal_iff
 #check Arithmetic.residueChar_eq_of_liesOver
 #check Arithmetic.HeightData
@@ -106,6 +112,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder_pos
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofArithmeticWeights
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.mem_bad
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.mem_tate
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.qOrder_pos
@@ -118,6 +125,11 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.normalizedLogTerm_eq_sourceQFactorLog
 #check JoshiTeich.Act1Scene1.Corollary312QPilotSourceIndexBridge
 #check JoshiTeich.Act1Scene1.Corollary312QPilotSourceIndexBridge.absLogQ_eq_sourceQLogSum
+#check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping.ofPlaceIndex
+#check JoshiTeich.Act1Scene1.Corollary312TateQFamily.qLogSum_eq_sourceQLogSum
+#check JoshiTeich.Act1Scene1.Corollary312QPilotTransferLogBound
+#check JoshiTeich.Act1Scene1.transferLogBound_of_tateQAccounting_qPilot
+#check JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping
 #check JoshiTeich.Act1Scene1.Corollary312GroupedSourceQFactor
 #check JoshiTeich.Act1Scene1.Corollary312TateQAccounting
@@ -130,5 +142,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.cor312_of_adelicThetaLink
 #check JoshiTeich.Act1Scene1.Audit.scene_satisfying_model
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
+#check JoshiTeich.Act1Scene1.Audit.scene_qPilot
+
+#print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 
 end JoshiTeich.Prologue.Audit

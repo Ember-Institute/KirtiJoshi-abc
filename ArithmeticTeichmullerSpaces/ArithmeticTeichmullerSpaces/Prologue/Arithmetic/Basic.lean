@@ -9,9 +9,41 @@ variable {K : Type*} [Field K] [NumberField K]
 
 /-!
 This finite-place arithmetic API is ported from `iut`'s Corollary 3.12
-ThetaData/Places layer.  It is a local definition over the mathlib finite-place
-carrier; no `iut` module is imported as a dependency.
+`ThetaData/Places` layer and its concrete `Concrete/LocalTheory` layer.  It is
+a local definition over the mathlib finite-place carrier; no `iut` module is
+imported as a dependency.
 -/
+
+/-- The ramification index of a finite place over its residue characteristic. -/
+noncomputable def ramIdx (w : NumberField.FinitePlace K) : ℕ :=
+  Ideal.ramificationIdx w.maximalIdeal.asIdeal (𝓞 K)
+
+/-- The residue degree of a finite place over its residue characteristic. -/
+noncomputable def inertDeg (w : NumberField.FinitePlace K) : ℕ :=
+  Ideal.inertiaDeg w.maximalIdeal.asIdeal (𝓞 K)
+
+/-- The local degree `[K_w : ℚ_p] = e_w f_w`. -/
+noncomputable def localDeg (w : NumberField.FinitePlace K) : ℕ :=
+  ramIdx w * inertDeg w
+
+/-- The normalized arithmetic degree weight `[K_w : ℚ_p]/[K : ℚ]`. -/
+noncomputable def placeWeight (w : NumberField.FinitePlace K) : ℝ :=
+  (localDeg w : ℝ) / Module.finrank ℚ K
+
+lemma ramIdx_pos (w : NumberField.FinitePlace K) : 0 < ramIdx w := by
+  exact w.maximalIdeal.asIdeal.ramificationIdx_pos (𝓞 K)
+
+lemma inertDeg_pos (w : NumberField.FinitePlace K) : 0 < inertDeg w := by
+  exact w.maximalIdeal.asIdeal.inertiaDeg_pos (𝓞 K)
+
+lemma localDeg_pos (w : NumberField.FinitePlace K) : 0 < localDeg w := by
+  exact Nat.mul_pos (ramIdx_pos w) (inertDeg_pos w)
+
+lemma finrank_pos : (0 : ℝ) < Module.finrank ℚ K := by
+  exact_mod_cast Module.finrank_pos
+
+lemma placeWeight_pos (w : NumberField.FinitePlace K) : 0 < placeWeight w := by
+  exact div_pos (by exact_mod_cast localDeg_pos w) finrank_pos
 
 noncomputable def residueChar (w : NumberField.FinitePlace K) : ℕ :=
   ringChar (𝓞 K ⧸ w.maximalIdeal.asIdeal)

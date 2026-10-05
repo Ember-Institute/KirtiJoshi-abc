@@ -8,10 +8,43 @@ open scoped BigOperators
 
 universe uK
 
+/-- The canonical `(p,w)` grouping ported from the `iut` place layer.  The
+residue characteristic supplies the rational-prime label and its ideal-over
+relation; only the admissible-prime coprimality and the target/source index
+equivalence remain construction inputs. -/
+noncomputable def Corollary312SourceQGrouping.ofPlaceIndex
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (hCompat : QNormTateCompatibility T.scene1.data.link)
+    (hIndex : T.qIndex ≃ Corollary312SourceQIndex p T)
+    (hCoprime : ∀ w : Corollary312SourceQIndex p T,
+      Nat.Coprime T.ell (T.scene1.data.link.tate.qOrder w.1)) :
+    Corollary312SourceQGrouping p T := by
+  classical
+  refine
+    { pair := Corollary312SourceQIndex p T
+      pairFintype := Fintype.ofFinset T.scene1.data.link.places (fun _ => Iff.rfl)
+      pairData := fun w => ?_
+      indexEquiv := hIndex }
+  exact
+    { rationalPrime := Arithmetic.residueChar w.1
+      rationalPrime_prime := Arithmetic.residueChar_prime w.1
+      place := w
+      rationalPrime_eq_residueChar := rfl
+      rationalPrime_liesOver := Arithmetic.residueChar_liesOver w.1
+      tate_place := by
+        rw [← hCompat.places_eq]
+        exact w.2
+      q_order_coprime := hCoprime w }
+
 /-!
 source-id: IUT-COR312-Q-PILOT-SOURCE-INDEX
-source: `iut`: `refer/iut/Iut/Cor312/LeftHandSide.lean` and
-`refer/iut/Iut/Cor312/ThetaData/Places.lean`; target-side finite grouping:
+source: `iut`: `refer/iut/Iut/Cor312/LeftHandSide.lean`,
+`refer/iut/Iut/Cor312/ThetaData/Places.lean`, and
+`refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`; target-side finite grouping:
 `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`,
 `cor:cor312` (3647--3650)
 fidelity: finite-index and finite-sum bridge from the adapted q-pilot carrier

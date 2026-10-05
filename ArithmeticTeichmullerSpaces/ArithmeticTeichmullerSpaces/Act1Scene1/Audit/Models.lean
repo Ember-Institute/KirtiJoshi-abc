@@ -326,14 +326,8 @@ noncomputable def scene_qPilot :
   letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
   letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
     scene_padicTwo_is_adic_complete
-  exact
-    { badFinset := sceneTarget.scene1.data.link.places
-      badFinset_spec := rfl
-      weight := fun _ => 1
-      weight_pos := by
-        intro w hw
-        norm_num
-      compatibility := sceneLink_tate_compatibility }
+  exact Corollary312QPilotData.ofArithmeticWeights 2 sceneTarget
+    sceneLink_tate_compatibility
 
 noncomputable def scene_qFamily :
     @Corollary312TateQFamily ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
