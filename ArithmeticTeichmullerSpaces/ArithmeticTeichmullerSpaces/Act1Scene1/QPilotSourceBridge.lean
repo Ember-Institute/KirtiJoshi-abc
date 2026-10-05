@@ -13,7 +13,7 @@ source: `iut`: `refer/iut/Iut/Cor312/LeftHandSide.lean` (`QPilotData.logQ`,
 target-side source q-factor: `JoshiTeich: refer/JoshiTeich/index-Arithmetic
 Teichmuller Spaces 3.md`, `cor:cor312` (3647--3650)
 fidelity: local normalized q-pilot term; the arithmetic weight and the
-uniformizer normalization are explicit conditions, not hidden constructions
+weighted uniformizer normalization are explicit conditions, not hidden constructions
 boundary: Scene1/Derived
 
 The q-pilot formula and the q-family formula use different presentations of a
@@ -30,13 +30,11 @@ structure Corollary312QPilotSourceNormalization
     (T : Corollary312Data K O p)
     (hOrder : TateOrderNormCompatibility T.scene1.data.link)
     (Q : Corollary312QPilotData p T) : Prop where
-  /-- The unweighted target q-family convention used by this Scene1 carrier. -/
-  weight_eq_one : ∀ w ∈ Q.badFinset, Q.weight w = 1
-  /-- The local uniformizer norm has the residue-characteristic normalization. -/
-  uniformizer_log_eq_residueChar_log :
+  /-- The uniformizer norm carries the q-divisor's arithmetic-degree weight. -/
+  uniformizer_log_eq_weighted_residueChar_log :
     ∀ w ∈ Q.badFinset,
       -Real.log (hOrder.uniformizerNorm w) =
-        Real.log (Arithmetic.residueChar w)
+        Q.weight w * Real.log (Arithmetic.residueChar w)
 
 namespace Corollary312QPilotData
 
@@ -72,10 +70,19 @@ theorem normalizedLogTerm_eq_sourceQFactorLog
       (K := K) (O := O) p T.ell T.scene1.data.link
       T.scene1.input_laws.tate_parameter Q.compatibility hOrder hEll
       w (Q.mem_bad p hw)
-  rw [hNorm.weight_eq_one w hw]
-  simp only [one_mul]
-  rw [hNorm.uniformizer_log_eq_residueChar_log w hw] at hLocal
-  simpa [normalizedLogTerm, Corollary312SourceQFactor, mul_assoc] using hLocal.symm
+  calc
+    Q.normalizedLogTerm p w =
+        (1 / (2 * (T.ell : ℝ))) *
+          ((T.scene1.data.link.tate.qOrder w : ℝ) *
+            -Real.log (hOrder.uniformizerNorm w)) := by
+      unfold normalizedLogTerm
+      rw [hNorm.uniformizer_log_eq_weighted_residueChar_log w hw]
+      ring
+    _ = -Real.log
+        (Corollary312SourceQFactor p T
+          (show Corollary312SourceQIndex p T from
+            ⟨w, Q.mem_bad p hw⟩)) := by
+      simpa [Corollary312SourceQFactor] using hLocal.symm
 
 end Corollary312QPilotData
 
