@@ -36,7 +36,7 @@ place carrier by residue characteristic; the ideal-over characterization below
 keeps the rational-prime label explicit without claiming the source bad-place
 construction has been completed.
 -/
-def Corollary312SourcePlacesOver
+noncomputable def Corollary312SourcePlacesOver
     {K : Type uK} [Field K] [NumberField K]
     {O : Type uK} [CommRing O] (p : ℕ)
     [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
@@ -75,7 +75,7 @@ lemma mem_sourcePlacesOver_iff_liesOver
     apply (Arithmetic.natCast_mem_maximalIdeal_iff w hq).mp
     have hq_mem : (q : ℤ) ∈ Ideal.span {(q : ℤ)} := by
       exact Ideal.mem_span_singleton.mpr ⟨1, by simp⟩
-    exact (Ideal.mem_of_liesOver (P := w.maximalIdeal.asIdeal)
+    simpa using (Ideal.mem_of_liesOver (P := w.maximalIdeal.asIdeal)
       (p := Ideal.span {(q : ℤ)}) (q : ℤ)).mp hq_mem
 
 /-!

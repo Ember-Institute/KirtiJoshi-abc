@@ -87,7 +87,7 @@ compatibility is constructed.
 -/
 structure TateOrderNormCompatibility
     {K : Type uK} [Field K] [NumberField K]
-    (D : AdelicThetaLinkData K) : Prop where
+    (D : AdelicThetaLinkData K) : Type uK where
   uniformizerNorm : NumberField.FinitePlace K → ℝ
   uniformizerNorm_pos : ∀ w ∈ D.places, 0 < uniformizerNorm w
   uniformizerNorm_lt_one : ∀ w ∈ D.places, uniformizerNorm w < 1
@@ -104,7 +104,7 @@ theorem TateOrderNormCompatibility.qNorm_log_eq_order_mul
       -Real.log (D.qNorm w) =
         (D.tate.qOrder w : ℝ) * -Real.log (hOrder.uniformizerNorm w) := by
   intro w hw
-  rw [hCompat.norm_eq D hTate w hw, hOrder.norm_eq_pow w hw, Real.log_pow]
+  rw [hCompat.norm_eq D hTate w hw, hOrder.norm_eq_pow_order w hw, Real.log_pow]
   push_cast
   ring
 
@@ -125,7 +125,7 @@ theorem TateOrderNormCompatibility.qFactor_log_eq_order_mul
   intro w hw
   have hq : 0 < D.qNorm w := (qNorm_pos_lt_one_of_tate D hTate hCompat w hw).1
   rw [Real.log_rpow hq, hCompat.norm_eq D hTate w hw,
-    hOrder.norm_eq_pow w hw, Real.log_pow]
+    hOrder.norm_eq_pow_order w hw, Real.log_pow]
   push_cast
   ring
 
@@ -146,7 +146,9 @@ theorem TateOrderNormCompatibility.groupedSourceQFactor_log_eq_order_mul
           -Real.log (hOrder.uniformizerNorm (G.pairData i).place.1)) := by
   intro i
   simpa [Corollary312GroupedSourceQFactor] using
-    hOrder.qFactor_log_eq_order_mul p T.ell T.scene1.data.link hTate hCompat hOrder hEll
+    TateOrderNormCompatibility.qFactor_log_eq_order_mul (K := K) (O := O)
+      p T.ell T.scene1.data.link
+      hTate hCompat hOrder hEll
       (G.pairData i).place.1 (G.pairData i).place.2
 
 def Corollary312QFamily.ofTateCompatibility

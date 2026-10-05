@@ -12,6 +12,7 @@ import ArithmeticTeichmullerSpaces.Prologue.Audit.TateModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.PilotModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.JointConsistency
 import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.Models
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotBridge
 
 namespace JoshiTeich.Prologue.Audit
 
@@ -102,6 +103,14 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.TateOrderNormCompatibility.groupedSourceQFactor_log_eq_order_mul
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder_pos
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.mem_bad
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.mem_tate
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.qOrder_pos
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.logQ
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.absLogQ
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.lhs
+#check JoshiTeich.Act1Scene1.Corollary312QPilotData.logQ_nonneg
 #check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping
 #check JoshiTeich.Act1Scene1.Corollary312GroupedSourceQFactor
 #check JoshiTeich.Act1Scene1.Corollary312TateQAccounting

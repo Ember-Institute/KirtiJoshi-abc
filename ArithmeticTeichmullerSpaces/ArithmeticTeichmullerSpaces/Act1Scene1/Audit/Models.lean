@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotBridge
 import ArithmeticTeichmullerSpaces.Prologue.Audit.Models
 import ArithmeticTeichmullerSpaces.Prologue.Audit.PerfectoidBridgeModels
 import ArithmeticTeichmullerSpaces.Prologue.Audit.TateModels
@@ -318,6 +319,21 @@ noncomputable def sceneSourcePair :
       q_order_coprime := by
         change Nat.Coprime 5 1
         norm_num }
+
+noncomputable def scene_qPilot :
+    @Corollary312QPilotData ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
+      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget := by
+  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
+  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
+    scene_padicTwo_is_adic_complete
+  exact
+    { badFinset := sceneTarget.scene1.data.link.places
+      badFinset_spec := rfl
+      weight := fun _ => 1
+      weight_pos := by
+        intro w hw
+        norm_num
+      compatibility := sceneLink_tate_compatibility }
 
 noncomputable def scene_qFamily :
     @Corollary312TateQFamily ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
