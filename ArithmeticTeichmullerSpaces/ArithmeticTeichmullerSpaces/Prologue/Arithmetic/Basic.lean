@@ -8,6 +8,23 @@ open scoped BigOperators NumberField
 variable {K : Type*} [Field K] [NumberField K]
 
 /-!
+This finite-place arithmetic API is ported from `iut`'s Corollary 3.12
+ThetaData/Places layer.  It is a local definition over the mathlib finite-place
+carrier; no `iut` module is imported as a dependency.
+-/
+
+noncomputable def residueChar (w : NumberField.FinitePlace K) : ℕ :=
+  ringChar (𝓞 K ⧸ w.maximalIdeal.asIdeal)
+
+lemma residueChar_prime (w : NumberField.FinitePlace K) : (residueChar w).Prime := by
+  haveI : w.maximalIdeal.asIdeal.IsMaximal :=
+    w.maximalIdeal.isPrime.isMaximal w.maximalIdeal.ne_bot
+  letI : Field (𝓞 K ⧸ w.maximalIdeal.asIdeal) := Ideal.Quotient.field _
+  haveI : Finite (𝓞 K ⧸ w.maximalIdeal.asIdeal) :=
+    Ring.HasFiniteQuotients.finiteQuotient w.maximalIdeal.ne_bot
+  exact CharP.char_is_prime (𝓞 K ⧸ w.maximalIdeal.asIdeal) (ringChar _)
+
+/-!
 Finite-place divisors are the arithmetic support used by the height and
 different/conductor interfaces.  The support and exponents are data; the
 nonzero-exponent condition prevents an empty encoding of a supported divisor.

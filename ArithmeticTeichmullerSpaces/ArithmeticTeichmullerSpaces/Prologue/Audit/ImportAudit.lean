@@ -31,6 +31,8 @@ open scoped NumberField
 #check PacketHullData
 #check AdelicThetaLinkData
 #check Arithmetic.FinitePlaceDivisor
+#check Arithmetic.residueChar
+#check Arithmetic.residueChar_prime
 #check Arithmetic.HeightData
 #check Arithmetic.RamificationProfile
 
