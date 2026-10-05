@@ -12,7 +12,7 @@ variable {K : Type*} [Field K] [NumberField K]
 /-! The first-axiom contract records non-degenerate input conditions. -/
 structure FirstAxiom (D : AdelicThetaLinkData K) : Prop where
   places_nonempty : D.places.Nonempty
-  q_parameter_nonzero : D.qParameter ≠ 0
+  q_parameter_nonzero : ∀ w ∈ D.places, D.qParameter w ≠ 0
   q_norm_positive : ∀ w ∈ D.places, 0 < D.qNorm w
   height_nonnegative : ∀ x, 0 ≤ D.height x
   theta_norm_positive : ∀ i, 0 < D.theta.norm i
@@ -23,7 +23,7 @@ structure FirstAxiom (D : AdelicThetaLinkData K) : Prop where
 structure AdelicThetaLink (D : AdelicThetaLinkData K) : Prop where
   valuation_scaling :
     ∀ w ∈ D.places, ∀ j : ℕ,
-      D.qNorm w ^ (j * j) = w (D.qParameter ^ (j * j))
+      D.qNorm w ^ (j * j) = w ((D.qParameter w) ^ (j * j))
   theta_scaling :
     Theta.ThetaPilotScalingLaws D.theta D.thetaBase
   period_map :

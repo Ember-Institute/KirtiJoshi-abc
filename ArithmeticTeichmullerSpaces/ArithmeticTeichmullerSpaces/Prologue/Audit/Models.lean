@@ -126,7 +126,7 @@ theorem auditRamificationProfile_logTotal_pos :
 noncomputable def auditData (q : ℚ) (period liftedLog logVolume packetWeight hullWeight : ℝ) :
     AdelicThetaLinkData ℚ where
   places := {rationalTwoPlace}
-  qParameter := q
+  qParameter := fun _ => q
   tate := auditTateData
   theta := auditTheta period liftedLog
   thetaBase := (0 : Fin 1)
@@ -140,7 +140,11 @@ theorem firstAxiom_model :
     FirstAxiom (auditData 2 0 0 7 2 3) := by
   constructor
   · simp [auditData]
-  · norm_num [auditData]
+  · intro w hw
+    simp only [auditData, Finset.mem_singleton] at hw
+    subst w
+    change (2 : ℚ) ≠ 0
+    norm_num
   · intro w hw
     change 0 < w (2 : ℚ)
     exact NumberField.FinitePlace.pos_iff.mpr (by norm_num)
@@ -160,7 +164,8 @@ theorem firstAxiom_model :
 theorem firstAxiom_violation :
     ¬ FirstAxiom (auditData 0 0 0 7 2 3) := by
   intro h
-  exact h.q_parameter_nonzero rfl
+  have hne := h.q_parameter_nonzero rationalTwoPlace (by simp [auditData])
+  exact hne rfl
 
 theorem adelicThetaLink_model :
     AdelicThetaLink (auditData 2 7 7 7 2 3) := by

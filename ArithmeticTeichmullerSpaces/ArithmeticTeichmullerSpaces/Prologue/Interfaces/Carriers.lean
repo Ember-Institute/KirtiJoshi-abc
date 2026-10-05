@@ -36,7 +36,8 @@ structure PacketHullData (Pilot : Type uK) where
 
 structure AdelicThetaLinkData (K : Type uK) [Field K] [NumberField K] where
   places : Finset (NumberField.FinitePlace K)
-  qParameter : K
+  /-- The local Tate parameter `q_w` at each finite place. -/
+  qParameter : NumberField.FinitePlace K → K
   tate : Theta.TateParameterData K
   theta : ThetaPilotData K
   thetaBase : theta.index
@@ -52,7 +53,7 @@ variable {K : Type*} [Field K] [NumberField K]
 
 def qNorm (D : AdelicThetaLinkData K)
     (w : NumberField.FinitePlace K) : ℝ :=
-  w D.qParameter
+  w (D.qParameter w)
 
 def height (D : AdelicThetaLinkData K) : K → ℝ :=
   D.heightData.value

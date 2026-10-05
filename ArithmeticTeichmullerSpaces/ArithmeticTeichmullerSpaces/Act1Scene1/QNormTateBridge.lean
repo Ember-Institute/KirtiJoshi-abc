@@ -17,16 +17,31 @@ parameter carrier; equality of the two local norm functions is explicit and is
 not added to Prologue/Core
 boundary: Scene1/Derived
 
-The Prologue deliberately stores the q parameter and Tate data as separate
-carriers.  This module records the exact compatibility needed by the q-family
-bridge and derives the strict q-norm range from the already explicit Tate laws.
+The Prologue stores the local q-parameter function and the Tate data as separate
+carriers.  This module records the place identification and local parameter
+compatibility needed by the q-family bridge.  The norm equality is derived from
+that compatibility and the explicit Tate laws.
 -/
 
 structure QNormTateCompatibility
     {K : Type uK} [Field K] [NumberField K]
     (D : AdelicThetaLinkData K) : Prop where
   places_eq : D.places = D.tate.places
-  norm_eq : ∀ w ∈ D.places, D.qNorm w = D.tate.norm w
+  parameter_eq : ∀ w ∈ D.places, D.qParameter w = D.tate.parameter w
+
+theorem QNormTateCompatibility.norm_eq
+    {K : Type uK} [Field K] [NumberField K]
+    (D : AdelicThetaLinkData K)
+    (hTate : Theta.TateParameterLaws D.tate)
+    (hCompat : QNormTateCompatibility D) :
+    ∀ w ∈ D.places, D.qNorm w = D.tate.norm w := by
+  intro w hw
+  have hwTate : w ∈ D.tate.places := by
+    rw [← hCompat.places_eq]
+    exact hw
+  unfold AdelicThetaLinkData.qNorm
+  rw [hCompat.parameter_eq w hw]
+  exact (hTate.norm_eq w hwTate).symm
 
 theorem qNorm_pos_lt_one_of_tate
     {K : Type uK} [Field K] [NumberField K]
@@ -39,9 +54,9 @@ theorem qNorm_pos_lt_one_of_tate
     rw [← hCompat.places_eq]
     exact hw
   constructor
-  · rw [hCompat.norm_eq w hw]
+  · rw [hCompat.norm_eq D hTate w hw]
     exact hTate.norm_pos w hwTate
-  · rw [hCompat.norm_eq w hw]
+  · rw [hCompat.norm_eq D hTate w hw]
     exact hTate.norm_lt_one w hwTate
 
 def Corollary312QFamily.ofTateCompatibility

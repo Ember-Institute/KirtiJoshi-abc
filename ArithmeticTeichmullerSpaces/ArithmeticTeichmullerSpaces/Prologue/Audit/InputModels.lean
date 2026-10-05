@@ -117,6 +117,9 @@ theorem badInput_violates_laws :
   have hfirst := @PrologueInputLaws.first_axiom ℚ inferInstance inferInstance
     ℤ_[2] inferInstance 2 inferInstance input_padicTwo_not_unit
     input_padicTwo_is_adic_complete badInputData h
-  exact hfirst.q_parameter_nonzero rfl
+  have hne := hfirst.q_parameter_nonzero rationalTwoPlace (by
+    change rationalTwoPlace ∈ ({rationalTwoPlace} : Finset (NumberField.FinitePlace ℚ))
+    simp)
+  exact hne rfl
 
 end JoshiTeich.Prologue.Audit
