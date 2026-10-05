@@ -516,14 +516,7 @@ noncomputable def scene_iut_qPilot_source :
     scene_padicTwo_is_adic_complete
   exact
     { badFinset := sceneTarget.scene1.data.link.places
-      badFinset_spec := rfl
-      weight := Arithmetic.qPilotWeight
-      weight_pos := by
-        intro w hw
-        exact Arithmetic.qPilotWeight_pos w
-      weight_eq_arithmetic := by
-        intro w
-        rfl }
+      badFinset_spec := rfl }
 
 noncomputable def scene_qPilot :
     @Corollary312QPilotData ℚ inferInstance inferInstance ℤ_[2] inferInstance 2

@@ -17,9 +17,9 @@ inputs.
 boundary: Scene1/Derived
 
 `iut` stores the bad-place enumeration and its positive weights in
-`QPilotData`. Its concrete constructor supplies the weight
-`inertDeg / [K : ℚ]`. This adapter keeps those two facts visible at the
-Scene1 boundary. It does not construct `InitialThetaData`, `TateFamily`, or
+`QPilotData`. Its concrete constructor `QPilotInputs.qPilot` supplies the
+weight `inertDeg / [K : ℚ]`; this adapter derives that same weight instead of
+accepting it as a free field. It does not construct `InitialThetaData`, `TateFamily`, or
 the equality between `badPlacesOver` and the local `AdelicThetaLink` carrier.
 -/
 
@@ -34,12 +34,6 @@ structure IutQPilotSource
   /-- Adapter obligation: the exported carrier is the Scene1 link carrier. -/
   badFinset_spec : (↑badFinset : Set (NumberField.FinitePlace K)) =
     (↑T.scene1.data.link.places : Set (NumberField.FinitePlace K))
-  /-- The normalized arithmetic-degree weight exported by q-pilot data. -/
-  weight : NumberField.FinitePlace K → ℝ
-  /-- Positivity on the exported bad-place carrier. -/
-  weight_pos : ∀ w ∈ badFinset, 0 < weight w
-  /-- The concrete `QPilotInputs.qPilot` normalization. -/
-  weight_eq_arithmetic : ∀ w, weight w = Arithmetic.qPilotWeight w
 
 namespace IutQPilotSource
 
@@ -63,8 +57,10 @@ noncomputable def toSceneQPilot
   refine
     { badFinset := S.badFinset
       badFinset_spec := S.badFinset_eq_link_places p
-      weight := S.weight
-      weight_pos := S.weight_pos
+      weight := Arithmetic.qPilotWeight
+      weight_pos := by
+        intro w hw
+        exact Arithmetic.qPilotWeight_pos w
       compatibility := hCompat }
 
 lemma toSceneQPilot_weight_eq_arithmetic
@@ -72,7 +68,7 @@ lemma toSceneQPilot_weight_eq_arithmetic
     (hCompat : QNormTateCompatibility T.scene1.data.link) :
     ∀ w, (S.toSceneQPilot p hCompat).weight w = Arithmetic.qPilotWeight w := by
   intro w
-  exact S.weight_eq_arithmetic w
+  rfl
 
 end IutQPilotSource
 
