@@ -100,8 +100,8 @@ open scoped NumberField
 #check false_of_volumeTransfer_of_nonempty_hull_with_frobeniusSquareCandidate
 
 -- Generic Scene1 models: one satisfying witness and one normalization
--- countermodel.  The q-pilot witness below is synthetic: it checks contract
--- consistency, but it is not a model sourced from Initial Theta Data/TateFamily.
+-- countermodel.  The q-pilot witness uses the explicit arithmetic
+-- `ℚ,(2)` carrier and its proved residue/inertia/norm facts.
 #check JoshiTeich.Act1Scene1.Audit.sceneInput
 #check JoshiTeich.Act1Scene1.Audit.sceneLink_tate_compatibility
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
@@ -164,9 +164,11 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Audit.scene_satisfying_model
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilot
-#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_normalized
-#check JoshiTeich.Act1Scene1.Audit.scene_normalized_qPilot_source_normalization
-#check JoshiTeich.Act1Scene1.Audit.scene_normalized_qPilot_source_index_bridge
+#check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_residueChar
+#check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_inertDeg
+#check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_two
+#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_normalization
+#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_index_bridge
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilotData
 #check JoshiTeich.Act1Scene1.Audit.scene_qPilot_satisfying_model
 #check JoshiTeich.Act1Scene1.Audit.scene_tate_order_compatibility
@@ -174,5 +176,6 @@ open scoped NumberField
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
+#print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_satisfying_model
 
 end JoshiTeich.Prologue.Audit

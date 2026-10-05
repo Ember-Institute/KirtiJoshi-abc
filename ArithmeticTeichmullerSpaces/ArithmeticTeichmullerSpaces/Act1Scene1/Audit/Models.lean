@@ -9,7 +9,7 @@ namespace JoshiTeich.Act1Scene1.Audit
 open JoshiTeich.Prologue
 open JoshiTeich.Prologue.Audit
 open JoshiTeich.Prologue.Theta
-open scoped BigOperators NumberField
+open scoped BigOperators NumberField NNReal
 
 instance scene_padicTwo_not_unit : Fact (¬ IsUnit (2 : ℤ_[2])) :=
   padicTwo_not_unit
@@ -24,6 +24,135 @@ local instance scene_local_padicTwo_not_unit : Fact (¬ IsUnit (2 : ℤ_[2])) :=
 local instance scene_local_padicTwo_is_adic_complete :
     IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
   scene_padicTwo_is_adic_complete
+
+/-! Arithmetic facts for the explicit `ℚ,(2)` carrier.  These facts make the
+q-pilot normalization use the actual `inertDeg / [K : ℚ]` weight rather than
+choosing a weight from the desired logarithmic equality. -/
+
+theorem rationalTwoPlace_residueChar :
+    Arithmetic.residueChar rationalTwoPlace = 2 := by
+  have hmem : (2 : 𝓞 ℚ) ∈ rationalTwoPlace.maximalIdeal.asIdeal := by
+    change (2 : 𝓞 ℚ) ∈ (NumberField.FinitePlace.mk rationalTwoHeightOne).maximalIdeal.asIdeal
+    rw [NumberField.FinitePlace.maximalIdeal_mk]
+    change (2 : 𝓞 ℚ) ∈ rationalTwoPrimeIdeal
+    change Rat.ringOfIntegersEquiv (2 : 𝓞 ℚ) ∈ Ideal.span {(2 : ℤ)}
+    have hmap : Rat.ringOfIntegersEquiv (2 : 𝓞 ℚ) = (2 : ℤ) := by
+      apply Rat.ringOfIntegersEquiv.symm.injective
+      apply NumberField.RingOfIntegers.ext
+      simp [Rat.ringOfIntegersEquiv_apply_coe]
+    rw [hmap]
+    exact Ideal.mem_span_singleton_self _
+  exact
+    (Arithmetic.natCast_mem_maximalIdeal_iff rationalTwoPlace Nat.prime_two).mp hmem
+
+theorem rationalTwoPlace_inertDeg :
+    Arithmetic.inertDeg rationalTwoPlace = 1 := by
+  let I : Ideal ℤ := Ideal.span {(2 : ℤ)}
+  let P : Ideal (𝓞 ℚ) := rationalTwoPrimeIdeal
+  have hIprime : I.IsPrime := by
+    dsimp [I]
+    exact intTwoPrimeIdeal_isPrime
+  have hImax : I.IsMaximal := IsPrime.to_maximal_ideal (by
+    dsimp [I]
+    rw [Ideal.span_singleton_eq_bot]
+    norm_num)
+  letI : I.IsMaximal := hImax
+  have hPprime : P.IsPrime := by
+    dsimp [P]
+    exact Ideal.comap_isPrime Rat.ringOfIntegersEquiv.toRingHom I
+  have hPmax : P.IsMaximal := by
+    dsimp [P, rationalTwoPrimeIdeal]
+    exact Ideal.comap_isMaximal_of_surjective _ Rat.ringOfIntegersEquiv.surjective
+  have hmap : P.map Rat.ringOfIntegersEquiv.toRingHom = I := by
+    dsimp [P, rationalTwoPrimeIdeal, I]
+    exact Ideal.map_comap_of_surjective _ Rat.ringOfIntegersEquiv.surjective _
+  have hOver : P.LiesOver I := by
+    refine ⟨?_⟩
+    rw [Ideal.under_def]
+    change I = P.comap (algebraMap ℤ (𝓞 ℚ))
+    ext z
+    change z ∈ I ↔ Rat.ringOfIntegersEquiv (algebraMap ℤ (𝓞 ℚ) z) ∈ I
+    have hz : Rat.ringOfIntegersEquiv (algebraMap ℤ (𝓞 ℚ) z) = z := by
+      apply Rat.ringOfIntegersEquiv.symm.injective
+      apply NumberField.RingOfIntegers.ext
+      simp [Rat.ringOfIntegersEquiv_symm_apply_coe]
+    rw [hz]
+  letI : I.IsPrime := hIprime
+  letI : P.IsPrime := hPprime
+  letI : P.IsMaximal := hPmax
+  letI : P.LiesOver I := hOver
+  have hfin : Module.finrank (ℤ ⧸ I) (𝓞 ℚ ⧸ P) = 1 := by
+    let j : (𝓞 ℚ ⧸ P) ≃+* (ℤ ⧸ I) :=
+      Ideal.quotientEquiv P I Rat.ringOfIntegersEquiv hmap.symm
+    have hc :
+        (algebraMap (ℤ ⧸ I) (ℤ ⧸ I)).comp (RingEquiv.refl (ℤ ⧸ I)).toRingHom =
+          j.toRingHom.comp (algebraMap (ℤ ⧸ I) (𝓞 ℚ ⧸ P)) := by
+      ext x
+      simp [j, Ideal.quotientEquiv_mk]
+    have hdim := Algebra.finrank_eq_of_equiv_equiv
+      (RingEquiv.refl (ℤ ⧸ I)) j hc
+    simpa using hdim
+  have hdeg := Ideal.inertiaDeg_eq_of_isMaximal I P
+  unfold Arithmetic.inertDeg
+  rw [show rationalTwoPlace.maximalIdeal.asIdeal = P by
+    change (NumberField.FinitePlace.mk rationalTwoHeightOne).maximalIdeal.asIdeal = P
+    rw [NumberField.FinitePlace.maximalIdeal_mk]
+    rfl]
+  rw [hdeg, hfin]
+
+theorem rationalTwoPlace_two : rationalTwoPlace (2 : ℚ) = (1 / 2 : ℝ) := by
+  change ‖NumberField.FinitePlace.embedding rationalTwoHeightOne (2 : ℚ)‖ = (1 / 2 : ℝ)
+  rw [show (2 : ℚ) = algebraMap (𝓞 ℚ) ℚ (2 : 𝓞 ℚ) by
+    exact (map_natCast (algebraMap (𝓞 ℚ) ℚ) 2).symm]
+  rw [NumberField.FinitePlace.norm_embedding_int]
+  have hideal : rationalTwoHeightOne.asIdeal = Ideal.span {(2 : 𝓞 ℚ)} := by
+    change rationalTwoPrimeIdeal = Ideal.span {(2 : 𝓞 ℚ)}
+    ext x
+    change Rat.ringOfIntegersEquiv x ∈ Ideal.span {(2 : ℤ)} ↔
+      x ∈ Ideal.span {(2 : 𝓞 ℚ)}
+    constructor
+    · intro hx
+      rw [Ideal.mem_span_singleton] at hx ⊢
+      obtain ⟨z, hz⟩ := hx
+      have hx' : x = (2 : 𝓞 ℚ) * Rat.ringOfIntegersEquiv.symm z := by
+        apply Rat.ringOfIntegersEquiv.injective
+        rw [map_mul]
+        have htwo : Rat.ringOfIntegersEquiv (2 : 𝓞 ℚ) = (2 : ℤ) := by
+          apply Rat.ringOfIntegersEquiv.symm.injective
+          apply NumberField.RingOfIntegers.ext
+          simp [Rat.ringOfIntegersEquiv_apply_coe]
+        rw [htwo]
+        simpa using hz
+      rw [hx']
+      exact ⟨Rat.ringOfIntegersEquiv.symm z, rfl⟩
+    · intro hx
+      rw [Ideal.mem_span_singleton] at hx ⊢
+      obtain ⟨z, hz⟩ := hx
+      have hz' : Rat.ringOfIntegersEquiv x =
+          (2 : ℤ) * Rat.ringOfIntegersEquiv z := by
+        rw [hz, map_mul]
+        have htwo : Rat.ringOfIntegersEquiv (2 : 𝓞 ℚ) = (2 : ℤ) := by
+          apply Rat.ringOfIntegersEquiv.symm.injective
+          apply NumberField.RingOfIntegers.ext
+          simp [Rat.ringOfIntegersEquiv_apply_coe]
+        rw [htwo]
+      exact ⟨Rat.ringOfIntegersEquiv z, hz'⟩
+  have hval : rationalTwoHeightOne.intValuation (2 : 𝓞 ℚ) =
+      WithZero.exp (-1 : ℤ) :=
+    IsDedekindDomain.HeightOneSpectrum.intValuation_singleton
+      (v := rationalTwoHeightOne) (r := (2 : 𝓞 ℚ)) (by norm_num) hideal
+  rw [hval, WithZeroMulInt.toNNReal_neg_apply]
+  · have habs : Ideal.absNorm rationalTwoHeightOne.asIdeal = 2 := by
+      change Ideal.absNorm rationalTwoPrimeIdeal = 2
+      rw [show rationalTwoPrimeIdeal = Ideal.span {(2 : 𝓞 ℚ)} by exact hideal]
+      have hnorm := Ideal.absNorm_span_natCast (S := 𝓞 ℚ) 2
+      norm_num [NumberField.RingOfIntegers.rank] at hnorm ⊢
+      exact hnorm
+    change ((Ideal.absNorm rationalTwoHeightOne.asIdeal : ℝ≥0) ^ (-1 : ℤ) : ℝ) =
+      (1 / 2 : ℝ)
+    rw [habs]
+    norm_num
+  · simp
 
 noncomputable def sceneTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
@@ -388,56 +517,35 @@ noncomputable def scene_qPilot :
   exact Corollary312QPilotData.ofArithmeticWeights 2 sceneTarget
     sceneLink_tate_compatibility
 
-/-! This synthetic audit carrier derives its weight from the explicit
-uniformizer norm.  It witnesses consistency of the q-pilot contracts without
-claiming to be the arithmetic weight supplied by Initial Theta Data. -/
-noncomputable def sceneNormalizedWeight (w : NumberField.FinitePlace ℚ) : ℝ :=
-  (-Real.log (scene_tate_order_compatibility.uniformizerNorm w)) /
-    Real.log (Arithmetic.residueChar w)
-
-noncomputable def scene_qPilot_normalized :
-    @Corollary312QPilotData ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
-      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget := by
-  letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
-  letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
-    scene_padicTwo_is_adic_complete
-  refine
-    { badFinset := sceneTarget.scene1.data.link.places
-      badFinset_spec := rfl
-      weight := sceneNormalizedWeight
-      weight_pos := ?_
-      compatibility := sceneLink_tate_compatibility }
-  intro w hw
-  have hwLink : w ∈ sceneLinkData.places := by
-    rw [← sceneTarget_link_eq]
-    exact hw
-  unfold sceneNormalizedWeight
-  apply div_pos
-  · exact neg_pos.mpr
-      (Real.log_neg
-        (scene_tate_order_compatibility.uniformizerNorm_pos w hwLink)
-        (scene_tate_order_compatibility.uniformizerNorm_lt_one w hwLink))
-  · exact Real.log_pos (by
-      exact_mod_cast (Arithmetic.residueChar_prime w).one_lt)
-
-theorem scene_normalized_qPilot_source_normalization :
+/-! The source normalization now uses the arithmetic q-pilot itself.  The
+explicit rational-place facts above provide the local numerical bridge; no
+weight is defined by solving the normalization equation. -/
+theorem scene_qPilot_source_normalization :
     @Corollary312QPilotSourceNormalization ℚ inferInstance inferInstance ℤ_[2]
       inferInstance 2 inferInstance scene_padicTwo_not_unit
       scene_padicTwo_is_adic_complete sceneTarget
-      scene_tate_order_compatibility scene_qPilot_normalized := by
+      scene_tate_order_compatibility scene_qPilot := by
   letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
   letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
     scene_padicTwo_is_adic_complete
   refine { uniformizer_log_eq_weighted_residueChar_log := ?_ }
   intro w hw
-  have hlogpos : 0 < Real.log (Arithmetic.residueChar w) := by
-    exact Real.log_pos (by
-      exact_mod_cast (Arithmetic.residueChar_prime w).one_lt)
-  change -Real.log (scene_tate_order_compatibility.uniformizerNorm w) =
-    ((-Real.log (scene_tate_order_compatibility.uniformizerNorm w)) /
-      Real.log (Arithmetic.residueChar w)) *
-        Real.log (Arithmetic.residueChar w)
-  field_simp [ne_of_gt hlogpos]
+  have hwLink : w ∈ sceneLinkData.places := by
+    rw [← sceneTarget_link_eq]
+    exact Corollary312QPilotData.mem_bad 2 scene_qPilot hw
+  have hwEq : w = rationalTwoPlace := by
+    simpa [sceneLinkData, AdelicThetaLinkData.ofTateParameters, sceneTateData]
+      using hwLink
+  subst w
+  change -Real.log (rationalTwoPlace (2 : ℚ)) =
+    Arithmetic.qPilotWeight rationalTwoPlace *
+      Real.log (Arithmetic.residueChar rationalTwoPlace)
+  rw [rationalTwoPlace_two, rationalTwoPlace_residueChar]
+  unfold Arithmetic.qPilotWeight
+  rw [rationalTwoPlace_inertDeg]
+  norm_num [Arithmetic.qPilotWeight]
+  rw [show (1 / 2 : ℝ) = (2 : ℝ)⁻¹ by norm_num, Real.log_inv]
+  ring
 
 noncomputable def scene_qFamily :
     @Corollary312TateQFamily ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
@@ -497,16 +605,16 @@ noncomputable def scene_qFamily :
         rw [scene_qFactor_source]
         rfl }
 
-noncomputable def scene_normalized_qPilot_source_index_bridge :
+noncomputable def scene_qPilot_source_index_bridge :
     @Corollary312QPilotSourceIndexBridge ℚ inferInstance inferInstance ℤ_[2]
       inferInstance 2 inferInstance scene_padicTwo_not_unit
-      scene_padicTwo_is_adic_complete sceneTarget sceneVolume scene_qPilot_normalized
+      scene_padicTwo_is_adic_complete sceneTarget sceneVolume scene_qPilot
       scene_qFamily := by
   letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
   letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
     scene_padicTwo_is_adic_complete
   exact Corollary312QPilotSourceIndexBridge.ofGrouping 2 sceneTarget
-    sceneVolume scene_qPilot_normalized scene_qFamily
+    sceneVolume scene_qPilot scene_qFamily
 
 theorem scene_normalization :
     @Corollary312VolumeNormalization ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
@@ -643,10 +751,10 @@ noncomputable def scene_qPilotData :
       scene_padicTwo_is_adic_complete
     exact
       { base := sceneData
-        qPilot := scene_qPilot_normalized
+        qPilot := scene_qPilot
         orderCompatibility := scene_tate_order_compatibility
-        sourceNormalization := scene_normalized_qPilot_source_normalization
-        sourceIndexBridge := scene_normalized_qPilot_source_index_bridge }
+        sourceNormalization := scene_qPilot_source_normalization
+        sourceIndexBridge := scene_qPilot_source_index_bridge }
 
 theorem scene_qPilot_satisfying_model :
     @Corollary312 ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
