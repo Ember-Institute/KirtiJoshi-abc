@@ -107,6 +107,14 @@ lemma residueChar_liesOver (w : NumberField.FinitePlace K) :
   simpa [Ideal.ringChar_quot] using
     (Int.liesOver_span_absNorm w.maximalIdeal.asIdeal)
 
+/-- The absolute norm of a finite place is the residue characteristic raised to
+its residue degree.  This is the finite-place norm identity used by the `iut`
+completion/uniformizer layer. -/
+lemma absNorm_eq_pow_residueChar (w : NumberField.FinitePlace K) :
+    Ideal.absNorm w.maximalIdeal.asIdeal = residueChar w ^ inertDeg w := by
+  haveI := residueChar_liesOver w
+  exact (Ideal.pow_inertiaDeg (residueChar w) w.maximalIdeal.asIdeal).symm
+
 /-!
 The finite-support fact used by the `iut` bad-place layer is independent of
 the elliptic-curve presentation: for a nonzero field element, only finitely
