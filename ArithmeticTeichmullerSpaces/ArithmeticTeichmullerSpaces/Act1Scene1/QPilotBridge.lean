@@ -59,11 +59,11 @@ noncomputable def Corollary312QPilotData.ofArithmeticWeights
   refine
     { badFinset := T.scene1.data.link.places
       badFinset_spec := rfl
-      weight := Arithmetic.placeWeight
+      weight := Arithmetic.qPilotWeight
       weight_pos := ?_
       compatibility := hCompat }
   intro w hw
-  exact Arithmetic.placeWeight_pos w
+  exact Arithmetic.qPilotWeight_pos w
 
 namespace Corollary312QPilotData
 

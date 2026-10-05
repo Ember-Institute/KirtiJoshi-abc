@@ -30,6 +30,12 @@ noncomputable def localDeg (w : NumberField.FinitePlace K) : ℕ :=
 noncomputable def placeWeight (w : NumberField.FinitePlace K) : ℝ :=
   (localDeg w : ℝ) / Module.finrank ℚ K
 
+/-- The q-divisor weight used by the `iut` q-pilot: residue degree divided by
+the global degree.  The ramification index belongs to the local valuation
+normalization and is not part of this q-pilot coefficient. -/
+noncomputable def qPilotWeight (w : NumberField.FinitePlace K) : ℝ :=
+  (inertDeg w : ℝ) / Module.finrank ℚ K
+
 lemma ramIdx_pos (w : NumberField.FinitePlace K) : 0 < ramIdx w := by
   exact w.maximalIdeal.asIdeal.ramificationIdx_pos (𝓞 K)
 
@@ -44,6 +50,9 @@ lemma finrank_pos : (0 : ℝ) < Module.finrank ℚ K := by
 
 lemma placeWeight_pos (w : NumberField.FinitePlace K) : 0 < placeWeight w := by
   exact div_pos (by exact_mod_cast localDeg_pos w) finrank_pos
+
+lemma qPilotWeight_pos (w : NumberField.FinitePlace K) : 0 < qPilotWeight w := by
+  exact div_pos (by exact_mod_cast inertDeg_pos w) finrank_pos
 
 noncomputable def residueChar (w : NumberField.FinitePlace K) : ℕ :=
   ringChar (𝓞 K ⧸ w.maximalIdeal.asIdeal)
