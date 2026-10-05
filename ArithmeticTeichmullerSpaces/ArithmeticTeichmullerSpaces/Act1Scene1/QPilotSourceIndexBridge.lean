@@ -72,6 +72,65 @@ structure Corollary312QPilotSourceIndexBridge
   pair_place_eq : ∀ w : P.badFinset,
     (Q.grouping.pairData (placePairEquiv w)).place.1 = w.1
 
+/-!
+The q-pilot and Tate q-family already carry enough finite equivalences to
+construct the bridge canonically.  This adapter keeps the place equality
+visible while removing the need to repeat the same subtype transport at each
+call site.
+-/
+noncomputable def Corollary312QPilotSourceIndexBridge.ofGrouping
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (V : Corollary312VolumeData p T)
+    (P : Corollary312QPilotData p T)
+    (Q : Corollary312TateQFamily p T V) :
+    Corollary312QPilotSourceIndexBridge p T V P Q := by
+  let toSource : P.badFinset → Corollary312SourceQIndex p T :=
+    fun w => ⟨w.1, P.mem_bad p w.2⟩
+  let toPair : P.badFinset → Q.grouping.pair :=
+    fun w => Q.grouping.indexEquiv (Q.indexEquiv.symm (toSource w))
+  let fromPair : Q.grouping.pair → P.badFinset := fun i =>
+    let s := Q.indexEquiv (Q.grouping.indexEquiv.symm i)
+    ⟨s.1, by
+      simpa [P.badFinset_spec] using s.2⟩
+  let e : P.badFinset ≃ Q.grouping.pair :=
+    { toFun := toPair
+      invFun := fromPair
+      left_inv := by
+        intro w
+        apply Subtype.ext
+        simp only [fromPair, toPair, Equiv.symm_apply_apply]
+        simpa [toSource] using
+          congrArg Subtype.val (Q.indexEquiv.apply_symm_apply (toSource w))
+      right_inv := by
+        intro i
+        dsimp [toPair]
+        conv_rhs => rw [← Q.grouping.indexEquiv.apply_symm_apply i]
+        have hSource :
+            toSource (fromPair i) =
+              Q.indexEquiv (Q.grouping.indexEquiv.symm i) := by
+          apply Subtype.ext
+          rfl
+        have hArgs :
+            Q.indexEquiv.symm (toSource (fromPair i)) =
+              Q.grouping.indexEquiv.symm i := by
+          rw [hSource, Q.indexEquiv.symm_apply_apply]
+        exact congrArg Q.grouping.indexEquiv hArgs }
+  refine
+    { placePairEquiv := e
+      pair_place_eq := ?_ }
+  intro w
+  have h := Q.grouping_place_eq (Q.indexEquiv.symm (toSource w))
+  change
+    (Q.grouping.pairData
+      (Q.grouping.indexEquiv (Q.indexEquiv.symm (toSource w)))).place.1 = w.1
+  rw [h]
+  simpa [toSource] using
+    congrArg Subtype.val (Q.indexEquiv.apply_symm_apply (toSource w))
+
 namespace Corollary312QPilotSourceIndexBridge
 
 variable {K : Type uK} [Field K] [NumberField K]

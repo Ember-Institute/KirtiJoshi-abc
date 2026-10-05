@@ -140,6 +140,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.normalizedLogTerm
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.normalizedLogTerm_eq_sourceQFactorLog
 #check JoshiTeich.Act1Scene1.Corollary312QPilotSourceIndexBridge
+#check JoshiTeich.Act1Scene1.Corollary312QPilotSourceIndexBridge.ofGrouping
 #check JoshiTeich.Act1Scene1.Corollary312QPilotSourceIndexBridge.absLogQ_eq_sourceQLogSum
 #check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping.ofPlaceIndex
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.qLogSum_eq_sourceQLogSum
