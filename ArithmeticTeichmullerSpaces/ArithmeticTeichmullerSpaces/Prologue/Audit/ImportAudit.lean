@@ -81,6 +81,11 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Audit.sceneLink_tate_compatibility
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily
+#check JoshiTeich.Act1Scene1.Corollary312TateQAccounting
+#check JoshiTeich.Act1Scene1.Corollary312TateQAccounting.toAccounting
+#check JoshiTeich.Act1Scene1.Corollary312PacketSourceQLogSum
+#check JoshiTeich.Act1Scene1.Corollary312HullSourceQLogSum
+#check JoshiTeich.Act1Scene1.Corollary312SourceQLogSum
 #check JoshiTeich.Act1Scene1.Corollary312SideConditions.ell_ge_five
 #check JoshiTeich.Act1Scene1.Corollary312SideConditions.ellStar_eq_half_sub_one
 #check JoshiTeich.Act1Scene1.cor312_of_adelicThetaLink

@@ -352,8 +352,9 @@ theorem scene_normalization :
   simpa [sceneTarget, sceneLinkData, AdelicThetaLinkData.ofTateParameters]
 
 noncomputable def scene_accounting :
-    @Corollary312TransferQAccounting ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
-      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget := by
+    @Corollary312TateQAccounting ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
+      inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete sceneTarget
+      sceneVolume scene_qFamily := by
   letI : Fact (¬ IsUnit (2 : ℤ_[2])) := scene_padicTwo_not_unit
   letI : IsAdicComplete (Ideal.span {(2 : ℤ_[2])}) ℤ_[2] :=
     scene_padicTwo_is_adic_complete
@@ -361,22 +362,36 @@ noncomputable def scene_accounting :
   let qZero : sceneTarget.qIndex := by
     change Fin 1
     exact 0
+  have hIndex : scene_qFamily.indexEquiv qZero = sceneSourcePlace := by
+    rfl
   let f : sceneLinkData.packetHull.packet → sceneTarget.qIndex := fun _ => qZero
   let g : sceneLinkData.packetHull.hull → sceneTarget.qIndex := fun _ => qZero
   exact
     { packet_qIndex := f
       hull_qIndex := g
-      packet_weight_le_qLogTerm := by
+      packet_weight_le_source_qLogTerm := by
         intro x
-        change sceneQTerm ≤ sceneQTerm
-        exact le_rfl
-      hull_weight_le_qLogTerm := by
+        change sceneQTerm ≤
+          -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
+        rw [← hIndex]
+        rw [← scene_qFamily.qLogTerm_eq qZero]
+        rfl
+      hull_weight_le_source_qLogTerm := by
         intro x
-        change sceneQTerm ≤ sceneQTerm
-        exact le_rfl
+        change sceneQTerm ≤
+          -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
+        rw [← hIndex]
+        rw [← scene_qFamily.qLogTerm_eq qZero]
+        rfl
       q_accounting := by
-        change (∑ _ : Fin 1, sceneQTerm) + ∑ _ : Fin 1, sceneQTerm =
-          (2 : ℝ) * ∑ _ : Fin 1, sceneQTerm
+        change
+          (∑ _ : Fin 1,
+              -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)) +
+              ∑ _ : Fin 1,
+                -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace) =
+            (2 : ℝ) *
+              ∑ _ : Fin 1,
+                -Real.log (Corollary312SourceQFactor 2 sceneTarget sceneSourcePlace)
         ring }
 
 noncomputable def sceneData :

@@ -33,7 +33,7 @@ structure Corollary312Scene1Data
   volume : Corollary312VolumeData p target
   qFamily : Corollary312TateQFamily p target volume
   normalization : Corollary312VolumeNormalization p target
-  accounting : Corollary312TransferQAccounting p target
+  accounting : Corollary312TateQAccounting p target volume qFamily
   ell_prime : Nat.Prime target.ell
   ell_ge_five : 5 ≤ target.ell
   ellStar_eq_half_sub_one : target.ellStar = (target.ell - 1) / 2
@@ -47,7 +47,7 @@ theorem cor312_of_adelicThetaLink
     (D : Corollary312Scene1Data (K := K) (O := O) p) :
     Corollary312 p D.target := by
   exact corollary312_of_transfer_q_accounting p D.target D.volume D.qFamily.toQFamily
-    D.normalization D.accounting D.ell_prime D.ell_ge_five
+    D.normalization D.accounting.toAccounting D.ell_prime D.ell_ge_five
     D.ellStar_eq_half_sub_one D.ellStar_pos
 
 end JoshiTeich.Act1Scene1
