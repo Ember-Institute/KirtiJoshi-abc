@@ -108,6 +108,37 @@ lemma residueChar_liesOver (w : NumberField.FinitePlace K) :
     (Int.liesOver_span_absNorm w.maximalIdeal.asIdeal)
 
 /-!
+The finite-support fact used by the `iut` bad-place layer is independent of
+the elliptic-curve presentation: for a nonzero field element, only finitely
+many finite places can have norm strictly larger than one.  The zero case is
+empty and is handled explicitly so the public carrier has no side condition.
+-/
+lemma finite_places_norm_gt_one (x : K) :
+    {w : NumberField.FinitePlace K | 1 < w x}.Finite := by
+  by_cases hx : x = 0
+  · subst x
+    have hempty :
+        ({w : NumberField.FinitePlace K | 1 < w (0 : K)} :
+          Set (NumberField.FinitePlace K)) = ∅ := by
+      ext w
+      simp
+    rw [hempty]
+    exact Set.finite_empty
+  · refine (NumberField.FinitePlace.hasFiniteMulSupport hx).subset ?_
+    intro w hw
+    simp only [Function.mem_mulSupport]
+    exact ne_of_gt hw
+
+noncomputable def normGtOneFinset (x : K) :
+    Finset (NumberField.FinitePlace K) :=
+  (finite_places_norm_gt_one x).toFinset
+
+lemma mem_normGtOneFinset_iff (x : K) (w : NumberField.FinitePlace K) :
+    w ∈ normGtOneFinset x ↔ 1 < w x := by
+  rw [normGtOneFinset, Set.Finite.mem_toFinset]
+  rfl
+
+/-!
 The finite-place index dictionary used by the `iut` arithmetic layer is now
 closed for the frozen mathlib carrier.  Filtering any explicit finite set by
 the residue characteristic gives a subset of the primes over `(q)`, so the

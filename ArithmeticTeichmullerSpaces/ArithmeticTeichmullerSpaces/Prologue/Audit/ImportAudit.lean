@@ -39,6 +39,9 @@ open scoped NumberField
 #check Arithmetic.residueChar
 #check Arithmetic.residueChar_prime
 #check Arithmetic.residueChar_liesOver
+#check Arithmetic.finite_places_norm_gt_one
+#check Arithmetic.normGtOneFinset
+#check Arithmetic.mem_normGtOneFinset_iff
 #check Arithmetic.ramIdx
 #check Arithmetic.inertDeg
 #check Arithmetic.localDeg
