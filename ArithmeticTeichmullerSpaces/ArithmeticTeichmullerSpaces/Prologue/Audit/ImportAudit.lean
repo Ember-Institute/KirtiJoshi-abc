@@ -252,6 +252,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutWeierstrass_local_torsion_card_lower_bound
 #check JoshiTeich.Act1Scene1.iutWeierstrass_local_torsion_card_lower_bound_of_global_card
 #check JoshiTeich.Act1Scene1.iutWeierstrass_exists_square_root_of_global_two_torsion
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_ofWeierstrassTorsion
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData
 #check JoshiTeich.Act1Scene1.iutGaloisPointMap
 #check JoshiTeich.Act1Scene1.iutGaloisPointMap_torsionBy
@@ -352,6 +353,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.finiteDimensional_torsionField
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.numberField_torsionField
 #print axioms JoshiTeich.Act1Scene1.iutWeierstrass_exists_square_root_of_global_two_torsion
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_ofWeierstrassTorsion
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 
 end JoshiTeich.Prologue.Audit

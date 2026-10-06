@@ -109,6 +109,71 @@ theorem iutWeierstrass_exists_square_root_of_global_two_torsion
 
 end LocalCardinality
 
+universe uF uKt
+
+section WeierstrassQRootSource
+
+open scoped Classical
+
+variable {F Kt : Type uF} [Field F] [NumberField F]
+variable [Field Kt] [NumberField Kt] [Algebra F Kt]
+variable {ell : ℕ} {B : IutBaseQPilotSource F ell}
+variable {E : WeierstrassCurve F} [E.IsElliptic]
+
+/-- Assemble the IUT q-root source from a Weierstrass `ell`-torsion basis over `Kt` and
+rational `2`-torsion over `F`. At each bad place, the local Tate quotient supplies the
+uniformization; the square root is derived from the global `2`-torsion bound. -/
+noncomputable def IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_ofWeierstrassTorsion
+    (B : IutBaseQPilotSource F ell)
+    (T : IutGlobalTorsionBasis
+      (E.map (algebraMap F Kt)).toAffine.Point ell)
+    (S : ∀ w : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite,
+      IutTateQuotientUniformization (w.1.maximalIdeal.adicCompletion Kt)
+        ((((E.map (algebraMap F Kt)).map
+          (NumberField.FinitePlace.embedding w.1.maximalIdeal)).toAffine.Point)))
+    (htwo : 2 * 2 ≤ Nat.card ↥(iutTorsion E.toAffine.Point 2))
+    (hEll : 0 < ell) (hodd : Odd ell)
+    (hq : ∀ w : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite,
+      ((S w).q : w.1.maximalIdeal.adicCompletion Kt) =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) w)
+          (B.tateParameter (basePlaceOf (B := B) w))) :
+    IutTorsionQRootSource F Kt ell B := by
+  let E_Kt : WeierstrassCurve Kt := E.map (algebraMap F Kt)
+  have hCard : ∀ w : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite,
+      ell * ell ≤ Nat.card ↥(iutTorsion
+        ((E_Kt.map (NumberField.FinitePlace.embedding w.1.maximalIdeal)).toAffine.Point)
+        ell) := by
+    intro w
+    exact iutWeierstrass_local_torsion_card_lower_bound
+      (E := E_Kt) (NumberField.FinitePlace.embedding w.1.maximalIdeal) T (S w) hEll
+  let squareRoot : ∀ w : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite, w.1.maximalIdeal.adicCompletion Kt :=
+    fun w => Classical.choose
+      (iutWeierstrass_exists_square_root_of_global_two_torsion
+        (E := E)
+        ((NumberField.FinitePlace.embedding w.1.maximalIdeal).comp (algebraMap F Kt))
+        (S w) htwo)
+  have hsquareRoot : ∀ w : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite,
+      squareRoot w ^ 2 =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) w)
+          (B.tateParameter (basePlaceOf (B := B) w)) := by
+    intro w
+    exact (Classical.choose_spec
+      (iutWeierstrass_exists_square_root_of_global_two_torsion
+        (E := E)
+        ((NumberField.FinitePlace.embedding w.1.maximalIdeal).comp (algebraMap F Kt))
+        (S w) htwo)).trans (hq w)
+  exact IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_ofTateUniformizationAndSquareRoot
+    B (fun w => (E_Kt.map
+      (NumberField.FinitePlace.embedding w.1.maximalIdeal)).toAffine.Point)
+    S hEll hCard hq squareRoot hodd hsquareRoot
+
+end WeierstrassQRootSource
+
 end
 
 end JoshiTeich.Act1Scene1
