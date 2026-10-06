@@ -248,31 +248,55 @@ base place.  This constructor consumes that canonical map, leaving only the
 q-root and its power equation as local source obligations.
 -/
 
-noncomputable def ofOverBaseBadWithCanonicalCompletionMap
+lemma canonical_qroot_ne_zero
     (B : IutBaseQPilotSource F ell)
     (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
-    (qroot_ne_zero : ∀ v, qroot v ≠ 0)
     (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite,
       qroot v ^ (2 * ell) =
         iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
-          (B.tateParameter (basePlaceOf (B := B) v))) :
+          (B.tateParameter (basePlaceOf (B := B) v)))
+    (hEll : 0 < ell)
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    qroot v ≠ 0 := by
+  have hTarget :
+      iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v)) ≠ 0 :=
+    (map_ne_zero _).2 (B.tateParameter_ne_zero (basePlaceOf (B := B) v))
+  intro hRoot
+  have hExp : 2 * ell ≠ 0 := Nat.mul_ne_zero (by decide) (Nat.ne_of_gt hEll)
+  have hPow := qroot_pow_eq v
+  rw [hRoot, zero_pow hExp] at hPow
+  exact hTarget hPow.symm
+
+noncomputable def ofOverBaseBadWithCanonicalCompletionMap
+    (B : IutBaseQPilotSource F ell)
+    (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      qroot v ^ (2 * ell) =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v)))
+    (hEll : 0 < ell) :
     IutTorsionQRootSource F Kt ell B :=
-  IutTorsionQRootSource.ofOverBaseBad B qroot qroot_ne_zero
+  IutTorsionQRootSource.ofOverBaseBad B qroot
+    (fun v => canonical_qroot_ne_zero B qroot qroot_pow_eq hEll v)
     (fun v => iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)) qroot_pow_eq
 
 lemma ofOverBaseBadWithCanonicalCompletionMap_badFinset
     (B : IutBaseQPilotSource F ell)
     (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
-    (qroot_ne_zero : ∀ v, qroot v ≠ 0)
     (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite,
       qroot v ^ (2 * ell) =
         iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
-          (B.tateParameter (basePlaceOf (B := B) v))) :
-    (ofOverBaseBadWithCanonicalCompletionMap B qroot qroot_ne_zero qroot_pow_eq).badFinset =
+          (B.tateParameter (basePlaceOf (B := B) v)))
+    (hEll : 0 < ell) :
+    (ofOverBaseBadWithCanonicalCompletionMap B qroot qroot_pow_eq hEll).badFinset =
       iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces B.badPlaces_finite :=
   rfl
 

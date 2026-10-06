@@ -219,6 +219,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutEmbedCompletion_norm_lt_one_iff
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_badFinset
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ne_zero
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_valued_pow_eq
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ordp_eq
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum
