@@ -150,6 +150,54 @@ lemma badPlaces_finite : B.badPlaces.Finite := by
 end IutBaseQPilotSource
 
 /-!
+The reference `placeUnder` is the contraction of a torsion-place prime to the
+base ring of integers.  Porting this definition makes the base-place witness
+canonical instead of choosing an unrelated member of the over-locus.
+-/
+
+noncomputable def iutPlaceUnder
+    {F Kt : Type uF} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
+    [Algebra F Kt] (v : NumberField.FinitePlace Kt) :
+    NumberField.FinitePlace F :=
+  NumberField.FinitePlace.mk
+    { asIdeal := v.maximalIdeal.asIdeal.comap (algebraMap (𝓞 F) (𝓞 Kt))
+      isPrime := Ideal.comap_isPrime _ _
+      ne_bot := by
+        obtain ⟨x, hx, hx0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot
+          v.maximalIdeal.ne_bot
+        exact Ideal.under_ne_bot_of_integral_mem hx0 hx
+          (Algebra.IsIntegral.isIntegral x) }
+
+lemma iutPlaceUnder_maximalIdeal
+    {F Kt : Type uF} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
+    [Algebra F Kt] (v : NumberField.FinitePlace Kt) :
+    (iutPlaceUnder v).maximalIdeal.asIdeal =
+      v.maximalIdeal.asIdeal.comap (algebraMap (𝓞 F) (𝓞 Kt)) := by
+  rw [iutPlaceUnder, NumberField.FinitePlace.maximalIdeal_mk]
+
+lemma iutPlaceUnder_liesOver
+    {F Kt : Type uF} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
+    [Algebra F Kt] (v : NumberField.FinitePlace Kt) :
+    Ideal.LiesOver v.maximalIdeal.asIdeal
+      (iutPlaceUnder (F := F) (Kt := Kt) v).maximalIdeal.asIdeal := by
+  exact ⟨by
+    rw [iutPlaceUnder_maximalIdeal (F := F) (Kt := Kt) v]⟩
+
+lemma iutPlaceUnder_eq_of_liesOver
+    {F Kt : Type uF} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
+    [Algebra F Kt] {v : NumberField.FinitePlace Kt}
+    {w : NumberField.FinitePlace F}
+    (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) :
+    w = iutPlaceUnder v := by
+  apply NumberField.FinitePlace.maximalIdeal_injective
+  change w.maximalIdeal = (iutPlaceUnder v).maximalIdeal
+  apply IsDedekindDomain.HeightOneSpectrum.ext
+  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw
+  rw [iutPlaceUnder_maximalIdeal (F := F) (Kt := Kt) v]
+  simpa only [Ideal.under_def] using
+    (Ideal.over_def v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal)
+
+/-!
 The torsion carrier is the over-locus of the base q-pilot carrier.  The
 constructor below makes that carrier canonical and derives a base-place
 witness from its `LiesOver` evidence; the completion map and q-root equation
@@ -169,9 +217,13 @@ lemma exists_basePlace
   have hv : v.1 ∈ iutBadPlacesOver (k := F) (K := Kt) B.badPlaces :=
     (mem_iutBadPlacesOverFinset_iff B.badPlaces B.badPlaces_finite v.1).mp v.2
   rcases hv with ⟨w, hw, hvw⟩
-  have hw' : w ∈ B.badFinset := by
-    exact (Set.ext_iff.mp B.badFinset_spec w).mpr hw
-  exact ⟨⟨w, hw'⟩, by simpa using hvw⟩
+  have hUnder : iutPlaceUnder v.1 ∈ B.badPlaces := by
+    rw [← iutPlaceUnder_eq_of_liesOver hvw]
+    exact hw
+  have hUnder' : iutPlaceUnder v.1 ∈ B.badFinset := by
+    exact (Set.ext_iff.mp B.badFinset_spec _).mpr hUnder
+  exact ⟨⟨iutPlaceUnder v.1, hUnder'⟩,
+    iutPlaceUnder_liesOver (F := F) (Kt := Kt) v.1⟩
 
 noncomputable def basePlaceOf
     (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
@@ -184,6 +236,22 @@ lemma basePlaceOf_liesOver
     Ideal.LiesOver v.1.maximalIdeal.asIdeal
       (basePlaceOf (B := B) v).1.maximalIdeal.asIdeal :=
   Classical.choose_spec (exists_basePlace (B := B) v)
+
+lemma basePlaceOf_eq_placeUnder
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    (basePlaceOf (B := B) v).1 = iutPlaceUnder v.1 := by
+  apply NumberField.FinitePlace.maximalIdeal_injective
+  change (basePlaceOf (B := B) v).1.maximalIdeal =
+    (iutPlaceUnder v.1).maximalIdeal
+  apply IsDedekindDomain.HeightOneSpectrum.ext
+  have h := basePlaceOf_liesOver (B := B) v
+  haveI : v.1.maximalIdeal.asIdeal.LiesOver
+      (basePlaceOf (B := B) v).1.maximalIdeal.asIdeal := h
+  rw [iutPlaceUnder_maximalIdeal (F := F) (Kt := Kt) v.1]
+  simpa only [Ideal.under_def] using
+    (Ideal.over_def v.1.maximalIdeal.asIdeal
+      (basePlaceOf (B := B) v).1.maximalIdeal.asIdeal)
 
 noncomputable def ofOverBaseBad
     (B : IutBaseQPilotSource F ell)
