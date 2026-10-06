@@ -22,8 +22,8 @@
   obligations listed below.
 - Build cadence from this baseline: run one full build after every `10` pushes. Keep the full
   build virtual-memory cap at `60 GiB` (`ulimit -v 62914560`) and the directed-build cap at
-  `16 GiB` (`ulimit -v 16777216`). The S1.95 push is `2/10`; after it succeeds, the next push
-  is `3/10`.
+  `16 GiB` (`ulimit -v 16777216`). The S1.96 audit-record correction push is `3/10`; after it
+  succeeds, the next push is `4/10`.
 
 ## JoshiTeich references
 
