@@ -138,4 +138,93 @@ lemma IutBaseQPilotSource.ofOverVBad_badPlaces
       iutBadPlacesOver (k := k) (K := F) VBad := by
   rfl
 
+namespace IutBaseQPilotSource
+
+variable {F : Type uF} [Field F] [NumberField F]
+variable {ell : ℕ} (B : IutBaseQPilotSource F ell)
+
+lemma badPlaces_finite : B.badPlaces.Finite := by
+  rw [← B.badFinset_spec]
+  exact B.badFinset.finite_toSet
+
+end IutBaseQPilotSource
+
+/-!
+The torsion carrier is the over-locus of the base q-pilot carrier.  The
+constructor below makes that carrier canonical and derives a base-place
+witness from its `LiesOver` evidence; the completion map and q-root equation
+remain source obligations.
+-/
+
+namespace IutTorsionQRootSource
+
+variable {F Kt : Type uF} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
+variable [Algebra F Kt] {ell : ℕ} {B : IutBaseQPilotSource F ell}
+
+lemma exists_basePlace
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    ∃ w : B.badFinset,
+      Ideal.LiesOver v.1.maximalIdeal.asIdeal w.1.maximalIdeal.asIdeal := by
+  have hv : v.1 ∈ iutBadPlacesOver (k := F) (K := Kt) B.badPlaces :=
+    (mem_iutBadPlacesOverFinset_iff B.badPlaces B.badPlaces_finite v.1).mp v.2
+  rcases hv with ⟨w, hw, hvw⟩
+  have hw' : w ∈ B.badFinset := by
+    exact (Set.ext_iff.mp B.badFinset_spec w).mpr hw
+  exact ⟨⟨w, hw'⟩, by simpa using hvw⟩
+
+noncomputable def basePlaceOf
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) : B.badFinset :=
+  Classical.choose (exists_basePlace (B := B) v)
+
+lemma basePlaceOf_liesOver
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    Ideal.LiesOver v.1.maximalIdeal.asIdeal
+      (basePlaceOf (B := B) v).1.maximalIdeal.asIdeal :=
+  Classical.choose_spec (exists_basePlace (B := B) v)
+
+noncomputable def ofOverBaseBad
+    (B : IutBaseQPilotSource F ell)
+    (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_ne_zero : ∀ v, qroot v ≠ 0)
+    (completionMap : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      (basePlaceOf (B := B) v).1.maximalIdeal.adicCompletion F →+*
+        v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      qroot v ^ (2 * ell) =
+        completionMap v (B.tateParameter (basePlaceOf (B := B) v))) :
+    IutTorsionQRootSource F Kt ell B :=
+  { badFinset := iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite
+    basePlace := fun v => basePlaceOf (B := B) v
+    liesOver := fun v => basePlaceOf_liesOver (B := B) v
+    qroot := qroot
+    qroot_ne_zero := qroot_ne_zero
+    completionMap := completionMap
+    qroot_pow_eq := qroot_pow_eq }
+
+lemma ofOverBaseBad_badFinset
+    (B : IutBaseQPilotSource F ell)
+    (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_ne_zero : ∀ v, qroot v ≠ 0)
+    (completionMap : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      (basePlaceOf (B := B) v).1.maximalIdeal.adicCompletion F →+*
+        v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      qroot v ^ (2 * ell) =
+        completionMap v (B.tateParameter (basePlaceOf (B := B) v))) :
+    (ofOverBaseBad B qroot qroot_ne_zero completionMap qroot_pow_eq).badFinset =
+      iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces B.badPlaces_finite :=
+  rfl
+
+end IutTorsionQRootSource
+
 end JoshiTeich.Act1Scene1

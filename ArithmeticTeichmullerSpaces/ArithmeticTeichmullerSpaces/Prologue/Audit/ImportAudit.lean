@@ -192,6 +192,11 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.mem_iutBadPlacesOverFinset_iff
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofOverVBad
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofOverVBad_badPlaces
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.badPlaces_finite
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.basePlaceOf
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.basePlaceOf_liesOver
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBad
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBad_badFinset
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus_weight_sum_le_one
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.filter_eq_sourcePlacesOver
