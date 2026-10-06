@@ -30,6 +30,16 @@ lemma exists_two_mul_add_mul_eq_one {ell : ℕ} (hodd : Odd ell) :
   push_cast at hxy
   linear_combination hxy
 
+lemma exists_pow_eq_of_root_class
+    {G : Type*} [CommGroup G] {q u : G} {ell : ℕ} {m : ℤ}
+    (hu : u ^ ell = q ^ (1 + (ell : ℤ) * m)) :
+    ∃ r : G, r ^ ell = q := by
+  refine ⟨u * q ^ (-m), ?_⟩
+  rw [mul_pow, hu, ← zpow_natCast, ← zpow_mul, ← zpow_add]
+  convert zpow_one q using 2
+  push_cast
+  ring
+
 lemma exists_pow_two_mul_eq {G : Type*} [CommGroup G] {q r s : G} {ell : ℕ}
     (hodd : Odd ell) (hr : r ^ ell = q) (hs : s ^ 2 = q) :
     ∃ x : G, x ^ (2 * ell) = q := by
@@ -81,6 +91,41 @@ namespace IutTorsionQRootSource
 
 variable {F Kt : Type u} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
 variable [Algebra F Kt] {ell : ℕ} {B : IutBaseQPilotSource F ell}
+
+noncomputable def ellRootOfRootClass
+    (B : IutBaseQPilotSource F ell)
+    (rootClass : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (rootClassExponent : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite, ℤ)
+    (rootClass_pow_eq : ∀ v,
+      rootClass v ^ ell =
+        (iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v))) ^
+            (1 + (ell : ℤ) * rootClassExponent v)) :
+    ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt :=
+  fun v => Classical.choose (IutQRootExistence.exists_pow_eq_of_root_class
+    (rootClass_pow_eq v))
+
+lemma ellRootOfRootClass_pow_eq
+    (B : IutBaseQPilotSource F ell)
+    (rootClass : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (rootClassExponent : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite, ℤ)
+    (rootClass_pow_eq : ∀ v,
+      rootClass v ^ ell =
+        (iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v))) ^
+            (1 + (ell : ℤ) * rootClassExponent v))
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    ellRootOfRootClass B rootClass rootClassExponent rootClass_pow_eq v ^ ell =
+      iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+        (B.tateParameter (basePlaceOf (B := B) v)) :=
+  Classical.choose_spec (IutQRootExistence.exists_pow_eq_of_root_class
+    (rootClass_pow_eq v))
 
 lemma canonical_tateParameter_image_ne_zero
     (B : IutBaseQPilotSource F ell)
@@ -157,6 +202,31 @@ noncomputable def ofOverBaseBadWithCanonicalCompletionMap_ofRoots
       ellRoot_pow_eq squareRoot_pow_eq)
     (qrootOfSquareAndEllRoot_pow_eq B ellRoot squareRoot hEll hodd
       ellRoot_pow_eq squareRoot_pow_eq) hEll
+
+noncomputable def ofOverBaseBadWithCanonicalCompletionMap_ofRootClassAndSquareRoot
+    (B : IutBaseQPilotSource F ell)
+    (rootClass : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (rootClassExponent : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite, ℤ)
+    (squareRoot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt)
+      B.badPlaces B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (hEll : 0 < ell) (hodd : Odd ell)
+    (rootClass_pow_eq : ∀ v,
+      rootClass v ^ ell =
+        (iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v))) ^
+            (1 + (ell : ℤ) * rootClassExponent v))
+    (squareRoot_pow_eq : ∀ v,
+      squareRoot v ^ 2 =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v))) :
+    IutTorsionQRootSource F Kt ell B :=
+  ofOverBaseBadWithCanonicalCompletionMap_ofRoots B
+    (ellRootOfRootClass B rootClass rootClassExponent rootClass_pow_eq)
+    squareRoot hEll hodd
+    (ellRootOfRootClass_pow_eq B rootClass rootClassExponent rootClass_pow_eq)
+    squareRoot_pow_eq
 
 end IutTorsionQRootSource
 
