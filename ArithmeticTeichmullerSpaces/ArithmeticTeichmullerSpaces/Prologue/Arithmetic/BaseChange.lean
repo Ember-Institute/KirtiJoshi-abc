@@ -334,8 +334,9 @@ lemma placeUnder_maximalIdeal (v : NumberField.FinitePlace L) :
   rw [placeUnder, NumberField.FinitePlace.maximalIdeal_mk]
 
 lemma liesOver_placeUnder (v : NumberField.FinitePlace L) :
-    Ideal.LiesOver v.maximalIdeal.asIdeal (placeUnder v).maximalIdeal.asIdeal := by
-  exact ⟨by rw [placeUnder_maximalIdeal]⟩
+    Ideal.LiesOver v.maximalIdeal.asIdeal
+      (placeUnder (F := F) (L := L) v).maximalIdeal.asIdeal := by
+  exact ⟨by rw [placeUnder_maximalIdeal (F := F) (L := L)]⟩
 
 lemma eq_placeUnder_of_liesOver {v : NumberField.FinitePlace L}
     {w : NumberField.FinitePlace F}
@@ -414,7 +415,7 @@ theorem sum_placeWeight_mul (p : ℕ)
     intro v hv
     have h := (Finset.mem_filter.mp hv).2
     rw [← h]
-    exact liesOver_placeUnder v.1
+    exact liesOver_placeUnder (F := F) (L := L) v.1
   have hsum :
       ∑ v ∈ s.filter (fun v => placeUnder v.1 = w),
           placeWeight v.1 * o v.1 =

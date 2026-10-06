@@ -1,11 +1,18 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation
+import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
+import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.BaseChange
 
 namespace JoshiTeich.Act1Scene1
 
 open JoshiTeich.Prologue
+open JoshiTeich.Prologue.Arithmetic
+open WithZero
 open scoped BigOperators NumberField
 
 universe u
+
+noncomputable section
+attribute [local instance] Classical.propDecidable
 
 /-!
 source-id: IUT-COR312-QROOT-WEIGHTED-ACCOUNTING
@@ -76,12 +83,17 @@ theorem canonical_qroot_weighted_sum
     calc
       o v = Arithmetic.ordp v (qroot vC) := by
         simp only [o, carrier, dif_pos hvC]
+        have hvEq : (⟨v, hvC⟩ : carrier) = vC := by
+          apply Subtype.ext
+          rfl
+        cases hvEq
+        rfl
       _ = (B.qOrder (basePlaceOf (B := B) vC) : ℝ) /
           (2 * (ell : ℝ) * Arithmetic.ramIdx (basePlaceOf (B := B) vC).1) := hOrd
       _ = (B.qOrder (⟨w, (Set.ext_iff.mp B.badFinset_spec w).mpr hw⟩) : ℝ) /
           (2 * (ell : ℝ) * Arithmetic.ramIdx w) := by rw [hbase']
       _ = c w / Arithmetic.ramIdx w := by
-        rw [hc]
+        rw [hc ⟨w, (Set.ext_iff.mp B.badFinset_spec w).mpr hw⟩]
         ring
   have ho0 : ∀ v, (∀ w ∈ B.badPlaces,
       ¬ Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) → o v = 0 := by
@@ -92,10 +104,42 @@ theorem canonical_qroot_weighted_sum
         (mem_iutBadPlacesOverFinset_iff B.badPlaces B.badPlaces_finite v).mp hv
       exact hnone w hw hvw
     simp [o, hvC]
-  have hSum := Arithmetic.sum_placeWeight_mul (L := Kt) (F := F) p
+  have hSum := JoshiTeich.Prologue.Arithmetic.sum_placeWeight_mul
+    (L := Kt) (F := F) p
     B.badPlaces bad hbad c o ho ho0
   simpa [o, carrier] using hSum
 
+theorem canonical_qroot_weighted_sum_of_tateValuation
+    (p : ℕ)
+    [Fintype {v : NumberField.FinitePlace Kt // Arithmetic.residueChar v = p}]
+    (bad : Finset (NumberField.FinitePlace F))
+    (hbad : (↑bad : Set (NumberField.FinitePlace F)) = B.badPlaces)
+    (c : NumberField.FinitePlace F → ℝ)
+    (hc : ∀ w : B.badFinset,
+      c w.1 = (B.qOrder w : ℝ) / (2 * (ell : ℝ)))
+    (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      qroot v ^ (2 * ell) =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v)))
+    (C : IutCompletionTateValuation B)
+    (hEll : 0 < ell) :
+    ∑ v : {v : NumberField.FinitePlace Kt // Arithmetic.residueChar v = p},
+        Arithmetic.placeWeight v.1 *
+          (if hv : v.1 ∈ iutBadPlacesOverFinset B.badPlaces
+              B.badPlaces_finite then
+            Arithmetic.ordp v.1 (qroot ⟨v.1, hv⟩)
+          else 0) =
+      ∑ w ∈ bad.filter (fun w => Arithmetic.residueChar w = p),
+        (Arithmetic.inertDeg w : ℝ) / Module.finrank ℚ F * c w := by
+  exact canonical_qroot_weighted_sum p bad hbad c hc qroot qroot_pow_eq
+    (fun w => IutCompletionTateValuation.valued_tateParameter_eq_exp_neg_order C w)
+    hEll
+
 end IutTorsionQRootSource
+
+end
 
 end JoshiTeich.Act1Scene1

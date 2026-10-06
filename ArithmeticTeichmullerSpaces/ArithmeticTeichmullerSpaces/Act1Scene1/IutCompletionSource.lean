@@ -1,9 +1,12 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlaceSource
+import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
 import Mathlib.NumberTheory.RamificationInertia.Valuation
 
 namespace JoshiTeich.Act1Scene1
 
 open IsDedekindDomain IsDedekindDomain.HeightOneSpectrum
+open JoshiTeich.Prologue.Arithmetic
+open WithZero
 open scoped WithZero NumberField Valued
 
 universe u uΓ
@@ -305,9 +308,9 @@ lemma canonical_qroot_ordp_eq
     (hEll : 0 < ell)
     (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite) :
-    Arithmetic.ordp v.1 (qroot v) =
+    ordp v.1 (qroot v) =
       (B.qOrder (basePlaceOf (B := B) v) : ℝ) /
-        (2 * (ell : ℝ) * Arithmetic.ramIdx (basePlaceOf (B := B) v).1) := by
+        (2 * (ell : ℝ) * ramIdx (basePlaceOf (B := B) v).1) := by
   let w : B.badFinset := basePlaceOf (B := B) v
   let e : ℕ := iutRelativeRamificationIndex
     (v := v.1) (w := w.1)
@@ -323,26 +326,28 @@ lemma canonical_qroot_ordp_eq
         rw [← exp_nsmul, nsmul_eq_mul]
         push_cast
         ring
-  have hOrd := Arithmetic.ordp_eq_of_valued v.1 (qroot v ^ (2 * ell))
+  have hOrd := ordp_eq_of_valued v.1 (qroot v ^ (2 * ell))
     (-((B.qOrder w : ℤ) * (e : ℤ))) hVal
-  rw [Arithmetic.ordp_pow] at hOrd
-  have hRam := Arithmetic.ramIdx_eq_mul
+  rw [ordp_pow] at hOrd
+  have hRam := ramIdx_eq_mul
     (v := v.1) (w := w.1) (basePlaceOf_liesOver (B := B) v)
-  have hRam' : Arithmetic.ramIdx v.1 =
-      Arithmetic.ramIdx w.1 * e := by
+  have hRam' : ramIdx v.1 =
+      ramIdx w.1 * e := by
     simpa [e, iutRelativeRamificationIndex] using hRam
   rw [hRam'] at hOrd
-  change Arithmetic.ordp v.1 (qroot v) =
+  change ordp v.1 (qroot v) =
     (B.qOrder w : ℝ) /
-      (2 * (ell : ℝ) * Arithmetic.ramIdx w.1)
+      (2 * (ell : ℝ) * ramIdx w.1)
   have hEll0 : (2 * (ell : ℝ)) ≠ 0 := by
     have : (0 : ℝ) < ell := by exact_mod_cast hEll
     positivity
-  have hRamPos : (0 : ℝ) < Arithmetic.ramIdx w.1 := by
-    exact_mod_cast Arithmetic.ramIdx_pos w.1
+  have hRamPos : (0 : ℝ) < ramIdx w.1 := by
+    exact_mod_cast ramIdx_pos w.1
   have hEPos : (0 : ℝ) < (e : ℝ) := by
-    exact_mod_cast (Arithmetic.relRamIdx_ne_zero
-      (basePlaceOf_liesOver (B := B) v))
+    have hE : e ≠ 0 := by
+      simpa [e, iutRelativeRamificationIndex] using
+        (relRamIdx_ne_zero (basePlaceOf_liesOver (B := B) v))
+    exact_mod_cast Nat.pos_of_ne_zero hE
   field_simp [hEll0, ne_of_gt hRamPos] at hOrd ⊢
   push_cast at hOrd
   nlinarith

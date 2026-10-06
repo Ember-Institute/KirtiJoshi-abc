@@ -1,0 +1,98 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
+
+namespace JoshiTeich.Act1Scene1
+
+open JoshiTeich.Prologue
+open JoshiTeich.Prologue.Arithmetic
+open WithZero
+open scoped NumberField Valued
+
+universe u
+
+/-!
+source-id: IUT-COR312-TATE-VALUATION
+source: `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean`,
+`valued_eq_of_isUniformizer` and `valued_tateParameter_q`; supporting order
+normalization: `refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean`,
+`TateParameter.norm_q_eq_pow_orderNat`.
+fidelity: the contract is completion-valued and keeps the chosen uniformizer,
+its certificate, and the Tate norm/order equation explicit.  It proves the
+valuation law used by the q-root transfer, but does not construct a real
+`InitialThetaData`, `TateFamily`, q-root, or `V_p^oss` identification.
+boundary: Scene1/Derived
+-/
+
+structure IutCompletionTateValuation
+    {F : Type u} [Field F] [NumberField F]
+    {ell : ℕ} (B : IutBaseQPilotSource F ell) : Type u where
+  /-- The chosen local uniformizer at every base q-pilot place. -/
+  uniformizer : ∀ w : B.badFinset, w.1.maximalIdeal.adicCompletion F
+  /-- The chosen element satisfies the source-shaped uniformizer contract. -/
+  uniformizer_isCompletionUniformizer : ∀ w,
+    Arithmetic.IsCompletionUniformizer w.1 (uniformizer w)
+  /-- The completion-valued Tate parameter has the normalized q-order. -/
+  norm_eq_pow_order : ∀ w,
+    ‖B.tateParameter w‖ = ‖uniformizer w‖ ^ B.qOrder w
+
+namespace IutCompletionTateValuation
+
+variable {F : Type u} [Field F] [NumberField F]
+variable {ell : ℕ} {B : IutBaseQPilotSource F ell}
+
+lemma valued_tateParameter_eq_exp_neg_order
+    (C : IutCompletionTateValuation B) (w : B.badFinset) :
+    Valued.v (B.tateParameter w) = exp (-(B.qOrder w : ℤ)) := by
+  have hq : B.tateParameter w ≠ 0 := B.tateParameter_ne_zero w
+  have hq' : Valued.v (B.tateParameter w) ≠ 0 :=
+    (Valuation.ne_zero_iff _).2 hq
+  set m : ℤ := log (Valued.v (B.tateParameter w))
+  have hm : Valued.v (B.tateParameter w) = exp m := (exp_log hq').symm
+  have hN : (1 : ℝ) < (Arithmetic.residueChar w.1 : ℝ) ^ Arithmetic.inertDeg w.1 := by
+    have hp : (Arithmetic.residueChar w.1).Prime :=
+      Arithmetic.residueChar_prime w.1
+    exact one_lt_pow₀ (by exact_mod_cast hp.one_lt)
+      (Arithmetic.inertDeg_pos w.1).ne'
+  have h1 := C.norm_eq_pow_order w
+  rw [Arithmetic.completionNorm_eq_residueChar_pow_of_valued w.1
+      (B.tateParameter w) m hm,
+    Arithmetic.completionNorm_eq_residueChar_pow_of_valued w.1
+      (C.uniformizer w) (-1)
+      (Arithmetic.valued_eq_exp_neg_one_of_isCompletionUniformizer w.1
+        (C.uniformizer_isCompletionUniformizer w))] at h1
+  set N : ℝ := (Arithmetic.residueChar w.1 : ℝ) ^ Arithmetic.inertDeg w.1 with hN'
+  rw [← zpow_natCast, ← zpow_mul] at h1
+  have hm_order := zpow_right_injective₀ (zero_lt_one.trans hN) hN.ne' h1
+  rw [hm, hm_order]
+  congr 1
+  push_cast
+  ring
+
+end IutCompletionTateValuation
+
+namespace IutTorsionQRootSource
+
+variable {F Kt : Type u} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
+variable [Algebra F Kt] {ell : ℕ} {B : IutBaseQPilotSource F ell}
+
+lemma canonical_qroot_ordp_eq_of_tateValuation
+    (C : IutCompletionTateValuation B)
+    (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      qroot v ^ (2 * ell) =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v)))
+    (hEll : 0 < ell)
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    Arithmetic.ordp v.1 (qroot v) =
+      (B.qOrder (basePlaceOf (B := B) v) : ℝ) /
+        (2 * (ell : ℝ) * Arithmetic.ramIdx (basePlaceOf (B := B) v).1) := by
+  exact canonical_qroot_ordp_eq B qroot qroot_pow_eq
+    (fun w => IutCompletionTateValuation.valued_tateParameter_eq_exp_neg_order C w)
+    hEll v
+
+end IutTorsionQRootSource
+
+end JoshiTeich.Act1Scene1
