@@ -81,24 +81,89 @@ theorem isGalois_torsionField [NumberField F] : IsGalois F ↥D.torsionField := 
   exact IsGalois.of_fixedField_normal_subgroup D.representation.ker
 
 omit [E.IsElliptic] in
-/-- An open representation kernel makes its fixed field finite over the number field. -/
-theorem finiteDimensional_torsionField [NumberField F]
-    (hOpen : IsOpen (D.representation.ker : Set (Fbar ≃ₐ[F] Fbar))) :
+/-- The genuine action on an algebraic torsion basis makes the representation kernel open. -/
+theorem representation_ker_isOpen :
+    IsOpen (D.representation.ker : Set (Fbar ≃ₐ[F] Fbar)) := by
+  letI : IsAlgClosure F Fbar := D.closure
+  let basisPoint (j : Fin 2) := D.basisOverClosure.symm (Pi.single j (1 : ZMod ell))
+  let xCoordinate : Affine.Point (Affine.baseChange E Fbar) → Fbar
+    | .zero => 0
+    | .some x _ _ => x
+  let yCoordinate : Affine.Point (Affine.baseChange E Fbar) → Fbar
+    | .zero => 0
+    | .some _ y _ => y
+  let S : Set Fbar := Set.range fun ij : Fin 2 × Fin 2 =>
+    if ij.2 = 0 then xCoordinate (basisPoint ij.1).1 else yCoordinate (basisPoint ij.1).1
+  let K := IntermediateField.adjoin F S
+  have hSIntegral : ∀ x ∈ S, IsIntegral F x := by
+    intro x hx
+    rcases Set.mem_range.mp hx with ⟨ij, rfl⟩
+    exact (Algebra.IsAlgebraic.isAlgebraic _).isIntegral
+  have hKFinite : FiniteDimensional F K := IntermediateField.finiteDimensional_adjoin hSIntegral
+  letI : FiniteDimensional F K := hKFinite
+  have hKOpen : IsOpen (K.fixingSubgroup : Set (Fbar ≃ₐ[F] Fbar)) :=
+    IntermediateField.fixingSubgroup_isOpen K
+  have hfixing_le_kernel : K.fixingSubgroup ≤ D.representation.ker := by
+    intro σ hσ
+    change D.representation σ = 1
+    apply Units.ext
+    apply Matrix.ext
+    intro i j
+    let v : Fin 2 → ZMod ell := Pi.single j 1
+    let P := D.basisOverClosure.symm v
+    have hpoint : iutGaloisPointMap (E := E) (Fbar := Fbar) σ P.1 = P.1 := by
+      cases hP : P.1 with
+      | zero => exact Affine.Point.map_zero _
+      | some x y hn =>
+        have hxS : x ∈ S := by
+          apply Set.mem_range.mpr
+          refine ⟨(j, 0), ?_⟩
+          simp [xCoordinate, basisPoint, P, v, hP]
+        have hyS : y ∈ S := by
+          apply Set.mem_range.mpr
+          refine ⟨(j, 1), ?_⟩
+          simp [yCoordinate, basisPoint, P, v, hP]
+        have hxK : x ∈ K := IntermediateField.subset_adjoin _ _ hxS
+        have hyK : y ∈ K := IntermediateField.subset_adjoin _ _ hyS
+        have hxfix : σ x = x :=
+          (IntermediateField.mem_fixingSubgroup_iff K σ).mp hσ x hxK
+        have hyfix : σ y = y :=
+          (IntermediateField.mem_fixingSubgroup_iff K σ).mp hσ y hyK
+        rw [iutGaloisPointMap, Affine.Point.map_some]
+        simp [hxfix, hyfix]
+    have hPfixed :
+        (⟨iutGaloisPointMap (E := E) (Fbar := Fbar) σ P.1,
+          iutGaloisPointMap_torsionBy (E := E) (Fbar := Fbar) σ P.2⟩ :
+            AddSubgroup.torsionBy (Affine.Point (Affine.baseChange E Fbar)) ell) =
+          P := Subtype.ext hpoint
+    have hspec := D.representation_spec σ P
+    rw [hPfixed] at hspec
+    have hv : v = (D.representation σ : Matrix (Fin 2) (Fin 2) (ZMod ell)).mulVec v := by
+      simpa [P, v] using hspec
+    have hentry :
+        (D.representation σ : Matrix (Fin 2) (Fin 2) (ZMod ell)) i j = v i := by
+      simpa [v, Matrix.mulVec_single_one, Matrix.col_apply] using (congrFun hv i).symm
+    fin_cases i <;> fin_cases j <;>
+      simpa [v, Matrix.one_apply] using hentry
+  exact Subgroup.isOpen_mono hfixing_le_kernel hKOpen
+
+omit [E.IsElliptic] in
+/-- The fixed field of the genuine torsion representation has finite dimension over the base. -/
+theorem finiteDimensional_torsionField [NumberField F] :
     FiniteDimensional F ↥D.torsionField := by
   letI : IsAlgClosure F Fbar := D.closure
   have hle : D.representation.ker ≤ D.torsionField.fixingSubgroup :=
     (IntermediateField.le_iff_le D.representation.ker D.torsionField).mp le_rfl
   have hopen : IsOpen (D.torsionField.fixingSubgroup : Set (Fbar ≃ₐ[F] Fbar)) :=
-    Subgroup.isOpen_mono hle hOpen
+    Subgroup.isOpen_mono hle D.representation_ker_isOpen
   exact (InfiniteGalois.isOpen_iff_finite D.torsionField).mp hopen
 
 omit [E.IsElliptic] in
-/-- The fixed field of an open representation kernel is itself a number field. -/
-theorem numberField_torsionField [NumberField F]
-    (hOpen : IsOpen (D.representation.ker : Set (Fbar ≃ₐ[F] Fbar))) :
+/-- The fixed field of the genuine torsion representation is itself a number field. -/
+theorem numberField_torsionField [NumberField F] :
     NumberField ↥D.torsionField := by
   letI : IsAlgClosure F Fbar := D.closure
-  have : FiniteDimensional F ↥D.torsionField := D.finiteDimensional_torsionField hOpen
+  have : FiniteDimensional F ↥D.torsionField := D.finiteDimensional_torsionField
   have : CharZero ↥D.torsionField :=
     charZero_of_injective_algebraMap (algebraMap F ↥D.torsionField).injective
   have : IsScalarTower ℚ F ↥D.torsionField :=

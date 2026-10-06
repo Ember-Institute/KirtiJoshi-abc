@@ -258,6 +258,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.baseChangeToClosure
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.galoisPoint_eq_of_mem_kernel
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.isGalois_torsionField
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.representation_ker_isOpen
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.finiteDimensional_torsionField
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.numberField_torsionField
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.exists_baseChangeToClosure_eq
@@ -334,6 +335,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.toGlobalTorsionBasis
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.isGalois_torsionField
+#print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.representation_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.finiteDimensional_torsionField
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.numberField_torsionField
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
