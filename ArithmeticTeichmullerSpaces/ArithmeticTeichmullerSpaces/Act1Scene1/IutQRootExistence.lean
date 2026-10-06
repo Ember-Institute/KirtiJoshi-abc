@@ -40,6 +40,64 @@ lemma exists_pow_eq_of_root_class
   push_cast
   ring
 
+/-!
+The finite residue argument is the part of the IUT Tate-torsion proof that does
+not depend on a particular elliptic-curve representation.  The caller supplies
+the residue homomorphism, its kernel bound, and representatives of torsion
+classes; the cardinality argument then forces the residue class `1` to occur.
+-/
+lemma exists_root_class_of_card
+    {T U : Type*} [AddCommGroup T] [Finite T] [CommGroup U]
+    {q : U} {ell : ℕ} (hEll : 0 < ell)
+    (resid : T →+ ZMod ell)
+    (hKernel : Nat.card resid.ker ≤ ell)
+    (hCard : ell * ell ≤ Nat.card T)
+    (rep : T → U) (expo : T → ℤ)
+    (hRepPow : ∀ P, rep P ^ ell = q ^ expo P)
+    (hResidRep : ∀ P, resid P = (expo P : ZMod ell)) :
+    ∃ u : U, ∃ m : ℤ, u ^ ell = q ^ (1 + (ell : ℤ) * m) := by
+  have hRange : Nat.card resid.range ≤ ell := by
+    calc
+      Nat.card resid.range ≤ Nat.card (ZMod ell) :=
+        Nat.card_le_card_of_injective _ Subtype.val_injective
+      _ = ell := by simp
+  have hKernelRange : Nat.card resid.ker * Nat.card resid.range = Nat.card T :=
+    AddMonoidHom.card_ker_mul_card_range resid
+  have hEq : Nat.card resid.ker = ell ∧ Nat.card resid.range = ell := by
+    have hMul : ell * ell ≤ Nat.card resid.ker * Nat.card resid.range := by
+      rw [hKernelRange]
+      exact hCard
+    exact ⟨(by
+      by_contra hne
+      have hlt : Nat.card resid.ker < ell := lt_of_le_of_ne hKernel hne
+      have hUpper : Nat.card resid.ker * Nat.card resid.range ≤
+          Nat.card resid.ker * ell := Nat.mul_le_mul_left _ hRange
+      have hStrict : Nat.card resid.ker * ell < ell * ell := by
+        exact Nat.mul_lt_mul_right hEll hlt
+      omega), (by
+      by_contra hne
+      have hlt : Nat.card resid.range < ell := lt_of_le_of_ne hRange hne
+      have hUpper : Nat.card resid.ker * Nat.card resid.range ≤
+          ell * Nat.card resid.range := Nat.mul_le_mul_right _ hKernel
+      have hStrict : ell * Nat.card resid.range < ell * ell := by
+        exact Nat.mul_lt_mul_left hEll hlt
+      omega)⟩
+  have hRangeTop : resid.range = ⊤ := by
+    apply AddSubgroup.eq_top_of_card_eq
+    rw [Nat.card_zmod]
+    exact hEq.2
+  have hOne : (1 : ZMod ell) ∈ resid.range := by
+    rw [hRangeTop]
+    trivial
+  obtain ⟨P, hP⟩ := hOne
+  rw [hResidRep P, ← sub_eq_zero, ← Int.cast_one, ← Int.cast_sub,
+    ZMod.intCast_zmod_eq_zero_iff_dvd] at hP
+  obtain ⟨m, hm⟩ := hP
+  refine ⟨rep P, m, ?_⟩
+  rw [hRepPow P]
+  congr 1
+  omega
+
 lemma exists_pow_two_mul_eq {G : Type*} [CommGroup G] {q r s : G} {ell : ℕ}
     (hodd : Odd ell) (hr : r ^ ell = q) (hs : s ^ 2 = q) :
     ∃ x : G, x ^ (2 * ell) = q := by

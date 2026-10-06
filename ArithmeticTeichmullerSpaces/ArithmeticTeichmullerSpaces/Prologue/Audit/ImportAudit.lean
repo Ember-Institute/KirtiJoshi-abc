@@ -224,6 +224,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQRootExistence.exists_pow_two_mul_eq
 #check JoshiTeich.Act1Scene1.IutQRootExistence.exists_pow_two_mul_eq_of_nonzero
 #check JoshiTeich.Act1Scene1.IutQRootExistence.exists_pow_eq_of_root_class
+#check JoshiTeich.Act1Scene1.IutQRootExistence.exists_root_class_of_card
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ellRootOfRootClass
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ellRootOfRootClass_pow_eq
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.qrootOfSquareAndEllRoot
