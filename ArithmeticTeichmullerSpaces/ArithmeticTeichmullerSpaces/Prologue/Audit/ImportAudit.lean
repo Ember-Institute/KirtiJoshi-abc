@@ -64,6 +64,10 @@ open scoped NumberField
 #check Arithmetic.ramIdx
 #check Arithmetic.inertDeg
 #check Arithmetic.localDeg
+#check Arithmetic.ordp
+#check Arithmetic.ordp_eq_of_valued
+#check Arithmetic.ordp_pow
+#check Arithmetic.ordp_nonneg_of_norm_le_one
 #check Arithmetic.placeWeight
 #check Arithmetic.placeWeight_pos
 #check Arithmetic.qPilotWeight

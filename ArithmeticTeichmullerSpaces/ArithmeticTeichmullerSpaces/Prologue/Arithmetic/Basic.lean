@@ -90,6 +90,12 @@ lemma qPilotWeight_sum_le_one_of_localDeg_sum_le
 noncomputable def residueChar (w : NumberField.FinitePlace K) : ℕ :=
   ringChar (𝓞 K ⧸ w.maximalIdeal.asIdeal)
 
+/-! The `iut` normalization `ord_p(p) = 1` on a finite completion. -/
+
+noncomputable def ordp (w : NumberField.FinitePlace K)
+    (x : w.maximalIdeal.adicCompletion K) : ℝ :=
+  -Real.log ‖x‖ / ((localDeg w : ℝ) * Real.log (residueChar w))
+
 lemma residueChar_prime (w : NumberField.FinitePlace K) : (residueChar w).Prime := by
   haveI : w.maximalIdeal.asIdeal.IsMaximal :=
     w.maximalIdeal.isPrime.isMaximal w.maximalIdeal.ne_bot
@@ -158,6 +164,42 @@ lemma completionNorm_eq_residueChar_pow_of_valued
   simp only [WithZero.log_exp]
   rw [NNReal.coe_zpow, NNReal.coe_natCast, absNorm_eq_pow_residueChar,
     Nat.cast_pow]
+
+lemma ordp_eq_of_valued
+    (w : NumberField.FinitePlace K)
+    (x : w.maximalIdeal.adicCompletion K) (m : ℤ)
+    (hx : Valued.v x = exp m) :
+    ordp w x = -(m : ℝ) / ramIdx w := by
+  have hp : (residueChar w).Prime := residueChar_prime w
+  have hlog : 0 < Real.log (residueChar w) :=
+    Real.log_pos (by exact_mod_cast hp.one_lt)
+  have hf : (0 : ℝ) < inertDeg w := by exact_mod_cast inertDeg_pos w
+  unfold ordp localDeg
+  rw [completionNorm_eq_residueChar_pow_of_valued w x m hx,
+    Real.log_zpow, Real.log_pow, Nat.cast_mul]
+  field_simp
+
+lemma ordp_pow
+    (w : NumberField.FinitePlace K)
+    (x : w.maximalIdeal.adicCompletion K) (m : ℕ) :
+    ordp w (x ^ m) = m * ordp w x := by
+  unfold ordp
+  rw [norm_pow, Real.log_pow]
+  ring
+
+lemma ordp_nonneg_of_norm_le_one
+    (w : NumberField.FinitePlace K)
+    (x : w.maximalIdeal.adicCompletion K) (hx : ‖x‖ ≤ 1) :
+    0 ≤ ordp w x := by
+  have hp : (residueChar w).Prime := residueChar_prime w
+  have hlog : 0 < Real.log (residueChar w) :=
+    Real.log_pos (by exact_mod_cast hp.one_lt)
+  have hd : (0 : ℝ) < localDeg w := by
+    exact_mod_cast localDeg_pos w
+  unfold ordp
+  apply div_nonneg _ (mul_pos hd hlog).le
+  rw [neg_nonneg]
+  exact Real.log_nonpos (norm_nonneg _) hx
 
 /-- A canonical completion uniformizer obtained from the finite-place
 valuation API. -/
