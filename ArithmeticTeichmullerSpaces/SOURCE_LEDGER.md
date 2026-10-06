@@ -28,8 +28,8 @@
   `InitialThetaData`/`TateFamily`, `V_p^oss`, q-factor normalization, or theta-volume source
   obligations listed below.
 - The latest build above is the cadence baseline: run one full build after every `10` successful
-  pushes. The current count since this baseline is `0/10`; the pending `c658a74` push will count
-  as `1/10` when it succeeds. Keep the full
+  pushes. The push that delivered S1.103 commit `c658a74` and build-record commit `3c3d048`
+  counted as `1/10`; this follow-up record push counts as `2/10`. Keep the full
   build virtual-memory cap at `60 GiB` (`ulimit -v 62914560`) and the directed-build cap at
   `16 GiB` (`ulimit -v 16777216`). The preceding baseline counted S1.94 through S1.100 as `1/10`
   through `7/10`, S1.101 as `8/10`, and S1.102 as `9/10`; the full build above supersedes it.
