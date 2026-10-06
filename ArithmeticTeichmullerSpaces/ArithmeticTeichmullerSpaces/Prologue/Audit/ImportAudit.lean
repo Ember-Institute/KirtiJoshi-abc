@@ -71,6 +71,9 @@ open scoped NumberField
 #check Arithmetic.qPilotWeight_sum_le_one_of_localDeg_sum_le
 #check Arithmetic.fiber_finite
 #check Arithmetic.sum_localDeg
+#check Arithmetic.placeUnder
+#check Arithmetic.eq_placeUnder_of_liesOver
+#check Arithmetic.sum_placeWeight_mul
 #check Arithmetic.sum_localDeg_liesOver
 #print axioms Arithmetic.sum_localDeg_liesOver
 #check Arithmetic.localDeg_sum_le_finrank_of_residueChar_filter

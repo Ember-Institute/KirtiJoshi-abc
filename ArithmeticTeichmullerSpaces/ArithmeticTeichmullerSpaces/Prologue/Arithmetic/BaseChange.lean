@@ -306,4 +306,154 @@ theorem sum_localDeg (p : ℕ) (hp : p.Prime)
 
 end RationalFiber
 
+section PlaceUnder
+
+variable {F : Type uK} [Field F] [NumberField F]
+variable {L : Type uL} [Field L] [NumberField L] [Algebra F L]
+
+/-!
+The contraction of a finite place to the base number field is the canonical
+place-under map used by the `iut` local accounting.  Keeping it here avoids
+making Scene1 source carriers part of the arithmetic API.
+-/
+
+noncomputable def placeUnder (v : NumberField.FinitePlace L) :
+    NumberField.FinitePlace F :=
+  NumberField.FinitePlace.mk
+    { asIdeal := v.maximalIdeal.asIdeal.comap (algebraMap (𝓞 F) (𝓞 L))
+      isPrime := Ideal.comap_isPrime _ _
+      ne_bot := by
+        obtain ⟨x, hx, hx0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot
+          v.maximalIdeal.ne_bot
+        exact Ideal.under_ne_bot_of_integral_mem hx0 hx
+          (Algebra.IsIntegral.isIntegral x) }
+
+lemma placeUnder_maximalIdeal (v : NumberField.FinitePlace L) :
+    (placeUnder v).maximalIdeal.asIdeal =
+      v.maximalIdeal.asIdeal.comap (algebraMap (𝓞 F) (𝓞 L)) := by
+  rw [placeUnder, NumberField.FinitePlace.maximalIdeal_mk]
+
+lemma liesOver_placeUnder (v : NumberField.FinitePlace L) :
+    Ideal.LiesOver v.maximalIdeal.asIdeal (placeUnder v).maximalIdeal.asIdeal := by
+  exact ⟨by rw [placeUnder_maximalIdeal]⟩
+
+lemma eq_placeUnder_of_liesOver {v : NumberField.FinitePlace L}
+    {w : NumberField.FinitePlace F}
+    (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) :
+    w = placeUnder v := by
+  apply NumberField.FinitePlace.maximalIdeal_injective
+  change w.maximalIdeal = (placeUnder v).maximalIdeal
+  apply IsDedekindDomain.HeightOneSpectrum.ext
+  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw
+  rw [placeUnder_maximalIdeal]
+  simpa only [Ideal.under_def] using
+    (Ideal.over_def v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal)
+
+end PlaceUnder
+
+section WeightedSum
+
+variable {F : Type uK} [Field F] [NumberField F]
+variable {L : Type uL} [Field L] [NumberField L] [Algebra F L]
+
+/-!
+This is the finite-place weighted-sum identity ported from
+`refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean`.  It is the arithmetic
+accounting layer for a local order function: places not above the supplied
+base support contribute zero, while each supported base place contributes its
+residue-degree coefficient.  No Tate, q-root, or theta-volume datum occurs in
+the statement.
+-/
+
+theorem sum_placeWeight_mul (p : ℕ)
+    [Fintype {v : NumberField.FinitePlace L // residueChar v = p}]
+    (B : Set (NumberField.FinitePlace F))
+    (bad : Finset (NumberField.FinitePlace F)) (hbad : (↑bad : Set _) = B)
+    (c : NumberField.FinitePlace F → ℝ)
+    (o : NumberField.FinitePlace L → ℝ)
+    (ho : ∀ v w, Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal →
+      w ∈ B → o v = c w / ramIdx w)
+    (ho0 : ∀ v, (∀ w ∈ B,
+      ¬ Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) → o v = 0) :
+    ∑ v : {v : NumberField.FinitePlace L // residueChar v = p},
+        placeWeight v.1 * o v.1 =
+      ∑ w ∈ bad.filter (fun w => residueChar w = p),
+        (inertDeg w : ℝ) / Module.finrank ℚ F * c w := by
+  classical
+  have hmemB : ∀ w, w ∈ bad ↔ w ∈ B := fun w => by
+    rw [← Finset.mem_coe, hbad]
+  set s : Finset {v : NumberField.FinitePlace L // residueChar v = p} :=
+    Finset.univ.filter (fun v => ∃ w ∈ B,
+      Ideal.LiesOver v.1.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) with hs
+  set t : Finset (NumberField.FinitePlace F) :=
+    bad.filter (fun w => residueChar w = p) with ht
+  have h1 :
+      ∑ v : {v : NumberField.FinitePlace L // residueChar v = p},
+          placeWeight v.1 * o v.1 =
+        ∑ v ∈ s, placeWeight v.1 * o v.1 := by
+    symm
+    apply Finset.sum_filter_of_ne
+    intro v _ hne
+    by_contra h
+    push Not at h
+    exact hne (by rw [ho0 v.1 h, mul_zero])
+  have hmaps : ∀ v ∈ s, placeUnder v.1 ∈ t := by
+    intro v hv
+    obtain ⟨w, hwB, hvw⟩ := (Finset.mem_filter.mp hv).2
+    have hw : w = placeUnder v.1 := eq_placeUnder_of_liesOver hvw
+    rw [← hw]
+    refine Finset.mem_filter.mpr ⟨(hmemB _).mpr hwB, ?_⟩
+    rw [← residueChar_eq_of_liesOver hvw]
+    exact v.2
+  rw [h1, ← Finset.sum_fiberwise_of_maps_to hmaps]
+  refine Finset.sum_congr rfl fun w hw => ?_
+  obtain ⟨hwbad, hwp⟩ := Finset.mem_filter.mp hw
+  have hwB : w ∈ B := (hmemB w).mp hwbad
+  have hfib : ∀ v ∈ s.filter (fun v => placeUnder v.1 = w),
+      Ideal.LiesOver v.1.maximalIdeal.asIdeal w.maximalIdeal.asIdeal := by
+    intro v hv
+    have h := (Finset.mem_filter.mp hv).2
+    rw [← h]
+    exact liesOver_placeUnder v.1
+  have hsum :
+      ∑ v ∈ s.filter (fun v => placeUnder v.1 = w),
+          placeWeight v.1 * o v.1 =
+        (c w / ramIdx w / Module.finrank ℚ L) *
+          ∑ v ∈ s.filter (fun v => placeUnder v.1 = w),
+            (localDeg v.1 : ℝ) := by
+    rw [Finset.mul_sum]
+    refine Finset.sum_congr rfl fun v hv => ?_
+    rw [ho v.1 w (hfib v hv) hwB]
+    unfold placeWeight
+    ring
+  have hS :
+      ∑ v ∈ (s.filter (fun v => placeUnder v.1 = w)).map
+          (Function.Embedding.subtype _), localDeg v =
+        Module.finrank F L * localDeg w := by
+    apply sum_localDeg_liesOver w
+    intro v
+    rw [Finset.mem_map]
+    constructor
+    · rintro ⟨u, hu, rfl⟩
+      exact hfib u hu
+    · intro hvw
+      refine ⟨⟨v, by rw [residueChar_eq_of_liesOver hvw, hwp]⟩, ?_, rfl⟩
+      exact Finset.mem_filter.mpr ⟨Finset.mem_filter.mpr
+        ⟨Finset.mem_univ _, w, hwB, hvw⟩, (eq_placeUnder_of_liesOver hvw).symm⟩
+  rw [Finset.sum_map] at hS
+  simp only [Function.Embedding.coe_subtype] at hS
+  rw [hsum, ← Nat.cast_sum, hS]
+  have hFL : (Module.finrank ℚ L : ℝ) =
+      Module.finrank ℚ F * Module.finrank F L := by
+    exact_mod_cast (Module.finrank_mul_finrank ℚ F L).symm
+  have he : (ramIdx w : ℝ) ≠ 0 := by exact_mod_cast (ramIdx_pos w).ne'
+  have hF : (Module.finrank ℚ F : ℝ) ≠ 0 := by exact_mod_cast Module.finrank_pos.ne'
+  have hL : (Module.finrank F L : ℝ) ≠ 0 := by exact_mod_cast Module.finrank_pos.ne'
+  unfold localDeg
+  rw [hFL]
+  push_cast
+  field_simp
+
+end WeightedSum
+
 end JoshiTeich.Prologue.Arithmetic
