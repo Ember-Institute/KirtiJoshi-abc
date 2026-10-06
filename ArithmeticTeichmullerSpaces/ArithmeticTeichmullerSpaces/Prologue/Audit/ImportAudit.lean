@@ -253,6 +253,16 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData
 #check JoshiTeich.Act1Scene1.iutGaloisPointMap
 #check JoshiTeich.Act1Scene1.iutGaloisPointMap_torsionBy
+#check JoshiTeich.Act1Scene1.iutGaloisPointMap_one
+#check JoshiTeich.Act1Scene1.iutGaloisPointMap_mul
+#check JoshiTeich.Act1Scene1.iutGaloisTorsionEquiv
+#check JoshiTeich.Act1Scene1.iutGaloisTorsionLinearAction
+#check JoshiTeich.Act1Scene1.iutTorsionBasisLinearEquiv
+#check JoshiTeich.Act1Scene1.iutTorsionRepresentationOfBasis
+#check JoshiTeich.Act1Scene1.iutTorsionRepresentationOfBasis_spec
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.ofBasis
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.representation
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.representation_spec
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.torsionField
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.curveOverTorsionField
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.baseChangeToClosure
@@ -334,6 +344,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.Corollary312QPilotNormalizationAudit.finrank_eq_one_of_raw_and_weighted_normalization
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.toGlobalTorsionBasis
+#print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.representation_spec
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.isGalois_torsionField
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.representation_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.finiteDimensional_torsionField
