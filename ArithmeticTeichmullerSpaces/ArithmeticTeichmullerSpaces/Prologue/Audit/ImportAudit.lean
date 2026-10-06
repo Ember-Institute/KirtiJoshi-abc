@@ -218,6 +218,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_badFinset
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_valued_pow_eq
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ordp_eq
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus_weight_sum_le_one
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.filter_eq_sourcePlacesOver

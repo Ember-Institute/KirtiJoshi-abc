@@ -291,6 +291,62 @@ lemma canonical_qroot_valued_pow_eq
   simpa only [map_pow, iutValuedEmbedCompletion] using
     congrArg Valued.v (qroot_pow_eq v)
 
+lemma canonical_qroot_ordp_eq
+    (B : IutBaseQPilotSource F ell)
+    (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      qroot v ^ (2 * ell) =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v)))
+    (hTateValued : ∀ v : B.badFinset,
+      Valued.v (B.tateParameter v) = exp (-(B.qOrder v : ℤ)))
+    (hEll : 0 < ell)
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    Arithmetic.ordp v.1 (qroot v) =
+      (B.qOrder (basePlaceOf (B := B) v) : ℝ) /
+        (2 * (ell : ℝ) * Arithmetic.ramIdx (basePlaceOf (B := B) v).1) := by
+  let w : B.badFinset := basePlaceOf (B := B) v
+  let e : ℕ := iutRelativeRamificationIndex
+    (v := v.1) (w := w.1)
+  have hVal : Valued.v (qroot v ^ (2 * ell)) =
+      exp (-((B.qOrder w : ℤ) * (e : ℤ))) := by
+    calc
+      Valued.v (qroot v ^ (2 * ell)) = Valued.v (qroot v) ^ (2 * ell) := by
+        rw [map_pow]
+      _ = Valued.v (B.tateParameter w) ^ e := by
+        exact canonical_qroot_valued_pow_eq B qroot qroot_pow_eq v
+      _ = exp (-(B.qOrder w : ℤ)) ^ e := by rw [hTateValued w]
+      _ = exp (-((B.qOrder w : ℤ) * (e : ℤ))) := by
+        rw [← exp_nsmul, nsmul_eq_mul]
+        push_cast
+        ring
+  have hOrd := Arithmetic.ordp_eq_of_valued v.1 (qroot v ^ (2 * ell))
+    (-((B.qOrder w : ℤ) * (e : ℤ))) hVal
+  rw [Arithmetic.ordp_pow] at hOrd
+  have hRam := Arithmetic.ramIdx_eq_mul
+    (v := v.1) (w := w.1) (basePlaceOf_liesOver (B := B) v)
+  have hRam' : Arithmetic.ramIdx v.1 =
+      Arithmetic.ramIdx w.1 * e := by
+    simpa [e, iutRelativeRamificationIndex] using hRam
+  rw [hRam'] at hOrd
+  change Arithmetic.ordp v.1 (qroot v) =
+    (B.qOrder w : ℝ) /
+      (2 * (ell : ℝ) * Arithmetic.ramIdx w.1)
+  have hEll0 : (2 * (ell : ℝ)) ≠ 0 := by
+    have : (0 : ℝ) < ell := by exact_mod_cast hEll
+    positivity
+  have hRamPos : (0 : ℝ) < Arithmetic.ramIdx w.1 := by
+    exact_mod_cast Arithmetic.ramIdx_pos w.1
+  have hEPos : (0 : ℝ) < (e : ℝ) := by
+    exact_mod_cast (Arithmetic.relRamIdx_ne_zero
+      (basePlaceOf_liesOver (B := B) v))
+  field_simp [hEll0, ne_of_gt hRamPos] at hOrd ⊢
+  push_cast at hOrd
+  nlinarith
+
 end IutTorsionQRootSource
 
 end
