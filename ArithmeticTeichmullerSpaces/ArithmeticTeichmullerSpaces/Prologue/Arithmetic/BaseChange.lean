@@ -193,4 +193,117 @@ theorem sum_localDeg_liesOver (w : NumberField.FinitePlace K)
 
 end Sum
 
+section RationalFiber
+
+variable {K : Type uK} [Field K] [NumberField K]
+
+/-!
+The `iut` local theory uses the exact local-degree identity over a rational prime,
+not only the resulting inequality.  The finite-place version below keeps the
+same statement on the frozen mathlib carrier.
+-/
+
+theorem sum_localDeg (p : ℕ) (hp : p.Prime)
+    [Fintype {w : NumberField.FinitePlace K // residueChar w = p}] :
+    ∑ w : {w : NumberField.FinitePlace K // residueChar w = p}, localDeg w.1 =
+      Module.finrank ℚ K := by
+  classical
+  set P : Ideal ℤ := Ideal.span {(p : ℤ)} with hP
+  have hP0 : P ≠ ⊥ := by
+    rw [hP, ne_eq, Ideal.span_singleton_eq_bot]
+    exact_mod_cast hp.ne_zero
+  haveI hmax : P.IsMaximal := by
+    haveI hprime : P.IsPrime := by
+      rw [hP]
+      exact (Ideal.span_singleton_prime (by exact_mod_cast hp.ne_zero)).mpr
+        (Nat.prime_iff_prime_int.mp hp)
+    exact IsPrime.to_maximal_ideal hP0
+  have hsum :
+      ∑ Q ∈ IsDedekindDomain.primesOverFinset P (𝓞 K),
+          Q.ramificationIdx ℤ * Q.inertiaDeg ℤ = Module.finrank ℚ K := by
+    have hsum0 := Ideal.sum_ramification_inertia_eq_finrank P (𝓞 K)
+    calc
+      ∑ Q ∈ IsDedekindDomain.primesOverFinset P (𝓞 K),
+          Q.ramificationIdx ℤ * Q.inertiaDeg ℤ =
+          ∑ Q : P.primesOver (𝓞 K),
+            Q.1.ramificationIdx ℤ * Q.1.inertiaDeg ℤ := by
+        symm
+        refine Finset.sum_bij (fun Q _ => Q.1) ?_ ?_ ?_ ?_
+        · intro Q _
+          exact (IsDedekindDomain.mem_primesOverFinset_iff hP0 (𝓞 K)).mpr Q.2
+        · intro Q₁ _ Q₂ _ hQ
+          exact Subtype.ext hQ
+        · intro Q hQ
+          have hQ' :=
+            (IsDedekindDomain.mem_primesOverFinset_iff hP0 (𝓞 K)).mp hQ
+          exact ⟨⟨Q, hQ'⟩, Finset.mem_univ _, rfl⟩
+        · intro Q _
+          rfl
+      _ = Module.finrank ℚ K := by
+        simpa only [NumberField.RingOfIntegers.rank] using hsum0
+  rw [← hsum]
+  refine Finset.sum_bij (fun w _ => w.1.maximalIdeal.asIdeal) ?_ ?_ ?_ ?_
+  · intro w _
+    haveI : w.1.maximalIdeal.asIdeal.LiesOver P := by
+      rw [hP]
+      simpa only [w.2] using residueChar_liesOver w.1
+    exact (IsDedekindDomain.mem_primesOverFinset_iff hP0 (𝓞 K)).mpr
+      ⟨inferInstance, inferInstance⟩
+  · intro w₁ _ w₂ _ h
+    exact Subtype.ext (NumberField.FinitePlace.maximalIdeal_injective
+      (IsDedekindDomain.HeightOneSpectrum.ext h))
+  · intro Q hQ
+    obtain ⟨hprime, hover⟩ :=
+      (IsDedekindDomain.mem_primesOverFinset_iff hP0 (𝓞 K)).mp hQ
+    have hne : Q ≠ ⊥ := Ideal.ne_bot_of_liesOver_of_ne_bot hP0 Q
+    let w : NumberField.FinitePlace K := NumberField.FinitePlace.mk ⟨Q, hprime, hne⟩
+    haveI : w.maximalIdeal.asIdeal.LiesOver P := by
+      simpa only [w, NumberField.FinitePlace.maximalIdeal_mk] using hover
+    have hw : residueChar w = p := by
+      have h1 := under_int_eq w
+      rw [← Ideal.over_def w.maximalIdeal.asIdeal P, hP,
+        Ideal.span_singleton_eq_span_singleton] at h1
+      have h2 := Int.natAbs_eq_iff_associated.mpr h1
+      simpa using h2.symm
+    exact ⟨⟨w, hw⟩, Finset.mem_univ _, by
+      change w.maximalIdeal.asIdeal = Q
+      simp [w, NumberField.FinitePlace.maximalIdeal_mk]⟩
+  · intro w _
+    haveI : w.1.maximalIdeal.asIdeal.LiesOver P := by
+      rw [hP]
+      simpa only [w.2] using residueChar_liesOver w.1
+    haveI : w.1.maximalIdeal.asIdeal.IsMaximal :=
+      w.1.maximalIdeal.isPrime.isMaximal w.1.maximalIdeal.ne_bot
+    have hunder : w.1.maximalIdeal.asIdeal.under ℤ = P := by
+      rw [under_int_eq, w.2, hP]
+    have hram : ramIdx w.1 = P.ramificationIdx' w.1.maximalIdeal.asIdeal := by
+      have h := (Ideal.ramificationIdx'_eq_ramificationIdx _
+        w.1.maximalIdeal.asIdeal (under_int_ne_bot w.1)).symm
+      rwa [hunder] at h
+    have hinert : inertDeg w.1 = P.inertiaDeg' w.1.maximalIdeal.asIdeal := by
+      haveI : (w.1.maximalIdeal.asIdeal.under ℤ).IsMaximal :=
+        under_int_isMaximal w.1
+      have h := (Ideal.inertiaDeg'_eq_inertiaDeg
+        (w.1.maximalIdeal.asIdeal.under ℤ) w.1.maximalIdeal.asIdeal).symm
+      rwa [hunder] at h
+    have hram' : P.ramificationIdx' w.1.maximalIdeal.asIdeal =
+        w.1.maximalIdeal.asIdeal.ramificationIdx ℤ := by
+      have h := Ideal.ramificationIdx'_eq_ramificationIdx
+        (w.1.maximalIdeal.asIdeal.under ℤ) w.1.maximalIdeal.asIdeal
+          (under_int_ne_bot w.1)
+      rwa [hunder] at h
+    have hinert' : P.inertiaDeg' w.1.maximalIdeal.asIdeal =
+        w.1.maximalIdeal.asIdeal.inertiaDeg ℤ := by
+      haveI : (w.1.maximalIdeal.asIdeal.under ℤ).IsMaximal :=
+        under_int_isMaximal w.1
+      have h := Ideal.inertiaDeg'_eq_inertiaDeg
+        (w.1.maximalIdeal.asIdeal.under ℤ) w.1.maximalIdeal.asIdeal
+      rwa [hunder] at h
+    change ramIdx w.1 * inertDeg w.1 =
+      w.1.maximalIdeal.asIdeal.ramificationIdx ℤ *
+        w.1.maximalIdeal.asIdeal.inertiaDeg ℤ
+    rw [hram, hinert, hram', hinert']
+
+end RationalFiber
+
 end JoshiTeich.Prologue.Arithmetic
