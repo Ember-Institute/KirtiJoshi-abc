@@ -5,8 +5,10 @@ Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutWeierstrassLocalization
 import Mathlib.FieldTheory.Galois.Basic
+import Mathlib.FieldTheory.Galois.Infinite
 import Mathlib.FieldTheory.IsAlgClosed.Basic
 import Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Basic
+import Mathlib.NumberTheory.NumberField.Basic
 
 /-!
 source-id: IUT-COR312-TORSION-RATIONALITY
@@ -71,6 +73,38 @@ variable {ell : ℕ} (D : IutTorsionRepresentationData (F := F) (E := E)
 /-- The field fixed by the kernel of the mod-`ell` representation. -/
 noncomputable def torsionField : IntermediateField F Fbar :=
   IntermediateField.fixedField D.representation.ker
+
+omit [E.IsElliptic] in
+/-- The fixed field of the representation kernel is Galois over the base field. -/
+theorem isGalois_torsionField [NumberField F] : IsGalois F ↥D.torsionField := by
+  letI : IsAlgClosure F Fbar := D.closure
+  exact IsGalois.of_fixedField_normal_subgroup D.representation.ker
+
+omit [E.IsElliptic] in
+/-- An open representation kernel makes its fixed field finite over the number field. -/
+theorem finiteDimensional_torsionField [NumberField F]
+    (hOpen : IsOpen (D.representation.ker : Set (Fbar ≃ₐ[F] Fbar))) :
+    FiniteDimensional F ↥D.torsionField := by
+  letI : IsAlgClosure F Fbar := D.closure
+  have hle : D.representation.ker ≤ D.torsionField.fixingSubgroup :=
+    (IntermediateField.le_iff_le D.representation.ker D.torsionField).mp le_rfl
+  have hopen : IsOpen (D.torsionField.fixingSubgroup : Set (Fbar ≃ₐ[F] Fbar)) :=
+    Subgroup.isOpen_mono hle hOpen
+  exact (InfiniteGalois.isOpen_iff_finite D.torsionField).mp hopen
+
+omit [E.IsElliptic] in
+/-- The fixed field of an open representation kernel is itself a number field. -/
+theorem numberField_torsionField [NumberField F]
+    (hOpen : IsOpen (D.representation.ker : Set (Fbar ≃ₐ[F] Fbar))) :
+    NumberField ↥D.torsionField := by
+  letI : IsAlgClosure F Fbar := D.closure
+  have : FiniteDimensional F ↥D.torsionField := D.finiteDimensional_torsionField hOpen
+  have : CharZero ↥D.torsionField :=
+    charZero_of_injective_algebraMap (algebraMap F ↥D.torsionField).injective
+  have : IsScalarTower ℚ F ↥D.torsionField :=
+    IsScalarTower.of_algebraMap_eq' (Subsingleton.elim _ _)
+  have : FiniteDimensional ℚ ↥D.torsionField := Module.Finite.trans F ↥D.torsionField
+  exact { }
 
 local instance (priority := high) instDecidableEqTorsionField :
     DecidableEq ↥D.torsionField :=
