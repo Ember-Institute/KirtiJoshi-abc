@@ -108,6 +108,35 @@ lemma residueChar_liesOver (w : NumberField.FinitePlace K) :
   simpa [Ideal.ringChar_quot] using
     (Int.liesOver_span_absNorm w.maximalIdeal.asIdeal)
 
+/-- There are finitely many finite places with a fixed residue characteristic.
+This is the finite-place fibre used by the IUT local-theory and q-root sums. -/
+theorem fiber_finite (p : ℕ) :
+    Finite {w : NumberField.FinitePlace K // residueChar w = p} := by
+  by_cases hp : p.Prime
+  · have hP0 : Ideal.span {(p : ℤ)} ≠ ⊥ := by
+      rw [Ne, Ideal.span_singleton_eq_bot]
+      exact_mod_cast hp.ne_zero
+    haveI : (Ideal.span {(p : ℤ)}).IsMaximal := by
+      haveI : (Ideal.span {(p : ℤ)}).IsPrime :=
+        (Ideal.span_singleton_prime (by exact_mod_cast hp.ne_zero)).mpr
+          (Nat.prime_iff_prime_int.mp hp)
+      exact IsPrime.to_maximal_ideal hP0
+    refine Finite.of_injective
+      (fun w : {w : NumberField.FinitePlace K // residueChar w = p} =>
+        (⟨w.1.maximalIdeal.asIdeal, ?_⟩ :
+          IsDedekindDomain.primesOverFinset (Ideal.span {(p : ℤ)}) (𝓞 K))) ?_
+    · haveI : w.1.maximalIdeal.asIdeal.LiesOver (Ideal.span {(p : ℤ)}) := by
+        simpa only [w.2] using residueChar_liesOver w.1
+      exact
+        (IsDedekindDomain.mem_primesOverFinset_iff hP0 (𝓞 K)).mpr
+          ⟨inferInstance, inferInstance⟩
+    · intro w₁ w₂ h
+      exact Subtype.ext (NumberField.FinitePlace.maximalIdeal_injective
+        (IsDedekindDomain.HeightOneSpectrum.ext (congrArg Subtype.val h)))
+  · haveI : IsEmpty {w : NumberField.FinitePlace K // residueChar w = p} :=
+      ⟨fun w => hp (w.2 ▸ residueChar_prime w.1)⟩
+    infer_instance
+
 /-- The absolute norm of a finite place is the residue characteristic raised to
 its residue degree.  This is the finite-place norm identity used by the `iut`
 completion/uniformizer layer. -/
