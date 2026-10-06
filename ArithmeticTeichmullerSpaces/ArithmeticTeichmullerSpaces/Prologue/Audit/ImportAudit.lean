@@ -24,6 +24,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootExistence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateTorsionResidue
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionCardinality
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutWeierstrassLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionRationality
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
@@ -249,6 +250,17 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutWeierstrassPointMap_injective
 #check JoshiTeich.Act1Scene1.iutWeierstrassTorsionLocalMap
 #check JoshiTeich.Act1Scene1.iutWeierstrass_local_torsion_card_lower_bound
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData
+#check JoshiTeich.Act1Scene1.iutGaloisPointMap
+#check JoshiTeich.Act1Scene1.iutGaloisPointMap_torsionBy
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.torsionField
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.curveOverTorsionField
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.baseChangeToClosure
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.galoisPoint_eq_of_mem_kernel
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.exists_baseChangeToClosure_eq
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.torsionEquiv
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.basisOverTorsionField
+#check JoshiTeich.Act1Scene1.IutTorsionRepresentationData.toGlobalTorsionBasis
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_ofGlobalTorsionBasisAndSquareRoot
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ellRootOfRootClass
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ellRootOfRootClass_pow_eq
@@ -317,6 +329,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.corollary312_iff_rawTarget
 #print axioms JoshiTeich.Act1Scene1.Corollary312QPilotNormalizationAudit.finrank_eq_one_of_raw_and_weighted_normalization
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
+#print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.toGlobalTorsionBasis
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 
 end JoshiTeich.Prologue.Audit
