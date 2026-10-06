@@ -13,18 +13,26 @@
 
 ## Build verification
 
+- 2026-10-07: after S1.103, the full tree at local commit `c658a74` was built with
+  `prlimit --as=64424509440 -- env LEAN_NUM_THREADS=1 /usr/bin/time -v lake build`;
+  the address-space cap is `60 GiB`.
+- Result: `7442/7442` jobs completed, exit status `0`, wall-clock time `5:59.74`, maximum
+  resident set size `4,642,308 kB` (about `4.43 GiB`). This full build was run before the
+  remote push because DNS resolution for `github.com` failed; the local commit remains pending
+  push. The build validates that exact source tree.
 - 2026-10-07: after the S1-BND-092 Mathlib interface repair, the full tree was built with
   `ulimit -v 62914560; /usr/bin/time -v lake build`.
 - Result: `7408/7408` jobs completed, exit status `0`, wall-clock time `5:55.33`, maximum
   resident set size `4,576,432 kB` (about `4.36 GiB`).
-- This validates the current Lean build and does not close the still-open
+- Both full builds validate Lean compilation only. Neither closes the still-open
   `InitialThetaData`/`TateFamily`, `V_p^oss`, q-factor normalization, or theta-volume source
   obligations listed below.
-- Build cadence from this baseline: run one full build after every `10` pushes. Keep the full
+- The latest build above is the cadence baseline: run one full build after every `10` successful
+  pushes. The current count since this baseline is `0/10`; the pending `c658a74` push will count
+  as `1/10` when it succeeds. Keep the full
   build virtual-memory cap at `60 GiB` (`ulimit -v 62914560`) and the directed-build cap at
-  `16 GiB` (`ulimit -v 16777216`). S1.94 through S1.100 are counted as `1/10` through `7/10`,
-  S1.101 as `8/10`, S1.102 as `9/10`, and S1.103 as `10/10`; the S1.103 push triggers the
-  next full build.
+  `16 GiB` (`ulimit -v 16777216`). The preceding baseline counted S1.94 through S1.100 as `1/10`
+  through `7/10`, S1.101 as `8/10`, and S1.102 as `9/10`; the full build above supersedes it.
 
 ## JoshiTeich references
 
