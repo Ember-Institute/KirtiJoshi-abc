@@ -18,6 +18,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.RawTargetSpecification
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.FieldOrientationAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlaceSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
@@ -184,6 +185,11 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutFieldOrientationAudit
 #check JoshiTeich.Act1Scene1.IutFieldOrientationAudit.target_carrier_eq_torsion
 #check JoshiTeich.Act1Scene1.IutFieldOrientationAudit.qroot_pow_eq_target_completion
+#check JoshiTeich.Act1Scene1.iutBadPlacesOver
+#check JoshiTeich.Act1Scene1.finite_places_liesOver
+#check JoshiTeich.Act1Scene1.iutBadPlacesOver_finite
+#check JoshiTeich.Act1Scene1.iutBadPlacesOverFinset
+#check JoshiTeich.Act1Scene1.mem_iutBadPlacesOverFinset_iff
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.ofNormBadLocus_weight_sum_le_one
 #check JoshiTeich.Act1Scene1.Corollary312QPilotData.filter_eq_sourcePlacesOver
