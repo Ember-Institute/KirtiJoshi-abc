@@ -14,6 +14,7 @@ import ArithmeticTeichmullerSpaces.Prologue.Audit.JointConsistency
 import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.Models
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QNormDegreeBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.RawTargetSpecification
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
@@ -138,6 +139,11 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.TateOrderNormCompatibility.groupedSourceQFactor_log_eq_order_mul
 #check JoshiTeich.Act1Scene1.Corollary312DegreeNormalizedSourceQFactor
 #check JoshiTeich.Act1Scene1.Corollary312RawQNormDegreeNormalization
+#check JoshiTeich.Act1Scene1.Corollary312RawSourceQLogSum
+#check JoshiTeich.Act1Scene1.Corollary312RawTargetSpecification
+#check JoshiTeich.Act1Scene1.Corollary312RawTargetSpecification.qLogSum_eq_rawSourceQLogSum
+#check JoshiTeich.Act1Scene1.Corollary312RawTarget
+#check JoshiTeich.Act1Scene1.corollary312_iff_rawTarget
 #check JoshiTeich.Act1Scene1.degreeNormalizedSourceQFactor_log_eq_raw_div_degree
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder
 #check JoshiTeich.Act1Scene1.Corollary312SourceQPair.qOrder_pos
@@ -216,6 +222,7 @@ open scoped NumberField
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
+#print axioms JoshiTeich.Act1Scene1.corollary312_iff_rawTarget
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 
