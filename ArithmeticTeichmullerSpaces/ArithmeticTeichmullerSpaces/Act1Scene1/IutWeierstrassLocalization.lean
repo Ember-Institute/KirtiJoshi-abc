@@ -69,6 +69,44 @@ theorem iutWeierstrass_local_torsion_card_lower_bound
   IutTorsionLocalMap.card_localTorsion_lower_bound T
     (iutWeierstrassTorsionLocalMap (E := E) f T) S hEll
 
+/-- Any global lower bound on `ell`-torsion transfers through Weierstrass base change.
+The map on points is injective, and the target torsion is finite by the Tate quotient. -/
+theorem iutWeierstrass_local_torsion_card_lower_bound_of_global_card
+    {ell : ℕ} (f : k →+* K)
+    (S : IutTateQuotientUniformization K ((E.map f).toAffine.Point))
+    (hEll : 0 < ell)
+    (hGlobal : ell * ell ≤ Nat.card ↥(iutTorsion E.toAffine.Point ell)) :
+    ell * ell ≤ Nat.card ↥(iutTorsion (E.map f).toAffine.Point ell) := by
+  letI : NeZero ell := ⟨Nat.ne_of_gt hEll⟩
+  haveI : Finite ↥(iutTorsion (E.map f).toAffine.Point ell) := S.finite_torsion
+  let pointMap := iutWeierstrassPointMap (E := E) f
+  have hmem : ∀ P : ↥(iutTorsion E.toAffine.Point ell),
+      pointMap P.1 ∈ iutTorsion (E.map f).toAffine.Point ell := by
+    intro P
+    have hP := P.2
+    rw [AddSubgroup.torsionBy.nsmul_iff] at hP ⊢
+    rw [← map_nsmul, hP, map_zero]
+  refine hGlobal.trans (Nat.card_le_card_of_injective
+    (fun P : ↥(iutTorsion E.toAffine.Point ell) =>
+      (⟨pointMap P.1, hmem P⟩ : ↥(iutTorsion (E.map f).toAffine.Point ell))) ?_)
+  intro P Q h
+  apply Subtype.ext
+  exact iutWeierstrassPointMap_injective (E := E) f (congrArg Subtype.val h)
+
+/-- Four global rational `2`-torsion points force a square root of the Tate parameter
+after localization. This is the square-root input used by the IUT `2 ell`-root argument. -/
+theorem iutWeierstrass_exists_square_root_of_global_two_torsion
+    (f : k →+* K)
+    (S : IutTateQuotientUniformization K ((E.map f).toAffine.Point))
+    (htwo : 2 * 2 ≤ Nat.card ↥(iutTorsion E.toAffine.Point 2)) :
+    ∃ s : K, s ^ 2 = (S.q : K) := by
+  have hLocal := iutWeierstrass_local_torsion_card_lower_bound_of_global_card
+    (E := E) f S (ell := 2) (by omega) htwo
+  obtain ⟨u, m, hu⟩ := S.exists_root_class_values_of_torsion_card (ell := 2)
+    (by omega) hLocal
+  exact IutQRootExistence.exists_pow_eq_of_root_class_of_nonzero
+    (show 0 < 2 by omega) (Units.ne_zero S.q) hu
+
 end LocalCardinality
 
 end
