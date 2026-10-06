@@ -156,6 +156,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.tateParameter_eq_link
 #check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_eq_link
 #check JoshiTeich.Act1Scene1.IutQPilotSource.orderCompatibility
+#check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizer
+#check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizer_isCompletionUniformizer
+#check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizerNorm_eq_chosenNorm
 #check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizerNorm_eq_completionNorm
 #check JoshiTeich.Act1Scene1.IutQPilotSource.source_norm_eq_uniformizer_pow_order
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_rawQNormDegreeNormalization

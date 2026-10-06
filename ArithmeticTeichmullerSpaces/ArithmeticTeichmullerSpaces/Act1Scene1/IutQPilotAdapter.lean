@@ -60,15 +60,22 @@ structure IutQPilotSource
   /-- Uniformizer normalization supplied by the IUT Tate/q-order source. -/
   orderCompatibility : TateOrderNormCompatibility T.scene1.data.link
   /--
-  The raw finite-place norm of the source uniformizer is the norm of the
-  canonical completion uniformizer.  The current `AdelicThetaLinkData.qNorm`
-  and `TateOrderNormCompatibility` use this raw norm.  The degree-normalized
-  q-pilot presentation is derived separately below.
+  The chosen local element exported by `AdmissiblePrimeData.unif`.  The
+  element is kept dependent on the bad-place proof, as in the `iut` source.
   -/
-  uniformizerNorm_eq_completionNorm :
-    ∀ w, w ∈ badPlacesOver →
+  uniformizer : ∀ w, w ∈ badPlacesOver → w.maximalIdeal.adicCompletion K
+  /-- The chosen element carries the source-shaped uniformizer certificate. -/
+  uniformizer_isCompletionUniformizer : ∀ w (hw : w ∈ badPlacesOver),
+    Arithmetic.IsCompletionUniformizer w (uniformizer w hw)
+  /--
+  The raw norm field is tied to the chosen local element.  The current
+  `AdelicThetaLinkData.qNorm` and `TateOrderNormCompatibility` use this raw
+  norm; the canonical completion comparison is derived below.
+  -/
+  uniformizerNorm_eq_chosenNorm :
+    ∀ w (hw : w ∈ badPlacesOver),
       orderCompatibility.uniformizerNorm w =
-        ‖Arithmetic.completionUniformizer w‖
+        ‖uniformizer w hw‖
 
 namespace IutQPilotSource
 
@@ -90,6 +97,19 @@ lemma mem_badPlacesOver_iff_link (S : IutQPilotSource p T)
     w ∈ S.badPlacesOver ↔ w ∈ T.scene1.data.link.places := by
   change w ∈ S.badPlacesOver ↔ w ∈ (↑T.scene1.data.link.places : Set _)
   rw [S.badPlacesOver_eq_link]
+
+lemma uniformizerNorm_eq_completionNorm
+    (S : IutQPilotSource p T)
+    (w : NumberField.FinitePlace K) (hw : w ∈ S.badPlacesOver) :
+    S.orderCompatibility.uniformizerNorm w =
+      ‖Arithmetic.completionUniformizer w‖ := by
+  rw [S.uniformizerNorm_eq_chosenNorm w hw]
+  have hChosenVal :=
+    Arithmetic.valued_eq_exp_neg_one_of_isCompletionUniformizer w
+      (S.uniformizer_isCompletionUniformizer w hw)
+  rw [Arithmetic.completionNorm_eq_residueChar_pow_neg_one_of_valued
+      w (S.uniformizer w hw) hChosenVal,
+    Arithmetic.completionUniformizer_norm_eq_residueChar_pow_neg_one]
 
 noncomputable def toSceneQPilot
     (S : IutQPilotSource p T)
@@ -138,7 +158,7 @@ lemma toSceneQPilot_rawQNormDegreeNormalization
       Finset.mem_coe.mpr h
     rw [S.badFinset_spec] at hSet
     exact hSet
-  rw [S.uniformizerNorm_eq_completionNorm w hwBad]
+  rw [uniformizerNorm_eq_completionNorm p S w hwBad]
   exact Arithmetic.negLog_completionUniformizer_norm_eq_inertDeg_mul_log_residueChar w
 
 lemma toSceneQPilot_weight_eq_arithmetic
