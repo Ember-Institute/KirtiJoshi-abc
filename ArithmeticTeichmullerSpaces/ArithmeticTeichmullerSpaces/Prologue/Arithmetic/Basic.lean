@@ -149,11 +149,34 @@ lemma completionUniformizer_norm_eq_residueChar_pow_neg_one
   exact completionNorm_eq_residueChar_pow_of_valued w
     (completionUniformizer w) (-1) (completionUniformizer_valued w)
 
+/-- Any completion element with uniformizer valuation has the same raw norm
+as the canonical completion uniformizer.  This is the norm part of the
+ported `iut` `valued_eq_of_isUniformizer` argument, with the valuation
+certificate kept explicit at the project boundary. -/
+lemma completionNorm_eq_residueChar_pow_neg_one_of_valued
+    (w : NumberField.FinitePlace K)
+    (x : w.maximalIdeal.adicCompletion K)
+    (hx : Valued.v x = exp (-1 : ℤ)) :
+    ‖x‖ = ((residueChar w : ℝ) ^ inertDeg w) ^ (-1 : ℤ) := by
+  exact completionNorm_eq_residueChar_pow_of_valued w x (-1) hx
+
 lemma negLog_completionUniformizer_norm_eq_inertDeg_mul_log_residueChar
     (w : NumberField.FinitePlace K) :
     -Real.log ‖completionUniformizer w‖ =
       (inertDeg w : ℝ) * Real.log (residueChar w) := by
   rw [completionUniformizer_norm_eq_residueChar_pow_neg_one,
+    Real.log_zpow, Real.log_pow]
+  ring
+
+/-- The corresponding raw logarithm law for any explicitly certified
+uniformizer-valued completion element. -/
+lemma negLog_completionNorm_eq_inertDeg_mul_log_residueChar_of_valued
+    (w : NumberField.FinitePlace K)
+    (x : w.maximalIdeal.adicCompletion K)
+    (hx : Valued.v x = exp (-1 : ℤ)) :
+    -Real.log ‖x‖ =
+      (inertDeg w : ℝ) * Real.log (residueChar w) := by
+  rw [completionNorm_eq_residueChar_pow_neg_one_of_valued w x hx,
     Real.log_zpow, Real.log_pow]
   ring
 
