@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.QFamilyBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.QNormTateBridge
 
 namespace JoshiTeich.Act1Scene1
 
@@ -56,6 +56,22 @@ variable {O : Type uK} [CommRing O] (p : ℕ)
 variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
 variable [IsAdicComplete (Ideal.span {(p : O)}) O]
 variable {T : Corollary312Data K O p}
+
+/-!
+The ordinary Tate q-family already contains the source q-factor and the place
+compatibility needed by the raw target.  This constructor therefore prevents a
+caller from supplying a second, detached family of q-log equalities.
+-/
+noncomputable def ofTateQFamily
+    {V : Corollary312VolumeData p T}
+    (Q : Corollary312TateQFamily p T V) :
+    Corollary312RawTargetSpecification p T :=
+  { grouping := Q.grouping
+    qLogTerm_eq := by
+      intro i
+      rw [Q.qLogTerm_eq]
+      rw [← Q.grouping_place_eq i]
+      rfl }
 
 theorem qLogSum_eq_rawSourceQLogSum
     (R : Corollary312RawTargetSpecification p T) :

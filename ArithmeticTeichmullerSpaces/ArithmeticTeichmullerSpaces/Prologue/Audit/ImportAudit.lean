@@ -141,6 +141,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312RawQNormDegreeNormalization
 #check JoshiTeich.Act1Scene1.Corollary312RawSourceQLogSum
 #check JoshiTeich.Act1Scene1.Corollary312RawTargetSpecification
+#check JoshiTeich.Act1Scene1.Corollary312RawTargetSpecification.ofTateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312RawTargetSpecification.qLogSum_eq_rawSourceQLogSum
 #check JoshiTeich.Act1Scene1.Corollary312RawTarget
 #check JoshiTeich.Act1Scene1.corollary312_iff_rawTarget
