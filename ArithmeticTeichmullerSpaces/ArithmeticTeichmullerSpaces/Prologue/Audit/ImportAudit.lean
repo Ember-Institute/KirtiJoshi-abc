@@ -67,6 +67,8 @@ open scoped NumberField
 #check Arithmetic.qPilotWeight
 #check Arithmetic.qPilotWeight_pos
 #check Arithmetic.qPilotWeight_sum_le_one_of_localDeg_sum_le
+#check Arithmetic.sum_localDeg_liesOver
+#print axioms Arithmetic.sum_localDeg_liesOver
 #check Arithmetic.localDeg_sum_le_finrank_of_residueChar_filter
 #check Arithmetic.qPilotWeight_sum_le_one_of_residueChar_filter
 #check Arithmetic.natCast_mem_maximalIdeal_iff
