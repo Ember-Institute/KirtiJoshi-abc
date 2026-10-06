@@ -42,6 +42,8 @@ structure IutQPilotSource
   qOrder : NumberField.FinitePlace K → ℕ
   /-- The IUT q-order is positive on the bad carrier. -/
   qOrder_pos : ∀ w, w ∈ badPlacesOver → 0 < qOrder w
+  /-- The admissible prime is coprime to each normalized Tate q-order. -/
+  qOrder_coprime : ∀ w, w ∈ badPlacesOver → Nat.Coprime T.ell (qOrder w)
   /-- The Tate parameter is nonzero on the bad carrier. -/
   tateParameter_ne_zero : ∀ w, w ∈ badPlacesOver → tateParameter w ≠ 0
   /-- The finite carrier exported by the IUT q-pilot construction. -/
@@ -97,6 +99,14 @@ lemma mem_badPlacesOver_iff_link (S : IutQPilotSource p T)
     w ∈ S.badPlacesOver ↔ w ∈ T.scene1.data.link.places := by
   change w ∈ S.badPlacesOver ↔ w ∈ (↑T.scene1.data.link.places : Set _)
   rw [S.badPlacesOver_eq_link]
+
+lemma qOrder_coprime_link (S : IutQPilotSource p T)
+    (w : Corollary312SourceQIndex p T) :
+    Nat.Coprime T.ell (T.scene1.data.link.tate.qOrder w.1) := by
+  have hwBad : w.1 ∈ S.badPlacesOver :=
+    (S.mem_badPlacesOver_iff_link p w.1).mpr w.2
+  rw [← S.qOrder_eq_link w.1 hwBad]
+  exact S.qOrder_coprime w.1 hwBad
 
 lemma uniformizerNorm_eq_completionNorm
     (S : IutQPilotSource p T)

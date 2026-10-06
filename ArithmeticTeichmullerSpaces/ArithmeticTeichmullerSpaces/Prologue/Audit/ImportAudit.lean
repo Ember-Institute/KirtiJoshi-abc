@@ -151,6 +151,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.tateParameter
 #check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder
 #check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_pos
+#check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_coprime
 #check JoshiTeich.Act1Scene1.IutQPilotSource.tateParameter_ne_zero
 #check JoshiTeich.Act1Scene1.IutQPilotSource.badPlacesOver_eq_link
 #check JoshiTeich.Act1Scene1.IutQPilotSource.tateParameter_eq_link
@@ -160,6 +161,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizer_isCompletionUniformizer
 #check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizerNorm_eq_chosenNorm
 #check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizerNorm_eq_completionNorm
+#check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_coprime_link
 #check JoshiTeich.Act1Scene1.IutQPilotSource.source_norm_eq_uniformizer_pow_order
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_rawQNormDegreeNormalization
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
@@ -190,6 +192,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.transferLogBound_of_tateQAccounting_qPilot
 #check JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping
+#check JoshiTeich.Act1Scene1.Corollary312SourceQGrouping.ofIutSource
 #check JoshiTeich.Act1Scene1.Corollary312GroupedSourceQFactor
 #check JoshiTeich.Act1Scene1.Corollary312TateQAccounting
 #check JoshiTeich.Act1Scene1.Corollary312TateQAccounting.toAccounting

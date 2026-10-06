@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.TransferQAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotAdapter
 
 namespace JoshiTeich.Act1Scene1
 
@@ -39,6 +40,24 @@ noncomputable def Corollary312SourceQGrouping.ofPlaceIndex
         rw [← hCompat.places_eq]
         exact w.2
       q_order_coprime := hCoprime w }
+
+/-!
+The admissible-prime source already carries the coprimality condition used by
+the `(p,w)` pair.  This constructor consumes that source field instead of
+accepting a second, detached pair-level proof.
+-/
+noncomputable def Corollary312SourceQGrouping.ofIutSource
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (S : IutQPilotSource p T)
+    (hCompat : QNormTateCompatibility T.scene1.data.link)
+    (hIndex : T.qIndex ≃ Corollary312SourceQIndex p T) :
+    Corollary312SourceQGrouping p T :=
+  Corollary312SourceQGrouping.ofPlaceIndex p T hCompat hIndex
+    (fun w => S.qOrder_coprime_link p w)
 
 /-!
 source-id: IUT-COR312-Q-PILOT-SOURCE-INDEX
