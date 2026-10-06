@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
+import Mathlib.GroupTheory.Index
 
 namespace JoshiTeich.Act1Scene1
 
@@ -40,6 +41,23 @@ lemma exists_pow_eq_of_root_class
   push_cast
   ring
 
+lemma exists_pow_eq_of_root_class_of_nonzero
+    {G : Type*} [CommGroupWithZero G] {q u : G} {ell : ℕ} {m : ℤ}
+    (hEll : 0 < ell) (hq : q ≠ 0)
+    (hu : u ^ ell = q ^ (1 + (ell : ℤ) * m)) :
+    ∃ r : G, r ^ ell = q := by
+  have hu0 : u ≠ 0 := by
+    intro hu0
+    rw [hu0, zero_pow (Nat.ne_of_gt hEll)] at hu
+    exact (zpow_ne_zero _ hq) hu.symm
+  let q' : Gˣ := Units.mk0 q hq
+  let u' : Gˣ := Units.mk0 u hu0
+  have hu' : u' ^ ell = q' ^ (1 + (ell : ℤ) * m) := by
+    apply Units.ext
+    simpa [u', q'] using hu
+  obtain ⟨r', hr'⟩ := exists_pow_eq_of_root_class hu'
+  exact ⟨r'.1, congrArg Units.val hr'⟩
+
 /-!
 The finite residue argument is the part of the IUT Tate-torsion proof that does
 not depend on a particular elliptic-curve representation.  The caller supplies
@@ -56,13 +74,14 @@ lemma exists_root_class_of_card
     (hRepPow : ∀ P, rep P ^ ell = q ^ expo P)
     (hResidRep : ∀ P, resid P = (expo P : ZMod ell)) :
     ∃ u : U, ∃ m : ℤ, u ^ ell = q ^ (1 + (ell : ℤ) * m) := by
+  letI : NeZero ell := ⟨Nat.ne_of_gt hEll⟩
   have hRange : Nat.card resid.range ≤ ell := by
     calc
       Nat.card resid.range ≤ Nat.card (ZMod ell) :=
         Nat.card_le_card_of_injective _ Subtype.val_injective
       _ = ell := by simp
   have hKernelRange : Nat.card resid.ker * Nat.card resid.range = Nat.card T :=
-    AddMonoidHom.card_ker_mul_card_range resid
+    AddSubgroup.card_ker_mul_card_range resid
   have hEq : Nat.card resid.ker = ell ∧ Nat.card resid.range = ell := by
     have hMul : ell * ell ≤ Nat.card resid.ker * Nat.card resid.range := by
       rw [hKernelRange]
@@ -73,14 +92,14 @@ lemma exists_root_class_of_card
       have hUpper : Nat.card resid.ker * Nat.card resid.range ≤
           Nat.card resid.ker * ell := Nat.mul_le_mul_left _ hRange
       have hStrict : Nat.card resid.ker * ell < ell * ell := by
-        exact Nat.mul_lt_mul_right hEll hlt
+        exact (Nat.mul_lt_mul_right hEll).2 hlt
       omega), (by
       by_contra hne
       have hlt : Nat.card resid.range < ell := lt_of_le_of_ne hRange hne
       have hUpper : Nat.card resid.ker * Nat.card resid.range ≤
           ell * Nat.card resid.range := Nat.mul_le_mul_right _ hKernel
       have hStrict : ell * Nat.card resid.range < ell * ell := by
-        exact Nat.mul_lt_mul_left hEll hlt
+        exact (Nat.mul_lt_mul_left hEll).2 hlt
       omega)⟩
   have hRangeTop : resid.range = ⊤ := by
     apply AddSubgroup.eq_top_of_card_eq
@@ -150,8 +169,17 @@ namespace IutTorsionQRootSource
 variable {F Kt : Type u} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
 variable [Algebra F Kt] {ell : ℕ} {B : IutBaseQPilotSource F ell}
 
+lemma canonical_tateParameter_image_ne_zero
+    (B : IutBaseQPilotSource F ell)
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+        (B.tateParameter (basePlaceOf (B := B) v)) ≠ 0 :=
+  (map_ne_zero _).2 (B.tateParameter_ne_zero (basePlaceOf (B := B) v))
+
 noncomputable def ellRootOfRootClass
     (B : IutBaseQPilotSource F ell)
+    (hEll : 0 < ell)
     (rootClass : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
     (rootClassExponent : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt)
@@ -163,11 +191,13 @@ noncomputable def ellRootOfRootClass
             (1 + (ell : ℤ) * rootClassExponent v)) :
     ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt :=
-  fun v => Classical.choose (IutQRootExistence.exists_pow_eq_of_root_class
-    (rootClass_pow_eq v))
+  fun v => Classical.choose
+    (IutQRootExistence.exists_pow_eq_of_root_class_of_nonzero hEll
+      (canonical_tateParameter_image_ne_zero B v) (rootClass_pow_eq v))
 
 lemma ellRootOfRootClass_pow_eq
     (B : IutBaseQPilotSource F ell)
+    (hEll : 0 < ell)
     (rootClass : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
     (rootClassExponent : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt)
@@ -179,19 +209,11 @@ lemma ellRootOfRootClass_pow_eq
             (1 + (ell : ℤ) * rootClassExponent v))
     (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
       B.badPlaces_finite) :
-    ellRootOfRootClass B rootClass rootClassExponent rootClass_pow_eq v ^ ell =
+    ellRootOfRootClass B hEll rootClass rootClassExponent rootClass_pow_eq v ^ ell =
       iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
         (B.tateParameter (basePlaceOf (B := B) v)) :=
-  Classical.choose_spec (IutQRootExistence.exists_pow_eq_of_root_class
-    (rootClass_pow_eq v))
-
-lemma canonical_tateParameter_image_ne_zero
-    (B : IutBaseQPilotSource F ell)
-    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
-      B.badPlaces_finite) :
-    iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
-        (B.tateParameter (basePlaceOf (B := B) v)) ≠ 0 :=
-  (map_ne_zero _).2 (B.tateParameter_ne_zero (basePlaceOf (B := B) v))
+  Classical.choose_spec (IutQRootExistence.exists_pow_eq_of_root_class_of_nonzero
+    hEll (canonical_tateParameter_image_ne_zero B v) (rootClass_pow_eq v))
 
 noncomputable def qrootOfSquareAndEllRoot
     (B : IutBaseQPilotSource F ell)
@@ -281,9 +303,9 @@ noncomputable def ofOverBaseBadWithCanonicalCompletionMap_ofRootClassAndSquareRo
           (B.tateParameter (basePlaceOf (B := B) v))) :
     IutTorsionQRootSource F Kt ell B :=
   ofOverBaseBadWithCanonicalCompletionMap_ofRoots B
-    (ellRootOfRootClass B rootClass rootClassExponent rootClass_pow_eq)
+    (ellRootOfRootClass B hEll rootClass rootClassExponent rootClass_pow_eq)
     squareRoot hEll hodd
-    (ellRootOfRootClass_pow_eq B rootClass rootClassExponent rootClass_pow_eq)
+    (ellRootOfRootClass_pow_eq B hEll rootClass rootClassExponent rootClass_pow_eq)
     squareRoot_pow_eq
 
 end IutTorsionQRootSource

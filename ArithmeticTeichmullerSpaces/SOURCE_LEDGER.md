@@ -11,6 +11,19 @@
 - Lean project root: `ArithmeticTeichmullerSpaces/`
 - Development rule: after development starts, these versions and the toolchain are frozen.
 
+## Build verification
+
+- 2026-10-07: after the S1-BND-092 Mathlib interface repair, the full tree was built with
+  `ulimit -v 62914560; /usr/bin/time -v lake build`.
+- Result: `7408/7408` jobs completed, exit status `0`, wall-clock time `5:55.33`, maximum
+  resident set size `4,576,432 kB` (about `4.36 GiB`).
+- This validates the current Lean build and does not close the still-open
+  `InitialThetaData`/`TateFamily`, `V_p^oss`, q-factor normalization, or theta-volume source
+  obligations listed below.
+- Build cadence from this baseline: run one full build after every `10` pushes. Keep the full
+  build virtual-memory cap at `60 GiB` (`ulimit -v 62914560`) and the directed-build cap at
+  `16 GiB` (`ulimit -v 16777216`). The next push is counted as `1/10`.
+
 ## JoshiTeich references
 
 | source-id | Reference | Used by | Status |
