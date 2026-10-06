@@ -273,6 +273,24 @@ lemma ofOverBaseBadWithCanonicalCompletionMap_badFinset
       iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces B.badPlaces_finite :=
   rfl
 
+lemma canonical_qroot_valued_pow_eq
+    (B : IutBaseQPilotSource F ell)
+    (qroot : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite, v.1.maximalIdeal.adicCompletion Kt)
+    (qroot_pow_eq : ∀ v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite,
+      qroot v ^ (2 * ell) =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) v)
+          (B.tateParameter (basePlaceOf (B := B) v)))
+    (v : iutBadPlacesOverFinset (k := F) (K := Kt) B.badPlaces
+      B.badPlaces_finite) :
+    Valued.v (qroot v) ^ (2 * ell) =
+      Valued.v (B.tateParameter (basePlaceOf (B := B) v)) ^
+        iutRelativeRamificationIndex
+          (v := v.1) (w := (basePlaceOf (B := B) v).1) := by
+  simpa only [map_pow, iutValuedEmbedCompletion] using
+    congrArg Valued.v (qroot_pow_eq v)
+
 end IutTorsionQRootSource
 
 end
