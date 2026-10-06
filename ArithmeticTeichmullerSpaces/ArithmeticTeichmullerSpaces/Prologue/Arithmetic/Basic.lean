@@ -181,6 +181,65 @@ lemma negLog_completionNorm_eq_inertDeg_mul_log_residueChar_of_valued
   ring
 
 /-!
+The `iut` source uses `TateCurvesTheta.IsUniformizer` for a chosen local
+element.  Keep the same three fields at the Prologue boundary without adding
+the external package as a dependency.  The valuation theorem below is the
+ported arithmetic content of `iut`'s `valued_eq_of_isUniformizer`.
+-/
+structure IsCompletionUniformizer
+    (w : NumberField.FinitePlace K)
+    (π : w.maximalIdeal.adicCompletion K) : Prop where
+  ne_zero : π ≠ 0
+  norm_lt_one : ‖π‖ < 1
+  generates : ∀ x : (w.maximalIdeal.adicCompletion K)ˣ, ∃ n : ℤ,
+    ‖(x : w.maximalIdeal.adicCompletion K)‖ = ‖π‖ ^ n
+
+lemma valued_eq_exp_neg_one_of_isCompletionUniformizer
+    (w : NumberField.FinitePlace K)
+    {π : w.maximalIdeal.adicCompletion K}
+    (hπ : IsCompletionUniformizer w π) :
+    Valued.v π = exp (-1 : ℤ) := by
+  obtain ⟨π₀, hπ₀⟩ := w.maximalIdeal.valuation_exists_uniformizer K
+  have hπ₀' : Valued.v
+      (NumberField.FinitePlace.embedding w.maximalIdeal π₀ :
+        w.maximalIdeal.adicCompletion K) =
+      exp (-1 : ℤ) := by
+    rw [NumberField.FinitePlace.embedding_apply,
+      IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_eq_valuation', hπ₀]
+  have hN : (1 : ℝ) < (residueChar w : ℝ) ^ inertDeg w := by
+    have hp : (residueChar w).Prime := residueChar_prime w
+    exact one_lt_pow₀ (by exact_mod_cast hp.one_lt) (inertDeg_pos w).ne'
+  have hN0 : (0 : ℝ) < (residueChar w : ℝ) ^ inertDeg w :=
+    zero_lt_one.trans hN
+  have hπ' : Valued.v π ≠ 0 := (Valuation.ne_zero_iff _).2 hπ.ne_zero
+  set m : ℤ := log (Valued.v π)
+  have hm : Valued.v π = exp m := (exp_log hπ').symm
+  have hnorm : ‖π‖ = ((residueChar w : ℝ) ^ inertDeg w) ^ m :=
+    completionNorm_eq_residueChar_pow_of_valued w π m hm
+  have hm0 : m < 0 := by
+    have hlt := hπ.norm_lt_one
+    rw [hnorm, zpow_lt_one_iff_right₀ hN] at hlt
+    exact hlt
+  have hunit :
+      (NumberField.FinitePlace.embedding w.maximalIdeal π₀ :
+        w.maximalIdeal.adicCompletion K) ≠ 0 := by
+    intro h
+    rw [h, map_zero] at hπ₀'
+    exact exp_ne_zero hπ₀'.symm
+  obtain ⟨n, hn⟩ := hπ.generates (Units.mk0 _ hunit)
+  rw [Units.val_mk0,
+    completionNorm_eq_residueChar_pow_of_valued w _ _ hπ₀', hnorm,
+    ← zpow_mul] at hn
+  have hmn : (-1 : ℤ) = m * n :=
+    zpow_right_injective₀ hN0 hN.ne' hn
+  have hm1 : m = -1 := by
+    have hunit : IsUnit m := IsUnit.of_mul_eq_one (-n) (by rw [mul_neg, ← hmn]; norm_num)
+    rcases Int.isUnit_iff.mp hunit with h | h
+    · omega
+    · exact h
+  rw [hm, hm1]
+
+/-!
 The finite-support fact used by the `iut` bad-place layer is independent of
 the elliptic-curve presentation: for a nonzero field element, only finitely
 many finite places can have norm strictly larger than one.  The zero case is

@@ -27,6 +27,7 @@
 | source-id | Declaration | File | Status |
 | --- | --- | --- | --- |
 | `IUT-COR312-COMPLETION-UNIFORMIZER-NORM` | `Arithmetic.completionNorm_eq_residueChar_pow_neg_one_of_valued`, `Arithmetic.negLog_completionNorm_eq_inertDeg_mul_log_residueChar_of_valued` | `Prologue/Arithmetic/Basic.lean` | `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:285-345`; explicit valuation-adapted port of the general uniformizer norm/log calculation; it accepts `Valued.v x = exp(-1)` and does not identify `x` with a real `InitialThetaData` or `TateFamily` uniformizer |
+| `IUT-COR312-COMPLETION-UNIFORMIZER-VALUED` | `Arithmetic.IsCompletionUniformizer`, `Arithmetic.valued_eq_exp_neg_one_of_isCompletionUniformizer` | `Prologue/Arithmetic/Basic.lean` | `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:285-345`; certificate shape: `refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean:65-70`; port of the `IsUniformizer` valuation argument; no real `AdmissiblePrimeData` or `InitialThetaData` realization |
 | `JT-M-NF-FINPLACE` | `NumberField.FinitePlace` | mathlib `NumberField/Completion/FinitePlace.lean` | imported mathlib type |
 | `JT-M-RAT-RINGINT` | `Rat.ringOfIntegersEquiv` | mathlib `NumberTheory/NumberField/Basic.lean` | imported mathlib equivalence |
 | `JT-M-DIFFERENT-IDEAL` | `differentIdeal`, `NumberField.absNorm_differentIdeal` | mathlib `NumberTheory/NumberField/Discriminant/Different.lean` | imported ideal and norm theorem |
