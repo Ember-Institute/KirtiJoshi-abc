@@ -239,6 +239,35 @@ lemma valued_eq_exp_neg_one_of_isCompletionUniformizer
     · exact h
   rw [hm, hm1]
 
+lemma completionUniformizer_isCompletionUniformizer
+    (w : NumberField.FinitePlace K) :
+    IsCompletionUniformizer w (completionUniformizer w) := by
+  refine
+    { ne_zero := ?_
+      norm_lt_one := ?_
+      generates := ?_ }
+  · have hval := completionUniformizer_valued w
+    intro hzero
+    rw [hzero, map_zero] at hval
+    exact exp_ne_zero hval.symm
+  · have hN : (1 : ℝ) < (residueChar w : ℝ) ^ inertDeg w := by
+      have hp : (residueChar w).Prime := residueChar_prime w
+      exact one_lt_pow₀ (by exact_mod_cast hp.one_lt) (inertDeg_pos w).ne'
+    rw [completionUniformizer_norm_eq_residueChar_pow_neg_one,
+      zpow_lt_one_iff_right₀ hN]
+    norm_num
+  · intro x
+    have hx0 : Valued.v (x : w.maximalIdeal.adicCompletion K) ≠ 0 :=
+      (Valued.v).ne_zero_iff.mpr x.ne_zero
+    let m : ℤ := log (Valued.v (x : w.maximalIdeal.adicCompletion K))
+    have hm : Valued.v (x : w.maximalIdeal.adicCompletion K) = exp m :=
+      (exp_log hx0).symm
+    refine ⟨-m, ?_⟩
+    rw [completionNorm_eq_residueChar_pow_of_valued w _ m hm,
+      completionUniformizer_norm_eq_residueChar_pow_neg_one,
+      ← zpow_mul]
+    simp
+
 /-!
 The finite-support fact used by the `iut` bad-place layer is independent of
 the elliptic-curve presentation: for a nonzero field element, only finitely

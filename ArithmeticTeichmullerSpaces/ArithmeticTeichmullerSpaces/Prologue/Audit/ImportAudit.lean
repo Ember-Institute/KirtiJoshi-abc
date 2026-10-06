@@ -52,6 +52,7 @@ open scoped NumberField
 #check Arithmetic.negLog_completionNorm_eq_inertDeg_mul_log_residueChar_of_valued
 #check Arithmetic.IsCompletionUniformizer
 #check Arithmetic.valued_eq_exp_neg_one_of_isCompletionUniformizer
+#check Arithmetic.completionUniformizer_isCompletionUniformizer
 #check Arithmetic.finite_places_norm_gt_one
 #check Arithmetic.normGtOneFinset
 #check Arithmetic.mem_normGtOneFinset_iff
