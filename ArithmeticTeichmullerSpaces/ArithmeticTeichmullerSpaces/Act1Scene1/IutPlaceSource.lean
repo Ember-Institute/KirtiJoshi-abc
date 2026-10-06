@@ -86,4 +86,56 @@ lemma mem_iutBadPlacesOverFinset_iff
     w ∈ iutBadPlacesOverFinset VBad hVBad ↔ w ∈ iutBadPlacesOver VBad := by
   rw [iutBadPlacesOverFinset, Set.Finite.mem_toFinset]
 
+/-!
+The IUT q-pilot lives on the field `F`, while its bad locus is defined by a
+finite set of places of the field of moduli below `F`.  This constructor keeps
+that two-field orientation explicit and derives the carrier fields from
+`iutBadPlacesOver`; callers only provide the local Tate/q-order data on the
+canonical finite subtype.
+-/
+noncomputable def IutBaseQPilotSource.ofOverVBad
+    {k F : Type uF} [Field k] [NumberField k] [Field F] [NumberField F]
+    [Algebra k F]
+    (ell : ℕ)
+    (VBad : Set (NumberField.FinitePlace k)) (hVBad : VBad.Finite)
+    (weight : NumberField.FinitePlace F → ℝ)
+    (weight_eq_qPilotWeight : ∀ w, weight w = Arithmetic.qPilotWeight w)
+    (tateParameter : ∀ w : iutBadPlacesOverFinset (k := k) (K := F) VBad hVBad,
+      w.1.maximalIdeal.adicCompletion F)
+    (tateParameter_ne_zero : ∀ w, tateParameter w ≠ 0)
+    (qOrder : ∀ w : iutBadPlacesOverFinset (k := k) (K := F) VBad hVBad, ℕ)
+    (qOrder_pos : ∀ w, 0 < qOrder w)
+    (qOrder_coprime : ∀ w, Nat.Coprime ell (qOrder w)) :
+    IutBaseQPilotSource F ell :=
+  { badPlaces := iutBadPlacesOver (k := k) (K := F) VBad
+    badFinset := iutBadPlacesOverFinset (k := k) (K := F) VBad hVBad
+    badFinset_spec := by
+      ext w
+      exact mem_iutBadPlacesOverFinset_iff VBad hVBad w
+    weight := weight
+    weight_eq_qPilotWeight := weight_eq_qPilotWeight
+    tateParameter := tateParameter
+    tateParameter_ne_zero := tateParameter_ne_zero
+    qOrder := qOrder
+    qOrder_pos := qOrder_pos
+    qOrder_coprime := qOrder_coprime }
+
+lemma IutBaseQPilotSource.ofOverVBad_badPlaces
+    {k F : Type uF} [Field k] [NumberField k] [Field F] [NumberField F]
+    [Algebra k F]
+    (ell : ℕ)
+    (VBad : Set (NumberField.FinitePlace k)) (hVBad : VBad.Finite)
+    (weight : NumberField.FinitePlace F → ℝ)
+    (weight_eq_qPilotWeight : ∀ w, weight w = Arithmetic.qPilotWeight w)
+    (tateParameter : ∀ w : iutBadPlacesOverFinset (k := k) (K := F) VBad hVBad,
+      w.1.maximalIdeal.adicCompletion F)
+    (tateParameter_ne_zero : ∀ w, tateParameter w ≠ 0)
+    (qOrder : ∀ w : iutBadPlacesOverFinset (k := k) (K := F) VBad hVBad, ℕ)
+    (qOrder_pos : ∀ w, 0 < qOrder w)
+    (qOrder_coprime : ∀ w, Nat.Coprime ell (qOrder w)) :
+    (IutBaseQPilotSource.ofOverVBad ell VBad hVBad weight weight_eq_qPilotWeight
+      tateParameter tateParameter_ne_zero qOrder qOrder_pos qOrder_coprime).badPlaces =
+      iutBadPlacesOver (k := k) (K := F) VBad := by
+  rfl
+
 end JoshiTeich.Act1Scene1
