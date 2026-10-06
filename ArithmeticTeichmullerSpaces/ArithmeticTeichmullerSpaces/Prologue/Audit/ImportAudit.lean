@@ -214,6 +214,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.qPilot
 #check JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
+#check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.sourceIndexBridge
 #check JoshiTeich.Act1Scene1.Audit.scene_explicit_audit_corollary312
 #check JoshiTeich.Act1Scene1.Audit.scene_bad_normalization_violation
 #check JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel

@@ -61,10 +61,6 @@ structure Corollary312Scene1QPilotData
     Corollary312QPilotSourceNormalization p base.target
       source.orderCompatibility
       (source.toSceneQPilot p base.qFamily.compatibility)
-  sourceIndexBridge :
-    Corollary312QPilotSourceIndexBridge p base.target base.volume
-      (source.toSceneQPilot p base.qFamily.compatibility)
-      base.qFamily
 
 namespace Corollary312Scene1QPilotData
 
@@ -76,6 +72,22 @@ noncomputable def qPilot
     (D : Corollary312Scene1QPilotData (K := K) (O := O) p) :
     Corollary312QPilotData p D.base.target :=
   D.source.toSceneQPilot (K := K) (O := O) p D.base.qFamily.compatibility
+
+/-!
+The source and q-family already expose the same finite link-place carrier.  The
+canonical grouping bridge therefore carries no additional source information and
+is derived here instead of being accepted as a second Scene1 field.
+-/
+noncomputable def sourceIndexBridge
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : Corollary312Scene1QPilotData (K := K) (O := O) p) :
+    Corollary312QPilotSourceIndexBridge p D.base.target D.base.volume
+      (D.qPilot p) D.base.qFamily :=
+  Corollary312QPilotSourceIndexBridge.ofGrouping p D.base.target D.base.volume
+    (D.qPilot p) D.base.qFamily
 
 end Corollary312Scene1QPilotData
 
@@ -108,8 +120,9 @@ theorem cor312_of_scene1_qPilot_data
     (Corollary312Scene1QPilotData.qPilot p D)
     D.source.orderCompatibility
       D.sourceNormalization
-      D.base.ell_prime.pos
-    D.sourceIndexBridge D.base.ell_prime D.base.ell_ge_five
+    D.base.ell_prime.pos
+    (Corollary312Scene1QPilotData.sourceIndexBridge p D)
+    D.base.ell_prime D.base.ell_ge_five
     D.base.ellStar_eq_half_sub_one D.base.ellStar_pos
 
 end JoshiTeich.Act1Scene1
