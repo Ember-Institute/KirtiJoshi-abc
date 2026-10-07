@@ -16,9 +16,11 @@ source: `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean`,
 normalization: `refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean`,
 `TateParameter.norm_q_eq_pow_orderNat`.
 fidelity: the contract is completion-valued and keeps the chosen uniformizer,
-its certificate, and the Tate norm/order equation explicit.  It proves the
-valuation law used by the q-root transfer, but does not construct a real
-`InitialThetaData`, `TateFamily`, q-root, or `V_p^oss` identification.
+its certificate, and the Tate parameter explicit. It derives the integer
+q-order from the completion valuation, proves the uniformizer norm/order
+equation, and proves the valuation law used by q-root transfer. It does not
+construct a real `InitialThetaData`, `TateFamily`, q-root, or `V_p^oss`
+identification.
 boundary: Scene1/Derived
 -/
 
@@ -30,14 +32,18 @@ structure IutCompletionTateValuation
   /-- The chosen element satisfies the source-shaped uniformizer contract. -/
   uniformizer_isCompletionUniformizer : ∀ w,
     Arithmetic.IsCompletionUniformizer w.1 (uniformizer w)
-  /-- The completion-valued Tate parameter has the normalized q-order. -/
-  norm_eq_pow_order : ∀ w,
-    ‖B.tateParameter w‖ = ‖uniformizer w‖ ^ B.qOrder w
 
 namespace IutCompletionTateValuation
 
 variable {F : Type u} [Field F] [NumberField F]
 variable {ell : ℕ} {B : IutBaseQPilotSource F ell}
+
+lemma norm_eq_pow_order
+    (C : IutCompletionTateValuation B) (w : B.badFinset) :
+    ‖B.tateParameter w‖ = ‖C.uniformizer w‖ ^ B.qOrder w :=
+  iutCompletionNorm_eq_uniformizer_pow_qOrder w.1 (B.tateParameter w)
+    (B.tateParameter_ne_zero w) (B.tateParameter_norm_lt_one w)
+    (C.uniformizer w) (C.uniformizer_isCompletionUniformizer w)
 
 lemma valued_tateParameter_eq_exp_neg_order
     (C : IutCompletionTateValuation B) (w : B.badFinset) :

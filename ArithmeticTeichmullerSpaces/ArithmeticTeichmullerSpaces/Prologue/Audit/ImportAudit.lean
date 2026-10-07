@@ -197,6 +197,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_weight_eq_arithmetic
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.qOrder
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.qOrder_pos
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.weight_pos
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource
 #check JoshiTeich.Act1Scene1.IutFieldOrientationAudit
@@ -208,8 +210,11 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutBadPlacesOverFinset
 #check JoshiTeich.Act1Scene1.mem_iutBadPlacesOverFinset_iff
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofOverVBad
-#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofOverVBad_badPlaces
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.badPlaces_finite
+#check JoshiTeich.Act1Scene1.iutCompletionQOrder
+#check JoshiTeich.Act1Scene1.iutCompletionQOrder_pos
+#check JoshiTeich.Act1Scene1.iutCompletionQOrder_valued
+#check JoshiTeich.Act1Scene1.iutCompletionNorm_eq_uniformizer_pow_qOrder
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.basePlaceOf
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.basePlaceOf_liesOver
 #check JoshiTeich.Act1Scene1.iutPlaceUnder
@@ -300,6 +305,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ordp_eq
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.valued_tateParameter_eq_exp_neg_order
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ordp_eq_of_tateValuation
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum_of_tateValuation
@@ -357,6 +363,9 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.corollary312_iff_rawTarget
 #print axioms JoshiTeich.Act1Scene1.Corollary312QPilotNormalizationAudit.finrank_eq_one_of_raw_and_weighted_normalization
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
+#print axioms JoshiTeich.Act1Scene1.iutCompletionQOrder_valued
+#print axioms JoshiTeich.Act1Scene1.iutCompletionNorm_eq_uniformizer_pow_qOrder
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.toGlobalTorsionBasis
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.representation_spec
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.isGalois_torsionField

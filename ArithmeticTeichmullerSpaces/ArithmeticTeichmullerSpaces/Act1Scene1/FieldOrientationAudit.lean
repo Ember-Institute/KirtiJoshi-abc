@@ -1,8 +1,12 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotAdapter
+import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
+import Mathlib.NumberTheory.RamificationInertia.Valuation
 
 namespace JoshiTeich.Act1Scene1
 
 open JoshiTeich.Prologue
+open WithZero
+open scoped NumberField Valued
 
 universe u
 
@@ -10,11 +14,15 @@ universe u
 source-id: IUT-COR312-FIELD-ORIENTATION
 source: `iut`: `refer/iut/Iut/Cor312/ThetaData/Basic.lean`,
 `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`,
+`refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean`,
 `refer/iut/Iut/Cor312/ThetaData/TateFamily.lean`,
 `refer/iut/Iut/Concrete/ThetaRegion.lean`, and
-`refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean`.
+`refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean`; local valuation/norm laws in
+`Prologue/Arithmetic/Basic.lean`.
 fidelity: explicit audit boundary for the base-field q-pilot and the torsion-field
-q-root; no `InitialThetaData` instance is constructed here.
+q-root; the base completion's integer q-order is derived from `Valued.v`, and its
+uniformizer power law is proved. The admissible-prime coprimality field remains
+explicit; no `InitialThetaData` instance is constructed here.
 boundary: Scene1/Derived
 
 The reference implementation has three different carriers:
@@ -32,6 +40,13 @@ keep the distinction visible until a real `InitialThetaData` construction is
 available.
 -/
 
+/-- The normalized integer order read from a finite-place completion valuation. -/
+noncomputable def iutCompletionQOrder
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F) : ℕ :=
+  Int.toNat (-log (Valued.v q))
+
 structure IutBaseQPilotSource (F : Type u) [Field F] [NumberField F]
     (ell : ℕ) where
   /-- The source bad-place carrier in the base field `F`. -/
@@ -45,15 +60,104 @@ structure IutBaseQPilotSource (F : Type u) [Field F] [NumberField F]
   /-- The base Tate parameter is a completion element, not a global `F` element. -/
   tateParameter : ∀ w : badFinset, w.1.maximalIdeal.adicCompletion F
   tateParameter_ne_zero : ∀ w, tateParameter w ≠ 0
-  /-- The normalized Tate order and its admissible-prime condition. -/
-  qOrder : ∀ w : badFinset, ℕ
-  qOrder_pos : ∀ w, 0 < qOrder w
-  qOrder_coprime : ∀ w, Nat.Coprime ell (qOrder w)
+  tateParameter_norm_lt_one : ∀ w, ‖tateParameter w‖ < 1
+  /-- The admissible-prime condition on the valuation-derived normalized order. -/
+  qOrder_coprime : ∀ w,
+    Nat.Coprime ell (iutCompletionQOrder w.1 (tateParameter w))
+
+lemma iutCompletionQOrder_pos
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F)
+    (hq : q ≠ 0) (hqNorm : ‖q‖ < 1) :
+    0 < iutCompletionQOrder w q := by
+  have hqv : Valued.v q ≠ 0 := (Valuation.ne_zero_iff _).2 hq
+  set m : ℤ := log (Valued.v q)
+  have hm : Valued.v q = exp m := (exp_log hqv).symm
+  have hp : (Arithmetic.residueChar w).Prime := Arithmetic.residueChar_prime w
+  have hN : (1 : ℝ) < (Arithmetic.residueChar w : ℝ) ^ Arithmetic.inertDeg w :=
+    one_lt_pow₀ (by exact_mod_cast hp.one_lt)
+      (Arithmetic.inertDeg_pos w).ne'
+  have hNorm := Arithmetic.completionNorm_eq_residueChar_pow_of_valued w q m hm
+  have hmNeg : m < 0 := by
+    rw [hNorm] at hqNorm
+    rw [zpow_lt_one_iff_right₀ hN] at hqNorm
+    exact hqNorm
+  have hcast : ((Int.toNat (-m) : ℕ) : ℤ) = -m :=
+    Int.toNat_of_nonneg (by omega)
+  have hpos : (0 : ℤ) < (Int.toNat (-m) : ℕ) := by
+    rw [hcast]
+    omega
+  unfold iutCompletionQOrder
+  rw [show log (Valued.v q) = m from rfl]
+  exact_mod_cast hpos
+
+lemma iutCompletionQOrder_valued
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F)
+    (hq : q ≠ 0) (hqNorm : ‖q‖ < 1) :
+    Valued.v q = exp (-(iutCompletionQOrder w q : ℤ)) := by
+  have hqv : Valued.v q ≠ 0 := (Valuation.ne_zero_iff _).2 hq
+  set m : ℤ := log (Valued.v q)
+  have hm : Valued.v q = exp m := (exp_log hqv).symm
+  have hqOrderPos := iutCompletionQOrder_pos w q hq hqNorm
+  have hp : (Arithmetic.residueChar w).Prime := Arithmetic.residueChar_prime w
+  have hN : (1 : ℝ) < (Arithmetic.residueChar w : ℝ) ^ Arithmetic.inertDeg w :=
+    one_lt_pow₀ (by exact_mod_cast hp.one_lt)
+      (Arithmetic.inertDeg_pos w).ne'
+  have hNorm := Arithmetic.completionNorm_eq_residueChar_pow_of_valued w q m hm
+  have hmNeg : m < 0 := by
+    rw [hNorm] at hqNorm
+    rw [zpow_lt_one_iff_right₀ hN] at hqNorm
+    exact hqNorm
+  have hqOrderInt : (iutCompletionQOrder w q : ℤ) = -m := by
+    unfold iutCompletionQOrder
+    rw [show log (Valued.v q) = m from rfl]
+    exact Int.toNat_of_nonneg (by omega)
+  have hmEq : m = -(iutCompletionQOrder w q : ℤ) := by omega
+  rw [hm, hmEq]
+
+lemma iutCompletionNorm_eq_uniformizer_pow_qOrder
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F)
+    (hq : q ≠ 0) (hqNorm : ‖q‖ < 1)
+    (π : w.maximalIdeal.adicCompletion F)
+    (hπ : Arithmetic.IsCompletionUniformizer w π) :
+    ‖q‖ = ‖π‖ ^ iutCompletionQOrder w q := by
+  have hqVal := iutCompletionQOrder_valued w q hq hqNorm
+  have hπVal := Arithmetic.valued_eq_exp_neg_one_of_isCompletionUniformizer w hπ
+  have hqNorm' := Arithmetic.completionNorm_eq_residueChar_pow_of_valued w q
+    (-(iutCompletionQOrder w q : ℤ)) hqVal
+  have hπNorm := Arithmetic.completionNorm_eq_residueChar_pow_of_valued w π
+    (-1 : ℤ) hπVal
+  rw [hqNorm', hπNorm]
+  change ((Arithmetic.residueChar w : ℝ) ^ Arithmetic.inertDeg w) ^
+      (-(iutCompletionQOrder w q : ℤ)) =
+    (((Arithmetic.residueChar w : ℝ) ^ Arithmetic.inertDeg w) ^ (-1 : ℤ)) ^
+      iutCompletionQOrder w q
+  have hpow :
+      (((Arithmetic.residueChar w : ℝ) ^ Arithmetic.inertDeg w) ^ (-1 : ℤ)) ^
+          iutCompletionQOrder w q =
+          ((Arithmetic.residueChar w : ℝ) ^ Arithmetic.inertDeg w) ^
+          (-(iutCompletionQOrder w q : ℤ)) := by
+    rw [← zpow_natCast, ← zpow_mul]
+    congr 1
+    ring
+  exact hpow.symm
 
 namespace IutBaseQPilotSource
 
 variable {F : Type u} [Field F] [NumberField F]
 variable {ell : ℕ} (B : IutBaseQPilotSource F ell)
+
+noncomputable def qOrder (w : B.badFinset) : ℕ :=
+  iutCompletionQOrder w.1 (B.tateParameter w)
+
+lemma qOrder_pos (w : B.badFinset) : 0 < B.qOrder w :=
+  iutCompletionQOrder_pos w.1 (B.tateParameter w)
+    (B.tateParameter_ne_zero w) (B.tateParameter_norm_lt_one w)
 
 lemma weight_pos (w : NumberField.FinitePlace F) : 0 < B.weight w := by
   rw [B.weight_eq_qPilotWeight]
