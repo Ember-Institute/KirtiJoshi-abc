@@ -66,13 +66,15 @@
   (`prlimit --as=17179869184:17179869184`); verify the active Lean child with `prlimit --pid`.
   The preceding baseline counted S1.94 through S1.100 as `1/10`
   through `7/10`, S1.101 as `8/10`, and S1.102 as `9/10`; the full build above supersedes it.
-- In the current cycle, S1.113 began at `1/10`; S1.114 through S1.121 advanced the successful-push
-  count through `9/10`. The S1.122 push attempt failed because `github.com` did not resolve, so the
-  count remains `9/10`. The full project library build recorded above validated the S1.122 tree
-  before the tenth successful push. The next successful push is the `10/10` checkpoint; run
-  `/usr/bin/time -v prlimit --as=64424509440:64424509440 -- env LEAN_NUM_THREADS=1 lake build +ArithmeticTeichmullerSpaces`
-  on the pushed tree, then restart the interval at `0/10`. Directed/full-build address-space caps
-  remain `16 GiB` / `60 GiB`.
+- In the cycle after the S1.112 full-build checkpoint, S1.113 through S1.121 reached `9/10`;
+  the S1.122 push attempt failed because `github.com` did not resolve and did not increment the count.
+  S1.123 commit `538a46f` was then pushed successfully as `10/10`. Its post-push full source build
+  used `/usr/bin/time -v prlimit --as=64424509440:64424509440 -- env LEAN_NUM_THREADS=1 lake build +ArithmeticTeichmullerSpaces`
+  and passed: `9159/9159` jobs, exit code `0`, elapsed `5:47.95`, maximum RSS `8,153,180 kB`;
+  Lake's soft/hard address-space limits were both `64424509440` bytes. The interval restarted at
+  `0/10` after this build. The successful push of this build-record update will count as `1/10` in the
+  new interval. Continue running this full source target after every `10` successful pushes;
+  directed/full-build address-space caps remain `16 GiB` / `60 GiB`.
 
 ## JoshiTeich references
 
