@@ -156,7 +156,7 @@ theorem rationalTwoPlace_two : rationalTwoPlace (2 : ℚ) = (1 / 2 : ℝ) := by
 
 noncomputable def sceneTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
-  parameter := fun _ => 16
+  parameter := fun w => NumberField.FinitePlace.embedding w.maximalIdeal (16 : ℚ)
   norm := fun w => w (16 : ℚ)
   orderNat := fun _ => 4
 
@@ -164,9 +164,10 @@ theorem sceneTateData_laws : TateParameterLaws sceneTateData := by
   constructor
   · simp [sceneTateData]
   · intro w hw
-    norm_num [sceneTateData]
+    simpa only [sceneTateData] using
+      (map_ne_zero (NumberField.FinitePlace.embedding w.maximalIdeal)).2 (by norm_num)
   · intro w hw
-    rfl
+    exact (NumberField.FinitePlace.norm_embedding_eq w (16 : ℚ)).symm
   · intro w hw
     exact NumberField.FinitePlace.pos_iff.mpr (by norm_num [sceneTateData])
   · intro w hw
@@ -332,7 +333,8 @@ theorem sceneLink_first_axiom : FirstAxiom sceneLinkData := by
     change sceneTateData.parameter w ≠ 0
     exact sceneTateData_laws.parameter_nonzero w hwTate
   · intro w hw
-    change 0 < w (16 : ℚ)
+    change 0 < ‖NumberField.FinitePlace.embedding w.maximalIdeal (16 : ℚ)‖
+    rw [NumberField.FinitePlace.norm_embedding_eq]
     exact NumberField.FinitePlace.pos_iff.mpr (by norm_num)
   · intro x
     exact auditHeight_nonneg x
@@ -347,8 +349,9 @@ theorem sceneLink_first_axiom : FirstAxiom sceneLinkData := by
 theorem sceneLink_model : AdelicThetaLink sceneLinkData := by
   constructor
   · intro w hw j
-    change w (16 : ℚ) ^ (j * j) = w ((16 : ℚ) ^ (j * j))
-    exact (map_pow w (16 : ℚ) (j * j)).symm
+    change ‖NumberField.FinitePlace.embedding w.maximalIdeal (16 : ℚ)‖ ^ (j * j) =
+      ‖(NumberField.FinitePlace.embedding w.maximalIdeal (16 : ℚ)) ^ (j * j)‖
+    exact (norm_pow _ _).symm
   · exact sceneTheta_scaling_laws
   · intro i
     rfl
@@ -487,7 +490,13 @@ theorem scene_qFactor_source :
   change (sceneLinkData.qNorm rationalTwoPlace) ^
       (1 / (2 * (sceneTarget.ell : ℝ))) =
     (sceneTateData.norm rationalTwoPlace) ^ (1 / 10 : ℝ)
-  congr 1 <;> norm_num [sceneTarget, sceneLinkData, sceneTateData]
+  have hnorm :
+      sceneLinkData.qNorm rationalTwoPlace = sceneTateData.norm rationalTwoPlace := by
+    change ‖NumberField.FinitePlace.embedding rationalTwoPlace.maximalIdeal (16 : ℚ)‖ =
+      rationalTwoPlace (16 : ℚ)
+    exact NumberField.FinitePlace.norm_embedding_eq _ _
+  rw [hnorm]
+  congr 1 <;> norm_num [sceneTarget, sceneTateData]
 
 noncomputable def sceneSourcePair :
     @Corollary312SourceQPair ℚ inferInstance inferInstance ℤ_[2] inferInstance 2

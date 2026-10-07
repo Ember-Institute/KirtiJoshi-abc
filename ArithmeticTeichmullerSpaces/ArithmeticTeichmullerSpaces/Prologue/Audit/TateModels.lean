@@ -9,14 +9,16 @@ theorem auditTateData_laws : TateParameterLaws auditTateData := by
   constructor
   · simp [auditTateData]
   · intro w hw
-    norm_num [auditTateData]
+    simpa only [auditTateData] using
+      (map_ne_zero (NumberField.FinitePlace.embedding w.maximalIdeal)).2 (by norm_num)
   · intro w hw
-    rfl
+    exact (NumberField.FinitePlace.norm_embedding_eq w (2 : ℚ)).symm
   · intro w hw
     exact NumberField.FinitePlace.pos_iff.mpr (by norm_num [auditTateData])
   · intro w hw
     simp only [auditTateData, Finset.mem_singleton] at hw ⊢
     subst w
+    unfold rationalTwoPlace
     change ‖NumberField.FinitePlace.embedding rationalTwoHeightOne (2 : ℚ)‖ < 1
     have hnorm :
         ‖NumberField.FinitePlace.embedding rationalTwoHeightOne
@@ -50,7 +52,8 @@ theorem auditTateData_violation : ¬ TateParameterLaws zeroTateData := by
   norm_num [zeroTateData] at hn
 
 theorem auditTateData_parameter_nontrivial :
-    auditTateData.parameter rationalTwoPlace = (2 : ℚ) := by
+    auditTateData.parameter rationalTwoPlace =
+      NumberField.FinitePlace.embedding rationalTwoPlace.maximalIdeal (2 : ℚ) := by
   rfl
 
 end JoshiTeich.Prologue.Audit

@@ -37,7 +37,7 @@ structure IutQPilotSource
   /-- Finiteness of the IUT bad-place carrier (`QPilotInputs.bad_finite`). -/
   badPlacesOver_finite : badPlacesOver.Finite
   /-- The Tate parameter attached to each place by the IUT Theta data. -/
-  tateParameter : NumberField.FinitePlace K → K
+  tateParameter : (w : NumberField.FinitePlace K) → w.maximalIdeal.adicCompletion K
   /-- The normalized integer q-order attached to each bad place. -/
   qOrder : NumberField.FinitePlace K → ℕ
   /-- The IUT q-order is positive on the bad carrier. -/
@@ -138,18 +138,21 @@ lemma source_norm_eq_uniformizer_pow_order
     (S : IutQPilotSource p T)
     (hCompat : QNormTateCompatibility T.scene1.data.link)
     (w : NumberField.FinitePlace K) (hw : w ∈ S.badPlacesOver) :
-    w (S.tateParameter w) =
+    ‖S.tateParameter w‖ =
       S.orderCompatibility.uniformizerNorm w ^ S.qOrder w := by
   rw [S.tateParameter_eq_link w hw]
   have hwLink : w ∈ T.scene1.data.link.places :=
     (S.mem_badPlacesOver_iff_link p w).mp hw
-  have hParam := hCompat.parameter_eq w hwLink
-  rw [← hParam]
-  change T.scene1.data.link.qNorm w = _
-  rw [QNormTateCompatibility.norm_eq T.scene1.data.link
-    T.scene1.input_laws.tate_parameter hCompat w hwLink]
-  rw [S.qOrder_eq_link w hw]
-  exact S.orderCompatibility.norm_eq_pow_order w hwLink
+  have hwTate : w ∈ T.scene1.data.link.tate.places := by
+    rw [← hCompat.places_eq]
+    exact hwLink
+  calc
+    ‖T.scene1.data.link.tate.parameter w‖ =
+        T.scene1.data.link.tate.norm w :=
+      (T.scene1.input_laws.tate_parameter.norm_eq w hwTate).symm
+    _ = S.orderCompatibility.uniformizerNorm w ^ S.qOrder w := by
+      rw [S.qOrder_eq_link w hw]
+      exact S.orderCompatibility.norm_eq_pow_order w hwLink
 
 lemma toSceneQPilot_rawQNormDegreeNormalization
     (S : IutQPilotSource p T)

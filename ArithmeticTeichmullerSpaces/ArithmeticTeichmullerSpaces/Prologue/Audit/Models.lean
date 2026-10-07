@@ -79,7 +79,7 @@ def auditPacketHull (packetWeight hullWeight : ℝ) : PacketHullData (Fin 1) whe
 
 noncomputable def auditTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
-  parameter := fun _ => 2
+  parameter := fun w => NumberField.FinitePlace.embedding w.maximalIdeal (2 : ℚ)
   norm := fun w => w (2 : ℚ)
   orderNat := fun _ => 1
 
@@ -127,7 +127,7 @@ theorem auditRamificationProfile_logTotal_pos :
 noncomputable def auditData (q : ℚ) (period liftedLog logVolume packetWeight hullWeight : ℝ) :
     AdelicThetaLinkData ℚ where
   places := {rationalTwoPlace}
-  qParameter := fun _ => q
+  qParameter := fun w => NumberField.FinitePlace.embedding w.maximalIdeal q
   tate := auditTateData
   theta := auditTheta period liftedLog
   thetaBase := (0 : Fin 1)
@@ -142,12 +142,15 @@ theorem firstAxiom_model :
   constructor
   · simp [auditData]
   · intro w hw
-    simp only [auditData, Finset.mem_singleton] at hw
+    have hw' : w = rationalTwoPlace := by simpa [auditData] using hw
     subst w
-    change (2 : ℚ) ≠ 0
-    norm_num
+    simp only [auditData, AdelicThetaLinkData.qParameter]
+    exact (map_ne_zero _).2 (by norm_num)
   · intro w hw
-    change 0 < w (2 : ℚ)
+    have hw' : w = rationalTwoPlace := by simpa [auditData] using hw
+    subst w
+    dsimp [AdelicThetaLinkData.qNorm, auditData, AdelicThetaLinkData.qParameter]
+    rw [NumberField.FinitePlace.norm_embedding_eq]
     exact NumberField.FinitePlace.pos_iff.mpr (by norm_num)
   · intro x
     change 0 ≤ auditHeight.value x
@@ -172,8 +175,9 @@ theorem adelicThetaLink_model :
     AdelicThetaLink (auditData 2 7 7 7 2 3) := by
   constructor
   · intro w hw j
-    change w (2 : ℚ) ^ (j * j) = w ((2 : ℚ) ^ (j * j))
-    exact (map_pow w (2 : ℚ) (j * j)).symm
+    change ‖NumberField.FinitePlace.embedding w.maximalIdeal (2 : ℚ)‖ ^ (j * j) =
+      ‖(NumberField.FinitePlace.embedding w.maximalIdeal (2 : ℚ)) ^ (j * j)‖
+    exact (norm_pow _ _).symm
   · exact auditTheta_scaling_laws 7 7
   · intro i
     simp [auditData, auditTheta]

@@ -23,7 +23,7 @@ structure FirstAxiom (D : AdelicThetaLinkData K) : Prop where
 structure AdelicThetaLink (D : AdelicThetaLinkData K) : Prop where
   valuation_scaling :
     ∀ w ∈ D.places, ∀ j : ℕ,
-      D.qNorm w ^ (j * j) = w ((D.qParameter w) ^ (j * j))
+      D.qNorm w ^ (j * j) = ‖(D.qParameter w) ^ (j * j)‖
   theta_scaling :
     Theta.ThetaPilotScalingLaws D.theta D.thetaBase
   period_map :

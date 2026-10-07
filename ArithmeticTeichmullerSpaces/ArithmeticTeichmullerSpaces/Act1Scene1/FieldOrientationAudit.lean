@@ -281,11 +281,10 @@ structure IutFieldOrientationAudit
     (R : IutTorsionQRootSource F K T.ell B) where
   /-- The target Scene1 carrier is the torsion-field carrier. -/
   torsionCarrier_eq_link : R.badFinset = T.scene1.data.link.places
-  /-- The target's global Tate parameter has an explicit completion image. -/
+  /-- The target's local Tate parameter is the image of the base completion value. -/
   linkParameter_completion_eq : ∀ v : R.badFinset,
     R.completionMap v (B.tateParameter (R.basePlace v)) =
-      NumberField.FinitePlace.embedding v.1.maximalIdeal
-        (T.scene1.data.link.tate.parameter v.1)
+      T.scene1.data.link.tate.parameter v.1
 
 namespace IutFieldOrientationAudit
 
@@ -312,10 +311,13 @@ lemma qroot_pow_eq_link_completion
 lemma qroot_pow_eq_target_completion
     (A : IutFieldOrientationAudit p T B R) (v : R.badFinset) :
     R.qroot v ^ (2 * T.ell) =
-      NumberField.FinitePlace.embedding v.1.maximalIdeal
-        (T.scene1.data.link.tate.parameter v.1) := by
-  rw [R.qroot_pow_eq v]
-  exact A.linkParameter_completion_eq v
+      T.scene1.data.link.tate.parameter v.1 := by
+  calc
+    R.qroot v ^ (2 * T.ell) =
+        R.completionMap v (B.tateParameter (R.basePlace v)) :=
+      R.qroot_pow_eq v
+    _ = T.scene1.data.link.tate.parameter v.1 :=
+      A.linkParameter_completion_eq v
 
 lemma base_weight_is_arithmetic
     (w : NumberField.FinitePlace F) :

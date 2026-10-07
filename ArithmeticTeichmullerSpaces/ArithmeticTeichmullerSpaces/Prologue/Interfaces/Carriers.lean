@@ -36,8 +36,8 @@ structure PacketHullData (Pilot : Type uK) where
 
 structure AdelicThetaLinkData (K : Type uK) [Field K] [NumberField K] where
   places : Finset (NumberField.FinitePlace K)
-  /-- The local Tate parameter `q_w` at each finite place. -/
-  qParameter : NumberField.FinitePlace K → K
+  /-- The local Tate parameter `q_w`, stored in the completion `K_w`. -/
+  qParameter : (w : NumberField.FinitePlace K) → w.maximalIdeal.adicCompletion K
   tate : Theta.TateParameterData K
   theta : ThetaPilotData K
   thetaBase : theta.index
@@ -51,9 +51,9 @@ namespace AdelicThetaLinkData
 
 variable {K : Type*} [Field K] [NumberField K]
 
-def qNorm (D : AdelicThetaLinkData K)
+noncomputable def qNorm (D : AdelicThetaLinkData K)
     (w : NumberField.FinitePlace K) : ℝ :=
-  w (D.qParameter w)
+  ‖D.qParameter w‖
 
 /-!
 This constructor is the explicit carrier path used when the adelic q-family is
@@ -84,7 +84,7 @@ def ofTateParameters
 def height (D : AdelicThetaLinkData K) : K → ℝ :=
   D.heightData.value
 
-def placeNorm (D : AdelicThetaLinkData K)
+noncomputable def placeNorm (D : AdelicThetaLinkData K)
     (w : NumberField.FinitePlace K) : ℝ :=
   D.qNorm w
 

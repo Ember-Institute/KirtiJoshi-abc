@@ -57,7 +57,7 @@ theorem QNormTateCompatibility.norm_eq
   have hwTate : w ∈ D.tate.places := by
     rw [← hCompat.places_eq]
     exact hw
-  unfold AdelicThetaLinkData.qNorm
+  change ‖D.qParameter w‖ = D.tate.norm w
   rw [hCompat.parameter_eq w hw]
   exact (hTate.norm_eq w hwTate).symm
 

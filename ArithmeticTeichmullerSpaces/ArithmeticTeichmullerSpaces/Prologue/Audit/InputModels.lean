@@ -35,8 +35,9 @@ theorem padicTwo_input_link_model :
     AdelicThetaLink (auditData 2 0 0 0 2 3) := by
   constructor
   · intro w hw j
-    change w (2 : ℚ) ^ (j * j) = w ((2 : ℚ) ^ (j * j))
-    exact (map_pow w (2 : ℚ) (j * j)).symm
+    change ‖NumberField.FinitePlace.embedding w.maximalIdeal (2 : ℚ)‖ ^ (j * j) =
+      ‖(NumberField.FinitePlace.embedding w.maximalIdeal (2 : ℚ)) ^ (j * j)‖
+    exact (norm_pow _ _).symm
   · exact auditTheta_scaling_laws 0 0
   · intro i
     simp [auditData, auditTheta]
@@ -69,9 +70,13 @@ theorem padicTwo_input_laws :
   have hfirst : FirstAxiom (auditData 2 0 0 0 2 3) := by
     constructor
     · simp [auditData]
-    · norm_num [auditData]
     · intro w hw
-      change 0 < w (2 : ℚ)
+      have htwo : (2 : ℚ) ≠ 0 := by norm_num
+      simpa [auditData] using
+        (map_ne_zero (NumberField.FinitePlace.embedding w.maximalIdeal)).2 htwo
+    · intro w hw
+      dsimp [AdelicThetaLinkData.qNorm, auditData, AdelicThetaLinkData.qParameter]
+      rw [NumberField.FinitePlace.norm_embedding_eq]
       exact NumberField.FinitePlace.pos_iff.mpr (by norm_num)
     · intro x
       change 0 ≤ auditHeight.value x
@@ -120,6 +125,6 @@ theorem badInput_violates_laws :
   have hne := hfirst.q_parameter_nonzero rationalTwoPlace (by
     change rationalTwoPlace ∈ ({rationalTwoPlace} : Finset (NumberField.FinitePlace ℚ))
     simp)
-  exact hne rfl
+  exact hne (map_zero _)
 
 end JoshiTeich.Prologue.Audit
