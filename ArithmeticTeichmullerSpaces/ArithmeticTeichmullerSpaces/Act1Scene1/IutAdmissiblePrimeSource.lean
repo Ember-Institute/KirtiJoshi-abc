@@ -54,6 +54,13 @@ variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
 variable [IsAdicComplete (Ideal.span {(p : O)}) O]
 variable {T : Corollary312Data F O p}
 
+private lemma admissibleBadPlaces_finite_of_link
+    (hPlaces : Iut.badPlacesOver F E VBad =
+      (↑T.scene1.data.link.places : Set (FinitePlace F))) :
+    (Iut.badPlacesOver F E VBad).Finite := by
+  rw [hPlaces]
+  exact T.scene1.data.link.places.finite_toSet
+
 /-- Assemble `IutQPilotSource` from the real IUT admissible-prime datum.
 
 The source q-order, its positivity, its coprimality, and the chosen-uniformizer
@@ -64,16 +71,19 @@ by the Scene1 link.
 noncomputable def ofAdmissiblePrimeData
     (P : Iut.AdmissiblePrimeData F E Fbar VBad)
     (hEll : T.ell = P.ℓ)
-    (hBadFinite : (Iut.badPlacesOver F E VBad).Finite)
     (hPlaces : Iut.badPlacesOver F E VBad =
       (↑T.scene1.data.link.places : Set (FinitePlace F)))
     (hParameter : ∀ w :
-      (IutBaseQPilotSource.ofAdmissiblePrimeData T.ell P hBadFinite).badFinset,
-      ((P.tate w.1 (hBadFinite.mem_toFinset.mp w.2)).q :
+      (IutBaseQPilotSource.ofAdmissiblePrimeData T.ell P
+        (admissibleBadPlaces_finite_of_link p hPlaces)).badFinset,
+      ((P.tate w.1
+        (((admissibleBadPlaces_finite_of_link p hPlaces).mem_toFinset).mp w.2)).q :
         w.1.maximalIdeal.adicCompletion F) =
         T.scene1.data.link.tate.parameter w.1)
     (hCompat : QNormTateCompatibility T.scene1.data.link) :
     IutQPilotSource p T := by
+  let hBadFinite : (Iut.badPlacesOver F E VBad).Finite :=
+    admissibleBadPlaces_finite_of_link p hPlaces
   let B : IutBaseQPilotSource F T.ell :=
     IutBaseQPilotSource.ofAdmissiblePrimeData T.ell P hBadFinite
   let C : IutCompletionTateValuation B := by
