@@ -27,6 +27,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutWeierstrassLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionRationality
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionAdapter
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
@@ -198,6 +199,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.completionParameter_norm_eq_chosenUniformizer_pow_order
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation_order_eq_qOrder
+#check JoshiTeich.Act1Scene1.IutQPilotSource.ofBaseCompletionSource
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_rawQNormDegreeNormalization
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_weight_eq_arithmetic
@@ -390,6 +392,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.completionParameter_norm_eq_chosenUniformizer_pow_order
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation_order_eq_qOrder
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofBaseCompletionSource
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.qOrder_coprime
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
