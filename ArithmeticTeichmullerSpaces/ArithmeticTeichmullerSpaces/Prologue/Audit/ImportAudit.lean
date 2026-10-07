@@ -31,6 +31,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutAdmissiblePrimeSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
@@ -282,6 +283,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_q_eq_baseParameter
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaData
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataOfQPilotBadPlaceFiniteness
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData_order_eq
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum_of_initialThetaData
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData
 #check JoshiTeich.Act1Scene1.iutGaloisPointMap
 #check JoshiTeich.Act1Scene1.iutGaloisPointMap_torsionBy
@@ -448,6 +452,9 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_q_eq_baseParameter
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaData
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataOfQPilotBadPlaceFiniteness
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData_order_eq
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum_of_initialThetaData
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 
 end JoshiTeich.Prologue.Audit
