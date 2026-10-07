@@ -37,6 +37,18 @@
   exit status `0`, wall-clock time `5:20.29`, maximum RSS `4,593,652 kB` (about `4.38 GiB`).
   `lake` and active Lean children were checked with `prlimit --pid`; their soft and hard address-
   space limits were both `64424509440` bytes. This build validates the S1.112 Lean source tree.
+- 2026-10-08: at the S1.122 tenth-push checkpoint, bare `lake build` completed `18304/18304`
+  compilation jobs but failed its final `arithmeticteichmullerspaces:exe` target; exit status `1`,
+  elapsed time `1:31:42`, maximum RSS `8,158,860 kB`. The Lake process soft/hard address-space cap
+  was `64424509440` bytes. Rebuilding the executable reproduced a Lake package dependency cycle:
+  `oka:transDeps -> belyi:transDeps -> heights:transDeps -> iut:transDeps ->
+  ArithmeticTeichmullerSpaces:transDeps -> Main:linkInfoNoExport -> exe -> oka:transDeps`.
+- The complete project library target then built successfully with
+  `/usr/bin/time -v prlimit --as=64424509440:64424509440 -- env LEAN_NUM_THREADS=1 lake build +ArithmeticTeichmullerSpaces`:
+  `9159/9159` jobs, exit status `0`, elapsed time `2:54.68`, maximum RSS `1,067,164 kB`. This root
+  imports Prologue, Act1Scene1, and Act1Scene2. The Lake process soft/hard address-space cap was
+  `64424509440` bytes. Use this target for future full source builds; the separate example executable
+  is excluded because its dependency graph contains the cycle above.
 - Successful full builds validate Lean compilation only. They do not close the still-open
   `InitialThetaData`/`TateFamily`, `V_p^oss`, q-factor normalization, or theta-volume source
   obligations listed below.
@@ -54,9 +66,11 @@
   (`prlimit --as=17179869184:17179869184`); verify the active Lean child with `prlimit --pid`.
   The preceding baseline counted S1.94 through S1.100 as `1/10`
   through `7/10`, S1.101 as `8/10`, and S1.102 as `9/10`; the full build above supersedes it.
-- In the current cycle, S1.115 through S1.119 were successful pushes `3/10` through `7/10`;
-  S1.120 is the eighth push if delivered successfully. The next full build remains due at `10/10`;
-  directed and full-build address-space caps remain `16 GiB` and `60 GiB`.
+- In the current cycle, S1.113 began at `1/10`; S1.114 through S1.121 advanced the successful-push
+  count through `9/10`. The S1.122 source commit is the planned `10/10` push and has a successful
+  full project library build recorded above. After that push succeeds, start the next interval at
+  `0/10`; run `lake build +ArithmeticTeichmullerSpaces` after each next set of `10` successful pushes.
+  Directed/full-build address-space caps remain `16 GiB` / `60 GiB`.
 
 ## JoshiTeich references
 
@@ -179,6 +193,7 @@
 | `IUT-COR312-Q-PILOT-DEGREE-ACCOUNTING` | `Corollary312DegreeNormalizedGroupedSourceQFactor`, `Corollary312DegreeNormalizedSourceQLogSum`, `Corollary312QPilotSourceIndexBridge.absLogQ_eq_degreeNormalizedSourceQLogSum` | `ArithmeticTeichmullerSpaces/Act1Scene1/QPilotDegreeAccountingBridge.lean` | Scene1/Derived global finite-sum consumer for the degree adapter; transports `iut`'s `QPilotData.absLogQ` through the existing source-index equivalence to the degree-normalized grouped q-family. It leaves the raw target sum unchanged; the uniformizer law, real source model, and final raw/normalized target choice remain open |
 | `IUT-COR312-Q-PILOT-NORMALIZATION-AUDIT` | `Corollary312QPilotNormalizationAudit.finrank_eq_one_of_raw_and_weighted_normalization` | `ArithmeticTeichmullerSpaces/Act1Scene1/QPilotNormalizationAudit.lean` | Scene1/Derived incompatibility audit. Combining the raw completion norm law `-log(norm(π_w)) = inertDeg(w) * log(residueChar(w))` with the weighted q-pilot law and `qPilotWeight = inertDeg(w)/[K:ℚ]` forces `Module.finrank ℚ K = 1` at any bad place. The theorem adds no Prologue/Core assumption and establishes that the old raw q-pilot transfer cannot be treated as a general-number-field source model; the degree-normalized route and the raw target remain separate pending statement freeze |
 | `IUT-COR312-INITIAL-THETA-TATEJ-IDENTIFICATION` | `IutQPilotSource.initialThetaParameter_eq_of_tateJ`, `IutQPilotSource.ofInitialThetaData` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutAdmissiblePrimeSource.lean` | `iut`: `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean:150-152` provides `AdmissiblePrimeData.tateJ_eq`; `refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/JParametrization.lean:376` provides `TateParameter.tateJ_injective`. Given the explicit link-side condition that its Tate parameter has `j` equal to the embedded `D.E.j`, the theorem derives equality with the actual `D.prime.tate` q-parameter. The link-side `j` identity, `hPlaces`, `hEll`, and `QNormTateCompatibility` remain explicit source obligations; this does not construct a real q-pilot model or close the 3.12 statement |
+| `IUT-COR312-TATE-FAMILY-QROOT-ADAPTER` | `IutTateQuotientUniformization.ofTateStructure`, `IutTorsionQRootSource.ofTateFamily` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutTateFamilyQRootAdapter.lean` | `iut`: `refer/iut/Iut/Cor312/ThetaData/TateStructure.lean` and `TateFamily.lean`; projects the actual Tate q parameter, norm bound, quotient uniformization, and `TateFamily.S` into the q-root assembler. Callers must still prove the bad-place carrier condition, six-torsion rationality, positive odd `ell`, and equality of each local Tate parameter with the base-completion parameter. This is a real-data adapter, not a complete `InitialThetaData` satisfying model, `V_p^oss` construction, or 3.12 result |
 | `JT-ATS-V1-SCENE2-BOUNDARY` | `Act1Scene2.Scene2Input` | `ArithmeticTeichmullerSpaces/Act1Scene2/Boundary.lean` | D-boundary declaration; post-3.12 propositions are explicit slots only; no bridge theorem or `abc` result |
 | `JT-ATS-AUDIT-OBLIGATIONS` | `registeredSourceIds`, constructor declaration and axiom checks | `ArithmeticTeichmullerSpaces/Prologue/Obligations/Audit.lean` | D-audit entry point; checks all four named `sorry` constructors and exposes their expected `sorryAx` dependencies without importing them into public interfaces |
 | `JT-ATS-AUDIT-FIELD-COVERAGE` | field-level projection checks | `ArithmeticTeichmullerSpaces/Prologue/Audit/FieldCoverage.lean` | D-audit entry point; every public carrier and contract projection is checked against the grouped source mapping below |
