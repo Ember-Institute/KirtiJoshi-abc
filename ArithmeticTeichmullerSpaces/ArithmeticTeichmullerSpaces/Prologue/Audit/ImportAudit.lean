@@ -26,6 +26,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionCardinality
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutWeierstrassLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionRationality
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
@@ -192,7 +193,11 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizerNorm_eq_chosenNorm
 #check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizerNorm_eq_completionNorm
 #check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_coprime_link
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toBaseQPilotSource
 #check JoshiTeich.Act1Scene1.IutQPilotSource.source_norm_eq_uniformizer_pow_order
+#check JoshiTeich.Act1Scene1.IutQPilotSource.completionParameter_norm_eq_chosenUniformizer_pow_order
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation_order_eq_qOrder
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_rawQNormDegreeNormalization
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_weight_eq_arithmetic
@@ -311,6 +316,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutCompletionOrderZ_pos
 #check JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder
 #check JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_norm_eq
+#check JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_eq_of_norm_eq
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.uniformizerQOrder
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.orderedQOrder
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.orderedQOrder_coprime
@@ -380,6 +386,10 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutCompletionOrderZ_norm_eq
 #print axioms JoshiTeich.Act1Scene1.iutCompletionOrderZ_pos
 #print axioms JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_norm_eq
+#print axioms JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_eq_of_norm_eq
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.completionParameter_norm_eq_chosenUniformizer_pow_order
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation_order_eq_qOrder
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.qOrder_coprime
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order

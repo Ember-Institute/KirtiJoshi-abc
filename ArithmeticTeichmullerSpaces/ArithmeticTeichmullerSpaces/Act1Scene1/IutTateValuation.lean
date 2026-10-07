@@ -33,6 +33,18 @@ noncomputable def IutBaseQPilotSource.uniformizerQOrder
   iutCompletionUniformizerQOrder w.1 (B.tateParameter w)
     (B.tateParameter_ne_zero w) (π w) (hπ w)
 
+lemma iutCompletionUniformizerQOrder_eq_of_norm_eq
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F) (hq : q ≠ 0)
+    (hqNorm : ‖q‖ < 1)
+    (π : w.maximalIdeal.adicCompletion F)
+    (hπ : Arithmetic.IsCompletionUniformizer w π)
+    (n : ℕ) (hnorm : ‖q‖ = ‖π‖ ^ n) :
+    iutCompletionUniformizerQOrder w q hq π hπ = n := by
+  apply (pow_right_injective₀ (norm_pos_iff.mpr hπ.ne_zero) hπ.norm_lt_one.ne)
+  exact (iutCompletionUniformizerQOrder_norm_eq w q hq hqNorm π hπ).symm.trans hnorm
+
 structure IutCompletionTateValuation
     {F : Type u} [Field F] [NumberField F]
     {ell : ℕ} (B : IutBaseQPilotSource F ell) : Type u where
