@@ -75,6 +75,11 @@
   `0/10` after this build. The successful push of this build-record update will count as `1/10` in the
   new interval. Continue running this full source target after every `10` successful pushes;
   directed/full-build address-space caps remain `16 GiB` / `60 GiB`.
+- Since that checkpoint, the build-record update counted as `1/10`; S1.124 counted as `2/10`; the
+  S1.125 push failed and did not increment the interval; S1.126 commit `2fdd658` was pushed as
+  `3/10`. This push-record follow-up, if pushed, will count as `4/10`. Keep the full source target
+  `lake build +ArithmeticTeichmullerSpaces` at the `10/10` checkpoint and retain the `60 GiB` full /
+  `16 GiB` directed address-space caps.
 
 ## JoshiTeich references
 
