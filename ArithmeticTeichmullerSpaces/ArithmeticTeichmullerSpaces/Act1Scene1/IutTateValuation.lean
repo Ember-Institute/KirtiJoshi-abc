@@ -24,6 +24,15 @@ identification.
 boundary: Scene1/Derived
 -/
 
+noncomputable def IutBaseQPilotSource.uniformizerQOrder
+    {F : Type u} [Field F] [NumberField F]
+    {ell : ℕ} (B : IutBaseQPilotSource F ell)
+    (π : ∀ w : B.badFinset, w.1.maximalIdeal.adicCompletion F)
+    (hπ : ∀ w, Arithmetic.IsCompletionUniformizer w.1 (π w))
+    (w : B.badFinset) : ℕ :=
+  iutCompletionUniformizerQOrder w.1 (B.tateParameter w)
+    (B.tateParameter_ne_zero w) (π w) (hπ w)
+
 structure IutCompletionTateValuation
     {F : Type u} [Field F] [NumberField F]
     {ell : ℕ} (B : IutBaseQPilotSource F ell) : Type u where
@@ -32,18 +41,19 @@ structure IutCompletionTateValuation
   /-- The chosen element satisfies the source-shaped uniformizer contract. -/
   uniformizer_isCompletionUniformizer : ∀ w,
     Arithmetic.IsCompletionUniformizer w.1 (uniformizer w)
-  /-- The normalized integer order exported by the IUT ordered Tate parameter. -/
-  orderedQOrder : ∀ w : B.badFinset, ℕ
-  /-- IUT's admissible-prime condition on its normalized Tate order. -/
-  orderedQOrder_coprime : ∀ w, Nat.Coprime ell (orderedQOrder w)
-  /-- The source Tate parameter has the norm power law at the chosen uniformizer. -/
-  orderedQOrder_norm_eq : ∀ w,
-    ‖B.tateParameter w‖ = ‖uniformizer w‖ ^ orderedQOrder w
+  /-- IUT's admissible-prime condition on the order derived from this uniformizer. -/
+  orderedQOrder_coprime : ∀ w,
+    Nat.Coprime ell
+      (B.uniformizerQOrder uniformizer uniformizer_isCompletionUniformizer w)
 
 namespace IutCompletionTateValuation
 
 variable {F : Type u} [Field F] [NumberField F]
 variable {ell : ℕ} {B : IutBaseQPilotSource F ell}
+
+noncomputable def orderedQOrder
+    (C : IutCompletionTateValuation B) (w : B.badFinset) : ℕ :=
+  B.uniformizerQOrder C.uniformizer C.uniformizer_isCompletionUniformizer w
 
 lemma completionQOrder_eq_orderNat
     (C : IutCompletionTateValuation B) (w : B.badFinset) :
@@ -52,7 +62,9 @@ lemma completionQOrder_eq_orderNat
     (B.tateParameter w) (B.tateParameter_ne_zero w)
     (B.tateParameter_norm_lt_one w) (C.uniformizer w)
     (C.uniformizer_isCompletionUniformizer w) (C.orderedQOrder w)
-    (C.orderedQOrder_norm_eq w)
+    (iutCompletionUniformizerQOrder_norm_eq w.1 (B.tateParameter w)
+      (B.tateParameter_ne_zero w) (B.tateParameter_norm_lt_one w)
+      (C.uniformizer w) (C.uniformizer_isCompletionUniformizer w))
 
 lemma qOrder_coprime
     (C : IutCompletionTateValuation B) (w : B.badFinset) :

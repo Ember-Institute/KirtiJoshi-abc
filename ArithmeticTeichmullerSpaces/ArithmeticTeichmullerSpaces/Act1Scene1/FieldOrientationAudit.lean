@@ -49,6 +49,72 @@ noncomputable def iutCompletionQOrder
     (q : w.maximalIdeal.adicCompletion F) : ℕ :=
   Int.toNat (-log (Valued.v q))
 
+/-- IUT's integer exponent chosen from the norm generator supplied by a uniformizer. -/
+noncomputable def iutCompletionOrderZ
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F) (hq : q ≠ 0)
+    (π : w.maximalIdeal.adicCompletion F)
+    (hπ : Arithmetic.IsCompletionUniformizer w π) : ℤ :=
+  Classical.choose (hπ.generates (Units.mk0 q hq))
+
+lemma iutCompletionOrderZ_norm_eq
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F) (hq : q ≠ 0)
+    (π : w.maximalIdeal.adicCompletion F)
+    (hπ : Arithmetic.IsCompletionUniformizer w π) :
+    ‖q‖ = ‖π‖ ^ iutCompletionOrderZ w q hq π hπ := by
+  simpa [iutCompletionOrderZ] using
+    (Classical.choose_spec (hπ.generates (Units.mk0 q hq)))
+
+lemma iutCompletionOrderZ_pos
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F) (hq : q ≠ 0)
+    (hqNorm : ‖q‖ < 1)
+    (π : w.maximalIdeal.adicCompletion F)
+    (hπ : Arithmetic.IsCompletionUniformizer w π) :
+    0 < iutCompletionOrderZ w q hq π hπ := by
+  have hqLog : Real.log ‖q‖ < 0 :=
+    Real.log_neg (norm_pos_iff.mpr hq) hqNorm
+  have hπLog : Real.log ‖π‖ < 0 :=
+    Real.log_neg (norm_pos_iff.mpr hπ.ne_zero) hπ.norm_lt_one
+  have hlogEq : Real.log ‖q‖ =
+      (iutCompletionOrderZ w q hq π hπ : ℝ) * Real.log ‖π‖ := by
+    rw [iutCompletionOrderZ_norm_eq, Real.log_zpow]
+  by_contra hnot
+  rw [not_lt] at hnot
+  have hcast : (iutCompletionOrderZ w q hq π hπ : ℝ) ≤ 0 := by
+    exact_mod_cast hnot
+  have hnonneg : 0 ≤
+      (iutCompletionOrderZ w q hq π hπ : ℝ) * Real.log ‖π‖ := by
+    nlinarith [hπLog.le]
+  rw [hlogEq] at hqLog
+  linarith
+
+/-- The natural order used by IUT's `TateParameter.toOrdered`. -/
+noncomputable def iutCompletionUniformizerQOrder
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F) (hq : q ≠ 0)
+    (π : w.maximalIdeal.adicCompletion F)
+    (hπ : Arithmetic.IsCompletionUniformizer w π) : ℕ :=
+  Int.toNat (iutCompletionOrderZ w q hq π hπ)
+
+lemma iutCompletionUniformizerQOrder_norm_eq
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F) (hq : q ≠ 0)
+    (hqNorm : ‖q‖ < 1)
+    (π : w.maximalIdeal.adicCompletion F)
+    (hπ : Arithmetic.IsCompletionUniformizer w π) :
+    ‖q‖ = ‖π‖ ^ iutCompletionUniformizerQOrder w q hq π hπ := by
+  have hpos := iutCompletionOrderZ_pos w q hq hqNorm π hπ
+  rw [iutCompletionUniformizerQOrder, ← zpow_natCast,
+    Int.toNat_of_nonneg hpos.le]
+  exact iutCompletionOrderZ_norm_eq w q hq π hπ
+
 structure IutBaseQPilotSource (F : Type u) [Field F] [NumberField F]
     (ell : ℕ) where
   /-- The source bad-place carrier in the base field `F`. -/

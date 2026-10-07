@@ -306,6 +306,14 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ordp_eq
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation
+#check JoshiTeich.Act1Scene1.iutCompletionOrderZ
+#check JoshiTeich.Act1Scene1.iutCompletionOrderZ_norm_eq
+#check JoshiTeich.Act1Scene1.iutCompletionOrderZ_pos
+#check JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder
+#check JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_norm_eq
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.uniformizerQOrder
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.orderedQOrder
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.orderedQOrder_coprime
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.qOrder_coprime
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
@@ -369,6 +377,9 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutCompletionQOrder_valued
 #print axioms JoshiTeich.Act1Scene1.iutCompletionNorm_eq_uniformizer_pow_qOrder
 #print axioms JoshiTeich.Act1Scene1.iutCompletionQOrder_eq_of_norm_eq_uniformizer_pow
+#print axioms JoshiTeich.Act1Scene1.iutCompletionOrderZ_norm_eq
+#print axioms JoshiTeich.Act1Scene1.iutCompletionOrderZ_pos
+#print axioms JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_norm_eq
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.qOrder_coprime
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
