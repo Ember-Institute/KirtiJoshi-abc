@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionSource
 import Iut.Cor312.ThetaData.AdmissiblePrime
+import Iut.Cor312.ThetaData.Basic
 
 namespace JoshiTeich.Act1Scene1
 
@@ -12,13 +13,15 @@ universe uF
 
 /-!
 source-id: IUT-COR312-REAL-ADMISSIBLE-PRIME-QPILOT
-source: `iut`: `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`,
+source: `iut`: `refer/iut/Iut/Cor312/ThetaData/Basic.lean`,
+`InitialThetaData.prime`; `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`,
 `AdmissiblePrimeData.tate`, `unif`, `unif_isUniformizer`, `q_order_coprime`, and
 `qOrder`; `refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean`,
 `norm_q_eq_pow_orderNat` and `toOrdered_primeToOrder_iff`.
 fidelity: constructs the base completion source and its normalized-order valuation
-from the actual IUT admissible-prime fields. The identification with a Scene1
-link's place carrier and Tate parameter remains explicit.
+from the actual IUT admissible-prime fields, with an entry point fixed to the prime
+inside actual `InitialThetaData`. Identification with a Scene1 link's prime, place
+carrier, Tate parameter, and q-norm compatibility remains explicit.
 boundary: Scene1/Derived
 -/
 
@@ -112,6 +115,32 @@ noncomputable def ofAdmissiblePrimeData
           (P.unif_isUniformizer w.1 hw) P.ℓ).mp (P.q_order_coprime w.1 hw)
       simpa only [hEll] using hcop
   exact IutQPilotSource.ofBaseCompletionSource p B C hPlaces hParameter hCompat
+
+/-- Assemble the q-pilot source from the admissible-prime projection of actual
+IUT initial Theta-data. The prime source is fixed to `D.prime`; the target-prime,
+place, local-parameter, and q-norm/Tate identifications remain explicit.
+-/
+noncomputable def ofInitialThetaData
+    {AG : Iut.AnabelianGeometry.{uF}}
+    {TG : Iut.TemperedGeometry AG}
+    (D : Iut.InitialThetaData AG TG)
+    {O : Type uF} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    {T : Corollary312Data D.F O p}
+    (hEll : T.ell = D.prime.ℓ)
+    (hPlaces : Iut.badPlacesOver D.F D.E D.VBad =
+      (↑T.scene1.data.link.places : Set (FinitePlace D.F)))
+    (hParameter : ∀ w :
+      (IutBaseQPilotSource.ofAdmissiblePrimeData T.ell D.prime
+        (admissibleBadPlaces_finite_of_link p hPlaces)).badFinset,
+      ((D.prime.tate w.1
+        (((admissibleBadPlaces_finite_of_link p hPlaces).mem_toFinset).mp w.2)).q :
+        w.1.maximalIdeal.adicCompletion D.F) =
+        T.scene1.data.link.tate.parameter w.1)
+    (hCompat : QNormTateCompatibility T.scene1.data.link) :
+    IutQPilotSource p T :=
+  ofAdmissiblePrimeData p D.prime hEll hPlaces hParameter hCompat
 
 end IutQPilotSource
 
