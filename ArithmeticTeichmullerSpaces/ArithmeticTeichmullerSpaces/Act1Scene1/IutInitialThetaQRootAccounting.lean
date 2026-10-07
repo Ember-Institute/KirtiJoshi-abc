@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateFamilyQRootAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness
+import Iut.Cor312.LeftHandSide
 
 namespace JoshiTeich.Act1Scene1
 
@@ -20,12 +21,16 @@ source-id: IUT-COR312-INITIAL-THETA-QROOT-ACCOUNTING
 source: `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean`,
 `thetaLocalData` and `sum_weight_ordp_qroot`; the valuation source is
 `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`, `unif`,
-`unif_isUniformizer`, `q_order_coprime`, and `qOrder`.
+`unif_isUniformizer`, `q_order_coprime`, and `qOrder`. The global q-pilot
+formula is `refer/iut/Iut/Cor312/LeftHandSide.lean`, `QPilotData.absLogQ`;
+the degree weight follows `refer/iut/Iut/Concrete/ThetaRegion.lean`,
+`QPilotInputs.qPilot`.
 fidelity: specializes the project q-root weighted-sum transfer to actual
 `InitialThetaData`. It constructs the completion valuation from the real
-admissible-prime fields and proves the per-rational-prime q-degree identity.
-It does not identify the Scene1 link carrier, construct `V_p^oss`, or freeze
-the target q-factor normalization.
+admissible-prime fields, proves the per-rational-prime q-degree identity, and
+groups those identities into the actual IUT `QPilotData.absLogQ` formula. It
+does not identify the Scene1 link carrier, construct `V_p^oss`, or freeze the
+target q-factor normalization.
 boundary: Scene1/Derived
 -/
 
@@ -118,6 +123,18 @@ end IutCompletionTateValuation
 
 namespace IutTorsionQRootSource
 
+/-- The concrete IUT q-pilot data for actual `InitialThetaData`, with the
+degree weight used by `Iut.Concrete.ThetaRegion.QPilotInputs.qPilot`. -/
+noncomputable def iutInitialThetaQPilotData
+    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
+    (D : Iut.InitialThetaData AG TG) : Iut.QPilotData D := by
+  let B := IutBaseQPilotSource.ofInitialThetaData D
+  exact
+    { badFinset := B.badFinset
+      badFinset_spec := B.badFinset_spec
+      weight := Arithmetic.qPilotWeight
+      weight_pos := fun w _ => Arithmetic.qPilotWeight_pos w }
+
 /-- Build the torsion q-root source from actual `InitialThetaData`; its base
 bad-place finiteness is derived from the curve's multiplicative support. -/
 noncomputable def ofInitialThetaDataFromGlobal
@@ -188,6 +205,136 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
             (D.prime.qOrder w hw : ℝ) / (2 * (D.prime.ℓ : ℝ))
           else 0) := by
       simp [c]
+
+/-- The actual q-root weighted sum over the torsion-field places of residue
+characteristic `p`, with finiteness supplied by `Arithmetic.fiber_finite`. -/
+noncomputable def canonical_qroot_weighted_fiber_of_initialThetaData
+    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
+    (D : Iut.InitialThetaData AG TG) (p : ℕ) : ℝ := by
+  letI : Finite {v : NumberField.FinitePlace ↥D.prime.torsionField //
+    Arithmetic.residueChar v = p} := Arithmetic.fiber_finite p
+  letI : Fintype {v : NumberField.FinitePlace ↥D.prime.torsionField //
+    Arithmetic.residueChar v = p} := Fintype.ofFinite _
+  let B := IutBaseQPilotSource.ofInitialThetaData D
+  exact ∑ v : {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p},
+    Arithmetic.placeWeight v.1 *
+      (if hv : v.1 ∈ iutBadPlacesOverFinset (k := D.F)
+          (K := ↥D.prime.torsionField) B.badPlaces B.badPlaces_finite then
+        Arithmetic.ordp v.1
+          ((ofInitialThetaDataFromGlobal D).qroot ⟨v.1, hv⟩)
+      else 0)
+
+/-- Summing the real `InitialThetaData` q-root fibers by residue characteristic
+recovers the `absLogQ` of its IUT q-pilot data. -/
+theorem canonical_qroot_log_sum_eq_iut_absLogQ
+    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
+    (D : Iut.InitialThetaData AG TG) :
+    ∑ p ∈ (iutInitialThetaQPilotData D).badFinset.image
+        Arithmetic.residueChar,
+      Real.log p * canonical_qroot_weighted_fiber_of_initialThetaData D p =
+      Iut.QPilotData.absLogQ (iutInitialThetaQPilotData D) := by
+  classical
+  let B := IutBaseQPilotSource.ofInitialThetaData D
+  let Q := iutInitialThetaQPilotData D
+  let pset := Q.badFinset.image Arithmetic.residueChar
+  have hbadFinset : B.badFinset = Q.badFinset := by rfl
+  let c : NumberField.FinitePlace D.F → ℝ := fun w =>
+    if hw : w ∈ Iut.badPlacesOver D.F D.E D.VBad then
+      (D.prime.qOrder w hw : ℝ) / (2 * (D.prime.ℓ : ℝ))
+    else 0
+  have hprime (p : ℕ) :
+      canonical_qroot_weighted_fiber_of_initialThetaData D p =
+        ∑ w ∈ Q.badFinset.filter (fun w => Arithmetic.residueChar w = p),
+          Arithmetic.qPilotWeight w * c w := by
+    unfold canonical_qroot_weighted_fiber_of_initialThetaData
+    letI : Finite {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p} := Arithmetic.fiber_finite p
+    letI : Fintype {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p} := Fintype.ofFinite _
+    rw [← hbadFinset]
+    simpa [c, Arithmetic.qPilotWeight, B] using
+      canonical_qroot_weighted_sum_of_initialThetaData D p B.badFinset B.badFinset_spec
+  have hattach (p : ℕ) :
+      (∑ w ∈ Q.badFinset.filter (fun w => Arithmetic.residueChar w = p),
+        Arithmetic.qPilotWeight w * c w) =
+      ∑ w ∈ Q.badFinset.attach.filter
+          (fun w => Arithmetic.residueChar w.1 = p),
+        Arithmetic.qPilotWeight w.1 * c w.1 := by
+    calc
+      _ = ∑ w ∈ Q.badFinset,
+          if Arithmetic.residueChar w = p then
+            Arithmetic.qPilotWeight w * c w else 0 := by
+        rw [Finset.sum_filter]
+      _ = ∑ w ∈ Q.badFinset.attach,
+          if Arithmetic.residueChar w.1 = p then
+            Arithmetic.qPilotWeight w.1 * c w.1 else 0 := by
+        rw [← Finset.sum_attach]
+      _ = _ := by rw [Finset.sum_filter]
+  have hcomponent (p : ℕ) :
+      Real.log p *
+          ∑ w ∈ Q.badFinset.filter (fun w => Arithmetic.residueChar w = p),
+            Arithmetic.qPilotWeight w * c w =
+        (∑ w ∈ Q.badFinset.attach.filter
+            (fun w => Arithmetic.residueChar w.1 = p),
+          Q.weight w.1 *
+            (D.prime.qOrder w.1 (Q.mem_bad w.2) : ℝ) *
+              Real.log (Arithmetic.residueChar w.1)) /
+          (2 * (D.prime.ℓ : ℝ)) := by
+    rw [hattach p]
+    calc
+      _ = ∑ w ∈ Q.badFinset.attach.filter
+            (fun w => Arithmetic.residueChar w.1 = p),
+          (Arithmetic.qPilotWeight w.1 * c w.1) * Real.log p := by
+        rw [Finset.mul_sum]
+        apply Finset.sum_congr rfl
+        intro w hw
+        ring
+      _ = ∑ w ∈ Q.badFinset.attach.filter
+            (fun w => Arithmetic.residueChar w.1 = p),
+          (Q.weight w.1 *
+            (D.prime.qOrder w.1 (Q.mem_bad w.2) : ℝ) *
+              Real.log (Arithmetic.residueChar w.1)) /
+            (2 * (D.prime.ℓ : ℝ)) := by
+        apply Finset.sum_congr rfl
+        intro w hw
+        have hchar := (Finset.mem_filter.mp hw).2
+        have hbad : w.1 ∈ Iut.badPlacesOver D.F D.E D.VBad := Q.mem_bad w.2
+        have hc : c w.1 =
+            (D.prime.qOrder w.1 (Q.mem_bad w.2) : ℝ) /
+              (2 * (D.prime.ℓ : ℝ)) := by
+          simp [c, hbad]
+        have hweight : Arithmetic.qPilotWeight w.1 = Q.weight w.1 := by
+          rfl
+        rw [hweight, hc, hchar]
+        ring
+      _ = _ := by rw [Finset.sum_div]
+  have hsum :
+      ∑ p ∈ pset,
+        (∑ w ∈ Q.badFinset.attach.filter
+            (fun w => Arithmetic.residueChar w.1 = p),
+          Q.weight w.1 *
+            (D.prime.qOrder w.1 (Q.mem_bad w.2) : ℝ) *
+              Real.log (Arithmetic.residueChar w.1)) = Q.logQ := by
+    unfold Iut.QPilotData.logQ
+    exact Finset.sum_fiberwise_of_maps_to
+      (fun w hw => Finset.mem_image.mpr ⟨w.1, w.2, rfl⟩) _
+  calc
+    ∑ p ∈ pset, Real.log p *
+        canonical_qroot_weighted_fiber_of_initialThetaData D p =
+        ∑ p ∈ pset,
+          (∑ w ∈ Q.badFinset.attach.filter
+              (fun w => Arithmetic.residueChar w.1 = p),
+            Q.weight w.1 *
+              (D.prime.qOrder w.1 (Q.mem_bad w.2) : ℝ) *
+                Real.log (Arithmetic.residueChar w.1)) /
+              (2 * (D.prime.ℓ : ℝ)) := by
+      apply Finset.sum_congr rfl
+      intro p hp
+      rw [hprime, hcomponent]
+    _ = Q.logQ / (2 * (D.prime.ℓ : ℝ)) := by
+      rw [← Finset.sum_div, hsum]
+    _ = Iut.QPilotData.absLogQ Q := rfl
 
 end IutTorsionQRootSource
 
