@@ -47,7 +47,7 @@ noncomputable def iutCompletionQOrder
     {F : Type u} [Field F] [NumberField F]
     (w : NumberField.FinitePlace F)
     (q : w.maximalIdeal.adicCompletion F) : ℕ :=
-  Int.toNat (-log (Valued.v q))
+  Arithmetic.completionQOrder w q
 
 /-- IUT's integer exponent chosen from the norm generator supplied by a uniformizer. -/
 noncomputable def iutCompletionOrderZ
@@ -136,26 +136,7 @@ lemma iutCompletionQOrder_pos
     (q : w.maximalIdeal.adicCompletion F)
     (hq : q ≠ 0) (hqNorm : ‖q‖ < 1) :
     0 < iutCompletionQOrder w q := by
-  have hqv : Valued.v q ≠ 0 := (Valuation.ne_zero_iff _).2 hq
-  set m : ℤ := log (Valued.v q)
-  have hm : Valued.v q = exp m := (exp_log hqv).symm
-  have hp : (Arithmetic.residueChar w).Prime := Arithmetic.residueChar_prime w
-  have hN : (1 : ℝ) < (Arithmetic.residueChar w : ℝ) ^ Arithmetic.inertDeg w :=
-    one_lt_pow₀ (by exact_mod_cast hp.one_lt)
-      (Arithmetic.inertDeg_pos w).ne'
-  have hNorm := Arithmetic.completionNorm_eq_residueChar_pow_of_valued w q m hm
-  have hmNeg : m < 0 := by
-    rw [hNorm] at hqNorm
-    rw [zpow_lt_one_iff_right₀ hN] at hqNorm
-    exact hqNorm
-  have hcast : ((Int.toNat (-m) : ℕ) : ℤ) = -m :=
-    Int.toNat_of_nonneg (by omega)
-  have hpos : (0 : ℤ) < (Int.toNat (-m) : ℕ) := by
-    rw [hcast]
-    omega
-  unfold iutCompletionQOrder
-  rw [show log (Valued.v q) = m from rfl]
-  exact_mod_cast hpos
+  exact Arithmetic.completionQOrder_pos w q hq hqNorm
 
 lemma iutCompletionQOrder_valued
     {F : Type u} [Field F] [NumberField F]
@@ -163,25 +144,7 @@ lemma iutCompletionQOrder_valued
     (q : w.maximalIdeal.adicCompletion F)
     (hq : q ≠ 0) (hqNorm : ‖q‖ < 1) :
     Valued.v q = exp (-(iutCompletionQOrder w q : ℤ)) := by
-  have hqv : Valued.v q ≠ 0 := (Valuation.ne_zero_iff _).2 hq
-  set m : ℤ := log (Valued.v q)
-  have hm : Valued.v q = exp m := (exp_log hqv).symm
-  have hqOrderPos := iutCompletionQOrder_pos w q hq hqNorm
-  have hp : (Arithmetic.residueChar w).Prime := Arithmetic.residueChar_prime w
-  have hN : (1 : ℝ) < (Arithmetic.residueChar w : ℝ) ^ Arithmetic.inertDeg w :=
-    one_lt_pow₀ (by exact_mod_cast hp.one_lt)
-      (Arithmetic.inertDeg_pos w).ne'
-  have hNorm := Arithmetic.completionNorm_eq_residueChar_pow_of_valued w q m hm
-  have hmNeg : m < 0 := by
-    rw [hNorm] at hqNorm
-    rw [zpow_lt_one_iff_right₀ hN] at hqNorm
-    exact hqNorm
-  have hqOrderInt : (iutCompletionQOrder w q : ℤ) = -m := by
-    unfold iutCompletionQOrder
-    rw [show log (Valued.v q) = m from rfl]
-    exact Int.toNat_of_nonneg (by omega)
-  have hmEq : m = -(iutCompletionQOrder w q : ℤ) := by omega
-  rw [hm, hmEq]
+  exact Arithmetic.completionQOrder_valued w q hq hqNorm
 
 lemma iutCompletionNorm_eq_uniformizer_pow_qOrder
     {F : Type u} [Field F] [NumberField F]

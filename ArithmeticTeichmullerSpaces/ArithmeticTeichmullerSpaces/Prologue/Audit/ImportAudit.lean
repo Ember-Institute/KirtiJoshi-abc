@@ -325,6 +325,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.orderedQOrder
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.orderedQOrder_coprime
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
+#check JoshiTeich.Prologue.Arithmetic.completionNorm_eq_residueChar_pow_neg_qOrder
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.qOrder_coprime
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.valued_tateParameter_eq_exp_neg_order
@@ -384,6 +385,12 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.corollary312_iff_rawTarget
 #print axioms JoshiTeich.Act1Scene1.Corollary312QPilotNormalizationAudit.finrank_eq_one_of_raw_and_weighted_normalization
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
+#print axioms JoshiTeich.Prologue.Theta.TateParameterData.qOrder
+#print axioms JoshiTeich.Prologue.Theta.TateParameterData.qOrder_pos
+#print axioms JoshiTeich.Prologue.Arithmetic.completionQOrder_pos
+#print axioms JoshiTeich.Prologue.Arithmetic.completionQOrder_valued
+#print axioms JoshiTeich.Prologue.Arithmetic.completionNorm_eq_residueChar_pow_neg_qOrder
+#print axioms JoshiTeich.Act1Scene1.Audit.sceneTateData_qOrder
 #print axioms JoshiTeich.Act1Scene1.iutCompletionQOrder_valued
 #print axioms JoshiTeich.Act1Scene1.iutCompletionNorm_eq_uniformizer_pow_qOrder
 #print axioms JoshiTeich.Act1Scene1.iutCompletionQOrder_eq_of_norm_eq_uniformizer_pow

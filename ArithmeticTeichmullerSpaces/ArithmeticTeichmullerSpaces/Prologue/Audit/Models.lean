@@ -81,7 +81,6 @@ noncomputable def auditTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
   parameter := fun w => NumberField.FinitePlace.embedding w.maximalIdeal (2 : ℚ)
   norm := fun w => w (2 : ℚ)
-  orderNat := fun _ => 1
 
 noncomputable def auditConductor : FinitePlaceDivisor ℚ where
   support := {rationalTwoPlace}

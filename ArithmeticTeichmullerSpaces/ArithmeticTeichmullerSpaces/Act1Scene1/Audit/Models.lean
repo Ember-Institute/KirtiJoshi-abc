@@ -158,7 +158,6 @@ noncomputable def sceneTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
   parameter := fun w => NumberField.FinitePlace.embedding w.maximalIdeal (16 : ℚ)
   norm := fun w => w (16 : ℚ)
-  orderNat := fun _ => 4
 
 theorem sceneTateData_laws : TateParameterLaws sceneTateData := by
   constructor
@@ -191,8 +190,38 @@ theorem sceneTateData_laws : TateParameterLaws sceneTateData := by
       exact map_natCast (algebraMap (𝓞 ℚ) ℚ) 16
     rw [hmap] at hnorm
     exact hnorm
-  · intro w hw
-    simp [sceneTateData]
+
+theorem sceneTateData_qOrder : sceneTateData.qOrder rationalTwoPlace = 4 := by
+  have hqNorm :
+      ‖sceneTateData.parameter rationalTwoPlace‖ = (1 / 2 : ℝ) ^ (4 : ℕ) := by
+    rw [← sceneTateData_laws.norm_eq rationalTwoPlace (by simp [sceneTateData])]
+    change rationalTwoPlace (16 : ℚ) = (1 / 2 : ℝ) ^ (4 : ℕ)
+    rw [show (16 : ℚ) = (2 : ℚ) ^ (4 : ℕ) by norm_num, map_pow,
+      rationalTwoPlace_two]
+  have hqNormOrder :
+      ‖sceneTateData.parameter rationalTwoPlace‖ =
+        (2 : ℝ) ^ (-(sceneTateData.qOrder rationalTwoPlace : ℤ)) := by
+    simpa [rationalTwoPlace_residueChar, rationalTwoPlace_inertDeg,
+      TateParameterData.qOrder] using
+      (Arithmetic.completionNorm_eq_residueChar_pow_neg_qOrder
+        rationalTwoPlace (sceneTateData.parameter rationalTwoPlace)
+        (sceneTateData_laws.parameter_nonzero rationalTwoPlace
+          (by simp [sceneTateData]))
+        (by rw [← sceneTateData_laws.norm_eq rationalTwoPlace
+              (by simp [sceneTateData])]
+            exact sceneTateData_laws.norm_lt_one rationalTwoPlace
+              (by simp [sceneTateData])))
+  have hpow :
+      (2 : ℝ) ^ (-(sceneTateData.qOrder rationalTwoPlace : ℤ)) =
+        (2 : ℝ) ^ (-4 : ℤ) := by
+    calc
+      _ = ‖sceneTateData.parameter rationalTwoPlace‖ := hqNormOrder.symm
+      _ = (1 / 2 : ℝ) ^ (4 : ℕ) := hqNorm
+      _ = (2 : ℝ) ^ (-4 : ℤ) := by norm_num
+  have horder := (zpow_right_injective₀ (by norm_num : (0 : ℝ) < 2)
+    (by norm_num : (2 : ℝ) ≠ 1)) hpow
+  have horderZ : (sceneTateData.qOrder rationalTwoPlace : ℤ) = 4 := by omega
+  exact_mod_cast horderZ
 
 noncomputable def sceneQNorm : ℝ := sceneTateData.norm rationalTwoPlace
 
@@ -297,6 +326,9 @@ noncomputable def scene_tate_order_compatibility :
     simp only [sceneLinkData, AdelicThetaLinkData.ofTateParameters,
       sceneTateData, Finset.mem_singleton] at hw
     subst w
+    change sceneTateData.norm rationalTwoPlace =
+      (rationalTwoPlace (2 : ℚ)) ^ sceneTateData.qOrder rationalTwoPlace
+    rw [sceneTateData_qOrder]
     change rationalTwoPlace (16 : ℚ) =
       (rationalTwoPlace (2 : ℚ)) ^ (4 : ℕ)
     rw [show (16 : ℚ) = (2 : ℚ) ^ (4 : ℕ) by norm_num, map_pow]
@@ -320,6 +352,10 @@ theorem scene_qNorm_log_eq_order_mul :
   have h := TateOrderNormCompatibility.qNorm_log_eq_order_mul
     sceneLinkData sceneTateData_laws sceneLink_tate_compatibility
       scene_tate_order_compatibility rationalTwoPlace hw
+  change -Real.log (sceneLinkData.qNorm rationalTwoPlace) =
+    (sceneTateData.qOrder rationalTwoPlace : ℝ) *
+      -Real.log (scene_tate_order_compatibility.uniformizerNorm rationalTwoPlace) at h
+  rw [sceneTateData_qOrder] at h
   rw [hqNorm] at h
   simpa [sceneQNorm, sceneLinkData, AdelicThetaLinkData.ofTateParameters,
     sceneTateData, TateParameterData.qOrder] using h
@@ -514,7 +550,8 @@ noncomputable def sceneSourcePair :
         change rationalTwoPlace ∈ sceneTateData.places
         simp [sceneTateData]
       q_order_coprime := by
-        change Nat.Coprime 5 4
+        change Nat.Coprime 5 (sceneTateData.qOrder rationalTwoPlace)
+        rw [sceneTateData_qOrder]
         norm_num }
 
 noncomputable def scene_qFamily :

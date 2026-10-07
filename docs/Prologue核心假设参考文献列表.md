@@ -1,8 +1,8 @@
 # Prologue/Core 核心假设参考文献列表
 
-日期：2026-10-05
+日期：2026-10-07
 
-适用边界：`Prologue-R0`（P0.17 闸门冻结后的 Core）。本文件列出公开
+适用边界：`Prologue-R5`。本文件列出公开
 `Prologue/Core` 接口所依赖的来源，不把候选声明、审计 witness 或四条 `Obligations`
 构造定理误列为已证明核心数学。
 
@@ -13,7 +13,7 @@
 - `mathlib`：Lean/mathlib 已有的类型、定义或定理；必须同时写出具体文件和声明名；
 - `JoshiTeich: <论文文件名>`：来自具体的 JoshiTeich 论文索引文件，并附章节、label
   或行号；不使用笼统的 `J` 代替论文名；
-- `iut`：只有直接采用参考工程中的代码或 API 时使用。本版 Core 没有 `iut` 来源；
+- `iut`：只有直接采用参考工程中的代码或 API 时使用；必须写出具体参考工程文件和声明；
 - `D-adapter`：本地组合定义。它必须同时列出所依赖的 `mathlib` 或具体
   `JoshiTeich` 论文，不能单独作为来源。
 
@@ -54,6 +54,7 @@
 | `IUT-COR312-RESIDUE-CHAR` | `Arithmetic.residueChar`、`Arithmetic.residueChar_prime` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean`；`ThetaData/Places` residue-characteristic layer | ported local finite-place definition and primality proof; no `iut` import |
 | `IUT-COR312-RESIDUE-NORM` | `Arithmetic.absNorm_eq_pow_residueChar` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:84-87` | ported finite-place norm identity; not a q-pilot/global-degree normalization theorem |
 | `IUT-COR312-COMPLETION-NORM-ZPOW` | `Arithmetic.completionNorm_eq_residueChar_pow_of_valued` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:97-103` | ported completion norm expansion over the local `adicCompletion`; the valuation certificate remains an explicit input |
+| `IUT-COR312-COMPLETION-Q-ORDER` | `Arithmetic.completionQOrder`、`Arithmetic.completionQOrder_pos`、`Arithmetic.completionQOrder_valued`、`Arithmetic.completionNorm_eq_residueChar_pow_neg_qOrder` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:323-346`；`refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean:176-181`；normalization: `refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean:154-177` | derives the natural q-order from `Valued.v`; positivity follows from nonzero parameter and norm below one; completion norm/order identity follows from the local valuation expansion; no `InitialThetaData` source is constructed |
 | `IUT-COR312-COMPLETION-UNIFORMIZER` | `Arithmetic.completionUniformizer`、`Arithmetic.completionUniformizer_valued`、`Arithmetic.negLog_completionUniformizer_norm_eq_inertDeg_mul_log_residueChar` | `Prologue/Arithmetic/Basic.lean` | `iut`/`mathlib` | `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:285-317`; `mathlib`: `IsDedekindDomain.HeightOneSpectrum.valuation_exists_uniformizer`、`valuedAdicCompletion_eq_valuation'` | canonical completion uniformizer arithmetic; not a `TateCurvesTheta.IsUniformizer` or `InitialThetaData` realization |
 | `IUT-COR312-COMPLETION-UNIFORMIZER-NORM` | `Arithmetic.completionNorm_eq_residueChar_pow_neg_one_of_valued`、`Arithmetic.negLog_completionNorm_eq_inertDeg_mul_log_residueChar_of_valued` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:285-345` | general uniformizer-valued completion norm/log law; the valuation certificate is explicit, and no `TateFamily` or `InitialThetaData` realization is claimed |
 | `IUT-COR312-COMPLETION-UNIFORMIZER-VALUED` | `Arithmetic.IsCompletionUniformizer`、`Arithmetic.valued_eq_exp_neg_one_of_isCompletionUniformizer` | `Prologue/Arithmetic/Basic.lean` | `iut` | `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:285-345`; certificate shape: `refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean:65-70` | source-shaped local uniformizer certificate and valuation theorem; no real `AdmissiblePrimeData`/`InitialThetaData` realization is claimed |
@@ -76,7 +77,7 @@
 
 | source-id | Core 声明 | 本地文件 | 来源 | 参考位置 | 状态和边界 |
 | --- | --- | --- | --- | --- | --- |
-| `JT-ATS-II-TATE-PARAMETER` | `TateParameterData`、`TateParameterLaws` | `Prologue/Theta/Tate.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 2.md`；补充来源：`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | II `th:tate-parameter-as-a-function` 609--630；III `pr:admissible-lifts-tate-params` 1530--1539 | conditional interface；包含非零和 `0 < norm < 1` 条件 |
+| `JT-ATS-II-TATE-PARAMETER` | `TateParameterData`、`TateParameterLaws`、`TateParameterData.qOrder`、`TateParameterData.qOrder_pos` | `Prologue/Theta/Tate.lean` | `D-adapter`；论文语义：`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 2.md`；补充来源：`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`；q-order 来源：`iut` | II `th:tate-parameter-as-a-function` 609--630；III `pr:admissible-lifts-tate-params` 1530--1539；`refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean:176-181` | conditional interface；包含非零和 `0 < norm < 1` 条件；q-order 从局部 completion valuation 派生，不是独立输入 |
 | `JT-ATS-II-THETA-PILOT-SCALING` | `ThetaPilotData.scalingIndex`、`ThetaPilotScalingLaws` | `Prologue/Theta/Pilot.lean`、`Prologue/Interfaces/Carriers.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 2.md`；主链接来源：`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | II `pr:lift-vals` 820--836；II `pr:teichmuller-lift-B` 968--975；III `th:adelic-theta-link` 1139--1166 | conditional interface；`j^2` scaling 是 Prop，不包含体积下界 |
 | `JT-ATS-III-THETA-SCALING-LINK` | `AdelicThetaLinkData.thetaBase`、`AdelicThetaLink.theta_scaling` | `Prologue/Interfaces/Carriers.lean`、`Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `th:adelic-theta-link` 1139--1166 | conditional interface；不包含 Corollary 3.12 |
 
@@ -105,8 +106,9 @@
 - `Prologue/Audit/*` 的满足/违反模型。它们是审计证据，不是生产 Core 假设的来源。
 - `Act1Scene1/Boundary.lean` 和 `Act1Scene2/Boundary.lean`。它们是下游边界声明，不
   反向提供 Prologue 数学事实。
-- `iut`。本版没有从 `iut` 复制文件、导入模块或接受其数学结论；若未来直接复用
-  `iut` 代码，来源栏必须原样写 `iut`，并另行登记原文件、提交和许可证。
+- `iut` 不作为 Lake 依赖。本版直接移植了已证明的局部 completion q-order 计算，具体
+  位置和适配边界列在 `IUT-COR312-COMPLETION-Q-ORDER` 与 `IUT-COR312-Q-ORDER`；没有从
+  `iut` 导入模块，也没有把真实 `InitialThetaData`、`TateFamily` 或 3.12 定理当作本地结论。
 
 ### 7.1 被拒的 Candidate
 

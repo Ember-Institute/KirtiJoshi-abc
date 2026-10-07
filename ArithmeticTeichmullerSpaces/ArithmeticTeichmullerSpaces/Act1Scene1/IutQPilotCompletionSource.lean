@@ -144,7 +144,7 @@ noncomputable def ofBaseCompletionSource
     have hwTate : w ∈ T.scene1.data.link.tate.places := by
       rw [← hCompat.places_eq]
       exact hwLink
-    exact hTate.orderNat_pos w hwTate
+    exact T.scene1.data.link.tate.qOrder_pos hTate w hwTate
   · intro w hw
     let i := completionIndex p B hPlaces w (linkMemOfBad p B hPlaces w hw)
     have hOrderAt : C.orderedQOrder i =

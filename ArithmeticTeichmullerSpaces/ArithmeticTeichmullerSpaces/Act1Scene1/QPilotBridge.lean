@@ -163,7 +163,8 @@ lemma mem_tate {w : NumberField.FinitePlace K} (hw : w ∈ Q.badFinset) :
 
 lemma qOrder_pos {w : NumberField.FinitePlace K} (hw : w ∈ Q.badFinset) :
     0 < T.scene1.data.link.tate.qOrder w := by
-  exact T.scene1.input_laws.tate_parameter.orderNat_pos w (Q.mem_tate p hw)
+  exact T.scene1.data.link.tate.qOrder_pos T.scene1.input_laws.tate_parameter
+    w (Q.mem_tate p hw)
 
 /-- The normalized q-divisor degree, weighted by the source-place arithmetic
 degree and the residue characteristic. -/

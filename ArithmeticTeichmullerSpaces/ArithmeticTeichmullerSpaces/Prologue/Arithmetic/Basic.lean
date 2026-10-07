@@ -165,6 +165,72 @@ lemma completionNorm_eq_residueChar_pow_of_valued
   rw [NNReal.coe_zpow, NNReal.coe_natCast, absNorm_eq_pow_residueChar,
     Nat.cast_pow]
 
+/-! The normalized integer order is read directly from the completion valuation. -/
+
+noncomputable def completionQOrder
+    (w : NumberField.FinitePlace K)
+    (q : w.maximalIdeal.adicCompletion K) : ℕ :=
+  Int.toNat (-log (Valued.v q))
+
+lemma completionQOrder_pos
+    (w : NumberField.FinitePlace K)
+    (q : w.maximalIdeal.adicCompletion K)
+    (hq : q ≠ 0) (hqNorm : ‖q‖ < 1) :
+    0 < completionQOrder w q := by
+  have hqv : Valued.v q ≠ 0 := (Valuation.ne_zero_iff _).2 hq
+  set m : ℤ := log (Valued.v q)
+  have hm : Valued.v q = exp m := (exp_log hqv).symm
+  have hp : (residueChar w).Prime := residueChar_prime w
+  have hN : (1 : ℝ) < (residueChar w : ℝ) ^ inertDeg w :=
+    one_lt_pow₀ (by exact_mod_cast hp.one_lt) (inertDeg_pos w).ne'
+  have hNorm := completionNorm_eq_residueChar_pow_of_valued w q m hm
+  have hmNeg : m < 0 := by
+    rw [hNorm] at hqNorm
+    rw [zpow_lt_one_iff_right₀ hN] at hqNorm
+    exact hqNorm
+  have hcast : ((Int.toNat (-m) : ℕ) : ℤ) = -m :=
+    Int.toNat_of_nonneg (by omega)
+  have hpos : (0 : ℤ) < (Int.toNat (-m) : ℕ) := by
+    rw [hcast]
+    omega
+  unfold completionQOrder
+  rw [show log (Valued.v q) = m from rfl]
+  exact_mod_cast hpos
+
+lemma completionQOrder_valued
+    (w : NumberField.FinitePlace K)
+    (q : w.maximalIdeal.adicCompletion K)
+    (hq : q ≠ 0) (hqNorm : ‖q‖ < 1) :
+    Valued.v q = exp (-(completionQOrder w q : ℤ)) := by
+  have hqv : Valued.v q ≠ 0 := (Valuation.ne_zero_iff _).2 hq
+  set m : ℤ := log (Valued.v q)
+  have hm : Valued.v q = exp m := (exp_log hqv).symm
+  have hqOrderPos := completionQOrder_pos w q hq hqNorm
+  have hp : (residueChar w).Prime := residueChar_prime w
+  have hN : (1 : ℝ) < (residueChar w : ℝ) ^ inertDeg w :=
+    one_lt_pow₀ (by exact_mod_cast hp.one_lt) (inertDeg_pos w).ne'
+  have hNorm := completionNorm_eq_residueChar_pow_of_valued w q m hm
+  have hmNeg : m < 0 := by
+    rw [hNorm] at hqNorm
+    rw [zpow_lt_one_iff_right₀ hN] at hqNorm
+    exact hqNorm
+  have hqOrderInt : (completionQOrder w q : ℤ) = -m := by
+    unfold completionQOrder
+    rw [show log (Valued.v q) = m from rfl]
+    exact Int.toNat_of_nonneg (by omega)
+  have hmEq : m = -(completionQOrder w q : ℤ) := by omega
+  rw [hm, hmEq]
+
+lemma completionNorm_eq_residueChar_pow_neg_qOrder
+    (w : NumberField.FinitePlace K)
+    (q : w.maximalIdeal.adicCompletion K)
+    (hq : q ≠ 0) (hqNorm : ‖q‖ < 1) :
+    ‖q‖ = ((residueChar w : ℝ) ^ inertDeg w) ^
+      (-(completionQOrder w q : ℤ)) := by
+  have hqVal := completionQOrder_valued w q hq hqNorm
+  exact completionNorm_eq_residueChar_pow_of_valued w q
+    (-(completionQOrder w q : ℤ)) hqVal
+
 lemma ordp_eq_of_valued
     (w : NumberField.FinitePlace K)
     (x : w.maximalIdeal.adicCompletion K) (m : ℤ)

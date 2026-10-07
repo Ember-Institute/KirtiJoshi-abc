@@ -143,15 +143,15 @@ variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
 variable [IsAdicComplete (Ideal.span {(p : O)}) O]
 variable {T : Corollary312Data K O p}
 
-/-- The normalized Tate q-order attached to the pair's finite place.  This is the
-`AdmissiblePrimeData.qOrder` projection in `iut`, with the external ordered Tate
-parameter replaced by the Prologue carrier's `orderNat` field. -/
+/-- The normalized Tate q-order attached to the pair's finite place.  It is read
+from the Prologue local completion valuation, as in `iut`'s `qOrder` projection. -/
 noncomputable def qOrder (self : Corollary312SourceQPair p T) : ℕ :=
   T.scene1.data.link.tate.qOrder self.place.1
 
 lemma qOrder_pos (self : Corollary312SourceQPair p T) : 0 < self.qOrder p := by
   unfold qOrder
-  exact T.scene1.input_laws.tate_parameter.orderNat_pos self.place.1 self.tate_place
+  exact T.scene1.data.link.tate.qOrder_pos T.scene1.input_laws.tate_parameter
+    self.place.1 self.tate_place
 
 end Corollary312SourceQPair
 

@@ -37,14 +37,11 @@ theorem auditTateData_laws : TateParameterLaws auditTateData := by
       exact map_natCast (algebraMap (𝓞 ℚ) ℚ) 2
     rw [hmap] at hnorm
     exact hnorm
-  · intro w hw
-    simp [auditTateData]
 
 noncomputable def zeroTateData : TateParameterData ℚ where
   places := {rationalTwoPlace}
   parameter := fun _ => 0
   norm := fun w => w (2 : ℚ)
-  orderNat := fun _ => 0
 
 theorem auditTateData_violation : ¬ TateParameterLaws zeroTateData := by
   intro h
