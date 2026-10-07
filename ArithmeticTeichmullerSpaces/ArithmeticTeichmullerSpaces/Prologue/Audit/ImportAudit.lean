@@ -279,7 +279,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutTateQuotientUniformization.ofTateStructure
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofTateFamily
 #check JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_badPlace
+#check JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_q_eq_baseParameter
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaData
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataOfQPilotBadPlaceFiniteness
 #check JoshiTeich.Act1Scene1.IutTorsionRepresentationData
 #check JoshiTeich.Act1Scene1.iutGaloisPointMap
 #check JoshiTeich.Act1Scene1.iutGaloisPointMap_torsionBy
@@ -443,7 +445,9 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutTateQuotientUniformization.ofTateStructure
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofTateFamily
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_badPlace
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_q_eq_baseParameter
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaData
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataOfQPilotBadPlaceFiniteness
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 
 end JoshiTeich.Prologue.Audit
