@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutWeierstrassLocalization
+import Iut.Cor312.ThetaData.AdmissiblePrime
 import Mathlib.Algebra.Module.ZMod
 import Mathlib.FieldTheory.Galois.Basic
 import Mathlib.FieldTheory.Galois.Infinite
@@ -27,6 +28,7 @@ boundary: Scene1/Derived
 namespace JoshiTeich.Act1Scene1
 
 open WeierstrassCurve
+open NumberField
 open scoped Classical
 
 universe uF uFbar
@@ -477,6 +479,81 @@ variable {ell : ℕ} (D : IutAdmissiblePrimeTorsionData F₀ E₀ Fbar₀ ell)
 noncomputable def representationData : IutTorsionRepresentationData
     (F := F₀) (E := E₀) (Fbar := Fbar₀) ell :=
   IutTorsionRepresentationData.ofBasis D.closure D.torsionBasis
+
+/-- Project the prime and torsion basis, with the chosen algebraic closure as explicit input. -/
+noncomputable def ofAdmissiblePrimeData
+    {VBad : Set (FinitePlace ↥(Iut.fieldOfModuli F₀ E₀))}
+    (P : Iut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
+    (closure : IsAlgClosure F₀ Fbar₀) :
+    IutAdmissiblePrimeTorsionData F₀ E₀ Fbar₀ P.ℓ where
+  ell_prime := P.ℓ_prime
+  five_le := P.five_le
+  closure := closure
+  torsionBasis := P.torsionBasis
+
+/-- The representation derived from the actual torsion basis is IUT's characterized
+representation. The action law determines every matrix column by evaluating it on the
+preimage of the corresponding standard basis vector. -/
+theorem representation_eq_admissiblePrime
+    {VBad : Set (FinitePlace ↥(Iut.fieldOfModuli F₀ E₀))}
+    (P : Iut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
+    (closure : IsAlgClosure F₀ Fbar₀) :
+    (ofAdmissiblePrimeData P closure).representationData.representation = P.rep := by
+  let D := ofAdmissiblePrimeData P closure
+  apply MonoidHom.ext
+  intro σ
+  apply Units.ext
+  apply Matrix.ext
+  intro i j
+  let v : Fin 2 → ZMod P.ℓ := Pi.single j 1
+  let Q := P.torsionBasis.symm v
+  have hBasis : P.torsionBasis Q = v := by
+    simp [Q]
+  have hAction :
+      (⟨iutGaloisPointMap (E := E₀) (Fbar := Fbar₀) σ Q.1,
+        iutGaloisPointMap_torsionBy (E := E₀) (Fbar := Fbar₀) σ Q.2⟩ :
+          AddSubgroup.torsionBy (Affine.Point (Affine.baseChange E₀ Fbar₀)) P.ℓ) =
+      ⟨Iut.galPointMap F₀ E₀ Fbar₀ σ Q.1,
+        Iut.galPointMap_torsionBy F₀ E₀ Fbar₀ σ Q.2⟩ := by
+    apply Subtype.ext
+    rfl
+  have hMine := D.representationData.representation_spec σ Q
+  have hIut := P.rep_spec σ Q
+  have hmul :
+      ((D.representationData.representation σ :
+        Matrix.GeneralLinearGroup (Fin 2) (ZMod P.ℓ)) : Matrix (Fin 2) (Fin 2) (ZMod P.ℓ)).mulVec v =
+        (P.rep σ : Matrix (Fin 2) (Fin 2) (ZMod P.ℓ)).mulVec v := by
+    calc
+      _ = (D.representationData.representation σ :
+          Matrix (Fin 2) (Fin 2) (ZMod P.ℓ)).mulVec (P.torsionBasis Q) := by
+        rw [hBasis]
+      _ = P.torsionBasis
+          ⟨iutGaloisPointMap (E := E₀) (Fbar := Fbar₀) σ Q.1,
+            iutGaloisPointMap_torsionBy (E := E₀) (Fbar := Fbar₀) σ Q.2⟩ := by
+        simpa [D, ofAdmissiblePrimeData,
+          IutAdmissiblePrimeTorsionData.representationData,
+          IutTorsionRepresentationData.ofBasis] using hMine.symm
+      _ = P.torsionBasis
+          ⟨Iut.galPointMap F₀ E₀ Fbar₀ σ Q.1,
+            Iut.galPointMap_torsionBy F₀ E₀ Fbar₀ σ Q.2⟩ := by
+        rw [hAction]
+      _ = (P.rep σ : Matrix (Fin 2) (Fin 2) (ZMod P.ℓ)).mulVec
+          (P.torsionBasis Q) := hIut
+      _ = _ := by rw [hBasis]
+  have hentry := congrArg (fun w : Fin 2 → ZMod P.ℓ => w i) hmul
+  simpa [v, Matrix.mulVec_single_one, Matrix.col_apply] using hentry
+
+/-- The project and IUT fixed fields agree because their representation kernels agree. -/
+theorem torsionField_eq_admissiblePrime
+    {VBad : Set (FinitePlace ↥(Iut.fieldOfModuli F₀ E₀))}
+    (P : Iut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
+    (closure : IsAlgClosure F₀ Fbar₀) :
+    (ofAdmissiblePrimeData P closure).representationData.torsionField =
+      P.torsionField := by
+  change IntermediateField.fixedField
+      ((ofAdmissiblePrimeData P closure).representationData.representation.ker) =
+    IntermediateField.fixedField P.rep.ker
+  rw [representation_eq_admissiblePrime]
 
 theorem ell_pos (D : IutAdmissiblePrimeTorsionData F₀ E₀ Fbar₀ ell) : 0 < ell := by
   have := D.five_le
