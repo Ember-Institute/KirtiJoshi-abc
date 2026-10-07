@@ -401,6 +401,12 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_two
 #check JoshiTeich.Act1Scene1.Audit.scene_tate_order_compatibility
 #check JoshiTeich.Act1Scene1.Audit.scene_qNorm_log_eq_order_mul
+#check JoshiTeich.Act1Scene1.IutOddMultiplicativeSupport
+#check JoshiTeich.Act1Scene1.IutOddMultiplicativeModSupport
+#check JoshiTeich.Act1Scene1.mem_iutOddMultiplicativeModSupport_of_mem_support
+#check JoshiTeich.Act1Scene1.iutInitialThetaVBad_subset_oddMultiplicativeModSupport
+#check JoshiTeich.Act1Scene1.iutOddMultiplicativeSupport_eq_badPlacesOver_modSupport
+#check JoshiTeich.Act1Scene1.iutBadPlacesOver_subset_oddMultiplicativeSupport
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
@@ -458,6 +464,9 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData_order_eq
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum_of_initialThetaData
+#print axioms JoshiTeich.Act1Scene1.mem_iutOddMultiplicativeModSupport_of_mem_support
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaVBad_subset_oddMultiplicativeModSupport
+#print axioms JoshiTeich.Act1Scene1.iutOddMultiplicativeSupport_eq_badPlacesOver_modSupport
 #print axioms JoshiTeich.Act1Scene1.iutBadPlacesOver_subset_oddMultiplicativeSupport
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 
