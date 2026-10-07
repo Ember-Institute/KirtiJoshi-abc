@@ -90,9 +90,10 @@ lemma mem_iutBadPlacesOverFinset_iff
 The IUT q-pilot lives on the field `F`, while its bad locus is defined by a
 finite set of places of the field of moduli below `F`.  This constructor keeps
 that two-field orientation explicit and derives the carrier fields from
-`iutBadPlacesOver`; callers provide the local Tate parameter and admissibility
-condition on the canonical finite subtype. The local integer order is derived
-from the completion valuation.
+`iutBadPlacesOver`; callers provide the local Tate parameter on the canonical
+finite subtype. The IUT normalized order and its admissibility condition are
+attached with the chosen uniformizer in `IutCompletionTateValuation`, where the
+order is proved equal to the completion-valuation order.
 -/
 noncomputable def IutBaseQPilotSource.ofOverVBad
     {k F : Type uF} [Field k] [NumberField k] [Field F] [NumberField F]
@@ -104,9 +105,7 @@ noncomputable def IutBaseQPilotSource.ofOverVBad
     (tateParameter : ∀ w : iutBadPlacesOverFinset (k := k) (K := F) VBad hVBad,
       w.1.maximalIdeal.adicCompletion F)
     (tateParameter_ne_zero : ∀ w, tateParameter w ≠ 0)
-    (tateParameter_norm_lt_one : ∀ w, ‖tateParameter w‖ < 1)
-    (qOrder_coprime : ∀ w,
-      Nat.Coprime ell (iutCompletionQOrder w.1 (tateParameter w))) :
+    (tateParameter_norm_lt_one : ∀ w, ‖tateParameter w‖ < 1) :
     IutBaseQPilotSource F ell :=
   { badPlaces := iutBadPlacesOver (k := k) (K := F) VBad
     badFinset := iutBadPlacesOverFinset (k := k) (K := F) VBad hVBad
@@ -117,8 +116,7 @@ noncomputable def IutBaseQPilotSource.ofOverVBad
     weight_eq_qPilotWeight := weight_eq_qPilotWeight
     tateParameter := tateParameter
     tateParameter_ne_zero := tateParameter_ne_zero
-    tateParameter_norm_lt_one := tateParameter_norm_lt_one
-    qOrder_coprime := qOrder_coprime }
+    tateParameter_norm_lt_one := tateParameter_norm_lt_one }
 
 namespace IutBaseQPilotSource
 

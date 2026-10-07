@@ -32,11 +32,33 @@ structure IutCompletionTateValuation
   /-- The chosen element satisfies the source-shaped uniformizer contract. -/
   uniformizer_isCompletionUniformizer : ∀ w,
     Arithmetic.IsCompletionUniformizer w.1 (uniformizer w)
+  /-- The normalized integer order exported by the IUT ordered Tate parameter. -/
+  orderedQOrder : ∀ w : B.badFinset, ℕ
+  /-- IUT's admissible-prime condition on its normalized Tate order. -/
+  orderedQOrder_coprime : ∀ w, Nat.Coprime ell (orderedQOrder w)
+  /-- The source Tate parameter has the norm power law at the chosen uniformizer. -/
+  orderedQOrder_norm_eq : ∀ w,
+    ‖B.tateParameter w‖ = ‖uniformizer w‖ ^ orderedQOrder w
 
 namespace IutCompletionTateValuation
 
 variable {F : Type u} [Field F] [NumberField F]
 variable {ell : ℕ} {B : IutBaseQPilotSource F ell}
+
+lemma completionQOrder_eq_orderNat
+    (C : IutCompletionTateValuation B) (w : B.badFinset) :
+    B.qOrder w = C.orderedQOrder w := by
+  exact iutCompletionQOrder_eq_of_norm_eq_uniformizer_pow w.1
+    (B.tateParameter w) (B.tateParameter_ne_zero w)
+    (B.tateParameter_norm_lt_one w) (C.uniformizer w)
+    (C.uniformizer_isCompletionUniformizer w) (C.orderedQOrder w)
+    (C.orderedQOrder_norm_eq w)
+
+lemma qOrder_coprime
+    (C : IutCompletionTateValuation B) (w : B.badFinset) :
+    Nat.Coprime ell (B.qOrder w) := by
+  rw [C.completionQOrder_eq_orderNat w]
+  exact C.orderedQOrder_coprime w
 
 lemma norm_eq_pow_order
     (C : IutCompletionTateValuation B) (w : B.badFinset) :

@@ -21,8 +21,10 @@ source: `iut`: `refer/iut/Iut/Cor312/ThetaData/Basic.lean`,
 `Prologue/Arithmetic/Basic.lean`.
 fidelity: explicit audit boundary for the base-field q-pilot and the torsion-field
 q-root; the base completion's integer q-order is derived from `Valued.v`, and its
-uniformizer power law is proved. The admissible-prime coprimality field remains
-explicit; no `InitialThetaData` instance is constructed here.
+uniformizer power law is proved. The IUT normalized order and its coprimality
+condition remain explicit source data, and equality with the valuation-derived
+order is proved from their shared uniformizer norm law. No `InitialThetaData`
+instance is constructed here.
 boundary: Scene1/Derived
 
 The reference implementation has three different carriers:
@@ -61,9 +63,6 @@ structure IutBaseQPilotSource (F : Type u) [Field F] [NumberField F]
   tateParameter : ∀ w : badFinset, w.1.maximalIdeal.adicCompletion F
   tateParameter_ne_zero : ∀ w, tateParameter w ≠ 0
   tateParameter_norm_lt_one : ∀ w, ‖tateParameter w‖ < 1
-  /-- The admissible-prime condition on the valuation-derived normalized order. -/
-  qOrder_coprime : ∀ w,
-    Nat.Coprime ell (iutCompletionQOrder w.1 (tateParameter w))
 
 lemma iutCompletionQOrder_pos
     {F : Type u} [Field F] [NumberField F]
@@ -146,6 +145,21 @@ lemma iutCompletionNorm_eq_uniformizer_pow_qOrder
     congr 1
     ring
   exact hpow.symm
+
+lemma iutCompletionQOrder_eq_of_norm_eq_uniformizer_pow
+    {F : Type u} [Field F] [NumberField F]
+    (w : NumberField.FinitePlace F)
+    (q : w.maximalIdeal.adicCompletion F)
+    (hq : q ≠ 0) (hqNorm : ‖q‖ < 1)
+    (π : w.maximalIdeal.adicCompletion F)
+    (hπ : Arithmetic.IsCompletionUniformizer w π)
+    (n : ℕ) (hnorm : ‖q‖ = ‖π‖ ^ n) :
+    iutCompletionQOrder w q = n := by
+  have hlocal := iutCompletionNorm_eq_uniformizer_pow_qOrder w q hq hqNorm π hπ
+  have hpow : ‖π‖ ^ iutCompletionQOrder w q = ‖π‖ ^ n :=
+    hlocal.symm.trans hnorm
+  exact (pow_right_injective₀ (norm_pos_iff.mpr hπ.ne_zero)
+    hπ.norm_lt_one.ne) hpow
 
 namespace IutBaseQPilotSource
 
