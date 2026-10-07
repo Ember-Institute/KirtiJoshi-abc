@@ -18,8 +18,9 @@ source: `iut`: `refer/iut/Iut/Anabelian/Torsion.lean` and
 fidelity: ports the fixed-field rationality argument for elliptic-curve `ell`-torsion
 from the chosen algebraic-closure basis and the genuine Galois action. The matrix
 representation and its characterizing law are derived from the basis. The basis remains an
-explicit input; kernel openness and fixed-field consequences are proved below, while the
-remaining admissible-prime fields are not constructed from source data here.
+explicit input; kernel openness and fixed-field consequences are proved below. A narrow
+admissible-prime projection now derives the torsion field, its basis, and the q-root
+construction's prime consequences without claiming to construct the remaining source data.
 boundary: Scene1/Derived
 -/
 
@@ -29,6 +30,7 @@ open WeierstrassCurve
 open scoped Classical
 
 universe uF uFbar
+universe u
 
 noncomputable section
 
@@ -448,6 +450,94 @@ def toGlobalTorsionBasis :
   basis := D.basisOverTorsionField
 
 end IutTorsionRepresentationData
+
+/-! ### Admissible-prime source for the q-root assembly -/
+
+/-- The fields of IUT admissible-prime data that determine the torsion carrier used by
+the q-root construction. The remaining admissible-prime conditions are not needed here. -/
+structure IutAdmissiblePrimeTorsionData
+    (F₀ : Type u) [Field F₀] [NumberField F₀]
+    (E₀ : WeierstrassCurve F₀) [E₀.IsElliptic]
+    (Fbar₀ : Type u) [Field Fbar₀] [Algebra F₀ Fbar₀]
+    (ell : ℕ) where
+  ell_prime : ell.Prime
+  five_le : 5 ≤ ell
+  closure : IsAlgClosure F₀ Fbar₀
+  torsionBasis :
+    AddSubgroup.torsionBy (Affine.Point (Affine.baseChange E₀ Fbar₀)) ell ≃+
+      (Fin 2 → ZMod ell)
+
+namespace IutAdmissiblePrimeTorsionData
+
+variable {F₀ : Type u} [Field F₀] [NumberField F₀]
+variable {E₀ : WeierstrassCurve F₀} [E₀.IsElliptic]
+variable {Fbar₀ : Type u} [Field Fbar₀] [Algebra F₀ Fbar₀]
+variable {ell : ℕ} (D : IutAdmissiblePrimeTorsionData F₀ E₀ Fbar₀ ell)
+
+noncomputable def representationData : IutTorsionRepresentationData
+    (F := F₀) (E := E₀) (Fbar := Fbar₀) ell :=
+  IutTorsionRepresentationData.ofBasis D.closure D.torsionBasis
+
+theorem ell_pos (D : IutAdmissiblePrimeTorsionData F₀ E₀ Fbar₀ ell) : 0 < ell := by
+  have := D.five_le
+  omega
+
+theorem ell_odd (D : IutAdmissiblePrimeTorsionData F₀ E₀ Fbar₀ ell) : Odd ell :=
+  D.ell_prime.odd_of_ne_two (by have := D.five_le; omega)
+
+noncomputable abbrev torsionField (D : IutAdmissiblePrimeTorsionData
+    F₀ E₀ Fbar₀ ell) : IntermediateField F₀ Fbar₀ :=
+  D.representationData.torsionField
+
+noncomputable instance numberField_torsionField (D : IutAdmissiblePrimeTorsionData
+    F₀ E₀ Fbar₀ ell) :
+    NumberField ↥D.torsionField :=
+  D.representationData.numberField_torsionField
+
+noncomputable instance instDecidableEqTorsionField (D : IutAdmissiblePrimeTorsionData
+    F₀ E₀ Fbar₀ ell) : DecidableEq ↥D.torsionField :=
+  D.representationData.instDecidableEqTorsionField
+
+noncomputable def toGlobalTorsionBasis (D : IutAdmissiblePrimeTorsionData
+    F₀ E₀ Fbar₀ ell) :
+    IutGlobalTorsionBasis
+      (E₀.map (algebraMap F₀ ↥D.torsionField)).toAffine.Point ell :=
+  D.representationData.toGlobalTorsionBasis
+
+end IutAdmissiblePrimeTorsionData
+
+namespace IutTorsionQRootSource
+
+variable {F : Type uF} [Field F] [NumberField F]
+variable {Fbar : Type uF} [Field Fbar] [Algebra F Fbar]
+variable {E : WeierstrassCurve F} [E.IsElliptic]
+variable {ell : ℕ} {B : IutBaseQPilotSource F ell}
+
+/-- Build the q-root source from the admissible-prime torsion basis over the algebraic
+closure. The torsion field and its rank-two basis are derived from the genuine Galois
+representation; positivity and oddness of `ell` follow from the prime-data fields. -/
+noncomputable def ofOverBaseBadWithCanonicalCompletionMap_ofAdmissiblePrimeAndSixTorsion
+    (D : IutAdmissiblePrimeTorsionData
+      F E Fbar ell)
+    (B : IutBaseQPilotSource F ell)
+    (hsix : IutSixTorsionRational (F := F) (Fbar := Fbar) (E := E))
+    (S : ∀ w : iutBadPlacesOverFinset (k := F) (K := D.torsionField)
+      B.badPlaces B.badPlaces_finite,
+      IutTateQuotientUniformization
+        (w.1.maximalIdeal.adicCompletion D.torsionField)
+        (((E.map (algebraMap F D.torsionField)).map
+          (NumberField.FinitePlace.embedding w.1.maximalIdeal)).toAffine.Point))
+    (hq : ∀ w : iutBadPlacesOverFinset (k := F) (K := D.torsionField)
+      B.badPlaces B.badPlaces_finite,
+      ((S w).q : w.1.maximalIdeal.adicCompletion D.torsionField) =
+        iutEmbedCompletion (basePlaceOf_liesOver (B := B) w)
+          (B.tateParameter (basePlaceOf (B := B) w))) :
+    IutTorsionQRootSource F ↥D.torsionField ell B := by
+  letI : IsAlgClosed Fbar := D.closure.isAlgClosed
+  exact ofOverBaseBadWithCanonicalCompletionMap_ofWeierstrassTorsion
+    B D.toGlobalTorsionBasis S hsix D.ell_pos D.ell_odd hq
+
+end IutTorsionQRootSource
 
 end
 

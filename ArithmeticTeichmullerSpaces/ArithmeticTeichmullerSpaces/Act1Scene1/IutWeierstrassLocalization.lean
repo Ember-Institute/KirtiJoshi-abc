@@ -53,16 +53,17 @@ def iutWeierstrassTorsionLocalMap {ell : ℕ}
 
 end PointMap
 
-section SixTorsionRationality
+section SixTorsionRationalityContract
 
 open scoped Classical
 
 variable {F Fbar : Type*} [Field F] [NumberField F]
-variable [Field Fbar] [Algebra F Fbar] [IsAlgClosed Fbar]
+variable [Field Fbar] [Algebra F Fbar]
 variable {E : WeierstrassCurve F} [E.IsElliptic]
 
-/-- The `6`-torsion of `E` over an algebraically closed extension is rational over `F`,
-in the sense of IUT I, Definition 3.1(b). -/
+/-- The `6`-torsion of the chosen extension is rational over `F`, as in IUT I,
+Definition 3.1(b). This source condition does not require the extension to be algebraically
+closed. -/
 abbrev IutSixTorsionRational : Prop := by
   classical
   letI : DecidableEq F := Classical.decEq F
@@ -70,6 +71,16 @@ abbrev IutSixTorsionRational : Prop := by
   letI : (E.map (algebraMap F Fbar)).IsElliptic := by infer_instance
   exact ∀ P ∈ iutTorsion (E.map (algebraMap F Fbar)).toAffine.Point 6,
     P ∈ (iutWeierstrassPointMap (E := E) (algebraMap F Fbar)).range
+
+end SixTorsionRationalityContract
+
+section SixTorsionRationality
+
+open scoped Classical
+
+variable {F Fbar : Type*} [Field F] [NumberField F]
+variable [Field Fbar] [Algebra F Fbar] [IsAlgClosed Fbar]
+variable {E : WeierstrassCurve F} [E.IsElliptic]
 
 /-- Rationality of the geometric `6`-torsion supplies the four base-field `2`-torsion
 points used by the IUT local q-root argument. The three finite points come from the distinct

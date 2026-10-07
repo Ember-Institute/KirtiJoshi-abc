@@ -36,8 +36,9 @@ IUT 移植使用的 Apache-2.0 正文位于工程根目录 `LICENSE`；该文件
   torsion 经 injective local map 得到局部基数下界的论证；第三文件将 `iut` 的点映射
   接口适配为 Mathlib `Affine.Point.map` 上的实际 Weierstrass base-change bridge；第四文件
   移植由 basis-compatible Galois representation 推出 torsion fixed-field rationality 的
-  条件证明，以及由显式 kernel-openness 证书推出有限维数域的结论。仍未移植实际
-  `AdmissiblePrimeData` 构造或 `TateCurvesTheta` 依赖。四个目标文件均保留 iut
+  条件证明，以及由显式 kernel-openness 证书推出有限维数域的结论；当前新增的窄来源投影
+  只复制 `AdmissiblePrimeData` 中用于 q-root 装配的素数、下界、闭包和 torsion basis 字段，
+  不移植完整 `AdmissiblePrimeData` 构造或 `TateCurvesTheta` 依赖。四个目标文件均保留 iut
   原始版权及许可证头，并登记各自的 source-id。
 
 参考工程不是本工程的上游或依赖。只有在逐文件审查后才允许移植代码。移植时必须
