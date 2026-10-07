@@ -284,6 +284,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_q_eq_baseParameter
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaData
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataOfQPilotBadPlaceFiniteness
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataFromGlobal
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData_order_eq
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum_of_initialThetaData
@@ -463,6 +464,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_q_eq_baseParameter
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaData
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataOfQPilotBadPlaceFiniteness
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataFromGlobal
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData_order_eq
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum_of_initialThetaData

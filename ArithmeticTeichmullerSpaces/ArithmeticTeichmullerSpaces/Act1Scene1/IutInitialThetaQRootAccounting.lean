@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateFamilyQRootAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness
 
 namespace JoshiTeich.Act1Scene1
 
@@ -37,10 +38,10 @@ order carried by the actual IUT admissible-prime source. -/
 noncomputable def ofInitialThetaData
     {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
     (D : Iut.InitialThetaData AG TG)
-    (hBadFinite : (Iut.badPlacesOver D.F D.E D.VBad).Finite) :
+    :
     IutCompletionTateValuation
-      (IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime hBadFinite) := by
-  let B := IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime hBadFinite
+      (IutBaseQPilotSource.ofInitialThetaData D) := by
+  let B := IutBaseQPilotSource.ofInitialThetaData D
   refine IutCompletionTateValuation.ofIutNormalizedOrder
     (uniformizer := fun w => D.prime.unif w.1 (B.mem_badPlaces w))
     (hUniformizer := ?_)
@@ -71,14 +72,11 @@ noncomputable def ofInitialThetaData
 theorem ofInitialThetaData_order_eq
     {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
     (D : Iut.InitialThetaData AG TG)
-    (hBadFinite : (Iut.badPlacesOver D.F D.E D.VBad).Finite)
-    (w : (IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime
-      hBadFinite).badFinset) :
-    (ofInitialThetaData D hBadFinite).orderedQOrder w =
+    (w : (IutBaseQPilotSource.ofInitialThetaData D).badFinset) :
+    (ofInitialThetaData D).orderedQOrder w =
       D.prime.qOrder w.1
-        ((IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime
-          hBadFinite).mem_badPlaces w) := by
-  let B := IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime hBadFinite
+        ((IutBaseQPilotSource.ofInitialThetaData D).mem_badPlaces w) := by
+  let B := IutBaseQPilotSource.ofInitialThetaData D
   let hUniformizer := fun i : B.badFinset =>
     D.prime.unif i.1 (B.mem_badPlaces i)
   have hUniformizerCert : ∀ i : B.badFinset,
@@ -120,10 +118,19 @@ end IutCompletionTateValuation
 
 namespace IutTorsionQRootSource
 
+/-- Build the torsion q-root source from actual `InitialThetaData`; its base
+bad-place finiteness is derived from the curve's multiplicative support. -/
+noncomputable def ofInitialThetaDataFromGlobal
+    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
+    (D : Iut.InitialThetaData AG TG) :
+    IutTorsionQRootSource D.F ↥D.prime.torsionField D.prime.ℓ
+      (IutBaseQPilotSource.ofInitialThetaData D) := by
+  exact ofInitialThetaDataOfQPilotBadPlaceFiniteness D
+    (iutInitialThetaBadPlacesOver_finite D)
+
 theorem canonical_qroot_weighted_sum_of_initialThetaData
     {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
     (D : Iut.InitialThetaData AG TG)
-    (hBadFinite : (Iut.badPlacesOver D.F D.E D.VBad).Finite)
     (p : ℕ)
     [Fintype {v : NumberField.FinitePlace ↥D.prime.torsionField //
       Arithmetic.residueChar v = p}]
@@ -135,13 +142,10 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
         Arithmetic.placeWeight v.1 *
           (if hv : v.1 ∈ iutBadPlacesOverFinset (k := D.F)
               (K := ↥D.prime.torsionField)
-              (IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime
-                hBadFinite).badPlaces
-              (IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime
-                hBadFinite).badPlaces_finite then
+              (IutBaseQPilotSource.ofInitialThetaData D).badPlaces
+              (IutBaseQPilotSource.ofInitialThetaData D).badPlaces_finite then
         Arithmetic.ordp v.1
-              ((ofInitialThetaDataOfQPilotBadPlaceFiniteness D hBadFinite).qroot
-                ⟨v.1, hv⟩)
+              ((ofInitialThetaDataFromGlobal D).qroot ⟨v.1, hv⟩)
           else 0) =
       ∑ w ∈ bad.filter (fun w => Arithmetic.residueChar w = p),
         (Arithmetic.inertDeg w : ℝ) / Module.finrank ℚ D.F *
@@ -149,10 +153,9 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
             (D.prime.qOrder w hw : ℝ) / (2 * (D.prime.ℓ : ℝ))
           else 0) := by
   classical
-  let B := IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime hBadFinite
-  let R := IutTorsionQRootSource.ofInitialThetaDataOfQPilotBadPlaceFiniteness
-    D hBadFinite
-  let C := IutCompletionTateValuation.ofInitialThetaData D hBadFinite
+  let B := IutBaseQPilotSource.ofInitialThetaData D
+  let R := IutTorsionQRootSource.ofInitialThetaDataFromGlobal D
+  let C := IutCompletionTateValuation.ofInitialThetaData D
   let c : NumberField.FinitePlace D.F → ℝ := fun w =>
     if hw : w ∈ Iut.badPlacesOver D.F D.E D.VBad then
       (D.prime.qOrder w hw : ℝ) / (2 * (D.prime.ℓ : ℝ))
@@ -164,7 +167,7 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
       calc
         B.qOrder w = C.orderedQOrder w := C.completionQOrder_eq_orderNat w
         _ = D.prime.qOrder w.1 (B.mem_badPlaces w) :=
-          IutCompletionTateValuation.ofInitialThetaData_order_eq D hBadFinite w
+          IutCompletionTateValuation.ofInitialThetaData_order_eq D w
     have hplaces : w.1 ∈ Iut.badPlacesOver D.F D.E D.VBad :=
       B.mem_badPlaces w
     simp only [c, dite_eq_left hplaces]
