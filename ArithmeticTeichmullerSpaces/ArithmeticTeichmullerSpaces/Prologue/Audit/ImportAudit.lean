@@ -203,6 +203,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.ofBaseCompletionSource
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofAdmissiblePrimeData
 #check JoshiTeich.Act1Scene1.IutQPilotSource.ofAdmissiblePrimeData
+#check JoshiTeich.Act1Scene1.IutQPilotSource.initialThetaParameter_eq_of_tateJ
 #check JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaData
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_rawQNormDegreeNormalization
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
@@ -412,6 +413,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofBaseCompletionSource
 #print axioms JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofAdmissiblePrimeData
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofAdmissiblePrimeData
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.initialThetaParameter_eq_of_tateJ
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaData
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder

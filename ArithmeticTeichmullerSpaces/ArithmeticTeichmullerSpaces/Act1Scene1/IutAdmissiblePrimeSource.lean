@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionSource
 import Iut.Cor312.ThetaData.AdmissiblePrime
+import Iut.Cor312.ThetaData.BadPlaceNorm
 import Iut.Cor312.ThetaData.Basic
 
 namespace JoshiTeich.Act1Scene1
@@ -63,6 +64,70 @@ private lemma admissibleBadPlaces_finite_of_link
     (Iut.badPlacesOver F E VBad).Finite := by
   rw [hPlaces]
   exact T.scene1.data.link.places.finite_toSet
+
+/-- A local Scene1 parameter, packaged as a Tate parameter using the existing
+nonzero and norm laws. -/
+private noncomputable def sceneLinkTateParameter
+    {O : Type uF} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    {T : Corollary312Data F O p}
+    (w : FinitePlace F) (hw : w ∈ T.scene1.data.link.tate.places) :
+    TateParameter (Iut.localCompletion w) :=
+  TateParameter.ofNormLtOne
+    (T.scene1.input_laws.tate_parameter.parameter_nonzero w hw)
+    (by
+      rw [← T.scene1.input_laws.tate_parameter.norm_eq w hw]
+      exact T.scene1.input_laws.tate_parameter.norm_lt_one w hw)
+
+/-- The IUT `tateJ_eq` field and the reference project's `q ↦ j(E_q)` injectivity
+identify a Scene1 parameter once both parameters are known to represent `E`. -/
+theorem initialThetaParameter_eq_of_tateJ
+    {AG : Iut.AnabelianGeometry.{uF}}
+    {TG : Iut.TemperedGeometry AG}
+    (D : Iut.InitialThetaData AG TG)
+    {O : Type uF} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    {T : Corollary312Data D.F O p}
+    (hPlaces : Iut.badPlacesOver D.F D.E D.VBad =
+      (↑T.scene1.data.link.places : Set (FinitePlace D.F)))
+    (hCompat : QNormTateCompatibility T.scene1.data.link)
+    (hLinkTateJ : ∀ w (hw : w ∈ T.scene1.data.link.tate.places),
+      (sceneLinkTateParameter p w hw).tateJ =
+        FinitePlace.embedding w.maximalIdeal D.E.j) :
+    ∀ w : (IutBaseQPilotSource.ofAdmissiblePrimeData T.ell D.prime
+      (admissibleBadPlaces_finite_of_link p hPlaces)).badFinset,
+      ((D.prime.tate w.1
+        (((admissibleBadPlaces_finite_of_link p hPlaces).mem_toFinset).mp w.2)).q :
+          w.1.maximalIdeal.adicCompletion D.F) =
+        T.scene1.data.link.tate.parameter w.1 := by
+  intro w
+  let hBadFinite := admissibleBadPlaces_finite_of_link p hPlaces
+  have hwBad : w.1 ∈ Iut.badPlacesOver D.F D.E D.VBad :=
+    hBadFinite.mem_toFinset.mp w.2
+  have hwPlaces : w.1 ∈ (↑T.scene1.data.link.places : Set (FinitePlace D.F)) := by
+    rw [← hPlaces]
+    exact hwBad
+  have hwLink : w.1 ∈ T.scene1.data.link.places := by
+    exact Finset.mem_coe.mp hwPlaces
+  have hwTate : w.1 ∈ T.scene1.data.link.tate.places := by
+    rw [← hCompat.places_eq]
+    exact hwLink
+  let tLink := sceneLinkTateParameter p w.1 hwTate
+  let tIut := D.prime.tate w.1 hwBad
+  have htateJ : tLink.tateJ = tIut.tateJ := by
+    rw [hLinkTateJ w.1 hwTate, D.prime.tateJ_eq w.1 hwBad]
+  have hTateEq : tLink = tIut :=
+    TateParameter.tateJ_injective tLink tIut (Iut.twelve_ne_zero w.1) htateJ
+  have hq : (tLink.q : Iut.localCompletion w.1) =
+      (tIut.q : Iut.localCompletion w.1) := congrArg
+        (fun t : TateParameter (Iut.localCompletion w.1) =>
+          (t.q : Iut.localCompletion w.1)) hTateEq
+  have hq' : T.scene1.data.link.tate.parameter w.1 =
+      (tIut.q : Iut.localCompletion w.1) := by
+    simpa [tLink, sceneLinkTateParameter, Iut.localCompletion] using hq
+  exact hq'.symm
 
 /-- Assemble `IutQPilotSource` from the real IUT admissible-prime datum.
 
@@ -131,16 +196,14 @@ noncomputable def ofInitialThetaData
     (hEll : T.ell = D.prime.ℓ)
     (hPlaces : Iut.badPlacesOver D.F D.E D.VBad =
       (↑T.scene1.data.link.places : Set (FinitePlace D.F)))
-    (hParameter : ∀ w :
-      (IutBaseQPilotSource.ofAdmissiblePrimeData T.ell D.prime
-        (admissibleBadPlaces_finite_of_link p hPlaces)).badFinset,
-      ((D.prime.tate w.1
-        (((admissibleBadPlaces_finite_of_link p hPlaces).mem_toFinset).mp w.2)).q :
-        w.1.maximalIdeal.adicCompletion D.F) =
-        T.scene1.data.link.tate.parameter w.1)
+    (hLinkTateJ : ∀ w (hw : w ∈ T.scene1.data.link.tate.places),
+      (sceneLinkTateParameter p w hw).tateJ =
+        FinitePlace.embedding w.maximalIdeal D.E.j)
     (hCompat : QNormTateCompatibility T.scene1.data.link) :
-    IutQPilotSource p T :=
-  ofAdmissiblePrimeData p D.prime hEll hPlaces hParameter hCompat
+    IutQPilotSource p T := by
+  have hParameter :=
+    initialThetaParameter_eq_of_tateJ D p hPlaces hCompat hLinkTateJ
+  exact ofAdmissiblePrimeData p D.prime hEll hPlaces hParameter hCompat
 
 end IutQPilotSource
 
