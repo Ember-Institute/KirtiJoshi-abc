@@ -69,12 +69,21 @@ noncomputable def ofBaseCompletionSource
     (hParameter : ∀ w : B.badFinset,
       B.tateParameter w =
         T.scene1.data.link.tate.parameter w.1)
-    (hOrder : ∀ w : B.badFinset,
-      C.orderedQOrder w = T.scene1.data.link.tate.qOrder w.1)
     (hCompat : QNormTateCompatibility T.scene1.data.link) :
     IutQPilotSource p T := by
   classical
   let hTate := T.scene1.input_laws.tate_parameter
+  have hSourceOrder (i : B.badFinset) :
+      B.qOrder i = T.scene1.data.link.tate.qOrder i.1 := by
+    change Arithmetic.completionQOrder i.1 (B.tateParameter i) =
+      Arithmetic.completionQOrder i.1 (T.scene1.data.link.tate.parameter i.1)
+    rw [hParameter i]
+  have hOrder (i : B.badFinset) :
+      C.orderedQOrder i = T.scene1.data.link.tate.qOrder i.1 := by
+    calc
+      C.orderedQOrder i = B.qOrder i :=
+        (C.completionQOrder_eq_orderNat i).symm
+      _ = T.scene1.data.link.tate.qOrder i.1 := hSourceOrder i
   let orderCompatibility : TateOrderNormCompatibility T.scene1.data.link :=
     { uniformizerNorm := completionUniformizerNorm p B C hPlaces
       uniformizerNorm_pos := by
@@ -122,15 +131,12 @@ noncomputable def ofBaseCompletionSource
     { badPlacesOver := B.badPlaces
       badPlacesOver_finite := B.badPlaces_finite
       tateParameter := T.scene1.data.link.tate.parameter
-      qOrder := T.scene1.data.link.tate.qOrder
-      qOrder_pos := ?_
-      qOrder_coprime := ?_
       tateParameter_ne_zero := ?_
+      qOrder_coprime := ?_
       badFinset := B.badFinset
       badFinset_spec := B.badFinset_spec
       badPlacesOver_eq_link := hPlaces
       tateParameter_eq_link := fun _ _ => rfl
-      qOrder_eq_link := fun _ _ => rfl
       orderCompatibility := orderCompatibility
       uniformizer := fun w hw =>
         C.uniformizer (completionIndex p B hPlaces w
@@ -140,11 +146,10 @@ noncomputable def ofBaseCompletionSource
           (linkMemOfBad p B hPlaces w hw))
       uniformizerNorm_eq_chosenNorm := ?_ }
   · intro w hw
-    have hwLink := linkMemOfBad p B hPlaces w hw
     have hwTate : w ∈ T.scene1.data.link.tate.places := by
       rw [← hCompat.places_eq]
-      exact hwLink
-    exact T.scene1.data.link.tate.qOrder_pos hTate w hwTate
+      exact linkMemOfBad p B hPlaces w hw
+    exact hTate.parameter_nonzero w hwTate
   · intro w hw
     let i := completionIndex p B hPlaces w (linkMemOfBad p B hPlaces w hw)
     have hOrderAt : C.orderedQOrder i =
@@ -156,11 +161,6 @@ noncomputable def ofBaseCompletionSource
     change Nat.Coprime T.ell (T.scene1.data.link.tate.qOrder w)
     rw [← hQOrderAt]
     exact C.qOrder_coprime i
-  · intro w hw
-    have hwTate : w ∈ T.scene1.data.link.tate.places := by
-      rw [← hCompat.places_eq]
-      exact linkMemOfBad p B hPlaces w hw
-    exact hTate.parameter_nonzero w hwTate
   · intro w hw
     have hwLink := linkMemOfBad p B hPlaces w hw
     change completionUniformizerNorm p B C hPlaces w =

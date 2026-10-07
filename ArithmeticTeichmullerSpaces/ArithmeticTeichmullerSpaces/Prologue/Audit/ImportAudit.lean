@@ -398,6 +398,10 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutCompletionOrderZ_pos
 #print axioms JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_norm_eq
 #print axioms JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_eq_of_norm_eq
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.qOrder
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_pos
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_eq_link
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_coprime_link
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.completionParameter_norm_eq_chosenUniformizer_pow_order
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation_order_eq_qOrder

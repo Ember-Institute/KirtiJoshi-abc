@@ -67,7 +67,7 @@ lemma completionParameter_norm_eq_chosenUniformizer_pow_order
     (hCompat : QNormTateCompatibility T.scene1.data.link)
     (w : NumberField.FinitePlace K) (hw : w ∈ S.badPlacesOver) :
     ‖S.tateParameter w‖ =
-      ‖S.uniformizer w hw‖ ^ S.qOrder w := by
+      ‖S.uniformizer w hw‖ ^ S.qOrder p w := by
   rw [S.source_norm_eq_uniformizer_pow_order p hCompat w hw,
     ← S.uniformizerNorm_eq_chosenNorm w hw]
 
@@ -81,7 +81,7 @@ noncomputable def toCompletionTateValuation
     (hUniformizer := fun w =>
       S.uniformizer_isCompletionUniformizer w.1
         (S.badFinset_mem_badPlacesOver p w))
-    (sourceOrder := fun w => S.qOrder w.1)
+    (sourceOrder := fun w => S.qOrder p w.1)
     (sourceOrder_norm_eq := fun w =>
       S.completionParameter_norm_eq_chosenUniformizer_pow_order p hCompat
         w.1 (S.badFinset_mem_badPlacesOver p w))
@@ -92,7 +92,7 @@ lemma toCompletionTateValuation_order_eq_qOrder
     (S : IutQPilotSource p T)
     (hCompat : QNormTateCompatibility T.scene1.data.link)
     (w : S.badFinset) :
-    (S.toCompletionTateValuation p hCompat).orderedQOrder w = S.qOrder w.1 := by
+    (S.toCompletionTateValuation p hCompat).orderedQOrder w = S.qOrder p w.1 := by
   have hwBad := S.badFinset_mem_badPlacesOver p w
   exact iutCompletionUniformizerQOrder_eq_of_norm_eq
     w.1 ((S.toBaseQPilotSource p hCompat).tateParameter w)
@@ -100,7 +100,7 @@ lemma toCompletionTateValuation_order_eq_qOrder
     ((S.toBaseQPilotSource p hCompat).tateParameter_norm_lt_one w)
     (S.uniformizer w.1 hwBad)
     (S.uniformizer_isCompletionUniformizer w.1 hwBad)
-    (S.qOrder w.1)
+    (S.qOrder p w.1)
     (S.completionParameter_norm_eq_chosenUniformizer_pow_order p hCompat w.1 hwBad)
 
 end IutQPilotSource

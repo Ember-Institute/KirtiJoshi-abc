@@ -38,14 +38,11 @@ structure IutQPilotSource
   badPlacesOver_finite : badPlacesOver.Finite
   /-- The Tate parameter attached to each place by the IUT Theta data. -/
   tateParameter : (w : NumberField.FinitePlace K) → w.maximalIdeal.adicCompletion K
-  /-- The normalized integer q-order attached to each bad place. -/
-  qOrder : NumberField.FinitePlace K → ℕ
-  /-- The IUT q-order is positive on the bad carrier. -/
-  qOrder_pos : ∀ w, w ∈ badPlacesOver → 0 < qOrder w
-  /-- The admissible prime is coprime to each normalized Tate q-order. -/
-  qOrder_coprime : ∀ w, w ∈ badPlacesOver → Nat.Coprime T.ell (qOrder w)
   /-- The Tate parameter is nonzero on the bad carrier. -/
   tateParameter_ne_zero : ∀ w, w ∈ badPlacesOver → tateParameter w ≠ 0
+  /-- The admissible prime is coprime to the valuation-derived q-order. -/
+  qOrder_coprime : ∀ w, w ∈ badPlacesOver →
+    Nat.Coprime T.ell (Arithmetic.completionQOrder w (tateParameter w))
   /-- The finite carrier exported by the IUT q-pilot construction. -/
   badFinset : Finset (NumberField.FinitePlace K)
   /-- The finite enumeration is exactly `badPlacesOver`. -/
@@ -56,9 +53,6 @@ structure IutQPilotSource
   /-- The IUT Tate parameter agrees with the local Tate parameter. -/
   tateParameter_eq_link : ∀ w, w ∈ badPlacesOver →
     tateParameter w = T.scene1.data.link.tate.parameter w
-  /-- The IUT q-order agrees with the local Tate q-order. -/
-  qOrder_eq_link : ∀ w, w ∈ badPlacesOver →
-    qOrder w = T.scene1.data.link.tate.qOrder w
   /-- Uniformizer normalization supplied by the IUT Tate/q-order source. -/
   orderCompatibility : TateOrderNormCompatibility T.scene1.data.link
   /--
@@ -100,12 +94,37 @@ lemma mem_badPlacesOver_iff_link (S : IutQPilotSource p T)
   change w ∈ S.badPlacesOver ↔ w ∈ (↑T.scene1.data.link.places : Set _)
   rw [S.badPlacesOver_eq_link]
 
+noncomputable def qOrder (S : IutQPilotSource p T)
+    (w : NumberField.FinitePlace K) : ℕ :=
+  Arithmetic.completionQOrder w (S.tateParameter w)
+
+lemma qOrder_pos (S : IutQPilotSource p T)
+    (hCompat : QNormTateCompatibility T.scene1.data.link)
+    {w : NumberField.FinitePlace K} (hw : w ∈ S.badPlacesOver) :
+    0 < S.qOrder p w := by
+  have hwLink : w ∈ T.scene1.data.link.places :=
+    (S.mem_badPlacesOver_iff_link p w).mp hw
+  have hTate := T.scene1.input_laws.tate_parameter
+  have hwTate : w ∈ T.scene1.data.link.tate.places := by
+    rw [← hCompat.places_eq]
+    exact hwLink
+  change 0 < Arithmetic.completionQOrder w (S.tateParameter w)
+  rw [S.tateParameter_eq_link w hw]
+  exact T.scene1.data.link.tate.qOrder_pos hTate w hwTate
+
+lemma qOrder_eq_link (S : IutQPilotSource p T)
+    {w : NumberField.FinitePlace K} (hw : w ∈ S.badPlacesOver) :
+    S.qOrder p w = T.scene1.data.link.tate.qOrder w := by
+  change Arithmetic.completionQOrder w (S.tateParameter w) =
+    Arithmetic.completionQOrder w (T.scene1.data.link.tate.parameter w)
+  rw [S.tateParameter_eq_link w hw]
+
 lemma qOrder_coprime_link (S : IutQPilotSource p T)
     (w : Corollary312SourceQIndex p T) :
     Nat.Coprime T.ell (T.scene1.data.link.tate.qOrder w.1) := by
   have hwBad : w.1 ∈ S.badPlacesOver :=
     (S.mem_badPlacesOver_iff_link p w.1).mpr w.2
-  rw [← S.qOrder_eq_link w.1 hwBad]
+  rw [← S.qOrder_eq_link p hwBad]
   exact S.qOrder_coprime w.1 hwBad
 
 lemma uniformizerNorm_eq_completionNorm
@@ -139,7 +158,7 @@ lemma source_norm_eq_uniformizer_pow_order
     (hCompat : QNormTateCompatibility T.scene1.data.link)
     (w : NumberField.FinitePlace K) (hw : w ∈ S.badPlacesOver) :
     ‖S.tateParameter w‖ =
-      S.orderCompatibility.uniformizerNorm w ^ S.qOrder w := by
+      S.orderCompatibility.uniformizerNorm w ^ S.qOrder p w := by
   rw [S.tateParameter_eq_link w hw]
   have hwLink : w ∈ T.scene1.data.link.places :=
     (S.mem_badPlacesOver_iff_link p w).mp hw
@@ -150,8 +169,8 @@ lemma source_norm_eq_uniformizer_pow_order
     ‖T.scene1.data.link.tate.parameter w‖ =
         T.scene1.data.link.tate.norm w :=
       (T.scene1.input_laws.tate_parameter.norm_eq w hwTate).symm
-    _ = S.orderCompatibility.uniformizerNorm w ^ S.qOrder w := by
-      rw [S.qOrder_eq_link w hw]
+    _ = S.orderCompatibility.uniformizerNorm w ^ S.qOrder p w := by
+      rw [S.qOrder_eq_link p hw]
       exact S.orderCompatibility.norm_eq_pow_order w hwLink
 
 lemma toSceneQPilot_rawQNormDegreeNormalization
