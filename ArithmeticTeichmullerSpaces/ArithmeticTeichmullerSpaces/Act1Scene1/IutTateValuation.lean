@@ -63,9 +63,55 @@ namespace IutCompletionTateValuation
 variable {F : Type u} [Field F] [NumberField F]
 variable {ell : ℕ} {B : IutBaseQPilotSource F ell}
 
+/-- Build the completion valuation from the normalized order carried by
+`TateParameter.toOrdered`. Its norm law and coprimality condition are the
+completion forms of `norm_q_eq_pow_orderNat` and `q_order_coprime`. -/
+def ofIutNormalizedOrder
+    (uniformizer : ∀ w : B.badFinset, w.1.maximalIdeal.adicCompletion F)
+    (hUniformizer : ∀ w,
+      Arithmetic.IsCompletionUniformizer w.1 (uniformizer w))
+    (sourceOrder : B.badFinset → ℕ)
+    (sourceOrder_norm_eq : ∀ w,
+      ‖B.tateParameter w‖ = ‖uniformizer w‖ ^ sourceOrder w)
+    (sourceOrder_coprime : ∀ w, Nat.Coprime ell (sourceOrder w)) :
+    IutCompletionTateValuation B := by
+  refine
+    { uniformizer := uniformizer
+      uniformizer_isCompletionUniformizer := hUniformizer
+      orderedQOrder_coprime := ?_ }
+  intro w
+  have hOrder :
+      B.uniformizerQOrder uniformizer hUniformizer w = sourceOrder w := by
+    change iutCompletionUniformizerQOrder w.1 (B.tateParameter w)
+      (B.tateParameter_ne_zero w) (uniformizer w) (hUniformizer w) = sourceOrder w
+    exact iutCompletionUniformizerQOrder_eq_of_norm_eq w.1
+      (B.tateParameter w) (B.tateParameter_ne_zero w)
+      (B.tateParameter_norm_lt_one w) (uniformizer w) (hUniformizer w)
+      (sourceOrder w) (sourceOrder_norm_eq w)
+  rw [hOrder]
+  exact sourceOrder_coprime w
+
 noncomputable def orderedQOrder
     (C : IutCompletionTateValuation B) (w : B.badFinset) : ℕ :=
   B.uniformizerQOrder C.uniformizer C.uniformizer_isCompletionUniformizer w
+
+lemma ofIutNormalizedOrder_order_eq
+    (uniformizer : ∀ w : B.badFinset, w.1.maximalIdeal.adicCompletion F)
+    (hUniformizer : ∀ w,
+      Arithmetic.IsCompletionUniformizer w.1 (uniformizer w))
+    (sourceOrder : B.badFinset → ℕ)
+    (sourceOrder_norm_eq : ∀ w,
+      ‖B.tateParameter w‖ = ‖uniformizer w‖ ^ sourceOrder w)
+    (sourceOrder_coprime : ∀ w, Nat.Coprime ell (sourceOrder w))
+    (w : B.badFinset) :
+    (ofIutNormalizedOrder (B := B) uniformizer hUniformizer sourceOrder
+      sourceOrder_norm_eq sourceOrder_coprime).orderedQOrder w = sourceOrder w := by
+  change iutCompletionUniformizerQOrder w.1 (B.tateParameter w)
+    (B.tateParameter_ne_zero w) (uniformizer w) (hUniformizer w) = sourceOrder w
+  exact iutCompletionUniformizerQOrder_eq_of_norm_eq w.1
+    (B.tateParameter w) (B.tateParameter_ne_zero w)
+    (B.tateParameter_norm_lt_one w) (uniformizer w) (hUniformizer w)
+    (sourceOrder w) (sourceOrder_norm_eq w)
 
 lemma completionQOrder_eq_orderNat
     (C : IutCompletionTateValuation B) (w : B.badFinset) :
@@ -116,7 +162,6 @@ lemma valued_tateParameter_eq_exp_neg_order
   have hm_order := zpow_right_injective₀ (zero_lt_one.trans hN) hN.ne' h1
   rw [hm, hm_order]
   congr 1
-  push_cast
   ring
 
 end IutCompletionTateValuation

@@ -313,6 +313,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ordp_eq
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum
 #check JoshiTeich.Act1Scene1.IutCompletionTateValuation
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder_order_eq
 #check JoshiTeich.Act1Scene1.iutCompletionOrderZ
 #check JoshiTeich.Act1Scene1.iutCompletionOrderZ_norm_eq
 #check JoshiTeich.Act1Scene1.iutCompletionOrderZ_pos
@@ -394,6 +396,8 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation_order_eq_qOrder
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofBaseCompletionSource
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder_order_eq
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.qOrder_coprime
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
 #print axioms JoshiTeich.Act1Scene1.IutTorsionRepresentationData.toGlobalTorsionBasis
