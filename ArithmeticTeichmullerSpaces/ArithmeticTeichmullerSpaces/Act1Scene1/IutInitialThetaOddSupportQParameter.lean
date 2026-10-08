@@ -51,7 +51,7 @@ private theorem iutCurve_j_eq_div_of_field
   congr 1
   rw [← WeierstrassCurve.coe_Δ', ← Units.val_inv_eq_inv_val]
 
-private theorem iutInitialThetaOddSupport_j_norm_gt_one
+theorem iutInitialThetaOddSupport_j_norm_gt_one
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
     {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
     (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
@@ -81,6 +81,43 @@ private theorem iutInitialThetaOddSupport_j_norm_gt_one
   intro hnorm
   have hvalued := (iut_norm_embedding_le_one_iff v (iutInitialThetaModuliJ D)).mp hnorm
   exact hmod_not_le hvalued
+
+/-- The full odd multiplicative support on the moduli field is finite. Its
+places all lie in the finite multiplicative support of the actual curve's
+moduli `j`-invariant. -/
+theorem iutInitialThetaOddModSupport_finite
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (iutVBadOddModSupportPort D).Finite := by
+  by_cases hj : iutInitialThetaModuliJ D = 0
+  · refine Set.Finite.subset Set.finite_empty ?_
+    intro v hv
+    have hnorm := iutInitialThetaOddSupport_j_norm_gt_one D v hv
+    rw [hj, map_zero] at hnorm
+    exact absurd hnorm (not_lt_of_ge (by norm_num))
+  · refine (NumberField.FinitePlace.hasFiniteMulSupport hj).subset ?_
+    intro v hv
+    rw [Function.mem_mulSupport, ← NumberField.FinitePlace.norm_embedding_eq]
+    intro hnorm
+    have hle :
+        ‖(NumberField.FinitePlace.embedding v.maximalIdeal
+          (iutInitialThetaModuliJ D) : JoshiTeich.ReferenceIut.localCompletion v)‖ ≤ 1 := by
+      rw [hnorm]
+    exact absurd hle
+      (not_le_of_gt (iutInitialThetaOddSupport_j_norm_gt_one D v hv))
+
+/-- The full-support places above the moduli support form a finite carrier in
+the actual torsion field. -/
+theorem iutInitialThetaOddSupportOverTorsion_finite
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (iutBadPlacesOver
+      (k := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+      (K := ↥D.prime.torsionField) (iutVBadOddModSupportPort D)).Finite :=
+  iutBadPlacesOver_finite (iutVBadOddModSupportPort D)
+    (iutInitialThetaOddModSupport_finite D)
 
 noncomputable def iutInitialThetaOddSupportBaseTateParameter
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
