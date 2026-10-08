@@ -33,6 +33,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutAdmissiblePrimeSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadSupport
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLinkSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
@@ -413,6 +414,13 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutBadPlacesOver_subset_oddMultiplicativeSupport
 #check JoshiTeich.Act1Scene1.iutInitialThetaBadPlacesOver_finite
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofInitialThetaData
+#check JoshiTeich.Act1Scene1.iutInitialThetaTateParameterData
+#check JoshiTeich.Act1Scene1.iutInitialThetaTateParameterData_laws
+#check JoshiTeich.Act1Scene1.iutInitialThetaTateParameterData_places_eq
+#check JoshiTeich.Act1Scene1.AdelicThetaLinkData.ofInitialThetaData
+#check JoshiTeich.Act1Scene1.iutInitialThetaLink_places_eq_badPlacesOver
+#check JoshiTeich.Act1Scene1.iutInitialThetaLink_qNormTateCompatibility
+#check JoshiTeich.Act1Scene1.iutInitialThetaLink_tateParameter_j_eq
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
@@ -444,6 +452,10 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofAdmissiblePrimeData
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.initialThetaParameter_eq_of_tateJ
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaData
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateParameterData_laws
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaLink_places_eq_badPlacesOver
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaLink_qNormTateCompatibility
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaLink_tateParameter_j_eq
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder
 #print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder_order_eq
