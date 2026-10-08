@@ -1,7 +1,10 @@
 # JoshiTeich 来源登记
 
-本文件登记 `ArithmeticTeichmullerSpaces/` 中声明的来源和验证状态。`refer/iut`
-不是本工程的上游、Lake 依赖或证明来源；它只能作为逐文件 API 参考。
+本文件登记 `ArithmeticTeichmullerSpaces/` 中声明的来源和验证状态。计划规定
+`refer/iut` 只能作为逐文件 API 参考；截至 S1.136，实际配置仍把它列为 Lake 依赖，
+源码也仍有 `import Iut.*`。因此当前树违反 `docs/开发计划.V1.md` §0.2，不能把本文件
+之前“不是 Lake 依赖或证明来源”的陈述视为已实现状态。迁移状态和未闭合的导入清单见
+`docs/开发计划.V1Act1log2.md` 的 S1.136。
 
 ## 冻结环境
 
