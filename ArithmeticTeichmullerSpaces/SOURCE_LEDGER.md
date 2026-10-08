@@ -90,8 +90,12 @@
   A direct `lake env lean` check of `IutInitialThetaQRootAccounting.lean` also passed (exit status `0`,
   `3:08.02`, maximum RSS `8,172,220 kB`); active Lean PID `12597` had soft/hard address-space limits
   `17179869184` bytes. New declarations in ImportAudit depend only on `propext`, `Classical.choice`,
-  and `Quot.sound`. This record update will count as `8/10` if pushed; full/directed limits remain
-  `60 GiB` / `16 GiB`.
+  and `Quot.sound`.
+- The S1.131 full-build correction reset the cycle after its successful result-record push; that record
+  update counted as `1/10`. S1.132 commit `65cd89d` was successfully pushed as `2/10`. The current
+  build-record update will count as `3/10` if pushed. Continue running
+  `lake build +ArithmeticTeichmullerSpaces` after each `10` successful pushes. Directed/full-build
+  address-space caps remain `16 GiB` / `60 GiB`.
 
 ## JoshiTeich references
 
