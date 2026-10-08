@@ -2,8 +2,8 @@
 
 本文件登记 `ArithmeticTeichmullerSpaces/` 中声明的来源和验证状态。计划规定
 `refer/iut` 只能作为逐文件 API 参考。S1.136 的提交基线仍将 `refer/iut` 列为 Lake
-依赖，并含有 `import Iut.*`；当前未提交工作区已移除该依赖和导入，IUT 模块位于本工程
-的 `ReferenceIut` 命名空间内。Lake 配置改为依赖独立的 `tate-curves-theta` 仓库，固定在
+依赖，并含有 `import Iut.*`；S1.137 已移除该依赖和导入，IUT 模块现位于本工程的
+`ReferenceIut` 命名空间内。Lake 配置改为依赖独立的 `tate-curves-theta` 仓库，固定在
 `ca6c2279d3cea0690cdb01328e727118d5485d68`。`lake check-build` 只确认默认目标配置有效；
 S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT 依赖闭包在冻结 Lean
 版本下可构建。此验证只覆盖这两个目标，不代表完整项目构建或 Corollary 3.12 的数学义务
