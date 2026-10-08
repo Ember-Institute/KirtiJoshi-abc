@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQParameter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadSupport
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadOddPort
 
 namespace JoshiTeich.Act1Scene1
@@ -125,6 +126,66 @@ theorem iutInitialThetaOddSupportBaseQPilotSource_tateJ_eq
       NumberField.FinitePlace.embedding w.1.maximalIdeal D.E.j :=
   iutInitialThetaOddSupportBaseTateParameterAtCurvePlace_tateJ_eq D w.1
     ((iutInitialThetaOddSupportBaseQPilotSource D).mem_badPlaces w)
+
+theorem iutInitialThetaOddSupportBaseTateParameter_eq_admissiblePrime
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : NumberField.FinitePlace D.F)
+    (hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    iutInitialThetaOddSupportBaseTateParameterAtCurvePlace D w
+        ((iutInitialThetaOddMultiplicativeSupport_finite D).mem_toFinset.mp
+          ((iutInitialThetaOddMultiplicativeSupport_finite D).mem_toFinset.mpr
+            (iutBadPlacesOver_subset_oddMultiplicativeSupport D hw))) =
+      D.prime.tate w hw := by
+  apply TateParameter.tateJ_injective _ _
+    (JoshiTeich.ReferenceIut.twelve_ne_zero w)
+  rw [iutInitialThetaOddSupportBaseTateParameterAtCurvePlace_tateJ_eq,
+    D.prime.tateJ_eq]
+
+theorem iutInitialThetaOddSupportBaseQPilotSource_tateParameter_eq_admissiblePrime
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaOddSupportBaseQPilotSource D).badFinset)
+    (hw : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    (iutInitialThetaOddSupportBaseQPilotSource D).tateParameter w =
+      (D.prime.tate w.1 hw).q := by
+  simpa [iutInitialThetaOddSupportBaseQPilotSource] using
+    congrArg (fun t : TateParameter (w.1.maximalIdeal.adicCompletion D.F) =>
+      (t.q : w.1.maximalIdeal.adicCompletion D.F))
+      (iutInitialThetaOddSupportBaseTateParameter_eq_admissiblePrime D w.1 hw)
+
+theorem iutInitialThetaOddSupportBaseQPilotSource_qOrder_eq_admissiblePrime
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaOddSupportBaseQPilotSource D).badFinset)
+    (hw : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    (iutInitialThetaOddSupportBaseQPilotSource D).qOrder w =
+      D.prime.qOrder w.1 hw := by
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  change iutCompletionQOrder w.1 (B.tateParameter w) = D.prime.qOrder w.1 hw
+  let π := D.prime.unif w.1 hw
+  have hπSource := D.prime.unif_isUniformizer w.1 hw
+  have hπ : Arithmetic.IsCompletionUniformizer w.1 π :=
+    ⟨hπSource.ne_zero, hπSource.norm_lt_one, hπSource.generates⟩
+  have hParameter := iutInitialThetaOddSupportBaseQPilotSource_tateParameter_eq_admissiblePrime
+    D w hw
+  have hNorm : ‖B.tateParameter w‖ = ‖π‖ ^ D.prime.qOrder w.1 hw := by
+    rw [hParameter]
+    exact (D.prime.tate w.1 hw).norm_q_eq_pow_orderNat hπSource
+  exact iutCompletionQOrder_eq_of_norm_eq_uniformizer_pow w.1
+    (B.tateParameter w) (B.tateParameter_ne_zero w)
+    (B.tateParameter_norm_lt_one w) π hπ (D.prime.qOrder w.1 hw) hNorm
+
+theorem iutInitialThetaOddSupportBaseQPilotSource_qOrder_coprime_on_vbad
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaOddSupportBaseQPilotSource D).badFinset)
+    (hw : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    Nat.Coprime D.prime.ℓ
+      ((iutInitialThetaOddSupportBaseQPilotSource D).qOrder w) := by
+  rw [iutInitialThetaOddSupportBaseQPilotSource_qOrder_eq_admissiblePrime D w hw]
+  change Nat.Coprime D.prime.ℓ
+    ((D.prime.tate w.1 hw).toOrdered
+      (D.prime.unif_isUniformizer w.1 hw)).orderNat
+  exact ((D.prime.tate w.1 hw).toOrdered_primeToOrder_iff
+    (D.prime.unif_isUniformizer w.1 hw) D.prime.ℓ).mp
+      (D.prime.q_order_coprime w.1 hw)
 
 private theorem iutInitialThetaOddSupport_badPlaces_eq_fullModuliSupport
     (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
@@ -270,6 +331,25 @@ noncomputable def iutInitialThetaOddSupportTorsionQRootSource
       (iutInitialThetaOddSupport_badPlaces_eq_fullModuliSupport D) w)
     hsix P.ell_pos P.ell_odd
     (fun w => iutInitialThetaOddSupportTateFamily_q_eq_baseParameter D w)
+
+theorem iutInitialThetaOddSupportTorsionQRootSource_qroot_pow_eq_admissiblePrime
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hw : ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace v).1 ∈
+      JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    (iutInitialThetaOddSupportTorsionQRootSource D).qroot v ^ (2 * D.prime.ℓ) =
+      (iutInitialThetaOddSupportTorsionQRootSource D).completionMap v
+        ((D.prime.tate
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace v).1 hw).q) := by
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  calc
+    R.qroot v ^ (2 * D.prime.ℓ) =
+        R.completionMap v (B.tateParameter (R.basePlace v)) := R.qroot_pow_eq v
+    _ = R.completionMap v
+        ((D.prime.tate (R.basePlace v).1 hw).q) := by
+      rw [iutInitialThetaOddSupportBaseQPilotSource_tateParameter_eq_admissiblePrime
+        D (R.basePlace v) hw]
 
 end
 
