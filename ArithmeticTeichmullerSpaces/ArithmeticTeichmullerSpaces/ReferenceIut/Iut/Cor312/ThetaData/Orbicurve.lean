@@ -12,6 +12,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime
+import Mathlib.Topology.Algebra.Category.ProfiniteGrp.Basic
 
 /-!
 # Initial Θ-data: ℓ-torsion orbicurves, K-core, and distinguished cusp (taxis #41)

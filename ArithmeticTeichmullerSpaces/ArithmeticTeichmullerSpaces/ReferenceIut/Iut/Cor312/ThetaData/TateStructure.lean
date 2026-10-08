@@ -4,7 +4,7 @@ original-author: Christian Merten <lana@merten.dev>
 original-commit: `76c7866b5bbc4adbd245a30af1a4fd05d32f8c3f`
 source-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`
 license: Apache-2.0 (see project `LICENSE`)
-modification: copied into the JoshiTeich reference namespace; imports are adapted to local modules
+modification: copied into the JoshiTeich reference namespace; imports are narrowed to the Tate uniformization dependencies
 -/
 /-
 Copyright (c) 2026 The iut contributors. All rights reserved.
@@ -12,7 +12,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PointMap
-import TateCurvesTheta
+import TateCurvesTheta.TateCurve.TateUniformization
 import Mathlib.Topology.Algebra.Valued.NormedValued
 
 /-!

@@ -4,14 +4,23 @@ original-author: Christian Merten <lana@merten.dev>
 original-commit: `09d74a40f46688fa5e4eba46ead73cb37d6abbe2`
 source-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`
 license: Apache-2.0 (see project `LICENSE`)
-modification: copied into the JoshiTeich reference namespace; imports are adapted to local modules
+modification: copied into the JoshiTeich reference namespace; imports are narrowed and one natural-number inequality proof is written without Omega
 -/
 /-
 Copyright (c) 2026 The iut contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
-import Mathlib
+import Mathlib.Analysis.Normed.Field.Basic
+import Mathlib.Analysis.Normed.Field.Lemmas
+import Mathlib.Analysis.Normed.Group.Continuity
+import Mathlib.Analysis.Normed.Group.Ultra
+import Mathlib.Analysis.SpecificLimits.Basic
+import Mathlib.Algebra.Order.GroupWithZero.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
+import Mathlib.Topology.MetricSpace.Ultra.Basic
 
 /-!
 # Square roots in complete ultrametric fields (Hensel's lemma, Babylonian form)
@@ -151,7 +160,11 @@ theorem babylonianSqrt_norm_eq_one_and_norm_sq_sub_le {a x₀ : k} (hx₀ : ‖x
         = ‖babylonianSqrt a x₀ n ^ 2 - a‖ ^ 2 := hstep
       _ ≤ (ε ^ (n + 1)) ^ 2 := pow_le_pow_left₀ (norm_nonneg _) hb 2
       _ = ε ^ (2 * (n + 1)) := by rw [← pow_mul, mul_comm]
-      _ ≤ ε ^ (n + 1 + 1) := pow_le_pow_of_le_one hε0 hε1 (by omega)
+      _ ≤ ε ^ (n + 1 + 1) := pow_le_pow_of_le_one hε0 hε1 (by
+        calc
+          n + 1 + 1 = (n + 1) + 1 := rfl
+          _ ≤ (n + 1) + (n + 1) := Nat.add_le_add_left (Nat.succ_le_succ (Nat.zero_le n)) _
+          _ = 2 * (n + 1) := by rw [Nat.two_mul])
 
 /-- Along the Babylonian iteration, every term stays within `‖x₀ ^ 2 - a‖` of `x₀`. -/
 theorem norm_babylonianSqrt_sub_le {a x₀ : k} (hx₀ : ‖x₀‖ = 1) (h : ‖x₀ ^ 2 - a‖ < 1) (n : ℕ) :

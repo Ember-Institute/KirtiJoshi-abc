@@ -4,7 +4,7 @@ original-author: Christian Merten <lana@merten.dev>
 original-commit: `09d74a40f46688fa5e4eba46ead73cb37d6abbe2`
 source-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`
 license: Apache-2.0 (see project `LICENSE`)
-modification: copied into the JoshiTeich reference namespace; imports are adapted to local modules
+modification: copied into the JoshiTeich reference namespace; imports are narrowed to the required TateCurvesTheta modules
 -/
 /-
 Copyright (c) 2026 The iut contributors. All rights reserved.
@@ -13,7 +13,9 @@ Authors: The iut contributors
 -/
 import Mathlib.AlgebraicGeometry.EllipticCurve.NormalForms
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.UltrametricSqrt
-import TateCurvesTheta
+import TateCurvesTheta.QParameter.JParametrization
+import TateCurvesTheta.TateCurve.IntegralModel
+import TateCurvesTheta.TateCurve.Weierstrass
 
 /-!
 # Tate's isomorphism theorem: split multiplicative curves are Tate curves

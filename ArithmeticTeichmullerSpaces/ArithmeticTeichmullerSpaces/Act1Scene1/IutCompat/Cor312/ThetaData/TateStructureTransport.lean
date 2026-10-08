@@ -12,6 +12,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.TateStructureOfIso
+import TateCurvesTheta.TateCurve.CoordinateBaseChange
 
 /-!
 # Transport of Tate structures along isometric isomorphisms

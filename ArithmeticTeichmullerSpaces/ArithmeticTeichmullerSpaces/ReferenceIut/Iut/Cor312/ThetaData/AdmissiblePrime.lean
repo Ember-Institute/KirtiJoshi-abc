@@ -4,7 +4,7 @@ original-author: Christian Merten <lana@merten.dev>
 original-commit: `4395e76c629fb53bb669a54971b51a024af3d7f8`
 source-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`
 license: Apache-2.0 (see project `LICENSE`)
-modification: copied into the JoshiTeich reference namespace; imports are adapted to local modules
+modification: copied into the JoshiTeich reference namespace; imports are narrowed to the required TateCurvesTheta module
 -/
 /-
 Copyright (c) 2026 The iut contributors. All rights reserved.
@@ -12,7 +12,9 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.GlobalField
-import TateCurvesTheta
+import TateCurvesTheta.QParameter.JParametrization
+import TateCurvesTheta.QParameter.NormalizedOrder
+import TateCurvesTheta.QParameter.PrimeToOrder
 
 /-!
 # Initial Θ-data: admissible prime and ℓ-torsion field (taxis #40)
