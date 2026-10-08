@@ -232,6 +232,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddSupportBaseTateParameter_tateJ_eq
 #check JoshiTeich.Act1Scene1.iutInitialThetaFinitePlaceSection_liesOver_moduli
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddSupportSelected_q_eq_baseParameter
+#check JoshiTeich.Act1Scene1.iutInitialThetaOddSupport_q_eq_baseParameter_of_liesOver
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.qOrder
 #check JoshiTeich.Act1Scene1.IutBaseQPilotSource.qOrder_pos
@@ -487,6 +488,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportBaseTateParameter_tateJ_eq
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaFinitePlaceSection_liesOver_moduli
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportSelected_q_eq_baseParameter
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupport_q_eq_baseParameter_of_liesOver
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaLink_places_eq_badPlacesOver
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaLink_qNormTateCompatibility
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaLink_tateParameter_j_eq

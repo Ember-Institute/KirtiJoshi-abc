@@ -153,6 +153,18 @@ theorem iutInitialThetaFinitePlaceSection_liesOver_moduli
   exact (iutInitialThetaAlgebraModK_eq D) ▸
     iutInitialThetaFinitePlaceSection_liesOver D v
 
+private theorem iutInitialThetaFinitePlaceLiesOver_toCanonical
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {v : NumberField.FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)}
+    {w : NumberField.FinitePlace ↥D.prime.torsionField}
+    (hvw : JoshiTeich.ReferenceIut.FinitePlace.LiesOver w v) :
+    @JoshiTeich.ReferenceIut.FinitePlace.LiesOver
+      _ _ _ _ _ _
+      (JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E).instAlgebraSubtypeMem w v :=
+  (iutInitialThetaAlgebraModK_eq D) ▸ hvw
+
 /-- At every selected representative of the full odd multiplicative support, the
 actual torsion-field Tate family parameter is the image of the locally constructed
 base parameter. This includes residue characteristic `ell`. -/
@@ -195,6 +207,45 @@ theorem iutInitialThetaOddSupportSelected_q_eq_baseParameter
           _ = S.t.tateJ := (iutTateStructure_tateJ_eq S).symm
   simpa [v', t, S] using
     iutTateParameter_q_eq_of_tateJ_eq hvw t S.t hJ
+
+/-- At every torsion-field place above the full odd multiplicative support, the
+Tate-family parameter is the image of the base-completion parameter. This
+removes dependence on the particular finite-place section representative. -/
+theorem iutInitialThetaOddSupport_q_eq_baseParameter_of_liesOver
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : NumberField.FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+    (hv : v ∈ iutVBadOddModSupportPort D)
+    (w : NumberField.FinitePlace ↥D.prime.torsionField)
+    (hvw : JoshiTeich.ReferenceIut.FinitePlace.LiesOver w v) :
+    (((iutInitialThetaTateFamilyOfTorsion D).S w ⟨v, hv,
+      iutInitialThetaFinitePlaceLiesOver_toCanonical D hvw⟩).t.q :
+      w.maximalIdeal.adicCompletion ↥D.prime.torsionField) =
+      iutEmbedCompletion hvw
+        ((iutInitialThetaOddSupportBaseTateParameter D v hv).q) := by
+  let t := iutInitialThetaOddSupportBaseTateParameter D v hv
+  let hBad := iutInitialThetaFinitePlaceLiesOver_toCanonical D hvw
+  let S := (iutInitialThetaTateFamilyOfTorsion D).S w ⟨v, hv, hBad⟩
+  have hJ : (iutEmbedTateParameter hvw t).tateJ = S.t.tateJ := by
+    calc
+      (iutEmbedTateParameter hvw t).tateJ = iutEmbedCompletion hvw t.tateJ :=
+        (iutTateJ_embed hvw t).symm
+      _ = NumberField.FinitePlace.embedding w.maximalIdeal
+          (algebraMap D.F ↥D.prime.torsionField D.E.j) := by
+        rw [iutInitialThetaOddSupportBaseTateParameter_tateJ_eq D v hv,
+          iutEmbedCompletion_embedding hvw, iutInitialThetaModuliJ_map_eq D]
+      _ = (JoshiTeich.ReferenceIut.curveKw D.E D.prime.torsionField w).j := by
+        rw [iutCurve_j_eq_div_of_field (E := D.E),
+          iutCurve_j_eq_div_of_field
+            (E := JoshiTeich.ReferenceIut.curveKw D.E D.prime.torsionField w)]
+        simp only [JoshiTeich.ReferenceIut.curveKw, JoshiTeich.ReferenceIut.curveK,
+          WeierstrassCurve.map_c₄, WeierstrassCurve.map_Δ, map_div₀, map_pow]
+      _ = (JoshiTeich.ReferenceIut.curveKw D.E D.prime.torsionField w).c₄ ^ 3 /
+          (JoshiTeich.ReferenceIut.curveKw D.E D.prime.torsionField w).Δ :=
+        iutCurve_j_eq_div_of_field _
+      _ = S.t.tateJ := (iutTateStructure_tateJ_eq S).symm
+  simpa [t, S] using iutTateParameter_q_eq_of_tateJ_eq hvw t S.t hJ
 
 end
 
