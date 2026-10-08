@@ -53,7 +53,7 @@ def IutTateQuotientUniformization.ofTateStructure
     q_norm_lt_one := S.t.norm_lt_one
     iso := S.iso }
 
-private def iutEmbedTateParameter
+def iutEmbedTateParameter
     {F Kt : Type u} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
     [Algebra F Kt] {v : NumberField.FinitePlace Kt} {w : NumberField.FinitePlace F}
     (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal)
@@ -64,7 +64,7 @@ private def iutEmbedTateParameter
     rw [Units.coe_map]
     exact (iutEmbedCompletion_norm_lt_one_iff hvw (t.q : _)).2 t.norm_lt_one
 
-private lemma iutEmbedTateParameter_q_coe
+lemma iutEmbedTateParameter_q_coe
     {F Kt : Type u} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
     [Algebra F Kt] {v : NumberField.FinitePlace Kt} {w : NumberField.FinitePlace F}
     (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal)
@@ -96,7 +96,7 @@ private lemma iutTateCurve_embed
   ext <;> simp [WeierstrassCurve.map, TateParameter.tateCurve, TateParameter.a₄,
     TateParameter.a₆, iutEisenstein_embed, map_ofNat]
 
-private lemma iutTateJ_embed
+lemma iutTateJ_embed
     {F Kt : Type u} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
     [Algebra F Kt] {v : NumberField.FinitePlace Kt} {w : NumberField.FinitePlace F}
     (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal)
@@ -105,7 +105,7 @@ private lemma iutTateJ_embed
   rw [TateParameter.tateJ_def, TateParameter.tateJ_def, map_div₀, map_pow,
     ← WeierstrassCurve.map_c₄, ← WeierstrassCurve.map_Δ, iutTateCurve_embed]
 
-private lemma iutTateStructure_tateJ_eq
+lemma iutTateStructure_tateJ_eq
     {K : Type u} [Field K] [Valued K (WithZero (Multiplicative ℤ))]
     [Valuation.RankOne (Valued.v : Valuation K (WithZero (Multiplicative ℤ)))]
     [CompleteSpace K] {E : WeierstrassCurve K} (S : JoshiTeich.ReferenceIut.TateStructure E) :
@@ -116,12 +116,27 @@ private lemma iutTateStructure_tateJ_eq
   rw [mul_pow, ← pow_mul, show 4 * 3 = 12 from rfl]
   exact mul_div_mul_left _ _ (pow_ne_zero _ hu)
 
-private lemma iutCurve_j_eq_div
+lemma iutCurve_j_eq_div
     {F : Type u} [Field F] [NumberField F] (E : WeierstrassCurve F) [E.IsElliptic] :
     E.j = E.c₄ ^ 3 / E.Δ := by
   rw [WeierstrassCurve.j, div_eq_inv_mul]
   congr 1
   rw [← WeierstrassCurve.coe_Δ', ← Units.val_inv_eq_inv_val]
+
+/-- Equality of Tate `j`-invariants determines the embedded q-parameter. -/
+theorem iutTateParameter_q_eq_of_tateJ_eq
+    {F Kt : Type u} [Field F] [NumberField F] [Field Kt] [NumberField Kt]
+    [Algebra F Kt] {v : NumberField.FinitePlace Kt} {w : NumberField.FinitePlace F}
+    (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal)
+    (t : TateParameter (w.maximalIdeal.adicCompletion F))
+    (s : TateParameter (v.maximalIdeal.adicCompletion Kt))
+    (hJ : (iutEmbedTateParameter hvw t).tateJ = s.tateJ) :
+    (s.q : v.maximalIdeal.adicCompletion Kt) =
+      iutEmbedCompletion hvw (t.q : w.maximalIdeal.adicCompletion F) := by
+  have hParam := TateParameter.tateJ_injective
+    (iutEmbedTateParameter hvw t) s
+    (JoshiTeich.ReferenceIut.twelve_ne_zero v) hJ
+  rw [← hParam, iutEmbedTateParameter_q_coe]
 
 private theorem iutTateFamily_q_eq_baseCompletion
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
