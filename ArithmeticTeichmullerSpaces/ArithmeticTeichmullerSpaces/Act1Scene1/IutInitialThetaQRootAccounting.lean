@@ -1,7 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateFamilyQRootAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness
-import Iut.Cor312.LeftHandSide
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.LeftHandSide
 
 namespace JoshiTeich.Act1Scene1
 
@@ -41,8 +41,8 @@ namespace IutCompletionTateValuation
 /-- Build the completion Tate valuation from the chosen uniformizer and normalized
 order carried by the actual IUT admissible-prime source. -/
 noncomputable def ofInitialThetaData
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     :
     IutCompletionTateValuation
       (IutBaseQPilotSource.ofInitialThetaData D) := by
@@ -75,8 +75,8 @@ noncomputable def ofInitialThetaData
     exact hcop
 
 theorem ofInitialThetaData_order_eq
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (w : (IutBaseQPilotSource.ofInitialThetaData D).badFinset) :
     (ofInitialThetaData D).orderedQOrder w =
       D.prime.qOrder w.1
@@ -124,10 +124,10 @@ end IutCompletionTateValuation
 namespace IutTorsionQRootSource
 
 /-- The concrete IUT q-pilot data for actual `InitialThetaData`, with the
-degree weight used by `Iut.Concrete.ThetaRegion.QPilotInputs.qPilot`. -/
+degree weight used by `JoshiTeich.ReferenceIut.Concrete.ThetaRegion.QPilotInputs.qPilot`. -/
 noncomputable def iutInitialThetaQPilotData
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) : Iut.QPilotData D := by
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) : JoshiTeich.ReferenceIut.QPilotData D := by
   let B := IutBaseQPilotSource.ofInitialThetaData D
   exact
     { badFinset := B.badFinset
@@ -138,22 +138,22 @@ noncomputable def iutInitialThetaQPilotData
 /-- Build the torsion q-root source from actual `InitialThetaData`; its base
 bad-place finiteness is derived from the curve's multiplicative support. -/
 noncomputable def ofInitialThetaDataFromGlobal
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     IutTorsionQRootSource D.F ↥D.prime.torsionField D.prime.ℓ
       (IutBaseQPilotSource.ofInitialThetaData D) := by
   exact ofInitialThetaDataOfQPilotBadPlaceFiniteness D
     (iutInitialThetaBadPlacesOver_finite D)
 
 theorem canonical_qroot_weighted_sum_of_initialThetaData
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (p : ℕ)
     [Fintype {v : NumberField.FinitePlace ↥D.prime.torsionField //
       Arithmetic.residueChar v = p}]
     (bad : Finset (NumberField.FinitePlace D.F))
     (hbad : (↑bad : Set (NumberField.FinitePlace D.F)) =
-      Iut.badPlacesOver D.F D.E D.VBad) :
+      JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
     ∑ v : {v : NumberField.FinitePlace ↥D.prime.torsionField //
         Arithmetic.residueChar v = p},
         Arithmetic.placeWeight v.1 *
@@ -166,7 +166,7 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
           else 0) =
       ∑ w ∈ bad.filter (fun w => Arithmetic.residueChar w = p),
         (Arithmetic.inertDeg w : ℝ) / Module.finrank ℚ D.F *
-          (if hw : w ∈ Iut.badPlacesOver D.F D.E D.VBad then
+          (if hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad then
             (D.prime.qOrder w hw : ℝ) / (2 * (D.prime.ℓ : ℝ))
           else 0) := by
   classical
@@ -174,7 +174,7 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
   let R := IutTorsionQRootSource.ofInitialThetaDataFromGlobal D
   let C := IutCompletionTateValuation.ofInitialThetaData D
   let c : NumberField.FinitePlace D.F → ℝ := fun w =>
-    if hw : w ∈ Iut.badPlacesOver D.F D.E D.VBad then
+    if hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad then
       (D.prime.qOrder w hw : ℝ) / (2 * (D.prime.ℓ : ℝ))
     else 0
   have hc : ∀ w : B.badFinset,
@@ -185,13 +185,13 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
         B.qOrder w = C.orderedQOrder w := C.completionQOrder_eq_orderNat w
         _ = D.prime.qOrder w.1 (B.mem_badPlaces w) :=
           IutCompletionTateValuation.ofInitialThetaData_order_eq D w
-    have hplaces : w.1 ∈ Iut.badPlacesOver D.F D.E D.VBad :=
+    have hplaces : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad :=
       B.mem_badPlaces w
     simp only [c, dite_eq_left hplaces]
     rw [hqOrder]
   have hbadB : (↑bad : Set (NumberField.FinitePlace D.F)) = B.badPlaces := by
     change (↑bad : Set (NumberField.FinitePlace D.F)) =
-      Iut.badPlacesOver D.F D.E D.VBad
+      JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad
     exact hbad
   have hsum := IutTorsionQRootSource.canonical_qroot_weighted_sum_of_tateValuation
     (B := B) p bad hbadB c hc R.qroot R.qroot_pow_eq C
@@ -201,7 +201,7 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
         (Arithmetic.inertDeg w : ℝ) / Module.finrank ℚ D.F * c w := hsum
     _ = ∑ w ∈ bad.filter (fun w => Arithmetic.residueChar w = p),
         (Arithmetic.inertDeg w : ℝ) / Module.finrank ℚ D.F *
-          (if hw : w ∈ Iut.badPlacesOver D.F D.E D.VBad then
+          (if hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad then
             (D.prime.qOrder w hw : ℝ) / (2 * (D.prime.ℓ : ℝ))
           else 0) := by
       simp [c]
@@ -209,8 +209,8 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
 /-- The actual q-root weighted sum over the torsion-field places of residue
 characteristic `p`, with finiteness supplied by `Arithmetic.fiber_finite`. -/
 noncomputable def canonical_qroot_weighted_fiber_of_initialThetaData
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) (p : ℕ) : ℝ := by
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) (p : ℕ) : ℝ := by
   letI : Finite {v : NumberField.FinitePlace ↥D.prime.torsionField //
     Arithmetic.residueChar v = p} := Arithmetic.fiber_finite p
   letI : Fintype {v : NumberField.FinitePlace ↥D.prime.torsionField //
@@ -228,19 +228,19 @@ noncomputable def canonical_qroot_weighted_fiber_of_initialThetaData
 /-- Summing the real `InitialThetaData` q-root fibers by residue characteristic
 recovers the `absLogQ` of its IUT q-pilot data. -/
 theorem canonical_qroot_log_sum_eq_iut_absLogQ
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     ∑ p ∈ (iutInitialThetaQPilotData D).badFinset.image
         Arithmetic.residueChar,
       Real.log p * canonical_qroot_weighted_fiber_of_initialThetaData D p =
-      Iut.QPilotData.absLogQ (iutInitialThetaQPilotData D) := by
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ (iutInitialThetaQPilotData D) := by
   classical
   let B := IutBaseQPilotSource.ofInitialThetaData D
   let Q := iutInitialThetaQPilotData D
   let pset := Q.badFinset.image Arithmetic.residueChar
   have hbadFinset : B.badFinset = Q.badFinset := by rfl
   let c : NumberField.FinitePlace D.F → ℝ := fun w =>
-    if hw : w ∈ Iut.badPlacesOver D.F D.E D.VBad then
+    if hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad then
       (D.prime.qOrder w hw : ℝ) / (2 * (D.prime.ℓ : ℝ))
     else 0
   have hprime (p : ℕ) :
@@ -299,7 +299,7 @@ theorem canonical_qroot_log_sum_eq_iut_absLogQ
         apply Finset.sum_congr rfl
         intro w hw
         have hchar := (Finset.mem_filter.mp hw).2
-        have hbad : w.1 ∈ Iut.badPlacesOver D.F D.E D.VBad := Q.mem_bad w.2
+        have hbad : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := Q.mem_bad w.2
         have hc : c w.1 =
             (D.prime.qOrder w.1 (Q.mem_bad w.2) : ℝ) /
               (2 * (D.prime.ℓ : ℝ)) := by
@@ -316,7 +316,7 @@ theorem canonical_qroot_log_sum_eq_iut_absLogQ
           Q.weight w.1 *
             (D.prime.qOrder w.1 (Q.mem_bad w.2) : ℝ) *
               Real.log (Arithmetic.residueChar w.1)) = Q.logQ := by
-    unfold Iut.QPilotData.logQ
+    unfold JoshiTeich.ReferenceIut.QPilotData.logQ
     exact Finset.sum_fiberwise_of_maps_to
       (fun w hw => Finset.mem_image.mpr ⟨w.1, w.2, rfl⟩) _
   calc
@@ -334,7 +334,7 @@ theorem canonical_qroot_log_sum_eq_iut_absLogQ
       rw [hprime, hcomponent]
     _ = Q.logQ / (2 * (D.prime.ℓ : ℝ)) := by
       rw [← Finset.sum_div, hsum]
-    _ = Iut.QPilotData.absLogQ Q := rfl
+    _ = JoshiTeich.ReferenceIut.QPilotData.absLogQ Q := rfl
 
 end IutTorsionQRootSource
 

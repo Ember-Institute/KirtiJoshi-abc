@@ -1,10 +1,13 @@
 # JoshiTeich 来源登记
 
 本文件登记 `ArithmeticTeichmullerSpaces/` 中声明的来源和验证状态。计划规定
-`refer/iut` 只能作为逐文件 API 参考；截至 S1.136，实际配置仍把它列为 Lake 依赖，
-源码也仍有 `import Iut.*`。因此当前树违反 `docs/开发计划.V1.md` §0.2，不能把本文件
-之前“不是 Lake 依赖或证明来源”的陈述视为已实现状态。迁移状态和未闭合的导入清单见
-`docs/开发计划.V1Act1log2.md` 的 S1.136。
+`refer/iut` 只能作为逐文件 API 参考。S1.136 的提交基线仍将 `refer/iut` 列为 Lake
+依赖，并含有 `import Iut.*`；当前未提交工作区已移除该依赖和导入，IUT 模块位于本工程
+的 `ReferenceIut` 命名空间内。Lake 配置改为依赖独立的 `tate-curves-theta` 仓库，固定在
+`ca6c2279d3cea0690cdb01328e727118d5485d68`。`lake check-build` 只确认默认目标配置有效；
+S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT 依赖闭包在冻结 Lean
+版本下可构建。此验证只覆盖这两个目标，不代表完整项目构建或 Corollary 3.12 的数学义务
+已经闭合。历史迁移状态见 `docs/开发计划.V1Act1log2.md` 的 S1.136-S1.137。
 
 ## 冻结环境
 
@@ -58,6 +61,13 @@
   ImportAudit then built `9164/9164` jobs (exit status `0`, elapsed `6:17.90`, maximum RSS
   `8,172,044 kB`) under the same cap. The new section theorems' axiom audit lists only
   `propext`, `Classical.choice`, and `Quot.sound`.
+- 2026-10-09: for S1.137, the targeted `ArithmeticTeichmullerSpaces.Act1Scene1` and
+  `ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit` build completed `9182/9182` jobs,
+  exit status `0`, in about `2:18`, with maximum monitored process-group RSS `8.92 GiB`.
+  The build used CPU affinity `0-14`, `-Kjobs=15`, and `LEAN_NUM_THREADS=1`. No memory cgroup
+  was available, so a process-group RSS monitor used the documented `55 GiB` stop line under
+  the `60 GiB` policy. Mathlib4 was not rebuilt. This verifies the migrated dependency closure
+  for the two targets; it is not a full project build.
 - Successful full builds validate Lean compilation only. They do not close the still-open
   `InitialThetaData`/`TateFamily`, `V_p^oss`, q-factor normalization, or theta-volume source
   obligations listed below.
@@ -193,7 +203,7 @@
 | `JT-ATS-III-SCENE1-Q-FAMILY` | `Corollary312SourceQIndex`, `Corollary312SourceQPair`, `Corollary312SourceQPair.rationalPrime_eq_residueChar`, `Corollary312SourceQGrouping`, `Corollary312GroupedSourceQFactor`, `Corollary312SourceQFactor`, `Corollary312QFamily`, `volumeBound_of_qFamily`, `corollary312_of_q_family_lower_bound` | `ArithmeticTeichmullerSpaces/Act1Scene1/QFamilyBridge.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `th:moccor-Mochizuki-form2` lines 3617-3632 and `cor:cor312` lines 3647-3650; explicit finite-place index equivalence, `(p,w)` pair/grouping carrier, rational-prime label bound to `Arithmetic.residueChar`, and `qNorm^(1/(2*ell))` normalization; the actual paper-side identification remains a Scene1 construction obligation |
 | `JT-ATS-III-SCENE1-QNORM-TATE` | `QNormTateCompatibility`, `qNorm_pos_lt_one_of_tate`, `Corollary312QFamily.ofTateCompatibility`, `Corollary312TateQFamily`, `Corollary312TateQFamily.toQFamily` | `ArithmeticTeichmullerSpaces/Act1Scene1/QNormTateBridge.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 2.md`, `th:tate-parameter-as-a-function` lines 609-630; supplementary `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `pr:admissible-lifts-tate-params` lines 1530-1539; explicit q-norm/Tate compatibility, with strict q-norm range derived from `TateParameterLaws`; the public Scene1 assembly stores compatibility instead of accepting `qNorm ≤ 1` as an unrelated field |
 | `JT-ATS-III-SCENE1-VOLUME-NORMALIZATION` | `Corollary312VolumeNormalization`, `logVolume_nonneg_of_scene1`, `thetaVolume_pos_of_normalization`, `thetaVolume_le_one_of_normalization`, `corollary312_of_q_family_normalized_lower_bound` | `ArithmeticTeichmullerSpaces/Act1Scene1/VolumeNormalizationBridge.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `le:volume-lemma3` lines 3576-3583, `th:moccor-Mochizuki-form2` lines 3617-3632 and `cor:cor312` lines 3647-3650; local exponential sign normalization and nonnegativity transfer from explicit `VolumeTransfer` |
-| `JT-ATS-III-SCENE1-TRANSFER-Q-LOWER` | `Corollary312TransferLogBound`, `logVolume_upper_bound_of_transfer_log_bound`, `thetaVolume_lower_bound_of_transfer_log_bound`, `corollary312_of_transfer_log_bound` | `ArithmeticTeichmullerSpaces/Act1Scene1/TransferQLowerBound.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `le:volume-lemma3` lines 3576-3583, `th:moccor-Mochizuki-form2` lines 3617-3632 and `cor:cor312` lines 3647-3650; complete finite-sum-to-product bridge, with the packet/hull log estimate explicit in Scene1 |
+| `JT-ATS-III-SCENE1-TRANSFER-Q-LOWER` | `Corollary312TransferLogBound`, `logVolume_upper_bound_of_transfer_log_bound`, `thetaVolume_lower_bound_of_transfer_log_bound`, `corollary312_of_transfer_log_bound` | `ArithmeticTeichmullerSpaces/Act1Scene1/TransferQLowerBound.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `le:volume-lemma3` lines 3576-3583, `th:moccor-Mochizuki-form2` lines 3617-3632 and `cor:cor312` lines 3647-3650; conditional finite-sum-to-product conversion. `transfer_log_bound` is equivalent to the target inequality under volume transfer, nonnegativity, normalization, and positive `ellStar`; deriving that core packet/hull estimate from the source construction remains open. |
 | `JT-ATS-III-SCENE1-TRANSFER-Q-ACCOUNTING` | `Corollary312PacketSourceQLogSum`, `Corollary312HullSourceQLogSum`, `Corollary312SourceQLogSum`, `Corollary312TateQAccounting`, `Corollary312TateQAccounting.toAccounting`, `Corollary312TransferQAccounting`, `transferLogBound_of_qAccounting`, `corollary312_of_transfer_q_accounting` | `ArithmeticTeichmullerSpaces/Act1Scene1/TransferQAccounting.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `pr:general-cohomology-set-const` lines 3261-3271, `th:thetam-construction` lines 3296-3346, `le:volume-lemma3` lines 3576-3583 and `cor:cor312` lines 3647-3650; packet/hull weights are first bounded against source Tate q terms, whose finite conservation equality is then converted to the existing q-log accounting contract |
 | `JT-ATS-III-SCENE1-ADELIC-THETA-BRIDGE` | `Corollary312Scene1Data`, `cor312_of_scene1_data` | `ArithmeticTeichmullerSpaces/Act1Scene1/AdelicThetaLinkBridge.lean` | `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `th:adelic-theta-link` lines 1139-1166, `pr:general-cohomology-set-const` lines 3261-3271, `th:thetam-construction` lines 3296-3346, `le:volume-lemma3` lines 3576-3583 and `cor:cor312` lines 3647-3650; conditional Scene1 assembly of independently supplied target data; the theorem does not derive the target from `AdelicThetaLink` alone |
 | `JT-ATS-III-SCENE1-ADELIC-THETA-QPILOT` | `Corollary312Scene1QPilotData`, `Corollary312Scene1QPilotData.qPilot`, `Corollary312Scene1QPilotData.sourceIndexBridge`, `cor312_of_scene1_qPilot_data` | `ArithmeticTeichmullerSpaces/Act1Scene1/AdelicThetaLinkBridge.lean` | q-pilot assembly adapted from `iut`: `refer/iut/Iut/Cor312/LeftHandSide.lean`, `refer/iut/Iut/Concrete/ThetaRegion.lean`, and `refer/iut/Iut/Cor312/ThetaData/Places.lean`; target assembly remains sourced from `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `th:adelic-theta-link` lines 1139-1166, `pr:general-cohomology-set-const` lines 3261-3271, `th:thetam-construction` lines 3296-3346, `le:volume-lemma3` lines 3576-3583 and `cor:cor312` lines 3647-3650; `Corollary312Scene1QPilotData` requires an `IutQPilotSource` and derives its q-pilot, source normalization, and canonical source-index bridge from the existing q-family grouping; the bridge is no longer a detached structure field. The source `orderCompatibility` and the real source-to-`V_p^oss` identification remain explicit Scene1 obligations; the current `ℚ,(2)` result is only a consistency witness, while a model sourced from real `InitialThetaData/TateFamily` remains open |

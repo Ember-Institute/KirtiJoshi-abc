@@ -18,9 +18,11 @@ multiplicative theta-volume lower bound; the finite-sum estimate remains an
 explicit derived input
 boundary: Scene1/Derived
 
-The estimate is stated against the actual packet and hull weight sums, so
-`VolumeTransfer` is consumed by a separate rewriting theorem.  The module then
-performs the logarithm/exponential passage to the q-product.
+The field `transfer_log_bound` is an input, not the analytic estimate proved by
+this module.  Under `VolumeTransfer`, `FirstAxiom` nonnegativity, positive
+`ellStar`, and the volume normalization, it is equivalent to `Corollary312`.
+The theorems below only convert that conditional input to the q-product form;
+deriving the packet/hull estimate from the source construction remains open.
 -/
 
 def Corollary312PacketWeightSum
@@ -47,6 +49,8 @@ structure Corollary312TransferLogBound
     [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
     [IsAdicComplete (Ideal.span {(p : O)}) O]
     (T : Corollary312Data K O p) : Prop where
+  /-- Core estimate equivalent to the target after the volume identity and
+  normalization. It must be derived from source-level packet/hull accounting. -/
   transfer_log_bound :
     Corollary312PacketWeightSum p T + Corollary312HullWeightSum p T ≤
       (T.ellStar : ℝ) * Corollary312Data.qLogSum p T

@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutWeierstrassLocalization
-import Iut.Cor312.ThetaData.AdmissiblePrime
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime
 import Mathlib.Algebra.Module.ZMod
 import Mathlib.FieldTheory.Galois.Basic
 import Mathlib.FieldTheory.Galois.Infinite
@@ -482,8 +482,8 @@ noncomputable def representationData : IutTorsionRepresentationData
 
 /-- Project the prime and torsion basis, with the chosen algebraic closure as explicit input. -/
 noncomputable def ofAdmissiblePrimeData
-    {VBad : Set (FinitePlace ↥(Iut.fieldOfModuli F₀ E₀))}
-    (P : Iut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
+    {VBad : Set (FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli F₀ E₀))}
+    (P : JoshiTeich.ReferenceIut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
     (closure : IsAlgClosure F₀ Fbar₀) :
     IutAdmissiblePrimeTorsionData F₀ E₀ Fbar₀ P.ℓ where
   ell_prime := P.ℓ_prime
@@ -495,8 +495,8 @@ noncomputable def ofAdmissiblePrimeData
 representation. The action law determines every matrix column by evaluating it on the
 preimage of the corresponding standard basis vector. -/
 theorem representation_eq_admissiblePrime
-    {VBad : Set (FinitePlace ↥(Iut.fieldOfModuli F₀ E₀))}
-    (P : Iut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
+    {VBad : Set (FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli F₀ E₀))}
+    (P : JoshiTeich.ReferenceIut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
     (closure : IsAlgClosure F₀ Fbar₀) :
     (ofAdmissiblePrimeData P closure).representationData.representation = P.rep := by
   let D := ofAdmissiblePrimeData P closure
@@ -513,8 +513,8 @@ theorem representation_eq_admissiblePrime
       (⟨iutGaloisPointMap (E := E₀) (Fbar := Fbar₀) σ Q.1,
         iutGaloisPointMap_torsionBy (E := E₀) (Fbar := Fbar₀) σ Q.2⟩ :
           AddSubgroup.torsionBy (Affine.Point (Affine.baseChange E₀ Fbar₀)) P.ℓ) =
-      ⟨Iut.galPointMap F₀ E₀ Fbar₀ σ Q.1,
-        Iut.galPointMap_torsionBy F₀ E₀ Fbar₀ σ Q.2⟩ := by
+      ⟨JoshiTeich.ReferenceIut.galPointMap F₀ E₀ Fbar₀ σ Q.1,
+        JoshiTeich.ReferenceIut.galPointMap_torsionBy F₀ E₀ Fbar₀ σ Q.2⟩ := by
     apply Subtype.ext
     rfl
   have hMine := D.representationData.representation_spec σ Q
@@ -534,8 +534,8 @@ theorem representation_eq_admissiblePrime
           IutAdmissiblePrimeTorsionData.representationData,
           IutTorsionRepresentationData.ofBasis] using hMine.symm
       _ = P.torsionBasis
-          ⟨Iut.galPointMap F₀ E₀ Fbar₀ σ Q.1,
-            Iut.galPointMap_torsionBy F₀ E₀ Fbar₀ σ Q.2⟩ := by
+          ⟨JoshiTeich.ReferenceIut.galPointMap F₀ E₀ Fbar₀ σ Q.1,
+            JoshiTeich.ReferenceIut.galPointMap_torsionBy F₀ E₀ Fbar₀ σ Q.2⟩ := by
         rw [hAction]
       _ = (P.rep σ : Matrix (Fin 2) (Fin 2) (ZMod P.ℓ)).mulVec
           (P.torsionBasis Q) := hIut
@@ -545,8 +545,8 @@ theorem representation_eq_admissiblePrime
 
 /-- The project and IUT fixed fields agree because their representation kernels agree. -/
 theorem torsionField_eq_admissiblePrime
-    {VBad : Set (FinitePlace ↥(Iut.fieldOfModuli F₀ E₀))}
-    (P : Iut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
+    {VBad : Set (FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli F₀ E₀))}
+    (P : JoshiTeich.ReferenceIut.AdmissiblePrimeData F₀ E₀ Fbar₀ VBad)
     (closure : IsAlgClosure F₀ Fbar₀) :
     (ofAdmissiblePrimeData P closure).representationData.torsionField =
       P.torsionField := by

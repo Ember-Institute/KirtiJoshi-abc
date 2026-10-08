@@ -20,9 +20,13 @@ bound; all source constructions and normalization identifications remain
 explicit Scene1 inputs
 boundary: Scene1/Derived
 
-The q-pilot bridge is useful only when it reaches the transfer estimate.  This
-module makes that consumer explicit and provides the corresponding conditional
-Corollary 3.12 assembly without adding q-pilot data to Prologue/Core.
+The q-pilot bridge is useful only when it reaches the transfer estimate.  The
+`transfer_log_bound` field below is the target-equivalent core estimate in
+q-pilot notation, once its source normalization and index bridge identify
+`P.absLogQ` with the target q-log sum; the field is not a proof of that estimate.
+This module can derive it from explicit accounting, normalization, and
+source-index inputs, then assemble the conditional Corollary 3.12 result without
+adding q-pilot data to Prologue/Core.
 -/
 
 namespace Corollary312TateQFamily
@@ -66,6 +70,7 @@ structure Corollary312QPilotTransferLogBound
     [IsAdicComplete (Ideal.span {(p : O)}) O]
     (T : Corollary312Data K O p)
     (P : Corollary312QPilotData p T) : Prop where
+  /-- Core target-equivalent estimate in q-pilot notation. -/
   transfer_log_bound :
     Corollary312PacketWeightSum p T + Corollary312HullWeightSum p T ≤
       (T.ellStar : ℝ) * P.absLogQ p

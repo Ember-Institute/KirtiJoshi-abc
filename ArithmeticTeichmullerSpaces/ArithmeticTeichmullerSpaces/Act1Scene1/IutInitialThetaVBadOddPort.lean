@@ -22,17 +22,17 @@ boundary: Scene1/Derived
 
 /-- The `EllipticCurveData.VBadOdd` support, ported from `iut`. -/
 def iutVBadOddModSupportPort
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
-    Set (NumberField.FinitePlace ↥(Iut.fieldOfModuli D.F D.E)) :=
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Set (NumberField.FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) :=
   {v | Arithmetic.residueChar v ≠ 2 ∧
-    (∃ w : NumberField.FinitePlace D.F, Iut.FinitePlace.LiesOver w v) ∧
-    ∀ w : NumberField.FinitePlace D.F, Iut.FinitePlace.LiesOver w v →
-      Iut.HasMultiplicativeReductionAt D.E w}
+    (∃ w : NumberField.FinitePlace D.F, JoshiTeich.ReferenceIut.FinitePlace.LiesOver w v) ∧
+    ∀ w : NumberField.FinitePlace D.F, JoshiTeich.ReferenceIut.FinitePlace.LiesOver w v →
+      JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E w}
 
 theorem iutInitialThetaOddMultiplicativeModSupport_eq_VBadOdd
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     IutOddMultiplicativeModSupport D =
       iutVBadOddModSupportPort D := by
   ext v
@@ -53,8 +53,8 @@ theorem iutInitialThetaOddMultiplicativeModSupport_eq_VBadOdd
     · exact hodd
 
 theorem iutInitialThetaVBad_subset_VBadOdd
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     D.VBad ⊆ iutVBadOddModSupportPort D := by
   rw [← iutInitialThetaOddMultiplicativeModSupport_eq_VBadOdd D]
   exact iutInitialThetaVBad_subset_oddMultiplicativeModSupport D

@@ -1,6 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.QNormTateBridge
-import Iut.Cor312.ThetaData.Basic
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic
 
 namespace JoshiTeich.Act1Scene1
 
@@ -28,20 +28,20 @@ boundary: Scene1/Derived
 -/
 
 private def iutInitialThetaQParameter
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (w : NumberField.FinitePlace D.F) :
     w.maximalIdeal.adicCompletion D.F := by
   classical
-  exact if hw : w ∈ Iut.badPlacesOver D.F D.E D.VBad then
+  exact if hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad then
     (D.prime.tate w hw).q
   else 0
 
 private lemma iutInitialThetaQParameter_eq
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (w : NumberField.FinitePlace D.F)
-    (hw : w ∈ Iut.badPlacesOver D.F D.E D.VBad) :
+    (hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
     iutInitialThetaQParameter D w = (D.prime.tate w hw).q := by
   simp [iutInitialThetaQParameter, hw]
 
@@ -56,8 +56,8 @@ private lemma iutTateParameter_eq_of_q_eq
 /-- The local parameter family read directly from the actual IUT admissible
 prime, with its carrier enumerated by the proved finite bad-place set. -/
 noncomputable def iutInitialThetaTateParameterData
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) : Theta.TateParameterData D.F := by
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) : Theta.TateParameterData D.F := by
   let B := IutBaseQPilotSource.ofInitialThetaData D
   exact
     { places := B.badFinset
@@ -65,31 +65,31 @@ noncomputable def iutInitialThetaTateParameterData
       norm := fun w => ‖iutInitialThetaQParameter D w‖ }
 
 theorem iutInitialThetaTateParameterData_places_eq
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
-    Iut.badPlacesOver D.F D.E D.VBad =
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad =
       (↑(iutInitialThetaTateParameterData D).places :
         Set (NumberField.FinitePlace D.F)) := by
-  change Iut.badPlacesOver D.F D.E D.VBad =
+  change JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad =
     (↑(IutBaseQPilotSource.ofInitialThetaData D).badFinset :
       Set (NumberField.FinitePlace D.F))
   exact (IutBaseQPilotSource.ofInitialThetaData D).badFinset_spec.symm
 
 theorem iutInitialThetaTateParameterData_laws
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     Theta.TateParameterLaws (iutInitialThetaTateParameterData D) := by
   let B := IutBaseQPilotSource.ofInitialThetaData D
   constructor
   · obtain ⟨v, hv⟩ := D.global.bad_nonempty
-    obtain ⟨w, hw⟩ := Iut.FinitePlace.exists_liesOver (K := D.F) v
-    have hbad : w ∈ Iut.badPlacesOver D.F D.E D.VBad := ⟨v, hv, hw⟩
+    obtain ⟨w, hw⟩ := JoshiTeich.ReferenceIut.FinitePlace.exists_liesOver (K := D.F) v
+    have hbad : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := ⟨v, hv, hw⟩
     have hfin : w ∈ B.badFinset := by
       exact (Set.ext_iff.mp B.badFinset_spec w).2 hbad
     exact ⟨w, hfin⟩
   · intro w hw
     change w ∈ B.badFinset at hw
-    have hwBad : w ∈ Iut.badPlacesOver D.F D.E D.VBad := by
+    have hwBad : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := by
       exact (Set.ext_iff.mp (iutInitialThetaTateParameterData_places_eq D) w).2
         (Finset.mem_coe.mpr hw)
     change iutInitialThetaQParameter D w ≠ 0
@@ -99,7 +99,7 @@ theorem iutInitialThetaTateParameterData_laws
     rfl
   · intro w hw
     change w ∈ B.badFinset at hw
-    have hwBad : w ∈ Iut.badPlacesOver D.F D.E D.VBad := by
+    have hwBad : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := by
       exact (Set.ext_iff.mp (iutInitialThetaTateParameterData_places_eq D) w).2
         (Finset.mem_coe.mpr hw)
     change 0 < ‖iutInitialThetaQParameter D w‖
@@ -107,7 +107,7 @@ theorem iutInitialThetaTateParameterData_laws
     exact (D.prime.tate w hwBad).norm_q_pos
   · intro w hw
     change w ∈ B.badFinset at hw
-    have hwBad : w ∈ Iut.badPlacesOver D.F D.E D.VBad := by
+    have hwBad : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := by
       exact (Set.ext_iff.mp (iutInitialThetaTateParameterData_places_eq D) w).2
         (Finset.mem_coe.mpr hw)
     change ‖iutInitialThetaQParameter D w‖ < 1
@@ -117,8 +117,8 @@ theorem iutInitialThetaTateParameterData_laws
 /-- Build the adelic link's finite-place and Tate fields from actual IUT data.
 The remaining theta and arithmetic payloads stay caller-supplied. -/
 noncomputable def AdelicThetaLinkData.ofInitialThetaData
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (theta : ThetaPilotData D.F) (thetaBase : theta.index)
     (packetHull : PacketHullData theta.index)
     (heightData : Arithmetic.HeightData D.F)
@@ -130,22 +130,22 @@ noncomputable def AdelicThetaLinkData.ofInitialThetaData
     ramification logVolume processionLength
 
 theorem iutInitialThetaLink_places_eq_badPlacesOver
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (theta : ThetaPilotData D.F) (thetaBase : theta.index)
     (packetHull : PacketHullData theta.index)
     (heightData : Arithmetic.HeightData D.F)
     (ramification : Arithmetic.RamificationProfile D.F)
     (logVolume : ℝ) (processionLength : ℕ) :
-    Iut.badPlacesOver D.F D.E D.VBad =
+    JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad =
       (↑(AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
         heightData ramification logVolume processionLength).places :
           Set (NumberField.FinitePlace D.F)) := by
   exact iutInitialThetaTateParameterData_places_eq D
 
 theorem iutInitialThetaLink_qNormTateCompatibility
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (theta : ThetaPilotData D.F) (thetaBase : theta.index)
     (packetHull : PacketHullData theta.index)
     (heightData : Arithmetic.HeightData D.F)
@@ -159,8 +159,8 @@ theorem iutInitialThetaLink_qNormTateCompatibility
     ramification logVolume processionLength
 
 private noncomputable def iutInitialThetaLinkTateParameter
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (w : NumberField.FinitePlace D.F)
     (hw : w ∈ (iutInitialThetaTateParameterData D).places) :
     TateParameter (w.maximalIdeal.adicCompletion D.F) :=
@@ -169,13 +169,13 @@ private noncomputable def iutInitialThetaLinkTateParameter
     ((iutInitialThetaTateParameterData_laws D).norm_lt_one w hw)
 
 theorem iutInitialThetaLink_tateParameter_j_eq
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (w : NumberField.FinitePlace D.F)
     (hw : w ∈ (iutInitialThetaTateParameterData D).places) :
     (iutInitialThetaLinkTateParameter D w hw).tateJ =
       FinitePlace.embedding w.maximalIdeal D.E.j := by
-  have hwBad : w ∈ Iut.badPlacesOver D.F D.E D.VBad := by
+  have hwBad : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := by
     rw [iutInitialThetaTateParameterData_places_eq D]
     exact hw
   have hq : (iutInitialThetaTateParameterData D).parameter w =

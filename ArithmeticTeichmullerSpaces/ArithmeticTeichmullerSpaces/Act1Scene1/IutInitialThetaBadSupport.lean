@@ -1,7 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting
-import Iut.Cor312.ThetaData.Basic
-import Iut.Cor312.ThetaData.PlaceUnder
-import Iut.Cor312.ThetaData.PlacesOver
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlaceUnder
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver
 import Mathlib.NumberTheory.RamificationInertia.Valuation
 
 namespace JoshiTeich.Act1Scene1
@@ -33,41 +33,41 @@ noncomputable section
 private theorem iut_norm_emb_le_one_iff
     {F : Type u} [Field F] [NumberField F] (w : NumberField.FinitePlace F) (y : F) :
     ‖(NumberField.FinitePlace.embedding w.maximalIdeal y :
-      Iut.localCompletion w)‖ ≤ 1 ↔
+      JoshiTeich.ReferenceIut.localCompletion w)‖ ≤ 1 ↔
       w.maximalIdeal.valuation F y ≤ 1 := by
-  rw [Iut.norm_le_one_iff_valued, FinitePlace.embedding_apply,
+  rw [JoshiTeich.ReferenceIut.norm_le_one_iff_valued, FinitePlace.embedding_apply,
     valuedAdicCompletion_eq_valuation']
 
 /-- The odd-characteristic multiplicative places of the IUT base curve. -/
 def IutOddMultiplicativeSupport
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) : Set (NumberField.FinitePlace D.F) :=
-  {w | Odd (Arithmetic.residueChar w) ∧ Iut.HasMultiplicativeReductionAt D.E w}
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) : Set (NumberField.FinitePlace D.F) :=
+  {w | Odd (Arithmetic.residueChar w) ∧ JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E w}
 
 /-- The canonical odd multiplicative support on the field of moduli, porting
-`Iut.EllipticCurveData.VBadOdd`. -/
+`JoshiTeich.ReferenceIut.EllipticCurveData.VBadOdd`. -/
 def IutOddMultiplicativeModSupport
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
-    Set (NumberField.FinitePlace ↥(Iut.fieldOfModuli D.F D.E)) :=
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Set (NumberField.FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) :=
   {v | Odd (Arithmetic.residueChar v) ∧
-    (∃ w : NumberField.FinitePlace D.F, Iut.FinitePlace.LiesOver w v) ∧
-    ∀ w : NumberField.FinitePlace D.F, Iut.FinitePlace.LiesOver w v →
-      Iut.HasMultiplicativeReductionAt D.E w}
+    (∃ w : NumberField.FinitePlace D.F, JoshiTeich.ReferenceIut.FinitePlace.LiesOver w v) ∧
+    ∀ w : NumberField.FinitePlace D.F, JoshiTeich.ReferenceIut.FinitePlace.LiesOver w v →
+      JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E w}
 
 private theorem iut_multiplicative_reduction_invariant_over_mod_place
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
-    {v : NumberField.FinitePlace ↥(Iut.fieldOfModuli D.F D.E)}
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {v : NumberField.FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)}
     {w w' : NumberField.FinitePlace D.F}
-    (hwv : Iut.FinitePlace.LiesOver w v)
-    (hw'v : Iut.FinitePlace.LiesOver w' v)
-    (hm : Iut.HasMultiplicativeReductionAt D.E w) :
-    Iut.HasMultiplicativeReductionAt D.E w' := by
-  let j₀ : ↥(Iut.fieldOfModuli D.F D.E) :=
+    (hwv : JoshiTeich.ReferenceIut.FinitePlace.LiesOver w v)
+    (hw'v : JoshiTeich.ReferenceIut.FinitePlace.LiesOver w' v)
+    (hm : JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E w) :
+    JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E w' := by
+  let j₀ : ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) :=
     ⟨D.E.j, IntermediateField.mem_adjoin_simple_self ℚ D.E.j⟩
   have valLeOneIff (x : NumberField.FinitePlace D.F)
-      (hxv : Iut.FinitePlace.LiesOver x v) :
+      (hxv : JoshiTeich.ReferenceIut.FinitePlace.LiesOver x v) :
       x.maximalIdeal.valuation D.F D.E.j ≤ 1 ↔
         v.maximalIdeal.valuation _ j₀ ≤ 1 := by
     haveI : x.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hxv
@@ -78,11 +78,11 @@ private theorem iut_multiplicative_reduction_invariant_over_mod_place
       (Ideal.ramificationIdx_pos_of_isDedekindDomain' x.maximalIdeal.asIdeal
         v.maximalIdeal.ne_bot).ne'
   have multIffNotValLeOne (x : NumberField.FinitePlace D.F) :
-      Iut.HasMultiplicativeReductionAt D.E x ↔
+      JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E x ↔
         ¬ x.maximalIdeal.valuation D.F D.E.j ≤ 1 := by
     constructor
     · intro hx
-      exact not_le_of_gt (Iut.one_lt_valuation_j_of_mult D.E x hx)
+      exact not_le_of_gt (JoshiTeich.ReferenceIut.one_lt_valuation_j_of_mult D.E x hx)
     · intro hnot
       rcases D.global.stable_reduction x with hg | hm'
       · exfalso
@@ -92,18 +92,18 @@ private theorem iut_multiplicative_reduction_invariant_over_mod_place
             (x.maximalIdeal.adicCompletionIntegers D.F) := hC
         have hΔ : ‖((C • D.E).baseChange
             (x.maximalIdeal.adicCompletion D.F)).Δ‖ = 1 :=
-          (Iut.valuation_eq_one_iff x _).1 HasGoodReduction.goodReduction
+          (JoshiTeich.ReferenceIut.valuation_eq_one_iff x _).1 HasGoodReduction.goodReduction
         have hc₄ : ‖((C • D.E).baseChange
-            (x.maximalIdeal.adicCompletion D.F)).c₄‖ ≤ 1 := Iut.norm_c₄_le_one _
-        rw [Iut.baseChange_adicCompletion_eq, map_Δ] at hΔ
-        rw [Iut.baseChange_adicCompletion_eq, map_c₄] at hc₄
+            (x.maximalIdeal.adicCompletion D.F)).c₄‖ ≤ 1 := JoshiTeich.ReferenceIut.norm_c₄_le_one _
+        rw [JoshiTeich.ReferenceIut.baseChange_adicCompletion_eq, map_Δ] at hΔ
+        rw [JoshiTeich.ReferenceIut.baseChange_adicCompletion_eq, map_c₄] at hc₄
         rw [← variableChange_j D.E C, ← iut_norm_emb_le_one_iff,
-          Iut.j_eq_inv_Δ_mul, map_mul, map_inv₀, map_pow, norm_mul, norm_inv, norm_pow,
+          JoshiTeich.ReferenceIut.j_eq_inv_Δ_mul, map_mul, map_inv₀, map_pow, norm_mul, norm_inv, norm_pow,
           hΔ, inv_one, one_mul]
         exact pow_le_one₀ (norm_nonneg _) hc₄
       · exact hm'
   have key (x : NumberField.FinitePlace D.F)
-      (hxv : Iut.FinitePlace.LiesOver x v) :
+      (hxv : JoshiTeich.ReferenceIut.FinitePlace.LiesOver x v) :
       x.maximalIdeal.valuation D.F D.E.j ≤ 1 ↔
         v.maximalIdeal.valuation _ j₀ ≤ 1 :=
     valLeOneIff x hxv
@@ -116,15 +116,15 @@ private theorem iut_multiplicative_reduction_invariant_over_mod_place
 
 /-- Every odd multiplicative place of `F` lies over the canonical support on `F_mod`. -/
 theorem mem_iutOddMultiplicativeModSupport_of_mem_support
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) {w : NumberField.FinitePlace D.F}
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) {w : NumberField.FinitePlace D.F}
     (hw : w ∈ IutOddMultiplicativeSupport D) :
-    Iut.placeUnder (k := ↥(Iut.fieldOfModuli D.F D.E)) w ∈
+    JoshiTeich.ReferenceIut.placeUnder (k := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) w ∈
       IutOddMultiplicativeModSupport D := by
   rcases hw with ⟨hodd, hmult⟩
-  have hwv : Iut.FinitePlace.LiesOver w
-      (Iut.placeUnder (k := ↥(Iut.fieldOfModuli D.F D.E)) w) :=
-    Iut.liesOver_placeUnder (k := ↥(Iut.fieldOfModuli D.F D.E)) w
+  have hwv : JoshiTeich.ReferenceIut.FinitePlace.LiesOver w
+      (JoshiTeich.ReferenceIut.placeUnder (k := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) w) :=
+    JoshiTeich.ReferenceIut.liesOver_placeUnder (k := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) w
   refine ⟨?_, ⟨w, hwv⟩, ?_⟩
   · rw [← Arithmetic.residueChar_eq_of_liesOver hwv]
     exact hodd
@@ -133,11 +133,11 @@ theorem mem_iutOddMultiplicativeModSupport_of_mem_support
 
 /-- The IUT-selected `VBad` is contained in the canonical odd multiplicative support. -/
 theorem iutInitialThetaVBad_subset_oddMultiplicativeModSupport
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     D.VBad ⊆ IutOddMultiplicativeModSupport D := by
   intro v hv
-  obtain ⟨w, hwv⟩ := Iut.FinitePlace.exists_liesOver (K := D.F) v
+  obtain ⟨w, hwv⟩ := JoshiTeich.ReferenceIut.FinitePlace.exists_liesOver (K := D.F) v
   refine ⟨D.global.bad_odd v hv, ⟨w, hwv⟩, ?_⟩
   intro w' hw'v
   exact D.global.bad_multiplicative v hv w' hw'v
@@ -145,16 +145,16 @@ theorem iutInitialThetaVBad_subset_oddMultiplicativeModSupport
 /-- Pulling the canonical mod-field support to `F` gives exactly all odd
 multiplicative places of the actual IUT curve. -/
 theorem iutOddMultiplicativeSupport_eq_badPlacesOver_modSupport
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     IutOddMultiplicativeSupport D =
-      Iut.badPlacesOver D.F D.E (IutOddMultiplicativeModSupport D) := by
+      JoshiTeich.ReferenceIut.badPlacesOver D.F D.E (IutOddMultiplicativeModSupport D) := by
   ext w
   constructor
   · intro hw
-    refine ⟨Iut.placeUnder (k := ↥(Iut.fieldOfModuli D.F D.E)) w,
+    refine ⟨JoshiTeich.ReferenceIut.placeUnder (k := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) w,
       mem_iutOddMultiplicativeModSupport_of_mem_support D hw, ?_⟩
-    exact Iut.liesOver_placeUnder (k := ↥(Iut.fieldOfModuli D.F D.E)) w
+    exact JoshiTeich.ReferenceIut.liesOver_placeUnder (k := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) w
   · rintro ⟨v, hv, hwv⟩
     refine ⟨?_, hv.2.2 w hwv⟩
     rw [Arithmetic.residueChar_eq_of_liesOver hwv]
@@ -162,9 +162,9 @@ theorem iutOddMultiplicativeSupport_eq_badPlacesOver_modSupport
 
 /-- The actual IUT q-pilot support lies in the odd multiplicative support. -/
 theorem iutBadPlacesOver_subset_oddMultiplicativeSupport
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG) :
-    Iut.badPlacesOver D.F D.E D.VBad ⊆ IutOddMultiplicativeSupport D := by
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad ⊆ IutOddMultiplicativeSupport D := by
   intro w hw
   rcases hw with ⟨v, hv, hwv⟩
   refine ⟨?_, D.global.bad_multiplicative v hv w hwv⟩

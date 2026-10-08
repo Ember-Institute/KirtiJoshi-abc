@@ -1,8 +1,8 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionRationality
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutAdmissiblePrimeSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
-import Iut.Cor312.ThetaData.Basic
-import Iut.Cor312.ThetaData.TateFamily
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.TateFamily
 
 /-!
 source-id: IUT-COR312-TATE-FAMILY-QROOT-ADAPTER
@@ -47,7 +47,7 @@ def IutTateQuotientUniformization.ofTateStructure
     [Valued K (WithZero (Multiplicative ℤ))]
     [Valuation.RankOne (Valued.v : Valuation K (WithZero (Multiplicative ℤ)))]
     [CompleteSpace K]
-    {E : WeierstrassCurve K} (S : Iut.TateStructure E) :
+    {E : WeierstrassCurve K} (S : JoshiTeich.ReferenceIut.TateStructure E) :
     IutTateQuotientUniformization K E.toAffine.Point :=
   { q := S.t.q
     q_norm_lt_one := S.t.norm_lt_one
@@ -108,7 +108,7 @@ private lemma iutTateJ_embed
 private lemma iutTateStructure_tateJ_eq
     {K : Type u} [Field K] [Valued K (WithZero (Multiplicative ℤ))]
     [Valuation.RankOne (Valued.v : Valuation K (WithZero (Multiplicative ℤ)))]
-    [CompleteSpace K] {E : WeierstrassCurve K} (S : Iut.TateStructure E) :
+    [CompleteSpace K] {E : WeierstrassCurve K} (S : JoshiTeich.ReferenceIut.TateStructure E) :
     S.t.tateJ = E.c₄ ^ 3 / E.Δ := by
   rw [TateParameter.tateJ_def, ← S.hC, WeierstrassCurve.variableChange_c₄,
     WeierstrassCurve.variableChange_Δ]
@@ -124,13 +124,13 @@ private lemma iutCurve_j_eq_div
   rw [← WeierstrassCurve.coe_Δ', ← Units.val_inv_eq_inv_val]
 
 private theorem iutTateFamily_q_eq_baseCompletion
-    {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     {v : NumberField.FinitePlace ↥D.prime.torsionField}
     {w : NumberField.FinitePlace D.F}
     (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal)
-    (hBad : w ∈ Iut.badPlacesOver D.F D.E D.VBad)
-    (hSBad : Iut.IsBadPlace D.E D.prime.torsionField D.VBad v) :
+    (hBad : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad)
+    (hSBad : JoshiTeich.ReferenceIut.IsBadPlace D.E D.prime.torsionField D.VBad v) :
     ((D.tate.S v hSBad).t.q : v.maximalIdeal.adicCompletion ↥D.prime.torsionField) =
       iutEmbedCompletion hvw ((D.prime.tate w hBad).q : w.maximalIdeal.adicCompletion D.F) := by
   have hJ : (iutEmbedTateParameter hvw (D.prime.tate w hBad)).tateJ =
@@ -138,11 +138,11 @@ private theorem iutTateFamily_q_eq_baseCompletion
     rw [← iutTateJ_embed, D.prime.tateJ_eq w hBad,
       iutEmbedCompletion_embedding hvw, iutTateStructure_tateJ_eq,
       iutCurve_j_eq_div]
-    simp only [Iut.curveKw, Iut.curveK, WeierstrassCurve.map_c₄,
+    simp only [JoshiTeich.ReferenceIut.curveKw, JoshiTeich.ReferenceIut.curveK, WeierstrassCurve.map_c₄,
       WeierstrassCurve.map_Δ, map_div₀, map_pow]
   have hTateEq := TateParameter.tateJ_injective
     (iutEmbedTateParameter hvw (D.prime.tate w hBad)) (D.tate.S v hSBad).t
-    (Iut.twelve_ne_zero v) hJ
+    (JoshiTeich.ReferenceIut.twelve_ne_zero v) hJ
   rw [← hTateEq, iutEmbedTateParameter_q_coe]
 
 /-- Assemble the q-root source from the actual IUT Tate family. The proof that each
@@ -151,11 +151,11 @@ parameter with the base completion parameter are retained as explicit inputs. -/
 noncomputable def IutTorsionQRootSource.ofTateFamily
     (B : IutBaseQPilotSource F ell)
     (T : IutGlobalTorsionBasis (E.map (algebraMap F ↥Kt)).toAffine.Point ell)
-    (VBad : Set (NumberField.FinitePlace ↥(Iut.fieldOfModuli F E)))
-    (TF : Iut.TateFamily E Kt ell VBad)
+    (VBad : Set (NumberField.FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli F E)))
+    (TF : JoshiTeich.ReferenceIut.TateFamily E Kt ell VBad)
     (hBad : ∀ w : iutBadPlacesOverFinset (k := F) (K := ↥Kt)
       B.badPlaces B.badPlaces_finite,
-      Iut.IsBadPlace E Kt VBad w.1)
+      JoshiTeich.ReferenceIut.IsBadPlace E Kt VBad w.1)
     (hsix : IutSixTorsionRational (F := F) (Fbar := Fbar) (E := E))
     (hEll : 0 < ell) (hodd : Odd ell)
     (hq : ∀ w : iutBadPlacesOverFinset (k := F) (K := ↥Kt)
@@ -172,35 +172,35 @@ noncomputable def IutTorsionQRootSource.ofTateFamily
 /-- Derive the local bad-place condition from the actual initial Theta-data carrier and
 the base q-pilot carrier equality. -/
 theorem iutInitialThetaTateFamily_badPlace
-    {AG : Iut.AnabelianGeometry.{u}}
-    {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (B : IutBaseQPilotSource D.F D.prime.ℓ)
-    (hPlaces : B.badPlaces = Iut.badPlacesOver D.F D.E D.VBad)
+    (hPlaces : B.badPlaces = JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad)
     (w : iutBadPlacesOverFinset (k := D.F) (K := ↥D.prime.torsionField)
       B.badPlaces B.badPlaces_finite) :
-    Iut.IsBadPlace D.E D.prime.torsionField D.VBad w.1 := by
+    JoshiTeich.ReferenceIut.IsBadPlace D.E D.prime.torsionField D.VBad w.1 := by
   have hbase : (IutTorsionQRootSource.basePlaceOf (B := B) w).1 ∈ B.badPlaces :=
     IutBaseQPilotSource.mem_badPlaces B
       (IutTorsionQRootSource.basePlaceOf (B := B) w)
   rw [hPlaces] at hbase
   rcases hbase with ⟨v, hv, hvbase⟩
-  letI : Algebra ↥(Iut.fieldOfModuli D.F D.E) ↥D.prime.torsionField :=
-    (Iut.fieldOfModuli D.F D.E).instAlgebraSubtypeMem
-  have hfieldMap (x : ↥(Iut.fieldOfModuli D.F D.E)) :
-      algebraMap ↥(Iut.fieldOfModuli D.F D.E) ↥D.prime.torsionField x =
+  letI : Algebra ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) ↥D.prime.torsionField :=
+    (JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E).instAlgebraSubtypeMem
+  have hfieldMap (x : ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) :
+      algebraMap ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) ↥D.prime.torsionField x =
         algebraMap D.F ↥D.prime.torsionField
-          (algebraMap ↥(Iut.fieldOfModuli D.F D.E) D.F x) := by
+          (algebraMap ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) D.F x) := by
     rfl
   have hfieldHom :
-      algebraMap ↥(Iut.fieldOfModuli D.F D.E) ↥D.prime.torsionField =
+      algebraMap ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) ↥D.prime.torsionField =
         (algebraMap D.F ↥D.prime.torsionField).comp
-          (algebraMap ↥(Iut.fieldOfModuli D.F D.E) D.F) :=
+          (algebraMap ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) D.F) :=
     RingHom.ext hfieldMap
-  letI : IsScalarTower ↥(Iut.fieldOfModuli D.F D.E) D.F
+  letI : IsScalarTower ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) D.F
       ↥D.prime.torsionField :=
     IsScalarTower.of_algebraMap_eq' hfieldHom
-  letI : IsScalarTower (𝓞 ↥(Iut.fieldOfModuli D.F D.E)) (𝓞 D.F)
+  letI : IsScalarTower (𝓞 ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) (𝓞 D.F)
       (𝓞 ↥D.prime.torsionField) :=
     IsScalarTower.of_algebraMap_eq' (RingHom.ext fun x => by
       apply RingOfIntegers.coe_injective
@@ -218,11 +218,11 @@ theorem iutInitialThetaTateFamily_badPlace
 parameter. This is the reference project's `TateStructure.t_q_eq_embedCompletion`,
 transported to the completion-map definition used by Scene1. -/
 theorem iutInitialThetaTateFamily_q_eq_baseParameter
-    {AG : Iut.AnabelianGeometry.{u}}
-    {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (B : IutBaseQPilotSource D.F D.prime.ℓ)
-    (hPlaces : B.badPlaces = Iut.badPlacesOver D.F D.E D.VBad)
+    (hPlaces : B.badPlaces = JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad)
     (hParameter : ∀ w : B.badFinset,
       B.tateParameter w =
         (D.prime.tate w.1 (by
@@ -236,7 +236,7 @@ theorem iutInitialThetaTateFamily_q_eq_baseParameter
       iutEmbedCompletion (IutTorsionQRootSource.basePlaceOf_liesOver (B := B) v)
         (B.tateParameter (IutTorsionQRootSource.basePlaceOf (B := B) v)) := by
   let w := IutTorsionQRootSource.basePlaceOf (B := B) v
-  have hw : w.1 ∈ Iut.badPlacesOver D.F D.E D.VBad := by
+  have hw : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := by
     rw [← hPlaces]
     exact B.mem_badPlaces w
   have hBad := iutInitialThetaTateFamily_badPlace D B hPlaces v
@@ -252,11 +252,11 @@ theorem iutInitialThetaTateFamily_q_eq_baseParameter
 The equality between each local Tate parameter and the base-completion parameter remains
 an explicit source condition. -/
 noncomputable def IutTorsionQRootSource.ofInitialThetaData
-    {AG : Iut.AnabelianGeometry.{u}}
-    {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (B : IutBaseQPilotSource D.F D.prime.ℓ)
-    (hPlaces : B.badPlaces = Iut.badPlacesOver D.F D.E D.VBad)
+    (hPlaces : B.badPlaces = JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad)
     (hq : ∀ w : iutBadPlacesOverFinset (k := D.F) (K := ↥D.prime.torsionField)
       B.badPlaces B.badPlaces_finite,
       ((D.tate.S w.1 (iutInitialThetaTateFamily_badPlace D B hPlaces w)).t.q :
@@ -289,14 +289,14 @@ noncomputable def IutTorsionQRootSource.ofInitialThetaData
 of its IUT q-pilot input. The base parameter is fixed to `D.prime.tate`; the local
 comparison is proved from the actual `TateFamily`. -/
 noncomputable def IutTorsionQRootSource.ofInitialThetaDataOfQPilotBadPlaceFiniteness
-    {AG : Iut.AnabelianGeometry.{u}}
-    {TG : Iut.TemperedGeometry AG}
-    (D : Iut.InitialThetaData AG TG)
-    (hBadFinite : (Iut.badPlacesOver D.F D.E D.VBad).Finite) :
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (hBadFinite : (JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad).Finite) :
     IutTorsionQRootSource D.F ↥D.prime.torsionField D.prime.ℓ
       (IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime hBadFinite) := by
   let B := IutBaseQPilotSource.ofAdmissiblePrimeData D.prime.ℓ D.prime hBadFinite
-  have hPlaces : B.badPlaces = Iut.badPlacesOver D.F D.E D.VBad := rfl
+  have hPlaces : B.badPlaces = JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := rfl
   have hParameter : ∀ w : B.badFinset,
       B.tateParameter w =
         (D.prime.tate w.1 (by
