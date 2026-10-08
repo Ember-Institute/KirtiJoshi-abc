@@ -12,17 +12,20 @@ source-id: JT-ATS-III-COR312-RAW-TARGET
 source: `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`,
 `cor:cor312` (3647--3650), whose q-term is
 `-log |q_w^(1/(2*ell))|_{L'_w}`.
-fidelity: the raw finite-place norm presentation is made explicit as a
-Scene1 target specification.  The current source carrier is the explicit
-Scene1 carrier; identifying it with the paper's `V_p^oss` remains a separate
-Initial Theta Data obligation.
+fidelity: proves the finite-index presentation for the current completion-norm
+candidate.  S1.133 identifies the paper's explicit `C_p` normalization as a
+residue-degree rescaling; this module does not yet use that corrected factor.
+The current source carrier is the explicit Scene1 carrier; identifying it
+with the paper's `V_p^oss` remains a separate Initial Theta Data obligation.
 boundary: Scene1/Derived
 
-This file closes the target-side q-term ambiguity without changing the
-degree-normalized IUT q-pilot adapter.  It proves an exact equivalence between
-the abstract `Corollary312` shell and the raw finite grouped q-sum once the
-finite index identification and q-log equalities are supplied.  It does not
-construct those identifications from the Prologue contracts.
+This file closes the finite-index presentation ambiguity for the current
+completion-norm q-factor without changing the degree-normalized IUT q-pilot
+adapter.  It proves an exact equivalence between the abstract `Corollary312`
+shell and the completion-norm finite grouped q-sum once the finite index
+identification and q-log equalities are supplied.  It does not identify this
+factor with the paper-normalized local absolute value or construct those
+identifications from the Prologue contracts.
 -/
 
 noncomputable def Corollary312RawSourceQLogSum
@@ -97,8 +100,10 @@ theorem qLogSum_eq_rawSourceQLogSum
 end Corollary312RawTargetSpecification
 
 /-!
-The proposition below is the exact raw q-term presentation of Corollary 3.12.
-It is a target-side alias with a proof of equivalence, not a new assumption.
+The proposition below is the exact completion-norm q-term presentation of the
+abstract target shell.  The paper-normalized local factor is defined and
+compared separately in `PaperQNormalizationBridge`; this proposition is a
+target-side alias with a proof of equivalence, not a new assumption.
 -/
 def Corollary312RawTarget
     {K : Type uK} [Field K] [NumberField K]
