@@ -41,6 +41,31 @@ noncomputable def iutInitialThetaOddSupportSelectedBaseQOrder
       (iutInitialThetaOddSupportBaseQPilotSource D).badFinset_spec b.1).mpr
       (iutInitialThetaOddSupportSelectedBasePlaces_subset_baseSupport D b.2)⟩
 
+/-! The selected source subtype has the same underlying place image as the
+section's formal `underline V^oss` carrier. This is the source-level form of
+the already proved equality for selected q-root places. -/
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_image_eq_sectionVoss
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (fun s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset => s.1) ''
+        iutInitialThetaOddSupportSelectedQRootSourcePlaces D =
+      iutInitialThetaSectionVoss D := by
+  calc
+    (fun s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset => s.1) ''
+          iutInitialThetaOddSupportSelectedQRootSourcePlaces D =
+        iutInitialThetaOddSupportSelectedQRootPlaces D := by
+      ext w
+      constructor
+      · rintro ⟨s, hs, rfl⟩
+        simpa [iutInitialThetaOddSupportSelectedQRootSourcePlaces] using hs
+      · intro hw
+        rcases hw with ⟨v, hv, rfl⟩
+        exact ⟨iutInitialThetaOddSupportSelectedQRootPlace D v hv,
+          ⟨v, hv, rfl⟩, rfl⟩
+    _ = iutInitialThetaOddTateSectionPlaces D :=
+      iutInitialThetaOddSupportSelectedQRootPlaces_eq_oddTateSectionPlaces D
+    _ = iutInitialThetaSectionVoss D :=
+      iutInitialThetaOddTateSectionPlaces_eq_sectionVoss D
+
 theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_baseRamIdx_mul_ordp_sum_eq
     (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     let R := iutInitialThetaOddSupportTorsionQRootSource D

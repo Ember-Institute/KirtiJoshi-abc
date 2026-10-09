@@ -287,6 +287,8 @@ S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT
 
 | `IUT-COR312-SELECTED-QROOT-WEIGHTED-FIBER-ACCOUNTING` | `iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_baseRamIdx_mul_ordp_fiber_eq` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedQRootAccounting.lean` | Extends `IUT-COR312-SELECTED-QROOT-WEIGHTED-ACCOUNTING` by filtering both finite subtypes at an arbitrary residue characteristic `p`. The source/base-place `Equiv` preserves the residue characteristic, so the selected q-root sum `qPilotWeight * baseRamIdx * ordp(qroot)` on that fiber equals the selected base-place sum `qPilotWeight * qOrder/(2*ell)`. This is the finite-fibre interface for later `(p,w)` indexing; it does not identify the carrier with paper `L'` representatives or `underline V^oss`, remove q-pilot weights, or establish the unweighted paper q-sum |
 
+| `IUT-COR312-SELECTED-QROOT-SOURCE-VOSS-IMAGE` | `iutInitialThetaOddSupportSelectedQRootSourcePlaces_image_eq_sectionVoss` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedQRootAccounting.lean` | The underlying finite-place image of the selected q-root source subtype is proved equal to `iutInitialThetaSectionVoss`. The proof factors through the selected q-root place set, the actual section's odd Tate locus, and the section-image/odd-semistable definition of `underline V^oss`. This identifies the carrier produced by the actual `InitialThetaData` section with its concrete section Voss carrier; it does not identify an independently supplied Scene1 link or paper representative choice, and does not yet account for representative multiplicity or remove q-pilot weights |
+
 ### 字段级覆盖审计
 
 `FieldCoverage.lean` 使用 Lean projection 名称逐项检查下列字段。每个字段组的语义
