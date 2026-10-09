@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRoot
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLinkSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.FieldOrientationAudit
 
 namespace JoshiTeich.Act1Scene1
 
@@ -89,6 +90,64 @@ noncomputable def AdelicThetaLinkData.ofInitialThetaTorsionTateFamily
   AdelicThetaLinkData.ofTateParameters
     (iutInitialThetaTorsionTateParameterData D) theta thetaBase packetHull
     heightData ramification logVolume processionLength
+
+/-- The actual torsion-field Tate family discharges the carrier and completion
+parameter fields of the field-orientation audit for its canonical Scene1 link.
+The target prime and link identifications remain explicit. -/
+theorem IutFieldOrientationAudit.ofInitialThetaTorsionTateFamily
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data (↥D.prime.torsionField) O p}
+    (theta : ThetaPilotData ↥D.prime.torsionField)
+    (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (hEll : T.ell = D.prime.ℓ)
+    (hLink : T.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaTorsionTateFamily D theta thetaBase
+        packetHull heightData ramification logVolume processionLength) :
+    ∃ (B : IutBaseQPilotSource D.F T.ell)
+      (R : IutTorsionQRootSource D.F (↥D.prime.torsionField) T.ell B),
+      IutFieldOrientationAudit p T B R := by
+  let B0 := iutInitialThetaOddSupportBaseQPilotSource D
+  let R0 := iutInitialThetaOddSupportTorsionQRootSource D
+  let B : IutBaseQPilotSource D.F T.ell :=
+    { badPlaces := B0.badPlaces
+      badFinset := B0.badFinset
+      badFinset_spec := B0.badFinset_spec
+      weight := B0.weight
+      weight_eq_qPilotWeight := B0.weight_eq_qPilotWeight
+      tateParameter := B0.tateParameter
+      tateParameter_ne_zero := B0.tateParameter_ne_zero
+      tateParameter_norm_lt_one := B0.tateParameter_norm_lt_one }
+  let R : IutTorsionQRootSource D.F (↥D.prime.torsionField) T.ell B :=
+    { badFinset := R0.badFinset
+      basePlace := fun v => R0.basePlace ⟨v.1, v.2⟩
+      liesOver := fun v => R0.liesOver ⟨v.1, v.2⟩
+      qroot := fun v => R0.qroot ⟨v.1, v.2⟩
+      qroot_ne_zero := fun v => R0.qroot_ne_zero ⟨v.1, v.2⟩
+      completionMap := fun v => R0.completionMap ⟨v.1, v.2⟩
+      qroot_pow_eq := fun v => by
+        simpa [hEll] using R0.qroot_pow_eq ⟨v.1, v.2⟩ }
+  refine ⟨B, R, ?_⟩
+  refine ⟨?_, ?_⟩
+  · change (iutInitialThetaOddSupportTorsionQRootSource D).badFinset =
+      T.scene1.data.link.places
+    rw [hLink]
+    rfl
+  · intro v
+    change (iutInitialThetaOddSupportTorsionQRootSource D).completionMap v
+        ((iutInitialThetaOddSupportBaseQPilotSource D).tateParameter
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace v)) =
+      T.scene1.data.link.tate.parameter v.1
+    rw [hLink]
+    exact (iutInitialThetaTorsionTateParameterData_parameter_eq_completion D v).symm
 
 end
 
