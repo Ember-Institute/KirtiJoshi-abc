@@ -61,6 +61,88 @@ private theorem iutInitialThetaSelectedQRoot_section_liesOver_canonical
   iutInitialThetaSelectedQRoot_algebraModK_eq_canonical D ▸
     iutInitialThetaFinitePlaceSection_liesOver D v
 
+/-- Contract the place selected by `sectFin` from the torsion field to `D.F`. -/
+noncomputable def iutInitialThetaSectionBasePlace
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : NumberField.FinitePlace
+      ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) :
+    NumberField.FinitePlace D.F :=
+  iutPlaceUnder (F := D.F) (Kt := ↥D.prime.torsionField)
+    (iutInitialThetaFinitePlaceSection D v)
+
+/-- The contracted section place lies over the moduli-field place it represents. -/
+theorem iutInitialThetaSectionBasePlace_liesOver
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : NumberField.FinitePlace
+      ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)) :
+    Ideal.LiesOver (iutInitialThetaSectionBasePlace D v).maximalIdeal.asIdeal
+      v.maximalIdeal.asIdeal := by
+  let M := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)
+  let K := ↥D.prime.torsionField
+  let w := iutInitialThetaFinitePlaceSection D v
+  let b := iutInitialThetaSectionBasePlace D v
+  letI : Algebra M K :=
+    (JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E).instAlgebraSubtypeMem
+  have hfieldHom :
+      algebraMap M K =
+        (algebraMap D.F K).comp (algebraMap M D.F) := by
+    exact RingHom.ext fun x => rfl
+  letI : IsScalarTower M D.F K := IsScalarTower.of_algebraMap_eq' hfieldHom
+  letI : IsScalarTower (𝓞 M) (𝓞 D.F) (𝓞 K) :=
+    IsScalarTower.of_algebraMap_eq' (RingHom.ext fun x => by
+      apply RingOfIntegers.coe_injective
+      exact RingHom.congr_fun hfieldHom x)
+  haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal :=
+    iutInitialThetaSelectedQRoot_section_liesOver_canonical D v
+  haveI : w.maximalIdeal.asIdeal.LiesOver b.maximalIdeal.asIdeal :=
+    iutPlaceUnder_liesOver (F := D.F) (Kt := K) w
+  exact Ideal.LiesOver.tower_bot w.maximalIdeal.asIdeal b.maximalIdeal.asIdeal
+    v.maximalIdeal.asIdeal
+
+/-- Distinct moduli places have distinct section contractions to `D.F`. -/
+theorem iutInitialThetaSectionBasePlace_injective
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Function.Injective (iutInitialThetaSectionBasePlace D) := by
+  let M := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)
+  letI : Algebra M D.F :=
+    (JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E).instAlgebraSubtypeMem
+  intro v₁ v₂ h
+  have h₁ : v₁ = iutPlaceUnder (F := M) (Kt := D.F)
+      (iutInitialThetaSectionBasePlace D v₁) :=
+    iutPlaceUnder_eq_of_liesOver
+      (iutInitialThetaSectionBasePlace_liesOver D v₁)
+  have h₂ : v₂ = iutPlaceUnder (F := M) (Kt := D.F)
+      (iutInitialThetaSectionBasePlace D v₂) :=
+    iutPlaceUnder_eq_of_liesOver
+      (iutInitialThetaSectionBasePlace_liesOver D v₂)
+  calc
+    v₁ = iutPlaceUnder (F := M) (Kt := D.F)
+        (iutInitialThetaSectionBasePlace D v₁) := h₁
+    _ = iutPlaceUnder (F := M) (Kt := D.F)
+        (iutInitialThetaSectionBasePlace D v₂) := by rw [h]
+    _ = v₂ := h₂.symm
+
+/-- The finite image of odd multiplicative moduli places under section contraction. -/
+def iutInitialThetaOddSupportSelectedBasePlaces
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Set (NumberField.FinitePlace D.F) :=
+  iutInitialThetaSectionBasePlace D '' iutVBadOddModSupportPort D
+
+theorem iutInitialThetaOddSupportSelectedBasePlaces_finite
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (iutInitialThetaOddSupportSelectedBasePlaces D).Finite := by
+  exact (iutInitialThetaOddModSupport_finite D).image _
+
+theorem iutInitialThetaOddSupportSelectedBasePlaces_subset_baseSupport
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    iutInitialThetaOddSupportSelectedBasePlaces D ⊆
+      (iutInitialThetaOddSupportBaseQPilotSource D).badPlaces := by
+  rintro b ⟨v, hv, rfl⟩
+  change iutInitialThetaSectionBasePlace D v ∈ IutOddMultiplicativeSupport D
+  rw [← iutInitialThetaOddMultiplicativeModSupport_eq_VBadOdd D] at hv
+  rw [iutOddMultiplicativeSupport_eq_badPlacesOver_modSupport]
+  exact ⟨v, hv, iutInitialThetaSectionBasePlace_liesOver D v⟩
+
 /-- The actual section representative over an odd multiplicative moduli place,
 viewed as a member of the full-support torsion q-root carrier. -/
 noncomputable def iutInitialThetaOddSupportSelectedQRootPlace
@@ -288,6 +370,24 @@ theorem iutInitialThetaOddSupportSelectedQRootPlace_ordp_eq_baseQOrder
         (iutPlaceUnder_eq_of_liesOver
           (IutTorsionQRootSource.basePlaceOf_liesOver (B := B) s)).symm
   simpa [s, R, B, hbase] using hOrder
+
+/-- The q-root source base place is the contraction of the actual section place. -/
+theorem iutInitialThetaOddSupportSelectedQRootPlace_basePlace_eq_sectionBasePlace
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : NumberField.FinitePlace
+      ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+    (hv : v ∈ iutVBadOddModSupportPort D) :
+    let s := iutInitialThetaOddSupportSelectedQRootPlace D v hv
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    (R.basePlace s).1 = iutInitialThetaSectionBasePlace D v := by
+  classical
+  let s := iutInitialThetaOddSupportSelectedQRootPlace D v hv
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  have hcontract : (R.basePlace s).1 = iutPlaceUnder s.1 :=
+    iutPlaceUnder_eq_of_liesOver (R.liesOver s)
+  have hs : s.1 = iutInitialThetaFinitePlaceSection D v := by
+    simpa [s] using iutInitialThetaOddSupportSelectedQRootPlace_val_eq_section D v hv
+  simpa [hs, iutInitialThetaSectionBasePlace] using hcontract
 
 end
 
