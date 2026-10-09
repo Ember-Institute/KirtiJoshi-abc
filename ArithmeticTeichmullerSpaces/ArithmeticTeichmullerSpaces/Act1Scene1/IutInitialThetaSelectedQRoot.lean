@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRoot
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPlaceSection
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 
 namespace JoshiTeich.Act1Scene1
@@ -110,6 +111,50 @@ noncomputable def iutInitialThetaOddSupportSelectedQRootPlace
   have hwFinset :=
     (mem_iutBadPlacesOverFinset_iff B.badPlaces B.badPlaces_finite w).mpr hwCarrier
   exact ⟨w, hwFinset⟩
+
+/-- The underlying torsion-field places selected as q-root representatives by
+the actual section over the complete odd multiplicative support. -/
+def iutInitialThetaOddSupportSelectedQRootPlaces
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Set (NumberField.FinitePlace ↥D.prime.torsionField) :=
+  {w | ∃ (v : NumberField.FinitePlace
+      ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+      (hv : v ∈ iutVBadOddModSupportPort D),
+      (iutInitialThetaOddSupportSelectedQRootPlace D v hv).1 = w}
+
+theorem iutInitialThetaOddSupportSelectedQRootPlace_val_eq_section
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : NumberField.FinitePlace
+      ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+    (hv : v ∈ iutVBadOddModSupportPort D) :
+    (iutInitialThetaOddSupportSelectedQRootPlace D v hv).1 =
+      iutInitialThetaFinitePlaceSection D v := by
+  rfl
+
+/-- The selected q-root places are exactly the odd Tate section places from
+the Voss characterization of the actual IUT section. -/
+theorem iutInitialThetaOddSupportSelectedQRootPlaces_eq_oddTateSectionPlaces
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    iutInitialThetaOddSupportSelectedQRootPlaces D =
+      iutInitialThetaOddTateSectionPlaces D := by
+  rw [iutInitialThetaOddTateSectionPlaces_eq_selectedSupport]
+  ext w
+  simp only [iutInitialThetaOddSupportSelectedQRootPlaces, Set.mem_ofPred_eq,
+    iutInitialThetaOddMultiplicativeSelectedPlaces, Set.mem_image]
+  constructor
+  · rintro ⟨v, hv, h⟩
+    exact ⟨v, hv,
+      (iutInitialThetaOddSupportSelectedQRootPlace_val_eq_section D v hv).trans h⟩
+  · rintro ⟨v, hv, h⟩
+    exact ⟨v, hv,
+      (iutInitialThetaOddSupportSelectedQRootPlace_val_eq_section D v hv).symm.trans h⟩
+
+theorem iutInitialThetaOddSupportSelectedQRootPlaces_finite
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (iutInitialThetaOddSupportSelectedQRootPlaces D).Finite := by
+  rw [iutInitialThetaOddSupportSelectedQRootPlaces_eq_oddTateSectionPlaces,
+    iutInitialThetaOddTateSectionPlaces_eq_selectedSupport]
+  exact (iutInitialThetaOddModSupport_finite D).image _
 
 /-- At the section-selected representative, the q-root power is the q parameter
 of the Tate structure selected by the actual InitialThetaData. -/
