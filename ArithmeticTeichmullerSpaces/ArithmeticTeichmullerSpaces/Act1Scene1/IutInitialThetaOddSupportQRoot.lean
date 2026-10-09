@@ -245,6 +245,17 @@ private theorem iutInitialThetaOddSupportTateFamily_badPlace
     (IutTorsionQRootSource.basePlaceOf (B := B) w).1.maximalIdeal.asIdeal
     v.maximalIdeal.asIdeal).over⟩⟩
 
+theorem iutInitialThetaOddSupportTateFamily_badPlace_source
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : iutBadPlacesOverFinset (k := D.F) (K := ↥D.prime.torsionField)
+      (iutInitialThetaOddSupportBaseQPilotSource D).badPlaces
+      (iutInitialThetaOddSupportBaseQPilotSource D).badPlaces_finite) :
+    JoshiTeich.ReferenceIut.IsBadPlace D.E D.prime.torsionField
+      (iutVBadOddModSupportPort D) w.1 := by
+  exact iutInitialThetaOddSupportTateFamily_badPlace D
+    (iutInitialThetaOddSupportBaseQPilotSource D)
+    (iutInitialThetaOddSupport_badPlaces_eq_fullModuliSupport D) w
+
 /-- The actual `TateFamily` q parameter is the image of the base parameter at
 every place over the full odd multiplicative support. -/
 theorem iutInitialThetaOddSupportTateFamily_q_eq_baseParameter
