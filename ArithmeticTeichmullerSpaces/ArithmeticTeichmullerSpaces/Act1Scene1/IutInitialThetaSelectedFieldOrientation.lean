@@ -19,8 +19,9 @@ and `AdelicThetaLinkData.ofInitialThetaOddTateSection`.
 fidelity: restricts the full torsion q-root source to the finite carrier
 selected by the actual section and proves the field-orientation audit for the
 canonical selected-section link. The local equality between the selected
-q-root power and the section Tate parameter is an explicit source certificate;
-the independent Scene1 link equality and prime-index alignment remain explicit.
+q-root power and the section Tate parameter is proved from the actual
+`InitialThetaData` Tate family; the independent Scene1 link equality and
+prime-index alignment remain explicit.
 boundary: Scene1/Derived
 -/
 
@@ -93,15 +94,135 @@ private theorem iutInitialThetaOddSupportSelectedQRootAt_eq_witness
   simpa [iutInitialThetaOddSupportSelectedQRootAt] using
     (iutInitialThetaOddSupportSelectedQRootWitness D v).2.2.symm
 
+private theorem iutInitialThetaOddSupportSelectedQRootAt_val
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : iutInitialThetaOddSupportSelectedQRootFinset D) :
+    (iutInitialThetaOddSupportSelectedQRootAt D v).1 = v.1 := by
+  simp [iutInitialThetaOddSupportSelectedQRootAt]
+
+private theorem iutInitialThetaOddSupportSelectedQRootAt_coe
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : iutInitialThetaOddSupportSelectedQRootFinset D) :
+    (↑(iutInitialThetaOddSupportSelectedQRootAt D v) :
+        NumberField.FinitePlace ↥D.prime.torsionField) = v.1 :=
+  iutInitialThetaOddSupportSelectedQRootAt_val D v
+
 noncomputable def iutInitialThetaOddSupportSelectedQRootQRoot
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
     {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
     (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     (v : iutInitialThetaOddSupportSelectedQRootFinset D) :
     v.1.maximalIdeal.adicCompletion (↥D.prime.torsionField) := by
-  simpa [iutInitialThetaOddSupportSelectedQRootAt] using
-    (iutInitialThetaOddSupportTorsionQRootSource D).qroot
-      (iutInitialThetaOddSupportSelectedQRootAt D v)
+  change (iutInitialThetaOddSupportSelectedQRootAt D v).1.maximalIdeal.adicCompletion
+      (↥D.prime.torsionField)
+  exact (iutInitialThetaOddSupportTorsionQRootSource D).qroot
+    (iutInitialThetaOddSupportSelectedQRootAt D v)
+
+theorem iutInitialThetaOddSupportSelectedQRootQRoot_pow_eq_sectionParameter
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : iutInitialThetaOddSupportSelectedQRootFinset D) :
+    iutInitialThetaOddSupportSelectedQRootQRoot D v ^ (2 * D.prime.ℓ) =
+      (iutInitialThetaOddTateSectionTateParameterData D).parameter v.1 := by
+  classical
+  have hvPlaces : v.1 ∈ iutInitialThetaOddSupportSelectedQRootPlaces D :=
+    (iutInitialThetaOddSupportSelectedQRootPlaces_finite D).mem_toFinset.mp v.2
+  let s := iutInitialThetaOddSupportSelectedQRootWitness D v
+  have hsSelected : s.1 ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D :=
+    s.2.1
+  change ∃ (v₀ : NumberField.FinitePlace
+      ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+      (hv₀ : v₀ ∈ iutVBadOddModSupportPort D),
+      (iutInitialThetaOddSupportSelectedQRootPlace D v₀ hv₀).1 = s.1 at hsSelected
+  rcases hsSelected with ⟨v₀, hv₀, hplace⟩
+  have hAt : iutInitialThetaOddSupportSelectedQRootAt D v =
+      iutInitialThetaOddSupportSelectedQRootPlace D v₀ hv₀ := by
+    apply Subtype.ext
+    calc
+      (iutInitialThetaOddSupportSelectedQRootAt D v).1 = s.1.1 := by
+        rw [iutInitialThetaOddSupportSelectedQRootAt_eq_witness D v]
+      _ = (iutInitialThetaOddSupportSelectedQRootPlace D v₀ hv₀).1 := hplace.symm
+  have hsourceMem : v.1 ∈
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset := by
+    rw [← s.2.2]
+    exact s.1.2
+  let sV : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset :=
+    ⟨v.1, hsourceMem⟩
+  have hsV : sV = iutInitialThetaOddSupportSelectedQRootPlace D v₀ hv₀ := by
+    apply Subtype.ext
+    calc
+      sV.1 = v.1 := rfl
+      _ = (iutInitialThetaOddSupportSelectedQRootAt D v).1 :=
+        (iutInitialThetaOddSupportSelectedQRootAt_val D v).symm
+      _ = (iutInitialThetaOddSupportSelectedQRootPlace D v₀ hv₀).1 :=
+        congrArg Subtype.val hAt
+  let hbadAll := fun s :
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset =>
+    iutInitialThetaOddSupportTateFamily_badPlace_source D s
+  let P : ∀ s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset, Prop :=
+    fun s =>
+      (iutInitialThetaOddSupportTorsionQRootSource D).qroot s ^ (2 * D.prime.ℓ) =
+        ((iutInitialThetaTateFamilyOfTorsion D).S s.1 (hbadAll s)).t.q
+  have hqrootSelected : P
+      (iutInitialThetaOddSupportSelectedQRootPlace D v₀ hv₀) := by
+    simpa [P, hbadAll] using
+      iutInitialThetaOddSupportSelectedQRootPlace_qroot_pow_eq_sectionTate D v₀ hv₀
+  have hqrootSV : P sV := (congrArg P hsV).mpr hqrootSelected
+  let hbad := hbadAll sV
+  have hqroot'' :
+      (iutInitialThetaOddSupportTorsionQRootSource D).qroot
+          sV ^ (2 * D.prime.ℓ) =
+        ((iutInitialThetaTateFamilyOfTorsion D).S
+          sV.1 hbad).t.q := by
+    simpa [P, hbad, hbadAll] using hqrootSV
+  have hTate :
+      ((iutInitialThetaTateFamilyOfTorsion D).S
+          sV.1 hbad).t =
+        (iutInitialThetaOddTateSectionTateStructure D v.1 hvPlaces).t := by
+    apply TateParameter.tateJ_injective _ _
+      (JoshiTeich.ReferenceIut.twelve_ne_zero v.1)
+    have hJ₁ := iutTateStructure_tateJ_eq
+      ((iutInitialThetaTateFamilyOfTorsion D).S
+        (iutInitialThetaOddSupportSelectedQRootAt D v).1 hbad)
+    have hJ₂ := iutTateStructure_tateJ_eq
+      (iutInitialThetaOddTateSectionTateStructure D v.1 hvPlaces)
+    exact hJ₁.trans hJ₂.symm
+  have hparameter :=
+    iutInitialThetaOddTateSectionTateParameterData_parameter_eq D v.1 hvPlaces
+  have hqrootParameter :
+      (iutInitialThetaOddSupportTorsionQRootSource D).qroot
+          sV ^ (2 * D.prime.ℓ) =
+        (iutInitialThetaOddTateSectionTateParameterData D).parameter v.1 := by
+    calc
+      (iutInitialThetaOddSupportTorsionQRootSource D).qroot
+          sV ^ (2 * D.prime.ℓ) =
+          ((iutInitialThetaTateFamilyOfTorsion D).S
+            sV.1 hbad).t.q := hqroot''
+      _ = (iutInitialThetaOddTateSectionTateStructure D v.1 hvPlaces).t.q := by
+        simpa [sV] using
+          congrArg (fun t =>
+            (t.q : sV.1.maximalIdeal.adicCompletion (↥D.prime.torsionField))) hTate
+      _ = (iutInitialThetaOddTateSectionTateParameterData D).parameter v.1 :=
+        hparameter.symm
+  have hAtSV : iutInitialThetaOddSupportSelectedQRootAt D v = sV := by
+    apply Subtype.ext
+    exact iutInitialThetaOddSupportSelectedQRootAt_val D v
+  have hQRootEq :
+      iutInitialThetaOddSupportSelectedQRootQRoot D v =
+        (iutInitialThetaOddSupportTorsionQRootSource D).qroot sV := by
+    unfold iutInitialThetaOddSupportSelectedQRootQRoot
+    exact eq_of_heq (by cases hAtSV; rfl)
+  calc
+    iutInitialThetaOddSupportSelectedQRootQRoot D v ^ (2 * D.prime.ℓ) =
+        (iutInitialThetaOddSupportTorsionQRootSource D).qroot sV ^
+          (2 * D.prime.ℓ) := by rw [hQRootEq]
+    _ = (iutInitialThetaOddTateSectionTateParameterData D).parameter v.1 :=
+      hqrootParameter
 
 theorem IutFieldOrientationAudit.ofInitialThetaSelectedTateSection
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
@@ -117,11 +238,6 @@ theorem IutFieldOrientationAudit.ofInitialThetaSelectedTateSection
     (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
     (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
     (logVolume : ℝ) (processionLength : ℕ)
-    (hSelectedParameter :
-      ∀ v : iutInitialThetaOddSupportSelectedQRootFinset D,
-        iutInitialThetaOddSupportSelectedQRootQRoot D v ^
-            (2 * D.prime.ℓ) =
-          (iutInitialThetaOddTateSectionTateParameterData D).parameter v.1)
     (hEll : T.ell = D.prime.ℓ)
     (hLink : T.scene1.data.link =
       AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
@@ -182,7 +298,8 @@ theorem IutFieldOrientationAudit.ofInitialThetaSelectedTateSection
       _ = (iutInitialThetaOddTateSectionTateParameterData D).parameter v.1 := by
         change iutInitialThetaOddSupportSelectedQRootQRoot D v ^ (2 * T.ell) =
           (iutInitialThetaOddTateSectionTateParameterData D).parameter v.1
-        simpa [hEll] using hSelectedParameter v
+        simpa [hEll] using
+          iutInitialThetaOddSupportSelectedQRootQRoot_pow_eq_sectionParameter D v
 
 end
 
