@@ -68,6 +68,16 @@ S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT
   was available, so a process-group RSS monitor used the documented `55 GiB` stop line under
   the `60 GiB` policy. Mathlib4 was not rebuilt. This verifies the migrated dependency closure
   for the two targets; it is not a full project build.
+- 2026-10-09: after S1.150 reached the twentieth successful push, the cold full-source build used
+  `setsid taskset -c 0-14 /usr/bin/time -v prlimit --as=64424509440:64424509440 -- env LEAN_NUM_THREADS=1 lake -Kjobs=15 build +ArithmeticTeichmullerSpaces`.
+  It completed `9192/9192` jobs with exit status `0` in `1:56:08`. `/usr/bin/time` reported maximum
+  RSS `8,277,824 kB`; a two-second process-group RSS monitor measured a peak of `8,428,544 KiB`.
+  CPU affinity was `0-14`, Lake used 15 jobs, and each Lean worker used one thread. No memory cgroup
+  was available, so the process-group monitor used the documented `55 GiB` stop line; the
+  per-process `prlimit --as` value was `60 GiB` and is not the group limit. The existing Mathlib4
+  build directory and cached artifacts were preserved and Mathlib4 was not rebuilt. The completed
+  cold build resets the push counter to `0/20`; this build-record update will count as `1/20` after
+  it is pushed.
 - Successful full builds validate Lean compilation only. They do not close the still-open
   `InitialThetaData`/`TateFamily`, `V_p^oss`, q-factor normalization, or theta-volume source
   obligations listed below.
