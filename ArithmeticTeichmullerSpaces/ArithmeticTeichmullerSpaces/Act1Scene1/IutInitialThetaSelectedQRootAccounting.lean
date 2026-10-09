@@ -1,0 +1,188 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRoot
+
+namespace JoshiTeich.Act1Scene1
+
+open JoshiTeich.Prologue
+open JoshiTeich.Prologue.Arithmetic
+open NumberField
+open WithZero
+open scoped BigOperators Classical NumberField Valued
+
+universe u
+
+noncomputable section
+
+/-!
+source-id: IUT-COR312-SELECTED-QROOT-WEIGHTED-ACCOUNTING
+source: `iut`: the finite-place q-root valuation accounting from
+`refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean` and `Ordp.lean`,
+combined with the actual section representative and contraction interfaces
+ported from `ThetaData/LocalConditions.lean` and `ThetaData/PlaceUnder.lean`.
+fidelity: on the finite selected section carrier, the q-pilot residue-degree
+weight is transported across the proved source/base-place equivalence. The
+local identity `baseRamIdx * ordp(qroot) = qOrder/(2*ell)` is used to obtain the
+selected base q-order sum. This does not identify the carrier with the paper's
+`L'` representatives or `underline V^oss`, and it does not remove the
+q-pilot weight or prove the unweighted paper sum.
+boundary: Scene1/Derived
+-/
+
+variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+
+/-- The q-pilot weight of a selected contracted base place, viewed as an index
+of the base q-pilot source. -/
+noncomputable def iutInitialThetaOddSupportSelectedBaseQOrder
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (b : {b : NumberField.FinitePlace D.F //
+      b ∈ iutInitialThetaOddSupportSelectedBasePlaces D}) : ℕ :=
+  (iutInitialThetaOddSupportBaseQPilotSource D).qOrder
+    ⟨b.1, (Set.ext_iff.mp
+      (iutInitialThetaOddSupportBaseQPilotSource D).badFinset_spec b.1).mpr
+      (iutInitialThetaOddSupportSelectedBasePlaces_subset_baseSupport D b.2)⟩
+
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_baseRamIdx_mul_ordp_sum_eq
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    let S :=
+      {s : R.badFinset //
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    let T :=
+      {b : NumberField.FinitePlace D.F //
+        b ∈ iutInitialThetaOddSupportSelectedBasePlaces D}
+    letI : Fintype T :=
+      (iutInitialThetaOddSupportSelectedBasePlaces_finite D).fintype
+    ∑ s : S,
+        Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+          ((Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+            Arithmetic.ordp s.1.1
+              (R.qroot (show R.badFinset from s.1))) =
+      ∑ b : T,
+        Arithmetic.qPilotWeight b.1 *
+          (iutInitialThetaOddSupportSelectedBaseQOrder D b : ℝ) /
+            (2 * (D.prime.ℓ : ℝ)) := by
+  classical
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  let S :=
+    {s : R.badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  let T :=
+    {b : NumberField.FinitePlace D.F //
+      b ∈ iutInitialThetaOddSupportSelectedBasePlaces D}
+  letI : Fintype T :=
+    (iutInitialThetaOddSupportSelectedBasePlaces_finite D).fintype
+  let e := iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlaceEquiv D
+  let bIndex : T → B.badFinset := fun b =>
+    ⟨b.1, (Set.ext_iff.mp B.badFinset_spec b.1).mpr
+      (iutInitialThetaOddSupportSelectedBasePlaces_subset_baseSupport D b.2)⟩
+  have hIndex (b : T) :
+      iutInitialThetaOddSupportSelectedBaseQOrder D b = B.qOrder (bIndex b) := by
+    rfl
+  have hBase (s : S) :
+      bIndex (e s) = R.basePlace s.1 := by
+    apply Subtype.ext
+    rfl
+  have hLocal (s : S) :
+      Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1)) =
+        (B.qOrder (bIndex (e s)) : ℝ) /
+          (2 * (D.prime.ℓ : ℝ) *
+            Arithmetic.ramIdx (R.basePlace s.1).1) := by
+    rcases s.2 with ⟨v, hv, hsection⟩
+    have hs : iutInitialThetaOddSupportSelectedQRootPlace D v hv = s.1 :=
+      Subtype.ext hsection
+    have h := iutInitialThetaOddSupportSelectedQRootPlace_ordp_eq_baseQOrder
+      D v hv
+    have hbase :
+        R.basePlace s.1 =
+          R.basePlace (iutInitialThetaOddSupportSelectedQRootPlace D v hv) := by
+      rw [hs]
+    have hbase' :
+        B.qOrder (R.basePlace (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) =
+          B.qOrder (bIndex (e s)) := by
+      calc
+        B.qOrder (R.basePlace (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) =
+            B.qOrder (R.basePlace s.1) := by rw [hs]
+        _ = B.qOrder (bIndex (e s)) := by rw [hBase s]
+    have h' :
+        Arithmetic.ordp
+            (iutInitialThetaOddSupportSelectedQRootPlace D v hv).1
+            (R.qroot (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) =
+          (B.qOrder
+              (R.basePlace
+                (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) : ℝ) /
+            (2 * (D.prime.ℓ : ℝ) *
+              Arithmetic.ramIdx
+                (R.basePlace
+                  (iutInitialThetaOddSupportSelectedQRootPlace D v hv)).1) := by
+      simpa [R, B] using h
+    calc
+      Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1)) =
+          Arithmetic.ordp
+            (iutInitialThetaOddSupportSelectedQRootPlace D v hv).1
+            (R.qroot (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) := by
+        rw [hs]
+      _ = (B.qOrder
+            (R.basePlace
+              (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) : ℝ) /
+            (2 * (D.prime.ℓ : ℝ) *
+              Arithmetic.ramIdx
+                (R.basePlace
+                  (iutInitialThetaOddSupportSelectedQRootPlace D v hv)).1) := h'
+      _ = (B.qOrder (bIndex (e s)) : ℝ) /
+          (2 * (D.prime.ℓ : ℝ) *
+            Arithmetic.ramIdx (R.basePlace s.1).1) := by
+        rw [hbase', ← hbase]
+  have hEll : (D.prime.ℓ : ℝ) ≠ 0 := by
+    have h := D.prime.five_le
+    positivity
+  have hRam (s : S) :
+      (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) ≠ 0 := by
+    exact_mod_cast (Arithmetic.ramIdx_pos (R.basePlace s.1).1).ne'
+  calc
+    (∑ s : S,
+        Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+          ((Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+            Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1)))) =
+        ∑ s : S,
+          Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+            ((B.qOrder (bIndex (e s)) : ℝ) /
+              (2 * (D.prime.ℓ : ℝ))) := by
+      apply Finset.sum_congr rfl
+      intro s hs
+      rw [hLocal s]
+      have hram := hRam s
+      field_simp [hram, hEll]
+    _ = ∑ s : S,
+          Arithmetic.qPilotWeight (bIndex (e s)).1 *
+            ((B.qOrder (bIndex (e s)) : ℝ) /
+              (2 * (D.prime.ℓ : ℝ))) := by
+      apply Finset.sum_congr rfl
+      intro s hs
+      rw [hBase s]
+    _ = ∑ b : T,
+          Arithmetic.qPilotWeight (bIndex b).1 *
+            ((B.qOrder (bIndex b) : ℝ) /
+              (2 * (D.prime.ℓ : ℝ))) := by
+      simpa using e.sum_comp (fun b =>
+        Arithmetic.qPilotWeight (bIndex b).1 *
+          ((B.qOrder (bIndex b) : ℝ) /
+            (2 * (D.prime.ℓ : ℝ))) )
+    _ = ∑ b : T,
+          Arithmetic.qPilotWeight b.1 *
+            (iutInitialThetaOddSupportSelectedBaseQOrder D b : ℝ) /
+              (2 * (D.prime.ℓ : ℝ)) := by
+      apply Finset.sum_congr rfl
+      intro b hb
+      have hbIndex : (bIndex b).1 = b.1 := by
+        rfl
+      rw [hbIndex, hIndex b]
+      ring
+
+end
+
+end JoshiTeich.Act1Scene1

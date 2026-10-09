@@ -331,6 +331,8 @@ are kept in `Prologue/Obligations` and are not imported by `Prologue/Interfaces`
 
 ## IUT reference boundary
 
+| IUT-COR312-SELECTED-QROOT-WEIGHTED-ACCOUNTING | iutInitialThetaOddSupportSelectedBaseQOrder, iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_baseRamIdx_mul_ordp_sum_eq | ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedQRootAccounting.lean | iut finite-place q-root valuation accounting from refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean and Ordp.lean, combined with the actual section and contraction ports from Iut/Cor312/ThetaData/LocalConditions.lean and PlaceUnder.lean. On the finite selected carrier, transports qPilotWeight * baseRamIdx * ordp(qroot) across the proved source/base-place equivalence and obtains the selected base q-order sum. The ramification index is the contracted base-place index from the existing ordp formula. This remains weighted accounting for the concrete section choice; it does not identify the carrier with paper L' representatives or underline V^oss, remove q-pilot weights, or prove the unweighted paper sum |
+
 The reference checkout is `refer/iut` at commit `d9465c111ec4073709f67e9fccec7e3eb374a816`.
 The current tree does not import `refer/iut` as a Lake dependency. Individual APIs may be
 ported after adaptation to the frozen mathlib boundary; each port records its source path,
