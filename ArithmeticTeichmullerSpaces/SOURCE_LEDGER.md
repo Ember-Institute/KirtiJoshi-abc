@@ -78,6 +78,12 @@ S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT
   build directory and cached artifacts were preserved and Mathlib4 was not rebuilt. The completed
   cold build resets the push counter to `0/20`; this build-record update will count as `1/20` after
   it is pushed.
+- 2026-10-09: the S1.152 targeted build of the q-order base-change module, `Act1Scene1`, and
+  `Prologue.Audit.ImportAudit` completed `9183/9183` jobs with exit status `0` in `3:02.99`.
+  `/usr/bin/time` reported maximum RSS `8,189,160 kB`; two-second process-group sampling measured
+  `9,259,376 KiB`. The build used CPU affinity `0-14`, `-Kjobs=15`, and `LEAN_NUM_THREADS=1`.
+  No memory cgroup was available; the process-group monitor used the `55 GiB` stop line under the
+  `60 GiB` policy. Mathlib4 targets were replayed from existing artifacts and were not rebuilt.
 - Successful full builds validate Lean compilation only. They do not close the still-open
   `InitialThetaData`/`TateFamily`, `V_p^oss`, q-factor normalization, or theta-volume source
   obligations listed below.
@@ -270,6 +276,7 @@ S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT
 | `JT-ATS-AUDIT-REJECT-FROBENIUS-SQUARE` | theta norm collapse, zero log-volume consequence, and nonempty packet/hull contradiction under the rejected candidate | `ArithmeticTeichmullerSpaces/Prologue/Audit/JointConsistency.lean` | `mathlib` `Data/Fintype/Lattice.lean` (`Finite.exists_max`, `Finite.exists_min`); contract semantics from `JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md`, `th:adelic-theta-link` 1139-1166, `def:additive-theta-pilot-object` 1492-1502, `le:volume-lemma3` 3576-3583, `cor:cor312` 3647-3650; rejection audit only |
 
 | `IUT-COR312-ODD-SUPPORT-TATE-BASE-CHANGE` | `iutInitialThetaOddSupportBaseTateParameter_q_eq_of_liesOver` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaOddSupportBaseChange.lean` | `iut`: `refer/iut/Iut/Tripod/CyclicTorsion.lean` (`VBadOdd`) and `Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean`; completion transport follows `Iut/Concrete/ThetaLocalConstruct/EmbedCompletion.lean` and `TateCompat.lean`, ported in `IutTateParameterCompletion.lean`. `TateParameter.tateJ_injective` is from `TateCurvesTheta` at fixed commit `ca6c2279d3cea0690cdb01328e727118d5485d68`, `TateCurvesTheta/QParameter/JParametrization.lean`. For any moduli place in the full odd multiplicative support and any place of `F` lying over it, proves the q-parameter constructed over the `F`-completion is the completion image of the q-parameter over the moduli-field completion. This aligns local Tate parameters across the field extension; it does not identify their global sums, the IUT-selected `VBad` with full support, the paper's `underline V^oss` with the Scene1 carrier, or prove 3.12 |
+| `IUT-COR312-ODD-SUPPORT-Q-ORDER-BASE-CHANGE` | `iutCompletionQOrder_eq_relRamIdx_mul_of_eq_embed`, `iutInitialThetaOddSupportTateFamily_qOrder_eq_relRamIdx_mul` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaOddSupportQOrderBaseChange.lean` | `iut`: completion valuation transport from `refer/iut/Iut/Concrete/ThetaLocalConstruct/EmbedCompletion.lean` (`valued_embedCompletion`) and the local q-order/Tate-family fields from `refer/iut/Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean`; completion order and relative ramification use local ports in `IutCompletionSource.lean` and `IutQSourceContract.lean`. Proves that the completion q-order of the actual Tate-family parameter over a torsion-field place is the base q-order times the relative ramification index. This is a local order scaling formula; it does not identify the paper's selected `L'`-place sum with the weighted sum over `F`-places |
 
 ### 字段级覆盖审计
 
