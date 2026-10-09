@@ -142,6 +142,68 @@ theorem iutInitialThetaOddSupportSelectedQRootPlace_qroot_pow_eq_sectionTate
     _ = ((iutInitialThetaTateFamilyOfTorsion D).S s.1 hsBad).t.q := by
       exact (iutInitialThetaOddSupportTateFamily_q_eq_baseParameter D s).symm
 
+/-- At the actual section representative, rescaling the arithmetic `ordp` of
+the selected q-root by the absolute ramification index gives the local
+q-order used by the paper's `|uniformizer| = p⁻¹` normalization. -/
+theorem iutInitialThetaOddSupportSelectedQRootPlace_ramIdx_mul_ordp_eq_sectionQOrder
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : NumberField.FinitePlace
+      ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+    (hv : v ∈ iutVBadOddModSupportPort D) :
+    let s := iutInitialThetaOddSupportSelectedQRootPlace D v hv
+    let S := (iutInitialThetaTateFamilyOfTorsion D).S s.1
+      ⟨v, hv, iutInitialThetaSelectedQRoot_section_liesOver_canonical D v⟩
+    (Arithmetic.ramIdx s.1 : ℝ) *
+        Arithmetic.ordp s.1
+          ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s) =
+      (iutCompletionQOrder s.1 S.t.q : ℝ) /
+        (2 * (D.prime.ℓ : ℝ)) := by
+  classical
+  let s := iutInitialThetaOddSupportSelectedQRootPlace D v hv
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  letI : Algebra ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)
+      ↥D.prime.torsionField :=
+    (JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E).instAlgebraSubtypeMem
+  have hsBad : JoshiTeich.ReferenceIut.IsBadPlace D.E D.prime.torsionField
+      (iutVBadOddModSupportPort D) s.1 :=
+    ⟨v, hv, iutInitialThetaSelectedQRoot_section_liesOver_canonical D v⟩
+  let S := (iutInitialThetaTateFamilyOfTorsion D).S s.1 hsBad
+  have hpow : R.qroot s ^ (2 * D.prime.ℓ) = S.t.q := by
+    simpa [s, S, hsBad] using
+      iutInitialThetaOddSupportSelectedQRootPlace_qroot_pow_eq_sectionTate D v hv
+  have hqVal := iutCompletionQOrder_valued s.1 S.t.q
+    S.t.q.ne_zero S.t.norm_lt_one
+  have hqOrd0 := Arithmetic.ordp_eq_of_valued s.1 S.t.q
+    (-(iutCompletionQOrder s.1 S.t.q : ℤ)) hqVal
+  have hqOrd : Arithmetic.ordp s.1 S.t.q =
+      (iutCompletionQOrder s.1 S.t.q : ℝ) /
+        (Arithmetic.ramIdx s.1 : ℝ) := by
+    rw [hqOrd0]
+    push_cast
+    ring
+  have hpowOrd := congrArg (Arithmetic.ordp s.1) hpow
+  rw [Arithmetic.ordp_pow, hqOrd] at hpowOrd
+  push_cast at hpowOrd
+  have he : (Arithmetic.ramIdx s.1 : ℝ) ≠ 0 := by
+    exact_mod_cast (Arithmetic.ramIdx_pos s.1).ne'
+  have hell : (D.prime.ℓ : ℝ) ≠ 0 := by
+    have h := D.prime.five_le
+    positivity
+  have htwoell : (2 * (D.prime.ℓ : ℝ)) ≠ 0 := by positivity
+  calc
+    (Arithmetic.ramIdx s.1 : ℝ) * Arithmetic.ordp s.1 (R.qroot s) =
+        ((Arithmetic.ramIdx s.1 : ℝ) *
+          ((2 * (D.prime.ℓ : ℝ)) * Arithmetic.ordp s.1 (R.qroot s))) /
+          (2 * (D.prime.ℓ : ℝ)) := by
+      field_simp [hell]
+    _ = ((Arithmetic.ramIdx s.1 : ℝ) *
+          ((iutCompletionQOrder s.1 S.t.q : ℝ) /
+            (Arithmetic.ramIdx s.1 : ℝ))) /
+          (2 * (D.prime.ℓ : ℝ)) := by rw [hpowOrd]
+    _ = (iutCompletionQOrder s.1 S.t.q : ℝ) /
+          (2 * (D.prime.ℓ : ℝ)) := by
+      field_simp [he, htwoell]
+
 end
 
 end JoshiTeich.Act1Scene1
