@@ -38,6 +38,37 @@ private theorem iut_norm_emb_le_one_iff
   rw [JoshiTeich.ReferenceIut.norm_le_one_iff_valued, FinitePlace.embedding_apply,
     valuedAdicCompletion_eq_valuation']
 
+theorem iutInitialThetaHasMultiplicativeReduction_iff_not_jValLEOne
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : NumberField.FinitePlace D.F) :
+    JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E w ↔
+      ¬ w.maximalIdeal.valuation D.F D.E.j ≤ 1 := by
+  constructor
+  · intro hw
+    exact not_le_of_gt (JoshiTeich.ReferenceIut.one_lt_valuation_j_of_mult D.E w hw)
+  · intro hnot
+    rcases D.global.stable_reduction w with hg | hm
+    · exfalso
+      apply hnot
+      obtain ⟨C, hC⟩ := hg
+      haveI : ((C • D.E).baseChange (w.maximalIdeal.adicCompletion D.F)).HasGoodReduction
+          (w.maximalIdeal.adicCompletionIntegers D.F) := hC
+      have hΔ : ‖((C • D.E).baseChange
+          (w.maximalIdeal.adicCompletion D.F)).Δ‖ = 1 :=
+        (JoshiTeich.ReferenceIut.valuation_eq_one_iff w _).1 HasGoodReduction.goodReduction
+      have hc₄ : ‖((C • D.E).baseChange
+          (w.maximalIdeal.adicCompletion D.F)).c₄‖ ≤ 1 :=
+        JoshiTeich.ReferenceIut.norm_c₄_le_one _
+      rw [JoshiTeich.ReferenceIut.baseChange_adicCompletion_eq, map_Δ] at hΔ
+      rw [JoshiTeich.ReferenceIut.baseChange_adicCompletion_eq, map_c₄] at hc₄
+      rw [← variableChange_j D.E C, ← iut_norm_emb_le_one_iff,
+        JoshiTeich.ReferenceIut.j_eq_inv_Δ_mul, map_mul, map_inv₀, map_pow, norm_mul,
+        norm_inv, norm_pow, hΔ, inv_one, one_mul]
+      exact pow_le_one₀ (norm_nonneg _) hc₄
+    · exact hm
+
 /-- The odd-characteristic multiplicative places of the IUT base curve. -/
 def IutOddMultiplicativeSupport
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
@@ -77,39 +108,14 @@ private theorem iut_multiplicative_reduction_invariant_over_mod_place
     exact pow_le_one_iff_of_nonneg zero_le
       (Ideal.ramificationIdx_pos_of_isDedekindDomain' x.maximalIdeal.asIdeal
         v.maximalIdeal.ne_bot).ne'
-  have multIffNotValLeOne (x : NumberField.FinitePlace D.F) :
-      JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E x ↔
-        ¬ x.maximalIdeal.valuation D.F D.E.j ≤ 1 := by
-    constructor
-    · intro hx
-      exact not_le_of_gt (JoshiTeich.ReferenceIut.one_lt_valuation_j_of_mult D.E x hx)
-    · intro hnot
-      rcases D.global.stable_reduction x with hg | hm'
-      · exfalso
-        apply hnot
-        obtain ⟨C, hC⟩ := hg
-        haveI : ((C • D.E).baseChange (x.maximalIdeal.adicCompletion D.F)).HasGoodReduction
-            (x.maximalIdeal.adicCompletionIntegers D.F) := hC
-        have hΔ : ‖((C • D.E).baseChange
-            (x.maximalIdeal.adicCompletion D.F)).Δ‖ = 1 :=
-          (JoshiTeich.ReferenceIut.valuation_eq_one_iff x _).1 HasGoodReduction.goodReduction
-        have hc₄ : ‖((C • D.E).baseChange
-            (x.maximalIdeal.adicCompletion D.F)).c₄‖ ≤ 1 := JoshiTeich.ReferenceIut.norm_c₄_le_one _
-        rw [JoshiTeich.ReferenceIut.baseChange_adicCompletion_eq, map_Δ] at hΔ
-        rw [JoshiTeich.ReferenceIut.baseChange_adicCompletion_eq, map_c₄] at hc₄
-        rw [← variableChange_j D.E C, ← iut_norm_emb_le_one_iff,
-          JoshiTeich.ReferenceIut.j_eq_inv_Δ_mul, map_mul, map_inv₀, map_pow, norm_mul, norm_inv, norm_pow,
-          hΔ, inv_one, one_mul]
-        exact pow_le_one₀ (norm_nonneg _) hc₄
-      · exact hm'
   have key (x : NumberField.FinitePlace D.F)
       (hxv : JoshiTeich.ReferenceIut.FinitePlace.LiesOver x v) :
       x.maximalIdeal.valuation D.F D.E.j ≤ 1 ↔
         v.maximalIdeal.valuation _ j₀ ≤ 1 :=
     valLeOneIff x hxv
   have hmult : ¬ w.maximalIdeal.valuation D.F D.E.j ≤ 1 :=
-    (multIffNotValLeOne w).mp hm
-  apply (multIffNotValLeOne w').mpr
+    (iutInitialThetaHasMultiplicativeReduction_iff_not_jValLEOne D w).mp hm
+  apply (iutInitialThetaHasMultiplicativeReduction_iff_not_jValLEOne D w').mpr
   intro hw'le
   apply hmult
   exact (key w hwv).2 ((key w' hw'v).1 hw'le)
