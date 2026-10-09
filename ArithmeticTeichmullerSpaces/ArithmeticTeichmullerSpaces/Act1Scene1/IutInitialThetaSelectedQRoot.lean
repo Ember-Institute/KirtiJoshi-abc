@@ -436,6 +436,98 @@ theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlace_image_eq
       simpa [s] using
         iutInitialThetaOddSupportSelectedQRootPlace_basePlace_eq_sectionBasePlace D v hv
 
+/-! The section contraction has no multiplicity on the selected carrier: the
+representative-to-base-place map is injective after restricting to the
+section-selected q-root subtype. -/
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlace_injective
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Function.Injective (fun s :
+        {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+          s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D} =>
+      (iutInitialThetaOddSupportTorsionQRootSource D).basePlace s.1) := by
+  intro s t hst
+  rcases s.2 with ⟨v, hv, hsection⟩
+  rcases t.2 with ⟨v', hv', hsection'⟩
+  have hsectionSubtype :
+      iutInitialThetaOddSupportSelectedQRootPlace D v hv = s.1 :=
+    Subtype.ext hsection
+  have hsectionSubtype' :
+      iutInitialThetaOddSupportSelectedQRootPlace D v' hv' = t.1 :=
+    Subtype.ext hsection'
+  have hbase : iutInitialThetaSectionBasePlace D v =
+      iutInitialThetaSectionBasePlace D v' := by
+    calc
+      iutInitialThetaSectionBasePlace D v =
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace
+            (iutInitialThetaOddSupportSelectedQRootPlace D v hv)).1 :=
+        (iutInitialThetaOddSupportSelectedQRootPlace_basePlace_eq_sectionBasePlace
+          D v hv).symm
+      _ = ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace s.1).1 :=
+        congrArg (fun x =>
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace x).1)
+          hsectionSubtype
+      _ = ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace t.1).1 :=
+        congrArg Subtype.val hst
+      _ = ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace
+            (iutInitialThetaOddSupportSelectedQRootPlace D v' hv')).1 :=
+        congrArg (fun x =>
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace x).1)
+          hsectionSubtype'.symm
+      _ = iutInitialThetaSectionBasePlace D v' :=
+        iutInitialThetaOddSupportSelectedQRootPlace_basePlace_eq_sectionBasePlace
+          D v' hv'
+  have hvv' : v = v' := iutInitialThetaSectionBasePlace_injective D hbase
+  subst v'
+  apply Subtype.ext
+  have hselected :
+      iutInitialThetaOddSupportSelectedQRootPlace D v hv =
+        iutInitialThetaOddSupportSelectedQRootPlace D v hv' := by
+    apply Subtype.ext
+    exact
+      (iutInitialThetaOddSupportSelectedQRootPlace_val_eq_section D v hv).trans
+        (iutInitialThetaOddSupportSelectedQRootPlace_val_eq_section D v hv').symm
+  exact hsectionSubtype.symm.trans (hselected.trans hsectionSubtype')
+
+/-- The selected q-root source subtype and its selected contracted base-place
+subtype have the canonical contraction equivalence. -/
+noncomputable def iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlaceEquiv
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D} ≃
+      {b : NumberField.FinitePlace D.F //
+        b ∈ iutInitialThetaOddSupportSelectedBasePlaces D} := by
+  let f :
+      {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D} →
+      {b : NumberField.FinitePlace D.F //
+        b ∈ iutInitialThetaOddSupportSelectedBasePlaces D} := fun s =>
+    ⟨((iutInitialThetaOddSupportTorsionQRootSource D).basePlace s.1).1, by
+      rw [← iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlace_image_eq D]
+      exact ⟨s.1, s.2, rfl⟩⟩
+  refine Equiv.ofBijective f ?_
+  constructor
+  · intro s t hst
+    have hstBase :
+        (iutInitialThetaOddSupportTorsionQRootSource D).basePlace s.1 =
+          (iutInitialThetaOddSupportTorsionQRootSource D).basePlace t.1 := by
+      have hstVal :
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace s.1).1 =
+            ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace t.1).1 :=
+        congrArg (fun x => x.1) hst
+      exact Subtype.ext hstVal
+    exact iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlace_injective D hstBase
+  · intro b
+    have hbImage : b.1 ∈
+        (fun s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset =>
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace s).1) ''
+          iutInitialThetaOddSupportSelectedQRootSourcePlaces D := by
+      rw [iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlace_image_eq D]
+      exact b.2
+    rcases hbImage with ⟨s, hs, hsb⟩
+    refine ⟨⟨s, hs⟩, ?_⟩
+    apply Subtype.ext
+    exact hsb
+
 end
 
 end JoshiTeich.Act1Scene1
