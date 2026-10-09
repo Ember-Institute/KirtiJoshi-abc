@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.BaseChange
 

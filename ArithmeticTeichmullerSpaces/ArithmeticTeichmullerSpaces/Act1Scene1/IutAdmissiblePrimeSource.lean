@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBaseQPilotSource
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.BadPlaceNorm
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic
@@ -30,26 +31,6 @@ variable {F : Type uF} [Field F] [NumberField F]
 variable {E : WeierstrassCurve F} [E.IsElliptic]
 variable {Fbar : Type uF} [Field Fbar] [Algebra F Fbar]
 variable {VBad : Set (FinitePlace ↥(JoshiTeich.ReferenceIut.fieldOfModuli F E))}
-
-/-- The actual IUT base-field q-pilot carrier and Tate parameters. -/
-noncomputable def IutBaseQPilotSource.ofAdmissiblePrimeData
-    (ell : ℕ) (P : JoshiTeich.ReferenceIut.AdmissiblePrimeData F E Fbar VBad)
-    (hBadFinite : (JoshiTeich.ReferenceIut.badPlacesOver F E VBad).Finite) :
-    IutBaseQPilotSource F ell := by
-  refine
-    { badPlaces := JoshiTeich.ReferenceIut.badPlacesOver F E VBad
-      badFinset := hBadFinite.toFinset
-      badFinset_spec := hBadFinite.coe_toFinset
-      weight := Arithmetic.qPilotWeight
-      weight_eq_qPilotWeight := fun _ => rfl
-      tateParameter := fun w =>
-        (P.tate w.1 (hBadFinite.mem_toFinset.mp w.2)).q
-      tateParameter_ne_zero := ?_
-      tateParameter_norm_lt_one := ?_ }
-  · intro w
-    exact (P.tate w.1 (hBadFinite.mem_toFinset.mp w.2)).q.ne_zero
-  · intro w
-    exact (P.tate w.1 (hBadFinite.mem_toFinset.mp w.2)).norm_lt_one
 
 namespace IutQPilotSource
 

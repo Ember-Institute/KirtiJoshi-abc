@@ -1,8 +1,8 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting
+import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlaceUnder
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver
-import Mathlib.NumberTheory.RamificationInertia.Valuation
 
 namespace JoshiTeich.Act1Scene1
 

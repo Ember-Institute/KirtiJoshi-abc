@@ -1,5 +1,5 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRoot
-import Mathlib.NumberTheory.RamificationInertia.Valuation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateFamily
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 
 namespace JoshiTeich.Act1Scene1
 
@@ -41,6 +41,18 @@ private theorem iutVoss_curve_j_eq_div_of_field
   rw [WeierstrassCurve.j, div_eq_inv_mul]
   congr 1
   rw [← WeierstrassCurve.coe_Δ', ← Units.val_inv_eq_inv_val]
+
+private lemma iutVoss_tateJ_eq
+    {K : Type u} [Field K] [Valued K (WithZero (Multiplicative ℤ))]
+    [Valuation.RankOne (Valued.v : Valuation K (WithZero (Multiplicative ℤ)))]
+    [CompleteSpace K] {E : WeierstrassCurve K}
+    (S : JoshiTeich.ReferenceIut.TateStructure E) :
+    S.t.tateJ = E.c₄ ^ 3 / E.Δ := by
+  rw [TateParameter.tateJ_def, ← S.hC, WeierstrassCurve.variableChange_c₄,
+    WeierstrassCurve.variableChange_Δ]
+  have hu : ((S.C.u⁻¹ : Kˣ) : K) ≠ 0 := Units.ne_zero _
+  rw [mul_pow, ← pow_mul, show 4 * 3 = 12 from rfl]
+  exact mul_div_mul_left _ _ (pow_ne_zero _ hu)
 
 private theorem iutVoss_curveKw_j_eq_embedding
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
@@ -147,7 +159,7 @@ theorem iutInitialThetaOddTateSectionPlaces_eq_selectedSupport
         iutVoss_curve_j_eq_div_of_field
           (E := JoshiTeich.ReferenceIut.curveKw D.E D.prime.torsionField
             (iutInitialThetaFinitePlaceSection D v)),
-        ← iutTateStructure_tateJ_eq S]
+        ← iutVoss_tateJ_eq S]
       exact S.t.one_lt_norm_tateJ
         (JoshiTeich.ReferenceIut.twelve_ne_zero (iutInitialThetaFinitePlaceSection D v))
     have hvalK : ¬ (iutInitialThetaFinitePlaceSection D v).maximalIdeal.valuation K
@@ -215,8 +227,11 @@ theorem iutInitialThetaOddTateSectionPlaces_eq_selectedSupport
     exact ⟨v, hvPort, rfl⟩
   · rintro ⟨v, hv, rfl⟩
     refine ⟨v, rfl, ?_, ?_⟩
-    · rw [Arithmetic.residueChar_eq_of_liesOver
-        (iutInitialThetaFinitePlaceSection_liesOver_moduli D v)]
+    · letI : Algebra ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E)
+        ↥D.prime.torsionField :=
+        (JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E).instAlgebraSubtypeMem
+      rw [Arithmetic.residueChar_eq_of_liesOver
+        (iutVoss_section_liesOver_canonical D v)]
       exact (Arithmetic.residueChar_prime v).odd_of_ne_two hv.1
     · exact ⟨iutInitialThetaFinitePlaceSection_tateStructure D v hv⟩
 

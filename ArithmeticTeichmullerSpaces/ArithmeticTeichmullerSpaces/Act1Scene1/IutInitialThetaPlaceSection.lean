@@ -1,5 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadOddPort
-import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlaceSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic
 
 namespace JoshiTeich.Act1Scene1

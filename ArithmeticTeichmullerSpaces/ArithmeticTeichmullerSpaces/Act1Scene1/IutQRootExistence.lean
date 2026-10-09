@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import Mathlib.GroupTheory.Index
 
 namespace JoshiTeich.Act1Scene1

@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootExistence
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import Mathlib.RingTheory.RootsOfUnity.Basic
 import Mathlib.GroupTheory.Index
 

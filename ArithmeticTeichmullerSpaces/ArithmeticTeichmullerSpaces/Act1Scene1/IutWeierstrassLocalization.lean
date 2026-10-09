@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionCardinality
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import Mathlib.Algebra.CubicDiscriminant
 import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point
 import Mathlib.FieldTheory.IsAlgClosed.Basic

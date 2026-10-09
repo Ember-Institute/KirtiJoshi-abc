@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRoot
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPlaceSection
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 
 namespace JoshiTeich.Act1Scene1
 

@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 
 namespace JoshiTeich.Act1Scene1
 
