@@ -291,6 +291,8 @@ S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT
 
 | `IUT-COR312-SELECTED-QROOT-SOURCE-LINK-IMAGE` | `iutInitialThetaOddSupportSelectedQRootSourcePlaces_image_eq_sectionLinkPlaces` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedQRootLinkAccounting.lean` | Uses the S1.164 source-image-to-`underline V^oss` equality and `iutInitialThetaOddTateSectionLink_places_eq_sectionVoss` to identify the selected q-root source's underlying finite-place image with the `places` carrier of `AdelicThetaLinkData.ofInitialThetaOddTateSection` built from the same `InitialThetaData` section. This is a direct source equality for the canonical section link; it does not identify an independently supplied Scene1 link, paper `L'` representatives, representative multiplicities, or remove q-pilot/residue-degree weights |
 
+| `IUT-COR312-SELECTED-QROOT-RESIDUE-ALIGNMENT` | `iutInitialThetaOddSupportSelectedQRootSourcePlace_residueChar_eq_basePlace`, `iutInitialThetaOddSupportSelectedQRootSourcePlace_residueChar_eq_iff` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedQRootResidue.lean` | Consumes the selected q-root source's `liesOver` field and `Arithmetic.residueChar_eq_of_liesOver` to show that each source place and its contracted base place have the same residue characteristic, then packages the equality as an equivalent `= p` filter. This is an index-alignment fact for later `(p,w)` accounting; it does not prove paper representative multiplicity, remove q-pilot/residue-degree weights, or identify an independent link |
+
 ### 字段级覆盖审计
 
 `FieldCoverage.lean` 使用 Lean projection 名称逐项检查下列字段。每个字段组的语义
