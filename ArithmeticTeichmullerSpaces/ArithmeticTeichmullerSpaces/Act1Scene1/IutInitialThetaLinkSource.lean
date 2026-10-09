@@ -187,6 +187,31 @@ theorem iutInitialThetaLink_tateParameter_j_eq
   rw [hTate]
   exact D.prime.tateJ_eq w hwBad
 
+theorem iutInitialThetaLink_ofNormLtOne_tateParameter_j_eq
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : NumberField.FinitePlace D.F)
+    (hw : w ∈ (iutInitialThetaTateParameterData D).places) :
+    (TateParameter.ofNormLtOne
+      ((iutInitialThetaTateParameterData_laws D).parameter_nonzero w hw)
+      ((iutInitialThetaTateParameterData_laws D).norm_lt_one w hw)).tateJ =
+      FinitePlace.embedding w.maximalIdeal D.E.j := by
+  let t₁ := TateParameter.ofNormLtOne
+    ((iutInitialThetaTateParameterData_laws D).parameter_nonzero w hw)
+    ((iutInitialThetaTateParameterData_laws D).norm_lt_one w hw)
+  let t₂ := iutInitialThetaLinkTateParameter D w hw
+  have hq : (t₁.q : w.maximalIdeal.adicCompletion D.F) =
+      (t₂.q : w.maximalIdeal.adicCompletion D.F) := by
+    rfl
+  have hEq : t₁ = t₂ := by
+    exact iutTateParameter_eq_of_q_eq hq
+  rw [show TateParameter.ofNormLtOne
+      ((iutInitialThetaTateParameterData_laws D).parameter_nonzero w hw)
+      ((iutInitialThetaTateParameterData_laws D).norm_lt_one w hw) = t₁ by rfl,
+      hEq]
+  exact iutInitialThetaLink_tateParameter_j_eq D w hw
+
 end
 
 end JoshiTeich.Act1Scene1
