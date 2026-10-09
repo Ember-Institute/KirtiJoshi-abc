@@ -3,6 +3,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.QNormDegreeBridge
 namespace JoshiTeich.Act1Scene1
 
 open JoshiTeich.Prologue
+open scoped BigOperators
 
 universe uK
 
@@ -107,5 +108,71 @@ theorem qPilotNormalizedLogTerm_eq_weightedPaperNormalizedSourceQFactorLog
   unfold Corollary312QPilotData.normalizedLogTerm
   rw [hNorm.weight_eq_qPilotWeight i.1]
   ring
+
+/-!
+The local paper-normalized identity can be summed over the q-pilot carrier.
+This is deliberately a weighted statement: it does not identify the result
+with the paper's unweighted `(p,w)` sum or construct `V_p^oss`.
+-/
+theorem absLogQ_eq_weightedPaperNormalizedSourceQFactorLogSum
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder Q)
+    (hEll : 0 < T.ell) :
+    Q.absLogQ p =
+      ∑ w : Q.badFinset,
+        Arithmetic.qPilotWeight w.1 *
+          -Real.log
+            (Corollary312PaperNormalizedSourceQFactor p T
+              (show Corollary312SourceQIndex p T from
+                ⟨w.1, Q.mem_bad p w.2⟩)) := by
+  classical
+  have hNormalize :
+      Q.absLogQ p =
+        ∑ w ∈ Q.badFinset.attach, Q.normalizedLogTerm p w.1 := by
+    unfold Corollary312QPilotData.absLogQ Corollary312QPilotData.logQ
+    calc
+      (∑ w ∈ Q.badFinset.attach,
+          Q.weight w.1 * (T.scene1.data.link.tate.qOrder w.1 : ℝ) *
+            Real.log (Arithmetic.residueChar w.1)) /
+          (2 * (T.ell : ℝ)) =
+          (1 / (2 * (T.ell : ℝ))) *
+            ∑ w ∈ Q.badFinset.attach,
+              Q.weight w.1 * (T.scene1.data.link.tate.qOrder w.1 : ℝ) *
+                Real.log (Arithmetic.residueChar w.1) := by ring
+      _ = ∑ w ∈ Q.badFinset.attach,
+          (1 / (2 * (T.ell : ℝ))) *
+            (Q.weight w.1 * (T.scene1.data.link.tate.qOrder w.1 : ℝ) *
+              Real.log (Arithmetic.residueChar w.1)) := by
+        rw [Finset.mul_sum]
+      _ = ∑ w ∈ Q.badFinset.attach, Q.normalizedLogTerm p w.1 := by
+        rfl
+  calc
+    Q.absLogQ p =
+        ∑ w ∈ Q.badFinset.attach, Q.normalizedLogTerm p w.1 := hNormalize
+    _ = ∑ w ∈ Q.badFinset.attach,
+        Arithmetic.qPilotWeight w.1 *
+          -Real.log
+            (Corollary312PaperNormalizedSourceQFactor p T
+              (show Corollary312SourceQIndex p T from
+                ⟨w.1, Q.mem_bad p w.2⟩)) := by
+      apply Finset.sum_congr rfl
+      intro w hw
+      exact qPilotNormalizedLogTerm_eq_weightedPaperNormalizedSourceQFactorLog
+        p T Q hOrder hNorm hEll
+        (show Corollary312SourceQIndex p T from
+          ⟨w.1, Q.mem_bad p w.2⟩) w.2
+    _ = ∑ w : Q.badFinset,
+        Arithmetic.qPilotWeight w.1 *
+          -Real.log
+            (Corollary312PaperNormalizedSourceQFactor p T
+              (show Corollary312SourceQIndex p T from
+                ⟨w.1, Q.mem_bad p w.2⟩)) := by
+      simp
 
 end JoshiTeich.Act1Scene1
