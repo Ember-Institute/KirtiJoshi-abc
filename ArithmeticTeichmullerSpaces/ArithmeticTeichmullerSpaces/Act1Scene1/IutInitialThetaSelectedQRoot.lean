@@ -389,6 +389,53 @@ theorem iutInitialThetaOddSupportSelectedQRootPlace_basePlace_eq_sectionBasePlac
     simpa [s] using iutInitialThetaOddSupportSelectedQRootPlace_val_eq_section D v hv
   simpa [hs, iutInitialThetaSectionBasePlace] using hcontract
 
+/-! The selected q-root carrier is a finite subcarrier of the full-support
+source. Keeping it as a subtype makes the representative-to-base-place map
+available for later finite-sum accounting without changing the source carrier
+used by the local q-root construction. -/
+def iutInitialThetaOddSupportSelectedQRootSourcePlaces
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Set (iutInitialThetaOddSupportTorsionQRootSource D).badFinset :=
+  {s | s.1 ∈ iutInitialThetaOddSupportSelectedQRootPlaces D}
+
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces D).Finite := by
+  exact Set.toFinite _
+
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlace_image_eq
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (fun s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset =>
+      ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace s).1) ''
+        iutInitialThetaOddSupportSelectedQRootSourcePlaces D =
+      iutInitialThetaOddSupportSelectedBasePlaces D := by
+  ext b
+  constructor
+  · rintro ⟨s, hs, rfl⟩
+    rcases hs with ⟨v, hv, hsection⟩
+    refine ⟨v, hv, ?_⟩
+    have hcontract :
+        ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace s).1 =
+          iutPlaceUnder s.1 :=
+      iutPlaceUnder_eq_of_liesOver
+        ((iutInitialThetaOddSupportTorsionQRootSource D).liesOver s)
+    calc
+      iutInitialThetaSectionBasePlace D v = iutPlaceUnder
+          (iutInitialThetaFinitePlaceSection D v) := rfl
+      _ = iutPlaceUnder
+          (iutInitialThetaOddSupportSelectedQRootPlace D v hv).1 := by rfl
+      _ = iutPlaceUnder s.1 := congrArg iutPlaceUnder hsection
+      _ = ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace s).1 :=
+        hcontract.symm
+  · rintro ⟨v, hv, rfl⟩
+    let s := iutInitialThetaOddSupportSelectedQRootPlace D v hv
+    refine ⟨s, ?_, ?_⟩
+    · exact ⟨v, hv, rfl⟩
+    · change ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace s).1 =
+        iutInitialThetaSectionBasePlace D v
+      simpa [s] using
+        iutInitialThetaOddSupportSelectedQRootPlace_basePlace_eq_sectionBasePlace D v hv
+
 end
 
 end JoshiTeich.Act1Scene1
