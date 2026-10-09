@@ -7,6 +7,7 @@ namespace JoshiTeich.Act1Scene1
 
 open JoshiTeich.Prologue
 open NumberField
+open WithZero
 
 universe u
 
@@ -248,6 +249,45 @@ theorem iutInitialThetaOddSupportSelectedQRootPlace_ramIdx_mul_ordp_eq_sectionQO
     _ = (iutCompletionQOrder s.1 S.t.q : ℝ) /
           (2 * (D.prime.ℓ : ℝ)) := by
       field_simp [he, htwoell]
+
+/-- The section-selected q-root has the canonical base-field q-order after
+accounting for the absolute ramification index of its contracted place. -/
+theorem iutInitialThetaOddSupportSelectedQRootPlace_ordp_eq_baseQOrder
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (v : NumberField.FinitePlace
+      ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+    (hv : v ∈ iutVBadOddModSupportPort D) :
+    let s := iutInitialThetaOddSupportSelectedQRootPlace D v hv
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    let B := iutInitialThetaOddSupportBaseQPilotSource D
+    Arithmetic.ordp s.1 (R.qroot s) =
+      (B.qOrder (R.basePlace s) : ℝ) /
+        (2 * (D.prime.ℓ : ℝ) *
+          Arithmetic.ramIdx (R.basePlace s).1) := by
+  classical
+  let s := iutInitialThetaOddSupportSelectedQRootPlace D v hv
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  have hTateValued : ∀ w : B.badFinset,
+      Valued.v (B.tateParameter w) = exp (-(B.qOrder w : ℤ)) := by
+    intro w
+    exact iutCompletionQOrder_valued w.1 (B.tateParameter w)
+      (B.tateParameter_ne_zero w) (B.tateParameter_norm_lt_one w)
+  have hEll : 0 < D.prime.ℓ := by
+    have h := D.prime.five_le
+    omega
+  have hOrder := IutTorsionQRootSource.canonical_qroot_ordp_eq
+    B R.qroot R.qroot_pow_eq hTateValued hEll s
+  have hbase : R.basePlace s =
+      IutTorsionQRootSource.basePlaceOf (B := B) s := by
+    apply Subtype.ext
+    calc
+      (R.basePlace s).1 = iutPlaceUnder s.1 :=
+        iutPlaceUnder_eq_of_liesOver (R.liesOver s)
+      _ = (IutTorsionQRootSource.basePlaceOf (B := B) s).1 :=
+        (iutPlaceUnder_eq_of_liesOver
+          (IutTorsionQRootSource.basePlaceOf_liesOver (B := B) s)).symm
+  simpa [s, R, B, hbase] using hOrder
 
 end
 
