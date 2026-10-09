@@ -112,6 +112,46 @@ def iutInitialThetaOddTateSectionPlaces
     Nonempty (JoshiTeich.ReferenceIut.TateStructure
       (JoshiTeich.ReferenceIut.curveKw D.E D.prime.torsionField w))}
 
+/-- The representative set selected by the actual `InitialThetaData` section. -/
+noncomputable def iutInitialThetaSectionRepresentatives
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Set (NumberField.FinitePlace ↥D.prime.torsionField) :=
+  Set.range (iutInitialThetaFinitePlaceSection D)
+
+/-- The formal local Tate criterion used here for odd semistable places of `L'`. -/
+def iutInitialThetaOddSemistablePlaces
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Set (NumberField.FinitePlace ↥D.prime.torsionField) :=
+  {w | Odd (Arithmetic.residueChar w) ∧
+    Nonempty (JoshiTeich.ReferenceIut.TateStructure
+      (JoshiTeich.ReferenceIut.curveKw D.E D.prime.torsionField w))}
+
+/-- The paper's `underline V^oss` intersection for the concrete representatives
+selected by `InitialThetaData`. -/
+def iutInitialThetaSectionVoss
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    Set (NumberField.FinitePlace ↥D.prime.torsionField) :=
+  iutInitialThetaSectionRepresentatives D ∩ iutInitialThetaOddSemistablePlaces D
+
+/-- The selected odd Tate locus is exactly the section-image/odd-semistable
+intersection, with the section choice supplied by `InitialThetaData`. -/
+theorem iutInitialThetaOddTateSectionPlaces_eq_sectionVoss
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    iutInitialThetaOddTateSectionPlaces D = iutInitialThetaSectionVoss D := by
+  ext w
+  simp [iutInitialThetaOddTateSectionPlaces,
+    iutInitialThetaSectionVoss,
+    iutInitialThetaSectionRepresentatives,
+    iutInitialThetaOddSemistablePlaces]
+
 /-- On the actual IUT section, odd Tate places are exactly the representatives of the
 complete odd multiplicative support on the field of moduli. -/
 theorem iutInitialThetaOddTateSectionPlaces_eq_selectedSupport

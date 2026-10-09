@@ -159,6 +159,25 @@ theorem iutInitialThetaOddTateSectionLink_places_eq_oddTateSectionPlaces
     _ = iutInitialThetaOddTateSectionPlaces D :=
       iutInitialThetaOddSupportSelectedQRootPlaces_eq_oddTateSectionPlaces D
 
+/-- The constructed link carrier has the section-image/odd-semistable form of
+`underline V^oss` for the representatives supplied by `InitialThetaData`. -/
+theorem iutInitialThetaOddTateSectionLink_places_eq_sectionVoss
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (theta : ThetaPilotData ↥D.prime.torsionField)
+    (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ) :
+    (↑(AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
+      packetHull heightData ramification logVolume processionLength).places :
+        Set (NumberField.FinitePlace ↥D.prime.torsionField)) =
+      iutInitialThetaSectionVoss D := by
+  rw [iutInitialThetaOddTateSectionLink_places_eq_oddTateSectionPlaces,
+    iutInitialThetaOddTateSectionPlaces_eq_sectionVoss]
+
 theorem iutInitialThetaOddTateSectionLink_qNormTateCompatibility
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
     {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
