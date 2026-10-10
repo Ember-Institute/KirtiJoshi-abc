@@ -1,0 +1,161 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootPaperQSum
+
+namespace JoshiTeich.Act1Scene1
+
+open JoshiTeich.Prologue
+open NumberField
+open scoped BigOperators
+
+universe u
+
+noncomputable section
+
+/-!
+source-id: IUT-COR312-PAPER-REPRESENTATIVE-SELECTED-QROOT-BRIDGE
+source: the actual `InitialThetaData` section and canonical section link, together
+with `cor:cor312` and the finite q-pilot representative accounting certificate.
+fidelity: makes the finite equivalence from paper representatives to the
+canonical section-link places and the representative local-term certificate
+explicit; the certificate is still a Scene1 source obligation.
+boundary: Scene1/Derived
+
+This module does not claim that the paper's `L'` representative choice has
+already been constructed.  It records exactly the finite data needed to
+transport its unweighted q-sum to the selected q-root carrier.
+-/
+
+structure Corollary312PaperRepresentativeSectionLinkAccounting
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    {T : Corollary312Data D.F O p}
+    {P : Corollary312QPilotData p T}
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    (theta : ThetaPilotData ↥D.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ) where
+  /-- The paper representative carrier is identified with the canonical link places. -/
+  representativeLinkEquiv :
+    A.representative ≃
+      {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ (AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
+          packetHull heightData ramification logVolume processionLength).places}
+  /-- The representative term is the canonical paper-normalized q-order term. -/
+  representativeTerm_eq : ∀ r : A.representative,
+    A.representativeTerm r =
+      (((AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
+          packetHull heightData ramification logVolume processionLength).tate.qOrder
+          (representativeLinkEquiv r).1 : ℝ) /
+        (2 * (D.prime.ℓ : ℝ))) *
+        Real.log (Arithmetic.residueChar (representativeLinkEquiv r).1)
+
+namespace Corollary312PaperRepresentativeSectionLinkAccounting
+
+variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+variable {O : Type u} [CommRing O] (p : ℕ)
+variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+variable [IsAdicComplete (Ideal.span {(p : O)}) O]
+
+theorem representativeSum_eq_sectionLinkQLogSum
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    {P : Corollary312QPilotData p T}
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D p A theta thetaBase
+      packetHull heightData ramification logVolume processionLength) :
+    let L := AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
+      packetHull heightData ramification logVolume processionLength
+    let W := {w : NumberField.FinitePlace ↥D.prime.torsionField // w ∈ L.places}
+    letI : Fintype W := Fintype.ofFinset L.places (fun _ => Iff.rfl)
+    (∑ r : A.representative, A.representativeTerm r) =
+      ∑ w : W,
+        (((L.tate.qOrder w.1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+          Real.log (Arithmetic.residueChar w.1)) := by
+  classical
+  letI := A.representativeDecidableEq
+  let L := AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
+    packetHull heightData ramification logVolume processionLength
+  let W := {w : NumberField.FinitePlace ↥D.prime.torsionField // w ∈ L.places}
+  letI : Fintype W := Fintype.ofFinset L.places (fun _ => Iff.rfl)
+  let e := B.representativeLinkEquiv
+  calc
+    (∑ r : A.representative, A.representativeTerm r) =
+        ∑ r : A.representative,
+          (((L.tate.qOrder (e r).1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+            Real.log (Arithmetic.residueChar (e r).1)) := by
+      apply Finset.sum_congr rfl
+      intro r hr
+      exact B.representativeTerm_eq r
+    _ = ∑ w : W,
+        (((L.tate.qOrder w.1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+          Real.log (Arithmetic.residueChar w.1)) := by
+      simpa using e.sum_comp (fun w =>
+        (((L.tate.qOrder w.1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+          Real.log (Arithmetic.residueChar w.1)))
+
+theorem representativeSum_eq_selectedQRootPaperQLogSum
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    {P : Corollary312QPilotData p T}
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D p A theta thetaBase
+      packetHull heightData ramification logVolume processionLength) :
+    let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    (∑ r : A.representative, A.representativeTerm r) =
+      ∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1) := by
+  classical
+  letI := A.representativeDecidableEq
+  let L := AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
+    packetHull heightData ramification logVolume processionLength
+  let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+    s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  have hSection :=
+    iutInitialThetaOddSupportSelectedQRootSourcePlaces_paperQLogSum_eq_sectionLink_unGrouped
+      D theta thetaBase packetHull heightData ramification logVolume processionLength
+  calc
+    (∑ r : A.representative, A.representativeTerm r) =
+        ∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField // w ∈ L.places},
+          (((L.tate.qOrder w.1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+            Real.log (Arithmetic.residueChar w.1)) :=
+      representativeSum_eq_sectionLinkQLogSum p D A theta thetaBase packetHull
+        heightData ramification logVolume processionLength B
+    _ = ∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1) := by
+      exact hSection.symm
+
+end Corollary312PaperRepresentativeSectionLinkAccounting
+
+end
+
+end JoshiTeich.Act1Scene1
