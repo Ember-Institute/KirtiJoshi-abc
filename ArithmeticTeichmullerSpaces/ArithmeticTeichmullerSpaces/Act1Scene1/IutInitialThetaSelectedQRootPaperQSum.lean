@@ -147,6 +147,70 @@ private theorem iutInitialThetaOddSupportSelectedQRootSourcePlace_ramIdx_mul_ord
   rw [hOrder]
   exact hLocal
 
+/-! The same transport without first partitioning the finite carrier by
+residue characteristic.  This is the direct finite-sum form consumed by a
+global q-family bridge; the grouped theorem below remains available when the
+paper's `(p,w)` presentation is needed. -/
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_paperQLogSum_eq_sectionLink_unGrouped
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (theta : ThetaPilotData ↥D.prime.torsionField)
+    (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ) :
+    let L := AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
+      packetHull heightData ramification logVolume processionLength
+    let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    let W := {w : NumberField.FinitePlace ↥D.prime.torsionField //
+      w ∈ L.places}
+    letI : Fintype W := Fintype.ofFinset L.places (fun _ => Iff.rfl)
+    ∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1) =
+      ∑ w : W,
+        (((L.tate.qOrder w.1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+          Real.log (Arithmetic.residueChar w.1)) := by
+  classical
+  let L := AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
+    packetHull heightData ramification logVolume processionLength
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  let S :=
+    {s : R.badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  let W := {w : NumberField.FinitePlace ↥D.prime.torsionField // w ∈ L.places}
+  letI : Fintype W := Fintype.ofFinset L.places (fun _ => Iff.rfl)
+  let e := iutInitialThetaOddSupportSelectedQRootSourcePlaces_sectionLinkEquiv
+    D theta thetaBase packetHull heightData ramification logVolume processionLength
+  calc
+    (∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1 (R.qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1)) =
+      ∑ s : S,
+        (((L.tate.qOrder (e s).1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+          Real.log (Arithmetic.residueChar (e s).1)) := by
+      apply Finset.sum_congr rfl
+      intro s hs
+      have hTerm :=
+        iutInitialThetaOddSupportSelectedQRootSourcePlace_ramIdx_mul_ordp_eq_sectionLinkQOrder
+          D s theta thetaBase packetHull heightData ramification logVolume processionLength
+      rw [hTerm]
+      rfl
+    _ = ∑ w : W,
+        (((L.tate.qOrder w.1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+          Real.log (Arithmetic.residueChar w.1)) := by
+      simpa using e.sum_comp (fun w =>
+        (((L.tate.qOrder w.1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
+          Real.log (Arithmetic.residueChar w.1)))
+
 /-- The section-selected q-root sum is the paper-normalized q-order sum on
 the places of its canonical link, grouped by residue characteristic. -/
 theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_paperQLogSum_eq_sectionLink
