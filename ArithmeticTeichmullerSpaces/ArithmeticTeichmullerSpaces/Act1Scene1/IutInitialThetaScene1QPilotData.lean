@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalQPilot
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotReferenceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
 
@@ -114,6 +115,48 @@ theorem absLogQ_eq_degreeNormalizedSourceQLogSum
   exact Corollary312QPilotSourceIndexBridge.absLogQ_eq_degreeNormalizedSourceQLogSum
     p D.source.orderCompatibility (D.rawNormalization p) D.base.ell_prime.pos
     (D.sourceIndexBridge p)
+
+theorem absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCanonicalInitialThetaLink
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (hDegree : Module.finrank ℚ D.F = 1) :
+    let B := ofCanonicalInitialThetaLink p D base hEll hLink hDegree
+    (B.qPilot p).absLogQ p =
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+  let hCompat : QNormTateCompatibility base.target.scene1.data.link :=
+    base.qFamily.compatibility
+  let theta := base.target.scene1.data.link.theta
+  let thetaBase := base.target.scene1.data.link.thetaBase
+  let packetHull := base.target.scene1.data.link.packetHull
+  let heightData := base.target.scene1.data.link.heightData
+  let ramification := base.target.scene1.data.link.ramification
+  let logVolume := base.target.scene1.data.link.logVolume
+  let processionLength := base.target.scene1.data.link.processionLength
+  change
+    Corollary312QPilotData.absLogQ p
+      ((IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase packetHull
+        heightData ramification logVolume processionLength hEll hLink).toSceneQPilot
+          p hCompat) =
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)
+  exact Corollary312QPilotData.absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCanonicalInitialThetaLink
+    p D theta thetaBase packetHull heightData ramification logVolume processionLength hEll hLink
 
 end Corollary312Scene1QPilotData
 
