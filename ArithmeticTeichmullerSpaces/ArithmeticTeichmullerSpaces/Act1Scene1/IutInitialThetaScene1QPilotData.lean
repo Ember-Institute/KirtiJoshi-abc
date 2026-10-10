@@ -198,6 +198,106 @@ theorem reference_absLogQ_eq_selectedQRootPaperQLogSum
       processionLength B
   exact hReference.symm.trans hPaper
 
+/-- The same reference q-pilot equality with the selected q-root carrier
+grouped by its residue characteristic.  The grouping is a finite partition of
+the actual selected carrier; it does not identify that carrier with an
+independently supplied paper `L'` representative set. -/
+theorem reference_absLogQ_eq_selectedQRootPaperQLogSum_grouped
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D₀ : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (D : Corollary312Scene1QPilotData (K := D₀.F) (O := O) p)
+    (hReference :
+      (D.qPilot p).absLogQ p =
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D₀))
+    (A : Corollary312QPilotPaperRepresentativeAccounting p D.base.target
+      (D.qPilot p))
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D₀.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D₀.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D₀.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D₀ p A theta
+      thetaBase packetHull heightData ramification logVolume processionLength) :
+    let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D₀).badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D₀}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D₀).fintype
+    let P := (Finset.univ : Finset S).image
+      (fun s => Arithmetic.residueChar s.1.1)
+    JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D₀) =
+      ∑ q ∈ P,
+        ∑ s ∈ (Finset.univ : Finset S).filter
+          (fun s => Arithmetic.residueChar s.1.1 = q),
+          ((Arithmetic.ramIdx s.1.1 : ℝ) *
+            Arithmetic.ordp s.1.1
+              ((iutInitialThetaOddSupportTorsionQRootSource D₀).qroot s.1)) *
+            Real.log q := by
+  classical
+  let R := iutInitialThetaOddSupportTorsionQRootSource D₀
+  let S := {s : R.badFinset //
+    s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D₀}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D₀).fintype
+  let P := (Finset.univ : Finset S).image
+    (fun s => Arithmetic.residueChar s.1.1)
+  have hPaper :=
+    Corollary312Scene1QPilotData.absLogQ_eq_selectedQRootPaperQLogSum
+      p D₀ D A theta thetaBase packetHull heightData ramification logVolume
+      processionLength B
+  have hRegroup :
+      (∑ q ∈ P,
+        ∑ s ∈ (Finset.univ : Finset S).filter
+          (fun s => Arithmetic.residueChar s.1.1 = q),
+          ((Arithmetic.ramIdx s.1.1 : ℝ) *
+            Arithmetic.ordp s.1.1 (R.qroot s.1)) * Real.log q) =
+        ∑ s : S,
+          ((Arithmetic.ramIdx s.1.1 : ℝ) *
+            Arithmetic.ordp s.1.1 (R.qroot s.1)) *
+            Real.log (Arithmetic.residueChar s.1.1) := by
+    calc
+      (∑ q ∈ P,
+        ∑ s ∈ (Finset.univ : Finset S).filter
+          (fun s => Arithmetic.residueChar s.1.1 = q),
+          ((Arithmetic.ramIdx s.1.1 : ℝ) *
+            Arithmetic.ordp s.1.1 (R.qroot s.1)) * Real.log q) =
+          ∑ q ∈ P,
+            ∑ s ∈ (Finset.univ : Finset S).filter
+              (fun s => Arithmetic.residueChar s.1.1 = q),
+              ((Arithmetic.ramIdx s.1.1 : ℝ) *
+                Arithmetic.ordp s.1.1 (R.qroot s.1)) *
+                Real.log (Arithmetic.residueChar s.1.1) := by
+        apply Finset.sum_congr rfl
+        intro q hq
+        apply Finset.sum_congr rfl
+        intro s hs
+        rw [(Finset.mem_filter.mp hs).2]
+      _ = ∑ s ∈ (Finset.univ : Finset S),
+          ((Arithmetic.ramIdx s.1.1 : ℝ) *
+            Arithmetic.ordp s.1.1 (R.qroot s.1)) *
+            Real.log (Arithmetic.residueChar s.1.1) := by
+        exact Finset.sum_fiberwise_of_maps_to
+          (fun s hs => Finset.mem_image.mpr ⟨s, hs, rfl⟩) _
+      _ = ∑ s : S,
+          ((Arithmetic.ramIdx s.1.1 : ℝ) *
+            Arithmetic.ordp s.1.1 (R.qroot s.1)) *
+            Real.log (Arithmetic.residueChar s.1.1) := by
+        simp
+  have hPaper' :
+      (D.qPilot p).absLogQ p =
+        ∑ s : S,
+          ((Arithmetic.ramIdx s.1.1 : ℝ) *
+            Arithmetic.ordp s.1.1 (R.qroot s.1)) *
+            Real.log (Arithmetic.residueChar s.1.1) := by
+    simpa [R, S] using hPaper
+  exact hReference.symm.trans (hPaper'.trans hRegroup.symm)
+
 end Corollary312Scene1QPilotData
 
 /-!
