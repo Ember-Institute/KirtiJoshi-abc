@@ -63,6 +63,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaScene1QPilotData
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
 
 namespace JoshiTeich.Prologue.Audit
 
@@ -530,6 +531,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.ofCanonicalInitialThetaLink
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.cor312_of_canonicalInitialThetaLink_of_degree_one
+#check JoshiTeich.Act1Scene1.IutFiniteWeightedAveraging.sum_bound_eval
+#check JoshiTeich.Act1Scene1.IutFiniteWeightedAveraging.weighted_sum_le_of_pointwise
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.qPilot
 #check JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.sourceIndexBridge
@@ -615,6 +618,8 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.absLogQ_eq_degreeNormalizedSourceQFactorLogSum_ofCanonicalInitialThetaLink
 #print axioms JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.ofCanonicalInitialThetaLink
 #print axioms JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.cor312_of_canonicalInitialThetaLink_of_degree_one
+#print axioms JoshiTeich.Act1Scene1.IutFiniteWeightedAveraging.sum_bound_eval
+#print axioms JoshiTeich.Act1Scene1.IutFiniteWeightedAveraging.weighted_sum_le_of_pointwise
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateParameterData_laws
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaFinitePlaceSection_liesOver
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaFinitePlaceSection_injective
