@@ -515,6 +515,10 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Audit.rationalTwoPlace_two
 #check JoshiTeich.Act1Scene1.Audit.scene_tate_order_compatibility
 #check JoshiTeich.Act1Scene1.Audit.scene_qNorm_log_eq_order_mul
+#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_source
+#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_order_normalization
+#check JoshiTeich.Act1Scene1.Audit.scene_qPilot_data
+#check JoshiTeich.Act1Scene1.Audit.scene_explicit_audit_qPilot_corollary312
 #check JoshiTeich.Act1Scene1.IutOddMultiplicativeSupport
 #check JoshiTeich.Act1Scene1.IutOddMultiplicativeModSupport
 #check JoshiTeich.Act1Scene1.mem_iutOddMultiplicativeModSupport_of_mem_support
@@ -687,6 +691,9 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlaceEquiv
 #print axioms JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofInitialThetaData
 #print axioms JoshiTeich.Act1Scene1.iutBadPlacesOver_subset_oddMultiplicativeSupport
+#print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_source
+#print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_order_normalization
+#print axioms JoshiTeich.Act1Scene1.Audit.scene_explicit_audit_qPilot_corollary312
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_adelicThetaLink_only_countermodel
 
 end JoshiTeich.Prologue.Audit
