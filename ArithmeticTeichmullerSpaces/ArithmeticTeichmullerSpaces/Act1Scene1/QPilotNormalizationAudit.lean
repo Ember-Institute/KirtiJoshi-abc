@@ -94,6 +94,25 @@ theorem finrank_eq_one_of_raw_and_weighted_normalization
     simpa using hEqualMul
   exact_mod_cast hDegreeOne
 
+/-! In degree one, the raw completion-norm law and the arithmetic q-pilot
+weight have the same coefficient.  This is the converse direction of the
+audit above and isolates the only case where both normalization contracts can
+be consumed together. -/
+theorem weighted_normalization_of_raw_normalization_of_finrank_eq_one
+    (Q : Corollary312QPilotData p T)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hRaw : Corollary312RawQNormDegreeNormalization p T hOrder Q)
+    (hDegree : Module.finrank ℚ K = 1) :
+    Corollary312QPilotSourceNormalization p T hOrder Q := by
+  refine
+    { uniformizer_log_eq_weighted_residueChar_log := ?_ }
+  intro w hw
+  rw [hRaw.uniformizer_log_eq_residueDegree_log w hw,
+    hRaw.weight_eq_qPilotWeight w]
+  unfold Arithmetic.qPilotWeight
+  rw [hDegree]
+  norm_num
+
 end Corollary312QPilotNormalizationAudit
 
 end JoshiTeich.Act1Scene1
