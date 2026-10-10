@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalQPilot
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotReferenceBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeSelectedQRootBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
 
@@ -157,6 +158,45 @@ theorem absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCanonicalInitialThetaLink
         (IutTorsionQRootSource.iutInitialThetaQPilotData D)
   exact Corollary312QPilotData.absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCanonicalInitialThetaLink
     p D theta thetaBase packetHull heightData ramification logVolume processionLength hEll hLink
+
+theorem reference_absLogQ_eq_selectedQRootPaperQLogSum
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D₀ : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (D : Corollary312Scene1QPilotData (K := D₀.F) (O := O) p)
+    (hReference :
+      (D.qPilot p).absLogQ p =
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D₀))
+    (A : Corollary312QPilotPaperRepresentativeAccounting p D.base.target
+      (D.qPilot p))
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D₀.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D₀.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D₀.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D₀ p A theta
+      thetaBase packetHull heightData ramification logVolume processionLength) :
+    let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D₀).badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D₀}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D₀).fintype
+    JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D₀) =
+      ∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            ((iutInitialThetaOddSupportTorsionQRootSource D₀).qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1) := by
+  have hPaper :=
+    Corollary312Scene1QPilotData.absLogQ_eq_selectedQRootPaperQLogSum
+      p D₀ D A theta thetaBase packetHull heightData ramification logVolume
+      processionLength B
+  exact hReference.symm.trans hPaper
 
 end Corollary312Scene1QPilotData
 
