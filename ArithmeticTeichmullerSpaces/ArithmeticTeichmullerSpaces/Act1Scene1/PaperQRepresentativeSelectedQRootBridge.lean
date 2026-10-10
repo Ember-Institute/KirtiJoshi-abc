@@ -154,6 +154,51 @@ theorem representativeSum_eq_selectedQRootPaperQLogSum
           Real.log (Arithmetic.residueChar s.1.1) := by
       exact hSection.symm
 
+/-- Once the two finite source certificates are supplied, the weighted q-pilot
+sum transports directly to the unweighted selected q-root paper sum. -/
+theorem absLogQ_eq_selectedQRootPaperQLogSum
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    {P : Corollary312QPilotData p T}
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D p A theta thetaBase
+      packetHull heightData ramification logVolume processionLength)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder P)
+    (hEll : 0 < T.ell) :
+    let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    P.absLogQ p =
+      ∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1) := by
+  let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+    s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  have hWeighted :=
+    Corollary312QPilotPaperRepresentativeAccounting.absLogQ_eq_unweightedRepresentativeSum
+      p A hOrder hNorm hEll
+  calc
+    P.absLogQ p = ∑ r : A.representative, A.representativeTerm r := hWeighted
+    _ = ∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1) :=
+      representativeSum_eq_selectedQRootPaperQLogSum p D A theta thetaBase packetHull
+        heightData ramification logVolume processionLength B
+
 end Corollary312PaperRepresentativeSectionLinkAccounting
 
 end
