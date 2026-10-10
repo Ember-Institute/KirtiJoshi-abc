@@ -119,6 +119,34 @@ theorem ofInitialThetaData_order_eq
         simpa [hOrder] using hcop) w
   simpa [IutCompletionTateValuation.ofInitialThetaData, B] using hOrderEq
 
+theorem base_qOrder_eq_initialTheta_qOrder
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (IutBaseQPilotSource.ofInitialThetaData D).badFinset) :
+    (IutBaseQPilotSource.ofInitialThetaData D).qOrder w =
+      D.prime.qOrder w.1
+        ((IutBaseQPilotSource.ofInitialThetaData D).mem_badPlaces w) := by
+  let B := IutBaseQPilotSource.ofInitialThetaData D
+  let C := IutCompletionTateValuation.ofInitialThetaData D
+  have hcompletion : B.qOrder w = C.orderedQOrder w :=
+    C.completionQOrder_eq_orderNat w
+  have hsource : C.orderedQOrder w = D.prime.qOrder w.1 (B.mem_badPlaces w) :=
+    IutCompletionTateValuation.ofInitialThetaData_order_eq D w
+  exact hcompletion.trans hsource
+
+theorem completion_qOrder_eq_initialTheta_qOrder
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : NumberField.FinitePlace D.F)
+    (hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    Arithmetic.completionQOrder w (D.prime.tate w hw).q = D.prime.qOrder w hw := by
+  let B := IutBaseQPilotSource.ofInitialThetaData D
+  have hwB : w ∈ B.badFinset := by
+    exact (Set.ext_iff.mp B.badFinset_spec w).mpr hw
+  have hb := base_qOrder_eq_initialTheta_qOrder D ⟨w, hwB⟩
+  change Arithmetic.completionQOrder w (D.prime.tate w hw).q = D.prime.qOrder w hw at hb
+  exact hb
+
 end IutCompletionTateValuation
 
 namespace IutTorsionQRootSource

@@ -143,6 +143,24 @@ theorem iutInitialThetaLink_places_eq_badPlacesOver
           Set (NumberField.FinitePlace D.F)) := by
   exact iutInitialThetaTateParameterData_places_eq D
 
+theorem iutInitialThetaLink_parameter_eq_prime_tate
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    {w : NumberField.FinitePlace D.F}
+    (hw : w ∈ (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+      heightData ramification logVolume processionLength).places)
+    (hwBad : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+      heightData ramification logVolume processionLength).tate.parameter w =
+      (D.prime.tate w hwBad).q := by
+  simp [AdelicThetaLinkData.ofInitialThetaData, AdelicThetaLinkData.ofTateParameters,
+    iutInitialThetaTateParameterData, iutInitialThetaQParameter_eq D w hwBad]
+
 theorem iutInitialThetaLink_qNormTateCompatibility
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
     (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)

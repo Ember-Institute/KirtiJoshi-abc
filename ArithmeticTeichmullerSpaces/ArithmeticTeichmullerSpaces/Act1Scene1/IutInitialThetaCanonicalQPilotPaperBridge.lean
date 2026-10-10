@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalQPilot
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQNormalizationBridge
 
 namespace JoshiTeich.Act1Scene1
@@ -155,6 +156,63 @@ theorem IutQPilotSource.absLogQ_eq_degreeNormalizedSourceQFactorLogSum_ofCanonic
             (show Corollary312SourceQIndex p T from
               ⟨w.1, Q.mem_bad p w.2⟩)) := by
       simp
+
+theorem IutQPilotSource.qOrder_eq_initialTheta_qOrder_ofCanonicalInitialThetaLink
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (hEll : T.ell = D.prime.ℓ)
+    (hLink : T.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+        heightData ramification logVolume processionLength)
+    (w : (IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+      packetHull heightData ramification logVolume processionLength hEll hLink).badFinset) :
+    (IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+      packetHull heightData ramification logVolume processionLength hEll hLink).qOrder p w.1 =
+      D.prime.qOrder w.1 (by
+        have hwSource := IutQPilotSource.badFinset_mem_badPlacesOver p
+          (IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase packetHull
+            heightData ramification logVolume processionLength hEll hLink) w
+        have hCanonical : w.1 ∈
+            (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+              heightData ramification logVolume processionLength).places := by
+          rw [← hLink]
+          exact (IutQPilotSource.mem_badPlacesOver_iff_link p
+            (IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase packetHull
+              heightData ramification logVolume processionLength hEll hLink) w.1).mp
+            hwSource
+        exact (Set.ext_iff.mp
+          (iutInitialThetaLink_places_eq_badPlacesOver D theta thetaBase packetHull
+            heightData ramification logVolume processionLength) w.1).mpr hCanonical) := by
+  let S := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase packetHull
+    heightData ramification logVolume processionLength hEll hLink
+  have hwSource : w.1 ∈ S.badPlacesOver := S.badFinset_mem_badPlacesOver p w
+  have hwCanonical : w.1 ∈
+      (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+        heightData ramification logVolume processionLength).places := by
+    rw [← hLink]
+    exact (S.mem_badPlacesOver_iff_link p w.1).mp hwSource
+  have hwBad : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := by
+    exact (Set.ext_iff.mp
+      (iutInitialThetaLink_places_eq_badPlacesOver D theta thetaBase packetHull
+        heightData ramification logVolume processionLength) w.1).mpr hwCanonical
+  have hParameter := iutInitialThetaLink_parameter_eq_prime_tate D theta thetaBase
+    packetHull heightData ramification logVolume processionLength hwCanonical hwBad
+  calc
+    S.qOrder p w.1 = T.scene1.data.link.tate.qOrder w.1 := S.qOrder_eq_link p hwSource
+    _ = Arithmetic.completionQOrder w.1 (T.scene1.data.link.tate.parameter w.1) := rfl
+    _ = Arithmetic.completionQOrder w.1 (D.prime.tate w.1 hwBad).q := by rw [hLink, hParameter]
+    _ = D.prime.qOrder w.1 hwBad :=
+      IutCompletionTateValuation.completion_qOrder_eq_initialTheta_qOrder D w.1 hwBad
 
 end
 
