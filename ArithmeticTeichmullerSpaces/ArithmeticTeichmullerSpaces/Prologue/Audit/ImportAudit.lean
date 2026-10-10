@@ -539,6 +539,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.qPilot
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.rawNormalization
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.absLogQ_eq_selectedQRootPaperQLogSum
+#check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.absLogQ_eq_degreeNormalizedSourceQLogSum
 #check JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data
 #check JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.sourceIndexBridge
 #check JoshiTeich.Act1Scene1.Audit.scene_explicit_audit_corollary312
@@ -626,6 +627,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.cor312_of_canonicalInitialThetaLink_of_degree_one
 #print axioms JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.rawNormalization
 #print axioms JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.absLogQ_eq_selectedQRootPaperQLogSum
+#print axioms JoshiTeich.Act1Scene1.Corollary312Scene1QPilotData.absLogQ_eq_degreeNormalizedSourceQLogSum
 #print axioms JoshiTeich.Act1Scene1.IutFiniteWeightedAveraging.sum_bound_eval
 #print axioms JoshiTeich.Act1Scene1.IutFiniteWeightedAveraging.weighted_sum_le_of_pointwise
 #print axioms JoshiTeich.Act1Scene1.IutFiniteWeightedAveraging.packet_weight_sum_le_of_product_local_bound

@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalQPilot
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
 
 namespace JoshiTeich.Act1Scene1
 
@@ -98,6 +99,21 @@ theorem cor312_of_canonicalInitialThetaLink_of_degree_one
     Corollary312 p base.target := by
   exact cor312_of_scene1_qPilot_data p
     (ofCanonicalInitialThetaLink p D base hEll hLink hDegree)
+
+/-! The named raw normalization projection also makes the degree-normalized
+source finite sum directly consumable from the Scene1 bundle. -/
+theorem absLogQ_eq_degreeNormalizedSourceQLogSum
+    {K : Type u} [Field K] [NumberField K]
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : Corollary312Scene1QPilotData (K := K) (O := O) p) :
+    (D.qPilot p).absLogQ p =
+      Corollary312DegreeNormalizedSourceQLogSum p D.base.target
+        D.base.qFamily.grouping := by
+  exact Corollary312QPilotSourceIndexBridge.absLogQ_eq_degreeNormalizedSourceQLogSum
+    p D.source.orderCompatibility (D.rawNormalization p) D.base.ell_prime.pos
+    (D.sourceIndexBridge p)
 
 end Corollary312Scene1QPilotData
 
