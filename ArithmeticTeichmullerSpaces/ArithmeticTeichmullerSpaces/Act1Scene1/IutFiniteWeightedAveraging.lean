@@ -2,6 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.Boundary
 
 namespace JoshiTeich.Act1Scene1
 
+open JoshiTeich.Prologue
 open scoped BigOperators
 
 universe u v
@@ -11,7 +12,8 @@ source-id: IUT-COR312-FINITE-WEIGHTED-AVERAGING
 source: `refer/iut/Iut/Concrete/LocalEstimate.lean`,
 `sum_bound_eval` in the `LocalEstimate` namespace.
 fidelity: ports the finite weighted-average calculation and adds the
-pointwise-bound consumer used by packet/hull volume estimates.
+pointwise-bound consumer used by packet/hull volume estimates, together with
+consumers for the actual finite packet and hull carriers.
 boundary: Scene1/Derived
 
 The theorem is independent of theta data and does not construct a local
@@ -139,6 +141,80 @@ theorem weighted_sum_le_of_pointwise
       exact mul_le_mul_of_nonneg_left (hLocal c) (Finset.prod_nonneg fun l hl => hw_nonneg (c l))
     _ = (-J * ∑ e, w e * o e + Fintype.card ι * ∑ e, w e * d e + 1) * L +
         Fintype.card ι * T := sum_bound_eval w hw o d J L T j
+
+private theorem sum_weight_le_of_product_local_bound
+    {Carrier : Type u} [Fintype Carrier]
+    {ι : Type u} {E : Type v} [Fintype ι] [Fintype E] [Fintype (ι → E)]
+    (weight : Carrier → ℝ)
+    (tupleEquiv : Carrier ≃ (ι → E))
+    (w : E → ℝ)
+    (hw : ∑ e, w e = 1)
+    (hw_nonneg : ∀ e, 0 ≤ w e)
+    (o d : E → ℝ) (J L T : ℝ) (j : ι)
+    (localValue : (ι → E) → ℝ)
+    (hWeight : ∀ x,
+      weight x = (∏ l, w (tupleEquiv x l)) * localValue (tupleEquiv x))
+    (hLocal : ∀ c,
+      localValue c ≤
+        (-J * o (c j) + ∑ l, d (c l) + 1) * L + ∑ _l : ι, T) :
+    ∑ x, weight x ≤
+      (-J * ∑ e, w e * o e + Fintype.card ι * ∑ e, w e * d e + 1) * L +
+        Fintype.card ι * T := by
+  classical
+  calc
+    ∑ x, weight x = ∑ c : ι → E, weight (tupleEquiv.symm c) := by
+      simpa using tupleEquiv.sum_comp (fun c => weight (tupleEquiv.symm c))
+    _ = ∑ c : ι → E, (∏ l, w (c l)) * localValue c := by
+      apply Finset.sum_congr rfl
+      intro c hc
+      simpa using hWeight (tupleEquiv.symm c)
+    _ ≤ (-J * ∑ e, w e * o e + Fintype.card ι * ∑ e, w e * d e + 1) * L +
+        Fintype.card ι * T :=
+      weighted_sum_le_of_pointwise w hw hw_nonneg o d J L T j localValue hLocal
+
+/-- A packet whose weight is a product-weighted local value inherits the
+finite pointwise local estimate.  The equivalence and weight equation are the
+source-level packet construction obligations. -/
+theorem packet_weight_sum_le_of_product_local_bound
+    {Pilot : Type u} (P : PacketHullData Pilot) [packetFintype : Fintype P.packet]
+    {ι : Type u} {E : Type v} [Fintype ι] [Fintype E] [Fintype (ι → E)]
+    (tupleEquiv : P.packet ≃ (ι → E))
+    (w : E → ℝ)
+    (hw : ∑ e, w e = 1)
+    (hw_nonneg : ∀ e, 0 ≤ w e)
+    (o d : E → ℝ) (J L T : ℝ) (j : ι)
+    (localValue : (ι → E) → ℝ)
+    (hWeight : ∀ x,
+      P.packetWeight x = (∏ l, w (tupleEquiv x l)) * localValue (tupleEquiv x))
+    (hLocal : ∀ c,
+      localValue c ≤
+        (-J * o (c j) + ∑ l, d (c l) + 1) * L + ∑ _l : ι, T) :
+    ∑ x, P.packetWeight x ≤
+      (-J * ∑ e, w e * o e + Fintype.card ι * ∑ e, w e * d e + 1) * L +
+        Fintype.card ι * T := by
+  exact sum_weight_le_of_product_local_bound P.packetWeight tupleEquiv w hw hw_nonneg
+    o d J L T j localValue hWeight hLocal
+
+/-- The corresponding finite estimate for the hull carrier. -/
+theorem hull_weight_sum_le_of_product_local_bound
+    {Pilot : Type u} (P : PacketHullData Pilot) [hullFintype : Fintype P.hull]
+    {ι : Type u} {E : Type v} [Fintype ι] [Fintype E] [Fintype (ι → E)]
+    (tupleEquiv : P.hull ≃ (ι → E))
+    (w : E → ℝ)
+    (hw : ∑ e, w e = 1)
+    (hw_nonneg : ∀ e, 0 ≤ w e)
+    (o d : E → ℝ) (J L T : ℝ) (j : ι)
+    (localValue : (ι → E) → ℝ)
+    (hWeight : ∀ x,
+      P.hullWeight x = (∏ l, w (tupleEquiv x l)) * localValue (tupleEquiv x))
+    (hLocal : ∀ c,
+      localValue c ≤
+        (-J * o (c j) + ∑ l, d (c l) + 1) * L + ∑ _l : ι, T) :
+    ∑ x, P.hullWeight x ≤
+      (-J * ∑ e, w e * o e + Fintype.card ι * ∑ e, w e * d e + 1) * L +
+        Fintype.card ι * T := by
+  exact sum_weight_le_of_product_local_bound P.hullWeight tupleEquiv w hw hw_nonneg
+    o d J L T j localValue hWeight hLocal
 
 end IutFiniteWeightedAveraging
 

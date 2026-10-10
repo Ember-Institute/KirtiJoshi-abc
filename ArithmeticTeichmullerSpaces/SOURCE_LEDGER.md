@@ -305,6 +305,8 @@ S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT
 
 | `IUT-COR312-FINITE-WEIGHTED-AVERAGING` | `IutFiniteWeightedAveraging.sum_bound_eval`, `IutFiniteWeightedAveraging.weighted_sum_le_of_pointwise` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutFiniteWeightedAveraging.lean` | Ports the finite product-weight calculation used by `refer/iut/Iut/Concrete/LocalEstimate.lean` (`sum_bound_eval`) and adds its nonnegative pointwise-bound consumer. The local helper identities follow `refer/iut/Iut/Concrete/Invariants.lean` (`sum_prod_tuple_mul_coord`, `sum_prod_tuple_mul_sum`, `sum_prod_tuple_eq_one`). The result is an abstract finite weighted packet/hull interface: it does not construct `InitialThetaData`, `TateFamily`, theta regions, packet/hull carriers, volume accounting, transfer bounds, paper `L'` representatives, or Corollary 3.12. |
 
+| `IUT-COR312-PACKET-HULL-FINITE-AVERAGING` | `IutFiniteWeightedAveraging.packet_weight_sum_le_of_product_local_bound`, `IutFiniteWeightedAveraging.hull_weight_sum_le_of_product_local_bound` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutFiniteWeightedAveraging.lean` | Consumes `PacketHullData.packetWeight` and `hullWeight` through explicit equivalences to finite tuple carriers, product-weight decompositions, and pointwise local bounds, then applies the finite weighted-average transport from `IUT-COR312-FINITE-WEIGHTED-AVERAGING`. This closes the finite packet/hull summation interface only; the tuple equivalences, weight decompositions, local theta-region estimates, real `InitialThetaData/TateFamily` construction, volume transfer, paper representatives, and Corollary 3.12 remain source obligations. |
+
 ### 字段级覆盖审计
 
 `FieldCoverage.lean` 使用 Lean projection 名称逐项检查下列字段。每个字段组的语义
