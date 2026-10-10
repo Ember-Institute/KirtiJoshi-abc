@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootPaperQSum
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 
 namespace JoshiTeich.Act1Scene1
 
@@ -200,6 +201,41 @@ theorem absLogQ_eq_selectedQRootPaperQLogSum
         heightData ramification logVolume processionLength B
 
 end Corollary312PaperRepresentativeSectionLinkAccounting
+
+/-! The Scene1 q-pilot bundle exposes the same raw normalization contract as
+the source adapter.  This wrapper consumes that projection together with the
+explicit representative and section-link certificates. -/
+theorem Corollary312Scene1QPilotData.absLogQ_eq_selectedQRootPaperQLogSum
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D₀ : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (D : Corollary312Scene1QPilotData (K := D₀.F) (O := O) p)
+    (A : Corollary312QPilotPaperRepresentativeAccounting p D.base.target
+      (D.qPilot p))
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D₀.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D₀.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D₀.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D₀ p A theta
+      thetaBase packetHull heightData ramification logVolume processionLength) :
+    let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D₀).badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D₀}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D₀).fintype
+    (D.qPilot p).absLogQ p =
+      ∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            ((iutInitialThetaOddSupportTorsionQRootSource D₀).qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1) := by
+  exact Corollary312PaperRepresentativeSectionLinkAccounting.absLogQ_eq_selectedQRootPaperQLogSum
+    p D₀ A theta thetaBase packetHull heightData ramification logVolume processionLength B
+    D.source.orderCompatibility (D.rawNormalization p) D.base.ell_prime.pos
 
 end
 

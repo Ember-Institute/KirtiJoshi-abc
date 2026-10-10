@@ -73,6 +73,20 @@ noncomputable def qPilot
     Corollary312QPilotData p D.base.target :=
   D.source.toSceneQPilot (K := K) (O := O) p D.base.qFamily.compatibility
 
+/-- The IUT source also supplies the raw completion norm normalization for the
+same q-pilot carrier.  Keeping this as a named Scene1 projection makes the
+raw bridge consumable without reconstructing the dependent adapter expression.
+-/
+theorem rawNormalization
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : Corollary312Scene1QPilotData (K := K) (O := O) p) :
+    Corollary312RawQNormDegreeNormalization p D.base.target
+      D.source.orderCompatibility (D.qPilot p) := by
+  exact D.source.toSceneQPilot_rawQNormDegreeNormalization p D.base.qFamily.compatibility
+
 /-!
 The source and q-family already expose the same finite link-place carrier.  The
 canonical grouping bridge therefore carries no additional source information and
