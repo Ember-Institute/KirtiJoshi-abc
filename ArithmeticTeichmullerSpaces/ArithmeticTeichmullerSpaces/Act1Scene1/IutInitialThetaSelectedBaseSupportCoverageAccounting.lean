@@ -176,6 +176,97 @@ theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_fiber_
       symm
       exact IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber_eq_baseQOrder D p
 
+/-! The fibre bridge can be assembled into the logarithmic finite sum on the
+selected residue-characteristic image.  The image is kept explicit so that
+coverage is not silently promoted to a global support identification. -/
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_logSum_eq_fullSupport_on_selectedResidueImage
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (hCoverage : ∀ w : NumberField.FinitePlace D.F,
+      w ∈ IutOddMultiplicativeSupport D →
+        iutInitialThetaSectionBasePlace D
+            (iutPlaceUnder (F :=
+              ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+              (Kt := D.F) w) = w) :
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    let S :=
+      {s : R.badFinset //
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    let P := (Finset.univ : Finset S).image
+      (fun s => Arithmetic.residueChar (R.basePlace s.1).1)
+    ∑ p ∈ P,
+        Real.log p *
+          ∑ s ∈ (Finset.univ : Finset S).filter
+            (fun s => Arithmetic.residueChar (R.basePlace s.1).1 = p),
+            Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+              ((Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+                Arithmetic.ordp s.1.1
+                  (R.qroot (show R.badFinset from s.1))) =
+      ∑ p ∈ P,
+        Real.log p *
+          IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber D p := by
+  classical
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  let S :=
+    {s : R.badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  let P := (Finset.univ : Finset S).image
+    (fun s => Arithmetic.residueChar (R.basePlace s.1).1)
+  have hFiber (p : ℕ) :
+      (∑ s : S,
+        if Arithmetic.residueChar (R.basePlace s.1).1 = p then
+          Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+            ((Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+              Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1)))
+        else 0) =
+      ∑ s ∈ (Finset.univ : Finset S).filter
+        (fun s => Arithmetic.residueChar (R.basePlace s.1).1 = p),
+        Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+          ((Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+            Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1))) := by
+    rw [Finset.sum_filter]
+  have hSelected (p : ℕ) :
+      (∑ s : S,
+        if Arithmetic.residueChar (R.basePlace s.1).1 = p then
+          Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+            ((Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+              Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1)))
+        else 0) =
+      IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber D p := by
+    simpa [R, S] using
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_fiber_eq_fullSupport
+        D p hCoverage)
+  calc
+    (∑ p ∈ P,
+        Real.log p *
+          ∑ s ∈ (Finset.univ : Finset S).filter
+            (fun s => Arithmetic.residueChar (R.basePlace s.1).1 = p),
+            Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+              ((Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+                Arithmetic.ordp s.1.1
+                  (R.qroot (show R.badFinset from s.1)))) =
+      ∑ p ∈ P,
+        Real.log p *
+          ∑ s : S,
+            if Arithmetic.residueChar (R.basePlace s.1).1 = p then
+              Arithmetic.qPilotWeight (R.basePlace s.1).1 *
+                ((Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+                  Arithmetic.ordp s.1.1
+                    (R.qroot (show R.badFinset from s.1)))
+            else 0 := by
+      apply Finset.sum_congr rfl
+      intro p hp
+      rw [hFiber p]
+    _ = ∑ p ∈ P,
+        Real.log p *
+          IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber D p := by
+      apply Finset.sum_congr rfl
+      intro p hp
+      rw [hSelected p]
+
 end
 
 end JoshiTeich.Act1Scene1
