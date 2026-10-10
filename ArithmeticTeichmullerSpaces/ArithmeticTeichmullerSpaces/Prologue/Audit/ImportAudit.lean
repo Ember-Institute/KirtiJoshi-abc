@@ -236,6 +236,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutQPilotSource.ofAdmissiblePrimeData
 #check JoshiTeich.Act1Scene1.IutQPilotSource.initialThetaParameter_eq_of_tateJ
 #check JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaData
+#check JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaData_of_parameter_eq
 #check JoshiTeich.Act1Scene1.IutQPilotSource.ofCanonicalInitialThetaLink
 #check JoshiTeich.Act1Scene1.IutQPilotSource.absLogQ_eq_weightedPaperNormalizedSourceQFactorLogSum_ofCanonicalInitialThetaLink
 #check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_rawQNormDegreeNormalization
@@ -579,6 +580,7 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofAdmissiblePrimeData
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.initialThetaParameter_eq_of_tateJ
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaData
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaData_of_parameter_eq
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofCanonicalInitialThetaLink
 #print axioms JoshiTeich.Act1Scene1.IutQPilotSource.absLogQ_eq_weightedPaperNormalizedSourceQFactorLogSum_ofCanonicalInitialThetaLink
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateParameterData_laws
