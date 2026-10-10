@@ -689,4 +689,97 @@ theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_baseRamIdx_mul_ordp_f
       · rw [hbIndex, hIndex b]
       · rw [hbIndex, hIndex b]
 
+/-! The per-characteristic identities can be assembled over the finite image of
+the selected base-place carrier.  This is the explicit grouped `(p,w)` form;
+the carrier is still the actual section-selected one. -/
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_baseRamIdx_mul_ordp_sum_eq_unweighted_residueChar_grouped
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    let S :=
+      {s : R.badFinset //
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    let T :=
+      {b : NumberField.FinitePlace D.F //
+        b ∈ iutInitialThetaOddSupportSelectedBasePlaces D}
+    letI : Fintype T :=
+      (iutInitialThetaOddSupportSelectedBasePlaces_finite D).fintype
+    let P :=
+      (Finset.univ : Finset T).image (fun b => Arithmetic.residueChar b.1)
+    ∑ p ∈ P,
+        ∑ s ∈ (Finset.univ : Finset S).filter
+          (fun s => Arithmetic.residueChar (R.basePlace s.1).1 = p),
+          (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+            Arithmetic.ordp s.1.1
+              (R.qroot (show R.badFinset from s.1)) =
+      ∑ p ∈ P,
+        ∑ b ∈ (Finset.univ : Finset T).filter
+          (fun b => Arithmetic.residueChar b.1 = p),
+          (iutInitialThetaOddSupportSelectedBaseQOrder D b : ℝ) /
+            (2 * (D.prime.ℓ : ℝ)) := by
+  classical
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  let S :=
+    {s : R.badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  let T :=
+    {b : NumberField.FinitePlace D.F //
+      b ∈ iutInitialThetaOddSupportSelectedBasePlaces D}
+  letI : Fintype T :=
+    (iutInitialThetaOddSupportSelectedBasePlaces_finite D).fintype
+  let P :=
+    (Finset.univ : Finset T).image (fun b => Arithmetic.residueChar b.1)
+  have hFiber (p : ℕ) :
+      (∑ s : S,
+        if Arithmetic.residueChar (R.basePlace s.1).1 = p then
+          (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+            Arithmetic.ordp s.1.1
+              (R.qroot (show R.badFinset from s.1))
+        else 0) =
+      ∑ b : T,
+        if Arithmetic.residueChar b.1 = p then
+          (iutInitialThetaOddSupportSelectedBaseQOrder D b : ℝ) /
+            (2 * (D.prime.ℓ : ℝ))
+        else 0 := by
+    simpa [R, S, T] using
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_baseRamIdx_mul_ordp_fiber_eq_unweighted
+        D p)
+  calc
+    (∑ p ∈ P,
+        ∑ s ∈ (Finset.univ : Finset S).filter
+          (fun s => Arithmetic.residueChar (R.basePlace s.1).1 = p),
+          (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+            Arithmetic.ordp s.1.1
+              (R.qroot (show R.badFinset from s.1))) =
+        ∑ p ∈ P,
+          ∑ s : S,
+            if Arithmetic.residueChar (R.basePlace s.1).1 = p then
+              (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+                Arithmetic.ordp s.1.1
+                  (R.qroot (show R.badFinset from s.1))
+            else 0 := by
+      apply Finset.sum_congr rfl
+      intro p hp
+      rw [← Finset.sum_filter]
+    _ = ∑ p ∈ P,
+          ∑ b : T,
+            if Arithmetic.residueChar b.1 = p then
+              (iutInitialThetaOddSupportSelectedBaseQOrder D b : ℝ) /
+                (2 * (D.prime.ℓ : ℝ))
+            else 0 := by
+      apply Finset.sum_congr rfl
+      intro p hp
+      exact hFiber p
+    _ = ∑ p ∈ P,
+        ∑ b ∈ (Finset.univ : Finset T).filter
+          (fun b => Arithmetic.residueChar b.1 = p),
+          (iutInitialThetaOddSupportSelectedBaseQOrder D b : ℝ) /
+            (2 * (D.prime.ℓ : ℝ)) := by
+      apply Finset.sum_congr rfl
+      intro p hp
+      rw [Finset.sum_filter]
+
 end JoshiTeich.Act1Scene1
