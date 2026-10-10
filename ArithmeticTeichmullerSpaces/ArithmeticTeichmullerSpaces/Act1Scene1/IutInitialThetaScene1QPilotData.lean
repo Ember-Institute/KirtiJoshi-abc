@@ -1,0 +1,106 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalQPilot
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
+
+namespace JoshiTeich.Act1Scene1
+
+open JoshiTeich.Prologue
+open NumberField
+
+universe u
+
+noncomputable section
+
+/-!
+source-id: IUT-COR312-INITIAL-THETA-SCENE1-QPILOT-DATA
+source: the actual `InitialThetaData.prime` and its canonical
+`AdelicThetaLinkData.ofInitialThetaData`; target-side packet, hull, volume,
+and q-family accounting remain the explicit `Corollary312Scene1Data` input.
+fidelity: assembles the real q-pilot source into the public Scene1 q-pilot
+bundle when the normalization audit's degree-one condition is supplied.
+boundary: Scene1/Derived
+
+This adapter keeps the target-side analytic accounting visible.  It only
+constructs the source and its weighted normalization from `InitialThetaData`;
+it does not infer the target volume, packet/hull accounting, or the equality
+between an independently supplied link and the canonical link.
+-/
+
+namespace Corollary312Scene1QPilotData
+
+/-!
+The target-side Scene1 data already contains the theta and packet carriers
+stored in its link.  When that link is the canonical link of the same
+`InitialThetaData`, the q-pilot source is therefore derived from the actual
+IUT admissible prime rather than supplied as an unrelated structure.
+The explicit degree-one hypothesis is exactly the boundary identified by the
+raw/weighted normalization audit.
+-/
+noncomputable def ofCanonicalInitialThetaLink
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (hDegree : Module.finrank ℚ D.F = 1) :
+    Corollary312Scene1QPilotData (K := D.F) (O := O) p := by
+  let theta := base.target.scene1.data.link.theta
+  let thetaBase := base.target.scene1.data.link.thetaBase
+  let packetHull := base.target.scene1.data.link.packetHull
+  let heightData := base.target.scene1.data.link.heightData
+  let ramification := base.target.scene1.data.link.ramification
+  let logVolume := base.target.scene1.data.link.logVolume
+  let processionLength := base.target.scene1.data.link.processionLength
+  let source := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+    packetHull heightData ramification logVolume processionLength hEll hLink
+  have hCompat : QNormTateCompatibility base.target.scene1.data.link :=
+    base.qFamily.compatibility
+  have hRaw := source.toSceneQPilot_rawQNormDegreeNormalization p hCompat
+  refine
+    { base := base
+      source := source
+      sourceNormalization := ?_ }
+  exact
+    Corollary312QPilotNormalizationAudit.weighted_normalization_of_raw_normalization_of_finrank_eq_one
+      p (source.toSceneQPilot p hCompat) source.orderCompatibility hRaw hDegree
+
+theorem cor312_of_canonicalInitialThetaLink_of_degree_one
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (hDegree : Module.finrank ℚ D.F = 1) :
+    Corollary312 p base.target := by
+  exact cor312_of_scene1_qPilot_data p
+    (ofCanonicalInitialThetaLink p D base hEll hLink hDegree)
+
+end Corollary312Scene1QPilotData
+
+end
+
+end JoshiTeich.Act1Scene1
