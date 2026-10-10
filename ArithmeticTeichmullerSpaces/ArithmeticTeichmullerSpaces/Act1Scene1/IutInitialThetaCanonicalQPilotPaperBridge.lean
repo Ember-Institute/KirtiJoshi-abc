@@ -72,6 +72,90 @@ theorem IutQPilotSource.absLogQ_eq_weightedPaperNormalizedSourceQFactorLogSum_of
     (absLogQ_eq_weightedPaperNormalizedSourceQFactorLogSum
       p T Q S.orderCompatibility hNorm hEllPos)
 
+/-! The same canonical source also has a direct finite-sum presentation using
+the degree-normalized q-factor.  This keeps the source-side normalization
+explicit without identifying it with the raw target q-family. -/
+theorem IutQPilotSource.absLogQ_eq_degreeNormalizedSourceQFactorLogSum_ofCanonicalInitialThetaLink
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (hEll : T.ell = D.prime.ℓ)
+    (hLink : T.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+        heightData ramification logVolume processionLength) :
+    let hCompat : QNormTateCompatibility T.scene1.data.link := by
+      rw [hLink]
+      exact iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
+        packetHull heightData ramification logVolume processionLength
+    let S := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+      packetHull heightData ramification logVolume processionLength hEll hLink
+    let Q := S.toSceneQPilot p hCompat
+    Q.absLogQ p =
+      ∑ w : Q.badFinset,
+        -Real.log
+          (Corollary312DegreeNormalizedSourceQFactor p T
+            (show Corollary312SourceQIndex p T from
+              ⟨w.1, Q.mem_bad p w.2⟩)) := by
+  let hCompat : QNormTateCompatibility T.scene1.data.link := by
+    rw [hLink]
+    exact iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
+      packetHull heightData ramification logVolume processionLength
+  let S := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+    packetHull heightData ramification logVolume processionLength hEll hLink
+  let Q := S.toSceneQPilot p hCompat
+  have hNorm := S.toSceneQPilot_rawQNormDegreeNormalization p hCompat
+  have hEllPos : 0 < T.ell := by
+    rw [hEll]
+    have h : 5 ≤ D.prime.ℓ := D.prime.five_le
+    omega
+  have hNormalize :
+      Q.absLogQ p =
+        ∑ w ∈ Q.badFinset.attach, Q.normalizedLogTerm p w.1 := by
+    unfold Corollary312QPilotData.absLogQ Corollary312QPilotData.logQ
+    calc
+      (∑ w ∈ Q.badFinset.attach,
+          Q.weight w.1 * (T.scene1.data.link.tate.qOrder w.1 : ℝ) *
+            Real.log (Arithmetic.residueChar w.1)) /
+          (2 * (T.ell : ℝ)) =
+          (1 / (2 * (T.ell : ℝ))) *
+            ∑ w ∈ Q.badFinset.attach,
+              Q.weight w.1 * (T.scene1.data.link.tate.qOrder w.1 : ℝ) *
+                Real.log (Arithmetic.residueChar w.1) := by ring
+      _ = ∑ w ∈ Q.badFinset.attach,
+          (1 / (2 * (T.ell : ℝ))) *
+            (Q.weight w.1 * (T.scene1.data.link.tate.qOrder w.1 : ℝ) *
+              Real.log (Arithmetic.residueChar w.1)) := by
+        rw [Finset.mul_sum]
+      _ = ∑ w ∈ Q.badFinset.attach, Q.normalizedLogTerm p w.1 := by
+        rfl
+  calc
+    Q.absLogQ p =
+        ∑ w ∈ Q.badFinset.attach, Q.normalizedLogTerm p w.1 := hNormalize
+    _ = ∑ w ∈ Q.badFinset.attach,
+        -Real.log
+          (Corollary312DegreeNormalizedSourceQFactor p T
+            (show Corollary312SourceQIndex p T from
+              ⟨w.1, Q.mem_bad p w.2⟩)) := by
+      apply Finset.sum_congr rfl
+      intro w hw
+      exact Corollary312QPilotData.normalizedLogTerm_eq_degreeNormalizedSourceQFactorLog
+        p Q S.orderCompatibility hNorm hEllPos w.1 w.2
+    _ = ∑ w : Q.badFinset,
+        -Real.log
+          (Corollary312DegreeNormalizedSourceQFactor p T
+            (show Corollary312SourceQIndex p T from
+              ⟨w.1, Q.mem_bad p w.2⟩)) := by
+      simp
+
 end
 
 end JoshiTeich.Act1Scene1
