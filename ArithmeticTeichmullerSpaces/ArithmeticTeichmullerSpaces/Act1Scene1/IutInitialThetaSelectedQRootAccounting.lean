@@ -210,6 +210,140 @@ theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_baseRa
 
 end
 
+/-! Removing the q-pilot coefficient leaves the representative multiplicity
+accounting itself.  The equality below is still on the actual section-selected
+carrier; it does not identify that carrier with the paper's independently
+chosen `L'` representatives. -/
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_baseRamIdx_mul_ordp_sum_eq_unweighted
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    let S :=
+      {s : R.badFinset //
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    let T :=
+      {b : NumberField.FinitePlace D.F //
+        b ∈ iutInitialThetaOddSupportSelectedBasePlaces D}
+    letI : Fintype T :=
+      (iutInitialThetaOddSupportSelectedBasePlaces_finite D).fintype
+    ∑ s : S,
+        (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            (R.qroot (show R.badFinset from s.1)) =
+      ∑ b : T,
+        (iutInitialThetaOddSupportSelectedBaseQOrder D b : ℝ) /
+          (2 * (D.prime.ℓ : ℝ)) := by
+  classical
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  let S :=
+    {s : R.badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  let T :=
+    {b : NumberField.FinitePlace D.F //
+      b ∈ iutInitialThetaOddSupportSelectedBasePlaces D}
+  letI : Fintype T :=
+    (iutInitialThetaOddSupportSelectedBasePlaces_finite D).fintype
+  let e := iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlaceEquiv D
+  let bIndex : T → B.badFinset := fun b =>
+    ⟨b.1, (Set.ext_iff.mp B.badFinset_spec b.1).mpr
+      (iutInitialThetaOddSupportSelectedBasePlaces_subset_baseSupport D b.2)⟩
+  have hIndex (b : T) :
+      iutInitialThetaOddSupportSelectedBaseQOrder D b = B.qOrder (bIndex b) := by
+    rfl
+  have hBase (s : S) :
+      bIndex (e s) = R.basePlace s.1 := by
+    apply Subtype.ext
+    rfl
+  have hLocal (s : S) :
+      Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1)) =
+        (B.qOrder (bIndex (e s)) : ℝ) /
+          (2 * (D.prime.ℓ : ℝ) *
+            Arithmetic.ramIdx (R.basePlace s.1).1) := by
+    rcases s.2 with ⟨v, hv, hsection⟩
+    have hs : iutInitialThetaOddSupportSelectedQRootPlace D v hv = s.1 :=
+      Subtype.ext hsection
+    have h := iutInitialThetaOddSupportSelectedQRootPlace_ordp_eq_baseQOrder
+      D v hv
+    have hbase :
+        R.basePlace s.1 =
+          R.basePlace (iutInitialThetaOddSupportSelectedQRootPlace D v hv) := by
+      rw [hs]
+    have hbase' :
+        B.qOrder (R.basePlace (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) =
+          B.qOrder (bIndex (e s)) := by
+      calc
+        B.qOrder (R.basePlace (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) =
+            B.qOrder (R.basePlace s.1) := by rw [hs]
+        _ = B.qOrder (bIndex (e s)) := by rw [hBase s]
+    have h' :
+        Arithmetic.ordp
+            (iutInitialThetaOddSupportSelectedQRootPlace D v hv).1
+            (R.qroot (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) =
+          (B.qOrder
+              (R.basePlace
+                (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) : ℝ) /
+            (2 * (D.prime.ℓ : ℝ) *
+              Arithmetic.ramIdx
+                (R.basePlace
+                  (iutInitialThetaOddSupportSelectedQRootPlace D v hv)).1) := by
+      simpa [R, B] using h
+    calc
+      Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1)) =
+          Arithmetic.ordp
+            (iutInitialThetaOddSupportSelectedQRootPlace D v hv).1
+            (R.qroot (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) := by
+        rw [hs]
+      _ = (B.qOrder
+            (R.basePlace
+              (iutInitialThetaOddSupportSelectedQRootPlace D v hv)) : ℝ) /
+            (2 * (D.prime.ℓ : ℝ) *
+              Arithmetic.ramIdx
+                (R.basePlace
+                  (iutInitialThetaOddSupportSelectedQRootPlace D v hv)).1) := h'
+      _ = (B.qOrder (bIndex (e s)) : ℝ) /
+          (2 * (D.prime.ℓ : ℝ) *
+            Arithmetic.ramIdx (R.basePlace s.1).1) := by
+        rw [hbase', ← hbase]
+  have hEll : (D.prime.ℓ : ℝ) ≠ 0 := by
+    have h := D.prime.five_le
+    positivity
+  have hRam (s : S) :
+      (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) ≠ 0 := by
+    exact_mod_cast (Arithmetic.ramIdx_pos (R.basePlace s.1).1).ne'
+  have hTerm (s : S) :
+      (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+          Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1)) =
+        (B.qOrder (bIndex (e s)) : ℝ) /
+          (2 * (D.prime.ℓ : ℝ)) := by
+    rw [hLocal s]
+    field_simp [hRam s, hEll]
+  calc
+    (∑ s : S,
+        (Arithmetic.ramIdx (R.basePlace s.1).1 : ℝ) *
+          Arithmetic.ordp s.1.1 (R.qroot (show R.badFinset from s.1))) =
+        ∑ s : S,
+          (B.qOrder (bIndex (e s)) : ℝ) /
+            (2 * (D.prime.ℓ : ℝ)) := by
+      apply Finset.sum_congr rfl
+      intro s hs
+      exact hTerm s
+    _ = ∑ b : T,
+          (B.qOrder (bIndex b) : ℝ) /
+            (2 * (D.prime.ℓ : ℝ)) := by
+      simpa using e.sum_comp (fun b =>
+        (B.qOrder (bIndex b) : ℝ) /
+          (2 * (D.prime.ℓ : ℝ)))
+    _ = ∑ b : T,
+          (iutInitialThetaOddSupportSelectedBaseQOrder D b : ℝ) /
+            (2 * (D.prime.ℓ : ℝ)) := by
+      apply Finset.sum_congr rfl
+      intro b hb
+      rw [hIndex b]
+
 /-! The same accounting can be restricted to one residue characteristic.
 The restriction is the finite-fibre interface needed before comparing the
 selected carrier with the paper's `(p,w)` indexing. -/
