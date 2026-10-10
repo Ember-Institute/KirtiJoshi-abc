@@ -267,6 +267,104 @@ theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_qPilotWeighted_logSum
       intro p hp
       rw [hSelected p]
 
+/-! Under coverage, the finite prime image used by the selected source is the
+same image as the full base q-pilot support. -/
+theorem iutInitialThetaOddSupportSelectedQRootSourcePlaces_residueCharImage_eq_fullSupport
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (hCoverage : ∀ w : NumberField.FinitePlace D.F,
+      w ∈ IutOddMultiplicativeSupport D →
+        iutInitialThetaSectionBasePlace D
+            (iutPlaceUnder (F :=
+              ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+              (Kt := D.F) w) = w) :
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    let S :=
+      {s : R.badFinset //
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S :=
+      (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    let P := (Finset.univ : Finset S).image
+      (fun s => Arithmetic.residueChar (R.basePlace s.1).1)
+    let Q := (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+      Arithmetic.residueChar
+    P = Q := by
+  classical
+  let R := iutInitialThetaOddSupportTorsionQRootSource D
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  let S :=
+    {s : R.badFinset //
+      s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  letI : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  let T :=
+    {b : NumberField.FinitePlace D.F //
+      b ∈ iutInitialThetaOddSupportSelectedBasePlaces D}
+  letI : Fintype T :=
+    (iutInitialThetaOddSupportSelectedBasePlaces_finite D).fintype
+  have hSupport :
+      iutInitialThetaOddSupportSelectedBasePlaces D =
+        IutOddMultiplicativeSupport D :=
+    (iutInitialThetaOddSupportSelectedBasePlaces_eq_fullSupport_iff D).mpr
+      hCoverage
+  let eBase : S ≃ T :=
+    iutInitialThetaOddSupportSelectedQRootSourcePlaces_basePlaceEquiv D
+  let eFull : T ≃ B.badFinset :=
+    { toFun := fun b =>
+        ⟨b.1, (Set.ext_iff.mp B.badFinset_spec b.1).mpr (by
+          have hbSupport : b.1 ∈ IutOddMultiplicativeSupport D := by
+            simpa [hSupport] using b.2
+          change b.1 ∈ IutOddMultiplicativeSupport D
+          exact hbSupport)⟩
+      invFun := fun w =>
+        ⟨w.1, by
+          have hwSupport : w.1 ∈ IutOddMultiplicativeSupport D := by
+            have hwB := (Set.ext_iff.mp B.badFinset_spec w.1).mp w.2
+            change w.1 ∈ IutOddMultiplicativeSupport D at hwB
+            exact hwB
+          simpa [hSupport] using hwSupport⟩
+      left_inv := by
+        intro b
+        rfl
+      right_inv := by
+        intro w
+        rfl }
+  let P := (Finset.univ : Finset S).image
+    (fun s => Arithmetic.residueChar (R.basePlace s.1).1)
+  let Q := B.badFinset.image Arithmetic.residueChar
+  apply Finset.ext
+  intro p
+  constructor
+  · intro hp
+    rcases Finset.mem_image.mp hp with ⟨s, hs, hsp⟩
+    let b : T := eBase s
+    let w : B.badFinset := eFull b
+    refine Finset.mem_image.mpr ⟨w.1, w.2, ?_⟩
+    have hbase : (eBase s).1 = (R.basePlace s.1).1 := by
+      apply Subtype.ext
+      rfl
+    have hfull : (eFull (eBase s)).1 = (eBase s).1 := by
+      rfl
+    change Arithmetic.residueChar (eFull (eBase s)).1 = p
+    rw [hfull, hbase]
+    exact hsp
+  · intro hp
+    rcases Finset.mem_image.mp hp with ⟨w, hw, hwp⟩
+    let b : T := eFull.symm ⟨w, hw⟩
+    let s : S := eBase.symm b
+    refine Finset.mem_image.mpr ⟨s, Finset.mem_univ _, ?_⟩
+    have hbs : eBase s = b := by
+      exact eBase.apply_symm_apply b
+    have hbw : eFull b = ⟨w, hw⟩ := by
+      exact eFull.apply_symm_apply ⟨w, hw⟩
+    have hbase : (R.basePlace s.1).1 = w := by
+      calc
+        (R.basePlace s.1).1 = (eBase s).1 := by rfl
+        _ = b.1 := congrArg Subtype.val hbs
+        _ = (eFull b).1 := by rfl
+        _ = w := congrArg Subtype.val hbw
+    rw [hbase]
+    exact hwp
+
 end
 
 end JoshiTeich.Act1Scene1
