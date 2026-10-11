@@ -133,6 +133,26 @@ lemma card_torsionBy_EK : Nat.card (TK E Fbar R) = ell ^ 2 := by
 instance isGalois_torsionField : IsGalois F ↥R.torsionField :=
   IsGalois.of_fixedField_normal_subgroup R.rep.ker
 
+lemma finiteDimensional_torsionField :
+    FiniteDimensional F ↥R.torsionField := by
+  have hle : R.rep.ker ≤ R.torsionField.fixingSubgroup :=
+    (IntermediateField.le_iff_le R.rep.ker R.torsionField).mp le_rfl
+  have hopen : IsOpen (R.torsionField.fixingSubgroup : Set (Fbar ≃ₐ[F] Fbar)) :=
+    Subgroup.isOpen_mono hle R.ker_isOpen
+  exact (InfiniteGalois.isOpen_iff_finite R.torsionField).mp hopen
+
+noncomputable instance numberField_torsionField : NumberField ↥R.torsionField := by
+  letI : FiniteDimensional F ↥R.torsionField := R.finiteDimensional_torsionField
+  have hchar : CharZero ↥R.torsionField :=
+    charZero_of_injective_algebraMap (algebraMap F ↥R.torsionField).injective
+  letI : CharZero ↥R.torsionField := hchar
+  have hscalar : IsScalarTower ℚ F ↥R.torsionField :=
+    IsScalarTower.of_algebraMap_eq' (Subsingleton.elim _ _)
+  letI : IsScalarTower ℚ F ↥R.torsionField := hscalar
+  have hfinite : FiniteDimensional ℚ ↥R.torsionField :=
+    Module.Finite.trans F ↥R.torsionField
+  exact {}
+
 lemma fixingSubgroup_torsionField :
     R.torsionField.fixingSubgroup = R.rep.ker :=
   InfiniteGalois.fixingSubgroup_fixedField (k := F) (K := Fbar)

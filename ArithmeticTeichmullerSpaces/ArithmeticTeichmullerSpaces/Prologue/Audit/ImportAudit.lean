@@ -41,6 +41,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaModEllRepConstruct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepCyclicSubgroup
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepFixedField
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutRamificationCardinality
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepAdmissibleAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutSL2Generation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuationBridge
@@ -811,6 +812,8 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.card_torsionBy_EK
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.rangeEquivGal
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.card_range
+#print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.finiteDimensional_torsionField
+#print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ramificationIdx_dvd_card_gal
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofAdmissiblePrime
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaModEllRepData_torsionField
 #print axioms JoshiTeich.Act1Scene1.IutSL2.transvection_of_orderOf
