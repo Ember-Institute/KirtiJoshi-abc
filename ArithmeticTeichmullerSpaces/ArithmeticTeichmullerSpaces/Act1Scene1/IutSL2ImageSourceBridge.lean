@@ -19,8 +19,9 @@ source: `refer/iut/Iut/Concrete/SL2Image.lean`,
 `EllipticCurveData.prime_dvd_card_range` and `sl_le_range_of`.
 fidelity: the local Tate witness package supplies the parameter, uniformizer,
 Tate structure, q-parameter alignment, torsion-cardinality bound, and
-coprimality certificate used by the root-class lemma. The existing image bridge
-then supplies Cauchy's theorem and the independent `SL₂` generation argument.
+coprimality certificate on an explicit finite-place support. The existing image
+bridge then supplies Cauchy's theorem and the independent `SL₂` generation
+argument.
 boundary: Scene1/Derived
 -/
 
@@ -40,12 +41,14 @@ variable {F : Type u} [Field F] [NumberField F]
 variable {E : WeierstrassCurve F} [E.IsElliptic]
 variable {Fbar : Type u} [Field Fbar] [Algebra F Fbar] [IsAlgClosure F Fbar]
 variable {ell : ℕ} (R : IutCurveModEllRepData F E Fbar ell)
+variable {support : Set (FinitePlace F)}
 
 /-- A local Tate source package sufficient to run the root-class and image argument.
 Every field remains an explicit source obligation for a later `InitialThetaData`
 instantiation. -/
-def LocalTateImageSource : Prop :=
+def LocalTateImageSource (support : Set (FinitePlace F)) : Prop :=
   ∀ (w : FinitePlace F) (h2 : residueChar w ≠ 2)
+    (hwSupport : w ∈ support)
     (hwℓ : residueChar w ≠ ell)
     (w' : FinitePlace ↥R.torsionField)
     (hw'w : FinitePlace.LiesOver w' w),
@@ -60,20 +63,24 @@ def LocalTateImageSource : Prop :=
 theorem prime_dvd_card_range_of_local_tate
     (hp : ell.Prime)
     (hP5 : ∃ w : FinitePlace F,
-      residueChar w ≠ 2 ∧ residueChar w ≠ ell)
-    (hSource : LocalTateImageSource R) :
+      w ∈ support ∧ residueChar w ≠ 2 ∧ residueChar w ≠ ell)
+    (hSource : LocalTateImageSource R support) :
     ell ∣ Nat.card R.rep.range := by
   unfold LocalTateImageSource at hSource
-  apply R.prime_dvd_card_range_of_ramification hp hP5
-  intro w h2 hwℓ w' hw'w
-  obtain ⟨t, π, hπ, S, hq, hcard, hcop⟩ := hSource w h2 hwℓ w' hw'w
-  exact R.prime_dvd_ramificationIdx_of_tate hp hw'w t hπ S hq hcard hcop
+  obtain ⟨w, hwSupport, h2, hwℓ⟩ := hP5
+  obtain ⟨w', hw'w⟩ :=
+    JoshiTeich.ReferenceIut.FinitePlace.exists_liesOver
+      (K := ↥R.torsionField) w
+  rw [R.card_range]
+  obtain ⟨t, π, hπ, S, hq, hcard, hcop⟩ := hSource w h2 hwSupport hwℓ w' hw'w
+  exact (R.prime_dvd_ramificationIdx_of_tate hp hw'w t hπ S hq hcard hcop).trans
+    (R.ramificationIdx_dvd_card_gal hw'w)
 
 theorem sl_le_range_of_local_tate
     (hp : ell.Prime)
     (hP5 : ∃ w : FinitePlace F,
-      residueChar w ≠ 2 ∧ residueChar w ≠ ell)
-    (hSource : LocalTateImageSource R)
+      w ∈ support ∧ residueChar w ≠ 2 ∧ residueChar w ≠ ell)
+    (hSource : LocalTateImageSource R support)
     (hP4 : ¬ IutHasCyclicSubgroup E Fbar ell)
     (A : Matrix.SpecialLinearGroup (Fin 2) (ZMod ell)) :
     A.toGL ∈ R.rep.range := by
