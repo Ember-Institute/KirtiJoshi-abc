@@ -43,6 +43,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepCyclicSubgroup
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepFixedField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepAdmissibleAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutSL2Generation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuationBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportCanonicalAbsLogQ
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadOddPort
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
@@ -814,6 +815,11 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaModEllRepData_torsionField
 #print axioms JoshiTeich.Act1Scene1.IutSL2.transvection_of_orderOf
 #print axioms JoshiTeich.Act1Scene1.IutSL2.toGL_mem_of_transvection
+#print axioms JoshiTeich.Act1Scene1.iutValued_eq_of_norm_eq
+#print axioms JoshiTeich.Act1Scene1.iutValued_embedding
+#print axioms JoshiTeich.Act1Scene1.iutValued_of_isUniformizer
+#print axioms JoshiTeich.Act1Scene1.iutValued_q_toOrdered
+#print axioms JoshiTeich.Act1Scene1.iutValued_q_eq_inv_tateJ
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportWeighted_logSum_eq_reference_absLogQ_of_support_eq
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_source
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_order_normalization

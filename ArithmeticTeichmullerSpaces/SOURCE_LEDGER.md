@@ -399,3 +399,5 @@ ported after adaptation to the frozen mathlib boundary; each port records its so
 source commit, license/copyright status, destination path and modification summary in this
 ledger. The q-order and Tate-torsion-residue ports above are adapted APIs, not wholesale copies
 of the `TateCurvesTheta`-dependent modules.
+
+| `IUT-COR312-TATE-VALUATION-BRIDGE` | `iutValued_eq_of_norm_eq`, `iutValued_embedding`, `iutValued_of_isUniformizer`, `iutValued_q_toOrdered`, `iutValued_q_eq_inv_tateJ` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutTateValuationBridge.lean` | 移植 `refer/iut/Iut/Concrete/SL2Image.lean` 的 `Valued` 局部 Tate 赋值桥接到本地 completion API。使用 `IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_eq_valuation'`、`WithZero.exp/log` 和 `TateParameter.toOrdered`，证明 norm 相等推出 valuation 相等、completion embedding 的 valuation、uniformizer valuation、Tate parameter 的 ordered exponent 公式及 `v(q)=v(j)⁻¹`。原参考提交 `a2c25b2edbf5a9cbc30588b466a738b49547b443`，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 文件头，不导入 `refer/iut`。该桥接只处理局部赋值事实，不构造 Tate structure、ramification divisibility、torsion root-class 或 `SL₂` 满像。属于 `Scene1/Derived`，不改变 Prologue-R5。 |
