@@ -39,6 +39,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrimeToSupport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLargePrimeSupport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaModEllRepConstruct
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutSL2Generation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportCanonicalAbsLogQ
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadOddPort
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
@@ -801,6 +802,8 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_spec
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofBasis
+#print axioms JoshiTeich.Act1Scene1.IutSL2.transvection_of_orderOf
+#print axioms JoshiTeich.Act1Scene1.IutSL2.toGL_mem_of_transvection
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportWeighted_logSum_eq_reference_absLogQ_of_support_eq
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_source
 #print axioms JoshiTeich.Act1Scene1.Audit.scene_qPilot_source_order_normalization
