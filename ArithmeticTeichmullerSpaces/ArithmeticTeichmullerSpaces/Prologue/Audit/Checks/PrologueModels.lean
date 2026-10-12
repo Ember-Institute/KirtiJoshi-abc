@@ -1,0 +1,37 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.FieldCoverage
+import ArithmeticTeichmullerSpaces.Prologue.Audit.InputModels
+import ArithmeticTeichmullerSpaces.Prologue.Audit.JointConsistency
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ModelCoverage
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Models
+import ArithmeticTeichmullerSpaces.Prologue.Audit.PerfectoidBridgeModels
+import ArithmeticTeichmullerSpaces.Prologue.Audit.PerfectoidModels
+import ArithmeticTeichmullerSpaces.Prologue.Audit.PilotModels
+import ArithmeticTeichmullerSpaces.Prologue.Audit.TateModels
+
+/-! PrologueModels 家族：日常名称检查。 -/
+
+#check JoshiTeich.Prologue.Audit.auditData
+#check JoshiTeich.Prologue.Audit.firstAxiom_model
+#check JoshiTeich.Prologue.Audit.firstAxiom_violation
+#check JoshiTeich.Prologue.Audit.adelicThetaLink_model
+#check JoshiTeich.Prologue.Audit.adelicThetaLink_violation
+#check JoshiTeich.Prologue.Audit.thetaLiftLog_model
+#check JoshiTeich.Prologue.Audit.thetaLiftLog_violation
+#check JoshiTeich.Prologue.Audit.packetCollationHull_model
+#check JoshiTeich.Prologue.Audit.packetCollationHull_violation
+#check JoshiTeich.Prologue.Audit.volumeTransfer_model
+#check JoshiTeich.Prologue.Audit.volumeTransfer_violation
+#check JoshiTeich.Prologue.Audit.padicTwo_perfectoid_model
+#check JoshiTeich.Prologue.Audit.zeroPerfectoidData_violates_laws
+#check JoshiTeich.Prologue.Audit.padicTwo_bridge_model
+#check JoshiTeich.Prologue.Audit.zero_bridge_violates_laws
+#check JoshiTeich.Prologue.Audit.padicTwo_input_laws
+#check JoshiTeich.Prologue.Audit.badInput_violates_laws
+#check JoshiTeich.Prologue.Audit.auditTateData_laws
+#check JoshiTeich.Prologue.Audit.auditTateData_violation
+#check JoshiTeich.Prologue.Audit.auditScalingTheta_laws
+#check JoshiTeich.Prologue.Audit.zeroScalingTheta_violates_laws
+#check JoshiTeich.Prologue.Audit.theta_norm_eq_one_of_firstAxiom_frobeniusSquareCandidate
+#check JoshiTeich.Prologue.Audit.logVolume_eq_zero_of_firstAxiom_frobeniusSquareCandidate_thetaLiftLog
+#check JoshiTeich.Prologue.Audit.false_of_volumeTransfer_of_nonempty_packet_with_frobeniusSquareCandidate
+#check JoshiTeich.Prologue.Audit.false_of_volumeTransfer_of_nonempty_hull_with_frobeniusSquareCandidate

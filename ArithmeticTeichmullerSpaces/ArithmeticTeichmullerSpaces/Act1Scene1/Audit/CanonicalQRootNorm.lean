@@ -4,8 +4,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalQRootNorm
 #check JoshiTeich.Act1Scene1.CanonicalQRootNorm.norm_pow_eq_qNorm_pow
 #check JoshiTeich.Act1Scene1.CanonicalQRootNorm.negLog_norm_eq_rawFactor_log_mul
 #check JoshiTeich.Act1Scene1.CanonicalQRootNorm.norm_eq_rawFactor_pow
-#print axioms JoshiTeich.Act1Scene1.CanonicalQRootNorm.norm_pow_eq_qNorm_pow
-#print axioms JoshiTeich.Act1Scene1.CanonicalQRootNorm.negLog_norm_eq_rawFactor_log_mul
-#print axioms JoshiTeich.Act1Scene1.CanonicalQRootNorm.norm_eq_rawFactor_pow
 #check JoshiTeich.Act1Scene1.CanonicalQRootNorm.negLog_paperRootNorm_eq_paperFactor_log_mul
-#print axioms JoshiTeich.Act1Scene1.CanonicalQRootNorm.negLog_paperRootNorm_eq_paperFactor_log_mul

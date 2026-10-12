@@ -1,7 +1,7 @@
 name = "ArithmeticTeichmullerSpaces"
 version = "0.1.0"
 fixedToolchain = true
-defaultTargets = ["arithmeticteichmullerspaces"]
+defaultTargets = ["ArithmeticTeichmullerSpaces"]
 
 [[require]]
 name = "tate-curves-theta"
@@ -14,6 +14,7 @@ path = "../../mathlib4"
 
 [[lean_lib]]
 name = "ArithmeticTeichmullerSpaces"
+weakLeanArgs = ["-j1"]
 
 [[lean_exe]]
 name = "arithmeticteichmullerspaces"

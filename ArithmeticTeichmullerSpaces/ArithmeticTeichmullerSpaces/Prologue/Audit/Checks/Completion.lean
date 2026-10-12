@@ -1,0 +1,33 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuationBridge
+
+/-! Completion 家族：日常名称检查。 -/
+
+#check JoshiTeich.Act1Scene1.iutEmbedCompletion
+#check JoshiTeich.Act1Scene1.iutEmbedCompletion_embedding
+#check JoshiTeich.Act1Scene1.iutValuedEmbedCompletion
+#check JoshiTeich.Act1Scene1.iutEmbedCompletion_norm_lt_one_iff
+#check JoshiTeich.Act1Scene1.iutEmbedCompletion_norm_eq_pow
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_badFinset
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ne_zero
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_valued_pow_eq
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ordp_eq
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder_order_eq
+#check JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_eq_of_norm_eq
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.uniformizerQOrder
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.orderedQOrder
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.orderedQOrder_coprime
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.qOrder_coprime
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
+#check JoshiTeich.Act1Scene1.IutCompletionTateValuation.valued_tateParameter_eq_exp_neg_order
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ordp_eq_of_tateValuation
+#check JoshiTeich.Act1Scene1.iutValued_eq_of_norm_eq
+#check JoshiTeich.Act1Scene1.iutValued_embedding
+#check JoshiTeich.Act1Scene1.iutValued_of_isUniformizer
+#check JoshiTeich.Act1Scene1.iutValued_q_toOrdered
+#check JoshiTeich.Act1Scene1.iutValued_q_eq_inv_tateJ

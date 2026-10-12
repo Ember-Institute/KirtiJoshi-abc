@@ -1,0 +1,36 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlaceSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQSourceContract
+
+/-! Places 家族：日常名称检查。 -/
+
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.qOrder
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.qOrder_pos
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.weight_pos
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource
+#check JoshiTeich.Act1Scene1.iutBadPlacesOver
+#check JoshiTeich.Act1Scene1.finite_places_liesOver
+#check JoshiTeich.Act1Scene1.iutBadPlacesOver_finite
+#check JoshiTeich.Act1Scene1.iutBadPlacesOverFinset
+#check JoshiTeich.Act1Scene1.mem_iutBadPlacesOverFinset_iff
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofOverVBad
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.badPlaces_finite
+#check JoshiTeich.Act1Scene1.iutCompletionQOrder
+#check JoshiTeich.Act1Scene1.iutCompletionQOrder_pos
+#check JoshiTeich.Act1Scene1.iutCompletionQOrder_valued
+#check JoshiTeich.Act1Scene1.iutCompletionNorm_eq_uniformizer_pow_qOrder
+#check JoshiTeich.Act1Scene1.iutCompletionQOrder_eq_of_norm_eq_uniformizer_pow
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.basePlaceOf
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.basePlaceOf_liesOver
+#check JoshiTeich.Act1Scene1.iutPlaceUnder
+#check JoshiTeich.Act1Scene1.iutPlaceUnder_liesOver
+#check JoshiTeich.Act1Scene1.iutPlaceUnder_eq_of_liesOver
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.basePlaceOf_eq_placeUnder
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBad
+#check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBad_badFinset
+#check JoshiTeich.Act1Scene1.iutCompletionOrderZ
+#check JoshiTeich.Act1Scene1.iutCompletionOrderZ_norm_eq
+#check JoshiTeich.Act1Scene1.iutCompletionOrderZ_pos
+#check JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder
+#check JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_norm_eq

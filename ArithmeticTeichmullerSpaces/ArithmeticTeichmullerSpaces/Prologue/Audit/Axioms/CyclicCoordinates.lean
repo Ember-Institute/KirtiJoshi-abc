@@ -1,0 +1,67 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicCoordinateField
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicVeluRatio
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionVeluRatio
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionNewton
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutVeluAdditiveTrace
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutVeluTracePolynomial
+
+/-! CyclicCoordinates 家族：里程碑公理审计。 -/
+
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.veluRatio_ne_zero
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.veluRatio_galois
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.exists_algebraMap_eq_ratio
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.exists_nonzero_ratio_productFormula
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.logProductFormula
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.exists_ratio_logProductFormula
+#print axioms JoshiTeich.Act1Scene1.iutGeometricTwoTorsion_hasHalf
+#print axioms JoshiTeich.Act1Scene1.iutGeometricFourTorsionPointPairs_exists
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.coordinates_finite
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.finiteDimensional_field
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.numberField_field
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_point_over_field
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.pointPairs_over_field
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.isAlgClosure_field
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.pointPairsInClosure
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.galPointMap_eq_of_four_nsmul
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.ratioProduct_ne_zero
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.ratioProduct_galois
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_algebraMap_eq_ratioProduct
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_algebraMap_eq_veluRatio_of_four_nsmul
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_nonzero_ratio_productFormula
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_coeff_ΨSq_le_one
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_x_le
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_xCoordinate_le_completedSquare
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.modelBadPlaces_finite
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_xCoordinate_le_of_notMem_modelBadPlaces
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.translatedSum_le
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.pointPairsBounds_over_field
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.coordinates_finite
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.finiteDimensional_field
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.numberField_field
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.subgroupEquiv
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_pointPairs
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.algebraMap_veluRatio
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.algebraMap_translatedSum
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.algebraMap_ratioProduct
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.ratioProduct_productFormula_and_Newton
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.ratioProduct_eq_inclusion
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_inclusion_eq_veluRatio_of_four_nsmul
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_completionEmbedding_eq_ratioProduct
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_valuedEmbedding_eq_ratioProduct_pow
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_lt_one_iff_ratioProduct
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_eq_ratioProduct_pow
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_negLog_norm_eq_ratioProduct_mul
+#print axioms JoshiTeich.Act1Scene1.IutVeluTrace.paired_xCoordinates
+#print axioms JoshiTeich.Act1Scene1.IutVeluTrace.traceFunction_eq
+#print axioms JoshiTeich.Act1Scene1.IutVeluTrace.translatedSum_eq
+#print axioms JoshiTeich.Act1Scene1.IutVeluTrace.traceDifference_le
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.pointPairs_traceNewton
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.numerator_monic_degree
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.eval_numerator
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.numerator_factorization
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.cosetProduct_eq
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.veluRatio_mul
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.crude_bound
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.pointPairs_ratioNewton
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_negLog_norm_eq_ratioProduct_mul

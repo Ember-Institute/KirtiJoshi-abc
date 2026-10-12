@@ -1,0 +1,22 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.CanonicalSource
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.Completion
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.CompletionAccounting
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.CyclicCoordinates
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.OddSupport
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.PaperAccounting
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.Places
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.PrimeSupport
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.PrologueArithmetic
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.PrologueInterfaces
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.ProloguePerfectoid
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.PrologueTheta
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.QPilotSources
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.QRootAccounting
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.Representations
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.SceneBounds
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.SelectedRoots
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.SelectedSupport
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.TateGain
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.Torsion
+
+/-! 默认生产检查入口；家族模块独立编译，不打印公理，不导入模型审计。 -/

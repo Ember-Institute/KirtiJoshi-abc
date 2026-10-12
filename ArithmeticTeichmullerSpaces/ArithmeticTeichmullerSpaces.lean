@@ -2,7 +2,7 @@ import ArithmeticTeichmullerSpaces.Prologue.Interfaces
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
 import ArithmeticTeichmullerSpaces.Prologue.Theta
 import ArithmeticTeichmullerSpaces.Prologue.Perfectoid
-import ArithmeticTeichmullerSpaces.Prologue.Audit
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
 import ArithmeticTeichmullerSpaces.Act1Scene1
 import ArithmeticTeichmullerSpaces.Act1Scene2
 

@@ -2,8 +2,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalSourceAudi
 
 #check JoshiTeich.Act1Scene1.iutCanonicalBaseSource_tateParameter_eq_link
 #check JoshiTeich.Act1Scene1.iutCanonicalBaseSource_qOrder_eq_link
-#print axioms JoshiTeich.Act1Scene1.iutCanonicalBaseSource_tateParameter_eq_link
-#print axioms JoshiTeich.Act1Scene1.iutCanonicalBaseSource_qOrder_eq_link
 
 #check JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaCanonicalTateData
-#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofInitialThetaCanonicalTateData

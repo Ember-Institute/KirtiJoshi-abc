@@ -1,0 +1,18 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuationBridge
+
+/-! Completion 家族：里程碑公理审计。 -/
+
+#print axioms JoshiTeich.Act1Scene1.iutEmbedCompletion_norm_eq_pow
+#print axioms JoshiTeich.Act1Scene1.iutCompletionUniformizerQOrder_eq_of_norm_eq
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.completionQOrder_eq_orderNat
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofIutNormalizedOrder_order_eq
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.qOrder_coprime
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.norm_eq_pow_order
+#print axioms JoshiTeich.Act1Scene1.iutValued_eq_of_norm_eq
+#print axioms JoshiTeich.Act1Scene1.iutValued_embedding
+#print axioms JoshiTeich.Act1Scene1.iutValued_of_isUniformizer
+#print axioms JoshiTeich.Act1Scene1.iutValued_q_toOrdered
+#print axioms JoshiTeich.Act1Scene1.iutValued_q_eq_inv_tateJ

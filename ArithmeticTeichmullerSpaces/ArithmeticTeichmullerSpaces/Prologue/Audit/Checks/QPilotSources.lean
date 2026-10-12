@@ -1,0 +1,34 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBaseQPilotSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotAdapter
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionAdapter
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionSource
+
+/-! QPilotSources 家族：日常名称检查。 -/
+
+#check JoshiTeich.Act1Scene1.IutQPilotSource
+#check JoshiTeich.Act1Scene1.IutQPilotSource.badPlacesOver
+#check JoshiTeich.Act1Scene1.IutQPilotSource.badPlacesOver_finite
+#check JoshiTeich.Act1Scene1.IutQPilotSource.tateParameter
+#check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder
+#check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_pos
+#check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_coprime
+#check JoshiTeich.Act1Scene1.IutQPilotSource.tateParameter_ne_zero
+#check JoshiTeich.Act1Scene1.IutQPilotSource.badPlacesOver_eq_link
+#check JoshiTeich.Act1Scene1.IutQPilotSource.tateParameter_eq_link
+#check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_eq_link
+#check JoshiTeich.Act1Scene1.IutQPilotSource.orderCompatibility
+#check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizer
+#check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizer_isCompletionUniformizer
+#check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizerNorm_eq_chosenNorm
+#check JoshiTeich.Act1Scene1.IutQPilotSource.uniformizerNorm_eq_completionNorm
+#check JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_coprime_link
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toBaseQPilotSource
+#check JoshiTeich.Act1Scene1.IutQPilotSource.source_norm_eq_uniformizer_pow_order
+#check JoshiTeich.Act1Scene1.IutQPilotSource.completionParameter_norm_eq_chosenUniformizer_pow_order
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation_order_eq_qOrder
+#check JoshiTeich.Act1Scene1.IutQPilotSource.ofBaseCompletionSource
+#check JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofAdmissiblePrimeData
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_rawQNormDegreeNormalization
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
+#check JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot_weight_eq_arithmetic

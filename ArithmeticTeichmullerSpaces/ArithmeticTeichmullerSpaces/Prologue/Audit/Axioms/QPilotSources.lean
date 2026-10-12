@@ -1,0 +1,17 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBaseQPilotSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotAdapter
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionAdapter
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutQPilotCompletionSource
+
+/-! QPilotSources 家族：里程碑公理审计。 -/
+
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toSceneQPilot
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.qOrder
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_pos
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_eq_link
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.qOrder_coprime_link
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.completionParameter_norm_eq_chosenUniformizer_pow_order
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.toCompletionTateValuation_order_eq_qOrder
+#print axioms JoshiTeich.Act1Scene1.IutQPilotSource.ofBaseCompletionSource
+#print axioms JoshiTeich.Act1Scene1.IutBaseQPilotSource.ofAdmissiblePrimeData

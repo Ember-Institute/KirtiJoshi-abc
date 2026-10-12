@@ -1,0 +1,18 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicGain
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateGain
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateGainBaseChange
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutVeluTateGain
+
+/-! TateGain 家族：里程碑公理审计。 -/
+
+#print axioms JoshiTeich.Act1Scene1.IutCyclicGain.exists_zpow_mul_mem_annulus
+#print axioms JoshiTeich.Act1Scene1.IutCyclicGain.node_bounds
+#print axioms JoshiTeich.Act1Scene1.IutCyclicGain.minus_one_bounds
+#print axioms JoshiTeich.Act1Scene1.IutCyclicTate.xCoordinate_pointMap
+#print axioms JoshiTeich.Act1Scene1.IutCyclicTate.exists_class
+#print axioms JoshiTeich.Act1Scene1.IutCyclicTate.ratio_bound
+#print axioms JoshiTeich.Act1Scene1.IutCyclicTate.ratio_mul_bound
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_ratio_mul_bound
+#print axioms JoshiTeich.Act1Scene1.ratio_mul_bound_of_positive_power_transport
+#print axioms JoshiTeich.Act1Scene1.iutCompletion_ratio_mul_bound_to_base
+#print axioms JoshiTeich.Act1Scene1.iutCompletion_ratio_mul_log_bound_to_base

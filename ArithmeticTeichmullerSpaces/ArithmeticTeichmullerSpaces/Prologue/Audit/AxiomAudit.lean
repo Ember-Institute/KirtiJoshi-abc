@@ -1,0 +1,21 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.CanonicalSource
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.Completion
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.CompletionAccounting
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.CyclicCoordinates
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.OddSupport
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.PaperAccounting
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.Places
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.PrimeSupport
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.PrologueArithmetic
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.PrologueTheta
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.QPilotSources
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.QRootAccounting
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.Representations
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.SceneBounds
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.SceneModels
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.SelectedRoots
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.SelectedSupport
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.TateGain
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.Torsion
+
+/-! 仅在里程碑显式构建；按家族打印公理，不依赖名称检查聚合入口。 -/

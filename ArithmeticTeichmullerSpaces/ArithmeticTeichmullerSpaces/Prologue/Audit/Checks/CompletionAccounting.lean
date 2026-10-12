@@ -1,0 +1,7 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionLogAccounting
+
+/-! CompletionAccounting 家族：日常名称检查。 -/
+
+#check JoshiTeich.Act1Scene1.iutSum_relativeLocalDegree
+#check JoshiTeich.Act1Scene1.iutNegLog_norm_embedding_sum_liesOver
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_ratioProduct_negLog_fiber_accounting

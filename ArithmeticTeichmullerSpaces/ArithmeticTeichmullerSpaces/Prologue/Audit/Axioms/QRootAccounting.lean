@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting
+
+/-! QRootAccounting 家族：里程碑公理审计。 -/
+
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataFromGlobal
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.iutInitialThetaQPilotData
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.ofInitialThetaData_order_eq
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.base_qOrder_eq_initialTheta_qOrder
+#print axioms JoshiTeich.Act1Scene1.IutCompletionTateValuation.completion_qOrder_eq_initialTheta_qOrder
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_sum_of_initialThetaData
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_weighted_fiber_of_initialThetaData
+#print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_log_sum_eq_iut_absLogQ
