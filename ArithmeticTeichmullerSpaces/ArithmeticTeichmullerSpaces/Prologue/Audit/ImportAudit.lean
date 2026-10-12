@@ -416,6 +416,8 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutEmbedCompletion_embedding
 #check JoshiTeich.Act1Scene1.iutValuedEmbedCompletion
 #check JoshiTeich.Act1Scene1.iutEmbedCompletion_norm_lt_one_iff
+#check JoshiTeich.Act1Scene1.iutEmbedCompletion_norm_eq_pow
+#print axioms JoshiTeich.Act1Scene1.iutEmbedCompletion_norm_eq_pow
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofOverBaseBadWithCanonicalCompletionMap_badFinset
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.canonical_qroot_ne_zero
@@ -905,6 +907,8 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_valuedEmbedding_eq_ratioProduct_pow
 #check JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_lt_one_iff_ratioProduct
 #print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_lt_one_iff_ratioProduct
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_eq_ratioProduct_pow
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_eq_ratioProduct_pow
 #check JoshiTeich.Act1Scene1.IutVeluTrace.traceFunction_eq
 #check JoshiTeich.Act1Scene1.IutCyclicCoordinate.pointPairs_traceNewton
 #print axioms JoshiTeich.Act1Scene1.IutVeluTrace.paired_xCoordinates

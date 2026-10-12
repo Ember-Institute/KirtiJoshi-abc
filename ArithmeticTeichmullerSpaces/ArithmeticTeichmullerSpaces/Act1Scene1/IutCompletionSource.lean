@@ -235,6 +235,45 @@ theorem iutEmbedCompletion_norm_lt_one_iff
   exact pow_lt_one_iff_of_nonneg zero_le
     (iutRelativeRamificationIndex_ne_zero hvw)
 
+/-! The completion norm records both the relative ramification and residue
+degree.  This is the full local power law; the preceding threshold lemma
+forgets these exponents because positivity alone is sufficient there. -/
+theorem iutEmbedCompletion_norm_eq_pow
+    (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal)
+    (y : w.maximalIdeal.adicCompletion F) :
+    ‖iutEmbedCompletion hvw y‖ =
+      ‖y‖ ^ (iutRelativeRamificationIndex (v := v) (w := w) *
+        relInertDeg v w) := by
+  by_cases hy : y = 0
+  · subst y
+    have hfi : relInertDeg v w ≠ 0 := by
+      intro hfi
+      have hpos := inertDeg_pos v
+      rw [inertDeg_eq_mul hvw, hfi, mul_zero] at hpos
+      omega
+    simp only [map_zero, norm_zero]
+    exact (zero_pow (Nat.mul_ne_zero
+      (iutRelativeRamificationIndex_ne_zero hvw) hfi)).symm
+  have hyv : Valued.v y ≠ 0 := (Valuation.ne_zero_iff _).2 hy
+  let m : ℤ := WithZero.log (Valued.v y)
+  have hmy : Valued.v y = WithZero.exp m := (WithZero.exp_log hyv).symm
+  have htarget :
+      Valued.v (iutEmbedCompletion hvw y) =
+        WithZero.exp (m * (iutRelativeRamificationIndex (v := v) (w := w) : ℤ)) := by
+    rw [iutValuedEmbedCompletion hvw y, hmy, ← WithZero.exp_nsmul]
+    congr 1
+    simp [nsmul_eq_mul, mul_comm]
+  have hsource := completionNorm_eq_residueChar_pow_of_valued w y m hmy
+  have htarget' := completionNorm_eq_residueChar_pow_of_valued v
+    (iutEmbedCompletion hvw y)
+    (m * (iutRelativeRamificationIndex (v := v) (w := w) : ℤ)) htarget
+  rw [hsource, htarget', residueChar_eq_of_liesOver hvw, inertDeg_eq_mul hvw]
+  simp only [← zpow_natCast]
+  rw [← zpow_mul, ← zpow_mul, ← zpow_mul]
+  congr 1
+  push_cast
+  ring
+
 end Places
 
 namespace IutTorsionQRootSource

@@ -594,3 +594,10 @@ source，完整 odd support 的互素阶仍需来源。旧进度日志保留；�
 | --- | --- | --- |
 | `IUT-COR312-CYCLIC-COORDINATE-VALUED-RATIO-POWER` | `IutCyclicCoordinate.exists_valuedEmbedding_eq_ratioProduct_pow`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicCoordinateField.lean` | 消费 S1.234 的 completion 值连接和 `iutValuedEmbedCompletion`，得到 `ratioProduct` 在共同坐标域上方处的赋值等于四挠坐标域代表赋值的相对分歧指数次幂。该入口明确不吸收 residue degree，不提供 completion 范数局部界、height/places 运输、无穷处或全局上界；属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
 | `IUT-COR312-CYCLIC-COORDINATE-NORM-THRESHOLD` | `IutCyclicCoordinate.exists_norm_lt_one_iff_ratioProduct`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicCoordinateField.lean` | 消费 S1.235 的正相对分歧指数赋值幂律，将共同坐标域 `ratioProduct` completion 范数 `< 1` 与四挠坐标域代表 completion 范数 `< 1` 等价。该入口只闭合严格单位球阈值，不给出完整范数幂律，不吸收 residue degree，也不提供其他有限处或无穷处界、height/places 运输或全局上界；属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
+
+## S1.237：completion 范数完整幂律与 ratioProduct 消费者
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-COMPLETION-NORM-POWER-LAW` | `iutEmbedCompletion_norm_eq_pow`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCompletionSource.lean` | 在 IUT completion embedding 与 valuation transfer 上证明完整范数幂律，指数为相对 ramification index 与相对 inertial/residue degree 的乘积。消费 `Arithmetic.completionNorm_eq_residueChar_pow_of_valued`、`Arithmetic.inertDeg_eq_mul`，保留 residue-degree accounting；不构造全局 height/places、无穷处或 product-formula 界。属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
+| `IUT-COR312-CYCLIC-COORDINATE-NORM-POWER-LAW` | `IutCyclicCoordinate.exists_norm_eq_ratioProduct_pow`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicCoordinateField.lean` | 消费 `exists_completionEmbedding_eq_ratioProduct` 与通用 completion 范数幂律，把共同坐标域 `ratioProduct` 的实际 completion 范数写成四挠坐标域代表范数的相对 ramification/residue degree 指数次幂。该入口不声称完成全局 height/places、无穷处估计或 product-formula 全局界；属于 `Scene1/Derived`，`Prologue-R5` 不变。 |

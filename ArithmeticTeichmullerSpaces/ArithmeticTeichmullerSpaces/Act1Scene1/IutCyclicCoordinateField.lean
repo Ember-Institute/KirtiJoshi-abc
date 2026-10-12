@@ -32,6 +32,7 @@ boundary: Scene1/Derived
 namespace JoshiTeich.Act1Scene1.IutCyclicCoordinate
 
 open WeierstrassCurve NumberField IutCyclicVelu IutTorsionNewton
+open JoshiTeich.Prologue.Arithmetic
 open scoped Classical
 
 universe u
@@ -385,6 +386,29 @@ theorem exists_norm_lt_one_iff_ratioProduct
     Valued.toNormedField.norm_lt_one_iff, hρ]
   exact (pow_lt_one_iff_of_nonneg zero_le
     (iutRelativeRamificationIndex_ne_zero hvw))
+
+/-! The full completion norm power law retains the relative residue degree in
+addition to the relative ramification index. -/
+theorem exists_norm_eq_ratioProduct_pow
+    (hgal : ∀ σ : Fbar ≃ₐ[F] Fbar, ∀ Q ∈ H,
+      JoshiTeich.ReferenceIut.galPointMap F E Fbar σ Q ∈ H) :
+    letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+      (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+    ∀ (v : NumberField.FinitePlace ↥(field E Fbar H))
+      (w : NumberField.FinitePlace ↥(IutFourTorsion.field E Fbar)),
+      (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) →
+      ∃ ρ : ↥(IutFourTorsion.field E Fbar),
+        ‖NumberField.FinitePlace.embedding v.maximalIdeal
+          (ratioProduct E Fbar H)‖ =
+          ‖NumberField.FinitePlace.embedding w.maximalIdeal ρ‖ ^
+            (iutRelativeRamificationIndex (v := v) (w := w) * relInertDeg v w) := by
+  letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+    (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+  intro v w hvw
+  obtain ⟨ρ, hρ⟩ := exists_completionEmbedding_eq_ratioProduct E Fbar H hgal v w hvw
+  refine ⟨ρ, ?_⟩
+  rw [← hρ]
+  exact iutEmbedCompletion_norm_eq_pow hvw _
 
 end
 end JoshiTeich.Act1Scene1.IutCyclicCoordinate
