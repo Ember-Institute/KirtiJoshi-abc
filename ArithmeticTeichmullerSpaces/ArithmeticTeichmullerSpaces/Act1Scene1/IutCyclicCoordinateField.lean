@@ -410,5 +410,32 @@ theorem exists_norm_eq_ratioProduct_pow
   rw [← hρ]
   exact iutEmbedCompletion_norm_eq_pow hvw _
 
+/-! The complete norm power law has a direct logarithmic form.  Keeping the
+relative ramification and residue-degree product explicit is important for
+the later finite-place accounting; this statement does not sum over places or
+choose a paper representative carrier. -/
+-- source-id: JT-SCENE1-COMPLETION-LOG-FIBER-ACCOUNTING
+theorem exists_negLog_norm_eq_ratioProduct_mul
+    (hgal : ∀ σ : Fbar ≃ₐ[F] Fbar, ∀ Q ∈ H,
+      JoshiTeich.ReferenceIut.galPointMap F E Fbar σ Q ∈ H) :
+    letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+      (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+    ∀ (v : NumberField.FinitePlace ↥(field E Fbar H))
+      (w : NumberField.FinitePlace ↥(IutFourTorsion.field E Fbar)),
+      (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) →
+      ∃ ρ : ↥(IutFourTorsion.field E Fbar),
+        -Real.log ‖NumberField.FinitePlace.embedding v.maximalIdeal
+            (ratioProduct E Fbar H)‖ =
+          (iutRelativeRamificationIndex (v := v) (w := w) * relInertDeg v w : ℝ) *
+            (-Real.log ‖NumberField.FinitePlace.embedding w.maximalIdeal ρ‖) := by
+  letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+    (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+  intro v w hvw
+  obtain ⟨ρ, hρ⟩ := exists_norm_eq_ratioProduct_pow E Fbar H hgal v w hvw
+  refine ⟨ρ, ?_⟩
+  rw [hρ, Real.log_pow]
+  push_cast
+  ring
+
 end
 end JoshiTeich.Act1Scene1.IutCyclicCoordinate

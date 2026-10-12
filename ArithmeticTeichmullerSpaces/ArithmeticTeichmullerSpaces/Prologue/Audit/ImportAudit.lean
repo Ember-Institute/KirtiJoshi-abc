@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.CompletionLogAccounting
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
 import ArithmeticTeichmullerSpaces.Prologue.Perfectoid
 import ArithmeticTeichmullerSpaces.Prologue.Theta
@@ -908,7 +909,9 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_lt_one_iff_ratioProduct
 #print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_lt_one_iff_ratioProduct
 #check JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_eq_ratioProduct_pow
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_negLog_norm_eq_ratioProduct_mul
 #print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_eq_ratioProduct_pow
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_negLog_norm_eq_ratioProduct_mul
 #check JoshiTeich.Act1Scene1.IutVeluTrace.traceFunction_eq
 #check JoshiTeich.Act1Scene1.IutCyclicCoordinate.pointPairs_traceNewton
 #print axioms JoshiTeich.Act1Scene1.IutVeluTrace.paired_xCoordinates

@@ -1,0 +1,9 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionLogAccounting
+
+#check JoshiTeich.Act1Scene1.iutSum_relativeLocalDegree
+#check JoshiTeich.Act1Scene1.iutNegLog_norm_embedding_sum_liesOver
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_ratioProduct_negLog_fiber_accounting
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_negLog_norm_eq_ratioProduct_mul
+#print axioms JoshiTeich.Act1Scene1.iutSum_relativeLocalDegree
+#print axioms JoshiTeich.Act1Scene1.iutNegLog_norm_embedding_sum_liesOver
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_ratioProduct_negLog_fiber_accounting

@@ -601,3 +601,17 @@ source，完整 odd support 的互素阶仍需来源。旧进度日志保留；�
 | --- | --- | --- |
 | `IUT-COR312-COMPLETION-NORM-POWER-LAW` | `iutEmbedCompletion_norm_eq_pow`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCompletionSource.lean` | 在 IUT completion embedding 与 valuation transfer 上证明完整范数幂律，指数为相对 ramification index 与相对 inertial/residue degree 的乘积。消费 `Arithmetic.completionNorm_eq_residueChar_pow_of_valued`、`Arithmetic.inertDeg_eq_mul`，保留 residue-degree accounting；不构造全局 height/places、无穷处或 product-formula 界。属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
 | `IUT-COR312-CYCLIC-COORDINATE-NORM-POWER-LAW` | `IutCyclicCoordinate.exists_norm_eq_ratioProduct_pow`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicCoordinateField.lean` | 消费 `exists_completionEmbedding_eq_ratioProduct` 与通用 completion 范数幂律，把共同坐标域 `ratioProduct` 的实际 completion 范数写成四挠坐标域代表范数的相对 ramification/residue degree 指数次幂。该入口不声称完成全局 height/places、无穷处估计或 product-formula 全局界；属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
+
+## S1.238：completion 负对数与完整有限处纤维 accounting
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-COMPLETION-LOG-FIBER-ACCOUNTING` | `IutCyclicCoordinate.exists_negLog_norm_eq_ratioProduct_mul`（`Act1Scene1/IutCyclicCoordinateField.lean`）；`iutSum_relativeLocalDegree`、`iutNegLog_norm_embedding_sum_liesOver`、`IutCyclicCoordinate.exists_ratioProduct_negLog_fiber_accounting`（`Act1Scene1/IutCompletionLogAccounting.lean`） | 从 S1.237 的实际 completion 范数幂律和既有 Core `Arithmetic.sum_localDeg_liesOver` 推导。局部负对数系数为相对分歧指数与剩余次数的乘积；完整上方纤维的该系数和为扩张次数。实际消费者先选取一个满足 inclusion 等式的下降代表，再对所有完整纤维求和。JoshiTeich 适配范围仅为有限处范数/accounting，不提供论文代表选择、q-pilot 归一化、theta-volume 下界或 Corollary 3.12。证明 owner：Scene1；状态：proved，以本单元窄审计构建验证为准。 |
+
+本轮没有复制新的 IUT 文件。使用本项目已经独立声明和证明的 completion、有限处和
+Galois 下降 API；未增加 `refer/iut` 依赖。共同坐标域与四挠坐标域的实际 inclusion
+在消费者类型中显式保留。纤维必须满足 `∀ v, v ∈ s ↔ Ideal.LiesOver ...`，因此
+定理覆盖全部上方处，不能用于省略或重复上方处的列表。所有纤维使用同一个 `ρ`。
+`Prologue-R5 → Prologue-R5`；Scene1 的纤维求和证明负担减少，前置信任负担不变。
+真实 `InitialThetaData/TateFamily` 的完整 Scene1 模型、论文处集与归一化、packet/hull
+定量体积 accounting 仍开放。
