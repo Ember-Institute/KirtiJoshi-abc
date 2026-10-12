@@ -872,6 +872,8 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutFourTorsion.ratioProduct_ne_zero
 #print axioms JoshiTeich.Act1Scene1.IutFourTorsion.ratioProduct_galois
 #print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_algebraMap_eq_ratioProduct
+#check JoshiTeich.Act1Scene1.IutFourTorsion.exists_algebraMap_eq_veluRatio_of_four_nsmul
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_algebraMap_eq_veluRatio_of_four_nsmul
 #print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_nonzero_ratio_productFormula
 #check JoshiTeich.Act1Scene1.IutTorsionNewton.apply_xCoordinate_le_of_notMem_modelBadPlaces
 #check JoshiTeich.Act1Scene1.IutFourTorsion.pointPairsBounds_over_field

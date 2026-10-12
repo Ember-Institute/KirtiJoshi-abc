@@ -94,6 +94,24 @@ lemma exists_algebraMap_eq_ratioProduct
   exact (InfiniteGalois.mem_range_algebraMap_iff_fixed (k := ↥(field E Fbar)) _).mpr
     (ratioProduct_galois H hgal)
 
+/-- A Vélu ratio whose two arguments are four-torsion descends to the same
+coordinate field as the geometric four-torsion points.  This is the
+single-ratio form of the product descent above; it keeps the subgroup
+stability hypothesis explicit and does not assert any completion norm law. -/
+lemma exists_algebraMap_eq_veluRatio_of_four_nsmul
+    (hgal : ∀ σ : Fbar ≃ₐ[F] Fbar, ∀ Q ∈ H,
+      JoshiTeich.ReferenceIut.galPointMap F E Fbar σ Q ∈ H)
+    {T R : Affine.Point (Affine.baseChange E Fbar)}
+    (hT : 4 • T = 0) (hR : 4 • R = 0) :
+    ∃ ρ : ↥(field E Fbar), algebraMap ↥(field E Fbar) Fbar ρ =
+      veluRatio H T R := by
+  letI : IsAlgClosure ↥(field E Fbar) Fbar := isAlgClosure_field E Fbar
+  apply (InfiniteGalois.mem_range_algebraMap_iff_fixed (k := ↥(field E Fbar)) _).mpr
+  intro σ
+  exact veluRatio_galois hgal (σ.restrictScalars F)
+    (galPointMap_eq_of_four_nsmul E Fbar σ T hT)
+    (galPointMap_eq_of_four_nsmul E Fbar σ R hR)
+
 /-- Actual geometric pairs supply a nonzero ratio and both product formulas. -/
 theorem exists_nonzero_ratio_productFormula
     (hodd : Odd (Fintype.card H))
