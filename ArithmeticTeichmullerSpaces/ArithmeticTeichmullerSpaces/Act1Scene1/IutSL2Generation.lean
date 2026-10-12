@@ -16,7 +16,10 @@ Copyright (c) 2026 The iut contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
-import Mathlib
+import Mathlib.Algebra.Field.ZMod
+import Mathlib.LinearAlgebra.Matrix.CharP
+import Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff
+import Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Defs
 
 /-!
 source-id: IUT-COR312-SL2-GENERATION
