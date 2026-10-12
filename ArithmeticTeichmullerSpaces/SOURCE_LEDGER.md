@@ -562,3 +562,9 @@ source，完整 odd support 的互素阶仍需来源。旧进度日志保留；�
 | --- | --- | --- |
 | `IUT-COR312-CYCLIC-TATE-GAIN` | `IutCyclicGain.exists_zpow_mul_mem_annulus`、`norm_X_le_of_annulus`、`one_le_norm_X`、`norm_X_le_one`、`norm_X_eq`、`node_bounds`、`minus_one_bounds`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicGain.lean` | 移植 `refer/iut/Iut/Tripod/CyclicGain.lean` 的 Tate 坐标环带、节点和 `-1` 范数证明。原文件属于参考工程 Apache-2.0，版权/作者通知保留在本地文件的来源说明中；本地导入改为项目内 `ReferenceIut...TateStructure`，不导入参考工程。证明只使用本地 TateStructure 与 `tate-curves-theta` 的 TateParameter 范数 API，不复制 `Heights.VeluProduct`。 |
 | `IUT-COR312-LOCAL-CYCLIC-TATE-RATIO` | `IutCyclicTate.xCoordinate_pointMap`、`map_xCoordinate_eq`、`exists_class`、`ratio_bound`、`ratio_mul_bound`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutVeluTateGain.lean` | 适配 `refer/iut/Iut/Tripod/CyclicTate.lean` 的归一化 Tate class 与局部 graph-line 增益。比值定义替换为本地 S1.228 `IutCyclicVelu.veluRatio`，乘积不等式使用当前 Mathlib 的 `Finset.prod_le_one₀`/`prod_le_prod₀`。没有导入 `Heights.VeluProduct`、`CyclicBound` 或参考 `Iut` 命名空间；没有构造真实 InitialThetaData/TateFamily 来源、无穷处/其他有限处估计、高度/places 运输或全局 cyclic bound。属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
+
+## S1.230：真实 TateFamily graph-line 局部增益消费者
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-INITIAL-THETA-TATE-GAIN-CONSUMER` | `iutInitialThetaTateFamily_ratio_mul_bound`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaTateGain.lean` | 消费本地 `IutInitialThetaTateFamily.iutInitialThetaTateFamilyOfTorsion` 所使用的 `TateFamily` 接口、`TateFamily.graphLineAt` 和 S1.229 `IutCyclicTate.ratio_mul_bound`。对实际 torsion-field 曲线和完成域 embedding，显式传入有限处、graph-line 子群、奇阶基数及两对二挠点/半点，使用 `BadPlaceNorm` 的 odd-support `‖2‖ = 1` 证书得到 completion-valued 比值界。没有证明原基域 places/范数运输、全局 product formula、高度或无穷处估计；没有导入参考工程或 `Heights.VeluProduct`。属于 `Scene1/Derived`，`Prologue-R5` 不变。 |

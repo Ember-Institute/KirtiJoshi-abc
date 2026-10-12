@@ -44,6 +44,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutGeometricTorsionBasis
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicVeluRatio
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicGain
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutVeluTateGain
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateGain
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionVeluRatio
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionNewton
@@ -920,6 +921,8 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutCyclicTate.exists_class
 #print axioms JoshiTeich.Act1Scene1.IutCyclicTate.ratio_bound
 #print axioms JoshiTeich.Act1Scene1.IutCyclicTate.ratio_mul_bound
+#check JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_ratio_mul_bound
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaTateFamily_ratio_mul_bound
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_spec
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofBasis
