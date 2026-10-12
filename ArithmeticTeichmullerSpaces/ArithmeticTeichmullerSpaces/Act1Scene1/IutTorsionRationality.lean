@@ -11,7 +11,6 @@ import Mathlib.FieldTheory.Galois.Basic
 import Mathlib.FieldTheory.Galois.Infinite
 import Mathlib.FieldTheory.IsAlgClosed.Basic
 import Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Basic
-import Mathlib.NumberTheory.NumberField.Basic
 
 /-!
 source-id: IUT-COR312-TORSION-RATIONALITY

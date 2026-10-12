@@ -11,10 +11,9 @@ Copyright (c) 2026 The iut contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
-import Mathlib.NumberTheory.NumberField.Basic
+import Mathlib.LinearAlgebra.FreeModule.IdealQuotient
 import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
 import Mathlib.NumberTheory.NumberField.InfinitePlace.Basic
-import Mathlib.NumberTheory.NumberField.Ideal.Basic
 
 /-!
 # Places of number fields for the Θ-data modules (taxis #39–#42)

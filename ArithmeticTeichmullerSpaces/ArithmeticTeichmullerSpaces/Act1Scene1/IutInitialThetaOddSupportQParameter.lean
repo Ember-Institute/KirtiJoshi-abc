@@ -2,7 +2,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateFamily
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateParameterCompletion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlaceUnder
-import Mathlib.NumberTheory.RamificationInertia.Valuation
 
 namespace JoshiTeich.Act1Scene1
 

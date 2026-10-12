@@ -1,4 +1,3 @@
-import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic
 
 namespace JoshiTeich.Prologue.Theta

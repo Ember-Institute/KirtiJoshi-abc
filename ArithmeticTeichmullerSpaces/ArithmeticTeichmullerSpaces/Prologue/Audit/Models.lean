@@ -1,6 +1,5 @@
 import ArithmeticTeichmullerSpaces.Prologue.Interfaces
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic
-import Mathlib.NumberTheory.NumberField.Basic
 
 namespace JoshiTeich.Prologue.Audit
 

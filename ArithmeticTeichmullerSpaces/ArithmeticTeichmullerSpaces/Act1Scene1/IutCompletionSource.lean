@@ -1,7 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlaceSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
-import Mathlib.NumberTheory.RamificationInertia.Valuation
 
 namespace JoshiTeich.Act1Scene1
 

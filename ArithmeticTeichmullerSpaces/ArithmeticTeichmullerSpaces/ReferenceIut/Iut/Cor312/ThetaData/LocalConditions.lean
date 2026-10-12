@@ -12,6 +12,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Orbicurve
+import Mathlib.FieldTheory.Galois.Infinite
 
 /-!
 # Initial Θ-data: valuation section and local conditions (taxis #42)

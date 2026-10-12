@@ -13,8 +13,6 @@ Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.ReductionNorm
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver
-import Mathlib.NumberTheory.RamificationInertia.Inertia
-import Mathlib.NumberTheory.RamificationInertia.Valuation
 import Mathlib.NumberTheory.RamificationInertia.Basic
 
 /-!

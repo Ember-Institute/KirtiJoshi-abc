@@ -12,6 +12,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The iut contributors
 -/
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.GlobalField
+import Mathlib.FieldTheory.KrullTopology
 import TateCurvesTheta.QParameter.JParametrization
 import TateCurvesTheta.QParameter.NormalizedOrder
 import TateCurvesTheta.QParameter.PrimeToOrder

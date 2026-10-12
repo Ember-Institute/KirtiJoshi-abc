@@ -14,7 +14,6 @@ Authors: The iut contributors
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Places
 import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point
 import Mathlib.AlgebraicGeometry.EllipticCurve.Reduction
-import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
 
 /-!
 # Initial Θ-data: global field and punctured elliptic curve (taxis #39)

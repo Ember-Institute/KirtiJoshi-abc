@@ -1,6 +1,5 @@
 import ArithmeticTeichmullerSpaces.Prologue.Interfaces.Carriers
 import ArithmeticTeichmullerSpaces.Prologue.Perfectoid.Data
-import Mathlib.NumberTheory.NumberField.Basic
 
 namespace JoshiTeich.Prologue
 
