@@ -411,6 +411,18 @@ of the `TateCurvesTheta`-dependent modules.
 | `IUT-COR312-SL2-IMAGE-SOURCE-BRIDGE` | `IutCurveModEllRepData.LocalTateImageSource`, `IutCurveModEllRepData.prime_dvd_card_range_of_local_tate`, `IutCurveModEllRepData.sl_le_range_of_local_tate` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutSL2ImageSourceBridge.lean` | 移植 `refer/iut/Iut/Concrete/SL2Image.lean` 的 `prime_dvd_card_range`/`sl_le_range_of` 装配尾部。`LocalTateImageSource` 现在带显式有限处 `support` 参数，并在该支撑上携带 Tate parameter、uniformizer、Tate structure、`ell²` torsion 基数下界和 `ell` 与 q-order 互素证书；组合 S1.213 的 root-class 分歧桥与 S1.214 的 Cauchy/`SL₂` 生成桥。S1.216 退休了要求所有有限处都有见证的过强边界，实际 `InitialThetaData` 的完整 source 已由 S1.218 在 `VBad` 拉回支撑上实例化；完整 odd support 上的阶互素证书仍需额外来源；它仍不隐藏任何参数对齐义务，原参考提交 `47ef99c97945984ea799ee2333fcf920abecdae4`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 通知，不导入 `refer/iut`。属于 `Scene1/Derived`，不改变 Prologue-R5。 |
 | `IUT-COR312-INITIAL-THETA-LOCAL-TATE-IMAGE` | `iutInitialThetaLocalTateImageSource`, `iutInitialThetaPrime_dvd_card_range_of_local_tate` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLocalTateImage.lean` | 适配 `refer/iut/Iut/Concrete/SL2Image.lean` 的局部 Tate/分歧装配，原提交 `47ef99c97945984ea799ee2333fcf920abecdae4`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 通知。复用本地 `tateStructureOfTorsion`（原路径 `Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean`，提交 `e4777b2238f45be2e58c00b4d0213c0cb83405b9`）、fixed-field torsion descent、完成域比较与 Tate `j` 唯一性，从实际 `InitialThetaData.global/prime` 构造完整 `LocalTateImageSource`，再由 S1.217 见证和 root-class 分歧桥证明像阶被 `ell` 整除。局部结构在表示 fixed field 上重新派生，不要求调用者运输 `D.tate`；不使用 `prime.sl_le_range`，不假定整个 odd support 有互素阶。支撑严格为实际 `badPlacesOver D.F D.E D.VBad`。该结果没有构造 `InitialThetaData`、真实 Scene1 满足模型、论文 `L'`/`V_p^oss`、去权或体积 accounting；属于 `Scene1/Derived`，不改变 `Prologue-R5`。 |
 
+## S1.224：实际四挠坐标域上的比值与乘积公式
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-FOUR-TORSION-VELU-DESCENT` | `IutFourTorsion.isAlgClosure_field`、`pointPairsInClosure`、`galPointMap_eq_of_four_nsmul`、`ratioProduct_ne_zero`、`ratioProduct_galois`、`exists_algebraMap_eq_ratioProduct`、`exists_nonzero_ratio_productFormula`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutFourTorsionVeluRatio.lean` | 本地连接证明，不新复制参考文件。消费 S1.223 的几何点对和实际四挠坐标域（来源 `Iut/Tripod/CurveOf.lean`，实际提交 `5c6b5909ffda4af24582dc746e74e43702edc1c2`），以及 S1.222 的奇阶比值非零、Galois 重索引和对数乘积公式（来源 `Iut/Tripod/CyclicPoints.lean`、`CyclicIsogeny.lean`，实际提交 `c35ca616ba5ec707d8ef08a781df35fadba16532`）。这些来源的 Git 作者为 Christian Merten，版权与文件作者为 2026 The iut contributors，Apache-2.0 通知留在已移植模块中，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`。通过坐标在实际 adjoin 域中的成员证明，自同构的 commutes 律固定每个四挠点；限制标量后直接消费原始 F 的子群稳定性。比值积保留原始几何点载体，以无限 Galois 固定判据下降到实际四挠坐标域，证明其非零，并给同一个元素提供该域的乘积公式与有限支撑对数等式。无需外部有理点对、扩域稳定性或 curve/action 运输证书。 |
+
+结果适用于任意数域椭圆曲线及给定奇阶有限原基域 Galois 稳定子群，不要求 Tripod
+或 Legendre 模型。实际 `ρ` 的闭包像等于选定几何点对的比值积；不会丢失辅助点
+和后续各处估计的联系。`ρ` 和 places 均属于四挠坐标域，原基域高度/places 的运输、
+局部 graph line、Vélu 加法恒等式、Newton/无穷处估计及无循环子群上界仍开放。
+属于 `Scene1/Derived`，`Prologue-R5` 不变；没有增加 Lake 依赖或参考工程导入。
+
 ## S1.223：几何半点与四挠坐标数域
 
 | Source id | 本地声明与路径 | 来源、适配与边界 |
