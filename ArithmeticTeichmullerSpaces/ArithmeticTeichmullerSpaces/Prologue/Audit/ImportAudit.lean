@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.CompletionLogAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.CanonicalSourceAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.Audit.CanonicalQRootNorm
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
 import ArithmeticTeichmullerSpaces.Prologue.Perfectoid
 import ArithmeticTeichmullerSpaces.Prologue.Theta

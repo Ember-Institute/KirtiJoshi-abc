@@ -636,3 +636,26 @@ carrier、参数、j 身份三项独立证书；前置数学假设没有增加�
 `Corollary312Scene1QPilotData`、raw/weighted 归一化和 packet/hull 体积证明仍开放。
 
 S1.239 验证补记（2026-10-13 02:33:51 CST）：上述三个声明及窄审计目标通过，`9118/9118` jobs，退出码 `0`。三个公理输出仅有 `propext`、`Classical.choice`、`Quot.sound`。字段识别定理为 `proved`；实际 source 装配在显式 `hEll`、`hTate`、`hCompat` 下成立，完整真实 Scene1 模型仍 `open`。
+
+## S1.240：实际 TateFamily q-root 的 completion norm certificate
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-CANONICAL-QROOT-NORM-CERTIFICATE` | `CanonicalQRootNorm.baseIndex`、`norm_pow_eq_qNorm_pow`、`negLog_norm_eq_rawFactor_log_mul`、`norm_eq_rawFactor_pow`、`paperRootNorm`、`negLog_paperRootNorm_eq_paperFactor_log_mul`；`Act1Scene1/IutInitialThetaCanonicalQRootNorm.lean` | 本地派生；消费实际 `IutTorsionQRootSource.ofInitialThetaDataFromGlobal D` 的 `qroot_pow_eq` 和 canonical completionMap、S1.239 参数来源等式、S1.237 完整 completion 范数幂律、既有 `inertDeg_eq_mul` 及 `PaperQNormalizationBridge`。raw completion root norm 等于同源 base link 的 q-factor 的 `relativeRamification * relativeResidueDegree` 次幂。按两侧绝对剩余次数施行论文范数修正后，负对数系数为相对分歧指数。根方程与范数 certificate 均为 proof term，未接收 detached q-root 或 norm-law 输入。 |
+
+依赖来源：`IUT-COR312-TATE-FAMILY-QROOT-ADAPTER`、`IUT-COR312-INITIAL-THETA-BAD-FINITENESS`、
+`IUT-COR312-CANONICAL-SOURCE-FIELD-AUDIT`、`IUT-COR312-COMPLETION-NORM-POWER-LAW`、
+`JT-ATS-III-COR312-PAPER-Q-NORMALIZATION`。Joshi III `ss:theta-data-fixing2`
+（1023–1031）说明初始数据的 2ell-torsion 与根来源；`th:moccor-Mochizuki-form2`
+（3617–3632）、`cor:cor312`（3647–3650）及既有登记的局部范数归一化位置说明转换的
+目标作用。本单元不形式化论文全局 theta-values lift 或几何/体积构造。
+
+`Prologue-R5 → Prologue-R5`；证明 owner：Scene1；局部状态以最终窄构建为 proved。
+保留 `hTate`、`hCompat`、`hEll` 为显式目标来源条件；其在完整真实模型中的满足仍
+open。base/torsion field 区分保留，baseIndex 为实际 contraction，不宣称与论文
+独立代表处或最终 qIndex 相等。四个数学定理的实际消费者为 raw 范数/负对数定理间
+的推导，以及论文范数修正消费者。窄审计与完整 ImportAudit 分别接入同一模块。
+本轮没有复制新参考代码、没有增加 IUT 依赖，Scene1 certificate 输入负担减少而
+前置信任负担不变；全局 q-sum、归一化冻结与 theta-volume 证明仍开放。
+
+S1.240 验证补记（2026-10-13 02:57:22 CST）：四个数学定理及窄审计通过，`9130/9130` jobs，退出码 `0`；公理仅有 `propext`、`Classical.choice`、`Quot.sound`。局部范数 certificate 与其消费者状态 `proved`；完整真实来源模型、论文处集和最终归一化仍 `open`。用户要求本单元推送后暂停。
