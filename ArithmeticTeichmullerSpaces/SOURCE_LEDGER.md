@@ -411,6 +411,17 @@ of the `TateCurvesTheta`-dependent modules.
 | `IUT-COR312-SL2-IMAGE-SOURCE-BRIDGE` | `IutCurveModEllRepData.LocalTateImageSource`, `IutCurveModEllRepData.prime_dvd_card_range_of_local_tate`, `IutCurveModEllRepData.sl_le_range_of_local_tate` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutSL2ImageSourceBridge.lean` | 移植 `refer/iut/Iut/Concrete/SL2Image.lean` 的 `prime_dvd_card_range`/`sl_le_range_of` 装配尾部。`LocalTateImageSource` 现在带显式有限处 `support` 参数，并在该支撑上携带 Tate parameter、uniformizer、Tate structure、`ell²` torsion 基数下界和 `ell` 与 q-order 互素证书；组合 S1.213 的 root-class 分歧桥与 S1.214 的 Cauchy/`SL₂` 生成桥。S1.216 退休了要求所有有限处都有见证的过强边界，实际 `InitialThetaData` 的完整 source 已由 S1.218 在 `VBad` 拉回支撑上实例化；完整 odd support 上的阶互素证书仍需额外来源；它仍不隐藏任何参数对齐义务，原参考提交 `47ef99c97945984ea799ee2333fcf920abecdae4`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 通知，不导入 `refer/iut`。属于 `Scene1/Derived`，不改变 Prologue-R5。 |
 | `IUT-COR312-INITIAL-THETA-LOCAL-TATE-IMAGE` | `iutInitialThetaLocalTateImageSource`, `iutInitialThetaPrime_dvd_card_range_of_local_tate` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLocalTateImage.lean` | 适配 `refer/iut/Iut/Concrete/SL2Image.lean` 的局部 Tate/分歧装配，原提交 `47ef99c97945984ea799ee2333fcf920abecdae4`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 通知。复用本地 `tateStructureOfTorsion`（原路径 `Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean`，提交 `e4777b2238f45be2e58c00b4d0213c0cb83405b9`）、fixed-field torsion descent、完成域比较与 Tate `j` 唯一性，从实际 `InitialThetaData.global/prime` 构造完整 `LocalTateImageSource`，再由 S1.217 见证和 root-class 分歧桥证明像阶被 `ell` 整除。局部结构在表示 fixed field 上重新派生，不要求调用者运输 `D.tate`；不使用 `prime.sl_le_range`，不假定整个 odd support 有互素阶。支撑严格为实际 `badPlacesOver D.F D.E D.VBad`。该结果没有构造 `InitialThetaData`、真实 Scene1 满足模型、论文 `L'`/`V_p^oss`、去权或体积 accounting；属于 `Scene1/Derived`，不改变 `Prologue-R5`。 |
 
+## S1.226：原始有限几何子群的共同坐标数域
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-CYCLIC-COORDINATE-FIELD` | `IutCyclicCoordinate.field`、`numberField_field`、`subgroupEquiv`、`card_subgroup`、`exists_pointPairs`、`algebraMap_veluRatio`、`algebraMap_translatedSum`、`algebraMap_ratioProduct`、`ratioProduct_productFormula_and_Newton`、`ratioProduct_eq_inclusion`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicCoordinateField.lean` | 复用 S1.223 已适配的有限坐标生成域构造；原路径 `refer/iut/Iut/Tripod/CurveOf.lean`，实际提交 `5c6b5909ffda4af24582dc746e74e43702edc1c2`，Git 作者 Christian Merten，文件作者与版权人为 2026 The iut contributors，Apache-2.0 通知保留，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`。本轮不新复制参考文件；对子群全坐标扩充、原像加法等价、规范点对提升、实际比值/坐标和重索引、乘积公式与 Newton 组合入口均为本地证明。共同域由实际有限坐标集合生成，子群点逐个有原像，域内子群与原始 H 同基数；点对的四个闭包像等于 S1.224 的同一规范点对。比值积的闭包像等于原始实际比值积，平移坐标和也沿同一映射运输。奇阶时非零比值积满足共同数域的乘积公式与对数等式，坐标和在实际有限模型例外处外满足 S1.225 Newton 界。原基域 Galois 稳定时比值积保留来自较小四挠坐标域的代表。 |
+
+该构造退休原始几何 H 与 Newton 有理子群的共同扩域来源义务；尚未证明 Vélu
+加法恒等式或各处高度估计，亦未运输原基域 places 或构造新 InitialThetaData。
+JoshiTeich 适配保留一般数域椭圆曲线，不加入 Legendre 限制或外部辅助点假设。
+属于 `Scene1/Derived`，`Prologue-R5` 不变；无新 Lake 依赖、外部 IUT 或 Heights 导入。
+
 ## S1.225：一般曲线的 Newton 挠点与平移坐标和界
 
 | Source id | 本地声明与路径 | 来源、适配与边界 |

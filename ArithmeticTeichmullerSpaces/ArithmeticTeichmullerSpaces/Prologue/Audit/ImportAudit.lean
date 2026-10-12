@@ -45,6 +45,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicVeluRatio
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionVeluRatio
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionNewton
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicCoordinateField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepCyclicSubgroup
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepFixedField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutRamificationCardinality
@@ -875,6 +876,19 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_xCoordinate_le_of_notMem_modelBadPlaces
 #print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.translatedSum_le
 #print axioms JoshiTeich.Act1Scene1.IutFourTorsion.pointPairsBounds_over_field
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.subgroupEquiv
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.ratioProduct_productFormula_and_Newton
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.ratioProduct_eq_inclusion
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.coordinates_finite
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.finiteDimensional_field
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.numberField_field
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.subgroupEquiv
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_pointPairs
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.algebraMap_veluRatio
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.algebraMap_translatedSum
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.algebraMap_ratioProduct
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.ratioProduct_productFormula_and_Newton
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.ratioProduct_eq_inclusion
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_spec
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofBasis
