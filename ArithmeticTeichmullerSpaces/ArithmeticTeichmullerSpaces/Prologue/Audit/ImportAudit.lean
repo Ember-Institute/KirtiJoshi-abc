@@ -44,6 +44,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutGeometricTorsionBasis
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicVeluRatio
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionVeluRatio
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionNewton
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepCyclicSubgroup
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepFixedField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutRamificationCardinality
@@ -865,6 +866,15 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutFourTorsion.ratioProduct_galois
 #print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_algebraMap_eq_ratioProduct
 #print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_nonzero_ratio_productFormula
+#check JoshiTeich.Act1Scene1.IutTorsionNewton.apply_xCoordinate_le_of_notMem_modelBadPlaces
+#check JoshiTeich.Act1Scene1.IutFourTorsion.pointPairsBounds_over_field
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_coeff_ΨSq_le_one
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_x_le
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_xCoordinate_le_completedSquare
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.modelBadPlaces_finite
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.apply_xCoordinate_le_of_notMem_modelBadPlaces
+#print axioms JoshiTeich.Act1Scene1.IutTorsionNewton.translatedSum_le
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.pointPairsBounds_over_field
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_spec
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofBasis

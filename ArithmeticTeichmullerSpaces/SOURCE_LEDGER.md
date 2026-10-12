@@ -411,6 +411,18 @@ of the `TateCurvesTheta`-dependent modules.
 | `IUT-COR312-SL2-IMAGE-SOURCE-BRIDGE` | `IutCurveModEllRepData.LocalTateImageSource`, `IutCurveModEllRepData.prime_dvd_card_range_of_local_tate`, `IutCurveModEllRepData.sl_le_range_of_local_tate` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutSL2ImageSourceBridge.lean` | 移植 `refer/iut/Iut/Concrete/SL2Image.lean` 的 `prime_dvd_card_range`/`sl_le_range_of` 装配尾部。`LocalTateImageSource` 现在带显式有限处 `support` 参数，并在该支撑上携带 Tate parameter、uniformizer、Tate structure、`ell²` torsion 基数下界和 `ell` 与 q-order 互素证书；组合 S1.213 的 root-class 分歧桥与 S1.214 的 Cauchy/`SL₂` 生成桥。S1.216 退休了要求所有有限处都有见证的过强边界，实际 `InitialThetaData` 的完整 source 已由 S1.218 在 `VBad` 拉回支撑上实例化；完整 odd support 上的阶互素证书仍需额外来源；它仍不隐藏任何参数对齐义务，原参考提交 `47ef99c97945984ea799ee2333fcf920abecdae4`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 通知，不导入 `refer/iut`。属于 `Scene1/Derived`，不改变 Prologue-R5。 |
 | `IUT-COR312-INITIAL-THETA-LOCAL-TATE-IMAGE` | `iutInitialThetaLocalTateImageSource`, `iutInitialThetaPrime_dvd_card_range_of_local_tate` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLocalTateImage.lean` | 适配 `refer/iut/Iut/Concrete/SL2Image.lean` 的局部 Tate/分歧装配，原提交 `47ef99c97945984ea799ee2333fcf920abecdae4`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 通知。复用本地 `tateStructureOfTorsion`（原路径 `Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean`，提交 `e4777b2238f45be2e58c00b4d0213c0cb83405b9`）、fixed-field torsion descent、完成域比较与 Tate `j` 唯一性，从实际 `InitialThetaData.global/prime` 构造完整 `LocalTateImageSource`，再由 S1.217 见证和 root-class 分歧桥证明像阶被 `ell` 整除。局部结构在表示 fixed field 上重新派生，不要求调用者运输 `D.tate`；不使用 `prime.sl_le_range`，不假定整个 odd support 有互素阶。支撑严格为实际 `badPlacesOver D.F D.E D.VBad`。该结果没有构造 `InitialThetaData`、真实 Scene1 满足模型、论文 `L'`/`V_p^oss`、去权或体积 accounting；属于 `Scene1/Derived`，不改变 `Prologue-R5`。 |
 
+## S1.225：一般曲线的 Newton 挠点与平移坐标和界
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-TORSION-NEWTON-BOUND` | `IutTorsionNewton.apply_coeff_ΨSq_le_one`、`apply_x_le`、`apply_xCoordinate_le_completedSquare`、`modelBadPlaces_finite`、`apply_xCoordinate_le_of_notMem_modelBadPlaces`、`translatedSum_le`、`IutFourTorsion.pointPairsBounds_over_field`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutTorsionNewton.lean` | 移植 `refer/iut/Iut/Tripod/TorsionNewton.lean` 首个命名空间的通用整模型证明；实际文件提交 `225164d1a47b377fac3bff58a22e43ec7f9cc676`，Git 作者 Christian Merten，文件作者与版权人为 2026 The iut contributors，保留 Apache-2.0 通知，与参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8` 的路径 diff 为空。使用本地 S1.221 的除法多项式根判据，构造实际 w-整子环/模型，证明系数整性，以最高项 n² 得到 Newton 坐标界。其余为本地证明：通过 S1.221 的 completeSquare 和既有 vcEquiv 保持 x/挠关系，以实际完成模型系数定义有限例外处，在其外证明任意数域曲线的 w(n)²*w(x(P))≤1；有限子群平移四挠点后，用缩放坐标差和超度量有限和得到 w(4*card H)²*w(translatedSum H T R)≤1。最终入口消费 S1.223 的实际四挠坐标数域点对，对该域中的有限点子群给出两对点的和界。没有复制参考文件的 Legendre/Heights 缩放段，没有复制或导入无许可证通知的 Heights.VeluProduct。 |
+
+一般数域曲线的结论不要求 Legendre 模型；例外处集合由实际系数确定且有有限性证明。
+本轮控制实际平移坐标和，未将其认作 Vélu 比值。最终入口的 H 位于四挠坐标数域
+有理点群；原始闭包稳定子群的共同有限有理性扩域及其运输仍须构造。Vélu 加法恒等式、
+例外处/graph line/Tate gain、无穷处估计、高度/places 运输和无循环子群上界仍开放。
+属于 `Scene1/Derived`，`Prologue-R5` 不变；未增加 Lake 依赖、外部 IUT 或 Heights 导入。
+
 ## S1.224：实际四挠坐标域上的比值与乘积公式
 
 | Source id | 本地声明与路径 | 来源、适配与边界 |
