@@ -42,6 +42,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaModEllRepConstruct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeImage
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutGeometricTorsionBasis
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicVeluRatio
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepCyclicSubgroup
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepFixedField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutRamificationCardinality
@@ -844,6 +845,16 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.exists_nonzero_ratio_productFormula
 #print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.logProductFormula
 #print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.exists_ratio_logProductFormula
+#check JoshiTeich.Act1Scene1.iutGeometricTwoTorsion_hasHalf
+#check JoshiTeich.Act1Scene1.IutFourTorsion.finiteDimensional_field
+#check JoshiTeich.Act1Scene1.IutFourTorsion.pointPairs_over_field
+#print axioms JoshiTeich.Act1Scene1.iutGeometricTwoTorsion_hasHalf
+#print axioms JoshiTeich.Act1Scene1.iutGeometricFourTorsionPointPairs_exists
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.coordinates_finite
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.finiteDimensional_field
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.numberField_field
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.exists_point_over_field
+#print axioms JoshiTeich.Act1Scene1.IutFourTorsion.pointPairs_over_field
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_spec
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofBasis
