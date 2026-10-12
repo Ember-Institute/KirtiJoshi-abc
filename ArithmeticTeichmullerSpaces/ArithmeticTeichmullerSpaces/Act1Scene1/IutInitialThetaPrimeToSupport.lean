@@ -52,6 +52,26 @@ theorem iutInitialThetaBadPlacesOver_residueChar_ne_ell
   rw [Arithmetic.residueChar_eq_of_liesOver hwv]
   exact iutInitialThetaVBad_residueChar_ne_ell D hv
 
+/-! The nonempty odd `VBad` source supplies the residue-characteristic witness
+required by the local Tate-to-`SL₂` bridge. -/
+theorem iutInitialThetaBadPlacesOver_exists_residueChar_ne_two_ell :
+    ∃ w : NumberField.FinitePlace D.F,
+      w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad ∧
+        Arithmetic.residueChar w ≠ 2 ∧
+        Arithmetic.residueChar w ≠ D.prime.ℓ := by
+  obtain ⟨v, hv⟩ := D.global.bad_nonempty
+  obtain ⟨w, hwv⟩ := JoshiTeich.ReferenceIut.FinitePlace.exists_liesOver
+    (K := D.F) v
+  have hw : w ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad :=
+    ⟨v, hv, hwv⟩
+  refine ⟨w, hw, ?_, iutInitialThetaBadPlacesOver_residueChar_ne_ell D hw⟩
+  rw [Arithmetic.residueChar_eq_of_liesOver hwv]
+  have hodd : Odd (Arithmetic.residueChar v) := by
+    exact D.global.bad_odd v hv
+  exact fun htwo => by
+    rw [htwo] at hodd
+    norm_num at hodd
+
 /-- The unconditional inclusion retains the admissible-prime filter. -/
 theorem iutInitialThetaBadPlacesOver_subset_primeToOddSupport :
     JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad ⊆

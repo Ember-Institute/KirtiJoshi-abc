@@ -595,6 +595,7 @@ open scoped NumberField
 #check JoshiTeich.Act1Scene1.iutInitialThetaVBad_subset_VBadOdd
 #check JoshiTeich.Act1Scene1.iutBadPlacesOver_subset_oddMultiplicativeSupport
 #check JoshiTeich.Act1Scene1.iutInitialThetaBadPlacesOver_finite
+#check JoshiTeich.Act1Scene1.iutInitialThetaBadPlacesOver_exists_residueChar_ne_two_ell
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddTateSectionPlaces
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddTateSectionPlaces_eq_selectedSupport
 #check JoshiTeich.Act1Scene1.iutInitialThetaSectionRepresentatives
