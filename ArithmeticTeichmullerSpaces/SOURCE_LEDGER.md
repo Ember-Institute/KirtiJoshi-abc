@@ -615,3 +615,24 @@ Galois 下降 API；未增加 `refer/iut` 依赖。共同坐标域与四挠坐�
 `Prologue-R5 → Prologue-R5`；Scene1 的纤维求和证明负担减少，前置信任负担不变。
 真实 `InitialThetaData/TateFamily` 的完整 Scene1 模型、论文处集与归一化、packet/hull
 定量体积 accounting 仍开放。
+
+## S1.239：canonical Tate 字段到实际 q-pilot source
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-CANONICAL-SOURCE-FIELD-AUDIT` | `iutCanonicalBaseSource_tateParameter_eq_link`、`iutCanonicalBaseSource_qOrder_eq_link`、`IutQPilotSource.ofInitialThetaCanonicalTateData`；`Act1Scene1/IutInitialThetaCanonicalSourceAudit.lean` | 本地派生，消费 `IUT-COR312-INITIAL-THETA-BASE-QPILOT`、`IUT-COR312-INITIAL-THETA-ADELIC-LINK` 与 `IutQPilotSource.ofInitialThetaData_of_parameter_eq`。两个实际参数族都投影同一 `D.prime.tate`；q-order 从相同完成域元素的赋值派生。构造器由 `T.link.tate = iutInitialThetaTateParameterData D` 和显式 `QNormTateCompatibility` 推出完整 base carrier 与参数识别，不再单独接收 `hPlaces`、逐处 `hParameter`、`hLinkTateJ` 或完整 link equality。保留 `hEll`、Tate 数据等式和 q-norm 相容性为显式来源条件；不声称已构造完整 Scene1 满足模型。证明 owner：Scene1。 |
+
+JoshiTeich 适配：III `ss:theta-data-fixing2`（TeX 1023–1031）说明初始数据与
+代表处选择；`pr:admissible-lifts-tate-params`（1530–1539）说明 admissible lift 的
+Tate 参数作用。本单元只识别当前完成域参数与初始椭圆曲线来源，不形式化该命题的
+Fargues–Fontaine 商映射、直到域或 theta lift，不能代替其几何构造。上述字段等式
+仅覆盖 `badPlacesOver(D.VBad)` 的 base `D.F` carrier；不把它等同于完整 odd support
+或论文 torsion-field `L'` 的所选代表处。本轮没有复制新参考文件，没有新增 Lake 依赖。
+
+`Prologue-R5 → Prologue-R5`，Core/Candidate/Obligations 未改。实际消费者是
+`ofInitialThetaCanonicalTateData`，它把参数等式交给既有 source 构造器；其实际 q-order、
+chosen uniformizer 和互素字段继续来自 `D.prime`。Scene1 在这一路径上无需额外证明
+carrier、参数、j 身份三项独立证书；前置数学假设没有增加。完整
+`Corollary312Scene1QPilotData`、raw/weighted 归一化和 packet/hull 体积证明仍开放。
+
+S1.239 验证补记（2026-10-13 02:33:51 CST）：上述三个声明及窄审计目标通过，`9118/9118` jobs，退出码 `0`。三个公理输出仅有 `propext`、`Classical.choice`、`Quot.sound`。字段识别定理为 `proved`；实际 source 装配在显式 `hEll`、`hTate`、`hCompat` 下成立，完整真实 Scene1 模型仍 `open`。
