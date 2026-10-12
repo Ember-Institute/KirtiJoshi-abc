@@ -14,6 +14,7 @@ the subgroup and the chosen pairs, and transport ratios and translated sums.
 -/
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionVeluRatio
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionNewton
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource
 
 /-!
 source-id: IUT-COR312-CYCLIC-COORDINATE-FIELD
@@ -312,6 +313,30 @@ lemma ratioProduct_eq_inclusion
   change algebraMap ↥(IutFourTorsion.field E Fbar) Fbar ρ =
     algebraMap ↥(field E Fbar H) Fbar (ratioProduct E Fbar H)
   rw [hρ, algebraMap_ratioProduct]
+
+/-! The descended representative is now connected to the actual completion map
+at a finite place above a four-torsion-field place.  The local algebra instance
+is the ring-hom algebra induced by the intermediate-field inclusion; no norm
+or residue-degree identity is asserted here. -/
+theorem exists_completionEmbedding_eq_ratioProduct
+    (hgal : ∀ σ : Fbar ≃ₐ[F] Fbar, ∀ Q ∈ H,
+      JoshiTeich.ReferenceIut.galPointMap F E Fbar σ Q ∈ H) :
+    letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+      (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+    ∀ (v : NumberField.FinitePlace ↥(field E Fbar H))
+      (w : NumberField.FinitePlace ↥(IutFourTorsion.field E Fbar)),
+      (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) →
+      ∃ ρ : ↥(IutFourTorsion.field E Fbar),
+        iutEmbedCompletion (v := v) (w := w) hvw
+            (NumberField.FinitePlace.embedding w.maximalIdeal ρ) =
+          NumberField.FinitePlace.embedding v.maximalIdeal (ratioProduct E Fbar H) := by
+  letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+    (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+  intro v w hvw
+  obtain ⟨ρ, hρ⟩ := ratioProduct_eq_inclusion E Fbar H hgal
+  refine ⟨ρ, ?_⟩
+  rw [← hρ]
+  exact iutEmbedCompletion_embedding hvw ρ
 
 end
 end JoshiTeich.Act1Scene1.IutCyclicCoordinate

@@ -581,3 +581,9 @@ source，完整 odd support 的互素阶仍需来源。旧进度日志保留；�
 | Source id | 本地声明与路径 | 来源、适配与边界 |
 | --- | --- | --- |
 | `IUT-COR312-CYCLIC-COORDINATE-SINGLE-RATIO-DESCENT` | `IutCyclicCoordinate.exists_inclusion_eq_veluRatio_of_four_nsmul`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicCoordinateField.lean` | 对共同坐标域上的四挠点参数，消费 S1.232 的单比值下降和 `algebraMap_veluRatio`，沿四挠坐标域到共同坐标域的 `IntermediateField.inclusion` 得到值域等式。该连接不假设 completion 范数幂律，不处理 residue-degree accounting、height/places 运输、无穷处或全局上界；属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
+
+## S1.234：四挠坐标域代表到 completion embedding 的连接
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-CYCLIC-COORDINATE-COMPLETION-RATIO-CONNECTION` | `IutCyclicCoordinate.exists_completionEmbedding_eq_ratioProduct`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicCoordinateField.lean` | 对共同坐标域上方有限处与四挠坐标域有限处的 `Ideal.LiesOver`，消费 `ratioProduct_eq_inclusion` 和 `iutEmbedCompletion_embedding`，把四挠坐标域代表的 completion embedding 等同于共同坐标域 `ratioProduct` 的 embedding。该入口只建立值连接，不提供范数幂律、residue-degree accounting、height/places 运输、无穷处或全局界；属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
