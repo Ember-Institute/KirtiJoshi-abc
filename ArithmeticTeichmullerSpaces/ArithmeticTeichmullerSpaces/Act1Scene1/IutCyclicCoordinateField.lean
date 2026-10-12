@@ -338,5 +338,28 @@ theorem exists_completionEmbedding_eq_ratioProduct
   rw [← hρ]
   exact iutEmbedCompletion_embedding hvw ρ
 
+/-! Consume the completion connection at the valuation level.  The exponent is
+the relative ramification index attached to the chosen pair of finite places;
+no residue-degree normalization is folded into this statement. -/
+theorem exists_valuedEmbedding_eq_ratioProduct_pow
+    (hgal : ∀ σ : Fbar ≃ₐ[F] Fbar, ∀ Q ∈ H,
+      JoshiTeich.ReferenceIut.galPointMap F E Fbar σ Q ∈ H) :
+    letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+      (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+    ∀ (v : NumberField.FinitePlace ↥(field E Fbar H))
+      (w : NumberField.FinitePlace ↥(IutFourTorsion.field E Fbar)),
+      (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) →
+      ∃ ρ : ↥(IutFourTorsion.field E Fbar),
+        Valued.v (NumberField.FinitePlace.embedding v.maximalIdeal
+          (ratioProduct E Fbar H)) =
+          Valued.v (NumberField.FinitePlace.embedding w.maximalIdeal ρ) ^
+            iutRelativeRamificationIndex (v := v) (w := w) := by
+  letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+    (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+  intro v w hvw
+  obtain ⟨ρ, hρ⟩ := exists_completionEmbedding_eq_ratioProduct E Fbar H hgal v w hvw
+  refine ⟨ρ, ?_⟩
+  rw [← hρ, iutValuedEmbedCompletion]
+
 end
 end JoshiTeich.Act1Scene1.IutCyclicCoordinate
