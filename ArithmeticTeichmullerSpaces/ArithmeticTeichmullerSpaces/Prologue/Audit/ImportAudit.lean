@@ -40,6 +40,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLargePrimeSupport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaModEllRepConstruct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeImage
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutGeometricTorsionBasis
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepCyclicSubgroup
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepFixedField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutRamificationCardinality
@@ -823,6 +824,17 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaMaximalPrime_exists_residueChar_ne_two_ell
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaMaximalPrime_sl_le_range
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaMaximalPrimeData_of_not_hasCyclicSubgroup
+#check JoshiTeich.Act1Scene1.iutGeometricTorsion_card
+#check JoshiTeich.Act1Scene1.iutGeometricTorsionBasis
+#check JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofGeometricTorsion
+#check JoshiTeich.Act1Scene1.iutInitialThetaMaximalPrimeData_of_geometricTorsion
+#print axioms JoshiTeich.ReferenceIut.Torsion.good
+#print axioms JoshiTeich.ReferenceIut.Torsion.card_torsionBy_eq_sq
+#print axioms JoshiTeich.ReferenceIut.Torsion.torsionBasis
+#print axioms JoshiTeich.Act1Scene1.iutGeometricTorsion_card
+#print axioms JoshiTeich.Act1Scene1.iutGeometricTorsionBasis
+#print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofGeometricTorsion
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaMaximalPrimeData_of_geometricTorsion
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_spec
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofBasis
