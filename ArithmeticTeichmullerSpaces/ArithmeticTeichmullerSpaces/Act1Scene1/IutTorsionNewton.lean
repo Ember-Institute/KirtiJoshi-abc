@@ -254,4 +254,3 @@ theorem pointPairsBounds_over_field
     translatedSum_le w H hw P.T₂ P.R₂ P.four_nsmul_T₂ P.four_nsmul_R₂⟩⟩
 
 end JoshiTeich.Act1Scene1.IutFourTorsion
-
