@@ -216,6 +216,30 @@ lemma algebraMap_veluRatio (T R : (E.map (algebraMap F ↥(field E Fbar H))).toA
       ← xCoordinate_pointMap, map_add]
     rfl
 
+/-! The common coordinate-field ratio has a representative in the smaller
+four-torsion field whenever its two arguments are four-torsion.  The proof
+uses the single-ratio Galois descent from `IutFourTorsionVeluRatio` and the
+coordinate-field inclusion above; no completion norm or residue-degree law is
+introduced here. -/
+lemma exists_inclusion_eq_veluRatio_of_four_nsmul
+    (hgal : ∀ σ : Fbar ≃ₐ[F] Fbar, ∀ Q ∈ H,
+      JoshiTeich.ReferenceIut.galPointMap F E Fbar σ Q ∈ H)
+    (T R : (E.map (algebraMap F ↥(field E Fbar H))).toAffine.Point)
+    (hT : 4 • T = 0) (hR : 4 • R = 0) :
+    ∃ ρ : ↥(IutFourTorsion.field E Fbar),
+      IntermediateField.inclusion (fourTorsionField_le E Fbar H) ρ =
+        veluRatio (subgroup E Fbar H) T R := by
+  have hT' : 4 • pointMap E Fbar H T = 0 := by
+    rw [← map_nsmul, hT, map_zero]
+  have hR' : 4 • pointMap E Fbar H R = 0 := by
+    rw [← map_nsmul, hR, map_zero]
+  obtain ⟨ρ, hρ⟩ := IutFourTorsion.exists_algebraMap_eq_veluRatio_of_four_nsmul
+    (E := E) (Fbar := Fbar) (H := H) hgal hT' hR'
+  refine ⟨ρ, (algebraMap ↥(field E Fbar H) Fbar).injective ?_⟩
+  change algebraMap ↥(IutFourTorsion.field E Fbar) Fbar ρ =
+    algebraMap ↥(field E Fbar H) Fbar (veluRatio (subgroup E Fbar H) T R)
+  rw [hρ, algebraMap_veluRatio]
+
 /-- The actual translated sum commutes with the same subgroup inclusion. -/
 lemma algebraMap_translatedSum (T R : (E.map (algebraMap F ↥(field E Fbar H))).toAffine.Point) :
     algebraMap ↥(field E Fbar H) Fbar (translatedSum (subgroup E Fbar H) T R) =

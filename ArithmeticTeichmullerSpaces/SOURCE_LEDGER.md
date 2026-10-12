@@ -575,3 +575,9 @@ source，完整 odd support 的互素阶仍需来源。旧进度日志保留；�
 | Source id | 本地声明与路径 | 来源、适配与边界 |
 | --- | --- | --- |
 | `IUT-COR312-FOUR-TORSION-VELU-SINGLE-RATIO-DESCENT` | `IutFourTorsion.exists_algebraMap_eq_veluRatio_of_four_nsmul`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutFourTorsionVeluRatio.lean` | 在实际四挠坐标域的代数闭包中，消费 `galPointMap_eq_of_four_nsmul` 和 `IutCyclicVelu.veluRatio_galois`，对任意原基域 Galois-stable 有限子群和四挠点参数证明单个 Vélu 比值属于四挠坐标域。该入口不提供 completion 范数幂律、residue-degree 缩放、height/places 运输、无穷处或全局无循环子群界；属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
+
+## S1.233：共同坐标域单个 Vélu 比值的 inclusion 连接
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-CYCLIC-COORDINATE-SINGLE-RATIO-DESCENT` | `IutCyclicCoordinate.exists_inclusion_eq_veluRatio_of_four_nsmul`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicCoordinateField.lean` | 对共同坐标域上的四挠点参数，消费 S1.232 的单比值下降和 `algebraMap_veluRatio`，沿四挠坐标域到共同坐标域的 `IntermediateField.inclusion` 得到值域等式。该连接不假设 completion 范数幂律，不处理 residue-degree accounting、height/places 运输、无穷处或全局上界；属于 `Scene1/Derived`，`Prologue-R5` 不变。 |
