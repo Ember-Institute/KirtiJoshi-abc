@@ -41,6 +41,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaModEllRepConstruct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeImage
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutGeometricTorsionBasis
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicVeluRatio
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepCyclicSubgroup
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepFixedField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutRamificationCardinality
@@ -835,6 +836,14 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.iutGeometricTorsionBasis
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofGeometricTorsion
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaMaximalPrimeData_of_geometricTorsion
+#check JoshiTeich.Act1Scene1.IutCyclicVelu.exists_nonzero_ratio_productFormula
+#check JoshiTeich.Act1Scene1.IutCyclicVelu.exists_ratio_logProductFormula
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.veluRatio_ne_zero
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.veluRatio_galois
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.exists_algebraMap_eq_ratio
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.exists_nonzero_ratio_productFormula
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.logProductFormula
+#print axioms JoshiTeich.Act1Scene1.IutCyclicVelu.exists_ratio_logProductFormula
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_spec
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofBasis

@@ -411,6 +411,17 @@ of the `TateCurvesTheta`-dependent modules.
 | `IUT-COR312-SL2-IMAGE-SOURCE-BRIDGE` | `IutCurveModEllRepData.LocalTateImageSource`, `IutCurveModEllRepData.prime_dvd_card_range_of_local_tate`, `IutCurveModEllRepData.sl_le_range_of_local_tate` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutSL2ImageSourceBridge.lean` | 移植 `refer/iut/Iut/Concrete/SL2Image.lean` 的 `prime_dvd_card_range`/`sl_le_range_of` 装配尾部。`LocalTateImageSource` 现在带显式有限处 `support` 参数，并在该支撑上携带 Tate parameter、uniformizer、Tate structure、`ell²` torsion 基数下界和 `ell` 与 q-order 互素证书；组合 S1.213 的 root-class 分歧桥与 S1.214 的 Cauchy/`SL₂` 生成桥。S1.216 退休了要求所有有限处都有见证的过强边界，实际 `InitialThetaData` 的完整 source 已由 S1.218 在 `VBad` 拉回支撑上实例化；完整 odd support 上的阶互素证书仍需额外来源；它仍不隐藏任何参数对齐义务，原参考提交 `47ef99c97945984ea799ee2333fcf920abecdae4`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 通知，不导入 `refer/iut`。属于 `Scene1/Derived`，不改变 Prologue-R5。 |
 | `IUT-COR312-INITIAL-THETA-LOCAL-TATE-IMAGE` | `iutInitialThetaLocalTateImageSource`, `iutInitialThetaPrime_dvd_card_range_of_local_tate` | `ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLocalTateImage.lean` | 适配 `refer/iut/Iut/Concrete/SL2Image.lean` 的局部 Tate/分歧装配，原提交 `47ef99c97945984ea799ee2333fcf920abecdae4`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，保留 Apache-2.0 通知。复用本地 `tateStructureOfTorsion`（原路径 `Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean`，提交 `e4777b2238f45be2e58c00b4d0213c0cb83405b9`）、fixed-field torsion descent、完成域比较与 Tate `j` 唯一性，从实际 `InitialThetaData.global/prime` 构造完整 `LocalTateImageSource`，再由 S1.217 见证和 root-class 分歧桥证明像阶被 `ell` 整除。局部结构在表示 fixed field 上重新派生，不要求调用者运输 `D.tate`；不使用 `prime.sl_le_range`，不假定整个 odd support 有互素阶。支撑严格为实际 `badPlacesOver D.F D.E D.VBad`。该结果没有构造 `InitialThetaData`、真实 Scene1 满足模型、论文 `L'`/`V_p^oss`、去权或体积 accounting；属于 `Scene1/Derived`，不改变 `Prologue-R5`。 |
 
+## S1.222：循环子群的 Vélu 比值与乘积公式输入
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-CYCLIC-VELU-RATIO` | `IutCyclicVelu.veluRatio_ne_zero`、`veluRatio_galois`、`exists_algebraMap_eq_ratio`、`exists_nonzero_ratio_productFormula`、`logProductFormula`、`exists_ratio_logProductFormula`；`ArithmeticTeichmullerSpaces/Act1Scene1/IutCyclicVeluRatio.lean` | 从 `refer/iut/Iut/Tripod/CyclicPoints.lean` 提取奇阶子群无二阶点及比值非零证明；从 `Iut/Tripod/CyclicIsogeny.lean` 提取 Galois 重索引、比值下降和 `Cyclic.main_bound` 中的对数乘积公式步骤。两个文件的实际提交均为 `c35ca616ba5ec707d8ef08a781df35fadba16532`，Git 作者 Christian Merten，文件作者与版权人为 2026 The iut contributors，Apache-2.0 通知保留；与参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8` 的路径 diff 为空。坐标判别直接由 Mathlib `Point.X_eq_iff` 证明，下降改用代数闭包上的 `InfiniteGalois.mem_range_algebraMap_iff_fixed`，不要求参考工程的 Tripod provider、Legendre 模型或 torsion-field action。基域中的两对 `T,R` 满足 `T ≠ 0`、`2T = 0`、`2R = T` 时，得到真实非零 `ρ : F`，并由 Mathlib `NumberField.prod_abs_eq_one` 得到乘积公式及任意覆盖有限支撑的有限处集合上的对数等式。未复制或导入 `Heights.VeluProduct`，未增加依赖。 |
+
+本结果适用于一般数域椭圆曲线，但显式要求四个点来自基域。当前 `InitialThetaData`
+只保证六挠点有理性，不保证二挠点的半点在基域，故该来源对齐仍开放。局部 graph line、
+Vélu 比值的有限处与复嵌入估计、无循环子群上界均未由乘积公式替代。该模块属于
+`Scene1/Derived`，`Prologue-R5` 不变；没有新增 Core 或 Candidate 合约。
+
 ## S1.221：几何挠群基与候选表示来源
 
 以下来源的 Git 作者均为 Christian Merten，文件作者与版权人为 The iut contributors，
