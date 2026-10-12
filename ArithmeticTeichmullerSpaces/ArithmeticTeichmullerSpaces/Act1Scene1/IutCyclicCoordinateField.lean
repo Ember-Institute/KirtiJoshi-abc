@@ -361,5 +361,30 @@ theorem exists_valuedEmbedding_eq_ratioProduct_pow
   refine ⟨ρ, ?_⟩
   rw [← hρ, iutValuedEmbedCompletion]
 
+/-! The valuation power law transfers the strict unit-ball condition.  This is
+the threshold form needed by local bounds and does not choose a raw versus
+degree-normalized norm presentation. -/
+theorem exists_norm_lt_one_iff_ratioProduct
+    (hgal : ∀ σ : Fbar ≃ₐ[F] Fbar, ∀ Q ∈ H,
+      JoshiTeich.ReferenceIut.galPointMap F E Fbar σ Q ∈ H) :
+    letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+      (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+    ∀ (v : NumberField.FinitePlace ↥(field E Fbar H))
+      (w : NumberField.FinitePlace ↥(IutFourTorsion.field E Fbar)),
+      (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) →
+      ∃ ρ : ↥(IutFourTorsion.field E Fbar),
+        ‖NumberField.FinitePlace.embedding v.maximalIdeal
+          (ratioProduct E Fbar H)‖ < 1 ↔
+          ‖NumberField.FinitePlace.embedding w.maximalIdeal ρ‖ < 1 := by
+  letI : Algebra (↥(IutFourTorsion.field E Fbar)) (↥(field E Fbar H)) :=
+    (IntermediateField.inclusion (fourTorsionField_le E Fbar H)).toRingHom.toAlgebra
+  intro v w hvw
+  obtain ⟨ρ, hρ⟩ := exists_valuedEmbedding_eq_ratioProduct_pow E Fbar H hgal v w hvw
+  refine ⟨ρ, ?_⟩
+  rw [Valued.toNormedField.norm_lt_one_iff,
+    Valued.toNormedField.norm_lt_one_iff, hρ]
+  exact (pow_lt_one_iff_of_nonneg zero_le
+    (iutRelativeRamificationIndex_ne_zero hvw))
+
 end
 end JoshiTeich.Act1Scene1.IutCyclicCoordinate

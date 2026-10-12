@@ -903,6 +903,8 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_inclusion_eq_veluRatio_of_four_nsmul
 #print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_completionEmbedding_eq_ratioProduct
 #print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_valuedEmbedding_eq_ratioProduct_pow
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_lt_one_iff_ratioProduct
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.exists_norm_lt_one_iff_ratioProduct
 #check JoshiTeich.Act1Scene1.IutVeluTrace.traceFunction_eq
 #check JoshiTeich.Act1Scene1.IutCyclicCoordinate.pointPairs_traceNewton
 #print axioms JoshiTeich.Act1Scene1.IutVeluTrace.paired_xCoordinates
