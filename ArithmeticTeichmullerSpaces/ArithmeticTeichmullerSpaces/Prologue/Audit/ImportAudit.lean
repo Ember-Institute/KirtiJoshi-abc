@@ -47,6 +47,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutFourTorsionVeluRatio
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutTorsionNewton
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicCoordinateField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutVeluAdditiveTrace
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutVeluTracePolynomial
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepCyclicSubgroup
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutModEllRepFixedField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutRamificationCardinality
@@ -897,6 +898,15 @@ open scoped NumberField
 #print axioms JoshiTeich.Act1Scene1.IutVeluTrace.translatedSum_eq
 #print axioms JoshiTeich.Act1Scene1.IutVeluTrace.traceDifference_le
 #print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.pointPairs_traceNewton
+#check JoshiTeich.Act1Scene1.IutVeluPolynomial.veluRatio_mul
+#check JoshiTeich.Act1Scene1.IutCyclicCoordinate.pointPairs_ratioNewton
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.numerator_monic_degree
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.eval_numerator
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.numerator_factorization
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.cosetProduct_eq
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.veluRatio_mul
+#print axioms JoshiTeich.Act1Scene1.IutVeluPolynomial.crude_bound
+#print axioms JoshiTeich.Act1Scene1.IutCyclicCoordinate.pointPairs_ratioNewton
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_spec
 #print axioms JoshiTeich.Act1Scene1.iutRepOf_ker_isOpen
 #print axioms JoshiTeich.Act1Scene1.IutCurveModEllRepData.ofBasis
