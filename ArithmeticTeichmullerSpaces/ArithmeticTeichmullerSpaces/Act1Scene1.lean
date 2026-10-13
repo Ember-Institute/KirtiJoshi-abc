@@ -124,6 +124,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeCoeff
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeRamificationGap
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperBallProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedLogBallProduct
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedTensorLogRegion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRepresentativeBound
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

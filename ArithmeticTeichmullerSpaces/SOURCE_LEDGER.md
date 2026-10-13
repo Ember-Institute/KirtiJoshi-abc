@@ -1589,3 +1589,24 @@ consumer→selected corrected product/log consumer。Core/Candidate/Obligations�
 
 S1.285 验证补记：首次窄热构建9268/9268 jobs通过，退出码0；
 PaperAccounting100/67及Scene1聚合通过，67条公理报告只含标准允许集合。完整目标仍open。
+
+## S1.286：全部实际 selected prime-fibre 的 canonical tensor log-region
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-TENSOR-LOG-REGION` | `SelectedThetaTensor.fiber`、`enumeration`、`sourceAt`、`sourceAt_selected_residueChar`、`packet`、`value`、`region`、`value_ne_zero`、`value_mem_region`、`region_eq_rootBallLattice`、`region_le_tensorLogShell`、`region_isOpen`、`region_isCompact`、`regionIndex`、`regionIndex_pos`、`region_normalizedHaar_eq_inv_index`、`region_normalizedHaar_pos_le_one`；`Act1Scene1/IutInitialThetaSelectedTensorLogRegion.lean` | actual selected source 按 residueChar=p 的 finite filter 给出完整 prime fibre，Fintype.equivFin 的逆是 bijective enumeration。packet factors直接取该枚举的 actual torsion completions，value 是 S1.285 full-source ordinary logarithm scalars 的 pure tensor，region是实际log-ball纯tensor的积分span。factor balls等于实际root balls，pure witness非零且属于region，region包含于tensor ordinary logShell。已有actual tensor lattice topology/index/Haar theorem给出compact openness、positive finite integral index和normalized tensor Haar=index⁻¹、0<measure≤1。 |
+
+该构造只接实际D和有理prime p，不再给任意tuple c或prime-alignment certificate。
+Fin(card fibre)枚举用于满足现有Packet的small index universe，同时完整bijection
+保留所有selected处；它不是删除处的截断。空fibre按已有空tensor约定存在，
+此处未把空packet计作非空论文prime strip。指数来自实际tensor积分lattice；
+未将factor paper-volume乘积误作raw tensor Haar。tensor Haar/index与论文weighted
+volume、重排独立性、不同untilt/Bloch–Kato类和theta hull的身份仍须继续证明。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；新增七定义、十公共theorem，actual
+prime filter→complete enumeration→canonical packet/log region→topology/index/Haar
+消费链。Core/Candidate/Obligations、旧公共API与冻结依赖不变，前置信任不增加。
+完整类型、模型义务和资源/验证见log4的S1-BND-286。
+
+S1.286 验证补记：首次窄热构建9269/9269 jobs通过，退出码0；
+SceneBounds231/55与Scene1聚合通过，55条公理报告仅含标准允许集合。完整目标仍open。
