@@ -683,3 +683,16 @@ taskset -c 0-13 env LEAN_NUM_THREADS=10 lake build \
 停止阈值，未发现 Mathlib 编译。该结果只验证 canonical input 边界和其直接消费者；真实
 Scene1 满足模型、论文 `V_p^oss`/`L'` 代表 accounting、packet/hull 到 theta-volume 的
 定量证明及最终 Corollary 3.12 仍为 `open`。
+
+S1.242 边界收紧补记（2026-10-13 10:23:02 CST）：
+
+`CanonicalInitialThetaScene1Input` 不再接收完整 `inputLaws` 和重复的
+`adelicThetaLink` 字段；其中的 Tate 法律改为由真实来源构造。canonical link 的 valuation scaling 由 `qNorm` 的定义与
+`norm_pow` 推出，真实 Tate parameter laws 由
+`iutInitialThetaTateParameterData_laws D` 投影；`toScene1Input` 内部构造
+`PrologueInputLaws`。剩余 theta scaling、period/normalization、Perfectoid bridge、
+height、packet/hull、volume 和 q-family obligations 仍显式开放，故没有关闭真实满足模型。
+
+最终源码窄验证 `9248/9248` jobs，退出码 `0`；time 墙钟 `5:20.24`，监控耗时
+`320.290 s`，进程组采样峰值 `17523440 KiB`（约 `16.712 GiB`），time 最大单进程 RSS
+`8234044 KiB`，实际 Lean 并发峰值 `2`，affinity 修复 `42` 次，未发现 Mathlib 编译。

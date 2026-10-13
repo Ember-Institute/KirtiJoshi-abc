@@ -45,15 +45,23 @@ structure CanonicalInitialThetaScene1Input
     (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
       heightData ramification logVolume processionLength)
     p placeData
-  inputLaws :
-    PrologueInputLaws p
-      { link := AdelicThetaLinkData.ofInitialThetaData D theta thetaBase
-          packetHull heightData ramification logVolume processionLength
-        placeData := placeData
-        bridge := bridge }
-  adelicThetaLink : AdelicThetaLink
+  /-- The non-arithmetic theta scaling law is the remaining part of the
+      adelic link contract after its valuation scaling is derived from the
+      canonical Tate parameter. -/
+  thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase
+  periodMap : ∀ i, theta.period i = theta.liftedLog i
+  normalization :
+    letI := theta.indexFintype
+    logVolume = ∑ i, theta.period i
+  height_nonnegative : ∀ x, 0 ≤ heightData.value x
+  theta_norm_positive : ∀ i, 0 < theta.norm i
+  packet_weight_positive : ∀ q, 0 < packetHull.packetWeight q
+  hull_weight_positive : ∀ h, 0 < packetHull.hullWeight h
+  perfectoidBridge : PerfectoidBridgeLaws
     (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
       heightData ramification logVolume processionLength)
+    p
+    placeData bridge
   thetaLiftLog : ThetaLiftLog
     (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
       heightData ramification logVolume processionLength)
@@ -78,6 +86,75 @@ variable (heightData : Arithmetic.HeightData D.F)
 variable (ramification : Arithmetic.RamificationProfile D.F)
 variable (logVolume : ℝ) (processionLength : ℕ)
 
+private noncomputable def canonicalLink
+    (_X : CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase packetHull
+      heightData ramification logVolume processionLength) :
+    AdelicThetaLinkData D.F :=
+  AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+    heightData ramification logVolume processionLength
+
+private theorem canonicalLink_valuation_scaling
+    (X : CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase packetHull
+      heightData ramification logVolume processionLength) :
+    ∀ w ∈ (canonicalLink p D theta thetaBase packetHull heightData ramification
+      logVolume processionLength X).places, ∀ j : ℕ,
+      (canonicalLink p D theta thetaBase packetHull heightData ramification
+        logVolume processionLength X).qNorm w ^ (j * j) =
+        ‖((canonicalLink p D theta thetaBase packetHull heightData ramification
+          logVolume processionLength X).qParameter w) ^ (j * j)‖ := by
+  intro w hw j
+  simp only [canonicalLink, AdelicThetaLinkData.ofInitialThetaData,
+    AdelicThetaLinkData.ofTateParameters, AdelicThetaLinkData.qNorm]
+  rw [norm_pow]
+
+private noncomputable def canonicalAdelicThetaLink
+    (X : CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase packetHull
+      heightData ramification logVolume processionLength) :
+    AdelicThetaLink (canonicalLink p D theta thetaBase packetHull heightData
+      ramification logVolume processionLength X) :=
+  { valuation_scaling := canonicalLink_valuation_scaling p D theta thetaBase
+      packetHull heightData ramification logVolume processionLength X
+    theta_scaling := X.thetaScaling
+    period_map := X.periodMap
+    normalization := X.normalization }
+
+private noncomputable def canonicalInputLaws
+    (X : CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase packetHull
+      heightData ramification logVolume processionLength) :
+    PrologueInputLaws p
+      { link := canonicalLink p D theta thetaBase packetHull heightData ramification
+          logVolume processionLength X
+        placeData := X.placeData
+        bridge := X.bridge } := by
+  let L := canonicalLink p D theta thetaBase packetHull heightData ramification
+    logVolume processionLength X
+  let T := iutInitialThetaTateParameterData_laws D
+  let A := canonicalAdelicThetaLink p D theta thetaBase packetHull heightData
+    ramification logVolume processionLength X
+  refine
+    { first_axiom := ?_
+      tate_parameter := ?_
+      adelic_theta_link := A
+      perfectoid_bridge := X.perfectoidBridge }
+  · refine
+      { places_nonempty := T.places_nonempty
+        q_parameter_nonzero := ?_
+        q_norm_positive := ?_
+        height_nonnegative := ?_
+        theta_norm_positive := ?_
+        packet_weight_positive := ?_
+        hull_weight_positive := ?_ }
+    · intro w hw
+      exact T.parameter_nonzero w hw
+    · intro w hw
+      exact T.norm_pos w hw
+    · exact X.height_nonnegative
+    · exact X.theta_norm_positive
+    · exact X.packet_weight_positive
+    · exact X.hull_weight_positive
+  · simpa [L, canonicalLink, AdelicThetaLinkData.ofInitialThetaData,
+      AdelicThetaLinkData.ofTateParameters] using T
+
 noncomputable def toScene1Input
     (X : CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase packetHull
       heightData ramification logVolume processionLength) :
@@ -87,8 +164,10 @@ noncomputable def toScene1Input
           packetHull heightData ramification logVolume processionLength
         placeData := X.placeData
         bridge := X.bridge }
-    input_laws := X.inputLaws
-    adelic_theta_link := X.adelicThetaLink
+    input_laws := canonicalInputLaws p D theta thetaBase packetHull heightData
+      ramification logVolume processionLength X
+    adelic_theta_link := canonicalAdelicThetaLink p D theta thetaBase packetHull
+      heightData ramification logVolume processionLength X
     theta_lift_log := X.thetaLiftLog
     packet_collation_hull := X.packetCollationHull
     volume_transfer := X.volumeTransfer }
