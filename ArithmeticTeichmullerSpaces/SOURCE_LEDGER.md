@@ -1672,3 +1672,25 @@ check，最终四定义、十三theorem，SceneBounds256/74、总计907/460。
 S1.288 验证补记：最终窄热构建9275/9275 jobs通过、退出码0；
 SceneBounds256/74与Scene1聚合通过，74条公理报告仅含标准允许集合。
 最终四新模块默认heartbeat，det数值在抽象Packet层固定；完整目标仍open。
+
+## S1.289：completion algebraic norm 与 actual raw tensor volume
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-COMPLETION-ALGEBRA-NORM` | `LocalCompletion.norm_algebraNorm_eq_completionNorm_of_contracting`；`Act1Scene1/LocalCompletionAlgebraNorm.lean` | 以actual padicAlgebra将completion看作有限维topological ℚ_p module，通过实际finite basis把乘法linear equiv运输到ℚ_p坐标空间。generic determinant/Haar计算scalar integral ball的真实measure为norm(Algebra.norm x)，已有integer quotient/index/Haar计算同一measure.toReal为raw completion norm。对actual非零收缩scalar比较两者得等式，未假定raw completion norm有NormedSpace ℚ_p结构或等距embedding。 |
+| `JT-SCENE1-LOCAL-TENSOR-RAW-VOLUME` | `LocalCompletion.Packet.normalizedHaar_scalarLattice_eq_completionNorm_product`；`Act1Scene1/LocalCompletionTensorRawVolume.lean` | 消费scalar algebraic-norm identity与S1.288 tensor Haar factorNorm乘积，计算真实contracting scalar lattice的Haar为actual completion norms的otherDimension幂乘积。 |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-TENSOR-RAW-VOLUME` | `SelectedThetaTensor.logFactorNorm_norm_eq_rootNorm`、`region_normalizedHaar_eq_rootNorm_product`；`Act1Scene1/IutInitialThetaSelectedTensorRawVolume.lean` | actual selected logValue norm=root norm，且nonzero/contracting来自actual source。实例化scalar norm law给logFactorNorm modulus=root norm，actual tensor region raw Haar因而等于actual roots的norm幂乘积；支持仍为全部selected prime fibre，指数保留其他factor维数。 |
+
+结果闭合实际收缩log-scalars所需的代数norm与raw completion norm身份，不以自由
+norm-law或degree证书给出。paper norm correction、factor finrank与e*f身份、
+weighted tensor volume及actual collation/hull/不同untilt/Bloch–Kato仍须继续证明。
+本轮不把raw Haar product改称论文最终thetaVolume。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。新增四公共theorem，无新公共数据
+定义；actual scalar Haar/index与coordinate determinant→generic raw tensor→actual
+selected root norm消费者。Core/Candidate/Obligations、冻结依赖与旧API不变，
+前置信任不增加。完整类型、模型义务、验证和资源见log4的S1-BND-289。
+
+S1.289 验证补记：最终窄热构建9278/9278 jobs通过、退出码0；
+SceneBounds260/78和Scene1聚合通过，78条公理报告仅含标准允许集合。
+scalar代数结构在签名内由actual hw派生，三模块默认heartbeat；完整目标仍open。
