@@ -1523,3 +1523,25 @@ theorem；local identity→interval bound/full weighted sum→unweighted equalit
 
 S1.282 验证补记：最终窄热构建9265/9265 jobs通过，退出码0；
 PaperAccounting77/50及Scene1聚合通过，50条公理报告只含标准允许集合。完整目标仍open。
+
+## S1.283：actual VBad ramification 与代表和式的严格差额
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-REPRESENTATIVE-RAMIFICATION-GAP` | `iutInitialThetaEll_dvd_qRootRelativeRamIdx_on_vbad`、`iutInitialThetaRepresentativeCoefficient_lt_one_on_vbad`、`iutInitialThetaFullBaseQPilotLogSum_lt_selectedPaperSum`、`iutInitialThetaReferenceAbsLogQ_lt_selectedPaperSum`；`Act1Scene1/IutInitialThetaRepresentativeRamificationGap.lean` | 对 actual full torsion q-root source 中 contracted base place 属于 VBad pullback 的 s，由实际 qroot^(2ℓ)=completionMap(base Tate q) 对整数 valuation 取 log，得到 ℓ∣relRamIdx(s/b)*baseQOrder(b)。实际 VBad 的 qOrder 与 ℓ 互素，故 ℓ∣relRamIdx(s/b)。ℓ≥5、其余相对 ramification≥1、moduli qPilotWeight≤1，推出实际 VBad moduli 代表系数<1。非空 VBad 和 S1.282 去权 iff 判据排除 full normalized q-pilot=unweighted selected paper sum，已有 upper bound给出严格小于；实际 reference absLogQ≤full，因此也严格小于 selected paper sum。 |
+
+推导消费实际 D 的 root equation、completion map、qOrder coprimality与非空性；
+不需要额外 root-class、ramification、uniformizer 或 paper mapping certificate。
+这与现有 IutRootClassRamification 的来源方法一致，本模块直接用已构造 q-root。
+没有复制新参考文件或构造特定 InitialThetaData，不能据 universally quantified
+conditional theorem 声称 actual D 的存在性已完成。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。新增四条 theorem，integer valuation
+producer→actual ramification divisor→strict coefficient→full strict separation→
+actual reference consumer。当前 normalization 下的去权等式被实际字段排除；
+应对 target 与对应 volume 的论文归一化作来源复审，不能补一个 coefficient=1
+假设。Core/Candidate/Obligations、既有声明与冻结依赖不变。完整动态记录、模型
+义务、验证和资源见 log4 的 S1-BND-283。
+
+S1.283 验证补记：最终窄热构建9266/9266 jobs通过，退出码0；
+PaperAccounting81/54及Scene1聚合通过，54条公理报告只含标准允许集合。完整目标仍open。
