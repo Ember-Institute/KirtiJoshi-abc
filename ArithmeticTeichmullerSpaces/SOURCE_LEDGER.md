@@ -1743,3 +1743,30 @@ SceneBounds277/93与Scene1聚合通过，93条公理报告仅含标准允许集�
 2:40.79，进程组采样峰值25708892KiB（约24.518GiB）；两次失败
 及三轮总耗时400.541s已逐轮记录log4。无Mathlib重编译。两个definition及八公共
 定理通过，默认heartbeat；完整数学目标仍open。
+
+
+## S1.292：actual relative completion degree 与 selected tensor 相对权重
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-COMPLETION-RELATIVE-DEGREE` | `LocalCompletion.relativeAlgebra`、`embedCompletion_padicEmb`、`relativeAlgebra_padicTower`、`finite_relativeAlgebra`、`finrank_relativeAlgebra_eq_ramification_inertia`、`inverse_relativeFinrank_eq_localDeg_ratio`、`inverse_relativeFinrank_mem_Ioc`；`Act1Scene1/LocalCompletionRelativeDegree.lean` | actual iutEmbedCompletion.toAlgebra构造真实relative completion extension。连续性及ℚ稠密性证明它与两个actual padicEmb相容，构造ℚ_p scalar tower；finite降基和finrank tower结合S1.290 absolute e*f及Prologue localDeg tower，计算relative degree=e_rel*f_rel和inverse degree=localDeg(w)/localDeg(v)，在(0,1]。本地独立证明，无参考代码复制或import；Joshi III eq:weights 3554–3557确定inverse relative degree的角色。 |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-TENSOR-RELATIVE-WEIGHTS` | `SelectedThetaTensor.moduliAt`、`relativeDegree`、`relativeWeight`、`relativeRootVolume`、`relativeDegree_eq_ramification_inertia`、`relativeWeight_eq_localDeg_ratio`、`relativeWeight_mem_Ioc`、`relativeRootVolume_eq_localDeg_product`、`relativeRootVolume_negLog_eq_ordp_sum`、`relativeRootVolume_eq_degreeVolume_pow_of_common_moduliDegree`；`Act1Scene1/IutInitialThetaSelectedTensorRelativeWeights.lean` | actual source torsion prime contraction到moduli，真实relative completion的finrank定义eq:weights候选权重。原始根范数的数值乘积写为localDeg(moduli)/localDeg(torsion)指数，negative log=∑localDeg(moduli)*ordp(root)*log p。显式common moduli local degree=d时，它等于actual selected region.degreeVolume^d；未从arbitrary D推导此common degree条件。 |
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；五definition、十二公共theorem，
+无新假设。真实continuous completion map→padic tower/relative finite field degree→
+actual selected weights/root numerical product→conditional region.degreeVolume。
+对应Scene1证明负担减少，前置信任不增加。Core/Candidate/Obligations及旧API不变。
+
+相对权重的数学数字已从真实completion扩张构造；该selected presentation尚未
+证明=论文V_p^oss/L'，且raw norm与paper uniformizer norm仍需转换。不同moduli
+localDeg不能无证据统一成一个Haar幂；common degree只作为明确conditional
+consumer，未把其作为Core公理。maximal order、代表选择独立性/重数、完整真实
+模型、Bloch–Kato/不同untilt/collation/hull/thetaVolume和最终3.12仍open。
+完整public类型、模型域、资源与验证见log4的S1-BND-292。
+
+S1.292 验证补记（2026-10-14 05:46:18 CST）：最终窄热构建9285/9285 jobs通过，退出码0；
+SceneBounds294/105与Scene1聚合通过，105条公理报告仅含标准允许集合。最终耗时
+2:50.48，组采样峰值25753260KiB（约24.560GiB）；前三次失败和
+四轮总耗时467.443s已逐轮记录log4，无Mathlib重编。五definition/abbrev与十二
+公共定理通过；common moduli degree消费者显式conditional，默认heartbeat，
+完整数学目标仍open。

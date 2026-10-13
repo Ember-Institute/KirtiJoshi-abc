@@ -140,5 +140,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorArithmeticVol
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionDegree
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedTensorDegreeVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorDegreeVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedTensorRelativeWeights
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionRelativeDegree
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
