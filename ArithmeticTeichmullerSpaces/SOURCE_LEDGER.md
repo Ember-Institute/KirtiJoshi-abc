@@ -1631,3 +1631,44 @@ transport→actual selected region consumer。Core/Candidate/Obligations和冻�
 
 S1.287 验证补记：最终窄热构建9271/9271 jobs通过，退出码0；
 SceneBounds239/61及Scene1聚合通过，61条公理报告只含标准允许集合。完整目标仍open。
+
+## S1.288：一般 p-adic determinant/Haar 与 actual selected tensor 体积
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-PADIC-HAAR-SCALAR-NORM` | `PadicHaar.distribHaarChar_eq_norm`、`measure_image_mul_eq_norm`、`measure_preimage_mul_eq_inv_norm`；`Act1Scene1/PadicHaarScalarNorm.lean` | p-adic valuation 分解任意非零 scalar 为 norm-one unit 与 p 的整数幂。norm-one scalar 的积分球 image等于原球，故Haar character=1；已有prime Haar scaling给出p的character。character hom与actual p-adic norm law给出任意scalar modulus=norm及任意set的image/preimage Haar公式。 |
+| `JT-SCENE1-PADIC-HAAR-DETERMINANT` | `map_matrix_productHaar_eq_norm_det_inv`、`map_matrix_haar_eq_norm_det_inv`、`map_linearEquiv_haar_eq_norm_det_inv`、`measure_image_linearEquiv_eq_norm_det`；`Act1Scene1/PadicHaarDeterminant.lean` | 实际scalar law给出diagonal矩阵对product Haar的缩放，S1.287 transvection measure preservation与Matrix.diagonal_transvection_induction_of_det_ne_zero给出任意invertible matrix map Haar=norm(det⁻¹)·Haar。Haar uniqueness与basis conjugation运输到任意有限维ℚ_p空间的actual additive Haar，inverse map给出image scaling norm(det)。保留冻结Mathlib实数证明结构的作者/Apache-2.0来源通知，不改Mathlib。 |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-TENSOR-DET-HAAR` | `SelectedThetaTensor.logScale`、`logScaleDet`、`logFactorNorm`、`region_eq_logScale_image`、`region_normalizedHaar_eq_det_norm`、`region_normalizedHaar_eq_factorNorm_product`、`regionIndex_inv_eq_det_norm`；`Act1Scene1/IutInitialThetaSelectedTensorDetHaar.lean` | actual selected log-scalars确定真实tensor scaling map/matrix，region是unit integral lattice的image。general p-adic Haar law给出normalized region measure=norm(actual scaling determinant)；已有factor determinant theorem给出factor algebraic norm的模乘积，各项指数是其他factor维数乘积。真实regionIndex⁻¹也被识别为该det norm。 |
+
+完整 p-adic det/Haar law消费actual scalar/Fubini/矩阵生成元，不需要free modulus
+certificate。actual tensor使用原selected prime-fibre和actual log-scalars；finite
+instance由实际tensorBasis派生。factor algebraic norm的p-adic模如何等于actual
+completion norm、对应local degree与论文weighted-volume仍需证明。这里不把
+raw tensor Haar改称paper product、Bloch–Kato类或theta hull。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；四个actual scale/norm定义及十三
+公共theorem，scalar producer→matrix/finite-dimensional det/Haar→actual tensor
+region/index/factor-norm consumer。Core/Candidate/Obligations、旧target/API和
+冻结依赖不变，前置信任不增加。完整类型、模型义务、验证和资源见log4的
+S1-BND-288。
+
+S1.288 tensor分层补记：`JT-SCENE1-LOCAL-COMPLETION-TENSOR-DET-HAAR` 登记
+`LocalCompletion.Packet.normalizedHaar_scalarLattice_eq_det_norm` 与
+`normalizedHaar_scalarLattice_eq_factorNorm_product`；生产路径
+`Act1Scene1/LocalCompletionTensorDetHaar.lean`。抽象actual Packet P上的tensor
+Haar→det norm→factor algebraic norms提供稳定proof接口，actual selected consumer
+直接实例化。generic theorem显式接actual factor scalars及nonzero proof，不接
+free measure/scaling证书。最终四窄叶子、四定义、十三公共theorem，SceneBounds
+256/74、全工程907/460；Core仍R5，前置信任不增加。
+
+S1.288 determinant边界补记：`LocalCompletion.Packet.scaleDet P z hz` 按抽象Packet
+的固定有限索引/decidable实例直接定义为 `(P.scaleMatrix z hz).det : ℚ_p`；actual
+`SelectedThetaTensor.logScaleDet` 是同一实际log-scalars的实例化。将determinant
+数值在Packet层固定，避免actual D层重复合成矩阵索引，不改变数学量或参数。
+generic Haar norm公式及actual region/index consumer都消费这个actual matrix
+数值，factor norm乘积仍由同一matrix determinant theorem证明。新增scaleDet的
+check，最终四定义、十三theorem，SceneBounds256/74、总计907/460。
+
+S1.288 验证补记：最终窄热构建9275/9275 jobs通过、退出码0；
+SceneBounds256/74与Scene1聚合通过，74条公理报告仅含标准允许集合。
+最终四新模块默认heartbeat，det数值在抽象Packet层固定；完整目标仍open。
