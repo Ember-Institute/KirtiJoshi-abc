@@ -120,6 +120,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.lattice_balls_module_free
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_module_finite
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_module_free
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_span_eq_top
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily

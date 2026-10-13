@@ -40,5 +40,14 @@ theorem region_module_free : Module.Free ℤ_[p] (region D p c hc) := by
     LocalCompletion.Packet.tensorIntegralTorsionFree P
   exact Module.free_of_finite_type_torsion_free'
 
+theorem region_span_eq_top :
+    Submodule.span ℚ_[p] (region D p c hc : Set (packet D p c hc).Tensor) = ⊤ := by
+  let P := packet D p c hc
+  rw [region_eq_ballLattice]
+  apply LocalCompletion.Packet.lattice_balls_span_eq_top P
+  intro i
+  exact norm_pos_iff.mpr
+    ((IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).qroot_ne_zero (c i))
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness

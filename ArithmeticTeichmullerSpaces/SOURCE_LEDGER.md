@@ -1015,3 +1015,18 @@ weighted volume、maximal-order/hull、untilt/Bloch–Kato 和最终 Corollary 3
 `Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
 依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor region 的 free-module
 义务减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.255。
+
+## S1.256：实际张量整格的满秩 span
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-FULL-SPAN` | `region_span_eq_top`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | 将实际 q-root norm 正半径代入通用 `lattice_balls_span_eq_top`，证明 `ℚ_[p]` 张量空间中实际 region 的 span 为 top。半径正性来自实际 q-root 非零性；没有使用 volume、index、basis 或 hull 假设。 |
+
+该声明只闭合 actual region 的 rational full-span。实际 `IsLattice` 结构的
+scalar-tower 参数、具体 integral/rational basis、factor norm/degree index 公式、
+论文 weighted volume、maximal-order/hull、untilt/Bloch–Kato 和最终 Corollary 3.12
+仍 open。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
+依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor region 的 full-span
+义务减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.256。
