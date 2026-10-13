@@ -1,5 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScale
-import Mathlib.LinearAlgebra.Determinant
+import Mathlib.RingTheory.Norm.Defs
 
 /-!
 source-id: JT-SCENE1-LOCAL-TENSOR-SCALE-MATRIX
@@ -51,6 +51,38 @@ theorem scaleMatrix_det_eq (z : ∀ i, P.Factor i) (hz : ∀ i, z i ≠ 0) :
 theorem scaleMatrix_det_ne_zero (z : ∀ i, P.Factor i) (hz : ∀ i, z i ≠ 0) :
     (P.scaleMatrix z hz).det ≠ 0 :=
   (LinearEquiv.isUnit_det (P.scale z hz) P.tensorBasis P.tensorBasis).ne_zero
+
+/-- Multiplication by one actual local scalar in the finite basis of its completion. -/
+def factorMulMatrix (i : ι) (x : P.Factor i) :
+    Matrix (Fin (Module.finrank ℚ_[p] (P.Factor i)))
+      (Fin (Module.finrank ℚ_[p] (P.Factor i))) ℚ_[p] :=
+  Algebra.leftMulMatrix (Module.finBasis ℚ_[p] (P.Factor i)) x
+
+theorem factorMulMatrix_apply (i : ι) (x : P.Factor i)
+    (k l : Fin (Module.finrank ℚ_[p] (P.Factor i))) :
+    P.factorMulMatrix i x k l =
+      (Module.finBasis ℚ_[p] (P.Factor i)).repr
+        (x * Module.finBasis ℚ_[p] (P.Factor i) l) k :=
+  Algebra.leftMulMatrix_eq_repr_mul (Module.finBasis ℚ_[p] (P.Factor i)) x k l
+
+theorem factorMulMatrix_det_eq_norm (i : ι) (x : P.Factor i) :
+    (P.factorMulMatrix i x).det = Algebra.norm ℚ_[p] x :=
+  (Algebra.norm_eq_matrix_det (Module.finBasis ℚ_[p] (P.Factor i)) x).symm
+
+theorem factorMulMatrix_det_ne_zero (i : ι) (x : P.Factor i) (hx : x ≠ 0) :
+    (P.factorMulMatrix i x).det ≠ 0 := by
+  rw [factorMulMatrix_det_eq_norm]
+  exact (IsUnit.map (Algebra.norm ℚ_[p]) (isUnit_iff_ne_zero.mpr hx)).ne_zero
+
+theorem factorMulMatrix_det_algebraMap (i : ι) (a : ℚ_[p]) :
+    (P.factorMulMatrix i (algebraMap ℚ_[p] (P.Factor i) a)).det =
+      a ^ Module.finrank ℚ_[p] (P.Factor i) := by
+  rw [factorMulMatrix_det_eq_norm, Algebra.norm_algebraMap]
+
+theorem scaleMatrix_eq_factorMul_prod (z : ∀ i, P.Factor i) (hz : ∀ i, z i ≠ 0)
+    (k l : P.BasisIndex) :
+    P.scaleMatrix z hz k l = ∏ i, P.factorMulMatrix i (z i) (k i) (l i) := by
+  simp only [scaleMatrix_apply, factorMulMatrix_apply]
 
 end
 end JoshiTeich.Act1Scene1.LocalCompletion.Packet

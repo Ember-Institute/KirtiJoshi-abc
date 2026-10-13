@@ -139,6 +139,17 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScaleMatrix
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_eq
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_ne_zero
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_eq_regionBasis
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.factorMulMatrix
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.factorMulMatrix_apply
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.factorMulMatrix_det_eq_norm
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.factorMulMatrix_det_ne_zero
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.factorMulMatrix_det_algebraMap
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix_eq_factorMul_prod
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.factorLogMulMatrix
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.factorLogNorm
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.factorLogMulMatrix_det_eq_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.factorLogMulMatrix_det_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_eq_factorLogMul_prod
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily

@@ -1143,3 +1143,22 @@ thetaVolume 与最终 Corollary 3.12 仍 open。验证状态和资源见 log4 �
 前置信任不增加。local/residue degree、论文 representatives/权重、
 maximal-order/hull、不同 untilt/Bloch–Kato、真实 q-pilot/thetaVolume 和最终
 Corollary 3.12 仍 open。验证与资源见 log4 的 S1.263。
+
+## S1.264：实际 factor 乘法矩阵与域范数
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-FACTOR-NORM` | `Packet.factorMulMatrix`、`factorMulMatrix_apply`、`factorMulMatrix_det_eq_norm`、`factorMulMatrix_det_ne_zero`、`factorMulMatrix_det_algebraMap`、`scaleMatrix_eq_factorMul_prod`；`Act1Scene1/LocalCompletionTensorScaleMatrix.lean` | 用实际 completion 的有限 `Module.finBasis` 构造 `Algebra.leftMulMatrix`，由 Mathlib `norm_eq_matrix_det` 识别 determinant 为 `Algebra.norm ℚ_[p]`。非零标量的 unit 经 norm hom 给出非零 determinant；基域标量的 norm 为 `a ^ Module.finrank`。S1.263 tensor coordinate 公式给出 tensor matrix 项是这些 factor matrix 项之积。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-FACTOR-NORM` | `factorLogMulMatrix`、`factorLogNorm`、`factorLogMulMatrix_det_eq_norm`、`factorLogMulMatrix_det_ne_zero`、`scaleMatrix_eq_factorLogMul_prod`；`Act1Scene1/IutInitialThetaTensorScaleMatrix.lean` | 将实际 canonical logarithm scalar 代入 generic multiplication matrix，证明 determinant 等于 source completion 的实际 algebraic norm 且非零，actual tensor scaleMatrix 逐项是 factor matrices 的乘积。`factorLogNorm` 明确使用 `LocalCompletion.padicAlgebra (P.residueChar_eq i)`，`P = packet D p c hc`；不接收 detached norm/determinant certificate。 |
+
+`Algebra.norm` 的值位于 `ℚ_[p]`，它是域扩张范数，与 completion 的实数范数
+`‖x‖`、paper-normalized norm 和 Haar character 的关系尚须证明；本轮不将这些
+量混同。tensor determinant 的 factor-norm 幂乘积也尚未闭合，当前只识别各
+factor determinant，并把 factor matrices 接入同一 actual tensor matrix。
+
+本地 proof terms，无新 IUT 代码复制或参考工程依赖。数学用途是 Joshi III
+`le:volume-lemma2/3` 的后续 tensor determinant/volume 会计。`Prologue-R5 →
+Prologue-R5`，operation `derive`，owner Scene1；不改 Core/Candidate/Obligations
+或 Lake 依赖。factor norm 接口义务减少，前置信任不增加。Haar/index 数值评价、
+local/residue degree、论文处集代表和 normalization、maximal-order/hull、不同
+untilt/Bloch–Kato、真实 q-pilot/thetaVolume 及最终 3.12 仍 open；验证见 log4。

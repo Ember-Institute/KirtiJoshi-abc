@@ -45,6 +45,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScaleMatrix
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix_apply
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_eq_regionBasis
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.factorLogMulMatrix_det_eq_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.factorLogMulMatrix_det_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_eq_factorLogMul_prod
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data

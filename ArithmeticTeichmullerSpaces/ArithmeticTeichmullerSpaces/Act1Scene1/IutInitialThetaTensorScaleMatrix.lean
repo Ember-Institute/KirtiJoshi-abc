@@ -13,6 +13,7 @@ boundary: Scene1/Derived
 namespace JoshiTeich.Act1Scene1.InitialThetaTensorWitness
 
 open JoshiTeich.Prologue NumberField
+open scoped BigOperators
 
 universe u
 noncomputable section
@@ -44,6 +45,29 @@ theorem scaleMatrix_det_eq_regionBasis :
         (scale D p c hc).toLinearEquiv.toLinearMap).det := by
   rw [LinearMap.det_toMatrix]
   exact scaleMatrix_det_eq D p c hc
+
+/-- The local multiplication matrix uses the actual canonical logarithm scalar. -/
+def factorLogMulMatrix (i : ι) :=
+  (packet D p c hc).factorMulMatrix i (InitialThetaLogWitness.value D (c i))
+
+/-- The actual algebraic norm down to `ℚ_p`, with the source completion's algebra structure. -/
+def factorLogNorm (i : ι) : ℚ_[p] :=
+  @Algebra.norm ℚ_[p] ((packet D p c hc).Factor i) _ _
+    (LocalCompletion.padicAlgebra ((packet D p c hc).residueChar_eq i))
+    (InitialThetaLogWitness.value D (c i))
+
+theorem factorLogMulMatrix_det_eq_norm (i : ι) :
+    (factorLogMulMatrix D p c hc i).det = factorLogNorm D p c hc i :=
+  LocalCompletion.Packet.factorMulMatrix_det_eq_norm (packet D p c hc) i _
+
+theorem factorLogMulMatrix_det_ne_zero (i : ι) :
+    (factorLogMulMatrix D p c hc i).det ≠ 0 :=
+  LocalCompletion.Packet.factorMulMatrix_det_ne_zero (packet D p c hc) i _
+    (InitialThetaLogWitness.value_ne_zero D (c i))
+
+theorem scaleMatrix_eq_factorLogMul_prod (k l : (packet D p c hc).BasisIndex) :
+    scaleMatrix D p c hc k l = ∏ i, factorLogMulMatrix D p c hc i (k i) (l i) :=
+  LocalCompletion.Packet.scaleMatrix_eq_factorMul_prod (packet D p c hc) _ _ k l
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness
