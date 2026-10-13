@@ -47,6 +47,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadQRootChoiceScen
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadQRootChoice
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootChoice
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionRepeatedPacketVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312QProductAccounting
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -199,3 +200,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionRepeatedPacketVolum
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.repeatedPacket_factor_finrank
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.repeatedPacket_degreeVolume_eq
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.repeatedPacket_degreeLogVolume_eq
+#print axioms JoshiTeich.Act1Scene1.corollary312_qProduct_pos
+#print axioms JoshiTeich.Act1Scene1.corollary312_log_qProduct_eq_ellStar_mul_sum_log
+#print axioms JoshiTeich.Act1Scene1.corollary312_negLog_qProduct_eq_ellStar_mul_sum_negLog
