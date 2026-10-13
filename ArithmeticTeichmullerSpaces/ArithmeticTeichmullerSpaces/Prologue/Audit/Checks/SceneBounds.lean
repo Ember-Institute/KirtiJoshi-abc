@@ -22,6 +22,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorRegion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScale
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIndex
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScaleMatrix
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -130,6 +131,14 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionRationalBasis
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionRationalBasis_apply
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionRationalBasis_integral_span
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix_apply
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix_det_eq
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix_det_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_eq
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_eq_regionBasis
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily

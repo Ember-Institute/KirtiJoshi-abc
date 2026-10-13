@@ -15,6 +15,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorRegion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScale
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIndex
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScaleMatrix
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -41,6 +42,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_normalizedHaar_eq_inv_index
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_finrank_eq_factor_prod
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionRationalBasis_integral_span
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix_apply
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_eq_regionBasis
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_ne_zero
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data

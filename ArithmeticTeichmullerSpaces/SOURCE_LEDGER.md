@@ -1124,3 +1124,22 @@ factor norm 或 `regionIndex`，也不识别论文 representatives/maximal-order
 及 integral-span 恢复义务减少，前置信任不增加。局部维数到 degree 的识别、
 scaled-index 数值评价、论文权重、不同 untilt/Bloch–Kato、真实 q-pilot 满足模型、
 thetaVolume 与最终 Corollary 3.12 仍 open。验证状态和资源见 log4 的 S1.262。
+
+## S1.263：实际张量缩放矩阵与基无关行列式
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-SCALE-MATRIX` | `Packet.scaleMatrix`、`scaleMatrix_apply`、`scaleMatrix_det_eq`、`scaleMatrix_det_ne_zero`；`Act1Scene1/LocalCompletionTensorScaleMatrix.lean` | 使用实际 factor tensor basis 与 `PiTensorProduct.congr` 缩放，矩阵每项为各 factor 的 `Module.finBasis` 坐标之积。Mathlib `LinearMap.toMatrix_apply`、`Basis.piTensorProduct_repr_tprod_apply`、`LinearMap.det_toMatrix` 和 `LinearEquiv.isUnit_det` 证明该矩阵行列式等于实际缩放自同构行列式且非零。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-SCALE-MATRIX` | `InitialThetaTensorWitness.scaleMatrix`、`scaleMatrix_det_eq`、`scaleMatrix_det_ne_zero`、`scaleMatrix_det_eq_regionBasis`；`Act1Scene1/IutInitialThetaTensorScaleMatrix.lean` | 标量全部是 actual canonical logarithm 值，非零性由实际 q-root source 提供。消费 generic matrix，并证明其行列式等于 S1.262 的 actual region rational basis 下同一缩放的行列式；不接收 detached matrix 或 determinant 字段。 |
+
+本地 proof terms，无新的 IUT 代码复制或参考工程导入。为 Joshi III
+`le:volume-lemma2/3` 后续缩放测度会计提供实际矩阵/行列式接口；当前只展开
+矩阵项，尚未将 determinant 评价为逐 factor field-norm/degree 乘积，也未将
+其范数连接到 `distribHaarChar`、`regionIndex` 或 paper weighted volume。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。两个新叶子模块
+不改 Core/Candidate/Obligations 或 Lake 依赖，generic producer 被实际消费者
+使用，实际 region basis 参与最终行列式等式。Scene1 的矩阵连接义务减少，
+前置信任不增加。local/residue degree、论文 representatives/权重、
+maximal-order/hull、不同 untilt/Bloch–Kato、真实 q-pilot/thetaVolume 和最终
+Corollary 3.12 仍 open。验证与资源见 log4 的 S1.263。
