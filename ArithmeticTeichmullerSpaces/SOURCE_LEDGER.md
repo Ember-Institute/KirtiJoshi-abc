@@ -1795,3 +1795,29 @@ SceneBounds304/113与Scene1聚合通过，113条公理报告仅含标准允许�
 3:15.99，组采样峰值25684344KiB（约24.494GiB）；首轮失败与
 两轮总耗时274.217s已记录log4，无Mathlib重编。两个definition及八公共定理
 通过，默认heartbeat；具体actual unequal-degree D模型仍open，整体目标仍open。
+
+
+## S1.294：actual relative q-root product 的完整 q-pilot 全局会计
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-RELATIVE-QROOT-FACTOR` | `iutInitialThetaModuliSelectedSource_liesOver`、`iutInitialThetaRepresentativeCoefficient_mul_ramIdx_eq_localDeg_div_finrank`、`iutInitialThetaRelativeQRootFactor`、`iutInitialThetaRelativeQRootFactor_eq_localDeg_ratio`、`iutInitialThetaRelativeQRootFactor_mem_Ioo`、`iutInitialThetaRelativeQRootFactor_negLog_div_eq_moduliJLogTerm`；`Act1Scene1/IutInitialThetaRelativeQRootFactor.lean` | selected root来自actual moduli-source equivalence及actual section liesOver。inverse relative completion finrank（真实embedding.toAlgebra）给localDeg(moduli)/localDeg(source)，raw root norm定义positive contracting factor。actual ramification tower给representativeCoefficient*ramIdx(source)=localDeg(moduli)/globalDegree(moduli)，故factor negative log/global degree=actual moduli j-log/(2ℓ*global degree)。独立本地证明，无参考代码复制/import；Joshi III eq:weights 3554–3557是权重来源角色，paper norm/carrier/hull身份不假定。 |
+| `JT-SCENE1-INITIAL-THETA-RELATIVE-QROOT-PRODUCT` | `iutInitialThetaRelativeQRootProduct`、`iutInitialThetaNormalizedRelativeQRootProduct`、`iutInitialThetaRelativeQRootProduct_pos`、`iutInitialThetaRelativeQRootProduct_negLog_div_eq_fullBaseSum`、`iutInitialThetaNormalizedRelativeQRootProduct_negLog_eq_fullBaseSum`；`Act1Scene1/IutInitialThetaRelativeQRootProduct.lean` | actual所有odd moduli representatives的finite factor product，再以moduli global degree归一化。完整moduli j-log会计给normalized product negative log=actual full odd-support base q-pilot。没有独立section coverage或sum equality证书，未删除相对次数/全局次数。乘积仍为presentation-indexed numerical value，未提升为只依赖tensor区域的volume。 |
+| `JT-SCENE1-INITIAL-THETA-RELATIVE-QROOT-REFERENCE-BOUND` | `iutInitialThetaReferenceAbsLogQ_le_normalizedRelativeQRootProduct_negLog`、`Corollary312QPilotData.absLogQ_le_normalizedRelativeQRootProduct_negLog_ofCanonicalInitialThetaLink`；`Act1Scene1/IutInitialThetaRelativeQRootReferenceBound.lean` | actual VBad reference q-pilot是full odd-support sum的restriction，消费exact normalized-root product identity得到reference≤negative log；canonical Scene1/reference bridge接入同一upper bound。现有hLink/hEll和显式θ/packetHull payload保留，无新自由volume参数或最终theta estimate。 |
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；三个definition、十公共theorem。
+真实relative completion factor/coefficient→完整normalized selected product→actual
+reference/canonical消费者。对应Scene1归一化会计负担减少，新增0数学假设，前置
+信任不增加，Core/Candidate/Obligations和旧API不变。完整类型及资源见log4的
+S1-BND-294。
+
+本单元精确等式对应full odd support；actual VBad≤full区别、S1.283去权严格
+差额及S1.293区域呈现必要条件均保留。paper V_p^oss/L'与norm规范化、真正
+presentation/representative independence、maximal order、完整真实模型、Bloch–Kato/
+untilt/collation/hull/thetaVolume与最终3.12仍open。
+
+S1.294 验证补记（2026-10-14 06:15:47 CST）：最终窄热构建9290/9290 jobs通过、退出码0；
+SceneBounds317/123与Scene1聚合通过，123条公理报告仅含标准允许集合。最终耗时
+3:41.64，组采样峰值25862828KiB（约24.665GiB）；两次失败和
+三轮总耗时492.556s已逐轮记录log4，无Mathlib重编。三个definition与十公共
+定理通过、默认heartbeat；actual VBad/full支撑差别及整体目标仍open。
