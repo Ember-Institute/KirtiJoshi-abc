@@ -1088,3 +1088,21 @@ volume、maximal-order/hull、untilt/Bloch–Kato 或最终 Corollary 3.12。
 `Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
 依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor lattice 的秩会计义务
 减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.260。
+
+## S1.261：张量维数乘积与实际整格秩
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-FACTOR-FINRANK` | `Packet.tensor_finrank_eq_factor_prod`；`Act1Scene1/LocalCompletionTensorIntegralBasis.lean` | Mathlib `Module.finrank_eq_card_basis` 与 `Fintype.card_pi`；本地实际 completion tensor 的 `tensorBasis` 索引为 `∀ i, Fin (Module.finrank ℚ_[p] (P.Factor i))`。得到 `Module.finrank ℚ_[p] P.Tensor = ∏ i, Module.finrank ℚ_[p] (P.Factor i)`，不接收维数乘积证书。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-FACTOR-FINRANK` | `region_finrank_eq_factor_prod`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | 消费通用张量维数公式和 S1.260 实际整格/ambient 秩等式。实际 canonical q-root region 的 `ℤ_[p]` 秩等于 tuple 中各实际完成域的 `ℚ_[p]` 维数之积。每个 factor 的 module 明确使用 `LocalCompletion.padicAlgebra (P.residueChar_eq i)`，其中 `P = packet D p c hc`。 |
+
+本轮闭合实际 tuple 的张量维数乘积及整格秩公式，服务于 Joshi III
+`le:volume-lemma2/3` 后续张量测度缩放的维数计数。局部维数尚未识别为论文
+local-degree/residue-degree 表达，tuple 尚未识别为论文 representatives；该公式
+也未评价缩放 determinant、`regionIndex` 或 weighted Haar volume。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。没有新参考代码
+复制、Lake 依赖或 Core/Candidate/Obligations 改动；两个声明有实际生产者/消费者
+关系。Scene1 的局部维数计数义务减少，前置信任不增加。rational basis extension、
+factor norm/degree 指数公式、maximal-order/hull、不同 untilt/Bloch–Kato、论文
+处集权重和最终 Corollary 3.12 仍 open。验证与资源见 log4 的 S1.261。

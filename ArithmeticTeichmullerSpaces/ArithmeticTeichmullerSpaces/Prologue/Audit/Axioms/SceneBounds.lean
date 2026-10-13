@@ -39,6 +39,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_eq_scaledUnitLattice
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_normalizedHaar_eq
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_normalizedHaar_eq_inv_index
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_finrank_eq_factor_prod
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data

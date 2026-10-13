@@ -3,16 +3,18 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorIntegralBasis
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-TENSOR-INTEGRAL-BASIS
-fidelity: derives finite generation, freeness, full rational span and the
-explicit lattice structure of the actual q-root logarithm tensor region.
-Generic lattice lemmas live in the companion module; the actual integral
-basis, tensor index evaluation, weighted volume and hull remain open.
+fidelity: derives finite generation, freeness, full rational span, lattice
+structure and a finite integral basis of the actual q-root logarithm tensor
+region. Its integral rank equals the product of the actual local factor
+dimensions. Rational basis extension, tensor index evaluation, weighted
+volume and hull remain open.
 boundary: Scene1/Derived
 -/
 
 namespace JoshiTeich.Act1Scene1.InitialThetaTensorWitness
 
 open JoshiTeich.Prologue NumberField
+open scoped BigOperators
 
 universe u
 noncomputable section
@@ -106,6 +108,14 @@ theorem region_finrank_eq_tensor_finrank :
       (region D p c hc) (region_isLattice D p c hc)
   apply Module.finrank_eq_of_rank_eq
   exact hRank.trans (Module.finrank_eq_rank (R := ℚ_[p]) (M := P.Tensor)).symm
+
+/-- The actual integral region has the product of the local factor dimensions as its rank. -/
+theorem region_finrank_eq_factor_prod :
+    Module.finrank ℤ_[p] (region D p c hc) =
+      ∏ i, @Module.finrank ℚ_[p] ((packet D p c hc).Factor i) _ _
+        (LocalCompletion.padicAlgebra ((packet D p c hc).residueChar_eq i)).toModule := by
+  rw [region_finrank_eq_tensor_finrank]
+  exact LocalCompletion.Packet.tensor_finrank_eq_factor_prod (packet D p c hc)
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness

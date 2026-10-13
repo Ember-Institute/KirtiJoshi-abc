@@ -8,8 +8,9 @@ source-id: JT-SCENE1-LOCAL-TENSOR-INTEGRAL-BASIS
 source: actual compact open integral tensor lattices; finite-dimensional
 p-adic coordinates and Mathlib finite torsion-free modules over a PID.
 fidelity: proves bounded integral submodules finitely generated, and
-positive-radius tensor lattices full and free. This constructs integral
-bases needed for finite-index calculations, not a maximal order or hull.
+positive-radius tensor lattices full and free. The tensor dimension is the
+product of factor dimensions. These are prerequisites for integral bases
+and finite-index calculations; maximal order and hull remain open.
 boundary: Scene1/Derived
 -/
 
@@ -127,6 +128,12 @@ theorem lattice_balls_module_free (r : ι → ℝ) (hr : ∀ i, 0 < r i) (hr1 : 
       (fun i => Metric.closedBall_subset_closedBall (hr1 i))))
   letI : Module.IsTorsionFree ℤ_[p] P.Tensor := tensorIntegralTorsionFree P
   exact Module.free_of_finite_type_torsion_free'
+
+theorem tensor_finrank_eq_factor_prod :
+    Module.finrank ℚ_[p] P.Tensor =
+      ∏ i, Module.finrank ℚ_[p] (P.Factor i) := by
+  rw [Module.finrank_eq_card_basis P.tensorBasis]
+  simp [BasisIndex, Fintype.card_pi]
 
 end
 end JoshiTeich.Act1Scene1.LocalCompletion.Packet
