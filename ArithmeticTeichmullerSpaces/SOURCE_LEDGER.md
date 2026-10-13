@@ -1821,3 +1821,28 @@ SceneBounds317/123与Scene1聚合通过，123条公理报告仅含标准允许�
 3:41.64，组采样峰值25862828KiB（约24.665GiB）；两次失败和
 三轮总耗时492.556s已逐轮记录log4，无Mathlib重编。三个definition与十公共
 定理通过、默认heartbeat；actual VBad/full支撑差别及整体目标仍open。
+
+
+## S1.295：actual VBad relative q-root product 的同支撑 reference/Scene1 等式
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-VBAD-MODULI-J-ACCOUNTING` | `iutInitialThetaVBadModuliFinset`、`mem_iutInitialThetaVBadModuliFinset_iff`、`iutInitialThetaReferenceBaseModuliFiber_eq`、`iutInitialThetaReferenceAbsLogQ_eq_baseJLogSum`、`iutInitialThetaReferenceAbsLogQ_eq_VBadModuliJLogSum`；`Act1Scene1/IutInitialThetaVBadModuliJAccounting.lean` | actual D.VBad⊆odd moduli support构造finite VBad carrier，并证明membership iff D.VBad。reference badFinset_spec与canonical contraction唯一性证明Q.badFinset的moduli fibres等于实际完整BaseModuliFiber。actual admissible qOrder与source Tate j-log身份，再经完整fibre全局次数归一化，给reference absLogQ=准确VBad moduli j-log/(2ℓ*moduli global degree)。无section coverage或额外fibre证书。独立本地证明，无参考代码复制/import。 |
+| `JT-SCENE1-INITIAL-THETA-VBAD-RELATIVE-QROOT-PRODUCT` | `iutInitialThetaVBadModuliAt`、`iutInitialThetaVBadRelativeQRootProduct`、`iutInitialThetaNormalizedVBadRelativeQRootProduct`、两个positive定理、`iutInitialThetaVBadRelativeQRootProduct_negLog_div_eq_referenceAbsLogQ`、`iutInitialThetaNormalizedVBadRelativeQRootProduct_negLog_eq_referenceAbsLogQ`、`iutInitialThetaNormalizedVBadRelativeQRootProduct_eq_exp_neg_referenceAbsLogQ`；`Act1Scene1/IutInitialThetaVBadRelativeQRootProduct.lean` | 精确VBad moduli representatives上限制S1.294 actual inverse relative completion degree root factor。degree-normalized product的negative log=actual reference absLogQ，产品exp(-reference absLogQ)作为后验推论，未用该exp值直接定义产品。允许空VBad，无额外非空性条件；product仍为actual presentation-indexed raw norm数值，未识别为theta/hull volume。 |
+| `JT-SCENE1-INITIAL-THETA-VBAD-RELATIVE-QROOT-SCENE-BRIDGE` | `Corollary312QPilotData.absLogQ_eq_normalizedVBadRelativeQRootProduct_negLog_ofCanonicalInitialThetaLink`；`Act1Scene1/IutInitialThetaVBadRelativeQRootSceneBridge.lean` | canonical Scene1/reference q-pilot bridge消费新exact VBad root product identity，提供canonical Scene1 absLogQ同支撑negative log等式。现有hLink/hEll和显式θ/packetHull payload保留，不加入free coverage、sum equality或目标体积假设。 |
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；四个definition/abbrev、十公共
+定理。actual VBad carrier/complete fibres→reference j-log→exact restricted
+relative-root product→canonical Scene1 consumer。对应Scene1支撑/数值会计负担
+减少，新增0数学假设，前置信任不增加，Core/Candidate/Obligations与旧API不变。
+完整类型及资源见log4的S1-BND-295。
+
+等式使用准确VBad限制，未声称reference=full odd-support。S1.293区域呈现必要
+条件、paper V_p^oss/L'及norm规范化、代表选择独立性/重数、maximal order、完整
+真实模型、Bloch–Kato/untilt/collation/hull/thetaVolume及最终3.12仍open。
+
+S1.295 验证补记（2026-10-14 06:29:32 CST）：首次窄热构建9293/9293 jobs通过，退出码0；
+SceneBounds331/133与Scene1聚合通过，133条公理报告仅含标准允许集合。耗时
+4:28.34，组采样峰值25860184KiB（约24.662GiB）；无Mathlib
+重编。四definition/abbrev与十公共定理通过、默认heartbeat；同支撑actual
+reference/normalized-root product/canonical Scene1身份闭合，整体数学目标仍open。
