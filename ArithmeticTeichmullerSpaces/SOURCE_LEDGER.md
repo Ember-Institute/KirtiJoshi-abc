@@ -1770,3 +1770,28 @@ SceneBounds294/105与Scene1聚合通过，105条公理报告仅含标准允许�
 四轮总耗时467.443s已逐轮记录log4，无Mathlib重编。五definition/abbrev与十二
 公共定理通过；common moduli degree消费者显式conditional，默认heartbeat，
 完整数学目标仍open。
+
+
+## S1.293：actual tensor 相对权重的区域呈现相容性审计
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-WEIGHT-DESCENT` | `LocalCompletion.Packet.primeAtScalar`、`primeAtScalar_ne_zero`、`primeAtScalar_lattice_eq`、`factor_prime_norm_eq_inv_pow_localDeg`、`weightedScalarVolume`、`weightedScalarVolume_primeAt_eq`、`weightedScalarVolume_primeAt_eq_iff`、`weightedDegree_eq_of_prime_region_volume`；`Act1Scene1/LocalCompletionTensorWeightDescent.lean` | actual scalar tensor multilinearity/scaleAt_apply使primeAtScalar在任一factor放p得到相同region；actual p norm=(p⁻¹)^localDeg及rpow指数单射证明weighted norm product相同iff localDeg(i)*γ(i)相同。任何只依赖region且满足这些factor公式的函数都必须满足此条件。独立本地证明，无参考代码复制/import；Joshi III ss:weighted-vol 3522–3543将weighted product描述为tensor subset function，是此审计的数学作用来源。 |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-TENSOR-WEIGHT-DESCENT` | `SelectedThetaTensor.relativeWeightedPrime_eq_iff_moduliDegree_eq`、`no_relative_region_volume_of_distinct_moduliDegree`；`Act1Scene1/IutInitialThetaSelectedTensorWeightDescent.lean` | S1.292 actual inverse relative finrank给γ=localDeg(moduli)/localDeg(torsion)，所以两个prime presentations weighted值相同iff moduli localDeg相同。显式实际i,j的moduli degrees不同排除任何满足raw norm factor公式的region-only函数。未构造这样的具体D；不声称paper carrier/norm/hull等同或整个论文反例。 |
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；两个definition和八公共theorem。
+V只在必要条件及否定存在证明中量化，不作为新自由volume字段进入生产者。
+新增0数学假设，前置信任不增加；Scene1呈现独立性条件被精确定位。Core/
+Candidate/Obligations与旧API不变。完整类型和资源见log4的S1-BND-293。
+
+S1-MODEL-293（owner Scene1，open）：具体actual D及同一selected prime fibre中
+moduli localDeg不同的两个处尚未构造。当前结论是raw norm与inverse relative
+weights组合的条件性排除；paper norms、处集、untilts、grouping或额外presentation
+数据的来源转换仍需复审。完整真实模型、V_p^oss/L'、代表重数/选择独立性、
+maximal order、Bloch–Kato/collation/hull/thetaVolume及最终3.12仍open。
+
+S1.293 验证补记（2026-10-14 05:57:23 CST）：最终窄热构建9287/9287 jobs通过，退出码0；
+SceneBounds304/113与Scene1聚合通过，113条公理报告仅含标准允许集合。最终耗时
+3:15.99，组采样峰值25684344KiB（约24.494GiB）；首轮失败与
+两轮总耗时274.217s已记录log4，无Mathlib重编。两个definition及八公共定理
+通过，默认heartbeat；具体actual unequal-degree D模型仍open，整体目标仍open。
