@@ -1420,3 +1420,25 @@ thetaVolume和最终Corollary3.12仍open。动态记录/资源见log4的S1-BND-2
 
 S1.277 验证补记：最终窄构建9260/9260 jobs通过，退出码0；
 PaperAccounting54/31及Scene1聚合通过，公理仅有标准允许集合。完整目标仍open。
+
+## S1.278：actual q-pilot 的 j-log 和完整纤维归一化
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QPILOT-JLOG` | `iutNormalizedLog_norm_embedding_sum_liesOver`、`iutInitialThetaBaseQPilotLogTerm_eq_jLog`、`iutInitialThetaFullBaseQPilotLogSum_eq_jLogSum`、`iutInitialThetaModuliJ_normalized_fiber`；`Act1Scene1/IutInitialThetaQPilotJLog.lean` | 从 actual base Tate j-identity 与 `TateParameter.norm_tateJ`、raw norm/qOrder law 证明每个 base term 等于 `log ‖embedding j‖/(2*ℓ*[F:ℚ])`，完整 full-support sum 因而等于同一完整 carrier 的 normalized j-log sum。generic full-fibre norm-degree theorem 与 finrank tower 证明完整上方纤维的 log-norm sum 除以全局次数后不随扩域改变，actual moduli j specialization直接消费它。 |
+
+ValuationSection 只选择每个 moduli place 上方一个 torsion place，未提供所有base
+处的覆盖。InitialThetaData 也不要求 torsion field/moduli Galois，本单元没有新增
+此条件或用base Galois字段猜测coverage。新路径保留完整纤维（relative ramification
+与residue-degree计数），将actual full q-pilot写为同源j-log，为后续按moduli处
+重组提供数学接口；有限纤维枚举/完整性hs仍显式，完整支撑跨moduli的全局重组和
+paper normalization尚未闭合。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。新增四条theorem，local Tate
+producer→full sum consumer，generic fiber theorem→actual moduli j consumer；无
+退休/Prologue晋升或抽取、IUT复制、Core/Candidate/Obligations或冻结依赖改动。
+对chosen Tate parameter的数值依赖通过actual j身份消除，前置信任不增加。
+资源/验证和剩余义务见log4的S1-BND-278。
+
+S1.278 验证补记：最终窄构建9261/9261 jobs通过、退出码0；
+PaperAccounting58/35及Scene1聚合通过，公理仅有标准允许集合。完整目标仍open。

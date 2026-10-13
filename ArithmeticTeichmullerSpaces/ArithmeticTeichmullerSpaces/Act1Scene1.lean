@@ -117,5 +117,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeTerm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeQRootSum
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedWeightedBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedSupportDefect
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotJLog
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
