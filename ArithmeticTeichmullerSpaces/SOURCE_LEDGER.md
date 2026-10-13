@@ -715,3 +715,29 @@ time 墙钟 `3:13.37`，监控耗时 `193.841 s`，进程组采样峰值 `254868
 time 最大单进程 RSS `8234244 KiB`，退出码 0。新模块及其直接消费者通过；三项
 关键定理公理仅为 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`。
 证明状态 proved，真实来源转换义务 open；Mathlib 未重编译。
+
+## S1.244：实际 q-root 的归一化 theta witness 乘积估计
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-ATS-III-NORMALIZED-THETA-WITNESS-PRODUCT` | `ThetaWitnessProduct.scale_mem_unitInterval`、`product_bounds`、`negLog_product_eq`、`negLog_product_bounds`、`ellStar_pos`、`paperRootNorm_pos_lt_one`、`canonical_qroot_witness_bounds`；`Act1Scene1/ThetaWitnessProduct.lean` | Joshi III 的 `th:moccor-Mochizuki-form1` 证明（3460–3486）明确使用 `j²/ellStar²`，`le:volume-lemma2`（3531–3543）与 `le:volume-lemma3`（3576–3583）给出加权乘积，3634–3650 区分 log-volume 符号。用本工程实际 canonical q-root 的 `paperRootNorm` 作为基准半径，`ellStar=(D.prime.ℓ-1)/2` 来自真实 prime。证明 `a^ellStar ≤ ∏j a^(γj*((j+1)/ellStar)^2)` 及 `0 ≤ -log(product) ≤ ellStar*(-log a)`。 |
+
+权重仅要求 `[0,1]`，包含论文 `(0,1]` 情形；尚未构造 reciprocal local-field
+degree 权重的来源，也未将这些实数半径实现为不同 untilt 的 theta/cohomology
+值。完成的只是论文乘积估计的实数部分；Haar measure、张量 cross-norm、Bloch–Kato
+logarithm、真实 hull 包含和 thetaVolume 识别仍开放。没有用 reciprocal root
+替换原始 root，没有改变既有 Core、Scene1Input 或最终目标。
+
+`Prologue-R5 → Prologue-R5`，owner Scene1。本地派生复用
+`JT-SCENE1-THETA-LOG-SIGN-AUDIT`、`JT-SCENE1-CANONICAL-QROOT-NORM-CERTIFICATE`
+与 Mathlib real power/log/product API；没有复制参考工程文件或增加依赖。
+根的非零性与范数严格小于 1 来自实际源，未接受 detached norm certificate。
+实际消费者为 `canonical_qroot_witness_bounds`；其 remaining weights 为显式参数。
+最终验证与资源数据记入 log4。
+
+S1.244 验证补记（2026-10-13 11:04:17 CST）：首次编译失败的两项实现问题已
+集中修正；最终窄重试 `9225/9225` 通过，time 墙钟 `3:14.93`，监控耗时
+`195.248 s`，组 RSS 采样峰值 `25594196 KiB`，time 单进程最大 RSS `8234560 KiB`。
+`canonical_qroot_witness_bounds` 公理依赖仅含 Lean 标准三项；无 `sorryAx`。
+实际 root 的数值 estimate proved；untilt/theta/hull/volume 来源仍 open，
+Mathlib 未重编译。

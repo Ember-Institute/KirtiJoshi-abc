@@ -4,12 +4,14 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.RawTargetSpecification
 import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaLogSignAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaWitnessProduct
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
 #print axioms JoshiTeich.Act1Scene1.Scene1Input.one_le_thetaBase_norm
 #print axioms JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataFromGlobal_qroot_norm_lt_one
 #print axioms JoshiTeich.Act1Scene1.Scene1Input.thetaBase_norm_ne_canonical_qroot_norm
+#print axioms JoshiTeich.Act1Scene1.ThetaWitnessProduct.canonical_qroot_witness_bounds
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data

@@ -11,6 +11,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.RawTargetSpecification
 import ArithmeticTeichmullerSpaces.Act1Scene1.TransferQAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaLogSignAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaWitnessProduct
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -18,6 +19,13 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaLogSignAudit
 #check JoshiTeich.Act1Scene1.Scene1Input.one_le_thetaBase_norm
 #check JoshiTeich.Act1Scene1.IutTorsionQRootSource.ofInitialThetaDataFromGlobal_qroot_norm_lt_one
 #check JoshiTeich.Act1Scene1.Scene1Input.thetaBase_norm_ne_canonical_qroot_norm
+#check JoshiTeich.Act1Scene1.ThetaWitnessProduct.scale_mem_unitInterval
+#check JoshiTeich.Act1Scene1.ThetaWitnessProduct.product_bounds
+#check JoshiTeich.Act1Scene1.ThetaWitnessProduct.negLog_product_eq
+#check JoshiTeich.Act1Scene1.ThetaWitnessProduct.negLog_product_bounds
+#check JoshiTeich.Act1Scene1.ThetaWitnessProduct.ellStar_pos
+#check JoshiTeich.Act1Scene1.ThetaWitnessProduct.paperRootNorm_pos_lt_one
+#check JoshiTeich.Act1Scene1.ThetaWitnessProduct.canonical_qroot_witness_bounds
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily
