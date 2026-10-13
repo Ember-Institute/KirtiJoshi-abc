@@ -1610,3 +1610,24 @@ prime filter→complete enumeration→canonical packet/log region→topology/ind
 
 S1.286 验证补记：首次窄热构建9269/9269 jobs通过，退出码0；
 SceneBounds231/55与Scene1聚合通过，55条公理报告仅含标准允许集合。完整目标仍open。
+
+## S1.287：p-adic transvection 的 Haar 不变性与 selected tensor 消费者
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-PADIC-HAAR-TRANSVECTION` | `PadicHaar.productHaar_measurePreserving_transvection`、`haar_measurePreserving_transvection`、`basisTransvection`、`haar_measurePreserving_basisTransvection`；`Act1Scene1/PadicHaarTransvection.lean` | 参考冻结版 Mathlib `MeasureTheory/Measure/Lebesgue/Basic.lean` 中 Real.volume_preserving_transvectionStruct 的 Fubini/单坐标平移证明，将局部 measure 改为 ℚ_p 的 actual additive Haar，再由 Haar uniqueness 到任意 coordinate Haar measure，最后经有限维 basis transport 得到实际有限维空间 elementary shear measure preservation。文件头保留来源commit、作者、Apache-2.0通知；不改Mathlib或新增依赖。 |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-TENSOR-SHEAR` | `SelectedThetaTensor.shear`、`shear_measurePreserving`、`region_haar_shear_image`、`region_haar_shear_image_eq_inv_index`；`Act1Scene1/IutInitialThetaSelectedTensorShear.lean` | 在actual selected packet tensorBasis上构造实际continuous basis transvection，消费通用p-adic Haar theorem，证明actual compact-open log-region的shear image与原region有相同normalized Haar measure，并与真实regionIndex⁻¹连接。 |
+
+冻结 Mathlib 的现有 complete determinant/Haar formula 仅针对实数。这里闭合其
+p-adic 推导中 transvection 生成元步骤，未假定对角matrix scaling或一般determinant
+formula。actual selected consumer证明的是Haar测度不变性，不是theta hull set
+不变或paper weighted volume。对角标量与norm、matrix product到完整det/Haar、
+factor algebraic norm/actual completion norm及论文归一化仍待实际证明。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。两个实际continuous equivalence定义
+与六条公共theorem；Fubini/translation producer→coordinate arbitrary Haar→basis
+transport→actual selected region consumer。Core/Candidate/Obligations和冻结依赖
+不变，前置信任不增加。完整类型、模型/来源审查和资源见log4的S1-BND-287。
+
+S1.287 验证补记：最终窄热构建9271/9271 jobs通过，退出码0；
+SceneBounds239/61及Scene1聚合通过，61条公理报告只含标准允许集合。完整目标仍open。
