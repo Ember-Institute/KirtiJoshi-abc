@@ -1271,3 +1271,23 @@ paper/degree normalization 的最终选择仍需来源复审。
 Core/Candidate/Obligations 改动。新构造由必要条件定理实际消费。
 参数来源识别负担减少，前置信任负担不增加；完整 Scene1 与 Corollary 3.12 仍 open。
 验证、资源和完整动态记录见 log4 的 `S1-BND-270`。
+
+## S1.271：raw q-sum 的全局次数会计
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-QPILOT-RAW-DEGREE-ACCOUNTING` | `degreeNormalizedSourceQLogSum_eq_raw_div_degree`、`Corollary312QPilotSourceIndexBridge.rawSourceQLogSum_eq_degree_mul_absLogQ`；`Act1Scene1/QPilotRawDegreeAccounting.lean` | 用既有 local degree adapter 对同一 finite grouping 求和，得到 degree-normalized sum = raw sum / `[K : ℚ]`。随后消费实际 raw uniformizer norm certificate 和 finite source-index bridge，证明 raw sum = `[K : ℚ] * absLogQ`，不要求 weighted normalization 或 degree-one。 |
+| `JT-SCENE1-INITIAL-THETA-QPILOT-RAW-ACCOUNTING` | `Corollary312Scene1DegreeNormalizedQPilotData.qLogSum_eq_degree_mul_absLogQ`、`corollary312_iff_degreeScaledQPilot`；`Act1Scene1/IutInitialThetaQPilotRawAccounting.lean` | 对已有真实 InitialThetaData source 可构造的 degree-normalized bundle 应用 generic accounting，消费其 actual raw certificate、q-family 和 sourceIndexBridge，证明当前 raw target 的 `qLogSum = [K : ℚ] * absLogQ`，再将精确系数带入 `Corollary312` 的等价表述。base 的 theta/packet/hull/volume 会计仍是条件输入，不声称完整真实满足模型。 |
+
+Joshi III `th:moccor`（1748–1754）、`th:moccor-tensor-product1`（2086–2095）
+明确选择 local `|π_w| = p⁻¹`；`ss:weighted-vol`、`eq:weights`（3553–3555）
+涉及 relative completion degree，`cor:cor312`（3647–3650）使用未加权代表处和。
+本单元的 global `[K : ℚ]` 转换不能代替 local residue-degree correction 或
+paper representative normalization。它校正当前 raw candidate 的 q-pilot 表述，
+不冻结 literal paper target、不取消 S1.270 的 weighted-contract 障碍。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；新增四个 proved
+会计/等价声明，由 generic finite sum 到 actual bundle、再到 target equivalence
+逐层消费。无退休、Prologue 晋升/抽取、新参考代码复制或 Lake 依赖。前置信任
+不增加；一般真实模型、论文代表/权重、thetaVolume 与最终 Corollary 3.12 仍 open。
+验证与资源见 log4 的 `S1-BND-271`。
