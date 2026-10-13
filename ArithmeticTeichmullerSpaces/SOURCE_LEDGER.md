@@ -929,3 +929,28 @@ S1.251 验证补记（2026-10-13 15:47:06 CST）：修正实例重名、API 与�
 proved；两个新增最终消费者公理只有Lean标准三项。Mathlib未重编译。四次
 尝试的失败与成功资源分别保存在log4；定量weighted tensor volume、hull与
 完整Scene1仍open。
+
+## S1.252：真实张量缩放像与整格归一化 Haar 公式
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-SCALAR-IMAGE` | `Packet.factorScale`、`scale`、`continuousScale`、`scalarLattice`、`unitLattice_map_scale`、`unitLattice_image_scale`、`normalizedHaar`、`normalizedHaar_unitLattice`、`normalizedHaar_scalarLattice`；`Act1Scene1/LocalCompletionTensorScale.lean` | 本地 proof terms，Mathlib `PiTensorProduct.congr`、span map 与有限维连续线性自同构。Joshi III `le:volume-lemma2/3` 的标量整格形式；证明逐因子乘非零标量的实际自同构映单位整格到标量整格，再将单位整格测度归一为1，得到标量整格测度等于自同构 Haar 分布特征。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-SCALAR-IMAGE` | `InitialThetaTensorWitness.scale`、`region_eq_scaledUnitLattice`、`region_normalizedHaar_eq`、`region_normalizedHaar_pos_le_one`；`Act1Scene1/IutInitialThetaTensorScale.lean` | 所有标量是实际 canonical q-root ordinary logarithm 值，非零性由 S1.245 提供。实际 S1.250 tensor region 恰为该连续自同构的单位整格像，其单位整格归一化 Haar 测度严格正且≤1，并精确等于实际自同构的 `distribHaarChar`。 |
+
+张量自同构在 pure tensors 上作用为 `⊗a_i ↦ ⊗(z_i*a_i)`，每个因子逆映射
+是乘 `z_i⁻¹`，不假设 region/image 证书。`ℚ_p` 线性映射限制为 `ℤ_p` 线性
+映射，span map 给出完整整格像等式，不只映一个见证。Haar normalization
+选用实际 unitLattice 的 compact-open 证据，测度计算使用自同构的实际求值作用。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。没有新参考
+代码移植、Lake依赖或Core/Candidate/Obligations变更。Scene1 的真实区域缩放
+像与tensor基准测度归一化义务减少，前置信任不增加。当前精确结果仍含
+`distribHaarChar`，尚未计算为逐factor norm及degree/weight的数值乘积；
+unitLattice并非已识别的maximal order，论文hull、不同untilt/Bloch–Kato、
+representatives、cross-norm和最终thetaVolume仍open。验证结果见log4。
+
+S1.252 验证补记（2026-10-13 16:00:53 CST）：最终窄构建 `9242/9242` jobs
+通过，rc0；time墙钟3:29.51，监控耗时209.869s，组RSS峰值25626112KiB
+（24.439GiB），time最大单进程RSS8239432KiB。真实tensor scale/image、整格
+Haar归一化和三个实际来源定理为proved；两项新增公理报告只有Lean标准三项。
+Mathlib未重编译。character数值评价、maximal-order/hull及完整Scene1仍open。

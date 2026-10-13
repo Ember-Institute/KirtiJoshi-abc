@@ -19,6 +19,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallIndex
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorRegion
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScale
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -96,6 +97,14 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorRegion
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_isOpen
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_isCompact
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_haar_pos_lt_top
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scale_pure
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitLattice_map_scale
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitLattice_image_scale
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizedHaar_unitLattice
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizedHaar_scalarLattice
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_eq_scaledUnitLattice
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_normalizedHaar_eq
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_normalizedHaar_pos_le_one
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily
