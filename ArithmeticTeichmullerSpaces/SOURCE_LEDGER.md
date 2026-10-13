@@ -1378,3 +1378,24 @@ thetaVolume 和最终 Corollary 3.12 仍 open。动态记录及资源见 log4 �
 
 S1.275 验证补记：最终窄热构建 `9258/9258` jobs 通过，退出码 0；
 PaperAccounting 43/24 和 Scene1 聚合通过，公理仅有标准允许集合。完整模型仍 open。
+
+## S1.276：实际 selected source/base 的加权比较
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-WEIGHTED-BOUND` | `iutInitialThetaSelectedWeightedQRootLogSum`、`iutInitialThetaSelectedWeightedQRootLogSum_le_paperSum`、`iutInitialThetaSelectedWeightedQRootLogSum_eq_baseQOrderSum`、`iutInitialThetaSelectedBaseQOrderLogSum_le_paperSum`；`Act1Scene1/IutInitialThetaSelectedWeightedBound.lean` | 实际 selected source 上以 contracted base qPilotWeight、base ramIdx 和 actual q-root ordp 定义加权和。单处权重≤1 来自实际 prime-fibre 上界；tower identity 证明 base ramIdx≤source ramIdx；actual q-root ordp 非负来自 base qOrder 公式，得到加权和≤selected paper sum。实际 contraction equivalence 及逐处 q-root 公式再将加权和识别为 selected base qOrder 的 weighted log sum，最后消费为直接 upper bound。三个定理只接收 actual D，无自由 source-to-paper 映射或 local-term certificate。 |
+
+结果限于 actual selected base 子集。完整 q-pilot support 的逆向 section coverage
+仍须证明，不能将子集 upper bound 声称为 full source absLogQ 上界或论文等式。
+本单元保留 base/source absolute ramIdx 的差别，未将两者误认为相同，也未修改
+S1.275 依赖显式 mapping 的一般 q-pilot consumer。
+
+`Prologue-R5 → Prologue-R5`，operation derive，owner Scene1；新增定义及三条
+公共 theorem。actual source producer→base finite-sum equality→base upper bound
+形成消费链；无退休、Prologue 晋升/抽取、新 IUT 文件复制、Core/Candidate/
+Obligations 或冻结依赖变更。selected carrier 上的自由 mapping/term 输入负担
+减少，前置信任不增加；full carrier、paper normalization、thetaVolume 和最终
+Corollary 3.12 仍 open。验证与资源见 log4 的 S1-BND-276。
+
+S1.276 验证补记：最终窄构建 `9259/9259` jobs 通过、退出码0；
+PaperAccounting 47/27 和Scene1聚合通过，公理仅有标准允许集合。完整目标仍open。

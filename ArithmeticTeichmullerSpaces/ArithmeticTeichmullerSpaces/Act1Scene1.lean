@@ -115,5 +115,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeMassAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeFiberMass
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeTerm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeQRootSum
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedWeightedBound
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
