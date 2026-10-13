@@ -819,3 +819,30 @@ jobs，time 墙钟 `5:41.23`，监控耗时 `341.739 s`，进程组 RSS 峰值
 `25610140 KiB`（`24.424 GiB`），time 最大单进程 RSS `8236908 KiB`，退出码 0。
 五个新增最终公理报告只有 `propext`、`Classical.choice`、`Quot.sound`；Mathlib
 未重编译，完整真实 Scene1 模型与 Corollary 3.12 仍 open。
+
+## S1.248：局部主理想指数与实际整格球 Haar 测度
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-HAAR-PRINCIPAL-INDEX` | `LocalCompletion.integerRing`、`integerHaar`、`principalIndex`、`principalIdeal_isOpen`、`principalIndex_pos`、`principalIdeal_image`、`normalizedHaar_scalarBall_eq_inv_index`；`Act1Scene1/LocalCompletionHaarIndex.lean` | 本地 proof terms，消费冻结 Mathlib `AddSubgroup.index_mul_measure`、compact/open subgroup 的有限商定理及 valuation integer principal ideal API。Joshi III `le:volume-lemma1`（3505–3518）给出后续局部标量整格体积识别的位置。本轮将实际测度落实为有限加法指数倒数；不假设指数与 norm 的等式。 |
+| `JT-SCENE1-INITIAL-THETA-LOG-BALL-INDEX` | `InitialThetaLogWitness.integralValue`、`integralValue_ne_zero`、`integralBall_index_pos`、`integralBall_haar_eq_inv_index`、`integralBall_haar_le_one`；`Act1Scene1/IutInitialThetaLogBallIndex.lean` | 实际 `InitialThetaData` canonical q-root 对数见证打包为整数环元素，非零性与整性从现有实际来源定理派生。实际整格球 Haar 测度等于主理想指数倒数，并证明测度不超过 1。 |
+
+记实际完成域为 `k`，整数环为 `O=Valued.v.integer`，非零整元素为 `z`。
+`(z)` 是 `O` 的紧致开加法子群，因此商群有限；`principalIndex w z`
+是其加法指数。把归一化 Haar 沿整数环包含映射 comap 后，总测度为 1，
+有限陪集分解给出 `index*(measure (z))=1`。主理想在完成域中的像正是
+`z*{x | ‖x‖≤1}`，故其实际测度为指数倒数。实际消费者固定
+`z=integralValue D v`，不接受脱钩的测度或范数证书。
+
+本轮没有复制新的参考工程代码或增加依赖。`Prologue-R5 → Prologue-R5`，
+operation `derive`，owner Scene1，Core/Candidate/Obligations 不改。
+Scene1 局部 Haar 缩放因子的有限商计数义务减少；前置信任不增加。
+`principalIndex` 与处范数/剩余域基数的识别、paper norm 修正、different untilt、
+Bloch–Kato、tensor hull/global volume 及完整 Corollary 3.12 仍 open。
+最终构建结果与失败记录见 log4 的 S1.248。
+
+S1.248 验证补记（2026-10-13 14:52:20 CST）：最终窄构建 `9234/9234` jobs
+通过，time 墙钟 `3:27.02`，监控耗时 `207.442 s`，组 RSS 峰值
+`25603652 KiB`（`24.418 GiB`），time 最大单进程 RSS `8237320 KiB`，rc 0。
+实际指数测度消费者与通用证明为 proved；新增最终公理报告仅含 Lean 标准三项。
+Mathlib 未重编译，完整数学/审计目标仍 open。
