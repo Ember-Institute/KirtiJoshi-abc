@@ -17,6 +17,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBall
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallHaar
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallIndex
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallNorm
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorWitness
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -75,6 +76,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallNorm
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_index_eq_absNorm_pow
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_toReal_eq_qroot_norm
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_eq_qroot_norm
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.pure_ne_zero
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.pure_mem_lattice
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.lattice_mono
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitLattice_le_tensorLogShell
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.value_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.value_mem_region
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_le_unitLattice
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_le_tensorLogShell
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.value_mem_tensorLogShell
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily

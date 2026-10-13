@@ -873,3 +873,30 @@ S1.249 验证补记（2026-10-13 15:09:43 CST）：修正两轮 API 表示错误
 RSS `8237712 KiB`。真实主理想商同构、raw Haar/norm 以及实际来源消费者为
 proved；两个新增公理报告只有 Lean 标准三项。Mathlib 未重编译；完整真实
 Scene1 模型、paper normalization 与 theta/tensor/hull/global volume 仍 open。
+
+## S1.250：实际完成域张量整格与非零对数见证
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-COMPLETION-TENSOR-LATTICE` | `LocalCompletion.Packet`、`Tensor`、`pure`、`pure_ne_zero`、`lattice`、`pure_mem_lattice`、`lattice_mono`、`unitLattice`、`tensorLogShell`、`unitLattice_le_tensorLogShell`；`Act1Scene1/LocalCompletionTensor.lean` | Joshi III `ss:weighted-vol`、`le:volume-lemma2`（3531–3543）、`le:volume-lemma3`（3576–3583）使用实际局部域 tensor product 与 integral lattices。参考 `LocalConstruct/Integral.lean` 与 `LogShell.lean` 的 integral-generator 模式作为 API 指引；没有复制新证明段或引入参考工程依赖。载体为有限元组实际完成域的 Mathlib `PiTensorProduct ℚ_[p]`，不是 Cartesian product。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-WITNESS` | `InitialThetaTensorWitness.packet`、`value`、`region`、`value_ne_zero`、`value_mem_region`、`region_le_unitLattice`、`region_le_tensorLogShell`、`value_mem_tensorLogShell`；`Act1Scene1/IutInitialThetaTensorWitness.lean` | 显式实际 canonical q-root 处元组 `c` 和共同 residue prime 条件 `hc`，在 torsionField 的真实完成域中形成 logarithm 值的纯张量。区域是各实际 integralBall 的纯张量的 `ℤ_p` 线性 span。证明见证非零、位于区域及 tensor log-shell，区域包含在 unitLattice 及 tensorLogShell 中。 |
+
+每个完成域的 `ℚ_p` 结构由 S1.247 的连续 embedding 实现，有限维性由同一
+实际来源链派生。张量的 `ℤ_p` 模结构从 `ℤ_p → ℚ_p` 限制标量。
+非零性用各因子有限基的非零坐标及纯张量坐标乘积证明，没有接受张量非零证书。
+单位球到普通 log-shell 的满射结果 S1.246 被实际 lattice containment 消费。
+actual logarithm 见证与 integralBall 的来源均来自 S1.245–S1.246。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。Core、Candidate、
+Obligations 不改，不新增依赖。Scene1 的实际张量载体、纯张量非零性及局部整格
+区域到 tensor log-shell 的包含义务减少，前置信任不增加。元组 `c` 的论文
+representatives/重数身份、不同 untilt theta 值、Bloch–Kato identification、
+最大整序、hull、张量 Haar/weighted volume 和最终 thetaVolume 仍 open。
+本轮不使用任意体积字段，也不把局部 lattice 宣称为论文完整 theta hull。
+
+S1.250 验证补记（2026-10-13 15:28:22 CST）：修正两项 API 问题后，
+最终窄构建 `9238/9238` jobs 通过，rc 0；time 墙钟 `3:28.38`，监控耗时
+`208.528 s`，组 RSS 峰值 `25593264 KiB`（`24.408 GiB`），time 最大单进程
+RSS `8238136 KiB`。九个数学定理及真实 tensor carrier 为 proved；两个新
+来源消费者公理仅含 Lean 标准三项。Mathlib 未重编译，真实 theta realization、
+tensor hull/volume、论文代表与全局 normalization 仍 open。
