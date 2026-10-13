@@ -1237,3 +1237,20 @@ Lake 依赖或 Core/Candidate/Obligations 变更。actual scalar determinant 记
 减少，前置信任不增加。completion norm/local-degree、一般 Haar/determinant、
 论文 representatives/权重、maximal-order/hull、不同 untilt/Bloch–Kato、真实
 q-pilot/thetaVolume 和最终 Corollary 3.12 仍 open。资源见 log4 的 S1.268。
+
+## S1.269：single-factor tensor scalar action bridge
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-SCALAR-ACTION` | `scaleAt`、`scaleAt_apply`；`Act1Scene1/LocalCompletionTensorScalarAction.lean` | 在实际 `Packet.Tensor` 上只缩放一个 factor，使用 `PiTensorProduct.induction_on` 与 `tprodCoeff` 的单坐标缩放定理证明它等于整个 tensor 的 `a • x`。factor algebra/module 实例固定为实际 `padicAlgebra` 与 `finite_padicAlgebra`；不接收 detached tensor action 或 Haar certificate。 |
+
+本单元专门固定 S1.268 与 p-adic Haar 之间的 map distinction：S1.268 的
+common map 同时乘每个 factor，因而 determinant 指数带 `Fintype.card ι`；本单元
+的 `scaleAt` 只在一个 factor 乘 `a`，正是 whole-tensor scalar action。一般
+algebraic norm 到 completion real norm/local degree、任意 determinant/Haar、论文
+representatives/权重、maximal-order/hull、q-pilot/thetaVolume 与最终 Corollary
+3.12 仍 open。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；无新参考代码、
+Lake 依赖或 Core/Candidate/Obligations 变更。验证资源见 `docs/开发计划.V1Act1log4.md`
+的 S1.269；窄审计结果为 SceneBounds 214/45、总计 786/369。

@@ -109,5 +109,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIndex
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScaleMatrix
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorHaarScaling
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarAction
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

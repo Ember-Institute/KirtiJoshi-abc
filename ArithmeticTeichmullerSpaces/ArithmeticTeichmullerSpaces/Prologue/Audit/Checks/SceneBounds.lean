@@ -24,6 +24,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIndex
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScaleMatrix
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorHaarScaling
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarAction
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -163,6 +164,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorHaarScaling
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_haar_image_smul_padic_factor_prod
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_haar_image_smul_padic_eq_inv_index
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionIndex_pow_finrank_mul_region_haar_image_smul_eq_one
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleAt
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleAt_apply
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix_det_common_algebraMap
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.commonPadicScaleMatrix
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.commonPadicScaleMatrix_det_eq_pow
