@@ -98,5 +98,60 @@ theorem scaleMatrix_det_eq_factor_norm_prod (z : ∀ i, P.Factor i) (hz : ∀ i,
   rw [hmat, FiniteTensorMatrix.product_det]
   simp only [factorMulMatrix_det_eq_norm]
 
+theorem scaleMatrix_det_common_algebraMap (a : ℚ_[p]) (ha : a ≠ 0) :
+    (P.scaleMatrix (fun i => algebraMap ℚ_[p] (P.Factor i) a)
+      (fun i => by
+        intro h
+        exact ha ((algebraMap ℚ_[p] (P.Factor i)).injective (by simpa using h)))).det =
+      a ^ (Fintype.card ι * ∏ i, Module.finrank ℚ_[p] (P.Factor i)) := by
+  classical
+  rw [P.scaleMatrix_det_eq_factor_norm_prod]
+  simp only [Algebra.norm_algebraMap]
+  simp_rw [← pow_mul]
+  have hpow :
+      (∏ i, a ^ (Module.finrank ℚ_[p] (P.Factor i) *
+        FiniteTensorMatrix.otherDimension
+          (fun j => Module.finrank ℚ_[p] (P.Factor j)) i)) =
+        a ^ ∑ i, (Module.finrank ℚ_[p] (P.Factor i) *
+          FiniteTensorMatrix.otherDimension
+            (fun j => Module.finrank ℚ_[p] (P.Factor j)) i) := by
+    simpa using (Finset.prod_pow_eq_pow_sum (s := Finset.univ)
+      (f := fun i => Module.finrank ℚ_[p] (P.Factor i) *
+        FiniteTensorMatrix.otherDimension
+          (fun j => Module.finrank ℚ_[p] (P.Factor j)) i) a)
+  rw [hpow]
+  congr 1
+  have hprod (i : ι) :
+      Module.finrank ℚ_[p] (P.Factor i) *
+          FiniteTensorMatrix.otherDimension
+            (fun j => Module.finrank ℚ_[p] (P.Factor j)) i =
+        ∏ j, Module.finrank ℚ_[p] (P.Factor j) := by
+    unfold FiniteTensorMatrix.otherDimension
+    rw [← Finset.mul_prod_erase Finset.univ _ (Finset.mem_univ i)]
+    simp only [if_pos rfl, one_mul]
+    have herase :
+        (∏ x ∈ Finset.univ.erase i,
+          if x = i then 1 else (fun j => Module.finrank ℚ_[p] (P.Factor j)) x) =
+          ∏ x ∈ Finset.univ.erase i, Module.finrank ℚ_[p] (P.Factor x) := by
+      apply Finset.prod_congr rfl
+      intro j hj
+      simp [Finset.mem_erase.mp hj |>.1]
+    rw [herase]
+    simp only [ite_true, one_mul]
+    simpa using
+      (Finset.mul_prod_erase Finset.univ
+        (fun j => Module.finrank ℚ_[p] (P.Factor j))
+        (a := i) (Finset.mem_univ i))
+  have hsum :
+      (∑ i, Module.finrank ℚ_[p] (P.Factor i) *
+        FiniteTensorMatrix.otherDimension
+          (fun j => Module.finrank ℚ_[p] (P.Factor j)) i) =
+        ∑ _i : ι, ∏ j, Module.finrank ℚ_[p] (P.Factor j) := by
+    apply Finset.sum_congr rfl
+    intro i hi
+    exact hprod i
+  rw [hsum]
+  simp [nsmul_eq_mul]
+
 end
 end JoshiTeich.Act1Scene1.LocalCompletion.Packet

@@ -27,6 +27,12 @@ variable (hc : ∀ i, Arithmetic.residueChar (c i).1 = p)
 
 local instance matrixIndexFintype : Fintype (packet D p c hc).BasisIndex :=
   by classical infer_instance
+local instance commonFactorAlgebra (i : ι) :
+    Algebra ℚ_[p] ((packet D p c hc).Factor i) :=
+  LocalCompletion.padicAlgebra ((packet D p c hc).residueChar_eq i)
+local instance commonFactorFinite (i : ι) :
+    Module.Finite ℚ_[p] ((packet D p c hc).Factor i) :=
+  LocalCompletion.finite_padicAlgebra ((packet D p c hc).residueChar_eq i)
 
 def scaleMatrix : Matrix (packet D p c hc).BasisIndex (packet D p c hc).BasisIndex ℚ_[p] :=
   (packet D p c hc).scaleMatrix (fun i => InitialThetaLogWitness.value D (c i))
@@ -77,6 +83,24 @@ theorem scaleMatrix_det_eq_factorLogNorm_prod :
           (fun j => @Module.finrank ℚ_[p] ((packet D p c hc).Factor j) _ _
             (LocalCompletion.padicAlgebra ((packet D p c hc).residueChar_eq j)).toModule) i :=
   LocalCompletion.Packet.scaleMatrix_det_eq_factor_norm_prod (packet D p c hc) _ _
+
+def commonPadicScaleMatrix (a : ℚ_[p]) (ha : a ≠ 0) :
+    Matrix (packet D p c hc).BasisIndex (packet D p c hc).BasisIndex ℚ_[p] :=
+  (packet D p c hc).scaleMatrix
+    (fun i => algebraMap ℚ_[p] ((packet D p c hc).Factor i) a)
+    (fun i => by
+      intro h
+      exact ha ((algebraMap ℚ_[p] ((packet D p c hc).Factor i)).injective (by simpa using h)))
+
+theorem commonPadicScaleMatrix_det_eq_pow (a : ℚ_[p]) (ha : a ≠ 0) :
+    (commonPadicScaleMatrix D p c hc a ha).det =
+      a ^ (Fintype.card ι * ∏ i, Module.finrank ℚ_[p] ((packet D p c hc).Factor i)) :=
+  LocalCompletion.Packet.scaleMatrix_det_common_algebraMap (packet D p c hc) a ha
+
+theorem commonPadicScaleMatrix_det_eq_prime_pow :
+    (commonPadicScaleMatrix D p c hc (p : ℚ_[p]) (by exact_mod_cast (Fact.out : p.Prime).ne_zero)).det =
+      (p : ℚ_[p]) ^ (Fintype.card ι * ∏ i, Module.finrank ℚ_[p] ((packet D p c hc).Factor i)) :=
+  commonPadicScaleMatrix_det_eq_pow D p c hc _ _
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness

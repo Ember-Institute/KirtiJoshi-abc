@@ -1219,3 +1219,21 @@ Corollary 3.12 仍 open。
 `Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；无新参考代码、
 Lake 依赖或 Core/Candidate/Obligations 变更。实际 index/Haar accounting 义务
 减少，前置信任不增加。验证资源见 log4 的 S1.267。
+
+## S1.268：common p-adic scalar 的 tensor determinant bridge
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-COMMON-PADIC-SCALAR-DETERMINANT` | `scaleMatrix_det_common_algebraMap`；`Act1Scene1/LocalCompletionTensorScaleMatrix.lean` | 将每个 factor scalar 固定为同一个 `a : ℚ_[p]` 的 algebraMap，消费 S1.265 factor norm 幂公式和 `Algebra.norm_algebraMap`，证明 tensor-scale determinant 为 `a ^ (Fintype.card ι * ∏ i, Module.finrank ℚ_[p] (P.Factor i))`。`otherDimension` 的总和用 finite product erase 恒等式，无维数除法。 |
+| `JT-SCENE1-INITIAL-THETA-COMMON-PADIC-SCALAR-DETERMINANT` | `commonPadicScaleMatrix`、`commonPadicScaleMatrix_det_eq_pow`、`commonPadicScaleMatrix_det_eq_prime_pow`；`Act1Scene1/IutInitialThetaTensorScaleMatrix.lean` | 实例化 actual packet 的 common scalar matrix，并特别得到 `a = p` 的实际 determinant 幂公式。factor algebra/module instances 明确来自实际 completion `padicAlgebra`；未将该 common-factor map 误称为 general tensor scalar action 或 Haar map。 |
+
+本轮为 p-adic Haar 的 `p^dim` 系数提供 determinant-side sanity bridge；它使用
+“每个 factor 乘 p”的 tensor map，实际 Haar image 使用的是 tensor scalar
+乘法，因此一般情况下二者的 map identification 仍需单独证明。该差异已显式
+保留，未把 common map 的 determinant 公式当成一般 determinant/Haar theorem。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；无新参考代码、
+Lake 依赖或 Core/Candidate/Obligations 变更。actual scalar determinant 记账义务
+减少，前置信任不增加。completion norm/local-degree、一般 Haar/determinant、
+论文 representatives/权重、maximal-order/hull、不同 untilt/Bloch–Kato、真实
+q-pilot/thetaVolume 和最终 Corollary 3.12 仍 open。资源见 log4 的 S1.268。
