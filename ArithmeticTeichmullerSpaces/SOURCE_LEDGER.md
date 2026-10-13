@@ -1074,3 +1074,17 @@ Corollary 3.12。
 `Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
 依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor integral-basis
 接口进一步闭合，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.259。
+
+## S1.260：实际张量整格秩等式
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-FINRANK` | `region_finrank_eq_tensor_finrank`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | 显式使用 actual `region_isLattice`、`IsFractionRing ℤ_[p] ℚ_[p]` 和 `Submodule.IsLattice.rank'`，再将 rank 等式转换为 finrank 等式，得到 `Module.finrank ℤ_[p] (region D p c hc) = Module.finrank ℚ_[p] (packet D p c hc).Tensor`。factor finite-dimensional instances来自实际 completion factors。 |
+
+该声明把实际有限基的秩连接到 ambient completion tensor 的维数，但没有把 ambient
+finrank 展开为 factor degree 乘积，也没有计算 actual finite-index Haar、weighted
+volume、maximal-order/hull、untilt/Bloch–Kato 或最终 Corollary 3.12。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
+依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor lattice 的秩会计义务
+减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.260。

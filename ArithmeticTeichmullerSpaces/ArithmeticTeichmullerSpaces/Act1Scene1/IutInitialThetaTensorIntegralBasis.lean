@@ -80,5 +80,32 @@ noncomputable def regionFinBasis := by
   letI : Module.Finite ℤ_[p] (region D p c hc) := region_module_finite D p c hc
   exact Module.finBasis ℤ_[p] (region D p c hc)
 
+theorem region_finrank_eq_tensor_finrank :
+    Module.finrank ℤ_[p] (region D p c hc) =
+      Module.finrank ℚ_[p] (packet D p c hc).Tensor := by
+  let P := packet D p c hc
+  letI (i : ι) : Algebra ℚ_[p] (P.Factor i) :=
+    LocalCompletion.padicAlgebra (P.residueChar_eq i)
+  letI (i : ι) : Module.Finite ℚ_[p] (P.Factor i) :=
+    LocalCompletion.finite_padicAlgebra (P.residueChar_eq i)
+  letI : Module ℤ_[p] P.Tensor :=
+    Module.compHom P.Tensor (algebraMap ℤ_[p] ℚ_[p])
+  letI : Module.Finite ℤ_[p] (region D p c hc) := region_module_finite D p c hc
+  letI : IsScalarTower ℤ_[p] ℚ_[p] (packet D p c hc).Tensor :=
+    regionTensorScalarTower (D := D) (p := p) (c := c) (hc := hc)
+  have hRank :
+      Module.rank ℤ_[p] (region D p c hc) =
+        Module.rank ℚ_[p] P.Tensor :=
+    @Submodule.IsLattice.rank' ℤ_[p] _ ℚ_[p] _ _ P.Tensor _
+      (inferInstance : Module ℚ_[p] P.Tensor)
+      (inferInstance : Module ℤ_[p] P.Tensor)
+      (regionTensorScalarTower (D := D) (p := p) (c := c) (hc := hc))
+      (inferInstance : IsDomain ℤ_[p])
+      (inferInstance : IsPrincipalIdealRing ℤ_[p])
+      (inferInstance : IsFractionRing ℤ_[p] ℚ_[p])
+      (region D p c hc) (region_isLattice D p c hc)
+  apply Module.finrank_eq_of_rank_eq
+  exact hRank.trans (Module.finrank_eq_rank (R := ℚ_[p]) (M := P.Tensor)).symm
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness
