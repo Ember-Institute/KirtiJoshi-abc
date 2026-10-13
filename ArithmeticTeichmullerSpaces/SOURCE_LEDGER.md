@@ -900,3 +900,32 @@ S1.250 验证补记（2026-10-13 15:28:22 CST）：修正两项 API 问题后，
 RSS `8238136 KiB`。九个数学定理及真实 tensor carrier 为 proved；两个新
 来源消费者公理仅含 Lean 标准三项。Mathlib 未重编译，真实 theta realization、
 tensor hull/volume、论文代表与全局 normalization 仍 open。
+
+## S1.251：实际张量整格的紧致开放性与正有限 Haar 测度
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-LATTICE-TOPOLOGY` | `Packet.tensorBasis`、张量 norm/ProperSpace/Borel 实例、`unitLattice_isBounded`、`exists_closedBall_subset_lattice`、`lattice_balls_isOpen`、`lattice_balls_isCompact`、`haar`、`lattice_balls_haar_pos_lt_top`；`Act1Scene1/LocalCompletionTensorTopology.lean` | 适配参考 `Packet.lean` 提交 `4d2b6e926089b949109c69c28f13c7f878249c5d` 的基坐标拓扑和 `Integral.lean` 提交 `b76207ab8955e68a7408d5d2a770b75a30c3bebf` 的有界 span、缩放基开放性路线；参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，Git 作者 Christian Merten，文件作者 The iut contributors。文件头保留 Apache-2.0 通知，移植前核查文件及双方 LICENSE。改为实际 completion factors 与任意正半径，省去 factor quotient、archimedean、maximal order 和 hull。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-REGION-TOPOLOGY` | `region_eq_ballLattice`、`region_isOpen`、`region_isCompact`、`region_haar_pos_lt_top`；`Act1Scene1/IutInitialThetaTensorRegion.lean` | 消费 S1.250 真实 q-root logarithm tensor region。各 factor radius 由实际 root norm 提供，正性和≤1均已由 canonical source 证明。Joshi III `le:volume-lemma2` 和 `le:volume-lemma3` 需要的 actual local tensor region 已具有紧致、开放及正有限 Haar 测度；未计算其定量体积。 |
+
+有限维张量使用基坐标诱导的 normed topology；此拓扑是有限维 `ℚ_p` module
+拓扑，但该范数不声称为 tensor cross-norm。因子整环球的紧致性与坐标连续性
+给出 unitLattice 生成元有界性，ultrametric 和 `ℤ_p` scalar norm≤1 将有界性
+提升到 integral span。缩放因子基进入指定正半径球，再重组 tensor basis，
+证明 integral tensor lattice 包含一个零邻域，从而开、闭；半径≤1时有界，
+因此紧致。实际 tensor Haar 来自 Mathlib `Measure.addHaar`，正有限性使用
+开放与紧致，不接受体积 certificate。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。Core/Candidate/
+Obligations 不改，不新增 Lake 依赖或参考模块导入。本轮减少实际 tensor region
+的拓扑和正有限测度证明义务，前置信任不增加。张量测度归一化/定量缩放、
+cross-norm、maximal order/hull、不同 untilt/Bloch–Kato、论文代表及权重和
+最终 thetaVolume 仍 open。源码适配范围和最终验证证据见 log4 的 S1.251。
+
+S1.251 验证补记（2026-10-13 15:47:06 CST）：修正实例重名、API 与精确模块
+路径后，最终窄构建 `9240/9240` jobs 通过，rc0；time墙钟 `2:45.89`，监控
+耗时 `166.253 s`，组RSS峰值 `25616836 KiB`（`24.430 GiB`），time单进程
+最大RSS `8238872 KiB`。实际tensor region的紧致/开放/正有限Haar measure为
+proved；两个新增最终消费者公理只有Lean标准三项。Mathlib未重编译。四次
+尝试的失败与成功资源分别保存在log4；定量weighted tensor volume、hull与
+完整Scene1仍open。

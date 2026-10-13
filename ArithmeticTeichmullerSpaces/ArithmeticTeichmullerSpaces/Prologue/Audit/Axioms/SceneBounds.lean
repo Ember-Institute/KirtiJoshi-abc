@@ -11,6 +11,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallHaar
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallIndex
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorWitness
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorRegion
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -30,6 +31,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorWitness
 #print axioms JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_eq_qroot_norm
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.value_ne_zero
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.value_mem_tensorLogShell
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_isCompact
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_haar_pos_lt_top
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data

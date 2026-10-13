@@ -18,6 +18,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallHaar
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallIndex
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorWitness
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorRegion
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -85,6 +86,16 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorWitness
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_le_unitLattice
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_le_tensorLogShell
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.value_mem_tensorLogShell
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensor_norm_def
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitLattice_isBounded
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_closedBall_subset_lattice
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.lattice_balls_isOpen
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.lattice_balls_isCompact
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.lattice_balls_haar_pos_lt_top
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_eq_ballLattice
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_isOpen
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_isCompact
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_haar_pos_lt_top
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily
