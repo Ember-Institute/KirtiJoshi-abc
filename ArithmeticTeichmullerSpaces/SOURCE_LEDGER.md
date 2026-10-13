@@ -1909,3 +1909,20 @@ root integral ball normalized Haar的residue-degree修正，且negative log复�
 paper term；未识别paper L'、Bloch–Kato、untilt或theta hull。S1.300构建9300/9300
 通过，SceneBounds354/158、全工程1012/554，耗时2:32.61，组峰值25808556KiB
 （约24.613GiB），无Mathlib重编。
+
+
+## S1.301：selected paper root norm product 与实际 corrected Haar product
+
+`JT-SCENE1-INITIAL-THETA-SELECTED-PAPER-ROOT-NORM-PRODUCT`，路径
+`Act1Scene1/IutInitialThetaSelectedPaperRootNormProduct.lean`。新definition
+actualSelectedPaperRootNormProduct直接在实际selected source subtype上取paper
+root norms的有限乘积；三个theorem逐项消费S1.300 norm/Haar bridge，证明与
+selectedPaperBallProduct相等、属于(0,1)、negative log=selected paper sum。
+精确导入、独立本地证明，无参考工程复制/import。模型域为实际D完整selected
+source；没有论文carrier、theta hull或Bloch–Kato身份。Prologue-R5→R5，derive，
+owner Scene1，新增0假设，前置信任不增加。完整类型/负担/资源见log4 S1-BND-301。
+
+2026-10-14 07:49:45 CST最终窄热构建9301/9301通过，耗时2:39.75，组采样峰值
+25873892KiB（约24.675GiB）；首轮失败和两轮总耗时
+252.227s已记录。162条公理报告仅含标准允许集合，无Mathlib源码重编。
+源码枚举SceneBounds365/162、总计1016/548纠正历史累计漂移；整体目标仍open。

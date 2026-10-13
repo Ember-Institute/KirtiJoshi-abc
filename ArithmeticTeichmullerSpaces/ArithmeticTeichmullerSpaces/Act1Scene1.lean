@@ -157,5 +157,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionRepeatedPacketVolum
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312QProductAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRelativeNormBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRootHaarBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperRootNormProduct
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
