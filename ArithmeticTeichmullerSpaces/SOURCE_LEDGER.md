@@ -1926,3 +1926,32 @@ owner Scene1，新增0假设，前置信任不增加。完整类型/负担/资�
 25873892KiB（约24.675GiB）；首轮失败和两轮总耗时
 252.227s已记录。162条公理报告仅含标准允许集合，无Mathlib源码重编。
 源码枚举SceneBounds365/162、总计1016/548纠正历史累计漂移；整体目标仍open。
+
+## S1.302：fixed-place repeated log tensor Haar 与 actual VBad q-pilot
+
+`JT-SCENE1-INITIAL-THETA-REPEATED-ROOT-HAAR`，路径
+`Act1Scene1/IutInitialThetaRepeatedRootHaar.lean`，消费S1.297的actual repeated
+packet Haar公式和actual ordinary logValue norm。来源组织为Joshi III
+th:moccor-Mochizuki-form2 3624–3631的fixed-place tensor；本地独立证明，无
+参考代码复制/import。packet/region/moduliVolume及三个定理证明实际重复log
+scalar lattice的degreeVolume为root norm的n/localDeg幂，按moduli localDeg
+修正后等于actual relative root factor的n次幂，且严格为正。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-REPEATED-HAAR-PRODUCT`，路径
+`Act1Scene1/IutInitialThetaVBadRepeatedHaarProduct.lean`，直接从上述local Haar
+volume定义actual VBad全局乘积，显式按moduli global finrank规范化。三个定理
+证明等于canonical normalized root product的n次幂、negative log=n*reference
+absLogQ，且对合法actual over-place selector独立。局部和全局修正幂均显式；
+未以q-pilot指数或目标lower bound定义volume。
+
+Prologue-R5→R5，derive，owner Scene1；新增0数学假设，前置信任不增加。
+本轮闭合fixed-place普通重复log tensor的Haar/q-root/VBad q-pilot数值连接。
+Fin n factors是同一actual completion/log scalar的重复，未构造不同untilts、
+τ_j或Bloch–Kato classes，未识别paper thetaVolume。论文V_p^oss/L'、joint
+真实模型、maximal order/collation/hull及最终Corollary3.12仍open。
+完整公共类型、动态边界和构建资源见log4 S1-BND-302。
+
+2026-10-14 07:56:55 CST首轮窄热构建9303/9303通过，耗时3:37.41，进程组
+采样峰值25726216KiB（约24.534GiB），最大同时Lean workers为3，无Mathlib
+源码重编。172条公理报告仅含标准允许集合；源码枚举SceneBounds375/172、
+全部家族1026/558。十个公共声明通过；整体目标仍open。
