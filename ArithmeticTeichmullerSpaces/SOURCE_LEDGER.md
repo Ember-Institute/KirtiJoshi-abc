@@ -1873,3 +1873,9 @@ SceneBounds346/145与Scene1聚合通过，145条公理报告仅含标准允许�
 3:37.21，组采样峰值25823460KiB（约24.627GiB）；首轮失败和
 两轮总耗时378.571s已记录log4，无Mathlib重编。三个definition及十二公共定理
 通过、默认heartbeat；fixed-D实际数值代表选择独立性闭合，整体数学目标仍open。
+
+S1.297 验证补记（2026-10-14 07:15:44 CST）：最终热构建9297/9297 jobs通过，退出码0；
+SceneBounds351/148与Scene1聚合通过，148条公理报告仅含标准允许集合。最终耗时
+2:14.52，组采样峰值25808604KiB（约24.613GiB）；前五次失败与
+六轮总耗时502.130s记录log4，无Mathlib重编。两个definition/三个theorem
+通过、默认heartbeat；structural repeated packet volume identities闭合，整体目标仍open。

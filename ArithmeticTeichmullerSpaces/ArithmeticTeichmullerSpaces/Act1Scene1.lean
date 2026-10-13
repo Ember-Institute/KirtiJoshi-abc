@@ -153,5 +153,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadModuliJAccounti
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadQRootChoiceSceneBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadQRootChoice
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootChoice
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionRepeatedPacketVolume
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
