@@ -1482,3 +1482,24 @@ consumer。前置信任不增加，Core/Candidate/Obligations、冻结依赖不�
 
 S1.280 验证补记：最终窄热构建9263/9263 jobs通过，退出码0；
 PaperAccounting68/42与Scene1聚合通过，42条公理报告只含标准允许集合。完整目标仍open。
+
+## S1.281：actual VBad 与 canonical Scene1 q-pilot 的代表上界
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-VBAD-REPRESENTATIVE-BOUND` | `iutInitialThetaReferenceAbsLogQ_eq_fullCarrierRestriction`、`iutInitialThetaReferenceAbsLogQ_le_fullBaseSum`、`iutInitialThetaReferenceAbsLogQ_le_selectedPaperSum`、`Corollary312QPilotData.absLogQ_le_selectedPaperSum_ofCanonicalInitialThetaLink`；`Act1Scene1/IutInitialThetaVBadRepresentativeBound.lean` | 由 actual VBad base support 包含于完整 odd-support 构造保留底层处的 finite carrier inclusion；已有 Tate parameter uniqueness/qOrder equality 识别共同处的实际 admissible-prime 项。ReferenceIut.absLogQ 精确等于完整 carrier 上按 actual VBad pullback 过滤的项和，正性给出≤full sum。消费 S1.280 full bound 得到 actual VBad absLogQ≤selected paper sum，再通过 canonical source/reference equality 接入实际 canonical Scene1 q-pilot。 |
+
+本模块使用已有实际数据，不移植新文件。VBad/full 的数值关系是限制和式身份，
+未把包含关系改称 carrier equality。canonical consumer 保留既有 hEll/hLink 和
+解析载体参数，但不需要新 source-to-representative 映射、prime/term certificate、
+section coverage 或 degree-one 条件；新上界针对 degree-normalized absLogQ，
+不是 raw target qLogSum 与论文和式的等式或 thetaVolume 估计。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。新增四条 theorem，actual carrier
+restriction identity→full bound→selected bound→canonical consumer。共同处项的
+身份来自已经证明的 actual qOrder equality，前置信任不增加；Core/Candidate/
+Obligations、既有声明和冻结依赖不变。完整来源模型、论文载体身份/归一化和
+volume transfer 仍 open。验证、资源与动态记录见 log4 的 S1-BND-281。
+
+S1.281 验证补记：最终窄热构建9264/9264 jobs通过，退出码0；
+PaperAccounting72/46及Scene1聚合通过，46条公理报告只含标准允许集合。完整目标仍open。
