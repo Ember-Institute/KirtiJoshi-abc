@@ -1291,3 +1291,25 @@ paper representative normalization。它校正当前 raw candidate 的 q-pilot �
 逐层消费。无退休、Prologue 晋升/抽取、新参考代码复制或 Lake 依赖。前置信任
 不增加；一般真实模型、论文代表/权重、thetaVolume 与最终 Corollary 3.12 仍 open。
 验证与资源见 log4 的 `S1-BND-271`。
+
+## S1.272：代表纤维 mass-one 条件的限制
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-PAPER-REPRESENTATIVE-MASS-AUDIT` | `Corollary312QPilotPaperRepresentativeAccounting.representativeOfSource_surjective`、`primeLabel_injective`、`Corollary312PaperRepresentativeSectionLinkAccounting.sectionLink_residueChar_injective`；`Act1Scene1/PaperQRepresentativeMassAudit.lean` | mass-one 条件先推出 source-to-representative 映射满射。若该映射保持有理素数标签，同素数两个不同代表的互斥纤维各有权重 1，但它们的总权重≤该素数完整 source 子纤维权重≤1，矛盾；因此素数标签单射。随后通过实际 `InitialThetaData` canonical section-link 的 representativeLinkEquiv 运输该限制。 |
+
+来源是已证明的 Core `Arithmetic.qPilotWeight_sum_le_one_of_residueChar_filter`
+和本地 Scene1 representative accounting 字段；未移植新参考代码。Joshi III
+`ss:val-sets-defn`、`cor:cor312` 的处集允许逐 prime 使用其全部选定代表；本单元
+不把“每 prime 至多一个代表”当作论文假设。它揭示当前去权 certificate 在保持
+prime 时的限制，不声称存在实际 two-place countermodel，也不声称已证明某个
+未构造的 source-to-paper map 保持 prime。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；新增三条必要性质，
+满射结果由 prime-label 单射证明消费，后者由 actual section-link 单射定理消费。
+无旧声明退休、Prologue 晋升/抽取、Core/Candidate/Obligations 或 Lake 依赖变更。
+前置信任不增加；去权、代表/重数、paper normalization、thetaVolume 和完整
+Scene1 仍 open。动态记录、验证和资源见 log4 的 `S1-BND-272`。
+
+S1.272 验证补记：三条公共定理及 PaperAccounting 30/14 和 Scene1 聚合通过；
+`9255/9255` jobs、退出码 0，公理仅有标准允许集合。数学前提不变，完整模型仍 open。
