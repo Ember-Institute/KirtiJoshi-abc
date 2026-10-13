@@ -1717,3 +1717,29 @@ S1.290 验证补记（2026-10-14 05:16:00 CST）：首次窄热构建9281/9281 j
 SceneBounds267/85与Scene1聚合通过，85条公理报告仅含标准允许集合。耗时3:38.57，
 进程组采样峰值25656516KiB（约24.468GiB）；无Mathlib重编译。
 七定理proved，三叶子默认heartbeat；完整数学目标仍open。
+
+
+## S1.291：actual tensor 的 degree-normalized Haar volume 与 q-root log 会计
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-DEGREE-VOLUME` | `LocalCompletion.Packet.tensor_finrank_eq_localDeg_prod`、`tensor_finrank_pos`、`degreeLogVolume`、`degreeVolume`、`degreeVolume_eq_exp_degreeLogVolume`、`degreeLogVolume_scalarLattice_eq_norm_sum`、`degreeVolume_scalarLattice_eq_norm_product`；`Act1Scene1/LocalCompletionTensorDegreeVolume.lean` | 独立消费S1.290 actual completion degrees与raw Haar乘积。otherDimension/total tensor dimension=1/localDeg，得到log(Haar)/finrank的局部log和及Haar^(1/finrank)的norm幂乘积。参考Volume.lean 18–23、195–204仅作normalization guide，无复制或import。积分结构取实际unitLattice，未识别为reference maximal order；只在正有限region上声称真实log-volume。 |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-TENSOR-DEGREE-VOLUME` | `SelectedThetaTensor.region_degreeLogVolume_eq_rootNorm_sum`、`region_degreeVolume_eq_rootNorm_product`、`region_degreeVolume_negLog_eq_ordp_sum`；`Act1Scene1/IutInitialThetaSelectedTensorDegreeVolume.lean` | actual D全部selected prime fibre及ordinary logValue nonzero/contracting/norm=root norm实例化generic law，得到actual region的degree-normalized数值乘积与negative log=∑ordp(root)*log p。无自由measure/norm/degree证书或对最终theta hull的身份声明。 |
+
+Joshi III `ss:weighted-vol` 3522–3543的factor γ product与3554–3557 `eq:weights`
+的inverse relative local degrees不能直接与本地degree normalization互换。本单元
+γ=1/(e*f)，而S1.284 uniformizer normalization使用1/f，paperTerm为
+ e*ordp(root)*log p；本单元negative log是ordp(root)*log p。相对次数、论文
+载体、实际maximal order/hull与规范化转换仍是明确证明义务。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；两个数值definition和八公共
+定理，无新假设。实际dimension/measure→generic normalized numeric volume→
+actual selected prime-fibre root/ordp consumers，对应Scene1证明负担减少，
+前置信任不增加。Core/Candidate/Obligations和旧公共类型不变。
+完整类型、满足模型域和构建资源见log4的S1-BND-291；完整数学目标仍open。
+
+S1.291 验证补记（2026-10-14 05:29:26 CST）：最终窄热构建9283/9283 jobs通过，退出码0；
+SceneBounds277/93与Scene1聚合通过，93条公理报告仅含标准允许集合。最终耗时
+2:40.79，进程组采样峰值25708892KiB（约24.518GiB）；两次失败
+及三轮总耗时400.541s已逐轮记录log4。无Mathlib重编译。两个definition及八公共
+定理通过，默认heartbeat；完整数学目标仍open。

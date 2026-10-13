@@ -138,5 +138,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRepresentativeB
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedTensorArithmeticVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorArithmeticVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionDegree
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedTensorDegreeVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorDegreeVolume
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
