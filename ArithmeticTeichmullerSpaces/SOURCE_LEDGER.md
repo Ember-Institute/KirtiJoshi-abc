@@ -1356,3 +1356,25 @@ Corollary 3.12 仍 open。验证及资源见 log4 的 `S1-BND-274`。
 
 S1.274 验证补记：首次窄热构建 `9257/9257` jobs 通过，退出码 0；
 PaperAccounting 39/21 与 Scene1 聚合通过，公理仅有标准允许集合。完整模型仍 open。
+
+## S1.275：actual representative sum 与 selected q-root sum
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-REPRESENTATIVE-QROOT-SUM` | `iutInitialThetaSelectedQRootPaperSum`、`iutInitialThetaSelectedQRootPaperSum_eq_representativeSum`、`iutInitialThetaSelectedQRootPaperSum_pos`、`Corollary312QPilotData.absLogQ_le_initialThetaSelectedQRootPaperSum`；`Act1Scene1/IutInitialThetaRepresentativeQRootSum.lean` | 直接由 actual selected q-root power = canonical section Tate parameter，消费 completion valuation/ordp，证明 absolute ramIdx * ordp(qroot) = actual section qOrder/(2*ℓ)。同一 section 的有限 subtype 通过保留底层处的 Equiv 逐项运输，证明 selected root paper sum 与 S1.274 actual representative sum 相等；得到严格正性，并接入既有条件性 q-pilot upper bound。和式识别不需要 independent analytic payload 或 sum-equality certificate。 |
+
+相对 ramification、residue degree 或 global degree 没有被错误替换为此处的
+absolute `ramIdx`。定义保留 selected source 和其实际 q-root，由 actual power law
+推导 local equality；来源 mapping/local term/prime identity 仍是最终 q-pilot
+consumer 的显式输入，不声称把它们构造出来。旧 selected section-link 的
+finite-sum 定理保持不变；本单元补齐无无关 theta/packet/hull 参数的直接接口。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；新定义及三条
+公共定理，private local equality 和 finite carrier equivalence 由 sum theorem
+消费，sum equality 由正性与 q-pilot upper bound 消费。无退休、Prologue 晋升/
+抽取、新参考代码复制、Core/Candidate/Obligations 或冻结依赖变更。直接识别
+证明负担减少，前置信任不增加；真实模型、paper mapping/normalization、
+thetaVolume 和最终 Corollary 3.12 仍 open。动态记录及资源见 log4 的 S1-BND-275。
+
+S1.275 验证补记：最终窄热构建 `9258/9258` jobs 通过，退出码 0；
+PaperAccounting 43/24 和 Scene1 聚合通过，公理仅有标准允许集合。完整模型仍 open。
