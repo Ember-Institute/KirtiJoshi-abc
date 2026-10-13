@@ -1545,3 +1545,24 @@ actual reference consumer。当前 normalization 下的去权等式被实际字�
 
 S1.283 验证补记：最终窄热构建9266/9266 jobs通过，退出码0；
 PaperAccounting81/54及Scene1聚合通过，54条公理报告只含标准允许集合。完整目标仍open。
+
+## S1.284：实际 selected q-root 球的 paper-normalized 体积乘积
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-PAPER-BALL-PRODUCT` | `iutInitialThetaFullQRoot_norm_lt_one`、`iutInitialThetaQRootIntegralBall`、`iutInitialThetaQRootIntegralBall_haar_toReal_eq_norm`、`iutInitialThetaPaperBallVolume`、`iutInitialThetaPaperBallVolume_mem_Ioo`、`iutInitialThetaPaperBallVolume_negLog_eq_paperTerm`、`iutInitialThetaSelectedPaperBallProduct`、`iutInitialThetaSelectedPaperBallProduct_negLog_eq_paperSum`、`iutInitialThetaSelectedPaperBallProduct_mem_Ioo`；`Act1Scene1/IutInitialThetaSelectedPaperBallProduct.lean` | actual full torsion q-root 的 power equation 与 canonical completion map 给出 norm<1。将 actual root 打包到 completion integer ring，消费已有 normalized scalar-ball Haar/index/norm theorem，证明 root*O球的 Haar.toReal=raw root norm。取体积数值的 `1/inertDeg` 次幂，实现 Joshi III 1748、2086 的局部 uniformizer 归一化；Arithmetic.ordp 与 e*f accounting 证明负对数=实际 paper root 项。实际 selected carrier 的有限乘积负对数精确等于 selected paper sum，且乘积在(0,1)。 |
+
+所有局部球由 actual D 的实际 root 构造。normalized Haar 原始体积通过真实
+integer quotient/index 计算；paper correction 是该体积数值的幂，不声称幂修正
+仍为 additive Haar measure。有限乘积使用原有 actual selected source，不改用
+full base carrier 或自由 paper mapping。该乘积可以服务于论文 product 下界的
+q侧，但它本身还不是 tensor/hull 或 thetaVolume；log-shell witness、untilt、
+packet/collation/hull 的来源和 volume transfer 必须继续证明。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。新增三定义及六公共 theorem，
+actual root norm→实际 Haar volume→paper local log→selected finite product/log
+形成消费链。Core/Candidate/Obligations、既有target签名和冻结依赖不变，前置
+信任不增加。边界/模型义务、完整类型、验证与资源见log4的S1-BND-284。
+
+S1.284 验证补记：最终窄热构建9267/9267 jobs通过，退出码0；
+PaperAccounting90/60及Scene1聚合通过，60条公理报告只含标准允许集合。完整目标仍open。
