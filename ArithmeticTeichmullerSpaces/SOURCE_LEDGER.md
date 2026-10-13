@@ -1884,9 +1884,8 @@ SceneBounds351/148与Scene1聚合通过，148条公理报告仅含标准允许�
 ## S1.298：Corollary312 qProduct 的独立会计公式
 
 `JT-SCENE1-COR312-QPRODUCT-ACCOUNTING`：`Corollary312QProductAccounting.lean`
-新增`corollary312_qProduct_pos`、`corollary312_log_qProduct_eq_ellStar_mul_sum_log`、
-`corollary312_negLog_qProduct_eq_ellStar_mul_sum_negLog`。在显式`letI :=
-T.qIndexFintype`下证明qProduct正性及ellStar幂与有限qFactor log和的精确转换。
-只提供目标层代数会计；真实q-family、paper carrier、thetaVolume与最终3.12仍open。
-S1.298构建9298/9298通过，SceneBounds354/151、全工程1005/547，最终耗时2:15.75，
+新增三个公共theorem，显式在命题中安装`T.qIndexFintype`，证明qProduct正性和
+ellStar幂与有限qFactor log/negative-log和的转换。只提供目标层代数会计；真实
+q-family、paper carrier、thetaVolume和最终3.12仍open。
+S1.298最终构建9298/9298通过，SceneBounds354/151、全工程1005/547，耗时2:15.75，
 组采样峰值25796124KiB（约24.601GiB），无Mathlib重编。
