@@ -21,6 +21,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorRegion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScale
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIndex
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -113,6 +114,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIndex
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionIndex_pos
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_normalizedHaar_eq_inv_index
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionIndex_haar_product_eq_one
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.bounded_module_finite
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.lattice_balls_span_eq_top
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.lattice_balls_isLattice
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.lattice_balls_module_free
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_module_finite
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily

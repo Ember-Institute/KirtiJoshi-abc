@@ -981,3 +981,22 @@ S1.253 验证补记（2026-10-13 16:18:31 CST）：两轮API表示错误修正�
 region的normalizedHaar有限指数公式和三个实际来源定理为proved；新增消费者
 公理只有Lean标准三项。Mathlib未重编译。factor norm/degree指数计算与hull、
 weighted global volume及完整Scene1仍open。
+
+## S1.254：实际张量整格有限生成
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-INTEGRAL-BASIS` | `Packet.bounded_module_finite`、`lattice_balls_span_eq_top`、`lattice_balls_isLattice`、`unitLattice_module_finite`、`lattice_balls_module_free`；`Act1Scene1/LocalCompletionTensorIntegralBasis.lean` | 本地 proof terms，消费 Mathlib 有限坐标模 Noetherian 性、有限无挠 PID 模自由性与 `Submodule.IsLattice`。S1.251 已证明的 actual integral tensor boundedness/scaled-basis 零邻域提供前提；这些通用定理通过窄构建，但本轮实际消费者只使用有限生成定理。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-INTEGRAL-BASIS` | `region_module_finite`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | actual canonical q-root logarithm tensor region 的有限生成由实际 radius≤1 有界性和通用坐标注入定理派生。region 的 free module、满秩 span、整数基和 rational basis 仍是后续义务，未作为本轮结果记录。 |
+
+任意有界 `ℤ_p` 子模块在基坐标中可统一乘 `p^m` 缩小到 `ℤ_p^N`；所得线性
+坐标映射单射，因此由目标 Noetherian 有限模推出源有限生成。通用文件还证明
+正半径整格的满秩与自由性，但实际 region 的 scalar-tower/`IsLattice` 实例
+合成仍未稳定，故本轮只发布并消费 `region_module_finite`。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码
+复制、依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor region 的
+有限生成义务减少，前置信任不增加。free module、满秩 span、integral/rational
+basis、有限商 index 的 factor norm/degree 乘积评价、论文 weighted volume、
+maximal-order/hull、untilt/Bloch–Kato 和最终 Corollary 3.12 仍 open；本轮不
+宣称完整整数基或 index 公式已完成。验证结果见 log4。

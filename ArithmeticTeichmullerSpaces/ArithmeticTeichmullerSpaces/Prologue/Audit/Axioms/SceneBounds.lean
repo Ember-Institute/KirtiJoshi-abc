@@ -14,6 +14,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorRegion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScale
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIndex
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
