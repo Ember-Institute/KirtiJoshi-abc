@@ -118,5 +118,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeQRoot
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedWeightedBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedSupportDefect
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotJLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaModuliJAccounting
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

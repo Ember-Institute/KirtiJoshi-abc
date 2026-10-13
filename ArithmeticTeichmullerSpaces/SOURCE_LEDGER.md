@@ -1442,3 +1442,23 @@ producer→full sum consumer，generic fiber theorem→actual moduli j consumer�
 
 S1.278 验证补记：最终窄构建9261/9261 jobs通过、退出码0；
 PaperAccounting58/35及Scene1聚合通过，公理仅有标准允许集合。完整目标仍open。
+
+## S1.279：actual full q-pilot 按模域处的 j-log 重组
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-MODULI-J-ACCOUNTING` | `iutInitialThetaOddModSupportFinset`、`iutInitialThetaBaseModuliFiber`、`mem_iutInitialThetaBaseModuliFiber_iff`、`iutInitialThetaBaseModuliFiber_normalized_jLog`、`iutInitialThetaFullBaseQPilotLogSum_eq_moduliJLogSum`；`Act1Scene1/IutInitialThetaModuliJAccounting.lean` | 由 actual odd moduli support 的有限性及其完整 base pullback 构造模域有限支撑与完整 base 纤维，证明每个支撑处的纤维成员当且仅当 LiesOver。消费 S1.278 的 normalized fibre j-log 定理，再由 canonical contraction 分组 actual full base finite sum，得到 full q-pilot 等于 actual moduli j-log sum 除以 `2*ℓ*[fieldOfModuli:ℚ]`。 |
+
+三个公共定理只消费 actual D 与所属模域支撑的处。纤维完整性由实际 pullback
+和 canonical contraction 唯一性证明，调用方无需另交完整枚举 hs，也无需证明
+section 覆盖 full base support。最终和式保留所有实际 base 处；relative local
+程度通过完整纤维的 global-degree normalization 消去。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。新增两定义、三定理，实际
+carrier producer→完整纤维判据→归一化→全局重组形成消费链。前置信任不增加；
+Core/Candidate/Obligations、冻结依赖均不变。full/VBad 身份、模域 j-log 与
+论文 selected representative 的权重/归一化比较、真实完整模型及 thetaVolume/
+Corollary3.12 仍 open。动态记录及构建资源见 log4 的 S1-BND-279。
+
+S1.279 验证补记：首次窄热构建9262/9262 jobs通过，退出码0；
+PaperAccounting63/38及Scene1聚合通过，38条公理报告仅含标准允许集合。完整目标仍open。

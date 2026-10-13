@@ -10,6 +10,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeQRoot
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedWeightedBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedSupportDefect
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotJLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaModuliJAccounting
 
 /-! PaperAccounting 家族：里程碑公理审计。 -/
 
@@ -48,3 +49,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotJLog
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaBaseQPilotLogTerm_eq_jLog
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaFullBaseQPilotLogSum_eq_jLogSum
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaModuliJ_normalized_fiber
+#print axioms JoshiTeich.Act1Scene1.mem_iutInitialThetaBaseModuliFiber_iff
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaBaseModuliFiber_normalized_jLog
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaFullBaseQPilotLogSum_eq_moduliJLogSum
