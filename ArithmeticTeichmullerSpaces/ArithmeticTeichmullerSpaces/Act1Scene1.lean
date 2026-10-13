@@ -99,5 +99,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaLogSignAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaWitnessProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBall
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallHaar
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

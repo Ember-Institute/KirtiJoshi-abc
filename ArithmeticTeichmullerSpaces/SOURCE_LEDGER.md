@@ -794,3 +794,28 @@ S1.246 验证补记（2026-10-13 11:33:16 CST）：一次受保护窄构建通�
 进程组采样 RSS 峰值 `25665416 KiB`（`24.476 GiB`），time 单进程最大 RSS
 `8235812 KiB`。新定理及实际来源消费者为 proved，两个新增最终公理报告只有
 `propext`、`Classical.choice`、`Quot.sound`；没有 Mathlib 编译或源码重试。
+
+## S1.247：实际完成域的局部紧致与 Haar 整格球测度
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-COMPLETION-PADIC-ALGEBRA` | `LocalCompletion.padicEmb`、`padicEmb_ratCast`、`continuous_padicEmb`、`finite_padicAlgebra`；`Act1Scene1/LocalCompletionPadicAlgebra.lean` | 独立移植参考 `Packet.lean` 选定段。原始提交 `4d2b6e926089b949109c69c28f13c7f878249c5d`，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，Git 作者 Christian Merten，文件作者 The iut contributors。保留 Apache-2.0 文件头及许可证通知；只复制 residue characteristic、`ℚ_p` embedding、有限维性证明，不复制 packet/factor/tensor/archimedean 构造。 |
+| `JT-SCENE1-LOCAL-COMPLETION-HAAR` | `exists_isCompact_closedBall_subset`、`instProperSpaceCompletionAt`、`integralUnitBall`、`normalizedHaar`、`normalizedHaar_unitBall`、`normalizedHaar_scalarBall`；`Act1Scene1/LocalCompletionHaar.lean` | 独立移植 `Integral.lean` 提交 `b76207ab8955e68a7408d5d2a770b75a30c3bebf` 和 `LogShell.lean` 提交 `fe96f99cae5c6d48d25113163f1b9b388fc35814` 的局部紧致/ProperSpace 段。用 Mathlib `Measure.addHaarMeasure` 归一化完成域单位闭球，标量球测度表达为 `distribHaarChar`，不把该特征自动识别成 completion norm。 |
+| `JT-SCENE1-INITIAL-THETA-LOG-BALL-HAAR` | `integralBall_isCompact`、`integralBall_isOpen`、`integralBall_haar_eq`、`integralBall_haar_pos_lt_top`；`Act1Scene1/IutInitialThetaLogBallHaar.lean` | 消费实际 canonical q-root 对数整格球。证明实际球紧、开，且归一化 Haar 测度严格在 `(0,∞)`，测度等于见证标量的 `distribHaarChar`。论文 `le:volume-lemma1` 要求的有限正局部区域已构造；论文范数等式、不同 untilt、tensor product 和全局加权体积仍未证明。 |
+
+完成域有限维性使实际 local field 获得 ProperSpace；单位闭球成为
+`PositiveCompacts`，并据此定义归一化 Haar measure。实际整格球仍是
+`value D v * {x | ‖x‖≤1}`，前轮已证明其为 q-root 范数闭球。当前测度结论
+精确到 `distribHaarChar`，没有把缺失的范数-测度缩放恒等式伪装成完成结果。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。未修改 Core、
+Candidate 或 Obligations；不增加 Lake 依赖，不导入参考工程。局部完成域的
+有限维、紧致性、Haar 归一化和实际球正有限测度义务已减少，前置信任负担不增加。
+Haar 特征与论文 completion norm 的识别、Bloch–Kato、不同 untilt、tensor
+hull/volume 和最终 Corollary 3.12 仍 open。构建证据见 log4 的 S1.247。
+
+S1.247 验证补记（2026-10-13 11:53:39 CST）：最终窄构建通过 `9232/9232`
+jobs，time 墙钟 `5:41.23`，监控耗时 `341.739 s`，进程组 RSS 峰值
+`25610140 KiB`（`24.424 GiB`），time 最大单进程 RSS `8236908 KiB`，退出码 0。
+五个新增最终公理报告只有 `propext`、`Classical.choice`、`Quot.sound`；Mathlib
+未重编译，完整真实 Scene1 模型与 Corollary 3.12 仍 open。

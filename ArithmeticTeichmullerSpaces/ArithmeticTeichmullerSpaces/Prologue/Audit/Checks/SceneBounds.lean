@@ -14,6 +14,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaLogSignAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaWitnessProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBall
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallHaar
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -44,6 +45,17 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBall
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.value_mem_integralBall
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_subset_logShell
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_subset_closedBall_iff
+#check JoshiTeich.Act1Scene1.LocalCompletion.padicEmb
+#check JoshiTeich.Act1Scene1.LocalCompletion.padicEmb_ratCast
+#check JoshiTeich.Act1Scene1.LocalCompletion.continuous_padicEmb
+#check JoshiTeich.Act1Scene1.LocalCompletion.finite_padicAlgebra
+#check JoshiTeich.Act1Scene1.LocalCompletion.exists_isCompact_closedBall_subset
+#check JoshiTeich.Act1Scene1.LocalCompletion.normalizedHaar_unitBall
+#check JoshiTeich.Act1Scene1.LocalCompletion.normalizedHaar_scalarBall
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_isCompact
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_isOpen
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_eq
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_pos_lt_top
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily
