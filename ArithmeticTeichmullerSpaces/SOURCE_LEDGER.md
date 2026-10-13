@@ -954,3 +954,30 @@ S1.252 验证补记（2026-10-13 16:00:53 CST）：最终窄构建 `9242/9242` j
 （24.439GiB），time最大单进程RSS8239432KiB。真实tensor scale/image、整格
 Haar归一化和三个实际来源定理为proved；两项新增公理报告只有Lean标准三项。
 Mathlib未重编译。character数值评价、maximal-order/hull及完整Scene1仍open。
+
+## S1.253：真实张量整格有限指数与归一化 Haar 测度
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-INTEGRAL-INDEX` | `Packet.unitHaar`、`scalarSubgroup`、`scalarIndex`、`scalarSubgroup_finiteIndex`、`scalarIndex_pos`、`normalizedHaar_scalarLattice_eq_inv_index`；`Act1Scene1/LocalCompletionTensorIndex.lean` | 本地 proof terms；Joshi III `le:volume-lemma2/3` 的实际张量整格，Mathlib `AddSubgroup.index_mul_measure`。单位张量整格紧致，非零逐factor缩放得到开标量整格；comap到单位整格后其加法商有限，从实际陪集计数证明测度等于指数倒数。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-INTEGRAL-INDEX` | `InitialThetaTensorWitness.regionIndex`、`regionIndex_pos`、`region_normalizedHaar_eq_inv_index`、`regionIndex_haar_product_eq_one`；`Act1Scene1/IutInitialThetaTensorIndex.lean` | 实际canonical logarithm标量固定了真实tensor region和加法子群商，非零性与norm≤1由q-root来源证明。归一化Haar区域测度等于实际`regionIndex`倒数，并证明指数乘测度为1。 |
+
+`scalarSubgroup` 是实际标量整格在真实unitLattice中的comap加法子群，
+不是自由指定的有限商。factor norm≤1证明完整标量整格包含于unitLattice，
+因此子群的完成域像等于整个目标区域。测度沿包含映射comap到紧致unitLattice，
+其总测度为1；有限陪集计数给出index*measure=1。这里的index尚未计算为
+factor norm与degree的乘积；它与S1.252的Haar character是两个同一真实测度
+的表达，不宣称完整定量乘积公式已经证明。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。没有新参考
+代码复制、依赖或Core/Candidate/Obligations修订。Scene1的实际tensor区域测度
+到有限加法指数的证明义务减少，前置信任不增加。指数的逐因子norm/degree
+分解、论文weight/normalization、maximal-order/hull、不同untilt/Bloch–Kato和
+最终thetaVolume仍open。资源与验证见log4的S1.253。
+
+S1.253 验证补记（2026-10-13 16:18:31 CST）：两轮API表示错误修正后，最终
+窄构建`9244/9244` jobs通过，rc0；time墙钟2:20.89，监控耗时141.088s，组RSS
+峰值25613308KiB（24.427GiB），time最大单进程RSS8239788KiB。actual tensor
+region的normalizedHaar有限指数公式和三个实际来源定理为proved；新增消费者
+公理只有Lean标准三项。Mathlib未重编译。factor norm/degree指数计算与hull、
+weighted global volume及完整Scene1仍open。
