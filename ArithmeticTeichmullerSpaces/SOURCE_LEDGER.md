@@ -1846,3 +1846,30 @@ SceneBounds331/133与Scene1聚合通过，133条公理报告仅含标准允许�
 4:28.34，组采样峰值25860184KiB（约24.662GiB）；无Mathlib
 重编。四definition/abbrev与十公共定理通过、默认heartbeat；同支撑actual
 reference/normalized-root product/canonical Scene1身份闭合，整体数学目标仍open。
+
+
+## S1.296：fixed actual D 的 relative root factor / VBad product 代表选择独立性
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-RELATIVE-QROOT-CHOICE` | `iutInitialThetaFullQRoot_pow_norm_inv_eq_torsionJNorm`、`iutInitialThetaRelativeQRootFactorAt`、`iutInitialThetaRelativeQRootFactorAt_eq_inverse_relativeFinrank`、`iutInitialThetaRelativeQRootFactorAt_mem_Ioo`、`iutInitialThetaRelativeQRootFactorAt_negLog_eq_moduliJLog`、`iutInitialThetaRelativeQRootFactorAt_eq_of_liesOver`、`iutInitialThetaRelativeQRootFactorAt_eq_selectedFactor`；`Act1Scene1/IutInitialThetaRelativeQRootChoice.lean` | actual root幂方程与base Tate j-norm给(norm(root)^(2ℓ))⁻¹=torsion j-norm。actual moduli/torsion completion norm transfer与D的algebra tower把该j-norm写为moduli j-norm的actual relative degree幂；inverse relative degree因子negative log=moduli j-log/(2ℓ)，仅由fixed D和moduli place决定。任意两actual source places above同一moduli place给相同数值因子，并与canonical selected factor相同。独立本地证明，无参考代码复制/import；paper carrier/norm/untilt/hull身份不假定。 |
+| `JT-SCENE1-INITIAL-THETA-VBAD-QROOT-CHOICE` | `iutInitialThetaVBadRootSelector_injective`、`iutInitialThetaVBadRelativeQRootProductOf`、`iutInitialThetaNormalizedVBadRelativeQRootProductOf`、`iutInitialThetaVBadRelativeQRootProductOf_eq_canonical`、`iutInitialThetaNormalizedVBadRelativeQRootProductOf_eq_canonical`、`iutInitialThetaNormalizedVBadRelativeQRootProductOf_negLog_eq_referenceAbsLogQ`、`iutInitialThetaVBadRelativeQRootProductOf_choice_independent`；`Act1Scene1/IutInitialThetaVBadQRootChoice.lean` | ρ只要求ρ(v)为actual full torsion source且liesOver对应VBad moduli place。unique contraction派生selector单射，无额外重数证书；local factor choice law给all合法ρ产品=canonical VBad产品、normalized negative log=actual reference absLogQ。两个selector的raw加权产品相同。 |
+| `JT-SCENE1-INITIAL-THETA-VBAD-QROOT-CHOICE-SCENE-BRIDGE` | `Corollary312QPilotData.absLogQ_eq_choiceVBadRelativeQRootProduct_negLog_ofCanonicalInitialThetaLink`；`Act1Scene1/IutInitialThetaVBadQRootChoiceSceneBridge.lean` | existing canonical Scene1/reference同支撑q-pilot桥消费任意actual selector的product equality；保留hLink/hEll与θ/packetHull显式数据，不加free numerical equality或目标volume假设。 |
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；三个definition、十二公共theorem。
+actual root/Tate j/norm transfer→fixed-D local factor choice invariance→VBad
+selector单射/global product/reference identity→canonical Scene1消费者。对应
+Scene1实际数值代表选择/重数会计负担减少，新增0数学假设，前置信任不增加；
+Core/Candidate/Obligations与旧API不变。完整类型与资源见log4的S1-BND-296。
+
+范围为fixed actual D的torsion field/source，在同一moduli place上变换actual
+source over-place；未比较不同D、不同torsion fields或untilts/论文L'全部代表。
+S1.293 tensor region呈现条件、完整paper carrier/norm、joint真实模型、maximal
+order、Bloch–Kato/untilt/collation/hull/thetaVolume和最终3.12仍open；不能仅以
+本fixed-D数值不变性勾选完整论文代表独立性闸门。
+
+S1.296 验证补记（2026-10-14 06:54:27 CST）：最终窄热构建9296/9296 jobs通过，退出码0；
+SceneBounds346/145与Scene1聚合通过，145条公理报告仅含标准允许集合。最终耗时
+3:37.21，组采样峰值25823460KiB（约24.627GiB）；首轮失败和
+两轮总耗时378.571s已记录log4，无Mathlib重编。三个definition及十二公共定理
+通过、默认heartbeat；fixed-D实际数值代表选择独立性闭合，整体数学目标仍open。
