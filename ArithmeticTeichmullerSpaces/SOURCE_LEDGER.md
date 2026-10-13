@@ -1399,3 +1399,24 @@ Corollary 3.12 仍 open。验证与资源见 log4 的 S1-BND-276。
 
 S1.276 验证补记：最终窄构建 `9259/9259` jobs 通过、退出码0；
 PaperAccounting 47/27 和Scene1聚合通过，公理仅有标准允许集合。完整目标仍open。
+
+## S1.277：完整 base q-pilot 和的遗漏部分与覆盖判据
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-SUPPORT-DEFECT` | `iutInitialThetaBaseQPilotLogTerm`、`iutInitialThetaBaseQPilotLogTerm_pos`、`iutInitialThetaFullBaseQPilotLogSum`、`iutInitialThetaOmittedBaseQPilotLogSum`、`iutInitialThetaFullBaseQPilotLogSum_eq_selected_add_omitted`、`iutInitialThetaOmittedBaseQPilotLogSum_eq_zero_iff_coverage`、`iutInitialThetaFullBaseQPilotLogSum_le_paperSum_of_coverage`；`Act1Scene1/IutInitialThetaSelectedSupportDefect.lean` | 在 actual full odd-support base carrier 上定义真实 q-pilot log term，并从 qOrder>0、arithmetic weight>0、ℓ≥5 和 residue prime>1 证明严格正性。用已证明 selected subset 将完整有限和分解为 selected weighted q-root sum 加实际未选定 base 项。严格正性证明 omitted sum=0 iff selected base support=full odd support；显式 coverage 下消费 S1.276 的上界得到 full base sum≤selected paper sum。 |
+
+分解只接受 actual D，未加入自由差额、覆盖 certificate 或 synthetic witness。
+最后的 full upper bound明确保留 coverage 参数；未将 full odd support 与
+D.VBad q-pilot carrier 自动等同，也不由 finite sum decomposition 推出论文
+normalization 或 thetaVolume。处集若有遗漏，各项正性阻止将遗漏贡献视为零。
+
+`Prologue-R5 → Prologue-R5`，operation derive，owner Scene1。新增三定义与四
+定理，source positivity→coverage iff，selected/base identity→decomposition→
+conditional full upper bound形成消费者链。无退休、Prologue晋升/抽取、IUT文件
+复制、Core/Candidate/Obligations或冻结依赖改动。完整 finite accounting 的差额
+明确，前置信任不增加；actual coverage、VBad/full identity、paper代表/归一化、
+thetaVolume和最终Corollary3.12仍open。动态记录/资源见log4的S1-BND-277。
+
+S1.277 验证补记：最终窄构建9260/9260 jobs通过，退出码0；
+PaperAccounting54/31及Scene1聚合通过，公理仅有标准允许集合。完整目标仍open。
