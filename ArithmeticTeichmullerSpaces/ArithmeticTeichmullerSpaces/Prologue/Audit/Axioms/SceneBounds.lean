@@ -6,6 +6,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.RawTargetSpecification
 import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaLogSignAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaWitnessProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogWitness
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBall
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -15,6 +16,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogWitness
 #print axioms JoshiTeich.Act1Scene1.ThetaWitnessProduct.canonical_qroot_witness_bounds
 #print axioms JoshiTeich.Act1Scene1.InitialThetaLogWitness.value_mem_logShell
 #print axioms JoshiTeich.Act1Scene1.InitialThetaLogWitness.norm_value_eq_qroot_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_subset_logShell
+#print axioms JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_subset_closedBall_iff
 
 #print axioms JoshiTeich.Act1Scene1.corollary312_of_qPilot_accounting
 #print axioms JoshiTeich.Act1Scene1.cor312_of_scene1_qPilot_data

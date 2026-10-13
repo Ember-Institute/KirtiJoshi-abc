@@ -769,3 +769,28 @@ S1.245 验证补记（2026-10-13 11:24:04 CST）：最终窄重试 `9227/9227` j
 新来源定理及局部解析 proof terms 为 proved；两个新增最终消费者的公理仅为
 `propext`、`Classical.choice`、`Quot.sound`。Mathlib 未重编译，完整真实
 Scene1 模型与 Corollary 3.12 仍 open。
+
+## S1.246：局部对数满射与实际来源整格球
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-LOG-BALL` | `LocalPadicLog.exists_padicLog_eq`、`exists_normalizedLog_eq`、`normalizedLog_image_closedBall`、`closedBall_subset_logShell`、`mul_image_closedBall`；`Act1Scene1/LocalPadicLogBall.lean` | 独立移植 `refer/iut/Iut/Concrete/LocalConstruct/PadicLog.lean` 的 496–529 行：通过 `a ↦ y-logRem a` 的 Banach 不动点证明小球对数满射。原始提交 `bc1c6e6c7ac4bcf0c363b9b1bbe9b6d7bc35bf9c`，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`；Git 作者 Christian Merten，文件作者 The iut contributors。复制前核查该文件头与双方 LICENSE，保留 Apache-2.0 通知；独立命名空间及精确导入。新增归一化映满单位球、单位球包含于 log-shell 和标量球等式的本地证明。 |
+| `JT-SCENE1-INITIAL-THETA-LOG-BALL` | `InitialThetaLogWitness.integralBall`、`integralBall_eq_closedBall`、`value_mem_integralBall`、`integralBall_subset_logShell`、`integralBall_subset_closedBall_iff`；`Act1Scene1/IutInitialThetaLogBall.lean` | 消费 S1.245 的实际 canonical q-root logarithm 见证。Joshi III `le:volume-lemma2`（3531–3543）使用 `lambda*O_E` 的标量整格。这里构造实际完成域中 `value D v * {x : ‖x‖≤1}`，证明它等于半径为实际 q-root 范数的闭球，包含实际见证并位于普通 log-shell；还证明包含见证的任一零中心范数球包含该整格球。 |
+
+泛型满射证明以 CharZero、CompleteSpace、rank-one 离散赋值、`p.Prime` 和
+`‖p‖<1` 为显式条件；实际消费者从完成域嵌入和 canonical source 派生这些条件。
+在上述完成域设置中，标量球等式额外只要求标量非零，实际见证的非零性已有 proof term。该集合是实际
+局部标量整格，未声称它等于论文 tensor hull、不同 untilt 的 theta locus，或
+现有 `PacketHullData` 中的完整来源 hull。Haar measure、加权体积、Bloch–Kato
+识别和全局 normalization 仍为 open。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。实际来源消费者
+使用泛型单位球包含和标量球定理；SceneBounds 审计消费四项来源定理。没有新增
+Lake 依赖、参考工程导入或 Core 契约。Scene1 的单位球来源与局部区域构造义务
+减少，前置信任负担不增加。最终 proof status 和资源记录见 log4 的 S1.246 条目。
+
+S1.246 验证补记（2026-10-13 11:33:16 CST）：一次受保护窄构建通过
+`9229/9229` jobs，退出码 0；time 墙钟 `3:53.85`，监控耗时 `234.263 s`，
+进程组采样 RSS 峰值 `25665416 KiB`（`24.476 GiB`），time 单进程最大 RSS
+`8235812 KiB`。新定理及实际来源消费者为 proved，两个新增最终公理报告只有
+`propext`、`Classical.choice`、`Quot.sound`；没有 Mathlib 编译或源码重试。

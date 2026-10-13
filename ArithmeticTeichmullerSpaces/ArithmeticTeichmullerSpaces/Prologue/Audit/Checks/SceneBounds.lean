@@ -13,6 +13,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.TransferQAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaLogSignAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaWitnessProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogWitness
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBall
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -34,6 +35,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogWitness
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.value_mem_logShell
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.norm_value_eq_qroot_norm
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.value_ne_zero
+#check JoshiTeich.Act1Scene1.LocalPadicLog.exists_padicLog_eq
+#check JoshiTeich.Act1Scene1.LocalPadicLog.exists_normalizedLog_eq
+#check JoshiTeich.Act1Scene1.LocalPadicLog.normalizedLog_image_closedBall
+#check JoshiTeich.Act1Scene1.LocalPadicLog.closedBall_subset_logShell
+#check JoshiTeich.Act1Scene1.LocalPadicLog.mul_image_closedBall
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_eq_closedBall
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.value_mem_integralBall
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_subset_logShell
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_subset_closedBall_iff
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily
