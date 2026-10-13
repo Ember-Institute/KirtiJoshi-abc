@@ -1462,3 +1462,23 @@ Corollary3.12 仍 open。动态记录及构建资源见 log4 的 S1-BND-279。
 
 S1.279 验证补记：首次窄热构建9262/9262 jobs通过，退出码0；
 PaperAccounting63/38及Scene1聚合通过，38条公理报告仅含标准允许集合。完整目标仍open。
+
+## S1.280：完整 odd-support q-pilot 与实际 selected paper sum 的上界
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-FULL-REPRESENTATIVE-BOUND` | `iutInitialThetaModuliSelectedSourceEquiv`、`iutInitialThetaModuliJLogTerm_eq_weightedBaseQOrder`、`iutInitialThetaModuliJLogTerm_le_selectedPaperTerm`、`iutInitialThetaFullBaseQPilotLogSum_le_selectedPaperSum`、`iutInitialThetaFullBaseQPilotLogSum_le_representativeSum`；`Act1Scene1/IutInitialThetaFullRepresentativeBound.lean` | 消费 actual full moduli j-log accounting，以 base/moduli completion norm 的相对 e*f 幂律和 inertia tower 消去相对 residue degree，证明每个 normalized moduli j-log term 等于 `(qPilotWeight v / relRamIdx b v) * (baseQOrder b/(2*ℓ))*log(residueChar b)`。系数≤1，base/source ramification tower 与 actual selected q-root ordp identity 给出逐代表上界。模域有限支撑与实际 selected source 的双射运输 finite sum，得到 actual full base q-pilot≤actual selected paper sum，进而≤同一 section representative sum。 |
+
+这条 full 上界不需要 section 覆盖 full base support：所有 base 处已在完整 moduli
+纤维中求和，然后对每个 moduli 处比较一个实际选定代表。它不把 full carrier
+等同于 selected carrier，亦不把上界当成论文要求的未加权等式。参照 Joshi III
+`ss:val-sets-defn`、`th:moccor-Mochizuki-form2`、`cor:cor312`（index 第133–134条），
+本文仍需证明论文处集/代表来源身份、paper norm 和 thetaVolume 的定量传递。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1；新增一个实际 carrier equivalence
+及四条 theorem；local numeric producer→逐项 bound→full finite sum→representative
+consumer。前置信任不增加，Core/Candidate/Obligations、冻结依赖不变。资源、验证
+与未完成模型义务见 log4 的 S1-BND-280。旧显式 coverage 下的上界声明保留。
+
+S1.280 验证补记：最终窄热构建9263/9263 jobs通过，退出码0；
+PaperAccounting68/42与Scene1聚合通过，42条公理报告只含标准允许集合。完整目标仍open。
