@@ -120,6 +120,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedSupportDefe
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotJLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaModuliJAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullRepresentativeBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeCoefficients
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRepresentativeBound
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

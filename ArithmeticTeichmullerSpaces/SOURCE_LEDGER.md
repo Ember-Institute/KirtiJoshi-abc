@@ -1503,3 +1503,23 @@ volume transfer 仍 open。验证、资源与动态记录见 log4 的 S1-BND-281
 
 S1.281 验证补记：最终窄热构建9264/9264 jobs通过，退出码0；
 PaperAccounting72/46及Scene1聚合通过，46条公理报告只含标准允许集合。完整目标仍open。
+
+## S1.282：实际完整 q-pilot 的代表系数与去权等式判据
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-REPRESENTATIVE-COEFFICIENTS` | `iutInitialThetaRepresentativeCoefficient`、`iutInitialThetaModuliJLogTerm_eq_coefficient_mul_selectedPaperTerm`、`iutInitialThetaRepresentativeCoefficient_mem_Ioc`、`iutInitialThetaFullBaseQPilotLogSum_eq_coefficientWeightedPaperSum`、`iutInitialThetaFullBaseQPilotLogSum_eq_paperSum_iff_coefficients_eq_one`；`Act1Scene1/IutInitialThetaRepresentativeCoefficients.lean` | 对实际 moduli support 的每个 v，令 s 为 actual section q-root source、b=contraction(s)，计算 `c(v)=qPilotWeight(v)/(relRamIdx(b/v)*relRamIdx(s/b))`。由实际 selected q-root ordp、ramification tower 和 S1.280 normalized moduli j-log formula 证明 local full contribution=c(v)*paperTerm(s)。已有实际 local bound与严格正性给出 0<c≤1，full moduli grouping 给出完整 q-pilot 的 exact coefficient-weighted representative sum。全部 paper 项严格正，有限差额和因此给出 full sum=unweighted selected paper sum iff 每个 c(v)=1。 |
+
+系数不是自由输入。完整 base 纤维已求和，相对 residue degree 在该求和/归一化
+中消去；两层相对 ramification 则仍出现在代表系数的分母。S1.280/281 的上界
+不能代替去权等式。此必要充分判据未提供 actual coefficient=1 证明，也未构造
+系数严格小于1的特定 InitialThetaData 反例。Joshi III 的 `ss:theta-data-fixing2`、
+`ss:val-sets-defn` 和 `cor:cor312` 的论文 carrier/norm 身份仍须独立证明。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。新增实际 coefficient 定义及四条
+theorem；local identity→interval bound/full weighted sum→unweighted equality iff
+形成消费链。前置信任不增加，Core/Candidate/Obligations、既有目标声明和冻结
+依赖不变。资源、完整公共类型、模型义务及验证见 log4 的 S1-BND-282。
+
+S1.282 验证补记：最终窄热构建9265/9265 jobs通过，退出码0；
+PaperAccounting77/50及Scene1聚合通过，50条公理报告只含标准允许集合。完整目标仍open。
