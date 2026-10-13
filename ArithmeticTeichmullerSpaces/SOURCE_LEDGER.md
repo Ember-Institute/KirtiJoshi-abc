@@ -1254,3 +1254,20 @@ representatives/权重、maximal-order/hull、q-pilot/thetaVolume 与最终 Coro
 `Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；无新参考代码、
 Lake 依赖或 Core/Candidate/Obligations 变更。验证资源见 `docs/开发计划.V1Act1log4.md`
 的 S1.269；窄审计结果为 SceneBounds 214/45、总计 786/369。
+
+## S1.270：canonical Scene1 input 的 q-pilot 来源与模型障碍
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-CANONICAL-SOURCE-FIELD-AUDIT` | `IutQPilotSource.ofCanonicalInitialThetaScene1Input`、`CanonicalInitialThetaScene1Input.finrank_eq_one_of_weightedNormalization`；`Act1Scene1/IutInitialThetaCanonicalSourceAudit.lean` | 消费 S1.241–242 的 canonical 场景输入和既有 canonical q-pilot source 构造器，直接在 `X.toData` 上构造来源，无独立 `hEll`/`hLink` certificate。随后消费实际非空处集、source 的 raw norm theorem 与逐处 normalization audit，证明当前 weighted normalization 必须满足 `Module.finrank ℚ D.F = 1`。保留 theta、Perfectoid、packet/hull、volume 和 q-family 义务为显式输入；未构造一般数域的完整满足模型。 |
+
+Joshi III 的 `cor:cor312` 不能靠这个 degree-one 限制得到一般数域的来源模型。
+本单元证明当前两种 normalization 的障碍确实出现在 canonical source 路径上，
+并未据此改变论文目标、删除非空处集或增加 Prologue 假设。raw 与
+paper/degree normalization 的最终选择仍需来源复审。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。新增来源构造与
+必要条件 proof term；无退休、晋升、抽取、新参考代码复制、Lake 依赖或
+Core/Candidate/Obligations 改动。新构造由必要条件定理实际消费。
+参数来源识别负担减少，前置信任负担不增加；完整 Scene1 与 Corollary 3.12 仍 open。
+验证、资源和完整动态记录见 log4 的 `S1-BND-270`。

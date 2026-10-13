@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalQPilot
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalScene1Input
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 
 namespace JoshiTeich.Act1Scene1
 
@@ -65,6 +67,67 @@ theorem iutCanonicalBaseSource_qOrder_eq_link
   exact congrArg (Arithmetic.completionQOrder w.1)
     (iutCanonicalBaseSource_tateParameter_eq_link D theta thetaBase
       packetHull heightData ramification logVolume processionLength w)
+
+/-! The canonical Scene1 input fixes the target link by construction.  This
+specialization removes the duplicate equality certificates required by the
+generic source constructor while keeping the analytic payload explicit. -/
+noncomputable def IutQPilotSource.ofCanonicalInitialThetaScene1Input
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (X : CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase
+      packetHull heightData ramification logVolume processionLength)
+    (ellStar : ℕ) (qIndex : Type u) (qIndexFintype : Fintype qIndex)
+    (qLogTerm : qIndex → ℝ) (thetaVolume : ℝ) :
+    IutQPilotSource p
+      (CanonicalInitialThetaScene1Input.toData p D theta thetaBase packetHull
+        heightData ramification logVolume processionLength X ellStar qIndex
+        qIndexFintype qLogTerm thetaVolume) := by
+  exact IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+    packetHull heightData ramification logVolume processionLength rfl rfl
+
+/-- On the canonical source path, the current weighted normalization contract
+forces degree one. Nonemptiness comes from the actual initial theta datum;
+the raw norm law comes from the source, so neither is an additional input. -/
+theorem CanonicalInitialThetaScene1Input.finrank_eq_one_of_weightedNormalization
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (X : CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase
+      packetHull heightData ramification logVolume processionLength)
+    (ellStar : ℕ) (qIndex : Type u) (qIndexFintype : Fintype qIndex)
+    (qLogTerm : qIndex → ℝ) (thetaVolume : ℝ) :
+    let T := CanonicalInitialThetaScene1Input.toData p D theta thetaBase packetHull
+      heightData ramification logVolume processionLength X ellStar qIndex
+      qIndexFintype qLogTerm thetaVolume
+    let S := IutQPilotSource.ofCanonicalInitialThetaScene1Input D p theta thetaBase
+      packetHull heightData ramification logVolume processionLength X ellStar
+      qIndex qIndexFintype qLogTerm thetaVolume
+    let hCompat : QNormTateCompatibility T.scene1.data.link :=
+      iutInitialThetaLink_qNormTateCompatibility D theta thetaBase packetHull
+        heightData ramification logVolume processionLength
+    Corollary312QPilotSourceNormalization p T S.orderCompatibility
+      (S.toSceneQPilot p hCompat) → Module.finrank ℚ D.F = 1 := by
+  intro T S hCompat hWeighted
+  obtain ⟨w, hw⟩ := T.scene1.input_laws.first_axiom.places_nonempty
+  have hwSource : w ∈ S.badFinset := by
+    rw [S.badFinset_eq_link_places p]
+    exact hw
+  exact Corollary312QPilotNormalizationAudit.finrank_eq_one_of_raw_and_weighted_normalization
+    p (S.toSceneQPilot p hCompat) S.orderCompatibility
+    (S.toSceneQPilot_rawQNormDegreeNormalization p hCompat) hWeighted w hwSource
 
 /-- Construct the actual q-pilot source from its Tate fields. Carrier equality,
 parameter equality, and the Tate j-identity are derived by the constructor. -/
