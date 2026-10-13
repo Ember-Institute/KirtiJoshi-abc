@@ -1203,3 +1203,19 @@ Scene1 的 prime-scalar Haar 维数归一化义务减少，前置信任不增加
 determinant/Haar、completion norm/local-degree 归一化、论文 representatives/
 重数/权重、maximal-order/hull、不同 untilt/Bloch–Kato、真实 q-pilot/thetaVolume
 与最终 Corollary 3.12 仍 open。编译与审计状态、资源见 log4 的 S1.266。
+
+## S1.267：实际 index/Haar 无分母 accounting
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-INDEX-HAAR-ACCOUNTING` | `regionIndex_pow_finrank_mul_region_haar_image_smul_eq_one`；`Act1Scene1/IutInitialThetaTensorHaarScaling.lean` | 组合 S1.253 的 `regionIndex_haar_product_eq_one`、S1.261 actual tensor finrank 和 S1.266 p-adic Haar image scaling，证明 `regionIndex * p^dim * μ(p • region) = 1`。全式在 `ENNReal` 中以非零/非顶条件逐项消去，不引入新的 index 或 measure certificate。 |
+
+该恒等式是后续数值 index、determinant 和 weighted volume accounting 的无分母
+接口；它尚未计算 `regionIndex` 的 factor norm/degree 公式，也未把 `p^dim`
+替换为论文 local-degree normalization。论文 representatives/重数/权重、
+maximal-order/hull、不同 untilt/Bloch–Kato、真实 q-pilot/thetaVolume 与最终
+Corollary 3.12 仍 open。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；无新参考代码、
+Lake 依赖或 Core/Candidate/Obligations 变更。实际 index/Haar accounting 义务
+减少，前置信任不增加。验证资源见 log4 的 S1.267。
