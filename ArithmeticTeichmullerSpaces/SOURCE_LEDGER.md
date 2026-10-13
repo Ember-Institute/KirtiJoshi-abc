@@ -1313,3 +1313,25 @@ Scene1 仍 open。动态记录、验证和资源见 log4 的 `S1-BND-272`。
 
 S1.272 验证补记：三条公共定理及 PaperAccounting 30/14 和 Scene1 聚合通过；
 `9255/9255` jobs、退出码 0，公理仅有标准允许集合。数学前提不变，完整模型仍 open。
+
+## S1.273：派生 representative fibre mass 的会计
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-PAPER-REPRESENTATIVE-FIBER-MASS` | `qPilotRepresentativeFiberMass`、`qPilotWeightedSourceSum_eq_fiberMassSum`、`qPilotRepresentativeFiberMass_mem_unitInterval`、`Corollary312QPilotData.absLogQ_eq_fiberMassRepresentativeSum`、`absLogQ_le_unweightedRepresentativeSum`；`Act1Scene1/PaperQRepresentativeFiberMass.lean` | fibre mass 定义为实际 `Arithmetic.qPilotWeight` 在 source-to-representative 映射纤维上的有限和，不作为自由字段给出。Finite sum partition 得到 weighted regrouping；原 raw norm law 的 paper-normalized q-log theorem 连接到实际 q-pilot。prime-preserving map 下，每 fibre mass 在 `[0,1]`；代表项非负时 weighted sum≤unweighted sum。source map、局部 term identity 和非负性保持显式条件，未构造 paper carrier 或去权等式。 |
+
+消费链为 computed mass → finite weighted regrouping → actual q-pilot equality；
+prime-fibre bound → mass interval → q-pilot/unweighted inequality。
+旧 `Corollary312QPilotPaperRepresentativeAccounting` 及 S1.272 necessary restrictions
+保留，未改已有声明、未把计算得出的 mass 强制设为 1。Joshi III
+`ss:weighted-vol` / `le:volume-lemma3` 的权重方向与此有限非负和比较一致；识别
+这些 mass 与论文 relative completion weights、paper representatives/local terms
+仍是来源义务，不从这个 inequality 宣布 Corollary 3.12 已冻结或证明。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；新增定义和四条
+会计/范围/不等式 theorem，无退休、Prologue 晋升/抽取、新参考代码复制或 Lake
+依赖变更。前置信任不增加；完整真实模型、论文归一化/代表身份、thetaVolume 和
+Corollary 3.12 仍 open。动态记录、最终编译与资源见 log4 的 `S1-BND-273`。
+
+S1.273 验证补记：最终精确导入版本 `9256/9256` jobs 通过，退出码 0；
+PaperAccounting 35/18 和 Scene1 聚合通过，公理仅有标准允许集合。完整模型仍 open。
