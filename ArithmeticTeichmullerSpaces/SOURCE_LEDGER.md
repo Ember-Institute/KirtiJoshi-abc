@@ -1030,3 +1030,18 @@ scalar-tower 参数、具体 integral/rational basis、factor norm/degree index 
 `Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
 依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor region 的 full-span
 义务减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.256。
+
+## S1.257：实际张量整格 `IsLattice`
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-ISLATTICE` | `region_isLattice`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | 以实际 q-root 半径的正性和≤1性，将通用 `lattice_balls_isLattice` 实例化到 actual tensor region。声明显式固定 `ℤ_[p]`、`ℚ_[p]`、actual tensor carrier、module 实例和两个 scalar-tower 参数，避免隐式实例合成掩盖载体。 |
+
+`region_isLattice` 闭合 actual tensor region 的有限生成、`ℚ_[p]` full span 与
+`Submodule.IsLattice` 结构接口，但不构造具体 `Module.Basis`、不计算 factor
+norm/degree index，也不识别 maximal order 或 hull。weighted volume、untilt/
+Bloch–Kato 和最终 Corollary 3.12 仍 open。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
+依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor lattice 的结构性
+前提减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.257。

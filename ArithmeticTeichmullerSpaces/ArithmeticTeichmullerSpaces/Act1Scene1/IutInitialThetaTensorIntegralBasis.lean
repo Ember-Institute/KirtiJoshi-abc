@@ -3,11 +3,10 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorIntegralBasis
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-TENSOR-INTEGRAL-BASIS
-fidelity: derives finite generation and freeness of the actual q-root
-logarithm tensor region from its bounded integral coordinates and ambient
-torsion-freeness. Generic lattice span lemmas live in the companion module;
-the actual full span, integral basis, tensor index evaluation, weighted
-volume and hull remain open.
+fidelity: derives finite generation, freeness, full rational span and the
+explicit lattice structure of the actual q-root logarithm tensor region.
+Generic lattice lemmas live in the companion module; the actual integral
+basis, tensor index evaluation, weighted volume and hull remain open.
 boundary: Scene1/Derived
 -/
 
@@ -23,6 +22,13 @@ variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
 variable (p : ℕ) [Fact p.Prime] {ι : Type} [Fintype ι]
 variable (c : ι → (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset)
 variable (hc : ∀ i, Arithmetic.residueChar (c i).1 = p)
+
+local instance regionTensorScalarTower :
+    IsScalarTower ℤ_[p] ℚ_[p] (packet D p c hc).Tensor := by
+  constructor
+  intro r s x
+  change ((r : ℚ_[p]) * s) • x = (r : ℚ_[p]) • (s • x)
+  rw [mul_smul]
 
 theorem region_module_finite : Module.Finite ℤ_[p] (region D p c hc) := by
   let P := packet D p c hc
@@ -48,6 +54,22 @@ theorem region_span_eq_top :
   intro i
   exact norm_pos_iff.mpr
     ((IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).qroot_ne_zero (c i))
+
+theorem region_isLattice :
+    @Submodule.IsLattice ℤ_[p] _ ℚ_[p] _ _ (packet D p c hc).Tensor _
+      (inferInstance : Module ℤ_[p] (packet D p c hc).Tensor)
+      (inferInstance : Module ℚ_[p] (packet D p c hc).Tensor)
+      (regionTensorScalarTower (D := D) (p := p) (c := c) (hc := hc))
+      (regionTensorScalarTower (D := D) (p := p) (c := c) (hc := hc))
+      (region D p c hc) := by
+  let P := packet D p c hc
+  rw [region_eq_ballLattice]
+  apply LocalCompletion.Packet.lattice_balls_isLattice P
+  · intro i
+    exact norm_pos_iff.mpr
+      ((IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).qroot_ne_zero (c i))
+  · intro i
+    exact (IutTorsionQRootSource.ofInitialThetaDataFromGlobal_qroot_norm_lt_one D (c i)).le
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness
