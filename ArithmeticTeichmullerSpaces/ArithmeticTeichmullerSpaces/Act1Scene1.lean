@@ -135,5 +135,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PadicHaarDeterminant
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicHaarScalarNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicHaarTransvection
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRepresentativeBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedTensorArithmeticVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorArithmeticVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionDegree
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

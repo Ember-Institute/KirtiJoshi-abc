@@ -1694,3 +1694,26 @@ selected root norm消费者。Core/Candidate/Obligations、冻结依赖与旧API
 S1.289 验证补记：最终窄热构建9278/9278 jobs通过、退出码0；
 SceneBounds260/78和Scene1聚合通过，78条公理报告仅含标准允许集合。
 scalar代数结构在签名内由actual hw派生，三模块默认heartbeat；完整目标仍open。
+
+
+## S1.290：actual completion 的 e·f 维数与 raw tensor 算术指数
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-COMPLETION-DEGREE` | `LocalCompletion.intValuation_residueChar`、`valued_residueChar`、`norm_residueChar_eq_inv_pow_localDeg`、`finrank_padic_eq_localDeg`；`Act1Scene1/LocalCompletionDegree.lean` | 逐段适配refer/iut/Iut/Concrete/LocalConstruct/Arithmetic.lean的两个residue-characteristic valuation证明；原提交b76207ab8955e68a7408d5d2a770b75a30c3bebf，参考快照07cb1da58f6d428a670dbb5dd6093d428bcbcdd8，Git作者Christian Merten，文件作者The iut contributors。复制前核查双方Apache-2.0 LICENSE，保留版权、许可证与provenance。实际ideal factors count给v_w(p)=-e，completion norm给norm(p)=(p⁻¹)^(e*f)；本地消费S1.289代数范数身份和Algebra.norm_natCast，再由p>1的幂指数单射证明actual padicAlgebra上的finrank=e*f。未假定raw completion norm有NormedSpace ℚ_p结构。 |
+| `JT-SCENE1-LOCAL-TENSOR-ARITHMETIC-VOLUME` | `LocalCompletion.Packet.factor_finrank_eq_localDeg`、`normalizedHaar_scalarLattice_eq_localDeg_product`；`Act1Scene1/LocalCompletionTensorArithmeticVolume.lean` | 任意actual Packet的每个factor以actual residueChar_eq实例化degree theorem，替换S1.289 raw scalar tensor Haar的所有otherDimension维数为actual localDeg=e*f。无新的degree/norm-law证书。 |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-TENSOR-ARITHMETIC-VOLUME` | `SelectedThetaTensor.region_normalizedHaar_eq_localDeg_product`；`Act1Scene1/IutInitialThetaSelectedTensorArithmeticVolume.lean` | 消费实际selected region raw root norm体积和actual factor dimension，得到全selected prime fibre上root norm的算术指数乘积。处集、重数及raw norm保留，未声称paper weighted volume或thetaVolume身份。 |
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。七公共theorem，无新自由数据
+定义。实际ideal/valuation→scalar degree→Packet raw arithmetic volume→actual D
+selected region；Scene1对应证明负担减少，前置信任不增加。Core/Candidate/
+Obligations与旧公共API不变。完整类型、模型义务、资源与验证见log4的S1-BND-290。
+
+实际factor finrank=e*f身份闭合；paper tensor weighting、V_p^oss/L'载体与代表
+选择独立性、完整真实Scene1模型、Bloch–Kato/不同untilt、collation/hull/thetaVolume
+及最终Corollary3.12仍open。维数身份不关闭上述整体数学闸门。
+
+S1.290 验证补记（2026-10-14 05:16:00 CST）：首次窄热构建9281/9281 jobs通过，退出码0；
+SceneBounds267/85与Scene1聚合通过，85条公理报告仅含标准允许集合。耗时3:38.57，
+进程组采样峰值25656516KiB（约24.468GiB）；无Mathlib重编译。
+七定理proved，三叶子默认heartbeat；完整数学目标仍open。
