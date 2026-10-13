@@ -55,6 +55,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadQRootChoice
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootChoice
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionRepeatedPacketVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312QProductAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRelativeNormBridge
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -413,3 +414,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312QProductAccounting
 #check JoshiTeich.Act1Scene1.corollary312_qProduct_pos
 #check JoshiTeich.Act1Scene1.corollary312_log_qProduct_eq_ellStar_mul_sum_log
 #check JoshiTeich.Act1Scene1.corollary312_negLog_qProduct_eq_ellStar_mul_sum_negLog
+#check JoshiTeich.Act1Scene1.actualPaperRootNorm
+#check JoshiTeich.Act1Scene1.actualPaperRootNorm_mem_Ioo
+#check JoshiTeich.Act1Scene1.relativeFactor_eq_paperRootNorm_rpow
+#check JoshiTeich.Act1Scene1.relativeFactor_negLog_eq_paperRootNorm_negLog_mul_degree_ratio

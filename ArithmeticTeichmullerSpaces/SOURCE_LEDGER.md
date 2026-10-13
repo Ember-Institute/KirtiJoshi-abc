@@ -1889,3 +1889,13 @@ ellStar幂与有限qFactor log/negative-log和的转换。只提供目标层代�
 q-family、paper carrier、thetaVolume和最终3.12仍open。
 S1.298最终构建9298/9298通过，SceneBounds354/151、全工程1005/547，耗时2:15.75，
 组采样峰值25796124KiB（约24.601GiB），无Mathlib重编。
+
+
+## S1.299：paper residue-degree norm 与 actual relative norm 的局部转换
+
+`JT-SCENE1-INITIAL-THETA-PAPER-RELATIVE-NORM-BRIDGE`：
+`IutInitialThetaPaperRelativeNormBridge.lean`定义actualPaperRootNorm并证明
+positive、actual relative factor与paper root norm的rpow转换，以及negative-log
+转换。结论使用localDeg=ramIdx*inertDeg和actual liesOver；没有识别paper L'、
+untilt、Bloch–Kato或theta hull。S1.299构建9299/9299通过，SceneBounds354/155、
+全工程1009/551，耗时2:34.69，组峰值25871060KiB（约24.673GiB），无Mathlib重编。
