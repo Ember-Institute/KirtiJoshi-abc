@@ -1000,3 +1000,18 @@ weighted global volume及完整Scene1仍open。
 basis、有限商 index 的 factor norm/degree 乘积评价、论文 weighted volume、
 maximal-order/hull、untilt/Bloch–Kato 和最终 Corollary 3.12 仍 open；本轮不
 宣称完整整数基或 index 公式已完成。验证结果见 log4。
+
+## S1.255：实际张量整格自由模
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-FREE` | `region_module_free`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | 消费 S1.254 的 actual `region_module_finite` 与通用 tensor ambient `Module.IsTorsionFree`，调用 Mathlib 有限生成无挠 PID 模自由定理。实际 canonical q-root logarithm tensor region 因而为有限生成自由 `ℤ_[p]` 模；没有引入 detached basis、index 或 volume certificate。 |
+
+`region_module_free` 只使用实际 region 的 boundedness（经 S1.254 finite-generation
+证明）和 `ℚ_[p]` tensor 空间的无挠性。实际 `IsLattice`/scalar-tower 声明、满秩
+rational span、integral/rational basis、factor norm/degree index 公式、论文
+weighted volume、maximal-order/hull、untilt/Bloch–Kato 和最终 Corollary 3.12 仍 open。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
+依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor region 的 free-module
+义务减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.255。
