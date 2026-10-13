@@ -75,5 +75,10 @@ noncomputable def regionFreeBasis := by
   letI : Module.Free ℤ_[p] (region D p c hc) := region_module_free D p c hc
   exact Module.Free.chooseBasis ℤ_[p] (region D p c hc)
 
+noncomputable def regionFinBasis := by
+  letI : Module.Free ℤ_[p] (region D p c hc) := region_module_free D p c hc
+  letI : Module.Finite ℤ_[p] (region D p c hc) := region_module_finite D p c hc
+  exact Module.finBasis ℤ_[p] (region D p c hc)
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness

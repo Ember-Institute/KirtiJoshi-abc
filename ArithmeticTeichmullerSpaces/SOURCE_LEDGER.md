@@ -1059,3 +1059,18 @@ weighted volume、maximal-order/hull、untilt/Bloch–Kato 和最终 Corollary 3
 `Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
 依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor integral-basis
 前提减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.258。
+
+## S1.259：实际张量整格有限秩 `Fin` 基
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-FIN-BASIS` | `regionFinBasis`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | 在定义体内安装实际 `region_module_free` 和 `region_module_finite`，调用 Mathlib `Module.finBasis ℤ_[p]`，得到 `Module.Basis (Fin (Module.finrank ℤ_[p] (region D p c hc))) ℤ_[p] (region D p c hc)`。该基由 actual region 的证明生成，没有外部 basis 或 cardinal 输入。 |
+
+该声明闭合 actual region 的有限秩整数基选择，并保留 `Module.finrank` 作为实际
+秩；尚未把该秩计算为 tensor factor degree/norm 乘积，也未接入 finite-index Haar
+公式、paper weighted volume、maximal-order/hull、untilt/Bloch–Kato 或最终
+Corollary 3.12。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
+依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor integral-basis
+接口进一步闭合，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.259。
