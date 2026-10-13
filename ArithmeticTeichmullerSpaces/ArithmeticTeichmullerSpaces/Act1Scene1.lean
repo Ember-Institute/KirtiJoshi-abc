@@ -101,5 +101,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBall
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallHaar
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallIndex
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallNorm
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

@@ -16,6 +16,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBall
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallHaar
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallIndex
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallNorm
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -65,6 +66,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogBallIndex
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_index_pos
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_eq_inv_index
 #check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_le_one
+#check JoshiTeich.Act1Scene1.LocalCompletion.exists_globalInteger_norm_sub_lt
+#check JoshiTeich.Act1Scene1.LocalCompletion.principalQuotientMap_surjective
+#check JoshiTeich.Act1Scene1.LocalCompletion.principalQuotientMap_ker
+#check JoshiTeich.Act1Scene1.LocalCompletion.principalQuotientEquiv
+#check JoshiTeich.Act1Scene1.LocalCompletion.principalIndex_eq_absNorm_pow
+#check JoshiTeich.Act1Scene1.LocalCompletion.normalizedHaar_scalarBall_toReal_eq_norm
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_index_eq_absNorm_pow
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_toReal_eq_qroot_norm
+#check JoshiTeich.Act1Scene1.InitialThetaLogWitness.integralBall_haar_eq_qroot_norm
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily

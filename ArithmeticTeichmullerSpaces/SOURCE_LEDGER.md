@@ -846,3 +846,30 @@ S1.248 验证补记（2026-10-13 14:52:20 CST）：最终窄构建 `9234/9234` j
 `25603652 KiB`（`24.418 GiB`），time 最大单进程 RSS `8237320 KiB`，rc 0。
 实际指数测度消费者与通用证明为 proved；新增最终公理报告仅含 Lean 标准三项。
 Mathlib 未重编译，完整数学/审计目标仍 open。
+
+## S1.249：实际局部主理想商同构与 Haar/norm 识别
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-HAAR-NORM` | `LocalCompletion.globalIntegerMap`、`exists_globalInteger_norm_sub_lt`、`principalQuotientMap_surjective`、`principalQuotientMap_ker`、`principalQuotientEquiv`、`principalIndex_eq_absNorm_pow`、`normalizedHaar_scalarBall_toReal_eq_norm`；`Act1Scene1/LocalCompletionHaarNorm.lean` | 本地 proof terms；使用冻结 Mathlib 全局整数近似、完成域稠密性、第一同构定理、理想绝对范数幂律和现有 completion valuation norm 公式。Joshi III `le:volume-lemma1` 使用单位整数环归一化 Haar measure 与标量绝对值。本轮通过实际商同构计算完成域主理想的商基数，不再接受未知缩放因子作为范数证书。 |
+| `JT-SCENE1-INITIAL-THETA-LOG-BALL-NORM` | `integralBall_index_eq_absNorm_pow`、`integralBall_haar_toReal_eq_qroot_norm`、`integralBall_haar_eq_qroot_norm`；`Act1Scene1/IutInitialThetaLogBallNorm.lean` | 消费实际 `InitialThetaData` canonical q-root 对数见证的整性、非零性、范数等式和 completionQOrder。证明实际整格球的归一化 Haar measure 等于 `ENNReal.ofReal ‖qroot‖`。这里是 raw completion norm，不自动等于已定义的 paperRootNorm。 |
+
+对实际 `w : FinitePlace K`，若非零整元素 `z` 的估值为 `exp(-n)`，全局整数到
+`integerRing w ⧸ (z)` 的映射满射，核为 `w.maximalIdeal.asIdeal^n`。满射由
+先逼近一个域元素、再用 Mathlib 全局整数近似产生，未将 residue-field 对齐
+作为显式假设。商同构计算加法指数 `absNorm(w)^n`，进而由 S1.248 的测度公式
+得到标量整数球的实值测度等于其 completion norm。实际 logarithm 见证的 `n`
+从其 completion valuation 派生。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。不复制新的
+参考工程代码，不增加依赖，不改 Core/Candidate/Obligations。Scene1 的局部
+有限商基数和 raw Haar/norm 识别义务减少，前置信任不增加。不同 untilt 的
+normalized theta 值、Bloch–Kato、论文代表处与权重、paper norm 修正、tensor
+hull/volume 和完整 Corollary 3.12 仍 open。最终验证状态和资源记录见 log4。
+
+S1.249 验证补记（2026-10-13 15:09:43 CST）：修正两轮 API 表示错误后，
+最终窄构建 `9236/9236` jobs 通过，rc 0；time 墙钟 `2:45.12`，监控耗时
+`165.233 s`，组 RSS 峰值 `25613508 KiB`（`24.427 GiB`），time 最大单进程
+RSS `8237712 KiB`。真实主理想商同构、raw Haar/norm 以及实际来源消费者为
+proved；两个新增公理报告只有 Lean 标准三项。Mathlib 未重编译；完整真实
+Scene1 模型、paper normalization 与 theta/tensor/hull/global volume 仍 open。
