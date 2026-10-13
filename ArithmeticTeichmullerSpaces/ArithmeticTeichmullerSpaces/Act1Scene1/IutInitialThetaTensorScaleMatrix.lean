@@ -4,9 +4,10 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScaleMatrix
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-TENSOR-SCALE-MATRIX
 fidelity: constructs the actual canonical logarithm scaling matrix,
-proves its determinant nonzero and identifies its determinant in the
-actual region's rational basis. Numerical determinant norm, Haar/index
-evaluation and paper weighted volume remain open.
+proves its determinant nonzero and identifies it in the actual region's
+rational basis and as a product of actual factor algebraic norms.
+Absolute-norm normalization, Haar/index evaluation and paper weighted
+volume remain open.
 boundary: Scene1/Derived
 -/
 
@@ -68,6 +69,14 @@ theorem factorLogMulMatrix_det_ne_zero (i : ι) :
 theorem scaleMatrix_eq_factorLogMul_prod (k l : (packet D p c hc).BasisIndex) :
     scaleMatrix D p c hc k l = ∏ i, factorLogMulMatrix D p c hc i (k i) (l i) :=
   LocalCompletion.Packet.scaleMatrix_eq_factorMul_prod (packet D p c hc) _ _ k l
+
+theorem scaleMatrix_det_eq_factorLogNorm_prod :
+    (scaleMatrix D p c hc).det =
+      ∏ i, factorLogNorm D p c hc i ^
+        FiniteTensorMatrix.otherDimension
+          (fun j => @Module.finrank ℚ_[p] ((packet D p c hc).Factor j) _ _
+            (LocalCompletion.padicAlgebra ((packet D p c hc).residueChar_eq j)).toModule) i :=
+  LocalCompletion.Packet.scaleMatrix_det_eq_factor_norm_prod (packet D p c hc) _ _
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness

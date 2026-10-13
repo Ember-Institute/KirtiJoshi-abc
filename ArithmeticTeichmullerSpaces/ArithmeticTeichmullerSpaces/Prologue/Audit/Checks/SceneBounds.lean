@@ -150,6 +150,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorScaleMatrix
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.factorLogMulMatrix_det_eq_norm
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.factorLogMulMatrix_det_ne_zero
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_eq_factorLogMul_prod
+#check JoshiTeich.Act1Scene1.FiniteTensorMatrix.product
+#check JoshiTeich.Act1Scene1.FiniteTensorMatrix.otherDimension
+#check JoshiTeich.Act1Scene1.FiniteTensorMatrix.product_det
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scaleMatrix_det_eq_factor_norm_prod
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.scaleMatrix_det_eq_factorLogNorm_prod
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily

@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScale
+import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteTensorMatrixDeterminant
 import Mathlib.RingTheory.Norm.Defs
 
 /-!
@@ -6,9 +7,10 @@ source-id: JT-SCENE1-LOCAL-TENSOR-SCALE-MATRIX
 source: actual completion tensor basis and factor scaling; Mathlib basis
 coordinates, tensor congruence and basis-independent determinants.
 fidelity: computes every tensor-scale matrix entry as a product of factor
-coordinates, identifies its determinant with that of the actual linear
-automorphism and proves it nonzero. The determinant's factor-norm formula
-and its Haar/index interpretation remain open.
+coordinates and its determinant as a product of factor algebraic norms,
+with each exponent equal to the product of the other factor dimensions.
+The determinant is nonzero for nonzero scalars. Its absolute-norm and
+Haar/index interpretations remain open.
 boundary: Scene1/Derived
 -/
 
@@ -83,6 +85,18 @@ theorem scaleMatrix_eq_factorMul_prod (z : ∀ i, P.Factor i) (hz : ∀ i, z i �
     (k l : P.BasisIndex) :
     P.scaleMatrix z hz k l = ∏ i, P.factorMulMatrix i (z i) (k i) (l i) := by
   simp only [scaleMatrix_apply, factorMulMatrix_apply]
+
+theorem scaleMatrix_det_eq_factor_norm_prod (z : ∀ i, P.Factor i) (hz : ∀ i, z i ≠ 0) :
+    (P.scaleMatrix z hz).det =
+      ∏ i, Algebra.norm ℚ_[p] (z i) ^
+        FiniteTensorMatrix.otherDimension (fun j => Module.finrank ℚ_[p] (P.Factor j)) i := by
+  have hmat : P.scaleMatrix z hz =
+      FiniteTensorMatrix.product (fun i => Module.finrank ℚ_[p] (P.Factor i))
+        (fun i => P.factorMulMatrix i (z i)) := by
+    ext k l
+    exact P.scaleMatrix_eq_factorMul_prod z hz k l
+  rw [hmat, FiniteTensorMatrix.product_det]
+  simp only [factorMulMatrix_det_eq_norm]
 
 end
 end JoshiTeich.Act1Scene1.LocalCompletion.Packet

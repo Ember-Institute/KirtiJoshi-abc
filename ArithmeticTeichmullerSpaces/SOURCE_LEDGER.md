@@ -1162,3 +1162,23 @@ Prologue-R5`，operation `derive`，owner Scene1；不改 Core/Candidate/Obligat
 或 Lake 依赖。factor norm 接口义务减少，前置信任不增加。Haar/index 数值评价、
 local/residue degree、论文处集代表和 normalization、maximal-order/hull、不同
 untilt/Bloch–Kato、真实 q-pilot/thetaVolume 及最终 3.12 仍 open；验证见 log4。
+
+## S1.265：完整张量行列式的 factor-norm 幂乘积
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-FINITE-TENSOR-MATRIX-DETERMINANT` | `FiniteTensorMatrix.product`、`otherDimension`、`product_det`；`Act1Scene1/FiniteTensorMatrixDeterminant.lean` | 本地 finite-type induction proof。通过类型等价的重标号不变性和 `Equiv.piOptionEquivProd`，将有限 tensor matrix 逐个分解为 binary Kronecker product，应用 Mathlib `Matrix.det_kronecker`。`det(product A) = ∏ i, det(A i) ^ otherDimension d i`，`otherDimension d i = ∏ j, if j = i then 1 else d j`。空 tuple 与零维 factor 统一包含，不使用维数除法。 |
+| `JT-SCENE1-LOCAL-TENSOR-DETERMINANT-NORM-PRODUCT` | `Packet.scaleMatrix_det_eq_factor_norm_prod`；`Act1Scene1/LocalCompletionTensorScaleMatrix.lean` | 消费 generic tensor-matrix determinant 公式、S1.264 的 tensor/factor matrix 项等式及 actual completion multiplication determinant/norm 等式。实际 tensor-scale 行列式等于各 actual `Algebra.norm ℚ_[p] (z i)` 的幂乘积，指数是其他 completion factor 维数之积。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-DETERMINANT-NORM-PRODUCT` | `InitialThetaTensorWitness.scaleMatrix_det_eq_factorLogNorm_prod`；`Act1Scene1/IutInitialThetaTensorScaleMatrix.lean` | 固定 actual canonical logarithm scalars，将完整 tensor-scale determinant 评价为 actual `factorLogNorm` 的幂乘积；指数明确用 source completion `padicAlgebra` 下的 `ℚ_[p]` finrank。没有 detached determinant-product 或 index certificate。 |
+
+本轮闭合完整 tensor determinant 的代数域范数幂乘积。范数结果和 determinant
+均位于 `ℚ_[p]`；其 p-adic absolute norm 到 completion 实数范数/local-degree/
+residue-degree 的归一化以及 Haar/index 评价仍 open。论文 representatives/重数/
+权重、maximal-order/hull、不同 untilt/Bloch–Kato、真实 q-pilot 满足模型、
+thetaVolume 和最终 Corollary 3.12 仍未闭合，不能由此宣布完整体积公式已完成。
+
+服务于 Joshi III `le:volume-lemma2/3` 的 tensor-volume 缩放计算，本地 proof terms，
+无新 IUT 代码移植。`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；
+不改 Core/Candidate/Obligations、Lake 依赖或冻结 Mathlib。新 generic producer 经
+completion consumer 接入 actual q-root region 的缩放，Scene1 的 determinant
+乘积义务减少，前置信任不增加。资源及验证见 log4 的 S1.265。
