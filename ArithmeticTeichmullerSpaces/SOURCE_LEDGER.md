@@ -1106,3 +1106,21 @@ local-degree/residue-degree 表达，tuple 尚未识别为论文 representatives
 关系。Scene1 的局部维数计数义务减少，前置信任不增加。rational basis extension、
 factor norm/degree 指数公式、maximal-order/hull、不同 untilt/Bloch–Kato、论文
 处集权重和最终 Corollary 3.12 仍 open。验证与资源见 log4 的 S1.261。
+
+## S1.262：实际整数基的有理扩张与整格恢复
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-RATIONAL-BASIS` | `regionRationalBasis`、`regionRationalBasis_apply`、`regionRationalBasis_integral_span`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | 消费实际 `regionFinBasis`、`region_isLattice` 和 `IsFractionRing ℤ_[p] ℚ_[p]`，调用 Mathlib `Module.Basis.extendOfIsLattice`，把同一组向量扩张为整个实际 `ℚ_[p]` tensor 空间的基；其索引保持 `Fin (Module.finrank ℤ_[p] (region D p c hc))`。`Submodule.map_span` 证明扩张基的 `ℤ_[p]` span 恰为原 region。 |
+
+新基没有自由给定的向量、matrix 或 normalization 字段。向量求值定理识别每个
+rational basis vector 为实际 integral basis vector 的 subtype inclusion，整格
+恢复定理将生产者输出接回真实 canonical q-root region。该接口服务于 Joshi III
+`le:volume-lemma2/3` 后续区域缩放矩阵/determinant 计算，并未评价 determinant、
+factor norm 或 `regionIndex`，也不识别论文 representatives/maximal-order/hull。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。没有新参考代码
+移植、Lake 依赖或 Core/Candidate/Obligations 改动。actual rational-basis extension
+及 integral-span 恢复义务减少，前置信任不增加。局部维数到 degree 的识别、
+scaled-index 数值评价、论文权重、不同 untilt/Bloch–Kato、真实 q-pilot 满足模型、
+thetaVolume 与最终 Corollary 3.12 仍 open。验证状态和资源见 log4 的 S1.262。

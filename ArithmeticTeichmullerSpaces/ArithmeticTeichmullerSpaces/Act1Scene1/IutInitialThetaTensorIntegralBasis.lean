@@ -6,8 +6,9 @@ source-id: JT-SCENE1-INITIAL-THETA-TENSOR-INTEGRAL-BASIS
 fidelity: derives finite generation, freeness, full rational span, lattice
 structure and a finite integral basis of the actual q-root logarithm tensor
 region. Its integral rank equals the product of the actual local factor
-dimensions. Rational basis extension, tensor index evaluation, weighted
-volume and hull remain open.
+dimensions. The same basis extends to the rational tensor space and its
+integral span recovers the region. Tensor index evaluation, weighted volume
+and hull remain open.
 boundary: Scene1/Derived
 -/
 
@@ -116,6 +117,34 @@ theorem region_finrank_eq_factor_prod :
         (LocalCompletion.padicAlgebra ((packet D p c hc).residueChar_eq i)).toModule := by
   rw [region_finrank_eq_tensor_finrank]
   exact LocalCompletion.Packet.tensor_finrank_eq_factor_prod (packet D p c hc)
+
+/-- Extend the actual integral basis, with the same vectors, to the rational tensor space. -/
+noncomputable def regionRationalBasis :
+    Module.Basis (Fin (Module.finrank ℤ_[p] (region D p c hc)))
+      ℚ_[p] (packet D p c hc).Tensor :=
+  @Module.Basis.extendOfIsLattice ℤ_[p] _ ℚ_[p] _ _ (packet D p c hc).Tensor _
+    (inferInstance : Module ℚ_[p] (packet D p c hc).Tensor)
+    (inferInstance : Module ℤ_[p] (packet D p c hc).Tensor)
+    (regionTensorScalarTower (D := D) (p := p) (c := c) (hc := hc))
+    (inferInstance : IsFractionRing ℤ_[p] ℚ_[p]) _
+    (region D p c hc) (region_isLattice D p c hc) (regionFinBasis D p c hc)
+
+set_option backward.isDefEq.respectTransparency false in
+theorem regionRationalBasis_apply (k : Fin (Module.finrank ℤ_[p] (region D p c hc))) :
+    regionRationalBasis D p c hc k =
+      (regionFinBasis D p c hc k : (packet D p c hc).Tensor) := by
+  simp only [regionRationalBasis, Module.Basis.extendOfIsLattice, Module.Basis.mk_apply]
+
+set_option backward.isDefEq.respectTransparency false in
+/-- The extended basis still generates exactly the original integral region over `ℤ_p`. -/
+theorem regionRationalBasis_integral_span :
+    Submodule.span ℤ_[p] (Set.range (regionRationalBasis D p c hc)) = region D p c hc := by
+  have hvec : regionRationalBasis D p c hc =
+      (region D p c hc).subtype ∘ (regionFinBasis D p c hc) := by
+    funext k
+    exact regionRationalBasis_apply D p c hc k
+  rw [hvec, Set.range_comp, ← Submodule.map_span,
+    (regionFinBasis D p c hc).span_eq, Submodule.map_top, Submodule.range_subtype]
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness

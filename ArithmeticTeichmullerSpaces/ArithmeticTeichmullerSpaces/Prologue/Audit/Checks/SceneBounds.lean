@@ -127,6 +127,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTensorIntegralBasis
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_finrank_eq_tensor_finrank
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensor_finrank_eq_factor_prod
 #check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.region_finrank_eq_factor_prod
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionRationalBasis
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionRationalBasis_apply
+#check JoshiTeich.Act1Scene1.InitialThetaTensorWitness.regionRationalBasis_integral_span
 
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily
 #check JoshiTeich.Act1Scene1.Corollary312TateQFamily.toQFamily
