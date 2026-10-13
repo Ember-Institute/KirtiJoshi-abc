@@ -696,3 +696,22 @@ height、packet/hull、volume 和 q-family obligations 仍显式开放，故没�
 最终源码窄验证 `9248/9248` jobs，退出码 `0`；time 墙钟 `5:20.24`，监控耗时
 `320.290 s`，进程组采样峰值 `17523440 KiB`（约 `16.712 GiB`），time 最大单进程 RSS
 `8234044 KiB`，实际 Lean 并发峰值 `2`，affinity 修复 `42` 次，未发现 Mathlib 编译。
+
+## S1.243：真实 q-root 到 theta log-shell 的符号审计
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-THETA-LOG-SIGN-AUDIT` | `Scene1Input.logVolume_nonneg`、`one_le_thetaBase_norm`、`IutTorsionQRootSource.ofInitialThetaDataFromGlobal_qroot_norm_lt_one`、`Scene1Input.thetaBase_norm_ne_canonical_qroot_norm`；`Act1Scene1/ThetaLogSignAudit.lean` | 本地 proof terms 消费当前 FirstAxiom、theta scaling、period/log-shell、normalization 和 VolumeTransfer。根的严格单位球结论消费实际 `InitialThetaData` q-root 根方程、base Tate norm 和 canonical completion embedding。Joshi III `th:adelic-theta-link` 1139–1154 对照 untilt 估值缩放，3634–3650 的符号说明对照 `logVol` 与绝对值。排除把实际 q-root 范数直接作为当前 theta base norm 的装配；不排除其他来源模型，不构造 untilt、Frobenius、theta lift 或体积下界。 |
+
+`Prologue-R5 → Prologue-R5`；Core、Candidate、Obligations 不改；没有复制 IUT 文件或
+新增依赖。证明 owner：Scene1。负面证据消费实际 q-root，而不是合成 arithmetic witness；
+它不构成完整真实满足模型。当前的普通 `norm_pow` 字段不证明不同 untilt 之间的估值
+比较。已有 canonical input 是条件性装配载体，不能凭其可编译性认为来源义务已经完成。
+Scene1 需要审查 theta norm 与正 log-volume 的对应关系；前置假设没有增加，
+没有把目标等价界加入接口。最终状态和资源数据在 log4 的 S1.243 条目记录。
+
+S1.243 验证补记（2026-10-13 10:50:42 CST）：一次受保护窄构建完成 `9224/9224`，
+time 墙钟 `3:13.37`，监控耗时 `193.841 s`，进程组采样峰值 `25486804 KiB`，
+time 最大单进程 RSS `8234244 KiB`，退出码 0。新模块及其直接消费者通过；三项
+关键定理公理仅为 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`。
+证明状态 proved，真实来源转换义务 open；Mathlib 未重编译。
