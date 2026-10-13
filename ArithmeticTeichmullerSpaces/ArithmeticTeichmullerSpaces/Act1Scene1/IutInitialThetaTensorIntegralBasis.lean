@@ -71,5 +71,9 @@ theorem region_isLattice :
   · intro i
     exact (IutTorsionQRootSource.ofInitialThetaDataFromGlobal_qroot_norm_lt_one D (c i)).le
 
+noncomputable def regionFreeBasis := by
+  letI : Module.Free ℤ_[p] (region D p c hc) := region_module_free D p c hc
+  exact Module.Free.chooseBasis ℤ_[p] (region D p c hc)
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaTensorWitness

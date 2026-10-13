@@ -1045,3 +1045,17 @@ Bloch–Kato 和最终 Corollary 3.12 仍 open。
 `Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
 依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor lattice 的结构性
 前提减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.257。
+
+## S1.258：实际张量整格的 canonical free basis
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-FREE-BASIS` | `regionFreeBasis`；`Act1Scene1/IutInitialThetaTensorIntegralBasis.lean` | 在定义体内安装实际 `region_module_free`，调用 Mathlib `Module.Free.chooseBasis`，得到索引为 `Module.Free.ChooseBasisIndex ℤ_[p] (region D p c hc)` 的实际 `Module.Basis`。该 basis 来自 actual region 的证明，不是外部输入；其索引有限性和 `Fin n` 重标号仍待后续单元。 |
+
+该声明闭合 actual region 的 canonical free basis 选择，但不把 `ChooseBasisIndex`
+误称为有限 `Fin n`，也不计算 basis index 的 factor norm/degree 公式。论文
+weighted volume、maximal-order/hull、untilt/Bloch–Kato 和最终 Corollary 3.12 仍 open。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1；没有新参考代码复制、
+依赖或 Core/Candidate/Obligations 改动。Scene1 actual tensor integral-basis
+前提减少，前置信任不增加。验证结果见 `docs/开发计划.V1Act1log4.md` 的 S1.258。
