@@ -1182,3 +1182,24 @@ thetaVolume 和最终 Corollary 3.12 仍未闭合，不能由此宣布完整体�
 不改 Core/Candidate/Obligations、Lake 依赖或冻结 Mathlib。新 generic producer 经
 completion consumer 接入 actual q-root region 的缩放，Scene1 的 determinant
 乘积义务减少，前置信任不增加。资源及验证见 log4 的 S1.265。
+
+## S1.266：p-adic Haar 维数缩放与实际 tensor region
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-PADIC-HAAR-DIMENSION-SCALING` | `PadicHaar.measure_preimage_mul_padic`、`pi_measure_preimage_smul_padic`、`measure_preimage_smul_padic`、`measure_image_smul_padic`；`Act1Scene1/PadicHaarScaling.lean` | 逐文件适配 `refer/iut/Iut/Concrete/LocalConstruct/Haar.lean`，原提交 `4d2b6e926089b949109c69c28f13c7f878249c5d`，Git 作者 Christian Merten，文件作者 The iut contributors，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`。复制前核查文件头及双方 Apache-2.0 LICENSE，保留版权、许可证及 provenance。只选取真实 p 个 integral cosets 计数、product Haar 和有限维 coordinate transport；本地独立 namespace、精确 imports、新增 image-scaling corollary。不导入参考工程、reference packet 或 volume。 |
+| `JT-SCENE1-INITIAL-THETA-TENSOR-HAAR-DIMENSION-SCALING` | `region_haar_image_smul_padic`、`region_haar_image_smul_padic_factor_prod`、`region_haar_image_smul_padic_eq_inv_index`；`Act1Scene1/IutInitialThetaTensorHaarScaling.lean` | 对真实 canonical q-root region 及实际 unitLattice-normalized Haar 应用有限维 p-adic scaling。`μ(p • region) = p^(-dim tensor) * μ(region)`，再消费 S1.261 维数乘积和 S1.253 finite-index 公式。measurability 来自 actual compact region；finite-dimensionality 来自 actual completion factors，不接收 measure/index scaling certificate。 |
+
+这是一般 determinant/Haar 连接的 prime-scalar 步骤，适用于 Joshi III
+`le:volume-lemma2/3` 后续 tensor volume normalization。参考文件另提到 IUT III
+Proposition 3.9 的 log-volume 用途；本地不接受该论文 normalization 为假设，
+只使用有限陪集计数的独立数学证明。固定 Mathlib 的实空间 Haar/determinant
+定理无法直接用于 `ℚ_p`；任意矩阵、自同构和 algebraic norm 的 absolute-value
+测度公式仍需独立证明，当前结果不替代它们。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。无新 Lake 依赖，
+Core/Candidate/Obligations 不改；generic producer 被实际 tensor region 消费。
+Scene1 的 prime-scalar Haar 维数归一化义务减少，前置信任不增加。一般
+determinant/Haar、completion norm/local-degree 归一化、论文 representatives/
+重数/权重、maximal-order/hull、不同 untilt/Bloch–Kato、真实 q-pilot/thetaVolume
+与最终 Corollary 3.12 仍 open。编译与审计状态、资源见 log4 的 S1.266。
