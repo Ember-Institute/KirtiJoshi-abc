@@ -1335,3 +1335,24 @@ Corollary 3.12 仍 open。动态记录、最终编译与资源见 log4 的 `S1-B
 
 S1.273 验证补记：最终精确导入版本 `9256/9256` jobs 通过，退出码 0；
 PaperAccounting 35/18 和 Scene1 聚合通过，公理仅有标准允许集合。完整模型仍 open。
+
+## S1.274：实际 section 代表项的严格正性
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-REPRESENTATIVE-TERM` | `iutInitialThetaSectionRepresentativeTerm`、`iutInitialThetaSectionRepresentativeTerm_pos`、`iutInitialThetaSectionRepresentativeSum_pos`、`Corollary312QPilotData.absLogQ_le_initialThetaSectionRepresentativeSum`；`Act1Scene1/IutInitialThetaRepresentativeTerm.lean` | 代表项为实际 canonical section Tate `qOrder/(2*D.prime.ℓ) * log(residueChar)`。实际 Tate laws 给出 qOrder>0，actual prime≥5、residue prime>1，因而每个实际代表项>0；处集非空来自 actual InitialThetaData 的 bad-support section，有限和>0。实际项正性随后消费到 S1.273 上界，消除独立 representative nonnegativity 参数。source map、逐处 prime identity、paper-local-term identity 和 raw norm/source compatibility 继续显式；不接收 mass-one certificate。 |
+
+两个精确 imports 是 actual `IutInitialThetaSectionLink` 和已证明的 fibre-mass
+模块。新定理不导入 Prologue Obligations，不新增 IUT 代码复制或 Lake 依赖。
+canonical section carrier 来源等式已由既有 section-link/Voss 定理提供，实际项
+与 selected-q-root paper sum 的进一步无证书装配是后续消费者义务；本单元没有
+提供 detached representative carrier 或宣称 source map 已构造。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。新增定义与三条
+定理；严格正性被实际有限和及 q-pilot inequality 消费；退休、Prologue 晋升/
+抽取均为无，Core/Candidate/Obligations 不变。代表非负性证明负担减少，前置
+信任不增加。完整真实来源模型、paper mapping/normalization、thetaVolume 和
+Corollary 3.12 仍 open。验证及资源见 log4 的 `S1-BND-274`。
+
+S1.274 验证补记：首次窄热构建 `9257/9257` jobs 通过，退出码 0；
+PaperAccounting 39/21 与 Scene1 聚合通过，公理仅有标准允许集合。完整模型仍 open。

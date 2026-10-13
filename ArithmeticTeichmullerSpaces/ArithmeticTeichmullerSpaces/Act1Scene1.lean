@@ -113,5 +113,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarAction
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotRawAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeMassAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeFiberMass
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeTerm
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

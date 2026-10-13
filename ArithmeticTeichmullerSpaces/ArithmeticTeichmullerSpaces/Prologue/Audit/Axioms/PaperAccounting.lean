@@ -5,6 +5,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeSelectedQRootB
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotRawDegreeAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeMassAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeFiberMass
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeTerm
 
 /-! PaperAccounting 家族：里程碑公理审计。 -/
 
@@ -26,3 +27,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeFiberMass
 #print axioms JoshiTeich.Act1Scene1.qPilotRepresentativeFiberMass_mem_unitInterval
 #print axioms JoshiTeich.Act1Scene1.Corollary312QPilotData.absLogQ_eq_fiberMassRepresentativeSum
 #print axioms JoshiTeich.Act1Scene1.Corollary312QPilotData.absLogQ_le_unweightedRepresentativeSum
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaSectionRepresentativeTerm_pos
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaSectionRepresentativeSum_pos
+#print axioms JoshiTeich.Act1Scene1.Corollary312QPilotData.absLogQ_le_initialThetaSectionRepresentativeSum
