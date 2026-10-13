@@ -94,5 +94,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.TransferQAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaScene1QPilotData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalScene1Input
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

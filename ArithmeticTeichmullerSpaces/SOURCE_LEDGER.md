@@ -659,3 +659,27 @@ open。base/torsion field 区分保留，baseIndex 为实际 contraction，不�
 前置信任负担不变；全局 q-sum、归一化冻结与 theta-volume 证明仍开放。
 
 S1.240 验证补记（2026-10-13 02:57:22 CST）：四个数学定理及窄审计通过，`9130/9130` jobs，退出码 `0`；公理仅有 `propext`、`Classical.choice`、`Quot.sound`。局部范数 certificate 与其消费者状态 `proved`；完整真实来源模型、论文处集和最终归一化仍 `open`。用户要求本单元推送后暂停。
+
+## S1.241：canonical InitialTheta Scene1 input boundary
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `IUT-COR312-CANONICAL-SCENE1-INPUT` | `CanonicalInitialThetaScene1Input`、`toScene1Input`、`toData`；`Act1Scene1/IutInitialThetaCanonicalScene1Input.lean` | 消费 `AdelicThetaLinkData.ofInitialThetaData`，将实际 `InitialThetaData.prime.tate` 产生的 canonical link 固定进 Scene1 input 类型。`places`、局部 Tate 参数、q-parameter 与 `j` 来源不再由调用者以独立 link 和 equality certificate 脱钩提供。theta、packet/hull、height、ramification、volume、Perfectoid bridge、Prologue laws、代表重数和 theta-volume accounting 仍是显式数据/义务；构造器不声称真实 `Corollary312Scene1QPilotData` 或最终 Corollary 3.12 已满足。 |
+
+本单元没有修改 Prologue/Core、Candidate 或 `Prologue/Obligations`，`Prologue-R5 → Prologue-R5`。Scene1 的来源负担减少为在 canonical link 上提供剩余的 Perfectoid、theta/packet/hull、volume、q-family 和 accounting 数据；前置信任负担不增加。该类型的目的只是禁止一个独立 Scene1 link 在后续再用等式伪装成 IUT 来源。
+
+窄构建补记（2026-10-13 09:45:57 CST）：
+
+```sh
+taskset -c 0-13 env LEAN_NUM_THREADS=10 lake build \
+  ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.CanonicalSource \
+  ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalScene1Input \
+  ArithmeticTeichmullerSpaces
+```
+
+`9248/9248` jobs 通过，退出码 `0`；监控耗时 `268.315 s`，time 墙钟 `4:28.19`，
+进程组 RSS 峰值 `17497636 KiB`（约 `16.69 GiB`），time 最大单进程 RSS `8233984 KiB`，
+实际 Lean 并发峰值 `2`，CPU affinity `0-13`，每个 Lean 进程 `-j1`；未触发 `85 GiB`
+停止阈值，未发现 Mathlib 编译。该结果只验证 canonical input 边界和其直接消费者；真实
+Scene1 满足模型、论文 `V_p^oss`/`L'` 代表 accounting、packet/hull 到 theta-volume 的
+定量证明及最终 Corollary 3.12 仍为 `open`。
