@@ -123,6 +123,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullRepresentativeB
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeCoefficients
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeRamificationGap
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperBallProduct
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedLogBallProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRepresentativeBound
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

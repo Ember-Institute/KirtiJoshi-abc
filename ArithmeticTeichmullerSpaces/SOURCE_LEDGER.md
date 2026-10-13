@@ -1566,3 +1566,26 @@ actual root norm→实际 Haar volume→paper local log→selected finite produc
 
 S1.284 验证补记：最终窄热构建9267/9267 jobs通过，退出码0；
 PaperAccounting90/60及Scene1聚合通过，60条公理报告只含标准允许集合。完整目标仍open。
+
+## S1.285：完整 q-root 的实际 log-shell 球与 selected 体积乘积
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-SELECTED-LOG-BALL-PRODUCT` | `iutInitialThetaFullQRootLogValue`、`iutInitialThetaFullQRootLogValue_norm_eq`、`iutInitialThetaFullQRootLogValue_mem_logShell`、`iutInitialThetaFullQRootLogBall`、`iutInitialThetaFullQRootLogBall_eq_rootBall`、`iutInitialThetaFullQRootLogBall_subset_logShell`、`iutInitialThetaFullQRootLogBall_haar_toReal_eq_norm`、`iutInitialThetaSelectedPaperLogBallProduct`、`iutInitialThetaSelectedPaperLogBallProduct_eq_rootBallProduct`、`iutInitialThetaSelectedPaperLogBallProduct_negLog_eq_paperSum`；`Act1Scene1/IutInitialThetaSelectedLogBallProduct.lean` | 对 actual full odd-support torsion q-root 构造普通 normalized p-adic logarithm，使用 actual residue characteristic prime、norm(p)<1 和 S1.284 actual root norm<1，证明其范数等于实际root范数并属于logShell。两个非零scalar的积分球由共同范数识别，故实际logValue*O球=actual root*O球。局部log-shell surjectivity给出整个球的包含，真实Haar volume和paper-corrected selected product通过球集等式运输；乘积的负log精确等于selected paper sum。 |
+
+本轮把前期只对实际VBad source证明的普通log witness路径接到actual full
+odd-support source；没有改写已有载体。球身份是实际set等式，不接收独立norm、
+set或volume certificate。paper correction仍为数值residue-degree幂，原始Haar
+measure保持不变。ordinary logShell不等于尚未构造的Bloch–Kato cohomology/log
+shell，selected scalar product也不等于最终theta tensor/hull；此处不替代那些
+来源义务。Joshi III `le:elem-lemma`、`eq:multiplicative-coh-class` 和
+`th:moccor-Mochizuki-form1/2` 提供后续目标角色。
+
+Prologue-R5→Prologue-R5，derive，owner Scene1。新增三定义及七公共theorem；
+actual full root→ordinary log norm/source→whole ball identity/containment→Haar
+consumer→selected corrected product/log consumer。Core/Candidate/Obligations、
+既有声明和冻结依赖不变，前置信任不增加。模型/边界、完整公共类型、验证和
+资源见log4的S1-BND-285。
+
+S1.285 验证补记：首次窄热构建9268/9268 jobs通过，退出码0；
+PaperAccounting100/67及Scene1聚合通过，67条公理报告只含标准允许集合。完整目标仍open。
