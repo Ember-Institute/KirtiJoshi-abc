@@ -741,3 +741,31 @@ S1.244 验证补记（2026-10-13 11:04:17 CST）：首次编译失败的两项�
 `canonical_qroot_witness_bounds` 公理依赖仅含 Lean 标准三项；无 `sorryAx`。
 实际 root 的数值 estimate proved；untilt/theta/hull/volume 来源仍 open，
 Mathlib 未重编译。
+
+## S1.245：实际 torsion completion 中的局部 p-adic 对数见证
+
+| Source id | 本地声明与路径 | 来源、适配与边界 |
+| --- | --- | --- |
+| `JT-SCENE1-LOCAL-PADIC-LOG-WITNESS` | `LocalPadicLog` 的整数范数、对数级数收敛、余项估计、`norm_padicLog_one_add`、`normalizedLog_mem_logShell`、`norm_normalizedLog`；`Act1Scene1/LocalPadicLog.lean` | 独立移植 `refer/iut/Iut/Concrete/LocalConstruct/PadicLog.lean` 的选定证明段：快照中第 49–157、161–243、425–494 行。原始提交 `bc1c6e6c7ac4bcf0c363b9b1bbe9b6d7bc35bf9c`；参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`；Git 作者 Christian Merten，文件作者 The iut contributors。复制前核查文件头及双方 LICENSE，保留 Apache-2.0 版权和许可证通知。改为独立 `JoshiTeich` 命名空间、精确 Mathlib 导入，新增小球范数等式及归一化见证证明。 |
+| `JT-SCENE1-INITIAL-THETA-LOCAL-LOG-WITNESS` | `InitialThetaLogWitness.norm_residueChar_lt_one`、`value`、`value_mem_logShell`、`norm_value_eq_qroot_norm`、`value_ne_zero`；`Act1Scene1/IutInitialThetaLogWitness.lean` | 消费实际 `InitialThetaData` canonical q-root 来源及其非零、范数小于 1 的证明。Joshi III `le:elem-lemma` 和 `th:moccor-Mochizuki-form1` 证明中的 `eq:multiplicative-coh-class` 指示局部 logarithm 及后续 Bloch–Kato 识别的位置。本轮实现普通局部 logarithm；不声称证明该 cohomology 识别。 |
+
+设实际完成域为 `k`，处的 residue prime 为 `p`，实际根为 `y`。构造主单位
+`u=1+2*p*y` 以及 `z=(2*p)⁻¹*padicLog u`。证明 `‖u-1‖<1`、
+`z∈logShell p`、`‖z‖=‖y‖` 和 `z≠0`。泛型证明要求显式的 rank-one
+离散赋值、CharZero、CompleteSpace、`p.Prime`、`‖p‖<1` 和 `‖y‖≤1`；
+消费者从 number-field completion 和 canonical root 派生这些条件，不接收脱钩的
+范数证书。本轮未移植同态、满射、紧性或张量 packet 代码，不导入参考工程，
+不增加 Lake 依赖。
+
+`Prologue-R5 → Prologue-R5`，operation `derive`，owner Scene1。实际消费者为
+`InitialThetaLogWitness` 的来源定理及 SceneBounds 审计。局部对数的收敛和小球
+范数义务由 proof terms 承担，前置信任不增加；Bloch–Kato crystalline 类、不同
+untilt/Frobenius、论文代表处与权重、真实 tensor/hull/volume 和 Corollary 3.12
+满足模型仍 open。构建结果与动态边界记录见 log4 的 S1.245 条目。
+
+S1.245 验证补记（2026-10-13 11:24:04 CST）：最终窄重试 `9227/9227` jobs
+通过，time 墙钟 `3:22.27`，监控耗时 `202.476 s`，进程组 RSS 采样峰值
+`25579300 KiB`（`24.394 GiB`），time 最大单进程 RSS `8235396 KiB`，退出码 0。
+新来源定理及局部解析 proof terms 为 proved；两个新增最终消费者的公理仅为
+`propext`、`Classical.choice`、`Quot.sound`。Mathlib 未重编译，完整真实
+Scene1 模型与 Corollary 3.12 仍 open。
