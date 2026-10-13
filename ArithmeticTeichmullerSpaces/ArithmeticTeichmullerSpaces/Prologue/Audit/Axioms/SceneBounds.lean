@@ -49,6 +49,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootChoice
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionRepeatedPacketVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312QProductAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRelativeNormBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRootHaarBridge
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -208,3 +209,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRelativeNormBr
 #print axioms JoshiTeich.Act1Scene1.actualPaperRootNorm_mem_Ioo
 #print axioms JoshiTeich.Act1Scene1.relativeFactor_eq_paperRootNorm_rpow
 #print axioms JoshiTeich.Act1Scene1.relativeFactor_negLog_eq_paperRootNorm_negLog_mul_degree_ratio
+#print axioms JoshiTeich.Act1Scene1.actualPaperRootNorm_eq_rootBallHaar_corrected
+#print axioms JoshiTeich.Act1Scene1.actualPaperRootNorm_negLog_eq_paperTerm
+#print axioms JoshiTeich.Act1Scene1.actualPaperRootNorm_mem_Ioo_via_rootBallHaar

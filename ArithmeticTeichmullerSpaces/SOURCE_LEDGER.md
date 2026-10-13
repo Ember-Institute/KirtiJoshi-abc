@@ -1899,3 +1899,13 @@ positive、actual relative factor与paper root norm的rpow转换，以及negativ
 转换。结论使用localDeg=ramIdx*inertDeg和actual liesOver；没有识别paper L'、
 untilt、Bloch–Kato或theta hull。S1.299构建9299/9299通过，SceneBounds354/155、
 全工程1009/551，耗时2:34.69，组峰值25871060KiB（约24.673GiB），无Mathlib重编。
+
+
+## S1.300：paper corrected root norm 与 actual Haar root ball 的来源 bridge
+
+`JT-SCENE1-INITIAL-THETA-PAPER-ROOT-HAAR-BRIDGE`：
+`IutInitialThetaPaperRootHaarBridge.lean`证明actualPaperRootNorm等于actual
+root integral ball normalized Haar的residue-degree修正，且negative log复用
+paper term；未识别paper L'、Bloch–Kato、untilt或theta hull。S1.300构建9300/9300
+通过，SceneBounds354/158、全工程1012/554，耗时2:32.61，组峰值25808556KiB
+（约24.613GiB），无Mathlib重编。
