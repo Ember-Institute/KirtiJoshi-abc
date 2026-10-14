@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.343：actual rational Kummer 类非零 |
-| 数学证明基线 | `8d73c998cd496701fb05a535cd70fea6dbe4c4ea`，S1.343 已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.344：actual integral Kummer 类无 torsion |
+| 数学证明基线 | `2708a6543acb79eea1b56dbe714e75e18d420f57`，S1.344 已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.343 已验收并推送；Scene1 仍未完成 |
-| 当前推进位置 | actual principal unit 的 integral 与 rational standard Kummer 类及 normalized rational 类均已证明非零 |
+| 数学工作状态 | S1.344 actual integral 类无 torsion 正在验收，Scene1 仍未完成 |
+| 当前推进位置 | actual principal unit 的 integral 与 rational standard Kummer 类、normalized rational 类均非零；integral 类不被非零 `ℤₚ` 标量杀死 |
 | 尚未接通的主要连接 | H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配；全局系数映射单射仍未声称 |
-| Prologue 边界 | R5；S1.343 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.344 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -58,7 +58,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及多项 carrier 适配已存在 | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型 | 计划 §2.1；S1.270 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在 | 证明与论文处集及 L' representatives 的完整身份，闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327，见 [log4](开发计划.V1Act1log4.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–343，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -150,6 +150,7 @@ flowchart TD
 | integral 零类与基域根塔下降 | 🟢 已闭合 | S1.341 类零 iff 基域存在同一个 compatible p-power tower；actual local-field 适配已完成，类零推出每一有限层有根 | G4；[log5 S1.341](开发计划.V1Act1log5.md#s1341-动态边界integral-kummer-零类与基域兼容根塔) |
 | 实际无限可除性排除与 integral 类非零 | 🟢 已闭合 | S1.342 从实际非零 log 与 principal-unit log 一致有界，证明某层无 p-power 根、无 compatible base tower，actual standard padicClass 非零 | G4；[log5 S1.342](开发计划.V1Act1log5.md#s1342-动态边界离散局部域根排除与实际-integral-类非零) |
 | rational 类非零及系数映射核 | 🟢 已闭合（actual 范围） | S1.343 通过清除 rational coboundary 的 p-adic 分母，将 rational 类为零降到某个 integral p-power 类为零，再与 S1.342 的非零 log 矛盾；actual `rationalClass` 与 `normalizedRationalClass` 均非零。全局 integral→rational H¹ 映射单射仍未证明 | G4；[log5 S1.343](开发计划.V1Act1log5.md#s1343-动态边界actual-rational-kummer-类非零) |
+| actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
 | 不同 untilt、论文 thetaVolume 与联合模型 | 🟡 部分完成 | 已有 ordinary-log 定量构件；真实身份、descent 及最终共同装配仍缺失 | G2、G4；计划 §2.3、log5 剩余义务 |
@@ -165,7 +166,41 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.343
+## 最近单元变化卡：S1.344
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4 的 actual rational Kummer 非零 → actual integral 类无 torsion |
+| 实际闭合 | 对任意 actual bad place 和任意非零 `r : ℤₚ`，`r • padicClass D s ≠ 0`；证明消费 rational coefficient-change 等式、`ℤₚ → ℚₚ` 标量非零和 S1.343 rational 类非零 |
+| 后续获得的前提 | actual integral 类没有由非零 `ℤₚ` 标量杀死的 torsion；H¹ₑ 整性/核约定可以在此 actual 输入上继续审查 |
+| 尚未接通 | 全局 H¹ 无 torsion与系数映射单射、H¹ₑ/crystalline/Frobenius、BK/log、different untilts、mixed-moduli descent、论文 volume 与联合模型仍缺失 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数保持 **0/4** |
+| 信任负担变化 | Prologue R5→R5；新增 Core 假设 0，新增外部证明证书 0，退休／转入／取出均 0 |
+| 来源与依赖 | 消费 S1.338 coefficient change 与 S1.343 actual rational nonvanishing；新增叶子为原创 actual 适配，无参考源码复制/import |
+| 工程验证范围 | Checks.SceneBounds 1066 条 check、Axioms.SceneBounds 863 条公理报告逐名匹配；Scene1 聚合构建通过；1 个新增公共声明覆盖 |
+| 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
+| 构建资源 | 3 次尝试累计 474.031 秒（7分54.031秒），含 1 次窄检查失败；收尾构建组RSS峰值 16.836 GiB，单进程最大 7.903 GiB；未重编 Mathlib |
+| 交付状态 | `2708a65` 已推送；已核对该证明提交与 `origin/main` 一致 |
+| 完整边界 | [log5 S1-BND-344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
+| 生产证明 | [actual integral 类无 torsion](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaIntegralKummerNonTorsion.lean) |
+
+### S1.344 构建资源
+
+结束时间使用完整 CST 日期，RSS 单位为 KiB；失败尝试也计入累计耗时。
+
+| label | 结束时间（CST） | exit | jobs | time-v wall | monitor秒 | 组RSS峰值 | time-v单进程最大 | worker峰值 | affinity修正 |
+| --- | --- | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1344-1 | 2026-10-15 02:37:29 | 1 | 9375/9375 | 2:20.19 | 140.312 | 9365600 | 8258588 | 1 | 24 |
+| s1344-2 | 2026-10-15 02:41:47 | 0 | 9375/9375 | 3:35.39 | 215.755 | 9393944 | 8285748 | 1 | 41 |
+| s1344-3 | 2026-10-15 02:44:18 | 0 | 9397/9397 | 1:57.62 | 117.964 | 17653736 | 8277932 | 2 | 32 |
+
+`s1344-1` 的唯一错误是新定理最后一步未先重写 coefficient-change 等式；
+修正后 `s1344-2` 的 1066 个 `#check` 通过，`s1344-3` 完成公理和聚合收尾。
+CPU 0–13，LEAN_NUM_THREADS=10，每个 Lean 编译进程 -j1；进程组 RSS 每 0.5
+秒采样，85 GiB 停止线低于用户 90 GiB 上限。未冷建、未清缓存、未并发 Lake，
+未修改 Mathlib、工具链、依赖或默认 heartbeat。
+
+## 历史单元记录：S1.343
 
 | 项目 | 变化 |
 | --- | --- |

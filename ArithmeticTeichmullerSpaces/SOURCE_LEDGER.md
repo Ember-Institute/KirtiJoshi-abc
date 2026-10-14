@@ -3288,3 +3288,17 @@ different untilts、descent、paper volume and joint model remain open.
 `rationalClass` 与 `normalizedRationalClass` 非零已验收；完整资源和失败尝试
 见 `docs/Scene1进度总览.md`；数学提交 `8d73c998cd496701fb05a535cd70fea6dbe4c4ea`
 已推送并与 `origin/main` 一致。
+
+## S1.344：Actual integral Kummer non-torsion
+
+- `JT-SCENE1-INITIAL-THETA-INTEGRAL-KUMMER-NONTORSION`：
+  `Act1Scene1/IutInitialThetaIntegralKummerNonTorsion.lean`；actual
+  `padicClass` 不被任意非零 `ℤₚ` 标量杀死。
+
+消费 S1.338 coefficient-change 等式与 S1.343 rational nonvanishing；原创
+actual 适配，无参考源码复制/import。Prologue-R5→R5，derive，owner Scene1；
+Core 假设/退休/迁移增量均 0。全局 H¹ 无 torsion、H¹ₑ/BK、different
+untilts、descent、paper volume 和联合模型仍 open。
+验证：Checks.SceneBounds 1066/1066、Axioms.SceneBounds 863/863 逐名匹配，
+Scene1 聚合构建通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
+数学提交 `2708a6543acb79eea1b56dbe714e75e18d420f57` 已推送并与 `origin/main` 一致。
