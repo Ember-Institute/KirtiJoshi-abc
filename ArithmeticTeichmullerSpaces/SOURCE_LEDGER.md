@@ -2022,3 +2022,33 @@ weighted volume规范化相同。Prologue-R5→R5，derive，owner Scene1；新�
 首轮instance重名失败与两轮总耗时329.996s记录log4。199条公理报告仅含标准
 允许集合；源码枚举SceneBounds402/199、全部家族1053/585。17个公共声明
 通过、默认heartbeat；整体Scene1目标仍open。
+
+## S1.305：字面 Corollary 3.12 显示式的符号排除证据
+
+`JT-SCENE1-COR312-LITERAL-SOURCE-SIGN-AUDIT`，路径
+`Act1Scene1/Corollary312SourceSignAudit.lean`，来源Joshi III cor:cor312
+3647–3650、前文符号讨论3634–3645及volume lower bound 3617–3632。
+一个definition直接取actual selected finite paper root norms的signed log和；
+七个定理从actual产品∈(0,1)及log-product等式证明literal RHS=-sum(log)>0，
+而negative-average abs log恒≤0，故任何实数volume/自然数n均不能满足这条
+字面式。另证明现有Corollary312要求qLogSum≥0，并在qLogSum等于actual signed
+log和时排除该target。无参考代码复制/import，自有完整proof term。
+
+来源忠实度纠正：旧Corollary312/VolumeBridge记录的“exact analytic inequality
+shape”不能作为当前完整来源验收证据。工程VolumeBound/QFamily选择
+qLogTerm=-log(qFactor)，当前target RHS是sum(log(qFactor))，而原文显示式
+是负sum(log(qFactor))。后者在contracting ordinary norms下严格为正，与
+前文左右均负不相容；前者可由volume lower bound派生。未决定哪一source
+解释或更正可作为最终目标，不改旧API，最终freeze义务仍open。
+
+证据范围：给定actual D的selected products，不是特定D的构造；selected
+carrier与paper V_p^oss/L'身份未闭合，亦未对所有非标准signed-log解释作
+反例主张。Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休0字段、
+迁移0，前置信任不增加。闭合符号排除，新增明确source sign复审义务；整体
+Scene1目标未完成。完整类型、动态负担与资源见log4 S1-BND-305。
+
+
+2026-10-14 08:28:52 CST首轮热构建9308/9308通过，耗时2:34.31，进程组采样
+峰值25889992KiB（约24.691GiB），最大同时Lean workers=3，无Mathlib重编。
+207条公理报告仅含标准允许集合；源码枚举SceneBounds410/207、总计1061/593。
+八个公共声明通过、默认heartbeat；接受为负面证据，最终来源/符号freeze仍open。

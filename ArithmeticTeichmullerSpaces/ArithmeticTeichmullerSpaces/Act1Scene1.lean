@@ -164,5 +164,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumeMonoton
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRegionVolumeBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorIntegralHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedIntegralHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312SourceSignAudit
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
