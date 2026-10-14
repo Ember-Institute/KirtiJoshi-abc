@@ -155,6 +155,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalDenominator
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicRationalKummerNonvanishing
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummerNonzero
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonTorsion
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRepresentativeNonexistence
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1226,3 +1227,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonTo
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_ne_zero
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass_ne_zero
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_smul_ne_zero
+#check JoshiTeich.Act1Scene1.canonicalPaperRepresentativeAccounting_impossible
