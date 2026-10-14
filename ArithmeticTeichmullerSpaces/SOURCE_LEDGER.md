@@ -2413,3 +2413,36 @@ paper C_p norm/weighted-volume/V_p^oss/L'身份、source sign freeze/joint真实
 347条公理报告仅含标准允许集合；十个新增公共声明通过。源码枚举SceneBounds
 550/347、全家族1201/733。四轮总monitor耗时533.584s及失败原因见log4 S1.315。
 actual VBad local hull→global relative-degree q-pilot消费者闭合，整体Scene1仍open。
+
+
+## S1.316：actual tensor hull/order conversion criterion
+
+`JT-SCENE1-LOCAL-TENSOR-HULL-ORDER-AUDIT`，路径
+`Act1Scene1/LocalCompletionTensorHullOrderAudit.lean`，对actual nonzero scalar
+lattice证明其principal normalization hull与最小Z_p-submodule integralHull
+相等当且仅当tensor unit order=normalization；该order身份也恰等价于actual
+normalizationMass=1。实际Haar的scalar normalization扩张系数为normalizationMass。
+证明使用scale map injectivity、scalar hull exact身份及open nonempty difference
+的正Haar，不以equal mass推出任意measurable集合相等。
+
+`JT-SCENE1-INITIAL-THETA-FIXED-MODULI-HULL-ORDER-AUDIT`，路径
+`Act1Scene1/IutInitialThetaFixedModuliHullOrderAudit.lean`，从actual D和共同moduli
+place上合法over-place tuple派生ordinary log region的compact/positive normalization
+Haar，实际chosen regionHull无需自由boundedness或measure字段。将两hull等价
+判据接到该actual region；normalizationMass≠1时两种hull不同。
+
+来源为Joshi III pr:convexes-and-hulls 3597–3609及principal component hull
+3568–3574、Haar normalization3495–3498。原创无参考代码复制/import。Prologue
+R5→R5，derive，owner Scene1；新增Core假设0、退休0、迁移0，前置信任不增加。
+本结果为exact criterion；尚未构造proper-order具体packet/特定D，不声称完整
+论文反例，也不识别ordinary log/BK/theta/untilt。不得据此无条件把此前integralHull消费者视为principal normalization hull；
+order身份判据只针对scalar lattice，其他collated region需分别审查。其余paper norm/carrier/volume、
+source sign/target freeze和joint真实模型仍open。完整类型与资源见log4 S1-BND-316。
+
+
+2026-10-14 11:27:24 CST最终里程碑热构建9331/9331通过，耗时1:38.45，进程组采样峰值
+17632192KiB（约16.815GiB），同时Lean workers峰值2。
+先前check家族9308/9308通过，耗时3:08.96，峰值9386392KiB（约8.952GiB）。
+十二个公共声明通过；359条公理报告仅标准允许集合。失败及三轮monitor总耗时
+368.061s见log4 S1.316；无Mathlib重编。条件性scalar-order转换义务
+显式登记，未当作实际paper反例；整体Scene1仍open。
