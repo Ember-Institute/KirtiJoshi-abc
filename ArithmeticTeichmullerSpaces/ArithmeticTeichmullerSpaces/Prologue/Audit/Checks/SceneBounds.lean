@@ -113,6 +113,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportHullPape
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportPaperWeightedVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorWitnessHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicPaperLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -879,3 +882,33 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessH
 #check JoshiTeich.Act1Scene1.FullSupportWitnessHull.singletonCollation_laws
 #check JoshiTeich.Act1Scene1.FullSupportWitnessHull.singleton_region_eq_base
 #check JoshiTeich.Act1Scene1.FullSupportWitnessHull.singleton_volume_eq_base
+#check JoshiTeich.Act1Scene1.LocalPadicLog.paperScale
+#check JoshiTeich.Act1Scene1.LocalPadicLog.paperScale_ne_zero
+#check JoshiTeich.Act1Scene1.LocalPadicLog.norm_paperScale_eq_norm_two_mul
+#check JoshiTeich.Act1Scene1.LocalPadicLog.paperPrincipalUnit
+#check JoshiTeich.Act1Scene1.LocalPadicLog.paperNormalizedLog
+#check JoshiTeich.Act1Scene1.LocalPadicLog.paperPrincipalUnit_norm_sub_one_lt_one
+#check JoshiTeich.Act1Scene1.LocalPadicLog.paperPrincipalUnit_ne_zero
+#check JoshiTeich.Act1Scene1.LocalPadicLog.norm_paperNormalizedLog
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarLattice_eq_of_norm_eq
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarNormalization_eq_of_norm_eq
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.principalUnit
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.value
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.principalUnit_norm_sub_one_lt_one
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_eq_log_principalUnit
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.norm_value_eq_qroot_norm
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_ne_zero
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.packet
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_isUnit
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_hull_eq_base
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_base_region
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.singletonCollation
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.singletonCollation_laws
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturatedCollation
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturated_region_eq
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturated_volume_eq
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.base_region_subset_region
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturatedCollation_laws
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.selectedPaperRootProduct_pow_le_volume
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.negAverageAbsLog_ge_neg_selectedPaperSum

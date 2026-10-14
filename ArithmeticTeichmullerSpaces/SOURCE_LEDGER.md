@@ -2860,3 +2860,37 @@ singleton_region_eq_base和singleton_volume_eq_base精确回到S1.327模型。
 组RSS峰值17565116KiB（16.751GiB），time-v单进程最大8270444KiB。
 五轮monitor总耗时671.589s，前三轮elaboration错误/修复详见log4 S1.328，
 默认heartbeat，无Mathlib重编；singleton联合模型闭合，整体Scene1仍open。
+
+
+## S1.329：literal p* ordinary principal-unit logarithm and the same actual hull
+
+`JT-SCENE1-LOCAL-PSTAR-LOG`，路径`Act1Scene1/LocalPadicPaperLog.lean`。
+来源Joshi III 3160–3175的p*=p（奇素数）/4（2处），3190–3226的
+principal units与eq:bloch-kato-log-class、le:elem-lemma。构造ordinary
+paperNormalizedLog=log(1+pStar*y)/pStar，证明pStar非零、norm(pStar)=norm(2p)、
+主单位norm(u-1)<1且非零，以及integral y的log范数等y范数；不构造BK class。
+
+`JT-SCENE1-LOCAL-TENSOR-EQUAL-NORM-HULL`，路径
+`Act1Scene1/LocalCompletionTensorEqualNormHull.lean`。逐factor nonzero scalars
+同范数给相同integral balls、相同scalarLattice及scalarNormalization。以本工程
+actual closed balls、normalization span和principal hull证明，不假定标量值相等。
+
+`JT-SCENE1-INITIAL-THETA-PSTAR-LOG-WITNESS-HULL`，路径
+`Act1Scene1/IutInitialThetaPaperLogWitnessHull.lean`。actual D完整odd support上
+构造1+pStar*qroot、ordinary logarithm除pStar及pure tensor witness；其singleton
+normalization hull=原2p ordinary-log hull。normalization saturation保留任意
+collation的region/volume，含p* witness即可派生旧witness在saturation中的成员，
+复用S1.328完整corrected relative-weight volume与negative-average下界。
+p* singletonCollation自动满足hw/hunit；真实BK/theta/different-untilt身份及
+paper L'/thetaVolume、mixed-moduli grouping/descent、source sign/final target
+和joint真实模型仍open。尤其norm/hull相等不表示两个log元素相等或BK comparison
+已证明。三个叶子为原创，无新外部源码复制/import；不改旧高扇出LocalPadicLog或
+Prologue/参考声明。Prologue-R5→R5，derive，owner Scene1；新增Core假设0、
+退休字段0、迁移0，前置信任不增加。完整types及资源见log4 S1-BND-329。
+
+验证：check家族9336/9336成功（792条输出逐名核对）；显式Axioms/Scene1
+聚合9358/9358通过，589条公理报告仅含propext、Classical.choice、Quot.sound。
+30新公共声明完整覆盖。最终time-v wall=1:42.86、monitor103.245s，
+组RSS峰值17569024KiB（16.755GiB），time-v单进程最大8272128KiB。
+四轮monitor总耗时485.402s，前两轮scope/rewrite错误及修复详见log4 S1.329；
+默认heartbeat，无Mathlib重编，整体Scene1仍open。

@@ -213,5 +213,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportHullPape
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportPaperWeightedVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorWitnessHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicPaperLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

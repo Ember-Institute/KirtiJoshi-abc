@@ -106,6 +106,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportHullPape
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportPaperWeightedVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorWitnessHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicPaperLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -669,3 +672,33 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessH
 #print axioms JoshiTeich.Act1Scene1.FullSupportWitnessHull.singletonCollation_laws
 #print axioms JoshiTeich.Act1Scene1.FullSupportWitnessHull.singleton_region_eq_base
 #print axioms JoshiTeich.Act1Scene1.FullSupportWitnessHull.singleton_volume_eq_base
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperScale
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperScale_ne_zero
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.norm_paperScale_eq_norm_two_mul
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperPrincipalUnit
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperNormalizedLog
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperPrincipalUnit_norm_sub_one_lt_one
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperPrincipalUnit_ne_zero
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.norm_paperNormalizedLog
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarLattice_eq_of_norm_eq
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarNormalization_eq_of_norm_eq
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.principalUnit
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.value
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.principalUnit_norm_sub_one_lt_one
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_eq_log_principalUnit
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.norm_value_eq_qroot_norm
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_ne_zero
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.packet
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_isUnit
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_hull_eq_base
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_base_region
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.singletonCollation
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.singletonCollation_laws
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturatedCollation
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturated_region_eq
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturated_volume_eq
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.base_region_subset_region
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturatedCollation_laws
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.selectedPaperRootProduct_pow_le_volume
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.negAverageAbsLog_ge_neg_selectedPaperSum
