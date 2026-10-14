@@ -82,6 +82,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorPrincipalRegi
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBounds
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHaarSubspaces
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorBoundedHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorChosenHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarHullVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliHullVolume
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -606,3 +609,23 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorBoundedHull
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.principalRegion_haar_pos_lt_top
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_bounded_principalHull
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_positiveHaar_hull
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.hullMultiplier
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.hullMultiplier_isUnit
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.subset_leastHull
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_isCompact
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_isOpen
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_haar_pos_lt_top
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_le_principalRegion
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_mono
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_eq_of_principal_minimal
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_principalRegion
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarNormalization_eq_principalRegion
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarLattice_isCompact_of_nonzero
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarLattice_normalizationHaar_pos
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarNormalization_subset_of_scalarLattice_subset
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_scalarLattice
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationDegreeVolume_mono
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.degreeVolume_scalarLattice_le_leastHullVolume
+#check JoshiTeich.Act1Scene1.FixedModuliThetaHull.volume
+#check JoshiTeich.Act1Scene1.FixedModuliThetaHull.relativeFactor_pow_le_volume

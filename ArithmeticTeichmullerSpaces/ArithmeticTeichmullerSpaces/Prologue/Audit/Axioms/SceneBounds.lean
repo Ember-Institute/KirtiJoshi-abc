@@ -75,6 +75,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorPrincipalRegi
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBounds
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHaarSubspaces
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorBoundedHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorChosenHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarHullVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliHullVolume
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -396,3 +399,23 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorBoundedHull
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.principalRegion_haar_pos_lt_top
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_bounded_principalHull
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_positiveHaar_hull
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.hullMultiplier
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.hullMultiplier_isUnit
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.subset_leastHull
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_isCompact
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_haar_pos_lt_top
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_le_principalRegion
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_mono
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_eq_of_principal_minimal
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_principalRegion
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarNormalization_eq_principalRegion
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarLattice_isCompact_of_nonzero
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarLattice_normalizationHaar_pos
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarNormalization_subset_of_scalarLattice_subset
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_scalarLattice
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationDegreeVolume_mono
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.degreeVolume_scalarLattice_le_leastHullVolume
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaHull.volume
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaHull.relativeFactor_pow_le_volume

@@ -2344,3 +2344,40 @@ V_p^oss/L'/global thetaVolume及source sign freeze仍open；完整记录见S1-BN
 三次失败与四轮总耗时392.991s见log4；317条公理报告仅含标准允许集合。
 源码枚举SceneBounds520/317、总计1171/703；10个公共声明通过、默认heartbeat。
 actual bounded positive-Haar least hull及拓扑/测度性质闭合，整体Scene1目标仍open。
+
+
+## S1.314：chosen actual hull、scalar identity 与 fixed-moduli Haar 下界
+
+`JT-SCENE1-LOCAL-TENSOR-CHOSEN-LEAST-HULL`，路径
+`Act1Scene1/LocalCompletionTensorChosenHull.lean`，从S1.313实际exists选择unit
+multiplier，leastHull定义为actual principalRegion。证明region包含、compact/open/
+positive finite Haar、对任何principal候选最小、region单调性、所有least principal
+表示给同一Set，principal region为fixed point。该选择不输入hull certificate。
+
+`JT-SCENE1-LOCAL-TENSOR-SCALAR-HULL-VOLUME`，路径
+`Act1Scene1/LocalCompletionTensorScalarHullVolume.lean`，证明scalarNormalization
+恰为pure(z)乘normalization，且actual scalar lattice compact/positive Haar。
+任何principal region包含该scalar lattice时，也包含其normalization饱和区域；
+因此chosen leastHull(scalarLattice)=scalarNormalization。实际normalization Haar
+degree-volume的单调性与S1.309身份推出：scalar lattice⊆bounded正Haar U时，
+old scalar degreeVolume≤new normalization degreeVolume(leastHull U)。
+
+`JT-SCENE1-INITIAL-THETA-FIXED-MODULI-LEAST-HULL-VOLUME`，路径
+`Act1Scene1/IutInitialThetaFixedModuliHullVolume.lean`，直接用实际chosen hull的
+normalization degree Haar再取moduli localDeg幂定义volume；ordinary actual log
+lattice⊆U时，派生canonical relative root factor^card≤volume。hU/hpos/hregion
+仍是显式几何条件，未识别paper theta U或不同untilts。
+
+三个叶子为原创proof terms，无新参考代码复制/import；来源比较Joshi III
+le:volume-lemma3 3576–3583和contained-region 3624–3631。Prologue-R5→R5，derive，
+owner Scene1；新增Core假设0、退休字段0、迁移0，前置信任不增加。闭合chosen
+hull法律/scalar hull exact身份和actual local量化消费者。paper C_p norm/weighted
+volume、theta/untilt/Bloch–Kato/V_p^oss/L'、global grouping/transfer、source sign
+freeze与joint真实模型仍open。完整类型和资源见log4 S1-BND-314。
+
+
+2026-10-14 10:46:00 CST最终熱构建9328/9328通过，耗时3:09.71，进程组采样
+峰值25890028KiB（约24.691GiB），最大同时Lean workers=3，无Mathlib重编。
+首轮失败与两轮总耗时293.586s见log4；337条公理报告仅含标准允许集合。
+源码枚举SceneBounds540/337、总计1191/723；20个公共声明通过、默认heartbeat。
+chosen hull/scalar identity及actual local relative-volume下界闭合，整体Scene1仍open。
