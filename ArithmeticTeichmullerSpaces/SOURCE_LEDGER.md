@@ -3051,3 +3051,34 @@ Classical.choice、Quot.sound。16新公共声明check/axiom完整覆盖。
 （16.832GiB），time-v单进程最大8276960KiB；三轮monitor合计419.220s。
 首轮引理namespace错误及修复、全部资源见log4 S1.334；默认heartbeat、
 Mathlib未重编。乘法性/自然数幂标量关系闭合，H^1_e/BK及完整Scene1仍open。
+
+
+## S1.335：Continuous Z_p Tate coefficients and actual Kummer classes
+
+- `JT-SCENE1-LOCAL-KUMMER-PADIC-MODULE`：`Act1Scene1/LocalKummerPadicModule.lean`。
+  Joshi III 3190–3208的Z_p(1)系数；r作用的第n层是x_n^val(toZModPow n r)。
+  Mathlib residue compatibility给层相容，有限阶power periodicity给module法律；
+  PadicInt valuation ball→p^n ideal证明residue locally constant，进而作用联合
+  连续。底层Tate group及乘积子空间拓扑保留，natural scalar等于旧pow，
+  Galois action与padic scalar commute。
+- `JT-SCENE1-LOCAL-KUMMER-PADIC-COHOMOLOGY`：`Act1Scene1/LocalKummerPadicCohomology.lean`。
+  Z_p-linear continuous Tate TopRep、同一cocycle的standard Z_p continuousH1
+  class，按coboundary不变，旧explicit quotient well-defined映入Z_p版本。
+- `JT-SCENE1-INITIAL-THETA-PADIC-KUMMER`：`Act1Scene1/IutInitialThetaPadicKummer.lean`。
+  actual D/full-support s的p* principal-unit Z_p coefficient class，直接代表
+  身份及根塔选择独立性；素数Fact由actual residueChar_prime派生。
+
+原创，无参考源码复制/import；新增Mathlib精确RingHoms导入，仅读取缓存olean。
+Prologue-R5→R5，derive，owner Scene1，Core假设新增0、退休/迁移0，前置信任
+不增加。未给整数版本与Z_p版本的coefficient-change同构，未构造Q_p(1)、
+H^1_e/crystalline/Frobenius/BK/log比较，joint真实Scene1模型仍open。
+完整types、动态边界及资源见log4 S1-BND-335。
+
+
+验证：Check.SceneBounds9351/9351一次通过，910条check逐名核对；显式
+Axioms/Scene1聚合9373/9373成功，707条公理报告逐名核对，仅含propext、
+Classical.choice、Quot.sound。23新公共声明check/axiom完整覆盖。
+最终time-v wall=1:46.76、monitor107.032s，组RSS峰值17644184KiB
+（16.827GiB），time-v单进程最大8278028KiB；两轮monitor合计330.460s，
+无失败尝试。默认heartbeat、未重编Mathlib。continuous Z_p module及实际
+Z_p ambient class已闭合；Q_p(1)/H^1_e/BK及完整Scene1仍open。资源见log4 S1.335。

@@ -128,6 +128,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMathlibKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Linearity
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMultiplicativity
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerPowers
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicModule
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicCohomology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicKummer
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1019,3 +1022,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerPowers
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_kummerHom
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_pow_class
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_paperScale_class
+#check JoshiTeich.Act1Scene1.LocalKummer.toZModPow_isLocallyConstant
+#check JoshiTeich.Act1Scene1.LocalKummer.padicPower
+#check JoshiTeich.Act1Scene1.LocalKummer.padicPower_apply
+#check JoshiTeich.Act1Scene1.LocalKummer.padicPower_natCast
+#check JoshiTeich.Act1Scene1.LocalKummer.padicPower_add
+#check JoshiTeich.Act1Scene1.LocalKummer.padicPower_mul
+#check JoshiTeich.Act1Scene1.LocalKummer.padicPower_mul_tate
+#check JoshiTeich.Act1Scene1.LocalKummer.tatePadicModule
+#check JoshiTeich.Act1Scene1.LocalKummer.padic_smul_natCast
+#check JoshiTeich.Act1Scene1.LocalKummer.continuous_padicPower
+#check JoshiTeich.Act1Scene1.LocalKummer.tatePadicContinuousSMul
+#check JoshiTeich.Act1Scene1.LocalKummer.tateAction_padicPower
+#check JoshiTeich.Act1Scene1.LocalKummer.padicTateRepresentation
+#check JoshiTeich.Act1Scene1.LocalKummer.padicTateTopRep
+#check JoshiTeich.Act1Scene1.LocalKummer.padicAdditiveCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.padicAdditiveCocycle_law
+#check JoshiTeich.Act1Scene1.LocalKummer.padicClassOfCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.padicClassOfCocycle_eq
+#check JoshiTeich.Act1Scene1.LocalKummer.toPadicH1
+#check JoshiTeich.Act1Scene1.LocalKummer.toPadicH1_class
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_representative
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_of_rootTower

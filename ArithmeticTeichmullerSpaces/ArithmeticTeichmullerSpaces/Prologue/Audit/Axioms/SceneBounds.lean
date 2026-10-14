@@ -121,6 +121,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMathlibKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Linearity
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMultiplicativity
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerPowers
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicModule
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicCohomology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicKummer
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -809,3 +812,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerPowers
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_kummerHom
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_pow_class
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_paperScale_class
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.toZModPow_isLocallyConstant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicPower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicPower_apply
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicPower_natCast
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicPower_add
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicPower_mul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicPower_mul_tate
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tatePadicModule
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padic_smul_natCast
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.continuous_padicPower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tatePadicContinuousSMul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tateAction_padicPower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicTateRepresentation
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicTateTopRep
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicAdditiveCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicAdditiveCocycle_law
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClassOfCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClassOfCocycle_eq
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.toPadicH1
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.toPadicH1_class
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_representative
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_of_rootTower
