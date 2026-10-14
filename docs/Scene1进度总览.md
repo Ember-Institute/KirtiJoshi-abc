@@ -39,9 +39,9 @@
 | --- | --- |
 | 更新日期 | 2026-10-14（Asia/Shanghai） |
 | 最近完成的数学单元 | S1.337：分圆特征、有理坐标表示与实际 Kummer H¹ 类 |
-| 数学证明基线 | S1.337 验证源码；本次提交标识待生成（上次已推送数学提交为 `6f0d2be`） |
+| 数学证明基线 | `2985e9ff1819f62e3cf53127566ce1083a6e0faf`，已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | 用户已恢复工作；S1.337 数学与构建验收通过，待本次提交推送 |
+| 数学工作状态 | S1.337 已验收并推送；连续工作流保持 active，下一数学单元尚未开始 |
 | 当前推进位置 | Kummer 路线已有通常拓扑 ℚₚ 上的分圆表示，以及实际 cocycle 的标准有理 H¹ 类 |
 | 尚未接通的主要连接 | 标准 ℤₚ H¹→ℚₚ H¹ 系数变换函子及比较、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
 | Prologue 边界 | R5；S1.337 新增 Core 假设 0，退休 0，转入 0，取出 0 |
@@ -151,7 +151,7 @@ flowchart TD
 | 工程验证范围 | SceneBounds 970 条 check、767 条公理报告逐名匹配；Scene1 聚合构建通过；34 个新公共声明全部覆盖 |
 | 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
 | 构建资源 | 六次构建累计 772.747 秒（12分52.747秒），含四次失败；进程组峰值 RSS 16.837 GiB；未重编 Mathlib |
-| 交付状态 | 已验收，待提交并立即推送；推送后更新本表的证明提交与交付状态 |
+| 交付状态 | `2985e9f` 已推送；已核对该证明提交与 origin/main 一致 |
 | 完整边界 | [log5 S1-BND-337](开发计划.V1Act1log5.md#s1337-动态边界实际分圆特征与有理-kummer-坐标模型) |
 | 生产证明 | [分圆特征](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerCyclotomicCharacter.lean)、[有理表示及上同调](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerRationalCohomology.lean)、[实际数据适配](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaRationalKummer.lean) |
 
