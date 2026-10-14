@@ -65,6 +65,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRegionVolumeBou
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorIntegralHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedIntegralHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312SourceSignAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumePower
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVolume
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -479,3 +481,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312SourceSignAudit
 #check JoshiTeich.Act1Scene1.actualSelectedPaperSignedLogSum_neg_pos
 #check JoshiTeich.Act1Scene1.actualSelectedPaper_not_literal_cor312_bound
 #check JoshiTeich.Act1Scene1.actualSelectedPaper_not_corollary312_of_literal_logTerms
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.degreeVolume_scalarLattice_pow_eq_norm_product
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.packet
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.weight
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.weight_eq_localDeg_ratio
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.weight_mem_Ioc
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.scalarVolume
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.scalarVolume_eq_weightedNorm_product
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.region
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_eq_relativeFactor_pow
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_pos
+#check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_choice_independent

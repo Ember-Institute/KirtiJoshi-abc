@@ -2052,3 +2052,37 @@ Scene1目标未完成。完整类型、动态负担与资源见log4 S1-BND-305�
 峰值25889992KiB（约24.691GiB），最大同时Lean workers=3，无Mathlib重编。
 207条公理报告仅含标准允许集合；源码枚举SceneBounds410/207、总计1061/593。
 八个公共声明通过、默认heartbeat；接受为负面证据，最终来源/符号freeze仍open。
+
+## S1.306：fixed-moduli inverse-relative-degree tensor Haar
+
+`JT-SCENE1-LOCAL-TENSOR-VOLUME-POWER`，路径
+`Act1Scene1/LocalCompletionTensorVolumePower.lean`，消费actual tensor Haar
+dimension-root公式，证明degreeVolume(scalarLattice)^d=prod(norm^(d/localDeg))。
+来源是actual Haar/dimension和Joshi III ss:weighted-vol/eq:weights的比较；
+独立本地证明，无参考代码复制/import，不把此数值幂视为新的additive measure。
+
+`JT-SCENE1-INITIAL-THETA-FIXED-MODULI-TENSOR-VOLUME`，路径
+`Act1Scene1/IutInitialThetaFixedModuliTensorVolume.lean`。给定actual moduli处v，
+σ为其任意finite tuple of actual torsion over-places，packet的同prime性质直接
+由liesOver派生。weight用实际relative completion algebra的finrank倒数定义；
+比值与(0,1]性质由actual relative degree laws证明。scalarVolume从tensor
+region Haar派生，非零contracting任意标量下等于inverse-relative-degree norm
+产品。actual ordinary logValue region的volume为canonical relative root factor
+的tuple cardinality次幂，严格正且不依赖σ/τ合法over-place tuple选择。
+公共API为packet abbrev、四definition、六theorem，与generic theorem合计12项。
+
+对应Joshi III eq:weights 3554–3557，common moduli localDeg条件在此域由固定v
+构造满足；S1.293混合moduli degrees的障碍仍保留。源自同一actual D/torsion
+field的不同over-places，不是different untilts；未构造特定D。choice-independent
+只比较实数volume，没有跨tensor carriers的isometry或region identity。
+raw completion norm convention与paper 1/f norm、maximal order、weighted
+thetaVolume/carrier身份仍须复审。Prologue-R5→R5，derive，owner Scene1；
+新增Core假设0、退休0字段、迁移0，前置信任不增加。完整签名、动态边界与资源
+见log4 S1-BND-306；S1.305 source sign复审及整体Scene1目标继续open。
+
+
+2026-10-14 08:36:58 CST首轮热构建9310/9310通过，耗时3:07.47，进程组采样
+峰值25875620KiB（约24.677GiB），最大同时Lean workers=3，无Mathlib重编。
+219条公理报告仅含标准允许集合；源码枚举SceneBounds422/219、总计1073/605。
+十二个公共声明通过、默认heartbeat；common-v relative-weight Haar呈现闭合，
+整体Scene1目标仍open。

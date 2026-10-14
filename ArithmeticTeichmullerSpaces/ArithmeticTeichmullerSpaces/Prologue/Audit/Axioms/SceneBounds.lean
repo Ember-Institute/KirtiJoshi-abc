@@ -58,6 +58,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRegionVolumeBou
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorIntegralHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedIntegralHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312SourceSignAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumePower
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVolume
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -269,3 +271,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312SourceSignAudit
 #print axioms JoshiTeich.Act1Scene1.actualSelectedPaperSignedLogSum_neg_pos
 #print axioms JoshiTeich.Act1Scene1.actualSelectedPaper_not_literal_cor312_bound
 #print axioms JoshiTeich.Act1Scene1.actualSelectedPaper_not_corollary312_of_literal_logTerms
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.degreeVolume_scalarLattice_pow_eq_norm_product
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.packet
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.weight
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.weight_eq_localDeg_ratio
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.weight_mem_Ioc
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.scalarVolume
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.scalarVolume_eq_weightedNorm_product
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.region
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_eq_relativeFactor_pow
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_pos
+#print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_choice_independent
