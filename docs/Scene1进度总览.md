@@ -39,9 +39,9 @@
 | --- | --- |
 | 更新日期 | 2026-10-14（Asia/Shanghai） |
 | 最近完成的数学单元 | S1.338：标准 H¹ 系数映射与实际 integral/rational 类相容 |
-| 数学证明基线 | S1.338 验证源码；本次提交标识待生成（上次已推送数学提交为 `2985e9f`） |
+| 数学证明基线 | `d13ce044f87f155a62139aeffef79597bbc4fe71`，已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.338 数学与构建验收通过，待本次提交推送；连续工作流保持 active |
+| 数学工作状态 | S1.338 已验收并推送；连续工作流保持 active，下一数学单元尚未开始 |
 | 当前推进位置 | 标准 integral H¹ 已经连续半线性系数映射接到 rational H¹，实际两类的相容等式已证明 |
 | 尚未接通的主要连接 | H¹ₑ 的整性及核约定、H¹ₑ/BK 比较、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
 | Prologue 边界 | R5；S1.338 新增 Core 假设 0，退休 0，转入 0，取出 0 |
@@ -157,7 +157,7 @@ flowchart TD
 | 工程验证范围 | SceneBounds 995 条 check、792 条公理报告逐名匹配；Scene1 聚合构建通过；25 个新公共声明全部覆盖 |
 | 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
 | 构建资源 | 四次构建累计 558.348 秒（9分18.348秒），含两次失败；进程组峰值 RSS 16.828 GiB；未重编 Mathlib |
-| 交付状态 | 已验收，待提交并立即推送；推送后更新证明提交与交付状态 |
+| 交付状态 | `d13ce04` 已推送；已核对该证明提交与 origin/main 一致 |
 | 完整边界 | [log5 S1-BND-338](开发计划.V1Act1log5.md#s1338-动态边界标准-h¹-半线性系数映射) |
 | 生产证明 | [标准半线性 H¹](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/ContinuousH1Semilinear.lean)、[Tate 系数比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerCoefficientChange.lean)、[实际类相容](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCoefficientChange.lean) |
 
