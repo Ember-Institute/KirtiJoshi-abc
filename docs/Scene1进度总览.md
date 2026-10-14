@@ -41,7 +41,7 @@
 | 最近完成的数学单元 | S1.344：actual integral Kummer 类无 torsion |
 | 数学证明基线 | `2708a6543acb79eea1b56dbe714e75e18d420f57`，S1.344 已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.344 actual integral 类无 torsion 正在验收，Scene1 仍未完成 |
+| 数学工作状态 | S1.344 actual integral 类无 torsion 已验收并推送；Scene1 仍未完成 |
 | 当前推进位置 | actual principal unit 的 integral 与 rational standard Kummer 类、normalized rational 类均非零；integral 类不被非零 `ℤₚ` 标量杀死 |
 | 尚未接通的主要连接 | H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配；全局系数映射单射仍未声称 |
 | Prologue 边界 | R5；S1.344 新增 Core 假设 0，退休 0，转入 0，取出 0 |
