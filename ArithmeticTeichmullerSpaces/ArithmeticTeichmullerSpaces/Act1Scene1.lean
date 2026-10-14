@@ -208,5 +208,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedHullBou
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedSupportDefect
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRestrictBadPlaces
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRestrictedSupportWitness
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportLogHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportHullPaperBound
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

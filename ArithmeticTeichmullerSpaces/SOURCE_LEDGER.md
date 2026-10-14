@@ -2762,3 +2762,35 @@ check家族9328/9328通过，耗时2:30.49、峰值9374420KiB（约
 源码枚举SceneBounds693/490、全家族1344/876。五轮monitor总耗时607.892s与
 前三轮字段/instance/subtype错误见log4 S1.325，无Mathlib重编。完整restriction及
 conditional missing-support witness闭合，实际two-place模型存在性/整体Scene1仍open。
+
+
+## S1.326：actual ordinary-log hull volume on complete odd support
+
+`JT-SCENE1-INITIAL-THETA-FULL-SUPPORT-LOG-HULL`，路径
+`Act1Scene1/IutInitialThetaFullSupportLogHull.lean`。从actual D和n，由完整moduli
+selected source equivalence自动选择每处Fin n重复tuple及proved liesOver。ordinary
+normalized-log image generators、normalization span及actual scalarNormalization
+identity均构造/证明，region compact且位于normalization。global volume直接定义为
+actual Haar dimension根的localDeg幂在完整odd support的乘积，再取moduli global
+finrank根；证明volume=normalized full relativeRootProduct^n、positive/unit upper及
+negative log/abs log=n*fullBaseSum。没有外给tuple、C、hgen/hunit或VBad coverage。
+
+`JT-SCENE1-INITIAL-THETA-FULL-SUPPORT-HULL-PAPER-BOUND`，路径
+`Act1Scene1/IutInitialThetaFullSupportHullPaperBound.lean`。由实际strict fullBaseSum<
+full selected paperSum，得到full selected corrected rootProduct<normalized full
+relativeRootProduct；n>0时其n次幂严格小于actual full-support Haar hull volume。
+negative-average=-fullBaseSum> -full selected paperSum，无VBad=full coverage输入。
+
+来源Joshi III1028–1055完整section odd semistable、3474–3631 log-shell/hull/volume
+与本工程actual full root/Haar/accounting。原创无新参考代码复制/import。
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，前置
+信任不增加。S1.324/325排除VBad任意缩小后的无证coverage；本路径直接构造完整
+支撑而非添加coverage。重复ordinary completions/logs不识别不同untilts/BK/theta；
+paper weighted-volume/norm、mixed-moduli grouping、source sign/target freeze及joint
+真实模型仍open，不以该校准模型勾选整体gate。完整types/资源见log4 S1-BND-326。
+
+验证：check家族9330/9330通过，715条输出逐名核对；收尾显式Axioms/Scene1
+聚合9352/9352通过，512条公理报告只含propext、Classical.choice、Quot.sound。
+22新公共声明全部审计。最终time-v wall=1:38.96、monitor99.046s，组RSS峰值
+17633956KiB（约16.817GiB），time-v单进程最大8268512KiB；资源精确值以log4
+S1.326表为准。三轮monitor总耗时408.756s，无Mathlib重编；整体Scene1仍open。
