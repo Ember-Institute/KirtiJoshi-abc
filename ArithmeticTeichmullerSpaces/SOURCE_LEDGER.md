@@ -2928,3 +2928,36 @@ untilts及joint真实Scene1模型仍open。精确types及热构建资源见log4 
 组RSS峰值17611104KiB（16.795GiB），time-v单进程最大8273316KiB。
 四轮monitor总耗时433.594s；前两轮错误/修复见log4 S1.330。默认heartbeat，
 无Mathlib重编；actual root tower/algebraic cocycle闭合，连续/BK身份仍open。
+
+
+## S1.331：Krull-continuous Kummer cocycles in the inverse-limit topology
+
+`JT-SCENE1-LOCAL-KUMMER-CONTINUITY`，路径
+`Act1Scene1/LocalKummerContinuity.lean`。来源Joshi III 3190–3208的local
+compatible roots/Kummer construction以及Krull topology。cyclotomicTateGroup
+取discrete level units product的induced topology，派生topological-group
+structure；不是把整个Tate group设成discrete。integral extension中evaluation
+由open stabilizer证明locally constant，各层ratio/μ-character/unit-coordinate
+locally constant，推出Kummer cocycle到inverse-limit subgroup连续。Galois作用
+在离散level units上由open stabilizer连续，再通过product/subspace推出Tate
+coefficient action联合连续。提供continuous-map cocycle及IsMulCocycle₁。
+
+`JT-SCENE1-INITIAL-THETA-CONTINUOUS-KUMMER`，路径
+`Act1Scene1/IutInitialThetaContinuousKummer.lean`。同一actual D/full-support
+source s的S1.330 cocycle，每层locally constant、整体continuous，构造
+continuousCocycle并消费其IsMulCocycle₁；无需caller topology/continuity证书。
+
+原创，无新参考代码复制/import。不改旧API/Prologue或reference模块。
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，
+前置信任不增加。continuous cohomology class及H^1_e/crystalline/Frobenius、
+BK/ordinary-log comparison、different untilts/j² scaling、mixed-moduli
+grouping、paper thetaVolume/source sign/final target及joint真实模型仍open。
+完整types及热构建资源见log4 S1-BND-331。按本轮用户指令，推送后暂停。
+
+验证：check家族9340/9340成功（835条输出逐名核对）；显式Axioms/Scene1
+聚合9362/9362通过，632条公理报告仅含propext、Classical.choice、Quot.sound，
+16新公共声明完整覆盖。最终time-v wall=1:42.45、monitor102.573s，
+组RSS峰值17632976KiB（16.816GiB），time-v单进程最大8273760KiB。
+三轮monitor总耗时365.802s，首次elaboration错误及修复见log4 S1.331。
+默认heartbeat，无Mathlib重编；actual continuity闭合，continuous H^1_e/BK
+身份仍open。本单元推送后按用户要求暂停。

@@ -111,6 +111,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerContinuity
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaContinuousKummer
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -731,3 +733,19 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle_apply
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.isMulCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.cyclotomicTateTopology
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.cyclotomicTateIsTopologicalGroup
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.continuous_tate_iff_level_locallyConstant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.galoisEval_isLocallyConstant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.continuous_tateAction
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tateContinuousSMul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio_isLocallyConstant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.character_isLocallyConstant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerCocycle_level_isLocallyConstant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.continuous_kummerCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.continuousCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.continuousCocycle_isMulCocycle
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle_level_isLocallyConstant
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuous_cocycle
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycle
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycle_isMulCocycle

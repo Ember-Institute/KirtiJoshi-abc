@@ -218,5 +218,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerContinuity
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaContinuousKummer
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

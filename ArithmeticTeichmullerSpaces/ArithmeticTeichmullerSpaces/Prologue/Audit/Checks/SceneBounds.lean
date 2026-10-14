@@ -118,6 +118,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerContinuity
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaContinuousKummer
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -941,3 +943,19 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle_apply
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.isMulCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.cyclotomicTateTopology
+#check JoshiTeich.Act1Scene1.LocalKummer.cyclotomicTateIsTopologicalGroup
+#check JoshiTeich.Act1Scene1.LocalKummer.continuous_tate_iff_level_locallyConstant
+#check JoshiTeich.Act1Scene1.LocalKummer.galoisEval_isLocallyConstant
+#check JoshiTeich.Act1Scene1.LocalKummer.continuous_tateAction
+#check JoshiTeich.Act1Scene1.LocalKummer.tateContinuousSMul
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio_isLocallyConstant
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.character_isLocallyConstant
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerCocycle_level_isLocallyConstant
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.continuous_kummerCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.continuousCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.continuousCocycle_isMulCocycle
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle_level_isLocallyConstant
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuous_cocycle
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycle
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycle_isMulCocycle
