@@ -254,5 +254,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerTowerPowers
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalDenominator
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicRationalKummerNonvanishing
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummerNonzero
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonTorsion
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
