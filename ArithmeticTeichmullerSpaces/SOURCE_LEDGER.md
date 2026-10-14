@@ -3317,6 +3317,19 @@ term 语义后再继续 G3，不构造 paper `L'` representatives，也不涉及
 验证：Checks.SceneBounds 1067/1067、Axioms.SceneBounds 864/864 逐名匹配，
 Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
 数学提交 `9a791ea33819691bf56dcf6f4569346c026c963f` 已推送并与 `origin/main` 一致。
+
+## S1.347：Canonical actual q-pilot VBad strict bound
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-VBAD-SUBPROBABILITY-BOUND`：
+  `Act1Scene1/IutInitialThetaCanonicalVBadSubprobabilityBound.lean`；证明
+  canonical degree-one q-pilot `absLogQ` 严格小于 actual VBad selected paper sum。
+
+消费 VBad coefficient-weighted accounting、strict gap 与 canonical reference
+equality；原创适配，无参考源码复制/import。Prologue-R5→R5，derive，owner Scene1；
+Core 假设/退休/迁移增量均 0。VBad carrier 与论文 `V_p^oss/L'`、thetaVolume 和
+联合模型仍 open。验证：Checks.SceneBounds 1069/1069、Axioms.SceneBounds 866/866
+逐名匹配，Scene1 聚合通过，公理仅含标准允许集合；资源见总览。
+数学提交 `f3395ee456e1b7ea09cd7bbe44dbd2c85eff03df` 已推送并与 `origin/main` 一致。
 数学提交 `c47e7e0669f04ce11622384b6451277054315954` 已推送并与 `origin/main` 一致。
 
 ## S1.346：Canonical actual q-pilot strict subprobability bound
