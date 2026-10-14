@@ -142,6 +142,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientChange
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogHomomorphism
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaws
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Recognition
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Equivalence
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerZeroCriteria
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1163,3 +1166,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaw
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_pow_ne_one
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.scale_normalizedRationalClass
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycle_one
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.π_surjective
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycleOfClosed
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycleOfClosed_law
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.cochain_cocycleOfClosed
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_surjective
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_zero
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_eq_zero_iff
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycle_sub_law
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.cycle_sub
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_sub
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_eq_iff
+#check JoshiTeich.Act1Scene1.LocalKummer.padicClassOfCocycle_eq_iff
+#check JoshiTeich.Act1Scene1.LocalKummer.toPadicH1_injective
+#check JoshiTeich.Act1Scene1.LocalKummer.toPadicH1_surjective
+#check JoshiTeich.Act1Scene1.LocalKummer.padicH1Equiv
+#check JoshiTeich.Act1Scene1.LocalKummer.padicH1Equiv_apply
+#check JoshiTeich.Act1Scene1.LocalKummer.padicClassOfCocycle_eq_zero_iff
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_zero_iff
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_zero_iff
+#check JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycle_zero_law

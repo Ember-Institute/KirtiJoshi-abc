@@ -3193,3 +3193,28 @@ H¹ₑ/BK、different untilts、descent、paper volume 与联合模型仍 open�
 五次构建（两次失败、一次中间模块成功）累计624.594秒，组RSS峰值16.794GiB；
 准确资源与修复明细见进度总览 S1.339。Mathlib/工具链/依赖及默认heartbeat
 未改；ordinary log 与 actual 单位公式闭合，H¹ₑ/BK及完整Scene1仍open。
+
+
+## S1.340：Standard H1 representatives and actual Kummer zero criteria
+
+- `JT-SCENE1-CONTINUOUS-H1-RECOGNITION`：`Act1Scene1/ContinuousH1Recognition.lean`。
+  从标准 homology 的 quotient/cokernel 提取代表；闭 cochain F 给 f(g)=F(1,g)，
+  证明 crossed law、代表恢复、零性与 coboundary 方程的充要性。
+- `JT-SCENE1-LOCAL-KUMMER-H1-EQUIVALENCE`：`Act1Scene1/LocalKummerH1Equivalence.lean`。
+  已有 toPadicH1 对旧 continuous cocycle 商是集合双射；构造 padicH1Equiv。
+  不声称旧商具有未构造的拓扑/模块，也不声称 integral→rational 映射单射。
+- `JT-SCENE1-INITIAL-THETA-KUMMER-ZERO-CRITERIA`：
+  `Act1Scene1/IutInitialThetaKummerZeroCriteria.lean`；实际 integral/rational 类
+  为零当且仅当其实际 cocycle 满足相应 coboundary 方程。
+
+Joshi III 3190–3236 的实际 Kummer 类比较所需识别；原创，无参考源码复制/import，
+无新增 Mathlib 导入。Prologue-R5→R5，derive，owner Scene1，Core 假设/退休/迁移
+增量均 0。类非零、H¹ₑ/BK 及完整真实模型仍 open；边界见 log5 S1-BND-340。
+验证状态待构建，资源见 Scene1进度总览。
+
+验证：Check.SceneBounds9365/9365成功，1037条check逐名匹配；显式
+Axioms.SceneBounds/Scene1聚合9387/9387成功，834条公理报告逐名匹配，
+仅含propext、Classical.choice、Quot.sound。21新增公开声明check/axiom完整覆盖。
+三次构建（一次失败）累计436.873秒，组RSS峰值16.841GiB；资源明细见总览
+S1.340。Mathlib/工具链/依赖和默认heartbeat未改；集合双射及零性判据闭合，
+实际类非零、H¹ₑ/BK与完整Scene1仍open。

@@ -135,6 +135,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientChange
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogHomomorphism
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaws
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Recognition
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Equivalence
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerZeroCriteria
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -953,3 +956,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaw
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_pow_ne_one
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.scale_normalizedRationalClass
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycle_one
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.π_surjective
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycleOfClosed
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycleOfClosed_law
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.cochain_cocycleOfClosed
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_surjective
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_zero
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycle_sub_law
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.cycle_sub
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_sub
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.classOf_eq_iff
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClassOfCocycle_eq_iff
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.toPadicH1_injective
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.toPadicH1_surjective
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicH1Equiv
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicH1Equiv_apply
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClassOfCocycle_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycle_zero_law
