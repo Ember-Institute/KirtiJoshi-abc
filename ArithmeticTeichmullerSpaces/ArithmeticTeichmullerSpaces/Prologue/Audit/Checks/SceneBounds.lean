@@ -103,6 +103,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogTransfer
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullTransferAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogCost
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedHullBound
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -754,3 +756,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostBridg
 #check JoshiTeich.Act1Scene1.volumeNormalization_of_actualHull_cost
 #check JoshiTeich.Act1Scene1.transferLogBound_of_actualHull_cost
 #check JoshiTeich.Act1Scene1.thetaVolume_lower_bound_of_actualHull_cost
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceAt
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceAt_injective
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceAt_liesOver
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.selectedFinset
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.mem_selectedFinset_iff
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceEquiv
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.selectedFinset_card
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.selectedFinset_subset_fullSelected
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.paperTerm
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.paperSum
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.rootProduct
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.paperTerm_pos
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.paperSum_eq_selectedRootLogSum
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.rootProduct_pos
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.negLog_rootProduct_eq_paperSum
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.referenceAbsLogQ_lt_paperSum
+#check JoshiTeich.Act1Scene1.VBadSelectedPaper.rootProduct_lt_normalizedVBadRootProduct
+#check JoshiTeich.Act1Scene1.VBadSelectedHull.selectedRootProduct_pow_lt_volume
+#check JoshiTeich.Act1Scene1.VBadSelectedHull.negAverageAbsLog_gt_neg_selectedPaperSum
+#check JoshiTeich.Act1Scene1.VBadSelectedHull.cost_lt_mul_selectedPaperSum

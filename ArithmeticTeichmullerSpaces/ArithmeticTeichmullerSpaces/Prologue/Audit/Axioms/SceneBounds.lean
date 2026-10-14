@@ -96,6 +96,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogTransfer
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullTransferAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogCost
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedHullBound
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -544,3 +546,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostBridg
 #print axioms JoshiTeich.Act1Scene1.volumeNormalization_of_actualHull_cost
 #print axioms JoshiTeich.Act1Scene1.transferLogBound_of_actualHull_cost
 #print axioms JoshiTeich.Act1Scene1.thetaVolume_lower_bound_of_actualHull_cost
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceAt
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceAt_injective
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceAt_liesOver
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.selectedFinset
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.mem_selectedFinset_iff
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceEquiv
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.selectedFinset_card
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.selectedFinset_subset_fullSelected
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.paperTerm
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.paperSum
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.rootProduct
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.paperTerm_pos
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.paperSum_eq_selectedRootLogSum
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.rootProduct_pos
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.negLog_rootProduct_eq_paperSum
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.referenceAbsLogQ_lt_paperSum
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedPaper.rootProduct_lt_normalizedVBadRootProduct
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedHull.selectedRootProduct_pow_lt_volume
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedHull.negAverageAbsLog_gt_neg_selectedPaperSum
+#print axioms JoshiTeich.Act1Scene1.VBadSelectedHull.cost_lt_mul_selectedPaperSum

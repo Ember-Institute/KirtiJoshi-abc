@@ -2663,3 +2663,38 @@ check家族9323/9323首轮通过，耗时3:25.24、峰值9368424KiB（约
 源码枚举SceneBounds647/444、全家族1298/830，两轮monitor总耗时306.605s见
 log4 S1.322，无失败或Mathlib重编。实际cost与legacy normalization/transfer的
 条件桥闭合，真实联合模型及整体Scene1仍open。
+
+
+## S1.323：exact VBad selected carrier and same-support hull accounting
+
+`JT-SCENE1-INITIAL-THETA-VBAD-SELECTED-PAPER-ACCOUNTING`，路径
+`Act1Scene1/IutInitialThetaVBadSelectedPaperAccounting.lean`，sourceAt为actual
+ModuliSelectedSourceEquiv在VBad上的restriction；定义selectedFinset为其finite image，
+证明sourceAt injective/liesOver、sourceEquiv bijection、card精确相同及包含于完整
+odd-support selected carrier。paperTerm=-log(actualPaperRootNorm(sourceAt v))、paperSum
+和rootProduct在恰VBad选定处集上计算，证明negative-log product身份。reference
+absLogQ恰为同VBad支撑上representativeCoefficient*paperTerm之和；每coef<1、term>0
+及D.global.bad_nonempty推出reference<paperSum，故rootProduct<normalizedVBad product。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-SELECTED-HULL-BOUND`，路径
+`Act1Scene1/IutInitialThetaVBadSelectedHullBound.lean`，连接actual collation principal
+hull，n>0时same-support selected rootProduct^n<actual volume、negative-average>
+-same-support paperSum及cost<n*same-support paperSum，不使用较大odd-support和。
+
+来源Joshi III1028–1055 section/locus、3617–3631 product估计及本工程actual
+VBad/moduli/selected/ramification/Haar定理。原创无新参考代码复制/import。
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，
+前置信任不增加。paper完整odd semistable section locus可能大于actual VBad
+restriction，未假定其相等；本结果关闭restriction内部重数及q-term会计，不能
+勾选完整paper V_p^oss/L' gate。真实theta/BK/untilt、paper norm/weighted-volume、
+mixed-moduli grouping、source sign/target freeze及joint真实模型仍open。
+完整类型与资源见log4 S1-BND-323。
+
+
+2026-10-14 14:39:09 CST最终里程碑9347/9347通过，耗时1:39.64，组RSS采样峰值
+17640304KiB（约16.823GiB），同时Lean workers峰值2。
+check家族9325/9325通过，耗时3:23.92、峰值9376128KiB（约
+8.942GiB）。21公共声明覆盖，465条公理报告仅标准允许集合；
+源码枚举SceneBounds668/465、全家族1319/851。三轮monitor总耗时401.178s与
+首轮subtype错误见log4 S1.323，无Mathlib重编。同VBad选定carrier的精确accounting
+及hull量化桥闭合，完整paper carrier/整体Scene1仍open。
