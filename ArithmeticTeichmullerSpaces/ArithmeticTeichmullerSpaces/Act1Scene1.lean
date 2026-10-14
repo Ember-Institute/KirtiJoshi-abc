@@ -167,5 +167,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedIntegra
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312SourceSignAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumePower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueDecomposition
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

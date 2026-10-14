@@ -50,3 +50,23 @@ IUT 移植使用的 Apache-2.0 正文位于工程根目录 `LICENSE`；该文件
 Mathlib4 通过本地 path 依赖使用，不复制其源文件到本工程。版本固定为 commit
 `389347a7c1cfa76f6bd5be2ca35d4cb621610ad3`；其许可证和版权信息由本地 mathlib4
 发行目录负责。
+
+## S1.307：actual tensor order 与 residue decomposition
+
+- 参考快照：`07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`。
+- 来源文件：`refer/iut/Iut/Concrete/LocalConstruct/Integral.lean`、
+  `refer/iut/Iut/Concrete/LocalConstruct/MaximalOrder.lean`。
+- 两来源文件最后提交：`b76207ab8955e68a7408d5d2a770b75a30c3bebf`；Git 作者
+  Christian Merten；文件版权和作者为 The iut contributors（2026）。
+- 逐文件审查：文件头均为 Apache-2.0，参考 `LICENSE` 与本工程用于第三方移植的
+  `LICENSE` 正文一致；保留原通知，不据此选择原创工程其余文件的许可证。
+- 目标：`Act1Scene1/LocalCompletionTensorOrder.lean`、
+  `Act1Scene1/LocalCompletionTensorResidueDecomposition.lean`。
+- source-id：`JT-SCENE1-LOCAL-TENSOR-ORDER-NORMALIZATION`、
+  `JT-SCENE1-LOCAL-TENSOR-RESIDUE-DECOMPOSITION`。
+- 改写范围：tensor 的 ℤ_p algebra、unit order 乘法封闭性、finite order 元素的
+  integrality、integral closure 包含，以及 formally unramified tensor 证明。
+  使用本工程实际 completion factors、既有有限 unit lattice 和 Mathlib 的
+  reduced Artinian 分解；未复制 junk quotient、参考 hull 或自由 volume laws。
+- 目标文件均保留原路径、原提交、作者、版权及 Apache-2.0 通知；无 `Iut` import，
+  无参考工程依赖。构建和公理验证记录于 log4 的 S1-BND-307。

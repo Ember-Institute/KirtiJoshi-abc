@@ -60,6 +60,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedIntegra
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312SourceSignAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumePower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueDecomposition
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -283,3 +285,23 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVo
 #print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_eq_relativeFactor_pow
 #print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_pos
 #print axioms JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_choice_independent
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorCommRing
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorAlgebra
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorIntegralAlgebra
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.pure_mul
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.one_mem_unitLattice
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mul_mem_unitLattice
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitSubalgebra
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitSubalgebra_toSubmodule
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.isIntegral_of_mem_unitLattice
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitLattice_le_normalization
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_isClosed
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorFormallyUnramified
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorIsReduced
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorIsArtinianRing
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueDecomposition
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueDecomposition_apply
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.eq_of_forall_residue_eq
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.formallyUnramified_piTensor

@@ -67,6 +67,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedIntegra
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312SourceSignAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumePower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueDecomposition
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -493,3 +495,23 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVo
 #check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_eq_relativeFactor_pow
 #check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_pos
 #check JoshiTeich.Act1Scene1.FixedModuliThetaTensor.volume_choice_independent
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorCommRing
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorAlgebra
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorIntegralAlgebra
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.pure_mul
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.one_mem_unitLattice
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.mul_mem_unitLattice
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitSubalgebra
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitSubalgebra_toSubmodule
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.isIntegral_of_mem_unitLattice
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.unitLattice_le_normalization
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_isOpen
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_isClosed
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorFormallyUnramified
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorIsReduced
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.tensorIsArtinianRing
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueDecomposition
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueDecomposition_apply
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.eq_of_forall_residue_eq
+#check JoshiTeich.Act1Scene1.LocalCompletion.formallyUnramified_piTensor

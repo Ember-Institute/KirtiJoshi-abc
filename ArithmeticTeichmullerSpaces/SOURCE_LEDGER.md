@@ -2086,3 +2086,43 @@ thetaVolume/carrier身份仍须复审。Prologue-R5→R5，derive，owner Scene1
 219条公理报告仅含标准允许集合；源码枚举SceneBounds422/219、总计1073/605。
 十二个公共声明通过、默认heartbeat；common-v relative-weight Haar呈现闭合，
 整体Scene1目标仍open。
+
+## S1.307：actual tensor order normalization 与 residue-field algebra decomposition
+
+`JT-SCENE1-LOCAL-TENSOR-ORDER-NORMALIZATION`，路径
+`Act1Scene1/LocalCompletionTensorOrder.lean`。从Mathlib PiTensorProduct为实际
+completion tensor提供CommRing/Q_p algebra/Z_p restricted algebra，证明纯张量
+乘法、unit lattice含1和乘法封闭，构造有限unitSubalgebra。已有actual unit
+lattice的finite-module证明推出其元素IsIntegral；直接定义normalization为
+Z_p integralClosure，派生unit≤normalization及normalization开放、闭合。
+没有将unit order与其normalization等同，也未假定normalization紧致。
+
+`JT-SCENE1-LOCAL-TENSOR-RESIDUE-DECOMPOSITION`，路径
+`Act1Scene1/LocalCompletionTensorResidueDecomposition.lean`。由actual finite
+characteristic-zero completion extensions证明formally unramified tensor，进而
+reduced；actual有限张量基给Artinian。构造residueDecomposition为Q_p-algebra
+等价到MaximalSpectrum上的quotient产品，证明evaluate=quotient和quotient
+images共同决定tensor元素。Mathlib Artinian/Module.lean:516的实例保证该
+MaximalSpectrum有限，624的equivPi是finite product of residue fields。
+residue-field norms/normalization有限性与compactness尚未构造。
+
+经逐文件许可证审查移植Integral.lean/MaximalOrder.lean中的restricted algebra、
+unit-order乘法/finite integrality、formal-unramified tensor论证。参考快照
+07cb1da58f6d428a670dbb5dd6093d428bcbcdd8；两文件原提交
+b76207ab8955e68a7408d5d2a770b75a30c3bebf，Git作者Christian Merten，文件作者
+The iut contributors，Apache-2.0原头与通知保留，登记LICENSES.md。改写为
+actual completion factors，不复制reference junk quotients、hull/volume fields，
+无Iut import或参考依赖。来源解释包括IUT IV Prop1.2/order normalization和
+Joshi III direct-sum fields 3590–3595；不接受参考工程最终3.12结论。
+
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休0字段、边界迁移0，
+前置信任不增加。闭合actual tensor algebra/order integrality与代数field产品
+分解。尚未证明paper norms、maximal-order Haar normalization或theta hull身份；
+完整Scene1/Corollary3.12仍open。完整公共类型和资源见log4 S1-BND-307。
+
+
+2026-10-14 08:45:37 CST首轮热构建9312/9312通过，耗时2:44.51，进程组采样
+峰值25871000KiB（约24.673GiB），最大同时Lean workers=3，无Mathlib重编。
+239条公理报告仅含标准允许集合；源码枚举SceneBounds442/239、总计1093/625。
+二十个公共声明通过、默认heartbeat；normalization compact/paper hull身份及
+整体Scene1目标仍open。
