@@ -3302,3 +3302,18 @@ untilts、descent、paper volume 和联合模型仍 open。
 验证：Checks.SceneBounds 1066/1066、Axioms.SceneBounds 863/863 逐名匹配，
 Scene1 聚合构建通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
 数学提交 `2708a6543acb79eea1b56dbe714e75e18d420f57` 已推送并与 `origin/main` 一致。
+
+## S1.345：Canonical actual source versus mass-one paper representative certificate
+
+- `JT-SCENE1-INITIAL-THETA-PAPER-REPRESENTATIVE-NONEXISTENCE`：
+  `Act1Scene1/IutInitialThetaPaperRepresentativeNonexistence.lean`；证明
+  canonical actual source 与当前 mass-one paper representative/section-link
+  accounting certificate 组合不相容。
+
+消费 actual canonical q-pilot、selected q-root paper sum 和 S1.283 strict
+ramification gap；原创冲突适配，无参考源码复制/import。Prologue-R5→R5，derive，
+owner Scene1；Core 假设/退休/迁移增量均 0。该结果要求修订 carrier、weight 或
+term 语义后再继续 G3，不构造 paper `L'` representatives，也不涉及 H¹ₑ/BK。
+验证：Checks.SceneBounds 1067/1067、Axioms.SceneBounds 864/864 逐名匹配，
+Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
+数学提交 `c47e7e0669f04ce11622384b6451277054315954` 已推送并与 `origin/main` 一致。
