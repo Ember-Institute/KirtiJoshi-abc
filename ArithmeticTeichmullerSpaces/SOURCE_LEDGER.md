@@ -2485,3 +2485,40 @@ joint真实模型及最终Corollary3.12仍open。完整类型与资源见log4 S1
 8.955GiB）；23公共声明覆盖，382条公理报告仅标准允许集合。
 四轮总monitor耗时523.607s与失败原因见log4 S1.317；无Mathlib重编。
 actual normalization-stable collation→principal hull→local量化桥闭合，整体Scene1仍open。
+
+
+## S1.318：original collation principal hull and actual global Haar volume
+
+`JT-SCENE1-INITIAL-THETA-COLLATED-PRINCIPAL-HULL-LAWS`，路径
+`Act1Scene1/IutInitialThetaCollatedPrincipalHullLaws.lean`，证明original C union
+包含于normalization-module region，且任意principal region包含original union时
+也包含该region；generator coverage/hunit从S1.317派生其unit multiplier principal
+形状，因此它是original union的least principal hull，而非仅integral span的hull。
+不要求original union positive Haar，不引入order=normalization证书。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-COLLATED-NORMALIZATION-VOLUME`，路径
+`Act1Scene1/IutInitialThetaVBadCollatedNormalizationVolume.lean`，从actual D、
+每exact VBad处的合法Fin n tuple及actual collation C构造per-place region。
+volume为actual normalization Haar dimension root的localDeg幂在exact VBad上的
+乘积，再取moduli global finrank根。original-union least-principal形状派生
+每处positive finite Haar，hgen/hunit接入canonical relativeFactor^n下界；从同处集
+的canonical normalized VBad root product得到global positivity/lower/upper及
+absLog≤n*reference absLogQ，n>0时negative-average≥reference lhs。
+
+来源为Joshi III3568–3574、3624–3631与本工程actual normalization span、VBad
+q-pilot accounting。原创无新参考代码复制/import。Prologue-R5→R5，derive，
+owner Scene1；新增Core假设0、退休字段0、迁移0，前置信任不增加。hgen/hunit
+仍为explicit geometric输入，非真实theta/BK/τ_j/untilt来源证明。本global体积
+使用explicit relative-degree数值修正，不宣称paper weighted thetaVolume或
+V_p^oss/L'身份；source sign/target freeze、joint真实模型及完整3.12仍open。
+完整类型与资源见log4 S1-BND-318。
+
+
+2026-10-14 12:10:08 CST显式里程碑热构建9336/9336通过，耗时1:40.73，组RSS采样峰值
+17628672KiB（约16.812GiB），同时Lean workers峰值2。
+先前check家族9313/9313通过，耗时2:45.44、组RSS峰值9372536KiB（约
+8.938GiB）。十二个公共声明覆盖，394条公理报告仅标准允许集合；
+源码枚举SceneBounds597/394、全家族1248/780。三轮monitor总耗时
+446.484s与失败原因见log4 S1.318，无Mathlib重编。
+original collation→principal hull→actual VBad global量化桥闭合；共同moduli tuple
+不识别mixed-moduli prime-fiber tensor grouping，整体Scene1仍open。
