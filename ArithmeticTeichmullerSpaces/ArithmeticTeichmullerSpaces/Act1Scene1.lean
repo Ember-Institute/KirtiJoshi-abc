@@ -245,5 +245,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaw
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Recognition
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Equivalence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerZeroCriteria
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootDescent
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerRootDescent
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

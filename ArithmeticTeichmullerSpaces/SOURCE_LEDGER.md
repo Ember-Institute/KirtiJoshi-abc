@@ -3218,3 +3218,28 @@ Axioms.SceneBounds/Scene1聚合9387/9387成功，834条公理报告逐名匹配�
 三次构建（一次失败）累计436.873秒，组RSS峰值16.841GiB；资源明细见总览
 S1.340。Mathlib/工具链/依赖和默认heartbeat未改；集合双射及零性判据闭合，
 实际类非零、H¹ₑ/BK与完整Scene1仍open。
+
+
+## S1.341：Integral Kummer vanishing and root descent
+
+- `JT-SCENE1-LOCAL-KUMMER-ROOT-DESCENT`：`Act1Scene1/LocalKummerRootDescent.lean`。
+  coboundary 修正根塔后每层实际 Galois 固定，InfiniteGalois 的 fixed-field
+  theorem 给基域 preimage，algebraMap 单射证明其兼容。反向用基域 tower
+  的零 cocycle 及 rootChange。标准 integral 类零 iff 基域 compatible tower。
+- `JT-SCENE1-INITIAL-THETA-KUMMER-ROOT-DESCENT`：
+  `Act1Scene1/IutInitialThetaKummerRootDescent.lean`；actual principal unit
+  类零 iff actual local-field compatible tower，类零给每一有限层根；明确
+  某层无根条件下给类非零。
+
+Joshi III 3190–3208 的实际 Kummer 类及其非零证明所需的代数下降接口；原创，
+无参考源码复制/import。精确导入 Mathlib.FieldTheory.Galois.Infinite，读取
+匹配缓存。Prologue-R5→R5，derive，owner Scene1，Core 假设/退休/迁移增量 0。
+尚未证明 actual 无根或类非零；rational 类及 H¹ₑ/BK/最终 volume 仍 open。
+边界见 log5 S1-BND-341，验证待构建，资源见进度总览。
+
+验证：Check.SceneBounds9367/9367成功，1048条check逐名匹配；显式
+Axioms.SceneBounds/Scene1聚合9389/9389成功，845条公理报告逐名匹配，
+仅含propext、Classical.choice、Quot.sound。11新增公开声明check/axiom完整覆盖。
+三次构建（一次失败）累计431.577秒，组RSS峰值16.832GiB；明细见总览S1.341。
+Mathlib/工具链/依赖和默认heartbeat未改；根塔下降判据闭合，actual 类非零
+和完整Scene1仍open。

@@ -138,6 +138,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaw
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Recognition
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Equivalence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerZeroCriteria
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootDescent
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerRootDescent
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -977,3 +979,14 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerZeroCriteria
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_zero_iff
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_zero_iff
 #print axioms JoshiTeich.Act1Scene1.ContinuousH1Recognition.cocycle_zero_law
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.fromBase
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.fromBase_cocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.corrected
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.corrected_fixed
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.exists_baseTower_of_coboundary
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.padicClass_eq_zero_iff_baseTower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.exists_root_of_padicClass_eq_zero
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.padicClass_ne_zero_of_no_root
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_zero_iff_baseRootTower
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.exists_local_root_of_padicClass_eq_zero
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_ne_zero_of_no_local_root

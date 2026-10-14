@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-14（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.340：标准 H¹ 代表、Tate 商双射及实际零性判据 |
-| 数学证明基线 | `5cfb6da3546ed5a49cb5710fd3e8a765e84d566f`，已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.341：integral Kummer 零类与实际基域根塔下降 |
+| 数学证明基线 | S1.341 验证源码；本次提交标识待生成（上次已推送数学提交为 `5cfb6da`） |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.340 已验收并推送；连续工作流保持 active，下一数学单元尚未开始 |
-| 当前推进位置 | 旧 Tate cocycle 商已与标准 integral H¹ 建立集合双射；实际 integral/rational 类零性可提取为 coboundary 方程 |
-| 尚未接通的主要连接 | H¹ₑ 的整性及核约定、H¹ₑ/BK 比较（含实际类非零）、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.340 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| 数学工作状态 | S1.341 数学与构建验收通过，待本次提交推送；连续工作流保持 active |
+| 当前推进位置 | actual integral Kummer 类零 iff 实际 local-field compatible p-power root tower；类零给每层根，尚待排除无限可除性 |
+| 尚未接通的主要连接 | 实际局部域根塔的无限可除性排除、rational 类非零、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
+| Prologue 边界 | R5；S1.341 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -58,7 +58,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及多项 carrier 适配已存在 | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型 | 计划 §2.1；S1.270 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在 | 证明与论文处集及 L' representatives 的完整身份，闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327，见 [log4](开发计划.V1Act1log4.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际类的 coboundary 零性判据已建立 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–340，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类与基域 compatible root tower 的判据已建立 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–341，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -81,6 +81,8 @@ flowchart TD
     I["已闭合：标准 H¹ 半线性系数映射<br/>实际类相容；S1.338"]
     J["未建立：H¹ₑ 整性身份<br/>及核约定"]
     C0["已闭合：旧商与标准 integral H¹ 双射<br/>实际类零性判据；S1.340"]
+    R0["已闭合：integral 零类 iff 基域根塔<br/>实际下降；S1.341"]
+    N0["未建立：排除实际无限可除性<br/>及 integral/rational 类非零"]
     B["未建立：H¹ₑ / BK<br/>ordinary-log 比较"]
     H["已闭合：ordinary-log 模型内<br/>hull 与 Haar 定量界"]
     L["已闭合：ordinary log 群律<br/>actual 单位无限阶；S1.339"]
@@ -102,7 +104,10 @@ flowchart TD
     Q -.-> B
     Z --> C0
     Q --> C0
-    C0 -.-> B
+    C0 --> R0
+    R0 -.-> N0
+    L -.-> N0
+    N0 -.-> B
     L -.-> B
     B -.-> V
     H -.-> V
@@ -114,9 +119,9 @@ flowchart TD
     classDef done fill:#dcfce7,stroke:#15803d,color:#14532d;
     classDef partial fill:#fef3c7,stroke:#b45309,color:#78350f;
     classDef open fill:#f3f4f6,stroke:#6b7280,color:#111827;
-    class K,Z,T,Q,H,I,L,C0 done;
+    class K,Z,T,Q,H,I,L,C0,R0 done;
     class G1,G2,G3,V partial;
-    class J,B,C open;
+    class J,B,C,N0 open;
 ```
 
 ### 关键子结果与缺口
@@ -138,6 +143,8 @@ flowchart TD
 | p* 有理标量会计 | 🟢 已闭合 | 明确定义 normalizedRationalClass=(p*)⁻¹•rationalClass 并证明标量还原；未识别该新类与论文 ξ，也未识别其 BK log | G4；log5 S1.339 |
 | 旧 Tate cocycle 商与标准 integral H¹ | 🟢 已闭合 | S1.340 从标准 homology quotient 提取连续 cocycle 代表，证明 toPadicH1 的单射和满射；集合 equivalence 不给旧商追加未构造的拓扑/模块 | G4；[log5 S1.340](开发计划.V1Act1log5.md#s1340-动态边界标准-h1-代表与实际-kummer-零性判据) |
 | 实际 integral/rational 类零性判据 | 🟢 已闭合 | S1.340 证明类为零当且仅当实际 cocycle 满足具体 coboundary 方程；要证明类非零仍须排除该方程有解 | G4；log5 S1.340 |
+| integral 零类与基域根塔下降 | 🟢 已闭合 | S1.341 类零 iff 基域存在同一个 compatible p-power tower；actual local-field 适配已完成，类零推出每一有限层有根 | G4；[log5 S1.341](开发计划.V1Act1log5.md#s1341-动态边界integral-kummer-零类与基域兼容根塔) |
+| 实际无限可除性排除与类非零 | ⚪ 未建立 | S1.341 给某层无根时的 integral 类非零接口；尚未证明 actual 无根或排除 compatible tower，rational 类非零也仍需证明 | G4；log5 S1.341 边界 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
 | 不同 untilt、论文 thetaVolume 与联合模型 | 🟡 部分完成 | 已有 ordinary-log 定量构件；真实身份、descent 及最终共同装配仍缺失 | G2、G4；计划 §2.3、log5 剩余义务 |
@@ -153,43 +160,43 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.340
+## 最近单元变化卡：S1.341
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4 的标准 Kummer H¹ → 类非零/H¹ₑ/BK 识别路线 |
-| 实际闭合 | 标准 H¹ 的连续 crossed-homomorphism 代表与 coboundary 等价判据；旧 Tate cocycle 商与标准 integral H¹ 的集合双射；actual integral/rational 类的零性判据 |
-| 后续获得的前提 | 类为零能提取具体 coboundary 方程，为后续根塔下降与非零证明提供接口 |
-| 尚未接通 | 尚未排除 actual coboundary 方程有解；双射不代表 integral→rational H¹ 单射；H¹ₑ/BK、different untilts、mixed-moduli descent、论文 volume 与联合模型仍缺失 |
+| 推进位置 | G4 的 integral Kummer 类零性 → 基域根塔下降 → 非零证明路线 |
+| 实际闭合 | integral Kummer 类零 iff 基域存在 compatible p-power tower；actual local-field 适配；类零给每一有限层根，某层无根时推出类非零 |
+| 后续获得的前提 | 类非零可通过实际局部域中的根或无限可除性约束证明；不再需要额外 Galois descent/兼容性证书 |
+| 尚未接通 | 尚未给出 actual 某层无根或排除 compatible tower；每层分别有根未被当作兼容塔；rational 类非零、H¹ₑ/BK、different untilts、descent、论文 volume 和联合模型仍缺失 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数保持 **0/4** |
 | 信任负担变化 | Prologue R5→R5；新增 Core 假设 0，新增外部证明证书 0，退休／转入／取出均 0 |
-| 来源与依赖 | 原创，使用已有标准 homology cokernel；只导入已验证本地叶子，无新增 Mathlib 导入，无参考源码复制/import |
-| 工程验证范围 | SceneBounds 1037 条 check、834 条公理报告逐名匹配；Scene1 聚合构建通过；21 个新公共声明全部覆盖 |
+| 来源与依赖 | 原创，消费 InfiniteGalois fixed-field theorem；精确 Mathlib.FieldTheory.Galois.Infinite 使用匹配缓存，无参考源码复制/import |
+| 工程验证范围 | SceneBounds 1048 条 check、845 条公理报告逐名匹配；Scene1 聚合构建通过；11 个新公共声明全部覆盖 |
 | 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
-| 构建资源 | 三次构建累计 436.873 秒（7分16.873秒），含一次失败；进程组峰值 RSS 16.841 GiB；未重编 Mathlib |
-| 交付状态 | `5cfb6da` 已推送；已核对该证明提交与 origin/main 一致 |
-| 完整边界 | [log5 S1-BND-340](开发计划.V1Act1log5.md#s1340-动态边界标准-h1-代表与实际-kummer-零性判据) |
-| 生产证明 | [H¹ 代表识别](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/ContinuousH1Recognition.lean)、[Tate 商双射](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerH1Equivalence.lean)、[实际零性判据](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaKummerZeroCriteria.lean) |
+| 构建资源 | 三次构建累计 431.577 秒（7分11.577秒），含一次失败；进程组峰值 RSS 16.832 GiB；未重编 Mathlib |
+| 交付状态 | 已验收，待提交并立即推送；推送后更新证明提交与交付状态 |
+| 完整边界 | [log5 S1-BND-341](开发计划.V1Act1log5.md#s1341-动态边界integral-kummer-零类与基域兼容根塔) |
+| 生产证明 | [通用根塔下降](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerRootDescent.lean)、[实际局部域根塔判据](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaKummerRootDescent.lean) |
 
-### S1.340 构建资源与失败定位
+### S1.341 构建资源与失败定位
 
 时间为 2026-10-14 CST 的结束时间；RSS 单位为 KiB。尝试 1–2 仅构建
 Checks.SceneBounds；尝试 3 仅构建 Axioms.SceneBounds 和 Act1Scene1 聚合。
 
 | label | 结束时间 | exit | jobs | time-v wall | monitor秒 | 组RSS峰值 | time-v单进程最大 | worker峰值 | affinity修正 |
 | --- | --- | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| s1340-1 | 23:08:38 | 1 | 失败 | 1:27.49 | 87.774 | 4519900 | 3448780 | 1 | 34 |
-| s1340-2 | 23:14:13 | 0 | 9365/9365 | 3:53.38 | 233.629 | 9396980 | 8285668 | 1 | 55 |
-| s1340-3 | 23:17:22 | 0 | 9387/9387 | 1:55.14 | 115.470 | 17659256 | 8280400 | 2 | 38 |
+| s1341-1 | 23:27:17 | 1 | 失败 | 1:29.87 | 90.060 | 5051956 | 3968928 | 1 | 45 |
+| s1341-2 | 23:32:06 | 0 | 9367/9367 | 3:47.90 | 228.226 | 9396856 | 8283656 | 1 | 38 |
+| s1341-3 | 23:36:37 | 0 | 9389/9389 | 1:53.00 | 113.291 | 17649852 | 8285480 | 2 | 40 |
 
-- 尝试 1：代表提取与恢复无报错。map_one 误匹配连续映射 f，改为显式作用于 X.ρ；零 cocycle law 命名并显式标注类型；toCycles 的 hom coercion 对齐；classOf_sub 改写补齐 law 参数。公开零 law 增加对应 check/axiom。
-- 尝试 2–3：三个生产叶子、1037 条名称检查与 834 条公理报告通过，收尾成功。上表包含失败尝试；累计时间不代表一次构建耗时。
+- 尝试 1：唯一错误为 corrected_fixed 中单位群除法 coercion 并非 definitionally equal；先用 Subgroup/Pi/Units division coercion lemmas 展开再 change。数学假设和 heartbeat 不变。
+- 尝试 2–3：两个生产叶子、1048 条名称检查与 845 条公理报告通过，收尾成功。上表保留失败尝试；累计时间不代表一次构建耗时。
 
 CPU 0–13，LEAN_NUM_THREADS=10，每个 Lean 编译进程 -j1。Lake 的 -Kjobs=10
 是未消费配置项，实际并发 worker 峰值为 2。没有可用 memory cgroup；每 0.5 秒
 采样进程组 RSS，85 GiB 停止线低于用户 90 GiB 上限。三次 stop_reason 均为 null。
 未冷建、未清缓存、未并发 Lake，未修改 Mathlib、工具链、依赖或默认 heartbeat。
-原始日志与指标为 `/tmp/import-audit-s1340-N-build.log` 和 `-metrics.json`；上表保留汇总证据。
+原始日志与指标为 `/tmp/import-audit-s1341-N-build.log` 和 `-metrics.json`；上表保留汇总证据。
 
 ## 文档分工
 
@@ -367,6 +374,50 @@ CPU 0–13，LEAN_NUM_THREADS=10，每个 Lean 编译进程 -j1。Lake 的 -Kjob
 采样进程组 RSS，85 GiB 停止线低于用户 90 GiB 上限。五次 stop_reason 均为 null。
 未冷建、未清缓存、未并发 Lake，未修改 Mathlib、工具链、依赖或默认 heartbeat。
 原始日志与指标为 `/tmp/import-audit-s1339-N-build.log` 和 `-metrics.json`；上表保留汇总证据。
+
+
+</details>
+
+<details>
+<summary>S1.340：标准 H¹ 代表与 actual 零性判据</summary>
+
+### S1.340：标准 H¹ 识别与实际零性判据（历史记录）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4 的标准 Kummer H¹ → 类非零/H¹ₑ/BK 识别路线 |
+| 实际闭合 | 标准 H¹ 的连续 crossed-homomorphism 代表与 coboundary 等价判据；旧 Tate cocycle 商与标准 integral H¹ 的集合双射；actual integral/rational 类的零性判据 |
+| 后续获得的前提 | 类为零能提取具体 coboundary 方程，为后续根塔下降与非零证明提供接口 |
+| 尚未接通 | 尚未排除 actual coboundary 方程有解；双射不代表 integral→rational H¹ 单射；H¹ₑ/BK、different untilts、mixed-moduli descent、论文 volume 与联合模型仍缺失 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数保持 **0/4** |
+| 信任负担变化 | Prologue R5→R5；新增 Core 假设 0，新增外部证明证书 0，退休／转入／取出均 0 |
+| 来源与依赖 | 原创，使用已有标准 homology cokernel；只导入已验证本地叶子，无新增 Mathlib 导入，无参考源码复制/import |
+| 工程验证范围 | SceneBounds 1037 条 check、834 条公理报告逐名匹配；Scene1 聚合构建通过；21 个新公共声明全部覆盖 |
+| 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
+| 构建资源 | 三次构建累计 436.873 秒（7分16.873秒），含一次失败；进程组峰值 RSS 16.841 GiB；未重编 Mathlib |
+| 交付状态 | `5cfb6da` 已推送；已核对该证明提交与 origin/main 一致 |
+| 完整边界 | [log5 S1-BND-340](开发计划.V1Act1log5.md#s1340-动态边界标准-h1-代表与实际-kummer-零性判据) |
+| 生产证明 | [H¹ 代表识别](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/ContinuousH1Recognition.lean)、[Tate 商双射](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerH1Equivalence.lean)、[实际零性判据](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaKummerZeroCriteria.lean) |
+
+### S1.340 构建资源与失败定位
+
+时间为 2026-10-14 CST 的结束时间；RSS 单位为 KiB。尝试 1–2 仅构建
+Checks.SceneBounds；尝试 3 仅构建 Axioms.SceneBounds 和 Act1Scene1 聚合。
+
+| label | 结束时间 | exit | jobs | time-v wall | monitor秒 | 组RSS峰值 | time-v单进程最大 | worker峰值 | affinity修正 |
+| --- | --- | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1340-1 | 23:08:38 | 1 | 失败 | 1:27.49 | 87.774 | 4519900 | 3448780 | 1 | 34 |
+| s1340-2 | 23:14:13 | 0 | 9365/9365 | 3:53.38 | 233.629 | 9396980 | 8285668 | 1 | 55 |
+| s1340-3 | 23:17:22 | 0 | 9387/9387 | 1:55.14 | 115.470 | 17659256 | 8280400 | 2 | 38 |
+
+- 尝试 1：代表提取与恢复无报错。map_one 误匹配连续映射 f，改为显式作用于 X.ρ；零 cocycle law 命名并显式标注类型；toCycles 的 hom coercion 对齐；classOf_sub 改写补齐 law 参数。公开零 law 增加对应 check/axiom。
+- 尝试 2–3：三个生产叶子、1037 条名称检查与 834 条公理报告通过，收尾成功。上表包含失败尝试；累计时间不代表一次构建耗时。
+
+CPU 0–13，LEAN_NUM_THREADS=10，每个 Lean 编译进程 -j1。Lake 的 -Kjobs=10
+是未消费配置项，实际并发 worker 峰值为 2。没有可用 memory cgroup；每 0.5 秒
+采样进程组 RSS，85 GiB 停止线低于用户 90 GiB 上限。三次 stop_reason 均为 null。
+未冷建、未清缓存、未并发 Lake，未修改 Mathlib、工具链、依赖或默认 heartbeat。
+原始日志与指标为 `/tmp/import-audit-s1340-N-build.log` 和 `-metrics.json`；上表保留汇总证据。
 
 
 </details>
