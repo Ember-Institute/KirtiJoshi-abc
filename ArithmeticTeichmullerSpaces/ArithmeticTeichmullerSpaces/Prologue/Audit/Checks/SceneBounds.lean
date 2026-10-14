@@ -134,6 +134,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPrimitiveTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerTateBasis
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateCoordinates
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCyclotomicCharacter
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalCohomology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1074,3 +1077,37 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateCoordinates
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycleCoordinate
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycleCoordinate_reconstruct
 #check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.tateAdditiveT2Space
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.coefficient
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.coordinate_action
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.coefficient_one
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.coefficient_mul
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.character
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.character_val
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.continuous_coefficient
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.continuous_character
+#check JoshiTeich.Act1Scene1.LocalKummer.Cyclotomic.coordinate_action_character
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.coefficientMap
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.coefficientMap_injective
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.continuous_coefficientMap
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.coefficientMap_smul
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.coefficientMap_basis
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.exists_smul_coefficientMap
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.representation
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.representation_apply
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.continuous_action
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.coefficientMap_equivariant
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.topRep
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.cocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.cocycle_law
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.classOfCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.classOfCocycle_eq
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.toH1
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.toH1_class
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalCocycle
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalCocycle_eq_coordinate
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_representative
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_of_rootTower
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.liftedRepresentation
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.liftedRepresentation_down
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.continuous_liftedAction

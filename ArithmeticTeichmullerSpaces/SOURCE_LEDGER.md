@@ -3110,3 +3110,32 @@ Axioms.SceneBounds/Scene1聚合9376/9376成功，733条公理报告逐名匹配�
 （16.747GiB），time-v单进程最大8279100KiB；含4次失败在内的
 六次monitor合计708.411s，所有资源及修复明细见log5 S1.336。默认heartbeat、
 Mathlib未重编；topological Z_p basis与actual坐标闭合，完整Scene1仍open。
+
+
+## S1.337：Cyclotomic character and rational Kummer realization
+
+- `JT-SCENE1-LOCAL-KUMMER-CYCLOTOMIC-CHARACTER`：`Act1Scene1/LocalKummerCyclotomicCharacter.lean`。
+  从实际 Tate action 和 S1.336 连续基导出 ℤₚ 单位值特征，证明乘法、连续性和
+  scalar action 公式，不接收外给 character。
+- `JT-SCENE1-LOCAL-KUMMER-RATIONAL-COHOMOLOGY`：`Act1Scene1/LocalKummerRationalCohomology.lean`。
+  通常拓扑 ℚₚ 上按该 character 作用；实际 Tate group 到此坐标模型的加法系数映射
+  为单射、连续、ℤₚ 线性和 equivariant，其像 ℚₚ-span 为全体。将实际 continuous
+  cocycle 推入标准 rational H¹，coboundary 不改变类。
+- `JT-SCENE1-INITIAL-THETA-RATIONAL-KUMMER`：`Act1Scene1/IutInitialThetaRationalKummer.lean`。
+  actual principal unit 的 rational cocycle 等于旧 integral 坐标的包含，标准 rational
+  class 与兼容根塔选择无关。
+
+来源：Joshi III 3190–3236，尤其 ℤₚ(1) 类和后续 ℚₚ(1) BK exponential 的系数转换。
+原创连接证明，无参考源码复制/import；不增加 Mathlib imports 闭包以外的依赖。
+本单元使用所构造基的坐标模型，未声明标准 ℤₚ H¹ 到 ℚₚ H¹ 的完整系数变换函子、
+该函子的单射性、H¹ₑ/crystalline/Frobenius 身份或 BK/log 比较。
+Prologue-R5→R5，derive，owner Scene1；新增 Core 假设/退休/转入/取出均 0。
+边界记录见 log5 S1-BND-337；验证状态待构建。
+
+验证：Check.SceneBounds9357/9357成功，970条check逐名匹配；显式
+Axioms.SceneBounds/Scene1聚合9379/9379成功，767条公理报告逐名匹配，
+仅含propext、Classical.choice、Quot.sound。34新增公开声明check/axiom全部覆盖。
+standard cochain universe 由 ContinuousLinearEquiv.ulift 搬运同一 p-adic 表示，
+不改变底层 ℚₚ 拓扑或新增数学假设。六次构建（四次失败）累计772.747秒，
+组RSS峰值16.837GiB；明细见 Scene1进度总览 的 S1.337 变化卡。默认heartbeat
+未改、Mathlib未重编；H¹ₑ/BK及完整Scene1仍open。

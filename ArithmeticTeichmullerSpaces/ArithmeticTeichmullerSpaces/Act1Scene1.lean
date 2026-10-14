@@ -234,5 +234,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPrimitiveTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerTateBasis
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateCoordinates
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCyclotomicCharacter
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalCohomology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
