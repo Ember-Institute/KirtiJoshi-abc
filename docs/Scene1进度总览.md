@@ -39,9 +39,9 @@
 | --- | --- |
 | 更新日期 | 2026-10-14（Asia/Shanghai） |
 | 最近完成的数学单元 | S1.341：integral Kummer 零类与实际基域根塔下降 |
-| 数学证明基线 | S1.341 验证源码；本次提交标识待生成（上次已推送数学提交为 `5cfb6da`） |
+| 数学证明基线 | `0b01b2a25231f726824b568144a77844992f5d69`，已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.341 数学与构建验收通过，待本次提交推送；连续工作流保持 active |
+| 数学工作状态 | S1.341 已验收并推送；连续工作流保持 active，下一数学单元尚未开始 |
 | 当前推进位置 | actual integral Kummer 类零 iff 实际 local-field compatible p-power root tower；类零给每层根，尚待排除无限可除性 |
 | 尚未接通的主要连接 | 实际局部域根塔的无限可除性排除、rational 类非零、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
 | Prologue 边界 | R5；S1.341 新增 Core 假设 0，退休 0，转入 0，取出 0 |
@@ -174,7 +174,7 @@ flowchart TD
 | 工程验证范围 | SceneBounds 1048 条 check、845 条公理报告逐名匹配；Scene1 聚合构建通过；11 个新公共声明全部覆盖 |
 | 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
 | 构建资源 | 三次构建累计 431.577 秒（7分11.577秒），含一次失败；进程组峰值 RSS 16.832 GiB；未重编 Mathlib |
-| 交付状态 | 已验收，待提交并立即推送；推送后更新证明提交与交付状态 |
+| 交付状态 | `0b01b2a` 已推送；已核对该证明提交与 origin/main 一致 |
 | 完整边界 | [log5 S1-BND-341](开发计划.V1Act1log5.md#s1341-动态边界integral-kummer-零类与基域兼容根塔) |
 | 生产证明 | [通用根塔下降](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerRootDescent.lean)、[实际局部域根塔判据](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaKummerRootDescent.lean) |
 
