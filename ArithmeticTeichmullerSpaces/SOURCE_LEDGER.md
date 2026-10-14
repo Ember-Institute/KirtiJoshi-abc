@@ -2728,3 +2728,37 @@ check家族9326/9326通过，耗时2:34.92、峰值9374596KiB（约
 源码枚举SceneBounds683/480、全家族1334/866。三轮monitor总耗时359.799s及
 首轮sum_coe_sort错误见log4 S1.324，无Mathlib重编。coverage/遗漏量判据闭合，
 actual覆盖证明/完整paper来源身份及整体Scene1仍open。
+
+
+## S1.325：complete initial-theta restriction and conditional missing-support model
+
+`JT-SCENE1-INITIAL-THETA-RESTRICT-BAD-PLACES`，路径
+`Act1Scene1/IutInitialThetaRestrictBadPlaces.lean`。从actual D和nonempty W⊆D.VBad
+重建完整InitialThetaData：global、prime的residueChar/q-order/local Tate条件、
+TateFamily及Galois laws、orbicurve/covers/epsilon、valuation section和local theta
+conditions逐项限制。F/Fbar/E、torsionBasis/representation、section及global covers
+保留。restriction不是较弱替代carrier，输出完整InitialThetaData；证明VBad/rep/
+section投影身份。原创重构已移植的本地字段，没有新参考代码复制或外部import。
+
+`JT-SCENE1-INITIAL-THETA-RESTRICTED-SUPPORT-WITNESS`，路径
+`Act1Scene1/IutInitialThetaRestrictedSupportWitness.lean`。证明完整odd multiplicative
+support在restriction下保持；给原D中两个不同bad places，构造singleton D'并证明
+另一place仍在完整odd support却不在VBad。S1.324 criterion派生D' coverage失败、
+omittedPaperSum>0，输出存在完整typed InitialThetaData有缺处和正遗漏的witness。
+
+来源为actual InitialThetaData全字段及Joshi III1028–1055完整section odd semistable
+locus比较。Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、
+迁移0，前置信任不增加。结果为conditional countermodel construction：要求已有
+actual D内two distinct bad places，未构造特定D，也不声称无条件counterexample。
+完整paper identity必须来源补证或修订数据模型；真实theta/BK/untilt、norm/volume、
+mixed-moduli grouping、source sign/target freeze及joint模型仍open。完整types、
+restriction构造和资源见log4 S1-BND-325。
+
+
+2026-10-14 15:45:25 CST最终里程碑9350/9350通过，耗时1:41.91，组RSS采样峰值
+17636008KiB（约16.819GiB），同时Lean workers峰值2。
+check家族9328/9328通过，耗时2:30.49、峰值9374420KiB（约
+8.940GiB）。十公共声明覆盖，490条公理报告仅标准允许集合；
+源码枚举SceneBounds693/490、全家族1344/876。五轮monitor总耗时607.892s与
+前三轮字段/instance/subtype错误见log4 S1.325，无Mathlib重编。完整restriction及
+conditional missing-support witness闭合，实际two-place模型存在性/整体Scene1仍open。

@@ -206,5 +206,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostBridg
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedHullBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedSupportDefect
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRestrictBadPlaces
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRestrictedSupportWitness
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
