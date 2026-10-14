@@ -152,6 +152,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRepresentative
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalSubprobabilityBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadSubprobabilityBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadCoefficientAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadCostBridge
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -1024,3 +1025,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadCoeffi
 #print axioms JoshiTeich.Act1Scene1.canonicalScene1AbsLogQ_lt_selectedPaperSum
 #print axioms JoshiTeich.Act1Scene1.canonicalScene1AbsLogQ_lt_vbadPaperSum
 #print axioms JoshiTeich.Act1Scene1.canonicalScene1AbsLogQ_eq_vbadCoefficientWeightedPaperSum
+#print axioms JoshiTeich.Act1Scene1.canonicalScene1AbsLogQ_eq_vbadGeneratedCost_div

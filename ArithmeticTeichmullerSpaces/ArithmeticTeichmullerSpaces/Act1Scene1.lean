@@ -259,5 +259,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRepresentative
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalSubprobabilityBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadSubprobabilityBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadCoefficientAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadCostBridge
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
