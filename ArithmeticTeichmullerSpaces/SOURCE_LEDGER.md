@@ -1955,3 +1955,37 @@ Fin n factors是同一actual completion/log scalar的重复，未构造不同unt
 采样峰值25726216KiB（约24.534GiB），最大同时Lean workers为3，无Mathlib
 源码重编。172条公理报告仅含标准允许集合；源码枚举SceneBounds375/172、
 全部家族1026/558。十个公共声明通过；整体目标仍open。
+
+## S1.303：实际区域包含到 VBad Haar 下界和负平均 log 界
+
+`JT-SCENE1-LOCAL-TENSOR-VOLUME-MONOTONICITY`，路径
+`Act1Scene1/LocalCompletionTensorVolumeMonotonicity.lean`，从Mathlib的measure
+mono/toReal/rpow单调性证明actual Packet的degreeVolume单调性。上层Haar必须
+有限，以排除ENNReal.toReal(∞)=0；不要求measurability的外测度包含也适用。
+另外证明unit lattice体积为1、其中任意区域体积≤1。对应Joshi III
+th:moccor-Mochizuki-form2 3624–3631的测度步骤；本轮无参考代码复制/import。
+非负性由generic degreeVolume_nonneg独立命名，供actual有限乘积比较直接调用，
+避免在实际D上展开完整Haar/rpow定义；generic共四个定理。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-REGION-VOLUME-BOUND`，路径
+`Act1Scene1/IutInitialThetaVBadRegionVolumeBound.lean`，对actual VBad区域族H
+直接按实际normalized Haar、localDeg幂与moduli global finrank根定义体积。
+S1.302 repeated log lattice逐处包含于H且Haar有限时，派生其global product下界
+和正性。H逐处包含于unit lattice时，派生volume≤1；再在合法over-place selector
+下证明abs(log volume)≤n*reference absLogQ，以及n>0时负平均log≥reference lhs。
+来源为上述包含步骤与cor:cor312 3634–3650的符号转换；不是自由体积或显式目标
+lower-bound参数。generic mono由actual产品消费者调用，产品下界由log消费者调用。
+
+模型证据：现有scalarLattice_le_unitLattice加actual logValue norm<1证明
+region≤unit，H=region满足两侧包含和finite Haar；未构造特定InitialThetaData。
+Prologue-R5→R5，derive，owner Scene1；新增0Core假设、退休0字段、边界迁移0，
+前置信任不增加。普通固定处重复tensor的测度传递闭合，不同untilts/Bloch–Kato、
+paper carrier/maximal order/weighted normalization和实际theta hull包含仍open。
+完整公共类型、动态负担及构建资源见log4 S1-BND-303。
+
+
+2026-10-14 08:09:45 CST最终窄热构建9305/9305通过，耗时3:10.41，组采样
+峰值25805288KiB（约24.610GiB），最大同时Lean workers=3，无Mathlib重编。
+首轮whnf超时与两轮总耗时348.089s见log4；默认heartbeat重试通过。
+182条公理报告仅含标准允许集合；SceneBounds385/182、总计1036/568。
+新增十个公共声明通过，整体Scene1目标仍open。
