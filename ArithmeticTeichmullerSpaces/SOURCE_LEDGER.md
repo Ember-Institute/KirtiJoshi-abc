@@ -3330,7 +3330,33 @@ Core 假设/退休/迁移增量均 0。VBad carrier 与论文 `V_p^oss/L'`、the
 联合模型仍 open。验证：Checks.SceneBounds 1069/1069、Axioms.SceneBounds 866/866
 逐名匹配，Scene1 聚合通过，公理仅含标准允许集合；资源见总览。
 数学提交 `f3395ee456e1b7ea09cd7bbe44dbd2c85eff03df` 已推送并与 `origin/main` 一致。
+
+## S1.348：Canonical actual VBad coefficient-weighted accounting
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-VBAD-COEFFICIENT-ACCOUNTING`：
+  `Act1Scene1/IutInitialThetaCanonicalVBadCoefficientAccounting.lean`；证明
+  canonical degree-one q-pilot `absLogQ` 等于 actual VBad selected paper terms
+  的代表系数加权和。
+
+消费 actual VBad weighted identity 与 canonical reference equality；原创适配，
+无参考源码复制/import。Prologue-R5→R5，derive，owner Scene1；Core 假设/退休/
+迁移增量均 0。mass-one certificate 已排除，paper carrier、thetaVolume 和联合
+模型仍 open。验证：Checks.SceneBounds 1070/1070、Axioms.SceneBounds 867/867，
+Scene1 聚合通过，公理仅含标准允许集合；资源见总览。
 数学提交 `c47e7e0669f04ce11622384b6451277054315954` 已推送并与 `origin/main` 一致。
+
+## S1.349：Canonical actual VBad generated-hull cost bridge
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-VBAD-COST-BRIDGE`：
+  `Act1Scene1/IutInitialThetaCanonicalVBadCostBridge.lean`；证明 canonical
+  degree-one q-pilot `absLogQ = generated-hull cost / n`。
+
+消费 canonical reference equality 与 actual VBad generated-hull ordinary cost
+identity；原创适配，无参考源码复制/import。Prologue-R5→R5，derive，owner Scene1；
+Core 假设/退休/迁移增量均 0。该 cost 不等同 Core `thetaVolume`，paper theta/BK/
+untilt 联合模型仍 open。验证：Checks.SceneBounds 1071/1071、Axioms.SceneBounds
+868/868，Scene1 聚合通过，公理仅含标准允许集合；资源见总览。
+数学提交 `55de57b64568b1418a7be9371131fa6e81f8d006` 已推送并与 `origin/main` 一致。
 
 ## S1.346：Canonical actual q-pilot strict subprobability bound
 
