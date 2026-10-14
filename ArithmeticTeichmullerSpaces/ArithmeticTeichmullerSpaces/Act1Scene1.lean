@@ -250,5 +250,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerRootDescent
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogBounded
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicKummerNonvanishing
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonzero
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerTowerPowers
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalDenominator
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicRationalKummerNonvanishing
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummerNonzero
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

@@ -150,6 +150,10 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerRootDescent
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogBounded
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicKummerNonvanishing
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonzero
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerTowerPowers
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalDenominator
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicRationalKummerNonvanishing
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummerNonzero
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1212,3 +1216,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonze
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.exists_no_local_prime_power_root
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.no_local_baseRootTower
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_ne_zero
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.pow
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.pow_cocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.exists_integral_p_power_mul
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.exists_scaled_integral_coboundary
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.integral_powClass_eq_zero_of_rational_eq_zero
+#check JoshiTeich.Act1Scene1.LocalPadicLog.rationalKummer_ne_zero_of_log_ne_zero
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_ne_zero
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass_ne_zero
