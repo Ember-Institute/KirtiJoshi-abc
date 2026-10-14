@@ -70,6 +70,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarResidueRegion
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBallRegions
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNormDiscrete
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorPrincipalRegions
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -373,3 +375,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBallRe
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueIntegralClosure_eq_closedBall
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_normalization_iff_residueNorm_le_one
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_scalarNormalization_iff_residueNorm_le_multiplier
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueExponent
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_residueNorm_pow_eq_zpow
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_residueNorm_ge
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.isUnit_iff_residue_ne_zero
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.principalRegion
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_principalRegion_iff
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_principalRegion_of_radii
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_integral_principalHull

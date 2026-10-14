@@ -2268,3 +2268,40 @@ freeze仍open。完整公共类型、动态边界与资源见log4 S1-BND-311。
 首轮metric选择失败与两轮总耗时234.175s见log4；299条公理报告仅含允许集合。
 源码枚举SceneBounds502/299、总计1153/685；17个公共声明通过、默认heartbeat。
 actual spectral unit ball和region判据闭合，整体Scene1目标仍open。
+
+
+## S1.312：actual discrete spectral radii 与 integral principal hull
+
+`JT-SCENE1-LOCAL-TENSOR-RESIDUE-DISCRETE-RADII`，路径
+`Act1Scene1/LocalCompletionTensorResidueNormDiscrete.lean`，定义actual residue
+finrank的factorial exponent；由minpoly常数项spectral formula和p-adic valuation
+证明非零元素norm^exponent=p^integer。再用Int bounded least existence构造任意
+positive radius以上的least attainable norm，无discreteness/least radius输入。
+
+`JT-SCENE1-LOCAL-TENSOR-PRINCIPAL-RADIUS-MINIMUM`，路径
+`Act1Scene1/LocalCompletionTensorPrincipalRegions.lean`，证明tensor unit iff各
+residue coordinates非零，principalRegion(a)=a*normalization的双向radius判据。
+选择各坐标least norm并用actual residueDecomposition.symm回组unit a，给出
+least principal region whose radii dominate正family M。integral U⊆normalization
+且each-coordinate有非零点时，coordinate supremum有界正、构造包含U的least
+principal hull，并与1候选比较派生a integral。不把sup positivity或least hull作
+自由输入。paper比较来源为Joshi III componentwise shape 3568–3574。
+
+两文件经逐文件许可证复核移植reference ResidueField.lean 202–235/240–313，
+原提交fe96f99cae5c6d48d25113163f1b9b388fc35814，快照
+07cb1da58f6d428a670dbb5dd6093d428bcbcdd8，Git作者Christian Merten，文件作者
+The iut contributors；Apache-2.0来源头及版权通知保留，LICENSES.md登记。
+least integral-U消费者为本地构造，无reference import/dependency。
+
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，
+前置信任不增加。闭合actual discrete radii和上述integral-domain least hull。
+一般bounded U的residue bounds、positive Haar推出coordinate nonzero与compact/
+open hull measure消费者仍需证明；paper theta/untilt/Bloch–Kato/V_p^oss/L'/norm/
+weighted-volume与最终source sign freeze仍open。完整签名和资源见log4 S1-BND-312。
+
+
+2026-10-14 10:06:49 CST最终热构建9322/9322通过，耗时2:17.47，进程组采样
+峰值25803108KiB（约24.608GiB），最大同时Lean workers=3，无Mathlib重编。
+首轮失败与两轮总耗时246.909s见log4；307条公理报告仅含标准允许集合。
+源码枚举SceneBounds510/307、总计1161/693；8个公共声明通过、默认heartbeat。
+actual discrete radii和条件integral least principal hull闭合，整体Scene1目标仍open。

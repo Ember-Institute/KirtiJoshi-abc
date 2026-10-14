@@ -102,3 +102,18 @@ Mathlib4 通过本地 path 依赖使用，不复制其源文件到本工程。�
 - 保留原路径、作者、提交、版权及许可证头，无 Iut 导入或参考工程依赖。
   同单元 `LocalCompletionTensorResidueBallRegions.lean` 消费本工程实际 region
   decomposition；验证见 log4 S1-BND-311。
+
+## S1.312：discrete spectral radii 与 principal regions
+
+- 来源：`refer/iut/Iut/Concrete/LocalConstruct/ResidueField.lean`，原提交
+  `fe96f99cae5c6d48d25113163f1b9b388fc35814`，快照
+  `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`；Git 作者 Christian Merten，
+  文件版权和作者 The iut contributors（2026），Apache-2.0 已在移植前复核。
+- 目标：`Act1Scene1/LocalCompletionTensorResidueNormDiscrete.lean`、
+  `Act1Scene1/LocalCompletionTensorPrincipalRegions.lean`。
+- source-id：`JT-SCENE1-LOCAL-TENSOR-RESIDUE-DISCRETE-RADII`、
+  `JT-SCENE1-LOCAL-TENSOR-PRINCIPAL-RADIUS-MINIMUM`。
+- 移植范围：原文件 240–313 的离散值与 least radius 论证，202–235 的单位和
+  principal-region norm 判据，适配实际 Packet。两目标保留原路径、提交、作者、
+  版权和许可证通知。积分区域 U 的 coordinate-sup least-hull 消费者为本地构造。
+- 无 Iut 导入、参考依赖、junk quotient 或自由体积合同；构建及审计见 log4 S1-BND-312。

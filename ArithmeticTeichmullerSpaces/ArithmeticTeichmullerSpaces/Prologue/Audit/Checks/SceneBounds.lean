@@ -77,6 +77,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarResidueRegion
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBallRegions
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNormDiscrete
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorPrincipalRegions
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -583,3 +585,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBallRe
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueIntegralClosure_eq_closedBall
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_normalization_iff_residueNorm_le_one
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_scalarNormalization_iff_residueNorm_le_multiplier
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueExponent
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_residueNorm_pow_eq_zpow
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_residueNorm_ge
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.isUnit_iff_residue_ne_zero
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.principalRegion
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_principalRegion_iff
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_principalRegion_of_radii
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_integral_principalHull
