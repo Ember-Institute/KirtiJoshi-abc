@@ -2794,3 +2794,31 @@ paper weighted-volume/norm、mixed-moduli grouping、source sign/target freeze�
 22新公共声明全部审计。最终time-v wall=1:38.96、monitor99.046s，组RSS峰值
 17633956KiB（约16.817GiB），time-v单进程最大8268512KiB；资源精确值以log4
 S1.326表为准。三轮monitor总耗时408.756s，无Mathlib重编；整体Scene1仍open。
+
+
+## S1.327：full-support paper-corrected relative weighted Haar blocks
+
+`JT-SCENE1-INITIAL-THETA-FULL-SUPPORT-PAPER-WEIGHTED-VOLUME`，路径
+`Act1Scene1/IutInitialThetaFullSupportPaperWeightedVolume.lean`。来源Joshi III
+ss:weighted-vol/le:volume-lemma2/eq:weights（3520–3557）。以S1.326 actual
+full-support normalization hull的local Haar degree volume为起点，按选定完成处
+的inertDeg取根；完整odd moduli support上作乘积，不加global degree root。
+证明local volume=corrected paper root norm^(n*inverse relative completion degree)，
+并逐名构造实际finrank inverse weights∈(0,1]。完整selected root carrier经实际
+equivalence重索引，推出完整unweighted selected product^n≤volume及
+negative-average≥-selected paperSum。negative log精确=n*weightedPaperSum，
+该和使用corrected paper norms和relative weights，未把它改称fullBaseSum。
+
+volume定义于canonical fixed-moduli block presentation，未构造mixed-moduli
+单一tensor上的presentation-independent weighted measure，未识别不同untilts、
+Bloch-Kato/theta loci、论文L' carrier或最终thetaVolume。S1.293的mixed-moduli
+raw-norm descent负面证据及S1.305的source sign问题继续保持；旧API声明不变。
+原创，无新外部源码复制/import。Prologue-R5→R5，derive，owner Scene1；
+新增Core假设0、退休字段0、迁移0，前置信任不增加。完整公共类型和资源见
+log4 S1-BND-327；整体Scene1仍open。
+
+验证：check家族9331/9331成功（735条输出逐名核对）；显式Axioms/Scene1
+聚合9353/9353通过，532条公理报告仅含propext、Classical.choice、Quot.sound。
+20新公共声明全部覆盖；最终time-v wall=1:39.88、monitor99.989s，
+组RSS峰值17551020KiB（16.738GiB），time-v单进程最大8269424KiB。
+三轮monitor总耗时362.343s，首次失败与修复见log4 S1.327；无Mathlib重编。
