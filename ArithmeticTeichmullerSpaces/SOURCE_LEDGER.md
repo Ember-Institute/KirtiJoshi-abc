@@ -3386,6 +3386,19 @@ generator/normalization 条件和 q-family lower-bound consumer；原创适配�
 Axioms.SceneBounds 870/870，Scene1 聚合通过，公理仅含标准允许集合；资源见
 `docs/Scene1进度总览.md`。数学提交 `e599709` 已推送并与 `origin/main` 一致。
 
+## S1.352：Conditional canonical Corollary 3.12 consumer
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-COR312-BRIDGE`：
+  `Act1Scene1/IutInitialThetaCanonicalCorollary312Bridge.lean`；在显式 actual hull、
+  q-family、q-sum、normalization 和 side conditions 下得到 `Corollary312`。
+
+消费 S1.351 canonical qProduct lower-bound bridge 与既有 normalized q-family consumer；
+原创条件装配，无参考源码复制/import。Prologue-R5→R5，derive，owner Scene1；Core
+假设/退休/迁移增量均 0。真实 paper theta/BK/different-untilt 输入仍未构造。验证：
+Checks.SceneBounds 1074/1074、Axioms.SceneBounds 871/871，Scene1 聚合通过，公理仅含
+标准允许集合；资源见 `docs/Scene1进度总览.md`。数学提交 `e349ee0` 已推送并与
+`origin/main` 一致。
+
 ## S1.346：Canonical actual q-pilot strict subprobability bound
 
 - `JT-SCENE1-INITIAL-THETA-CANONICAL-SUBPROBABILITY-BOUND`：

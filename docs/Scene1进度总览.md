@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.351：canonical q-pilot 指数到 qProduct 下界桥 |
-| 数学证明基线 | `e599709`，S1.351 已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.352：条件性 canonical Corollary 3.12 消费者 |
+| 数学证明基线 | `e349ee0`，S1.352 已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.351 条件性 qProduct 下界桥已验收并推送；Scene1 仍未完成 |
-| 当前推进位置 | 在 actual hull volume、q-family 和 selected q-sum 条件下，`exp (-(n * canonicalAbsLogQ)) ≥ qProduct`；真实模型条件仍未推出 |
+| 数学工作状态 | S1.352 条件性 Corollary 3.12 消费者已验收并推送；Scene1 仍未完成 |
+| 当前推进位置 | 在显式 actual hull、q-family、q-sum、normalization 和 side conditions 下得到 `Corollary312`；真实模型条件仍未推出 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.351 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.352 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -157,6 +157,7 @@ flowchart TD
 | canonical actual VBad generated-hull cost bridge | 🟢 已闭合（ordinary-log hull） | S1.349 证明 canonical q-pilot `absLogQ = cost / n`，其中 cost 是 actual VBad ordinary-log generated hull 的 negative-log volume | 将该 cost 与修订后的 thetaVolume/packet accounting 比较；不能把它直接命名为 Core `thetaVolume` | G4；[log5 S1.349](开发计划.V1Act1log5.md#s1349-canonical-actual-vbad-generated-hull-cost-bridge) |
 | canonical actual thetaVolume exponential bridge | 🔵 条件性完成 | S1.350 在 `thetaVolume = actual hull volume` 与显式 normalization 条件下证明 `thetaVolume = exp (-(n * canonicalAbsLogQ))` | 从真实 theta/different-untilt 模型推出 actual hull volume 条件，并接入最终目标 | G4；[log5 S1.350](开发计划.V1Act1log5.md#s1350-canonical-actual-q-pilot-与-thetavolume-指数桥) |
 | canonical actual qProduct exponential lower bound | 🔵 条件性完成 | S1.351 在 actual hull volume、显式 q-family、`ellStar = n` 和 selected q-sum accounting 条件下证明 `exp (-(n * canonicalAbsLogQ)) ≥ qProduct` | 将 q-family accounting 与真实 paper thetaVolume 身份接通，并满足最终 Corollary 3.12 的真实输入 | G4；[log5 S1.351](开发计划.V1Act1log5.md#s1351-canonical-q-pilot-指数到-qproduct-下界) |
+| 条件性 canonical Corollary 3.12 消费者 | 🔵 条件性完成 | S1.352 在显式 actual hull、q-family、q-sum、normalization 和四个 side conditions 下得到 `Corollary312` | 从真实来源模型推出全部输入条件；完成 G1-G4 的最终身份与审计 | G1、G2、G3、G4；[log5 S1.352](开发计划.V1Act1log5.md#s1352-条件性-canonical-corollary-312-消费者) |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
@@ -173,7 +174,25 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.351
+## 最近单元变化卡：S1.352
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4 的 qProduct exponential lower bound → conditional Corollary 3.12 consumer |
+| 实际闭合 | 在显式 actual hull、q-family、q-sum、normalization 和四个 side conditions 下得到 `Corollary312 p base.target` |
+| 后续获得的前提 | 最终目标已有完整条件性消费者；剩余工作集中在真实来源模型、paper carrier/weight 和 theta/BK/different-untilt 身份 |
+| 尚未接通 | 真实模型满足条件、G1/G2/G3/G4 最终闸门和最终审计仍未闭合 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数保持 **0/4** |
+| 信任负担变化 | Prologue R5→R5；新增 Core 假设 0，新增外部证明证书 0，退休／转入／取出均 0 |
+| 来源与依赖 | 消费 S1.351 qProduct bridge 与 existing normalized q-family consumer；新增叶子为原创条件装配 |
+| 工程验证范围 | Checks.SceneBounds 1074 条 check、Axioms.SceneBounds 871 条公理报告逐名匹配；Scene1 聚合通过；1 个新增公共声明覆盖 |
+| 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
+| 构建资源 | 统一 Lake 构建 184.80 秒（3分04.80秒），峰值 RSS 8,289,632 KiB；窄叶 107.32 秒，峰值 8,255,280 KiB；未重编 Mathlib |
+| 交付状态 | `e349ee0` 已推送；已核对该证明提交与 `origin/main` 一致 |
+| 完整边界 | [log5 S1-BND-352](开发计划.V1Act1log5.md#s1352-条件性-canonical-corollary-312-消费者) |
+| 生产证明 | [conditional Corollary bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalCorollary312Bridge.lean) |
+
+## 历史单元记录：S1.351
 
 | 项目 | 变化 |
 | --- | --- |
