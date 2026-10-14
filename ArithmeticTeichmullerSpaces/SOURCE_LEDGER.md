@@ -2822,3 +2822,41 @@ log4 S1-BND-327；整体Scene1仍open。
 20新公共声明全部覆盖；最终time-v wall=1:39.88、monitor99.989s，
 组RSS峰值17551020KiB（16.738GiB），time-v单进程最大8269424KiB。
 三轮monitor总耗时362.343s，首次失败与修复见log4 S1.327；无Mathlib重编。
+
+
+## S1.328：one standard-point tensor witness suffices for normalization hull volume
+
+`JT-SCENE1-LOCAL-TENSOR-SINGLE-WITNESS-HULL`，路径
+`Act1Scene1/LocalCompletionTensorWitnessHull.lean`。原创证明normalization span
+of singleton {a}=principalRegion a，无unit或Haar输入；因而nonzero pure tensor
+在任意U中即推出scalarNormalization⊆normalizationHull U。若U⊆normalization，
+则hull open/compact且positive finite Haar，并给出scalar lattice degree-volume
+下界。没有要求U包含全部scalarGenerators，也未把结论搬给Z_p integralHull。
+
+`JT-SCENE1-INITIAL-THETA-FULL-SUPPORT-WITNESS-HULL`，路径
+`Act1Scene1/IutInitialThetaFullSupportWitnessHull.lean`。actual D完整odd support上
+canonical ordinary-log tensor的IsUnit由qroot非零派生。每处该单一witness属于
+collation及collation⊆normalization即给出实际紧致positive-Haar hull。按S1.327
+selected inertDeg修正局部Haar degree volume并取完整乘积，证明canonical block
+volume≤collated hull volume≤1、selected paperRootProduct^n≤volume、
+abs log≤n*weightedPaperSum和negative-average≥-完整selected paperSum。
+
+来源Joshi III principal hull（3568–3574）、th:thetam-construction（3296–3346）
+及form2证明（3624–3631）的standard-point tensor witness。原创，无新参考源码
+复制/import。Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、
+迁移0，前置信任不增加。新路径将全族generator coverage减为single witness
+membership，旧API声明保持。真实BK/theta/different-untilt身份及witness成员、
+mixed-moduli grouping、paper L'/thetaVolume/source sign/final target及joint
+真实模型仍open；不以此条件性consumer误勾整体gate。完整类型/资源见log4 S1-BND-328。
+
+联合模型补充：actual singletonCollation每处只包含constructed log tensor；
+witness_mem_base_region及singletonCollation_laws自动给出hw/hunit，
+singleton_region_eq_base和singleton_volume_eq_base精确回到S1.327模型。
+体积计算在generic correctedVolume def中完成，actual caller复用，默认heartbeat。
+
+验证：check家族9333/9333通过（762条输出逐名核对）；显式Axioms/Scene1
+聚合9355/9355通过，559条公理报告仅含propext、Classical.choice、Quot.sound，
+27新公共声明全部覆盖。最终time-v wall=1:41.84、monitor102.027s，
+组RSS峰值17565116KiB（16.751GiB），time-v单进程最大8270444KiB。
+五轮monitor总耗时671.589s，前三轮elaboration错误/修复详见log4 S1.328，
+默认heartbeat，无Mathlib重编；singleton联合模型闭合，整体Scene1仍open。

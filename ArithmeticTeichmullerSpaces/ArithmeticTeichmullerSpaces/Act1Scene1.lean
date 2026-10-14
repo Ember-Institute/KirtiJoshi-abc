@@ -211,5 +211,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRestrictedSupportWi
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportLogHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportHullPaperBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportPaperWeightedVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorWitnessHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessHull
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
