@@ -2894,3 +2894,37 @@ Prologue/参考声明。Prologue-R5→R5，derive，owner Scene1；新增Core假
 组RSS峰值17569024KiB（16.755GiB），time-v单进程最大8272128KiB。
 四轮monitor总耗时485.402s，前两轮scope/rewrite错误及修复详见log4 S1.329；
 默认heartbeat，无Mathlib重编，整体Scene1仍open。
+
+
+## S1.330：compatible local principal-unit roots and algebraic Kummer cocycle
+
+`JT-SCENE1-LOCAL-KUMMER-ROOT-TOWER`，路径
+`Act1Scene1/LocalKummerRootTower.lean`。来源Joshi III 3190–3208的compatible
+p^n roots与standard algebraic Kummer ratio。给定非零a和positive p，在
+algebraically closed extension中递归选择每层p-th root，构造RootTower；证明
+root_n^(p^n)=embedded a及root_n≠0。Galois ratio σ(root_n)/root_n位于
+μ_(p^n)，层间p-power相容。构造cyclotomicTateGroup作为compatible roots-of-unity
+sequences的实际subgroup，派生Galois MulDistribMulAction，并证明ratio map是
+Mathlib groupCohomology.IsMulCocycle₁。该声明是underlying multiplicative group
+上的代数cocycle，不是continuous cohomology或H^1_e class。
+
+`JT-SCENE1-INITIAL-THETA-PRINCIPAL-UNIT-KUMMER`，路径
+`Act1Scene1/IutInitialThetaPrincipalUnitKummer.lean`。每个actual full-support
+source s的localField为torsion completion，closure为其AlgebraicClosure；
+以S1.329 actual p* principal unit作为a，主单位非零由norm(u-1)<1证明，
+p由residueChar_prime自动给出。root tower、power law及inverse-limit group-valued
+Kummer cocycle全由D+s构造，无caller roots/cocycle证书，不用全局Fbar代替
+局部closure。
+
+IUT参考LocalConditions只登记continuous Kummer seam，没有可移植的BK构造；
+本单元原创，无新外部源码复制/import。Prologue-R5→R5，derive，owner Scene1；
+新增Core假设0、退休字段0、迁移0，前置信任不增加。continuity、continuous
+cohomology/H^1_e、crystalline/Frobenius、BK/ordinary-log comparison、different
+untilts及joint真实Scene1模型仍open。精确types及热构建资源见log4 S1-BND-330。
+
+验证：check家族9338/9338成功（819条输出逐名核对）；显式Axioms/Scene1
+聚合9360/9360通过，616条公理报告仅含propext、Classical.choice、Quot.sound，
+27新公共审计名完整覆盖。最终time-v wall=1:47.15、monitor107.648s，
+组RSS峰值17611104KiB（16.795GiB），time-v单进程最大8273316KiB。
+四轮monitor总耗时433.594s；前两轮错误/修复见log4 S1.330。默认heartbeat，
+无Mathlib重编；actual root tower/algebraic cocycle闭合，连续/BK身份仍open。

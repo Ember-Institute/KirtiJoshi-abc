@@ -216,5 +216,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessH
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicPaperLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

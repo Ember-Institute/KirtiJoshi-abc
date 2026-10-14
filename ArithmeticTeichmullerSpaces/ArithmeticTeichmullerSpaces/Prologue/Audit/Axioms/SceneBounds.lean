@@ -109,6 +109,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessH
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicPaperLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -702,3 +704,30 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturatedCollation_laws
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.selectedPaperRootProduct_pow_le_volume
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.negAverageAbsLog_ge_neg_selectedPaperSum
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.roots
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.rootTower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.root_pow_eq
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.root_ne_zero
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio_pow_eq_one
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio_succ_pow
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio_mul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.character
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.cyclotomicTateGroup
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tateAction
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tateMulDistribMulAction
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerCocycle_apply
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.isMulCocycle_kummerCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.root
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.root_zero
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.root_succ
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.localField
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.closure
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_ne_zero
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.rootTower
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.rootTower_pow_eq
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle_apply
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.isMulCocycle

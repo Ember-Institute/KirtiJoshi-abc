@@ -116,6 +116,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportWitnessH
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicPaperLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorEqualNormHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -912,3 +914,30 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogWitnessHull
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.saturatedCollation_laws
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.selectedPaperRootProduct_pow_le_volume
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.negAverageAbsLog_ge_neg_selectedPaperSum
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower
+#check JoshiTeich.Act1Scene1.LocalKummer.roots
+#check JoshiTeich.Act1Scene1.LocalKummer.rootTower
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.root_pow_eq
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.root_ne_zero
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio_pow_eq_one
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio_succ_pow
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.ratio_mul
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.character
+#check JoshiTeich.Act1Scene1.LocalKummer.cyclotomicTateGroup
+#check JoshiTeich.Act1Scene1.LocalKummer.tateAction
+#check JoshiTeich.Act1Scene1.LocalKummer.tateMulDistribMulAction
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerCocycle_apply
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.isMulCocycle_kummerCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.root
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.root_zero
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.root_succ
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.localField
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.closure
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_ne_zero
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rootTower
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rootTower_pow_eq
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycle_apply
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.isMulCocycle
