@@ -157,6 +157,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummerNonze
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonTorsion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRepresentativeNonexistence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalSubprobabilityBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadSubprobabilityBound
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1230,3 +1231,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalSubprobabi
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_smul_ne_zero
 #check JoshiTeich.Act1Scene1.canonicalPaperRepresentativeAccounting_impossible
 #check JoshiTeich.Act1Scene1.canonicalScene1AbsLogQ_lt_selectedPaperSum
+#check JoshiTeich.Act1Scene1.canonicalScene1AbsLogQ_lt_vbadPaperSum
