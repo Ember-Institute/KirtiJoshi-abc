@@ -68,6 +68,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarNormali
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliNormalizationVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationDecomposition
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarResidueRegion
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNorm
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBallRegions
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -354,3 +356,20 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarResidue
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarResidueMultiplier_ne_zero
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarResidueMultiplier_isIntegral
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_scalarNormalization_iff_residue_principal
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueField
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueFieldFinite
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_nonneg
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_zero
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_one
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_mul
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_pos
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_algebraMap
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_inv
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.isIntegral_iff_residueNorm_le_one
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNormedField
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNormedField_norm
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueIntegralClosure_eq_closedBall
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_normalization_iff_residueNorm_le_one
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_scalarNormalization_iff_residueNorm_le_multiplier

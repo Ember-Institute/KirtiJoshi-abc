@@ -175,5 +175,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarNormali
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliNormalizationVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationDecomposition
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarResidueRegion
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNorm
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBallRegions
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

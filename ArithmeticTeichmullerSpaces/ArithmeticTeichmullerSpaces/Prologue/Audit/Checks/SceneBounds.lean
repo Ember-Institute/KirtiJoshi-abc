@@ -75,6 +75,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarNormali
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliNormalizationVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationDecomposition
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarResidueRegion
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNorm
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBallRegions
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -564,3 +566,20 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarResidue
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarResidueMultiplier_ne_zero
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarResidueMultiplier_isIntegral
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_scalarNormalization_iff_residue_principal
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueField
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueFieldFinite
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_nonneg
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_zero
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_one
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_mul
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_eq_zero_iff
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_pos
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_algebraMap
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNorm_inv
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.isIntegral_iff_residueNorm_le_one
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNormedField
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNormedField_norm
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueIntegralClosure_eq_closedBall
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_normalization_iff_residueNorm_le_one
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_scalarNormalization_iff_residueNorm_le_multiplier

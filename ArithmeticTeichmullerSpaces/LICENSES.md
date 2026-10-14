@@ -86,3 +86,19 @@ Mathlib4 通过本地 path 依赖使用，不复制其源文件到本工程。�
 - 保留原路径、提交、作者、版权和 Apache-2.0 通知，无 Iut 导入或参考依赖。
   同单元的 `LocalCompletionTensorNormalizationHaar.lean` 为原创 Haar 构造和比较，
   未复制参考代码。验证见 log4 S1-BND-308；第三方许可证不决定原创文件许可证。
+
+## S1.311：residue spectral norm 与 unit-ball criterion
+
+- 来源：`refer/iut/Iut/Concrete/LocalConstruct/ResidueField.lean`，快照
+  `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，原提交
+  `fe96f99cae5c6d48d25113163f1b9b388fc35814`。
+- Git 作者 Christian Merten；文件作者、版权 The iut contributors（2026）；
+  原文件头和 LICENSE 的 Apache-2.0 已在复制前审查。
+- 目标：`Act1Scene1/LocalCompletionTensorResidueNorm.lean`，source-id
+  `JT-SCENE1-LOCAL-TENSOR-RESIDUE-SPECTRAL-NORM`。
+- 改写范围：spectral norm laws 和 minpoly/lifts 积分性单位球判据，改为实际
+  tensor residue fields；显式提供 NormedField，不预置 topology/paper norm 身份。
+  不复制参考 least hull、free volume 或 junk quotient。
+- 保留原路径、作者、提交、版权及许可证头，无 Iut 导入或参考工程依赖。
+  同单元 `LocalCompletionTensorResidueBallRegions.lean` 消费本工程实际 region
+  decomposition；验证见 log4 S1-BND-311。

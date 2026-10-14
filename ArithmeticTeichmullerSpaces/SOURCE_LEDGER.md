@@ -2230,3 +2230,41 @@ V_p^oss/L'/weighted-volume或最终source sign freeze。整体Scene1目标仍ope
 两次失败与三轮总耗时314.494s见log4；282条公理报告仅含标准允许集合。
 源码枚举SceneBounds485/282、总计1136/668；11个公共声明通过、默认heartbeat。
 normalization产品身份和scalar componentwise形状闭合，整体Scene1目标仍open。
+
+
+## S1.311：actual residue spectral norm 与 unit/radius ball 区域
+
+`JT-SCENE1-LOCAL-TENSOR-RESIDUE-SPECTRAL-NORM`，路径
+`Act1Scene1/LocalCompletionTensorResidueNorm.lean`，提供actual residue field与
+finite Q_p module instances，定义spectralNorm，证明nonnegative/zero/one/
+multiplicative/nonzero/positive/base-norm extension/inverse laws。minpoly与
+Z_p coeff lifts证明IsIntegral Z_p iff norm≤1，显式构造spectral NormedField，
+并证明其closed unit ball=actual integral closure。不无证明等同tensor coordinate
+或quotient topology，也不识别paper C_p绝对值归一化。
+
+经复制前许可证审查移植reference ResidueField.lean 89–146；原提交
+fe96f99cae5c6d48d25113163f1b9b388fc35814，快照
+07cb1da58f6d428a670dbb5dd6093d428bcbcdd8，Git作者Christian Merten，文件作者
+The iut contributors，Apache-2.0来源与版权通知保留、LICENSES.md登记。
+改为actual completion tensor residue fields，无reference import/dependency；
+不复制junk quotient、free volume字段或arbitrary least-hull代码。
+
+`JT-SCENE1-LOCAL-TENSOR-RESIDUE-BALL-REGIONS`，路径
+`Act1Scene1/LocalCompletionTensorResidueBallRegions.lean`，消费S1.310的component
+integrality/scalar principal iff，证明normalization membership iff全部residue
+norm≤1；scalarNormalization membership iff各residue norm≤对应multiplier norm。
+反向principal-region证书由nonzero multiplier的inverse实际构造，两边均证明。
+来源比较为Joshi III 3568–3574，尚未构造arbitrary U的least hull。
+
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，
+前置信任不增加。闭合actual residue spectral norm与O_I unit-ball身份和实际
+region双向radius判据；discrete value group、topology transfer、least hull、
+paper normalization/theta loci/untilt/Bloch–Kato/V_p^oss/L'与最终source sign
+freeze仍open。完整公共类型、动态边界与资源见log4 S1-BND-311。
+
+
+2026-10-14 09:49:08 CST最终热构建9320/9320通过，耗时2:40.77，进程组采样
+峰值25890852KiB（约24.691GiB），最大同时Lean workers=3，无Mathlib重编。
+首轮metric选择失败与两轮总耗时234.175s见log4；299条公理报告仅含允许集合。
+源码枚举SceneBounds502/299、总计1153/685；17个公共声明通过、默认heartbeat。
+actual spectral unit ball和region判据闭合，整体Scene1目标仍open。
