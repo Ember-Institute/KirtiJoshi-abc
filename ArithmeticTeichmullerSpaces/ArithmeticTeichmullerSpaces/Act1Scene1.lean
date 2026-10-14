@@ -258,5 +258,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonTo
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRepresentativeNonexistence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalSubprobabilityBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadSubprobabilityBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadCoefficientAccounting
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
