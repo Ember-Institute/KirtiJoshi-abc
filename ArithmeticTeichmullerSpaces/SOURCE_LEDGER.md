@@ -2961,3 +2961,33 @@ grouping、paper thetaVolume/source sign/final target及joint真实模型仍open
 三轮monitor总耗时365.802s，首次elaboration错误及修复见log4 S1.331。
 默认heartbeat，无Mathlib重编；actual continuity闭合，continuous H^1_e/BK
 身份仍open。本单元推送后按用户要求暂停。
+
+
+## S1.332：Continuous Kummer classes independent of root choice
+
+- `JT-SCENE1-LOCAL-KUMMER-COHOMOLOGY`：`Act1Scene1/LocalKummerCohomology.lean`。
+  Joshi III 3190–3208；对Krull Galois群到inverse-limit Tate group的continuous
+  cocycles按multiplicative coboundary取商，构造continuousH1及其class。
+  两根塔S/R的逐层比值是兼容单位根系，给c_S/c_R的显式coboundary witness，
+  从而同一nonzero a的根塔选择不影响类。
+- `JT-SCENE1-INITIAL-THETA-KUMMER-CLASS`：`Act1Scene1/IutInitialThetaKummerClass.lean`。
+  同一actual D/full-support s的p*-principal unit，消费前轮continuous cocycle，
+  构造其continuousH1 class并证明对任意compatible root tower相等。
+
+原创，无参考源码复制/import；derived，owner Scene1。Prologue-R5→R5；
+新增Core假设0、退休/迁移0，前置信任不增加。商仅为continuous H1的集合载体，
+未赋商拓扑或Z_p module；H^1_e/crystalline/Frobenius、BK/log comparison、
+different untilts/j²及joint真实模型仍open。完整types及构建资源见log4 S1-BND-332。
+
+用户2026-10-14解释决定：S1.305/qLogTerm显示式符号差异在收到作者邮件回复
+前暂按笔误处理，不作为等待期间的工作阻塞项。保留原负面证据，保持既有
+volume-derived目标符号；其他来源身份/目标冻结义务不据此关闭。
+
+
+验证：Check.SceneBounds9342/9342通过，850条check逐名核对；显式Axioms/
+Scene1聚合9364/9364成功，647条公理报告逐名核对，仅含propext、
+Classical.choice、Quot.sound，15新公共声明check/axiom覆盖完整。
+最终time-v wall=1:55.22、monitor115.690s，组RSS峰值17643620KiB
+（16.826GiB），time-v单进程最大8274644KiB。三轮monitor合计388.509s，
+首轮elaboration错误与修复见log4 S1.332；Mathlib未重编、默认heartbeat。
+continuous H1类与根塔选择独立性已闭合，H^1_e/BK身份及完整Scene1仍open。

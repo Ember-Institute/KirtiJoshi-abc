@@ -220,5 +220,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerContinuity
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaContinuousKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCohomology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerClass
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

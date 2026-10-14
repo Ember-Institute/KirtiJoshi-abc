@@ -120,6 +120,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerContinuity
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaContinuousKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCohomology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerClass
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -959,3 +961,18 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaContinuousKummer
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuous_cocycle
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycle
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycle_isMulCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.continuousCocycles
+#check JoshiTeich.Act1Scene1.LocalKummer.continuousCocycleSetoid
+#check JoshiTeich.Act1Scene1.LocalKummer.continuousH1
+#check JoshiTeich.Act1Scene1.LocalKummer.continuousH1Class
+#check JoshiTeich.Act1Scene1.LocalKummer.continuousH1Class_eq_iff
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.rootChange
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.rootChange_apply
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerCocycle_div_eq
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.isMulCoboundary_kummerCocycle_div
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.continuousCocycleValue
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerClass
+#check JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerClass_eq
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycleValue
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.kummerClass
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.kummerClass_eq_of_rootTower
