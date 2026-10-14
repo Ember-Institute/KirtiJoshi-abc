@@ -130,6 +130,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateCoordinates
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCyclotomicCharacter
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Semilinear
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientChange
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -901,3 +904,28 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.liftedRepresentation
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.liftedRepresentation_down
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.continuous_liftedAction
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.post
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cochainZero
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cochainOne
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map_boundary_cochain
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map_closed
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesMap
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesMap_i
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesMap_boundary
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesClass
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesClass_boundary
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.boundaryRange
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.homologyCokerIso
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.homologyCokerIso_π
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.quotientMap
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map_π
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map_classOf
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.integralCoefficient
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.integralCoefficient_equivariant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_classOfCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_toPadicH1
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_eq_zero_of_torsion
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_not_injective_of_torsion
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_changeCoefficients

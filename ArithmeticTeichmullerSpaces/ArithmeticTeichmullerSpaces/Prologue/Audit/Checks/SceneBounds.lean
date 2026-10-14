@@ -137,6 +137,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateCoordinates
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCyclotomicCharacter
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Semilinear
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientChange
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1111,3 +1114,28 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
 #check JoshiTeich.Act1Scene1.LocalKummer.Rational.liftedRepresentation
 #check JoshiTeich.Act1Scene1.LocalKummer.Rational.liftedRepresentation_down
 #check JoshiTeich.Act1Scene1.LocalKummer.Rational.continuous_liftedAction
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.post
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cochainZero
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cochainOne
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map_boundary_cochain
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map_closed
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesMap
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesMap_i
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesMap_boundary
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesClass
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.cyclesClass_boundary
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.boundaryRange
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.homologyCokerIso
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.homologyCokerIso_π
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.quotientMap
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map_π
+#check JoshiTeich.Act1Scene1.ContinuousH1Semilinear.map_classOf
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.integralCoefficient
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.integralCoefficient_equivariant
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_classOfCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_toPadicH1
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_eq_zero_of_torsion
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_not_injective_of_torsion
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_changeCoefficients

@@ -237,5 +237,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateCoordinates
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCyclotomicCharacter
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Semilinear
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientChange
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

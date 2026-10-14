@@ -3139,3 +3139,29 @@ standard cochain universe 由 ContinuousLinearEquiv.ulift 搬运同一 p-adic �
 不改变底层 ℚₚ 拓扑或新增数学假设。六次构建（四次失败）累计772.747秒，
 组RSS峰值16.837GiB；明细见 Scene1进度总览 的 S1.337 变化卡。默认heartbeat
 未改、Mathlib未重编；H¹ₑ/BK及完整Scene1仍open。
+
+
+## S1.338：Standard semilinear H1 coefficient change
+
+- `JT-SCENE1-CONTINUOUS-H1-SEMILINEAR`：`Act1Scene1/ContinuousH1Semilinear.lean`。
+  不同标量环间的连续半线性等变映射逐点作用于标准齐次 cochains，证明保持
+  closed cochains 与 boundaries，经实际 homology cokernel 下降为标准 H¹ 映射。
+- `JT-SCENE1-LOCAL-KUMMER-COEFFICIENT-CHANGE`：`Act1Scene1/LocalKummerCoefficientChange.lean`。
+  将已有 integral coefficient map 代入通用构造；证明与旧 explicit cocycle 商
+  的有理类构造相容，并证明非零 ℤₚ scalar 消去的类有零 rational 像。
+- `JT-SCENE1-INITIAL-THETA-COEFFICIENT-CHANGE`：`Act1Scene1/IutInitialThetaCoefficientChange.lean`。
+  actual rationalClass 等于 actual standard padicClass 的系数变换。
+
+Joshi III 3214–3236 的 integral/rational H¹ 比较所需连接；原创，不复制或导入
+参考源码。仅精确导入已缓存 ContinuousLinearMap.Restrict；Mathlib 不改。
+Prologue-R5→R5，derive，owner Scene1；Core 假设/退休/迁移增量均 0。
+未声明 H¹ 系数映射单射、H¹ₑ/BK 身份或完整真实模型；边界见 log5 S1-BND-338。
+验证状态待构建；进度和构建资源见 Scene1进度总览。
+
+验证：Check.SceneBounds9360/9360成功，995条check逐名匹配；显式
+Axioms.SceneBounds/Scene1聚合9382/9382成功，792条公理报告逐名匹配，
+仅含propext、Classical.choice、Quot.sound。25新增公开声明check/axiom完整覆盖。
+四次构建（两次失败）累计558.348秒，组RSS峰值16.828GiB；资源和修复明细
+见 Scene1进度总览 的 S1.338 变化卡。默认heartbeat、Mathlib、依赖和工具链
+未改。标准 H¹ 系数映射及 actual 类相容闭合；非零 torsion 的排除为条件性，
+未构造 actual 无条件反例；H¹ₑ/BK与完整Scene1仍open。
