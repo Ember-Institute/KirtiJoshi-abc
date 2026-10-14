@@ -3316,4 +3316,18 @@ owner Scene1；Core 假设/退休/迁移增量均 0。该结果要求修订 carr
 term 语义后再继续 G3，不构造 paper `L'` representatives，也不涉及 H¹ₑ/BK。
 验证：Checks.SceneBounds 1067/1067、Axioms.SceneBounds 864/864 逐名匹配，
 Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
+数学提交 `9a791ea33819691bf56dcf6f4569346c026c963f` 已推送并与 `origin/main` 一致。
 数学提交 `c47e7e0669f04ce11622384b6451277054315954` 已推送并与 `origin/main` 一致。
+
+## S1.346：Canonical actual q-pilot strict subprobability bound
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-SUBPROBABILITY-BOUND`：
+  `Act1Scene1/IutInitialThetaCanonicalSubprobabilityBound.lean`；把 canonical
+  degree-one Scene1 q-pilot `absLogQ` 严格界于 actual selected paper sum 以下。
+
+消费 q-pilot/reference actual equality 与 S1.283 strict representative gap；
+原创 canonical bundle 适配，无参考源码复制/import。Prologue-R5→R5，derive，
+owner Scene1；Core 假设/退休/迁移增量均 0。S1.345 mass-one certificate 已排除；
+G3 的 revised paper representative semantics、thetaVolume 和联合真实模型仍 open。
+验证：Checks.SceneBounds 1068/1068、Axioms.SceneBounds 865/865 逐名匹配，
+Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。

@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.345：canonical actual source 与 mass-one paper representative certificate 不相容 |
-| 数学证明基线 | `c47e7e0669f04ce11622384b6451277054315954`，S1.345 已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.346：canonical actual q-pilot 满足 strict subprobability 上界 |
+| 数学证明基线 | `9a791ea33819691bf56dcf6f4569346c026c963f`，S1.346 已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.345 负面证据已验收并推送；Scene1 仍未完成 |
-| 当前推进位置 | actual Kummer 类的 integral/rational 非零与 integral 无 torsion 已闭合；canonical q-pilot 与当前 mass-one paper representative certificate 的冲突已形式化 |
-| 尚未接通的主要连接 | 修订 paper representative carrier/weight certificate、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.345 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| 数学工作状态 | S1.346 canonical strict upper bound 已验收并推送；Scene1 仍未完成 |
+| 当前推进位置 | canonical actual q-pilot 的 strict `absLogQ < selectedPaperSum` 已接入 degree-one canonical Scene1 bundle；mass-one certificate 已于 S1.345 排除 |
+| 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
+| Prologue 边界 | R5；S1.346 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -151,6 +151,7 @@ flowchart TD
 | 实际无限可除性排除与 integral 类非零 | 🟢 已闭合 | S1.342 从实际非零 log 与 principal-unit log 一致有界，证明某层无 p-power 根、无 compatible base tower，actual standard padicClass 非零 | G4；[log5 S1.342](开发计划.V1Act1log5.md#s1342-动态边界离散局部域根排除与实际-integral-类非零) |
 | rational 类非零及系数映射核 | 🟢 已闭合（actual 范围） | S1.343 通过清除 rational coboundary 的 p-adic 分母，将 rational 类为零降到某个 integral p-power 类为零，再与 S1.342 的非零 log 矛盾；actual `rationalClass` 与 `normalizedRationalClass` 均非零。全局 integral→rational H¹ 映射单射仍未证明 | G4；[log5 S1.343](开发计划.V1Act1log5.md#s1343-动态边界actual-rational-kummer-类非零) |
 | mass-one paper representative certificate | 🔴 当前形式已排除 | S1.345：canonical actual source 下，若同时给出 degree-one canonical Scene1 bundle、mass-one source-to-representative certificate 和 section-link certificate，则得到 `False`；原因是 S1.344 前的 actual strict ramification gap `reference absLogQ < selected paper sum` 与 certificate equality 冲突 | 修订 certificate 的质量条件或 paper carrier/term 语义；不能在未修订前继续把该 certificate 接入最终 Corollary 3.12 | G3；[log5 S1.345](开发计划.V1Act1log5.md#s1345-canonical-actual-source-与-mass-one-paper-representative-certificate-不相容) |
+| canonical actual subprobability bound | 🟢 已闭合 | S1.346 在 degree-one canonical Scene1 bundle 中证明 q-pilot `absLogQ < selectedPaperSum`；依赖的实际 fiber-mass `≤ 1` 上界已在早先单元建立 | 将 revised representative accounting 和 theta-volume 消费者接入最终目标 | G3、G4；[log5 S1.346](开发计划.V1Act1log5.md#s1346-canonical-actual-q-pilot-strict-subprobability-bound) |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
@@ -167,7 +168,40 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.345
+## 最近单元变化卡：S1.346
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G3 的 S1.345 mass-one certificate 排除 → 可消费的 canonical strict subprobability bound |
+| 实际闭合 | 在 degree-one canonical Scene1 bundle 中，从其 `absLogQ` 等于参考 actual q-pilot 的等式和已有 strict ramification gap，推出 `absLogQ < selectedPaperSum` |
+| 后续获得的前提 | 下游可直接使用 canonical Scene1 bundle 上的严格和式上界，不需要外部给出等式型 mass-one paper certificate |
+| 尚未接通 | 该严格 q-sum 上界仍未识别为论文完整 `V_p^oss/L'` 目标，也未接 packet/hull/thetaVolume；H¹ₑ/BK 与 untilt 连接仍 open |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数保持 **0/4** |
+| 信任负担变化 | Prologue R5→R5；新增 Core 假设 0，新增外部证明证书 0，退休／转入／取出均 0 |
+| 来源与依赖 | 消费 S1.345 后保留的 actual strict gap、canonical q-pilot/reference equality；新增叶子为原创适配，无参考源码复制/import |
+| 工程验证范围 | Checks.SceneBounds 1068 条 check、Axioms.SceneBounds 865 条公理报告逐名匹配；Scene1 聚合通过；1 个新增公共声明覆盖 |
+| 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
+| 构建资源 | 3 次尝试累计 393.193 秒（6分33.193秒），含 1 次窄检查失败；收尾进程组峰值 RSS 16.794 GiB，单进程最大 7.898 GiB；未重编 Mathlib |
+| 交付状态 | `9a791ea` 已推送；已核对该证明提交与 `origin/main` 一致 |
+| 完整边界 | [log5 S1-BND-346](开发计划.V1Act1log5.md#s1346-canonical-actual-q-pilot-strict-subprobability-bound) |
+| 生产证明 | [canonical strict bound](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalSubprobabilityBound.lean) |
+
+### S1.346 构建资源
+
+结束时间使用完整 CST 日期，RSS 单位为 KiB；失败尝试也计入累计耗时。
+
+| label | 结束时间（CST） | exit | jobs | time-v wall | monitor秒 | 组RSS峰值 | time-v单进程最大 | worker峰值 | affinity修正 |
+| --- | --- | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1346-1 | 2026-10-15 03:12:09 | 1 | 9383/9383 | 1:46.31 | 106.725 | 9314372 | 8203176 | 1 | 44 |
+| s1346-2 | 2026-10-15 03:15:20 | 0 | 9383/9383 | 2:46.70 | 166.969 | 9401628 | 8287928 | 1 | 41 |
+| s1346-3 | 2026-10-15 03:17:46 | 0 | 9399/9399 | 1:59.28 | 119.499 | 17609544 | 8280468 | 2 | 37 |
+
+`s1346-1` 首次失败于严格 gap 叶子未直接导入；修正后 `s1346-2` 的 1068
+个 `#check` 通过，`s1346-3` 完成公理和聚合收尾。CPU 0–13，LEAN_NUM_THREADS=10，
+每个 Lean 编译进程 -j1；未冷建、未清缓存、未并发 Lake，未修改 Mathlib、
+工具链、依赖或默认 heartbeat。
+
+## 历史单元记录：S1.345
 
 | 项目 | 变化 |
 | --- | --- |
