@@ -201,5 +201,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullPaperBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRootProductContracting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogTransfer
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullTransferAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogCost
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostBridge
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

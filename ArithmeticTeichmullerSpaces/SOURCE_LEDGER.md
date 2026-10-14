@@ -2629,3 +2629,37 @@ check家族9321/9321通过，耗时3:26.78、峰值9386384KiB（约
 八次失败及profiler定位见log4 S1.321；无Mathlib重编。generic计算def边界解决
 actual Haar深展开；数学定义不变。actual weighted log-transfer和旧Core身份排除
 闭合，source驱动transfer修订/整体Scene1仍open。
+
+
+## S1.322：actual negative-log cost and legacy normalization consumer
+
+`JT-SCENE1-INITIAL-THETA-VBAD-HULL-NEGATIVE-LOG-COST`，路径
+`Act1Scene1/IutInitialThetaVBadHullLogCost.lean`，定义cost=-log(actual global hull
+Haar volume)，localCost=packetLogWeight*(-packetLogVolume)，证明finite transfer、
+local/global非负、volume=exp(-cost)及cost≤n*selectedPaperSum。ordinary-log模型
+cost=n*reference absLogQ，n>0严格正。定义直接来自actual Haar，无自由cost字段。
+
+`JT-SCENE1-INITIAL-THETA-ACTUAL-HULL-COST-BRIDGE`，路径
+`Act1Scene1/IutInitialThetaActualHullCostBridge.lean`，旧exp(-link.logVolume)
+normalization及thetaVolume=actual hull volume推出link.logVolume=actual cost，
+反向由cost/volume身份构造normalization。显式length、cost及qLogSum=actual selected
+paperSum身份下，actual cost上界构造Corollary312TransferLogBound，再由旧消费者
+推导multiplicative lower bound；不再输入target-equivalent transfer inequality。
+
+来源比较Joshi III3495–3557、3634–3645及本工程已证Haar log transfer/旧normalization。
+原创无新参考代码复制/import。Prologue-R5→R5，derive，owner Scene1；新增Core假设0、
+退休Core字段0、迁移0，前置信任不增加。本桥外给TransferLogBound字段1改由proof
+派生；原旧API保留。S1.321 signed-logVolume身份排除仍有效，不排除经来源审查的
+negative-log cost身份路径。旧Scene1及cost/length/qSum共同满足模型仍open；本结果
+不自动将Core packetWeight等同actual degree weights。真实theta/BK/untilt、paper
+norm/carrier/weighted-volume、mixed-moduli grouping及source sign/target freeze仍open。
+完整类型与资源见log4 S1-BND-322。
+
+
+2026-10-14 14:18:14 CST最终里程碑9345/9345通过，耗时1:40.86，组RSS采样峰值
+17606568KiB（约16.791GiB），同时Lean workers峰值2。
+check家族9323/9323首轮通过，耗时3:25.24、峰值9368424KiB（约
+8.934GiB）。十三公共声明覆盖，444条公理报告仅标准允许集合；
+源码枚举SceneBounds647/444、全家族1298/830，两轮monitor总耗时306.605s见
+log4 S1.322，无失败或Mathlib重编。实际cost与legacy normalization/transfer的
+条件桥闭合，真实联合模型及整体Scene1仍open。

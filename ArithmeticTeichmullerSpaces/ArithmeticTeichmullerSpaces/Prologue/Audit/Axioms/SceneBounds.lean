@@ -94,6 +94,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullPaperBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRootProductContracting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogTransfer
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullTransferAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogCost
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostBridge
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -529,3 +531,16 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullTransferA
 #print axioms JoshiTeich.Act1Scene1.VBadThetaLogCollation.log_volume_neg
 #print axioms JoshiTeich.Act1Scene1.Scene1Input.logVolume_ne_log_actualHull
 #print axioms JoshiTeich.Act1Scene1.not_VolumeTransfer_of_actualHull_logVolume
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.localCost
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.cost
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.localCost_nonneg
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.cost_eq_sum_localCosts
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.cost_nonneg
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.volume_eq_exp_neg_cost
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.cost_le_mul_selectedPaperSum
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.ordinary_cost_eq_mul_referenceAbsLogQ
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHullLogCost.ordinary_cost_pos
+#print axioms JoshiTeich.Act1Scene1.Corollary312VolumeNormalization.cost_eq_actualHull_cost
+#print axioms JoshiTeich.Act1Scene1.volumeNormalization_of_actualHull_cost
+#print axioms JoshiTeich.Act1Scene1.transferLogBound_of_actualHull_cost
+#print axioms JoshiTeich.Act1Scene1.thetaVolume_lower_bound_of_actualHull_cost
