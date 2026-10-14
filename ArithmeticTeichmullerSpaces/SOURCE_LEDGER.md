@@ -3413,6 +3413,19 @@ Checks.SceneBounds 1074/1074、Axioms.SceneBounds 871/871，Scene1 聚合通过�
 公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。数学提交 `abb5cd5` 已推送
 并与 `origin/main` 一致。
 
+## S1.354：Canonical Tate-only q-order alignment
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-TATE-QORDER`：
+  `Act1Scene1/IutInitialThetaCanonicalTateQPilotData.lean`；证明 Tate-only q-pilot
+  source 的每个 q-order 等于 actual `InitialThetaData.prime.qOrder`。
+
+消费 Tate-only source adapter、actual place carrier、canonical parameter theorem 和
+completion q-order theorem；原创适配，无参考源码复制/import。Prologue-R5→R5，derive，
+owner Scene1；Core 假设/退休/迁移增量均 0。未构造 reference absLogQ 总和桥或 paper
+theta/BK/different-untilt 身份。验证：Checks.SceneBounds 1076/1076、Axioms.SceneBounds
+873/873，Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
+数学提交 `d88a1fe` 已推送并与 `origin/main` 一致。
+
 ## S1.346：Canonical actual q-pilot strict subprobability bound
 
 - `JT-SCENE1-INITIAL-THETA-CANONICAL-SUBPROBABILITY-BOUND`：
