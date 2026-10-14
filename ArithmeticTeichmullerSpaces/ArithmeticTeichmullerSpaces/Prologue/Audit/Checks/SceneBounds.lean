@@ -69,6 +69,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumePower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueDecomposition
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationCompact
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationHaar
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -515,3 +517,19 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueDecomp
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueDecomposition_apply
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.eq_of_forall_residue_eq
 #check JoshiTeich.Act1Scene1.LocalCompletion.formallyUnramified_piTensor
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationQuotientTower
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNormalization_module_finite
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_module_finite
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.finite_span_subset_closedBall
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_subset_closedBall
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_isBounded
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_isCompact
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationCompact
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar_isAddHaarMeasure
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar_regular
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar_normalization
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationMass
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.one_le_normalizationMass
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationMass_lt_top
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizedHaar_eq_normalizationMass_mul

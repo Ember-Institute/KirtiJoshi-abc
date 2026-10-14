@@ -2126,3 +2126,38 @@ Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休0字段、�
 239条公理报告仅含标准允许集合；源码枚举SceneBounds442/239、总计1093/625。
 二十个公共声明通过、默认heartbeat；normalization compact/paper hull身份及
 整体Scene1目标仍open。
+
+
+## S1.308：actual normalization finite/compact 与 Haar 比较
+
+`JT-SCENE1-LOCAL-TENSOR-NORMALIZATION-COMPACT`，路径
+`Act1Scene1/LocalCompletionTensorNormalizationCompact.lean`，给quotient补齐
+实际Z_p/Q_p scalar tower；使用finite separable residue fields的integral closure
+Noetherian性和actual residue分解构造injective normalization map，证明
+normalization为有限Z_p模。有限span有界、finite generators的image span给
+normalization有界；已有closed与actual finite-dimensional proper topology给compact。
+经复制前逐文件审查移植reference MaximalOrder.lean 240–335论证，原提交
+b76207ab8955e68a7408d5d2a770b75a30c3bebf，快照
+07cb1da58f6d428a670dbb5dd6093d428bcbcdd8；Git作者Christian Merten，文件
+作者The iut contributors，Apache-2.0版权通知和来源头保留，LICENSES.md登记。
+无reference import/dependency、无junk quotient或自由volume合同移植。
+
+`JT-SCENE1-LOCAL-TENSOR-NORMALIZATION-HAAR`，路径
+`Act1Scene1/LocalCompletionTensorNormalizationHaar.lean`，原创定义实际compact
+open normalization的PositiveCompacts和normalized Haar。证明该measure在
+normalization处为1、旧unit-lattice Haar在normalization处的mass属于[1,∞)，
+并由Haar唯一性证明每个Set上old Haar=normalizationMass*new Haar。该倍率
+保留两integral structures的区别，不假定unit lattice=normalization。
+
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，
+前置信任不增加。闭合actual integral closure finite/bounded/compact和Haar倍率。
+尚未证明paper norm、scaled maximal-order volume、residue norms/least hull、
+thetaVolume身份或different untilt/Bloch–Kato来源；整体Scene1目标仍open。
+完整类型、动态边界与资源见log4 S1-BND-308。
+
+
+2026-10-14 09:00:25 CST最终热构建9314/9314通过，耗时2:17.10，进程组采样
+峰值25648552KiB（约24.460GiB），最大同时Lean workers=3，无Mathlib重编。
+两次失败与三轮总耗时357.787s见log4；255条公理报告仅含标准允许集合。
+源码枚举SceneBounds458/255、总计1109/641；16个公共声明通过、默认heartbeat。
+actual normalization finite/compact及Haar倍率闭合，整体Scene1目标仍open。

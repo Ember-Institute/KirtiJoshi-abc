@@ -70,3 +70,19 @@ Mathlib4 通过本地 path 依赖使用，不复制其源文件到本工程。�
   reduced Artinian 分解；未复制 junk quotient、参考 hull 或自由 volume laws。
 - 目标文件均保留原路径、原提交、作者、版权及 Apache-2.0 通知；无 `Iut` import，
   无参考工程依赖。构建和公理验证记录于 log4 的 S1-BND-307。
+
+## S1.308：normalization finite/compact
+
+- 来源：`refer/iut/Iut/Concrete/LocalConstruct/MaximalOrder.lean`，快照
+  `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`，原提交
+  `b76207ab8955e68a7408d5d2a770b75a30c3bebf`。
+- Git 作者 Christian Merten；原文件作者和版权 The iut contributors（2026）；
+  文件头声明 Apache-2.0，参考 `LICENSE` 已复核。
+- 目标：`Act1Scene1/LocalCompletionTensorNormalizationCompact.lean`，
+  source-id `JT-SCENE1-LOCAL-TENSOR-NORMALIZATION-COMPACT`。
+- 改写：residue-field integral closure 有限性、injective normalization map、
+  有限 integral span 有界与 normalization 紧致性，全部使用 actual Packet、
+  S1.307 的 integral closure 和 residue decomposition。
+- 保留原路径、提交、作者、版权和 Apache-2.0 通知，无 Iut 导入或参考依赖。
+  同单元的 `LocalCompletionTensorNormalizationHaar.lean` 为原创 Haar 构造和比较，
+  未复制参考代码。验证见 log4 S1-BND-308；第三方许可证不决定原创文件许可证。

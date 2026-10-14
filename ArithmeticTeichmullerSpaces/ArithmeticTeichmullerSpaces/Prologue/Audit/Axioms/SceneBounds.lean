@@ -62,6 +62,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumePower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliTensorVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueDecomposition
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationCompact
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationHaar
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -305,3 +307,19 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueDecomp
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueDecomposition_apply
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.eq_of_forall_residue_eq
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.formallyUnramified_piTensor
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationQuotientTower
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.residueNormalization_module_finite
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_module_finite
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.finite_span_subset_closedBall
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_subset_closedBall
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_isBounded
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalization_isCompact
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationCompact
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar_isAddHaarMeasure
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar_regular
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar_normalization
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationMass
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.one_le_normalizationMass
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationMass_lt_top
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizedHaar_eq_normalizationMass_mul
