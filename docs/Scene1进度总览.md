@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.349：canonical actual q-pilot 与 VBad generated-hull cost 桥接 |
-| 数学证明基线 | `55de57b64568b1418a7be9371131fa6e81f8d006`，S1.349 已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.350：canonical actual q-pilot 与 normalized thetaVolume 指数桥 |
+| 数学证明基线 | `79c41a1`，S1.350 已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.349 VBad generated-hull cost 桥接已验收并推送；Scene1 仍未完成 |
-| 当前推进位置 | canonical degree-one Scene1 q-pilot 等于 actual VBad generated-hull negative-log cost 除以 procession length；仍未识别 Core thetaVolume |
+| 数学工作状态 | S1.350 条件性 thetaVolume 指数桥已验收并推送；Scene1 仍未完成 |
+| 当前推进位置 | 在显式 actual hull volume normalization 条件下，canonical q-pilot 决定 `thetaVolume = exp (-(n * absLogQ))`；条件尚未从真实模型推出 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.349 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.350 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -155,6 +155,7 @@ flowchart TD
 | canonical actual VBad representative bound | 🟢 已闭合（VBad carrier） | S1.347 将 canonical degree-one Scene1 q-pilot 严格界于 `VBadSelectedPaper.paperSum`；消费实际 VBad 系数加权和及其 strict ramification gap，不扩展到 full odd support 或论文 `L'` | 修订 paper representative 语义并接 packet/hull/thetaVolume | G3、G4；[log5 S1.347](开发计划.V1Act1log5.md#s1347-canonical-actual-q-pilot-vbad-strict-bound) |
 | canonical actual VBad coefficient accounting | 🟢 已闭合（VBad carrier） | S1.348 精确证明 canonical q-pilot `absLogQ = ∑ coefficient(v) * VBadSelectedPaper.paperTerm(v)`；保留真实 ramification coefficients，不要求 mass-one | 将该 weighted sum 接入 revised paper accounting 和 theta-volume consumer | G3、G4；[log5 S1.348](开发计划.V1Act1log5.md#s1348-canonical-actual-vbad-coefficient-weighted-accounting) |
 | canonical actual VBad generated-hull cost bridge | 🟢 已闭合（ordinary-log hull） | S1.349 证明 canonical q-pilot `absLogQ = cost / n`，其中 cost 是 actual VBad ordinary-log generated hull 的 negative-log volume | 将该 cost 与修订后的 thetaVolume/packet accounting 比较；不能把它直接命名为 Core `thetaVolume` | G4；[log5 S1.349](开发计划.V1Act1log5.md#s1349-canonical-actual-vbad-generated-hull-cost-bridge) |
+| canonical actual thetaVolume exponential bridge | 🔵 条件性完成 | S1.350 在 `thetaVolume = actual hull volume` 与显式 normalization 条件下证明 `thetaVolume = exp (-(n * canonicalAbsLogQ))` | 从真实 theta/different-untilt 模型推出 actual hull volume 条件，并接入最终目标 | G4；[log5 S1.350](开发计划.V1Act1log5.md#s1350-canonical-actual-q-pilot-与-thetavolume-指数桥) |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
@@ -171,7 +172,44 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.349
+## 最近单元变化卡：S1.350
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4 的 actual generated-hull cost → normalized thetaVolume exponential form |
+| 实际闭合 | 在显式 `thetaVolume = actual VBad collated hull volume` 条件下，证明 `thetaVolume = exp (-(n * canonicalAbsLogQ))` |
+| 后续获得的前提 | 目标消费者可以直接使用 canonical q-pilot 表示体积；仍须证明 actual hull volume 条件来自真实 theta/untilt 模型 |
+| 尚未接通 | actual hull 到 Core `thetaVolume` 的来源身份、paper theta/BK/different-untilt、最终联合模型仍未识别 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数保持 **0/4** |
+| 信任负担变化 | Prologue R5→R5；新增 Core 假设 0，新增外部证明证书 0，退休／转入／取出均 0 |
+| 来源与依赖 | 消费 S1.349 cost bridge 与 explicit volume normalization；新增叶子为原创条件桥 |
+| 工程验证范围 | Checks.SceneBounds 1072 条 check、Axioms.SceneBounds 869 条公理报告逐名匹配；Scene1 聚合通过；1 个新增公共声明覆盖 |
+| 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
+| 构建资源 | 已测成功构建累计 534.49 秒（8分54.49秒），成功峰值最高 8,289,960 KiB；另有 3 次未计时裸 Lean 修正尝试。未重编 Mathlib |
+| 交付状态 | `79c41a1` 已推送；已核对该证明提交与 `origin/main` 一致 |
+| 完整边界 | [log5 S1-BND-350](开发计划.V1Act1log5.md#s1350-canonical-actual-q-pilot-与-thetavolume-指数桥) |
+| 生产证明 | [thetaVolume bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalVBadThetaVolumeBridge.lean) |
+
+### S1.350 构建资源
+
+结束时间使用完整 CST 日期；成功构建记录使用 `/usr/bin/time -v`，RSS 单位为 KiB。
+
+| label | 结果 | jobs | time-v wall | 峰值 RSS | 说明 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| s1350-1 | 1 | - | 未采集 | 未采集 | 错误工作目录导致路径重复 |
+| s1350-2 | 1 | - | 未采集 | 未采集 | 字段投影括号解析错误 |
+| s1350-3 | 1 | - | 未采集 | 未采集 | `rw` 后多余 `rfl` |
+| s1350-4 | 0 | - | 1:49.31 | 8261080 | 窄叶直接 Lean 检查 |
+| s1350-5 | 1 | 9387/9387 | 2:08.28 | 7874532 | 裸 Checks 无新叶 `.olean` |
+| s1350-6 | 0 | 9387/9387 | 3:07.83 | 8289044 | `lake build` 叶模块 + Checks |
+| s1350-7 | 0 | 9387/9387 | 1:49.07 | 8289960 | `lake build` Axioms |
+| s1350-8 | 0 | 9402/9402 | 1:49.22 | 8277004 | `lake build` Scene1 聚合 |
+
+构建遵守 CPU 0–13、LEAN_NUM_THREADS=10、每个 Lean 进程 `-j1`；未冷建、未清缓存、
+未并发 Lake，未修改 Mathlib、工具链、依赖或默认 heartbeat。已测成功尝试累计
+534.49 秒；前三次修正尝试未采集 `/usr/bin/time`，因此不虚构其耗时。
+
+## 历史单元记录：S1.349
 
 | 项目 | 变化 |
 | --- | --- |
@@ -219,7 +257,7 @@ LEAN_NUM_THREADS=10，每个 Lean 编译进程 -j1；未冷建、未清缓存、
 | 工程验证范围 | Checks.SceneBounds 1070 条 check、Axioms.SceneBounds 867 条公理报告逐名匹配；Scene1 聚合通过；1 个新增公共声明覆盖 |
 | 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
 | 构建资源 | 2 次尝试累计 483.851 秒（8分03.851秒）；收尾构建组RSS峰值 16.847 GiB，单进程最大 7.895 GiB；未重编 Mathlib |
-| 交付状态 | 收尾构建已通过；数学提交待推送，推送后填入提交 hash |
+| 交付状态 | `35bbfdd` 已推送；已核对该证明提交与 `origin/main` 一致 |
 | 完整边界 | [log5 S1-BND-348](开发计划.V1Act1log5.md#s1348-canonical-actual-vbad-coefficient-weighted-accounting) |
 | 生产证明 | [VBad coefficient accounting](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalVBadCoefficientAccounting.lean) |
 
@@ -315,7 +353,7 @@ CPU 0–13，LEAN_NUM_THREADS=10，每个 Lean 编译进程 -j1；未冷建、�
 | 工程验证范围 | Checks.SceneBounds 1067 条 check、Axioms.SceneBounds 864 条公理报告逐名匹配；Scene1 聚合构建通过；1 个新增公共声明覆盖 |
 | 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
 | 构建资源 | 3 次尝试累计 408.184 秒（6分48.184秒），含 1 次窄检查失败；收尾构建组RSS峰值 16.844 GiB，单进程最大 7.898 GiB；未重编 Mathlib |
-| 交付状态 | `c47e7e0` 已推送；已核对该证明提交与 `origin/main` 一致 |
+| 交付状态 | `9a791ea` 已推送；已核对该证明提交与 `origin/main` 一致 |
 | 完整边界 | [log5 S1-BND-345](开发计划.V1Act1log5.md#s1345-canonical-actual-source-与-mass-one-paper-representative-certificate-不相容) |
 | 生产证明 | [certificate 冲突](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperRepresentativeNonexistence.lean) |
 

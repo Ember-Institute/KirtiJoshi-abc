@@ -3343,7 +3343,7 @@ Core 假设/退休/迁移增量均 0。VBad carrier 与论文 `V_p^oss/L'`、the
 迁移增量均 0。mass-one certificate 已排除，paper carrier、thetaVolume 和联合
 模型仍 open。验证：Checks.SceneBounds 1070/1070、Axioms.SceneBounds 867/867，
 Scene1 聚合通过，公理仅含标准允许集合；资源见总览。
-数学提交 `c47e7e0669f04ce11622384b6451277054315954` 已推送并与 `origin/main` 一致。
+数学提交 `35bbfdd` 已推送并与 `origin/main` 一致。
 
 ## S1.349：Canonical actual VBad generated-hull cost bridge
 
@@ -3357,6 +3357,20 @@ Core 假设/退休/迁移增量均 0。该 cost 不等同 Core `thetaVolume`，p
 untilt 联合模型仍 open。验证：Checks.SceneBounds 1071/1071、Axioms.SceneBounds
 868/868，Scene1 聚合通过，公理仅含标准允许集合；资源见总览。
 数学提交 `55de57b64568b1418a7be9371131fa6e81f8d006` 已推送并与 `origin/main` 一致。
+
+## S1.350：Canonical actual q-pilot and thetaVolume exponential bridge
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-VBAD-THETAVOLUME-BRIDGE`：
+  `Act1Scene1/IutInitialThetaCanonicalVBadThetaVolumeBridge.lean`；在显式
+  `thetaVolume = actual VBad collated hull volume` 与 volume normalization 条件下，证明
+  `thetaVolume = exp (-(n * canonicalAbsLogQ))`。
+
+消费 S1.349 canonical generated-hull cost bridge 与 `Corollary312VolumeNormalization`；
+原创条件桥，无参考源码复制/import。Prologue-R5→R5，derive，owner Scene1；Core
+假设/退休/迁移增量均 0。actual hull volume 条件尚未从真实 paper theta/different-untilt
+模型推出，不构造 BK 身份。验证：Checks.SceneBounds 1072/1072、Axioms.SceneBounds
+869/869，Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
+数学提交 `79c41a1` 已推送并与 `origin/main` 一致。
 
 ## S1.346：Canonical actual q-pilot strict subprobability bound
 
