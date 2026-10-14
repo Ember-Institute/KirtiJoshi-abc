@@ -247,5 +247,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Equivalence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerZeroCriteria
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootDescent
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerRootDescent
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogBounded
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicKummerNonvanishing
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonzero
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

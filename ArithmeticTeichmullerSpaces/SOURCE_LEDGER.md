@@ -3243,3 +3243,31 @@ Axioms.SceneBounds/Scene1聚合9389/9389成功，845条公理报告逐名匹配�
 三次构建（一次失败）累计431.577秒，组RSS峰值16.832GiB；明细见总览S1.341。
 Mathlib/工具链/依赖和默认heartbeat未改；根塔下降判据闭合，actual 类非零
 和完整Scene1仍open。
+
+
+## S1.342：Discrete local-field root obstruction and integral Kummer nonvanishing
+
+- `JT-SCENE1-LOCAL-PADIC-LOG-BOUNDED`：`Act1Scene1/LocalPadicLogBounded.lean`。
+  选段移植 `refer/iut/Iut/Concrete/LocalConstruct/PadicLog.lean` 的 discrete norm gap
+  和 uniform principal log bound；原提交 `bc1c6e6c7ac4bcf0c363b9b1bbe9b6d7bc35bf9c`，
+  Git 作者 Christian Merten，文件作者/版权 The iut contributors，参考快照
+  `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8` 路径 diff 为空。核查双方
+  Apache-2.0 LICENSE，保留通知与 provenance；不复制参考 import Mathlib/namespace。
+- `JT-SCENE1-LOCAL-PADIC-KUMMER-NONVANISHING`：
+  `Act1Scene1/LocalPadicKummerNonvanishing.lean`；原创 residue CharP/Frobenius
+  推出 p-power roots principal；uniform log bound 排除非零 log 元素无限可除；
+  消费 S1.341 根下降推出 integral Kummer 类非零。
+- `JT-SCENE1-INITIAL-THETA-INTEGRAL-KUMMER-NONZERO`：
+  `Act1Scene1/IutInitialThetaIntegralKummerNonzero.lean`；actual D+s 非零 log
+  给某一层无根、无基域 compatible tower 和 actual standard padicClass 非零。
+
+来源作用为 Joshi III 3190–3236 的实际 Kummer 类非退化性。Prologue-R5→R5，
+derive，owner Scene1；Core 假设/退休/迁移增量 0。rational 类非零、H¹ₑ/BK
+及完整真实模型仍 open，边界见 log5 S1-BND-342，验证待构建，资源见总览。
+
+验证：Check.SceneBounds9370/9370一次成功，1057条check逐名匹配；显式
+Axioms.SceneBounds/Scene1聚合9392/9392成功，854条公理报告逐名匹配，
+仅含propext、Classical.choice、Quot.sound。9新增公开声明check/axiom完整覆盖。
+两次构建均成功，累计332.967秒，组RSS峰值16.802GiB；跨午夜准确资源见
+总览S1.342。Mathlib/工具链/依赖及默认heartbeat未改。actual integral 类非零
+已闭合；rational 类非零、H¹ₑ/BK和完整Scene1仍open。

@@ -140,6 +140,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Equivalence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerZeroCriteria
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootDescent
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerRootDescent
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogBounded
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicKummerNonvanishing
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonzero
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -990,3 +993,12 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerRootDescent
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_zero_iff_baseRootTower
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.exists_local_root_of_padicClass_eq_zero
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_ne_zero_of_no_local_root
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.exists_lt_one_forall_norm_le
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.exists_forall_norm_padicLog_le
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.norm_sub_one_lt_of_pow_prime_pow
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_eq_zero_of_all_prime_power_roots
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.exists_no_prime_power_root_of_log_ne_zero
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integralKummer_ne_zero_of_log_ne_zero
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.exists_no_local_prime_power_root
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.no_local_baseRootTower
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_ne_zero
