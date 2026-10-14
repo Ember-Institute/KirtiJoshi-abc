@@ -2557,3 +2557,37 @@ check家族9315/9315首轮成功，耗时3:09.39、峰值9382676KiB（约
 源码枚举SceneBounds614/411、全家族1265/797。两轮monitor总耗时
 290.905s见log4 S1.319，无失败或Mathlib重编。
 actual ordinary-log collation校准模型闭合，真实paper theta/BK/untilt模型仍open。
+
+
+## S1.320：selected unweighted root estimate from actual hull comparison
+
+`JT-SCENE1-INITIAL-THETA-VBAD-PAPER-ROOT-PRODUCT-BOUND`，路径
+`Act1Scene1/IutInitialThetaVBadPaperRootProductBound.lean`，消费actual D的strict
+representative ramification gap及两侧negative-log身份，证明actual selected paper
+rootProduct严格小于canonical normalized VBad relative rootProduct；n>0的幂比较。
+严格性由actual D.global.bad_nonempty及q-root ramification派生，无extra证书。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-HULL-PAPER-BOUND`，路径
+`Act1Scene1/IutInitialThetaVBadHullPaperBound.lean`，把S1.318 actual collation hull
+下界传到selected unweighted paper product^n（严格下界）及negative-average
+大于-selected positive paper sum、等价地大于selected signed log sum。后者是
+negative-log约定下的数值形状，不是S1.305所排除的literal minus-log RHS。
+S1.319 ordinary-log model的negative-average与signed log sum之差精确为
+selected paper sum-reference absLogQ，且严格为正。
+
+来源为Joshi III3617–3631乘积估计、3634–3645 sign讨论和本工程actual
+representative ramification/negative-log/Haar定理。原创无新参考代码复制/import。
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，
+前置信任不增加。归一化非等式不阻止one-sided estimate；不虚构去权等式。
+actual selected carrier不识别paper V_p^oss/L'；paper norm/weighted thetaVolume、
+真实theta/BK/untilt、mixed-moduli grouping、source sign/target freeze及joint
+真实Scene1模型仍open。完整公共类型与资源见log4 S1-BND-320。
+
+
+2026-10-14 12:37:52 CST里程碑热构建9340/9340通过，耗时1:45.89，组RSS采样峰值
+17583492KiB（约16.769GiB），同时Lean workers峰值2。
+check家族9318/9318首轮成功，耗时3:29.45、峰值9369468KiB（约
+8.935GiB）。七公共定理覆盖，418条公理报告仅标准允许集合；
+源码枚举SceneBounds621/418、全家族1272/804。两轮monitor总耗时
+315.979s见log4 S1.320，无失败或Mathlib重编。
+单向selected paper lower-estimate桥闭合，paper身份/source符号/整体Scene1仍open。

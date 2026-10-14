@@ -196,5 +196,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCollatedPrincipalHu
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedNormalizationVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorLogGenerators
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadLogGeneratedHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadPaperRootProductBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullPaperBound
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
