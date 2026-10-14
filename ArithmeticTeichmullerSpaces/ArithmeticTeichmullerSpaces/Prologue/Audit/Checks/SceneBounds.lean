@@ -85,6 +85,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorBoundedHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorChosenHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarHullVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliHullVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHullNormalizationBounds
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadChosenHullVolume
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -629,3 +631,13 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliHullVolu
 #check JoshiTeich.Act1Scene1.LocalCompletion.Packet.degreeVolume_scalarLattice_le_leastHullVolume
 #check JoshiTeich.Act1Scene1.FixedModuliThetaHull.volume
 #check JoshiTeich.Act1Scene1.FixedModuliThetaHull.relativeFactor_pow_le_volume
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationDegreeVolume_le_one
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_subset_normalization
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_normalizationDegreeVolume_pos
+#check JoshiTeich.Act1Scene1.VBadThetaHull.packet
+#check JoshiTeich.Act1Scene1.VBadThetaHull.volume
+#check JoshiTeich.Act1Scene1.VBadThetaHull.volume_pos
+#check JoshiTeich.Act1Scene1.VBadThetaHull.normalizedRootProduct_pow_le_volume
+#check JoshiTeich.Act1Scene1.VBadThetaHull.volume_le_one
+#check JoshiTeich.Act1Scene1.VBadThetaHull.absLog_volume_le_mul_referenceAbsLogQ
+#check JoshiTeich.Act1Scene1.VBadThetaHull.negAverageAbsLog_volume_ge_referenceLhs

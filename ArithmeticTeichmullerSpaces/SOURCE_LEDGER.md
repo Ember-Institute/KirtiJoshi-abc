@@ -2381,3 +2381,35 @@ freeze与joint真实模型仍open。完整类型和资源见log4 S1-BND-314。
 首轮失败与两轮总耗时293.586s见log4；337条公理报告仅含标准允许集合。
 源码枚举SceneBounds540/337、总计1191/723；20个公共声明通过、默认heartbeat。
 chosen hull/scalar identity及actual local relative-volume下界闭合，整体Scene1仍open。
+
+
+## S1.315：exact actual VBad chosen hull Haar 全局下界
+
+`JT-SCENE1-LOCAL-TENSOR-HULL-NORMALIZATION-BOUNDS`，路径
+`Act1Scene1/LocalCompletionTensorHullNormalizationBounds.lean`，证明normalization
+中的区域normalizationDegreeVolume≤1，U⊆normalization时leastHull(U)也包含其中；
+leastHull的normalizationDegreeVolume严格正由actual positive finite Haar派生。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-CHOSEN-HULL-VOLUME`，路径
+`Act1Scene1/IutInitialThetaVBadChosenHullVolume.lean`，从actual D、每VBad处上的
+合法Fin n over-place tuple及actual bounded positive-Haar U构造local chosen hull，
+将local Haar dimension根的localDeg幂按exact VBad取乘积，再按moduli global
+finrank根归一化，直接定义global volume。ordinary actual log lattice包含于U时，
+逐项消费S1.314的relative factor^card下界，得到canonical normalized VBad root
+product^n≤volume；正性独立派生。U位于normalization时得volume≤1，然后由
+exact VBad root negative-log身份得absLog(volume)≤n*reference absLogQ及n>0时
+negative-average≥reference lhs。未以q-pilot/自由thetaVolume字段定义volume。
+
+本单元原创，无参考复制/import；来源比较Joshi III multiplicative adelic volume
+3624–3631与3634–3645 sign讨论。Prologue-R5→R5，derive，owner Scene1；新增Core
+假设0、退休字段0、迁移0，前置信任不增加。actual同处集/同重数/同degree的局部
+hull到全局q-pilot数值传递闭合。paper theta loci/U/τ_j、different untilts/Bloch–Kato、
+paper C_p norm/weighted-volume/V_p^oss/L'身份、source sign freeze/joint真实模型及
+完整Corollary3.12仍open；完整公共类型和资源见log4 S1-BND-315。
+
+
+2026-10-14 11:07:36 CST最终热构建9330/9330通过，默认heartbeat；耗时2:42.94，进程组采样
+峰值25826624KiB（约24.630GiB），最大同时Lean workers=3，无Mathlib重编。
+347条公理报告仅含标准允许集合；十个新增公共声明通过。源码枚举SceneBounds
+550/347、全家族1201/733。四轮总monitor耗时533.584s及失败原因见log4 S1.315。
+actual VBad local hull→global relative-degree q-pilot消费者闭合，整体Scene1仍open。

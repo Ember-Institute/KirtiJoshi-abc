@@ -78,6 +78,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorBoundedHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorChosenHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarHullVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliHullVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHullNormalizationBounds
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadChosenHullVolume
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -419,3 +421,13 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliHullVolu
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.degreeVolume_scalarLattice_le_leastHullVolume
 #print axioms JoshiTeich.Act1Scene1.FixedModuliThetaHull.volume
 #print axioms JoshiTeich.Act1Scene1.FixedModuliThetaHull.relativeFactor_pow_le_volume
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationDegreeVolume_le_one
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_subset_normalization
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.leastHull_normalizationDegreeVolume_pos
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHull.packet
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHull.volume
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHull.volume_pos
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHull.normalizedRootProduct_pow_le_volume
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHull.volume_le_one
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHull.absLog_volume_le_mul_referenceAbsLogQ
+#print axioms JoshiTeich.Act1Scene1.VBadThetaHull.negAverageAbsLog_volume_ge_referenceLhs

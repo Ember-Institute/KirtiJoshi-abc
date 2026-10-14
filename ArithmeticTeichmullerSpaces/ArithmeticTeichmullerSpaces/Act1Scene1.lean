@@ -185,5 +185,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorBoundedHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorChosenHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarHullVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliHullVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHullNormalizationBounds
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadChosenHullVolume
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
