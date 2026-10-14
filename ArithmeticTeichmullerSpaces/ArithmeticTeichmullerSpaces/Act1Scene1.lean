@@ -265,5 +265,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadQProdu
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalCorollary312Bridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQPilotData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQPilotReferenceBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQPilotTargetAccounting
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
