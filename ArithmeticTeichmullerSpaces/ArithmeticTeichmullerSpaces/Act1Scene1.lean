@@ -261,5 +261,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadSubpro
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadCoefficientAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadCostBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadThetaVolumeBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadQProductBridge
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
