@@ -2698,3 +2698,33 @@ check家族9325/9325通过，耗时3:23.92、峰值9376128KiB（约
 源码枚举SceneBounds668/465、全家族1319/851。三轮monitor总耗时401.178s与
 首轮subtype错误见log4 S1.323，无Mathlib重编。同VBad选定carrier的精确accounting
 及hull量化桥闭合，完整paper carrier/整体Scene1仍open。
+
+
+## S1.324：exact omitted selected q-log contribution and coverage criterion
+
+`JT-SCENE1-INITIAL-THETA-VBAD-SELECTED-SUPPORT-DEFECT`，路径
+`Act1Scene1/IutInitialThetaVBadSelectedSupportDefect.lean`。fullSelectedFinset是actual
+完整odd moduli support经selected source equivalence的image，membership恰等已有
+完整selected q-root source set。restricted selectedFinset包含于它；两finite carrier
+相等当且仅当actual VBad moduli finset等于完整odd moduli support，使用injection/card
+证明，不接收coverage。omittedPaperSum为full minus restricted finite sdiff上的
+actual corrected q-root negative-log term之和；full paperSum=restricted paperSum+
+omittedPaperSum，每项严格正，故omitted=0 iff coverage。完整/限制的paperSum及
+rootProduct相等各当且仅当coverage；缺处条件下sum严格不等。
+
+来源Joshi III1028–1055完整section odd semistable locus及3617–3631有限q乘积，
+与本工程actual selected source/card/negative-log/Haar accounting。原创无参考代码
+复制/import。Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、
+迁移0，前置信任不增加。此为coverage必要充分条件，未构造缺处具体D，也未
+证明任意actual VBad都完整；不勾选完整paper carrier身份gate。真实theta/BK/untilt、
+paper norm/weighted-volume、mixed-moduli grouping、source sign/target freeze和
+joint模型仍open。完整类型与资源见log4 S1-BND-324。
+
+
+2026-10-14 15:01:44 CST最终里程碑9348/9348通过，耗时1:39.28，组RSS采样峰值
+17514192KiB（约16.703GiB），同时Lean workers峰值2。
+check家族9326/9326通过，耗时2:34.92、峰值9374596KiB（约
+8.940GiB）。15公共声明覆盖，480条公理报告仅标准允许集合；
+源码枚举SceneBounds683/480、全家族1334/866。三轮monitor总耗时359.799s及
+首轮sum_coe_sort错误见log4 S1.324，无Mathlib重编。coverage/遗漏量判据闭合，
+actual覆盖证明/完整paper来源身份及整体Scene1仍open。
