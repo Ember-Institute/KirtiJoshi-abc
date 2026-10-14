@@ -2522,3 +2522,38 @@ V_p^oss/L'身份；source sign/target freeze、joint真实模型及完整3.12仍
 446.484s与失败原因见log4 S1.318，无Mathlib重编。
 original collation→principal hull→actual VBad global量化桥闭合；共同moduli tuple
 不识别mixed-moduli prime-fiber tensor grouping，整体Scene1仍open。
+
+
+## S1.319：constructed ordinary-log collation and exact global hull calibration
+
+`JT-SCENE1-LOCAL-TENSOR-ORDINARY-LOG-GENERATORS`，路径
+`Act1Scene1/LocalCompletionTensorLogGenerators.lean`，定义actual log-image pure
+tensor generators：scalar z_i乘normalizedLog(b_i)，所有b_i norm≤1。由actual
+p-adic log小球满射证明恰等scalarGenerators，integral span等scalarLattice，
+normalization span等scalarNormalization；integral scalars保证generators位于unitLattice。
+无外给surjectivity、hull或measure certificate。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-LOG-GENERATED-HULL`，路径
+`Act1Scene1/IutInitialThetaVBadLogGeneratedHull.lean`，actual D/合法共同moduli tuple
+的canonical q-root ordinary log scalars代入上述构造，C为Unit-indexed具体log-image
+集合。generator coverage和normalization containment均派生，而非输入。其actual
+collated principal hull逐处等scalarNormalization，actual Haar global volume精确
+等normalized VBad relative rootProduct^n；派生positive/unit bound、negative log与
+abs log=n*reference absLogQ，n>0时negative-average精确等reference lhs。
+volume先由actual Haar定义再计算，未以q-pilot定义。
+
+来源比较Joshi III3474–3478 multiplicative log-shell图、3568–3574 hull及3624–3631
+volume。原创无新参考代码复制/import。Prologue-R5→R5，derive，owner Scene1；
+本ordinary-log实例消除外给hgen/hunit两certificate，新增Core假设0、退休Core字段0、
+迁移0，前置信任不增加。本构造不是真实different-untilt/Bloch–Kato/theta来源模型；
+paper norm/carrier/weighted-volume、mixed-moduli grouping、source sign/target freeze
+和joint真实Scene1模型仍open。完整公共类型与资源见log4 S1-BND-319。
+
+
+2026-10-14 12:23:28 CST里程碑热构建9338/9338通过，耗时1:41.35，组RSS采样峰值
+17628312KiB（约16.812GiB），同时Lean workers峰值2。
+check家族9315/9315首轮成功，耗时3:09.39、峰值9382676KiB（约
+8.948GiB）。17公共声明覆盖，411条公理报告仅标准允许集合；
+源码枚举SceneBounds614/411、全家族1265/797。两轮monitor总耗时
+290.905s见log4 S1.319，无失败或Mathlib重编。
+actual ordinary-log collation校准模型闭合，真实paper theta/BK/untilt模型仍open。
