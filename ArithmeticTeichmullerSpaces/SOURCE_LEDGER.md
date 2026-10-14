@@ -3165,3 +3165,31 @@ Axioms.SceneBounds/Scene1聚合9382/9382成功，792条公理报告逐名匹配�
 见 Scene1进度总览 的 S1.338 变化卡。默认heartbeat、Mathlib、依赖和工具链
 未改。标准 H¹ 系数映射及 actual 类相容闭合；非零 torsion 的排除为条件性，
 未构造 actual 无条件反例；H¹ₑ/BK与完整Scene1仍open。
+
+
+## S1.339：Ordinary p-adic logarithm homomorphism and actual unit laws
+
+- `JT-SCENE1-LOCAL-PADIC-LOG-HOMOMORPHISM`：`Act1Scene1/LocalPadicLogHomomorphism.lean`。
+  逐段适配 `refer/iut/Iut/Concrete/LocalConstruct/PadicLog.lean` 的 Limit 段，
+  binomial/Pochhammer/Tannery 推出已定义 ordinary log 的乘法、幂、逆和单位根消失。
+  原提交 `bc1c6e6c7ac4bcf0c363b9b1bbe9b6d7bc35bf9c`，Git 作者 Christian Merten，
+  文件作者与版权 The iut contributors；参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`
+  上该路径 diff 为空。复制前核查双方 Apache-2.0 LICENSE，保留通知与 provenance。
+  不复制 `import Mathlib`、参考 namespace、surjectivity/compactness/volume；
+  只导入匹配缓存的精确 Mathlib 模块。
+- `JT-SCENE1-INITIAL-THETA-PRINCIPAL-UNIT-LOG-LAWS`：
+  `Act1Scene1/IutInitialThetaPrincipalUnitLogLaws.lean`；原创 actual 消费者，
+  证明 principal unit log 非零、幂/逆/归一化幂律及 unit 无限阶；定义原 rational
+  class 的 (p*)⁻¹ 倍并证明标量还原，不声称论文 ξ 或 BK log 身份。
+
+来源作用为 Joshi III 3190–3236 的 principal-unit/log 比较前提。Prologue-R5→R5，
+derive，owner Scene1；Core 假设/退休/迁移增量均 0。实际 cohomology 类非零、
+H¹ₑ/BK、different untilts、descent、paper volume 与联合模型仍 open。
+验证状态待完整家族及收尾验收；边界见 log5 S1-BND-339，资源见进度总览。
+
+验证：完整 Check.SceneBounds9362/9362成功，1016条check逐名匹配；
+显式 Axioms.SceneBounds/Scene1聚合9384/9384成功，813条公理报告逐名匹配，
+仅含propext、Classical.choice、Quot.sound。21新增公开声明check/axiom完整覆盖。
+五次构建（两次失败、一次中间模块成功）累计624.594秒，组RSS峰值16.794GiB；
+准确资源与修复明细见进度总览 S1.339。Mathlib/工具链/依赖及默认heartbeat
+未改；ordinary log 与 actual 单位公式闭合，H¹ₑ/BK及完整Scene1仍open。

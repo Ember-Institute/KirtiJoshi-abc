@@ -133,6 +133,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Semilinear
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientChange
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogHomomorphism
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaws
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -929,3 +931,25 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_eq_zero_of_torsion
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_not_injective_of_torsion
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_changeCoefficients
+
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.pow_sub_one_div_eq_tsum
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.tendsto_pow_sub_one_div
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_mul
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_pow
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_inv
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_eq_zero_of_pow_eq_one
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.cast_choose_eq_descPochhammer_div
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.descPochhammer_eval_neg_one
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.norm_mul_sub_one_lt
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.norm_eq_one_of_norm_sub_one_lt
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ne_zero_of_norm_sub_one_lt
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.norm_inv_sub_one_lt
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.norm_pow_sub_one_lt
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.log_principalUnit_eq_scale_value
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.log_principalUnit_ne_zero
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.log_principalUnit_pow
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalized_log_principalUnit_pow
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.log_principalUnit_inv
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_pow_ne_one
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.scale_normalizedRationalClass

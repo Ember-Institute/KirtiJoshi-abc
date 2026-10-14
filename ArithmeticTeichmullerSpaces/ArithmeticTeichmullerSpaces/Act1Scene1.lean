@@ -240,5 +240,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Semilinear
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientChange
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogHomomorphism
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaws
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

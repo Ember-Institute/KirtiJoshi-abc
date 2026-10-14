@@ -140,6 +140,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Semilinear
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientChange
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicLogHomomorphism
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrincipalUnitLogLaws
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1139,3 +1141,25 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCoefficientChange
 #check JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_eq_zero_of_torsion
 #check JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_not_injective_of_torsion
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalClass_eq_changeCoefficients
+
+#check JoshiTeich.Act1Scene1.LocalPadicLog.pow_sub_one_div_eq_tsum
+#check JoshiTeich.Act1Scene1.LocalPadicLog.tendsto_pow_sub_one_div
+#check JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_mul
+#check JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_pow
+#check JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_inv
+#check JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_eq_zero_of_pow_eq_one
+#check JoshiTeich.Act1Scene1.LocalPadicLog.cast_choose_eq_descPochhammer_div
+#check JoshiTeich.Act1Scene1.LocalPadicLog.descPochhammer_eval_neg_one
+#check JoshiTeich.Act1Scene1.LocalPadicLog.norm_mul_sub_one_lt
+#check JoshiTeich.Act1Scene1.LocalPadicLog.norm_eq_one_of_norm_sub_one_lt
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ne_zero_of_norm_sub_one_lt
+#check JoshiTeich.Act1Scene1.LocalPadicLog.norm_inv_sub_one_lt
+#check JoshiTeich.Act1Scene1.LocalPadicLog.norm_pow_sub_one_lt
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.log_principalUnit_eq_scale_value
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.log_principalUnit_ne_zero
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.log_principalUnit_pow
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalized_log_principalUnit_pow
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.log_principalUnit_inv
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_pow_ne_one
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.scale_normalizedRationalClass
