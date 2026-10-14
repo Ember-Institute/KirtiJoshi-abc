@@ -149,6 +149,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicRationalKummerNonvanishi
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummerNonzero
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonTorsion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRepresentativeNonexistence
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalSubprobabilityBound
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -1018,3 +1019,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRepresentative
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass_ne_zero
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_smul_ne_zero
 #print axioms JoshiTeich.Act1Scene1.canonicalPaperRepresentativeAccounting_impossible
+#print axioms JoshiTeich.Act1Scene1.canonicalScene1AbsLogQ_lt_selectedPaperSum

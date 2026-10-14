@@ -256,5 +256,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPadicRationalKummerNonvanishi
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummerNonzero
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralKummerNonTorsion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperRepresentativeNonexistence
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalSubprobabilityBound
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
