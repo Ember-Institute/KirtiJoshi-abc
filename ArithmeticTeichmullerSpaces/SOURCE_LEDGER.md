@@ -3271,3 +3271,20 @@ Axioms.SceneBounds/Scene1聚合9392/9392成功，854条公理报告逐名匹配�
 两次构建均成功，累计332.967秒，组RSS峰值16.802GiB；跨午夜准确资源见
 总览S1.342。Mathlib/工具链/依赖及默认heartbeat未改。actual integral 类非零
 已闭合；rational 类非零、H¹ₑ/BK和完整Scene1仍open。
+
+
+## S1.343：Actual rational Kummer nonvanishing
+
+- `JT-SCENE1-LOCAL-KUMMER-TOWER-POWERS`：root tower power construction and cocycle power law.
+- `JT-SCENE1-LOCAL-KUMMER-RATIONAL-DENOMINATOR`：rational coboundary denominator clearing gives an integral p-power class zero.
+- `JT-SCENE1-LOCAL-PADIC-RATIONAL-KUMMER-NONVANISHING`：nonzero log contradiction proves rational class nonzero.
+- `JT-SCENE1-INITIAL-THETA-RATIONAL-KUMMER-NONZERO`：actual D+s rational and normalized classes nonzero.
+
+原创连接，无参考源码复制/import；消费 S1.342 integral nonzero and S1.338 coefficient map.
+Prologue-R5→R5，derive，owner Scene1；Core 假设/退休/迁移增量 0。H¹ₑ/BK、
+different untilts、descent、paper volume and joint model remain open.
+边界见 log5 S1-BND-343；Checks.SceneBounds 1065/1065、Axioms.SceneBounds
+862/862 逐名匹配，Scene1 聚合构建通过，公理仅含标准允许集合。actual
+`rationalClass` 与 `normalizedRationalClass` 非零已验收；完整资源和失败尝试
+见 `docs/Scene1进度总览.md`；数学提交 `8d73c998cd496701fb05a535cd70fea6dbe4c4ea`
+已推送并与 `origin/main` 一致。

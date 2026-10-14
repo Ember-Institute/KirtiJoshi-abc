@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.342：实际局部域根排除与 integral Kummer 类非零 |
-| 数学证明基线 | `08258927e2422da9395818cb3839ed0f4238a47f`，已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.343：actual rational Kummer 类非零 |
+| 数学证明基线 | `8d73c998cd496701fb05a535cd70fea6dbe4c4ea`，S1.343 已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.342 已验收并推送；连续工作流保持 active，下一数学单元尚未开始 |
-| 当前推进位置 | actual principal unit 存在某层 p-power 无根，不存在基域 compatible tower；标准 integral padicClass 非零已证明 |
-| 尚未接通的主要连接 | rational 类非零及系数映射核、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.342 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| 数学工作状态 | S1.343 已验收并推送；Scene1 仍未完成 |
+| 当前推进位置 | actual principal unit 的 integral 与 rational standard Kummer 类及 normalized rational 类均已证明非零 |
+| 尚未接通的主要连接 | H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配；全局系数映射单射仍未声称 |
+| Prologue 边界 | R5；S1.343 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -58,7 +58,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及多项 carrier 适配已存在 | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型 | 计划 §2.1；S1.270 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在 | 证明与论文处集及 L' representatives 的完整身份，闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327，见 [log4](开发计划.V1Act1log4.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 类非零 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–342，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–343，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -83,7 +83,7 @@ flowchart TD
     C0["已闭合：旧商与标准 integral H¹ 双射<br/>实际类零性判据；S1.340"]
     R0["已闭合：integral 零类 iff 基域根塔<br/>实际下降；S1.341"]
     N0["已闭合：排除实际无限可除性<br/>integral 类非零；S1.342"]
-    NQ["未建立：rational 类非零<br/>及系数映射核比较"]
+    NQ["已闭合：actual rational 类非零<br/>全局系数映射核仍未比较；S1.343"]
     B["未建立：H¹ₑ / BK<br/>ordinary-log 比较"]
     H["已闭合：ordinary-log 模型内<br/>hull 与 Haar 定量界"]
     L["已闭合：ordinary log 群律<br/>actual 单位无限阶；S1.339"]
@@ -124,7 +124,8 @@ flowchart TD
     classDef open fill:#f3f4f6,stroke:#6b7280,color:#111827;
     class K,Z,T,Q,H,I,L,C0,R0,N0 done;
     class G1,G2,G3,V partial;
-    class J,B,C,NQ open;
+    class J,B,C open;
+    class NQ done;
 ```
 
 ### 关键子结果与缺口
@@ -148,7 +149,7 @@ flowchart TD
 | 实际 integral/rational 类零性判据 | 🟢 已闭合 | S1.340 证明类为零当且仅当实际 cocycle 满足具体 coboundary 方程；要证明类非零仍须排除该方程有解 | G4；log5 S1.340 |
 | integral 零类与基域根塔下降 | 🟢 已闭合 | S1.341 类零 iff 基域存在同一个 compatible p-power tower；actual local-field 适配已完成，类零推出每一有限层有根 | G4；[log5 S1.341](开发计划.V1Act1log5.md#s1341-动态边界integral-kummer-零类与基域兼容根塔) |
 | 实际无限可除性排除与 integral 类非零 | 🟢 已闭合 | S1.342 从实际非零 log 与 principal-unit log 一致有界，证明某层无 p-power 根、无 compatible base tower，actual standard padicClass 非零 | G4；[log5 S1.342](开发计划.V1Act1log5.md#s1342-动态边界离散局部域根排除与实际-integral-类非零) |
-| rational 类非零及系数映射核 | ⚪ 未建立 | integral 非零不自动给 rational 像非零；仍须审查 integral 类是否落入 S1.338 系数映射的核，不以自由单射证书绕过 | G4；log5 S1.342 边界 |
+| rational 类非零及系数映射核 | 🟢 已闭合（actual 范围） | S1.343 通过清除 rational coboundary 的 p-adic 分母，将 rational 类为零降到某个 integral p-power 类为零，再与 S1.342 的非零 log 矛盾；actual `rationalClass` 与 `normalizedRationalClass` 均非零。全局 integral→rational H¹ 映射单射仍未证明 | G4；[log5 S1.343](开发计划.V1Act1log5.md#s1343-动态边界actual-rational-kummer-类非零) |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
 | 不同 untilt、论文 thetaVolume 与联合模型 | 🟡 部分完成 | 已有 ordinary-log 定量构件；真实身份、descent 及最终共同装配仍缺失 | G2、G4；计划 §2.3、log5 剩余义务 |
@@ -164,7 +165,41 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.342
+## 最近单元变化卡：S1.343
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4 的 actual integral Kummer 非零 → actual rational Kummer 非零 |
+| 实际闭合 | rational coboundary 的有限 p-adic 分母可清除为 integral p-power 类；与 S1.342 的非零 log 矛盾，得到 actual `rationalClass` 与 `normalizedRationalClass` 非零 |
+| 后续获得的前提 | actual standard rational 类已排除落入 S1.338 系数映射核；后续可以审查 H¹ₑ/BK 身份，但不把该结果提升为全局 H¹ 单射 |
+| 尚未接通 | H¹ₑ/crystalline/Frobenius、BK/log、different untilts、mixed-moduli descent、论文 volume 与联合模型仍缺失 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数保持 **0/4** |
+| 信任负担变化 | Prologue R5→R5；新增 Core 假设 0，新增外部证明证书 0，退休／转入／取出均 0 |
+| 来源与依赖 | 消费 S1.338 coefficient map 与 S1.342 integral nonvanishing；四个新增叶子为原创连接，无参考源码复制/import |
+| 工程验证范围 | Checks.SceneBounds 1065 条 check、Axioms.SceneBounds 862 条公理报告逐名匹配；Scene1 聚合构建通过；8 个新增公共声明全部覆盖 |
+| 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
+| 构建资源 | 22 次尝试累计 2206.335 秒（36分46.335秒），含 20 次窄检查失败；收尾构建组RSS峰值 16.747 GiB，单进程最大 7.895 GiB；未重编 Mathlib |
+| 交付状态 | `8d73c99` 已推送；已核对该证明提交与 `origin/main` 一致 |
+| 完整边界 | [log5 S1-BND-343](开发计划.V1Act1log5.md#s1343-动态边界actual-rational-kummer-类非零) |
+| 生产证明 | [根塔幂](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerTowerPowers.lean)、[分母清除](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerRationalDenominator.lean)、[rational 非零](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalPadicRationalKummerNonvanishing.lean)、[实际数据适配](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaRationalKummerNonzero.lean) |
+
+### S1.343 构建资源
+
+结束时间使用完整 CST 日期，RSS 单位为 KiB；失败尝试也计入累计耗时。
+
+| label | 结束时间（CST） | exit | jobs | time-v wall | monitor秒 | 组RSS峰值 | time-v单进程最大 | worker峰值 | affinity修正 |
+| --- | --- | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1343-21 | 2026-10-15 02:16:27 | 0 | 9374/9374 | 4:00.56 | 240.936 | 9402368 | 8285512 | 1 | 55 |
+| s1343-22 | 2026-10-15 02:20:38 | 0 | 9396/9396 | 1:56.93 | 117.294 | 17565772 | 8282572 | 2 | 33 |
+
+上表中的 `s1343-21` 为窄 Checks.SceneBounds 成功构建；`s1343-22` 为
+Axioms.SceneBounds 与 Act1Scene1 聚合收尾构建。两次成功，窄检查前的
+20 次失败尝试另见下方详细记录；CPU 0–13，LEAN_NUM_THREADS=10，每个 Lean
+编译进程 -j1。没有可用 memory cgroup；每 0.5 秒采样进程组 RSS，85 GiB
+停止线低于用户 90 GiB 上限。两次 stop_reason 均为 null，未冷建、未清缓存、
+未并发 Lake，未修改 Mathlib、工具链、依赖或默认 heartbeat。
+
+## 历史单元记录：S1.342
 
 | 项目 | 变化 |
 | --- | --- |
@@ -466,3 +501,156 @@ CPU 0–13，LEAN_NUM_THREADS=10，每个 Lean 编译进程 -j1。Lake 的 -Kjob
 
 
 </details>
+
+## S1.343 失败尝试与收尾验证记录
+
+目标是清除 rational coboundary 的 p-adic 分母，将其转成 integral p-power
+Kummer 类，再用 S1.342 的非零 log 矛盾，证明 actual rationalClass 非零。
+首次仅 Checks.SceneBounds，label=s1343-1。
+
+- s1343-1：失败，monitor 146.674 秒，组 RSS 峰值 5273840 KiB，time-v wall
+  2:26.56，单进程最大 4191816 KiB；worker 峰值 1，affinity 修正 31 次。
+  Tower powers 与分母清除主体已编译；唯一错误是 `R.pow` 的 base-field
+  非零实例推断卡在 `continuousCocycleValue`，已显式指定 `a := a ^ p^n`
+  并给出 `pow_ne_zero`。未改数学假设、heartbeat 或 Mathlib。
+- 下一次仅 Checks.SceneBounds，label=s1343-2。
+
+- s1343-2：失败，monitor 90.895 秒，组 RSS 峰值 5260968 KiB，time-v wall
+  1:30.57，单进程最大 4191292 KiB；worker 峰值 1，affinity 修正 31 次。
+  同一 `pow_ne_zero` 隐式底数仍未由命名参数解决，已改为显式
+  `pow_ne_zero (p ^ n) ha`；其余 rational denominator/nonzero 模块无报错。
+- 下一次仍仅 Checks.SceneBounds，label=s1343-3。
+
+- s1343-3：失败，monitor 88.749 秒，组 RSS 峰值 5270380 KiB，time-v wall
+  1:28.53，单进程最大 4191476 KiB；worker 峰值 1，affinity 修正 24 次。
+  `pow_ne_zero` 的显式指数仍在 dependent argument 中留下 base metavariable，
+  改为局部 `by exact pow_ne_zero (p ^ n) ha`，其余模块无报错。
+- 下一次仍仅 Checks.SceneBounds，label=s1343-4。
+
+- s1343-4：失败，monitor 90.284 秒，组 RSS 峰值 5264480 KiB，time-v wall
+  1:30.23，单进程最大 4191320 KiB；worker 峰值 1，affinity 修正 25 次。
+  dependent base remained unresolved even with local exact term; introduced a
+  named local `hpow : a ^ (p ^ n) ≠ 0` before passing the proof.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-5。
+
+- s1343-5：失败，monitor 88.901 秒，组 RSS 峰值 5267020 KiB，time-v wall
+  1:28.43，单进程最大 4191292 KiB；worker 峰值 1，affinity 修正 22 次。
+  dependent elaboration persisted at the theorem result argument; named the
+  powered root tower `Rp`, its base element and nonzero proof, then applied the
+  zero-class criterion in two explicit steps.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-6。
+
+- s1343-6：失败，monitor 86.474 秒，组 RSS 峰值 5279340 KiB，time-v wall
+  1:26.34，单进程最大 4191216 KiB；worker 峰值 1，affinity 修正 41 次。
+  `Rp` 定义引入 proof-irrelevant dependent equality，Exists 目标仍显示原始
+  tower expression；改为先 `change` 规范化 Exists 目标，再显式 refine。
+- 下一次仍仅 Checks.SceneBounds，label=s1343-7。
+
+- s1343-7：失败，monitor 107.735 秒，组 RSS 峰值 5274312 KiB，time-v wall
+  1:47.43，单进程最大 4193320 KiB；worker 峰值 1，affinity 修正 21 次。
+  结果类型内的 dependent proof 仍展开原始 lambda，故移除外层显式 proof
+  参数，将 `pow_ne_zero (p ^ n) ha` 直接作为 theorem result 的 proof。
+- 下一次仍仅 Checks.SceneBounds，label=s1343-8。
+
+- s1343-8：失败，monitor 93.421 秒，组 RSS 峰值 5270912 KiB，time-v wall
+  1:33.32，单进程最大 4190628 KiB；worker 峰值 22，affinity 修正 22 次。
+  将 powered class 结论改为嵌套 `∃ n, ∃ hpow, class = 0`，把 dependent
+  nonzero proof 显式绑定为数据，避免 tower coercion proof mismatch。
+- 下一次仍仅 Checks.SceneBounds，label=s1343-9。
+
+- s1343-9：失败，monitor 93.421 秒，组 RSS 峰值 5270912 KiB，time-v wall 1:33.32，
+  单进程最大 4190628 KiB；worker 峰值 1，affinity 修正 22 次。
+  proof-irrelevant tower base annotation remained unresolved; explicit K parameter
+  and `(a := a ^ p^n)` were added to the local tower and cocycle value.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-10。
+
+- s1343-10：失败，monitor 87.513 秒，组 RSS 峰值 5271624 KiB，time-v wall 1:27.36，
+  单进程最大 4190752 KiB；worker 峰值 29，affinity 修正 29 次。
+  explicit K/a annotations did not resolve the dependent proof. Introduced a
+  generic local helper `hzero` over any powered root tower and its nonzero proof,
+  then applied it to `Rp`; this isolates proof irrelevance from the Exists target.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-11。
+
+- s1343-11：失败，monitor 88.901 秒，组 RSS 峰值 5279340 KiB，time-v wall 1:28.73，
+  单进程最大 4190752 KiB；worker 峰值 29，affinity 修正 29 次。
+  generic hzero 接下来需要任意 powered tower 与 R.pow 的 root-tower choice
+  independence；replaced definitional change with existing `kummerCocycle_eq_of_rootTower`
+  equality before applying the power cocycle law.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-12。
+
+- s1343-12：失败，monitor 89.785 秒，组 RSS 峰值 5270952 KiB，time-v wall 1:29.42，
+  单进程最大 4191556 KiB；worker 峰值 26，affinity 修正 26 次。
+  attempted root-tower choice theorem name did not exist; replaced it by direct
+  construction on `R.pow` in the zero-class criterion, with explicit base element.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-13。
+
+- s1343-13：失败，monitor 87.838 秒，组 RSS 峰值 5262044 KiB，time-v wall 1:27.65，
+  单进程最大 4173920 KiB；worker 峰值 1，affinity 修正 40 次。
+  powered theorem statement itself lacked explicit `(a := a ^ p^n)` in the
+  nested hpow result, so elaboration requested `a ≠ 0`; restored the explicit
+  dependent argument in the theorem type.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-14。
+
+- s1343-14：失败，monitor 88.707 秒，组 RSS 峰值 5258416 KiB，time-v wall 1:28.45，
+  单进程最大 4179304 KiB；worker 峰值 32，affinity 修正 32 次。
+  base parameter remained stuck even with explicit result annotation; introduced
+  a typed local `Rp` and called `RootTower.continuousCocycleValue (R := Rp)`,
+  then normalized the final result with `simpa [Rp]`.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-15。
+
+- s1343-15：失败，monitor 92.540 秒，组 RSS 峰值 5263436 KiB，time-v wall 1:32.18，
+  单进程最大 4192880 KiB；worker 峰值 26，affinity 修正 26 次。
+  Even typed Rp left RootTower.continuousCocycleValue's implicit base parameter
+  at original a; added explicit `(a := a ^ (p ^ n))` to the fully qualified call.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-16。
+
+- s1343-16：失败，monitor 85.696 秒，组 RSS 峰值 5282392 KiB，time-v wall 1:25.51，
+  单进程最大 4192240 KiB；worker 峰值 31，affinity 修正 31 次。
+  Explicit a parameter remained stuck inside the continuousCocycleValue application;
+  introduced a typed local `fp : continuousCocycles` to fix all dependent parameters
+  before invoking the zero-class criterion.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-17。
+
+- s1343-17：失败，monitor 84.787 秒，组 RSS 峰值 5264188 KiB，time-v wall 1:24.48，
+  单进程最大 4181780 KiB；worker 峰值 24，affinity 修正 24 次。
+  Typed `fp` still needed namespace qualification at the standard class term;
+  changed to `LocalKummer.padicClassOfCocycle p fp`.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-18。
+
+- s1343-18：失败，monitor 85.647 秒，组 RSS 峰值 5260816 KiB，time-v wall 1:25.37，
+  单进程最大 4180000 KiB；worker 峰值 32，affinity 修正 32 次。
+  Namespace qualification alone was insufficient; the RootTower constructor now
+  receives explicit `(K := K) (Ω := Ω) (a := a ^ p^n)` and the class term explicit
+  `(K := K) (Ω := Ω)`.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-19。
+
+- s1343-19：失败，monitor 83.293 秒，组 RSS 峰值 5259896 KiB，time-v wall 1:22.88，
+  单进程最大 4180016 KiB；worker 峰值 27，affinity 修正 27 次。
+  Even explicit continuousCocycleValue left base proof inference stuck; replaced
+  it with a fully explicit continuousCocycle/isMulCocycle pair for typed Rp.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-20。
+
+- s1343-20：失败，monitor 86.844 秒，组 RSS 峰值 5263436 KiB，time-v wall 1:26.50，
+  单进程最大 4180000 KiB；worker 峰值 32，affinity 修正 32 次。
+  Explicit cocycle pair compiled, but the criterion still inferred the original
+  base parameter and final proof equality did not reduce. Added powered base
+  parameter to `change`, explicit `pow_cocycle` arguments, and proof-irrelevance
+  `convert ... using 1`.
+- 下一次仍仅 Checks.SceneBounds，label=s1343-21。
+
+- s1343-21：成功，monitor 240.936 秒，组 RSS 峰值 9402368 KiB，time-v wall
+  4:00.56，单进程最大 8285512 KiB；Checks.SceneBounds 的 1065 个 `#check`
+  逐名匹配，未检测到 Mathlib 编译。
+- 下一次执行 Axioms.SceneBounds 与 Act1Scene1 聚合收尾构建，label=s1343-22。
+
+- s1343-22：成功，monitor 117.294 秒，组 RSS 峰值 17565772 KiB，time-v wall
+  1:56.93，单进程最大 8282572 KiB；Axioms.SceneBounds 的 862 个
+  `#print axioms` 逐名匹配，公理白名单仅含 `propext`、`Classical.choice`、
+  `Quot.sound`，Act1Scene1 聚合构建通过。
+
+S1-BND-343 最终决定（2026-10-15）：proved / accepted，owner Scene1。
+四个新增叶子及两个 SceneBounds 家族、Scene1 聚合通过；actual
+`rationalClass` 与 `normalizedRationalClass` 非零均已闭合。该结论只针对
+actual standard rational Kummer 类，不证明全局 integral→rational H¹ 单射，
+也不识别 H¹ₑ/BK、crystalline/Frobenius、different untilt、paper volume 或
+联合真实模型。G1–G4 无闸门关闭；`8d73c99` 已推送并与 `origin/main` 一致。
