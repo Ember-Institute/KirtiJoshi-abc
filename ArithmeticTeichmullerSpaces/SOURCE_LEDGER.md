@@ -1989,3 +1989,36 @@ paper carrier/maximal order/weighted normalization和实际theta hull包含仍op
 首轮whnf超时与两轮总耗时348.089s见log4；默认heartbeat重试通过。
 182条公理报告仅含标准允许集合；SceneBounds385/182、总计1036/568。
 新增十个公共声明通过，整体Scene1目标仍open。
+
+## S1.304：actual integral hull/collation 与 Haar 定量消费者
+
+`JT-SCENE1-LOCAL-TENSOR-INTEGRAL-HULL`，路径
+`Act1Scene1/LocalCompletionTensorIntegralHull.lean`，定义actual tensor空间中
+集合U的最小Z_p-submodule integralHull=span(U)和scalar pure generators。
+七个定理证明最小性、hull(iUnion)=iSup(hull)、scalar generators的hull等于
+actual scalar lattice、generator覆盖导出的lattice包含、unit包含、open及
+compact。来源为Joshi III pr:convexes-and-hulls 3597–3609的Z_p-module hull
+描述；由Mathlib独立本地重证，无参考代码复制/import。没有把span命名为已识别
+的paper holomorphic hull，亦未提供direct-sum fields/maximal-order身份。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-COLLATED-INTEGRAL-HULL`，路径
+`Act1Scene1/IutInitialThetaVBadCollatedIntegralHull.lean`，从actual VBad的
+component subsets C(v,k)构造union的integralHull和直接Haar volume。六个定理
+消费generic hull：collation iSup等式、unit upper、由generator覆盖派生whole
+repeated log lattice包含及compactness，然后消费S1.303的Haar lower/log界。
+来源为上述hull组织、le:volume-lemma3 3576–3583、contained-region volume
+argument 3624–3631。量化下界和体积正性不是输入；C的actual generator覆盖、
+component unit包含仍显式保留。索引κ任意，有限collation为特例。
+
+模型域为actual D/合法ρ的普通固定处Fin n重复tensor；empty C没有自动coverage。
+未构造特定D，未从不同untilts/theta/Bloch–Kato来源构造C，也未证明与paper
+weighted volume规范化相同。Prologue-R5→R5，derive，owner Scene1；新增0Core
+假设、退休0字段、迁移0，前置信任不增加。结构性integral hull和其定量消费者
+负担闭合；整体Scene1数学门槛仍open。完整类型和资源见log4 S1-BND-304。
+
+
+2026-10-14 08:21:58 CST最终热构建9307/9307通过，耗时3:19.87，进程组采样
+峰值25870260KiB（约24.672GiB），最大同时Lean workers=3，无Mathlib重编。
+首轮instance重名失败与两轮总耗时329.996s记录log4。199条公理报告仅含标准
+允许集合；源码枚举SceneBounds402/199、全部家族1053/585。17个公共声明
+通过、默认heartbeat；整体Scene1目标仍open。

@@ -162,5 +162,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepeatedRootHaar
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRepeatedHaarProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorVolumeMonotonicity
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRegionVolumeBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorIntegralHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedIntegralHull
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
