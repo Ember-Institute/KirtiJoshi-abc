@@ -3082,3 +3082,31 @@ Classical.choice、Quot.sound。23新公共声明check/axiom完整覆盖。
 （16.827GiB），time-v单进程最大8278028KiB；两轮monitor合计330.460s，
 无失败尝试。默认heartbeat、未重编Mathlib。continuous Z_p module及实际
 Z_p ambient class已闭合；Q_p(1)/H^1_e/BK及完整Scene1仍open。资源见log4 S1.335。
+
+
+## S1.336：Primitive compatible roots and a topological Tate basis
+
+- `JT-SCENE1-LOCAL-KUMMER-PRIMITIVE-TOWER`：`Act1Scene1/LocalKummerPrimitiveTower.lean`。
+  Joshi III 3190–3208 Z_p(1)结构。algebraically closed/CharZero Ω中选primitive
+  p-root，再取其compatible p-power roots，得到第n层exact order p^n的实际
+  Tate generator，caller不供应根或basis。
+- `JT-SCENE1-LOCAL-KUMMER-TATE-BASIS`：`Act1Scene1/LocalKummerTateBasis.lean`。
+  任意Tate sequence逐层写成该generator幂，primitive order给相容exponents，
+  PadicInt.ofIntSeq给p-adic exponent；scalarMap injective/surjective。
+  Z_p compact、Tate product-subspace Hausdorff，推出continuous linear equivalence。
+- `JT-SCENE1-INITIAL-THETA-TATE-COORDINATES`：`Act1Scene1/IutInitialThetaTateCoordinates.lean`。
+  actual D/full-support s的local closure使用同一真实topological Z_p basis；
+  principal-unit cocycle的坐标连续并有重构等式，不是BK logarithm。
+
+原创，无参考源码复制/import；精确Mathlib imports均仅读取匹配缓存。
+Prologue-R5→R5，derive，owner Scene1，Core假设新增0、退休/迁移0，前置信任
+不增加。该basis为拓扑正确Q_p(1)扩张提供前提；Q_p系数、H^1_e/BK/log比较、
+different untilts及joint真实Scene1模型仍open。完整types及资源见log5 S1-BND-336。
+
+验证：Check.SceneBounds9354/9354成功，936条check逐名匹配；显式
+Axioms.SceneBounds/Scene1聚合9376/9376成功，733条公理报告逐名匹配，
+仅含propext、Classical.choice、Quot.sound。26新公共声明check/axiom完整覆盖。
+最终time-v wall=1:50.52、monitor110.800s，组RSS峰值17560568KiB
+（16.747GiB），time-v单进程最大8279100KiB；含4次失败在内的
+六次monitor合计708.411s，所有资源及修复明细见log5 S1.336。默认heartbeat、
+Mathlib未重编；topological Z_p basis与actual坐标闭合，完整Scene1仍open。

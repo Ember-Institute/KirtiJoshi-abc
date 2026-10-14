@@ -131,6 +131,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerPowers
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicModule
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPrimitiveTower
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerTateBasis
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateCoordinates
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -1045,3 +1048,29 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicKummer
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_representative
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_of_rootTower
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.primitiveP
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.primitiveP_spec
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.positiveTower
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generatorValues
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generatorValues_isPrimitive
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generatorValues_succ_pow
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generator
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generator_isPrimitive
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.levelExponent
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.levelExponent_spec
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.levelExponent_compatible
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.exponent
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.exponent_toZModPow
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.padicPower_exponent
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.padicPower_generator_injective
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.scalarMap
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.scalarMap_bijective
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.linearEquiv
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.continuous_scalarMap
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.tateT2Space
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.equiv
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.equiv_apply
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.tateBasis
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycleCoordinate
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycleCoordinate_reconstruct
+#check JoshiTeich.Act1Scene1.LocalKummer.TateBasis.tateAdditiveT2Space

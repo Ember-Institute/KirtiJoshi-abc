@@ -124,6 +124,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerPowers
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicModule
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPrimitiveTower
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerTateBasis
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateCoordinates
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -835,3 +838,29 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicKummer
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_representative
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.padicClass_eq_of_rootTower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.primitiveP
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.primitiveP_spec
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.positiveTower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generatorValues
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generatorValues_isPrimitive
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generatorValues_succ_pow
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generator
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.generator_isPrimitive
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.levelExponent
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.levelExponent_spec
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.levelExponent_compatible
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.exponent
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.exponent_toZModPow
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.padicPower_exponent
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.padicPower_generator_injective
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.scalarMap
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.scalarMap_bijective
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.linearEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.continuous_scalarMap
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.tateT2Space
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.equiv
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.equiv_apply
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.tateBasis
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycleCoordinate
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.cocycleCoordinate_reconstruct
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.TateBasis.tateAdditiveT2Space
