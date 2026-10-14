@@ -2446,3 +2446,42 @@ source sign/target freeze和joint真实模型仍open。完整类型与资源见l
 十二个公共声明通过；359条公理报告仅标准允许集合。失败及三轮monitor总耗时
 368.061s见log4 S1.316；无Mathlib重编。条件性scalar-order转换义务
 显式登记，未当作实际paper反例；整体Scene1仍open。
+
+
+## S1.317：normalization-stable generated hull and actual log collation
+
+`JT-SCENE1-LOCAL-TENSOR-ATTAINED-RESIDUE-MAXIMUM`，路径
+`Act1Scene1/LocalCompletionTensorResidueMaximum.lean`，由actual discrete
+spectral value与uniform boundedness证明bounded tensor set的每个非零coordinate
+范数最大值达到；无需compactness或外给extremum certificate。
+
+`JT-SCENE1-LOCAL-TENSOR-NORMALIZATION-MODULE-HULL`，路径
+`Act1Scene1/LocalCompletionTensorNormalizationHull.lean`，normalizationHull
+定义为actual normalization环上的Submodule.span。位于normalization的residue idempotents与
+逐coordinate最大值重组unit multiplier，证明它等于bounded positive-Haar U
+的actual least principal hull。integralHull预处理不改变此normalization span；
+未假定unit order=normalization，也未沿用“都是Z_p module所以相等”的推断。
+
+`JT-SCENE1-INITIAL-THETA-COLLATED-NORMALIZATION-HULL`，路径
+`Act1Scene1/IutInitialThetaFixedModuliCollatedNormalizationHull.lean`，从actual D、
+共同moduli v的合法tuple及C的union构造normalization-module collation。
+ordinary log scalar generators的coverage派生integral span正Haar，C位于
+normalization派生其boundedness；构造的region等于该integral span的true
+principal hull，故compact/positive finite Haar；得到canonical relativeFactor^card
+的corrected normalization volume下界及unit上界。coverage和unit containment
+仍为显式几何来源义务，不构造真实theta/BK/different-untilt证书。
+
+来源为Joshi III3568–3574、3597–3609、3624–3631与本工程已证实际代数/谱范数/Haar。
+本单元原创，无新参考代码复制/import。Prologue-R5→R5，derive，owner Scene1；
+新增Core假设0、退休字段0、迁移0，前置信任不增加。S1.316 scalar hull合并的
+order身份判据保留，本路径通过normalization saturation解决，无需增加order
+identity假设。paper norm/处集/weighted thetaVolume、source sign/target freeze、
+joint真实模型及最终Corollary3.12仍open。完整类型与资源见log4 S1-BND-317。
+
+
+2026-10-14 11:54:05 CST显式里程碑热构建9334/9334通过，耗时1:44.95，组RSS采样峰值
+17650708KiB（约16.833GiB），同时Lean workers峰值2。
+先前check家族9311/9311通过，耗时2:41.55，峰值9390424KiB（约
+8.955GiB）；23公共声明覆盖，382条公理报告仅标准允许集合。
+四轮总monitor耗时523.607s与失败原因见log4 S1.317；无Mathlib重编。
+actual normalization-stable collation→principal hull→local量化桥闭合，整体Scene1仍open。
