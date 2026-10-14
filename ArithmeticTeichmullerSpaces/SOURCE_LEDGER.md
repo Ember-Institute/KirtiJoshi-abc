@@ -3399,6 +3399,20 @@ Checks.SceneBounds 1074/1074、Axioms.SceneBounds 871/871，Scene1 聚合通过�
 标准允许集合；资源见 `docs/Scene1进度总览.md`。数学提交 `e349ee0` 已推送并与
 `origin/main` 一致。
 
+## S1.353：Canonical Tate-family q-pilot bundle
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-TATE-QPILOT-DATA`：
+  `Act1Scene1/IutInitialThetaCanonicalTateQPilotData.lean`；由 link Tate family
+  与实际 `iutInitialThetaTateParameterData D` 等式派生 q-pilot source、carrier 和
+  degree-one weighted normalization。
+
+消费 `ofInitialThetaCanonicalTateData` 与现有 normalization audit；原创适配，无参考
+源码复制/import。Prologue-R5→R5，derive，owner Scene1；Core 假设/退休/迁移增量均 0。
+不构造 analytic packet/hull/volume/accounting，也不识别 paper theta/BK/different-untilt。
+验证：Checks.SceneBounds 1075/1075、Axioms.SceneBounds 872/872，Scene1 聚合通过，
+公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。数学提交 `abb5cd5` 已推送
+并与 `origin/main` 一致。
+
 ## S1.346：Canonical actual q-pilot strict subprobability bound
 
 - `JT-SCENE1-INITIAL-THETA-CANONICAL-SUBPROBABILITY-BOUND`：
