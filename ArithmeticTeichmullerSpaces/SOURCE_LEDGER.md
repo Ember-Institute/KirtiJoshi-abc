@@ -2991,3 +2991,34 @@ Classical.choice、Quot.sound，15新公共声明check/axiom覆盖完整。
 （16.826GiB），time-v单进程最大8274644KiB。三轮monitor合计388.509s，
 首轮elaboration错误与修复见log4 S1.332；Mathlib未重编、默认heartbeat。
 continuous H1类与根塔选择独立性已闭合，H^1_e/BK身份及完整Scene1仍open。
+
+
+## S1.333：Kummer classes in standard continuous cohomology
+
+- `JT-SCENE1-CONTINUOUS-H1-HOMOGENEOUS`：`Act1Scene1/ContinuousH1Homogeneous.lean`。
+  Mathlib齐次continuous cochain complex的一次crossed-homomorphism bridge，
+  F(g,h)=f(h)-f(g)，对角作用invariant且dF=0；continuous orbit给boundary，
+  coboundary-related cocycles给相同standard class。
+- `JT-SCENE1-LOCAL-KUMMER-MATHLIB-COHOMOLOGY`：`Act1Scene1/LocalKummerMathlibCohomology.lean`。
+  actual inverse-limit Tate group的Additive continuous Z-linear TopRep，
+  multiplicative cocycles转additive，并从explicit continuousH1商构造
+  well-defined map到Mathlib continuousCohomology 1。
+- `JT-SCENE1-INITIAL-THETA-MATHLIB-KUMMER`：`Act1Scene1/IutInitialThetaMathlibKummer.lean`。
+  Joshi III 3190–3208，actual D/full-support s的p* principal unit standard
+  cohomology class，直接代表身份及根塔选择独立性消费者。
+
+冻结Mathlib已有ContCohomology.Basic/LowDegree；LowDegree目前仅有H0/invariants
+识别，此处提供缺少的H1 bridge。原创，无参考源码复制/import；精确导入已缓存
+模块，不重编Mathlib。Prologue-R5→R5，derive，owner Scene1，Core假设新增0、
+退休/迁移0，前置信任不增加。standard ambient continuousH1不等于H^1_e，
+crystalline/Frobenius/BK/log comparison及joint真实Scene1模型仍open。
+完整types、动态边界及资源见log4 S1-BND-333。
+
+
+验证：Check.SceneBounds9345/9345通过，871条check逐名核对；显式Axioms/
+Scene1聚合9367/9367成功，668条公理报告逐名核对，仅含propext、
+Classical.choice、Quot.sound。21新公共声明check/axiom完整覆盖。
+最终time-v wall=1:49.04、monitor109.519s，组RSS峰值17537968KiB
+（16.726GiB），time-v单进程最大8276048KiB。八轮monitor总耗时801.481s，
+六轮elaboration错误及修复、全部资源见log4 S1.333；默认heartbeat，未重编
+Mathlib。standard ambient class已构造，H^1_e/BK与完整Scene1仍open。

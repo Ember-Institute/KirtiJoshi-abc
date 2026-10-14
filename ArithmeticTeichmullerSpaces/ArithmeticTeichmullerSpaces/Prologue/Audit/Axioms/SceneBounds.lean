@@ -115,6 +115,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerContinuity
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaContinuousKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerClass
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Homogeneous
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMathlibCohomology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMathlibKummer
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -766,3 +769,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycleValue
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.kummerClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.kummerClass_eq_of_rootTower
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.homogeneous
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.homogeneous_apply
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cochain
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cochain_closed
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cyclesKerIso
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cycle
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cycle_i
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.classOf
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.orbit
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.classOf_eq_of_coboundary
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tateRepresentation
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tateTopRep
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.additiveCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.additiveCocycle_law
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.mathlibClassOfCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.mathlibClassOfCocycle_eq
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.toMathlibH1
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.toMathlibH1_class
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_representative
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_of_rootTower

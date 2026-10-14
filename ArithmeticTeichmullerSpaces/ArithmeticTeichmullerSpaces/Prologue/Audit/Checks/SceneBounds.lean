@@ -122,6 +122,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerContinuity
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaContinuousKummer
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerClass
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Homogeneous
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMathlibCohomology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMathlibKummer
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -976,3 +979,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerClass
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.continuousCocycleValue
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.kummerClass
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.kummerClass_eq_of_rootTower
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.homogeneous
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.homogeneous_apply
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cochain
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cochain_closed
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cyclesKerIso
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cycle
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cycle_i
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.classOf
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.orbit
+#check JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.classOf_eq_of_coboundary
+#check JoshiTeich.Act1Scene1.LocalKummer.tateRepresentation
+#check JoshiTeich.Act1Scene1.LocalKummer.tateTopRep
+#check JoshiTeich.Act1Scene1.LocalKummer.additiveCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.additiveCocycle_law
+#check JoshiTeich.Act1Scene1.LocalKummer.mathlibClassOfCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.mathlibClassOfCocycle_eq
+#check JoshiTeich.Act1Scene1.LocalKummer.toMathlibH1
+#check JoshiTeich.Act1Scene1.LocalKummer.toMathlibH1_class
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_representative
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_of_rootTower
