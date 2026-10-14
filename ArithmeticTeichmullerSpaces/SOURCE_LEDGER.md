@@ -3022,3 +3022,32 @@ Classical.choice、Quot.sound。21新公共声明check/axiom完整覆盖。
 （16.726GiB），time-v单进程最大8276048KiB。八轮monitor总耗时801.481s，
 六轮elaboration错误及修复、全部资源见log4 S1.333；默认heartbeat，未重编
 Mathlib。standard ambient class已构造，H^1_e/BK与完整Scene1仍open。
+
+
+## S1.334：Multiplicative Kummer map and scalar laws for actual units
+
+- `JT-SCENE1-CONTINUOUS-H1-LINEARITY`：`Act1Scene1/ContinuousH1Linearity.lean`。
+  齐次cochain/cycle/class构造保加法，目标仍为Mathlib标准continuousH1。
+- `JT-SCENE1-LOCAL-KUMMER-MULTIPLICATIVITY`：`Act1Scene1/LocalKummerMultiplicativity.lean`。
+  Joshi III 3190–3208标准Kummer构造的乘法法律。根塔逐层相乘，cocycle相乘，
+  standard classes相加；chosen roots不要求相乘，canonical root tower由已证
+  choice independence对齐。得到Kˣ到Multiplicative(standard continuousH1)
+  的实际群同态，unit powers对应natural scalar multiples。
+- `JT-SCENE1-INITIAL-THETA-KUMMER-POWERS`：`Act1Scene1/IutInitialThetaKummerPowers.lean`。
+  actual D/full-support s的p* principal unit由已证非零包装为unit，旧standard
+  class等于Kummer同态值；任意n及literal p*次幂的class=标量倍数。
+
+原创，无参考源码复制/import；精确生产叶子imports，无新Mathlib import。
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休/迁移0，前置信任
+不增加。此为乘幂/整数标量会计，不是p*可除性或BK/log comparison。
+H^1_e/crystalline/Frobenius、rational coefficient comparison、different untilts、
+paper thetaVolume及joint真实Scene1模型仍open。完整types及资源见log4 S1-BND-334。
+
+
+验证：Check.SceneBounds9348/9348通过，887条check逐名核对；显式Axioms/
+Scene1聚合9370/9370成功，684条公理报告逐名核对，仅含propext、
+Classical.choice、Quot.sound。16新公共声明check/axiom完整覆盖。
+最终time-v wall=1:53.63、monitor113.859s，组RSS峰值17649940KiB
+（16.832GiB），time-v单进程最大8276960KiB；三轮monitor合计419.220s。
+首轮引理namespace错误及修复、全部资源见log4 S1.334；默认heartbeat、
+Mathlib未重编。乘法性/自然数幂标量关系闭合，H^1_e/BK及完整Scene1仍open。

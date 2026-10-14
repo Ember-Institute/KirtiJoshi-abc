@@ -118,6 +118,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerClass
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Homogeneous
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMathlibCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMathlibKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Linearity
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMultiplicativity
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerPowers
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -790,3 +793,19 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMathlibKummer
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_representative
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_of_rootTower
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cocycle_add_law
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cycle_add
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.classOf_add
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.mul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.mul_root
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.kummerCocycle_mul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.multiplyCocycles
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.mathlibClassOfCocycle_mul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RootTower.mathlibClass_mul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.kummerHom
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.kummerHom_apply
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.kummerHom_pow
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnitUnit
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.mathlibClass_eq_kummerHom
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_pow_class
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalUnit_paperScale_class

@@ -225,5 +225,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerClass
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Homogeneous
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMathlibCohomology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMathlibKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Linearity
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMultiplicativity
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerPowers
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
