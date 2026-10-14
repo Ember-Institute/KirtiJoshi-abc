@@ -2591,3 +2591,41 @@ check家族9318/9318首轮成功，耗时3:29.45、峰值9369468KiB（约
 源码枚举SceneBounds621/418、全家族1272/804。两轮monitor总耗时
 315.979s见log4 S1.320，无失败或Mathlib重编。
 单向selected paper lower-estimate桥闭合，paper身份/source符号/整体Scene1仍open。
+
+
+## S1.321：actual weighted log-measure transfer and old contract assembly audit
+
+`JT-SCENE1-INITIAL-THETA-VBAD-ROOT-PRODUCT-CONTRACTING`，路径
+`Act1Scene1/IutInitialThetaVBadRootProductContracting.lean`，由actual D.global.bad_nonempty
+及逐处relative root factor∈(0,1)推出raw/normalized VBad product<1，再由精确
+negative-log身份推出reference absLogQ>0，无外给非空或正性certificate。
+
+`JT-SCENE1-INITIAL-THETA-VBAD-HULL-LOG-MEASURE-TRANSFER`，路径
+`Act1Scene1/IutInitialThetaVBadHullLogTransfer.lean`，packetLogWeight实际定义为
+placeWeight(v)/tensor finrank，其中placeWeight=localDeg/global finrank；它不是
+inertDeg/global finrank的qPilotWeight。local packetLogVolume=log(actual
+normalization Haar(region).toReal)。从positive finite measure与global Haar product
+证明log(global volume)=ΣpacketLogWeight*packetLogVolume，权重严格正、local log≤0，
+因此总log≤0。未假设或输入transfer身份，也未宣称paper weighted-volume identity。
+
+`JT-SCENE1-INITIAL-THETA-ACTUAL-HULL-TRANSFER-AUDIT`，路径
+`Act1Scene1/IutInitialThetaActualHullTransferAudit.lean`，ordinary-log构造模型在n>0
+时actual logVolume<0；当前Scene1 logVolume≥0故二者不同。即使只接收packet/hull
+weights非负及link.logVolume=actual logMeasure，也不存在当前VolumeTransfer。
+排除不依赖thetaBase norm身份；源于旧transfer漏去local log-measure的当前表达式。
+
+来源比较Joshi III3495–3557 Haar/log weighted products及3634–3645 signs。原创
+无新参考代码复制/import。Prologue-R5→R5，derive，owner Scene1；新增Core假设0、
+退休字段0、迁移0，前置信任不增加。保留旧API，未反转符号或取reciprocal；
+source驱动的Core transfer修订和真实theta/BK/untilt、paper norm/carrier/weighted
+volume、mixed-moduli grouping及目标冻结仍open。完整类型与资源见log4 S1-BND-321。
+
+
+2026-10-14 13:53:52 CST最终里程碑9343/9343通过，耗时1:45.95，组RSS采样峰值
+17635932KiB（约16.819GiB），同时Lean workers峰值2。
+check家族9321/9321通过，耗时3:26.78、峰值9386384KiB（约
+8.952GiB）。十三公共声明覆盖；431条公理报告仅标准允许集合。
+源码枚举SceneBounds634/431、全家族1285/817。十轮monitor总耗时1250.743s，
+八次失败及profiler定位见log4 S1.321；无Mathlib重编。generic计算def边界解决
+actual Haar深展开；数学定义不变。actual weighted log-transfer和旧Core身份排除
+闭合，source驱动transfer修订/整体Scene1仍open。
