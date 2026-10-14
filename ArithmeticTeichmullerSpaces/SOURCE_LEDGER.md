@@ -2196,3 +2196,37 @@ loci、different untilts/Bloch–Kato/V_p^oss/L'；S1.305 sign freeze仍open。
 两次失败与三轮总耗时337.388s见log4；271条公理报告仅含标准允许集合。
 源码枚举SceneBounds474/271、总计1125/657；16个公共声明通过、默认heartbeat。
 scalar normalization饱和/Haar identity及实际消费者闭合，整体Scene1目标仍open。
+
+
+## S1.310：normalization 产品身份与 scalar residue principal 区域
+
+`JT-SCENE1-LOCAL-TENSOR-NORMALIZATION-DECOMPOSITION`，路径
+`Act1Scene1/LocalCompletionTensorNormalizationDecomposition.lean`，证明实际
+Tensor元素IsIntegral Z_p当且仅当每个maximal residue坐标integral。逆向通过
+finite product of residue integral closures中的tuple的integrality，再用actual
+residueDecomposition的injective Z_p algebra map回传；不输入surjectivity证书。
+构造normalizationResidueMap并证明bijective，得到normalizationDecomposition
+为Z_p algebra等价到residue integral closures产品，逐坐标evaluate=quotient。
+原创本地证明，无参考代码复制/import。
+
+`JT-SCENE1-LOCAL-TENSOR-SCALAR-RESIDUE-REGION`，路径
+`Act1Scene1/LocalCompletionTensorScalarResidueRegion.lean`。给定actual Packet
+和nonzero factor tuple z，证明pure(z)unit，每个residue multiplier为unit/nonzero；
+‖z_i‖≤1时multiplier integral。对所有actual tensor元素x证明
+x∈scalarNormalization(z) iff每个坐标属于lambda_I*integralClosure_I，inverse
+witness由residueDecomposition.symm构造；覆盖双向而非仅包含。来源比较为
+Joshi III 3568–3574的componentwise principal-region形状。
+
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休0字段、迁移0，
+前置信任不增加。闭合actual normalization产品身份和scalar-region exact形状。
+O_I此处是actual integralClosure，尚未证明residue-field unit norm ball身份；
+也未给任意U的least hull存在、different untilt/Bloch–Kato/theta loci来源、paper
+V_p^oss/L'/weighted-volume或最终source sign freeze。整体Scene1目标仍open。
+完整公共类型、动态边界及资源见log4 S1-BND-310。
+
+
+2026-10-14 09:32:40 CST最终热构建9318/9318通过，耗时2:45.69，进程组采样
+峰值25882652KiB（约24.684GiB），最大同时Lean workers=3，无Mathlib重编。
+两次失败与三轮总耗时314.494s见log4；282条公理报告仅含标准允许集合。
+源码枚举SceneBounds485/282、总计1136/668；11个公共声明通过、默认heartbeat。
+normalization产品身份和scalar componentwise形状闭合，整体Scene1目标仍open。

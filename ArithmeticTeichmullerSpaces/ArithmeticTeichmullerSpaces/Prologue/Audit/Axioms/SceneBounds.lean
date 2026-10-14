@@ -66,6 +66,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationHaar
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarNormalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliNormalizationVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationDecomposition
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorScalarResidueRegion
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -341,3 +343,14 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliNormaliz
 #print axioms JoshiTeich.Act1Scene1.FixedModuliThetaNormalization.volume_eq_unitVolume
 #print axioms JoshiTeich.Act1Scene1.FixedModuliThetaNormalization.volume_eq_relativeFactor_pow
 #print axioms JoshiTeich.Act1Scene1.FixedModuliThetaNormalization.volume_choice_independent
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.isIntegral_iff_residue_integral
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationResidueMap
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationResidueMap_bijective
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationDecomposition
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationDecomposition_apply
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.pure_isUnit
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarResidueMultiplier
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarResidueMultiplier_isUnit
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarResidueMultiplier_ne_zero
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.scalarResidueMultiplier_isIntegral
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_scalarNormalization_iff_residue_principal
