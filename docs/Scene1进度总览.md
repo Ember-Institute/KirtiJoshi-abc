@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.354：canonical Tate-only q-order 对齐 |
-| 数学证明基线 | `d88a1fe`，S1.354 已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.355：Tate-only q-pilot 到 reference absLogQ 桥 |
+| 数学证明基线 | `4dcd2e3`，S1.355 已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.354 canonical Tate-only q-order 对齐已验收并推送；Scene1 仍未完成 |
-| 当前推进位置 | Tate-only q-pilot 的局部 q-order 已与 actual admissible-prime q-order 对齐；reference 总和、analytic base 和最终 paper/theta 身份仍未推出 |
+| 数学工作状态 | S1.355 Tate-only q-pilot reference absLogQ 桥已验收并推送；Scene1 仍未完成 |
+| 当前推进位置 | Tate-only q-pilot 的完整 absLogQ 已与 actual reference q-pilot 对齐；paper accounting、analytic base 和最终 theta 身份仍未推出 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.354 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.355 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -160,6 +160,7 @@ flowchart TD
 | 条件性 canonical Corollary 3.12 消费者 | 🔵 条件性完成 | S1.352 在显式 actual hull、q-family、q-sum、normalization 和四个 side conditions 下得到 `Corollary312` | 从真实来源模型推出全部输入条件；完成 G1-G4 的最终身份与审计 | G1、G2、G3、G4；[log5 S1.352](开发计划.V1Act1log5.md#s1352-条件性-canonical-corollary-312-消费者) |
 | canonical Tate q-pilot bundle | 🔵 条件性完成 | S1.353 仅用 link Tate family 与实际 `iutInitialThetaTateParameterData` 等式派生 q-pilot source、carrier 和 degree-one normalization | 构造真实 Tate family 等式，并补齐 analytic Scene1 base、packet/hull、volume/accounting | G2、G4；[log5 S1.353](开发计划.V1Act1log5.md#s1353-canonical-tate-q-pilot-bundle) |
 | canonical Tate q-order alignment | 🟢 已闭合（Tate-only source 范围） | S1.354 逐处证明 Tate-only q-pilot source 的 q-order 等于 actual admissible-prime q-order | 将局部 q-order 等式接入 reference absLogQ 总和，并继续补齐真实 carrier 与 analytic base | G2、G3；[log5 S1.354](开发计划.V1Act1log5.md#s1354-canonical-tate-only-q-order-对齐) |
+| Tate-only reference absLogQ bridge | 🟢 已闭合（Tate-only source 范围） | S1.355 证明 Tate-only Scene1 q-pilot `absLogQ` 等于 actual reference q-pilot `absLogQ` | 将 reference q-pilot 接入 paper representative/target qLogSum accounting | G2、G3；[log5 S1.355](开发计划.V1Act1log5.md#s1355-tate-only-q-pilot-到-reference-abslogq) |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
@@ -176,7 +177,25 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.354
+## 最近单元变化卡：S1.355
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G2/G3 的 Tate-only q-order alignment → full reference q-pilot absLogQ |
+| 实际闭合 | Tate-only Scene1 q-pilot 的完整有限加权和等于 actual reference `InitialThetaData` q-pilot 的 `absLogQ` |
+| 后续获得的前提 | 后续 accounting 可以直接以 reference absLogQ 为中间量，不再依赖整条 link equality |
+| 尚未接通 | reference-to-paper representative/target qLogSum accounting、真实 analytic base、paper theta/BK/different-untilt 仍未建立 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数保持 **0/4** |
+| 信任负担变化 | Prologue R5→R5；新增 Core 假设 0，新增外部证明证书 0，退休／转入／取出均 0 |
+| 来源与依赖 | 消费 S1.353 Tate-only bundle 和 S1.354 q-order alignment；新增叶子为原创适配 |
+| 工程验证范围 | Checks.SceneBounds 1077 条 check、Axioms.SceneBounds 874 条公理报告逐名匹配；Scene1 聚合通过；1 个新增公共声明覆盖 |
+| 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
+| 构建资源 | 统一 Lake 构建 187.36 秒（3分07.36秒），峰值 RSS 8,289,540 KiB；窄叶 110.29 秒，峰值 8,174,736 KiB；未重编 Mathlib |
+| 交付状态 | `4dcd2e3` 已推送；已核对该证明提交与 `origin/main` 一致 |
+| 完整边界 | [log5 S1-BND-355](开发计划.V1Act1log5.md#s1355-tate-only-q-pilot-到-reference-abslogq) |
+| 生产证明 | [Tate-only reference bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalTateQPilotReferenceBridge.lean) |
+
+## 历史单元记录：S1.354
 
 | 项目 | 变化 |
 | --- | --- |

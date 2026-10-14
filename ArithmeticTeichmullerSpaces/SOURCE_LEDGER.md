@@ -3426,6 +3426,19 @@ theta/BK/different-untilt 身份。验证：Checks.SceneBounds 1076/1076、Axiom
 873/873，Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
 数学提交 `d88a1fe` 已推送并与 `origin/main` 一致。
 
+## S1.355：Tate-only q-pilot reference absLogQ bridge
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-TATE-QPILOT-REFERENCE`：
+  `Act1Scene1/IutInitialThetaCanonicalTateQPilotReferenceBridge.lean`；证明 Tate-only
+  Scene1 q-pilot `absLogQ` 等于 actual reference `InitialThetaData` q-pilot `absLogQ`。
+
+消费 S1.353 Tate-only bundle、S1.354 q-order alignment、actual finite carrier 和
+reference q-pilot definition；原创适配，无参考源码复制/import。Prologue-R5→R5，derive，
+owner Scene1；Core 假设/退休/迁移增量均 0。未构造 paper 未加权 accounting、theta/BK/
+different-untilt 身份。验证：Checks.SceneBounds 1077/1077、Axioms.SceneBounds 874/874，
+Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。数学提交
+`4dcd2e3` 已推送并与 `origin/main` 一致。
+
 ## S1.346：Canonical actual q-pilot strict subprobability bound
 
 - `JT-SCENE1-INITIAL-THETA-CANONICAL-SUBPROBABILITY-BOUND`：
