@@ -72,6 +72,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBallRegions
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueNormDiscrete
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorPrincipalRegions
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorResidueBounds
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHaarSubspaces
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorBoundedHull
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -383,3 +386,13 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorPrincipalRegi
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.mem_principalRegion_iff
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_principalRegion_of_radii
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_integral_principalHull
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_closedBall_subset_normalization
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_uniform_residueNorm_bound
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.normalizationHaar_submodule_eq_zero
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_residue_ne_zero_of_haar_pos
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.principalLinearEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.principalRegion_isCompact
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.principalRegion_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.principalRegion_haar_pos_lt_top
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_bounded_principalHull
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.exists_least_positiveHaar_hull

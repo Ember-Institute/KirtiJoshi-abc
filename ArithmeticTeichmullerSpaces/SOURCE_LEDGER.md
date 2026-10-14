@@ -2305,3 +2305,42 @@ weighted-volume与最终source sign freeze仍open。完整签名和资源见log4
 首轮失败与两轮总耗时246.909s见log4；307条公理报告仅含标准允许集合。
 源码枚举SceneBounds510/307、总计1161/693；8个公共声明通过、默认heartbeat。
 actual discrete radii和条件integral least principal hull闭合，整体Scene1目标仍open。
+
+
+## S1.313：一般 bounded positive-Haar tensor region 的 least principal hull
+
+`JT-SCENE1-LOCAL-TENSOR-BOUNDED-RESIDUES`，路径
+`Act1Scene1/LocalCompletionTensorResidueBounds.lean`，从actual unit lattice邻域
+与unit≤normalization派生normalization含正半径球；scalar contraction把任意
+bounded U送入normalization，spectral base extension给所有residue norm的统一界。
+不输入spectral与tensor拓扑比较证书。
+
+`JT-SCENE1-LOCAL-TENSOR-HAAR-RESIDUE-WITNESSES`，路径
+`Act1Scene1/LocalCompletionTensorHaarSubspaces.lean`，证明actual proper Q_p
+subspace的normalization Haar测度为0；positive Haar U不可能包含于任一maximal
+ideal，因此每residue coordinate有非零点，不作为额外输入。
+
+`JT-SCENE1-LOCAL-TENSOR-BOUNDED-LEAST-HULL`，路径
+`Act1Scene1/LocalCompletionTensorBoundedHull.lean`，从unit multiplier构造actual
+Q_p principal linear equivalence，证明principal region compact/open与positive
+finite Haar。coordinate sup用上述uniform bounds及nonzero witnesses消费S1.312
+least radii，构造任意bounded positive normalization-Haar U的least principal
+hull，对所有unit principal candidates最小。不再限制U⊆normalization。
+
+经逐文件许可证审查改写reference Hull.lean，原提交
+fe96f99cae5c6d48d25113163f1b9b388fc35814，快照07cb1da58f6d428a670dbb5dd6093d428bcbcdd8，
+Git作者Christian Merten，文件作者The iut contributors，Apache-2.0来源头及
+通知保留，LICENSES.md登记；无Iut import/参考依赖。paper比较为Joshi III
+3568–3574的componentwise principal形状，不接受参考最终3.12结论。
+
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，前置
+信任不增加。閉合actual bounded positive-Haar least hull与topology/Haar输出。
+未构造真实theta locus U或untilt/Bloch–Kato输入，paper norm/weighted-volume/
+V_p^oss/L'/global thetaVolume及source sign freeze仍open；完整记录见S1-BND-313。
+
+
+2026-10-14 10:29:56 CST最终热构建9325/9325通过，耗时2:15.12，进程组采样
+峰值25858352KiB（约24.660GiB），最大同时Lean workers=3，无Mathlib重编。
+三次失败与四轮总耗时392.991s见log4；317条公理报告仅含标准允许集合。
+源码枚举SceneBounds520/317、总计1171/703；10个公共声明通过、默认heartbeat。
+actual bounded positive-Haar least hull及拓扑/测度性质闭合，整体Scene1目标仍open。

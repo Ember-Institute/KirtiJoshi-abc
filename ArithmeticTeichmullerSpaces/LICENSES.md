@@ -117,3 +117,23 @@ Mathlib4 通过本地 path 依赖使用，不复制其源文件到本工程。�
   principal-region norm 判据，适配实际 Packet。两目标保留原路径、提交、作者、
   版权和许可证通知。积分区域 U 的 coordinate-sup least-hull 消费者为本地构造。
 - 无 Iut 导入、参考依赖、junk quotient 或自由体积合同；构建及审计见 log4 S1-BND-312。
+
+
+## S1.313：bounded residues、Haar subspace nullity 与 least hull
+
+- 来源：`refer/iut/Iut/Concrete/LocalConstruct/Hull.lean`，原提交
+  `fe96f99cae5c6d48d25113163f1b9b388fc35814`，快照
+  `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`；Git 作者 Christian Merten，
+  文件作者、版权 The iut contributors（2026），Apache-2.0 在复制前复核。
+- 目标：`Act1Scene1/LocalCompletionTensorResidueBounds.lean`、
+  `Act1Scene1/LocalCompletionTensorHaarSubspaces.lean`、
+  `Act1Scene1/LocalCompletionTensorBoundedHull.lean`。
+- source-id：`JT-SCENE1-LOCAL-TENSOR-BOUNDED-RESIDUES`、
+  `JT-SCENE1-LOCAL-TENSOR-HAAR-RESIDUE-WITNESSES`、
+  `JT-SCENE1-LOCAL-TENSOR-BOUNDED-LEAST-HULL`。
+- 改写：bounded set 的 residue norm estimate、proper Q_p subspace nullity 与
+  positive Haar coordinate witness、coordinate supremum least hull。使用 actual
+  Packet/normalization Haar；不移植参考 admissible 接口、junk quotient 或 volume laws。
+  Principal hull 的 topology/Haar 输出在本工程用 actual linear equivalence 重证。
+- 三目标保留原路径、作者、提交、版权和许可证通知，无 Iut import 或参考依赖。
+  完整验证见 log4 S1-BND-313。
