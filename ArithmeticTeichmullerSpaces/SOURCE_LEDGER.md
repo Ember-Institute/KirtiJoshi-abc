@@ -2161,3 +2161,38 @@ thetaVolume身份或different untilt/Bloch–Kato来源；整体Scene1目标仍o
 两次失败与三轮总耗时357.787s见log4；255条公理报告仅含标准允许集合。
 源码枚举SceneBounds458/255、总计1109/641；16个公共声明通过、默认heartbeat。
 actual normalization finite/compact及Haar倍率闭合，整体Scene1目标仍open。
+
+
+## S1.309：scalar normalization 饱和与 degree Haar 公式
+
+`JT-SCENE1-LOCAL-TENSOR-SCALAR-NORMALIZATION`，路径
+`Act1Scene1/LocalCompletionTensorScalarNormalization.lean`，由actual tensor
+multiplication证明scale(z)=乘以pure(z)，构造scalarNormalization=normalization
+的scaleIntegral像。证明原scalar lattice包含其中、它对normalization乘法稳定、
+并是包含原lattice的此类Z_p模块中最小者；contracting/integral z下它包含于
+normalization，且非零z下compact。实际normalization Haar给det norm，新的
+normalizationDegreeVolume在此扩大region上等于旧degreeVolume在原scalar
+lattice上的值。来源为actual integral closure/scale/det/Haar和Joshi III
+scalar maximal-order shape 3568–3574的比较；原创本地证明，无参考代码复制/import。
+
+`JT-SCENE1-INITIAL-THETA-FIXED-MODULI-NORMALIZATION-VOLUME`，路径
+`Act1Scene1/IutInitialThetaFixedModuliNormalizationVolume.lean`，从actual D、
+同一moduli处的合法source tuple及ordinary logValue构造饱和region，用新的
+normalization Haar定义corrected volume。三个定理消费generic degree identity
+和S1.306消费者，证明等于旧unitVolume、canonical relative factor^card，且
+不依赖合法over-place tuple选择。私有nonzero证明来自actual root，不增加假设。
+
+Prologue-R5→R5，derive，owner Scene1；新增Core假设0、退休字段0、迁移0，
+前置信任不增加。闭合scalar-region normalization-module最小扩大及其Haar
+量化、实际log tuple消费者。不等同两integral structures或同一region的两Haar；
+保持数值公式是region与measure同时调整。least property不提供任意U的least
+componentwise principal hull，未识别paper residue norms/weighted volume/theta
+loci、different untilts/Bloch–Kato/V_p^oss/L'；S1.305 sign freeze仍open。
+完整类型、动态边界和资源见log4 S1-BND-309；整体Scene1目标未完成。
+
+
+2026-10-14 09:14:24 CST最终热构建9316/9316通过，耗时3:07.46，进程组采样
+峰值25848812KiB（约24.651GiB），最大同时Lean workers=3，无Mathlib重编。
+两次失败与三轮总耗时337.388s见log4；271条公理报告仅含标准允许集合。
+源码枚举SceneBounds474/271、总计1125/657；16个公共声明通过、默认heartbeat。
+scalar normalization饱和/Haar identity及实际消费者闭合，整体Scene1目标仍open。
