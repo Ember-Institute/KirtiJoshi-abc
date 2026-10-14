@@ -39,9 +39,9 @@
 | --- | --- |
 | 更新日期 | 2026-10-14（Asia/Shanghai） |
 | 最近完成的数学单元 | S1.339：ordinary log 同态、实际单位幂律及无限阶 |
-| 数学证明基线 | S1.339 验证源码；本次提交标识待生成（上次已推送数学提交为 `d13ce04`） |
+| 数学证明基线 | `0eadf99dbb739874e09075fbd3c23573a2095d75`，已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.339 数学与构建验收通过，待本次提交推送；连续工作流保持 active |
+| 数学工作状态 | S1.339 已验收并推送；连续工作流保持 active，下一数学单元尚未开始 |
 | 当前推进位置 | 标准 H¹ 系数比较已完成；ordinary log 群律和 actual principal unit 无限阶已证明，BK 身份仍待连接 |
 | 尚未接通的主要连接 | H¹ₑ 的整性及核约定、H¹ₑ/BK 比较（含实际类非零）、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
 | Prologue 边界 | R5；S1.339 新增 Core 假设 0，退休 0，转入 0，取出 0 |
@@ -161,7 +161,7 @@ flowchart TD
 | 工程验证范围 | SceneBounds 1016 条 check、813 条公理报告逐名匹配；Scene1 聚合构建通过；21 个新公共声明全部覆盖 |
 | 公理结果 | 仅含 `propext`、`Classical.choice`、`Quot.sound` |
 | 构建资源 | 五次构建累计 624.594 秒（10分24.594秒），含两次失败；进程组峰值 RSS 16.794 GiB；未重编 Mathlib |
-| 交付状态 | 已验收，待提交并立即推送；推送后更新证明提交与交付状态 |
+| 交付状态 | `0eadf99` 已推送；已核对该证明提交与 origin/main 一致 |
 | 完整边界 | [log5 S1-BND-339](开发计划.V1Act1log5.md#s1339-动态边界ordinary-p-adic-log-同态与实际单位幂律) |
 | 生产证明 | [ordinary log 同态](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalPadicLogHomomorphism.lean)、[实际单位和标量公式](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPrincipalUnitLogLaws.lean) |
 
