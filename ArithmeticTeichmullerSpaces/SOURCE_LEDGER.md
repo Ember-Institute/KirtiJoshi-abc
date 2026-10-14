@@ -3372,6 +3372,20 @@ untilt 联合模型仍 open。验证：Checks.SceneBounds 1071/1071、Axioms.Sce
 869/869，Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
 数学提交 `79c41a1` 已推送并与 `origin/main` 一致。
 
+## S1.351：Canonical actual q-pilot to qProduct lower-bound bridge
+
+- `JT-SCENE1-INITIAL-THETA-CANONICAL-VBAD-QPRODUCT-BRIDGE`：
+  `Act1Scene1/IutInitialThetaCanonicalVBadQProductBridge.lean`；在 actual hull
+  volume、显式 q-family、`ellStar = n` 和 selected paper q-sum accounting 条件下，证明
+  `exp (-(n * canonicalAbsLogQ)) ≥ qProduct`。
+
+消费 S1.350 canonical thetaVolume exponential bridge、actual VBad collation 的
+generator/normalization 条件和 q-family lower-bound consumer；原创适配，无参考源码
+复制/import。Prologue-R5→R5，derive，owner Scene1；Core 假设/退休/迁移增量均 0。
+不识别真实 paper theta/BK/different-untilt 身份。验证：Checks.SceneBounds 1073/1073、
+Axioms.SceneBounds 870/870，Scene1 聚合通过，公理仅含标准允许集合；资源见
+`docs/Scene1进度总览.md`。数学提交 `e599709` 已推送并与 `origin/main` 一致。
+
 ## S1.346：Canonical actual q-pilot strict subprobability bound
 
 - `JT-SCENE1-INITIAL-THETA-CANONICAL-SUBPROBABILITY-BOUND`：
