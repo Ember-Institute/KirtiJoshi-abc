@@ -3954,6 +3954,8 @@ Axioms.SceneBounds 952/952 与 Scene1 聚合通过，公理仅含 `propext`、`C
 
 | `JT-ATS-PROLOGUE-OBLIGATIONS-SORRY-CONSTRUCTORS` | `Prologue/Obligations/Constructors.lean` placeholder constructors (rejected) | negative source evidence；the four constructors use `sorry` and are excluded from Scene1 | Constructors.lean:11–34; Scene1 plan §0.3/§4 and V1 no-`sorryAx` policy | rejected as inadmissible source |
 
+| `JT-SCENE1-ACTUAL-HULL-VOLUMETRANSFER-SIGN-OBSTRUCTION` | `Scene1Input.logVolume_ne_log_actualHull`; `not_VolumeTransfer_of_actualHull_logVolume` | actual ordinary-log hull cannot fill current `VolumeTransfer.logVolume` under nonnegative weights；Scene1/Derived | `VBadThetaLogCollation.log_volume_neg` and `VolumeTransfer.transferred_volume` sign contradiction | proved negative evidence；transfer carrier/sign review required |
+
 该单元只保留 actual saturated carrier 的非零性，不将其识别为 H¹ₑ、不提供 BK/log 比较或全局
 系数映射单射。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增量均 0。
 
