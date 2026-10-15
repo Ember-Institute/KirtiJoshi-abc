@@ -210,7 +210,7 @@ flowchart TD
 | 工程验收 | Checks.SceneBounds 1107/1107、Axioms.SceneBounds 904/904 与 trace 逐名顺序匹配；Scene1 聚合通过；仅使用 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
 | 累计资源 | 六次热构建合计 656.610 秒（含四次失败）；最大进程组 RSS 17,638,696 KiB（16.82 GiB），采样单进程峰值 8,292,756 KiB；实际 Lean worker 同时峰值 2 |
 | 资源口径 | 每 0.5 秒采样进程组 RSS，85 GiB 停止保护；CPU 0–13，LEAN_NUM_THREADS=10，Lean `-j1`；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学提交待文档同步 |
+| 交付 | 数学提交 `b6cd6cd`；与维护文档一并推送 |
 | 证据 | [paper log-shell bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperLogShellBridge.lean)；log5 S1-BND-361 |
 
 ### S1.361 构建尝试明细
