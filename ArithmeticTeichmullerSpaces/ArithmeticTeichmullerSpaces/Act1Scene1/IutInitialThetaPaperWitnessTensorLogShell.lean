@@ -58,5 +58,12 @@ theorem witness_integralHull_le_tensorLogShell
   change witness D n v ∈ (packet D n v).tensorLogShell
   exact witness_mem_tensorLogShell D n v
 
+theorem witness_integralHull_le_unitLattice_inf_tensorLogShell
+    (v : iutInitialThetaOddModSupportFinset D) :
+    (packet D n v).integralHull {witness D n v} ≤
+      (packet D n v).unitLattice ⊓ (packet D n v).tensorLogShell := by
+  exact le_inf (witness_integralHull_le_unitLattice D n v)
+    (witness_integralHull_le_tensorLogShell D n v)
+
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull
