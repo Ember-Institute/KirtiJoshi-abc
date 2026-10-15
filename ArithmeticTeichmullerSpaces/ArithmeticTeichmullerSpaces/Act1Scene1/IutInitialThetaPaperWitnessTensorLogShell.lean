@@ -216,6 +216,21 @@ theorem witness_integralHull_globalVolume_absLog_eq_negLog :
           (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ))) := by
   rw [abs_of_nonpos (witness_integralHull_globalVolume_log_nonpos D n)]
 
+theorem witness_integralHull_globalVolume_negLog_eq_absLog :
+    -Real.log
+        ((∏ v : iutInitialThetaOddModSupportFinset D,
+          (packet D n v).normalizationDegreeVolume
+            ((packet D n v).normalizationHull
+              ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+          (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ))) =
+      |Real.log
+        ((∏ v : iutInitialThetaOddModSupportFinset D,
+          (packet D n v).normalizationDegreeVolume
+            ((packet D n v).normalizationHull
+              ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+          (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)))| :=
+  (witness_integralHull_globalVolume_absLog_eq_negLog D n).symm
+
 theorem witness_integralHull_globalVolume_absLog_ge_mul_referenceAbsLogQ :
     |Real.log
         ((∏ v : iutInitialThetaOddModSupportFinset D,

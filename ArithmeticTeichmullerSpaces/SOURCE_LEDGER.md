@@ -3917,6 +3917,19 @@ Axioms.SceneBounds 945/945 与 Scene1 聚合通过，公理仅含 `propext`、`C
 `Quot.sound`。一次热构建耗时 `213.47s`、峰值 RSS `8,296,780 kB`、9420 个 Lake 任务；
 未冷建、清缓存或重编 Mathlib。
 
+## S1.396：Actual global negative-log/absolute-log reverse bridge
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-GLOBAL-VOLUME-NEGLOG-ABSLOG-REVERSE-BRIDGE` | `PaperLogWitnessHull.witness_integralHull_globalVolume_negLog_eq_absLog` | reverse equality between actual global negative log and absolute log；Scene1/Derived | S1.393 absolute-log/negative-log bridge and symmetry | proved / accepted |
+
+该定理只重排 actual volume 的两种符号表达，不识别论文 thetaVolume，不构造 H¹ₑ/BK、
+different-untilt 或真实联合模型，也不关闭任何最终闸门。Prologue-R5→R5；derive；owner
+Scene1；Core 假设/退休/转入/取出增量均 0。Checks.SceneBounds 1153/1153、Axioms.SceneBounds
+950/950 与 Scene1 聚合通过，公理仅含 `propext`、`Classical.choice`、`Quot.sound`。
+一次热构建耗时 `227.62s`、峰值 RSS `8,296,508 kB`、9420 个 Lake 任务；未冷建、清缓存或
+重编 Mathlib。
+
 ## S1.392：Actual global volume negative-log nonnegativity
 
 | source-id | declaration | fidelity / boundary | model evidence | status |
