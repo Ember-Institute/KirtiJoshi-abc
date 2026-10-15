@@ -146,6 +146,36 @@ theorem normalizedRationalClass_zsmul_ne_zero
   apply Subtype.ext
   simpa [normalizedSaturatedClass] using h
 
+set_option maxHeartbeats 1000000 in
+theorem rationalClass_zsmul_ne_zero
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    {r : ℤ} (hr : r ≠ 0) :
+    r • rationalClass D s ≠ 0 := by
+  intro h
+  rw [← scale_normalizedRationalClass D s] at h
+  have h' :
+      (LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
+        ℚ_[Arithmetic.residueChar s.1]) •
+        (r • normalizedRationalClass D s) = 0 := by
+    calc
+      (LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
+          ℚ_[Arithmetic.residueChar s.1]) •
+          (r • normalizedRationalClass D s) =
+          (r : ℚ_[Arithmetic.residueChar s.1]) •
+            ((LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
+              ℚ_[Arithmetic.residueChar s.1]) • normalizedRationalClass D s) := by
+        rw [← Int.cast_smul_eq_zsmul ℚ_[Arithmetic.residueChar s.1],
+          smul_smul, smul_smul, mul_comm]
+      _ = r •
+          ((LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
+            ℚ_[Arithmetic.residueChar s.1]) • normalizedRationalClass D s) := by
+        rw [Int.cast_smul_eq_zsmul ℚ_[Arithmetic.residueChar s.1]]
+      _ = 0 := h
+  apply normalizedRationalClass_zsmul_ne_zero D s hr
+  exact (smul_eq_zero.mp h').resolve_left
+    (Nat.cast_ne_zero.mpr (LocalPadicLog.paperScale_ne_zero
+      (Arithmetic.residueChar_prime s.1)))
+
 end PrincipalUnitKummer
 end
 end JoshiTeich.Act1Scene1
