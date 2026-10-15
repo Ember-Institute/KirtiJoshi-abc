@@ -38,8 +38,8 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.398：actual normalized saturated-class nonzero |
-| 数学证明基线 | S1.398 已完成热构建并推送，数学提交为 `18145f4`；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.399：actual normalized saturated-class nontorsion |
+| 数学证明基线 | S1.398 已推送为 `18145f4`；S1.399 已完成叶文件与完整审计热构建，数学提交待本轮推送后回填 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 数学工作状态 | S1.364 一般饱和 log、单射、normalizedRationalClass 成员和 actual witness 求值通过；H¹ₑ/BK 仍 open |
 | 当前推进位置 | G4：p* 除法后的类已进入 p-power 饱和 H¹ 载体并求值为 paper witness；H¹ₑ/BK 等仍 open |
@@ -240,27 +240,39 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.398（已推送）
+## 最近单元变化卡：S1.399（推送前未验收）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：actual normalized saturated-class nontorsion |
+| 实际闭合 | `normalizedSaturatedClass_nsmul_ne_zero` 已通过叶文件热构建 |
+| 未闭合 | qLogSum/target consumer 连接、H¹ₑ/BK 身份、论文 theta/untilt/volume 身份、真实联合模型和最终 accounting |
+| 解决的输入 | S1.398 saturated-log nonzero 与 generic saturated image-log injectivity；`CharZero` natural-cast nonzero |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 工程验收 | Checks.SceneBounds 1158/1158、Axioms.SceneBounds 955/955 与 Scene1 聚合热构建通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
+| 累计资源 | 窄构建累计 521.722 秒；完整审计 154.146 秒；过程组峰值 RSS 25,956,860 KiB，单进程峰值 8,296,796 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；完整审计 9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib |
+| 交付 | 数学、审计和记录变更待本轮推送；`docs/Email.txt` 保持未跟踪且不纳入提交 |
+| 证据 | [saturated Kummer log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSaturatedKummerLog.lean)；log5 S1-BND-399 |
+
+### S1.399 交付构建（推送前）
+
+| 目标 | 结果 | 耗时（秒） | Lake 图任务数 | 最大 RSS（kB） |
+| --- | --- | ---: | ---: | ---: |
+| 叶文件 | 成功 | 174.889 | 9313 | 9,541,184 KiB（过程组；单进程 8,431,760 KiB） |
+
+## 历史单元变化卡：S1.398
 
 | 项目 | 变化 |
 | --- | --- |
 | 推进位置 | G4：actual normalized saturated-class nonzero |
-| 实际闭合 | `normalizedSaturatedClass_ne_zero` 与 `normalizedSaturatedClass_saturatedImageLog_ne_zero` 已通过热构建 |
-| 未闭合 | qLogSum/target consumer 连接、H¹ₑ/BK 身份、论文 theta/untilt/volume 身份、真实联合模型和最终 accounting |
-| 解决的输入 | S1.343 `normalizedRationalClass_ne_zero`、S1.364 saturated-log value equation 与 actual witness nonzero |
+| 实际闭合 | `normalizedSaturatedClass_ne_zero` 与 `normalizedSaturatedClass_saturatedImageLog_ne_zero` |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
-| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
-| 工程验收 | Checks.SceneBounds 1157/1157、Axioms.SceneBounds 954/954 与 Scene1 聚合热构建通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
-| 累计资源 | 一次热构建 260.405 秒；过程组峰值 RSS 25,957,360 KiB，单进程峰值 8,431,948 KiB |
-| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学、审计和记录变更已推送为 `18145f4`；`docs/Email.txt` 保持未跟踪且不纳入提交 |
-| 证据 | [saturated Kummer log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSaturatedKummerLog.lean)；log5 S1-BND-398 |
-
-### S1.398 交付构建（推送前）
-
-| 目标 | 结果 | 耗时（秒） | Lake 图任务数 | 最大 RSS（kB） |
-| --- | --- | ---: | ---: | ---: |
-| 叶文件、SceneBounds checks/axioms 与 Scene1 聚合 | 成功 | 260.405 | 9420 | 25,957,360 KiB（过程组；单进程 8,431,948 KiB） |
+| 工程验收 | Checks.SceneBounds 1157/1157、Axioms.SceneBounds 954/954 与 Scene1 聚合通过 |
+| 交付 | 数学提交 `18145f4` 已推送；总览基线提交 `652a8b7` |
+| 资源 | 260.405 秒；过程组峰值 RSS 25,957,360 KiB，单进程峰值 8,431,948 KiB；9420 个 Lake 任务 |
+| 证据 | log5 S1-BND-398；[saturated Kummer log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSaturatedKummerLog.lean) |
 
 ## 历史单元变化卡：S1.397
 
