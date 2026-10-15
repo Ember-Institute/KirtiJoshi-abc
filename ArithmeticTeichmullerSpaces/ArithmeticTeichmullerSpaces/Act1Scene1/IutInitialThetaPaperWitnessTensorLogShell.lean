@@ -77,6 +77,17 @@ theorem witness_integralHull_localVolume_product_eq_relativeQRootProduct_pow :
     _ = iutInitialThetaRelativeQRootProduct D ^ n := by
       rfl
 
+theorem witness_integralHull_globalVolume_eq_normalizedRelativeQRootProduct_pow :
+    (∏ v : iutInitialThetaOddModSupportFinset D,
+      (packet D n v).normalizationDegreeVolume
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+        (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+      iutInitialThetaNormalizedRelativeQRootProduct D ^ n := by
+  rw [witness_integralHull_localVolume_product_eq_relativeQRootProduct_pow D n,
+    iutInitialThetaNormalizedRelativeQRootProduct,
+    ← Real.rpow_pow_comm (iutInitialThetaRelativeQRootProduct_pos D).le]
+
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     witness D n v ∈ (packet D n v).tensorLogShell := by

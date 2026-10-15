@@ -3791,3 +3791,14 @@ Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Qu
 different-untilt 或最终 accounting。Checks.SceneBounds 1138/1138、Axioms.SceneBounds
 935/935，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
 热构建耗时 `214.48s`、峰值 `8,295,760 kB`、9420 个 Lake 任务。
+
+## S1.382：Actual global degree normalization
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-GLOBAL-DEGREE-NORMALIZATION` | `PaperLogWitnessHull.witness_integralHull_globalVolume_eq_normalizedRelativeQRootProduct_pow` | actual global degree-normalized volume identity；Scene1/Derived | S1.381 raw product, normalized relative product definition, and `Real.rpow_pow_comm` | proved / accepted |
+
+该定理只处理 actual raw product 与全局 finrank 实幂的交换，不识别 paper thetaVolume、
+H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds 1139/1139、Axioms.SceneBounds
+936/936，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
+首次 API 适配失败后，修正构建耗时 `216.49s`、峰值 `8,295,832 kB`、9420 个 Lake 任务。
