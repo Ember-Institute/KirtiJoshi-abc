@@ -4,6 +4,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorLogShellHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorWitnessHull
 
 /-!
 source-id: JT-SCENE1-PAPER-WITNESS-TENSOR-LOG-SHELL
@@ -89,6 +90,22 @@ theorem witness_integralHull_normalizationHull_subset_normalization
       (packet D n v).normalization :=
   (packet D n v).normalizationHull_subset_normalization _
     (witness_integralHull_le_normalization D n v)
+
+theorem witness_integralHull_normalizationHull_haar_pos_lt_top
+    (v : iutInitialThetaOddModSupportFinset D) :
+    0 < (packet D n v).normalizationHaar
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) ∧
+      (packet D n v).normalizationHaar
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) < ⊤ := by
+  apply (packet D n v).normalizationHull_haar_pos_lt_top_of_pure_mem
+    ((packet D n v).integralHull {witness D n v})
+    (fun i => value D (FullSupportThetaLogHull.sourceAt D n v i))
+    (fun i => value_ne_zero D _)
+  · change witness D n v ∈ (packet D n v).integralHull {witness D n v}
+    exact Submodule.subset_span (Set.mem_singleton _)
+  · exact witness_integralHull_le_normalization D n v
 
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull
