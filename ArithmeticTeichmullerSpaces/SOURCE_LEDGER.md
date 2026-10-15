@@ -3847,3 +3847,18 @@ target 或 thetaVolume，也不引入 H¹ₑ/BK、different-untilt 或最终 acc
 1143/1143、Axioms.SceneBounds 940/940，Scene1 聚合通过，公理白名单仍为 `propext`、
 `Classical.choice`、`Quot.sound`。两次失败尝试后成功构建耗时 `217.85s`、峰值
 `8,296,220 kB`、9420 个 Lake 任务；本单元累计 `488.32s`。
+
+## S1.387：Actual global negative-log strict selected-paper upper bound
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-GLOBAL-VOLUME-SELECTED-PAPER-UPPER-BOUND` | `PaperLogWitnessHull.witness_integralHull_globalVolume_negLog_lt_mul_selectedPaperSum` | actual global negative-log strict comparison with the selected paper sum；Scene1/Derived | S1.384 actual negative-log identity, `iutInitialThetaFullBaseQPilotLogSum_lt_selectedPaperSum`, and positive `n` | proved / accepted |
+
+该定理只在 `0 < n` 下证明 ordinary actual witness-hull global negative log 严格小于
+`(n : ℝ) * iutInitialThetaSelectedQRootPaperSum D`。它不把该 volume 识别为论文
+thetaVolume，不构造 H¹ₑ/BK、different-untilt 或真实联合模型，也不关闭任何最终闸门。
+Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增量均 0。
+首次类型不匹配失败后，Checks.SceneBounds 1144/1144、Axioms.SceneBounds 941/941
+与 Scene1 聚合通过，公理仅含 `propext`、`Classical.choice`、`Quot.sound`。
+修正后三目标热构建耗时 `220.64s`、峰值 RSS `8,296,100 kB`、9420 个 Lake 任务；
+本单元累计 `356.65s`。未冷建、清缓存或重编 Mathlib。
