@@ -2,6 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensor
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorLogShellHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorTopology
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
 
 /-!
 source-id: JT-SCENE1-PAPER-WITNESS-TENSOR-LOG-SHELL
@@ -72,6 +73,13 @@ theorem witness_integralHull_isBounded
       Set (packet D n v).Tensor) := by
   exact (packet D n v).unitLattice_isBounded.subset
     (witness_integralHull_le_unitLattice D n v)
+
+theorem witness_integralHull_le_normalization
+    (v : iutInitialThetaOddModSupportFinset D) :
+    (packet D n v).integralHull {witness D n v} ≤
+      (packet D n v).normalization.toSubmodule :=
+  (witness_integralHull_le_unitLattice D n v).trans
+    (packet D n v).unitLattice_le_normalization
 
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull
