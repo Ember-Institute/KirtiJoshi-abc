@@ -3711,3 +3711,14 @@ S1.373 窄审计与 Scene1 聚合耗时 156.31s，最大 RSS 8,295,268 kB，9420
 最终闸门仍 0/4。
 Checks.SceneBounds 1131/1131、Axioms.SceneBounds 928/928；数学提交 `3fd0470` 已推送；
 S1.374 窄审计与 Scene1 聚合耗时 157.34s，最大 RSS 8,295,344 kB，9420 个 Lake 任务。
+
+## S1.375：Nonnegative negative-log of the actual witness hull volume
+
+- `PaperLogWitnessHull.witness_integralHull_normalizationDegreeVolume_negLog_nonneg`：
+  将 S1.374 的 actual log-volume 非正性改写为 negative-log 非负性。
+
+这是 actual volume transfer 的符号输入，不是论文 qLogTerm 裁决；用户决定的暂按笔误
+处理保持不变。无参考源码复制/import；不识别 paper thetaVolume、H¹ₑ/BK 或最终 accounting。
+Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1132/1132、Axioms.SceneBounds 929/929；数学提交 `26cb12c` 已推送；
+S1.375 窄审计与 Scene1 聚合耗时 157.91s，最大 RSS 8,295,368 kB，9420 个 Lake 任务。
