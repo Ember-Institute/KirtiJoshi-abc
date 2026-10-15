@@ -3674,3 +3674,15 @@ measure 输入，不识别 paper thetaVolume、H¹ₑ/BK 或最终 volume accoun
 derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
 Checks.SceneBounds 1128/1128、Axioms.SceneBounds 925/925；数学提交 `afa7b14` 已推送；
 S1.371 窄审计与 Scene1 聚合耗时 155.00s，最大 RSS 8,295,172 kB，9420 个 Lake 任务。
+
+## S1.372：Positive normalization-degree volume for the actual witness hull
+
+- `PaperLogWitnessHull.witness_integralHull_normalizationDegreeVolume_pos`：
+  将 S1.371 的正有限 normalization Haar 转成 actual
+  `normalizationDegreeVolume` 的严格正性。
+
+原创数值消费者组合，无参考源码复制/import。它不识别 paper thetaVolume、H¹ₑ/BK、
+different-untilt 或最终 volume accounting。Prologue-R5→R5；derive；owner Scene1；
+Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1129/1129、Axioms.SceneBounds 926/926；数学提交 `cf5b3a0` 已推送；
+S1.372 窄审计与 Scene1 聚合耗时 153.75s，最大 RSS 8,295,240 kB，9420 个 Lake 任务。
