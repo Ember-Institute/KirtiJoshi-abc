@@ -3637,3 +3637,15 @@ S1.367 窄审计与 Scene1 聚合耗时 160.84s，最大 RSS 8,295,280 kB，9420
 derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
 Checks.SceneBounds 1125/1125、Axioms.SceneBounds 922/922；数学提交 `c7a6dfc` 已推送；
 S1.368 窄审计与 Scene1 聚合耗时 156.00s，最大 RSS 8,295,068 kB，9420 个 Lake 任务。
+
+## S1.369：Actual paper witness integral hull inside normalization
+
+- `PaperLogWitnessHull.witness_integralHull_le_normalization`：将 S1.366 的
+  actual unit-lattice carrier inclusion 沿 `unitLattice_le_normalization` 传到实际
+  normalization submodule。
+
+原创 carrier 组合，无参考源码复制/import。它只证明 normalization 的包含，不识别
+normalization hull、paper theta locus、H¹ₑ/BK 或 volume。Prologue-R5→R5；derive；owner
+Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1126/1126、Axioms.SceneBounds 923/923；数学提交 `3f5285a` 已推送；
+S1.369 窄审计与 Scene1 聚合耗时 164.33s，最大 RSS 8,295,088 kB，9420 个 Lake 任务。
