@@ -3587,3 +3587,16 @@ elaboration，不改变全局配置或数学假设。仍不识别 H¹ₑ/BK，�
 满射或 ℚₚ scalar closure。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移
 增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1120/1120、Axioms.SceneBounds 917/917
 与 trace 逐名匹配；数学提交 `5655baf` 已推送；资源见总览。
+
+## S1.365：Integral tensor hull inside the tensor log-shell
+
+- `LocalCompletion.Packet.integralHull_le_tensorLogShell`：对实际 tensor 中任意
+  `U ⊆ tensorLogShell`，证明其 `ℤ_[p]` integral span 仍包含于 `tensorLogShell`。
+- `PaperLogWitnessHull.witness_integralHull_le_tensorLogShell`：将该 carrier inclusion
+  接到 actual singleton paper witness hull。
+
+原创 carrier 组合，无参考源码复制/import。只使用 Submodule span 闭包和 S1.362 的
+actual witness membership；不识别 normalization hull、paper theta locus、H¹ₑ/BK 或 volume。
+Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1122/1122、Axioms.SceneBounds 919/919；数学提交 `f20d6b0` 已推送；
+S1.365 热构建耗时 115.38s，最大 RSS 8,294,872 kB。
