@@ -3625,3 +3625,15 @@ normalization hull、paper theta locus、H¹ₑ/BK 或 volume。Prologue-R5→R5
 Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
 Checks.SceneBounds 1124/1124、Axioms.SceneBounds 921/921；数学提交 `05465c0` 已推送；
 S1.367 窄审计与 Scene1 聚合耗时 160.84s，最大 RSS 8,295,280 kB，9420 个 Lake 任务。
+
+## S1.368：Bounded actual paper witness integral hull
+
+- `PaperLogWitnessHull.witness_integralHull_isBounded`：消费 actual
+  `unitLattice_isBounded` 与 S1.366 的 carrier inclusion，证明 singleton paper
+  witness 的 `integralHull` bounded。
+
+原创 boundedness 推论，无参考源码复制/import。只提供 bounded carrier 输入，不把它
+升级为 compact、normalization hull、paper theta locus、H¹ₑ/BK 或 volume。Prologue-R5→R5；
+derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1125/1125、Axioms.SceneBounds 922/922；数学提交 `c7a6dfc` 已推送；
+S1.368 窄审计与 Scene1 聚合耗时 156.00s，最大 RSS 8,295,068 kB，9420 个 Lake 任务。
