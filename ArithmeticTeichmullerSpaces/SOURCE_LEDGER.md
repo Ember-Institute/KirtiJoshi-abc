@@ -3862,3 +3862,18 @@ Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增�
 与 Scene1 聚合通过，公理仅含 `propext`、`Classical.choice`、`Quot.sound`。
 修正后三目标热构建耗时 `220.64s`、峰值 RSS `8,296,100 kB`、9420 个 Lake 任务；
 本单元累计 `356.65s`。未冷建、清缓存或重编 Mathlib。
+
+## S1.388：Actual global selected-root product lower bound
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-GLOBAL-VOLUME-SELECTED-ROOT-PRODUCT-LOWER-BOUND` | `PaperLogWitnessHull.witness_integralHull_globalVolume_selectedPaperRootProduct_pow_lt` | actual global volume strictly dominates the selected paper root-product power；Scene1/Derived | S1.383 actual/full-support volume identity and `FullSupportThetaLogHull.selectedPaperRootProduct_pow_lt_volume` | proved / accepted |
+
+该定理只在 `0 < n` 下把 selected paper root-norm product 的 `n` 次幂接到 actual
+witness-hull global volume。它不把该 volume 识别为论文 thetaVolume，不构造 H¹ₑ/BK、
+different-untilt 或真实联合模型，也不关闭任何最终闸门。Prologue-R5→R5；derive；
+owner Scene1；Core 假设/退休/转入/取出增量均 0。首次精确导入遗漏失败后，
+Checks.SceneBounds 1145/1145、Axioms.SceneBounds 942/942 与 Scene1 聚合通过，公理仅含
+`propext`、`Classical.choice`、`Quot.sound`。修正后三目标热构建耗时 `226.52s`、
+峰值 RSS `8,296,116 kB`、9420 个 Lake 任务；本单元累计 `356.05s`。未冷建、清缓存或
+重编 Mathlib。

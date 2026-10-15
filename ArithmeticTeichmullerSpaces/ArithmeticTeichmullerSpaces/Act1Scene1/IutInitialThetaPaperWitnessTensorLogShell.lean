@@ -8,6 +8,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorWitnessHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHullNormalizationBounds
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRepresentativeBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeRamificationGap
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportHullPaperBound
 
 /-!
 source-id: JT-SCENE1-PAPER-WITNESS-TENSOR-LOG-SHELL
@@ -149,6 +150,17 @@ theorem witness_integralHull_globalVolume_negLog_lt_mul_selectedPaperSum
   exact mul_lt_mul_of_pos_left
     (iutInitialThetaFullBaseQPilotLogSum_lt_selectedPaperSum D)
     (by exact_mod_cast hn)
+
+theorem witness_integralHull_globalVolume_selectedPaperRootProduct_pow_lt
+    (hn : 0 < n) :
+    actualSelectedPaperRootNormProduct D ^ n <
+      (∏ v : iutInitialThetaOddModSupportFinset D,
+        (packet D n v).normalizationDegreeVolume
+          ((packet D n v).normalizationHull
+            ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+        (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) := by
+  rw [witness_integralHull_globalVolume_eq_fullSupport_volume D n]
+  exact FullSupportThetaLogHull.selectedPaperRootProduct_pow_lt_volume D n hn
 
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
