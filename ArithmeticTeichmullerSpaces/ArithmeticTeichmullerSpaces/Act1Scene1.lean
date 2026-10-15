@@ -274,4 +274,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawHullCon
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarithm
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogKernel
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

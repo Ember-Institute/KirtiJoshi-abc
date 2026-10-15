@@ -165,6 +165,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetA
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawHullConsumer
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarithm
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogKernel
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
 #print axioms JoshiTeich.Act1Scene1.Scene1Input.one_le_thetaBase_norm
@@ -1068,3 +1069,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarith
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.actualPrincipalUnit
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalImageClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalImageLog_rationalImageClass
+
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.principalImageLog_nsmul
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalImageLog_nsmul_rationalImageClass
+
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.tendsto_principal_prime_power_sub_one
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_eq_zero_iff_exists_prime_power_eq_one
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.principalKummer_eq_zero_iff_log_eq_zero
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.principalImageLog_injective

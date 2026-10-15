@@ -50,5 +50,17 @@ theorem principalImageLog_rationalImageClass
   rw [he, LocalPadicLog.principalImageLog_class]
   exact log_principalUnit_eq_scale_value D s
 
+theorem principalImageLog_nsmul_rationalImageClass
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) (n : ℕ) :
+    LocalPadicLog.principalImageLog (Arithmetic.residueChar s.1)
+        (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
+        (n • rationalImageClass D s) =
+      (n : localField D s) *
+        ((LocalPadicLog.paperScale (Arithmetic.residueChar s.1) : localField D s) *
+          PaperLogWitnessHull.value D s) := by
+  rw [LocalPadicLog.principalImageLog_nsmul]
+  rw [principalImageLog_rationalImageClass]
+  rw [nsmul_eq_mul]
+
 end
 end JoshiTeich.Act1Scene1.PrincipalUnitKummer

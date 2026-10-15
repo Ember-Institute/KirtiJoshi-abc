@@ -136,6 +136,12 @@ theorem principalImageLog_class (hpk : ‖(p : k)‖ < 1)
       padicLog (a.toMul.1 : k) := by
   exact AddMonoidHom.liftOfRightInverse_comp_apply _ _ _ _ a
 
+theorem principalImageLog_nsmul (hpk : ‖(p : k)‖ < 1)
+    (x : principalKummerImage (k := k) (Ω := Ω) p) (n : ℕ) :
+    principalImageLog (Ω := Ω) p hpk (n • x) =
+      n • principalImageLog (Ω := Ω) p hpk x :=
+  map_nsmul (principalImageLog (Ω := Ω) p hpk) n x
+
 end LocalPadicLog
 end
 end JoshiTeich.Act1Scene1
