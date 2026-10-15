@@ -55,6 +55,28 @@ theorem witness_integralHull_localVolume_eq_relativeFactor_pow
   rw [witness_integralHull_normalizationDegreeVolume_eq_base D n v]
   exact FullSupportThetaLogHull.localVolume_eq_relativeFactor_pow D n v
 
+theorem witness_integralHull_localVolume_product_eq_relativeQRootProduct_pow :
+    (∏ v : iutInitialThetaOddModSupportFinset D,
+      (packet D n v).normalizationDegreeVolume
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) =
+      iutInitialThetaRelativeQRootProduct D ^ n := by
+  calc
+    (∏ v : iutInitialThetaOddModSupportFinset D,
+        (packet D n v).normalizationDegreeVolume
+          ((packet D n v).normalizationHull
+            ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) =
+        ∏ v : iutInitialThetaOddModSupportFinset D,
+          iutInitialThetaRelativeQRootFactor D v ^ n := by
+      apply Finset.prod_congr rfl
+      intro v hv
+      exact witness_integralHull_localVolume_eq_relativeFactor_pow D n v
+    _ = (∏ v : iutInitialThetaOddModSupportFinset D,
+        iutInitialThetaRelativeQRootFactor D v) ^ n := by
+      rw [Finset.prod_pow]
+    _ = iutInitialThetaRelativeQRootProduct D ^ n := by
+      rfl
+
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     witness D n v ∈ (packet D n v).tensorLogShell := by

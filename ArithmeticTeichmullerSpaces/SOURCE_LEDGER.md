@@ -3780,3 +3780,14 @@ Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Qu
 不识别 paper thetaVolume、H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds
 1137/1137、Axioms.SceneBounds 934/934，Scene1 聚合通过，公理白名单仍为 `propext`、
 `Classical.choice`、`Quot.sound`。热构建耗时 `207.39s`、峰值 `8,295,684 kB`、9420 个 Lake 任务。
+
+## S1.381：Actual raw full-support volume product
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-RAW-FULL-SUPPORT-PRODUCT` | `PaperLogWitnessHull.witness_integralHull_localVolume_product_eq_relativeQRootProduct_pow` | actual raw full-support volume product；Scene1/Derived | S1.380 local identity, `Finset.prod_pow`, and the raw relative q-root product definition | proved / accepted |
+
+该定理保持未做 global degree root 的 raw product 形式，不识别 paper thetaVolume、H¹ₑ/BK、
+different-untilt 或最终 accounting。Checks.SceneBounds 1138/1138、Axioms.SceneBounds
+935/935，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
+热构建耗时 `214.48s`、峰值 `8,295,760 kB`、9420 个 Lake 任务。
