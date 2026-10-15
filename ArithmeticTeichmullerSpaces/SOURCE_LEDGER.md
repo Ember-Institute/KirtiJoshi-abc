@@ -3573,3 +3573,17 @@ normalized class 的 ordinary witness 求值仍未在默认 heartbeat 下闭合�
 不识别 H¹ₑ/BK、原像除法封闭、连续、满射或 ℚₚ scalar closure。Prologue-R5→R5；derive；
 owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds
 1118/1118、Axioms.SceneBounds 915/915 与 trace 逐名匹配；资源及失败尝试见总览。
+
+## S1.364：Actual normalized saturated Kummer log evaluation
+
+- `PrincipalUnitKummer.normalizedRationalClass_saturatedLogGraph` 与
+  `PrincipalUnitKummer.normalizedSaturatedClass_saturatedImageLog_eq_value`：
+  `Act1Scene1/IutInitialThetaSaturatedKummerLog.lean`，用 p-power 清分母 graph
+  证明 actual normalized class 的 saturated log 等于 `PaperLogWitnessHull.value`。
+
+消费 S1.359 的 image log、S1.360 的单射核比较和 S1.363 的饱和载体成员；无参考源码
+复制/import。局部 theorem 使用 `maxHeartbeats 1000000` 仅缓解 dependent graph
+elaboration，不改变全局配置或数学假设。仍不识别 H¹ₑ/BK，不证明原像除法封闭、连续、
+满射或 ℚₚ scalar closure。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移
+增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1120/1120、Axioms.SceneBounds 917/917
+与 trace 逐名匹配；数学提交 `5655baf` 已推送；资源见总览。
