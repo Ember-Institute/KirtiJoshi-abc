@@ -3758,3 +3758,14 @@ S1.376 窄审计与 Scene1 聚合耗时 158.00s，最大 RSS 8,295,432 kB，9420
 或最终 accounting。Checks.SceneBounds 1135/1135、Axioms.SceneBounds 932/932，
 Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
 热构建耗时 `208.14s`、峰值 `8,295,596 kB`、9420 个 Lake 任务。
+
+## S1.379：Actual normalization degree-volume identity
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-NORMALIZATION-DEGREE-VOLUME-IDENTITY` | `PaperLogWitnessHull.witness_integralHull_normalizationDegreeVolume_eq_base` | actual normalization degree-volume identity；Scene1/Derived | S1.378 carrier equality and functional congruence of `normalizationDegreeVolume` | proved / accepted |
+
+该定理只把 S1.378 的 actual carrier identity 提升为同一 packet 上的数值 volume identity，
+不识别 paper thetaVolume、H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds
+1136/1136、Axioms.SceneBounds 933/933，Scene1 聚合通过，公理白名单仍为 `propext`、
+`Classical.choice`、`Quot.sound`。热构建耗时 `206.74s`、峰值 `8,295,616 kB`、9420 个 Lake 任务。

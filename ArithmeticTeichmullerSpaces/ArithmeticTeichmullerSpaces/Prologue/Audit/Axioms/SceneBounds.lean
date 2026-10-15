@@ -753,6 +753,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_isUnit
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_hull_eq_base
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_integralHull_normalizationHull_eq_base
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_integralHull_normalizationDegreeVolume_eq_base
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_base_region
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.singletonCollation
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.singletonCollation_laws
