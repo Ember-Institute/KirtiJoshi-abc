@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.362：paper witness tensor log-shell carrier bridge |
-| 数学证明基线 | `71406a8`，S1.360 数学已验收后同步推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.363：p-power 饱和 Kummer log 与 normalized class 成员 |
+| 数学证明基线 | `32ce223`，S1.363 数学叶子与审计入口已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.362 一个新增声明、1108 checks、905 公理报告和聚合均通过；paper witness 已接 tensor log-shell，H¹ₑ/BK 仍 open |
-| 当前推进位置 | G4：paper witness 已接 ordinary tensor log-shell；H¹ₑ/BK、theta/different-untilt、volume 身份仍 open |
+| 数学工作状态 | S1.363 一般饱和 log、单射和 normalizedRationalClass 成员通过；actual witness 求值保持 open |
+| 当前推进位置 | G4：p* 除法后的类已进入 p-power 饱和 H¹ 载体；ordinary witness 求值、H¹ₑ/BK 等仍 open |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.359 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.363 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -85,7 +85,8 @@ flowchart TD
     N0["已闭合：排除实际无限可除性<br/>integral 类非零；S1.342"]
     NQ["已闭合：actual rational 类非零<br/>全局系数映射核仍未比较；S1.343"]
     KL["已构造：principal-unit Kummer 像<br/>普通 log 加法映射；S1.359"]
-    KK["验证中：log 核=Kummer 核<br/>image log 单射；S1.360"]
+    KK["已闭合：log 核=Kummer 核<br/>image log 单射；S1.360"]
+    KS["已构造：p-power 饱和 Kummer 像<br/>normalized class 载体；S1.363"]
     B["未建立：H¹ₑ / BK<br/>ordinary-log 比较"]
     H["已闭合：ordinary-log 模型内<br/>hull 与 Haar 定量界"]
     L["已闭合：ordinary log 群律<br/>actual 单位无限阶；S1.339"]
@@ -117,6 +118,8 @@ flowchart TD
     NQ --> KL
     L --> KL
     KL --> KK
+    KK --> KS
+    KS -.-> B
     KK -.-> B
     KL -.-> B
     NQ -.-> B
@@ -138,7 +141,8 @@ flowchart TD
     class K,Z,T,Q,H,I,L,C0,R0,N0 done;
     class G1,G2,G3,V partial;
     class J,B,C,VH open;
-    class RH,KK partial;
+    class RH,KS partial;
+    class KK done;
     class KL done;
     class NQ done;
 ```
@@ -180,7 +184,8 @@ flowchart TD
 | canonical raw accounting / actual hull consumer | 🔵 条件性完成 | S1.358：一般数域 raw 次数会计与不接收完整 base/accounting 的 actual Haar 消费者已编译通过；实际 hull identity 和论文目标身份仍未落实 | G2、G3、G4；log5 S1-BND-358 |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | principal-unit rational Kummer 像上的普通 log | 🟢 已闭合（指定像范围） | S1.359：普通 log 下降为实际 principal-unit rational Kummer 像上的加法同态；actual rationalClass 的像成员及 log 值=p*·ordinary witness 已证明 | G4；log5 S1-BND-359；尚无 H¹ₑ/BK 身份 |
-| principal-unit log / rational Kummer 核 | 🟢 已闭合（指定像范围） | S1.360 拟证明 log 零 iff 某个 p-power 为 1，rational Kummer 核与 log 核相等，image log 单射；范围限于 principal-unit 像 | G4；log5 S1-BND-360 |
+| principal-unit log / rational Kummer 核 | 🟢 已闭合（指定像范围） | S1.360 证明 log 零 iff 某个 p-power 为 1，rational Kummer 核与 log 核相等，image log 单射；范围限于 principal-unit 像 | G4；log5 S1-BND-360 |
+| p* 除法后的 Kummer 类与 log | 🟡 验证中 | S1.363 在 actual H¹ 内构造 p-power 饱和子群，ordinary log 延伸及 normalizedRationalClass 求值验证中；原 principal-unit 像是否含该除法类仍未知 | G4；log5 S1-BND-363 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -199,34 +204,90 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.362（收尾验收中）
+## 最近单元变化卡：S1.363
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：paper witness → ordinary tensor log-shell carrier |
-| 主要变化 | 逐因子消费 S1.361 的 log-shell 成员关系，用 `pure_mem_lattice` 得到 actual pure tensor witness 的 tensor carrier 成员 |
-| 剩余义务 | H¹ₑ/BK、paper theta locus、different-untilt、thetaVolume 与最终联合模型 |
+| 推进位置 | G4：p* 除法后的实际 rational Kummer 类 → ordinary witness |
+| 实际闭合 | 构造 actual H¹ 内的 p-power 饱和子群，延伸 image log 为加法单射；normalizedRationalClass 成员已证明 |
+| 未闭合 | actual normalized class 的 ordinary witness 求值在默认 heartbeat 下仍未闭合；不将其写成结论 |
+| 解决的输入 | 不外给 p* 次根、log 字段或归一化类的 log 身份；清分母与 actual scalar cancellation 提供连接 |
+| 剩余义务 | H¹ₑ/BK 身份、原 principal-unit 像除法封闭、ℚₚ 线性/连续/满射、paper theta/untilt/volume 与联合模型 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
 | 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
-| 工程验收 | Checks.SceneBounds 1108/1108、Axioms.SceneBounds 905/905 与 trace 逐名顺序匹配；Scene1 聚合通过；仅使用 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
-| 累计资源 | 四次热构建合计 419.135 秒（含两次失败）；最大进程组 RSS 17,663,892 KiB（16.85 GiB），采样单进程峰值 8,292,496 KiB；实际 Lean worker 同时峰值 2 |
-| 资源口径 | 每 0.5 秒采样进程组 RSS，85 GiB 停止保护；CPU 0–13，LEAN_NUM_THREADS=10，Lean `-j1`；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学提交 `bf98799`；与维护文档一并推送 |
-| 累计资源 | 六次热构建合计 656.610 秒（含四次失败）；最大进程组 RSS 17,638,696 KiB（16.82 GiB），采样单进程峰值 8,292,756 KiB；实际 Lean worker 同时峰值 2 |
-| 资源口径 | 每 0.5 秒采样进程组 RSS，85 GiB 停止保护；CPU 0–13，LEAN_NUM_THREADS=10，Lean `-j1`；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学提交 `b6cd6cd`；与维护文档一并推送 |
-| 证据 | [tensor log-shell bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-362 |
+| 工程验收 | Checks.SceneBounds 1118/1118、Axioms.SceneBounds 915/915 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
+| 累计资源 | 十一次热构建合计 1139.892 秒（含九次失败）；最大进程组 RSS 17,662,448 KiB（16.84 GiB），采样单进程峰值 8,384,500 KiB；实际 Lean worker 同时峰值 2 |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；0.5 秒采样、85 GiB 停止保护；未冷建、清缓存或重编 Mathlib |
+| 交付 | 数学提交 `32ce223` 已推送；本单元记录随文档提交同步 |
+| 证据 | [饱和 image log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerSaturatedLogarithm.lean)；[actual normalized class](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSaturatedKummerLog.lean)；log5 S1-BND-363 |
+
+### S1.363 构建尝试明细
+
+| 尝试 | 结果及范围 | 耗时（秒） | Lake 图任务数 | 进程组峰值 RSS（KiB） | 采样单进程峰值（KiB） | 同时 Lean worker 峰值 |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1363-1 | 失败：子群成员方法记号和 ambient 类型 | 70.485 | 9403 | 5,293,580 | 4,211,996 | 1 |
+| s1363-2 | 失败：local actual log API 类型转换 | 70.226 | 9403 | 5,308,100 | 4,218,460 | 1 |
+| s1363-3 | 失败：subtype coercion 及实际求值展开 | 140.410 | 9403 | 9,489,772 | 8,383,500 | 1 |
+| s1363-4 | 失败：dependent tuple elaboration 超时 | 112.465 | 9403 | 9,491,432 | 8,384,500 | 1 |
+| s1363-5 | 失败：显式依赖仍超时 | 111.716 | 9403 | 9,486,072 | 8,383,532 | 1 |
+| s1363-6 | 失败：hya 展开超时 | 107.531 | 9403 | 9,447,772 | 8,336,476 | 1 |
+| s1363-7 | 失败：paperScale 幂身份展开超时 | 118.313 | 9403 | 9,460,448 | 8,355,468 | 1 |
+| s1363-8 | 失败：hya target isDefEq 超时 | 110.608 | 9403 | 9,460,708 | 8,355,800 | 1 |
+| s1363-9 | 失败：a subtype 展开超时 | 105.526 | 9403 | 9,464,720 | 8,355,016 | 1 |
+| s1363-10 | 成功：checks 通过 | 92.894 | 9403 | 9,403,656 | 8,294,064 | 1 |
+| s1363-11 | 成功：axioms 与聚合 | 99.718 | 9418 | 17,662,448 | 8,285,976 | 2 |
+
+推送后重验 `s1363-12` 同时构建上述三个目标并成功：耗时 `43.710` 秒、`9419` 个任务；
+`/usr/bin/time -v` 报告单进程最大 RSS `1,083,868 kB`。该次未启用进程组采样，故不把
+单进程数值冒充进程组峰值；此前 `s1363-11` 的进程组峰值仍是本单元审计资源记录。
+
+## 历史单元记录：S1.362
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：paper witness → tensor log-shell |
+| 实际闭合 | actual full-support pure tensor paper witness 属于 ordinary tensorLogShell |
+| 剩余义务 | H¹ₑ/BK、paper theta/different-untilt、volume 和联合模型 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 验证 | 1108 checks / 905 公理报告逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
+| 交付 | 数学提交 `bf98799` 已推送 |
+
+累计 419.135 秒；进程组 RSS 峰值 17,663,892 KiB。CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；0.5 秒采样、85 GiB 停止保护；未重编 Mathlib。
+
+### S1.362 构建尝试明细
+
+| 尝试 | 结果及范围 | 耗时（秒） | Lake 图任务数 | 进程组峰值 RSS（KiB） | 采样单进程峰值（KiB） | 同时 Lean worker 峰值 |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1362-1 | 失败：重复 packet 声明和 residueChar 不匹配 | 87.312 | 9401 | 9,355,544 | 8,245,816 | 1 |
+| s1362-2 | 失败：residueChar 重写方向 | 91.574 | 9401 | 9,349,092 | 8,237,484 | 1 |
+| s1362-3 | 成功：actual tensor witness 和 checks | 144.137 | 9401 | 9,403,520 | 8,292,496 | 1 |
+| s1362-4 | 成功：axioms 与聚合 | 96.112 | 9416 | 17,663,892 | 8,284,656 | 2 |
+
+## 历史单元记录：S1.361
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：paper-normalized value → ordinary log-shell |
+| 实际闭合 | p=2 直接化简，奇 p 用 principal unit 平方对齐 p* 与 2p；actual value 的成员定理 |
+| 剩余义务 | H¹ₑ/BK、paper theta/different-untilt、volume 和联合模型 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 验证 | 1107 checks / 904 公理报告逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
+| 交付 | 数学提交 `b6cd6cd` 已推送 |
+
+累计 656.610 秒；进程组 RSS 峰值 17,638,696 KiB。CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；0.5 秒采样、85 GiB 停止保护；未重编 Mathlib。
 
 ### S1.361 构建尝试明细
 
 | 尝试 | 结果及范围 | 耗时（秒） | Lake 图任务数 | 进程组峰值 RSS（KiB） | 采样单进程峰值（KiB） | 同时 Lean worker 峰值 |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| s1361-1 | 失败：p=2 分支直接化简和缺少 log 乘法导入 | 93.741 | 9400 | 9,353,068 | 8,246,728 | 1 |
-| s1361-2 | 失败：奇 p 目标未显式化为 paper principal unit | 97.154 | 9400 | 9,344,008 | 8,236,864 | 1 |
-| s1361-3 | 失败：定义展开后仍需显式 witness 等式 | 94.481 | 9400 | 9,351,528 | 8,243,588 | 1 |
-| s1361-4 | 失败：`change` 未识别 paper principal unit 定义 | 92.033 | 9400 | 9,358,880 | 8,248,540 | 1 |
-| s1361-5 | 成功：checks 通过 | 144.827 | 9400 | 9,403,788 | 8,292,756 | 1 |
-| s1361-6 | 成功：Axioms.SceneBounds 与 Scene1 聚合 | 134.374 | 9415 | 17,638,696 | 8,283,272 | 2 |
+| s1361-1 | 失败：p=2 化简与缺少 log 乘法导入 | 93.741 | 9400 | 9,353,068 | 8,246,728 | 1 |
+| s1361-2 | 失败：展开后 log 重写 | 97.154 | 9400 | 9,344,008 | 8,236,864 | 1 |
+| s1361-3 | 失败：change 未展开 paperScale | 94.481 | 9400 | 9,351,528 | 8,243,588 | 1 |
+| s1361-4 | 失败：principal-unit 等式与多余 tactic | 92.033 | 9400 | 9,358,880 | 8,248,540 | 1 |
+| s1361-5 | 成功：叶子和 checks | 144.827 | 9400 | 9,403,788 | 8,292,756 | 1 |
+| s1361-6 | 成功：axioms 与聚合 | 134.374 | 9415 | 17,638,696 | 8,283,272 | 2 |
 
 ## 历史单元记录：S1.360
 

@@ -3558,3 +3558,18 @@ Checks.SceneBounds 1107/1107、Axioms.SceneBounds 904/904 与 trace 逐名匹配
 或 thetaVolume。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0；
 最终闸门仍 0/4。Checks.SceneBounds 1108/1108、Axioms.SceneBounds 905/905 与 trace
 逐名匹配；Scene1 聚合通过，公理仅含标准允许集合。资源及失败尝试见总览。
+
+## S1.363：p-power saturated Kummer image
+
+- `JT-SCENE1-PRINCIPAL-KUMMER-P-SATURATED-LOG`：
+  `Act1Scene1/LocalKummerSaturatedLogarithm.lean`，在 standard rational H¹ 内定义
+  p-power 饱和子群，构造清分母的 ordinary log 加法映射并证明其单射。
+- `JT-SCENE1-INITIAL-THETA-NORMALIZED-SATURATED-KUMMER-LOG`：
+  `Act1Scene1/IutInitialThetaSaturatedKummerLog.lean`，证明 actual normalizedRationalClass
+  属于该饱和子群，并定义其饱和载体。
+
+消费 S1.359 image log、S1.360 核比较及 p* 标量还原；无参考源码复制/import。实际
+normalized class 的 ordinary witness 求值仍未在默认 heartbeat 下闭合，因此不宣称该等式。
+不识别 H¹ₑ/BK、原像除法封闭、连续、满射或 ℚₚ scalar closure。Prologue-R5→R5；derive；
+owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds
+1118/1118、Axioms.SceneBounds 915/915 与 trace 逐名匹配；资源及失败尝试见总览。
