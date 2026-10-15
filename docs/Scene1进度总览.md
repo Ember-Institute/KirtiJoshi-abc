@@ -38,8 +38,8 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.365：integral tensor hull 到 tensor log-shell 的 carrier inclusion |
-| 数学证明基线 | `4f39dc3`，S1.365 数学叶子与审计入口已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.366：actual paper witness integral hull 到 unit-lattice 的 carrier inclusion |
+| 数学证明基线 | `79cd9c5`，S1.366 数学叶子与审计入口已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 数学工作状态 | S1.364 一般饱和 log、单射、normalizedRationalClass 成员和 actual witness 求值通过；H¹ₑ/BK 仍 open |
 | 当前推进位置 | G4：p* 除法后的类已进入 p-power 饱和 H¹ 载体并求值为 paper witness；H¹ₑ/BK 等仍 open |
@@ -88,6 +88,7 @@ flowchart TD
     KK["已闭合：log 核=Kummer 核<br/>image log 单射；S1.360"]
     KS["已闭合：p-power 饱和 Kummer 像<br/>normalized class witness 求值；S1.364"]
     TS["已闭合：integral tensor hull<br/>包含 tensor log-shell；S1.365"]
+    TU["已闭合：actual witness integral hull<br/>包含于 unit lattice；S1.366"]
     B["未建立：H¹ₑ / BK<br/>ordinary-log 比较"]
     H["已闭合：ordinary-log 模型内<br/>hull 与 Haar 定量界"]
     L["已闭合：ordinary log 群律<br/>actual 单位无限阶；S1.339"]
@@ -122,6 +123,7 @@ flowchart TD
     KK --> KS
     KS -.-> B
     KS --> TS
+    TS --> TU
     KK -.-> B
     KL -.-> B
     NQ -.-> B
@@ -143,7 +145,7 @@ flowchart TD
     class K,Z,T,Q,H,I,L,C0,R0,N0 done;
     class G1,G2,G3,V partial;
     class J,B,C,VH open;
-    class RH,KS,TS done;
+    class RH,KS,TS,TU done;
     class KK done;
     class KL done;
     class NQ done;
@@ -192,6 +194,7 @@ flowchart TD
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
 | integral tensor hull → tensor log-shell | 🟢 已闭合（carrier inclusion） | S1.365 证明任意 `integralHull U` 在 `U ⊆ tensorLogShell` 时仍包含于 `tensorLogShell`，并接入 actual singleton witness hull；不识别 normalization hull 或 volume | G4；log5 S1-BND-365 |
+| actual paper witness integral hull → unit lattice | 🟢 已闭合（carrier inclusion） | S1.366 用实际 `‖paperNormalizedLog‖ = ‖qroot‖ < 1` 将 singleton `integralHull` 放入 `unitLattice`；不识别 normalization hull、thetaVolume 或 BK | G4；log5 S1-BND-366 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
 | 不同 untilt、论文 thetaVolume 与联合模型 | 🟡 部分完成 | 已有 ordinary-log 定量构件；真实身份、descent 及最终共同装配仍缺失 | G2、G4；计划 §2.3、log5 剩余义务 |
 
@@ -207,27 +210,27 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.365
+## 最近单元变化卡：S1.366
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：actual tensor witness → integral hull → tensor log-shell |
-| 实际闭合 | generic `integralHull_le_tensorLogShell` 与 actual `witness_integralHull_le_tensorLogShell` 已证明 |
+| 推进位置 | G4：actual paper witness → integral hull → unit lattice |
+| 实际闭合 | `witness_integralHull_le_unitLattice` 已证明；S1.365 的 tensor log-shell inclusion 仍保留 |
 | 未闭合 | H¹ₑ/BK 身份、原 principal-unit 像除法封闭、ℚₚ 线性/连续/满射、paper theta/untilt/volume 与联合模型 |
 | 解决的输入 | 不外给 p* 次根、log 字段或归一化类的 log 身份；清分母、scalar cancellation 和显式 graph witness 提供连接 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
 | 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
-| 工程验收 | Checks.SceneBounds 1124/1124、Axioms.SceneBounds 921/921 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
+| 工程验收 | Checks.SceneBounds 1123/1123、Axioms.SceneBounds 920/920 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
 | 累计资源 | S1.363 历史尝试合计 1139.892 秒；S1.364 三目标热构建耗时 222.35 秒；S1.364 最大进程组 RSS 8,427,528 kB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；局部 theorem heartbeat 1,000,000；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学提交 `4f39dc3` 已推送；本单元记录随文档提交同步 |
-| 证据 | [tensor hull carrier](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionTensorLogShellHull.lean)；[paper witness bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-365 |
+| 交付 | 数学提交 `79cd9c5` 已推送；本单元记录随文档提交同步 |
+| 证据 | [paper witness bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-366 |
 
-### S1.365 交付构建
+### S1.366 交付构建
 
 | 目标 | 结果 | 耗时（秒） | Lake 图任务数 | 最大 RSS（kB） |
 | --- | --- | ---: | ---: | ---: |
-| SceneBounds checks、axioms 与 Scene1 聚合 | 成功 | 42.43 | 9420 | 1,084,760 |
+| SceneBounds checks、axioms 与 Scene1 聚合 | 成功 | 164.60 | 9420 | 8,295,668 |
 
 ### S1.363 构建尝试明细（历史）
 

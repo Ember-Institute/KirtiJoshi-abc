@@ -3598,5 +3598,18 @@ elaboration，不改变全局配置或数学假设。仍不识别 H¹ₑ/BK，�
 原创 carrier 组合，无参考源码复制/import。只使用 Submodule span 闭包和 S1.362 的
 actual witness membership；不识别 normalization hull、paper theta locus、H¹ₑ/BK 或 volume。
 Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
-Checks.SceneBounds 1124/1124、Axioms.SceneBounds 921/921；数学提交 `4f39dc3` 已推送；
-S1.365 热构建耗时 42.43s，最大 RSS 1,084,760 kB。
+Checks.SceneBounds 1122/1122、Axioms.SceneBounds 919/919；数学提交 `4f39dc3` 已推送；
+S1.365 热构建耗时 115.38s，最大 RSS 8,294,872 kB。
+
+## S1.366：Actual paper witness integral hull inside the unit lattice
+
+- `PaperLogWitnessHull.witness_integralHull_le_unitLattice`：由 actual paper
+  normalized log 的范数等式和 q-root 的严格 contracting 界，将 singleton
+  `integralHull` 放入对应 tensor packet 的 `unitLattice`。
+
+原创 carrier 推论，无参考源码复制/import。它消费实际 `paperNormalizedLog` 范数和
+S1.365 之前的 integral-hull API；不识别 normalization hull、paper theta locus、H¹ₑ/BK
+或 volume。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0；
+最终闸门仍 0/4。
+Checks.SceneBounds 1123/1123、Axioms.SceneBounds 920/920；数学提交 `79cd9c5` 已推送；
+S1.366 窄审计与 Scene1 聚合耗时 164.60s，最大 RSS 8,295,668 kB，9420 个 Lake 任务。
