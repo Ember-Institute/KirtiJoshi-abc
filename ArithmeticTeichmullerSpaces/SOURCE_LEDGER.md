@@ -3890,3 +3890,16 @@ Checks.SceneBounds 1145/1145、Axioms.SceneBounds 942/942 与 Scene1 聚合通�
 Checks.SceneBounds 1146/1146、Axioms.SceneBounds 943/943 与 Scene1 聚合通过，公理仅含
 `propext`、`Classical.choice`、`Quot.sound`。一次热构建耗时 `221.24s`、峰值 RSS
 `8,296,188 kB`、9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib。
+
+## S1.390：Actual global volume upper bound
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-GLOBAL-VOLUME-UPPER-BOUND` | `PaperLogWitnessHull.witness_integralHull_globalVolume_le_one` | actual global witness-hull volume is at most one；Scene1/Derived | S1.383 actual/full-support volume identity and `FullSupportThetaLogHull.volume_le_one` | proved / accepted |
+
+该定理只证明 actual witness-hull global volume `≤ 1`，与 S1.389 的正性合成 `(0,1]`；
+不识别论文 thetaVolume，不构造 H¹ₑ/BK、different-untilt 或真实联合模型，也不关闭任何最终
+闸门。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增量均 0。
+Checks.SceneBounds 1147/1147、Axioms.SceneBounds 944/944 与 Scene1 聚合通过，公理仅含
+`propext`、`Classical.choice`、`Quot.sound`。一次热构建耗时 `212.45s`、峰值 RSS
+`8,296,200 kB`、9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib。

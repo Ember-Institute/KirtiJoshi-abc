@@ -172,6 +172,15 @@ theorem witness_integralHull_globalVolume_pos :
   rw [witness_integralHull_globalVolume_eq_fullSupport_volume D n]
   exact FullSupportThetaLogHull.volume_pos D n
 
+theorem witness_integralHull_globalVolume_le_one :
+    (∏ v : iutInitialThetaOddModSupportFinset D,
+      (packet D n v).normalizationDegreeVolume
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+        (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) ≤ 1 := by
+  rw [witness_integralHull_globalVolume_eq_fullSupport_volume D n]
+  exact FullSupportThetaLogHull.volume_le_one D n
+
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     witness D n v ∈ (packet D n v).tensorLogShell := by
