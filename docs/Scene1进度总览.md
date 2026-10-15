@@ -250,13 +250,13 @@ flowchart TD
 | 解决的输入 | S1.401 normalized rational-class integer nontorsion、`scale_normalizedRationalClass` 与 nonzero paper scale |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
 | 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
-| 工程验收 | Checks.SceneBounds 1161/1161、Axioms.SceneBounds 958/958 与 Scene1 聚合热构建通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
+| 工程验收 | Checks.SceneBounds 1162/1162、Axioms.SceneBounds 959/959 与 Scene1 聚合热构建通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
 | 累计资源 | 窄构建累计 383.255 秒；完整审计 152.127 秒；过程组峰值 RSS 25,833,348 KiB，单进程峰值 8,297,036 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；完整审计 9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib |
 | 交付 | 数学、审计和记录变更已推送为 `d2e5bf2`；`docs/Email.txt` 保持未跟踪且不纳入提交 |
 | 证据 | [saturated Kummer log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSaturatedKummerLog.lean)；log5 S1-BND-402 |
 
-### S1.402 交付构建（推送前）
+### S1.402 交付构建
 
 | 目标 | 结果 | 耗时（秒） | Lake 图任务数 | 最大 RSS（kB） |
 | --- | --- | ---: | ---: | ---: |
