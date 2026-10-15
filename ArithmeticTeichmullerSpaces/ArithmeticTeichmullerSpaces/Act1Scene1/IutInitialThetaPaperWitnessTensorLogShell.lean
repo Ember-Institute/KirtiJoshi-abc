@@ -192,6 +192,15 @@ theorem witness_integralHull_globalVolume_log_nonpos :
     (witness_integralHull_globalVolume_pos D n).le
     (witness_integralHull_globalVolume_le_one D n)
 
+theorem witness_integralHull_globalVolume_negLog_nonneg :
+    0 ≤ -Real.log
+        ((∏ v : iutInitialThetaOddModSupportFinset D,
+          (packet D n v).normalizationDegreeVolume
+            ((packet D n v).normalizationHull
+              ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+          (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ))) :=
+  neg_nonneg.mpr (witness_integralHull_globalVolume_log_nonpos D n)
+
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     witness D n v ∈ (packet D n v).tensorLogShell := by
