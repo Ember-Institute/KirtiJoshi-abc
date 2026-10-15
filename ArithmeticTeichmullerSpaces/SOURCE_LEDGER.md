@@ -3813,3 +3813,14 @@ H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds 1139/1139
 thetaVolume、H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds 1140/1140、
 Axioms.SceneBounds 937/937，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、
 `Quot.sound`。热构建耗时 `216.76s`、峰值 `8,296,428 kB`、9420 个 Lake 任务。
+
+## S1.384：Actual global volume negative-log identity
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-GLOBAL-VOLUME-NEGLOG` | `PaperLogWitnessHull.witness_integralHull_globalVolume_negLog_eq_mul_fullBaseSum` | actual global volume negative-log identity；Scene1/Derived | S1.383 actual/full-support alignment and full-support negative-log formula | proved / accepted |
+
+该定理只把 actual global volume 的 negative log 表达为 full-base q-pilot log sum，不识别
+paper thetaVolume、H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds 1141/1141、
+Axioms.SceneBounds 938/938，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、
+`Quot.sound`。热构建耗时 `212.96s`、峰值 `8,296,440 kB`、9420 个 Lake 任务。

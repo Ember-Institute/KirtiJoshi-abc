@@ -98,6 +98,17 @@ theorem witness_integralHull_globalVolume_eq_fullSupport_volume :
   rw [witness_integralHull_globalVolume_eq_normalizedRelativeQRootProduct_pow D n,
     FullSupportThetaLogHull.volume_eq_normalizedFullRootProduct_pow D n]
 
+theorem witness_integralHull_globalVolume_negLog_eq_mul_fullBaseSum :
+    -Real.log
+        ((∏ v : iutInitialThetaOddModSupportFinset D,
+          (packet D n v).normalizationDegreeVolume
+            ((packet D n v).normalizationHull
+              ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+          (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ))) =
+      (n : ℝ) * iutInitialThetaFullBaseQPilotLogSum D := by
+  rw [witness_integralHull_globalVolume_eq_fullSupport_volume D n,
+    FullSupportThetaLogHull.negLog_volume_eq_mul_fullBaseSum D n]
+
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     witness D n v ∈ (packet D n v).tensorLogShell := by
