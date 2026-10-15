@@ -170,6 +170,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTargetPape
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawHullConsumer
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogarithm
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarithm
 /-! SceneBounds 家族：日常名称检查。 -/
 
 #check JoshiTeich.Act1Scene1.Scene1Input.logVolume_nonneg
@@ -1263,3 +1265,16 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawHullCon
 #check JoshiTeich.Act1Scene1.canonicalRawTarget_transferLogBound_of_actualHullVolume
 #check JoshiTeich.Act1Scene1.canonicalRawTarget_thetaVolume_ge_qProduct_of_actualHullVolume
 #check JoshiTeich.Act1Scene1.corollary312_of_canonicalRawTateFamily_of_actualHullVolume
+
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.kummerHom
+#check JoshiTeich.Act1Scene1.LocalPadicLog.principalUnits
+#check JoshiTeich.Act1Scene1.LocalPadicLog.principalKummerHom
+#check JoshiTeich.Act1Scene1.LocalPadicLog.principalLogHom
+#check JoshiTeich.Act1Scene1.LocalPadicLog.principalLog_eq_zero_of_kummer_eq_zero
+#check JoshiTeich.Act1Scene1.LocalPadicLog.principalLog_eq_of_kummer_eq
+#check JoshiTeich.Act1Scene1.LocalPadicLog.principalKummerImage
+#check JoshiTeich.Act1Scene1.LocalPadicLog.principalImageLog
+#check JoshiTeich.Act1Scene1.LocalPadicLog.principalImageLog_class
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.actualPrincipalUnit
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalImageClass
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.principalImageLog_rationalImageClass
