@@ -145,5 +145,21 @@ theorem witness_integralHull_normalizationDegreeVolume_negLog_nonneg
             ((packet D n v).integralHull {witness D n v}))) :=
   neg_nonneg.mpr (witness_integralHull_normalizationDegreeVolume_log_nonpos D n v)
 
+theorem witness_integralHull_degreeVolume_le_normalizationHull_degreeVolume
+    (v : iutInitialThetaOddModSupportFinset D) :
+    (packet D n v).degreeVolume
+        ((packet D n v).scalarLattice
+          (fun i => value D (FullSupportThetaLogHull.sourceAt D n v i))) ≤
+      (packet D n v).normalizationDegreeVolume
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) := by
+  apply (packet D n v).degreeVolume_le_normalizationHull_of_pure_mem
+    ((packet D n v).integralHull {witness D n v})
+    (fun i => value D (FullSupportThetaLogHull.sourceAt D n v i))
+    (fun i => value_ne_zero D _)
+  · change witness D n v ∈ (packet D n v).integralHull {witness D n v}
+    exact Submodule.subset_span (Set.mem_singleton _)
+  · exact witness_integralHull_le_normalization D n v
+
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull
