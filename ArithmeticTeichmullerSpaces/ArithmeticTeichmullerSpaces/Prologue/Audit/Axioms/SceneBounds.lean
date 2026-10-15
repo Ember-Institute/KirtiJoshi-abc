@@ -168,6 +168,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarith
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogKernel
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperWitnessTensorLogShell
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedLogarithm
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
 #print axioms JoshiTeich.Act1Scene1.Scene1Input.one_le_thetaBase_norm
@@ -1084,3 +1086,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperWitnessTensorL
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_mem_logShell
 
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_tensorLogShell
+
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedKummerImage
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedLogGraph
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedImageLog
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedImageLog_eq_of_graph
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedImageLog_injective
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperScale_eq_prime_pow
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass_mem_saturatedImage
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedSaturatedClass
+
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedClassOfImage
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedImageLog_classOfImage

@@ -280,4 +280,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperWitnessTensorLogShell
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedLogarithm
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
