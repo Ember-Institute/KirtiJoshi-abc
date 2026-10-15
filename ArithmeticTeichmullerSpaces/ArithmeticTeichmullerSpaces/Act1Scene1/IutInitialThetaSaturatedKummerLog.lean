@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarithm
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRationalKummerNonzero
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-NORMALIZED-SATURATED-KUMMER-LOG
@@ -49,6 +50,13 @@ def normalizedSaturatedClass
       (Arithmetic.residueChar s.1) :=
   ⟨normalizedRationalClass D s, normalizedRationalClass_mem_saturatedImage D s⟩
 
+theorem normalizedSaturatedClass_ne_zero
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    normalizedSaturatedClass D s ≠ 0 := by
+  intro h
+  apply normalizedRationalClass_ne_zero D s
+  simpa [normalizedSaturatedClass] using congrArg Subtype.val h
+
 set_option maxHeartbeats 1000000 in
 theorem normalizedRationalClass_saturatedLogGraph
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
@@ -84,6 +92,14 @@ theorem normalizedSaturatedClass_saturatedImageLog_eq_value
         (normalizedSaturatedClass D s) = PaperLogWitnessHull.value D s := by
   apply LocalPadicLog.saturatedImageLog_eq_of_graph
   exact normalizedRationalClass_saturatedLogGraph D s
+
+theorem normalizedSaturatedClass_saturatedImageLog_ne_zero
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    LocalPadicLog.saturatedImageLog (Arithmetic.residueChar s.1)
+        (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
+        (normalizedSaturatedClass D s) ≠ 0 := by
+  rw [normalizedSaturatedClass_saturatedImageLog_eq_value D s]
+  exact PaperLogWitnessHull.value_ne_zero D s
 
 end PrincipalUnitKummer
 end

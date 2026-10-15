@@ -3940,6 +3940,11 @@ Axioms.SceneBounds 952/952 与 Scene1 聚合通过，公理仅含 `propext`、`C
 `Quot.sound`。修正后热构建耗时 `243.717s`、过程组峰值 `25,894,920 KiB`、单进程峰值
 `8,296,536 KiB`、9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib。
 
+| `JT-SCENE1-INITIAL-THETA-NORMALIZED-SATURATED-KUMMER-NONZERO` | `PrincipalUnitKummer.normalizedSaturatedClass_ne_zero`; `PrincipalUnitKummer.normalizedSaturatedClass_saturatedImageLog_ne_zero` | nonzero actual normalized class in the p-power saturated principal-unit Kummer carrier and nonzero saturated ordinary-log value；Scene1/Derived | S1.343 actual normalized rational-class nonvanishing, S1.364 saturated-log value equation, and `PaperLogWitnessHull.value_ne_zero` | proved / accepted |
+
+该单元只保留 actual saturated carrier 的非零性，不将其识别为 H¹ₑ、不提供 BK/log 比较或全局
+系数映射单射。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增量均 0。
+
 ## S1.392：Actual global volume negative-log nonnegativity
 
 | source-id | declaration | fidelity / boundary | model evidence | status |
