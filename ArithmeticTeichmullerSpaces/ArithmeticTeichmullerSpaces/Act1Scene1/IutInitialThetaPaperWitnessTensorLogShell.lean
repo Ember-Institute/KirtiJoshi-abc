@@ -107,5 +107,16 @@ theorem witness_integralHull_normalizationHull_haar_pos_lt_top
     exact Submodule.subset_span (Set.mem_singleton _)
   · exact witness_integralHull_le_normalization D n v
 
+theorem witness_integralHull_normalizationDegreeVolume_pos
+    (v : iutInitialThetaOddModSupportFinset D) :
+    0 < (packet D n v).normalizationDegreeVolume
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) := by
+  rw [LocalCompletion.Packet.normalizationDegreeVolume]
+  exact Real.rpow_pos_of_pos
+    (ENNReal.toReal_pos
+      (witness_integralHull_normalizationHull_haar_pos_lt_top D n v).1.ne'
+      (witness_integralHull_normalizationHull_haar_pos_lt_top D n v).2.ne) _
+
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull
