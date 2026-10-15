@@ -49,6 +49,42 @@ def normalizedSaturatedClass
       (Arithmetic.residueChar s.1) :=
   ⟨normalizedRationalClass D s, normalizedRationalClass_mem_saturatedImage D s⟩
 
+set_option maxHeartbeats 1000000 in
+theorem normalizedRationalClass_saturatedLogGraph
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    LocalPadicLog.saturatedLogGraph (Arithmetic.residueChar s.1)
+      (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
+      (normalizedRationalClass D s)
+      (PaperLogWitnessHull.value D s) := by
+  let n : ℕ := if Arithmetic.residueChar s.1 = 2 then 2 else 1
+  let a : LocalPadicLog.principalKummerImage (k := localField D s) (Ω := closure D s)
+      (Arithmetic.residueChar s.1) := rationalImageClass D s
+  have hxa : (Arithmetic.residueChar s.1 ^ n) • normalizedRationalClass D s = (a : _) := by
+    change (Arithmetic.residueChar s.1 ^ n) • normalizedRationalClass D s =
+      (rationalImageClass D s : _)
+    dsimp [n]
+    rw [← LocalPadicLog.paperScale_eq_prime_pow]
+    rw [← Nat.cast_smul_eq_nsmul ℚ_[Arithmetic.residueChar s.1],
+      scale_normalizedRationalClass]
+    exact rfl
+  have hya : (Arithmetic.residueChar s.1 ^ n) • PaperLogWitnessHull.value D s =
+      LocalPadicLog.principalImageLog (Arithmetic.residueChar s.1)
+        (InitialThetaLogWitness.norm_residueChar_lt_one s.1) a := by
+    dsimp [a, n]
+    simp only [nsmul_eq_mul, Nat.cast_pow]
+    rw [principalImageLog_rationalImageClass]
+    rw [LocalPadicLog.paperScale_eq_prime_pow]
+    rw [Nat.cast_pow]
+  exact ⟨n, a, hxa, hya⟩
+
+theorem normalizedSaturatedClass_saturatedImageLog_eq_value
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    LocalPadicLog.saturatedImageLog (Arithmetic.residueChar s.1)
+        (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
+        (normalizedSaturatedClass D s) = PaperLogWitnessHull.value D s := by
+  apply LocalPadicLog.saturatedImageLog_eq_of_graph
+  exact normalizedRationalClass_saturatedLogGraph D s
+
 end PrincipalUnitKummer
 end
 end JoshiTeich.Act1Scene1
