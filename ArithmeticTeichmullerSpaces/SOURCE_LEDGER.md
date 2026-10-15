@@ -3649,3 +3649,15 @@ normalization hull、paper theta locus、H¹ₑ/BK 或 volume。Prologue-R5→R5
 Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
 Checks.SceneBounds 1126/1126、Axioms.SceneBounds 923/923；数学提交 `3f5285a` 已推送；
 S1.369 窄审计与 Scene1 聚合耗时 164.33s，最大 RSS 8,295,088 kB，9420 个 Lake 任务。
+
+## S1.370：Normalization hull containment for the actual integral witness hull
+
+- `PaperLogWitnessHull.witness_integralHull_normalizationHull_subset_normalization`：
+  将 S1.369 的 actual integral-hull normalization inclusion 传入现有
+  `normalizationHull_subset_normalization`，得到其 normalization hull 的 containment。
+
+原创消费者组合，无参考源码复制/import。它不识别 normalization hull 等式、paper theta
+locus、H¹ₑ/BK 或 volume。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0；
+最终闸门仍 0/4。
+Checks.SceneBounds 1127/1127、Axioms.SceneBounds 924/924；数学提交 `606d075` 已推送；
+S1.370 窄审计与 Scene1 聚合耗时 168.22s，最大 RSS 8,295,904 kB，9420 个 Lake 任务。
