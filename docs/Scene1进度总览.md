@@ -38,8 +38,8 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.373：actual integral-hull normalization hull 的 normalization-degree volume 上界 |
-| 数学证明基线 | `e3c525a`，S1.373 数学叶子与审计入口已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.374：actual integral-hull normalization hull 的 log-volume 非正性 |
+| 数学证明基线 | `3fd0470`，S1.374 数学叶子与审计入口已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 数学工作状态 | S1.364 一般饱和 log、单射、normalizedRationalClass 成员和 actual witness 求值通过；H¹ₑ/BK 仍 open |
 | 当前推进位置 | G4：p* 除法后的类已进入 p-power 饱和 H¹ 载体并求值为 paper witness；H¹ₑ/BK 等仍 open |
@@ -96,6 +96,7 @@ flowchart TD
     HV["已闭合：actual integral-hull normalization hull<br/>Haar 正且有限；S1.371"]
     VP["已闭合：actual integral-hull normalization hull<br/>degree volume > 0；S1.372"]
     VU["已闭合：actual integral-hull normalization hull<br/>degree volume ≤ 1；S1.373"]
+    VL["已闭合：actual integral-hull normalization hull<br/>log-volume ≤ 0；S1.374"]
     B["未建立：H¹ₑ / BK<br/>ordinary-log 比较"]
     H["已闭合：ordinary-log 模型内<br/>hull 与 Haar 定量界"]
     L["已闭合：ordinary log 群律<br/>actual 单位无限阶；S1.339"]
@@ -138,6 +139,7 @@ flowchart TD
     TH --> HV
     HV --> VP
     VP --> VU
+    VU --> VL
     KK -.-> B
     KL -.-> B
     NQ -.-> B
@@ -159,7 +161,7 @@ flowchart TD
     class K,Z,T,Q,H,I,L,C0,R0,N0 done;
     class G1,G2,G3,V partial;
     class J,B,C,VH open;
-    class RH,KS,TS,TU,TI,TB,TN,TH,HV,VP,VU done;
+    class RH,KS,TS,TU,TI,TB,TN,TH,HV,VP,VU,VL done;
     class KK done;
     class KL done;
     class NQ done;
@@ -216,6 +218,7 @@ flowchart TD
 | actual integral-hull normalization-hull Haar bounds | 🟢 已闭合（measure input） | S1.371 由 actual nonzero pure witness、normalization containment 和 bounded hull API 得到 normalization Haar `0 < μ < ⊤`；不识别 paper thetaVolume 或 BK | G4；log5 S1-BND-371 |
 | actual integral-hull normalization-hull degree volume positivity | 🟢 已闭合（volume input） | S1.372 将 S1.371 的正有限 Haar 通过 `normalizationDegreeVolume` 得到严格正的 actual degree volume；不识别 paper thetaVolume 或 BK | G4；log5 S1-BND-372 |
 | actual integral-hull normalization-hull degree volume upper bound | 🟢 已闭合（volume input） | S1.373 消费 S1.370 的 normalization containment 和 `normalizationDegreeVolume_le_one`，得到 actual degree volume `≤ 1`；不识别 paper thetaVolume 或 BK | G4；log5 S1-BND-373 |
+| actual integral-hull normalization-hull log-volume sign | 🟢 已闭合（actual sign input） | S1.374 由 S1.372–373 得到 `Real.log(actualDegreeVolume) ≤ 0`；这是 actual normalization-hull 的结果，与暂按笔误处理的论文 qLogTerm 问题分开 | G4；log5 S1-BND-374 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
 | 不同 untilt、论文 thetaVolume 与联合模型 | 🟡 部分完成 | 已有 ordinary-log 定量构件；真实身份、descent 及最终共同装配仍缺失 | G2、G4；计划 §2.3、log5 剩余义务 |
 
@@ -231,27 +234,27 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.373
+## 最近单元变化卡：S1.374
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：actual paper witness → integral hull → normalization hull degree volume 区间 |
-| 实际闭合 | `witness_integralHull_normalizationDegreeVolume_le_one` 已证明，与 S1.372 合成 `(0,1]` 输入 |
+| 推进位置 | G4：actual paper witness → integral hull → normalization hull log-volume sign |
+| 实际闭合 | `witness_integralHull_normalizationDegreeVolume_log_nonpos` 已证明，消费 S1.372–373 的 `(0,1]` 区间 |
 | 未闭合 | H¹ₑ/BK 身份、原 principal-unit 像除法封闭、ℚₚ 线性/连续/满射、paper theta/untilt/volume 与联合模型 |
 | 解决的输入 | 不外给 p* 次根、log 字段或归一化类的 log 身份；清分母、scalar cancellation 和显式 graph witness 提供连接 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
 | 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
-| 工程验收 | Checks.SceneBounds 1130/1130、Axioms.SceneBounds 927/927 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
+| 工程验收 | Checks.SceneBounds 1131/1131、Axioms.SceneBounds 928/928 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
 | 累计资源 | S1.363 历史尝试合计 1139.892 秒；S1.364 三目标热构建耗时 222.35 秒；S1.364 最大进程组 RSS 8,427,528 kB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；局部 theorem heartbeat 1,000,000；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学提交 `e3c525a` 已推送；本单元记录随文档提交同步 |
-| 证据 | [paper witness bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-373 |
+| 交付 | 数学提交 `3fd0470` 已推送；本单元记录随文档提交同步 |
+| 证据 | [paper witness bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-374 |
 
-### S1.373 交付构建
+### S1.374 交付构建
 
 | 目标 | 结果 | 耗时（秒） | Lake 图任务数 | 最大 RSS（kB） |
 | --- | --- | ---: | ---: | ---: |
-| SceneBounds checks、axioms 与 Scene1 聚合 | 成功 | 156.31 | 9420 | 8,295,268 |
+| SceneBounds checks、axioms 与 Scene1 聚合 | 成功 | 157.34 | 9420 | 8,295,344 |
 
 ### S1.363 构建尝试明细（历史）
 
