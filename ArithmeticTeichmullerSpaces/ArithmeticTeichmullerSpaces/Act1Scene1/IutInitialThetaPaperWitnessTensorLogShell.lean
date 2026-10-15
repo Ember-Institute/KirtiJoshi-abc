@@ -5,6 +5,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorWitnessHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHullNormalizationBounds
 
 /-!
 source-id: JT-SCENE1-PAPER-WITNESS-TENSOR-LOG-SHELL
@@ -117,6 +118,14 @@ theorem witness_integralHull_normalizationDegreeVolume_pos
     (ENNReal.toReal_pos
       (witness_integralHull_normalizationHull_haar_pos_lt_top D n v).1.ne'
       (witness_integralHull_normalizationHull_haar_pos_lt_top D n v).2.ne) _
+
+theorem witness_integralHull_normalizationDegreeVolume_le_one
+    (v : iutInitialThetaOddModSupportFinset D) :
+    (packet D n v).normalizationDegreeVolume
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) ≤ 1 :=
+  (packet D n v).normalizationDegreeVolume_le_one _
+    (witness_integralHull_normalizationHull_subset_normalization D n v)
 
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull
