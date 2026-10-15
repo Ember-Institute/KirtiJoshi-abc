@@ -30,6 +30,13 @@ variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) (n : ℕ)
 local instance paperTensorPrime (v : iutInitialThetaOddModSupportFinset D) :
     Fact (Arithmetic.residueChar v.1).Prime := ⟨Arithmetic.residueChar_prime v.1⟩
 
+theorem witness_integralHull_normalizationHull_eq_base
+    (v : iutInitialThetaOddModSupportFinset D) :
+    ((packet D n v).normalizationHull
+      ((packet D n v).integralHull {witness D n v}) : Set (packet D n v).Tensor) =
+      (FullSupportThetaLogHull.region D n v : Set (packet D n v).Tensor) := by
+  rw [(packet D n v).normalizationHull_integralHull, witness_hull_eq_base D n v]
+
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     witness D n v ∈ (packet D n v).tensorLogShell := by

@@ -3746,3 +3746,15 @@ S1.376 窄审计与 Scene1 聚合耗时 158.00s，最大 RSS 8,295,432 kB，9420
 931/931，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
 叶文件成功构建耗时 `101.35s`、峰值 `8,279,716 kB`；三目标热构建耗时 `156.22s`、
 峰值 `8,296,204 kB`、9420 个 Lake 任务；本单元累计含两次失败尝试为 `461.91s`。
+
+## S1.378：Actual integral-hull normalization-hull identity
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-INTEGRAL-NORMALIZATION-HULL-IDENTITY` | `PaperLogWitnessHull.witness_integralHull_normalizationHull_eq_base` | actual integral-hull normalization-hull carrier identity；Scene1/Derived | `LocalCompletion.Packet.normalizationHull_integralHull` and `PaperLogWitnessHull.witness_hull_eq_base` | proved / accepted |
+
+该定理只把 actual `normalizationHull (integralHull {witness})` 重写为既有
+`FullSupportThetaLogHull.region`，不识别 paper thetaVolume、H¹ₑ/BK、different-untilt
+或最终 accounting。Checks.SceneBounds 1135/1135、Axioms.SceneBounds 932/932，
+Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
+热构建耗时 `208.14s`、峰值 `8,295,596 kB`、9420 个 Lake 任务。

@@ -962,6 +962,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_isUnit
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_hull_eq_base
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_integralHull_normalizationHull_eq_base
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_base_region
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.singletonCollation
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.singletonCollation_laws
