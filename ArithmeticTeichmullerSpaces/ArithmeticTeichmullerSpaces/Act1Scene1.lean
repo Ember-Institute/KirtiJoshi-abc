@@ -276,4 +276,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarith
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogKernel
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

@@ -173,6 +173,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawHullCon
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogKernel
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
 /-! SceneBounds 家族：日常名称检查。 -/
 
 #check JoshiTeich.Act1Scene1.Scene1Input.logVolume_nonneg
@@ -1287,3 +1288,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogKernel
 #check JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_eq_zero_iff_exists_prime_power_eq_one
 #check JoshiTeich.Act1Scene1.LocalPadicLog.principalKummer_eq_zero_iff_log_eq_zero
 #check JoshiTeich.Act1Scene1.LocalPadicLog.principalImageLog_injective
+
+#check JoshiTeich.Act1Scene1.LocalPadicLog.paperNormalizedLog_mem_logShell
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_mem_logShell

@@ -3529,3 +3529,18 @@ Axioms.SceneBounds 896/896 与 trace 逐名匹配，Scene1 聚合通过；仅使
 连续、满射、ℚₚ 线性或 p* 除法的像成员。Prologue-R5→R5，derive，owner Scene1；Core
 假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1105/1105、Axioms.SceneBounds 902/902 与 trace 逐名匹配，Scene1 聚合通过；
 仅使用标准允许公理。数学提交 `c4ab12b`，资源及失败尝试见总览。
+
+## S1.361：Paper-normalized log witness in ordinary log-shell
+
+- source-id: `JT-SCENE1-PAPER-LOG-WITNESS-LOG-SHELL`
+- declarations: `LocalPadicLog.paperNormalizedLog_mem_logShell`、
+  `PaperLogWitnessHull.value_mem_logShell`，文件
+  `Act1Scene1/IutInitialThetaPaperLogShellBridge.lean`。
+
+原创局部组合证明，消费 existing p*-normalized ordinary log、ordinary log-shell、
+`padicLog_pow` 和 actual qroot norm bound；无参考源码复制/import。奇素数通过平方
+principal unit 对齐 `p*` 与 shell 的 `2p` 归一化，p=2 直接化简。只证明 ordinary
+carrier 成员关系，不识别 H¹ₑ/BK、paper theta locus、different-untilt 或 thetaVolume。
+Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1107/1107、Axioms.SceneBounds 904/904 与 trace 逐名匹配；Scene1
+聚合通过，公理仅含标准允许集合。资源及失败尝试见总览。
