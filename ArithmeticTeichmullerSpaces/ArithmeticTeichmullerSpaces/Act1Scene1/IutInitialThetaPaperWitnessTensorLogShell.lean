@@ -3,6 +3,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensor
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorLogShellHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationHull
 
 /-!
 source-id: JT-SCENE1-PAPER-WITNESS-TENSOR-LOG-SHELL
@@ -80,6 +81,14 @@ theorem witness_integralHull_le_normalization
       (packet D n v).normalization.toSubmodule :=
   (witness_integralHull_le_unitLattice D n v).trans
     (packet D n v).unitLattice_le_normalization
+
+theorem witness_integralHull_normalizationHull_subset_normalization
+    (v : iutInitialThetaOddModSupportFinset D) :
+    ((packet D n v).normalizationHull
+      ((packet D n v).integralHull {witness D n v}) : Set (packet D n v).Tensor) ⊆
+      (packet D n v).normalization :=
+  (packet D n v).normalizationHull_subset_normalization _
+    (witness_integralHull_le_normalization D n v)
 
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull
