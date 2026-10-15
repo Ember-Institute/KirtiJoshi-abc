@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.356：target qLogSum 与 reference absLogQ |
-| 数学证明基线 | `eb46941`，S1.356 已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.357：canonical target / selected paper sum 输入不相容性审计 |
+| 数学证明基线 | `824a5a2`，S1.357 已验收；与本次文档同步推送，后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.356 target qLogSum accounting 已验收并推送；Scene1 仍未完成 |
-| 当前推进位置 | Tate-only degree-one target qLogSum 已等于 reference absLogQ；待核查该等式与既有消费者输入的相容性 |
+| 数学工作状态 | S1.357 三个声明、两类审计及聚合入口均通过；已撤回 S1.351–352 可作有效装配的进度判断 |
+| 当前推进位置 | canonical degree-one 下 target qLogSum 严格小于 selectedPaperSum；S1.351–352 所需等式不相容，须修订加权会计及下游消费者 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.356 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.357 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -57,8 +57,8 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | --- | --- | --- | --- | --- |
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及多项 carrier 适配已存在 | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型 | 计划 §2.1；S1.270 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
-| **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 证明当前 mass-one paper representative certificate 与 canonical actual source 不相容 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的 canonical 最终连接路线已因输入不相容排除；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -156,11 +156,12 @@ flowchart TD
 | canonical actual VBad coefficient accounting | 🟢 已闭合（VBad carrier） | S1.348 精确证明 canonical q-pilot `absLogQ = ∑ coefficient(v) * VBadSelectedPaper.paperTerm(v)`；保留真实 ramification coefficients，不要求 mass-one | 将该 weighted sum 接入 revised paper accounting 和 theta-volume consumer | G3、G4；[log5 S1.348](开发计划.V1Act1log5.md#s1348-canonical-actual-vbad-coefficient-weighted-accounting) |
 | canonical actual VBad generated-hull cost bridge | 🟢 已闭合（ordinary-log hull） | S1.349 证明 canonical q-pilot `absLogQ = cost / n`，其中 cost 是 actual VBad ordinary-log generated hull 的 negative-log volume | 将该 cost 与修订后的 thetaVolume/packet accounting 比较；不能把它直接命名为 Core `thetaVolume` | G4；[log5 S1.349](开发计划.V1Act1log5.md#s1349-canonical-actual-vbad-generated-hull-cost-bridge) |
 | canonical actual thetaVolume exponential bridge | 🔵 条件性完成 | S1.350 在 `thetaVolume = actual hull volume` 与显式 normalization 条件下证明 `thetaVolume = exp (-(n * canonicalAbsLogQ))` | 从真实 theta/different-untilt 模型推出 actual hull volume 条件，并接入最终目标 | G4；[log5 S1.350](开发计划.V1Act1log5.md#s1350-canonical-actual-q-pilot-与-thetavolume-指数桥) |
-| canonical actual qProduct exponential lower bound | 🔵 条件性完成 | S1.351 在 actual hull volume、显式 q-family、`ellStar = n` 和 selected q-sum accounting 条件下证明 `exp (-(n * canonicalAbsLogQ)) ≥ qProduct` | 将 q-family accounting 与真实 paper thetaVolume 身份接通，并满足最终 Corollary 3.12 的真实输入 | G4；[log5 S1.351](开发计划.V1Act1log5.md#s1351-canonical-q-pilot-指数到-qproduct-下界) |
-| 条件性 canonical Corollary 3.12 消费者 | 🔵 条件性完成 | S1.352 在显式 actual hull、q-family、q-sum、normalization 和四个 side conditions 下得到 `Corollary312` | 从真实来源模型推出全部输入条件；完成 G1-G4 的最终身份与审计 | G1、G2、G3、G4；[log5 S1.352](开发计划.V1Act1log5.md#s1352-条件性-canonical-corollary-312-消费者) |
+| canonical actual qProduct exponential lower bound | 🔴 输入不相容 | S1.351 的公开定理可编译，但其 canonical degree-one 条件推出 `qLogSum < selectedPaperSum`，与必需的 `hq` 等式冲突；不再计为有效装配。后续须保留真实系数，重建加权会计及 hull/volume 比较；保留历史签名 | G3、G4；S1.357；原记录见 [log5 S1.351](开发计划.V1Act1log5.md#s1351-canonical-q-pilot-指数到-qproduct-下界) |
+| 条件性 canonical Corollary 3.12 消费者 | 🔴 输入不相容 | S1.352 继承同一不可能的 `hq`；定理仍可编译，但没有满足全部参数的模型，不能据此称已接通论文目标。修订消费者后须重新审查联合满足性；完整 `base` 已含 accounting，不能把最终定理包装视作来源模型构造 | G1、G2、G3、G4；S1.357；原记录见 [log5 S1.352](开发计划.V1Act1log5.md#s1352-条件性-canonical-corollary-312-消费者) |
 | canonical Tate q-pilot bundle | 🔵 条件性完成 | S1.353 仅用 link Tate family 与实际 `iutInitialThetaTateParameterData` 等式派生 q-pilot source、carrier 和 degree-one normalization | 构造真实 Tate family 等式，并补齐 analytic Scene1 base、packet/hull、volume/accounting | G2、G4；[log5 S1.353](开发计划.V1Act1log5.md#s1353-canonical-tate-q-pilot-bundle) |
 | canonical Tate q-order alignment | 🟢 已闭合（Tate-only source 范围） | S1.354 逐处证明 Tate-only q-pilot source 的 q-order 等于 actual admissible-prime q-order | 将局部 q-order 等式接入 reference absLogQ 总和，并继续补齐真实 carrier 与 analytic base | G2、G3；[log5 S1.354](开发计划.V1Act1log5.md#s1354-canonical-tate-only-q-order-对齐) |
 | Tate-only reference absLogQ bridge | 🟢 已闭合（Tate-only source 范围） | S1.355 证明 Tate-only Scene1 q-pilot `absLogQ` 等于 actual reference q-pilot `absLogQ` | 将 reference q-pilot 接入 paper representative/target qLogSum accounting | G2、G3；[log5 S1.355](开发计划.V1Act1log5.md#s1355-tate-only-q-pilot-到-reference-abslogq) |
+| Tate-only target qLogSum accounting | 🟢 已闭合（给定 base 与来源条件） | S1.356：target `qLogSum = qPilot.absLogQ = referenceAbsLogQ`；结合严格差额排除 target 等于未加权 selectedPaperSum | G2、G3；S1.356–357；不构造真实 base |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
@@ -172,12 +173,38 @@ flowchart TD
 | --- | --- | --- | --- |
 | 用旧 weighted normalization 直接覆盖一般数域 | 🔴 当前装配要求 finrank=1，不能据此完成一般数域模型 | 来源驱动的归一化复审与真实模型装配 | S1.270 |
 | 把 VBad 上的去权系数直接补成 1 | 🔴 在 S1.283 的实际条件下，系数严格小于 1 | 保留已证比较界，复审目标与 volume 的统一归一化 | S1.282–283、320 |
+| canonical degree-one 下令 target qLogSum 等于未加权 selectedPaperSum | 🔴 S1.356 与 S1.283 已推出严格小于；S1.351–352 的 `hq` 不可满足 | 使用实际系数加权会计，重审 hull/volume 比较和下游消费者 | S1.357 独立审计 |
 | 将 signed Haar logMeasure 直接等同旧 link.logVolume | 🔴 S1.321 排除其指定身份；没有排除 negative-log cost 路线 | 继续核查 S1.322 的 cost 身份及联合模型 | S1.321–322 |
 
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.356
+## 最近单元变化卡：S1.357
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G3/G4：排除不相容输入，纠正 S1.351–352 进度 |
+| 已知证据 | 同一 canonical degree-one 条件下 `qLogSum = referenceAbsLogQ < selectedPaperSum`；三个独立审计声明已验收 |
+| 错误归属 | 实现编码问题：适配层要求加权 target sum 等于未加权 selected sum；不据此判定原论文错误 |
+| 进度回退 | S1.351–352 从“条件性完成”改为“输入不相容”；公开签名及历史日志保留 |
+| 剩余义务 | 真实系数加权会计、下游 hull/volume 比较、联合模型与 G1–G4 身份 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 工程验收 | Checks.SceneBounds 1082/1082、Axioms.SceneBounds 879/879 与缓存 trace 逐名顺序匹配；Scene1 聚合通过；公理仅含 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
+| 累计资源 | 三次热构建合计 590.594 秒，含一次失败；最大进程组 RSS 17,567,148 KiB（16.75 GiB），采样单进程峰值 8,289,972 KiB；实际 Lean worker 同时峰值 2 |
+| 资源口径 | 每 0.5 秒采样进程组 RSS，85 GiB 停止保护；CPU 0–13，LEAN_NUM_THREADS=10，项目 Lean `-j1`；`-Kjobs=10` 不是实际调度上限；未清缓存、未冷建或重编 Mathlib |
+| 交付 | 数学提交 `824a5a2`；与维护文档一并推送 |
+| 证据 | [不相容性审计](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalTargetPaperSumAudit.lean)；计划 S1.357 |
+
+### S1.357 构建尝试明细
+
+| 尝试 | 结果及范围 | 耗时（秒） | 进程组峰值 RSS（KiB） | 采样单进程峰值（KiB） | 同时 Lean worker 峰值 |
+| --- | --- | ---: | ---: | ---: | ---: |
+| s1357-1 | 成功：新审计叶子及 Checks.SceneBounds | 266.924 | 9,398,000 | 8,289,972 | 1 |
+| s1357-2 | 部分成功：Axioms.SceneBounds 通过；Scene1 聚合因 import 位于模块文档之后失败 | 187.915 | 17,567,148 | 8,288,652 | 2 |
+| s1357-3 | 成功：将 import 移回导入区，仅重建 Scene1 聚合 | 135.755 | 9,342,912 | 8,235,596 | 1 |
+
+## 历史单元记录：S1.356
 
 | 项目 | 变化 |
 | --- | --- |

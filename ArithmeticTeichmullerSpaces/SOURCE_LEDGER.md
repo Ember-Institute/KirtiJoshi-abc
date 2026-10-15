@@ -3464,3 +3464,20 @@ Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进
 Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0。
 Checks.SceneBounds 1079/1079、Axioms.SceneBounds 876/876；Scene1 聚合通过。
 资源见总览。数学提交 `eb46941` 已推送。
+
+## S1.357：Canonical target / selected paper sum incompatibility
+
+- source-id: `JT-SCENE1-CANONICAL-TARGET-PAPER-SUM-INCOMPATIBILITY`
+- declarations: `canonicalTateTarget_qLogSum_lt_selectedPaperSum`、
+  `canonicalTateTarget_selectedPaperAccounting_impossible`、
+  `canonicalLinkTarget_selectedPaperAccounting_impossible`，文件
+  `Act1Scene1/IutInitialThetaCanonicalTargetPaperSumAudit.lean`。
+
+原创组合证明，消费 S1.356 target/reference equality 与 S1.283 strict ramification gap；
+无参考源码复制/import。canonical degree-one 来源条件已推出 target qLogSum 严格小于
+selected paper sum，因此 S1.351–352 额外要求的 `hq` 等式不可能满足。两者公开签名保留，
+其“条件性完成”解释由本条及 log5 S1-BND-357 纠正为“输入不相容”；不是原论文反例。
+后续须保留实际权重并修订下游会计。Prologue-R5→R5；derive；owner Scene1；Core
+假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1082/1082、
+Axioms.SceneBounds 879/879 与 trace 逐名匹配；Scene1 聚合通过，公理仅含标准允许集合。
+数学提交 `824a5a2`；资源及失败尝试见总览。
