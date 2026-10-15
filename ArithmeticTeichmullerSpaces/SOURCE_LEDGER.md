@@ -3661,3 +3661,16 @@ locus、H¹ₑ/BK 或 volume。Prologue-R5→R5；derive；owner Scene1；Core �
 最终闸门仍 0/4。
 Checks.SceneBounds 1127/1127、Axioms.SceneBounds 924/924；数学提交 `606d075` 已推送；
 S1.370 窄审计与 Scene1 聚合耗时 168.22s，最大 RSS 8,295,904 kB，9420 个 Lake 任务。
+
+## S1.371：Positive finite Haar for the actual integral-witness normalization hull
+
+- `PaperLogWitnessHull.witness_integralHull_normalizationHull_haar_pos_lt_top`：
+  对 actual singleton paper witness 的 `normalizationHull (integralHull {witness})`
+  证明 normalization Haar 严格正且小于 `⊤`。
+
+该定理消费 actual factor witness 非零性、S1.369 normalization carrier 和现有
+`normalizationHull_haar_pos_lt_top_of_pure_mem`；无参考源码复制/import。它只提供实际
+measure 输入，不识别 paper thetaVolume、H¹ₑ/BK 或最终 volume accounting。Prologue-R5→R5；
+derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1128/1128、Axioms.SceneBounds 925/925；数学提交 `afa7b14` 已推送；
+S1.371 窄审计与 Scene1 聚合耗时 155.00s，最大 RSS 8,295,172 kB，9420 个 Lake 任务。
