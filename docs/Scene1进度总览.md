@@ -39,7 +39,7 @@
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
 | 最近完成的数学单元 | S1.399：actual normalized saturated-class nontorsion |
-| 数学证明基线 | S1.398 已推送为 `18145f4`；S1.399 已完成叶文件与完整审计热构建，数学提交待本轮推送后回填 |
+| 数学证明基线 | S1.399 已完成叶文件与完整审计热构建并推送，数学提交为 `12534ce`；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 数学工作状态 | S1.364 一般饱和 log、单射、normalizedRationalClass 成员和 actual witness 求值通过；H¹ₑ/BK 仍 open |
 | 当前推进位置 | G4：p* 除法后的类已进入 p-power 饱和 H¹ 载体并求值为 paper witness；H¹ₑ/BK 等仍 open |
@@ -240,7 +240,7 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.399（推送前未验收）
+## 最近单元变化卡：S1.399（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
@@ -253,7 +253,7 @@ flowchart TD
 | 工程验收 | Checks.SceneBounds 1158/1158、Axioms.SceneBounds 955/955 与 Scene1 聚合热构建通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
 | 累计资源 | 窄构建累计 521.722 秒；完整审计 154.146 秒；过程组峰值 RSS 25,956,860 KiB，单进程峰值 8,296,796 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；完整审计 9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学、审计和记录变更待本轮推送；`docs/Email.txt` 保持未跟踪且不纳入提交 |
+| 交付 | 数学、审计和记录变更已推送为 `12534ce`；`docs/Email.txt` 保持未跟踪且不纳入提交 |
 | 证据 | [saturated Kummer log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSaturatedKummerLog.lean)；log5 S1-BND-399 |
 
 ### S1.399 交付构建（推送前）
