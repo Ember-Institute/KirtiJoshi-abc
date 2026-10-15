@@ -39,7 +39,7 @@
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
 | 最近完成的数学单元 | S1.365：integral tensor hull 到 tensor log-shell 的 carrier inclusion |
-| 数学证明基线 | `f20d6b0`，S1.365 数学叶子与审计入口已推送；后续纯文档提交不推进数学基线 |
+| 数学证明基线 | `4f39dc3`，S1.365 数学叶子与审计入口已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 数学工作状态 | S1.364 一般饱和 log、单射、normalizedRationalClass 成员和 actual witness 求值通过；H¹ₑ/BK 仍 open |
 | 当前推进位置 | G4：p* 除法后的类已进入 p-power 饱和 H¹ 载体并求值为 paper witness；H¹ₑ/BK 等仍 open |
@@ -217,17 +217,17 @@ flowchart TD
 | 解决的输入 | 不外给 p* 次根、log 字段或归一化类的 log 身份；清分母、scalar cancellation 和显式 graph witness 提供连接 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
 | 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
-| 工程验收 | Checks.SceneBounds 1120/1120、Axioms.SceneBounds 917/917 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
+| 工程验收 | Checks.SceneBounds 1124/1124、Axioms.SceneBounds 921/921 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
 | 累计资源 | S1.363 历史尝试合计 1139.892 秒；S1.364 三目标热构建耗时 222.35 秒；S1.364 最大进程组 RSS 8,427,528 kB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；局部 theorem heartbeat 1,000,000；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学提交 `f20d6b0` 已推送；本单元记录随文档提交同步 |
+| 交付 | 数学提交 `4f39dc3` 已推送；本单元记录随文档提交同步 |
 | 证据 | [tensor hull carrier](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionTensorLogShellHull.lean)；[paper witness bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-365 |
 
 ### S1.365 交付构建
 
 | 目标 | 结果 | 耗时（秒） | Lake 图任务数 | 最大 RSS（kB） |
 | --- | --- | ---: | ---: | ---: |
-| SceneBounds checks、axioms 与 Scene1 聚合 | 成功 | 115.38 | 9420 | 8,294,872 |
+| SceneBounds checks、axioms 与 Scene1 聚合 | 成功 | 42.43 | 9420 | 1,084,760 |
 
 ### S1.363 构建尝试明细（历史）
 
