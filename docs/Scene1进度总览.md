@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.357：canonical target / selected paper sum 输入不相容性审计 |
-| 数学证明基线 | `824a5a2`，S1.357 已验收；与本次文档同步推送，后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.358：一般数域 raw accounting 与 actual hull 消费者修复 |
+| 数学证明基线 | `c335975`，S1.358 已验收；与本次文档同步推送，后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.357 三个声明、两类审计及聚合入口均通过；已撤回 S1.351–352 可作有效装配的进度判断 |
-| 当前推进位置 | canonical degree-one 下 target qLogSum 严格小于 selectedPaperSum；S1.351–352 所需等式不相容，须修订加权会计及下游消费者 |
+| 数学工作状态 | S1.358 五个公开声明、两类审计和聚合均通过；真实来源模型与 G1–G4 仍未完成 |
+| 当前推进位置 | 用 raw qLogSum=[D.F:ℚ]·referenceAbsLogQ 与 actual hull 界替代错误等式；真实 volume/论文身份仍待落实 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.357 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.358 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -58,7 +58,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及多项 carrier 适配已存在 | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型 | 计划 §2.1；S1.270 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的 canonical 最终连接路线已因输入不相容排除；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者，无需预装 accounting 或 degree-one，真实 hull identity 仍为输入；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -91,6 +91,8 @@ flowchart TD
     G1["G1 部分完成<br/>目标与归一化冻结"]
     G2["G2 部分完成<br/>真实来源模型装配"]
     G3["G3 部分完成<br/>论文处集与重数会计"]
+    RH["条件性：raw accounting → actual hull 消费者<br/>一般数域；不预装 accounting；S1.358"]
+    VH["待落实：同一真实模型的<br/>Tate/q-family 与 hull-volume 身份"]
     C["待完成：最终 Corollary 3.12<br/>及整体审计验收"]
 
     K --> Z
@@ -114,6 +116,10 @@ flowchart TD
     L -.-> B
     B -.-> V
     H -.-> V
+    H --> RH
+    G2 -.-> VH
+    VH -.-> RH
+    RH -.-> C
     G1 -.-> C
     G2 -.-> C
     G3 -.-> C
@@ -124,7 +130,8 @@ flowchart TD
     classDef open fill:#f3f4f6,stroke:#6b7280,color:#111827;
     class K,Z,T,Q,H,I,L,C0,R0,N0 done;
     class G1,G2,G3,V partial;
-    class J,B,C open;
+    class J,B,C,VH open;
+    class RH partial;
     class NQ done;
 ```
 
@@ -162,6 +169,7 @@ flowchart TD
 | canonical Tate q-order alignment | 🟢 已闭合（Tate-only source 范围） | S1.354 逐处证明 Tate-only q-pilot source 的 q-order 等于 actual admissible-prime q-order | 将局部 q-order 等式接入 reference absLogQ 总和，并继续补齐真实 carrier 与 analytic base | G2、G3；[log5 S1.354](开发计划.V1Act1log5.md#s1354-canonical-tate-only-q-order-对齐) |
 | Tate-only reference absLogQ bridge | 🟢 已闭合（Tate-only source 范围） | S1.355 证明 Tate-only Scene1 q-pilot `absLogQ` 等于 actual reference q-pilot `absLogQ` | 将 reference q-pilot 接入 paper representative/target qLogSum accounting | G2、G3；[log5 S1.355](开发计划.V1Act1log5.md#s1355-tate-only-q-pilot-到-reference-abslogq) |
 | Tate-only target qLogSum accounting | 🟢 已闭合（给定 base 与来源条件） | S1.356：target `qLogSum = qPilot.absLogQ = referenceAbsLogQ`；结合严格差额排除 target 等于未加权 selectedPaperSum | G2、G3；S1.356–357；不构造真实 base |
+| canonical raw accounting / actual hull consumer | 🔵 条件性完成 | S1.358：一般数域 raw 次数会计与不接收完整 base/accounting 的 actual Haar 消费者已编译通过；实际 hull identity 和论文目标身份仍未落实 | G2、G3、G4；log5 S1-BND-358 |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
@@ -179,7 +187,32 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.357
+## 最近单元变化卡：S1.358
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G2/G3/G4：一般数域 raw 会计与 actual hull 消费者 |
+| 主要变化 | 来源/reference 等式无需完整 base 与 degree-one；从实际 Haar 界派生 raw target transfer、qProduct 界和最终不等式；五个公开声明已编译并逐名核对 |
+| 输入削减 | 不接收 `Corollary312Scene1Data.accounting`、错误的 `hq` 或 degree-one 证书；保留真实 Tate q-family 与 hull identity 等输入 |
+| 剩余义务 | 来源联合模型、论文 carrier/norm、真实 theta/BK/different-untilt 与 volume identity；raw 目标未冻结为论文目标 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 工程验收 | Checks.SceneBounds 1087/1087、Axioms.SceneBounds 884/884 与 trace 逐名顺序匹配；Scene1 聚合通过；仅使用 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
+| 累计资源 | 四次热构建合计 628.951 秒（含两次失败）；最大进程组 RSS 17,659,624 KiB（16.84 GiB），采样单进程峰值 8,291,204 KiB；实际 Lean worker 同时峰值 2 |
+| 资源口径 | 每 0.5 秒采样进程组 RSS，85 GiB 停止保护；CPU 0–13，LEAN_NUM_THREADS=10，Lean `-j1`；`-Kjobs=10` 未控制实际调度；未冷建、清缓存或重编 Mathlib |
+| 交付 | 数学提交 `c335975`；与维护文档一并推送 |
+| 证据 | [raw accounting](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalRawTargetAccounting.lean)；[raw hull consumer](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalRawHullConsumer.lean)；log5 S1-BND-358 |
+
+### S1.358 构建尝试明细
+
+| 尝试 | 结果及范围 | 耗时（秒） | Lake 图任务数 | 进程组峰值 RSS（KiB） | 采样单进程峰值（KiB） | 同时 Lean worker 峰值 |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1358-1 | 失败：raw source 定理字段访问的换行语法错误 | 134.814 | 9396 | 9,275,936 | 8,170,400 | 1 |
+| s1358-2 | 部分成功：raw accounting 通过；消费者缺少显式 include 参数 | 145.461 | 9396 | 9,353,388 | 8,250,708 | 1 |
+| s1358-3 | 成功：修复 section 参数，新消费者及 Checks.SceneBounds 通过 | 191.360 | 9396 | 9,405,968 | 8,291,204 | 1 |
+| s1358-4 | 成功：Axioms.SceneBounds 与 Scene1 聚合 | 157.316 | 9411 | 17,659,624 | 8,282,448 | 2 |
+
+## 历史单元记录：S1.357
 
 | 项目 | 变化 |
 | --- | --- |

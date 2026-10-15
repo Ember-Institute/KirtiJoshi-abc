@@ -3481,3 +3481,19 @@ selected paper sum，因此 S1.351–352 额外要求的 `hq` 等式不可能满
 假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1082/1082、
 Axioms.SceneBounds 879/879 与 trace 逐名匹配；Scene1 聚合通过，公理仅含标准允许集合。
 数学提交 `824a5a2`；资源及失败尝试见总览。
+
+## S1.358：Canonical raw accounting and hull consumer without preassembled base
+
+- `JT-SCENE1-CANONICAL-TATE-RAW-ACCOUNTING-WITHOUT-BASE`：
+  `Act1Scene1/IutInitialThetaCanonicalRawTargetAccounting.lean`，泛化 actual source/reference
+  finite-sum bridge，不依赖完整 Scene1 base 或 degree-one；target qLogSum 保留数域次数。
+- `JT-SCENE1-CANONICAL-RAW-HULL-CONSUMER`：
+  `Act1Scene1/IutInitialThetaCanonicalRawHullConsumer.lean`，从实际 Haar 界与 raw accounting
+  推导 transfer、qProduct 下界及当前 raw `Corollary312`，不接收目标等价估计或 accounting。
+
+消费本工程 actual Tate adapter、q-order alignment、raw degree accounting 和 actual
+collated hull Haar 估计；原创泛化与组合，无参考源码复制/import。共同真实模型和论文
+carrier/norm/volume identity 仍 open。Prologue-R5→R5，derive，owner Scene1；Core
+假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1087/1087、
+Axioms.SceneBounds 884/884 与 trace 逐名匹配，Scene1 聚合通过；仅使用标准允许公理。
+数学提交 `c335975`；资源及失败尝试见总览。
