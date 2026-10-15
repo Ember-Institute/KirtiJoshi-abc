@@ -3451,3 +3451,16 @@ owner Scene1；Core 假设/退休/迁移增量均 0。S1.345 mass-one certificat
 G3 的 revised paper representative semantics、thetaVolume 和联合真实模型仍 open。
 验证：Checks.SceneBounds 1068/1068、Axioms.SceneBounds 865/865 逐名匹配，
 Scene1 聚合通过，公理仅含标准允许集合；资源见 `docs/Scene1进度总览.md`。
+
+## S1.356：Canonical Tate qLogSum target accounting
+
+- source-id: `JT-SCENE1-INITIAL-THETA-CANONICAL-TATE-QPILOT-TARGET-ACCOUNTING`
+- declaration: `Corollary312Scene1QPilotData.qLogSum_eq_absLogQ`、
+  `qLogSum_eq_reference_ofCanonicalInitialThetaTateData`，文件
+  `Act1Scene1/IutInitialThetaCanonicalTateQPilotTargetAccounting.lean`。
+
+原创适配，消费 Tate q-family、source-index bridge 和 S1.355；无参考源码复制/import。
+证明 target qLogSum 与 q-pilot/reference absLogQ 相等；paper 未加权 accounting 另有义务。
+Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0。
+Checks.SceneBounds 1079/1079、Axioms.SceneBounds 876/876；Scene1 聚合通过。
+资源见总览。数学提交 `eb46941` 已推送。

@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.355：Tate-only q-pilot 到 reference absLogQ 桥 |
-| 数学证明基线 | `4dcd2e3`，S1.355 已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.356：target qLogSum 与 reference absLogQ |
+| 数学证明基线 | `eb46941`，S1.356 已推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.355 Tate-only q-pilot reference absLogQ 桥已验收并推送；Scene1 仍未完成 |
-| 当前推进位置 | Tate-only q-pilot 的完整 absLogQ 已与 actual reference q-pilot 对齐；paper accounting、analytic base 和最终 theta 身份仍未推出 |
+| 数学工作状态 | S1.356 target qLogSum accounting 已验收并推送；Scene1 仍未完成 |
+| 当前推进位置 | Tate-only degree-one target qLogSum 已等于 reference absLogQ；待核查该等式与既有消费者输入的相容性 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.355 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.356 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -177,7 +177,23 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.355
+## 最近单元变化卡：S1.356
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G2/G3：Tate-only reference absLogQ → target qLogSum |
+| 实际闭合 | bundle target `qLogSum = qPilot.absLogQ`；Tate-only degree-one 时进一步等于 reference absLogQ |
+| 剩余义务 | paper representative accounting、真实 analytic base、theta/BK/different-untilt 身份 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 验证 | Checks 1079/1079、Axioms 876/876；Scene1 聚合通过；2 个新增声明 |
+| 公理结果 | `propext`、`Classical.choice`、`Quot.sound` |
+| 资源 | 窄叶 110.50 秒、单进程 RSS 8169276 KiB；统一构建 174.84 秒、9409 jobs、单进程 RSS 8291056 KiB；合计 285.34 秒 |
+| 测量范围 | 本单元未采集进程组 RSS 与实际 worker 峰值，单进程 RSS 不代表进程组峰值 |
+| 交付 | 数学提交 `eb46941` 已推送 |
+| 证据 | [生产证明](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalTateQPilotTargetAccounting.lean)；log5 S1-BND-356 |
+
+## 历史单元记录：S1.355
 
 | 项目 | 变化 |
 | --- | --- |
