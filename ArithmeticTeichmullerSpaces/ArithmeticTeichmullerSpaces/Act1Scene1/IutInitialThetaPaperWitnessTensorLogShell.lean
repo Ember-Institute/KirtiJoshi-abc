@@ -257,6 +257,54 @@ theorem witness_integralHull_globalVolume_absLog_lt_mul_selectedPaperSum
     (iutInitialThetaFullBaseQPilotLogSum_lt_selectedPaperSum D)
     (by exact_mod_cast hn : (0 : ℝ) < n)
 
+theorem witness_integralHull_globalVolume_negAverageAbsLog_le_neg_referenceAbsLogQ
+    (hn : 0 < n) :
+    -(1 / (n : ℝ)) *
+        |Real.log
+          ((∏ v : iutInitialThetaOddModSupportFinset D,
+            (packet D n v).normalizationDegreeVolume
+              ((packet D n v).normalizationHull
+                ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+            (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)))| ≤
+      -JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+  have hn' : (0 : ℝ) < n := by exact_mod_cast hn
+  have h := mul_le_mul_of_nonneg_left
+    (witness_integralHull_globalVolume_negLog_ge_mul_referenceAbsLogQ D n)
+    (show 0 ≤ 1 / (n : ℝ) by positivity)
+  have hcancel :
+      (1 / (n : ℝ)) * ((n : ℝ) *
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D)) =
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+    rw [← mul_assoc, one_div_mul_cancel hn'.ne', one_mul]
+  rw [hcancel] at h
+  rw [witness_integralHull_globalVolume_negLog_eq_absLog D n] at h
+  simpa only [neg_mul] using neg_le_neg h
+
+theorem witness_integralHull_globalVolume_negAverageAbsLog_gt_neg_selectedPaperSum
+    (hn : 0 < n) :
+    -iutInitialThetaSelectedQRootPaperSum D <
+      -(1 / (n : ℝ)) *
+        |Real.log
+          ((∏ v : iutInitialThetaOddModSupportFinset D,
+            (packet D n v).normalizationDegreeVolume
+              ((packet D n v).normalizationHull
+                ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+            (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)))| := by
+  have hn' : (0 : ℝ) < n := by exact_mod_cast hn
+  have h := mul_lt_mul_of_pos_left
+    (witness_integralHull_globalVolume_negLog_lt_mul_selectedPaperSum D n hn)
+    (show 0 < 1 / (n : ℝ) by positivity)
+  have hcancel :
+      (1 / (n : ℝ)) * ((n : ℝ) * iutInitialThetaSelectedQRootPaperSum D) =
+        iutInitialThetaSelectedQRootPaperSum D := by
+    rw [← mul_assoc, one_div_mul_cancel hn'.ne', one_mul]
+  rw [hcancel] at h
+  rw [witness_integralHull_globalVolume_negLog_eq_absLog D n] at h
+  simpa only [neg_mul] using neg_lt_neg h
+
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     witness D n v ∈ (packet D n v).tensorLogShell := by

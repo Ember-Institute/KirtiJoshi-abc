@@ -38,8 +38,8 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.396：actual global negative-log 与 absolute-log 反向等式 |
-| 数学证明基线 | S1.396 已完成热构建并推送，数学提交为 `f048ecc`；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.397：actual global negative-average normalization |
+| 数学证明基线 | S1.396 已推送为 `f048ecc`；S1.397 已完成热构建，数学提交待本轮推送后回填 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 数学工作状态 | S1.364 一般饱和 log、单射、normalizedRationalClass 成员和 actual witness 求值通过；H¹ₑ/BK 仍 open |
 | 当前推进位置 | G4：p* 除法后的类已进入 p-power 饱和 H¹ 载体并求值为 paper witness；H¹ₑ/BK 等仍 open |
@@ -240,27 +240,27 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.396（已推送）
+## 最近单元变化卡：S1.397（推送前未验收）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：actual global negative-log ↔ absolute-log bridge |
-| 实际闭合 | `witness_integralHull_globalVolume_negLog_eq_absLog` 已通过热构建 |
+| 推进位置 | G4：actual global negative-average normalization |
+| 实际闭合 | `witness_integralHull_globalVolume_negAverageAbsLog_le_neg_referenceAbsLogQ` 与 `witness_integralHull_globalVolume_negAverageAbsLog_gt_neg_selectedPaperSum` 已通过热构建 |
 | 未闭合 | qLogSum/target consumer 连接、H¹ₑ/BK 身份、论文 theta/untilt/volume 身份、真实联合模型和最终 accounting |
-| 解决的输入 | S1.393 `absLog_eq_negLog` 对称取等 |
+| 解决的输入 | S1.386/S1.387 的 global negative-log 界与 S1.396 的 absolute-log 反向桥；显式保留负平均不等式方向 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
 | 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
-| 工程验收 | Checks.SceneBounds 1153/1153、Axioms.SceneBounds 950/950 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
-| 累计资源 | 本单元一次热构建成功 227.62 秒；峰值 RSS 8,296,508 kB |
+| 工程验收 | Checks.SceneBounds 1155/1155、Axioms.SceneBounds 952/952 与 Scene1 聚合热构建通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound` |
+| 累计资源 | 修正后热构建 243.717 秒；过程组峰值 RSS 25,894,920 KiB，单进程峰值 8,296,536 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib |
-| 交付 | 数学与审计变更已推送为 `f048ecc`；`docs/Email.txt` 保持未跟踪且不纳入提交 |
-| 证据 | [paper witness bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-396 |
+| 交付 | 数学、审计和记录变更待本轮推送；`docs/Email.txt` 保持未跟踪且不纳入提交 |
+| 证据 | [paper witness bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-397 |
 
-### S1.396 交付构建（推送前）
+### S1.397 交付构建（推送前）
 
 | 目标 | 结果 | 耗时（秒） | Lake 图任务数 | 最大 RSS（kB） |
 | --- | --- | ---: | ---: | ---: |
-| 叶文件、SceneBounds checks/axioms 与 Scene1 聚合 | 成功 | 227.62 | 9420 | 8,296,508 |
+| 叶文件、SceneBounds checks/axioms 与 Scene1 聚合 | 成功 | 243.717 | 9420 | 25,894,920 KiB（过程组；单进程 8,296,536 KiB） |
 
 ## 历史单元变化卡：S1.392
 

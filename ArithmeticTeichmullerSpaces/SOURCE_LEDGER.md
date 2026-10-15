@@ -3930,6 +3930,16 @@ Scene1；Core 假设/退休/转入/取出增量均 0。Checks.SceneBounds 1153/1
 一次热构建耗时 `227.62s`、峰值 RSS `8,296,508 kB`、9420 个 Lake 任务；未冷建、清缓存或
 重编 Mathlib。
 
+| `JT-SCENE1-PAPER-WITNESS-GLOBAL-VOLUME-NEGAVERAGE-NORMALIZATION` | `PaperLogWitnessHull.witness_integralHull_globalVolume_negAverageAbsLog_le_neg_referenceAbsLogQ`; `PaperLogWitnessHull.witness_integralHull_globalVolume_negAverageAbsLog_gt_neg_selectedPaperSum` | normalized negative-average bounds for the actual global witness-hull volume；Scene1/Derived | S1.386/S1.387 global negative-log bounds, S1.396 reverse bridge, and positive natural-number cancellation | proved / accepted |
+
+该单元显式保持 `negativeAverageAbsLog ≤ -referenceAbsLogQ` 与
+`-selectedPaperSum < negativeAverageAbsLog` 的方向，不把 qLogTerm 符号差异接入 actual API；
+不识别论文 thetaVolume，不构造 H¹ₑ/BK、different-untilt 或最终 accounting。Prologue-R5→R5；
+derive；owner Scene1；Core 假设/退休/转入/取出增量均 0。Checks.SceneBounds 1155/1155、
+Axioms.SceneBounds 952/952 与 Scene1 聚合通过，公理仅含 `propext`、`Classical.choice`、
+`Quot.sound`。修正后热构建耗时 `243.717s`、过程组峰值 `25,894,920 KiB`、单进程峰值
+`8,296,536 KiB`、9420 个 Lake 任务；未冷建、清缓存或重编 Mathlib。
+
 ## S1.392：Actual global volume negative-log nonnegativity
 
 | source-id | declaration | fidelity / boundary | model evidence | status |
