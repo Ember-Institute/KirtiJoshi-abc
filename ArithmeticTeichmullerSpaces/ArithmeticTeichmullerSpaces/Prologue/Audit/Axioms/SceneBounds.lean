@@ -167,6 +167,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogKernel
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperWitnessTensorLogShell
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
 #print axioms JoshiTeich.Act1Scene1.Scene1Input.one_le_thetaBase_norm
@@ -1081,3 +1082,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
 
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperNormalizedLog_mem_logShell
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_mem_logShell
+
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_tensorLogShell

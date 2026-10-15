@@ -3544,3 +3544,17 @@ carrier 成员关系，不识别 H¹ₑ/BK、paper theta locus、different-until
 Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增量均 0；最终闸门仍 0/4。
 Checks.SceneBounds 1107/1107、Axioms.SceneBounds 904/904 与 trace 逐名匹配；Scene1
 聚合通过，公理仅含标准允许集合。资源及失败尝试见总览。
+
+
+## S1.362：Paper witness tensor log-shell carrier
+
+- source-id: `JT-SCENE1-PAPER-WITNESS-TENSOR-LOG-SHELL`
+- declaration: `PaperLogWitnessHull.witness_mem_tensorLogShell`，文件
+  `Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean`。
+
+消费 S1.361 factorwise paper-normalized log-shell 成员关系、actual full-support witness
+和 tensor lattice API；原创组合，无参考源码复制/import。证明 actual pure tensor witness
+属于 ordinary tensor `tensorLogShell`，但不识别 H¹ₑ/BK、paper theta locus、different-untilt
+或 thetaVolume。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0；
+最终闸门仍 0/4。Checks.SceneBounds 1108/1108、Axioms.SceneBounds 905/905 与 trace
+逐名匹配；Scene1 聚合通过，公理仅含标准允许集合。资源及失败尝试见总览。

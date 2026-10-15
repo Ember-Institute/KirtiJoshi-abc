@@ -174,6 +174,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerImageLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerImageLogKernel
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperWitnessTensorLogShell
 /-! SceneBounds 家族：日常名称检查。 -/
 
 #check JoshiTeich.Act1Scene1.Scene1Input.logVolume_nonneg
@@ -1291,3 +1292,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
 
 #check JoshiTeich.Act1Scene1.LocalPadicLog.paperNormalizedLog_mem_logShell
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_mem_logShell
+
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_tensorLogShell
