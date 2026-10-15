@@ -3613,3 +3613,15 @@ S1.365 之前的 integral-hull API；不识别 normalization hull、paper theta 
 最终闸门仍 0/4。
 Checks.SceneBounds 1123/1123、Axioms.SceneBounds 920/920；数学提交 `79cd9c5` 已推送；
 S1.366 窄审计与 Scene1 聚合耗时 164.60s，最大 RSS 8,295,668 kB，9420 个 Lake 任务。
+
+## S1.367：Actual paper witness integral hull in the combined carrier
+
+- `PaperLogWitnessHull.witness_integralHull_le_unitLattice_inf_tensorLogShell`：
+  合并 S1.365 的 tensor log-shell 包含和 S1.366 的 unit-lattice 包含，得到
+  singleton actual paper witness hull 位于两者的 `Submodule.inf` 中。
+
+原创组合定理，无参考源码复制/import。它只重用两个已证 carrier inclusion；不识别
+normalization hull、paper theta locus、H¹ₑ/BK 或 volume。Prologue-R5→R5；derive；owner
+Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1124/1124、Axioms.SceneBounds 921/921；数学提交 `05465c0` 已推送；
+S1.367 窄审计与 Scene1 聚合耗时 160.84s，最大 RSS 8,295,280 kB，9420 个 Lake 任务。
