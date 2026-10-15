@@ -225,7 +225,7 @@ flowchart TD
 | actual integral-hull normalization-hull log-volume sign | 🟢 已闭合（actual sign input） | S1.374 由 S1.372–373 得到 `Real.log(actualDegreeVolume) ≤ 0`；这是 actual normalization-hull 的结果，与暂按笔误处理的论文 qLogTerm 问题分开 | G4；log5 S1-BND-374 |
 | actual integral-hull normalization-hull negative-log sign | 🟢 已闭合（actual sign input） | S1.375 将 S1.374 改写为 `0 ≤ -Real.log(actualDegreeVolume)`；仍只描述 actual volume，不裁决论文 qLogTerm | G4；log5 S1-BND-375 |
 | actual scalar-lattice degree volume → normalization-hull degree volume | 🟢 已闭合（volume lower bound） | S1.376 由 pure-witness hull consumer 得到 scalar lattice 的 degree volume 不超过 actual normalization-hull degree volume；不识别 paper thetaVolume 或 BK | G4；log5 S1-BND-376 |
-| H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
+| H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合；S1.403 确认参考 Lean 工程没有可直接移植的对应声明 | G4；log5 S1-BND-403 及剩余义务 |
 | 不同 untilt、论文 thetaVolume 与联合模型 | 🟡 部分完成 | 已有 ordinary-log 定量构件；真实身份、descent 及最终共同装配仍缺失 | G2、G4；计划 §2.3、log5 剩余义务 |
 
 ### 已排除路线：避免重复投入
