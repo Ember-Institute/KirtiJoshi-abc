@@ -3802,3 +3802,14 @@ different-untilt 或最终 accounting。Checks.SceneBounds 1138/1138、Axioms.Sc
 H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds 1139/1139、Axioms.SceneBounds
 936/936，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
 首次 API 适配失败后，修正构建耗时 `216.49s`、峰值 `8,295,832 kB`、9420 个 Lake 任务。
+
+## S1.383：Actual global volume/full-support alignment
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-FULL-SUPPORT-VOLUME-ALIGNMENT` | `PaperLogWitnessHull.witness_integralHull_globalVolume_eq_fullSupport_volume` | actual global volume presentation alignment；Scene1/Derived | S1.382 normalized product identity and `FullSupportThetaLogHull.volume_eq_normalizedFullRootProduct_pow` | proved / accepted |
+
+该定理只把 actual global normalized volume 对齐为 full-support global volume，不识别 paper
+thetaVolume、H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds 1140/1140、
+Axioms.SceneBounds 937/937，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、
+`Quot.sound`。热构建耗时 `216.76s`、峰值 `8,296,428 kB`、9420 个 Lake 任务。
