@@ -3686,3 +3686,15 @@ different-untilt 或最终 volume accounting。Prologue-R5→R5；derive；owner
 Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
 Checks.SceneBounds 1129/1129、Axioms.SceneBounds 926/926；数学提交 `cf5b3a0` 已推送；
 S1.372 窄审计与 Scene1 聚合耗时 153.75s，最大 RSS 8,295,240 kB，9420 个 Lake 任务。
+
+## S1.373：Upper bound for the actual witness degree volume
+
+- `PaperLogWitnessHull.witness_integralHull_normalizationDegreeVolume_le_one`：
+  由 S1.370 的 normalization-hull containment 和 `normalizationDegreeVolume_le_one`
+  得到 actual witness hull 的 degree volume `≤ 1`。
+
+原创消费者组合，无参考源码复制/import。与 S1.372 合成 actual volume 的 `(0,1]`
+输入；不识别 paper thetaVolume、H¹ₑ/BK 或最终 volume accounting。Prologue-R5→R5；
+derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1130/1130、Axioms.SceneBounds 927/927；数学提交 `e3c525a` 已推送；
+S1.373 窄审计与 Scene1 聚合耗时 156.31s，最大 RSS 8,295,268 kB，9420 个 Lake 任务。
