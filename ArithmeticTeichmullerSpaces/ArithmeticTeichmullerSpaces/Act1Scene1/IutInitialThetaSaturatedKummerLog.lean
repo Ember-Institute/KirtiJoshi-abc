@@ -119,6 +119,24 @@ theorem normalizedSaturatedClass_nsmul_ne_zero
   exact (PaperLogWitnessHull.value_ne_zero D s)
     ((mul_eq_zero.mp hmul).resolve_left hr')
 
+set_option maxHeartbeats 1000000 in
+theorem normalizedSaturatedClass_zsmul_ne_zero
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    {r : ℤ} (hr : r ≠ 0) :
+    r • normalizedSaturatedClass D s ≠ 0 := by
+  intro h
+  have hlog := congrArg
+    (LocalPadicLog.saturatedImageLog (Arithmetic.residueChar s.1)
+      (InitialThetaLogWitness.norm_residueChar_lt_one s.1)) h
+  rw [map_zsmul, map_zero] at hlog
+  rw [normalizedSaturatedClass_saturatedImageLog_eq_value D s] at hlog
+  have hr' : (r : localField D s) ≠ 0 :=
+    Int.cast_ne_zero.mpr hr
+  have hmul : (r : localField D s) * PaperLogWitnessHull.value D s = 0 := by
+    simpa only [zsmul_eq_mul] using hlog
+  exact (PaperLogWitnessHull.value_ne_zero D s)
+    ((mul_eq_zero.mp hmul).resolve_left hr')
+
 end PrincipalUnitKummer
 end
 end JoshiTeich.Act1Scene1
