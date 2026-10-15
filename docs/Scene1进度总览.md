@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.358：一般数域 raw accounting 与 actual hull 消费者修复 |
-| 数学证明基线 | `c335975`，S1.358 已验收；与本次文档同步推送，后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.359：principal-unit Kummer 像上的普通 log |
+| 数学证明基线 | `71406a8`，S1.359 已验收；与本次文档同步推送，后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.358 五个公开声明、两类审计和聚合均通过；真实来源模型与 G1–G4 仍未完成 |
-| 当前推进位置 | 用 raw qLogSum=[D.F:ℚ]·referenceAbsLogQ 与 actual hull 界替代错误等式；真实 volume/论文身份仍待落实 |
+| 数学工作状态 | S1.359 十二个公开声明、两类审计和聚合均通过；H¹ₑ/BK 及 G1–G4 仍未完成 |
+| 当前推进位置 | G4：构造 standard rational H¹ 中实际 Kummer 像上的普通 log；H¹ₑ/BK 身份仍待证明 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.358 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.359 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -84,6 +84,7 @@ flowchart TD
     R0["已闭合：integral 零类 iff 基域根塔<br/>实际下降；S1.341"]
     N0["已闭合：排除实际无限可除性<br/>integral 类非零；S1.342"]
     NQ["已闭合：actual rational 类非零<br/>全局系数映射核仍未比较；S1.343"]
+    KL["已构造：principal-unit Kummer 像<br/>普通 log 加法映射；S1.359"]
     B["未建立：H¹ₑ / BK<br/>ordinary-log 比较"]
     H["已闭合：ordinary-log 模型内<br/>hull 与 Haar 定量界"]
     L["已闭合：ordinary log 群律<br/>actual 单位无限阶；S1.339"]
@@ -112,6 +113,9 @@ flowchart TD
     L --> N0
     N0 -.-> NQ
     I -.-> NQ
+    NQ --> KL
+    L --> KL
+    KL -.-> B
     NQ -.-> B
     L -.-> B
     B -.-> V
@@ -132,6 +136,7 @@ flowchart TD
     class G1,G2,G3,V partial;
     class J,B,C,VH open;
     class RH partial;
+    class KL done;
     class NQ done;
 ```
 
@@ -171,6 +176,7 @@ flowchart TD
 | Tate-only target qLogSum accounting | 🟢 已闭合（给定 base 与来源条件） | S1.356：target `qLogSum = qPilot.absLogQ = referenceAbsLogQ`；结合严格差额排除 target 等于未加权 selectedPaperSum | G2、G3；S1.356–357；不构造真实 base |
 | canonical raw accounting / actual hull consumer | 🔵 条件性完成 | S1.358：一般数域 raw 次数会计与不接收完整 base/accounting 的 actual Haar 消费者已编译通过；实际 hull identity 和论文目标身份仍未落实 | G2、G3、G4；log5 S1-BND-358 |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
+| principal-unit rational Kummer 像上的普通 log | 🟢 已闭合（指定像范围） | S1.359：普通 log 下降为实际 principal-unit rational Kummer 像上的加法同态；actual rationalClass 的像成员及 log 值=p*·ordinary witness 已证明 | G4；log5 S1-BND-359；尚无 H¹ₑ/BK 身份 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
 | 不同 untilt、论文 thetaVolume 与联合模型 | 🟡 部分完成 | 已有 ordinary-log 定量构件；真实身份、descent 及最终共同装配仍缺失 | G2、G4；计划 §2.3、log5 剩余义务 |
@@ -187,7 +193,32 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.358
+## 最近单元变化卡：S1.359
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：从单位和 cocycle 推进到 standard rational Kummer 像上的普通 log |
+| 主要变化 | 构造实际 principal-unit 像子群；类相等推出普通 log 相等，再将 log 下降为像上的加法同态；实际类求值接入，十二个声明及 check 已通过 |
+| 剩余义务 | H¹ₑ/BK 身份、连续与 ℚₚ 线性、integral/rational 核约定、normalized class 与 paper ξ 身份、真实 theta/untilt 与 volume |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 工程验收 | Checks.SceneBounds 1099/1099、Axioms.SceneBounds 896/896 与 trace 逐名顺序匹配；Scene1 聚合通过；仅使用 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
+| 累计资源 | 五次热构建合计 537.302 秒（含三次失败）；最大进程组 RSS 17,623,044 KiB（16.81 GiB），采样单进程峰值 8,370,868 KiB；实际 Lean worker 同时峰值 2 |
+| 资源口径 | 每 0.5 秒采样进程组 RSS，85 GiB 停止保护；CPU 0–13，LEAN_NUM_THREADS=10，Lean `-j1`；`-Kjobs=10` 未控制实际调度；未改 heartbeat、冷建、清缓存或重编 Mathlib |
+| 交付 | 数学提交 `71406a8`；与维护文档一并推送 |
+| 证据 | [一般 Kummer image log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerImageLogarithm.lean)；[actual image log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaKummerImageLogarithm.lean)；log5 S1-BND-359 |
+
+### S1.359 构建尝试明细
+
+| 尝试 | 结果及范围 | 耗时（秒） | Lake 图任务数 | 进程组峰值 RSS（KiB） | 采样单进程峰值（KiB） | 同时 Lean worker 峰值 |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1359-1 | 失败：dependent cocycle rewrite 及单位逆元强制转换 | 74.856 | 9398 | 5,277,364 | 4,197,524 | 1 |
+| s1359-2 | 失败：逆元成员判定未展开 | 72.780 | 9398 | 5,282,536 | 4,199,256 | 1 |
+| s1359-3 | 部分成功：一般 image log 通过；actual 求值定义展开 heartbeat 超时 | 139.654 | 9398 | 9,480,640 | 8,370,868 | 1 |
+| s1359-4 | 成功：显式像成员等式避免超时；actual 适配与 Checks.SceneBounds 通过 | 153.442 | 9398 | 9,395,996 | 8,291,736 | 1 |
+| s1359-5 | 成功：Axioms.SceneBounds 与 Scene1 聚合 | 96.570 | 9413 | 17,623,044 | 8,290,092 | 2 |
+
+## 历史单元记录：S1.358
 
 | 项目 | 变化 |
 | --- | --- |

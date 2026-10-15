@@ -3497,3 +3497,20 @@ carrier/norm/volume identity 仍 open。Prologue-R5→R5，derive，owner Scene1
 假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1087/1087、
 Axioms.SceneBounds 884/884 与 trace 逐名匹配，Scene1 聚合通过；仅使用标准允许公理。
 数学提交 `c335975`；资源及失败尝试见总览。
+
+## S1.359：Ordinary logarithm on the principal-unit rational Kummer image
+
+- `JT-SCENE1-PRINCIPAL-KUMMER-IMAGE-LOGARITHM`：
+  `Act1Scene1/LocalKummerImageLogarithm.lean`，构造 rational Kummer hom、实际 principal-unit
+  子群及其 H¹ 像，证明 log 的代表无关性并下降为该像上的加法同态。
+- `JT-SCENE1-INITIAL-THETA-KUMMER-IMAGE-LOGARITHM`：
+  `Act1Scene1/IutInitialThetaKummerImageLogarithm.lean`，actual rationalClass 的像成员
+  以及 imageLog 值为 p* 乘 ordinary log witness。
+
+来源需求为 Joshi III 3190–3236；证明消费本工程 ordinary log 乘法律、standard rational
+cohomology 和一般局部 rational Kummer 非零定理。原创组合，无参考源码复制/import。
+此实际像尚未识别为 H¹ₑ，像上的普通 log 尚未识别为 BK log；连续、单射、满射和
+ℚₚ 线性未证明，p* 除法是否留在像中未断言。Prologue-R5→R5，derive，owner Scene1；
+Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1099/1099、
+Axioms.SceneBounds 896/896 与 trace 逐名匹配，Scene1 聚合通过；仅使用标准允许公理。
+数学提交 `71406a8`；资源及失败尝试见总览。
