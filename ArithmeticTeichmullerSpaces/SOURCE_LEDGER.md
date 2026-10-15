@@ -3722,3 +3722,15 @@ S1.374 窄审计与 Scene1 聚合耗时 157.34s，最大 RSS 8,295,344 kB，9420
 Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
 Checks.SceneBounds 1132/1132、Axioms.SceneBounds 929/929；数学提交 `26cb12c` 已推送；
 S1.375 窄审计与 Scene1 聚合耗时 157.91s，最大 RSS 8,295,368 kB，9420 个 Lake 任务。
+
+## S1.376：Scalar-lattice volume lower bound for the actual witness hull
+
+- `PaperLogWitnessHull.witness_integralHull_degreeVolume_le_normalizationHull_degreeVolume`：
+  对 actual paper witness 的 factor scalar lattice，证明其 `degreeVolume` 不超过
+  `normalizationHull (integralHull {witness})` 的 `normalizationDegreeVolume`。
+
+消费现有 pure-witness hull volume lemma，无参考源码复制/import。该不等式不识别 paper
+thetaVolume、H¹ₑ/BK 或最终 volume accounting。Prologue-R5→R5；derive；owner Scene1；
+Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
+Checks.SceneBounds 1133/1133、Axioms.SceneBounds 930/930；数学提交 `3d0242b` 已推送；
+S1.376 窄审计与 Scene1 聚合耗时 158.00s，最大 RSS 8,295,432 kB，9420 个 Lake 任务。
