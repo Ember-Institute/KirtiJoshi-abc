@@ -3514,3 +3514,18 @@ cohomology 和一般局部 rational Kummer 非零定理。原创组合，无参�
 Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1099/1099、
 Axioms.SceneBounds 896/896 与 trace 逐名匹配，Scene1 聚合通过；仅使用标准允许公理。
 数学提交 `71406a8`；资源及失败尝试见总览。
+
+## S1.360：Kernel of the principal-unit rational Kummer image logarithm
+
+- `JT-SCENE1-PRINCIPAL-KUMMER-IMAGE-LOG-KERNEL`：
+  `Act1Scene1/LocalKummerImageLogKernel.lean`，从实际 p-power 差商极限及小球保范数，
+  证明 log 核为 p-power 单位根；与 rational Kummer 核比较，推出 image log 单射。
+- 同时在 S1.359 两个 image-log 叶子追加自然数倍及 actual n 倍类的求值会计，
+  延续原 source-id，不改变既有签名。
+
+来源为 Joshi III 3190–3236 的 Kummer/log 比较需求；证明消费本工程已经验证的极限、
+小球 log 和 rational cohomology 群律；原创组合，无参考源码复制/import。
+结论只在 principal-unit Kummer 像内；不证明全局 H¹ 系数映射单射或 H¹ₑ/BK 身份、
+连续、满射、ℚₚ 线性或 p* 除法的像成员。Prologue-R5→R5，derive，owner Scene1；Core
+假设/退休/迁移增量均 0；最终闸门仍 0/4。Checks.SceneBounds 1105/1105、Axioms.SceneBounds 902/902 与 trace 逐名匹配，Scene1 聚合通过；
+仅使用标准允许公理。数学提交 `c4ab12b`，资源及失败尝试见总览。

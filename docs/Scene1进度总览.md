@@ -38,11 +38,11 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.359：principal-unit Kummer 像上的普通 log |
-| 数学证明基线 | `71406a8`，S1.359 已验收；与本次文档同步推送，后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.360：principal-unit log/Kummer 核比较 |
+| 数学证明基线 | `71406a8`，S1.360 数学已验收后同步推送；后续纯文档提交不推进数学基线 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.359 十二个公开声明、两类审计和聚合均通过；H¹ₑ/BK 及 G1–G4 仍未完成 |
-| 当前推进位置 | G4：构造 standard rational H¹ 中实际 Kummer 像上的普通 log；H¹ₑ/BK 身份仍待证明 |
+| 数学工作状态 | S1.360 六个新增声明、1105 checks、902 公理报告和聚合均通过；image log 在指定范围内单射 |
+| 当前推进位置 | G4：principal-unit rational Kummer 像内 log/Kummer 核已比较；H¹ₑ/BK、p* 除法像成员仍 open |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
 | Prologue 边界 | R5；S1.359 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
@@ -85,6 +85,7 @@ flowchart TD
     N0["已闭合：排除实际无限可除性<br/>integral 类非零；S1.342"]
     NQ["已闭合：actual rational 类非零<br/>全局系数映射核仍未比较；S1.343"]
     KL["已构造：principal-unit Kummer 像<br/>普通 log 加法映射；S1.359"]
+    KK["验证中：log 核=Kummer 核<br/>image log 单射；S1.360"]
     B["未建立：H¹ₑ / BK<br/>ordinary-log 比较"]
     H["已闭合：ordinary-log 模型内<br/>hull 与 Haar 定量界"]
     L["已闭合：ordinary log 群律<br/>actual 单位无限阶；S1.339"]
@@ -115,6 +116,8 @@ flowchart TD
     I -.-> NQ
     NQ --> KL
     L --> KL
+    KL --> KK
+    KK -.-> B
     KL -.-> B
     NQ -.-> B
     L -.-> B
@@ -135,7 +138,7 @@ flowchart TD
     class K,Z,T,Q,H,I,L,C0,R0,N0 done;
     class G1,G2,G3,V partial;
     class J,B,C,VH open;
-    class RH partial;
+    class RH,KK partial;
     class KL done;
     class NQ done;
 ```
@@ -177,6 +180,7 @@ flowchart TD
 | canonical raw accounting / actual hull consumer | 🔵 条件性完成 | S1.358：一般数域 raw 次数会计与不接收完整 base/accounting 的 actual Haar 消费者已编译通过；实际 hull identity 和论文目标身份仍未落实 | G2、G3、G4；log5 S1-BND-358 |
 | actual integral 类无 torsion | 🟢 已闭合（actual 范围） | S1.344 将非零 `ℤₚ` 标量作用后的 integral 类映到 rational 类；标量在 `ℚₚ` 中非零，结合 actual rational 类非零得到 `r • padicClass ≠ 0`。这不是全局 H¹ 无 torsion 或系数映射单射 | G4；[log5 S1.344](开发计划.V1Act1log5.md#s1344-actual-integral-kummer-类无-torsion) |
 | principal-unit rational Kummer 像上的普通 log | 🟢 已闭合（指定像范围） | S1.359：普通 log 下降为实际 principal-unit rational Kummer 像上的加法同态；actual rationalClass 的像成员及 log 值=p*·ordinary witness 已证明 | G4；log5 S1-BND-359；尚无 H¹ₑ/BK 身份 |
+| principal-unit log / rational Kummer 核 | 🟢 已闭合（指定像范围） | S1.360 拟证明 log 零 iff 某个 p-power 为 1，rational Kummer 核与 log 核相等，image log 单射；范围限于 principal-unit 像 | G4；log5 S1-BND-360 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | H¹ₑ、crystalline/Frobenius 与 BK/log | ⚪ 未建立 | 标准 ambient H¹ 类尚未被识别为所需子空间中的类，BK 与 ordinary-log 比较尚未闭合 | G4；log5 剩余义务 |
 | 不同 untilt、论文 thetaVolume 与联合模型 | 🟡 部分完成 | 已有 ordinary-log 定量构件；真实身份、descent 及最终共同装配仍缺失 | G2、G4；计划 §2.3、log5 剩余义务 |
@@ -193,7 +197,31 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.359
+## 最近单元变化卡：S1.360
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：principal-unit 普通 log 与 rational Kummer 核比较 |
+| 主要变化 | p-power 趋于 1，小球 log 保范数将零 log 降为实际 p-power torsion；在 rational H¹ 消去 torsion，证明 image log 单射；附自然数倍及 actual 求值会计 |
+| 剩余义务 | H¹ₑ/BK 身份、连续/满射/ℚₚ 线性、normalized class 的像成员与 paper ξ 身份、真实 theta/untilt/volume |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 工程验收 | Checks.SceneBounds 1105/1105、Axioms.SceneBounds 902/902 与 trace 逐名顺序匹配；Scene1 聚合通过；仅使用 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过 |
+| 累计资源 | 四次热构建合计 526.461 秒（含一次失败）；最大进程组 RSS 17,657,000 KiB（16.84 GiB），采样单进程峰值 8,292,448 KiB；实际 Lean worker 同时峰值 2 |
+| 资源口径 | 每 0.5 秒采样进程组 RSS，85 GiB 停止保护；CPU 0–13，LEAN_NUM_THREADS=10，Lean `-j1`；未改 heartbeat、冷建、清缓存或重编 Mathlib |
+| 交付 | 数学提交 `c4ab12b` |
+| 证据 | [核比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerImageLogKernel.lean)；log5 S1-BND-360 |
+
+### S1.360 构建尝试明细
+
+| 尝试 | 结果及范围 | 耗时（秒） | Lake 图任务数 | 进程组峰值 RSS（KiB） | 采样单进程峰值（KiB） | 同时 Lean worker 峰值 |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| s1360-1 | 失败：map_nsmul 参数顺序错误 | 74.617 | 9398 | 5,279,980 | 4,200,484 | 1 |
+| s1360-2 | 失败：核证明半径推断及多余 tactic | 167.609 | 9399 | 9,625,580 | 8,277,896 | 2 |
+| s1360-3 | 成功：核叶子、actual 适配与 Checks.SceneBounds | 184.805 | 9399 | 9,670,612 | 8,292,448 | 2 |
+| s1360-4 | 成功：Axioms.SceneBounds 与 Scene1 聚合 | 99.430 | 9414 | 17,657,000 | 8,284,332 | 2 |
+
+## 历史单元记录：S1.359
 
 | 项目 | 变化 |
 | --- | --- |
