@@ -46,6 +46,15 @@ theorem witness_integralHull_normalizationDegreeVolume_eq_base
         (FullSupportThetaLogHull.region D n v) := by
   rw [witness_integralHull_normalizationHull_eq_base D n v]
 
+theorem witness_integralHull_localVolume_eq_relativeFactor_pow
+    (v : iutInitialThetaOddModSupportFinset D) :
+    ((packet D n v).normalizationDegreeVolume
+        ((packet D n v).normalizationHull
+          ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) =
+      iutInitialThetaRelativeQRootFactor D v ^ n := by
+  rw [witness_integralHull_normalizationDegreeVolume_eq_base D n v]
+  exact FullSupportThetaLogHull.localVolume_eq_relativeFactor_pow D n v
+
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     witness D n v ∈ (packet D n v).tensorLogShell := by

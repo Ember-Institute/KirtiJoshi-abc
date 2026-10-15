@@ -3769,3 +3769,14 @@ Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Qu
 不识别 paper thetaVolume、H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds
 1136/1136、Axioms.SceneBounds 933/933，Scene1 聚合通过，公理白名单仍为 `propext`、
 `Classical.choice`、`Quot.sound`。热构建耗时 `206.74s`、峰值 `8,295,616 kB`、9420 个 Lake 任务。
+
+## S1.380：Actual local volume relative-factor identity
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-LOCAL-VOLUME-RELATIVE-FACTOR` | `PaperLogWitnessHull.witness_integralHull_localVolume_eq_relativeFactor_pow` | actual local volume to relative q-root factor identity；Scene1/Derived | S1.379 numerical volume identity and `FullSupportThetaLogHull.localVolume_eq_relativeFactor_pow` | proved / accepted |
+
+该定理只把 actual block volume 的 local-degree 幂接到 relative q-root factor 的 `n` 次幂，
+不识别 paper thetaVolume、H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds
+1137/1137、Axioms.SceneBounds 934/934，Scene1 聚合通过，公理白名单仍为 `propext`、
+`Classical.choice`、`Quot.sound`。热构建耗时 `207.39s`、峰值 `8,295,684 kB`、9420 个 Lake 任务。
