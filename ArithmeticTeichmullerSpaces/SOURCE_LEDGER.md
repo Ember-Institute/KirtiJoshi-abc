@@ -3952,6 +3952,8 @@ Axioms.SceneBounds 952/952 与 Scene1 聚合通过，公理仅含 `propext`、`C
 
 | `JT-SCENE1-H1E-BK-FORMAL-SOURCE-AVAILABILITY-AUDIT` | `refer/iut/**/*.lean` source-availability result (no declaration) | negative source evidence for H¹ₑ/BK/crystalline/Frobenius formalization；Scene1 boundary | targeted `rg` audit of reference Lean tree; paper index `index-Arithmetic Teichmuller Spaces 3.md:632–636` identifies external dependencies and no internal proof label | accepted negative evidence；H¹ₑ/BK remains open |
 
+| `JT-ATS-PROLOGUE-OBLIGATIONS-SORRY-CONSTRUCTORS` | `Prologue/Obligations/Constructors.lean` placeholder constructors (rejected) | negative source evidence；the four constructors use `sorry` and are excluded from Scene1 | Constructors.lean:11–34; Scene1 plan §0.3/§4 and V1 no-`sorryAx` policy | rejected as inadmissible source |
+
 该单元只保留 actual saturated carrier 的非零性，不将其识别为 H¹ₑ、不提供 BK/log 比较或全局
 系数映射单射。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增量均 0。
 
