@@ -1086,6 +1086,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_mem_logShell
 
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_tensorLogShell
+#print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_integralHull_le_unitLattice
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.Packet.integralHull_le_tensorLogShell
 #print axioms JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_integralHull_le_tensorLogShell
 

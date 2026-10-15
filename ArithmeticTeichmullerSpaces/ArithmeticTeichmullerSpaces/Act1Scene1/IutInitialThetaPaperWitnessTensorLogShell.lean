@@ -35,6 +35,19 @@ theorem witness_mem_tensorLogShell
     (FullSupportThetaLogHull.sourceAt_liesOver D n v i)] at h
   exact h
 
+theorem witness_integralHull_le_unitLattice
+    (v : iutInitialThetaOddModSupportFinset D) :
+    (packet D n v).integralHull {witness D n v} ≤ (packet D n v).unitLattice := by
+  apply (packet D n v).integralHull_le_unitLattice
+  intro x hx
+  rw [Set.mem_singleton_iff] at hx
+  subst x
+  apply (packet D n v).pure_mem_lattice
+  intro i
+  rw [Metric.mem_closedBall, dist_zero_right]
+  rw [norm_value_eq_qroot_norm]
+  exact (iutInitialThetaFullQRoot_norm_lt_one D _).le
+
 theorem witness_integralHull_le_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
     (packet D n v).integralHull {witness D n v} ≤ (packet D n v).tensorLogShell := by
