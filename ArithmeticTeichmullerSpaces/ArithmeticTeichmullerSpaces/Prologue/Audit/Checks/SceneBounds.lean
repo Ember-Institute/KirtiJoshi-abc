@@ -1296,6 +1296,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.value_mem_logShell
 
 #check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_mem_tensorLogShell
+#check JoshiTeich.Act1Scene1.LocalCompletion.Packet.integralHull_le_tensorLogShell
+#check JoshiTeich.Act1Scene1.PaperLogWitnessHull.witness_integralHull_le_tensorLogShell
 
 #check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedKummerImage
 #check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedLogGraph

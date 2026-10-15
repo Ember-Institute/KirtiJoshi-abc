@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperLogShellBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensor
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorLogShellHull
 
 /-!
 source-id: JT-SCENE1-PAPER-WITNESS-TENSOR-LOG-SHELL
@@ -33,6 +34,16 @@ theorem witness_mem_tensorLogShell
   rw [Arithmetic.residueChar_eq_of_liesOver
     (FullSupportThetaLogHull.sourceAt_liesOver D n v i)] at h
   exact h
+
+theorem witness_integralHull_le_tensorLogShell
+    (v : iutInitialThetaOddModSupportFinset D) :
+    (packet D n v).integralHull {witness D n v} ≤ (packet D n v).tensorLogShell := by
+  apply (packet D n v).integralHull_le_tensorLogShell
+  intro x hx
+  rw [Set.mem_singleton_iff] at hx
+  subst x
+  change witness D n v ∈ (packet D n v).tensorLogShell
+  exact witness_mem_tensorLogShell D n v
 
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull
