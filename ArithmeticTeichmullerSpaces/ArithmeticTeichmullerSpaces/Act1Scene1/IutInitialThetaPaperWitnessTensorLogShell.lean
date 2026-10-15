@@ -161,5 +161,31 @@ theorem witness_integralHull_degreeVolume_le_normalizationHull_degreeVolume
     exact Submodule.subset_span (Set.mem_singleton _)
   · exact witness_integralHull_le_normalization D n v
 
+theorem witness_integralHull_normalizationHull_negLog_le_scalarLattice_negLog
+    (v : iutInitialThetaOddModSupportFinset D) :
+    -Real.log
+        ((packet D n v).normalizationDegreeVolume
+          ((packet D n v).normalizationHull
+            ((packet D n v).integralHull {witness D n v}))) ≤
+      -Real.log
+        ((packet D n v).degreeVolume
+          ((packet D n v).scalarLattice
+            (fun i => value D (FullSupportThetaLogHull.sourceAt D n v i)))) := by
+  have hScalarPos :
+      0 < (packet D n v).degreeVolume
+        ((packet D n v).scalarLattice
+          (fun i => value D (FullSupportThetaLogHull.sourceAt D n v i))) := by
+    rw [(packet D n v).degreeVolume_scalarLattice_eq_norm_product
+      (fun i => value D (FullSupportThetaLogHull.sourceAt D n v i))
+      (fun i => value_ne_zero D _)
+      (fun i => by
+        rw [norm_value_eq_qroot_norm]
+        exact iutInitialThetaFullQRoot_norm_lt_one D _)]
+    exact Finset.prod_pos (fun i hi => Real.rpow_pos_of_pos
+      (norm_pos_iff.mpr (value_ne_zero D _)) _)
+  exact neg_le_neg (Real.log_le_log
+    hScalarPos
+    (witness_integralHull_degreeVolume_le_normalizationHull_degreeVolume D n v))
+
 end
 end JoshiTeich.Act1Scene1.PaperLogWitnessHull

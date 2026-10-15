@@ -38,8 +38,8 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-15（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.376：actual scalar-lattice degree volume 到 normalization-hull volume 的下界 |
-| 数学证明基线 | `3d0242b`，S1.376 数学叶子与审计入口已推送；后续纯文档提交不推进数学基线 |
+| 最近完成的数学单元 | S1.377：actual normalization-hull negative-log 到 scalar-lattice negative-log 的比较 |
+| 数学证明基线 | 待提交：S1.377 数学叶子与审计入口已通过；推送后更新为本单元提交 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 数学工作状态 | S1.364 一般饱和 log、单射、normalizedRationalClass 成员和 actual witness 求值通过；H¹ₑ/BK 仍 open |
 | 当前推进位置 | G4：p* 除法后的类已进入 p-power 饱和 H¹ 载体并求值为 paper witness；H¹ₑ/BK 等仍 open |
@@ -240,7 +240,30 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.376
+## 最近单元变化卡：S1.377
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：actual normalization-hull degree volume → negative-log comparison |
+| 实际闭合 | `witness_integralHull_normalizationHull_negLog_le_scalarLattice_negLog` 已证明 |
+| 未闭合 | H¹ₑ/BK 身份、论文 theta/untilt/volume 身份、真实联合模型和最终 accounting |
+| 解决的输入 | S1.372 的 actual volume 正性、S1.376 的 degree-volume 下界、`Real.log_le_log` 与 `neg_le_neg` |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | Prologue R5→R5；Core 假设/退休/转入/取出增量均 0 |
+| 工程验收 | Checks.SceneBounds 1134/1134、Axioms.SceneBounds 931/931 与 trace 逐名匹配；Scene1 聚合通过；公理仅为 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 待文档更新后执行 |
+| 累计资源 | 本单元失败叶文件尝试 204.34 秒；成功叶文件 101.35 秒；三目标热构建 156.22 秒；本单元总计 461.91 秒 |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean `-j1`；本单元峰值 RSS 8,296,204 kB；未冷建、清缓存或重编 Mathlib |
+| 交付 | 数学提交待本轮提交并推送；`docs/Email.txt` 保持未跟踪且不纳入提交 |
+| 证据 | [paper witness bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean)；log5 S1-BND-377 |
+
+### S1.377 交付构建
+
+| 目标 | 结果 | 耗时（秒） | Lake 图任务数 | 最大 RSS（kB） |
+| --- | --- | ---: | ---: | ---: |
+| 叶文件 `IutInitialThetaPaperWitnessTensorLogShell` | 成功 | 101.35 | 热构建叶目标 | 8,279,716 |
+| SceneBounds checks、axioms 与 Scene1 聚合 | 成功 | 156.22 | 9420 | 8,296,204 |
+
+## 历史单元变化卡：S1.376
 
 | 项目 | 变化 |
 | --- | --- |

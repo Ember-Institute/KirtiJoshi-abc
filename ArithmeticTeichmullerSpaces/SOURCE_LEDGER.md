@@ -3734,3 +3734,15 @@ thetaVolume、H¹ₑ/BK 或最终 volume accounting。Prologue-R5→R5；derive�
 Core 假设/退休/迁移增量均 0；最终闸门仍 0/4。
 Checks.SceneBounds 1133/1133、Axioms.SceneBounds 930/930；数学提交 `3d0242b` 已推送；
 S1.376 窄审计与 Scene1 聚合耗时 158.00s，最大 RSS 8,295,432 kB，9420 个 Lake 任务。
+
+## S1.377：Actual normalization-hull negative-log comparison
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-NORMALIZATION-NEGLOG-COMPARISON` | `PaperLogWitnessHull.witness_integralHull_normalizationHull_negLog_le_scalarLattice_negLog` | actual witness normalization-hull versus scalar-lattice negative-log comparison；Scene1/Derived | S1.372 actual degree-volume positivity and S1.376 actual degree-volume lower bound; `Real.log_le_log` and `neg_le_neg` | proved / accepted |
+
+该定理不识别 paper thetaVolume、H¹ₑ/BK、different-untilt 或最终 accounting；qLogTerm
+符号差异继续按用户决定暂作笔误。Checks.SceneBounds 1134/1134、Axioms.SceneBounds
+931/931，Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
+叶文件成功构建耗时 `101.35s`、峰值 `8,279,716 kB`；三目标热构建耗时 `156.22s`、
+峰值 `8,296,204 kB`、9420 个 Lake 任务；本单元累计含两次失败尝试为 `461.91s`。
