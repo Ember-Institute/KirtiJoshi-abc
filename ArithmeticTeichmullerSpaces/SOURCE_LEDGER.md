@@ -3835,3 +3835,15 @@ Axioms.SceneBounds 938/938，Scene1 聚合通过，公理白名单仍为 `propex
 different-untilt 或最终 accounting。Checks.SceneBounds 1142/1142、Axioms.SceneBounds 939/939，
 Scene1 聚合通过，公理白名单仍为 `propext`、`Classical.choice`、`Quot.sound`。
 热构建耗时 `221.22s`、峰值 `8,296,000 kB`、9420 个 Lake 任务。
+
+## S1.386：Actual global negative-log reference lower bound
+
+| source-id | declaration | fidelity / boundary | model evidence | status |
+| --- | --- | --- | --- | --- |
+| `JT-SCENE1-PAPER-WITNESS-REFERENCE-ABSLOG-LOWER-BOUND` | `PaperLogWitnessHull.witness_integralHull_globalVolume_negLog_ge_mul_referenceAbsLogQ` | actual global negative-log versus reference absLogQ lower bound；Scene1/Derived | S1.384 actual negative-log identity and `iutInitialThetaReferenceAbsLogQ_le_fullBaseSum` | proved / accepted |
+
+该定理只建立 actual volume 到 reference q-pilot 的下界，不把 reference q-pilot 识别为 paper
+target 或 thetaVolume，也不引入 H¹ₑ/BK、different-untilt 或最终 accounting。Checks.SceneBounds
+1143/1143、Axioms.SceneBounds 940/940，Scene1 聚合通过，公理白名单仍为 `propext`、
+`Classical.choice`、`Quot.sound`。两次失败尝试后成功构建耗时 `217.85s`、峰值
+`8,296,220 kB`、9420 个 Lake 任务；本单元累计 `488.32s`。

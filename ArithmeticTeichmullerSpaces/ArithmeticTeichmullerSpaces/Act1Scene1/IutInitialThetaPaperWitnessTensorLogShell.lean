@@ -6,6 +6,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorOrder
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizationHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorWitnessHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHullNormalizationBounds
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRepresentativeBound
 
 /-!
 source-id: JT-SCENE1-PAPER-WITNESS-TENSOR-LOG-SHELL
@@ -119,6 +120,20 @@ theorem witness_integralHull_globalVolume_absLog_eq_mul_fullBaseSum :
       (n : ℝ) * iutInitialThetaFullBaseQPilotLogSum D := by
   rw [witness_integralHull_globalVolume_eq_fullSupport_volume D n,
     FullSupportThetaLogHull.absLog_volume_eq_mul_fullBaseSum D n]
+
+theorem witness_integralHull_globalVolume_negLog_ge_mul_referenceAbsLogQ :
+    -Real.log
+        ((∏ v : iutInitialThetaOddModSupportFinset D,
+          (packet D n v).normalizationDegreeVolume
+            ((packet D n v).normalizationHull
+              ((packet D n v).integralHull {witness D n v})) ^ Arithmetic.localDeg v.1) ^
+          (1 / (Module.finrank ℚ ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ))) ≥
+      (n : ℝ) * JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+  rw [witness_integralHull_globalVolume_negLog_eq_mul_fullBaseSum D n]
+  exact mul_le_mul_of_nonneg_left
+    (iutInitialThetaReferenceAbsLogQ_le_fullBaseSum D)
+    (Nat.cast_nonneg n)
 
 theorem witness_mem_tensorLogShell
     (v : iutInitialThetaOddModSupportFinset D) :
