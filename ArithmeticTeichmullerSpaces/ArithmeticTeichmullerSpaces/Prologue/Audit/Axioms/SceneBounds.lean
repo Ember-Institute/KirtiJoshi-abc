@@ -1136,6 +1136,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedSaturatedClass_saturatedImageLog_ne_zero
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedSaturatedClass_nsmul_ne_zero
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedSaturatedClass_zsmul_ne_zero
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass_zsmul_ne_zero
 
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedClassOfImage
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedImageLog_classOfImage

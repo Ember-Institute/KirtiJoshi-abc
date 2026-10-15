@@ -137,6 +137,15 @@ theorem normalizedSaturatedClass_zsmul_ne_zero
   exact (PaperLogWitnessHull.value_ne_zero D s)
     ((mul_eq_zero.mp hmul).resolve_left hr')
 
+theorem normalizedRationalClass_zsmul_ne_zero
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    {r : ℤ} (hr : r ≠ 0) :
+    r • normalizedRationalClass D s ≠ 0 := by
+  intro h
+  apply normalizedSaturatedClass_zsmul_ne_zero D s hr
+  apply Subtype.ext
+  simpa [normalizedSaturatedClass] using h
+
 end PrincipalUnitKummer
 end
 end JoshiTeich.Act1Scene1

@@ -3946,6 +3946,8 @@ Axioms.SceneBounds 952/952 与 Scene1 聚合通过，公理仅含 `propext`、`C
 
 | `JT-SCENE1-INITIAL-THETA-NORMALIZED-SATURATED-KUMMER-ZSMUL-NONTORSION` | `PrincipalUnitKummer.normalizedSaturatedClass_zsmul_ne_zero` | nonzero integer multiples of the actual normalized saturated class；Scene1/Derived | S1.399 natural-multiple nonzero input, saturated image-log value equation, and characteristic-zero integer-cast nonvanishing | proved / accepted |
 
+| `JT-SCENE1-INITIAL-THETA-NORMALIZED-RATIONAL-KUMMER-ZSMUL-NONTORSION` | `PrincipalUnitKummer.normalizedRationalClass_zsmul_ne_zero` | nonzero integer multiples of the actual normalized rational H¹ class；Scene1/Derived | S1.400 saturated-class integer nontorsion and subtype coercion compatibility | proved / accepted |
+
 该单元只保留 actual saturated carrier 的非零性，不将其识别为 H¹ₑ、不提供 BK/log 比较或全局
 系数映射单射。Prologue-R5→R5；derive；owner Scene1；Core 假设/退休/转入/取出增量均 0。
 
