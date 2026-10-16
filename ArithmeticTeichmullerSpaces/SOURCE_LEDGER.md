@@ -4450,3 +4450,11 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-COMPLETION-KUMMER-SPAN` | `KummerValuation.multiplicativeSpan_finiteDimensional`, `multiplicativeSpan_isClosed`, `integralCoefficientImage_subset_multiplicativeSpan`, `multiplicativeSpan_eq_top`, `units_sup_primeLine_eq_top`, `units_primeLine_isCompl` | actual finite-dimensional completion 的 unit/prime splitting 给闭 span，逼近及 integral 清分母得原 ambient rational H¹ 全张成和 IsCompl。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
 
 五新叶模块、Checks.SceneBounds 1687/1687、Axioms.SceneBounds 1484/1484 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或新增 Core 假设。单位部分尚未识别为 H¹ₑ/BK，paper volume/不同 untilt/联合模型仍缺。
+
+## S1.447：实际 principal-unit Kummer 类进入 ambient unit subspace
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-PRINCIPAL-UNIT-AMBIENT-SPLIT` | `PrincipalUnitKummer.rationalClass_eq_fieldKummer`, `PrincipalUnitKummer.rationalClass_mem_unitsSubspace` | 实际 principal unit 与 field-element rational Kummer hom 的精确相等；norm-one criterion 将其置于原 unitsSubspace。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
+
+S1.447 不把 unitsSubspace 识别为 H¹ₑ/BK，不引入 Core 假设；paper volume、不同 untilt 和联合模型仍缺。原创，无参考源码复制。
