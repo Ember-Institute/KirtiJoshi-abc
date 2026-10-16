@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.422：小球原 integral lift、actual q-root 赋值阈值与高次幂 |
-| 数学证明基线 | S1.422 已验收并推送，数学提交 `0b80a46`；总览与该提交同批推送 |
+| 最近完成的数学单元 | S1.423：原 Tate q-order 阈值与同域有限幂 H¹ integral lift |
+| 数学证明基线 | S1.423 已验收并推送，数学提交 `9155993`；总览与该提交同批推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.422 actual normalized class 在 q-root order≥ramIdx 时有原 integral lift；充分高次 q-root powers 最终满足 integral-log membership；原 j=1 与论文有限指标仍 open，H¹ₑ/BK 与联合模型仍 open |
-| 当前推进位置 | G4：小球原 integral lift 与 actual q-root 数值条件；保留精确未满足条件 |
+| 数学工作状态 | S1.423 小球条件精确转回原 Tate q-order；同域有限幂 H¹ 类在明确阈值下有 integral lift，j=1 与旧类相同；原阈值和论文不同 untilt 身份仍 open |
+| 当前推进位置 | G4：原始 Tate 参数阈值与有限族 cohomological consumers |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.422 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.423 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -58,7 +58,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明；S1.416 对齐 principal-log 的 2p/p* carrier，S1.417 进一步证明该 carrier 等于全部 O* 的 p*-scaled 连续 log image；S1.420 排除原 integral ordinary-log image 与 scaled shell 的直接等式，p* 乘回给精确修正，S1.421 计算实际 Haar factor 与 log-volume 差 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层） | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership、S1.423 原 Tate q-order 阈值与同域有限幂 H¹ lifts；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -164,7 +164,9 @@ flowchart TD
     EVPOW["已闭合：q-root 高次幂最终 integral<br/>原 j=1 与有限指标仍待证明"]
     IVOL --> SLIFT
     SLIFT --> EVPOW
-    SLIFT -.-> B
+    FINLIFT["条件性：原 Tate q-order 阈值<br/>同域有限幂 H¹ lifts；S1.423"]
+    SLIFT --> FINLIFT
+    FINLIFT -.-> B
     KS --> TS
     TS --> TU
     TU --> TI
@@ -260,6 +262,7 @@ flowchart TD
 | 原 integral log / scaled shell normalization | 🟢 已闭合（原 ordinary-log normalization 范围） | unscaled principal-log image 严格小于 shell；p* 乘回恢复载体；actual completion 有 nonintegral shell class；actual value lift 判据 | actual witness membership、H¹ₑ/BK 与 period/theta/untilt 仍 open；G1/G4；log5 S1-BND-420 |
 | 原 integral-log/H¹ topology / actual Haar correction | 🟢 已闭合（原 ordinary local carrier 范围） | 开 ℤₚ 子模、满 ℚₚ span、原 H¹ log 同构；actual completion 的 compact/open 和 Haar 正有限；p* volume/log-volume correction | ordinary carrier 范围；actual witness membership、H¹ₑ/BK、paper thetaVolume 仍 open；G1/G4；log5 S1-BND-421 |
 | actual normalized class 的小球 integral lift | 🔵 条件性完成 | 小球内构造原 integral Kummer lift；actual odd support 下，order≥ramIdx 的显式充分条件给旧 normalized class lift；高次 q-root powers 最终满足 membership | 原 j=1 和论文有限指标未证；阈值不是 lift 必要条件；G4；log5 S1-BND-422 |
+| 原 Tate q-order 阈值 / 同域有限幂类 | 🔵 条件性完成 | 正 n 小球 iff 2ell*e_base≤n*baseQOrder；原线性幂 finitePowerClass 的 log / j=1 identity 与 coefficient integral criterion；原阈值给有限全族 lifts | 阈值未从 D 推出；不同 untilt 身份未证；G4；log5 S1-BND-423 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -291,41 +294,44 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.422（已推送）
+## 最近单元变化卡：S1.423（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：从小球 log 到原 integral coefficient lift 的实际连接 |
-| 实际闭合 | smallLogUnit / integral Kummer lift 及其原 coefficient 像等于 saturatedExp；奇 residue characteristic 的小球条件 iff q-root order≥ramIdx；actual normalized class 在该显式条件下有 integral lift；充分高次 q-root powers 的 paper log 最终 integral |
-| 实际消费者 | 原 small-ball log 满射 → 原基域 principal unit → integral Kummer class → 原 saturatedExp/log 单射 → actual witness / normalizedRationalClass；completion valuation 将小球转成实际赋值阈值 |
-| 解决的输入 | oddness 从来源推出；不再要求 caller 提供 lift 或 class comparison 证书；赋值下界作为显式充分条件保留 |
-| 未闭合 | 原 j=1 q-root 的赋值阈值或 integral membership，以及论文全部有限 theta indices；H¹ₑ/BK、paper thetaVolume、different-untilt 与真实联合模型 |
+| 推进位置 | G4：原 Tate q-order 阈值、有限线性幂族的原 H¹ lift |
+| 实际闭合 | threshold=2ell*e_base；正 n 小球 iff threshold≤n*baseQOrder；同域 1+pStar*qroot^j 的原 H¹ 类及 log identity；j=1 旧类 identity；各成员与有限全族在明确原 q-order 条件下有 integral lift |
+| 实际消费者 | actual q-root equation → base q-order/ramification 比较 → 精确小球测试 → 同域 principal-unit Kummer 类 → 原 coefficient lift；j=1 返回旧 normalized class |
+| 解决的输入 | 数值条件可直接在原 Tate q-order 上检查；无需外给 class identity / lift 证书；有限族条件不再仅用 eventually 描述 |
+| 未闭合 | actual baseQOrder≥threshold 的无条件证明或更弱 lift criterion 的实际满足；不同 untilt / paper theta 类身份；H¹ₑ/BK、paper thetaVolume 与联合模型 |
+| 负面边界 | 含 j=1 的有限平方幂族全部落入小球 iff j=1 满足原阈值；大幂 eventually 不能自动替代。小球测试失败不等于无 integral lift |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
-| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；旧公开类型、log、coefficient map 与实际 normalized class 不变 |
-| 工程验收 | 三叶模块、Checks.SceneBounds 1402/1402、Axioms.SceneBounds 1199/1199 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
-| 累计资源 | 成功累计 506.746 秒，含一次失败 126.577 秒，总计 633.323 秒；进程组峰值 RSS 25,996,520 KiB（24.792 GiB），单进程采样峰值 8,372,864 KiB，GNU time 最大 RSS 8,372,868 KiB |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原公开类型、classes、coefficient map 不变 |
+| 工程验收 | 两叶模块、Checks.SceneBounds 1418/1418、Axioms.SceneBounds 1215/1215 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 561.514 秒，失败累计 734.676 秒，总计 1296.190 秒；进程组峰值 RSS 26,000,316 KiB（24.796 GiB），单进程采样峰值 8,455,656 KiB，GNU time 最大 RSS 8,455,668 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
-| 交付 | 数学提交 `0b80a46`；本总览随数学提交推送，Scene1 整体仍未完成 |
-| 证据 | [小球 lift](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerSmallLogLift.lean)；[completion 赋值阈值](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionSmallLogLift.lean)；[actual class lift](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSmallIntegralLift.lean)；log5 S1-BND-422 |
+| 交付 | 数学提交 `9155993`，随总览同批推送；Scene1 整体仍未完成 |
+| 证据 | [原参数阈值](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaQRootIntegralThreshold.lean)；[有限幂 H¹ 类](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaFinitePowerIntegralLift.lean)；log5 S1-BND-423 |
 
-### S1.422 交付构建
+### S1.423 交付构建
 
-目标：`LocalKummerSmallLogLift`、`LocalCompletionSmallLogLift`、`IutInitialThetaSmallIntegralLift`、
-`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+目标：两新叶模块、`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
 从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
-`-Kjobs` 未被配置读取；叶目标实际并发 Lean worker 峰值 1，交付审计峰值 3，每进程 -j1。
-RSS 每 0.5 秒采样，85 GiB 停止阈值未触及；未冷建、清缓存、改动或重编 Mathlib。
+`-Kjobs` 未被配置读取；实际 leaf worker 峰值 1，交付审计峰值 3，每进程 -j1。
+未冷建、清缓存、改动或重编 Mathlib，85 GiB 停止阈值未触及。
 
 | 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
 | --- | --- | ---: | ---: | ---: |
-| s1422：generic 小球原 integral lift | 成功（退出 0） | 90.868 | 3254 | 5,281,300 |
-| s1422b：generic 重建通过；completion 使用不存在的 Int.natCast_le | 失败（退出 1） | 126.577 | 3938 | 5,810,152 |
-| s1422c：改用 Int.ofNat_le；completion 与 actual adapter | 成功（退出 0） | 229.412 | 9336 | 9,478,100 |
-| s1422audit：三叶模块、checks、axioms 与 Scene1 聚合 | 成功（退出 0） | 186.466 | 9453 | 25,996,520 |
+| s1423 | 失败（退出 1） | 160.835 | 9338 | 9,399,424 |
+| s1423b | 失败（退出 1） | 157.353 | 9338 | 9,385,280 |
+| s1423d | 失败（退出 1） | 240.603 | 9338 | 9,464,884 |
+| s1423e | 失败（退出 1） | 175.885 | 9338 | 9,557,272 |
+| s1423f | 成功（退出 0） | 201.022 | 9338 | 9,559,852 |
+| s1423g | 成功（退出 0） | 202.579 | 9338 | 9,557,480 |
+| s1423audit | 成功（退出 0） | 157.913 | 9455 | 26,000,316 |
 
-失败轮任务数为 Lake 输出的最大计划计数；成功轮为实际任务汇总。
-actual `smallNormalizedIntegralLift_standardMap` 局部 heartbeat 1000000，其余无新增覆盖。
-指标原始文件：`/tmp/import-audit-s1422{,b,c,audit}-metrics.json` 及对应 build.log。
+失败轮任务数为 Lake 输出最大计划计数；成功轮为实际汇总。失败详情保留在原始 build.log。
+局部 heartbeat 覆盖：`finitePowerClass_one`=1000000。
+指标原始文件：`/tmp/import-audit-s1423*-metrics.json` 及对应 build.log。
 
 
 ## 历史单元变化卡：S1.402（资源/计数补正，已推送）
@@ -2384,5 +2390,46 @@ RSS 每 0.5 秒采样，85 GiB 停止阈值未触及；未冷建、清缓存、�
 
 失败轮任务数为 Lake 输出的最大计划计数；成功轮为实际任务汇总。
 没有新增 heartbeat override。指标原始文件：`/tmp/import-audit-s1421{,b,c,audit}-metrics.json` 及对应 build.log。
+
+</details>
+
+<details>
+<summary>S1.422：小球 integral lift 与 actual q-root 赋值条件</summary>
+
+### 历史变化卡：S1.422（已推送）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：从小球 log 到原 integral coefficient lift 的实际连接 |
+| 实际闭合 | smallLogUnit / integral Kummer lift 及其原 coefficient 像等于 saturatedExp；奇 residue characteristic 的小球条件 iff q-root order≥ramIdx；actual normalized class 在该显式条件下有 integral lift；充分高次 q-root powers 的 paper log 最终 integral |
+| 实际消费者 | 原 small-ball log 满射 → 原基域 principal unit → integral Kummer class → 原 saturatedExp/log 单射 → actual witness / normalizedRationalClass；completion valuation 将小球转成实际赋值阈值 |
+| 解决的输入 | oddness 从来源推出；不再要求 caller 提供 lift 或 class comparison 证书；赋值下界作为显式充分条件保留 |
+| 未闭合 | 原 j=1 q-root 的赋值阈值或 integral membership，以及论文全部有限 theta indices；H¹ₑ/BK、paper thetaVolume、different-untilt 与真实联合模型 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；旧公开类型、log、coefficient map 与实际 normalized class 不变 |
+| 工程验收 | 三叶模块、Checks.SceneBounds 1402/1402、Axioms.SceneBounds 1199/1199 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 506.746 秒，含一次失败 126.577 秒，总计 633.323 秒；进程组峰值 RSS 25,996,520 KiB（24.792 GiB），单进程采样峰值 8,372,864 KiB，GNU time 最大 RSS 8,372,868 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 数学提交 `0b80a46`；本总览随数学提交推送，Scene1 整体仍未完成 |
+| 证据 | [小球 lift](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerSmallLogLift.lean)；[completion 赋值阈值](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionSmallLogLift.lean)；[actual class lift](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSmallIntegralLift.lean)；log5 S1-BND-422 |
+
+### S1.422 交付构建
+
+目标：`LocalKummerSmallLogLift`、`LocalCompletionSmallLogLift`、`IutInitialThetaSmallIntegralLift`、
+`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
+`-Kjobs` 未被配置读取；叶目标实际并发 Lean worker 峰值 1，交付审计峰值 3，每进程 -j1。
+RSS 每 0.5 秒采样，85 GiB 停止阈值未触及；未冷建、清缓存、改动或重编 Mathlib。
+
+| 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
+| --- | --- | ---: | ---: | ---: |
+| s1422：generic 小球原 integral lift | 成功（退出 0） | 90.868 | 3254 | 5,281,300 |
+| s1422b：generic 重建通过；completion 使用不存在的 Int.natCast_le | 失败（退出 1） | 126.577 | 3938 | 5,810,152 |
+| s1422c：改用 Int.ofNat_le；completion 与 actual adapter | 成功（退出 0） | 229.412 | 9336 | 9,478,100 |
+| s1422audit：三叶模块、checks、axioms 与 Scene1 聚合 | 成功（退出 0） | 186.466 | 9453 | 25,996,520 |
+
+失败轮任务数为 Lake 输出的最大计划计数；成功轮为实际任务汇总。
+actual `smallNormalizedIntegralLift_standardMap` 局部 heartbeat 1000000，其余无新增覆盖。
+指标原始文件：`/tmp/import-audit-s1422{,b,c,audit}-metrics.json` 及对应 build.log。
 
 </details>
