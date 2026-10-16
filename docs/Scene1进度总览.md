@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.430：实际六阶 torsion 到 selected q-root 三整除与数值下界 |
-| 数学证明基线 | S1.430 已验收并推送，数学提交 `b8bc9aa`；总览与该提交同批推送 |
+| 最近完成的数学单元 | S1.431：base Tate 六次根下降与低 ramification 实际吸收 |
+| 数学证明基线 | S1.431 已验收并推送，数学提交 `2bfbac9`；总览与该提交同批推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.430 actual 六阶 torsion 给 selected Tate 六次根、q-root 离散 order 三整除/≥3 和 paper-term≥3log p；actual margin 符号与 BK/不同 untilt 身份仍 open |
-| 当前推进位置 | G4：从 actual 六阶 torsion 推出新的 selected q-root 数值信息 |
+| 数学工作状态 | S1.431 完整 odd support 的 base Tate 六次根及 q-order 六整除/≥6；VBad 的 e_base≤2 给局部吸收。一般 margin 符号与 BK/不同 untilt 身份仍 open |
+| 当前推进位置 | G4：将六次根下降回原基域完成域，闭合低 ramification 子范围的吸收条件 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.430 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.431 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -58,7 +58,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明；S1.416 对齐 principal-log 的 2p/p* carrier，S1.417 进一步证明该 carrier 等于全部 O* 的 p*-scaled 连续 log image；S1.420 排除原 integral ordinary-log image 与 scaled shell 的直接等式，p* 乘回给精确修正，S1.421 计算实际 Haar factor 与 log-volume 差，S1.424 证明原 integral image 经显式 log/p* 连续同构到 shell（BK 身份待证），S1.425 排除它在保留通常小球指数和原类身份时直接作为其逆；S1.426 计算原 ordinary-log tensor/global volume 的 p* correction，S1.427 化为实际算术成本与局部吸收测试 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层） | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership、S1.423 原 Tate q-order 阈值与同域有限幂 H¹ lifts、S1.424 原 integral image 的 normalized ordinary log/shell 同构及 actual witness 无条件求值、S1.425 小球校准唯一性与 actual 原类的归一化差异、S1.426 原 ordinary-log hull 的实际 volume correction 和 collation bounds、S1.427 来源成本公式/局部吸收测试和 selected-paper-sum 消费者、S1.428 actual VBad ℓ 倍次数下界及放宽吸收条件、S1.429 全局 margin / actual singleton 精确判据、S1.430 六阶 torsion 的 actual selected Tate 六次根及 q-root 三整除下界；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership、S1.423 原 Tate q-order 阈值与同域有限幂 H¹ lifts、S1.424 原 integral image 的 normalized ordinary log/shell 同构及 actual witness 无条件求值、S1.425 小球校准唯一性与 actual 原类的归一化差异、S1.426 原 ordinary-log hull 的实际 volume correction 和 collation bounds、S1.427 来源成本公式/局部吸收测试和 selected-paper-sum 消费者、S1.428 actual VBad ℓ 倍次数下界及放宽吸收条件、S1.429 全局 margin / actual singleton 精确判据、S1.430 六阶 torsion 的 actual selected Tate 六次根及 q-root 三整除下界、S1.431 原 base Tate 六次根/六整除与 VBad 低 ramification 吸收；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -180,7 +180,9 @@ flowchart TD
     VBABS --> MARG
     SIX["已闭合：actual selected Tate 六次根<br/>q-root order≥3 / paperTerm≥3log p；S1.430"]
     MARG --> SIX
-    SIX -.-> B
+    BASESIX["已闭合：原 base Tate 六次根 / order≥6<br/>条件性：VBad e_base≤2 给局部吸收；S1.431"]
+    SIX --> BASESIX
+    BASESIX -.-> B
     KS --> TS
     TS --> TU
     TU --> TI
@@ -282,9 +284,11 @@ flowchart TD
 | 小球指数/log 校准 | 🟢 已闭合（显式小球条件范围） | 原 linear log 由 smallLogUnit 求值唯一决定；线性指数满足该公式则逆=ordinary log；log/p* 不相容，actual 原类 ordinary log≠witness | actual BK 的指数/class/map 身份未证；G1/G4；log5 S1-BND-425 |
 | 原 ordinary-log tensor/global volume | 🟢 已闭合（当前同源重复 block） | ordinaryVolume=C_n*旧 normalizedVolume；C_n=C_1^n；actual ordinary witness collation 的 corrected product 下界、固定成本平均 log 上界 | 不同 untilt/j-族与 paper thetaVolume 身份仍 open；G1/G4；log5 S1-BND-426 |
 | correction cost 算术 / 目标余量吸收 | 🔵 条件性完成 | 单块成本=d_v/f_s*log p，局部吸收 iff d_v*(T+q)≤d_s*q；逐处测试给 ordinary collation selected-paper-sum 界 | actual 测试未证；局部 iff / 全局充分范围；G1/G4；log5 S1-BND-427 |
-| VBad actual degree / relaxed absorption | 🔵 条件性完成 | actual VBad 的 d_s≥ℓ*d_v 无新增数值条件；T≤(ℓ−1)*q 给局部吸收和全局消费者 | VBad degree 子义务已闭合；剩余 q-order/补集测试未证；G4；log5 S1-BND-428 |
+| VBad actual degree / relaxed absorption | 🔵 条件性完成 | actual VBad 的 d_s≥ℓ*d_v 无新增数值条件；T≤(ℓ−1)*q 给局部吸收和全局消费者 | VBad degree 子义务已闭合；一般 q-order/补集测试未证；e_base≤2 子范围由 S1.431 闭合；G4；log5 S1-BND-428、431 |
 | 全局 margin / actual singleton | 🔵 条件性完成 | 算术总余量 M=paperSum−correctedCost；合法 singleton 精确求值，bound iff M≥0；允许跨处补偿 | actual M 符号未证；当前 ordinary block 范围；G4；log5 S1-BND-429 |
 | actual 六阶 torsion / selected q-root | 🟢 已闭合（离散阶数下界） | 36 个 rational 六阶点给 selected Tate 六次根；q-root order 三整除/≥3，selected paper term≥3log p | 不等同 absolute ramIdx 下界或 global margin 符号；G4；log5 S1-BND-430 |
+| actual base Tate 六次根 / 六整除 | 🟢 已闭合（完整 odd support） | 三阶点驱动 split Tate 构造，j 唯一性及次数一完成映射满射下降六次根；6∣baseQOrder、baseQOrder≥6 | 不等同 2ell*e_base 阈值；G4；log5 S1-BND-431 |
+| VBad 低 ramification 吸收 | 🔵 条件性完成 | actual baseQOrder≥6 和 ell≥5，给 e_base≤2 时的 arithmeticAbsorption / correctedLocalCost≤selectedPaperTerm；全局保留补集测试 | ramification 条件未普遍证明；高 ramification / 补集及一般 margin sign 仍 open；G4；log5 S1-BND-431 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -317,43 +321,43 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.430（已推送）
+## 最近单元变化卡：S1.431（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：actual 六阶 torsion 来源落实 selected q-root 数值信息 |
-| 实际闭合 | 基域六阶 torsion 36 点；实际 selected Tate 参数的六次根；selected q-root integer order 被 3 整除且≥3；actual selected paper term≥3log p |
-| 实际消费者 | actual six_torsion_rational + geometric torsion count → point-map 双射 → 两次注入 localization → Tate residue/root-class → 六次根 → 2ell root valuation → selected q-order / paper-term 下界 |
-| 解决的输入 | 完整六阶信息由 actual D 消费；根存在性和离散阶数下界没有新增数值或体积条件 |
-| 未闭合 | base-completion 六次根；actual qOrder 与 absolute ramIdx 的更强比较、global margin 符号；BK/H¹ₑ、不同 untilt、paper thetaVolume 与最终目标 |
-| 边界 | selected torsion-field completion 的离散阶数≥3 不能直接当成 normalized integrality / base-order bound；未据此关闭 margin 条件 |
+| 推进位置 | G4：原 base-completion Tate 参数的根下降，及低 ramification 范围的 correction 吸收 |
+| 实际闭合 | 正 n∣6 的 rational torsion count=n²；次数一完成映射满射；完整 odd support 的原 base Tate 六次根、6∣baseQOrder 和 baseQOrder≥6 |
+| 实际消费者 | 三阶点计数 → bottom-field split Tate 构造 → j 唯一性识别参数 → 六次根下降；VBad 上 e_base≤2 → T≤(ell−1)q → 原 ordinary-log arithmeticAbsorption / 局部成本比较 |
+| 解决的输入 | base root / 六整除无需新数值条件；VBad 低 ramification 子范围不再需要 caller 提供 q-order 大小条件 |
+| 未闭合 | 未从 D 推出所有 e_base≤2；高 ramification、VBad 补集和一般 global margin 符号；BK/H¹ₑ、不同 untilt、paper thetaVolume 与最终目标 |
+| 边界 | 低 ramification 吸收是显式条件性结果；base qOrder≥6 不直接当作 j=1 integral lift 阈值或无条件全局 bound |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
 | 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；复用已有独立适配，无新参考代码复制或高扇出改动 |
-| 工程验收 | 三新叶模块、Checks.SceneBounds 1535/1535、Axioms.SceneBounds 1332/1332 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
-| 累计资源 | 成功累计 327.435 秒，失败累计 518.248 秒，总计 845.683 秒；进程组峰值 RSS 26,007,376 KiB（24.803 GiB），单进程采样峰值 8,331,260 KiB，GNU time 最大 RSS 8,333,236 KiB |
+| 工程验收 | 四新叶模块、Checks.SceneBounds 1546/1546、Axioms.SceneBounds 1343/1343 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 269.609 秒，失败累计 930.311 秒，总计 1199.920 秒；进程组峰值 RSS 25,961,600 KiB（24.759 GiB），单进程采样峰值 8,334,596 KiB，GNU time 最大 RSS 8,334,980 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
-| 交付 | 数学提交 `b8bc9aa`，随总览同批推送；Scene1 整体仍未完成 |
-| 证据 | [六阶点与 Tate 根](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutSixTorsionTateRoot.lean)；[q-order power](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionQOrderPower.lean)；[实际 selected 下界](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedQRootThreeDivisibility.lean)；log5 S1-BND-430 |
+| 交付 | 数学提交 `2bfbac9`，随总览同批推送；Scene1 整体仍未完成 |
+| 证据 | [基域六次根](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaBaseSixthRoot.lean)；[低 ramification 消费者](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLowRamificationAbsorption.lean)；log5 S1-BND-431 |
 
-### S1.430 交付构建
+### S1.431 交付构建
 
-目标：三新叶模块、`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+目标：四新叶模块、`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
 从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
-`-Kjobs` 未被配置读取；leaf worker 峰值 2，交付审计峰值 3，每进程 -j1。
+`-Kjobs` 未被配置读取；实际 leaf worker 峰值 2，交付审计峰值 3，每进程 -j1。
 未冷建、清缓存、改动或重编 Mathlib；85 GiB 停止阈值未触及。
 
 | 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
 | --- | --- | ---: | ---: | ---: |
-| s1430：六阶计数/根模块通过；q-order 线性消元符号错误 | 失败（退出 1） | 156.278 | 9350 | 10,050,336 |
-| s1430b：q-order 模块通过；actual 私有 helper/DecidableEq 与别名问题 | 失败（退出 1） | 203.615 | 9350 | 9,389,908 |
-| s1430c：actual 仅余一处私有 badPlace helper 引用 | 失败（退出 1） | 158.355 | 9350 | 9,385,556 |
-| s1430d：改用公开 badPlace_source 后 actual 通过 | 成功（退出 0） | 155.449 | 9350 | 9,392,168 |
-| s1430audit：三叶模块、checks、axioms 与 Scene1 聚合 | 成功（退出 0） | 171.986 | 9470 | 26,007,376 |
+| s1431：因子阶数证明中的标量顺序与类型错误 | 失败（退出 1） | 155.156 | 9169 | 10,097,024 |
+| s1431b：actual completion 名称、局部实例与载体展开错误 | 失败（退出 1） | 230.248 | 9355 | 9,326,548 |
+| s1431c：completion alias 仍未限定 namespace | 失败（退出 1） | 159.252 | 9355 | 9,283,748 |
+| s1431d：有限计数收尾、Tate 别名与 liesOver 类型展开 | 失败（退出 1） | 152.884 | 9355 | 9,316,972 |
+| s1431e：基域下降通过；collation 缺少素数 Fact 实例 | 失败（退出 1） | 232.771 | 9355 | 9,376,960 |
+| s1431audit：四叶模块、checks、axioms 与 Scene1 聚合 | 成功（退出 0） | 269.609 | 9474 | 25,961,600 |
 
 失败轮任务数为 Lake 输出最大计划计数；成功轮为实际汇总；诊断保留在原始 build.log。
 局部 heartbeat 覆盖：无新增。
-指标原始文件：`/tmp/import-audit-s1430*-metrics.json` 及对应 build.log。
-
+指标原始文件：`/tmp/import-audit-s1431*-metrics.json` 及对应 build.log。
 
 ## 历史单元变化卡：S1.402（资源/计数补正，已推送）
 
@@ -2743,3 +2747,41 @@ actual `smallNormalizedIntegralLift_standardMap` 局部 heartbeat 1000000，其�
 指标原始文件：`/tmp/import-audit-s1429*-metrics.json` 及对应 build.log。
 
 </details>
+
+
+## 历史单元变化卡：S1.430（已推送）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：actual 六阶 torsion 来源落实 selected q-root 数值信息 |
+| 实际闭合 | 基域六阶 torsion 36 点；实际 selected Tate 参数的六次根；selected q-root integer order 被 3 整除且≥3；actual selected paper term≥3log p |
+| 实际消费者 | actual six_torsion_rational + geometric torsion count → point-map 双射 → 两次注入 localization → Tate residue/root-class → 六次根 → 2ell root valuation → selected q-order / paper-term 下界 |
+| 解决的输入 | 完整六阶信息由 actual D 消费；根存在性和离散阶数下界没有新增数值或体积条件 |
+| 未闭合 | base-completion 六次根；actual qOrder 与 absolute ramIdx 的更强比较、global margin 符号；BK/H¹ₑ、不同 untilt、paper thetaVolume 与最终目标 |
+| 边界 | selected torsion-field completion 的离散阶数≥3 不能直接当成 normalized integrality / base-order bound；未据此关闭 margin 条件 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；复用已有独立适配，无新参考代码复制或高扇出改动 |
+| 工程验收 | 三新叶模块、Checks.SceneBounds 1535/1535、Axioms.SceneBounds 1332/1332 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 327.435 秒，失败累计 518.248 秒，总计 845.683 秒；进程组峰值 RSS 26,007,376 KiB（24.803 GiB），单进程采样峰值 8,331,260 KiB，GNU time 最大 RSS 8,333,236 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 数学提交 `b8bc9aa`，随总览同批推送；Scene1 整体仍未完成 |
+| 证据 | [六阶点与 Tate 根](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutSixTorsionTateRoot.lean)；[q-order power](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionQOrderPower.lean)；[实际 selected 下界](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedQRootThreeDivisibility.lean)；log5 S1-BND-430 |
+
+### S1.430 交付构建
+
+目标：三新叶模块、`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
+`-Kjobs` 未被配置读取；leaf worker 峰值 2，交付审计峰值 3，每进程 -j1。
+未冷建、清缓存、改动或重编 Mathlib；85 GiB 停止阈值未触及。
+
+| 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
+| --- | --- | ---: | ---: | ---: |
+| s1430：六阶计数/根模块通过；q-order 线性消元符号错误 | 失败（退出 1） | 156.278 | 9350 | 10,050,336 |
+| s1430b：q-order 模块通过；actual 私有 helper/DecidableEq 与别名问题 | 失败（退出 1） | 203.615 | 9350 | 9,389,908 |
+| s1430c：actual 仅余一处私有 badPlace helper 引用 | 失败（退出 1） | 158.355 | 9350 | 9,385,556 |
+| s1430d：改用公开 badPlace_source 后 actual 通过 | 成功（退出 0） | 155.449 | 9350 | 9,392,168 |
+| s1430audit：三叶模块、checks、axioms 与 Scene1 聚合 | 成功（退出 0） | 171.986 | 9470 | 26,007,376 |
+
+失败轮任务数为 Lake 输出最大计划计数；成功轮为实际汇总；诊断保留在原始 build.log。
+局部 heartbeat 覆盖：无新增。
+指标原始文件：`/tmp/import-audit-s1430*-metrics.json` 及对应 build.log。
