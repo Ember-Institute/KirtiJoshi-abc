@@ -4168,3 +4168,13 @@ integral-image intersection、H¹ₑ/BK、period/theta/untilt 和联合模型仍
 负面结论只排除原 ordinary-log normalization 下的全载体直接等式。一般 shell 存在
 不可 lift 的类，不说明特定 actual q-root witness 不可 lift；不识别 H¹ₑ/BK，不触及暂作
 笔误处理的 qLogTerm 符号问题。具体 witness membership 和 period/theta/untilt 身份仍 open。
+
+## S1.421：原 integral-log 交集拓扑与 actual Haar scale correction
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INTEGRAL-KUMMER-LOG-TOPOLOGY` | `LocalPadicLog.integralLogSubmodule`, `smallBall_subset_integralLogSubmodule`, `integralLogSubmodule_isOpen`, `integralLogSubmodule_span_eq_top`, `integralKummerSubmodule`, `mem_integralKummerSubmodule_iff`, `integralKummerLogEquiv`, `integralKummerSubmodule_isOpen` | 原 unscaled principal-log carrier 与 ℤₚ action、small-ball 满射、p-power 清分母及原 integral coefficient image intersection；Joshi III 3227–3236。原双侧 subspace topology 上连续 ℤₚ log 同构，不通过坐标搬运拓扑。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1386/1386、Axioms.SceneBounds 1183/1183 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-INTEGRAL-LOG-VOLUME` | `LocalCompletion.integralLog`, `integralLog_isCompact`, `integralLog_isOpen`, `integralLog_span_eq_top`, `integralKummer`, `integralKummer_isCompact`, `integralKummer_isOpen`, `logShell_isCompact`, `logShell_isOpen`, `integralLog_haar_pos`, `integralLog_haar_ne_top`, `logShell_haar_pos`, `logShell_haar_ne_top`, `distribHaarChar_toReal_eq_norm`, `integralLog_volume_eq_paperScale_mul_shell`, `integralLog_volume_lt_shell`, `shell_logVolume_sub_integralLog_logVolume` | actual number-field completion 的 compact integer units / continuous full-unit log、原 H¹ log homeomorphism、原 normalized Haar 和 scalar-ball/index character 公式；Joshi III 2843–2853、3227–3236。原 log image 紧开满 span，H¹ integral intersection 紧开；实际 μ(L)=‖p*‖μ(shell)>0，有限且严格更小，对数差为 −log‖p*‖。原创，无参考源码复制。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1386/1386、Axioms.SceneBounds 1183/1183 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+紧开/full-span 不在本单元升级为已提供有限基。这里测量的是原 ordinary local carrier，
+未识别 H¹ₑ/BK 或 paper thetaVolume，也不判定特定 normalized witness 的 integral membership。

@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerIntegralLogTopology
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionIntegralLogVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralLogCriterion
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerIntegralLogLattice
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionIntegralShellNormalization
@@ -1384,3 +1386,29 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedClass_integralLift_iff_value_mem_principalLogImage
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.scale_value_mem_principalLogImage
+
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integralLogSubmodule
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.smallBall_subset_integralLogSubmodule
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integralLogSubmodule_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integralLogSubmodule_span_eq_top
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integralKummerSubmodule
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.mem_integralKummerSubmodule_iff
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integralKummerLogEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integralKummerSubmodule_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralLog
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralLog_isCompact
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralLog_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralLog_span_eq_top
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralKummer
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralKummer_isCompact
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralKummer_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.logShell_isCompact
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.logShell_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralLog_haar_pos
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralLog_haar_ne_top
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.logShell_haar_pos
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.logShell_haar_ne_top
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.distribHaarChar_toReal_eq_norm
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralLog_volume_eq_paperScale_mul_shell
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integralLog_volume_lt_shell
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.shell_logVolume_sub_integralLog_logVolume
