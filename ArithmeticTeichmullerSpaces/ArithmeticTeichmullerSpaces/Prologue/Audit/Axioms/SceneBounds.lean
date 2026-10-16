@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteLevelSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Denominator
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootKummerValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootKummerSeparation
@@ -1722,3 +1723,10 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.exists_prime_power_integralLift
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.exists_divided_integralLift
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.span_integralCoefficientImage_eq_top
+
+#print axioms JoshiTeich.Act1Scene1.GaloisCocycle.locallyConstant_hilbert90
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.finiteLevel_coboundary
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.finiteLevel_field_source
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.successive_roots_ratio_in_base
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.finiteLevel_sources_compatible
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_finiteLevel_source

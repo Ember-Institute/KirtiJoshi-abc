@@ -4407,3 +4407,13 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-CONTINUOUS-H1-INTEGRAL-DENOMINATOR` | `LocalKummer.Rational.exists_scaled_integral_cocycle`, `exists_prime_power_integralLift`, `exists_divided_integralLift`, `span_integralCoefficientImage_eq_top` | 原 compact Galois group 与原 Tate coordinates 给完整 cocycle lift；标准 H¹ 上任意 rational class 有 p^n 倍 integral lift，原 coefficient image 的 Q_p-span=⊤。Joshi III 3214–3236。 | Scene1/Derived；proved / accepted |
 
 两新叶模块、Checks.SceneBounds 1637/1637、Axioms.SceneBounds 1434/1434 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或 Core 假设。尚未证明 integral Kummer 来源、ambient multiplicativeSpan=H¹ 或 H¹ₑ/BK。
+
+
+## S1.443：integral Tate cocycle 的有限层基域来源
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-LOCALLY-CONSTANT-GALOIS-HILBERT90` | `GaloisCocycle.locallyConstant_hilbert90` | Krull 局部常值 cocycle 自动下降至有限 Galois 中间域；调用 Mathlib 有限 Hilbert 90，再回嵌得到原扩域 coboundary。无需给定中间域或 descent witness。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-INTEGRAL-KUMMER-FINITE-LEVEL-SOURCE` | `LocalKummer.finiteLevel_coboundary`, `finiteLevel_field_source`, `successive_roots_ratio_in_base`, `finiteLevel_sources_compatible`, `every_integralClass_finiteLevel_source` | 原 integral Tate cocycle 的每层实际基域元素和根；相邻根比值下降给模 p^n 次幂的代表元相容；标准 integral H¹ representative 消费。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
+
+两新叶模块、Checks.SceneBounds 1643/1643、Axioms.SceneBounds 1440/1440 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或 Core 假设。尚未证明完整 inverse-limit Kummer 等价、ambient H¹ 的乘法来源或 H¹ₑ/BK 身份。
