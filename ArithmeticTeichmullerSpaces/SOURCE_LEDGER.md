@@ -4482,3 +4482,11 @@ S1.449 只提供可消费的 ambient unit witness，不识别 H¹ₑ/BK、crysta
 | `JT-SCENE1-INITIAL-THETA-NORMALIZED-CLASS-UNIT-SATURATED-INTERSECTION` | `PrincipalUnitKummer.normalizedUnitSaturatedWitness`, `PrincipalUnitKummer.normalizedUnitSaturatedWitness_ne_zero` | 将同一实际 normalized rational class 的 ambient `unitsSubspace` 成员性与 saturated principal-Kummer 成员性放入一个合取 subtype，并保留底层类非零性。消费 S1.448、S1.449 及既有 saturated-log 结果；Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
 
 S1.450 只建立两个现有载体的实际交集 witness，不识别 H¹ₑ/BK、crystalline/Frobenius、different untilt 或 paper thetaVolume。
+
+## S1.451：实际 q-root 类位于 normalized principal-unit 线之外
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-QROOT-OUTSIDE-NORMALIZED-SPAN` | `PrincipalUnitKummer.qrootRationalKummerClass_not_mem_normalized_span` | 由 q-root 类不在 saturated Kummer image、normalized 类在该 image 且 image 对 `ℚₚ` 标量封闭，证明 q-root 类不在 normalized 类的单生成 span 中。Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
+
+S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK，不提供最终 prime-line 或 paper thetaVolume 身份。
