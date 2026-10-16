@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCoefficientKernel
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaIntegralLiftCriterion
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalUnitPrincipalPower
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalIntegerUnitLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionUnitLogarithm
@@ -1330,3 +1332,20 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.unitLog_power_formula
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.unitLog_continuous
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.logShell_eq_scaled_unitLog_image
+
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.padicClass_smul_eq_zero_of_coboundary
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_eq_zero_iff_prime_power_torsion
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_eq_iff_prime_power_difference
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.standardMap_eq_divided_iff
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.coefficientTorsion
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.mem_coefficientTorsion_iff
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.coefficientIntegralLinear
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.torsionFreeCoefficient
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.torsionFreeCoefficient_mk
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.Rational.torsionFreeCoefficient_injective
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.integralLift_rationalClass_iff
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.integralLift_normalizedClass_iff
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedClass_has_integralLift_iff
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.torsionFreePadicClass
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.torsionFreePadicClass_map
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.torsionFreePadicClass_ne_zero

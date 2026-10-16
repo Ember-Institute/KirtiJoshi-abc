@@ -4134,3 +4134,13 @@ T2Space 或 log 连续性作为外给证书。H¹ₑ/BK 及论文 theta/untilt/p
 
 这里只延拓 O* 上的 log，不构造全部 k* 上带 log(p)=0 的 branch。O* 的 rational Kummer
 image 相等不推出 integral H¹ 的像/交集、H¹ₑ/BK 或 period/theta/untilt 身份。
+
+## S1.418：完整系数映射核、torsion quotient 和 actual lift 判据
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-KUMMER-COEFFICIENT-KERNEL` | `LocalKummer.Rational.padicClass_smul_eq_zero_of_coboundary`, `standardMap_eq_zero_iff_prime_power_torsion`, `standardMap_eq_iff_prime_power_difference`, `standardMap_eq_divided_iff`, `coefficientTorsion`, `mem_coefficientTorsion_iff`, `coefficientIntegralLinear`, `torsionFreeCoefficient`, `torsionFreeCoefficient_mk`, `torsionFreeCoefficient_injective` | Joshi III 3214–3236；原 standard coefficient map、S1.340 integral 代表满射、S1.343 arbitrary rational coboundary denominator clearing 与 S1.413 class scalar law。所有 integral H¹ 的 coefficient kernel 恰为 p-power torsion；原 rational action 的 restriction 给 quotient 上单射；divided-class lift iff 原 integral 类 modulo torsion 的除法。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1336/1336、Axioms.SceneBounds 1133/1133 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-INTEGRAL-LIFT-CRITERION` | `PrincipalUnitKummer.integralLift_rationalClass_iff`, `integralLift_normalizedClass_iff`, `normalizedClass_has_integralLift_iff`, `torsionFreePadicClass`, `torsionFreePadicClass_map`, `torsionFreePadicClass_ne_zero` | actual padicClass、rationalClass、normalizedRationalClass 与完整 kernel/division criterion；normalized integral lift 的存在性被等价为 p*-divisibility modulo p-power torsion；actual class 在 quotient 中非零。原创适配，无参考源码复制。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1336/1336、Axioms.SceneBounds 1133/1133 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+不宣称原 integral coefficient map 单射，也不从判据断言 actual normalized class 有 lift。
+integral-image intersection、H¹ₑ/BK、period/theta/untilt 和联合模型仍需独立闭合。
