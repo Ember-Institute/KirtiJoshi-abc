@@ -4366,3 +4366,14 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-CANONICAL-TARGET-PAPER-NORMALIZED-BRIDGE` | `canonicalTateTarget_qLogSum_eq_weightedPaperNormalizedSourceQFactorLogSum`, `canonicalTateQFamily_qLogSum_eq_degree_mul_weightedPaperNormalizedSourceQFactorLogSum` | degree-one canonical bundle 的 qLogSum=同源加权 paper-normalized factor 和；一般数域 raw Tate q-family 保留 [F:ℚ] 因子，无 degree-one/full-link 输入。原 qLogSum/reference、raw normalization 和 paper factor identities 的组合。Joshi III 3617–3650；原创，无参考源码复制。 | Scene1/Derived；proved / accepted；新叶模块、Checks.SceneBounds 1589/1589、Axioms.SceneBounds 1386/1386 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
 
 这是 q-term 会计连接，未识别 unweighted representatives、BK、不同 untilt 或 paper thetaVolume；未取消 p* correction，未证明新的体积界。
+
+
+## S1.439：实际加权张量区域体积与完整 descent 条件
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-LOCAL-COMPLETION-GENERAL-ALGEBRA-NORM` | `LocalCompletion.norm_algebraNorm_eq_completionNorm` | 实际收缩 norm identity 经乘法和求逆扩展到全部非零 completion scalars；无新接口假设。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-LOCAL-TENSOR-WEIGHTED-REGION-VOLUME` | `Packet.normalizedHaar_scalarLattice_eq_localDeg_product_general`, `degreeLogVolume_scalarLattice_eq_norm_sum_general`, `degreeVolume_scalarLattice_eq_norm_product_general`, `weightedRegionVolume`, `weightedRegionVolume_scalarLattice`, `exists_weighted_region_volume_iff` | 实际 determinant/Haar 公式；所有非零因子上的 weighted product 降到区域 iff weighted degree 恒定，充分方向构造实际 Haar 数值函数。Joshi III 3522–3557。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-ACTUAL-SELECTED-WEIGHTED-REGION-VOLUME` | `SelectedThetaTensor.weightedDegree_eq_moduliDegree`, `weightedRegionVolume_eq_relative_product`, `relative_region_volume_exists_iff_common_moduliDegree` | actual selected fibre；inverse relative-degree 权重的 raw-norm region function 存在 iff moduli localDeg 恒定，包含空纤维。Joshi III eq:weights。 | Scene1/Derived；proved / accepted |
+
+三新叶模块、Checks.SceneBounds 1599/1599、Axioms.SceneBounds 1396/1396 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制。一般 D 的恒定条件、paper norm/thetaVolume、BK 和不同 untilt 仍未证明；不新增 Core 假设。
