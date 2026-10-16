@@ -4522,6 +4522,6 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-QROOT-OUTSIDE-UNITS` | `PrincipalUnitKummer.qrootRationalKummerClass_not_mem_unitsSubspace` | 将实际 q-root 的 norm<1 分离证据单独封装为 ambient `unitsSubspace` 外部性证书；消费 S1.440 的 saturated Kummer norm 判据。 | Scene1/Derived；proved / accepted |
 | `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG` | `PrincipalUnitKummer.qrootClass`, `qrootTateLog`, `qrootTateLog_qroot` | 在显式非单位证书之后实例化通用 Tate-direction log；实际 q-root 方向被消去。 | Scene1/Derived；proved / accepted |
-| `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-CONSUMERS` | `PrincipalUnitKummer.qrootTateLog_normalizedRationalClass`, `qrootTateLog_eq_zero_iff` | normalized 类的分支值等于既有 ordinary-log witness；kernel 恰为实际 q-root 线。通过一次针对性拆分后在 `maxHeartbeats 2000000` 下编译。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-CONSUMERS` | `PrincipalUnitKummer.qrootTateLog_normalizedRationalClass`, `qrootTateLog_eq_zero_iff`, `normalizedRationalClass_not_mem_qroot_span`, `qrootTateLog_normalizedRationalClass_ne_zero` | normalized 类的分支值等于既有 ordinary-log witness；kernel 恰为实际 q-root 线；由 witness 非零进一步得到 normalized 类不在 q-root span 且其 Tate-log 非零。通过一次针对性拆分、显式赋值零事实和显式传参后在 `maxHeartbeats 2000000` 下编译。 | Scene1/Derived；proved / accepted |
 
 本单元没有把 ambient H¹、q-root 线或其商识别为 H¹ₑ/BK、crystalline、period 或 paper `thetaVolume`。

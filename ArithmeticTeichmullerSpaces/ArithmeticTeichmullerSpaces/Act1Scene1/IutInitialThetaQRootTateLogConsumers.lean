@@ -64,5 +64,25 @@ theorem qrootTateLog_eq_zero_iff
     (Arithmetic.residueChar s.1) rfl (qrootClass D s)
       (qrootRationalKummerClass_not_mem_unitsSubspace D s) x
 
+/-! The normalized principal-unit class is separated from the actual q-root
+direction by the same Tate-log kernel. -/
+set_option maxHeartbeats 1000000 in
+theorem normalizedRationalClass_not_mem_qroot_span
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    normalizedRationalClass D s ∉
+      ℚ_[Arithmetic.residueChar s.1] ∙ qrootClass D s := by
+  intro h
+  have hz : qrootTateLog D s (normalizedRationalClass D s) = 0 :=
+    (qrootTateLog_eq_zero_iff D s (normalizedRationalClass D s)).2 h
+  rw [qrootTateLog_normalizedRationalClass D s] at hz
+  exact PaperLogWitnessHull.value_ne_zero D s hz
+
+set_option maxHeartbeats 1000000 in
+theorem qrootTateLog_normalizedRationalClass_ne_zero
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    qrootTateLog D s (normalizedRationalClass D s) ≠ 0 := by
+  rw [qrootTateLog_normalizedRationalClass D s]
+  exact PaperLogWitnessHull.value_ne_zero D s
+
 end
 end JoshiTeich.Act1Scene1.PrincipalUnitKummer
