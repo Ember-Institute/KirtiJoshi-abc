@@ -4300,3 +4300,13 @@ BK/不同 untilt 或最终 Corollary 3.12，也未构造 actual M<0 的反例数
 
 基域六次根和离散阶数≥6 是无条件 actual 结果；低 ramification 吸收是明确条件性结果。
 没有从 actual D 推出普遍 ramIdx≤2 或 global margin≥0；BK/不同 untilt/paper thetaVolume 仍 open。
+
+
+## S1.432：moduli ramification 条件下的实际 ordinary-log 吸收
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-MODULI-RAMIFICATION-ABSORPTION` | `OrdinaryKummerLogHull.vbad_source_localDeg_ge_ell_mul_base`, `OrdinaryKummerLogHull.vbad_source_localDeg_ge_ell_mul_baseRelativeRamIdx`, `OrdinaryKummerLogHull.arithmeticAbsorption_on_vbad_of_moduli_ramIdx_le_two`, `OrdinaryKummerLogHull.correctedLocalCost_le_paperTerm_on_vbad_of_moduli_ramIdx_le_two`, `OrdinaryKummerLogHull.correctedCost_le_selectedPaperSum_of_moduli_low_ramification`, `OrdinaryKummerLogHull.globalArithmeticMargin_nonneg_of_moduli_low_ramification`, `OrdinaryKummerLogHull.ordinary_collation_averageAbsLog_le_selectedPaperSum_of_moduli_low_ramification` | 保留 actual 两级次数塔的 relative ramification，得 d_source≥ell*d_base≥ell*r*d_moduli；原 T=2*e_moduli*(ell*r) 及 actual q≥6 给 e_moduli≤2 时的吸收。全局保留补集测试，并接 M≥0 和 ordinary collation 界。Joshi III 3520–3574、3624–3631；原 local degree API 与 S1.431 base root，原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；新叶模块、Checks.SceneBounds 1553/1553、Axioms.SceneBounds 1350/1350 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+本结果不限制基域相对 ramification，但 moduli ramification 条件未从一般 actual D 推出；
+高 moduli ramification、VBad 补集、一般 margin sign 以及 BK/untilt/paper thetaVolume 仍 open。
