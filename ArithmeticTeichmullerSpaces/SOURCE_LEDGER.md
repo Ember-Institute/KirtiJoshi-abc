@@ -4474,3 +4474,11 @@ S1.448 不引入 Core 假设，paper volume、不同 untilt、H¹ₑ/BK 身份�
 | `JT-SCENE1-INITIAL-THETA-NORMALIZED-CLASS-UNIT-WITNESS` | `PrincipalUnitKummer.normalizedUnitWitness`, `PrincipalUnitKummer.normalizedUnitWitness_ne_zero` | 将 S1.448 的 ambient `unitsSubspace` 成员性与既有 normalized rational-class 非零性包装为实际非零 subtype witness。Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
 
 S1.449 只提供可消费的 ambient unit witness，不识别 H¹ₑ/BK、crystalline/Frobenius、different untilt 或 paper thetaVolume。
+
+## S1.450：实际 normalized 类的 ambient-unit / saturated-Kummer 交集 witness
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-NORMALIZED-CLASS-UNIT-SATURATED-INTERSECTION` | `PrincipalUnitKummer.normalizedUnitSaturatedWitness`, `PrincipalUnitKummer.normalizedUnitSaturatedWitness_ne_zero` | 将同一实际 normalized rational class 的 ambient `unitsSubspace` 成员性与 saturated principal-Kummer 成员性放入一个合取 subtype，并保留底层类非零性。消费 S1.448、S1.449 及既有 saturated-log 结果；Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
+
+S1.450 只建立两个现有载体的实际交集 witness，不识别 H¹ₑ/BK、crystalline/Frobenius、different untilt 或 paper thetaVolume。
