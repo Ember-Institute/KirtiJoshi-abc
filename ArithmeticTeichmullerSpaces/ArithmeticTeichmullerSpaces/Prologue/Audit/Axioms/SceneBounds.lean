@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteSourceZeroCriterion
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteLevelSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Denominator
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootKummerValuation
@@ -1730,3 +1731,12 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.successive_roots_ratio_in_base
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.finiteLevel_sources_compatible
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_finiteLevel_source
+
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.tate_compactSpace
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.exists_tate_with_level
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.finiteLevelWitnesses
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.finiteLevelWitnesses_isClosed
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.finiteLevelWitnesses_decreasing
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_zero_iff_all_finiteLevels
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_zero_iff_source_powers
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_has_source_zero_criterion

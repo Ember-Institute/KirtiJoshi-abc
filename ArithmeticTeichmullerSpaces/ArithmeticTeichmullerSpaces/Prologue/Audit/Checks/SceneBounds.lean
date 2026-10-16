@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteSourceZeroCriterion
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteLevelSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Denominator
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootKummerValuation
@@ -1940,3 +1941,12 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.LocalKummer.successive_roots_ratio_in_base
 #check JoshiTeich.Act1Scene1.LocalKummer.finiteLevel_sources_compatible
 #check JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_finiteLevel_source
+
+#check JoshiTeich.Act1Scene1.LocalKummer.tate_compactSpace
+#check JoshiTeich.Act1Scene1.LocalKummer.exists_tate_with_level
+#check JoshiTeich.Act1Scene1.LocalKummer.finiteLevelWitnesses
+#check JoshiTeich.Act1Scene1.LocalKummer.finiteLevelWitnesses_isClosed
+#check JoshiTeich.Act1Scene1.LocalKummer.finiteLevelWitnesses_decreasing
+#check JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_zero_iff_all_finiteLevels
+#check JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_zero_iff_source_powers
+#check JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_has_source_zero_criterion

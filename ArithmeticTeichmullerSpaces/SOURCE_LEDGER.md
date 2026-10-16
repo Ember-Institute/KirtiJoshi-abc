@@ -4417,3 +4417,13 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-INTEGRAL-KUMMER-FINITE-LEVEL-SOURCE` | `LocalKummer.finiteLevel_coboundary`, `finiteLevel_field_source`, `successive_roots_ratio_in_base`, `finiteLevel_sources_compatible`, `every_integralClass_finiteLevel_source` | 原 integral Tate cocycle 的每层实际基域元素和根；相邻根比值下降给模 p^n 次幂的代表元相容；标准 integral H¹ representative 消费。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
 
 两新叶模块、Checks.SceneBounds 1643/1643、Axioms.SceneBounds 1440/1440 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或 Core 假设。尚未证明完整 inverse-limit Kummer 等价、ambient H¹ 的乘法来源或 H¹ₑ/BK 身份。
+
+
+## S1.444：integral H¹ 的有限层检测与基域幂判据
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INTEGRAL-KUMMER-FINITE-LEVEL-DETECTION` | `LocalKummer.tate_compactSpace`, `exists_tate_with_level`, `finiteLevelWitnesses`, `finiteLevelWitnesses_isClosed`, `finiteLevelWitnesses_decreasing`, `padicClass_eq_zero_iff_all_finiteLevels` | 原 compact Tate group 中的递减非空闭集交；每层 coboundary iff 原 integral H¹ class=0。各层见证延伸使用原 primitive generator。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-INTEGRAL-KUMMER-FINITE-SOURCE-ZERO` | `LocalKummer.padicClass_eq_zero_iff_source_powers`, `every_integralClass_has_source_zero_criterion` | S1.443 actual a_n,b_n 来源的 class=0 iff 每层 a_n 是基域 p^n 次幂；为每个 standard integral H¹ 类构造相容来源及此判据。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
+
+两新叶模块、Checks.SceneBounds 1651/1651、Axioms.SceneBounds 1448/1448 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或 Core 假设。仅闭合 finite-level detection/injectivity，inverse-limit 满射、ambient multiplicativeSpan 与 H¹ₑ/BK 身份仍未证明。
