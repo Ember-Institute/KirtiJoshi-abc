@@ -4215,3 +4215,15 @@ H¹ₑ/BK、paper thetaVolume 与真实联合模型仍 open。
 本单元证明的 map 是 ordinary log/p*，未识别为 BK logarithm；原 integral image 未识别为 H¹ₑ。
 缩放 log 不推出 divided rational class integral，S1.420 的原 ordinary-log 严格差异仍成立。
 不同 untilt/period、paper thetaVolume 和真实联合模型仍 open。
+
+
+## S1.425：ordinary 小球校准唯一性与实际原 Kummer 类比较
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-KUMMER-LOG-CALIBRATION` | `LocalPadicLog.linearLog_eq_of_smallLog_calibration`, `linearExp_inverse_eq_of_smallLog_calibration`, `normalizedRationalLog`, `normalizedRationalLog_apply`, `normalizedRationalLog_ne_ordinary`, `normalizedRationalLog_fails_smallLog_calibration` | 原 smallLogUnit 的 log=z，p^n 缩入小球和原 saturated log 单射；ℚₚ-linear log 由该校准唯一确定，线性指数同构若满足小球公式则逆为原 ordinary log；显式 log/p* 不满足同一条件。Joshi III 3212–3226，原创。 | Scene1/Derived；proved / accepted（显式校准范围）；两叶模块、Checks.SceneBounds 1443/1443、Axioms.SceneBounds 1240/1240 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-LOG-CALIBRATION` | `PrincipalUnitKummer.originalIntegralImageClass_ordinaryLog`, `originalIntegralImageClass_normalizedRationalLog`, `calibratedLog_originalIntegralImageClass`, `ordinaryLog_originalIntegralImageClass_ne_witness` | 原 actual standardMap(padicClass) 与非零 PaperLogWitnessHull.value；ordinary/calibrated log=p*·value≠value，显式 normalized log=value；只排除指定约定的同时识别，无 actual BK 构造或参考源码复制。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1443/1443、Axioms.SceneBounds 1240/1240 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+校准条件未被登记为 actual BK 已满足；这里没有构造 period rings 或 H¹ₑ。
+S1.424 的 normalized ordinary map 保持有效，但不能在保留通常小球指数公式和原类身份时
+直接作为其逆映射；BK 的指数/class/map 归一化身份仍需实际来源比较。
