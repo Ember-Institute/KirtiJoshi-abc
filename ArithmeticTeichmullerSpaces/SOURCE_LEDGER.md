@@ -4191,3 +4191,15 @@ integral-image intersection、H¹ₑ/BK、period/theta/untilt 和联合模型仍
 赋值阈值是小球充分条件，不是已证明的 integral-lift 必要条件；原 q-root 只有 norm<1，
 不登记原 j=1 或全部有限 theta indices 无条件 integral。高次幂结论也不代替这些有限指标。
 原 shell/image 严格差异仍成立；H¹ₑ/BK、period/theta/untilt 与联合模型仍 open。
+
+
+## S1.423：原 Tate 参数的 integral-lift 阈值与有限幂类
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-QROOT-INTEGRAL-THRESHOLD` | `LocalCompletion.norm_le_smallLogRadius_iff_ordp_ge_one`, `PrincipalUnitKummer.baseIntegralThreshold`, `baseIntegralThreshold_pos`, `qroot_ordp_eq_baseQOrder`, `qroot_power_small_iff_baseQOrder`, `qroot_small_iff_baseQOrder`, `normalizedClass_has_integralLift_of_baseQOrder`, `finite_qroot_square_small_iff_baseQOrder` | actual q-root equation 与 canonical base ordp accounting；threshold=2ell*e_base，正 n 时小球 iff threshold≤n*baseQOrder；包含 j=1 的有限平方幂族小球测试 iff 原阈值；旧 normalized class 条件性 lift。Joshi III 3199–3236，原创。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1418/1418、Axioms.SceneBounds 1215/1215 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-FINITE-POWER-INTEGRAL-LIFT` | `PrincipalUnitKummer.qroot_power_norm_le_one`, `finitePowerUnit`, `finitePowerClass`, `finitePowerClass_log`, `finitePowerClass_one`, `finitePowerClass_integralLift_iff`, `finitePowerClass_has_integralLift_of_baseQOrder`, `finitePowerClasses_have_integralLifts` | 原 completion 中 1+pStar*qroot^j 的原 saturated H¹ 类，j=1 与旧类相同；log identity、原 coefficient map integral criterion 和显式原 Tate q-order 条件下有限族 lifts。无参考源码复制。 | Scene1/Derived；proved / accepted（显式条件范围）；两叶模块、Checks.SceneBounds 1418/1418、Axioms.SceneBounds 1215/1215 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+有限线性幂族在同一 completion 中构造，尚未与不同 untilt 下论文 theta classes 比较。
+原始 q-order 阈值未从 actual D 无条件推出；小球阈值是充分条件，不是 lift 必要条件。
+H¹ₑ/BK、paper thetaVolume 与真实联合模型仍 open。
