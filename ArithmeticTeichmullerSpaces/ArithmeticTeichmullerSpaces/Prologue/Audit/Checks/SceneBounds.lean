@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312
 import ArithmeticTeichmullerSpaces.Act1Scene1.FieldOrientationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
@@ -1351,3 +1352,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 
 #check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedClassOfImage
 #check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedImageLog_classOfImage
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.PositivePacket
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.packetHull
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.packetWeight_pos
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.hullWeight_pos
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.cost_eq_packetWeightSum
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.link
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.volumeTransfer
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.packetCollationHull
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.volume_eq_exp_neg_logVolume
+#check JoshiTeich.Act1Scene1.ActualHullCostTransfer.ordinary_positivePacket_nonempty
+#check JoshiTeich.Act1Scene1.actualCostLink_volumeNormalization
+#check JoshiTeich.Act1Scene1.actualCostLink_transferLogBound

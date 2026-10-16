@@ -283,5 +283,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorLogShellHull
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

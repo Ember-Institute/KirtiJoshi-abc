@@ -4011,3 +4011,14 @@ paper sum 的 `n` 倍；不识别论文 thetaVolume，不构造 H¹ₑ/BK、diff
 与 Scene1 聚合通过，公理仅含 `propext`、`Classical.choice`、`Quot.sound`。修正后三目标热构建
 耗时 `216.59s`、峰值 RSS `8,296,384 kB`、9420 个 Lake 任务；本单元累计 `631.79s`。
 未冷建、清缓存或重编 Mathlib。
+
+## S1.406：实际 Haar 成本到有限 VolumeTransfer
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-HULL-COST-TRANSFER` | `ActualHullCostTransfer.PositivePacket`, `packetHull`, `cost_eq_packetWeightSum`, `link`, `volumeTransfer`, `packetCollationHull`, `volume_eq_exp_neg_logVolume`; `actualCostLink_volumeNormalization`, `actualCostLink_transferLogBound` | S1.321 actual Haar weighted sum、S1.322 negative-log cost 和 S1.358 raw degree accounting；Joshi III 3495–3557、3634–3645。实际 packetWeight 是已构造 local Haar cost，去掉零项保持总和；collated hull 成本已纳入 packet，无额外 hull charge。ordinary-log collation 的几何条件由生产者证明。 | Scene1/Derived；proved / accepted；1173 checks、970 axiom prints 与 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+
+`ordinary_positivePacket_nonempty` 由正长度 actual cost 严格正性和有限求和证明
+成本 carrier 非空，排除以全空 carrier 满足转移的退化路径。
+该成本 carrier 是实际 Haar 会计适配器。它不识别论文 theta/untilt/volume，也不提供
+theta/period 的真实联合满足模型；这些义务单独保留。Prologue-R5 和旧公开类型不变。
