@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.413：standard H¹ 的 actual Kummer ℤₚ 标量身份及 image closure |
-| 数学证明基线 | S1.413 已验收并推送，数学提交 `67a8f98`；总览与该提交同批推送 |
+| 最近完成的数学单元 | S1.414：原饱和 Kummer ℚₚ 子模与 ordinary-log 线性同构 |
+| 数学证明基线 | S1.414 已验收并推送，数学提交 `71c4885`；总览与该提交同批推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | 连续工作流进行中；S1.413 integral/rational H¹ scalar descent 和 principal image closure 已验收；H¹ₑ/BK、theta/period/untilt 联合模型仍 open |
-| 当前推进位置 | G4：actual cocycle scalar identity 下降到原 standard H¹ 及 principal image closure |
+| 数学工作状态 | 连续工作流进行中；S1.414 原 carrier 的 ℚₚ closure 和 ordinary-log 线性同构已验收；H¹ₑ/BK、theta/period/untilt 联合模型仍 open |
+| 当前推进位置 | G4：清除 ℚₚ 分母，建立实际饱和子模及 ordinary-log ℚₚ 线性同构 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.413 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.414 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -58,7 +58,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层） | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -144,7 +144,9 @@ flowchart TD
     KP --> KT
     KH["已闭合：standard H¹ ℤₚ scalar descent<br/>actual principal image closure；S1.413"]
     KT --> KH
-    KH -.-> B
+    KLP["已闭合：原 H¹ ℚₚ 子模<br/>ordinary-log 线性同构；S1.414"]
+    KH --> KLP
+    KLP -.-> B
     KS --> TS
     TS --> TU
     TU --> TI
@@ -231,6 +233,7 @@ flowchart TD
 | principal-unit p-adic 幂与 log | 🟢 已闭合（单位侧） | S1.411 用 actual integer-power limit 构造 principal unit 并证明 log scalar-limit formula | 仍需 root-tower/cocycle 的 ℤₚ 比较及 H¹/BK 身份；G4；log5 S1-BND-411 |
 | p-adic 幂的 Kummer 根塔/cocycle | 🟢 已闭合（cocycle 范围） | S1.412 base correction limits 构造 compatible roots，ratio/cocycle 等于原 Tate padicPower | H¹ scalar descent、ℚₚ closure 和 BK 身份仍 open；G4；log5 S1-BND-412 |
 | actual Kummer H¹ 的 ℤₚ scalar identity | 🟢 已闭合（principal image） | S1.413 standard integral/rational scalar descent 与 chosen principal KummerHom scalar law，principal image closure | ℚₚ closure、linear log、拓扑/BK 仍 open；G4；log5 S1-BND-413 |
+| saturated Kummer ℚₚ 子模/linear log | 🟢 已闭合（原饱和像） | S1.414 在原 ambient action 下证明 scalar closure，原 ordinary log 升为 ℚₚ linear equivalence | H¹ₑ/BK 和拓扑身份仍 open；G4；log5 S1-BND-414 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -261,36 +264,36 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.413（已推送）
+## 最近单元变化卡：S1.414（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：actual Kummer cocycle scalar identity → standard integral/rational H¹ → image closure |
-| 实际闭合 | 标准 classOf scalar law，actual tower integral/rational scalar descent；chosen principal KummerHom 与 p-adic 幂相容，principal image 在原 ambient ℤₚ 作用下封闭 |
-| 实际消费者 | classOf_smul → tower_padicClass → coefficient change → tower_rationalClass → chosen KummerHom → principal image closure |
-| 解决的输入 | 所有 scalar/closure 身份由 actual 根塔和 standard complex 推出，无 caller 证书 |
-| 未闭合 | ℚₚ 分母清除、linear log、H¹ₑ/BK、拓扑比较与论文真实模型 |
+| 推进位置 | G4：原 saturated Kummer carrier 的 ambient ℚₚ closure 与 ordinary-log 线性同构 |
+| 实际闭合 | 任意 ℚₚ scalar 清除分母后消费 principal ℤₚ closure；合并 saturation 分母，原 carrier 成为实际 ℚₚ 子模；ordinary log scalar law 与 linear equivalence |
+| 实际消费者 | unit-log / chosen Kummer scalar identity → principal image log scalar law → saturated scalar law → linear log equivalence |
+| 解决的输入 | ℚₚ closure、linearity 和线性逆由证明派生，无 caller 证书；局部域的既有连续 ℚₚ algebra action 明确作为类型实例 |
+| 未闭合 | H¹ₑ/BK、standard H¹ 子空间拓扑比较、论文 theta/untilt/volume 和真实联合模型 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
-| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原 H¹ scalar action 不变 |
-| 工程验收 | 两叶模块、Checks.SceneBounds 1254/1254、Axioms.SceneBounds 1051/1051 和 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
-| 累计资源 | 成功 216.322 秒；两次失败 250.739 秒；累计 467.061 秒；进程组峰值 RSS 25,901,380 KiB（24.701 GiB），单进程采样峰值 8,301,544 KiB，GNU time 最大 RSS 8,304,840 KiB |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原 H¹ action、carrier 和 log 不变 |
+| 工程验收 | 新叶模块、Checks.SceneBounds 1262/1262、Axioms.SceneBounds 1059/1059 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功 211.916 秒；两次失败 229.859 秒；累计 441.775 秒；进程组峰值 RSS 25,903,624 KiB（24.704 GiB），单进程采样峰值 8,305,360 KiB，GNU time 最大 RSS 8,305,372 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
-| 交付 | 数学提交 `67a8f98` 与本总览同批推送；连续目标保持 active |
-| 证据 | [H¹ 标量律](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/ContinuousH1Scalar.lean)；[实际 Kummer 标量下降](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerPadicPowerClass.lean)；log5 S1-BND-413 |
+| 交付 | 数学提交 `71c4885` 与本总览同批推送；连续目标保持 active |
+| 证据 | [饱和 ℚₚ 子模与线性 log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerSaturatedPadicModule.lean)；log5 S1-BND-414 |
 
-### S1.413 交付构建
+### S1.414 交付构建
 
-目标：`Act1Scene1.ContinuousH1Scalar`、`Act1Scene1.LocalKummerPadicPowerClass`、
-`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+目标：`Act1Scene1.LocalKummerSaturatedPadicModule`、`Prologue.Audit.Checks.SceneBounds`、
+`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
 从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
 `-Kjobs` 未被配置读取，成功构建实际并发 Lean worker 峰值 3，每进程 -j1。
 成功退出码 0，失败均 1；RSS 85 GiB 停止阈值未触及，未冷建、清缓存或重编 Mathlib。
 
 | 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
 | --- | --- | ---: | ---: | ---: |
-| 首轮：通用 scalar law 已通过，实际消费者有一条多余 exact | 失败 | 140.446 | 9430 | 5,287,316 |
-| 第二轮：一并删除了 congr 消费的 local equality，补回该 equality | 失败 | 110.293 | 9430 | 5,272,380 |
-| 恢复 local equality 后五目标 | 成功 | 216.322 | 9430 | 25,901,380 |
+| 首轮：image representative 的 Ω 推断与 p 非零分母证据未显式指定 | 失败 | 110.581 | 9431 | 5,300,636 |
+| 第二轮：field_simp 参数列表中 type annotation 语法 | 失败 | 119.278 | 9431 | 5,297,668 |
+| show p≠0 语法修正后四目标 | 成功 | 211.916 | 9431 | 25,903,624 |
 
 ## 历史单元变化卡：S1.402（资源/计数补正，已推送）
 
@@ -1965,3 +1968,34 @@ S1.405 只排除 signed-log identity。`log(actualVolume)<0` 与 `-log(actualVol
 | 第二轮：未限定 rw 误命中 tailExponent_step、mul/pow 方向错误 | 失败 | 147.142 | 9428 | 5,290,160 |
 | 第三轮：根塔递推中缺少 map_pow 归并 | 失败 | 134.633 | 9428 | 5,289,772 |
 | map_pow 归并修正后四目标 | 成功 | 255.917 | 9428 | 25,963,052 |
+
+## 历史单元变化卡：S1.413（已推送）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：actual Kummer cocycle scalar identity → standard integral/rational H¹ → image closure |
+| 实际闭合 | 标准 classOf scalar law，actual tower integral/rational scalar descent；chosen principal KummerHom 与 p-adic 幂相容，principal image 在原 ambient ℤₚ 作用下封闭 |
+| 实际消费者 | classOf_smul → tower_padicClass → coefficient change → tower_rationalClass → chosen KummerHom → principal image closure |
+| 解决的输入 | 所有 scalar/closure 身份由 actual 根塔和 standard complex 推出，无 caller 证书 |
+| 未闭合 | ℚₚ 分母清除、linear log、H¹ₑ/BK、拓扑比较与论文真实模型 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原 H¹ scalar action 不变 |
+| 工程验收 | 两叶模块、Checks.SceneBounds 1254/1254、Axioms.SceneBounds 1051/1051 和 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功 216.322 秒；两次失败 250.739 秒；累计 467.061 秒；进程组峰值 RSS 25,901,380 KiB（24.701 GiB），单进程采样峰值 8,301,544 KiB，GNU time 最大 RSS 8,304,840 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 数学提交 `67a8f98` 与本总览同批推送；连续目标保持 active |
+| 证据 | [H¹ 标量律](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/ContinuousH1Scalar.lean)；[实际 Kummer 标量下降](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerPadicPowerClass.lean)；log5 S1-BND-413 |
+
+### S1.413 交付构建
+
+目标：`Act1Scene1.ContinuousH1Scalar`、`Act1Scene1.LocalKummerPadicPowerClass`、
+`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
+`-Kjobs` 未被配置读取，成功构建实际并发 Lean worker 峰值 3，每进程 -j1。
+成功退出码 0，失败均 1；RSS 85 GiB 停止阈值未触及，未冷建、清缓存或重编 Mathlib。
+
+| 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
+| --- | --- | ---: | ---: | ---: |
+| 首轮：通用 scalar law 已通过，实际消费者有一条多余 exact | 失败 | 140.446 | 9430 | 5,287,316 |
+| 第二轮：一并删除了 congr 消费的 local equality，补回该 equality | 失败 | 110.293 | 9430 | 5,272,380 |
+| 恢复 local equality 后五目标 | 成功 | 216.322 | 9430 | 25,901,380 |
