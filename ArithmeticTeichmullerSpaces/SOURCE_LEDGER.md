@@ -4348,3 +4348,12 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-ACTUAL-REFERENCE-COEFFICIENT-ORDINARY-WEIGHT` | `OrdinaryKummerLogHull.representativeCoefficient_eq_ordinaryWeight_mul_sourceInertDeg_ratio`, `OrdinaryKummerLogHull.referenceLocalMargin`, `OrdinaryKummerLogHull.referenceLocalMargin_eq_weight_gap`, `OrdinaryKummerLogHull.referenceLocalMargin_eq_sourceInertDeg_gap`, `OrdinaryKummerLogHull.referenceLocalMargin_neg_of_sourceInertDeg_le_moduliDegree` | 精确比例和 reference margin 分解；source residue degree≤moduli global degree 时的局部负面证据。Joshi III eq:weights、3520–3574；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；一新叶模块、Checks.SceneBounds 1584/1584、Axioms.SceneBounds 1381/1381 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
 
 该结果不假设 source residue degree≤moduli global degree，也不判断一般 reference margin 符号。
+
+
+## S1.437：reference margin 的全局条件性负面证据
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-REFERENCE-GLOBAL-NEGATIVE-MARGIN` | `OrdinaryKummerLogHull.vbadPaperTerm_eq_selectedPaperTerm_of_coverage`, `OrdinaryKummerLogHull.referenceAbsLogQ_eq_full_coefficient_sum_of_coverage`, `OrdinaryKummerLogHull.referenceAbsLogQ_lt_correctedCost_of_coverage_of_sourceInertDeg_le` | full VBad coverage 下的 finite sum alignment；source residue degree≤moduli global degree 给全局 referenceAbsLogQ<correctedCost。Joshi III eq:weights、3520–3574；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；一新叶模块、Checks.SceneBounds 1587/1587、Axioms.SceneBounds 1384/1384 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+该负面证据只针对显式 coverage/degree 条件与当前 ordinary singleton normalization；不构造 actual 反例，不判定其它路线。
