@@ -4144,3 +4144,15 @@ image 相等不推出 integral H¹ 的像/交集、H¹ₑ/BK 或 period/theta/un
 
 不宣称原 integral coefficient map 单射，也不从判据断言 actual normalized class 有 lift。
 integral-image intersection、H¹ₑ/BK、period/theta/untilt 和联合模型仍需独立闭合。
+
+## S1.419：有限根下降、integral lift 与原饱和子空间交集
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-KUMMER-FINITE-ROOT-DESCENT` | `LocalKummer.exists_root_of_class_divisibility` | Joshi III 3214–3236；任意 integral cocycle 在有限 Tate level 的 scalar 消去、H¹ coboundary equality、实际 RootTower 修正和 InfiniteGalois fixed-field descent；从 cohomological divisibility 得基域具体有限根，无 full Kummer surjectivity 假设。 | Scene1/Derived；proved / accepted；四叶模块、Checks.SceneBounds 1345/1345、Axioms.SceneBounds 1142/1142 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-DIVIDED-KUMMER-INTEGRAL-LIFT` | `LocalKummer.Rational.integralUnitClass`, `standardMap_integralUnitClass`, `kummerHom_pow_nsmul`, `kummer_eq_divided_of_power_root`, `exists_integralLift_dividedKummer_iff` | S1.418 kernel/division criterion 和实际有限根下降；任意非零基域元素的 divided rational Kummer 类 integral-lift iff power-root 方程在基域有解；反向构造原 integral Kummer class。 | Scene1/Derived；proved / accepted；四叶模块、Checks.SceneBounds 1345/1345、Axioms.SceneBounds 1142/1142 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-KUMMER-INTEGRAL-INTERSECTION` | `LocalPadicLog.integralLift_iff_mem_principalImage` | 在原 p-power saturated Kummer carrier 内，actual integral coefficient image 恰为原 principal-unit rational Kummer image；root equation 的根仍 principal 由 S1.342 已证 prime-power norm theorem 推出，保持旧 carrier/action。 | Scene1/Derived；proved / accepted；四叶模块、Checks.SceneBounds 1345/1345、Axioms.SceneBounds 1142/1142 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-INTEGRAL-ROOT-CRITERION` | `PrincipalUnitKummer.normalizedClass_integralLift_iff_power_root`, `normalizedClass_integralLift_iff_principalImage` | actual normalizedRationalClass、实际 local completion / principal unit、p*=p^(if p=2 then 2 else 1)；将 lift 条件等价到具体基域根方程及原 principal image membership。原创，无参考源码复制。 | Scene1/Derived；proved / accepted；四叶模块、Checks.SceneBounds 1345/1345、Axioms.SceneBounds 1142/1142 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+交集结论只针对原 saturated rational Kummer 子空间与原 integral coefficient image；
+不识别 H¹ₑ/BK，不宣称 actual normalized class 满足这些条件；period/theta/untilt 与联合模型仍 open。
