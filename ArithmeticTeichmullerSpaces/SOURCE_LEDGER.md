@@ -4110,3 +4110,16 @@ H¹ₑ/BK 及拓扑身份仍是独立义务；不能从本线性同构自动推�
 
 局部域 `[FiniteDimensional ℚₚ k]` 显式作为输入；没有搬运 H¹ 拓扑，亦没有把
 T2Space 或 log 连续性作为外给证书。H¹ₑ/BK 及论文 theta/untilt/period 身份仍独立未闭合。
+
+## S1.416：ordinary log-shell 与归一化 actual Kummer shell
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-KUMMER-LOG-SHELL` | `LocalPadicLog.logShell_padicInt_smul`, `logShellIntegralSubmodule`, `principalSaturatedClass`, `saturatedPadicLog_principalSaturatedClass`, `normalizedPrincipalSaturatedClass`, `saturatedPadicLog_normalizedPrincipalClass`, `normalizedKummerShell`, `mem_normalizedKummerShell_iff`, `normalizedKummerShellLogEquiv` | Joshi III 2843–2853、3212–3236；旧 ordinary log-shell、actual principal p-adic power 与 S1.414–415 原 saturated log。ℤₚ closure 由实际单位幂给出；shell 成员恰为 `(2p)⁻¹` 乘实际 principal Kummer 类；log 在原 topology 下限制为连续 ℤₚ 线性同构。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1294/1294、Axioms.SceneBounds 1091/1091 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-KUMMER-LOG-SHELL` | `PrincipalUnitKummer.normalizedPadicClass`, `normalizedPadicClass_mem_logShell`, `normalizedShellClass`, `normalizedShellClass_log_eq_value`, `normalizedShellClass_exp_eq_class`, `normalizedPadicClass_has_paperPrincipalRepresentative` | 实际 completion 的已证 ℚₚ embedding/finite dimension/continuity 与旧 normalizedRationalClass、PaperLogWitnessHull.value。所有局部 scalar/finite/continuous 实例由实际 D 推出，无外加 comparison 证书；新适配原创，无参考代码复制。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1294/1294、Axioms.SceneBounds 1091/1091 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-KUMMER-LOG-SHELL-NORMALIZATION` | `LocalPadicLog.paperPrincipalLogShell`, `logShell_eq_paperPrincipalLogShell`, `paperPrincipalSaturatedClass`, `saturatedPadicLog_paperPrincipalClass`, `mem_normalizedKummerShell_iff_paperScale` | Joshi III 2843–2853、3160–3175、3226；p=2 时 2p=p*=4，奇 p 时 ℤₚ 中的 1/2 和实际 principal-unit 半次幂对齐两种 carrier；原 H¹ 中有实际 p*-divided principal representative。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1294/1294、Axioms.SceneBounds 1091/1091 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+归一化沿用旧 ordinary shell 的 `2p`，并证明其 carrier 等于 p*-normalized principal-log image。
+该 principal-log 表达尚未扩为全部 O* 上的 branch。该 shell 是原 saturated rational H¹ 中的实际
+归一化 principal image；不据此声称其等于 integral H¹ 的像或交集、H¹ₑ 或 BK shell。
+真实 period/Bcris、different-untilt、paper thetaVolume 与联合模型继续 open。
