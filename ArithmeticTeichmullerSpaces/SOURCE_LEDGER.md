@@ -4458,3 +4458,11 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-INITIAL-THETA-PRINCIPAL-UNIT-AMBIENT-SPLIT` | `PrincipalUnitKummer.rationalClass_eq_fieldKummer`, `PrincipalUnitKummer.rationalClass_mem_unitsSubspace` | 实际 principal unit 与 field-element rational Kummer hom 的精确相等；norm-one criterion 将其置于原 unitsSubspace。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
 
 S1.447 不把 unitsSubspace 识别为 H¹ₑ/BK，不引入 Core 假设；paper volume、不同 untilt 和联合模型仍缺。原创，无参考源码复制。
+
+## S1.448：实际 normalized principal-unit Kummer 类进入 ambient unit subspace
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-NORMALIZED-CLASS-AMBIENT-SPLIT` | `PrincipalUnitKummer.normalizedRationalClass_mem_unitsSubspace` | 实际 `normalizedRationalClass` 通过非零 `paperScale` 的标量关系回到已证明的 field-element `rationalClass`，继承 ambient completion `unitsSubspace` 成员性。消费 S1.447 的 norm-one/Kummer 结果；不识别 H¹ₑ/BK。Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
+
+S1.448 不引入 Core 假设，paper volume、不同 untilt、H¹ₑ/BK 身份和联合模型仍缺。
