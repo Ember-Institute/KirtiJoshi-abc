@@ -4490,3 +4490,12 @@ S1.450 只建立两个现有载体的实际交集 witness，不识别 H¹ₑ/BK�
 | `JT-SCENE1-ACTUAL-QROOT-OUTSIDE-NORMALIZED-SPAN` | `PrincipalUnitKummer.qrootRationalKummerClass_not_mem_normalized_span` | 由 q-root 类不在 saturated Kummer image、normalized 类在该 image 且 image 对 `ℚₚ` 标量封闭，证明 q-root 类不在 normalized 类的单生成 span 中。Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
 
 S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK，不提供最终 prime-line 或 paper thetaVolume 身份。
+
+## S1.452：原 ambient H¹ 上 log(p)=0 的普通 Kummer 对数
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-COMPLETION-AMBIENT-KUMMER-LOG` | `LocalCompletion.KummerValuation.ambientLog`, `ambientLog_unit`, `ambientLog_eq_zero_iff`, `ambientLog_prime`, `ambientLog_ker`, `ambientLog_surjective`, `ambientLog_kummer`, `ambientLog_unique` | 消费 S1.446 原 H¹ 的 unit/prime 互补分解和原 saturated ordinary log；显式选 log(p)=0，定义线性满射，核恰为 primeLine；由单位限制和 prime 值唯一确定，计算任意实际域元素 Kummer 类的 corrected-unit 公式。Joshi III 3190–3236 的局部 Kummer/log 比较背景；分支及投影构造为本工程显式选择，不冒充论文 BK 结论。原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-INITIAL-THETA-AMBIENT-KUMMER-LOG` | `PrincipalUnitKummer.ambientLog_normalizedRationalClass`, `ambientLog_qrootRationalKummerClass` | 在相同原 ambient H¹ 上，normalized 类映到实际 PaperLogWitnessHull.value；q-root 类映到 corrected-unit log/ramIdx。消费 S1.441、S1.447–448 及旧 normalized saturated log。保持两类及其赋值方向的区分。 | Scene1/Derived；proved / accepted |
+
+不把 prime-zero branch 识别为 BK logarithm，不识别 H¹ₑ、不同 untilt 或 paper thetaVolume；Core 假设增量 0。
