@@ -4330,3 +4330,12 @@ BK/不同 untilt 或最终 Corollary 3.12，也未构造 actual M<0 的反例数
 | `JT-SCENE1-ACTUAL-LARGE-PRIME-ORDINARY-LOG-BOUND` | `OrdinaryKummerLogHull.vbad_moduli_coverage_of_largePrime`, `OrdinaryKummerLogHull.complementCorrectionCost_eq_zero_of_largePrime`, `OrdinaryKummerLogHull.globalArithmeticMargin_pos_of_largePrime`, `OrdinaryKummerLogHull.correctedCost_lt_selectedPaperSum_of_largePrime`, `OrdinaryKummerLogHull.ordinary_collation_averageAbsLog_lt_selectedPaperSum_of_largePrime` | 已有 maximal prime-to-ell VBad 与 ell>multiplicative residue bound 推 actual moduli full coverage / C_other=0，再消费显式 moduli 低分歧条件，给 strict margin/collation bound，无独立 coverage/budget 输入。 Joshi III 1028–1055、Section 3、3520–3574、3624–3631；原实际 support/correction API，原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；两新叶模块、Checks.SceneBounds 1577/1577、Axioms.SceneBounds 1374/1374 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
 
 maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary block，无实际 BK、不同 untilt、paper thetaVolume 或最终 target 身份结论。
+
+
+## S1.435：ordinary singleton 的 reference-margin target 判据
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-ORDINARY-LOG-REFERENCE-MARGIN` | `OrdinaryKummerLogHull.corollary312_iff_actual_reference_margin`, `OrdinaryKummerLogHull.not_corollary312_of_actual_reference_margin_negative` | target volume/q-sum 的显式识别下，正式 Corollary iff actual ordinary correctedCost≤reference absLogQ；反向严格不等式给 target 负面消费者。Joshi III 3617–3650；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；一新叶模块、Checks.SceneBounds 1579/1579、Axioms.SceneBounds 1376/1376 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+该判据不证明 reference margin 符号，也不提供 target volume/qLogSum、BK/H¹ₑ、不同 untilt 或 paper thetaVolume 身份。
