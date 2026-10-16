@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.441：实际 multiplicative Kummer span 的单位与赋值分解 |
-| 数学证明基线 | S1.441 已验收并推送，证明提交 `040992a`；总览同批推送 |
+| 最近完成的数学单元 | S1.442：全部 rational continuous H¹ 的原 integral 清分母 |
+| 数学证明基线 | S1.442 已验收并推送，证明提交 `c52fffe`；总览同批推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | 已构造原 multiplicative Kummer span 的 unit/prime 方向分解且交为零；actual qroot 的 prime coefficient=qOrder/ramIdx；ambient H¹ 与 H¹ₑ/BK 比较仍待完成 |
-| 当前推进位置 | G2/G4：原 H¹ 中实际乘法 Kummer 来源的赋值方向与单位方向 |
+| 数学工作状态 | 每个 rational H¹ 类的某个 p^n 倍来自原 integral coefficient map；其 image 张成全部 rational H¹。integral Kummer 来源与 H¹ₑ/BK 身份仍待完成 |
+| 当前推进位置 | G2/G4：完整 continuous H¹ 的 integral coefficient 来源构造 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.441 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.442 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -56,9 +56,9 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | 闸门 | 当前状态 | 已有结果 | 关闭所需的剩余工作 | 证据入口 |
 | --- | --- | --- | --- | --- |
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明；S1.416 对齐 principal-log 的 2p/p* carrier，S1.417 进一步证明该 carrier 等于全部 O* 的 p*-scaled 连续 log image；S1.420 排除原 integral ordinary-log image 与 scaled shell 的直接等式，p* 乘回给精确修正，S1.421 计算实际 Haar factor 与 log-volume 差，S1.424 证明原 integral image 经显式 log/p* 连续同构到 shell（BK 身份待证），S1.425 排除它在保留通常小球指数和原类身份时直接作为其逆；S1.426 计算原 ordinary-log tensor/global volume 的 p* correction，S1.427 化为实际算术成本与局部吸收测试；S1.438 接通 canonical qLogSum 与同源加权 paper-normalized sum，一般数域保留 global degree | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
-| **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层）；S1.440 从实际 completion 分类单位 Kummer membership，并区分 actual qroot 类和 normalized principal-unit 类；S1.441 构造实际乘法 Kummer span 的单位/prime 分解和 actual qroot 消费者 | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md)；S1.440；S1.441 |
+| **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层）；S1.440 从实际 completion 分类单位 Kummer membership，并区分 actual qroot 类和 normalized principal-unit 类；S1.441 构造实际乘法 Kummer span 的单位/prime 分解和 actual qroot 消费者；S1.442 构造全部 rational cocycles/classes 的 p^n 倍 integral lift | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md)；S1.440；S1.441；S1.442 |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容；S1.434 将原覆盖判据与补集 correction cost=0 对齐，并由 maximal-support/large-prime 来源导出该覆盖；S1.439 在 raw-norm 约定下将 selected fibre 的区域函数存在性完整归结为 moduli localDeg 恒定 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md)；S1.439 |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership、S1.423 原 Tate q-order 阈值与同域有限幂 H¹ lifts、S1.424 原 integral image 的 normalized ordinary log/shell 同构及 actual witness 无条件求值、S1.425 小球校准唯一性与 actual 原类的归一化差异、S1.426 原 ordinary-log hull 的实际 volume correction 和 collation bounds、S1.427 来源成本公式/局部吸收测试和 selected-paper-sum 消费者、S1.428 actual VBad ℓ 倍次数下界及放宽吸收条件、S1.429 全局 margin / actual singleton 精确判据、S1.430 六阶 torsion 的 actual selected Tate 六次根及 q-root 三整除下界、S1.431 原 base Tate 六次根/六整除与 VBad 低 ramification 吸收、S1.432 保留 base/moduli 分歧因子的更强 degree bound 和 moduli 低 ramification 消费者、S1.433 全处亏损/VBad 正余量估计与跨处来源成本补偿、S1.434 成本覆盖/遗漏项等价和大素数来源路线严格消费者、S1.435 reference-margin target 判据、S1.436 reference/ordinary 系数比例与条件性负面证据、S1.437 全局 reference margin 负面消费者；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion；S1.439 扩展实际 Haar 公式至全部非零因子，并构造相容权重的区域函数，给完整 raw-norm descent 判定；S1.440 证明实际 qroot 的非零 Kummer 类在单位饱和空间之外，H¹ₑ 身份仍须独立比较；S1.441 在原 H¹ 上给 unit saturation 与 prime line 的零交分解，尚缺 ambient H¹/H¹ₑ 身份 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、论文范数下的 mixed-moduli descent 和 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md)；S1.439；S1.440；S1.441 |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership、S1.423 原 Tate q-order 阈值与同域有限幂 H¹ lifts、S1.424 原 integral image 的 normalized ordinary log/shell 同构及 actual witness 无条件求值、S1.425 小球校准唯一性与 actual 原类的归一化差异、S1.426 原 ordinary-log hull 的实际 volume correction 和 collation bounds、S1.427 来源成本公式/局部吸收测试和 selected-paper-sum 消费者、S1.428 actual VBad ℓ 倍次数下界及放宽吸收条件、S1.429 全局 margin / actual singleton 精确判据、S1.430 六阶 torsion 的 actual selected Tate 六次根及 q-root 三整除下界、S1.431 原 base Tate 六次根/六整除与 VBad 低 ramification 吸收、S1.432 保留 base/moduli 分歧因子的更强 degree bound 和 moduli 低 ramification 消费者、S1.433 全处亏损/VBad 正余量估计与跨处来源成本补偿、S1.434 成本覆盖/遗漏项等价和大素数来源路线严格消费者、S1.435 reference-margin target 判据、S1.436 reference/ordinary 系数比例与条件性负面证据、S1.437 全局 reference margin 负面消费者；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion；S1.439 扩展实际 Haar 公式至全部非零因子，并构造相容权重的区域函数，给完整 raw-norm descent 判定；S1.440 证明实际 qroot 的非零 Kummer 类在单位饱和空间之外，H¹ₑ 身份仍须独立比较；S1.441 在原 H¹ 上给 unit saturation 与 prime line 的零交分解，尚缺 ambient H¹/H¹ₑ 身份；S1.442 证明原 integral coefficient image 张成完整 rational H¹，integral Kummer 来源仍缺 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、论文范数下的 mixed-moduli descent 和 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md)；S1.439；S1.440；S1.441；S1.442 |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -124,6 +124,9 @@ flowchart TD
     KVAL --> KVS
     KVS -.-> B
     KVS -.-> G2
+    H1DEN["已构造：所有 rational H¹ 的 p^n 倍 integral lift<br/>原 integral coefficient image 张成全部 H¹；S1.442"]
+    H1DEN -.-> KVS
+    H1DEN -.-> B
     C["待完成：最终 Corollary 3.12<br/>及整体审计验收"]
 
     K --> Z
@@ -319,6 +322,7 @@ flowchart TD
 | actual weighted region volume / raw-norm descent | 🟢 已闭合（精确约定范围） | 任意非零因子的实际 Haar 公式；weighted degree 恒定时构造区域函数；actual inverse relative weight 的 descent iff moduli localDeg 恒定 | 一般 D 的恒定条件及 paper norm/theta 身份未证明；G3/G4；S1.439 |
 | actual multiplicative Kummer 单位判据 | 🟢 已闭合（实际 completion 来源） | Kummer(a)∈单位饱和空间 iff norm(a)=1；actual contracting qroot 类非零、在该空间之外且不同于 normalized principal-unit 类 | 不识别 H¹ₑ/BK 或 ambient H¹ 完整分解；G2/G4；S1.440 |
 | actual multiplicative Kummer 赋值分解 | 🟢 已闭合（原 Kummer span） | span=unit saturation+primeLine 且 Disjoint；构造 correction=a^e*p^r；actual qroot 的 prime coefficient=qOrder/ramIdx | 未证明 span=ambient H¹、H¹ₑ/BK 或 period 身份；G2/G4；S1.441 |
+| 全 rational H¹ 的 integral 清分母 | 🟢 已闭合（原 coefficient map） | 任意 rational cocycle/class 乘某个 p^n 后连续来自 integral Tate 系数；原 integral coefficient image 的 Q_p-span=⊤ | 不等同 field-element Kummer image 张成；integral Kummer 来源/H¹ₑ/BK 未证；G2/G4；S1.442 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -351,41 +355,37 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.441（已推送）
+## 最近单元变化卡：S1.442（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G2/G4：实际 multiplicative Kummer 来源的单位与赋值方向分解 |
-| 实际闭合 | 全乘法 Kummer classes 的 ℚₚ-span=原单位饱和子空间 + primeLine，且交为零；显式 K(a)=e⁻¹*K(a^e*p^r)−(r/e)*K(p) |
-| 实际消费者 | full odd support 的 actual qroot 给 prime coefficient=qOrder/ramIdx；构造其 norm-one correction 类并证明属于原单位饱和子空间 |
-| 解决的输入 | valued(p)=exp(-e)、原 Kummer 同态、S1.440 unit criterion；不另选 uniformizer，不接收 correction 或分解 certificate |
-| 未闭合 | multiplicativeSpan=ambient H¹、H¹ₑ/BK 身份、correction 与 normalized principal-unit 类比较、different untilts、paper volume 及真实联合模型 |
-| 精确范围 | 分解在原 H¹/原 ℚₚ action 上，仅覆盖 multiplicative Kummer span；单位部分未改名 H¹ₑ/BK |
+| 推进位置 | G2/G4：全部 rational continuous H¹ 到原 integral coefficient 来源 |
+| 实际闭合 | 任意 rational continuous cocycle 有 p^n 倍原 integral Tate cocycle lift；任意 rational H¹ 类有 p^n 倍 integral class lift；原 integral coefficient image 的 Q_p-span=⊤ |
+| 实际消费者 | 标准 H¹ 的 crossed representative + 构造的 continuous integral cocycle + 原 semilinear coefficient map + classOf_smul |
+| 解决的输入 | compact Galois group 自动给统一 bound；使用单个 n，保持原 Tate 坐标、原 H¹、原 scalar action；无需 caller lift/bound 证书 |
+| 未闭合 | integral H¹ 的 Kummer 来源、S1.441 multiplicativeSpan=ambient H¹、H¹ₑ/BK、period/different untilts、paper volume 和真实联合模型 |
+| 精确范围 | coefficient image 张成全部 rational H¹，不等同乘法 Kummer image 张成；未假设原 coefficient map 单射或满射 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
 | 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无参考源码复制，旧公开类型保持 |
-| 工程验收 | 两新叶模块、Checks.SceneBounds 1630/1630、Axioms.SceneBounds 1427/1427 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
-| 累计资源 | 成功累计 371.309 秒，失败累计 627.130 秒，总计 998.439 秒；进程组峰值 RSS 25,964,008 KiB（24.761 GiB），单进程采样峰值 8,343,740 KiB，GNU time 最大 RSS 8,343,764 KiB |
+| 工程验收 | 两新叶模块、Checks.SceneBounds 1637/1637、Axioms.SceneBounds 1434/1434 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 325.631 秒，失败累计 0.000 秒，总计 325.631 秒；进程组峰值 RSS 25,966,172 KiB（24.763 GiB），单进程采样峰值 8,344,524 KiB，GNU time 最大 RSS 8,344,552 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；0.5 秒进程组 RSS 采样，85 GiB 停止，用户上限 90 GiB |
-| 交付 | 证明提交 `040992a`，总览同批推送；Scene1 整体未完成 |
-| 证据 | [实际 Kummer 分解](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionKummerValuationSplit.lean)；[实际 q-root 消费者](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaQRootKummerValuation.lean)；log5 S1-BND-441 |
+| 交付 | 证明提交 `c52fffe`，总览同批推送；Scene1 整体未完成 |
+| 证据 | [统一连续清分母](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicCompactDenominator.lean)；[完整 H¹ integral lift](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerH1Denominator.lean)；log5 S1-BND-442 |
 
-### S1.441 交付构建
+### S1.442 交付构建
 
 目标：两个新增叶模块、Checks.SceneBounds、Axioms.SceneBounds 和 Scene1 聚合。
-本单元完成 multiplicative Kummer span 的实际分解，作一次里程碑公理审计。
+本单元完成全部 rational H¹ 的来源清分母，作一次里程碑公理审计。
 `-Kjobs` 未被配置读取；窄构建实际 worker 峰值 1，交付审计峰值 3；每个 Lean worker -j1。
-未冷建、清缓存、修改或重编 Mathlib；无新增 heartbeat 覆盖。
+新增 Mathlib 精确 import 的 .olean 在构建前确认存在；未冷建、清缓存、修改或重编 Mathlib；无新增 heartbeat 覆盖。
 
 | 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
 | --- | --- | ---: | ---: | ---: |
-| s1441 | 失败（退出 1） | 104.463 | 3940 | 5,829,072 |
-| s1441b | 失败（退出 1） | 128.216 | 9334 | 5,896,936 |
-| s1441c | 失败（退出 1） | 222.051 | 9334 | 9,387,932 |
-| s1441d | 失败（退出 1） | 172.400 | 9334 | 9,390,216 |
-| s1441e | 成功（退出 0） | 183.830 | 9334 | 9,401,956 |
-| s1441audit | 成功（退出 0） | 187.479 | 9490 | 25,964,008 |
+| s1442 | 成功（退出 0） | 119.249 | 3170 | 5,231,076 |
+| s1442audit | 成功（退出 0） | 206.382 | 9492 | 25,966,172 |
 
-全部失败计入；首轮修正剩余特征等式的显式绑定和单位幂 coercion，次轮补 ℚₚ 非零 cast 的类型标注；第三轮修正 qrootFieldUnit coercion 并将大型重写拆为纯系数等式；第四轮补既有 qroot 类与通用 Kummer 类的显式身份。指标：`/tmp/import-audit-s1441*-metrics.json` 及对应 build.log。
+本轮无失败尝试。指标：`/tmp/import-audit-s1442*-metrics.json` 及对应 build.log。
 
 ## 历史单元变化卡：S1.402（资源/计数补正，已推送）
 
@@ -3190,3 +3190,40 @@ actual `smallNormalizedIntegralLift_standardMap` 局部 heartbeat 1000000，其�
 | s1440audit | 成功（退出 0） | 187.238 | 9488 | 26,025,420 |
 
 失败尝试全部计入；首轮为 section hypothesis 未显式绑定、instance 无法推断及 coercion 对齐问题，详见原始 log。原始指标：`/tmp/import-audit-s1440*-metrics.json` 及对应 build.log。
+
+
+## 历史单元变化卡：S1.441（已推送）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G2/G4：实际 multiplicative Kummer 来源的单位与赋值方向分解 |
+| 实际闭合 | 全乘法 Kummer classes 的 ℚₚ-span=原单位饱和子空间 + primeLine，且交为零；显式 K(a)=e⁻¹*K(a^e*p^r)−(r/e)*K(p) |
+| 实际消费者 | full odd support 的 actual qroot 给 prime coefficient=qOrder/ramIdx；构造其 norm-one correction 类并证明属于原单位饱和子空间 |
+| 解决的输入 | valued(p)=exp(-e)、原 Kummer 同态、S1.440 unit criterion；不另选 uniformizer，不接收 correction 或分解 certificate |
+| 未闭合 | multiplicativeSpan=ambient H¹、H¹ₑ/BK 身份、correction 与 normalized principal-unit 类比较、different untilts、paper volume 及真实联合模型 |
+| 精确范围 | 分解在原 H¹/原 ℚₚ action 上，仅覆盖 multiplicative Kummer span；单位部分未改名 H¹ₑ/BK |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无参考源码复制，旧公开类型保持 |
+| 工程验收 | 两新叶模块、Checks.SceneBounds 1630/1630、Axioms.SceneBounds 1427/1427 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 371.309 秒，失败累计 627.130 秒，总计 998.439 秒；进程组峰值 RSS 25,964,008 KiB（24.761 GiB），单进程采样峰值 8,343,740 KiB，GNU time 最大 RSS 8,343,764 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；0.5 秒进程组 RSS 采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 证明提交 `040992a`，总览同批推送；Scene1 整体未完成 |
+| 证据 | [实际 Kummer 分解](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionKummerValuationSplit.lean)；[实际 q-root 消费者](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaQRootKummerValuation.lean)；log5 S1-BND-441 |
+
+### S1.441 交付构建
+
+目标：两个新增叶模块、Checks.SceneBounds、Axioms.SceneBounds 和 Scene1 聚合。
+本单元完成 multiplicative Kummer span 的实际分解，作一次里程碑公理审计。
+`-Kjobs` 未被配置读取；窄构建实际 worker 峰值 1，交付审计峰值 3；每个 Lean worker -j1。
+未冷建、清缓存、修改或重编 Mathlib；无新增 heartbeat 覆盖。
+
+| 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
+| --- | --- | ---: | ---: | ---: |
+| s1441 | 失败（退出 1） | 104.463 | 3940 | 5,829,072 |
+| s1441b | 失败（退出 1） | 128.216 | 9334 | 5,896,936 |
+| s1441c | 失败（退出 1） | 222.051 | 9334 | 9,387,932 |
+| s1441d | 失败（退出 1） | 172.400 | 9334 | 9,390,216 |
+| s1441e | 成功（退出 0） | 183.830 | 9334 | 9,401,956 |
+| s1441audit | 成功（退出 0） | 187.479 | 9490 | 25,964,008 |
+
+全部失败计入；首轮修正剩余特征等式的显式绑定和单位幂 coercion，次轮补 ℚₚ 非零 cast 的类型标注；第三轮修正 qrootFieldUnit coercion 并将大型重写拆为纯系数等式；第四轮补既有 qroot 类与通用 Kummer 类的显式身份。指标：`/tmp/import-audit-s1441*-metrics.json` 及对应 build.log。
