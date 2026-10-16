@@ -4397,3 +4397,13 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-ACTUAL-QROOT-KUMMER-VALUATION` | `PrincipalUnitKummer.qrootFieldUnit`, `qroot_valuationIndex`, `qroot_kummer_decomposition`, `qroot_correction_mem_unitSubspace` | actual full odd-support qroot 来源；integer coordinate=−qOrder，prime coefficient=qOrder/ramIdx，实际 correction 类属于原单位饱和子空间。 | Scene1/Derived；proved / accepted |
 
 两新叶模块、Checks.SceneBounds 1630/1630、Axioms.SceneBounds 1427/1427 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无新参考代码复制或 Core 假设；H¹ₑ/BK、crystalline/different untilt/paper volume 身份均未推断。
+
+
+## S1.442：全部 rational H¹ 的连续 integral 清分母
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-PADIC-COMPACT-DENOMINATOR` | `PadicCompact.exists_uniform_denominator`, `integralLift`, `integralLift_coe` | compact continuous Q_p image 的统一 bound 和 p^n 衰减；构造至原 Z_p 的连续函数。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-CONTINUOUS-H1-INTEGRAL-DENOMINATOR` | `LocalKummer.Rational.exists_scaled_integral_cocycle`, `exists_prime_power_integralLift`, `exists_divided_integralLift`, `span_integralCoefficientImage_eq_top` | 原 compact Galois group 与原 Tate coordinates 给完整 cocycle lift；标准 H¹ 上任意 rational class 有 p^n 倍 integral lift，原 coefficient image 的 Q_p-span=⊤。Joshi III 3214–3236。 | Scene1/Derived；proved / accepted |
+
+两新叶模块、Checks.SceneBounds 1637/1637、Axioms.SceneBounds 1434/1434 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或 Core 假设。尚未证明 integral Kummer 来源、ambient multiplicativeSpan=H¹ 或 H¹ₑ/BK。

@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Denominator
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootKummerValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootKummerSeparation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedWeightedRegionVolume
@@ -1923,3 +1924,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.qroot_valuationIndex
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.qroot_kummer_decomposition
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.qroot_correction_mem_unitSubspace
+
+#check JoshiTeich.Act1Scene1.PadicCompact.exists_uniform_denominator
+#check JoshiTeich.Act1Scene1.PadicCompact.integralLift
+#check JoshiTeich.Act1Scene1.PadicCompact.integralLift_coe
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.exists_scaled_integral_cocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.exists_prime_power_integralLift
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.exists_divided_integralLift
+#check JoshiTeich.Act1Scene1.LocalKummer.Rational.span_integralCoefficientImage_eq_top
