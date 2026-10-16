@@ -4178,3 +4178,16 @@ integral-image intersection、H¹ₑ/BK、period/theta/untilt 和联合模型仍
 
 紧开/full-span 不在本单元升级为已提供有限基。这里测量的是原 ordinary local carrier，
 未识别 H¹ₑ/BK 或 paper thetaVolume，也不判定特定 normalized witness 的 integral membership。
+
+
+## S1.422：小球原 integral lift 与 actual q-root 赋值条件
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-SMALL-LOG-INTEGRAL-LIFT` | `LocalPadicLog.smallLogUnit`, `smallLogUnit_log`, `smallLogIntegralLift`, `smallLogIntegralLift_standardMap`, `integralLift_of_saturatedLog_small`, `paperNormalizedLog_mem_principalLogImage_of_small` | 原 Banach small-ball log 满射、实际 principal unit Kummer 类、旧 saturatedExp/log 单射；‖z‖≤‖2p‖ 给实际 integral lift，其原 coefficient 像等于旧 saturatedExp(z)。Joshi III 3199–3236；原创，无参考代码复制。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1402/1402、Axioms.SceneBounds 1199/1199 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-COMPLETION-SMALL-LOG-LIFT` | `LocalCompletion.norm_le_prime_iff_qOrder_ge`, `norm_le_smallLogRadius_iff_qOrder_ge`, `paperNormalizedLog_mem_integralImage_of_qOrder`, `eventually_paperNormalizedLog_mem_integralImage` | 实际 completion 的 residue prime valuation=ramIdx、奇 p 的 norm2=1、small-log 满射与 norm powers→0；非零 contracting 参数的小球条件 iff order≥ramIdx，充分高次幂进入原 unscaled log image。Joshi III 3226–3236。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1402/1402、Axioms.SceneBounds 1199/1199 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-SMALL-INTEGRAL-LIFT` | `PrincipalUnitKummer.smallLift_residueChar_odd`, `smallNormalizedIntegralLift`, `smallNormalizedIntegralLift_standardMap`, `qroot_small_iff_order_ge_ramification`, `normalizedClass_has_integralLift_of_order_ge_ramification`, `eventually_qroot_power_log_mem_integralImage` | 从 actual odd support 推 residue characteristic 奇性；用原 witness norm identity 与 saturatedExp 比较构造旧 normalizedRationalClass 的 integral lift，显式要求 q-root order≥ramIdx；高次幂结论直接适配 actual source。原创，无参考代码复制。 | Scene1/Derived；proved / accepted（显式条件范围）；三叶模块、Checks.SceneBounds 1402/1402、Axioms.SceneBounds 1199/1199 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+赋值阈值是小球充分条件，不是已证明的 integral-lift 必要条件；原 q-root 只有 norm<1，
+不登记原 j=1 或全部有限 theta indices 无条件 integral。高次幂结论也不代替这些有限指标。
+原 shell/image 严格差异仍成立；H¹ₑ/BK、period/theta/untilt 与联合模型仍 open。
