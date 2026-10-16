@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalScene1Input
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
@@ -28,28 +29,9 @@ variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
 variable [IsAdicComplete (Ideal.span {(p : O)}) O]
 variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
 
-def length : ℕ := (D.prime.ℓ - 1) / 2
-
-theorem length_pos : 0 < length D := by
-  have h := D.prime.five_le
-  unfold length
-  omega
-
-/-- The section selects the completion factors; tuple length is fixed by ell. -/
-def tuple (v : iutInitialThetaVBadModuliFinset D) (_ : Fin (length D)) :
-    (iutInitialThetaOddSupportTorsionQRootSource D).badFinset :=
-  VBadSelectedPaper.sourceAt D v
-
-theorem tuple_liesOver (v : iutInitialThetaVBadModuliFinset D) (i : Fin (length D)) :
-    Ideal.LiesOver (tuple D v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal :=
-  VBadSelectedPaper.sourceAt_liesOver D v
-
 local instance actualHullPrime (v : iutInitialThetaVBadModuliFinset D) :
     Fact (Arithmetic.residueChar v.1).Prime := ⟨Arithmetic.residueChar_prime v.1⟩
 
-abbrev collation := VBadThetaLogCollation.collation D (length D) (tuple D) (tuple_liesOver D)
-abbrev cost := VBadThetaHullLogCost.cost D (length D) (tuple D) (tuple_liesOver D) (collation D)
-abbrev hullVolume := VBadThetaLogCollation.volume D (length D) (tuple D) (tuple_liesOver D)
 abbrev PositivePacket :=
   ActualHullCostTransfer.PositivePacket D (length D) (tuple D) (tuple_liesOver D) (collation D)
 
@@ -168,8 +150,7 @@ theorem qLogSum_eq_degree_mul_reference :
     Corollary312Data.qLogSum p (data p D theta route thetaBase heightData ramification X) =
       (Module.finrank ℚ D.F : ℝ) * JoshiTeich.ReferenceIut.QPilotData.absLogQ
         (IutTorsionQRootSource.iutInitialThetaQPilotData D) :=
-  canonicalTateQFamily_qLogSum_eq_degree_mul_reference p D
-    (qFamily p D theta route thetaBase heightData ramification X) rfl rfl
+  InitialThetaRawQ.logSum_eq_degree_mul_reference D
 
 theorem volumeNormalization : Corollary312VolumeNormalization p
     (data p D theta route thetaBase heightData ramification X) :=
@@ -187,14 +168,8 @@ theorem transferLogBound : Corollary312TransferLogBound p
 
 /-- The raw completion-norm target follows from the remaining analytic laws. -/
 theorem corollary312 : Corollary312 p
-    (data p D theta route thetaBase heightData ramification X) := by
-  exact corollary312_of_transfer_log_bound p
-    (data p D theta route thetaBase heightData ramification X)
-    (volumeData p D theta route thetaBase heightData ramification X)
-    ((qFamily p D theta route thetaBase heightData ramification X).toQFamily p)
-    (volumeNormalization p D theta route thetaBase heightData ramification X)
-    (transferLogBound p D theta route thetaBase heightData ramification X)
-    D.prime.ℓ_prime D.prime.five_le rfl (length_pos D)
+    (data p D theta route thetaBase heightData ramification X) :=
+  raw_volume_bound D
 
 end
 end JoshiTeich.Act1Scene1.CanonicalActualHull

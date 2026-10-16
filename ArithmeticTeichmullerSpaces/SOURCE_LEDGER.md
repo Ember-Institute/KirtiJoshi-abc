@@ -4033,3 +4033,13 @@ theta/period 的真实联合满足模型；这些义务单独保留。Prologue-R
 它保留 theta scaling、period/log-shell、cost/period normalization、height/perfectoid
 法律，尚未从论文 theta/untilt 构造。此处不声称 VBad raw target 等于论文完整代表
 处集、BK/thetaVolume 或一般数域 degree-normalized 目标，也不关闭最终闸门。
+
+## S1.408：只接收实际 InitialThetaData 的 raw Haar 体积界
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND` | `InitialThetaRawQ.logTerm_eq_order_term`, `logSum_eq_degree_mul_reference`, `reference_le_logSum`, `log_product_eq_neg_logSum`, `product_pow_le_actualVolume`, `negAverageAbsLog_actualVolume_ge_neg_logSum`; `CanonicalActualHull.raw_volume_bound` | actual Tate completion norm/order、residue degree、实际 finite q-pilot sum 和 ordinary-log Haar identity；Joshi III 3495–3557、3617–3645。数值定理独立于 theta/period/perfectoid/Scene1Input，保留一般数域次数。 | Scene1/Derived；proved / accepted；数值层、旧消费者、1206 checks、1003 axiom prints 和 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+
+S1.407 中的 length、section tuple、collation/cost/volume 定义移到数值模块，公开名称和
+类型不变；accounting 和 Corollary312 proof term 直接消费独立数值生产者。其旧 Scene1
+打包仍依赖 AnalyticInput，论文 theta/BK/untilt 及代表处/volume 身份仍未闭合。

@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullData
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312
 import ArithmeticTeichmullerSpaces.Act1Scene1.FieldOrientationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
@@ -1385,3 +1386,18 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.volumeNormalization
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.transferLogBound
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312
+
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.Index
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.factor
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.logTerm
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.product
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.factor_pos
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.product_pos
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.logTerm_eq_order_term
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum_eq_degree_mul_reference
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.reference_le_logSum
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.log_product_eq_neg_logSum
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.product_pow_le_actualVolume
+#check JoshiTeich.Act1Scene1.InitialThetaRawQ.negAverageAbsLog_actualVolume_ge_neg_logSum
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.raw_volume_bound
