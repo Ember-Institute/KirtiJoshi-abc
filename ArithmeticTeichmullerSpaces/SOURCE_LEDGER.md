@@ -4203,3 +4203,15 @@ integral-image intersection、H¹ₑ/BK、period/theta/untilt 和联合模型仍
 有限线性幂族在同一 completion 中构造，尚未与不同 untilt 下论文 theta classes 比较。
 原始 q-order 阈值未从 actual D 无条件推出；小球阈值是充分条件，不是 lift 必要条件。
 H¹ₑ/BK、paper thetaVolume 与真实联合模型仍 open。
+
+
+## S1.424：原 integral image 的 normalized ordinary log 与实际 witness
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-NORMALIZED-INTEGRAL-KUMMER-LOG` | `LocalPadicLog.mem_integralLog_iff_scale_inv_mem_shell`, `integralLogToShellEquiv`, `integralLogToShellEquiv_apply`, `principalIntegralClass`, `normalizedIntegralKummerLogEquiv`, `normalizedIntegralKummerLogEquiv_apply`, `normalizedIntegralKummerLog_principal`, `normalizedIntegralKummerLog_eq_dividedClass_log` | 原 p* image identity 与原 integral H¹/log 连续同构；显式 normalized ordinary map x↦log(x)/p* 给原 integral image 到旧 shell 的连续 ℤₚ equivalence，原双侧 topology 不变；principal representative 与 divided-class log 精确比较。Joshi III 2843–2853、3226–3236。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1433/1433、Axioms.SceneBounds 1230/1230 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-NORMALIZED-INTEGRAL-LOG` | `PrincipalUnitKummer.actualIntegralImageClass`, `actualIntegralImageClass_coefficient`, `actualIntegralImageClass_normalizedLog`, `finitePowerIntegralImageClass`, `finitePowerIntegralImageClass_normalizedLog`, `finitePowerIntegralImageClass_has_integralLift`, `finitePowerIntegralImageClass_divided_eq` | 原 actual padicClass 经标准 coefficient map 的像，及同域 1+pStar*qroot^j 的原 integral Kummer image；显式 normalized log 无条件给旧 witness/线性幂值，原 finitePowerClass 是除 p* 后的类。Joshi III 3190–3236，原创，无参考源码复制。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1433/1433、Axioms.SceneBounds 1230/1230 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+本单元证明的 map 是 ordinary log/p*，未识别为 BK logarithm；原 integral image 未识别为 H¹ₑ。
+缩放 log 不推出 divided rational class integral，S1.420 的原 ordinary-log 严格差异仍成立。
+不同 untilt/period、paper thetaVolume 和真实联合模型仍 open。
