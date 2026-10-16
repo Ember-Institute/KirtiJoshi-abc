@@ -4240,3 +4240,14 @@ S1.424 的 normalized ordinary map 保持有效，但不能在保留通常小球
 只测量原 ordinary-log block 模型，不识别 paper thetaVolume 或 BK/不同 untilt。
 normalized witness 的旧体积结果保留；原类 ordinary log 的消费者必须携带显式 p* correction。
 C_n=C_1^n 只针对当前重复同源 completion 的 block，不扩展为未经比较的论文 j-族。
+
+
+## S1.427：实际 correction cost 的算术公式与吸收判据
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-ORDINARY-LOG-CORRECTION-COST` | `OrdinaryKummerLogHull.negLog_norm_paperScale_eq_localDeg`, `OrdinaryKummerLogHull.localCorrectionCost`, `OrdinaryKummerLogHull.localCorrectionCost_pos`, `OrdinaryKummerLogHull.negLog_degreeCorrection_one`, `OrdinaryKummerLogHull.negLog_localCorrection_one`, `OrdinaryKummerLogHull.correctionCost_eq_sum`, `OrdinaryKummerLogHull.selectedPaperTerm`, `OrdinaryKummerLogHull.correctedLocalCost`, `OrdinaryKummerLogHull.correctedCost_eq_sum`, `OrdinaryKummerLogHull.selectedPaperSum_eq_sum_terms` | actual odd support p*=p，completion norm=p^(−localDeg)；单块 correction cost=d_v/f_s*log p>0、全局成本和及 corrected/selected 项的同源求和。Joshi III 3226–3236、3520–3574。 原创，无参考源码复制。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1502/1502、Axioms.SceneBounds 1299/1299 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-ORDINARY-LOG-COST-ABSORPTION` | `OrdinaryKummerLogHull.sourceQOrder`, `OrdinaryKummerLogHull.sourceThreshold`, `OrdinaryKummerLogHull.arithmeticAbsorption`, `OrdinaryKummerLogHull.correctedLocalCost_eq_arithmetic`, `OrdinaryKummerLogHull.selectedPaperTerm_eq_arithmetic`, `OrdinaryKummerLogHull.correctedLocalCost_le_paperTerm_iff_arithmetic`, `OrdinaryKummerLogHull.correctedCost_le_selectedPaperSum_of_arithmetic`, `OrdinaryKummerLogHull.arithmeticAbsorption_of_small_and_degree_gap`, `OrdinaryKummerLogHull.ordinary_collation_averageAbsLog_le_selectedPaperSum` | 原 base q-order q、T=2ell*e_base 和实际局部次数给局部成本吸收 iff d_v*(T+q)≤d_s*q；逐处测试足以恢复 ordinary witness collation 的 selected paper-sum 上界，不声称实际测试无条件成立。Joshi III 3624–3631。 原创，无参考源码复制。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1502/1502、Axioms.SceneBounds 1299/1299 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+局部测试是该局部比较的必要充分条件，全局逐处满足只是充分条件；没有排除跨处余量补偿。
+尚未证明 actual D 满足测试；BK/不同 untilt/paper thetaVolume 与最终目标身份继续 open。
