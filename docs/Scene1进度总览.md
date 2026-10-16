@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.416：ordinary log-shell / actual Kummer shell 连续比较及 2p/p* 归一化 |
-| 数学证明基线 | S1.416 已验收并推送，数学提交 `6e58c3e`；总览与该提交同批推送 |
+| 最近完成的数学单元 | S1.417：全部 O* 的连续 log、原 rational Kummer 像与 p*-shell |
+| 数学证明基线 | S1.417 已验收并推送，数学提交 `32ebe35`；总览与该提交同批推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.416 shell 的 ℤₚ carrier、原 topology、2p/p* 和 actual witness 比较已验收；integral H¹ intersection、H¹ₑ/BK 与 theta/period/untilt 联合模型仍 open |
-| 当前推进位置 | G4：ordinary log-shell 与归一化 principal Kummer shell 的连续比较及 actual witness |
+| 数学工作状态 | S1.417 已将 branch 与 shell 比较扩为全部 O*，actual completion 的 finite/CharP 输入已推出；integral H¹ intersection、H¹ₑ/BK 与 theta/period/untilt 联合模型仍 open |
+| 当前推进位置 | G1/G4：全部 O* 的 prime-to-p reduction、原 rational Kummer 像和 log branch |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.416 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.417 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -55,10 +55,10 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 
 | 闸门 | 当前状态 | 已有结果 | 关闭所需的剩余工作 | 证据入口 |
 | --- | --- | --- | --- | --- |
-| **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明；S1.416 对齐 principal-log 的 2p/p* carrier | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
+| **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明；S1.416 对齐 principal-log 的 2p/p* carrier，S1.417 进一步证明该 carrier 等于全部 O* 的 p*-scaled 连续 log image | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层） | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -150,7 +150,9 @@ flowchart TD
     KLP --> KTOP
     KSH["已闭合：normalized actual Kummer shell<br/>原 log-shell 的连续 ℤₚ 比较；S1.416"]
     KTOP --> KSH
-    KSH -.-> B
+    KSU["已闭合：全部 O* 的连续 log<br/>全单位 / principal rational image 相等；S1.417"]
+    KSH --> KSU
+    KSU -.-> B
     KS --> TS
     TS --> TU
     TU --> TI
@@ -240,6 +242,7 @@ flowchart TD
 | saturated Kummer ℚₚ 子模/linear log | 🟢 已闭合（原饱和像） | S1.414 在原 ambient action 下证明 scalar closure，原 ordinary log 升为 ℚₚ linear equivalence | H¹ₑ/BK 和拓扑身份仍 open；G4；log5 S1-BND-414 |
 | 原 H¹ Hausdorff / saturated log topology | 🟢 已闭合（有限维局部域范围） | 原 boundary range 闭合与 actual rational H¹ Hausdorff；有限维局部域的既有 log 升为 continuous linear equivalence | H¹ₑ/BK、论文 theta/untilt/period 身份仍 open；G4；log5 S1-BND-415 |
 | ordinary log-shell / normalized actual Kummer shell | 🟢 已闭合（principal shell 范围） | ℤₚ closure、2p/p* principal carrier 相等、归一化 principal-class 成员判据与原 topology 上的连续比较；actual normalized class 与 witness 相容 | integral H¹ intersection、H¹ₑ/BK 与 period/untilt 身份仍 open；G4；log5 S1-BND-416 |
+| 全部 O* 的 log / rational Kummer image | 🟢 已闭合（全单位 branch 范围） | N=#κ−1 的 prime-to-p reduction；原 rational image 相等、log 幂公式与连续性、全部 O* 的 p*-shell carrier 等式 | integral H¹、H¹ₑ/BK、period/theta/untilt 身份仍 open；G1/G4；log5 S1-BND-417 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -270,43 +273,48 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.416（已推送）
+## 最近单元变化卡：S1.417（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：原 ordinary log-shell 到归一化 actual Kummer shell 的 carrier 和拓扑比较 |
-| 实际闭合 | log-shell 的 ℤₚ closure；H¹ shell 成员 iff `(2p)⁻¹` 乘实际 principal Kummer 类；两个原 subspace topology 上的连续 ℤₚ 线性同构；旧 2p carrier 与 p*-principal image 相等 |
-| 实际消费者 | actual principal-unit p-adic power → ordinary log-shell ℤₚ closure → normalized Kummer carrier → shell log equivalence → actual normalizedRationalClass / PaperLogWitnessHull.value |
-| 解决的输入 | 实际 completion 的 ℚₚ scalar、finite dimension 与 continuity 均从原 embedding 推出，无 caller comparison 证书；actual witness 在 shell 中并由逆映射还原同一原类 |
-| 未闭合 | integral H¹ 的像/交集与该 normalized shell 的比较、H¹ₑ/BK、period/Bcris、different-untilt、论文 thetaVolume 与真实联合模型；保留旧 2p 并证明与 p*-principal image 相等；全部 O* 上的 log branch 尚未构造 |
+| 推进位置 | G1/G4：从 principal units 扩为论文实际使用的全部局部整数环单位 O* |
+| 实际闭合 | 统一 N=#κ−1 为正且与 p 互素；全单位 rational Kummer image 等于旧 principal image；log 的 O* 延拓、固定幂公式与连续性；p*-scaled 全单位 log image 等于旧 shell |
+| 实际消费者 | actual compact integer ring / residue-prime norm → finite residue / CharP → prime-to-p power → original Kummer scalar closure → unitLog → actual completion shell identity |
+| 解决的输入 | actual finite/CharP 由已证 completion 数据推出；没有全单位 branch、principal representative 或 shell identity 的外给证书 |
+| 未闭合 | integral H¹ 的像/交集、H¹ₑ/BK、period/Bcris、different-untilt、paper thetaVolume 与真实联合模型；全部 k* 上指定 log(p)=0 的 branch 不在本 O* 结果内 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
-| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；carrier/action/topology/log 与旧公开类型保留 |
-| 工程验收 | 三叶模块、Checks.SceneBounds 1294/1294、Axioms.SceneBounds 1091/1091 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
-| 累计资源 | 叶目标成功 207.881 秒，交付审计 173.796 秒；四次失败 555.892 秒，累计 937.569 秒；进程组峰值 RSS 25,975,136 KiB（24.772 GiB），单进程采样峰值 8,405,564 KiB，GNU time 最大 RSS 8,407,292 KiB |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；旧 principal log / classes / shell 和公开类型保留 |
+| 工程验收 | 三叶模块、Checks.SceneBounds 1320/1320、Axioms.SceneBounds 1117/1117 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功 214.733 秒，八次失败 908.282 秒，累计 1123.015 秒；进程组峰值 RSS 25,920,544 KiB（24.720 GiB），单进程采样峰值 8,311,648 KiB，GNU time 最大 RSS 8,311,652 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
-| 交付 | 数学提交 `6e58c3e` 与本总览同批推送；Scene1 整体仍未完成 |
-| 证据 | [ordinary / Kummer shell 比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerLogShell.lean)；[2p/p* 比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerLogShellNormalization.lean)；[实际 witness 消费者](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaKummerLogShell.lean)；log5 S1-BND-416 |
+| 交付 | 数学提交 `32ebe35` 与本总览同批推送；Scene1 整体仍未完成 |
+| 证据 | [剩余域指数](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalUnitPrincipalPower.lean)；[全单位 log](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalIntegerUnitLogarithm.lean)；[实际完成域消费者](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionUnitLogarithm.lean)；log5 S1-BND-417 |
 
-### S1.416 交付构建
+### S1.417 交付构建
 
-目标：`LocalKummerLogShell`、`LocalKummerLogShellNormalization`、`IutInitialThetaKummerLogShell`、
+目标：`LocalUnitPrincipalPower`、`LocalIntegerUnitLogarithm`、`LocalCompletionUnitLogarithm` 及
 `Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+最终一轮直接构建 actual leaf 与三个消费者，两个 generic leaf 使用本轮已通过的热缓存。
 从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
-`-Kjobs` 未被配置读取，交付审计实际并发 Lean worker 峰值 3，每进程 -j1。
+`-Kjobs` 未被配置读取，成功轮实际并发 Lean worker 峰值 3，每进程 -j1。
 RSS 每 0.5 秒采样，85 GiB 停止阈值未触及；未冷建、清缓存、改动或重编 Mathlib。
 
 | 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
 | --- | --- | ---: | ---: | ---: |
-| generic shell：proof-only hpk 未 include、membership 未展开 | 失败（退出 1） | 88.678 | 3245 | 5,278,840 |
-| generic + actual：inverse membership 的 submodule carrier 展开 | 失败（退出 1） | 110.592 | 9325 | 5,356,320 |
-| generic 通过，actual membership / reverse injectivity heartbeat 超限 | 失败（退出 1） | 243.574 | 9325 | 9,493,720 |
-| 增加 p* 比较：PadicInt subtype membership 未展开为 norm 条件 | 失败（退出 1） | 113.048 | 9326 | 5,340,540 |
-| normalization + actual（generic 已缓存）：显式 norm 条件、正向 inverse equality、membership 局部 heartbeat | 成功（退出 0） | 207.881 | 9326 | 9,513,012 |
-| 三叶模块、checks、axioms 与 Scene1 聚合 | 成功（退出 0） | 173.796 | 9436 | 25,975,136 |
+| s1417：剩余域局部记号、Nat.card 基数 API 未正确指定 | 失败（退出 1） | 79.689 | 2494 | 4,486,344 |
+| s1417b：嵌套局部记号导致 section 实例类型中的 k 未绑定 | 失败（退出 1） | 77.640 | 3249 | 4,502,724 |
+| s1417c：显式 carrier 实例与 Fintype 基数 API 未对齐 | 失败（退出 1） | 79.400 | 3927 | 4,475,996 |
+| s1417d：generic exponent 已通过；Units.map 的同态/coercion 与连续性 lambda 类型 | 失败（退出 1） | 127.679 | 3927 | 5,290,168 |
+| s1417e：Units.map 未显式转为 toMonoidHom，触发 defeq heartbeat 超限 | 失败（退出 1） | 117.778 | 3927 | 5,286,612 |
+| s1417f：Kummer target 已显式指定，乘法同态转换仍缺失并超限 | 失败（退出 1） | 168.084 | 3927 | 5,484,344 |
+| s1417g：generic Kummer/log 主体已通过；连续性 comp 的内部映射推断错误 | 失败（退出 1） | 94.470 | 3927 | 5,287,320 |
+| s1417h：generic unitLog 通过；actual completion 的 embedding norm 表示未对齐 | 失败（退出 1） | 163.542 | 3927 | 5,806,120 |
+| s1417i：显式 embedding_apply/natCast 后 actual completion、checks、axioms 与 Scene1 | 成功（退出 0） | 214.733 | 9439 | 25,920,544 |
 
-失败轮任务数为 Lake 输出的最大计划计数，成功轮为实际汇总任务数。
-仅对 actual membership 声明使用局部 `maxHeartbeats 1000000`；全局设置不变。
-指标原始文件：`/tmp/import-audit-s1416{,b,c,d,e,audit}-metrics.json` 及对应 build.log。
+失败轮任务数为 Lake 输出的最大计划计数；成功轮为实际任务汇总。
+最终代码没有新增 heartbeat override；失败期间临时升高过单定理限额，显式
+`Units.map ...toMonoidHom` 和目标类型后已移除，默认限额验收通过。
+指标原始文件：`/tmp/import-audit-s1417{,b,c,d,e,f,g,h,i}-metrics.json` 及对应 build.log。
 
 
 ## 历史单元变化卡：S1.402（资源/计数补正，已推送）
@@ -2088,6 +2096,51 @@ RSS 每 0.5 秒采样，85 GiB 停止阈值未触及，未冷建、清缓存或�
 
 前两轮任务数为 Lake 输出的最大计划计数，失败前未完成全部任务；成功轮为实际汇总任务数。
 指标原始文件：`/tmp/import-audit-s1415{,b,c,audit}-metrics.json` 及对应 build.log。
+
+
+
+</details>
+
+<details>
+<summary>S1.416：ordinary / actual Kummer shell 与 2p/p* 比较</summary>
+
+### 历史变化卡：S1.416（已推送）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：原 ordinary log-shell 到归一化 actual Kummer shell 的 carrier 和拓扑比较 |
+| 实际闭合 | log-shell 的 ℤₚ closure；H¹ shell 成员 iff `(2p)⁻¹` 乘实际 principal Kummer 类；两个原 subspace topology 上的连续 ℤₚ 线性同构；旧 2p carrier 与 p*-principal image 相等 |
+| 实际消费者 | actual principal-unit p-adic power → ordinary log-shell ℤₚ closure → normalized Kummer carrier → shell log equivalence → actual normalizedRationalClass / PaperLogWitnessHull.value |
+| 解决的输入 | 实际 completion 的 ℚₚ scalar、finite dimension 与 continuity 均从原 embedding 推出，无 caller comparison 证书；actual witness 在 shell 中并由逆映射还原同一原类 |
+| 未闭合 | integral H¹ 的像/交集与该 normalized shell 的比较、H¹ₑ/BK、period/Bcris、different-untilt、论文 thetaVolume 与真实联合模型；保留旧 2p 并证明与 p*-principal image 相等；全部 O* 上的 log branch 尚未构造 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；carrier/action/topology/log 与旧公开类型保留 |
+| 工程验收 | 三叶模块、Checks.SceneBounds 1294/1294、Axioms.SceneBounds 1091/1091 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 叶目标成功 207.881 秒，交付审计 173.796 秒；四次失败 555.892 秒，累计 937.569 秒；进程组峰值 RSS 25,975,136 KiB（24.772 GiB），单进程采样峰值 8,405,564 KiB，GNU time 最大 RSS 8,407,292 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 数学提交 `6e58c3e` 与本总览同批推送；Scene1 整体仍未完成 |
+| 证据 | [ordinary / Kummer shell 比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerLogShell.lean)；[2p/p* 比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerLogShellNormalization.lean)；[实际 witness 消费者](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaKummerLogShell.lean)；log5 S1-BND-416 |
+
+### S1.416 交付构建
+
+目标：`LocalKummerLogShell`、`LocalKummerLogShellNormalization`、`IutInitialThetaKummerLogShell`、
+`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
+`-Kjobs` 未被配置读取，交付审计实际并发 Lean worker 峰值 3，每进程 -j1。
+RSS 每 0.5 秒采样，85 GiB 停止阈值未触及；未冷建、清缓存、改动或重编 Mathlib。
+
+| 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
+| --- | --- | ---: | ---: | ---: |
+| generic shell：proof-only hpk 未 include、membership 未展开 | 失败（退出 1） | 88.678 | 3245 | 5,278,840 |
+| generic + actual：inverse membership 的 submodule carrier 展开 | 失败（退出 1） | 110.592 | 9325 | 5,356,320 |
+| generic 通过，actual membership / reverse injectivity heartbeat 超限 | 失败（退出 1） | 243.574 | 9325 | 9,493,720 |
+| 增加 p* 比较：PadicInt subtype membership 未展开为 norm 条件 | 失败（退出 1） | 113.048 | 9326 | 5,340,540 |
+| normalization + actual（generic 已缓存）：显式 norm 条件、正向 inverse equality、membership 局部 heartbeat | 成功（退出 0） | 207.881 | 9326 | 9,513,012 |
+| 三叶模块、checks、axioms 与 Scene1 聚合 | 成功（退出 0） | 173.796 | 9436 | 25,975,136 |
+
+失败轮任务数为 Lake 输出的最大计划计数，成功轮为实际汇总任务数。
+仅对 actual membership 声明使用局部 `maxHeartbeats 1000000`；全局设置不变。
+指标原始文件：`/tmp/import-audit-s1416{,b,c,d,e,audit}-metrics.json` 及对应 build.log。
 
 
 
