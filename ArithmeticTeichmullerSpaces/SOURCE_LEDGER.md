@@ -4251,3 +4251,14 @@ C_n=C_1^n 只针对当前重复同源 completion 的 block，不扩展为未经�
 
 局部测试是该局部比较的必要充分条件，全局逐处满足只是充分条件；没有排除跨处余量补偿。
 尚未证明 actual D 满足测试；BK/不同 untilt/paper thetaVolume 与最终目标身份继续 open。
+
+
+## S1.428：actual VBad 次数下界与放宽的 correction 吸收条件
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-VBAD-ORDINARY-LOG-ABSORPTION` | `OrdinaryKummerLogHull.vbad_source_localDeg_ge_ell_mul`, `OrdinaryKummerLogHull.vbad_source_localDeg_ge_two_mul`, `OrdinaryKummerLogHull.arithmeticAbsorption_on_vbad_of_relaxed_order`, `OrdinaryKummerLogHull.arithmeticAbsorption_on_vbad_of_small`, `OrdinaryKummerLogHull.correctedLocalCost_le_paperTerm_on_vbad`, `OrdinaryKummerLogHull.correctedCost_le_selectedPaperSum_of_vbad_and_complement`, `OrdinaryKummerLogHull.ordinary_collation_averageAbsLog_le_selectedPaperSum_of_vbad` | 原 actual q-root valuation/coprimality 给 ℓ∣relativeRamification，次数塔给 d_source≥ℓ*d_moduli；因此 T≤(ℓ−1)*q 足以吸收 correction，旧 small 条件无需外给 degree-gap。VBad/补集显式分开后接完整求和及 ordinary collation。Joshi III initial theta data、3520–3574、3624–3631；原创，无参考源码复制。 | Scene1/Derived；proved / accepted；新叶模块、Checks.SceneBounds 1509/1509、Axioms.SceneBounds 1306/1306 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+次数下界无新增数值假设，剩余 q-order 条件和完整 odd-support 补集测试仍显式。
+不从六阶 torsion 字段跳过 q-order 证明，不把 VBad coprimality 扩到补集；BK/不同 untilt、
+paper thetaVolume 与最终 raw/weighted target 身份仍 open。
