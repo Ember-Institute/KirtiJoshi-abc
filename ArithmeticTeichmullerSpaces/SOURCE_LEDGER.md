@@ -4377,3 +4377,13 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-ACTUAL-SELECTED-WEIGHTED-REGION-VOLUME` | `SelectedThetaTensor.weightedDegree_eq_moduliDegree`, `weightedRegionVolume_eq_relative_product`, `relative_region_volume_exists_iff_common_moduliDegree` | actual selected fibre；inverse relative-degree 权重的 raw-norm region function 存在 iff moduli localDeg 恒定，包含空纤维。Joshi III eq:weights。 | Scene1/Derived；proved / accepted |
 
 三新叶模块、Checks.SceneBounds 1599/1599、Axioms.SceneBounds 1396/1396 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制。一般 D 的恒定条件、paper norm/thetaVolume、BK 和不同 untilt 仍未证明；不新增 Core 假设。
+
+
+## S1.440：实际 completion Kummer 单位判据与 q-root 类分离
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-COMPLETION-KUMMER-UNIT-CRITERION` | `LocalCompletion.no_baseRootTower_of_contracting`, `norm_eq_one_of_baseRootTower`, `norm_eq_one_of_rationalKummer_eq_zero`, `normOneIntegerUnit`, `rationalKummer_mem_principalImage_of_norm_eq_one`, `rationalKummer_mem_saturated_iff_norm_eq_one` | 实际离散 valuation 的 root obstruction；rational coefficient clearing；actual finite residue units 给 norm=1 iff saturated membership。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-ACTUAL-QROOT-KUMMER-SEPARATION` | `PrincipalUnitKummer.qrootRationalKummerClass`, `qrootRationalKummerClass_not_mem_saturated`, `qrootRationalKummerClass_ne_zero`, `qrootRationalKummerClass_ne_normalizedRationalClass` | full odd support 的实际 contracting qroot 给非零、非单位饱和类，并与 existing normalized principal-unit class 区分。无需额外算术条件。 | Scene1/Derived；proved / accepted |
+
+两新叶模块、Checks.SceneBounds 1609/1609、Axioms.SceneBounds 1406/1406 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或新增 Core 假设；不识别 H¹ₑ/BK，不证明 ambient H¹ 满射或直和分解。
