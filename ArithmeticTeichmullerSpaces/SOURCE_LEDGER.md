@@ -4287,3 +4287,16 @@ BK/不同 untilt 或最终 Corollary 3.12，也未构造 actual M<0 的反例数
 数值下界无新增 q-order/volume 假设；仅证明 selected torsion-field completion 的六次根，
 不登记 base-completion 六次根。离散 q-root order≥3 不推出≥absolute ramIdx 或 global margin≥0；
 实际 BK/不同 untilt/paper thetaVolume 与最终目标身份仍未建立。
+
+
+## S1.431：基域六次根下降与低 ramification 吸收
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-SIX-TORSION-DIVISOR-CARD` | `torsion_card_of_rational_six_divisor` | 原 rational six-torsion 限制到正因子 n，point-map 双射与 geometric count 给 n² 个 rational n-torsion 点。 Joshi III initial theta data、3190–3208、3520–3574、3624–3631；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；四新叶模块、Checks.SceneBounds 1546/1546、Axioms.SceneBounds 1343/1343 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-COMPLETION-DEGREE-ONE` | `LocalCompletion.relativeDegree_eq_one_of_finrank_eq_one`, `LocalCompletion.embedCompletion_surjective_of_finrank_eq_one` | 原 local degree sum 给次数一扩张的 relative e*f=1；实际 completion finrank=1，故完成映射满射。 Joshi III initial theta data、3190–3208、3520–3574、3624–3631；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；四新叶模块、Checks.SceneBounds 1546/1546、Axioms.SceneBounds 1343/1343 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-BASE-TATE-SIXTH-ROOT` | `baseTateParameter_has_sixth_root`, `baseTateParameter_six_dvd_qOrder`, `baseTateParameter_qOrder_ge_six` | actual 三阶点构造 bottom-field split Tate uniformization；j 唯一性与次数一完成映射满射下降实际六次根，给完整 odd support 的 base q-order 六整除/≥6。 Joshi III initial theta data、3190–3208、3520–3574、3624–3631；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；四新叶模块、Checks.SceneBounds 1546/1546、Axioms.SceneBounds 1343/1343 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-LOW-RAMIFICATION-ABSORPTION` | `OrdinaryKummerLogHull.relaxed_order_of_base_ramIdx_le_two`, `OrdinaryKummerLogHull.arithmeticAbsorption_on_vbad_of_base_ramIdx_le_two`, `OrdinaryKummerLogHull.correctedLocalCost_le_paperTerm_on_vbad_of_base_ramIdx_le_two`, `OrdinaryKummerLogHull.correctedCost_le_selectedPaperSum_of_low_ramification`, `OrdinaryKummerLogHull.ordinary_collation_averageAbsLog_le_selectedPaperSum_of_low_ramification` | VBad 的 base absolute ramIdx≤2 与实际 q-order≥6 给原 relaxed-order/吸收测试；全局仍保留 VBad ramification 条件和补集测试。 Joshi III initial theta data、3190–3208、3520–3574、3624–3631；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；四新叶模块、Checks.SceneBounds 1546/1546、Axioms.SceneBounds 1343/1343 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+基域六次根和离散阶数≥6 是无条件 actual 结果；低 ramification 吸收是明确条件性结果。
+没有从 actual D 推出普遍 ramIdx≤2 或 global margin≥0；BK/不同 untilt/paper thetaVolume 仍 open。
