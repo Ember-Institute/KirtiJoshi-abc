@@ -4437,3 +4437,16 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-COMPATIBLE-KUMMER-SOURCE-REALIZATION` | `LocalKummer.padicClass_eq_of_same_sources`, `compatibleSourceCocycle`, `compatibleSourceCocycle_field_sources`, `compatibleSourceClass`, `compatibleSourceClass_eq_original`, `compatibleSourceClass_eq_zero_iff`, `every_integralClass_from_compatible_sources` | 同来源 representative 的 root independence；任意相容族实现为原 integral class；提取后重构等于原 class；class=0 iff 各层基域 p^n 次幂。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
 
 两新叶模块、Checks.SceneBounds 1669/1669、Axioms.SceneBounds 1466/1466 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或 Core 假设。未打包 quotient inverse-limit 群同构，未证明 varying local sources 由单一 field element/Q_p-span 实现，亦未识别 H¹ₑ/BK。
+
+
+## S1.446：actual Kummer classes 张成整个 rational H¹
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-TATE-FINITE-LEVEL-COORDINATE-BOUND` | `Rational.coordinate_reduction_eq_zero_of_level_one`, `norm_coefficientMap_le_prime_pow_of_level_one`, `norm_coefficientMap_sub_le_prime_pow_of_level_eq` | 原 Tate basis/mod p^n reduction 给实际 rational coefficient 的统一 norm(p)^n bound。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-KUMMER-FINITE-LEVEL-APPROXIMATION` | `LocalKummer.boundaryCocycle`, `adjustCocycle`, `adjustCocycle_class`, `exists_fieldKummer_matching_level`, `exists_fieldKummer_coordinate_approximation` | actual field source + root ratio + 原 Tate extension 构造实际 Kummer representative exact finite-level matching；无新 field source/density 证书。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-CROSSED-COCYCLE-CLASS-CONTINUITY` | `ContinuousH1Homogeneous.Crossed`, `continuous_homogeneous`, `continuous_crossed_class` | 原 compact-open cochains 与标准 homology quotient，crossed representatives→原 H¹ class 连续。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-KUMMER-CLASS-APPROXIMATION-CONVERGENCE` | `Rational.exists_kummerClass_sequence_tendsto` | 一致 coefficient bound→原 rational cocycle/H¹ 收敛，实际 Kummer classes 逼近任意 integral coefficient image。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-COMPLETION-KUMMER-SPAN` | `KummerValuation.multiplicativeSpan_finiteDimensional`, `multiplicativeSpan_isClosed`, `integralCoefficientImage_subset_multiplicativeSpan`, `multiplicativeSpan_eq_top`, `units_sup_primeLine_eq_top`, `units_primeLine_isCompl` | actual finite-dimensional completion 的 unit/prime splitting 给闭 span，逼近及 integral 清分母得原 ambient rational H¹ 全张成和 IsCompl。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
+
+五新叶模块、Checks.SceneBounds 1687/1687、Axioms.SceneBounds 1484/1484 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或新增 Core 假设。单位部分尚未识别为 H¹ₑ/BK，paper volume/不同 untilt/联合模型仍缺。
