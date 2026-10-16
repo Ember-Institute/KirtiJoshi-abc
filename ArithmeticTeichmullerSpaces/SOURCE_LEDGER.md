@@ -4262,3 +4262,15 @@ C_n=C_1^n 只针对当前重复同源 completion 的 block，不扩展为未经�
 次数下界无新增数值假设，剩余 q-order 条件和完整 odd-support 补集测试仍显式。
 不从六阶 torsion 字段跳过 q-order 证明，不把 VBad coprimality 扩到补集；BK/不同 untilt、
 paper thetaVolume 与最终 raw/weighted target 身份仍 open。
+
+
+## S1.429：全局算术余量与实际 singleton collation
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-ORDINARY-LOG-GLOBAL-MARGIN` | `OrdinaryKummerLogHull.localArithmeticMargin`, `OrdinaryKummerLogHull.localArithmeticMargin_eq_difference`, `OrdinaryKummerLogHull.localArithmeticMargin_nonneg_iff`, `OrdinaryKummerLogHull.globalArithmeticMargin`, `OrdinaryKummerLogHull.globalArithmeticMargin_eq_difference`, `OrdinaryKummerLogHull.globalArithmeticMargin_nonneg_iff`, `OrdinaryKummerLogHull.globalArithmeticMargin_nonneg_of_local_tests`, `OrdinaryKummerLogHull.ordinary_collation_averageAbsLog_le_paperSum_of_global_margin` | 有符号算术总余量 M 的来源公式、局部/全局成本差、M≥0 的精确全局吸收测试和 arbitrary-index collation 消费者。 Joshi III 3520–3574、3624–3631；原 actual q-order/Haar 模型，原创，无参考代码复制。 | Scene1/Derived；proved / accepted；两新叶模块、Checks.SceneBounds 1527/1527、Axioms.SceneBounds 1324/1324 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-ORDINARY-LOG-SINGLETON-CRITERION` | `OrdinaryKummerLogHull.ordinary_witness_mem_normalization`, `OrdinaryKummerLogHull.ordinarySingletonCollation`, `OrdinaryKummerLogHull.ordinarySingletonCollation_laws`, `OrdinaryKummerLogHull.ordinarySingletonCollation_region_eq`, `OrdinaryKummerLogHull.ordinarySingletonCollation_volume_eq`, `OrdinaryKummerLogHull.ordinary_volume_le_one`, `OrdinaryKummerLogHull.ordinary_averageAbsLog_eq_correctedCost`, `OrdinaryKummerLogHull.ordinarySingletonCollation_bound_iff_global_margin`, `OrdinaryKummerLogHull.all_ordinary_collations_bound_iff_global_margin`, `OrdinaryKummerLogHull.ordinarySingletonCollation_violates_bound_of_negative_margin` | actual ordinary witness 的合法 singleton collation，region/volume identity 和精确 averageAbsLog；singleton bound iff M≥0，并等价于所有满足两条 laws 的 Unit-index collation bounds；M<0 给条件性违反模型。 Joshi III 3520–3574、3624–3631；原 actual q-order/Haar 模型，原创，无参考代码复制。 | Scene1/Derived；proved / accepted；两新叶模块、Checks.SceneBounds 1527/1527、Axioms.SceneBounds 1324/1324 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+M 的减法在 ℝ 中；未使用截断自然数减法忽略局部亏损。未证明实际 M 的符号。
+必要充分性只针对原 ordinary block / 已列两条 collation laws；未识别论文 theta locus、
+BK/不同 untilt 或最终 Corollary 3.12，也未构造 actual M<0 的反例数据。
