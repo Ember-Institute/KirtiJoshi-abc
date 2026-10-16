@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Hausdorff
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullData
@@ -1469,3 +1471,16 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedImageLog_padic_smul
 #check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLog
 #check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLogEquiv
+
+#check JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.evalZero
+#check JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.evalZero_injective
+#check JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.finiteDimensional_zero
+#check JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.t2_cocycles
+#check JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.boundaryRange_isClosed
+#check JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.t2_h1
+#check JoshiTeich.Act1Scene1.LocalPadicLog.rationalH1_t2
+#check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLogContinuousEquiv
+#check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLogContinuousEquiv_apply
+#check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLog_continuous
+#check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedExpToPadicH1
+#check JoshiTeich.Act1Scene1.LocalPadicLog.saturatedExpToPadicH1_apply

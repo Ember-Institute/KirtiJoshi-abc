@@ -4100,3 +4100,13 @@ H¹ₑ/BK、拓扑比较及论文 theta-volume 身份继续 open。
 
 线性 log 使用局部域既有 continuous Qp algebra action，toFun 等于旧 ordinary image log。
 H¹ₑ/BK 及拓扑身份仍是独立义务；不能从本线性同构自动推断论文身份。
+
+## S1.415：standard H¹ Hausdorff 与饱和 ordinary-log 连续线性同构
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CONTINUOUS-H1-HAUSDORFF` | `ContinuousH1Hausdorff.evalZero`, `evalZero_injective`, `finiteDimensional_zero`, `t2_cocycles`, `boundaryRange_isClosed`, `t2_h1` | Mathlib homogeneous continuous cochains、kernel/cokernel 的原 subspace/quotient topology；单位元 evaluation 的单射使 degree zero 与 boundary range 有限维，有限维闭子空间给原 H¹ Hausdorff 性。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1274/1274、Axioms.SceneBounds 1071/1071 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-SATURATED-KUMMER-TOPOLOGY` | `LocalPadicLog.rationalH1_t2`, `saturatedPadicLogContinuousEquiv`, `saturatedPadicLogContinuousEquiv_apply`, `saturatedPadicLog_continuous`, `saturatedExpToPadicH1`, `saturatedExpToPadicH1_apply` | 实际 ULift ℚₚ 系数、S1.414 原 ambient linear log 和有限维线性映射连续性；相同 carrier 上的原 ordinary log 与 inverse 对既有拓扑连续。 | Scene1/Derived；proved / accepted；两叶模块、Checks.SceneBounds 1274/1274、Axioms.SceneBounds 1071/1071 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+局部域 `[FiniteDimensional ℚₚ k]` 显式作为输入；没有搬运 H¹ 拓扑，亦没有把
+T2Space 或 log 连续性作为外给证书。H¹ₑ/BK 及论文 theta/untilt/period 身份仍独立未闭合。

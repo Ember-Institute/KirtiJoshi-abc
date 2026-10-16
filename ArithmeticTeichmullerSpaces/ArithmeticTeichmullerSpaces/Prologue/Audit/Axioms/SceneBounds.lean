@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Hausdorff
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullData
@@ -1259,3 +1261,16 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedImageLog_padic_smul
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLog
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLogEquiv
+
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.evalZero
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.evalZero_injective
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.finiteDimensional_zero
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.t2_cocycles
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.boundaryRange_isClosed
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Hausdorff.t2_h1
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.rationalH1_t2
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLogContinuousEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLogContinuousEquiv_apply
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedPadicLog_continuous
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedExpToPadicH1
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.saturatedExpToPadicH1_apply

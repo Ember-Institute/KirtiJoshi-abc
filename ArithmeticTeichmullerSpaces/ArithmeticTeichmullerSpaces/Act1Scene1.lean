@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Hausdorff
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.Boundary
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312
 import ArithmeticTeichmullerSpaces.Act1Scene1.VolumeBridge
