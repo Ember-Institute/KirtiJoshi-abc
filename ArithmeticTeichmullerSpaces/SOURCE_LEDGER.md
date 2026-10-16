@@ -4310,3 +4310,13 @@ BK/不同 untilt 或最终 Corollary 3.12，也未构造 actual M<0 的反例数
 
 本结果不限制基域相对 ramification，但 moduli ramification 条件未从一般 actual D 推出；
 高 moduli ramification、VBad 补集、一般 margin sign 以及 BK/untilt/paper thetaVolume 仍 open。
+
+
+## S1.433：局部亏损与跨处修正成本补偿
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-ORDINARY-LOG-MARGIN-DEFICIT` | `OrdinaryKummerLogHull.localArithmeticMargin_ge_neg_correctionCost`, `OrdinaryKummerLogHull.localArithmeticMargin_eq_neg_correctionCost_of_degree_eq`, `OrdinaryKummerLogHull.localArithmeticMargin_neg_of_degree_eq`, `OrdinaryKummerLogHull.not_arithmeticAbsorption_of_degree_eq`, `OrdinaryKummerLogHull.not_mem_vbad_of_degree_eq` | 全处 M_v≥−C_v；实际 d_source=d_moduli 条件给 M_v=−C_v<0 / 不吸收 / 不属于 VBad，未构造满足该次数条件的 actual D。 Joshi III 3520–3574、3624–3631；原实际 relative degree/correction API，原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；两新叶模块、Checks.SceneBounds 1565/1565、Axioms.SceneBounds 1362/1362 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-ORDINARY-LOG-COMPENSATION-BUDGET` | `OrdinaryKummerLogHull.localArithmeticMargin_ge_fifth_correctionCost_on_vbad`, `OrdinaryKummerLogHull.vbadCorrectionCost`, `OrdinaryKummerLogHull.complementCorrectionCost`, `OrdinaryKummerLogHull.five_mul_globalMargin_ge_cost_budget`, `OrdinaryKummerLogHull.globalArithmeticMargin_nonneg_of_cost_budget`, `OrdinaryKummerLogHull.correctedCost_le_selectedPaperSum_of_cost_budget`, `OrdinaryKummerLogHull.ordinary_collation_averageAbsLog_le_selectedPaperSum_of_cost_budget` | VBad 低 moduli ramification 给 M_v≥C_v/5；来源修正成本和给 5M≥C_V−5C_other，显式比较 5C_other≤C_V 取代补集逐处测试，接全局 margin/collation 消费者。 Joshi III 3520–3574、3624–3631；原实际 relative degree/correction API，原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；两新叶模块、Checks.SceneBounds 1565/1565、Axioms.SceneBounds 1362/1362 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+实际预算比较和 moduli ramification 条件仍 open；不宣称全局余量已无条件非负或论文 theta model 的反例。
