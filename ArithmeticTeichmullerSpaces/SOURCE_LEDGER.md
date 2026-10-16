@@ -4515,3 +4515,13 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | --- | --- | --- | --- |
 | `JT-SCENE1-COMPLETION-TATE-KUMMER-LOG` | `KummerValuation.nonunit_valuationCoordinate_ne_zero`, `valuationCorrection_mem_units`, `units_nonunitLine_isCompl`, `tateLog`, `tateLog_unit`, `tateLog_eq_zero_iff`, `tateLog_q`, `tateLog_eq_ambientLog_sub`, `tateQuotientLogEquiv`, `tateQuotientLogEquiv_mk`, `tateLog_continuous` | 由原 H¹ 赋值坐标，任意 q∉U 的直线与 U 互补；投影后消费原普通 log，得核为 Q_p·q 的连续线性对数及 (H¹/Q_p·q)≃L[Q_p]completion。分支变换为 L_q(x)=L_0(x)−(v(x)/v(q))•L_0(q)。Joshi III 3150–3156 对 Tate/单位类的区分提供比较背景；本构造为本工程推导，不声明论文中 BK、crystalline 或 Tate 曲线上同调身份。原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
 原 H¹、商拓扑和实际 qroot 线的通用消费者保持；没有把 qroot 类、normalized 类或其商当成 H¹ₑ/BK；Core 假设增量 0。
+
+### S1.455：实际 q-root Tate-log 包装的拆分消费者
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-OUTSIDE-UNITS` | `PrincipalUnitKummer.qrootRationalKummerClass_not_mem_unitsSubspace` | 将实际 q-root 的 norm<1 分离证据单独封装为 ambient `unitsSubspace` 外部性证书；消费 S1.440 的 saturated Kummer norm 判据。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG` | `PrincipalUnitKummer.qrootClass`, `qrootTateLog`, `qrootTateLog_qroot` | 在显式非单位证书之后实例化通用 Tate-direction log；实际 q-root 方向被消去。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-CONSUMERS` | `PrincipalUnitKummer.qrootTateLog_normalizedRationalClass`, `qrootTateLog_eq_zero_iff` | normalized 类的分支值等于既有 ordinary-log witness；kernel 恰为实际 q-root 线。通过一次针对性拆分后在 `maxHeartbeats 2000000` 下编译。 | Scene1/Derived；proved / accepted |
+
+本单元没有把 ambient H¹、q-root 线或其商识别为 H¹ₑ/BK、crystalline、period 或 paper `thetaVolume`。
