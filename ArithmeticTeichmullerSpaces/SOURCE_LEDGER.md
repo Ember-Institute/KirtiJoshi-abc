@@ -4156,3 +4156,15 @@ integral-image intersection、H¹ₑ/BK、period/theta/untilt 和联合模型仍
 
 交集结论只针对原 saturated rational Kummer 子空间与原 integral coefficient image；
 不识别 H¹ₑ/BK，不宣称 actual normalized class 满足这些条件；period/theta/untilt 与联合模型仍 open。
+
+## S1.420：integral ordinary-log image 与 p*-scaled shell
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INTEGRAL-KUMMER-LOG-LATTICE` | `LocalPadicLog.principalLogImage`, `mem_principalLogImage_iff`, `principalLogImage_bounded`, `principalLogImage_ne_bot`, `paperScale_mul_logShell_eq_principalLogImage`, `principalLogImage_subset_logShell`, `logShell_not_subset_principalLogImage`, `principalLogImage_ssubset_logShell`, `integralLift_iff_log_mem_principalLogImage`, `exists_shell_class_without_integralLift` | Joshi III 2843–2853、3226–3236；原 ordinary log image 有界非零、p* norm<1 与 S1.419 intersection。旧 shell 严格大于原 integral image 的 log，p* 乘回则恢复同一载体；存在 shell class 无 integral lift。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1361/1361、Axioms.SceneBounds 1158/1158 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-INTEGRAL-SHELL-NORMALIZATION` | `LocalCompletion.principalLogImage_eq_unitLog_image`, `unitLog_image_ssubset_logShell`, `paperScale_mul_logShell_eq_unitLog_image`, `exists_shell_class_without_integralLift` | actual number-field completions 的原 full-unit log 与 S1.417 principal representative；每个有限处给 strict carrier difference 及精确 scale correction，无参考代码复制。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1361/1361、Axioms.SceneBounds 1158/1158 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-INTEGRAL-LOG-CRITERION` | `PrincipalUnitKummer.normalizedClass_integralLift_iff_value_mem_principalLogImage`, `scale_value_mem_principalLogImage` | 原 actual normalizedRationalClass 与 PaperLogWitnessHull.value；integral lift iff witness 在 unscaled log image；p* 乘回的原 witness 无条件属于该 image。原创，无参考源码复制。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1361/1361、Axioms.SceneBounds 1158/1158 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+负面结论只排除原 ordinary-log normalization 下的全载体直接等式。一般 shell 存在
+不可 lift 的类，不说明特定 actual q-root witness 不可 lift；不识别 H¹ₑ/BK，不触及暂作
+笔误处理的 qLogTerm 符号问题。具体 witness membership 和 period/theta/untilt 身份仍 open。
