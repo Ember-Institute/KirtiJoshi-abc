@@ -390,7 +390,7 @@ flowchart TD
 | 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无参考源码复制 |
 | 工程验收 | 新叶模块、Checks.SceneBounds 1689/1689、Axioms.SceneBounds 1486/1486 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
 | 累计资源 | 成功累计 365.238 秒，失败累计 181.631 秒，总计 546.869 秒；进程组峰值 RSS 26,040,792 KiB（24.834 GiB），单进程采样峰值 8,351,676 KiB |
-| 交付 | 证明提交待本轮提交后填写；Scene1 整体未完成 |
+| 交付 | 证明提交 `cd1f1bb`；总览同批推送；Scene1 整体未完成 |
 | 证据 | [principal-unit ambient split](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPrincipalUnitAmbientSplit.lean)；log5 S1-BND-447 |
 
 ### S1.447 交付构建
