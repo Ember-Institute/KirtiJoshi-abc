@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.439：实际 Haar 加权区域构造与完整 raw-norm descent 条件 |
-| 数学证明基线 | S1.439 已验收并推送，证明提交 `a01d394`；总览同批推送 |
+| 最近完成的数学单元 | S1.440：completion Kummer 单位判据与实际 q-root 类分离 |
+| 数学证明基线 | S1.440 已验收并推送，证明提交 `0229701`；总览同批推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.439 构造全部非零 scalar presentations 的加权区域函数；actual selected fibre 的 raw-norm descent iff moduli localDeg 恒定；该条件及论文身份仍待落实 |
-| 当前推进位置 | G4/G3：实际 Haar 到加权区域函数；完成 raw-norm descent 的必要充分条件 |
+| 数学工作状态 | 原 saturated principal-unit 子空间中的乘法 Kummer 类 iff norm=1；actual qroot 类在该空间之外，且与既有 normalized principal-unit 类不同；H¹ₑ/BK 身份仍待比较 |
+| 当前推进位置 | G2/G4：实际 H¹ 类的来源区分与单位 membership 分类 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.439 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.440 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -56,9 +56,9 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | 闸门 | 当前状态 | 已有结果 | 关闭所需的剩余工作 | 证据入口 |
 | --- | --- | --- | --- | --- |
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明；S1.416 对齐 principal-log 的 2p/p* carrier，S1.417 进一步证明该 carrier 等于全部 O* 的 p*-scaled 连续 log image；S1.420 排除原 integral ordinary-log image 与 scaled shell 的直接等式，p* 乘回给精确修正，S1.421 计算实际 Haar factor 与 log-volume 差，S1.424 证明原 integral image 经显式 log/p* 连续同构到 shell（BK 身份待证），S1.425 排除它在保留通常小球指数和原类身份时直接作为其逆；S1.426 计算原 ordinary-log tensor/global volume 的 p* correction，S1.427 化为实际算术成本与局部吸收测试；S1.438 接通 canonical qLogSum 与同源加权 paper-normalized sum，一般数域保留 global degree | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
-| **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层） | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
+| **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层）；S1.440 从实际 completion 分类单位 Kummer membership，并区分 actual qroot 类和 normalized principal-unit 类 | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md)；S1.440 |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容；S1.434 将原覆盖判据与补集 correction cost=0 对齐，并由 maximal-support/large-prime 来源导出该覆盖；S1.439 在 raw-norm 约定下将 selected fibre 的区域函数存在性完整归结为 moduli localDeg 恒定 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md)；S1.439 |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership、S1.423 原 Tate q-order 阈值与同域有限幂 H¹ lifts、S1.424 原 integral image 的 normalized ordinary log/shell 同构及 actual witness 无条件求值、S1.425 小球校准唯一性与 actual 原类的归一化差异、S1.426 原 ordinary-log hull 的实际 volume correction 和 collation bounds、S1.427 来源成本公式/局部吸收测试和 selected-paper-sum 消费者、S1.428 actual VBad ℓ 倍次数下界及放宽吸收条件、S1.429 全局 margin / actual singleton 精确判据、S1.430 六阶 torsion 的 actual selected Tate 六次根及 q-root 三整除下界、S1.431 原 base Tate 六次根/六整除与 VBad 低 ramification 吸收、S1.432 保留 base/moduli 分歧因子的更强 degree bound 和 moduli 低 ramification 消费者、S1.433 全处亏损/VBad 正余量估计与跨处来源成本补偿、S1.434 成本覆盖/遗漏项等价和大素数来源路线严格消费者、S1.435 reference-margin target 判据、S1.436 reference/ordinary 系数比例与条件性负面证据、S1.437 全局 reference margin 负面消费者；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion；S1.439 扩展实际 Haar 公式至全部非零因子，并构造相容权重的区域函数，给完整 raw-norm descent 判定 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、论文范数下的 mixed-moduli descent 和 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md)；S1.439 |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership、S1.423 原 Tate q-order 阈值与同域有限幂 H¹ lifts、S1.424 原 integral image 的 normalized ordinary log/shell 同构及 actual witness 无条件求值、S1.425 小球校准唯一性与 actual 原类的归一化差异、S1.426 原 ordinary-log hull 的实际 volume correction 和 collation bounds、S1.427 来源成本公式/局部吸收测试和 selected-paper-sum 消费者、S1.428 actual VBad ℓ 倍次数下界及放宽吸收条件、S1.429 全局 margin / actual singleton 精确判据、S1.430 六阶 torsion 的 actual selected Tate 六次根及 q-root 三整除下界、S1.431 原 base Tate 六次根/六整除与 VBad 低 ramification 吸收、S1.432 保留 base/moduli 分歧因子的更强 degree bound 和 moduli 低 ramification 消费者、S1.433 全处亏损/VBad 正余量估计与跨处来源成本补偿、S1.434 成本覆盖/遗漏项等价和大素数来源路线严格消费者、S1.435 reference-margin target 判据、S1.436 reference/ordinary 系数比例与条件性负面证据、S1.437 全局 reference margin 负面消费者；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion；S1.439 扩展实际 Haar 公式至全部非零因子，并构造相容权重的区域函数，给完整 raw-norm descent 判定；S1.440 证明实际 qroot 的非零 Kummer 类在单位饱和空间之外，H¹ₑ 身份仍须独立比较 | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、论文范数下的 mixed-moduli descent 和 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md)；S1.439；S1.440 |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -117,6 +117,9 @@ flowchart TD
     WRV["已构造：actual Haar 加权区域函数<br/>raw-norm descent iff weighted degree 恒定；S1.439"]
     WRV -.-> G3
     WRV -.-> V
+    KVAL["已闭合：Kummer(a)∈单位饱和空间 iff norm(a)=1<br/>actual qroot 类与 normalized principal-unit 类不同；S1.440"]
+    KVAL -.-> B
+    KVAL -.-> G2
     C["待完成：最终 Corollary 3.12<br/>及整体审计验收"]
 
     K --> Z
@@ -310,6 +313,7 @@ flowchart TD
 | 全局 reference margin 负面证据 | 🔵 条件性完成 | full coverage + source residue degree≤moduli degree 给 referenceAbsLogQ<correctedCost，接 S1.435 得当前 ordinary singleton target 条件性失败 | coverage/degree 条件未由一般 D 推出；其它 normalization/BK/thetaVolume 路线仍 open；G1/G4；log5 S1-BND-437 |
 | canonical target / 加权 paper-normalized q-term | 🟢 已闭合（原 carrier 会计） | qLogSum 与同一 q-pilot 的加权 paper-normalized factor 和连接；一般版保留 [F:ℚ]，无需 degree-one/full-link | 不等同 unweighted representatives；无新体积结论或 BK 身份；G1/G3；log5 S1-BND-438 |
 | actual weighted region volume / raw-norm descent | 🟢 已闭合（精确约定范围） | 任意非零因子的实际 Haar 公式；weighted degree 恒定时构造区域函数；actual inverse relative weight 的 descent iff moduli localDeg 恒定 | 一般 D 的恒定条件及 paper norm/theta 身份未证明；G3/G4；S1.439 |
+| actual multiplicative Kummer 单位判据 | 🟢 已闭合（实际 completion 来源） | Kummer(a)∈单位饱和空间 iff norm(a)=1；actual contracting qroot 类非零、在该空间之外且不同于 normalized principal-unit 类 | 不识别 H¹ₑ/BK 或 ambient H¹ 完整分解；G2/G4；S1.440 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -342,41 +346,38 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.439（已推送）
+## 最近单元变化卡：S1.440（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4/G3：从实际 tensor Haar 构造加权区域函数，闭合 raw-norm descent 的充分方向 |
-| 实际闭合 | 任意非零局部标量的 norm/Haar/degree-volume 公式；区域函数存在 iff localDeg*weight 恒定；actual selected fibre 下 iff moduli localDeg 恒定 |
-| 实际构造 | V(c,S)=exp(c*log(actual Haar(S))/tensor dimension)，在相容权重下对所有非零 scalar presentations 给加权乘积 |
-| 解决的输入 | 移除收缩假设，包含单位与扩张因子；充分方向提供 actual Haar 函数，无自由 volume/目标不等式证书 |
-| 未闭合 | 一般 D 的 moduli-degree 恒定条件、paper norm/representatives、BK/H¹ₑ、真实 theta/untilt/volume 身份与联合模型 |
-| 边界 | 完整判定针对 raw completion norms；不把该结果移用于尚未比较的 paper norms，不宣布一般 mixed-moduli/paper descent 闭合 |
+| 推进位置 | G2/G4：实际 multiplicative Kummer 类与单位饱和子空间的来源比较 |
+| 实际闭合 | 在实际 completion 中，Kummer(a) 属于原 saturated principal-unit image iff norm(a)=1；a 是任意非零 field element |
+| 实际消费者 | actual full odd-support qroot 的 Kummer 类非零且不属于单位饱和子空间，因此不同于既有 normalizedRationalClass |
+| 解决的输入 | 使用原 root descent、离散 q-order、rational denominator clearing 及 finite residue units；无需额外 root/descent/class identity 证书 |
+| 未闭合 | H¹ₑ/BK 身份、ambient H¹ 的完整 Kummer 满射/直和、different untilts、paper volume 与真实联合模型 |
+| 负面证据范围 | 排除把 qroot 自身的乘法 Kummer 类认作 1+p*·qroot 的 normalized principal-unit 类；不排除论文路线，不涉及暂作笔误的 qLogTerm |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
-| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无参考源码复制；旧公共类型和高扇出定义保持 |
-| 工程验收 | 三新叶模块、Checks.SceneBounds 1599/1599、Axioms.SceneBounds 1396/1396 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
-| 累计资源 | 成功累计 336.768 秒，失败累计 542.012 秒，总计 878.780 秒；进程组峰值 RSS 25,865,944 KiB（24.668 GiB），单进程采样峰值 8,339,956 KiB，GNU time 最大 RSS 8,339,972 KiB |
-| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；0.5 秒进程组 RSS 采样，85 GiB 停止，用户上限 90 GiB |
-| 交付 | 证明提交 `a01d394`，随总览同批推送；Scene1 整体未完成 |
-| 证据 | [实际加权区域体积](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedWeightedRegionVolume.lean)；log5 S1-BND-439 |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无参考源码复制；旧公开类型保持 |
+| 工程验收 | 两新叶模块、Checks.SceneBounds 1609/1609、Axioms.SceneBounds 1406/1406 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 373.703 秒，失败累计 90.572 秒，总计 464.275 秒；进程组峰值 RSS 26,025,420 KiB（24.820 GiB），单进程采样峰值 8,340,452 KiB，GNU time 最大 RSS 8,341,324 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；0.5 秒进程组采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 证明提交 `0229701`，总览同批推送；Scene1 整体未完成 |
+| 证据 | [实际 Kummer 单位判据](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionKummerUnitCriterion.lean)；[q-root 类分离](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaQRootKummerSeparation.lean)；log5 S1-BND-440 |
 
-### S1.439 交付构建
+### S1.440 交付构建
 
-目标为三个新增叶模块、两项 SceneBounds 审计和 Scene1 聚合；不运行日常全图 ImportAudit。
-本单元完成 raw-norm descent 的构造和完整判定，作一次里程碑 axiom 审计。
-`-Kjobs` 未被配置读取；窄构建实际 worker 峰值 1，交付审计峰值 3；每个 Lean worker -j1。
-未冷建、清缓存、修改或重编 Mathlib；未新增 heartbeat 覆盖。
+目标：两新叶模块、Checks.SceneBounds、Axioms.SceneBounds 及 Scene1 聚合。
+本单元完成实际来源 Kummer 类的 membership 分类，作一次里程碑公理审计。
+`-Kjobs` 未被配置读取；窄构建实际 worker 峰值 1，交付审计峰值 3；每进程 Lean -j1。
+未冷建、清缓存、修改或重编 Mathlib；无新增 heartbeat 覆盖。
 
 | 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
 | --- | --- | ---: | ---: | ---: |
-| s1439 | 失败（退出 1） | 98.320 | 3619 | 5,515,552 |
-| s1439b | 失败（退出 1） | 97.907 | 3650 | 5,517,368 |
-| s1439c | 失败（退出 1） | 111.766 | 9197 | 5,587,300 |
-| s1439d | 失败（退出 1） | 234.019 | 9197 | 9,306,772 |
-| s1439e | 成功（退出 0） | 154.256 | 9197 | 9,300,896 |
-| s1439audit | 成功（退出 0） | 182.512 | 9486 | 25,865,944 |
+| s1440 | 失败（退出 1） | 90.572 | 3932 | 5,809,408 |
+| s1440b | 成功（退出 0） | 186.465 | 9332 | 9,390,964 |
+| s1440audit | 成功（退出 0） | 187.238 | 9488 | 26,025,420 |
 
-失败尝试全部计入；失败原因以原始 log 为准。前两次为自然数嵌入比较的 elaboration timeout，第三次为 Algebra.norm 的 MonoidHom 不支持 map_inv₀；改用乘法消去。第四次为 actual consumer 未显式传入非零证明；补齐参数后重试。原始指标：`/tmp/import-audit-s1439*-metrics.json` 及对应 build.log。
+失败尝试全部计入；首轮为 section hypothesis 未显式绑定、instance 无法推断及 coercion 对齐问题，详见原始 log。原始指标：`/tmp/import-audit-s1440*-metrics.json` 及对应 build.log。
 
 ## 历史单元变化卡：S1.402（资源/计数补正，已推送）
 
@@ -3110,3 +3111,40 @@ actual `smallNormalizedIntegralLift_standardMap` 局部 heartbeat 1000000，其�
 
 失败轮保留原始诊断；任务数按 Lake 输出最大计划计数，成功轮为实际汇总。
 局部 heartbeat 覆盖：无新增。原始指标：`/tmp/import-audit-s1438*-metrics.json` 及对应 build.log。
+
+
+## 历史单元变化卡：S1.439（已推送）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4/G3：从实际 tensor Haar 构造加权区域函数，闭合 raw-norm descent 的充分方向 |
+| 实际闭合 | 任意非零局部标量的 norm/Haar/degree-volume 公式；区域函数存在 iff localDeg*weight 恒定；actual selected fibre 下 iff moduli localDeg 恒定 |
+| 实际构造 | V(c,S)=exp(c*log(actual Haar(S))/tensor dimension)，在相容权重下对所有非零 scalar presentations 给加权乘积 |
+| 解决的输入 | 移除收缩假设，包含单位与扩张因子；充分方向提供 actual Haar 函数，无自由 volume/目标不等式证书 |
+| 未闭合 | 一般 D 的 moduli-degree 恒定条件、paper norm/representatives、BK/H¹ₑ、真实 theta/untilt/volume 身份与联合模型 |
+| 边界 | 完整判定针对 raw completion norms；不把该结果移用于尚未比较的 paper norms，不宣布一般 mixed-moduli/paper descent 闭合 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无参考源码复制；旧公共类型和高扇出定义保持 |
+| 工程验收 | 三新叶模块、Checks.SceneBounds 1599/1599、Axioms.SceneBounds 1396/1396 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 336.768 秒，失败累计 542.012 秒，总计 878.780 秒；进程组峰值 RSS 25,865,944 KiB（24.668 GiB），单进程采样峰值 8,339,956 KiB，GNU time 最大 RSS 8,339,972 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；0.5 秒进程组 RSS 采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 证明提交 `a01d394`，随总览同批推送；Scene1 整体未完成 |
+| 证据 | [实际加权区域体积](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedWeightedRegionVolume.lean)；log5 S1-BND-439 |
+
+### S1.439 交付构建
+
+目标为三个新增叶模块、两项 SceneBounds 审计和 Scene1 聚合；不运行日常全图 ImportAudit。
+本单元完成 raw-norm descent 的构造和完整判定，作一次里程碑 axiom 审计。
+`-Kjobs` 未被配置读取；窄构建实际 worker 峰值 1，交付审计峰值 3；每个 Lean worker -j1。
+未冷建、清缓存、修改或重编 Mathlib；未新增 heartbeat 覆盖。
+
+| 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
+| --- | --- | ---: | ---: | ---: |
+| s1439 | 失败（退出 1） | 98.320 | 3619 | 5,515,552 |
+| s1439b | 失败（退出 1） | 97.907 | 3650 | 5,517,368 |
+| s1439c | 失败（退出 1） | 111.766 | 9197 | 5,587,300 |
+| s1439d | 失败（退出 1） | 234.019 | 9197 | 9,306,772 |
+| s1439e | 成功（退出 0） | 154.256 | 9197 | 9,300,896 |
+| s1439audit | 成功（退出 0） | 182.512 | 9486 | 25,865,944 |
+
+失败尝试全部计入；失败原因以原始 log 为准。前两次为自然数嵌入比较的 elaboration timeout，第三次为 Algebra.norm 的 MonoidHom 不支持 map_inv₀；改用乘法消去。第四次为 actual consumer 未显式传入非零证明；补齐参数后重试。原始指标：`/tmp/import-audit-s1439*-metrics.json` 及对应 build.log。
