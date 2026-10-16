@@ -4063,3 +4063,12 @@ S1.407 中的 length、section tuple、collation/cost/volume 定义移到数值�
 
 只有标量环从 ℚₚ restriction 到 ℚ，原 H¹ 作用没有更换；线性 log 与旧 image log
 在同一类上同值。非有理 ℚₚ scalar closure、拓扑比较、H¹ₑ/BK 及论文 volume 身份仍 open。
+
+## S1.411：principal-unit p-adic 幂与 ordinary log 的极限公式
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-PRINCIPAL-UNIT-PADIC-POWER` | `LocalPadicLog.principal_appr_powers_cauchy`, `exists_principal_appr_power_limit`, `principalPadicPower`, `tendsto_principalPadicPower`, `norm_padicLog_sub_eq_of_dist_le`, `continuousAt_padicLog_principal`, `tendsto_padicInt_appr`, `padicLog_principalPadicPower` | actual p-power principal-unit convergence、小球 ordinary-log norm identity、Mathlib PadicInt.appr congruences；Joshi III 3212–3226。实际整数幂序列在原完成域取极限，log 标量公式使用原连续 ℚₚ action。 | Scene1/Derived；proved / accepted（单位侧）；1231 checks、1028 axiom prints 和 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+
+单位幂由实际整数幂极限定义；尚无 root-tower/cocycle 的 ℤₚ scalar comparison，
+不能用此公式替代 H¹ 中的标量 closure 或 H¹ₑ/BK 身份。Prologue-R5 不变。
