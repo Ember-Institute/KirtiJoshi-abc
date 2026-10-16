@@ -4499,3 +4499,12 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-AMBIENT-KUMMER-LOG` | `PrincipalUnitKummer.ambientLog_normalizedRationalClass`, `ambientLog_qrootRationalKummerClass` | 在相同原 ambient H¹ 上，normalized 类映到实际 PaperLogWitnessHull.value；q-root 类映到 corrected-unit log/ramIdx。消费 S1.441、S1.447–448 及旧 normalized saturated log。保持两类及其赋值方向的区分。 | Scene1/Derived；proved / accepted |
 
 不把 prime-zero branch 识别为 BK logarithm，不识别 H¹ₑ、不同 untilt 或 paper thetaVolume；Core 假设增量 0。
+
+## S1.453：原 continuous H¹ 的对数/赋值拓扑坐标
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-COMPLETION-KUMMER-COORDINATES` | `KummerValuation.rationalH1_finiteDimensional`, `prime_kummer_ne_zero`, `primeLineEquiv`, `kummerCoordinates`, `kummerCoordinates_fst`, `valuationCoordinate`, `kummerCoordinates_unit`, `kummerCoordinates_prime`, `valuationCoordinate_unit`, `valuationCoordinate_prime`, `valuationCoordinate_eq_zero_iff`, `valuationCoordinate_kummer`, `kummerCoordinatesContinuousEquiv`, `ambientLog_continuous`, `valuationCoordinate_continuous`, `rationalH1_finrank` | 从 S1.446 完整原 H¹ 的 U/P 互补和 S1.452 log(p)=0 分支构造 H¹≃L[ℚₚ]k×ℚₚ；首坐标为原 ordinary log，第二坐标在 κ(p) 上为 1，核恰 U；对域元素 a 的第二坐标为 −valuationIndex(a)/ramIdx。有限维及两向连续性从原 H¹ 的商拓扑证明，不搬运拓扑。Joshi III 3190–3236 的局部比较背景；坐标构造为本工程推导，无参考源码复制。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-INITIAL-THETA-KUMMER-COORDINATES` | `PrincipalUnitKummer.valuationCoordinate_qrootRationalKummerClass`, `kummerCoordinates_normalizedRationalClass`, `rationalH1_finrank_eq_localDeg_add_one` | 实际 qroot 类第二坐标=qOrder/ramIdx；normalized 类坐标=(实际 ordinary-log value,0)；原 H¹ 维数=actual localDeg+1，完成域维数由既有原 padicAlgebra 定理派生。 | Scene1/Derived；proved / accepted |
+
+单位子空间及 ambient H¹ 拓扑保持原定义；不识别 H¹ₑ/BK、different-untilt 或 paper thetaVolume。Core 假设增量 0。
