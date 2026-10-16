@@ -84,5 +84,13 @@ theorem qrootTateLog_normalizedRationalClass_ne_zero
   rw [qrootTateLog_normalizedRationalClass D s]
   exact PaperLogWitnessHull.value_ne_zero D s
 
+set_option maxHeartbeats 1000000 in
+theorem qrootTateLog_continuous
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    Continuous (qrootTateLog D s) := by
+  exact LocalCompletion.KummerValuation.tateLog_continuous s.1
+    (Arithmetic.residueChar s.1) rfl (qrootClass D s)
+      (qrootRationalKummerClass_not_mem_unitsSubspace D s)
+
 end
 end JoshiTeich.Act1Scene1.PrincipalUnitKummer

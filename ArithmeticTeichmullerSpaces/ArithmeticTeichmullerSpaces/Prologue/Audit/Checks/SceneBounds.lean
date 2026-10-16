@@ -2011,6 +2011,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.qrootRationalKummerClass_not_mem_normalized_span
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedRationalClass_not_mem_qroot_span
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.qrootTateLog_normalizedRationalClass_ne_zero
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.qrootTateLog_continuous
 
 #check JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog
 #check JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog_unit

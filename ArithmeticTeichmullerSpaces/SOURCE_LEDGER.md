@@ -4525,3 +4525,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-CONSUMERS` | `PrincipalUnitKummer.qrootTateLog_normalizedRationalClass`, `qrootTateLog_eq_zero_iff`, `normalizedRationalClass_not_mem_qroot_span`, `qrootTateLog_normalizedRationalClass_ne_zero` | normalized 类的分支值等于既有 ordinary-log witness；kernel 恰为实际 q-root 线；由 witness 非零进一步得到 normalized 类不在 q-root span 且其 Tate-log 非零。通过一次针对性拆分、显式赋值零事实和显式传参后在 `maxHeartbeats 2000000` 下编译。 | Scene1/Derived；proved / accepted |
 
 本单元没有把 ambient H¹、q-root 线或其商识别为 H¹ₑ/BK、crystalline、period 或 paper `thetaVolume`。
+
+### S1.456：实际 q-root Tate-log 连续性消费者
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-CONTINUOUS` | `PrincipalUnitKummer.qrootTateLog_continuous` | 将通用 `tateLog_continuous` 实例化到实际 contracting q-root；连续性来自原 ambient rational H¹ 的有限维商拓扑与显式非单位证书。保持 q-root Tate-log 为 ambient H¹ 分支，不识别 H¹ₑ/BK、period 或 paper `thetaVolume`。 | Scene1/Derived；proved / accepted |
+
+本单元没有新增 Prologue/Core 假设，也没有改变 q-root、normalized 类和 ambient H¹ 的边界身份。
