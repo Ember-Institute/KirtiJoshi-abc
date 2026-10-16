@@ -4357,3 +4357,12 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-ACTUAL-REFERENCE-GLOBAL-NEGATIVE-MARGIN` | `OrdinaryKummerLogHull.vbadPaperTerm_eq_selectedPaperTerm_of_coverage`, `OrdinaryKummerLogHull.referenceAbsLogQ_eq_full_coefficient_sum_of_coverage`, `OrdinaryKummerLogHull.referenceAbsLogQ_lt_correctedCost_of_coverage_of_sourceInertDeg_le` | full VBad coverage 下的 finite sum alignment；source residue degree≤moduli global degree 给全局 referenceAbsLogQ<correctedCost。Joshi III eq:weights、3520–3574；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；一新叶模块、Checks.SceneBounds 1587/1587、Axioms.SceneBounds 1384/1384 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
 
 该负面证据只针对显式 coverage/degree 条件与当前 ordinary singleton normalization；不构造 actual 反例，不判定其它路线。
+
+
+## S1.438：canonical target 加权 paper-normalized q-term 连接
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-TARGET-PAPER-NORMALIZED-BRIDGE` | `canonicalTateTarget_qLogSum_eq_weightedPaperNormalizedSourceQFactorLogSum`, `canonicalTateQFamily_qLogSum_eq_degree_mul_weightedPaperNormalizedSourceQFactorLogSum` | degree-one canonical bundle 的 qLogSum=同源加权 paper-normalized factor 和；一般数域 raw Tate q-family 保留 [F:ℚ] 因子，无 degree-one/full-link 输入。原 qLogSum/reference、raw normalization 和 paper factor identities 的组合。Joshi III 3617–3650；原创，无参考源码复制。 | Scene1/Derived；proved / accepted；新叶模块、Checks.SceneBounds 1589/1589、Axioms.SceneBounds 1386/1386 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+这是 q-term 会计连接，未识别 unweighted representatives、BK、不同 untilt 或 paper thetaVolume；未取消 p* correction，未证明新的体积界。
