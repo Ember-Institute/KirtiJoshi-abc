@@ -4081,3 +4081,13 @@ S1.407 中的 length、section tuple、collation/cost/volume 定义移到数值�
 
 仅在原完成域取极限，Ω 不需要新增拓扑/完备性；根塔/cocycle 输入没有额外数学
 certificate。尚未完成 standard H¹ scalar descent、ℚₚ closure、H¹ₑ/BK 或论文 theta 身份。
+
+## S1.413：standard H¹ scalar descent 与实际 principal Kummer image closure
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CONTINUOUS-H1-SCALAR` | `ContinuousH1Homogeneous.cocycle_smul_law`, `cycle_smul`, `classOf_smul` | standard homogeneous continuous cochain complex 与其原 scalar action；从 cycles 和 π 的 linearity 推出 crossed-homomorphism class scalar law。 | Scene1/Derived；proved / accepted；1254 checks、1051 axiom prints 和 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+| `JT-SCENE1-KUMMER-PADIC-POWER-CLASS` | `LocalKummer.PadicPowerTower.tower_padicAdditiveCocycle`, `tower_padicClass`, `tower_rationalClass`; `LocalPadicLog.principalKummerHom_principalPadicPower`, `padicInt_smul_mem_principalKummerImage` | S1.412 actual tower/cocycle、原 standardMap 半线性与 root-choice independence；Joshi III 3190–3226。image closure 的单位 preimage 为实际 principalPadicPower。 | Scene1/Derived；proved / accepted；1254 checks、1051 axiom prints 和 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+
+此处关闭 ℤₚ 标量比较，不替换 H¹ complex、类或 scalar action；ℚₚ closure、linear log、
+H¹ₑ/BK、拓扑比较及论文 theta-volume 身份继续 open。

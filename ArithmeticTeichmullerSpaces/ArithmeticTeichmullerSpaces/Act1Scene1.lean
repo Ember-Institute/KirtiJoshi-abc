@@ -291,5 +291,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedExpWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedRationalModule
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPrincipalUnitPadicPower
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicPowerTower
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Scalar
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicPowerClass
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

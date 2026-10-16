@@ -6,6 +6,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedExpWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedRationalModule
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPrincipalUnitPadicPower
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicPowerTower
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicPowerClass
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
@@ -1239,3 +1240,12 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_ratio
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_cocycle
+
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cocycle_smul_law
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.cycle_smul
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Homogeneous.classOf_smul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_padicAdditiveCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_padicClass
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_rationalClass
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.principalKummerHom_principalPadicPower
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.padicInt_smul_mem_principalKummerImage
