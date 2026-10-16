@@ -4466,3 +4466,11 @@ S1.447 不把 unitsSubspace 识别为 H¹ₑ/BK，不引入 Core 假设；paper 
 | `JT-SCENE1-INITIAL-THETA-NORMALIZED-CLASS-AMBIENT-SPLIT` | `PrincipalUnitKummer.normalizedRationalClass_mem_unitsSubspace` | 实际 `normalizedRationalClass` 通过非零 `paperScale` 的标量关系回到已证明的 field-element `rationalClass`，继承 ambient completion `unitsSubspace` 成员性。消费 S1.447 的 norm-one/Kummer 结果；不识别 H¹ₑ/BK。Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
 
 S1.448 不引入 Core 假设，paper volume、不同 untilt、H¹ₑ/BK 身份和联合模型仍缺。
+
+## S1.449：实际 normalized principal-unit 的非零 ambient unit witness
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-NORMALIZED-CLASS-UNIT-WITNESS` | `PrincipalUnitKummer.normalizedUnitWitness`, `PrincipalUnitKummer.normalizedUnitWitness_ne_zero` | 将 S1.448 的 ambient `unitsSubspace` 成员性与既有 normalized rational-class 非零性包装为实际非零 subtype witness。Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
+
+S1.449 只提供可消费的 ambient unit witness，不识别 H¹ₑ/BK、crystalline/Frobenius、different untilt 或 paper thetaVolume。
