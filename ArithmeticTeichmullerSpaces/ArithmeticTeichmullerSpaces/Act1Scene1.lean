@@ -293,5 +293,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPrincipalUnitPadicPower
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicPowerTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Scalar
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicPowerClass
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedPadicModule
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

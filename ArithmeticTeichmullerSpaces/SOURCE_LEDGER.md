@@ -4091,3 +4091,12 @@ certificate。尚未完成 standard H¹ scalar descent、ℚₚ closure、H¹ₑ
 
 此处关闭 ℤₚ 标量比较，不替换 H¹ complex、类或 scalar action；ℚₚ closure、linear log、
 H¹ₑ/BK、拓扑比较及论文 theta-volume 身份继续 open。
+
+## S1.414：饱和 Kummer ℚₚ 子模与 ordinary-log 线性同构
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-SATURATED-KUMMER-PADIC-MODULE` | `LocalPadicLog.principalImagePadicSmul`, `padic_smul_mem_saturatedKummerImage`, `saturatedKummerPadicSubmodule`, `saturated_as_divided_image`, `principalImageLog_padicSmul`, `saturatedImageLog_padic_smul`, `saturatedPadicLog`, `saturatedPadicLogEquiv` | S1.411 unit log scalar formula、S1.413 actual Kummer ℤₚ comparison、既有 Qp 分母清除和 S1.409 log 双射；Joshi III 3212–3226。scalar action 始终是原 H¹ action；子模 carrier 等于原饱和子群。 | Scene1/Derived；proved / accepted；1262 checks、1059 axiom prints 和 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+
+线性 log 使用局部域既有 continuous Qp algebra action，toFun 等于旧 ordinary image log。
+H¹ₑ/BK 及拓扑身份仍是独立义务；不能从本线性同构自动推断论文身份。
