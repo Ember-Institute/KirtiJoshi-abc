@@ -4427,3 +4427,13 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-INTEGRAL-KUMMER-FINITE-SOURCE-ZERO` | `LocalKummer.padicClass_eq_zero_iff_source_powers`, `every_integralClass_has_source_zero_criterion` | S1.443 actual a_n,b_n 来源的 class=0 iff 每层 a_n 是基域 p^n 次幂；为每个 standard integral H¹ 类构造相容来源及此判据。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
 
 两新叶模块、Checks.SceneBounds 1651/1651、Axioms.SceneBounds 1448/1448 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或 Core 假设。仅闭合 finite-level detection/injectivity，inverse-limit 满射、ambient multiplicativeSpan 与 H¹ₑ/BK 身份仍未证明。
+
+
+## S1.445：相容基域代表元族的 integral cocycle 实现与原类重构
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-COMPATIBLE-KUMMER-SOURCE-TOWER` | `LocalKummer.CompatibleSourceTower`, `ofCompatible`, `root_ne_zero`, `ratio`, `ratio_pow_eq_one`, `ratio_succ_pow`, `ratio_mul`, `cocycle`, `cocycle_law`, `continuous_cocycle`, `continuousCocycleValue` | 基域 p^n 次幂相容代表元的修正根塔；实际代数闭包递归根提取，基域 correction 在 Galois ratio 消去，得到原连续 Tate cocycle。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-COMPATIBLE-KUMMER-SOURCE-REALIZATION` | `LocalKummer.padicClass_eq_of_same_sources`, `compatibleSourceCocycle`, `compatibleSourceCocycle_field_sources`, `compatibleSourceClass`, `compatibleSourceClass_eq_original`, `compatibleSourceClass_eq_zero_iff`, `every_integralClass_from_compatible_sources` | 同来源 representative 的 root independence；任意相容族实现为原 integral class；提取后重构等于原 class；class=0 iff 各层基域 p^n 次幂。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
+
+两新叶模块、Checks.SceneBounds 1669/1669、Axioms.SceneBounds 1466/1466 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或 Core 假设。未打包 quotient inverse-limit 群同构，未证明 varying local sources 由单一 field element/Q_p-span 实现，亦未识别 H¹ₑ/BK。

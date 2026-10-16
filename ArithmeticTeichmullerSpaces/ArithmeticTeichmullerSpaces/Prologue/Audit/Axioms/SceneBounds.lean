@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCompatibleSourceRealization
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteSourceZeroCriterion
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteLevelSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Denominator
@@ -1740,3 +1741,22 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_zero_iff_all_finiteLevels
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_zero_iff_source_powers
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_has_source_zero_criterion
+
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ofCompatible
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.root_ne_zero
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ratio
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ratio_pow_eq_one
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ratio_succ_pow
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ratio_mul
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.cocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.cocycle_law
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.continuous_cocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.continuousCocycleValue
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_of_same_sources
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceCocycle_field_sources
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceClass
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceClass_eq_original
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceClass_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_from_compatible_sources

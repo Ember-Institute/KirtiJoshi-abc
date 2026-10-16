@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerCompatibleSourceRealization
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteSourceZeroCriterion
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerFiniteLevelSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerH1Denominator
@@ -1950,3 +1951,22 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_zero_iff_all_finiteLevels
 #check JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_zero_iff_source_powers
 #check JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_has_source_zero_criterion
+
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ofCompatible
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.root_ne_zero
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ratio
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ratio_pow_eq_one
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ratio_succ_pow
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.ratio_mul
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.cocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.cocycle_law
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.continuous_cocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.CompatibleSourceTower.continuousCocycleValue
+#check JoshiTeich.Act1Scene1.LocalKummer.padicClass_eq_of_same_sources
+#check JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceCocycle_field_sources
+#check JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceClass
+#check JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceClass_eq_original
+#check JoshiTeich.Act1Scene1.LocalKummer.compatibleSourceClass_eq_zero_iff
+#check JoshiTeich.Act1Scene1.LocalKummer.every_integralClass_from_compatible_sources
