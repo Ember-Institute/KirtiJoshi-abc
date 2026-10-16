@@ -4043,3 +4043,14 @@ theta/period 的真实联合满足模型；这些义务单独保留。Prologue-R
 S1.407 中的 length、section tuple、collation/cost/volume 定义移到数值模块，公开名称和
 类型不变；accounting 和 Corollary312 proof term 直接消费独立数值生产者。其旧 Scene1
 打包仍依赖 AnalyticInput，论文 theta/BK/untilt 及代表处/volume 身份仍未闭合。
+
+## S1.409：饱和 Kummer ordinary-log 的满射及逆映射
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-SATURATED-KUMMER-LOG-EQUIVALENCE` | `LocalPadicLog.exists_prime_power_mul_eq_principalLog`, `saturatedImageLog_surjective`, `saturatedLogEquiv`, `saturatedExp`, `saturatedImageLog_saturatedExp`, `saturatedExp_saturatedImageLog`, `saturatedExp_eq_dividedKummerClass` | 已移植并独立证明的 `LocalPadicLogBall.exists_padicLog_eq`（原 iut PadicLog 来源和许可证见该文件头）、标准 rational Kummer p-power division；Joshi III 3212–3226。任意 y 缩入小球后实际构造单位及 divided Kummer 类。 | Scene1/Derived；proved / accepted；1214 checks、1011 axiom prints 与 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+| `JT-SCENE1-ACTUAL-SATURATED-EXP-WITNESS` | `PrincipalUnitKummer.saturatedExp_value_eq_normalizedSaturatedClass` | S1.364 actual saturated-log 求值与 S1.409 双侧逆；实际 ordinary witness 经逆映射回到原 normalized class。 | Scene1/Derived；proved / accepted；1214 checks、1011 axiom prints 与 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+
+该同构是实际 principal-unit Kummer 像的 p-power saturation 与局部完成域之间的加法
+同构；H¹ₑ/BK 识别、ℚₚ scalar closure、连续性及论文 theta-volume 身份均继续 open。
+没有从原文引入新的全局事实或将 ordinary-log 同构命名为 Bloch–Kato 同构。
