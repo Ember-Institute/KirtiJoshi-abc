@@ -288,5 +288,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedLogEquivalence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedExpWitness
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedRationalModule
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

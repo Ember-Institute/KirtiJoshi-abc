@@ -4054,3 +4054,12 @@ S1.407 中的 length、section tuple、collation/cost/volume 定义移到数值�
 该同构是实际 principal-unit Kummer 像的 p-power saturation 与局部完成域之间的加法
 同构；H¹ₑ/BK 识别、ℚₚ scalar closure、连续性及论文 theta-volume 身份均继续 open。
 没有从原文引入新的全局事实或将 ordinary-log 同构命名为 Bloch–Kato 同构。
+
+## S1.410：ambient H¹ 标量作用下的饱和有理子模
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-SATURATED-KUMMER-RATIONAL-MODULE` | `LocalPadicLog.saturatedExpToRationalH1`, `saturatedExpToRationalH1_injective`, `saturatedKummerRatSubmodule`, `mem_saturatedKummerRatSubmodule_iff`, `ratCast_smul_mem_saturatedKummerImage`, `saturatedRatLogEquiv`, `saturatedRatLogEquiv_eq_imageLog` | S1.409 actual additive inverse、standard rational H¹ 的原 ℚₚ action 和 Mathlib `map_rat_smul`；Joshi III 3212–3226。restriction of scalars 后，inverse+inclusion 的 linear range 恰为既有饱和 carrier。 | Scene1/Derived；proved / accepted（有理 restriction 范围）；1221 checks、1018 axiom prints 和 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+
+只有标量环从 ℚₚ restriction 到 ℚ，原 H¹ 作用没有更换；线性 log 与旧 image log
+在同一类上同值。非有理 ℚₚ scalar closure、拓扑比较、H¹ₑ/BK 及论文 volume 身份仍 open。
