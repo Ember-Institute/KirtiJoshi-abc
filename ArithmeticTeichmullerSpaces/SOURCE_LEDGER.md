@@ -4387,3 +4387,13 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-ACTUAL-QROOT-KUMMER-SEPARATION` | `PrincipalUnitKummer.qrootRationalKummerClass`, `qrootRationalKummerClass_not_mem_saturated`, `qrootRationalKummerClass_ne_zero`, `qrootRationalKummerClass_ne_normalizedRationalClass` | full odd support 的实际 contracting qroot 给非零、非单位饱和类，并与 existing normalized principal-unit class 区分。无需额外算术条件。 | Scene1/Derived；proved / accepted |
 
 两新叶模块、Checks.SceneBounds 1609/1609、Axioms.SceneBounds 1406/1406 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无参考源码复制或新增 Core 假设；不识别 H¹ₑ/BK，不证明 ambient H¹ 满射或直和分解。
+
+
+## S1.441：实际乘法 Kummer 来源的单位与赋值分解
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-COMPLETION-KUMMER-VALUATION-SPLIT` | `KummerValuation.primeUnit`, `kummer`, `valuationIndex`, `primeUnit_valuation`, `prime_norm_lt_one`, `unitsSubspace`, `correctedUnit`, `correctedUnit_norm`, `correctedUnit_kummer`, `correctedUnit_kummer_mem`, `kummer_decomposition`, `multiplicativeSpan`, `primeLine`, `unitsSubspace_le_multiplicativeSpan`, `multiplicativeSpan_eq_units_sup_primeLine`, `prime_kummer_not_mem_units`, `units_disjoint_primeLine` | actual valued(p)=exp(-e)；构造 norm-one correction 及显式 H¹ 分解。全部 multiplicative Kummer 的 ℚₚ-span=原 unit saturation + prime line，交为零；不声明 ambient H¹ 满射。Joshi III 3190–3236。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-ACTUAL-QROOT-KUMMER-VALUATION` | `PrincipalUnitKummer.qrootFieldUnit`, `qroot_valuationIndex`, `qroot_kummer_decomposition`, `qroot_correction_mem_unitSubspace` | actual full odd-support qroot 来源；integer coordinate=−qOrder，prime coefficient=qOrder/ramIdx，实际 correction 类属于原单位饱和子空间。 | Scene1/Derived；proved / accepted |
+
+两新叶模块、Checks.SceneBounds 1630/1630、Axioms.SceneBounds 1427/1427 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound。原创，无新参考代码复制或 Core 假设；H¹ₑ/BK、crystalline/different untilt/paper volume 身份均未推断。
