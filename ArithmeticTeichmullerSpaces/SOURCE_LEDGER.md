@@ -4274,3 +4274,16 @@ paper thetaVolume 与最终 raw/weighted target 身份仍 open。
 M 的减法在 ℝ 中；未使用截断自然数减法忽略局部亏损。未证明实际 M 的符号。
 必要充分性只针对原 ordinary block / 已列两条 collation laws；未识别论文 theta locus、
 BK/不同 untilt 或最终 Corollary 3.12，也未构造 actual M<0 的反例数据。
+
+
+## S1.430：实际六阶 torsion 到 selected q-root 数值下界
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-SIX-TORSION-TATE-ROOT` | `sixTorsion_card_of_rational`, `exists_sixth_root_of_rational_six_torsion` | 原 rational six-torsion 的 point-map 双射与 geometric 36 点；实际 Tate uniformization 上注入后由 residue count/root-class 修正得六次根。 Joshi III initial theta data、3190–3208；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；三新叶模块、Checks.SceneBounds 1535/1535、Axioms.SceneBounds 1332/1332 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-COMPLETION-QORDER-POWER` | `LocalCompletion.qOrder_dvd_of_power_root`, `LocalCompletion.qOrder_pow` | 原 completion valuation 的 exp/log 会计；n 次根给 integer q-order 被 n 整除，正次幂的 q-order 乘 n。 Joshi III initial theta data、3190–3208；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；三新叶模块、Checks.SceneBounds 1535/1535、Axioms.SceneBounds 1332/1332 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-SELECTED-QROOT-THREE-DIVISIBILITY` | `selectedTateParameter_has_sixth_root`, `selectedQRoot_three_dvd_qOrder`, `selectedQRoot_qOrder_ge_three`, `selectedPaperTerm_ge_three_log_prime` | 实际 F→torsionField→completion 点群注入与原 selected Tate structure；六次根及 2ell root equation、ell≥5 prime 给 selected q-root order 三整除/≥3，原 selected paper term≥3log p。 Joshi III initial theta data、3190–3208；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；三新叶模块、Checks.SceneBounds 1535/1535、Axioms.SceneBounds 1332/1332 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+数值下界无新增 q-order/volume 假设；仅证明 selected torsion-field completion 的六次根，
+不登记 base-completion 六次根。离散 q-root order≥3 不推出≥absolute ramIdx 或 global margin≥0；
+实际 BK/不同 untilt/paper thetaVolume 与最终目标身份仍未建立。
