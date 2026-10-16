@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullData
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312
 import ArithmeticTeichmullerSpaces.Act1Scene1.FieldOrientationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
@@ -1364,3 +1365,23 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.ActualHullCostTransfer.ordinary_positivePacket_nonempty
 #check JoshiTeich.Act1Scene1.actualCostLink_volumeNormalization
 #check JoshiTeich.Act1Scene1.actualCostLink_transferLogBound
+
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.length
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.length_pos
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.tuple
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.tuple_liesOver
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.toCanonicalInput
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.scene1Input
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.data
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.data_link_eq
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.data_thetaVolume_eq
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.qNormCompatibility
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.source
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.indexEquiv
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.volumeData
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.qFamily
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.qLogSum_eq_degree_mul_reference
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.volumeNormalization
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.transferLogBound
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312

@@ -1,0 +1,200 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalScene1Input
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
+
+/-!
+source-id: JT-SCENE1-CANONICAL-ACTUAL-HULL-DATA
+source: actual InitialThetaData Tate parameters and section representatives;
+S1.406 Haar cost transfer, S1.358 raw degree accounting; Joshi III 1028--1055,
+3495--3557, and 3617--3645.
+fidelity: assembles the actual ordinary-log cost carrier, target volume, raw
+q-terms, finite grouping and q-family from one InitialThetaData. Remaining
+theta/period/perfectoid laws are explicit analytic inputs. No target, q-family,
+transfer bound, volume identity, degree-one hypothesis or tuple certificate is
+an input. The paper theta/BK/untilt and representative identities remain open.
+boundary: Scene1/Derived
+-/
+
+namespace JoshiTeich.Act1Scene1.CanonicalActualHull
+open JoshiTeich.Prologue
+open scoped BigOperators Classical
+universe u
+noncomputable section
+variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+variable {O : Type u} [CommRing O] (p : ℕ)
+variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+variable [IsAdicComplete (Ideal.span {(p : O)}) O]
+variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+
+def length : ℕ := (D.prime.ℓ - 1) / 2
+
+theorem length_pos : 0 < length D := by
+  have h := D.prime.five_le
+  unfold length
+  omega
+
+/-- The section selects the completion factors; tuple length is fixed by ell. -/
+def tuple (v : iutInitialThetaVBadModuliFinset D) (_ : Fin (length D)) :
+    (iutInitialThetaOddSupportTorsionQRootSource D).badFinset :=
+  VBadSelectedPaper.sourceAt D v
+
+theorem tuple_liesOver (v : iutInitialThetaVBadModuliFinset D) (i : Fin (length D)) :
+    Ideal.LiesOver (tuple D v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal :=
+  VBadSelectedPaper.sourceAt_liesOver D v
+
+local instance actualHullPrime (v : iutInitialThetaVBadModuliFinset D) :
+    Fact (Arithmetic.residueChar v.1).Prime := ⟨Arithmetic.residueChar_prime v.1⟩
+
+abbrev collation := VBadThetaLogCollation.collation D (length D) (tuple D) (tuple_liesOver D)
+abbrev cost := VBadThetaHullLogCost.cost D (length D) (tuple D) (tuple_liesOver D) (collation D)
+abbrev hullVolume := VBadThetaLogCollation.volume D (length D) (tuple D) (tuple_liesOver D)
+abbrev PositivePacket :=
+  ActualHullCostTransfer.PositivePacket D (length D) (tuple D) (tuple_liesOver D) (collation D)
+
+variable (theta : ThetaPilotData D.F)
+variable (route : PositivePacket D → theta.index)
+variable (thetaBase : theta.index) (heightData : Arithmetic.HeightData D.F)
+variable (ramification : Arithmetic.RamificationProfile D.F)
+
+abbrev packetHull :=
+  ActualHullCostTransfer.packetHull D (length D) (tuple D) (tuple_liesOver D)
+    (collation D) theta route
+
+abbrev link :=
+  ActualHullCostTransfer.link D (length D) (tuple D) (tuple_liesOver D)
+    (collation D) theta route thetaBase heightData ramification
+
+/-- Only the analytic laws not supplied by the actual arithmetic/Haar producers. -/
+structure AnalyticInput where
+  placeData : PerfectoidPlaceData D.F O p
+  bridge : PerfectoidBridgeData (link D theta route thetaBase heightData ramification)
+    p placeData
+  thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase
+  periodMap : ∀ i, theta.period i = theta.liftedLog i
+  normalization : letI := theta.indexFintype
+    cost D = ∑ i, theta.period i
+  height_nonnegative : ∀ x, 0 ≤ heightData.value x
+  perfectoidBridge : PerfectoidBridgeLaws
+    (link D theta route thetaBase heightData ramification) p placeData bridge
+  thetaLiftLog : ThetaLiftLog (link D theta route thetaBase heightData ramification)
+
+variable (X : AnalyticInput (O := O) p D theta route thetaBase heightData ramification)
+
+def toCanonicalInput :
+    CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase
+      (packetHull D theta route) heightData ramification (cost D) (length D) where
+  placeData := X.placeData
+  bridge := X.bridge
+  thetaScaling := X.thetaScaling
+  periodMap := X.periodMap
+  normalization := X.normalization
+  height_nonnegative := X.height_nonnegative
+  theta_norm_positive := X.thetaScaling.norm_positive
+  packet_weight_positive := ActualHullCostTransfer.packetWeight_pos
+    D (length D) (tuple D) (tuple_liesOver D) (collation D) theta route
+  hull_weight_positive := ActualHullCostTransfer.hullWeight_pos
+    D (length D) (tuple D) (tuple_liesOver D) (collation D) theta route
+  perfectoidBridge := X.perfectoidBridge
+  thetaLiftLog := X.thetaLiftLog
+  packetCollationHull := ActualHullCostTransfer.packetCollationHull
+    D (length D) (tuple D) (tuple_liesOver D) (collation D) theta route
+    thetaBase heightData ramification
+  volumeTransfer := ActualHullCostTransfer.volumeTransfer
+    D (length D) (tuple D) (tuple_liesOver D) (collation D) theta route
+    (VBadThetaLogCollation.generator_coverage D (length D) (tuple D) (tuple_liesOver D))
+    (VBadThetaLogCollation.collation_subset_normalization
+      D (length D) (tuple D) (tuple_liesOver D)) thetaBase heightData ramification
+
+def scene1Input : Scene1Input D.F O p :=
+  CanonicalInitialThetaScene1Input.toScene1Input p D theta thetaBase
+    (packetHull D theta route) heightData ramification (cost D) (length D)
+    (toCanonicalInput p D theta route thetaBase heightData ramification X)
+
+/-- Both target sides are fixed by the actual source, before proving the bound. -/
+def data : Corollary312Data D.F O p where
+  scene1 := scene1Input p D theta route thetaBase heightData ramification X
+  ell := D.prime.ℓ
+  ellStar := length D
+  qIndex := ↥(iutInitialThetaTateParameterData D).places
+  qIndexFintype := inferInstance
+  qLogTerm w := -Real.log ((iutInitialThetaTateParameterData D).norm w.1 ^
+    (1 / (2 * (D.prime.ℓ : ℝ))))
+  thetaVolume := hullVolume D
+
+theorem data_link_eq :
+    (data p D theta route thetaBase heightData ramification X).scene1.data.link =
+      link D theta route thetaBase heightData ramification := rfl
+
+theorem data_thetaVolume_eq :
+    (data p D theta route thetaBase heightData ramification X).thetaVolume =
+      hullVolume D := rfl
+
+theorem qNormCompatibility :
+    QNormTateCompatibility (data p D theta route thetaBase heightData ramification X).scene1.data.link :=
+  iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
+    (packetHull D theta route) heightData ramification (cost D) (length D)
+
+def source : IutQPilotSource p (data p D theta route thetaBase heightData ramification X) :=
+  IutQPilotSource.ofInitialThetaCanonicalTateData D p rfl rfl
+    (qNormCompatibility p D theta route thetaBase heightData ramification X)
+
+def indexEquiv :
+    (data p D theta route thetaBase heightData ramification X).qIndex ≃
+      Corollary312SourceQIndex p (data p D theta route thetaBase heightData ramification X) :=
+  Equiv.refl _
+
+def volumeData : Corollary312VolumeData p
+    (data p D theta route thetaBase heightData ramification X) where
+  qFactor w := (iutInitialThetaTateParameterData D).norm w.1 ^
+    (1 / (2 * (D.prime.ℓ : ℝ)))
+
+def qFamily : Corollary312TateQFamily p
+    (data p D theta route thetaBase heightData ramification X)
+    (volumeData p D theta route thetaBase heightData ramification X) where
+  compatibility := qNormCompatibility p D theta route thetaBase heightData ramification X
+  grouping := Corollary312SourceQGrouping.ofIutSource p
+    (data p D theta route thetaBase heightData ramification X)
+    (source p D theta route thetaBase heightData ramification X)
+    (qNormCompatibility p D theta route thetaBase heightData ramification X)
+    (indexEquiv p D theta route thetaBase heightData ramification X)
+  indexEquiv := indexEquiv p D theta route thetaBase heightData ramification X
+  grouping_place_eq _ := rfl
+  qFactor_eq _ := rfl
+  qLogTerm_eq _ := rfl
+
+theorem qLogSum_eq_degree_mul_reference :
+    Corollary312Data.qLogSum p (data p D theta route thetaBase heightData ramification X) =
+      (Module.finrank ℚ D.F : ℝ) * JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) :=
+  canonicalTateQFamily_qLogSum_eq_degree_mul_reference p D
+    (qFamily p D theta route thetaBase heightData ramification X) rfl rfl
+
+theorem volumeNormalization : Corollary312VolumeNormalization p
+    (data p D theta route thetaBase heightData ramification X) :=
+  actualCostLink_volumeNormalization p D (length D) (tuple D) (tuple_liesOver D)
+    theta route thetaBase heightData ramification
+    (data p D theta route thetaBase heightData ramification X) rfl rfl
+
+theorem transferLogBound : Corollary312TransferLogBound p
+    (data p D theta route thetaBase heightData ramification X) :=
+  actualCostLink_transferLogBound p D (length D) (tuple D) (tuple_liesOver D)
+    theta route thetaBase heightData ramification
+    (data p D theta route thetaBase heightData ramification X) rfl rfl
+    (volumeData p D theta route thetaBase heightData ramification X)
+    (qFamily p D theta route thetaBase heightData ramification X) rfl rfl
+
+/-- The raw completion-norm target follows from the remaining analytic laws. -/
+theorem corollary312 : Corollary312 p
+    (data p D theta route thetaBase heightData ramification X) := by
+  exact corollary312_of_transfer_log_bound p
+    (data p D theta route thetaBase heightData ramification X)
+    (volumeData p D theta route thetaBase heightData ramification X)
+    ((qFamily p D theta route thetaBase heightData ramification X).toQFamily p)
+    (volumeNormalization p D theta route thetaBase heightData ramification X)
+    (transferLogBound p D theta route thetaBase heightData ramification X)
+    D.prime.ℓ_prime D.prime.five_le rfl (length_pos D)
+
+end
+end JoshiTeich.Act1Scene1.CanonicalActualHull

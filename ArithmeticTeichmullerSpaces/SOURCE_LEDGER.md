@@ -4022,3 +4022,14 @@ paper sum 的 `n` 倍；不识别论文 thetaVolume，不构造 H¹ₑ/BK、diff
 成本 carrier 非空，排除以全空 carrier 满足转移的退化路径。
 该成本 carrier 是实际 Haar 会计适配器。它不识别论文 theta/untilt/volume，也不提供
 theta/period 的真实联合满足模型；这些义务单独保留。Prologue-R5 和旧公开类型不变。
+
+## S1.407：同一 InitialThetaData 的实际 hull/raw target 装配
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-DATA` | `CanonicalActualHull.length_pos`, `tuple_liesOver`, `toCanonicalInput`, `scene1Input`, `data`, `source`, `qFamily`, `qLogSum_eq_degree_mul_reference`, `volumeNormalization`, `transferLogBound`, `corollary312` | actual InitialThetaData Tate parameters/section，S1.406 Haar cost transfer，S1.358 raw degree accounting；Joshi III 1028–1055、3495–3557、3617–3645。tuple、Tate q-index/log terms、ordinary-log hull/cost 来自同一 D。一般数域 raw 次数保留。 | Scene1/Derived；proved conditional / accepted；1192 checks、989 axiom prints 与 Scene1 聚合通过；剩余 analytic laws 为显式条件 |
+
+`AnalyticInput` 不包含 target、q-family、volume identity、transfer bound 或最终目标。
+它保留 theta scaling、period/log-shell、cost/period normalization、height/perfectoid
+法律，尚未从论文 theta/untilt 构造。此处不声称 VBad raw target 等于论文完整代表
+处集、BK/thetaVolume 或一般数域 degree-normalized 目标，也不关闭最终闸门。

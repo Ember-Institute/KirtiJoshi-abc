@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTransfer
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
@@ -1154,3 +1155,23 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.ActualHullCostTransfer.ordinary_positivePacket_nonempty
 #print axioms JoshiTeich.Act1Scene1.actualCostLink_volumeNormalization
 #print axioms JoshiTeich.Act1Scene1.actualCostLink_transferLogBound
+
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.length
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.length_pos
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.tuple
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.tuple_liesOver
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.toCanonicalInput
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.scene1Input
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.data
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.data_link_eq
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.data_thetaVolume_eq
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.qNormCompatibility
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.source
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.indexEquiv
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.volumeData
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.qFamily
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.qLogSum_eq_degree_mul_reference
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.volumeNormalization
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.transferLogBound
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312
