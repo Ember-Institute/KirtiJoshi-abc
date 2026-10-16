@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.410：饱和像的 ambient 有理子模及线性 log |
-| 数学证明基线 | S1.410 已验收并推送，数学提交 `4fdfb98`；总览与该提交同批推送 |
+| 最近完成的数学单元 | S1.411：actual principal-unit p-adic 幂极限与 log 标量公式 |
+| 数学证明基线 | S1.411 已验收并推送，数学提交 `5045602`；总览与该提交同批推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | 连续工作流进行中；S1.410 原 H¹ 有理标量 closure 和线性 log 已验收；H¹ₑ/BK、theta/period/untilt 联合模型仍 open |
-| 当前推进位置 | G4：既有饱和像在原 H¹ 标量作用下的有理 closure 与线性 log |
+| 数学工作状态 | 连续工作流进行中；S1.411 单位幂极限、log 连续性与标量公式已验收；H¹ₑ/BK、theta/period/untilt 联合模型仍 open |
+| 当前推进位置 | G4：构造实际单位的 p-adic 幂极限，补非有理标量比较的单位侧 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.410 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.411 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -89,6 +89,7 @@ flowchart TD
     KS["已闭合：p-power 饱和 Kummer 像<br/>normalized class witness 求值；S1.364"]
     KE["已闭合：饱和 ordinary-log 加法同构<br/>全域满射及 actual witness 逆映射；S1.409"]
     KQ["已闭合：ambient H¹ 有理子模<br/>原有理标量 closure 与线性 log；S1.410"]
+    KP["已闭合：actual 单位 p-adic 幂<br/>log 连续性及标量极限；S1.411"]
     TS["已闭合：integral tensor hull<br/>包含 tensor log-shell；S1.365"]
     TU["已闭合：actual witness integral hull<br/>包含于 unit lattice；S1.366"]
     TI["已闭合：actual witness integral hull<br/>包含于 unit lattice ∩ tensor log-shell；S1.367"]
@@ -138,6 +139,8 @@ flowchart TD
     KS --> KE
     KE --> KQ
     KQ -.-> B
+    KQ --> KP
+    KP -.-> B
     KS --> TS
     TS --> TU
     TU --> TI
@@ -221,6 +224,7 @@ flowchart TD
 | p* 除法后的 Kummer 类与 log | 🟢 已闭合（饱和载体范围） | S1.364 证明 normalizedRationalClass 的 saturated-log graph，并求值为 `PaperLogWitnessHull.value`；不声称原 principal-unit 像除法封闭，也不建立 H¹ₑ/BK | G4；log5 S1-BND-364 |
 | p-power 饱和 ordinary-log 加法同构 | 🟢 已闭合（ordinary 饱和像范围） | S1.409 用小球满射与 p-power division 构造全局 preimage、加法同构及逆映射 actual 求值 | H¹ₑ/BK、ℚₚ scalar closure、拓扑比较仍 open；G4；log5 S1-BND-409 |
 | 饱和 Kummer 像的 ambient 有理子模 | 🟢 已闭合（有理 restriction 范围） | S1.410 的 linear range 与旧饱和 carrier 相等；原 H¹ 有理标量 closure 与 linear log 同值性 | 非有理 ℚₚ scalar closure、拓扑/BK 身份仍 open；G4；log5 S1-BND-410 |
+| principal-unit p-adic 幂与 log | 🟢 已闭合（单位侧） | S1.411 用 actual integer-power limit 构造 principal unit 并证明 log scalar-limit formula | 仍需 root-tower/cocycle 的 ℤₚ 比较及 H¹/BK 身份；G4；log5 S1-BND-411 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -251,35 +255,38 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.410（已推送）
+## 最近单元变化卡：S1.411（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G4：饱和 Kummer 像与 ambient H¹ 的有理标量相容性 |
-| 实际闭合 | inverse log 加 inclusion 构造 ℚ 线性 embedding，range carrier 精确等于原 saturatedKummerImage；原 ℚₚ action 的所有有理标量保持该 carrier |
-| 实际消费者 | 实际 ℚ 子模到局部域的 linear log equivalence，逐类同值于既有 saturatedImageLog |
-| 解决的输入 | 有理标量 closure 与线性相容性由现有加法同构派生，不输入新 scalar-law 证书 |
-| 未闭合 | 非有理 ℚₚ scalar closure、连续/拓扑比较、H¹ₑ/BK、论文 theta/untilt/volume 和真实联合模型 |
+| 推进位置 | G4：非有理标量比较的 actual principal-unit 幂极限与 ordinary-log 公式 |
+| 实际闭合 | PadicInt.appr 整数幂序列 Cauchy、实际极限仍 principal；普通 log 在 principal units 连续；log 幂极限等于原连续 ℚₚ action 的标量乘 |
+| 实际消费者 | log 极限公式消费实际整数幂极限、连续性和既有整数幂 log law |
+| 解决的输入 | 幂极限和 log 连续性由完成域/valuation 证明，无 caller limit 或 scalar-law 证书 |
+| 未闭合 | root-tower/cocycle 的 ℤₚ scalar 身份、H¹ 中非有理 ℚₚ closure、H¹ₑ/BK、拓扑比较和论文真实模型 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
-| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；使用原 H¹ ℚₚ action 的 restriction，未从坐标搬运作用 |
-| 工程验收 | 新叶模块、Checks.SceneBounds 1221/1221、Axioms.SceneBounds 1018/1018 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
-| 累计资源 | 成功 216.616 秒；首次失败 112.669 秒；累计 329.285 秒；进程组峰值 RSS 25,885,396 KiB（24.686 GiB），单进程采样峰值 8,301,164 KiB，GNU time 最大 RSS 8,301,172 KiB |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；实际整数幂极限没有从 log 坐标搬运 |
+| 工程验收 | 新叶模块、Checks.SceneBounds 1231/1231、Axioms.SceneBounds 1028/1028 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功 243.818 秒；四次失败 434.122 秒；累计 677.940 秒；进程组峰值 RSS 25,901,096 KiB（24.701 GiB），单进程采样峰值 8,300,396 KiB，GNU time 最大 RSS 8,303,108 KiB |
 | 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
-| 交付 | 数学提交 `4fdfb98` 与本总览同批推送；连续目标保持 active |
-| 证据 | [饱和有理子模](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerSaturatedRationalModule.lean)；log5 S1-BND-410 |
+| 交付 | 数学提交 `5045602` 与本总览同批推送；连续目标保持 active |
+| 证据 | [principal-unit p-adic 幂](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalPrincipalUnitPadicPower.lean)；log5 S1-BND-411 |
 
-### S1.410 交付构建
+### S1.411 交付构建
 
-目标：`Act1Scene1.LocalKummerSaturatedRationalModule`、`Prologue.Audit.Checks.SceneBounds`、
+目标：`Act1Scene1.LocalPrincipalUnitPadicPower`、`Prologue.Audit.Checks.SceneBounds`、
 `Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
 从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
 `-Kjobs` 未被配置读取，成功构建实际并发 Lean worker 峰值 3，每进程 -j1。
-成功退出码 0、首次失败 1；RSS 85 GiB 停止阈值未触及，未冷建、清缓存或重编 Mathlib。
+成功退出码 0，失败均 1；RSS 85 GiB 停止阈值未触及，未冷建、清缓存或重编 Mathlib。
 
 | 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
 | --- | --- | ---: | ---: | ---: |
-| 首轮：linear log 同值证明的 subtype coercion 类型不匹配 | 失败 | 112.669 | 9426 | 5,288,672 |
-| 显式指定 k/Ω 与 subtype.val 后四目标 | 成功 | 216.616 | 9426 | 25,885,396 |
+| 首轮：squeeze bound 推断与 function composition/cast 改写 | 失败 | 112.007 | 9427 | 5,286,488 |
+| 第二轮：PadicInt→ℚₚ cast 的 composition definitional equality | 失败 | 112.032 | 9427 | 5,284,468 |
+| 第三轮：连续 ring hom 调用不匹配；改用 subtype 连续性 | 失败 | 106.648 | 9427 | 5,280,560 |
+| 第四轮：simpa 未处理 semireducible cast/composition；改直接 proof term | 失败 | 103.435 | 9427 | 5,278,512 |
+| 直接连续映射 proof term 修正后四目标 | 成功 | 243.818 | 9427 | 25,901,096 |
 
 ## 历史单元变化卡：S1.402（资源/计数补正，已推送）
 
@@ -1859,3 +1866,33 @@ S1.405 只排除 signed-log identity。`log(actualVolume)<0` 与 `-log(actualVol
 | 第二轮：doc comment 与 include 的语法顺序 | 失败 | 107.824 | 9425 | 5,280,376 |
 | 第三轮：通用同构已通过，actual witness 的 reverse rw 在 isDefEq 超时 | 失败 | 203.790 | 9425 | 9,446,628 |
 | explicit proof / 单定理 heartbeat 修正后五目标 | 成功 | 279.623 | 9425 | 25,891,644 |
+
+## 历史单元变化卡：S1.410（已推送）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G4：饱和 Kummer 像与 ambient H¹ 的有理标量相容性 |
+| 实际闭合 | inverse log 加 inclusion 构造 ℚ 线性 embedding，range carrier 精确等于原 saturatedKummerImage；原 ℚₚ action 的所有有理标量保持该 carrier |
+| 实际消费者 | 实际 ℚ 子模到局部域的 linear log equivalence，逐类同值于既有 saturatedImageLog |
+| 解决的输入 | 有理标量 closure 与线性相容性由现有加法同构派生，不输入新 scalar-law 证书 |
+| 未闭合 | 非有理 ℚₚ scalar closure、连续/拓扑比较、H¹ₑ/BK、论文 theta/untilt/volume 和真实联合模型 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；使用原 H¹ ℚₚ action 的 restriction，未从坐标搬运作用 |
+| 工程验收 | 新叶模块、Checks.SceneBounds 1221/1221、Axioms.SceneBounds 1018/1018 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功 216.616 秒；首次失败 112.669 秒；累计 329.285 秒；进程组峰值 RSS 25,885,396 KiB（24.686 GiB），单进程采样峰值 8,301,164 KiB，GNU time 最大 RSS 8,301,172 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 数学提交 `4fdfb98` 与本总览同批推送；连续目标保持 active |
+| 证据 | [饱和有理子模](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalKummerSaturatedRationalModule.lean)；log5 S1-BND-410 |
+
+### S1.410 交付构建
+
+目标：`Act1Scene1.LocalKummerSaturatedRationalModule`、`Prologue.Audit.Checks.SceneBounds`、
+`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
+`-Kjobs` 未被配置读取，成功构建实际并发 Lean worker 峰值 3，每进程 -j1。
+成功退出码 0、首次失败 1；RSS 85 GiB 停止阈值未触及，未冷建、清缓存或重编 Mathlib。
+
+| 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
+| --- | --- | ---: | ---: | ---: |
+| 首轮：linear log 同值证明的 subtype coercion 类型不匹配 | 失败 | 112.669 | 9426 | 5,288,672 |
+| 显式指定 k/Ω 与 subtype.val 后四目标 | 成功 | 216.616 | 9426 | 25,885,396 |
