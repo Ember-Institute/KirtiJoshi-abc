@@ -4072,3 +4072,12 @@ S1.407 中的 length、section tuple、collation/cost/volume 定义移到数值�
 
 单位幂由实际整数幂极限定义；尚无 root-tower/cocycle 的 ℤₚ scalar comparison，
 不能用此公式替代 H¹ 中的标量 closure 或 H¹ₑ/BK 身份。Prologue-R5 不变。
+
+## S1.412：actual p-adic 幂的兼容根塔与 cocycle 比较
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-KUMMER-PADIC-POWER-TOWER` | `LocalKummer.PadicPowerTower.tail_powers_cauchy`, `correction`, `correction_principal`, `correction_zero`, `correction_step`, `tower`, `tower_ratio`, `tower_cocycle` | S1.411 actual integer-power limits、PadicInt.appr congruences 与原 RootTower；Joshi III 3190–3226。完成域中的尾指数幂极限提供 base-field correction，递推构成兼容根塔，逐坐标 ratio 对齐原 Tate padicPower。 | Scene1/Derived；proved / accepted（root tower/cocycle 范围）；1246 checks、1043 axiom prints 和 Scene1 聚合通过，公理仅含 Lean 标准三项 |
+
+仅在原完成域取极限，Ω 不需要新增拓扑/完备性；根塔/cocycle 输入没有额外数学
+certificate。尚未完成 standard H¹ scalar descent、ℚₚ closure、H¹ₑ/BK 或论文 theta 身份。

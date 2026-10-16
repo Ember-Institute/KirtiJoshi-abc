@@ -5,6 +5,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBoun
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedExpWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedRationalModule
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPrincipalUnitPadicPower
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicPowerTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312
 import ArithmeticTeichmullerSpaces.Act1Scene1.FieldOrientationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
@@ -1432,3 +1433,19 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.LocalPadicLog.continuousAt_padicLog_principal
 #check JoshiTeich.Act1Scene1.LocalPadicLog.tendsto_padicInt_appr
 #check JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_principalPadicPower
+
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tailExponent
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.mul_tailExponent
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tailExponent_mono
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.dvd_tailExponent_sub
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tailExponent_step
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tailExponent_zero
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tail_powers_cauchy
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.correction
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tendsto_correction
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.correction_principal
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.correction_zero
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.correction_step
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_ratio
+#check JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_cocycle

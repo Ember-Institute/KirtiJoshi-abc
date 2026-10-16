@@ -5,6 +5,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBoun
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedExpWitness
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedRationalModule
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalPrincipalUnitPadicPower
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPadicPowerTower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutFiniteWeightedAveraging
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotTransferBridge
@@ -1222,3 +1223,19 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.continuousAt_padicLog_principal
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.tendsto_padicInt_appr
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.padicLog_principalPadicPower
+
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tailExponent
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.mul_tailExponent
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tailExponent_mono
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.dvd_tailExponent_sub
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tailExponent_step
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tailExponent_zero
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tail_powers_cauchy
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.correction
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tendsto_correction
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.correction_principal
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.correction_zero
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.correction_step
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_ratio
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower.tower_cocycle
