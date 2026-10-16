@@ -4123,3 +4123,14 @@ T2Space 或 log 连续性作为外给证书。H¹ₑ/BK 及论文 theta/untilt/p
 该 principal-log 表达尚未扩为全部 O* 上的 branch。该 shell 是原 saturated rational H¹ 中的实际
 归一化 principal image；不据此声称其等于 integral H¹ 的像或交集、H¹ₑ 或 BK shell。
 真实 period/Bcris、different-untilt、paper thetaVolume 与联合模型继续 open。
+
+## S1.417：全部整数环单位的 log branch 与 p*-shell carrier
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-LOCAL-UNIT-PRINCIPAL-POWER` | `LocalPadicLog.unitIntegerRing`, `unitResidueField`, `unitResidueExponent`, `unitResidueExponent_pos`, `unitResidueExponent_coprime`, `integerUnit_pow_principal` | 有限剩余域乘法群、CharP 与 valuation integer ring；统一 N=#κ−1 为正且与 p 互素，全部整数环单位的 N 次幂为 principal。Joshi III 2843–2853。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1320/1320、Axioms.SceneBounds 1117/1117 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-INTEGER-UNIT-LOGARITHM` | `LocalPadicLog.integerUnit_kummer_mem_principalImage`, `integerUnitKummerHom`, `integerUnitKummerHom_surjective`, `integerUnitLog`, `integerUnitLog_of_principal`, `integerUnitLog_power_formula`, `principalToIntegerUnit`, `integerUnitKummerHom_principalToIntegerUnit`, `integerUnitLog_principalToIntegerUnit`, `integerUnitLog_has_principalRepresentative`, `integerUnitLog_continuous`, `paperIntegerUnitLogShell`, `logShell_eq_paperIntegerUnitLogShell` | 原 standard rational Kummer 类、actual principal ℤₚ power 与旧 principal image log；1/N∈ℤₚ 使全部 O* 的原 rational image 等于 principal image；连续加法 log 用固定幂公式验证，p*-scaled 全单位 image 等于旧 shell。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1320/1320、Axioms.SceneBounds 1117/1117 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| `JT-SCENE1-ACTUAL-COMPLETION-UNIT-LOGARITHM` | `LocalCompletion.integerResidue_finite`, `integerResidue_charP`, `unitLog`, `unitLog_of_principal`, `unitLog_power_formula`, `unitLog_continuous`, `logShell_eq_scaled_unitLog_image` | 已证实际 completion compact integer ring 与 residue-prime norm<1 给 finite/CharP 实例；全部有限处的 O* branch 与 shell 身份直接实例化，无 caller comparison 证书或参考源码复制。 | Scene1/Derived；proved / accepted；三叶模块、Checks.SceneBounds 1320/1320、Axioms.SceneBounds 1117/1117 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+这里只延拓 O* 上的 log，不构造全部 k* 上带 log(p)=0 的 branch。O* 的 rational Kummer
+image 相等不推出 integral H¹ 的像/交集、H¹ₑ/BK 或 period/theta/untilt 身份。

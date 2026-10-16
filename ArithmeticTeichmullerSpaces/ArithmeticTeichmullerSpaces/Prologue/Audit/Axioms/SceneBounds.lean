@@ -1,3 +1,6 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalUnitPrincipalPower
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalIntegerUnitLogarithm
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionUnitLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerLogShellNormalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerLogShell
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerLogShell
@@ -1300,3 +1303,30 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.LocalPadicLog.mem_normalizedKummerShell_iff_paperScale
 
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.normalizedPadicClass_has_paperPrincipalRepresentative
+
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.unitIntegerRing
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.unitResidueField
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.unitResidueExponent
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.unitResidueExponent_pos
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.unitResidueExponent_coprime
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnit_pow_principal
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnit_kummer_mem_principalImage
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitKummerHom
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitLog
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitLog_of_principal
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitLog_power_formula
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.principalToIntegerUnit
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitKummerHom_principalToIntegerUnit
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitKummerHom_surjective
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitLog_principalToIntegerUnit
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitLog_has_principalRepresentative
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.integerUnitLog_continuous
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.paperIntegerUnitLogShell
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.logShell_eq_paperIntegerUnitLogShell
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerResidue_finite
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerResidue_charP
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.unitLog
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.unitLog_of_principal
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.unitLog_power_formula
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.unitLog_continuous
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.logShell_eq_scaled_unitLog_image
