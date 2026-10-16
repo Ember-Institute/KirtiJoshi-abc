@@ -4508,3 +4508,10 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-KUMMER-COORDINATES` | `PrincipalUnitKummer.valuationCoordinate_qrootRationalKummerClass`, `kummerCoordinates_normalizedRationalClass`, `rationalH1_finrank_eq_localDeg_add_one` | 实际 qroot 类第二坐标=qOrder/ramIdx；normalized 类坐标=(实际 ordinary-log value,0)；原 H¹ 维数=actual localDeg+1，完成域维数由既有原 padicAlgebra 定理派生。 | Scene1/Derived；proved / accepted |
 
 单位子空间及 ambient H¹ 拓扑保持原定义；不识别 H¹ₑ/BK、different-untilt 或 paper thetaVolume。Core 假设增量 0。
+
+## S1.454：真实 q-root Kummer 方向的局部对数与商比较
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-COMPLETION-TATE-KUMMER-LOG` | `KummerValuation.nonunit_valuationCoordinate_ne_zero`, `valuationCorrection_mem_units`, `units_nonunitLine_isCompl`, `tateLog`, `tateLog_unit`, `tateLog_eq_zero_iff`, `tateLog_q`, `tateLog_eq_ambientLog_sub`, `tateQuotientLogEquiv`, `tateQuotientLogEquiv_mk`, `tateLog_continuous` | 由原 H¹ 赋值坐标，任意 q∉U 的直线与 U 互补；投影后消费原普通 log，得核为 Q_p·q 的连续线性对数及 (H¹/Q_p·q)≃L[Q_p]completion。分支变换为 L_q(x)=L_0(x)−(v(x)/v(q))•L_0(q)。Joshi III 3150–3156 对 Tate/单位类的区分提供比较背景；本构造为本工程推导，不声明论文中 BK、crystalline 或 Tate 曲线上同调身份。原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
+原 H¹、商拓扑和实际 qroot 线的通用消费者保持；没有把 qroot 类、normalized 类或其商当成 H¹ₑ/BK；Core 假设增量 0。

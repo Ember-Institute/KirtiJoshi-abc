@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTateKummerLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionKummerCoordinates
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaKummerCoordinates
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionAmbientKummerLog
@@ -1828,3 +1829,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.valuationCoordinate_qrootRationalKummerClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.kummerCoordinates_normalizedRationalClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.rationalH1_finrank_eq_localDeg_add_one
+
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.nonunit_valuationCoordinate_ne_zero
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.valuationCorrection_mem_units
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.units_nonunitLine_isCompl
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.tateLog
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.tateLog_unit
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.tateLog_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.tateLog_q
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.tateLog_eq_ambientLog_sub
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.tateQuotientLogEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.tateQuotientLogEquiv_mk
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.tateLog_continuous
