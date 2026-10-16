@@ -38,13 +38,13 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-16（Asia/Shanghai） |
-| 最近完成的数学单元 | S1.437：full coverage/residue-degree 条件下的全局 reference margin 负面证据 |
-| 数学证明基线 | S1.437 已验收并推送，数学提交 `f5ae668`；总览与该提交同批推送 |
+| 最近完成的数学单元 | S1.438：canonical target 同源加权 paper-normalized q-term 会计 |
+| 数学证明基线 | S1.438 已验收并推送，会计提交 `3448da7`；总览与该提交同批推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | S1.437 指定 coverage 与 residue-degree 上界时证明 referenceAbsLogQ<correctedCost，当前 ordinary singleton target 条件性失败；一般 actual 仍 open |
-| 当前推进位置 | G1/G4：审计 ordinary normalization 与 reference q-term 的全局不相容范围 |
+| 数学工作状态 | S1.438 接通 qLogSum 与同源加权 paper-normalized sum，一般数域保留 [F:ℚ]；未建立新体积界，真实 BK/untilt/目标身份仍 open |
+| 当前推进位置 | G1/G3：保留权重和 global degree 的 canonical q-term 会计 |
 | 尚未接通的主要连接 | revised paper representative carrier/weight semantics、H¹ₑ/BK、真实 theta/untilt 与 volume 身份，以及全局模型装配 |
-| Prologue 边界 | R5；S1.437 新增 Core 假设 0，退休 0，转入 0，取出 0 |
+| Prologue 边界 | R5；S1.438 新增 Core 假设 0，退休 0，转入 0，取出 0 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后查看最近单元变化卡。
 
@@ -55,7 +55,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 
 | 闸门 | 当前状态 | 已有结果 | 关闭所需的剩余工作 | 证据入口 |
 | --- | --- | --- | --- | --- |
-| **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明；S1.416 对齐 principal-log 的 2p/p* carrier，S1.417 进一步证明该 carrier 等于全部 O* 的 p*-scaled 连续 log image；S1.420 排除原 integral ordinary-log image 与 scaled shell 的直接等式，p* 乘回给精确修正，S1.421 计算实际 Haar factor 与 log-volume 差，S1.424 证明原 integral image 经显式 log/p* 连续同构到 shell（BK 身份待证），S1.425 排除它在保留通常小球指数和原类身份时直接作为其逆；S1.426 计算原 ordinary-log tensor/global volume 的 p* correction，S1.427 化为实际算术成本与局部吸收测试 | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
+| **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 转换、加权公式、严格差额及单向比较已有证明；S1.416 对齐 principal-log 的 2p/p* carrier，S1.417 进一步证明该 carrier 等于全部 O* 的 p*-scaled 连续 log image；S1.420 排除原 integral ordinary-log image 与 scaled shell 的直接等式，p* 乘回给精确修正，S1.421 计算实际 Haar factor 与 log-volume 差，S1.424 证明原 integral image 经显式 log/p* 连续同构到 shell（BK 身份待证），S1.425 排除它在保留通常小球指数和原类身份时直接作为其逆；S1.426 计算原 ordinary-log tensor/global volume 的 p* correction，S1.427 化为实际算术成本与局部吸收测试；S1.438 接通 canonical qLogSum 与同源加权 paper-normalized sum，一般数域保留 global degree | 确定论文目标使用的 q-term 和 volume 归一化；统一精确类型、符号、来源与后续消费者 | 计划 §2.2；S1.271、282–283、320、327，见 [log4](开发计划.V1Act1log4.md) |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 实际局部完成域、q-root、有限处参数及 carrier 适配已存在；S1.407 同源 raw target/q-family 装配已通过；S1.408 数值层只接收 D（analytic laws 留在打包层） | 从同一真实 InitialThetaData/TateFamily 落实 link、参数、j 身份、q-norm 及来源链，构成完整联合满足模型；S1.404 排除用 `sorry` obligation 构造器补齐，S1.405 仅排除 signed-log 身份；S1.406 修复 negative-log cost 转移，theta/period 联合装配仍待完成 | 计划 §2.1；S1.270、S1-BND-404–408 及 §1.2 已完成基础，见 [计划](开发计划.V1Act1Scene1.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | 代表权重、遗漏项判据、完整 odd-support 构造及若干同支撑等式已存在；S1.345 排除当前 mass-one certificate；S1.357 进一步定位 S1.351–352 的 target/未加权 paper-sum 等式输入不相容；S1.434 将原覆盖判据与补集 correction cost=0 对齐，并由 maximal-support/large-prime 来源导出该覆盖 | 修订代表 carrier/weight 语义，或证明论文 `L'` representatives 使用不同于当前 mass-one certificate 的 accounting；再闭合重数、residue-degree 和全局求和会计 | 计划 §2.2；S1.272、277、323–327、345，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
 | **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | S1.351–352 的旧路线已排除；S1.358 用 raw 次数会计与 actual Haar 界修复消费者；S1.406 构造实际成本 transfer；S1.407 固定 target/q-family；S1.408 实际 raw 数值体积界解除 analytic 输入依赖；ordinary-log normalization hull、Haar 体积界和 cost 比较已有证明；Kummer 路线已有有理坐标表示、标准 H¹ 系数比较和 S1.409 ordinary 饱和 log 加法同构及 S1.410 ambient 有理子模/线性 log，S1.411 单位幂极限及 S1.412 compatible roots/cocycle identity 及 S1.413 standard H¹ ℤₚ scalar descent 及 S1.414 原饱和 ℚₚ 子模/linear log、S1.415 原 H¹ Hausdorff 与有限维局部域的 continuous linear log、S1.416 ordinary/Kummer shell 连续 ℤₚ 比较、2p/p* principal carrier 相等及 actual witness consumer，S1.417 全部 O* 的 rational Kummer image 与连续 log/p*-shell、S1.418 完整 coefficient kernel / torsion quotient / actual normalized lift 判据、S1.419 有限根下降和原饱和子空间 integral-image intersection、S1.420 unscaled integral log 与 shell 的严格差异及 p* scale correction、S1.421 原 integral image/log 紧开拓扑与 actual Haar factor/log-volume correction、S1.422 actual normalized class 的显式赋值条件 lift 和最终高次幂 membership、S1.423 原 Tate q-order 阈值与同域有限幂 H¹ lifts、S1.424 原 integral image 的 normalized ordinary log/shell 同构及 actual witness 无条件求值、S1.425 小球校准唯一性与 actual 原类的归一化差异、S1.426 原 ordinary-log hull 的实际 volume correction 和 collation bounds、S1.427 来源成本公式/局部吸收测试和 selected-paper-sum 消费者、S1.428 actual VBad ℓ 倍次数下界及放宽吸收条件、S1.429 全局 margin / actual singleton 精确判据、S1.430 六阶 torsion 的 actual selected Tate 六次根及 q-root 三整除下界、S1.431 原 base Tate 六次根/六整除与 VBad 低 ramification 吸收、S1.432 保留 base/moduli 分歧因子的更强 degree bound 和 moduli 低 ramification 消费者、S1.433 全处亏损/VBad 正余量估计与跨处来源成本补偿、S1.434 成本覆盖/遗漏项等价和大素数来源路线严格消费者、S1.435 reference-margin target 判据、S1.436 reference/ordinary 系数比例与条件性负面证据、S1.437 全局 reference margin 负面消费者；ordinary log 群律、actual 单位无限阶和 p* 标量会计已证明，实际 integral 零类根塔判据已建立，并已排除该根塔、证明 actual integral 与 rational 类非零及 integral 类无 torsion | 接通真实 BK/theta/different-untilt 身份、witness 成员关系、mixed-moduli descent 和论文 thetaVolume；将同一归一化下的定量结论接入最终目标 | 计划 §2.3；S1.317、326–344，见 [log4](开发计划.V1Act1log4.md)、[log5](开发计划.V1Act1log5.md) |
@@ -188,7 +188,10 @@ flowchart TD
     MODABS --> BUDGET
     COVB["条件性：maximal VBad + large ell → coverage<br/>moduli e≤2 给 M>0 / ordinary strict bound；S1.434"]
     BUDGET --> COVB
+    QAC["已闭合：canonical target 同源 q-term 会计<br/>weighted paper factors / raw global degree；S1.438"]
     COVB -.-> B
+    QAC -.-> G1
+    QAC -.-> G3
     KS --> TS
     TS --> TU
     TU --> TI
@@ -302,6 +305,7 @@ flowchart TD
 | ordinary correctedCost / reference q-term 判据 | 🔵 条件性完成 | target volume/qLogSum 显式识别下，Corollary iff correctedCost≤referenceAbsLogQ；负 margin 给 target 负面消费者 | reference margin 符号和 target identities 未证明；G1/G4；log5 S1-BND-435 |
 | reference 系数 / ordinary 权重比例 | 🔵 条件性完成 | 精确比例为 sourceInertDeg/moduliGlobalDegree；degree≤ 时局部 reference margin<0 | 一般 residue-degree 比较与 global margin 未证明；G1/G4；log5 S1-BND-436 |
 | 全局 reference margin 负面证据 | 🔵 条件性完成 | full coverage + source residue degree≤moduli degree 给 referenceAbsLogQ<correctedCost，接 S1.435 得当前 ordinary singleton target 条件性失败 | coverage/degree 条件未由一般 D 推出；其它 normalization/BK/thetaVolume 路线仍 open；G1/G4；log5 S1-BND-437 |
+| canonical target / 加权 paper-normalized q-term | 🟢 已闭合（原 carrier 会计） | qLogSum 与同一 q-pilot 的加权 paper-normalized factor 和连接；一般版保留 [F:ℚ]，无需 degree-one/full-link | 不等同 unweighted representatives；无新体积结论或 BK 身份；G1/G3；log5 S1-BND-438 |
 | H¹ₑ 整性身份与核约定 | ⚪ 未建立 | 需审查 integral H¹ₑ 使用原类、去 torsion 商或有理像的约定；不能把系数层单射自动提升为 H¹ 单射 | G4；log5 S1.338 边界 |
 | paper-normalized witness → ordinary log-shell | 🟢 已闭合（局部 carrier） | S1.361 证明 actual paper-normalized value 属于 existing ordinary `logShell`；不识别 H¹ₑ/BK 或 paper theta locus | G4；log5 S1-BND-361 |
 | paper witness → tensor log-shell | 🟢 已闭合（tensor carrier） | S1.362 证明 actual pure tensor witness 属于 ordinary tensor `tensorLogShell`；不识别 H¹ₑ/BK 或 theta locus | G4；log5 S1-BND-362 |
@@ -334,25 +338,25 @@ flowchart TD
 这些结果排除的是表中具体装配路径，不是 Corollary 3.12 本身。
 对应完整类型、条件和来源见[计划中的负面证据](开发计划.V1Act1Scene1.md)及 [log4](开发计划.V1Act1log4.md)。
 
-## 最近单元变化卡：S1.437（已推送）
+## 最近单元变化卡：S1.438（已推送）
 
 | 项目 | 变化 |
 | --- | --- |
-| 推进位置 | G1/G4：将 reference margin 局部负面证据提升到 full-support 全局 |
-| 实际闭合 | full VBad coverage + source residue degree≤moduli global degree → referenceAbsLogQ<ordinary correctedCost |
-| 实际消费者 | VBad/full finite sum bijection → coefficient-weighted full sum；S1.436 局部负 margin → strict global sum；S1.435 target criterion → 当前 ordinary singleton 路线条件性失败 |
-| 解决的输入 | 明确在指定真实次数条件下，继续使用 ordinary corrected volume 不能推出正式 Corollary；避免把 selected paper-sum 界误称为 reference q-term 界 |
-| 未闭合 | actual coverage/degree 条件是否成立；其它 normalization、BK/H¹ₑ、不同 untilt、paper thetaVolume 和最终目标路线 |
-| 边界 | 这是显式条件性负面证据，不构造 actual data 反例，不否定论文一般结论，也不重开 qLogTerm 符号决定 |
+| 推进位置 | G1/G3：canonical target 的同源加权 paper-normalized q-term 会计 |
+| 实际闭合 | degree-one bundle 的 qLogSum=weighted paper-normalized sum；一般数域 Tate q-family 给 qLogSum=[F:ℚ]*该和，保留原次数因子 |
+| 实际消费者 | target/reference identity + 同一 source 的 raw normalization → paper-normalized weighted q-factor presentation |
+| 解决的输入 | 一般版只要求实际 Tate 数据和 ell/q-family 相容，无 degree-one 或 full-link 假设；消费者不再自行比较两个 canonical dependent carriers |
+| 未闭合 | unweighted representatives / 最终归一化、reference margin、BK/H¹ₑ、不同 untilt、paper thetaVolume 与实际联合模型 |
+| 边界 | T/Q 仍是显式输入；本轮是已有恒等式的会计连接，未取消 p* correction，未证明新体积界，未撤销 S1.437 条件性负面证据 |
 | 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
-| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无新参考代码复制或高扇出来源模块改动 |
-| 工程验收 | 一新叶模块、Checks.SceneBounds 1587/1587、Axioms.SceneBounds 1384/1384 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
-| 累计资源 | 成功累计 330.407 秒，失败累计 666.249 秒，总计 996.656 秒；进程组峰值 RSS 25,931,488 KiB（24.730 GiB），单进程采样峰值 8,337,692 KiB，GNU time 最大 RSS 8,338,876 KiB |
-| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
-| 交付 | 数学提交 `f5ae668`，随总览同批推送；Scene1 整体仍未完成 |
-| 证据 | [全局 reference margin 负面证据](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaReferenceGlobalNegativeMargin.lean)；log5 S1-BND-437 |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无参考源码复制或高扇出来源模块改动 |
+| 工程验收 | 新叶模块、Checks.SceneBounds 1589/1589、Axioms.SceneBounds 1386/1386 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 400.513 秒，失败累计 1405.117 秒，总计 1805.630 秒；进程组峰值 RSS 25,952,408 KiB（24.750 GiB），单进程采样峰值 8,339,588 KiB，GNU time 最大 RSS 8,339,596 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；每 0.5 秒采样进程组 RSS，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 数学/会计提交 `3448da7`，随总览同批推送；Scene1 整体仍未完成 |
+| 证据 | [canonical target q-term bridge](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalTargetPaperNormalizedBridge.lean)；log5 S1-BND-438 |
 
-### S1.437 交付构建
+### S1.438 交付构建
 
 目标：新叶模块、`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
 从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
@@ -360,17 +364,21 @@ flowchart TD
 未冷建、清缓存、改动或重编 Mathlib；85 GiB 停止阈值未触及。
 
 | 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
-| --- | --- | --- | --- | --- |
-| s1437 | 失败（退出 1） | 156.301 | 9365 | 9,370,336 |
-| s1437audit | 成功（退出 0） | 171.005 | 9482 | 25,931,488 |
-| s1437b | 失败（退出 1） | 167.580 | 9365 | 9,372,572 |
-| s1437c | 失败（退出 1） | 175.226 | 9365 | 9,370,036 |
-| s1437d | 失败（退出 1） | 167.142 | 9365 | 9,379,960 |
-| s1437e | 成功（退出 0） | 159.402 | 9365 | 9,370,392 |
+| --- | --- | ---: | ---: | ---: |
+| s1438：错误的 compatibility 构造与不存在的 helper | 失败（退出 1） | 153.188 | 9181 | 9,274,804 |
+| s1438b：canonical bundle 需要由自身 link fields 构造的等式 | 失败（退出 1） | 161.190 | 9181 | 9,267,652 |
+| s1438c：full-link 参数形式与 bundle 接口不匹配 | 失败（退出 1） | 161.119 | 9181 | 9,266,952 |
+| s1438d：两个 canonical source 的 dependent sums 未对齐 | 失败（退出 1） | 144.080 | 9181 | 9,276,508 |
+| s1438e：dependent sum 与 target 投影未对齐 | 失败（退出 1） | 167.349 | 9181 | 9,280,696 |
+| s1438f：直接重写 target 导致 dependent motive 不合法 | 失败（退出 1） | 153.164 | 9181 | 9,269,848 |
+| s1438g：dependent 有限求和载体未对齐 | 失败（退出 1） | 147.916 | 9181 | 9,270,952 |
+| s1438h：sum_attach 简化未解决 carrier 差异 | 失败（退出 1） | 154.867 | 9181 | 9,280,748 |
+| s1438i：仍在跨 canonical 构造比较载体 | 失败（退出 1） | 162.244 | 9181 | 9,281,772 |
+| s1438j：改用同一 q-pilot 的归一化定理；窄构建通过 | 成功（退出 0） | 151.840 | 9181 | 9,273,748 |
+| s1438audit：最终源码、两项声明、checks/axioms 与 Scene1 聚合 | 成功（退出 0） | 248.673 | 9483 | 25,952,408 |
 
-失败轮任务数为 Lake 输出最大计划计数；成功轮为实际汇总；诊断保留在原始 build.log。
-局部 heartbeat 覆盖：无新增。
-指标原始文件：`/tmp/import-audit-s1437*-metrics.json` 及对应 build.log。
+失败轮保留原始诊断；任务数按 Lake 输出最大计划计数，成功轮为实际汇总。
+局部 heartbeat 覆盖：无新增。原始指标：`/tmp/import-audit-s1438*-metrics.json` 及对应 build.log。
 
 ## 历史单元变化卡：S1.402（资源/计数补正，已推送）
 
@@ -3022,3 +3030,42 @@ actual `smallNormalizedIntegralLift_standardMap` 局部 heartbeat 1000000，其�
 失败轮任务数为 Lake 输出最大计划计数；成功轮为实际汇总；诊断保留在原始 build.log。
 局部 heartbeat 覆盖：无新增。
 指标原始文件：`/tmp/import-audit-s1436*-metrics.json` 及对应 build.log。
+
+
+## 历史单元变化卡：S1.437（已推送）
+
+| 项目 | 变化 |
+| --- | --- |
+| 推进位置 | G1/G4：将 reference margin 局部负面证据提升到 full-support 全局 |
+| 实际闭合 | full VBad coverage + source residue degree≤moduli global degree → referenceAbsLogQ<ordinary correctedCost |
+| 实际消费者 | VBad/full finite sum bijection → coefficient-weighted full sum；S1.436 局部负 margin → strict global sum；S1.435 target criterion → 当前 ordinary singleton 路线条件性失败 |
+| 解决的输入 | 明确在指定真实次数条件下，继续使用 ordinary corrected volume 不能推出正式 Corollary；避免把 selected paper-sum 界误称为 reference q-term 界 |
+| 未闭合 | actual coverage/degree 条件是否成立；其它 normalization、BK/H¹ₑ、不同 untilt、paper thetaVolume 和最终目标路线 |
+| 边界 | 这是显式条件性负面证据，不构造 actual data 反例，不否定论文一般结论，也不重开 qLogTerm 符号决定 |
+| 最终闸门变化 | 本轮关闭 **0 个**；总数 **0/4** |
+| 信任负担变化 | R5→R5；Core 假设/退休/转入/取出均 0；原创，无新参考代码复制或高扇出来源模块改动 |
+| 工程验收 | 一新叶模块、Checks.SceneBounds 1587/1587、Axioms.SceneBounds 1384/1384 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+| 累计资源 | 成功累计 330.407 秒，失败累计 666.249 秒，总计 996.656 秒；进程组峰值 RSS 25,931,488 KiB（24.730 GiB），单进程采样峰值 8,337,692 KiB，GNU time 最大 RSS 8,338,876 KiB |
+| 资源口径 | CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1；RSS 每 0.5 秒采样，85 GiB 停止，用户上限 90 GiB |
+| 交付 | 数学提交 `f5ae668`，随总览同批推送；Scene1 整体仍未完成 |
+| 证据 | [全局 reference margin 负面证据](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaReferenceGlobalNegativeMargin.lean)；log5 S1-BND-437 |
+
+### S1.437 交付构建
+
+目标：新叶模块、`Prologue.Audit.Checks.SceneBounds`、`Prologue.Audit.Axioms.SceneBounds` 与 `Act1Scene1`。
+从 Lean 工程目录执行 `taskset -c 0-13 env LEAN_NUM_THREADS=10 lake -Kjobs=10 build <targets>`。
+`-Kjobs` 未被配置读取；leaf worker 峰值 1，交付审计峰值 3，每进程 -j1。
+未冷建、清缓存、改动或重编 Mathlib；85 GiB 停止阈值未触及。
+
+| 尝试与目标 | 结果 | 耗时（秒） | Lake 任务数 | 进程组峰值 RSS（KiB） |
+| --- | --- | --- | --- | --- |
+| s1437 | 失败（退出 1） | 156.301 | 9365 | 9,370,336 |
+| s1437audit | 成功（退出 0） | 171.005 | 9482 | 25,931,488 |
+| s1437b | 失败（退出 1） | 167.580 | 9365 | 9,372,572 |
+| s1437c | 失败（退出 1） | 175.226 | 9365 | 9,370,036 |
+| s1437d | 失败（退出 1） | 167.142 | 9365 | 9,379,960 |
+| s1437e | 成功（退出 0） | 159.402 | 9365 | 9,370,392 |
+
+失败轮任务数为 Lake 输出最大计划计数；成功轮为实际汇总；诊断保留在原始 build.log。
+局部 heartbeat 覆盖：无新增。
+指标原始文件：`/tmp/import-audit-s1437*-metrics.json` 及对应 build.log。
