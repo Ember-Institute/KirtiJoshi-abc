@@ -4339,3 +4339,12 @@ maximal VBad / large ell / moduli ramification 条件仍显式；仅 ordinary bl
 | `JT-SCENE1-ACTUAL-ORDINARY-LOG-REFERENCE-MARGIN` | `OrdinaryKummerLogHull.corollary312_iff_actual_reference_margin`, `OrdinaryKummerLogHull.not_corollary312_of_actual_reference_margin_negative` | target volume/q-sum 的显式识别下，正式 Corollary iff actual ordinary correctedCost≤reference absLogQ；反向严格不等式给 target 负面消费者。Joshi III 3617–3650；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；一新叶模块、Checks.SceneBounds 1579/1579、Axioms.SceneBounds 1376/1376 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
 
 该判据不证明 reference margin 符号，也不提供 target volume/qLogSum、BK/H¹ₑ、不同 untilt 或 paper thetaVolume 身份。
+
+
+## S1.436：reference 系数与 ordinary 权重的实际比例
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ACTUAL-REFERENCE-COEFFICIENT-ORDINARY-WEIGHT` | `OrdinaryKummerLogHull.representativeCoefficient_eq_ordinaryWeight_mul_sourceInertDeg_ratio`, `OrdinaryKummerLogHull.referenceLocalMargin`, `OrdinaryKummerLogHull.referenceLocalMargin_eq_weight_gap`, `OrdinaryKummerLogHull.referenceLocalMargin_eq_sourceInertDeg_gap`, `OrdinaryKummerLogHull.referenceLocalMargin_neg_of_sourceInertDeg_le_moduliDegree` | 精确比例和 reference margin 分解；source residue degree≤moduli global degree 时的局部负面证据。Joshi III eq:weights、3520–3574；原创，无新参考代码复制。 | Scene1/Derived；proved / accepted；一新叶模块、Checks.SceneBounds 1584/1584、Axioms.SceneBounds 1381/1381 与 Scene1 聚合通过；公理仅含 propext、Classical.choice、Quot.sound |
+
+该结果不假设 source residue degree≤moduli global degree，也不判断一般 reference margin 符号。
