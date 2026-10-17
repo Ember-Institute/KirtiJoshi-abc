@@ -2,6 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLinkSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogCost
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312QProductAccounting
 
 /-!
 source-id: JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND
@@ -150,6 +151,64 @@ theorem canonicalTateScene1Data_exp_neg_procession_mul_qLogSum_le_actualVolume
       log_product_eq_neg_logSum, mul_neg, ← hLogSum]
   rw [hPower] at hProduct
   exact hProduct
+
+theorem canonicalTateScene1Data_qProduct_eq_exp_neg_ellStar_mul_qLogSum
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    {V : Corollary312VolumeData p base.target}
+    (Q : Corollary312TateQFamily p base.target V) :
+    letI := base.target.qIndexFintype
+    Corollary312Data.qProduct p base.target V.qFactor =
+      Real.exp (-((base.target.ellStar : ℝ) *
+        Corollary312Data.qLogSum p base.target)) := by
+  letI := base.target.qIndexFintype
+  let Q' := Q.toQFamily
+  have hPos : ∀ i, 0 < V.qFactor i := Q'.qFactor_pos p
+  have hTerm : ∀ i, base.target.qLogTerm i = -Real.log (V.qFactor i) :=
+    Q'.qLogTerm_source p
+  have hSum : Corollary312Data.qLogSum p base.target =
+      ∑ i, -Real.log (V.qFactor i) := by
+    unfold Corollary312Data.qLogSum
+    apply Finset.sum_congr rfl
+    intro i hi
+    exact hTerm i
+  have hNegLog := corollary312_negLog_qProduct_eq_ellStar_mul_sum_negLog
+    p base.target V.qFactor hPos
+  rw [← hSum] at hNegLog
+  have hLog : Real.log (Corollary312Data.qProduct p base.target V.qFactor) =
+      -((base.target.ellStar : ℝ) * Corollary312Data.qLogSum p base.target) := by
+    linarith
+  have hProductPos := corollary312_qProduct_pos p base.target V.qFactor hPos
+  calc
+    Corollary312Data.qProduct p base.target V.qFactor =
+        Real.exp (Real.log (Corollary312Data.qProduct p base.target V.qFactor)) :=
+      (Real.exp_log hProductPos).symm
+    _ = Real.exp (-((base.target.ellStar : ℝ) *
+        Corollary312Data.qLogSum p base.target)) := by rw [hLog]
+
+theorem canonicalTateScene1Data_qProduct_le_actualVolume
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    {V : Corollary312VolumeData p base.target}
+    (Q : Corollary312TateQFamily p base.target V)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (n : ℕ) (hn : base.target.ellStar = n)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal) :
+    Corollary312Data.qProduct p base.target V.qFactor ≤
+      VBadThetaLogCollation.volume D n σ hσ := by
+  rw [canonicalTateScene1Data_qProduct_eq_exp_neg_ellStar_mul_qLogSum p D base Q, hn]
+  exact canonicalTateScene1Data_exp_neg_procession_mul_qLogSum_le_actualVolume
+    p D base hEll hTate n σ hσ
 
 theorem negAverageAbsLog_actualVolume_ge_neg_logSum (hn : 0 < n) :
     -(1 / (n : ℝ)) * |Real.log (VBadThetaLogCollation.volume D n σ hσ)| ≥
