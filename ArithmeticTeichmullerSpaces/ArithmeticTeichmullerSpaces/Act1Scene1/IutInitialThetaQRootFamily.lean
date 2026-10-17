@@ -7,6 +7,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAc
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedSupportDefect
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaReferenceCoefficientOrdinaryWeight
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLargePrimeSupport
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetAccounting
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -535,6 +536,30 @@ theorem qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_largePrime
     hEll hLink
     (iutInitialThetaOddMultiplicativeSupport_eq_badPlacesOver_of_largePrime
       D hVBad hLarge)
+
+theorem qrootAt_log_sum_eq_canonicalTateScene1Data_qLogSum_of_largePrime_degreeOne
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hDegree : Module.finrank ℚ D.F = 1)
+    (hVBad : D.VBad = {v | v ∈ IutOddMultiplicativeModSupport D ∧
+      Arithmetic.residueChar v ≠ D.prime.ℓ})
+    (hLarge : iutMultiplicativeResidueBound D.E < D.prime.ℓ) :
+    (∑ q ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log q * qrootAtWeightedFiber D q) =
+      Corollary312Data.qLogSum p base.target := by
+  have hFamily := qrootAt_log_sum_eq_iut_absLogQ_of_largePrime D hVBad hLarge
+  have hTarget := canonicalTateScene1Data_qLogSum_eq_degree_mul_reference
+    p D base hEll hTate
+  rw [hDegree] at hTarget
+  norm_num at hTarget
+  exact hFamily.trans hTarget.symm
 
 theorem qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_support_eq
     (hSupport : IutOddMultiplicativeSupport D =
