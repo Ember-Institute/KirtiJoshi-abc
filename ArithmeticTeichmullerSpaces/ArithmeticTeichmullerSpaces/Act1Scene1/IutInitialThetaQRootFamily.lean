@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperBallProduct
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootIntegralThreshold
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -117,6 +118,20 @@ theorem qrootAt_pow_eq_admissiblePrime
   split_ifs with h
   · exact iutInitialThetaOddSupportTorsionQRootSource_qroot_pow_eq_admissiblePrime
       D ⟨v, h⟩ hw
+  · exact (h hv).elim
+
+theorem qrootAt_ordp_eq_baseQOrder
+    (v : NumberField.FinitePlace ↥D.prime.torsionField)
+    (hv : v ∈ (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    Arithmetic.ordp v (qrootAt D v) =
+      ((iutInitialThetaOddSupportBaseQPilotSource D).qOrder
+        ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace ⟨v, hv⟩) : ℝ) /
+        (2 * (D.prime.ℓ : ℝ) * Arithmetic.ramIdx
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace ⟨v, hv⟩).1) := by
+  unfold qrootAt
+  split_ifs with h
+  · simpa [PrincipalUnitKummer.baseIntegralThreshold] using
+      (PrincipalUnitKummer.qroot_ordp_eq_baseQOrder D ⟨v, h⟩)
   · exact (h hv).elim
 
 end IutInitialThetaQRootFamily

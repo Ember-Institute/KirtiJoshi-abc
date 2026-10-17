@@ -4635,3 +4635,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-CONTRACTION` | `IutInitialThetaQRootFamily.qrootAt_norm_lt_one_of_mem_badFinset`, `IutInitialThetaQRootFamily.qrootAt_pow_eq_admissiblePrime` | 在实际坏处 family 上复用真实 q-root 的严格范数界，并将坏处 `qrootAt` 的 `2 * ℓ` 次幂方程桥接到 `D.prime.tate` 的 admissible-prime q。普通处仍是定义性的 `1`，不把严格收缩推广到全体 finite places。 | Scene1/Derived；proved / accepted |
 
 该单元只补足 family 的局部 contraction 与实际坏处 Tate 参数接口，不构造 concrete `LocalTheory`、完整 `ThetaLocalData`、theta-pilot region 或 paper theta-volume。
+
+### S1.470：q-root family 的坏处标准估值等式
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-ORDP` | `IutInitialThetaQRootFamily.qrootAt_ordp_eq_baseQOrder` | 复用实际 `PrincipalUnitKummer.qroot_ordp_eq_baseQOrder`，将坏处 `qrootAt` 的估值写成 base q-order 除以 `2 * ℓ * ramIdx`；普通处仍由 family 定义取 `1`，不声称完整 `ThetaLocalData.ordp_qroot` 的任意 base-place 版本。 | Scene1/Derived；proved / accepted |
+
+该等式补足 actual q-root family 的局部 order accounting；paper representatives、完整 finite-place carrier、theta/untilt 和最终 volume accounting 仍保持显式未完成。

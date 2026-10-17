@@ -1820,6 +1820,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_ordp_nonneg
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.badChars_prime
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_pow_eq_of_mem_badFinset
+#print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_norm_lt_one_of_mem_badFinset
+#print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_pow_eq_admissiblePrime
+#print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_ordp_eq_baseQOrder
 
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog_unit
