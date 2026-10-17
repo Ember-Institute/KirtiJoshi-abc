@@ -375,4 +375,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerSaturatedPadicModule
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFiniteFactorRegion
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketRegion
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
