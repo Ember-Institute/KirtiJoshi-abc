@@ -502,6 +502,40 @@ theorem qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_support_eq
     (S.toSceneQPilot p hCompat).absLogQ p
   exact hFamily.trans hReference.symm
 
+theorem qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_largePrime
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (hEll : T.ell = D.prime.ℓ)
+    (hLink : T.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+        heightData ramification logVolume processionLength)
+    (hVBad : D.VBad = {v | v ∈ IutOddMultiplicativeModSupport D ∧
+      Arithmetic.residueChar v ≠ D.prime.ℓ})
+    (hLarge : iutMultiplicativeResidueBound D.E < D.prime.ℓ) :
+    let hCompat : QNormTateCompatibility T.scene1.data.link := by
+      rw [hLink]
+      exact iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
+        packetHull heightData ramification logVolume processionLength
+    let S := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+      packetHull heightData ramification logVolume processionLength hEll hLink
+    ∑ q ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log q * qrootAtWeightedFiber D q =
+      (S.toSceneQPilot p hCompat).absLogQ p := by
+  exact qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_support_eq
+    p D theta thetaBase packetHull heightData ramification logVolume processionLength
+    hEll hLink
+    (iutInitialThetaOddMultiplicativeSupport_eq_badPlacesOver_of_largePrime
+      D hVBad hLarge)
+
 theorem qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_support_eq
     (hSupport : IutOddMultiplicativeSupport D =
       JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :

@@ -4753,3 +4753,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-ABSLOGQ` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_iut_absLogQ_of_largePrime` | 消费最大 prime-to-ell `VBad` 选择和曲线乘法支撑的有限 residue-characteristic 上界，自动得到完整 odd support 与 `badPlacesOver(VBad)` 的等式，再应用 q-root family 的 support-conditioned `absLogQ` bridge。 | Scene1/Derived；proved / conditional |
 
 该结果只消除 support equality 的重复调用条件；`hVBad` 与 large-prime 条件仍显式保留，不识别论文 `L'`/`V_p^oss`、无权 representative sum、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.485：large-prime 路线的 canonical q-pilot bridge
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-CANONICAL-BRIDGE` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_largePrime` | 将 large-prime 自动得到的完整 support equality 传入 canonical Scene1 q-pilot bridge，保留实际 theta/link、`QNormTateCompatibility`、`hEll` 和 canonical source 参数。 | Scene1/Derived；proved / conditional |
+
+该结果只自动提供 support equality 的 large-prime 来源，不关闭 canonical q-pilot 的其余真实 analytic laws，也不识别论文 `L'`/`V_p^oss`、无权 representative sum、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
