@@ -4899,3 +4899,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-THETAVOLUME-QPRODUCT` | `CanonicalActualHull.thetaVolume_ge_qProduct`；`Act1Scene1/IutInitialThetaCanonicalActualHullData.lean` | 消费 actual bundle 的 `data_thetaVolume_eq` 和 S1.501 的 hull-volume bound，将固定的 actual `thetaVolume` 直接接到同一 qProduct。 | Scene1/Derived；proved / conditional |
 
 该消费者仍只涉及 actual ordinary-log hull；不识别论文 `thetaVolume`、H¹ₑ/BK、different/untilt 或论文 representatives，也不单独关闭最终 Corollary 3.12。
+
+### S1.503：actual canonical bundle 的 transfer-to-Corollary consumer
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-COR312-CONSUMER` | `CanonicalActualHull.corollary312_of_transferLogBound`；`Act1Scene1/IutInitialThetaCanonicalActualHullData.lean` | 消费 actual bundle 已构造的 volume normalization、transfer log bound、q-family 和真实 `ell` side conditions，应用 generic transfer-to-qProduct-to-Corollary theorem 得到 actual `Corollary312`。该 consumer 不证明 `AnalyticInput` 的 theta/perfectoid 来源或论文 volume 身份；它把现有条件性 analytic laws 接入最终 target。 | Scene1/Derived；proved / conditional |
+
+该结论仍依赖 `CanonicalActualHull.AnalyticInput` 提供的显式 theta/period/perfectoid 与 volume-transfer contracts，不把它们升级为真实论文来源，也不关闭四个形式冻结闸门。

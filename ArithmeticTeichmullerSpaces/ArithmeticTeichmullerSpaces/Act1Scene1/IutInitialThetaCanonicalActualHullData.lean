@@ -228,6 +228,16 @@ theorem transferLogBound : Corollary312TransferLogBound p
     (volumeData p D theta route thetaBase heightData ramification X)
     (qFamily p D theta route thetaBase heightData ramification X) rfl rfl
 
+theorem corollary312_of_transferLogBound : Corollary312 p
+    (data p D theta route thetaBase heightData ramification X) := by
+  exact corollary312_of_transfer_log_bound p
+    (data p D theta route thetaBase heightData ramification X)
+    (volumeData p D theta route thetaBase heightData ramification X)
+    (qFamily p D theta route thetaBase heightData ramification X).toQFamily
+    (volumeNormalization p D theta route thetaBase heightData ramification X)
+    (transferLogBound p D theta route thetaBase heightData ramification X)
+    D.prime.ℓ_prime D.prime.five_le (by rfl) (length_pos D)
+
 /-- The raw completion-norm target follows from the remaining analytic laws. -/
 theorem corollary312 : Corollary312 p
     (data p D theta route thetaBase heightData ramification X) :=

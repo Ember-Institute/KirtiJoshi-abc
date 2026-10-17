@@ -1478,6 +1478,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.thetaVolume_ge_qProduct
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.volumeNormalization
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.transferLogBound
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312_of_transferLogBound
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312
 
 #check JoshiTeich.Act1Scene1.InitialThetaRawQ.Index
