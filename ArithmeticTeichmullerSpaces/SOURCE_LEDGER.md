@@ -4820,6 +4820,14 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 
 该严格 gap 只排除当前 canonical raw accounting 的无缺陷等式路径；它不裁决最终 q-factor 归一化，也不识别论文 representatives、thetaVolume、H¹ₑ/BK 或 Corollary 3.12。
 
+### S1.496：canonical raw qLogSum 的 degree-normalized reference 投影
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-DEGREE-NORMALIZED-QLOGSUM` | `canonicalTateScene1Data_degreeNormalized_qLogSum_eq_reference` | 将 canonical raw qLogSum 的全局次数因子除去，得到 exact reference `QPilotData.absLogQ`；该等式只描述现有 raw 与 degree-normalized 候选的关系。 | Scene1/Derived；proved / conditional |
+
+该投影不冻结 Corollary 3.12 的最终 q-factor、paper `C_p` norm 或无权 representative 目标，也不关闭 thetaVolume、H¹ₑ/BK 和最终联合模型。
+
 ### S1.493：canonical raw qLogSum 接入实际 ordinary-log hull volume
 
 | source-id | declarations | source / fidelity | boundary / status |
