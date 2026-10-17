@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQPilotTargetAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeRamificationGap
 
 /-!
@@ -18,6 +19,24 @@ open JoshiTeich.Prologue
 
 universe u
 noncomputable section
+
+theorem canonicalTateTarget_qLogSum_lt_degree_mul_selectedPaperSum
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D) :
+    Corollary312Data.qLogSum p base.target <
+      (Module.finrank ℚ D.F : ℝ) * iutInitialThetaSelectedQRootPaperSum D := by
+  rw [canonicalTateScene1Data_qLogSum_eq_degree_mul_reference p D base hEll hTate]
+  exact mul_lt_mul_of_pos_left
+    (iutInitialThetaReferenceAbsLogQ_lt_selectedPaperSum D)
+    (by exact_mod_cast Arithmetic.finrank_pos)
 
 theorem canonicalTateTarget_qLogSum_lt_selectedPaperSum
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}

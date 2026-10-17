@@ -4785,3 +4785,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-RAW-QLOGSUM-DEGREE-ONE` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_canonicalTateScene1Data_qLogSum_of_largePrime_degreeOne` | 将 large-prime q-root family `absLogQ` accounting 接到实际 canonical Tate Scene1 raw `qLogSum`，消费 raw accounting 的 `[D.F : ℚ]` 系数并显式要求 degree-one。 | Scene1/Derived；proved / conditional |
 
 一般数域的 degree factor 未被消除；该结果不冻结 raw/degree-normalized 最终选择，也不识别论文 `L'`/`V_p^oss` representatives、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.489：一般数域 raw qLogSum 与 selected paper sum 的严格 degree-scaled gap
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-TARGET-PAPER-SUM-DEGREE-GAP` | `canonicalTateTarget_qLogSum_lt_degree_mul_selectedPaperSum` | 将一般数域 raw qLogSum 的实际 `[D.F : ℚ]` accounting 与 canonical reference `absLogQ < selectedPaperSum` 组合，保留全局次数因子并得到严格 gap；不改变 paper carrier 或 q-factor 定义。 | Scene1/Derived；proved / conditional |
+
+该负证据只排除当前 canonical raw accounting 与 `degree * selectedPaperSum` 的等式装配；它不决定最终 raw/degree-normalized 目标，也不识别 `V_p^oss`、`L'` representatives、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
