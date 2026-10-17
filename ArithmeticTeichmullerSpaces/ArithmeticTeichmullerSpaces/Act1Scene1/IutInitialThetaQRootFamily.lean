@@ -700,6 +700,32 @@ theorem fullPaperSum_eq_qrootFamilySum_add_defects_of_largePrime
     (iutInitialThetaOddMultiplicativeSupport_eq_badPlacesOver_of_largePrime
       D hVBad hLarge)
 
+theorem canonicalTateScene1Data_qLogSum_add_degree_mul_paperDefects_eq_degree_mul_fullPaperSum_of_largePrime
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hVBad : D.VBad = {v | v ∈ IutOddMultiplicativeModSupport D ∧
+      Arithmetic.residueChar v ≠ D.prime.ℓ})
+    (hLarge : iutMultiplicativeResidueBound D.E < D.prime.ℓ) :
+    Corollary312Data.qLogSum p base.target +
+        (Module.finrank ℚ D.F : ℝ) *
+          (vbadRepresentativeCoefficientDefect D +
+            VBadSelectedPaper.omittedPaperSum D) =
+      (Module.finrank ℚ D.F : ℝ) * iutInitialThetaSelectedQRootPaperSum D := by
+  have hRaw :=
+    qrootAt_log_sum_mul_degree_eq_canonicalTateScene1Data_qLogSum_of_largePrime
+      p D base hEll hTate hVBad hLarge
+  have hPaper := fullPaperSum_eq_qrootFamilySum_add_defects_of_largePrime
+    D hVBad hLarge
+  rw [hPaper]
+  rw [← hRaw]
+  ring
+
 theorem vbadRepresentativeCoefficientDefect_nonneg :
     0 ≤ vbadRepresentativeCoefficientDefect D := by
   unfold vbadRepresentativeCoefficientDefect

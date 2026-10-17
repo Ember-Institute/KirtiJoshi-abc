@@ -4801,3 +4801,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-RAW-QLOGSUM` | `IutInitialThetaQRootFamily.qrootAt_log_sum_mul_degree_eq_canonicalTateScene1Data_qLogSum_of_largePrime` | 将 large-prime q-root family weighted log-sum 的实际 `absLogQ` 等式与 canonical Tate raw qLogSum 的 `[D.F : ℚ]` accounting 合并，得到一般数域的 degree-scaled raw target 等式；support、Tate 对齐和 large-prime 条件保持显式。 | Scene1/Derived；proved / conditional |
 
 该等式不去除 degree factor，不识别论文 `V_p^oss`/`L'` representatives 或无权 paper sum，也不关闭 thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.491：一般数域 raw target 到完整 paper sum 的缩放缺陷恒等式
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-RAW-TARGET-FULL-PAPER-DEFECT-ACCOUNTING` | `IutInitialThetaQRootFamily.canonicalTateScene1Data_qLogSum_add_degree_mul_paperDefects_eq_degree_mul_fullPaperSum_of_largePrime` | 合并一般数域 raw qLogSum 的 degree-scaled q-root family accounting 与 large-prime full paper-sum 双缺陷分解，精确给出 `raw qLogSum + degree * (representative coefficient defect + omitted paper mass) = degree * full paper sum`。 | Scene1/Derived；proved / conditional |
+
+该恒等式保留两项实际缺陷与全局次数，不把当前 q-term 等同于无权 paper sum，也不关闭 q-factor 最终归一化、paper thetaVolume、H¹ₑ/BK 或 Corollary 3.12。
