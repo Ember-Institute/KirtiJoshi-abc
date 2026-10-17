@@ -94,6 +94,21 @@ theorem canonicalRawTarget_thetaVolume_ge_qProduct_of_actualHullVolume
     (canonicalRawTarget_transferLogBound_of_actualHullVolume
       p D T V Q hEll hTate n σ hσ C hgen hunit N hlength hvolume)
 
+omit V Q hEll hTate in
+include hgen hunit in
+theorem canonicalRawScene1Data_thetaVolume_ge_qProduct_of_actualHullVolume
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hlength : base.target.ellStar = n)
+    (hvolume : base.target.thetaVolume = VBadThetaCollatedHull.volume D n σ hσ C) :
+    base.target.thetaVolume ≥
+      Corollary312Data.qProduct p base.target base.volume.qFactor := by
+  exact canonicalRawTarget_thetaVolume_ge_qProduct_of_actualHullVolume
+    p D base.target base.volume base.qFamily hEll hTate n σ hσ C hgen hunit
+    base.normalization hlength hvolume
+
 include hgen hunit in
 theorem corollary312_of_canonicalRawTateFamily_of_actualHullVolume
     (hn : 0 < n) (hlength : T.ellStar = n)
