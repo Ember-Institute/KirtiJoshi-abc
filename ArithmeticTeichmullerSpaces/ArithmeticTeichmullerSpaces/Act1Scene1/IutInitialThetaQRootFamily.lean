@@ -226,6 +226,15 @@ theorem qrootAt_log_sum_eq_fullBaseQPilotLogSum :
     _ = iutInitialThetaFullBaseQPilotLogSum D := by
       simp [term, iutInitialThetaFullBaseQPilotLogSum, B]
 
+theorem qrootAt_log_sum_eq_selectedWeighted_add_omitted :
+    (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p) =
+      iutInitialThetaSelectedWeightedQRootLogSum D +
+        iutInitialThetaOmittedBaseQPilotLogSum D := by
+  rw [qrootAt_log_sum_eq_fullBaseQPilotLogSum,
+    iutInitialThetaFullBaseQPilotLogSum_eq_selected_add_omitted]
+
 def fullSupportRepresentativePaperTerm
     (v : iutInitialThetaOddModSupportFinset D) : ℝ :=
   -Real.log (actualPaperRootNorm D

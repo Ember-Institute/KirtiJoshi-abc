@@ -4729,3 +4729,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-COEFFICIENT-DEFECT-VBAD-NONEMPTY` | `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect_pos_of_vbad_nonempty` | 消费 `InitialThetaData.global.bad_nonempty`、VBad 到 odd-support 的实际包含和 VBad representative coefficient 的严格小于一，得到 full-support coefficient defect 严格为正。 | Scene1/Derived；proved / accepted |
 
 该结果只证明代表系数缺陷为正，不消除缺陷或导出论文无权和等式；residue-degree accounting、论文 carrier、thetaVolume 和最终 Corollary 3.12 仍保持开放。
+
+### S1.482：full-support q-root family 的 selected/omitted base 分解
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-SELECTED-OMITTED-BASE-DECOMPOSITION` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_selectedWeighted_add_omitted` | 将完整 odd-support q-root family weighted log-sum 精确拆为 section-selected weighted q-root contribution 与 omitted base q-pilot contribution，消费实际 `iutInitialThetaFullBaseQPilotLogSum_eq_selected_add_omitted`。 | Scene1/Derived；proved / accepted |
+
+该分解不假设 support coverage，也不识别 selected carrier 为论文 `L'`/`V_p^oss`；omitted contribution、residue-degree coefficients、thetaVolume、H¹ₑ/BK 和最终 Corollary 3.12 仍显式保留。
