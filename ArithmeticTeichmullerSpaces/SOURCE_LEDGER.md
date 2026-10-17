@@ -4643,3 +4643,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-ORDP` | `IutInitialThetaQRootFamily.qrootAt_ordp_eq_baseQOrder` | 复用实际 `PrincipalUnitKummer.qroot_ordp_eq_baseQOrder`，将坏处 `qrootAt` 的估值写成 base q-order 除以 `2 * ℓ * ramIdx`；普通处仍由 family 定义取 `1`，不声称完整 `ThetaLocalData.ordp_qroot` 的任意 base-place 版本。 | Scene1/Derived；proved / accepted |
 
 该等式补足 actual q-root family 的局部 order accounting；paper representatives、完整 finite-place carrier、theta/untilt 和最终 volume accounting 仍保持显式未完成。
+
+### S1.471：q-root family 的 residue-characteristic weighted fiber accounting
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-WEIGHTED-FIBER` | `IutInitialThetaQRootFamily.qrootAtWeightedFiber`, `IutInitialThetaQRootFamily.qrootAtWeightedFiber_eq_baseQOrder` | 定义实际 torsion-field place-weighted `ordp(qrootAt)` 求和，并复用完整 odd-support q-root accounting，证明它等于 base bad-place qOrder 求和；只对实际 q-root source carrier 求和，不识别论文 `L'` representatives 或无权 representative sum。 | Scene1/Derived；proved / accepted |
+
+该 fiber 等式覆盖 `ThetaLocalData.sum_weight_ordp_qroot` 的实际 weighted accounting 形状，但不构造 complete `ThetaLocalData` 的任意 base-place theorem、论文代表元会计或 theta-volume identity。

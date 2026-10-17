@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperBallProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootIntegralThreshold
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRootAccounting
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -133,6 +134,54 @@ theorem qrootAt_ordp_eq_baseQOrder
   · simpa [PrincipalUnitKummer.baseIntegralThreshold] using
       (PrincipalUnitKummer.qroot_ordp_eq_baseQOrder D ⟨v, h⟩)
   · exact (h hv).elim
+
+noncomputable def qrootAtWeightedFiber
+    (p : ℕ) : ℝ := by
+  classical
+  letI : Finite {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p} := Arithmetic.fiber_finite p
+  letI : Fintype {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p} := Fintype.ofFinite _
+  exact ∑ v : {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p},
+    Arithmetic.placeWeight v.1 *
+      (if hv : v.1 ∈ (iutInitialThetaOddSupportTorsionQRootSource D).badFinset then
+        Arithmetic.ordp v.1 (qrootAt D v.1)
+      else 0)
+
+theorem qrootAtWeightedFiber_eq_baseQOrder
+    (p : ℕ) :
+    qrootAtWeightedFiber D p =
+      ∑ w ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.attach.filter
+          (fun w => Arithmetic.residueChar w.1 = p),
+        Arithmetic.qPilotWeight w.1 *
+          ((iutInitialThetaOddSupportBaseQPilotSource D).qOrder w : ℝ) /
+            (2 * (D.prime.ℓ : ℝ)) := by
+  classical
+  letI : Finite {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p} := Arithmetic.fiber_finite p
+  letI : Fintype {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p} := Fintype.ofFinite _
+  change (∑ v : {v : NumberField.FinitePlace ↥D.prime.torsionField //
+      Arithmetic.residueChar v = p},
+    Arithmetic.placeWeight v.1 *
+      (if hv : v.1 ∈ (iutInitialThetaOddSupportTorsionQRootSource D).badFinset then
+        Arithmetic.ordp v.1 (qrootAt D v.1)
+      else 0)) = _
+  calc
+    _ = ∑ v : {v : NumberField.FinitePlace ↥D.prime.torsionField //
+          Arithmetic.residueChar v = p},
+        Arithmetic.placeWeight v.1 *
+          (if hv : v.1 ∈ (iutInitialThetaOddSupportTorsionQRootSource D).badFinset then
+            Arithmetic.ordp v.1
+              ((iutInitialThetaOddSupportTorsionQRootSource D).qroot ⟨v.1, hv⟩)
+          else 0) := by
+      apply Finset.sum_congr rfl
+      intro v hv
+      by_cases h : v.1 ∈ (iutInitialThetaOddSupportTorsionQRootSource D).badFinset
+      · simp [h, qrootAt]
+      · simp [h]
+    _ = _ := IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber_eq_baseQOrder D p
 
 end IutInitialThetaQRootFamily
 
