@@ -314,6 +314,32 @@ theorem fullSupportRepresentativeCoefficientDefect_eq_residueDegreeFormula :
   intro v hv
   rw [OrdinaryKummerLogHull.representativeCoefficient_eq_ordinaryWeight_mul_sourceInertDeg_ratio]
 
+theorem fullSupportRepresentativeCoefficientDefect_pos_of_exists_lt_one
+    (hstrict : ∃ v : iutInitialThetaOddModSupportFinset D,
+      iutInitialThetaRepresentativeCoefficient D v < 1) :
+    0 < fullSupportRepresentativeCoefficientDefect D := by
+  unfold fullSupportRepresentativeCoefficientDefect
+  obtain ⟨v₀, hv₀⟩ := hstrict
+  have hnonneg (v : iutInitialThetaOddModSupportFinset D) :
+      0 ≤ (1 - iutInitialThetaRepresentativeCoefficient D v) *
+        fullSupportRepresentativePaperTerm D v := by
+    have hCoeff := iutInitialThetaRepresentativeCoefficient_mem_Ioc D v
+    have hRoot : actualPaperRootNorm D
+        (iutInitialThetaModuliSelectedSourceEquiv D v).1 ∈ Set.Ioo (0 : ℝ) 1 :=
+      actualPaperRootNorm_mem_Ioo D _
+    exact mul_nonneg (sub_nonneg.mpr hCoeff.2)
+      (neg_nonneg.mpr (Real.log_nonpos hRoot.1.le hRoot.2.le))
+  have hpos : 0 <
+      (1 - iutInitialThetaRepresentativeCoefficient D v₀) *
+        fullSupportRepresentativePaperTerm D v₀ := by
+    have hRoot : actualPaperRootNorm D
+        (iutInitialThetaModuliSelectedSourceEquiv D v₀).1 ∈ Set.Ioo (0 : ℝ) 1 :=
+      actualPaperRootNorm_mem_Ioo D _
+    exact mul_pos (sub_pos.mpr hv₀)
+      (neg_pos.mpr (Real.log_neg hRoot.1 hRoot.2))
+  exact lt_of_lt_of_le hpos
+    (Finset.single_le_sum (fun v _ => hnonneg v) (Finset.mem_univ v₀))
+
 theorem qrootAt_log_sum_le_selectedPaperSum :
     (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
         Arithmetic.residueChar,

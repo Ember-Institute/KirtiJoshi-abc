@@ -4713,3 +4713,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-COEFFICIENT-RESIDUE-DEGREE-FORMULA` | `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect_eq_residueDegreeFormula` | 将完整 support representative coefficient defect 展开为 `1 - ordinaryWeight * (selected source inertial/residue degree / moduli global degree)` 乘 paper term 的有限和，消费现有 actual coefficient/ordinary-weight ratio 定理。该公式保留 residue-degree 比例，不假设其等于一。 | Scene1/Derived；proved / accepted |
 
 该展开只澄清代表元系数缺陷的算术来源，不关闭论文 carrier、无权 accounting、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.480：代表系数 defect 的条件性严格正性
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-COEFFICIENT-DEFECT-POSITIVE` | `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect_pos_of_exists_lt_one` | 若实际 full-support representative carrier 中存在一个 coefficient 严格小于一，则证明完整 coefficient defect 严格为正；每个 paper term 的正性与其余系数的非负缺陷均显式消费。 | Scene1/Derived；proved / conditional |
+
+该条件性结论不声称所有代表元 coefficient 都严格小于一；它只把严格 paper-sum gap 的局部充分条件公开化，不关闭 residue-degree 来源、论文 carrier、thetaVolume 或最终 Corollary 3.12。
