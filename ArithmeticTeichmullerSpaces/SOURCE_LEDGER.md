@@ -206,6 +206,7 @@ S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT
 | `JT-ATS-III-CONTRACT-001` | `FirstAxiom` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-002` | `AdelicThetaLink` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface including explicit theta-pilot scaling, period mapping, and normalization; no independent Frobenius norm-square law |
 | `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
+| `JT-SCENE1-THETA-LOG-NORM-SCALING` | `thetaPilotLogNormScaling` | `ArithmeticTeichmullerSpaces/Act1Scene1/ThetaPilotLogNormScaling.lean` | derives the real-log form of the `j^2` norm scaling from `ThetaPilotScalingLaws.norm_scaling` and positivity; Joshi III `th:adelic-theta-link` lines 1139--1166; consumed by the Scene1 log-sign audit |
 | `JT-ATS-III-CONTRACT-004` | `PacketCollationHull` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-III-CONTRACT-005` | `VolumeTransfer` | `ArithmeticTeichmullerSpaces/Prologue/Interfaces/Contracts.lean` | conditional proposition interface |
 | `JT-ATS-AUDIT-MODEL-001` | `rationalTwoPlace`, `auditData` | `ArithmeticTeichmullerSpaces/Prologue/Audit/Models.lean` | compiled non-degenerate model data |

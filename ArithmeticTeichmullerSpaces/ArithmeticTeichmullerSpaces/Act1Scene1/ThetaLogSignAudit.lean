@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.Boundary
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.ThetaPilotLogNormScaling
 
 /-!
 source-id: JT-SCENE1-THETA-LOG-SIGN-AUDIT
@@ -48,13 +49,11 @@ theorem one_le_thetaBase_norm (S : Scene1Input K O p) :
   have hScale := S.adelic_theta_link.theta_scaling
   by_contra h
   have hBase : L.theta.norm L.thetaBase < 1 := lt_of_not_ge h
-  have hNormLe (i : L.theta.index) : L.theta.norm i ≤ 1 := by
-    rw [hScale.norm_scaling i]
-    exact pow_le_one₀ (hScale.norm_positive L.thetaBase).le hBase.le
-  have hLogLe (i : L.theta.index) : Real.log (L.theta.norm i) ≤ 0 :=
-    Real.log_nonpos (hScale.norm_positive i).le (hNormLe i)
   have hLogBase : Real.log (L.theta.norm L.thetaBase) < 0 :=
     Real.log_neg (hScale.norm_positive L.thetaBase) hBase
+  have hLogLe (i : L.theta.index) : Real.log (L.theta.norm i) ≤ 0 := by
+    rw [thetaPilotLogNormScaling hScale i]
+    exact mul_nonpos_of_nonneg_of_nonpos (by positivity) hLogBase.le
   have hSum : (∑ i, Real.log (L.theta.norm i)) < 0 := by
     have hLt := Finset.sum_lt_sum
       (s := Finset.univ) (f := fun i => Real.log (L.theta.norm i))
