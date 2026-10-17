@@ -58,7 +58,6 @@ structure AnalyticInput where
   periodMap : ∀ i, theta.period i = theta.liftedLog i
   normalization : letI := theta.indexFintype
     cost D = ∑ i, theta.period i
-  height_nonnegative : ∀ x, 0 ≤ heightData.value x
   perfectoidBridge : PerfectoidBridgeLaws
     (link D theta route thetaBase heightData ramification) p placeData bridge
   thetaLiftLog : ThetaLiftLog (link D theta route thetaBase heightData ramification)
@@ -73,7 +72,6 @@ def toCanonicalInput :
   thetaScaling := X.thetaScaling
   periodMap := X.periodMap
   normalization := X.normalization
-  height_nonnegative := X.height_nonnegative
   theta_norm_positive := X.thetaScaling.norm_positive
   packet_weight_positive := ActualHullCostTransfer.packetWeight_pos
     D (length D) (tuple D) (tuple_liesOver D) (collation D) theta route

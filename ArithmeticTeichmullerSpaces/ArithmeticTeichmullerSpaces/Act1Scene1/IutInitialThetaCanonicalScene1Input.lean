@@ -53,7 +53,6 @@ structure CanonicalInitialThetaScene1Input
   normalization :
     letI := theta.indexFintype
     logVolume = ∑ i, theta.period i
-  height_nonnegative : ∀ x, 0 ≤ heightData.value x
   theta_norm_positive : ∀ i, 0 < theta.norm i
   packet_weight_positive : ∀ q, 0 < packetHull.packetWeight q
   hull_weight_positive : ∀ h, 0 < packetHull.hullWeight h
@@ -140,7 +139,7 @@ private noncomputable def canonicalInputLaws
       { places_nonempty := T.places_nonempty
         q_parameter_nonzero := ?_
         q_norm_positive := ?_
-        height_nonnegative := ?_
+        height_nonnegative := fun x => heightData.value_nonneg x
         theta_norm_positive := ?_
         packet_weight_positive := ?_
         hull_weight_positive := ?_ }
@@ -148,7 +147,6 @@ private noncomputable def canonicalInputLaws
       exact T.parameter_nonzero w hw
     · intro w hw
       exact T.norm_pos w hw
-    · exact X.height_nonnegative
     · exact X.theta_norm_positive
     · exact X.packet_weight_positive
     · exact X.hull_weight_positive
