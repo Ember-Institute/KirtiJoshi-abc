@@ -4647,6 +4647,16 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 
 该等式补足 actual q-root family 的局部 order accounting；paper representatives、完整 finite-place carrier、theta/untilt 和最终 volume accounting 仍保持显式未完成。
 
+### Actual q-root family：任意下方坏处的局部法律
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-LOCAL-LAWS` | `IutInitialThetaQRootFamily.mem_badFinset_of_liesOver`, `qrootAt_pow_eq_of_liesOver`, `qrootAt_ordp_eq_of_liesOver`, `residueChar_mem_badChars_of_liesOver`, `bad_residueChar_mem_badChars`；`Act1Scene1/IutInitialThetaQRootFamilyLocalLaws.lean` | 对实际 torsion-field 处 `v` 和任意下方实际坏处 `w`，从 `Ideal.LiesOver` 与 `w ∈ badPlacesOver(D.VBad)` 推出 family 的 `qrootAt(v)^(2ℓ) = embedF(q_w)`、`ordp(qrootAt(v)) = qOrder(w)/(2ℓ e_w)` 及两域坏剩余特征归属。对应 `refer/iut/Iut/Concrete/ThetaRegion.lean` 的 `ThetaLocalData.qroot_pow`、`ordp_qroot`、`residueChar_mem`、`bad_residueChar_mem`；Joshi III `ss:theta-data-fixing2`、`cor:cor312` 的局部 Tate 来源。证明使用本工程的处收缩唯一性、canonical completion map、真实 q-root 与 admissible-prime q-order 比较；原创证明，无参考源码复制或外部 import。 | Scene1/Derived；proved |
+
+调用方无需提供 `w = basePlace(v)`、额外幂方程、completion-map 兼容或估值证书；新定理只消费同一 `InitialThetaData` 的已证明来源。Prologue-R5 与既有接口类型不变，Core 假设增量 0。完整 odd-support 与 `VBad` 的全局覆盖、concrete `LocalTheory`、paper theta/BK/untilt 和最终 volume 身份仍开放。
+
+验收：新叶、`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 均以直接 `lake env lean -j1 -o` 热检查通过，耗时依次为 115.831、123.892、117.485、115.318 秒；进程组峰值 RSS 依次为 9,227,544、9,311,280、9,299,316、9,247,768 KiB。CPU affinity `0–13`，`LEAN_NUM_THREADS=10`，实际并发 Lean worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发。首次叶检查因 dependent place transport 类型不匹配失败（116.878 秒，9,229,524 KiB），显式运输后通过；无 heartbeat 超时，未调整上限。公理家族日志解析仅见 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；未运行 Lake build 调度器，未重编译 Mathlib。
+
 ### S1.471：q-root family 的 residue-characteristic weighted fiber accounting
 
 | source-id | declarations | source / fidelity | boundary / status |
