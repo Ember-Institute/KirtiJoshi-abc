@@ -1265,6 +1265,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.degreeNormalized_qLogSum_eq_reference
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.qProduct_le_hullVolume
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.thetaVolume_ge_qProduct
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.volumeNormalization
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.transferLogBound
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312

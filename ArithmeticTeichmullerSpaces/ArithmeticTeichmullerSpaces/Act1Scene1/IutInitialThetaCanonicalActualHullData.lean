@@ -206,6 +206,14 @@ theorem qProduct_le_hullVolume :
     (InitialThetaRawQ.product_pow_le_actualVolume D (length D) (tuple D)
       (tuple_liesOver D))
 
+theorem thetaVolume_ge_qProduct :
+    (data p D theta route thetaBase heightData ramification X).thetaVolume ≥
+      Corollary312Data.qProduct p
+        (data p D theta route thetaBase heightData ramification X)
+        (volumeData p D theta route thetaBase heightData ramification X).qFactor := by
+  rw [data_thetaVolume_eq p D theta route thetaBase heightData ramification X]
+  exact qProduct_le_hullVolume p D theta route thetaBase heightData ramification X
+
 theorem volumeNormalization : Corollary312VolumeNormalization p
     (data p D theta route thetaBase heightData ramification X) :=
   actualCostLink_volumeNormalization p D (length D) (tuple D) (tuple_liesOver D)

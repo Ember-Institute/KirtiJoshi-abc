@@ -4891,3 +4891,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-QPRODUCT-VOLUME` | `CanonicalActualHull.qProduct_le_hullVolume`；`Act1Scene1/IutInitialThetaCanonicalActualHullData.lean` | 将 generic canonical qProduct-to-actual-volume inequality具体化到 actual bundle 固定的 `length D`、section tuple、LiesOver 证明和 `hullVolume D`，直接得到 actual qProduct 的 hull-volume 上界。 | Scene1/Derived；proved / conditional |
 
 该消费者不把 `hullVolume` 识别为论文 `thetaVolume`，不构造 paper representatives、H¹ₑ/BK 或 different/untilt，也不关闭最终 Corollary 3.12。
+
+### S1.502：actual canonical bundle 的 thetaVolume-qProduct consumer
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-THETAVOLUME-QPRODUCT` | `CanonicalActualHull.thetaVolume_ge_qProduct`；`Act1Scene1/IutInitialThetaCanonicalActualHullData.lean` | 消费 actual bundle 的 `data_thetaVolume_eq` 和 S1.501 的 hull-volume bound，将固定的 actual `thetaVolume` 直接接到同一 qProduct。 | Scene1/Derived；proved / conditional |
+
+该消费者仍只涉及 actual ordinary-log hull；不识别论文 `thetaVolume`、H¹ₑ/BK、different/untilt 或论文 representatives，也不单独关闭最终 Corollary 3.12。
