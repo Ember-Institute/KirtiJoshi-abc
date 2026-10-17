@@ -2,6 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperBallPr
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootIntegralThreshold
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportCanonicalAbsLogQ
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotReferenceBridge
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -212,6 +213,50 @@ theorem qrootAt_log_sum_eq_iut_absLogQ_of_support_eq
       intro p hp
       rw [hFiber]
     _ = _ := by simpa [B] using hFamily
+
+theorem qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_support_eq
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (hEll : T.ell = D.prime.ℓ)
+    (hLink : T.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+        heightData ramification logVolume processionLength)
+    (hSupport : IutOddMultiplicativeSupport D =
+      JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    let hCompat : QNormTateCompatibility T.scene1.data.link := by
+      rw [hLink]
+      exact iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
+        packetHull heightData ramification logVolume processionLength
+    let S := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+      packetHull heightData ramification logVolume processionLength hEll hLink
+    ∑ q ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log q * qrootAtWeightedFiber D q =
+      (S.toSceneQPilot p hCompat).absLogQ p := by
+  let hCompat : QNormTateCompatibility T.scene1.data.link := by
+    rw [hLink]
+    exact iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
+      packetHull heightData ramification logVolume processionLength
+  let S := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+    packetHull heightData ramification logVolume processionLength hEll hLink
+  have hFamily := qrootAt_log_sum_eq_iut_absLogQ_of_support_eq D hSupport
+  have hReference :=
+    Corollary312QPilotData.absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCanonicalInitialThetaLink
+      p D theta thetaBase packetHull heightData ramification logVolume processionLength
+      hEll hLink
+  change ∑ q ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+      Arithmetic.residueChar,
+      Real.log q * qrootAtWeightedFiber D q =
+    (S.toSceneQPilot p hCompat).absLogQ p
+  exact hFamily.trans hReference.symm
 
 end IutInitialThetaQRootFamily
 

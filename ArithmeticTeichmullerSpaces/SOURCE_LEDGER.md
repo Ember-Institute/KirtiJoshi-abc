@@ -4659,3 +4659,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-ABSLOGQ` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_iut_absLogQ_of_support_eq` | 在显式 `IutOddMultiplicativeSupport D = badPlacesOver(D.VBad)` 条件下，将 family weighted fiber 的 residue-characteristic log-sum 接到实际 `ReferenceIut.QPilotData.absLogQ`；通过共同 base q-order accounting 比较 family 与 odd-support source。 | Scene1/Derived；proved / conditional |
 
 该包装不证明 support equality，不识别论文 `L'`/`V_p^oss` representatives、无权 accounting、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.473：q-root family 到 canonical Scene1 q-pilot 的 absLogQ bridge
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-CANONICAL-QPILOT` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_support_eq` | 将上一单元的 actual family weighted log-sum 与 canonical `toSceneQPilot.absLogQ` 的真实 `InitialThetaData` reference bridge 合并；保留 canonical link、Tate compatibility、`hEll` 和完整-support equality 为显式条件。 | Scene1/Derived；proved / conditional |
+
+该 bridge 只连接两个实际 q-pilot数值接口，不证明 degree-one weighted normalization，不识别论文 `L'`/`V_p^oss` representatives、无权 accounting、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
