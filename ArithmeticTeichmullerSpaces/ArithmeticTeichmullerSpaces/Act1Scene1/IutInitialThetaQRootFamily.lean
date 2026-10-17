@@ -631,6 +631,32 @@ def vbadRepresentativeCoefficientDefect : ℝ :=
         (iutInitialThetaVBadModuliAt D v)) *
       VBadSelectedPaper.paperTerm D v
 
+theorem vbadRepresentativeCoefficientDefect_pos :
+    0 < vbadRepresentativeCoefficientDefect D := by
+  unfold vbadRepresentativeCoefficientDefect
+  obtain ⟨v, hv⟩ := D.global.bad_nonempty
+  let vBad : iutInitialThetaVBadModuliFinset D :=
+    ⟨v, (mem_iutInitialThetaVBadModuliFinset_iff D v).mpr hv⟩
+  have hnonneg (w : iutInitialThetaVBadModuliFinset D) :
+      0 ≤ (1 - iutInitialThetaRepresentativeCoefficient D
+          (iutInitialThetaVBadModuliAt D w)) *
+        VBadSelectedPaper.paperTerm D w := by
+    have hCoeff := iutInitialThetaRepresentativeCoefficient_mem_Ioc D
+      (iutInitialThetaVBadModuliAt D w)
+    exact mul_nonneg (sub_nonneg.mpr hCoeff.2)
+      (VBadSelectedPaper.paperTerm_pos D w).le
+  have hVBad : v ∈ D.VBad :=
+    (mem_iutInitialThetaVBadModuliFinset_iff D v).mp vBad.2
+  have hlt := iutInitialThetaRepresentativeCoefficient_lt_one_on_vbad D
+    (iutInitialThetaVBadModuliAt D vBad) hVBad
+  have hpos : 0 <
+      (1 - iutInitialThetaRepresentativeCoefficient D
+          (iutInitialThetaVBadModuliAt D vBad)) *
+        VBadSelectedPaper.paperTerm D vBad :=
+    mul_pos (sub_pos.mpr hlt) (VBadSelectedPaper.paperTerm_pos D vBad)
+  exact lt_of_lt_of_le hpos
+    (Finset.single_le_sum (fun w _ => hnonneg w) (Finset.mem_univ vBad))
+
 theorem fullPaperSum_eq_qrootFamilySum_add_defects_of_support_eq
     (hSupport : IutOddMultiplicativeSupport D =
       JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
@@ -725,6 +751,35 @@ theorem canonicalTateScene1Data_qLogSum_add_degree_mul_paperDefects_eq_degree_mu
   rw [hPaper]
   rw [← hRaw]
   ring
+
+theorem canonicalTateScene1Data_qLogSum_lt_degree_mul_fullPaperSum_of_largePrime
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hVBad : D.VBad = {v | v ∈ IutOddMultiplicativeModSupport D ∧
+      Arithmetic.residueChar v ≠ D.prime.ℓ})
+    (hLarge : iutMultiplicativeResidueBound D.E < D.prime.ℓ) :
+    Corollary312Data.qLogSum p base.target <
+      (Module.finrank ℚ D.F : ℝ) * iutInitialThetaSelectedQRootPaperSum D := by
+  have hEq :=
+    canonicalTateScene1Data_qLogSum_add_degree_mul_paperDefects_eq_degree_mul_fullPaperSum_of_largePrime
+      p D base hEll hTate hVBad hLarge
+  have hDegree : 0 < (Module.finrank ℚ D.F : ℝ) := by
+    exact_mod_cast Arithmetic.finrank_pos
+  have hDefect : 0 < vbadRepresentativeCoefficientDefect D +
+      VBadSelectedPaper.omittedPaperSum D :=
+    lt_of_lt_of_le (vbadRepresentativeCoefficientDefect_pos D)
+      (le_add_of_nonneg_right (VBadSelectedPaper.omittedPaperSum_nonneg D))
+  have hScaled : 0 < (Module.finrank ℚ D.F : ℝ) *
+      (vbadRepresentativeCoefficientDefect D +
+        VBadSelectedPaper.omittedPaperSum D) :=
+    mul_pos hDegree hDefect
+  linarith
 
 theorem vbadRepresentativeCoefficientDefect_nonneg :
     0 ≤ vbadRepresentativeCoefficientDefect D := by

@@ -4809,3 +4809,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-RAW-TARGET-FULL-PAPER-DEFECT-ACCOUNTING` | `IutInitialThetaQRootFamily.canonicalTateScene1Data_qLogSum_add_degree_mul_paperDefects_eq_degree_mul_fullPaperSum_of_largePrime` | 合并一般数域 raw qLogSum 的 degree-scaled q-root family accounting 与 large-prime full paper-sum 双缺陷分解，精确给出 `raw qLogSum + degree * (representative coefficient defect + omitted paper mass) = degree * full paper sum`。 | Scene1/Derived；proved / conditional |
 
 该恒等式保留两项实际缺陷与全局次数，不把当前 q-term 等同于无权 paper sum，也不关闭 q-factor 最终归一化、paper thetaVolume、H¹ₑ/BK 或 Corollary 3.12。
+
+### S1.492：large-prime raw target 严格低于 degree-scaled full paper sum
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-RAW-TARGET-FULL-PAPER-STRICT-GAP` | `IutInitialThetaQRootFamily.vbadRepresentativeCoefficientDefect_pos`, `IutInitialThetaQRootFamily.canonicalTateScene1Data_qLogSum_lt_degree_mul_fullPaperSum_of_largePrime` | 消费实际 VBad 非空带来的严格 representative coefficient defect、omitted paper mass 非负性和 S1.491 恒等式，证明 large-prime canonical raw qLogSum 严格小于 `[D.F:ℚ]` 缩放的完整 selected paper sum。 | Scene1/Derived；proved / conditional |
+
+该严格 gap 只排除当前 canonical raw accounting 的无缺陷等式路径；它不裁决最终 q-factor 归一化，也不识别论文 representatives、thetaVolume、H¹ₑ/BK 或 Corollary 3.12。
