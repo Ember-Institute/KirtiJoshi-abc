@@ -43,6 +43,19 @@ theorem qLogSum_div_degree_eq_absLogQ
   rw [D.qLogSum_eq_degree_mul_absLogQ p]
   field_simp
 
+/-! The normalized raw target and the grouped normalized source sum share one
+    bundle-level equality. -/
+theorem qLogSum_div_degree_eq_degreeNormalizedSourceQLogSum
+    (D : Corollary312Scene1DegreeNormalizedQPilotData (K := K) (O := O) p) :
+    Corollary312Data.qLogSum p D.base.target / (Module.finrank ℚ K : ℝ) =
+      Corollary312DegreeNormalizedSourceQLogSum p D.base.target
+        D.base.qFamily.grouping := by
+  calc
+    Corollary312Data.qLogSum p D.base.target / (Module.finrank ℚ K : ℝ) =
+        (D.qPilot p).absLogQ p := D.qLogSum_div_degree_eq_absLogQ p
+    _ = Corollary312DegreeNormalizedSourceQLogSum p D.base.target
+        D.base.qFamily.grouping := D.absLogQ_eq_degreeNormalizedSourceQLogSum p
+
 /-- Exact q-pilot presentation of the existing raw target, with its degree
 coefficient retained. This equivalence does not prove the volume estimate. -/
 theorem corollary312_iff_degreeScaledQPilot
