@@ -1472,6 +1472,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.volumeData
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.qFamily
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.qLogSum_eq_degree_mul_reference
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.degreeNormalized_qLogSum_eq_reference
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.volumeNormalization
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.transferLogBound

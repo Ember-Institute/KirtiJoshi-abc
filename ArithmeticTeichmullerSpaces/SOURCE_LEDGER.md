@@ -4875,3 +4875,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-DEGREE-NORMALIZED-PAPER-BRIDGE` | `CanonicalActualHull.degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum`；`Act1Scene1/IutInitialThetaCanonicalActualHullData.lean` | 将同一 `InitialThetaData` 构造的 actual `CanonicalActualHull.data` 与其 canonical Tate q-family 的 raw qLogSum 除以全局次数，直接接到 grouped weighted paper-normalized source sum。消费 S1.498 的 source-index accounting 和 actual bundle 的 canonical Tate/link 对齐；保留 qPilot 权重、source carrier、paper normalization、theta/volume analytic inputs 及无权 representative 身份义务。 | Scene1/Derived；proved / conditional |
 
 该桥只把已证明的归一化会计接入 actual canonical bundle，不识别论文 `V_p^oss`/`L'`、无权 representative sum 或 paper `thetaVolume`，也不关闭 H¹ₑ/BK、different/untilt 和最终 Corollary 3.12。
+
+### S1.500：actual canonical bundle 的 degree-normalized reference bridge
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-DEGREE-NORMALIZED-REFERENCE` | `CanonicalActualHull.degreeNormalized_qLogSum_eq_reference`；`Act1Scene1/IutInitialThetaCanonicalActualHullData.lean` | 将 actual `CanonicalActualHull.data` 的 raw qLogSum 除以 `[D.F : ℚ]`，消费同一实际 Tate/q-root accounting 得到 reference `QPilotData.absLogQ`。该结果只固定 global degree coefficient 的投影，不改变 raw target 或 paper representative 语义。 | Scene1/Derived；proved / conditional |
+
+该桥不冻结最终 q-factor，不识别论文 `V_p^oss`/`L'`、无权 representative sum 或 paper `thetaVolume`，也不关闭 H¹ₑ/BK、different/untilt 和最终 Corollary 3.12。

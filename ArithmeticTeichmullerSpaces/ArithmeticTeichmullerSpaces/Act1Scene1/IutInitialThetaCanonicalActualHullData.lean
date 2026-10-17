@@ -153,6 +153,16 @@ theorem qLogSum_eq_degree_mul_reference :
         (IutTorsionQRootSource.iutInitialThetaQPilotData D) :=
   InitialThetaRawQ.logSum_eq_degree_mul_reference D
 
+theorem degreeNormalized_qLogSum_eq_reference :
+    Corollary312Data.qLogSum p (data p D theta route thetaBase heightData ramification X) /
+        (Module.finrank ℚ D.F : ℝ) =
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+  have hDegree : (Module.finrank ℚ D.F : ℝ) ≠ 0 :=
+    ne_of_gt Arithmetic.finrank_pos
+  rw [qLogSum_eq_degree_mul_reference p D theta route thetaBase heightData ramification X]
+  field_simp
+
 theorem degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum :
     Corollary312Data.qLogSum p (data p D theta route thetaBase heightData ramification X) /
         (Module.finrank ℚ D.F : ℝ) =
