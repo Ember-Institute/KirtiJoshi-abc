@@ -2,6 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTrans
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalScene1Input
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTargetPaperNormalizedBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
 
 /-!
@@ -151,6 +152,15 @@ theorem qLogSum_eq_degree_mul_reference :
       (Module.finrank ℚ D.F : ℝ) * JoshiTeich.ReferenceIut.QPilotData.absLogQ
         (IutTorsionQRootSource.iutInitialThetaQPilotData D) :=
   InitialThetaRawQ.logSum_eq_degree_mul_reference D
+
+theorem degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum :
+    Corollary312Data.qLogSum p (data p D theta route thetaBase heightData ramification X) /
+        (Module.finrank ℚ D.F : ℝ) =
+      Corollary312WeightedPaperNormalizedSourceQLogSum p
+        (data p D theta route thetaBase heightData ramification X)
+        (qFamily p D theta route thetaBase heightData ramification X).grouping := by
+  exact canonicalTateQFamily_degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum
+    p D (qFamily p D theta route thetaBase heightData ramification X) rfl rfl
 
 theorem volumeNormalization : Corollary312VolumeNormalization p
     (data p D theta route thetaBase heightData ramification X) :=

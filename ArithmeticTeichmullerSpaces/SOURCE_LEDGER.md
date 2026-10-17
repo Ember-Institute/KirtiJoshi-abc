@@ -4867,3 +4867,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-RAW-VOLUME-COR312-CONSUMER` | `InitialThetaRawQ.corollary312_of_canonicalTateScene1Data_actualRawVolume` | 从实际 collation volume 派生 thetaVolume 正性与上界，消费 general-degree canonical qProduct-to-actual-volume bound 和真实 Scene1 side conditions，得到条件性 Corollary 3.12；只要求 Tate 对齐、length 与 actual volume identity。 | Scene1/Derived；proved / conditional |
 
 实际 `thetaVolume = VBadThetaLogCollation.volume` 仍是输入条件；该消费者不构造 paper theta/BK/untilt volume，也不关闭真实联合模型闸门。
+
+### S1.499：actual canonical bundle 的 degree-normalized grouped paper bridge
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-DEGREE-NORMALIZED-PAPER-BRIDGE` | `CanonicalActualHull.degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum`；`Act1Scene1/IutInitialThetaCanonicalActualHullData.lean` | 将同一 `InitialThetaData` 构造的 actual `CanonicalActualHull.data` 与其 canonical Tate q-family 的 raw qLogSum 除以全局次数，直接接到 grouped weighted paper-normalized source sum。消费 S1.498 的 source-index accounting 和 actual bundle 的 canonical Tate/link 对齐；保留 qPilot 权重、source carrier、paper normalization、theta/volume analytic inputs 及无权 representative 身份义务。 | Scene1/Derived；proved / conditional |
+
+该桥只把已证明的归一化会计接入 actual canonical bundle，不识别论文 `V_p^oss`/`L'`、无权 representative sum 或 paper `thetaVolume`，也不关闭 H¹ₑ/BK、different/untilt 和最终 Corollary 3.12。
