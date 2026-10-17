@@ -2028,6 +2028,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #check JoshiTeich.Act1Scene1.PrincipalUnitKummer.qroot_normalized_linearIndependent
 #check JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt
 #check JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_ordp_nonneg
+#check JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.badChars_prime
+#check JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_pow_eq_of_mem_badFinset
 
 #check JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog
 #check JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog_unit

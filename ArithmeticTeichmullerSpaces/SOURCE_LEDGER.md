@@ -4621,3 +4621,9 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY` | `IutInitialThetaQRootFamily.badChars`, `qrootAt`, `qrootAt_ne_zero`, `qrootAt_ordp_nonneg`, `qrootAt_eq_one_of_residueChar_not_mem_badChars`, `residueChar_mem_badChars_of_mem_badFinset` | 依据 iut `ThetaLocalData`/`thetaLocalData` 的全局 family 形状，在实际 torsion-field finite places 上坏处使用现有真实 q-root，其余处使用 `1`；非零、非负 `ordp` 和坏特征支撑由实际 q-root norm/root source 派生。iut concrete local-theory carrier、completion embedding 与 root power law仍由现有 source 单独提供，未被隐藏在此定义中。 | Scene1/Derived；proved / accepted |
 
 该生产者只提供 q-root family 的基本 carrier 条件，不声称已构造完整 `ThetaLocalData`、concrete `LocalTheory`、theta-pilot region 或 paper theta-volume。
+
+### S1.468：q-root family 的坏特征素性与坏处幂方程
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-POWER` | `IutInitialThetaQRootFamily.badChars_prime`, `IutInitialThetaQRootFamily.qrootAt_pow_eq_of_mem_badFinset` | 消费上一单元的实际 family 与现有 `IutTorsionQRootSource.qroot_pow_eq`，证明坏 residue characteristics 为素数，并把 `qrootAt` 在坏处还原为真实 q-root power equation。对应 iut `ThetaLocalData.badChars_prime` 与 `qroot_pow`；不构造 concrete `LocalTheory` 或全局 `ThetaLocalData`。 | Scene1/Derived；proved / accepted |

@@ -78,6 +78,23 @@ theorem residueChar_mem_badChars_of_mem_badFinset
     Arithmetic.residueChar v ∈ badChars D := by
   exact Finset.mem_image.mpr ⟨v, hv, rfl⟩
 
+theorem badChars_prime
+    (p : ℕ) (hp : p ∈ badChars D) : p.Prime := by
+  obtain ⟨v, hv, rfl⟩ := Finset.mem_image.mp hp
+  exact Arithmetic.residueChar_prime v
+
+theorem qrootAt_pow_eq_of_mem_badFinset
+    (v : NumberField.FinitePlace ↥D.prime.torsionField)
+    (hv : v ∈ (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    qrootAt D v ^ (2 * D.prime.ℓ) =
+      (iutInitialThetaOddSupportTorsionQRootSource D).completionMap ⟨v, hv⟩
+        ((iutInitialThetaOddSupportBaseQPilotSource D).tateParameter
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace ⟨v, hv⟩)) := by
+  unfold qrootAt
+  split_ifs with h
+  · exact (iutInitialThetaOddSupportTorsionQRootSource D).qroot_pow_eq ⟨v, hv⟩
+  · exact (h hv).elim
+
 end IutInitialThetaQRootFamily
 
 end
