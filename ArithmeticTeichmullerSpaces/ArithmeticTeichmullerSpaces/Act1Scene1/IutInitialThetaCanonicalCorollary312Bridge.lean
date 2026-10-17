@@ -65,5 +65,40 @@ theorem corollary312_of_canonicalInitialThetaLink_of_actualHullVolume
   exact corollary312_of_q_family_normalized_lower_bound p base.target V Q N
     hEllPrime hEllGeFive hEllStarEq hEllStarPos hLower'
 
+theorem corollary312_of_canonicalInitialThetaLink_of_actualHullVolume_fromScene1Data
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (hDegree : Module.finrank ℚ D.F = 1)
+    (n : ℕ) (hn : 0 < n)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    (hlength : base.target.ellStar = n)
+    (hq : Corollary312Data.qLogSum p base.target =
+      iutInitialThetaSelectedQRootPaperSum D)
+    (hvolume : base.target.thetaVolume =
+      VBadThetaCollatedHull.volume D n σ hσ
+        (VBadThetaLogCollation.collation D n σ hσ)) :
+    Corollary312 p base.target := by
+  exact corollary312_of_canonicalInitialThetaLink_of_actualHullVolume
+    p D base hEll hLink hDegree n hn σ hσ base.volume base.qFamily.toQFamily
+    base.normalization hlength hq hvolume base.ell_prime base.ell_ge_five
+    base.ellStar_eq_half_sub_one base.ellStar_pos
+
 end
 end JoshiTeich.Act1Scene1
