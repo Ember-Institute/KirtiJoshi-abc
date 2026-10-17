@@ -4657,6 +4657,16 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 
 验收：新叶、`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 均以直接 `lake env lean -j1 -o` 热检查通过，耗时依次为 115.831、123.892、117.485、115.318 秒；进程组峰值 RSS 依次为 9,227,544、9,311,280、9,299,316、9,247,768 KiB。CPU affinity `0–13`，`LEAN_NUM_THREADS=10`，实际并发 Lean worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发。首次叶检查因 dependent place transport 类型不匹配失败（116.878 秒，9,229,524 KiB），显式运输后通过；无 heartbeat 超时，未调整上限。公理家族日志解析仅见 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；未运行 Lake build 调度器，未重编译 Mathlib。
 
+### Actual VBad q-root family：完整纤维与实际 q-pilot 会计
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-VBAD-QROOT-FAMILY` | `IutInitialThetaQRootFamily.vbadQrootAt`, `vbadQrootAt_ne_zero`, `vbadQrootAt_ordp_nonneg`, `vbadQrootAt_eq_one_of_residueChar_not_mem_badChars`, `vbadQrootAt_eq_qrootAt_of_liesOver`, `vbadQrootAt_pow_eq_of_liesOver`, `vbadQrootAt_ordp_eq_of_liesOver`, `qrootAt_ordp_eq_canonicalVBadRoot`, `vbadWeightedFiber`, `vbadWeightedFiber_eq_canonical`, `vbadWeightedFiber_eq_qOrderSum`, `vbadWeighted_logSum_eq_iut_absLogQ`；`Act1Scene1/IutInitialThetaVBadQRootFamily.lean` | 将同一实际 full odd-support q-root family 显式限制到 `D.VBad` 的 torsion-field 上方处，其余处取 `1`。证明非零、估值非负、有限坏特征支撑与任意下方坏处的幂方程/估值公式；通过共同 `2ℓ` 次幂证明它与 canonical VBad 根的估值相等。对每个 `p`，所有 torsion places 的无 indicator 纤维和精确等于基域 `VBad` 上的 `f_w/[F:ℚ] * qOrder(w)/(2ℓ)` 和，再接到实际 `QPilotData.absLogQ`。来源：`refer/iut/Iut/Concrete/ThetaRegion.lean` 的 `ThetaLocalData`，`Concrete/ThetaLocalConstruct/Data.lean` 的 `sum_weight_ordp_qroot`，Joshi III `ss:theta-data-fixing2` 的局部 Tate 数据；原创证明，无参考源码复制/import。 | Scene1/Derived；proved |
+
+限制族沿用原有限 `badChars`，不要求该集合最小。原 full-support family 保留；新等式不需要 `IutOddMultiplicativeSupport D = badPlacesOver(D.VBad)`，也不推出这个覆盖条件，不删除 full-support 的额外贡献。全局次数、局部 degree 和 `2ℓ` 均沿用既有 arithmetic normalization；无需新的 degree-one、根相等或纤维会计证书。Prologue-R5、Core 与旧定理类型不变，前置信任增量 0。论文 `V_p^oss/L'` representatives、无权 paper sum、theta/BK/untilt 与最终体积身份仍开放。
+
+验收：新叶、`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 直接 `lake env lean -j1 -o` 热检查均通过，耗时依次为 115.206、125.400、115.236、111.270 秒；进程组峰值 RSS 依次为 9,234,512、9,312,400、9,300,428、9,240,188 KiB。CPU affinity `0–13`，`LEAN_NUM_THREADS=10`，实际并发 Lean worker 峰值 1；每 0.5 秒采样 RSS，85 GiB 停止线未触发。首次叶检查因局部别名下的成员证据未消去限制族分支失败（112.759 秒，9,236,064 KiB），显式转换后通过；无 heartbeat 超时，未调整上限。12 个新增声明的公理输出已逐名核对，整个公理家族仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；未运行 Lake build 调度器，未重编译 Mathlib。
+
 ### S1.471：q-root family 的 residue-characteristic weighted fiber accounting
 
 | source-id | declarations | source / fidelity | boundary / status |
