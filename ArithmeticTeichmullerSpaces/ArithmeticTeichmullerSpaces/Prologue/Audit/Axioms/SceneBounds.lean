@@ -1274,9 +1274,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.product_pos
 #print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.logTerm_eq_order_term
 #print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum_eq_degree_mul_reference
+#print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.canonicalTateScene1Data_qLogSum_eq_logSum
 #print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.reference_le_logSum
 #print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.log_product_eq_neg_logSum
 #print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.product_pow_le_actualVolume
+#print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.canonicalTateScene1Data_exp_neg_procession_mul_qLogSum_le_actualVolume
 #print axioms JoshiTeich.Act1Scene1.InitialThetaRawQ.negAverageAbsLog_actualVolume_ge_neg_logSum
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.raw_volume_bound
 

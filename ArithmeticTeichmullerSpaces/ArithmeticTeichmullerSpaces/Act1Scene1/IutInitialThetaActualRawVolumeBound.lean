@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLinkSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogCost
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetAccounting
 
 /-!
 source-id: JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND
@@ -79,6 +80,20 @@ theorem logSum_eq_degree_mul_reference :
   have hdegree : (Module.finrank ℚ D.F : ℝ) ≠ 0 := ne_of_gt Arithmetic.finrank_pos
   field_simp [hdegree]
 
+theorem canonicalTateScene1Data_qLogSum_eq_logSum
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D) :
+    Corollary312Data.qLogSum p base.target = logSum D := by
+  exact
+    (canonicalTateScene1Data_qLogSum_eq_degree_mul_reference p D base hEll hTate).trans
+      (logSum_eq_degree_mul_reference D).symm
+
 theorem reference_le_logSum :
     JoshiTeich.ReferenceIut.QPilotData.absLogQ
       (IutTorsionQRootSource.iutInitialThetaQPilotData D) ≤ logSum D := by
@@ -111,6 +126,30 @@ theorem product_pow_le_actualVolume :
   rw [hproduct, hvolume]
   exact Real.exp_le_exp.mpr
     (neg_le_neg (mul_le_mul_of_nonneg_left (reference_le_logSum D) (Nat.cast_nonneg n)))
+
+theorem canonicalTateScene1Data_exp_neg_procession_mul_qLogSum_le_actualVolume
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (n : ℕ)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal) :
+    Real.exp (-((n : ℝ) * Corollary312Data.qLogSum p base.target)) ≤
+      VBadThetaLogCollation.volume D n σ hσ := by
+  have hProduct := product_pow_le_actualVolume D n σ hσ
+  have hLogSum := canonicalTateScene1Data_qLogSum_eq_logSum p D base hEll hTate
+  have hPower : product D ^ n =
+      Real.exp (-((n : ℝ) * Corollary312Data.qLogSum p base.target)) := by
+    rw [← Real.exp_log (pow_pos (product_pos D) n), Real.log_pow,
+      log_product_eq_neg_logSum, mul_neg, ← hLogSum]
+  rw [hPower] at hProduct
+  exact hProduct
 
 theorem negAverageAbsLog_actualVolume_ge_neg_logSum (hn : 0 < n) :
     -(1 / (n : ℝ)) * |Real.log (VBadThetaLogCollation.volume D n σ hσ)| ≥
