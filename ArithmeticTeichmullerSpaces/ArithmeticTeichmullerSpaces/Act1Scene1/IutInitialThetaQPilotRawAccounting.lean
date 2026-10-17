@@ -33,6 +33,16 @@ theorem qLogSum_eq_degree_mul_absLogQ
     p D.source.orderCompatibility D.rawNormalization D.base.ell_prime.pos
     (D.sourceIndexBridge p)
 
+/-- Degree-normalized presentation of the raw target q-sum. -/
+theorem qLogSum_div_degree_eq_absLogQ
+    (D : Corollary312Scene1DegreeNormalizedQPilotData (K := K) (O := O) p) :
+    Corollary312Data.qLogSum p D.base.target / (Module.finrank ℚ K : ℝ) =
+      (D.qPilot p).absLogQ p := by
+  have hDegree : (Module.finrank ℚ K : ℝ) ≠ 0 :=
+    ne_of_gt Arithmetic.finrank_pos
+  rw [D.qLogSum_eq_degree_mul_absLogQ p]
+  field_simp
+
 /-- Exact q-pilot presentation of the existing raw target, with its degree
 coefficient retained. This equivalence does not prove the volume estimate. -/
 theorem corollary312_iff_degreeScaledQPilot
