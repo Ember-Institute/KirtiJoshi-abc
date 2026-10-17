@@ -137,3 +137,21 @@ Mathlib4 通过本地 path 依赖使用，不复制其源文件到本工程。�
   Principal hull 的 topology/Haar 输出在本工程用 actual linear equivalence 重证。
 - 三目标保留原路径、作者、提交、版权和许可证通知，无 Iut import 或参考依赖。
   完整验证见 log4 S1-BND-313。
+
+## Actual tensor factor automorphisms 与有限像并集
+
+- 来源文件：`refer/iut/Iut/Concrete/LocalConstruct/Indeterminacy.lean`、
+  `refer/iut/Iut/Concrete/LocalConstruct/ThetaAdmissible.lean`。
+- 两文件原提交均为 `b76207ab8955e68a7408d5d2a770b75a30c3bebf`；参考快照
+  `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`；Git 作者 Christian Merten，
+  文件作者与版权为 The iut contributors（2026）。移植前已复核两文件头及
+  Apache-2.0 `LICENSE`；原通知保留在目标文件头。
+- 目标：`Act1Scene1/LocalCompletionTensorIndeterminacy.lean`，source-id
+  `JT-SCENE1-LOCAL-TENSOR-FACTOR-INDETERMINACY`。
+- 改写范围：factor-induced tensor algebra maps、identity、finite automorphism
+  family、continuous images 与 compact finite unions。改为本工程 actual
+  completion factors、现有 tensor 拓扑和 integral closure；独立补充双射、algebra
+  equivalence 及 normalization 的像等式。无参考 `LocalTheory`、junk quotient、
+  archimedean factors、theta-pilot 或自由体积法律导入。
+- 同单元 `LocalCompletionTensorIndeterminacyRegion.lean` 为本地消费者证明，
+  无额外参考源码复制。未加入任何依赖，未改变本工程其他原创文件的许可证选择。
