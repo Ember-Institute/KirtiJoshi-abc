@@ -4667,3 +4667,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-CANONICAL-QPILOT` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_support_eq` | 将上一单元的 actual family weighted log-sum 与 canonical `toSceneQPilot.absLogQ` 的真实 `InitialThetaData` reference bridge 合并；保留 canonical link、Tate compatibility、`hEll` 和完整-support equality 为显式条件。 | Scene1/Derived；proved / conditional |
 
 该 bridge 只连接两个实际 q-pilot数值接口，不证明 degree-one weighted normalization，不识别论文 `L'`/`V_p^oss` representatives、无权 accounting、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.474：q-root family 到 VBad 系数加权 paper sum
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-VBAD-PAPER-SUM` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_support_eq` | 将 actual q-root family 的 weighted log-sum 通过真实 `QPilotData.absLogQ` 接到已有 VBad selected paper accounting，得到实际 representatives 上带 ramification coefficient 的 paper term sum；完整 odd-support 与 VBad carrier 相等仍显式假设。 | Scene1/Derived；proved / conditional |
+
+该结果不把系数和升级为论文无权 representative sum，不证明 support coverage、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。

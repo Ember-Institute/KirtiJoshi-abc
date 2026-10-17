@@ -3,6 +3,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootIntegralThresh
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRootAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportCanonicalAbsLogQ
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotReferenceBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -257,6 +258,24 @@ theorem qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_support_eq
       Real.log q * qrootAtWeightedFiber D q =
     (S.toSceneQPilot p hCompat).absLogQ p
   exact hFamily.trans hReference.symm
+
+theorem qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_support_eq
+    (hSupport : IutOddMultiplicativeSupport D =
+      JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    let B := iutInitialThetaOddSupportBaseQPilotSource D
+    ∑ q ∈ B.badFinset.image Arithmetic.residueChar,
+        Real.log q * qrootAtWeightedFiber D q =
+      ∑ v : iutInitialThetaVBadModuliFinset D,
+        iutInitialThetaRepresentativeCoefficient D
+            (iutInitialThetaVBadModuliAt D v) *
+          VBadSelectedPaper.paperTerm D v := by
+  classical
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  have hFamily := qrootAt_log_sum_eq_iut_absLogQ_of_support_eq D hSupport
+  have hPaper := VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D
+  change ∑ q ∈ B.badFinset.image Arithmetic.residueChar,
+      Real.log q * qrootAtWeightedFiber D q = _
+  exact hFamily.trans hPaper
 
 end IutInitialThetaQRootFamily
 
