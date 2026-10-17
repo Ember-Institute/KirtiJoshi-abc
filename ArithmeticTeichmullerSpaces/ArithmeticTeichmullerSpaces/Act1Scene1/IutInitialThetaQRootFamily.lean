@@ -187,6 +187,118 @@ theorem qrootAtWeightedFiber_eq_baseQOrder
       · simp [h]
     _ = _ := IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber_eq_baseQOrder D p
 
+theorem qrootAt_log_sum_eq_fullBaseQPilotLogSum :
+    ∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p =
+      iutInitialThetaFullBaseQPilotLogSum D := by
+  classical
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  let term : B.badFinset → ℝ := iutInitialThetaBaseQPilotLogTerm D
+  have hfiber (p : ℕ) :
+      Real.log p * qrootAtWeightedFiber D p =
+        ∑ w ∈ B.badFinset.attach.filter
+            (fun w => Arithmetic.residueChar w.1 = p), term ⟨w.1, w.2⟩ := by
+    rw [qrootAtWeightedFiber_eq_baseQOrder D p, Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro w hw
+    have hp : Arithmetic.residueChar w.1 = p := (Finset.mem_filter.mp hw).2
+    simp only [term, iutInitialThetaBaseQPilotLogTerm]
+    rw [hp]
+    ring
+  have hgroup :
+      ∑ p ∈ B.badFinset.image Arithmetic.residueChar,
+        ∑ w ∈ B.badFinset.attach.filter
+            (fun w => Arithmetic.residueChar w.1 = p), term ⟨w.1, w.2⟩ =
+        ∑ w : B.badFinset, term w := by
+    exact Finset.sum_fiberwise_of_maps_to
+      (fun w hw => Finset.mem_image.mpr ⟨w.1, w.2, rfl⟩)
+      _
+  calc
+    _ = ∑ p ∈ B.badFinset.image Arithmetic.residueChar,
+        ∑ w ∈ B.badFinset.attach.filter
+            (fun w => Arithmetic.residueChar w.1 = p), term ⟨w.1, w.2⟩ := by
+      apply Finset.sum_congr rfl
+      intro p hp
+      exact hfiber p
+    _ = ∑ w : B.badFinset, term w := hgroup
+    _ = iutInitialThetaFullBaseQPilotLogSum D := by
+      simp [term, iutInitialThetaFullBaseQPilotLogSum, B]
+
+def fullSupportRepresentativePaperTerm
+    (v : iutInitialThetaOddModSupportFinset D) : ℝ :=
+  -Real.log (actualPaperRootNorm D
+    (iutInitialThetaModuliSelectedSourceEquiv D v).1)
+
+def fullSupportRepresentativeCoefficientDefect : ℝ :=
+  ∑ v : iutInitialThetaOddModSupportFinset D,
+    (1 - iutInitialThetaRepresentativeCoefficient D v) *
+      fullSupportRepresentativePaperTerm D v
+
+theorem selectedPaperSum_eq_qrootFamilySum_add_fullCoefficientDefect :
+    iutInitialThetaSelectedQRootPaperSum D =
+      (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+          Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p) +
+        fullSupportRepresentativeCoefficientDefect D := by
+  classical
+  have hPaper : iutInitialThetaSelectedQRootPaperSum D =
+      ∑ v : iutInitialThetaOddModSupportFinset D,
+        fullSupportRepresentativePaperTerm D v := by
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    let S := {s : R.badFinset // s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+    letI : Fintype S := (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+    let e := iutInitialThetaModuliSelectedSourceEquiv D
+    unfold iutInitialThetaSelectedQRootPaperSum
+    calc
+      _ = ∑ s : S, -Real.log (actualPaperRootNorm D s.1) := by
+        apply Finset.sum_congr rfl
+        intro s hs
+        exact (actualPaperRootNorm_negLog_eq_paperTerm D s.1).symm
+      _ = ∑ v : iutInitialThetaOddModSupportFinset D,
+          fullSupportRepresentativePaperTerm D v := by
+        simpa [fullSupportRepresentativePaperTerm, e] using
+          (e.sum_comp (fun s : S => -Real.log (actualPaperRootNorm D s.1))).symm
+  have hWeighted : iutInitialThetaFullBaseQPilotLogSum D =
+      ∑ v : iutInitialThetaOddModSupportFinset D,
+        iutInitialThetaRepresentativeCoefficient D v *
+          fullSupportRepresentativePaperTerm D v := by
+    rw [iutInitialThetaFullBaseQPilotLogSum_eq_coefficientWeightedPaperSum]
+    apply Finset.sum_congr rfl
+    intro v hv
+    let R := iutInitialThetaOddSupportTorsionQRootSource D
+    let s := (iutInitialThetaModuliSelectedSourceEquiv D v).1
+    change iutInitialThetaRepresentativeCoefficient D v *
+        (((Arithmetic.ramIdx s.1 : ℝ) * Arithmetic.ordp s.1 (R.qroot s)) *
+          Real.log (Arithmetic.residueChar s.1)) =
+      iutInitialThetaRepresentativeCoefficient D v *
+        fullSupportRepresentativePaperTerm D v
+    rw [← actualPaperRootNorm_negLog_eq_paperTerm D s]
+    rfl
+  have hDecomp : iutInitialThetaSelectedQRootPaperSum D =
+      iutInitialThetaFullBaseQPilotLogSum D +
+        fullSupportRepresentativeCoefficientDefect D := by
+    rw [hPaper, hWeighted]
+    unfold fullSupportRepresentativeCoefficientDefect
+    rw [← Finset.sum_add_distrib]
+    apply Finset.sum_congr rfl
+    intro v hv
+    ring
+  rw [hDecomp, qrootAt_log_sum_eq_fullBaseQPilotLogSum]
+
+theorem fullSupportRepresentativeCoefficientDefect_nonneg :
+    0 ≤ fullSupportRepresentativeCoefficientDefect D := by
+  unfold fullSupportRepresentativeCoefficientDefect
+  apply Finset.sum_nonneg
+  intro v hv
+  have hCoeff := iutInitialThetaRepresentativeCoefficient_mem_Ioc D v
+  have hRoot : actualPaperRootNorm D
+      (iutInitialThetaModuliSelectedSourceEquiv D v).1 ∈ Set.Ioo (0 : ℝ) 1 :=
+    actualPaperRootNorm_mem_Ioo D _
+  have hTerm : 0 ≤ fullSupportRepresentativePaperTerm D v :=
+    neg_nonneg.mpr (Real.log_nonpos hRoot.1.le hRoot.2.le)
+  exact mul_nonneg (sub_nonneg.mpr hCoeff.2) hTerm
+
 theorem qrootAt_log_sum_eq_iut_absLogQ_of_support_eq
     (hSupport : IutOddMultiplicativeSupport D =
       JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :

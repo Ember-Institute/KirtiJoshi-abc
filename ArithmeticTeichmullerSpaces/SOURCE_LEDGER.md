@@ -4683,3 +4683,17 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-PAPER-SUM-DEFECT-DECOMPOSITION` | `IutInitialThetaQRootFamily.vbadRepresentativeCoefficientDefect`, `IutInitialThetaQRootFamily.fullPaperSum_eq_qrootFamilySum_add_defects_of_support_eq`, `IutInitialThetaQRootFamily.vbadRepresentativeCoefficientDefect_nonneg` | 在 full odd support 与 actual VBad pullback 相等的显式条件下，将完整 selected paper q-sum 精确拆为 actual q-root family weighted log-sum、VBad representative coefficient defect 和 omitted-support paper mass；证明系数 defect 非负。两项缺口分别对应代表元 ramification coefficient 与 VBad support omission。 | Scene1/Derived；proved / conditional |
 
 该恒等式不消去任一缺陷，不把 q-pilot 加权和等同论文无权和；support equality、`L'`/`V_p^oss` 来源、thetaVolume 和最终 Corollary 3.12 仍未完成。
+
+### S1.476：完整 odd-support q-root family 到 full-base q-pilot
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-FULL-BASE` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_fullBaseQPilotLogSum` | 无需 VBad 覆盖条件，将完整 odd multiplicative support 上的 q-root family residue-characteristic weighted log-sum 分组为 actual full-base q-pilot log sum；消费 base q-order fiber accounting 与正 Tate q-orders。 | Scene1/Derived；proved / accepted |
+
+### S1.477：完整 support representative coefficient defect
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-FULL-COEFFICIENT-DEFECT` | `IutInitialThetaQRootFamily.fullSupportRepresentativePaperTerm`, `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect`, `IutInitialThetaQRootFamily.selectedPaperSum_eq_qrootFamilySum_add_fullCoefficientDefect`, `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect_nonneg` | 在完整 odd support 上，将 selected paper q-sum 精确拆为 q-root family weighted log-sum 与完整 representative coefficient defect，并证明 defect 非负。该恒等式不要求 `VBad` 覆盖完整 support，明确保留相对 ramification/residue-degree 导致的系数损失。 | Scene1/Derived；proved / accepted |
+
+这些结果仍不冻结 raw/degree-normalized q-factor，不识别论文 `L'`/`V_p^oss` carrier，不证明无权 representative sum、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
