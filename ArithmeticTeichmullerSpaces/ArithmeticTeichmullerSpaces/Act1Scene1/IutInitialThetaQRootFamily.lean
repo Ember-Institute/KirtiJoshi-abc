@@ -299,6 +299,32 @@ theorem fullSupportRepresentativeCoefficientDefect_nonneg :
     neg_nonneg.mpr (Real.log_nonpos hRoot.1.le hRoot.2.le)
   exact mul_nonneg (sub_nonneg.mpr hCoeff.2) hTerm
 
+theorem qrootAt_log_sum_le_selectedPaperSum :
+    (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p) ≤
+      iutInitialThetaSelectedQRootPaperSum D := by
+  rw [qrootAt_log_sum_eq_fullBaseQPilotLogSum]
+  exact iutInitialThetaFullBaseQPilotLogSum_le_selectedPaperSum D
+
+theorem qrootAt_log_sum_lt_selectedPaperSum :
+    (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p) <
+      iutInitialThetaSelectedQRootPaperSum D := by
+  rw [qrootAt_log_sum_eq_fullBaseQPilotLogSum]
+  exact iutInitialThetaFullBaseQPilotLogSum_lt_selectedPaperSum D
+
+theorem qrootAt_log_sum_eq_selectedPaperSum_iff_coefficients_eq_one :
+    (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p) =
+      iutInitialThetaSelectedQRootPaperSum D ↔
+      ∀ v : iutInitialThetaOddModSupportFinset D,
+        iutInitialThetaRepresentativeCoefficient D v = 1 := by
+  rw [qrootAt_log_sum_eq_fullBaseQPilotLogSum]
+  exact iutInitialThetaFullBaseQPilotLogSum_eq_paperSum_iff_coefficients_eq_one D
+
 theorem qrootAt_log_sum_eq_iut_absLogQ_of_support_eq
     (hSupport : IutOddMultiplicativeSupport D =
       JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :

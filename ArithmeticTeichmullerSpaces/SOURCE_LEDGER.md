@@ -4697,3 +4697,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-FULL-COEFFICIENT-DEFECT` | `IutInitialThetaQRootFamily.fullSupportRepresentativePaperTerm`, `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect`, `IutInitialThetaQRootFamily.selectedPaperSum_eq_qrootFamilySum_add_fullCoefficientDefect`, `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect_nonneg` | 在完整 odd support 上，将 selected paper q-sum 精确拆为 q-root family weighted log-sum 与完整 representative coefficient defect，并证明 defect 非负。该恒等式不要求 `VBad` 覆盖完整 support，明确保留相对 ramification/residue-degree 导致的系数损失。 | Scene1/Derived；proved / accepted |
 
 这些结果仍不冻结 raw/degree-normalized q-factor，不识别论文 `L'`/`V_p^oss` carrier，不证明无权 representative sum、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.478：q-root family 到 selected paper sum 的代表系数判据
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-SELECTED-SUM-COEFFICIENT-CRITERION` | `IutInitialThetaQRootFamily.qrootAt_log_sum_le_selectedPaperSum`, `IutInitialThetaQRootFamily.qrootAt_log_sum_lt_selectedPaperSum`, `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_selectedPaperSum_iff_coefficients_eq_one` | 将实际 family 的完整 odd-support weighted sum 接到 full-base q-pilot sum，复用代表系数 accounting，给出 selected paper sum 的上界、由实际系数严格小于一得到的严格界，以及相等的精确充要条件。 | Scene1/Derived；proved / accepted |
+
+这些结果不构造论文 `L'` representative 身份，也不把实际 q-pilot 权重或代表系数替换为无权 paper sum；q-factor normalization、thetaVolume 和最终 Corollary 3.12 仍未冻结。
