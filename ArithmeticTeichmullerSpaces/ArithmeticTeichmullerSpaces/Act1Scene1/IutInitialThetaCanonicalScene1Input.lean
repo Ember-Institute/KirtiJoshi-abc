@@ -53,7 +53,6 @@ structure CanonicalInitialThetaScene1Input
   normalization :
     letI := theta.indexFintype
     logVolume = ∑ i, theta.period i
-  theta_norm_positive : ∀ i, 0 < theta.norm i
   packet_weight_positive : ∀ q, 0 < packetHull.packetWeight q
   hull_weight_positive : ∀ h, 0 < packetHull.hullWeight h
   perfectoidBridge : PerfectoidBridgeLaws
@@ -61,9 +60,7 @@ structure CanonicalInitialThetaScene1Input
       heightData ramification logVolume processionLength)
     p
     placeData bridge
-  thetaLiftLog : ThetaLiftLog
-    (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
-      heightData ramification logVolume processionLength)
+  theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i)
   packetCollationHull : PacketCollationHull
     (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
       heightData ramification logVolume processionLength)
@@ -140,14 +137,13 @@ private noncomputable def canonicalInputLaws
         q_parameter_nonzero := ?_
         q_norm_positive := ?_
         height_nonnegative := fun x => heightData.value_nonneg x
-        theta_norm_positive := ?_
+        theta_norm_positive := X.thetaScaling.norm_positive
         packet_weight_positive := ?_
         hull_weight_positive := ?_ }
     · intro w hw
       exact T.parameter_nonzero w hw
     · intro w hw
       exact T.norm_pos w hw
-    · exact X.theta_norm_positive
     · exact X.packet_weight_positive
     · exact X.hull_weight_positive
   · simpa [L, canonicalLink, AdelicThetaLinkData.ofInitialThetaData,
@@ -166,7 +162,9 @@ noncomputable def toScene1Input
       ramification logVolume processionLength X
     adelic_theta_link := canonicalAdelicThetaLink p D theta thetaBase packetHull
       heightData ramification logVolume processionLength X
-    theta_lift_log := X.thetaLiftLog
+    theta_lift_log :=
+      { log_shell := X.theta_log_shell
+        value_nonzero := X.thetaScaling.value_nonzero }
     packet_collation_hull := X.packetCollationHull
     volume_transfer := X.volumeTransfer }
 
