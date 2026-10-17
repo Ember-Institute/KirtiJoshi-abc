@@ -4581,3 +4581,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-TATE-LINK-BUNDLE-COR312` | `corollary312_of_canonicalInitialThetaLink_of_actualHullVolume_fromScene1Data` | 从真实 `Corollary312Scene1Data` 自动消费 volume、Tate q-family、normalization 与 `ell` side conditions，将 canonical Tate-link 条件和 actual hull volume 条件接入既有条件性 Corollary 3.12 定理。 | Scene1/Derived；proved / accepted |
 
 该包装仍要求 canonical link、degree-one、q-sum/paper-sum、actual hull volume 和 coverage 等外部条件；不构造论文 carrier、H¹ₑ/BK、different/untilt 或最终真实模型。
+
+### S1.463：canonical bundle 的 theta-volume 指数桥包装
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-TATE-LINK-BUNDLE-THETAVOLUME` | `canonicalScene1ThetaVolume_eq_exp_neg_procession_mul_absLogQ_fromScene1Data` | 直接消费真实 bundle 的 normalization 字段，将 canonical actual-hull volume 条件桥接为 `thetaVolume = exp (-(n * canonical absLogQ))`；canonical link、degree-one、actual hull volume 和 coverage 条件保持显式。 | Scene1/Derived；proved / accepted |
+
+该声明不识别论文 thetaVolume、H¹ₑ/BK、different/untilt 或最终联合模型。
