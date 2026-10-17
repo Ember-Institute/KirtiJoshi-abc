@@ -172,6 +172,40 @@ theorem degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum :
   exact canonicalTateQFamily_degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum
     p D (qFamily p D theta route thetaBase heightData ramification X) rfl rfl
 
+set_option maxHeartbeats 1000000 in
+theorem qProduct_le_hullVolume :
+    Corollary312Data.qProduct p
+        (data p D theta route thetaBase heightData ramification X)
+        (volumeData p D theta route thetaBase heightData ramification X).qFactor ≤
+      hullVolume D := by
+  unfold Corollary312Data.qProduct
+  change
+    (∏ i : (iutInitialThetaTateParameterData D).places,
+      ((iutInitialThetaTateParameterData D).norm i.1 ^
+        (1 / (2 * (D.prime.ℓ : ℝ)))) ^ (length D)) ≤ hullVolume D
+  have hProd :
+      (∏ i : (iutInitialThetaTateParameterData D).places,
+        ((iutInitialThetaTateParameterData D).norm i.1 ^
+          (1 / (2 * (D.prime.ℓ : ℝ)))) ^ (length D)) =
+        (∏ i : (iutInitialThetaTateParameterData D).places,
+          (iutInitialThetaTateParameterData D).norm i.1 ^
+            (1 / (2 * (D.prime.ℓ : ℝ)))) ^ (length D) := by
+    simpa using
+      (Finset.prod_pow (Finset.univ : Finset (iutInitialThetaTateParameterData D).places)
+        (length D)
+        (fun i : (iutInitialThetaTateParameterData D).places =>
+          (iutInitialThetaTateParameterData D).norm i.1 ^
+            (1 / (2 * (D.prime.ℓ : ℝ)))) )
+  rw [hProd]
+  change
+    (∏ i : (IutBaseQPilotSource.ofInitialThetaData D).badFinset,
+      (iutInitialThetaTateParameterData D).norm i.1 ^
+        (1 / (2 * (D.prime.ℓ : ℝ)))) ^ (length D) ≤ hullVolume D
+  simpa [Finset.prod_attach, InitialThetaRawQ.product, InitialThetaRawQ.factor,
+    iutInitialThetaTateParameterData] using
+    (InitialThetaRawQ.product_pow_le_actualVolume D (length D) (tuple D)
+      (tuple_liesOver D))
+
 theorem volumeNormalization : Corollary312VolumeNormalization p
     (data p D theta route thetaBase heightData ramification X) :=
   actualCostLink_volumeNormalization p D (length D) (tuple D) (tuple_liesOver D)
