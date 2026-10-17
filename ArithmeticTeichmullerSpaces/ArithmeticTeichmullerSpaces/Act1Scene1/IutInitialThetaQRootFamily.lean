@@ -340,6 +340,18 @@ theorem fullSupportRepresentativeCoefficientDefect_pos_of_exists_lt_one
   exact lt_of_lt_of_le hpos
     (Finset.single_le_sum (fun v _ => hnonneg v) (Finset.mem_univ v₀))
 
+theorem fullSupportRepresentativeCoefficientDefect_pos_of_vbad_nonempty :
+    0 < fullSupportRepresentativeCoefficientDefect D := by
+  apply fullSupportRepresentativeCoefficientDefect_pos_of_exists_lt_one D
+  obtain ⟨v, hv⟩ := D.global.bad_nonempty
+  have hvOdd : v ∈ iutVBadOddModSupportPort D :=
+    iutInitialThetaVBad_subset_VBadOdd D hv
+  let vFull : iutInitialThetaOddModSupportFinset D :=
+    ⟨v, (iutInitialThetaOddModSupport_finite D).mem_toFinset.mpr (by
+      exact hvOdd)⟩
+  refine ⟨vFull, ?_⟩
+  exact iutInitialThetaRepresentativeCoefficient_lt_one_on_vbad D vFull hv
+
 theorem qrootAt_log_sum_le_selectedPaperSum :
     (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
         Arithmetic.residueChar,

@@ -4721,3 +4721,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-COEFFICIENT-DEFECT-POSITIVE` | `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect_pos_of_exists_lt_one` | 若实际 full-support representative carrier 中存在一个 coefficient 严格小于一，则证明完整 coefficient defect 严格为正；每个 paper term 的正性与其余系数的非负缺陷均显式消费。 | Scene1/Derived；proved / conditional |
 
 该条件性结论不声称所有代表元 coefficient 都严格小于一；它只把严格 paper-sum gap 的局部充分条件公开化，不关闭 residue-degree 来源、论文 carrier、thetaVolume 或最终 Corollary 3.12。
+
+### S1.481：由实际 VBad 非空得到 full-support defect 严格正性
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-COEFFICIENT-DEFECT-VBAD-NONEMPTY` | `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect_pos_of_vbad_nonempty` | 消费 `InitialThetaData.global.bad_nonempty`、VBad 到 odd-support 的实际包含和 VBad representative coefficient 的严格小于一，得到 full-support coefficient defect 严格为正。 | Scene1/Derived；proved / accepted |
+
+该结果只证明代表系数缺陷为正，不消除缺陷或导出论文无权和等式；residue-degree accounting、论文 carrier、thetaVolume 和最终 Corollary 3.12 仍保持开放。
