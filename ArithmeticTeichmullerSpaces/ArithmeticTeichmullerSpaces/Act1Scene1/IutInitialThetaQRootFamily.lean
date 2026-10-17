@@ -630,6 +630,20 @@ theorem fullPaperSum_eq_qrootFamilySum_add_defects_of_support_eq
       rw [hPaperSum]
     _ = _ := by rw [hFamily'.symm]
 
+theorem fullPaperSum_eq_qrootFamilySum_add_defects_of_largePrime
+    (hVBad : D.VBad = {v | v ∈ IutOddMultiplicativeModSupport D ∧
+      Arithmetic.residueChar v ≠ D.prime.ℓ})
+    (hLarge : iutMultiplicativeResidueBound D.E < D.prime.ℓ) :
+    iutInitialThetaSelectedQRootPaperSum D =
+      (∑ q ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+          Arithmetic.residueChar,
+        Real.log q * qrootAtWeightedFiber D q) +
+        vbadRepresentativeCoefficientDefect D +
+          JoshiTeich.Act1Scene1.VBadSelectedPaper.omittedPaperSum D := by
+  exact fullPaperSum_eq_qrootFamilySum_add_defects_of_support_eq D
+    (iutInitialThetaOddMultiplicativeSupport_eq_badPlacesOver_of_largePrime
+      D hVBad hLarge)
+
 theorem vbadRepresentativeCoefficientDefect_nonneg :
     0 ≤ vbadRepresentativeCoefficientDefect D := by
   unfold vbadRepresentativeCoefficientDefect

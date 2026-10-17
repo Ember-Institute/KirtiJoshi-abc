@@ -4769,3 +4769,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-VBAD-PAPER-SUM` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_largePrime` | 将 large-prime 自动得到的完整 support equality 传入实际 `VBadSelectedPaper` 系数加权 accounting，保留 representative coefficient、paper term 和 VBad moduli carrier。 | Scene1/Derived；proved / conditional |
 
 该结果不消除 representative coefficient defect，不产生论文无权 representative sum，也不关闭 `V_p^oss`/`L'` 来源等式、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.487：large-prime 路线的完整 paper-sum 双缺陷分解
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-FULL-PAPER-DEFECTS` | `IutInitialThetaQRootFamily.fullPaperSum_eq_qrootFamilySum_add_defects_of_largePrime` | 将 large-prime 自动得到的完整 support equality 传入 full paper-sum 分解，保留 q-root family weighted sum、representative coefficient defect 和 omitted-support paper mass 三项。 | Scene1/Derived；proved / conditional |
+
+该结果不消除任一 defect，也不把系数加权和改写为论文无权和；`V_p^oss`/`L'` 来源等式、thetaVolume、H¹ₑ/BK 和最终 Corollary 3.12 仍开放。
