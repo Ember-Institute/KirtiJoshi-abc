@@ -6,6 +6,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotReferenceBrid
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedSupportDefect
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaReferenceCoefficientOrdinaryWeight
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLargePrimeSupport
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -443,6 +444,19 @@ theorem qrootAt_log_sum_eq_iut_absLogQ_of_support_eq
       intro p hp
       rw [hFiber]
     _ = _ := by simpa [B] using hFamily
+
+theorem qrootAt_log_sum_eq_iut_absLogQ_of_largePrime
+    (hVBad : D.VBad = {v | v ∈ IutOddMultiplicativeModSupport D ∧
+      Arithmetic.residueChar v ≠ D.prime.ℓ})
+    (hLarge : iutMultiplicativeResidueBound D.E < D.prime.ℓ) :
+    let B := iutInitialThetaOddSupportBaseQPilotSource D
+    ∑ p ∈ B.badFinset.image Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p =
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+  exact qrootAt_log_sum_eq_iut_absLogQ_of_support_eq D
+    (iutInitialThetaOddMultiplicativeSupport_eq_badPlacesOver_of_largePrime
+      D hVBad hLarge)
 
 theorem qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_support_eq
     {O : Type u} [CommRing O] (p : ℕ)

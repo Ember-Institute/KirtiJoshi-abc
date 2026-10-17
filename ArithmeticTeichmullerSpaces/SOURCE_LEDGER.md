@@ -4745,3 +4745,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-COVERAGE-CRITERION` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_selectedWeighted_of_coverage`, `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_selectedWeighted_iff_coverage` | 使用 selected/omitted base 分解及实际 omitted-log-sum 零当且仅当 support coverage，给出 q-root family weighted log-sum 等于 selected weighted contribution 的充分且必要条件。 | Scene1/Derived；proved / accepted |
 
 该判据只刻画 selected base support 是否覆盖 `IutOddMultiplicativeSupport`；它不提供 coverage，也不识别论文 `L'`/`V_p^oss`、无权 representative sum、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.484：large-prime 路线的 q-root family `absLogQ` bridge
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-ABSLOGQ` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_iut_absLogQ_of_largePrime` | 消费最大 prime-to-ell `VBad` 选择和曲线乘法支撑的有限 residue-characteristic 上界，自动得到完整 odd support 与 `badPlacesOver(VBad)` 的等式，再应用 q-root family 的 support-conditioned `absLogQ` bridge。 | Scene1/Derived；proved / conditional |
+
+该结果只消除 support equality 的重复调用条件；`hVBad` 与 large-prime 条件仍显式保留，不识别论文 `L'`/`V_p^oss`、无权 representative sum、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
