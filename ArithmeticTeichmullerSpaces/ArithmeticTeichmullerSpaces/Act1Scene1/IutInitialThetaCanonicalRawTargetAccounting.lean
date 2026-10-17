@@ -113,5 +113,21 @@ theorem canonicalTateQFamily_qLogSum_eq_degree_mul_reference
   exact hSum.trans (congrArg ((Module.finrank ℚ D.F : ℝ) * ·)
     (canonicalTateSource_absLogQ_eq_reference p D hEll hTate Q.compatibility))
 
+theorem canonicalTateScene1Data_qLogSum_eq_degree_mul_reference
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D) :
+    Corollary312Data.qLogSum p base.target =
+      (Module.finrank ℚ D.F : ℝ) *
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+  exact canonicalTateQFamily_qLogSum_eq_degree_mul_reference p D
+    base.qFamily hEll hTate
+
 end
 end JoshiTeich.Act1Scene1

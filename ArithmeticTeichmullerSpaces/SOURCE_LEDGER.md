@@ -4541,3 +4541,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-GENERIC-BRIDGE` | `PrincipalUnitKummer.qrootTateLog_as_generic` | 以定义等式把实际 `qrootTateLog` 暴露为通用 `KummerValuation.tateLog` 在实际 q-root 类和非单位证书上的实例，供后续消费者显式复用；不展开 ambient H¹ 分支公式。 | Scene1/Derived；proved / accepted |
 
 本桥接不新增假设，不改变 q-root/normalized 类的 ambient H¹ 身份，也不提供 H¹ₑ/BK、period 或 paper `thetaVolume` 等价。
+
+### S1.458：实际 Scene1 bundle 的 raw qLogSum/reference accounting
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-TATE-SCENE1-RAW-ACCOUNTING` | `canonicalTateScene1Data_qLogSum_eq_degree_mul_reference` | 将实际 `Corollary312Scene1Data.qFamily` 直接接入既有 Tate-only raw accounting，证明当前 raw `qLogSum` 等于 `[D.F : ℚ]` 乘 reference `absLogQ`；保留一般数域次数，不识别 paper 未加权代表和 theta-volume。 | Scene1/Derived；proved / accepted |
+
+该消费者只减少下游拆包负担，不新增 Prologue/Core 假设，也不改变 raw/degree-normalized 目标边界。
