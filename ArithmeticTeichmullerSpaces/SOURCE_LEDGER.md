@@ -4651,3 +4651,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-WEIGHTED-FIBER` | `IutInitialThetaQRootFamily.qrootAtWeightedFiber`, `IutInitialThetaQRootFamily.qrootAtWeightedFiber_eq_baseQOrder` | 定义实际 torsion-field place-weighted `ordp(qrootAt)` 求和，并复用完整 odd-support q-root accounting，证明它等于 base bad-place qOrder 求和；只对实际 q-root source carrier 求和，不识别论文 `L'` representatives 或无权 representative sum。 | Scene1/Derived；proved / accepted |
 
 该 fiber 等式覆盖 `ThetaLocalData.sum_weight_ordp_qroot` 的实际 weighted accounting 形状，但不构造 complete `ThetaLocalData` 的任意 base-place theorem、论文代表元会计或 theta-volume identity。
+
+### S1.472：q-root family weighted log-sum 到实际 q-pilot absLogQ
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-ABSLOGQ` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_iut_absLogQ_of_support_eq` | 在显式 `IutOddMultiplicativeSupport D = badPlacesOver(D.VBad)` 条件下，将 family weighted fiber 的 residue-characteristic log-sum 接到实际 `ReferenceIut.QPilotData.absLogQ`；通过共同 base q-order accounting 比较 family 与 odd-support source。 | Scene1/Derived；proved / conditional |
+
+该包装不证明 support equality，不识别论文 `L'`/`V_p^oss` representatives、无权 accounting、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。

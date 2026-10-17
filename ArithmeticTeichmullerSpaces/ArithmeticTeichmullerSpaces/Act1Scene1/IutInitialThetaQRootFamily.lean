@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperBallProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootIntegralThreshold
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRootAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportCanonicalAbsLogQ
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -182,6 +183,35 @@ theorem qrootAtWeightedFiber_eq_baseQOrder
       · simp [h, qrootAt]
       · simp [h]
     _ = _ := IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber_eq_baseQOrder D p
+
+theorem qrootAt_log_sum_eq_iut_absLogQ_of_support_eq
+    (hSupport : IutOddMultiplicativeSupport D =
+      JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    let B := iutInitialThetaOddSupportBaseQPilotSource D
+    ∑ p ∈ B.badFinset.image Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p =
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+  classical
+  let B := iutInitialThetaOddSupportBaseQPilotSource D
+  have hFamily :=
+    iutInitialThetaOddSupportWeighted_logSum_eq_reference_absLogQ_of_support_eq
+      D hSupport
+  have hFiber (p : ℕ) :
+      qrootAtWeightedFiber D p =
+        IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber D p := by
+    rw [qrootAtWeightedFiber_eq_baseQOrder,
+      IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber_eq_baseQOrder]
+  change ∑ p ∈ B.badFinset.image Arithmetic.residueChar,
+      Real.log p * qrootAtWeightedFiber D p = _
+  calc
+    _ = ∑ p ∈ B.badFinset.image Arithmetic.residueChar,
+        Real.log p *
+          IutTorsionQRootSource.iutInitialThetaOddSupportWeightedFiber D p := by
+      apply Finset.sum_congr rfl
+      intro p hp
+      rw [hFiber]
+    _ = _ := by simpa [B] using hFamily
 
 end IutInitialThetaQRootFamily
 

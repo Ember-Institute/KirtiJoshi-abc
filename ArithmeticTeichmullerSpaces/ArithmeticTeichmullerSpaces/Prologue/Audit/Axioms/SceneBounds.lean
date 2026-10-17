@@ -1825,6 +1825,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_ordp_eq_baseQOrder
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAtWeightedFiber
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAtWeightedFiber_eq_baseQOrder
+#print axioms JoshiTeich.Act1Scene1.IutInitialThetaQRootFamily.qrootAt_log_sum_eq_iut_absLogQ_of_support_eq
 
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog_unit
