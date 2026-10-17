@@ -4627,3 +4627,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-POWER` | `IutInitialThetaQRootFamily.badChars_prime`, `IutInitialThetaQRootFamily.qrootAt_pow_eq_of_mem_badFinset` | 消费上一单元的实际 family 与现有 `IutTorsionQRootSource.qroot_pow_eq`，证明坏 residue characteristics 为素数，并把 `qrootAt` 在坏处还原为真实 q-root power equation。对应 iut `ThetaLocalData.badChars_prime` 与 `qroot_pow`；不构造 concrete `LocalTheory` 或全局 `ThetaLocalData`。 | Scene1/Derived；proved / accepted |
+
+### S1.469：q-root family 的坏处严格收缩与 admissible-prime 幂方程
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY-CONTRACTION` | `IutInitialThetaQRootFamily.qrootAt_norm_lt_one_of_mem_badFinset`, `IutInitialThetaQRootFamily.qrootAt_pow_eq_admissiblePrime` | 在实际坏处 family 上复用真实 q-root 的严格范数界，并将坏处 `qrootAt` 的 `2 * ℓ` 次幂方程桥接到 `D.prime.tate` 的 admissible-prime q。普通处仍是定义性的 `1`，不把严格收缩推广到全体 finite places。 | Scene1/Derived；proved / accepted |
+
+该单元只补足 family 的局部 contraction 与实际坏处 Tate 参数接口，不构造 concrete `LocalTheory`、完整 `ThetaLocalData`、theta-pilot region 或 paper theta-volume。

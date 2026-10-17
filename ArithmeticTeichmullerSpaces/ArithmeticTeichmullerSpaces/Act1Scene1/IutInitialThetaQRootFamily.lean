@@ -95,6 +95,30 @@ theorem qrootAt_pow_eq_of_mem_badFinset
   · exact (iutInitialThetaOddSupportTorsionQRootSource D).qroot_pow_eq ⟨v, hv⟩
   · exact (h hv).elim
 
+theorem qrootAt_norm_lt_one_of_mem_badFinset
+    (v : NumberField.FinitePlace ↥D.prime.torsionField)
+    (hv : v ∈ (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    ‖qrootAt D v‖ < 1 := by
+  unfold qrootAt
+  split_ifs with h
+  · exact iutInitialThetaFullQRoot_norm_lt_one D ⟨v, h⟩
+  · exact (h hv).elim
+
+theorem qrootAt_pow_eq_admissiblePrime
+    (v : NumberField.FinitePlace ↥D.prime.torsionField)
+    (hv : v ∈ (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hw : ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace
+      ⟨v, hv⟩).1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    qrootAt D v ^ (2 * D.prime.ℓ) =
+      (iutInitialThetaOddSupportTorsionQRootSource D).completionMap ⟨v, hv⟩
+        ((D.prime.tate
+          ((iutInitialThetaOddSupportTorsionQRootSource D).basePlace ⟨v, hv⟩).1 hw).q) := by
+  unfold qrootAt
+  split_ifs with h
+  · exact iutInitialThetaOddSupportTorsionQRootSource_qroot_pow_eq_admissiblePrime
+      D ⟨v, h⟩ hw
+  · exact (h hv).elim
+
 end IutInitialThetaQRootFamily
 
 end
