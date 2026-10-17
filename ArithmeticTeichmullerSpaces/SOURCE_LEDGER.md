@@ -4605,3 +4605,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-VBAD-COEFFICIENT-BUNDLE` | `canonicalScene1AbsLogQ_eq_vbadCoefficientWeightedPaperSum_fromScene1Data` | 直接将 canonical q-pilot 的 `absLogQ` 接到实际 VBad 系数加权 paper-sum，自动消费真实 `Scene1Data` 的 canonical bundle 输入；保留实际 VBad carrier 和 ramification coefficient，不声称完整论文 `V_p^oss/L'` 身份。 | Scene1/Derived；proved / accepted |
 
 该包装不识别 H¹ₑ/BK、different/untilt 或 thetaVolume，也不关闭 G3 的完整代表元与重数会计。
+
+### S1.466：实际 q-root 与 normalized principal-unit 类的线性独立
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-NORMALIZED-LINEAR-INDEPENDENT` | `PrincipalUnitKummer.qroot_normalized_linearIndependent` | 消费实际 q-root 类不在 normalized 类单生成子空间，以及 q-root 非零的既有定理，使用 Mathlib `linearIndependent_fin2` 打包为二元线性独立证书。Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
+
+该证书只说明 ambient rational H¹ 中两条实际类方向线性独立，不识别任一方向为 H¹ₑ/BK、crystalline、different untilt 或 paper thetaVolume。
