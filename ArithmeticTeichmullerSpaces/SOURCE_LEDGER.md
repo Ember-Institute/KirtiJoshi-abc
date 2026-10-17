@@ -4597,3 +4597,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-TATE-LINK-BUNDLE-QPRODUCT` | `canonicalScene1Exp_neg_procession_mul_absLogQ_ge_qProduct_fromScene1Data` | 将 canonical theta-volume 指数下界直接包装到真实 `Corollary312Scene1Data`，自动消费其 volume、Tate q-family、normalization 和 q-factor；canonical link、degree-one、q-sum/paper-sum、actual hull volume 与 coverage 条件保持显式。 | Scene1/Derived；proved / accepted |
 
 该包装不构造论文 thetaVolume、H¹ₑ/BK、different/untilt 或最终联合模型。
+
+### S1.465：canonical bundle 的 VBad 系数加权 paper-sum 包装
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-VBAD-COEFFICIENT-BUNDLE` | `canonicalScene1AbsLogQ_eq_vbadCoefficientWeightedPaperSum_fromScene1Data` | 直接将 canonical q-pilot 的 `absLogQ` 接到实际 VBad 系数加权 paper-sum，自动消费真实 `Scene1Data` 的 canonical bundle 输入；保留实际 VBad carrier 和 ramification coefficient，不声称完整论文 `V_p^oss/L'` 身份。 | Scene1/Derived；proved / accepted |
+
+该包装不识别 H¹ₑ/BK、different/untilt 或 thetaVolume，也不关闭 G3 的完整代表元与重数会计。
