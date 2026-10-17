@@ -4,6 +4,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQRootAcco
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportCanonicalAbsLogQ
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotReferenceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedSupportDefect
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -276,6 +277,77 @@ theorem qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_support_eq
   change ∑ q ∈ B.badFinset.image Arithmetic.residueChar,
       Real.log q * qrootAtWeightedFiber D q = _
   exact hFamily.trans hPaper
+
+def vbadRepresentativeCoefficientDefect : ℝ :=
+  ∑ v : iutInitialThetaVBadModuliFinset D,
+    (1 - iutInitialThetaRepresentativeCoefficient D
+        (iutInitialThetaVBadModuliAt D v)) *
+      VBadSelectedPaper.paperTerm D v
+
+theorem fullPaperSum_eq_qrootFamilySum_add_defects_of_support_eq
+    (hSupport : IutOddMultiplicativeSupport D =
+      JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad) :
+    iutInitialThetaSelectedQRootPaperSum D =
+      (∑ q ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+          Arithmetic.residueChar,
+        Real.log q * qrootAtWeightedFiber D q) +
+        vbadRepresentativeCoefficientDefect D +
+          JoshiTeich.Act1Scene1.VBadSelectedPaper.omittedPaperSum D := by
+  classical
+  let wsum : ℝ := ∑ v : iutInitialThetaVBadModuliFinset D,
+    iutInitialThetaRepresentativeCoefficient D
+        (iutInitialThetaVBadModuliAt D v) *
+      VBadSelectedPaper.paperTerm D v
+  have hPaperUnweighted :
+      JoshiTeich.Act1Scene1.VBadSelectedPaper.paperSum D =
+        ∑ v : iutInitialThetaVBadModuliFinset D,
+          JoshiTeich.Act1Scene1.VBadSelectedPaper.paperTerm D v := by
+    calc
+      JoshiTeich.Act1Scene1.VBadSelectedPaper.paperSum D =
+          ∑ s : ↥(JoshiTeich.Act1Scene1.VBadSelectedPaper.selectedFinset D),
+            -Real.log (actualPaperRootNorm D s.1) :=
+        JoshiTeich.Act1Scene1.VBadSelectedPaper.paperSum_eq_selectedRootLogSum D
+      _ = ∑ v : iutInitialThetaVBadModuliFinset D,
+          JoshiTeich.Act1Scene1.VBadSelectedPaper.paperTerm D v := by
+        simpa [JoshiTeich.Act1Scene1.VBadSelectedPaper.paperTerm,
+          JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceAt,
+          JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceEquiv] using
+          ((JoshiTeich.Act1Scene1.VBadSelectedPaper.sourceEquiv D).sum_comp
+            (fun s : ↥(JoshiTeich.Act1Scene1.VBadSelectedPaper.selectedFinset D) =>
+              -Real.log (actualPaperRootNorm D s.1))).symm
+  have hPaperSum : VBadSelectedPaper.paperSum D =
+      wsum + vbadRepresentativeCoefficientDefect D := by
+    rw [hPaperUnweighted]
+    unfold wsum vbadRepresentativeCoefficientDefect
+    rw [← Finset.sum_add_distrib]
+    apply Finset.sum_congr rfl
+    intro v hv
+    ring
+  have hFamily :=
+    qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_support_eq D hSupport
+  have hFamily' :
+      (∑ q ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar, Real.log q * qrootAtWeightedFiber D q) = wsum := by
+    simpa [wsum] using hFamily
+  calc
+    iutInitialThetaSelectedQRootPaperSum D =
+        JoshiTeich.Act1Scene1.VBadSelectedPaper.paperSum D +
+          JoshiTeich.Act1Scene1.VBadSelectedPaper.omittedPaperSum D :=
+      JoshiTeich.Act1Scene1.VBadSelectedPaper.fullPaperSum_eq_selected_add_omitted D
+    _ = wsum + vbadRepresentativeCoefficientDefect D +
+          JoshiTeich.Act1Scene1.VBadSelectedPaper.omittedPaperSum D := by
+      rw [hPaperSum]
+    _ = _ := by rw [hFamily'.symm]
+
+theorem vbadRepresentativeCoefficientDefect_nonneg :
+    0 ≤ vbadRepresentativeCoefficientDefect D := by
+  unfold vbadRepresentativeCoefficientDefect
+  apply Finset.sum_nonneg
+  intro v hv
+  have hCoeff := iutInitialThetaRepresentativeCoefficient_mem_Ioc D
+    (iutInitialThetaVBadModuliAt D v)
+  exact mul_nonneg (sub_nonneg.mpr hCoeff.2)
+    (VBadSelectedPaper.paperTerm_pos D v).le
 
 end IutInitialThetaQRootFamily
 
