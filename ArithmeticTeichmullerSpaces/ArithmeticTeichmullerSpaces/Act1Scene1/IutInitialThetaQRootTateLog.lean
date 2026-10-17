@@ -54,6 +54,24 @@ def qrootTateLog
     (qrootClass D s) (qrootRationalKummerClass_not_mem_unitsSubspace D s)
 
 set_option maxHeartbeats 1000000 in
+theorem qrootTateLog_eq_ambientLog_sub
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (x : continuousCohomology 1 (LocalKummer.Rational.topRep
+      (K := localField D s) (Ω := closure D s) (Arithmetic.residueChar s.1))) :
+    qrootTateLog D s x =
+      LocalCompletion.KummerValuation.ambientLog s.1
+          (Arithmetic.residueChar s.1) rfl x -
+        (LocalCompletion.KummerValuation.valuationCoordinate s.1
+            (Arithmetic.residueChar s.1) rfl x /
+          LocalCompletion.KummerValuation.valuationCoordinate s.1
+            (Arithmetic.residueChar s.1) rfl (qrootClass D s)) •
+          LocalCompletion.KummerValuation.ambientLog s.1
+            (Arithmetic.residueChar s.1) rfl (qrootClass D s) := by
+  exact LocalCompletion.KummerValuation.tateLog_eq_ambientLog_sub
+    s.1 (Arithmetic.residueChar s.1) rfl (qrootClass D s)
+    (qrootRationalKummerClass_not_mem_unitsSubspace D s) x
+
+set_option maxHeartbeats 1000000 in
 theorem qrootTateLog_qroot
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     qrootTateLog D s (qrootClass D s) = 0 := by

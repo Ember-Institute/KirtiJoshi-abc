@@ -4538,7 +4538,7 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
-| `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-GENERIC-BRIDGE` | `PrincipalUnitKummer.qrootTateLog_as_generic` | 以定义等式把实际 `qrootTateLog` 暴露为通用 `KummerValuation.tateLog` 在实际 q-root 类和非单位证书上的实例，供后续消费者显式复用；不展开 ambient H¹ 分支公式。 | Scene1/Derived；proved / accepted |
+| `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-GENERIC-BRIDGE` | `PrincipalUnitKummer.qrootTateLog_as_generic`, `PrincipalUnitKummer.qrootTateLog_eq_ambientLog_sub` | 以定义等式把实际 `qrootTateLog` 暴露为通用 `KummerValuation.tateLog` 在实际 q-root 类和非单位证书上的实例；新增消费者直接复用通用分支定理，给出其在实际 q-root 上的 ambient-log/valuation-coordinate 公式，不重新展开该实际数据。公式在 `maxHeartbeats 1000000` 下通过。 | Scene1/Derived；proved / accepted |
 
 本桥接不新增假设，不改变 q-root/normalized 类的 ambient H¹ 身份，也不提供 H¹ₑ/BK、period 或 paper `thetaVolume` 等价。
 

@@ -1811,6 +1811,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSaturatedKummerLog
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.qrootTateLog_normalizedRationalClass_ne_zero
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.qrootTateLog_continuous
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.qrootTateLog_as_generic
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.qrootTateLog_eq_ambientLog_sub
 
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog
 #print axioms JoshiTeich.Act1Scene1.LocalCompletion.KummerValuation.ambientLog_unit
