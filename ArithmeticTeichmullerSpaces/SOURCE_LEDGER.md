@@ -4613,3 +4613,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-NORMALIZED-LINEAR-INDEPENDENT` | `PrincipalUnitKummer.qroot_normalized_linearIndependent` | 消费实际 q-root 类不在 normalized 类单生成子空间，以及 q-root 非零的既有定理，使用 Mathlib `linearIndependent_fin2` 打包为二元线性独立证书。Joshi III 3190–3236；原创，无参考源码复制。 | Scene1/Derived；proved / accepted |
 
 该证书只说明 ambient rational H¹ 中两条实际类方向线性独立，不识别任一方向为 H¹ₑ/BK、crystalline、different untilt 或 paper thetaVolume。
+
+### S1.467：实际 InitialTheta q-root family 的支撑与正性
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-FAMILY` | `IutInitialThetaQRootFamily.badChars`, `qrootAt`, `qrootAt_ne_zero`, `qrootAt_ordp_nonneg`, `qrootAt_eq_one_of_residueChar_not_mem_badChars`, `residueChar_mem_badChars_of_mem_badFinset` | 依据 iut `ThetaLocalData`/`thetaLocalData` 的全局 family 形状，在实际 torsion-field finite places 上坏处使用现有真实 q-root，其余处使用 `1`；非零、非负 `ordp` 和坏特征支撑由实际 q-root norm/root source 派生。iut concrete local-theory carrier、completion embedding 与 root power law仍由现有 source 单独提供，未被隐藏在此定义中。 | Scene1/Derived；proved / accepted |
+
+该生产者只提供 q-root family 的基本 carrier 条件，不声称已构造完整 `ThetaLocalData`、concrete `LocalTheory`、theta-pilot region 或 paper theta-volume。
