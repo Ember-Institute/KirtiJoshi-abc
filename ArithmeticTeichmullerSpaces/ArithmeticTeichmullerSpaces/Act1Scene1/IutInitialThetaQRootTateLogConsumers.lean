@@ -92,5 +92,13 @@ theorem qrootTateLog_continuous
     (Arithmetic.residueChar s.1) rfl (qrootClass D s)
       (qrootRationalKummerClass_not_mem_unitsSubspace D s)
 
+set_option maxHeartbeats 4000000 in
+theorem qrootTateLog_as_generic
+    (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
+    qrootTateLog D s =
+      LocalCompletion.KummerValuation.tateLog s.1
+        (Arithmetic.residueChar s.1) rfl (qrootClass D s)
+          (qrootRationalKummerClass_not_mem_unitsSubspace D s) := rfl
+
 end
 end JoshiTeich.Act1Scene1.PrincipalUnitKummer

@@ -4533,3 +4533,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-CONTINUOUS` | `PrincipalUnitKummer.qrootTateLog_continuous` | 将通用 `tateLog_continuous` 实例化到实际 contracting q-root；连续性来自原 ambient rational H¹ 的有限维商拓扑与显式非单位证书。保持 q-root Tate-log 为 ambient H¹ 分支，不识别 H¹ₑ/BK、period 或 paper `thetaVolume`。 | Scene1/Derived；proved / accepted |
 
 本单元没有新增 Prologue/Core 假设，也没有改变 q-root、normalized 类和 ambient H¹ 的边界身份。
+
+### S1.457：实际 q-root Tate-log 的通用分支桥接
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-QROOT-TATE-LOG-GENERIC-BRIDGE` | `PrincipalUnitKummer.qrootTateLog_as_generic` | 以定义等式把实际 `qrootTateLog` 暴露为通用 `KummerValuation.tateLog` 在实际 q-root 类和非单位证书上的实例，供后续消费者显式复用；不展开 ambient H¹ 分支公式。 | Scene1/Derived；proved / accepted |
+
+本桥接不新增假设，不改变 q-root/normalized 类的 ambient H¹ 身份，也不提供 H¹ₑ/BK、period 或 paper `thetaVolume` 等价。
