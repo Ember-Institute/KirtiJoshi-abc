@@ -4836,6 +4836,14 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 
 该等式保留 qPilot 权重、source carrier 与 paper-normalized local factor，不证明无权 paper representative sum，也不冻结最终 Corollary 3.12 归一化。
 
+### S1.498：degree-normalized qLogSum 到 grouped weighted paper-normalized sum
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-DEGREE-NORMALIZED-GROUPED-PAPER-QLOGSUM` | `canonicalTateQFamily_degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum` | 将 degree-normalized canonical raw qLogSum 直接接到同一 Tate q-family 的 finite source-index grouped weighted paper-normalized sum，消费已有 source-index equivalence。 | Scene1/Derived；proved / conditional |
+
+该 grouped bridge 保留 qPilot 权重和 paper-normalized factor，不识别无权 paper representatives 或最终 q-factor 目标。
+
 ### S1.493：canonical raw qLogSum 接入实际 ordinary-log hull volume
 
 | source-id | declarations | source / fidelity | boundary / status |

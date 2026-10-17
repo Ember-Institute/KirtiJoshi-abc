@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalQPilotPaperBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQPilotTargetAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQAccountingBridge
 
 /-!
 source-id: JT-SCENE1-CANONICAL-TARGET-PAPER-NORMALIZED-BRIDGE
@@ -109,6 +110,32 @@ theorem canonicalTateQFamily_degreeNormalized_qLogSum_eq_weightedPaperNormalized
   have hDegree : (Module.finrank ℚ D.F : ℝ) ≠ 0 :=
     ne_of_gt Arithmetic.finrank_pos
   rw [hRaw]
+  field_simp
+
+theorem canonicalTateQFamily_degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p} {V : Corollary312VolumeData p T}
+    (Q : Corollary312TateQFamily p T V)
+    (hEll : T.ell = D.prime.ℓ)
+    (hTate : T.scene1.data.link.tate = iutInitialThetaTateParameterData D) :
+    Corollary312Data.qLogSum p T / (Module.finrank ℚ D.F : ℝ) =
+      Corollary312WeightedPaperNormalizedSourceQLogSum p T Q.grouping := by
+  let S := IutQPilotSource.ofInitialThetaCanonicalTateData D p hEll hTate Q.compatibility
+  let P := S.toSceneQPilot p Q.compatibility
+  have hRaw := canonicalTateQFamily_qLogSum_eq_degree_mul_reference p D Q hEll hTate
+  have href := canonicalTateSource_absLogQ_eq_reference p D hEll hTate Q.compatibility
+  have hell : 0 < T.ell := by rw [hEll]; exact D.prime.ℓ_prime.pos
+  have hpaper := Corollary312QPilotSourceIndexBridge.absLogQ_eq_weightedPaperNormalizedSourceQLogSum
+    p S.orderCompatibility (S.toSceneQPilot_rawQNormDegreeNormalization p Q.compatibility)
+    hell (Corollary312QPilotSourceIndexBridge.ofGrouping p T V P Q)
+  have hDegree : (Module.finrank ℚ D.F : ℝ) ≠ 0 :=
+    ne_of_gt Arithmetic.finrank_pos
+  rw [hRaw, href.symm, hpaper]
   field_simp
 
 end
