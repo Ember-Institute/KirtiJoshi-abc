@@ -4549,3 +4549,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-TATE-SCENE1-RAW-ACCOUNTING` | `canonicalTateScene1Data_qLogSum_eq_degree_mul_reference` | 将实际 `Corollary312Scene1Data.qFamily` 直接接入既有 Tate-only raw accounting，证明当前 raw `qLogSum` 等于 `[D.F : ℚ]` 乘 reference `absLogQ`；保留一般数域次数，不识别 paper 未加权代表和 theta-volume。 | Scene1/Derived；proved / accepted |
 
 该消费者只减少下游拆包负担，不新增 Prologue/Core 假设，也不改变 raw/degree-normalized 目标边界。
+
+### S1.459：实际 Scene1 bundle 的 raw hull transfer 包装
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-RAW-SCENE1-BUNDLE-TRANSFER` | `canonicalRawScene1Data_transferLogBound_of_actualHullVolume` | 直接消费真实 `Corollary312Scene1Data` 的 volume、q-family、normalization 和 link transfer 字段，复用 raw hull transfer 定理；`hvolume`、generator coverage、normalization containment 与 Tate-family 等式仍显式保留。 | Scene1/Derived；proved / accepted |
+
+该包装不构造真实 paper `thetaVolume` 身份，不识别 H¹ₑ/BK，也不把条件性 actual hull 等式提升为最终 Corollary 3.12。
