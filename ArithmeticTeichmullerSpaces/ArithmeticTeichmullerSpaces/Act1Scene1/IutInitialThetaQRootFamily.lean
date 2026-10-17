@@ -5,6 +5,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFullSupportCanonica
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotReferenceBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedSupportDefect
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaReferenceCoefficientOrdinaryWeight
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-QROOT-FAMILY
@@ -298,6 +299,20 @@ theorem fullSupportRepresentativeCoefficientDefect_nonneg :
   have hTerm : 0 ≤ fullSupportRepresentativePaperTerm D v :=
     neg_nonneg.mpr (Real.log_nonpos hRoot.1.le hRoot.2.le)
   exact mul_nonneg (sub_nonneg.mpr hCoeff.2) hTerm
+
+theorem fullSupportRepresentativeCoefficientDefect_eq_residueDegreeFormula :
+    fullSupportRepresentativeCoefficientDefect D =
+      ∑ v : iutInitialThetaOddModSupportFinset D,
+        (1 - FullSupportPaperWeightedHull.weight D v *
+          ((Arithmetic.inertDeg
+              (FullSupportPaperWeightedHull.selected D v).1 : ℝ) /
+            Module.finrank ℚ
+              ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))) *
+          fullSupportRepresentativePaperTerm D v := by
+  unfold fullSupportRepresentativeCoefficientDefect
+  apply Finset.sum_congr rfl
+  intro v hv
+  rw [OrdinaryKummerLogHull.representativeCoefficient_eq_ordinaryWeight_mul_sourceInertDeg_ratio]
 
 theorem qrootAt_log_sum_le_selectedPaperSum :
     (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image

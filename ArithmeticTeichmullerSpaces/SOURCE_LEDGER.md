@@ -4705,3 +4705,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-SELECTED-SUM-COEFFICIENT-CRITERION` | `IutInitialThetaQRootFamily.qrootAt_log_sum_le_selectedPaperSum`, `IutInitialThetaQRootFamily.qrootAt_log_sum_lt_selectedPaperSum`, `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_selectedPaperSum_iff_coefficients_eq_one` | 将实际 family 的完整 odd-support weighted sum 接到 full-base q-pilot sum，复用代表系数 accounting，给出 selected paper sum 的上界、由实际系数严格小于一得到的严格界，以及相等的精确充要条件。 | Scene1/Derived；proved / accepted |
 
 这些结果不构造论文 `L'` representative 身份，也不把实际 q-pilot 权重或代表系数替换为无权 paper sum；q-factor normalization、thetaVolume 和最终 Corollary 3.12 仍未冻结。
+
+### S1.479：full-support coefficient defect 的 residue-degree 展开
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-COEFFICIENT-RESIDUE-DEGREE-FORMULA` | `IutInitialThetaQRootFamily.fullSupportRepresentativeCoefficientDefect_eq_residueDegreeFormula` | 将完整 support representative coefficient defect 展开为 `1 - ordinaryWeight * (selected source inertial/residue degree / moduli global degree)` 乘 paper term 的有限和，消费现有 actual coefficient/ordinary-weight ratio 定理。该公式保留 residue-degree 比例，不假设其等于一。 | Scene1/Derived；proved / accepted |
+
+该展开只澄清代表元系数缺陷的算术来源，不关闭论文 carrier、无权 accounting、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
