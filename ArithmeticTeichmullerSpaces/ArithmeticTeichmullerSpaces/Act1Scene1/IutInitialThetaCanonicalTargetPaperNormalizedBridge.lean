@@ -84,5 +84,32 @@ theorem canonicalTateQFamily_qLogSum_eq_degree_mul_weightedPaperNormalizedSource
     p T P S.orderCompatibility (S.toSceneQPilot_rawQNormDegreeNormalization p Q.compatibility) hell
   exact hraw.trans (congrArg ((Module.finrank ℚ D.F : ℝ) * ·) (href.symm.trans hpaper))
 
+theorem canonicalTateQFamily_degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQFactorLogSum
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p} {V : Corollary312VolumeData p T}
+    (Q : Corollary312TateQFamily p T V)
+    (hEll : T.ell = D.prime.ℓ)
+    (hTate : T.scene1.data.link.tate = iutInitialThetaTateParameterData D) :
+    let S := IutQPilotSource.ofInitialThetaCanonicalTateData D p hEll hTate Q.compatibility
+    let P := S.toSceneQPilot p Q.compatibility
+    Corollary312Data.qLogSum p T / (Module.finrank ℚ D.F : ℝ) =
+      ∑ w : P.badFinset,
+        Arithmetic.qPilotWeight w.1 *
+          -Real.log (Corollary312PaperNormalizedSourceQFactor p T
+            (show Corollary312SourceQIndex p T from ⟨w.1, P.mem_bad p w.2⟩)) := by
+  let S := IutQPilotSource.ofInitialThetaCanonicalTateData D p hEll hTate Q.compatibility
+  let P := S.toSceneQPilot p Q.compatibility
+  have hRaw := canonicalTateQFamily_qLogSum_eq_degree_mul_weightedPaperNormalizedSourceQFactorLogSum
+    p D Q hEll hTate
+  have hDegree : (Module.finrank ℚ D.F : ℝ) ≠ 0 :=
+    ne_of_gt Arithmetic.finrank_pos
+  rw [hRaw]
+  field_simp
+
 end
 end JoshiTeich.Act1Scene1

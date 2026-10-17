@@ -4828,6 +4828,14 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 
 该投影不冻结 Corollary 3.12 的最终 q-factor、paper `C_p` norm 或无权 representative 目标，也不关闭 thetaVolume、H¹ₑ/BK 和最终联合模型。
 
+### S1.497：degree-normalized raw qLogSum 到 weighted paper-normalized source sum
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-DEGREE-NORMALIZED-PAPER-QLOGSUM` | `canonicalTateQFamily_degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQFactorLogSum` | 将一般数域 raw qLogSum 的 degree factor 除去，精确得到同一 canonical q-pilot carrier 上的 qPilot-weighted paper-normalized source-factor sum。 | Scene1/Derived；proved / conditional |
+
+该等式保留 qPilot 权重、source carrier 与 paper-normalized local factor，不证明无权 paper representative sum，也不冻结最终 Corollary 3.12 归一化。
+
 ### S1.493：canonical raw qLogSum 接入实际 ordinary-log hull volume
 
 | source-id | declarations | source / fidelity | boundary / status |
