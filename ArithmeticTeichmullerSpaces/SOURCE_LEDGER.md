@@ -4565,3 +4565,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-RAW-SCENE1-BUNDLE-THETAVOLUME` | `canonicalRawScene1Data_thetaVolume_ge_qProduct_of_actualHullVolume` | 将 raw hull transfer 下界直接包装到真实 `Corollary312Scene1Data`，得到 `thetaVolume ≥ qProduct`；actual hull volume、coverage、normalization 和 Tate-family 等式保持显式。 | Scene1/Derived；proved / accepted |
 
 该结论仍是 actual hull 条件消费者，不构造论文 `thetaVolume` 身份，不识别 H¹ₑ/BK，不关闭最终 Corollary 3.12。
+
+### S1.461：实际 Scene1 bundle 的条件性 Corollary 3.12 包装
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-RAW-SCENE1-BUNDLE-COR312` | `corollary312_of_canonicalRawScene1Data_of_actualHullVolume` | 将已有 raw hull `Corollary312` 消费者直接应用于真实 `Corollary312Scene1Data`；保留 `0 < n`、`ellStar = n`、actual hull volume、coverage、normalization 和 Tate-family 等式。 | Scene1/Derived；proved / accepted |
+
+该声明是条件性 bundle 包装，不证明真实 paper carrier、theta-volume、H¹ₑ/BK、different/untilt 或最终联合模型。

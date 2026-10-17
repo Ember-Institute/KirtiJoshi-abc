@@ -121,5 +121,20 @@ theorem corollary312_of_canonicalRawTateFamily_of_actualHullVolume
   rw [hlength, hvolume]
   exact htarget.trans hbound
 
+omit V Q hEll hTate in
+include hgen hunit in
+theorem corollary312_of_canonicalRawScene1Data_of_actualHullVolume
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hn : 0 < n)
+    (hlength : base.target.ellStar = n)
+    (hvolume : base.target.thetaVolume = VBadThetaCollatedHull.volume D n σ hσ C) :
+    Corollary312 p base.target := by
+  exact corollary312_of_canonicalRawTateFamily_of_actualHullVolume
+    p D base.target base.volume base.qFamily hEll hTate n σ hσ C hgen hunit
+    hn hlength hvolume
+
 end
 end JoshiTeich.Act1Scene1
