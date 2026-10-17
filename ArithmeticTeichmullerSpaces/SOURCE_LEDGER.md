@@ -4737,3 +4737,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-SELECTED-OMITTED-BASE-DECOMPOSITION` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_selectedWeighted_add_omitted` | 将完整 odd-support q-root family weighted log-sum 精确拆为 section-selected weighted q-root contribution 与 omitted base q-pilot contribution，消费实际 `iutInitialThetaFullBaseQPilotLogSum_eq_selected_add_omitted`。 | Scene1/Derived；proved / accepted |
 
 该分解不假设 support coverage，也不识别 selected carrier 为论文 `L'`/`V_p^oss`；omitted contribution、residue-degree coefficients、thetaVolume、H¹ₑ/BK 和最终 Corollary 3.12 仍显式保留。
+
+### S1.483：q-root family selected weighted 和的 coverage 判据
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-COVERAGE-CRITERION` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_selectedWeighted_of_coverage`, `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_selectedWeighted_iff_coverage` | 使用 selected/omitted base 分解及实际 omitted-log-sum 零当且仅当 support coverage，给出 q-root family weighted log-sum 等于 selected weighted contribution 的充分且必要条件。 | Scene1/Derived；proved / accepted |
+
+该判据只刻画 selected base support 是否覆盖 `IutOddMultiplicativeSupport`；它不提供 coverage，也不识别论文 `L'`/`V_p^oss`、无权 representative sum、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。

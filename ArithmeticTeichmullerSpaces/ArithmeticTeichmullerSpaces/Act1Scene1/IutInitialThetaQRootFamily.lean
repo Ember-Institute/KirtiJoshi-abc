@@ -235,6 +235,34 @@ theorem qrootAt_log_sum_eq_selectedWeighted_add_omitted :
   rw [qrootAt_log_sum_eq_fullBaseQPilotLogSum,
     iutInitialThetaFullBaseQPilotLogSum_eq_selected_add_omitted]
 
+theorem qrootAt_log_sum_eq_selectedWeighted_of_coverage
+    (hcover :
+      iutInitialThetaOddSupportSelectedBasePlaces D =
+        IutOddMultiplicativeSupport D) :
+    (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p) =
+      iutInitialThetaSelectedWeightedQRootLogSum D := by
+  rw [qrootAt_log_sum_eq_selectedWeighted_add_omitted,
+    (iutInitialThetaOmittedBaseQPilotLogSum_eq_zero_iff_coverage D).mpr hcover,
+    add_zero]
+
+theorem qrootAt_log_sum_eq_selectedWeighted_iff_coverage :
+    (∑ p ∈ (iutInitialThetaOddSupportBaseQPilotSource D).badFinset.image
+        Arithmetic.residueChar,
+        Real.log p * qrootAtWeightedFiber D p) =
+      iutInitialThetaSelectedWeightedQRootLogSum D ↔
+      iutInitialThetaOddSupportSelectedBasePlaces D =
+        IutOddMultiplicativeSupport D := by
+  rw [qrootAt_log_sum_eq_selectedWeighted_add_omitted]
+  constructor
+  · intro hsum
+    apply (iutInitialThetaOmittedBaseQPilotLogSum_eq_zero_iff_coverage D).mp
+    linarith
+  · intro hcover
+    rw [(iutInitialThetaOmittedBaseQPilotLogSum_eq_zero_iff_coverage D).mpr hcover,
+      add_zero]
+
 def fullSupportRepresentativePaperTerm
     (v : iutInitialThetaOddModSupportFinset D) : ℝ :=
   -Real.log (actualPaperRootNorm D
