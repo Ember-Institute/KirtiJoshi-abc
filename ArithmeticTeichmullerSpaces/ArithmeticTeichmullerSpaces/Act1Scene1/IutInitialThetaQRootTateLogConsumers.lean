@@ -43,7 +43,7 @@ set_option maxHeartbeats 2000000 in
 theorem qrootTateLog_normalizedRationalClass
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     qrootTateLog D s (normalizedRationalClass D s) = PaperLogWitnessHull.value D s := by
-  rw [qrootTateLog, LocalCompletion.KummerValuation.tateLog_eq_ambientLog_sub]
+  rw [qrootTateLog_eq_ambientLog_sub]
   have hval : LocalCompletion.KummerValuation.valuationCoordinate s.1
       (Arithmetic.residueChar s.1) rfl (normalizedRationalClass D s) = 0 :=
     LocalCompletion.KummerValuation.valuationCoordinate_unit s.1
