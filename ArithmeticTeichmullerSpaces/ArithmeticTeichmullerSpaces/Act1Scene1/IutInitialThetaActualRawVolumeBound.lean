@@ -3,6 +3,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogCost
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312QProductAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.QFamilyBridge
 
 /-!
 source-id: JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND
@@ -209,6 +210,41 @@ theorem canonicalTateScene1Data_qProduct_le_actualVolume
   rw [canonicalTateScene1Data_qProduct_eq_exp_neg_ellStar_mul_qLogSum p D base Q, hn]
   exact canonicalTateScene1Data_exp_neg_procession_mul_qLogSum_le_actualVolume
     p D base hEll hTate n σ hσ
+
+theorem corollary312_of_canonicalTateScene1Data_actualRawVolume
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (n : ℕ) (hn : base.target.ellStar = n)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    (hvolume : base.target.thetaVolume = VBadThetaLogCollation.volume D n σ hσ) :
+    Corollary312 p base.target := by
+  have hvolumePos : 0 < base.target.thetaVolume := by
+    rw [hvolume]
+    exact VBadThetaLogCollation.volume_pos D n σ hσ
+  have hvolumeLeOne : base.target.thetaVolume ≤ 1 := by
+    rw [hvolume]
+    exact VBadThetaLogCollation.volume_le_one D n σ hσ
+  have hSide : Corollary312SideConditions p base.target :=
+    { ell_prime := base.ell_prime
+      ell_ge_five := base.ell_ge_five
+      ellStar_eq_half_sub_one := base.ellStar_eq_half_sub_one
+      ellStar_pos := base.ellStar_pos
+      thetaVolume_pos := hvolumePos }
+  have hLower : base.target.thetaVolume ≥
+      Corollary312Data.qProduct p base.target base.volume.qFactor := by
+    rw [hvolume]
+    exact canonicalTateScene1Data_qProduct_le_actualVolume
+      p D base base.qFamily hEll hTate n hn σ hσ
+  exact corollary312_of_q_family_lower_bound p base.target hSide base.volume
+    base.qFamily.toQFamily hvolumeLeOne hLower
 
 theorem negAverageAbsLog_actualVolume_ge_neg_logSum (hn : 0 < n) :
     -(1 / (n : ℝ)) * |Real.log (VBadThetaLogCollation.volume D n σ hσ)| ≥

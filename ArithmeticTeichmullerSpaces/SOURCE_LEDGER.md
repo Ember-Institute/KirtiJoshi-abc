@@ -4833,3 +4833,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-CANONICAL-QPRODUCT-ACTUAL-VOLUME` | `InitialThetaRawQ.canonicalTateScene1Data_qProduct_eq_exp_neg_ellStar_mul_qLogSum`, `InitialThetaRawQ.canonicalTateScene1Data_qProduct_le_actualVolume` | 用 canonical Tate q-family 的 qFactor/qLogTerm identity 将 qProduct 改写为 `exp(-ellStar*qLogSum)`，再以 `ellStar=n` 消费 actual raw volume bound，得到 qProduct 不超过 VBad ordinary-log hull volume。 | Scene1/Derived；proved / conditional |
 
 该 qProduct 界仅针对 actual ordinary-log hull volume；论文 thetaVolume 的身份和其余 theta/BK/untilt/source obligations 仍开放。
+
+### S1.495：actual raw volume 条件下的 canonical Scene1 Corollary 3.12 consumer
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-RAW-VOLUME-COR312-CONSUMER` | `InitialThetaRawQ.corollary312_of_canonicalTateScene1Data_actualRawVolume` | 从实际 collation volume 派生 thetaVolume 正性与上界，消费 general-degree canonical qProduct-to-actual-volume bound 和真实 Scene1 side conditions，得到条件性 Corollary 3.12；只要求 Tate 对齐、length 与 actual volume identity。 | Scene1/Derived；proved / conditional |
+
+实际 `thetaVolume = VBadThetaLogCollation.volume` 仍是输入条件；该消费者不构造 paper theta/BK/untilt volume，也不关闭真实联合模型闸门。
