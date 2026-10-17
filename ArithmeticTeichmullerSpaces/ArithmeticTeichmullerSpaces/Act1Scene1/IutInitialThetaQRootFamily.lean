@@ -554,6 +554,21 @@ theorem qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_support_eq
       Real.log q * qrootAtWeightedFiber D q = _
   exact hFamily.trans hPaper
 
+theorem qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_largePrime
+    (hVBad : D.VBad = {v | v ∈ IutOddMultiplicativeModSupport D ∧
+      Arithmetic.residueChar v ≠ D.prime.ℓ})
+    (hLarge : iutMultiplicativeResidueBound D.E < D.prime.ℓ) :
+    let B := iutInitialThetaOddSupportBaseQPilotSource D
+    ∑ q ∈ B.badFinset.image Arithmetic.residueChar,
+        Real.log q * qrootAtWeightedFiber D q =
+      ∑ v : iutInitialThetaVBadModuliFinset D,
+        iutInitialThetaRepresentativeCoefficient D
+            (iutInitialThetaVBadModuliAt D v) *
+          VBadSelectedPaper.paperTerm D v := by
+  exact qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_support_eq D
+    (iutInitialThetaOddMultiplicativeSupport_eq_badPlacesOver_of_largePrime
+      D hVBad hLarge)
+
 def vbadRepresentativeCoefficientDefect : ℝ :=
   ∑ v : iutInitialThetaVBadModuliFinset D,
     (1 - iutInitialThetaRepresentativeCoefficient D

@@ -4761,3 +4761,11 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 | `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-CANONICAL-BRIDGE` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_canonical_qPilot_absLogQ_of_largePrime` | 将 large-prime 自动得到的完整 support equality 传入 canonical Scene1 q-pilot bridge，保留实际 theta/link、`QNormTateCompatibility`、`hEll` 和 canonical source 参数。 | Scene1/Derived；proved / conditional |
 
 该结果只自动提供 support equality 的 large-prime 来源，不关闭 canonical q-pilot 的其余真实 analytic laws，也不识别论文 `L'`/`V_p^oss`、无权 representative sum、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
+
+### S1.486：large-prime 路线的系数加权 paper-sum bridge
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-QROOT-FAMILY-LARGE-PRIME-VBAD-PAPER-SUM` | `IutInitialThetaQRootFamily.qrootAt_log_sum_eq_vbadCoefficientWeightedPaperSum_of_largePrime` | 将 large-prime 自动得到的完整 support equality 传入实际 `VBadSelectedPaper` 系数加权 accounting，保留 representative coefficient、paper term 和 VBad moduli carrier。 | Scene1/Derived；proved / conditional |
+
+该结果不消除 representative coefficient defect，不产生论文无权 representative sum，也不关闭 `V_p^oss`/`L'` 来源等式、thetaVolume、H¹ₑ/BK 或最终 Corollary 3.12。
