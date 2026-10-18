@@ -5138,3 +5138,23 @@ tensor 叶首版证明已通过（62.751 秒、峰值 5,727,612 KiB），清除�
 一次通用叶失败（68.333 秒、峰值 5,776,384 KiB）：对子类型 coe equality 的 `subst` 不适用，改用已证最小性和包含的双向 Set.Subset；saturated shell 固定点的 hull multiplier 及其 admissibility 需显式指定，补齐后通过；同时打开集合缩放的 Pointwise scope。未改变目标或数学前提，没有 heartbeat 或内存失败。
 
 本轮共 6 次直接 Lean 任务（5 成功、1 失败），累计 612.018 秒，进程组峰值 9,352,488 KiB。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。只用 `lake env lean -j1 -o` 访问现有依赖产物，未调用 Lake build 调度器、冷构建、重编 Mathlib 或变更冻结工具链/依赖。
+
+
+### Actual finite packet 的素数逆像与 normalization log-volume 缩放
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-LOCAL-TENSOR-PRIME-LOG-VOLUME` | `LocalCompletion.Packet.{primePreimage,natCast_mul_eq_smul,normalizationHaar_primePreimage,primePreimage_measurableSet,primePreimage_haar_pos_lt_top,normalizationLogVolume_primePreimage}`；`Act1Scene1/LocalCompletionTensorPrimeLogVolume.lean` | 独立适配 `refer/iut/Iut/Concrete/LocalConstruct/Volume.lean`（277–300）的 corrected `componentVol_prime_preimage'`；`Cor312/LogVolume.lean` 的 `componentVol_prime_preimage` 将区域限制在正有限 principal regions。IUT III Proposition 3.9(i) 为 normalization 来源。实际 completion Packet 的 natCast 乘法等于 Qp scalar action，使用本地已证 PadicHaar 的 Haar modulus 得 `μ(p⁻¹U)=p^dim μ(U)`，证明可测性及正有限测度保持，再用真实 tensor 维数正性推出 normalized log 增加 log p。必要的可测、正有限测度条件均保留，不对零测度或无限测度集合断言此法律。 | Scene1/Derived；proved |
+| `JT-SCENE1-INITIAL-THETA-FINITE-PACKET-PRIME-LOG-VOLUME` | `IutInitialThetaFinitePacketPrimeLogVolume.{familyLogVolume,primePreimageFamily,familyLogVolume_eq_productMeasure_log,componentLogVolume_primePreimage,familyLogVolume_primePreimage,primePreimageFamily_haar_pos_lt_top,productMeasure_log_primePreimage,source_primePreimage_logVolume,hull_primePreimage_logVolume,shell_primePreimage_logVolume}`；`Act1Scene1/IutInitialThetaFinitePacketPrimeLogVolume.lean` | 原创实际消费者；reference `Concrete/Container.lean` 的 tupleWeight / vol 和 `Cor312/LogVolume.lean` 的 componentVol_prime_preimage / packetVol 指出装配。对同一 D 的全部有限处和全部 Fin(j+1) tuple 使用真实 component region family、normalization Haar 及 local-degree tuple weights；familyLogVolume 等于实际 product Haar 的实对数除 `[Kt:Q]^(j+1)`。正有限可测 family 的 prime-preimage 仍正有限，其 weighted log 恰增加 log p，维数和 tuple 个数均不作为额外因子；证明由真实 tupleWeight_sum_one 消去该系数。source、principal hull、饱和普通 log-shell 三个消费者直接从已有紧性及 Haar 正有限性提供输入，无新增几何 certificates。 | Scene1/Derived；proved |
+
+本节命名空间均以前缀 `JoshiTeich.Act1Scene1` 开始。移植前核对参考 `Volume.lean` 文件头及双方 LICENSE：Apache-2.0；Git 作者 Christian Merten，文件作者 The iut contributors，原提交 `b76207ab8955e68a7408d5d2a770b75a30c3bebf`，参考快照 `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`。通用叶保留版权、许可证、原路径、作者、提交及 actual normalization 改写范围；packet 叶为原创消费者。没有依赖或导入 refer/iut，没有改动冻结环境。
+
+本单元补齐当前实际 container 的一个 reference LogVolumeData 局部法律并给出实际三类区域消费者；没有把这些 full torsion-field/local-degree 权重识别为论文 selected representatives/relative-degree 权重，也没有识别 paper theta locus/hull/volume、H¹ₑ/BK 或 untilt/period 联合来源。不宣称已构造完整 RHSData 或最终 3.12；G1–G4 保持 0/4。新增数学只在 Scene1/Derived，Core 假设增量 0，Prologue-R5 不变；无动态边界变更或数学负面证据，不写入 log5。
+
+
+编辑期三次失败均已修正并复验：通用叶首检 72.525 秒、峰值 RSS 5,484,240 KiB，补齐实际 factor 的 FiniteDimensional 局部实例，用已证 scalar identity 给出连续性，并用 ENNReal 的非零乘积证明正性，清除冗余 Fintype section 参数 warning；第二次 67.926 秒、5,493,080 KiB，将连续性证明中的 scalar 明确为 `(p : ℚ_[p])`。packet 叶首检 118.554 秒、9,244,232 KiB，将 productMeasure 的乘积公式显式命名，并用 calc 对齐 sum/div 后通过，同时清除 unused simp warning。没有修改数学目标或添加前提，没有 heartbeat / 内存失败。
+
+
+验收（2026-10-19）：最终通用叶 `LocalCompletionTensorPrimeLogVolume` 退出 0，85.722 秒、进程组峰值 RSS 5,501,448 KiB；实际 packet 叶 `IutInitialThetaFinitePacketPrimeLogVolume` 退出 0，120.750 秒、9,247,908 KiB。两叶最终日志均为空，无错误或 warning。`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 依次退出 0，耗时 126.280、122.722、119.221 秒，峰值 RSS 依次 9,354,020、9,339,612、9,255,272 KiB。16/16 个新增公开声明逐名通过公理核对；全部 2140 个打印声明仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`，公理审计和聚合日志无 warning。静态导入审计覆盖 480 个可达本工程模块，全部 import 行形式均受扫描器覆盖；无 Obligations、Candidate、Scene2、Act2 或 `Iut.*` 导入。
+
+本轮共 8 次直接 Lean 任务（5 成功、3 失败），成功累计 574.695 秒、失败累计 259.005 秒、总计 833.700 秒；进程组峰值 RSS 9,354,020 KiB（8.921 GiB）。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。只用 `lake env lean -j1 -o` 访问现有依赖产物，未调用 Lake build 调度器、冷构建、重编 Mathlib 或变更冻结工具链/依赖。
