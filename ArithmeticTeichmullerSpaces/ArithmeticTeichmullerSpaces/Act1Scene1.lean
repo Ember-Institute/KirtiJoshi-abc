@@ -425,5 +425,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionAdicFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCompletionFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.AlgebraicallyClosedFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometricFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.CompletedAlgebraicClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricFontaine
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
