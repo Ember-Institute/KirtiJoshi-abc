@@ -420,4 +420,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFiniteNormalizedLog
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaNormalizedLogCollation
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogCollationOrbit
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

@@ -5276,3 +5276,23 @@ tensor 叶首版证明已通过（62.751 秒、峰值 5,727,612 KiB），清除�
 验收（2026-10-19）：`IutInitialThetaNormalizedLogCollation` 最终退出 0，152.618 秒、进程组峰值 RSS 9,395,772 KiB；最终日志为空，无错误或 warning。`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 依次首次通过，耗时 124.130、（同一审计进程最终日志无 warning）、112.932 秒，峰值 RSS 依次 9,372,656、9,357,176、9,237,724 KiB。30/30 个新增公开声明逐名通过公理核对；全部 2373 个打印声明仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`。静态导入审计覆盖 491 个可达本工程模块，全部 import 行形式均受扫描器覆盖；无 Obligations、Candidate、Scene2、Act2 或 `Iut.*` 导入。新增源码未含 sorry/admit/自定义 axiom/opaque。
 
 本轮共 7 次直接 Lean 任务（6 成功、1 次 heartbeat 失败后按约定重试成功），成功累计 676.255 秒、失败累计 172.683 秒、总计 848.938 秒；进程组峰值 RSS 9,395,772 KiB（8.961 GiB）。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，85 GiB 停止线未触发；未重编 Mathlib。
+
+
+上一单元资源记录更正（依据 `/tmp/scene1-log-collation-{leaf-1,leaf-2,final-audit-metrics}.jsonl` 的实际任务记录）：`Axioms.SceneBounds` 耗时为 111.425 秒、进程组峰值 RSS 9,359,904 KiB。直接 Lean 任务共 5 次（4 成功、1 heartbeat 失败），成功累计 501.105 秒、失败 172.683 秒、总计 673.788 秒；先前的“7 次／676.255 秒／848.938 秒”和公理任务峰值不正确，以上数值取代它们。该更正不涉及任何数学验收结论。
+
+
+### Actual normalized-log collation 的 factor 轨道饱和与 hull/volume 消费
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-LOG-COLLATION-ORBIT` | `IutInitialThetaLogCollationOrbit.{saturate,subset_saturate,saturate_mono,saturate_idem,saturate_component_image,saturatedHull_component_image,saturatedHull_packet_image,hullFamily_mono,hullFamily_le_saturatedHull,globalLogVolume_le_saturatedHull,finiteProcessionVolume_mono,finiteProcessionVolume_le_saturatedHull,standardOrbitFamily,standardOrbitFamily_component,standardOrbitFamily_hullFamily,standardOrbitFamily_globalLogVolume,standardOrbitFamily_finiteProcessionVolume,standardOrbitFamily_volume_bounds}`；`Act1Scene1/IutInitialThetaLogCollationOrbit.lean` | reference `LocalConstruct/Indeterminacy.lean` 的实际 factor tensor maps／span transport 与 `Cor312/RightHandSide.lean` 的 images→hull→volume 组织为明确操作来源；Joshi III `pr:general-cohomology-set-const`、`th:thetam-construction` 给后续来源比较目标。saturate 对任意实际 normalized-log RawFamily 逐 p／tuple 取已构造全部 factor 自同构的 orbit，identity image 保留 witness，实际 normalization 稳定性给 upper containment。证明 saturation 扩张、单调、幂等，饱和 raw 集及其 normalization span 在每个 factorTensorAut 下不变，进一步证明独立逐 tuple 自同构的 packetMap 保持整个 hull 产品。hull inclusion 推出 actual global log 在 saturation 下不减，有限支撑由既有原始 witness hull family 构造提供；finiteProcessionVolume_mono 直接以 actual product Haar 的单调性和正有限性，在同一全局次数根和 capsule root下证明包含单调，再消费于 saturation。standardOrbitFamily 是真实 standard integralClass tuple 的 singleton normalized-log image 的 full factor orbit，逐分量等于已验收 normalized-log componentPoints，故其整个 hull family／global log／finite procession Haar product 均精确等于现有 actual normalized-log orbit hull，并继承正性、≤1 与 paperRootProduct^squareAverage 严格下界。 | Scene1/Derived；proved |
+
+全部声明带命名空间前缀 `JoshiTeich.Act1Scene1`。本文件为本工程原创证明，无新参考源码复制或许可证增量，不依赖 refer/iut。该单元闭合当前实际 normalized-log class-image 在有限 factor 操作下的饱和与 hull/volume 连接，生产者是真实 integralClass singleton 的 normalized-log image，操作来自真实 completion-factor algebra automorphisms。它不在 cohomology 上人为共轭 normalized-log 来宣称一个来源同构，不识别不同 arithmetic holomorphic structures 或 Fargues–Fontaine points，亦未识别 Joshi 的全部 Ind1–Ind3、H¹ₑ/BK／跨 arithmeticoid collation 或 paper theta locus/volume。权重、squareAverage、无限处实际贡献均沿用之前定义；最终 3.12、G1–G4 仍开放。数学只在 Scene1/Derived；Core 假设增量 0，Prologue-R5 不变，无动态边界变更或数学负面证据，不写入 log5。
+
+
+编辑期失败记录：新叶首检 114.495 秒、峰值 RSS 9,255,016 KiB，标准 singleton class image 的饱和 hull 等式中 `change` 需要显式标注 Submodule-to-Set 的 tensor 元素类型，补齐后复验；其余全部声明通过首检，无 warning。没有 heartbeat 或内存失败，未改变数学目标或前提。
+
+
+验收（2026-10-19）：最终叶 `IutInitialThetaLogCollationOrbit` 退出 0，115.476 秒、进程组峰值 RSS 9,252,396 KiB；日志为空，无错误或 warning。`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 依次首次通过，耗时 122.593、128.784、121.225 秒，峰值 RSS 依次 9,376,952、9,361,808、9,258,304 KiB。18/18 个新增公开声明逐名通过公理核对；全部 2391 个打印声明仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`，公理审计和聚合日志无 warning。静态导入审计覆盖 492 个可达本工程模块，全部 import 行形式均受扫描器覆盖；无 Obligations、Candidate、Scene2、Act2 或 `Iut.*` 导入。新增源码未含 sorry/admit/自定义 axiom/opaque。
+
+本轮共 5 次直接 Lean 任务（4 成功、1 失败），成功累计 488.078 秒、失败累计 114.495 秒、总计 602.573 秒；进程组峰值 RSS 9,376,952 KiB（8.943 GiB）。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。无新增 heartbeat override。只用 `lake env lean -j1 -o` 访问现有依赖产物，未调用 Lake build 调度器、冷构建、重编 Mathlib 或变更冻结工具链/依赖。
