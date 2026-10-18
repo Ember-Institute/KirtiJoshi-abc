@@ -395,4 +395,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketLogShel
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketLogShellIndeterminacy
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicLogShell
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
