@@ -4990,3 +4990,15 @@ S1.451 是 ambient 线性分离结果，不识别 normalized line 为 H¹ₑ/BK�
 heartbeat 重试遵守用户顺序：默认 200000 失败后升至 1000000；再次失败后拆出通用 normalization log-volume 与单调性模块并升至 2000000；继续改为已证等价的 principalRegion 集合接口并升至 4000000；最后用逐步等式链替代实际区域上的 `simp`，局部下界在 8000000 下通过，principalRegion 精确求值保留 2000000。高阶 tuple 求和另改为显式 `Fintype.prod_sum` / marginal 函数，乘法重排改用精确 `mul_div_assoc`，未改变目标下界或数学前提。前四次实际叶均退出 1，耗时 153.724、305.279、492.045、677.631 秒；通用叶第一次版本在 71.880 秒通过，随后扩展 principalRegion API 的最终版本在上述 70.455 秒通过。
 
 本轮共 10 次直接 Lean 任务（6 成功、4 失败），累计 2658.907 秒，进程组峰值 12,849,648 KiB。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1，每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。只使用 `lake env lean -j1 -o` 和现有依赖产物，未运行 Lake build 调度器，未重编 Mathlib。无数学负面结论或动态边界变更，不写入 log5。
+
+### Actual finite packet 下界的全局与标准 procession 汇总
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-FINITE-GLOBAL-LOWER-BOUND` | `JoshiTeich.Act1Scene1.IutInitialThetaFiniteGlobalLowerBound.{vbadWeightedFiber_eq_zero_of_not_qPilot_char,qPilot_chars_subset_badChars,badChars_weighted_logSum_eq_absLogQ,badPrimes_weighted_logSum_eq_absLogQ,globalLogVolume_lower_bound,globalLogVolume_bounds,squareAverage,squareAverage_pos,processionLogVolume_lower_bound,processionLogVolume_bounds,negative_abs_processionLogVolume_lower_bound}`；`Act1Scene1/IutInitialThetaFiniteGlobalLowerBound.lean` | Joshi III `le:volume-lemma3`（3576–3583）的包含/体积比较及 `th:moccor-Mochizuki-form2`（3617–3633）的局部到全局组织；`refer/iut/Iut/Cor312/LogVolume.lean` 的 `globalVol` / `processionVol`（170–205）区分素数求和与 capsule 平均，III `cor:cor312` 为后续符号/归一化目标。由已证实际 packet 下界，在同一 D 上证明 q-pilot 特征集包含于 full-support badChars，多余素数的实际 VBad weighted fiber 为零，经素数子类型重索引得 `sum_badPrimes(log(p)*vbadWeightedFiber)=absLogQ(actual Q)`。对所有 j 得 `-j²*absLogQ ≤ globalLogVolume(D,j) ≤ 0`；对标准 j=1,…,n、n=(ell-1)/2 平均，得 `-(squareAverage(D)*absLogQ) ≤ processionLogVolume(D) ≤ 0`，以及同一负绝对值下界，`squareAverage=(sum_j j²)/n>0`。原创消费者证明，无参考源码复制。 | Scene1/Derived；proved |
+
+本单元只将已证明的 actual finite container 下界接到同一 D 的实际 VBad q-pilot，并保留平方指数平均系数；未将其改成系数 1，也未声称 Joshi `cor:cor312`。full torsion-field local-degree 权重与论文代表处/relative-degree 权重的身份、theta locus 与 paper hull/volume、H¹ₑ/BK、untilt/period 联合来源和无穷处贡献仍未闭合，G1–G4 保持 0/4。无新增 Core 契约或假设，Prologue-R5 不变，旧公开类型不变，无许可证增量。没有边界变更或数学负面证据，不写入 log5。
+
+验收（2026-10-19）：新叶 `IutInitialThetaFiniteGlobalLowerBound` 一次通过，106.158 秒、进程组峰值 9,230,836 KiB，日志无错误或 warning。`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 依次退出 0，耗时 108.642、109.811、105.296 秒，峰值 RSS 依次 9,321,832、9,309,372、9,248,924 KiB。11/11 个新增公开声明逐名通过公理核对；1742 个打印声明仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`，公理审计日志无 warning。静态导入审计覆盖 456 个可达本工程模块，无 Obligations、Candidate、Scene2、Act2 或 `Iut.*` 导入，未改任何已证高扇出数学模块。
+
+本轮共 4 次直接 Lean 任务，全部成功，累计 429.907 秒，进程组峰值 9,321,832 KiB。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。只用 `lake env lean -j1 -o` 和现有依赖产物；未调用 Lake build 调度器、未冷构建或重编 Mathlib，也未改冻结工具链或依赖。
