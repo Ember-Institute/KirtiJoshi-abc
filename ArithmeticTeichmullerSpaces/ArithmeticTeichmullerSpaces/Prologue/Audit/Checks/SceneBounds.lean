@@ -308,6 +308,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.CompletedAlgebraicClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -3143,3 +3145,44 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 #check JoshiTeich.Act1Scene1.InitialThetaTiltField.inclusion_frobenius
 #check JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_frobenius
 #check JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_inverseFrobenius_pow
+
+
+/- Sharp on the same actual tilt, norm comparison and surjectivity. -/
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp_eq_untilt
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.sourceValuation_eq_sharp_norm
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp_eq_zero_iff
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp_denominator_units
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp_inclusion
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp_div
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp_norm
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.integralRoot
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.integralRoot_pow
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.rootTower
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.rootTower_pow
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.rootLift
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.untilt_rootLift
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp_rootLift
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp_surjective
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.Data
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.ofField
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.mk
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.map
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.norm_map
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.surjective
+#check JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.on_integral
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.data
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_norm_real
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_surjective
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_eq_zero_iff
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_inclusion
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.untilt_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.theta_teichmuller_eq_sharp
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.theta_teichmuller_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_frobenius
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_inverseFrobenius_pow
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.valuation_range
+#check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.exists_contracting

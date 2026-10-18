@@ -301,6 +301,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.CompletedAlgebraicClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -2933,3 +2935,44 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.inclusion_frobenius
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_frobenius
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_inverseFrobenius_pow
+
+
+/- Sharp on the same actual tilt, norm comparison and surjectivity. -/
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp_eq_untilt
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.sourceValuation_eq_sharp_norm
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp_denominator_units
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp_inclusion
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp_div
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp_norm
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.integralRoot
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.integralRoot_pow
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.rootTower
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.rootTower_pow
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.rootLift
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.untilt_rootLift
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.integralSharp_rootLift
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.sharp_surjective
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.Data
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.ofField
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.mk
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.map
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.norm_map
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.surjective
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltSharp.Data.on_integral
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.data
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_norm_real
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_inclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.untilt_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.theta_teichmuller_eq_sharp
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.theta_teichmuller_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_frobenius
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_inverseFrobenius_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.valuation_range
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.exists_contracting
