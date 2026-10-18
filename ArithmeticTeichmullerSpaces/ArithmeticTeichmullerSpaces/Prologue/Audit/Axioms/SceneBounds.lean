@@ -293,6 +293,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFiniteNormalizedLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaNormalizedLogCollation
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogCollationOrbit
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionAdicFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCompletionFontaine
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -2769,3 +2771,25 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogCollationOrbit
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaLogCollationOrbit.standardOrbitFamily_globalLogVolume
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaLogCollationOrbit.standardOrbitFamily_finiteProcessionVolume
 #print axioms JoshiTeich.Act1Scene1.IutInitialThetaLogCollationOrbit.standardOrbitFamily_volume_bounds
+
+
+/- Actual completion integer-ring p-adic completeness and Fontaine algebraic bridge. -/
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerRing_prime_norm_lt_one
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerRing_prime_nonunit
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerRing_isAdic
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerRing_isAdicComplete
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerRing_primeNonunitFact
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerCoefficientMap
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerCoefficientMap_coe
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.integerCoefficientMap_injective
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.completionPlaceData
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.completionPlaceData_laws
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.completionBridgeData
+#print axioms JoshiTeich.Act1Scene1.LocalCompletion.completionBridgeData_laws
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.placeData
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.placeData_place
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.placeData_laws
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_laws
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_coefficientMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_coefficientMap_injective

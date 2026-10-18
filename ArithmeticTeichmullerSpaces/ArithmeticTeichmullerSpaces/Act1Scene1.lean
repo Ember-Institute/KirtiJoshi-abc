@@ -421,5 +421,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFiniteNormalizedLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaNormalizedLogCollation
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogCollationOrbit
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionAdicFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCompletionFontaine
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

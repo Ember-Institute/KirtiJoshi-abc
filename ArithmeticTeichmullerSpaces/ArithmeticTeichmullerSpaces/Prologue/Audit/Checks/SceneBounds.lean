@@ -300,6 +300,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFiniteNormalizedLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaNormalizedLogCollation
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogCollationOrbit
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionAdicFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCompletionFontaine
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -2979,3 +2981,25 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogCollationOrbit
 #check JoshiTeich.Act1Scene1.IutInitialThetaLogCollationOrbit.standardOrbitFamily_globalLogVolume
 #check JoshiTeich.Act1Scene1.IutInitialThetaLogCollationOrbit.standardOrbitFamily_finiteProcessionVolume
 #check JoshiTeich.Act1Scene1.IutInitialThetaLogCollationOrbit.standardOrbitFamily_volume_bounds
+
+
+/- Actual completion integer-ring p-adic completeness and Fontaine algebraic bridge. -/
+#check JoshiTeich.Act1Scene1.LocalCompletion.integerRing_prime_norm_lt_one
+#check JoshiTeich.Act1Scene1.LocalCompletion.integerRing_prime_nonunit
+#check JoshiTeich.Act1Scene1.LocalCompletion.integerRing_isAdic
+#check JoshiTeich.Act1Scene1.LocalCompletion.integerRing_isAdicComplete
+#check JoshiTeich.Act1Scene1.LocalCompletion.integerRing_primeNonunitFact
+#check JoshiTeich.Act1Scene1.LocalCompletion.integerCoefficientMap
+#check JoshiTeich.Act1Scene1.LocalCompletion.integerCoefficientMap_coe
+#check JoshiTeich.Act1Scene1.LocalCompletion.integerCoefficientMap_injective
+#check JoshiTeich.Act1Scene1.LocalCompletion.completionPlaceData
+#check JoshiTeich.Act1Scene1.LocalCompletion.completionPlaceData_laws
+#check JoshiTeich.Act1Scene1.LocalCompletion.completionBridgeData
+#check JoshiTeich.Act1Scene1.LocalCompletion.completionBridgeData_laws
+#check JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.placeData
+#check JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.placeData_place
+#check JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.placeData_laws
+#check JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData
+#check JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_laws
+#check JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_coefficientMap
+#check JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_coefficientMap_injective
