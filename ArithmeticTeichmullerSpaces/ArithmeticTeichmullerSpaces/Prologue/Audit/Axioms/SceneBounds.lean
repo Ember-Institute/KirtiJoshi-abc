@@ -295,6 +295,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaNormalizedLogCollat
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLogCollationOrbit
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionAdicFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCompletionFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.AlgebraicallyClosedFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometricFontaine
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -2793,3 +2795,35 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCompletionFontaine
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_laws
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_coefficientMap
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCompletionFontaine.bridgeData_coefficientMap_injective
+
+
+/- Geometric valuation rings, integral roots, Frobenius and Fontaine surjectivity. -/
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.integerRing
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.mem_integerRing
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.integerRing_eq_closedBall
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.principalIdeal_eq_closedBall
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.principalIdeal_isOpen
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.integerRing_completeSpace
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.prime_nonunit
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.primeNonunitFact
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.integerRing_isAdic
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.integerRing_isAdicComplete
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.integral_pow_surjective
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.exists_norm_between
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.frobenius_modP_surjective
+#print axioms JoshiTeich.Act1Scene1.LocalGeometricFontaine.theta_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.embedding_norm_eq
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.prime_norm_bounds
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.coefficientMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.coefficientMap_coe
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.coefficientMap_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.placeData
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.placeData_place
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.placeData_laws
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.placeData_theta_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.exists_norm_between_prime
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.placeData_frobenius_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.bridgeData
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.bridgeData_laws
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.bridgeData_coefficientMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometricFontaine.primeNormFact

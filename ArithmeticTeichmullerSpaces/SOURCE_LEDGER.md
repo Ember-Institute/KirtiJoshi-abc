@@ -5318,3 +5318,37 @@ tensor 叶首版证明已通过（62.751 秒、峰值 5,727,612 KiB），清除�
 验收（2026-10-19）：最终通用叶 `LocalCompletionAdicFontaine` 退出 0，74.016 秒、进程组峰值 RSS 5,490,092 KiB；实际消费者 `IutInitialThetaCompletionFontaine` 首检通过，111.918 秒、9,075,076 KiB。两叶最终日志均为空，无错误或 warning。`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 依次首次通过，耗时 123.575、118.074、116.047 秒，峰值 RSS 依次 9,379,024、9,363,588、9,259,996 KiB。19/19 个新增公开声明逐名通过公理核对；全部 2410 个打印声明仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`，类型／公理审计无 warning，聚合日志为空。静态导入审计覆盖聚合和两个审计入口的 496 个可达本工程模块，扫描覆盖全部 import 行形式；无 Obligations、Candidate、Scene2、Act2 或 `Iut.*` 导入。新增源码未含 sorry/admit/自定义 axiom/opaque。
 
 本轮共 7 次直接 Lean 任务（5 成功、2 失败），成功累计 543.630 秒、失败累计 146.970 秒、总计 690.600 秒；进程组峰值 RSS 9,379,024 KiB（8.945 GiB）。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。无 heartbeat override。只用 `lake env lean -j1 -o` 访问现有依赖产物，未调用 Lake build 调度器、冷构建、重编 Mathlib 或变更冻结工具链/依赖。
+
+
+### Geometric coefficient field 的实际整数环、Frobenius 与 Fontaine θ 满射
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-ALGEBRAICALLY-CLOSED-FONTAINE` | `LocalGeometricFontaine.{integerRing,mem_integerRing,integerRing_eq_closedBall,principalIdeal_eq_closedBall,principalIdeal_isOpen,integerRing_completeSpace,prime_nonunit,primeNonunitFact,integerRing_isAdic,integerRing_isAdicComplete,integral_pow_surjective,exists_norm_between,frobenius_modP_surjective,theta_surjective}`；`Act1Scene1/AlgebraicallyClosedFontaine.lean` | Joshi `Arithmetic Holomorphic Structures.tex` 的 `lem:perfectoid`（574–581）明确以代数闭完备 rank-one valued field 的非离散性、`|p|<1` 和整数环模 p Frobenius 满射为论证；Mathlib `NormedField.valuation`、`IsAlgClosed.exists_pow_nat_eq`、`IsAdic.isAdicComplete_iff`、`surjective_fontaineTheta` 提供基础 API。对实际 `Ω`、`[NormedField Ω] [IsUltrametricDist Ω]` 定义 `integerRing Ω := (NormedField.valuation (K := Ω)).integer`，证明它的集合恰为原范数闭单位球，每个主理想恰为对应标量半径闭球的 subtype 原像，非零主理想开。Ω 完备时，该闭整数环原拓扑完备。对素数 p 和显式 `0 < ‖(p : Ω)‖ ∧ ‖(p : Ω)‖ < 1`，证明 p 非单位及理想幂的原拓扑共尾性，得到 p-adic 完备实例。`[IsAlgClosed Ω]` 下，对任意 n>0 及 a∈OΩ，域中 n 次根 z 的 `‖z‖^n=‖a‖≤1` 强制 z∈OΩ，故 OΩ 上取 n 次幂满射；取 p 次根并下传商环，证明 `Function.Surjective (frobenius (ModP (integerRing Ω) p) p)`，再消费 Mathlib 定理得到 `Function.Surjective (Perfectoid.thetaMap (O := integerRing Ω) (p := p))`。独立平方根论证证明 `∀ x, 0<‖x‖ → ‖x‖<1 → ∃y, ‖x‖<‖y‖ ∧ ‖y‖<1`，即实际范数值在 1 下方无最大元。 | Scene1/Derived；proved |
+| `JT-SCENE1-INITIAL-THETA-GEOMETRIC-FONTAINE` | `InitialThetaGeometricFontaine.{embedding_norm_eq,prime_norm_bounds,primeNormFact,coefficientMap,coefficientMap_coe,coefficientMap_injective,placeData,placeData_place,placeData_laws,placeData_theta_surjective,exists_norm_between_prime,placeData_frobenius_surjective,bridgeData,bridgeData_laws,bridgeData_coefficientMap}`；`Act1Scene1/IutInitialThetaGeometricFontaine.lean` | Joshi I `def:arith-hol-strs`（766 起）、`de:geom-base-points`（778 起）、`def:untilt-galois`（1470 起）使用实际局部域的等距扩张 Ω 作为几何系数域。对同一 `D : InitialThetaData AG TG`、`w : (iutInitialThetaTateParameterData D).places` 和显式 `ι : LocalCompletion.completionAt D.F w.1 →+* Ω`、`hι : Isometry ι`，由等距性和真实 completion 的素数范数界推导 `0<‖residueChar w‖<1`。系数映射 `𝓞 D.F →+* LocalGeometricFontaine.integerRing Ω` 是实际 completion embedding 后接 ι 的整数限制，值和单射性均有 proof term。实际几何整数环据此满足现有 canonical place/bridge 输入，处等于 w，支持证明直接消费 w.2；其 θ 和模 p Frobenius 满射性来自通用叶，同时给实际 p 范数上方的非离散 witness。bridge 对同一 `AdelicThetaLinkData.ofInitialThetaData` 保留显式 theta／thetaBase／packetHull／height／ramification／volume／length 参数。 | Scene1/Derived；proved |
+
+全部声明带前缀 `JoshiTeich.Act1Scene1`；29 个公开名称包括 `integerRing` abbrev 及三个通用实例，逐名登记于 Checks／Axioms 家族。两叶均为本工程原创证明，无参考工程源码复制或许可证增量，不导入 refer/iut。新增 Mathlib import 的现有 olean 均在构建前确认存在。
+
+本单元按 Joshi `lem:perfectoid` 的特征零论证闭合局部整数环、取根、范数非离散 witness 和 Frobenius／θ 满射的具体证明内容；未新增一个仅改名的 Perfectoid 公理接口。通用叶使用真实 norm valuation ring 和原拓扑，消费者使用实际 completion 的等距嵌入，不把上一轮的离散赋值 completion 自身当作该几何系数域。Ω、代数闭／完备／ultrametric 结构以及到 Ω 的等距嵌入是显式几何输入，尚未从共同全局 Initial Θ-data 构造它们；也未给指定 tilt 身份、Berkovich 基点、tempered marking 或跨 holomorphoid transport。因此仅追加来源 bridge 的窄子项，父项、H¹ₑ/BK／period 身份、paper thetaVolume、3.12 及 G1–G4 仍开放。`CanonicalActualHull.AnalyticInput` 未改签名。
+
+数学仅在 Scene1/Derived；Core 假设增量 0，Prologue-R5 不变，无动态边界移动或数学负面证据，不写入 log5。
+
+
+编辑期检查记录：通用叶首检 64.254 秒、峰值 RSS 5,488,844 KiB，集合 membership 的隐式转换需先 change、`ModP` 为根命名空间 API，并清除无用 section 实例的 warning；第二次 64.817 秒、5,495,340 KiB，`omit` 必须置于 doc comment 之前，取根 surjectivity witness 的 lambda 需先显式 change 成幂等式再改写商环。修正后通用叶 63.340 秒、5,489,244 KiB 通过且日志为空。消费者首检 111.995 秒、9,092,268 KiB，等距性 section proof 未出现于定理目标，需显式 include 才能在证明和下游参数中使用；由此引起的连锁类型错误已按真实参数依赖修正。上述为 Lean 类型/API 问题，不改变数学目标或假设，无 heartbeat 或内存失败。
+
+
+消费者第二次检查 108.392 秒、9,094,900 KiB：Lean 拒绝从输出范数命题中无法推断的 ι／等距证明参数注册局部 instance。将等距性作为相同内容的显式 `Fact (Isometry ι)` 输入，使规范范数实例可由它推断；没有加入范数界、完备性或 θ 满射的自由证书，数学输入仍仅为实际域嵌入及其等距性。此次无 heartbeat 或内存失败。
+
+
+消费者第三次检查 114.499 秒、9,095,564 KiB：Fact 等距性仍不足以为带未定嵌入参数的规范范数实例决定 synthesis order。最终移除该参数化局部 instance，将同一个范数界证明包装为普通生产者 `primeNormFact`，在各公开构造内部以显式局部 `letI` 消费；公开输入恢复 `ι` 与普通证明 `hι : Isometry ι`，没有自由的 norm/completeness/theta 证书。此前尝试的 Fact 输入写法未进入最终接口。此次无 heartbeat 或内存失败。
+
+
+消费者第四次检查 111.991 秒、9,091,580 KiB：数据投影的公开类型也须局部绑定已证明的素数范数实例；补齐这些类型中的绑定，并将命题类的生产者写为 theorem，证明内 letI 改为 let 以清除冻结版 linter 警告。此次无 heartbeat 或内存失败。
+
+
+消费者第五次检查退出 0，109.869 秒、9,093,828 KiB，但编译所读源码仍含 `primeNormFact` 上无用 `IsUltrametricDist` section 实例的 warning，不作为最终验收。已将该生产者移到 ultrametric 变量声明之前，继续重检最终源码。一次收尾 Checks 任务被提前启动后主动中断：退出 -15，17.228 秒、峰值 RSS 951,096 KiB、实际 Lean worker 峰值 0；该中断不计作成功检查，公理／聚合任务未启动。后续最终验收使用清理后的产物。上述均无 heartbeat／内存停止。
+
+
+验收（2026-10-19）：最终通用叶 `AlgebraicallyClosedFontaine` 退出 0，63.340 秒、进程组峰值 RSS 5,489,244 KiB；最终实际消费者 `IutInitialThetaGeometricFontaine` 退出 0，113.996 秒、9,091,328 KiB。两叶最终日志均为空，无错误或 warning。最终 `Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 依次退出 0，耗时 125.174、120.595、119.143 秒，峰值 RSS 依次 9,381,164、9,366,188、9,241,448 KiB。29/29 个新增公开声明逐名通过公理核对；全部 2439 个打印声明仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；最终类型／公理审计无 warning，聚合日志为空。静态导入审计覆盖聚合及两个审计入口的 498 个可达本工程模块，扫描覆盖全部 import 行形式；无 Obligations、Candidate、Scene2、Act2 或 `Iut.*` 导入。新增源码未含 sorry/admit/自定义 axiom/opaque。打印类型确认实际消费者的 θ 满射定理只接收同一 D／w、Ω 的 normed field／ultrametric／complete／algebraically closed 结构及实际 completion 的等距 ring hom；范数界／p-adic 完备性／Frobenius／θ 满射性均由证明提供。
+
+本轮共 13 次直接 Lean 任务：6 次退出 0（其中 1 次带 warning 的编辑期成功不作最终验收）、6 次编辑期失败、1 次主动中断；退出 0 累计 652.117 秒、失败累计 575.948 秒、中断 17.228 秒，总计 1245.293 秒。进程组峰值 RSS 9,381,164 KiB（8.947 GiB）。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1（中断任务在 Lean 启动前停止，worker 峰值 0）；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。无 heartbeat override。只用 `lake env lean -j1 -o` 访问现有依赖产物，未调用 Lake build 调度器、冷构建、重编 Mathlib 或变更冻结工具链/依赖。
