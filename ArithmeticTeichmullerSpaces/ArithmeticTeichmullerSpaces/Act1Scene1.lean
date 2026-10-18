@@ -379,4 +379,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketRegion
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketLogVolume
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketLowerBound
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
