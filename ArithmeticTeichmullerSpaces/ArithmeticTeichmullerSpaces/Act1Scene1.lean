@@ -418,4 +418,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWitnessHullHaarProd
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizedLogHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFiniteNormalizedLogHull
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaNormalizedLogCollation
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
