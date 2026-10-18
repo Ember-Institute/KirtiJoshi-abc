@@ -408,4 +408,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicFamilyLogVolu
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorPointOrbitHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePointOrbitHull
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorHullIndeterminacy
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFiniteHullIndeterminacy
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
