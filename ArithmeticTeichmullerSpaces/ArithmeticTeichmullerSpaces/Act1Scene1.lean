@@ -415,4 +415,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicWitnessHullBo
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWitnessHullHaarProduct
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorNormalizedLogHull
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFiniteNormalizedLogHull
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
