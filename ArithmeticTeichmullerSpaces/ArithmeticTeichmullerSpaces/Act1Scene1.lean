@@ -402,4 +402,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorPrimeLogVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketPrimeLogVolume
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaArchimedeanPacketLogVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicFamilyLogVolume
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
