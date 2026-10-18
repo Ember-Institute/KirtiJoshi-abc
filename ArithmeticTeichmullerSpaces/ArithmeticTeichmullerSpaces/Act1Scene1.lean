@@ -427,5 +427,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.AlgebraicallyClosedFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometricFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.CompletedAlgebraicClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltField
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

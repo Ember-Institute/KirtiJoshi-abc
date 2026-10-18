@@ -299,6 +299,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.AlgebraicallyClosedFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometricFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.CompletedAlgebraicClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltField
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -2886,3 +2888,48 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricF
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCanonicalGeometricFontaine.bridgeData
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCanonicalGeometricFontaine.bridgeData_laws
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCanonicalGeometricFontaine.bridgeData_coefficientMap
+
+
+/- Actual algebraic tilt fields, Frobenius and valuation extension. -/
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Source
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.source_isDomain
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.sourceValuation
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.sourceValuation_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.FractionField
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.fractionField_charP
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.fractionField_perfect
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.denominators_le_primeCompl
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.fractionValuation
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.fractionValuation_inclusion
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.fractionValuation_div
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.fractionField_eq_mathlibTilt
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.ofField
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.mk
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.Carrier
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.field
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.charP
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.perfect
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.sourceValuation
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.valuation
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.inclusion
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.inclusion_injective
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltField.Data.valuation_inclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.Source
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.data
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.Carrier
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.carrierField
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.carrierCharP
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.carrierPerfect
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.inclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.inclusion_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.sourceValuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.sourceValuation_eq
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_inclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_div
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.frobenius_bijective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.inclusion_frobenius
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_frobenius
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_inverseFrobenius_pow

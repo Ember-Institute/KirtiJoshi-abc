@@ -306,6 +306,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.AlgebraicallyClosedFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometricFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.CompletedAlgebraicClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltField
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -3096,3 +3098,48 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricF
 #check JoshiTeich.Act1Scene1.InitialThetaCanonicalGeometricFontaine.bridgeData
 #check JoshiTeich.Act1Scene1.InitialThetaCanonicalGeometricFontaine.bridgeData_laws
 #check JoshiTeich.Act1Scene1.InitialThetaCanonicalGeometricFontaine.bridgeData_coefficientMap
+
+
+/- Actual algebraic tilt fields, Frobenius and valuation extension. -/
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Source
+#check JoshiTeich.Act1Scene1.GeometricTiltField.source_isDomain
+#check JoshiTeich.Act1Scene1.GeometricTiltField.sourceValuation
+#check JoshiTeich.Act1Scene1.GeometricTiltField.sourceValuation_eq_zero_iff
+#check JoshiTeich.Act1Scene1.GeometricTiltField.FractionField
+#check JoshiTeich.Act1Scene1.GeometricTiltField.fractionField_charP
+#check JoshiTeich.Act1Scene1.GeometricTiltField.fractionField_perfect
+#check JoshiTeich.Act1Scene1.GeometricTiltField.denominators_le_primeCompl
+#check JoshiTeich.Act1Scene1.GeometricTiltField.fractionValuation
+#check JoshiTeich.Act1Scene1.GeometricTiltField.fractionValuation_inclusion
+#check JoshiTeich.Act1Scene1.GeometricTiltField.fractionValuation_div
+#check JoshiTeich.Act1Scene1.GeometricTiltField.fractionField_eq_mathlibTilt
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data
+#check JoshiTeich.Act1Scene1.GeometricTiltField.ofField
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.mk
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.Carrier
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.field
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.charP
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.perfect
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.sourceValuation
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.valuation
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.inclusion
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.inclusion_injective
+#check JoshiTeich.Act1Scene1.GeometricTiltField.Data.valuation_inclusion
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.Source
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.data
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.Carrier
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.carrierField
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.carrierCharP
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.carrierPerfect
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.inclusion
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.inclusion_injective
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.sourceValuation
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.sourceValuation_eq
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_inclusion
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_div
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_eq_zero_iff
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.frobenius_bijective
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.inclusion_frobenius
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_frobenius
+#check JoshiTeich.Act1Scene1.InitialThetaTiltField.valuation_inverseFrobenius_pow
