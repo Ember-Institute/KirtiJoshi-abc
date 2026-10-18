@@ -303,6 +303,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -2976,3 +2977,23 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_inverseFrobenius_pow
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.valuation_range
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltSharp.exists_contracting
+
+
+/- The actual tilt norm, rank-one topology and Frobenius homeomorphism. -/
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.absoluteValue
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.carrierNormedField
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.norm_eq_valuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.nnnorm_eq_valuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.norm_sharp
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.carrierUltrametric
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.carrierNontriviallyNormedField
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.carrierValued
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.valued_eq_actual
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.valuationRankOne
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.frobenius_dist
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.inverseFrobenius_dist_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.frobenius_uniformContinuous
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.inverseFrobenius_uniformContinuous
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.frobeniusHomeomorph
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.exists_norm_between
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.sharp_continuousAt_zero

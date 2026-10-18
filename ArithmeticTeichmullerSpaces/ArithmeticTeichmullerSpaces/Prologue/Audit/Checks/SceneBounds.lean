@@ -310,6 +310,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -3186,3 +3187,23 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 #check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.sharp_inverseFrobenius_pow
 #check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.valuation_range
 #check JoshiTeich.Act1Scene1.InitialThetaTiltSharp.exists_contracting
+
+
+/- The actual tilt norm, rank-one topology and Frobenius homeomorphism. -/
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.absoluteValue
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.carrierNormedField
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.norm_eq_valuation
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.nnnorm_eq_valuation
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.norm_sharp
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.carrierUltrametric
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.carrierNontriviallyNormedField
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.carrierValued
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.valued_eq_actual
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.valuationRankOne
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.frobenius_dist
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.inverseFrobenius_dist_pow
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.frobenius_uniformContinuous
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.inverseFrobenius_uniformContinuous
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.frobeniusHomeomorph
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.exists_norm_between
+#check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.sharp_continuousAt_zero
