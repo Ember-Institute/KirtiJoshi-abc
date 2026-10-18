@@ -389,4 +389,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicPacketLogVolu
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicPacketHull
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaArchimedeanPacketHull
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
