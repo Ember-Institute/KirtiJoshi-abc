@@ -445,5 +445,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.AdicKernelDivision
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineKernel
 import ArithmeticTeichmullerSpaces.Act1Scene1.NormedIntegerLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdicResidueEvaluation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamCompletion
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

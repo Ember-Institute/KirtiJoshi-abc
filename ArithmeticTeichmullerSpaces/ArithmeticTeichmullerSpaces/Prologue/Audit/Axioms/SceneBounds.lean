@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdicResidueEvaluation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamCompletion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicLogShell
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketLogShellIndeterminacy
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFinitePacketLogShell
@@ -3149,3 +3151,47 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaFontaineLocalization.untiltLocalizationEquiv
 #print axioms JoshiTeich.Act1Scene1.InitialThetaFontaineLocalization.untiltLocalizationEquiv_algebraMap
 #print axioms JoshiTeich.Act1Scene1.InitialThetaFontaineLocalization.theta_sourceLocalization
+
+
+/- Actual de Rham completion, extended theta and residue field. -/
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.evaluation
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.evaluation_algebraMap
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.evaluation_surjective
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.kernel_eq_map
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.kernel_eq_span
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.complete
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.quotientEquiv
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.quotientEquiv_mk
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.kernel_isMaximal
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.localRing
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.maximalIdeal_eq_kernel
+#print axioms JoshiTeich.Act1Scene1.AdicResidueEvaluation.isUnit_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.Source
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceTheta
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceTheta_eq
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceTheta_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceKernel
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceTheta_kernel
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourcePrimitive
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceKernel_eq_span
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceKernel_fg
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceQuotientEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.sourceQuotientEquiv_mk
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.Ring
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.theta
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.theta_of
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.theta_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.primitive
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.kernel_eq_span
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.kernel_isMaximal
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.complete
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.localRing
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.maximalIdeal_eq_kernel
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.maximalIdeal_eq_span
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.isUnit_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.quotientEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.residueEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.residueEquiv_residue
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.theta_of_actual
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.theta_primitive
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.completeMaximalIdeal
