@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamFiberHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedResiduePullback
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamEvaluation
@@ -3413,3 +3414,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot_eq_scaleElt
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot_mem_region
+
+
+/- Full de Rham theta-fiber image and normalization hull. -/
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.fiber
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.mem_fiber_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.pilot_mem_fiber
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.fiber_nonempty
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.fiber_eq_kernel_translate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.evaluation_image_fiber
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.tensorEvaluation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.tensorImage
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.tensorImage_eq_singleton
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit_eq_existing
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit_finite
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit_haar_eq_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit_subset_region
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_eq_existing
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_isCompact
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_haar_pos_lt_top
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.region_subset_hull
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_le_principalRegion_iff

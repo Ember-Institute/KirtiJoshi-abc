@@ -463,5 +463,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteCompletionEmbeddingTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionUntiltTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedResiduePullback
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamEvaluation
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamFiberHull
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

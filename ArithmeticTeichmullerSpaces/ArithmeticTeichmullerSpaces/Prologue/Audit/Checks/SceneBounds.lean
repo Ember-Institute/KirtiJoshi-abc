@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamFiberHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedResiduePullback
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamEvaluation
@@ -3623,3 +3624,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot
 #check JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot_eq_scaleElt
 #check JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot_mem_region
+
+
+/- Full de Rham theta-fiber image and normalization hull. -/
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.fiber
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.mem_fiber_iff
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.pilot_mem_fiber
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.fiber_nonempty
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.fiber_eq_kernel_translate
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.evaluation_image_fiber
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.tensorEvaluation
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.tensorImage
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.tensorImage_eq_singleton
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit_eq_existing
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit_finite
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit_haar_eq_zero
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.orbit_subset_region
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_eq_existing
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_isCompact
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_haar_pos_lt_top
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.region_subset_hull
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_le_principalRegion_iff
