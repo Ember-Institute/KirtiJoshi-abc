@@ -5780,3 +5780,27 @@ Fontaine 叶第二次退出 1，123.742 秒、进程组峰值 RSS 9,106,652 KiB�
 来源边界：这两个叶把上一单元的显式 marking 推进到同一底域的 preferred algebraic closures，并消除 root-tower 选择依赖；它们没有构造 Joshi 论文所需的 admissible holomorphoid／arithmeticoid 标注生产者，也没有把 ambient H¹ 自动识别为 H¹ₑ/BK。Prologue-R5、Core 和许可证不变，无动态边界修订或数学负面证据，不追加 log5。
 
 验收资源与尝试（2026-10-19）：Galois closure 叶 attempt1 失败 70.774 秒、4,233,672 KiB（`finiteDimensional_map` 类型适配）；attempt2 失败 55.611 秒、4,188,896 KiB（fixing-subgroup 改写未命中）；attempt3 失败 52.038 秒、4,211,068 KiB（同一成员命题的 `change` 仍被 coercion 阻挡）；改为显式 `.mpr` 后 attempt4 通过，56.110 秒、4,224,576 KiB，日志为空。Kummer closure 叶 attempt1 退出 1，58.140 秒、4,922,580 KiB（未保留 integral section 实例及三条 unused-instance 提示）；attempt2 退出 0，59.137 秒、4,920,236 KiB，但仍有一个 unused section 参数提示；加入 `omit` 后 attempt3 退出 0，60.120 秒、4,920,660 KiB，日志为空。`Checks.SceneBounds` 通过，122.701 秒、9,440,944 KiB；`Axioms.SceneBounds` 通过，115.152 秒、9,423,304 KiB；`Act1Scene1` 聚合通过，114.700 秒、9,272,140 KiB。共 10 次直接 Lean 任务，6 次成功、4 次失败；成功累计 527.920 秒，失败累计 236.563 秒，总计 764.483 秒；峰值 RSS 9,440,944 KiB。全部 CPU affinity 0–13、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际 worker 峰值 1，每 0.5 秒采样，未触及 85 GiB 停止线；无 heartbeat timeout 或 override，未冷构建、未重编译 Mathlib。最终两叶及聚合日志为空，审计无 warning/error；17 个新增公开名称逐名核对，公理日志共 3000 条，仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；静态导入审计覆盖 541 个可达工程模块，无禁用导入。
+
+### Rational preferred-closure Kummer transport with the actual Tate basis unit
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-LOCAL-KUMMER-RATIONAL-CLOSURE-TRANSPORT` | `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coordinateEquiv`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.basisScalar`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coordinateEquiv_apply`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coordinate_tateEquiv`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.basisScalar_mul_inverse`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.basisUnit`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.basisUnit_val`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.character_eq`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coefficientEquiv`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coefficientEquiv_down`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coefficientEquiv_equivariant`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.marking`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coefficient_change`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_standardMap`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_rootTower`, `JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_kummerClass`；`Act1Scene1/LocalKummerRationalClosureTransport.lean` | Joshi I `ss:distinct-kummer-theories`／`pr:galois-cohomology-and-teich`（1588–1632），III integral/rational compatible-root Kummer classes（3190–3236）；原 preferred-closure Tate transport、原 Tate bases 和 standardMap。将原自然 Tate 同构写到两侧独立选取的 ℤₚ 基坐标中，证明得到的线性自同构是乘 basisScalar，反向坐标给出实际逆元，因此 basisScalar 是单位。自然 Tate 同构的等变性及该单位可消去性给原 cyclotomic characters 的精确共轭等式。rational 系数以同一单位乘原 ULift ℚₚ carrier，证明等变，构造原 rational H¹ 的连续线性同构；standardMap 与原 integral H¹ transport 的交换图、任意实际 root tower class 和目标独立选取根塔 class 的同一底域元素身份均有完整 proof term。原创消费者证明，无参考代码复制。 | Scene1/Derived；proved，K-代数 closure 同构显式 |
+
+此单位由实际自然 Tate transport 决定，不假设等于 1。结果没有用前轮基坐标恒等的 marking 代替自然系数映射；也没有假设 cyclotomic character identity、系数比较或 H¹ equivalence 证书。仍限于一个固定底域 K 的两个代数闭 integral 扩张和显式 K-代数同构；不同 holomorphoid／anabelomorphism 的生产者、H¹ₑ/BK／log 比较、论文 collation／theta locus 和最终 3.12 仍开放。Prologue-R5／Core 和旧公开声明未变，无许可证增量；无动态边界变更或数学负面证据，不追加 log5。
+
+验收与全部 Lean 尝试（2026-10-19）：
+
+| 任务 | 退出码 | 耗时（秒） | 进程组峰值 RSS（KiB） |
+| --- | ---: | ---: | ---: |
+| `scene1-rational-closure-attempt1.jsonl` | 1 | 60.077 | 5,153,656 |
+| `scene1-rational-closure-attempt2.jsonl` | 0 | 60.595 | 5,147,012 |
+| `scene1-rational-closure-checks-metrics.jsonl` | 0 | 121.195 | 9,442,524 |
+| `scene1-rational-closure-axioms-metrics.jsonl` | 0 | 114.320 | 9,425,332 |
+| `scene1-rational-closure-aggregate-metrics.jsonl` | 0 | 114.647 | 9,272,600 |
+
+首检退出 1：coordinateEquiv_apply 的 simp 需显式展开 basisScalar；Units.map 需要传 RingHom 的 toMonoidHom，后续错误均为该定义失败的级联。两处修正后叶第二次无警告通过，之后生产源码未修改；三个收尾入口均通过。失败为 Lean API／展开适配，无 heartbeat 超时，无数学目标或前提变动。
+
+本轮共 5 次直接 Lean 任务（4 成功、1 失败），成功累计 410.757 秒，失败累计 60.077 秒，总计 470.834 秒；进程组峰值 RSS 9,442,524 KiB。最终新叶和聚合日志为空，两审计入口无 warning/error；17 个新增声明逐名核对，公理日志 3017 条仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；静态导入审计覆盖 542 个可达工程模块，无 Obligations、Candidate、Scene2、Act2 或 Iut.* 导入。固定 CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1，实际并发 worker 峰值 1；每 0.5 秒采样组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。没有 heartbeat override、冷构建、清缓存、Mathlib 重编译或依赖变更；Lean v4.35.0-rc3 与 Mathlib 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3 已核对。
+
+本轮同时更正清单已证局部 normalization 子项的文字：paper factor 的负对数等于 qOrder·log(residueChar)/(2ℓ)，q-pilot normalizedLogTerm 再乘 qPilotWeight。原定理和来源台账公式不变；这不构成数学负面证据或边界修订。

@@ -468,5 +468,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Transport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMarkedTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.GaloisClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerClosureTransport
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalClosureTransport
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

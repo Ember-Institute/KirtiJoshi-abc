@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMarkedTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Transport
 import ArithmeticTeichmullerSpaces.Act1Scene1.GaloisClosureTransport
@@ -3496,3 +3497,22 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.mapRootTower_cocycle
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.h1Equiv_rootTower
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.h1Equiv_kummerClass
+
+/- Rational preferred-closure transport and Tate basis unit. -/
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coordinateEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.basisScalar
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coordinateEquiv_apply
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coordinate_tateEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.basisScalar_mul_inverse
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.basisUnit
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.basisUnit_val
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.character_eq
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coefficientEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coefficientEquiv_down
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coefficientEquiv_equivariant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.marking
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.coefficient_change
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_standardMap
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_rootTower
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_kummerClass
