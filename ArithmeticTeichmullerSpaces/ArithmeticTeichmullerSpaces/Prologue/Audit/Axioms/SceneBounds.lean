@@ -308,6 +308,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltCompleteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltDivision
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltCompleteness
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltPolynomialRoots
+import ArithmeticTeichmullerSpaces.Act1Scene1.CompleteFieldApproximateRoots
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltAlgebraicallyClosed
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -3048,3 +3051,16 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltCompleteness
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.carrierCompleteSpace
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.cauchySeq_converges
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.mem_inclusion_range_iff
+
+
+/- Actual tilt polynomial roots and algebraic closedness. -/
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltPolynomialRoots.exists_coeff_root
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltPolynomialRoots.exists_approx_root
+#print axioms JoshiTeich.Act1Scene1.CompleteFieldApproximateRoots.finite_separation
+#print axioms JoshiTeich.Act1Scene1.CompleteFieldApproximateRoots.exists_root
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.integral_monic_approx_root
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.integral_monic_root
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.exists_integral_scale
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.monic_root
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.carrierIsAlgClosed
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.exists_pow_eq
