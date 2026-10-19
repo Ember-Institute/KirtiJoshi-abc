@@ -449,5 +449,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.AdicResidueEvaluation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamCompletion
 import ArithmeticTeichmullerSpaces.Act1Scene1.SeparatedPrincipalLocalRing
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamDVR
+import ArithmeticTeichmullerSpaces.Act1Scene1.UniformizerLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamField
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

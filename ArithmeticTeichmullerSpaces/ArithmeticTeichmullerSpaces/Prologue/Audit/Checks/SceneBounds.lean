@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.UniformizerLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamField
 import ArithmeticTeichmullerSpaces.Act1Scene1.SeparatedPrincipalLocalRing
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamDVR
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdicResidueEvaluation
@@ -3424,3 +3426,28 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.discreteValuationRing
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.primitive_irreducible
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.primitive_prime
+
+
+/- Original de Rham period field and primitive localization. -/
+#check JoshiTeich.Act1Scene1.UniformizerLocalization.generators_localization
+#check JoshiTeich.Act1Scene1.UniformizerLocalization.fractionRing
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.completedGenerators
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.denominators
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.Carrier
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.commRing
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.algebra
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.localization
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.sourceGenerator_associated
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.primitive_mem_generators
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.generator_associated
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.localizationEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.localizationEquiv_algebraMap
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.away
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.fractionRing
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.field
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.algebraMap_injective
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.primitive_image_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.primitive_image_isUnit
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.exists_primitive_denominator
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.fractionEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.fractionEquiv_algebraMap
