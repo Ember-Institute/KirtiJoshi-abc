@@ -20,16 +20,16 @@
 
 | 项目 | 当前值 |
 | --- | --- |
-| 更新日期 | 2026-10-18（Asia/Shanghai） |
-| 最近完成的数学单元 | actual finite-place tuple packet 的 degree-weighted 三层 log-volume；本次交付 `IutInitialThetaFinitePacketLogVolume.lean` |
-| 数学证明基线 | S1.503 及未编号的 q-root 局部法律、VBad 限制族、有限 factor automorphism 区域、指定因子区域、全部 tuple packet 和本次三层 log-volume；以 [SOURCE_LEDGER](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md) 的声明为准 |
-| 最近已推送单元 | `db8dc46`：有限 tensor 自同构区域；`17eb097`：指定因子 q-root 平方幂区域；`223ff40`：全部有限处 tuple packet / 标准 procession；本次 log-volume 已通过最终四项检查，随本总览提交推送 |
+| 更新日期 | 2026-10-19（Asia/Shanghai） |
+| 最近完成的数学单元 | actual de Rham θ-fiber 的求值像、tensor 单点、有限 factor orbit 及其 normalization hull；本次交付 `IutInitialThetaDeRhamFiberHull.lean` |
+| 数学证明基线 | S1.503 及未编号的 q-root 局部法律、VBad 限制族、有限 factor automorphism 区域、指定因子区域、全部 tuple packet、三层 log-volume 和 de Rham θ-fiber/hull 局部法律；以 [SOURCE_LEDGER](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md) 的声明为准 |
+| 最近已推送单元 | `4a80562`：actual de Rham θ-fiber、tensor 单点、factor orbit 与 normalization hull；此前为 `30ce5fa` 的 de Rham 求值到旧 tensor container，均已通过最终四项检查并推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 数学工作状态 | 真实 q-root 来源及局部/纤维会计、ambient H¹ 的 log/valuation 坐标、actual ordinary-log hull 消费者已建立；有限处 container 与三层数值 log-volume 已有完整 proof term |
-| 当前推进位置 | 从同一 D 的 finite-place container / packet / procession，继续比较 Joshi paper carrier、代表权重、真实 theta locus 和 paper volume；另须落实 `CanonicalActualHull.AnalyticInput` 的来源 |
+| 数学工作状态 | 真实 q-root 来源及局部/纤维会计、ambient H¹ 的 log/valuation 坐标、actual ordinary-log hull 消费者、de Rham θ-fiber 到旧 tensor container 的精确求值和局部 hull 身份已建立；有限处 container 与三层数值 log-volume 已有完整 proof term |
+| 当前推进位置 | 从同一 D 的 de Rham fiber / finite-place container / packet / procession，继续比较 Joshi paper carrier、代表权重、真实 theta locus 和 paper volume；另须落实 `CanonicalActualHull.AnalyticInput` 的来源 |
 | 尚未接通的主要连接 | H¹ₑ/BK/crystalline、跨 untilt collation、period/Perfectoid 的共同来源、论文代表处与权重、无穷处贡献、ordinary-log hull / finite container 到 paper thetaVolume 的身份、最终 3.12 |
 | Prologue 边界 | R5；本轮 Core 假设增量 0，未改既有定理类型或独立依赖 |
-| 最新工程验收 | 新叶、Checks.SceneBounds、Axioms.SceneBounds、Act1Scene1 四项通过；28/28 新声明及 1718 个打印声明通过公理白名单；453 个可达本工程模块的静态导入边界通过 |
+| 最新工程验收 | de Rham fiber/hull 新叶、Checks.SceneBounds、Axioms.SceneBounds、Act1Scene1 四项通过；20/20 新声明及 2950 个打印声明通过公理白名单；537 个可达本工程模块的静态导入边界通过 |
 
 阅读顺序：先看四个闸门，再看当前路线和关键子结果，最后查看未完成义务与负面证据。
 本总览不以单元数量计算总完成率，详细待办见[具有明确参考来源指示的证明义务](具有明确参考来源指示的证明义务.md)。
@@ -44,7 +44,7 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 | **G1：目标与归一化冻结** | 🟡 部分完成 | general-degree raw/degree-normalized reference 与 grouped weighted paper-source 等式；actual tuple 权重总和 1、tensor dimension 消去、packet/global/procession log-volume 与非正符号已证 | 将当前 raw q-term、Joshi paper q-term、选定 thetaVolume 的载体、权重及归一化统一冻结；本次 reference 形式的 packet 公式尚不等于 Joshi relative-degree 代表权重 | S1.489–503；`IutInitialThetaFinitePacketLogVolume.lean`；负面证据 |
 | **G2：真实来源模型装配** | 🟡 部分完成 | 同一 D 的 full-support / VBad q-root、任意下方坏处的幂与估值法律、完整纤维会计；ambient H¹ 连续线性坐标、Tate-log 与 q-root 方向比较已证 | 共同构造真实 thetaScaling、period、Perfectoid bridge、H¹ₑ/BK 和跨 untilt collation；证明论文类与实际来源一致 | S1.452–457、S1.466–470；q-root 局部法律与 VBad family 来源条目 |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | full-support 的 selected/omitted 及 coefficient defect 分解、large-prime 条件性 coverage、VBad 限制族的无额外 coverage 纤维等式；全部 torsion-field tuple 权重与质量已证 | 证明 actual selected carrier 与论文 `V_p^oss/L'` representatives 对应，闭合代表重数、relative degree、mixed-moduli descent；保留已证明不能删除的缺陷与 degree 因子 | S1.471–492、S1.496–500；`IutInitialThetaVBadQRootFamily.lean` |
-| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | actual ordinary-log hull 的 qProduct 下界及 canonical Corollary consumer；有限 factor orbit、指定因子 j² 区域、全部 tuple packet、标准 procession 与三层 log-volume 已证 | 实际 theta locus/BK/untilt 来源、paper holomorphic hull/volume 身份、无穷处或其消去、完整 RHSData 与最终 3.12 联合验收仍缺 | S1.493–503；`IutInitialThetaFiniteFactorRegion.lean`、`IutInitialThetaFinitePacketRegion.lean`、`IutInitialThetaFinitePacketLogVolume.lean` |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | actual ordinary-log hull 的 qProduct 下界及 canonical Corollary consumer；de Rham θ-fiber 的求值像、有限 factor orbit、normalization hull、指定因子 j² 区域、全部 tuple packet、标准 procession 与三层 log-volume 已证 | 实际 theta locus/BK/untilt 来源、paper holomorphic hull/volume 身份、无穷处或其消去、完整 RHSData 与最终 3.12 联合验收仍缺 | S1.493–503；`IutInitialThetaDeRhamFiberHull.lean`、`IutInitialThetaFiniteFactorRegion.lean`、`IutInitialThetaFinitePacketRegion.lean`、`IutInitialThetaFinitePacketLogVolume.lean` |
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
@@ -104,6 +104,7 @@ flowchart TD
 | selected/omitted 与代表系数会计 | 🟢 已闭合 | 原 full support 的分解、缺陷公式与严格正性已证；large-prime coverage 结果保留其选择及大小条件 | G1/G3；S1.475–492 |
 | ordinary-log hull 与 canonical actual bundle | 🔵 条件性完成 | 同一 D 固定 ordinary-log hullVolume、raw q-term、q-family、qProduct 下界和 Corollary consumer；剩余 theta/period/Perfectoid 法律由 AnalyticInput 接收 | G1/G2/G4；S1.493–503；`IutInitialThetaCanonicalActualHullData.lean` |
 | finite factor orbit / 指定因子 j² 区域 | 🟢 已闭合 | 实际有限 tensor 自同构、normalization 稳定、紧性与正有限 Haar；指定因子缩放及坏特征外恢复 normalization 已证 | G4；`db8dc46`、`17eb097` |
+| actual de Rham θ-fiber / tensor image / normalization hull | 🟢 已闭合 | 对原 B_dR⁺ 残值子环的完整 θ-fiber 证明非空及 primitive·b+pilot 表示；求值像是原 qrootAt^(j²) 单点，指定 tensor 因子像是旧 scaleElt 单点；factor orbit 等于旧点轨道且 Haar 为零，其 normalization hull 等于旧 leastHull，紧、Haar 正有限并包含旧 thickened region | G2/G4；`4a80562`；`IutInitialThetaDeRhamFiberHull.lean` |
 | 全部有限处 tuple packet 与标准 procession | 🟢 已闭合 | 每个素数上全部 tuple、非空、显式 witness、紧性、普通乘积测度、`ellStar=(ℓ−1)/2` 与共同有限支撑已证 | G3/G4；`223ff40` |
 | finite tuple 的三层数值 log-volume | 🟢 已闭合 | local-degree tuple 权重质量 1、tensor dimension 消去、productMeasure 对数公式、有限素数和与 procession 平均及非正符号已证 | G1/G3/G4；本次 `IutInitialThetaFinitePacketLogVolume.lean` |
 | paper carrier / weights / representatives | 🟡 部分完成 | 实际 selected/full carriers 及比较界已有；尚缺论文 `V_p^oss/L'` 的完整来源身份与 relative-degree / multiplicity 对齐 | G3；S1.471–500 |
@@ -250,16 +251,16 @@ packetLog(R) = Σ_c weight(c) · componentLog(R_c)
 
 ## 本次验收与工程边界
 
-本次三层 log-volume 单元最终验收如下；详细声明与资源记录见 SOURCE_LEDGER 的 `JT-SCENE1-INITIAL-THETA-FINITE-PACKET-LOG-VOLUME`。
+本次 de Rham θ-fiber/hull 单元最终验收如下；详细声明与资源记录见 SOURCE_LEDGER 的 `JT-SCENE1-INITIAL-THETA-DE-RHAM-FIBER-HULL`。
 
 | 检查 | 结果 | 耗时 | 进程组峰值 RSS |
 | --- | --- | --- | --- |
-| 新叶 IutInitialThetaFinitePacketLogVolume | 通过，无错误或 warning | 114.712 秒 | 9,234,928 KiB |
-| Checks.SceneBounds | 通过 | 130.685 秒 | 9,319,716 KiB |
-| Axioms.SceneBounds | 通过；28/28 新声明、1718 个打印声明在白名单内 | 121.934 秒 | 9,306,140 KiB |
-| Act1Scene1 聚合 | 通过 | 115.700 秒 | 9,247,044 KiB |
+| 新叶 IutInitialThetaDeRhamFiberHull | 通过，无错误或 warning | 119.498 秒 | 9,268,328 KiB |
+| Checks.SceneBounds | 通过 | 135.888 秒 | 9,434,856 KiB |
+| Axioms.SceneBounds | 通过；20/20 新声明、2950 个打印声明在白名单内 | 124.654 秒 | 9,416,580 KiB |
+| Act1Scene1 聚合 | 通过 | 119.569 秒 | 9,269,460 KiB |
 
-最终四项合计 483.031 秒；此前两次因同一嵌套 `by` 缩进解析失败，拆出独立 `have` 后解决。本轮 6 个 Lean 任务累计 721.392 秒（4 成功、2 失败），没有 heartbeat 超时。公理仅 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；静态导入边界覆盖 453 个本工程模块，未引入 Obligations、Candidate、Scene2、Act2 或 `Iut.*`。
+最终四项合计 499.609 秒；编辑期一次类型推断失败和一次 linter 清理复验后通过，本轮 6 个直接 Lean 任务累计 745.682 秒（5 成功、1 失败），没有 heartbeat 超时。公理仅 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；静态导入边界覆盖 537 个本工程模块，未引入 Obligations、Candidate、Scene2、Act2 或 `Iut.*`。
 
 所有任务固定 CPU 0–13、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1。每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发；用户上限 90 GiB。使用 `lake env lean -j1 -o` 和现有预编译依赖，未冷建、清缓存或重编 Mathlib。冻结 Lean `v4.35.0-rc3`、Mathlib `389347a7c1cfa76f6bd5be2ca35d4cb621610ad3` 已核对。
 
@@ -267,7 +268,7 @@ packetLog(R) = Σ_c weight(c) · componentLog(R_c)
 - `docs/开发计划.V1Act1log5.md` 只记录动态边界变更和负面证据，本轮没有修改它。
 - 常规来源和验收登记写入 SOURCE_LEDGER；不要求其他进度文档同步更新。
 - `docs/Email.txt` 仍是独立草稿，不属于数学证明。
-- 最近单元的验收只支持其精确局部结论；最终四闸门仍为 0/4。
+- 最近单元的验收只支持 de Rham fiber、tensor image、factor orbit 和 normalization hull 的精确局部结论；它没有关闭论文 theta locus、H¹ₑ/BK、跨 holomorphoid 或最终 3.12 义务，最终四闸门仍为 0/4。
 
 ## 最终完成条件
 
