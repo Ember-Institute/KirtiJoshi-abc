@@ -434,5 +434,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltCompleteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltDivision
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltCompleteness
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

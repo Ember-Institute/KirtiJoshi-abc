@@ -306,6 +306,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltCompleteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltDivision
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltCompleteness
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -3023,3 +3025,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_range_isComplete
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_range_isClosed
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.cauchySeq_converges
+
+
+/- Division approximation, actual tilt integral unit ball and completeness. -/
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt_reduction
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt_norm_pow
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt_ne_zero
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt_norm_le
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.quotientLift
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.quotientLift_mul
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.approximation
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.approximation_coeff
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.approximation_error_coeff
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltDivision.approximation_error_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.fraction_representation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.source_norm_le_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.integral_fraction_mem_closure
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.norm_le_one_mem_range
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.inclusion_range_eq_closedBall
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.closedBall_isComplete
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.carrierCompleteSpace
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.cauchySeq_converges
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.mem_inclusion_range_iff

@@ -313,6 +313,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltCompleteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltDivision
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltCompleteness
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -3233,3 +3235,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
 #check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_range_isComplete
 #check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_range_isClosed
 #check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.cauchySeq_converges
+
+
+/- Division approximation, actual tilt integral unit ball and completeness. -/
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt_reduction
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt_norm_pow
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt_ne_zero
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.shiftedUntilt_norm_le
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.quotientLift
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.quotientLift_mul
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.approximation
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.approximation_coeff
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.approximation_error_coeff
+#check JoshiTeich.Act1Scene1.GeometricPreTiltDivision.approximation_error_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.fraction_representation
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.source_norm_le_one
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.integral_fraction_mem_closure
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.norm_le_one_mem_range
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.inclusion_range_eq_closedBall
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.closedBall_isComplete
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.carrierCompleteSpace
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.cauchySeq_converges
+#check JoshiTeich.Act1Scene1.InitialThetaTiltCompleteness.mem_inclusion_range_iff
