@@ -461,5 +461,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamPilot
 import ArithmeticTeichmullerSpaces.Act1Scene1.ClosedFieldEmbeddingNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteCompletionEmbeddingTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionUntiltTopology
+import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedResiduePullback
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamEvaluation
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

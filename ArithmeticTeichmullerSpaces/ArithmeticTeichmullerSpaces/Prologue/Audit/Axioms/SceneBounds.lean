@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedResiduePullback
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamEvaluation
 import ArithmeticTeichmullerSpaces.Act1Scene1.ClosedFieldEmbeddingNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteCompletionEmbeddingTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionUntiltTopology
@@ -3384,3 +3386,30 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionUntiltTopology.embedding_norm_pow
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionUntiltTopology.embedding_dist_pow
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionUntiltTopology.embedding_log_norm
+
+
+/- De Rham residue pullback and original finite-container witness. -/
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.source
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.rangeEquiv
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.evaluation
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.embedding_evaluation
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.evaluation_eq_iff
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.surjective
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.kernel
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.fiber
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.quotientEquiv
+#print axioms JoshiTeich.Act1Scene1.EmbeddedResiduePullback.quotientEquiv_mk
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.source
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.evaluation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.embedding_evaluation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.evaluation_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.kernel_eq_comap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.quotientEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.pilot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.evaluation_pilot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.evaluation_pilot_vbad
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.pilot_fiber
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.evaluation_pilot_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot_eq_scaleElt
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamEvaluation.tensorPilot_mem_region
