@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.SeparatedPrincipalLocalRing
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamDVR
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdicResidueEvaluation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamCompletion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicLogShell
@@ -3405,3 +3407,20 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.theta_of_actual
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.theta_primitive
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamCompletion.completeMaximalIdeal
+
+
+/- Actual de Rham DVR and the original primitive uniformizer. -/
+#check JoshiTeich.Act1Scene1.SeparatedPrincipalLocalRing.completion_pow_ne_zero
+#check JoshiTeich.Act1Scene1.SeparatedPrincipalLocalRing.exists_pow_not_dvd
+#check JoshiTeich.Act1Scene1.SeparatedPrincipalLocalRing.factorization
+#check JoshiTeich.Act1Scene1.SeparatedPrincipalLocalRing.domain
+#check JoshiTeich.Act1Scene1.SeparatedPrincipalLocalRing.discreteValuationRing
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.sourcePrimitive_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.sourcePrimitive_not_isUnit
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.primitive_pow_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.primitive_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.factorization
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.domain
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.discreteValuationRing
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.primitive_irreducible
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamDVR.primitive_prime
