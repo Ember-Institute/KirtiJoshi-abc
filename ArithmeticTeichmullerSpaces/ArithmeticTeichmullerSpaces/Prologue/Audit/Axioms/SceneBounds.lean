@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdicNormedIntegers
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.UniformizerLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamField
@@ -3263,3 +3265,31 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerQuotientEquiv
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerQuotientEquiv_mk
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.nonzero_zpow_factorization
+
+
+/- Same de Rham field: primitive-adic norm topology and completeness. -/
+#print axioms JoshiTeich.Act1Scene1.AdicNormedIntegers.isAdic
+#print axioms JoshiTeich.Act1Scene1.AdicNormedIntegers.sourceComplete
+#print axioms JoshiTeich.Act1Scene1.AdicNormedIntegers.fieldComplete
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.valueEmbedding
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.valueEmbedding_strictMono
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.normValuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.absoluteValue
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldNormed
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.norm_eq_value
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.norm_le_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.norm_le_one_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldUltrametric
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.plusNormed
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.inclusion_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.inclusion_isometry
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.primitive_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.kernel_power_eq_ball
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.plus_isAdic
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.plusComplete
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.inclusion_range_eq_closedBall
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldComplete
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.inclusion_range_isClosed
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.cauchySeq_converges
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldValued
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.valued_eq_normValuation

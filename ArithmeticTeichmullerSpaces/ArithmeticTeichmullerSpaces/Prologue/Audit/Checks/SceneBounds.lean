@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdicNormedIntegers
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.UniformizerLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamField
@@ -3473,3 +3475,31 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerQuotientEquiv
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerQuotientEquiv_mk
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.nonzero_zpow_factorization
+
+
+/- Same de Rham field: primitive-adic norm topology and completeness. -/
+#check JoshiTeich.Act1Scene1.AdicNormedIntegers.isAdic
+#check JoshiTeich.Act1Scene1.AdicNormedIntegers.sourceComplete
+#check JoshiTeich.Act1Scene1.AdicNormedIntegers.fieldComplete
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.valueEmbedding
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.valueEmbedding_strictMono
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.normValuation
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.absoluteValue
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldNormed
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.norm_eq_value
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.norm_le_iff
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.norm_le_one_iff
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldUltrametric
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.plusNormed
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.inclusion_norm
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.inclusion_isometry
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.primitive_norm
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.kernel_power_eq_ball
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.plus_isAdic
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.plusComplete
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.inclusion_range_eq_closedBall
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldComplete
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.inclusion_range_isClosed
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.cauchySeq_converges
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldValued
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.valued_eq_normValuation
