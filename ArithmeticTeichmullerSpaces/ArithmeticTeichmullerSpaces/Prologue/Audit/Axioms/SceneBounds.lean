@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteCompletionEmbedding
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamPilot
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTeichmuller
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateDeRhamPilot
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdicNormedIntegers
@@ -3335,3 +3337,32 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.fiber
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_log
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_log_eq_tate
+
+
+/- Original torsion q-root embedded in the same untilt and de Rham pilot. -/
+#print axioms JoshiTeich.Act1Scene1.FiniteCompletionEmbedding.embedding
+#print axioms JoshiTeich.Act1Scene1.FiniteCompletionEmbedding.embedding_base
+#print axioms JoshiTeich.Act1Scene1.FiniteCompletionEmbedding.embedding_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.embedding
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.embedding_base
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.embedding_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.supported_bad
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.parameter_eq_tate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.qroot_power
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.rootImage
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.rootImage_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.rootImage_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.rootImage_norm_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.rootImage_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.rootImage_norm_lt_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.qroot_norm_eq_image_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.qroot_log_eq_degree_mul
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.phase
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.phase_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.phase_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.integralImage
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.pilot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.theta_pilot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.theta_pilot_eq_phase_mul
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.evaluation_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionDeRhamPilot.evaluation_log_eq_tate

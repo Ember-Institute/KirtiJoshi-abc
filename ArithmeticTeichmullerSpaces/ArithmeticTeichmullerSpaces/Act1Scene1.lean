@@ -456,5 +456,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.AdicNormedIntegers
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTeichmuller
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateDeRhamPilot
+import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteCompletionEmbedding
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamPilot
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
