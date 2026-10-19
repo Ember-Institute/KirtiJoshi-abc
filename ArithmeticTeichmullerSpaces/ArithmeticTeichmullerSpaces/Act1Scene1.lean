@@ -443,5 +443,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltIntegers
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltFontaine
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdicKernelDivision
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineKernel
+import ArithmeticTeichmullerSpaces.Act1Scene1.NormedIntegerLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalization
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
