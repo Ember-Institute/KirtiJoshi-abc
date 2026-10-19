@@ -5804,3 +5804,33 @@ Fontaine 叶第二次退出 1，123.742 秒、进程组峰值 RSS 9,106,652 KiB�
 本轮共 5 次直接 Lean 任务（4 成功、1 失败），成功累计 410.757 秒，失败累计 60.077 秒，总计 470.834 秒；进程组峰值 RSS 9,442,524 KiB。最终新叶和聚合日志为空，两审计入口无 warning/error；17 个新增声明逐名核对，公理日志 3017 条仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；静态导入审计覆盖 542 个可达工程模块，无 Obligations、Candidate、Scene2、Act2 或 Iut.* 导入。固定 CPU 0–13、LEAN_NUM_THREADS=10、Lean -j1，实际并发 worker 峰值 1；每 0.5 秒采样组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。没有 heartbeat override、冷构建、清缓存、Mathlib 重编译或依赖变更；Lean v4.35.0-rc3 与 Mathlib 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3 已核对。
 
 本轮同时更正清单已证局部 normalization 子项的文字：paper factor 的负对数等于 qOrder·log(residueChar)/(2ℓ)，q-pilot normalizedLogTerm 再乘 qPilotWeight。原定理和来源台账公式不变；这不构成数学负面证据或边界修订。
+
+### Preferred-closure principal Kummer image, saturation and ordinary logarithm
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-LOCAL-KUMMER-LOG-CLOSURE-TRANSPORT` | `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.kummerHom`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalKummerHom`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.mem_principalImage_iff`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalImageEquiv`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalImageLog_eq`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.mem_saturatedImage_iff`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedEquiv`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedEquiv_classOfImage`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedImageLog_eq`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedExp_eq`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.integralLift_iff`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedContinuousEquiv`, `JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedPadicLog_eq`；`Act1Scene1/LocalKummerLogClosureTransport.lean` | Joshi I `ss:distinct-kummer-theories`／`pr:galois-cohomology-and-teich`（1588–1632）；III principal-unit Kummer classes、ordinary-log／exp 的构造规格（3190–3236）；原 rational closure transport、principal image、p-saturation、integral standardMap 与 subspace topology。对同一完备离散赋值特征零底域 k 的两个代数闭 integral 扩张及显式 k-代数同构 e，限制原 rational continuous H¹ 同构，证明同一底域单位的 Kummer 类运输、principal image 成员充要条件及加法同构。利用清除 p 次幂分母证明原 p-saturation 的成员充要条件、divided-class 公式和加法同构；对素数 p 及显式 ‖(p:k)‖<1 证明 ordinary log／inverse exp 交换；由原 integral/rational standardMap 交换图证明任意 ambient rational 类的 integral-lift 存在性保持。原 H¹ 子空间拓扑上的 ℚₚ 连续线性限制及 saturatedPadicLog 兼容也有完整 proof term。原创证明，无参考源码复制。 | Scene1/Derived；proved，固定底域 closure 同构显式 |
+| `JT-SCENE1-INITIAL-THETA-CLOSURE-LOG` | `JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.preferredEquiv`, `JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass`, `JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_eq_kummer`, `JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_log`, `JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_normalizedLog`, `JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass`, `JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass_log`, `JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass_ne_zero`；`Act1Scene1/IutInitialThetaClosureLog.lean` | Joshi I preferred algebraic closures 与 Kummer theories（1588–1632）；III 同一 principal unit `1+p*·qroot` 的根塔类及 normalized logarithmic witness（3190–3236）；原 actual rationalImageClass／normalizedSaturatedClass。对同一 D 的实际支持处 completion 和任意代数闭 integral 扩张 Ξ，用 IsAlgClosure.equiv 构造 preferred closure 比较；目标特征零由原域嵌入显式推出。原 principal-unit 类实际运输为目标闭包中同一单位的 Kummer 类，ordinary log 精确为 p*·PaperLogWitnessHull.value，除以 p* 恢复原 witness；原 divided saturated 类运输后的 ordinary log 精确为原 witness，因而非零。未外给 closure equivalence、group marking 或 log compatibility。原创证明，无参考源码复制。 | Scene1/Derived；proved，actual D／place 消费者 |
+
+来源边界：这两个叶补齐固定底域 preferred-closure Kummer 运输的 principal-unit、saturation、ordinary-log 与 integral-lift 兼容，并消费同一实际 Initial Θ-data 的类。inverse exp 是已构造 saturated ordinary-log 的逆，不在本单元把它认作 Bloch–Kato 指数；同一 completion 的闭包比较不产生不同 holomorphoid／anabelomorphism 的标注，也不证明 H¹ₑ／BK／crystalline、跨非同构底域的 log 比较、完整论文 collation／theta locus／volume 或最终 3.12。完整来源父义务仍开放。无新增 Core 前提，Prologue-R5、旧公开声明与许可证不变；没有动态边界变更或数学负面证据，不追加 log5。
+
+验收与全部直接 Lean 尝试（2026-10-19）：
+
+| 任务 | 退出码 | 耗时（秒） | 进程组峰值 RSS（KiB） |
+| --- | ---: | ---: | ---: |
+| `scene1-log-closure-generic-attempt1.jsonl` | 1 | 61.159 | 5,234,724 |
+| `scene1-log-closure-generic-attempt2.jsonl` | 0 | 62.633 | 5,235,964 |
+| `scene1-log-closure-generic-attempt3.jsonl` | 0 | 65.191 | 5,237,588 |
+| `scene1-log-closure-generic-attempt4.jsonl` | 0 | 65.735 | 5,236,520 |
+| `scene1-log-closure-actual-attempt1.jsonl` | 1 | 129.373 | 9,218,660 |
+| `scene1-log-closure-actual-attempt2.jsonl` | 0 | 126.336 | 9,263,620 |
+| `scene1-log-closure-actual-attempt3.jsonl` | 1 | 116.169 | 9,220,544 |
+| `scene1-log-closure-actual-attempt4.jsonl` | 0 | 125.746 | 9,263,064 |
+| `scene1-log-closure-checks-metrics.jsonl` | 0 | 123.808 | 9,447,512 |
+| `scene1-log-closure-axioms-metrics.jsonl` | 0 | 117.128 | 9,426,244 |
+| `scene1-log-closure-aggregate-attempt1.jsonl` | 1 | 119.799 | 9,272,572 |
+| `scene1-log-closure-aggregate-metrics.jsonl` | 0 | 117.803 | 9,248,488 |
+
+通用叶 attempt1 因局部 notation 的投影写法、principal-image 底域参数推断及 saturated_as_divided_image 的参数适配失败；attempt2 证明通过但有两条 unused-section-variable warning；按依赖链清理后 attempt3 暴露下游 mem_principalImage_iff 的同类冗余参数，attempt4 日志为空。实际数据叶 attempt1 因目标 CharZero 实例的底域参数无法按目标类型推断而失败；改为各声明内显式导出特征零后 attempt2 通过，但有 class-valued def、defProp 和 letI 格式警告；attempt3 将辅助 def 改 theorem 时遗漏仅在证明体中的底域参数，导致类型错误；改为显式底域参数的私有辅助定理后 attempt4 无警告通过。聚合首检因两个新 import 位于末尾模块文档注释之后失败，将其移回 import 区后复验通过；叶与两审计源码未再改动，因此不重复其已通过检查。上述四次非零退出均为 Lean 类型／实例／语法适配，无 heartbeat 或数学前提变动，失败诊断中的占位证明从未作为验收。
+
+共 12 次直接 Lean 任务（8 次退出 0、4 次失败；退出 0 中包含编辑期警告清理复验），成功累计 804.380 秒，失败累计 426.500 秒，总计 1230.880 秒；进程组峰值 RSS 9,447,512 KiB。最终两叶及聚合日志为空，Checks／Axioms 无 warning/error；21 个新增公开名称逐名核对，公理日志 3038 条只含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`。静态导入边界覆盖 544 个可达工程模块，无 Obligations、Candidate、Scene2、Act2 或 Iut.*。全部任务固定 CPU affinity 0–13、`LEAN_NUM_THREADS=10`、Lean `-j1`，每个直接任务一个目标，实际并发 Lean worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。无 heartbeat timeout／override、冷构建、清缓存、Mathlib 重编译或依赖变更；Lean `v4.35.0-rc3` 与 Mathlib `389347a7c1cfa76f6bd5be2ca35d4cb621610ad3` 已核对。

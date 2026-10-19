@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaClosureLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerLogClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMarkedTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Transport
@@ -3726,3 +3728,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_standardMap
 #check JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_rootTower
 #check JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_kummerClass
+
+-- Preferred-closure principal Kummer image, saturation and ordinary logarithm.
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.kummerHom
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalKummerHom
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.mem_principalImage_iff
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalImageEquiv
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalImageLog_eq
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.mem_saturatedImage_iff
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedEquiv
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedEquiv_classOfImage
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedImageLog_eq
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedExp_eq
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.integralLift_iff
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedContinuousEquiv
+#check JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedPadicLog_eq
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.preferredEquiv
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_eq_kummer
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_log
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_normalizedLog
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass_log
+#check JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass_ne_zero

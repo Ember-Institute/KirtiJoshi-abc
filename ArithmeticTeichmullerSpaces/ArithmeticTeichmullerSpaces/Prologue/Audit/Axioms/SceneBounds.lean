@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaClosureLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerLogClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMarkedTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Transport
@@ -3516,3 +3518,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_standardMap
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_rootTower
 #print axioms JoshiTeich.Act1Scene1.LocalKummer.RationalClosureTransport.h1Equiv_kummerClass
+
+-- Preferred-closure principal Kummer image, saturation and ordinary logarithm.
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.kummerHom
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalKummerHom
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.mem_principalImage_iff
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalImageEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.principalImageLog_eq
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.mem_saturatedImage_iff
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedEquiv_classOfImage
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedImageLog_eq
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedExp_eq
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.integralLift_iff
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedContinuousEquiv
+#print axioms JoshiTeich.Act1Scene1.LocalPadicLog.ClosureTransport.saturatedPadicLog_eq
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.preferredEquiv
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_eq_kummer
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_log
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.imageClass_normalizedLog
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass_log
+#print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass_ne_zero

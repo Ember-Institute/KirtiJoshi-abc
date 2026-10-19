@@ -470,4 +470,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GaloisClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalClosureTransport
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerLogClosureTransport
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaClosureLog
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
