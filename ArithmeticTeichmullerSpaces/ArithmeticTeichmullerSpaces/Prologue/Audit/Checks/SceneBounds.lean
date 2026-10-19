@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMarkedTransport
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Transport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamFiberHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedResiduePullback
@@ -3647,3 +3649,39 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_haar_pos_lt_top
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.region_subset_hull
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_le_principalRegion_iff
+
+
+/- Continuous H1 transport between marked Krull Galois groups. -/
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.symm
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.coefficientHom
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.cochain
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.cochain_law
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.map
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.map_classOf
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.symm_map_map
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.map_symm_map
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.h1Equiv
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.h1Equiv_classOf
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.groupIso
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.coefficientIso
+#check JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.equivariant
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.coefficientIso
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.coefficientIso_coordinate
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.coefficientIso_equivariant
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.integralMarking
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.rationalMarking
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.integralH1
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.rationalH1
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.coefficient_change
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.rationalH1_standardMap
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.cocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.integralH1_classOfCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.rationalH1_classOfCocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.rationalCollation
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.mem_rationalCollation_iff
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.integralCollation
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.rationalization_collation
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.groupIso
+#check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.character_eq

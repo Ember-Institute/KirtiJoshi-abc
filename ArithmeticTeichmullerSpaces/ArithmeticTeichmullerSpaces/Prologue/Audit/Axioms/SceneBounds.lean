@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMarkedTransport
+import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Transport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamFiberHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedResiduePullback
@@ -3437,3 +3439,39 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_haar_pos_lt_top
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.region_subset_hull
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamFiberHull.hull_le_principalRegion_iff
+
+
+/- Continuous H1 transport between marked Krull Galois groups. -/
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.symm
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.coefficientHom
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.cochain
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.cochain_law
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.map
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.map_classOf
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.symm_map_map
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.map_symm_map
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.h1Equiv
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.h1Equiv_classOf
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.groupIso
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.coefficientIso
+#print axioms JoshiTeich.Act1Scene1.ContinuousH1Transport.Marking.equivariant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.coefficientIso
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.coefficientIso_coordinate
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.coefficientIso_equivariant
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.integralMarking
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.rationalMarking
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.integralH1
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.rationalH1
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.coefficient_change
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.rationalH1_standardMap
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.cocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.integralH1_classOfCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.rationalH1_classOfCocycle
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.rationalCollation
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.mem_rationalCollation_iff
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.integralCollation
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.rationalization_collation
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.groupIso
+#print axioms JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.character_eq
