@@ -318,6 +318,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltCompleteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltPolynomialRoots
 import ArithmeticTeichmullerSpaces.Act1Scene1.CompleteFieldApproximateRoots
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltAlgebraicallyClosed
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltIntegers
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltFontaine
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -3274,3 +3276,39 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltAlgebraicallyCl
 #check JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.monic_root
 #check JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.carrierIsAlgClosed
 #check JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.exists_pow_eq
+
+
+/- Actual tilt integers, Fontaine source and Teichmuller lifts. -/
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.Integers
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.inclusion
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.inclusion_coe
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.inclusion_bijective
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv_coe
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv_symm_coe
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv_isometry
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.sharp
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.sharp_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.sharp_preTiltEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.sharp_surjective
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.Ainf
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.preTiltWittEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_preTiltWittEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_surjective
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_teichmuller
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_teichmuller_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.integralLift
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_integralLift
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.integralLift_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.exists_teichmuller_lift
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.integralLift_norm_lt_one
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_integralLift_pow
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_fiber
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_kernel_isPrime
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.quotientEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.quotientEquiv_mk
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive_mem_kernel
+#check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive_ne_zero

@@ -439,5 +439,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltCompleteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltPolynomialRoots
 import ArithmeticTeichmullerSpaces.Act1Scene1.CompleteFieldApproximateRoots
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltAlgebraicallyClosed
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltIntegers
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltFontaine
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

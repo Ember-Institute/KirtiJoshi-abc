@@ -311,6 +311,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltCompleteness
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltPolynomialRoots
 import ArithmeticTeichmullerSpaces.Act1Scene1.CompleteFieldApproximateRoots
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltAlgebraicallyClosed
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltIntegers
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltFontaine
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -3064,3 +3066,39 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltAlgebraicallyCl
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.monic_root
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.carrierIsAlgClosed
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltAlgebraicallyClosed.exists_pow_eq
+
+
+/- Actual tilt integers, Fontaine source and Teichmuller lifts. -/
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.Integers
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.inclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.inclusion_coe
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.inclusion_bijective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv_coe
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv_symm_coe
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv_isometry
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.preTiltEquiv_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.sharp
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.sharp_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.sharp_preTiltEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltIntegers.sharp_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.Ainf
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.preTiltWittEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_preTiltWittEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_teichmuller
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_teichmuller_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.integralLift
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_integralLift
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.integralLift_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.exists_teichmuller_lift
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.integralLift_norm_lt_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_integralLift_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_fiber
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.theta_kernel_isPrime
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.quotientEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.quotientEquiv_mk
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive_mem_kernel
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive_ne_zero
