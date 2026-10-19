@@ -451,5 +451,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.SeparatedPrincipalLocalRing
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamDVR
 import ArithmeticTeichmullerSpaces.Act1Scene1.UniformizerLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamField
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamValuation
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

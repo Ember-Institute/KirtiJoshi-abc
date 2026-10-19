@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.UniformizerLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamField
 import ArithmeticTeichmullerSpaces.Act1Scene1.SeparatedPrincipalLocalRing
@@ -3241,3 +3242,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamField.exists_primitive_denominator
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamField.fractionEquiv
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamField.fractionEquiv_algebraMap
+
+
+/- Actual de Rham discrete valuation and theta on its integers. -/
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.discrete
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integers
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_le_one_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_primitive
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_lt_one_iff_theta_eq_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_eq_one_iff_theta_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.mem_kernel_pow_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerEquiv_coe
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerTheta
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerTheta_integerEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerTheta_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerTheta_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerQuotientEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerQuotientEquiv_mk
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.nonzero_zpow_factorization

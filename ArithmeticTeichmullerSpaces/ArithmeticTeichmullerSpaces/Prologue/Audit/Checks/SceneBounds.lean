@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.UniformizerLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamField
 import ArithmeticTeichmullerSpaces.Act1Scene1.SeparatedPrincipalLocalRing
@@ -3451,3 +3452,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.exists_primitive_denominator
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.fractionEquiv
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamField.fractionEquiv_algebraMap
+
+
+/- Actual de Rham discrete valuation and theta on its integers. -/
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.discrete
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_surjective
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integers
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_le_one_iff
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_primitive
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_lt_one_iff_theta_eq_zero
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.valuation_eq_one_iff_theta_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.mem_kernel_pow_iff
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerEquiv_coe
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerTheta
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerTheta_integerEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerTheta_surjective
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerTheta_eq_zero_iff
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerQuotientEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.integerQuotientEquiv_mk
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamValuation.nonzero_zpow_factorization
