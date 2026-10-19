@@ -320,6 +320,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.CompleteFieldApproximateRoots
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltAlgebraicallyClosed
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltIntegers
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdicKernelDivision
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineKernel
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -3312,3 +3314,18 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltFontaine
 #check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive
 #check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive_mem_kernel
 #check JoshiTeich.Act1Scene1.InitialThetaTiltFontaine.primitive_ne_zero
+
+
+/- Principal kernel of the actual Fontaine map. -/
+#check JoshiTeich.Act1Scene1.AdicKernelDivision.exists_factor
+#check JoshiTeich.Act1Scene1.AdicKernelDivision.eq_span
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.integersPerfect
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.decomposition
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.constantCoeff_norm_le
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.constantCoeff_dvd
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.division_step
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.kernel_eq_span
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.mem_kernel_iff_dvd
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.primitive_prime
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.quotientPrimitiveEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaFontaineKernel.quotientPrimitiveEquiv_mk

@@ -441,5 +441,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.CompleteFieldApproximateRoots
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltAlgebraicallyClosed
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltIntegers
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.AdicKernelDivision
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineKernel
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
