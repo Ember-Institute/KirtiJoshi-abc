@@ -466,5 +466,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamEvalua
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamFiberHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Transport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMarkedTransport
+import ArithmeticTeichmullerSpaces.Act1Scene1.GaloisClosureTransport
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerClosureTransport
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

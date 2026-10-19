@@ -1,5 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerMarkedTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.ContinuousH1Transport
+import ArithmeticTeichmullerSpaces.Act1Scene1.GaloisClosureTransport
+import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamFiberHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedResiduePullback
@@ -3685,3 +3687,22 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.rationalization_collation
 #check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.groupIso
 #check JoshiTeich.Act1Scene1.LocalKummer.MarkedTransport.Marking.character_eq
+
+/- Preferred algebraic-closure Galois and Kummer transport. -/
+#check JoshiTeich.Act1Scene1.GaloisClosureTransport.autCongr_continuous
+#check JoshiTeich.Act1Scene1.GaloisClosureTransport.groupIso
+#check JoshiTeich.Act1Scene1.GaloisClosureTransport.groupIso_apply
+#check JoshiTeich.Act1Scene1.GaloisClosureTransport.intertwine
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.tateMap
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.tateMap_apply
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.tateMap_symm
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.tateMap_padicPower
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.tateMap_continuous
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.tateEquiv
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.tateEquiv_equivariant
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.marking
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.h1Equiv
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.mapRootTower
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.mapRootTower_cocycle
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.h1Equiv_rootTower
+#check JoshiTeich.Act1Scene1.LocalKummer.ClosureTransport.h1Equiv_kummerClass
