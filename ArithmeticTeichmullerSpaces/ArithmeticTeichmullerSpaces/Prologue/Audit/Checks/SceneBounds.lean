@@ -311,6 +311,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltCompleteness
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -3207,3 +3209,27 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
 #check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.frobeniusHomeomorph
 #check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.exists_norm_between
 #check JoshiTeich.Act1Scene1.InitialThetaTiltTopology.sharp_continuousAt_zero
+
+
+/- Actual PreTilt completeness from stabilized coefficients and closed tilt inclusion. -/
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.absoluteValue
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.sourceNormedRing
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.norm_eq_valuation
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.coeff_eq_zero_iff
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.coeff_eq_iff_dist_le
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.exists_coeffRadius_lt
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.cauchySeq_coeff_stable
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.cauchyLimit
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.coeff_cauchyLimit_eventually
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.cauchyLimit_tendsto
+#check JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.sourceCompleteSpace
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.sourceNormedRing
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.sourceCompleteSpace
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.norm_eq_sourceValuation
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.coeff_eq_iff_dist_le
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_norm
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_isometry
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_isClosedEmbedding
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_range_isComplete
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_range_isClosed
+#check JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.cauchySeq_converges

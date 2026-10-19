@@ -432,5 +432,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltCompleteness
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

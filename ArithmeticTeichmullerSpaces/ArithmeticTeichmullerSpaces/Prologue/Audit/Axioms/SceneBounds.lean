@@ -304,6 +304,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricPreTiltCompleteness
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPreTiltCompleteness
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -2997,3 +2999,27 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.frobeniusHomeomorph
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.exists_norm_between
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTiltTopology.sharp_continuousAt_zero
+
+
+/- Actual PreTilt completeness from stabilized coefficients and closed tilt inclusion. -/
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.absoluteValue
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.sourceNormedRing
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.norm_eq_valuation
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.coeff_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.coeff_eq_iff_dist_le
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.exists_coeffRadius_lt
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.cauchySeq_coeff_stable
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.cauchyLimit
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.coeff_cauchyLimit_eventually
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.cauchyLimit_tendsto
+#print axioms JoshiTeich.Act1Scene1.GeometricPreTiltCompleteness.sourceCompleteSpace
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.sourceNormedRing
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.sourceCompleteSpace
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.norm_eq_sourceValuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.coeff_eq_iff_dist_le
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_isometry
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_isClosedEmbedding
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_range_isComplete
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.inclusion_range_isClosed
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPreTiltCompleteness.cauchySeq_converges

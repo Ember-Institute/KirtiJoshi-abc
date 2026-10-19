@@ -5449,3 +5449,29 @@ tensor 叶首版证明已通过（62.751 秒、峰值 5,727,612 KiB），清除�
 验收（2026-10-19）：最终叶 `IutInitialThetaTiltTopology` 退出 0，115.596 秒、进程组峰值 RSS 9,096,032 KiB，日志为空，无错误或 warning。`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 依次首次通过，耗时 130.259、114.439、114.420 秒，峰值 RSS 依次 9,394,948、9,379,668、9,262,408 KiB。17/17 个新增登记声明逐名通过公理核对；全部 2590 个打印声明仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；类型／公理日志无 warning，聚合日志为空。静态导入审计覆盖聚合及两个审计入口的 505 个可达本工程模块，扫描覆盖全部 import 行形式；无 Obligations、Candidate、Scene2、Act2 或 `Iut.*` 导入。新增源码未含 sorry/admit/自定义 axiom/opaque。打印签名确认 actual tilt 的 NormedField 结构及 Frobenius 同胚只依赖实际 D／支持处 w（和原隐式 AG／TG），不接收额外赋范／拓扑／连续性 certificate。
 
 本轮共 5 次直接 Lean 任务（4 成功、1 失败），成功累计 474.714 秒、失败累计 118.183 秒、总计 592.897 秒；进程组峰值 RSS 9,394,948 KiB（8.960 GiB）。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。无 heartbeat override。只用 `lake env lean -j1 -o` 访问现有依赖产物，未调用 Lake build 调度器、冷构建、重编 Mathlib 或变更冻结工具链/依赖。
+
+
+### 原 PreTilt 的系数逆极限完备性及其在实际 tilt 中的闭完备像
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-GEOMETRIC-PRETILT-COMPLETENESS` | `GeometricPreTiltCompleteness.{absoluteValue,sourceNormedRing,norm_eq_valuation,coeff_eq_zero_iff,coeff_eq_iff_dist_le,exists_coeffRadius_lt,cauchySeq_coeff_stable,cauchyLimit,coeff_cauchyLimit_eventually,cauchyLimit_tendsto,sourceCompleteSpace}`；`Act1Scene1/GeometricPreTiltCompleteness.lean` | Joshi `Arithmetic Holomorphic Structures.tex` 的 tilt 为完备非阿基米德域的来源目标（587–599）；Mathlib `PreTilt` 为 `Perfection (O/(p)) p` 的真实系数逆极限（Perfection.lean），`PreTilt.coeff_iterate_frobeniusEquiv_symm`、`mk_untilt_eq_coeff_zero`、`untilt_iterate_frobeniusEquiv_symm_pow`，现有 actual untilt／sharp 范数比较及 `Metric.complete_of_cauchySeq_tendsto` 为具体 API。对实际 Ω 的原 norm valuation integer ring、p 素数、0<‖p‖<1 和 Ω 完备性，`absoluteValue` 为已有 actual sourceValuation 的 Real coercion，`sourceNormedRing` 由其建立，不更换 PreTilt carrier。取 y=Frob^(-n)(x)，其 untilt 模 p 等于 coeff_n(x)，系数零等价于 untilt(y)∈(p)，已证实际主理想闭球身份使之等价于 ‖untilt(y)‖≤‖p‖。又 x 的 sharp 范数等于 ‖untilt(y)‖^(p^n)，因此给出精确闭球判据 `coeff_n(x)=0 ↔ ‖x‖≤‖p‖^(p^n)`，对差得到 `coeff_n(x)=coeff_n(y) ↔ dist(x,y)≤‖p‖^(p^n)`。p≥2 给 n≤p^n，而 ‖p‖<1 的幂趋零，证明系数球共尾于所有正 metric 半径。Cauchy criterion 因此使每个系数最终稳定；`cauchyLimit` 取每个系数的实际稳定值，在两个稳定阈值的 max 之后证明 r_(n+1)^p=r_n，故直接构造原 PreTilt 元素。`coeff_cauchyLimit_eventually`／`cauchyLimit_tendsto` 由系数球共尾性证明该原对象是 Cauchy 极限，得到 CompleteSpace。没有假设逆极限已经完备或另造新 completion 取代它。 | Scene1/Derived；proved |
+| `JT-SCENE1-INITIAL-THETA-PRETILT-COMPLETENESS` | `InitialThetaPreTiltCompleteness.{sourceNormedRing,sourceCompleteSpace,norm_eq_sourceValuation,coeff_eq_iff_dist_le,inclusion_norm,inclusion_isometry,inclusion_isClosedEmbedding,inclusion_range_isComplete,inclusion_range_isClosed,cauchySeq_converges}`；`Act1Scene1/IutInitialThetaPreTiltCompleteness.lean` | 对同一 `D : InitialThetaData AG TG` 和 `w : (iutInitialThetaTateParameterData D).places`，Ω 仍是已构造 canonical geometric coefficient field；其完备性、p 范数界及实际 `InitialThetaTiltField.Source D w` 均由原 source 生产者提供。通用 norm／complete 实例装配为 actual PreTilt 的实例。actual coeff／distance 判据直接消费通用证明。此前 `InitialThetaTiltTopology` 的 norm valuation 公式与 `InitialThetaTiltField.valuation_inclusion`，结合真实 source norm，证明同一个 ring-hom inclusion 保范数；map_sub 使之等距。Mathlib 的 complete-domain isometry closed embedding 定理给真实包含映射的 IsClosedEmbedding，uniform inducing 的 complete-range 定理给其像的 IsComplete 和闭性。最后在原 actual PreTilt 上提供 Cauchy sequence convergence。完备性并非外给模型或额外 certificate。 | Scene1/Derived；proved |
+
+所有声明带前缀 `JoshiTeich.Act1Scene1`；21 个新增登记名称包括新 norm／complete 实例，加入 Checks／Axioms 家族及 Scene1 聚合。两叶为原创证明／adapter，无参考源码复制或许可证增量，不导入 refer/iut。新 direct Mathlib import 使用现有预编译产物，缓存／冻结依赖保持。
+
+本单元完成实际 PreTilt 的完备性以及该载体在同一 normed tilt 中的闭完备像；这是继续证明 tilt fraction field 完备性的实际基础，未把该闭子环与整个 tilt 的 closed unit ball 身份直接假定为真，也未仅凭它的完备性推断分式域完备。下一步仍须证明足够的邻域／整除连接并在同一分式域上给出 Cauchy 极限。tilt 分式域的完备性／代数闭性、指定 F、全局 holomorphoid／Berkovich 基点／tempered marking、H¹ₑ/BK 和 theta／period／paper volume 及最终 3.12、G1–G4 仍开放，来源 bridge 父项未关闭。数学只在 Scene1/Derived；Core 假设增量 0，Prologue-R5 不变，无动态边界变更或数学负面证据，不写入 log5。
+
+
+编辑期首检退出 1，64.799 秒、进程组峰值 RSS 5,495,912 KiB：principal ideal membership 须先显式 change 为 Set 后应用 closed-ball identity；将不存在的幂单调 API 名改为 `pow_le_pow_of_le_one`；兼容系数构造和最终稳定系数证明先展开 lambda／cauchyLimit 投影，补显式 change。清除 norm_eq_valuation 无用 CompleteSpace section 实例。类型／API／展开问题，不改变数学目标和前提，无 heartbeat 或内存失败。
+
+
+通用叶第二次检查退出 1，72.018 秒、峰值 RSS 5,494,456 KiB，仅剩 `Nat.lt_two_pow_self` 的自然数参数在当前版本为 implicit，改为显式目标 `show m < 2^m` 后让其推断。系数球判据、逆极限极限构造与收敛证明未再报错；没有数学前提或目标变更，无 heartbeat／内存失败。
+
+
+通用叶第三次检查退出 0，67.450 秒、5,495,512 KiB，完整逆极限完备性证明通过；日志提示 exists_coeffRadius_lt 仍自动带入不使用的 ultrametric／CompleteSpace section 实例。已在该定理前显式 omit，继续最终复验，不把带 warning 的编辑期成功作为最终验收。
+
+
+验收（2026-10-19）：最终通用叶 `GeometricPreTiltCompleteness` 退出 0，67.360 秒、进程组峰值 RSS 5,496,568 KiB；最终实际消费者 `IutInitialThetaPreTiltCompleteness` 退出 0，119.563 秒、9,088,016 KiB。两叶最终日志均为空，无错误或 warning。`Checks.SceneBounds`、`Axioms.SceneBounds`、`Act1Scene1` 依次首次通过，耗时 127.196、122.152、124.784 秒，峰值 RSS 依次 9,398,268、9,379,476、9,262,812 KiB。21/21 个新增登记声明逐名通过公理核对；全部 2611 个打印声明仅含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`；类型／公理日志无 warning，聚合日志为空。静态导入审计覆盖聚合及两个审计入口的 507 个可达本工程模块，扫描覆盖全部 import 行形式；无 Obligations、Candidate、Scene2、Act2 或 `Iut.*` 导入。新增源码未含 sorry/admit/自定义 axiom/opaque。打印签名确认 actual PreTilt 的 CompleteSpace、包含映射的等距性及像的完备性只依赖 D／支持处 w（和原隐式 AG／TG），没有外给完备性、等距或闭像 certificate。
+
+本轮共 9 次直接 Lean 任务（7 次退出 0，其中 1 次编辑期带 warning 不作最终验收；2 次失败），退出 0 累计 745.547 秒、失败累计 136.817 秒、总计 882.364 秒；进程组峰值 RSS 9,398,268 KiB（8.963 GiB）。全部使用 CPU affinity `0–13`、`LEAN_NUM_THREADS=10`、Lean `-j1`，实际并发 worker 峰值 1；每 0.5 秒采样进程组 RSS，85 GiB 停止线未触发（用户上限 90 GiB）。无 heartbeat override。只用 `lake env lean -j1 -o` 访问现有依赖产物，未调用 Lake build 调度器、冷构建、重编 Mathlib 或变更冻结工具链/依赖。
