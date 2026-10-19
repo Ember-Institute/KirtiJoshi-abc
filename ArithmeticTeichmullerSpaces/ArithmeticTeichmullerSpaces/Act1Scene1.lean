@@ -458,5 +458,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTeichmuller
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateDeRhamPilot
 import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteCompletionEmbedding
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionDeRhamPilot
+import ArithmeticTeichmullerSpaces.Act1Scene1.ClosedFieldEmbeddingNorm
+import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteCompletionEmbeddingTopology
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionUntiltTopology
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
