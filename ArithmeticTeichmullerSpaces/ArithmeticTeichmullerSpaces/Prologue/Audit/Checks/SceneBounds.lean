@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTeichmuller
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateDeRhamPilot
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdicNormedIntegers
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamValuation
@@ -3503,3 +3505,43 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.cauchySeq_converges
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldValued
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.valued_eq_normValuation
+
+
+/- Actual Witt/de Rham Teichmuller lifts and local Tate root pilot. -/
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.localizationToPlus
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.theta_localizationToPlus
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.ainfToPlus
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.theta_ainfToPlus
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.lift
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.theta_lift
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.theta_lift_pow
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.evaluation_norm
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.lift_isUnit
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.fiber
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.kernel_translate_pow
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tateValue
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tateValue_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tateValue_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tateValue_norm_lt_one
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_exists
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_pow
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_norm_pow
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_norm_lt_one
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.integralRoot
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tiltRoot
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tiltRoot_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tiltRoot_norm_lt_one
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.pilot
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.pilot_isUnit
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.theta_pilot
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.theta_pilot_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.theta_pilot_root_equation
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_norm
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_log
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_product
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_log_sum
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.fiber
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_log
+#check JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_log_eq_tate

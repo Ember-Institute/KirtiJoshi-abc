@@ -1,4 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicHullClosure
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTeichmuller
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateDeRhamPilot
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdicNormedIntegers
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamValuation
@@ -3293,3 +3295,43 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.cauchySeq_converges
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.fieldValued
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTopology.valued_eq_normValuation
+
+
+/- Actual Witt/de Rham Teichmuller lifts and local Tate root pilot. -/
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.localizationToPlus
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.theta_localizationToPlus
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.ainfToPlus
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.theta_ainfToPlus
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.lift
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.theta_lift
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.theta_lift_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.evaluation_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.lift_isUnit
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.fiber
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamTeichmuller.kernel_translate_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tateValue
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tateValue_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tateValue_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tateValue_norm_lt_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_exists
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_norm_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_norm_lt_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.integralRoot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tiltRoot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tiltRoot_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.tiltRoot_norm_lt_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.pilot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.pilot_isUnit
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.theta_pilot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.theta_pilot_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.theta_pilot_root_equation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_norm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_log
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_product
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_log_sum
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.fiber
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.root_log
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateDeRhamPilot.evaluation_log_eq_tate
