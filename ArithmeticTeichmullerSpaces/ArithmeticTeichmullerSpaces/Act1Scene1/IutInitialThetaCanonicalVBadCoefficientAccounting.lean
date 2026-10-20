@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalVBadSubprobabilityBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQPilotTargetAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 
 /-!
@@ -82,6 +83,44 @@ theorem canonicalScene1AbsLogQ_eq_vbadCoefficientWeightedPaperSum_fromScene1Data
           VBadSelectedPaper.paperTerm D v := by
   exact canonicalScene1AbsLogQ_eq_vbadCoefficientWeightedPaperSum
     p D base hEll hLink hDegree
+
+theorem canonicalScene1Target_qLogSum_eq_vbadCoefficientWeightedPaperSum
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (hDegree : Module.finrank ℚ D.F = 1) :
+    Corollary312Data.qLogSum p base.target =
+      ∑ v : iutInitialThetaVBadModuliFinset D,
+        iutInitialThetaRepresentativeCoefficient D
+            (iutInitialThetaVBadModuliAt D v) *
+          VBadSelectedPaper.paperTerm D v := by
+  have hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D := congrArg AdelicThetaLinkData.tate hLink
+  calc
+    Corollary312Data.qLogSum p base.target =
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D) :=
+      Corollary312Scene1QPilotData.qLogSum_eq_reference_ofCanonicalInitialThetaTateData
+        p D base hEll hTate hDegree
+    _ = ∑ v : iutInitialThetaVBadModuliFinset D,
+        iutInitialThetaRepresentativeCoefficient D
+            (iutInitialThetaVBadModuliAt D v) *
+          VBadSelectedPaper.paperTerm D v :=
+      VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D
 
 end
 end JoshiTeich.Act1Scene1
