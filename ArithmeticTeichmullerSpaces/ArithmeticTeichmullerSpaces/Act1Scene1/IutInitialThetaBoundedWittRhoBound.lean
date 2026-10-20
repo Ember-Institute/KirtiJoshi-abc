@@ -37,6 +37,42 @@ def HasRhoBoundedExpansion (rho : ℝ) (z : Ambient D w) : Prop :=
         algebraMap (FieldWitt D w) (Ambient D w) y ∧
       (∀ n : ℕ, ‖c n‖ * rho ^ n ≤ C)
 
+def RhoBoundSet (rho : ℝ) (z : Ambient D w) : Set ℝ :=
+  {C | ∃ m : ℕ, ∃ y : FieldWitt D w,
+    ∃ c : ℕ → InitialThetaTiltField.Carrier D w,
+      0 < C ∧ (∀ n : ℕ, ‖c n‖ ≤ C) ∧
+        Expands (Arithmetic.residueChar w.1) y c ∧
+        z * (Arithmetic.residueChar w.1 : Ambient D w) ^ m =
+          algebraMap (FieldWitt D w) (Ambient D w) y ∧
+        (∀ n : ℕ, ‖c n‖ * rho ^ n ≤ C)}
+
+theorem hasRhoBoundedExpansion_iff_rhoBoundSet_nonempty
+    (rho : ℝ) (z : Ambient D w) :
+    HasRhoBoundedExpansion D w rho z ↔ (RhoBoundSet D w rho z).Nonempty := by
+  constructor
+  · rintro ⟨m, y, c, C, hC, hbound, hc, hz, hrho⟩
+    exact ⟨C, ⟨m, y, c, hC, hbound, hc, hz, hrho⟩⟩
+  · rintro ⟨C, ⟨m, y, c, hC, hbound, hc, hz, hrho⟩⟩
+    exact ⟨m, y, c, C, hC, hbound, hc, hz, hrho⟩
+
+theorem rhoBoundSet_lowerBound_zero
+    (rho : ℝ) (z : Ambient D w) :
+    ∀ C ∈ RhoBoundSet D w rho z, 0 ≤ C := by
+  intro C hC
+  rcases hC with ⟨m, y, c, hC, hbound, hc, hz, hrho⟩
+  exact hC.le
+
+theorem rhoBoundSet_upward_closed
+    (rho : ℝ) (z : Ambient D w) {C C' : ℝ}
+    (hC : C ∈ RhoBoundSet D w rho z) (hCC' : C ≤ C') :
+    C' ∈ RhoBoundSet D w rho z := by
+  rcases hC with ⟨m, y, c, hpos, hbound, hc, hz, hrho⟩
+  refine ⟨m, y, c, lt_of_lt_of_le hpos hCC', ?_, hc, hz, ?_⟩
+  · intro n
+    exact (hbound n).trans hCC'
+  · intro n
+    exact (hrho n).trans hCC'
+
 theorem hasRhoBoundedExpansion_of_hasBoundedExpansion
     (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1)
     (z : Ambient D w) (hz : HasBoundedExpansion D w z) :
