@@ -93,6 +93,16 @@ def scene1Input : Scene1Input D.F O p :=
     (packetHull D theta route) heightData ramification (cost D) (length D)
     (toCanonicalInput p D theta route thetaBase heightData ramification X)
 
+theorem hullVolume_eq_exp_neg_coefficientWeightedPaperSum :
+    hullVolume D =
+      Real.exp (-(length D : ℝ) *
+        (∑ v : iutInitialThetaVBadModuliFinset D,
+          iutInitialThetaRepresentativeCoefficient D
+              (iutInitialThetaVBadModuliAt D v) *
+            VBadSelectedPaper.paperTerm D v)) := by
+  exact VBadThetaLogCollation.volume_eq_exp_neg_coefficientWeightedPaperSum
+    D (length D) (tuple D) (tuple_liesOver D)
+
 /-- Both target sides are fixed by the actual source, before proving the bound. -/
 def data : Corollary312Data D.F O p where
   scene1 := scene1Input p D theta route thetaBase heightData ramification X
@@ -112,20 +122,20 @@ theorem data_thetaVolume_eq :
     (data p D theta route thetaBase heightData ramification X).thetaVolume =
       hullVolume D := rfl
 
-theorem qNormCompatibility :
-    QNormTateCompatibility (data p D theta route thetaBase heightData ramification X).scene1.data.link :=
-  iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
-    (packetHull D theta route) heightData ramification (cost D) (length D)
-
-theorem hullVolume_eq_exp_neg_coefficientWeightedPaperSum :
-    hullVolume D =
+theorem data_thetaVolume_eq_exp_neg_coefficientWeightedPaperSum :
+    (data p D theta route thetaBase heightData ramification X).thetaVolume =
       Real.exp (-(length D : ℝ) *
         (∑ v : iutInitialThetaVBadModuliFinset D,
           iutInitialThetaRepresentativeCoefficient D
               (iutInitialThetaVBadModuliAt D v) *
             VBadSelectedPaper.paperTerm D v)) := by
-  exact VBadThetaLogCollation.volume_eq_exp_neg_coefficientWeightedPaperSum
-    D (length D) (tuple D) (tuple_liesOver D)
+  rw [data_thetaVolume_eq p D theta route thetaBase heightData ramification X]
+  exact hullVolume_eq_exp_neg_coefficientWeightedPaperSum D
+
+theorem qNormCompatibility :
+    QNormTateCompatibility (data p D theta route thetaBase heightData ramification X).scene1.data.link :=
+  iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
+    (packetHull D theta route) heightData ramification (cost D) (length D)
 
 def source : IutQPilotSource p (data p D theta route thetaBase heightData ramification X) :=
   IutQPilotSource.ofInitialThetaCanonicalTateData D p rfl rfl

@@ -1568,6 +1568,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.data
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.data_link_eq
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.data_thetaVolume_eq
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.data_thetaVolume_eq_exp_neg_coefficientWeightedPaperSum
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.hullVolume_eq_exp_neg_coefficientWeightedPaperSum
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.qNormCompatibility
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.source
