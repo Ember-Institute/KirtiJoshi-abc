@@ -6205,3 +6205,20 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 137.277 | 9,459,644 |
 
 The first leaf failure was an ordinary misuse of a set equality as a projection; rewriting with the existing range equality fixed it. The final leaf and aggregate logs were empty. Ten new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Endpoint identities for the actual rho-bound family
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-ENDPOINTS` | `InitialThetaBoundedWittRhoBound.hasRhoBoundedExpansion_one_iff`, `hasRhoBoundedExpansion_zero_iff`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | The rho-weighted coefficient predicate from Joshi Teichmuller Spaces 2, §§7--9, together with the actual uniform bound. At `rho=1`, the weighted condition is exactly the uniform condition; at `rho=0`, the predicate already carries the same uniform bound and the zero power contributes no additional restriction. | Scene1/Derived; proved both endpoint equivalences for the actual rho-bound family. This does not define the paper's numerical norms or prove completion/multiplicativity. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf | 0 | 130.825 | 9,100,528 |
+| Act1Scene1 aggregate | 0 | 138.320 | 9,279,712 |
+| Checks.SceneBounds | 0 | 146.885 | 9,479,896 |
+| Axioms.SceneBounds | 0 | 139.855 | 9,459,796 |
+
+All four direct tasks passed with empty logs. Twelve new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.

@@ -53,6 +53,26 @@ theorem hasBoundedExpansion_of_hasRhoBoundedExpansion_one
   obtain ⟨m, y, c, C, hC, hbound, hc, hz, _⟩ := hz
   exact ⟨m, y, c, C, hC, hbound, hc, hz⟩
 
+theorem hasRhoBoundedExpansion_one_iff
+    (z : Ambient D w) :
+    HasRhoBoundedExpansion D w 1 z ↔ HasBoundedExpansion D w z := by
+  constructor
+  · exact hasBoundedExpansion_of_hasRhoBoundedExpansion_one D w z
+  · intro hz
+    exact hasRhoBoundedExpansion_of_hasBoundedExpansion D w 1 (by norm_num) (by norm_num)
+      z hz
+
+theorem hasRhoBoundedExpansion_zero_iff
+    (z : Ambient D w) :
+    HasRhoBoundedExpansion D w 0 z ↔ HasBoundedExpansion D w z := by
+  constructor
+  · intro hz
+    obtain ⟨m, y, c, C, hC, hbound, hc, hz, _⟩ := hz
+    exact ⟨m, y, c, C, hC, hbound, hc, hz⟩
+  · intro hz
+    exact hasRhoBoundedExpansion_of_hasBoundedExpansion D w 0 (by norm_num) (by norm_num)
+      z hz
+
 theorem hasRhoBoundedExpansion_teichmuller_mul
     (rho : ℝ) (z : Ambient D w) (hz : HasRhoBoundedExpansion D w rho z)
     (r : InitialThetaTiltField.Carrier D w) (hr : r ≠ 0) :
