@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBlochKatoNormalizationAudit
+
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdmissiblePrimeSourceAudit
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedAlgebraicClosure
