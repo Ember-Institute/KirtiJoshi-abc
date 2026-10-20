@@ -213,6 +213,17 @@ theorem finiteProcessionCost_le_coefficientWeightedPaperSum
   rw [← VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D]
   nlinarith
 
+theorem finiteProcessionVolume_ge_exp_neg_coefficientWeightedPaperSum
+    (U : ∀ i : Index D, RawFamily D (i.val + 1)) :
+    Real.exp (-(IutInitialThetaFiniteGlobalLowerBound.squareAverage D *
+      (∑ v : iutInitialThetaVBadModuliFinset D,
+        iutInitialThetaRepresentativeCoefficient D
+            (iutInitialThetaVBadModuliAt D v) *
+          VBadSelectedPaper.paperTerm D v))) ≤
+      finiteProcessionVolume D U := by
+  rw [← VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D]
+  exact finiteProcessionVolume_lower_bound D U
+
 theorem pointOrbit_finiteProcessionVolume_eq :
     finiteProcessionVolume D (fun i => pointOrbitFamily D (i.val + 1)) =
       Real.exp (IutInitialThetaAdelicPacketHull.processionLogVolume D -
