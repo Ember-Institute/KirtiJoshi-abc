@@ -53,5 +53,17 @@ theorem cost_lt_mul_selectedPaperSum (hn : 0 < n) :
     (mul_lt_mul_of_pos_left (VBadSelectedPaper.referenceAbsLogQ_lt_paperSum D)
       (by exact_mod_cast hn))
 
+include hgen hunit in
+theorem cost_le_mul_coefficientWeightedPaperSum :
+    VBadThetaHullLogCost.cost D n σ hσ C ≤
+      (n : ℝ) *
+        (∑ v : iutInitialThetaVBadModuliFinset D,
+          iutInitialThetaRepresentativeCoefficient D
+              (iutInitialThetaVBadModuliAt D v) *
+            VBadSelectedPaper.paperTerm D v) := by
+  rw [← VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D]
+  exact (neg_le_abs _).trans
+    (VBadThetaCollatedHull.absLog_volume_le_mul_referenceAbsLogQ D n σ hσ C hgen hunit)
+
 end
 end JoshiTeich.Act1Scene1.VBadSelectedHull

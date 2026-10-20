@@ -1029,6 +1029,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.VBadSelectedHull.selectedRootProduct_pow_lt_volume
 #check JoshiTeich.Act1Scene1.VBadSelectedHull.negAverageAbsLog_gt_neg_selectedPaperSum
 #check JoshiTeich.Act1Scene1.VBadSelectedHull.cost_lt_mul_selectedPaperSum
+#check JoshiTeich.Act1Scene1.VBadSelectedHull.cost_le_mul_coefficientWeightedPaperSum
 #check JoshiTeich.Act1Scene1.VBadSelectedPaper.fullSourceAt
 #check JoshiTeich.Act1Scene1.VBadSelectedPaper.fullSourceAt_injective
 #check JoshiTeich.Act1Scene1.VBadSelectedPaper.fullSelectedFinset
