@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateFrobenius
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdditiveTatePeriod
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamEmbedding
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamLogarithm
@@ -3730,3 +3731,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogHom_injective
 #print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogKernelHom
 #print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogKernelHom_injective
+
+-- Actual Witt Frobenius on Tate periods and the de Rham topology boundary.
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.phi
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.phi_teichmuller
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.phi_tateTeichmuller
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.phi_kernelCoordinate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.iterate_phi_kernelCoordinate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.frobeniusCoordinate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.frobeniusCoordinate_eq
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.theta_frobeniusCoordinate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.frobeniusLog
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.frobeniusLog_eq
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.tateLog_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.frobeniusLog_scaling
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.phi_primitive
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.theta_phi_primitive
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.theta_phi_primitive_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.phi_not_preserve_kernel
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.phi_primitive_image_isUnit
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.phi_primitive_image_not_hasEval
+#print axioms JoshiTeich.Act1Scene1.InitialThetaTateFrobenius.no_continuous_frobenius_extension
