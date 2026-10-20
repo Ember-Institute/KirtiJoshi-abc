@@ -6170,3 +6170,20 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 152.006 | 9,459,356 |
 
 The first leaf failure was an ordinary typeclass/API mismatch from treating a Witt vector as a field; it was corrected by using the Teichmuller monoid map at `r⁻¹`. The final leaf and aggregate logs were empty. No heartbeat timeout or override occurred. Seven new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Monotonicity of rho-weighted bounded Witt expansions
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-MONOTONICITY` | `InitialThetaBoundedWittRhoBound.hasRhoBoundedExpansion_mono`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Joshi Teichmuller Spaces 2, §§7--9 rho-indexed coefficient bounds, formalized on the actual Witt expansion witness. For `0≤rho₁≤rho₂`, the elementary power inequality `rho₁^n≤rho₂^n` transfers the same denominator, digits, expansion, and coefficient bound from `rho₂` to `rho₁`. | Scene1/Derived; proved monotonicity of the actual rho-bound family. This does not define the paper's seminorm family or prove Frechet completeness, multiplicativity, or `B` identification. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf | 0 | 129.712 | 9,098,052 |
+| Act1Scene1 aggregate | 0 | 134.258 | 9,224,776 |
+| Checks.SceneBounds | 0 | 143.865 | 9,479,476 |
+| Axioms.SceneBounds | 0 | 135.221 | 9,459,408 |
+
+All four direct tasks passed with empty logs. Eight new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.

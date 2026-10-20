@@ -108,5 +108,15 @@ theorem hasRhoBoundedExpansion_teichmuller_mul_iff
   · intro hz
     exact hasRhoBoundedExpansion_teichmuller_mul D w rho z hz r hr
 
+theorem hasRhoBoundedExpansion_mono
+    (rho₁ rho₂ : ℝ) (h₁ : 0 ≤ rho₁) (h₂ : rho₁ ≤ rho₂)
+    (z : Ambient D w) (hz : HasRhoBoundedExpansion D w rho₂ z) :
+    HasRhoBoundedExpansion D w rho₁ z := by
+  obtain ⟨m, y, c, C, hC, hbound, hc, hz, hrho⟩ := hz
+  refine ⟨m, y, c, C, hC, hbound, hc, hz, ?_⟩
+  intro n
+  exact (mul_le_mul_of_nonneg_left
+    (pow_le_pow_left₀ h₁ h₂ n) (norm_nonneg _)).trans (hrho n)
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaBoundedWittRhoBound
