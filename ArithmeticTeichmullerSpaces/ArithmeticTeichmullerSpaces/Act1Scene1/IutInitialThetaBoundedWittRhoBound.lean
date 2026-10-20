@@ -118,5 +118,23 @@ theorem hasRhoBoundedExpansion_mono
   exact (mul_le_mul_of_nonneg_left
     (pow_le_pow_left₀ h₁ h₂ n) (norm_nonneg _)).trans (hrho n)
 
+theorem hasRhoBoundedExpansion_toAmbient
+    (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1)
+    (x : InitialThetaBoundedWittLocalization.Ring D w) :
+    HasRhoBoundedExpansion D w rho (toAmbient D w x) :=
+  hasRhoBoundedExpansion_of_hasBoundedExpansion D w rho hrho0 hrho1
+    (toAmbient D w x) (hasBoundedExpansion D w x)
+
+theorem range_eq_rhoBoundedExpansions_one :
+    Set.range (toAmbient D w) =
+      {z | HasRhoBoundedExpansion D w 1 z} := by
+  ext z
+  constructor
+  · rintro ⟨x, rfl⟩
+    exact hasRhoBoundedExpansion_toAmbient D w 1 (by norm_num) (by norm_num) x
+  · intro hz
+    rw [range_eq_boundedExpansions D w]
+    exact hasBoundedExpansion_of_hasRhoBoundedExpansion_one D w z hz
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaBoundedWittRhoBound

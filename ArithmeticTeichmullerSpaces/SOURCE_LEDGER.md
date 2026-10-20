@@ -6187,3 +6187,21 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 135.221 | 9,459,408 |
 
 All four direct tasks passed with empty logs. Eight new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Actual Witt localization image through the rho-bound interface
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-IMAGE` | `InitialThetaBoundedWittRhoBound.hasRhoBoundedExpansion_toAmbient`, `range_eq_rhoBoundedExpansions_one`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Joshi II `W(O_F)⊂B` and the actual image theorem `range_eq_boundedExpansions`, combined with the rho-weighted witness predicate. Every actual localization element obtains a rho-bound witness for `0≤rho≤1`; at `rho=1`, the existing range characterization and the rho-to-uniform implication give an exact set equality. | Scene1/Derived; connected the actual Witt localization image to the explicit rho-bound family. This remains an algebraic image characterization and does not identify a numerical Frechet norm, complete the ring, or identify the paper `B`. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Leaf attempt 1 | 1 | 129.703 | 9,102,304 |
+| Leaf attempt 2 | 0 | 129.696 | 9,099,556 |
+| Act1Scene1 aggregate | 0 | 137.363 | 9,280,188 |
+| Checks.SceneBounds | 0 | 145.880 | 9,479,660 |
+| Axioms.SceneBounds | 0 | 137.277 | 9,459,644 |
+
+The first leaf failure was an ordinary misuse of a set equality as a projection; rewriting with the existing range equality fixed it. The final leaf and aggregate logs were empty. Ten new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
