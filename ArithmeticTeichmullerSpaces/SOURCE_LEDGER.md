@@ -6135,3 +6135,20 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 289.407 | 9,458,496 |
 
 The first direct leaf passed with an empty log after the explicit monoid-hom rewrite; no heartbeat timeout or override occurred. Both new declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit remained at 564 reachable project modules with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS was sampled every 0.5 seconds with an 85 GiB stop. No Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittExpansionOperations.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Explicit rho-weighted boundedness for actual Witt expansions
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-BOUND` | `InitialThetaBoundedWittRhoBound.HasRhoBoundedExpansion`, `hasRhoBoundedExpansion_of_hasBoundedExpansion`, `hasBoundedExpansion_of_hasRhoBoundedExpansion_one`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Joshi II `se:ff-rings` / `W(O_F)⊂B` (511--512, 719--727) and the rho-indexed bounds used in Joshi Teichmuller Spaces 2, §§7--9. Defines an explicit witness predicate requiring `‖c n‖·rho^n ≤ C` in addition to the genuine Witt expansion and p-power denominator. For `0≤rho≤1`, every existing uniformly bounded expansion supplies this witness; at `rho=1`, the rho predicate implies the existing bounded-expansion predicate. | Scene1/Derived; proved the algebraic rho-bound interface and its `rho=1` compatibility. This is not a numerical rho seminorm, multiplicativity theorem, Frechet completion, or identification with the paper's `B`. No reference code copied; no Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf | 0 | 201.245 | 9,077,272 |
+| Act1Scene1 aggregate | 0 | 160.681 | 9,251,016 |
+| Checks.SceneBounds | 0 | 196.297 | 9,479,056 |
+| Axioms.SceneBounds | 0 | 170.916 | 9,458,996 |
+
+All four direct tasks passed with empty logs. Five new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
