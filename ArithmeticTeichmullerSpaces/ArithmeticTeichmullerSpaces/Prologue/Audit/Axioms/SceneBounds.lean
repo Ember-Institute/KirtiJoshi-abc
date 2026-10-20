@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBoundedWittExpansion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittLocalizationChoice
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBoundedWittLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateFrobenius
@@ -3810,3 +3811,31 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaWittLocalizationChoice.lift
 #print axioms JoshiTeich.Act1Scene1.InitialThetaWittLocalizationChoice.lift_inclusion
 #print axioms JoshiTeich.Act1Scene1.InitialThetaWittLocalizationChoice.lift_unique
+
+-- Actual bounded Teichmuller expansions in the Witt fraction field.
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.partialSum
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.partialSum_coeff
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.Expands
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.expands_iff_coeff
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.digits
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.expands_digits
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.expansion_unique
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.digits_unique
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.partialSum_map
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.expands_map
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.partialSum_teichmuller_mul
+#print axioms JoshiTeich.Act1Scene1.WittTeichmullerExpansion.expands_teichmuller_mul
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.FieldWitt
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.Ambient
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.wittInclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.wittInclusion_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.ambientInclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.ambientInclusion_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.toAmbient
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.toAmbient_inclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.toAmbient_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.HasBoundedExpansion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.hasBoundedExpansion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.integral_scaled_expansion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.mem_range_of_hasBoundedExpansion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion.range_eq_boundedExpansions
