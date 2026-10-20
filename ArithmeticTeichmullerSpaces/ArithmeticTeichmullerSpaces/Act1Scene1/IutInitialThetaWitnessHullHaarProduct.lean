@@ -166,6 +166,16 @@ theorem singleton_finiteProcessionVolume_eq :
   congr 1
   ring
 
+theorem singleton_finiteProcessionVolume_eq_exp_neg_coefficientWeightedPaperSum :
+    finiteProcessionVolume D (fun i => singletonFamily D (i.val + 1)) =
+      Real.exp (-(IutInitialThetaFiniteGlobalLowerBound.squareAverage D *
+        (∑ v : iutInitialThetaVBadModuliFinset D,
+          iutInitialThetaRepresentativeCoefficient D
+              (iutInitialThetaVBadModuliAt D v) *
+            VBadSelectedPaper.paperTerm D v))) := by
+  rw [singleton_finiteProcessionVolume_eq,
+    VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum]
+
 /-- The known strict q-accounting gap gives a bound, not a weight identity. -/
 theorem selectedPaperRootProduct_pow_lt_finiteProcessionVolume
     (U : ∀ i : Index D, RawFamily D (i.val + 1)) :
