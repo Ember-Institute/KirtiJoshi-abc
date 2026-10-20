@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalCompletionTensorLogGenerators
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadCollatedNormalizationVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFixedModuliNormalizationVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-VBAD-LOG-GENERATED-HULL
@@ -102,6 +103,20 @@ theorem negLog_volume_eq_mul_referenceAbsLogQ :
   rw [volume_eq_normalizedRootProduct_pow, Real.log_pow,
     ← iutInitialThetaNormalizedVBadRelativeQRootProduct_negLog_eq_referenceAbsLogQ D]
   rw [mul_neg]
+
+theorem volume_eq_exp_neg_coefficientWeightedPaperSum :
+    volume D n σ hσ =
+      Real.exp (-(n : ℝ) *
+        (∑ v : iutInitialThetaVBadModuliFinset D,
+          iutInitialThetaRepresentativeCoefficient D
+              (iutInitialThetaVBadModuliAt D v) *
+            VBadSelectedPaper.paperTerm D v)) := by
+  have h := negLog_volume_eq_mul_referenceAbsLogQ D n σ hσ
+  have hRef := VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D
+  have h' := h.trans (congrArg ((n : ℝ) * ·) hRef)
+  rw [← Real.exp_log (volume_pos D n σ hσ)]
+  congr 1
+  linarith
 
 theorem absLog_volume_eq_mul_referenceAbsLogQ :
     |Real.log (volume D n σ hσ)| = (n : ℝ) *
