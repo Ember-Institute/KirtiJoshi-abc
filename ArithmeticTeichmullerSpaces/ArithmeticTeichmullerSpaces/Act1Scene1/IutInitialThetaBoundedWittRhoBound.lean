@@ -94,6 +94,21 @@ theorem rhoInfimum_le_of_mem
   · exact ⟨0, rhoBoundSet_lowerBound_zero D w rho z⟩
   · exact hC
 
+theorem rhoInfimum_mono
+    (rho₁ rho₂ : ℝ) (h₁ : 0 ≤ rho₁) (h₂ : rho₁ ≤ rho₂)
+    (z : Ambient D w) (hset₂ : (RhoBoundSet D w rho₂ z).Nonempty) :
+    rhoInfimum D w rho₁ z ≤ rhoInfimum D w rho₂ z := by
+  unfold rhoInfimum
+  apply le_csInf hset₂
+  intro C hC
+  rcases hC with ⟨m, y, c, hpos, hbound, hc, hz, hrho⟩
+  have hC₁ : C ∈ RhoBoundSet D w rho₁ z := by
+    refine ⟨m, y, c, hpos, hbound, hc, hz, ?_⟩
+    intro n
+    exact (mul_le_mul_of_nonneg_left
+      (pow_le_pow_left₀ h₁ h₂ n) (norm_nonneg _)).trans (hrho n)
+  exact rhoInfimum_le_of_mem D w rho₁ z hC₁
+
 theorem hasRhoBoundedExpansion_of_hasBoundedExpansion
     (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1)
     (z : Ambient D w) (hz : HasBoundedExpansion D w z) :

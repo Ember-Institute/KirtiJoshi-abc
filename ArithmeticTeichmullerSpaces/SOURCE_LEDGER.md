@@ -6256,3 +6256,21 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 149.090 | 9,460,624 |
 
 All four direct tasks passed with empty logs. Nineteen new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Monotonicity of the rho-infimum candidate
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-INFIMUM-MONOTONE` | `InitialThetaBoundedWittRhoBound.rhoInfimum_mono`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | For `0≤rho₁≤rho₂`, every admissible bound for the larger rho remains admissible for the smaller rho by the coefficient power inequality. The order characterization of `sInf` then gives `rhoInfimum(rho₁)≤rhoInfimum(rho₂)` whenever the larger-rho bound set is nonempty. | Scene1/Derived; proved monotonicity of the infimum candidate. This remains conditional order structure and does not prove attainment, multiplicativity, or paper `rho`-norm identity. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf attempt 1 | 1 | 125.182 | 9,104,060 |
+| Rho-bound leaf attempt 2 | 0 | 130.273 | 9,104,772 |
+| Act1Scene1 aggregate | 0 | 134.797 | 9,232,848 |
+| Checks.SceneBounds | 0 | 146.935 | 9,480,764 |
+| Axioms.SceneBounds | 0 | 143.468 | 9,460,708 |
+
+The first leaf failure was an ordinary missing `z` argument in an explicit set-membership type; the corrected leaf and aggregate logs were empty. Twenty new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
