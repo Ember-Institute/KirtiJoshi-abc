@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdelicWitnessHullBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeRamificationGap
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperRootNormProduct
 
 /-!
@@ -192,6 +193,24 @@ theorem finiteProcessionCost_lt_weightedPaperSum (U : ∀ i : Index D, RawFamily
     (selectedPaperRootProduct_pow_lt_finiteProcessionVolume D U)
   rw [Real.log_rpow (actualSelectedPaperRootNormProduct_mem_Ioo D).1] at h
   rw [← actualSelectedPaperRootNormProduct_negLog_eq_paperSum D]
+  nlinarith
+
+theorem finiteProcessionCost_le_coefficientWeightedPaperSum
+    (U : ∀ i : Index D, RawFamily D (i.val + 1)) :
+    -Real.log (finiteProcessionVolume D U) ≤
+      IutInitialThetaFiniteGlobalLowerBound.squareAverage D *
+        (∑ v : iutInitialThetaVBadModuliFinset D,
+          iutInitialThetaRepresentativeCoefficient D
+              (iutInitialThetaVBadModuliAt D v) *
+            VBadSelectedPaper.paperTerm D v) := by
+  have hlog := Real.log_le_log
+    (Real.exp_pos
+      (-(IutInitialThetaFiniteGlobalLowerBound.squareAverage D *
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D))))
+    (finiteProcessionVolume_lower_bound D U)
+  rw [Real.log_exp] at hlog
+  rw [← VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D]
   nlinarith
 
 theorem pointOrbit_finiteProcessionVolume_eq :
