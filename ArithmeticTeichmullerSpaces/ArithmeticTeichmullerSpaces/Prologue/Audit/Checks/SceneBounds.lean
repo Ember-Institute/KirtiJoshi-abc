@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCyclotomicTateTilt
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBlochKatoNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionThetaPilotScaling
@@ -3865,3 +3866,33 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate
 #check JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate_ne_zero
 #check JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate_mem_ker
+
+-- Convergent logarithm in the same actual de Rham plus ring.
+#check JoshiTeich.Act1Scene1.AdicLogarithm.quotient
+#check JoshiTeich.Act1Scene1.AdicLogarithm.log_eq_X_mul_quotient
+#check JoshiTeich.Act1Scene1.AdicLogarithm.constantCoeff_quotient
+#check JoshiTeich.Act1Scene1.AdicLogarithm.isUnit_quotient
+#check JoshiTeich.Act1Scene1.AdicLogarithm.oneAdd
+#check JoshiTeich.Act1Scene1.AdicLogarithm.hasSum_oneAdd
+#check JoshiTeich.Act1Scene1.AdicLogarithm.oneAdd_eq_mul_unit
+#check JoshiTeich.Act1Scene1.AdicLogarithm.oneAdd_eq_zero_iff
+#check JoshiTeich.Act1Scene1.AdicLogarithm.oneAdd_mem_ideal
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.intCast_isUnit
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.rationalMap
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.rationalAlgebra
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.linearTopology
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.hasEval_kernel
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.logOneAdd
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.hasSum_logOneAdd
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.logOneAdd_eq_mul_unit
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.theta_logOneAdd
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.logOneAdd_eq_zero_iff
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.norm_unit
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.norm_logOneAdd
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.tateCoordinate
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.theta_tateCoordinate
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.tateLog
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.hasSum_tateLog
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.theta_tateLog
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.norm_tateLog
+#check JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.tateLog_eq_zero_iff

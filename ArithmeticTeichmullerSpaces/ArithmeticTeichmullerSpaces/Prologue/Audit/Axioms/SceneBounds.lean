@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCyclotomicTateTilt
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBlochKatoNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionThetaPilotScaling
@@ -3654,3 +3655,33 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate_ne_zero
 #print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate_mem_ker
+
+-- Convergent logarithm in the same actual de Rham plus ring.
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.quotient
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.log_eq_X_mul_quotient
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.constantCoeff_quotient
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.isUnit_quotient
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.oneAdd
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.hasSum_oneAdd
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.oneAdd_eq_mul_unit
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.oneAdd_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.AdicLogarithm.oneAdd_mem_ideal
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.intCast_isUnit
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.rationalMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.rationalAlgebra
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.linearTopology
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.hasEval_kernel
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.logOneAdd
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.hasSum_logOneAdd
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.logOneAdd_eq_mul_unit
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.theta_logOneAdd
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.logOneAdd_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.norm_unit
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.norm_logOneAdd
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.tateCoordinate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.theta_tateCoordinate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.tateLog
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.hasSum_tateLog
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.theta_tateLog
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.norm_tateLog
+#print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamLogarithm.tateLog_eq_zero_iff
