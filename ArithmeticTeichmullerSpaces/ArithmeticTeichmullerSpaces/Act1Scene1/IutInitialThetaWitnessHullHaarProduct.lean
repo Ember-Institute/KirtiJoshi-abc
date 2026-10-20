@@ -176,6 +176,18 @@ theorem singleton_finiteProcessionVolume_eq_exp_neg_coefficientWeightedPaperSum 
   rw [singleton_finiteProcessionVolume_eq,
     VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum]
 
+theorem singleton_adelicProcession_exp_eq_weightedPaper_mul_arch :
+    Real.exp (processionLogVolume D
+      (fun i => singletonFamily D (i.val + 1))) =
+      Real.exp (-(IutInitialThetaFiniteGlobalLowerBound.squareAverage D *
+        (∑ v : iutInitialThetaVBadModuliFinset D,
+          iutInitialThetaRepresentativeCoefficient D
+              (iutInitialThetaVBadModuliAt D v) *
+            VBadSelectedPaper.paperTerm D v))) *
+        Real.exp (IutInitialThetaArchimedeanPacketRegion.processionLogVolume D) := by
+  rw [adelicProcession_exp_eq_finite_mul_arch,
+    singleton_finiteProcessionVolume_eq_exp_neg_coefficientWeightedPaperSum]
+
 /-- The known strict q-accounting gap gives a bound, not a weight identity. -/
 theorem selectedPaperRootProduct_pow_lt_finiteProcessionVolume
     (U : ∀ i : Index D, RawFamily D (i.val + 1)) :
