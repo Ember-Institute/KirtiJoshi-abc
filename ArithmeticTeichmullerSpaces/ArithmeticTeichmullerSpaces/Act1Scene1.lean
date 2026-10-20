@@ -479,5 +479,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalClosureTranspor
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerLogClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaClosureLog
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionThetaPilotScaling
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
