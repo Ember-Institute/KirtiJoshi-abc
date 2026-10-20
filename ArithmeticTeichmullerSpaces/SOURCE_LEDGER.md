@@ -5862,3 +5862,23 @@ Acceptance and all direct Lean attempts (2026-10-20):
 | `scene1-untilt-kummer-aggregate-metrics.jsonl` | 0 | 117.848 | 9,274,596 |
 
 There were 13 direct Lean tasks: 5 successful and 8 ordinary elaboration/typeclass/import failures. Successful tasks took 596.841 seconds; failed diagnostics took 927.614 seconds; total time was 1524.455 seconds. Maximum process-group RSS was 9,451,384 KiB. No heartbeat timeout or heartbeat override occurred; no memory stop occurred. Final leaf, Checks, Axioms and Scene1 logs were empty of warnings/errors; 30 declarations were checked individually, 3068 axiom entries were audited against `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`; static import audit covered 546 reachable project modules and no forbidden imports. All tasks used CPU affinity 0--13, `LEAN_NUM_THREADS=10`, Lean `-j1`, existing precompiled dependencies, and no cold build or Mathlib recompilation.
+### Actual Initial-Theta admissible-prime source package
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-ADMISSIBLE-PRIME-SOURCE-AUDIT` | `JoshiTeich.Act1Scene1.InitialThetaAdmissiblePrimeSourceAudit.source`, `source_ell`, `source_torsion_field`, `source_representation`, `source_fixed_field_eq_rep_adapter`, `source_sl2_image`, `source_residue_coprime`, `source_q_order_coprime`; `Act1Scene1/IutInitialThetaAdmissiblePrimeSourceAudit.lean` | Joshi III `ss:theta-data-fixing2` (1023--1055), IUT I Definition 3.1(b--c), and `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`. Packages the fields already chosen by one actual `InitialThetaData`: the same `ell`, genuine elliptic-torsion Galois representation, `SL2` image, open kernel, fixed-field torsion carrier, `F/F_mod` degree coprimality, residue-characteristic coprimality, and Tate q-order coprimality. The adapter is a projection/source audit and does not manufacture a new prime or hide the representation condition. Original proofs, no reference code copied. | Scene1/Derived; proved. Existence of a new admissible prime, a new mod-ell representation, and the later holomorphoid/theta source remain separate obligations. |
+
+Source boundary: This closes the source packaging for the admissible-prime fields of the existing `InitialThetaData`; it does not close the parent obligation requiring a jointly constructed Initial Theta input or a new `L'`/holomorphoid model. No Core assumptions, Prologue revision, or license changes.
+
+Acceptance and leaf attempts (2026-10-20):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| `scene1-admissible-prime-attempt1.jsonl` | 1 | 114.809 | 9,119,128 |
+| `scene1-admissible-prime-attempt2.jsonl` | 1 | 127.028 | 9,121,280 |
+| `scene1-admissible-prime-attempt3.jsonl` | 0 | 118.787 | 9,113,468 |
+| Checks | 0 | 127.855 | 9,451,220 |
+| Axioms | 0 | 119.824 | 9,431,560 |
+| Scene1 aggregate | 0 | 122.398 | 9,235,828 |
+
+The first leaf attempt had an index mismatch between the package prime and the representation coefficient field; the second showed the structure had captured the ambient `D` as an implicit parameter rather than a field; the third fixed the source index to `D.prime.ℓ` and passed. These were ordinary Lean elaboration errors, with no mathematical premise change. There were 6 direct Lean tasks, 4 successful and 2 failed; successful tasks took 488.864 seconds, failed diagnostics 241.837 seconds, and total time was 730.701 seconds. Maximum process-group RSS was 9,451,220 KiB. No heartbeat timeout/override or memory stop occurred. The leaf and aggregate logs were empty; 8 declarations were checked individually and all 3076 axiom entries were within `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`; static import audit covered 547 reachable modules and no forbidden imports. CPU affinity 0--13, `LEAN_NUM_THREADS=10`, Lean `-j1`, existing precompiled dependencies, no cold build and no Mathlib recompilation.
