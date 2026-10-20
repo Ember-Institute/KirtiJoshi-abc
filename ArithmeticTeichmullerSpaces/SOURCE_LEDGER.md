@@ -6118,3 +6118,20 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 146.637 | 9,458,392 |
 
 The first leaf diagnostic was an ordinary duplicate local-instance/API elaboration error; the second leaf passed with an empty log. No heartbeat timeout or override occurred. The new declaration was checked individually and axiom-audited; its dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 564 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; process-group RSS sampled every 0.5 seconds with an 85 GiB stop. No Mathlib compilation was performed during the direct leaf/check/audit commands. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittExpansionOperations.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Invertibility of Teichmuller scaling on bounded Witt expansions
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-EXPANSION-OPERATIONS-INVERTIBLE` | `InitialThetaBoundedWittExpansion.hasBoundedExpansion_teichmuller_mul_iff`; `Act1Scene1/IutInitialThetaBoundedWittExpansionOperations.lean` | Joshi II `se:ff-rings` / `W(O_F)⊂B` and the Teichmuller map's monoid-hom laws. Applies the forward scaling theorem to `r⁻¹` and explicitly reduces `[r⁻¹]·[r]` to `[1]`, so boundedness is invariant under every nonzero Teichmuller scaling. | Scene1/Derived; proved algebraic invertibility of the scaling action. This removes the unit-scaling ambiguity at the bounded-expansion level, but does not construct denominator-independent rho norms, a Frechet completion, Tate-log convergence, or the paper `B`. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Leaf attempt 1 | 0 | 378.681 | 9,102,792 |
+| Act1Scene1 aggregate | 0 | 302.091 | 9,264,328 |
+| Checks.SceneBounds | 0 | 269.217 | 9,478,460 |
+| Axioms.SceneBounds | 0 | 289.407 | 9,458,496 |
+
+The first direct leaf passed with an empty log after the explicit monoid-hom rewrite; no heartbeat timeout or override occurred. Both new declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit remained at 564 reachable project modules with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS was sampled every 0.5 seconds with an 85 GiB stop. No Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittExpansionOperations.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.

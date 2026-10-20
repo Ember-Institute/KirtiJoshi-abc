@@ -52,5 +52,30 @@ theorem hasBoundedExpansion_teichmuller_mul
       _ = algebraMap (FieldWitt D w) (Ambient D w) y' := by
             rw [map_mul]
 
+theorem hasBoundedExpansion_teichmuller_mul_iff
+    (z : Ambient D w) (r : InitialThetaTiltField.Carrier D w) (hr : r ≠ 0) :
+    HasBoundedExpansion D w
+        (algebraMap (FieldWitt D w) (Ambient D w)
+            (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) ↔
+      HasBoundedExpansion D w z := by
+  constructor
+  · intro hz
+    have hscaled := hasBoundedExpansion_teichmuller_mul D w
+      (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z)
+      hz r⁻¹ (inv_ne_zero hr)
+    have heq :
+        algebraMap (FieldWitt D w) (Ambient D w)
+            (WittVector.teichmuller (Arithmetic.residueChar w.1) r⁻¹) *
+          (algebraMap (FieldWitt D w) (Ambient D w)
+            (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) = z := by
+      rw [← mul_assoc, ← map_mul, ← (WittVector.teichmuller (Arithmetic.residueChar w.1)).map_mul,
+        inv_mul_cancel₀ hr, (WittVector.teichmuller (Arithmetic.residueChar w.1)).map_one,
+        map_one, one_mul]
+    rw [heq] at hscaled
+    exact hscaled
+  · intro hz
+    exact hasBoundedExpansion_teichmuller_mul D w z hz r hr
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaBoundedWittExpansion
