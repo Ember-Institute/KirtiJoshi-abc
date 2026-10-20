@@ -53,5 +53,60 @@ theorem hasBoundedExpansion_of_hasRhoBoundedExpansion_one
   obtain ⟨m, y, c, C, hC, hbound, hc, hz, _⟩ := hz
   exact ⟨m, y, c, C, hC, hbound, hc, hz⟩
 
+theorem hasRhoBoundedExpansion_teichmuller_mul
+    (rho : ℝ) (z : Ambient D w) (hz : HasRhoBoundedExpansion D w rho z)
+    (r : InitialThetaTiltField.Carrier D w) (hr : r ≠ 0) :
+    HasRhoBoundedExpansion D w rho
+      (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) := by
+  obtain ⟨m, y, c, C, hC, hbound, hc, hz, hrho⟩ := hz
+  let p := Arithmetic.residueChar w.1
+  let y' : FieldWitt D w := WittVector.teichmuller p r * y
+  let c' : ℕ → InitialThetaTiltField.Carrier D w := fun n => r * c n
+  refine ⟨m, y', c', ‖r‖ * C, mul_pos (norm_pos_iff.mpr hr) hC, ?_, ?_, ?_, ?_⟩
+  · intro n
+    rw [norm_mul]
+    exact mul_le_mul_of_nonneg_left (hbound n) (norm_nonneg r)
+  · exact expands_teichmuller_mul p r y c hc
+  · calc
+      (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller p r) * z) * (p : Ambient D w) ^ m =
+        algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller p r) * (z * (p : Ambient D w) ^ m) := by
+            rw [mul_assoc]
+      _ = algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller p r) *
+            algebraMap (FieldWitt D w) (Ambient D w) y := by rw [hz]
+      _ = algebraMap (FieldWitt D w) (Ambient D w) y' := by rw [map_mul]
+  · intro n
+    rw [norm_mul, mul_assoc]
+    exact mul_le_mul_of_nonneg_left (hrho n) (norm_nonneg r)
+
+theorem hasRhoBoundedExpansion_teichmuller_mul_iff
+    (rho : ℝ) (z : Ambient D w) (r : InitialThetaTiltField.Carrier D w)
+    (hr : r ≠ 0) :
+    HasRhoBoundedExpansion D w rho
+        (algebraMap (FieldWitt D w) (Ambient D w)
+            (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) ↔
+      HasRhoBoundedExpansion D w rho z := by
+  constructor
+  · intro hz
+    have hscaled := hasRhoBoundedExpansion_teichmuller_mul D w rho
+      (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z)
+      hz r⁻¹ (inv_ne_zero hr)
+    have heq :
+        algebraMap (FieldWitt D w) (Ambient D w)
+            (WittVector.teichmuller (Arithmetic.residueChar w.1) r⁻¹) *
+          (algebraMap (FieldWitt D w) (Ambient D w)
+            (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) = z := by
+      rw [← mul_assoc, ← map_mul, ← (WittVector.teichmuller (Arithmetic.residueChar w.1)).map_mul,
+        inv_mul_cancel₀ hr, (WittVector.teichmuller (Arithmetic.residueChar w.1)).map_one,
+        map_one, one_mul]
+    rw [heq] at hscaled
+    exact hscaled
+  · intro hz
+    exact hasRhoBoundedExpansion_teichmuller_mul D w rho z hz r hr
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaBoundedWittRhoBound

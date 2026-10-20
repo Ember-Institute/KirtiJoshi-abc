@@ -6152,3 +6152,21 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 170.916 | 9,458,996 |
 
 All four direct tasks passed with empty logs. Five new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Teichmuller scaling of rho-weighted bounded Witt expansions
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-OPERATIONS` | `InitialThetaBoundedWittRhoBound.hasRhoBoundedExpansion_teichmuller_mul`, `hasRhoBoundedExpansion_teichmuller_mul_iff`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Joshi II `se:ff-rings` / `W(O_F)⊂B` and the explicit rho-indexed coefficient bounds from Joshi Teichmuller Spaces 2, §§7--9. Scaling a rho-bounded witness by a nonzero Teichmuller representative changes digits to `r*c n`, the uniform bound to `‖r‖*C`, and preserves the rho-weighted bound; applying the theorem to `r⁻¹` proves the converse. | Scene1/Derived; proved rho-bound stability and invertibility under actual Teichmuller scaling. This remains a predicate on genuine Witt expansions, not a numerical rho seminorm, multiplicativity theorem, Frechet completion, or paper `B` identity. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Leaf attempt 1 | 1 | 168.208 | 9,095,332 |
+| Leaf attempt 2 | 0 | 141.850 | 9,100,524 |
+| Act1Scene1 aggregate | 0 | 162.177 | 9,279,044 |
+| Checks.SceneBounds | 0 | 168.786 | 9,479,332 |
+| Axioms.SceneBounds | 0 | 152.006 | 9,459,356 |
+
+The first leaf failure was an ordinary typeclass/API mismatch from treating a Witt vector as a field; it was corrected by using the Teichmuller monoid map at `r⁻¹`. The final leaf and aggregate logs were empty. No heartbeat timeout or override occurred. Seven new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
