@@ -1357,6 +1357,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.data
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.data_link_eq
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.data_thetaVolume_eq
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.hullVolume_eq_exp_neg_coefficientWeightedPaperSum
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.qNormCompatibility
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.source
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.indexEquiv

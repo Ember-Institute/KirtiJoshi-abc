@@ -2,6 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualHullCostTrans
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalScene1Input
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadLogGeneratedHull
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTargetPaperNormalizedBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotSourceIndexBridge
 
@@ -115,6 +116,16 @@ theorem qNormCompatibility :
     QNormTateCompatibility (data p D theta route thetaBase heightData ramification X).scene1.data.link :=
   iutInitialThetaLink_qNormTateCompatibility D theta thetaBase
     (packetHull D theta route) heightData ramification (cost D) (length D)
+
+theorem hullVolume_eq_exp_neg_coefficientWeightedPaperSum :
+    hullVolume D =
+      Real.exp (-(length D : ℝ) *
+        (∑ v : iutInitialThetaVBadModuliFinset D,
+          iutInitialThetaRepresentativeCoefficient D
+              (iutInitialThetaVBadModuliAt D v) *
+            VBadSelectedPaper.paperTerm D v)) := by
+  exact VBadThetaLogCollation.volume_eq_exp_neg_coefficientWeightedPaperSum
+    D (length D) (tuple D) (tuple_liesOver D)
 
 def source : IutQPilotSource p (data p D theta route thetaBase heightData ramification X) :=
   IutQPilotSource.ofInitialThetaCanonicalTateData D p rfl rfl
