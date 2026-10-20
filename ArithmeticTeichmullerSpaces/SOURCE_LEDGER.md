@@ -6100,3 +6100,21 @@ Acceptance (2026-10-21):
 | Act1Scene1 aggregate | 0 | 154.873 | 9,264,048 |
 
 Nine direct Lean tasks: six successful and three failed; successful time 794.420 seconds, failed time 392.339 seconds, total 1186.759 seconds; peak process-group RSS 9,478,016 KiB. The first generic diagnostic corrected inequality reversal and Frobenius-iteration normalization; the later successful generic pass removed unused characteristic instances and had an empty final log. The first actual task had an integral/tilt coefficient inference conflict and hit the default 200000 heartbeat limit (two diagnostic locations in that one task). Per the user policy, the theorem was raised to 1000000; integral digit types and the existing coefficient map were made explicit. The next actual failure was ordinary localization-map/zero-coefficient elaboration and use of a field-only homomorphism lemma on a Witt domain, with no further heartbeat timeout. These were corrected using the original inclusion and fraction-ring injectivity; the actual leaf then passed at 1000000 with an empty log. No mathematical assumptions changed. All 26 new declarations were checked individually and axiom-audited; all 3296 dependent entries used only `propext`, `Classical.choice`, `Quot.sound`, with one further axiom-free entry and no `sorryAx`. Static import audit covered 563 reachable project modules, with no forbidden imports or new proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; process-group RSS sampled every 0.5 seconds with an 85 GiB stop. No memory stop, cold build, cache deletion or Mathlib compilation. TeichmullerSeries and related Witt dependencies had precompiled artifacts before the first diagnostic. Evidence: `/tmp/scene1-witt-bounded-expansion-attempt{1,2,3,4}.metrics.log`, `/tmp/scene1-witt-bounded-expansion-final-audit.metrics.log`, `/tmp/scene1-witt-bounded-expansion-axioms.json`, `/tmp/scene1-witt-bounded-expansion-static.json`.
+
+### Teichmuller scaling stability of bounded Witt expansions
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-EXPANSION-OPERATIONS` | `InitialThetaBoundedWittExpansion.hasBoundedExpansion_teichmuller_mul`; `Act1Scene1/IutInitialThetaBoundedWittExpansionOperations.lean` | Joshi II `se:ff-rings` / `W(O_F)⊂B` (511--512, 719--727), together with the actual finite-remainder expansion and Teichmuller multiplication law in `WittTeichmullerExpansion`. For a nonzero actual Teichmuller representative `r`, maps a bounded expansion with coefficient bound `C` to the expansion with digits `r*c n` and explicit bound `‖r‖*C`; the ambient denominator and p-power are unchanged. | Scene1/Derived; proved algebraic scaling stability. This is an input for later rho-norm representation independence, not a rho norm, Frechet completion, Tate-log convergence, or paper `B` identity. No reference code copied; no Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Leaf attempt 1 | 1 | 213.734 | 9,087,836 |
+| Leaf attempt 2 | 0 | 204.564 | 9,096,844 |
+| Act1Scene1 aggregate | 0 | 188.899 | 9,262,332 |
+| Checks.SceneBounds | 0 | 172.583 | 9,478,360 |
+| Axioms.SceneBounds | 0 | 146.637 | 9,458,392 |
+
+The first leaf diagnostic was an ordinary duplicate local-instance/API elaboration error; the second leaf passed with an empty log. No heartbeat timeout or override occurred. The new declaration was checked individually and axiom-audited; its dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 564 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; process-group RSS sampled every 0.5 seconds with an 85 GiB stop. No Mathlib compilation was performed during the direct leaf/check/audit commands. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittExpansionOperations.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
