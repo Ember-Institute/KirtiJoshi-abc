@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdditiveTatePeriod
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamEmbedding
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCyclotomicTateTilt
@@ -3919,3 +3920,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamEmbedding.canonicalTateLog
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamEmbedding.canonicalTateLog_ne_zero
 #check JoshiTeich.Act1Scene1.InitialThetaDeRhamEmbedding.theta_canonicalTateLog
+
+-- Actual additive Tate logarithm in the original theta kernel.
+#check JoshiTeich.Act1Scene1.AdicExponential.evaluate
+#check JoshiTeich.Act1Scene1.AdicExponential.continuous_evaluate
+#check JoshiTeich.Act1Scene1.AdicExponential.evaluate_X
+#check JoshiTeich.Act1Scene1.AdicExponential.evaluate_log
+#check JoshiTeich.Act1Scene1.AdicExponential.evaluate_subst
+#check JoshiTeich.Act1Scene1.AdicExponential.exp
+#check JoshiTeich.Act1Scene1.AdicExponential.hasEval_log
+#check JoshiTeich.Act1Scene1.AdicExponential.exp_log
+#check JoshiTeich.Act1Scene1.AdicExponential.hasEval_exp_sub_one
+#check JoshiTeich.Act1Scene1.AdicExponential.log_exp
+#check JoshiTeich.Act1Scene1.AdicExponential.formal_exp_add
+#check JoshiTeich.Act1Scene1.AdicExponential.exp_add
+#check JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.logOneAdd_mul
+#check JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateCoordinate_mul
+#check JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLog_mul
+#check JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogHom
+#check JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogHom_injective
+#check JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogKernelHom
+#check JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogKernelHom_injective

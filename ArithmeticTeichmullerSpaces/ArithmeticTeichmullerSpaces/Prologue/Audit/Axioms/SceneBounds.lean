@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaAdditiveTatePeriod
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamEmbedding
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDeRhamLogarithm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCyclotomicTateTilt
@@ -3708,3 +3709,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamEmbedding.canonicalTateLog
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamEmbedding.canonicalTateLog_ne_zero
 #print axioms JoshiTeich.Act1Scene1.InitialThetaDeRhamEmbedding.theta_canonicalTateLog
+
+-- Actual additive Tate logarithm in the original theta kernel.
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.evaluate
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.continuous_evaluate
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.evaluate_X
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.evaluate_log
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.evaluate_subst
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.exp
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.hasEval_log
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.exp_log
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.hasEval_exp_sub_one
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.log_exp
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.formal_exp_add
+#print axioms JoshiTeich.Act1Scene1.AdicExponential.exp_add
+#print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.logOneAdd_mul
+#print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateCoordinate_mul
+#print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLog_mul
+#print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogHom
+#print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogHom_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogKernelHom
+#print axioms JoshiTeich.Act1Scene1.InitialThetaAdditiveTatePeriod.tateLogKernelHom_injective
