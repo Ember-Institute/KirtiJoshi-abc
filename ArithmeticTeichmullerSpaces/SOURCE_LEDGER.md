@@ -6239,3 +6239,20 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 138.874 | 9,460,224 |
 
 All four direct tasks passed with empty logs. Sixteen new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Infimum candidate for actual rho-bound sizes
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-INFIMUM` | `InitialThetaBoundedWittRhoBound.rhoInfimum`, `rhoInfimum_nonneg`, `rhoInfimum_le_of_mem`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Uses the admissible-bound set from the actual Witt expansion witnesses and the conditional-complete order on `ℝ`. Defines its `sInf` candidate and proves, whenever the set is nonempty, nonnegativity and the upper bound by every admissible witness bound. | Scene1/Derived; this is only an infimum candidate with order bounds. It does not prove the infimum is attained, representation independent as a numerical norm, multiplicative, complete, or equal to the paper `rho` norm. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf | 0 | 136.362 | 9,107,076 |
+| Act1Scene1 aggregate | 0 | 149.635 | 9,272,756 |
+| Checks.SceneBounds | 0 | 160.796 | 9,480,648 |
+| Axioms.SceneBounds | 0 | 149.090 | 9,460,624 |
+
+All four direct tasks passed with empty logs. Nineteen new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.

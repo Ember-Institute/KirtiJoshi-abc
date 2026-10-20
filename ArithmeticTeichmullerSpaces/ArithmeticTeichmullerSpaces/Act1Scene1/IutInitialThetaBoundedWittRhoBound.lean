@@ -46,6 +46,9 @@ def RhoBoundSet (rho : ℝ) (z : Ambient D w) : Set ℝ :=
           algebraMap (FieldWitt D w) (Ambient D w) y ∧
         (∀ n : ℕ, ‖c n‖ * rho ^ n ≤ C)}
 
+noncomputable def rhoInfimum (rho : ℝ) (z : Ambient D w) : ℝ :=
+  sInf (RhoBoundSet D w rho z)
+
 theorem hasRhoBoundedExpansion_iff_rhoBoundSet_nonempty
     (rho : ℝ) (z : Ambient D w) :
     HasRhoBoundedExpansion D w rho z ↔ (RhoBoundSet D w rho z).Nonempty := by
@@ -72,6 +75,24 @@ theorem rhoBoundSet_upward_closed
     exact (hbound n).trans hCC'
   · intro n
     exact (hrho n).trans hCC'
+
+theorem rhoInfimum_nonneg
+    (rho : ℝ) (z : Ambient D w)
+    (hset : (RhoBoundSet D w rho z).Nonempty) :
+    0 ≤ rhoInfimum D w rho z := by
+  unfold rhoInfimum
+  apply le_csInf hset
+  intro C hC
+  exact rhoBoundSet_lowerBound_zero D w rho z C hC
+
+theorem rhoInfimum_le_of_mem
+    (rho : ℝ) (z : Ambient D w) {C : ℝ}
+    (hC : C ∈ RhoBoundSet D w rho z) :
+    rhoInfimum D w rho z ≤ C := by
+  unfold rhoInfimum
+  apply csInf_le
+  · exact ⟨0, rhoBoundSet_lowerBound_zero D w rho z⟩
+  · exact hC
 
 theorem hasRhoBoundedExpansion_of_hasBoundedExpansion
     (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1)
