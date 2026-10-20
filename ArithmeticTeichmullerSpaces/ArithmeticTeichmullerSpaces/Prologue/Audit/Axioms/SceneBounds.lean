@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCyclotomicTateTilt
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBlochKatoNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionThetaPilotScaling
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionPilotLogShell
@@ -3617,3 +3618,39 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionPilotLogShell.qrootAt_pilot_normalizedLog_mem_logShell
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionPilotLogShell.qrootAt_pilot_normalizedLog_norm
 #print axioms JoshiTeich.Act1Scene1.InitialThetaTorsionPilotLogShell.qrootAt_pilot_norm_eq_deRham_evaluation_norm
+
+-- Actual cyclotomic Tate inverse limit, sharp-one fiber, and Fontaine kernel.
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.coordinate
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.coordinate_zero
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.coordinate_succ
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.coordinate_pow
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.coordinate_one
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.coordinate_mul
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.toPreTilt
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.untilt_shift_toPreTilt
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.untilt_toPreTilt
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.sharp_toPreTilt
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.toPreTilt_injective
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.sharpOne
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.toSharpOne
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.fromSharpOne
+#print axioms JoshiTeich.Act1Scene1.CyclotomicTateTilt.sharpOneEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.Tate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.epsilon
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.epsilon_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.sharp_epsilon
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.teichmuller
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.theta_teichmuller
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.teichmuller_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.kernelCoordinate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.kernelCoordinate_mem_ker
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.kernelCoordinate_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.kernelCoordinate_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.kernelCoordinate_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.kernelCoordinate_mul
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.theta_kernelCoordinate_add
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.generator
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.generator_ne_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCyclotomicTateTilt.canonicalKernelCoordinate_mem_ker
