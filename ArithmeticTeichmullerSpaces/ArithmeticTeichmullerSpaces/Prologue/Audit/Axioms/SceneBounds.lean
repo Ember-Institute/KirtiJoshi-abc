@@ -1,3 +1,5 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaUntiltKummer
+import ArithmeticTeichmullerSpaces.Act1Scene1.EmbeddedAlgebraicClosure
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaClosureLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerLogClosureTransport
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRationalClosureTransport
@@ -3541,3 +3543,34 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass_log
 #print axioms JoshiTeich.Act1Scene1.PrincipalUnitKummer.ClosureLog.dividedClass_ne_zero
+-- Preferred closures inside the actual untilt and source Kummer class.
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.Carrier
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.inclusion
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.inclusion_injective
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.inclusion_algebraMap
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.mem_inclusion_range_iff
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.equiv
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.embedding
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.embedding_algebraMap
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.embedding_range
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.mem_embedding_range_iff
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.groupIso
+#print axioms JoshiTeich.Act1Scene1.EmbeddedAlgebraicClosure.intertwine
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.localEmbedding
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.Closure
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.inclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.closureEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.mem_inclusion_range_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.groupIso
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.rootTower
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.rootTower_power
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.principalUnit_eq_rootImage
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.principalUnit_norm_sub_one_lt_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.principalUnit_eq_theta_pilot
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.imageClass
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.imageClass_eq_kummer
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.imageClass_eq_rootTower
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.imageClass_log
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.dividedClass
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.dividedClass_log
+#print axioms JoshiTeich.Act1Scene1.InitialThetaUntiltKummer.dividedClass_ne_zero
