@@ -6343,3 +6343,20 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 148.137 | 9,461,460 |
 
 All four direct tasks passed with empty logs. Twenty-six new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Vanishing of the actual rho-infimum at zero
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-INFIMUM-ZERO` | `InitialThetaBoundedWittRhoBound.rhoInfimum_zero`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Constructs a genuine zero Witt expansion with any positive real bound, proves the admissible infimum is nonnegative, and uses the real order approximation lemma to show it is at most every positive epsilon. Hence the candidate value at zero is exactly zero. | Scene1/Derived; proved the zero normalization of the candidate family. This does not establish subadditivity, multiplicativity, or the paper Frechet norm identity. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf attempts 1--3 | 1, 1, 0 | 141.016 | 9,118,368 |
+| Act1Scene1 aggregate | 0 | 133.844 | 9,279,040 |
+| Checks.SceneBounds | 0 | 147.503 | 9,481,668 |
+| Axioms.SceneBounds | 0 | 137.341 | 9,461,592 |
+
+The first two leaf attempts were ordinary zero-coefficient simplification/API failures; the final leaf and aggregate logs were empty. Twenty-six new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.

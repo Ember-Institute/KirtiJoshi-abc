@@ -377,5 +377,35 @@ theorem rhoInfimum_teichmuller_mul_eq_toAmbient
     (toAmbient D w x)).mp
   exact hasRhoBoundedExpansion_toAmbient D w rho hrho0 hrho1 x
 
+theorem rhoInfimum_zero
+    (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1) :
+    rhoInfimum D w rho 0 = 0 := by
+  have hmem : ∀ ε : ℝ, 0 < ε → ε ∈ RhoBoundSet D w rho 0 := by
+    intro ε hε
+    refine ⟨0, 0, (fun _ => 0), hε, ?_, ?_, ?_, ?_⟩
+    · intro n
+      simpa using hε.le
+    · rw [expands_iff_coeff]
+      intro n
+      have hp : Arithmetic.residueChar w.1 ≠ 0 :=
+        (Fact.out : Nat.Prime (Arithmetic.residueChar w.1)).ne_zero
+      rw [WittVector.zero_coeff]
+      change (0 : InitialThetaTiltField.Carrier D w) =
+        (0 : InitialThetaTiltField.Carrier D w) ^
+          (Arithmetic.residueChar w.1 ^ n)
+      rw [zero_pow]
+      exact pow_ne_zero _ hp
+    · simp
+    · intro n
+      simp [hε.le]
+  have hset : (RhoBoundSet D w rho (0 : Ambient D w)).Nonempty :=
+    ⟨1, hmem 1 zero_lt_one⟩
+  have hnonneg := rhoInfimum_nonneg D w rho (0 : Ambient D w) hset
+  have hle : rhoInfimum D w rho 0 ≤ 0 := by
+    apply le_of_forall_pos_le_add
+    intro ε hε
+    simpa using rhoInfimum_le_of_mem D w rho (0 : Ambient D w) (hmem ε hε)
+  exact le_antisymm hle hnonneg
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaBoundedWittRhoBound
