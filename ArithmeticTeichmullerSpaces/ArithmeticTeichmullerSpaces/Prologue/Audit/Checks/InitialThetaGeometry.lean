@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionGroups
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionFields
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -200,3 +200,25 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionGroups
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_point_eq
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_le_base
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_contains_base
+
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.ptX_act
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.ptY_act
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.act_eq_self_iff_coordinates
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.mem_QField_fixing_iff
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.mem_Hgp_bot_false_iff
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp_bot_false_eq_QField_fixing
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField_bot_false_eq_QField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt_one
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.QField_one_coordinates
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.baseField_le_functionFieldRange
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.QField_one_le_range
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.ιF_mem_QField_one
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.baseFunctionFieldEquiv
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.coe_baseFunctionFieldEquiv
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.ιF_algebraMap_poly
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.baseFunctionFieldEquiv_algebraMap_poly
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.baseCurveFunctionFieldEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_curveFunctionFieldToCover
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover_injective
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover_algebraMap_poly

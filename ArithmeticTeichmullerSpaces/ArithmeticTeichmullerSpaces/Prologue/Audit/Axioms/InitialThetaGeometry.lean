@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionGroups
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionFields
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -200,3 +200,25 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionGroups
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_point_eq
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_le_base
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_contains_base
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.ptX_act
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.ptY_act
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.act_eq_self_iff_coordinates
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.mem_QField_fixing_iff
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.mem_Hgp_bot_false_iff
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp_bot_false_eq_QField_fixing
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField_bot_false_eq_QField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt_one
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.QField_one_coordinates
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.baseField_le_functionFieldRange
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.QField_one_le_range
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.ιF_mem_QField_one
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.baseFunctionFieldEquiv
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.coe_baseFunctionFieldEquiv
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.ιF_algebraMap_poly
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.baseFunctionFieldEquiv_algebraMap_poly
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.baseCurveFunctionFieldEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_curveFunctionFieldToCover
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover_algebraMap_poly
