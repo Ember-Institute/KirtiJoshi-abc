@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaValuationSection
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaTorsionQuotient
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -61,3 +61,35 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaValuationSection
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_graphLine
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_canonical_iff
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.algebraModK_eq_canonical
+
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.coord₂
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.coord₂_ker
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.coord₂_surjective
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.rankOneQuotient
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.rankOneClass
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.rankOneEquiv
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.rankOneEquiv_class
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.distinguishedClass
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.rankOneEquiv_distinguishedClass
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.distinguishedClass_ne_zero
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.distinguishedClass_ne_neg
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.card_rankOneQuotient
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.rankOneClass_eq_iff
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.canonical_iff_rankOneClass
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.localTorsionMap
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.coe_localTorsionMap
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.localTorsionMap_bijective
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.localTorsionEquiv
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.localTorsionEquiv_apply
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedGraphLine
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.localTorsionEquiv_map_line
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedGraphQuotient
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedGraphQuotientEquiv
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedGraphQuotientEquiv_class
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedDistinguishedClass
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedDistinguishedClass_ne_zero
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedDistinguishedClass_ne_neg
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.card_selectedGraphQuotient
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedCanonical_iff_class
+#check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selected_e₂_isCanonical
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_e₂_isCanonical
