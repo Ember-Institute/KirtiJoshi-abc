@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionPoints
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionGroups
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -164,3 +164,39 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionPoints
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.nsmul_functionFieldDivisionPoint
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_ne_torsion
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_ne_zero
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.effLevel
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.effLevel_pos
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Mbar
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.SignOK
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.act_mem_Mbar
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.QField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.finiteDimensional_QField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.act_eq_self_of_fix
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.QField_fixing_le
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.isOpen_Hgp
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.isClosed_Hgp
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt_of_compatible
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.nsmul_mem_Mbar
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Mbar_zero
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp_le
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt_eq_divSys
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.fixingSubgroup_stabilizerField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.finiteDimensional_stabilizerField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField_le_QField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField_le_of_cover
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField_signed_le_unsigned
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_isOpen
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_isClosed
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_finite
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_fixingSubgroup
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_le_coordinateField
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_signed_le_unsigned
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_point_eq
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_le_base
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_contains_base

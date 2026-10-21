@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionPoints
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionGroups
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -164,3 +164,39 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionPoints
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.nsmul_functionFieldDivisionPoint
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_ne_torsion
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_ne_zero
+
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.effLevel
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.effLevel_pos
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Mbar
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.SignOK
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.act_mem_Mbar
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.QField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.finiteDimensional_QField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.act_eq_self_of_fix
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.QField_fixing_le
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.isOpen_Hgp
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.isClosed_Hgp
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt_of_compatible
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.nsmul_mem_Mbar
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Mbar_zero
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp_le
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt_eq_divSys
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.fixingSubgroup_stabilizerField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.finiteDimensional_stabilizerField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField_le_QField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField_le_of_cover
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.stabilizerField_signed_le_unsigned
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_isOpen
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_isClosed
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_finite
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_fixingSubgroup
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_le_coordinateField
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_signed_le_unsigned
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_point_eq
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_le_base
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_contains_base
