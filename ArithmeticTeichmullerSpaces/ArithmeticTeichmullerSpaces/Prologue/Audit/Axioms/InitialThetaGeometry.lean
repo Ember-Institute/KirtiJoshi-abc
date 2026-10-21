@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationFinite
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationMultiplicity
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -289,3 +289,14 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationFinite
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.finite_signedBaseNormalizationMap
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.normalizationRingMap_square
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.normalizationMap_square
+
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.ramificationMultiplicity
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.ramificationMultiplicity_pos
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finite_ramificationMultiplicity
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity_pos
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity_finite
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationMultiplicity
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationMultiplicity_pos
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationMultiplicity_finite
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finite_ramificationMultiplicity
