@@ -129,6 +129,46 @@ theorem rhoInfimum_zero_eq_one (z : Ambient D w) :
     rhoInfimum D w 0 z = rhoInfimum D w 1 z := by
   rw [rhoInfimum, rhoInfimum, rhoBoundSet_zero_eq_one D w z]
 
+theorem rhoBoundSet_teichmuller_mul_mem
+    (rho : ℝ) (z : Ambient D w) (r : InitialThetaTiltField.Carrier D w)
+    (hr : r ≠ 0) {C : ℝ} (hC : C ∈ RhoBoundSet D w rho z) :
+    ‖r‖ * C ∈ RhoBoundSet D w rho
+      (algebraMap (FieldWitt D w) (Ambient D w)
+        (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) := by
+  rcases hC with ⟨m, y, c, hpos, hbound, hc, hz, hrho⟩
+  let p := Arithmetic.residueChar w.1
+  let y' : FieldWitt D w := WittVector.teichmuller p r * y
+  let c' : ℕ → InitialThetaTiltField.Carrier D w := fun n => r * c n
+  refine ⟨m, y', c', mul_pos (norm_pos_iff.mpr hr) hpos, ?_, ?_, ?_, ?_⟩
+  · intro n
+    rw [norm_mul]
+    exact mul_le_mul_of_nonneg_left (hbound n) (norm_nonneg r)
+  · exact expands_teichmuller_mul p r y c hc
+  · calc
+      (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller p r) * z) * (p : Ambient D w) ^ m =
+        algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller p r) * (z * (p : Ambient D w) ^ m) := by
+            rw [mul_assoc]
+      _ = algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller p r) *
+            algebraMap (FieldWitt D w) (Ambient D w) y := by rw [hz]
+      _ = algebraMap (FieldWitt D w) (Ambient D w) y' := by rw [map_mul]
+  · intro n
+    rw [norm_mul, mul_assoc]
+    exact mul_le_mul_of_nonneg_left (hrho n) (norm_nonneg r)
+
+theorem rhoInfimum_teichmuller_mul_le_of_mem
+    (rho : ℝ) (z : Ambient D w) (r : InitialThetaTiltField.Carrier D w)
+    (hr : r ≠ 0) {C : ℝ} (hC : C ∈ RhoBoundSet D w rho z) :
+    rhoInfimum D w rho
+      (algebraMap (FieldWitt D w) (Ambient D w)
+        (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) ≤ ‖r‖ * C :=
+  rhoInfimum_le_of_mem D w rho
+    (algebraMap (FieldWitt D w) (Ambient D w)
+      (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z)
+    (rhoBoundSet_teichmuller_mul_mem D w rho z r hr hC)
+
 theorem hasRhoBoundedExpansion_of_hasBoundedExpansion
     (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1)
     (z : Ambient D w) (hz : HasBoundedExpansion D w z) :

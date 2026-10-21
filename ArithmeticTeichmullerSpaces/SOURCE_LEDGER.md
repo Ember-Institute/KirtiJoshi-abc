@@ -6291,3 +6291,21 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 145.552 | 9,460,916 |
 
 All four direct tasks passed with empty logs. Twenty-two new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Teichmuller scaling bound for the rho-infimum candidate
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-INFIMUM-SCALING` | `InitialThetaBoundedWittRhoBound.rhoBoundSet_teichmuller_mul_mem`, `rhoInfimum_teichmuller_mul_le_of_mem`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Extends the actual rho expansion scaling law to admissible-bound sets. A witness with bound `C` scales to a witness with bound `‖r‖·C`; the `sInf` order law then bounds the scaled infimum by this value. | Scene1/Derived; proved a quantitative upper bound for the scaled infimum candidate. It does not prove equality, a lower bound, multiplicativity, or paper `rho`-norm identity. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf attempt 1 | 1 | 183.700 | 9,114,416 |
+| Rho-bound leaf attempt 2 | 0 | 155.177 | 9,108,780 |
+| Act1Scene1 aggregate | 0 | 174.906 | 9,242,928 |
+| Checks.SceneBounds | 0 | 155.166 | 9,481,100 |
+| Axioms.SceneBounds | 0 | 154.210 | 9,461,116 |
+
+The first leaf failure was an ordinary tuple-shape error in the `RhoBoundSet` witness; the corrected leaf and aggregate logs were empty. Twenty-four new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
