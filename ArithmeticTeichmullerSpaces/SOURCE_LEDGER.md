@@ -6309,3 +6309,20 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 154.210 | 9,461,116 |
 
 The first leaf failure was an ordinary tuple-shape error in the `RhoBoundSet` witness; the corrected leaf and aggregate logs were empty. Twenty-four new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Exact Teichmuller scaling law for the rho-infimum candidate
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-INFIMUM-SCALING-EXACT` | `InitialThetaBoundedWittRhoBound.rhoInfimum_teichmuller_mul_ge_of_nonempty`, `rhoInfimum_teichmuller_mul_eq_of_nonempty`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Combines the inverse Teichmuller scaling witness with the order characterization of `sInf`. The reverse scaling by `r⁻¹` gives the opposite inequality; norm multiplicativity and `r*r⁻¹=1` close the equality `rhoInfimum([r]·z)=‖r‖·rhoInfimum(z)` whenever the original admissible-bound set is nonempty. | Scene1/Derived; proved exact scaling of the infimum candidate under a nonzero actual Teichmuller representative. This is still conditional order structure and does not prove a paper norm, Frechet completion, or global `B` identity. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf | 0 | 134.321 | 9,118,676 |
+| Act1Scene1 aggregate | 0 | 133.854 | 9,279,492 |
+| Checks.SceneBounds | 0 | 158.626 | 9,481,432 |
+| Axioms.SceneBounds | 0 | 147.072 | 9,461,376 |
+
+All four direct tasks passed with empty logs. Twenty-six new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.

@@ -169,6 +169,81 @@ theorem rhoInfimum_teichmuller_mul_le_of_mem
       (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z)
     (rhoBoundSet_teichmuller_mul_mem D w rho z r hr hC)
 
+theorem rhoInfimum_teichmuller_mul_ge_of_nonempty
+    (rho : ℝ) (z : Ambient D w) (r : InitialThetaTiltField.Carrier D w)
+    (hr : r ≠ 0)
+    (hset : (RhoBoundSet D w rho
+      (algebraMap (FieldWitt D w) (Ambient D w)
+        (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z)).Nonempty) :
+    ‖r‖ * rhoInfimum D w rho z ≤
+      rhoInfimum D w rho
+        (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) := by
+  unfold rhoInfimum
+  apply le_csInf hset
+  intro C hC
+  have hinv := rhoBoundSet_teichmuller_mul_mem D w rho
+    (algebraMap (FieldWitt D w) (Ambient D w)
+      (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z)
+    r⁻¹ (inv_ne_zero hr) hC
+  have heq :
+      algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r⁻¹) *
+        (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) = z := by
+    rw [← mul_assoc, ← map_mul, ← (WittVector.teichmuller (Arithmetic.residueChar w.1)).map_mul,
+      inv_mul_cancel₀ hr, (WittVector.teichmuller (Arithmetic.residueChar w.1)).map_one,
+      map_one, one_mul]
+  rw [heq] at hinv
+  have hi := rhoInfimum_le_of_mem D w rho z hinv
+  calc
+    ‖r‖ * rhoInfimum D w rho z ≤
+        ‖r‖ * (‖r⁻¹‖ * C) :=
+      mul_le_mul_of_nonneg_left hi (norm_nonneg _)
+    _ = C := by
+      rw [← mul_assoc, ← norm_mul, mul_inv_cancel₀ hr, norm_one, one_mul]
+
+theorem rhoInfimum_teichmuller_mul_eq_of_nonempty
+    (rho : ℝ) (z : Ambient D w) (r : InitialThetaTiltField.Carrier D w)
+    (hr : r ≠ 0) (hset : (RhoBoundSet D w rho z).Nonempty) :
+    rhoInfimum D w rho
+        (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z) =
+      ‖r‖ * rhoInfimum D w rho z := by
+  let z' : Ambient D w :=
+    algebraMap (FieldWitt D w) (Ambient D w)
+      (WittVector.teichmuller (Arithmetic.residueChar w.1) r) * z
+  change rhoInfimum D w rho z' = ‖r‖ * rhoInfimum D w rho z
+  have hset' : (RhoBoundSet D w rho z').Nonempty := by
+    rcases hset with ⟨C, hC⟩
+    exact ⟨‖r‖ * C, by
+      exact rhoBoundSet_teichmuller_mul_mem D w rho z r hr hC⟩
+  have hge := rhoInfimum_teichmuller_mul_ge_of_nonempty D w rho z r hr hset'
+  have heq :
+      algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r⁻¹) * z' = z := by
+    dsimp [z']
+    rw [← mul_assoc, ← map_mul, ← (WittVector.teichmuller (Arithmetic.residueChar w.1)).map_mul,
+      inv_mul_cancel₀ hr, (WittVector.teichmuller (Arithmetic.residueChar w.1)).map_one,
+      map_one, one_mul]
+  have hset_rev :
+      (RhoBoundSet D w rho
+        (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r⁻¹) * z')).Nonempty := by
+    rw [heq]
+    exact hset
+  have hrev := rhoInfimum_teichmuller_mul_ge_of_nonempty D w rho z' r⁻¹
+    (inv_ne_zero hr) hset_rev
+  rw [heq] at hrev
+  apply le_antisymm
+  · calc
+      rhoInfimum D w rho z' =
+          ‖r‖ * (‖r⁻¹‖ * rhoInfimum D w rho z') := by
+            rw [← mul_assoc, ← norm_mul, mul_inv_cancel₀ hr, norm_one, one_mul]
+      _ ≤ ‖r‖ * rhoInfimum D w rho z :=
+        mul_le_mul_of_nonneg_left hrev (norm_nonneg _)
+  · exact hge
+
 theorem hasRhoBoundedExpansion_of_hasBoundedExpansion
     (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1)
     (z : Ambient D w) (hz : HasBoundedExpansion D w z) :
