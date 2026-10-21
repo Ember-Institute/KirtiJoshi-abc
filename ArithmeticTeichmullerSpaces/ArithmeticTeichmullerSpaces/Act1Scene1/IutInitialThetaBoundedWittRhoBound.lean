@@ -109,6 +109,26 @@ theorem rhoInfimum_mono
       (pow_le_pow_left₀ h₁ h₂ n) (norm_nonneg _)).trans (hrho n)
   exact rhoInfimum_le_of_mem D w rho₁ z hC₁
 
+theorem rhoBoundSet_zero_eq_one (z : Ambient D w) :
+    RhoBoundSet D w 0 z = RhoBoundSet D w 1 z := by
+  ext C
+  constructor
+  · rintro ⟨m, y, c, hpos, hbound, hc, hz, hrho⟩
+    refine ⟨m, y, c, hpos, hbound, hc, hz, ?_⟩
+    intro n
+    simpa using hbound n
+  · rintro ⟨m, y, c, hpos, hbound, hc, hz, hrho⟩
+    refine ⟨m, y, c, hpos, hbound, hc, hz, ?_⟩
+    intro n
+    by_cases hn : n = 0
+    · subst n
+      simpa using hbound 0
+    · simpa [hn] using hpos.le
+
+theorem rhoInfimum_zero_eq_one (z : Ambient D w) :
+    rhoInfimum D w 0 z = rhoInfimum D w 1 z := by
+  rw [rhoInfimum, rhoInfimum, rhoBoundSet_zero_eq_one D w z]
+
 theorem hasRhoBoundedExpansion_of_hasBoundedExpansion
     (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1)
     (z : Ambient D w) (hz : HasBoundedExpansion D w z) :
