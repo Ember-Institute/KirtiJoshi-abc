@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaFunctionField
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionPoints
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -143,3 +143,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaFunctionField
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap_injective
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldGenericPoint_ne_torsion
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap_fixed
+
+#check JoshiTeich.ReferenceIut.Torsion.nsmul_surjective_of_a₁_a₃
+#check JoshiTeich.ReferenceIut.Torsion.nsmul_surjective
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Pt
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Compatible
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.exists_compatible
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.instCharZeroClosure
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.divisible
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.compatible_divSys
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys_one
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.mul_nsmul_divSys
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.nsmul_divSys
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys_ne_base
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys_ne_zero
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_one
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_compatible
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.nsmul_functionFieldDivisionPoint
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_ne_torsion
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_ne_zero

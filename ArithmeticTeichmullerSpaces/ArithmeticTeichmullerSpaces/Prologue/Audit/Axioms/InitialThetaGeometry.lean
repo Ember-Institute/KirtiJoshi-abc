@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaFunctionField
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionPoints
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -143,3 +143,24 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaFunctionField
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap_injective
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldGenericPoint_ne_torsion
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap_fixed
+
+#print axioms JoshiTeich.ReferenceIut.Torsion.nsmul_surjective_of_a₁_a₃
+#print axioms JoshiTeich.ReferenceIut.Torsion.nsmul_surjective
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Pt
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Compatible
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.exists_compatible
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.instCharZeroClosure
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divisible
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.compatible_divSys
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys_one
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.mul_nsmul_divSys
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.nsmul_divSys
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys_ne_base
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys_ne_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_compatible
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.nsmul_functionFieldDivisionPoint
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_ne_torsion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_ne_zero
