@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaTorsionQuotient
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaFunctionField
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -93,3 +93,53 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaTorsionQuotient
 #check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedCanonical_iff_class
 #check JoshiTeich.ReferenceIut.AdmissiblePrimeData.selected_e₂_isCanonical
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_e₂_isCanonical
+
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Ω
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.xF
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.yF
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.equation_xF_yF
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.instIsEllipticClosure
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.xG
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.yG
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.nonsingular_generic
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.genericPoint
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.xLine
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.baseField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.instPerfectFieldBaseField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.ιF
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_eq
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.yG_eq
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.fnField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_mem_xLine
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_mem_fnField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.yG_mem_fnField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.algebraMap_mem_fnField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.coordRing_mem_fnField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.ιF_mem_fnField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.isIntegral_yG
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_mem_baseField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.isAlgebraic_xLine
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.instIsAlgebraicBaseField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.instIsAlgClosureBaseField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.instIsGaloisBaseField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.Gal
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.σk
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.σk_apply
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.act
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.act_some
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.act_mul
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.act_one
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.base
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.act_base
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.transcendental_xG
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.baseField_eq_xLine
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_ne_algebraMap
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.genericPoint_ne_base
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.genericPoint_not_mem_range_base
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldClosure
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldGenericPoint
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldGeneric_x_transcendental
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap_injective
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldGenericPoint_ne_torsion
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap_fixed

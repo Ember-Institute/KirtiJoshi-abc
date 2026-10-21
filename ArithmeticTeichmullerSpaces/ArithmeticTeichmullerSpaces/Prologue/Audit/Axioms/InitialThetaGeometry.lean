@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaTorsionQuotient
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaFunctionField
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -93,3 +93,53 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaTorsionQuotient
 #print axioms JoshiTeich.ReferenceIut.AdmissiblePrimeData.selectedCanonical_iff_class
 #print axioms JoshiTeich.ReferenceIut.AdmissiblePrimeData.selected_e₂_isCanonical
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_e₂_isCanonical
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Ω
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.xF
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.yF
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.equation_xF_yF
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.instIsEllipticClosure
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.xG
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.yG
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.nonsingular_generic
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.genericPoint
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.xLine
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.baseField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.instPerfectFieldBaseField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.ιF
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_eq
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.yG_eq
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.fnField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_mem_xLine
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_mem_fnField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.yG_mem_fnField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.algebraMap_mem_fnField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.coordRing_mem_fnField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.ιF_mem_fnField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.isIntegral_yG
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_mem_baseField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.isAlgebraic_xLine
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.instIsAlgebraicBaseField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.instIsAlgClosureBaseField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.instIsGaloisBaseField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Gal
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.σk
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.σk_apply
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.act
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.act_some
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.act_mul
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.act_one
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.base
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.act_base
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.transcendental_xG
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.baseField_eq_xLine
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.xG_ne_algebraMap
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.genericPoint_ne_base
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.genericPoint_not_mem_range_base
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldClosure
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldGenericPoint
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldGeneric_x_transcendental
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldGenericPoint_ne_torsion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldTorsionMap_fixed
