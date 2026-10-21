@@ -6326,3 +6326,20 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 147.072 | 9,461,376 |
 
 All four direct tasks passed with empty logs. Twenty-six new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+
+### Exact rho-infimum scaling on actual Witt localization elements
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-RHO-INFIMUM-ACTUAL` | `InitialThetaBoundedWittRhoBound.rhoInfimum_teichmuller_mul_eq_toAmbient`; `Act1Scene1/IutInitialThetaBoundedWittRhoBound.lean` | Specializes the exact nonzero Teichmuller scaling law to `toAmbient x`. The prior actual bounded-expansion theorem supplies a rho witness for every `0≤rho≤1`, so no external nonemptiness certificate is required. | Scene1/Derived; proved exact candidate scaling on the actual Witt localization image. This remains an algebraic candidate and does not identify it with the paper's numerical rho norm or completed `B`. No Core or Prologue change. |
+
+Acceptance (2026-10-21):
+
+| task | exit | seconds | peak process-group RSS (KiB) |
+| --- | ---: | ---: | ---: |
+| Rho-bound leaf | 0 | 129.884 | 9,118,732 |
+| Act1Scene1 aggregate | 0 | 136.423 | 9,271,344 |
+| Checks.SceneBounds | 0 | 157.816 | 9,481,516 |
+| Axioms.SceneBounds | 0 | 148.137 | 9,461,460 |
+
+All four direct tasks passed with empty logs. Twenty-six new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.

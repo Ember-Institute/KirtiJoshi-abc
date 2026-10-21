@@ -363,5 +363,19 @@ theorem range_eq_rhoBoundedExpansions_one :
     rw [range_eq_boundedExpansions D w]
     exact hasBoundedExpansion_of_hasRhoBoundedExpansion_one D w z hz
 
+theorem rhoInfimum_teichmuller_mul_eq_toAmbient
+    (rho : ℝ) (hrho0 : 0 ≤ rho) (hrho1 : rho ≤ 1)
+    (x : InitialThetaBoundedWittLocalization.Ring D w)
+    (r : InitialThetaTiltField.Carrier D w) (hr : r ≠ 0) :
+    rhoInfimum D w rho
+        (algebraMap (FieldWitt D w) (Ambient D w)
+          (WittVector.teichmuller (Arithmetic.residueChar w.1) r) *
+          toAmbient D w x) =
+      ‖r‖ * rhoInfimum D w rho (toAmbient D w x) := by
+  apply rhoInfimum_teichmuller_mul_eq_of_nonempty D w rho (toAmbient D w x) r hr
+  apply (hasRhoBoundedExpansion_iff_rhoBoundSet_nonempty D w rho
+    (toAmbient D w x)).mp
+  exact hasRhoBoundedExpansion_toAmbient D w rho hrho0 hrho1 x
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaBoundedWittRhoBound
