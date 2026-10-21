@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.InitialThetaGeometry
 import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.CanonicalSource
 import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.Completion
 import ArithmeticTeichmullerSpaces.Prologue.Audit.Axioms.CompletionAccounting
