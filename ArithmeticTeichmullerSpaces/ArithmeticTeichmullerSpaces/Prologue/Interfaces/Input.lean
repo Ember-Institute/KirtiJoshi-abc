@@ -27,7 +27,6 @@ structure PrologueInputLaws {K : Type uK} [Field K] [NumberField K]
     (X : PrologueInputData K O p) : Prop where
   first_axiom : FirstAxiom X.link
   tate_parameter : Theta.TateParameterLaws X.link.tate
-  adelic_theta_link : AdelicThetaLink X.link
   perfectoid_bridge : PerfectoidBridgeLaws X.link p X.placeData X.bridge
 
 end JoshiTeich.Prologue

@@ -95,7 +95,6 @@ theorem padicTwo_input_laws :
     padicTwoInputData
     (by simpa [padicTwoInputData] using hfirst)
     (by change TateParameterLaws auditTateData; exact auditTateData_laws)
-    (by exact padicTwo_input_link_model)
     (by exact padicTwo_input_bridge_model)
 
 noncomputable def badInputBridgeData :

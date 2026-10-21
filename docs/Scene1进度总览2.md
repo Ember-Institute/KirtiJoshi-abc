@@ -29,7 +29,7 @@
 | 数学工作状态 | 同一 D 的 actual cyclotomic Tate tower→PreTilt→sharp=1 fiber、Fontaine 主核、primitive-adic 完备 B_dR、Witt 局部化及有界展开、de Rham θ-fiber 求值、torsion q-root 的 `j²` pilot scaling／ordinary-log shell、有限/无限处 container／shell／hull、三层 log-volume 和实际 Haar-product 下界均有已验收构造；ambient H¹ 已有 marked 运输及固定底域 closure 的 integral/rational 自然运输 |
 | 当前推进位置 | 给定 D 的 admissible-prime 来源、canonical section/`L'` carrier 映射、Witt 局部化的选择无关性及保留 coefficient 的 q/hull 会计已闭合。当前关键缺口为论文 Fréchet `B`／ρ-norm 及其与有界展开的关系、H¹ₑ/BK/crystalline/period 身份、跨 holomorphoid 标注/collation 及论文 theta locus；`PacketCollationHull` 仍消费显式 `route`，尚非论文来源生产者 |
 | 尚未接通的主要连接 | 论文 Fréchet B／ρ-norm、Tate-log 在该完备化中的收敛及 `T_y⊂B^{φ=p}` 身份，H¹ₑ/BK/crystalline/period 比较，从 admissible holomorphoid／anabelomorphism 产生跨来源标注并完成 collation、Perfectoid 的论文共同来源、论文代表处与权重、已构造无穷处贡献在最终目标中的处理、actual hull/container 到 paper thetaVolume 的身份、最终 3.12 |
-| Prologue 边界 | R5；本轮 Core 假设增量 0，未改既有定理类型或独立依赖 |
+| Prologue 边界 | R5；本轮将四项来源法律从 `PrologueInputLaws` 抽出到 Scene1 producer 层；Core 只保留载体/局部法律，未新增 Core 假设 |
 | 工程验收状态 | `d86ecae` 有界 Witt 展开单元的最终叶、Checks、Axioms、Act1Scene1 聚合均通过；覆盖 563 个可达工程模块、26 个新声明，无禁用导入、无 `sorryAx`，峰值进程组 RSS 为 9,478,016 KiB。该单元通过不等于四个最终闸门关闭 |
 
 阅读顺序：先看四个闸门，再看当前路线和关键子结果，最后查看未完成义务与负面证据。
@@ -49,6 +49,24 @@ G1–G4 依次对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-scene1-形
 
 qLogTerm 符号问题按用户决定暂作笔误处理，等待作者回复后再讨论。
 本总览不把该问题列为当前停工项；G1 的其他归一化和来源义务仍保留。
+
+### 本轮边界变更：四项来源契约移出 Prologue 输入
+
+为回应“`AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer`
+作为 Core 前提不足以说明 3.12 从合理假设推出”的审计意见，本轮将
+`PrologueInputLaws` 收缩为载体级和局部法律：`FirstAxiom`、Tate 参数法律和
+`PerfectoidBridgeLaws`。四项来源命题仍保留为可复用的 `Prop` 声明，但不再是
+Prologue 输入法律；它们现在由 Scene1 的 `Scene1ProducerLaws` 显式承接，并通过
+`Scene1Input.producer_laws` 进入下游。
+
+这次变更没有证明四项命题，也没有降低 G1--G4 的数学债务。它降低了 Prologue 的
+前置假设负担，同时增加了 Scene1 生产者必须提供真实来源证明的可见负担。当前
+`Scene1Input.ofExplicit` 是兼容适配器；最终无条件路线仍需由几何、holomorphoid、
+H¹ₑ/BK/period 和 paper-collation 生产者产生这些命题。
+
+对应代码：`Act1Scene1/ProducerContracts.lean`、`Act1Scene1/Boundary.lean`、
+`Prologue/Interfaces/Input.lean`。边界状态：`Scene1/Derived`，条件性兼容层；
+不改变 `InitialThetaData` 的声明，不引入 `Prologue/Obligations`。
 
 四个闸门关闭后，还须通过[计划 §4 的最终审计和推送验收](开发计划.V1Act1Scene1.md#4-审计和推送验收)，才能宣布 Scene1 完成。
 单个单元的检查和推送通过，不等于该最终验收已完成。

@@ -96,7 +96,6 @@ open JoshiTeich.Prologue.Theta
 #check PrologueInputData.bridge
 #check PrologueInputLaws.first_axiom
 #check PrologueInputLaws.tate_parameter
-#check PrologueInputLaws.adelic_theta_link
 #check PrologueInputLaws.perfectoid_bridge
 
 -- Contract fields.

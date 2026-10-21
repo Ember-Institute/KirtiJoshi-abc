@@ -469,7 +469,7 @@ theorem sceneInput_laws :
           AdelicThetaLinkData.ofTateParameters, sceneTateData]) hlocal
   exact @PrologueInputLaws.mk ℚ inferInstance inferInstance ℤ_[2] inferInstance 2
     inferInstance scene_padicTwo_not_unit scene_padicTwo_is_adic_complete
-    sceneInputData sceneLink_first_axiom sceneTateData_laws sceneLink_model hbridge
+    sceneInputData sceneLink_first_axiom sceneTateData_laws hbridge
 
 noncomputable def sceneInput :
     @Scene1Input ℚ inferInstance inferInstance ℤ_[2] inferInstance 2

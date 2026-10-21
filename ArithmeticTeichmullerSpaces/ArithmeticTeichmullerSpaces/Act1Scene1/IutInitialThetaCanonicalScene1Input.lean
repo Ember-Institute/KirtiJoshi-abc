@@ -125,12 +125,9 @@ private noncomputable def canonicalInputLaws
   let L := canonicalLink p D theta thetaBase packetHull heightData ramification
     logVolume processionLength X
   let T := iutInitialThetaTateParameterData_laws D
-  let A := canonicalAdelicThetaLink p D theta thetaBase packetHull heightData
-    ramification logVolume processionLength X
   refine
     { first_axiom := ?_
       tate_parameter := ?_
-      adelic_theta_link := A
       perfectoid_bridge := X.perfectoidBridge }
   · refine
       { places_nonempty := T.places_nonempty
@@ -160,13 +157,14 @@ noncomputable def toScene1Input
         bridge := X.bridge }
     input_laws := canonicalInputLaws p D theta thetaBase packetHull heightData
       ramification logVolume processionLength X
-    adelic_theta_link := canonicalAdelicThetaLink p D theta thetaBase packetHull
-      heightData ramification logVolume processionLength X
-    theta_lift_log :=
-      { log_shell := X.theta_log_shell
-        value_nonzero := X.thetaScaling.value_nonzero }
-    packet_collation_hull := X.packetCollationHull
-    volume_transfer := X.volumeTransfer }
+    producer_laws :=
+      { adelic_theta_link := canonicalAdelicThetaLink p D theta thetaBase packetHull
+          heightData ramification logVolume processionLength X
+        theta_lift_log :=
+          { log_shell := X.theta_log_shell
+            value_nonzero := X.thetaScaling.value_nonzero }
+        packet_collation_hull := X.packetCollationHull
+        volume_transfer := X.volumeTransfer } }
 
 theorem toScene1Input_link_eq
     (X : CanonicalInitialThetaScene1Input (O := O) p D theta thetaBase packetHull

@@ -147,6 +147,18 @@ S1.137 的 Scene1 与 ImportAudit 定向构建已通过，验证了该本地 IUT
 | `JT-ATS-III` | `refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | theta-link, log-shell and Corollary 3.12 interfaces | specification |
 | `JT-ATS-IV` | `refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 4.md` | main bounds, Vojta and `abc` dependency chain | specification |
 
+## Boundary revision: producer contracts
+
+| change-id | Operation | Declaration | New boundary | Source / fidelity | Status |
+| --- | --- | --- | --- | --- | --- |
+| `JT-SCENE1-BOUNDARY-PRODUCER-CONTRACTS-20261021` | `extract` / `split` | `PrologueInputLaws`; `Scene1ProducerLaws`; `InitialThetaGeometryProducer`; `HolomorphoidSource`; `H1eBKPeriodSource`; `PaperCollationSource` | `Prologue/Core` retains carrier and local laws; source-bearing global/analytic laws are `Scene1/Derived` producer outputs | IUT I Definition 3.1; `refer/iut/Iut/Concrete/Existence.lean` (`AnabelianExistence`, `thetaData`); Joshi II--III holomorphoid, untilt, H¹/BK and collation specifications | Interface change compiled for `Boundary`, `ProducerContracts`, and `CanonicalInitialThetaScene1Input`; producer existence remains `open` |
+
+The four former input laws remain public reusable propositions in
+`Prologue/Interfaces/Contracts.lean`, but they are no longer fields of
+`PrologueInputLaws`. `Scene1Input` receives them through `Scene1ProducerLaws`.
+This makes their conditional status explicit and prevents a Prologue input bundle
+from being presented as a proof that the source producers exist.
+
 ## Current Lean declarations
 
 | source-id | Declaration | File | Status |

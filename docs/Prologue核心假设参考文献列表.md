@@ -1,6 +1,6 @@
 # Prologue/Core 核心假设参考文献列表
 
-日期：2026-10-07
+日期：2026-10-21
 
 适用边界：`Prologue-R5`。本文件列出公开
 `Prologue/Core` 接口所依赖的来源，不把候选声明、审计 witness 或四条 `Obligations`
@@ -95,6 +95,19 @@
 | `JT-ATS-III-CONTRACT-003` | `ThetaLiftLog` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `def:additive-theta-pilot-object` 1492--1502；`le:elem-lemma` 3398--3425 | conditional interface；log-shell relation remains explicit |
 | `JT-ATS-III-CONTRACT-004` | `PacketCollationHull` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `pr:general-cohomology-set-const` 3261--3271；`th:thetam-construction` 3296--3346 | conditional interface；finite support and nonzero weights only |
 | `JT-ATS-III-CONTRACT-005` | `VolumeTransfer` | `Prologue/Interfaces/Contracts.lean` | `D-adapter`；`JoshiTeich: refer/JoshiTeich/index-Arithmetic Teichmuller Spaces 3.md` | `le:volume-lemma3` 3576--3583；`cor:cor312` 3647--3650 | conditional interface；目标相关性须在 3.12 形式化后复审 |
+
+### 6.1 2026-10-21 Core 边界复审
+
+上表仍登记四项命题的来源和语义，但它们已不再是 `PrologueInputLaws` 的 Core 输入
+字段。边界修订 `JT-SCENE1-BOUNDARY-PRODUCER-CONTRACTS-20261021` 将这些命题标为
+`Scene1/Derived` 的 producer 输出：`Scene1ProducerLaws` 负责显式接收它们，
+`Act1Scene1/ProducerContracts.lean` 进一步把真实来源责任分为几何、holomorphoid、
+H¹ₑ/BK/period 和 paper-collation 四阶段。
+
+因此，本列表中的 `JT-ATS-III-CONTRACT-002` 至 `005` 的状态应读作“有文献规格的
+条件契约”，不能读作“Prologue 已证明或可自动生产”。Core 当前只承诺载体、局部
+Tate 参数法律和 `PerfectoidBridgeLaws`；论文全局 theta、log-shell、collation 与
+volume transfer 仍需 Scene1 producer。`Scene1Input` 的兼容包装不改变这一来源状态。
 
 ## 7. 不属于 Core 参考文献的条目
 
