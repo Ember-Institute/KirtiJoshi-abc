@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionFields
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalization
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -222,3 +222,48 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionFields
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_curveFunctionFieldToCover
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover_injective
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover_algebraMap_poly
+
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.rebaseField
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.mem_rebaseField
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finiteDimensional_rebaseField
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.rebaseField_mono
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.polynomialBase
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.rationalBase
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.coordRing
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.towerBase
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.faithfulBase
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.principalBase
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.dedekindBase
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finiteTypeBase
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.notFieldBase
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.dedekindRing
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finiteRing
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.fractionFieldRing
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finiteTypeRing
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.notFieldRing
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.ringMap
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.coe_ringMap
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.ringMap_injective
+#print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.ringMap_isIntegral
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.mem_normalizationField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.finiteDimensional_normalizationField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.separable_normalizationField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.coverCoordinateRing
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.dedekind_coverCoordinateRing
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.finite_coverCoordinateRing
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.fractionField_coverCoordinateRing
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.finiteType_coverCoordinateRing
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.notField_coverCoordinateRing
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationField_signed_le_unsigned
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationRingMap
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationRingMap_injective
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationRingMap_isIntegral
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationRing
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationScheme
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.affine_coverNormalizationScheme
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationRing_notField
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationRingMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationRingMap_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationRingMap_isIntegral
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationMap

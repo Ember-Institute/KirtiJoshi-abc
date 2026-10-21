@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionFields
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalization
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -222,3 +222,48 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionFields
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_curveFunctionFieldToCover
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover_injective
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curveFunctionFieldToCover_algebraMap_poly
+
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.rebaseField
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.mem_rebaseField
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.finiteDimensional_rebaseField
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.rebaseField_mono
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.polynomialBase
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.rationalBase
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.coordRing
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.towerBase
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.faithfulBase
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.principalBase
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.dedekindBase
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.finiteTypeBase
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.notFieldBase
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.dedekindRing
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.finiteRing
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.fractionFieldRing
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.finiteTypeRing
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.notFieldRing
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.ringMap
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.coe_ringMap
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.ringMap_injective
+#check JoshiTeich.Act1Scene1.FunctionFieldNormalization.ringMap_isIntegral
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.mem_normalizationField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.finiteDimensional_normalizationField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.separable_normalizationField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.coverCoordinateRing
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.dedekind_coverCoordinateRing
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.finite_coverCoordinateRing
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.fractionField_coverCoordinateRing
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.finiteType_coverCoordinateRing
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.notField_coverCoordinateRing
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationField_signed_le_unsigned
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationRingMap
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationRingMap_injective
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationRingMap_isIntegral
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationRing
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationScheme
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.affine_coverNormalizationScheme
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationRing_notField
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationRingMap
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationRingMap_injective
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationRingMap_isIntegral
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationMap
