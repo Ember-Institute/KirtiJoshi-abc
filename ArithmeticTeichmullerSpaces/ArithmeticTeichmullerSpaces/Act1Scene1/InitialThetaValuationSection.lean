@@ -426,6 +426,19 @@ theorem valuationSection_vbad_finite (S : InitialThetaGeometrySeed AG TG) :
   refine ⟨wF, hmult, ?_⟩
   exact hgb.symm
 
+theorem valuationSection_vbad_image_subset_badPlacesOver
+    (S : InitialThetaGeometrySeed AG TG) :
+    S.valuationSection.sectFin '' S.VBad ⊆
+      iutBadPlacesOver (S.VBad : Set (NumberField.FinitePlace
+        ↥(fieldOfModuli S.F S.E))) := by
+  rintro w ⟨v, hv, rfl⟩
+  exact ⟨v, hv, S.valuationSection.sectFin_liesOver v⟩
+
+theorem valuationSection_vbad_image_finite
+    (S : InitialThetaGeometrySeed AG TG) :
+    (S.valuationSection.sectFin '' S.VBad).Finite :=
+  S.valuationSection_vbad_finite.image _
+
 /-- The chosen section aligns the seed's actual Tate graph line globally. -/
 theorem valuationSection_graphLine (S : InitialThetaGeometrySeed AG TG)
     {v : FinitePlace ↥(fieldOfModuli S.F S.E)} (hv : v ∈ S.VBad) :
