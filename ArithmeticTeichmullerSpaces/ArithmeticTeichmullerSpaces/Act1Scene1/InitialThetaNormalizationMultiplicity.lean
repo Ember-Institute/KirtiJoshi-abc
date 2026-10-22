@@ -19,7 +19,6 @@ open scoped IntermediateField.algebraAdjoinAdjoin Classical
 universe u
 noncomputable section
 
-set_option maxHeartbeats 1000000
 set_option synthInstance.maxHeartbeats 1000000
 attribute [local instance 1100] AdmissiblePrimeData.instDecidableEqK
 variable {AG : AnabelianGeometry.{u}} {TG : TemperedGeometry AG}

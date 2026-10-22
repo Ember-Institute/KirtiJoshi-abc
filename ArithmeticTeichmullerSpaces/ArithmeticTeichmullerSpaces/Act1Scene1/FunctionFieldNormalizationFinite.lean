@@ -22,8 +22,6 @@ open scoped IntermediateField.algebraAdjoinAdjoin Classical
 universe u
 noncomputable section
 
-set_option maxHeartbeats 1000000
-
 variable {k Ω : Type u} [Field k] [Field Ω] [Algebra k Ω]
 variable {t : Ω} {L L' : IntermediateField (rationalBase k t) Ω}
 
@@ -44,7 +42,8 @@ lemma moduleFinite_ringMap [FiniteDimensional (rationalBase k t) L']
       apply Subtype.ext
       change ((a : Ω) * (b : Ω)) * (c : Ω) = (a : Ω) * ((b : Ω) * (c : Ω))
       exact mul_assoc _ _ _⟩
-  exact Module.Finite.of_restrictScalars_finite (polynomialBase k t) _ _
+  exact Module.Finite.of_restrictScalars_finite (polynomialBase k t)
+    (coordRing t L) (coordRing t L')
 
 lemma ringMap_finite [FiniteDimensional (rationalBase k t) L']
     [Algebra.IsSeparable (rationalBase k t) L'] (ht : Transcendental k t) (h : L ≤ L') :

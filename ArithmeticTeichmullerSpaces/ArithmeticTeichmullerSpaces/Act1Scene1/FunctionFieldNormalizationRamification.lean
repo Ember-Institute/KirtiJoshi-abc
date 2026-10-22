@@ -34,7 +34,6 @@ noncomputable section
 
 attribute [local instance] FractionRing.liftAlgebra FractionRing.isScalarTower_liftAlgebra
 
-set_option maxHeartbeats 8000000
 set_option synthInstance.maxHeartbeats 1000000
 
 variable {k Ω : Type u} [Field k] [Field Ω] [Algebra k Ω] [CharZero k]
@@ -75,6 +74,7 @@ variable [FiniteDimensional (rationalBase k t) N]
 variable (ht : Transcendental k t) (hFN : F ≤ N)
 include ht
 
+set_option maxHeartbeats 500000 in
 /-- Nontrivial ramification multiplicities have finite support on the closed points. -/
 theorem finite_ramificationMultiplicity :
     {v : Ideal (coordRing t F) | v.IsMaximal ∧
@@ -116,10 +116,11 @@ theorem finite_ramificationMultiplicity :
       (IntermediateField.inclusion hFN (a : F) : N) * ((b : N) * c)
     rw [← mul_assoc]⟩
   set D := differentIdeal (coordRing t F) (coordRing t N)
-  haveI : Algebra.IsSeparable (FractionRing (coordRing t F))
-      (FractionRing (coordRing t N)) := by
-    haveI : CharZero (FractionRing (coordRing t F)) := inferInstance
-    exact Algebra.IsAlgebraic.isSeparable_of_perfectField
+  letI : Algebra.IsSeparable (FractionRing (coordRing t F))
+      (FractionRing (coordRing t N)) :=
+    set_option maxHeartbeats 1000000 in
+      letI : CharZero (FractionRing (coordRing t F)) := inferInstance
+      Algebra.IsAlgebraic.isSeparable_of_perfectField
   have hD : D ≠ ⊥ := differentIdeal_ne_bot
   let T : Finset (Ideal (coordRing t N)) :=
     (UniqueFactorizationMonoid.normalizedFactors D).toFinset

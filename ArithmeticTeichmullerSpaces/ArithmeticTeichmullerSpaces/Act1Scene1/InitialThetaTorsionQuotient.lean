@@ -31,8 +31,6 @@ open scoped Classical
 universe u
 noncomputable section
 
-set_option maxHeartbeats 4000000
-
 variable {F : Type u} [Field F] [NumberField F] {E : WeierstrassCurve F} [E.IsElliptic]
 variable {Fbar : Type u} [Field Fbar] [Algebra F Fbar] [IsAlgClosure F Fbar]
 variable {VBad : Set (FinitePlace ↥(fieldOfModuli F E))}

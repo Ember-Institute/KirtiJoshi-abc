@@ -25,8 +25,6 @@ open scoped IntermediateField.algebraAdjoinAdjoin Classical
 universe u
 noncomputable section
 
-set_option maxHeartbeats 1000000
-
 variable {k Ω : Type u} [Field k] [Field Ω] [Algebra k Ω]
 
 /-- Change the named base field along an equality, preserving the actual ambient subfield. -/
