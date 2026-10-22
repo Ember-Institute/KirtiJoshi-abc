@@ -236,8 +236,8 @@ theorem iutInitialThetaOddSupportSelectedQRootPlaces_finite
     (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
     (iutInitialThetaOddSupportSelectedQRootPlaces D).Finite := by
   rw [iutInitialThetaOddSupportSelectedQRootPlaces_eq_oddTateSectionPlaces,
-    iutInitialThetaOddTateSectionPlaces_eq_selectedSupport]
-  exact (iutInitialThetaOddModSupport_finite D).image _
+    iutInitialThetaOddTateSectionPlaces_eq_sectionVoss]
+  exact iutInitialThetaSectionVoss_finite D
 
 /-- At the section-selected representative, the q-root power is the q parameter
 of the Tate structure selected by the actual InitialThetaData. -/

@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTateFamily
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaOddSupportQParameter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 
 namespace JoshiTeich.Act1Scene1
@@ -21,7 +22,8 @@ source: `iut`: `refer/iut/Iut/Cor312/ThetaData/LocalConditions.lean`,
 `ss:theta-data-fixing2` and `ss:val-sets-defn`.
 fidelity: characterizes the actual section image intersected with odd places carrying
 the actual local Tate uniformization as the image of the complete odd multiplicative
-moduli support. The Tate-structure witness is the formal local uniformization criterion
+moduli support, and proves finiteness of this section image and its Voss intersection.
+The Tate-structure witness is the formal local uniformization criterion
 for the paper's odd semistable locus. This does not identify an independently supplied
 Scene1 link carrier or prove q-sum accounting.
 boundary: Scene1/Derived
@@ -274,6 +276,26 @@ theorem iutInitialThetaOddTateSectionPlaces_eq_selectedSupport
         (iutVoss_section_liesOver_canonical D v)]
       exact (Arithmetic.residueChar_prime v).odd_of_ne_two hv.1
     · exact ⟨iutInitialThetaFinitePlaceSection_tateStructure D v hv⟩
+
+/-! The concrete section/Voss carrier is finite because its source support is finite.
+This is an actual carrier fact; it does not identify the carrier with the paper's
+global place set or supply paper representative multiplicities. -/
+
+theorem iutInitialThetaOddMultiplicativeSelectedPlaces_finite
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (iutInitialThetaOddMultiplicativeSelectedPlaces D).Finite := by
+  exact (iutInitialThetaOddModSupport_finite D).image _
+
+theorem iutInitialThetaSectionVoss_finite
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    (iutInitialThetaSectionVoss D).Finite := by
+  rw [← iutInitialThetaOddTateSectionPlaces_eq_sectionVoss D,
+    iutInitialThetaOddTateSectionPlaces_eq_selectedSupport D]
+  exact iutInitialThetaOddMultiplicativeSelectedPlaces_finite D
 
 end
 

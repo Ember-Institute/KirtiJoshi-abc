@@ -53,3 +53,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddSemistablePlaces
 #check JoshiTeich.Act1Scene1.iutInitialThetaSectionVoss
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddTateSectionPlaces_eq_sectionVoss
+#check JoshiTeich.Act1Scene1.iutInitialThetaOddMultiplicativeSelectedPlaces_finite
+#check JoshiTeich.Act1Scene1.iutInitialThetaSectionVoss_finite
