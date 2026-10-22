@@ -120,5 +120,64 @@ theorem signedQuotientNormalizationAut_fixed_signed (ell : ℕ)
   exact (IntermediateField.mem_fixedField_iff (Hgp E ell M true) a.val.val).mp
     a.val.property g.val g.property
 
+/-- The quotient-fixed elements of the unsigned normalization ring. -/
+def signedNormalizationInvariant (ell : ℕ) (M : AddSubgroup E.toAffine.Point)
+    (x : coverCoordinateRing E ell M false) :
+    letI := Hgp_false_normal E ell M true
+    Prop := by
+  letI := Hgp_false_normal E ell M true
+  exact ∀ q, signedQuotientNormalizationAut E ell M q x = x
+
+@[simp] lemma coe_signedQuotientNormalizationAut_mk
+    (ell : ℕ) (M : AddSubgroup E.toAffine.Point)
+    (g : Hgp E ell M true) (x : coverCoordinateRing E ell M false) :
+    letI := Hgp_false_normal E ell M true
+    (((signedQuotientNormalizationAut E ell M (QuotientGroup.mk' _ g) x :
+      coverCoordinateRing E ell M false) : normalizationField E ell M false) : Ω E) =
+      g.val x.val.val := rfl
+
+/-- The invariant ring is exactly the signed normalization image. -/
+theorem signedNormalizationInvariant_iff
+    (ell : ℕ) (M : AddSubgroup E.toAffine.Point)
+    (x : coverCoordinateRing E ell M false) :
+    letI := Hgp_false_normal E ell M true
+    signedNormalizationInvariant E ell M x ↔
+      ∃ a : coverCoordinateRing E ell M true,
+        signedNormalizationRingMap E ell M a = x := by
+  letI := Hgp_false_normal E ell M true
+  constructor
+  · intro hx
+    have hpoint : ∀ g : Hgp E ell M true, g.val x.val.val = x.val.val := by
+      intro g
+      have h := congrArg (fun z : coverCoordinateRing E ell M false =>
+        (z.val.val : Ω E)) (hx (QuotientGroup.mk' _ g))
+      exact h
+    have hfield : x.val.val ∈ stabilizerField E ell M true := by
+      rw [stabilizerField, IntermediateField.mem_fixedField_iff]
+      intro g hg
+      exact hpoint ⟨g, hg⟩
+    have hi : IsIntegral (FunctionFieldNormalization.polynomialBase k (xG E))
+        x.val.val := by
+      let f : normalizationField E ell M false →ₐ[
+          FunctionFieldNormalization.polynomialBase k (xG E)] Ω E :=
+        (IntermediateField.val (normalizationField E ell M false)).restrictScalars _
+      apply (isIntegral_algHom_iff f f.injective).mpr
+      exact x.property
+    let y : normalizationField E ell M true := ⟨x.val.val, hfield⟩
+    have hiy : IsIntegral (FunctionFieldNormalization.polynomialBase k (xG E)) y := by
+      let f : normalizationField E ell M true →ₐ[
+          FunctionFieldNormalization.polynomialBase k (xG E)] Ω E :=
+        (IntermediateField.val (normalizationField E ell M true)).restrictScalars _
+      apply (isIntegral_algHom_iff f f.injective).mp
+      exact hi
+    let a : coverCoordinateRing E ell M true := ⟨y, hiy⟩
+    refine ⟨a, ?_⟩
+    apply Subtype.ext
+    apply Subtype.ext
+    rfl
+  · rintro ⟨a, rfl⟩
+    intro q
+    exact signedQuotientNormalizationAut_fixed_signed E ell M q a
+
 end
 end JoshiTeich.ReferenceIut.Anabelian.Genuine

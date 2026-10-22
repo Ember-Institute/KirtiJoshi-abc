@@ -46,5 +46,12 @@ theorem signedCoverQuotientNormalizationAut_fixed_signed
       S.signedCoverNormalizationRingMap a :=
   Genuine.signedQuotientNormalizationAut_fixed_signed S.prime.EK S.prime.ℓ S.prime.M q a
 
+theorem signedCoverNormalizationInvariant_iff
+    (x : S.coverNormalizationRing false) :
+    Genuine.signedNormalizationInvariant S.prime.EK S.prime.ℓ S.prime.M x ↔
+      ∃ a : S.coverNormalizationRing true,
+        S.signedCoverNormalizationRingMap a = x :=
+  Genuine.signedNormalizationInvariant_iff S.prime.EK S.prime.ℓ S.prime.M x
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
