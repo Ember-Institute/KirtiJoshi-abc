@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedFieldAction
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationMultiplicity
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaValuationSection
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedQuotient
@@ -328,3 +329,18 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationMultiplicity_finite
 #print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationField_eq_coarseFieldOnXLine
 #print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finite_ramificationMultiplicity
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signed_mem_unsignedField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedFieldAlgebra
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedFieldAut
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.coe_signedFieldAut
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedFieldAut_ker
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedQuotientFieldAut
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedQuotientFieldAut_injective
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedQuotientFieldAut_mk
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverFieldAlgebra
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverFieldAut
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverFieldAut_ker
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientFieldAut
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientFieldAut_injective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_signedCoverQuotientFieldAut

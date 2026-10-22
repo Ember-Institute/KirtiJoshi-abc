@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedFieldAction
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationMultiplicity
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaValuationSection
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedQuotient
@@ -328,3 +329,18 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationMultiplicity_finite
 #check JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationField_eq_coarseFieldOnXLine
 #check JoshiTeich.Act1Scene1.FunctionFieldNormalization.finite_ramificationMultiplicity
+
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signed_mem_unsignedField
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedFieldAlgebra
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedFieldAut
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.coe_signedFieldAut
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedFieldAut_ker
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedQuotientFieldAut
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedQuotientFieldAut_injective
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedQuotientFieldAut_mk
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverFieldAlgebra
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverFieldAut
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverFieldAut_ker
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientFieldAut
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientFieldAut_injective
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_signedCoverQuotientFieldAut
