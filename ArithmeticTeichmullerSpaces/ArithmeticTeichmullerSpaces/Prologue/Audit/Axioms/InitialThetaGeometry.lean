@@ -62,6 +62,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #print axioms JoshiTeich.ReferenceIut.AdmissiblePrimeData.sectFin_canonical_iff
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_sectFin_injective
+#print axioms JoshiTeich.Act1Scene1.multiplicativeReductionPlaces_finite
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_vbad_finite
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_graphLine
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_canonical_iff
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.algebraModK_eq_canonical

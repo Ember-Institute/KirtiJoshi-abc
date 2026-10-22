@@ -23,6 +23,7 @@ import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Anabelian.LocalInputs
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver
 import ArithmeticTeichmullerSpaces.Act1Scene1.ProducerContracts
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness
 
 /-!
 The section is constructed from the same arithmetic torsion field and Tate family
@@ -396,6 +397,34 @@ theorem valuationSection_sectFin_injective (S : InitialThetaGeometrySeed AG TG) 
       congrArg (iutPlaceUnder (F := ↥(fieldOfModuli S.F S.E))
         (Kt := ↥S.prime.torsionField)) h
     _ = v₂ := (iutPlaceUnder_eq_of_liesOver hv₂).symm
+
+theorem valuationSection_vbad_finite (S : InitialThetaGeometrySeed AG TG) :
+    S.VBad.Finite := by
+  let g : NumberField.FinitePlace S.F →
+      NumberField.FinitePlace ↥(fieldOfModuli S.F S.E) := fun w =>
+    iutPlaceUnder (F := ↥(fieldOfModuli S.F S.E)) w
+  have hfinite : (g '' {w : NumberField.FinitePlace S.F |
+      HasMultiplicativeReductionAt S.E w}).Finite :=
+    (JoshiTeich.Act1Scene1.multiplicativeReductionPlaces_finite S.E).image g
+  refine hfinite.subset ?_
+  intro v hv
+  let w := S.valuationSection.sectFin v
+  have hwv : FinitePlace.LiesOver w v :=
+    S.valuationSection.sectFin_liesOver v
+  let wF := iutPlaceUnder (F := S.F) w
+  have hwb : Ideal.LiesOver w.maximalIdeal.asIdeal wF.maximalIdeal.asIdeal := by
+    exact iutPlaceUnder_liesOver w
+  have hbv : Ideal.LiesOver wF.maximalIdeal.asIdeal v.maximalIdeal.asIdeal := by
+    haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv
+    haveI : w.maximalIdeal.asIdeal.LiesOver wF.maximalIdeal.asIdeal := hwb
+    exact Ideal.LiesOver.tower_bot w.maximalIdeal.asIdeal
+      wF.maximalIdeal.asIdeal v.maximalIdeal.asIdeal
+  have hgb : v = g wF := by
+    exact iutPlaceUnder_eq_of_liesOver hbv
+  have hmult : HasMultiplicativeReductionAt S.E wF :=
+    S.global.bad_multiplicative v hv wF hbv
+  refine ⟨wF, hmult, ?_⟩
+  exact hgb.symm
 
 /-- The chosen section aligns the seed's actual Tate graph line globally. -/
 theorem valuationSection_graphLine (S : InitialThetaGeometrySeed AG TG)

@@ -32,22 +32,29 @@ private theorem iut_norm_emb_le_one_iff
   rw [JoshiTeich.ReferenceIut.norm_le_one_iff_valued, FinitePlace.embedding_apply,
     valuedAdicCompletion_eq_valuation']
 
-private theorem iut_multiplicative_places_finite
-    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
-    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
-    {w : NumberField.FinitePlace D.F | JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E w}.Finite := by
-  by_cases hj : D.E.j = 0
+theorem multiplicativeReductionPlaces_finite
+    {F : Type u} [Field F] [NumberField F]
+    (E : WeierstrassCurve F) [E.IsElliptic] :
+    {w : NumberField.FinitePlace F |
+      JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt E w}.Finite := by
+  by_cases hj : E.j = 0
   · refine Set.Finite.subset Set.finite_empty ?_
     intro w hw
-    have hval := JoshiTeich.ReferenceIut.one_lt_valuation_j_of_mult D.E w hw
+    have hval := JoshiTeich.ReferenceIut.one_lt_valuation_j_of_mult E w hw
     rw [hj, map_zero] at hval
     exact absurd hval (not_lt.2 zero_le_one)
   · refine (NumberField.FinitePlace.hasFiniteMulSupport hj).subset ?_
     intro w hw
     rw [Function.mem_mulSupport, ← NumberField.FinitePlace.norm_embedding_eq]
     intro h
-    exact absurd ((iut_norm_emb_le_one_iff w D.E.j).1 h.le)
-      (not_le.2 (JoshiTeich.ReferenceIut.one_lt_valuation_j_of_mult D.E w hw))
+    exact absurd ((iut_norm_emb_le_one_iff w E.j).1 h.le)
+      (not_le.2 (JoshiTeich.ReferenceIut.one_lt_valuation_j_of_mult E w hw))
+
+private theorem iut_multiplicative_places_finite
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    {w : NumberField.FinitePlace D.F | JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt D.E w}.Finite :=
+  multiplicativeReductionPlaces_finite D.E
 
 /-- The actual IUT bad-place carrier is finite, derived from its multiplicative
 reduction source rather than supplied as a separate finiteness input. -/
