@@ -1,5 +1,4 @@
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Anabelian.Genuine.Normalization
-import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Anabelian.Genuine.Orbifold
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-COARSE-FIELD-IDENTIFICATION
@@ -21,6 +20,39 @@ noncomputable section
 variable {k : Type u} [Field k] [CharZero k] (E : WeierstrassCurve k)
   [E.IsElliptic]
 
+private def galEquivOfEq {F F' : IntermediateField k (Ω E)} (h : F = F') :
+    (Ω E ≃ₐ[F] Ω E) ≃* (Ω E ≃ₐ[F'] Ω E) := by
+  subst F'
+  exact MulEquiv.refl _
+
+private def galHom : (Ω E ≃ₐ[xLine E] Ω E) →* (Ω E ≃ₐ[baseField E] Ω E) :=
+  (galEquivOfEq E (baseField_eq_xLine E)).symm.toMonoidHom
+
+private lemma galEquivOfEq_apply {F F' : IntermediateField k (Ω E)}
+    (h : F = F') (σ : Ω E ≃ₐ[F] Ω E) (x : Ω E) :
+    galEquivOfEq E h σ x = σ x := by
+  subst F'
+  rfl
+
+private lemma galEquivOfEq_symm_apply {F F' : IntermediateField k (Ω E)}
+    (h : F = F') (σ : Ω E ≃ₐ[F'] Ω E) (x : Ω E) :
+    (galEquivOfEq E h).symm σ x = σ x := by
+  subst F'
+  rfl
+
+private lemma galHom_apply (σ : Ω E ≃ₐ[xLine E] Ω E) (x : Ω E) :
+    galHom E σ x = σ x := by
+  change (galEquivOfEq E (baseField_eq_xLine E)).symm σ x = σ x
+  exact galEquivOfEq_symm_apply E (baseField_eq_xLine E) σ x
+
+private lemma galEquiv_apply (σ : Ω E ≃ₐ[baseField E] Ω E) (x : Ω E) :
+    galEquivOfEq E (baseField_eq_xLine E) σ x = σ x := by
+  exact galEquivOfEq_apply E (baseField_eq_xLine E) σ x
+
+private lemma galHom_galEquiv (σ : Ω E ≃ₐ[baseField E] Ω E) :
+    galHom E (galEquivOfEq E (baseField_eq_xLine E) σ) = σ := by
+  exact (galEquivOfEq E (baseField_eq_xLine E)).symm_apply_apply σ
+
 /-- The subgroup fixing the coarse realization field, transported to the x-line. -/
 def fullSubOnXLine (ell : ℕ) (M : AddSubgroup E.toAffine.Point) (pm : Bool) :
     Subgroup (Ω E ≃ₐ[xLine E] Ω E) :=
@@ -37,16 +69,18 @@ theorem normalizationField_eq_coarseFieldOnXLine
     normalizationField E ell M pm = coarseFieldOnXLine E ell M pm := by
   ext x
   rw [mem_normalizationField]
-  change x ∈ IntermediateField.fixedField (Hgp E ell M pm) ↔ _
+  change x ∈ IntermediateField.fixedField (Hgp E ell M pm) ↔
+    x ∈ IntermediateField.fixedField (fullSubOnXLine E ell M pm)
   rw [IntermediateField.mem_fixedField_iff, IntermediateField.mem_fixedField_iff]
   constructor
   · intro hx σ hσ
-    simpa only [galEquiv_symm_apply] using hx (galHom E σ) hσ
+    simpa only [galHom_apply] using hx (galHom E σ) hσ
   · intro hx σ hσ
-    have hfix := hx (galEquiv E σ) ?_
+    have hfix := hx (galEquivOfEq E (baseField_eq_xLine E) σ) ?_
     · simpa only [galEquiv_apply] using hfix
-    · change galHom E (galEquiv E σ) ∈ Hgp E ell M pm
+    · change galHom E (galEquivOfEq E (baseField_eq_xLine E) σ) ∈ Hgp E ell M pm
       rw [galHom_galEquiv]
+      exact hσ
 
 end
 end JoshiTeich.ReferenceIut.Anabelian.Genuine
