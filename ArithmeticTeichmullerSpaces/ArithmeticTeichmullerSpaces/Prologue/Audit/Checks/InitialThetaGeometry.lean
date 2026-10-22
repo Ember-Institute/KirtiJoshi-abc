@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedNormalizationGalois
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedGalois
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedNormalizationAction
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedFieldAction
@@ -381,3 +382,32 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverFieldGaloisEquiv_apply
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverField_finrank_eq_card
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverField_finrank_dvd_two
+
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationAlgebra
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationGaloisAction
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationGaloisGroup
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationMultiplicity_eq_ramificationIdx
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalization_card_inertia
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalization_card_stabilizer
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationAlgebra
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationGaloisAction
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalization_smul
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationGaloisGroup
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity_eq_ramificationIdx
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity_eq_card_inertia
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalization_card_stabilizer
+
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationUnsignedNormal
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normSMul
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normModule
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normFinite
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normIntegral
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normTorsionFree
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normFlat
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normResidueCharZero
+
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normSeparableResidues
+
+#check JoshiTeich.ReferenceIut.Anabelian.Genuine.normIdealAction
+
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormIdealAction

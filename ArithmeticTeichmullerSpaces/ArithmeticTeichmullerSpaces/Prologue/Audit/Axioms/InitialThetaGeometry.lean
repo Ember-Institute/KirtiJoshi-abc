@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedNormalizationGalois
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedGalois
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedNormalizationAction
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedFieldAction
@@ -381,3 +382,32 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverFieldGaloisEquiv_apply
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverField_finrank_eq_card
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverField_finrank_dvd_two
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationAlgebra
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationGaloisAction
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationGaloisGroup
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalizationMultiplicity_eq_ramificationIdx
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalization_card_inertia
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.signedNormalization_card_stabilizer
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationAlgebra
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationGaloisAction
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalization_smul
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalizationGaloisGroup
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity_eq_ramificationIdx
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity_eq_card_inertia
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverNormalization_card_stabilizer
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationUnsignedNormal
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normSMul
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normModule
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normFinite
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normIntegral
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normTorsionFree
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normFlat
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normResidueCharZero
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normSeparableResidues
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normIdealAction
+
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormIdealAction
