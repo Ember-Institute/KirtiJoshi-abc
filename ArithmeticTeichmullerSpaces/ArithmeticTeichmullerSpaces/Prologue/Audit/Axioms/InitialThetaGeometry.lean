@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaDivisionPointInertia
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaIntegralDivisionPoints
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaOrbicurvePresentation
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationFreeEtale
@@ -546,3 +547,28 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_fullDivisionNormalizationY
 
 #print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divisionNormalizationTower
+
+#print axioms JoshiTeich.Act1Scene1.ReductionKernel.valuation_natCast_le_one
+#print axioms JoshiTeich.Act1Scene1.ReductionKernel.valuation_y_le_one
+#print axioms JoshiTeich.Act1Scene1.ReductionKernel.cubic_bezout
+#print axioms JoshiTeich.Act1Scene1.ReductionKernel.Δ_eq_of_a₁_a₃
+#print axioms JoshiTeich.Act1Scene1.ReductionKernel.nonsingular_reduction_of_Δ
+#print axioms JoshiTeich.Act1Scene1.ReductionKernel.negY_eq_neg
+#print axioms JoshiTeich.Act1Scene1.ReductionKernel.sub_mul_add_eq
+#print axioms JoshiTeich.Act1Scene1.ReductionKernel.sub_eq_zero_or_one_lt
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.valuation_algebraMap_eq_one
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.torsion_x_mem
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.inertia_fixes_short
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.toShort_injective
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.toShort_map
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.inertia_fixes_of_nsmul
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.valuationSubalgebra
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.valuationSubalgebra_integrallyClosed
+#print axioms JoshiTeich.Act1Scene1.DivisionPointInertia.inertia_fixes_of_nsmul_valuation
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.valuationInertia_fixes_divSys
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.valuationInertia_mem_QField_fixing
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.valuationInertia_mem_unsignedGroup
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.valuationInertia_fixes_unsignedField
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_fixed_of_valuationInertia
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverGroup_mem_of_valuationInertia
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldCoverField_fixed_of_valuationInertia
