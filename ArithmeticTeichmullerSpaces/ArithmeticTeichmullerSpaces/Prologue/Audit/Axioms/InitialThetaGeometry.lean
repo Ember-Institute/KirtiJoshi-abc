@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaIntegralDivisionPoints
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaOrbicurvePresentation
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationFreeEtale
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaEtaleNeighborhoodSchemes
@@ -520,3 +521,28 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 
 #print axioms JoshiTeich.Act1Scene1.normalizationCoefficientAlgebra
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.presentationCoefficientAlgebra
+
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.mem_of_monic_root_alg
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.short_division_x_mem
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.point_y_mem_of_x_mem
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.shortModel
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.squareChange
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.squareChange_smul
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.toShort
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.toShort_some
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.squareChange_x
+#print axioms JoshiTeich.Act1Scene1.IntegralDivisionCoordinates.division_coordinates_mem
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divSys_coordinates_isIntegral
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt_coordinates_isIntegral
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Qpt_coordinates_mem_normalizationField
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divisionNormalizationX
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divisionNormalizationY
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.coe_divisionNormalizationX
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.coe_divisionNormalizationY
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldDivisionPoint_coordinates_isIntegral
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.fullDivisionNormalizationX
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.fullDivisionNormalizationY
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_fullDivisionNormalizationX
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_fullDivisionNormalizationY
+
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.divisionNormalizationTower
