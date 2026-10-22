@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationMultiplicity
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedQuotient
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
@@ -294,6 +295,22 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.ramificationMultiplicity
 #print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.ramificationMultiplicity_pos
 #print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finite_ramificationMultiplicity
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.mem_Hgp_false
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp_false_le
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.conj_mem_Hgp_false
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp_false_normal
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp_mul_mem_false_of_not_mem
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.Hgp_false_relIndex_dvd_two
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldUnsignedSubgroup
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.functionFieldUnsignedSubgroup_normal
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientGroup
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.finite_signedCoverQuotientGroup
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientMap_surjective
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientMap_ker
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientMap_eq_one_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientGroup_card_dvd_two
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverQuotientGroup_card_le_two
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity_pos
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.signedCoverRamificationMultiplicity_finite
