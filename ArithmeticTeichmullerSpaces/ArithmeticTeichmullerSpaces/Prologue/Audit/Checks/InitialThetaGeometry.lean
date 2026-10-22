@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationMultiplicity
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaValuationSection
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedQuotient
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 
@@ -60,6 +61,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #check JoshiTeich.ReferenceIut.AdmissiblePrimeData.sect
 #check JoshiTeich.ReferenceIut.AdmissiblePrimeData.sectFin_canonical_iff
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection
+#check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_sectFin_injective
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_graphLine
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.valuationSection_canonical_iff
 #check JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.algebraModK_eq_canonical

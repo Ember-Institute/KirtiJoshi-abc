@@ -22,6 +22,7 @@ import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Anabelian.Linear
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Anabelian.LocalInputs
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver
 import ArithmeticTeichmullerSpaces.Act1Scene1.ProducerContracts
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 
 /-!
 The section is constructed from the same arithmetic torsion field and Tate family
@@ -378,6 +379,23 @@ noncomputable def valuationSection (S : InitialThetaGeometrySeed AG TG) :
     S.prime.sectFin_liesOver S.tate v
   sectInf_liesOver v :=
     (InfinitePlace.exists_liesOver (K := ↥S.prime.torsionField) v).choose_spec
+
+/-- The seed's chosen finite-place section is injective: a place is determined by
+its contraction to the field of moduli. -/
+theorem valuationSection_sectFin_injective (S : InitialThetaGeometrySeed AG TG) :
+    Function.Injective S.valuationSection.sectFin := by
+  intro v₁ v₂ h
+  have hv₁ := S.valuationSection.sectFin_liesOver v₁
+  have hv₂ := S.valuationSection.sectFin_liesOver v₂
+  calc
+    v₁ = iutPlaceUnder (F := ↥(fieldOfModuli S.F S.E))
+        (Kt := ↥S.prime.torsionField) (S.valuationSection.sectFin v₁) :=
+      iutPlaceUnder_eq_of_liesOver hv₁
+    _ = iutPlaceUnder (F := ↥(fieldOfModuli S.F S.E))
+        (Kt := ↥S.prime.torsionField) (S.valuationSection.sectFin v₂) :=
+      congrArg (iutPlaceUnder (F := ↥(fieldOfModuli S.F S.E))
+        (Kt := ↥S.prime.torsionField)) h
+    _ = v₂ := (iutPlaceUnder_eq_of_liesOver hv₂).symm
 
 /-- The chosen section aligns the seed's actual Tate graph line globally. -/
 theorem valuationSection_graphLine (S : InitialThetaGeometrySeed AG TG)
