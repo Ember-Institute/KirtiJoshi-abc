@@ -74,7 +74,6 @@ def HasBoundedExpansion (z : Ambient D w) : Prop :=
       Expands (Arithmetic.residueChar w.1) y c ∧
       z * (Arithmetic.residueChar w.1 : Ambient D w) ^ m = algebraMap (FieldWitt D w) (Ambient D w) y
 
-set_option maxHeartbeats 1000000 in
 theorem hasBoundedExpansion (x : InitialThetaBoundedWittLocalization.Ring D w) :
     HasBoundedExpansion D w (toAmbient D w x) := by
   obtain ⟨m, a, ha⟩ := IsLocalization.Away.surj (denominator D w) x

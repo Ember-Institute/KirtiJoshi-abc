@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationMultiplicity
+import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 
 /-! Source-backed torsion/valuation-section component of the geometric producer. -/
 
@@ -299,4 +300,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationMultiplic
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationMultiplicity
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationMultiplicity_pos
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coverNormalizationMultiplicity_finite
+#print axioms JoshiTeich.ReferenceIut.Anabelian.Genuine.normalizationField_eq_coarseFieldOnXLine
 #print axioms JoshiTeich.Act1Scene1.FunctionFieldNormalization.finite_ramificationMultiplicity

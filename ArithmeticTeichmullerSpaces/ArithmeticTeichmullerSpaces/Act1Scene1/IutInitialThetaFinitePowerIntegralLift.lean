@@ -75,7 +75,7 @@ theorem finitePowerClass_one
   change PaperLogWitnessHull.value D s =
     LocalPadicLog.saturatedImageLog (Arithmetic.residueChar s.1)
       (InitialThetaLogWitness.norm_residueChar_lt_one s.1) (normalizedSaturatedClass D s)
-  exact (normalizedSaturatedClass_saturatedImageLog_eq_value D s).symm
+  exact Eq.symm (normalizedSaturatedClass_saturatedImageLog_eq_value D s)
 
 theorem finitePowerClass_integralLift_iff
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) (j : ℕ) :

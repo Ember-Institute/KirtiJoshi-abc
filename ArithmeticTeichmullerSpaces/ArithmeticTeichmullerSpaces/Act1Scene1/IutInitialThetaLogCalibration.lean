@@ -32,7 +32,6 @@ local instance calibrationContinuousSMul (s : (iutInitialThetaOddSupportTorsionQ
     ContinuousSMul ℚ_[Arithmetic.residueChar s.1] (localField D s) :=
   continuousSMul_of_algebraMap _ _ (LocalCompletion.continuous_padicEmb (w := s.1) rfl)
 
-set_option maxHeartbeats 1000000 in
 theorem originalIntegralImageClass_ordinaryLog
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     LocalPadicLog.saturatedPadicLog (Arithmetic.residueChar s.1)
@@ -43,7 +42,6 @@ theorem originalIntegralImageClass_ordinaryLog
     (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
     (Additive.ofMul (actualPrincipalUnit D s))).trans (log_principalUnit_eq_scale_value D s)
 
-set_option maxHeartbeats 1000000 in
 theorem originalIntegralImageClass_normalizedRationalLog
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     LocalPadicLog.normalizedRationalLog (Arithmetic.residueChar s.1)
@@ -55,7 +53,6 @@ theorem originalIntegralImageClass_normalizedRationalLog
     inv_mul_cancel_left₀ (Nat.cast_ne_zero.mpr
       (LocalPadicLog.paperScale_ne_zero (Arithmetic.residueChar_prime s.1)))]
 
-set_option maxHeartbeats 1000000 in
 theorem calibratedLog_originalIntegralImageClass
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
     (L : LocalPadicLog.saturatedKummerPadicSubmodule (k := localField D s) (Ω := closure D s)
@@ -72,7 +69,6 @@ theorem calibratedLog_originalIntegralImageClass
     (Arithmetic.residueChar s.1) (InitialThetaLogWitness.norm_residueChar_lt_one s.1) L hL]
   exact originalIntegralImageClass_ordinaryLog D s
 
-set_option maxHeartbeats 1000000 in
 theorem ordinaryLog_originalIntegralImageClass_ne_witness
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     LocalPadicLog.saturatedPadicLog (Arithmetic.residueChar s.1)

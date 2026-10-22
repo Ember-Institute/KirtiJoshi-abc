@@ -146,7 +146,6 @@ theorem normalizedRationalClass_zsmul_ne_zero
   apply Subtype.ext
   simpa [normalizedSaturatedClass] using h
 
-set_option maxHeartbeats 1000000 in
 theorem rationalClass_zsmul_ne_zero
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
     {r : ℤ} (hr : r ≠ 0) :

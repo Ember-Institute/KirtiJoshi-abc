@@ -39,11 +39,12 @@ local instance consumerContinuousSMul
     ContinuousSMul ℚ_[Arithmetic.residueChar s.1] (localField D s) :=
   continuousSMul_of_algebraMap _ _ (LocalCompletion.continuous_padicEmb (w := s.1) rfl)
 
-set_option maxHeartbeats 2000000 in
 theorem qrootTateLog_normalizedRationalClass
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     qrootTateLog D s (normalizedRationalClass D s) = PaperLogWitnessHull.value D s := by
-  rw [qrootTateLog_eq_ambientLog_sub]
+  refine Eq.mpr
+    (id (congrArg (fun y => y = PaperLogWitnessHull.value D s)
+      (qrootTateLog_eq_ambientLog_sub D s (normalizedRationalClass D s)))) ?_
   have hval : LocalCompletion.KummerValuation.valuationCoordinate s.1
       (Arithmetic.residueChar s.1) rfl (normalizedRationalClass D s) = 0 :=
     LocalCompletion.KummerValuation.valuationCoordinate_unit s.1
@@ -53,7 +54,7 @@ theorem qrootTateLog_normalizedRationalClass
   simp only [zero_div, zero_smul, sub_zero]
   exact ambientLog_normalizedRationalClass D s
 
-set_option maxHeartbeats 2000000 in
+set_option maxHeartbeats 1000000 in
 theorem qrootTateLog_eq_zero_iff
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
     (x : continuousCohomology 1 (LocalKummer.Rational.topRep
@@ -77,7 +78,6 @@ theorem normalizedRationalClass_not_mem_qroot_span
   rw [qrootTateLog_normalizedRationalClass D s] at hz
   exact PaperLogWitnessHull.value_ne_zero D s hz
 
-set_option maxHeartbeats 1000000 in
 theorem qrootTateLog_normalizedRationalClass_ne_zero
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     qrootTateLog D s (normalizedRationalClass D s) ≠ 0 := by
@@ -92,7 +92,6 @@ theorem qrootTateLog_continuous
     (Arithmetic.residueChar s.1) rfl (qrootClass D s)
       (qrootRationalKummerClass_not_mem_unitsSubspace D s)
 
-set_option maxHeartbeats 4000000 in
 theorem qrootTateLog_as_generic
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     qrootTateLog D s =

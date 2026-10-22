@@ -22,7 +22,6 @@ variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
 variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
 variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
 
-set_option maxHeartbeats 1000000 in
 theorem integralBall_index_eq_absNorm_pow
     (v : (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset) :
     LocalCompletion.principalIndex v.1 (integralValue D v) =
@@ -33,7 +32,6 @@ theorem integralBall_index_eq_absNorm_pow
         rw [norm_value_eq_qroot_norm D v]
         exact IutTorsionQRootSource.ofInitialThetaDataFromGlobal_qroot_norm_lt_one D v))
 
-set_option maxHeartbeats 1000000 in
 theorem integralBall_haar_toReal_eq_qroot_norm
     (v : (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset) :
     (LocalCompletion.normalizedHaar v.1 (integralBall D v)).toReal =

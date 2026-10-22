@@ -15,8 +15,6 @@ normalization/source audit; it does not identify either map with H^1_e or
 construct the Bloch--Kato comparison.
 Original proofs; no reference code copied; Prologue-R5 unchanged.
 -/
-set_option maxHeartbeats 2000000
-
 namespace JoshiTeich.Act1Scene1.PrincipalUnitKummer.BlochKatoNormalizationAudit
 
 open JoshiTeich.Prologue
@@ -64,6 +62,7 @@ theorem actualIntegralClass_normalizedComparison
         PaperLogWitnessHull.value D s :=
   PrincipalUnitKummer.originalIntegralImageClass_normalizedRationalLog D s
 
+set_option maxHeartbeats 1000000 in
 theorem ordinaryComparison_unique_of_smallBallCalibration
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
     (L : Carrier D s →ₗ[ℚ_[Arithmetic.residueChar s.1]] Base D s)

@@ -68,7 +68,6 @@ theorem ordinary_collation_haar_pos_lt_top (v : iutInitialThetaOddModSupportFins
     (fun i => scalar_ne_zero D _) (hw v) (Set.iUnion_subset (hunit v))
 
 include hw hunit in
-set_option maxHeartbeats 1000000 in
 theorem ordinary_localVolume_le_collation (v : iutInitialThetaOddModSupportFinset D) :
     localVolume D n v ≤ FullSupportWitnessHull.localVolume D n C v := by
   have hv := (packet D n v).normalizationDegreeVolume_mono

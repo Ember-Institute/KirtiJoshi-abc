@@ -44,7 +44,6 @@ theorem normalizedClass_integralLift_iff_power_root
       (if Arithmetic.residueChar s.1 = 2 then 2 else 1)
   simpa only [hclass, ha, ← hscale, normalizedRationalClass] using h
 
-set_option maxHeartbeats 1000000 in
 theorem normalizedClass_integralLift_iff_principalImage
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     (∃ x, LocalKummer.Rational.standardMap (Arithmetic.residueChar s.1) x = normalizedRationalClass D s) ↔

@@ -190,7 +190,6 @@ theorem degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum :
   exact canonicalTateQFamily_degreeNormalized_qLogSum_eq_weightedPaperNormalizedSourceQLogSum
     p D (qFamily p D theta route thetaBase heightData ramification X) rfl rfl
 
-set_option maxHeartbeats 1000000 in
 theorem qProduct_le_hullVolume :
     Corollary312Data.qProduct p
         (data p D theta route thetaBase heightData ramification X)

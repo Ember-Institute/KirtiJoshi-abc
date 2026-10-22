@@ -49,7 +49,6 @@ theorem actualIntegralImageClass_coefficient
       LocalKummer.Rational.standardMap (Arithmetic.residueChar s.1) (padicClass D s) :=
   rationalClass_eq_changeCoefficients D s
 
-set_option maxHeartbeats 1000000 in
 theorem actualIntegralImageClass_normalizedLog
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     (LocalPadicLog.normalizedIntegralKummerLogEquiv (Arithmetic.residueChar s.1)
@@ -65,7 +64,6 @@ def finitePowerIntegralImageClass
       (InitialThetaLogWitness.norm_residueChar_lt_one s.1) :=
   LocalPadicLog.principalIntegralClass _ _ (Additive.ofMul (finitePowerUnit D s j))
 
-set_option maxHeartbeats 1000000 in
 theorem finitePowerIntegralImageClass_normalizedLog
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) (j : ℕ) :
     (LocalPadicLog.normalizedIntegralKummerLogEquiv (Arithmetic.residueChar s.1)
@@ -76,7 +74,6 @@ theorem finitePowerIntegralImageClass_normalizedLog
     (Arithmetic.residueChar s.1) (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
     (Additive.ofMul (finitePowerUnit D s j))
 
-set_option maxHeartbeats 1000000 in
 theorem finitePowerIntegralImageClass_has_integralLift
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) (j : ℕ) :
     ∃ x, LocalKummer.Rational.standardMap (Arithmetic.residueChar s.1) x =

@@ -39,7 +39,6 @@ theorem integralBall_index_pos
     0 < LocalCompletion.principalIndex v.1 (integralValue D v) :=
   LocalCompletion.principalIndex_pos v.1 _ (integralValue_ne_zero D v)
 
-set_option maxHeartbeats 1000000 in
 theorem integralBall_haar_eq_inv_index
     (v : (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset) :
     LocalCompletion.normalizedHaar v.1 (integralBall D v) =

@@ -115,13 +115,11 @@ def quotientPrimitiveEquiv : (AinfInvertP D w ⧸ Ideal.span {localizedPrimitive
     InitialThetaCanonicalGeometricFontaine.coefficientField D w :=
   (Ideal.quotEquivOfEq (kernel_eq_span D w).symm).trans (quotientEquiv D w)
 
-set_option maxHeartbeats 2000000 in
 theorem quotientPrimitiveEquiv_mk (a : AinfInvertP D w) :
     quotientPrimitiveEquiv D w (Ideal.Quotient.mk _ a) = theta D w a := by
   unfold quotientPrimitiveEquiv
   rw [RingEquiv.trans_apply, Ideal.quotEquivOfEq_mk]
-  exact RingHom.quotientKerEquivOfSurjective_apply_mk
-    (f := theta D w) (theta_surjective D w) a
+  exact RingHom.quotientKerEquivOfSurjective_apply_mk (theta_surjective D w) a
 
 /-- Transport of the original PreTilt Witt localization, retaining the original p. -/
 def sourceLocalizationEquiv :

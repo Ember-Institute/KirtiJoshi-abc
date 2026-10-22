@@ -13,8 +13,6 @@ paper holomorphoid identity remain separate obligations. Original proofs.
 boundary: Scene1/Derived; Prologue-R5 unchanged.
 -/
 
-set_option maxHeartbeats 2000000
-
 namespace JoshiTeich.Act1Scene1.InitialThetaCanonicalGeometricFontaine
 
 open JoshiTeich.Prologue NumberField
@@ -31,7 +29,8 @@ local instance completionCharZero : CharZero (LocalCompletion.completionAt D.F w
 
 /-- The carrier and its structures are produced together from this actual completion. -/
 def geometricExtension : CompletedAlgebraicClosure.Extension (LocalCompletion.completionAt D.F w.1) :=
-  CompletedAlgebraicClosure.ofNormedField _ (by
+  set_option maxHeartbeats 2000000 in
+    CompletedAlgebraicClosure.ofNormedField _ (by
     refine ⟨(Arithmetic.residueChar w.1 : LocalCompletion.completionAt D.F w.1)⁻¹, ?_⟩
     rw [norm_inv]
     have hp0 : (Arithmetic.residueChar w.1 : LocalCompletion.completionAt D.F w.1) ≠ 0 :=

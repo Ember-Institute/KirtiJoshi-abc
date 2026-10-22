@@ -25,7 +25,6 @@ local instance expWitnessCharZero (s : (iutInitialThetaOddSupportTorsionQRootSou
     CharZero (localField D s) :=
   charZero_of_injective_ringHom (NumberField.FinitePlace.embedding s.1.maximalIdeal).injective
 
-set_option maxHeartbeats 1000000 in
 theorem saturatedExp_value_eq_normalizedSaturatedClass
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) :
     LocalPadicLog.saturatedExp (Ω := closure D s) (Arithmetic.residueChar s.1)

@@ -29,8 +29,6 @@ open WeierstrassCurve Polynomial
 open scoped Classical
 noncomputable section
 
-set_option maxHeartbeats 1000000
-
 variable {k : Type u} [Field k] (E : WeierstrassCurve k) [E.IsElliptic]
 
 /-- Points on the seed curve in the actual function-field algebraic closure. -/

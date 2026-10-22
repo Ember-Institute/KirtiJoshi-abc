@@ -12,8 +12,6 @@ universe u
 
 noncomputable section
 
-set_option maxHeartbeats 1000000
-
 /-!
 source-id: IUT-COR312-INITIAL-THETA-FULL-SUPPORT-CANONICAL-ABSLOGQ
 source: the full-support weighted logarithmic accounting in

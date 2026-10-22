@@ -14,8 +14,6 @@ universe u
 
 noncomputable section
 
-set_option maxHeartbeats 1000000
-
 /-!
 source-id: IUT-COR312-INITIAL-THETA-QROOT-ACCOUNTING
 source: `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean`,

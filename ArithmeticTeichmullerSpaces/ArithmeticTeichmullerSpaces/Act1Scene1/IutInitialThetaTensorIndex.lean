@@ -29,7 +29,6 @@ theorem regionIndex_pos : 0 < regionIndex D p c hc :=
   LocalCompletion.Packet.scalarIndex_pos (packet D p c hc) _
     (fun i => InitialThetaLogWitness.value_ne_zero D (c i))
 
-set_option maxHeartbeats 1000000 in
 theorem region_normalizedHaar_eq_inv_index :
     (packet D p c hc).normalizedHaar (region D p c hc) = (regionIndex D p c hc : ENNReal)⁻¹ := by
   have hz1 (i : ι) : ‖InitialThetaLogWitness.value D (c i)‖ ≤ 1 := by

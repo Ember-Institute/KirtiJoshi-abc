@@ -163,8 +163,6 @@ theorem finiteProcessionVolume_bounds (U : ∀ i : Index D, RawFamily D (i.val +
     IutInitialThetaWitnessHullHaarProduct.finiteProcessionVolume_le_one D _,
     IutInitialThetaWitnessHullHaarProduct.selectedPaperRootProduct_pow_lt_finiteProcessionVolume D _⟩
 
-set_option maxHeartbeats 1000000
-
 /-- Tuples of genuine original integral coefficient-image classes. -/
 abbrev IntegralClassTuple (p : Nat.Primes) (j : ℕ) (c : Tuple D p j) :=
   ∀ i : Fin (j + 1), LocalPadicLog.integralKummerSubmodule
@@ -176,10 +174,12 @@ def classLogScalar (p : Nat.Primes) (j : ℕ) (c : Tuple D p j)
   LocalPadicLog.normalizedIntegralKummerLogEquiv (p : ℕ)
     ((packet D p j c).logHull_norm_prime_lt_one i) (x i)
 
+set_option maxHeartbeats 1000000 in
 def classLogTensor (p : Nat.Primes) (j : ℕ) (c : Tuple D p j)
     (x : IntegralClassTuple D p j c) : (packet D p j c).Tensor :=
   (packet D p j c).pure (classLogScalar D p j c x)
 
+set_option maxHeartbeats 1000000 in
 def standardClassTuple (p : Nat.Primes) (j : ℕ) (c : Tuple D p j) : IntegralClassTuple D p j c :=
   IutInitialThetaFiniteNormalizedLogHull.integralClass D p j c
 

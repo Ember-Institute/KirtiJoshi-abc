@@ -51,7 +51,6 @@ def smallNormalizedIntegralLift
     (InitialThetaLogWitness.norm_residueChar_lt_one s.1) (PaperLogWitnessHull.value D s)
       (by rwa [PaperLogWitnessHull.norm_value_eq_qroot_norm])
 
-set_option maxHeartbeats 1000000 in
 theorem smallNormalizedIntegralLift_standardMap
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
     (hs : ‖(iutInitialThetaOddSupportTorsionQRootSource D).qroot s‖ ≤

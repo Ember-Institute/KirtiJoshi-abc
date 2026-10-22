@@ -29,8 +29,6 @@ open WeierstrassCurve Polynomial
 open scoped Classical
 noncomputable section
 
-set_option maxHeartbeats 1000000
-
 variable {k : Type u} [Field k] [CharZero k] (E : WeierstrassCurve k) [E.IsElliptic]
 
 /-- The Galois action applies the same automorphism to the x coordinate. -/

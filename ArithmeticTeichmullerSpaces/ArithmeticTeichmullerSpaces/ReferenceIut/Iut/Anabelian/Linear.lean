@@ -40,8 +40,6 @@ special linear group"): for lines `L, M ⊆ 𝔽_ℓ²` and vectors `g ∉ L`, `
 
 @[expose] public section
 
-set_option maxHeartbeats 1000000
-
 namespace JoshiTeich.ReferenceIut.Anabelian
 
 variable {ℓ : ℕ} [hℓ : Fact ℓ.Prime]
