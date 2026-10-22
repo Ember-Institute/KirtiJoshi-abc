@@ -19,8 +19,9 @@ source: IUT I Definition 3.1(d); Joshi III `ss:theta-data-fixing2`;
 `Pi1/Orbifold/GaloisData.lean`, `Coord.mem_fixedField_of_normalizes`.
 fidelity: the signed quotient acts faithfully on the actual unsigned fixed
 field over the actual signed fixed field, using their proved inclusion.
-boundary: Scene1/Derived. Surjectivity onto all field automorphisms,
-normalization-cover automorphisms and ramification stabilizers remain open.
+boundary: Scene1/Derived. `GenuineSignedGalois` proves surjectivity of this
+field action. Normalization-cover comparison and ramification stabilizers
+remain open here.
 -/
 
 namespace JoshiTeich.ReferenceIut.Anabelian.Genuine
