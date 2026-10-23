@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationSquareRamification
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaBaseOrbicurvePresentation
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaUnsignedNormalizationEtale
+import ArithmeticTeichmullerSpaces.Act1Scene1.AffineOrbicurvePresentationCategory
 
 /-!
 source-id: JT-SCENE1-BOUNDARY-PRODUCER-CONTRACTS-20261021
@@ -62,13 +63,29 @@ theorem normalizationOrbicurvePresentationCover_unsigned_coarseMap_etale :
     AlgebraicGeometry.Etale (S.normalizationOrbicurvePresentationCover false).coarseMap :=
   S.etale_coverToBaseUnsignedNormalizationMap
 
-/-- This is the original commuting square, with all four presentation-cover laws proved. -/
+/-- The two composites agree as presentation covers, including their ring maps. -/
+theorem normalizationPresentation_coverSquare :
+    AffineOrbicurvePresentation.Cover.comp
+        (S.normalizationOrbicurvePresentationCover false) S.signedBaseOrbicurvePresentation =
+      AffineOrbicurvePresentation.Cover.comp
+        S.signedCoverOrbicurvePresentation (S.normalizationOrbicurvePresentationCover true) := by
+  apply AffineOrbicurvePresentation.Cover.ext_f
+  exact S.normalizationRingMap_square
+
+/-- The coarse functor preserves the same square of actual presentation covers. -/
 theorem normalizationOrbicurvePresentation_square :
     (S.normalizationOrbicurvePresentationCover false).coarseMap ≫
         S.signedBaseOrbicurvePresentation.coarseMap =
       S.signedCoverOrbicurvePresentation.coarseMap ≫
-        (S.normalizationOrbicurvePresentationCover true).coarseMap :=
-  S.normalizationMap_square
+        (S.normalizationOrbicurvePresentationCover true).coarseMap := by
+  have h := congrArg
+    (fun f : AffineOrbicurvePresentation.Cover
+      (S.coverOrbicurvePresentation false) (S.baseOrbicurvePresentation true) => f.coarseMap)
+    S.normalizationPresentation_coverSquare
+  exact (AffineOrbicurvePresentation.Cover.comp_coarseMap (S.normalizationOrbicurvePresentationCover false)
+      S.signedBaseOrbicurvePresentation).symm.trans
+    (h.trans (AffineOrbicurvePresentation.Cover.comp_coarseMap S.signedCoverOrbicurvePresentation
+      (S.normalizationOrbicurvePresentationCover true)))
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed

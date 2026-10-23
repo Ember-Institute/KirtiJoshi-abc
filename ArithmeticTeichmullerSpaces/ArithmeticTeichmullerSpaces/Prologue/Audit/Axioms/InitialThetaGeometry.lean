@@ -825,3 +825,13 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometryInterfaceCountermodel.no_orbicurveData
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometryInterfaceCountermodel.no_producer
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometryInterfaceCountermodel.no_universal_producer
+
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Cover.ext_f
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Cover.id
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Cover.comp
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.category
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.coarseFunctor
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Cover.comp_coarseMap
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Cover.finite
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.finite_coarseMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.normalizationPresentation_coverSquare
