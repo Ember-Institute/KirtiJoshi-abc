@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaOriginalBasePresentationIso
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaGeometryInterfaceCountermodel
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaOriginalBasePresentation
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaBaseNormalizationBranch
@@ -835,3 +836,13 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineNormalizationCoarseField
 #print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Cover.finite
 #print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.finite_coarseMap
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.normalizationPresentation_coverSquare
+
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Equiv.symm
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Equiv.toCover
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Equiv.toIso
+#print axioms JoshiTeich.Act1Scene1.AffineOrbicurvePresentation.Equiv.toIso_coarse
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curvePresentationIso
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.linePresentationIso
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.curvePresentationIso_coarse
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.linePresentationIso_coarse
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.originalBasePresentation_coverSquare
