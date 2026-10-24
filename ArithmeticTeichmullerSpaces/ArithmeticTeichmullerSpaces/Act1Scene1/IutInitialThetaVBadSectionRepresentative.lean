@@ -102,5 +102,15 @@ theorem iutInitialThetaVBadSectionRepresentative_eq_selectedSourceAt
       (VBadSelectedPaper.sourceAt D v).1 := by
   rfl
 
+theorem iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport :
+    (∑ v : iutInitialThetaVBadModuliFinset D,
+      VBadSelectedPaper.paperTerm D v) =
+      ∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        VBadSelectedPaper.paperTerm D
+          ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
+  exact iutInitialThetaVBadSectionRepresentative_sum_transport D
+    (fun v => VBadSelectedPaper.paperTerm D v)
+
 end
 end JoshiTeich.Act1Scene1
