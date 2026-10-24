@@ -100,5 +100,21 @@ theorem normalizationComponentNormalizationOpen_nonempty :
   change Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen ≠ 0
   exact (Classical.choose_spec S.normalizationToTensorComponentScheme_exists_iso_basicOpen).1
 
+def normalizationComponentNormalizationOpenMap :
+    (S.normalizationToTensorComponentScheme ⁻¹ᵁ
+      S.normalizationComponentNormalizationOpen).toScheme ⟶
+      S.normalizationComponentNormalizationOpen.toScheme :=
+  S.normalizationToTensorComponentScheme ∣_
+    S.normalizationComponentNormalizationOpen
+
+instance isIso_normalizationComponentNormalizationOpenMap :
+    IsIso S.normalizationComponentNormalizationOpenMap := by
+  change IsIso (Spec.map (CommRingCat.ofHom S.normalizationToTensorComponentRingMap) ∣_
+    PrimeSpectrum.basicOpen (Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen))
+  exact (Classical.choose_spec S.normalizationToTensorComponentScheme_exists_iso_basicOpen).2
+
+instance finite_normalizationComponentNormalizationOpenMap :
+    IsFinite S.normalizationComponentNormalizationOpenMap := inferInstance
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
