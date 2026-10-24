@@ -208,6 +208,30 @@ theorem normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso :
         S.normalizationToPullbackScheme := by
       rw [Category.assoc, S.normalizationToTensorScheme_comp_pullbackIso]
 
+def normalizationComponentNormalizationOpenToPullbackScheme :
+    S.normalizationComponentNormalizationSourceOpen.toScheme ⟶
+      pullback (S.coverToBaseNormalizationMap true) S.signedBaseNormalizationMap :=
+  S.normalizationComponentNormalizationOpenToTensorScheme ≫
+    S.normalizationTensorPullbackIso.hom
+
+theorem normalizationComponentNormalizationOpenToPullbackScheme_comp_fst :
+    S.normalizationComponentNormalizationOpenToPullbackScheme ≫
+        pullback.fst (S.coverToBaseNormalizationMap true) S.signedBaseNormalizationMap =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.signedCoverNormalizationMap := by
+  rw [normalizationComponentNormalizationOpenToPullbackScheme,
+    S.normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso,
+    Category.assoc, pullback.lift_fst]
+
+theorem normalizationComponentNormalizationOpenToPullbackScheme_comp_snd :
+    S.normalizationComponentNormalizationOpenToPullbackScheme ≫
+        pullback.snd (S.coverToBaseNormalizationMap true) S.signedBaseNormalizationMap =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.coverToBaseNormalizationMap false := by
+  rw [normalizationComponentNormalizationOpenToPullbackScheme,
+    S.normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso,
+    Category.assoc, pullback.lift_snd]
+
 theorem normalizationComponentNormalizationOpenToPullback_birationalOver :
     Scheme.BirationalOver
       S.normalizationComponentNormalizationOpenToTensorScheme
