@@ -100,6 +100,27 @@ theorem normalizationComponentNormalizationOpen_nonempty :
   change Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen ≠ 0
   exact (Classical.choose_spec S.normalizationToTensorComponentScheme_exists_iso_basicOpen).1
 
+theorem normalizationComponentNormalizationOpen_dense :
+    Dense (S.normalizationComponentNormalizationOpen :
+      Set S.normalizationTensorComponentScheme) := by
+  change Dense (PrimeSpectrum.basicOpen
+    (Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen) :
+      Set (PrimeSpectrum S.normalizationTensorComponentRing))
+  apply (PrimeSpectrum.basicOpen
+    (Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen)).isOpen.dense
+  refine ⟨(⊥ : PrimeSpectrum S.normalizationTensorComponentRing), ?_⟩
+  exact (Classical.choose_spec S.normalizationToTensorComponentScheme_exists_iso_basicOpen).1
+
+theorem normalizationComponentNormalizationOpen_birationalOver :
+    Scheme.BirationalOver
+      (S.normalizationComponentNormalizationOpen.ι ≫ S.tensorComponentToTensorScheme)
+      S.tensorComponentToTensorScheme := by
+  letI : IsDominant S.normalizationComponentNormalizationOpen.ι :=
+    Opens.isDominant_ι S.normalizationComponentNormalizationOpen_dense
+  exact Scheme.Hom.birationalOver S.normalizationComponentNormalizationOpen.ι
+    S.tensorComponentToTensorScheme
+    (S.normalizationComponentNormalizationOpen.ι ≫ S.tensorComponentToTensorScheme) rfl
+
 def normalizationComponentNormalizationSourceOpen :
     (S.coverNormalizationScheme false).Opens :=
   S.normalizationToTensorComponentScheme ⁻¹ᵁ
