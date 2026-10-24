@@ -112,5 +112,20 @@ theorem iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport :
   exact iutInitialThetaVBadSectionRepresentative_sum_transport D
     (fun v => VBadSelectedPaper.paperTerm D v)
 
+theorem iutInitialThetaVBadSectionRepresentative_weightedPaperTerm_sum_transport :
+    (∑ v : iutInitialThetaVBadModuliFinset D,
+      iutInitialThetaRepresentativeCoefficient D
+          (iutInitialThetaVBadModuliAt D v) * VBadSelectedPaper.paperTerm D v) =
+      ∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        iutInitialThetaRepresentativeCoefficient D
+            (iutInitialThetaVBadModuliAt D
+              ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) *
+          VBadSelectedPaper.paperTerm D
+            ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
+  exact iutInitialThetaVBadSectionRepresentative_sum_transport D
+    (fun v => iutInitialThetaRepresentativeCoefficient D
+      (iutInitialThetaVBadModuliAt D v) * VBadSelectedPaper.paperTerm D v)
+
 end
 end JoshiTeich.Act1Scene1
