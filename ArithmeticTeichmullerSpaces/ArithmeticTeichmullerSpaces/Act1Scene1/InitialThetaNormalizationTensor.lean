@@ -259,6 +259,12 @@ theorem normalizationTensorComponentFieldMap_range :
     S.normalizationTensorMap.toRingHom S.normalizationTensorFieldMap.toRingHom
       S.normalizationTensorKernel_eq.symm
 
+theorem normalizationTensorComponentFieldMap_injective :
+    Function.Injective S.normalizationTensorComponentFieldMap :=
+  FunctionFieldNormalization.quotientLift_injective_of_ker_eq
+    S.normalizationTensorMap.toRingHom S.normalizationTensorFieldMap.toRingHom
+      S.normalizationTensorKernel_eq.symm
+
 def normalizationToTensorComponentScheme : S.coverNormalizationScheme false ⟶
     S.normalizationTensorComponentScheme :=
   Spec.map (CommRingCat.ofHom S.normalizationToTensorComponentRingMap)

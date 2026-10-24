@@ -121,5 +121,19 @@ theorem quotientLift_range_eq_of_ker_eq {R S T : Type*} [Ring R] [Ring S] [Ring 
         rw [← hker]
         exact hx)⟩
 
+theorem quotientLift_injective_of_ker_eq {R S T : Type*} [Ring R] [Ring S] [Ring T]
+    (f : R →+* S) (g : R →+* T) (hker : RingHom.ker f = RingHom.ker g) :
+    Function.Injective (Ideal.Quotient.lift (RingHom.ker f) g (fun x hx => by
+      apply RingHom.mem_ker.mp
+      rw [← hker]
+      exact hx)) :=
+  RingHom.lift_injective_of_ker_le_ideal
+    (I := RingHom.ker f)
+    (fun x hx => by
+      apply RingHom.mem_ker.mp
+      rw [← hker]
+      exact hx)
+    (by rw [hker])
+
 end
 end JoshiTeich.Act1Scene1.FunctionFieldNormalization
