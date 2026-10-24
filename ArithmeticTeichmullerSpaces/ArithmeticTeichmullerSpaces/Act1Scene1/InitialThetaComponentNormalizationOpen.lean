@@ -157,5 +157,12 @@ theorem normalizationComponentNormalizationOpenMap_comp_tensorComponent :
       S.normalizationToTensorScheme := by
       rw [S.normalizationToTensorComponentScheme_comp]
 
+def normalizationComponentNormalizationOpenToTensorScheme :
+    S.normalizationComponentNormalizationSourceOpen.toScheme ⟶
+      S.normalizationTensorScheme :=
+  S.normalizationComponentNormalizationOpenMap ≫
+    S.normalizationComponentNormalizationOpen.ι ≫
+      S.tensorComponentToTensorScheme
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
