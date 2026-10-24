@@ -100,9 +100,13 @@ theorem normalizationComponentNormalizationOpen_nonempty :
   change Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen ≠ 0
   exact (Classical.choose_spec S.normalizationToTensorComponentScheme_exists_iso_basicOpen).1
 
+def normalizationComponentNormalizationSourceOpen :
+    (S.coverNormalizationScheme false).Opens :=
+  S.normalizationToTensorComponentScheme ⁻¹ᵁ
+    S.normalizationComponentNormalizationOpen
+
 def normalizationComponentNormalizationOpenMap :
-    (S.normalizationToTensorComponentScheme ⁻¹ᵁ
-      S.normalizationComponentNormalizationOpen).toScheme ⟶
+    S.normalizationComponentNormalizationSourceOpen.toScheme ⟶
       S.normalizationComponentNormalizationOpen.toScheme :=
   S.normalizationToTensorComponentScheme ∣_
     S.normalizationComponentNormalizationOpen
@@ -115,6 +119,13 @@ instance isIso_normalizationComponentNormalizationOpenMap :
 
 instance finite_normalizationComponentNormalizationOpenMap :
     IsFinite S.normalizationComponentNormalizationOpenMap := inferInstance
+
+theorem normalizationComponentNormalizationSourceOpen_nonempty :
+    (S.normalizationComponentNormalizationSourceOpen :
+      Set (S.coverNormalizationScheme false)).Nonempty := by
+  obtain ⟨y, hy⟩ := normalizationComponentNormalizationOpen_nonempty S
+  obtain ⟨x, hx⟩ := S.normalizationComponentNormalizationOpenMap.surjective ⟨y, hy⟩
+  exact ⟨x.1, x.2⟩
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
