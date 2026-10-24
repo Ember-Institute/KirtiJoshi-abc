@@ -151,5 +151,43 @@ theorem iutInitialThetaVBadSectionRepresentative_referenceAbsLogQ_lt_image_unwei
   simpa [VBadSelectedPaper.paperSum,
     iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D] using h
 
+def iutInitialThetaVBadSectionRepresentativeRootProduct : ℝ :=
+  ∏ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+    w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+    actualPaperRootNorm D
+      (VBadSelectedPaper.sourceAt D
+        ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w))
+
+theorem iutInitialThetaVBadSectionRepresentativeRootProduct_pos :
+    0 < iutInitialThetaVBadSectionRepresentativeRootProduct D := by
+  unfold iutInitialThetaVBadSectionRepresentativeRootProduct
+  exact Finset.prod_pos fun w _ =>
+    (actualPaperRootNorm_mem_Ioo D _).1
+
+theorem iutInitialThetaVBadSectionRepresentative_negLogRootProduct_eq_image_sum :
+    -Real.log (iutInitialThetaVBadSectionRepresentativeRootProduct D) =
+      ∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        VBadSelectedPaper.paperTerm D
+          ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
+  rw [iutInitialThetaVBadSectionRepresentativeRootProduct,
+    Real.log_prod (fun w _ => (actualPaperRootNorm_mem_Ioo D _).1.ne'),
+    ← Finset.sum_neg_distrib]
+  apply Finset.sum_congr rfl
+  intro w hw
+  unfold VBadSelectedPaper.paperTerm
+  rfl
+
+theorem iutInitialThetaVBadSectionRepresentativeRootProduct_lt_normalizedVBadRootProduct :
+    iutInitialThetaVBadSectionRepresentativeRootProduct D <
+      iutInitialThetaNormalizedVBadRelativeQRootProduct D := by
+  have h := iutInitialThetaVBadSectionRepresentative_referenceAbsLogQ_lt_image_unweighted_sum D
+  rw [← iutInitialThetaNormalizedVBadRelativeQRootProduct_negLog_eq_referenceAbsLogQ D,
+    ← iutInitialThetaVBadSectionRepresentative_negLogRootProduct_eq_image_sum D] at h
+  exact (Real.log_lt_log_iff
+    (iutInitialThetaVBadSectionRepresentativeRootProduct_pos D)
+    (iutInitialThetaNormalizedVBadRelativeQRootProduct_pos D)).mp
+      (neg_lt_neg_iff.mp h)
+
 end
 end JoshiTeich.Act1Scene1
