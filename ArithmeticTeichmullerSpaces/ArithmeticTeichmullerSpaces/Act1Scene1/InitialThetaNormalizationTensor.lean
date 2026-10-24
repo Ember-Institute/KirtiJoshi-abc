@@ -265,6 +265,11 @@ theorem normalizationTensorComponentFieldMap_injective :
     S.normalizationTensorMap.toRingHom S.normalizationTensorFieldMap.toRingHom
       S.normalizationTensorKernel_eq.symm
 
+theorem normalizationTensorComponentFieldMap_ker_eq_bot :
+    RingHom.ker S.normalizationTensorComponentFieldMap = ⊥ :=
+  (RingHom.injective_iff_ker_eq_bot S.normalizationTensorComponentFieldMap).mp
+    S.normalizationTensorComponentFieldMap_injective
+
 def normalizationToTensorComponentScheme : S.coverNormalizationScheme false ⟶
     S.normalizationTensorComponentScheme :=
   Spec.map (CommRingCat.ofHom S.normalizationToTensorComponentRingMap)
