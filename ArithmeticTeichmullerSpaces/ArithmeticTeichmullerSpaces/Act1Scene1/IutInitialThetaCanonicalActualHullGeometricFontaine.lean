@@ -86,6 +86,32 @@ theorem AnalyticInput.ofCanonicalGeometricFontaine_place_eq
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
   rfl
 
+theorem AnalyticInput.ofCanonicalGeometricFontaine_bridge_coefficientMap
+    (w : (iutInitialThetaTateParameterData D).places)
+    (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
+    (periodMap : ∀ i, theta.period i = theta.liftedLog i)
+    (normalization : letI := theta.indexFintype
+      ActualHullCostTransfer.cost D n σ hσ
+        (VBadThetaLogCollation.collation D n σ hσ) = ∑ i, theta.period i)
+    (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i))
+    (a : 𝓞 D.F) :
+    let X := AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
+      heightData ramification w thetaScaling periodMap normalization theta_log_shell
+    ((X.bridge.coefficientMap a :
+      LocalGeometricFontaine.integerRing
+        (InitialThetaCanonicalGeometricFontaine.coefficientField D w)) :
+        InitialThetaCanonicalGeometricFontaine.coefficientField D w) =
+      InitialThetaCanonicalGeometricFontaine.completionEmbedding D w
+        (FinitePlace.embedding w.1.maximalIdeal (a : D.F)) := by
+  letI : Fact (Arithmetic.residueChar w.1).Prime :=
+    ⟨Arithmetic.residueChar_prime w.1⟩
+  letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+  exact InitialThetaCanonicalGeometricFontaine.bridgeData_coefficientMap D w theta thetaBase
+    (packetHull D n σ hσ (VBadThetaLogCollation.collation D n σ hσ) theta route)
+    heightData ramification
+    (ActualHullCostTransfer.cost D n σ hσ
+      (VBadThetaLogCollation.collation D n σ hσ)) n a
+
 theorem corollary312_ofCanonicalGeometricFontaine
     (w : (iutInitialThetaTateParameterData D).places)
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
