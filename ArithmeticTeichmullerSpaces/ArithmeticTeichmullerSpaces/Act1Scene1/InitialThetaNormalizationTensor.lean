@@ -203,6 +203,10 @@ instance finite_tensorComponentToTensorScheme :
       (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom))
       (Ideal.Quotient.mk_surjective))
 
+instance closedImmersion_tensorComponentToTensorScheme :
+    IsClosedImmersion S.tensorComponentToTensorScheme :=
+  IsClosedImmersion.spec_of_surjective _ Ideal.Quotient.mk_surjective
+
 def normalizationToTensorComponentRingMap :
     S.normalizationTensorComponentRing →+* S.coverNormalizationRing false :=
   Ideal.Quotient.lift (RingHom.ker S.normalizationTensorMap.toRingHom)
