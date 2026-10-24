@@ -189,5 +189,36 @@ theorem iutInitialThetaVBadSectionRepresentativeRootProduct_lt_normalizedVBadRoo
     (iutInitialThetaNormalizedVBadRelativeQRootProduct_pos D)).mp
       (neg_lt_neg_iff.mp h)
 
+noncomputable def iutInitialThetaVBadSectionRepresentative_selectedFinsetEquiv :
+    {w : NumberField.FinitePlace ↥D.prime.torsionField //
+      w ∈ iutInitialThetaVBadSectionRepresentativeImage D} ≃
+      ↥(VBadSelectedPaper.selectedFinset D) := by
+  classical
+  let e := iutInitialThetaVBadSectionRepresentativeEquiv D
+  refine Equiv.ofBijective
+    (fun w => ⟨VBadSelectedPaper.sourceAt D (e.symm w),
+      (VBadSelectedPaper.mem_selectedFinset_iff D _).mpr ⟨e.symm w, rfl⟩⟩) ?_
+  constructor
+  · intro w₁ w₂ h
+    have hs : VBadSelectedPaper.sourceAt D (e.symm w₁) =
+        VBadSelectedPaper.sourceAt D (e.symm w₂) :=
+      congrArg (fun s : ↥(VBadSelectedPaper.selectedFinset D) => s.1) h
+    exact e.symm.injective (VBadSelectedPaper.sourceAt_injective D hs)
+  · intro s
+    obtain ⟨v, hv⟩ := (VBadSelectedPaper.mem_selectedFinset_iff D s.1).mp s.2
+    refine ⟨e v, ?_⟩
+    apply Subtype.ext
+    exact hv.symm
+
+theorem iutInitialThetaVBadSectionRepresentative_rootProduct_eq_selectedFinsetRootProduct :
+    iutInitialThetaVBadSectionRepresentativeRootProduct D =
+      VBadSelectedPaper.rootProduct D := by
+  let e := iutInitialThetaVBadSectionRepresentative_selectedFinsetEquiv D
+  unfold iutInitialThetaVBadSectionRepresentativeRootProduct
+    VBadSelectedPaper.rootProduct
+  symm
+  simpa [e, iutInitialThetaVBadSectionRepresentative_selectedFinsetEquiv] using
+    e.prod_comp (fun s => actualPaperRootNorm D s.1)
+
 end
 end JoshiTeich.Act1Scene1
