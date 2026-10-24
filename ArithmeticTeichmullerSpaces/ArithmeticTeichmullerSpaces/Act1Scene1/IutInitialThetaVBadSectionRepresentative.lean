@@ -308,5 +308,28 @@ theorem iutInitialThetaVBadSectionRepresentative_cost_le_mul_imageWeightedPaperS
   rw [← iutInitialThetaVBadSectionRepresentative_weightedPaperTerm_sum_transport D] at h
   exact h
 
+theorem iutInitialThetaVBadSectionRepresentative_imagePaperBudget_gap_pos
+    (n : ℕ)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    {κ : Type u}
+    (C : ∀ v : iutInitialThetaVBadModuliFinset D,
+      κ → Set (VBadThetaCollatedHull.packet D n σ hσ v).Tensor)
+    (hgen : ∀ v, (VBadThetaCollatedHull.packet D n σ hσ v).scalarGenerators
+      (fun i => iutInitialThetaFullQRootLogValue D (σ v i)) ⊆ ⋃ k, C v k)
+    (hunit : ∀ v k, C v k ⊆ (VBadThetaCollatedHull.packet D n σ hσ v).normalization)
+    (hn : 0 < n) :
+    0 <
+      (n : ℝ) *
+        (∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+          w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+          VBadSelectedPaper.paperTerm D
+            ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) -
+        VBadThetaHullLogCost.cost D n σ hσ C := by
+  have h := iutInitialThetaVBadSectionRepresentative_cost_lt_mul_imagePaperSum
+    D n σ hσ C hgen hunit hn
+  linarith
+
 end
 end JoshiTeich.Act1Scene1
