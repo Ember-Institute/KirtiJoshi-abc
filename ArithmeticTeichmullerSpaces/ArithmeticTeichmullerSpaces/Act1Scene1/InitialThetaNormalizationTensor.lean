@@ -191,6 +191,11 @@ instance normalizationTensorComponentRing_isDomain :
 def normalizationTensorComponentScheme : Scheme :=
   Spec (CommRingCat.of S.normalizationTensorComponentRing)
 
+instance affine_normalizationTensorComponentScheme :
+    IsAffine S.normalizationTensorComponentScheme := by
+  unfold normalizationTensorComponentScheme
+  infer_instance
+
 def tensorComponentToTensorScheme : S.normalizationTensorComponentScheme ⟶
     S.normalizationTensorScheme :=
   Spec.map (CommRingCat.ofHom
