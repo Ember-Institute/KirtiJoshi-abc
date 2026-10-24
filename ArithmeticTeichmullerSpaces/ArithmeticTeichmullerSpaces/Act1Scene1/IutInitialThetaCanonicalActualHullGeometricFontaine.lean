@@ -112,6 +112,25 @@ theorem AnalyticInput.ofCanonicalGeometricFontaine_bridge_coefficientMap
     (ActualHullCostTransfer.cost D n σ hσ
       (VBadThetaLogCollation.collation D n σ hσ)) n a
 
+theorem AnalyticInput.ofCanonicalGeometricFontaine_place_supported
+    (w : (iutInitialThetaTateParameterData D).places)
+    (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
+    (periodMap : ∀ i, theta.period i = theta.liftedLog i)
+    (normalization : letI := theta.indexFintype
+      ActualHullCostTransfer.cost D n σ hσ
+        (VBadThetaLogCollation.collation D n σ hσ) = ∑ i, theta.period i)
+    (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i)) :
+    let X := AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
+      heightData ramification w thetaScaling periodMap normalization theta_log_shell
+    (X.placeData).place ∈
+      (link D n σ hσ (VBadThetaLogCollation.collation D n σ hσ) theta route thetaBase
+        heightData ramification).places := by
+  letI : Fact (Arithmetic.residueChar w.1).Prime :=
+    ⟨Arithmetic.residueChar_prime w.1⟩
+  letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+  exact (AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
+    heightData ramification w thetaScaling periodMap normalization theta_log_shell).perfectoidBridge.place_supported
+
 theorem corollary312_ofCanonicalGeometricFontaine
     (w : (iutInitialThetaTateParameterData D).places)
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
