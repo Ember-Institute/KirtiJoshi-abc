@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadModuliJAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedHullBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
 
 /-!
@@ -219,6 +220,23 @@ theorem iutInitialThetaVBadSectionRepresentative_rootProduct_eq_selectedFinsetRo
   symm
   simpa [e, iutInitialThetaVBadSectionRepresentative_selectedFinsetEquiv] using
     e.prod_comp (fun s => actualPaperRootNorm D s.1)
+
+theorem iutInitialThetaVBadSectionRepresentative_rootProduct_pow_lt_collatedHullVolume
+    (n : ℕ)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    {κ : Type u}
+    (C : ∀ v : iutInitialThetaVBadModuliFinset D,
+      κ → Set (VBadThetaCollatedHull.packet D n σ hσ v).Tensor)
+    (hgen : ∀ v, (VBadThetaCollatedHull.packet D n σ hσ v).scalarGenerators
+      (fun i => iutInitialThetaFullQRootLogValue D (σ v i)) ⊆ ⋃ k, C v k)
+    (hunit : ∀ v k, C v k ⊆ (VBadThetaCollatedHull.packet D n σ hσ v).normalization)
+    (hn : 0 < n) :
+    iutInitialThetaVBadSectionRepresentativeRootProduct D ^ n <
+      VBadThetaCollatedHull.volume D n σ hσ C := by
+  rw [iutInitialThetaVBadSectionRepresentative_rootProduct_eq_selectedFinsetRootProduct D]
+  exact VBadSelectedHull.selectedRootProduct_pow_lt_volume D n σ hσ C hgen hunit hn
 
 end
 end JoshiTeich.Act1Scene1
