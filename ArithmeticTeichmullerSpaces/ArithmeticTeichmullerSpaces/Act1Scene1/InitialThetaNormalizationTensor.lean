@@ -182,6 +182,12 @@ instance finite_normalizationToTensorScheme : IsFinite S.normalizationToTensorSc
 abbrev normalizationTensorComponentRing :=
   S.normalizationTensorRing ⧸ RingHom.ker S.normalizationTensorMap.toRingHom
 
+instance normalizationTensorComponentRing_isDomain :
+    IsDomain S.normalizationTensorComponentRing := by
+  letI : (RingHom.ker S.normalizationTensorMap.toRingHom).IsPrime :=
+    Ideal.IsMinimalPrime.isPrime S.normalizationTensorKernel_minimalPrime
+  exact Ideal.Quotient.isDomain _
+
 def normalizationTensorComponentScheme : Scheme :=
   Spec (CommRingCat.of S.normalizationTensorComponentRing)
 
