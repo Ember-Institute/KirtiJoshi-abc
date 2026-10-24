@@ -140,5 +140,16 @@ theorem iutInitialThetaVBadSectionRepresentative_referenceAbsLogQ_eq_image_sum :
   rw [VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D]
   exact iutInitialThetaVBadSectionRepresentative_weightedPaperTerm_sum_transport D
 
+theorem iutInitialThetaVBadSectionRepresentative_referenceAbsLogQ_lt_image_unweighted_sum :
+    JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) <
+      ∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        VBadSelectedPaper.paperTerm D
+          ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
+  have h := VBadSelectedPaper.referenceAbsLogQ_lt_paperSum D
+  simpa [VBadSelectedPaper.paperSum,
+    iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D] using h
+
 end
 end JoshiTeich.Act1Scene1
