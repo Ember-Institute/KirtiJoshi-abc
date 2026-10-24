@@ -127,6 +127,29 @@ theorem normalizationComponentNormalizationSourceOpen_nonempty :
   obtain ⟨x, hx⟩ := S.normalizationComponentNormalizationOpenMap.surjective ⟨y, hy⟩
   exact ⟨x.1, x.2⟩
 
+theorem normalizationComponentNormalizationSourceOpen_dense :
+    Dense (S.normalizationComponentNormalizationSourceOpen :
+      Set (S.coverNormalizationScheme false)) := by
+  change Dense (PrimeSpectrum.basicOpen
+    (algebraMap S.normalizationTensorComponentRing
+      (S.coverNormalizationRing false)
+      (Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen)) :
+      Set (PrimeSpectrum (S.coverNormalizationRing false)))
+  apply (PrimeSpectrum.basicOpen
+    (algebraMap S.normalizationTensorComponentRing
+      (S.coverNormalizationRing false)
+      (Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen))).isOpen.dense
+  refine ⟨(⊥ : PrimeSpectrum (S.coverNormalizationRing false)), ?_⟩
+  have hd := (Classical.choose_spec
+    S.normalizationToTensorComponentScheme_exists_iso_basicOpen).1
+  have hmap : algebraMap S.normalizationTensorComponentRing
+      (S.coverNormalizationRing false)
+      (Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen) ≠ 0 := by
+    intro h
+    exact hd (S.normalizationToTensorComponentRingMap_injective
+      (h.trans (map_zero _).symm))
+  simpa [PrimeSpectrum.mem_basicOpen] using hmap
+
 theorem normalizationComponentNormalizationOpenMap_comp_open_ι :
     S.normalizationComponentNormalizationOpenMap ≫
         S.normalizationComponentNormalizationOpen.ι =
@@ -184,6 +207,20 @@ theorem normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso :
     _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
         S.normalizationToPullbackScheme := by
       rw [Category.assoc, S.normalizationToTensorScheme_comp_pullbackIso]
+
+theorem normalizationComponentNormalizationOpenToPullback_birationalOver :
+    Scheme.BirationalOver
+      S.normalizationComponentNormalizationOpenToTensorScheme
+      (S.tensorComponentToTensorScheme ≫ S.normalizationTensorPullbackIso.hom) := by
+  have hopen : Scheme.BirationalOver
+      (S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.normalizationToPullbackScheme)
+      S.normalizationToPullbackScheme :=
+    S.normalizationComponentNormalizationSourceOpen.birationalOver_of_dense
+      S.normalizationToPullbackScheme S.normalizationComponentNormalizationSourceOpen_dense
+  have hcomponent := S.normalizationTensorComponent_birationalOver_pullback
+  have h := hopen.trans hcomponent
+  simpa only [S.normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso] using h
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
