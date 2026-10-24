@@ -86,5 +86,28 @@ theorem AnalyticInput.ofCanonicalGeometricFontaine_place_eq
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
   rfl
 
+theorem corollary312_ofCanonicalGeometricFontaine
+    (w : (iutInitialThetaTateParameterData D).places)
+    (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
+    (periodMap : ∀ i, theta.period i = theta.liftedLog i)
+    (normalization : letI := theta.indexFintype
+      ActualHullCostTransfer.cost D n σ hσ
+        (VBadThetaLogCollation.collation D n σ hσ) = ∑ i, theta.period i)
+    (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i)) :
+    Corollary312 (Arithmetic.residueChar w.1)
+      (data (O := LocalGeometricFontaine.integerRing
+        (InitialThetaCanonicalGeometricFontaine.coefficientField D w))
+        (Arithmetic.residueChar w.1) D theta route thetaBase heightData ramification
+        (AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
+          heightData ramification w thetaScaling periodMap normalization theta_log_shell)) := by
+  letI : Fact (Arithmetic.residueChar w.1).Prime :=
+    ⟨Arithmetic.residueChar_prime w.1⟩
+  letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+  exact corollary312 (p := Arithmetic.residueChar w.1) (D := D) (theta := theta)
+    (route := route) (thetaBase := thetaBase) (heightData := heightData)
+    (ramification := ramification)
+    (X := AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
+      heightData ramification w thetaScaling periodMap normalization theta_log_shell)
+
 end
 end JoshiTeich.Act1Scene1.CanonicalActualHull
