@@ -1,0 +1,57 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadModuliJAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
+
+/-!
+source-id: JT-SCENE1-INITIAL-THETA-VBAD-SECTION-REPRESENTATIVE
+source: the actual `InitialThetaData` finite-place section and the actual
+`VBad` moduli carrier.
+fidelity: maps every actual `VBad` moduli place to its selected torsion-field
+section place, proves injectivity and membership in the actual section/Voss
+carrier. This is an actual representative map, not an identification with
+the paper's independently chosen `L'` representatives.
+boundary: Scene1/Derived; paper representative multiplicity and paper carrier
+identity remain explicit obligations.
+-/
+
+namespace JoshiTeich.Act1Scene1
+
+open JoshiTeich.Prologue NumberField
+
+universe u
+
+noncomputable section
+
+variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+
+def iutInitialThetaVBadSectionRepresentative
+    (v : iutInitialThetaVBadModuliFinset D) :
+    NumberField.FinitePlace ↥D.prime.torsionField :=
+  iutInitialThetaFinitePlaceSection D v.1
+
+theorem iutInitialThetaVBadSectionRepresentative_injective :
+    Function.Injective (iutInitialThetaVBadSectionRepresentative D) := by
+  intro v₁ v₂ h
+  apply Subtype.ext
+  exact iutInitialThetaFinitePlaceSection_injective D h
+
+theorem iutInitialThetaVBadSectionRepresentative_mem_sectionVoss
+    (v : iutInitialThetaVBadModuliFinset D) :
+    iutInitialThetaVBadSectionRepresentative D v ∈
+      iutInitialThetaSectionVoss D := by
+  have hv : v.1 ∈ D.VBad :=
+    (mem_iutInitialThetaVBadModuliFinset_iff D v.1).mp v.2
+  have hvPort : v.1 ∈ iutVBadOddModSupportPort D :=
+    iutInitialThetaVBad_subset_VBadOdd D hv
+  have hodd : Odd (Arithmetic.residueChar v.1) := by
+    have hp := Arithmetic.residueChar_prime v.1
+    rcases hp.eq_two_or_odd' with htwo | hodd
+    · exact (hvPort.1 htwo).elim
+    · exact hodd
+  rw [← iutInitialThetaOddTateSectionPlaces_eq_sectionVoss D]
+  exact ⟨v.1, rfl, hodd,
+    ⟨iutInitialThetaFinitePlaceSection_tateStructure D v.1 hvPort⟩⟩
+
+end
+end JoshiTeich.Act1Scene1

@@ -5,6 +5,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootLinkAc
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootPaperQSum
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootResidue
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSectionRepresentative
 
 /-! SelectedRoots 家族：里程碑公理审计。 -/
 
@@ -33,6 +34,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaSectionBasePlace
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaSectionBasePlace_liesOver
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaSectionBasePlace_injective
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaVBadSectionRepresentative
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaVBadSectionRepresentative_injective
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaVBadSectionRepresentative_mem_sectionVoss
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportSelectedBasePlaces
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportSelectedBasePlaces_finite
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportSelectedBasePlaces_subset_baseSupport
