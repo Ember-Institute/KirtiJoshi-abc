@@ -218,6 +218,11 @@ instance finite_tensorComponentToTensorScheme :
       (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom))
       (Ideal.Quotient.mk_surjective))
 
+theorem tensorComponentQuotientRingMap_isIntegral :
+    (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom)).IsIntegral :=
+  RingHom.IsIntegral.of_finite
+    (RingHom.Finite.of_surjective _ Ideal.Quotient.mk_surjective)
+
 instance closedImmersion_tensorComponentToTensorScheme :
     IsClosedImmersion S.tensorComponentToTensorScheme :=
   IsClosedImmersion.spec_of_surjective _ Ideal.Quotient.mk_surjective
