@@ -101,5 +101,25 @@ theorem quotientLift_range_eq {R S : Type*} [Ring R] [Ring S]
     exact ⟨Ideal.Quotient.mk (RingHom.ker f) b,
       Ideal.Quotient.lift_mk (RingHom.ker f) f (fun _ h => h)⟩
 
+theorem quotientLift_range_eq_of_ker_eq {R S T : Type*} [Ring R] [Ring S] [Ring T]
+    (f : R →+* S) (g : R →+* T) (hker : RingHom.ker f = RingHom.ker g) :
+    (Ideal.Quotient.lift (RingHom.ker f) g (fun x hx => by
+      apply RingHom.mem_ker.mp
+      rw [← hker]
+      exact hx)).range = g.range := by
+  apply le_antisymm
+  · rintro x ⟨a, rfl⟩
+    obtain ⟨b, rfl⟩ := Ideal.Quotient.mk_surjective a
+    exact ⟨b, Ideal.Quotient.lift_mk (RingHom.ker f) g (fun x hx => by
+      apply RingHom.mem_ker.mp
+      rw [← hker]
+      exact hx)⟩
+  · rintro x ⟨b, rfl⟩
+    exact ⟨Ideal.Quotient.mk (RingHom.ker f) b,
+      Ideal.Quotient.lift_mk (RingHom.ker f) g (fun x hx => by
+        apply RingHom.mem_ker.mp
+        rw [← hker]
+        exact hx)⟩
+
 end
 end JoshiTeich.Act1Scene1.FunctionFieldNormalization
