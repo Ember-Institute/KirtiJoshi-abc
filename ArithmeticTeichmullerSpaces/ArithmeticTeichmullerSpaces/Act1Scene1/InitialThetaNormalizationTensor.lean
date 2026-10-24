@@ -248,6 +248,10 @@ theorem normalizationToTensorComponentRingMap_finite :
   haveI : Module.Finite T B := S.normalizationTensorMap_finite
   exact Module.Finite.of_restrictScalars_finite T Q B
 
+theorem normalizationToTensorComponentRingMap_isIntegral :
+    S.normalizationToTensorComponentRingMap.IsIntegral :=
+  RingHom.IsIntegral.of_finite S.normalizationToTensorComponentRingMap_finite
+
 instance finite_normalizationToTensorComponentScheme :
     IsFinite S.normalizationToTensorComponentScheme :=
   (IsFinite.SpecMap_iff _).mpr S.normalizationToTensorComponentRingMap_finite
