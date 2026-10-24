@@ -238,5 +238,28 @@ theorem iutInitialThetaVBadSectionRepresentative_rootProduct_pow_lt_collatedHull
   rw [iutInitialThetaVBadSectionRepresentative_rootProduct_eq_selectedFinsetRootProduct D]
   exact VBadSelectedHull.selectedRootProduct_pow_lt_volume D n σ hσ C hgen hunit hn
 
+theorem iutInitialThetaVBadSectionRepresentative_negAverageAbsLog_gt_neg_imagePaperSum
+    (n : ℕ)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    {κ : Type u}
+    (C : ∀ v : iutInitialThetaVBadModuliFinset D,
+      κ → Set (VBadThetaCollatedHull.packet D n σ hσ v).Tensor)
+    (hgen : ∀ v, (VBadThetaCollatedHull.packet D n σ hσ v).scalarGenerators
+      (fun i => iutInitialThetaFullQRootLogValue D (σ v i)) ⊆ ⋃ k, C v k)
+    (hunit : ∀ v k, C v k ⊆ (VBadThetaCollatedHull.packet D n σ hσ v).normalization)
+    (hn : 0 < n) :
+    -(∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        VBadSelectedPaper.paperTerm D
+          ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) <
+      -(1 / (n : ℝ)) *
+        |Real.log (VBadThetaCollatedHull.volume D n σ hσ C)| := by
+  have h := VBadSelectedHull.negAverageAbsLog_gt_neg_selectedPaperSum
+    D n σ hσ C hgen hunit hn
+  rw [← iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D] at h
+  exact h
+
 end
 end JoshiTeich.Act1Scene1
