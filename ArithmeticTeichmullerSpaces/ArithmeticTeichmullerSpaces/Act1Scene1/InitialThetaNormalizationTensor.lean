@@ -232,6 +232,26 @@ theorem normalizationToTensorComponentRingMap_comp_quotientMap :
     (RingHom.ker S.normalizationTensorMap.toRingHom)
     S.normalizationTensorMap.toRingHom (fun _ h => h)
 
+theorem normalizationToTensorComponentRingMap_finite :
+    RingHom.Finite S.normalizationToTensorComponentRingMap := by
+  let T := S.normalizationTensorRing
+  let Q := S.normalizationTensorComponentRing
+  let B := S.coverNormalizationRing false
+  letI : Algebra T B := S.normalizationTensorMap.toRingHom.toAlgebra
+  letI : Algebra Q B := S.normalizationToTensorComponentRingMap.toAlgebra
+  letI : Algebra T Q :=
+    (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom)).toAlgebra
+  letI : IsScalarTower T Q B :=
+    IsScalarTower.of_algebraMap_eq fun a => by
+      exact congrArg (fun f : T →+* B => f a)
+        S.normalizationToTensorComponentRingMap_comp_quotientMap
+  haveI : Module.Finite T B := S.normalizationTensorMap_finite
+  exact Module.Finite.of_restrictScalars_finite T Q B
+
+instance finite_normalizationToTensorComponentScheme :
+    IsFinite S.normalizationToTensorComponentScheme :=
+  (IsFinite.SpecMap_iff _).mpr S.normalizationToTensorComponentRingMap_finite
+
 theorem normalizationToTensorComponentScheme_comp :
     S.normalizationToTensorComponentScheme ≫ S.tensorComponentToTensorScheme =
       S.normalizationToTensorScheme := by
