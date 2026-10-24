@@ -90,5 +90,16 @@ theorem normalizationTensorMap_finite [FiniteDimensional (rationalBase k t) N]
   have := finiteRing t ht N
   exact Module.Finite.of_restrictScalars_finite (polynomialBase k t) T (coordRing t N)
 
+theorem quotientLift_range_eq {R S : Type*} [Ring R] [Ring S]
+    (f : R →+* S) :
+    (Ideal.Quotient.lift (RingHom.ker f) f (fun _ h => h)).range = f.range := by
+  apply le_antisymm
+  · rintro x ⟨a, rfl⟩
+    obtain ⟨b, rfl⟩ := Ideal.Quotient.mk_surjective a
+    exact ⟨b, Ideal.Quotient.lift_mk (RingHom.ker f) f (fun _ h => h)⟩
+  · rintro x ⟨b, rfl⟩
+    exact ⟨Ideal.Quotient.mk (RingHom.ker f) b,
+      Ideal.Quotient.lift_mk (RingHom.ker f) f (fun _ h => h)⟩
+
 end
 end JoshiTeich.Act1Scene1.FunctionFieldNormalization

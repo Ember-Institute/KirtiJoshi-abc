@@ -227,6 +227,11 @@ def normalizationToTensorComponentRingMap :
   Ideal.Quotient.lift (RingHom.ker S.normalizationTensorMap.toRingHom)
     S.normalizationTensorMap.toRingHom (fun _ h => h)
 
+theorem normalizationToTensorComponentRingMap_range :
+    S.normalizationToTensorComponentRingMap.range =
+      S.normalizationTensorMap.toRingHom.range :=
+  FunctionFieldNormalization.quotientLift_range_eq S.normalizationTensorMap.toRingHom
+
 def normalizationToTensorComponentScheme : S.coverNormalizationScheme false ⟶
     S.normalizationTensorComponentScheme :=
   Spec.map (CommRingCat.ofHom S.normalizationToTensorComponentRingMap)
