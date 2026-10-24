@@ -179,5 +179,53 @@ def normalizationToTensorScheme : S.coverNormalizationScheme false ⟶ S.normali
 instance finite_normalizationToTensorScheme : IsFinite S.normalizationToTensorScheme :=
   (IsFinite.SpecMap_iff _).mpr S.normalizationTensorMap_finite
 
+abbrev normalizationTensorComponentRing :=
+  S.normalizationTensorRing ⧸ RingHom.ker S.normalizationTensorMap.toRingHom
+
+def normalizationTensorComponentScheme : Scheme :=
+  Spec (CommRingCat.of S.normalizationTensorComponentRing)
+
+def tensorComponentToTensorScheme : S.normalizationTensorComponentScheme ⟶
+    S.normalizationTensorScheme :=
+  Spec.map (CommRingCat.ofHom
+    (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom)))
+
+instance finite_tensorComponentToTensorScheme :
+    IsFinite S.tensorComponentToTensorScheme :=
+  (IsFinite.SpecMap_iff _).mpr
+    (RingHom.Finite.of_surjective
+      (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom))
+      (Ideal.Quotient.mk_surjective))
+
+def normalizationToTensorComponentRingMap :
+    S.normalizationTensorComponentRing →+* S.coverNormalizationRing false :=
+  Ideal.Quotient.lift (RingHom.ker S.normalizationTensorMap.toRingHom)
+    S.normalizationTensorMap.toRingHom (fun _ h => h)
+
+def normalizationToTensorComponentScheme : S.coverNormalizationScheme false ⟶
+    S.normalizationTensorComponentScheme :=
+  Spec.map (CommRingCat.ofHom S.normalizationToTensorComponentRingMap)
+
+theorem normalizationToTensorComponentRingMap_comp_quotientMap :
+    S.normalizationToTensorComponentRingMap.comp
+        (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom)) =
+      S.normalizationTensorMap.toRingHom := by
+  apply RingHom.ext
+  intro x
+  simp only [normalizationToTensorComponentRingMap, RingHom.coe_comp, Function.comp_apply]
+  exact Ideal.Quotient.lift_mk
+    (RingHom.ker S.normalizationTensorMap.toRingHom)
+    S.normalizationTensorMap.toRingHom (fun _ h => h)
+
+theorem normalizationToTensorComponentScheme_comp :
+    S.normalizationToTensorComponentScheme ≫ S.tensorComponentToTensorScheme =
+      S.normalizationToTensorScheme := by
+  have h := congrArg (fun f : S.normalizationTensorRing →+* S.coverNormalizationRing false =>
+      Spec.map (CommRingCat.ofHom f))
+    S.normalizationToTensorComponentRingMap_comp_quotientMap
+  exact (AlgebraicGeometry.Spec.map_comp
+    (CommRingCat.ofHom (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom)))
+    (CommRingCat.ofHom S.normalizationToTensorComponentRingMap)).symm.trans h
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
