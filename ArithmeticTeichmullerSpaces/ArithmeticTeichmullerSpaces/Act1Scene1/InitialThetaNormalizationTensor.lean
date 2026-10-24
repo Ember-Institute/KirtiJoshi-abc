@@ -270,6 +270,60 @@ theorem normalizationTensorComponentFieldMap_ker_eq_bot :
   (RingHom.injective_iff_ker_eq_bot S.normalizationTensorComponentFieldMap).mp
     S.normalizationTensorComponentFieldMap_injective
 
+@[instance_reducible] def normalizationTensorComponentFieldAlgebra :
+    Algebra S.normalizationTensorComponentRing
+      (Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false) :=
+  S.normalizationTensorComponentFieldMap.toAlgebra
+
+theorem normalizationTensorComponentFieldMap_faithful :
+    letI := S.normalizationTensorComponentFieldAlgebra
+    FaithfulSMul S.normalizationTensorComponentRing
+      (Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false) := by
+  letI := S.normalizationTensorComponentFieldAlgebra
+  exact (faithfulSMul_iff_algebraMap_injective _ _).mpr
+    S.normalizationTensorComponentFieldMap_injective
+
+theorem normalizationTensorComponent_fractionField :
+    letI := S.normalizationTensorComponentFieldAlgebra
+    IsFractionRing S.normalizationTensorComponentRing
+      (Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false) := by
+  letI := S.normalizationTensorComponentFieldAlgebra
+  apply FunctionFieldNormalization.fractionRing_of_fieldClosure
+    S.normalizationTensorComponentFieldMap_injective
+  have hrange : Set.range S.normalizationTensorComponentFieldMap =
+      Set.range S.normalizationTensorFieldMap := by
+    ext x
+    change x ∈ S.normalizationTensorComponentFieldMap.range ↔
+      x ∈ S.normalizationTensorFieldMap.toRingHom.range
+    rw [S.normalizationTensorComponentFieldMap_range]
+  change Subfield.closure (Set.range S.normalizationTensorComponentFieldMap) = ⊤
+  rw [hrange]
+  exact FunctionFieldNormalization.normalizationTensorFieldMap_fieldClosure
+    (Genuine.normalizationField_signed_le_unsigned S.prime.EK S.prime.ℓ S.prime.M)
+    (Genuine.normalization_base_unsigned_le S.prime.EK S.prime.ℓ S.prime.M)
+    S.normalizationFieldCover_unsigned_eq_sup.symm
+
+theorem unsignedNormalization_isIntegralClosure_tensorComponent :
+    letI := S.normalizationTensorComponentFieldAlgebra
+    IsIntegralClosure (S.coverNormalizationRing false) S.normalizationTensorComponentRing
+      (Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false) := by
+  letI := S.normalizationTensorComponentFieldAlgebra
+  letI : Algebra S.normalizationTensorRing
+      (Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false) :=
+    S.normalizationTensorFieldMap.toRingHom.toAlgebra
+  letI : Algebra S.normalizationTensorRing S.normalizationTensorComponentRing :=
+    (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom)).toAlgebra
+  letI : IsScalarTower S.normalizationTensorRing S.normalizationTensorComponentRing
+      (Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false) :=
+    IsScalarTower.of_algebraMap_eq fun a =>
+      (S.normalizationTensorComponentFieldMap_apply_quotient a).symm
+  letI : Algebra.IsIntegral S.normalizationTensorRing S.normalizationTensorComponentRing :=
+    ⟨S.tensorComponentQuotientRingMap_isIntegral⟩
+  letI : IsIntegralClosure (S.coverNormalizationRing false) S.normalizationTensorRing
+      (Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false) :=
+    S.unsignedNormalization_isIntegralClosure_tensor
+  exact IsIntegralClosure.tower_top (R := S.normalizationTensorRing)
+
 def normalizationToTensorComponentScheme : S.coverNormalizationScheme false ⟶
     S.normalizationTensorComponentScheme :=
   Spec.map (CommRingCat.ofHom S.normalizationToTensorComponentRingMap)
