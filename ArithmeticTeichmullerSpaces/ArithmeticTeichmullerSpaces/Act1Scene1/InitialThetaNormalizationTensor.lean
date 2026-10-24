@@ -182,6 +182,16 @@ instance finite_normalizationToTensorScheme : IsFinite S.normalizationToTensorSc
 abbrev normalizationTensorComponentRing :=
   S.normalizationTensorRing ⧸ RingHom.ker S.normalizationTensorMap.toRingHom
 
+def normalizationTensorComponentRangeEquiv :
+    S.normalizationTensorComponentRing ≃+*
+      (S.normalizationTensorMap.toRingHom.range) :=
+  RingHom.quotientKerEquivRange S.normalizationTensorMap.toRingHom
+
+theorem normalizationTensorComponentRangeEquiv_apply_quotient (x : S.normalizationTensorRing) :
+    S.normalizationTensorComponentRangeEquiv
+        (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom) x) =
+      ⟨S.normalizationTensorMap.toRingHom x, ⟨x, rfl⟩⟩ := rfl
+
 instance normalizationTensorComponentRing_isDomain :
     IsDomain S.normalizationTensorComponentRing := by
   letI : (RingHom.ker S.normalizationTensorMap.toRingHom).IsPrime :=
