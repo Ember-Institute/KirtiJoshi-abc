@@ -246,5 +246,20 @@ theorem normalizationComponentNormalizationOpenToPullback_birationalOver :
   have h := hopen.trans hcomponent
   simpa only [S.normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso] using h
 
+theorem normalizationComponentNormalizationOpenToTensorScheme_birationalOver :
+    Scheme.BirationalOver
+      S.normalizationComponentNormalizationOpenToTensorScheme
+      S.tensorComponentToTensorScheme := by
+  have hopen : Scheme.BirationalOver
+      (S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.normalizationToTensorScheme)
+      S.normalizationToTensorScheme :=
+    S.normalizationComponentNormalizationSourceOpen.birationalOver_of_dense
+      S.normalizationToTensorScheme S.normalizationComponentNormalizationSourceOpen_dense
+  have hcomponent := S.normalizationToTensorComponentScheme_birationalOver
+  have h := hopen.trans hcomponent
+  simpa only [normalizationComponentNormalizationOpenToTensorScheme,
+    S.normalizationComponentNormalizationOpenMap_comp_tensorComponent] using h
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
