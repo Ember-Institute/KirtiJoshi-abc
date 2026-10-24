@@ -85,5 +85,15 @@ theorem iutInitialThetaVBadSectionRepresentativeImage_card :
       Fintype.card (iutInitialThetaVBadModuliFinset D) := by
   simpa using Fintype.card_congr (iutInitialThetaVBadSectionRepresentativeEquiv D).symm
 
+theorem iutInitialThetaVBadSectionRepresentative_sum_transport
+    (f : iutInitialThetaVBadModuliFinset D → ℝ) :
+    (∑ v : iutInitialThetaVBadModuliFinset D, f v) =
+      ∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        f ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
+  simpa using
+    (iutInitialThetaVBadSectionRepresentativeEquiv D).sum_comp
+      (fun w => f ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w))
+
 end
 end JoshiTeich.Act1Scene1
