@@ -53,5 +53,37 @@ theorem iutInitialThetaVBadSectionRepresentative_mem_sectionVoss
   exact ⟨v.1, rfl, hodd,
     ⟨iutInitialThetaFinitePlaceSection_tateStructure D v.1 hvPort⟩⟩
 
+def iutInitialThetaVBadSectionRepresentativeImage :
+    Set (NumberField.FinitePlace ↥D.prime.torsionField) :=
+  Set.range (iutInitialThetaVBadSectionRepresentative D)
+
+theorem iutInitialThetaVBadSectionRepresentativeImage_finite :
+    (iutInitialThetaVBadSectionRepresentativeImage D).Finite := by
+  exact Set.finite_range _
+
+noncomputable def iutInitialThetaVBadSectionRepresentativeEquiv :
+    iutInitialThetaVBadModuliFinset D ≃
+      {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D} := by
+  classical
+  refine Equiv.ofBijective
+    (fun v => ⟨iutInitialThetaVBadSectionRepresentative D v, ⟨v, rfl⟩⟩) ?_
+  constructor
+  · intro v₁ v₂ h
+    apply Subtype.ext
+    exact iutInitialThetaVBadSectionRepresentative_injective D
+      (congrArg (fun w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D} => w.1) h)
+  · intro w
+    rcases w.2 with ⟨v, hv⟩
+    exact ⟨v, Subtype.ext hv.symm⟩
+
+theorem iutInitialThetaVBadSectionRepresentativeImage_card :
+    Fintype.card
+        {w : NumberField.FinitePlace ↥D.prime.torsionField //
+          w ∈ iutInitialThetaVBadSectionRepresentativeImage D} =
+      Fintype.card (iutInitialThetaVBadModuliFinset D) := by
+  simpa using Fintype.card_congr (iutInitialThetaVBadSectionRepresentativeEquiv D).symm
+
 end
 end JoshiTeich.Act1Scene1
