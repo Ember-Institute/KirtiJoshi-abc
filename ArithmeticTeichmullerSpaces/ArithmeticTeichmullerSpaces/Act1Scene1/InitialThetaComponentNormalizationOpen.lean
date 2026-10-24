@@ -164,5 +164,26 @@ def normalizationComponentNormalizationOpenToTensorScheme :
     S.normalizationComponentNormalizationOpen.ι ≫
       S.tensorComponentToTensorScheme
 
+theorem normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso :
+    S.normalizationComponentNormalizationOpenToTensorScheme ≫
+        S.normalizationTensorPullbackIso.hom =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.normalizationToPullbackScheme := by
+  calc
+    S.normalizationComponentNormalizationOpenToTensorScheme ≫
+        S.normalizationTensorPullbackIso.hom =
+        (S.normalizationComponentNormalizationOpenMap ≫
+          S.normalizationComponentNormalizationOpen.ι ≫
+          S.tensorComponentToTensorScheme) ≫
+          S.normalizationTensorPullbackIso.hom := by
+      rfl
+    _ = (S.normalizationComponentNormalizationSourceOpen.ι ≫
+          S.normalizationToTensorScheme) ≫
+          S.normalizationTensorPullbackIso.hom := by
+      rw [S.normalizationComponentNormalizationOpenMap_comp_tensorComponent]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.normalizationToPullbackScheme := by
+      rw [Category.assoc, S.normalizationToTensorScheme_comp_pullbackIso]
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
