@@ -237,6 +237,19 @@ theorem normalizationToTensorComponentRingMap_range :
       S.normalizationTensorMap.toRingHom.range :=
   FunctionFieldNormalization.quotientLift_range_eq S.normalizationTensorMap.toRingHom
 
+def normalizationTensorComponentFieldMap :
+    S.normalizationTensorComponentRing →+*
+      Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false :=
+  (SubsemiringClass.subtype S.normalizationTensorFieldMap.toRingHom.range).comp
+    ((RingHom.quotientKerEquivRange S.normalizationTensorFieldMap.toRingHom).toRingHom.comp
+      (Ideal.quotEquivOfEq S.normalizationTensorKernel_eq.symm).toRingHom)
+
+theorem normalizationTensorComponentFieldMap_apply_quotient (x : S.normalizationTensorRing) :
+    S.normalizationTensorComponentFieldMap
+        (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom) x) =
+      S.normalizationTensorFieldMap x := by
+  rfl
+
 def normalizationToTensorComponentScheme : S.coverNormalizationScheme false ⟶
     S.normalizationTensorComponentScheme :=
   Spec.map (CommRingCat.ofHom S.normalizationToTensorComponentRingMap)
