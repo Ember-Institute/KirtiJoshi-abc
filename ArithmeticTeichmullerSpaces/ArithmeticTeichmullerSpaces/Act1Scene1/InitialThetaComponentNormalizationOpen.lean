@@ -127,5 +127,35 @@ theorem normalizationComponentNormalizationSourceOpen_nonempty :
   obtain ⟨x, hx⟩ := S.normalizationComponentNormalizationOpenMap.surjective ⟨y, hy⟩
   exact ⟨x.1, x.2⟩
 
+theorem normalizationComponentNormalizationOpenMap_comp_open_ι :
+    S.normalizationComponentNormalizationOpenMap ≫
+        S.normalizationComponentNormalizationOpen.ι =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.normalizationToTensorComponentScheme := by
+  exact morphismRestrict_ι
+    S.normalizationToTensorComponentScheme
+    S.normalizationComponentNormalizationOpen
+
+theorem normalizationComponentNormalizationOpenMap_comp_tensorComponent :
+    S.normalizationComponentNormalizationOpenMap ≫
+        S.normalizationComponentNormalizationOpen.ι ≫
+          S.tensorComponentToTensorScheme =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.normalizationToTensorScheme := by
+  calc
+    _ = (S.normalizationComponentNormalizationOpenMap ≫
+      S.normalizationComponentNormalizationOpen.ι) ≫
+        S.tensorComponentToTensorScheme := by simp only [Category.assoc]
+    _ = (S.normalizationComponentNormalizationSourceOpen.ι ≫
+      S.normalizationToTensorComponentScheme) ≫
+        S.tensorComponentToTensorScheme := by
+      rw [S.normalizationComponentNormalizationOpenMap_comp_open_ι]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+      (S.normalizationToTensorComponentScheme ≫ S.tensorComponentToTensorScheme) := by
+      simp only [Category.assoc]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+      S.normalizationToTensorScheme := by
+      rw [S.normalizationToTensorComponentScheme_comp]
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
