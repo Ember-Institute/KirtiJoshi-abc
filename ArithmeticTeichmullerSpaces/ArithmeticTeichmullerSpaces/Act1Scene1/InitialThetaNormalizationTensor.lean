@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.FunctionFieldNormalizationTensorField
+import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteBirationalLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedCompositum
 import Mathlib.AlgebraicGeometry.Morphisms.Finite
 
@@ -378,6 +379,36 @@ theorem normalizationToTensorComponentScheme_comp :
   exact (AlgebraicGeometry.Spec.map_comp
     (CommRingCat.ofHom (Ideal.Quotient.mk (RingHom.ker S.normalizationTensorMap.toRingHom)))
     (CommRingCat.ofHom S.normalizationToTensorComponentRingMap)).symm.trans h
+
+instance surjective_normalizationToTensorComponentScheme :
+    Surjective S.normalizationToTensorComponentScheme :=
+  ⟨S.normalizationToTensorComponentRingMap_isIntegral.comap_surjective
+    S.normalizationToTensorComponentRingMap_injective⟩
+
+theorem normalizationTensorComponentFieldMap_eq_comp :
+    S.normalizationTensorComponentFieldMap =
+      (algebraMap (S.coverNormalizationRing false)
+        (Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false)).comp
+          S.normalizationToTensorComponentRingMap :=
+  Ideal.Quotient.ringHom_ext (RingHom.ext (fun _ => rfl))
+
+theorem normalizationToTensorComponentScheme_birationalOver :
+    Scheme.BirationalOver S.normalizationToTensorScheme S.tensorComponentToTensorScheme := by
+  let Q := S.normalizationTensorComponentRing
+  let B := S.coverNormalizationRing false
+  let N := Genuine.normalizationField S.prime.EK S.prime.ℓ S.prime.M false
+  letI : Algebra Q B := S.normalizationToTensorComponentRingMap.toAlgebra
+  letI : Algebra Q N := S.normalizationTensorComponentFieldAlgebra
+  letI : IsScalarTower Q B N := IsScalarTower.of_algebraMap_eq fun a =>
+    congrArg (fun f : Q →+* N => f a) S.normalizationTensorComponentFieldMap_eq_comp
+  haveI : IsFractionRing Q N := S.normalizationTensorComponent_fractionField
+  haveI : Module.Finite Q B := S.normalizationToTensorComponentRingMap_finite
+  have h := finite_extension_birationalOver (R := Q) (A := B) (K := N)
+    Subtype.val_injective S.tensorComponentToTensorScheme
+  change Scheme.BirationalOver
+    (S.normalizationToTensorComponentScheme ≫ S.tensorComponentToTensorScheme)
+    S.tensorComponentToTensorScheme at h
+  rwa [S.normalizationToTensorComponentScheme_comp] at h
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
