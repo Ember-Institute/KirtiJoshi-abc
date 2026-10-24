@@ -252,6 +252,12 @@ theorem normalizationToTensorComponentRingMap_isIntegral :
     S.normalizationToTensorComponentRingMap.IsIntegral :=
   RingHom.IsIntegral.of_finite S.normalizationToTensorComponentRingMap_finite
 
+theorem normalizationToTensorComponentRingMap_injective :
+    Function.Injective S.normalizationToTensorComponentRingMap :=
+  RingHom.lift_injective_of_ker_le_ideal
+    (I := RingHom.ker S.normalizationTensorMap.toRingHom)
+    (fun _ h => h) le_rfl
+
 instance finite_normalizationToTensorComponentScheme :
     IsFinite S.normalizationToTensorComponentScheme :=
   (IsFinite.SpecMap_iff _).mpr S.normalizationToTensorComponentRingMap_finite
