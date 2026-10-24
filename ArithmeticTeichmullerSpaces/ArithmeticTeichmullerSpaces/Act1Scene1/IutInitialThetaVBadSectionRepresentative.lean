@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadModuliJAccounting
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
 
 /-!
@@ -94,6 +95,12 @@ theorem iutInitialThetaVBadSectionRepresentative_sum_transport
   simpa using
     (iutInitialThetaVBadSectionRepresentativeEquiv D).sum_comp
       (fun w => f ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w))
+
+theorem iutInitialThetaVBadSectionRepresentative_eq_selectedSourceAt
+    (v : iutInitialThetaVBadModuliFinset D) :
+    iutInitialThetaVBadSectionRepresentative D v =
+      (VBadSelectedPaper.sourceAt D v).1 := by
+  rfl
 
 end
 end JoshiTeich.Act1Scene1
