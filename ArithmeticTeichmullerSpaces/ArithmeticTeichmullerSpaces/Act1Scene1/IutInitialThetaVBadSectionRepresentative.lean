@@ -127,5 +127,18 @@ theorem iutInitialThetaVBadSectionRepresentative_weightedPaperTerm_sum_transport
     (fun v => iutInitialThetaRepresentativeCoefficient D
       (iutInitialThetaVBadModuliAt D v) * VBadSelectedPaper.paperTerm D v)
 
+theorem iutInitialThetaVBadSectionRepresentative_referenceAbsLogQ_eq_image_sum :
+    JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) =
+      ∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        iutInitialThetaRepresentativeCoefficient D
+            (iutInitialThetaVBadModuliAt D
+              ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) *
+          VBadSelectedPaper.paperTerm D
+            ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
+  rw [VBadSelectedPaper.referenceAbsLogQ_eq_coefficientWeightedPaperSum D]
+  exact iutInitialThetaVBadSectionRepresentative_weightedPaperTerm_sum_transport D
+
 end
 end JoshiTeich.Act1Scene1
