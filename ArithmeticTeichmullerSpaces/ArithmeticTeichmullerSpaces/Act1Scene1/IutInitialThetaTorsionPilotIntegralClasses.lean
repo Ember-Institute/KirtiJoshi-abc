@@ -112,5 +112,34 @@ theorem finitePilot_injective : Function.Injective (finitePilot D s) := by
   intro i j hij
   exact Fin.ext (integralClass_injective D s hij)
 
+theorem finitePilot_logValue (j : Fin (D.prime.ℓ + 1)) :
+    logValue D s (finitePilot D s j) =
+      InitialThetaCanonicalTorsionPilotLogShellSource.normalizedLog D s j.val :=
+  integralClass_logValue D s j.val
+
+theorem finitePilot_logValue_norm (j : Fin (D.prime.ℓ + 1)) :
+    ‖logValue D s (finitePilot D s j)‖ =
+      ‖InitialThetaCanonicalTorsionPilotLogShellSource.qrootAt D s‖ ^ (j.val ^ 2) :=
+  integralClass_logValue_norm D s j.val
+
+theorem finitePilot_logValue_ne_zero (j : Fin (D.prime.ℓ + 1)) :
+    logValue D s (finitePilot D s j) ≠ 0 := by
+  rw [finitePilot_logValue D s j]
+  exact InitialThetaCanonicalTorsionPilotLogShellSource.canonical_normalizedLog_ne_zero D s j.val
+
+theorem finitePilot_logValue_injective :
+    Function.Injective (fun j : Fin (D.prime.ℓ + 1) =>
+      logValue D s (finitePilot D s j)) := by
+  intro i j hij
+  have hn := congrArg (fun x => ‖x‖) hij
+  rw [finitePilot_logValue_norm D s i, finitePilot_logValue_norm D s j] at hn
+  have hpos : 0 < ‖InitialThetaCanonicalTorsionPilotLogShellSource.qrootAt D s‖ :=
+    norm_pos_iff.mpr (IutInitialThetaQRootFamily.qrootAt_ne_zero D s.1)
+  have hlt : ‖InitialThetaCanonicalTorsionPilotLogShellSource.qrootAt D s‖ < 1 :=
+    IutInitialThetaQRootFamily.qrootAt_norm_lt_one_of_mem_badFinset D s.1 s.2
+  apply Fin.ext
+  exact Nat.pow_left_injective (by decide : (2 : ℕ) ≠ 0)
+    (pow_right_injective₀ hpos hlt.ne hn)
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaTorsionPilotIntegralClasses
