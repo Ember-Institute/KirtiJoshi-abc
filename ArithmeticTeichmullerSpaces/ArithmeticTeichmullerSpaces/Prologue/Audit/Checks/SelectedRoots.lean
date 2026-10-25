@@ -17,6 +17,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryProducerSou
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalHolomorphoidSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalH1LogSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTorsionThetaPilotSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTorsionThetaPilotReferenceBridge
 
 /-! SelectedRoots 家族：日常名称检查。 -/
 
@@ -120,3 +121,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTorsionThe
 #check JoshiTeich.Act1Scene1.InitialThetaLocalHolomorphoidSource.canonical
 #check JoshiTeich.Act1Scene1.InitialThetaLocalH1LogSource.canonical
 #check JoshiTeich.Act1Scene1.InitialThetaCanonicalTorsionThetaPilotSource.canonical
+#check JoshiTeich.Act1Scene1.InitialThetaCanonicalTorsionThetaPilotSource.canonical_period_eq_tate_log
