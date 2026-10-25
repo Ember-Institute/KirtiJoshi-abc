@@ -54,6 +54,23 @@ theorem canonical_norm_eq_qroot (j : ℕ) :
     ‖normalizedLog D s j‖ = ‖qrootAt D s‖ ^ (j ^ 2) :=
   (canonical D s).norm_eq_qroot j
 
+theorem canonical_normalizedLog_ne_zero (j : ℕ) :
+    normalizedLog D s j ≠ 0 := by
+  intro h
+  have hnorm : ‖qrootAt D s‖ ^ (j ^ 2) = 0 := by
+    rw [← canonical_norm_eq_qroot D s j, h, norm_zero]
+  have hqnorm : ‖qrootAt D s‖ ≠ 0 :=
+    norm_ne_zero_iff.mpr (IutInitialThetaQRootFamily.qrootAt_ne_zero D s.1)
+  exact (pow_ne_zero _ hqnorm) hnorm
+
+theorem canonical_normalizedLog_norm_lt_one (j : ℕ) (hj : 0 < j) :
+    ‖normalizedLog D s j‖ < 1 := by
+  rw [canonical_norm_eq_qroot D s j]
+  have hj2 : j ^ 2 ≠ 0 := by positivity
+  exact pow_lt_one₀ (norm_nonneg _) (
+    IutInitialThetaQRootFamily.qrootAt_norm_lt_one_of_mem_badFinset D s.1 s.2)
+    hj2
+
 end InitialThetaCanonicalTorsionPilotLogShellSource
 
 end
