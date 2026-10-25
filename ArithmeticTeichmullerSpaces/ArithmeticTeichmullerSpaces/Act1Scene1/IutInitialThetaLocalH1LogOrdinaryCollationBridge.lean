@@ -74,6 +74,15 @@ theorem singletonCollation_laws :
       (packet D n v).normalization) :=
   ⟨singletonCollation_witness_mem D n, singletonCollation_subset_normalization D n⟩
 
+theorem singletonCollation_region_eq_ordinary_region
+    (v : iutInitialThetaOddModSupportFinset D) :
+    (FullSupportWitnessHull.region D n (singletonCollation D n) v :
+      Set (packet D n v).Tensor) =
+      (OrdinaryKummerLogHull.region D n v : Set (packet D n v).Tensor) := by
+  simp only [FullSupportWitnessHull.region, singletonCollation, Set.iUnion_const]
+  rw [InitialThetaLocalH1LogOrdinaryWitnessBridge.h1OrdinaryWitness_eq_witness D n v]
+  rfl
+
 theorem singletonCollation_volume_pos :
     0 < FullSupportWitnessHull.volume D n (singletonCollation D n) :=
   OrdinaryKummerLogHull.ordinary_collation_volume_pos D n
