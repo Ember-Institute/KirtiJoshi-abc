@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationTensor
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaNormalizationPullback
 import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteBirationalLocalization
 
 /-!
@@ -16,7 +17,7 @@ cartesian law.
 
 namespace JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
 
-open CategoryTheory AlgebraicGeometry
+open CategoryTheory CategoryTheory.Limits AlgebraicGeometry
 open JoshiTeich.ReferenceIut JoshiTeich.ReferenceIut.Anabelian
 open scoped Classical
 universe u
@@ -163,13 +164,14 @@ theorem normalizationComponentNormalizationSourceOpen_dense :
   refine ⟨(⊥ : PrimeSpectrum (S.coverNormalizationRing false)), ?_⟩
   have hd := (Classical.choose_spec
     S.normalizationToTensorComponentScheme_exists_iso_basicOpen).1
-  have hmap : algebraMap S.normalizationTensorComponentRing
-      (S.coverNormalizationRing false)
+  have hmap : S.normalizationToTensorComponentRingMap
       (Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen) ≠ 0 := by
     intro h
     exact hd (S.normalizationToTensorComponentRingMap_injective
       (h.trans (map_zero _).symm))
-  simpa [PrimeSpectrum.mem_basicOpen] using hmap
+  change S.normalizationToTensorComponentRingMap
+      (Classical.choose S.normalizationToTensorComponentScheme_exists_iso_basicOpen) ≠ 0
+  exact hmap
 
 theorem normalizationComponentNormalizationOpenMap_comp_open_ι :
     S.normalizationComponentNormalizationOpenMap ≫
@@ -240,22 +242,94 @@ theorem normalizationComponentNormalizationOpenToPullbackScheme_comp_fst :
         pullback.fst (S.coverToBaseNormalizationMap true) S.signedBaseNormalizationMap =
       S.normalizationComponentNormalizationSourceOpen.ι ≫
         S.signedCoverNormalizationMap := by
-  rw [normalizationComponentNormalizationOpenToPullbackScheme,
-    S.normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso,
-    Category.assoc, pullback.lift_fst]
+  change
+    (S.normalizationComponentNormalizationOpenToTensorScheme ≫
+      S.normalizationTensorPullbackIso.hom) ≫
+        pullback.fst _ _ =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.signedCoverNormalizationMap
+  change
+    (S.normalizationComponentNormalizationOpenMap ≫
+      S.normalizationComponentNormalizationOpen.ι ≫
+      S.tensorComponentToTensorScheme) ≫
+        S.normalizationTensorPullbackIso.hom ≫ pullback.fst _ _ =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.signedCoverNormalizationMap
+  rw [Category.assoc, S.normalizationTensorPullbackIso_hom_fst]
+  calc
+    (S.normalizationComponentNormalizationOpenMap ≫
+        S.normalizationComponentNormalizationOpen.ι ≫
+        S.tensorComponentToTensorScheme) ≫
+        S.normalizationTensorToSignedCover =
+      (S.normalizationComponentNormalizationOpenMap ≫
+        S.normalizationComponentNormalizationOpen.ι) ≫
+        S.tensorComponentToTensorScheme ≫ S.normalizationTensorToSignedCover := by
+          simp only [Category.assoc]
+    _ = (S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.normalizationToTensorComponentScheme) ≫
+        S.tensorComponentToTensorScheme ≫ S.normalizationTensorToSignedCover := by
+          rw [S.normalizationComponentNormalizationOpenMap_comp_open_ι]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+        ((S.normalizationToTensorComponentScheme ≫
+          S.tensorComponentToTensorScheme) ≫
+          S.normalizationTensorToSignedCover) := by
+          simp only [Category.assoc]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+        (S.normalizationToTensorScheme ≫
+          S.normalizationTensorToSignedCover) := by
+          rw [S.normalizationToTensorComponentScheme_comp]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.signedCoverNormalizationMap := by
+          rw [S.normalizationToTensorScheme_comp_left]
 
 theorem normalizationComponentNormalizationOpenToPullbackScheme_comp_snd :
     S.normalizationComponentNormalizationOpenToPullbackScheme ≫
         pullback.snd (S.coverToBaseNormalizationMap true) S.signedBaseNormalizationMap =
       S.normalizationComponentNormalizationSourceOpen.ι ≫
         S.coverToBaseNormalizationMap false := by
-  rw [normalizationComponentNormalizationOpenToPullbackScheme,
-    S.normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso,
-    Category.assoc, pullback.lift_snd]
+  change
+    (S.normalizationComponentNormalizationOpenToTensorScheme ≫
+      S.normalizationTensorPullbackIso.hom) ≫
+        pullback.snd _ _ =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.coverToBaseNormalizationMap false
+  change
+    (S.normalizationComponentNormalizationOpenMap ≫
+      S.normalizationComponentNormalizationOpen.ι ≫
+      S.tensorComponentToTensorScheme) ≫
+        S.normalizationTensorPullbackIso.hom ≫ pullback.snd _ _ =
+      S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.coverToBaseNormalizationMap false
+  rw [Category.assoc, S.normalizationTensorPullbackIso_hom_snd]
+  calc
+    (S.normalizationComponentNormalizationOpenMap ≫
+        S.normalizationComponentNormalizationOpen.ι ≫
+        S.tensorComponentToTensorScheme) ≫
+        S.normalizationTensorToUnsignedBase =
+      (S.normalizationComponentNormalizationOpenMap ≫
+        S.normalizationComponentNormalizationOpen.ι) ≫
+        S.tensorComponentToTensorScheme ≫ S.normalizationTensorToUnsignedBase := by
+          simp only [Category.assoc]
+    _ = (S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.normalizationToTensorComponentScheme) ≫
+        S.tensorComponentToTensorScheme ≫ S.normalizationTensorToUnsignedBase := by
+          rw [S.normalizationComponentNormalizationOpenMap_comp_open_ι]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+        ((S.normalizationToTensorComponentScheme ≫
+          S.tensorComponentToTensorScheme) ≫
+          S.normalizationTensorToUnsignedBase) := by
+          simp only [Category.assoc]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+        (S.normalizationToTensorScheme ≫
+          S.normalizationTensorToUnsignedBase) := by
+          rw [S.normalizationToTensorComponentScheme_comp]
+    _ = S.normalizationComponentNormalizationSourceOpen.ι ≫
+        S.coverToBaseNormalizationMap false := by
+          rw [S.normalizationToTensorScheme_comp_right]
 
 theorem normalizationComponentNormalizationOpenToPullback_birationalOver :
     Scheme.BirationalOver
-      S.normalizationComponentNormalizationOpenToTensorScheme
+      S.normalizationComponentNormalizationOpenToPullbackScheme
       (S.tensorComponentToTensorScheme ≫ S.normalizationTensorPullbackIso.hom) := by
   have hopen : Scheme.BirationalOver
       (S.normalizationComponentNormalizationSourceOpen.ι ≫
@@ -265,7 +339,8 @@ theorem normalizationComponentNormalizationOpenToPullback_birationalOver :
       S.normalizationToPullbackScheme S.normalizationComponentNormalizationSourceOpen_dense
   have hcomponent := S.normalizationTensorComponent_birationalOver_pullback
   have h := hopen.trans hcomponent
-  simpa only [S.normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso] using h
+  simpa only [normalizationComponentNormalizationOpenToPullbackScheme,
+    S.normalizationComponentNormalizationOpenToTensorScheme_comp_pullbackIso] using h
 
 theorem normalizationComponentNormalizationOpenToTensorScheme_birationalOver :
     Scheme.BirationalOver

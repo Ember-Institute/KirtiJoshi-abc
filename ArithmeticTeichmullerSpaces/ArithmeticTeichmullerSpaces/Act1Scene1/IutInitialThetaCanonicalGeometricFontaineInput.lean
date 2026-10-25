@@ -35,6 +35,23 @@ variable (heightData : Arithmetic.HeightData D.F)
 variable (ramification : Arithmetic.RamificationProfile D.F)
 variable (logVolume : ℝ) (processionLength : ℕ)
 
+local instance selectedPrime :
+    Fact (Arithmetic.residueChar w.1).Prime :=
+  ⟨Arithmetic.residueChar_prime w.1⟩
+local instance selectedPrimeNorm :
+    Fact (0 < ‖(Arithmetic.residueChar w.1 :
+      InitialThetaCanonicalGeometricFontaine.coefficientField D w)‖ ∧
+      ‖(Arithmetic.residueChar w.1 :
+        InitialThetaCanonicalGeometricFontaine.coefficientField D w)‖ < 1) :=
+  InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+local instance selectedPrimeNonunit :
+    Fact (¬ IsUnit (Arithmetic.residueChar w.1 :
+      LocalGeometricFontaine.integerRing
+        (InitialThetaCanonicalGeometricFontaine.coefficientField D w))) :=
+  LocalGeometricFontaine.primeNonunitFact
+    (InitialThetaCanonicalGeometricFontaine.coefficientField D w)
+    (Arithmetic.residueChar w.1)
+
 noncomputable def ofCanonicalGeometricFontaine
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
     (periodMap : ∀ i, theta.period i = theta.liftedLog i)
@@ -54,8 +71,6 @@ noncomputable def ofCanonicalGeometricFontaine
         (InitialThetaCanonicalGeometricFontaine.coefficientField D w))
       (Arithmetic.residueChar w.1) D theta thetaBase packetHull heightData
       ramification logVolume processionLength := by
-  letI : Fact (Arithmetic.residueChar w.1).Prime :=
-    ⟨Arithmetic.residueChar_prime w.1⟩
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
   refine
     { placeData := InitialThetaCanonicalGeometricFontaine.placeData D w
@@ -66,12 +81,11 @@ noncomputable def ofCanonicalGeometricFontaine
       normalization := normalization
       packet_weight_positive := packet_weight_positive
       hull_weight_positive := hull_weight_positive
-      perfectoidBridge := ?_
+      perfectoidBridge := InitialThetaCanonicalGeometricFontaine.bridgeData_laws D w theta thetaBase
+        packetHull heightData ramification logVolume processionLength
       theta_log_shell := theta_log_shell
       packetCollationHull := packetCollationHull
       volumeTransfer := volumeTransfer }
-  exact InitialThetaCanonicalGeometricFontaine.bridgeData_laws D w theta thetaBase
-    packetHull heightData ramification logVolume processionLength
 
 theorem ofCanonicalGeometricFontaine_place_eq
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
@@ -87,13 +101,11 @@ theorem ofCanonicalGeometricFontaine_place_eq
     (volumeTransfer : VolumeTransfer
       (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
         heightData ramification logVolume processionLength)) :
-    let X := ofCanonicalGeometricFontaine D w theta thetaBase packetHull heightData
-      ramification logVolume processionLength thetaScaling periodMap normalization
+    let X := ofCanonicalGeometricFontaine (D := D) (w := w) theta thetaBase packetHull
+      heightData ramification logVolume processionLength thetaScaling periodMap normalization
       packet_weight_positive hull_weight_positive theta_log_shell packetCollationHull
       volumeTransfer
     (X.placeData).place = w.1 := by
-  letI : Fact (Arithmetic.residueChar w.1).Prime :=
-    ⟨Arithmetic.residueChar_prime w.1⟩
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
   rfl
 

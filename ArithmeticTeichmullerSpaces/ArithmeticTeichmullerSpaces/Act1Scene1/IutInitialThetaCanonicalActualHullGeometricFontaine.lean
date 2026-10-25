@@ -1,18 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricFontaine
 
-/-!
-source-id: JT-SCENE1-CANONICAL-ACTUAL-HULL-GEOMETRIC-FONTAINE
-source: the actual supported Tate place, the geometric Fontaine completion,
-and the ordinary-log actual-hull cost producer.
-fidelity: specializes `CanonicalActualHull.AnalyticInput` so its local
-perfectoid place, coefficient map, and bridge laws come from the same actual
-`InitialThetaData`; theta scaling, period, normalization, and theta-log laws
-remain explicit analytic inputs.
-boundary: Scene1/Derived. This does not construct the global holomorphoid,
-H¹ₑ/BK comparison, or paper theta-volume identity.
--/
-
 namespace JoshiTeich.Act1Scene1.CanonicalActualHull
 
 open JoshiTeich.Prologue
@@ -24,135 +12,192 @@ noncomputable section
 
 variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
 variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
-variable {O : Type u} [CommRing O] (p : ℕ)
-variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
-variable [IsAdicComplete (Ideal.span {(p : O)}) O]
-variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
-variable (n : ℕ)
-variable (σ : iutInitialThetaVBadModuliFinset D → Fin n →
-  (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
-variable (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
-variable (theta : ThetaPilotData D.F)
-variable (route : ActualHullCostTransfer.PositivePacket D n σ hσ
-  (VBadThetaLogCollation.collation D n σ hσ) → theta.index)
-variable (thetaBase : theta.index) (heightData : Arithmetic.HeightData D.F)
-variable (ramification : Arithmetic.RamificationProfile D.F)
 
-noncomputable def AnalyticInput.ofCanonicalGeometricFontaine
+local instance selectedPrime
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places) :
+    Fact (Arithmetic.residueChar w.1).Prime :=
+  ⟨Arithmetic.residueChar_prime w.1⟩
+
+local instance selectedPrimeNorm
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places) :
+    Fact (0 < ‖(Arithmetic.residueChar w.1 :
+      InitialThetaCanonicalGeometricFontaine.coefficientField D w)‖ ∧
+      ‖(Arithmetic.residueChar w.1 :
+        InitialThetaCanonicalGeometricFontaine.coefficientField D w)‖ < 1) :=
+  InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+
+local instance selectedPrimeNonunit
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places) :
+    Fact (¬ IsUnit (Arithmetic.residueChar w.1 :
+      LocalGeometricFontaine.integerRing
+        (InitialThetaCanonicalGeometricFontaine.coefficientField D w))) :=
+  LocalGeometricFontaine.primeNonunitFact
+    (InitialThetaCanonicalGeometricFontaine.coefficientField D w)
+    (Arithmetic.residueChar w.1)
+
+/-!
+source-id: JT-SCENE1-CANONICAL-ACTUAL-HULL-GEOMETRIC-FONTAINE
+source: the actual supported Tate place, the geometric Fontaine completion,
+and the ordinary-log actual-hull cost producer.
+fidelity: specializes CanonicalActualHull.AnalyticInput so its local
+perfectoid place, coefficient map, and bridge laws come from the same actual
+InitialThetaData. Theta scaling, period, normalization, and theta-log laws
+remain explicit analytic inputs.
+boundary: Scene1/Derived. This does not construct the global holomorphoid,
+H1_e/BK comparison, or paper theta-volume identity.
+-/
+
+namespace AnalyticInput
+
+local instance selectedPrime
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places) :
+    Fact (Arithmetic.residueChar w.1).Prime :=
+  ⟨Arithmetic.residueChar_prime w.1⟩
+
+local instance selectedPrimeNorm
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places) :
+    Fact (0 < ‖(Arithmetic.residueChar w.1 :
+      InitialThetaCanonicalGeometricFontaine.coefficientField D w)‖ ∧
+      ‖(Arithmetic.residueChar w.1 :
+        InitialThetaCanonicalGeometricFontaine.coefficientField D w)‖ < 1) :=
+  InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+
+local instance selectedPrimeNonunit
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places) :
+    Fact (¬ IsUnit (Arithmetic.residueChar w.1 :
+      LocalGeometricFontaine.integerRing
+        (InitialThetaCanonicalGeometricFontaine.coefficientField D w))) :=
+  LocalGeometricFontaine.primeNonunitFact
+    (InitialThetaCanonicalGeometricFontaine.coefficientField D w)
+    (Arithmetic.residueChar w.1)
+
+noncomputable def ofCanonicalGeometricFontaine
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (theta : ThetaPilotData D.F)
+    (route : PositivePacket D → theta.index)
+    (thetaBase : theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
     (w : (iutInitialThetaTateParameterData D).places)
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
     (periodMap : ∀ i, theta.period i = theta.liftedLog i)
     (normalization : letI := theta.indexFintype
-      ActualHullCostTransfer.cost D n σ hσ
-        (VBadThetaLogCollation.collation D n σ hσ) = ∑ i, theta.period i)
+      cost D = ∑ i, theta.period i)
     (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i)) :
     AnalyticInput (O := LocalGeometricFontaine.integerRing
       (InitialThetaCanonicalGeometricFontaine.coefficientField D w))
       (Arithmetic.residueChar w.1) D theta route thetaBase heightData ramification := by
-  letI : Fact (Arithmetic.residueChar w.1).Prime :=
-    ⟨Arithmetic.residueChar_prime w.1⟩
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
   refine
     { placeData := InitialThetaCanonicalGeometricFontaine.placeData D w
       bridge := InitialThetaCanonicalGeometricFontaine.bridgeData D w theta thetaBase
-        (packetHull D n σ hσ (VBadThetaLogCollation.collation D n σ hσ) theta route)
-        heightData ramification
-        (ActualHullCostTransfer.cost D n σ hσ
-          (VBadThetaLogCollation.collation D n σ hσ)) n
+        (packetHull D theta route) heightData ramification (cost D) (length D)
       thetaScaling := thetaScaling
       periodMap := periodMap
       normalization := normalization
-      perfectoidBridge := ?_
+      perfectoidBridge := InitialThetaCanonicalGeometricFontaine.bridgeData_laws D w
+        theta thetaBase (packetHull D theta route) heightData ramification
+        (cost D) (length D)
       theta_log_shell := theta_log_shell }
-  exact InitialThetaCanonicalGeometricFontaine.bridgeData_laws D w theta thetaBase
-    (packetHull D n σ hσ (VBadThetaLogCollation.collation D n σ hσ) theta route)
-    heightData ramification
-    (ActualHullCostTransfer.cost D n σ hσ
-      (VBadThetaLogCollation.collation D n σ hσ)) n
 
-theorem AnalyticInput.ofCanonicalGeometricFontaine_place_eq
+theorem ofCanonicalGeometricFontaine_place_eq
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (theta : ThetaPilotData D.F)
+    (route : PositivePacket D → theta.index)
+    (thetaBase : theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
     (w : (iutInitialThetaTateParameterData D).places)
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
     (periodMap : ∀ i, theta.period i = theta.liftedLog i)
     (normalization : letI := theta.indexFintype
-      ActualHullCostTransfer.cost D n σ hσ
-        (VBadThetaLogCollation.collation D n σ hσ) = ∑ i, theta.period i)
+      cost D = ∑ i, theta.period i)
     (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i)) :
-    let X := AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
-      heightData ramification w thetaScaling periodMap normalization theta_log_shell
+    let X := ofCanonicalGeometricFontaine D theta route thetaBase heightData ramification
+      w thetaScaling periodMap normalization theta_log_shell
     (X.placeData).place = w.1 := by
-  letI : Fact (Arithmetic.residueChar w.1).Prime :=
-    ⟨Arithmetic.residueChar_prime w.1⟩
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
   rfl
 
-theorem AnalyticInput.ofCanonicalGeometricFontaine_bridge_coefficientMap
+theorem ofCanonicalGeometricFontaine_bridge_coefficientMap
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (theta : ThetaPilotData D.F)
+    (route : PositivePacket D → theta.index)
+    (thetaBase : theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
     (w : (iutInitialThetaTateParameterData D).places)
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
     (periodMap : ∀ i, theta.period i = theta.liftedLog i)
     (normalization : letI := theta.indexFintype
-      ActualHullCostTransfer.cost D n σ hσ
-        (VBadThetaLogCollation.collation D n σ hσ) = ∑ i, theta.period i)
+      cost D = ∑ i, theta.period i)
     (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i))
     (a : 𝓞 D.F) :
-    let X := AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
-      heightData ramification w thetaScaling periodMap normalization theta_log_shell
+    let X := ofCanonicalGeometricFontaine D theta route thetaBase heightData ramification
+      w thetaScaling periodMap normalization theta_log_shell
     ((X.bridge.coefficientMap a :
       LocalGeometricFontaine.integerRing
         (InitialThetaCanonicalGeometricFontaine.coefficientField D w)) :
         InitialThetaCanonicalGeometricFontaine.coefficientField D w) =
       InitialThetaCanonicalGeometricFontaine.completionEmbedding D w
         (FinitePlace.embedding w.1.maximalIdeal (a : D.F)) := by
-  letI : Fact (Arithmetic.residueChar w.1).Prime :=
-    ⟨Arithmetic.residueChar_prime w.1⟩
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
   exact InitialThetaCanonicalGeometricFontaine.bridgeData_coefficientMap D w theta thetaBase
-    (packetHull D n σ hσ (VBadThetaLogCollation.collation D n σ hσ) theta route)
-    heightData ramification
-    (ActualHullCostTransfer.cost D n σ hσ
-      (VBadThetaLogCollation.collation D n σ hσ)) n a
+    (packetHull D theta route) heightData ramification (cost D) (length D) a
 
-theorem AnalyticInput.ofCanonicalGeometricFontaine_place_supported
+theorem ofCanonicalGeometricFontaine_place_supported
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (theta : ThetaPilotData D.F)
+    (route : PositivePacket D → theta.index)
+    (thetaBase : theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
     (w : (iutInitialThetaTateParameterData D).places)
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
     (periodMap : ∀ i, theta.period i = theta.liftedLog i)
     (normalization : letI := theta.indexFintype
-      ActualHullCostTransfer.cost D n σ hσ
-        (VBadThetaLogCollation.collation D n σ hσ) = ∑ i, theta.period i)
+      cost D = ∑ i, theta.period i)
     (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i)) :
-    let X := AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
-      heightData ramification w thetaScaling periodMap normalization theta_log_shell
+    let X := ofCanonicalGeometricFontaine D theta route thetaBase heightData ramification
+      w thetaScaling periodMap normalization theta_log_shell
     (X.placeData).place ∈
-      (link D n σ hσ (VBadThetaLogCollation.collation D n σ hσ) theta route thetaBase
-        heightData ramification).places := by
-  letI : Fact (Arithmetic.residueChar w.1).Prime :=
-    ⟨Arithmetic.residueChar_prime w.1⟩
+      (link D theta route thetaBase heightData ramification).places := by
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
-  exact (AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
-    heightData ramification w thetaScaling periodMap normalization theta_log_shell).perfectoidBridge.place_supported
+  exact (ofCanonicalGeometricFontaine D theta route thetaBase heightData ramification
+    w thetaScaling periodMap normalization theta_log_shell).perfectoidBridge.place_supported
+
+end AnalyticInput
 
 theorem corollary312_ofCanonicalGeometricFontaine
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (theta : ThetaPilotData D.F)
+    (route : PositivePacket D → theta.index)
+    (thetaBase : theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
     (w : (iutInitialThetaTateParameterData D).places)
     (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
     (periodMap : ∀ i, theta.period i = theta.liftedLog i)
     (normalization : letI := theta.indexFintype
-      ActualHullCostTransfer.cost D n σ hσ
-        (VBadThetaLogCollation.collation D n σ hσ) = ∑ i, theta.period i)
+      cost D = ∑ i, theta.period i)
     (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i)) :
     Corollary312 (Arithmetic.residueChar w.1)
       (data (O := LocalGeometricFontaine.integerRing
         (InitialThetaCanonicalGeometricFontaine.coefficientField D w))
         (Arithmetic.residueChar w.1) D theta route thetaBase heightData ramification
-        (AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
-          heightData ramification w thetaScaling periodMap normalization theta_log_shell)) := by
-  letI : Fact (Arithmetic.residueChar w.1).Prime :=
-    ⟨Arithmetic.residueChar_prime w.1⟩
-  letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+        (AnalyticInput.ofCanonicalGeometricFontaine D theta route thetaBase heightData
+          ramification w thetaScaling periodMap normalization theta_log_shell)) := by
   exact corollary312 (p := Arithmetic.residueChar w.1) (D := D) (theta := theta)
     (route := route) (thetaBase := thetaBase) (heightData := heightData)
     (ramification := ramification)
-    (X := AnalyticInput.ofCanonicalGeometricFontaine D n σ hσ theta route thetaBase
-      heightData ramification w thetaScaling periodMap normalization theta_log_shell)
+    (X := AnalyticInput.ofCanonicalGeometricFontaine D theta route thetaBase heightData
+      ramification w thetaScaling periodMap normalization theta_log_shell)
 
 end
 end JoshiTeich.Act1Scene1.CanonicalActualHull

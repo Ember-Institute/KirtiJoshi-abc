@@ -27,6 +27,14 @@ variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
 variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
 variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
 
+local instance representativePrime (v : iutInitialThetaVBadModuliFinset D) :
+    Fact (Arithmetic.residueChar v.1).Prime :=
+  ⟨Arithmetic.residueChar_prime v.1⟩
+
+local instance representativeModuliAtPrime (v : iutInitialThetaVBadModuliFinset D) :
+    Fact (Arithmetic.residueChar (iutInitialThetaVBadModuliAt D v).1).Prime :=
+  ⟨Arithmetic.residueChar_prime (iutInitialThetaVBadModuliAt D v).1⟩
+
 def iutInitialThetaVBadSectionRepresentative
     (v : iutInitialThetaVBadModuliFinset D) :
     NumberField.FinitePlace ↥D.prime.torsionField :=
@@ -51,8 +59,13 @@ theorem iutInitialThetaVBadSectionRepresentative_mem_sectionVoss
     rcases hp.eq_two_or_odd' with htwo | hodd
     · exact (hvPort.1 htwo).elim
     · exact hodd
+  have hsection := iutInitialThetaFinitePlaceSection_liesOver D v.1
+  have hsectionOdd : Odd
+      (Arithmetic.residueChar (iutInitialThetaFinitePlaceSection D v.1)) := by
+    rw [Arithmetic.residueChar_eq_of_liesOver hsection]
+    exact hodd
   rw [← iutInitialThetaOddTateSectionPlaces_eq_sectionVoss D]
-  exact ⟨v.1, rfl, hodd,
+  exact ⟨v.1, rfl, hsectionOdd,
     ⟨iutInitialThetaFinitePlaceSection_tateStructure D v.1 hvPort⟩⟩
 
 def iutInitialThetaVBadSectionRepresentativeImage :
@@ -72,13 +85,18 @@ noncomputable def iutInitialThetaVBadSectionRepresentativeEquiv :
     (fun v => ⟨iutInitialThetaVBadSectionRepresentative D v, ⟨v, rfl⟩⟩) ?_
   constructor
   · intro v₁ v₂ h
-    apply Subtype.ext
     exact iutInitialThetaVBadSectionRepresentative_injective D
-      (congrArg (fun w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
-        w ∈ iutInitialThetaVBadSectionRepresentativeImage D} => w.1) h)
+      (congrArg Subtype.val (congrArg (fun w :
+        {w : NumberField.FinitePlace ↥D.prime.torsionField //
+          w ∈ iutInitialThetaVBadSectionRepresentativeImage D} => w) h))
   · intro w
     rcases w.2 with ⟨v, hv⟩
-    exact ⟨v, Subtype.ext hv.symm⟩
+    exact ⟨v, Subtype.ext hv⟩
+
+noncomputable instance iutInitialThetaVBadSectionRepresentativeImageFintype :
+    Fintype {w : NumberField.FinitePlace ↥D.prime.torsionField //
+      w ∈ iutInitialThetaVBadSectionRepresentativeImage D} :=
+  (iutInitialThetaVBadSectionRepresentativeImage_finite D).fintype
 
 theorem iutInitialThetaVBadSectionRepresentativeImage_card :
     Fintype.card
@@ -149,8 +167,16 @@ theorem iutInitialThetaVBadSectionRepresentative_referenceAbsLogQ_lt_image_unwei
         VBadSelectedPaper.paperTerm D
           ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
   have h := VBadSelectedPaper.referenceAbsLogQ_lt_paperSum D
-  simpa [VBadSelectedPaper.paperSum,
-    iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D] using h
+  calc
+    JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D) <
+        VBadSelectedPaper.paperSum D := h
+    _ = ∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        VBadSelectedPaper.paperTerm D
+          ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
+      simpa [VBadSelectedPaper.paperSum] using
+        iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D
 
 def iutInitialThetaVBadSectionRepresentativeRootProduct : ℝ :=
   ∏ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
@@ -209,7 +235,8 @@ noncomputable def iutInitialThetaVBadSectionRepresentative_selectedFinsetEquiv :
     obtain ⟨v, hv⟩ := (VBadSelectedPaper.mem_selectedFinset_iff D s.1).mp s.2
     refine ⟨e v, ?_⟩
     apply Subtype.ext
-    exact hv.symm
+    change VBadSelectedPaper.sourceAt D (e.symm (e v)) = s.1
+    simpa using hv
 
 theorem iutInitialThetaVBadSectionRepresentative_rootProduct_eq_selectedFinsetRootProduct :
     iutInitialThetaVBadSectionRepresentativeRootProduct D =
@@ -218,8 +245,25 @@ theorem iutInitialThetaVBadSectionRepresentative_rootProduct_eq_selectedFinsetRo
   unfold iutInitialThetaVBadSectionRepresentativeRootProduct
     VBadSelectedPaper.rootProduct
   symm
-  simpa [e, iutInitialThetaVBadSectionRepresentative_selectedFinsetEquiv] using
-    e.prod_comp (fun s => actualPaperRootNorm D s.1)
+  have heval (w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+      w ∈ iutInitialThetaVBadSectionRepresentativeImage D}) :
+      (e w).1 = VBadSelectedPaper.sourceAt D
+        ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w) := by
+    rfl
+  calc
+    (∏ s : ↥(VBadSelectedPaper.selectedFinset D), actualPaperRootNorm D s.1) =
+        ∏ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+          w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+          actualPaperRootNorm D (e w).1 :=
+      (e.prod_comp (fun s => actualPaperRootNorm D s.1)).symm
+    _ = ∏ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+          w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+          actualPaperRootNorm D
+            (VBadSelectedPaper.sourceAt D
+              ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) := by
+      apply Finset.prod_congr rfl
+      intro w hw
+      rw [heval w]
 
 theorem iutInitialThetaVBadSectionRepresentative_rootProduct_pow_lt_collatedHullVolume
     (n : ℕ)
@@ -258,8 +302,16 @@ theorem iutInitialThetaVBadSectionRepresentative_negAverageAbsLog_gt_neg_imagePa
         |Real.log (VBadThetaCollatedHull.volume D n σ hσ C)| := by
   have h := VBadSelectedHull.negAverageAbsLog_gt_neg_selectedPaperSum
     D n σ hσ C hgen hunit hn
-  rw [← iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D] at h
-  exact h
+  calc
+    -(∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+        w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+        VBadSelectedPaper.paperTerm D
+          ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) =
+        -VBadSelectedPaper.paperSum D := by
+      rw [← iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D]
+      rfl
+    _ < -(1 / (n : ℝ)) *
+        |Real.log (VBadThetaCollatedHull.volume D n σ hσ C)| := h
 
 theorem iutInitialThetaVBadSectionRepresentative_cost_lt_mul_imagePaperSum
     (n : ℕ)
@@ -280,8 +332,18 @@ theorem iutInitialThetaVBadSectionRepresentative_cost_lt_mul_imagePaperSum
           VBadSelectedPaper.paperTerm D
             ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) := by
   have h := VBadSelectedHull.cost_lt_mul_selectedPaperSum D n σ hσ C hgen hunit hn
-  rw [← iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D] at h
-  exact h
+  calc
+    VBadThetaHullLogCost.cost D n σ hσ C <
+        (n : ℝ) * VBadSelectedPaper.paperSum D := h
+    _ = (n : ℝ) *
+        (∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+          w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+          VBadSelectedPaper.paperTerm D
+            ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) := by
+      change (n : ℝ) *
+          (∑ v : iutInitialThetaVBadModuliFinset D,
+            VBadSelectedPaper.paperTerm D v) = _
+      rw [iutInitialThetaVBadSectionRepresentative_paperTerm_sum_transport D]
 
 theorem iutInitialThetaVBadSectionRepresentative_cost_le_mul_imageWeightedPaperSum
     (n : ℕ)
@@ -305,8 +367,22 @@ theorem iutInitialThetaVBadSectionRepresentative_cost_le_mul_imageWeightedPaperS
               ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) := by
   have h := VBadSelectedHull.cost_le_mul_coefficientWeightedPaperSum
     D n σ hσ C hgen hunit
-  rw [← iutInitialThetaVBadSectionRepresentative_weightedPaperTerm_sum_transport D] at h
-  exact h
+  calc
+    VBadThetaHullLogCost.cost D n σ hσ C ≤
+        (n : ℝ) *
+          (∑ v : iutInitialThetaVBadModuliFinset D,
+            iutInitialThetaRepresentativeCoefficient D
+                (iutInitialThetaVBadModuliAt D v) *
+              VBadSelectedPaper.paperTerm D v) := h
+    _ = (n : ℝ) *
+        (∑ w : {w : NumberField.FinitePlace ↥D.prime.torsionField //
+          w ∈ iutInitialThetaVBadSectionRepresentativeImage D},
+          iutInitialThetaRepresentativeCoefficient D
+              (iutInitialThetaVBadModuliAt D
+                ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) *
+            VBadSelectedPaper.paperTerm D
+              ((iutInitialThetaVBadSectionRepresentativeEquiv D).symm w)) := by
+      rw [iutInitialThetaVBadSectionRepresentative_weightedPaperTerm_sum_transport D]
 
 theorem iutInitialThetaVBadSectionRepresentative_imagePaperBudget_gap_pos
     (n : ℕ)
