@@ -16,6 +16,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryReferenceEx
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryProducerSourceProjection
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalHolomorphoidSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalH1LogSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTorsionThetaPilotSource
 
 /-! SelectedRoots 家族：里程碑公理审计。 -/
 
@@ -108,3 +109,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalH1LogSource
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometryProducer.toInitialThetaData_tateParameterData_laws
 #print axioms JoshiTeich.Act1Scene1.InitialThetaLocalHolomorphoidSource.canonical
 #print axioms JoshiTeich.Act1Scene1.InitialThetaLocalH1LogSource.canonical
+#print axioms JoshiTeich.Act1Scene1.InitialThetaCanonicalTorsionThetaPilotSource.canonical

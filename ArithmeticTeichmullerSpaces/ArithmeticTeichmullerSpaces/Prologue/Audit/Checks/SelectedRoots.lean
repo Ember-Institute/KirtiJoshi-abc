@@ -16,6 +16,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryReferenceEx
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryProducerSourceProjection
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalHolomorphoidSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalH1LogSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTorsionThetaPilotSource
 
 /-! SelectedRoots 家族：日常名称检查。 -/
 
@@ -118,3 +119,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalH1LogSource
 #check JoshiTeich.Act1Scene1.InitialThetaGeometryProducer.toInitialThetaData_tateParameterData_laws
 #check JoshiTeich.Act1Scene1.InitialThetaLocalHolomorphoidSource.canonical
 #check JoshiTeich.Act1Scene1.InitialThetaLocalH1LogSource.canonical
+#check JoshiTeich.Act1Scene1.InitialThetaCanonicalTorsionThetaPilotSource.canonical
