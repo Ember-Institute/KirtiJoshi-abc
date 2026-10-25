@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalGeometricFontaine
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoidBridgeSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalScene1Input
 
 /-!
@@ -72,17 +73,17 @@ noncomputable def ofCanonicalGeometricFontaine
       (Arithmetic.residueChar w.1) D theta thetaBase packetHull heightData
       ramification logVolume processionLength := by
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+  let source := InitialThetaCanonicalPerfectoidBridgeSource.canonical D w theta thetaBase
+    packetHull heightData ramification logVolume processionLength
   refine
-    { placeData := InitialThetaCanonicalGeometricFontaine.placeData D w
-      bridge := InitialThetaCanonicalGeometricFontaine.bridgeData D w theta thetaBase
-        packetHull heightData ramification logVolume processionLength
+    { placeData := source.placeData
+      bridge := source.bridgeData
       thetaScaling := thetaScaling
       periodMap := periodMap
       normalization := normalization
       packet_weight_positive := packet_weight_positive
       hull_weight_positive := hull_weight_positive
-      perfectoidBridge := InitialThetaCanonicalGeometricFontaine.bridgeData_laws D w theta thetaBase
-        packetHull heightData ramification logVolume processionLength
+      perfectoidBridge := source.bridgeLaws
       theta_log_shell := theta_log_shell
       packetCollationHull := packetCollationHull
       volumeTransfer := volumeTransfer }
@@ -108,6 +109,34 @@ theorem ofCanonicalGeometricFontaine_place_eq
     (X.placeData).place = w.1 := by
   letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
   rfl
+
+theorem ofCanonicalGeometricFontaine_bridge_coefficientMap
+    (thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase)
+    (periodMap : ∀ i, theta.period i = theta.liftedLog i)
+    (normalization : letI := theta.indexFintype
+      logVolume = ∑ i, theta.period i)
+    (packet_weight_positive : ∀ q, 0 < packetHull.packetWeight q)
+    (hull_weight_positive : ∀ h, 0 < packetHull.hullWeight h)
+    (theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i))
+    (packetCollationHull : PacketCollationHull
+      (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+        heightData ramification logVolume processionLength))
+    (volumeTransfer : VolumeTransfer
+      (AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+        heightData ramification logVolume processionLength))
+    (a : 𝓞 D.F) :
+    let X := ofCanonicalGeometricFontaine (D := D) (w := w) theta thetaBase packetHull
+      heightData ramification logVolume processionLength thetaScaling periodMap normalization
+      packet_weight_positive hull_weight_positive theta_log_shell packetCollationHull
+      volumeTransfer
+    (X.bridge.coefficientMap a : InitialThetaCanonicalGeometricFontaine.coefficientField D w) =
+      InitialThetaCanonicalGeometricFontaine.completionEmbedding D w
+        (FinitePlace.embedding w.1.maximalIdeal (a : D.F)) := by
+  letI := InitialThetaCanonicalGeometricFontaine.primeNormFact D w
+  exact InitialThetaCanonicalPerfectoidBridgeSource.Data.bridge_coefficientMap_coe
+    D w theta thetaBase packetHull heightData ramification logVolume processionLength
+    (InitialThetaCanonicalPerfectoidBridgeSource.canonical D w theta thetaBase packetHull
+      heightData ramification logVolume processionLength) a
 
 end CanonicalInitialThetaScene1Input
 

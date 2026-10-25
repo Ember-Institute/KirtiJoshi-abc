@@ -61,6 +61,11 @@ structure Data : Type (u + 1) where
     (Link D theta thetaBase packetHull heightData ramification logVolume processionLength)
     (Arithmetic.residueChar w.1) placeData
   coefficientMap : 𝓞 D.F →+* IntegerRing D w
+  coefficientMap_eq_bridge : coefficientMap = bridgeData.coefficientMap
+  coefficientMap_coe : ∀ a : 𝓞 D.F,
+    (coefficientMap a : CoefficientField D w) =
+      InitialThetaCanonicalGeometricFontaine.completionEmbedding D w
+        (FinitePlace.embedding w.1.maximalIdeal (a : D.F))
   bridgeLaws : PerfectoidBridgeLaws
     (Link D theta thetaBase packetHull heightData ramification logVolume processionLength)
     (Arithmetic.residueChar w.1) placeData bridgeData
@@ -77,6 +82,8 @@ noncomputable def canonical : Data D w theta thetaBase packetHull heightData ram
   bridgeData := InitialThetaCanonicalGeometricFontaine.bridgeData D w theta thetaBase
     packetHull heightData ramification logVolume processionLength
   coefficientMap := InitialThetaCanonicalGeometricFontaine.coefficientMap D w
+  coefficientMap_eq_bridge := rfl
+  coefficientMap_coe := InitialThetaCanonicalGeometricFontaine.coefficientMap_coe D w
   bridgeLaws := InitialThetaCanonicalGeometricFontaine.bridgeData_laws D w theta thetaBase
     packetHull heightData ramification logVolume processionLength
   coefficientMap_injective := InitialThetaCanonicalGeometricFontaine.coefficientMap_injective D w
@@ -87,6 +94,22 @@ noncomputable def canonical : Data D w theta thetaBase packetHull heightData ram
 theorem canonical_place_eq :
     ((canonical D w theta thetaBase packetHull heightData ramification logVolume processionLength).placeData).place = w.1 :=
   (canonical D w theta thetaBase packetHull heightData ramification logVolume processionLength).place_eq
+
+/-- Every source package uses the same coefficient map in its bridge. -/
+theorem Data.bridge_coefficientMap_coe
+    (X : Data D w theta thetaBase packetHull heightData ramification logVolume processionLength)
+    (a : 𝓞 D.F) :
+    (X.bridgeData.coefficientMap a : CoefficientField D w) =
+      InitialThetaCanonicalGeometricFontaine.completionEmbedding D w
+        (FinitePlace.embedding w.1.maximalIdeal (a : D.F)) := by
+  rw [← X.coefficientMap_eq_bridge]
+  exact X.coefficientMap_coe a
+
+theorem Data.bridge_coefficientMap_injective
+    (X : Data D w theta thetaBase packetHull heightData ramification logVolume processionLength) :
+    Function.Injective X.bridgeData.coefficientMap := by
+  rw [← X.coefficientMap_eq_bridge]
+  exact X.coefficientMap_injective
 
 theorem canonical_bridge_place_supported :
     w.1 ∈ (Link D theta thetaBase packetHull heightData ramification logVolume processionLength).places :=
