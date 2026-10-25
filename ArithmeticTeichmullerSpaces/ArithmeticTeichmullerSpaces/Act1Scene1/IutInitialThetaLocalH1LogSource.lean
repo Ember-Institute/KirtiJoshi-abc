@@ -52,12 +52,44 @@ abbrev IntegralClass :=
     (Arithmetic.residueChar s.1)
     (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
 
+/-- Keep the integral-source conversions behind typed functions. -/
+def actualIntegral : IntegralClass D s := PrincipalUnitKummer.actualIntegralImageClass D s
+
+def integralToAmbient (x : IntegralClass D s) : AmbientH1 D s := x.1.1
+
+def ordinaryLogOfIntegral (x : IntegralClass D s) : PrincipalUnitKummer.localField D s :=
+  LocalPadicLog.saturatedPadicLog (Arithmetic.residueChar s.1)
+    (InitialThetaLogWitness.norm_residueChar_lt_one s.1) x.1
+
+def normalizedLogOfIntegral (x : IntegralClass D s) : PrincipalUnitKummer.localField D s :=
+  LocalPadicLog.normalizedRationalLog (Arithmetic.residueChar s.1)
+    (InitialThetaLogWitness.norm_residueChar_lt_one s.1) x.1
+
+theorem integralToAmbient_actual :
+    integralToAmbient D s (actualIntegral D s) = PrincipalUnitKummer.rationalClass D s :=
+  (PrincipalUnitKummer.actualIntegralImageClass_coefficient D s).trans
+    (PrincipalUnitKummer.rationalClass_eq_changeCoefficients D s).symm
+
+theorem ordinaryLogOfIntegral_actual :
+    ordinaryLogOfIntegral D s (actualIntegral D s) =
+      (LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
+        PrincipalUnitKummer.localField D s) * PaperLogWitnessHull.value D s :=
+  PrincipalUnitKummer.originalIntegralImageClass_ordinaryLog D s
+
+theorem normalizedLogOfIntegral_actual :
+    normalizedLogOfIntegral D s (actualIntegral D s) = PaperLogWitnessHull.value D s :=
+  PrincipalUnitKummer.originalIntegralImageClass_normalizedRationalLog D s
+
 set_option maxHeartbeats 1000000 in
 structure Data : Type (u + 1) where
   ambientClass : AmbientH1 D s
   integralClass : IntegralClass D s
   ordinaryLog : PrincipalUnitKummer.localField D s
   normalizedLog : PrincipalUnitKummer.localField D s
+  integralClass_eq : integralClass = actualIntegral D s
+  ambientClass_from_integral : integralToAmbient D s integralClass = ambientClass
+  ordinaryLog_from_integral : ordinaryLog = ordinaryLogOfIntegral D s integralClass
+  normalizedLog_from_integral : normalizedLog = normalizedLogOfIntegral D s integralClass
   ambientClass_eq : ambientClass = PrincipalUnitKummer.rationalClass D s
   ordinaryLog_eq : ordinaryLog =
     (LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
@@ -66,23 +98,38 @@ structure Data : Type (u + 1) where
 
 noncomputable def canonical : Data D s where
   ambientClass := PrincipalUnitKummer.rationalClass D s
-  integralClass := PrincipalUnitKummer.actualIntegralImageClass D s
-  ordinaryLog := LocalPadicLog.saturatedPadicLog (Arithmetic.residueChar s.1)
-    (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
-    (PrincipalUnitKummer.actualIntegralImageClass D s).1
-  normalizedLog := LocalPadicLog.normalizedRationalLog (Arithmetic.residueChar s.1)
-    (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
-    (PrincipalUnitKummer.actualIntegralImageClass D s).1
+  integralClass := actualIntegral D s
+  ordinaryLog := ordinaryLogOfIntegral D s (actualIntegral D s)
+  normalizedLog := normalizedLogOfIntegral D s (actualIntegral D s)
+  integralClass_eq := rfl
+  ambientClass_from_integral := integralToAmbient_actual D s
+  ordinaryLog_from_integral := rfl
+  normalizedLog_from_integral := rfl
   ambientClass_eq := rfl
-  ordinaryLog_eq := PrincipalUnitKummer.originalIntegralImageClass_ordinaryLog D s
-  normalizedLog_eq := PrincipalUnitKummer.originalIntegralImageClass_normalizedRationalLog D s
+  ordinaryLog_eq := ordinaryLogOfIntegral_actual D s
+  normalizedLog_eq := normalizedLogOfIntegral_actual D s
 
 theorem canonical_ambientClass_eq :
     (canonical D s).ambientClass = PrincipalUnitKummer.rationalClass D s := rfl
 
+/-- The stored ambient class is the coefficient image of an integral class. -/
+theorem Data.ambientClass_has_integralLift (X : Data D s) :
+    ∃ x, LocalKummer.Rational.standardMap (Arithmetic.residueChar s.1) x =
+      X.ambientClass := by
+  obtain ⟨x, hx⟩ := (LocalPadicLog.mem_integralKummerSubmodule_iff
+    (Arithmetic.residueChar s.1) (InitialThetaLogWitness.norm_residueChar_lt_one s.1)
+    X.integralClass.1).mp X.integralClass.2
+  exact ⟨x, hx.trans X.ambientClass_from_integral⟩
+
+/-- Recover the value from the stored integral source and its logarithm. -/
+theorem Data.normalizedLog_eq_of_integral (X : Data D s) :
+    X.normalizedLog = PaperLogWitnessHull.value D s := by
+  rw [X.normalizedLog_from_integral, X.integralClass_eq]
+  exact normalizedLogOfIntegral_actual D s
+
 theorem canonical_normalizedLog_eq :
     (canonical D s).normalizedLog = PaperLogWitnessHull.value D s :=
-  (canonical D s).normalizedLog_eq
+  Data.normalizedLog_eq_of_integral D s (canonical D s)
 
 end InitialThetaLocalH1LogSource
 
