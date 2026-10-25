@@ -71,6 +71,11 @@ theorem canonical_normalizedLog_norm_lt_one (j : ℕ) (hj : 0 < j) :
     IutInitialThetaQRootFamily.qrootAt_norm_lt_one_of_mem_badFinset D s.1 s.2)
     hj2
 
+theorem canonical_normalizedLog_norm_zero :
+    ‖normalizedLog D s 0‖ = 1 := by
+  rw [canonical_norm_eq_qroot D s 0]
+  simp
+
 end InitialThetaCanonicalTorsionPilotLogShellSource
 
 end
