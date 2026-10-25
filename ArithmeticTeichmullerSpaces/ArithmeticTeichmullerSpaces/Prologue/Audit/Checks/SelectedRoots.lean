@@ -15,6 +15,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootPrimeF
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryReferenceExistenceAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryProducerSourceProjection
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalHolomorphoidSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalH1LogSource
 
 /-! SelectedRoots 家族：日常名称检查。 -/
 
@@ -116,3 +117,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalHolomorphoidSo
 #check JoshiTeich.Act1Scene1.ReferenceAnabelianExistenceContract.toInitialThetaGeometryProducer
 #check JoshiTeich.Act1Scene1.InitialThetaGeometryProducer.toInitialThetaData_tateParameterData_laws
 #check JoshiTeich.Act1Scene1.InitialThetaLocalHolomorphoidSource.canonical
+#check JoshiTeich.Act1Scene1.InitialThetaLocalH1LogSource.canonical

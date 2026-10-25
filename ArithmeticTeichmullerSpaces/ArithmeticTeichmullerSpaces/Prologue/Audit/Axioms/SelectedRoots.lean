@@ -15,6 +15,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootPrimeF
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryReferenceExistenceAdapter
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaGeometryProducerSourceProjection
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalHolomorphoidSource
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalH1LogSource
 
 /-! SelectedRoots 家族：里程碑公理审计。 -/
 
@@ -106,3 +107,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLocalHolomorphoidSo
 #print axioms JoshiTeich.Act1Scene1.ReferenceAnabelianExistenceContract.toInitialThetaGeometryProducer
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometryProducer.toInitialThetaData_tateParameterData_laws
 #print axioms JoshiTeich.Act1Scene1.InitialThetaLocalHolomorphoidSource.canonical
+#print axioms JoshiTeich.Act1Scene1.InitialThetaLocalH1LogSource.canonical
