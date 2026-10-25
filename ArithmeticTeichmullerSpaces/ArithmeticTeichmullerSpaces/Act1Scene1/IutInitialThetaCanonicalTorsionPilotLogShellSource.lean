@@ -76,6 +76,14 @@ theorem canonical_normalizedLog_norm_zero :
   rw [canonical_norm_eq_qroot D s 0]
   simp
 
+theorem canonical_normalizedLog_mem_logShell (j : ℕ) :
+    normalizedLog D s j ∈ LocalPadicLog.logShell (Arithmetic.residueChar s.1) :=
+  (canonical D s).logShell_mem j
+
+theorem canonical_normalizedLog_norm_pos (j : ℕ) :
+    0 < ‖normalizedLog D s j‖ :=
+  norm_pos_iff.mpr (canonical_normalizedLog_ne_zero D s j)
+
 end InitialThetaCanonicalTorsionPilotLogShellSource
 
 end
