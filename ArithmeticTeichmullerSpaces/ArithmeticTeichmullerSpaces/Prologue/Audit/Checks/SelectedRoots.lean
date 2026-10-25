@@ -8,6 +8,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSectionRepresentative
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeCarrier
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeFiberMultiplicity
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeFiberAccounting
 
 /-! SelectedRoots 家族：日常名称检查。 -/
 
@@ -100,3 +101,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeFiber
 #check JoshiTeich.Act1Scene1.iutInitialThetaSectionVossPrimeMultiplicity
 #check JoshiTeich.Act1Scene1.iutInitialThetaVBadRepresentativePrimeMultiplicity
 #check JoshiTeich.Act1Scene1.iutInitialThetaVBadRepresentativePrimeFiberImage_card
+#check JoshiTeich.Act1Scene1.iutInitialThetaSectionVossPrimeFiberSigmaEquiv
+#check JoshiTeich.Act1Scene1.iutInitialThetaSectionVoss_card_eq_primeFiber_sum

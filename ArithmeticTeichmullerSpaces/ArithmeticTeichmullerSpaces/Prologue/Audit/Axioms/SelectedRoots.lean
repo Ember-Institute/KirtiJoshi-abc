@@ -8,6 +8,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVoss
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSectionRepresentative
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeCarrier
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeFiberMultiplicity
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeFiberAccounting
 
 /-! SelectedRoots 家族：里程碑公理审计。 -/
 
@@ -90,3 +91,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeFiber
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaVBadRepresentativePrimeFiberEquiv
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaVBadRepresentativePrimeFiberImageType_card
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaVBadRepresentativePrimeFiberImage_card
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaSectionVossPrimeFiberSigmaEquiv
+#print axioms JoshiTeich.Act1Scene1.iutInitialThetaSectionVoss_card_eq_primeFiber_sum
