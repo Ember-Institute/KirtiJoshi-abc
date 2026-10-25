@@ -35,8 +35,12 @@ namespace InitialThetaCanonicalTorsionPilotTensorLogShellBridge
 
 variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) (n : ℕ)
 
-local abbrev packet (v : iutInitialThetaOddModSupportFinset D) :=
+abbrev packet (v : iutInitialThetaOddModSupportFinset D) :=
   PaperLogWitnessHull.packet D n v
+
+local instance paperTensorPrime (v : iutInitialThetaOddModSupportFinset D) :
+    Fact (Arithmetic.residueChar v.1).Prime :=
+  ⟨Arithmetic.residueChar_prime v.1⟩
 
 noncomputable def canonicalWitness
     (v : iutInitialThetaOddModSupportFinset D) : (packet D n v).Tensor :=
@@ -44,23 +48,27 @@ noncomputable def canonicalWitness
     InitialThetaCanonicalTorsionPilotLogShellSource.normalizedLog D
       (FullSupportThetaLogHull.sourceAt D n v i) 1)
 
+theorem canonicalWitness_eq_witness_raw
+    (v : iutInitialThetaOddModSupportFinset D) :
+    canonicalWitness D n v = PaperLogWitnessHull.witness D n v := by
+  unfold canonicalWitness PaperLogWitnessHull.witness
+  apply congrArg (packet D n v).pure
+  funext i
+  exact (InitialThetaCanonicalTorsionPilotPaperLogBridge.canonical_value_eq_normalizedLog_one D
+    (FullSupportThetaLogHull.sourceAt D n v i)).symm
+
 structure Data (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) (n : ℕ) : Type (u + 1) where
   witness_eq : ∀ v, canonicalWitness D n v = PaperLogWitnessHull.witness D n v
   mem_tensorLogShell : ∀ v, canonicalWitness D n v ∈ (packet D n v).tensorLogShell
   isUnit : ∀ v, IsUnit (canonicalWitness D n v)
 
 noncomputable def canonical : Data D n where
-  witness_eq v := by
-    unfold canonicalWitness PaperLogWitnessHull.witness
-    apply congrArg (packet D n v).pure
-    funext i
-    exact InitialThetaCanonicalTorsionPilotPaperLogBridge.canonical_value_eq_normalizedLog_one D
-      (FullSupportThetaLogHull.sourceAt D n v i)
+  witness_eq v := canonicalWitness_eq_witness_raw D n v
   mem_tensorLogShell v := by
-    rw [canonicalWitness_eq_witness D n v]
+    rw [canonicalWitness_eq_witness_raw D n v]
     exact PaperLogWitnessHull.witness_mem_tensorLogShell D n v
   isUnit v := by
-    rw [canonicalWitness_eq_witness D n v]
+    rw [canonicalWitness_eq_witness_raw D n v]
     exact PaperLogWitnessHull.witness_isUnit D n v
 
 theorem canonicalWitness_eq_witness

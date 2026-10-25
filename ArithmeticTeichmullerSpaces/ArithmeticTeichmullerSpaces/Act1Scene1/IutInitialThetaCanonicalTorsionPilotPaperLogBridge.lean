@@ -51,7 +51,13 @@ structure Data (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
       ‖InitialThetaCanonicalTorsionPilotLogShellSource.qrootAt D s‖
 
 noncomputable def canonical : Data D s where
-  normalizedLog_one_eq_value := rfl
+  normalizedLog_one_eq_value := by
+    have hq : IutInitialThetaQRootFamily.qrootAt D s.1 =
+        (iutInitialThetaOddSupportTorsionQRootSource D).qroot s := by
+      simp [IutInitialThetaQRootFamily.qrootAt, s.2]
+    simp [InitialThetaCanonicalTorsionPilotLogShellSource.normalizedLog,
+      InitialThetaCanonicalTorsionPilotLogShellSource.qrootAt,
+      PaperLogWitnessHull.value, hq]
   normalizedLog_one_mem_logShell :=
     InitialThetaCanonicalTorsionPilotLogShellSource.canonical_normalizedLog_mem_logShell
       D s 1
