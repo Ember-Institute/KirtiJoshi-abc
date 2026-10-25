@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoMultiplication
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoAddition
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoValue
@@ -253,3 +254,21 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #check JoshiTeich.Act1Scene1.WittWeightedDigitMultiplication.value_mul_le
 #check JoshiTeich.Act1Scene1.InitialThetaWittRhoMultiplication.fieldWitt_value_mul_le
 #check JoshiTeich.Act1Scene1.InitialThetaWittRhoMultiplication.value_mul_le
+#check JoshiTeich.Act1Scene1.WittWeightedDigitNegation.norm_digits_map_le_one
+#check JoshiTeich.Act1Scene1.WittWeightedDigitNegation.value_map_le_one
+#check JoshiTeich.Act1Scene1.WittWeightedDigitNegation.value_neg_one_le_one
+#check JoshiTeich.Act1Scene1.WittWeightedDigitNegation.value_neg_le
+#check JoshiTeich.Act1Scene1.WittWeightedDigitNegation.value_neg
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.value_neg
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_nonneg
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_zero
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_one
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_neg
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_eq_zero_iff
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_add_le_max
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_add_le
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_mul_le
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.ringNorm
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.ringNorm_one
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.ringNorm_prime
+#check JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.ringNorm_isNonarchimedean

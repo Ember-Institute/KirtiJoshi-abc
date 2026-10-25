@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoNorm
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoMultiplication
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoAddition
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoValue
@@ -243,3 +244,21 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #print axioms JoshiTeich.Act1Scene1.WittWeightedDigitMultiplication.value_mul_le
 #print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoMultiplication.fieldWitt_value_mul_le
 #print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoMultiplication.value_mul_le
+#print axioms JoshiTeich.Act1Scene1.WittWeightedDigitNegation.norm_digits_map_le_one
+#print axioms JoshiTeich.Act1Scene1.WittWeightedDigitNegation.value_map_le_one
+#print axioms JoshiTeich.Act1Scene1.WittWeightedDigitNegation.value_neg_one_le_one
+#print axioms JoshiTeich.Act1Scene1.WittWeightedDigitNegation.value_neg_le
+#print axioms JoshiTeich.Act1Scene1.WittWeightedDigitNegation.value_neg
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.value_neg
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_nonneg
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_neg
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_add_le_max
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_add_le
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.realValue_mul_le
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.ringNorm
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.ringNorm_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.ringNorm_prime
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoNorm.ringNorm_isNonarchimedean
