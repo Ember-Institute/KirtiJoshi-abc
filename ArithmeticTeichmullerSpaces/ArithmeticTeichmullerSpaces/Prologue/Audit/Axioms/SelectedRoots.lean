@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoValue
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittWeightedDigits
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPositivePilotVolumeNormalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPositivePilotIntegralTensor
@@ -214,3 +215,14 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #print axioms JoshiTeich.Act1Scene1.WittWeightedDigits.value_one
 #print axioms JoshiTeich.Act1Scene1.WittWeightedDigits.value_prime
 #print axioms JoshiTeich.Act1Scene1.WittWeightedDigits.value_mul_prime_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.presentation_nonempty
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.numerator_cross_eq
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.presentation_independent
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.value_eq_of_presentation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.value_inclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.value_zero
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.value_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.value_prime
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.value_lt_top
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.value_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaWittRhoValue.value_mul_prime
