@@ -6444,3 +6444,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-CANONICAL-BRIDGE-COHERENCE` | `CanonicalInput`、`Data`、`ofCanonicalGeometricFontaine`；`Act1Scene1/IutInitialThetaCanonicalBridgeCoherence.lean` | Joshi I `def:geom-base-points`、`lem:perfectoid` 与同一 `InitialThetaData` 产生的 canonical geometric Fontaine bridge。将局部输入的 place identity、link supportedness、系数映射单射、θ 满射和 residue-Frobenius 满射打包为一个一致性命题。 | Scene1/Derived；只证明同一给定输入和 supported place 的局部桥接相容性，不构造 global holomorphoid、跨处 collation、H¹ₑ/BK 或 paper theta-volume。原创证明，无参考代码复制。 |
+
+### 完整核商与 Tate period range 的等价
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-TWISTED-QUOTIENT-PERIOD-RANGE` | `fullPeriodLine_top_iff_fullKernel_eq_periodRange`、`fullQuotient_subsingleton_iff_fullKernel_eq_periodRange`；`Act1Scene1/IutInitialThetaWittTwistedQuotientPeriodRange.lean` | 使用实际 `kernelPeriodMap`、`periodMap` 和完整核定义，证明完整核中 Tate period 直线为顶，当且仅当完整核等于实际有理 Tate period range；再将其等价改写为完整 residual quotient 的 `Subsingleton`。 | Scene1/Derived；直接刻画 `ker(θ|E)=L` 的剩余商障碍，不声称该等式成立，也不证明论文 `B` 或跨来源分类。原载体、拓扑、标量和 R5 保留；原创证明，无参考代码复制。 |
