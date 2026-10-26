@@ -83,5 +83,23 @@ theorem productQuotient_eq_nextFactor_frobenius :
       rw [hφ, factor]
       rw [mul_assoc]
 
+theorem primitiveProductQuotient_ne_zero : primitiveProductQuotient D w ≠ 0 := by
+  intro hzero
+  apply product_ne_zero D w
+  rw [← primitive_mul_productQuotient, hzero, mul_zero]
+
+theorem evaluate_primitiveProductQuotient_ne_zero (ρ : InitialThetaWittAllRadiusCompletion.Radius) :
+    InitialThetaWittAllRadiusCompletion.evaluate D w ρ (primitiveProductQuotient D w) ≠ 0 := by
+  intro h
+  apply primitiveProductQuotient_ne_zero D w
+  exact InitialThetaWittRadiusFaithfulness.evaluate_injective D w ρ
+    (h.trans (map_zero _).symm)
+
+theorem coordinateSeminorm_primitiveProductQuotient_pos
+    (ρ : InitialThetaWittAllRadiusCompletion.Radius) :
+    0 < InitialThetaWittAllRadiusCompletion.coordinateSeminorm D w ρ
+      (primitiveProductQuotient D w) := by
+  exact norm_pos_iff.mpr (evaluate_primitiveProductQuotient_ne_zero D w ρ)
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittNormalizedOrbitProductQuotientFrobenius
