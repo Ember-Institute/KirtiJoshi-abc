@@ -55,5 +55,33 @@ theorem productQuotient_eq_frobenius_scaled :
       rw [factor, InitialThetaWittFrobeniusThetaOrbit.primitiveOrbit_zero]
       ring
 
+theorem productQuotient_eq_nextFactor_frobenius :
+    primitiveProductQuotient D w = factor D w 1 *
+      InitialThetaWittAllRadiusFrobenius.frobeniusEquiv D w
+        (primitiveProductQuotient D w) := by
+  calc
+    primitiveProductQuotient D w =
+        (scaleUnit D w : Carrier D w) *
+          InitialThetaWittAllRadiusFrobenius.frobeniusEquiv D w (product D w) :=
+      productQuotient_eq_frobenius_scaled D w
+    _ = (scaleUnit D w : Carrier D w) *
+        InitialThetaWittAllRadiusFrobenius.frobeniusEquiv D w
+          (primitive D w * primitiveProductQuotient D w) := by
+      rw [primitive_mul_productQuotient]
+    _ = factor D w 1 *
+        InitialThetaWittAllRadiusFrobenius.frobeniusEquiv D w
+          (primitiveProductQuotient D w) := by
+      rw [map_mul]
+      change (scaleUnit D w : Carrier D w) *
+          (InitialThetaWittAllRadiusFrobenius.frobeniusEquiv D w (primitive D w) *
+            InitialThetaWittAllRadiusFrobenius.frobeniusEquiv D w
+              (primitiveProductQuotient D w)) = _
+      have hφ : InitialThetaWittAllRadiusFrobenius.frobeniusEquiv D w
+          (primitive D w) = InitialThetaWittFrobeniusThetaOrbit.primitiveOrbit D w 1 := by
+        rw [← InitialThetaWittFrobeniusThetaOrbit.primitiveOrbit_zero,
+          ← InitialThetaWittFrobeniusThetaOrbit.primitiveOrbit_succ]
+      rw [hφ, factor]
+      rw [mul_assoc]
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittNormalizedOrbitProductQuotientFrobenius
