@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittTwistedTatePeriod
+import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Quotient
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-WITT-TWISTED-QUOTIENT
@@ -152,6 +153,80 @@ theorem quotientLinearEquiv_symm_mkQ (y : Twisted D w) :
     (quotientLinearEquiv D w).symm ((twistedPeriodLine D w).mkQ y) =
       (fullPeriodLine D w).mkQ (productLinear D w y) :=
   quotientProductMap_mkQ D w y
+
+def inverseProductContinuousLinear : Full D w →L[Scalars D w] Twisted D w :=
+  (productContinuousLinearEquiv D w).symm
+
+def productContinuousLinear : Twisted D w →L[Scalars D w] Full D w :=
+  productContinuousLinearEquiv D w
+
+def quotientInverseProductContinuous :
+    (Full D w ⧸ fullPeriodLine D w) →L[Scalars D w]
+      (Twisted D w ⧸ twistedPeriodLine D w) :=
+  (fullPeriodLine D w).liftQL
+    ((twistedPeriodLine D w).mkQL.comp (inverseProductContinuousLinear D w))
+    (inverseProduct_kernel D w)
+
+theorem quotientInverseProductContinuous_mkQ (x : Full D w) :
+    quotientInverseProductContinuous D w ((fullPeriodLine D w).mkQ x) =
+      (twistedPeriodLine D w).mkQ (inverseProductLinear D w x) := by
+  change quotientInverseProductMap D w ((fullPeriodLine D w).mkQ x) = _
+  exact quotientInverseProductMap_mkQ D w x
+
+theorem quotientInverseProductContinuous_eq :
+    (quotientInverseProductContinuous D w :
+      (Full D w ⧸ fullPeriodLine D w) → (Twisted D w ⧸ twistedPeriodLine D w)) =
+      (quotientLinearEquiv D w).toFun := by
+  funext x
+  obtain ⟨x, rfl⟩ := (fullPeriodLine D w).mkQ_surjective x
+  exact (quotientInverseProductContinuous_mkQ D w x).trans
+    (quotientLinearEquiv_mkQ D w x).symm
+
+def quotientProductContinuous :
+    (Twisted D w ⧸ twistedPeriodLine D w) →L[Scalars D w]
+      (Full D w ⧸ fullPeriodLine D w) :=
+  (twistedPeriodLine D w).liftQL
+    ((fullPeriodLine D w).mkQL.comp (productContinuousLinear D w))
+    (product_kernel D w)
+
+theorem quotientProductContinuous_mkQ (y : Twisted D w) :
+    quotientProductContinuous D w ((twistedPeriodLine D w).mkQ y) =
+      (fullPeriodLine D w).mkQ (productLinear D w y) := by
+  change quotientProductMap D w ((twistedPeriodLine D w).mkQ y) = _
+  exact quotientProductMap_mkQ D w y
+
+theorem quotientProductContinuous_eq :
+    (quotientProductContinuous D w :
+      (Twisted D w ⧸ twistedPeriodLine D w) → (Full D w ⧸ fullPeriodLine D w)) =
+      (quotientLinearEquiv D w).symm.toFun := by
+  funext y
+  obtain ⟨y, rfl⟩ := (twistedPeriodLine D w).mkQ_surjective y
+  exact (quotientProductContinuous_mkQ D w y).trans
+    (quotientLinearEquiv_symm_mkQ D w y).symm
+
+def quotientContinuousLinearEquiv :
+    (Full D w ⧸ fullPeriodLine D w) ≃L[Scalars D w]
+      (Twisted D w ⧸ twistedPeriodLine D w) :=
+  ContinuousLinearEquiv.mk (quotientLinearEquiv D w)
+    (by
+      refine (fullPeriodLine D w).isQuotientMap_mkQL.continuous_iff.mpr ?_
+      convert (quotientInverseProductContinuous D w).continuous.comp
+        (fullPeriodLine D w).continuous_mkQ using 1
+      funext x
+      exact (quotientLinearEquiv_mkQ D w x).symm.trans
+        (quotientInverseProductContinuous_mkQ D w x))
+    (by
+      refine (twistedPeriodLine D w).isQuotientMap_mkQL.continuous_iff.mpr ?_
+      convert (quotientProductContinuous D w).continuous.comp
+        (twistedPeriodLine D w).continuous_mkQ using 1
+      funext y
+      exact (quotientLinearEquiv_symm_mkQ D w y).symm.trans
+        (quotientProductContinuous_mkQ D w y))
+
+theorem quotientContinuousLinearEquiv_mkQ (x : Full D w) :
+    quotientContinuousLinearEquiv D w ((fullPeriodLine D w).mkQ x) =
+      (twistedPeriodLine D w).mkQ (inverseProductLinear D w x) :=
+  quotientLinearEquiv_mkQ D w x
 
 theorem quotient_subsingleton_iff_fullPeriodLine_eq_top :
     (Subsingleton (Full D w ⧸ fullPeriodLine D w)) ↔ fullPeriodLine D w = ⊤ := by
