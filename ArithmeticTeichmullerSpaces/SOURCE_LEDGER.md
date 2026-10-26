@@ -6462,3 +6462,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-TATE-BANACH-QUOTIENT-FULL-KERNEL` | `tateLine_mem_iff_periodMap_range`、`eigenKernel_eq_tateLine_iff_fullKernel_eq_periodMapRange`、`quotientEvaluation_injective_iff_fullKernel_eq_periodMapRange`；`Act1Scene1/IutInitialThetaWittTateBanachQuotientFullKernel.lean` | 结合实际 Tate Banach 商、`eigenEvaluation` 的 fullKernel 识别和 `eigenPeriodMap`，证明 Tate 商求值单射，当且仅当完整实际 θ 核等于有理 Tate period range。 | Scene1/Derived；这是 Joshi II 正合序列目标在当前实际载体上的精确等价，不声称单射性或完整 Tate 核身份已经成立。未识别论文 `B` 或跨来源比较；原创证明，无参考代码复制。 |
+
+### 条件性 Tate Banach 商线性等价
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-TATE-BANACH-QUOTIENT-EQUIV` | `quotientEvaluationLinearEquiv_apply`、`quotientEvaluationLinearEquiv_exists_iff`；`Act1Scene1/IutInitialThetaWittTateBanachQuotientEquiv.lean` | 在显式条件 `fullKernel = periodMap.range` 下，使用实际 quotient evaluation 的满射性和单射性构造 `ℚₚ` 线性等价；反向证明任何与 quotient evaluation 相同的线性等价都强制该 full-kernel 身份。 | Scene1/Derived；严格保留为代数线性等价，不宣称当前商的拓扑等价或 full-kernel 身份已成立。原载体、标量和 R5 保留；原创证明，无参考代码复制。 |
