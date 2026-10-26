@@ -6456,3 +6456,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-EIGEN-EVALUATION-FULL-KERNEL` | `eigenEvaluation_zero_iff_fullKernel`、`eigenEvaluation_kernel_val_eq_fullKernel`；`Act1Scene1/IutInitialThetaWittEigenEvaluationFullKernel.lean` | 使用实际 `eigenEvaluation`、`frobeniusPrimeSubmodule` 和完整核定义，证明 eigenEvaluation 的零点恰好是完整特征 θ 核；同时证明其底层值像等于 `fullKernel`。 | Scene1/Derived；只识别实际载体上的 kernel，不证明 Tate period range 等于该 kernel，也不完成商求值单射性。原拓扑、标量和 R5 保留；原创证明，无参考代码复制。 |
+
+### Tate Banach 商求值与完整核身份
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-TATE-BANACH-QUOTIENT-FULL-KERNEL` | `tateLine_mem_iff_periodMap_range`、`eigenKernel_eq_tateLine_iff_fullKernel_eq_periodMapRange`、`quotientEvaluation_injective_iff_fullKernel_eq_periodMapRange`；`Act1Scene1/IutInitialThetaWittTateBanachQuotientFullKernel.lean` | 结合实际 Tate Banach 商、`eigenEvaluation` 的 fullKernel 识别和 `eigenPeriodMap`，证明 Tate 商求值单射，当且仅当完整实际 θ 核等于有理 Tate period range。 | Scene1/Derived；这是 Joshi II 正合序列目标在当前实际载体上的精确等价，不声称单射性或完整 Tate 核身份已经成立。未识别论文 `B` 或跨来源比较；原创证明，无参考代码复制。 |
