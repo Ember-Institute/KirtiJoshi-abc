@@ -6372,3 +6372,12 @@ Acceptance (2026-10-21):
 | Axioms.SceneBounds | 0 | 137.341 | 9,461,592 |
 
 The first two leaf attempts were ordinary zero-coefficient simplification/API failures; the final leaf and aggregate logs were empty. Twenty-six new public declarations were checked individually and axiom-audited; dependencies used only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. Static import audit covered 565 reachable project modules, with no forbidden imports or proof holes. CPU 0--13, LEAN_NUM_THREADS=10, Lean -j1, one worker; RSS sampled every 0.5 seconds with an 85 GiB stop. No heartbeat timeout or override occurred, and no Mathlib compilation was performed. Evidence: `/tmp/scene1-local-laws-IutInitialThetaBoundedWittRhoBound.log`, `/tmp/scene1-local-laws-Act1Scene1.log`, `/tmp/scene1-local-laws-SceneBounds.log`, `/tmp/scene1-bounded-ops-static.json`.
+# JT-SCENE1-INITIAL-THETA-WITT-NORMALIZED-ORBIT-FACTOR-FROBENIUS
+
+`Act1Scene1/IutInitialThetaWittNormalizedOrbitFactorFrobenius.lean`：
+`frobenius_primeUnit`、`frobenius_scaleUnit`、`frobenius_factor`。
+来源为 Joshi II `se:ff-rings`、`pr:primitive-elements1`、`pr:teichmuller-lift-A`。
+证明实际 Frobenius 固定嵌入的 residue prime，并将归一化 primitive orbit factor
+`f_n=(-p^{-1})·φ^n(ξ)` 移到 `f_(n+1)`。这是已验收的局部 shift law；不声称
+无穷乘积整体 Frobenius 方程、Tate period 识别或完整 kernel 身份。
+状态：Scene1/Derived；原创 proof term，无参考代码复制。
