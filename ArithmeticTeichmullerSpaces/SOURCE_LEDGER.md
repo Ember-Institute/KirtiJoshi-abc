@@ -6432,3 +6432,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-TWISTED-QUOTIENT-COMPLETE` | `fullComplete`、`twistedComplete`、`fullHausdorff`、`twistedHausdorff`、`fullCompleteSpace`、`twistedCompleteSpace`；`Act1Scene1/IutInitialThetaWittTwistedQuotientComplete.lean` | 原共同环已有完备 Hausdorff 拓扑；前一单元证明完整核与带因子 Frobenius 解空间均为闭子空间。由闭子空间完备性，得到两个实际子空间的 `CompleteSpace` 和 `T2Space` 实例。 | Scene1/Derived；只证明两个实际子空间的完备性，不把当前尚无统一结构实例的商空间宣称为完备。未证明有限维性、商消失或 Tate 分类；原载体、拓扑和 R5 保留。原创证明，无参考代码复制。 |
+
+### 剩余分类商的平凡性等价
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-TWISTED-QUOTIENT-CLASSIFICATION` | `quotient_subsingleton_iff_eq_top`、`twistedQuotient_subsingleton_iff_surjective`、`twistedQuotient_subsingleton_iff_unique_scalar`、`residualQuotients_subsingleton_iff`、`fullQuotient_subsingleton_iff_unique_scalar`；`Act1Scene1/IutInitialThetaWittTwistedQuotientClassification.lean` | 对任意线性商证明商为平凡类型当且仅当子模为顶；应用于实际带因子解空间，得到其剩余商平凡当且仅当 `twistedPeriodMap` 满射，当且仅当每个解都是非零 canonical solution 的唯一 `ℚₚ` 标量倍。连续商等价进一步给出完整核商与带因子解商的平凡性等价。 | Scene1/Derived；只建立分类目标的精确等价，不声称任一等价条件已经成立。未证明完整核身份、有限维性或论文 `B`。原载体、拓扑、标量和 R5 保留；原创证明，无参考代码复制。 |
