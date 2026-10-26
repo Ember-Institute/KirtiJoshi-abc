@@ -6450,3 +6450,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-TWISTED-QUOTIENT-PERIOD-RANGE` | `fullPeriodLine_top_iff_fullKernel_eq_periodRange`、`fullQuotient_subsingleton_iff_fullKernel_eq_periodRange`；`Act1Scene1/IutInitialThetaWittTwistedQuotientPeriodRange.lean` | 使用实际 `kernelPeriodMap`、`periodMap` 和完整核定义，证明完整核中 Tate period 直线为顶，当且仅当完整核等于实际有理 Tate period range；再将其等价改写为完整 residual quotient 的 `Subsingleton`。 | Scene1/Derived；直接刻画 `ker(θ|E)=L` 的剩余商障碍，不声称该等式成立，也不证明论文 `B` 或跨来源分类。原载体、拓扑、标量和 R5 保留；原创证明，无参考代码复制。 |
+
+### 实际 eigenEvaluation 的完整核识别
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-EIGEN-EVALUATION-FULL-KERNEL` | `eigenEvaluation_zero_iff_fullKernel`、`eigenEvaluation_kernel_val_eq_fullKernel`；`Act1Scene1/IutInitialThetaWittEigenEvaluationFullKernel.lean` | 使用实际 `eigenEvaluation`、`frobeniusPrimeSubmodule` 和完整核定义，证明 eigenEvaluation 的零点恰好是完整特征 θ 核；同时证明其底层值像等于 `fullKernel`。 | Scene1/Derived；只识别实际载体上的 kernel，不证明 Tate period range 等于该 kernel，也不完成商求值单射性。原拓扑、标量和 R5 保留；原创证明，无参考代码复制。 |
