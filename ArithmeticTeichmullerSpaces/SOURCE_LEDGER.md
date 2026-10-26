@@ -6381,3 +6381,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 `f_n=(-p^{-1})·φ^n(ξ)` 移到 `f_(n+1)`。这是已验收的局部 shift law；不声称
 无穷乘积整体 Frobenius 方程、Tate period 识别或完整 kernel 身份。
 状态：Scene1/Derived；原创 proof term，无参考代码复制。
+
+### Theta-kernel membership of the normalized Frobenius orbit product
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-NORMALIZED-ORBIT-PRODUCT-THETA-KERNEL` | `evaluation_factor_zero`, `evaluation_partialProduct_eq_zero_eventually`, `evaluation_product_eq_zero`, `existsUnique_primitive_product_quotient`; `Act1Scene1/IutInitialThetaWittNormalizedOrbitProductThetaKernel.lean` | The initial normalized factor is a unit multiple of the actual primitive Fontaine-kernel element. Hence every nonempty finite partial product evaluates to zero. Continuity of the original common-ring theta evaluation passes this to the convergent nonzero infinite product; the previously proved completed kernel identity supplies a unique primitive quotient. | Scene1/Derived; the orbit product is in the actual theta kernel and uniquely primitive-divisible. No Tate-period identification or full Frobenius-eigen kernel identity is asserted. Original proof; no reference code copied. |
