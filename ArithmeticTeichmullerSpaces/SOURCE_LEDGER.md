@@ -6387,3 +6387,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-NORMALIZED-ORBIT-PRODUCT-THETA-KERNEL` | `evaluation_factor_zero`, `evaluation_partialProduct_eq_zero_eventually`, `evaluation_product_eq_zero`, `existsUnique_primitive_product_quotient`; `Act1Scene1/IutInitialThetaWittNormalizedOrbitProductThetaKernel.lean` | The initial normalized factor is a unit multiple of the actual primitive Fontaine-kernel element. Hence every nonempty finite partial product evaluates to zero. Continuity of the original common-ring theta evaluation passes this to the convergent nonzero infinite product; the previously proved completed kernel identity supplies a unique primitive quotient. | Scene1/Derived; the orbit product is in the actual theta kernel and uniquely primitive-divisible. No Tate-period identification or full Frobenius-eigen kernel identity is asserted. Original proof; no reference code copied. |
+
+### Frobenius equation for the normalized orbit product
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-NORMALIZED-ORBIT-PRODUCT-FINITE-FROBENIUS` | `finite_frobenius_shift`, `product_frobenius_mul_factor_zero`; `Act1Scene1/IutInitialThetaWittNormalizedOrbitProductFiniteFrobenius.lean` | A finite `range` product identity follows from the local factor shift `φ(fₙ)=fₙ₊₁` and `Finset.prod_range_succ'`. The finite identity passes to the limit because the original partial products converge in the common ring, Frobenius is continuous, and multiplication is continuous there. | Scene1/Derived; proves `φ(P)·f₀=P` for the actual normalized orbit product. This uses no infinite-product rearrangement, and does not identify `P` with a Tate period or close the full φ=p kernel. Original proof; no reference code copied. |
