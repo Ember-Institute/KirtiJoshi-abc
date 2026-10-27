@@ -6468,3 +6468,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-TATE-BANACH-QUOTIENT-EQUIV` | `quotientEvaluationLinearEquiv_apply`、`quotientEvaluationLinearEquiv_exists_iff`；`Act1Scene1/IutInitialThetaWittTateBanachQuotientEquiv.lean` | 在显式条件 `fullKernel = periodMap.range` 下，使用实际 quotient evaluation 的满射性和单射性构造 `ℚₚ` 线性等价；反向证明任何与 quotient evaluation 相同的线性等价都强制该 full-kernel 身份。 | Scene1/Derived；严格保留为代数线性等价，不宣称当前商的拓扑等价或 full-kernel 身份已成立。原载体、标量和 R5 保留；原创证明，无参考代码复制。 |
+
+### Canonical actual hull 到 Scene1Input 的字段相容性
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-SCENE1-COHERENCE` | `S`、`L`、`toCanonicalInput_placeData`、`toCanonicalInput_bridge`、`scene1Input_link_eq`、`scene1Input_bridge_eq`、`scene1Input_perfectoidBridge_eq`、`scene1Input_volumeTransfer_eq`；`Act1Scene1/IutInitialThetaCanonicalActualHullScene1Coherence.lean` | 记录实际 arithmetic/Haar hull 通过 canonical input constructor 进入 Scene1Input 时，canonical link、place、bridge、perfectoid law 和 volume-transfer 字段保持同一来源。 | Scene1/Derived；这是字段保真与来源一致性，不构造新的 analytic law、global producer 或 paper identity。原 R5 保留；原创证明，无参考代码复制。 |
