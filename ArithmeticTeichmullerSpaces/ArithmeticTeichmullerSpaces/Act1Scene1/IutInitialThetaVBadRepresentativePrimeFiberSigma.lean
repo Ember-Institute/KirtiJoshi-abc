@@ -4,11 +4,14 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPaperVossPrimeFiber
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-VBAD-REPRESENTATIVE-PRIME-FIBER-SIGMA
 source: the actual VBad section representative image, its prime fibers, and
-the finite odd semistable carrier; Joshi III 1028--1055.
+the finite odd semistable carrier; Joshi III `ss:theta-data-fixing2` and
+`ss:val-sets-defn`, 1028--1055.
 fidelity: decomposes the concrete VBad representative image by rational
 residue characteristic and transports its cardinality to a finite Sigma of
-actual prime fibers. This is an actual finite-carrier identity and does not
-identify the image with paper `L'` representatives.
+actual prime fibers. Identifies those fibers with the existing concrete
+section/Voss representative image fibers and recovers the VBad cardinality
+as the sum of their actual multiplicities. This is an actual finite-carrier
+identity and does not identify the image with paper `L'` representatives.
 boundary: Scene1/Derived; omitted mass and mixed-moduli descent remain open.
 -/
 
@@ -86,10 +89,67 @@ theorem representativeImage_card_eq_primeFiber_sum :
   rw [Fintype.card_congr (representativeImagePrimeFiberSigmaEquiv D),
     Fintype.card_sigma]
 
+noncomputable def representativePrimeFiberImageEquiv (p : ℕ) :
+    RepresentativePrimeFiber D p ≃
+      iutInitialThetaVBadRepresentativePrimeFiberImageType D p := by
+  classical
+  refine Equiv.ofBijective
+    (fun w => by
+      let v := Classical.choose w.1.2
+      have hv : iutInitialThetaVBadSectionRepresentative D v = w.1.1 :=
+        Classical.choose_spec w.1.2
+      have hvoss : iutInitialThetaVBadSectionRepresentative D v ∈
+          iutInitialThetaSectionVoss D :=
+        iutInitialThetaVBadSectionRepresentative_mem_sectionVoss D v
+      rw [hv] at hvoss
+      refine ⟨⟨w.1.1, ⟨hvoss, w.2⟩⟩, ?_⟩
+      let vf : iutInitialThetaVBadRepresentativePrimeFiber D p :=
+        ⟨v, by simpa [hv] using w.2⟩
+      refine ⟨vf, ?_⟩
+      apply Subtype.ext
+      exact hv) ?_
+  constructor
+  · intro w₁ w₂ h
+    apply Subtype.ext
+    apply Subtype.ext
+    exact congrArg (fun x => x.1.1) h
+  · intro w
+    let v := Classical.choose w.2
+    have hvmap : iutInitialThetaVBadRepresentativePrimeFiberMap D p v = w.1 :=
+      Classical.choose_spec w.2
+    have hvplace : iutInitialThetaVBadSectionRepresentative D v.1 = w.1.1 := by
+      exact congrArg Subtype.val hvmap
+    let rw : RepresentativeImage D :=
+      ⟨w.1.1, ⟨v.1, hvplace⟩⟩
+    refine ⟨⟨rw, w.1.2.2⟩, ?_⟩
+    apply Subtype.ext
+    apply Subtype.ext
+    rfl
+
+theorem representativeImage_card_eq_primeFiberImageType_sum :
+    Fintype.card (RepresentativeImage D) =
+      ∑ p : RepresentativePrimeSupportType D,
+        Fintype.card
+          (iutInitialThetaVBadRepresentativePrimeFiberImageType D p.1) := by
+  rw [representativeImage_card_eq_primeFiber_sum D]
+  apply Finset.sum_congr rfl
+  intro p hp
+  exact Fintype.card_congr (representativePrimeFiberImageEquiv D p)
+
 theorem representativeImage_card_eq_vbad_card :
     Fintype.card (RepresentativeImage D) =
       Fintype.card (iutInitialThetaVBadModuliFinset D) :=
   iutInitialThetaVBadSectionRepresentativeImage_card D
+
+theorem vbad_card_eq_primeMultiplicity_sum :
+    Fintype.card (iutInitialThetaVBadModuliFinset D) =
+      ∑ p : RepresentativePrimeSupportType D,
+        iutInitialThetaVBadRepresentativePrimeMultiplicity D p.1 := by
+  rw [← representativeImage_card_eq_vbad_card D,
+    representativeImage_card_eq_primeFiberImageType_sum D]
+  apply Finset.sum_congr rfl
+  intro p hp
+  exact iutInitialThetaVBadRepresentativePrimeFiberImage_card D p.1
 
 end
 end JoshiTeich.Act1Scene1

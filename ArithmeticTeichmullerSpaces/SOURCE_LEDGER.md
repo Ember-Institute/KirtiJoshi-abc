@@ -6525,7 +6525,7 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
-| `JT-SCENE1-CANONICAL-ACTUAL-HULL-RAW-MARGIN` | `Target`、`Volume`、`qLogSum_lt_vbadPaperSum`、`exp_neg_ellStar_mul_vbadPaperSum_lt_qProduct`、`exp_neg_ellStar_mul_vbadPaperSum_lt_thetaVolume`；`Act1Scene1/IutInitialThetaCanonicalActualHullRawMargin.lean` | 在显式 `Module.finrank ℚ D.F = 1` 条件下，使用 raw qLogSum 的 degree accounting、`VBadSelectedPaper.referenceAbsLogQ_lt_paperSum`、qProduct 指数归一化和 actual hull 的 qProduct 下界，证明 `qLogSum < paperSum`，并推出 `exp(-ellStar * paperSum) < qProduct < thetaVolume`。 | Scene1/Derived；这是 actual VBad carrier 上的条件性严格 margin，不识别 paper `L'` carrier、paper thetaVolume 或 global producer，也不关闭 G1–G4 父义务。原创证明，无参考代码复制。 |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-RAW-MARGIN` | `Target`、`Volume`、`qLogSum_lt_vbadPaperSum`、`exp_neg_ellStar_mul_vbadPaperSum_lt_qProduct`、`exp_neg_ellStar_mul_vbadPaperSum_lt_thetaVolume`；`Act1Scene1/IutInitialThetaCanonicalActualHullRawMargin.lean` | 在显式 `Module.finrank ℚ D.F = 1` 条件下，使用 raw qLogSum 的 degree accounting、`VBadSelectedPaper.referenceAbsLogQ_lt_paperSum`、qProduct 指数归一化和 actual hull 的 qProduct 下界，证明 `qLogSum < paperSum`，并推出 `exp(-ellStar * paperSum) < qProduct ≤ thetaVolume`。 | Scene1/Derived；这是 actual VBad carrier 上的条件性严格 margin，不识别 paper `L'` carrier、paper thetaVolume 或 global producer，也不关闭 G1–G4 父义务。原创证明，无参考代码复制。 |
 
 验收（2026-10-27）：最终叶、`Act1Scene1` 聚合、`Checks/SelectedRoots`、`Axioms/SelectedRoots` 与 `ImportAudit` 均退出 0；新增声明公理仅含 `propext`、`Classical.choice`、`Quot.sound`，未发现 `sorryAx`、禁用导入或 proof hole；本单元未变更父义务复选框。
 
@@ -6536,3 +6536,13 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | `JT-SCENE1-INITIAL-THETA-VBAD-REPRESENTATIVE-PRIME-FIBER-SIGMA` | `RepresentativeImage`、`RepresentativePrimeSupport`、`RepresentativePrimeFiber`、`representativeImagePrimeFiberSigmaEquiv`、`representativeImage_card_eq_primeFiber_sum`、`representativeImage_card_eq_vbad_card`；`Act1Scene1/IutInitialThetaVBadRepresentativePrimeFiberSigma.lean` | 由 actual `VBad` section representative image 按 rational residue characteristic 构造有限 Sigma 等价，证明 image cardinality 是各 concrete prime fiber cardinality 之和，并与原 `VBad` moduli carrier 等势。 | Scene1/Derived；这是 actual section/Voss representative image 的有限会计，不识别 paper `L'`、paper multiplicity、omitted mass 或 mixed-moduli descent。原创证明，无参考代码复制。 |
 
 验收（2026-10-27）：最终叶退出 0，99.18 秒，峰值 RSS 8,252,348 KiB；`Act1Scene1`、`Checks/SelectedRoots`、`Axioms/SelectedRoots` 与 `ImportAudit` 均退出 0；新增声明公理仅含 `propext`、`Classical.choice`、`Quot.sound`；未发现 `sorryAx`、禁用导入或 proof hole；本单元未变更父义务复选框。
+
+### Actual VBad prime fibers 到 concrete image multiplicity 的连接
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-VBAD-PRIME-FIBER-IMAGE-MULTIPLICITY` | `representativePrimeFiberImageEquiv`、`representativeImage_card_eq_primeFiberImageType_sum`、`vbad_card_eq_primeMultiplicity_sum`；`Act1Scene1/IutInitialThetaVBadRepresentativePrimeFiberSigma.lean` | Joshi III `ss:theta-data-fixing2`、`ss:val-sets-defn`（1028–1055）及本工程 actual section/Voss representative 的同源有限载体。将 representative image 的 residue-characteristic fiber 与既有 concrete section/Voss representative fiber image 构造成等价；消费该等价和已证 Sigma 会计，得到 image 基数的 concrete fiber-image 和式，再由既有 image/source multiplicity 定理得到 VBad 基数等于逐素数 actual multiplicity 之和。 | Scene1/Derived；给定同一 `InitialThetaData`，未增加数学假设或 producer law；这只闭合两种 actual prime-fiber 表示及其计数的连接，不识别 paper `L'`、paper multiplicity、omitted mass 或 mixed-moduli descent。Prologue R5 和 15 项开放父义务均保留。原创证明，无参考代码复制。 |
+
+构建记录（2026-10-27）：首轮叶检查退出 1，121 秒，峰值进程组 RSS 9,182,572 KiB；两处 subtype 等式层级不匹配，分别改为消费选出的 representative 等式和只取一层 `Subtype.val`。修正并接入 multiplicity consumer 后，最终叶在默认 heartbeat 下退出 0，107 秒，峰值 9,196,860 KiB。使用冻结 Lean/mathlib、CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1` 与现有 `.olean` 缓存，未重编译 Mathlib。
+
+最终验收：`Checks/SelectedRoots` 退出 0，138 秒，峰值进程组 RSS 9,324,908 KiB；`Axioms/SelectedRoots` 退出 0，135 秒，9,324,408 KiB；`Act1Scene1` 聚合退出 0，135 秒，9,399,908 KiB；`ImportAudit` 退出 0，120 秒，9,349,728 KiB。进程组和并行 Lean/Lake 合计 RSS 每 0.5 秒采样；合计采样峰值 26,266,216 KiB，未触及 85 GiB 停止线。新增三项声明的公理输出逐名核对，只含 `propext`、`Classical.choice`、`Quot.sound`。叶源码无 proof hole，递归检查的 209 个项目模块未发现禁用导入；`git diff --check` 通过，15 项父义务复选框未变。另据 raw-margin 源码的 `trans_le` 修正前一条台账中的不等式记录为 `exp(-ellStar * paperSum) < qProduct ≤ thetaVolume`，不增加严格上界声明。

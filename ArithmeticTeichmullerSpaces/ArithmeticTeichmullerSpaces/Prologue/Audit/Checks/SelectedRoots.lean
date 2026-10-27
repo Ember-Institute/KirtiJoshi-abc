@@ -1566,3 +1566,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #check JoshiTeich.Act1Scene1.representativeImagePrimeFiberSigmaEquiv
 #check JoshiTeich.Act1Scene1.representativeImage_card_eq_primeFiber_sum
 #check JoshiTeich.Act1Scene1.representativeImage_card_eq_vbad_card
+
+#check JoshiTeich.Act1Scene1.representativePrimeFiberImageEquiv
+#check JoshiTeich.Act1Scene1.representativeImage_card_eq_primeFiberImageType_sum
+#check JoshiTeich.Act1Scene1.vbad_card_eq_primeMultiplicity_sum

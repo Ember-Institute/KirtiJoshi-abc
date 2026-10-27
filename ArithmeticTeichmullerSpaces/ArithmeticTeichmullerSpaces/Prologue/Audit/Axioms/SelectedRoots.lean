@@ -1556,3 +1556,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #print axioms JoshiTeich.Act1Scene1.representativeImagePrimeFiberSigmaEquiv
 #print axioms JoshiTeich.Act1Scene1.representativeImage_card_eq_primeFiber_sum
 #print axioms JoshiTeich.Act1Scene1.representativeImage_card_eq_vbad_card
+
+#print axioms JoshiTeich.Act1Scene1.representativePrimeFiberImageEquiv
+#print axioms JoshiTeich.Act1Scene1.representativeImage_card_eq_primeFiberImageType_sum
+#print axioms JoshiTeich.Act1Scene1.vbad_card_eq_primeMultiplicity_sum
