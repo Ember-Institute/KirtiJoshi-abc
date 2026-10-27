@@ -6480,3 +6480,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-SUMMARY` | `Target`、`QVolume`、`QFamily`、`Data`、`ofCanonicalActualHull`；`Act1Scene1/IutInitialThetaCanonicalActualHullSummary.lean` | 将同一显式 `AnalyticInput` 下已证明的 canonical link、thetaVolume、q-product 下界、volume normalization、transfer log bound 和条件性 Corollary 3.12 打包为一个 summary。 | Scene1/Derived；summary 不产生 analytic input，不识别 paper theta locus，也不关闭 G1–G4 父义务。原载体、R5 和显式输入边界保留；原创证明，无参考代码复制。 |
+
+### Canonical actual hull 的 q-product 指数归一化
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-QPRODUCT-NORMALIZATION` | `Target`、`Volume`、`qProduct_eq_exp_neg_ellStar_mul_qLogSum`；`Act1Scene1/IutInitialThetaCanonicalActualHullQProductNormalization.lean` | 对 canonical actual-hull target 使用正 qFactor、qLogTerm 定义和一般 q-product accounting，证明 `qProduct = exp(-ellStar * qLogSum)`。 | Scene1/Derived；这是当前 target 内部的 raw q-product 归一化，不识别 paper normalization，也不关闭 G1 的跨 carrier 归一化义务。原创证明，无参考代码复制。 |

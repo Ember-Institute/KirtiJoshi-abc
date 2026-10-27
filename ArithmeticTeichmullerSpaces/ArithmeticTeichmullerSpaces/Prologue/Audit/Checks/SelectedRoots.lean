@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQProductNormalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullSummary
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullScene1Coherence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittTateBanachQuotientEquiv
@@ -1513,3 +1514,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.Summary.QFamily
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.Summary.Data
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.Summary.ofCanonicalActualHull
+
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.QProductNormalization.Target
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.QProductNormalization.Volume
+
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.QProductNormalization.qProduct_eq_exp_neg_ellStar_mul_qLogSum
