@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullVolumeSign
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQLogSumSign
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullSideConditions
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQProductBounds
@@ -1536,3 +1537,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.QLogSumSign.Target
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.QLogSumSign.Volume
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.QLogSumSign.qLogSum_pos
+
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.Target
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.Volume
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.thetaVolume_le_one
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.log_thetaVolume_nonpos
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.abs_log_thetaVolume_eq_neg_log
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.volumeBound
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.corollary312_of_volumeBound

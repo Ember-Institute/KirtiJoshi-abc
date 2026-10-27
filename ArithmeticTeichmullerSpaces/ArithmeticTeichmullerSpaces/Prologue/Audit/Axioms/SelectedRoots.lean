@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullVolumeSign
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQLogSumSign
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullSideConditions
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQProductBounds
@@ -1526,3 +1527,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.QLogSumSign.Target
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.QLogSumSign.Volume
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.QLogSumSign.qLogSum_pos
+
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.Target
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.Volume
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.thetaVolume_le_one
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.log_thetaVolume_nonpos
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.abs_log_thetaVolume_eq_neg_log
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.volumeBound
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.VolumeSign.corollary312_of_volumeBound

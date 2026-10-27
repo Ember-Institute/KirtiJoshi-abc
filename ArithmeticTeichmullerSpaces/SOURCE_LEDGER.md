@@ -6504,3 +6504,11 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-QLOGSUM-SIGN` | `Target`、`Volume`、`qLogSum_pos`；`Act1Scene1/IutInitialThetaCanonicalActualHullQLogSumSign.lean` | 由非空 actual Tate-place index、每个 qFactor 属于 `(0,1)` 和 qLogTerm 的定义，证明 canonical raw target 的 `qLogSum > 0`。 | Scene1/Derived；这是 raw target 的内部符号结果，不替代 paper qLogTerm 约定或跨 carrier normalization。原创证明，无参考代码复制。 |
+
+### Canonical actual hull 的 thetaVolume 符号桥与 volume-bound consumer
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-VOLUME-SIGN` | `Target`、`Volume`、`thetaVolume_le_one`、`log_thetaVolume_nonpos`、`abs_log_thetaVolume_eq_neg_log`、`volumeBound`、`corollary312_of_volumeBound`；`Act1Scene1/IutInitialThetaCanonicalActualHullVolumeSign.lean` | 使用 canonical target 的 `thetaVolume = hullVolume` 字段等式和实际 generated-hull 的 `volume_le_one`，把 `thetaVolume ≤ 1`、`log thetaVolume ≤ 0` 及绝对值符号桥接到同一 target；再将 qFactor 正性、qFactor 上界、qLogTerm 定义、thetaVolume 上界和 qProduct 下界组装为 `Corollary312VolumeBound`，消费一般 `VolumeBridge`。 | Scene1/Derived；只闭合给定 `AnalyticInput` 下的 actual target 符号和条件性 volume consumer，不识别 paper theta locus，不构造 arithmetic-seed producer，也不关闭 G1–G4 父义务。原创证明，无参考代码复制。 |
+
+验收（2026-10-27）：最终叶 `IutInitialThetaCanonicalActualHullVolumeSign` 退出 0，111.98 秒，峰值 RSS 8,258,884 KiB；`Act1Scene1` 聚合退出 0，119.44 秒，峰值 RSS 8,472,012 KiB；`Checks/SelectedRoots` 退出 0，121.53 秒，峰值 RSS 8,372,292 KiB；`Axioms/SelectedRoots` 退出 0，114.33 秒，峰值 RSS 8,373,224 KiB；`ImportAudit` 退出 0，121.45 秒，峰值 RSS 8,472,232 KiB。新增声明的公理输出仅含 `propext`、`Classical.choice`、`Quot.sound`；未发现 `sorryAx`、禁用导入或 proof hole；本单元未变更父义务复选框。
