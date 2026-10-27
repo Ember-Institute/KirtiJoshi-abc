@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullRawMargin
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullStrictVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullVolumeSign
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQLogSumSign
@@ -1541,3 +1542,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.StrictVolume.Target
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.StrictVolume.thetaVolume_lt_one
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.StrictVolume.log_thetaVolume_neg
+
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.RawMargin.Target
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.RawMargin.Volume
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.RawMargin.qLogSum_lt_vbadPaperSum
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.RawMargin.exp_neg_ellStar_mul_vbadPaperSum_lt_qProduct
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.RawMargin.exp_neg_ellStar_mul_vbadPaperSum_lt_thetaVolume

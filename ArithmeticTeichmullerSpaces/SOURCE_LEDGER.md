@@ -6520,3 +6520,11 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-STRICT-VOLUME` | `coefficientWeightedPaperSum_pos`、`Target`、`thetaVolume_lt_one`、`log_thetaVolume_neg`；`Act1Scene1/IutInitialThetaCanonicalActualHullStrictVolume.lean` | 使用 `InitialThetaData.global.bad_nonempty`、代表系数严格正性、每个 selected paper term 的严格正性和 canonical generated-hull 的指数体积公式，证明 coefficient-weighted paper sum 严格为正，从而得到 canonical actual-hull target 的 `thetaVolume < 1` 与 `log thetaVolume < 0`。 | Scene1/Derived；这是给定 `AnalyticInput` 下的 actual 内部符号结果，不识别 paper theta locus，不关闭 paper normalization、global producer 或 G1–G4 父义务。原创证明，无参考代码复制。 |
 
 验收（2026-10-27）：最终叶 `IutInitialThetaCanonicalActualHullStrictVolume` 退出 0，113.20 秒，峰值 RSS 8,258,492 KiB；`Act1Scene1` 聚合退出 0，124.28 秒，峰值 RSS 8,472,240 KiB；`Checks/SelectedRoots` 退出 0，119.94 秒，峰值 RSS 8,372,632 KiB；`Axioms/SelectedRoots` 退出 0，121.82 秒，峰值 RSS 8,372,148 KiB；`ImportAudit` 退出 0，168.00 秒，峰值 RSS 8,472,256 KiB。新增声明的公理输出仅含 `propext`、`Classical.choice`、`Quot.sound`；未发现 `sorryAx`、禁用导入或 proof hole；本单元未变更父义务复选框。
+
+### Canonical actual hull 的 raw qLogSum 严格 margin
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-RAW-MARGIN` | `Target`、`Volume`、`qLogSum_lt_vbadPaperSum`、`exp_neg_ellStar_mul_vbadPaperSum_lt_qProduct`、`exp_neg_ellStar_mul_vbadPaperSum_lt_thetaVolume`；`Act1Scene1/IutInitialThetaCanonicalActualHullRawMargin.lean` | 在显式 `Module.finrank ℚ D.F = 1` 条件下，使用 raw qLogSum 的 degree accounting、`VBadSelectedPaper.referenceAbsLogQ_lt_paperSum`、qProduct 指数归一化和 actual hull 的 qProduct 下界，证明 `qLogSum < paperSum`，并推出 `exp(-ellStar * paperSum) < qProduct < thetaVolume`。 | Scene1/Derived；这是 actual VBad carrier 上的条件性严格 margin，不识别 paper `L'` carrier、paper thetaVolume 或 global producer，也不关闭 G1–G4 父义务。原创证明，无参考代码复制。 |
+
+验收（2026-10-27）：最终叶、`Act1Scene1` 聚合、`Checks/SelectedRoots`、`Axioms/SelectedRoots` 与 `ImportAudit` 均退出 0；新增声明公理仅含 `propext`、`Classical.choice`、`Quot.sound`，未发现 `sorryAx`、禁用导入或 proof hole；本单元未变更父义务复选框。
