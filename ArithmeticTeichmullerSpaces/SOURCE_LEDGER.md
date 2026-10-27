@@ -6492,3 +6492,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-QPRODUCT-BOUNDS` | `Target`、`Volume`、`qFactor_pos`、`qFactor_lt_one`、`qProduct_pos`、`qProduct_lt_one`；`Act1Scene1/IutInitialThetaCanonicalActualHullQProductBounds.lean` | 使用 actual Tate parameter laws 和正实幂，证明每个 raw qFactor 严格属于 `(0,1)`，并由非空 place index 与 qProduct 指数归一化推出 `0 < qProduct < 1`。 | Scene1/Derived；这是 raw completion norm 的内部符号/数值边界，不是 paper thetaVolume 或跨 untilt normalization。原创证明，无参考代码复制。 |
+
+### Canonical actual hull 的 Corollary 3.12 side conditions
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-SIDE-CONDITIONS` | `Target`、`sideConditions`；`Act1Scene1/IutInitialThetaCanonicalActualHullSideConditions.lean` | 使用 admissible-prime laws、actual qProduct 正性和 `thetaVolume ≥ qProduct`，构造 canonical actual-hull target 的 `Corollary312SideConditions`，包括 `thetaVolume_pos`。 | Scene1/Derived；只完成 side conditions，不证明最终 Corollary 的 paper identity 或 producer laws。原创证明，无参考代码复制。 |

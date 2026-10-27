@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullSideConditions
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQProductBounds
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQProductNormalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullSummary
@@ -1517,3 +1518,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.QProductBounds.qProduct_pos
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.QProductBounds.qProduct_lt_one
 #print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.QProductBounds.qFactor_pos
+
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.SideConditions.Target
+#print axioms JoshiTeich.Act1Scene1.CanonicalActualHull.SideConditions.sideConditions
