@@ -6498,3 +6498,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-SIDE-CONDITIONS` | `Target`、`sideConditions`；`Act1Scene1/IutInitialThetaCanonicalActualHullSideConditions.lean` | 使用 admissible-prime laws、actual qProduct 正性和 `thetaVolume ≥ qProduct`，构造 canonical actual-hull target 的 `Corollary312SideConditions`，包括 `thetaVolume_pos`。 | Scene1/Derived；只完成 side conditions，不证明最终 Corollary 的 paper identity 或 producer laws。原创证明，无参考代码复制。 |
+
+### Canonical actual hull raw qLogSum 的严格正性
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-QLOGSUM-SIGN` | `Target`、`Volume`、`qLogSum_pos`；`Act1Scene1/IutInitialThetaCanonicalActualHullQLogSumSign.lean` | 由非空 actual Tate-place index、每个 qFactor 属于 `(0,1)` 和 qLogTerm 的定义，证明 canonical raw target 的 `qLogSum > 0`。 | Scene1/Derived；这是 raw target 的内部符号结果，不替代 paper qLogTerm 约定或跨 carrier normalization。原创证明，无参考代码复制。 |
