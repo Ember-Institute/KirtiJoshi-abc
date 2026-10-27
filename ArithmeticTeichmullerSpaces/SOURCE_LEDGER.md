@@ -6556,3 +6556,13 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 构建记录（2026-10-27）：首轮叶检查退出 1，112 秒，峰值进程组 RSS 9,182,860 KiB；`Fintype.card_subtype_compl` 自动选出的 subtype 实例与既有 image-type 实例不定义相等，另有一处无效 `change` 警告。显式传入原 image 和 omitted 实例、删除无效 tactic 后，最终叶在默认 heartbeat 下退出 0，109 秒，峰值 9,197,364 KiB。未增加数学假设、heartbeat 或依赖，沿用冻结 Lean/mathlib、CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1` 和热缓存。
 
 最终验收：`Checks/SelectedRoots` 退出 0，134 秒，峰值进程组 RSS 9,325,824 KiB；`Axioms/SelectedRoots` 退出 0，131 秒，9,322,440 KiB；`Act1Scene1` 聚合退出 0，133 秒，9,414,360 KiB；`ImportAudit` 退出 0，113 秒，9,414,836 KiB。进程组和全部 Lean/Lake 合计 RSS 每 0.5 秒采样，合计采样峰值 27,708,556 KiB，未触及 85 GiB 停止线。最终五项构建无错误或警告；新增 12 项声明已逐名检查公理，仅含 `propext`、`Classical.choice`、`Quot.sound`。新叶无 proof hole，递归检查的 210 个项目模块无禁用导入；新文件和修改文件的 `git diff --check` 通过，15 项父义务仍开放。本单元无需变更动态边界或 Prologue/Core。
+
+### Actual omitted paper sum 的逐素数质量分解
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-VOSS-OMITTED-PRIME-MASS` | `VossPlace`、`sourceAt`、`sourceAt_mem_fullSelected`、`primeLogTerm`、`primeLogTerm_pos`、`primeLogTerm_eq_paperTerm`、`omittedPrimeMass`、`omittedPrimeMass_nonneg`、`omittedPrimeMass_pos_iff_multiplicity_pos`、`omittedSourcePrimeSigmaEquiv`、`omittedSourcePrimeSigmaEquiv_logTerm`、`omittedPaperSum_eq_primeMass_sum`、`fullPaperSum_eq_selected_add_primeMass_sum`；`Act1Scene1/IutInitialThetaVossOmittedPrimeMass.lean` | Joshi III `ss:val-sets-defn`（1042–1055）、`ss:weighted-vol`（3522–3562），以及既有 actual selected-paper root normalization 和 support defect。在同一实际 Voss place 上使用原 q-root source；局部项精确保留 `ramIdx * ordp * log(residueChar)`。将原 `fullSelectedFinset \ selectedFinset` 构造为 concrete omitted prime fibers 的有限 Sigma，显式证明等价保持局部负对数项，得到原 `omittedPaperSum` 的逐素数质量和式，再接回完整 paper-log sum 等于 VBad selected sum 加逐素数遗漏质量。每个遗漏质量非负，严格为正当且仅当对应遗漏重数为正。 | Scene1/Derived；结果只在同一给定 `InitialThetaData` 的 actual carrier 上成立，不假定遗漏质量为零，不识别 paper `L'`、paper weights、mixed-moduli descent、paper theta locus/volume 或共同 producer。Prologue R5 与 15 项开放父义务保持不变。原创证明，无参考代码复制。 |
+
+构建记录（2026-10-27）：首轮叶检查退出 1，101 秒，峰值进程组 RSS 9,206,760 KiB；全局求和传递中，局部项未被 `simpa only` 自动展开，另有局部实例与 `simpa` 写法警告。将局部项保持抽成 `rfl` 小引理并显式消费，改用空集/非空见证消除实例写法警告后，最终叶在默认 heartbeat 下退出 0，130 秒，峰值 9,206,708 KiB。未增加 heartbeat、数学假设或依赖，复用冻结 Lean/mathlib、CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1` 与热缓存。
+
+最终验收：`Checks/SelectedRoots` 退出 0，129 秒，峰值进程组 RSS 9,326,880 KiB；`Axioms/SelectedRoots` 退出 0，126 秒，9,326,252 KiB；`Act1Scene1` 聚合退出 0，127 秒，9,408,964 KiB；`ImportAudit` 退出 0，145 秒，9,424,568 KiB。进程组及全部 Lean/Lake 合计 RSS 每 0.5 秒采样，合计采样峰值 27,690,508 KiB，未触及 85 GiB 停止线。最终五项构建无错误或警告；13 项新增公共声明的公理逐名核对，仅含 `propext`、`Classical.choice`、`Quot.sound`。新叶无 proof hole，递归检查的 212 个项目模块无禁用导入；新文件与修改文件差异检查通过，父义务复选框及动态边界未变。
