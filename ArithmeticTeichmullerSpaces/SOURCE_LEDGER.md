@@ -6486,3 +6486,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-QPRODUCT-NORMALIZATION` | `Target`、`Volume`、`qProduct_eq_exp_neg_ellStar_mul_qLogSum`；`Act1Scene1/IutInitialThetaCanonicalActualHullQProductNormalization.lean` | 对 canonical actual-hull target 使用正 qFactor、qLogTerm 定义和一般 q-product accounting，证明 `qProduct = exp(-ellStar * qLogSum)`。 | Scene1/Derived；这是当前 target 内部的 raw q-product 归一化，不识别 paper normalization，也不关闭 G1 的跨 carrier 归一化义务。原创证明，无参考代码复制。 |
+
+### Canonical actual hull qFactor/qProduct 的严格收缩界
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-QPRODUCT-BOUNDS` | `Target`、`Volume`、`qFactor_pos`、`qFactor_lt_one`、`qProduct_pos`、`qProduct_lt_one`；`Act1Scene1/IutInitialThetaCanonicalActualHullQProductBounds.lean` | 使用 actual Tate parameter laws 和正实幂，证明每个 raw qFactor 严格属于 `(0,1)`，并由非空 place index 与 qProduct 指数归一化推出 `0 < qProduct < 1`。 | Scene1/Derived；这是 raw completion norm 的内部符号/数值边界，不是 paper thetaVolume 或跨 untilt normalization。原创证明，无参考代码复制。 |
