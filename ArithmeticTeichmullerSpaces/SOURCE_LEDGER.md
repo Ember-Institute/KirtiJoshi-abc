@@ -6474,3 +6474,9 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | source-id | declarations | source / fidelity | boundary / status |
 | --- | --- | --- | --- |
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-SCENE1-COHERENCE` | `S`、`L`、`toCanonicalInput_placeData`、`toCanonicalInput_bridge`、`scene1Input_link_eq`、`scene1Input_bridge_eq`、`scene1Input_perfectoidBridge_eq`、`scene1Input_volumeTransfer_eq`；`Act1Scene1/IutInitialThetaCanonicalActualHullScene1Coherence.lean` | 记录实际 arithmetic/Haar hull 通过 canonical input constructor 进入 Scene1Input 时，canonical link、place、bridge、perfectoid law 和 volume-transfer 字段保持同一来源。 | Scene1/Derived；这是字段保真与来源一致性，不构造新的 analytic law、global producer 或 paper identity。原 R5 保留；原创证明，无参考代码复制。 |
+
+### Canonical actual hull 的 G1/G4 条件性 summary
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-SUMMARY` | `Target`、`QVolume`、`QFamily`、`Data`、`ofCanonicalActualHull`；`Act1Scene1/IutInitialThetaCanonicalActualHullSummary.lean` | 将同一显式 `AnalyticInput` 下已证明的 canonical link、thetaVolume、q-product 下界、volume normalization、transfer log bound 和条件性 Corollary 3.12 打包为一个 summary。 | Scene1/Derived；summary 不产生 analytic input，不识别 paper theta locus，也不关闭 G1–G4 父义务。原载体、R5 和显式输入边界保留；原创证明，无参考代码复制。 |

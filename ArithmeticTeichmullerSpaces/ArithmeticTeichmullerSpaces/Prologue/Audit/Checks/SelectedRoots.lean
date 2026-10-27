@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullSummary
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullScene1Coherence
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittTateBanachQuotientEquiv
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittTateBanachQuotientFullKernel
@@ -1506,3 +1507,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.Scene1Coherence.scene1Input_bridge_eq
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.Scene1Coherence.scene1Input_perfectoidBridge_eq
 #check JoshiTeich.Act1Scene1.CanonicalActualHull.Scene1Coherence.scene1Input_volumeTransfer_eq
+
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.Summary.Target
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.Summary.QVolume
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.Summary.QFamily
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.Summary.Data
+#check JoshiTeich.Act1Scene1.CanonicalActualHull.Summary.ofCanonicalActualHull
