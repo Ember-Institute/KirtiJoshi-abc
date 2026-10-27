@@ -6512,3 +6512,11 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | `JT-SCENE1-CANONICAL-ACTUAL-HULL-VOLUME-SIGN` | `Target`、`Volume`、`thetaVolume_le_one`、`log_thetaVolume_nonpos`、`abs_log_thetaVolume_eq_neg_log`、`volumeBound`、`corollary312_of_volumeBound`；`Act1Scene1/IutInitialThetaCanonicalActualHullVolumeSign.lean` | 使用 canonical target 的 `thetaVolume = hullVolume` 字段等式和实际 generated-hull 的 `volume_le_one`，把 `thetaVolume ≤ 1`、`log thetaVolume ≤ 0` 及绝对值符号桥接到同一 target；再将 qFactor 正性、qFactor 上界、qLogTerm 定义、thetaVolume 上界和 qProduct 下界组装为 `Corollary312VolumeBound`，消费一般 `VolumeBridge`。 | Scene1/Derived；只闭合给定 `AnalyticInput` 下的 actual target 符号和条件性 volume consumer，不识别 paper theta locus，不构造 arithmetic-seed producer，也不关闭 G1–G4 父义务。原创证明，无参考代码复制。 |
 
 验收（2026-10-27）：最终叶 `IutInitialThetaCanonicalActualHullVolumeSign` 退出 0，111.98 秒，峰值 RSS 8,258,884 KiB；`Act1Scene1` 聚合退出 0，119.44 秒，峰值 RSS 8,472,012 KiB；`Checks/SelectedRoots` 退出 0，121.53 秒，峰值 RSS 8,372,292 KiB；`Axioms/SelectedRoots` 退出 0，114.33 秒，峰值 RSS 8,373,224 KiB；`ImportAudit` 退出 0，121.45 秒，峰值 RSS 8,472,232 KiB。新增声明的公理输出仅含 `propext`、`Classical.choice`、`Quot.sound`；未发现 `sorryAx`、禁用导入或 proof hole；本单元未变更父义务复选框。
+
+### Canonical actual hull 的严格体积符号
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-CANONICAL-ACTUAL-HULL-STRICT-VOLUME` | `coefficientWeightedPaperSum_pos`、`Target`、`thetaVolume_lt_one`、`log_thetaVolume_neg`；`Act1Scene1/IutInitialThetaCanonicalActualHullStrictVolume.lean` | 使用 `InitialThetaData.global.bad_nonempty`、代表系数严格正性、每个 selected paper term 的严格正性和 canonical generated-hull 的指数体积公式，证明 coefficient-weighted paper sum 严格为正，从而得到 canonical actual-hull target 的 `thetaVolume < 1` 与 `log thetaVolume < 0`。 | Scene1/Derived；这是给定 `AnalyticInput` 下的 actual 内部符号结果，不识别 paper theta locus，不关闭 paper normalization、global producer 或 G1–G4 父义务。原创证明，无参考代码复制。 |
+
+验收（2026-10-27）：最终叶 `IutInitialThetaCanonicalActualHullStrictVolume` 退出 0，113.20 秒，峰值 RSS 8,258,492 KiB；`Act1Scene1` 聚合退出 0，124.28 秒，峰值 RSS 8,472,240 KiB；`Checks/SelectedRoots` 退出 0，119.94 秒，峰值 RSS 8,372,632 KiB；`Axioms/SelectedRoots` 退出 0，121.82 秒，峰值 RSS 8,372,148 KiB；`ImportAudit` 退出 0，168.00 秒，峰值 RSS 8,472,256 KiB。新增声明的公理输出仅含 `propext`、`Classical.choice`、`Quot.sound`；未发现 `sorryAx`、禁用导入或 proof hole；本单元未变更父义务复选框。
