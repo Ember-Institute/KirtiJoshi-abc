@@ -374,5 +374,34 @@ theorem groupedRootVolumeProduct_normalized_eq_exp_neg_referenceAbsLogQ_of_fullS
         (IutTorsionQRootSource.iutInitialThetaQPilotData D)) := by
       rw [hreference]
 
+theorem groupedRootVolumeProduct_normalized_lt_exp_neg_referenceAbsLogQ_of_missing_fullSupport
+    (hmissing : iutInitialThetaVBadModuliFinset D ≠
+      iutInitialThetaOddModSupportFinset D) :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) <
+      Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)) := by
+  have hdiff := VossWeightedOmission.fullBase_sub_reference_mem_Icc D
+  have hrefLe :
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D) ≤
+        iutInitialThetaFullBaseQPilotLogSum D := by
+    linarith [hdiff.1]
+  have hrefNe :
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D) ≠
+        iutInitialThetaFullBaseQPilotLogSum D := by
+    intro heq
+    apply hmissing
+    exact (VossWeightedOmission.reference_eq_fullBase_iff_coverage D).mp heq
+  have hrefLt :
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D) <
+        iutInitialThetaFullBaseQPilotLogSum D :=
+    lt_of_le_of_ne hrefLe hrefNe
+  rw [groupedRootVolumeProduct_normalized_eq_exp_neg_fullBaseSum D]
+  exact Real.exp_lt_exp.mpr (neg_lt_neg hrefLt)
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
