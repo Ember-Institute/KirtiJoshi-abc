@@ -54,29 +54,131 @@ theorem qPilotWeightedSourceSum_eq_fiberMassSum [Fintype R]
       intro w hw
       by_cases h : f w = r <;> simp [h]
 
+theorem qPilotWeight_sum_lt_one_of_ramified_of_residueChar
+    (S : Finset (NumberField.FinitePlace K)) (q : ℕ) (hq : q.Prime)
+    (hS : ∀ w ∈ S, Arithmetic.residueChar w = q)
+    (w : NumberField.FinitePlace K) (hw : w ∈ S)
+    (hRam : 1 < Arithmetic.ramIdx w) :
+    ∑ v ∈ S, Arithmetic.qPilotWeight v < 1 := by
+  have hfilter : S.filter (fun v => Arithmetic.residueChar v = q) = S :=
+    Finset.filter_eq_self.mpr hS
+  have hdegree := Arithmetic.localDeg_sum_le_finrank_of_residueChar_filter S q hq
+  rw [hfilter] at hdegree
+  have hpoint (v : NumberField.FinitePlace K) (_ : v ∈ S) :
+      Arithmetic.inertDeg v ≤ Arithmetic.localDeg v := by
+    unfold Arithmetic.localDeg
+    exact Nat.le_mul_of_pos_left _ (Arithmetic.ramIdx_pos v)
+  have hstrict : Arithmetic.inertDeg w < Arithmetic.localDeg w := by
+    unfold Arithmetic.localDeg
+    nlinarith [Arithmetic.inertDeg_pos w]
+  have hsum := (Finset.sum_lt_sum hpoint ⟨w, hw, hstrict⟩).trans_le hdegree
+  unfold Arithmetic.qPilotWeight
+  rw [← Finset.sum_div]
+  apply (div_lt_one Arithmetic.finrank_pos).mpr
+  exact_mod_cast hsum
+
+/-- Mass one requires both saturation of the local-degree bound and
+ramification index one at every place in the finite source. -/
+theorem qPilotWeight_sum_eq_one_iff_degree_sum_eq_and_unramified
+    (S : Finset (NumberField.FinitePlace K)) (q : ℕ) (hq : q.Prime)
+    (hS : ∀ w ∈ S, Arithmetic.residueChar w = q) :
+    (∑ w ∈ S, Arithmetic.qPilotWeight w) = 1 ↔
+      (∑ w ∈ S, Arithmetic.localDeg w) = Module.finrank ℚ K ∧
+        ∀ w ∈ S, Arithmetic.ramIdx w = 1 := by
+  have hdegreeNe : (Module.finrank ℚ K : ℝ) ≠ 0 :=
+    Arithmetic.finrank_pos.ne'
+  constructor
+  · intro hmass
+    have hunram (w : NumberField.FinitePlace K) (hw : w ∈ S) :
+        Arithmetic.ramIdx w = 1 := by
+      by_contra hne
+      have hRam : 1 < Arithmetic.ramIdx w := by
+        have := Arithmetic.ramIdx_pos w
+        omega
+      have hlt := qPilotWeight_sum_lt_one_of_ramified_of_residueChar S q hq hS w hw hRam
+      rw [hmass] at hlt
+      exact (lt_irrefl 1) hlt
+    refine ⟨?_, hunram⟩
+    have hinert : (∑ w ∈ S, (Arithmetic.inertDeg w : ℝ)) =
+        (Module.finrank ℚ K : ℝ) := by
+      unfold Arithmetic.qPilotWeight at hmass
+      rw [← Finset.sum_div] at hmass
+      exact (div_eq_one_iff_eq hdegreeNe).mp hmass
+    have heq : (∑ w ∈ S, Arithmetic.localDeg w) = ∑ w ∈ S, Arithmetic.inertDeg w :=
+      Finset.sum_congr rfl fun w hw => by simp [Arithmetic.localDeg, hunram w hw]
+    rw [heq]
+    exact_mod_cast hinert
+  · rintro ⟨hdegree, hunram⟩
+    have hinert : (∑ w ∈ S, Arithmetic.inertDeg w) = Module.finrank ℚ K := by
+      rw [← hdegree]
+      exact Finset.sum_congr rfl fun w hw => by
+        simp [Arithmetic.localDeg, hunram w hw]
+    unfold Arithmetic.qPilotWeight
+    rw [← Finset.sum_div, ← Nat.cast_sum, hinert, div_self hdegreeNe]
+
+private theorem sourcePrimeMass_eq_filter_sum
+    (P : Corollary312QPilotData p T) (q : ℕ) :
+    (∑ w : P.badFinset,
+      if Arithmetic.residueChar w.1 = q then Arithmetic.qPilotWeight w.1 else 0) =
+      ∑ w ∈ P.badFinset.filter (fun w => Arithmetic.residueChar w = q),
+        Arithmetic.qPilotWeight w := by
+  classical
+  rw [Finset.sum_filter]
+  refine Finset.sum_bij (fun w _ => w.1) ?_ ?_ ?_ ?_
+  · intro w hw
+    exact w.2
+  · intro w hw v hv h
+    exact Subtype.ext h
+  · intro w hw
+    exact ⟨⟨w, hw⟩, Finset.mem_univ _, rfl⟩
+  · intro w hw
+    rfl
+
 private theorem sourcePrimeMass_le_one
     (P : Corollary312QPilotData p T) (q : ℕ) (hq : q.Prime) :
     (∑ w : P.badFinset,
       if Arithmetic.residueChar w.1 = q then Arithmetic.qPilotWeight w.1 else 0) ≤ 1 := by
+  rw [sourcePrimeMass_eq_filter_sum p P q]
+  exact Arithmetic.qPilotWeight_sum_le_one_of_residueChar_filter P.badFinset q hq
+
+private theorem fiberMass_le_sourcePrimeMass
+    (P : Corollary312QPilotData p T) (f : P.badFinset → R)
+    (primeLabel : R → ℕ)
+    (hPrime : ∀ w : P.badFinset, Arithmetic.residueChar w.1 = primeLabel (f w))
+    (r : R) :
+    qPilotRepresentativeFiberMass p P f r ≤
+      ∑ w : P.badFinset,
+        if Arithmetic.residueChar w.1 = primeLabel r then Arithmetic.qPilotWeight w.1 else 0 := by
+  unfold qPilotRepresentativeFiberMass
+  apply Finset.sum_le_sum
+  intro w hw
+  by_cases hr : f w = r
+  · have hp : Arithmetic.residueChar w.1 = primeLabel r := by rw [hPrime w, hr]
+    simp only [ite_eq_left hr, ite_eq_left hp, le_refl]
+  · simp only [ite_eq_right hr]
+    split_ifs
+    · exact (Arithmetic.qPilotWeight_pos w.1).le
+    · exact le_rfl
+
+theorem qPilotRepresentativeFiberMass_lt_one_of_ramified_source
+    (P : Corollary312QPilotData p T) (f : P.badFinset → R)
+    (primeLabel : R → ℕ)
+    (hPrime : ∀ w : P.badFinset, Arithmetic.residueChar w.1 = primeLabel (f w))
+    (w : P.badFinset) (hRam : 1 < Arithmetic.ramIdx w.1) :
+    qPilotRepresentativeFiberMass p P f (f w) < 1 := by
   classical
-  have h := Arithmetic.qPilotWeight_sum_le_one_of_residueChar_filter P.badFinset q hq
-  rw [Finset.sum_filter] at h
-  have hsum :
-      (∑ w : P.badFinset,
-        if Arithmetic.residueChar w.1 = q then Arithmetic.qPilotWeight w.1 else 0) =
-      ∑ w ∈ P.badFinset,
-        if Arithmetic.residueChar w = q then Arithmetic.qPilotWeight w else 0 := by
-    refine Finset.sum_bij (fun w _ => w.1) ?_ ?_ ?_ ?_
-    · intro w hw
-      exact w.2
-    · intro w hw v hv h
-      exact Subtype.ext h
-    · intro w hw
-      exact ⟨⟨w, hw⟩, Finset.mem_univ _, rfl⟩
-    · intro w hw
-      rfl
-  rw [hsum]
-  exact h
+  have hq : (primeLabel (f w)).Prime := by
+    rw [← hPrime w]
+    exact Arithmetic.residueChar_prime w.1
+  have hstrict : (∑ v : P.badFinset,
+      if Arithmetic.residueChar v.1 = primeLabel (f w) then
+        Arithmetic.qPilotWeight v.1 else 0) < 1 := by
+    rw [sourcePrimeMass_eq_filter_sum p P (primeLabel (f w))]
+    exact qPilotWeight_sum_lt_one_of_ramified_of_residueChar
+      (P.badFinset.filter (fun v => Arithmetic.residueChar v = primeLabel (f w)))
+      (primeLabel (f w)) hq (fun v hv => (Finset.mem_filter.mp hv).2)
+      w.1 (Finset.mem_filter.mpr ⟨w.2, hPrime w⟩) hRam
+  exact (fiberMass_le_sourcePrimeMass p P f primeLabel hPrime (f w)).trans_lt hstrict
 
 theorem qPilotRepresentativeFiberMass_mem_unitInterval
     (P : Corollary312QPilotData p T) (f : P.badFinset → R)
@@ -98,19 +200,7 @@ theorem qPilotRepresentativeFiberMass_mem_unitInterval
       have hq : (primeLabel r).Prime := by
         rw [← hw₀, ← hPrime w₀]
         exact Arithmetic.residueChar_prime w₀.1
-      have hlocal (w : P.badFinset) :
-          (if f w = r then Arithmetic.qPilotWeight w.1 else 0) ≤
-          (if Arithmetic.residueChar w.1 = primeLabel r then
-            Arithmetic.qPilotWeight w.1 else 0) := by
-        by_cases hr : f w = r
-        · have hp : Arithmetic.residueChar w.1 = primeLabel r := by
-            rw [hPrime w, hr]
-          simp only [ite_eq_left hr, ite_eq_left hp, le_refl]
-        · simp only [ite_eq_right hr]
-          split_ifs
-          · exact (Arithmetic.qPilotWeight_pos w.1).le
-          · exact le_rfl
-      exact le_trans (Finset.sum_le_sum (fun w hw => hlocal w))
+      exact le_trans (fiberMass_le_sourcePrimeMass p P f primeLabel hPrime r)
         (sourcePrimeMass_le_one p P (primeLabel r) hq)
     · have hne : ∀ w, f w ≠ r := by
         intro w hw
