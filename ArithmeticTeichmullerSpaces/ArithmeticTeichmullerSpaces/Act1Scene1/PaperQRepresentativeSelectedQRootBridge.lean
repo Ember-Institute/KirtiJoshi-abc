@@ -64,6 +64,19 @@ variable {O : Type u} [CommRing O] (p : ℕ)
 variable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
 variable [IsAdicComplete (Ideal.span {(p : O)}) O]
 
+noncomputable def selectedQRootPaperNormalizedFactorProduct
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) : ℝ := by
+  classical
+  let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+    s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  let _ : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  exact ∏ s : S, Real.exp (-(
+    (Arithmetic.ramIdx s.1.1 : ℝ) *
+      Arithmetic.ordp s.1.1
+        ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1) *
+      Real.log (Arithmetic.residueChar s.1.1)))
+
 theorem representativeSum_eq_sectionLinkQLogSum
     (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
     {T : Corollary312Data D.F O p}
@@ -86,11 +99,11 @@ theorem representativeSum_eq_sectionLinkQLogSum
         (((L.tate.qOrder w.1 : ℝ) / (2 * (D.prime.ℓ : ℝ))) *
           Real.log (Arithmetic.residueChar w.1)) := by
   classical
-  letI := A.representativeDecidableEq
+  let _ := A.representativeDecidableEq
   let L := AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
     packetHull heightData ramification logVolume processionLength
   let W := {w : NumberField.FinitePlace ↥D.prime.torsionField // w ∈ L.places}
-  letI : Fintype W := Fintype.ofFinset L.places (fun _ => Iff.rfl)
+  let _ : Fintype W := Fintype.ofFinset L.places (fun _ => Iff.rfl)
   let e := B.representativeLinkEquiv
   calc
     (∑ r : A.representative, A.representativeTerm r) =
@@ -131,12 +144,12 @@ theorem representativeSum_eq_selectedQRootPaperQLogSum
             ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1)) *
           Real.log (Arithmetic.residueChar s.1.1) := by
   classical
-  letI := A.representativeDecidableEq
+  let _ := A.representativeDecidableEq
   let L := AdelicThetaLinkData.ofInitialThetaOddTateSection D theta thetaBase
     packetHull heightData ramification logVolume processionLength
   let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
     s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
-  letI : Fintype S :=
+  let _ : Fintype S :=
     (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
   have hSection :=
     iutInitialThetaOddSupportSelectedQRootSourcePlaces_paperQLogSum_eq_sectionLink_unGrouped
@@ -154,6 +167,43 @@ theorem representativeSum_eq_selectedQRootPaperQLogSum
             ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1)) *
           Real.log (Arithmetic.residueChar s.1.1) := by
       exact hSection.symm
+
+theorem representativePaperNormalizedSourceQFactorProduct_eq_selectedQRootPaperNormalizedFactorProduct
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    {P : Corollary312QPilotData p T}
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D p A theta thetaBase
+      packetHull heightData ramification logVolume processionLength) :
+    Corollary312QPilotPaperRepresentativeAccounting.representativePaperNormalizedSourceQFactorProduct
+        p A = selectedQRootPaperNormalizedFactorProduct D := by
+  classical
+  let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+    s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  let _ : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  have hsum := representativeSum_eq_selectedQRootPaperQLogSum p D A theta thetaBase
+    packetHull heightData ramification logVolume processionLength B
+  unfold Corollary312QPilotPaperRepresentativeAccounting.representativePaperNormalizedSourceQFactorProduct
+  calc
+    (∏ r : A.representative, Real.exp (-A.representativeTerm r)) =
+        Real.exp (-(∑ r : A.representative, A.representativeTerm r)) := by
+      rw [← Real.exp_sum, ← Finset.sum_neg_distrib]
+    _ = Real.exp (-∑ s : S,
+        ((Arithmetic.ramIdx s.1.1 : ℝ) *
+          Arithmetic.ordp s.1.1
+            ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1)) *
+          Real.log (Arithmetic.residueChar s.1.1)) := by
+      rw [hsum]
+    _ = selectedQRootPaperNormalizedFactorProduct D := by
+      unfold selectedQRootPaperNormalizedFactorProduct
+      rw [← Real.exp_sum, ← Finset.sum_neg_distrib]
 
 /-- Once the two finite source certificates are supplied, the weighted q-pilot
 sum transports directly to the unweighted selected q-root paper sum. -/
@@ -185,7 +235,7 @@ theorem absLogQ_eq_selectedQRootPaperQLogSum
           Real.log (Arithmetic.residueChar s.1.1) := by
   let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
     s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
-  letI : Fintype S :=
+  let _ : Fintype S :=
     (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
   have hWeighted :=
     Corollary312QPilotPaperRepresentativeAccounting.absLogQ_eq_unweightedRepresentativeSum
