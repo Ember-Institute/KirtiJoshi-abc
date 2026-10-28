@@ -140,6 +140,64 @@ theorem Corollary312QPilotData.absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCa
     _ = R.weight w.1 * (D.prime.qOrder w.1 (R.mem_bad w.2) : ℝ) *
         Real.log (JoshiTeich.ReferenceIut.residueChar w.1) := by rfl
 
+/-! The canonical source therefore also has an exponential product form.  The
+carrier remains the actual q-pilot finite set and the theorem does not identify
+it with the paper's unweighted representative product or theta-volume. -/
+theorem weightedPaperNormalizedSourceQFactorProduct_eq_exp_neg_referenceAbsLogQ_ofCanonicalInitialThetaLink
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (hEll : T.ell = D.prime.ℓ)
+    (hLink : T.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D theta thetaBase packetHull
+        heightData ramification logVolume processionLength) :
+    let hCompat : QNormTateCompatibility T.scene1.data.link := by
+      rw [hLink]
+      exact iutInitialThetaLink_qNormTateCompatibility D theta thetaBase packetHull
+        heightData ramification logVolume processionLength
+    let S := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+      packetHull heightData ramification logVolume processionLength hEll hLink
+    let Q := S.toSceneQPilot p hCompat
+    weightedPaperNormalizedSourceQFactorProduct p T Q =
+      Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)) := by
+  let hCompat : QNormTateCompatibility T.scene1.data.link := by
+    rw [hLink]
+    exact iutInitialThetaLink_qNormTateCompatibility D theta thetaBase packetHull
+      heightData ramification logVolume processionLength
+  let S := IutQPilotSource.ofCanonicalInitialThetaLink D p theta thetaBase
+    packetHull heightData ramification logVolume processionLength hEll hLink
+  let Q := S.toSceneQPilot p hCompat
+  have hNorm := S.toSceneQPilot_rawQNormDegreeNormalization p hCompat
+  have hEllPos : 0 < T.ell := by
+    rw [hEll]
+    have h : 5 ≤ D.prime.ℓ := D.prime.five_le
+    omega
+  have hProduct := weightedPaperNormalizedSourceQFactorProduct_eq_exp_neg_absLogQ
+    p T Q S.orderCompatibility hNorm hEllPos
+  have hRef : Q.absLogQ p =
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by
+    simpa [Q, S, hCompat] using
+      (Corollary312QPilotData.absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCanonicalInitialThetaLink
+        p D theta thetaBase packetHull heightData ramification logVolume processionLength
+        hEll hLink)
+  calc
+    weightedPaperNormalizedSourceQFactorProduct p T Q =
+        Real.exp (-Q.absLogQ p) := hProduct
+    _ = Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)) := by
+      rw [hRef]
+
 end
 
 end JoshiTeich.Act1Scene1
