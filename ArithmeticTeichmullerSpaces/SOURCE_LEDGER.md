@@ -6719,3 +6719,9 @@ base-section 的严格质量缺口（2026-10-29）：新增 `Act1Scene1/IutIniti
 本叶模块 v1 失败于相对 ramification 等式方向、section 定理名称和 `div_lt_one` 的正分母条件；v2 仍有这三处类型细节；v3 退出 0（120 秒，峰值进程组 RSS 9,183,040 KiB），默认 heartbeat、无 Lean 错误或警告。Scene1 可达 863 个模块的静态禁用导入/proof-hole 扫描通过。
 
 base-section 质量缺口单元最终聚合验收全部退出 0：叶 v3 120 秒、峰值进程组 RSS 9,183,040 KiB；Checks/SelectedRoots 167 秒、9,343,260 KiB；Axioms/SelectedRoots 163 秒、9,342,604 KiB；Act1Scene1 166 秒、9,421,008 KiB；ImportAudit 166 秒、9,413,792 KiB。并行聚合 Lean/Lake 合计采样峰值 36,752,560 KiB；CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、每 0.5 秒采样，未触及 85 GiB 停止线。三项新声明逐名公理均恰为 `propext`、`Classical.choice`、`Quot.sound`；最终日志无 Lean 错误、警告或 `sorryAx`，对应 `.olean` 晚于源码，`git diff --check` 通过。冻结依赖、父义务清单、动态边界计划和其他用户文档未改动。
+
+整体 base weighted-carrier 缺口（2026-10-29）：新增 `Act1Scene1/IutInitialThetaTorsionBaseWeightedDefect.lean`，source-id `JT-SCENE1-INITIAL-THETA-TORSION-BASE-WEIGHTED-DEFECT`。消费 base-section 下降恒等式、上一单元的至少一个 section 质量严格小于 1、所有 base q-pilot 权重不超过 1，以及 `actualPaperRootNorm ∈ (0,1)` 给出的正对数项，证明整个 actual torsion source 的 weighted paper-root log sum 严格小于同一 base section carrier 的 unweighted sum。该结果把单纤维质量缺口提升为整体 weighted-carrier 缺口；两边仍是 actual carrier，未识别为论文 L′/Voss 或 theta-volume。
+
+本叶 v1 失败于 section base contraction 未在 `relRamIdx` 的目标中显式改写、`mul_le` 中未消去 `1`、严格乘积次序相反；v2 修复前两处后仍需显式使用 section base 等式；v3 退出 0（120 秒，峰值进程组 RSS 9,186,088 KiB），默认 heartbeat、无 Lean 错误或警告。Scene1 可达 864 个模块的静态扫描通过。
+
+整体 base weighted-defect 单元最终聚合验收全部退出 0：叶 v3 120 秒、峰值进程组 RSS 9,186,088 KiB；Checks/SelectedRoots 154 秒、9,343,716 KiB；Axioms/SelectedRoots 151 秒、9,343,048 KiB；Act1Scene1 152 秒、9,413,716 KiB；ImportAudit 153 秒、9,420,532 KiB。并行聚合 Lean/Lake 合计采样峰值 36,635,620 KiB；CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、每 0.5 秒采样，未触及 85 GiB 停止线。新增 weighted-defect 定理逐名公理恰为 `propext`、`Classical.choice`、`Quot.sound`；最终日志无 Lean 错误、警告或 `sorryAx`，`.olean` 晚于源码，`git diff --check` 通过。父义务清单、动态边界计划、冻结依赖和其他用户文档未改动。
