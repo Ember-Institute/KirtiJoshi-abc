@@ -5,7 +5,8 @@ source-id: JT-SCENE1-PAPER-REPRESENTATIVE-FIBER-MASS
 source: the actual finite q-pilot arithmetic weights, their rational-prime
 bound, and the proved weighted paper-normalized q-log identity.
 fidelity: computes representative fibre masses from the source and proves
-weighted regrouping and a conditional unweighted upper bound. It does not
+weighted regrouping, the exact unweighted deficit, and a mass-one equality
+criterion when all representative terms are positive. It does not
 assume mass one, construct the paper representative map, or identify this
 upper bound with the frozen Corollary 3.12 target.
 boundary: Scene1/Derived
@@ -160,6 +161,94 @@ theorem absLogQ_le_unweightedRepresentativeSum [Fintype R]
     qPilotRepresentativeFiberMass p P f r * term r ≤ 1 * term r :=
       mul_le_mul_of_nonneg_right hmass.2 (hNonneg r)
     _ = term r := one_mul _
+
+/-- The unweighted excess is exactly the sum of the missing fibre masses
+times their representative terms. No mass-one certificate is assumed. -/
+theorem unweightedRepresentativeSum_sub_absLogQ_eq_fiberMassDefectSum [Fintype R]
+    (P : Corollary312QPilotData p T) (f : P.badFinset → R) (term : R → ℝ)
+    (hTerm : ∀ w : P.badFinset,
+      -Real.log (Corollary312PaperNormalizedSourceQFactor p T
+        ⟨w.1, P.mem_bad p w.2⟩) = term (f w))
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hRaw : Corollary312RawQNormDegreeNormalization p T hOrder P)
+    (hEll : 0 < T.ell) :
+    (∑ r, term r) - P.absLogQ p =
+      ∑ r, (1 - qPilotRepresentativeFiberMass p P f r) * term r := by
+  rw [P.absLogQ_eq_fiberMassRepresentativeSum p f term hTerm hOrder hRaw hEll,
+    ← Finset.sum_sub_distrib]
+  exact Finset.sum_congr rfl fun r _ => by ring
+
+/-- For positive terms and a prime-preserving map, equality with the
+unweighted sum requires mass one in every representative fibre. -/
+theorem absLogQ_eq_unweightedRepresentativeSum_iff_fiberMass_eq_one [Fintype R]
+    (P : Corollary312QPilotData p T) (f : P.badFinset → R) (term : R → ℝ)
+    (hTerm : ∀ w : P.badFinset,
+      -Real.log (Corollary312PaperNormalizedSourceQFactor p T
+        ⟨w.1, P.mem_bad p w.2⟩) = term (f w))
+    (primeLabel : R → ℕ)
+    (hPrime : ∀ w : P.badFinset, Arithmetic.residueChar w.1 = primeLabel (f w))
+    (hPos : ∀ r, 0 < term r)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hRaw : Corollary312RawQNormDegreeNormalization p T hOrder P)
+    (hEll : 0 < T.ell) :
+    P.absLogQ p = ∑ r, term r ↔
+      ∀ r, qPilotRepresentativeFiberMass p P f r = 1 := by
+  have hnonneg (r : R) :
+      0 ≤ (1 - qPilotRepresentativeFiberMass p P f r) * term r :=
+    mul_nonneg (sub_nonneg.mpr
+      (qPilotRepresentativeFiberMass_mem_unitInterval p P f primeLabel hPrime r).2)
+      (hPos r).le
+  constructor
+  · intro heq r
+    have hsum : (∑ s, (1 - qPilotRepresentativeFiberMass p P f s) * term s) = 0 := by
+      rw [← P.unweightedRepresentativeSum_sub_absLogQ_eq_fiberMassDefectSum
+        p f term hTerm hOrder hRaw hEll, heq, sub_self]
+    have hsingle := Finset.single_le_sum
+      (f := fun s : R => (1 - qPilotRepresentativeFiberMass p P f s) * term s)
+      (fun s _ => hnonneg s) (Finset.mem_univ r)
+    have hzero : (1 - qPilotRepresentativeFiberMass p P f r) * term r = 0 := by
+      rw [hsum] at hsingle
+      exact le_antisymm hsingle (hnonneg r)
+    have hmass : 1 - qPilotRepresentativeFiberMass p P f r = 0 :=
+      (mul_eq_zero.mp hzero).resolve_right (hPos r).ne'
+    linarith
+  · intro hmass
+    rw [P.absLogQ_eq_fiberMassRepresentativeSum p f term hTerm hOrder hRaw hEll]
+    simp_rw [hmass, one_mul]
+
+theorem absLogQ_lt_unweightedRepresentativeSum_iff_exists_fiberMass_lt_one [Fintype R]
+    (P : Corollary312QPilotData p T) (f : P.badFinset → R) (term : R → ℝ)
+    (hTerm : ∀ w : P.badFinset,
+      -Real.log (Corollary312PaperNormalizedSourceQFactor p T
+        ⟨w.1, P.mem_bad p w.2⟩) = term (f w))
+    (primeLabel : R → ℕ)
+    (hPrime : ∀ w : P.badFinset, Arithmetic.residueChar w.1 = primeLabel (f w))
+    (hPos : ∀ r, 0 < term r)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hRaw : Corollary312RawQNormDegreeNormalization p T hOrder P)
+    (hEll : 0 < T.ell) :
+    P.absLogQ p < ∑ r, term r ↔
+      ∃ r, qPilotRepresentativeFiberMass p P f r < 1 := by
+  have heq := P.absLogQ_eq_unweightedRepresentativeSum_iff_fiberMass_eq_one
+    p f term hTerm primeLabel hPrime hPos hOrder hRaw hEll
+  constructor
+  · intro hlt
+    by_contra hnone
+    have hmass : ∀ r, qPilotRepresentativeFiberMass p P f r = 1 := by
+      intro r
+      have hle :=
+        (qPilotRepresentativeFiberMass_mem_unitInterval p P f primeLabel hPrime r).2
+      have hge : 1 ≤ qPilotRepresentativeFiberMass p P f r :=
+        not_lt.mp (fun hr => hnone ⟨r, hr⟩)
+      exact le_antisymm hle hge
+    exact (ne_of_lt hlt) (heq.mpr hmass)
+  · rintro ⟨r, hr⟩
+    have hle := P.absLogQ_le_unweightedRepresentativeSum
+      p f term hTerm primeLabel hPrime (fun s => (hPos s).le) hOrder hRaw hEll
+    have hne : P.absLogQ p ≠ ∑ s, term s := by
+      intro h
+      exact (ne_of_lt hr) (heq.mp h r)
+    exact lt_of_le_of_ne hle hne
 
 end Corollary312QPilotData
 end
