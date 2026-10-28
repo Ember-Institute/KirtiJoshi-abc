@@ -275,5 +275,28 @@ theorem groupedRootVolumeProduct_eq_one_iff_no_selectedSource :
       exact hs ⟨s⟩⟩
     simp [groupedRootVolumeProduct]
 
+theorem groupedRootVolumeProduct_normalized_lt_one_of_selectedSource
+    (hs : Nonempty (SelectedSource D)) :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) < 1 := by
+  exact Real.rpow_lt_one (groupedRootVolumeProduct_pos D).le
+    (groupedRootVolumeProduct_lt_one_of_selectedSource D hs)
+    (one_div_pos.mpr Arithmetic.finrank_pos)
+
+theorem groupedRootVolumeProduct_normalized_eq_one_iff_no_selectedSource :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) = 1 ↔
+      ¬ Nonempty (SelectedSource D) := by
+  constructor
+  · intro hvol
+    by_contra hs
+    exact (ne_of_lt
+      (groupedRootVolumeProduct_normalized_lt_one_of_selectedSource D hs)) hvol
+  · intro hs
+    rw [groupedRootVolumeProduct_eq_one_iff_no_selectedSource D |>.mpr hs]
+    exact Real.one_rpow _
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
