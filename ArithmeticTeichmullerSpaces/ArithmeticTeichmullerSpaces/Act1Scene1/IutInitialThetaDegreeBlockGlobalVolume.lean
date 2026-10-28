@@ -354,6 +354,18 @@ theorem groupedRootVolumeProduct_normalized_eq_exp_neg_fullBaseSum :
       congr 1
       linarith
 
+theorem groupedRootVolumeProduct_normalized_eq_exp_neg_reference_add_omittedWeightedMass :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+      Real.exp (-(
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D) +
+        ∑ p : iutInitialThetaSectionVossPrimeSupportType D,
+          VossWeightedOmission.primeWeightedMass D p.1)) := by
+  rw [groupedRootVolumeProduct_normalized_eq_exp_neg_fullBaseSum D,
+    VossWeightedOmission.fullBaseQPilot_eq_reference_add_primeWeightedMass D]
+
 theorem groupedRootVolumeProduct_normalized_eq_exp_neg_referenceAbsLogQ_of_fullSupportCoverage
     (hcoverage : iutInitialThetaVBadModuliFinset D =
       iutInitialThetaOddModSupportFinset D) :
