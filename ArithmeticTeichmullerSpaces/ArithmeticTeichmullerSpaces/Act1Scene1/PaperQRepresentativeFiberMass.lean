@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQNormalizationBridge
+import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.BaseChange
 
 /-!
 source-id: JT-SCENE1-PAPER-REPRESENTATIVE-FIBER-MASS
@@ -115,6 +116,116 @@ theorem qPilotWeight_sum_eq_one_iff_degree_sum_eq_and_unramified
         simp [Arithmetic.localDeg, hunram w hw]
     unfold Arithmetic.qPilotWeight
     rw [← Finset.sum_div, ← Nat.cast_sum, hinert, div_self hdegreeNe]
+
+/-- Saturating the degree bound means covering every actual place above the
+prime. Omitting even one place leaves a positive local degree unaccounted for. -/
+theorem localDeg_sum_eq_finrank_iff_full_prime_fiber
+    (S : Finset (NumberField.FinitePlace K)) (q : ℕ) (hq : q.Prime)
+    (hS : ∀ w ∈ S, Arithmetic.residueChar w = q) :
+    (∑ w ∈ S, Arithmetic.localDeg w) = Module.finrank ℚ K ↔
+      ∀ w : NumberField.FinitePlace K, Arithmetic.residueChar w = q → w ∈ S := by
+  classical
+  constructor
+  · intro hdegree w hw
+    by_contra hnot
+    have hfilter : (insert w S).filter (fun v => Arithmetic.residueChar v = q) =
+        insert w S := by
+      apply Finset.filter_eq_self.mpr
+      intro v hv
+      rcases Finset.mem_insert.mp hv with rfl | hv
+      · exact hw
+      · exact hS v hv
+    have hbound := Arithmetic.localDeg_sum_le_finrank_of_residueChar_filter
+      (insert w S) q hq
+    rw [hfilter, Finset.sum_insert hnot, hdegree] at hbound
+    have hpos := Arithmetic.localDeg_pos w
+    omega
+  · intro hcover
+    let : Finite {w : NumberField.FinitePlace K // Arithmetic.residueChar w = q} :=
+      Arithmetic.fiber_finite q
+    let : Fintype {w : NumberField.FinitePlace K // Arithmetic.residueChar w = q} :=
+      Fintype.ofFinite _
+    rw [← Arithmetic.sum_localDeg (K := K) q hq]
+    symm
+    refine Finset.sum_bij (fun w _ => w.1) ?_ ?_ ?_ ?_
+    · intro w _
+      exact hcover w.1 w.2
+    · intro w _ v _ h
+      exact Subtype.ext h
+    · intro w hw
+      exact ⟨⟨w, hS w hw⟩, Finset.mem_univ _, rfl⟩
+    · intro w _
+      rfl
+
+theorem qPilotWeight_sum_eq_one_iff_full_prime_fiber_and_unramified
+    (S : Finset (NumberField.FinitePlace K)) (q : ℕ) (hq : q.Prime)
+    (hS : ∀ w ∈ S, Arithmetic.residueChar w = q) :
+    (∑ w ∈ S, Arithmetic.qPilotWeight w) = 1 ↔
+      (∀ w : NumberField.FinitePlace K, Arithmetic.residueChar w = q → w ∈ S) ∧
+        ∀ w ∈ S, Arithmetic.ramIdx w = 1 := by
+  rw [qPilotWeight_sum_eq_one_iff_degree_sum_eq_and_unramified S q hq hS,
+    localDeg_sum_eq_finrank_iff_full_prime_fiber S q hq hS]
+
+/-- The finite-place support of one representative fibre, without a paper
+identity or a mass-one assumption. -/
+def qPilotRepresentativeFiberFinset (P : Corollary312QPilotData p T)
+    (f : P.badFinset → R) (r : R) : Finset (NumberField.FinitePlace K) := by
+  classical
+  exact (Finset.univ.filter (fun w : P.badFinset => f w = r)).image Subtype.val
+
+theorem mem_qPilotRepresentativeFiberFinset_iff
+    (P : Corollary312QPilotData p T) (f : P.badFinset → R) (r : R)
+    (w : NumberField.FinitePlace K) :
+    w ∈ qPilotRepresentativeFiberFinset p P f r ↔
+      ∃ hw : w ∈ P.badFinset, f ⟨w, hw⟩ = r := by
+  classical
+  simp only [qPilotRepresentativeFiberFinset, Finset.mem_image,
+    Finset.mem_filter, Finset.mem_univ, true_and]
+  constructor
+  · rintro ⟨v, hv, rfl⟩
+    exact ⟨v.2, hv⟩
+  · rintro ⟨hw, hf⟩
+    exact ⟨⟨w, hw⟩, hf, rfl⟩
+
+theorem qPilotRepresentativeFiberMass_eq_fiberFinset_sum
+    (P : Corollary312QPilotData p T) (f : P.badFinset → R) (r : R) :
+    qPilotRepresentativeFiberMass p P f r =
+      ∑ w ∈ qPilotRepresentativeFiberFinset p P f r, Arithmetic.qPilotWeight w := by
+  classical
+  rw [qPilotRepresentativeFiberFinset, Finset.sum_image]
+  · rw [Finset.sum_filter]
+    rfl
+  · intro w _ v _ h
+    exact Subtype.ext h
+
+/-- For a prime-preserving representative map, mass one is equivalent to
+the fibre containing all places above its prime, each with ramification index
+one. This concerns the actual source; it does not construct paper representatives. -/
+theorem qPilotRepresentativeFiberMass_eq_one_iff_full_prime_fiber_and_unramified
+    (P : Corollary312QPilotData p T) (f : P.badFinset → R)
+    (primeLabel : R → ℕ)
+    (hPrime : ∀ w : P.badFinset, Arithmetic.residueChar w.1 = primeLabel (f w))
+    (r : R) (hq : (primeLabel r).Prime) :
+    qPilotRepresentativeFiberMass p P f r = 1 ↔
+      (∀ w : NumberField.FinitePlace K, Arithmetic.residueChar w = primeLabel r →
+        ∃ hw : w ∈ P.badFinset, f ⟨w, hw⟩ = r) ∧
+      ∀ w : P.badFinset, f w = r → Arithmetic.ramIdx w.1 = 1 := by
+  have hS (w : NumberField.FinitePlace K)
+      (hw : w ∈ qPilotRepresentativeFiberFinset p P f r) :
+      Arithmetic.residueChar w = primeLabel r := by
+    obtain ⟨hw, hf⟩ := (mem_qPilotRepresentativeFiberFinset_iff p P f r w).mp hw
+    exact (hPrime ⟨w, hw⟩).trans (congrArg primeLabel hf)
+  rw [qPilotRepresentativeFiberMass_eq_fiberFinset_sum p P f r,
+    qPilotWeight_sum_eq_one_iff_full_prime_fiber_and_unramified
+      (qPilotRepresentativeFiberFinset p P f r) (primeLabel r) hq hS]
+  simp only [mem_qPilotRepresentativeFiberFinset_iff]
+  constructor
+  · rintro ⟨hcover, hunram⟩
+    exact ⟨hcover, fun w hw => hunram w.1 ⟨w.2, hw⟩⟩
+  · rintro ⟨hcover, hunram⟩
+    refine ⟨hcover, ?_⟩
+    rintro w ⟨hw, hf⟩
+    exact hunram ⟨w, hw⟩ hf
 
 private theorem sourcePrimeMass_eq_filter_sum
     (P : Corollary312QPilotData p T) (q : ℕ) :
