@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreeBlockGroupedRegionVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootProduct
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-DEGREE-BLOCK-GLOBAL-VOLUME
@@ -171,6 +172,29 @@ theorem groupedRootVolumeProduct_eq_selectedSourceRelativeVolume :
       SelectedThetaTensor.sourceAt D pi.1.1 pi.2 := by
     rfl
   rw [hsource, SelectedThetaTensor.relativeWeight_eq_localDeg_ratio D pi.1.1 pi.2]
+
+theorem selectedSourceRelativeVolume_eq_relativeQRootProduct :
+    selectedSourceRelativeVolume D =
+      iutInitialThetaRelativeQRootProduct D := by
+  unfold selectedSourceRelativeVolume iutInitialThetaRelativeQRootProduct
+  let e := iutInitialThetaModuliSelectedSourceEquiv D
+  symm
+  apply Fintype.prod_equiv e
+  intro v
+  rw [iutInitialThetaRelativeQRootFactor_eq_localDeg_ratio D v]
+  have hunder :
+      iutPlaceUnder
+          (F := ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E))
+          (Kt := ↥D.prime.torsionField)
+          ((iutInitialThetaModuliSelectedSourceEquiv D v).1.1) = v.1 :=
+    (iutPlaceUnder_eq_of_liesOver (iutInitialThetaModuliSelectedSource_liesOver D v)).symm
+  simp only [e]
+  rw [hunder]
+
+theorem groupedRootVolumeProduct_eq_relativeQRootProduct :
+    groupedRootVolumeProduct D = iutInitialThetaRelativeQRootProduct D := by
+  rw [groupedRootVolumeProduct_eq_selectedSourceRelativeVolume D,
+    selectedSourceRelativeVolume_eq_relativeQRootProduct D]
 
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
