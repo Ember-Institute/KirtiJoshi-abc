@@ -196,5 +196,21 @@ theorem groupedRootVolumeProduct_eq_relativeQRootProduct :
   rw [groupedRootVolumeProduct_eq_selectedSourceRelativeVolume D,
     selectedSourceRelativeVolume_eq_relativeQRootProduct D]
 
+theorem groupedRootVolumeProduct_normalized_eq_normalizedRelativeQRootProduct :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+      iutInitialThetaNormalizedRelativeQRootProduct D := by
+  rw [groupedRootVolumeProduct_eq_relativeQRootProduct D]
+  rfl
+
+theorem groupedRootVolumeProduct_normalized_negLog_eq_fullBaseSum :
+    -Real.log (groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ))) =
+      iutInitialThetaFullBaseQPilotLogSum D := by
+  rw [groupedRootVolumeProduct_normalized_eq_normalizedRelativeQRootProduct D]
+  exact iutInitialThetaNormalizedRelativeQRootProduct_negLog_eq_fullBaseSum D
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
