@@ -222,5 +222,58 @@ theorem groupedRootVolumeProduct_normalized_negLog_ge_referenceAbsLogQ :
   rw [groupedRootVolumeProduct_normalized_eq_normalizedRelativeQRootProduct D]
   exact iutInitialThetaReferenceAbsLogQ_le_normalizedRelativeQRootProduct_negLog D
 
+theorem groupedRootVolumeProduct_lt_one_of_selectedSource
+    (hs : Nonempty (SelectedSource D)) :
+    groupedRootVolumeProduct D < 1 := by
+  have hfactor (p : PrimeSupport D) :
+      0 < groupedRootVolumeAtPrime D p ∧ groupedRootVolumeAtPrime D p < 1 := by
+    obtain ⟨s, hsUniv, hsp⟩ := Finset.mem_image.mp p.2
+    have hindex : Nonempty (Index D p.1) :=
+      (selectedIndex_nonempty_iff_sourceAtPrime D p.1).mpr
+        ⟨s.1, s.2, hsp⟩
+    let _ : Fact p.1.Prime := ⟨primeProof D p⟩
+    exact ⟨groupedRegionVolume_logRegions_pos D p.1,
+      groupedRegionVolume_logRegions_lt_one D p.1 hindex⟩
+  have hprime : Nonempty (PrimeSupport D) := by
+    obtain ⟨s⟩ := hs
+    refine ⟨⟨Arithmetic.residueChar s.1.1,
+      Finset.mem_image.mpr ⟨s, Finset.mem_univ _, rfl⟩⟩⟩
+  have hprod : ∀ t : Finset (PrimeSupport D), t.Nonempty →
+      (∀ p ∈ t, 0 < groupedRootVolumeAtPrime D p) →
+      (∀ p ∈ t, groupedRootVolumeAtPrime D p < 1) →
+      t.prod (groupedRootVolumeAtPrime D) < 1 := by
+    intro t
+    induction t using Finset.induction_on with
+    | empty =>
+      intro ht
+      simp at ht
+    | @insert a t ha ih =>
+      intro ht hpos hlt
+      by_cases ht' : t.Nonempty
+      · have hrest := ih ht'
+          (fun p hp => hpos p (Finset.mem_insert_of_mem hp))
+          (fun p hp => hlt p (Finset.mem_insert_of_mem hp))
+        rw [Finset.prod_insert ha]
+        exact (mul_lt_of_lt_one_right (hpos a (Finset.mem_insert_self _ _)) hrest).trans
+          (hlt a (Finset.mem_insert_self _ _))
+      · have ht0 : t = ∅ := Finset.not_nonempty_iff_eq_empty.mp ht'
+        subst t
+        simpa using hlt a (Finset.mem_insert_self _ _)
+  exact hprod Finset.univ ⟨Classical.choice hprime, Finset.mem_univ _⟩
+    (fun p hp => (hfactor p).1) (fun p hp => (hfactor p).2)
+
+theorem groupedRootVolumeProduct_eq_one_iff_no_selectedSource :
+    groupedRootVolumeProduct D = 1 ↔ ¬ Nonempty (SelectedSource D) := by
+  constructor
+  · intro hvol
+    by_contra hs
+    exact (ne_of_lt (groupedRootVolumeProduct_lt_one_of_selectedSource D hs)) hvol
+  · intro hs
+    let _ : IsEmpty (SelectedSource D) := ⟨fun s => hs ⟨s⟩⟩
+    let _ : IsEmpty (PrimeSupport D) := ⟨fun p => by
+      obtain ⟨s, hsUniv, hsp⟩ := Finset.mem_image.mp p.2
+      exact hs ⟨s⟩⟩
+    simp [groupedRootVolumeProduct]
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
