@@ -142,16 +142,73 @@ theorem lattice_map_grouping (S : ∀ i, Set ((SelectedThetaTensor.packet D p).F
     rw [hblock]
     exact heq d
 
+theorem groupingIntegral_injective : Function.Injective (groupingIntegral D p) := by
+  intro x y h
+  exact DegreeBlockTensorGrouping.groupingLinear_injective D p h
+
+theorem groupedRegion_mem_iff
+    (S : ∀ i, Set ((SelectedThetaTensor.packet D p).Factor i))
+    (y : GroupedTensor D p) :
+    y ∈ groupedRegion D p (factorRegions D p S) ↔
+      ∃ x, x ∈ (SelectedThetaTensor.packet D p).lattice S ∧
+        groupingIntegral D p x = y := by
+  rw [← lattice_map_grouping D p S]
+  exact Submodule.mem_map
+
+theorem groupedRegion_preimage_unique
+    (S : ∀ i, Set ((SelectedThetaTensor.packet D p).Factor i))
+    {x y : (SelectedThetaTensor.packet D p).Tensor}
+    (_hx : x ∈ (SelectedThetaTensor.packet D p).lattice S)
+    (_hy : y ∈ (SelectedThetaTensor.packet D p).lattice S)
+    (hxy : groupingIntegral D p x = groupingIntegral D p y) : x = y := by
+  exact groupingIntegral_injective D p hxy
+
 theorem scalarLattice_map_grouping
     (z : ∀ i, (SelectedThetaTensor.packet D p).Factor i) :
     ((SelectedThetaTensor.packet D p).scalarLattice z).map (groupingIntegral D p) =
       groupedRegion D p (scalarRegions D p z) :=
   lattice_map_grouping D p _
 
+theorem scalarGroupedRegion_mem_iff
+    (z : ∀ i, (SelectedThetaTensor.packet D p).Factor i)
+    (y : GroupedTensor D p) :
+    y ∈ groupedRegion D p (scalarRegions D p z) ↔
+      ∃ x, x ∈ (SelectedThetaTensor.packet D p).scalarLattice z ∧
+        groupingIntegral D p x = y := by
+  have hS : scalarRegions D p z = factorRegions D p
+      (fun i => (fun x => z i * x) '' Metric.closedBall 0 1) := by
+    funext d
+    rfl
+  have hL : (SelectedThetaTensor.packet D p).scalarLattice z =
+      (SelectedThetaTensor.packet D p).lattice
+        (fun i => (fun x => z i * x) '' Metric.closedBall 0 1) := by
+    rfl
+  rw [hS, hL]
+  exact groupedRegion_mem_iff D p
+    (fun i => (fun x => z i * x) '' Metric.closedBall 0 1) y
+
 theorem logRegion_map_grouping :
     (SelectedThetaTensor.region D p).map (groupingIntegral D p) =
       groupedRegion D p (logRegions D p) :=
   scalarLattice_map_grouping D p _
+
+theorem logRegion_mem_iff (y : GroupedTensor D p) :
+    y ∈ groupedRegion D p (logRegions D p) ↔
+      ∃ x, x ∈ SelectedThetaTensor.region D p ∧ groupingIntegral D p x = y := by
+  have hS : logRegions D p = factorRegions D p
+      (fun i => iutInitialThetaFullQRootLogBall D
+        (SelectedThetaTensor.sourceAt D p i)) := by
+    funext d
+    rfl
+  have hL : SelectedThetaTensor.region D p =
+      (SelectedThetaTensor.packet D p).lattice
+        (fun i => iutInitialThetaFullQRootLogBall D
+          (SelectedThetaTensor.sourceAt D p i)) := by
+    rfl
+  rw [hS, hL]
+  exact groupedRegion_mem_iff D p
+    (fun i => iutInitialThetaFullQRootLogBall D
+      (SelectedThetaTensor.sourceAt D p i)) y
 
 theorem groupedRootValue_mem_groupedRegion :
     groupedRootValue D p ∈ groupedRegion D p (logRegions D p) := by
