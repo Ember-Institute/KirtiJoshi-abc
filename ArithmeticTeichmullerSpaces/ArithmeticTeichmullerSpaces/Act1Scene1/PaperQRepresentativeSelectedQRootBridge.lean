@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootPaperQSum
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperRootNormProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 
 namespace JoshiTeich.Act1Scene1
@@ -204,6 +205,48 @@ theorem representativePaperNormalizedSourceQFactorProduct_eq_selectedQRootPaperN
     _ = selectedQRootPaperNormalizedFactorProduct D := by
       unfold selectedQRootPaperNormalizedFactorProduct
       rw [← Real.exp_sum, ← Finset.sum_neg_distrib]
+
+theorem selectedQRootPaperNormalizedFactorProduct_eq_actualSelectedPaperRootNormProduct
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG) :
+    selectedQRootPaperNormalizedFactorProduct D = actualSelectedPaperRootNormProduct D := by
+  classical
+  let S := {s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset //
+    s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D}
+  let _ : Fintype S :=
+    (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D).fintype
+  unfold selectedQRootPaperNormalizedFactorProduct actualSelectedPaperRootNormProduct
+  apply Finset.prod_congr rfl
+  intro s hs
+  have hpos : 0 < actualPaperRootNorm D s.1 :=
+    (actualPaperRootNorm_mem_Ioo_via_rootBallHaar D s.1).1
+  calc
+    Real.exp (-((Arithmetic.ramIdx s.1.1 : ℝ) *
+        Arithmetic.ordp s.1.1
+          ((iutInitialThetaOddSupportTorsionQRootSource D).qroot s.1) *
+        Real.log (Arithmetic.residueChar s.1.1))) =
+      Real.exp (Real.log (actualPaperRootNorm D s.1)) := by
+        congr 1
+        linarith [actualPaperRootNorm_negLog_eq_paperTerm D s.1]
+    _ = actualPaperRootNorm D s.1 := Real.exp_log hpos
+
+theorem representativePaperNormalizedSourceQFactorProduct_eq_actualSelectedPaperRootNormProduct
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    {P : Corollary312QPilotData p T}
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D p A theta thetaBase
+      packetHull heightData ramification logVolume processionLength) :
+    Corollary312QPilotPaperRepresentativeAccounting.representativePaperNormalizedSourceQFactorProduct
+        p A = actualSelectedPaperRootNormProduct D := by
+  rw [representativePaperNormalizedSourceQFactorProduct_eq_selectedQRootPaperNormalizedFactorProduct
+      p D A theta thetaBase packetHull heightData ramification logVolume processionLength B,
+    selectedQRootPaperNormalizedFactorProduct_eq_actualSelectedPaperRootNormProduct D]
 
 /-- Once the two finite source certificates are supplied, the weighted q-pilot
 sum transports directly to the unweighted selected q-root paper sum. -/
