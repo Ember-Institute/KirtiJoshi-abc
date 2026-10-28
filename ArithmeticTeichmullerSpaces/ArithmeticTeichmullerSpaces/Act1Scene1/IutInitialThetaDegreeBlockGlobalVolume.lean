@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreeBlockGroupedRegionVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootProduct
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootReferenceBound
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-DEGREE-BLOCK-GLOBAL-VOLUME
@@ -211,6 +212,15 @@ theorem groupedRootVolumeProduct_normalized_negLog_eq_fullBaseSum :
       iutInitialThetaFullBaseQPilotLogSum D := by
   rw [groupedRootVolumeProduct_normalized_eq_normalizedRelativeQRootProduct D]
   exact iutInitialThetaNormalizedRelativeQRootProduct_negLog_eq_fullBaseSum D
+
+theorem groupedRootVolumeProduct_normalized_negLog_ge_referenceAbsLogQ :
+    JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D) ≤
+      -Real.log (groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ))) := by
+  rw [groupedRootVolumeProduct_normalized_eq_normalizedRelativeQRootProduct D]
+  exact iutInitialThetaReferenceAbsLogQ_le_normalizedRelativeQRootProduct_negLog D
 
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
