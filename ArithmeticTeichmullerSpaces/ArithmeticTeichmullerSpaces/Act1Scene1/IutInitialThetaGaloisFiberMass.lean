@@ -79,7 +79,7 @@ def iutInitialThetaTorsionBaseFiberSource
   apply (mem_iutBadPlacesOverFinset_iff B.badPlaces B.badPlaces_finite v.1).mpr
   exact ⟨b.1, B.mem_badPlaces b, (mem_iutInitialThetaTorsionBaseFiber_iff D b v.1).mp v.2⟩
 
-private theorem fiberSource_basePlace
+theorem iutInitialThetaTorsionBaseFiberSource_basePlace
     (b : (iutInitialThetaOddSupportBaseQPilotSource D).badFinset)
     (v : iutInitialThetaTorsionBaseFiber D b) :
     (iutInitialThetaOddSupportTorsionQRootSource D).basePlace
@@ -108,7 +108,7 @@ theorem iutInitialThetaTorsionBaseFiber_weightedPaperLogSum
       actualPaperRootNorm D (iutInitialThetaTorsionBaseFiberSource D (R.basePlace s) v) =
         actualPaperRootNorm D s :=
     actualPaperRootNorm_eq_of_same_basePlace D _ s
-      (fiberSource_basePlace D (R.basePlace s) v)
+      (iutInitialThetaTorsionBaseFiberSource_basePlace D (R.basePlace s) v)
   calc
     _ = (∑ v : iutInitialThetaTorsionBaseFiber D (R.basePlace s), Arithmetic.qPilotWeight v.1) *
         (-Real.log (actualPaperRootNorm D s)) := by
