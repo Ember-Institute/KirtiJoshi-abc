@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreeBlockGroupedRegionVolume
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootProduct
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRelativeQRootReferenceBound
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVossWeightedOmission
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-DEGREE-BLOCK-GLOBAL-VOLUME
@@ -352,6 +353,26 @@ theorem groupedRootVolumeProduct_normalized_eq_exp_neg_fullBaseSum :
     _ = Real.exp (-iutInitialThetaFullBaseQPilotLogSum D) := by
       congr 1
       linarith
+
+theorem groupedRootVolumeProduct_normalized_eq_exp_neg_referenceAbsLogQ_of_fullSupportCoverage
+    (hcoverage : iutInitialThetaVBadModuliFinset D =
+      iutInitialThetaOddModSupportFinset D) :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+      Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)) := by
+  have hreference :=
+    (VossWeightedOmission.reference_eq_fullBase_iff_coverage D).mpr hcoverage
+  calc
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+        Real.exp (-iutInitialThetaFullBaseQPilotLogSum D) :=
+      groupedRootVolumeProduct_normalized_eq_exp_neg_fullBaseSum D
+    _ = Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)) := by
+      rw [hreference]
 
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
