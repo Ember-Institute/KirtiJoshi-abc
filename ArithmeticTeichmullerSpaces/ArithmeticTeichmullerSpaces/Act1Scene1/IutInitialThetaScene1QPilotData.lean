@@ -243,7 +243,7 @@ theorem reference_absLogQ_eq_selectedQRootPaperQLogSum_grouped
   let R := iutInitialThetaOddSupportTorsionQRootSource D₀
   let S := {s : R.badFinset //
     s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D₀}
-  letI : Fintype S :=
+  let _ : Fintype S :=
     (iutInitialThetaOddSupportSelectedQRootSourcePlaces_finite D₀).fintype
   let P := (Finset.univ : Finset S).image
     (fun s => Arithmetic.residueChar s.1.1)
@@ -396,6 +396,61 @@ noncomputable def ofCanonicalInitialThetaLink
   exact source.toSceneQPilot_rawQNormDegreeNormalization p hCompat
 
 end Corollary312Scene1DegreeNormalizedQPilotData
+
+namespace Corollary312Scene1QPilotData
+
+/-! The explicit representative certificate also transports the canonical
+source factor product all the way to the reference q-pilot exponent.  The
+certificate remains an input; this theorem does not construct the paper's
+`L'` representatives. -/
+theorem representativePaperNormalizedSourceQFactorProduct_eq_exp_neg_referenceAbsLogQ_ofCanonicalInitialThetaLink
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D₀ : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D₀.F) (O := O) p)
+    (hEll : base.target.ell = D₀.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D₀
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (hDegree : Module.finrank ℚ D₀.F = 1)
+    (A : Corollary312QPilotPaperRepresentativeAccounting p base.target
+      ((Corollary312Scene1QPilotData.ofCanonicalInitialThetaLink
+        p D₀ base hEll hLink hDegree).qPilot p))
+    [Fintype A.representative] :
+    JoshiTeich.Act1Scene1.Corollary312QPilotPaperRepresentativeAccounting.representativePaperNormalizedSourceQFactorProduct
+      p A =
+      Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D₀)) := by
+  let C := Corollary312Scene1QPilotData.ofCanonicalInitialThetaLink
+    p D₀ base hEll hLink hDegree
+  have hProduct :=
+    Corollary312QPilotPaperRepresentativeAccounting.weightedPaperNormalizedSourceQFactorProduct_eq_representativePaperNormalizedSourceQFactorProduct
+      p A C.source.orderCompatibility (C.rawNormalization p) C.base.ell_prime.pos
+  have hSource := weightedPaperNormalizedSourceQFactorProduct_eq_exp_neg_absLogQ
+    p base.target (C.qPilot p) C.source.orderCompatibility
+      (C.rawNormalization p) C.base.ell_prime.pos
+  have hRef := absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCanonicalInitialThetaLink
+    p D₀ base hEll hLink hDegree
+  calc
+    JoshiTeich.Act1Scene1.Corollary312QPilotPaperRepresentativeAccounting.representativePaperNormalizedSourceQFactorProduct
+      p A =
+        weightedPaperNormalizedSourceQFactorProduct p base.target (C.qPilot p) :=
+      hProduct.symm
+    _ = Real.exp (-(C.qPilot p).absLogQ p) := hSource
+    _ = Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D₀)) := by
+      rw [hRef]
+
+end Corollary312Scene1QPilotData
 
 end
 
