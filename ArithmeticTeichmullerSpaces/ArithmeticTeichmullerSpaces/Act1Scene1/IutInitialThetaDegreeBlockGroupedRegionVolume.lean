@@ -100,6 +100,19 @@ theorem groupedRegionVolume_logRegions_negLog_pos
   exact neg_pos.mpr (Real.log_neg (groupedRegionVolume_logRegions_pos D p)
     (groupedRegionVolume_logRegions_lt_one D p hι))
 
+theorem groupedRegionVolume_logRegions_eq_one_iff :
+    groupedRegionVolume D p (logRegions D p) = 1 ↔
+      ¬ Nonempty (Index D p) := by
+  constructor
+  · intro hvol
+    by_contra hι
+    exact (ne_of_lt (groupedRegionVolume_logRegions_lt_one D p hι)) hvol
+  · intro hι
+    let _ : IsEmpty (Index D p) := ⟨fun i => hι ⟨i⟩⟩
+    rw [groupedRegionVolume_logRegions_eq_relativeRootVolume D p,
+      SelectedThetaTensor.relativeRootVolume]
+    simp
+
 theorem groupedRegionVolume_logRegions_negLog_eq_ordp_sum :
     -Real.log (groupedRegionVolume D p (logRegions D p)) =
       ∑ i : Index D p, (Arithmetic.localDeg (SelectedThetaTensor.moduliAt D p i) : ℝ) *
