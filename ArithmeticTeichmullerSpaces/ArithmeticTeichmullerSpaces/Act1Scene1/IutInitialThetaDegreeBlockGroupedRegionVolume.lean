@@ -62,6 +62,25 @@ theorem groupedRegionVolume_logRegions_negLog_eq_ordp_sum :
   rw [groupedRegionVolume_eq_regionVolume D p]
   simpa only [rootVolume] using rootVolume_negLog_eq_ordp_sum D p
 
+theorem groupedRegionVolume_logRegions_eq_exp_neg_ordp_sum :
+    groupedRegionVolume D p (logRegions D p) =
+      Real.exp (-∑ i : Index D p, (Arithmetic.localDeg (SelectedThetaTensor.moduliAt D p i) : ℝ) *
+        Arithmetic.ordp (SelectedThetaTensor.sourceAt D p i).1
+          ((iutInitialThetaOddSupportTorsionQRootSource D).qroot
+            (SelectedThetaTensor.sourceAt D p i)) * Real.log p) := by
+  have hpos := groupedRegionVolume_logRegions_pos D p
+  have hlog := groupedRegionVolume_logRegions_negLog_eq_ordp_sum D p
+  calc
+    groupedRegionVolume D p (logRegions D p) =
+        Real.exp (Real.log (groupedRegionVolume D p (logRegions D p))) :=
+      (Real.exp_log hpos).symm
+    _ = Real.exp (-∑ i : Index D p, (Arithmetic.localDeg (SelectedThetaTensor.moduliAt D p i) : ℝ) *
+        Arithmetic.ordp (SelectedThetaTensor.sourceAt D p i).1
+          ((iutInitialThetaOddSupportTorsionQRootSource D).qroot
+            (SelectedThetaTensor.sourceAt D p i)) * Real.log p) := by
+      congr 1
+      linarith
+
 theorem groupedRootValue_mem_groupedRegion_with_positive_volume :
     groupedRootValue D p ∈ groupedRegion D p (logRegions D p) ∧
       0 < groupedRegionVolume D p (logRegions D p) := by
