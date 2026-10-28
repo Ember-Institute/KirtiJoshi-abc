@@ -1685,3 +1685,4 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalPerfectoid
 #check JoshiTeich.Act1Scene1.DegreeBlockRegionGrouping.logRegion_map_grouping
 #check JoshiTeich.Act1Scene1.DegreeBlockRegionGrouping.logRegion_mem_iff
 #check JoshiTeich.Act1Scene1.DegreeBlockRegionGrouping.groupedRootValue_mem_groupedRegion
+#check JoshiTeich.Act1Scene1.DegreeBlockRegionGrouping.groupedRootValue_preimage_eq_value

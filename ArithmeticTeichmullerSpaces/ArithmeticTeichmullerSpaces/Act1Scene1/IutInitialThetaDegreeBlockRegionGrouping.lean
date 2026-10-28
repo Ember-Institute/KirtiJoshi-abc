@@ -242,5 +242,21 @@ theorem groupedRootValue_mem_groupedRegion :
   exact Submodule.mem_map.mpr ⟨SelectedThetaTensor.value D p,
     SelectedThetaTensor.value_mem_region D p, groupingEquiv_rootValue D p⟩
 
+theorem groupedRootValue_preimage_eq_value
+    (hy : groupedRootValue D p ∈ groupedRegion D p
+      (factorRegions D p (fun i => iutInitialThetaFullQRootLogBall D
+        (SelectedThetaTensor.sourceAt D p i)))) :
+    groupedRegion_preimage D p
+        (fun i => iutInitialThetaFullQRootLogBall D
+          (SelectedThetaTensor.sourceAt D p i))
+        (groupedRootValue D p) hy =
+      SelectedThetaTensor.value D p := by
+  apply (groupedRegion_preimage_eq D p
+    (fun i => iutInitialThetaFullQRootLogBall D
+      (SelectedThetaTensor.sourceAt D p i)) (groupedRootValue D p) hy
+    (x := SelectedThetaTensor.value D p)
+    (SelectedThetaTensor.value_mem_region D p) ?_).symm
+  exact groupingEquiv_rootValue D p
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockRegionGrouping
