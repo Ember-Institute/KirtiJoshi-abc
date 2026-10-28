@@ -113,6 +113,32 @@ theorem groupedRegionVolume_logRegions_eq_one_iff :
       SelectedThetaTensor.relativeRootVolume]
     simp
 
+omit [Fact p.Prime] in
+theorem selectedIndex_nonempty_iff_sourceAtPrime :
+    Nonempty (Index D p) ↔
+      ∃ s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset,
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D ∧
+          Arithmetic.residueChar s.1 = p := by
+  constructor
+  · rintro ⟨i⟩
+    exact ⟨SelectedThetaTensor.sourceAt D p i,
+      (SelectedThetaTensor.sourceAt_selected_residueChar D p i).1,
+      (SelectedThetaTensor.sourceAt_selected_residueChar D p i).2⟩
+  · rintro ⟨s, hs, hp⟩
+    have hsFiber : s ∈ SelectedThetaTensor.fiber D p := by
+      rw [SelectedThetaTensor.fiber, Finset.mem_filter]
+      exact ⟨Finset.mem_univ _, hs, hp⟩
+    let sf : ↥(SelectedThetaTensor.fiber D p) := ⟨s, hsFiber⟩
+    exact ⟨(SelectedThetaTensor.enumeration D p).symm sf⟩
+
+theorem groupedRegionVolume_logRegions_eq_one_iff_no_sourceAtPrime :
+    groupedRegionVolume D p (logRegions D p) = 1 ↔
+      ¬ ∃ s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset,
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D ∧
+          Arithmetic.residueChar s.1 = p := by
+  rw [groupedRegionVolume_logRegions_eq_one_iff,
+    ← selectedIndex_nonempty_iff_sourceAtPrime D p]
+
 theorem groupedRegionVolume_logRegions_negLog_eq_ordp_sum :
     -Real.log (groupedRegionVolume D p (logRegions D p)) =
       ∑ i : Index D p, (Arithmetic.localDeg (SelectedThetaTensor.moduliAt D p i) : ℝ) *
