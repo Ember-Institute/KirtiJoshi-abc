@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeAccounting
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedQRootPaperQSum
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperRootNormProduct
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadPaperRootProductBound
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdelicThetaLinkBridge
 
 namespace JoshiTeich.Act1Scene1
@@ -247,6 +248,25 @@ theorem representativePaperNormalizedSourceQFactorProduct_eq_actualSelectedPaper
   rw [representativePaperNormalizedSourceQFactorProduct_eq_selectedQRootPaperNormalizedFactorProduct
       p D A theta thetaBase packetHull heightData ramification logVolume processionLength B,
     selectedQRootPaperNormalizedFactorProduct_eq_actualSelectedPaperRootNormProduct D]
+
+theorem representativePaperNormalizedSourceQFactorProduct_lt_normalizedVBadRelativeQRootProduct
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    {T : Corollary312Data D.F O p}
+    {P : Corollary312QPilotData p T}
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D p A theta thetaBase
+      packetHull heightData ramification logVolume processionLength) :
+    Corollary312QPilotPaperRepresentativeAccounting.representativePaperNormalizedSourceQFactorProduct
+        p A < iutInitialThetaNormalizedVBadRelativeQRootProduct D := by
+  rw [representativePaperNormalizedSourceQFactorProduct_eq_actualSelectedPaperRootNormProduct
+      p D A theta thetaBase packetHull heightData ramification logVolume processionLength B]
+  exact actualSelectedPaperRootNormProduct_lt_normalizedVBadRootProduct D
 
 /-- Once the two finite source certificates are supplied, the weighted q-pilot
 sum transports directly to the unweighted selected q-root paper sum. -/
