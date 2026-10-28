@@ -67,6 +67,11 @@ variable [IsAdicComplete (Ideal.span {(p : O)}) O]
 variable {T : Corollary312Data K O p}
 variable {P : Corollary312QPilotData p T}
 
+noncomputable def representativePaperNormalizedSourceQFactorProduct
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    [Fintype A.representative] : ℝ :=
+  ∏ r : A.representative, Real.exp (-A.representativeTerm r)
+
 private theorem weighted_source_sum_eq_representative_sum
     (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
     [Fintype A.representative] :
@@ -74,7 +79,7 @@ private theorem weighted_source_sum_eq_representative_sum
       Arithmetic.qPilotWeight w.1 *
         A.representativeTerm (A.representativeOfSource w)) =
       ∑ r : A.representative, A.representativeTerm r := by
-  letI := A.representativeDecidableEq
+  let _ := A.representativeDecidableEq
   calc
     (∑ w : P.badFinset,
         Arithmetic.qPilotWeight w.1 *
@@ -123,7 +128,7 @@ theorem absLogQ_eq_unweightedRepresentativeSum
     (hEll : 0 < T.ell) :
     P.absLogQ p =
       ∑ r : A.representative, A.representativeTerm r := by
-  letI := A.representativeDecidableEq
+  let _ := A.representativeDecidableEq
   have hWeighted :=
     absLogQ_eq_weightedPaperNormalizedSourceQFactorLogSum
       (p := p) T P hOrder hNorm hEll
@@ -143,6 +148,27 @@ theorem absLogQ_eq_unweightedRepresentativeSum
       rw [A.sourceTerm_eq w]
     _ = ∑ r : A.representative, A.representativeTerm r :=
       weighted_source_sum_eq_representative_sum p A
+
+theorem weightedPaperNormalizedSourceQFactorProduct_eq_representativePaperNormalizedSourceQFactorProduct
+    (A : Corollary312QPilotPaperRepresentativeAccounting p T P)
+    [Fintype A.representative]
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder P)
+    (hEll : 0 < T.ell) :
+    weightedPaperNormalizedSourceQFactorProduct p T P =
+      representativePaperNormalizedSourceQFactorProduct p A := by
+  let _ := A.representativeDecidableEq
+  have hProduct := weightedPaperNormalizedSourceQFactorProduct_eq_exp_neg_absLogQ
+    p T P hOrder hNorm hEll
+  have hSum := absLogQ_eq_unweightedRepresentativeSum p A hOrder hNorm hEll
+  calc
+    weightedPaperNormalizedSourceQFactorProduct p T P =
+        Real.exp (-P.absLogQ p) := hProduct
+    _ = Real.exp (-∑ r : A.representative, A.representativeTerm r) := by
+      rw [hSum]
+    _ = representativePaperNormalizedSourceQFactorProduct p A := by
+      unfold representativePaperNormalizedSourceQFactorProduct
+      rw [← Finset.sum_neg_distrib, Real.exp_sum]
 
 end Corollary312QPilotPaperRepresentativeAccounting
 
