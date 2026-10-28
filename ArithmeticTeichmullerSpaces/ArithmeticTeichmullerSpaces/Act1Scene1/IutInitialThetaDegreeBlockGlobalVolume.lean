@@ -331,5 +331,27 @@ theorem groupedRootVolumeProduct_normalized_le_exp_neg_referenceAbsLogQ :
       apply Real.exp_le_exp.mpr
       linarith
 
+theorem groupedRootVolumeProduct_normalized_eq_exp_neg_fullBaseSum :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+      Real.exp (-iutInitialThetaFullBaseQPilotLogSum D) := by
+  have hpos : 0 < groupedRootVolumeProduct D ^
+      (1 / (Module.finrank ℚ
+        ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) :=
+    Real.rpow_pos_of_pos (groupedRootVolumeProduct_pos D) _
+  have hneg := groupedRootVolumeProduct_normalized_negLog_eq_fullBaseSum D
+  calc
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+        Real.exp (Real.log (groupedRootVolumeProduct D ^
+          (1 / (Module.finrank ℚ
+            ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)))) :=
+      (Real.exp_log hpos).symm
+    _ = Real.exp (-iutInitialThetaFullBaseQPilotLogSum D) := by
+      congr 1
+      linarith
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
