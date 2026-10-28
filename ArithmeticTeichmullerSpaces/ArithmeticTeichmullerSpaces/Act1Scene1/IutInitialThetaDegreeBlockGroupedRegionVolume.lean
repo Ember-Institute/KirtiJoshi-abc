@@ -139,6 +139,21 @@ theorem groupedRegionVolume_logRegions_eq_one_iff_no_sourceAtPrime :
   rw [groupedRegionVolume_logRegions_eq_one_iff,
     ← selectedIndex_nonempty_iff_sourceAtPrime D p]
 
+theorem groupedRegionVolume_logRegions_lt_one_iff_sourceAtPrime :
+    groupedRegionVolume D p (logRegions D p) < 1 ↔
+      ∃ s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset,
+        s ∈ iutInitialThetaOddSupportSelectedQRootSourcePlaces D ∧
+          Arithmetic.residueChar s.1 = p := by
+  constructor
+  · intro hlt
+    by_contra hsource
+    have heq := (groupedRegionVolume_logRegions_eq_one_iff_no_sourceAtPrime D p).mpr hsource
+    rw [heq] at hlt
+    exact (lt_irrefl 1) hlt
+  · intro hsource
+    exact groupedRegionVolume_logRegions_lt_one D p
+      ((selectedIndex_nonempty_iff_sourceAtPrime D p).2 hsource)
+
 theorem groupedRegionVolume_logRegions_negLog_eq_ordp_sum :
     -Real.log (groupedRegionVolume D p (logRegions D p)) =
       ∑ i : Index D p, (Arithmetic.localDeg (SelectedThetaTensor.moduliAt D p i) : ℝ) *
