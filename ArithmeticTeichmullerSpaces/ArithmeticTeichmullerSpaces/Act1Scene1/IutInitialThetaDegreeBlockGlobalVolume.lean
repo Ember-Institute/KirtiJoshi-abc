@@ -307,5 +307,29 @@ theorem groupedRootVolumeProduct_normalized_negLog_pos_of_selectedSource
     (Real.rpow_pos_of_pos (groupedRootVolumeProduct_pos D) _)
     (groupedRootVolumeProduct_normalized_lt_one_of_selectedSource D hs))
 
+theorem groupedRootVolumeProduct_normalized_le_exp_neg_referenceAbsLogQ :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) ≤
+      Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)) := by
+  have hpos : 0 < groupedRootVolumeProduct D ^
+      (1 / (Module.finrank ℚ
+        ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) :=
+    Real.rpow_pos_of_pos (groupedRootVolumeProduct_pos D) _
+  have hlog := groupedRootVolumeProduct_normalized_negLog_ge_referenceAbsLogQ D
+  calc
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+        Real.exp (Real.log (groupedRootVolumeProduct D ^
+          (1 / (Module.finrank ℚ
+            ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)))) :=
+      (Real.exp_log hpos).symm
+    _ ≤ Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)) := by
+      apply Real.exp_le_exp.mpr
+      linarith
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
