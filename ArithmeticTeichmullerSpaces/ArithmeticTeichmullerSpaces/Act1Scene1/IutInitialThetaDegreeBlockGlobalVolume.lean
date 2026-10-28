@@ -298,5 +298,14 @@ theorem groupedRootVolumeProduct_normalized_eq_one_iff_no_selectedSource :
     rw [groupedRootVolumeProduct_eq_one_iff_no_selectedSource D |>.mpr hs]
     exact Real.one_rpow _
 
+theorem groupedRootVolumeProduct_normalized_negLog_pos_of_selectedSource
+    (hs : Nonempty (SelectedSource D)) :
+    0 < -Real.log (groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ))) := by
+  exact neg_pos.mpr (Real.log_neg
+    (Real.rpow_pos_of_pos (groupedRootVolumeProduct_pos D) _)
+    (groupedRootVolumeProduct_normalized_lt_one_of_selectedSource D hs))
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
