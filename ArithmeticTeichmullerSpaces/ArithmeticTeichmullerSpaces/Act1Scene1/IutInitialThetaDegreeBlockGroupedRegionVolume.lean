@@ -16,7 +16,7 @@ namespace JoshiTeich.Act1Scene1.DegreeBlockGroupedRegionVolume
 
 open JoshiTeich.Prologue SelectedDegreeBlockVolume DegreeBlockTensorGrouping
   DegreeBlockRegionGrouping
-open scoped BigOperators Classical
+open scoped BigOperators Classical NNReal
 universe u
 noncomputable section
 
@@ -52,6 +52,53 @@ theorem groupedRegionVolume_logRegions_pos :
     0 < groupedRegionVolume D p (logRegions D p) := by
   rw [groupedRegionVolume_eq_regionVolume D p]
   exact rootVolume_pos D p
+
+theorem groupedRegionVolume_logRegions_lt_one
+    (hι : Nonempty (Index D p)) :
+    groupedRegionVolume D p (logRegions D p) < 1 := by
+  rw [groupedRegionVolume_logRegions_eq_relativeRootVolume D p,
+    SelectedThetaTensor.relativeRootVolume]
+  let g : Index D p → ℝ := fun i =>
+    ‖(iutInitialThetaOddSupportTorsionQRootSource D).qroot
+        (SelectedThetaTensor.sourceAt D p i)‖ ^ SelectedThetaTensor.relativeWeight D p i
+  change (∏ i : Index D p, g i) < 1
+  have hpos (i : Index D p) : 0 < g i := by
+    dsimp [g]
+    exact Real.rpow_pos_of_pos (norm_pos_iff.mpr
+      ((iutInitialThetaOddSupportTorsionQRootSource D).qroot_ne_zero _)) _
+  have hlt (i : Index D p) : g i < 1 := by
+    dsimp [g]
+    exact Real.rpow_lt_one (norm_nonneg _)
+      (iutInitialThetaFullQRoot_norm_lt_one D (SelectedThetaTensor.sourceAt D p i))
+      (SelectedThetaTensor.relativeWeight_mem_Ioc D p i).1
+  have hprod : ∀ s : Finset (Index D p), s.Nonempty →
+      (∀ i ∈ s, 0 < g i) → (∀ i ∈ s, g i < 1) →
+      s.prod g < 1 := by
+    intro s
+    induction s using Finset.induction_on with
+    | empty =>
+      intro hs
+      simp at hs
+    | @insert a s ha ih =>
+      intro hs hposS hltS
+      by_cases hs' : s.Nonempty
+      · have hrest := ih hs'
+          (fun i hi => hposS i (Finset.mem_insert_of_mem hi))
+          (fun i hi => hltS i (Finset.mem_insert_of_mem hi))
+        rw [Finset.prod_insert ha]
+        exact (mul_lt_of_lt_one_right (hposS a (Finset.mem_insert_self _ _)) hrest).trans
+          (hltS a (Finset.mem_insert_self _ _))
+      · have hs0 : s = ∅ := Finset.not_nonempty_iff_eq_empty.mp hs'
+        subst s
+        simpa using hltS a (Finset.mem_insert_self _ _)
+  exact hprod Finset.univ ⟨Classical.choice hι, Finset.mem_univ _⟩
+    (fun i hi => hpos i) (fun i hi => hlt i)
+
+theorem groupedRegionVolume_logRegions_negLog_pos
+    (hι : Nonempty (Index D p)) :
+    0 < -Real.log (groupedRegionVolume D p (logRegions D p)) := by
+  exact neg_pos.mpr (Real.log_neg (groupedRegionVolume_logRegions_pos D p)
+    (groupedRegionVolume_logRegions_lt_one D p hι))
 
 theorem groupedRegionVolume_logRegions_negLog_eq_ordp_sum :
     -Real.log (groupedRegionVolume D p (logRegions D p)) =
