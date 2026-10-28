@@ -175,4 +175,114 @@ theorem absLogQ_eq_weightedPaperNormalizedSourceQFactorLogSum
                 ⟨w.1, Q.mem_bad p w.2⟩)) := by
       simp
 
+/-! The preceding weighted logarithmic identity has a finite-product form.  The
+product below is still the actual q-pilot carrier with explicit arithmetic
+weights; it is not the paper's unweighted representative product or its
+theta-volume. -/
+noncomputable def weightedPaperNormalizedSourceQFactor
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T) (w : Q.badFinset) : ℝ :=
+  Corollary312PaperNormalizedSourceQFactor p T
+    (show Corollary312SourceQIndex p T from
+      ⟨w.1, Q.mem_bad p w.2⟩)
+
+noncomputable def weightedPaperNormalizedSourceQFactorProduct
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T) : ℝ :=
+  ∏ w : Q.badFinset,
+    weightedPaperNormalizedSourceQFactor p T Q w ^ Arithmetic.qPilotWeight w.1
+
+theorem weightedPaperNormalizedSourceQFactorProduct_pos
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T) :
+    0 < weightedPaperNormalizedSourceQFactorProduct p T Q := by
+  unfold weightedPaperNormalizedSourceQFactorProduct
+  apply Finset.prod_pos
+  intro w hw
+  have hq : 0 < Corollary312SourceQFactor p T
+      (show Corollary312SourceQIndex p T from
+        ⟨w.1, Q.mem_bad p w.2⟩) := by
+    unfold Corollary312SourceQFactor
+    exact Real.rpow_pos_of_pos
+      (T.scene1.input_laws.first_axiom.q_norm_positive w.1 (Q.mem_bad p w.2)) _
+  unfold weightedPaperNormalizedSourceQFactor
+  exact Real.rpow_pos_of_pos
+    (by
+      unfold Corollary312PaperNormalizedSourceQFactor
+      exact Real.rpow_pos_of_pos hq _) _
+
+theorem weightedPaperNormalizedSourceQFactorProduct_negLog_eq_absLogQ
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder Q)
+    (hEll : 0 < T.ell) :
+    -Real.log (weightedPaperNormalizedSourceQFactorProduct p T Q) = Q.absLogQ p := by
+  have hfactor : ∀ w : Q.badFinset, 0 <
+      weightedPaperNormalizedSourceQFactor p T Q w := by
+    intro w
+    have hq : 0 < Corollary312SourceQFactor p T
+        (show Corollary312SourceQIndex p T from
+          ⟨w.1, Q.mem_bad p w.2⟩) := by
+      unfold Corollary312SourceQFactor
+      exact Real.rpow_pos_of_pos
+        (T.scene1.input_laws.first_axiom.q_norm_positive w.1 (Q.mem_bad p w.2)) _
+    unfold weightedPaperNormalizedSourceQFactor
+    exact Real.rpow_pos_of_pos hq _
+  calc
+    -Real.log (weightedPaperNormalizedSourceQFactorProduct p T Q) =
+        ∑ w : Q.badFinset,
+          Arithmetic.qPilotWeight w.1 *
+            -Real.log (weightedPaperNormalizedSourceQFactor p T Q w) := by
+      unfold weightedPaperNormalizedSourceQFactorProduct
+      rw [Real.log_prod (fun w _ =>
+        (Real.rpow_pos_of_pos (hfactor w) _).ne')]
+      rw [← Finset.sum_neg_distrib]
+      apply Finset.sum_congr rfl
+      intro w hw
+      rw [Real.log_rpow (hfactor w)]
+      ring
+    _ = Q.absLogQ p := by
+      simpa [weightedPaperNormalizedSourceQFactor] using
+        (absLogQ_eq_weightedPaperNormalizedSourceQFactorLogSum
+          p T Q hOrder hNorm hEll).symm
+
+theorem weightedPaperNormalizedSourceQFactorProduct_eq_exp_neg_absLogQ
+    {K : Type uK} [Field K] [NumberField K]
+    {O : Type uK} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder Q)
+    (hEll : 0 < T.ell) :
+    weightedPaperNormalizedSourceQFactorProduct p T Q =
+      Real.exp (-Q.absLogQ p) := by
+  have hneg := weightedPaperNormalizedSourceQFactorProduct_negLog_eq_absLogQ
+    p T Q hOrder hNorm hEll
+  calc
+    weightedPaperNormalizedSourceQFactorProduct p T Q =
+        Real.exp (Real.log (weightedPaperNormalizedSourceQFactorProduct p T Q)) :=
+      (Real.exp_log (weightedPaperNormalizedSourceQFactorProduct_pos p T Q)).symm
+    _ = Real.exp (-Q.absLogQ p) := by
+      congr 1
+      linarith
+
 end JoshiTeich.Act1Scene1
