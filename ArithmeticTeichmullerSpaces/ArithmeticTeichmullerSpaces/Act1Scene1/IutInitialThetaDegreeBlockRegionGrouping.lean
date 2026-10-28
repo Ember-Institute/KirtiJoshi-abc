@@ -163,6 +163,32 @@ theorem groupedRegion_preimage_unique
     (hxy : groupingIntegral D p x = groupingIntegral D p y) : x = y := by
   exact groupingIntegral_injective D p hxy
 
+noncomputable def groupedRegion_preimage
+    (S : ∀ i, Set ((SelectedThetaTensor.packet D p).Factor i))
+    (y : GroupedTensor D p)
+    (hy : y ∈ groupedRegion D p (factorRegions D p S)) :
+    (SelectedThetaTensor.packet D p).Tensor :=
+  Classical.choose (groupedRegion_mem_iff D p S y |>.mp hy)
+
+theorem groupedRegion_preimage_mem
+    (S : ∀ i, Set ((SelectedThetaTensor.packet D p).Factor i))
+    (y : GroupedTensor D p)
+    (hy : y ∈ groupedRegion D p (factorRegions D p S)) :
+    groupedRegion_preimage D p S y hy ∈ (SelectedThetaTensor.packet D p).lattice S ∧
+      groupingIntegral D p (groupedRegion_preimage D p S y hy) = y := by
+  exact Classical.choose_spec (groupedRegion_mem_iff D p S y |>.mp hy)
+
+theorem groupedRegion_preimage_eq
+    (S : ∀ i, Set ((SelectedThetaTensor.packet D p).Factor i))
+    (y : GroupedTensor D p)
+    (hy : y ∈ groupedRegion D p (factorRegions D p S))
+    {x : (SelectedThetaTensor.packet D p).Tensor}
+    (_hx : x ∈ (SelectedThetaTensor.packet D p).lattice S)
+    (hxy : groupingIntegral D p x = y) :
+    x = groupedRegion_preimage D p S y hy := by
+  apply groupingIntegral_injective D p
+  exact hxy.trans (groupedRegion_preimage_mem D p S y hy).2.symm
+
 theorem scalarLattice_map_grouping
     (z : ∀ i, (SelectedThetaTensor.packet D p).Factor i) :
     ((SelectedThetaTensor.packet D p).scalarLattice z).map (groupingIntegral D p) =
