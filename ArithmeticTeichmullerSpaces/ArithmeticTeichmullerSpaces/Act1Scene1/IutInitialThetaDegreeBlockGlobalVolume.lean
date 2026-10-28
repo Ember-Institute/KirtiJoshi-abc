@@ -415,5 +415,22 @@ theorem groupedRootVolumeProduct_normalized_lt_exp_neg_referenceAbsLogQ_of_missi
   rw [groupedRootVolumeProduct_normalized_eq_exp_neg_fullBaseSum D]
   exact Real.exp_lt_exp.mpr (neg_lt_neg hrefLt)
 
+theorem groupedRootVolumeProduct_normalized_eq_exp_neg_referenceAbsLogQ_iff_fullSupportCoverage :
+    groupedRootVolumeProduct D ^
+        (1 / (Module.finrank ℚ
+          ↥(JoshiTeich.ReferenceIut.fieldOfModuli D.F D.E) : ℝ)) =
+      Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D)) ↔
+      iutInitialThetaVBadModuliFinset D = iutInitialThetaOddModSupportFinset D := by
+  constructor
+  · intro heq
+    by_contra hmissing
+    exact (ne_of_lt
+      (groupedRootVolumeProduct_normalized_lt_exp_neg_referenceAbsLogQ_of_missing_fullSupport
+        D hmissing)) heq
+  · intro hcoverage
+    exact groupedRootVolumeProduct_normalized_eq_exp_neg_referenceAbsLogQ_of_fullSupportCoverage
+      D hcoverage
+
 end
 end JoshiTeich.Act1Scene1.DegreeBlockGlobalVolume
