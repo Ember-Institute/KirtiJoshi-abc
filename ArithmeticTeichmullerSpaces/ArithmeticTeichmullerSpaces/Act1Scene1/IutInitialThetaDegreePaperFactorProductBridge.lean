@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreePaperFactorBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-DEGREE-PAPER-FACTOR-PRODUCT-BRIDGE
@@ -162,6 +163,26 @@ theorem degreeNormalizedSourceQFactorProduct_negLog_eq_absLogQ
   rw [degreeNormalizedSourceQFactorProduct_eq_exp_neg_absLogQ
     p T Q hOrder hNorm hEll, Real.log_exp]
   ring
+
+theorem degreeNormalizedSourceQFactorProduct_negLog_eq_degreeNormalizedSourceQLogSum
+    {K : Type u} [Field K] [NumberField K]
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder Q)
+    (hEll : 0 < T.ell)
+    {V : Corollary312VolumeData p T}
+    {QFamily : Corollary312TateQFamily p T V}
+    (B : Corollary312QPilotSourceIndexBridge p T V Q QFamily) :
+    -Real.log (degreeNormalizedSourceQFactorProduct p T Q) =
+      Corollary312DegreeNormalizedSourceQLogSum p T QFamily.grouping := by
+  rw [degreeNormalizedSourceQFactorProduct_negLog_eq_absLogQ
+    p T Q hOrder hNorm hEll]
+  exact Corollary312QPilotSourceIndexBridge.absLogQ_eq_degreeNormalizedSourceQLogSum
+    p hOrder hNorm hEll B
 
 end
 end JoshiTeich.Act1Scene1
