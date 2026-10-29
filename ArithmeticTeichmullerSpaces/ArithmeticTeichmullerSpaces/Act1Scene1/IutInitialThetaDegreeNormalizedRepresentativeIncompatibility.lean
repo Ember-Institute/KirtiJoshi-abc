@@ -68,5 +68,62 @@ theorem no_degreeNormalizedRepresentativeSectionLinkAccounting_of_referenceEqual
   rw [← hActual, hRep] at hGap
   exact (lt_irrefl _ hGap)
 
+theorem no_canonicalDegreeNormalizedRepresentativeSectionLinkAccounting
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D₀ : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D₀.F) (O := O) p)
+    (hEll : base.target.ell = D₀.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D₀
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (A : Corollary312QPilotPaperRepresentativeAccounting p base.target
+      ((Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+        p D₀ base hEll hLink).qPilot p))
+    [Fintype A.representative]
+    (theta : ThetaPilotData ↥D₀.prime.torsionField) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData ↥D₀.prime.torsionField)
+    (ramification : Arithmetic.RamificationProfile ↥D₀.prime.torsionField)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (B : Corollary312PaperRepresentativeSectionLinkAccounting D₀ p A theta
+      thetaBase packetHull heightData ramification logVolume processionLength) :
+    False := by
+  let C := Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+    p D₀ base hEll hLink
+  have hReference : (C.qPilot p).absLogQ p =
+      JoshiTeich.ReferenceIut.QPilotData.absLogQ
+        (IutTorsionQRootSource.iutInitialThetaQPilotData D₀) := by
+    let hCompat : QNormTateCompatibility base.target.scene1.data.link :=
+      base.qFamily.compatibility
+    let theta := base.target.scene1.data.link.theta
+    let thetaBase := base.target.scene1.data.link.thetaBase
+    let packetHull := base.target.scene1.data.link.packetHull
+    let heightData := base.target.scene1.data.link.heightData
+    let ramification := base.target.scene1.data.link.ramification
+    let logVolume := base.target.scene1.data.link.logVolume
+    let processionLength := base.target.scene1.data.link.processionLength
+    change
+      Corollary312QPilotData.absLogQ p
+          ((IutQPilotSource.ofCanonicalInitialThetaLink D₀ p theta thetaBase
+            packetHull heightData ramification logVolume processionLength hEll hLink).toSceneQPilot
+              p hCompat) =
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D₀)
+    exact Corollary312QPilotData.absLogQ_eq_reference_iutInitialTheta_absLogQ_ofCanonicalInitialThetaLink
+      p D₀ theta thetaBase packetHull heightData ramification logVolume processionLength hEll hLink
+  exact no_degreeNormalizedRepresentativeSectionLinkAccounting_of_referenceEquality
+    p D₀ C hReference A theta thetaBase packetHull heightData ramification
+      logVolume processionLength B
+
 end
 end JoshiTeich.Act1Scene1
