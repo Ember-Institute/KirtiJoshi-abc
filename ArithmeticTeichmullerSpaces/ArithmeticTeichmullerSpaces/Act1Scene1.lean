@@ -653,4 +653,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionSelectedProd
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedProductDecomposition
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperReferenceProductGap
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
