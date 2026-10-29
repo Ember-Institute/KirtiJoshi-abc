@@ -92,4 +92,38 @@ theorem corollary312_iff_degreeNormalizedProductLog
     ring
   rw [hRight]
 
+theorem corollary312_iff_canonicalDegreeNormalizedProductLog
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D₀ : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D₀.F) (O := O) p)
+    (hEll : base.target.ell = D₀.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D₀
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    :
+    let C := Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+      p D₀ base hEll hLink
+    Corollary312 p base.target ↔
+      -(1 / (base.target.ellStar : ℝ)) * |Real.log base.target.thetaVolume| ≥
+        (Module.finrank ℚ D₀.F : ℝ) *
+          Real.log (degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p)) := by
+  let C := Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+    p D₀ base hEll hLink
+  change Corollary312 p base.target ↔
+    -(1 / (base.target.ellStar : ℝ)) * |Real.log base.target.thetaVolume| ≥
+      (Module.finrank ℚ D₀.F : ℝ) *
+        Real.log (degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p))
+  exact Corollary312Scene1DegreeNormalizedQPilotData.corollary312_iff_degreeNormalizedProductLog
+    p C
+
 end JoshiTeich.Act1Scene1.Corollary312Scene1DegreeNormalizedQPilotData
