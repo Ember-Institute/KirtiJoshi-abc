@@ -147,6 +147,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittFrobeniusWeight
 
 #check JoshiTeich.Act1Scene1.InitialThetaWittFrobeniusWeight.weight_nonneg
 #check JoshiTeich.Act1Scene1.InitialThetaWittFrobeniusWeight.eq_zero_of_negative_weight
+#check JoshiTeich.Act1Scene1.InitialThetaWittFrobeniusWeight.eigen_log_coordinate_frobenius_recurrence
 
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddSupportSelectedQRootPlace
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddSupportSelectedQRootPlaces

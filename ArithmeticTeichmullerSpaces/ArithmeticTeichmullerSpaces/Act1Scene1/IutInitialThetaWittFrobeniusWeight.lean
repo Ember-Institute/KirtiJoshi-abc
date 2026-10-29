@@ -21,6 +21,7 @@ namespace JoshiTeich.Act1Scene1.InitialThetaWittFrobeniusWeight
 
 open JoshiTeich.Prologue InitialThetaWittAllRadiusCompletion
 open InitialThetaWittAllRadiusPadicScalars InitialThetaWittAllRadiusFrobenius
+open InitialThetaWittEigenRadiusDynamics
 open InitialThetaWittRhoFrobeniusCompletion InitialThetaWittPadicScalarNorm
 open InitialThetaWittExponentialSeries InitialThetaWittExponentialLinearization
 noncomputable section
@@ -158,6 +159,39 @@ theorem eq_zero_of_negative_weight (k : ℤ) (hk : k < 0) (x : Carrier D w)
     x = 0 := by
   by_contra hx
   exact (not_le_of_gt hk) (weight_nonneg D w k x hx he)
+
+/-!
+The same radius calculation gives the logarithmic Frobenius recurrence used
+by the period-ring consumers.  It is stated on the whole actual `phi = p`
+subspace and does not use an integral representative.
+-/
+theorem eigen_log_coordinate_frobenius_recurrence
+    (ρ : Radius)
+    (x : InitialThetaWittEigenRadiusDynamics.Eigen D w)
+    (hx : x ≠ 0) :
+    (Arithmetic.residueChar w.1 : ℝ) *
+        Real.log (coordinateSeminorm D w ρ x.val) =
+      Real.log (poweredRadius D w ρ).val.toReal +
+        Real.log (coordinateSeminorm D w (poweredRadius D w ρ) x.val) := by
+  have hcoord := coordinate_powered D w ρ x
+  have hρ : 0 < (poweredRadius D w ρ).val.toReal :=
+    InitialThetaWittExponentialSeries.radius_toReal_pos _
+  have hxρ : 0 < coordinateSeminorm D w ρ x.val := by
+    have hne : coordinateSeminorm D w ρ x.val ≠ 0 := by
+      intro h
+      exact hx (Subtype.ext
+        ((InitialThetaWittRadiusFaithfulness.coordinateSeminorm_eq_zero_iff D w ρ x.val).mp h))
+    exact lt_of_le_of_ne (apply_nonneg _ _) (Ne.symm hne)
+  have hxPowered : 0 < coordinateSeminorm D w (poweredRadius D w ρ) x.val := by
+    have hne : coordinateSeminorm D w (poweredRadius D w ρ) x.val ≠ 0 := by
+      intro h
+      exact hx (Subtype.ext
+        ((InitialThetaWittRadiusFaithfulness.coordinateSeminorm_eq_zero_iff D w
+          (poweredRadius D w ρ) x.val).mp h))
+    exact lt_of_le_of_ne (apply_nonneg _ _) (Ne.symm hne)
+  have hlog := congrArg Real.log hcoord
+  rw [Real.log_pow, Real.log_mul hρ.ne' hxPowered.ne'] at hlog
+  exact hlog
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrobeniusWeight
