@@ -64,5 +64,32 @@ theorem canonicalScene1ThetaVolume_eq_exp_neg_procession_mul_referenceAbsLogQ_of
   rw [hReference] at hVolume
   exact hVolume
 
+theorem actualHullThetaVolume_eq_exp_neg_procession_mul_referenceAbsLogQ_of_normalization
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (N : Corollary312VolumeNormalization p base.target)
+    (n : ℕ)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    (hvolume : base.target.thetaVolume =
+      VBadThetaCollatedHull.volume D n σ hσ
+        (VBadThetaLogCollation.collation D n σ hσ)) :
+    base.target.thetaVolume =
+      Real.exp (-((n : ℝ) *
+        JoshiTeich.ReferenceIut.QPilotData.absLogQ
+          (IutTorsionQRootSource.iutInitialThetaQPilotData D))) := by
+  have hCost := Corollary312VolumeNormalization.cost_eq_actualHull_cost
+    (D := D) (n := n) (σ := σ) (hσ := hσ)
+    (C := VBadThetaLogCollation.collation D n σ hσ)
+    p base.target N hvolume
+  rw [N.thetaVolume_eq_exp_neg_logVolume, hCost,
+    VBadThetaHullLogCost.ordinary_cost_eq_mul_referenceAbsLogQ D n σ hσ]
+
 end
 end JoshiTeich.Act1Scene1
