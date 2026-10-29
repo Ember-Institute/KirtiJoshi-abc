@@ -258,6 +258,59 @@ theorem canonicalScene1DegreeNormalizedSourceQFactorProduct_pow_le_actualHullVol
   exact InitialThetaRawQ.canonicalTateScene1Data_exp_neg_procession_mul_qLogSum_le_actualVolume
     p D base hEll hTate n σ hσ
 
+theorem canonicalScene1DegreeNormalizedSourceQFactorProduct_pow_finrank_le_actualHullVolume
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (n : ℕ)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal) :
+    (degreeNormalizedSourceQFactorProduct p
+      (Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+        p D base hEll hLink).base.target
+      ((Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+        p D base hEll hLink).qPilot p)) ^
+        (n * Module.finrank ℚ D.F) ≤
+      VBadThetaLogCollation.volume D n σ hσ := by
+  let C := Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+    p D base hEll hLink
+  have hProduct := C.qFactorProduct_eq_exp_neg_qLogSum_div_degree p
+  have hDegreeNe : (Module.finrank ℚ D.F : ℝ) ≠ 0 :=
+    Arithmetic.finrank_pos.ne'
+  have hPower :
+      (degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p)) ^
+          (n * Module.finrank ℚ D.F) =
+        Real.exp (-((n : ℝ) * Corollary312Data.qLogSum p base.target)) := by
+    change (degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p)) ^
+          (n * Module.finrank ℚ D.F) =
+        Real.exp (-((n : ℝ) * Corollary312Data.qLogSum p C.base.target))
+    rw [hProduct, ← exp_neg_nat_mul_eq_pow
+      (Corollary312Data.qLogSum p C.base.target /
+        (Module.finrank ℚ D.F : ℝ)) (n * Module.finrank ℚ D.F)]
+    congr 1
+    push_cast
+    field_simp [hDegreeNe]
+  rw [hPower]
+  exact InitialThetaRawQ.canonicalTateScene1Data_exp_neg_procession_mul_qLogSum_le_actualVolume
+    p D base hEll hTate n σ hσ
+
 theorem corollary312_of_canonicalDegreeNormalizedProduct_actualHullVolume
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
     {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
