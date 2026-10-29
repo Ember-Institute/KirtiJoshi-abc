@@ -4,6 +4,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotReferenceBrid
 import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeSelectedQRootBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreePaperFactorProductBridge
 
 namespace JoshiTeich.Act1Scene1
 
@@ -353,6 +354,19 @@ theorem absLogQ_eq_degreeNormalizedSourceQLogSum
         D.base.qFamily.grouping := by
   exact Corollary312QPilotSourceIndexBridge.absLogQ_eq_degreeNormalizedSourceQLogSum
     p D.source.orderCompatibility D.rawNormalization
+    D.base.ell_prime.pos (D.sourceIndexBridge p)
+
+theorem qFactorProduct_eq_exp_neg_degreeNormalizedSourceQLogSum
+    {K : Type u} [Field K] [NumberField K]
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : Corollary312Scene1DegreeNormalizedQPilotData (K := K) (O := O) p) :
+    degreeNormalizedSourceQFactorProduct p D.base.target (D.qPilot p) =
+      Real.exp (-(Corollary312DegreeNormalizedSourceQLogSum p D.base.target
+        D.base.qFamily.grouping)) := by
+  exact degreeNormalizedSourceQFactorProduct_eq_exp_neg_degreeNormalizedSourceQLogSum
+    p D.base.target (D.qPilot p) D.source.orderCompatibility D.rawNormalization
     D.base.ell_prime.pos (D.sourceIndexBridge p)
 
 end Corollary312Scene1DegreeNormalizedQPilotData
