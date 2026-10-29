@@ -667,4 +667,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQLogSu
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreePaperFactorBridge
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreePaperFactorProductBridge
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
