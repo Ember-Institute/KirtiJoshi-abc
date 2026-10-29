@@ -649,4 +649,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaClosureLog
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionThetaPilotScaling
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionPilotLogShell
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTorsionSelectedProductBridge
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

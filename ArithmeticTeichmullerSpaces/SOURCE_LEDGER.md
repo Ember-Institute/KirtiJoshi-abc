@@ -6728,6 +6728,11 @@ base-section 质量缺口单元最终聚合验收全部退出 0：叶 v3 120 秒
 
 实际 weighted product 严格缺口（2026-10-29）：新增 `Act1Scene1/IutInitialThetaTorsionBaseWeightedProductDefect.lean`，source-id `JT-SCENE1-INITIAL-THETA-TORSION-BASE-WEIGHTED-PRODUCT-DEFECT`。定义 actual torsion source 的 `qPilotWeight` 加权 paper-root product 与下降后 base-section 的无权 root product；用有限乘积的 `Real.log_prod`、`Real.log_rpow` 及上一单元的严格 weighted log 缺口证明 `baseSectionProduct < torsionWeightedProduct`。正性由每个 corrected root norm 位于 `(0,1)` 得到。该乘积形式仍限于 actual torsion/base carriers，未识别论文 L′、Voss、theta locus 或 thetaVolume。
 
+覆盖条件下的 torsion product 到 selected actual product 桥（2026-10-29）：新增 `Act1Scene1/IutInitialThetaTorsionSelectedProductBridge.lean`，source-id `JT-SCENE1-INITIAL-THETA-TORSION-SELECTED-PRODUCT-BRIDGE`。在显式假设 selected base support 覆盖完整 actual odd multiplicative support 时，利用 selected source/base-place 等价、完整 base q-pilot support 与同一 base-place 上 `actualPaperRootNorm` 的选择独立性，证明任意实际 base section product 等于 `actualSelectedPaperRootNormProduct`；再消费上一单元的严格 product 缺口，得到
+`actualSelectedPaperRootNormProduct < iutInitialThetaTorsionWeightedPaperRootProduct`。覆盖条件仍是调用者输入；结果没有构造论文 `L'`、论文处集或 theta-volume，也没有把条件性桥提升为 G3/G4 父义务完成。
+
+本单元叶模块退出 0，144 秒，峰值进程组 RSS 9,184,472 KiB；`Checks/SelectedRoots` 退出 0，154 秒，峰值 9,341,264 KiB；`Axioms/SelectedRoots` 退出 0，150 秒，峰值 9,343,256 KiB；`Act1Scene1` 聚合退出 0，154 秒，峰值 9,420,572 KiB；`ImportAudit` 退出 0，154 秒，峰值 9,308,560 KiB。各日志无错误、警告或 `sorryAx`；静态扫描覆盖 866 个可达项目模块，无 proof hole 或禁用导入；新增声明逐名公理仅含 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过，证明义务清单保持开放。
+
 叶 v1 退出 0（134 秒，峰值进程组 RSS 9,177,072 KiB），默认 heartbeat、无 Lean 错误或警告；Scene1 可达 865 个模块的静态禁用导入/proof-hole 扫描通过。
 
 实际 weighted product 严格缺口单元最终聚合验收全部退出 0：叶 134 秒、峰值进程组 RSS 9,177,072 KiB；Checks/SelectedRoots 140 秒、9,343,636 KiB；Axioms/SelectedRoots 136 秒、9,345,824 KiB；Act1Scene1 138 秒、9,429,724 KiB；ImportAudit 138 秒、9,414,704 KiB。并行聚合 Lean/Lake 合计采样峰值 36,686,152 KiB；CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、每 0.5 秒采样，未触及 85 GiB 停止线。新增乘积定理逐名公理恰为 `propext`、`Classical.choice`、`Quot.sound`，最终日志无 Lean 错误、警告或 `sorryAx`，对应 `.olean` 晚于源码，`git diff --check` 通过。父义务清单、动态边界计划、冻结依赖及其他用户文档未改动。
