@@ -5,6 +5,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PaperQRepresentativeSelectedQRootB
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotNormalizationAudit
 import ArithmeticTeichmullerSpaces.Act1Scene1.QPilotDegreeAccountingBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreePaperFactorProductBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadRootProductContracting
 
 namespace JoshiTeich.Act1Scene1
 
@@ -463,6 +464,34 @@ theorem qFactorProduct_eq_exp_neg_referenceAbsLogQ_ofCanonicalInitialThetaLink
     _ = Real.exp (-JoshiTeich.ReferenceIut.QPilotData.absLogQ
         (IutTorsionQRootSource.iutInitialThetaQPilotData D₀)) := by
       rw [hRef]
+
+theorem qFactorProduct_lt_one_ofCanonicalInitialThetaLink
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D₀ : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D₀.F) (O := O) p)
+    (hEll : base.target.ell = D₀.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D₀
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength) :
+    let C := ofCanonicalInitialThetaLink p D₀ base hEll hLink
+    degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p) < 1 := by
+  let C := ofCanonicalInitialThetaLink p D₀ base hEll hLink
+  have hProduct := qFactorProduct_eq_exp_neg_referenceAbsLogQ_ofCanonicalInitialThetaLink
+    p D₀ base hEll hLink
+  change degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p) < 1
+  dsimp at hProduct
+  rw [hProduct, Real.exp_lt_one_iff]
+  exact neg_lt_zero.mpr (iutInitialThetaReferenceAbsLogQ_pos D₀)
 
 end Corollary312Scene1DegreeNormalizedQPilotData
 
