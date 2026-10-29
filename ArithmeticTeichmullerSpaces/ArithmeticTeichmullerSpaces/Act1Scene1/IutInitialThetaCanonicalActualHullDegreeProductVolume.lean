@@ -447,6 +447,66 @@ theorem canonicalScene1ActualHull_negLogVolume_le_negLogQProduct
     exact hLower
   exact neg_le_neg (Real.log_le_log hProductPos hCompare)
 
+theorem canonicalScene1ActualHull_normalizedLogMargin_ge_negQLogSum
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (n : ℕ)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    (hlength : base.target.ellStar = n)
+    (hvolume : base.target.thetaVolume =
+      VBadThetaCollatedHull.volume D n σ hσ
+        (VBadThetaLogCollation.collation D n σ hσ)) :
+    -(1 / (base.target.ellStar : ℝ)) * |Real.log base.target.thetaVolume| ≥
+      -Corollary312Data.qLogSum p base.target := by
+  have hQPos : 0 < Corollary312Data.qProduct p base.target base.volume.qFactor := by
+    exact corollary312_qProduct_pos p base.target base.volume.qFactor
+      (Corollary312QFamily.qFactor_pos p base.qFamily.toQFamily)
+  have hVolumePos : 0 < base.target.thetaVolume := by
+    rw [hvolume]
+    exact VBadThetaCollatedHull.volume_pos D n σ hσ
+      (VBadThetaLogCollation.collation D n σ hσ)
+      (VBadThetaLogCollation.generator_coverage D n σ hσ)
+      (VBadThetaLogCollation.collation_subset_normalization D n σ hσ)
+  have hVolumeLeOne : base.target.thetaVolume ≤ 1 := by
+    rw [hvolume]
+    exact VBadThetaLogCollation.volume_le_one D n σ hσ
+  have hQLower := canonicalScene1QProduct_le_actualHullVolume
+    p D base hEll hTate hLink n σ hσ hlength
+  have hCompare : Corollary312Data.qProduct p base.target base.volume.qFactor ≤
+      base.target.thetaVolume := by
+    rw [hvolume]
+    exact hQLower
+  have hLogCompare := Real.log_le_log hQPos hCompare
+  have hQLog : Real.log (Corollary312Data.qProduct p base.target base.volume.qFactor) =
+      -((base.target.ellStar : ℝ) * Corollary312Data.qLogSum p base.target) := by
+    rw [InitialThetaRawQ.canonicalTateScene1Data_qProduct_eq_exp_neg_ellStar_mul_qLogSum
+      p D base base.qFamily, Real.log_exp]
+  rw [abs_of_nonpos (Real.log_nonpos hVolumePos.le hVolumeLeOne)]
+  rw [hQLog] at hLogCompare
+  have hell : (0 : ℝ) < base.target.ellStar := by
+    exact_mod_cast base.ellStar_pos
+  field_simp [hell.ne']
+  nlinarith [hLogCompare]
+
 theorem corollary312_of_canonicalQProduct_actualHullVolume
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
     {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
