@@ -82,6 +82,23 @@ theorem degreeNormalizedSourceQFactorProduct_negLog_eq_sum
           (T.scene1.input_laws.first_axiom.q_norm_positive w.1 (Q.mem_bad p w.2)) _)
       _ |>.ne'
 
+theorem paperNormalizedSourceQFactorProduct_rpow_eq_weightedPaperNormalizedSourceQFactorProduct
+    {K : Type u} [Field K] [NumberField K]
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T) :
+    paperNormalizedSourceQFactorProduct_rpow p T Q =
+      weightedPaperNormalizedSourceQFactorProduct p T Q := by
+  unfold paperNormalizedSourceQFactorProduct_rpow
+    weightedPaperNormalizedSourceQFactorProduct
+    weightedPaperNormalizedSourceQFactor
+  apply Finset.prod_congr rfl
+  intro w hw
+  unfold Arithmetic.qPilotWeight
+  rfl
+
 theorem degreeNormalizedSourceQFactorProduct_eq_paperNormalizedSourceQFactorProduct_rpow
     {K : Type u} [Field K] [NumberField K]
     {O : Type u} [CommRing O] (p : ℕ)
