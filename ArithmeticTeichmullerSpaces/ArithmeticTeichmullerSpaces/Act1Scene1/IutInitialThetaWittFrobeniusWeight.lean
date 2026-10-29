@@ -2,6 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittEigenRadiusDyna
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittGeometricInterpolation
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittExponentialSeries
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittExponentialLinearization
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittEigenKernelTwistedComparison
 import Mathlib.Algebra.GroupWithZero.Units.Lemmas
 
 /-!
@@ -192,6 +193,23 @@ theorem eigen_log_coordinate_frobenius_recurrence
   have hlog := congrArg Real.log hcoord
   rw [Real.log_pow, Real.log_mul hρ.ne' hxPowered.ne'] at hlog
   exact hlog
+
+theorem fullKernel_log_coordinate_frobenius_recurrence
+    (ρ : Radius)
+    (x : InitialThetaWittEigenKernelTwistedComparison.fullKernel D w)
+    (hx : x ≠ 0) :
+    (Arithmetic.residueChar w.1 : ℝ) *
+        Real.log (coordinateSeminorm D w ρ x.val) =
+      Real.log (poweredRadius D w ρ).val.toReal +
+        Real.log (coordinateSeminorm D w (poweredRadius D w ρ) x.val) := by
+  let y : InitialThetaWittEigenRadiusDynamics.Eigen D w :=
+    ⟨x.val, x.property.1⟩
+  have hy : y ≠ 0 := by
+    intro h
+    have hv : x.val = 0 := by
+      simpa [y] using congrArg Subtype.val h
+    exact hx (Subtype.ext hv)
+  simpa [y] using eigen_log_coordinate_frobenius_recurrence D w ρ y hy
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrobeniusWeight
