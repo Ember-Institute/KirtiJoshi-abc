@@ -184,5 +184,31 @@ theorem degreeNormalizedSourceQFactorProduct_negLog_eq_degreeNormalizedSourceQLo
   exact Corollary312QPilotSourceIndexBridge.absLogQ_eq_degreeNormalizedSourceQLogSum
     p hOrder hNorm hEll B
 
+theorem degreeNormalizedSourceQFactorProduct_eq_exp_neg_degreeNormalizedSourceQLogSum
+    {K : Type u} [Field K] [NumberField K]
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder Q)
+    (hEll : 0 < T.ell)
+    {V : Corollary312VolumeData p T}
+    {QFamily : Corollary312TateQFamily p T V}
+    (B : Corollary312QPilotSourceIndexBridge p T V Q QFamily) :
+    degreeNormalizedSourceQFactorProduct p T Q =
+      Real.exp (-(Corollary312DegreeNormalizedSourceQLogSum p T QFamily.grouping)) := by
+  have hpos := degreeNormalizedSourceQFactorProduct_pos p T Q
+  have hlog := degreeNormalizedSourceQFactorProduct_negLog_eq_degreeNormalizedSourceQLogSum
+    p T Q hOrder hNorm hEll B
+  calc
+    degreeNormalizedSourceQFactorProduct p T Q =
+        Real.exp (Real.log (degreeNormalizedSourceQFactorProduct p T Q)) :=
+      (Real.exp_log hpos).symm
+    _ = Real.exp (-(Corollary312DegreeNormalizedSourceQLogSum p T QFamily.grouping)) := by
+      congr 1
+      linarith
+
 end
 end JoshiTeich.Act1Scene1
