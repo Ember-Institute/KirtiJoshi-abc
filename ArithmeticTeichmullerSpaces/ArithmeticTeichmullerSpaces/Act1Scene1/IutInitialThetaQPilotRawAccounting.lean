@@ -56,6 +56,15 @@ theorem qLogSum_div_degree_eq_degreeNormalizedSourceQLogSum
     _ = Corollary312DegreeNormalizedSourceQLogSum p D.base.target
         D.base.qFamily.grouping := D.absLogQ_eq_degreeNormalizedSourceQLogSum p
 
+theorem qFactorProduct_eq_exp_neg_qLogSum_div_degree
+    (D : Corollary312Scene1DegreeNormalizedQPilotData (K := K) (O := O) p) :
+    degreeNormalizedSourceQFactorProduct p D.base.target (D.qPilot p) =
+      Real.exp (-(Corollary312Data.qLogSum p D.base.target /
+        (Module.finrank ℚ K : ℝ))) := by
+  have hProduct := D.qFactorProduct_eq_exp_neg_degreeNormalizedSourceQLogSum p
+  have hSum := D.qLogSum_div_degree_eq_degreeNormalizedSourceQLogSum p
+  rw [hProduct, hSum]
+
 /-- Exact q-pilot presentation of the existing raw target, with its degree
 coefficient retained. This equivalence does not prove the volume estimate. -/
 theorem corollary312_iff_degreeScaledQPilot
