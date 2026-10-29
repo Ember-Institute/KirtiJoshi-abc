@@ -397,6 +397,31 @@ theorem canonicalScene1QProduct_le_actualHullVolume
           (n * Module.finrank ℚ D.F) := by rw [hlength]
     _ ≤ VBadThetaLogCollation.volume D n σ hσ := hProductBound
 
+theorem canonicalTateScene1Data_qProduct_lt_one
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D) :
+    Corollary312Data.qProduct p base.target base.volume.qFactor < 1 := by
+  have hProduct := InitialThetaRawQ.canonicalTateScene1Data_qProduct_eq_exp_neg_ellStar_mul_qLogSum
+    p D base base.qFamily
+  rw [hProduct,
+    canonicalTateScene1Data_qLogSum_eq_degree_mul_reference
+      p D base hEll hTate,
+    Real.exp_lt_one_iff]
+  have hell : (0 : ℝ) < base.target.ellStar := by
+    exact_mod_cast base.ellStar_pos
+  have hdegree : (0 : ℝ) < Module.finrank ℚ D.F := by
+    exact_mod_cast (Module.finrank_pos : 0 < Module.finrank ℚ D.F)
+  exact neg_lt_zero.mpr (mul_pos hell
+    (mul_pos hdegree (iutInitialThetaReferenceAbsLogQ_pos D)))
+
 theorem canonicalScene1ActualHull_negLogVolume_le_negLogQProduct
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
     {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
