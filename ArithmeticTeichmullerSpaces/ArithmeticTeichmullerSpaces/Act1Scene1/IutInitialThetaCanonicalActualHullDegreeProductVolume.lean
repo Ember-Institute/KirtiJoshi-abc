@@ -355,6 +355,48 @@ theorem canonicalScene1QProduct_eq_degreeNormalizedSourceQFactorProduct_pow_ellS
   field_simp [hDegreeNe]
 
   rfl
+
+theorem canonicalScene1QProduct_le_actualHullVolume
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (n : ℕ)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    (hlength : base.target.ellStar = n) :
+    Corollary312Data.qProduct p base.target base.volume.qFactor ≤
+      VBadThetaLogCollation.volume D n σ hσ := by
+  have hQProduct := canonicalScene1QProduct_eq_degreeNormalizedSourceQFactorProduct_pow_ellStar_finrank
+    p D base hEll hLink
+  have hProductBound := canonicalScene1DegreeNormalizedSourceQFactorProduct_pow_finrank_le_actualHullVolume
+    p D base hEll hTate hLink n σ hσ
+  let C := Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+    p D base hEll hLink
+  calc
+    Corollary312Data.qProduct p base.target base.volume.qFactor =
+        (degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p)) ^
+          (base.target.ellStar * Module.finrank ℚ D.F) := hQProduct
+    _ = (degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p)) ^
+          (n * Module.finrank ℚ D.F) := by rw [hlength]
+    _ ≤ VBadThetaLogCollation.volume D n σ hσ := hProductBound
+
 theorem corollary312_of_canonicalDegreeNormalizedProduct_actualHullVolume
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
     {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
