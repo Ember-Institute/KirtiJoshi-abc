@@ -6780,3 +6780,7 @@ global-degree/local-residue q-factor 换算（2026-10-29）：新增 `Act1Scene1
 global q-pilot carrier 上的 degree/paper factor product bridge（2026-10-29）：新增 `Act1Scene1/IutInitialThetaDegreePaperFactorProductBridge.lean`。将上一单元的局部幂换算提升到完整有限 actual q-pilot carrier，证明 `degreeNormalizedSourceQFactorProduct = paperNormalizedSourceQFactorProduct_rpow`。仍不构造 paper representative 或 theta-volume。
 
 本单元叶模块退出 0，82 秒，峰值进程组 RSS 5,439,896 KiB；`Checks/SelectedRoots` 退出 0，198 秒，峰值进程组 RSS 9,345,884 KiB；`Axioms/SelectedRoots` 退出 0，194 秒，峰值进程组 RSS 9,345,252 KiB；`Act1Scene1` 聚合退出 0，136 秒，峰值进程组 RSS 9,385,928 KiB；`ImportAudit` 退出 0，136 秒，峰值进程组 RSS 9,423,552 KiB。各日志无错误、警告或 `sorryAx`；静态扫描覆盖 875 个可达项目模块，无 proof hole 或禁用导入；新增声明逐名公理仅含 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过，证明义务清单保持开放。
+
+actual degree-normalized source product 的正性与 negative-log 会计（2026-10-29）：扩展 `Act1Scene1/IutInitialThetaDegreePaperFactorProductBridge.lean`，新增 product 正性和 finite `Real.log_prod` 负对数求和定理。它们使 global-degree normalized product 可直接消费于后续 qLog/volume 证明；carrier 与 paper identity 边界不变。
+
+本单元叶模块退出 0，91 秒，峰值进程组 RSS 5,480,872 KiB；`Checks/SelectedRoots` 退出 0，169 秒，峰值进程组 RSS 9,345,064 KiB；`Axioms/SelectedRoots` 退出 0，166 秒，峰值进程组 RSS 9,344,244 KiB；`Act1Scene1` 聚合退出 0，168 秒，峰值进程组 RSS 9,421,168 KiB；`ImportAudit` 退出 0，168 秒，峰值进程组 RSS 9,415,920 KiB。各日志无错误、警告或 `sorryAx`；静态扫描覆盖 875 个可达项目模块，无 proof hole 或禁用导入；新增声明逐名公理仅含 `propext`、`Classical.choice`、`Quot.sound`；`git diff --check` 通过，证明义务清单保持开放。

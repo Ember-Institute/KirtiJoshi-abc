@@ -41,6 +41,47 @@ def paperNormalizedSourceQFactorProduct_rpow
         ((Arithmetic.inertDeg w.1 : ℝ) /
           (Module.finrank ℚ K : ℝ))
 
+theorem degreeNormalizedSourceQFactorProduct_pos
+    {K : Type u} [Field K] [NumberField K]
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T) :
+    0 < degreeNormalizedSourceQFactorProduct p T Q := by
+  unfold degreeNormalizedSourceQFactorProduct
+  exact Finset.prod_pos fun w _ => by
+    unfold Corollary312DegreeNormalizedSourceQFactor
+    exact Real.rpow_pos_of_pos
+      (by
+        unfold Corollary312SourceQFactor
+        exact Real.rpow_pos_of_pos
+          (T.scene1.input_laws.first_axiom.q_norm_positive w.1 (Q.mem_bad p w.2)) _)
+      _
+
+theorem degreeNormalizedSourceQFactorProduct_negLog_eq_sum
+    {K : Type u} [Field K] [NumberField K]
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T) :
+    -Real.log (degreeNormalizedSourceQFactorProduct p T Q) =
+      ∑ w : Q.badFinset,
+        -Real.log (Corollary312DegreeNormalizedSourceQFactor p T
+          (show Corollary312SourceQIndex p T from ⟨w.1, Q.mem_bad p w.2⟩)) := by
+  unfold degreeNormalizedSourceQFactorProduct
+  rw [Real.log_prod]
+  · rw [← Finset.sum_neg_distrib]
+  · intro w hw
+    unfold Corollary312DegreeNormalizedSourceQFactor
+    exact Real.rpow_pos_of_pos
+      (by
+        unfold Corollary312SourceQFactor
+        exact Real.rpow_pos_of_pos
+          (T.scene1.input_laws.first_axiom.q_norm_positive w.1 (Q.mem_bad p w.2)) _)
+      _ |>.ne'
+
 theorem degreeNormalizedSourceQFactorProduct_eq_paperNormalizedSourceQFactorProduct_rpow
     {K : Type u} [Field K] [NumberField K]
     {O : Type u} [CommRing O] (p : ℕ)
