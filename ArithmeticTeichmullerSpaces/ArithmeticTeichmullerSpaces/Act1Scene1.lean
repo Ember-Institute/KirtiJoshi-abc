@@ -655,4 +655,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedProduct
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaSelectedPaperReferenceProductGap
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRepresentativeProductIncompatibility
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
