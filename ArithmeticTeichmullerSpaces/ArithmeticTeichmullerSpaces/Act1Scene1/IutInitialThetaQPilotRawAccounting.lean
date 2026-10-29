@@ -74,4 +74,22 @@ theorem corollary312_iff_degreeScaledQPilot
         -((Module.finrank ℚ K : ℝ) * (D.qPilot p).absLogQ p) := by
   rw [Corollary312, D.qLogSum_eq_degree_mul_absLogQ p]
 
+theorem corollary312_iff_degreeNormalizedProductLog
+    (D : Corollary312Scene1DegreeNormalizedQPilotData (K := K) (O := O) p) :
+    Corollary312 p D.base.target ↔
+      -(1 / (D.base.target.ellStar : ℝ)) * |Real.log D.base.target.thetaVolume| ≥
+        (Module.finrank ℚ K : ℝ) *
+          Real.log (degreeNormalizedSourceQFactorProduct p D.base.target (D.qPilot p)) := by
+  rw [D.corollary312_iff_degreeScaledQPilot p]
+  have hLog := degreeNormalizedSourceQFactorProduct_negLog_eq_absLogQ
+    p D.base.target (D.qPilot p) D.source.orderCompatibility
+      D.rawNormalization D.base.ell_prime.pos
+  have hRight :
+      -((Module.finrank ℚ K : ℝ) * (D.qPilot p).absLogQ p) =
+        (Module.finrank ℚ K : ℝ) *
+          Real.log (degreeNormalizedSourceQFactorProduct p D.base.target (D.qPilot p)) := by
+    rw [← hLog]
+    ring
+  rw [hRight]
+
 end JoshiTeich.Act1Scene1.Corollary312Scene1DegreeNormalizedQPilotData
