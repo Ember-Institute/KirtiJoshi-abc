@@ -311,6 +311,50 @@ theorem canonicalScene1DegreeNormalizedSourceQFactorProduct_pow_finrank_le_actua
   exact InitialThetaRawQ.canonicalTateScene1Data_exp_neg_procession_mul_qLogSum_le_actualVolume
     p D base hEll hTate n σ hσ
 
+theorem canonicalScene1QProduct_eq_degreeNormalizedSourceQFactorProduct_pow_ellStar_finrank
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength) :
+    Corollary312Data.qProduct p base.target base.volume.qFactor =
+      (degreeNormalizedSourceQFactorProduct p
+        (Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+          p D base hEll hLink).base.target
+        ((Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+          p D base hEll hLink).qPilot p)) ^
+        (base.target.ellStar * Module.finrank ℚ D.F) := by
+  let C := Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+    p D base hEll hLink
+  have hQ := InitialThetaRawQ.canonicalTateScene1Data_qProduct_eq_exp_neg_ellStar_mul_qLogSum
+    p D base base.qFamily
+  have hProduct := C.qFactorProduct_eq_exp_neg_qLogSum_div_degree p
+  have hDegreeNe : (Module.finrank ℚ D.F : ℝ) ≠ 0 :=
+    Arithmetic.finrank_pos.ne'
+  change Corollary312Data.qProduct p base.target base.volume.qFactor =
+    (degreeNormalizedSourceQFactorProduct p C.base.target (C.qPilot p)) ^
+      (base.target.ellStar * Module.finrank ℚ D.F)
+  rw [hQ, hProduct, ← exp_neg_nat_mul_eq_pow
+    (Corollary312Data.qLogSum p C.base.target /
+      (Module.finrank ℚ D.F : ℝ))
+    (base.target.ellStar * Module.finrank ℚ D.F)]
+  congr 1
+  push_cast
+  field_simp [hDegreeNe]
+
+  rfl
 theorem corollary312_of_canonicalDegreeNormalizedProduct_actualHullVolume
     {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
     {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
