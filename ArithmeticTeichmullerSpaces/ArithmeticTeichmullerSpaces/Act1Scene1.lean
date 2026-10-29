@@ -659,4 +659,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRepresenta
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaRepresentativeReferenceProductIncompatibility
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullReferenceVolume
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
