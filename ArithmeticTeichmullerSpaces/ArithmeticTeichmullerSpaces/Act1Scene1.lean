@@ -663,4 +663,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHull
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQProductEquality
 
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQLogSumSign
+
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
