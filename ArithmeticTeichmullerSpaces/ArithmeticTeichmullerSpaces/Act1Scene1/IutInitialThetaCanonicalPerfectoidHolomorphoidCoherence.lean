@@ -79,5 +79,30 @@ theorem canonicalPerfectoid_theta_teichmuller_eq_sharp
     packetHull heightData ramification logVolume processionLength]
   exact InitialThetaLocalHolomorphoidSource.canonical_theta_teichmuller D w x
 
+/-!
+The bridge and local holomorphoid descriptions also agree on the induced
+nonarchimedean size.  This is the quantitative form of the Teichmuller/sharp
+compatibility used by later local period and log-shell consumers.
+-/
+theorem canonicalPerfectoid_theta_teichmuller_nnnorm_eq_tiltValuation
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places)
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (x : InitialThetaTiltField.Source D w) :
+    ‖(((InitialThetaCanonicalPerfectoidBridgeSource.canonical D w theta thetaBase
+      packetHull heightData ramification logVolume processionLength).placeData.data.theta
+        (WittVector.teichmuller (Arithmetic.residueChar w.1) x) :
+          InitialThetaCanonicalPerfectoidBridgeSource.IntegerRing D w) :
+            InitialThetaCanonicalPerfectoidBridgeSource.CoefficientField D w)‖₊ =
+      InitialThetaTiltField.valuation D w (InitialThetaTiltField.inclusion D w x) := by
+  rw [canonicalPerfectoid_theta_teichmuller_eq_sharp D w theta thetaBase packetHull
+    heightData ramification logVolume processionLength x]
+  exact InitialThetaLocalHolomorphoidSource.canonical_sharp_norm D w
+    (InitialThetaTiltField.inclusion D w x)
+
 end
 end JoshiTeich.Act1Scene1
