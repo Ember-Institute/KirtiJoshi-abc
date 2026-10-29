@@ -130,5 +130,28 @@ theorem canonicalPerfectoid_coefficientMap_norm_eq_completionEmbedding_norm
     heightData ramification logVolume processionLength).coefficientMap_eq_bridge]
   rw [InitialThetaCanonicalPerfectoidBridgeSource.Data.bridge_coefficientMap_coe]
 
+/-!
+Global integers therefore map into the closed unit ball of the same completed
+coefficient field.  The bound is transferred from the finite-place integral
+norm, rather than imposed as an independent bridge law.
+-/
+theorem canonicalPerfectoid_coefficientMap_norm_le_one
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places)
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (a : 𝓞 D.F) :
+    ‖(((InitialThetaCanonicalPerfectoidBridgeSource.canonical D w theta thetaBase
+      packetHull heightData ramification logVolume processionLength).coefficientMap a :
+        InitialThetaCanonicalPerfectoidBridgeSource.IntegerRing D w) :
+          InitialThetaCanonicalPerfectoidBridgeSource.CoefficientField D w)‖ ≤ 1 := by
+  rw [canonicalPerfectoid_coefficientMap_norm_eq_completionEmbedding_norm D w theta thetaBase
+    packetHull heightData ramification logVolume processionLength a]
+  rw [InitialThetaCanonicalGeometricFontaine.completionEmbedding_norm]
+  exact FinitePlace.norm_le_one D.F w.1.maximalIdeal a
+
 end
 end JoshiTeich.Act1Scene1
