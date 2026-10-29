@@ -14,6 +14,7 @@ boundary: Scene1/Derived; original proof.
 namespace JoshiTeich.Act1Scene1
 
 open JoshiTeich.Prologue
+open NumberField
 
 universe u
 noncomputable section
@@ -103,6 +104,31 @@ theorem canonicalPerfectoid_theta_teichmuller_nnnorm_eq_tiltValuation
     heightData ramification logVolume processionLength x]
   exact InitialThetaLocalHolomorphoidSource.canonical_sharp_norm D w
     (InitialThetaTiltField.inclusion D w x)
+
+/-!
+The coefficient map in the canonical bridge is isometric on the completion
+image.  This records the norm compatibility needed when a local holomorphoid
+consumer changes between integral coefficients and the completed coefficient
+field.
+-/
+theorem canonicalPerfectoid_coefficientMap_norm_eq_completionEmbedding_norm
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (w : (iutInitialThetaTateParameterData D).places)
+    (theta : ThetaPilotData D.F) (thetaBase : theta.index)
+    (packetHull : PacketHullData theta.index)
+    (heightData : Arithmetic.HeightData D.F)
+    (ramification : Arithmetic.RamificationProfile D.F)
+    (logVolume : ℝ) (processionLength : ℕ)
+    (a : 𝓞 D.F) :
+    ‖(((InitialThetaCanonicalPerfectoidBridgeSource.canonical D w theta thetaBase
+      packetHull heightData ramification logVolume processionLength).coefficientMap a :
+        InitialThetaCanonicalPerfectoidBridgeSource.IntegerRing D w) :
+          InitialThetaCanonicalPerfectoidBridgeSource.CoefficientField D w)‖ =
+      ‖InitialThetaCanonicalGeometricFontaine.completionEmbedding D w
+        (FinitePlace.embedding w.1.maximalIdeal (a : D.F))‖ := by
+  rw [(InitialThetaCanonicalPerfectoidBridgeSource.canonical D w theta thetaBase packetHull
+    heightData ramification logVolume processionLength).coefficientMap_eq_bridge]
+  rw [InitialThetaCanonicalPerfectoidBridgeSource.Data.bridge_coefficientMap_coe]
 
 end
 end JoshiTeich.Act1Scene1
