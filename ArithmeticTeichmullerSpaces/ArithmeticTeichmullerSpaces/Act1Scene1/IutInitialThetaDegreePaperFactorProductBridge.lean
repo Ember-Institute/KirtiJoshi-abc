@@ -148,5 +148,20 @@ theorem degreeNormalizedSourceQFactorProduct_eq_exp_neg_absLogQ
   exact paperNormalizedSourceQFactorProduct_rpow_eq_exp_neg_absLogQ
     p T Q hOrder hNorm hEll
 
+theorem degreeNormalizedSourceQFactorProduct_negLog_eq_absLogQ
+    {K : Type u} [Field K] [NumberField K]
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (T : Corollary312Data K O p)
+    (Q : Corollary312QPilotData p T)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder Q)
+    (hEll : 0 < T.ell) :
+    -Real.log (degreeNormalizedSourceQFactorProduct p T Q) = Q.absLogQ p := by
+  rw [degreeNormalizedSourceQFactorProduct_eq_exp_neg_absLogQ
+    p T Q hOrder hNorm hEll, Real.log_exp]
+  ring
+
 end
 end JoshiTeich.Act1Scene1
