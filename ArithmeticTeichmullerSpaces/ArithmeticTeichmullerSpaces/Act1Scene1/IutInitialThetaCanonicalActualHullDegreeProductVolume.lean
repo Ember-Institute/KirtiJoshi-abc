@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullReferenceVolume
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullQProductEquality
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaScene1QPilotData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQPilotRawAccounting
 
@@ -120,6 +121,54 @@ theorem canonicalScene1ThetaVolume_eq_exp_neg_procession_mul_qLogSum_div_degree_
   exact (exp_neg_nat_mul_eq_pow
     (Corollary312Data.qLogSum p base.target /
       (Module.finrank ℚ D.F : ℝ)) n).symm
+
+theorem canonicalScene1QProduct_eq_degreeNormalizedSourceQFactorProduct_pow_of_actualHullVolume
+    {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+    {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+    {O : Type u} [CommRing O] (p : ℕ)
+    [Fact p.Prime] [Fact (¬ IsUnit (p : O))]
+    [IsAdicComplete (Ideal.span {(p : O)}) O]
+    (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+    (base : Corollary312Scene1Data (K := D.F) (O := O) p)
+    (hEll : base.target.ell = D.prime.ℓ)
+    (hTate : base.target.scene1.data.link.tate =
+      iutInitialThetaTateParameterData D)
+    (hLink : base.target.scene1.data.link =
+      AdelicThetaLinkData.ofInitialThetaData D
+        base.target.scene1.data.link.theta
+        base.target.scene1.data.link.thetaBase
+        base.target.scene1.data.link.packetHull
+        base.target.scene1.data.link.heightData
+        base.target.scene1.data.link.ramification
+        base.target.scene1.data.link.logVolume
+        base.target.scene1.data.link.processionLength)
+    (hDegree : Module.finrank ℚ D.F = 1)
+    (n : ℕ) (hn : 0 < n)
+    (σ : iutInitialThetaVBadModuliFinset D → Fin n →
+      (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
+    (hσ : ∀ v i, Ideal.LiesOver (σ v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal)
+    (hlength : base.target.ellStar = n)
+    (hvolume : base.target.thetaVolume =
+      VBadThetaCollatedHull.volume D n σ hσ
+        (VBadThetaLogCollation.collation D n σ hσ)) :
+    Corollary312Data.qProduct p base.target base.volume.qFactor =
+      (degreeNormalizedSourceQFactorProduct p
+        (Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+          p D base hEll hLink).base.target
+        ((Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+          p D base hEll hLink).qPilot p)) ^ n := by
+  have hTheta := canonicalScene1ThetaVolume_eq_qProduct_of_actualHullVolume
+    p D base hEll hTate hLink hDegree n hn σ hσ hlength hvolume
+  have hProduct := canonicalScene1ThetaVolume_eq_degreeNormalizedSourceQFactorProduct_pow_of_actualHullVolume
+    p D base hEll hLink hDegree n hn σ hσ hvolume
+  calc
+    Corollary312Data.qProduct p base.target base.volume.qFactor =
+        base.target.thetaVolume := hTheta.symm
+    _ = (degreeNormalizedSourceQFactorProduct p
+        (Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+          p D base hEll hLink).base.target
+        ((Corollary312Scene1DegreeNormalizedQPilotData.ofCanonicalInitialThetaLink
+          p D base hEll hLink).qPilot p)) ^ n := hProduct
 
 end
 end JoshiTeich.Act1Scene1
