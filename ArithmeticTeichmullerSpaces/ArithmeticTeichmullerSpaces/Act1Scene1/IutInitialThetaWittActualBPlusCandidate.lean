@@ -185,5 +185,33 @@ theorem padicIntMap_apply (a : PadicInt (Arithmetic.residueChar w.1)) :
     (padicIntMap D w a : Ring D w) =
       InitialThetaBoundedWittPadicScalars.padicIntMap D w a := rfl
 
+theorem unitBallFrobenius_padicInt
+    (a : PadicInt (Arithmetic.residueChar w.1)) :
+    unitBallFrobenius D w (padicIntMap D w a) =
+      padicIntMap D w a := by
+  apply Subtype.ext
+  rw [unitBallFrobenius_apply, padicIntMap_apply]
+  exact InitialThetaBoundedWittPadicScalars.frobenius_padicInt D w a
+
+theorem unitBallToCommon_padicInt
+    (a : PadicInt (Arithmetic.residueChar w.1)) :
+    unitBallToCommon D w (padicIntMap D w a) =
+      InitialThetaWittAllRadiusCompletion.inclusion D w
+        (InitialThetaBoundedWittPadicScalars.padicIntMap D w a) := by
+  rw [unitBallToCommon_apply, padicIntMap_apply]
+
+theorem unitBallToCommon_padicInt_algebraMap
+    (a : PadicInt (Arithmetic.residueChar w.1)) :
+    unitBallToCommon D w (padicIntMap D w a) =
+      InitialThetaWittAllRadiusPadicScalars.commonPadicMap D w
+        (algebraMap _ _ a) := by
+  rw [unitBallToCommon_padicInt]
+  change InitialThetaWittAllRadiusCompletion.inclusion D w
+      (InitialThetaBoundedWittPadicScalars.padicIntMap D w a) =
+    InitialThetaWittAllRadiusCompletion.inclusion D w
+      (InitialThetaBoundedWittPadicScalars.padicMap D w
+        (algebraMap _ _ a))
+  rw [InitialThetaBoundedWittPadicScalars.padicMap_algebraMap]
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
