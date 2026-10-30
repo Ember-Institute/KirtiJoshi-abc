@@ -21,16 +21,16 @@
 
 | 项目 | 当前值 |
 | --- | --- |
-| 更新日期 | 2026-10-30（Asia/Shanghai） |
-| 数学证明基线 | 截至已提交并推送的 `f6b627d`：实际 full Tate 核分类、拓扑正合列，以及 actual ρ=1 单位球候选的 Frobenius 自同构和 `PadicInt` 标量结构均已验收；本次总览更新不计作数学进展 |
+| 更新日期 | 2026-10-31（Asia/Shanghai） |
+| 数学证明基线 | 截至已提交并推送的 `92122ff`：Fréchet Tate 商到 actual Tate 商的连续线性等价与求值相容性均已验收；论文 Fréchet `B`/ρ-norm 身份仍开放 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 父义务状态 | [明确来源证明义务][obligations]中的 15 项全部开放 |
 | 近期定量进展 | 一般数域次数下的 actual qProduct lower bound、条件性 Corollary consumer 和 `qProduct = thetaVolume^[F:ℚ]` 已验收；旧 raw 严格 margin 仍保留 degree-one 条件 |
 | 近期处集进展 | actual representative fibers、omitted mass、Galois fiber 权重和 grouped volume 会计已有；指定 representative certificates 与 reference q-pilot equality 的联合不相容性已证明 |
-| Period 路线位置 | 共同单位球及非线性 `φ(x)=x^p` 解的代表已有；任意 `φ(x)=-ξx` 解经 `p^N` scaling 后有原始 `A_inf` 代表；实际 full Tate 核分类、拓扑正合列和商求值单射已闭合；actual ρ=1 单位球候选已有 Frobenius 自同构与 `PadicInt` 标量结构 |
+| Period 路线位置 | 共同单位球及非线性 `φ(x)=x^p` 解的代表已有；任意 `φ(x)=-ξx` 解经 `p^N` scaling 后有原始 `A_inf` 代表；实际 full Tate 核分类、拓扑正合列、商求值单射及 Fréchet/actual Tate 商的求值相容性已闭合；actual ρ=1 单位球候选已有 Frobenius 自同构与 `PadicInt` 标量结构 |
 | 尚未接通的主要连接 | 共同 geometry producer、global holomorphoid、H¹ₑ/BK、论文 `B`/ρ-norm 身份、actual 候选到论文 `B⁺` 的身份、paper representatives、跨来源 collation、paper theta locus/volume 与最终 Corollary 3.12 |
 | Prologue 边界 | `R5`；四项 source laws 由 Scene1 producer 负责，仍须从共同真实来源证明 |
-| 本次更新范围 | 保留原总览结构，补入已推送单元及其精确边界；不改变父义务或最终闸门状态 |
+| 本次更新范围 | 记录 `92122ff` 已推送单元及其精确边界；不改变 15 项父义务或最终闸门状态 |
 
 阅读顺序：先看四个闸门，再看当前路线和关键缺口，最后看近期变化卡及父义务清单。
 局部结果以[源码][scene1]、模块头的来源与忠实度说明、[既有来源台账][ledger]及已提交记录为依据。近期构建、失败与资源数据见对应提交正文。
@@ -156,17 +156,28 @@ normalization 和 perfectoid bridge 等法律。图中从 actual arithmetic/Haar
 | 指数到 principal-unit period | 🔵 条件性完成 | 在可选 scaling 与小范数条件下，精确 bounded lift 可给 period；已进一步弱化为任意 full common-ring 延拓，由 overlap 法律导出 `φ(x)=x^p`，构造 integral Teichmüller 代表并给出 period | 环带指数的 full common-ring 延拓存在性仍缺 |
 | Frobenius 权与 Tate 可除性 | 🟢 已闭合 | 非零整数权 eigen 元素的权非负；非零 weight-k 元素被 t^m 整除则 m≤k；线性 φ=p 空间与 (t²) 仅交于零 | 不单独给出完整核的 ℚₚ 维数或 Tate 核身份 |
 | Primitive 单零点与一阶求值 | 🟢 已闭合 | 实际 `ξ=[varpi]-p` 的小半径范数恒为 primeNorm；平方可除性沿轨道传播并给出 P² 商，范数对数凸性证明 `ξ²∣x ↔ x=0`；一阶求值因而单射，实际 `Eigen / Tate-line` Banach 商求值单射也已由 full-kernel 身份闭合 | 与论文 `B` 和全局 period 身份的比较 |
-| 完整核身份与商线性等价 | 🟢 已闭合 | 已证明 `fullKernel = periodMap.range`、twisted period 满射、唯一标量分类、剩余商平凡、商求值单射和实际拓扑正合列；商的连续线性等价也已构造 | 与论文 `B`、global holomorphoid 和 H¹ₑ/BK 的跨来源身份 |
+| 完整核身份与商线性等价 | 🟢 已闭合 | 已证明 `fullKernel = periodMap.range`、twisted period 满射、唯一标量分类、剩余商平凡、商求值单射和实际拓扑正合列；actual 与 Fréchet Tate 商的连续线性等价及求值交换图也已构造 | 与论文 `B`、global holomorphoid 和 H¹ₑ/BK 的跨来源身份 |
 
 证据入口：[Fréchet source/completion 比较][frechet]、[calibrated seminorms][seminorms]、
 [Banach 商][banach]、[开放求值][open-evaluation]、[twisted Tate period][twisted]、
 [完整核比较][quotient-kernel]、[条件性商等价][quotient-equiv]、[单位球判据][completed-integral]、
+[Fréchet/actual 商求值相容性][frechet-tate-quotient]、
 [非线性 Frobenius 识别][completed-recognition]、[环带指数][annular-exp]、
 [环带截断][annular-truncation]、[闭区间逼近][annular-unit-approximation]、
 [completed 延拓到 period][completed-exp-period]、[Tate 可除性][tate-divisibility]、
 [一阶核][first-order]、[simple zero][simple-zero]及[twisted 整性识别][twisted-integral]。
 
 ## 最近单元变化卡
+
+### Fréchet Tate 商求值相容性
+
+| 项目 | 内容 |
+| --- | --- |
+| 提交 | `92122ff` |
+| 构造结论 | Fréchet Tate 商到 actual Tate Banach 商的连续线性等价，经 actual 商求值后恰等于 Fréchet 商求值；对 Fréchet eigen 元素生成的商类给出显式求值公式 |
+| 关键推进 | 将两条商到同一 actual untilt 的连续线性等价复合，证明求值交换；子空间代表公式由商映射和 Fréchet evaluation 定义直接推出 |
+| 来源边界 | 保留 actual completion、Fréchet completion 和 actual untilt 的既有 carrier 与拓扑；叶模块、Checks/Axioms、Scene1 聚合及 ImportAudit 通过，903 个可达工程模块的 proof-hole/禁用导入扫描无发现 |
+| 保留缺口 | 没有识别论文 Fréchet `B`、定义其 ρ-norm 或 Tate-log 收敛域；15 项父义务和四个最终闸门仍开放 |
 
 ### 所有 twisted 解的实际 integral Witt 代表（当前数学基线）
 
@@ -410,6 +421,7 @@ producer 和 paper identity，不通过 `Prologue/Obligations`、Scene2、Act2 �
 [quotient-equiv]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTateBanachQuotientEquiv.lean
 [full-tate-kernel]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittFullTateKernel.lean
 [tate-exact]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTateExactSequence.lean
+[frechet-tate-quotient]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittFrechetTateKernel.lean
 [actual-bplus]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittActualBPlusCandidate.lean
 
 [completed-integral]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittCompletedIntegralCriterion.lean
