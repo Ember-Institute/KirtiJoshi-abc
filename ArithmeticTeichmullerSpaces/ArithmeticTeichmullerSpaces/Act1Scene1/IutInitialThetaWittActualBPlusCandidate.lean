@@ -48,7 +48,7 @@ def unitBallSubring : Subring (Ring D w) where
     change realValue D w 1 x ≤ 1 at hx
     change realValue D w 1 (-x) ≤ 1
     rw [realValue_neg D w 1 (by norm_num) (by norm_num)]
-    exact hx
+    simpa only [one_pow] using hx
   mul_mem' := by
     intro x y hx hy
     change realValue D w 1 x ≤ 1 at hx
@@ -96,6 +96,42 @@ def unitBallFrobenius : unitBallSubring D w →+* unitBallSubring D w :=
 theorem unitBallFrobenius_apply (x : unitBallSubring D w) :
     (unitBallFrobenius D w x : Ring D w) =
       InitialThetaBoundedWittLocalization.frobeniusEquiv D w x.1 := rfl
+
+theorem inverseFrobenius_mem_unitBallSubring (x : unitBallSubring D w) :
+    (InitialThetaBoundedWittLocalization.frobeniusEquiv D w).symm x.1 ∈
+      unitBallSubring D w := by
+  change realValue D w 1
+      ((InitialThetaBoundedWittLocalization.frobeniusEquiv D w).symm x.1) ≤ 1
+  have h := InitialThetaWittRhoFrobenius.realValue_frobenius D w 1
+    (by norm_num) ENNReal.one_ne_top
+    ((InitialThetaBoundedWittLocalization.frobeniusEquiv D w).symm x.1)
+  have hx : realValue D w 1 x.1 ≤ 1 := x.property
+  have hp : realValue D w 1
+      ((InitialThetaBoundedWittLocalization.frobeniusEquiv D w).symm x.1) ^
+        Arithmetic.residueChar w.1 ≤ 1 := by
+    rw [← h, (InitialThetaBoundedWittLocalization.frobeniusEquiv D w).apply_symm_apply]
+    simpa only [one_pow] using hx
+  exact le_of_pow_le_pow_left₀ (Arithmetic.residueChar_prime w.1).ne_zero
+    (by norm_num) (by simpa using hp)
+
+def unitBallInverseFrobenius : unitBallSubring D w →+* unitBallSubring D w :=
+  ((InitialThetaBoundedWittLocalization.frobeniusEquiv D w).symm.toRingHom.comp
+    (unitBallSubring D w).subtype).codRestrict _
+      (inverseFrobenius_mem_unitBallSubring D w)
+
+theorem unitBallInverseFrobenius_apply (x : unitBallSubring D w) :
+    (unitBallInverseFrobenius D w x : Ring D w) =
+      (InitialThetaBoundedWittLocalization.frobeniusEquiv D w).symm x.1 := rfl
+
+theorem unitBallFrobenius_leftInverse (x : unitBallSubring D w) :
+    unitBallInverseFrobenius D w (unitBallFrobenius D w x) = x := by
+  apply Subtype.ext
+  simp [unitBallInverseFrobenius, unitBallFrobenius]
+
+theorem unitBallFrobenius_rightInverse (x : unitBallSubring D w) :
+    unitBallFrobenius D w (unitBallInverseFrobenius D w x) = x := by
+  apply Subtype.ext
+  simp [unitBallInverseFrobenius, unitBallFrobenius]
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
