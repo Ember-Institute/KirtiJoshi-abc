@@ -213,5 +213,15 @@ theorem unitBallToCommon_padicInt_algebraMap
         (algebraMap _ _ a))
   rw [InitialThetaBoundedWittPadicScalars.padicMap_algebraMap]
 
+theorem padicIntMap_injective :
+    Function.Injective (padicIntMap D w) := by
+  intro a b h
+  apply FaithfulSMul.algebraMap_injective (PadicInt (Arithmetic.residueChar w.1))
+    (Padic (Arithmetic.residueChar w.1))
+  apply InitialThetaWittAllRadiusPadicScalars.commonPadicMap_injective D w
+  rw [← unitBallToCommon_padicInt_algebraMap D w a,
+    ← unitBallToCommon_padicInt_algebraMap D w b]
+  exact congrArg (unitBallToCommon D w) h
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
