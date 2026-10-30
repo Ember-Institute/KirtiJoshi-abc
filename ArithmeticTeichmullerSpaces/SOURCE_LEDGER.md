@@ -6469,6 +6469,12 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-TATE-BANACH-QUOTIENT-EQUIV` | `quotientEvaluationLinearEquiv_apply`、`quotientEvaluationLinearEquiv_exists_iff`；`Act1Scene1/IutInitialThetaWittTateBanachQuotientEquiv.lean` | 在显式条件 `fullKernel = periodMap.range` 下，使用实际 quotient evaluation 的满射性和单射性构造 `ℚₚ` 线性等价；反向证明任何与 quotient evaluation 相同的线性等价都强制该 full-kernel 身份。 | Scene1/Derived；严格保留为代数线性等价，不宣称当前商的拓扑等价或 full-kernel 身份已成立。原载体、标量和 R5 保留；原创证明，无参考代码复制。 |
 
+### Fréchet Tate 商到实际 Tate 商的求值相容性
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-FRECHET-TATE-QUOTIENT-COMPATIBILITY` | `quotientEvaluationContinuousLinearEquiv_frechetTateQuotientToActual`、`quotientEvaluationContinuousLinearEquiv_frechetTateQuotientToActual_mk`；`Act1Scene1/IutInitialThetaWittFrechetTateKernel.lean` | Joshi II `pr:teichmuller-lift-A` 的 Tate 商求值序列；将已证明的 Fréchet 商到 actual Tate Banach 商连续线性等价与 actual 商求值连续线性等价复合，证明该复合恰为 Fréchet 商求值，并给出 Fréchet 子空间元素生成的商类公式。 | Scene1/Derived；是同一 actual untilt 求值下的交换图和代表类公式，不增加 paper `B` 身份、Tate-log 收敛域、H¹ₑ/BK 或跨 holomorphoid 输入，也不关闭论文 Fréchet `B` 父义务。新增声明公理仅为 `propext`、`Classical.choice`、`Quot.sound`；原创证明，无参考代码复制。 |
+
 ### Canonical actual hull 到 Scene1Input 的字段相容性
 
 | source-id | declarations | source / fidelity | boundary / status |

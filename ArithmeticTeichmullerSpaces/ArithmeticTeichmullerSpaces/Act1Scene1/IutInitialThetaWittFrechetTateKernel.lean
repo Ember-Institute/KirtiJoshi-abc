@@ -365,5 +365,22 @@ theorem frechetTateQuotientToActual_apply (x : FrechetTateQuotient D w) :
       (InitialThetaWittTateExactSequence.quotientEvaluationContinuousLinearEquiv D w).symm
         (frechetQuotientEvaluationContinuousLinearEquiv D w x) := rfl
 
+theorem quotientEvaluationContinuousLinearEquiv_frechetTateQuotientToActual
+    (x : FrechetTateQuotient D w) :
+    InitialThetaWittTateExactSequence.quotientEvaluationContinuousLinearEquiv D w
+        (frechetTateQuotientToActual D w x) =
+      frechetQuotientEvaluationContinuousLinearEquiv D w x := by
+  rw [frechetTateQuotientToActual_apply]
+  exact (InitialThetaWittTateExactSequence.quotientEvaluationContinuousLinearEquiv D w).apply_symm_apply _
+
+theorem quotientEvaluationContinuousLinearEquiv_frechetTateQuotientToActual_mk
+    (x : frechetFrobeniusPrime D w) :
+    InitialThetaWittTateExactSequence.quotientEvaluationContinuousLinearEquiv D w
+        (frechetTateQuotientToActual D w (Submodule.Quotient.mk x)) =
+      frechetEigenEvaluation D w x := by
+  rw [quotientEvaluationContinuousLinearEquiv_frechetTateQuotientToActual,
+    frechetQuotientEvaluationContinuousLinearEquiv_apply,
+    frechetQuotientEvaluation_mk]
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetTateKernel
