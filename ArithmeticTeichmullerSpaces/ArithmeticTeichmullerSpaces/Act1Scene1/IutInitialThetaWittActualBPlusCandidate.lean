@@ -23,6 +23,7 @@ open JoshiTeich.Prologue
 open InitialThetaBoundedWittLocalization InitialThetaWittRhoNorm
 open InitialThetaWittRhoOneUnitBall
 open InitialThetaWittRhoFrobenius
+open InitialThetaWittAllRadiusFrobenius
 noncomputable section
 universe u
 variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
@@ -132,6 +133,27 @@ theorem unitBallFrobenius_rightInverse (x : unitBallSubring D w) :
     unitBallFrobenius D w (unitBallInverseFrobenius D w x) = x := by
   apply Subtype.ext
   simp [unitBallInverseFrobenius, unitBallFrobenius]
+
+def unitBallFrobeniusEquiv : unitBallSubring D w ≃+* unitBallSubring D w :=
+  RingEquiv.ofBijective (unitBallFrobenius D w) (by
+    constructor
+    · intro x y h
+      apply_fun unitBallInverseFrobenius D w at h
+      simpa only [unitBallFrobenius_leftInverse] using h
+    · intro y
+      exact ⟨unitBallInverseFrobenius D w y,
+        unitBallFrobenius_rightInverse D w y⟩)
+
+theorem unitBallFrobeniusEquiv_apply (x : unitBallSubring D w) :
+    unitBallFrobeniusEquiv D w x = unitBallFrobenius D w x := by
+  rfl
+
+theorem unitBallToCommon_frobenius (x : unitBallSubring D w) :
+    unitBallToCommon D w (unitBallFrobenius D w x) =
+      InitialThetaWittAllRadiusFrobenius.frobeniusEquiv D w
+        (unitBallToCommon D w x) := by
+  rw [unitBallToCommon_apply, unitBallFrobenius_apply, unitBallToCommon_apply,
+    InitialThetaWittAllRadiusFrobenius.frobenius_inclusion]
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
