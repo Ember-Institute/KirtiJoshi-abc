@@ -22,12 +22,12 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-10-30（Asia/Shanghai） |
-| 数学证明基线 | 截至已提交并推送的 `f45e8d4`：全半径 completion 中 `φ(x)=x^p` 解的原始 bounded Witt 代表构造；本次总览更新不计作数学进展 |
+| 数学证明基线 | 截至已提交并推送的 `8bb052d`：所有 full common-ring twisted 解的原始 integral Witt 代表构造；本次总览更新不计作数学进展 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 父义务状态 | [明确来源证明义务][obligations]中的 15 项全部开放 |
 | 近期定量进展 | 一般数域次数下的 actual qProduct lower bound、条件性 Corollary consumer 和 `qProduct = thetaVolume^[F:ℚ]` 已验收；旧 raw 严格 margin 仍保留 degree-one 条件 |
 | 近期处集进展 | actual representative fibers、omitted mass、Galois fiber 权重和 grouped volume 会计已有；指定 representative certificates 与 reference q-pilot equality 的联合不相容性已证明 |
-| Period 路线位置 | 全半径各 ρ-norm 的共同单位球已识别为原始 `A_inf` 像；非线性 `φ(x)=x^p` 解可恢复 bounded Witt 代表；环带指数延拓及线性 `φ=p` 的完整 Tate 核分类仍开放 |
+| Period 路线位置 | 共同单位球及非线性 `φ(x)=x^p` 解的代表已有；任意 `φ(x)=-ξx` 解经 `p^N` scaling 后有原始 `A_inf` 代表；非零 `φ=p` 元素无二重 primitive 零点，一阶核求值单射；完整 Tate 核分类仍开放 |
 | 尚未接通的主要连接 | 共同 geometry producer、global holomorphoid、H¹ₑ/BK、论文 `B`/ρ-norm 身份、paper representatives、跨来源 collation、paper theta locus/volume 与最终 Corollary 3.12 |
 | Prologue 边界 | `R5`；四项 source laws 由 Scene1 producer 负责，仍须从共同真实来源证明 |
 | 本次更新范围 | 保留原总览结构，补入已推送单元及其精确边界；不改变父义务或最终闸门状态 |
@@ -66,7 +66,7 @@ flowchart TD
     Q["已闭合：actual Tate / q-root\nVBad representatives / prime fibers"]
     F["已闭合：local tilt / Fontaine / Witt\n全半径完备化、Frobenius 与 A_inf 单位球"]
     H["已闭合：actual H¹ / ordinary log\nintegral 来源与 tensor hull"]
-    T["已闭合：Tate period / theta 求值\nBanach 商、环带指数与 φ(x)=x^p 识别"]
+    T["已闭合：Tate period / theta 求值\nprimitive 单零点与 twisted 解整性"]
     K["未建立：fullKernel = periodMap.range"]
     A["条件性完成：canonical actual hull\nraw 归一化、体积符号与 consumer"]
     B["未建立：global holomorphoid\n论文 B / H¹ₑ / BK 比较"]
@@ -123,7 +123,9 @@ normalization 和 perfectoid bridge 等法律。图中从 actual arithmetic/Haar
 | Raw qLogSum 严格 margin | 🔵 条件性完成 | 另需 `Module.finrank ℚ D.F = 1`，才得到 raw qLogSum 与 selected internal paperSum 的指定严格比较 | G1/G4；[raw margin][margin] |
 | Actual period-ring 局部链 | 🟢 已闭合 | actual Witt、ρ-norm 构造、全半径完备化及比较、Frobenius、theta、Tate-log 与 principal-unit period 已有 | G2/G4；见下节 [period 路线](#period-ring-路线的精确位置) |
 | 全半径整性与非线性 Frobenius 识别 | 🟢 已闭合 | 原始 `A_inf` 像恰为所有 ρ-norm 的共同单位球；全半径 `φ(x)=x^p` 解有原始 bounded Witt 代表，单半径单位界给 integral Teichmüller 代表 | G2/G4；[单位球判据][completed-integral]、[非线性识别][completed-recognition] |
-| 环带指数的实际 Witt 代表 | 🟡 部分完成 | 指数收敛、单位性、重叠半径 Frobenius 方程与有限坐标稠密性已有；精确 bounded/integral Witt 代表及全半径延拓仍缺 | G2/G4；[环带指数][annular-exp]、[bounded-lift consumer][bounded-exp-period] |
+| Twisted 解的实际整性 producer | 🟢 已闭合 | 任意原始 full common-ring 解 `φ(x)=-ξx`，均可构造 `N` 和原始 `a∈A_inf`，使 `ainfMap(a)=p^N·x` 且 `Frob(a)=-ξ_Ainf·a`；无需预设 bounded/integral lift | G2/G4；[twisted 整性识别][twisted-integral] |
+| Primitive 单零点与一阶核求值 | 🟢 已闭合 | 对完整 actual `φ=p` 空间，`ξ²∣x ↔ x=0`；`fullKernel` 上先除轨道乘积 P 再作 θ 的一阶求值单射，区别于 Banach 商求值 | G2/G4；[simple zero][simple-zero] |
+| 环带指数的实际 Witt 代表 | 🟡 部分完成 | 指数收敛、单位性、overlap Frobenius 法律、闭区间单位有界逼近及条件性 completed-lift consumer 已有；精确 Witt 代表或全半径延拓的存在性仍缺 | G2/G4；[环带指数][annular-exp]、[闭区间逼近][annular-unit-approximation]、[completed-lift consumer][completed-exp-period] |
 | 完整 Tate 核分类 | ⚪ 未建立 | 尚未证明 `fullKernel = periodMap.range`；已有一维 period 像及分类条件等价 | G2/G4；[twisted Tate period][twisted]、[full-kernel comparison][quotient-kernel] |
 | 共同 geometry producer | ⚪ 未建立 | seed 到完整 `orb/localData/InitialThetaData` 的真实 witness 仍缺；reference adapter 仍消费 existence contract | G2；[producer contracts][contracts]、[接口反模型][countermodel] |
 | H¹ₑ/BK 与 global holomorphoid | ⚪ 未建立 | actual H¹、ordinary log 和 local untilt 尚未通过论文 marking、crystalline/period 与 BK comparison 统一识别 | G2/G4；[父义务 §三][obligations] |
@@ -145,20 +147,45 @@ normalization 和 perfectoid bridge 等法律。图中从 actual arithmetic/Haar
 | 完整核的带因子比较 | 🟢 已闭合 | 非零轨道乘积 P 将原解空间 `φ(y)=-ξ·y` 与完整特征 θ 核连续 ℚₚ 线性等价；构造 canonical solution `t/P`，period 像为其一维闭张成空间 | 所有解均为该解的唯一 ℚₚ 标量倍 |
 | 全半径共同单位球 | 🟢 已闭合 | 不假设 source lift 或 integral approximants；从实际全半径单位界构造原始 Witt 整系数及 `A_inf` 代表 | 单个环带的单位界不能直接套用此判据 |
 | 全半径非线性 Frobenius 解 | 🟢 已闭合 | 对 `φ(x)=x^p`，全部半径 norm 相等；单半径单位界给 integral Teichmüller 代表；contracting Teichmüller 因子去掉单位界后给 bounded source | 不涵盖尚未延拓的环带元素，也不分类线性 `φ(x)=p·x` 解 |
-| 环带指数与有限坐标逼近 | 🟡 部分完成 | 每个线性 eigen 元素适当 p-power scaling 后给环带指数单位及 overlap Frobenius 法律；原始 source 在环带稠密，并可控制有限坐标；已单位有界的 source 可去掉负 p 次项并保留环带单位界，误差 ≤ρ/r | 构造环带指数的精确 Witt 代表；固定内半径下 ρ/r 界不保证误差趋零 |
-| 指数到 principal-unit period | 🔵 条件性完成 | 在可选的 p-power scaling 与小范数条件下，精确 bounded annular lift 给 source Frobenius 方程、integral lift 和 principal-unit period，再移除 scaling | 精确 bounded annular lift 的存在性仍缺 |
-| Frobenius 权与 Tate 可除性 | 🟢 已闭合 | 非零整数权 eigen 元素的权非负；非零 weight-k 元素被 t^m 整除则 m≤k；线性 φ=p 空间与 (t²) 仅交于零 | first-order quotient kernel 给的是 ξ² 可除性；尚无到 t² 可除性的桥接，不能据此关闭完整核 |
+| Twisted 解的 integral Witt 代表 | 🟢 已闭合 | 同一个构造出的 `p^N` 给出小半径起点界和大半径起点界；两组 Frobenius 轨道及插值给出全半径单位界，从而构造原始 `A_inf` 代表及其 Witt 方程 | 原始 integral twisted solutions 的唯一 ℚₚ 标量分类仍缺 |
+| 环带指数与闭区间逼近 | 🟡 部分完成 | 线性 eigen 元素适当 scaling 后给环带指数单位及 overlap Frobenius 法律；仅由两个端点单位界即可构造整个闭区间上单位有界的 bounded source 逼近；去负 p 次项后的误差 ≤max(ε,ρ/r) | 精确 Witt 代表或全半径延拓仍缺；固定正内半径保留 ρ/r，不能由此推出整性 |
+| 指数到 principal-unit period | 🔵 条件性完成 | 在可选 scaling 与小范数条件下，精确 bounded lift 可给 period；已进一步弱化为任意 full common-ring 延拓，由 overlap 法律导出 `φ(x)=x^p`，构造 integral Teichmüller 代表并给出 period | 环带指数的 full common-ring 延拓存在性仍缺 |
+| Frobenius 权与 Tate 可除性 | 🟢 已闭合 | 非零整数权 eigen 元素的权非负；非零 weight-k 元素被 t^m 整除则 m≤k；线性 φ=p 空间与 (t²) 仅交于零 | 不单独给出完整核的 ℚₚ 维数或 Tate 核身份 |
+| Primitive 单零点与一阶求值 | 🟢 已闭合 | 实际 `ξ=[varpi]-p` 的小半径范数恒为 primeNorm；平方可除性沿轨道传播并给出 P² 商，范数对数凸性证明 `ξ²∣x ↔ x=0`；一阶求值因而单射 | 这里的一阶求值先除 P 再作 θ；`Eigen / Tate-line` 的 Banach 商求值单射性仍开放 |
 | 完整核身份与商线性等价 | 🔵 条件性完成 | 已证明核身份、twisted period 满射、唯一标量分类、剩余商平凡和商求值单射等目标之间的指定等价；给定核身份后得到商求值的代数线性等价 | **`fullKernel = periodMap.range` 本身仍未证明**；条件性代数线性等价不另作拓扑等价声明 |
 
 证据入口：[Fréchet source/completion 比较][frechet]、[calibrated seminorms][seminorms]、
 [Banach 商][banach]、[开放求值][open-evaluation]、[twisted Tate period][twisted]、
 [完整核比较][quotient-kernel]、[条件性商等价][quotient-equiv]、[单位球判据][completed-integral]、
 [非线性 Frobenius 识别][completed-recognition]、[环带指数][annular-exp]、
-[环带截断][annular-truncation]、[Tate 可除性][tate-divisibility]及[一阶核][first-order]。
+[环带截断][annular-truncation]、[闭区间逼近][annular-unit-approximation]、
+[completed 延拓到 period][completed-exp-period]、[Tate 可除性][tate-divisibility]、
+[一阶核][first-order]、[simple zero][simple-zero]及[twisted 整性识别][twisted-integral]。
 
 ## 最近单元变化卡
 
-### 全半径单位球与非线性 Frobenius 识别（当前数学基线）
+### 所有 twisted 解的实际 integral Witt 代表（当前数学基线）
+
+| 项目 | 内容 |
+| --- | --- |
+| 提交 | `8bb052d` |
+| 输入 | 原始 full common-ring 中任意满足 `φ(x)=-ξ·x` 的 x |
+| 构造结论 | 存在 `N∈ℕ` 和原始 `a∈A_inf`，使 `ainfMap(a)=p^N·x` 且 `Frob(a)=-ξ_Ainf·a` |
+| 关键推进 | 小半径 `r<primeNorm` 时 `‖ξ‖ᵣ=primeNorm`；大半径 `primeNorm<r` 时 `‖ξ‖ᵣ=r`。同一个 p-power scaling 给出两个起点界，分别沿向零和向一的半径轨道传播，再插值得到全部半径单位界 |
+| 来源边界 | bounded/integral 代表均为构造结论，不是输入；保留原始 carrier、范数和 Prologue R5 |
+| 保留缺口 | integral twisted solutions 的 ℚₚ 标量分类、`fullKernel = periodMap.range`、论文 `B` 与 H¹ₑ/BK 身份仍缺；15 项父义务不变 |
+
+### Primitive 单零点与一阶求值单射
+
+`376c5f1` 证明完整 actual `φ=p` 元素满足 `ξ²∣x ↔ x=0`。
+证明将平方可除性沿 primitive 轨道传播，构造原始轨道乘积 P² 的商，
+再用小半径范数递推和对数凸性排除非零商，无需 ξ² 到 t² 的可除性桥接。
+
+已有一阶核刻画由此给出 `fullKernel` 上 `quotientEvaluation` 的单射性。
+这个映射先除 P 再作 θ，区别于 `Eigen / Tate-line` 上的 Banach 商求值；
+后者的单射性与完整 Tate 核身份仍开放。
+
+### 全半径单位球与非线性 Frobenius 识别
 
 | 项目 | 内容 |
 | --- | --- |
@@ -170,15 +197,26 @@ normalization 和 perfectoid bridge 等法律。图中从 actual arithmetic/Haar
 | 新增假设 | 不要求预先给出 bounded/integral source 代表；结果仍以给定 D、supported place 和 full common-ring 元素为范围 |
 | 保留缺口 | 环带指数的全半径延拓或精确 Witt 代表、线性 `φ=p` 的完整 Tate 核分类、论文 `B` 及 H¹ₑ/BK 身份 |
 
-### 环带指数：密度与截断的作用范围
+### 环带指数：条件延拓、闭区间逼近与整性障碍
+
+`0590f5b` 将已有 bounded-lift consumer 推进到任意 full common-ring 延拓：
+由环带 overlap 法律和原始半径求值单射性导出 `φ(x)=x^p`，再构造原始 integral
+Teichmüller 代表，并在已有 scaling 与小范数条件下给出 principal-unit period。
+此处仍以延拓为输入，尚未构造任意环带指数的延拓。
 
 `7f81612` 证明原始 bounded source 在环带 carrier 的稠密性和有限坐标同时逼近。
 `d262cf5` 对已经在所有环带半径单位有界的实际 source，构造无负 p 次项的 source，
 保留全部环带单位界，误差在半径 r 处不超过 ρ/r。
 
-密度只控制所选有限坐标，不提供同时满足全部环带单位界的 source 逼近。
-固定内半径 ρ 时，ρ/r 也不自动趋零。因此这两项不能替代精确 integral lift。
-环带 Frobenius 等式只在重叠半径成立；现有法律尚未构造延拓所需的 p 次根。
+`16acd4b` 进一步仅从两个端点单位界，构造在闭区间 [ρ,t] 的每个半径上单位有界的
+原始 bounded source 逼近；去负 p 次项后仍保留区间单位界，误差 ≤max(ε,ρ/r)。
+这已超出有限坐标控制，但固定正内半径 ρ 时，ρ/r 不自动趋零，仍不能替代精确 lift。
+
+`3e1afd7` 给出实际障碍：每个固定正内半径都有原始 bounded source
+`z=[varpi]^N/p`，其环带范数均 <1，却没有原始 `A_inf` 代表。
+`u=1-z` 还是实际环带单位，u 与其逆的各环带范数均为 1，仍无整代表。
+因此 density、单位性和双侧单位界不能单独推出整性。反例未附加 Frobenius-power
+方程，且其值已有全半径延拓；它不排除方程驱动的识别，也不反驳延拓存在性。
 
 ### 一般数域次数下的 actual hull 比较
 
@@ -242,9 +280,9 @@ S 是当前 actual VBad carrier 上定义的内部 selected paper sum，仍须�
 | 保留缺口 | paper `L'` representative、paper multiplicity、omitted mass、mixed-moduli descent |
 | 已提交扩展 | `representativePrimeFiberImageEquiv`、`representativeImage_card_eq_primeFiberImageType_sum` 与 `vbad_card_eq_primeMultiplicity_sum` 已接到实际 fiber-image/multiplicity 类型 |
 
-上述单元的模块头、既有台账及提交记录提供来源和验收信息。当前 `f45e8d4` 的叶模块、
+上述单元的模块头、既有台账及提交记录提供来源和验收信息。当前 `8bb052d` 的叶模块、
 `Act1Scene1` 聚合、`Checks/SelectedRoots`、`Axioms/SelectedRoots` 和 `ImportAudit` 均通过。
-当前 Axioms 日志解析了 1732 个声明，包含本单元全部五个公开定理。
+当前 Axioms 日志解析了 1748 个声明，包含本单元全部三个公开定理。
 登记的新定理公理输出仅含 `propext`、`Classical.choice`、`Quot.sound`，
 相应扫描未发现 `sorryAx`、proof hole 或禁用导入。该记录不替代最终联合模型的验收。
 
@@ -261,7 +299,7 @@ S 是当前 actual VBad carrier 上定义的内部 selected paper sum，仍须�
 | 4 | `InitialThetaGeometryProducer` | contract 和 reference adapter 已有；真实 geometry 的 orbicurve、covering、local 条件 witness 仍缺 |
 | 5 | 共同实际 `InitialThetaData/TateFamily` 模型 | 给定数据的局部派生链已有；arithmetic seed 到完整模型及全部来源等式仍缺 |
 | 6 | 实际 holomorphoid source | local untilt/tilt/Fontaine package 已有；global marking、解析基点、Fargues–Fontaine/论文身份仍缺 |
-| 7 | 论文 Fréchet `B` 和 ρ-norm | actual completion、共同单位球的 `A_inf` 识别、非线性 Frobenius 解的 bounded 代表及环带指数已有；环带延拓、完整线性 Tate 核及论文 `B` 身份仍缺 |
+| 7 | 论文 Fréchet `B` 和 ρ-norm | actual completion、共同单位球、非线性解代表、twisted 解的 integral producer、primitive 单零点及环带指数已有；完整 Tate 核分类、环带延拓及论文 `B` 身份仍缺 |
 | 8 | H¹ₑ/crystalline/Bloch–Kato comparison | actual H¹、integral 像、ordinary log/p* 与 period 构件已有；正确子空间成员性、BK exp/log 和整性约定仍缺 |
 | 9 | 跨 holomorphoid/arithmeticoid collation | fixed tensor hull、factor orbit 和 ordinary singleton collation 已有；不同 untilt/moduli source 的 marking 与 transport 仍缺 |
 | 10 | 论文 `V_p^oss` / `\underline V^oss` | actual VBad/section/Voss、prime support 与 finite fibers 已有；论文处集、过滤和坏处外身份仍缺 |
@@ -283,6 +321,7 @@ S 是当前 actual VBad carrier 上定义的内部 selected paper sum，仍须�
 | 将 VBad 去权系数直接补成 1 | 🔴 对应实际条件下系数严格小于 1，不能通过忽略因子完成原装配 | 保留 coefficient-weighted 会计，核对 representative、omitted mass 和归一化 | [历史 log4][log4]；S1.282–283、320 |
 | 旧 degree-one 装配直接覆盖一般数域 | 🔴 指定旧装配及历史 raw strict margin 要求 finrank=1；一般次数的 actual lower bound 与条件性 consumer 已另行证明 | 继续完成来源与 paper normalization，区分一般 lower bound 和旧严格 margin | 历史 log4 S1.270；[raw margin][margin]、[一般次数比较][degree-volume] |
 | 指定 representative certificates 与 reference equality 联合装配 | 🔴 两类显式证书将 actual selected product 强制等于 reference exponential，与已证明的严格 gap 冲突；已移除 degree-one 限制 | 检查 paper carrier、omitted mass、degree/weight 的实际来源，避免复用这组不相容证书 | [reference incompatibility][representative-incompatibility]、[degree-normalized audit][degree-incompatibility] |
+| 固定正内半径上的单位界或环带单位性直接推出整性 | 🔴 实际 `z=[varpi]^N/p` 在环带各半径范数 <1 却无 `A_inf` 代表；`1-z` 及其逆各半径范数均为 1，仍无整代表 | 使用实际 Frobenius 方程或其他真实来源；反例本身已有全半径延拓，不排除方程识别或延拓路线 | [annular integral obstruction][annular-integral-obstruction]；`3e1afd7` |
 
 接口反模型只排除“由这些抽象字段无条件自动产生 witness”的路线，不评价真实 orbicurve
 的 cartesian 性质。上述负面证据也不构成 Corollary 3.12 的反例。
@@ -298,8 +337,10 @@ concrete Voss 到论文处集、canonical actual hull volume 到 paper `thetaVol
 按[开发计划 §5][plan-order]，最终装配先需要共同真实 geometry producer，再需要
 holomorphoid、period、H¹ₑ/BK 与 paper `B`/ρ-norm 来源；随后闭合论文处集、代表、重数和
 mixed-moduli descent，冻结 G1，并完成 G4 的 paper locus/volume 与 Corollary。
-当前 period 分支需构造环带 eigen 指数的精确 Witt 代表或全半径延拓，并完成
-`fullKernel = periodMap.range`；全半径非线性识别尚未解决这两项。representative 分支须把
+当前 period 分支已把任意 twisted 解归约到原始 integral Witt 方程；下一步需比较非零
+integral 解，并将 Frobenius-fixed Witt 分式识别为现有嵌入下的实际 ℚₚ 标量，进而证明
+唯一标量分类与 `fullKernel = periodMap.range`。这些比较仍待证明。环带 eigen 指数的
+精确 Witt 代表或全半径延拓也仍开放。representative 分支须把
 concrete fiber 会计接到 paper multiplicity 和遗漏项来源，并处理已发现的联合证书冲突。
 
 局部逻辑单元按计划通过叶模块、聚合、Checks/Axioms、ImportAudit、proof-hole/禁用导入扫描、
@@ -351,6 +392,11 @@ producer 和 paper identity，不通过 `Prologue/Obligations`、Scene2、Act2 �
 [bounded-exp-period]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittBoundedExponentialPeriod.lean
 [tate-divisibility]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTateDivisibility.lean
 [first-order]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittEigenKernelFirstOrder.lean
+[simple-zero]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittEigenKernelSimpleZero.lean
+[twisted-integral]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTwistedIntegralRecognition.lean
+[completed-exp-period]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittCompletedExponentialPeriod.lean
+[annular-unit-approximation]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittAnnularUnitApproximation.lean
+[annular-integral-obstruction]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittAnnularIntegralObstruction.lean
 [degree-volume]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullDegreeProductVolume.lean
 [representative-incompatibility]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaRepresentativeReferenceProductIncompatibility.lean
 [degree-incompatibility]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaDegreeNormalizedRepresentativeIncompatibility.lean
