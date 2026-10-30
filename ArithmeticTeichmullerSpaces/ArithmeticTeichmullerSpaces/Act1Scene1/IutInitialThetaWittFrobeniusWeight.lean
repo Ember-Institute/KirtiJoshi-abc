@@ -94,7 +94,7 @@ private theorem powered_radius_weights (ρ : Radius) :
   field_simp
   ring
 
-private theorem log_coordinate_convex (ρ : Radius) (x : Carrier D w) (hx : x ≠ 0) :
+theorem log_coordinate_convex (ρ : Radius) (x : Carrier D w) (hx : x ≠ 0) :
     ((Arithmetic.residueChar w.1 : ℝ) + 1) *
         Real.log (coordinateSeminorm D w (poweredRadius D w ρ) x) ≤
       (Arithmetic.residueChar w.1 : ℝ) * Real.log (coordinateSeminorm D w ρ x) +
