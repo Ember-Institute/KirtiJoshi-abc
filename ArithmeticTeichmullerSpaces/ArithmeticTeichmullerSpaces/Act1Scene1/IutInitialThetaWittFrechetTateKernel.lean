@@ -119,6 +119,11 @@ def frechetEigenPeriodMap : RationalTate D w →L[Scalars D w] frechetFrobeniusP
     rw [frechetPeriodMap_apply, (continuousAlgEquiv D w).apply_symm_apply]
     exact periodMap_range_le_frobeniusPrime D w ⟨v, rfl⟩)
 
+def frechetTateLine : Submodule (Scalars D w) (frechetFrobeniusPrime D w) :=
+  (frechetEigenPeriodMap D w).range
+
+abbrev FrechetTateQuotient := frechetFrobeniusPrime D w ⧸ frechetTateLine D w
+
 def frechetToActualEigen : frechetFrobeniusPrime D w →L[Scalars D w]
     (frobeniusPrimeSubmodule D w) :=
   ((continuousAlgEquiv D w).toContinuousLinearEquiv.toContinuousLinearMap.domRestrict
@@ -268,6 +273,97 @@ theorem frechetTatePeriodSequence_strictExact :
   ⟨frechetEigenPeriodMap_isClosedEmbedding D w,
     frechetEigenEvaluation_exact D w,
     frechetEigenEvaluation_isOpenQuotientMap D w⟩
+
+theorem frechetEigenEvaluation_actualToFrechet
+    (x : frobeniusPrimeSubmodule D w) :
+    frechetEigenEvaluation D w (actualToFrechetEigen D w x) =
+      eigenEvaluation D w x := by
+  change eigenEvaluation D w
+    (frechetToActualEigen D w (actualToFrechetEigen D w x)) = _
+  rw [frechetToActualEigen_actualToFrechetEigen]
+
+theorem frechetTateLine_le_evaluationKernel :
+    frechetTateLine D w ≤ (frechetEigenEvaluation D w).ker :=
+  (LinearMap.exact_iff.mp (frechetEigenEvaluation_exact D w)).symm.le
+
+def frechetQuotientEvaluation : FrechetTateQuotient D w →L[Scalars D w]
+    InitialThetaWittThetaBound.Untilt D w :=
+  (frechetTateLine D w).liftQL (frechetEigenEvaluation D w)
+    (frechetTateLine_le_evaluationKernel D w)
+
+theorem frechetQuotientEvaluation_mk (x : frechetFrobeniusPrime D w) :
+    frechetQuotientEvaluation D w (Submodule.Quotient.mk x) =
+      frechetEigenEvaluation D w x := rfl
+
+theorem frechetQuotientEvaluation_surjective :
+    Function.Surjective (frechetQuotientEvaluation D w) := by
+  intro y
+  obtain ⟨x, hx⟩ :=
+    InitialThetaWittEigenEvaluationSurjective.eigenEvaluation_surjective D w y
+  exact ⟨Submodule.Quotient.mk (actualToFrechetEigen D w x),
+    (frechetQuotientEvaluation_mk D w _).trans
+      ((frechetEigenEvaluation_actualToFrechet D w x).trans hx)⟩
+
+theorem frechetQuotientEvaluation_injective :
+    Function.Injective (frechetQuotientEvaluation D w) := by
+  apply LinearMap.ker_eq_bot.mp
+  exact Submodule.ker_liftQ_eq_bot (frechetTateLine D w)
+    (frechetEigenEvaluation D w).toLinearMap
+    (frechetTateLine_le_evaluationKernel D w)
+    (LinearMap.exact_iff.mp (frechetEigenEvaluation_exact D w)).le
+
+theorem frechetQuotientEvaluation_continuous :
+    Continuous (frechetQuotientEvaluation D w) :=
+  (frechetQuotientEvaluation D w).continuous
+
+theorem frechetQuotientEvaluation_isOpenMap :
+    IsOpenMap (frechetQuotientEvaluation D w) := by
+  apply (frechetTateLine D w).isOpenQuotientMap_mkQL.isOpenMap_iff.mpr
+  have heq : (fun x =>
+      frechetQuotientEvaluation D w ((frechetTateLine D w).mkQL x)) =
+      frechetEigenEvaluation D w := by
+    funext x
+    exact frechetQuotientEvaluation_mk D w x
+  change IsOpenMap (fun x =>
+    frechetQuotientEvaluation D w ((frechetTateLine D w).mkQL x))
+  rw [heq]
+  exact frechetEigenEvaluation_isOpenMap D w
+
+theorem frechetQuotientEvaluation_isOpenQuotientMap :
+    IsOpenQuotientMap (frechetQuotientEvaluation D w) :=
+  ⟨frechetQuotientEvaluation_surjective D w,
+    frechetQuotientEvaluation_continuous D w,
+    frechetQuotientEvaluation_isOpenMap D w⟩
+
+def frechetQuotientEvaluationContinuousLinearEquiv :
+    FrechetTateQuotient D w ≃L[Scalars D w]
+      InitialThetaWittThetaBound.Untilt D w := by
+  let e : FrechetTateQuotient D w ≃ₗ[Scalars D w]
+      InitialThetaWittThetaBound.Untilt D w :=
+    LinearEquiv.ofBijective (frechetQuotientEvaluation D w).toLinearMap
+      ⟨frechetQuotientEvaluation_injective D w,
+        frechetQuotientEvaluation_surjective D w⟩
+  exact { e with
+    continuous_toFun := frechetQuotientEvaluation_continuous D w
+    continuous_invFun := (e.toEquiv.toHomeomorphOfContinuousOpen
+      (frechetQuotientEvaluation_continuous D w)
+      (frechetQuotientEvaluation_isOpenMap D w)).continuous_invFun }
+
+theorem frechetQuotientEvaluationContinuousLinearEquiv_apply
+    (x : FrechetTateQuotient D w) :
+    frechetQuotientEvaluationContinuousLinearEquiv D w x =
+      frechetQuotientEvaluation D w x := rfl
+
+def frechetTateQuotientToActual :
+    FrechetTateQuotient D w ≃L[Scalars D w]
+      InitialThetaWittTateBanachQuotient.TateQuotient D w :=
+  (frechetQuotientEvaluationContinuousLinearEquiv D w).trans
+    (InitialThetaWittTateExactSequence.quotientEvaluationContinuousLinearEquiv D w).symm
+
+theorem frechetTateQuotientToActual_apply (x : FrechetTateQuotient D w) :
+    frechetTateQuotientToActual D w x =
+      (InitialThetaWittTateExactSequence.quotientEvaluationContinuousLinearEquiv D w).symm
+        (frechetQuotientEvaluationContinuousLinearEquiv D w x) := rfl
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetTateKernel
