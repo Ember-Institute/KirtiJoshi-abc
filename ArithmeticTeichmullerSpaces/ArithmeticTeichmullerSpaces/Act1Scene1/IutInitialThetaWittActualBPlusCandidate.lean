@@ -24,6 +24,7 @@ open InitialThetaBoundedWittLocalization InitialThetaWittRhoNorm
 open InitialThetaWittRhoOneUnitBall
 open InitialThetaWittRhoFrobenius
 open InitialThetaWittAllRadiusFrobenius
+open InitialThetaBoundedWittPadicScalars
 noncomputable section
 universe u
 variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
@@ -154,6 +155,35 @@ theorem unitBallToCommon_frobenius (x : unitBallSubring D w) :
         (unitBallToCommon D w x) := by
   rw [unitBallToCommon_apply, unitBallFrobenius_apply, unitBallToCommon_apply,
     InitialThetaWittAllRadiusFrobenius.frobenius_inclusion]
+
+theorem padicIntMap_mem_unitBallSubring
+    (a : PadicInt (Arithmetic.residueChar w.1)) :
+    padicIntMap D w a ∈ unitBallSubring D w := by
+  apply (mem_unitBallSubring_iff_pIntegral D w _).mpr
+  let b : InitialThetaTiltFontaine.Ainf D w :=
+    WittVector.map
+      (ZMod.castHom (dvd_refl (Arithmetic.residueChar w.1))
+        (InitialThetaTiltIntegers.Integers D w))
+      ((WittVector.equiv (Arithmetic.residueChar w.1)).symm a)
+  refine ⟨0, b, ?_⟩
+  change padicIntMap D w a * (Arithmetic.residueChar w.1 : Ring D w) ^ 0 =
+    InitialThetaBoundedWittLocalization.inclusion D w b
+  simp only [pow_zero, mul_one, padicIntMap, InitialThetaBoundedWittRationalScalars.primeWittMap,
+    b, RingHom.comp_apply]
+  rfl
+
+def padicIntMap :
+    PadicInt (Arithmetic.residueChar w.1) →+* unitBallSubring D w :=
+  (InitialThetaBoundedWittPadicScalars.padicIntMap D w).codRestrict _
+    (padicIntMap_mem_unitBallSubring D w)
+
+instance unitBallPadicIntAlgebra :
+    Algebra (PadicInt (Arithmetic.residueChar w.1)) (unitBallSubring D w) :=
+  (padicIntMap D w).toAlgebra
+
+theorem padicIntMap_apply (a : PadicInt (Arithmetic.residueChar w.1)) :
+    (padicIntMap D w a : Ring D w) =
+      InitialThetaBoundedWittPadicScalars.padicIntMap D w a := rfl
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
