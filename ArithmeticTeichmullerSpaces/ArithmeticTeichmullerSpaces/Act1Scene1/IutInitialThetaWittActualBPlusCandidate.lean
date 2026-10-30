@@ -1,0 +1,82 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittRhoOneUnitBall
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittAllRadiusExpansion
+
+/-!
+source-id: JT-SCENE1-INITIAL-THETA-WITT-ACTUAL-BPLUS-CANDIDATE
+source: Joshi II `se:ff-rings` and `pr:teichmuller-lift-A/B`, where
+the paper's B+ is the rho=1 unit ball in B (1051--1076, citing
+Fargues--Fontaine Proposition 1.10.7).
+fidelity: packages the proved rho=1 unit ball of the original bounded
+Witt localization as an explicit actual subring and embeds it injectively
+into the original common completion. Its membership is equivalent to the
+constructed p-integral Ainf presentation. This is an actual candidate
+carrier for later comparison; it is not renamed as the paper's B+ and
+does not assume a Galois or holomorphoid marking. Original proofs; no
+reference implementation copied.
+boundary: Scene1/Derived; the full paper Frechet B, its Galois/Frobenius
+actions and global holomorphoid identity remain open. Prologue R5 retained.
+-/
+
+namespace JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
+
+open JoshiTeich.Prologue
+open InitialThetaBoundedWittLocalization InitialThetaWittRhoNorm
+open InitialThetaWittRhoOneUnitBall
+noncomputable section
+universe u
+variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
+variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
+variable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)
+variable (w : (iutInitialThetaTateParameterData D).places)
+
+local instance selectedPrime : Fact (Arithmetic.residueChar w.1).Prime :=
+  ⟨Arithmetic.residueChar_prime w.1⟩
+
+def unitBallSubring : Subring (Ring D w) where
+  carrier := {x | realValue D w 1 x ≤ 1}
+  zero_mem' := by simp [realValue_zero]
+  one_mem' := by simp [realValue_one]
+  add_mem' := by
+    intro x y hx hy
+    change realValue D w 1 x ≤ 1 at hx
+    change realValue D w 1 y ≤ 1 at hy
+    exact (realValue_add_le_max D w 1 (by norm_num) (by norm_num) x y).trans
+      (max_le hx hy)
+  neg_mem' := by
+    intro x hx
+    change realValue D w 1 x ≤ 1 at hx
+    change realValue D w 1 (-x) ≤ 1
+    rw [realValue_neg D w 1 (by norm_num) (by norm_num)]
+    exact hx
+  mul_mem' := by
+    intro x y hx hy
+    change realValue D w 1 x ≤ 1 at hx
+    change realValue D w 1 y ≤ 1 at hy
+    exact (realValue_mul_le D w 1 (by norm_num) (by norm_num) x y).trans
+      (by simpa using mul_le_mul hx hy (realValue_nonneg D w 1 y) (by norm_num))
+
+theorem mem_unitBallSubring_iff (x : Ring D w) :
+    x ∈ unitBallSubring D w ↔ realValue D w 1 x ≤ 1 := Iff.rfl
+
+theorem mem_unitBallSubring_iff_pIntegral (x : Ring D w) :
+    x ∈ unitBallSubring D w ↔ HasPIntegralPresentation D w x :=
+  (mem_unitBallSubring_iff D w x).trans
+    (unitBallAtOne_iff_hasPIntegralPresentation D w x)
+
+def unitBallToCommon : unitBallSubring D w →+*
+    InitialThetaWittAllRadiusCompletion.Carrier D w :=
+  (InitialThetaWittAllRadiusCompletion.inclusion D w).comp
+    (unitBallSubring D w).subtype
+
+theorem unitBallToCommon_injective : Function.Injective (unitBallToCommon D w) := by
+  intro x y h
+  apply Subtype.ext
+  apply InitialThetaWittAllRadiusCompletion.inclusion_injective D w
+  exact h
+
+theorem unitBallToCommon_apply (x : unitBallSubring D w) :
+    unitBallToCommon D w x =
+      InitialThetaWittAllRadiusCompletion.inclusion D w x.1 := rfl
+
+end
+end JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
