@@ -22,6 +22,7 @@ namespace JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
 open JoshiTeich.Prologue
 open InitialThetaBoundedWittLocalization InitialThetaWittRhoNorm
 open InitialThetaWittRhoOneUnitBall
+open InitialThetaWittRhoFrobenius
 noncomputable section
 universe u
 variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
@@ -77,6 +78,24 @@ theorem unitBallToCommon_injective : Function.Injective (unitBallToCommon D w) :
 theorem unitBallToCommon_apply (x : unitBallSubring D w) :
     unitBallToCommon D w x =
       InitialThetaWittAllRadiusCompletion.inclusion D w x.1 := rfl
+
+theorem frobenius_mem_unitBallSubring (x : unitBallSubring D w) :
+    InitialThetaBoundedWittLocalization.frobeniusEquiv D w x.1 ∈
+      unitBallSubring D w := by
+  change realValue D w 1
+      (InitialThetaBoundedWittLocalization.frobeniusEquiv D w x.1) ≤ 1
+  have h := InitialThetaWittRhoFrobenius.realValue_frobenius D w 1
+    (by norm_num) ENNReal.one_ne_top x.1
+  simpa only [one_pow] using (h.trans_le
+    (pow_le_one₀ (realValue_nonneg D w 1 x.1) x.property))
+
+def unitBallFrobenius : unitBallSubring D w →+* unitBallSubring D w :=
+  ((InitialThetaBoundedWittLocalization.frobeniusEquiv D w).toRingHom.comp
+    (unitBallSubring D w).subtype).codRestrict _ (frobenius_mem_unitBallSubring D w)
+
+theorem unitBallFrobenius_apply (x : unitBallSubring D w) :
+    (unitBallFrobenius D w x : Ring D w) =
+      InitialThetaBoundedWittLocalization.frobeniusEquiv D w x.1 := rfl
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittActualBPlusCandidate
