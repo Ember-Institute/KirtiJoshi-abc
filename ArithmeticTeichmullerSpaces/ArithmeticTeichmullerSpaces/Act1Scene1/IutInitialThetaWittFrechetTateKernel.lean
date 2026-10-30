@@ -126,6 +126,20 @@ def frechetToActualEigen : frechetFrobeniusPrime D w →L[Scalars D w]
         intro x
         exact x.property)
 
+def actualToFrechetEigen : (frobeniusPrimeSubmodule D w) →L[Scalars D w]
+    frechetFrobeniusPrime D w :=
+  ((continuousAlgEquiv D w).symm.toContinuousLinearEquiv.toContinuousLinearMap.domRestrict
+      (frobeniusPrimeSubmodule D w)).codRestrict (frechetFrobeniusPrime D w) (by
+        intro x
+        change (InitialThetaWittFrechetPadicComparison.algEquiv D w)
+            ((continuousAlgEquiv D w).symm x.1) ∈ frobeniusPrimeSubmodule D w
+        rw [InitialThetaWittFrechetFrobenius.algEquiv_apply]
+        change (InitialThetaWittFrechetComparison.ringEquiv D w)
+            ((InitialThetaWittFrechetComparison.ringEquiv D w).symm x.1) ∈
+          frobeniusPrimeSubmodule D w
+        rw [RingEquiv.apply_symm_apply]
+        exact x.property)
+
 def frechetEigenEvaluation : frechetFrobeniusPrime D w →L[Scalars D w]
     InitialThetaWittThetaBound.Untilt D w :=
   (eigenEvaluation D w).comp (frechetToActualEigen D w)
@@ -171,6 +185,89 @@ theorem frechetEigenEvaluation_exact :
       rw [(continuousAlgEquiv D w).apply_symm_apply]
     rw [hmap]
     exact congrArg (fun f => f v) (eigenEvaluation_comp_periodMap D w)
+
+theorem frechetToActualEigen_actualToFrechetEigen
+    (x : frobeniusPrimeSubmodule D w) :
+    frechetToActualEigen D w (actualToFrechetEigen D w x) = x := by
+  apply Subtype.ext
+  change (InitialThetaWittFrechetPadicComparison.algEquiv D w)
+      ((continuousAlgEquiv D w).symm x.1) = x.1
+  exact (InitialThetaWittFrechetPadicComparison.algEquiv D w).apply_symm_apply x.1
+
+theorem actualToFrechetEigen_frechetToActualEigen
+    (x : frechetFrobeniusPrime D w) :
+    actualToFrechetEigen D w (frechetToActualEigen D w x) = x := by
+  apply Subtype.ext
+  change (continuousAlgEquiv D w).symm
+      ((InitialThetaWittFrechetPadicComparison.algEquiv D w) x.1) = x.1
+  exact (continuousAlgEquiv D w).symm_apply_apply x.1
+
+theorem frechetToActualEigen_injective : Function.Injective (frechetToActualEigen D w) := by
+  intro x y h
+  have h' := congrArg (actualToFrechetEigen D w) h
+  rw [actualToFrechetEigen_frechetToActualEigen D w x,
+    actualToFrechetEigen_frechetToActualEigen D w y] at h'
+  exact h'
+
+theorem frechetToActualEigen_surjective :
+    Function.Surjective (frechetToActualEigen D w) := by
+  intro y
+  exact ⟨actualToFrechetEigen D w y,
+    frechetToActualEigen_actualToFrechetEigen D w y⟩
+
+def frechetToActualEigenLinearEquiv :
+    frechetFrobeniusPrime D w ≃ₗ[Scalars D w] frobeniusPrimeSubmodule D w where
+  toFun := frechetToActualEigen D w
+  invFun := actualToFrechetEigen D w
+  left_inv := actualToFrechetEigen_frechetToActualEigen D w
+  right_inv := frechetToActualEigen_actualToFrechetEigen D w
+  map_add' := map_add (frechetToActualEigen D w)
+  map_smul' := map_smul (frechetToActualEigen D w)
+
+def frechetToActualEigenContinuousLinearEquiv :
+    frechetFrobeniusPrime D w ≃L[Scalars D w] frobeniusPrimeSubmodule D w where
+  toLinearEquiv := frechetToActualEigenLinearEquiv D w
+  continuous_toFun := (frechetToActualEigen D w).continuous
+  continuous_invFun := (actualToFrechetEigen D w).continuous
+
+theorem frechetEigenPeriodMap_injective :
+    Function.Injective (frechetEigenPeriodMap D w) := by
+  intro x y h
+  apply frechetPeriodMap_injective D w
+  exact congrArg Subtype.val h
+
+theorem frechetEigenPeriodMap_isClosedEmbedding :
+    Topology.IsClosedEmbedding (frechetEigenPeriodMap D w) :=
+  LinearMap.isClosedEmbedding_of_injective
+    (f := (frechetEigenPeriodMap D w).toLinearMap)
+    (LinearMap.ker_eq_bot.mpr (frechetEigenPeriodMap_injective D w))
+
+theorem frechetEigenEvaluation_isOpenMap :
+    IsOpenMap (frechetEigenEvaluation D w) := by
+  have h := (InitialThetaWittEigenEvaluationOpen.eigenEvaluation_isOpenMap D w).comp
+    (frechetToActualEigenContinuousLinearEquiv D w).toHomeomorph.isOpenMap
+  have heq : (fun x => eigenEvaluation D w
+      ((frechetToActualEigenContinuousLinearEquiv D w).toHomeomorph x)) =
+      frechetEigenEvaluation D w := by
+    funext x
+    rfl
+  rw [← heq]
+  exact h
+
+theorem frechetEigenEvaluation_isOpenQuotientMap :
+    IsOpenQuotientMap (frechetEigenEvaluation D w) :=
+  ⟨(InitialThetaWittEigenEvaluationSurjective.eigenEvaluation_surjective D w).comp
+      (frechetToActualEigen_surjective D w),
+    (eigenEvaluation D w).continuous.comp (frechetToActualEigen D w).continuous,
+    frechetEigenEvaluation_isOpenMap D w⟩
+
+theorem frechetTatePeriodSequence_strictExact :
+    Topology.IsClosedEmbedding (frechetEigenPeriodMap D w) ∧
+      Function.Exact (frechetEigenPeriodMap D w) (frechetEigenEvaluation D w) ∧
+        IsOpenQuotientMap (frechetEigenEvaluation D w) :=
+  ⟨frechetEigenPeriodMap_isClosedEmbedding D w,
+    frechetEigenEvaluation_exact D w,
+    frechetEigenEvaluation_isOpenQuotientMap D w⟩
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetTateKernel
