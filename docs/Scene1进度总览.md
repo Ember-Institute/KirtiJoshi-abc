@@ -1,169 +1,356 @@
 # Scene1 进度总览
 
-日期：2026-10-25（Asia/Shanghai）
-
 ### 状态判定
 
 | 标记 | 状态 | 使用条件 |
 | --- | --- | --- |
-| 🟢 | 已闭合 | 本行声明的义务、实际输入和验收均已完成 |
-| 🔵 | 条件性完成 | 定理及其显式条件已证明，但条件尚未由目标真实数据全部推出 |
-| 🟡 | 部分完成 | 已有可引用子结果，仍缺构造、比较或身份等式 |
-| ⚪ | 未建立 | 尚无满足本行要求的验收构造或证明 |
-| 🔴 | 路线已排除 | 已排除一条具体装配路线，并写明排除范围 |
+| 🟢 | 已闭合 | 本行精确子义务已有证明，所需输入与验收范围已明确 |
+| 🔵 | 条件性完成 | 定理及显式条件已有证明，但条件尚未从目标真实来源全部产生 |
+| 🟡 | 部分完成 | 已有可引用子结果，仍缺构造、比较、来源或身份等式 |
+| ⚪ | 未建立 | 尚无满足本行目标的已验收构造或证明 |
+| 🔴 | 路线已排除 | 已证明某条具体路线不成立；须保留排除范围和所用条件 |
 
-“已闭合”只对本行声明的范围有效。局部 actual carrier、条件性 consumer 或普通
-仿射几何证明不自动关闭所属闸门，也不构成共同真实来源 producer。四个闸门的数量
-只表示验收状态，不表示工作量比例。
+“已闭合”只对该行声明的范围有效。给定 `InitialThetaData` 后构造出的实际对象，
+不等于已从 arithmetic seed 产生完整的 `InitialThetaData`；actual carrier 的定理，
+也不等于论文 carrier 的定理。必要充分条件的证明不表示实际对象已经满足其中任何一端。
+
+不按文件数、代码量、声明数、S1 编号或全部复选框计算总完成百分比。
+四个闸门的关闭数只表示验收状态，不表示工作量比例、成功概率或剩余时间。
 
 ## 当前结论
 
 | 项目 | 当前值 |
 | --- | --- |
+| 更新日期 | 2026-10-30（Asia/Shanghai） |
+| 数学证明基线 | 截至已提交并推送的 `f45e8d4`：全半径 completion 中 `φ(x)=x^p` 解的原始 bounded Witt 代表构造；本次总览更新不计作数学进展 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
-| 当前代码基线 | `main` 与 `origin/main` 对齐于 `738f78a` |
-| 最近完成单元 | 组件规范化主开集与实际规范化拉回方案的交换式；模块、Checks、Axioms、ImportAudit、`Act1Scene1` 聚合和 `git diff --check` 均通过 |
-| 当前推进位置 | arithmetic/Tate seed 的规范化、presentation、张量合成、拉回、非分支 étale 和组件主开集链已接通；真实共同 producer 仍未建立 |
-| 主要未接通连接 | `InitialThetaGeometryProducer`、共同 `InitialThetaData/TateFamily`、holomorphoid、H¹ₑ/BK、Fréchet `B`/ρ-norm、跨来源 collation、论文处集与 `thetaVolume` |
-| Prologue 边界 | `R5`；本轮几何单元没有新增 Core 假设、没有调用 `Prologue/Obligations` |
-| 父义务状态 | `docs/具有明确参考来源指示的证明义务.md` 中的父义务均保持未勾选 |
+| 父义务状态 | [明确来源证明义务][obligations]中的 15 项全部开放 |
+| 近期定量进展 | 一般数域次数下的 actual qProduct lower bound、条件性 Corollary consumer 和 `qProduct = thetaVolume^[F:ℚ]` 已验收；旧 raw 严格 margin 仍保留 degree-one 条件 |
+| 近期处集进展 | actual representative fibers、omitted mass、Galois fiber 权重和 grouped volume 会计已有；指定 representative certificates 与 reference q-pilot equality 的联合不相容性已证明 |
+| Period 路线位置 | 全半径各 ρ-norm 的共同单位球已识别为原始 `A_inf` 像；非线性 `φ(x)=x^p` 解可恢复 bounded Witt 代表；环带指数延拓及线性 `φ=p` 的完整 Tate 核分类仍开放 |
+| 尚未接通的主要连接 | 共同 geometry producer、global holomorphoid、H¹ₑ/BK、论文 `B`/ρ-norm 身份、paper representatives、跨来源 collation、paper theta locus/volume 与最终 Corollary 3.12 |
+| Prologue 边界 | `R5`；四项 source laws 由 Scene1 producer 负责，仍须从共同真实来源证明 |
+| 本次更新范围 | 保留原总览结构，补入已推送单元及其精确边界；不改变父义务或最终闸门状态 |
 
-阅读顺序：先看四个闸门，再看已完成的局部链和当前路线，最后查看未完成义务与负面证据。
+阅读顺序：先看四个闸门，再看当前路线和关键缺口，最后看近期变化卡及父义务清单。
+局部结果以[源码][scene1]、模块头的来源与忠实度说明、[既有来源台账][ledger]及已提交记录为依据。近期构建、失败与资源数据见对应提交正文。
 
 ## 四个最终验收闸门
 
-| 闸门 | 状态 | 已完成范围 | 关闭所需的剩余工作 | 证据入口 |
-| --- | --- | --- | --- | --- |
-| **G1：目标与归一化冻结** | 🟡 | raw、degree-normalized、paper-normalized 的局部 q-factor、q-order、权重和 volume 会计已有条件性证明 | 在同一 paper carrier 上冻结 qLogTerm 符号、local/global degree、`p*`、`2ℓ`、无穷处因子、`logVolume` 和最终 target | `docs/开发计划.V1Act1Scene1.md` §3；`IutInitialThetaCanonical*`、`Corollary312*` |
-| **G2：共同真实来源模型装配** | 🟡 | actual torsion/Tate/q-root、completion/Fontaine/Witt/B_dR、局部 Kummer/H¹，以及 arithmetic seed 的普通规范化和 presentation 链已有证明 | 从同一真实输入产生 `OrbicurveData`、`LocalThetaData`、完整 `InitialThetaData`、holomorphoid、H¹ₑ/BK/period 和四项 producer laws | `ProducerContracts.lean`；`InitialThetaGeometryInterfaceCountermodel.lean`；`InitialTheta*` 几何链 |
-| **G3：论文处集与重数会计** | 🟡 | `VBad` 有限性、section-selected carrier、selected q-root support 和内部 degree/weight regrouping 已证明 | 证明论文 `V_p^oss`/`\underline V^oss`、`L'` representative、fiber multiplicity、omitted mass、mixed-moduli descent 和 paper weighted sum 的身份 | `IutInitialThetaPlaceSection.lean`、`IutInitialThetaSelected*`、`IutInitialThetaRepresentative*` |
-| **G4：论文 theta-volume 与最终连接** | 🟡 | actual Kummer/ordinary-log、finite/archimedean packet/hull、Haar/cost 会计和条件性 Corollary consumer 已证明 | 建立 H¹ₑ/BK/theta-value/holomorphoid 身份，识别 paper theta locus 与 `thetaVolume`，再证明无自由 producer law 的最终 Corollary 3.12 | `IutInitialTheta*Hull*`、`IutInitialTheta*Log*`、`Corollary312.lean` |
+G1–G4 对应[开发计划 §3][plan-gates]。每行的“已有结果”概括可复用子结果，
+关闭闸门仍须完成该行全部来源和身份连接。
 
-四个闸门关闭后，还必须通过计划规定的最终窄构建、ImportAudit、Checks、Axioms、
-`git diff --check` 和全图验收，才能宣布 Scene1 完成。单个单元的构建和推送通过，
-不等于最终验收完成。
+| 闸门 | 当前状态 | 已有结果 | 关闭所需的剩余工作 | 证据入口 |
+| --- | --- | --- | --- | --- |
+| **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized、weighted source sum 及 grouped volume 会计已有；一般次数下 actual `qProduct = thetaVolume^[F:ℚ]` 和 lower bound 已有；旧严格 raw margin 仍限 degree-one | 在同一 paper carrier 上冻结 q-term、local/global degree、`p*`、`2ℓ`、无穷处项与最终 target；完成跨 carrier 身份和 paper normalization | [canonical data][actual-data]、[q-product][qproduct]、[raw margin][margin]、计划 G1 |
+| **G2：共同真实来源模型装配** | 🟡 部分完成 | 给定 `InitialThetaData` 后的 actual Tate/q-root、section/Voss、局部 tilt/Fontaine/Witt、perfectoid source 和 canonical bridge 相容性已有 | 从同一 arithmetic seed 产生 `OrbicurveData`、`LocalThetaData`、完整 `InitialThetaData/TateFamily`；再产生 global holomorphoid、H¹ₑ/BK/period 和四项共同 source laws | [producer contracts][contracts]、[bridge coherence][bridge]、计划 G2 |
+| **G3：论文处集与重数会计** | 🟡 部分完成 | actual VBad representative、prime fibers/Sigma、omitted mass、Galois fiber 权重与 grouped volume 已有；指定 representative/reference 证书联合已被排除 | 识别论文 `V_p^oss`、`\underline V^oss`、`L'` representatives；闭合 omitted mass、paper multiplicity、residue/inertia degree 和 mixed-moduli descent | [representative][representative]、[prime carrier][voss]、[Sigma 分解][sigma]、计划 G3 |
+| **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log/Kummer hull、Haar/cost、一般次数的 qProduct lower bound 与条件性 Corollary consumer、actual volume 符号已有；全半径整性识别推进 period 分支 | 接通 H¹ₑ/BK、theta-value、different untilt/holomorphoid、paper theta locus 和 `thetaVolume` 身份；在同一归一化下产生最终 Corollary proof term | [actual data][actual-data]、[volume bridge][volume-sign]、[strict volume][strict-volume]、[最终 consumer][cor312]、计划 G4 |
+
+qLogTerm 的字面符号问题按既有决定暂作笔误处理，等待作者回复后再讨论。
+本页不将它列为当前停工项；最终目标的符号记录和其他 G1 归一化义务仍保留。
+
+四个闸门关闭后，还须通过[计划 §6 的最终构建与审计][plan-audit]，才能宣布 Scene1 完成。
+单个逻辑单元的构建、审计和推送通过，只关闭该单元。
 
 ## 当前证明路线
 
+下图展示已有构造和待完成连接，不是完整 Lean 导入图。
+实线表示已有局部连接；虚线表示仍需证明或装配。蓝色是给定输入，绿色是局部闭合结果。
+
 ```mermaid
 flowchart TD
-    A["Prologue/Core R5\n载体与局部法律"] --> B["Arithmetic/Tate seed\n实际局部输入与 q-source"]
-    B --> C["实际局部链\ncompletion / Fontaine / Witt / Kummer / H¹"]
-    B --> D["普通几何链\nWeierstrass presentation / normalization"]
-    D --> E["张量合成与实际拉回\nfinite birational / unbranched etale"]
-    E --> F["组件规范化主开集\n有限映射在非空开集上为同构"]
-    F -.-> G["未建立：共同 InitialThetaGeometryProducer"]
-    C -.-> H["未建立：holomorphoid / H¹ₑ / BK / period"]
-    G -.-> H
-    H -.-> I["未建立：paper carrier / representative / collation"]
-    I -.-> J["未建立：paper theta locus / thetaVolume"]
-    J -.-> K["未完成：最终 Corollary 3.12"]
+    S["输入：arithmetic / Tate seed"]
+    P["未建立：共同 geometry producer"]
+    D["输入：给定 InitialThetaData"]
+    Q["已闭合：actual Tate / q-root\nVBad representatives / prime fibers"]
+    F["已闭合：local tilt / Fontaine / Witt\n全半径完备化、Frobenius 与 A_inf 单位球"]
+    H["已闭合：actual H¹ / ordinary log\nintegral 来源与 tensor hull"]
+    T["已闭合：Tate period / theta 求值\nBanach 商、环带指数与 φ(x)=x^p 识别"]
+    K["未建立：fullKernel = periodMap.range"]
+    A["条件性完成：canonical actual hull\nraw 归一化、体积符号与 consumer"]
+    B["未建立：global holomorphoid\n论文 B / H¹ₑ / BK 比较"]
+    R["未建立：paper Voss / L' / multiplicity\nmixed-moduli 与跨来源 collation"]
+    V["未建立：paper theta locus\nthetaVolume 与归一化身份"]
+    C["待完成：最终 Corollary 3.12\nG1–G4 及整体审计"]
 
+    S -.-> P
+    P -.-> D
+    D --> Q
+    D --> F
+    D --> H
+    F --> T
+    T -.-> K
+    K -.-> B
+    F -.-> B
+    H -.-> B
+    Q --> A
+    H --> A
+    Q -.-> R
+    B -.-> R
+    R -.-> V
+    A -.-> V
+    B -.-> V
+    V -.-> C
+
+    classDef input fill:#dbeafe,stroke:#2563eb,color:#1e3a8a;
     classDef done fill:#dcfce7,stroke:#15803d,color:#14532d;
-    classDef partial fill:#fef3c7,stroke:#b45309,color:#78350f;
+    classDef conditional fill:#e0e7ff,stroke:#4f46e5,color:#312e81;
     classDef open fill:#f3f4f6,stroke:#6b7280,color:#111827;
-    class A,B,C,D,E,F done;
-    class G,H,I,J,K open;
+    class S,D input;
+    class Q,F,H,T done;
+    class A conditional;
+    class P,K,B,R,V,C open;
 ```
 
-图中的绿色节点只表示其局部声明已经有 proof term 和相应审计；它们没有把任意
-`AG/TG` 上的几何接口变成真实 producer，也没有把普通仿射拉回方案识别为论文
-orbicurve 的 cartesian diagram。
+`A` 节点还需要显式 `CanonicalActualHull.AnalyticInput`，包括 theta scaling、period/log、
+normalization 和 perfectoid bridge 等法律。图中从 actual arithmetic/Haar 对象进入该节点的
+实线，只表示这些局部构件已经接通，不表示 `AnalyticInput` 已有共同真实 producer。
 
-## 已完成的局部结果
+### 关键子结果与缺口
 
-| 范围 | 已完成结果 | 边界 |
-| --- | --- | --- |
-| Arithmetic/Tate seed | 数域、admissible prime、torsion field、Tate family、bad-place finite support、q-order、completion-valued q parameter 和 field orientation 的适配 | 不产生 `InitialThetaData.orb/localData` 的真实共同来源 |
-| Actual local period chain | cyclotomic Tate tower、PreTilt、tilt、sharp=1 fiber、Fontaine θ、primitive kernel、Witt localization、`B_dR⁺`/`B_dR` 和 bounded Witt expansion | 不等同论文 Fréchet `B`、ρ-norm、holomorphoid 或 `T_y ⊂ B^{φ=p}` |
-| Kummer/H¹/ordinary-log | actual root tower、continuous Kummer cocycle、ambient integral/rational H¹、unit/prime split、ordinary-log normalization、有限/无穷处 hull 与 Haar/cost 会计 | 不等同 H¹ₑ、crystalline、Bloch–Kato 或论文 theta-value class |
-| q-pilot 与条件性目标 | canonical q-pilot、raw/degree/paper-normalized q-accounting、selected support 和条件性 `Corollary 3.12` consumer | 仍需要真实 producer、paper carrier、thetaVolume 和最终归一化身份 |
-| 普通规范化几何 | 原 Weierstrass 坐标环与实际 normalization 的同构、presentation 覆盖和交换方块、signed/base compositum、有限 normalization map | 不证明任意 `AG.Orbicurve` 的 cartesian law 或共同 geometry producer |
-| 张量与拉回 | selected tensor component 是 integral domain；其 field map injective；fraction field、integral closure、finite birational map 和实际 normalization fiber product 已识别 | 只识别普通仿射方案层面的 fiber product |
-| 非分支与组件开集 | branch complement 上的 finite étale tensor cover；组件 normalization 在一个非空 principal open 上为同构；该开集到 tensor scheme 和 pullback 的交换三角已证明 | 未识别为论文 theta locus、`V_p^oss` 或 orbicurve open |
+| 路线位置 | 状态 | 已证明范围或剩余缺口 | 所属闸门／证据 |
+| --- | --- | --- | --- |
+| 条件性最终消费者 | 🔵 条件性完成 | `cor312_of_scene1_data` 及 canonical actual-hull consumer 已有 proof term；共同真实输入和 paper identity 仍须产生 | G1/G2/G4；[Corollary312][cor312]、[summary][summary] |
+| Actual Tate/q-root 与基础会计 | 🟢 已闭合 | 给定数据下的 completion-valued q 参数、q-order、根、有限支撑、raw/degree-normalized 恒等式已有 | G1/G3；[canonical data][actual-data]、[来源台账][ledger] |
+| Actual section/Voss 与素数纤维 | 🟢 已闭合 | representative image、prime support、有限 fibers、Sigma 等价及基数和式已有；范围限于 concrete carrier | G3；[Sigma][sigma]、[prime carrier][voss] |
+| Local perfectoid/Fontaine 与来源相容性 | 🟢 已闭合 | supported place 的 untilt、tilt、θ、Frobenius、coefficient map 和 canonical bridge 相容性已有 | G2；[bridge coherence][bridge] |
+| Actual H¹/log source 与 integral 来源 | 🟢 已闭合 | ambient rational H¹、指定 integral Kummer 像、ordinary/normalized log 及来源绑定已有 | G4；[local H¹/log][h1] |
+| Torsion pilot 与 tensor hull | 🟢 已闭合 | integral pilot 的非零性、指标单射、log/p* 标定、finite pilot tensor/log-shell 与 actual hull 连接已有 | G1/G4；[integral classes][integral]、[integral tensor][integral-tensor] |
+| Ordinary-log hull、Haar 与 cost | 🟢 已闭合 | actual finite/archimedean tensor、normalization hull、singleton collation、volume/cost 及 q-product 比较已有 | G4；[H¹ tensor hull][hull]、[ordinary collation][collation] |
+| Canonical actual target 的字段装配 | 🔵 条件性完成 | 在给定 `AnalyticInput` 下，从同一 D 固定 raw q-family、actual hull volume 与 transfer；字段相容性已有 | G1/G2/G4；[data][actual-data]、[Scene1 coherence][coherence] |
+| Canonical actual target 的符号与界 | 🔵 条件性完成 | 同一显式输入下的正性、严格收缩与体积符号已有；一般次数下的 actual qProduct lower bound 和条件性 Corollary consumer 已证明 | G1/G4；[qLogSum][qlogsign]、[volume sign][volume-sign]、[strict volume][strict-volume] |
+| Raw qLogSum 严格 margin | 🔵 条件性完成 | 另需 `Module.finrank ℚ D.F = 1`，才得到 raw qLogSum 与 selected internal paperSum 的指定严格比较 | G1/G4；[raw margin][margin] |
+| Actual period-ring 局部链 | 🟢 已闭合 | actual Witt、ρ-norm 构造、全半径完备化及比较、Frobenius、theta、Tate-log 与 principal-unit period 已有 | G2/G4；见下节 [period 路线](#period-ring-路线的精确位置) |
+| 全半径整性与非线性 Frobenius 识别 | 🟢 已闭合 | 原始 `A_inf` 像恰为所有 ρ-norm 的共同单位球；全半径 `φ(x)=x^p` 解有原始 bounded Witt 代表，单半径单位界给 integral Teichmüller 代表 | G2/G4；[单位球判据][completed-integral]、[非线性识别][completed-recognition] |
+| 环带指数的实际 Witt 代表 | 🟡 部分完成 | 指数收敛、单位性、重叠半径 Frobenius 方程与有限坐标稠密性已有；精确 bounded/integral Witt 代表及全半径延拓仍缺 | G2/G4；[环带指数][annular-exp]、[bounded-lift consumer][bounded-exp-period] |
+| 完整 Tate 核分类 | ⚪ 未建立 | 尚未证明 `fullKernel = periodMap.range`；已有一维 period 像及分类条件等价 | G2/G4；[twisted Tate period][twisted]、[full-kernel comparison][quotient-kernel] |
+| 共同 geometry producer | ⚪ 未建立 | seed 到完整 `orb/localData/InitialThetaData` 的真实 witness 仍缺；reference adapter 仍消费 existence contract | G2；[producer contracts][contracts]、[接口反模型][countermodel] |
+| H¹ₑ/BK 与 global holomorphoid | ⚪ 未建立 | actual H¹、ordinary log 和 local untilt 尚未通过论文 marking、crystalline/period 与 BK comparison 统一识别 | G2/G4；[父义务 §三][obligations] |
+| Paper carrier、theta locus 与 volume | 🟡 部分完成 | actual 会计和 hull 可复用；paper representatives、跨来源 transport、locus/volume 身份及最终联合装配仍缺 | G3/G4；[父义务 §四–五][obligations] |
 
-## 最近完成的几何单元
+`integralKummerSubmodule` 是带 integral 来源的有理像载体。特定 pilot 像类的非零性与单射性，
+不表示一般 integral H¹ 的系数映射单射。这里的 ordinary log 仍须与论文 Bloch–Kato log 比较。
 
-| 提交 | 结果 | 保留的边界 |
-| --- | --- | --- |
-| `7077936` | 证明当前无约束 `AG/TG` 接口不能产生 universal `InitialThetaGeometryProducer` 的反模型 | 这是接口路线的负面证据，不是实际几何的反例 |
-| `1e93ffd`、`25e494b` | 建立实际 presentation 范畴、交换方块和原 x 覆盖的 presentation 同构 | 不提供任意 `AG` 的 cartesian 证明 |
-| `b7c4418`–`2eddfb2` | 构造 signed/base 张量合成，识别 selected component 的 field image、fraction field 和 integral closure | 不构造真实 `orb/localData` producer |
-| `9caed51`、`d5e9d94` | 证明 selected component normalization finite birational，并识别 tensor scheme 与实际 normalization pullback | 只在普通 scheme 层面成立 |
-| `657b894`、`915e20d` | 证明 branch complement 上的 finite étale tensor cover 及 signed covering 的 étale 性 | 不关闭 paper branch/cusp 或 orbicurve producer |
-| `06d3a52`–`738f78a` | 找到非空 principal open，在该开集上组件 normalization 为同构；证明 source open 非空、组件开图交换，并与实际 pullback 交换 | 该开集尚未获得论文对象身份 |
+### Period-ring 路线的精确位置
 
-这些单元均通过叶模块、Checks、Axioms、ImportAudit、`Act1Scene1` 聚合和差异检查；
-最近单元已推送到 `origin/main` 的 `738f78a`。
+这一路线已超出早期仅有 `A_inf`/`B_dR` 或形式 ρ-bound 的阶段，现有实际构造如下。
+
+| 层次 | 状态 | 已有结果 | 仍保留的目标 |
+| --- | --- | --- | --- |
+| Actual bounded Witt 与 ρ-norm | 🟢 已闭合 | 有界 Witt ring、各半径 norm、乘法性及 completion 构造已有 | 与论文全部对象和来源约定的共同身份 |
+| 全半径完备化与拓扑比较 | 🟢 已闭合 | 原 bounded source 的全半径 uniformity、Hausdorff completion 与 diagonal-closure ring 的 uniform/ring equivalence、保留原环及各半径求值的比较已有；标准 ℚₚ 标量和 calibrated seminorms 已有 | 论文 `B`/ρ-norm、holomorphoid 标记与后续 period/BK 身份 |
+| Frobenius、theta 与 Tate period | 🟢 已闭合 | 同一 actual carrier 上的 Frobenius、theta evaluation、Tate-log、rational Tate period 及 principal-unit period 构造已有 | 全部特征 θ 核是否恰为 Tate period 像 |
+| Entire φ=p 子空间与 Banach 商 | 🟢 已闭合 | 完整 actual φ=p 子空间的 Banach 结构、闭 Tate line、完整空间除以该 line 的 Banach 商、商 theta 求值的连续满射与开放性已有 | 商求值的单射性 |
+| 完整核的带因子比较 | 🟢 已闭合 | 非零轨道乘积 P 将原解空间 `φ(y)=-ξ·y` 与完整特征 θ 核连续 ℚₚ 线性等价；构造 canonical solution `t/P`，period 像为其一维闭张成空间 | 所有解均为该解的唯一 ℚₚ 标量倍 |
+| 全半径共同单位球 | 🟢 已闭合 | 不假设 source lift 或 integral approximants；从实际全半径单位界构造原始 Witt 整系数及 `A_inf` 代表 | 单个环带的单位界不能直接套用此判据 |
+| 全半径非线性 Frobenius 解 | 🟢 已闭合 | 对 `φ(x)=x^p`，全部半径 norm 相等；单半径单位界给 integral Teichmüller 代表；contracting Teichmüller 因子去掉单位界后给 bounded source | 不涵盖尚未延拓的环带元素，也不分类线性 `φ(x)=p·x` 解 |
+| 环带指数与有限坐标逼近 | 🟡 部分完成 | 每个线性 eigen 元素适当 p-power scaling 后给环带指数单位及 overlap Frobenius 法律；原始 source 在环带稠密，并可控制有限坐标；已单位有界的 source 可去掉负 p 次项并保留环带单位界，误差 ≤ρ/r | 构造环带指数的精确 Witt 代表；固定内半径下 ρ/r 界不保证误差趋零 |
+| 指数到 principal-unit period | 🔵 条件性完成 | 在可选的 p-power scaling 与小范数条件下，精确 bounded annular lift 给 source Frobenius 方程、integral lift 和 principal-unit period，再移除 scaling | 精确 bounded annular lift 的存在性仍缺 |
+| Frobenius 权与 Tate 可除性 | 🟢 已闭合 | 非零整数权 eigen 元素的权非负；非零 weight-k 元素被 t^m 整除则 m≤k；线性 φ=p 空间与 (t²) 仅交于零 | first-order quotient kernel 给的是 ξ² 可除性；尚无到 t² 可除性的桥接，不能据此关闭完整核 |
+| 完整核身份与商线性等价 | 🔵 条件性完成 | 已证明核身份、twisted period 满射、唯一标量分类、剩余商平凡和商求值单射等目标之间的指定等价；给定核身份后得到商求值的代数线性等价 | **`fullKernel = periodMap.range` 本身仍未证明**；条件性代数线性等价不另作拓扑等价声明 |
+
+证据入口：[Fréchet source/completion 比较][frechet]、[calibrated seminorms][seminorms]、
+[Banach 商][banach]、[开放求值][open-evaluation]、[twisted Tate period][twisted]、
+[完整核比较][quotient-kernel]、[条件性商等价][quotient-equiv]、[单位球判据][completed-integral]、
+[非线性 Frobenius 识别][completed-recognition]、[环带指数][annular-exp]、
+[环带截断][annular-truncation]、[Tate 可除性][tate-divisibility]及[一阶核][first-order]。
+
+## 最近单元变化卡
+
+### 全半径单位球与非线性 Frobenius 识别（当前数学基线）
+
+| 项目 | 内容 |
+| --- | --- |
+| 提交 | `f710fe4`、`78469d8`、`960d864`、`61a3f4b`、`5bd7d91`、`f45e8d4` |
+| 单位球结果 | 原始 common completion 内，`A_inf` 像 = 所有半径 ρ-norm 同时 ≤1 的集合 |
+| 构造内容 | 去负 p 次项逼近、原始 Witt 系数的 Cauchy 性和整系数极限；较大半径控制几何尾项，识别原始 `A_inf` 像 |
+| 非线性结果 | 对 full common-ring 解 `φ(x)=x^p`，各半径 norm 相等；一个半径的单位界给原始 integral Teichmüller 代表 |
+| 去除单位界 | 乘原始 contracting Teichmüller 因子的幂进入单位球，再用 source 中已有的单位逆，得到任意此类解的 bounded Witt 代表 |
+| 新增假设 | 不要求预先给出 bounded/integral source 代表；结果仍以给定 D、supported place 和 full common-ring 元素为范围 |
+| 保留缺口 | 环带指数的全半径延拓或精确 Witt 代表、线性 `φ=p` 的完整 Tate 核分类、论文 `B` 及 H¹ₑ/BK 身份 |
+
+### 环带指数：密度与截断的作用范围
+
+`7f81612` 证明原始 bounded source 在环带 carrier 的稠密性和有限坐标同时逼近。
+`d262cf5` 对已经在所有环带半径单位有界的实际 source，构造无负 p 次项的 source，
+保留全部环带单位界，误差在半径 r 处不超过 ρ/r。
+
+密度只控制所选有限坐标，不提供同时满足全部环带单位界的 source 逼近。
+固定内半径 ρ 时，ρ/r 也不自动趋零。因此这两项不能替代精确 integral lift。
+环带 Frobenius 等式只在重叠半径成立；现有法律尚未构造延拓所需的 p 次根。
+
+### 一般数域次数下的 actual hull 比较
+
+| 项目 | 内容 |
+| --- | --- |
+| 提交 | `0368c3b`、`73cbb83`、`33884b3`、`d6f8f84`、`8aa4a0f`、`ad3e0fd` |
+| 改进 | actual qProduct lower bound 和相应条件性 Corollary consumer 已移除旧 degree-one 限制 |
+| 精确等式 | 在显式 normalization、同一 Tate source、actual hull-volume identity 和 procession length 匹配下，`qProduct = thetaVolume^[F:ℚ]` |
+| Reference 体积式 | 显式 normalization 与 actual hull-volume identity 给 `thetaVolume = exp(-n·referenceAbsLogQ)`，无需 degree-one |
+| 保留条件 | Scene1 base、normalization、actual hull-volume identity 等仍为显式输入；共同真实 producer 与 paper thetaVolume 身份未产生 |
+| 旧结果范围 | 下方历史 raw strict margin 仍要求 `[F:ℚ]=1`；一般 lower bound 不表示这个严格 margin 已推广 |
+
+### Actual representative、omitted mass 与联合证书限制
+
+`85608b1` 已提交旧总览标为“未提交”的 prime-fiber image 等价与基数会计。
+后续结果连接 omitted prime-fiber mass、support coverage、Galois fiber multiplicity、
+base-fiber weights、grouped root volume 及 weighted source product。
+
+`c4a82ca`、`602f667`、`08a75f4`、`707d173` 排除了指定旧装配：同时要求 reference
+q-pilot equality 与两类 representative accounting certificates，会与已证明的实际
+selected/reference strict gap 冲突。排除范围限于这些证书和等式的联合；它不排除其他
+paper carrier 或归一化，也不关闭 paper representative/mixed-moduli 父义务。
+
+下列三卡保留早期结果和其原始条件，便于与当前一般次数结果对照。
+
+### Canonical actual hull：归一化、符号与 lower bound
+
+| 项目 | 内容 |
+| --- | --- |
+| 提交 | `9ea0931`、`9dc5065`、`0d3ee12`、`40ee645`、`656c4bf`、`e66f80b` |
+| 输入 | 给定 D、theta pilot、route、thetaBase、height/ramification 和显式 `AnalyticInput X` |
+| 已有构造 | 从 actual arithmetic/Haar hull 固定 target、q-family、qFactor、thetaVolume；无需调用者自由给定目标体积或 lower bound |
+| 归一化 | `qProduct = exp(-ellStar·qLogSum)`；`qLogSum = [F:ℚ]·referenceAbsLogQ`；除以全局次数后得到 reference/weighted source 会计 |
+| 定量结果 | `qLogSum > 0`；每个 qFactor 属于 `(0,1)`；`0 < qProduct ≤ thetaVolume < 1`；`log thetaVolume < 0`；coefficient-weighted internal paper sum 严格为正 |
+| Consumer | `Corollary312SideConditions`、`Corollary312VolumeBound` 与相应 conditional Corollary consumer 已装配 |
+| 实际推进 | raw q-term 和 actual hull volume 已在同一 canonical target 内比较；条件性 analytic 来源与 paper identity 仍开放 |
+
+### Degree-one 下的 raw margin
+
+记 S 为 `VBadSelectedPaper.paperSum D`，L 为 canonical target 的 `ellStar`。
+在上卡全部输入及额外条件 `Module.finrank ℚ D.F = 1` 下，提交 `6531822` 证明：
+
+```text
+qLogSum < S
+exp(-L·S) < qProduct ≤ thetaVolume
+```
+
+第一段比较是严格的，`qProduct ≤ thetaVolume` 是已有的非严格 lower bound。
+S 是当前 actual VBad carrier 上定义的内部 selected paper sum，仍须与论文求和对象识别；
+本结果也没有移除 degree-one 条件。
+
+### Actual VBad representative image 的 prime-fiber Sigma 分解
+
+| 项目 | 内容 |
+| --- | --- |
+| 提交 | `4a97588`、`85608b1` |
+| 对象 | actual VBad section representative image、其 rational residue-characteristic support 及各 prime fiber |
+| 等价 | `representativeImagePrimeFiberSigmaEquiv`：整个 image 与有限素数支撑上的 fibers 的 Sigma 等价 |
+| 会计 | `representativeImage_card_eq_primeFiber_sum` 和 `representativeImage_card_eq_vbad_card` |
+| 实际推进 | 将 concrete representative 的全局有限计数分解到逐素数 fiber，并接回 VBad moduli carrier |
+| 保留缺口 | paper `L'` representative、paper multiplicity、omitted mass、mixed-moduli descent |
+| 已提交扩展 | `representativePrimeFiberImageEquiv`、`representativeImage_card_eq_primeFiberImageType_sum` 与 `vbad_card_eq_primeMultiplicity_sum` 已接到实际 fiber-image/multiplicity 类型 |
+
+上述单元的模块头、既有台账及提交记录提供来源和验收信息。当前 `f45e8d4` 的叶模块、
+`Act1Scene1` 聚合、`Checks/SelectedRoots`、`Axioms/SelectedRoots` 和 `ImportAudit` 均通过。
+当前 Axioms 日志解析了 1732 个声明，包含本单元全部五个公开定理。
+登记的新定理公理输出仅含 `propext`、`Classical.choice`、`Quot.sound`，
+相应扫描未发现 `sorryAx`、proof hole 或禁用导入。该记录不替代最终联合模型的验收。
 
 ## 未完成父义务
 
-以下状态与[具有明确参考来源指示的证明义务](具有明确参考来源指示的证明义务.md)保持一致，
-本总览不把局部结果改写成父义务完成：
+以下编号按[明确来源证明义务][obligations]的顺序排列。15 项均保持开放；
+“已有局部支撑”只说明可以复用的结果。
 
-| 闸门 | 未完成义务 |
-| --- | --- |
-| G2 | 实际 perfectoid bridge 的来源适配；Core 载体的共同真实来源；`InitialThetaGeometryProducer`；共同 `InitialThetaData/TateFamily`；holomorphoid source；Fréchet `B`/ρ-norm；H¹ₑ/crystalline/BK/period；四项 Scene1 producer laws；跨 holomorphoid collation |
-| G3 | 论文 `V_p^oss`/`\underline V^oss`；`L'` representative map；fiber multiplicity、omitted mass、residue/inertia-degree 和 mixed-moduli weighted carrier |
-| G1/G4 | 三层 q-factor 与 qLogTerm 最终冻结；无穷处和 `thetaVolume` 归一化；actual Kummer/log hull 与 paper theta locus 的身份；paper hull/volume identity；无自由 source law 的最终 Corollary 3.12 |
+| 编号 | 父义务 | 已有局部支撑／剩余关键连接 |
+| --- | --- | --- |
+| 1 | 实际 perfectoid bridge 的来源适配 | local bridge、系数映射和 canonical coherence 已有；仍缺论文 holomorphoid 的同一来源身份 |
+| 2 | Core 载体到真实输入的共同来源 | 给定 D 的 arithmetic/Tate/q-root 投影与 target 字段相容性已有；完整共同 producer 仍缺 |
+| 3 | 四项 source laws 的正式移交与真实产生 | owner 已移到 Scene1；部分 actual cost/hull laws 已构造，四项法律的共同真实来源仍缺 |
+| 4 | `InitialThetaGeometryProducer` | contract 和 reference adapter 已有；真实 geometry 的 orbicurve、covering、local 条件 witness 仍缺 |
+| 5 | 共同实际 `InitialThetaData/TateFamily` 模型 | 给定数据的局部派生链已有；arithmetic seed 到完整模型及全部来源等式仍缺 |
+| 6 | 实际 holomorphoid source | local untilt/tilt/Fontaine package 已有；global marking、解析基点、Fargues–Fontaine/论文身份仍缺 |
+| 7 | 论文 Fréchet `B` 和 ρ-norm | actual completion、共同单位球的 `A_inf` 识别、非线性 Frobenius 解的 bounded 代表及环带指数已有；环带延拓、完整线性 Tate 核及论文 `B` 身份仍缺 |
+| 8 | H¹ₑ/crystalline/Bloch–Kato comparison | actual H¹、integral 像、ordinary log/p* 与 period 构件已有；正确子空间成员性、BK exp/log 和整性约定仍缺 |
+| 9 | 跨 holomorphoid/arithmeticoid collation | fixed tensor hull、factor orbit 和 ordinary singleton collation 已有；不同 untilt/moduli source 的 marking 与 transport 仍缺 |
+| 10 | 论文 `V_p^oss` / `\underline V^oss` | actual VBad/section/Voss、prime support 与 finite fibers 已有；论文处集、过滤和坏处外身份仍缺 |
+| 11 | `L'` representative 和 fiber multiplicity | actual Sigma、fiber multiplicity、omitted-mass 会计及指定证书不相容性已有；paper representative、paper omitted mass 与 degree/multiplicity 身份仍缺 |
+| 12 | Mixed-moduli descent 和 weighted carrier | actual Galois/base fiber weights、grouped volume 与 coefficient-weighted identities 已有；同一 paper carrier 上的 degree、dimension、fiber mass 身份仍缺 |
+| 13 | Actual Kummer/log hull = paper theta locus | actual witness、normalization hull 与定量界已有；H¹ₑ/BK、theta-value、holomorphoid marking 的身份链仍缺 |
+| 14 | Paper hull / `thetaVolume` identity | actual volume、cost、q-product 比较及严格符号已有；paper procession、weights、无穷处和全部归一化身份仍缺 |
+| 15 | 最终 Corollary 3.12 proof term | 条件性 consumer 与 actual volume-bound 已有；须同时落实 G1–G4，不以未证明的 producer law 或 paper identity 作为自由输入 |
 
-## 负面证据：已排除的具体路线
+## 已排除路线与身份边界
 
-### N1：q-root 不能直接充当旧 theta base
+只有已有证明排除的具体路线标红。每项排除均保留其条件和范围。
 
-实际 contracting q-root 的 norm 小于 1，而旧 theta/period/normalization 与旧
-`VolumeTransfer` 组合要求非负 `logVolume`。这排除“q-root norm = theta base norm”，
-不排除另一个 theta lift、different untilt 或 negative-log cost。
+| 具体路线 | 状态与排除范围 | 保留的工作方向 | 证据 |
+| --- | --- | --- | --- |
+| 从任意抽象 AG/TG 的现有接口自动取得 universal producer | 🔴 保留 arithmetic seed、将接口的 cartesian predicate 设为 False，即无法产生所需 orbicurve/producer；这是接口反模型 | 对真实 geometry 增加并证明所需 cartesian/covering/local 来源法律 | [InterfaceCountermodel][countermodel] |
+| Actual contracting q-root 直接充当旧 theta base | 🔴 q-root norm 小于 1，与旧 period/normalization/transfer 联合要求的非负 logVolume 冲突 | 另一 theta lift、different untilt 或 negative-log cost | [计划 §4 N1][plan-negative]；`ThetaLogSignAudit.lean` |
+| Signed Haar log-volume 直接填入旧 VolumeTransfer | 🔴 正长度 ordinary-log hull 的 signed log-volume 为负，排除指定直接等式 | 已有 `-log(volume)` actual cost 路线，继续证明 paper identity | 计划 N2；S1.321–322、S1.406 |
+| 将 VBad 去权系数直接补成 1 | 🔴 对应实际条件下系数严格小于 1，不能通过忽略因子完成原装配 | 保留 coefficient-weighted 会计，核对 representative、omitted mass 和归一化 | [历史 log4][log4]；S1.282–283、320 |
+| 旧 degree-one 装配直接覆盖一般数域 | 🔴 指定旧装配及历史 raw strict margin 要求 finrank=1；一般次数的 actual lower bound 与条件性 consumer 已另行证明 | 继续完成来源与 paper normalization，区分一般 lower bound 和旧严格 margin | 历史 log4 S1.270；[raw margin][margin]、[一般次数比较][degree-volume] |
+| 指定 representative certificates 与 reference equality 联合装配 | 🔴 两类显式证书将 actual selected product 强制等于 reference exponential，与已证明的严格 gap 冲突；已移除 degree-one 限制 | 检查 paper carrier、omitted mass、degree/weight 的实际来源，避免复用这组不相容证书 | [reference incompatibility][representative-incompatibility]、[degree-normalized audit][degree-incompatibility] |
 
-### N2：signed Haar log-volume 不能直接作为 `VolumeTransfer`
+接口反模型只排除“由这些抽象字段无条件自动产生 witness”的路线，不评价真实 orbicurve
+的 cartesian 性质。上述负面证据也不构成 Corollary 3.12 的反例。
 
-actual ordinary-log hull 的 signed Haar log-volume 在正长度时为负。当前保留
-`-log(volume)` actual cost 路线，但尚未证明其与 paper `thetaVolume` 相同。
+以下连接仍属于开放身份：actual H¹/ordinary log 到 H¹ₑ/BK、local perfectoid 到 global
+holomorphoid、actual period ring 到 paper `B`、fixed-factor orbit 到跨来源 collation、
+concrete Voss 到论文处集、canonical actual hull volume 到 paper `thetaVolume`。
+`ReferenceAnabelianExistenceContract` 与参考 IUT 的 `AnabelianExistence` 仍是显式条件接口；
+参考工程、适配器名称和已有代码量均不能代替这些缺失来源的 proof term。
 
-### N3：字面 Corollary 的 qLogTerm 存在符号冲突
+## 后续顺序与验收
 
-当前 ordinary real-log 解释下，selected contracting q-root 使字面右端与左端符号不一致。
-该问题按既有边界暂作待冻结的符号问题处理；不得静默反号或取 reciprocal。
+按[开发计划 §5][plan-order]，最终装配先需要共同真实 geometry producer，再需要
+holomorphoid、period、H¹ₑ/BK 与 paper `B`/ρ-norm 来源；随后闭合论文处集、代表、重数和
+mixed-moduli descent，冻结 G1，并完成 G4 的 paper locus/volume 与 Corollary。
+当前 period 分支需构造环带 eigen 指数的精确 Witt 代表或全半径延拓，并完成
+`fullKernel = periodMap.range`；全半径非线性识别尚未解决这两项。representative 分支须把
+concrete fiber 会计接到 paper multiplicity 和遗漏项来源，并处理已发现的联合证书冲突。
 
-### N4：ambient unit/Kummer carrier 不能改名为 H¹ₑ/BK
+局部逻辑单元按计划通过叶模块、聚合、Checks/Axioms、ImportAudit、proof-hole/禁用导入扫描、
+差异检查，再进入已验收记录。按当前维护约定，来源记于模块头，构建/失败/资源记于提交正文。
+最终定理还须在同一个真实输入上检查全部
+producer 和 paper identity，不通过 `Prologue/Obligations`、Scene2、Act2 或隐藏 `Iut.*`
+导入补齐 Scene1 义务。Scene1 最终验收后按计划暂停。
 
-ambient continuous H¹、unit subspace、saturated Kummer carrier 和 normalized ordinary-log
-witness 的局部性质，不能自动给出论文 H¹ₑ/BK 身份。仍需真实 period、Frobenius 和
-holomorphoid comparison。
+[obligations]: 具有明确参考来源指示的证明义务.md
+[plan-gates]: 开发计划.V1Act1Scene1.md#3-未完成义务按最终闸门分解
+[plan-negative]: 开发计划.V1Act1Scene1.md#4-负面证据和路线排除
+[plan-order]: 开发计划.V1Act1Scene1.md#5-执行顺序
+[plan-audit]: 开发计划.V1Act1Scene1.md#6-构建与审计规则
+[log4]: https://github.com/NanachiKyubey/joshi-teich-abc/blob/f45e8d4e00c34756077e1a1b8c41cff23c85427e/docs/开发计划.V1Act1log4.md
+[ledger]: ../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md
+[scene1]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1.lean
+[contracts]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/ProducerContracts.lean
+[countermodel]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaGeometryInterfaceCountermodel.lean
+[bridge]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalBridgeCoherence.lean
+[actual-data]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullData.lean
+[coherence]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullScene1Coherence.lean
+[summary]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullSummary.lean
+[qproduct]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullQProductNormalization.lean
+[qlogsign]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullQLogSumSign.lean
+[volume-sign]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullVolumeSign.lean
+[strict-volume]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullStrictVolume.lean
+[margin]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullRawMargin.lean
+[representative]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaVBadSectionRepresentative.lean
+[voss]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperVossPrimeCarrier.lean
+[sigma]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaVBadRepresentativePrimeFiberSigma.lean
+[h1]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLocalH1LogSource.lean
+[integral]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaTorsionPilotIntegralClasses.lean
+[integral-tensor]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaTorsionPilotIntegralTensor.lean
+[hull]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLocalH1LogTensorHullBridge.lean
+[collation]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLocalH1LogOrdinaryCollationBridge.lean
+[cor312]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/Corollary312.lean
+[frechet]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittFrechetComparison.lean
+[seminorms]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittNormalizedSeminorms.lean
+[banach]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTateBanachQuotient.lean
+[open-evaluation]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittEigenEvaluationOpen.lean
+[twisted]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTwistedTatePeriod.lean
+[quotient-kernel]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTateBanachQuotientFullKernel.lean
+[quotient-equiv]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTateBanachQuotientEquiv.lean
 
-### N5：固定 completion orbit 不能替代跨 holomorphoid collation
-
-factor automorphism、closure、hull 和 Haar 结果只作用于固定 completion tensor，不能替代
-不同 untilt、arithmeticoid、moduli point 之间的 marking、transport 和 global collation。
-
-### N6：canonical finite carrier 不能自动成为论文处集或代表
-
-actual selected support、finite equivalence 和 coefficient-weighted accounting 仍保留
-representative defect、omitted mass 和 global degree 因子，不能直接改名为 `V_p^oss`、
-`L'` 或无缺陷 paper sum。
-
-### N7：当前 geometry interface 不能产生 universal producer
-
-`InitialThetaGeometryInterfaceCountermodel.lean` 保留 arithmetic seed 的全部字段，只把
-`AG.IsCartesianSquare` 改为恒假，即得到满足现有接口但不存在 producer 输出的 geometry。
-这排除“只凭现有 seed 对任意无约束 `AG/TG` 直接装配 producer”的路线；它不是实际
-orbicurve 或 Joshi/IUT 几何命题的反例。
-
-### N8：普通规范化开集不能自动成为论文 theta locus
-
-组件 normalization 的非空 principal open 和 pullback 交换三角只说明普通 scheme 层面
-的有限 birational comparison。它没有提供论文 theta-value、H¹ₑ/BK、holomorphoid marking、
-`V_p^oss` 或 `thetaVolume` 身份。
-
-## 执行顺序和验收
-
-1. 先完成 G2 的共同真实 `InitialThetaGeometryProducer` 和 `InitialThetaData/TateFamily` 来源。
-2. 在同一对象上完成 holomorphoid、period、H¹ₑ/BK、Fréchet `B`/ρ-norm 和四项 producer laws。
-3. 完成 G3 的论文处集、representative、multiplicity、mixed-moduli descent 和 weighted carrier。
-4. 冻结 G1 的符号/归一化，再完成 G4 的 paper theta locus、`thetaVolume` 和最终 Corollary。
-5. 每个逻辑单元执行叶模块、Checks、Axioms、ImportAudit、`Act1Scene1` 聚合和
-   `git diff --check`，通过后提交并推送；所有父义务完成后再执行最终全图验收。
-
-构建边界保持 `docs/开发计划.V1.md` 与 `docs/开发计划.V1Act1Scene1.md`：固定 Lean/mathlib
-版本、CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、不删除缓存、不导入
-`Prologue/Obligations`、Scene2 或 Act2。未完成义务不能通过改名、删除字段或兼容包装器消除。
+[completed-integral]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittCompletedIntegralCriterion.lean
+[completed-recognition]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittCompletedFrobeniusRecognition.lean
+[annular-exp]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittAnnularExponential.lean
+[annular-truncation]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittAnnularNonnegativeTruncation.lean
+[bounded-exp-period]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittBoundedExponentialPeriod.lean
+[tate-divisibility]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittTateDivisibility.lean
+[first-order]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittEigenKernelFirstOrder.lean
+[degree-volume]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullDegreeProductVolume.lean
+[representative-incompatibility]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaRepresentativeReferenceProductIncompatibility.lean
+[degree-incompatibility]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaDegreeNormalizedRepresentativeIncompatibility.lean
