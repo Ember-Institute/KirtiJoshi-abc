@@ -87,5 +87,22 @@ theorem fullKernel_eq_frechetPeriodMap_range :
   ext x
   exact mem_fullKernel_iff_mem_frechetPeriodMap_range D w x
 
+theorem frechetPeriodMap_mem_fullKernel (v : RationalTate D w) :
+    frechetPeriodMap D w v ∈ InitialThetaWittFrechetFrobenius.fullKernel D w := by
+  exact (mem_fullKernel_iff_mem_frechetPeriodMap_range D w _).mpr ⟨v, rfl⟩
+
+theorem frechetPeriodMap_range_le_fullKernel :
+    (frechetPeriodMap D w).range ≤ InitialThetaWittFrechetFrobenius.fullKernel D w := by
+  rintro x ⟨v, rfl⟩
+  exact frechetPeriodMap_mem_fullKernel D w v
+
+theorem frechetPeriodMap_frobenius_equation (v : RationalTate D w) :
+    InitialThetaWittFrechetFrobenius.frobeniusEquiv D w (frechetPeriodMap D w v) =
+      (Arithmetic.residueChar w.1 : InitialThetaWittFrechetComparison.Completed D w) *
+        frechetPeriodMap D w v := by
+  have h := InitialThetaWittFrechetFrobenius.fullKernel_frobenius_equation D w
+    ⟨frechetPeriodMap D w v, frechetPeriodMap_mem_fullKernel D w v⟩
+  simpa only [Algebra.smul_def, map_natCast] using h
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetTateKernel
