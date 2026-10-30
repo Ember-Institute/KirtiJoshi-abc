@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittFrechetFrobenius
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittFullTateKernel
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittTateExactSequence
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-WITT-FRECHET-TATE-KERNEL
@@ -19,6 +20,7 @@ namespace JoshiTeich.Act1Scene1.InitialThetaWittFrechetTateKernel
 open JoshiTeich.Prologue
 open InitialThetaWittFrechetComparison
 open InitialThetaWittFrechetPadicComparison
+open InitialThetaWittAdditiveTatePeriod
 open InitialThetaWittRationalTateSource InitialThetaWittRationalTatePeriod
 noncomputable section
 universe u
@@ -31,6 +33,11 @@ local instance selectedPrime : Fact (Arithmetic.residueChar w.1).Prime :=
   ⟨Arithmetic.residueChar_prime w.1⟩
 
 abbrev Scalars := Padic (Arithmetic.residueChar w.1)
+
+def frechetFrobeniusPrime :
+    Submodule (Scalars D w) (InitialThetaWittFrechetComparison.Completed D w) :=
+  Submodule.comap (InitialThetaWittFrechetPadicComparison.algEquiv D w).toLinearMap
+    (frobeniusPrimeSubmodule D w)
 
 def frechetPeriodMap : RationalTate D w →L[Scalars D w]
     InitialThetaWittFrechetComparison.Completed D w :=
@@ -103,6 +110,67 @@ theorem frechetPeriodMap_frobenius_equation (v : RationalTate D w) :
   have h := InitialThetaWittFrechetFrobenius.fullKernel_frobenius_equation D w
     ⟨frechetPeriodMap D w v, frechetPeriodMap_mem_fullKernel D w v⟩
   simpa only [Algebra.smul_def, map_natCast] using h
+
+def frechetEigenPeriodMap : RationalTate D w →L[Scalars D w] frechetFrobeniusPrime D w :=
+  (frechetPeriodMap D w).codRestrict (frechetFrobeniusPrime D w) (by
+    intro v
+    change (continuousAlgEquiv D w) (frechetPeriodMap D w v) ∈
+      frobeniusPrimeSubmodule D w
+    rw [frechetPeriodMap_apply, (continuousAlgEquiv D w).apply_symm_apply]
+    exact periodMap_range_le_frobeniusPrime D w ⟨v, rfl⟩)
+
+def frechetToActualEigen : frechetFrobeniusPrime D w →L[Scalars D w]
+    (frobeniusPrimeSubmodule D w) :=
+  ((continuousAlgEquiv D w).toContinuousLinearEquiv.toContinuousLinearMap.domRestrict
+      (frechetFrobeniusPrime D w)).codRestrict (frobeniusPrimeSubmodule D w) (by
+        intro x
+        exact x.property)
+
+def frechetEigenEvaluation : frechetFrobeniusPrime D w →L[Scalars D w]
+    InitialThetaWittThetaBound.Untilt D w :=
+  (eigenEvaluation D w).comp (frechetToActualEigen D w)
+
+theorem frechetEigenEvaluation_exact :
+    Function.Exact (frechetEigenPeriodMap D w) (frechetEigenEvaluation D w) := by
+  apply LinearMap.exact_iff.mpr
+  apply le_antisymm
+  · intro x hx
+    change frechetEigenEvaluation D w x = 0 at hx
+    have hxactual : eigenEvaluation D w (frechetToActualEigen D w x) = 0 := hx
+    obtain ⟨v, hv⟩ :=
+      (InitialThetaWittTateExactSequence.eigenEvaluation_exact D w
+        (frechetToActualEigen D w x)).mp hxactual
+    refine ⟨v, ?_⟩
+    apply Subtype.ext
+    apply (InitialThetaWittFrechetComparison.ringEquiv D w).injective
+    rw [frechetEigenPeriodMap]
+    change (InitialThetaWittFrechetComparison.ringEquiv D w)
+        (frechetPeriodMap D w v) =
+      (InitialThetaWittFrechetComparison.ringEquiv D w) x
+    rw [frechetPeriodMap_apply]
+    change (continuousAlgEquiv D w) ((continuousAlgEquiv D w).symm (periodMap D w v)) =
+      (continuousAlgEquiv D w) x
+    rw [(continuousAlgEquiv D w).apply_symm_apply]
+    change periodMap D w v = (InitialThetaWittFrechetComparison.ringEquiv D w) x
+    exact congrArg Subtype.val hv
+  · rintro x ⟨v, rfl⟩
+    change frechetEigenEvaluation D w (frechetEigenPeriodMap D w v) = 0
+    change eigenEvaluation D w
+      (frechetToActualEigen D w (frechetEigenPeriodMap D w v)) = 0
+    have hmap : frechetToActualEigen D w (frechetEigenPeriodMap D w v) =
+        eigenPeriodMap D w v := by
+      apply Subtype.ext
+      change (InitialThetaWittFrechetComparison.ringEquiv D w)
+          (frechetEigenPeriodMap D w v) = periodMap D w v
+      rw [frechetEigenPeriodMap]
+      change (InitialThetaWittFrechetComparison.ringEquiv D w)
+          (frechetPeriodMap D w v) = periodMap D w v
+      rw [frechetPeriodMap_apply]
+      change (continuousAlgEquiv D w)
+          ((continuousAlgEquiv D w).symm (periodMap D w v)) = periodMap D w v
+      rw [(continuousAlgEquiv D w).apply_symm_apply]
+    rw [hmap]
+    exact congrArg (fun f => f v) (eigenEvaluation_comp_periodMap D w)
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetTateKernel
