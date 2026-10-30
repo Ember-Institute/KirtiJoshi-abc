@@ -6475,6 +6475,12 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-FRECHET-TATE-QUOTIENT-COMPATIBILITY` | `quotientEvaluationContinuousLinearEquiv_frechetTateQuotientToActual`、`quotientEvaluationContinuousLinearEquiv_frechetTateQuotientToActual_mk`；`Act1Scene1/IutInitialThetaWittFrechetTateKernel.lean` | Joshi II `pr:teichmuller-lift-A` 的 Tate 商求值序列；将已证明的 Fréchet 商到 actual Tate Banach 商连续线性等价与 actual 商求值连续线性等价复合，证明该复合恰为 Fréchet 商求值，并给出 Fréchet 子空间元素生成的商类公式。 | Scene1/Derived；是同一 actual untilt 求值下的交换图和代表类公式，不增加 paper `B` 身份、Tate-log 收敛域、H¹ₑ/BK 或跨 holomorphoid 输入，也不关闭论文 Fréchet `B` 父义务。新增声明公理仅为 `propext`、`Classical.choice`、`Quot.sound`；原创证明，无参考代码复制。 |
 
+### Actual Fréchet Tate-log 收敛域 producer
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-FRECHET-TATE-LOG-PRODUCER` | `Domain`、`domainProduct`、`domainProduct_value`、`logOnDomain`、`logOnDomain_hasSum`、`logOnDomain_domainProduct`、`tateInput`、`tateInput_value`、`tateInput_hasSum`、`tateInput_log_eq_tateLog`、`tateInput_log_mem_frobeniusPrime`、`exists_uniform_tateLog_bound_all`；`Act1Scene1/IutInitialThetaWittFrechetTateLogProducer.lean` | Joshi II `se:ff-rings`、`eq:tate-module-of-lubin-tate`、`pr:teichmuller-lift-A/B`。用 actual all-radius coordinate 范数定义 Tate-log 收敛域；消费既有逐半径的 multiplicative-formal-group closure 与对数乘法律，证明 domain product 闭合、对数级数 HasSum、Tate coordinates 属域且其对数落入 actual `φ=p` 子模，并投影已有的逐半径 uniform Tate-log 界。 | Scene1/Derived；完成 actual Fréchet carrier 上 Tate-log 收敛和 `T_y` 到 actual `φ=p` carrier 的来源 producer 子链，不将 actual carrier 识别为论文 `B`，不定义论文 ρ-norm，也不关闭 H¹ₑ/BK、global holomorphoid 或父级 Fréchet `B` 义务。新增声明公理仅为 `propext`、`Classical.choice`、`Quot.sound`；原创证明，无参考代码复制。 |
+
 ### Canonical actual hull 到 Scene1Input 的字段相容性
 
 | source-id | declarations | source / fidelity | boundary / status |
