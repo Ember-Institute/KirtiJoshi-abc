@@ -149,5 +149,29 @@ def frechetTateLogEigen (t : Tate D w) :
 theorem frechetTateLogEigen_value (t : Tate D w) :
     (frechetTateLogEigen D w t : Completed D w) = frechetTateLog D w t := rfl
 
+theorem frechetTateLogEigen_toActual (t : Tate D w) :
+    InitialThetaWittFrechetTateKernel.frechetToActualEigen D w
+        (frechetTateLogEigen D w t) =
+      InitialThetaWittAdditiveTatePeriod.tateLogEigenHom D w
+        (Additive.ofMul t) := by
+  apply Subtype.ext
+  change InitialThetaWittFrechetComparison.ringEquiv D w
+      (frechetTateLog D w t) =
+    InitialThetaWittAdditiveTatePeriod.tateLogHom D w (Additive.ofMul t)
+  rw [frechetTateLog_eq_transport,
+    ← frechetContinuousAlgEquiv_apply D w,
+    (InitialThetaWittFrechetPadicComparison.continuousAlgEquiv D w).apply_symm_apply]
+  rfl
+
+theorem frechetTateLogEigen_injective :
+    Function.Injective (fun t : Tate D w => frechetTateLogEigen D w t) := by
+  intro t u h
+  apply InitialThetaWittTateLogarithmInjective.tateLogEigenHom_injective D w
+  have h' := congrArg
+    (InitialThetaWittFrechetTateKernel.frechetToActualEigen D w) h
+  rw [frechetTateLogEigen_toActual D w t,
+    frechetTateLogEigen_toActual D w u] at h'
+  exact h'
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetTateLogTransport
