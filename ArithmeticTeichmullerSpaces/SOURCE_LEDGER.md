@@ -6481,6 +6481,12 @@ The first two leaf attempts were ordinary zero-coefficient simplification/API fa
 | --- | --- | --- | --- |
 | `JT-SCENE1-INITIAL-THETA-WITT-FRECHET-TATE-LOG-PRODUCER` | `Domain`、`domainProduct`、`domainProduct_value`、`logOnDomain`、`logOnDomain_hasSum`、`logOnDomain_domainProduct`、`tateInput`、`tateInput_value`、`tateInput_hasSum`、`tateInput_log_eq_tateLog`、`tateInput_log_mem_frobeniusPrime`、`exists_uniform_tateLog_bound_all`；`Act1Scene1/IutInitialThetaWittFrechetTateLogProducer.lean` | Joshi II `se:ff-rings`、`eq:tate-module-of-lubin-tate`、`pr:teichmuller-lift-A/B`。用 actual all-radius coordinate 范数定义 Tate-log 收敛域；消费既有逐半径的 multiplicative-formal-group closure 与对数乘法律，证明 domain product 闭合、对数级数 HasSum、Tate coordinates 属域且其对数落入 actual `φ=p` 子模，并投影已有的逐半径 uniform Tate-log 界。 | Scene1/Derived；完成 actual Fréchet carrier 上 Tate-log 收敛和 `T_y` 到 actual `φ=p` carrier 的来源 producer 子链，不将 actual carrier 识别为论文 `B`，不定义论文 ρ-norm，也不关闭 H¹ₑ/BK、global holomorphoid 或父级 Fréchet `B` 义务。新增声明公理仅为 `propext`、`Classical.choice`、`Quot.sound`；原创证明，无参考代码复制。 |
 
+### Actual Tate-log producer 到 Fréchet completion 的运输
+
+| source-id | declarations | source / fidelity | boundary / status |
+| --- | --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-WITT-FRECHET-TATE-LOG-TRANSPORT` | `FrechetDomain`、`frechetDomainOfActual`、`frechetLog`、`frechetLog_hasSum`、`frechetTateInput`、`frechetTateLog`、`frechetTateLog_hasSum`、`frechetTateLog_mem_frobeniusPrime`、`frechetTateLog_frobenius_eq_prime_smul`、`frechetTateLogEigen`、`frechetTateLogEigen_value`；`Act1Scene1/IutInitialThetaWittFrechetTateLogTransport.lean` | Joshi II `se:ff-rings`、`eq:tate-module-of-lubin-tate`、`pr:teichmuller-lift-A/B` 与既有 canonical continuous algebra equivalence。将 actual all-radius `InDomain` 拉回 Fréchet completion；通过连续线性等价运输 log series 的 `HasSum`，将实际 Tate logarithm运输到 Fréchet carrier，并证明其落入 Fréchet `φ=p` 子模且满足显式 Frobenius 标量方程。 | Scene1/Derived；这是 actual completion 上的 Tate-log/`φ=p` 运输，不是论文 `B` 的身份定理；不定义 paper ρ-norm，不提供 H¹ₑ/BK、global holomorphoid 或跨来源 collation。新增声明公理仅为 `propext`、`Classical.choice`、`Quot.sound`；原创证明，无参考代码复制。 |
+
 ### Canonical actual hull 到 Scene1Input 的字段相容性
 
 | source-id | declarations | source / fidelity | boundary / status |
