@@ -60,5 +60,20 @@ theorem frechetPrincipalRationalHom_injective :
   exact (frechetPrincipalRationalHom_eq_frechetEigenPeriodMap D w v).symm.trans
     (h.trans (frechetPrincipalRationalHom_eq_frechetEigenPeriodMap D w z))
 
+theorem frechetPrincipalRationalHom_exact :
+    Function.Exact (frechetPrincipalRationalHom D w)
+      (InitialThetaWittFrechetTateKernel.frechetEigenEvaluation D w) := by
+  intro x
+  constructor
+  · intro hx
+    obtain ⟨v, hv⟩ :=
+      (InitialThetaWittFrechetTateKernel.frechetEigenEvaluation_exact D w x).mp hx
+    refine ⟨v, ?_⟩
+    exact (frechetPrincipalRationalHom_eq_frechetEigenPeriodMap D w v).trans hv
+  · rintro ⟨v, rfl⟩
+    rw [frechetPrincipalRationalHom_eq_frechetEigenPeriodMap]
+    exact (InitialThetaWittFrechetTateKernel.frechetEigenEvaluation_exact D w
+      (InitialThetaWittFrechetTateKernel.frechetEigenPeriodMap D w v)).mpr ⟨v, rfl⟩
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetPrincipalRationalHom
