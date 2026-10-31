@@ -98,5 +98,12 @@ theorem frechetPrincipalRationalHom_evaluation (v : RationalTate D w) :
   exact (InitialThetaWittFrechetTateKernel.frechetEigenEvaluation_exact D w _).mpr
     ⟨v, rfl⟩
 
+theorem frechetPrincipalRationalHom_range_eq_evaluationKernel :
+    Set.range (frechetPrincipalRationalHom D w) =
+      {x | InitialThetaWittFrechetTateKernel.frechetEigenEvaluation D w x = 0} := by
+  rw [frechetPrincipalRationalHom_range]
+  ext x
+  exact (InitialThetaWittFrechetTateKernel.frechetEigenEvaluation_exact D w x).symm
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetPrincipalRationalHom
