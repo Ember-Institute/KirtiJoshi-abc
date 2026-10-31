@@ -101,5 +101,27 @@ theorem frechetPrincipalRational_mem_tateLine (v :
   rw [frechetPrincipalRational_eq_frechetEigenPeriodMap]
   exact ⟨v, rfl⟩
 
+theorem frechetPrincipalRange_inter_evaluationKernel :
+    Set.range (fun u : Principal D w => frechetPrincipalEigenLog D w u) ∩
+        {x | InitialThetaWittFrechetTateKernel.frechetEigenEvaluation D w x = 0} =
+      (InitialThetaWittFrechetTateKernel.frechetEigenPeriodMap D w).range := by
+  ext x
+  constructor
+  · rintro ⟨⟨u, rfl⟩, hu⟩
+    change InitialThetaWittFrechetTateKernel.frechetEigenEvaluation D w
+        (frechetPrincipalEigenLog D w u) = 0 at hu
+    exact (InitialThetaWittFrechetTateKernel.frechetEigenEvaluation_exact D w
+      (frechetPrincipalEigenLog D w u)).mp hu
+  · rintro ⟨v, rfl⟩
+    refine ⟨⟨InitialThetaWittRationalTatePrincipalLift.rationalPrincipal D w v, ?_⟩, ?_⟩
+    · change frechetPrincipalEigenLog D w
+          (InitialThetaWittRationalTatePrincipalLift.rationalPrincipal D w v) =
+        (InitialThetaWittFrechetTateKernel.frechetEigenPeriodMap D w) v
+      exact frechetPrincipalRational_eq_frechetEigenPeriodMap D w v
+    · change InitialThetaWittFrechetTateKernel.frechetEigenEvaluation D w
+        ((InitialThetaWittFrechetTateKernel.frechetEigenPeriodMap D w) v) = 0
+      rw [← frechetPrincipalRational_eq_frechetEigenPeriodMap D w v]
+      exact frechetPrincipalRational_evaluation D w v
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetPrincipalRationalLift
