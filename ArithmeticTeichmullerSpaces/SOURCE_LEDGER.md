@@ -6989,7 +6989,7 @@ rational principal hom 的 Fréchet evaluation-kernel range（2026-10-31）：�
 
 actual-derived Fréchet rho 半范数族（2026-10-31）：新增 `Act1Scene1/IutInitialThetaWittFrechetRhoSeminorm.lean`，登记 source-id `JT-SCENE1-INITIAL-THETA-WITT-FRECHET-RHO-SEMINORM`。该叶把已有 actual radius maps 组合为 Fréchet completion 上的 `RingSeminorm` 族，证明连续性、乘法等式、原 bounded-localization 回接、prime calibration、全半径分离零点以及 radius-map 收敛刻画。来源指示对应 Joshi II `se:ff-rings`、`pr:teichmuller-lift-A/B`；结果是 actual-derived 半范数族，不将载体命名为论文 `B` 或论文 rho-norm，也不提供 H1e/BK、holomorphoid 或 paper theta-volume 身份。
 
-本单元验收记录（2026-10-31）：叶模块 `frechet_rho_seminorm_leaf2` 退出 0（198.2 秒，峰值进程组 RSS 9,109,012 KiB）；`Act1Scene1` 聚合 `frechet_rho_seminorm_act1` 退出 0（206.9 秒，9,426,980 KiB）；`Checks/SelectedRoots` 退出 0（286.2 秒，9,376,644 KiB）；`Axioms/SelectedRoots` 退出 0（281.6 秒，9,376,208 KiB）；`ImportAudit` 退出 0（297.6 秒，9,428,396 KiB）。新声明逐名公理仅为 `propext`、`Classical.choice`、`Quot.sound`；914 个可达模块的 proof-hole 与禁用导入静态扫描通过，`git diff --check` 通过；父义务清单和动态边界保持不变。
+本单元验收记录（2026-10-31）：叶模块 `frechet_rho_seminorm_leaf2` 退出 0（198.2 秒，峰值进程组 RSS 9,109,012 KiB）；`Act1Scene1` 聚合 `frechet_rho_seminorm_act1_final` 退出 0（184.0 秒，9,413,828 KiB）；`Checks/SelectedRoots` 退出 0（188.1 秒，9,376,268 KiB）；`Axioms/SelectedRoots` 退出 0（183.0 秒，9,375,776 KiB）；`ImportAudit` 退出 0（185.1 秒，9,385,036 KiB）。新声明逐名公理仅为 `propext`、`Classical.choice`、`Quot.sound`；914 个可达模块的 proof-hole 与禁用导入静态扫描通过，`git diff --check` 通过；父义务清单和动态边界保持不变。
 
 历史来源登记补全（2026-10-31）：补登记此前已验收但遗漏账本的 Scene1/Derived source packages；这些条目不关闭任何父级 producer 义务。
 
