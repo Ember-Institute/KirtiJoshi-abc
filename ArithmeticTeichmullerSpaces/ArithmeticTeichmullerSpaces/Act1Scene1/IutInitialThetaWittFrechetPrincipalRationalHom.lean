@@ -85,5 +85,18 @@ theorem frechetPrincipalRationalHom_range :
   · rintro ⟨v, rfl⟩
     exact ⟨v, frechetPrincipalRationalHom_eq_frechetEigenPeriodMap D w v⟩
 
+theorem frechetPrincipalRationalHom_mem_tateLine (v : RationalTate D w) :
+    frechetPrincipalRationalHom D w v ∈
+      InitialThetaWittFrechetTateKernel.frechetTateLine D w := by
+  rw [frechetPrincipalRationalHom_eq_frechetEigenPeriodMap]
+  exact ⟨v, rfl⟩
+
+theorem frechetPrincipalRationalHom_evaluation (v : RationalTate D w) :
+    InitialThetaWittFrechetTateKernel.frechetEigenEvaluation D w
+        (frechetPrincipalRationalHom D w v) = 0 := by
+  rw [frechetPrincipalRationalHom_eq_frechetEigenPeriodMap]
+  exact (InitialThetaWittFrechetTateKernel.frechetEigenEvaluation_exact D w _).mpr
+    ⟨v, rfl⟩
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetPrincipalRationalHom
