@@ -75,5 +75,15 @@ theorem frechetPrincipalRationalHom_exact :
     exact (InitialThetaWittFrechetTateKernel.frechetEigenEvaluation_exact D w
       (InitialThetaWittFrechetTateKernel.frechetEigenPeriodMap D w v)).mpr ⟨v, rfl⟩
 
+theorem frechetPrincipalRationalHom_range :
+    Set.range (frechetPrincipalRationalHom D w) =
+      (InitialThetaWittFrechetTateKernel.frechetEigenPeriodMap D w).range := by
+  ext x
+  constructor
+  · rintro ⟨v, rfl⟩
+    exact ⟨v, (frechetPrincipalRationalHom_eq_frechetEigenPeriodMap D w v).symm⟩
+  · rintro ⟨v, rfl⟩
+    exact ⟨v, frechetPrincipalRationalHom_eq_frechetEigenPeriodMap D w v⟩
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetPrincipalRationalHom
