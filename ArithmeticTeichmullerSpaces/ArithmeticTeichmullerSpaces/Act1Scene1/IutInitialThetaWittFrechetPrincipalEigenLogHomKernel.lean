@@ -69,5 +69,20 @@ theorem frechetPrincipalEigenLogHomRange_inter_evaluationKernel :
           (frechetEigenPeriodMap D w v) = 0 at hk
       exact hk
 
+theorem frechetPrincipalEigenLogHom_mem_tateLine_iff
+    (u : Additive (Principal D w)) :
+    frechetPrincipalEigenLogHom D w u ∈ frechetTateLine D w ↔
+      frechetEigenEvaluation D w (frechetPrincipalEigenLogHom D w u) = 0 := by
+  constructor
+  · intro hu
+    exact (frechetTateLine_le_evaluationKernel D w) hu
+  · intro hu
+    have hmem : frechetPrincipalEigenLogHom D w u ∈
+        Set.range (frechetPrincipalEigenLogHom D w) ∩
+          {x | frechetEigenEvaluation D w x = 0} :=
+      ⟨⟨u, rfl⟩, hu⟩
+    rw [frechetPrincipalEigenLogHomRange_inter_evaluationKernel D w] at hmem
+    exact hmem
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittFrechetPrincipalEigenLogHomKernel
