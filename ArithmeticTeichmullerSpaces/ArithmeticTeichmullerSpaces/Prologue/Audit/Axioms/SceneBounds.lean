@@ -352,6 +352,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltAlgebraicallyClosed
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltIntegerRing
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
@@ -4001,3 +4002,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 -- Actual pretilt Witt compatibility.
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittLocalization.preTiltWittEquiv_teichmuller
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittLocalization.preTiltWittEquiv_coeff
+
+-- Generic PreTilt to valuation integer-ring bridge.
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltIntegerRing.FractionIntegers
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltIntegerRing.preTiltEquiv
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltIntegerRing.preTiltEquiv_apply
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltIntegerRing.preTiltEquiv_norm
