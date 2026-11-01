@@ -346,6 +346,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltComparison
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltComparison
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltNorm
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltCompleteness
+import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltAlgebraicallyClosed
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicTiltField
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
@@ -3923,3 +3928,71 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltComparison.tiltEquiv_inclusion
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltComparison.tiltEquiv_valuation_pow
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltComparison.tiltEquiv_frobenius
+
+
+-- Standard C_p tilt model and actual comparison declarations.
+-- ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltNorm
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.fractionValuation_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.absoluteValue
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.fractionNormedField
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.norm_eq_valuation
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.nnnorm_eq_valuation
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.fractionUltrametric
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.inclusion_norm
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.inclusion_isometry
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.inclusion_range_isClosed
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltNorm.inclusion_range_isComplete
+-- ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltCompleteness
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltCompleteness.fraction_representation
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltCompleteness.source_norm_le_one
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltCompleteness.integral_fraction_mem_closure
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltCompleteness.norm_le_one_mem_range
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltCompleteness.inclusion_range_eq_closedBall
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltCompleteness.closedBall_isComplete
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltCompleteness.fractionCompleteSpace
+-- ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltAlgebraicallyClosed
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltAlgebraicallyClosed.exists_contracting
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltAlgebraicallyClosed.integral_monic_approx_root
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltAlgebraicallyClosed.integral_monic_root
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltAlgebraicallyClosed.exists_integral_scale
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltAlgebraicallyClosed.monic_root
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltAlgebraicallyClosed.fractionIsAlgClosed
+#print axioms JoshiTeich.Act1Scene1.GeometricTiltAlgebraicallyClosed.exists_pow_eq
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicTiltField
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.norm_prime
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.primeNormFact
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.Source
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.Carrier
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierNormedField
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierUniformSpace
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierTopologicalSpace
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierCharP
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierPerfect
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.norm_eq_valuation
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.nnnorm_eq_valuation
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierUltrametric
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierCompleteSpace
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierIsAlgClosed
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.exists_contracting
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierNontriviallyNormedField
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.carrierValued
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.valued_eq_fractionValuation
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.valuationRankOne
+#print axioms JoshiTeich.Act1Scene1.PadicTiltField.Integers
+-- ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltTopology
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.Standard
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.ringEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.inverse
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.inverse_ringEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.ringEquiv_inverse
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.norm_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.dist_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.inverse_dist
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.ringEquiv_uniformContinuous
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.inverse_uniformContinuous
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.uniformEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.homeomorph
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.uniformEquiv_apply
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.integerEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.integerEquiv_apply
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltTopology.integerEquiv_norm_pow
