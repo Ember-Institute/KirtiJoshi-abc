@@ -7044,3 +7044,8 @@ Acceptance for this source package (2026-11-01): the minimal leaf `actual_witt_t
 标准 `C_p^flat` source/integer-ring 专门化（2026-11-01）：新增 `JT-SCENE1-PADIC-TILT-INTEGER-RING-BRIDGE`，文件 `Act1Scene1/PadicTiltIntegerRingBridge.lean`。将通用 `Source Ω p` 到 fraction-field valuation integer ring 的等价专门化为 `PadicTiltField.Source p ≃+* PadicTiltField.Integers p`，并证明应用公式和范数保持。该结果只建立标准 source/integer carrier bridge，不构造 Witt、p-localization、bounded localization、rho/Frechet 或论文 `B`。原始证明，无参考实现复制。
 
 本单元验收记录（2026-11-01）：叶 `padic_integer_bridge_leaf` 退出 0（130.9 秒，峰值进程组 RSS 5,503,720 KiB）；`Act1Scene1` 聚合退出 0（257.5 秒，9,415,188 KiB）；`Checks/SceneBounds` 退出 0（230.8 秒，9,498,196 KiB）；`Axioms/SceneBounds` 退出 0（225.3 秒，9,477,380 KiB）；`ImportAudit` 退出 0（219.2 秒，9,436,828 KiB）。所有运行使用热缓存、CPU 0–13、`LEAN_NUM_THREADS=10`、Lean `-j1`，均自然退出且未触及 85 GiB；4 个公开声明逐名审计，无 `sorryAx`，新声明公理仅为允许公理；静态扫描 `REACHABLE 926`、`BAD []`。
+
+actual Fréchet rho prime calibration (2026-11-01):新增 `JT-SCENE1-INITIAL-THETA-WITT-FRECHET-RHO-PRIME-CALIBRATION`，文件 `Act1Scene1/IutInitialThetaWittFrechetRhoPrimeCalibration.lean`。消费已验收的 actual Fréchet rho Frobenius law 与 prime calibration，证明 distinguished prime element 的公式
+`N_{ρ^p}(φ(p)) = (ρ.toReal)^p`。结果限于 actual-derived Fréchet completion 和 rho seminorm family，不识别论文 `B`、论文 rho norm、H¹ₑ/BK 或 global holomorphoid。原始证明，无参考实现复制。
+
+本单元验收记录（2026-11-01）：叶 `frechet_rho_prime_calibration_leaf2` 退出 0（240.5 秒，峰值进程组 RSS 9,108,008 KiB）；`Act1Scene1` 聚合退出 0（260.3 秒，9,431,280 KiB）；`Checks/SceneBounds` 退出 0（276.3 秒，9,516,168 KiB）；`Axioms/SceneBounds` 退出 0（302.8 秒，9,495,316 KiB）；`ImportAudit` 退出 0（234.6 秒，9,368,124 KiB）。运行均使用热缓存、CPU 0–13、`LEAN_NUM_THREADS=10`、Lean `-j1`，均自然退出且未触及 85 GiB；2 个公开声明逐名审计，无 `sorryAx`，新公理仅为 `propext`；静态扫描 `REACHABLE 927`、`BAD []`。
