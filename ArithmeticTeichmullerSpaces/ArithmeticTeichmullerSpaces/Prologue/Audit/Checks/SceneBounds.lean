@@ -380,6 +380,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.AdicKernelDivision
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineKernel
 import ArithmeticTeichmullerSpaces.Act1Scene1.NormedIntegerLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittRingEquiv
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittWeightedMapPower
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittComparison
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -4242,3 +4245,28 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #check JoshiTeich.Act1Scene1.InitialThetaWittFrechetRhoPoweredRadiusReal.Radius
 #check JoshiTeich.Act1Scene1.InitialThetaWittFrechetRhoPoweredRadiusReal.poweredRadius_toReal
 #check JoshiTeich.Act1Scene1.InitialThetaWittFrechetRhoPoweredRadiusReal.frechetRhoSeminorm_frobenius_inverse_prime_explicit
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.WittRingEquiv
+#check JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv
+#check JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv_apply
+#check JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv_coeff
+#check JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv_teichmuller
+#check JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv_frobenius
+#check JoshiTeich.Act1Scene1.WittRingEquiv.invertPrimeEquiv
+#check JoshiTeich.Act1Scene1.WittRingEquiv.invertPrimeEquiv_algebraMap
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.WittWeightedMapPower
+#check JoshiTeich.Act1Scene1.WittWeightedMapPower.mapEquiv
+#check JoshiTeich.Act1Scene1.WittWeightedMapPower.digits_map
+#check JoshiTeich.Act1Scene1.WittWeightedMapPower.value_map_pow
+#check JoshiTeich.Act1Scene1.WittWeightedMapPower.value_mapEquiv_pow
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittComparison
+#check JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.integerWittEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.integerWittEquiv_coeff
+#check JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.integerWittEquiv_teichmuller
+#check JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.integerWittEquiv_frobenius
+#check JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.invertPrimeEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.invertPrimeEquiv_algebraMap
+#check JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.fieldWittEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.fieldWittEquiv_value_pow

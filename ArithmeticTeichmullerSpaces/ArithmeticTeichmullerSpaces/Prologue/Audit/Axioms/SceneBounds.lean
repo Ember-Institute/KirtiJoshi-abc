@@ -373,6 +373,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.AdicKernelDivision
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineKernel
 import ArithmeticTeichmullerSpaces.Act1Scene1.NormedIntegerLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittRingEquiv
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittWeightedMapPower
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittComparison
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -4031,3 +4034,28 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.InitialThetaWittFrechetRhoPoweredRadiusReal.Radius
 #print axioms JoshiTeich.Act1Scene1.InitialThetaWittFrechetRhoPoweredRadiusReal.poweredRadius_toReal
 #print axioms JoshiTeich.Act1Scene1.InitialThetaWittFrechetRhoPoweredRadiusReal.frechetRhoSeminorm_frobenius_inverse_prime_explicit
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.WittRingEquiv
+#print axioms JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv
+#print axioms JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv_apply
+#print axioms JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv_coeff
+#print axioms JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv_teichmuller
+#print axioms JoshiTeich.Act1Scene1.WittRingEquiv.mapEquiv_frobenius
+#print axioms JoshiTeich.Act1Scene1.WittRingEquiv.invertPrimeEquiv
+#print axioms JoshiTeich.Act1Scene1.WittRingEquiv.invertPrimeEquiv_algebraMap
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.WittWeightedMapPower
+#print axioms JoshiTeich.Act1Scene1.WittWeightedMapPower.mapEquiv
+#print axioms JoshiTeich.Act1Scene1.WittWeightedMapPower.digits_map
+#print axioms JoshiTeich.Act1Scene1.WittWeightedMapPower.value_map_pow
+#print axioms JoshiTeich.Act1Scene1.WittWeightedMapPower.value_mapEquiv_pow
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittComparison
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.integerWittEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.integerWittEquiv_coeff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.integerWittEquiv_teichmuller
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.integerWittEquiv_frobenius
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.invertPrimeEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.invertPrimeEquiv_algebraMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.fieldWittEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicTiltWittComparison.fieldWittEquiv_value_pow

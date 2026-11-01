@@ -719,5 +719,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalTateQLogSu
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreePaperFactorBridge
 
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreePaperFactorProductBridge
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittRingEquiv
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittWeightedMapPower
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittComparison
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

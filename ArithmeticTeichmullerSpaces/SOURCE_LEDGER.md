@@ -7056,3 +7056,37 @@ actual Fréchet rho inverse-prime calibration (2026-11-01):新增 `JT-SCENE1-INI
 本单元验收记录（2026-11-01）：叶 `frechet_rho_prime_inverse_leaf` 退出 0（201.6 秒，峰值进程组 RSS 9,105,704 KiB）；`Act1Scene1` 聚合退出 0（218.5 秒，9,362,520 KiB）；`Checks/SceneBounds` 退出 0（240.2 秒，9,516,432 KiB）；`Axioms/SceneBounds` 退出 0（195.4 秒，9,495,560 KiB）；`ImportAudit` 退出 0（232.9 秒，9,431,020 KiB）。所有运行使用热缓存、CPU 0–13、`LEAN_NUM_THREADS=10`、Lean `-j1`，均自然退出且未触及 85 GiB；2 个公开声明逐名审计，无 `sorryAx`，新公理仅为 `propext`；静态扫描 `REACHABLE 928`、`BAD []`。
 
 实值半径幂公式（2026-11-01），`JT-SCENE1-INITIAL-THETA-WITT-FRECHET-RHO-POWERED-RADIUS-REAL`：`Act1Scene1/IutInitialThetaWittFrechetRhoPoweredRadiusReal.lean` 消费 Mathlib `ENNReal.toReal_pow` 与已有 actual 逆 Frobenius 校准，把 `(poweredRadius ρ).val.toReal` 明确写成 `ρ.val.toReal ^ residueChar(w)`。这是原 actual 公式的改写，不增加论文 `B`/rho 身份或新的父义务完成证据。初次叶因换行后的命名空间引用失败（167.0 秒，9,115,100 KiB）；修正版叶通过（186.6 秒，9,106,184 KiB），Scene1、Checks、Axioms、ImportAudit 分别通过（223.9、308.0、198.0、253.5 秒；9,430,164、9,516,024、9,495,892、9,415,984 KiB）。三个公开声明逐名公理仅为 `propext`、`Classical.choice`、`Quot.sound`；静态扫描 `REACHABLE 929`、`BAD []`。使用热缓存、CPU 0–13、NT10、Lean `-j1` 和不终止进程的 RSS 观察器；所有运行自然退出，无 heartbeat 提升。
+
+actual/standard Witt 比较与范数幂律（2026-11-01）：新增三个原始证明来源单元，无参考代码复制。
+
+- `JT-SCENE1-WITT-RING-EQUIV`，`Act1Scene1/WittRingEquiv.lean`：消费 Mathlib 的 Witt functor 和局部化泛性质，提供 `mapEquiv`、其 apply/coeff/Teichmuller/Frobenius 公式，以及 `invertPrimeEquiv` 和 algebraMap 公式，共7个公开声明。
+- `JT-SCENE1-WITT-WEIGHTED-MAP-POWER`，`Act1Scene1/WittWeightedMapPower.lean`：由唯一 Teichmuller digits 的自然性及 ENNReal 正整数幂保持 supremum，提供 `digits_map`、`value_map_pow`、同一 normed-field 实例环境的 `mapEquiv` 和 `value_mapEquiv_pow`，共4个公开声明。精确公式为 `V_G(ρ,map(e,x))^d = V_F(ρ^d,x)`，要求正整数 d 及 coefficient norm 的同一幂律。
+- `JT-SCENE1-INITIAL-THETA-PADIC-TILT-WITT-COMPARISON`，`Act1Scene1/IutInitialThetaPadicTiltWittComparison.lean`：消费已证明的 actual/standard tilt integer/field equivalence，提供整数 Witt 等价及其 coeff/Teichmuller/Frobenius 公式、逆素数局部化等价及 algebraMap 公式、field-Witt 等价及范数幂律，共8个公开声明。来源对应 Joshi II `se:ff-rings`、`pr:teichmuller-lift-A/B` 中固定 tilt 的 Witt/加权展开阶段。
+
+实际比较保留原始整数环、field carrier 和两侧原始范数，不加入比较 certificate。公开 `fieldWittEquiv_value_pow` 的完整推断类型已由 Checks 核对，只有原有 AG/TG、D、w、ρ、x 参数，结论为 `V_standard(ρ,e(x))^localDeg(w) = V_actual(ρ^localDeg(w),x)`；没有新增 hnorm 或比较假设。收缩 Teichmuller 元的局部化、全半径/Fréchet completion 比较、论文 B 身份及15项父义务仍开放。
+
+工程诊断：首轮通用叶遗漏 `map_teichmuller` 的 p 参数，具体叶首轮缺少 ENNReal 记号作用域；两者均已修正。具体范数声明的直接组合在第2–6轮内核超时，第4轮还确认 theorem 的签名占位符不能由 proof body 推断。独立分步诊断的 actual/standard value、范数律、部分应用和完整比较均通过，内核合计259ms；最终采用分步保存范数律、部分应用及完整推断证明函数的结构，整叶内核检查合计979ms。没有提高 heartbeat 预算；这些失败不构成数学反例，也不足以把原因定位为 OreLocalization、CharP/PerfectRing 或某个具体 coercion。
+
+本单元所有实际运行记录如下，峰值为每0.5秒采样的进程组 RSS；使用热缓存、CPU 0–13、NT10、Lean -j1，均自然退出，stopped=false。
+
+| 运行 | 退出码 | 秒 | 峰值 RSS KiB |
+| --- | --- | --- | --- |
+| `standard_witt_exact_diagnostic` | 0 | 248.4 | 9,098,892 |
+| `witt_ring_equiv_leaf` | 1 | 80.5 | 4,076,672 |
+| `witt_ring_equiv_leaf2` | 0 | 89.7 | 4,133,940 |
+| `witt_weighted_map_power_leaf` | 0 | 118.1 | 4,514,256 |
+| `witt_weighted_map_power_leaf2` | 0 | 96.8 | 4,489,220 |
+| `padic_tilt_witt_comparison_leaf` | 1 | 322.8 | 9,109,680 |
+| `padic_tilt_witt_comparison_leaf2` | 1 | 365.3 | 12,156,428 |
+| `padic_tilt_witt_comparison_leaf3` | 1 | 349.8 | 12,154,220 |
+| `padic_tilt_witt_comparison_leaf4` | 1 | 313.8 | 12,154,012 |
+| `padic_tilt_witt_comparison_leaf5` | 1 | 272.5 | 12,154,012 |
+| `padic_tilt_witt_comparison_leaf6` | 1 | 356.9 | 12,154,252 |
+| `padic_tilt_witt_comparison_leaf7` | 0 | 214.1 | 9,109,840 |
+| `padic_witt_norm_stages` | 0 | 225.6 | 9,092,652 |
+| `padic_tilt_witt_comparison_act1` | 0 | 249.7 | 9,430,596 |
+| `padic_tilt_witt_comparison_checks` | 0 | 233.3 | 9,522,056 |
+| `padic_tilt_witt_comparison_axioms` | 0 | 283.9 | 9,499,864 |
+| `padic_tilt_witt_comparison_importaudit` | 0 | 258.4 | 9,402,468 |
+
+19个公开声明均已逐名登记 Checks/Axioms，公理仅为 propext、Classical.choice、Quot.sound，无 sorryAx。Act1Scene1 聚合、Checks/SceneBounds、Axioms/SceneBounds、ImportAudit 均退出0；静态扫描 REACHABLE 932、BAD []。动态边界已修正旧的直接 Witt/ModP 归因；Prologue R5、15项父义务与四个最终闸门不变。
