@@ -353,6 +353,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PadicTiltField
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltIntegerRing
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicTiltIntegerRingBridge
 import ArithmeticTeichmullerSpaces.Act1Scene1.GeometricTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltSharp
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaTiltTopology
@@ -4008,3 +4009,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaFontaineLocalizatio
 #print axioms JoshiTeich.Act1Scene1.GeometricTiltIntegerRing.preTiltEquiv
 #print axioms JoshiTeich.Act1Scene1.GeometricTiltIntegerRing.preTiltEquiv_apply
 #print axioms JoshiTeich.Act1Scene1.GeometricTiltIntegerRing.preTiltEquiv_norm
+
+-- Standard Padic tilt source/integer-ring bridge.
+#print axioms JoshiTeich.Act1Scene1.PadicTiltIntegerRingBridge.StandardIntegers
+#print axioms JoshiTeich.Act1Scene1.PadicTiltIntegerRingBridge.preTiltEquiv
+#print axioms JoshiTeich.Act1Scene1.PadicTiltIntegerRingBridge.preTiltEquiv_apply
+#print axioms JoshiTeich.Act1Scene1.PadicTiltIntegerRingBridge.preTiltEquiv_norm
