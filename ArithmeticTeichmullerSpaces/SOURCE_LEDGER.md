@@ -7090,3 +7090,32 @@ actual/standard Witt 比较与范数幂律（2026-11-01）：新增三个原始�
 | `padic_tilt_witt_comparison_importaudit` | 0 | 258.4 | 9,402,468 |
 
 19个公开声明均已逐名登记 Checks/Axioms，公理仅为 propext、Classical.choice、Quot.sound，无 sorryAx。Act1Scene1 聚合、Checks/SceneBounds、Axioms/SceneBounds、ImportAudit 均退出0；静态扫描 REACHABLE 932、BAD []。动态边界已修正旧的直接 Witt/ModP 归因；Prologue R5、15项父义务与四个最终闸门不变。
+
+实际 bounded Witt 环到独立标准代数局部化（2026-11-02）：新增三个原始证明来源单元，无参考实现复制。
+
+- `JT-SCENE1-WITT-PRIME-TEICH-LOCALIZATION`，`Act1Scene1/WittPrimeTeichLocalization.lean`：以 `p*[s]` 的 Away 局部化实现同时逆转两个元素，提供 denominator、Ring、map_denominator、equiv、equiv_algebraMap 共5个公开声明。给定 coefficient-ring equivalence 和元素像等式，由 Mathlib 局部化泛性质得到等价及原始 Witt 包含公式。
+- `JT-SCENE1-STANDARD-PADIC-BOUNDED-WITT`，`Act1Scene1/PadicBoundedWittLocalization.lean`：仅由 p 和 Fact p.Prime 在原始标准 C_p tilt 中独立选择非零收缩元，构造标准 `W(O_F)[1/p,1/[t]]`。contraction 及其两个法律、Ainf、teich、denominator、Ring、inclusion 和两个 unit 法律，共10个公开声明，所有签名均不含 InitialThetaData。
+- `JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-COMPARISON`，`Act1Scene1/IutInitialThetaPadicBoundedWittComparison.lean`：将原整数环等价缓存为明确的独立标准整数环接口，构造其 Witt 提升；将标准收缩元拉回实际整数环，由原始 local-degree 范数幂律证明逆像非零且收缩，复用已证明的 actual choiceEquiv，再接通用局部化等价。integerEquiv、integerWittEquiv、contraction 及其两个法律、choiceEquiv、choiceStandardEquiv、ringEquiv、ringEquiv_algebraMap、ringEquiv_inclusion，共10个公开声明。
+
+来源对应 Joshi II `se:ff-rings` 的固定 `F=C_p^flat`、W(O_F) 及其代数局部化，以及 `pr:teichmuller-lift-A/B` 的 Witt/Teichmuller 阶段。结果保留原实际 canonical bounded Ring 和独立标准 p-only Ring；没有把标准收缩元改为依赖 D 的实际 varpi 像。Checks 已核对标准声明只有 p 参数，实际等价及包含公式只有原有 AG/TG、D、w、x，没有新的比较 certificate 或 norm 假设。rho 值/范数、半径变换、全半径/Fréchet completion 和论文 B 身份仍待比较；15项父义务不变。
+
+工程诊断：首轮完整叶在标准收缩元的逆像处内核超时并产生后续级联错误；裸逆函数及显式 Field/NormedField 单项诊断也失败，不能据此作更具体的底层归因。将原等价缓存成 `ActualIntegers ≃+* PadicTiltField.Integers p` 的接口，单项诊断通过；该诊断只对该声明设置100万 heartbeat，实测内核合计164ms。默认预算下的第二轮完整叶已通过该接口和逆像，剩余收缩性证明组合超时；将范数律按缓存后的接口保存并缓存部分应用后，第三轮完整叶在默认预算通过，内核检查合计580ms。最终交付没有 heartbeat 提升，也没有改动标准对象或数学输入。
+
+所有实际运行记录如下。使用热缓存、CPU 0–13、NT10、Lean -j1，峰值为每0.5秒采样的进程组 RSS，所有运行均自然退出且 stopped=false。
+
+| 运行 | 退出码 | 秒 | 峰值 RSS KiB |
+| --- | --- | --- | --- |
+| `witt_prime_teich_localization_leaf` | 0 | 125.4 | 4,129,584 |
+| `standard_padic_bounded_witt_leaf` | 0 | 174.9 | 5,505,536 |
+| `padic_bounded_witt_comparison_leaf` | 1 | 833.7 | 12,164,368 |
+| `padic_bounded_inverse_diagnostic` | 1 | 331.4 | 12,152,084 |
+| `padic_bounded_explicit_integers_diagnostic` | 1 | 336.5 | 12,156,172 |
+| `padic_bounded_cached_integer_diagnostic` | 0 | 270.8 | 9,099,228 |
+| `padic_bounded_witt_comparison_leaf2` | 1 | 251.6 | 12,163,188 |
+| `padic_bounded_witt_comparison_leaf3` | 0 | 169.1 | 9,111,540 |
+| `padic_bounded_witt_comparison_act1` | 0 | 205.0 | 9,437,312 |
+| `padic_bounded_witt_comparison_checks` | 0 | 227.6 | 9,525,060 |
+| `padic_bounded_witt_comparison_axioms` | 0 | 216.1 | 9,503,236 |
+| `padic_bounded_witt_comparison_importaudit` | 0 | 256.2 | 9,416,428 |
+
+25个公开声明逐名 Checks/Axioms 通过，公理仅为 propext、Classical.choice、Quot.sound，无 sorryAx。Act1Scene1 聚合、Checks/SceneBounds、Axioms/SceneBounds、ImportAudit 均退出0；静态扫描 REACHABLE 935、BAD []，git diff --check 通过。动态边界仅记录代数局部化比较与实例组合诊断；Prologue R5、父义务和四个最终闸门状态不变。

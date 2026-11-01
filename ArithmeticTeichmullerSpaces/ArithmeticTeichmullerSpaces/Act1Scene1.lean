@@ -722,5 +722,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaDegreePaperFactorPr
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittRingEquiv
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittWeightedMapPower
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittComparison
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittPrimeTeichLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittComparison
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
