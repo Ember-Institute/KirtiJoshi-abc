@@ -22,15 +22,15 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-11-01（Asia/Shanghai） |
-| 数学证明基线 | 截至已提交并推送的 `24b3ede`：在标准 `C_p^flat` 比较后，actual PreTilt Witt 等价的 Teichmüller 与逐系数自然性已验收；标准整数环 Witt/p-localization 提升仍开放 |
+| 数学证明基线 | 截至已提交并推送的 `46b569b`：已补上通用 `Source → O(FractionField)` 整数环 bridge；标准整数环 Witt/p-localization 提升仍开放 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4** |
 | 父义务状态 | [明确来源证明义务][obligations]中的 15 项全部开放 |
-| 近期定量进展 | 独立标准 `C_p^flat` 模型、实际 tilt 的 `‖e x‖^[localDeg(w)] = ‖x‖` 以及 actual PreTilt Witt 的 Teichmüller/系数自然性已验收；一般数域次数下的 actual qProduct lower bound、条件性 Corollary consumer 和 `qProduct = thetaVolume^[F:ℚ]` 仍有效 |
+| 近期定量进展 | 独立标准 `C_p^flat` 模型、实际 tilt 的范数幂律、actual PreTilt Witt 自然性和通用整数环 bridge 已验收；一般数域次数下的 actual qProduct lower bound、条件性 Corollary consumer 和 `qProduct = thetaVolume^[F:ℚ]` 仍有效 |
 | 近期处集进展 | actual representative fibers、omitted mass、Galois fiber 权重和 grouped volume 会计已有；指定 representative certificates 与 reference q-pilot equality 的联合不相容性已证明 |
 | Period 路线位置 | 共同单位球及非线性 `φ(x)=x^p` 解的代表已有；任意 `φ(x)=-ξx` 解经 `p^N` scaling 后有原始 `A_inf` 代表；实际 full Tate 核分类、拓扑正合列、商求值单射及 Fréchet/actual Tate 商的求值相容性已闭合；actual ρ=1 单位球候选已有 Frobenius 自同构与 `PadicInt` 标量结构 |
 | 尚未接通的主要连接 | 共同 geometry producer、global holomorphoid、H¹ₑ/BK、论文 `B`/ρ-norm 身份、actual 候选到论文 `B⁺` 的身份、paper representatives、跨来源 collation、paper theta locus/volume 与最终 Corollary 3.12 |
 | Prologue 边界 | `R5`；四项 source laws 由 Scene1 producer 负责，仍须从共同真实来源证明 |
-| 本次更新范围 | 记录 `24b3ede` 已推送单元及其精确边界；不改变 15 项父义务或最终闸门状态 |
+| 本次更新范围 | 记录 `46b569b` 已推送单元及其精确边界；不改变 15 项父义务或最终闸门状态 |
 
 阅读顺序：先看四个闸门，再看当前路线和关键缺口，最后看近期变化卡及父义务清单。
 局部结果以[源码][scene1]、模块头的来源与忠实度说明、[既有来源台账][ledger]及已提交记录为依据。近期构建、失败与资源数据见对应提交正文。
@@ -127,6 +127,7 @@ normalization 和 perfectoid bridge 等法律。图中从 actual arithmetic/Haar
 | Actual period-ring 局部链 | 🟢 已闭合 | actual Witt、ρ-norm 构造、全半径完备化及比较、Frobenius、theta、Tate-log 与 principal-unit period 已有 | G2/G4；见下节 [period 路线](#period-ring-路线的精确位置) |
 | 标准 `C_p^flat` 与实际 tilt 比较 | 🟢 已闭合 | 独立标准 fraction field 的范数、完备性、代数闭包、uniform/homeomorphic 比较及整数环等价已有；保留 local-degree 幂律，不称为 isometry | G2；[标准 tilt 范数][standard-tilt-norm]、[标准 tilt 拓扑][standard-tilt-topology] |
 | Actual PreTilt Witt 自然性 | 🟢 已闭合 | 既有 actual `preTiltWittEquiv` 的 Teichmüller lift 和逐系数公式已证明；直接提升到标准整数环 Witt/p-localization 触发内核实例转换边界 | G2；[Witt 自然性][witt-naturality] |
+| 通用 PreTilt 整数环 bridge | 🟢 已闭合 | `Source Ω p` 与原 fraction field 的 valuation integer ring 已构造 RingEquiv，并证明应用和范数保持；为标准 `C_p^flat` source/integer 链提供 carrier bridge | G2；[通用整数环 bridge][integer-ring-bridge] |
 | 全半径整性与非线性 Frobenius 识别 | 🟢 已闭合 | 原始 `A_inf` 像恰为所有 ρ-norm 的共同单位球；全半径 `φ(x)=x^p` 解有原始 bounded Witt 代表，单半径单位界给 integral Teichmüller 代表 | G2/G4；[单位球判据][completed-integral]、[非线性识别][completed-recognition] |
 | Twisted 解的实际整性 producer | 🟢 已闭合 | 任意原始 full common-ring 解 `φ(x)=-ξx`，均可构造 `N` 和原始 `a∈A_inf`，使 `ainfMap(a)=p^N·x` 且 `Frob(a)=-ξ_Ainf·a`；无需预设 bounded/integral lift | G2/G4；[twisted 整性识别][twisted-integral] |
 | Primitive 单零点与一阶核求值 | 🟢 已闭合 | 对完整 actual `φ=p` 空间，`ξ²∣x ↔ x=0`；`fullKernel` 上先除轨道乘积 P 再作 θ 的一阶求值单射，区别于 Banach 商求值 | G2/G4；[simple zero][simple-zero] |
@@ -343,6 +344,16 @@ S 是当前 actual VBad carrier 上定义的内部 selected paper sum，仍须�
 | 保留边界 | 直接将 Witt 映射目标设为标准 tilt 整数环，以及进一步的 p-localization，多次触发标准局部化实例的内核 deterministic timeout；因此本提交不声称标准整数环 Witt 等价、bounded localization、rho/Frechet 比较或论文 `B` 身份 |
 | 下一步 | 设计不展开标准 `OreLocalization` 实例的 carrier bridge，再继续整数环 Witt 与 p-localization比较 |
 
+### 通用 PreTilt 整数环 bridge
+
+| 项目 | 内容 |
+| --- | --- |
+| 提交 | `46b569b` |
+| 构造结论 | 对一般完备代数闭超度量系数域，构造 `Source Ω p ≃+* O(FractionField Ω p)`，并证明应用公式和范数保持 |
+| 验收 | 叶、Scene1、Checks、Axioms、ImportAudit 均退出 0；静态扫描 `REACHABLE 925`、`BAD []`；4 个公开声明无 `sorryAx` |
+| 来源边界 | 只消费原 PreTilt 单位球像和分式环单射；不产生 Witt、p-localization、bounded localization、rho/Frechet 或论文 `B` 身份 |
+| 下一步 | 在标准 `PadicComplex p` 上专门化该 bridge，再评估标准整数环 Witt 映射的实例展开成本 |
+
 ## 未完成父义务
 
 以下编号按[明确来源证明义务][obligations]的顺序排列。15 项均保持开放；
@@ -448,6 +459,7 @@ producer 和 paper identity，不通过 `Prologue/Obligations`、Scene2、Act2 �
 [standard-tilt-norm]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GeometricTiltNorm.lean
 [standard-tilt-topology]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicTiltTopology.lean
 [witt-naturality]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicTiltWittLocalization.lean
+[integer-ring-bridge]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GeometricTiltIntegerRing.lean
 [actual-bplus]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittActualBPlusCandidate.lean
 
 [completed-integral]: ../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittCompletedIntegralCriterion.lean
