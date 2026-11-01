@@ -7049,3 +7049,8 @@ actual Fréchet rho prime calibration (2026-11-01):新增 `JT-SCENE1-INITIAL-THE
 `N_{ρ^p}(φ(p)) = (ρ.toReal)^p`。结果限于 actual-derived Fréchet completion 和 rho seminorm family，不识别论文 `B`、论文 rho norm、H¹ₑ/BK 或 global holomorphoid。原始证明，无参考实现复制。
 
 本单元验收记录（2026-11-01）：叶 `frechet_rho_prime_calibration_leaf2` 退出 0（240.5 秒，峰值进程组 RSS 9,108,008 KiB）；`Act1Scene1` 聚合退出 0（260.3 秒，9,431,280 KiB）；`Checks/SceneBounds` 退出 0（276.3 秒，9,516,168 KiB）；`Axioms/SceneBounds` 退出 0（302.8 秒，9,495,316 KiB）；`ImportAudit` 退出 0（234.6 秒，9,368,124 KiB）。运行均使用热缓存、CPU 0–13、`LEAN_NUM_THREADS=10`、Lean `-j1`，均自然退出且未触及 85 GiB；2 个公开声明逐名审计，无 `sorryAx`，新公理仅为 `propext`；静态扫描 `REACHABLE 927`、`BAD []`。
+
+actual Fréchet rho inverse-prime calibration (2026-11-01):新增 `JT-SCENE1-INITIAL-THETA-WITT-FRECHET-RHO-PRIME-INVERSE-CALIBRATION`，文件 `Act1Scene1/IutInitialThetaWittFrechetRhoPrimeInverseCalibration.lean`。消费 actual Fréchet rho seminorm 的逆 Frobenius law 与 prime calibration，证明 distinguished prime 的逆向公式
+`N_ρ(φ⁻¹(p))^p = (ρ^p).toReal`。结果限于 actual-derived completion，不识别论文 `B`、论文 rho norm、H¹ₑ/BK 或 global holomorphoid。原始证明，无参考实现复制。
+
+本单元验收记录（2026-11-01）：叶 `frechet_rho_prime_inverse_leaf` 退出 0（201.6 秒，峰值进程组 RSS 9,105,704 KiB）；`Act1Scene1` 聚合退出 0（218.5 秒，9,362,520 KiB）；`Checks/SceneBounds` 退出 0（240.2 秒，9,516,432 KiB）；`Axioms/SceneBounds` 退出 0（195.4 秒，9,495,560 KiB）；`ImportAudit` 退出 0（232.9 秒，9,431,020 KiB）。所有运行使用热缓存、CPU 0–13、`LEAN_NUM_THREADS=10`、Lean `-j1`，均自然退出且未触及 85 GiB；2 个公开声明逐名审计，无 `sorryAx`，新公理仅为 `propext`；静态扫描 `REACHABLE 928`、`BAD []`。
