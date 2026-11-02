@@ -389,6 +389,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittCom
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittRhoPresentation
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittExpansion
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoFieldWittInclusion
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoAmbientEquiv
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -4339,3 +4341,32 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
 #check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_prime
 #check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_lt_top
 #check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_eq_zero_iff
+
+/-! Coefficientwise Witt and ambient carrier comparison. -/
+#check JoshiTeich.Act1Scene1.WittCoefficientSquare.coeff
+#check JoshiTeich.Act1Scene1.WittCoefficientSquare.square
+#check JoshiTeich.Act1Scene1.fractionRingEquiv
+#check JoshiTeich.Act1Scene1.fractionRingEquiv_algebraMap
+#check JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.coeff
+#check JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.square
+#check JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.coeff_forward
+#check JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.square_forward
+#check JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.ambient_square
+#check JoshiTeich.Act1Scene1.WittComparisonData.Data
+#check JoshiTeich.Act1Scene1.WittComparisonData.ofSquare
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.coeff
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.square
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.mappedCoeff
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.mappedSquare
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.comparisonData
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.fieldWittEquiv_wittInclusion_coeff
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.fieldWittEquiv_wittInclusion_mapCompat
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.fieldWittEquiv_wittInclusion
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.fieldWittEquiv
+#check JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.ambientEquiv
+#check JoshiTeich.Act1Scene1.WittComparisonData.Data.fieldEquiv
+#check JoshiTeich.Act1Scene1.WittComparisonData.Data.field_coeff
+#check JoshiTeich.Act1Scene1.WittComparisonData.Data.inclusion_coeff
+#check JoshiTeich.Act1Scene1.WittComparisonData.Data.ambientEquiv
+#check JoshiTeich.Act1Scene1.WittComparisonData.Data.ambient_algebraMap
+#check JoshiTeich.Act1Scene1.WittComparisonData.Data.ambient_square

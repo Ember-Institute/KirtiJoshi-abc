@@ -728,5 +728,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittCompar
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittPrimeTeichLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittComparison
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoFieldWittInclusion
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoAmbientEquiv
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/

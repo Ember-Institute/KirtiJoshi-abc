@@ -382,6 +382,8 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittCom
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittRhoPresentation
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittExpansion
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoFieldWittInclusion
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoAmbientEquiv
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -4128,3 +4130,32 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
 #print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_prime
 #print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_lt_top
 #print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_eq_zero_iff
+
+/-! Coefficientwise Witt and ambient carrier comparison. -/
+#print axioms JoshiTeich.Act1Scene1.WittCoefficientSquare.coeff
+#print axioms JoshiTeich.Act1Scene1.WittCoefficientSquare.square
+#print axioms JoshiTeich.Act1Scene1.fractionRingEquiv
+#print axioms JoshiTeich.Act1Scene1.fractionRingEquiv_algebraMap
+#print axioms JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.coeff
+#print axioms JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.square
+#print axioms JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.coeff_forward
+#print axioms JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.square_forward
+#print axioms JoshiTeich.Act1Scene1.WittFractionCoefficientSquare.ambient_square
+#print axioms JoshiTeich.Act1Scene1.WittComparisonData.Data
+#print axioms JoshiTeich.Act1Scene1.WittComparisonData.ofSquare
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.coeff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.square
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.mappedCoeff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.mappedSquare
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittCoefficientSquare.comparisonData
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.fieldWittEquiv_wittInclusion_coeff
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.fieldWittEquiv_wittInclusion_mapCompat
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.fieldWittEquiv_wittInclusion
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.fieldWittEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.ambientEquiv
+#print axioms JoshiTeich.Act1Scene1.WittComparisonData.Data.fieldEquiv
+#print axioms JoshiTeich.Act1Scene1.WittComparisonData.Data.field_coeff
+#print axioms JoshiTeich.Act1Scene1.WittComparisonData.Data.inclusion_coeff
+#print axioms JoshiTeich.Act1Scene1.WittComparisonData.Data.ambientEquiv
+#print axioms JoshiTeich.Act1Scene1.WittComparisonData.Data.ambient_algebraMap
+#print axioms JoshiTeich.Act1Scene1.WittComparisonData.Data.ambient_square

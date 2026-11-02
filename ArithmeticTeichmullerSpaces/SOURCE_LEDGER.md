@@ -7128,3 +7128,44 @@ actual/standard Witt 比较与范数幂律（2026-11-01）：新增三个原始�
 本单元验收：WittRhoPresentation 叶退出0（61.8秒，4,111,148 KiB）；PadicBoundedWittExpansion 叶退出0（85.6秒，5,534,872 KiB）；PadicWittRhoValue 叶退出0（84.1秒，5,523,392 KiB）；Act1Scene1 聚合退出0（118.4秒，9,421,080 KiB）；Checks 退出0（133.8秒，9,528,900 KiB）；Axioms 退出0（125.2秒，9,507,312 KiB）；ImportAudit 退出0（113.7秒，9,438,580 KiB）。全部使用热缓存、CPU 0--13、NT10、Lean -j1，stopped=false；26个声明仅依赖 propext、Classical.choice、Quot.sound，无 sorryAx。静态扫描 REACHABLE 938、BAD []，git diff --check 通过。
 
 该单元是独立标准目标 carrier，不关闭 actual→standard rho 比较、论文 B/Fréchet completion、H1e/BK 或15项父义务；Prologue R5和四个最终闸门保持开放。随后 actual bridge 必须遵守每叶16 GiB峰值规则；此前未拆 actual rho bridge 的叶峰值约99.8 GiB，已自然退出且不计为验收通过。
+
+
+系数函数接口与 ambient 比较的数据构造（2026-11-02）：从已有实际 tilt 整数环等价重新组织证明，不复制参考工程代码，不新增源法律或外部比较证书。
+
+- `JT-SCENE1-WITT-COEFFICIENT-SQUARE`，`Act1Scene1/WittCoefficientSquare.lean`：在纯函数层证明 `coeff`、`square`，输入为一个逐点交换公式，无环实例要求。
+- `JT-SCENE1-FRACTION-RING-EQUIV`，`Act1Scene1/FractionRingEquiv.lean`：`fractionRingEquiv`、`fractionRingEquiv_algebraMap` 在抽象环上缓存 Mathlib 分式环等价及其包含公式。
+- `JT-SCENE1-WITT-FRACTION-COEFFICIENT-SQUARE`，`Act1Scene1/WittFractionCoefficientSquare.lean`：`coeff`、`square`、`coeff_forward`、`square_forward`、`ambient_square` 在抽象系数环上完成函数到 Witt 环及分式环等价的转换。forward 形式在泛型层已证明，但其实际独立专门化仍超时，不作为实际接口导出。
+- `JT-SCENE1-WITT-COMPARISON-DATA`，`Act1Scene1/WittComparisonData.lean`：`Data` 的六字段分别保存 Witt 等价、全部系数公式、整数包含系数公式、ambient 等价、ambient algebraMap 公式、ambient 包含方块；`ofSquare` 完整构造它们。实际消费者不需要另给这些字段。
+- `JT-SCENE1-INITIAL-THETA-PADIC-WITT-COEFFICIENT-SQUARE`，`Act1Scene1/IutInitialThetaPadicWittCoefficientSquare.lean`：`coeff`、`square`、`mappedCoeff`、`mappedSquare`、`comparisonData` 只消费已有 `InitialThetaPadicTiltTopology.ringEquiv D w` 与 `integerEquiv_apply D w`。输入仍只有原有的 AG/TG、D、w，两个系数载体、原范数和 Witt/分式环载体保持不变。
+- `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-INCLUSION-COEFFICIENT`、`JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-MAP-COMPATIBILITY`、`JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-FIELD-WITT-INCLUSION`：三个声明级叶分别导出系数方块和完整 Witt 方块，保持完整推断类型。数学等式采用 `integerEquiv_apply` 的方向，避免在具体载体上重建 FunLike/algebraMap 实例。
+- `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-FIELD-WITT-EQUIV` 与 `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-AMBIENT-EQUIV`：具体 `fieldWittEquiv`、`ambientEquiv` 从已构造的 `comparisonData` 读取等价字段，不再独立书写目标环实例。
+
+来源：Joshi II `se:ff-rings`、原 actual/standard tilt 比较；Mathlib `WittVector.mapFun`、`WittVector.map`、`IsFractionRing.ringEquivOfRingEquiv`。generic consumer 的逐点系数假设由 actual `integerEquiv_apply` 证明供应；`Data` 是由这些证明产生的输出，不是额外输入 certificate。无范数、拓扑或源法律改变；无 `opaque`、自定义公理或占位证明。
+
+边界：这批结果重证了原系数比较的函数形式，并构造原 Witt/ambient 载体的等价及保存的兼容律。旧命名 bounded `wittInclusion`/`toAmbient`、presentation 和最终 rho-value 幂律仍须适配验收；不识别论文 Fréchet B，也不改变15项父义务或四个最终闸门。
+
+本单元最终验收（2026-11-03）：27个公开声明逐名 Checks/Axioms 通过，公理只含
+propext、Classical.choice、Quot.sound，无 sorryAx。Scene1、Checks、Axioms、ImportAudit
+均退出0；四入口联合项目导入图扫描 REACHABLE 986、BAD_IMPORTS []。
+所有最终运行均为热缓存、CPU 0–13、LEAN_NUM_THREADS=14、Lean -j1、默认 heartbeat；
+每0.5秒采样进程组 RSS，15 GiB 为停止线，未触发停止。失败诊断与最终结果分别保存在
+`docs/Scene1Witt比较内存.jsonl`（仓库根目录的相对路径），记录命令、退出码、耗时、峰值、
+停止原因与错误摘要。已撤回范数域、Witt 等价实现、旧 expansion inclusion 的无效试验；
+已提交源码不改变这些既有定义。结果没有关闭任何父义务。
+
+| 运行 | 退出码 | 秒 | 峰值 RSS KiB |
+| --- | --- | --- | --- |
+| `coefficient_square_generic` | 0 | 52.5 | 4,061,636 |
+| `final_fraction_interface` | 0 | 51.0 | 3,471,564 |
+| `fraction_square_forward_generic` | 0 | 57.6 | 4,134,944 |
+| `witt_comparison_data_generic` | 0 | 54.0 | 4,129,732 |
+| `actual_comparison_data_accepted` | 0 | 124.8 | 9,102,604 |
+| `accepted_IutInitialThetaPadicWittRhoFieldWittInclusionCoeff` | 0 | 125.3 | 9,085,908 |
+| `accepted_IutInitialThetaPadicWittRhoFieldWittMapCompat` | 0 | 119.7 | 9,086,000 |
+| `field_inclusion_final_imports` | 0 | 122.7 | 9,086,048 |
+| `accepted_IutInitialThetaPadicWittRhoFieldWittEquiv` | 0 | 118.1 | 9,098,876 |
+| `accepted_IutInitialThetaPadicWittRhoAmbientEquiv` | 0 | 148.6 | 9,098,136 |
+| `rho_carrier_scene1` | 0 | 127.2 | 9,432,616 |
+| `rho_carrier_checks` | 0 | 145.0 | 9,532,508 |
+| `rho_carrier_axioms` | 0 | 125.7 | 9,510,844 |
+| `rho_carrier_importaudit` | 0 | 134.5 | 9,418,180 |
