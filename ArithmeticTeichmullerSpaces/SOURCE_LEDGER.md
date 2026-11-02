@@ -7119,3 +7119,12 @@ actual/standard Witt 比较与范数幂律（2026-11-01）：新增三个原始�
 | `padic_bounded_witt_comparison_importaudit` | 0 | 256.2 | 9,416,428 |
 
 25个公开声明逐名 Checks/Axioms 通过，公理仅为 propext、Classical.choice、Quot.sound，无 sorryAx。Act1Scene1 聚合、Checks/SceneBounds、Axioms/SceneBounds、ImportAudit 均退出0；静态扫描 REACHABLE 935、BAD []，git diff --check 通过。动态边界仅记录代数局部化比较与实例组合诊断；Prologue R5、父义务和四个最终闸门状态不变。
+独立标准 bounded Witt 的 presentation 与 rho value（2026-11-02）：新增三个 p-only 原始证明单元，无参考代码复制。
+
+- `JT-SCENE1-WITT-RHO-PRESENTATION`，`Act1Scene1/WittRhoPresentation.lean`：定义通用 p-power `Presentation`，证明 fraction-field numerator cross identity、presentation quotient independence 和 map-value positive-power identity。共4个公开声明（含结构）。
+- `JT-SCENE1-STANDARD-PADIC-BOUNDED-WITT-EXPANSION`，`Act1Scene1/PadicBoundedWittExpansion.lean`：在独立标准 bounded Witt 局部化中构造 FieldWitt/ambient fraction carrier、inclusion、toAmbient、p-power presentation 及 rho≤1 时有限 numerator value。共11个公开声明；整数系数的 PerfectRing 实例和标准 contracting element 只依赖 p。
+- `JT-SCENE1-STANDARD-PADIC-WITT-RHO-VALUE`，`Act1Scene1/PadicWittRhoValue.lean`：消费标准 expansion 和通用 presentation，定义标准 rho value，证明 presentation independence、inclusion、zero/one/prime normalization、有限性和 zero separation。共12个公开声明；标准值只依赖 p。
+
+本单元验收：WittRhoPresentation 叶退出0（61.8秒，4,111,148 KiB）；PadicBoundedWittExpansion 叶退出0（85.6秒，5,534,872 KiB）；PadicWittRhoValue 叶退出0（84.1秒，5,523,392 KiB）；Act1Scene1 聚合退出0（118.4秒，9,421,080 KiB）；Checks 退出0（133.8秒，9,528,900 KiB）；Axioms 退出0（125.2秒，9,507,312 KiB）；ImportAudit 退出0（113.7秒，9,438,580 KiB）。全部使用热缓存、CPU 0--13、NT10、Lean -j1，stopped=false；26个声明仅依赖 propext、Classical.choice、Quot.sound，无 sorryAx。静态扫描 REACHABLE 938、BAD []，git diff --check 通过。
+
+该单元是独立标准目标 carrier，不关闭 actual→standard rho 比较、论文 B/Fréchet completion、H1e/BK 或15项父义务；Prologue R5和四个最终闸门保持开放。随后 actual bridge 必须遵守每叶16 GiB峰值规则；此前未拆 actual rho bridge 的叶峰值约99.8 GiB，已自然退出且不计为验收通过。

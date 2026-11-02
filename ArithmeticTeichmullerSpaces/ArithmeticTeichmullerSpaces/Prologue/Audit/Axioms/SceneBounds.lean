@@ -379,6 +379,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittCompar
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittPrimeTeichLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittComparison
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittRhoPresentation
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittExpansion
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -4093,3 +4096,35 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittCom
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicBoundedWittComparison.ringEquiv
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicBoundedWittComparison.ringEquiv_algebraMap
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicBoundedWittComparison.ringEquiv_inclusion
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.WittRhoPresentation
+#print axioms JoshiTeich.Act1Scene1.WittRhoPresentation.numerator_cross_eq
+#print axioms JoshiTeich.Act1Scene1.WittRhoPresentation.quotient_independent
+#print axioms JoshiTeich.Act1Scene1.WittRhoPresentation.quotient_map_pow
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittExpansion
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.FieldWitt
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.Ambient
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.wittInclusion
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.wittInclusion_injective
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.ambientInclusion
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.ambientInclusion_injective
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.toAmbient
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.toAmbient_inclusion
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.toAmbient_injective
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.exists_presentation
+#print axioms JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.toAmbient_exists_finite_value
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.Presentation
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.presentation_nonempty
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.presentation
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.presentation_independent
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_eq_of_presentation
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_inclusion
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_zero
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_one
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_prime
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_lt_top
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_eq_zero_iff

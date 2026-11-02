@@ -386,6 +386,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittCompar
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittPrimeTeichLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittComparison
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittRhoPresentation
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittExpansion
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
 
 /-! SceneBounds 家族：日常名称检查。 -/
 
@@ -4304,3 +4307,35 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittCom
 #check JoshiTeich.Act1Scene1.InitialThetaPadicBoundedWittComparison.ringEquiv
 #check JoshiTeich.Act1Scene1.InitialThetaPadicBoundedWittComparison.ringEquiv_algebraMap
 #check JoshiTeich.Act1Scene1.InitialThetaPadicBoundedWittComparison.ringEquiv_inclusion
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.WittRhoPresentation
+#check JoshiTeich.Act1Scene1.WittRhoPresentation.numerator_cross_eq
+#check JoshiTeich.Act1Scene1.WittRhoPresentation.quotient_independent
+#check JoshiTeich.Act1Scene1.WittRhoPresentation.quotient_map_pow
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittExpansion
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.FieldWitt
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.Ambient
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.wittInclusion
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.wittInclusion_injective
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.ambientInclusion
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.ambientInclusion_injective
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.toAmbient
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.toAmbient_inclusion
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.toAmbient_injective
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.exists_presentation
+#check JoshiTeich.Act1Scene1.PadicBoundedWittExpansion.toAmbient_exists_finite_value
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.Presentation
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.presentation_nonempty
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.presentation
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.presentation_independent
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.value
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_eq_of_presentation
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_inclusion
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_zero
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_one
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_prime
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_lt_top
+#check JoshiTeich.Act1Scene1.PadicWittRhoValue.value_eq_zero_iff
