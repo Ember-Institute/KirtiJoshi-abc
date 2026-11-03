@@ -23,7 +23,14 @@ noncomputable section
 variable (p : ℕ) [Fact p.Prime]
 
 local instance coefficientField : Field (PadicTiltField.Carrier p) :=
-  (PadicTiltField.carrierNormedField p).toField
+  FractionRing.field (PadicTiltField.Source p)
+
+private def coefficientInclusion : PadicTiltField.Integers p →+* PadicTiltField.Carrier p where
+  toFun := Subtype.val
+  map_zero' := rfl
+  map_one' := rfl
+  map_add' _ _ := rfl
+  map_mul' _ _ := rfl
 
 local instance integersPerfect : PerfectRing (PadicTiltField.Integers p) p := by
   apply PerfectRing.ofSurjective
@@ -45,12 +52,15 @@ local instance integersPerfect : PerfectRing (PadicTiltField.Integers p) p := by
 abbrev FieldWitt := WittVector p (PadicTiltField.Carrier p)
 abbrev Ambient := FractionRing (FieldWitt p)
 
-def wittInclusion : Ainf p →+* FieldWitt p :=
-  WittVector.map (algebraMap (PadicTiltField.Integers p) (PadicTiltField.Carrier p))
+def wittInclusion :=
+  WittVector.map (p := p) (coefficientInclusion p)
+
+theorem wittInclusion_coeff_norm (a : Ainf p) (n : ℕ) :
+    ‖(wittInclusion p a).coeff n‖ = ‖a.coeff n‖ := rfl
 
 theorem wittInclusion_injective : Function.Injective (wittInclusion p) :=
   WittVector.map_injective _ (show Function.Injective
-    (algebraMap (PadicTiltField.Integers p) (PadicTiltField.Carrier p)) from
+    (coefficientInclusion p) from
       Subtype.val_injective)
 
 def ambientInclusion : Ainf p →+* Ambient p :=
@@ -66,17 +76,17 @@ def toAmbient : PadicBoundedWittLocalization.Ring p →+* Ambient p :=
       intro h
       have hc := congrArg (fun b : FieldWitt p => b.coeff 0) h
       have hz : (contraction p : PadicTiltField.Carrier p) = 0 := by
-        have hc' : algebraMap (PadicTiltField.Integers p) (PadicTiltField.Carrier p)
-            (contraction p) = 0 := by
+        have hc' : coefficientInclusion p (contraction p) = 0 := by
           simpa only [wittInclusion, teich, WittVector.map_teichmuller,
             WittVector.teichmuller_coeff_zero, WittVector.zero_coeff] using hc
-        have hmap : algebraMap (PadicTiltField.Integers p) (PadicTiltField.Carrier p)
-            (contraction p) = (contraction p : PadicTiltField.Carrier p) := rfl
+        have hmap : coefficientInclusion p (contraction p) =
+            (contraction p : PadicTiltField.Carrier p) := rfl
         rw [hmap] at hc'
         exact hc'
       exact contraction_ne_zero p (Subtype.ext hz)
     have hd : wittInclusion p (denominator p) ≠ 0 := by
-      rw [denominator, map_mul, map_natCast]
+      change wittInclusion p ((p : Ainf p) * teich p) ≠ 0
+      rw [map_mul, map_natCast]
       exact mul_ne_zero (WittVector.p_nonzero p _) ht
     exact fun h => hd (IsFractionRing.injective (FieldWitt p) (Ambient p)
       (h.trans (map_zero _).symm)))
@@ -113,7 +123,7 @@ private theorem exists_bounded_presentation (x : PadicBoundedWittLocalization.Ri
   · have he : Expands p y c :=
       expands_teichmuller_mul p r _ _
         (expands_map p
-          (algebraMap (PadicTiltField.Integers p) (PadicTiltField.Carrier p))
+          (coefficientInclusion p)
           a d (expands_digits p a))
     have hd : c = digits p y := digits_unique p y c he
     intro n
@@ -125,8 +135,8 @@ private theorem exists_bounded_presentation (x : PadicBoundedWittLocalization.Ri
   · have he := congrArg (toAmbient p) ha
     have hden : ambientInclusion p (denominator p) =
         (p : Ambient p) * algebraMap (FieldWitt p) (Ambient p) (WittVector.teichmuller p v) := by
-      simp only [denominator, map_mul, map_natCast, ambientInclusion, RingHom.comp_apply,
-        wittInclusion, teich, WittVector.map_teichmuller]
+      simp only [denominator, WittPrimeTeichLocalization.denominator, map_mul, map_natCast,
+        ambientInclusion, RingHom.comp_apply, wittInclusion, WittVector.map_teichmuller]
       rfl
     have hrel : toAmbient p x * ((p : Ambient p) *
         algebraMap (FieldWitt p) (Ambient p) (WittVector.teichmuller p v)) ^ m =

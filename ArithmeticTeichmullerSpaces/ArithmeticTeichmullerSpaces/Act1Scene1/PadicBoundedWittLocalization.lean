@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicTiltField
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittPrimeTeichLocalization
 import Mathlib.RingTheory.WittVector.Teichmuller
 import Mathlib.RingTheory.Localization.Away.Basic
 
@@ -35,10 +36,10 @@ abbrev Ainf := WittVector p (PadicTiltField.Integers p)
 
 def teich : Ainf p := WittVector.teichmuller p (contraction p)
 
-def denominator : Ainf p := (p : Ainf p) * teich p
+abbrev denominator := WittPrimeTeichLocalization.denominator p (contraction p)
 
 /-- The algebraic localization that inverts p and the chosen Teichmuller lift. -/
-abbrev Ring := Localization.Away (denominator p)
+abbrev Ring := WittPrimeTeichLocalization.Ring p (contraction p)
 
 def inclusion : Ainf p →+* Ring p := algebraMap _ _
 

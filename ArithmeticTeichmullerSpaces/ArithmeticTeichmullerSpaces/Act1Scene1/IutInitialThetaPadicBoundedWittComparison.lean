@@ -2,6 +2,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicTiltWittCompar
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittLocalizationChoice
 import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittPrimeTeichLocalization
+import ArithmeticTeichmullerSpaces.Act1Scene1.WittMappedLocalizationComparisonData
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBoundedWittExpansion
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittExpansion
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-COMPARISON
@@ -21,6 +24,7 @@ Scene1/Derived; Prologue R5 unchanged.
 namespace JoshiTeich.Act1Scene1.InitialThetaPadicBoundedWittComparison
 
 open JoshiTeich.Prologue
+open scoped ENNReal
 noncomputable section
 
 private theorem inverse_ne_zero {R S : Type*} [CommRing R] [CommRing S]
@@ -38,6 +42,20 @@ private theorem inverse_norm_lt_one {R S : Type*} [CommRing R] [CommRing S]
   rw [← hn (e.symm s), e.apply_symm_apply]
   exact pow_lt_one₀ hs0 hs1 hd.ne'
 
+private theorem inverse_norm_power {R S : Type*} [CommRing R] [CommRing S]
+    [Norm R] [Norm S] (e : R ≃+* S) (d : ℕ)
+    (hn : ∀ x, ‖e x‖ ^ d = ‖x‖) (s : S) :
+    ‖s‖ ^ d = ‖e.symm s‖ := by
+  simpa only [e.apply_symm_apply] using hn (e.symm s)
+
+private theorem inverse_radius_power {R S : Type*} [CommRing R] [CommRing S]
+    [Norm R] [Norm S] (e : R ≃+* S) (d : ℕ)
+    (hn : ∀ x, ‖e x‖ ^ d = ‖x‖) (s : S) (hs : 0 ≤ ‖s‖)
+    (ρ : ℝ≥0∞) :
+    (ρ * ENNReal.ofReal ‖s‖) ^ d =
+      ρ ^ d * ENNReal.ofReal ‖e.symm s‖ := by
+  rw [mul_pow, ← ENNReal.ofReal_pow hs d, inverse_norm_power e d hn s]
+
 universe u
 variable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}
 variable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}
@@ -51,9 +69,6 @@ local instance selectedPrime : Fact (Arithmetic.residueChar w.1).Prime :=
 def integerEquiv : InitialThetaTiltIntegers.Integers D w ≃+*
     PadicTiltField.Integers (Arithmetic.residueChar w.1) :=
   InitialThetaPadicTiltTopology.integerEquiv D w
-
-def integerWittEquiv := WittRingEquiv.mapEquiv (Arithmetic.residueChar w.1)
-  (integerEquiv D w)
 
 /-- The independent standard contraction transported to the actual tilt integers. -/
 def contraction :=
@@ -82,6 +97,13 @@ def contraction_norm_lt_one :=
     (norm_nonneg _)
     (PadicBoundedWittLocalization.contraction_norm_lt_one (Arithmetic.residueChar w.1))
 
+private def contractionRadiusTransfer := inverse_radius_power (integerEquiv D w)
+
+def contraction_radius_pow :=
+  contractionRadiusTransfer D w (Arithmetic.localDeg w.1) (integerNormPower D w)
+    (PadicBoundedWittLocalization.contraction (Arithmetic.residueChar w.1))
+    (norm_nonneg _)
+
 end InferredProofs
 
 /-- Change the contraction while fixing the original actual Ainf. -/
@@ -89,12 +111,49 @@ def choiceEquiv :=
   InitialThetaWittLocalizationChoice.choiceEquiv D w (contraction D w)
     (contraction_ne_zero D w) (contraction_norm_lt_one D w)
 
-/-- Transport the localization using the original integer-ring equivalence. -/
-def choiceStandardEquiv :=
-  WittPrimeTeichLocalization.equiv (Arithmetic.residueChar w.1)
-    (integerEquiv D w) (contraction D w)
+def integerWittEquiv := WittRingEquiv.mapEquiv (Arithmetic.residueChar w.1)
+  (integerEquiv D w)
+
+/-- The integral Witt map with its original input and output carriers fixed. -/
+def integerWittFun (a : InitialThetaTiltFontaine.Ainf D w) :
+    PadicBoundedWittLocalization.Ainf (Arithmetic.residueChar w.1) :=
+  (integerWittEquiv D w).toEquiv.toFun a
+
+private def choiceObserverTransfer :=
+  WittMappedLocalizationComparisonData.ofNormEquivWithObservers (Arithmetic.residueChar w.1)
+    (fun a n => ‖(InitialThetaBoundedWittExpansion.wittInclusion D w a).coeff n‖)
+    (fun a n => ‖(PadicBoundedWittExpansion.wittInclusion (Arithmetic.residueChar w.1) a).coeff n‖)
+    (InitialThetaBoundedWittExpansion.wittInclusion_coeff_norm D w)
+    (PadicBoundedWittExpansion.wittInclusion_coeff_norm (Arithmetic.residueChar w.1))
+
+private def choiceNormTransfer := choiceObserverTransfer D w (integerEquiv D w)
+
+/-- Construct the maps and their coefficient norm laws in one carrier. -/
+def choicePresentationData :=
+  choiceNormTransfer D w (contraction D w)
     (PadicBoundedWittLocalization.contraction (Arithmetic.residueChar w.1))
     ((integerEquiv D w).apply_symm_apply _)
+    (Arithmetic.localDeg w.1) (integerNormPower D w)
+
+
+/-- Transport the localization using the map saved with its presentation laws. -/
+def choiceStandardEquiv := (choicePresentationData D w).locEquiv
+
+/-- Expose the localization map on the two original bounded carriers. -/
+def choiceStandardFun
+    (x : InitialThetaWittLocalizationChoice.ChoiceRing D w (contraction D w)) :
+    PadicBoundedWittLocalization.Ring (Arithmetic.residueChar w.1) :=
+  choiceStandardEquiv D w x
+
+set_option linter.defProp false in
+def choiceStandardEquiv_presentation := (choicePresentationData D w).on_presentation
+
+theorem choiceStandardEquiv_algebraMap
+    (x : InitialThetaTiltFontaine.Ainf D w) :
+    choiceStandardEquiv D w (algebraMap _ _ x) =
+      PadicBoundedWittLocalization.inclusion (Arithmetic.residueChar w.1)
+        (integerWittEquiv D w x) :=
+  (choicePresentationData D w).on_algebraMap x
 
 /-- The actual bounded Witt ring is equivalent to the independent standard ring. -/
 def ringEquiv :=
@@ -107,10 +166,7 @@ theorem ringEquiv_algebraMap
   change choiceStandardEquiv D w
     ((choiceEquiv D w).symm (algebraMap _ _ x)) = _
   rw [(choiceEquiv D w).symm.commutes]
-  exact WittPrimeTeichLocalization.equiv_algebraMap (Arithmetic.residueChar w.1)
-    (integerEquiv D w) (contraction D w)
-    (PadicBoundedWittLocalization.contraction (Arithmetic.residueChar w.1))
-    ((integerEquiv D w).apply_symm_apply _) x
+  exact choiceStandardEquiv_algebraMap D w x
 
 theorem ringEquiv_inclusion
     (x : InitialThetaTiltFontaine.Ainf D w) :

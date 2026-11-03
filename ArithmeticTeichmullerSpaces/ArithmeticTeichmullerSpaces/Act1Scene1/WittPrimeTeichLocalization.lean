@@ -44,5 +44,18 @@ theorem equiv_algebraMap (e : R ≃+* S) (r : R) (s : S) (h : e r = s)
       algebraMap _ (Ring p s) (WittRingEquiv.mapEquiv p e x) := by
   simp only [equiv, IsLocalization.ringEquivOfRingEquiv_eq]
 
+theorem equiv_presentation (e : R ≃+* S) (r : R) (s : S) (h : e r = s)
+    (x : Ring p r) (m : ℕ) (a : WittVector p R)
+    (hx : x * algebraMap _ (Ring p r) (denominator p r) ^ m =
+      algebraMap _ (Ring p r) a) :
+    equiv p e r s h x * algebraMap _ (Ring p s) (denominator p s) ^ m =
+      algebraMap _ (Ring p s) (WittRingEquiv.mapEquiv p e a) := by
+  have hmap := congrArg (equiv p e r s h) hx
+  rw [map_mul, map_pow,
+    equiv_algebraMap p e r s h (denominator p r),
+    map_denominator p e r s h,
+    equiv_algebraMap p e r s h a] at hmap
+  exact hmap
+
 end
 end JoshiTeich.Act1Scene1.WittPrimeTeichLocalization

@@ -60,5 +60,13 @@ theorem quotient_map_pow {R S : Type*}
       ((pow_mul ρ m d).symm.trans
         ((congrArg (fun n : ℕ => ρ ^ n) (Nat.mul_comm m d)).trans (pow_mul ρ d m)))
 
+theorem quotient_pow_of_power (a b r s : ℝ≥0∞) (d m : ℕ)
+    (ha : a ^ d = b) (hr : r ^ d = s) :
+    (a / r ^ m) ^ d = b / s ^ m := by
+  simpa only [hr] using
+    (quotient_map_pow (fun _ : Unit => b) (fun _ : Unit => a) id d
+      (fun _ => ha) r m ())
+
+
 end
 end JoshiTeich.Act1Scene1.WittRhoPresentation

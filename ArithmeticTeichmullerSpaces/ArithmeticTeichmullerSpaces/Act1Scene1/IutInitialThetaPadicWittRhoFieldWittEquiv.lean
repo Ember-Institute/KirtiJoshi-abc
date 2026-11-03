@@ -2,10 +2,11 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittCoefficien
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-FIELD-WITT-EQUIV
-source: the proved actual-to-standard initial theta padic tilt Witt
-comparison.
-fidelity: exposes the induced equivalence between the two Witt fraction
-fields. Original proof; Scene1/Derived; Prologue R5 unchanged.
+source: Joshi II `se:ff-rings` and the proved actual-to-standard tilt
+ring equivalence.
+fidelity: applies the original coefficient ring equivalence to the two
+Witt rings over the coefficient fields, with the original field instances
+fixed explicitly. Original proof; Scene1/Derived; Prologue R5 unchanged.
 -/
 
 namespace JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison
@@ -22,8 +23,15 @@ variable (w : (iutInitialThetaTateParameterData D).places)
 local instance selectedPrime : Fact (Arithmetic.residueChar w.1).Prime :=
   ⟨Arithmetic.residueChar_prime w.1⟩
 
+local instance actualCoefficientField : Field (InitialThetaTiltField.Carrier D w) :=
+  InitialThetaTiltField.carrierField D w
+
+local instance standardCoefficientField : Field (PadicTiltField.Carrier (Arithmetic.residueChar w.1)) :=
+  FractionRing.field (PadicTiltField.Source (Arithmetic.residueChar w.1))
+
 def fieldWittEquiv :=
-  (InitialThetaPadicWittCoefficientSquare.comparisonData D w).fieldEquiv
+  WittRingEquiv.mapEquiv (Arithmetic.residueChar w.1)
+    (InitialThetaPadicTiltTopology.ringEquiv D w)
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison

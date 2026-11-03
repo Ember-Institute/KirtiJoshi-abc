@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoFieldWittEquiv
+import ArithmeticTeichmullerSpaces.Act1Scene1.FractionRingEquiv
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-AMBIENT-EQUIV
@@ -22,7 +23,12 @@ local instance selectedPrimeAmbientEquiv : Fact (Arithmetic.residueChar w.1).Pri
   ⟨Arithmetic.residueChar_prime w.1⟩
 
 def ambientEquiv :=
-  (InitialThetaPadicWittCoefficientSquare.comparisonData D w).ambientEquiv
+  JoshiTeich.Act1Scene1.fractionRingEquiv
+    (fieldWittEquiv D w)
+
+set_option linter.defProp false in
+def ambientEquiv_algebraMap :=
+  JoshiTeich.Act1Scene1.fractionRingEquiv_algebraMap (fieldWittEquiv D w)
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison

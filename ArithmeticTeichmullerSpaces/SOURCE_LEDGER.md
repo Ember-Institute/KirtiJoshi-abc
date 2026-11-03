@@ -7169,3 +7169,122 @@ propext、Classical.choice、Quot.sound，无 sorryAx。Scene1、Checks、Axioms
 | `rho_carrier_checks` | 0 | 145.0 | 9,532,508 |
 | `rho_carrier_axioms` | 0 | 125.7 | 9,510,844 |
 | `rho_carrier_importaudit` | 0 | 134.5 | 9,418,180 |
+
+实际 bounded Witt 的 rho value 幂比较（2026-11-04）：本轮覆盖24个有消费者的源文件。
+下列路径均相对于 `ArithmeticTeichmullerSpaces/`；只登记最终依赖链中的实现，
+不把仓库中没有消费者的 ambient/presentation 历史试验计入本单元。
+
+来源对应 Joshi II `se:ff-rings` 中的 Witt/Teichmuller 加权值及代数局部化，
+并消费项目中已经证明的 actual/standard tilt 整数环比较和原 local-degree 范数幂律。
+本轮为原始证明和接口整理，没有复制参考工程实现。
+
+新增来源单元及主要公共声明：
+
+| source-id | 文件 | 主要公共声明与作用 |
+| --- | --- | --- |
+| `JT-SCENE1-WITT-MAPPED-LOCALIZATION-COMPARISON-DATA` | `Act1Scene1/WittMappedLocalizationComparisonData.lean` | `Data` 及 `locEquiv`、`on_algebraMap`、`on_presentation`；`NormData` 及 `toData`、`coeff_norm_pow`；`ofNormEquivWithObservers`。在同一数据构造中保存局部化等价、呈现公式和同一 Witt 函数的系数范数幂律。 |
+| `JT-SCENE1-WITT-WEIGHTED-COEFFICIENT-POWER` | `Act1Scene1/WittWeightedCoefficientPower.lean` | `digits_norm_power`、`value_pow_of_coeff_norm`、`value_pow_of_coeff_norm_function`。从逐系数范数幂等式推出 weighted digits/value 的半径变换。 |
+| `JT-SCENE1-INITIAL-THETA-WITT-RHO-LOCALIZATION-PRESENTATION` | `Act1Scene1/IutInitialThetaWittRhoLocalizationPresentation.lean` | `InitialThetaWittRhoValue.value_eq_of_choice_presentation`、`PadicWittRhoValue.value_eq_of_away_presentation`。将两侧既有 rho value 写成 Away 呈现的分子值除以分母值幂。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-COEFFICIENT-NORM` | `Act1Scene1/IutInitialThetaPadicWittRhoCoefficientNorm.lean` | `coefficient_inclusion_norm_pow`，读取 actual/standard 原始包含映射的逐系数范数幂律。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-NUMERATOR` | `Act1Scene1/IutInitialThetaPadicWittRhoNumerator.lean` | `numerator_value_pow`，把系数范数律应用到原 field-Witt 分子。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-DENOMINATOR-POWER` | `Act1Scene1/IutInitialThetaPadicWittRhoDenominatorPower.lean` | `denominator_value_pow`，由原收缩元范数律比较两侧分母半径。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-QUOTIENT-VALUE` | `Act1Scene1/IutInitialThetaPadicWittRhoQuotientValue.lean` | `quotient_value_pow`，在标量层合并分子与分母的幂比较。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-ACTUAL-VALUE-PRESENTATION` | `Act1Scene1/IutInitialThetaPadicWittRhoActualValuePresentation.lean` | `actualChoiceQuotient` 保存原 actual quotient；`actual_choice_value_presentation` 将原 actual value 的呈现公式专门化到用于比较的 choice carrier，返回该命名 quotient。 |
+| `JT-SCENE1-PADIC-WITT-RHO-AWAY-QUOTIENT` | `Act1Scene1/PadicWittRhoAwayQuotient.lean` | `PadicWittRhoValue.awayQuotient`、`PadicWittRhoValue.value_eq_awayQuotient`。在独立标准整数 Witt carrier 上保存原 quotient 及其呈现值公式，参数只有 p 和 Fact p.Prime，保留原 Field/NormedField 实例。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-STANDARD-VALUE-PRESENTATION` | `Act1Scene1/IutInitialThetaPadicWittRhoStandardValuePresentation.lean` | `standard_choice_value_presentation`，给出同一呈现经裸函数 choiceStandardFun 输送后的标准值公式，返回 `awayQuotient`，整数 Witt 映射使用显式载体的 `integerWittFun`。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-QUOTIENT-COMPARISON` | `Act1Scene1/IutInitialThetaPadicWittRhoQuotientComparison.lean` | `choice_quotient_value_pow`，把已证明的 `quotient_value_pow` 导出为 `awayQuotient` 与 `actualChoiceQuotient` 的幂比较，使用原整数 Witt 映射 `integerWittFun`。 |
+| `JT-SCENE1-WITT-VALUE-PRESENTATION-COMPARISON` | `Act1Scene1/WittValuePresentationComparison.lean` | `of_presentation`，以裸函数 `toActual`、`fromActual`、`toStandard` 和右逆等式 `toActual (fromActual y) = y` 为接口；消费呈现存在性、两侧值公式和商幂律，得到整个 carrier 上的值比较函数。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-VALUE-INTERFACE` | `Act1Scene1/IutInitialThetaPadicWittRhoValueInterface.lean` | theorem `presentation_value_transfer`，固定现有 toCanonical/fromCanonical、显式载体的 choiceStandardFun、原 value 函数、呈现关系及其存在性；右逆由既有 choiceEquiv 提供。actual/standard 两个商函数仍是参数，两个呈现 law 与 quotient power law 均为显式参数；接口是 theorem，不是返回证明函数的 def。该叶单独验证此前触发超时的专门化，不增加最终数学假设。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-VALUE-TRANSFER` | `Act1Scene1/IutInitialThetaPadicWittRhoValueTransfer.lean` | `value_pow_function`，将 `presentation_value_transfer` 的两个商函数及其法律专门化；实际呈现、标准呈现及商幂律均由前述声明提供。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-VALUE-POW` | `Act1Scene1/IutInitialThetaPadicWittRhoValuePow.lean` | `value_pow`，以原 `ringEquiv` 为比较映射，导出 rho value 的 local-degree 幂等式。 |
+
+除表中明确列出的 namespace 外，具体比较声明位于
+`JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison`；两个泛型 value 单元和
+`WittMappedLocalizationComparisonData` 分别使用与文件同名的 namespace。
+
+既有九个来源单元的接口改动：
+
+| 既有 source-id | 文件 | 本轮改动 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-EXPANSION` | `Act1Scene1/IutInitialThetaBoundedWittExpansion.lean` | 把整数环到原 tilt field 的包含函数明确写为 `Subtype.val` 环同态，`wittInclusion` 仍是该包含的 Witt 映射；增加 `wittInclusion_coeff_norm`。系数 Field 实例显式使用原 `carrierField`。 |
+| `JT-SCENE1-STANDARD-PADIC-BOUNDED-WITT-EXPANSION` | `Act1Scene1/PadicBoundedWittExpansion.lean` | 同样明确原 subtype 包含和 `wittInclusion_coeff_norm`；Field 实例显式使用原分式环的 `FractionRing.field`，其余展开/呈现证明跟随接口调整。 |
+| `JT-SCENE1-STANDARD-PADIC-BOUNDED-WITT` | `Act1Scene1/PadicBoundedWittLocalization.lean` | `denominator`、`Ring` 复用 `WittPrimeTeichLocalization` 的同一 p·[contraction] 分母和 Away 局部化接口。独立标准收缩元的选择及非零、收缩法律保持 p-only。 |
+| `JT-SCENE1-WITT-PRIME-TEICH-LOCALIZATION` | `Act1Scene1/WittPrimeTeichLocalization.lean` | 增加 `equiv_presentation`，由既有等价和分母像公式输送 Away 呈现关系。 |
+| `JT-SCENE1-WITT-RHO-PRESENTATION` | `Act1Scene1/WittRhoPresentation.lean` | 增加纯 ENNReal 标量引理 `quotient_pow_of_power`。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-COMPARISON` | `Act1Scene1/IutInitialThetaPadicBoundedWittComparison.lean` | 增加 `contraction_radius_pow`、`choicePresentationData`、`choiceStandardEquiv_presentation`、`choiceStandardEquiv_algebraMap`；将 choiceStandardEquiv 与其系数/呈现法律组织在同一已构造数据中。增加 `choiceStandardFun`，把既有 choiceStandardEquiv 的函数部分保存为显式 `ChoiceRing D w (contraction D w) → PadicBoundedWittLocalization.Ring (Arithmetic.residueChar w.1)` 接口；增加 `integerWittFun : InitialThetaTiltFontaine.Ainf D w → PadicBoundedWittLocalization.Ainf (Arithmetic.residueChar w.1)`，保存原 integerWittEquiv 的函数部分。沿用原 choiceEquiv 到标准局部化的复合形式 `ringEquiv`，保留原公开包含公式。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-COEFFICIENT-SQUARE` | `Act1Scene1/IutInitialThetaPadicWittCoefficientSquare.lean` | 显式绑定 actual/standard 原系数 Field 实例，保持原系数函数与 comparisonData 输入。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-FIELD-WITT-EQUIV` | `Act1Scene1/IutInitialThetaPadicWittRhoFieldWittEquiv.lean` | 显式绑定原 Field 实例，并以已有 `WittRingEquiv.mapEquiv` 和原 tilt ringEquiv 构造 fieldWittEquiv。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-AMBIENT-EQUIV` | `Act1Scene1/IutInitialThetaPadicWittRhoAmbientEquiv.lean` | 用已有 fractionRingEquiv 从 fieldWittEquiv 构造 ambientEquiv，并导出 `ambientEquiv_algebraMap`。 |
+
+数学边界：原 actual/standard 系数载体、原 norm、Witt 加权值函数和实际 bounded ring
+均保留；没有通过替换范数或以 D 依赖的实际收缩元像重新定义独立标准对象。
+标准 `PadicBoundedWittLocalization.contraction p` 仍只由 p 和 `Fact p.Prime` 决定，
+实际收缩元仍由已有 integerEquiv 拉回该标准收缩元。最终比较使用现有
+`InitialThetaPadicBoundedWittComparison.ringEquiv D w`，没有新增数学假设、来源法律
+或外部比较 certificate。泛型声明中的显式比较条件，在 actual 专门化中均由已有
+原始 norm 法律和本单元呈现引理构造；`choicePresentationData` 是这些证明的输出。
+裸函数接口只保存既有映射；其右逆等式来自既有 choiceEquiv，不增加新的数学输入。
+
+工程诊断边界：保留抽象商参数的 partial 专门化仍触发 kernel timeout，
+因此现有证据不能把该超时归因于具体 quotient 表达式。
+最终实现将泛型等价对象接口改为裸函数及右逆等式，保存原生载体的整数 Witt 与局部化函数，
+并在上游固定两侧 quotient。随后命名 quotient 幂律、完整 transfer 与原始 value_pow 均在默认
+heartbeat 下通过。单纯的标量 wrapper、具体 calc、proof-valued partial 及一次性 theorem
+专门化没有消除旧内核超时；最终成功来自把函数和实例转换分担到各自上游叶。
+
+最终目标为：令 `p = Arithmetic.residueChar w.1`、`d = Arithmetic.localDeg w.1`，
+对 `ρ ≠ 0`、`ρ ≠ ⊤` 和原 actual bounded ring 的任意 x，
+
+```text
+PadicWittRhoValue.value p ρ (ringEquiv D w x) ^ d
+  = InitialThetaWittRhoValue.value D w (ρ ^ d) x.
+```
+
+除原有 AG/TG、D、w、ρ、x 及两个半径条件外，最终接口不要求用户提供额外比较数据。
+这是代数局部化上的 rho value 比较；不据此宣称 Fréchet completion、论文 B、H1e/BK
+或跨来源体积比较已经完成。Prologue R5、15项父义务和四个最终闸门不变。
+
+最终验收（2026-11-04）：本单元33个新增公开声明及新增结构字段均逐名登记 Checks/Axioms，
+每项在两入口各出现一次。Axioms/SceneBounds 输出3585项声明的公理清单，全部仅含
+propext、Classical.choice、Quot.sound，无 sorryAx；最终 value_pow 的签名没有额外比较输入。
+Scene1 聚合、Checks、Axioms、ImportAudit 全部退出0。四入口联合静态图 REACHABLE 1001，
+BAD_IMPORTS []、proof_holes []、missing_files []；24个本单元源文件均有唯一 source-id
+和本段登记。git diff --check 通过。15项父义务仍开放，G1–G4 关闭数仍为0/4。
+
+以下为24个源文件的成功叶记录、必要 field-Witt 消费者及四个最终入口；所有运行均为
+CPU 0–13、LEAN_NUM_THREADS=14、Lean -j1、热缓存、默认 heartbeat，按0.5秒采样进程组
+RSS，15 GiB 为监控停止线，均未触发停止。所列峰值全部低于16 GiB。其余失败、语法/
+类型诊断及人工停止原因一并保存在 docs/Scene1Witt比较内存.jsonl；无界历史诊断不作为
+单叶资源验收。源码清理删除了5项无消费者辅助声明，未删除最终证明所需链条。
+
+| 运行 | 退出码 | 秒 | 峰值 RSS KiB |
+| --- | --- | --- | --- |
+| `actual_inclusion_coefficient_norm` | 0 | 168.1 | 9,130,752 |
+| `final_bounded_comparison` | 0 | 153.3 | 9,120,716 |
+| `comparison_data_raw_instances` | 0 | 133.9 | 9,103,072 |
+| `actual_presentation_cached_quotient` | 0 | 158.7 | 9,097,500 |
+| `final_fraction_ambient_equiv` | 0 | 143.2 | 9,085,832 |
+| `coefficient_norm_observer_projection` | 0 | 144.2 | 9,094,516 |
+| `observer_final_denominator_power` | 0 | 148.8 | 9,092,852 |
+| `final_direct_field_witt_equiv` | 0 | 152.2 | 9,091,968 |
+| `numerator_observer_value_function` | 0 | 142.9 | 9,102,332 |
+| `named_choice_quotient_power` | 0 | 134.8 | 9,098,080 |
+| `rho_quotient_value_microleaf` | 0 | 137.3 | 9,096,292 |
+| `final_standard_value_presentation` | 0 | 143.7 | 9,105,492 |
+| `opaque_native_value_transfer_retry` | 0 | 129.2 | 9,105,428 |
+| `final_named_value_pow` | 0 | 136.3 | 9,098,108 |
+| `cached_quotient_whole_value_transfer` | 0 | 145.9 | 9,068,656 |
+| `final_localization_presentations` | 0 | 154.8 | 9,143,512 |
+| `standard_inclusion_coefficient_norm` | 0 | 83.3 | 5,537,836 |
+| `standard_localization_current` | 0 | 91.6 | 5,505,968 |
+| `standard_p_only_away_quotient` | 0 | 142.4 | 9,091,916 |
+| `final_mapped_localization_data` | 0 | 71.8 | 4,224,244 |
+| `generic_equiv_presentation` | 0 | 56.1 | 4,140,476 |
+| `final_scalar_quotient_power` | 0 | 70.7 | 4,158,116 |
+| `generic_presentation_bare_inverse_value` | 0 | 56.5 | 3,300,272 |
+| `generic_coefficient_value_function` | 0 | 77.6 | 4,506,444 |
+| `final_field_witt_inclusion` | 0 | 143.2 | 9,085,940 |
+| `rho_value_final_scene1` | 0 | 150.2 | 9,435,400 |
+| `rho_value_final_checks` | 0 | 160.5 | 9,538,512 |
+| `rho_value_final_axioms` | 0 | 149.4 | 9,516,688 |
+| `rho_value_final_importaudit` | 0 | 142.8 | 9,435,152 |

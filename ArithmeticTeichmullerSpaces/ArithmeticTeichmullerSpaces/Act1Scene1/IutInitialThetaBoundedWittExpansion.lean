@@ -28,15 +28,30 @@ variable (w : (iutInitialThetaTateParameterData D).places)
 local instance selectedPrime : Fact (Arithmetic.residueChar w.1).Prime :=
   ⟨Arithmetic.residueChar_prime w.1⟩
 
+local instance coefficientField : Field (InitialThetaTiltField.Carrier D w) :=
+  InitialThetaTiltField.carrierField D w
+
+private def coefficientInclusion :
+    InitialThetaTiltIntegers.Integers D w →+* InitialThetaTiltField.Carrier D w where
+  toFun := Subtype.val
+  map_zero' := rfl
+  map_one' := rfl
+  map_add' _ _ := rfl
+  map_mul' _ _ := rfl
+
 abbrev FieldWitt := WittVector (Arithmetic.residueChar w.1) (InitialThetaTiltField.Carrier D w)
 abbrev Ambient := FractionRing (FieldWitt D w)
 
-def wittInclusion : Ainf D w →+* FieldWitt D w :=
-  WittVector.map (algebraMap (InitialThetaTiltIntegers.Integers D w) (InitialThetaTiltField.Carrier D w))
+def wittInclusion :=
+  WittVector.map (p := Arithmetic.residueChar w.1)
+    (coefficientInclusion D w)
+
+theorem wittInclusion_coeff_norm (a : Ainf D w) (n : ℕ) :
+    ‖(wittInclusion D w a).coeff n‖ = ‖a.coeff n‖ := rfl
 
 theorem wittInclusion_injective : Function.Injective (wittInclusion D w) :=
   WittVector.map_injective _ (show Function.Injective
-    (algebraMap (InitialThetaTiltIntegers.Integers D w) (InitialThetaTiltField.Carrier D w)) from
+    (coefficientInclusion D w) from
       Subtype.val_injective)
 
 def ambientInclusion : Ainf D w →+* Ambient D w :=
@@ -93,7 +108,7 @@ theorem hasBoundedExpansion (x : InitialThetaBoundedWittLocalization.Ring D w) :
         (d n).property)
   · exact expands_teichmuller_mul (Arithmetic.residueChar w.1) r _ _
       (expands_map (Arithmetic.residueChar w.1)
-        (algebraMap (InitialThetaTiltIntegers.Integers D w) (InitialThetaTiltField.Carrier D w))
+        (coefficientInclusion D w)
         a d (expands_digits _ a))
   · have he := congrArg (toAmbient D w) ha
     have hden : ambientInclusion D w (denominator D w) =

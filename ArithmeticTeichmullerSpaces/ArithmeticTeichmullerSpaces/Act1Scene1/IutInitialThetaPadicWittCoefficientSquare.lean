@@ -25,6 +25,12 @@ variable (w : (iutInitialThetaTateParameterData D).places)
 local instance selectedPrimeSquare : Fact (Arithmetic.residueChar w.1).Prime :=
   ⟨Arithmetic.residueChar_prime w.1⟩
 
+local instance actualCoefficientField : Field (InitialThetaTiltField.Carrier D w) :=
+  InitialThetaTiltField.carrierField D w
+
+local instance standardCoefficientField : Field (PadicTiltField.Carrier (Arithmetic.residueChar w.1)) :=
+  FractionRing.field (PadicTiltField.Source (Arithmetic.residueChar w.1))
+
 set_option linter.defProp false
 
 def coeff := WittCoefficientSquare.coeff (Arithmetic.residueChar w.1)

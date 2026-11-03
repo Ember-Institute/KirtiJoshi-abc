@@ -730,5 +730,6 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PadicBoundedWittLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittComparison
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoFieldWittInclusion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoAmbientEquiv
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoValuePow
 
 /-! Public Scene1 input boundary, target specification, and analytic bridge. -/
