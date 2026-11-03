@@ -7288,3 +7288,51 @@ RSS，15 GiB 为监控停止线，均未触发停止。所列峰值全部低于1
 | `rho_value_final_checks` | 0 | 160.5 | 9,538,512 |
 | `rho_value_final_axioms` | 0 | 149.4 | 9,516,688 |
 | `rho_value_final_importaudit` | 0 | 142.8 | 9,435,152 |
+
+独立标准 rho 环范数与单半径 completion 比较（2026-11-04）：沿 Joshi II `se:ff-rings`
+中固定 F=C_p^flat 的加权 Witt 值构造，仅在标准 p-only carrier 上定义范数和 completion；
+再消费既有 actual/standard rho 幂律进行比较。没有复制参考工程代码。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RHO-RING-LAWS` | `Act1Scene1/PadicWittRhoRingLaws.lean` | 在原 `PadicWittRhoValue` namespace 中，以通用 Witt carry、乘法及负号法律和原 p-power presentation 证明 `fieldWitt_value_add_le_max`、`value_add_le_max`、`fieldWitt_value_mul_le`、`value_mul_le`、`value_neg`；适用范围 rho 非零且 rho≤1。仅使用 p。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RHO-RING-NORM` | `Act1Scene1/PadicWittRhoNorm.lean` | 定义原 ENNReal value 的 `realValue`，证明非负、零/一、负号、零分离、超度量加法及次乘法性，构造 `ringNorm`，并证明其一、素数校准和 `ringNorm_isNonarchimedean`。范数仅依赖 p，未按 actual 数据重新定义标准范数。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RHO-COMPLETION` | `Act1Scene1/PadicWittRhoCompletion.lean` | 对 rho∈(0,1) 定义独立 `Source`、原 `RingNorm` 产生的范数环及 `Completed`；`sourceEquiv` 与 `inclusion` 固定原 bounded ring，证明 inclusion 单射、稠密、保范数及素数值。命名 ring/norm/complete 实例只使用 p 和 rho。 |
+| `JT-SCENE1-NORM-POWER-RING-EQUIV` | `Act1Scene1/NormPowerRingEquiv.lean` | 一般范数环上，由给定环等价的正整数范数幂律证明双向 `UniformContinuous`，构造 `completedRingEquiv`、双向连续、原环 coe 相容、完成上的幂律和 `completedHomeomorph`。这是通用幂律与 Mathlib completion 的原始证明，具体消费者提供已经证明的 norm law。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-REAL-VALUE` | `Act1Scene1/IutInitialThetaPadicWittRhoRealValue.lean` | `realValue_pow` 只对原 `value_pow` 应用 ENNReal.toReal，保留原 actual norm、独立标准 norm 和原 bounded `ringEquiv`；没有新增比较证书或范数假设。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-COMPLETION-SOURCE` | `Act1Scene1/IutInitialThetaPadicWittRhoCompletionSource.lean` | `actualRadius` 取标准 rho 的 localDeg 次幂；保存原 bounded 环等价的正向、逆向函数及互逆/加法/乘法法律，构造原两侧 source 的 `sourceRingEquiv`；`source_norm_pow` 直接消费既有 realValue_pow。载体、范数与原环映射均保持原定义。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-COMPLETION-COMPARISON` | `Act1Scene1/IutInitialThetaPadicWittRhoCompletionComparison.lean` | `source_uniformContinuous` 与逆向一致连续由原 source 幂律推出。给出`completedRingEquiv`、双向连续、`completedRingEquiv_coe`、`completedRingEquiv_norm_pow` 和完成空间的 homeomorphism。 |
+
+来源同时对应 Joshi II `pr:teichmuller-lift-A/B` 的 rho 范数族与完备化；项目内复用原
+actual rho-norm/completion 证明模式，标准实现没有 actual InitialThetaData 参数。
+`NormPowerRingEquiv` 中的幂律前提由 `realValue_pow` 消除，最终具体比较接口只含
+原有 AG/TG、D、w、rho 与元素参数。比较方向为 actual 完成半径 rho^d 到标准完成半径 rho，
+其中 d=localDeg(w)>0，完成上的精确结论为 `‖e(x)‖^d = ‖x‖`；不宣称为等距同构。
+Source coe 相容使用原 `InitialThetaPadicBoundedWittComparison.ringEquiv`；原 bounded inclusion 到两侧 completion 的具体目标仍 deferred。
+
+本单元只连接独立标准单半径 completion；全半径重参数化与 Frechet completion、论文 B
+身份、标量/Galois/period/BK 比较仍是后续目标。Prologue R5、15项父义务与G1–G4状态不变。
+
+本单元资源验收（2026-11-04）：下表所列运行均退出码0、无停止原因，使用 CPU 0–13、
+`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存、默认 heartbeat 和 0.5 秒进程组 RSS 采样；
+15 GiB 是监控停止线，所有成功峰值低于16 GiB。失败与诊断记录仍保留在 JSONL，不计入表。
+
+| 运行 | 秒 | 峰值 RSS KiB |
+| --- | ---: | ---: |
+| `standard_rho_ring_laws_named_instance` | 71.1 | 5,527,112 |
+| `standard_rho_ring_norm` | 74.3 | 5,523,004 |
+| `standard_rho_single_radius_completion` | 80.2 | 5,518,172 |
+| `generic_norm_power_completion` | 56.0 | 4,127,724 |
+| `actual_standard_rho_real_value` | 129.6 | 9,098,656 |
+| `completion_source_after_deferred_inclusion` | 148.4 | 9,113,240 |
+| `completion_equiv_coe_ringhom_final` | 134.8 | 9,109,084 |
+| `rho_completion_scene1_final_retry` | 138.5 | 9,435,524 |
+| `rho_completion_checks_final` | 168.9 | 9,545,832 |
+| `rho_completion_axioms_final` | 159.8 | 9,524,008 |
+| `rho_completion_importaudit_final` | 133.9 | 9,437,084 |
+
+
+四个入口最终运行全部退出0：Scene1 聚合 `rho_completion_scene1_final_retry`、Checks
+`rho_completion_checks_final`、Axioms `rho_completion_axioms_final` 和 ImportAudit
+`rho_completion_importaudit_final`。本单元新增的具体 bounded inclusion 相容叶仍未验收；
+本表的 completion coe 只表示 Source completion 的原生嵌入相容。

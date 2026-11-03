@@ -385,6 +385,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoValue
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoFieldWittInclusion
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoAmbientEquiv
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoValuePow
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoCompletionComparison
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -4234,3 +4235,76 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoValuePo
 
 -- ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoQuotientComparison
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.choice_quotient_value_pow
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.NormPowerRingEquiv
+#print axioms JoshiTeich.Act1Scene1.NormPowerRingEquiv.uniformContinuous
+#print axioms JoshiTeich.Act1Scene1.NormPowerRingEquiv.symm_uniformContinuous
+#print axioms JoshiTeich.Act1Scene1.NormPowerRingEquiv.completedRingEquiv
+#print axioms JoshiTeich.Act1Scene1.NormPowerRingEquiv.completedRingEquiv_continuous
+#print axioms JoshiTeich.Act1Scene1.NormPowerRingEquiv.completedRingEquiv_symm_continuous
+#print axioms JoshiTeich.Act1Scene1.NormPowerRingEquiv.completedRingEquiv_coe
+#print axioms JoshiTeich.Act1Scene1.NormPowerRingEquiv.completedRingEquiv_norm_pow
+#print axioms JoshiTeich.Act1Scene1.NormPowerRingEquiv.completedHomeomorph
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoRingLaws
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.coefficientFieldRingLaws
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.fieldWitt_value_add_le_max
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_add_le_max
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.fieldWitt_value_mul_le
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_mul_le
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoValue.value_neg
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoNorm
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue_nonneg
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue_zero
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue_one
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue_neg
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue_eq_zero_iff
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue_add_le_max
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue_add_le
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.realValue_mul_le
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.ringNorm
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.ringNorm_one
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.ringNorm_prime
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoNorm.ringNorm_isNonarchimedean
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittRhoCompletion
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.Radius
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.Source
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.sourceCommRing
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.sourceNormedCommRing
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.sourceEquiv
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.source_norm
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.sourceNormOne
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.Completed
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.completedNormedCommRing
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.completedComplete
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.inclusion
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.inclusion_injective
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.inclusion_denseRange
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.inclusion_norm
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.inclusion_prime_norm
+#print axioms JoshiTeich.Act1Scene1.PadicWittRhoCompletion.source_prime_norm
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoRealValue
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.selectedPrimeRealValue
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoComparison.realValue_pow
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoCompletionComparison
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.selectedPrimeCompletionComparison
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.Radius
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.actualRadius
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.sourceRingEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.source_norm_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.source_uniformContinuous
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.source_symm_uniformContinuous
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.completedRingEquiv
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.completedRingEquiv_continuous
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.completedRingEquiv_symm_continuous
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.completedRingEquiv_coe
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.completedRingEquiv_norm_pow
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.completedHomeomorph
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoCompletionSource
+#print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.selectedPrimeCompletionSource
