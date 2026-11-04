@@ -23,21 +23,23 @@ actual carrier 上的定理，不自动成为论文 carrier 上的定理。
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-11-04（Asia/Shanghai） |
-| 已提交数学基线 | `b2ac96f`：加入独立标准 p-only 全半径 rho completion carrier；此前的 bounded rho 比较、单半径 completion 与范数幂律分别见 `82ea173`、`89f4cc5` |
-| 最近局部进展 | 标准全半径 completion 叶、Scene1 聚合、Checks、Axioms、ImportAudit 均已通过；正在起草实际↔标准全半径 product-level 环等价，尚未编译 |
+| 最近完成的数学单元 | 原 actual 与独立标准全半径闭包 `Carrier` 比较：连续环等价、原 diagonal 相容、双向坐标公式和范数幂律 |
+| 已提交数学基线 | `f904d0b`；其前置单元为完整 bounded `value_pow`（`82ea173`）、单半径 completion（`89f4cc5`）、全半径 product 等价（`213751d`）和原生 Source/coercion 接口（`f178044`） |
+| 最新工作树进展 | 独立标准全半径 Hausdorff completion 及其与 actual Fréchet completion 的比较已通过三个叶模块、Scene1、Checks 和 Axioms；ImportAudit 尚未启动，整个单元尚未完成归档、提交或推送 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4；15 项父义务全部开放** |
-| 当前推进位置 | 将原始 inclusion 后的系数范数提前交给抽象局部化接口，已把多个具体子叶降至约 8.7 GiB；下一步把单半径 completion 等价沿半径重参数组装为全半径 product-level 等价 |
-| 尚未闭合的比较边界 | 完整 actual→standard rho value 幂律已在 `82ea173` 通过，单半径 completion 比较已在 `89f4cc5` 通过；旧 named `ambientInclusion` 方块、原 bounded inclusion 的 completion 相容包装和全半径比较仍另行验收 |
-| 完整值定理验收 | `final_named_value_pow`：136.3 秒，峰值 `9098108 KiB`（约 8.677 GiB），退出码 0；早先 11.606 GiB 的超时草稿已由新 presentation 路线替代 |
-| 最新成功聚合验收 | 标准全半径 carrier：Scene1 峰值 `9442316 KiB`（约 9.005 GiB），Checks `9547676 KiB`（约 9.105 GiB），Axioms `9524288 KiB`（约 9.083 GiB），ImportAudit `9434712 KiB`（约 8.998 GiB） |
+| 当前推进位置 | 已从单半径比较接通原全半径闭包，并将两侧 Hausdorff completion 连接起来；下一步完成该工作树单元的剩余验收，再补独立 p-only 可数半径拓扑及后续结构比较 |
+| 尚未闭合的比较边界 | 旧 named `ambientInclusion/toAmbient` 方块、原标准 named inclusion 的具体点态恢复包装仍未验收；独立 p-only 可度量性、范数乘法等式、标量/Frobenius/Tate-log 及论文 `B` 身份仍开放 |
+| 内存优化结果 | 完整 `value_pow` 峰值约 8.677 GiB，原全半径闭包比较叶约 8.713 GiB，最新完成比较叶约 8.715 GiB；这些具体成功运行均低于 16 GiB |
+| 最近完整单元验收 | `f904d0b` 的 Scene1、Checks、Axioms、ImportAudit 均退出 0；四入口最大峰值为 `9555336 KiB`（约 9.113 GiB） |
+| 最新工作树验收 | 三个叶和 Scene1、Checks、Axioms 均退出 0；最大峰值为 `9562940 KiB`（约 9.120 GiB）；ImportAudit 待运行 |
 | 内存边界 | 单叶验收上限 16 GiB；当前监控停止线 15 GiB，总编译内存上限 100 GiB。低于内存线但超时的构建仍不算通过 |
 | 尚未接通的主要连接 | 共同真实 geometry producer、global holomorphoid、论文 Fréchet `B`/ρ-norm、H¹ₑ/BK、paper representatives、跨来源 collation、theta locus/`thetaVolume` 与最终 Corollary 3.12 |
 | Prologue 边界 | `R5`；四项 source laws 仍由 Scene1 producer 从共同真实来源证明 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后看最近单元变化与内存记录。
 总体义务以[开发计划](开发计划.V1Act1Scene1.md)、[证明义务台账](具有明确参考来源指示的证明义务.md)
-和[来源台账](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md)为准；本轮构建证据见
-[Scene1Witt比较内存.jsonl](Scene1Witt比较内存.jsonl)。
+和[来源台账](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md)为准。已提交单元的资源证据见
+[Scene1Witt比较内存.jsonl](Scene1Witt比较内存.jsonl)；尚未归档的六条完成比较记录单列于下文。
 
 ## 四个最终验收闸门
 
@@ -60,8 +62,8 @@ qLogTerm 的字面符号问题按既有决定暂作笔误处理，等待作者�
 ## 当前证明路线
 
 下图展示当前构造与待完成连接，不是完整 Lean 导入图。
-实线表示已有局部构造或已通过叶编译的连接；虚线表示仍需证明、装配或整单验收。
-绿色只覆盖节点写明的局部范围。
+实线表示已有构造或已通过叶编译的连接；虚线表示仍需证明或装配。
+绿色只覆盖节点写明的已验收范围；黄色完成比较节点仍缺整单验收。
 
 ```mermaid
 flowchart TD
@@ -71,12 +73,12 @@ flowchart TD
     T["已闭合：actual tilt 与独立标准 tilt<br/>整数环等价及 local-degree 范数幂律"]
     E["已闭合：bounded Witt 环等价<br/>独立 p-only 标准 rho value"]
     W["已闭合：标准 p-only 全半径<br/>completion carrier"]
-    O["叶编译通过：原 inclusion 后<br/>系数范数幂律"]
-    N["叶编译通过：numerator 幂律<br/>denominator 幂律与 quotient 幂律"]
-    A["叶编译通过：两侧<br/>localization presentation 值公式"]
     V["已闭合：完整 value_pow<br/>原 bounded 环与原范数；82ea173"]
     Q["已闭合：单半径 completion 等价<br/>双向连续与范数幂律；89f4cc5"]
-    U["进行中：actual↔standard<br/>全半径 product equivalence"]
+    U["已闭合：全半径 product 等价<br/>native diagonal 相容"]
+    A["已闭合：原全半径闭包 Carrier 等价<br/>双向连续与坐标范数幂律；f904d0b"]
+    C0["叶及三个入口通过：独立标准 Hausdorff 完成<br/>actual↔standard 完成等价；待 ImportAudit"]
+    M["未建立：独立 p-only 可数半径拓扑<br/>范数乘法等式及结构比较"]
     F["已闭合：actual period ring<br/>completion、Frobenius、theta 与 Tate kernel"]
     H["已闭合：actual H¹ / ordinary log<br/>hull 与局部定量界"]
     B["未建立：论文 Fréchet B 身份<br/>global holomorphoid、H¹ₑ/BK"]
@@ -88,16 +90,15 @@ flowchart TD
     P -.-> D
     D --> T
     T --> E
-    E --> O
     E --> W
-    O --> N
-    E --> A
-    N --> V
-    A --> V
+    E --> V
     V --> Q
-    W -.-> U
-    Q -.-> U
-    U -.-> B
+    W --> U
+    Q --> U
+    U --> A
+    A --> C0
+    C0 -.-> M
+    M -.-> B
     D --> F
     D --> H
     V -.-> B
@@ -112,15 +113,21 @@ flowchart TD
     classDef done fill:#dcfce7,stroke:#15803d,color:#14532d;
     classDef partial fill:#fef3c7,stroke:#b45309,color:#78350f;
     classDef open fill:#f3f4f6,stroke:#6b7280,color:#111827;
-    class T,E,O,W,N,A,V,Q,F,H done;
-    class R partial;
-    class S,D,P,U,B,L,C open;
+    class T,E,W,V,Q,U,A,F,H done;
+    class C0,R partial;
+    class S,D,P,M,B,L,C open;
 ```
 
 当前 value 路线已通过局部化 presentation 和系数范数比较证明完整商值幂律。
 它没有把旧 named `ambientInclusion` 方块作为已证明前提；该方块仍单独开放。
-独立标准 bounded Witt carrier 已扩展为 p-only 全半径 completion carrier，并通过 Scene1、Checks、Axioms、ImportAudit；
-它仍尚未被识别为论文 Fréchet `B`。实际↔标准全半径 product equivalence 只完成设计，尚未编译验收。
+全半径 product 等价已经限制到两侧原始闭包 `Carrier`，保留完整半径族、原范数和
+`ρ ↦ ρ ^ localDeg(w)`。关键是先在 p-only 上游证明标准 diagonal 的全函数身份，
+再由具体下游消费原闭包判据；这一连接已验收并提交。
+
+最新工作树进一步构造独立标准 Source 的全半径 Hausdorff completion，并接通 actual
+Fréchet completion。三个新模块及三个入口已通过，整单仍待 ImportAudit、归档和提交推送。
+其中 `standardCompleted_metrizable` 显式依赖 `D,w`；独立 p-only 可数半径与可度量性证明尚未建立。
+这些结果尚未闭合论文 Fréchet `B` 的全部结构和来源身份。
 
 ### 关键子结果与缺口
 
@@ -134,18 +141,23 @@ flowchart TD
 | 标准 tilt 与 integer-ring bridge | 🟢 已闭合 | 标准 fraction field 的范数、完备性、代数闭性、拓扑比较和整数环 bridge 已有；比较保留 local-degree 范数幂律 | G2；`GeometricTiltNorm.lean`、`IutInitialThetaPadicTiltTopology.lean` |
 | 独立标准 bounded Witt rho value | 🟢 已闭合 | 仅依赖 p 的 expansion、localization、presentation-independent value、指定半径范围内有限性、零点分离和素数校准已提交 | G2/G4；`7e40f65`；[标准 value](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittRhoValue.lean) |
 | 标准 p-only 全半径 completion carrier | 🟢 已闭合 | 由单半径标准 completion 组装全半径产品 carrier，含坐标范数、稠密嵌入、分离性和坐标收敛；叶、Scene1、Checks、Axioms、ImportAudit 已通过 | G2/G4；`b2ac96f`；[全半径 carrier](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittAllRadiusCompletion.lean) |
-| 实际↔标准全半径 product equivalence | ⚪ 未建立 | 已确定用 `ENNReal.powOrderIso` 重参数和各半径 completion ring equivalence 组装；新文件正在起草，尚未编译或登记审计 | G2/G4；`IutInitialThetaPadicWittRhoProductEquiv.lean`（待验收） |
+| 实际↔标准全半径 product 等价 | 🟢 已闭合 | 沿 `ρ ↦ ρ ^ localDeg(w)` 组装各半径 completion 等价，给出全乘积双向连续环等价；原 diagonal 相容随后通过 native 接口接通 | G2/G4；`213751d`、`f904d0b`；[product 等价](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoProductEquiv.lean) |
+| 原 actual↔standard 全半径闭包比较 | 🟢 已闭合 | 原 `Carrier` 间的环等价、双向连续、homeomorphism、原 inclusion 的 diagonal 底层值公式、双向 evaluate 与坐标范数幂律均已验收；没有替换共同闭包 | G2/G4；`f904d0b`；[原载体比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittAllRadiusComparison.lean) |
+| 独立标准全半径 Source 与 Hausdorff completion | 🟡 部分完成 | 仅依赖 p 的原全半径一致结构、分离性、环拓扑、完成与原闭包的一致/环等价、连续环同态延拓及唯一性已通过叶编译和三个入口；整单 ImportAudit 与归档待完成 | G2/G4；工作树 [Source](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittFrechetSource.lean)、[完成比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittFrechetComparison.lean) |
+| Actual↔standard 全半径完成比较 | 🟡 部分完成 | 双向连续环等价、一致等价、homeomorphism、原 inclusion 底层值、半径相容、范数幂律与收敛判据已通过叶编译和三个入口；整单 ImportAudit 与提交待完成 | G2/G4；工作树 [实际完成比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittFrechetComparison.lean) |
+| 独立 p-only 可度量性及结构身份 | ⚪ 未建立 | 独立可数半径拓扑、范数乘法等式，以及标准标量/Frobenius/Tate-log 比较仍待证明；已有 `D,w` 下的可度量性运输不能替代独立 p-only 结果 | G2/G4；上述完成比较源码的边界说明 |
 | 共享 carrier 比较与 `ambientEquiv` | 🟢 局部闭合 | 系数、field-Witt 和 fraction ambient 等价已有 proof term；相关叶有低于 16 GiB 的成功记录，范围不含 bounded ambient inclusion 方块 | G2/G4；`d4a05cd`；[ambient 等价叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoAmbientEquiv.lean) |
 | 原 inclusion 后的系数范数幂律 | 🟢 叶验收通过 | `coefficient_inclusion_norm_pow` 已在默认预算下通过独立叶编译；新接口直接保存两侧 inclusion 后的系数范数 | G2/G4；[系数范数叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoCoefficientNorm.lean) |
 | 分子、分母与商值幂律 | 🟢 叶验收通过 | `numerator_value_pow`、`denominator_value_pow`、`quotient_value_pow` 分别通过默认预算叶编译；最终局部化值定理也已在 `82ea173` 通过 | G2/G4；[商值叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoQuotientValue.lean) |
 | 两侧 localization presentation 值公式 | 🟢 叶验收通过 | actual arbitrary-contraction 与 standard Away presentation 的值公式已有成功编译记录 | G2/G4；[presentation 叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaWittRhoLocalizationPresentation.lean) |
 | Actual→standard 完整 rho 幂律 | 🟢 已闭合 | 原 bounded `ringEquiv` 上的 `value_pow` 在默认 heartbeat 下通过，保留原范数、标准独立收缩元和半径 rho^localDeg；聚合、审计和推送已完成 | G2/G4；`82ea173`；[最终值声明](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoValuePow.lean) |
 | 旧 named `ambientInclusion` / `toAmbient` 比较 | ⚪ 未建立 | 已测试的具体交换图仍未通过；ambient 环等价和新系数范数叶不能代替该命名映射的相容证明 | G2/G4；[计划中的构建边界](开发计划.V1Act1Scene1.md#2026-11-03named-ambient-inclusion-的内核阻塞已复核) |
+| 原标准 named inclusion 的具体恢复包装 | ⚪ 未建立 | 在具体 `ringFun` 像上恢复原标准 named inclusion 的独立点态包装仍有 Kernel timeout；p-only 上游的全函数 diagonal 身份和原闭包比较已经验收，两者范围须区分 | G2/G4；[来源台账](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md)的原闭包比较边界 |
 | 论文 `B`、H¹ₑ/BK 与 global holomorphoid | ⚪ 未建立 | actual/local 构件尚未识别为论文要求的 carrier、拓扑、子空间及比较映射 | G2/G4；[父义务台账](具有明确参考来源指示的证明义务.md) |
 | Paper representatives、theta locus 与 `thetaVolume` | 🟡 部分完成 | actual 会计和 hull 可复用；paper carrier、跨来源 transport、locus/volume 身份及最终共同装配仍缺 | G2/G3/G4；[计划 §3](开发计划.V1Act1Scene1.md#3-未完成义务按最终闸门分解) |
 
-“已闭合”只覆盖本行的精确范围。`82ea173`、`89f4cc5` 和 `b2ac96f` 的 Scene1、Checks、
-Axioms、ImportAudit 与推送均已通过；这些局部单元不关闭论文 `B` 身份或父义务。
+“已闭合”只覆盖本行的精确范围。已提交的 bounded、单半径、全半径 product 和原闭包单元
+均有相应聚合与审计证据；最新工作树完成比较仍缺 ImportAudit。这些局部结果不关闭论文 `B` 身份或父义务。
 `integralKummerSubmodule` 是带 integral 来源的有理像载体；特定像类非零不表示一般 integral H¹
 系数映射单射。actual ordinary log 仍须与论文 Bloch–Kato log 比较。
 
@@ -158,8 +170,14 @@ Axioms、ImportAudit 与推送均已通过；这些局部单元不关闭论文 `
 | Twisted integral 代表与 Tate kernel | 🟢 已闭合 | 指定实际 twisted 解可缩放到原始 `A_inf`；full Tate kernel、唯一实际 `ℚₚ` 标量分类与正合列已有 | 论文 carrier、topology 及来源比较 |
 | Actual ρ=1 `B⁺` candidate | 🟢 已闭合 | actual 单位球 candidate 的 Frobenius 自同构和 `PadicInt` 结构已有 | 论文 `B⁺` 标记、Galois 作用、global holomorphoid 与标量相容 |
 | 环带指数延拓 | 🟡 部分完成 | overlap 法律、闭区间有界逼近和条件性消费者已有 | 精确 Witt 代表或全半径延拓；固定正内半径的单位界不足以推出整性 |
-| Actual / standard bounded rho 比较 | 🟢 已闭合 | 原环等价上的完整 `value_pow` 已验收，并已扩展到单半径 completion、双向连续和完成范数幂律 | 原 bounded inclusion 的 completion 相容包装、全半径/Fréchet 比较及论文 `B` 身份 |
-| 标准全半径 completion carrier | 🟢 已闭合 | p-only 全半径产品 carrier、坐标收敛和审计入口已验收 | 实际半径重参数、product-level completion equivalence 及论文 Fréchet `B` 身份 |
+| Actual / standard bounded rho 比较 | 🟢 已闭合 | 原环等价上的完整 `value_pow`、单半径 completion、双向连续和完成范数幂律已验收 | 旧 named ambient 方块和具体原 inclusion 包装仍单独开放 |
+| 原全半径闭包 carrier 比较 | 🟢 已闭合 | p-only carrier、半径重参数、product 等价、native diagonal 相容及原闭包等价均已验收 | 标量/Frobenius/period transport 和论文 `B` 身份 |
+| 全半径 Hausdorff completion 比较 | 🟡 部分完成 | 独立标准完成、通用延拓与 actual 比较已通过三叶和三个入口 | ImportAudit、归档和提交；独立 p-only 可数半径拓扑、乘法范数等式及论文结构身份 |
+
+Joshi II 的原型为 `B_{C_p^flat,ℚₚ}`、`φ=p`；Joshi III 也允许 `B_E`、tensor 和局部化变体。
+选择哪一种载体仍须证明它与实际 holomorphoid、theta-value 来源及权重相容。
+当前 p-only 链没有自动给出一般 `E` 的 ramified Witt、Lubin–Tate 或 `φ=π` 身份，
+也不能因此断言论文只允许一般 `E` 路线。来源见[计划中的论文载体变体边界](开发计划.V1Act1Scene1.md#2026-11-04原生-completion-coe-接口与论文载体变体边界)。
 
 ### 已排除路线：避免重复投入
 
@@ -176,9 +194,15 @@ Axioms、ImportAudit 与推送均已通过；这些局部单元不关闭论文 `
 
 ## 最近单元变化与内存记录
 
-本轮把映射后的系数范数作为抽象接口参数，在构造比较数据时证明其幂律；下游直接消费已保存的
-函数及法律。随后从系数范数推出 Teichmüller digits 与 weighted value 幂律，再与 denominator 幂律组合。
-这条路线保留原始两侧范数、独立 p-only 标准收缩元及原 bounded 环等价，没有增加自由比较假设。
+| 单元 | 新增结果 | 验收状态 | 保留边界 |
+| --- | --- | --- | --- |
+| `82ea173`：bounded rho 值比较 | 把映射后的系数范数放入上游抽象接口，经 numerator、denominator 和 quotient 推出原环等价上的完整 `value_pow` | 🟢 已验收并推送 | 旧 named ambient 方块仍独立开放 |
+| `213751d`、`f178044`：全乘积与原生 coe | 组装全部半径的 product 等价，并建立原 actual inclusion 到标准原生 coe 的相容接口 | 🟢 已验收并推送 | 后续闭包限制另由下一单元证明 |
+| `f904d0b`：原全半径闭包比较 | 标准 diagonal 身份上移到 p-only 源叶，证明具体 product transport 限制到两侧原 `Carrier` | 🟢 已验收并推送 | 旧具体 named inclusion 包装及论文结构身份仍开放 |
+| 工作树：全半径完成比较 | 独立标准 Source/Hausdorff completion、原闭包比较、通用延拓，以及 actual↔standard 完成等价 | 🟡 三叶及三个入口通过 | 待 ImportAudit、来源/资源归档和提交推送；独立可数半径及论文身份仍开放 |
+
+这两次主要路线调整都把可复用的函数身份提前交给上游载体证明，下游只组合已证法律。
+原实际/标准范数、独立 p-only 收缩元、原 bounded 环等价和原共同闭包均保留，没有增加自由比较假设。
 
 已验收的完整值目标为：令 `d = localDeg(w)`、`B = InitialThetaPadicBoundedWittComparison`，
 对 `ρ ≠ 0`、`ρ ≠ ⊤` 及原 actual bounded Witt 元素 `x`，证明
@@ -188,31 +212,50 @@ PadicWittRhoValue.value p ρ (B.ringEquiv D w x) ^ d
   = InitialThetaWittRhoValue.value D w (ρ ^ d) x
 ```
 
+原全半径闭包的相应定理已随 `f904d0b` 验收。最新工作树把它延伸到完成上的半径坐标：
+
+```text
+‖standardRadiusMap ρ x‖ ^ d = ‖actualRadiusMap (ρ ^ d) x‖
+```
+
+这里的两个映射分别是完成比较中的标准坐标和原 actual 坐标；正式声明为
+`InitialThetaPadicWittFrechetComparison.norm_radiusMap_pow`，目前已通过叶编译和三个入口。
+
 ### 最新受控构建
 
-记录采用每 0.5 秒采样的进程组 RSS；15 GiB 是监控停止线，16 GiB 是单叶验收上限。
-下表为本轮代表性运行，成功行均使用默认 heartbeat。资源值属于相应源码版本的那次运行，
-不表示后来修改源码或依赖后已经自动重验。
+记录采用 CPU `0-13`、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存和默认 heartbeat，
+每 0.5 秒采样进程组 RSS；15 GiB 是监控停止线，16 GiB 是单叶验收上限。
+下表成功行均退出 0，且无停止原因；GiB 按 `KiB / 1048576` 换算。
+资源值属于相应源码版本的那次运行，不表示后来修改源码或依赖后已经自动重验。
+
+已提交单元的代表性记录已归档到[仓库资源 JSONL](Scene1Witt比较内存.jsonl)：
 
 | 构建记录 label | 范围 | 耗时 | 峰值 RSS（KiB / GiB） | 结果 |
 | --- | --- | --- | --- | --- |
-| `mapped_data_coefficient_observers` | 泛型 observer 局部化接口 | 57.9 秒 | `4216116` / 4.021 | 退出码 0 |
-| `generic_coefficient_value_function` | 泛型系数范数→完整 numerator 值函数 | 77.6 秒 | `4506444` / 4.298 | 退出码 0 |
-| `actual_mapped_data_coefficient_observers` | Actual/standard 比较数据专门化 | 119.4 秒 | `9119608` / 8.697 | 退出码 0 |
-| `coefficient_norm_observer_projection` | 原 inclusion 后系数范数幂律 | 144.2 秒 | `9094516` / 8.673 | 退出码 0 |
-| `numerator_observer_value_function` | Numerator 值幂律 | 142.9 秒 | `9102332` / 8.681 | 退出码 0 |
-| `observer_final_denominator_power` | Denominator 幂律 | 148.8 秒 | `9092852` / 8.672 | 退出码 0 |
-| `rho_quotient_value_microleaf` | Quotient 值幂律 | 137.3 秒 | `9096292` / 8.675 | 退出码 0 |
-| `rho_localization_presentations_final` | 两侧局部化 presentation 值公式 | 125.2 秒 | `9149096` / 8.725 | 退出码 0 |
-| `rho_value_pow_current_direct_calc` | 旧完整 `value_pow` 草稿 | 204.6 秒 | `12169780` / 11.606 | 退出码 1；Kernel deterministic timeout，后已被新路线替代 |
-| `final_named_value_pow` | 最终完整 `value_pow` | 136.3 秒 | `9098108` / 8.677 | 退出码 0；已随 `82ea173` 验收推送 |
-| `completion_equiv_coe_ringhom_final` | 单半径 completion 等价与 Source coe 相容 | 134.8 秒 | `9109084` / 8.687 | 退出码 0；已随 `89f4cc5` 验收推送 |
-| `scalar_coeff_norm_1m_diagnostic` | 旧单声明 100 万 heartbeat 诊断 | 344.1 秒 | `15746664` / 15.017 | 触及 15 GiB 监控线后停止；设置已撤回，后续 observer 路线已使该系数目标通过 |
-| `standard_all_radius_completion` | 标准 p-only 全半径 completion 叶 | 79.4 秒 | `5544044` / 5.287 | 退出码 0 |
-| `standard_allradius_scene1` | Scene1 全半径聚合 | 137.4 秒 | `9442316` / 9.005 | 退出码 0 |
-| `standard_allradius_checks` | Checks 审计入口 | 164.0 秒 | `9547676` / 9.105 | 退出码 0 |
-| `standard_allradius_axioms` | Axioms 审计入口 | 155.4 秒 | `9524288` / 9.083 | 退出码 0 |
-| `standard_allradius_importaudit` | ImportAudit 审计入口 | 140.1 秒 | `9434712` / 8.998 | 退出码 0 |
+| `final_named_value_pow` | 最终完整 `value_pow` | 136.3 秒 | `9098108` / 8.677 | 已验收推送 |
+| `completion_equiv_coe_ringhom_final` | 单半径 completion 等价与 Source coe 相容 | 134.8 秒 | `9109084` / 8.687 | 已验收推送 |
+| `product_equiv_core_final` | 全半径 product 等价 | 119.2 秒 | `9114596` / 8.692 | 已验收推送 |
+| `allradius_closure_native_diagonal` | 原全半径闭包比较叶 | 126.9 秒 | `9135892` / 8.713 | 已验收推送 |
+| `native_allradius_scene1` | 原闭包比较 Scene1 聚合 | 149.7 秒 | `9443072` / 9.006 | 已验收推送 |
+| `native_allradius_checks` | 原闭包比较 Checks | 160.4 秒 | `9555336` / 9.113 | 已验收推送 |
+| `native_allradius_axioms` | 原闭包比较 Axioms | 150.8 秒 | `9533224` / 9.092 | 已验收推送 |
+| `native_allradius_importaudit` | 原闭包比较 ImportAudit | 134.6 秒 | `9376892` / 8.943 | 已验收推送 |
+
+最新完成比较的六条运行记录仍在本机 `/tmp/abc-rho-builds/resources.jsonl`，
+日志及 RSS 样本位于同目录；截至本次更新尚未追加到仓库资源 JSONL 或正式来源台账：
+
+| 构建记录 label | 范围 | 耗时 | 峰值 RSS（KiB / GiB） | 结果 |
+| --- | --- | --- | --- | --- |
+| `standard_frechet_source` | 独立标准 Source | 76.4 秒 | `5519480` / 5.264 | 叶编译通过 |
+| `standard_frechet_completion_comparison` | 标准 Hausdorff completion 与原闭包比较 | 81.4 秒 | `5533976` / 5.278 | 叶编译通过 |
+| `actual_standard_frechet_completion_equiv` | Actual↔standard 完成比较 | 134.2 秒 | `9138676` / 8.715 | 叶编译通过 |
+| `frechet_completion_scene1` | 最新 Scene1 聚合 | 161.0 秒 | `9365744` / 8.932 | 入口通过 |
+| `frechet_completion_checks` | 最新 Checks | 171.9 秒 | `9562940` / 9.120 | 入口通过 |
+| `frechet_completion_axioms` | 最新 Axioms | 162.3 秒 | `9540600` / 9.099 | 入口通过 |
+| `frechet_completion_importaudit` | 最新 ImportAudit | — | — | 尚未启动，无验收记录 |
+
+最新 Axioms 日志只含 `propext`、`Classical.choice`、`Quot.sound`，没有 `sorryAx` 或错误。
+这不替代待执行的 ImportAudit，也不表示整个工作树单元已提交。
 
 ### 历史资源边界
 
@@ -226,22 +269,19 @@ PadicWittRhoValue.value p ρ (B.ringEquiv D w x) ^ d
 | 旧最终值定理的点态 wrapper、等式方向调整和直接 calc 组合 | 多次在约 11.6 GiB 触发 deterministic timeout | 新 presentation/裸函数 transfer 路线已得到最终验收；旧草稿保留为历史失败证据 |
 
 命令、耗时、峰值、退出码、错误和停止原因见[机器可读记录](Scene1Witt比较内存.jsonl)。
-此前已将临时构建目录中尚未归档的 57 条记录补入该文件，并按 label/log 去重；人工停止的
-重复或依赖过期运行明确记为人工停止，不记为自然退出或内存停止。
+人工停止的重复或依赖过期运行明确记为人工停止，不记为自然退出或内存停止；
+最新完成比较的六条记录仍待归档，不能把它们写成已存在于仓库资源 JSONL。
 早期约 100 GiB 运行的摘要保存在[开发计划](开发计划.V1Act1Scene1.md#2026-11-02rho-比较的-kernel-资源边界与载体接口调整)中；
 它们不具备后来受控运行的同等监控条件。一次不限内存诊断授权已使用，后续继续遵守单叶上限。
 
 ## 后续顺序
 
-最终 presentation/value 推导已移到抽象函数或载体层，并通过具体原始声明验收。
-标准 p-only 全半径 carrier 已完成并通过四个入口；下一步是把实际↔标准单半径
-completion equivalence 沿 `ρ ↦ ρ ^ localDeg(w)` 组装成 product-level equivalence，再决定是否限制到闭包 carrier。
-product-level 文件尚未编译，不能登记为新成果。
-已有记录表明，旧具体 wrapper、`trans` 或 `calc` 不能替代已验收的新 presentation 路线。
+1. 为当前全半径完成比较执行 ImportAudit，归档六条已完成资源及新增验收结果，补齐来源台账和计划动态边界，再提交推送。
+2. 证明独立 p-only 可数半径拓扑与可度量性，并补齐标准范数乘法等式；不把显式依赖 `D,w` 的运输定理当作独立证明。
+3. 在原载体间接通标量、独立标准 Frobenius、Tate-log 和 period 身份，明确选择的论文 `B`/允许变体及其来源；可继续将编译负荷分配到上下游载体。
 
-product-level completion equivalence 通过后，还须按依赖顺序重验最终源码、必要消费者、
-Scene1 聚合、Checks、Axioms、ImportAudit、来源及资源记录，再提交推送。上述局部单元即使完成，
-也只关闭 bounded/full-radius 比较的局部范围；Fréchet completion 与论文 `B` 身份仍须证明。
+旧 named ambient 方块和具体 named inclusion 包装仍单独登记；已通过的原闭包与完成比较
+使用已证 native diagonal 路线。继续证明这些包装时仍须满足单叶内存上限，失败记录不得改写成数学反例。
 
 Scene1 总体按[计划 §5](开发计划.V1Act1Scene1.md#5-执行顺序)推进共同真实 geometry producer、
 holomorphoid、period/H¹ₑ/BK 和论文 `B`，随后闭合 paper representatives、multiplicity、
