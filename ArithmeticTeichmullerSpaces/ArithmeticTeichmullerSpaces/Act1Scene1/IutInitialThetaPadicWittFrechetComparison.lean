@@ -1,6 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittFrechetComparison
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittAllRadiusComparison
-import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittFrechetComparison
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittFrechetTopology
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-PADIC-WITT-FRECHET-COMPARISON
@@ -12,9 +12,11 @@ original bounded rings and all-radius uniformities. The map is a continuous
 ring equivalence and a uniform equivalence, and its coordinates preserve
 the proved local-degree norm power law. The original bounded inclusion is
 identified by the already proved native standard diagonal identity.
+The standard completion is independently metrizable, and its rational
+radius maps detect convergence of the original actual completion.
 Original proofs; no reference implementation copied. Prologue R5 unchanged.
-boundary: scalar/Frobenius/period transport, a p-only countable-radius
-proof and paper B/general E/H1e/BK identities remain separate obligations.
+boundary: multiplicative norm equality, scalar/Frobenius/period transport
+and paper B/general E/H1e/BK identities remain separate obligations.
 -/
 
 namespace JoshiTeich.Act1Scene1.InitialThetaPadicWittFrechetComparison
@@ -76,8 +78,7 @@ def homeomorph : ActualCompleted D w ≃ₜ StandardCompleted D w :=
   (uniformEquiv D w).toHomeomorph
 
 theorem standardCompleted_metrizable :
-    TopologicalSpace.MetrizableSpace (StandardCompleted D w) :=
-  (homeomorph D w).symm.isEmbedding.metrizableSpace
+    TopologicalSpace.MetrizableSpace (StandardCompleted D w) := inferInstance
 
 theorem ringEquiv_toCarrier (x : ActualCompleted D w) :
     PadicWittFrechetComparison.ringEquiv (Arithmetic.residueChar w.1)
@@ -142,6 +143,16 @@ theorem tendsto_iff_radiusMaps {ι : Type*} (l : Filter ι)
       Filter.Tendsto (fun i => radiusMap D w ρ (f i)) l (𝓝 (radiusMap D w ρ x)) := by
   rw [(homeomorph D w).isInducing.tendsto_nhds_iff,
     PadicWittFrechetComparison.tendsto_iff_radiusMaps]
+  rfl
+
+theorem tendsto_iff_rationalRadiusMaps {ι : Type*} (l : Filter ι)
+    (f : ι → ActualCompleted D w) (x : ActualCompleted D w) :
+    Filter.Tendsto f l (𝓝 x) ↔ ∀ q : PadicWittRationalRadiusTopology.RationalRadius,
+      Filter.Tendsto
+        (fun i => radiusMap D w (PadicWittRationalRadiusTopology.toRadius q) (f i)) l
+        (𝓝 (radiusMap D w (PadicWittRationalRadiusTopology.toRadius q) x)) := by
+  rw [(homeomorph D w).isInducing.tendsto_nhds_iff,
+    PadicWittFrechetTopology.tendsto_iff_rationalRadiusMaps]
   rfl
 
 end

@@ -7509,3 +7509,35 @@ standardCompleted_metrizable 是显式 D,w 下从原 actual metrizability 运输
 standard inclusion 的具体点态包装与旧 ambientInclusion/toAmbient 方块没有被作为本单元
 前提；原 inclusion 相容通过已证 native diagonal 身份保留。Prologue R5、15项父义务与
 G1–G4保持不变。
+
+独立标准有理半径拓扑与全半径完成可度量性（2026-11-04）：在原 p-only bounded Witt 环上，
+以同一个 numerator presentation 证明中间半径值不超过两端最大值，再以原稠密嵌入和连续性
+延伸到原共同闭包 Carrier。正有理半径夹逼整个 (0,1) 半径族，因而给出原拓扑到可数乘积的
+拓扑嵌入。原标准 Source 和 Hausdorff completion 的可度量性由此独立于实际 D,w 建立。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RADIUS-INTERPOLATION` | `Act1Scene1/PadicWittRadiusInterpolation.lean` | 原标准 value、realValue 和原共同闭包坐标半范数的端点最大值估计；任意夹逼半径族检测任意 filter 的收敛。两端和中间使用同一原 presentation，没有更换范数或缩小半径族。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RATIONAL-RADIUS-TOPOLOGY` | `Act1Scene1/PadicWittRationalRadiusTopology.lean` | 有理半径及其夹逼构造不依赖 p；标准 carrier 的有理坐标、收敛判据、IsInducing、IsEmbedding、单射和 carrierMetrizable 仅依赖 p 与其素性。构造的是原拓扑的嵌入，没有定义替代拓扑或一致结构。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FRECHET-TOPOLOGY` | `Act1Scene1/PadicWittFrechetTopology.lean` | 原标准 Source 和 Completed 的独立 p-only MetrizableSpace 实例；两者的有理半径收敛判据。原 Hausdorff completion 的拓扑经已证一致等价与原闭包相同。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-FRECHET-COMPARISON` | `Act1Scene1/IutInitialThetaPadicWittFrechetComparison.lean` | 实际消费者新增 tendsto_iff_rationalRadiusMaps：通过原完成等价，用标准有理半径检测原 actual completion 的任意 filter 收敛。既有 standardCompleted_metrizable 改为直接消费独立 p-only 实例，签名保持。 |
+
+来源为 Joshi II `se:ff-rings` 和 `pr:teichmuller-lift-A/B` 的 rho 范数族与完成拓扑。
+证明采用本工程 actual 半径插值和有理半径构造的数学模式，均为原始证明，无参考实现复制。
+三个新标准模块的24个公开声明及实际比较新增1项，在 Checks/Axioms 各登记一次。
+实际比较与原 Source/Completed 是这些独立标准拓扑结果的消费者；未增加自由比较证书。
+
+| 运行 | 秒 | 峰值 RSS KiB | 峰值 RSS GiB | 退出码 |
+| --- | ---: | ---: | ---: | ---: |
+| `standard_radius_endpoint_interpolation` | 83.5 | 5,525,504 | 5.269 | 0 |
+| `standard_rational_radius_topology` | 80.1 | 5,507,076 | 5.252 | 0 |
+| `standard_frechet_rational_topology` | 85.5 | 5,492,468 | 5.238 | 0 |
+| `actual_standard_frechet_rational_topology` | 150.7 | 9,139,716 | 8.716 | 0 |
+| `rational_topology_scene1` | 118.9 | 9,436,304 | 8.999 | 0 |
+| `rational_topology_checks` | 164.8 | 9,566,712 | 9.123 | 0 |
+| `rational_topology_axioms` | 152.2 | 9,544,196 | 9.102 | 0 |
+| `rational_topology_importaudit` | 127.4 | 9,426,880 | 8.990 | 0 |
+
+论文 B 的标量、乘法范数等式、独立 Frobenius/Tate-log 与 holomorphoid/period/BK 身份仍开放。
+原 named ambient 方块和具体 standard inclusion 点态包装未被作为前提，仍保留其独立验收边界。
+Prologue R5、15项父义务和G1–G4状态不变。
