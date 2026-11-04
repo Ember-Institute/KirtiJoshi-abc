@@ -64,6 +64,16 @@ theorem completedRingEquiv_coe (ρ : Radius)
   NormPowerRingEquiv.completedRingEquiv_coe (sourceRingEquiv D w ρ)
     (Arithmetic.localDeg w.1) (Arithmetic.localDeg_pos w.1) (source_norm_pow D w ρ) x
 
+theorem completedRingEquiv_coe_native (ρ : Radius)
+    (x : InitialThetaWittRhoCompletion.Source D w (actualRadius D w ρ)) :
+    completedRingEquiv D w ρ
+        (x : UniformSpace.Completion
+          (InitialThetaWittRhoCompletion.Source D w (actualRadius D w ρ))) =
+      (sourceRingEquiv D w ρ x : UniformSpace.Completion
+        (PadicWittRhoCompletion.Source (Arithmetic.residueChar w.1) ρ)) :=
+  NormPowerRingEquiv.completedRingEquiv_coe (sourceRingEquiv D w ρ)
+    (Arithmetic.localDeg w.1) (Arithmetic.localDeg_pos w.1) (source_norm_pow D w ρ) x
+
 theorem completedRingEquiv_norm_pow (ρ : Radius)
     (x : InitialThetaWittRhoCompletion.Completed D w (actualRadius D w ρ)) :
     ‖completedRingEquiv D w ρ x‖ ^ Arithmetic.localDeg w.1 = ‖x‖ :=

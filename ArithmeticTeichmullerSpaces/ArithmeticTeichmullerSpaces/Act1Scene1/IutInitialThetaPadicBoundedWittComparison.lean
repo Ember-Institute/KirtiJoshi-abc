@@ -159,6 +159,15 @@ theorem choiceStandardEquiv_algebraMap
 def ringEquiv :=
   (choiceEquiv D w).symm.toRingEquiv.trans (choiceStandardEquiv D w)
 
+/-- Save the original map as a function on the two bounded carriers. -/
+def ringFun (x : InitialThetaBoundedWittLocalization.Ring D w) :
+    PadicBoundedWittLocalization.Ring (Arithmetic.residueChar w.1) :=
+  (ringEquiv D w).toEquiv.toFun x
+
+theorem ringEquiv_apply_eq_ringFun
+    (x : InitialThetaBoundedWittLocalization.Ring D w) :
+    ringEquiv D w x = ringFun D w x := rfl
+
 theorem ringEquiv_algebraMap
     (x : InitialThetaTiltFontaine.Ainf D w) :
     ringEquiv D w (algebraMap _ _ x) =

@@ -34,10 +34,10 @@ def actualRadius (ρ : Radius) : InitialThetaWittRhoCompletion.Radius :=
     pos_iff_ne_zero.mpr (pow_ne_zero _ ρ.property.1.ne'),
     pow_lt_one₀ bot_le ρ.property.2 (Arithmetic.localDeg_pos w.1).ne'⟩
 
-private def sourceFun (ρ : Radius)
+def sourceFun (ρ : Radius)
     (x : InitialThetaWittRhoCompletion.Source D w (actualRadius D w ρ)) :
     PadicWittRhoCompletion.Source (Arithmetic.residueChar w.1) ρ :=
-  (InitialThetaPadicBoundedWittComparison.ringEquiv D w).toEquiv.toFun x
+  InitialThetaPadicBoundedWittComparison.ringFun D w x
 
 private def sourceInvFun (_ρ : Radius) :=
   (InitialThetaPadicBoundedWittComparison.ringEquiv D w).toEquiv.invFun
@@ -67,6 +67,17 @@ def sourceRingEquiv (ρ : Radius) :
   right_inv := source_right_inv D w ρ
   map_add' := source_map_add D w ρ
   map_mul' := source_map_mul D w ρ
+
+theorem sourceRingEquiv_apply (ρ : Radius)
+    (x : InitialThetaWittRhoCompletion.Source D w (actualRadius D w ρ)) :
+    sourceRingEquiv D w ρ x = sourceFun D w ρ x := rfl
+
+theorem sourceFun_fromRaw (ρ : Radius)
+    (x : InitialThetaBoundedWittLocalization.Ring D w) :
+    sourceFun D w ρ
+        (show InitialThetaWittRhoCompletion.Source D w (actualRadius D w ρ) from x) =
+      (show PadicWittRhoCompletion.Source (Arithmetic.residueChar w.1) ρ from
+        InitialThetaPadicBoundedWittComparison.ringFun D w x) := rfl
 
 theorem source_norm_pow (ρ : Radius)
     (x : InitialThetaWittRhoCompletion.Source D w (actualRadius D w ρ)) :

@@ -7389,3 +7389,40 @@ transport 和缺少 import 错误均已修复。含具体 diagonal 兼容声明�
 Kernel deterministic timeout，峰值约 11.61 GiB；它没有被验收，也不据此判定目标不可证明。
 本单元命令和失败记录已归档到 `docs/Scene1Witt比较内存.jsonl`。重复 label 的临时日志曾被
 覆盖，资源记录已标注这一限制，不从覆盖后的日志还原之前的错误。
+
+Completion 原生嵌入接口（2026-11-04）：将原 bounded 环映射保存为原始输入/输出载体上的裸函数，分别缓存 Source 与 completion coe 公式，建立原 actual bounded inclusion 经完成等价后的原生标准 Source coe 公式。原 `ringEquiv`、独立标准收缩元、两侧 `Source`/`Completed` 和范数均保留；标准 rho 对应实际 `rho^d`，其中 `d=localDeg(w)>0`。全部为本工程原始证明，未复制参考工程代码。
+
+| source-id | 模块 | 本单元声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-COMPARISON` | `Act1Scene1/IutInitialThetaPadicBoundedWittComparison.lean` | 新 `ringFun` 明确以原 actual bounded ring 为输入、原 p-only standard bounded ring 为输出，函数值为原 `ringEquiv.toEquiv.toFun`；`ringEquiv_apply_eq_ringFun` 证明它与原映射逐点相同。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-COMPLETION-SOURCE` | `Act1Scene1/IutInitialThetaPadicWittRhoCompletionSource.lean` | `sourceFun` 消费该原始裸函数；`sourceRingEquiv_apply`、`sourceFun_fromRaw` 分开处理环等价的函数投影和 Source 类型副本。原逆函数、环法律和 norm-power law 不变。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-COMPLETION-COMPARISON` | `Act1Scene1/IutInitialThetaPadicWittRhoCompletionComparison.lean` | 新 `completedRingEquiv_coe_native` 以普通 completion coe 表述原 Source 嵌入相容公式，避免在下游等式接口中重建 `coeRingHom` 环实例。原完成环等价与范数幂律保留。 |
+| `JT-SCENE1-COMPLETION-MAP-COMPARISON` | `Act1Scene1/CompletionMapComparison.lean` | `change_source_map`、`of_inclusion`、`change_original_map`、`of_map` 仅在普通类型和函数上组合显式等式；`of_map` 先固定完成映射的 coe 公式。具体消费者仍提供每项前提，不增加自由数学证书。 |
+| `JT-SCENE1-INITIAL-THETA-WITT-RHO-SOURCE-EMBEDDING` | `Act1Scene1/IutInitialThetaWittRhoSourceEmbedding.lean` | `sourceEquiv_apply`、`inclusion_apply` 分别将原 actual Source 包装和原 actual completion inclusion 识别为原生函数；保留原范数。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RHO-SOURCE-EMBEDDING` | `Act1Scene1/PadicWittRhoSourceEmbedding.lean` | 标准侧对应两条公式仅依赖 p、primality 和 rho；`inclusionFun` 保存同一原生标准 coe 函数，`inclusion_eq_inclusionFun` 证明它与原标准 inclusion 的函数等式。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-COMPLETION-INCLUSION-SOURCE` | `Act1Scene1/IutInitialThetaPadicWittRhoCompletionInclusionSource.lean` | `completedRingEquiv_inclusion_to_sourceFun` 证明原 actual bounded inclusion 经已有 completion 等价后，等于标准 completion 中 `sourceFun` 作用于原元素类型副本的原生 coe。此结论没有把右端改写为原标准 bounded inclusion；该恢复是后续独立声明。 |
+
+来源为 Joshi II `se:ff-rings`、`pr:teichmuller-lift-A/B` 的 rho 范数族和完备化。普通函数组合部分是减少实例转换负担的通用证明，不改变原目标或范数。18 个新增公开名称（含 `selectedPrimeInclusionSource`）已在 Checks/Axioms 各登记一次，并完成对应验收。主入口只接本单元与已推送的 product 比较，不接未验收的 Target、diagonal 或 closure 草稿。
+
+下列已结束运行均退出码 0、无停止原因：CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存、默认 heartbeat、每 0.5 秒采样进程组 RSS，15 GiB 停止线；每个峰值低于 16 GiB。
+
+| 运行 | 秒 | 峰值 RSS KiB |
+| --- | ---: | ---: |
+| `bounded_native_function_explicit_carriers` | 162.9 | 9,123,884 |
+| `source_bridge_explicit_bounded_carriers` | 179.5 | 9,114,128 |
+| `source_interfaces_completion_final` | 199.7 | 9,107,860 |
+| `generic_completion_map_first_interface` | 44.0 | 2,388,748 |
+| `actual_rho_source_bare_coe` | 154.5 | 9,089,240 |
+| `standard_inclusion_native_function` | 87.6 | 5,499,380 |
+| `actual_completion_inclusion_source` | 157.8 | 9,103,456 |
+| `product_equiv_source_interfaces_final` | 153.4 | 9,113,996 |
+| `source_interfaces_scene1_final` | 185.5 | 9,433,140 |
+| `source_interfaces_checks` | 197.7 | 9,549,796 |
+| `source_interfaces_axioms` | 186.5 | 9,529,724 |
+| `source_interfaces_importaudit` | 157.5 | 9,442,836 |
+
+资源表只列本次交付接口及必要 product 消费者的成功运行；完整成功/失败/停止记录已归档到 `docs/Scene1Witt比较内存.jsonl`。Scene1、Checks、Axioms、ImportAudit 全部退出0；公理只含 propext、Classical.choice、Quot.sound，无 sorryAx。静态扫描覆盖1014个可达模块，禁止导入、证明洞、缺失文件与本单元缺失来源均为空。
+
+后续边界：独立诊断 `native_inclusion_right_bare_standard_function` 在 `157.8 s / 9106672 KiB` 下通过裸函数到标准 `inclusionFun` 的右段等式，但它不属于本次 7 模块交付。正式恢复原标准 bounded inclusion 的 Target 声明仍未验收：`standard_completion_inclusion_target` 在 `229.2 s / 12165344 KiB` 触发 Kernel deterministic timeout；显式 `.toFun` 恢复也在 `267.7 s / 12165384 KiB` 得到同一 Kernel timeout。左段及裸右段均有成功 proof term，但不得由两段局部结果自动宣布完整 inclusion 交换图、product diagonal 或共同闭包等价完成。失败只作为具体组合的工程证据，不证明公式错误，也不单独定位特定 Kernel 缺陷。旧 named `ambientInclusion`/`toAmbient` 方块仍是独立目标。
+
+本单元不识别论文 Fréchet `B`、一般 `B_E`、标量/Galois/period transport 或 H¹ₑ/BK。Prologue R5、15 项父义务和 G1–G4 状态不变。
