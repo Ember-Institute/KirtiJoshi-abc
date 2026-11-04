@@ -7541,3 +7541,35 @@ G1–G4保持不变。
 论文 B 的标量、乘法范数等式、独立 Frobenius/Tate-log 与 holomorphoid/period/BK 身份仍开放。
 原 named ambient 方块和具体 standard inclusion 点态包装未被作为前提，仍保留其独立验收边界。
 Prologue R5、15项父义务和G1–G4状态不变。
+
+独立标准 rho 值的精确乘法性（2026-11-04）：只依赖 p 的标准 bounded Witt
+localization 上，利用 rho=1 时原 weighted value 的有限性，从每个 numerator digit
+term ≤ supremum 导出统一 Teichmuller digit 界，再调用原 uniformly-bounded-digit
+Witt 乘法定理。由 presentation independence 回到原 localization，并传递到原固定半径
+Source/Completed 范数及原 all-radius Carrier 坐标半范数。未调用 actual D,w 乘法证明。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RHO-MULTIPLICATIVE-NORM` | `Act1Scene1/PadicWittRhoMultiplicativeNorm.lean` | 证明原 standard `value`、`realValue` 精确乘法；构造原 bounded localization 上的 `mulRingNorm`，在原固定半径 Source/Completed 上建立 `NormMulClass`，并证明原全半径 `coordinateSeminorm` 精确乘法。所有声明仅依赖 p 与 `Fact p.Prime`；不导入 actual D,w 路线、不替换载体或原范数。六个新增公开声明在 Checks/Axioms 各登记一次。 |
+
+来源为 Joshi II `se:ff-rings` 的乘法 rho-weighted Teichmuller value 与
+`pr:teichmuller-lift-A/B` 的半径规范；proof term 在本工程从独立标准 localization
+及实际 uniformly bounded digits 定理重新组合，不复制参考实现。
+
+| 构建记录 label | 范围 | 耗时 | 峰值 RSS KiB | 峰值 RSS GiB | 退出码 | 结果 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| `standard_rho_multiplicativity` | 首轮叶编译 | 71.7 秒 | `5515972` | 5.260 | 1 | Lean 类型检查错误；已修正 digit bound 和归纳参数 |
+| `standard_rho_multiplicativity` | 第二轮叶编译 | 68.7 秒 | `5514572` | 5.259 | 1 | 仅剩坐标半范数定义展开目标；已修正 |
+| `standard_rho_multiplicativity_final` | 最终叶编译 | 69.7 秒 | `5516004` | 5.261 | 0 | 默认预算通过 |
+| `standard_multiplicativity_scene1` | Scene1 聚合 | 183.6 秒 | `9438260` | 9.001 | 0 | 通过 |
+| `standard_multiplicativity_checks` | Checks | 133.9 秒 | `9567688` | 9.125 | 0 | 通过 |
+| `standard_multiplicativity_axioms` | Axioms | 124.3 秒 | `9545196` | 9.103 | 0 | 通过；仅 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx` |
+| `standard_multiplicativity_importaudit` | ImportAudit | 123.7 秒 | `9451400` | 9.014 | 0 | 通过 |
+
+所有运行使用 CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存、默认 heartbeat，
+0.5 秒 RSS 采样及 15 GiB 停止线；全部峰值均低于 16 GiB。
+逐次命令、诊断和采样记录见 `docs/Scene1Witt比较内存.jsonl`。
+
+本单元只闭合 standard p-only carrier 的乘法范数结构；它不证明该 carrier 就是论文
+Fréchet `B`，也不闭合标量、Galois、Frobenius、Tate-log、period/BK 或 holomorphoid 来源。
+Prologue R5、15项父义务和G1–G4状态不变。
