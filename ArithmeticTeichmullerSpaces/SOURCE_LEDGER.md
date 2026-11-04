@@ -7426,3 +7426,46 @@ Completion 原生嵌入接口（2026-11-04）：将原 bounded 环映射保存�
 后续边界：独立诊断 `native_inclusion_right_bare_standard_function` 在 `157.8 s / 9106672 KiB` 下通过裸函数到标准 `inclusionFun` 的右段等式，但它不属于本次 7 模块交付。正式恢复原标准 bounded inclusion 的 Target 声明仍未验收：`standard_completion_inclusion_target` 在 `229.2 s / 12165344 KiB` 触发 Kernel deterministic timeout；显式 `.toFun` 恢复也在 `267.7 s / 12165384 KiB` 得到同一 Kernel timeout。左段及裸右段均有成功 proof term，但不得由两段局部结果自动宣布完整 inclusion 交换图、product diagonal 或共同闭包等价完成。失败只作为具体组合的工程证据，不证明公式错误，也不单独定位特定 Kernel 缺陷。旧 named `ambientInclusion`/`toAmbient` 方块仍是独立目标。
 
 本单元不识别论文 Fréchet `B`、一般 `B_E`、标量/Galois/period transport 或 H¹ₑ/BK。Prologue R5、15 项父义务和 G1–G4 状态不变。
+
+实际与独立标准的原全半径闭包载体比较（2026-11-04）：将标准 diagonal 的函数身份提前到
+p-only 上游证明，再在具体 D,w 中消费裸 diagonal 与原 bounded map。原 actual/standard
+`commonSubring`、`Carrier`、每个 Source/Completed 与范数均保持原定义，没有改造目标载体。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-ALL-RADIUS-NATIVE-DIAGONAL` | `Act1Scene1/PadicWittAllRadiusNativeDiagonal.lean` | 定义原 p-only 源环上的 `diagonalFun`；`diagonal_eq_diagonalFun` 在 p-only 层证明它与原 diagonal 的函数等式。两个闭包身份与 `inclusion_val_eq_diagonalFun` 明确涉及原 commonSubring/Carrier。没有定义替代闭包。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-MAP-LAWS` | `Act1Scene1/IutInitialThetaPadicBoundedWittMapLaws.lean` | `ringFun_surjective`、`ringFun_injective` 来自原 bounded 环等价和已证的 `ringEquiv_apply_eq_ringFun`。标准源点的实际原像由这条满射律提供，不增加代表选择假设。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-RHO-COMPLETION-INCLUSION-TARGET` | `Act1Scene1/IutInitialThetaPadicWittRhoCompletionInclusionTarget.lean` | `sourceFun_coe_inclusionFun` 识别原生标准 coe 和已在 p-only 层证明等于原 inclusion 的函数；`completedRingEquiv_inclusionFun` 消费前一单元的实际 inclusion 公式。保留原半径 rho^localDeg 与原 bounded map。 |
+| `JT-SCENE1-ACTUAL-STANDARD-PADIC-WITT-RHO-PRODUCT-DIAGONAL` | `Act1Scene1/IutInitialThetaPadicWittRhoProductDiagonal.lean` | `productEquiv_symm_diagonalFun`、`productEquiv_diagonalFun` 给全半径产品上的双向原环相容公式；标准 diagonal 的原身份已在独立 p-only 叶证明，具体适配无需重建旧 named inclusion 的实例组合。 |
+| `JT-SCENE1-ACTUAL-STANDARD-PADIC-WITT-ALL-RADIUS-COMPARISON` | `Act1Scene1/IutInitialThetaPadicWittAllRadiusComparison.lean` | 双向闭包成员性使 product 等价限制到原 Carrier。给出 `toStandard`、`toActual`、`ringEquiv`、双向连续、实际 inclusion 的底层值公式、双向 evaluate、坐标半范数幂律和 `homeomorph`。精确幂律为标准 rho 坐标半范数的 localDeg 次幂等于实际 rho^localDeg 坐标半范数。 |
+
+来源为 Joshi II `se:ff-rings`、`pr:teichmuller-lift-A/B` 的 rho 范数族与完备化；全部是
+本工程原始证明，没有复制参考实现。具体结果没有新的范数、比较或来源假设。28个新增公开
+声明（含命名局部 prime 实例）在 Checks/Axioms 各登记一次；实际消费者为原全半径 Carrier
+的环等价及范数幂律。独立静态复核确认没有弱化半径族或替换原载体。
+
+下列受控运行全部使用 CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存、默认
+heartbeat、0.5秒进程组 RSS 采样和15 GiB停止线，均退出0且无停止原因。
+
+| 运行 | 秒 | 峰值 RSS KiB |
+| --- | ---: | ---: |
+| `standard_allradius_native_diagonal` | 74.9 | 5,513,052 |
+| `bounded_native_map_bijective_laws` | 140.1 | 9,103,920 |
+| `completion_inclusion_native_target` | 139.1 | 9,103,508 |
+| `allradius_native_diagonal_after_inclusion_source` | 156.9 | 9,123,168 |
+| `allradius_closure_native_diagonal` | 126.9 | 9,135,892 |
+| `native_allradius_scene1` | 149.7 | 9,443,072 |
+| `native_allradius_checks` | 160.4 | 9,555,336 |
+| `native_allradius_axioms` | 150.8 | 9,533,224 |
+| `native_allradius_importaudit` | 134.6 | 9,376,892 |
+
+Axioms 无 sorryAx，只含 propext、Classical.choice、Quot.sound。静态扫描覆盖1019个可达
+模块，禁止导入、证明洞、缺失文件与本单元缺失 source-id 均为空。Scene1、Checks、Axioms、
+ImportAudit全部通过；所有成功与失败诊断已归档到资源JSONL。
+
+原标准 named inclusion 在具体 ringFun 像上的点态恢复仍有 Kernel timeout；本单元没有登记
+该包装为已验收，而是在 p-only 源叶先证明全函数身份，消费其原共同闭包判据，完成同一原
+Carrier 的比较。旧 named ambientInclusion/toAmbient 方块仍是独立边界。这些历史构建失败
+不是数学反例，也不能单独定位 Kernel 缺陷。论文B的Fréchet/标量/Frobenius/period标记、
+一般E/tensor变体、H¹ₑ/BK和真实holomorphoid来源尚未由本单元完成；Prologue R5、15项父义务
+与G1–G4状态不变。
