@@ -7573,3 +7573,37 @@ Source/Completed 范数及原 all-radius Carrier 坐标半范数。未调用 act
 本单元只闭合 standard p-only carrier 的乘法范数结构；它不证明该 carrier 就是论文
 Fréchet `B`，也不闭合标量、Galois、Frobenius、Tate-log、period/BK 或 holomorphoid 来源。
 Prologue R5、15项父义务和G1–G4状态不变。
+
+独立标准 bounded rho carrier 上的 Frobenius（2026-11-04）：在标准 tilt 整数环上由
+标准分数域 perfectness 证明 Frobenius perfectness，再分别把 Witt Frobenius 与其逆
+经原 Away 分母 `p * [contraction]` 延拓到原 localization。逆分母的 Teichmuller 根
+来自整数环 perfectness；正逆 lifts 给出原 localization 自同构。此自同构兼容原 Witt
+映入和原分数域 ambient；共同 numerator presentation 导出 `value(ρ^p, φ x)=value(ρ,x)^p`
+及其 `realValue` 版本。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RHO-FROBENIUS` | `Act1Scene1/PadicWittRhoFrobenius.lean` | 18 个公开名称均仅依赖 p 与素性实例。自同构保留原 bounded localization；值公式使用原 weighted Teichmuller rho value 和原半径变换 `ρ ↦ ρ^p`。没有 actual D,w 参数或新数学假设。仅证明 bounded localization 的 Frobenius，明确不声称已延拓到固定半径完成、全半径 carrier 或论文 B。Checks/Axioms 各逐名登记一次。 |
+
+来源为 Joshi II `se:ff-rings` 的 Frobenius 与 rho 范数族及
+`pr:teichmuller-lift-A/B` 的 period-ring 参数；证明按本工程实际 bounded localization
+路线重新构造，没有复制参考实现。Axioms 只含 `propext`、`Classical.choice`、
+`Quot.sound`，无 `sorryAx`。
+
+| 构建记录 label | 范围 | 耗时 | 峰值 RSS KiB | 峰值 RSS GiB | 退出码 |
+| --- | --- | ---: | ---: | ---: | ---: |
+| `standard_rho_frobenius_retry` | 新标准 Frobenius 叶 | 80.8 秒 | `5530688` | 5.274 | 0 |
+| `standard_rho_frobenius_verified` | 含实值范数公式的叶验收 | 91.7 秒 | `5532392` | 5.276 | 0 |
+| `standard_rho_frobenius_scene1` | Scene1 聚合 | 144.3 秒 | `9366160` | 8.932 | 0 |
+| `standard_rho_frobenius_checks` | Checks | 144.1 秒 | `9570084` | 9.127 | 0 |
+| `standard_rho_frobenius_axioms` | Axioms | 140.6 秒 | `9547592` | 9.105 | 0 |
+| `standard_rho_frobenius_importaudit` | ImportAudit | 147.4 秒 | `9376000` | 8.942 | 0 |
+
+受控运行使用 CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存、默认 heartbeat、
+0.5 秒 RSS 采样和 15 GiB 停止线；所有归档运行均低于 16 GiB。逐次资源证据见
+`docs/Scene1Witt比较内存.jsonl`。此前一次运行只因显式导入缺少缓存的 mathlib module
+而未进入源码检查；移除冗余导入后本工程冻结配置下验收通过，不重建 Mathlib。
+
+本单元不证明 Frobenius 已连续延拓到固定半径完成或全半径 carrier，也不证明其与论文
+period、标量、Galois、Tate-log、H¹ₑ/BK、holomorphoid 或一般 E/tensor 来源相容。
+Prologue R5、15项父义务与G1–G4保持不变。
