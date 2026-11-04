@@ -7469,3 +7469,43 @@ Carrier 的比较。旧 named ambientInclusion/toAmbient 方块仍是独立边�
 不是数学反例，也不能单独定位 Kernel 缺陷。论文B的Fréchet/标量/Frobenius/period标记、
 一般E/tensor变体、H¹ₑ/BK和真实holomorphoid来源尚未由本单元完成；Prologue R5、15项父义务
 与G1–G4状态不变。
+
+独立标准全半径 Hausdorff completion 与实际 Fréchet completion 比较（2026-11-04）：从原
+p-only bounded Witt ring 的完整 rho 范数族拉回一致结构，并构造其 Hausdorff completion。
+然后将原 actual completion、原 actual closure、原标准 closure 和原标准 completion 的
+已证等价复合。两侧原环、固定半径范数及 closure carrier 全部保持原定义。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FRECHET-SOURCE` | `Act1Scene1/PadicWittFrechetSource.lean` | 定义独立 Source、原环 sourceEquiv、toProduct/toCarrier 及原半径 completion 映射诱导的 UniformSpace；证明分离、加法群和环拓扑相容、稠密像及 AbstractCompletion package。所有声明仅使用 p 与 Fact p.Prime，不由 actual 数据选择拓扑。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FRECHET-COMPARISON` | `Act1Scene1/PadicWittFrechetComparison.lean` | 将 UniformSpace.Completion(Source p) 与原标准 Carrier 识别为环等价和一致等价；环法律由原 toCarrier 的连续延拓与稠密性证明。给出原 inclusion、各半径 radiusMap、原值范数及收敛判据，以及连续环同态到具有相容一致加法群结构的完备 Hausdorff 拓扑目标环的延拓和唯一性。仅依赖 p。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-FRECHET-COMPARISON` | `Act1Scene1/IutInitialThetaPadicWittFrechetComparison.lean` | 定义 actual Completed 到原标准 Carrier 的 carrierRingEquiv，再接标准比较的逆得到 actual Completed 到 independent standard Completed 的 ringEquiv。由加法群连续同态推出双向一致连续，同一底层函数组成 uniformEquiv/homeomorph。原 actual bounded inclusion 经标准 completion 比较后的底层值是原标准 diagonal 的已证裸函数表示。每个标准 rho 坐标与原 actual rho^localDeg 坐标相容，保留标准范数^localDeg=实际范数及全半径收敛判据。 |
+
+来源为 Joshi II `se:ff-rings` 与 `pr:teichmuller-lift-A/B` 的 rho 范数族、完备化和 period
+carrier；标准源与完成采用本工程原 actual 构造的证明模式，全部为原始证明，无参考实现复制。
+标准两模块没有 InitialThetaData 参数；实际比较只使用既有 AG/TG、D、w、半径和元素，不增加
+比较证书、范数假设或来源法律。三个模块的68个公开声明（19+26+23，含命名局部 prime 实例）
+在 Checks/Axioms 各登记一次；实际比较是独立标准完成的消费者。
+
+下列受控运行使用 CPU `0-13`、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存、默认 heartbeat，
+每 0.5 秒采样进程组 RSS，15 GiB 为监控停止线。七项均退出 0，无停止原因。
+
+| 运行 | 秒 | 峰值 RSS KiB | 退出码 |
+| --- | ---: | ---: | ---: |
+| `standard_frechet_source` | 76.4 | 5,519,480 | 0 |
+| `standard_frechet_completion_comparison` | 81.4 | 5,533,976 | 0 |
+| `actual_standard_frechet_completion_equiv` | 134.2 | 9,138,676 | 0 |
+| `frechet_completion_scene1` | 161.0 | 9,365,744 | 0 |
+| `frechet_completion_checks` | 171.9 | 9,562,940 | 0 |
+| `frechet_completion_axioms` | 162.3 | 9,540,600 | 0 |
+| `frechet_completion_importaudit` | 150.3 | 9,438,588 | 0 |
+
+Axioms 日志只含 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`。
+Scene1、Checks、Axioms、ImportAudit 四入口全部通过。静态扫描覆盖四入口并集的1022个工程模块，禁止导入、证明洞、缺失文件与本单元缺失来源均为空。Lean/mathlib冻结版本和独立工程边界保持不变；七项资源记录已归档至 `docs/Scene1Witt比较内存.jsonl`。
+
+standardCompleted_metrizable 是显式 D,w 下从原 actual metrizability 运输的定理，没有注册
+为仅 p 参数的实例；独立 p-only 可数半径证明仍待后续。这里得到的是原全半径 Hausdorff
+完成之间的比较，不自动完成论文B的标量/Frobenius/Tate-log/holomorphoid身份。原 named
+standard inclusion 的具体点态包装与旧 ambientInclusion/toAmbient 方块没有被作为本单元
+前提；原 inclusion 相容通过已证 native diagonal 身份保留。Prologue R5、15项父义务与
+G1–G4保持不变。
