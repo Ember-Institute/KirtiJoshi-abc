@@ -7660,3 +7660,46 @@ Scene1、Checks、Axioms、ImportAudit 四入口全部通过。四入口联合�
 一般 E/tensor、H¹ₑ/BK 和 holomorphoid 来源身份仍须分别证明。旧 named ambient 方块与
 具体 standard inclusion 点态包装未作为本单元前提，也不由本单元闭合。Prologue R5、
 15 项父义务和 G1–G4 状态不变。
+
+独立标准 Fréchet Hausdorff completion 上的 Frobenius（2026-11-04）：通过既有标准
+completion/Carrier 环等价 e，将已证明的标准 Carrier Frobenius 组合为 e⁻¹∘phi∘e。
+目标仍为原 PadicWittFrechetComparison.Completed p；原 Source 一致结构、全半径 family、
+originalInclusion 和 radiusMap 均保持原定义，没有实际 D,w 参数或新比较假设。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FRECHET-FROBENIUS` | `Act1Scene1/PadicWittFrechetFrobenius.lean` | 14 个公开名称：原 Completed/Radius 别名、frobeniusEquiv、正逆 Carrier 比较公式、双向连续、正逆 originalInclusion 公式、正逆 radiusMap 公式、正逆范数幂律及 frobeniusHomeomorph。Frobenius 为原 completion 的连续环自同构，精确坐标式为 R_(rho^p)(phi x)=phi_rho(R_rho x)，范数式为 ‖R_(rho^p)(phi x)‖=‖R_rho x‖^p；逆向公式来自同一个原 Carrier 自同构。 |
+
+来源为 `index-Arithmetic Teichmuller Spaces 2.md` 的 Fargues–Fontaine/Fréchet B 路线，
+Joshi II `se:ff-rings`（TeX 511 起）、`pr:teichmuller-lift-A/B` 及其前的 rho 范数族
+与 Tate carrier 段落（934 起）。本地证明沿用本工程 actual completion 比较的数学模式，
+以独立 p-only Carrier 重新组装；没有导入 actual Frobenius 作为标准证明或复制参考代码。
+既有 Carrier Frobenius 由本单元消费，新 completion 自同构由原 inclusion、坐标公式及
+范数公式消费，并经 Scene1 聚合公开。
+
+14 个公开名称在 Checks/Axioms 各登记一次。实际 #check 签名仅含 p、Fact p.Prime、
+原半径及原载体元素；14 项 #print axioms 的并集仅为 propext、Classical.choice、
+Quot.sound，无 sorryAx。新叶及四入口均首次在默认 heartbeat 下退出 0，未提高预算。
+
+受控构建使用 CPU 0–13、LEAN_NUM_THREADS=14、Lean -j1、热缓存、0.5 秒进程组 RSS
+采样和 15 GiB 停止线。五次均无停止原因；日志、RSS 样本在本机 /tmp/abc-rho-builds，
+逐次命令、资源摘要与源码 SHA256 已归档到 `docs/Scene1Witt比较内存.jsonl`。
+
+| 运行 | 秒 | 峰值 RSS KiB | 峰值 GiB | 退出码 |
+| --- | ---: | ---: | ---: | ---: |
+| `standard_frechet_frobenius_leaf` | 72.6 | 5516340 | 5.261 | 0 |
+| `standard_frechet_frobenius_scene1` | 150.5 | 9368324 | 8.934 | 0 |
+| `standard_frechet_frobenius_checks` | 160.8 | 9577724 | 9.134 | 0 |
+| `standard_frechet_frobenius_axioms` | 163.0 | 9553636 | 9.111 | 0 |
+| `standard_frechet_frobenius_importaudit` | 161.5 | 9440740 | 9.003 | 0 |
+
+四入口联合静态图覆盖 1031 个工程模块，禁止导入、证明洞、缺失文件和本模块缺失
+source-id 均为空。独立标准模块的递归项目导入闭包为 45 个模块，不依赖 actual D,w
+路线。冻结 Lean 4.35.0-rc3 / 470d5ce1400764999581fd26d5d72b00d990b0f4 与
+mathlib 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3，依赖配置没有改动。
+
+边界：本单元闭合独立标准 Fréchet completion 的环/拓扑 Frobenius 及其原 rho 坐标
+幂律；尚未证明与 actual Frobenius 的比较交换图。bounded localization、Carrier 和
+Fréchet 三层 actual/standard Frobenius 相容仍须从同一原映射证明，不能作为新证书
+输入。标准标量、Galois、Tate-log 收敛与 eigenspace、period、论文 B、一般 E/tensor、
+H¹ₑ/BK 和真实 holomorphoid 来源仍分别开放。Prologue R5、15 项父义务和 G1–G4 不变。
