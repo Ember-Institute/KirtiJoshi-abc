@@ -386,6 +386,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoFieldWi
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoAmbientEquiv
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoValuePow
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoCompletionComparison
+import ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittAllRadiusCompletion
 
 /-! SceneBounds 家族：里程碑公理审计。 -/
 
@@ -4308,3 +4309,26 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoComplet
 
 -- ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittRhoCompletionSource
 #print axioms JoshiTeich.Act1Scene1.InitialThetaPadicWittRhoCompletionComparison.selectedPrimeCompletionSource
+
+-- ArithmeticTeichmullerSpaces.Act1Scene1.PadicWittAllRadiusCompletion
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.Radius
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.Product
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.diagonal
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.commonSubring
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.Carrier
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.carrierComplete
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.carrier_isTopologicalRing
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.carrier_isHausdorff
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.inclusion
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.evaluate
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.evaluate_inclusion
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.inclusion_injective
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.inclusion_denseRange
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.evaluate_continuous
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.ext
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.coordinateSeminorm
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.coordinateSeminorm_continuous
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.coordinateSeminorm_inclusion
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.coordinateSeminorm_prime
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.coordinates_separate_zero
+#print axioms JoshiTeich.Act1Scene1.PadicWittAllRadiusCompletion.tendsto_iff_coordinates

@@ -7336,3 +7336,24 @@ Source coe 相容使用原 `InitialThetaPadicBoundedWittComparison.ringEquiv`；
 `rho_completion_checks_final`、Axioms `rho_completion_axioms_final` 和 ImportAudit
 `rho_completion_importaudit_final`。本单元新增的具体 bounded inclusion 相容叶仍未验收；
 本表的 completion coe 只表示 Source completion 的原生嵌入相容。
+
+独立标准 p-only 全半径 completion carrier（2026-11-04）：仿 actual all-radius closure
+构造，但只使用标准 `PadicWittRhoCompletion` 和 p-only bounded localization；不把该 carrier
+命名为论文 Fréchet B，也不声称 actual/standard 全半径 transport 已完成。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-ALL-RADIUS-COMPLETION` | `Act1Scene1/PadicWittAllRadiusCompletion.lean` | 定义标准 `Product`、diagonal、闭包 `commonSubring`、`Carrier`、complete/Hausdorff/topological ring 实例、原环稠密嵌入、坐标 evaluate、分离性、坐标半范数和坐标收敛判据。所有对象只依赖 p 与 Fact p.Prime，并保留每个固定 rho 的原标准 completion。 |
+
+本单元验收：标准全半径叶、Scene1 聚合、Checks、Axioms、ImportAudit 均退出0；运行均为
+CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存、默认 heartbeat、0.5秒进程组 RSS
+采样，15 GiB 停止线。具体 bounded actual→standard 全半径 map、半径重参数和论文 B 身份
+仍待后续单元。
+
+| 运行 | 秒 | 峰值 RSS KiB |
+| --- | ---: | ---: |
+| `standard_all_radius_completion` | 79.4 | 5,544,044 |
+| `standard_allradius_scene1` | 137.4 | 9,442,316 |
+| `standard_allradius_checks` | 164.0 | 9,547,676 |
+| `standard_allradius_axioms` | 155.4 | 9,524,288 |
+| `standard_allradius_importaudit` | 140.1 | 9,434,712 |
