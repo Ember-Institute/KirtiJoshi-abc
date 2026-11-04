@@ -7607,3 +7607,56 @@ Prologue R5、15项父义务和G1–G4状态不变。
 本单元不证明 Frobenius 已连续延拓到固定半径完成或全半径 carrier，也不证明其与论文
 period、标量、Galois、Tate-log、H¹ₑ/BK、holomorphoid 或一般 E/tensor 来源相容。
 Prologue R5、15项父义务与G1–G4保持不变。
+
+独立标准 Frobenius 的固定半径完成、全半径乘积与原闭包延拓（2026-11-04）：消费已验收的
+p-only bounded localization Frobenius 及其 rho-value 幂律，按原标准 Source/Completed、
+Product 和 commonSubring/Carrier 依次延拓。半径变换始终为 rho↦rho^p，未替换原环、
+范数、diagonal、闭包或一致结构，也未增加任何比较证书或实际 D,w 参数。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-STANDARD-PADIC-WITT-RHO-FROBENIUS-COMPLETION` | `Act1Scene1/PadicWittRhoFrobeniusCompletion.lean` | 23 个公开名称。原 Source 的 Frobenius 环等价满足目标范数等于源范数的 p 次幂；距离幂律给双向一致连续性，Mathlib completion map 延拓为原 Completed 之间的连续环等价及 homeomorphism。原 bounded inclusion 相容，完成范数公式由稠密归纳证明，逆向范数公式由互逆性推出。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-PRODUCT-FROBENIUS` | `Act1Scene1/PadicWittProductFrobenius.lean` | 11 个公开名称。正整数 p 的 ENNReal.powOrderIso 在完整开区间 (0,1) 上给半径双射，将逐坐标 completedEquiv 组装为原 Product 的双向连续环自同构。正逆映射均保持原 bounded diagonal。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-ALL-RADIUS-FROBENIUS` | `Act1Scene1/PadicWittAllRadiusFrobenius.lean` | 14 个公开名称。原 diagonal 的相容公式及双向连续性证明原 commonSubring 的闭包双向稳定；限制得到原 Carrier 的连续环自同构及 homeomorphism，兼容原 inclusion、evaluate 与原 coordinateSeminorm。精确公式为 N_(rho^p)(phi x)=N_rho(x)^p，逆向公式保持相同方向。 |
+
+来源为 Joshi II `se:ff-rings`（TeX 511 起）以及 `pr:teichmuller-lift-A/B` 前的 rho 范数族
+与 Tate carrier 段落（934 起）。完成延拓、Product 重参数和闭包限制采用本工程既有 actual
+模块的数学证明模式，以独立标准 p-only 数据重新证明；没有把 actual Frobenius 运输
+冒充独立证明，没有复制参考工程代码。固定半径输出由 Product 消费，Product 输出由
+原闭包 Carrier 自同构与坐标范数幂律消费；该单元经 Scene1 聚合公开。
+
+三个模块的 48 个公开名称（23+11+14）在 Checks/Axioms 各逐名登记一次，private helpers
+不作为公开接口。实际 #check 签名确认只有 p、素性实例、原半径和原载体元素等参数。
+48 项 #print axioms 的公理并集仅为 propext、Classical.choice、Quot.sound，无 sorryAx。
+
+本次最终受控验收：CPU 0–13、LEAN_NUM_THREADS=14、Lean -j1、热缓存、默认 heartbeat，
+每 0.5 秒采样编译进程组 RSS，15 GiB 为停止线。以下七次均退出 0，无停止原因；
+日志与逐次 RSS 样本保存在本机 /tmp/abc-rho-builds，摘要与源码 SHA256 已归档到
+`docs/Scene1Witt比较内存.jsonl`。
+
+| 运行 | 秒 | 峰值 RSS KiB | 峰值 GiB | 退出码 |
+| --- | ---: | ---: | ---: | ---: |
+| `standard_frobenius_fixedradius_verified` | 86.9 | 5516088 | 5.261 | 0 |
+| `standard_frobenius_product_verified` | 105.5 | 5513604 | 5.258 | 0 |
+| `standard_frobenius_allradius_verified` | 85.9 | 5521188 | 5.265 | 0 |
+| `standard_frobenius_completion_scene1` | 144.2 | 9445596 | 9.008 | 0 |
+| `standard_frobenius_completion_checks` | 154.6 | 9574044 | 9.131 | 0 |
+| `standard_frobenius_completion_axioms` | 142.6 | 9553460 | 9.111 | 0 |
+| `standard_frobenius_completion_importaudit` | 141.1 | 9430252 | 8.993 | 0 |
+
+首轮 fixed-radius 草稿与后续三个 fixed-radius、一个 Product 失败迭代均已归档；
+峰值约 5.26 GiB，均因 Lean 表达式、实例或名称解析错误自然退出 1，无资源停止。
+最终修复使用原源环范数身份、距离幂律、原 inclusion 上的稠密归纳和明确的命名空间，
+没有提升 heartbeat 或削弱结论。此前只有会话汇总的七条运行，其 log/samples 为 null；
+本次最终七条则有完整日志、RSS 样本和源码哈希，两类记录没有混同。
+
+Scene1、Checks、Axioms、ImportAudit 四入口全部通过。四入口联合静态图覆盖 1030 个
+工程模块，禁止导入、证明洞、缺失文件与三个新增模块的缺失 source-id 均为空；
+48 个公开名称在两份审计各出现一次。Lean 4.35.0-rc3 / 470d5ce1400764999581fd26d5d72b00d990b0f4
+及 mathlib 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3 保持冻结，未改依赖配置。
+
+边界：本单元证明原标准固定半径完成、全半径 Product 和闭包 Carrier 上的 Frobenius；
+标准 Fréchet Hausdorff completion 上的 Frobenius、与 actual 结构的相容、标量/Galois/Tate-log/period 运输，以及论文 B、
+一般 E/tensor、H¹ₑ/BK 和 holomorphoid 来源身份仍须分别证明。旧 named ambient 方块与
+具体 standard inclusion 点态包装未作为本单元前提，也不由本单元闭合。Prologue R5、
+15 项父义务和 G1–G4 状态不变。

@@ -23,23 +23,23 @@ actual carrier 上的定理，不自动成为论文 carrier 上的定理。
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-11-04（Asia/Shanghai） |
-| 最近完成的数学单元 | 原 actual 与独立标准全半径闭包 `Carrier` 比较：连续环等价、原 diagonal 相容、双向坐标公式和范数幂律 |
-| 已提交数学基线 | `f904d0b`；其前置单元为完整 bounded `value_pow`（`82ea173`）、单半径 completion（`89f4cc5`）、全半径 product 等价（`213751d`）和原生 Source/coercion 接口（`f178044`） |
-| 最新工作树进展 | 独立标准全半径 Hausdorff completion 及其与 actual Fréchet completion 的比较已通过三个叶模块、Scene1、Checks 和 Axioms；ImportAudit 尚未启动，整个单元尚未完成归档、提交或推送 |
+| 最近完成的数学单元 | 独立标准 Frobenius 的固定半径 completion、全半径 Product 与原闭包 Carrier 延拓；48 项公开名称及四入口均验收通过 |
+| 本次修改前的提交基线 | `fabaa1b`；此前依次完成全半径闭包比较（`f904d0b`）、Fréchet completion 比较（`3a60371`）、独立有理半径拓扑（`fdfb6b7`）和标准 rho 乘法性（`959d595`） |
+| 本次交付 | 标准 Frobenius 三叶、Scene1、Checks、Axioms、ImportAudit 均通过；原载体、范数和一致结构保持，来源与逐次资源摘要已归档 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4；15 项父义务全部开放** |
-| 当前推进位置 | 已从单半径比较接通原全半径闭包，并将两侧 Hausdorff completion 连接起来；下一步完成该工作树单元的剩余验收，再补独立 p-only 可数半径拓扑及后续结构比较 |
-| 尚未闭合的比较边界 | 旧 named `ambientInclusion/toAmbient` 方块、原标准 named inclusion 的具体点态恢复包装仍未验收；独立 p-only 可度量性、范数乘法等式、标量/Frobenius/Tate-log 及论文 `B` 身份仍开放 |
-| 内存优化结果 | 完整 `value_pow` 峰值约 8.677 GiB，原全半径闭包比较叶约 8.713 GiB，最新完成比较叶约 8.715 GiB；这些具体成功运行均低于 16 GiB |
-| 最近完整单元验收 | `f904d0b` 的 Scene1、Checks、Axioms、ImportAudit 均退出 0；四入口最大峰值为 `9555336 KiB`（约 9.113 GiB） |
-| 最新工作树验收 | 三个叶和 Scene1、Checks、Axioms 均退出 0；最大峰值为 `9562940 KiB`（约 9.120 GiB）；ImportAudit 待运行 |
+| 当前推进位置 | 已打通独立标准全半径 Hausdorff completion、实际完成比较、p-only 可度量性、rho 乘法性和 bounded Frobenius；固定半径、Product、全半径 Carrier 的 Frobenius 已验收，下一步接到标准 Fréchet completion |
+| 尚未闭合的比较边界 | 旧 named `ambientInclusion/toAmbient` 方块、标准 named inclusion 的具体点态恢复包装仍未验收；标准 Fréchet completion 的 Frobenius 延拓与 actual 结构相容仍缺；论文 `B`、标量/Galois/Tate-log、period 与 H¹ₑ/BK 身份仍开放 |
+| 内存优化结果 | 最近固定半径及全半径比较单叶峰值约 8.7 GiB；标准 rho 乘法和 bounded Frobenius 叶峰值分别约 5.260 GiB、5.276 GiB，均低于 16 GiB |
+| 最近完整单元验收 | 本次三叶及四入口均退出 0；三叶最大峰值 `5521188 KiB`（约 5.265 GiB），四入口最大峰值 `9574044 KiB`（约 9.131 GiB） |
+| 最近其他完整单元验收 | 全半径 completion 比较、有理半径拓扑和标准 rho 乘法均已完成 ImportAudit；对应记录已在来源台账及仓库资源 JSONL 归档 |
 | 内存边界 | 单叶验收上限 16 GiB；当前监控停止线 15 GiB，总编译内存上限 100 GiB。低于内存线但超时的构建仍不算通过 |
 | 尚未接通的主要连接 | 共同真实 geometry producer、global holomorphoid、论文 Fréchet `B`/ρ-norm、H¹ₑ/BK、paper representatives、跨来源 collation、theta locus/`thetaVolume` 与最终 Corollary 3.12 |
 | Prologue 边界 | `R5`；四项 source laws 仍由 Scene1 producer 从共同真实来源证明 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后看最近单元变化与内存记录。
 总体义务以[开发计划](开发计划.V1Act1Scene1.md)、[证明义务台账](具有明确参考来源指示的证明义务.md)
-和[来源台账](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md)为准。已提交单元的资源证据见
-[Scene1Witt比较内存.jsonl](Scene1Witt比较内存.jsonl)；尚未归档的六条完成比较记录单列于下文。
+和[来源台账](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md)为准。已验收单元的资源证据见
+[Scene1Witt比较内存.jsonl](Scene1Witt比较内存.jsonl)；本轮 Frobenius 三叶的成功和失败编译也已追加资源记录。
 
 ## 四个最终验收闸门
 
@@ -63,7 +63,7 @@ qLogTerm 的字面符号问题按既有决定暂作笔误处理，等待作者�
 
 下图展示当前构造与待完成连接，不是完整 Lean 导入图。
 实线表示已有构造或已通过叶编译的连接；虚线表示仍需证明或装配。
-绿色只覆盖节点写明的已验收范围；黄色完成比较节点仍缺整单验收。
+绿色只覆盖节点写明的完整验收范围；黄色节点有局部结果，灰色节点尚未验收。
 
 ```mermaid
 flowchart TD
@@ -77,8 +77,12 @@ flowchart TD
     Q["已闭合：单半径 completion 等价<br/>双向连续与范数幂律；89f4cc5"]
     U["已闭合：全半径 product 等价<br/>native diagonal 相容"]
     A["已闭合：原全半径闭包 Carrier 等价<br/>双向连续与坐标范数幂律；f904d0b"]
-    C0["叶及三个入口通过：独立标准 Hausdorff 完成<br/>actual↔standard 完成等价；待 ImportAudit"]
-    M["未建立：独立 p-only 可数半径拓扑<br/>范数乘法等式及结构比较"]
+    C0["已闭合：独立标准 Hausdorff 完成<br/>actual↔standard 比较及四入口审计"]
+    M["已闭合：p-only 有理半径拓扑<br/>可度量性及 rho 乘法范数"]
+    F0["已闭合：标准 bounded rho Frobenius<br/>自同构与 value 幂律"]
+    F1["已闭合：固定半径 Frobenius<br/>completion 等价与范数幂律"]
+    F2["已闭合：Product 与原闭包 Carrier<br/>标准全半径 Frobenius；四入口通过"]
+    F3["未建立：标准 Fréchet Frobenius<br/>及 actual 结构相容"]
     F["已闭合：actual period ring<br/>completion、Frobenius、theta 与 Tate kernel"]
     H["已闭合：actual H¹ / ordinary log<br/>hull 与局部定量界"]
     B["未建立：论文 Fréchet B 身份<br/>global holomorphoid、H¹ₑ/BK"]
@@ -97,7 +101,13 @@ flowchart TD
     Q --> U
     U --> A
     A --> C0
-    C0 -.-> M
+    C0 --> M
+    E --> F0
+    F0 --> F1
+    F1 --> F2
+    F2 -.-> F3
+    C0 -.-> F3
+    F3 -.-> B
     M -.-> B
     D --> F
     D --> H
@@ -113,21 +123,21 @@ flowchart TD
     classDef done fill:#dcfce7,stroke:#15803d,color:#14532d;
     classDef partial fill:#fef3c7,stroke:#b45309,color:#78350f;
     classDef open fill:#f3f4f6,stroke:#6b7280,color:#111827;
-    class T,E,W,V,Q,U,A,F,H done;
-    class C0,R partial;
-    class S,D,P,M,B,L,C open;
+    class T,E,W,V,Q,U,A,C0,M,F0,F1,F2,F,H done;
+    class R partial;
+    class S,D,P,F3,B,L,C open;
 ```
 
 当前 value 路线已通过局部化 presentation 和系数范数比较证明完整商值幂律。
 它没有把旧 named `ambientInclusion` 方块作为已证明前提；该方块仍单独开放。
 全半径 product 等价已经限制到两侧原始闭包 `Carrier`，保留完整半径族、原范数和
-`ρ ↦ ρ ^ localDeg(w)`。关键是先在 p-only 上游证明标准 diagonal 的全函数身份，
-再由具体下游消费原闭包判据；这一连接已验收并提交。
+`ρ ↦ ρ ^ localDeg(w)`；之后两侧原始 Fréchet completion 也已通过环等价、一致等价、
+有理半径收敛判据及四入口审计。标准 p-only 有理半径拓扑、可度量性和 rho 乘法范数已闭合。
 
-最新工作树进一步构造独立标准 Source 的全半径 Hausdorff completion，并接通 actual
-Fréchet completion。三个新模块及三个入口已通过，整单仍待 ImportAudit、归档和提交推送。
-其中 `standardCompleted_metrizable` 显式依赖 `D,w`；独立 p-only 可数半径与可度量性证明尚未建立。
-这些结果尚未闭合论文 Fréchet `B` 的全部结构和来源身份。
+标准 bounded rho localization 上的 Frobenius 自同构及 `ρ ↦ ρ^p` 值幂律已通过四入口。
+当前工作树把该映射继续延伸到固定半径完成，再组装到全半径 Product 和原闭包 Carrier；
+固定半径、Product 和 Carrier 三叶均已通过默认预算编译，整单四入口及 48 项逐名审计也已通过。
+之后仍须证明标准 Fréchet 完成上的 Frobenius、actual 结构相容及论文 `B` 的来源身份。
 
 ### 关键子结果与缺口
 
@@ -143,9 +153,12 @@ Fréchet completion。三个新模块及三个入口已通过，整单仍待 Imp
 | 标准 p-only 全半径 completion carrier | 🟢 已闭合 | 由单半径标准 completion 组装全半径产品 carrier，含坐标范数、稠密嵌入、分离性和坐标收敛；叶、Scene1、Checks、Axioms、ImportAudit 已通过 | G2/G4；`b2ac96f`；[全半径 carrier](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittAllRadiusCompletion.lean) |
 | 实际↔标准全半径 product 等价 | 🟢 已闭合 | 沿 `ρ ↦ ρ ^ localDeg(w)` 组装各半径 completion 等价，给出全乘积双向连续环等价；原 diagonal 相容随后通过 native 接口接通 | G2/G4；`213751d`、`f904d0b`；[product 等价](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoProductEquiv.lean) |
 | 原 actual↔standard 全半径闭包比较 | 🟢 已闭合 | 原 `Carrier` 间的环等价、双向连续、homeomorphism、原 inclusion 的 diagonal 底层值公式、双向 evaluate 与坐标范数幂律均已验收；没有替换共同闭包 | G2/G4；`f904d0b`；[原载体比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittAllRadiusComparison.lean) |
-| 独立标准全半径 Source 与 Hausdorff completion | 🟡 部分完成 | 仅依赖 p 的原全半径一致结构、分离性、环拓扑、完成与原闭包的一致/环等价、连续环同态延拓及唯一性已通过叶编译和三个入口；整单 ImportAudit 与归档待完成 | G2/G4；工作树 [Source](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittFrechetSource.lean)、[完成比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittFrechetComparison.lean) |
-| Actual↔standard 全半径完成比较 | 🟡 部分完成 | 双向连续环等价、一致等价、homeomorphism、原 inclusion 底层值、半径相容、范数幂律与收敛判据已通过叶编译和三个入口；整单 ImportAudit 与提交待完成 | G2/G4；工作树 [实际完成比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittFrechetComparison.lean) |
-| 独立 p-only 可度量性及结构身份 | ⚪ 未建立 | 独立可数半径拓扑、范数乘法等式，以及标准标量/Frobenius/Tate-log 比较仍待证明；已有 `D,w` 下的可度量性运输不能替代独立 p-only 结果 | G2/G4；上述完成比较源码的边界说明 |
+| 独立标准全半径 Source 与 Hausdorff completion | 🟢 已闭合 | p-only 原一致结构、分离性、完成与原闭包比较、连续环同态延拓及唯一性已通过叶和四入口；来源与资源已归档 | G2/G4；[Source](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittFrechetSource.lean)、[完成比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittFrechetComparison.lean)；`3a60371` |
+| Actual↔standard 全半径完成比较 | 🟢 已闭合 | 双向连续环等价、一致等价、homeomorphism、原 inclusion 底层值、半径相容、范数幂律与收敛判据已通过四入口；保留实际与标准原载体 | G2/G4；[实际完成比较](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittFrechetComparison.lean)；`3a60371` |
+| 独立 p-only 半径拓扑与可度量性 | 🟢 已闭合 | 有理半径夹逼完整 `(0,1)` 范数族；标准 carrier、Source 与 Hausdorff completion 的原拓扑可度量，actual 比较消费该独立判据 | G2/G4；`fdfb6b7`；[拓扑模块](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittFrechetTopology.lean) |
+| 独立标准 rho 乘法范数 | 🟢 已闭合 | 原 bounded `value`、fixed-radius Source/Completed 范数和 all-radius `coordinateSeminorm` 的精确乘法等式均已证明并通过四入口 | G2/G4；`959d595`；[乘法模块](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittRhoMultiplicativeNorm.lean) |
+| 独立标准 bounded rho Frobenius | 🟢 已闭合 | 原 bounded localization 上的 p-only Frobenius 环自同构、ambient/presentation 相容及 `ρ ↦ ρ^p` 的 value/realValue 幂律已通过四入口 | G2/G4；`fabaa1b`；[bounded Frobenius](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittRhoFrobenius.lean) |
+| 标准固定半径与全半径 Frobenius 延拓 | 🟢 已闭合 | 固定半径 completion 等价、范数幂律、全半径 Product 自同构与原 all-radius Carrier 限制已通过三叶、四入口和 48 项逐名审计 | G2/G4；[fixed-radius](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittRhoFrobeniusCompletion.lean)、[Product](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittProductFrobenius.lean)、[Carrier](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittAllRadiusFrobenius.lean) |
 | 共享 carrier 比较与 `ambientEquiv` | 🟢 局部闭合 | 系数、field-Witt 和 fraction ambient 等价已有 proof term；相关叶有低于 16 GiB 的成功记录，范围不含 bounded ambient inclusion 方块 | G2/G4；`d4a05cd`；[ambient 等价叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoAmbientEquiv.lean) |
 | 原 inclusion 后的系数范数幂律 | 🟢 叶验收通过 | `coefficient_inclusion_norm_pow` 已在默认预算下通过独立叶编译；新接口直接保存两侧 inclusion 后的系数范数 | G2/G4；[系数范数叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoCoefficientNorm.lean) |
 | 分子、分母与商值幂律 | 🟢 叶验收通过 | `numerator_value_pow`、`denominator_value_pow`、`quotient_value_pow` 分别通过默认预算叶编译；最终局部化值定理也已在 `82ea173` 通过 | G2/G4；[商值叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoQuotientValue.lean) |
@@ -153,11 +166,12 @@ Fréchet completion。三个新模块及三个入口已通过，整单仍待 Imp
 | Actual→standard 完整 rho 幂律 | 🟢 已闭合 | 原 bounded `ringEquiv` 上的 `value_pow` 在默认 heartbeat 下通过，保留原范数、标准独立收缩元和半径 rho^localDeg；聚合、审计和推送已完成 | G2/G4；`82ea173`；[最终值声明](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoValuePow.lean) |
 | 旧 named `ambientInclusion` / `toAmbient` 比较 | ⚪ 未建立 | 已测试的具体交换图仍未通过；ambient 环等价和新系数范数叶不能代替该命名映射的相容证明 | G2/G4；[计划中的构建边界](开发计划.V1Act1Scene1.md#2026-11-03named-ambient-inclusion-的内核阻塞已复核) |
 | 原标准 named inclusion 的具体恢复包装 | ⚪ 未建立 | 在具体 `ringFun` 像上恢复原标准 named inclusion 的独立点态包装仍有 Kernel timeout；p-only 上游的全函数 diagonal 身份和原闭包比较已经验收，两者范围须区分 | G2/G4；[来源台账](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md)的原闭包比较边界 |
-| 论文 `B`、H¹ₑ/BK 与 global holomorphoid | ⚪ 未建立 | actual/local 构件尚未识别为论文要求的 carrier、拓扑、子空间及比较映射 | G2/G4；[父义务台账](具有明确参考来源指示的证明义务.md) |
+| 论文 `B`、H¹ₑ/BK 与 global holomorphoid | ⚪ 未建立 | actual/local 及 p-only 载体构件尚未识别为论文要求的 carrier、拓扑、子空间及比较映射；bounded Frobenius 也未替代该身份 | G2/G4；[父义务台账](具有明确参考来源指示的证明义务.md) |
 | Paper representatives、theta locus 与 `thetaVolume` | 🟡 部分完成 | actual 会计和 hull 可复用；paper carrier、跨来源 transport、locus/volume 身份及最终共同装配仍缺 | G2/G3/G4；[计划 §3](开发计划.V1Act1Scene1.md#3-未完成义务按最终闸门分解) |
 
-“已闭合”只覆盖本行的精确范围。已提交的 bounded、单半径、全半径 product 和原闭包单元
-均有相应聚合与审计证据；最新工作树完成比较仍缺 ImportAudit。这些局部结果不关闭论文 `B` 身份或父义务。
+“已闭合”只覆盖本行的精确范围。已提交的 bounded、单半径、全半径 product、原闭包与
+Fréchet completion 单元均有聚合和审计证据；当前 Frobenius 延伸单元也已通过四入口和逐名审计。
+这些局部结果不关闭论文 `B` 身份或父义务。
 `integralKummerSubmodule` 是带 integral 来源的有理像载体；特定像类非零不表示一般 integral H¹
 系数映射单射。actual ordinary log 仍须与论文 Bloch–Kato log 比较。
 
@@ -172,7 +186,8 @@ Fréchet completion。三个新模块及三个入口已通过，整单仍待 Imp
 | 环带指数延拓 | 🟡 部分完成 | overlap 法律、闭区间有界逼近和条件性消费者已有 | 精确 Witt 代表或全半径延拓；固定正内半径的单位界不足以推出整性 |
 | Actual / standard bounded rho 比较 | 🟢 已闭合 | 原环等价上的完整 `value_pow`、单半径 completion、双向连续和完成范数幂律已验收 | 旧 named ambient 方块和具体原 inclusion 包装仍单独开放 |
 | 原全半径闭包 carrier 比较 | 🟢 已闭合 | p-only carrier、半径重参数、product 等价、native diagonal 相容及原闭包等价均已验收 | 标量/Frobenius/period transport 和论文 `B` 身份 |
-| 全半径 Hausdorff completion 比较 | 🟡 部分完成 | 独立标准完成、通用延拓与 actual 比较已通过三叶和三个入口 | ImportAudit、归档和提交；独立 p-only 可数半径拓扑、乘法范数等式及论文结构身份 |
+| 全半径 Hausdorff completion 比较 | 🟢 已闭合 | 独立标准完成、通用延拓与 actual 比较已通过四入口；独立 p-only 可度量性随后单独通过 | 论文 `B`、标量/Frobenius/period 与 H¹ₑ/BK 身份仍开放 |
+| 标准 bounded Frobenius | 🟢 已闭合 | 标准 p-only localization 自同构、rho value/realValue 幂律和四入口审计已通过 | 固定半径完成及全半径 Carrier 延拓已通过整单审计；标准 Fréchet 延拓与论文 `B` 身份另计 |
 
 Joshi II 的原型为 `B_{C_p^flat,ℚₚ}`、`φ=p`；Joshi III 也允许 `B_E`、tensor 和局部化变体。
 选择哪一种载体仍须证明它与实际 holomorphoid、theta-value 来源及权重相容。
@@ -199,9 +214,13 @@ Joshi II 的原型为 `B_{C_p^flat,ℚₚ}`、`φ=p`；Joshi III 也允许 `B_E`
 | `82ea173`：bounded rho 值比较 | 把映射后的系数范数放入上游抽象接口，经 numerator、denominator 和 quotient 推出原环等价上的完整 `value_pow` | 🟢 已验收并推送 | 旧 named ambient 方块仍独立开放 |
 | `213751d`、`f178044`：全乘积与原生 coe | 组装全部半径的 product 等价，并建立原 actual inclusion 到标准原生 coe 的相容接口 | 🟢 已验收并推送 | 后续闭包限制另由下一单元证明 |
 | `f904d0b`：原全半径闭包比较 | 标准 diagonal 身份上移到 p-only 源叶，证明具体 product transport 限制到两侧原 `Carrier` | 🟢 已验收并推送 | 旧具体 named inclusion 包装及论文结构身份仍开放 |
-| 工作树：全半径完成比较 | 独立标准 Source/Hausdorff completion、原闭包比较、通用延拓，以及 actual↔standard 完成等价 | 🟡 三叶及三个入口通过 | 待 ImportAudit、来源/资源归档和提交推送；独立可数半径及论文身份仍开放 |
+| `3a60371`：全半径完成比较 | 独立标准 Source/Hausdorff completion、原闭包比较、通用延拓，以及 actual↔standard 完成等价 | 🟢 四入口验收并归档 | 论文 Fréchet `B` 的额外代数结构和来源身份仍开放 |
+| `fdfb6b7`：独立有理半径拓扑 | 证明 p-only 可度量性并将判据运输到 actual completion | 🟢 四入口验收并归档 | 不闭合论文载体身份 |
+| `959d595`：标准 rho 乘法范数 | 完成 bounded value、单半径范数和全半径坐标半范数的精确乘法律 | 🟢 四入口验收并归档 | 不闭合论文 `B` 的标量与来源身份 |
+| `fabaa1b`：标准 bounded Frobenius | bounded localization 自同构及 value/realValue 的 `ρ ↦ ρ^p` 幂律 | 🟢 四入口验收并归档 | 固定半径和全半径延拓随后已在本次单元通过整单审计 |
+| 本次：固定/全半径 Frobenius 延拓 | 标准 fixed-radius completion、Product、Carrier 三个模块的延拓与组装 | 🟢 三叶与四入口验收；48 项公理审计通过 | 标准 Fréchet 延拓、actual 相容及论文身份仍开放 |
 
-这两次主要路线调整都把可复用的函数身份提前交给上游载体证明，下游只组合已证法律。
+这些路线调整都把可复用的函数身份提前交给上游载体证明，下游只组合已证法律。
 原实际/标准范数、独立 p-only 收缩元、原 bounded 环等价和原共同闭包均保留，没有增加自由比较假设。
 
 已验收的完整值目标为：令 `d = localDeg(w)`、`B = InitialThetaPadicBoundedWittComparison`，
@@ -212,14 +231,14 @@ PadicWittRhoValue.value p ρ (B.ringEquiv D w x) ^ d
   = InitialThetaWittRhoValue.value D w (ρ ^ d) x
 ```
 
-原全半径闭包的相应定理已随 `f904d0b` 验收。最新工作树把它延伸到完成上的半径坐标：
+原全半径闭包的相应定理已随 `f904d0b` 验收，完成上的半径坐标幂律已随 `3a60371` 通过四入口：
 
 ```text
 ‖standardRadiusMap ρ x‖ ^ d = ‖actualRadiusMap (ρ ^ d) x‖
 ```
 
 这里的两个映射分别是完成比较中的标准坐标和原 actual 坐标；正式声明为
-`InitialThetaPadicWittFrechetComparison.norm_radiusMap_pow`，目前已通过叶编译和三个入口。
+`InitialThetaPadicWittFrechetComparison.norm_radiusMap_pow`。
 
 ### 最新受控构建
 
@@ -228,7 +247,7 @@ PadicWittRhoValue.value p ρ (B.ringEquiv D w x) ^ d
 下表成功行均退出 0，且无停止原因；GiB 按 `KiB / 1048576` 换算。
 资源值属于相应源码版本的那次运行，不表示后来修改源码或依赖后已经自动重验。
 
-已提交单元的代表性记录已归档到[仓库资源 JSONL](Scene1Witt比较内存.jsonl)：
+仓库资源 JSONL [已归档单元记录](Scene1Witt比较内存.jsonl)：
 
 | 构建记录 label | 范围 | 耗时 | 峰值 RSS（KiB / GiB） | 结果 |
 | --- | --- | --- | --- | --- |
@@ -241,21 +260,52 @@ PadicWittRhoValue.value p ρ (B.ringEquiv D w x) ^ d
 | `native_allradius_axioms` | 原闭包比较 Axioms | 150.8 秒 | `9533224` / 9.092 | 已验收推送 |
 | `native_allradius_importaudit` | 原闭包比较 ImportAudit | 134.6 秒 | `9376892` / 8.943 | 已验收推送 |
 
-最新完成比较的六条运行记录仍在本机 `/tmp/abc-rho-builds/resources.jsonl`，
-日志及 RSS 样本位于同目录；截至本次更新尚未追加到仓库资源 JSONL 或正式来源台账：
+全半径 completion、有理半径拓扑、乘法性和 bounded Frobenius 的完整资源记录已归档到仓库
+JSONL 与来源台账。以下列出这些单元的代表性运行：
 
 | 构建记录 label | 范围 | 耗时 | 峰值 RSS（KiB / GiB） | 结果 |
 | --- | --- | --- | --- | --- |
 | `standard_frechet_source` | 独立标准 Source | 76.4 秒 | `5519480` / 5.264 | 叶编译通过 |
 | `standard_frechet_completion_comparison` | 标准 Hausdorff completion 与原闭包比较 | 81.4 秒 | `5533976` / 5.278 | 叶编译通过 |
 | `actual_standard_frechet_completion_equiv` | Actual↔standard 完成比较 | 134.2 秒 | `9138676` / 8.715 | 叶编译通过 |
-| `frechet_completion_scene1` | 最新 Scene1 聚合 | 161.0 秒 | `9365744` / 8.932 | 入口通过 |
-| `frechet_completion_checks` | 最新 Checks | 171.9 秒 | `9562940` / 9.120 | 入口通过 |
-| `frechet_completion_axioms` | 最新 Axioms | 162.3 秒 | `9540600` / 9.099 | 入口通过 |
-| `frechet_completion_importaudit` | 最新 ImportAudit | — | — | 尚未启动，无验收记录 |
+| `frechet_completion_scene1` | 完成比较 Scene1 聚合 | 161.0 秒 | `9365744` / 8.932 | 入口通过 |
+| `frechet_completion_checks` | 完成比较 Checks | 171.9 秒 | `9562940` / 9.120 | 入口通过 |
+| `frechet_completion_axioms` | 完成比较 Axioms | 162.3 秒 | `9540600` / 9.099 | 入口通过 |
+| `frechet_completion_importaudit` | ImportAudit | 150.3 秒 | `9438588` / 9.001 | 通过 |
+| `standard_frechet_rational_topology` | 独立标准可度量性 | 85.5 秒 | `5492468` / 5.238 | 叶通过 |
+| `actual_standard_frechet_rational_topology` | actual 有理半径收敛判据 | 150.7 秒 | `9139716` / 8.716 | 叶通过 |
+| `rational_topology_importaudit` | 有理半径拓扑 ImportAudit | 127.4 秒 | `9426880` / 8.990 | 通过 |
+| `standard_rho_multiplicativity_final` | 标准 rho 精确乘法性 | 69.7 秒 | `5516004` / 5.260 | 叶通过 |
+| `standard_multiplicativity_checks` | 乘法性 Checks | 133.9 秒 | `9567688` / 9.124 | 通过 |
+| `standard_multiplicativity_importaudit` | 乘法性 ImportAudit | 123.7 秒 | `9451400` / 9.014 | 通过 |
+| `standard_rho_frobenius_verified` | bounded Frobenius 与实值范数 | 91.7 秒 | `5532392` / 5.276 | 叶通过 |
+| `standard_rho_frobenius_checks` | bounded Frobenius Checks | 144.1 秒 | `9570084` / 9.127 | 通过 |
+| `standard_rho_frobenius_importaudit` | bounded Frobenius ImportAudit | 147.4 秒 | `9376000` / 8.942 | 通过 |
 
-最新 Axioms 日志只含 `propext`、`Classical.choice`、`Quot.sound`，没有 `sorryAx` 或错误。
-这不替代待执行的 ImportAudit，也不表示整个工作树单元已提交。
+最新 Axioms 日志只含 `propext`、`Classical.choice`、`Quot.sound`，没有 `sorryAx`。
+以上四个完整单元均已完成 ImportAudit、来源/资源归档并进入 `fabaa1b` 基线。
+本轮初次通过的三条叶记录如下；其后已重新运行三叶和全部四入口，最终记录另列：
+
+| 构建记录 label | 范围 | 耗时 | 峰值 RSS（KiB / GiB） | 结果 |
+| --- | --- | --- | --- | --- |
+| `standard_rho_frobenius_completion_leaf_retry3` | 固定半径 completion Frobenius | 80.8 秒 | `5520432` / 5.265 | 初次叶通过；最终验收见下表 |
+| `standard_rho_frobenius_product_leaf_retry1` | 全半径 Product Frobenius | 75.4 秒 | `5510424` / 5.255 | 初次叶通过；最终验收见下表 |
+| `standard_rho_frobenius_allradius_leaf` | 原闭包 Carrier Frobenius | 95.3 秒 | `5521168` / 5.265 | 初次叶通过；最终验收见下表 |
+
+本轮三叶使用相同的 CPU、线程数、默认 heartbeat、0.5 秒采样和 15 GiB 停止线。
+上述初次三叶及四次失败的七条摘要没有另存日志或 RSS 样本，`log`、`samples` 为 `null`。
+本次最终七条记录均另存完整日志和 RSS 样本，并保存对应源码 SHA256：
+
+| 构建记录 label | 范围 | 耗时 | 峰值 RSS（KiB / GiB） | 结果 |
+| --- | --- | --- | --- | --- |
+| `standard_frobenius_fixedradius_verified` | 固定半径 completion | 86.9 秒 | `5516088` / 5.261 | 最终验收通过 |
+| `standard_frobenius_product_verified` | 全半径 Product | 105.5 秒 | `5513604` / 5.258 | 最终验收通过 |
+| `standard_frobenius_allradius_verified` | 原闭包 Carrier | 85.9 秒 | `5521188` / 5.265 | 最终验收通过 |
+| `standard_frobenius_completion_scene1` | Scene1 聚合 | 144.2 秒 | `9445596` / 9.008 | 最终验收通过 |
+| `standard_frobenius_completion_checks` | Checks | 154.6 秒 | `9574044` / 9.131 | 最终验收通过 |
+| `standard_frobenius_completion_axioms` | Axioms | 142.6 秒 | `9553460` / 9.111 | 最终验收通过 |
+| `standard_frobenius_completion_importaudit` | ImportAudit | 141.1 秒 | `9430252` / 8.993 | 最终验收通过 |
+
 
 ### 历史资源边界
 
@@ -270,15 +320,16 @@ PadicWittRhoValue.value p ρ (B.ringEquiv D w x) ^ d
 
 命令、耗时、峰值、退出码、错误和停止原因见[机器可读记录](Scene1Witt比较内存.jsonl)。
 人工停止的重复或依赖过期运行明确记为人工停止，不记为自然退出或内存停止；
-最新完成比较的六条记录仍待归档，不能把它们写成已存在于仓库资源 JSONL。
+本轮四次失败迭代及此前初稿的一次失败也已记入资源 JSONL；
+均自然退出，峰值约 5.26 GiB，错误属于 Lean 表达式或名称解析，不是内存超限。
 早期约 100 GiB 运行的摘要保存在[开发计划](开发计划.V1Act1Scene1.md#2026-11-02rho-比较的-kernel-资源边界与载体接口调整)中；
 它们不具备后来受控运行的同等监控条件。一次不限内存诊断授权已使用，后续继续遵守单叶上限。
 
 ## 后续顺序
 
-1. 为当前全半径完成比较执行 ImportAudit，归档六条已完成资源及新增验收结果，补齐来源台账和计划动态边界，再提交推送。
-2. 证明独立 p-only 可数半径拓扑与可度量性，并补齐标准范数乘法等式；不把显式依赖 `D,w` 的运输定理当作独立证明。
-3. 在原载体间接通标量、独立标准 Frobenius、Tate-log 和 period 身份，明确选择的论文 `B`/允许变体及其来源；可继续将编译负荷分配到上下游载体。
+1. 通过已证标准 completion/Carrier 比较延伸标准 Fréchet Frobenius，并证明与 actual Frobenius 及原坐标范数相容。
+2. 在原载体间接通标量、Tate-log 和 period 身份，明确选择的论文 `B`/允许变体及其真实来源。
+3. 继续推进共同 geometry producer、holomorphoid、H¹ₑ/BK 与 paper theta-volume；各单元继续执行逐名及导入审计，保持单叶低于 16 GiB 并记录内存。
 
 旧 named ambient 方块和具体 named inclusion 包装仍单独登记；已通过的原闭包与完成比较
 使用已证 native diagonal 路线。继续证明这些包装时仍须满足单叶内存上限，失败记录不得改写成数学反例。
