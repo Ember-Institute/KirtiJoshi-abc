@@ -7357,3 +7357,35 @@ CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存、默认 heartbeat�
 | `standard_allradius_checks` | 164.0 | 9,547,676 |
 | `standard_allradius_axioms` | 155.4 | 9,524,288 |
 | `standard_allradius_importaudit` | 140.1 | 9,434,712 |
+
+实际与独立标准的全半径 product 比较（2026-11-04）：将已证明的单半径 completion
+环等价沿 `rho ↦ rho^localDeg(w)` 组装，未复制参考工程代码。
+
+| source-id | 模块 | 声明与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-ACTUAL-STANDARD-PADIC-WITT-RHO-PRODUCT-EQUIV` | `Act1Scene1/IutInitialThetaPadicWittRhoProductEquiv.lean` | `Radius`、`radiusEquiv` 及应用公式使用正整数 localDeg 的 `ENNReal.powOrderIso`，覆盖完整开区间 (0,1)。`StdProduct`、`ActProduct` 保留原固定半径 completion；`productEquiv` 由标准到实际逐坐标逆等价和半径重参数组成，`productEquiv_actual`、`productEquiv_symm_apply` 给出坐标公式，两向连续性由原单半径连续性推出。 |
+
+来源为 Joshi II `se:ff-rings` 和 `pr:teichmuller-lift-A/B` 的 rho 范数族；证明复用本工程
+`IutInitialThetaWittProductFrobenius` 的数学构造模式，指数改为已证明为正的 localDeg。
+具体定理只含原有 AG/TG、D、w、半径和元素参数，不增加范数、比较或来源证书。
+本单元只建立全乘积空间的等价，不宣布 diagonal 相容、共同闭包的等价、论文 Fréchet B、
+标量/Galois 或 period/BK 身份完成。Prologue R5、15项父义务与 G1–G4 状态不变。
+
+以下最终运行均为退出码0，无停止原因：CPU 0–13、`LEAN_NUM_THREADS=14`、Lean `-j1`、
+热缓存、默认 heartbeat、每0.5秒采样进程组 RSS、15 GiB 停止线。
+
+| 运行 | 秒 | 峰值 RSS KiB |
+| --- | ---: | ---: |
+| `product_equiv_core_final` | 119.2 | 9,114,596 |
+| `actual_standard_rho_product_equiv_core_final` | 117.6 | 9,115,108 |
+| `product_equiv_scene1` | 144.1 | 9,421,456 |
+| `product_equiv_checks` | 142.5 | 9,549,640 |
+| `product_equiv_axioms` | 135.9 | 9,527,620 |
+| `product_equiv_importaudit` | 134.4 | 9,435,356 |
+
+Axioms 只使用 `propext`、`Classical.choice`、`Quot.sound`，无 `sorryAx`。10个公开接口在
+Checks/Axioms 各登记一次；导入/证明洞扫描通过。早期 product 草稿的等价方向、dependent
+transport 和缺少 import 错误均已修复。含具体 diagonal 兼容声明的草稿仍有重写错误并伴随
+Kernel deterministic timeout，峰值约 11.61 GiB；它没有被验收，也不据此判定目标不可证明。
+本单元命令和失败记录已归档到 `docs/Scene1Witt比较内存.jsonl`。重复 label 的临时日志曾被
+覆盖，资源记录已标注这一限制，不从覆盖后的日志还原之前的错误。
