@@ -97,6 +97,44 @@ theorem absLogQ_eq_unweightedPaperCarrierSum
   exact Corollary312QPilotPaperRepresentativeAccounting.absLogQ_eq_unweightedRepresentativeSum
     p (C.toAccounting p) hOrder hNorm hEll
 
+/-! A carrier-level volume bound can feed the fixed Corollary 3.12 target
+without identifying the carrier by coercion. -/
+theorem corollary312_of_paperCarrier_volume_bound
+    (C : PaperRepresentativeCarrierSpec D p T P)
+    (hOrder : TateOrderNormCompatibility T.scene1.data.link)
+    (hNorm : Corollary312RawQNormDegreeNormalization p T hOrder P)
+    (hEll : 0 < T.ell)
+    (hTargetQ : Corollary312Data.qLogSum p T = P.absLogQ p)
+    (hEllStar : 0 < T.ellStar)
+    (hVolumePos : 0 < T.thetaVolume)
+    (hVolumeLeOne : T.thetaVolume ≤ 1)
+    (hVolumeLower :
+      Real.exp (-((T.ellStar : ℝ) * P.absLogQ p)) ≤ T.thetaVolume) :
+    letI : Fintype C.representative := C.representativeFintype
+    Corollary312 p T ∧
+      P.absLogQ p = ∑ r : C.representative, C.representativeTerm r := by
+  have hEllStarReal : (0 : ℝ) < T.ellStar := by
+    exact_mod_cast hEllStar
+  have hLogCompare :
+      -((T.ellStar : ℝ) * P.absLogQ p) ≤ Real.log T.thetaVolume := by
+    have h := Real.log_le_log (Real.exp_pos _) hVolumeLower
+    simpa only [Real.log_exp] using h
+  have hLogVolumeNonpos : Real.log T.thetaVolume ≤ 0 :=
+    Real.log_nonpos hVolumePos.le hVolumeLeOne
+  have hAbsLogVolume : |Real.log T.thetaVolume| = -Real.log T.thetaVolume :=
+    abs_of_nonpos hLogVolumeNonpos
+  have hCor : Corollary312 p T := by
+    unfold Corollary312
+    rw [hAbsLogVolume, hTargetQ]
+    have hScaled :
+        -(1 / (T.ellStar : ℝ)) * -Real.log T.thetaVolume =
+          Real.log T.thetaVolume / (T.ellStar : ℝ) := by ring
+    rw [hScaled]
+    apply (le_div_iff₀ hEllStarReal).2
+    nlinarith [hLogCompare]
+  refine ⟨hCor, ?_⟩
+  simpa using (absLogQ_eq_unweightedPaperCarrierSum p C hOrder hNorm hEll)
+
 theorem representative_support
     (C : PaperRepresentativeCarrierSpec D p T P) (r : C.representative) :
     C.representativePlace r ∈ C.Voss :=
