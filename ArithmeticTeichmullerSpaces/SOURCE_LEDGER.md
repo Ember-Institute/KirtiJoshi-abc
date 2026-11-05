@@ -7839,3 +7839,21 @@ heartbeat/recursion-depth override。Axioms 运行日志未发现 `sorryAx`；�
 Hausdorff completion 的 Frobenius 正逆交换图。论文 B、标量/Galois/Tate-log、period、
 H¹ₑ/BK、真实 holomorphoid/geometry producer、旧 named ambient inclusion、paper
 representatives 与 G1–G4 父义务仍保持开放。
+
+### 真实除点覆盖的 valuation-inertia generator equality（2026-11-05，叶级）
+
+| source-id | 模块 | 数学结果与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-GENUINE-VALUATION-INERTIA-GENERATORS` | `Act1Scene1/GenuineInertiaGenerators.lean` | 在实际椭圆曲线 `E`、`CharZero k` 和任意实际层 `ell`、子群 `M` 下，定义原估值惯性条件、base generator set 与 unsigned division-cover generator set，并证明两集合相等。正向使用实际 `act_generic_of_unsigned`，反向使用 `valuationInertia_fixes_divSys` 在 `effLevel ell` 的固定性；保留原同一 valuation-ring witness，包含 `ell = 0` 的有效层约定。 |
+
+源码 header 参考 IUT I Definition 3.1(d)、Joshi III `ss:theta-data-fixing2` 及
+`refer/iut/Iut/Anabelian/Genuine/Pi1.lean` 的 `Sgen`、`Cover.lean` 的 `S0` 和 `Sgen_eq_S0`；
+本文件为本工程独立证明，不把参考代码作为依赖，也不引入 `Compatible`、Cartesian、core
+或 theta-root 证书。当前源码叶 `genuine_inertia_generators_leaf_v2` 退出 0，134.6 秒，
+9153236 KiB（8.7292 GiB），运行前后源码 SHA 一致，低于 15 GiB 停止线和 16 GiB 单叶上限。
+整合验收的 `genuine_inertia_generators_scene1`、`genuine_inertia_generators_checks`、
+`genuine_inertia_generators_axioms`、`genuine_inertia_generators_importaudit` 均退出 0，
+峰值依次为 `9448148`、`9608920`、`9584836`、`9443064 KiB`（9.0105、9.1638、9.1408、
+9.0056 GiB），源码运行前后 SHA 一致；四入口联合检查无 proof hole、禁用导入或 `sorryAx`。
+下一步仍需构造闭正规惯性商及覆盖诱导映射；不能把本 generator equality 单独命名为
+étale `π₁` 身份，完整 geometry producer、Cartesian covering 和其余父义务保持开放。
