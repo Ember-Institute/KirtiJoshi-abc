@@ -7857,3 +7857,22 @@ representatives 与 G1–G4 父义务仍保持开放。
 9.0056 GiB），源码运行前后 SHA 一致；四入口联合检查无 proof hole、禁用导入或 `sorryAx`。
 下一步仍需构造闭正规惯性商及覆盖诱导映射；不能把本 generator equality 单独命名为
 étale `π₁` 身份，完整 geometry producer、Cartesian covering 和其余父义务保持开放。
+
+### 真实 valuation-inertia 的共轭稳定性（2026-11-05，叶级）
+
+| source-id | 模块 | 数学结果与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-GENUINE-VALUATION-INERTIA-CONJUGATION` | `Act1Scene1/GenuineInertiaConjugation.lean` | 用 valuation-subring 的 `W.comap (h⁻¹).toRingEquiv.toRingHom` 传递原 `valuation < 1` 条件，证明 valuation-inertia witness 在共轭后仍成立；再用实际 `Gal E` 对常数、`xG` 和 generic point 的原作用法律，证明 `baseValuationInertiaGenerators E` 对全部 `Gal E` 共轭稳定并满足集合等式。异号 generic-point 分支由实际椭圆曲线的 `genericPoint_ne_neg` 排除。 |
+
+本文件为本工程独立证明，未复制参考实现，也没有引入 `Compatible`、Cartesian、core、
+theta-root 或 étale 身份。当前叶 `genuine_inertia_conjugation_leaf_v3` 退出 0，218.4 秒，
+9171832 KiB（8.7469 GiB），运行前后源码 SHA 一致，低于 15 GiB 停止线和 16 GiB 单叶上限。
+整合验收的稳定源码 Checks/Axioms 也退出 0：Checks `129.0` 秒、`9611644 KiB`
+（9.1664 GiB），Axioms `123.3` 秒、`9587580 KiB`（9.1434 GiB）；此前通过的
+Scene1 为 `182.2` 秒、`9443032 KiB`（9.0056 GiB），ImportAudit 为 `165.6` 秒、
+`9378332 KiB`（8.9439 GiB）。四入口源码 SHA 均与运行前一致，公理输出仅含标准逻辑公理。
+该稳定性是后续闭正规惯性商的共轭前提；仍不等于商的 étale `π₁` 比较或完整 geometry
+producer。
+
+通用商映射草稿 `ClosedNormalQuotientMap.lean` 已完成源码编写但尚未通过 Lean 编译，
+不计入本次交付；其 API 仍需下一逻辑单元修正后验收。
