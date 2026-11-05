@@ -7904,3 +7904,11 @@ producer。
 | `JT-SCENE1-ACTUAL-INERTIA-QUOTIENT-FIXED-FIELD-ACTION` | `Act1Scene1/InitialThetaInertiaQuotientAction.lean` | 定义同一 seed 的 `inertiaFixedField = Ω^N`，其中 `N` 为实际 closed-normal valuation-inertia subgroup。限制同一 seed 的 `Hgp E ell M pm` 作用到 `Ω^N`，证明 kernel 正是既有 `inertiaKernel = N.subgroupOf Hgp`；故原 `inertiaQuotient` 忠实作用。不变量恰为既有 `S.functionFieldCoverField pm`。没有改名为 π₁，也没有添加实际几何、Cartesian、core/cusp/theta-root 或自由比较输入。 |
 
 来源为 IUT I Definition 3.1(d)、Joshi III `ss:theta-data-fixing2` 和 Mathlib infinite Galois correspondence。证明只消费同一实际 `Gal E`、`Hgp`、闭正规 `valuationInertiaSubgroup`、`N ≤ Hgp` 及 seed 的既有 fixed field。仅 `inertiaQuotientAction_fixed_iff` 在单个声明上使用 `maxHeartbeats 1000000`；其余声明保持默认 heartbeat。叶 `inertia_quotient_fixed_field_leaf_v5` 退出 0，118.1 秒，峰值 `9219556 KiB`（8.7925 GiB）。Scene1、Checks、Axioms、ImportAudit 均退出 0，资源记录见 `docs/Scene1Witt比较内存.jsonl`；逐名公理输出仅为 `propext`、`Classical.choice`、`Quot.sound`。该结果把实际商接到其函数域 fixed field，但不建立 actual Cartesian cover、`OrbicurveData`/`LocalThetaData` producer 或 `AG.pi1Cover` 比较。
+
+### Actual division-point x-coordinate transcendence
+
+| source-id | module | declaration and scope |
+| --- | --- | --- |
+| `JT-SCENE1-GENUINE-DIVISION-POINT-TRANSCENDENCE` | `Act1Scene1/GenuineDivisionPointTranscendence.lean` | Proves `Transcendental k (ptX (Qpt E n))` for the same actual compatible division system at every `n > 0`. If the selected x-coordinate were algebraic, the Weierstrass equation makes the y-coordinate algebraic too. The actual point then maps to the algebraic closure of `k`; Mathlib's point map preserves `n`-fold addition, so its multiple would make the actual generic point algebraic, contradicting `transcendental_xG`. No replacement division system or supplied coordinate law is used. |
+
+The leaf compiled with default heartbeats in 122 seconds at `9166656 KiB` (8.7420 GiB); source SHA before and after was `72fb105491cbe4fc9c05a88f9ea730d0b3a31f81a617f796e4ab53811114f6df`. The theorem is registered once in Checks and Axioms. It supplies the nonconstant-coordinate input for an actual division-point evaluation map; it does not identify that map's field range with `QField`, prove the signed quotient nontrivial, or close the Cartesian-cover obligation.
