@@ -23,17 +23,17 @@ actual carrier 上的定理，不自动成为论文 carrier 上的定理。
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-11-05（Asia/Shanghai） |
-| 状态截点 | 2026-11-05 04:33（Asia/Shanghai）；当前没有运行中的 Lean/Coq 进程，未验收运行不计作完成 |
-| 最近完成的数学单元 | 独立标准 Fréchet Hausdorff completion 上的 Frobenius；14 项公开名称、原 inclusion/坐标相容及正逆范数幂律已通过叶和四入口验收 |
-| 已推送数学基线 | `1b19bec`；前一单元 `035da86` 已完成固定半径 completion、全半径 Product 与原闭包 Carrier 的标准 Frobenius；本次总览更新没有新增数学证明 |
-| 当前未提交单元 | 原 bounded localization、全半径 Carrier 和 Fréchet completion 三层 actual↔standard Frobenius 交换图；上游辅助叶已有成功编译，完整比较尚未验收 |
+| 状态截点 | 2026-11-05 08:43（Asia/Shanghai）；已有 Lean 串行验收仍在运行，以下只计入截点前有终态的构建 |
+| 最近完整验收单元 | `1b19bec`：独立标准 Fréchet Hausdorff completion 上的 Frobenius；14 项公开名称、原 inclusion/坐标相容及正逆范数幂律已通过叶和四入口验收 |
+| 已推送版本与验收基线 | 状态截点的 HEAD 为 `1940db3`；`dd225b7` 已推送 bounded 正向/native 链，但初次聚合导入与逐名审计有缺口，完整交付验收正在补正；最近完整验收基线仍为 `1b19bec` |
+| 当前工作单元 | 原 bounded localization、全半径 Carrier 和 Fréchet completion 三层 actual↔standard Frobenius 正逆交换图；各最终叶已有成功记录，新增逆映射接口、下游比较及整合补正尚未提交 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4；15 项父义务全部开放** |
-| 当前推进位置 | 泛型 Witt 局部化 Frobenius、actual choice/standard 两侧与泛型映射的完整函数身份、observer 比较构造器自然性均已分别通过叶编译；正尝试将具体参数逐声明接入，再运输回原 bounded 环 |
-| 当前编译阻塞 | 具体自然性专门化仍触发 Kernel deterministic timeout；源端 Mul/Add 身份已证明，目标端具体实例转换仍未闭合。最新 v6 在 `11.604 GiB` 下仍以 timeout 结束 |
-| 尚未闭合的比较边界 | actual↔standard Frobenius 三层相容、旧 named `ambientInclusion/toAmbient` 方块及具体 named inclusion 恢复包装；论文 `B`、标量/Galois/Tate-log、period 与 H¹ₑ/BK 身份仍开放 |
-| 内存优化结果 | 早期约 100 GiB 的整体 rho 比较已改走拆分与 presentation 路线，最终 `value_pow`、原闭包及完成比较均已低于 16 GiB 验收；旧 named ambient 包装和当前 Frobenius 比较仍有未通过声明 |
+| 当前推进位置 | bounded 正向组合已改为四个 private theorem；逆函数法律上移到两侧原载体；全半径经原 inclusion、稠密性与连续性运输，Fréchet 经原 completion→Carrier 观察映射运输；三层正逆交换图均已有叶编译成功记录 |
+| 当前验收缺口 | 主入口、漏登名称与来源台账已开始补正；串行脚本正在核验依赖叶，随后重跑 Scene1、Checks、Axioms、ImportAudit。三层比较的最终四入口尚无完整通过结论 |
+| 尚未闭合的比较边界 | 三层 Frobenius 比较仍缺整合验收；旧 named `ambientInclusion/toAmbient` 方块及具体 named inclusion 恢复包装仍单独开放；论文 `B`、标量/Galois/Tate-log、period 与 H¹ₑ/BK 身份仍开放 |
+| 内存优化结果 | 早期约 100 GiB 的整体 rho 比较已通过 presentation 路线完成值、闭包与完成比较；当前三层 Frobenius 最终叶峰值约 8.65–8.72 GiB，原载体、原映射和范数保留；旧 named ambient 包装仍未验收 |
 | 最近完整单元验收 | `1b19bec` 新叶及四入口均退出 0；叶峰值 `5516340 KiB`（5.261 GiB），四入口最大峰值 `9577724 KiB`（9.134 GiB）；14 项公理审计无 `sorryAx` |
-| 当前工作树验收 | 新比较单元尚未通过；Carrier/Fréchet 下游草稿未编译，当前修改后的聚合与审计入口未重新验收。已通过的四入口结论只覆盖对应已提交版本 |
+| 当前工作树验收 | bounded 正逆、Carrier 正逆、Fréchet 正逆均已有与当前源码匹配的成功叶记录；部分下游记录尚在本机等待归档，修改后的四入口正在排队验收，不能以旧版本入口成功代替 |
 | 内存边界 | 单叶验收上限 16 GiB；当前监控停止线 15 GiB，总编译内存上限 100 GiB。低于内存线但超时的构建仍不算通过 |
 | 尚未接通的主要连接 | 共同真实 geometry producer、global holomorphoid、论文 Fréchet `B`/ρ-norm、H¹ₑ/BK、paper representatives、跨来源 collation、theta locus/`thetaVolume` 与最终 Corollary 3.12 |
 | Prologue 边界 | `R5`；四项 source laws 仍由 Scene1 producer 从共同真实来源证明 |
@@ -86,7 +86,7 @@ flowchart TD
     F1["已闭合：固定半径 Frobenius<br/>completion 等价与范数幂律"]
     F2["已闭合：Product 与原闭包 Carrier<br/>标准全半径 Frobenius；四入口通过"]
     F3["已闭合：独立标准 Fréchet Frobenius<br/>原 inclusion、坐标与范数幂律；1b19bec"]
-    FC["部分完成：actual↔standard Frobenius<br/>泛型自然性与两侧函数身份已编译<br/>具体专门化、Carrier / Fréchet 待验收"]
+    FC["部分完成：actual↔standard Frobenius<br/>bounded / Carrier / Fréchet 正逆叶均通过<br/>最终四入口整合验收中"]
     F["已闭合：actual period ring<br/>completion、Frobenius、theta 与 Tate kernel"]
     H["已闭合：actual H¹ / ordinary log<br/>hull 与局部定量界"]
     B["未建立：论文 Fréchet B 身份<br/>global holomorphoid、H¹ₑ/BK"]
@@ -146,11 +146,15 @@ flowchart TD
 48 项逐名审计均已通过。`1b19bec` 又通过原 completion/Carrier 等价，在原标准 Fréchet
 completion 上构造连续环自同构，证明正逆 inclusion、坐标和范数幂律，并完成四入口验收。
 
-当前 actual↔standard 比较把自然性提前到泛型 Witt 局部化层证明，并分别证明原 actual
-choice Frobenius、原标准 Frobenius 与泛型映射的完整函数身份，再以函数等式运输相容性。
-这些上游叶已分别编译；具体参数专门化与接回原 bounded 环的交换图尚未通过。
-后续仍须沿原 diagonal、稠密性和连续性传到 Carrier 与 Fréchet completion，逐层验收。
-该局部比较也不替代论文 `B` 身份。
+当前 actual↔standard 比较已越过此前具体参数专门化的阻塞。bounded 正向证明以四个
+private theorem 保存 choice action、naturality、comparison composition 和最终组合；
+bounded 逆向证明消费上游保存的两侧原逆函数法律。全半径 Carrier 用通用 inclusion 方块、
+稠密性与连续性延拓；Fréchet 用原 completion→Carrier 映射的相容性和单射性运输。
+三层正逆交换图都有成功叶记录，原映射、载体、范数及半径重参数均保留。
+
+`dd225b7` 的初次四入口虽然退出 0，但聚合未导入最终 bounded 链，审计也漏登部分名称。
+该缺口已记录在来源台账，当前正在补齐并重跑最终验收。因此当前三层比较仍标为部分完成；
+局部 Frobenius 相容也不关闭论文 `B`、holomorphoid 或 H¹ₑ/BK 身份。
 
 ### 关键子结果与缺口
 
@@ -173,7 +177,9 @@ choice Frobenius、原标准 Frobenius 与泛型映射的完整函数身份，�
 | 独立标准 bounded rho Frobenius | 🟢 已闭合 | 原 bounded localization 上的 p-only Frobenius 环自同构、ambient/presentation 相容及 `ρ ↦ ρ^p` 的 value/realValue 幂律已通过四入口 | G2/G4；`fabaa1b`；[bounded Frobenius](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittRhoFrobenius.lean) |
 | 标准固定半径与全半径 Frobenius 延拓 | 🟢 已闭合 | 固定半径 completion 等价、范数幂律、全半径 Product 自同构与原 all-radius Carrier 限制已通过三叶、四入口和 48 项逐名审计 | G2/G4；`035da86`；[fixed-radius](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittRhoFrobeniusCompletion.lean)、[Product](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittProductFrobenius.lean)、[Carrier](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittAllRadiusFrobenius.lean) |
 | 独立标准 Fréchet Frobenius | 🟢 已闭合 | 原 Hausdorff completion 上的连续环自同构、正逆 inclusion/坐标相容和 `ρ ↦ ρ^p` 范数幂律；14 项逐名审计、叶及四入口通过，仅依赖 p 与素性 | G2/G4；`1b19bec`；[Fréchet Frobenius](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/PadicWittFrechetFrobenius.lean) |
-| Actual↔standard Frobenius 交换图 | 🟡 部分完成 | 泛型 Witt 局部化自然性、两侧原 Frobenius 的完整函数身份及函数等式运输叶已编译；具体专门化仍未通过，Carrier/Fréchet 草稿尚未编译，整单未验收 | G2/G4；[当前编译阻塞](#当前比较单元的编译阻塞) |
+| Actual↔standard bounded Frobenius | 🟡 部分完成 | 原 bounded 正向/native 交换律及原逆映射交换律均有成功叶记录；初次聚合覆盖和漏名已发现并补正，最终整合验收待完成 | G2/G4；[当前三层比较与验收边界](#当前三层比较与验收边界) |
+| Actual↔standard 全半径 Carrier Frobenius | 🟡 部分完成 | 原 inclusion 方块经稠密性与连续性延拓，正逆交换图叶已通过；保留原 Carrier、环等价和范数；尚缺整单验收 | G2/G4；[Carrier 比较叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittAllRadiusFrobeniusComparison.lean) |
+| Actual↔standard Fréchet Frobenius | 🟡 部分完成 | 经原 completion→Carrier 映射及单射性证明正逆交换图，叶已通过；原 Hausdorff completion 不变；尚缺整单验收 | G2/G4；[Fréchet 比较叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittFrechetFrobeniusComparison.lean) |
 | 共享 carrier 比较与 `ambientEquiv` | 🟢 局部闭合 | 系数、field-Witt 和 fraction ambient 等价已有 proof term；相关叶有低于 16 GiB 的成功记录，范围不含 bounded ambient inclusion 方块 | G2/G4；`d4a05cd`；[ambient 等价叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoAmbientEquiv.lean) |
 | 原 inclusion 后的系数范数幂律 | 🟢 叶验收通过 | `coefficient_inclusion_norm_pow` 已在默认预算下通过独立叶编译；新接口直接保存两侧 inclusion 后的系数范数 | G2/G4；[系数范数叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoCoefficientNorm.lean) |
 | 分子、分母与商值幂律 | 🟢 叶验收通过 | `numerator_value_pow`、`denominator_value_pow`、`quotient_value_pow` 分别通过默认预算叶编译；最终局部化值定理也已在 `82ea173` 通过 | G2/G4；[商值叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPadicWittRhoQuotientValue.lean) |
@@ -203,7 +209,7 @@ Frobenius 单元尚未完成整单验收。这些局部结果不关闭论文 `B`
 | 原全半径闭包 carrier 比较 | 🟢 已闭合 | p-only carrier、半径重参数、product 等价、native diagonal 相容及原闭包等价均已验收 | 标量/Frobenius/period transport 和论文 `B` 身份 |
 | 全半径 Hausdorff completion 比较 | 🟢 已闭合 | 独立标准完成、通用延拓与 actual 比较已通过四入口；独立 p-only 可度量性随后单独通过 | 论文 `B`、标量/Frobenius/period 与 H¹ₑ/BK 身份仍开放 |
 | 独立标准 Frobenius 全链 | 🟢 已闭合 | bounded、固定半径、Product、原闭包至原 Fréchet completion 的自同构和相应幂律已分单通过四入口 | actual 相容、标量/Galois/Tate-log/period 与论文 `B` 身份另计 |
-| Actual↔standard Frobenius transport | 🟡 部分完成 | 上游源公式、泛型局部化自然性、两侧完整函数身份与纯函数运输已有叶编译证据 | 具体专门化及原 bounded 交换图先闭合，再独立验收 Carrier 与 Fréchet 交换图 |
+| Actual↔standard Frobenius transport | 🟡 部分完成 | 原 bounded、全半径 Carrier、Fréchet 三层正逆交换图均已有成功叶记录 | 补齐来源与逐名登记，完成覆盖全部新证明的四入口验收；论文身份另计 |
 
 Joshi II 的原型为 `B_{C_p^flat,ℚₚ}`、`φ=p`；Joshi III 也允许 `B_E`、tensor 和局部化变体。
 选择哪一种载体仍须证明它与实际 holomorphoid、theta-value 来源及权重相容。
@@ -234,7 +240,8 @@ Joshi II 的原型为 `B_{C_p^flat,ℚₚ}`、`φ=p`；Joshi III 也允许 `B_E`
 | `fabaa1b`：标准 bounded Frobenius | 原标准 localization 自同构及 value/realValue 的 `ρ ↦ ρ^p` 幂律 | 🟢 四入口验收并推送 | 不自动给 actual 比较 |
 | `035da86`：固定/全半径 Frobenius | 原 fixed-radius completion、Product、闭包 Carrier 上的延拓与组装 | 🟢 三叶、四入口及 48 项逐名审计通过并推送 | actual 相容及论文身份另计 |
 | `1b19bec`：标准 Fréchet Frobenius | 在原 Hausdorff completion 上构造连续环自同构，兼容原 inclusion、坐标与正逆范数幂律 | 🟢 叶、四入口及 14 项逐名审计通过并推送 | actual 相容、标量/Galois/Tate-log、period/BK 与论文身份仍开放 |
-| 当前未提交：actual↔standard Frobenius | 泛型 Witt 局部化 Frobenius、两侧与原 Frobenius 的函数身份、observer 构造器自然性和函数运输分别通过叶编译 | 🟡 部分完成；整单未验收 | 具体专门化仍未通过；v6 已在 `11.604 GiB` 下 timeout，Carrier/Fréchet 草稿未编译 |
+| `dd225b7`：bounded 正向/native Frobenius | 四个 theorem 边界组合原 choice 自然性，再接回原 bounded 函数 | 🟡 叶已通过并推送；整合验收补正中 | 初次四入口未覆盖最终链且漏登名称；旧四入口成功不能作为完整交付验收 |
+| 当前工作树：三层正逆 Frobenius 比较 | bounded 逆函数法律上移；Carrier 用 inclusion/稠密性；Fréchet 用原观察映射；三层最终叶均通过 | 🟡 叶已通过；最终四入口验收中 | 部分来源/资源待归档，修改后的聚合与审计尚无完整终态 |
 
 已验收的完整值目标为：令 `d = localDeg(w)`、`B = InitialThetaPadicBoundedWittComparison`，
 对 `ρ ≠ 0`、`ρ ≠ ⊤` 及原 actual bounded Witt 元素 `x`，证明
@@ -253,43 +260,41 @@ R_(ρ^p)(φ(x)) = φ_ρ(R_ρ(x))
 ```
 
 这里 `R` 是原标准 completion 的 `radiusMap`，`φ_ρ` 是已验收的固定半径完成等价；
-正逆公式均已证明。这些标准侧公式没有证明 actual↔standard 比较等价与两侧 Frobenius 交换。
+正逆公式均已证明。三层 actual↔standard 比较的交换公式也已有成功叶记录，最终整合验收仍待完成。
 
-### 当前比较单元的编译阻塞
+### 当前三层比较与验收边界
 
-直接专门化通用局部化自然性的路线仍未通过：`stage00_base` 仅固定两侧 localization
-和 inclusion 时通过，加入原 `ringEquiv D w` 的 `stage01_E` 就发生 Kernel
-deterministic timeout，尚未传入 Frobenius 参数。
+令 `E` 为对应层原 actual→standard 比较，`φₐ`、`φₛ` 为两侧原 Frobenius。
+当前 bounded、全半径 Carrier 和 Fréchet 三层均有以下正逆公式的成功叶记录：
 
-同一 `AG/TG/D/w` 上下文的目标载体定向 `isDefEq` 检查返回 `true`。源端 Mul/Add
-身份现已分别证明，通用 dictionary transport 和 recast 引理也已修复并编译通过。
-目标端 p-only 操作相容性曾有成功版本，但具体比较实例接入该版本仍超时；
-该 p-only 文件后续又有未编译修改，旧成功记录不覆盖当前源码。
-这些结果说明转换检查成本仍高，不支持载体不相同、数学反例或 Kernel 实现错误的结论。
+```text
+E (φₐ x) = φₛ (E x)
+E (φₐ⁻¹ x) = φₛ⁻¹ (E x)
+```
 
-当前把编译负荷继续上移，已分别通过以下默认预算叶编译：
+native 函数接口直接调用原等价，并保存原函数身份；通用方块的前提由同一实际数据上的
+已证公式消除，没有增加自由比较证书。当前路线将原先集中在具体声明头部的转换负荷
+移到上游函数法律及下游纯函数组合。
 
-1. 在泛型 `WittPrimeTeichLocalization` 上构造 Frobenius，并证明它与系数环等价诱导的局部化等价交换。
-2. 用局部化唯一性，将原 actual choice Frobenius 和原标准 Frobenius 分别识别为该泛型映射，得到完整函数等式。
-3. 证明 observer 比较构造器所存 `locEquiv` 的泛型自然性；另证纯函数等式运输引理。
-4. 在泛型上预先用目标收缩元确定源收缩元并消去相容性证明，减少具体消费者需要接入的参数。
+| 层次 | 已通过的具体范围 | 当前剩余验收 |
+| --- | --- | --- |
+| bounded localization | 正向/native law；标准逆函数左逆律、actual 逆函数右逆律；由正向律推出原逆映射交换 | 最新源接口已重编译通过，须由最终四入口覆盖 |
+| 全半径原闭包 Carrier | inclusion 方块；原稠密像上的相容延拓；正逆交换图 | 最终叶有准确双 SHA 成功记录；串行脚本核验相关依赖并归档 |
+| Fréchet Hausdorff completion | 原 completion→Carrier 桥接；原标准观察映射单射性；正逆交换图 | 最终叶有准确双 SHA 成功记录；须完成聚合和逐名公理审计 |
+| 整单交付 | 聚合导入和已发现漏登名称已补入工作树；36 项已推送模块的来源登记已补 | 新增模块来源/资源归档、最终四入口、公理输出复核、提交与推送 |
 
-具体参数专门化仍是缺口。将系数等价先接入的版本已超时；随后把源收缩元、目标收缩元
-和相容性证明逐一拆为独立声明。最新 `actual_standard_bounded_frobenius_concrete_transfer_pieces_v6`
-已结束，但在 `242.6` 秒、峰值 `12167816 KiB`（`11.604 GiB`）下触发 Kernel
-deterministic timeout；因此只记录为失败证据，不登记为成功。
+旧的 concrete header、直接重写和 bundled 包装多次在约 11.6 GiB 触发 Kernel
+deterministic timeout；对应目标现已有上述替代证明。旧失败仍保留为资源证据，
+不作为当前数学缺口，也不据此确定 Kernel 实现错误。旧 named ambient 方块仍是独立目标。
 
-下一步先验收具体 choice 自然性，再用已证函数身份接回两侧原 Frobenius，并经原
-`choiceEquiv` 回到 canonical actual bounded 环。之后才验收 Carrier、Fréchet 和整单四入口。
-全程保留原映射、载体和范数，不增加自由比较证书。
-
-### 最新完整单元的受控构建
+### 受控构建与资源证据
 
 构建使用 CPU `0-13`、`LEAN_NUM_THREADS=14`、Lean `-j1`、热缓存和默认 heartbeat，
-每 0.5 秒采样进程组 RSS；15 GiB 是监控停止线，16 GiB 是单叶验收上限。
-GiB 按 `KiB / 1048576` 换算。资源值仅覆盖对应源码和依赖版本的那次运行。
+每 0.5 秒采样进程组 RSS；15 GiB 是监控停止线，16 GiB 是单叶验收上限，
+总编译内存上限为 100 GiB。GiB 按 `KiB / 1048576` 换算。
+资源值只覆盖对应源码和依赖版本的那次运行；无终态、超时或报错均不计为通过。
 
-以下是 `1b19bec` 的完整五次验收，均退出 0、无停止原因，已归档到
+最近完整验收基线 `1b19bec` 的五次记录均退出 0，已归档到
 [资源 JSONL](Scene1Witt比较内存.jsonl) 和[来源台账](../ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md)：
 
 | 构建记录 label | 范围 | 耗时 | 峰值 RSS（KiB / GiB） | 结果 |
@@ -300,48 +305,36 @@ GiB 按 `KiB / 1048576` 换算。资源值仅覆盖对应源码和依赖版本�
 | `standard_frechet_frobenius_axioms` | Axioms | 163.0 秒 | `9553636` / 9.111 | 通过 |
 | `standard_frechet_frobenius_importaudit` | ImportAudit | 161.5 秒 | `9440740` / 9.003 | 通过 |
 
-14 项公理审计的并集仅为 `propext`、`Classical.choice`、`Quot.sound`，没有 `sorryAx`；
-四入口静态导入图覆盖 1031 个工程模块。该结论属于已提交版本，不能替代当前未提交比较单元的验收。
+该基线的 14 项公理审计并集仅为 `propext`、`Classical.choice`、`Quot.sound`，
+没有 `sorryAx`。这份结论不替代当前工作树的最终公理审计。
 
-### 当前未提交单元：成功与失败记录
+### 当前单元：已结束的代表性运行
 
-“工作树”表示摘要已写入资源 JSONL、尚未随当前数学单元提交；“本机”表示记录目前仅在
-`/tmp/abc-rho-builds/<label>.json`，同目录保存日志与 RSS 样本。以下列出代表性已结束运行；
-完整历史以资源 JSONL 和各次本机记录为准。前六条泛型路线成功记录的源码 SHA256 均与
-当前对应源码匹配；它们只证明表中辅助范围。旧成功产物不覆盖后续修改，诊断通过也不等于整单验收。
+“工作树 JSONL”表示已归档但尚未提交；“本机”表示记录目前仍在
+`/tmp/abc-rho-builds/<label>.json`，同目录保存日志与 RSS 样本。
+以下成功记录的源码 SHA256 已与当前对应源码核对；Carrier/Fréchet 的双 SHA 一致且
+`source_changed_during_run=false`。最终脚本会按顺序核验并归档，不能将表中单叶成功合称四入口通过。
 
-| 构建记录 label | 耗时 | 峰值 RSS（KiB / GiB） | 结果与范围 | 记录位置 |
+| 构建记录 label | 范围 | 耗时 | 峰值 RSS（KiB / GiB） | 结果／记录位置 |
 | --- | --- | --- | --- | --- |
-| `generic_witt_localization_frobenius` | 78.2 秒 | `4228912` / 4.033 | 泛型 Witt 局部化 Frobenius 与自然性通过 | 工作树 |
-| `standard_frobenius_generic_comparison` | 99.2 秒 | `5506412` / 5.251 | 原标准 Frobenius 与泛型映射的完整函数身份通过 | 工作树 |
-| `actual_choice_frobenius_generic_comparison` | 221.3 秒 | `9105404` / 8.684 | 原 actual choice Frobenius 与泛型映射的完整函数身份通过 | 工作树 |
-| `generic_mapped_witt_frobenius` | 103.3 秒 | `4290296` / 4.092 | observer 比较构造器的泛型自然性通过 | 工作树 |
-| `generic_frobenius_function_transfer` | 39.3 秒 | `2366200` / 2.257 | 纯函数等式运输叶通过 | 本机 |
-| `generic_witt_frobenius_target` | 73.3 秒 | `4164500` / 3.972 | 泛型目标收缩元版本通过；具体专门化另计 | 本机 |
-| `ring_equiv_dictionary_transport_explicit` | 53.8 秒 | `2781408` / 2.653 | 通用 dictionary transport 修订版通过 | 工作树 |
-| `generic_localization_frobenius_recast_v2` | 53.1 秒 | `3267592` / 3.116 | 通用 recast 修订版通过 | 工作树 |
-| `frobenius_dictionary_source_add` | 169.3 秒 | `9104164` / 8.682 | 源端 Add 实例身份通过 | 工作树 |
-| `frobenius_dictionary_source_mul` | 169.4 秒 | `9110112` / 8.688 | 源端 Mul 实例身份通过 | 工作树 |
-| `standard_target_dictionary_coherence` | 94.0 秒 | `5497564` / 5.243 | p-only 目标操作相容的历史版本通过；不覆盖后续改动 | 工作树 |
-| `actual_standard_cached_witt_frobenius_naturality` | 154.0 秒 | `9092308` / 8.671 | Witt 自然性缓存叶通过 | 工作树 |
-| `standard_frobenius_native_diagonal_leaf` | 92.8 秒 | `5490912` / 5.237 | 标准 native diagonal 叶通过 | 工作树 |
-| `actual_standard_bounded_frobenius_leaf` | 494.8 秒 | `12166424` / 11.603 | 初版四个声明 Kernel timeout，退出 1 | 工作树 |
-| `actual_standard_bounded_frobenius_equiv_inferred` | 263.0 秒 | `12160376` / 11.597 | 单声明专门化 Kernel timeout，退出 1 | 工作树 |
-| `actual_standard_bounded_frobenius_equiv_1m` | 358.3 秒 | `15740828` / 15.012 | 局部 100 万预算触及停止线，memory_limit，退出 −15；提升已撤回 | 工作树 |
-| `frobenius_stage00_base` | 161.1 秒 | `9105584` / 8.684 | 仅固定基础参数的分阶段诊断通过 | 工作树 |
-| `frobenius_stage01_map` | 232.3 秒 | `12157576` / 11.594 | 仅加入原环等价便 Kernel timeout，退出 1 | 工作树 |
-| `frobenius_target_carrier_defeq` | 139.5 秒 | `9536476` / 9.095 | 诊断退出 0；目标载体 isDefEq = true，不证明操作实例身份 | 工作树 |
-| `actual_standard_bounded_frobenius_homext_split_branches` | 404.7 秒 | `15744160` / 15.015 | 局部化 ext 分支拆分触及停止线，memory_limit，退出 −15 | 工作树 |
-| `actual_standard_bounded_frobenius_original_functions` | 278.4 秒 | `12160264` / 11.597 | 原映射纯函数组合仍 Kernel timeout，退出 1 | 工作树 |
-| `actual_standard_choice_generic_naturality` | 321.2 秒 | `12158820` / 11.596 | observer 构造器具体专门化 Kernel timeout，退出 1 | 本机 |
-| `actual_standard_choice_generic_naturality_equiv_first` | 230.2 秒 | `12156844` / 11.594 | 系数等价先接入版本 Kernel timeout，退出 1 | 本机 |
-| `actual_standard_bounded_frobenius_concrete_transfer_pieces_v6` | 242.6 秒 | `12167816` / 11.604 | canonical choice action step 重写后仍 Kernel deterministic timeout，退出 1 | 本机与资源 JSONL |
+| `actual_standard_bounded_frobenius_concrete_transfer_v7_header` | 四个 theorem 边界后的具体 choice 自然性 | 271.7 秒 | `9113820` / 8.6916 | 通过；已提交 JSONL |
+| `actual_standard_bounded_frobenius_comparison_native_v8` | 原 bounded 正向比较 | 185.1 秒 | `9103464` / 8.6817 | 通过；已提交 JSONL |
+| `frobenius_final_leaf_IutInitialThetaPadicBoundedWittFrobeniusLaws` | 当前源码 bounded 正向/native law | 271.7 秒 | `9073572` / 8.6532 | 通过；工作树 JSONL |
+| `frobenius_verified_leaf_PadicWittFrobeniusNativeFunction` | 标准原逆函数及左逆律 | 99.5 秒 | `5507852` / 5.2527 | 通过；工作树 JSONL |
+| `frobenius_verified_leaf_IutInitialThetaBoundedWittFrobeniusNativeInverse` | actual 原逆函数及右逆律 | 173.6 秒 | `9086824` / 8.6659 | 通过；工作树 JSONL |
+| `frobenius_verified_leaf_IutInitialThetaPadicBoundedWittFrobeniusInverse` | bounded 逆交换图 | 256.8 秒 | `9113712` / 8.6915 | 通过；工作树 JSONL |
+| `allradius_frobenius_generic_square_dense_inverse_v2` | 原全半径 Carrier 正逆交换图 | 223.4 秒 | `9117024` / 8.6947 | 通过；本机，待归档 |
+| `actual_standard_frechet_frobenius_generic_square_v1` | 原 Fréchet 正逆交换图 | 290.0 秒 | `9138028` / 8.7147 | 通过；本机，待归档 |
 
-当前 Carrier 与 Fréchet 比较草稿尚未编译；
-它们没有成功资源记录，也没有整单四入口结论。当前新路线的 SOURCE_LEDGER 交付条目、
-逐名审计、归档和数学提交也尚未完成。
-成功与失败均须保留命令、源码版本、耗时、峰值、退出码及停止原因；低于 16 GiB
-但超时或报错的运行不算通过。
+| 历史失败记录 label | 耗时 | 峰值 RSS（KiB / GiB） | 终态与后续 |
+| --- | --- | --- | --- |
+| `actual_standard_bounded_frobenius_concrete_transfer_pieces_v6` | 242.6 秒 | `12167816` / 11.604 | Kernel timeout，退出 1；v7 theorem 拆分后通过 |
+| `frobenius_final_leaf_IutInitialThetaPadicBoundedWittFrobeniusInverse` | 385.7 秒 | `12166360` / 11.6027 | Kernel timeout，退出 1；逆函数法律上移后通过 |
+| `actual_standard_bounded_frobenius_equiv_1m` | 358.3 秒 | `15740828` / 15.012 | memory_limit，退出 −15；局部预算提升已撤回 |
+
+早期监控器曾将部分输出产物摘要误作源码 SHA。受影响的 32 条记录已改记为
+`unverified_monitor_digest` 并保留说明；耗时、RSS 和退出码仍是原运行记录，
+但这些摘要不能用于精确源码验收。新监控记录包含运行前后源码 SHA 及源码变化标记。
 
 ### 历史资源边界
 
@@ -356,17 +349,16 @@ GiB 按 `KiB / 1048576` 换算。资源值仅覆盖对应源码和依赖版本�
 | 旧 named ambient inclusion 与具体 named inclusion 包装 | 多次约 11.6 GiB 触发 deterministic timeout；提高预算的诊断曾触及 15 GiB 停止线 | 仍未验收；保留为独立缺口 |
 
 因此，早期约 100 GiB 的整体比较已由低内存路线完成其值比较、闭包和完成目标；
-不能据此声称所有旧命名包装及新 Frobenius 相容都已解决。
+三层 Frobenius 相容已有成功叶记录，但旧命名包装和新单元整合验收尚未全部解决。
 早期运行摘要见[开发计划的资源边界记录](开发计划.V1Act1Scene1.md#2026-11-02rho-比较的-kernel-资源边界与载体接口调整)，
 其监控条件与后来受控运行不同。一次不限内存诊断授权已使用，后续继续遵守单叶上限。
 
 ## 后续顺序
 
-1. 完成泛型 Witt 自然性的具体参数专门化，经两侧已证函数身份与原 `choiceEquiv` 接回 bounded Frobenius 交换图，逐声明验证并记录内存。
-2. 完成原 Carrier 与 Fréchet completion 的 actual↔standard Frobenius 交换图，执行整单四入口及逐名审计。
-3. 接通标量、Galois、Tate-log、period 身份，明确所选论文 `B` 或允许变体及其真实来源。
-4. 按[计划 §5](开发计划.V1Act1Scene1.md#5-执行顺序)完成共同 geometry producer、holomorphoid、H¹ₑ/BK，随后闭合 paper representatives、multiplicity、mixed-moduli descent、G1 归一化及 G4 theta-volume。
+1. 完成当前串行依赖叶核验、四入口与逐名公理审计，补齐新模块来源和资源归档，提交并推送三层 Frobenius 比较单元。
+2. 按[计划 §5](开发计划.V1Act1Scene1.md#5-执行顺序)回到共同真实 geometry producer；已找到真实除点覆盖的 valuation-inertia generator equality 候选入口，尚未实现或验收。后续仍须证明真实惯性商、覆盖及 étale π₁ 身份。
+3. 完成 holomorphoid、论文允许的 `B` 或变体、标量/Galois/Tate-log/period 身份及 H¹ₑ/BK 比较。
+4. 接通 paper representatives、multiplicity、mixed-moduli descent、G1 归一化和 G4 theta-volume，完成最终 Corollary 3.12 与整体审计。
 
-旧 named ambient 方块和具体 named inclusion 包装继续单独登记；已通过的闭包与完成比较
-使用已证 native diagonal 路线。只有同一真实输入上的 G1–G4 与最终整体审计全部通过，
-才能宣布 Scene1 完成。
+旧 named ambient 方块和具体 named inclusion 包装继续单独登记。
+已通过的值、闭包、完成比较及三层 Frobenius 叶证明不自动关闭这些包装或任何父义务。
