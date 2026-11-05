@@ -23,14 +23,14 @@ actual carrier 上的定理，不自动成为论文 carrier 上的定理。
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-11-05（Asia/Shanghai） |
-| 状态截点 | 2026-11-05 17:46（Asia/Singapore）；新评价叶及四入口均已结束，工作树尚未提交 |
-| 最近完成的数学单元 | 待提交：构造同一实际 `Qpt` 的坐标环评价 `AlgHom`，并证明其单射 |
-| 已推送版本与验收基线 | `HEAD = origin/main = 2781d64`；已推送的除点坐标超越通过叶及四入口。新坐标评价单元已在工作树通过叶、Scene1、Checks、Axioms、ImportAudit，尚未提交或推送 |
+| 状态截点 | 2026-11-05 17:51（Asia/Singapore）；坐标评价单元已推送 |
+| 最近完成的数学单元 | `f55cd03`：构造同一实际 `Qpt` 的坐标环评价 `AlgHom`，并证明其单射 |
+| 已推送版本与验收基线 | `HEAD = origin/main = f55cd03`；除点坐标超越和坐标环评价单射均通过叶及四入口。 |
 | 当前工作单元 | G2 actual affine Cartesian cover：把坐标环评价扩张到函数域，识别像与 `QField E n` 的关系，并据此处理 signed quotient 非平凡性；之后仍须证明 tensor 映射满射并完成 geometry producer 比较 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4；15 项父义务全部开放** |
 | 当前推进位置 | 新增并验收实际 `Qpt` 坐标环评价映射的单射性；函数域像的 `QField` 身份和 Cartesian cover 仍开放 |
 | 最近完成的构建验收 | 新坐标评价叶、Scene1、Checks、Axioms、ImportAudit 均退出 0；叶峰值 `9160304 KiB`（8.736 GiB），四入口最高 `9625152 KiB`（9.179 GiB） |
-| 构建与工作树状态 | 本逻辑单元的源码、入口、审计、来源台账及资源记录尚未提交；工作树还有其他未提交、未跟踪和删除项 |
+| 构建与工作树状态 | 坐标评价逻辑单元已于 `f55cd03` 提交并推送；工作树还有其他未提交、未跟踪和删除项 |
 | 尚未闭合的比较边界 | 除点坐标的评价映射像尚未识别为 `QField E n`，Cartesian cover 仍未证明；旧 named `ambientInclusion/toAmbient` 方块及具体 named inclusion 恢复包装仍未验收；actual inertia quotient 尚未接入现成 `AG.pi1Cover`；论文 `B`、标量/Galois/Tate-log、period 与 H¹ₑ/BK 身份仍开放 |
 | 内存优化结果 | 早期约 100 GiB 的整体 rho 比较已由低内存 presentation 路线完成值、闭包与完成比较；三层 Frobenius 比较、actual inertia 系列及实际除点坐标超越均在 16 GiB 单叶上限内通过，原载体、原映射及范数得到保留 |
 | 内存边界 | 单叶验收上限 16 GiB；当前监控停止线 15 GiB，总编译内存上限 100 GiB。低于内存线但超时的构建仍不算通过 |
@@ -88,7 +88,7 @@ flowchart TD
     FC["已闭合：actual↔standard Frobenius<br/>bounded / Carrier / Fréchet 正逆交换图<br/>五入口和逐名审计通过；621545f"]
     AF["部分完成：actual affine normalization presentations<br/>tensor pullback 与 selected component 已区分"]
     DX["已闭合：实际正层除点的 x 坐标超越<br/>同一 Qpt 系统；2781d64"]
-    EA["已闭合：同一实际 Qpt 的坐标环评价<br/>AlgHom 单射；当前工作树"]
+    EA["已闭合：同一实际 Qpt 的坐标环评价<br/>AlgHom 单射；f55cd03"]
     EV["未建立：坐标评价像与 QField E n 的识别"]
     IG["已闭合：actual valuation-inertia<br/>generators、共轭稳定及闭正规商开嵌入"]
     IQ["已闭合：actual inertia quotient<br/>忠实作用；fixed field = coverField；e432e7d"]
@@ -190,7 +190,7 @@ geometry producer、论文 `B`、holomorphoid 或 H¹ₑ/BK 身份。
 | Actual Tate/q-root 与局部会计 | 🟢 已闭合 | 给定数据后的 q 参数、q-order、根、有限支撑和 raw/degree-normalized 恒等式已有 | G1/G3；[Scene1 聚合](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1.lean) |
 | Actual affine normalization presentations | 🟡 部分完成 | 真实 base/cover normalization rings、有限覆盖和 tensor scheme 的 pullback 已构造；actual normalization 只映入所选 tensor component，未证明该映射是同构 | G2；[实际交换方块](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaOrbicurvePresentationSquare.lean) |
 | Actual division-point x-coordinate transcendence | 🟢 已闭合 | 对同一实际相容除点系统的每个 `n > 0`，证明 `ptX (Qpt E n)` 超越底域；为坐标评价映射提供输入，但不识别像与 `QField E n`，也不证明 signed quotient 非平凡或 Cartesian | G2；`2781d64`；[超越性引理](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionPointTranscendence.lean) |
-| Actual division-point coordinate evaluation | 🟢 已闭合 | 从原 Weierstrass 坐标环到 `Ω E` 构造同一实际 `Qpt E n` 的 `AlgHom`；`n > 0` 时由 x 坐标超越性和一维坐标环论证证明单射。未扩张到函数域或 `FractionRing`，未识别像与 `QField E n` | G2；当前工作树；[评价叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionPointEvaluation.lean) |
+| Actual division-point coordinate evaluation | 🟢 已闭合 | 从原 Weierstrass 坐标环到 `Ω E` 构造同一实际 `Qpt E n` 的 `AlgHom`；`n > 0` 时由 x 坐标超越性和一维坐标环论证证明单射。未扩张到函数域或 `FractionRing`，未识别像与 `QField E n` | G2；`f55cd03`；[评价叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionPointEvaluation.lean) |
 | Actual cover Cartesian square | ⚪ 未建立 | tensor map kernel 仅证明为 minimal prime，未证明为零。零核仍需签名覆盖域与原椭圆函数域在 `x`-line 上线性不交；下一步是扩张坐标评价并识别其像与 `QField E n`，再排除 `yG` 属于签名覆盖域。满射还需 tensor ring 整闭或直接证明映射满射 | G2；[计划 G2](开发计划.V1Act1Scene1.md#g2共同真实来源和-producer) |
 | Actual valuation-inertia generators 与共轭 | 🟢 已闭合 | 真实 unsigned/base generator 集相等，且 base generator 对全 `Gal E` 共轭稳定；保留原 valuation witness 和实际除点系统 | G2；`f46562a`、`b36f85c`；[generators](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineInertiaGenerators.lean)、[共轭稳定性](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineInertiaConjugation.lean) |
 | Actual inertia quotient 与覆盖开嵌入 | 🟢 已闭合 | 构造真实闭正规惯性生成子群及函数域商；覆盖诱导连续开嵌入，同层 unsigned→signed 映射也为开嵌入 | G2；`602be9c`；[惯性商](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineInertiaQuotient.lean) |
@@ -279,7 +279,7 @@ Joshi II 的原型为 `B_{C_p^flat,ℚₚ}`、`φ=p`；Joshi III 也允许 `B_E`
 | `e4b7014`：G2 pi1-consumer 边界 | 核实实际 inertia quotient 尚无现成 `AG.pi1Cover` 消费者，记录共同 producer 与身份比较缺口 | 🟢 边界审查已记录并推送 | 未排除几何命题；实际 producer 与比较仍待证明 |
 | `e432e7d`：actual inertia quotient fixed-field action | 惯性商在同一 seed 的 inertia-fixed field 上忠实作用，且不变量等于既有 cover function field | 🟢 叶及五入口通过并推送；逐名公理仅含 `propext`、`Classical.choice`、`Quot.sound` | 不建立 Cartesian cover、共同 geometry producer 或 `AG.pi1Cover` 比较 |
 | `2781d64`：actual division-point x-coordinate transcendence | 对同一实际相容除点系统的所有正层，证明所选 x 坐标超越底域 | 🟢 叶及四入口通过并推送；公理逐名审计仅含 `propext`、`Classical.choice`、`Quot.sound` | 不识别坐标评价像与 `QField E n`，不证明 signed quotient 非平凡或 Cartesian cover |
-| 当前工作树：actual division-point coordinate evaluation | 从同一实际 `Qpt` 构造坐标环到 `Ω E` 的 `AlgHom`，并证明 `n > 0` 时单射 | 🟢 叶、Scene1、Checks、Axioms、ImportAudit 均通过；尚未提交 | 未扩张到函数域或 `FractionRing`，未识别像与 `QField E n`，不关闭 Cartesian 父义务 |
+| `f55cd03`：actual division-point coordinate evaluation | 从同一实际 `Qpt` 构造坐标环到 `Ω E` 的 `AlgHom`，并证明 `n > 0` 时单射 | 🟢 叶、Scene1、Checks、Axioms、ImportAudit 均通过并推送 | 未扩张到函数域或 `FractionRing`，未识别像与 `QField E n`，不关闭 Cartesian 父义务 |
 
 已验收的完整值目标为：令 `d = localDeg(w)`、`B = InitialThetaPadicBoundedWittComparison`，
 对 `ρ ≠ 0`、`ρ ≠ ⊤` 及原 actual bounded Witt 元素 `x`，证明
@@ -348,7 +348,7 @@ deterministic timeout；对应目标现已有上述替代证明。旧失败仍�
 
 ### 最近完成单元的资源证据
 
-以下为已验收的单元记录；最后一项仍在工作树、尚未提交。16 GiB 是单叶上限；四入口按串行受控脚本运行。
+以下为已归档、已验收的单元记录。16 GiB 是单叶上限；四入口按串行受控脚本运行。
 
 | 单元 | 叶峰值 RSS（KiB / GiB） | 四入口峰值 RSS（KiB / GiB） | 结果 |
 | --- | --- | --- | --- |
@@ -358,7 +358,7 @@ deterministic timeout；对应目标现已有上述替代证明。旧失败仍�
 | `602be9c` closed-normal inertia quotient | 实际商叶 `9179512` / 8.754；通用叶 `3517760` / 3.355 | `9383124`、`9616468`、`9592244`、`9443864` KiB；最高约 9.171 GiB | 两叶及四入口退出 0 |
 | `e432e7d` inertia quotient fixed-field action | `9219556` / 8.7925 | `9450048`、`9623424`、`9599228`、`9371288` KiB；最高约 9.178 GiB | 叶及四入口退出 0；单个 fixed-field 不变量声明使用 `maxHeartbeats 1000000` |
 | `2781d64` division-point x-coordinate transcendence | `9166656` / 8.7420 | `9450656`、`9624308`、`9600376`、`9400300` KiB；最高约 9.1785 GiB | 叶及四入口退出 0；默认 heartbeat；源码 SHA 前后相同 |
-| 当前工作树 division-point coordinate evaluation | `9160304` / 8.736 | `9450916`、`9625152`、`9599236`、`9445892` KiB；最高 `9625152` / 9.179 GiB | 叶及四入口退出 0；三项公理逐名审计通过；尚未提交 |
+| `f55cd03` division-point coordinate evaluation | `9160304` / 8.736 | `9450916`、`9625152`、`9599236`、`9445892` KiB；最高 `9625152` / 9.179 GiB | 叶及四入口退出 0；三项公理逐名审计通过并推送 |
 
 | 历史失败记录 label | 耗时 | 峰值 RSS（KiB / GiB） | 终态与后续 |
 | --- | --- | --- | --- |
