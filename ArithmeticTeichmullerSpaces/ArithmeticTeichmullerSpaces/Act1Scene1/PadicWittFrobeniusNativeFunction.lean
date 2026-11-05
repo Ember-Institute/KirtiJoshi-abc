@@ -33,5 +33,18 @@ theorem frobeniusEquiv_toFun_eq_frobeniusFun :
       PadicBoundedWittLocalization.Ring p → PadicBoundedWittLocalization.Ring p) =
       frobeniusFun p := rfl
 
+def inverseFrobeniusFun (x : PadicBoundedWittLocalization.Ring p) :
+    PadicBoundedWittLocalization.Ring p :=
+  (PadicWittRhoFrobenius.frobeniusEquiv p).symm x
+
+theorem inverseFrobeniusFun_eq
+    (x : PadicBoundedWittLocalization.Ring p) :
+    inverseFrobeniusFun p x =
+      (PadicWittRhoFrobenius.frobeniusEquiv p).symm x := rfl
+
+theorem inverseFrobeniusFun_leftInverse (x : PadicBoundedWittLocalization.Ring p) :
+    inverseFrobeniusFun p (frobeniusFun p x) = x :=
+  (PadicWittRhoFrobenius.frobeniusEquiv p).symm_apply_apply x
+
 end
 end JoshiTeich.Act1Scene1.PadicWittRhoFrobenius.NativeFunction

@@ -7703,3 +7703,139 @@ mathlib 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3，依赖配置没有改动。
 Fréchet 三层 actual/standard Frobenius 相容仍须从同一原映射证明，不能作为新证书
 输入。标准标量、Galois、Tate-log 收敛与 eigenspace、period、论文 B、一般 E/tensor、
 H¹ₑ/BK 和真实 holomorphoid 来源仍分别开放。Prologue R5、15 项父义务和 G1–G4 不变。
+
+
+Actual↔standard bounded Frobenius 正向函数交换律（2026-11-05，数学提交 `dd225b7`）：
+在原 canonical actual bounded localization 上，经原 choice algebra equivalence、原
+choice-to-standard comparison 和 denominator presentation 证明正向 Frobenius 自然性。
+标准目标以 `NativeFunction.frobeniusFun` 保存；该函数在 p-only 源叶中由原标准
+`frobeniusEquiv` 定义，并有逐点和全函数身份，不改变映射、原载体或范数。
+
+来源：Joshi II `se:ff-rings`、`pr:teichmuller-lift-A/B` 及原全半径完成路线。
+presentation 变换使用 `δ^p = p^(p-1) * φ(δ)`，将指数 m 改为 p*m，分子改为
+`((p : Witt)^(p-1))^m * φ(a)`；泛型函数转移、choice 共轭与 comparison composition
+均由本工程重新证明，没有复制参考代码或新增自由比较证书。
+
+最终 `canonicalFrobeniusNaturality` 使用四个 private theorem，阻止 Kernel 在组合时
+展开各子证明。`ringEquiv_frobenius`、`ringFun_frobenius_native` 和 `ringFun_frobenius`
+消费同一证明；最后一个名称的 RHS 也是已识别的 native function。此前 bundled
+header 和 inverse 包装失败不计为已证。下面列出该提交的全部新增模块及准确源码的
+成功叶记录（单次记录不替代整单入口验收）。
+
+| source-id | 模块 | 精确源码成功记录 |
+| --- | --- | --- |
+| `JT-SCENE1-EQUIV-FROBENIUS-CONJUGATION` | `Act1Scene1/EquivFrobeniusConjugation.lean` | `generic_equiv_frobenius_conjugation`；45.2 秒；2448144 KiB |
+| `JT-SCENE1-FROBENIUS-FUNCTION-TRANSFER` | `Act1Scene1/FrobeniusFunctionTransfer.lean` | `generic_frobenius_function_transfer`；39.3 秒；2366200 KiB |
+| `JT-SCENE1-FROBENIUS-PRESENTATION-TRANSFER` | `Act1Scene1/FrobeniusPresentationTransfer.lean` | `generic_frobenius_presentation_transfer`；100.5 秒；2394848 KiB |
+| `JT-SCENE1-FROBENIUS-PRESENTATION-TRANSFER-NATIVE` | `Act1Scene1/FrobeniusPresentationTransferNative.lean` | `generic_frobenius_presentation_transfer_native`；64.2 秒；2388768 KiB |
+| `JT-SCENE1-INITIAL-THETA-CHOICE-FROBENIUS-CONJUGATION` | `Act1Scene1/IutInitialThetaChoiceFrobeniusConjugation.lean` | `actual_choice_frobenius_general_conjugation`；319.8 秒；9087080 KiB |
+| `JT-SCENE1-INITIAL-THETA-CHOICE-FROBENIUS-GENERIC-COMPARISON` | `Act1Scene1/IutInitialThetaChoiceFrobeniusGenericComparison.lean` | `actual_choice_frobenius_generic_comparison`；221.3 秒；9105404 KiB |
+| `JT-SCENE1-INITIAL-THETA-CHOICE-FROBENIUS-NATIVE-FUNCTION` | `Act1Scene1/IutInitialThetaChoiceFrobeniusNativeFunction.lean` | `actual_choice_frobenius_native_function`；258.2 秒；9087276 KiB |
+| `JT-SCENE1-INITIAL-THETA-CHOICE-NATIVE-CONJUGATION` | `Act1Scene1/IutInitialThetaChoiceNativeConjugation.lean` | `actual_choice_native_conjugation`；242.3 秒；9087084 KiB |
+| `JT-SCENE1-INITIAL-THETA-CHOICE-NATIVE-PRESENTATION` | `Act1Scene1/IutInitialThetaChoiceNativePresentation.lean` | `actual_choice_native_presentation`；239.2 秒；9087852 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-FROBENIUS-COMPARISON` | `Act1Scene1/IutInitialThetaPadicBoundedWittFrobeniusComparison.lean` | `actual_standard_bounded_frobenius_comparison_native_v8`；185.1 秒；9103464 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-FROBENIUS-LAWS` | `Act1Scene1/IutInitialThetaPadicBoundedWittFrobeniusLaws.lean` | `actual_standard_bounded_frobenius_laws_native_v8`；229.9 秒；9107828 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-CHOICE-FROBENIUS-FUNCTION-LAWS` | `Act1Scene1/IutInitialThetaPadicChoiceFrobeniusFunctionLaws.lean` | `actual_choice_frobenius_function_laws`；181.1 秒；9095960 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-CHOICE-FROBENIUS-PRESENTATION` | `Act1Scene1/IutInitialThetaPadicChoiceFrobeniusPresentation.lean` | `actual_choice_frobenius_presentation`；222.3 秒；9096164 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-CHOICE-FROBENIUS-TRANSFER` | `Act1Scene1/IutInitialThetaPadicChoiceFrobeniusTransfer.lean` | `actual_standard_bounded_frobenius_concrete_transfer_v7_header`；271.7 秒；9113820 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-CHOICE-NATIVE-PRESENTATION` | `Act1Scene1/IutInitialThetaPadicChoiceNativePresentation.lean` | `actual_standard_choice_cached_presentation`；253.5 秒；9097436 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-FROBENIUS-CACHED-NATURALITY` | `Act1Scene1/IutInitialThetaPadicWittFrobeniusCachedNaturality.lean` | `actual_standard_choice_frobenius_cached_naturality`；215.4 秒；9126252 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-FROBENIUS-CONJUGATION` | `Act1Scene1/IutInitialThetaPadicWittFrobeniusConjugation.lean` | `actual_choice_frobenius_conjugation_final`；237.0 秒；9097984 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-FROBENIUS-NUMERATOR` | `Act1Scene1/IutInitialThetaPadicWittFrobeniusNumerator.lean` | `actual_standard_frobenius_numerator`；223.3 秒；9106344 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-FROBENIUS-RING-COMPOSITION` | `Act1Scene1/IutInitialThetaPadicWittFrobeniusRingComposition.lean` | `actual_bounded_frobenius_ring_composition`；162.0 秒；9094684 KiB |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-FROBENIUS-UNIFIED-NATURALITY` | `Act1Scene1/IutInitialThetaPadicWittFrobeniusUnifiedNaturality.lean` | `actual_standard_frobenius_unified_native_naturality`；207.4 秒；9118480 KiB |
+| `JT-SCENE1-INITIAL-THETA-WITT-FROBENIUS-SOURCE` | `Act1Scene1/IutInitialThetaWittFrobeniusSource.lean` | `actual_frobenius_source_equiv_inclusion`；142.9 秒；9092828 KiB |
+| `JT-SCENE1-LOCALIZATION-FROBENIUS-NATURALITY` | `Act1Scene1/LocalizationFrobeniusNaturality.lean` | `generic_localization_frobenius_equiv_naturality`；54.4 秒；3298380 KiB |
+| `JT-SCENE1-LOCALIZATION-FROBENIUS-RECAST` | `Act1Scene1/LocalizationFrobeniusRecast.lean` | `generic_localization_frobenius_recast_v2`；53.1 秒；3267592 KiB |
+| `JT-SCENE1-PADIC-BOUNDED-WITT-FROBENIUS-DICTIONARY-COHERENCE` | `Act1Scene1/PadicBoundedWittFrobeniusDictionaryCoherence.lean` | `standard_target_dictionary_coherence_with_frobenius`；120.4 秒；5516320 KiB |
+| `JT-SCENE1-STANDARD-PADIC-WITT-AWAY-PRESENTATION-RELATION` | `Act1Scene1/PadicWittAwayPresentationRelation.lean` | `standard_away_presentation_relation`；256.5 秒；9092032 KiB |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FROBENIUS-CACHED-PRESENTATION` | `Act1Scene1/PadicWittFrobeniusCachedPresentation.lean` | `standard_frobenius_cached_presentation`；233.1 秒；9101800 KiB |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FROBENIUS-NATIVE-DIAGONAL` | `Act1Scene1/PadicWittFrobeniusNativeDiagonal.lean` | `standard_frobenius_native_diagonal_leaf`；92.8 秒；5490912 KiB |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FROBENIUS-NATIVE-FUNCTION` | `Act1Scene1/PadicWittFrobeniusNativeFunction.lean` | `standard_frobenius_native_function`；171.4 秒；5468588 KiB |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FROBENIUS-NATIVE-PRESENTATION` | `Act1Scene1/PadicWittFrobeniusNativePresentation.lean` | `standard_frobenius_native_presentation`；239.2 秒；9094332 KiB |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FROBENIUS-RAW-PRESENTATION` | `Act1Scene1/PadicWittFrobeniusRawPresentation.lean` | `standard_frobenius_raw_presentation`；167.8 秒；5522060 KiB |
+| `JT-SCENE1-STANDARD-PADIC-WITT-FROBENIUS-SOURCE` | `Act1Scene1/PadicWittFrobeniusSource.lean` | `standard_frobenius_source_equiv_inclusion`；82.8 秒；5511272 KiB |
+| `JT-SCENE1-RING-EQUIV-DICTIONARY-TRANSPORT` | `Act1Scene1/RingEquivDictionaryTransport.lean` | `ring_equiv_dictionary_transport_explicit`；53.8 秒；2781408 KiB |
+| `JT-SCENE1-RING-EQUIV-FROBENIUS-CONJUGATION-IDENTITY` | `Act1Scene1/RingEquivFrobeniusConjugationIdentity.lean` | `generic_ring_equiv_frobenius_conjugation_identity`；69.5 秒；2754056 KiB |
+| `JT-SCENE1-WITT-FROBENIUS-NUMERATOR-NATURALITY` | `Act1Scene1/WittFrobeniusNumeratorNaturality.lean` | `generic_witt_frobenius_numerator_naturality`；188.5 秒；4103532 KiB |
+| `JT-SCENE1-WITT-FROBENIUS-PRESENTATION` | `Act1Scene1/WittFrobeniusPresentation.lean` | `generic_witt_frobenius_presentation_v2`；124.4 秒；4226980 KiB |
+| `JT-SCENE1-WITT-PRIME-TEICH-FROBENIUS` | `Act1Scene1/WittPrimeTeichFrobenius.lean` | `generic_witt_localization_frobenius`；78.2 秒；4228912 KiB |
+
+`dd225b7` 的初次四入口记录均退出 0：Checks `194.2 s / 9591956 KiB`、Axioms
+`289.7 s / 9568868 KiB`、Scene1 `201.9 s / 9380564 KiB`、ImportAudit
+`203.6 s / 9447712 KiB`。补充静态核对发现，该次 Scene1 聚合并未导入最终 bounded
+模块，且部分新增公开名称尚未逐名登记。因此这四次不能作为完整公开交付验收；
+本次补齐聚合导入、逐名登记与来源台账后重新验收，结果在下文记录。
+
+边界：正向 bounded native 交换律已有 proof term。inverse bundled 包装、原全半径
+Carrier 与 Fréchet Frobenius 交换图仍未通过；不关闭论文 B、H¹ₑ/BK、holomorphoid
+来源、旧 named ambient inclusion 或任何父义务。Prologue R5 和 G1–G4 保持不变。
+
+Actual↔standard bounded 逆 Frobenius、全半径 Carrier 与 Fréchet Frobenius 比较
+（2026-11-05，叶级结果与最终验收分开登记）：本节补充上述 36 模块之后的 10 个模块，
+并登记既有标准 native-function 模块的 3 个新增逆向名称。原 bounded `ringFun`、
+actual/standard Carrier 比较及原 Hausdorff completion 比较均保持原定义。
+
+| source-id | 模块 | 数学结果与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-FROBENIUS-DENSE-TRANSPORT` | `Act1Scene1/FrobeniusDenseTransport.lean` | `commute_of_dense` 与 `commute_of_dense'`：在目标为 Hausdorff 空间、原函数连续且源映入稠密的显式条件下，将稠密子集上的交换律推广为逐点及全函数交换律。只提供通用拓扑引理；不构造比较、Frobenius、载体或范数。 |
+| `JT-SCENE1-FROBENIUS-INCLUSION-SQUARE` | `Act1Scene1/FrobeniusInclusionSquare.lean` | `commutes`：由 bounded 交换律、两侧 inclusion 相容律及目标观察映射的单射性，推出稠密 inclusion 上的交换律。所有函数和相容律为显式参数，具体消费者须在原载体上逐项证明。 |
+| `JT-SCENE1-FROBENIUS-COMPLETION-SQUARE` | `Act1Scene1/FrobeniusCompletionSquare.lean` | `commutes`：经两侧 completion-to-carrier 观察映射及其相容律，将已证 Carrier 交换律提升到 completion；只要求目标观察映射单射。该引理不另建 completion、拓扑、环结构或 period-ring 身份。 |
+| `JT-SCENE1-STANDARD-PADIC-WITT-ALL-RADIUS-FROBENIUS-NATIVE-FUNCTION` | `Act1Scene1/PadicWittAllRadiusFrobeniusNativeFunction.lean` | `frobeniusFun`、`frobeniusEquiv_eq_frobeniusFun`、`frobeniusEquiv_toFun_eq_frobeniusFun`：将原 p-only 全半径 Carrier Frobenius 保存为普通函数，并给出逐点与全函数定义身份。没有新增映射或比较定律；参数仍只有 p 与素性实例。 |
+| `JT-SCENE1-INITIAL-THETA-WITT-ALL-RADIUS-FROBENIUS-NATIVE-FUNCTION` | `Act1Scene1/IutInitialThetaWittAllRadiusFrobeniusNativeFunction.lean` | 原 actual Carrier Frobenius 的 `frobeniusFun` 及逐点、全函数身份，另有 `frobeniusFun_inclusion` 与 `frobeniusFun_continuous`。原 D,w、稠密 bounded inclusion、Frobenius 与拓扑保持原定义。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-ALL-RADIUS-COMPARISON-NATIVE-FUNCTION` | `Act1Scene1/IutInitialThetaPadicWittAllRadiusComparisonNativeFunction.lean` | `ringEquivFun` 保存原 actual-to-standard Carrier 环等价的函数；`ringEquiv_eq_ringEquivFun`、`ringEquivFun_continuous`、`ringEquivFun_inclusion_val` 分别证明原身份、连续性和原 bounded diagonal 值公式。没有新增比较证书或来源假设。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-ALL-RADIUS-FROBENIUS-COMPARISON` | `Act1Scene1/IutInitialThetaPadicWittAllRadiusFrobeniusComparison.lean` | `ringEquiv_frobenius_inclusion` 消费原 bounded 正向交换律及原 diagonal 公式；`ringEquiv_frobenius` 经原 inclusion 的稠密性和原映射连续性得到整个 Carrier 的正向交换律；`ringEquiv_inverseFrobenius` 再由同一原 Frobenius 等价的互逆律推出逆向交换律。普通函数接口均已识别为原环等价和原 Frobenius。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-WITT-FRECHET-FROBENIUS-COMPARISON` | `Act1Scene1/IutInitialThetaPadicWittFrechetFrobeniusComparison.lean` | `carrierRingEquiv_frobenius` 证明原 actual Hausdorff completion 到标准 Carrier 的比较相容；`ringEquiv_frobenius` 证明原 actual/standard Fréchet Hausdorff completions 的比较交换律；`ringEquiv_inverseFrobenius` 由原等价互逆律给出逆向交换律。证明消费已证 Carrier 正向交换律及分别缓存的原 completion-to-carrier 相容律。 |
+| `JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-FROBENIUS-INVERSE` | `Act1Scene1/IutInitialThetaPadicBoundedWittFrobeniusInverse.lean` | `ringFun_inverseFrobenius` 由原 `ringFun_frobenius_native`、actual 原逆函数的右逆律及 standard 原逆函数的左逆律推出 bounded 逆向交换律。standard 逆函数律仅依赖 p 与素性实例；没有新范数、比较或逆映射假设。 |
+| `JT-SCENE1-INITIAL-THETA-BOUNDED-WITT-FROBENIUS-NATIVE-INVERSE` | `Act1Scene1/IutInitialThetaBoundedWittFrobeniusNativeInverse.lean` | `inverseFrobeniusFun` 直接取原 actual bounded Frobenius 等价的 `.symm`；`inverseFrobeniusFun_eq` 给逐点身份，`inverseFrobeniusFun_rightInverse` 给原正映射复合此逆函数为恒等的右逆律。此模块仅提供 actual 侧原函数接口。 |
+
+既有 source-id `JT-SCENE1-STANDARD-PADIC-WITT-FROBENIUS-NATIVE-FUNCTION`
+（`Act1Scene1/PadicWittFrobeniusNativeFunction.lean`）追加的 3 个公开名称为
+`inverseFrobeniusFun`、`inverseFrobeniusFun_eq`、`inverseFrobeniusFun_leftInverse`。
+逆函数直接定义为原 `PadicWittRhoFrobenius.frobeniusEquiv p` 的 `.symm`；逐点身份为
+定义相等，左逆律为该原等价的 `symm_apply_apply`，即
+`inverseFrobeniusFun p (frobeniusFun p x) = x`。原正向函数、原 bounded localization
+载体及范数保持原定义；全部名称仍仅依赖 p 和 `Fact p.Prime`。
+
+来源为各模块 header 所列 Joshi II `se:ff-rings`，以及比较模块和既有标准函数模块所列
+`pr:teichmuller-lift-A/B` 的 bounded Witt period ring 与 rho 范数族路线。所有本地证明
+均从本工程原映射、原等价、原 inclusion、连续性和稠密性重新组合，没有复制参考实现。
+泛型引理的显式前提由具体消费者逐项给出，不作为新的自由数学证书输入。native 函数
+只保存原函数身份；本节不另证新的范数公式，也不替换原载体、范数或映射。
+
+当前源码已有与 SHA256 匹配的成功叶记录：bounded 逆向比较为
+`frobenius_verified_leaf_IutInitialThetaPadicBoundedWittFrobeniusInverse`
+（256.8 秒，9113712 KiB，退出 0）；全半径 Carrier 正逆比较为
+`allradius_frobenius_generic_square_dense_inverse_v2`
+（223.4 秒，9117024 KiB，退出 0）；Fréchet 正逆比较为
+`actual_standard_frechet_frobenius_generic_square_v1`
+（290.0 秒，9138028 KiB，退出 0）。当前源码的 native comparison 叶
+`frobenius_verified_leaf_IutInitialThetaPadicWittAllRadiusComparisonNativeFunction`
+也通过（383.1 秒，9115300 KiB，退出 0）。bounded 正向交换律消费上节已证结果。
+上述叶记录保存在 `docs/Scene1Witt比较内存.jsonl`，并以运行前后源码 SHA 核对；叶记录
+不单独替代整合入口验收。
+
+边界：本节更新 bounded 正逆、全半径 Carrier 正逆及 Fréchet 正逆 Frobenius 相容的
+叶级结果。标量、Galois、Tate-log 收敛与 eigenspace、period、论文 Fréchet B、一般
+E/tensor、H¹ₑ/BK、真实 holomorphoid/geometry 来源身份，以及旧 named ambient
+inclusion 方块仍分别开放；不关闭任何父义务。Prologue R5、15 项父义务和 G1–G4
+保持不变。
+
+最终串行验收已完成：`frobenius_transport_final_scene1` 退出 0，467.1 秒，
+9447996 KiB（9.0103 GiB）；`frobenius_transport_final_checks` 退出 0，263.8 秒，
+9599316 KiB（9.1546 GiB）；`frobenius_transport_final_axioms` 退出 0，229.7 秒，
+9575416 KiB（9.1318 GiB）；`frobenius_transport_final_importaudit` 退出 0，273.1 秒，
+9378408 KiB（8.9439 GiB）。四次运行的源码 SHA 均与运行前一致，均低于 15 GiB 监控停止线
+和 16 GiB 单叶上限；脚本输出 `SUITE PASSED`。
+
+最终静态核对确认：46 个交付模块（36 个 bounded 前置模块和本节 10 个模块）共 163 个
+非 private 名称，其中含 32 个具名 local instance；这些名称在 Checks/Axioms 两份
+SceneBounds 各登记一次，Act1Scene1 主入口可达 46/46。四入口联合导入图覆盖 1077 个
+工程模块、4432 条导入边，无禁用导入、proof hole、`axiom` 声明、缺失工程文件或额外
+heartbeat/recursion-depth override。Axioms 运行日志未发现 `sorryAx`；其公共公理集合
+仍仅为既有 `propext`、`Classical.choice`、`Quot.sound`。
+
+本次闭合范围是 actual↔standard bounded localization、原全半径 Carrier 和原 Fréchet
+Hausdorff completion 的 Frobenius 正逆交换图。论文 B、标量/Galois/Tate-log、period、
+H¹ₑ/BK、真实 holomorphoid/geometry producer、旧 named ambient inclusion、paper
+representatives 与 G1–G4 父义务仍保持开放。

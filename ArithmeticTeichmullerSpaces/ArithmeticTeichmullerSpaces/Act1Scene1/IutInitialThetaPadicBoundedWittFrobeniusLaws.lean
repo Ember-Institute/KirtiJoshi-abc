@@ -3,9 +3,9 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittFro
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-PADIC-BOUNDED-WITT-FROBENIUS-LAWS
 source: Joshi II `se:ff-rings`, functorial Frobenius on bounded Witt rings.
-fidelity: derives the original comparison's bare-function and inverse
-commutation from its forward commutation. Original proof; original maps retained.
-boundary: completion and paper identities remain separate.
+fidelity: derives the two forward bare-function forms from the proved
+canonical native commutation. Original proof; original maps retained.
+boundary: inverse wrappers, completion and paper identities remain separate.
 -/
 
 namespace JoshiTeich.Act1Scene1.InitialThetaPadicBoundedWittComparison
