@@ -7874,5 +7874,25 @@ Scene1 为 `182.2` 秒、`9443032 KiB`（9.0056 GiB），ImportAudit 为 `165.6`
 该稳定性是后续闭正规惯性商的共轭前提；仍不等于商的 étale `π₁` 比较或完整 geometry
 producer。
 
-通用商映射草稿 `ClosedNormalQuotientMap.lean` 已完成源码编写但尚未通过 Lean 编译，
-不计入本次交付；其 API 仍需下一逻辑单元修正后验收。
+
+### 共同 ambient 闭正规商映射（2026-11-05，已验收）
+
+| source-id | 模块 | 数学结果与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-CLOSED-NORMAL-QUOTIENT-MAP` | `Act1Scene1/ClosedNormalQuotientMap.lean` | 对同一拓扑群 `G` 中的正规子群 `N` 及 `H ≤ K`，定义 `H ⧸ N.subgroupOf H → K ⧸ N.subgroupOf K`，并证明商映射公式、连续性、单射、开映射和 `Topology.IsOpenEmbedding`。仅使用共同 ambient quotient 的群拓扑事实；不声称 `N` 闭性、profinite 结构或 étale `π₁` 身份。 |
+
+该通用叶 `closed_normal_quotient_map_leaf_v2` 退出 0，46.5 秒，3517760 KiB（3.3548 GiB），
+源码运行前后 SHA 一致；证明未复制参考 pi1 源码。
+
+### 真实函数域闭正规 valuation-inertia 商（2026-11-05，已验收）
+
+| source-id | 模块 | 数学结果与忠实度 |
+| --- | --- | --- |
+| `JT-SCENE1-GENUINE-VALUATION-INERTIA-QUOTIENT` | `Act1Scene1/GenuineInertiaQuotient.lean` | 消费实际 base generator 的全 `Gal E` 共轭稳定性，构造其闭正规生成子群 `valuationInertiaSubgroup E`；证明它包含于所有实际 `Hgp E ell M pm`，并与 unsigned cover generators 的闭正规生成群相等。定义实际函数域商 `inertiaQuotient`，由 `Hgp_le` 产生覆盖诱导连续开嵌入及同层 unsigned→signed 开嵌入。 |
+
+本模块不把函数域商命名为 étale `π₁`，不证明 Cartesian covering、root-stack/core、fiber functor 或 geometry producer；原 `Hgp`、Gal、valuation generators、载体和拓扑均保持不变。
+叶 `genuine_inertia_quotient_leaf_v3` 退出 0，134.5 秒，9179512 KiB（8.7543 GiB）。整合四入口
+`genuine_inertia_quotient_scene1`、`genuine_inertia_quotient_checks`、
+`genuine_inertia_quotient_axioms`、`genuine_inertia_quotient_importaudit` 均退出 0，峰值依次为
+`9383124`、`9616468`、`9592244`、`9443864 KiB`（8.9484、9.1710、9.1479、9.0064 GiB）；
+源码运行前后 SHA 一致，Axioms 仅含 `propext`、`Classical.choice`、`Quot.sound`。
