@@ -110,6 +110,12 @@ def divisionPointCoordinateAlgHom (n : ℕ) :
         (Affine.CoordinateRing.mk E.toAffine (C Polynomial.X)) = ptX (Qpt E n) :=
   divisionPointCoordinateMap_X E n
 
+@[simp] theorem divisionPointCoordinateAlgHom_Y (n : ℕ) :
+    divisionPointCoordinateAlgHom E n
+        (Affine.CoordinateRing.mk E.toAffine Polynomial.X) = ptY (Qpt E n) := by
+  change divisionPointCoordinateMap E n (AdjoinRoot.root E.toAffine.polynomial) = _
+  rw [divisionPointCoordinateMap, AdjoinRoot.lift_root]
+
 /-- Evaluation at the selected actual division point is injective. -/
 theorem divisionPointCoordinateMap_injective (n : ℕ) (hn : 0 < n) :
     Function.Injective (divisionPointCoordinateAlgHom E n) := by

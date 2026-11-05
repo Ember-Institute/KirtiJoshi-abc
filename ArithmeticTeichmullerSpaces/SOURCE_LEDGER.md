@@ -7920,3 +7920,31 @@ The leaf compiled with default heartbeats in 122 seconds at `9166656 KiB` (8.742
 | `JT-SCENE1-GENUINE-DIVISION-POINT-EVALUATION` | `Act1Scene1/GenuineDivisionPointEvaluation.lean` | Defines `divisionPointCoordinateAlgHom` from the original Weierstrass coordinate ring to `Ω E`, evaluating at the coordinates of the same actual `Qpt E n`. `divisionPointCoordinateAlgHom_X` records the x-generator value, and `divisionPointCoordinateMap_injective` proves the map injective for `n > 0` using `Qpt_xCoord_transcendental` and the one-dimensional coordinate-ring/Zariski argument. |
 
 The construction uses the actual chosen `Qpt` and its nonsingular point equation, together with the Weierstrass coordinate-ring presentation. Its scope stops at the coordinate ring: it does not extend the map to `E.toAffine.FunctionField` or `FractionRing`, identify the field range with `QField E n`, or prove the signed/unsigned tensor map has zero kernel or is an isomorphism. The final leaf build used the frozen import graph, default heartbeats, CPU affinity `0-13`, `LEAN_NUM_THREADS=14`, Lean `-j1`, and a 15 GiB process-group stop line; it exited 0 in 123.02 seconds at 9,160,304 KiB (8.736 GiB). Scene1, Checks, Axioms, and ImportAudit then exited 0 in 131.34, 144.87, 133.99, and 134.87 seconds; their peaks were 9,450,916, 9,625,152, 9,599,236, and 9,445,892 KiB (maximum 9.179 GiB). Source hashes matched before and after each run. The three new declarations were individually audited; their axiom lists contain only `propext`, `Classical.choice`, and `Quot.sound`, with no `sorryAx`. JSONL records include failed API-revision attempts below 8 GiB and the first aggregate attempt that stopped because the leaf `.olean` had not yet been emitted. The logical unit was committed and pushed as `f55cd03`.
+
+### Actual division-point function-field evaluation and image
+
+| source-id | module | declaration and scope |
+| --- | --- | --- |
+| `JT-SCENE1-GENUINE-DIVISION-POINT-EVALUATION` | `Act1Scene1/GenuineDivisionPointEvaluation.lean` | Adds `divisionPointCoordinateAlgHom_Y`, the y-generator value of the existing coordinate-ring evaluation at the same actual `Qpt E n`. |
+| `JT-SCENE1-GENUINE-DIVISION-POINT-FUNCTION-FIELD-EVALUATION` | `Act1Scene1/GenuineDivisionPointFunctionFieldEvaluation.lean` | Defines `divisionPointFunctionFieldAlgHom` on the original `E.toAffine.FunctionField` for `n > 0`. The `_algebraMap`, `_injective`, `_X`, and `_Y` declarations prove coordinate-ring restriction, injectivity and the two original coordinate values. |
+| `JT-SCENE1-GENUINE-DIVISION-POINT-FUNCTION-FIELD-IMAGE` | `Act1Scene1/GenuineDivisionPointFunctionFieldImage.lean` | `divisionPointFunctionFieldAlgHom_mem_QField` proves range containment; `_baseField_le_range` proves that the original x-line base lies in the range; `_fieldRange` identifies the range exactly as `(QField E n).restrictScalars k`. |
+
+Sources are IUT I Definition 3.1(d), the same local compatible-division-point construction, and pinned Mathlib `RingTheory/Localization/FractionRing.lean` (`IsFractionRing.liftAlgHom`, `lift_algebraMap`, `div_surjective`), `RingTheory/AdjoinRoot.lean` (`lift_root`), and `AlgebraicGeometry/EllipticCurve/Affine/Basic.lean`/`Point.lean` (`baseChange_nonsingular`, `Point.map`, `Point.map_some` and its additive-homomorphism `map_nsmul` law). The image proof reuses the coordinate-ring induction in the independently ported `ReferenceIut/Iut/Anabelian/Genuine/Basic.lean` and the point-descent pattern of `GenuineDivisionPointTranscendence.lean`; its source notice is retained.
+
+The forward containment checks coordinate-ring generators, then uses fraction decomposition. For the reverse containment, a private lemma descends a point with both coordinates in an intermediate field to that field. The additive point map preserves its multiplication equation. Applying this lemma to the same `Qpt E n` and `nsmul_divSys` puts the original generic coordinates in the actual evaluation range. `baseField_eq_xLine` in characteristic zero then supplies the original base-field inclusion, and the existing adjoin definition supplies the exact `QField` identity. The final declarations retain only the original field, characteristic-zero and ellipticity hypotheses and `n > 0`.
+
+This closes the evaluation-and-image subunit. Signed automorphism existence, signed-quotient nontriviality, tensor-map injectivity/surjectivity, the Cartesian normalization square, the common geometry producer and `AG.pi1Cover` comparison remain open. All 15 parent obligations retain their existing checkboxes.
+
+All three proof files and Scene1, Checks, Axioms and ImportAudit exited 0 with CPU affinity `0-13`, `LEAN_NUM_THREADS=14`, Lean `-j1`, hot caches, default heartbeats and a 15 GiB process-group stop line sampled every 0.5 seconds. Source hashes matched before and after all seven final runs and match the delivered source. Nine new public names occur once in each SceneBounds audit; their axiom lists contain only `propext`, `Classical.choice` and `Quot.sound`, with no `sorryAx`. The four-entry import union covers 1086 local modules and has no proof holes or forbidden imports. The pinned Lean/mathlib commits and project dependency configuration are unchanged.
+
+| final build | seconds | peak group RSS (KiB / GiB) | result |
+| --- | --- | --- | --- |
+| coordinate Y leaf | 156.5 | `9164792` / 8.7402 | 0 |
+| function-field evaluation leaf | 150.3 | `9157160` / 8.7329 | 0 |
+| function-field image leaf | 256.5 | `9168408` / 8.7437 | 0 |
+| Scene1 | 214.9 | `9430896` / 8.9940 | 0 |
+| Checks | 220.1 | `9626608` / 9.1806 | 0 |
+| Axioms | 182.9 | `9601888` / 9.1571 | 0 |
+| ImportAudit | 197.7 | `9446176` / 9.0086 | 0 |
+
+Resource records are archived in `docs/Scene1Witt比较内存.jsonl`. The two failed revisions were API/dependent-elimination errors, not memory stops or kernel timeouts. The successful image proof moves point descent into a generic private lemma before applying it to the original evaluation range. An initial unmonitored extension-only API probe has unavailable RSS and is explicitly excluded from acceptance evidence. All final proof leaves remain below 16 GiB.
