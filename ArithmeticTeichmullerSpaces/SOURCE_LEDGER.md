@@ -7948,3 +7948,39 @@ All three proof files and Scene1, Checks, Axioms and ImportAudit exited 0 with C
 | ImportAudit | 197.7 | `9446176` / 9.0086 | 0 |
 
 Resource records are archived in `docs/Scene1Witt比较内存.jsonl`. The two failed revisions were API/dependent-elimination errors, not memory stops or kernel timeouts. The successful image proof moves point descent into a generic private lemma before applying it to the original evaluation range. An initial unmonitored extension-only API probe has unavailable RSS and is explicitly excluded from acceptance evidence. All final proof leaves remain below 16 GiB.
+
+### Weierstrass coordinate-ring negative involution
+
+| source-id | module | declarations and scope |
+| --- | --- | --- |
+| `JT-SCENE1-WEIERSTRASS-COORDINATE-NEGATION` | `Act1Scene1/WeierstrassCoordinateNegation.lean` | `coordinateNegationHom`, `coordinateNegationHom_root`, `coordinateNegationHom_algebraMap`, `coordinateNegationHom_involutive`, `coordinateNegationEquiv`, `coordinateNegationEquiv_apply`, `coordinateNegationEquiv_root`, `coordinateNegationEquiv_algebraMap`, `coordinateNegationEquiv_apply_apply`: the original coordinate-ring `k[X]`-algebra automorphism fixing the x-coordinate algebra and sending the original root `Y` to `-Y-a₁X-a₃`, with involutivity and both generator laws. |
+
+The source is IUT I Definition 3.1(d), together with Mathlib's Weierstrass affine negation
+formula and `AdjoinRoot` lifting/extensionality API. The proof is independent of ellipticity,
+characteristic and field hypotheses at this coordinate-ring layer; no reference-project code
+was copied. This proves the coordinate-ring involution. Under these weak hypotheses the map
+can be the identity, so it does not prove nontriviality. Function-field and algebraic-closure
+extensions, signed-quotient nontriviality and the Cartesian normalization square remain open.
+
+The final source passed the leaf and all four entry points. Each final run records equal
+before/after source hashes. All used CPU `0-13`, `LEAN_NUM_THREADS=14`, Lean `-j1`, hot
+caches, default heartbeats and a 15 GiB process-group stop line sampled every 0.5 seconds.
+
+| final build | seconds | peak group RSS (KiB / GiB) | exit code |
+| --- | --- | --- | --- |
+| `coordinate_negation_leaf_final` | 83.2 | `4176540` / 3.9831 | 0 |
+| `coordinate_negation_final_scene1` | 245.1 | `9446548` / 9.0089 | 0 |
+| `coordinate_negation_final_checks` | 202.8 | `9627856` / 9.1818 | 0 |
+| `coordinate_negation_final_axioms` | 171.7 | `9603632` / 9.1587 | 0 |
+| `coordinate_negation_final_importaudit` | 164.1 | `9374092` / 8.9398 | 0 |
+
+Each of the nine new public names occurs once in Checks and Axioms. Their axiom lists contain
+only `propext`, `Classical.choice` and `Quot.sound`; the aggregate axiom output has no
+`sorryAx`. The four-entry import union covers 1087 local modules, with no proof holes,
+missing local modules or forbidden imports. The pinned toolchain and dependencies are unchanged.
+All 15 parent obligations remain open; their checkboxes were not modified.
+
+The resource JSONL retains the earlier instrumented runs as raw records. Six failed revisions
+were API/proof-term failures below 4 GiB. Some earlier records contain only a startup hash;
+no missing end hash was inferred. The wrong-project-root invocation has unavailable RSS and
+is excluded from acceptance. Final acceptance uses only the five final builds above.
