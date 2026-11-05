@@ -8026,3 +8026,34 @@ This closes the original function-field involution subunit. It does not prove no
 construct an automorphism of `Ω E`, control the chosen division point after an ambient
 extension, or prove the Cartesian normalization square. All 15 parent obligations remain open;
 their checkboxes and the dynamic-boundary plan were not modified.
+
+### Actual division-field negative involution (2026-11-06, accepted)
+
+| source-id | module | declarations and scope |
+| --- | --- | --- |
+| `JT-SCENE1-GENUINE-DIVISION-FIELD-NEGATION` | `Act1Scene1/GenuineDivisionFieldNegation.lean` | `divisionPointFunctionFieldEquiv`, `coe_divisionPointFunctionFieldEquiv`, `divisionFieldNegationEquiv`, `divisionFieldNegationEquiv_apply_equiv`, `coe_divisionFieldNegationEquiv`, `divisionFieldNegationEquiv_X`, `divisionFieldNegationEquiv_Y`, `divisionFieldNegationEquiv_involutive`: transport the original function-field involution to an automorphism of the same actual `(QField E n).restrictScalars k`, retain its inclusion in the same `Ω E`, fix the selected `Qpt E n` x-coordinate, give the original Weierstrass y-negation formula, and prove involutivity for `n > 0`. |
+
+The source is IUT I Definition 3.1(d), together with the actual compatible division point
+and the proved function-field evaluation/image identity. The transport uses the pinned Mathlib
+`AlgHom.equivFieldRange` and `IntermediateField.equivOfEq`. It keeps the existing `QField`,
+ambient algebraic closure, evaluation map and chosen point; the hypotheses remain
+`Field k`, `CharZero k`, ellipticity of `E` and `n > 0`. The proof does not add a comparison
+axiom or a replacement carrier.
+
+| build | seconds | peak group RSS (KiB / GiB) | exit code |
+| --- | --- | --- | --- |
+| `division_field_negation_leaf_v1` | 158.0 | `9179108` / 8.7539 | 0 |
+| `division_field_negation_scene1` | 166.8 | `9452444` / 9.0146 | 0 |
+| `division_field_negation_checks` | 176.2 | `9630128` / 9.1840 | 0 |
+| `division_field_negation_axioms` | 143.9 | `9605968` / 9.1610 | 0 |
+| `division_field_negation_importaudit` | 144.9 | `9446592` / 9.0090 | 0 |
+
+All five final runs exited 0 with CPU affinity `0-13`, `LEAN_NUM_THREADS=14`, Lean `-j1`,
+hot caches, default heartbeats and a 15 GiB process-group stop line. Each run records equal
+before/after source hashes, matching the delivered source. The eight public names occur once
+in Checks and Axioms; their axiom lists contain only `propext`, `Classical.choice` and
+`Quot.sound`, with no `sorryAx`. Resource records are in `docs/Scene1Witt比较内存.jsonl`.
+
+This closes only the same-division-field involution subunit. It does not extend the map to
+`Ω E`, prove a signed-group witness or close the Cartesian normalization square. All 15 parent
+obligations remain open, and their checkboxes and the dynamic-boundary plan were not modified.

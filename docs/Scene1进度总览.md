@@ -22,19 +22,19 @@ actual carrier 上的定理，不自动成为论文 carrier 上的定理。
 
 | 项目 | 当前值 |
 | --- | --- |
-| 更新日期 | 2026-11-05（Asia/Shanghai） |
-| 状态截点 | 2026-11-05 18:29（Asia/Shanghai）；坐标评价单元已推送 |
-| 最近完成的数学单元 | `f55cd03`：构造同一实际 `Qpt` 的坐标环评价 `AlgHom`，并证明其单射 |
-| 已推送版本与验收基线 | 坐标评价逻辑单元已随 `f55cd03` 推送；点坐标超越与评价单射各自通过叶及四入口验收。 |
-| 当前工作单元 | G2 actual affine Cartesian cover：把坐标环评价扩张到函数域，识别像与 `QField E n` 的关系，并据此处理 signed quotient 非平凡性；之后仍须证明 tensor 映射满射并完成 geometry producer 比较 |
+| 更新日期 | 2026-11-06（Asia/Shanghai） |
+| 状态截点 | 2026-11-06 00:07（Asia/Shanghai）；同一实际除点域上的取负 involution 已通过整单验收 |
+| 最近完成的数学单元 | `GenuineDivisionFieldNegation.lean`：将原函数域取负 involution 运输到同一实际 `QField E n`，并证明所选 `Qpt E n` 的 x/y 坐标公式及 involutivity |
+| 最近推送的前置基线 | `c8a1a1b`：原 Weierstrass 函数域取负 involution；本单元在其上运输到同一实际除点域 |
+| 当前工作单元 | 将该 `QField E n` 自同构延拓到同一个 `Ω E`，证明底域固定和实际点作用，再构造 signed-group witness；Cartesian tensor map 仍待证明 |
 | Scene1 整体 | **未完成；最终闸门关闭 0/4；15 项父义务全部开放** |
-| 当前推进位置 | 新增并验收实际 `Qpt` 坐标环评价映射的单射性；函数域像的 `QField` 身份和 Cartesian cover 仍开放 |
-| 最近完成的构建验收 | 新坐标评价叶、Scene1、Checks、Axioms、ImportAudit 均退出 0；叶峰值 `9160304 KiB`（8.736 GiB），四入口最高 `9625152 KiB`（9.179 GiB） |
-| 构建与工作树状态 | 坐标评价逻辑单元已于 `f55cd03` 提交并推送；工作树还有其他未提交、未跟踪和删除项 |
-| 尚未闭合的比较边界 | 除点坐标的评价映射像尚未识别为 `QField E n`，Cartesian cover 仍未证明；旧 named `ambientInclusion/toAmbient` 方块及具体 named inclusion 恢复包装仍未验收；actual inertia quotient 尚未接入现成 `AG.pi1Cover`；论文 `B`、标量/Galois/Tate-log、period 与 H¹ₑ/BK 身份仍开放 |
-| 内存优化结果 | 早期约 100 GiB 的整体 rho 比较已由低内存 presentation 路线完成值、闭包与完成比较；三层 Frobenius 比较、actual inertia 系列及实际除点坐标超越均在 16 GiB 单叶上限内通过，原载体、原映射及范数得到保留 |
+| 当前推进位置 | 已闭合同一实际 `Qpt` 的坐标环/函数域评价、像识别及其 `QField E n` 取负 involution；ambient 延拓、signed-group witness、tensor map 和 Cartesian cover 仍开放 |
+| 最近完成的构建验收 | 取负单元叶、Scene1、Checks、Axioms、ImportAudit 均退出 0；叶峰值 `9179108 KiB`（8.754 GiB），四入口最高 `9630128 KiB`（9.184 GiB） |
+| 当前改动状态 | 五条最终构建记录的源码 SHA 与交付文件一致；本单元源码、审计登记和资源记录完整，工作树另有无关改动 |
+| 尚未闭合的比较边界 | `Ω E` 上的 ambient 自同构、signed quotient 的非平凡 witness、Cartesian cover 的 tensor kernel/满射仍未建立；旧 named `ambientInclusion/toAmbient` 方块及具体 named inclusion 恢复包装仍未验收；actual inertia quotient 尚未接入现成 `AG.pi1Cover`；论文 `B`、标量/Galois/Tate-log、period 与 H¹ₑ/BK 身份仍开放 |
+| 内存优化结果 | 早期约 100 GiB 的整体 rho 比较已由低内存 presentation 路线完成值、闭包与完成比较；三层 Frobenius 比较、actual inertia 系列及实际除点评价和取负系列均在 16 GiB 单叶上限内通过，原载体、原映射及范数得到保留 |
 | 内存边界 | 单叶验收上限 16 GiB；当前监控停止线 15 GiB，总编译内存上限 100 GiB。低于内存线但超时的构建仍不算通过 |
-| 尚未接通的主要连接 | actual affine Cartesian cover、除点坐标评价像与 `QField E n` 的识别、共同真实 geometry producer、actual inertia quotient 与现成 `AG.pi1Cover` 的比较、global holomorphoid、论文 Fréchet `B`/ρ-norm、H¹ₑ/BK、paper representatives、跨来源 collation、theta locus/`thetaVolume` 与最终 Corollary 3.12 |
+| 尚未接通的主要连接 | signed quotient 非平凡 witness 与 ambient 自同构、actual affine Cartesian cover、共同真实 geometry producer、actual inertia quotient 与现成 `AG.pi1Cover` 的比较、global holomorphoid、论文 Fréchet `B`/ρ-norm、H¹ₑ/BK、paper representatives、跨来源 collation、theta locus/`thetaVolume` 与最终 Corollary 3.12 |
 | Prologue 边界 | `R5`；四项 source laws 仍由 Scene1 producer 从共同真实来源证明 |
 
 阅读顺序：先看四个闸门，再看当前路线，最后看最近单元变化与内存记录。
@@ -51,7 +51,7 @@ G1–G4 对应[开发计划 §3](开发计划.V1Act1Scene1.md#3-未完成义务�
 | 闸门 | 当前状态 | 已有结果 | 关闭所需的剩余工作 | 证据入口 |
 | --- | --- | --- | --- | --- |
 | **G1：目标与归一化冻结** | 🟡 部分完成 | raw/degree-normalized 换算、weighted source sum、grouped volume 会计、actual qProduct lower bound 和条件性最终消费者已有 | 在同一 paper carrier 上冻结 q-term、局部/全局次数、`p*`、`2ℓ`、无穷处项和最终目标，证明 paper normalization 身份 | [计划 G1](开发计划.V1Act1Scene1.md#g1目标符号和归一化) |
-| **G2：共同真实来源模型装配** | 🟡 部分完成 | 给定 `InitialThetaData` 后，actual Tate/q-root、局部 tilt/Fontaine/Witt、actual affine presentations、惯性生成元相等、函数域惯性商，以及同一实际 `Qpt` 的坐标环评价单射已有局部结果 | 识别评价映射延拓到函数域后的像与 `QField E n`，证明 actual normalization cover 的 Cartesian 性，构造共同来源的 `OrbicurveData`/`LocalThetaData` producer，并将 actual inertia quotient 与现成 `AG.pi1Cover` 比较；另接通 holomorphoid、period/H¹ₑ/BK 和论文 `B` 身份 | [计划 G2](开发计划.V1Act1Scene1.md#g2共同真实来源和-producer)；[父义务台账](具有明确参考来源指示的证明义务.md) |
+| **G2：共同真实来源模型装配** | 🟡 部分完成 | 给定 `InitialThetaData` 后，actual Tate/q-root、局部 tilt/Fontaine/Witt、actual affine presentations、惯性生成元相等、函数域惯性商，以及同一实际 `Qpt` 的坐标环/函数域评价、`QField E n` 像识别和该域上的取负 involution 已有局部结果 | 将该域自同构延拓到同一个 `Ω E` 并证明实际点作用，构造 signed quotient 的非平凡 witness；再证明 actual normalization cover 的 Cartesian 性，构造共同来源的 `OrbicurveData`/`LocalThetaData` producer，并将 actual inertia quotient 与现成 `AG.pi1Cover` 比较；另接通 holomorphoid、period/H¹ₑ/BK 和论文 `B` 身份 | [计划 G2](开发计划.V1Act1Scene1.md#g2共同真实来源和-producer)；[父义务台账](具有明确参考来源指示的证明义务.md) |
 | **G3：论文处集与重数会计** | 🟡 部分完成 | actual representatives、prime fibers、selected/omitted mass、Galois fiber 权重和 grouped volume 会计已有 | 识别论文处集和 `L'` representatives，闭合 multiplicity、residue/inertia degree、paper weights 与 mixed-moduli descent | [计划 G3](开发计划.V1Act1Scene1.md#g3论文处集代表和重数) |
 | **G4：实际 theta-volume 与最终连接** | 🟡 部分完成 | ordinary-log/Kummer hull、Haar/cost、actual volume 比较、period-ring 和 Tate kernel 的局部链已有 | 接通 H¹ₑ/BK、theta-value、不同 untilt/holomorphoid、paper theta locus 与 `thetaVolume`，在同一归一化下完成最终 proof term | [计划 G4](开发计划.V1Act1Scene1.md#g4论文-theta-locusvolume-和最终-corollary) |
 
@@ -88,8 +88,9 @@ flowchart TD
     FC["已闭合：actual↔standard Frobenius<br/>bounded / Carrier / Fréchet 正逆交换图<br/>五入口和逐名审计通过；621545f"]
     AF["部分完成：actual affine normalization presentations<br/>tensor pullback 与 selected component 已区分"]
     DX["已闭合：实际正层除点的 x 坐标超越<br/>同一 Qpt 系统；2781d64"]
-    EA["已闭合：同一实际 Qpt 的坐标环评价<br/>AlgHom 单射；f55cd03"]
-    EV["未建立：坐标评价像与 QField E n 的识别"]
+    EA["已闭合：同一实际 Qpt 的坐标环/函数域评价<br/>AlgHom 单射；像 = QField E n；5505feb"]
+    DN["已闭合：同一 QField E n 上的取负<br/>固定实际 Qpt 的 x；交换 y；involutive"]
+    EV["未建立：Ω E 上的 ambient 自同构<br/>及 signed quotient 非平凡 witness"]
     IG["已闭合：actual valuation-inertia<br/>generators、共轭稳定及闭正规商开嵌入"]
     IQ["已闭合：actual inertia quotient<br/>忠实作用；fixed field = coverField；e432e7d"]
     CP["未建立：actual normalization cover 的 Cartesian 性<br/>tensor map injectivity / surjectivity"]
@@ -124,7 +125,8 @@ flowchart TD
     S --> AF
     S --> DX
     DX --> EA
-    EA -.-> EV
+    EA --> DN
+    DN -.-> EV
     EV -.-> CP
     S --> IG
     IG --> IQ
@@ -148,7 +150,7 @@ flowchart TD
     classDef done fill:#dcfce7,stroke:#15803d,color:#14532d;
     classDef partial fill:#fef3c7,stroke:#b45309,color:#78350f;
     classDef open fill:#f3f4f6,stroke:#6b7280,color:#111827;
-    class T,E,W,V,Q,U,A,C0,M,F0,F1,F2,F3,F,H,DX,EA,IG,IQ done;
+    class T,E,W,V,Q,U,A,C0,M,F0,F1,F2,F3,F,H,DX,EA,DN,IG,IQ done;
     class R,AF partial;
     class S,D,P,B,L,C,CP,PI,EV open;
 ```
@@ -177,10 +179,12 @@ bounded 逆向证明消费上游保存的两侧原逆函数法律。全半径 Ca
 normalization cover 的 Cartesian 性，也没有提供现成 `AG.pi1Cover` 的消费者。它们不关闭共同
 geometry producer、论文 `B`、holomorphoid 或 H¹ₑ/BK 身份。
 
-`2781d64` 证明同一实际除点系统中每个正层 `Qpt E n` 的 x 坐标超越底域。当前工作树上的
-`GenuineDivisionPointEvaluation` 用这个结果构造原 Weierstrass 坐标环到 `Ω E` 的实际评价
-`AlgHom`，并证明其单射。该单元尚未扩张到函数域或 `FractionRing`，也未证明像等于
-`QField E n`；signed quotient 非平凡性及 Cartesian 性仍未证明。
+`2781d64` 证明同一实际除点系统中每个正层 `Qpt E n` 的 x 坐标超越底域。
+`5505feb` 在此基础上补齐同一实际 `Qpt` 的 y 坐标、函数域 `AlgHom`、单射性以及
+函数域评价像恰为 `(QField E n).restrictScalars k`。随后，`GenuineDivisionFieldNegation`
+将原函数域 involution 经该像等式运输回同一个实际 `QField E n`，证明所选 `Qpt` 的 x
+坐标不变、y 坐标按 Weierstrass 公式取负，且该域自同构为 involution。此结果没有构造
+`Ω E` 上的 ambient 自同构或 signed quotient 非平凡 witness，也没有证明 Cartesian 性。
 
 ### 关键子结果与缺口
 
@@ -189,9 +193,11 @@ geometry producer、论文 `B`、holomorphoid 或 H¹ₑ/BK 身份。
 | 条件性最终定理 | 🔵 条件性完成 | `cor312_of_scene1_data` 与 canonical actual-hull consumer 已有证明；完整真实输入、来源法律和 paper identity 仍须产生 | G1/G2/G4；[计划 §2.3](开发计划.V1Act1Scene1.md#23-scene1-条件性消费者与会计) |
 | Actual Tate/q-root 与局部会计 | 🟢 已闭合 | 给定数据后的 q 参数、q-order、根、有限支撑和 raw/degree-normalized 恒等式已有 | G1/G3；[Scene1 聚合](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1.lean) |
 | Actual affine normalization presentations | 🟡 部分完成 | 真实 base/cover normalization rings、有限覆盖和 tensor scheme 的 pullback 已构造；actual normalization 只映入所选 tensor component，未证明该映射是同构 | G2；[实际交换方块](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaOrbicurvePresentationSquare.lean) |
-| Actual division-point x-coordinate transcendence | 🟢 已闭合 | 对同一实际相容除点系统的每个 `n > 0`，证明 `ptX (Qpt E n)` 超越底域；为坐标评价映射提供输入，但不识别像与 `QField E n`，也不证明 signed quotient 非平凡或 Cartesian | G2；`2781d64`；[超越性引理](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionPointTranscendence.lean) |
-| Actual division-point coordinate evaluation | 🟢 已闭合 | 从原 Weierstrass 坐标环到 `Ω E` 构造同一实际 `Qpt E n` 的 `AlgHom`；`n > 0` 时由 x 坐标超越性和一维坐标环论证证明单射。未扩张到函数域或 `FractionRing`，未识别像与 `QField E n` | G2；`f55cd03`；[评价叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionPointEvaluation.lean) |
-| Actual cover Cartesian square | ⚪ 未建立 | tensor map kernel 仅证明为 minimal prime，未证明为零。零核仍需签名覆盖域与原椭圆函数域在 `x`-line 上线性不交；下一步是扩张坐标评价并识别其像与 `QField E n`，再排除 `yG` 属于签名覆盖域。满射还需 tensor ring 整闭或直接证明映射满射 | G2；[计划 G2](开发计划.V1Act1Scene1.md#g2共同真实来源和-producer) |
+| Actual division-point x-coordinate transcendence | 🟢 已闭合 | 对同一实际相容除点系统的每个 `n > 0`，证明 `ptX (Qpt E n)` 超越底域；为坐标评价映射提供输入，但不证明 signed quotient 非平凡或 Cartesian | G2；`2781d64`；[超越性引理](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionPointTranscendence.lean) |
+| Actual division-point coordinate/function-field evaluation | 🟢 已闭合 | 从原 Weierstrass 坐标环扩张到 `E.toAffine.FunctionField` 的实际 `AlgHom`；证明 y 坐标公式、`n > 0` 时单射，并识别像恰为 `(QField E n).restrictScalars k` | G2；`5505feb`；[函数域评价](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionPointFunctionFieldEvaluation.lean)、[像识别](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionPointFunctionFieldImage.lean) |
+| Same-division-field negative involution | 🟢 已闭合 | 经原函数域评价等价运输到同一实际 `QField E n`；证明该域自同构 involutive、固定所选 `Qpt` 的 x 坐标并按原 Weierstrass 公式变换 y 坐标 | G2；本单元；[证明叶](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineDivisionFieldNegation.lean) |
+| Signed ambient automorphism and quotient witness | ⚪ 未建立 | 尚未把指定的 `QField E n` 自同构延拓到 `Ω E` 并证明实际点作用；因此还没有 signed-group 中而不属于 unsigned-group 的 witness | G2；[后续路线](#后续顺序) |
+| Actual cover Cartesian square | ⚪ 未建立 | 函数域评价像已识别且同一 `QField E n` 取负已证明，但 tensor map kernel 仍未证明为零，满射也未证明；selected component 是否为完整 pullback 尚未判定 | G2；[计划 G2](开发计划.V1Act1Scene1.md#g2共同真实来源和-producer) |
 | Actual valuation-inertia generators 与共轭 | 🟢 已闭合 | 真实 unsigned/base generator 集相等，且 base generator 对全 `Gal E` 共轭稳定；保留原 valuation witness 和实际除点系统 | G2；`f46562a`、`b36f85c`；[generators](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineInertiaGenerators.lean)、[共轭稳定性](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineInertiaConjugation.lean) |
 | Actual inertia quotient 与覆盖开嵌入 | 🟢 已闭合 | 构造真实闭正规惯性生成子群及函数域商；覆盖诱导连续开嵌入，同层 unsigned→signed 映射也为开嵌入 | G2；`602be9c`；[惯性商](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineInertiaQuotient.lean) |
 | Actual inertia quotient 的 fixed-field 作用 | 🟢 已闭合 | 同一 seed 上，惯性商忠实作用于 `Ω^N`，作用核是既有 `inertiaKernel`，不变量恰为既有 `functionFieldCoverField` | G2；`e432e7d`；[作用模块](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaInertiaQuotientAction.lean) |
@@ -278,8 +284,10 @@ Joshi II 的原型为 `B_{C_p^flat,ℚₚ}`、`φ=p`；Joshi III 也允许 `B_E`
 | `602be9c`：actual inertia quotient | 闭正规惯性商、覆盖诱导连续开嵌入及同层 unsigned→signed 开嵌入 | 🟢 通用叶、实际叶和四入口通过并推送 | 不接入现成 `AG.pi1Cover`，不证明 Cartesian/core/cusp/theta-root |
 | `e4b7014`：G2 pi1-consumer 边界 | 核实实际 inertia quotient 尚无现成 `AG.pi1Cover` 消费者，记录共同 producer 与身份比较缺口 | 🟢 边界审查已记录并推送 | 未排除几何命题；实际 producer 与比较仍待证明 |
 | `e432e7d`：actual inertia quotient fixed-field action | 惯性商在同一 seed 的 inertia-fixed field 上忠实作用，且不变量等于既有 cover function field | 🟢 叶及五入口通过并推送；逐名公理仅含 `propext`、`Classical.choice`、`Quot.sound` | 不建立 Cartesian cover、共同 geometry producer 或 `AG.pi1Cover` 比较 |
-| `2781d64`：actual division-point x-coordinate transcendence | 对同一实际相容除点系统的所有正层，证明所选 x 坐标超越底域 | 🟢 叶及四入口通过并推送；公理逐名审计仅含 `propext`、`Classical.choice`、`Quot.sound` | 不识别坐标评价像与 `QField E n`，不证明 signed quotient 非平凡或 Cartesian cover |
-| `f55cd03`：actual division-point coordinate evaluation | 从同一实际 `Qpt` 构造坐标环到 `Ω E` 的 `AlgHom`，并证明 `n > 0` 时单射 | 🟢 叶、Scene1、Checks、Axioms、ImportAudit 均通过并推送 | 未扩张到函数域或 `FractionRing`，未识别像与 `QField E n`，不关闭 Cartesian 父义务 |
+| `2781d64`：actual division-point x-coordinate transcendence | 对同一实际相容除点系统的所有正层，证明所选 x 坐标超越底域 | 🟢 叶及四入口通过并推送；公理逐名审计仅含 `propext`、`Classical.choice`、`Quot.sound` | 不证明 signed quotient 非平凡或 Cartesian cover |
+| `f55cd03`：actual division-point coordinate evaluation | 从同一实际 `Qpt` 构造坐标环到 `Ω E` 的 `AlgHom`，并证明 `n > 0` 时单射 | 🟢 叶、Scene1、Checks、Axioms、ImportAudit 均通过并推送 | 函数域延拓和像识别在 `5505feb` 完成；signed quotient 与 Cartesian 父义务仍开放 |
+| `5505feb`：actual division-point function-field evaluation and image | 补齐 y 坐标公式，延拓到原函数域，证明函数域评价单射，并证明像等于 `(QField E n).restrictScalars k` | 🟢 三叶、Scene1、Checks、Axioms、ImportAudit 均通过并推送；九项新增公理仅含 `propext`、`Classical.choice`、`Quot.sound` | 不构造 signed ambient 自同构，不证明 signed quotient 非平凡或 Cartesian cover |
+| `GenuineDivisionFieldNegation`：actual division-field negation | 把原函数域取负 involution 运输到同一实际 `QField E n`，证明同一 `Qpt` 的坐标作用和 involutivity | 🟢 叶及四入口均通过；源码 SHA 前后相同；八项新增公理仅含 `propext`、`Classical.choice`、`Quot.sound` | 不延拓到 `Ω E`，不构造 signed quotient witness，不证明 Cartesian cover |
 
 已验收的完整值目标为：令 `d = localDeg(w)`、`B = InitialThetaPadicBoundedWittComparison`，
 对 `ρ ≠ 0`、`ρ ≠ ⊤` 及原 actual bounded Witt 元素 `x`，证明
@@ -359,12 +367,14 @@ deterministic timeout；对应目标现已有上述替代证明。旧失败仍�
 | `e432e7d` inertia quotient fixed-field action | `9219556` / 8.7925 | `9450048`、`9623424`、`9599228`、`9371288` KiB；最高约 9.178 GiB | 叶及四入口退出 0；单个 fixed-field 不变量声明使用 `maxHeartbeats 1000000` |
 | `2781d64` division-point x-coordinate transcendence | `9166656` / 8.7420 | `9450656`、`9624308`、`9600376`、`9400300` KiB；最高约 9.1785 GiB | 叶及四入口退出 0；默认 heartbeat；源码 SHA 前后相同 |
 | `f55cd03` division-point coordinate evaluation | `9160304` / 8.736 | `9450916`、`9625152`、`9599236`、`9445892` KiB；最高 `9625152` / 9.179 GiB | 叶及四入口退出 0；三项公理逐名审计通过并推送 |
+| `5505feb` division-point function-field evaluation and image | 三叶 `9157160`、`9164792`、`9168408` KiB（8.7329、8.7402、8.7437 GiB） | `9430896`、`9626608`、`9601888`、`9446176` KiB；最高 `9626608` / 9.1806 GiB | 三叶、Scene1、Checks、Axioms、ImportAudit 退出 0；源码 SHA 前后相同 |
 
 | 历史失败记录 label | 耗时 | 峰值 RSS（KiB / GiB） | 终态与后续 |
 | --- | --- | --- | --- |
 | `actual_standard_bounded_frobenius_concrete_transfer_pieces_v6` | 242.6 秒 | `12167816` / 11.604 | Kernel timeout，退出 1；v7 theorem 拆分后通过 |
 | `frobenius_final_leaf_IutInitialThetaPadicBoundedWittFrobeniusInverse` | 385.7 秒 | `12166360` / 11.6027 | Kernel timeout，退出 1；逆函数法律上移后通过 |
 | `actual_standard_bounded_frobenius_equiv_1m` | 358.3 秒 | `15740828` / 15.012 | memory_limit，退出 −15；局部预算提升已撤回 |
+| `coordinate_negation_leaf_v4` | 75.1 秒 | `4173940` / 3.981 | Lean 错误，退出 1；两个未解决目标，非内存失败；后续最终版本已单独验收 |
 
 早期监控器曾将部分输出产物摘要误作源码 SHA。受影响的 32 条历史记录已改记为
 `unverified_monitor_digest` 并保留说明；耗时、RSS 和退出码仍是原运行记录，
@@ -390,7 +400,7 @@ deterministic timeout；对应目标现已有上述替代证明。旧失败仍�
 
 ## 后续顺序
 
-1. 将已证的坐标环评价扩张到实际函数域或 `FractionRing`，识别其像与 `QField E n` 的关系，并据此处理 signed quotient 非平凡性；再证明签名覆盖域与原椭圆函数域在 `x`-line 上线性不交（等价地排除 `yG` 属于签名覆盖域），并证明 tensor ring 整闭或直接证明 tensor map 满射，才能判断 selected component 是否为完整 pullback。
+1. 将已运输到同一 `QField E n` 的指定取负自同构延拓到同一个 `Ω E`，证明底域固定及实际 `Qpt` 的点作用；不要声称任意 ambient 延拓仍为 involution。用该 witness 和函数域评价像 `QField E n` 排除 `yG` 属于签名覆盖域，再证明 tensor map 的零核与满射，判断 selected component 是否为完整 pullback。
 2. 构造共同真实 `InitialThetaGeometryProducer`，并把 actual inertia quotient 与已有 `AG.pi1Cover` 接通；不得用新建 π₁ 定义代替缺失的比较，也不得把函数域开嵌入称为 étale `π₁` 结果。
 3. 完成 holomorphoid、论文允许的 `B` 或变体、标量/Galois/Tate-log/period 身份及 H¹ₑ/BK 比较。
 4. 接通 paper representatives、multiplicity、mixed-moduli descent、G1 归一化和 G4 theta-volume，完成最终 Corollary 3.12 与整体审计。
