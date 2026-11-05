@@ -52,5 +52,41 @@ theorem sum_negLog_paperRootNorm_eq_relRamWeightedPaperFactorSum
   exact negLog_paperRootNorm_eq_paperFactor_log_mul
     D p hTate hCompat hEll v
 
+/-! The same source accounting in finite-product form. -/
+noncomputable def paperRootNormProduct : ℝ :=
+  ∏ v : (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset,
+    paperRootNorm D v
+
+theorem paperRootNormProduct_pos : 0 < paperRootNormProduct D := by
+  unfold paperRootNormProduct
+  apply Finset.prod_pos
+  intro v hv
+  unfold paperRootNorm
+  exact Real.rpow_pos_of_pos
+    (norm_pos_iff.mpr
+      ((IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).qroot_ne_zero v)) _
+
+theorem negLog_paperRootNormProduct_eq_relRamWeightedPaperFactorSum
+    (hEll : T.ell = D.prime.ℓ) :
+    -Real.log (paperRootNormProduct D) =
+      ∑ v : (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset,
+        (relRamIdx v.1 (baseIndex D p hTate hCompat v).1 : ℝ) *
+          (-Real.log (Corollary312PaperNormalizedSourceQFactor p T
+            (baseIndex D p hTate hCompat v))) := by
+  classical
+  calc
+    -Real.log (paperRootNormProduct D) =
+        ∑ v : (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset,
+          -Real.log (paperRootNorm D v) := by
+      unfold paperRootNormProduct
+      simp only [paperRootNorm]
+      rw [Real.log_prod (fun v _ =>
+        (Real.rpow_pos_of_pos
+          (norm_pos_iff.mpr
+            ((IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).qroot_ne_zero v)) _).ne')]
+      rw [← Finset.sum_neg_distrib]
+    _ = _ := sum_negLog_paperRootNorm_eq_relRamWeightedPaperFactorSum
+      D p hTate hCompat hEll
+
 end
 end JoshiTeich.Act1Scene1.CanonicalQRootNorm
