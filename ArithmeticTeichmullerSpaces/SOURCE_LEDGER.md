@@ -7984,3 +7984,45 @@ The resource JSONL retains the earlier instrumented runs as raw records. Six fai
 were API/proof-term failures below 4 GiB. Some earlier records contain only a startup hash;
 no missing end hash was inferred. The wrong-project-root invocation has unavailable RSS and
 is excluded from acceptance. Final acceptance uses only the five final builds above.
+
+### Original Weierstrass function-field negative involution
+
+| source-id | module | declarations and scope |
+| --- | --- | --- |
+| `JT-SCENE1-GENUINE-FUNCTION-FIELD-NEGATION` | `Act1Scene1/GenuineFunctionFieldNegation.lean` | `functionFieldNegationEquiv`, `functionFieldNegationEquiv_algebraMap`, `functionFieldNegationEquiv_polynomial`, `functionFieldNegationEquiv_xF`, `functionFieldNegationEquiv_yF`, `functionFieldNegationEquiv_involutive`: extend the original coordinate-ring involution to the original `E.toAffine.FunctionField` as a `k`-algebra automorphism, fix the original polynomial x-coordinate algebra, and prove the pre-existing `xF`/`yF` formulas and involutivity. |
+
+The mathematical source is IUT I Definition 3.1(d). The construction uses the proved local
+`coordinateNegationEquiv` and pinned Mathlib `IsFractionRing.algEquivOfAlgEquiv`, its
+`_algebraMap` lemma and `div_surjective` in `RingTheory/Localization/FractionRing.lean`.
+The existing `xF` and `yF` come from the independently ported local
+`ReferenceIut/Iut/Anabelian/Genuine/Basic.lean`; its original source notices remain unchanged.
+No new reference-project code was copied.
+
+The new proof requires only `Field k` and `E : WeierstrassCurve k`. It keeps the original
+coordinate ring, fraction field, scalar towers and coordinate definitions. The y-coordinate
+formula follows from the original root formula and scalar-tower identities. Involutivity is
+proved by fraction decomposition and the already proved coordinate-ring involution, without
+unfolding the full fraction-field equivalence. No free comparison law, new carrier, additional
+core assumption or heartbeat override is introduced.
+
+| build | seconds | peak group RSS (KiB / GiB) | exit code |
+| --- | --- | --- | --- |
+| `function_field_negation_leaf_v1` | 82.0 | `4570472` / 4.3587 | 0 |
+| `function_field_negation_scene1` | 205.1 | `9445440` / 9.0079 | 0 |
+| `function_field_negation_checks` | 313.9 | `9629120` / 9.1830 | 0 |
+| `function_field_negation_axioms` | 296.6 | `9604592` / 9.1597 | 0 |
+| `function_field_negation_importaudit` | 206.5 | `9452136` / 9.0143 | 0 |
+
+All five runs used CPU `0-13`, `LEAN_NUM_THREADS=14`, Lean `-j1`, hot caches, default
+heartbeats and a 15 GiB process-group stop line sampled every 0.5 seconds. Source hashes
+matched before and after each run and match the delivered files. The leaf passed on its
+first controlled run. Resource records are archived in `docs/Scene1Witt比较内存.jsonl`.
+The six public names occur once in Checks and Axioms; their axiom lists contain only
+`propext`, `Classical.choice` and `Quot.sound`, with no `sorryAx`. The four-entry import
+union covers 1088 local modules and has no proof holes, missing local modules or forbidden
+imports. The pinned toolchain and dependency configuration are unchanged.
+
+This closes the original function-field involution subunit. It does not prove nontriviality,
+construct an automorphism of `Ω E`, control the chosen division point after an ambient
+extension, or prove the Cartesian normalization square. All 15 parent obligations remain open;
+their checkboxes and the dynamic-boundary plan were not modified.
