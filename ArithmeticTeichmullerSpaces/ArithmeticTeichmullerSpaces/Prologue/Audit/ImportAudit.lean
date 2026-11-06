@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.NormalizationInfinity
 import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.InitialThetaGeometry
 import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.CanonicalSource
 import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks.Completion
