@@ -22,7 +22,7 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-11-07（Asia/Shanghai） |
-| 数学代码基线 | `aa9fd9b`，`main` 与 `origin/main` 同步；本次仅更新总览文档 |
+| 数学代码基线 | `aa9fd9b`；后续 `09e74ec` 仅更新本总览，`main` 与 `origin/main` 同步 |
 | 上一份总览 | `docs/Scene1进度总览.md`，基线日期 2026-11-06 |
 | Scene1 整体 | **未完成；G1–G4 关闭 0/4** |
 | 父义务 | [证明义务清单](具有明确参考来源指示的证明义务.md) 的 15 项全部为 `[ ]` |
@@ -294,7 +294,7 @@ mixed-moduli descent，冻结 G1，最后接通 paper theta locus、`thetaVolume
 signed quotient、Cartesian cover 和无穷远边界仍待证明。以下按提交顺序概括此后已推送的
 局部结果。它们扩展可复用的几何与 Frobenius 桥接，但均未改变 G1–G4 或 15 项父义务状态。
 
-1. **Standard/actual Witt Frobenius 局部桥接（2026-11-06，`5d07bbd` 至 `253c845`）。**
+1. **Standard/actual Witt Frobenius 局部桥接（2026-11-06，`6ed9f91` 至 `253c845`）。**
    增加标准 Frobenius 的 RingHom、通用比较和环运算律、标准 bounded localization 的
    presentation/uniqueness，以及 Teichmüller target bridge；actual 一侧增加 numerator
    naturality、bounded map wrapper、条件性 presentation interface、stage-00 interface、
