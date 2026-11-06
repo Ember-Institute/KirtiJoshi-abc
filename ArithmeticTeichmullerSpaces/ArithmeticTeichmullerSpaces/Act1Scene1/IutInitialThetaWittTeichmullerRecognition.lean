@@ -94,10 +94,8 @@ theorem constantCoeff_norm_le (ρ : Radius) (a : InitialThetaTiltFontaine.Ainf D
     (by simpa only [pow_zero, mul_one, InitialThetaBoundedWittExpansion.ambientInclusion,
       RingHom.comp_apply] using InitialThetaBoundedWittExpansion.toAmbient_inclusion D w a) 0
   rw [InitialThetaWittRhoExpansion.ainfMap, RingHom.comp_apply, InitialThetaWittRhoCompletion.inclusion_norm]
-  have hn : ‖algebraMap (InitialThetaTiltIntegers.Integers D w) (InitialThetaTiltField.Carrier D w)
-      (a.coeff 0)‖ = ‖a.coeff 0‖ := rfl
   simpa only [WittTeichmullerExpansion.digits, pow_zero, RingAut.one_apply,
-    InitialThetaBoundedWittExpansion.wittInclusion, WittVector.map_coeff, mul_one, div_one, hn] using h
+    InitialThetaBoundedWittExpansion.wittInclusion_coeff_norm, mul_one, div_one] using h
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaWittTeichmullerRecognition

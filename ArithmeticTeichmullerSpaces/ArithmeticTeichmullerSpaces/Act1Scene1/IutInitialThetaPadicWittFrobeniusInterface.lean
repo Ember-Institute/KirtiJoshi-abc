@@ -1,4 +1,4 @@
-import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicWittFrobeniusNaturality
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPadicBoundedWittComparison
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalizationFrobeniusNaturality
 
 /-!
