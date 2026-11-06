@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityFiber
 
 /-! The actual inverse-coordinate normalization fiber and its generic algebra. -/
@@ -38,3 +39,15 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityFiber
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityFiberHeightOne
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityInverseCoordinate_valuation_lt_one
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.coe_infinityNormalizationRingMap
+
+#print axioms JoshiTeich.Act1Scene1.NormalizationPrimeValuation.exists_ambient_valuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityNormalizationAmbientMap
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityNormalizationAmbientMap_apply
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityAmbientValuation
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityAmbientValuation_coordinate_mem
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityAmbientValuation_center
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityAmbientValuation_constant_mem
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityAmbientValuation_inverseCoordinate_lt_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityAmbientValuation_xG_not_mem
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityAmbientValuation_signed_coordinate_mem
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityAmbientValuation_signed_center
