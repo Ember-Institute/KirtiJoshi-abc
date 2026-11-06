@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityOrbit
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityFiber
+import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityRamification
 
 /-! The actual inverse-coordinate normalization fiber and its generic algebra. -/
 
@@ -74,3 +75,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityFiber
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityFiberMap_eq_iff_orbit
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityFiberOrbitQuotientEquiv
 #print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityFiberOrbitQuotientEquiv_mk
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinitySignedRamificationMultiplicity_eq_card_inertia
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinitySignedNormalization_card_stabilizer
