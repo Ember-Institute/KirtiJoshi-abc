@@ -22,7 +22,7 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-11-07（Asia/Shanghai） |
-| 当前提交 | `84de696`，`main` 与 `origin/main` 同步 |
+| 数学代码基线 | `aa9fd9b`，`main` 与 `origin/main` 同步；本次仅更新总览文档 |
 | 上一份总览 | `docs/Scene1进度总览.md`，基线日期 2026-11-06 |
 | Scene1 整体 | **未完成；G1–G4 关闭 0/4** |
 | 父义务 | [证明义务清单](具有明确参考来源指示的证明义务.md) 的 15 项全部为 `[ ]` |
@@ -38,6 +38,9 @@
   H¹/Kummer/ordinary-log 和有限、无穷、adelic 会计链已有 proof term。
 - actual normalization、分支外比较、呈示范畴的全局 pullback、signed fixed-ring descent、
   actual inertia quotient 及其固定域作用已有验收；这些结果不产生任意 `AG/TG` 的 geometry producer。
+- standard/actual bounded Witt Frobenius 的 function-ring laws、numerator/presentation
+  bridge、stage-00 interface、cached map 和 source operation dictionaries 已有独立验收；
+  这些是 Scene1/Derived 局部桥接，不是 actual completion 或论文 `B` 的身份证明。
 - 既有条件性 Corollary consumer、q-pilot、hull、Haar/cost 和 weighted accounting 已可消费显式输入。
 - 2026-11-07 新增的逆坐标图、环境赋值和 signed 轨道商结果均已通过 Scene1、Checks、
   Axioms、ImportAudit、AxiomAudit；它们描述实际闭素点边界，不识别论文 cusp。
@@ -287,20 +290,40 @@ mixed-moduli descent，冻结 G1，最后接通 paper theta locus、`thetaVolume
 
 ## 上一份进度总览到现在的新进展简报
 
-上一份总览（2026-11-06）把工作推进位置记录在实际 normalization、函数域 signed quotient、
-inertia 和 period/Frobenius 局部链；当时无穷远边界仍缺少实际载体。本次新增的三轮单元均已
-完成完整构建、Checks、Axioms、ImportAudit 和 AxiomAudit，并已连续推送：
+上一份总览的状态截点为 2026-11-06 00:07，记录了实际除点域取负；当时 ambient 延拓、
+signed quotient、Cartesian cover 和无穷远边界仍待证明。以下按提交顺序概括此后已推送的
+局部结果。它们扩展可复用的几何与 Frobenius 桥接，但均未改变 G1–G4 或 15 项父义务状态。
 
-1. `fa895c9`：在同一环境函数域中改用 `u = (xG)⁻¹`，构造 `k[u]` 积分闭包的 `u = 0`
-   上方实际闭素点纤维，证明纤维有限、非空、signed 收缩映射满射，并证明每个点上
-   `v(u) < 1`。这修正了把 `k[xG]` 图直接当作无穷远图的载体混淆。
-2. `495d2cd`：从每个纤维素点的 Dedekind 赋值构造环境域 `Ω` 上的实际赋值环 `W`，证明
-   精确中心公式、常数域包含、`v_W((xG)⁻¹) < 1` 和 `xG ∉ W`；同一个 `W` 在 signed
-   normalization 上的中心正是原 `infinityFiberMap`。这把闭点边界连接到共同 ambient 赋值来源。
-3. `84de696`：把原 signed quotient field action 重新限制到逆坐标归一化环，证明新图上的
-   relative ring Galois law，并用 finite invariant prime action 证明
-   `infinityFiberMap q₁ = infinityFiberMap q₂` 当且仅当 `q₁`、`q₂` 在同一 signed quotient
-   轨道中；原 `infinityFiberMap` 诱导 unsigned boundary orbit quotient 与 signed fiber 的等价。
+1. **Standard/actual Witt Frobenius 局部桥接（2026-11-06，`5d07bbd` 至 `253c845`）。**
+   增加标准 Frobenius 的 RingHom、通用比较和环运算律、标准 bounded localization 的
+   presentation/uniqueness，以及 Teichmüller target bridge；actual 一侧增加 numerator
+   naturality、bounded map wrapper、条件性 presentation interface、stage-00 interface、
+   tilt carrier operation coherence 和 source `Add`/`Mul` dictionary laws。它们分别固定
+   Frobenius 的局部表示或操作字典，不证明 actual completion 上的完整 comparison，也不识别
+   论文 Fréchet `B`、ρ-norm、period 或 BK 对象。
+2. **Signed normalization 与覆盖几何（2026-11-06，`9c16136` 至 `272a83a`）。**
+   将函数域取负延拓为 ambient negation 并构造 signed quadratic quotient；证明 signed
+   covering fields 线性无交、normalization tensor 为 domain 且目标双有理；证明分支外
+   normalized covering square Cartesian，并在 `AffineOrbicurvePresentation` 中证明全局
+   pullback；最后证明实际 signed normalization quotient 的 fixed-ring descent。这些结果
+   不声称 `coarseFunctor` 保持该 pullback，也不识别 root stack 或任意 `AG.Orbicurve`。
+3. **无穷远闭点纤维（`fa895c9`，2026-11-07）。**
+   在同一环境函数域改用 `u = (xG)⁻¹`，构造 `k[u]` 积分闭包的 `u = 0` 上方实际闭素点
+   纤维，并证明纤维有限、非空、signed 收缩映射满射，以及每个点满足 `v(u) < 1`。这建立
+   逆坐标图上的边界载体，不把原 `k[xG]` 图当成无穷远图。
+4. **共同 ambient 赋值与中心（`495d2cd`）。**
+   从纤维闭素点的 Dedekind 赋值构造环境域 `Ω` 上的实际赋值环 `W`，证明中心公式、常数域
+   包含、`v_W((xG)⁻¹) < 1` 和 `xG ∉ W`；同一个 `W` 在 signed normalization 上的中心
+   正是原 `infinityFiberMap`。
+5. **无穷远 signed 轨道商（`84de696`）。**
+   将 signed quotient action 限制到逆坐标 normalization，证明 relative ring Galois law，
+   并证明 `infinityFiberMap q₁ = infinityFiberMap q₂` 当且仅当两素点在同一 signed quotient
+   轨道中；由此得到 unsigned boundary orbit quotient 与 signed fiber 的等价。
 
-这些进展把实际闭素点边界的 chart、赋值和 signed 轨道关系连成一条可验收链，但没有把
-闭素点识别成 `E[ℓ]/M`、几何点或 `AG.Cusp`，也没有改变 G1–G4 和 15 项父义务的状态。
+上述三项 11 月 7 日边界几何单元已通过对应的 Scene1、Checks、Axioms、ImportAudit 和
+AxiomAudit。无穷远结果仍未把闭素点识别成 `E[ℓ]/M`、几何点或 `AG.Cusp`，也没有构造任意
+真实 geometry producer。
+
+资源边界也需保留在进度判断中：actual `CachedInclusion` 曾到约 13.8 GiB 后按停止线终止，
+没有生成可验收 `.olean`；完整 actual `PresentationTransfer` 曾触发 Lean kernel
+deterministic timeout。因此这些尝试不计作已完成 Frobenius 比较。
