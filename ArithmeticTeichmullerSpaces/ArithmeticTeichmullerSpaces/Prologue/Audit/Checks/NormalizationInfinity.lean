@@ -3,10 +3,12 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityValuation
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityFiber
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityRamification
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityGeometricPoints
+import ArithmeticTeichmullerSpaces.Act1Scene1.OrbitStabilizerNatCard
 
 /-! The actual inverse-coordinate normalization fiber and its generic algebra. -/
 
 #check JoshiTeich.Act1Scene1.FunctionFieldNormalization.polynomialCoordinate
+#check JoshiTeich.Act1Scene1.OrbitStabilizerNatCard.orbit_card_mul_stabilizer_card
 #check JoshiTeich.Act1Scene1.FunctionFieldNormalization.zeroBaseEvaluation
 #check JoshiTeich.Act1Scene1.FunctionFieldNormalization.zeroBaseEvaluation_surjective
 #check JoshiTeich.Act1Scene1.FunctionFieldNormalization.zeroBaseIdeal

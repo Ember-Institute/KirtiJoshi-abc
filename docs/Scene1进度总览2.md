@@ -22,12 +22,12 @@
 | 项目 | 当前值 |
 | --- | --- |
 | 更新日期 | 2026-11-07（Asia/Shanghai） |
-| 数学代码基线 | `aa9fd9b`；其后的总览刷新仅修改本文，`main` 与 `origin/main` 同步 |
+| 数学代码基线 | `9d1517a`；本轮新增通用轨道稳定子桥接待随本次交付提交；无关草稿不计入基线 |
 | 上一份总览 | `docs/Scene1进度总览.md`，基线日期 2026-11-06 |
 | Scene1 整体 | **未完成；G1–G4 关闭 0/4** |
 | 父义务 | [证明义务清单](具有明确参考来源指示的证明义务.md) 的 15 项全部为 `[ ]` |
 | Prologue 边界 | R5；四项 source laws 由 Scene1 producer 承接，不能作为 Core 已证明输入 |
-| 最近推进位置 | 同一实际函数域的无穷远闭点、环境赋值、signed 中心和 signed 轨道商 |
+| 最近推进位置 | 同一实际函数域的无穷远闭点、环境赋值、signed 中心、signed 轨道商、分歧重数和 residue-closure 几何点；通用 `Nat.card` orbit--stabilizer 桥接已验收 |
 | 最终缺口 | 共同真实 producer、论文 `B`/ρ-norm、H¹ₑ/BK、论文处集与 `L'`、theta locus/`thetaVolume`、最终 Corollary 3.12 |
 
 ## 已完成的局部结果
@@ -42,8 +42,11 @@
   bridge、stage-00 interface、cached map 和 source operation dictionaries 已有独立验收；
   这些是 Scene1/Derived 局部桥接，不是 actual completion 或论文 `B` 的身份证明。
 - 既有条件性 Corollary consumer、q-pilot、hull、Haar/cost 和 weighted accounting 已可消费显式输入。
-- 2026-11-07 新增的逆坐标图、环境赋值和 signed 轨道商结果均已通过 Scene1、Checks、
-  Axioms、ImportAudit、AxiomAudit；它们描述实际闭素点边界，不识别论文 cusp。
+- 2026-11-07 新增的逆坐标图、环境赋值、signed 轨道商、分歧重数和 residue-closure
+  几何点结果均已通过 Scene1、Checks、Axioms、ImportAudit、AxiomAudit；它们描述实际
+  闭素点边界，不识别论文 cusp。
+- 通用 `OrbitStabilizerNatCard.orbit_card_mul_stabilizer_card` 已通过独立叶和全部五个
+  入口；它只提供群作用的 `Nat.card` 乘积公式，不提供实际无穷远 orbit 的大小。
 
 ## 四个最终闸门
 
@@ -323,6 +326,20 @@ signed quotient、Cartesian cover 和无穷远边界仍待证明。以下按提�
 上述三项 11 月 7 日边界几何单元已通过对应的 Scene1、Checks、Axioms、ImportAudit 和
 AxiomAudit。无穷远结果仍未把闭素点识别成 `E[ℓ]/M`、几何点或 `AG.Cusp`，也没有构造任意
 真实 geometry producer。
+
+6. **无穷远分歧重数与惯性阶（`eb19f27`）。**
+   在同一逆坐标归一化环上证明实际 signed ramification multiplicity 等于 inertia
+   子群的基数，并证明算术 prime stabilizer 的基数分解为重数乘 residue/inertia degree。
+   该结果只闭合实际边界的重数子链，不识别论文 `L'` representative 或 torsion cusp。
+7. **无穷远 residue-closure 几何点（`9d1517a`）。**
+   对每个实际无穷远闭素点构造 residue-field algebraic closure 上的几何点，证明 kernel、
+   几何 stabilizer 和沿 signed chart 的 kernel 公式。该结果仍不提供具体 orbit cardinality，
+   也不建立论文 cusp、`epsilon` 或 `AG.Cusp` 身份。
+8. **通用 orbit--stabilizer `Nat.card` 桥接（本轮）。**
+   新增 `OrbitStabilizerNatCard.lean`，把 Mathlib orbit-product 等价转成自然数基数乘积，
+   已通过叶、NormalizationInfinity Checks/Axioms、ImportAudit、AxiomAudit 和 Scene1。
+   将该引理实例化到实际无穷远几何点的尝试在大型等价展开处约 12 分钟未生成 `.olean`，
+   已按资源边界终止；这不是数学反例，不能据此断言 orbit 大小为 1 或 2。
 
 资源边界也需保留在进度判断中：actual `CachedInclusion` 曾到约 13.8 GiB 后按停止线终止，
 没有生成可验收 `.olean`；完整 actual `PresentationTransfer` 曾触发 Lean kernel
