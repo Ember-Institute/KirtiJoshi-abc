@@ -297,28 +297,34 @@ mixed-moduli descent，冻结 G1，最后接通 paper theta locus、`thetaVolume
 signed quotient、Cartesian cover 和无穷远边界仍待证明。以下按提交顺序概括此后已推送的
 局部结果。它们扩展可复用的几何与 Frobenius 桥接，但均未改变 G1–G4 或 15 项父义务状态。
 
-1. **Standard/actual Witt Frobenius 局部桥接（2026-11-06，`6ed9f91` 至 `253c845`）。**
+1. **实际除点域取负及 q-root/论文代表会计（2026-11-06，`1d7bd89` 至 `953df43`）。**
+   完成同一实际 `QField E n` 上的取负 involution，并登记其向 ambient 延拓的边界；补齐有限
+   和无穷处 q-root norm 乘积会计，证明指定 canonical product 与 reference paper product
+   不相容，随后冻结 paper representative carrier contract、条件性 volume bridge、mass-one
+   torsion 障碍及 weighted carrier spec。这些结果分别关闭局部代数或排除指定装配，不证明
+   paper `L'`、`thetaVolume` 或最终归一化身份。
+2. **Standard/actual Witt Frobenius 局部桥接（2026-11-06，`6ed9f91` 至 `253c845`）。**
    增加标准 Frobenius 的 RingHom、通用比较和环运算律、标准 bounded localization 的
    presentation/uniqueness，以及 Teichmüller target bridge；actual 一侧增加 numerator
    naturality、bounded map wrapper、条件性 presentation interface、stage-00 interface、
    tilt carrier operation coherence 和 source `Add`/`Mul` dictionary laws。它们分别固定
    Frobenius 的局部表示或操作字典，不证明 actual completion 上的完整 comparison，也不识别
    论文 Fréchet `B`、ρ-norm、period 或 BK 对象。
-2. **Signed normalization 与覆盖几何（2026-11-06，`9c16136` 至 `272a83a`）。**
+3. **Signed normalization 与覆盖几何（2026-11-06，`9c16136` 至 `272a83a`）。**
    将函数域取负延拓为 ambient negation 并构造 signed quadratic quotient；证明 signed
    covering fields 线性无交、normalization tensor 为 domain 且目标双有理；证明分支外
    normalized covering square Cartesian，并在 `AffineOrbicurvePresentation` 中证明全局
    pullback；最后证明实际 signed normalization quotient 的 fixed-ring descent。这些结果
    不声称 `coarseFunctor` 保持该 pullback，也不识别 root stack 或任意 `AG.Orbicurve`。
-3. **无穷远闭点纤维（`fa895c9`，2026-11-07）。**
+4. **无穷远闭点纤维（`fa895c9`，2026-11-07）。**
    在同一环境函数域改用 `u = (xG)⁻¹`，构造 `k[u]` 积分闭包的 `u = 0` 上方实际闭素点
    纤维，并证明纤维有限、非空、signed 收缩映射满射，以及每个点满足 `v(u) < 1`。这建立
    逆坐标图上的边界载体，不把原 `k[xG]` 图当成无穷远图。
-4. **共同 ambient 赋值与中心（`495d2cd`）。**
+5. **共同 ambient 赋值与中心（`495d2cd`）。**
    从纤维闭素点的 Dedekind 赋值构造环境域 `Ω` 上的实际赋值环 `W`，证明中心公式、常数域
    包含、`v_W((xG)⁻¹) < 1` 和 `xG ∉ W`；同一个 `W` 在 signed normalization 上的中心
    正是原 `infinityFiberMap`。
-5. **无穷远 signed 轨道商（`84de696`）。**
+6. **无穷远 signed 轨道商（`84de696`）。**
    将 signed quotient action 限制到逆坐标 normalization，证明 relative ring Galois law，
    并证明 `infinityFiberMap q₁ = infinityFiberMap q₂` 当且仅当两素点在同一 signed quotient
    轨道中；由此得到 unsigned boundary orbit quotient 与 signed fiber 的等价。
@@ -327,15 +333,15 @@ signed quotient、Cartesian cover 和无穷远边界仍待证明。以下按提�
 AxiomAudit。无穷远结果仍未把闭素点识别成 `E[ℓ]/M`、几何点或 `AG.Cusp`，也没有构造任意
 真实 geometry producer。
 
-6. **无穷远分歧重数与惯性阶（`eb19f27`）。**
+7. **无穷远分歧重数与惯性阶（`eb19f27`）。**
    在同一逆坐标归一化环上证明实际 signed ramification multiplicity 等于 inertia
    子群的基数，并证明算术 prime stabilizer 的基数分解为重数乘 residue/inertia degree。
    该结果只闭合实际边界的重数子链，不识别论文 `L'` representative 或 torsion cusp。
-7. **无穷远 residue-closure 几何点（`9d1517a`）。**
+8. **无穷远 residue-closure 几何点（`9d1517a`）。**
    对每个实际无穷远闭素点构造 residue-field algebraic closure 上的几何点，证明 kernel、
    几何 stabilizer 和沿 signed chart 的 kernel 公式。该结果仍不提供具体 orbit cardinality，
    也不建立论文 cusp、`epsilon` 或 `AG.Cusp` 身份。
-8. **通用 orbit--stabilizer `Nat.card` 桥接（本轮）。**
+9. **通用 orbit--stabilizer `Nat.card` 桥接（本轮）。**
    新增 `OrbitStabilizerNatCard.lean`，把 Mathlib orbit-product 等价转成自然数基数乘积，
    已通过叶、NormalizationInfinity Checks/Axioms、ImportAudit、AxiomAudit 和 Scene1。
    将该引理实例化到实际无穷远几何点的尝试在大型等价展开处约 12 分钟未生成 `.olean`，
