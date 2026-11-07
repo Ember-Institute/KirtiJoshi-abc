@@ -1,7 +1,7 @@
 # Scene1 进度总览 2
 
 本文件以 2026-11-06 的 [Scene1进度总览](Scene1进度总览.md) 为上一份基线，记录
-截至 2026-11-07 的真实验收状态。已完成部分只保留结论；未完成证明义务保留目标、
+截至 2026-11-07 `6e3c545` 的真实验收状态。已完成部分只保留结论；未完成证明义务保留目标、
 来源、当前支撑和缺失的身份证明。
 
 ### 状态判定
@@ -21,13 +21,13 @@
 
 | 项目 | 当前值 |
 | --- | --- |
-| 更新日期 | 2026-11-07（Asia/Shanghai） |
-| 数学代码基线 | `c246d1c`；通用轨道稳定子桥接、聚合登记和本总览已纳入本次交付；无关草稿不计入基线 |
+| 更新日期 | 2026-11-07（Asia/Shanghai；基线截点为 `6e3c545`） |
+| 数学代码基线 | `6e3c545` 起；新增 concrete paper-selected Voss carrier 并完成 Scene1 与审计入口验收 |
 | 上一份总览 | `docs/Scene1进度总览.md`，基线日期 2026-11-06 |
 | Scene1 整体 | **未完成；G1–G4 关闭 0/4** |
 | 父义务 | [证明义务清单](具有明确参考来源指示的证明义务.md) 的 15 项全部为 `[ ]` |
 | Prologue 边界 | R5；四项 source laws 由 Scene1 producer 承接，不能作为 Core 已证明输入 |
-| 最近推进位置 | 同一实际函数域的无穷远闭点、环境赋值、signed 中心、signed 轨道商、分歧重数和 residue-closure 几何点；通用 `Nat.card` orbit--stabilizer 桥接已验收 |
+| 最近推进位置 | affine presentation Cartesian source 和 concrete section/Voss coverage 判据已验收；现已建立与同一 `InitialThetaData` section 对应的 selected Voss carrier certificate |
 | 最终缺口 | 共同真实 producer、论文 `B`/ρ-norm、H¹ₑ/BK、论文处集与 `L'`、theta locus/`thetaVolume`、最终 Corollary 3.12 |
 
 ## 已完成的局部结果
@@ -47,14 +47,24 @@
   闭素点边界，不识别论文 cusp。
 - 通用 `OrbitStabilizerNatCard.orbit_card_mul_stabilizer_card` 已通过独立叶和全部五个
   入口；它只提供群作用的 `Nat.card` 乘积公式，不提供实际无穷远 orbit 的大小。
+- affine presentation 层的 Cartesian source certificate 已通过叶、InitialThetaGeometry
+  Checks/Axioms、ImportAudit、AxiomAudit 和 Scene1；它封装同一 arithmetic seed 的四顶点
+  pullback/coarse-map 法律，但没有 presentation 到 `AG.Orbicurve` 的 realization。
+- concrete section/Voss 的逐 residue-characteristic fiber coverage 判据及其全局化已通过
+  PrimeSupport Checks/Axioms、ImportAudit、AxiomAudit 和 Scene1；它只证明实际 carrier 的
+  满射等价条件，不证明任意 `InitialThetaData` 满足 coverage，也不产生论文 `L'`。
+- concrete paper-selected Voss carrier certificate 已通过叶、Scene1、PrimeSupport
+  Checks/Axioms、ImportAudit 和 AxiomAudit；它把 supplied valuation section 与
+  odd-semistable finite places 的交接到实际 section/Voss 和 selected q-root source，但不产生
+  独立 `L'` representative 或 coverage proof。
 
 ## 四个最终闸门
 
 | 闸门 | 状态 | 当前已有结果 | 关闭所需的证明 |
 | --- | --- | --- | --- |
 | **G1：目标与归一化冻结** | 🟡 | raw/degree/weighted 的内部换算、q-product、hull 和 volume 会计已有；符号冲突已登记 | 在同一 paper carrier 上冻结 q-term、局部/全局次数、`p*`、`2ℓ`、无穷处项、`thetaVolume` 和最终 target，且不能保留自由 `logVolume` |
-| **G2：共同真实来源与 producer** | 🟡 | 给定 `InitialThetaData` 后的局部 Tate/q-root、perfectoid、Witt、normalization、inertia 和无穷远边界链已有 | 从 arithmetic seed 共同产生 `OrbicurveData`、`LocalThetaData`、`InitialThetaData/TateFamily`、global holomorphoid、period/H¹ₑ/BK 和四项 producer laws |
-| **G3：论文处集、代表与重数** | 🟡 | actual finite support、section、prime fibers、selected/omitted mass、内部 weighted regrouping 已有 | 证明论文 `V_p^oss`、`\underline V^oss`、`L'` representative、fiber multiplicity、residue/inertia degree 和 mixed-moduli descent 的同一 carrier 身份 |
+| **G2：共同真实来源与 producer** | 🟡 | 给定 `InitialThetaData` 后的局部 Tate/q-root、perfectoid、Witt、normalization、inertia、无穷远边界和 affine presentation Cartesian source 已有 | 从 arithmetic seed 共同产生 `OrbicurveData`、`LocalThetaData`、`InitialThetaData/TateFamily`、global holomorphoid、period/H¹ₑ/BK 和四项 producer laws；仍缺 presentation-to-`AG.Orbicurve` realization |
+| **G3：论文处集、代表与重数** | 🟡 | actual finite support、section、prime fibers、selected/omitted mass、concrete selected Voss carrier、coverage 判据和内部 weighted regrouping 已有 | 证明论文 `V_p^oss`、`\underline V^oss`、`L'` representative、fiber multiplicity、residue/inertia degree 和 mixed-moduli descent 的同一 carrier 身份；concrete coverage 判据尚未给出 coverage 成立性 |
 | **G4：theta locus、volume 与最终定理** | 🟡 | actual Kummer/ordinary-log hull、Haar/cost、packet/hull 和条件性 consumer 已有 | 用 H¹ₑ/BK、theta-value、holomorphoid marking 识别 paper locus，证明 paper `thetaVolume`，再给出无自由 producer law 的 Corollary 3.12 |
 
 qLogTerm 的字面符号冲突仍按既有决定暂作笔误处理；不允许静默取反或取 reciprocal。
@@ -209,8 +219,13 @@ closure、hull orbit、ordinary singleton collation 只作用于固定 completio
 
 必须证明 actual `VBad`、odd q-root support 与论文处集之间的包含、过滤、坏处外行为，
 并明确 finite/archimedean support。当前 actual finite support、valuation section、无穷远
-闭点载体和 weighted accounting 只证明工程内部 carrier 的有限性与会计，不能直接命名为
-论文 `V_p^oss` 或 `\underline V^oss`，也没有论文处集的来源等式。
+闭点载体和 weighted accounting 只证明工程内部 carrier 的有限性与会计。新增的
+`iutInitialThetaPaperSelectedVossCarrier` 在同一 supplied `InitialThetaData` section 下刻画
+selected odd-semistable finite carrier，并将其接到实际 section/Voss 和 selected q-root source；
+它不是独立论文处集来源或 `L'` representative map。`iutInitialThetaVBadRepresentativePrimeFiberMap`
+判据及其全局化只给出 concrete section/Voss 被代表像覆盖的必要充分条件（等价于实际两个
+finite support finset 相等），尚未证明该 coverage 条件。仍缺 paper place-set 的来源等式、
+坏处外行为及独立代表身份，不能据此关闭本义务。
 
 来源：Joshi III `ss:weighted-vol`、`pr:general-cohomology-set-const`，
 `refer/iut/Iut/Concrete/Container.lean`、`Cor312/LogVolume.lean`。
@@ -341,11 +356,40 @@ AxiomAudit。无穷远结果仍未把闭素点识别成 `E[ℓ]/M`、几何点�
    对每个实际无穷远闭素点构造 residue-field algebraic closure 上的几何点，证明 kernel、
    几何 stabilizer 和沿 signed chart 的 kernel 公式。该结果仍不提供具体 orbit cardinality，
    也不建立论文 cusp、`epsilon` 或 `AG.Cusp` 身份。
-9. **通用 orbit--stabilizer `Nat.card` 桥接（本轮）。**
+9. **通用 orbit--stabilizer `Nat.card` 桥接（2026-11-07，`c246d1c`）。**
    新增 `OrbitStabilizerNatCard.lean`，把 Mathlib orbit-product 等价转成自然数基数乘积，
    已通过叶、NormalizationInfinity Checks/Axioms、ImportAudit、AxiomAudit 和 Scene1。
    将该引理实例化到实际无穷远几何点的尝试在大型等价展开处约 12 分钟未生成 `.olean`，
    已按资源边界终止；这不是数学反例，不能据此断言 orbit 大小为 1 或 2。
+
+10. **concrete section/Voss prime-fiber coverage criterion（2026-11-07，`32cc697`）。**
+    证明同 residue characteristic 下实际 VBad representative fiber 到完整 section/Voss
+    fiber 的基数不等式，以及映射满射当且仅当 fiber 基数相等；相关 PrimeSupport 入口通过。
+    该结果只是 concrete fiber 的必要充分判据，不证明 coverage 对任意 `InitialThetaData` 成立，
+    也不识别论文 representative。
+11. **coverage 判据全局化（2026-11-07，`cc9ca6d`）。**
+    将逐素数满射判据合成为全局等价：所有 concrete prime-fiber maps 满射，当且仅当
+    `VBadModuliFinset = OddModSupportFinset`（等价于 actual section/Voss carrier 被代表像覆盖）。
+    这使 coverage 缺口可被精确表述，但没有构造 coverage proof，也没有证明 actual carrier
+    就是论文 `\underline V^oss` 或 `L'`；G3 仍开放。
+
+12. **实际 presentation Cartesian source certificate（2026-11-07，`6e3c545`）。**
+    将同一 arithmetic seed 产生的四个 affine presentation 顶点、四条 cover、presentation
+    pullback、coarse-map square 及 unsigned coarse-map 法律封装成可消费证书，并通过叶、
+    InitialThetaGeometry Checks/Axioms、ImportAudit、AxiomAudit 和 Scene1。该证书没有
+    `AG.Orbicurve` realization、root-stack 比较、`AG.IsCartesianSquare` 或 geometry producer；
+    因此 G2 的真实 producer 父义务保持开放。
+
+13. **concrete paper-selected Voss carrier certificate（2026-11-08）。**
+    新增 `IutInitialThetaPaperSelectedVossCarrier.lean`，把同一 `InitialThetaData` 的
+    supplied valuation section 与 odd-semistable finite places 的交定义为 concrete selected
+    Voss carrier。证明 finite carrier 等价于现有 section/Voss 的 finite image、无限处排除、
+    有限性、prime-fiber containment、selected q-root source image 等式，以及 VBad section
+    representative 的成员性。叶、Scene1、PrimeSupport Checks/Axioms、ImportAudit 和
+    AxiomAudit 全部通过，公理依赖仅为 `propext`、`Classical.choice`、`Quot.sound`。
+    该结果绑定 supplied section；它不构造独立论文 `L'` representative，不证明 coverage，
+    不给出 paper place-set 来源或 multiplicity，因此只推进义务 10 的 concrete 子链，15 项
+    父义务仍全部未勾选。
 
 资源边界也需保留在进度判断中：actual `CachedInclusion` 曾到约 13.8 GiB 后按停止线终止，
 没有生成可验收 `.olean`；完整 actual `PresentationTransfer` 曾触发 Lean kernel
