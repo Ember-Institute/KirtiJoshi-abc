@@ -176,3 +176,5 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.OrbitStabilizerNatCard
 #print axioms JoshiTeich.Act1Scene1.TwoTorsionTranslationIntegral.addX_twoTorsion
 #print axioms JoshiTeich.Act1Scene1.TwoTorsionTranslationIntegral.twoTorsion_y_relation
 #print axioms JoshiTeich.Act1Scene1.TwoTorsionTranslationIntegral.translated_x_mem
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.nat_mul_eq_two_or_eq_one
+#print axioms JoshiTeich.Act1Scene1.InitialThetaGeometrySeed.infinityGeometricOrbit_or_inertia_card_eq_one

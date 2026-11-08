@@ -82,5 +82,26 @@ theorem infinityNormalizationGeometricOrbit_mul_inertia_card
     (S.infinityNormalizationGeometricPoint_stabilizer_card q)
     S.signedCoverQuotientGroup_card_eq_two
 
+theorem nat_mul_eq_two_or_eq_one {a b : Nat} (hab : a * b = 2) :
+    a = 1 ∨ b = 1 := by
+  have ha : a ∣ 2 := ⟨b, hab.symm⟩
+  have hp : Nat.Prime 2 := by decide
+  rcases hp.eq_one_or_self_of_dvd a ha with ha1 | ha2
+  · exact Or.inl ha1
+  · right
+    apply Nat.eq_of_mul_eq_mul_left (by decide : 0 < 2)
+    calc
+      2 * b = a * b := by rw [ha2]
+      _ = 2 := hab
+      _ = 2 * 1 := by simp
+
+set_option maxHeartbeats 4_000_000 in
+theorem infinityGeometricOrbit_or_inertia_card_eq_one
+    (q : S.infinityFiber false) :
+    Nat.card (MulAction.orbit S.signedCoverQuotientGroup
+      (S.infinityNormalizationGeometricPoint q)) = 1 ∨
+      Nat.card (q.1.inertia S.signedCoverQuotientGroup) = 1 := by
+  exact nat_mul_eq_two_or_eq_one (S.infinityNormalizationGeometricOrbit_mul_inertia_card q)
+
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
