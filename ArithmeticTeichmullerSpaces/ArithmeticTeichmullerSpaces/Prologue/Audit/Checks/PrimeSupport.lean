@@ -10,6 +10,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPlaceSectionInjecti
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLargePrimeSupport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrimeToSupport
+import ArithmeticTeichmullerSpaces.Act1Scene1.TateStructureLocalSplitModel
 
 /-! PrimeSupport 家族：日常名称检查。 -/
 
@@ -64,3 +65,19 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrimeToSupport
 #check JoshiTeich.Act1Scene1.iutInitialThetaMaximalGlobalData
 #check JoshiTeich.Act1Scene1.iutInitialThetaMaximalPrimeData
 #check JoshiTeich.Act1Scene1.iutInitialThetaOddSupportWeighted_logSum_eq_reference_absLogQ_of_support_eq
+#check JoshiTeich.Act1Scene1.TateReduction.a4Integer
+#check JoshiTeich.Act1Scene1.TateReduction.a6Integer
+#check JoshiTeich.Act1Scene1.TateReduction.a4Integer_mem_maximalIdeal
+#check JoshiTeich.Act1Scene1.TateReduction.a6Integer_mem_maximalIdeal
+#check JoshiTeich.Act1Scene1.TateReduction.actualIntegralModel
+#check JoshiTeich.Act1Scene1.TateReduction.actualIntegralModel_baseChange
+#check JoshiTeich.Act1Scene1.TateReduction.tateCurve_isIntegral
+#check JoshiTeich.Act1Scene1.TateReduction.isMinimal_of_integral_c₄_unit
+#check JoshiTeich.Act1Scene1.TateReduction.tateCurve_isMinimal
+#check JoshiTeich.Act1Scene1.TateReduction.tateCurve_hasMultiplicativeReduction
+#check JoshiTeich.Act1Scene1.TateReduction.tateCurve_integralModel_eq_actual
+#check JoshiTeich.Act1Scene1.TateReduction.actualIntegralModel_reduction
+#check JoshiTeich.Act1Scene1.TateReduction.tateCurve_hasSplitMultiplicativeReduction
+#check JoshiTeich.Act1Scene1.TateReduction.exists_local_split_model_of_tateStructure
+#check JoshiTeich.Act1Scene1.TateReduction.HasLocalSplitMultiplicativeReduction
+#check JoshiTeich.Act1Scene1.TateReduction.tateStructure_implies_localSplitPredicate

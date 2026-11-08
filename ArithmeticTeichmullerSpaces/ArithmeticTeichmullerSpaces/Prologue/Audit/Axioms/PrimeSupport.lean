@@ -10,6 +10,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPlaceSectionInjecti
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLargePrimeSupport
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaMaximalPrimeData
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrimeToSupport
+import ArithmeticTeichmullerSpaces.Act1Scene1.TateStructureLocalSplitModel
 
 /-! PrimeSupport 家族：里程碑公理审计。 -/
 
@@ -59,3 +60,13 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaPrimeToSupport
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaMaximalGlobalData
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaMaximalPrimeData
 #print axioms JoshiTeich.Act1Scene1.iutInitialThetaOddSupportWeighted_logSum_eq_reference_absLogQ_of_support_eq
+#print axioms JoshiTeich.Act1Scene1.TateReduction.a4Integer_mem_maximalIdeal
+#print axioms JoshiTeich.Act1Scene1.TateReduction.a6Integer_mem_maximalIdeal
+#print axioms JoshiTeich.Act1Scene1.TateReduction.actualIntegralModel_baseChange
+#print axioms JoshiTeich.Act1Scene1.TateReduction.tateCurve_isMinimal
+#print axioms JoshiTeich.Act1Scene1.TateReduction.tateCurve_hasMultiplicativeReduction
+#print axioms JoshiTeich.Act1Scene1.TateReduction.tateCurve_integralModel_eq_actual
+#print axioms JoshiTeich.Act1Scene1.TateReduction.actualIntegralModel_reduction
+#print axioms JoshiTeich.Act1Scene1.TateReduction.tateCurve_hasSplitMultiplicativeReduction
+#print axioms JoshiTeich.Act1Scene1.TateReduction.exists_local_split_model_of_tateStructure
+#print axioms JoshiTeich.Act1Scene1.TateReduction.tateStructure_implies_localSplitPredicate
