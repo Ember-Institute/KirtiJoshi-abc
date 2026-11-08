@@ -49,7 +49,6 @@ def sameArithmeticSeed (S : InitialThetaGeometrySeed AG TG) :
   numberFieldK := S.numberFieldK
   algebraModK := S.algebraModK
   towerModK := S.towerModK
-  tate := S.tate
   core := S.core
 
 theorem no_orbicurveData (S : InitialThetaGeometrySeed AG TG) :

@@ -1,5 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.Boundary
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic
+import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompat.Cor312.ThetaData.TateFamilyOfTorsion
+import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Anabelian.Torsion
 
 namespace JoshiTeich.Act1Scene1
 
@@ -12,8 +14,9 @@ universe u
 /-!
 source-id: JT-SCENE1-PRODUCER-CONTRACTS
 source: IUT I, Definition 3.1; `refer/iut/Iut/Concrete/Existence.lean`,
-`AnabelianExistence` and `EllipticCurveData.thetaData`; Joshi II--III
-holomorphoid, untilt, theta-value, and collation constructions.
+`AnabelianExistence` and `EllipticCurveData.thetaData`;
+`Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean`; Joshi II--III holomorphoid,
+untilt, theta-value, and collation constructions.
 fidelity: explicit Scene1 producer contracts.  These structures record the
 missing source obligations without promoting them to Prologue/Core and without
 storing Corollary 3.12 or an equivalent inequality.
@@ -28,7 +31,8 @@ there is no default constructor for these laws.
 
 /-! ## Scene1-A: geometric Initial-Theta producer -/
 
-/-- The non-anabelian seed consumed by a geometric Initial-Theta producer. -/
+/-- The non-anabelian seed consumed by a geometric Initial-Theta producer. Its
+Tate family is derived from `global` and `prime`, not supplied independently. -/
 structure InitialThetaGeometrySeed
     (AG : AnabelianGeometry.{u}) (TG : TemperedGeometry AG) where
   F : Type u
@@ -49,7 +53,6 @@ structure InitialThetaGeometrySeed
     (inferInstance : SMul ↥(fieldOfModuli F E) F)
     (inferInstance : SMul F ↥prime.torsionField)
     algebraModK.toSMul]
-  tate : TateFamily E prime.torsionField prime.ℓ VBad
   core : OrbicurveDataSection.HasCoreUniversally AG F E
 
 attribute [instance] InitialThetaGeometrySeed.fieldF
@@ -57,6 +60,28 @@ attribute [instance] InitialThetaGeometrySeed.fieldF
   InitialThetaGeometrySeed.algebraFbar InitialThetaGeometrySeed.isAlgClosure
   InitialThetaGeometrySeed.isElliptic InitialThetaGeometrySeed.numberFieldK
   InitialThetaGeometrySeed.algebraModK InitialThetaGeometrySeed.towerModK
+
+namespace InitialThetaGeometrySeed
+
+variable {AG : AnabelianGeometry.{u}} {TG : TemperedGeometry AG}
+
+/-- The seed's local Tate uniformizations are derived from its multiplicative
+reduction data and the rational torsion over the admissible-prime field. -/
+noncomputable def tate (S : InitialThetaGeometrySeed AG TG) :
+    TateFamily S.E S.prime.torsionField S.prime.ℓ S.VBad :=
+  JoshiTeich.ReferenceIut.tateFamilyOfTorsion S.E S.prime.torsionField S.prime.ℓ
+    (fun v hv hTwo => by
+      have hOdd := S.global.bad_odd v hv
+      rw [hTwo] at hOdd
+      norm_num at hOdd)
+    S.global.bad_multiplicative
+    S.prime.ℓ_prime
+    (by have h := S.prime.five_le; omega)
+    S.prime.TK
+    le_rfl
+    (by rw [S.prime.card_TK, pow_two])
+
+end InitialThetaGeometrySeed
 
 /--
 The missing geometric producer.  Its output is exactly the `orb` and
