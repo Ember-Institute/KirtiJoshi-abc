@@ -75,7 +75,7 @@ theorem normalizedRootProduct_pow_le_volume :
     (Finset.prod_nonneg fun v _ => pow_nonneg
       (iutInitialThetaRelativeQRootFactor_mem_Ioo D (iutInitialThetaVBadModuliAt D v)).1.le _)
     _ (by positivity)
-  exact Finset.prod_le_prod₀
+  exact Finset.prod_le_prod
     (fun v _ => pow_nonneg
       (iutInitialThetaRelativeQRootFactor_mem_Ioo D (iutInitialThetaVBadModuliAt D v)).1.le _)
     (fun v _ => hlocal v)
@@ -96,7 +96,7 @@ theorem volume_le_one : volume D n σ hσ C ≤ 1 := by
       (σ v) (hσ v) (C v) (hunit v)
   exact Real.rpow_le_one
     (Finset.prod_nonneg fun v _ => pow_nonneg (hnonneg v) _)
-    (Finset.prod_le_one₀ (fun v _ => pow_nonneg (hnonneg v) _) (fun v _ => hlocal v))
+    (Finset.prod_le_one (fun v _ => pow_nonneg (hnonneg v) _) (fun v _ => hlocal v))
     (by positivity)
 
 include hgen hunit in

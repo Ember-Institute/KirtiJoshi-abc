@@ -45,7 +45,7 @@ theorem exists_integral_scalar (a : Padic (Arithmetic.residueChar w.1)) :
       ‖(Arithmetic.residueChar w.1 : Padic (Arithmetic.residueChar w.1))‖ ^ k * ‖a‖)
       Filter.atTop (𝓝 0) := by simpa only [zero_mul] using h
   obtain ⟨k, hk⟩ := (ht.eventually (gt_mem_nhds (zero_lt_one : (0 : ℝ) < 1))).exists
-  refine ⟨k, Padic.lift ((Arithmetic.residueChar w.1 : Padic (Arithmetic.residueChar w.1)) ^ k * a) ?_, rfl⟩
+  refine ⟨k, ⟨(Arithmetic.residueChar w.1 : Padic (Arithmetic.residueChar w.1)) ^ k * a, ?_⟩, rfl⟩
   simpa only [norm_mul, norm_pow] using hk.le
 
 theorem exists_principal_period (v : RationalTate D w) :

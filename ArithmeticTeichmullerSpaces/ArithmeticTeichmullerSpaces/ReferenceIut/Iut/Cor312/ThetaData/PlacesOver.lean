@@ -61,6 +61,7 @@ theorem FinitePlace.exists_liesOver (v : FinitePlace k) :
         (bot_le : (⊥ : Ideal (𝓞 k)) ≤ v.maximalIdeal.asIdeal))
   have hQne : Q ≠ ⊥ := by
     rintro rfl
+    change (⊥ : Ideal (𝓞 K)).under (𝓞 k) = v.maximalIdeal.asIdeal at hQv
     rw [Ideal.under_bot] at hQv
     exact v.maximalIdeal.ne_bot hQv.symm
   refine ⟨FinitePlace.mk ⟨Q, hQ, hQne⟩, ?_⟩

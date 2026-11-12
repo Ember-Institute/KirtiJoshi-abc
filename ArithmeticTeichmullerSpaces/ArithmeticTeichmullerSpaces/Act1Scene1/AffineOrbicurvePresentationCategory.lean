@@ -46,7 +46,7 @@ def Cover.comp {X Y Z : AffineOrbicurvePresentation k} (f : Cover X Y) (g : Cove
   ramification q hq := by
     have : q.IsMaximal := hq
     have hw : (q.comap f.f).IsMaximal :=
-      Ideal.isMaximal_comap_of_isIntegral_of_isMaximal f.f.toRingHom f.isIntegral q
+      Ideal.isMaximal_comap_of_isIntegral_of_isMaximal' f.f.toRingHom f.isIntegral q
     have he := FunctionFieldNormalization.ramificationIdx_comp
       g.f.toRingHom f.f.toRingHom f.injective q
     let e : ℕ := letI := g.f.toRingHom.toAlgebra; (q.comap f.f).ramificationIdx Z.A

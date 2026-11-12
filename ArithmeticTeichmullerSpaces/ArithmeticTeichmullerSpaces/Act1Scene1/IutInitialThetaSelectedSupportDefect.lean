@@ -114,7 +114,7 @@ theorem iutInitialThetaOmittedBaseQPilotLogSum_eq_zero_iff_coverage
           (fun c hc => by split_ifs; exact le_rfl; exact (iutInitialThetaBaseQPilotLogTerm_pos D c).le)
           (Finset.mem_univ b)
         have hbnot : b.1 ∉ iutInitialThetaOddSupportSelectedBasePlaces D := hnot
-        rw [ite_eq_right hbnot] at h
+        rw [if_neg hbnot] at h
         exact h
       have hp := iutInitialThetaBaseQPilotLogTerm_pos D b
       rw [hz] at hsingle
@@ -126,7 +126,7 @@ theorem iutInitialThetaOmittedBaseQPilotLogSum_eq_zero_iff_coverage
     have hsel : b.1 ∈ iutInitialThetaOddSupportSelectedBasePlaces D := by
       rw [hcover]
       exact B.mem_badPlaces b
-    simp only [ite_eq_left hsel]
+    simp only [if_pos hsel]
 
 theorem iutInitialThetaFullBaseQPilotLogSum_le_paperSum_of_coverage
     (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)

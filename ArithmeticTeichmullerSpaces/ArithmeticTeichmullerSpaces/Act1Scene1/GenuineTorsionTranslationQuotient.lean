@@ -53,7 +53,7 @@ theorem torsionTranslationClass_surjective :
 
 private theorem base_mem_Mbar_iff (hM : M ≤ TK) (T : ↥TK) :
     base E T.val ∈ Mbar E n M ↔ T.val ∈ M := by
-  have heff : effLevel n = n := ite_eq_right (Nat.ne_of_gt hn)
+  have heff : effLevel n = n := if_neg (Nat.ne_of_gt hn)
   constructor
   · rintro ⟨R, hR, heq⟩
     have hRT : R = T.val := (pointMap_injective E (algebraMap k (Ω E))) heq

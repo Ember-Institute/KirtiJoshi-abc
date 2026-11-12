@@ -70,7 +70,7 @@ theorem vbadQrootAt_eq_qrootAt_of_liesOver
       B.badPlaces B.badPlaces_finite
     exact (mem_iutBadPlacesOverFinset_iff B.badPlaces B.badPlaces_finite v).mpr
       ⟨w, hw, hvw⟩
-  simp only [vbadQrootAt, ite_eq_left hv]
+  simp only [vbadQrootAt, if_pos hv]
 
 theorem vbadQrootAt_pow_eq_of_liesOver
     {v : FinitePlace ↥D.prime.torsionField} {w : FinitePlace D.F}
@@ -141,11 +141,11 @@ theorem vbadWeightedFiber_eq_canonical (p : ℕ) :
   intro v _
   by_cases hv : v.1 ∈ R.badFinset
   · have hv' : v.1 ∈ (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset := hv
-    rw [dite_eq_left hv]
-    simp only [vbadQrootAt, ite_eq_left hv']
+    rw [dif_pos hv]
+    simp only [vbadQrootAt, if_pos hv']
     rw [qrootAt_ordp_eq_canonicalVBadRoot D ⟨v.1, hv⟩]
   · have hv' : v.1 ∉ (IutTorsionQRootSource.ofInitialThetaDataFromGlobal D).badFinset := hv
-    rw [dite_eq_right hv]
+    rw [dif_neg hv]
     simp [vbadQrootAt, hv', Arithmetic.ordp]
 
 theorem vbadWeightedFiber_eq_qOrderSum (p : ℕ)
@@ -176,10 +176,10 @@ theorem vbadWeightedFiber_eq_qOrderSum (p : ℕ)
   have hw : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad :=
     hbad ▸ Finset.mem_coe.mpr w.2
   by_cases hp : Arithmetic.residueChar w.1 = p
-  · simp only [ite_eq_left hp, dite_eq_left hw]
+  · simp only [if_pos hp, dif_pos hw]
     unfold Arithmetic.qPilotWeight
     ring
-  · simp only [ite_eq_right hp]
+  · simp only [if_neg hp]
 
 theorem vbadWeighted_logSum_eq_iut_absLogQ :
     (∑ p ∈ (IutTorsionQRootSource.iutInitialThetaQPilotData D).badFinset.image

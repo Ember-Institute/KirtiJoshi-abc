@@ -71,8 +71,8 @@ theorem iutInitialThetaOddSupport_j_norm_gt_one
     rw [← IsDedekindDomain.HeightOneSpectrum.valuation_liesOver
       D.F v.maximalIdeal w.maximalIdeal (iutInitialThetaModuliJ D)]
     exact pow_le_one_iff_of_nonneg zero_le
-      (Ideal.ramificationIdx_pos_of_isDedekindDomain' w.maximalIdeal.asIdeal
-        v.maximalIdeal.ne_bot).ne'
+      (Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver w.maximalIdeal.asIdeal
+        v.maximalIdeal.ne_bot)
   have hmod_not_le :
       ¬ v.maximalIdeal.valuation _ (iutInitialThetaModuliJ D) ≤ 1 := by
     intro hmod

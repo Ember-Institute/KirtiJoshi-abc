@@ -69,7 +69,9 @@ theorem exists_root {K : Type u} [NontriviallyNormedField K] [CompleteSpace K] [
   have heval : ‖P.eval x‖ = (Q.roots.map (fun a => ‖algebraMap K L x - a‖)).prod := by
     rw [← norm_algebraMap' L (P.eval x), ← Polynomial.eval_map_apply,
       hs.eval_eq_prod_roots_of_monic hQ]
-    exact Q.roots.norm_prod_map (fun a => algebraMap K L x - a)
+    simpa [Multiset.map_map, Function.comp_def, normHom] using
+      (map_multiset_prod (normHom.toMonoidHom : L →* ℝ)
+        (Q.roots.map (fun a => algebraMap K L x - a)))
   have hbound : δ ^ Q.roots.card ≤ ‖P.eval x‖ := by rw [heval]; exact hprod
   exact (not_lt_of_ge hbound) hx
 

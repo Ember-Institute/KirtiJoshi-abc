@@ -27,8 +27,8 @@ theorem digits_init (N : ℕ) (x : WittVector p F) (n : ℕ) :
     digits p (WittVector.init N x) n = if n < N then digits p x n else 0 := by
   classical
   by_cases hn : n < N
-  · simp only [digits, WittVector.init, WittVector.select, WittVector.coeff_mk, ite_eq_left hn]
-  · simp only [digits, WittVector.init, WittVector.select, WittVector.coeff_mk, ite_eq_right hn, map_zero]
+  · simp only [digits, WittVector.init, WittVector.select, WittVector.coeff_mk, if_pos hn]
+  · simp only [digits, WittVector.init, WittVector.select, WittVector.coeff_mk, if_neg hn, map_zero]
 
 theorem headValue_le (ρ : ℝ≥0∞) (N : ℕ) (x : WittVector p F) :
     headValue p ρ N x ≤ value p ρ x := by

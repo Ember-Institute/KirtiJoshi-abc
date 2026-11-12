@@ -1,6 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.WittTeichmullerExpansion
 import Mathlib.Analysis.Normed.Field.Basic
-import Mathlib.Basic.ENNReal.Inv
+import Mathlib.Data.ENNReal.Inv
 
 /-!
 source-id: JT-SCENE1-WITT-WEIGHTED-DIGITS

@@ -91,15 +91,14 @@ local instance translationInertia_residuePerfectAt
 
 local instance translationInertia_separableResiduesAt
     (p : Ideal S.infinityTranslationBaseRing) [p.IsPrime] :
-    Algebra.HasSeparableResidueFieldsAt S.infinityTranslationBaseRing
-      (S.infinityNormalizationRing false) p := inferInstance
+    PerfectField p.ResidueField := PerfectField.ofCharZero
 
 private theorem translationInertia_card_eq_ramificationIdx
     {R T G : Type*} [CommRing R] [CommRing T] [Algebra R T]
     [IsDomain R] [IsDomain T] [Module.Finite R T] [Module.Flat R T]
     [Group G] [Finite G] [MulSemiringAction G T] [IsGaloisGroup G R T]
     (p : Ideal R) (P : Ideal T) [p.IsPrime] [P.IsPrime] [P.LiesOver p]
-    [Algebra.HasSeparableResidueFieldsAt R T p] :
+    [PerfectField p.ResidueField] :
     Nat.card (P.inertia G) = P.ramificationIdx R :=
   (Ideal.card_inertia_eq_ramificationIdxIn (G := G) p P).trans
     (Ideal.ramificationIdxIn_eq_ramificationIdx p P G)

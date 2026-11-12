@@ -30,7 +30,7 @@ theorem isEtaleAt_of_index_one (hinj : Function.Injective (algebraMap R A))
   haveI : Module.Flat R A := inferInstance
   haveI : Algebra.FinitePresentation R A := DedekindEtale.finitePresentation_of_finite
   haveI : CharZero (q.under R).ResidueField := DedekindEtale.residueField_charZero (K := k) _
-  haveI : Algebra.HasSeparableResidueFieldsAt R A (q.under R) := inferInstance
+  haveI : PerfectField (q.under R).ResidueField := inferInstance
   haveI : Algebra.IsUnramifiedAt R q := Ideal.ramificationIdx_eq_one_iff.mp hq
   exact Algebra.IsEtaleAt.of_isUnramifiedAt_of_flat q
 
@@ -43,7 +43,7 @@ theorem etale_away_of_closed_index_one (hinj : Function.Injective (algebraMap R 
   apply isEtaleAt_of_index_one (k := k) hinj
   by_cases hq : q.asIdeal = ⊥
   · rw [hq]
-    exact Ideal.ramificationIdx_bot_eq_one R
+    exact DedekindEtale.ramificationIdx_bot_one
   · exact h q.asIdeal (Ideal.IsPrime.isMaximal inferInstance hq) hd
 
 end

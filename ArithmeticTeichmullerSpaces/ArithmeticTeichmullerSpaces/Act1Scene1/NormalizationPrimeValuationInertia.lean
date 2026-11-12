@@ -7,7 +7,7 @@ import Mathlib.Tactic.Ring
 source-id: JT-SCENE1-BOUNDARY-PRODUCER-CONTRACTS-20261021
 source: the actual normalization-prime inertia and prime valuation;
 Mathlib `HeightOneSpectrum.exists_primeCompl_mul_eq_of_integer`,
-`valuation_eq_one_iff_notMem`, and `Ideal.mem_inertia`.
+`valuation_eq_one_iff_notMem`, and `AddSubgroup.mem_inertia`.
 fidelity: every element of the prime valuation ring is n/d with d outside
 that prime. Coordinate inertia makes both numerator and denominator unchanged
 modulo the prime, so it acts trivially on the residue of every element of
@@ -35,7 +35,7 @@ theorem inertia_lt_one_of_mem_primeSubring
     (primeSubring K p).valuation (τ x - x) < 1 := by
   have hxval : p.valuation K x ≤ 1 := hx
   obtain ⟨n, d, hnd⟩ := p.exists_primeCompl_mul_eq_of_integer x hxval
-  have hdiff (a : R) : g • a - a ∈ p.asIdeal := (Ideal.mem_inertia.mp hg) a
+  have hdiff (a : R) : g • a - a ∈ p.asIdeal := (AddSubgroup.mem_inertia.mp hg) a
   have hd : (d : R) ∉ p.asIdeal := d.property
   have hgd : g • (d : R) ∉ p.asIdeal := by
     intro h

@@ -114,8 +114,8 @@ theorem iutInitialThetaTorsionSource_no_mass_one_prime_representatives
     by_cases hw : f w = f s
     · have hp : Arithmetic.residueChar w.1 = Arithmetic.residueChar s.1 := by
         rw [hPrime w, hPrime s, hw]
-      simp only [ite_eq_left hw, ite_eq_left hp, le_refl]
-    · simp only [ite_eq_right hw]
+      simp only [if_pos hw, if_pos hp, le_refl]
+    · simp only [if_neg hw]
       split_ifs
       · exact (Arithmetic.qPilotWeight_pos w.1).le
       · exact le_rfl

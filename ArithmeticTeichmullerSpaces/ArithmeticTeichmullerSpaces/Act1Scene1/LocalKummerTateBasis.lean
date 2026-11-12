@@ -1,7 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerPrimitiveTower
 import Mathlib.LinearAlgebra.Span.Basic
 import Mathlib.NumberTheory.Padics.ProperSpace
-import Mathlib.Topology.Algebra.Module.Equiv.Basic
+import Mathlib.Topology.Algebra.Module.Equiv
 import Mathlib.Topology.Homeomorph.Lemmas
 
 /-!

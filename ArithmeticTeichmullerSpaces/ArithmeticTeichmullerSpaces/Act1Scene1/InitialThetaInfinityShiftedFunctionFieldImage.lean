@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Compatibility.Transcendental
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityShiftedDivisionTranscendence
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineShiftedDivisionFunctionFieldImage
 import ArithmeticTeichmullerSpaces.Act1Scene1.WeierstrassPointEvaluationNaturality
@@ -68,7 +69,7 @@ theorem infinityDivisionClosureShiftedFunctionFieldAlgHom_comp_ambient :
       S.prime.ℓ_prime.pos S.infinityTwoTorsionShift
   have hQ : Q ≠ 0 := by
     intro h
-    exact hxQ.ne_zero (by rw [h]; rfl)
+    exact (JoshiTeich.Compatibility.transcendental_ne_zero hxQ) (by rw [h]; rfl)
   exact (WeierstrassPointEvaluationNaturality.functionFieldAlgHom_comp
     S.prime.EK S.infinityDivisionClosureShiftedAmbientInclusion
     S.infinityDivisionClosureShiftedQpt S.infinityDivisionClosureShiftedQpt_ne_zero

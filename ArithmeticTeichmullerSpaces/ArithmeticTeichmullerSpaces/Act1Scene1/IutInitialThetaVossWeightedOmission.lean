@@ -37,7 +37,7 @@ theorem sourceCoefficient_fullSourceAt (v : iutInitialThetaOddModSupportFinset D
       iutInitialThetaRepresentativeCoefficient D v := by
   have hs : VBadSelectedPaper.fullSourceAt D v ∈ VBadSelectedPaper.fullSelectedFinset D :=
     Finset.mem_image.mpr ⟨v, Finset.mem_univ _, rfl⟩
-  rw [sourceCoefficient, dite_eq_left hs]
+  rw [sourceCoefficient, dif_pos hs]
   change iutInitialThetaRepresentativeCoefficient D
     ((iutInitialThetaModuliSelectedSourceEquiv D).symm
       (iutInitialThetaModuliSelectedSourceEquiv D v)) = _
@@ -47,7 +47,7 @@ theorem sourceCoefficient_mem_Ioc_of_mem
     (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset)
     (hs : s ∈ VBadSelectedPaper.fullSelectedFinset D) :
     sourceCoefficient D s ∈ Set.Ioc (0 : ℝ) 1 := by
-  rw [sourceCoefficient, dite_eq_left hs]
+  rw [sourceCoefficient, dif_pos hs]
   exact iutInitialThetaRepresentativeCoefficient_mem_Ioc D _
 
 def weightedLogTerm (s : (iutInitialThetaOddSupportTorsionQRootSource D).badFinset) : ℝ :=

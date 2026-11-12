@@ -24,7 +24,7 @@ noncomputable section
 variable {k : Type u} [Field k] [CharZero k] (E : WeierstrassCurve k) [E.IsElliptic]
 
 attribute [local instance] normalizationUnsignedNormal signedNormalizationAlgebra
-  normSMul normModule normFinite normFlat normSeparableResidues
+  normSMul normModule normFinite normIntegral normFlat normSeparableResidues
   signedNormalizationGaloisAction normalizationPointAction
 
 private theorem finitePresentation_of_moduleFinite {R S : Type*} [CommRing R] [CommRing S]
@@ -55,8 +55,10 @@ theorem normalization_multiplicity_one_iff_etaleAt (ell : ℕ)
     (P : Ideal (coverCoordinateRing E ell M false)) [P.IsPrime] [P.LiesOver p] :
     FunctionFieldNormalization.ramificationMultiplicity
       (normalizationField_signed_le_unsigned E ell M) p = 1 ↔
-        Algebra.IsEtaleAt (coverCoordinateRing E ell M true) P :=
-  ((Iff.of_eq (congrArg (fun n : ℕ => n = 1)
+        Algebra.IsEtaleAt (coverCoordinateRing E ell M true) P := by
+  haveI : PerfectField (P.under (coverCoordinateRing E ell M true)).ResidueField :=
+    normSeparableResidues E ell M (P.under (coverCoordinateRing E ell M true))
+  exact ((Iff.of_eq (congrArg (fun n : ℕ => n = 1)
     (signedNormalizationMultiplicity_eq_ramificationIdx E ell M p P))).trans
       Ideal.ramificationIdx_eq_one_iff).trans (unramified_iff_etale_of_flat P)
 

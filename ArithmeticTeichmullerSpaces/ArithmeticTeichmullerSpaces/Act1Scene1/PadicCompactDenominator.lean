@@ -32,7 +32,7 @@ theorem exists_uniform_denominator (f : C(X, ℚ_[p])) :
 
 def integralLift (f : C(X, ℚ_[p])) (n : ℕ)
     (hn : ∀ x, ‖(p : ℚ_[p]) ^ n * f x‖ ≤ 1) : C(X, ℤ_[p]) :=
-  ⟨fun x => Padic.lift ((p : ℚ_[p]) ^ n * f x) (hn x),
+  ⟨fun x => ⟨(p : ℚ_[p]) ^ n * f x, hn x⟩,
     (continuous_const.mul f.continuous).subtype_mk _⟩
 
 theorem integralLift_coe (f : C(X, ℚ_[p])) (n : ℕ)

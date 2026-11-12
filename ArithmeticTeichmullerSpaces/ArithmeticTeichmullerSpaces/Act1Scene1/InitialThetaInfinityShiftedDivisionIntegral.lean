@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Compatibility.Transcendental
 import ArithmeticTeichmullerSpaces.Act1Scene1.ShiftedDivisionCoordinatesIntegral
 import ArithmeticTeichmullerSpaces.Act1Scene1.ShortDivisionFiberEquation
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityPoleShiftResidue
@@ -129,7 +130,7 @@ theorem closurePrime_generic_x_not_mem
     rfl
   have hx0 : (⟨Genuine.xG S.prime.EK, S.infinityDivisionNormalClosure_xG_mem⟩ : N) ≠ 0 := by
     intro h
-    exact (Genuine.transcendental_xG S.prime.EK).ne_zero
+    exact (JoshiTeich.Compatibility.transcendental_ne_zero (Genuine.transcendental_xG S.prime.EK))
       (congrArg (fun a : N => (a : Genuine.Ω S.prime.EK)) h)
   rw [S.infinityDivisionClosureGenericPoint_ptX]
   exact FiniteInversePrimePoleInertia.not_mem_primeSubring_of_inverse_center

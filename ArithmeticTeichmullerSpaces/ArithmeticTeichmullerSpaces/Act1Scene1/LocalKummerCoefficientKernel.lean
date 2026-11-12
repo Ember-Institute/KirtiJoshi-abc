@@ -63,11 +63,14 @@ theorem standardMap_eq_divided_iff (r : ℤ_[p]) (hr : r ≠ 0) (x y : HI) :
   have hrQ : (r : ℚ_[p]) ≠ 0 := PadicInt.coe_ne_zero.mpr hr
   constructor
   · intro h
-    rw [map_smulₛₗ, PadicInt.Coe.ringHom_apply, h, smul_smul, mul_inv_cancel₀ hrQ, one_smul]
+    rw [map_smulₛₗ]
+    change (r : ℚ_[p]) • standardMap p x = standardMap p y
+    rw [h, smul_smul, mul_inv_cancel₀ hrQ, one_smul]
   · intro h
+    rw [map_smulₛₗ] at h
+    change (r : ℚ_[p]) • standardMap p x = standardMap p y at h
     have he := congrArg (fun z : HQ => (r : ℚ_[p])⁻¹ • z) h
-    simpa only [map_smulₛₗ, PadicInt.Coe.ringHom_apply, smul_smul,
-      inv_mul_cancel₀ hrQ, one_smul] using he
+    simpa only [smul_smul, inv_mul_cancel₀ hrQ, one_smul] using he
 
 /-- This is the actual kernel submodule of the original semilinear coefficient map. -/
 def coefficientTorsion : Submodule ℤ_[p] HI := (standardMap (K := K) (Ω := Ω) p).ker

@@ -76,7 +76,7 @@ theorem finiteVolume_pos (j : ℕ) (U : RawFamily D j) : 0 < finiteVolume D j U 
   Finset.prod_pos fun p _ => packetVolume_pos D j U p
 
 theorem finiteVolume_le_one (j : ℕ) (U : RawFamily D j) : finiteVolume D j U ≤ 1 :=
-  Finset.prod_le_one₀ (fun p _ => (packetVolume_pos D j U p).le)
+  Finset.prod_le_one (fun p _ => (packetVolume_pos D j U p).le)
     (fun p _ => packetVolume_le_one D j U p)
 
 theorem finiteVolume_eq_exp (j : ℕ) (U : RawFamily D j) :

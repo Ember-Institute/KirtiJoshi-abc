@@ -96,10 +96,9 @@ theorem isIntegrallyClosed_at_origin [IsDomain R] [IsNoetherianRing R]
   have hprincipal : (IsLocalRing.maximalIdeal (Localization.AtPrime m)).IsPrincipal := by
     rw [maximalIdeal_eq_span_v m u v a₁ a₂ a₃ a₄ a₆ hspan hrelation]
     infer_instance
-  -- `List.TFAE.out` uses 1-based indices: mathematical entries 4 and 3
-  -- in the theorem's documentation are therefore Lean indices 5 and 4.
+  -- The principal maximal ideal is entry 4 and integral closedness is entry 3.
   exact (((tfae_of_isNoetherianRing_of_isLocalRing_of_isDomain
-    (Localization.AtPrime m)).out 5 4 rfl rfl).mp hprincipal).1
+    (Localization.AtPrime m)).out 4 3 rfl rfl).mp hprincipal).1
 
 
 end JoshiTeich.Act1Scene1.InverseChartOriginLocalization

@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Compatibility.Transcendental
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineShiftedDivisionPointTranscendence
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityShiftedDivisionIntegral
 
@@ -87,7 +88,7 @@ theorem infinityDivisionClosureShiftedQpt_x_transcendental :
 theorem infinityDivisionClosureShiftedQpt_ne_zero :
     S.infinityDivisionClosureShiftedQpt ≠ 0 := by
   intro h
-  apply S.infinityDivisionClosureShiftedQpt_x_transcendental.ne_zero
+  apply JoshiTeich.Compatibility.transcendental_ne_zero S.infinityDivisionClosureShiftedQpt_x_transcendental
   rw [h]
   rfl
 

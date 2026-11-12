@@ -48,7 +48,7 @@ theorem iutInitialThetaVBadRepeatedHaarProduct_le_regionVolume
   apply Real.rpow_le_rpow
     (Finset.prod_nonneg fun v _ => (RepeatedThetaRoot.moduliVolume_pos D (ρ v) n v.1).le)
     _ (by positivity)
-  apply Finset.prod_le_prod₀
+  apply Finset.prod_le_prod
     (fun v _ => (RepeatedThetaRoot.moduliVolume_pos D (ρ v) n v.1).le)
   intro v _
   exact pow_le_pow_left₀
@@ -63,7 +63,7 @@ theorem iutInitialThetaVBadRegionVolume_le_one
     (Finset.prod_nonneg fun v _ => pow_nonneg
       ((RepeatedThetaRoot.packet D (ρ v) n).degreeVolume_nonneg (H v)) _)
     _ (by positivity)
-  apply Finset.prod_le_one₀
+  apply Finset.prod_le_one
     (fun v _ => pow_nonneg
       ((RepeatedThetaRoot.packet D (ρ v) n).degreeVolume_nonneg (H v)) _)
   intro v _

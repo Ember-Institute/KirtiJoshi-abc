@@ -1,5 +1,6 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineSignedGeometricPoints
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedNormalizationGalois
+import Lean.LibrarySuggestions.Basic
 
 /-!
 source-id: JT-SCENE1-BOUNDARY-PRODUCER-CONTRACTS-20261021
@@ -69,3 +70,11 @@ theorem coverNormalizationPoint_preserves_signed (C : Type u) [CommRing C]
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
+
+/- Lean 4.33.1's symbol-frequency exporter spends several minutes analysing
+   the dependent types of these forwarding theorems. Exclude their names from
+   automatic library suggestions; declarations and kernel-checked proofs stay intact. -/
+open Lean in
+run_cmd do
+  for name in ["coverNormalizationGeometricPoint_ker", "coverNormalizationGeometricPoint_stabilizer", "coverNormalizationGeometricPoint_stabilizer_card", "coverNormalizationPoint_preserves_signed"] do
+    modifyEnv fun env => Lean.LibrarySuggestions.nameDenyListExt.addEntry env name

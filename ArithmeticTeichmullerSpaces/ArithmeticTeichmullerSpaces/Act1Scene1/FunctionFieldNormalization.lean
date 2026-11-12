@@ -16,7 +16,7 @@ boundary: Scene1/Derived; no orbicurve, core, or theta-root law is assumed.
 -/
 import Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra
 import Mathlib.RingTheory.DedekindDomain.IntegralClosure
-import Mathlib.RingTheory.Adjoin.Polynomial.Transcendental
+import Mathlib.RingTheory.Algebraic.Basic
 
 namespace JoshiTeich.Act1Scene1.FunctionFieldNormalization
 

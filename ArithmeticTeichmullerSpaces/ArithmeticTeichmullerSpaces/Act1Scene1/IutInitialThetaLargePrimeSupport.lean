@@ -58,7 +58,7 @@ theorem iutMultiplicative_residueChar_le_bound
   by_cases hj : E.j = 0
   · rw [hj, map_zero] at hVal
     exact (not_lt_of_ge zero_le_one hVal).elim
-  · rw [iutMultiplicativeResidueBound, dite_eq_right hj]
+  · rw [iutMultiplicativeResidueBound, dif_neg hj]
     apply Finset.le_sup
     apply (NumberField.FinitePlace.hasFiniteMulSupport hj).mem_toFinset.mpr
     rw [Function.mem_mulSupport, ← NumberField.FinitePlace.norm_embedding_eq]

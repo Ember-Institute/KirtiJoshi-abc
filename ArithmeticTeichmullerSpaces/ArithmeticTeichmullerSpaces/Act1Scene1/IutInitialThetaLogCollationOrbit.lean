@@ -113,10 +113,10 @@ theorem finiteProcessionVolume_mono
   unfold finiteProcessionVolume
   apply Real.rpow_le_rpow (Finset.prod_nonneg fun _ _ =>
     Finset.prod_nonneg fun _ _ => Real.rpow_nonneg ENNReal.toReal_nonneg _) _ (by positivity)
-  apply Finset.prod_le_prod₀
+  apply Finset.prod_le_prod
     (fun _ _ => Finset.prod_nonneg fun _ _ => Real.rpow_nonneg ENNReal.toReal_nonneg _)
   intro i _
-  apply Finset.prod_le_prod₀ (fun _ _ => Real.rpow_nonneg ENNReal.toReal_nonneg _)
+  apply Finset.prod_le_prod (fun _ _ => Real.rpow_nonneg ENNReal.toReal_nonneg _)
   intro p _
   apply Real.rpow_le_rpow ENNReal.toReal_nonneg _ (by positivity)
   apply ENNReal.toReal_mono

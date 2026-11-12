@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Compatibility.Transcendental
 /-
 Adapted from the already vendored GenuineNormalizationPrimeInertia.lean.
 original-path: refer/iut/Iut/Anabelian/Genuine/Homs.lean
@@ -140,7 +141,7 @@ theorem infinityClosurePrime_inertia_fixes_coordinates
     rfl
   have hx0 : (⟨Genuine.xG E, S.infinityDivisionNormalClosure_xG_mem⟩ : N) ≠ 0 := by
     intro hz
-    exact (Genuine.transcendental_xG E).ne_zero
+    exact (JoshiTeich.Compatibility.transcendental_ne_zero (Genuine.transcendental_xG E))
       (congrArg (fun a : N => (a : Genuine.Ω E)) hz)
   have key := FiniteInversePrimePoleInertia.inertia_fixes_of_inverse_center
     (Genuine.xG E)⁻¹ S.infinityTranslation_inverseCoordinate_transcendental N E p τ hτ

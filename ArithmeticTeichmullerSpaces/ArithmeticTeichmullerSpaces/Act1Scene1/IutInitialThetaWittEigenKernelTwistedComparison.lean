@@ -2,7 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittEigenKernelInfi
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittOrbitProductSimpleThetaZero
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittEigenRadiusTopology
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaWittThetaPadicQuotient
-import Mathlib.Topology.Algebra.Module.Equiv.Basic
+import Mathlib.Topology.Algebra.Module.Equiv
 
 /-!
 source-id: JT-SCENE1-INITIAL-THETA-WITT-EIGEN-KERNEL-TWISTED-COMPARISON

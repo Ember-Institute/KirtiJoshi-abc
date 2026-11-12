@@ -101,7 +101,7 @@ theorem principalUnit_eq_rootImage :
     (LocalPadicLog.paperScale (Arithmetic.residueChar s.1) : coefficientField D w) * z)
   change localEmbedding D w s hsw _ = localEmbedding D w s hsw _
   congr 1
-  simp only [IutInitialThetaQRootFamily.qrootAt, dite_eq_left s.2]
+  simp only [IutInitialThetaQRootFamily.qrootAt, dif_pos s.2]
 
 theorem principalUnit_norm_sub_one_lt_one :
     ‖localEmbedding D w s hsw (PaperLogWitnessHull.principalUnit D s) - 1‖ < 1 := by

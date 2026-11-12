@@ -51,7 +51,7 @@ theorem logTerm_eq_order_term (w : Index D) :
     change (if hw : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad then
       ((D.prime.tate w.1 hw).q : w.1.maximalIdeal.adicCompletion D.F) else 0) = _
     have hbad : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad := B.mem_badPlaces w
-    rw [dite_eq_left hbad]
+    rw [dif_pos hbad]
     rfl
   unfold logTerm factor
   rw [(iutInitialThetaTateParameterData_laws D).norm_eq w.1 w.2, hparameter,

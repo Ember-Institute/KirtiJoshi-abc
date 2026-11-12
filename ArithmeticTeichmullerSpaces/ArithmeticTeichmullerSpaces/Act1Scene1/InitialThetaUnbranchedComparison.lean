@@ -68,7 +68,7 @@ theorem signedCoverUnbranched_indices
       S.coverNormalizationMultiplicity true q = 1 := by
   haveI : q.IsMaximal := hq
   have hp : (q.under (S.baseNormalizationRing true)).IsMaximal :=
-    Ideal.isMaximal_under_of_isIntegral_of_isMaximal q
+    Ideal.isMaximal_comap_of_isIntegral_of_isMaximal q
   have hb : S.baseNormalizationMultiplicity true (q.under (S.baseNormalizationRing true)) = 1 := by
     rw [S.baseNormalizationMultiplicity_eq_branch _ hp, if_neg hd]
   exact factors_of_product_one ((S.baseToCoverNormalization_ramificationCondition true q hq).trans hb)

@@ -130,12 +130,6 @@ private theorem infinityResidueCharZero
     (algebraMap R p.ResidueField).comp (algebraMap K R)
   exact charZero_of_injective_ringHom f.injective
 
-private theorem infinitySeparableResiduesOfCharZero
-    {R T : Type*} [CommRing R] [CommRing T] [Algebra R T]
-    [Algebra.IsIntegral R T] (p : Ideal R) [p.IsPrime]
-    [CharZero p.ResidueField] :
-    Algebra.HasSeparableResidueFieldsAt R T p := inferInstance
-
 local instance infinityResidueCharZeroAt
     (p : Ideal (S.infinityNormalizationRing true)) [p.IsPrime] :
     CharZero p.ResidueField :=
@@ -144,12 +138,6 @@ local instance infinityResidueCharZeroAt
 local instance infinityResiduePerfectAt
     (p : Ideal (S.infinityNormalizationRing true)) [p.IsPrime] :
     PerfectField p.ResidueField := PerfectField.ofCharZero
-
-local instance infinitySeparableResiduesAt
-    (p : Ideal (S.infinityNormalizationRing true)) [p.IsPrime] :
-    Algebra.HasSeparableResidueFieldsAt (S.infinityNormalizationRing true)
-      (S.infinityNormalizationRing false) p :=
-  infinitySeparableResiduesOfCharZero p
 
 set_option maxHeartbeats 1000000 in
 /-- The inverse-coordinate infinity multiplicity equals the actual inertia order. -/

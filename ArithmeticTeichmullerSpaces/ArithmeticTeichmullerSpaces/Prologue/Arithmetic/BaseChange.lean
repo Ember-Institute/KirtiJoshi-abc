@@ -325,7 +325,7 @@ noncomputable def placeUnder (v : NumberField.FinitePlace L) :
       ne_bot := by
         obtain ⟨x, hx, hx0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot
           v.maximalIdeal.ne_bot
-        exact Ideal.under_ne_bot_of_integral_mem hx0 hx
+        exact Ideal.comap_ne_bot_of_integral_mem hx0 hx
           (Algebra.IsIntegral.isIntegral x) }
 
 lemma placeUnder_maximalIdeal (v : NumberField.FinitePlace L) :

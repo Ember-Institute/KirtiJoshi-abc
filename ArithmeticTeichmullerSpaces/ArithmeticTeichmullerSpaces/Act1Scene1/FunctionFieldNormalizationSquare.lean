@@ -26,7 +26,7 @@ theorem normalization_comap_isMaximal {F L : IntermediateField (rationalBase k t
     (h : F ≤ L) (w : Ideal (coordRing t L)) (hw : w.IsMaximal) :
     (w.comap (ringMap h)).IsMaximal := by
   have : w.IsMaximal := hw
-  exact Ideal.isMaximal_comap_of_isIntegral_of_isMaximal
+  exact Ideal.isMaximal_comap_of_isIntegral_of_isMaximal'
     (ringMap h).toRingHom (ringMap_isIntegral h) w
 
 theorem ramificationIndex_tower {F L N : IntermediateField (rationalBase k t) Ω}

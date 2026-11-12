@@ -86,7 +86,7 @@ theorem apply_x_le {W : Affine K} (ha₁ : W.a₁ = 0) (ha₃ : W.a₃ = 0) (h�
   have hroot : (W.ΨSq n).eval x = 0 := (JoshiTeich.ReferenceIut.Torsion.smul_eq_zero_iff_ΨSq ha₁ ha₃ h n).mp hP
   have hna : IsNonarchimedean w := fun a b => FinitePlace.add_le w a b
   have hn1 : (1 : ℝ) ≥ w (n : K) :=
-    IsNonarchimedean.apply_natCast_le_one (f := w) (map_zero_le w 1) (map_one w) hna
+    IsNonarchimedean.apply_natCast_le_one (f := w) hna
   by_cases hx : w x ≤ 1
   · exact mul_le_one₀ (pow_le_one₀ (n := 2) (apply_nonneg w _) hn1) (apply_nonneg w x) hx
   rw [not_le] at hx

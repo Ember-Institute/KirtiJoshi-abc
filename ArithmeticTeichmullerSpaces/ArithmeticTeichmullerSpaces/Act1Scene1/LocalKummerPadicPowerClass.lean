@@ -55,7 +55,7 @@ theorem tower_rationalClass :
   have he := congrArg (Rational.standardMap (K := k) (Ω := Ω) p)
     (tower_padicClass hpk a r R)
   simpa only [map_smulₛₗ, Rational.standardMap_classOfCocycle,
-    PadicInt.Coe.ringHom_apply] using he
+    show PadicInt.Coe.ringHom r = (r : ℚ_[p]) from rfl] using he
 
 end
 end JoshiTeich.Act1Scene1.LocalKummer.PadicPowerTower

@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Compatibility.Transcendental
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityFiber
 import ArithmeticTeichmullerSpaces.Act1Scene1.NormalizationPrimeValuationExtension
 
@@ -113,7 +114,8 @@ theorem infinityAmbientValuation_xG_not_mem (pm : Bool) (q : S.infinityFiber pm)
   have h := (S.infinityAmbientValuation pm q).mem_nonunits_iff.mpr
     (S.infinityAmbientValuation_inverseCoordinate_lt_one pm q)
   exact ((S.infinityAmbientValuation pm q).inv_mem_nonunits_iff.mp h).resolve_left
-    (Genuine.transcendental_xG S.prime.EK).ne_zero
+    (JoshiTeich.Compatibility.transcendental_ne_zero
+      (Genuine.transcendental_xG S.prime.EK))
 
 /-- The same unsigned ambient valuation contains the actual signed normalization image. -/
 theorem infinityAmbientValuation_signed_coordinate_mem (q : S.infinityFiber false)

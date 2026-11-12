@@ -52,9 +52,11 @@ theorem integralMap_rpow (ρ : Radius) (a : PadicInt (Arithmetic.residueChar w.1
     ‖integralMap D w ρ a‖ ^ exponent D w ρ = ‖(a : Padic (Arithmetic.residueChar w.1))‖ := by
   by_cases ha : a = 0
   · rw [ha, map_zero, norm_zero, Real.zero_rpow (exponent_pos D w ρ).ne', PadicInt.coe_zero, norm_zero]
-  · rw [norm_integralMap D w ρ a ha,
+  · rw [PadicInt.padic_norm_e_of_padicInt a]
+    rw [norm_integralMap D w ρ a ha,
       ← Real.rpow_pow_comm ENNReal.toReal_nonneg (exponent D w ρ) a.valuation,
-      radius_rpow_exponent, Padic.norm_p, PadicInt.norm_coe, PadicInt.norm_eq_zpow_neg_valuation ha,
+      radius_rpow_exponent, Padic.norm_p,
+      PadicInt.norm_eq_zpow_neg_valuation ha,
       zpow_neg, zpow_natCast, inv_pow]
 
 theorem completedPadicMap_rpow (ρ : Radius) (a : Padic (Arithmetic.residueChar w.1)) :

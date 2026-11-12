@@ -217,9 +217,9 @@ theorem iutInitialThetaOddTateSectionPlaces_eq_selectedSupport
       rw [← IsDedekindDomain.HeightOneSpectrum.valuation_liesOver
         K v.maximalIdeal (iutInitialThetaFinitePlaceSection D v).maximalIdeal j₀]
       exact pow_le_one_iff_of_nonneg zero_le
-        (Ideal.ramificationIdx_pos_of_isDedekindDomain'
+        (Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver
           (iutInitialThetaFinitePlaceSection D v).maximalIdeal.asIdeal
-          v.maximalIdeal.ne_bot).ne'
+          v.maximalIdeal.ne_bot)
     have hvalM : ¬ v.maximalIdeal.valuation M j₀ ≤ 1 := by
       intro hle
       apply hvalK
@@ -247,8 +247,8 @@ theorem iutInitialThetaOddTateSectionPlaces_eq_selectedSupport
       rw [← IsDedekindDomain.HeightOneSpectrum.valuation_liesOver
         D.F v.maximalIdeal x'.maximalIdeal j₀]
       exact pow_le_one_iff_of_nonneg zero_le
-        (Ideal.ramificationIdx_pos_of_isDedekindDomain'
-          x'.maximalIdeal.asIdeal v.maximalIdeal.ne_bot).ne'
+        (Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver
+          x'.maximalIdeal.asIdeal v.maximalIdeal.ne_bot)
     have hvOdd : Odd (Arithmetic.residueChar v) :=
       (Arithmetic.residueChar_prime v).odd_of_ne_two (by
         rw [← Arithmetic.residueChar_eq_of_liesOver hOver]

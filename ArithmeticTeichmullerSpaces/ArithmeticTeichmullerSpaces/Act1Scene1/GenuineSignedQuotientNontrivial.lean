@@ -38,7 +38,7 @@ theorem exists_signed_not_unsigned (ell : ℕ) (M : AddSubgroup E.toAffine.Point
   obtain ⟨σ, hσ⟩ := exists_ambient_divisionPoint_negation E
     (effLevel ell) (effLevel_pos ell)
   have hlevel : effLevel (effLevel ell) = effLevel ell :=
-    ite_eq_right (Nat.ne_of_gt (effLevel_pos ell))
+    if_neg (Nat.ne_of_gt (effLevel_pos ell))
   have hQ : Qpt E (effLevel ell) = Qpt E ell := congrArg (divSys E) hlevel
   rw [hQ] at hσ
   have ht : act E σ (Qpt E ell) - (-1 : ℤ) • Qpt E ell ∈ Mbar E ell M := by

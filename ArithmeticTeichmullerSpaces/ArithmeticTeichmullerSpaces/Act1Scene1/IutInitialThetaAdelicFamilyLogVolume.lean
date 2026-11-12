@@ -129,7 +129,7 @@ theorem globalLogVolume_eq_sum (j : ℕ) (U : AdmissibleFamily D j) :
 
 theorem globalLogVolume_mono (j : ℕ) {U V : AdmissibleFamily D j} (hUV : U.1 ≤ V.1) :
     globalLogVolume D j U ≤ globalLogVolume D j V :=
-  finsum_le_finsum (packetLogVolume_finite_support D j U) (packetLogVolume_finite_support D j V)
+  finsum_le_finsum' (packetLogVolume_finite_support D j U) (packetLogVolume_finite_support D j V)
     (fun vQ => packetLogVolume_mono D j vQ (hUV vQ))
 
 theorem globalLogVolume_integral (j : ℕ) :

@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Compatibility.Transcendental
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityInverseRawChart
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdjoinSubringFractionField
 
@@ -66,7 +67,7 @@ theorem infinityInverseChartField_eq_top : S.infinityInverseChartField = ⊤ := 
         Genuine.xG S.prime.EK := inv_inv _
     exact (congrArg (fun z : Ω => z ∈ L) heq).mp h
   have hxn : Genuine.xG S.prime.EK ≠ 0 :=
-    (Genuine.transcendental_xG S.prime.EK).ne_zero
+    (JoshiTeich.Compatibility.transcendental_ne_zero (Genuine.transcendental_xG S.prime.EK))
   have hy : Genuine.yG S.prime.EK ∈ L := by
     have h := L.mul_mem hv (L.pow_mem hx 2)
     have heq : WeierstrassInverseChart.secondCoordinate S.prime.EK *

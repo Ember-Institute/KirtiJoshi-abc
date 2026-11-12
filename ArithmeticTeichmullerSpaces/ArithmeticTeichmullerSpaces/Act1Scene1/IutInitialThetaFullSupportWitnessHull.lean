@@ -160,7 +160,7 @@ theorem base_localVolume_le (v : iutInitialThetaOddModSupportFinset D) :
 
 include hw hunit in
 theorem base_volume_le : FullSupportPaperWeightedHull.volume D n ≤ volume D n C := by
-  exact Finset.prod_le_prod₀
+  exact Finset.prod_le_prod
     (fun v _ => correctedVolume_nonneg (packet D n v) _ _ (FullSupportThetaLogHull.region D n v))
     (fun v _ => base_localVolume_le D n C hw hunit v)
 
@@ -170,7 +170,7 @@ theorem volume_pos : 0 < volume D n C :=
 
 include hunit in
 theorem volume_le_one : volume D n C ≤ 1 := by
-  apply Finset.prod_le_one₀
+  apply Finset.prod_le_one
     (fun v _ => correctedVolume_nonneg (packet D n v) _ _ (region D n C v))
   intro v _
   exact correctedVolume_le_one (packet D n v) _ _ _

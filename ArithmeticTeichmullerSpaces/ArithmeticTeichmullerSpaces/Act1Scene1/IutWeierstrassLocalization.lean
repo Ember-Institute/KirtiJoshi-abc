@@ -25,6 +25,29 @@ open WeierstrassCurve
 
 noncomputable section
 
+open scoped Classical
+
+/- Forward direction adapted from Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Point.lean,
+commit 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3.
+Copyright (c) 2025 David Kurniadi Angdinata. Authors: David Kurniadi Angdinata.
+Released under Apache 2.0 license as described in the file LICENSE.
+The polynomial evaluation is expanded for Mathlib 0df444a. -/
+private theorem exists_twoTorsionPoint_of_isRoot {k : Type*} [Field k]
+    (W : WeierstrassCurve.Affine k) (h2 : NeZero (2 : k)) (hΔ : W.Δ ≠ 0) (x : k)
+    (hroot : W.twoTorsionPolynomial.toPoly.IsRoot x) :
+    ∃ y, ∃ h : W.Nonsingular x y,
+      Affine.Point.some x y h + Affine.Point.some x y h = 0 := by
+  simp only [Polynomial.IsRoot.def, Cubic.toPoly, WeierstrassCurve.twoTorsionPolynomial,
+    Polynomial.eval_add, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_pow,
+    Polynomial.eval_X, WeierstrassCurve.b₂, WeierstrassCurve.b₄,
+    WeierstrassCurve.b₆] at hroot
+  set y := (-W.a₁ * x - W.a₃) / 2
+  have heq : W.Equation x y := by
+    grind [NeZero.out, Affine.equation_iff]
+  refine ⟨y, (Affine.equation_iff_nonsingular_of_Δ_ne_zero hΔ).mp heq,
+    Affine.Point.add_self_of_Y_eq ?_⟩
+  grind [Affine.negY]
+
 section PointMap
 
 variable {k K : Type*} [Field k] [Field K]
@@ -129,14 +152,11 @@ theorem iutWeierstrass_four_global_two_torsion_points_of_six_torsion_rational
     have hx' : x₃ ∈ Cid.toPoly.roots := Multiset.mem_toFinset.mp hx
     simpa [hCid] using Polynomial.isRoot_of_mem_roots hx'
   obtain ⟨y₁, hn₁, ht₁⟩ :=
-    (Affine.Point.isRoot_twoTorsionPolynomial_iff (W := W) (show NeZero (2 : Fbar) from inferInstance)
-      hΔ x₁).mp (by simpa [C] using hroot₁)
+    exists_twoTorsionPoint_of_isRoot W inferInstance hΔ x₁ (by simpa [C] using hroot₁)
   obtain ⟨y₂, hn₂, ht₂⟩ :=
-    (Affine.Point.isRoot_twoTorsionPolynomial_iff (W := W) (show NeZero (2 : Fbar) from inferInstance)
-      hΔ x₂).mp (by simpa [C] using hroot₂)
+    exists_twoTorsionPoint_of_isRoot W inferInstance hΔ x₂ (by simpa [C] using hroot₂)
   obtain ⟨y₃, hn₃, ht₃⟩ :=
-    (Affine.Point.isRoot_twoTorsionPolynomial_iff (W := W) (show NeZero (2 : Fbar) from inferInstance)
-      hΔ x₃).mp (by simpa [C] using hroot₃)
+    exists_twoTorsionPoint_of_isRoot W inferInstance hΔ x₃ (by simpa [C] using hroot₃)
   let P₁ : W.Point := .some x₁ y₁ hn₁
   let P₂ : W.Point := .some x₂ y₂ hn₂
   let P₃ : W.Point := .some x₃ y₃ hn₃

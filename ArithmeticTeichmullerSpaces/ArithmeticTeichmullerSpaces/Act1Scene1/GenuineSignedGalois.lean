@@ -40,6 +40,12 @@ local instance signedFieldModule (ell : ℕ) (M : AddSubgroup E.toAffine.Point) 
     Module (stabilizerField E ell M true) (stabilizerField E ell M false) :=
   @Algebra.toModule _ _ _ _ (signedFieldAlgebra E ell M)
 
+local instance signedFieldFaithfulSMul (ell : ℕ) (M : AddSubgroup E.toAffine.Point) :
+    FaithfulSMul (stabilizerField E ell M true) (stabilizerField E ell M false) :=
+  (faithfulSMul_iff_algebraMap_injective
+    (stabilizerField E ell M true) (stabilizerField E ell M false)).mpr
+      (algebraMap (stabilizerField E ell M true) (stabilizerField E ell M false)).injective
+
 /-- Use the proved quotient homomorphism for the field action. -/
 @[instance_reducible] def signedGaloisFieldAction (ell : ℕ)
     (M : AddSubgroup E.toAffine.Point) :

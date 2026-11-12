@@ -155,25 +155,13 @@ theorem rationalClass_zsmul_ne_zero
   have h' :
       (LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
         ℚ_[Arithmetic.residueChar s.1]) •
-        (r • normalizedRationalClass D s) = 0 := by
-    calc
-      (LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
-          ℚ_[Arithmetic.residueChar s.1]) •
-          (r • normalizedRationalClass D s) =
-          (r : ℚ_[Arithmetic.residueChar s.1]) •
-            ((LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
-              ℚ_[Arithmetic.residueChar s.1]) • normalizedRationalClass D s) := by
-        rw [← Int.cast_smul_eq_zsmul ℚ_[Arithmetic.residueChar s.1],
-          smul_smul, smul_smul, mul_comm]
-      _ = r •
-          ((LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
-            ℚ_[Arithmetic.residueChar s.1]) • normalizedRationalClass D s) := by
-        rw [Int.cast_smul_eq_zsmul ℚ_[Arithmetic.residueChar s.1]]
-      _ = 0 := h
-  apply normalizedRationalClass_zsmul_ne_zero D s hr
-  exact (smul_eq_zero.mp h').resolve_left
-    (Nat.cast_ne_zero.mpr (LocalPadicLog.paperScale_ne_zero
-      (Arithmetic.residueChar_prime s.1)))
+        (r • normalizedRationalClass D s) = 0 :=
+    (smul_comm _ _ _).trans h
+  have hp : (LocalPadicLog.paperScale (Arithmetic.residueChar s.1) :
+      ℚ_[Arithmetic.residueChar s.1]) ≠ 0 :=
+    Nat.cast_ne_zero.mpr (LocalPadicLog.paperScale_ne_zero
+      (Arithmetic.residueChar_prime s.1))
+  exact (smul_ne_zero hp (normalizedRationalClass_zsmul_ne_zero D s hr)) h'
 
 end PrincipalUnitKummer
 end

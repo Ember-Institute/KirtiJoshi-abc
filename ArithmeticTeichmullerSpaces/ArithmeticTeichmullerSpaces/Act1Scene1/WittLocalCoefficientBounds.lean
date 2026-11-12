@@ -39,7 +39,7 @@ theorem norm_sub_coeff_le_one_of_head (a b : WittVector p F) (n : ℕ)
           (Function.uncurry ![a.coeff, b.coeff]) (WittVector.wittSub p n) := by
         apply MvPolynomial.eval₂Hom_congr' rfl _ rfl
         rintro ⟨i, j⟩ hij _
-        exact ite_eq_left (Nat.lt_succ_iff.mp (Finset.mem_range.mp
+        exact if_pos (Nat.lt_succ_iff.mp (Finset.mem_range.mp
           (Finset.mem_product.mp (WittVector.wittSub_vars p n hij)).2))
       _ = _ := by rw [WittVector.sub_coeff, WittVector.peval, MvPolynomial.aeval_def]; rfl
   rw [← he]
@@ -91,7 +91,7 @@ theorem norm_coeff_sub_le_of_head (a b : WittVector p F) (n : ℕ)
           (Function.uncurry ![u.coeff, v.coeff]) (WittVector.wittAdd p n) := by
         apply MvPolynomial.eval₂Hom_congr' rfl _ rfl
         rintro ⟨i, j⟩ hij _
-        exact ite_eq_left (Nat.lt_succ_iff.mp (Finset.mem_range.mp
+        exact if_pos (Nat.lt_succ_iff.mp (Finset.mem_range.mp
           (Finset.mem_product.mp (WittVector.wittAdd_vars p n hij)).2))
       _ = _ := by rw [WittVector.add_coeff, WittVector.peval, MvPolynomial.aeval_def]; rfl
   have hbound := norm_eval_sub_le (WittVector.wittAdd p n) x y hx hy B hB hxy

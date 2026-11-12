@@ -161,9 +161,9 @@ lemma completionNorm_eq_residueChar_pow_of_valued
     ‖x‖ = ((residueChar w : ℝ) ^ inertDeg w) ^ m := by
   rw [NumberField.FinitePlace.norm_def, hx,
     WithZeroMulInt.toNNReal_neg_apply _ exp_ne_zero]
-  simp only [WithZero.log_exp]
   rw [NNReal.coe_zpow, NNReal.coe_natCast, absNorm_eq_pow_residueChar,
     Nat.cast_pow]
+  rfl
 
 /-! The normalized integer order is read directly from the completion valuation. -/
 

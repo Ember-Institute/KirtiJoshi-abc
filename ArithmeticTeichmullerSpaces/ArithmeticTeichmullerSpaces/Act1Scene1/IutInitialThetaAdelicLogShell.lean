@@ -190,7 +190,7 @@ theorem hull_packetLogVolume_le (j : ℕ) (vQ : RationalPlace) :
 
 theorem hull_globalLogVolume_le (j : ℕ) :
     IutInitialThetaAdelicPacketHull.globalLogVolume D j ≤ globalLogVolume D j :=
-  finsum_le_finsum (IutInitialThetaAdelicPacketHull.packetLogVolume_finite_support D j)
+  finsum_le_finsum' (IutInitialThetaAdelicPacketHull.packetLogVolume_finite_support D j)
     (packetLogVolume_finite_support D j) (hull_packetLogVolume_le D j)
 
 def processionLogVolume : ℝ :=

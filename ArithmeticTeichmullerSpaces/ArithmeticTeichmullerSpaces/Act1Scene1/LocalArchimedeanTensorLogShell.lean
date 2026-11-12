@@ -151,7 +151,7 @@ theorem archNorm_factorTensorAut_le
   refine (ContinuousLinearMap.le_opNorm _ _).trans ?_
   refine mul_le_of_le_one_left (norm_nonneg _) ?_
   refine (PiTensorProduct.opNorm_mapL _).trans ?_
-  exact Finset.prod_le_one₀ (fun j _ => norm_nonneg _)
+  exact Finset.prod_le_one (fun j _ => norm_nonneg _)
     (fun j _ => norm_archAutCLM_le (c j) (σ j))
 
 theorem factorTensorAut_image_archIntegral_subset

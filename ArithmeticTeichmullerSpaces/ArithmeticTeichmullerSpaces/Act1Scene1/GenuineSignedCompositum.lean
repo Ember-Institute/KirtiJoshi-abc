@@ -1,3 +1,12 @@
+/-
+Compatibility proofs adapted from Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Point.lean
+and Mathlib/AlgebraicGeometry/EllipticCurve/Weierstrass.lean,
+commit 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3.
+Copyright (c) 2021 Kevin Buzzard. All rights reserved.
+Copyright (c) 2025 David Kurniadi Angdinata. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Kevin Buzzard, David Kurniadi Angdinata
+-/
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineUnsignedNormalizationFields
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineSignedQuotient
 
@@ -21,13 +30,32 @@ universe u
 noncomputable section
 variable {k : Type u} [Field k] [CharZero k] (E : WeierstrassCurve k) [E.IsElliptic]
 
+private theorem evalTwoTorsionPolynomial {R : Type*} [CommRing R]
+    (W : WeierstrassCurve R) (x : R) :
+    W.twoTorsionPolynomial.toPoly.eval x =
+      4 * x ^ 3 + W.b₂ * x ^ 2 + 2 * W.b₄ * x + W.b₆ := by
+  simp only [Cubic.toPoly, WeierstrassCurve.twoTorsionPolynomial,
+    Polynomial.eval_add, Polynomial.eval_mul, Polynomial.eval_C,
+    Polynomial.eval_pow, Polynomial.eval_X]
+
+private theorem twoTorsionRoot_of_add_self {F : Type*} [Field F]
+    {W : WeierstrassCurve F} {x y : F} (h : W.toAffine.Nonsingular x y)
+    (hP : Affine.Point.some x y h + Affine.Point.some x y h = 0) :
+    W.twoTorsionPolynomial.toPoly.IsRoot x := by
+  rw [IsRoot.def, evalTwoTorsionPolynomial, b₂, b₄, b₆]
+  have hy : y = W.toAffine.negY x y := by
+    by_contra hne
+    rw [Affine.Point.add_self_of_Y_ne hne] at hP
+    exact Affine.Point.some_ne_zero _ hP
+  grind [h.left, Affine.negY, Affine.equation_iff]
+
 /-- The transcendental generic x-coordinate cannot be a two-torsion root. -/
 theorem genericPoint_ne_neg : genericPoint E ≠ -genericPoint E := by
   intro h
   have hP : genericPoint E + genericPoint E = 0 := by
     nth_rw 1 [h]
     exact neg_add_cancel _
-  have hr := Affine.Point.isRoot_twoTorsionPolynomial_of_add_self
+  have hr := twoTorsionRoot_of_add_self
     (nonsingular_generic E) hP
   let p : k[X] := C 4 * X ^ 3 + C E.b₂ * X ^ 2 + C (2 * E.b₄) * X + C E.b₆
   apply transcendental_xG E
@@ -37,7 +65,7 @@ theorem genericPoint_ne_neg : genericPoint E ≠ -genericPoint E := by
     norm_num [p] at hc
   · have hr' : 4 * xG E ^ 3 + algebraMap k (Ω E) E.b₂ * xG E ^ 2 +
         2 * algebraMap k (Ω E) E.b₄ * xG E + algebraMap k (Ω E) E.b₆ = 0 := by
-      simpa only [IsRoot.def, eval_toPoly_twoTorsionPolynomial, baseChange,
+      simpa only [IsRoot.def, evalTwoTorsionPolynomial, baseChange,
         map_b₂, map_b₄, map_b₆] using hr
     simpa only [p, map_add, map_mul, map_pow, aeval_C, aeval_X, map_ofNat] using hr'
 

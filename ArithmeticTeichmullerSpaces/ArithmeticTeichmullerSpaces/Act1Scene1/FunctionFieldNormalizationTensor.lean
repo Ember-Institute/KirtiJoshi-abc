@@ -58,24 +58,30 @@ theorem normalizationTensor_integral :
     Algebra.IsIntegral.tensorProduct (polynomialBase k t) (coordRing t F) (coordRing t Z)
   exact Algebra.IsIntegral.trans (coordRing t F)
 
+private theorem integralClosure_of_integralAlgHom
+    {R A B C : Type*} [CommRing R] [CommRing A] [CommRing B] [CommSemiring C]
+    [Algebra R A] [Algebra R B] [Algebra C B]
+    [Algebra.IsIntegral R A] [IsIntegralClosure C R B] (f : A →ₐ[R] B) :
+    letI := f.toRingHom.toAlgebra
+    IsIntegralClosure C A B := by
+  letI := f.toRingHom.toAlgebra
+  haveI : IsScalarTower R A B :=
+    IsScalarTower.of_algebraMap_eq fun a => (f.commutes a).symm
+  exact IsIntegralClosure.tower_top (R := R) (A := A) (B := B) (C := C)
+
+private theorem normalizationTensor_mapIntegralClosure
+    (f : (coordRing t F ⊗[polynomialBase k t] coordRing t Z) →ₐ[polynomialBase k t] N) :
+    letI := f.toRingHom.toAlgebra
+    IsIntegralClosure (coordRing t N)
+      (coordRing t F ⊗[polynomialBase k t] coordRing t Z) N := by
+  haveI := normalizationTensor_integral (k := k) (t := t) (F := F) (Z := Z)
+  exact integralClosure_of_integralAlgHom (C := coordRing t N) f
+
 theorem normalizationTensor_isIntegralClosure (hF : F ≤ N) (hZ : Z ≤ N) :
     letI := (normalizationTensorFieldMap hF hZ).toRingHom.toAlgebra
     IsIntegralClosure (coordRing t N)
-      (coordRing t F ⊗[polynomialBase k t] coordRing t Z) N := by
-  let T := coordRing t F ⊗[polynomialBase k t] coordRing t Z
-  let f := normalizationTensorFieldMap hF hZ
-  let : Algebra T N := f.toRingHom.toAlgebra
-  have : IsScalarTower (polynomialBase k t) T N :=
-    IsScalarTower.of_algebraMap_eq fun a => (f.commutes a).symm
-  have : Algebra.IsIntegral (polynomialBase k t) T := normalizationTensor_integral
-  refine ⟨Subtype.val_injective, ?_⟩
-  intro x
-  constructor
-  · intro hx
-    exact (IsIntegralClosure.isIntegral_iff (A := coordRing t N) (R := polynomialBase k t)).mp
-      (isIntegral_trans (R := polynomialBase k t) x hx)
-  · rintro ⟨y, rfl⟩
-    exact ((integralClosure.isIntegral (R := polynomialBase k t) (A := N) y).algebraMap).tower_top
+      (coordRing t F ⊗[polynomialBase k t] coordRing t Z) N :=
+  normalizationTensor_mapIntegralClosure (normalizationTensorFieldMap hF hZ)
 
 theorem normalizationTensorMap_finite [FiniteDimensional (rationalBase k t) N]
     [Algebra.IsSeparable (rationalBase k t) N]

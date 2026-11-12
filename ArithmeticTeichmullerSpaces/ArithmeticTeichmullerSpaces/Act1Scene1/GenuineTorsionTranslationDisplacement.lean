@@ -108,7 +108,7 @@ theorem torsionTranslationDisplacement_surjective
     abel
   have hmem : σ ∈ Hgp E n TK false := by
     rw [mem_Hgp_false, hd]
-    have heff : effLevel n = n := by simp only [effLevel, ite_eq_right (Nat.ne_of_gt hn)]
+    have heff : effLevel n = n := by simp only [effLevel, if_neg (Nat.ne_of_gt hn)]
     refine ⟨(T : E.toAffine.Point), ⟨T.property, ?_⟩, rfl⟩
     rw [heff]
     exact hTK T.property

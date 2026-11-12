@@ -54,10 +54,10 @@ theorem product_bounds {a : ℝ} (ha0 : 0 < a) (ha1 : a ≤ 1)
   unfold product
   refine ⟨Finset.prod_pos (fun j _ => Real.rpow_pos_of_pos ha0 _), ?_, ?_⟩
   · have hprod : (∏ _j : Fin n, a) ≤ ∏ j : Fin n, a ^ (γ j * scale n j) := by
-      exact Finset.prod_le_prod₀ (fun _ _ => ha0.le)
+      exact Finset.prod_le_prod (fun _ _ => ha0.le)
         (fun j _ => Real.self_le_rpow_of_le_one ha0.le ha1 (hExp j).2)
     simpa using hprod
-  · exact Finset.prod_le_one₀
+  · exact Finset.prod_le_one
       (fun j _ => (Real.rpow_pos_of_pos ha0 _).le)
       (fun j _ => Real.rpow_le_one ha0.le ha1 (hExp j).1)
 

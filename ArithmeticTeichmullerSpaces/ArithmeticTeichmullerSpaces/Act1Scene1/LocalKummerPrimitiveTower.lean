@@ -15,10 +15,10 @@ universe v
 noncomputable section
 variable {p : ℕ} [Fact p.Prime] {Ω : Type v} [Field Ω] [CharZero Ω] [IsAlgClosed Ω]
 
-def primitiveP : Ω := Classical.choose (HasEnoughRootsOfUnity.exists_isPrimitiveRoot Ω p)
+def primitiveP : Ω := Classical.choose (HasEnoughRootsOfUnity.exists_primitiveRoot Ω p)
 
 theorem primitiveP_spec : IsPrimitiveRoot (primitiveP (p := p) (Ω := Ω)) p :=
-  Classical.choose_spec (HasEnoughRootsOfUnity.exists_isPrimitiveRoot Ω p)
+  Classical.choose_spec (HasEnoughRootsOfUnity.exists_primitiveRoot Ω p)
 
 def positiveTower : RootTower (K := Ω) (Ω := Ω) p (primitiveP (p := p) (Ω := Ω)) :=
   rootTower p (Fact.out : p.Prime).pos _

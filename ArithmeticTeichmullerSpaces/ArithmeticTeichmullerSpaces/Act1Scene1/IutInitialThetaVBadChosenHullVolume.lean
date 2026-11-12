@@ -88,7 +88,7 @@ theorem normalizedRootProduct_pow_le_volume
     (Finset.prod_nonneg fun v _ => pow_nonneg
       (iutInitialThetaRelativeQRootFactor_mem_Ioo D (iutInitialThetaVBadModuliAt D v)).1.le _)
     _ (by positivity)
-  exact Finset.prod_le_prod₀
+  exact Finset.prod_le_prod
     (fun v _ => pow_nonneg
       (iutInitialThetaRelativeQRootFactor_mem_Ioo D (iutInitialThetaVBadModuliAt D v)).1.le _)
     (fun v _ => hfactor v)
@@ -106,7 +106,7 @@ theorem volume_le_one (hunit : ∀ v, U v ⊆ (packet D n σ hσ v).normalizatio
   apply Real.rpow_le_one
   · exact Finset.prod_nonneg fun v _ => pow_nonneg
       ((packet D n σ hσ v).leastHull_normalizationDegreeVolume_pos (U v) (hU v) (hpos v)).le _
-  · exact Finset.prod_le_one₀
+  · exact Finset.prod_le_one
       (fun v _ => pow_nonneg
         ((packet D n σ hσ v).leastHull_normalizationDegreeVolume_pos (U v) (hU v) (hpos v)).le _)
       (fun v _ => hlocal v)

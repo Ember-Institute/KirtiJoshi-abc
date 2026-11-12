@@ -304,6 +304,11 @@ variable (H : AddSubgroup (Affine.Point (Affine.baseChange E Fbar))) [Fintype H]
 
 local instance : DecidableEq ↥(field E Fbar H) := Classical.decEq _
 
+private theorem paired_weight_product {A : Type*} [CommMonoid A] (a b c d t : A) :
+    a * b * c * d * t ^ 4 = (a * c * t ^ 2) * (b * d * t ^ 2) := by
+  simp only [pow_succ, pow_zero, mul_one]
+  ac_rfl
+
 /-- The canonical ratio product and the same actual sums satisfy the finite-place crude bound. -/
 theorem pointPairs_ratioNewton (hodd : Odd (Fintype.card H))
     (w : FinitePlace ↥(field E Fbar H))
@@ -330,7 +335,8 @@ theorem pointPairs_ratioNewton (hodd : Odd (Fintype.card H))
   dsimp only [W, G] at h₁ h₂
   rw [card_subgroup] at h₁ h₂
   have hprod := mul_le_one₀ h₁ (by positivity) h₂
-  convert hprod using 1 <;> simp only [ratioProduct, map_mul] <;> ring
+  rw [ratioProduct, map_mul, paired_weight_product]
+  exact hprod
 
 end
 end JoshiTeich.Act1Scene1.IutCyclicCoordinate

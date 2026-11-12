@@ -47,7 +47,7 @@ theorem coordinateSeminorm_localLift_le (ρ : InitialThetaWittRhoCompletion.Radi
 
 theorem evaluation_localLift (z : Untilt D w) (hz : ‖z‖ ≤ 1) :
     evaluation D w (localLift D w z) = z := by
-  rw [localLift, dite_eq_left hz]
+  rw [localLift, dif_pos hz]
   exact evaluation_teichLift D w _
 
 theorem localLift_tendsto_zero :

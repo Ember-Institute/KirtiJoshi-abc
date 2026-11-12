@@ -1,3 +1,4 @@
+import Lean.LibrarySuggestions.Basic
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineSignedEtale
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedGeometricPoints
 
@@ -78,3 +79,10 @@ theorem coverNormalizationFreeGeometricLocus_isOpen :
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
+
+/- Lean 4.33.1's symbol-frequency exporter stalls on these dependent wrapper
+   types. Skip their suggestion index while retaining every declaration and proof. -/
+open Lean in
+run_cmd do
+  for name in ["signedCoverNormalization_multiplicity_one_iff_etaleAt", "coverNormalizationGeometricPoint_trivial_iff_etaleAt", "coverNormalizationGeometricPoint_exists_etaleNeighborhood", "coverNormalizationFreeGeometricLocus_eq_etaleLocus", "coverNormalizationFreeGeometricLocus_isOpen"] do
+    modifyEnv fun env => Lean.LibrarySuggestions.nameDenyListExt.addEntry env name

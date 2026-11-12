@@ -60,7 +60,7 @@ theorem infinityUnsignedFiber_isMaximal (q : S.infinityFiber false) : q.1.IsMaxi
   have hint : (algebraMap S.infinityPolynomialBase
       (S.infinityNormalizationRing false)).IsIntegral :=
     algebraMap_isIntegral_iff.mpr inferInstance
-  apply Ideal.isMaximal_of_isIntegral_of_isMaximal_comap
+  apply Ideal.isMaximal_of_isIntegral_of_isMaximal_comap'
     (algebraMap S.infinityPolynomialBase (S.infinityNormalizationRing false)) hint q.1
   change (q.1.under S.infinityPolynomialBase).IsMaximal
   rw [← q.2.2.over]

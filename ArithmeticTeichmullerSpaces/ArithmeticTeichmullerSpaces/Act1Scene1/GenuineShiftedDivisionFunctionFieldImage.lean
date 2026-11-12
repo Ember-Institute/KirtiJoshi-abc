@@ -1,3 +1,4 @@
+import ArithmeticTeichmullerSpaces.Compatibility.Transcendental
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineShiftedDivisionPointTranscendence
 import ArithmeticTeichmullerSpaces.Act1Scene1.WeierstrassPointRawChartFractionField
 
@@ -37,7 +38,7 @@ def shiftedDivisionPointFunctionFieldAlgHom
     exact Qpt_add_base_x_transcendental E n hn T
   have hP : P ≠ 0 := by
     intro h
-    exact hx.ne_zero (by rw [h]; rfl)
+    exact (JoshiTeich.Compatibility.transcendental_ne_zero hx) (by rw [h]; rfl)
   exact functionFieldAlgHom E P hP hx
 
 /-- The named shifted map is evaluation at that exact point, for any proofs of its properties. -/
@@ -62,7 +63,7 @@ theorem shiftedDivisionPointFunctionFieldAlgHom_eq
   have hx : Transcendental k (ptX P) := Qpt_add_base_x_transcendental E n hn T
   have hP : P ≠ 0 := by
     intro h
-    exact hx.ne_zero (by rw [h]; rfl)
+    exact (JoshiTeich.Compatibility.transcendental_ne_zero hx) (by rw [h]; rfl)
   let qx : QField E n :=
     ⟨ptX (Qpt E n), IntermediateField.subset_adjoin _ _ (by simp)⟩
   let qy : QField E n :=
@@ -138,7 +139,7 @@ theorem Qpt_add_base_coordinateField
   have hx : Transcendental k (ptX P) := Qpt_add_base_x_transcendental E n hn T
   have hP : P ≠ 0 := by
     intro h
-    exact hx.ne_zero (by rw [h]; rfl)
+    exact (JoshiTeich.Compatibility.transcendental_ne_zero hx) (by rw [h]; rfl)
   exact (JoshiTeich.Act1Scene1.WeierstrassPointRawChartFractionField.fieldRange_eq_adjoin E P hP hx).symm.trans
     ((congrArg AlgHom.fieldRange
       (shiftedDivisionPointFunctionFieldAlgHom_eq_functionFieldAlgHom E n hn T hP hx)).symm.trans

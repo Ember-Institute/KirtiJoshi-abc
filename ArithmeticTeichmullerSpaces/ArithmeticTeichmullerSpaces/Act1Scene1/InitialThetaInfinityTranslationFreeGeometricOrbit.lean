@@ -1,3 +1,4 @@
+import Lean.LibrarySuggestions.Basic
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityTranslationInertia
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityTranslationGeometricPoints
 
@@ -44,6 +45,10 @@ attribute [local instance] inverseCoordinateRationalBase_coefficientAlgebra
 variable {AG : AnabelianGeometry.{u}} {TG : TemperedGeometry AG}
 variable (S : InitialThetaGeometrySeed AG TG)
 
+private theorem nat_eq_of_mul_one_factor {a b c : ℕ} (h : a * b = c) (hb : b = 1) :
+    a = c := by
+  simpa only [hb, mul_one] using h
+
 /-- The original translation action has trivial stabilizer at each original residue geometric point. -/
 theorem infinityTranslationGeometricPoint_stabilizer_eq_bot (q : S.infinityFiber false) :
     MulAction.stabilizer S.infinityTranslationGroup
@@ -54,9 +59,9 @@ theorem infinityTranslationGeometricPoint_stabilizer_eq_bot (q : S.infinityFiber
 /-- The original translation geometric orbit has the same size as the admissible prime. -/
 theorem infinityTranslationGeometricOrbit_card_eq_ell (q : S.infinityFiber false) :
     Nat.card (MulAction.orbit S.infinityTranslationGroup
-      (S.infinityNormalizationGeometricPoint q)) = S.prime.ℓ := by
-  have h := S.infinityTranslationGeometricOrbit_mul_inertia_card q
-  simpa only [S.infinityTranslationPrimeInertia_card_eq_one q, mul_one] using h
+      (S.infinityNormalizationGeometricPoint q)) = S.prime.ℓ :=
+  nat_eq_of_mul_one_factor (S.infinityTranslationGeometricOrbit_mul_inertia_card q)
+    (S.infinityTranslationPrimeInertia_card_eq_one q)
 
 /-- Only the identity translation fixes this geometric point, including its residue embedding. -/
 theorem infinityTranslationGeometricPoint_smul_eq_iff
@@ -70,3 +75,10 @@ theorem infinityTranslationGeometricPoint_smul_eq_iff
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
+
+/- Lean 4.33.1's symbol-frequency exporter stalls on these dependent wrapper
+   types. Skip their suggestion index while retaining every declaration and proof. -/
+open Lean in
+run_cmd do
+  for name in ["infinityTranslationGeometricPoint_stabilizer_eq_bot", "infinityTranslationGeometricOrbit_card_eq_ell", "infinityTranslationGeometricPoint_smul_eq_iff"] do
+    modifyEnv fun env => Lean.LibrarySuggestions.nameDenyListExt.addEntry env name

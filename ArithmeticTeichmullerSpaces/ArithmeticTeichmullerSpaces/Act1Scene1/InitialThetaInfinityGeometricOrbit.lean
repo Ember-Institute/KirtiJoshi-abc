@@ -1,3 +1,4 @@
+import Lean.LibrarySuggestions.Basic
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaInfinityGeometricPoints
 import ArithmeticTeichmullerSpaces.Act1Scene1.GenuineSignedQuotientNontrivial
 import ArithmeticTeichmullerSpaces.Act1Scene1.OrbitStabilizerNatCard
@@ -105,3 +106,10 @@ theorem infinityGeometricOrbit_or_inertia_card_eq_one
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
+
+/- Lean 4.33.1's symbol-frequency exporter stalls on these dependent wrapper
+   types. Skip their suggestion index while retaining every declaration and proof. -/
+open Lean in
+run_cmd do
+  for name in ["signedCoverQuotientGroup_card_eq_two", "infinityNormalizationGeometricOrbit_mul_inertia_card", "nat_mul_eq_two_or_eq_one", "infinityGeometricOrbit_or_inertia_card_eq_one"] do
+    modifyEnv fun env => Lean.LibrarySuggestions.nameDenyListExt.addEntry env name

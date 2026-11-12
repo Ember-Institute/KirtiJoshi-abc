@@ -22,7 +22,7 @@ theorem injective_of_integral_of_base_injective
     [CommRing D] [Algebra A T] [Algebra A D] [Algebra.IsIntegral A T]
     (f : T →ₐ[A] D) (hD : Function.Injective (algebraMap A D)) : Function.Injective f := by
   apply (RingHom.injective_iff_ker_eq_bot f.toRingHom).mpr
-  apply Ideal.IsIntegral.eq_bot_of_under_eq_bot A
+  apply Ideal.IsIntegral.eq_bot_of_comap_eq_bot A
   ext a
   change f (algebraMap A T a) = 0 ↔ a = 0
   rw [f.commutes]

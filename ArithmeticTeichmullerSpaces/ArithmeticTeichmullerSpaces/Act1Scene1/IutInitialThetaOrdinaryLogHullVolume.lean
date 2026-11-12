@@ -82,7 +82,7 @@ theorem degreeCorrection_pos (v : iutInitialThetaOddModSupportFinset D) :
 
 theorem degreeCorrection_le_one (v : iutInitialThetaOddModSupportFinset D) :
     degreeCorrection D n v ≤ 1 := by
-  apply Finset.prod_le_one₀ (fun i _ => Real.rpow_nonneg (norm_nonneg _) _)
+  apply Finset.prod_le_one (fun i _ => Real.rpow_nonneg (norm_nonneg _) _)
   intro i _
   exact Real.rpow_le_one (norm_nonneg _) (norm_scale_lt_one D _).le (by positivity)
 
@@ -128,7 +128,7 @@ theorem correction_pos : 0 < correction D n :=
   Finset.prod_pos fun v _ => Real.rpow_pos_of_pos (pow_pos (degreeCorrection_pos D n v) _) _
 
 theorem correction_le_one : correction D n ≤ 1 := by
-  apply Finset.prod_le_one₀ (fun v _ => Real.rpow_nonneg (pow_nonneg (degreeCorrection_pos D n v).le _) _)
+  apply Finset.prod_le_one (fun v _ => Real.rpow_nonneg (pow_nonneg (degreeCorrection_pos D n v).le _) _)
   intro v _
   exact Real.rpow_le_one (pow_nonneg (degreeCorrection_pos D n v).le _)
     (pow_le_one₀ (degreeCorrection_pos D n v).le (degreeCorrection_le_one D n v)) (by positivity)

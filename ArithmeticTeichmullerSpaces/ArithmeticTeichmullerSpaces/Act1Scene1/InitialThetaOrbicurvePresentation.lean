@@ -65,7 +65,7 @@ theorem signedCoverNormalization_contraction_isMaximal
     (w : Ideal (S.coverNormalizationRing false)) (hw : w.IsMaximal) :
     (w.comap S.signedCoverNormalizationRingMap).IsMaximal := by
   have : w.IsMaximal := hw
-  exact Ideal.isMaximal_comap_of_isIntegral_of_isMaximal
+  exact Ideal.isMaximal_comap_of_isIntegral_of_isMaximal'
     S.signedCoverNormalizationRingMap.toRingHom
     S.signedCoverNormalizationRingMap_isIntegral w
 

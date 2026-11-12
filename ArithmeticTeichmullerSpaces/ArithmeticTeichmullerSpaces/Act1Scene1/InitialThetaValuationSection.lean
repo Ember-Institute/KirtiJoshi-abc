@@ -294,7 +294,7 @@ lemma sectFin_isBad {v : FinitePlace ↥(fieldOfModuli F E)} (hv : v ∈ VBad) :
 lemma sectFin_eq {v : FinitePlace ↥(fieldOfModuli F E)} (hv : v ∈ VBad) :
     P.sectFin TF v = (P.exists_good_place TF hv).choose := by
   unfold sectFin
-  rw [dite_eq_left hv]
+  rw [dif_pos hv]
 
 lemma _root_.JoshiTeich.ReferenceIut.TateFamily.graphLineAt_congr {w w' : FinitePlace ↥P.torsionField} (h : w = w')
     (hw : IsBadPlace E P.torsionField VBad w) (hw' : IsBadPlace E P.torsionField VBad w') :

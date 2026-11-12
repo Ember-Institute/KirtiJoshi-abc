@@ -78,7 +78,7 @@ theorem map_matrix_productHaar_eq_norm_det_inv
     rw [toLin'_mul, det_mul, LinearMap.coe_comp,
       ← Measure.map_map (toLin' A).continuous_of_finiteDimensional.measurable
         (toLin' B).continuous_of_finiteDimensional.measurable,
-      hIB, Measure.map_smul _ (toLin' A).continuous_of_finiteDimensional.measurable.aemeasurable,
+      hIB, Measure.map_smul,
       hIA, smul_smul, mul_inv, norm_mul, ENNReal.ofReal_mul (norm_nonneg _)]
     rw [mul_comm]
 
@@ -88,7 +88,7 @@ theorem map_matrix_haar_eq_norm_det_inv (μ : Measure (ι → ℚ_[p])) [μ.IsAd
   let ν := Measure.pi (fun _ : ι => (Measure.addHaar : Measure ℚ_[p]))
   have hm := (toLin' M).continuous_of_finiteDimensional.measurable
   have hμ : μ = Measure.addHaarScalarFactor μ ν • ν := Measure.isAddLeftInvariant_eq_smul μ ν
-  rw [hμ, Measure.map_smul _ hm.aemeasurable,
+  rw [hμ, Measure.map_smul,
     map_matrix_productHaar_eq_norm_det_inv M hM, smul_comm]
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℚ_[p] E]
@@ -120,7 +120,7 @@ theorem map_linearEquiv_haar_eq_norm_det_inv (μ : Measure E) [μ.IsAddHaarMeasu
   rw [hconj, ← Measure.map_map e.symm.continuous.measurable (g.continuous.comp e.continuous).measurable,
     ← Measure.map_map g.continuous.measurable e.continuous.measurable]
   change Measure.map e.symm (Measure.map g ν) = _
-  rw [hg, Measure.map_smul _ e.symm.continuous.measurable.aemeasurable,
+  rw [hg, Measure.map_smul,
     Measure.map_map e.symm.continuous.measurable e.continuous.measurable]
   have hid : e.symm ∘ e = id := by funext x; exact e.symm_apply_apply x
   rw [hid, Measure.map_id]

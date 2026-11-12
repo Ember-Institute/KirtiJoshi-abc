@@ -51,11 +51,11 @@ def archField (w : InfinitePlace K) : Subalgebra ℝ ℂ :=
 
 theorem archField_of_isReal {w : InfinitePlace K} (h : w.IsReal) : archField w = ⊥ := by
   unfold archField
-  rw [ite_eq_left h]
+  rw [if_pos h]
 
 theorem archField_of_isComplex {w : InfinitePlace K} (h : w.IsComplex) : archField w = ⊤ := by
   unfold archField
-  rw [ite_eq_right (InfinitePlace.not_isReal_iff_isComplex.mpr h)]
+  rw [if_neg (InfinitePlace.not_isReal_iff_isComplex.mpr h)]
 
 def Factor (w : InfinitePlace K) : Type u := ULift.{u} (archField w)
 
@@ -238,12 +238,12 @@ lemma coordLift_eq_coord (k : BasisIndex c) :
   by_cases hl : l = k
   · subst hl
     simp
-  · rw [ite_eq_right hl]
+  · rw [if_neg hl]
     obtain ⟨j, hj⟩ : ∃ j, l j ≠ k j := by
       by_contra h
       push Not at h
       exact hl (funext h)
-    exact Finset.prod_eq_zero (Finset.mem_univ j) (by rw [ite_eq_right hj])
+    exact Finset.prod_eq_zero (Finset.mem_univ j) (by rw [if_neg hj])
 
 lemma lift_coordMultilinear (k : BasisIndex c) (x : Tensor c) :
     PiTensorProduct.lift (coordMultilinear c k).toMultilinearMap (toProjectiveModel c x) =

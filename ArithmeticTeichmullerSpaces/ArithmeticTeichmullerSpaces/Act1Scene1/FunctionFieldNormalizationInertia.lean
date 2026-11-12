@@ -114,7 +114,8 @@ lemma normalization_ramificationIdx_pos (hFN : F ≤ N) (u : Ideal (coordRing t 
   letI := ringMapAlgebra hFN
   have : Algebra.IsIntegral (coordRing t F) (coordRing t N) := ⟨ringMap_isIntegral hFN⟩
   have := dedekindRing t ht N
-  exact Ideal.ramificationIdx_pos (coordRing t F) u
+  have : Module.Finite (coordRing t F) (coordRing t N) := moduleFinite_ringMap ht hFN
+  exact Ideal.ramificationIdx_pos u (coordRing t F)
 
 include ht in
 /-- **Unramifiedness via inertia**: for `F ⊆ L ⊆ N` and a maximal ideal `u` of the coordinate ring

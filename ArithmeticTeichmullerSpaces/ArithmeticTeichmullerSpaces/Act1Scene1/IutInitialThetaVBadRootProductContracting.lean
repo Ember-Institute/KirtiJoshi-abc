@@ -22,7 +22,7 @@ theorem iutInitialThetaVBadRelativeQRootProduct_lt_one :
   obtain ⟨v, hv⟩ := D.global.bad_nonempty
   let w : iutInitialThetaVBadModuliFinset D :=
     ⟨v, (mem_iutInitialThetaVBadModuliFinset_iff D v).mpr hv⟩
-  have h := Finset.prod_lt_prod_of_nonempty₀
+  have h := Finset.prod_lt_prod_of_nonempty
     (s := Finset.univ) (g := fun _ : iutInitialThetaVBadModuliFinset D => (1 : ℝ))
     (fun x _ => (iutInitialThetaRelativeQRootFactor_mem_Ioo D (iutInitialThetaVBadModuliAt D x)).1)
     (fun x _ => (iutInitialThetaRelativeQRootFactor_mem_Ioo D (iutInitialThetaVBadModuliAt D x)).2)

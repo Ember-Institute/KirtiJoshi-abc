@@ -82,7 +82,8 @@ lemma exists_root_class_of_card
         Nat.card_le_card_of_injective _ Subtype.val_injective
       _ = ell := by simp
   have hKernelRange : Nat.card resid.ker * Nat.card resid.range = Nat.card T :=
-    AddSubgroup.card_ker_mul_card_range resid
+    (congrArg (Nat.card resid.ker * ·) (AddSubgroup.index_ker resid).symm).trans
+      resid.ker.card_mul_index
   have hEq : Nat.card resid.ker = ell ∧ Nat.card resid.range = ell := by
     have hMul : ell * ell ≤ Nat.card resid.ker * Nat.card resid.range := by
       rw [hKernelRange]

@@ -1,6 +1,6 @@
 import Mathlib.GroupTheory.QuotientGroup.Basic
 import Mathlib.Topology.Algebra.Group.Quotient
-import Mathlib.Topology.Algebra.Group.Subgroup
+import Mathlib.Topology.Algebra.Group.Basic
 
 /-!
 source-id: JT-SCENE1-CLOSED-NORMAL-QUOTIENT-MAP

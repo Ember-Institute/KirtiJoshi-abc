@@ -1,6 +1,7 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlaceSource
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver
 import ArithmeticTeichmullerSpaces.Prologue.Arithmetic
+import Mathlib.NumberTheory.RamificationInertia.Valuation
 
 namespace JoshiTeich.Act1Scene1
 
@@ -188,10 +189,7 @@ lemma iutValuation_algebraMap_eq_pow
     v.maximalIdeal.valuation Kt (algebraMap F Kt x) =
       w.maximalIdeal.valuation F x ^ iutRelativeRamificationIndex (v := v) (w := w) := by
   haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw
-  have h := (valuation_liesOver Kt w.maximalIdeal v.maximalIdeal x).symm
-  rw [← Ideal.ramificationIdx'_eq_ramificationIdx
-    w.maximalIdeal.asIdeal v.maximalIdeal.asIdeal w.maximalIdeal.ne_bot] at h
-  exact h
+  exact (valuation_liesOver Kt w.maximalIdeal v.maximalIdeal x).symm
 
 noncomputable def iutEmbedCompletion
     (hvw : Ideal.LiesOver v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal) :

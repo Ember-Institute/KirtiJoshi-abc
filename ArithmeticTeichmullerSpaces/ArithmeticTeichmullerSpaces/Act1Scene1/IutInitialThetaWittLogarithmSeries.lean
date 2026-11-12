@@ -45,7 +45,8 @@ theorem norm_logCoefficient_le (ρ : Radius) (k : ℕ)
   · simp only [logCoefficient, if_pos hn, map_zero, norm_zero]
     exact pow_nonneg (Nat.cast_nonneg n) k
   · rw [logCoefficient, if_neg hn, norm_completedPadicMap_mul_scalar]
-    simpa only [map_pow, map_neg, map_one, norm_neg_pow, one_pow, norm_one, one_mul] using hk n hn
+    simp only [neg_one_pow_eq_ite]
+    split_ifs <;> simpa only [map_neg, map_one, norm_neg, norm_one, one_mul] using hk n hn
 
 theorem evaluate_logTerm (ρ : Radius) (x : Carrier D w) (n : ℕ) :
     InitialThetaWittAllRadiusCompletion.evaluate D w ρ (logTerm D w x n) =

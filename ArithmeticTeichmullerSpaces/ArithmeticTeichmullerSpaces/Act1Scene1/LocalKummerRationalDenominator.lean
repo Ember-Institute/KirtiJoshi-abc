@@ -24,7 +24,7 @@ theorem exists_integral_p_power_mul (q : ℚ_[p]) :
     simpa only [zero_mul] using
       (tendsto_pow_atTop_nhds_zero_of_lt_one (norm_nonneg _) (Padic.norm_p_lt_one (p := p))).mul_const ‖q‖
   obtain ⟨n, hn⟩ := ((tendsto_order.mp ht).2 1 zero_lt_one).exists
-  refine ⟨n, Padic.lift ((p : ℚ_[p]) ^ n * q) ?_, rfl⟩
+  refine ⟨n, ⟨(p : ℚ_[p]) ^ n * q, ?_⟩, rfl⟩
   simpa only [norm_mul, norm_pow] using hn.le
 
 variable {K : Type u} [Field K] {Ω : Type v} [Field Ω] [Algebra K Ω]

@@ -1,3 +1,12 @@
+/-
+Compatibility proofs copied from Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Formula.lean,
+commit 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3.
+Copyright (c) 2025 David Kurniadi Angdinata. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: David Kurniadi Angdinata
+license-review: Apache-2.0 header and repository LICENSE reviewed before copying.
+modifications: keep only the two needed formulas as private project lemmas.
+-/
 import ArithmeticTeichmullerSpaces.Act1Scene1.IutCyclicCoordinateField
 
 /-!
@@ -19,6 +28,19 @@ open scoped Classical
 noncomputable section
 
 variable {K : Type*} [Field K] (W : WeierstrassCurve K)
+
+private lemma addX_of_X_ne_compat {x₁ y₁ x₂ y₂ : K} (hn : x₁ ≠ x₂) :
+    W.toAffine.addX x₁ x₂ (W.toAffine.slope x₁ x₂ y₁ y₂) =
+      ((y₁ - y₂) ^ 2 + W.a₁ * (y₁ - y₂) * (x₁ - x₂) -
+        (W.a₂ + x₁ + x₂) * (x₁ - x₂) ^ 2) / (x₁ - x₂) ^ 2 := by
+  grind only [Affine.addX, Affine.slope]
+
+private lemma den_duplication_eq_compat {x y : K} (h : W.toAffine.Equation x y) :
+    4 * x ^ 3 + W.b₂ * x ^ 2 + 2 * W.b₄ * x + W.b₆ =
+      (2 * y + W.a₁ * x + W.a₃) ^ 2 := by
+  have Heq := (W.toAffine.equation_iff x y).mp h
+  simp only [b₂, b₄, b₆]
+  linear_combination -4 * Heq
 
 /-- The numerator of the sum of the two translated x coordinates. -/
 def pairNumerator (z q : K) : K :=
@@ -42,7 +64,7 @@ private lemma additionNumerators_eq (h2 : (2 : K) ≠ 0)
     _ = (4 * z ^ 3 + W.b₂ * z ^ 2 + 2 * W.b₄ * z + W.b₆) +
         (4 * q ^ 3 + W.b₂ * q ^ 2 + 2 * W.b₄ * q + W.b₆) -
         (W.a₁ ^ 2 + 4 * W.a₂ + 4 * z + 4 * q) * (z - q) ^ 2 := by
-      rw [← Affine.den_duplication_eq hP, ← Affine.den_duplication_eq hQ]
+      rw [← den_duplication_eq_compat W hP, ← den_duplication_eq_compat W hQ]
     _ = _ := by
       simp only [pairNumerator, b₂]
       ring
@@ -63,7 +85,7 @@ theorem paired_xCoordinates (h2 : (2 : K) ≠ 0) {P Q : W.toAffine.Point}
       change W.toAffine.addX z q (W.toAffine.slope z q y r) +
         W.toAffine.addX z q (W.toAffine.slope z q y (W.toAffine.negY q r)) =
           2 * q + pairCorrection W z q
-      rw [Affine.addX_of_X_ne hx, Affine.addX_of_X_ne hx, ← add_div,
+      rw [addX_of_X_ne_compat W hx, addX_of_X_ne_compat W hx, ← add_div,
         additionNumerators_eq W h2 hp.1 hq.1]
       simp only [pairCorrection]
       ring

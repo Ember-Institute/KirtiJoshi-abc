@@ -56,7 +56,9 @@ def correctedUnit (a : (completionAt K w)ˣ) : (completionAt K w)ˣ :=
 
 theorem correctedUnit_norm (hpw : Arithmetic.residueChar w = p) (a : (completionAt K w)ˣ) :
     ‖(correctedUnit w p a : completionAt K w)‖ = 1 := by
-  apply Valued.toNormedField.norm_eq_one_iff.mpr
+  suffices hv : Valued.v (correctedUnit w p a : completionAt K w) = 1 by
+    exact le_antisymm (Valued.toNormedField.norm_le_one_iff.mpr hv.le)
+      (Valued.toNormedField.one_le_norm_iff.mpr hv.ge)
   have ha : Valued.v (a : completionAt K w) ≠ 0 := (Valuation.ne_zero_iff _).mpr a.ne_zero
   dsimp only [correctedUnit]
   rw [Units.val_mul, Units.val_pow_eq_pow_val, Units.val_zpow_eq_zpow_val]

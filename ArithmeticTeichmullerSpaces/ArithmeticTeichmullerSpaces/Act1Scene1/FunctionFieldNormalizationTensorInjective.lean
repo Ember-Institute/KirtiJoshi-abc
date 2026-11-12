@@ -26,6 +26,22 @@ noncomputable section
 variable {k Ω : Type u} [Field k] [Field Ω] [Algebra k Ω] {t : Ω}
 variable {F Z N : IntermediateField (rationalBase k t) Ω}
 
+set_option maxHeartbeats 1000000 in
+private theorem normalizationTensorAmbientMap_comp
+    (hF : F ≤ N) (hZ : Z ≤ N) :
+    let A := polynomialBase k t
+    let K := rationalBase k t
+    let j : (coordRing t F ⊗[A] coordRing t Z) →ₗ[A] (F ⊗[A] Z) :=
+      TensorProduct.map (coordRing t F).val.toLinearMap (coordRing t Z).val.toLinearMap
+    let e : (F ⊗[K] Z) ≃ₗ[K] (F ⊗[A] Z) :=
+      IsLocalization.moduleTensorEquiv (nonZeroDivisors A) K F Z
+    let m := F.toSubalgebra.mulMap Z.toSubalgebra
+    (normalizationTensorAmbientMap hF hZ).toLinearMap =
+      (m.toLinearMap.restrictScalars A).comp
+        ((e.symm.toLinearMap.restrictScalars A).comp j) := by
+  ext a b
+  rfl
+
 theorem normalizationTensorAmbientMap_injective_of_linearDisjoint
     (ht : Transcendental k t) (hF : F ≤ N) (hZ : Z ≤ N)
     (hLD : F.LinearDisjoint Z) :
@@ -44,11 +60,7 @@ theorem normalizationTensorAmbientMap_injective_of_linearDisjoint
   let m := F.toSubalgebra.mulMap Z.toSubalgebra
   have hm : Function.Injective m :=
     Subalgebra.linearDisjoint_iff_injective.mp (IntermediateField.linearDisjoint_iff'.mp hLD)
-  have hcomp : (normalizationTensorAmbientMap hF hZ).toLinearMap =
-      (m.toLinearMap.restrictScalars A).comp
-        ((e.symm.toLinearMap.restrictScalars A).comp j) := by
-    ext a b
-    rfl
+  have hcomp := normalizationTensorAmbientMap_comp hF hZ
   change Function.Injective (normalizationTensorAmbientMap hF hZ).toLinearMap
   rw [hcomp]
   exact hm.comp (e.symm.injective.comp hj)

@@ -2,7 +2,7 @@ import ArithmeticTeichmullerSpaces.Act1Scene1.LocalKummerRootTower
 import Mathlib.FieldTheory.KrullTopology
 import Mathlib.Topology.LocallyConstant.Basic
 import Mathlib.Topology.Algebra.MulAction
-import Mathlib.Topology.Algebra.Group.Subgroup
+import Mathlib.Topology.Algebra.Group.Basic
 
 /-!
 source-id: JT-SCENE1-LOCAL-KUMMER-CONTINUITY
@@ -30,7 +30,7 @@ instance cyclotomicTateTopology (p : ℕ) : TopologicalSpace (cyclotomicTateGrou
 
 instance cyclotomicTateIsTopologicalGroup (p : ℕ) :
     IsTopologicalGroup (cyclotomicTateGroup p Ω) :=
-  isTopologicalGroup_induced (cyclotomicTateGroup p Ω).subtype
+  topologicalGroup_induced (cyclotomicTateGroup p Ω).subtype
 
 theorem continuous_tate_iff_level_locallyConstant
     {X : Type w} [TopologicalSpace X] {p : ℕ} (f : X → cyclotomicTateGroup p Ω) :

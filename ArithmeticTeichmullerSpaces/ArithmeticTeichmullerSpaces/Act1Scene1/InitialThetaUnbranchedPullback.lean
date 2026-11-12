@@ -70,7 +70,7 @@ theorem signedBaseNormalization_ramificationIdx_branch
       then 2 else 1 := by
   haveI : q.IsMaximal := hq
   let p := q.under (S.baseNormalizationRing true)
-  have hp : p.IsMaximal := Ideal.isMaximal_under_of_isIntegral_of_isMaximal q
+  have hp : p.IsMaximal := Ideal.isMaximal_comap_of_isIntegral_of_isMaximal q
   exact (Genuine.signedNormalizationMultiplicity_eq_ramificationIdx S.prime.EK 1 ⊥ p q).symm.trans
     (S.baseNormalizationMultiplicity_eq_branch p hp)
 

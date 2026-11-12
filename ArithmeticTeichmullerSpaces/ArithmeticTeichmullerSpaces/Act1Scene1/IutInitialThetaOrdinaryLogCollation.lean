@@ -79,7 +79,7 @@ theorem ordinary_localVolume_le_collation (v : iutInitialThetaOddModSupportFinse
 
 include hw hunit in
 theorem ordinary_volume_le_collation : volume D n ≤ FullSupportWitnessHull.volume D n C := by
-  apply Finset.prod_le_prod₀
+  apply Finset.prod_le_prod
     (fun v _ => Real.rpow_nonneg (pow_nonneg (Real.rpow_nonneg ENNReal.toReal_nonneg _) _) _)
   exact fun v _ => ordinary_localVolume_le_collation D n C hw hunit v
 

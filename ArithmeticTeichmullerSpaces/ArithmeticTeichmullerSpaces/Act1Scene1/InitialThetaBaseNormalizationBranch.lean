@@ -55,7 +55,7 @@ theorem signedBaseNormalization_ramificationIdx_coordinate
     FunctionFieldNormalization.dedekindRing (Genuine.xG S.prime.EK)
       (Genuine.transcendental_xG S.prime.EK) _
   let p := w.under (S.baseNormalizationRing true)
-  have hpmax : p.IsMaximal := Ideal.isMaximal_under_of_isIntegral_of_isMaximal w
+  have hpmax : p.IsMaximal := Ideal.isMaximal_comap_of_isIntegral_of_isMaximal w
   have hp : p ≠ ⊥ := Ring.ne_bot_of_isMaximal_of_not_isField hpmax
     (Genuine.notField_coverCoordinateRing S.prime.EK 1 ⊥ true)
   have hpmap : p.map (algebraMap (S.baseNormalizationRing true)

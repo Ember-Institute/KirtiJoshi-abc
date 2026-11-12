@@ -25,7 +25,7 @@ theorem ramificationIdx_one_iff (q : Ideal W.CoordinateRing) [q.IsPrime] :
   have : Algebra.FinitePresentation k[X] W.CoordinateRing :=
     AdjoinRoot.finitePresentation W.polynomial
   have : CharZero (q.under k[X]).ResidueField := DedekindEtale.residueField_charZero (K := k) _
-  have : Algebra.HasSeparableResidueFieldsAt k[X] W.CoordinateRing (q.under k[X]) := inferInstance
+  have : PerfectField (q.under k[X]).ResidueField := inferInstance
   rw [Ideal.ramificationIdx_eq_one_iff]
   constructor
   · intro h

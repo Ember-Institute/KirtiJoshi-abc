@@ -171,7 +171,7 @@ theorem qroot_weighted_fiber_eq_base
       c w.1 = (B.qOrder w : ℝ) / (2 * (S.prime.ℓ : ℝ)) := by
     intro w
     rw [S.baseQPilotSource_qOrder_eq_prime]
-    simp only [c, dite_eq_left (B.mem_badPlaces w)]
+    simp only [c, dif_pos (B.mem_badPlaces w)]
   exact IutTorsionQRootSource.canonical_qroot_weighted_sum_of_tateValuation
     p B.badFinset B.badFinset_spec c hc R.qroot R.qroot_pow_eq
       S.completionTateValuation (by have h := S.prime.five_le; omega)

@@ -265,8 +265,8 @@ private theorem fiberMass_le_sourcePrimeMass
   intro w hw
   by_cases hr : f w = r
   · have hp : Arithmetic.residueChar w.1 = primeLabel r := by rw [hPrime w, hr]
-    simp only [ite_eq_left hr, ite_eq_left hp, le_refl]
-  · simp only [ite_eq_right hr]
+    simp only [if_pos hr, if_pos hp, le_refl]
+  · simp only [if_neg hr]
     split_ifs
     · exact (Arithmetic.qPilotWeight_pos w.1).le
     · exact le_rfl

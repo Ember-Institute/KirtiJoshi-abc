@@ -95,7 +95,7 @@ theorem volume_pos : 0 < volume D n := by
 theorem volume_le_one : volume D n ≤ 1 := by
   rw [volume_eq_factorProduct_pow]
   exact pow_le_one₀ (Finset.prod_nonneg fun v _ => (factor_mem_Ioo D v).1.le)
-    (Finset.prod_le_one₀ (fun v _ => (factor_mem_Ioo D v).1.le)
+    (Finset.prod_le_one (fun v _ => (factor_mem_Ioo D v).1.le)
       (fun v _ => (factor_mem_Ioo D v).2.le))
 
 theorem selectedPaperRootProduct_eq_moduliProduct :
@@ -113,7 +113,7 @@ theorem selectedPaperRootProduct_pow_le_volume :
   rw [volume_eq_factorProduct_pow, selectedPaperRootProduct_eq_moduliProduct]
   apply pow_le_pow_left₀ (Finset.prod_nonneg fun v _ =>
     (actualPaperRootNorm_mem_Ioo D (selected D v)).1.le)
-  exact Finset.prod_le_prod₀ (fun v _ => (actualPaperRootNorm_mem_Ioo D _).1.le)
+  exact Finset.prod_le_prod (fun v _ => (actualPaperRootNorm_mem_Ioo D _).1.le)
     (fun v _ => paperRootNorm_le_factor D v)
 
 def weightedPaperSum : ℝ :=

@@ -65,7 +65,7 @@ theorem isEtaleAt_iff (q : Ideal A) [q.IsPrime] :
   haveI : Module.Flat R A := inferInstance
   haveI : Algebra.FinitePresentation R A := DedekindEtale.finitePresentation_of_finite
   haveI : CharZero (q.under R).ResidueField := DedekindEtale.residueField_charZero (K := k) _
-  haveI : Algebra.HasSeparableResidueFieldsAt R A (q.under R) := inferInstance
+  haveI : PerfectField (q.under R).ResidueField := inferInstance
   have hi : q.ramificationIdx R = 1 ↔ Algebra.IsEtaleAt R q := by
     rw [Ideal.ramificationIdx_eq_one_iff]
     constructor
@@ -83,7 +83,7 @@ theorem isEtaleAt_iff (q : Ideal A) [q.IsPrime] :
       change algebraMap R A d = 0 at h
       exact hd (hinj (h.trans (map_zero _).symm))
     · intro _
-      exact Ideal.ramificationIdx_bot_eq_one R
+      exact DedekindEtale.ramificationIdx_bot_one
   · rw [hbranch q (Ideal.IsPrime.isMaximal inferInstance hq)]
     by_cases h : d ∈ q.under R <;> simp [h]
 

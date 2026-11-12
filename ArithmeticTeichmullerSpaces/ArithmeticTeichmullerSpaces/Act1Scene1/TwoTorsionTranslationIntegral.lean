@@ -25,7 +25,7 @@ theorem addX_twoTorsion {x y r s : K}
     (hTwo : 2 * s + E.a₁ * r + E.a₃ = 0) (hxr : x ≠ r) :
     E.toAffine.addX x r (E.toAffine.slope x r y s) =
       r + (3 * r ^ 2 + 2 * E.a₂ * r + E.a₄ - E.a₁ * s) / (x - r) := by
-  rw [E.toAffine.addX_of_X_ne hxr]
+  rw [slope_of_X_ne hxr, addX]
   rw [E.toAffine.equation_iff] at hP hR
   field_simp [sub_ne_zero.mpr hxr]
   linear_combination hP - hR - (y - s) * hTwo

@@ -66,7 +66,7 @@ theorem curveToLinePresentation_ramification
   have : Algebra.IsIntegral (↥S.prime.torsionField)[X] S.prime.EK.toAffine.CoordinateRing :=
     Genuine.coordinateRing_isIntegral S.prime.EK
   have hp : (q.under (↥S.prime.torsionField)[X]).IsMaximal :=
-    Ideal.isMaximal_under_of_isIntegral_of_isMaximal q
+    Ideal.isMaximal_comap_of_isIntegral_of_isMaximal q
   exact (mul_one _).trans ((S.curveCoordinate_ramificationIdx_eq q).trans
     (S.lineOrbicurvePresentation_mult _ hp).symm)
 

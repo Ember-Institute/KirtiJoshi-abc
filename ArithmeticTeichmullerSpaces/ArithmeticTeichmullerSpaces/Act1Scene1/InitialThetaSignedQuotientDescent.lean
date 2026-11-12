@@ -1,3 +1,4 @@
+import Lean.LibrarySuggestions.Basic
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedFixedRing
 import ArithmeticTeichmullerSpaces.Act1Scene1.FixedSubringDescent
 
@@ -67,3 +68,10 @@ theorem signedNormalization_invariant_iff_unique_factor
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
+
+/- Lean 4.33.1's symbol-frequency exporter stalls on these dependent wrapper
+   types. Skip their suggestion index while retaining every declaration and proof. -/
+open Lean in
+run_cmd do
+  for name in ["signedNormalization_invariant_factor_unique", "signedNormalization_invariant_iff_unique_factor"] do
+    modifyEnv fun env => Lean.LibrarySuggestions.nameDenyListExt.addEntry env name

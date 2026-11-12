@@ -4,7 +4,7 @@ import Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure
 
 /-!
 source-id: JT-SCENE1-BOUNDARY-PRODUCER-CONTRACTS-20261021
-source: IUT I Definition 3.1(d); Mathlib `Ideal.mem_inertia` and
+source: IUT I Definition 3.1(d); Mathlib `AddSubgroup.mem_inertia` and
 `Ideal.ker_algebraMap_residueField`.
 fidelity: inverse precomposition gives the usual action on affine points.
 The stabilizer of a point is the inertia subgroup of its kernel. A prime
@@ -42,7 +42,7 @@ theorem mem_stabilizer_iff_inertia (f : R →+* C) (g : G) :
   constructor
   · intro hg
     have hi : g⁻¹ ∈ (RingHom.ker f).inertia G := by
-      apply Ideal.mem_inertia.mpr
+      apply AddSubgroup.mem_inertia.mpr
       intro x
       change f (g⁻¹ • x - x) = 0
       rw [map_sub, sub_eq_zero]
@@ -52,7 +52,7 @@ theorem mem_stabilizer_iff_inertia (f : R →+* C) (g : G) :
   · intro hg
     apply RingHom.ext
     intro x
-    have hi := Ideal.mem_inertia.mp (((RingHom.ker f).inertia G).inv_mem hg) x
+    have hi := AddSubgroup.mem_inertia.mp (((RingHom.ker f).inertia G).inv_mem hg) x
     change f (g⁻¹ • x) = f x
     change f (g⁻¹ • x - x) = 0 at hi
     exact sub_eq_zero.mp (by simpa only [map_sub] using hi)

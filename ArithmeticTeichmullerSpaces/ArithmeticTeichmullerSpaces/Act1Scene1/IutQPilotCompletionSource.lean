@@ -88,13 +88,13 @@ noncomputable def ofBaseCompletionSource
     { uniformizerNorm := completionUniformizerNorm p B C hPlaces
       uniformizerNorm_pos := by
         intro w hw
-        simp only [completionUniformizerNorm, dite_eq_left hw]
+        simp only [completionUniformizerNorm, dif_pos hw]
         exact norm_pos_iff.mpr
           (C.uniformizer_isCompletionUniformizer
             (completionIndex p B hPlaces w hw)).ne_zero
       uniformizerNorm_lt_one := by
         intro w hw
-        simp only [completionUniformizerNorm, dite_eq_left hw]
+        simp only [completionUniformizerNorm, dif_pos hw]
         exact (C.uniformizer_isCompletionUniformizer
           (completionIndex p B hPlaces w hw)).norm_lt_one
       norm_eq_pow_order := by
@@ -125,7 +125,7 @@ noncomputable def ofBaseCompletionSource
           _ = completionUniformizerNorm p B C hPlaces w ^
                 T.scene1.data.link.tate.qOrder w := by
                   dsimp [completionUniformizerNorm]
-                  rw [dite_eq_left hw, hQOrderAt]
+                  rw [dif_pos hw, hQOrderAt]
                   }
   refine
     { badPlacesOver := B.badPlaces

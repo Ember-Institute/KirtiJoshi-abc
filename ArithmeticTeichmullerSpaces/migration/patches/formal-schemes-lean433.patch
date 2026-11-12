@@ -1,0 +1,149 @@
+diff --git a/FormalSchemes/AdicCompletionLimit.lean b/FormalSchemes/AdicCompletionLimit.lean
+index d778fca..bb5413c 100644
+--- a/FormalSchemes/AdicCompletionLimit.lean
++++ b/FormalSchemes/AdicCompletionLimit.lean
+@@ -60,7 +60,7 @@ theorem quotientTower_obj (n : ℕ) :
+ theorem quotientTower_map_succ (n : ℕ) :
+     (quotientTower I).map (homOfLE (Nat.le_add_right n 1)).op =
+       CommRingCat.ofHom (Ideal.Quotient.factorPow I (Nat.le_succ n)) := by
+-  simp [quotientTower]
++  exact Functor.ofOpSequence_map_homOfLE_succ _ n
+
+ /-- The transition maps of `quotientTower I` are the quotient factor maps `factorPow`, for an
+ arbitrary `m ≤ n` (not only the consecutive case). -/
+@@ -79,7 +79,9 @@ theorem quotientTower_map {m n : ℕ} (hmn : m ≤ n) :
+         (homOfLE (Nat.le_add_right n 1)).op ≫ (homOfLE hmn).op from Subsingleton.elim _ _,
+       CategoryTheory.Functor.map_comp, quotientTower_map_succ, ih]
+     apply CommRingCat.hom_ext
+-    simp only [CommRingCat.hom_comp]
++    change (Ideal.Quotient.factorPow I hmn).comp
++      (Ideal.Quotient.factorPow I (Nat.le_succ n)) =
++        Ideal.Quotient.factorPow I (hmn.trans (Nat.le_succ n))
+     exact Ideal.Quotient.factor_comp (Ideal.pow_le_pow_right (Nat.le_succ n))
+       (Ideal.pow_le_pow_right hmn)
+
+@@ -128,7 +130,6 @@ theorem factorPow_comp_limitProj {m n : ℕ} (hmn : m ≤ n) :
+   rw [quotientTower_map] at hw
+   refine RingHom.ext fun z => ?_
+   have h := DFunLike.congr_fun (congrArg CommRingCat.Hom.hom hw) z
+-  rw [CommRingCat.hom_comp] at h
+   exact h
+
+ /-- The ring homomorphism `limit (quotientTower I) →+* AdicCompletion I R` obtained from the
+diff --git a/FormalSchemes/FormalSpectrum.lean b/FormalSchemes/FormalSpectrum.lean
+index eaa51f0..dd86085 100644
+--- a/FormalSchemes/FormalSpectrum.lean
++++ b/FormalSchemes/FormalSpectrum.lean
+@@ -192,6 +192,7 @@ theorem map_comp (φ : R →+* S) (ψ : S →+* T) (hIJ : I ≤ J.comap φ) (hJK
+       (Ideal.quotientMap K ψ hJK).comp (Ideal.quotientMap J φ hIJ) :=
+     Ideal.Quotient.ringHom_ext (RingHom.ext fun x => by simp [Ideal.quotientMap_mk])
+   funext x
++  change PrimeSpectrum (T ⧸ K) at x
+   change PrimeSpectrum.comap (Ideal.quotientMap K (ψ.comp φ) hIK) x = _
+   rw [hq, PrimeSpectrum.comap_comp_apply]
+   rfl
+@@ -208,6 +209,7 @@ Spec S →  Spec R
+ commutes. -/
+ theorem toPrimeSpectrum_map (φ : R →+* S) (h : I ≤ J.comap φ) (x : FormalSpectrum J) :
+     toPrimeSpectrum I (map I J φ h x) = PrimeSpectrum.comap φ (toPrimeSpectrum J x) := by
++  change PrimeSpectrum (S ⧸ J) at x
+   change PrimeSpectrum.comap (Ideal.Quotient.mk I)
+       (PrimeSpectrum.comap (Ideal.quotientMap J φ h) x)
+       = PrimeSpectrum.comap φ (PrimeSpectrum.comap (Ideal.Quotient.mk J) x)
+@@ -278,6 +280,7 @@ theorem comap_factor_comp_toThickening {m n : ℕ} (hm : m ≠ 0) (hn : n ≠ 0)
+     PrimeSpectrum.comap (Ideal.Quotient.factor (Ideal.pow_le_pow_right hmn)) ∘
+       toThickening I m hm = toThickening I n hn := by
+   funext x
++  change PrimeSpectrum (R ⧸ I) at x
+   change PrimeSpectrum.comap (Ideal.Quotient.factor (Ideal.pow_le_pow_right hmn))
+       (PrimeSpectrum.comap (Ideal.Quotient.factor (Ideal.pow_le_self hm)) x) = _
+   rw [← PrimeSpectrum.comap_comp_apply, Ideal.Quotient.factor_comp]
+@@ -289,6 +292,7 @@ compatibly. -/
+ theorem comap_mk_toThickening (n : ℕ) (hn : n ≠ 0) (x : FormalSpectrum I) :
+     PrimeSpectrum.comap (Ideal.Quotient.mk (I ^ n)) (toThickening I n hn x) =
+       toPrimeSpectrum I x := by
++  change PrimeSpectrum (R ⧸ I) at x
+   rw [toThickening, toPrimeSpectrum, ← PrimeSpectrum.comap_comp_apply,
+     Ideal.Quotient.factor_comp_mk]
+
+@@ -299,6 +303,7 @@ theorem toThickening_preimage_basicOpen (n : ℕ) (hn : n ≠ 0) (f : R) :
+         (PrimeSpectrum.basicOpen (Ideal.Quotient.mk (I ^ n) f) : Set (PrimeSpectrum (R ⧸ I ^ n)))
+       = (basicOpen I f : Set (FormalSpectrum I)) := by
+   ext x
++  change PrimeSpectrum (R ⧸ I) at x
+   change Ideal.Quotient.mk (I ^ n) f ∉ (PrimeSpectrum.comap _ x).asIdeal ↔ _
+   rw [PrimeSpectrum.comap_asIdeal, Ideal.mem_comap, Ideal.Quotient.factor_mk]
+   rfl
+diff --git a/FormalSchemes/GermValue.lean b/FormalSchemes/GermValue.lean
+index 92dbe89..2b1864d 100644
+--- a/FormalSchemes/GermValue.lean
++++ b/FormalSchemes/GermValue.lean
+@@ -2,6 +2,7 @@ import Mathlib.AlgebraicGeometry.StructureSheaf
+ import Mathlib.RingTheory.Localization.AtPrime.Basic
+
+ set_option linter.style.header false
++set_option backward.isDefEq.respectTransparency false
+
+ /-!
+ # Germs of sections of the structure sheaf versus their values
+diff --git a/FormalSchemes/Spf.lean b/FormalSchemes/Spf.lean
+index 9e0971f..c16e3e6 100644
+--- a/FormalSchemes/Spf.lean
++++ b/FormalSchemes/Spf.lean
+@@ -122,6 +122,7 @@ theorem thickeningStalkIso_hom_germ (U : Opens (FormalSpectrum I)) (hx : x ∈ U
+     (thickeningTopIso I n).inv (Spec.structureSheaf (R ⧸ I ^ (n + 1))).presheaf U
+     ((thickeningTopIso I n).hom x) _ t
+
++set_option backward.isDefEq.respectTransparency false in
+ /-- Over an open `W ⊆ Spf R` whose ring of level-`n` sections is a localization (e.g. a basic
+ open), a germ of the `n`-th thickening sheaf at `x ∈ W` is a unit if and only if the *value* of
+ the section at the corresponding point of the thickening `Spec (R ⧸ I ^ (n + 1))` is a unit. -/
+diff --git a/FormalSchemes/SpfMap.lean b/FormalSchemes/SpfMap.lean
+index 51e6fd9..d449278 100644
+--- a/FormalSchemes/SpfMap.lean
++++ b/FormalSchemes/SpfMap.lean
+@@ -1,6 +1,7 @@
+ import FormalSchemes.FormalScheme
+
+ set_option linter.style.header false
++set_option backward.isDefEq.respectTransparency false
+
+ /-!
+ # Functoriality of the formal spectrum on locally ringed spaces
+@@ -288,7 +289,6 @@ def levelNatTrans : structureSheafFunctor I ⟶
+       change (TopCat.Sheaf.pushforward CommRingCat (mapTop I J φ hφ)).map
+         ((structureSheafFunctor J).map (homOfLE (Nat.le_add_right n 1)).op) = _
+       rw [structureSheafFunctor_map_succ]
+-      rfl
+     rw [h]
+     exact levelSheafHom_step I J φ hφ n)
+
+@@ -332,7 +332,6 @@ theorem mapSheafHom_π (n : ℕ) :
+           (TopCat.Sheaf.pushforward CommRingCat (mapTop I J φ hφ)).obj
+             (thickeningSheaf J n)) := by
+     simp only [mapSheafHom, Category.assoc]
+-    rfl
+   have h2' : (limMap (levelNatTrans I J φ hφ) ≫
+         ((preservesLimitIso (TopCat.Sheaf.pushforward CommRingCat (mapTop I J φ hφ))
+           (structureSheafFunctor J)).inv ≫
+@@ -355,7 +354,7 @@ theorem mapSheafHom_π (n : ℕ) :
+           (TopCat.Sheaf.pushforward CommRingCat (mapTop I J φ hφ)).obj
+             (thickeningSheaf J n)) =
+       limit.π (structureSheafFunctor I) ⟨n⟩ ≫ levelSheafHom I J φ hφ n :=
+-    (limMap_π (levelNatTrans I J φ hφ) ⟨n⟩).trans (by rw [levelNatTrans_app]; rfl)
++    (limMap_π (levelNatTrans I J φ hφ) ⟨n⟩).trans (by rw [levelNatTrans_app])
+   exact h1.trans (h2'.trans h3)
+
+ end SheafMap
+diff --git a/FormalSchemes/StructureSheaf.lean b/FormalSchemes/StructureSheaf.lean
+index 0d25756..4c21808 100644
+--- a/FormalSchemes/StructureSheaf.lean
++++ b/FormalSchemes/StructureSheaf.lean
+@@ -5,6 +5,7 @@ import Mathlib.Topology.Sheaves.Limits
+ import Mathlib.CategoryTheory.Functor.OfSequence
+
+ set_option linter.style.header false
++set_option backward.isDefEq.respectTransparency false
+
+ /-!
+ # The structure sheaf of the formal spectrum

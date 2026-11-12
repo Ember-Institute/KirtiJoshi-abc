@@ -14,6 +14,7 @@ Authors: The iut contributors
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.ReductionNorm
 import ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver
 import Mathlib.NumberTheory.RamificationInertia.Basic
+import Mathlib.NumberTheory.RamificationInertia.Valuation
 
 /-!
 # Valuation transfer along places of an extension
@@ -84,7 +85,8 @@ lemma valuation_algebraMap_eq_pow (x : k) :
   haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv
   simpa only [← Ideal.ramificationIdx'_eq_ramificationIdx
     v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal v.maximalIdeal.ne_bot] using
-      (valuation_liesOver K v.maximalIdeal w.maximalIdeal x).symm
+      (IsDedekindDomain.HeightOneSpectrum.valuation_liesOver
+        K v.maximalIdeal w.maximalIdeal x).symm
 
 lemma valuation_algebraMap_le_one_iff (x : k) :
     w.maximalIdeal.valuation K (algebraMap k K x) ≤ 1 ↔ v.maximalIdeal.valuation k x ≤ 1 := by

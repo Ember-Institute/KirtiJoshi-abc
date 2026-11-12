@@ -1,6 +1,6 @@
 import Mathlib.NumberTheory.Padics.RingHoms
 import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Topology.Algebra.Group.Neighborhood
+import Mathlib.Topology.Algebra.Group.Basic
 
 /-!
 source-id: JT-SCENE1-PADIC-BOUNDED-ADDITIVE-HOM

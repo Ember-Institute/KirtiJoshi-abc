@@ -31,7 +31,7 @@ def Cover.factorThroughUnramified {D B Z : AffineOrbicurvePresentation k}
   intro w hw
   have : w.IsMaximal := hw
   have hq : (w.comap j.toRingHom).IsMaximal :=
-    Ideal.isMaximal_comap_of_isIntegral_of_isMaximal j.toRingHom hint w
+    Ideal.isMaximal_comap_of_isIntegral_of_isMaximal' j.toRingHom hint w
   have ht := FunctionFieldNormalization.ramificationIdx_comp u.f.toRingHom j.toRingHom hj w
   rw [hu _ hq, one_mul] at ht
   have hidx :

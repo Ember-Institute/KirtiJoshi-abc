@@ -67,7 +67,7 @@ theorem tensorLogShell_isBounded : Bornology.IsBounded (P.tensorLogShell : Set P
     intro k
     rw [Module.Basis.equivFun_apply, tensorBasis, pure,
       Basis.piTensorProduct_repr_tprod_apply, norm_prod]
-    exact Finset.prod_le_prod₀ (fun i _ => norm_nonneg _) fun i _ => hC i (a i) (ha i) (k i)
+    exact Finset.prod_le_prod (fun i _ => norm_nonneg _) fun i _ => hC i (a i) (ha i) (k i)
   | zero => simpa only [norm_zero] using hM
   | add x y _ _ hx hy => exact (IsUltrametricDist.norm_add_le_max x y).trans (max_le hx hy)
   | smul r x _ hx =>

@@ -191,6 +191,10 @@ theorem torsionTranslationQuotientFieldAut_surjective (n : ℕ) (hn : 0 < n)
       (stabilizerField E n TK false) (stabilizerField E n M false) :=
     torsionTranslationFieldGaloisGroup E n hn TK hTK M hM
   intro f
+  haveI : FaithfulSMul (stabilizerField E n TK false) (stabilizerField E n M false) :=
+    (faithfulSMul_iff_algebraMap_injective
+      (stabilizerField E n TK false) (stabilizerField E n M false)).mpr
+        (algebraMap (stabilizerField E n TK false) (stabilizerField E n M false)).injective
   obtain ⟨q, hq⟩ := (IsGaloisGroup.mulEquivAlgEquiv
     (torsionTranslationGaloisGroup E n TK M)
       (stabilizerField E n TK false) (stabilizerField E n M false)).surjective f

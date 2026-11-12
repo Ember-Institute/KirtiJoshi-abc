@@ -95,7 +95,7 @@ theorem unitLattice_isBounded : Bornology.IsBounded (P.unitLattice : Set P.Tenso
     intro k
     rw [Module.Basis.equivFun_apply, tensorBasis, pure,
       Basis.piTensorProduct_repr_tprod_apply, norm_prod]
-    apply Finset.prod_le_prod₀ (fun i _ => norm_nonneg _)
+    apply Finset.prod_le_prod (fun i _ => norm_nonneg _)
     intro i _
     exact hC i (a i) (by simpa only [Metric.mem_closedBall, dist_zero_right] using ha i) (k i)
   | zero => simpa only [norm_zero] using hM0

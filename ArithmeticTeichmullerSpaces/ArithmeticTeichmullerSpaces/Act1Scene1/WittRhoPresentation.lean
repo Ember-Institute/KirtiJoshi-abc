@@ -1,5 +1,5 @@
 import Mathlib.RingTheory.WittVector.Teichmuller
-import Mathlib.Basic.ENNReal.Inv
+import Mathlib.Data.ENNReal.Inv
 
 /-!
 source-id: JT-SCENE1-WITT-RHO-PRESENTATION

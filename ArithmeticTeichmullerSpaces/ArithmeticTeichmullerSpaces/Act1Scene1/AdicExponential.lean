@@ -1,4 +1,5 @@
 import ArithmeticTeichmullerSpaces.Act1Scene1.AdicLogarithm
+import ArithmeticTeichmullerSpaces.Compatibility.PowerSeriesExpLog
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
@@ -66,7 +67,7 @@ theorem hasEval_log (a : R) (ha : PowerSeries.HasEval a) :
 theorem exp_log (a : R) (ha : PowerSeries.HasEval a) :
     exp R (AdicLogarithm.oneAdd R a ha) (hasEval_log R a ha) = 1 + a := by
   have h := evaluate_subst R a ha (PowerSeries.log ℚ) PowerSeries.HasSubst.log (PowerSeries.exp ℚ)
-  simpa only [PowerSeries.subst_exp_log, map_add, map_one, evaluate_X,
+  simpa only [Compatibility.PowerSeriesExpLog.subst_exp_log, map_add, map_one, evaluate_X,
     evaluate_log, exp] using h.symm
 
 theorem hasEval_exp_sub_one (a : R) (ha : PowerSeries.HasEval a) :
@@ -78,7 +79,7 @@ theorem log_exp (a : R) (ha : PowerSeries.HasEval a) :
     AdicLogarithm.oneAdd R (exp R a ha - 1) (hasEval_exp_sub_one R a ha) = a := by
   have h := evaluate_subst R a ha (PowerSeries.exp ℚ - 1)
     PowerSeries.HasSubst.exp_sub_one (PowerSeries.log ℚ)
-  simpa only [PowerSeries.subst_log_exp_sub_one, evaluate_X, map_sub, map_one,
+  simpa only [Compatibility.PowerSeriesExpLog.subst_log_exp_sub_one, evaluate_X, map_sub, map_one,
     evaluate_log, exp] using h.symm
 
 /-- The bivariate identity is proved on rational coefficients before evaluation. -/

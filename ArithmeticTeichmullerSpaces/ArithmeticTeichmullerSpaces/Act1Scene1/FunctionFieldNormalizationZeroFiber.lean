@@ -30,7 +30,7 @@ def polynomialCoordinate : polynomialBase k t :=
 
 /-- Evaluation at zero in the transcendental polynomial subalgebra. -/
 def zeroBaseEvaluation : polynomialBase k t →ₐ[k] k :=
-  Algebra.adjoin.evalOfTranscendental t ht 0
+  (Polynomial.aeval (0 : k)).comp (Polynomial.algEquivOfTranscendental k t ht).symm
 
 theorem zeroBaseEvaluation_surjective : Function.Surjective (zeroBaseEvaluation t ht) := by
   intro a
@@ -50,9 +50,11 @@ theorem zeroBaseIdeal_ne_bot : zeroBaseIdeal t ht ≠ ⊥ :=
 theorem polynomialCoordinate_mem_zeroBaseIdeal :
     polynomialCoordinate t ∈ zeroBaseIdeal t ht := by
   change zeroBaseEvaluation t ht (polynomialCoordinate t) = 0
-  have h := Algebra.adjoin.evalOfTranscendental_aeval (s := t) ht (0 : k)
-    (p := (X : k[X]))
-  simpa [polynomialCoordinate, zeroBaseEvaluation] using h
+  change Polynomial.aeval (0 : k)
+    ((Polynomial.algEquivOfTranscendental k t ht).symm
+      ⟨t, Algebra.subset_adjoin (Set.mem_singleton t)⟩) = 0
+  rw [Polynomial.algEquivOfTranscendental_symm_gen]
+  simp
 
 /-- The prime fiber above coordinate zero in the actual integral closure. -/
 abbrev zeroFiber (L : IntermediateField (rationalBase k t) Ω) :=
@@ -118,7 +120,7 @@ theorem zeroFiberMap_surjective (hFN : F ≤ N) :
   have hpmax : p.1.IsMaximal := by
     have hint : (algebraMap (polynomialBase k t) (coordRing t F)).IsIntegral :=
       algebraMap_isIntegral_iff.mpr inferInstance
-    apply Ideal.isMaximal_of_isIntegral_of_isMaximal_comap
+    apply Ideal.isMaximal_of_isIntegral_of_isMaximal_comap'
       (algebraMap (polynomialBase k t) (coordRing t F)) hint p.1
     change (p.1.under (polynomialBase k t)).IsMaximal
     rw [← p.2.2.over]

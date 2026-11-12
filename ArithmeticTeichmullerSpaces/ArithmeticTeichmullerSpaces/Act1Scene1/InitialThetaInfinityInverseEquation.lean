@@ -101,7 +101,7 @@ theorem equation :
           + algebraMap k (ΩE E) E.a₆ := by
     simpa using hPoint
   exact inverseCoordinateEquation_of_weierstrass hEq
-    (Genuine.transcendental_xG E).ne_zero
+    (fun h => Genuine.transcendental_xG E (h ▸ isAlgebraic_zero))
 
 /-- The actual second inverse coordinate lies in the integral closure of `k[u]`. -/
 theorem secondCoordinate_isIntegral :

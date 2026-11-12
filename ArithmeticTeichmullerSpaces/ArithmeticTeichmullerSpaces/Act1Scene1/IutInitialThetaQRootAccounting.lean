@@ -213,7 +213,7 @@ theorem canonical_qroot_weighted_sum_of_initialThetaData
           IutCompletionTateValuation.ofInitialThetaData_order_eq D w
     have hplaces : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad :=
       B.mem_badPlaces w
-    simp only [c, dite_eq_left hplaces]
+    simp only [c, dif_pos hplaces]
     rw [hqOrder]
   have hbadB : (↑bad : Set (NumberField.FinitePlace D.F)) = B.badPlaces := by
     change (↑bad : Set (NumberField.FinitePlace D.F)) =

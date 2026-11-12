@@ -1,3 +1,4 @@
+import Lean.LibrarySuggestions.Basic
 import ArithmeticTeichmullerSpaces.Act1Scene1.FunctionFieldNormalizationTensorField
 import ArithmeticTeichmullerSpaces.Act1Scene1.FiniteBirationalLocalization
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedCompositum
@@ -412,3 +413,10 @@ theorem normalizationToTensorComponentScheme_birationalOver :
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
+
+/- Lean 4.33.1's symbol-frequency exporter stalls on these dependent wrapper
+   types. Skip their suggestion index while retaining every declaration and proof. -/
+open Lean in
+run_cmd do
+  for name in ["normalizationTensorMap_tmul", "unsignedNormalization_isIntegralClosure_tensor", "normalizationTensorImage_fractionField", "unsignedNormalization_isIntegralClosure_tensorImage", "normalizationTensorMap_finite", "normalizationTensorKernel_eq", "normalizationTensorKernel_minimalPrime", "normalizationTensorComponentRangeEquiv_apply_quotient", "tensorComponentQuotientRingMap_isIntegral", "normalizationToTensorComponentRingMap_range", "normalizationTensorComponentFieldMap_apply_quotient", "normalizationTensorComponentFieldMap_range", "normalizationTensorComponentFieldMap_injective", "normalizationTensorComponentFieldMap_ker_eq_bot", "normalizationTensorComponentFieldMap_faithful", "normalizationTensorComponent_fractionField", "unsignedNormalization_isIntegralClosure_tensorComponent", "normalizationToTensorComponentRingMap_comp_quotientMap", "normalizationToTensorComponentRingMap_finite", "normalizationToTensorComponentRingMap_isIntegral", "normalizationToTensorComponentRingMap_injective", "normalizationToTensorComponentScheme_comp", "normalizationTensorComponentFieldMap_eq_comp", "normalizationToTensorComponentScheme_birationalOver"] do
+    modifyEnv fun env => Lean.LibrarySuggestions.nameDenyListExt.addEntry env name

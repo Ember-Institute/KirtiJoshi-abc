@@ -1,3 +1,4 @@
+import Lean.LibrarySuggestions.Basic
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedNormalizationGalois
 import ArithmeticTeichmullerSpaces.Act1Scene1.InitialThetaSignedNormalizationAction
 
@@ -80,3 +81,10 @@ theorem signedNormalization_mem_fixedRing_iff
 
 end
 end JoshiTeich.Act1Scene1.InitialThetaGeometrySeed
+
+/- Lean 4.33.1's symbol-frequency exporter stalls on these dependent wrapper
+   types. Skip their suggestion index while retaining every declaration and proof. -/
+open Lean in
+run_cmd do
+  for name in ["signedNormalizationFixedRingEquiv_apply_coe", "signedNormalizationFixedRingEquiv_symm_apply_coe", "signedNormalization_mem_fixedRing_iff"] do
+    modifyEnv fun env => Lean.LibrarySuggestions.nameDenyListExt.addEntry env name

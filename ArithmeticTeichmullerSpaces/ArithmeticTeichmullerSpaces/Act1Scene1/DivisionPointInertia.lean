@@ -157,10 +157,10 @@ lemma toShort_map (σ : K →ₐ[k] K) (P : (E₀⁄K).toAffine.Point) :
     change toShort E₀ (Affine.Point.some (σ x) (σ y) h2) = _
     rw [toShort_some E₀ h2 h3]
     refine some_ext ?_ ?_
-    · simp only [vcX, squareChange, VariableChange.map, map_div₀, map_sub, map_pow, hσ,
-        Units.coe_map, MonoidHom.coe_ofClass]
-    · simp only [vcY, squareChange, VariableChange.map, map_div₀, map_sub, map_mul, map_pow, hσ,
-        Units.coe_map, MonoidHom.coe_ofClass]
+    · simp only [vcX, squareChange, VariableChange.map, map_div₀, map_sub, map_pow,
+        Units.coe_map, MonoidHom.coe_coe, hσ]
+    · simp only [vcY, squareChange, VariableChange.map, map_div₀, map_sub, map_mul, map_pow,
+        Units.coe_map, MonoidHom.coe_coe, hσ]
 
 include hR in
 /-- Inertia fixes every positive-level division point on a general elliptic model. -/

@@ -29,7 +29,7 @@ theorem trace_smul_basis (p q : R[X]) :
     Algebra.leftMulMatrix_eq_repr_mul, Affine.CoordinateRing.basis_zero, mul_one,
     Affine.CoordinateRing.basis_one, Affine.CoordinateRing.smul_basis_mul_Y, map_add,
     Finsupp.add_apply, map_smul, Finsupp.smul_apply, ← Affine.CoordinateRing.basis_zero,
-    ← Affine.CoordinateRing.basis_one, Module.Basis.repr_self_apply, ite_eq_left,
+    ← Affine.CoordinateRing.basis_one, Module.Basis.repr_self_apply, if_pos,
     one_ne_zero, ite_false, smul_eq_mul]
   simp only [if_false, if_true, zero_ne_one]
   ring

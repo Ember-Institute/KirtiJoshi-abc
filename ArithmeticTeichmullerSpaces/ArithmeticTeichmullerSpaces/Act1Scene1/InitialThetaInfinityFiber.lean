@@ -104,9 +104,7 @@ private theorem xLine_eq_inverseCoordinateLine :
     have hx : Genuine.xG S.prime.EK ∈
         IntermediateField.adjoin (infinityCoefficientField S) {Genuine.xG S.prime.EK} :=
       IntermediateField.subset_adjoin _ _ (Set.mem_singleton _)
-    have hxi : Genuine.xG S.prime.EK ≠ 0 :=
-      (Genuine.transcendental_xG S.prime.EK).ne_zero
-    simpa [inverseCoordinate, hxi] using
+    simpa [inverseCoordinate] using
       (IntermediateField.adjoin (infinityCoefficientField S) {Genuine.xG S.prime.EK}).inv_mem hx
 
 /-- The original signed or unsigned fixed field in the inverse-coordinate naming. -/

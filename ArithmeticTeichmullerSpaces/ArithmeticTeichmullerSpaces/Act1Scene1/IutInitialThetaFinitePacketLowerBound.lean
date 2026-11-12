@@ -97,14 +97,14 @@ theorem componentLogVolume_principalRegion (p : Nat.Primes) (j : ℕ)
               (Arithmetic.localDeg (c (Fin.last j)).1 : ℝ)) else 0 := by
     by_cases hi : i = Fin.last j
     · subst i
-      rw [ite_eq_left rfl]
+      rw [if_pos rfl]
       dsimp [z]
       rw [IutInitialThetaFiniteFactorRegion.scalars_distinguished, norm_pow, Real.log_pow]
       change ((j ^ 2 : ℕ) : ℝ) *
           Real.log ‖IutInitialThetaQRootFamily.vbadQrootAt D (c (Fin.last j)).1‖ /
             (Arithmetic.localDeg (c (Fin.last j)).1 : ℝ) = _
       exact mul_div_assoc _ _ _
-    · rw [ite_eq_right hi]
+    · rw [if_neg hi]
       have hz1 : z i = 1 :=
         IutInitialThetaFiniteFactorRegion.scalars_other D P (Fin.last j) j i hi
       simp [hz1]

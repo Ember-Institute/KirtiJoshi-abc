@@ -37,8 +37,7 @@ theorem norm_coefficientMap_le_prime_pow_of_level_one
     rw [← PadicInt.ker_toZModPow, RingHom.mem_ker]
     exact coordinate_reduction_eq_zero_of_level_one p t n ht
   have hn := (PadicInt.norm_le_pow_iff_mem_span_pow z n).mpr hz
-  change ‖(z : ℚ_[p])‖ ≤ _
-  rw [PadicInt.norm_coe]
+  change ‖z‖ ≤ _
   simpa only [Padic.norm_p, zpow_neg, zpow_natCast, inv_pow] using hn
 
 theorem norm_coefficientMap_sub_le_prime_pow_of_level_eq

@@ -51,9 +51,12 @@ abbrev normalizationCoeffSubalgebra : Subalgebra k N :=
 omit [CharZero k] [E.IsElliptic] in
 theorem normalizationCoeffSubalgebra_integrallyClosed (x : N)
     (hx : IsIntegral (normalizationCoeffSubalgebra E N) x) :
-    x ∈ normalizationCoeffSubalgebra E N :=
-  isIntegral_trans (R := Algebra.adjoin k {xG E})
-    (A := FunctionFieldNormalization.coordRing (xG E) N) x hx
+    x ∈ normalizationCoeffSubalgebra E N := by
+  letI := (integralClosure (Algebra.adjoin k {xG E}) N).algebra
+  change IsIntegral (integralClosure (Algebra.adjoin k {xG E}) N) x at hx
+  change IsIntegral (Algebra.adjoin k {xG E}) x
+  exact isIntegral_trans (R := Algebra.adjoin k {xG E})
+    (A := integralClosure (Algebra.adjoin k {xG E}) N) x hx
 
 local instance primeNormalizationCoeffComm :
     SMulCommClass (N ≃ₐ[xLine E] N) (Algebra.adjoin k {xG E}) N where
@@ -103,7 +106,7 @@ theorem normalizationPrime_inertia_lt_one
     (a : FunctionFieldNormalization.coordRing (xG E) N) :
     (normalizationPrimeSubring E N p).valuation (τ (a : N) - (a : N)) < 1 :=
   (NormalizationPrimeValuation.valuation_lt_one_iff_mem p (τ • a - a)).mpr
-    ((Ideal.mem_inertia).mp hτ a)
+    ((AddSubgroup.mem_inertia).mp hτ a)
 
 end
 end JoshiTeich.ReferenceIut.Anabelian.Genuine

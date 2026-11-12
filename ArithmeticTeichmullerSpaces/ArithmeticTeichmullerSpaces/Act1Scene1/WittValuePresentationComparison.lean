@@ -1,4 +1,4 @@
-import Mathlib.Basic.ENNReal.Inv
+import Mathlib.Data.ENNReal.Inv
 
 /-!
 source-id: JT-SCENE1-WITT-VALUE-PRESENTATION-COMPARISON

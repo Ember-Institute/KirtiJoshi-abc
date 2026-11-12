@@ -88,7 +88,7 @@ theorem negative_head_norm_bound
     (Arithmetic.residueChar w.1) r.val r.property.1.ne' _ hy0 i hi
   have him : i < m := by
     by_contra h
-    rw [WittWeightedTruncation.digits_init, ite_eq_right h] at hdi
+    rw [WittWeightedTruncation.digits_init, if_neg h] at hdi
     exact hdi rfl
   have hnorm : InitialThetaWittRhoNorm.realValue D w r.val n =
       ‖digits (Arithmetic.residueChar w.1) y i‖ * r.val.toReal ^ i / r.val.toReal ^ m := by
@@ -97,7 +97,7 @@ theorem negative_head_norm_bound
         (r.property.2.trans ENNReal.one_lt_top).ne n m _ hn,
       hi, ENNReal.toReal_div, ENNReal.toReal_mul,
       ENNReal.toReal_ofReal (norm_nonneg _), ENNReal.toReal_pow, ENNReal.toReal_pow,
-      WittWeightedTruncation.digits_init, ite_eq_left him]
+      WittWeightedTruncation.digits_init, if_pos him]
   rw [hnorm]
   have hs : 0 < s.val.toReal := ENNReal.toReal_pos s.property.1.ne'
     (s.property.2.trans ENNReal.one_lt_top).ne
@@ -142,7 +142,7 @@ theorem exists_nonnegative_approximation
     apply Ideal.mem_span_singleton.mp
     apply (WittVector.mem_span_p_pow_iff_le_coeff_eq_zero _ m).mpr
     intro i hi
-    simp only [WittVector.tail, WittVector.select, WittVector.coeff_mk, ite_eq_right (not_le.mpr hi)]
+    simp only [WittVector.tail, WittVector.select, WittVector.coeff_mk, if_neg (not_le.mpr hi)]
   obtain ⟨b, hb'⟩ := htail
   refine ⟨x - n, b, ?_, ?_⟩
   · apply mul_right_cancel₀ hp

@@ -24,7 +24,7 @@ def coefficientMap : Additive (cyclotomicTateGroup p Ω) →+ ℚ_[p] :=
     (TateBasis.equiv (p := p) (Ω := Ω)).symm.toLinearEquiv.toAddMonoidHom
 
 theorem coefficientMap_injective : Function.Injective (coefficientMap (Ω := Ω) p) :=
-  fun _ _ h => (TateBasis.equiv (p := p) (Ω := Ω)).symm.injective (PadicInt.coe_inj.mp h)
+  fun _ _ h => (TateBasis.equiv (p := p) (Ω := Ω)).symm.injective (Subtype.coe_injective h)
 
 theorem continuous_coefficientMap : Continuous (coefficientMap (Ω := Ω) p) :=
   continuous_subtype_val.comp (TateBasis.equiv (p := p) (Ω := Ω)).symm.continuous

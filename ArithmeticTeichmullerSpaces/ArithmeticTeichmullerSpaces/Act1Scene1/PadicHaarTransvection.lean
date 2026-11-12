@@ -64,7 +64,7 @@ theorem haar_measurePreserving_transvection
     (toLin' t.toMatrix).continuous_of_finiteDimensional.measurable
   refine ⟨ht, ?_⟩
   have hμ : μ = Measure.addHaarScalarFactor μ ν • ν := Measure.isAddLeftInvariant_eq_smul μ ν
-  rw [hμ, Measure.map_smul _ ht.aemeasurable, (productHaar_measurePreserving_transvection t).map_eq]
+  rw [hμ, Measure.map_smul, (productHaar_measurePreserving_transvection t).map_eq]
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℚ_[p] E]
   [FiniteDimensional ℚ_[p] E] [MeasurableSpace E] [BorelSpace E]

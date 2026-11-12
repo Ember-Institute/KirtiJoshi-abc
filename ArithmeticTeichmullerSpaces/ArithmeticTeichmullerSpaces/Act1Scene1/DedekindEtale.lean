@@ -1,3 +1,9 @@
+/-
+Compatibility proof adapted from Mathlib/RingTheory/RamificationInertia/Ramification.lean,
+commit 389347a7c1cfa76f6bd5be2ca35d4cb621610ad3.
+Copyright (c) 2026 Thomas Browning. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+-/
 import Mathlib.RingTheory.DedekindDomain.Basic
 import Mathlib.RingTheory.Flat.TorsionFree
 import Mathlib.RingTheory.RamificationInertia.Ramification
@@ -26,6 +32,20 @@ theorem residueField_charZero [Algebra K R] (p : Ideal R) [p.IsPrime] :
 
 variable [Algebra R S]
 
+/-- Compatibility proof of Mathlib 389347a's zero-prime ramification lemma.
+The localization and quotient here are the original ones. -/
+theorem ramificationIdx_bot_one [IsDomain S] :
+    (⊥ : Ideal S).ramificationIdx R = 1 := by
+  let Sq := Localization.AtPrime (⊥ : Ideal S)
+  have hmap : Ideal.map (algebraMap R S)
+      (Ideal.comap (algebraMap R S) (⊥ : Ideal S)) = ⊥ :=
+    le_bot_iff.mp Ideal.map_comap_le
+  rw [Ideal.ramificationIdx_def, IsScalarTower.algebraMap_eq R S Sq,
+    ← Ideal.map_map, Ideal.under, hmap, Ideal.map_bot,
+    ENat.toNat_eq_iff_eq_natCast, Nat.cast_one, Module.length_eq_one_iff,
+    isSimpleModule_iff_isCoatom, ← Ideal.isMaximal_def, IsLocalRing.isMaximal_iff,
+    ← Localization.AtPrime.map_eq_maximalIdeal, Ideal.map_bot]
+
 theorem finitePresentation_of_finite [IsNoetherianRing R] [Module.Finite R S] :
     Algebra.FinitePresentation R S :=
   Algebra.FinitePresentation.of_finiteType.mp inferInstance
@@ -36,7 +56,7 @@ theorem ramificationIdx_one_at_prime [IsDedekindDomain S]
     (q : Ideal S) [q.IsPrime] : q.ramificationIdx R = 1 := by
   by_cases hq : q = ⊥
   · subst q
-    exact Ideal.ramificationIdx_bot_eq_one R
+    exact ramificationIdx_bot_one
   · exact h q (Ideal.IsPrime.isMaximal inferInstance hq)
 
 /-- Finiteness supplies finite presentation, and injectivity supplies flatness. -/
@@ -54,7 +74,7 @@ theorem etale_of_closed_ramificationIdx_one [Algebra K R]
   intro q
   have : CharZero (q.asIdeal.under R).ResidueField :=
     residueField_charZero (K := K) _
-  have : Algebra.HasSeparableResidueFieldsAt R S (q.asIdeal.under R) := inferInstance
+  have : PerfectField (q.asIdeal.under R).ResidueField := inferInstance
   have : Algebra.IsUnramifiedAt R q.asIdeal :=
     Ideal.ramificationIdx_eq_one_iff.mp (ramificationIdx_one_at_prime h q.asIdeal)
   exact Algebra.IsEtaleAt.of_isUnramifiedAt_of_flat q.asIdeal

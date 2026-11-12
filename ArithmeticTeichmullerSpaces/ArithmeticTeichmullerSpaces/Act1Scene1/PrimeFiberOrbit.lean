@@ -1,5 +1,5 @@
 import Mathlib.NumberTheory.RamificationInertia.Galois
-import Mathlib.Order.Setoid.Basic
+import Mathlib.Data.Setoid.Basic
 
 /-!
 source-id: JT-SCENE1-PRIME-FIBER-ORBIT-QUOTIENT-20261107

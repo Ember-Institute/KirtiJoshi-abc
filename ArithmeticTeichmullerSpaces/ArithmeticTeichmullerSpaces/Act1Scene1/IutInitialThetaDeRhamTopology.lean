@@ -39,7 +39,9 @@ def valueEmbedding : ℤᵐ⁰ →*₀o ℝ≥0 :=
 theorem valueEmbedding_strictMono : StrictMono (valueEmbedding) :=
   WithZeroMulInt.toNNReal_strictMono (show (1 : ℝ≥0) < 2 by norm_num)
 
-def normValuation : Valuation (Carrier D w) ℝ≥0 := (valuation D w).map (valueEmbedding)
+def normValuation : Valuation (Carrier D w) ℝ≥0 :=
+  Valuation.map valueEmbedding.toMonoidWithZeroHom
+    valueEmbedding_strictMono.monotone (valuation D w)
 
 def absoluteValue : AbsoluteValue (Carrier D w) ℝ where
   toFun x := normValuation D w x
@@ -89,7 +91,11 @@ theorem inclusion_isometry : Isometry (algebraMap (Ring D w) (Carrier D w)) :=
 
 theorem primitive_norm : ‖algebraMap (Ring D w) (Carrier D w) (primitive D w)‖ = 1 / 2 := by
   rw [norm_eq_value, valuation_primitive]
-  norm_num [valueEmbedding, WithZeroMulInt.toNNReal, WithZero.log_exp]
+  change ((WithZeroMulInt.toNNReal (show (2 : ℝ≥0) ≠ 0 by norm_num)
+    (WithZero.exp (1 : ℤ)) : ℝ)⁻¹) = 1 / 2
+  rw [WithZeroMulInt.toNNReal_neg_apply _ WithZero.exp_ne_zero]
+  simp only [WithZero.exp_eq_coe_ofAdd, WithZero.unzero_coe]
+  norm_num
 
 theorem kernel_power_eq_ball (n : ℕ) :
     (((RingHom.ker (theta D w)) ^ n : Ideal (Ring D w)) : Set (Ring D w)) =

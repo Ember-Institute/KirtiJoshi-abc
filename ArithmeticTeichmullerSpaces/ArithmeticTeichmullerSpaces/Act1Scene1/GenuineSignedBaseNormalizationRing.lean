@@ -93,7 +93,7 @@ theorem signedBaseNormalization_algebraMap_bijective :
         ((b : normalizationField E 1 ⊥ true) : Ω E) :=
       b.2.map ((normalizationField E 1 ⊥ true).val.restrictScalars (Algebra.adjoin k {xG E}))
     rw [← hz] at hi
-    exact isIntegral_algebraMap_iff.mp hi
+    exact (isIntegral_algebraMap_iff (algebraMap (xLine E) (Ω E)).injective).mp hi
   obtain ⟨a, ha⟩ := (IsIntegrallyClosed.isIntegral_iff
     (R := Algebra.adjoin k {xG E}) (K := xLine E)).mp hzint
   refine ⟨a, Subtype.ext (Subtype.ext ?_)⟩

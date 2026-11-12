@@ -140,7 +140,7 @@ theorem ratio_bound {ℓ : ℕ} (hℓ : Odd ℓ) (hcard : Fintype.card H = ℓ) 
     have hτ' : τ = -1 := Units.ext (by rw [hτ1]; simp)
     have hρ' := half_class_minus_one S hRTm (hτ' ▸ hτ) hρ hρlo hρhi
     rw [hr]
-    refine Finset.prod_le_one₀ (fun _ _ => by positivity) (fun Q hQ => ?_)
+    refine Finset.prod_le_one (fun _ _ => by positivity) (fun Q hQ => ?_)
     obtain ⟨hnum, hden⟩ := minus_one_bounds S.t h2 hρ' hℓ (hζℓ Q hQ) (hζ1 Q hQ)
     rw [hτ']
     exact div_le_one_of_le₀ (hnum.trans hden) (norm_nonneg _)
@@ -150,7 +150,7 @@ theorem ratio_bound {ℓ : ℕ} (hℓ : Odd ℓ) (hcard : Fintype.card H = ℓ) 
     have hρ' := half_class_node S hRTm hτ hρ hτn hρlo hρhi
     have hℓ0 : ℓ ≠ 0 := by rintro rfl; exact Nat.not_odd_zero hℓ
     rw [hr, ← Finset.prod_pow, ← hcardnz, ← Finset.prod_const]
-    refine Finset.prod_le_prod₀ (fun _ _ => by positivity) (fun Q hQ => ?_)
+    refine Finset.prod_le_prod (fun _ _ => by positivity) (fun Q hQ => ?_)
     have hζn : ‖((ζ Q : kˣ) : k)‖ = 1 := by
       have h := congrArg (fun u : kˣ => ‖(u : k)‖) (hζℓ Q hQ)
       simp only [Units.val_pow_eq_pow_val, norm_pow, Units.val_one, norm_one] at h

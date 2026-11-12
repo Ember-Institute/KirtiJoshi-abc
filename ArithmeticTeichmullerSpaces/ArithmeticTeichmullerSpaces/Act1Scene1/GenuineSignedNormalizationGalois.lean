@@ -92,18 +92,13 @@ private theorem residueCharZero {K R : Type*} [Field K] [CharZero K]
   let f : K →+* p.ResidueField := (algebraMap R p.ResidueField).comp (algebraMap K R)
   exact charZero_of_injective_ringHom f.injective
 
-private theorem separableResiduesOfCharZero {R S : Type*} [CommRing R] [CommRing S]
-    [Algebra R S] [Algebra.IsIntegral R S] (p : Ideal R) [p.IsPrime]
-    [CharZero p.ResidueField] : Algebra.HasSeparableResidueFieldsAt R S p := inferInstance
-
 local instance normResidueCharZero (ell : ℕ) (M : AddSubgroup E.toAffine.Point)
     (p : Ideal (coverCoordinateRing E ell M true)) [p.IsPrime] : CharZero p.ResidueField :=
   residueCharZero (K := k) p
 
 local instance normSeparableResidues (ell : ℕ) (M : AddSubgroup E.toAffine.Point)
     (p : Ideal (coverCoordinateRing E ell M true)) [p.IsPrime] :
-    Algebra.HasSeparableResidueFieldsAt (coverCoordinateRing E ell M true)
-      (coverCoordinateRing E ell M false) p := separableResiduesOfCharZero p
+    PerfectField p.ResidueField := PerfectField.ofCharZero
 
 local instance normIdealAction (ell : ℕ) (M : AddSubgroup E.toAffine.Point) :
     MulAction (signedGaloisGroup E ell M) (Ideal (coverCoordinateRing E ell M false)) :=

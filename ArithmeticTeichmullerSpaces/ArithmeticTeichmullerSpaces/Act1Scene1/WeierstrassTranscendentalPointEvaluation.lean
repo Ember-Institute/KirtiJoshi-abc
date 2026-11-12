@@ -178,7 +178,7 @@ theorem functionFieldAlgHom_ext
         (Affine.CoordinateRing.mk E.toAffine Polynomial.X))) : f = g := by
   let ι := IsScalarTower.toAlgHom k E.toAffine.CoordinateRing E.toAffine.FunctionField
   have hc : f.comp ι = g.comp ι := coordinateAlgHom_ext E hx hy
-  apply AlgHom.toRingHom_injective
+  apply AlgHom.coe_ringHom_injective
   apply IsFractionRing.ringHom_ext (A := E.toAffine.CoordinateRing)
   intro a
   exact AlgHom.congr_fun hc a

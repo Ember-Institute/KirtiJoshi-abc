@@ -49,7 +49,7 @@ theorem parameter_eq_tate : (iutInitialThetaTateParameterData D).parameter w.1 =
   classical
   change (if hw : w.1 ∈ JoshiTeich.ReferenceIut.badPlacesOver D.F D.E D.VBad then
     ((D.prime.tate w.1 hw).q : LocalCompletion.completionAt D.F w.1) else 0) = _
-  rw [dite_eq_left (supported_bad D w)]
+  rw [dif_pos (supported_bad D w)]
 
 theorem qroot_power : IutInitialThetaQRootFamily.qrootAt D v ^ (2 * D.prime.ℓ) =
     iutEmbedCompletion hvw ((iutInitialThetaTateParameterData D).parameter w.1) := by

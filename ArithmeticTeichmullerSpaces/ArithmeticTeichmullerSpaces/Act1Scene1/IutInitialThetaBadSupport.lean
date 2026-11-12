@@ -106,8 +106,8 @@ private theorem iut_multiplicative_reduction_invariant_over_mod_place
     rw [← IsDedekindDomain.HeightOneSpectrum.valuation_liesOver
       D.F v.maximalIdeal x.maximalIdeal j₀]
     exact pow_le_one_iff_of_nonneg zero_le
-      (Ideal.ramificationIdx_pos_of_isDedekindDomain' x.maximalIdeal.asIdeal
-        v.maximalIdeal.ne_bot).ne'
+      (Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver x.maximalIdeal.asIdeal
+        v.maximalIdeal.ne_bot)
   have key (x : NumberField.FinitePlace D.F)
       (hxv : JoshiTeich.ReferenceIut.FinitePlace.LiesOver x v) :
       x.maximalIdeal.valuation D.F D.E.j ≤ 1 ↔
