@@ -1,0 +1,3 @@
+import Definitions.Def_TripodCanonicalHighHeightComposition
+
+#print axioms AbcAdaptation.Tripod.highHeightEstimate_of_canonical_children

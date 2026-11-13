@@ -1,0 +1,67 @@
+{
+  "scope": "Read-only source audit; no new compilation or complete transitive axiom receipt.",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "conclusion": "Existing closed declarations have exact traceable dependencies; this does not establish every Prologue constructor or sufficiency of its current input for the final Joshi route.",
+  "examples": [
+    {
+      "kind": "closed_local_proof",
+      "path": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Prologue/Perfectoid/Data.lean",
+      "line": 29,
+      "declaration": "canonicalPerfectoidData_laws",
+      "dependencies": [
+        "Prologue/Perfectoid/Untilts.lean:38 PreTilt.mk_untilt_eq_coeff_zero",
+        "Prologue/Perfectoid/Untilts.lean:43 PreTilt.untilt_iterate_frobeniusEquiv_symm_pow",
+        "Prologue/Perfectoid/Untilts.lean:55 WittVector.fontaineTheta_teichmuller"
+      ],
+      "limits": "Explicit ring/prime/nonunit/completeness hypotheses; no paper holomorphoid existence follows."
+    },
+    {
+      "kind": "conditional_local_proof",
+      "path": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Prologue/Theta/Tate.lean",
+      "line": 34,
+      "declaration": "qOrder_pos",
+      "limits": "Consumes TateParameterLaws, does not construct a global Tate source."
+    },
+    {
+      "kind": "input_contract",
+      "path": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Prologue/Interfaces/Input.lean",
+      "line": 23,
+      "declaration": "PrologueInputLaws",
+      "fields": [
+        "FirstAxiom",
+        "TateParameterLaws",
+        "PerfectoidBridgeLaws"
+      ],
+      "limits": "Data/conditions do not constitute source existence proofs."
+    },
+    {
+      "kind": "open_legacy_debts",
+      "path": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Prologue/Obligations/Constructors.lean",
+      "lines": [
+        11,
+        18,
+        25,
+        33
+      ],
+      "declarations": [
+        "build_adelicThetaLink",
+        "build_thetaLiftLog",
+        "build_packetCollationHull",
+        "build_volumeTransfer"
+      ],
+      "proof": "sorry",
+      "ownership": "Current four producer families belong to Scene1, despite legacy owner comments."
+    },
+    {
+      "kind": "abstract_predicate_slots",
+      "path": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/ProducerContracts.lean",
+      "lines": [
+        135,
+        158,
+        183
+      ],
+      "limits": "xxxLaw : Prop fields select propositions; they are not proofs of those propositions. Need faithful concrete refinement."
+    }
+  ],
+  "user_latest_direction": "Continue candidate-node decomposition despite unresolved target faithfulness; correct dependencies and deprecate superseded nodes if a shape changes. No claim about current literature consensus is added."
+}

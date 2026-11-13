@@ -1,0 +1,26 @@
+{
+  "kind": "static import inspection, separate from MCP-CI compilation",
+  "scope": "Canonical adaptation Definitions dependency closure; production project unchanged",
+  "imports": {
+    "Definitions/Def_TripodCanonicalHighHeightComposition.lean": [
+      "Definitions.Def_TripodCanonicalHighHeightInputs",
+      "Mathlib.Data.Set.Finite.Lattice",
+      "Mathlib.Tactic.Linarith"
+    ],
+    "Definitions/Def_TripodCanonicalHighHeightInputs.lean": [
+      "Definitions.Def_TripodStatementIIInputs"
+    ],
+    "Definitions/Def_TripodStatementIIInputs.lean": [
+      "Definitions.Def_AbcTripod"
+    ],
+    "Definitions/Def_AbcTripod.lean": [
+      "Mathlib.FieldTheory.AlgebraicClosure",
+      "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+      "Mathlib.NumberTheory.Height.NumberField",
+      "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+      "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+      "Mathlib.RingTheory.Radical.NatInt"
+    ]
+  },
+  "forbidden_imports_found": []
+}

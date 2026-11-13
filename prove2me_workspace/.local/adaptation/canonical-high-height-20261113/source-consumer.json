@@ -1,0 +1,152 @@
+{
+  "draft_root": "/tmp/p2m-legendre-highheight-20261113",
+  "status": "Integrated independent statements and conditional composition passed main-agent exclusive MCP-CI; private platform reduction SKETCH_ACCEPTED; three children remain Open.",
+  "repository_edited": false,
+  "excluded_imports": [
+    "Iut",
+    "Genl"
+  ],
+  "existing_htCan_changed": false,
+  "open_children_count": 3,
+  "files": [
+    "Definitions/Def_TripodCanonicalHighHeightInputs.lean",
+    "Definitions/Def_TripodCanonicalHighHeightComposition.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_canonicalLegendreHeightComparison.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_canonicalCorollary22HighHeightEstimate.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_epsilonELargeHeight.lean",
+    "Solutions/Sol_TripodHighHeightEstimate.lean",
+    "Solutions/Checks_TripodCanonicalHighHeightComposition.lean",
+    "Solutions/Checks_TripodHighHeightReduction.lean"
+  ],
+  "source_consumer": [
+    {
+      "id": "CANONICAL-LEGENDRE-FINITE-HEIGHT",
+      "kind": "exact_source_expression",
+      "definitions": [
+        "finHeight",
+        "legendreJ",
+        "auxiliaryHeight"
+      ],
+      "source": [
+        {
+          "path": "refer/iut/Iut/Tripod/Height.lean",
+          "declarations": [
+            "Iut.finHeight",
+            "Iut.legendreJ",
+            "Iut.Tripod.h_eq_finHeight_div"
+          ]
+        }
+      ],
+      "fidelity": "The finite relative log height is the finsum over FinitePlace(fieldOf x.1), divided by deg x.1. legendreJ has the exact 256 coefficient, cubic numerator, and squared denominator factors. Identification with log(q_all) is provenance from h_eq_finHeight_div; the draft does not independently prove that identification.",
+      "consumers": [
+        "CanonicalLegendreHeightComparison",
+        "CanonicalCorollary22HighHeightEstimate",
+        "highHeightEstimate_of_canonical_children"
+      ]
+    },
+    {
+      "id": "CANONICAL-LEGENDRE-BOUNDED-DISCREPANCY",
+      "kind": "carefully_stated_consequence",
+      "predicate": "CanonicalLegendreHeightComparison",
+      "open_theorem": "canonicalLegendreHeightComparison",
+      "source": [
+        {
+          "path": "refer/iut/Iut/Tripod/Height.lean",
+          "declarations": [
+            "Iut.Tripod.h_eq_finHeight_div",
+            "Iut.Tripod.legendreHeight"
+          ]
+        }
+      ],
+      "fidelity": "Uniform absolute discrepancy on every actual CompactlyBounded.set, without a degree restriction. The source gives two directional bounds with constants log(2)/3 and K.c*K.V.card+K.c+log(2)/3; a maximum gives the absolute bound. The draft leaves the comparison open.",
+      "consumer": "highHeightEstimate_of_canonical_children",
+      "consumed_for": "Transfers the canonical auxiliary-height threshold and estimate to existing htCan."
+    },
+    {
+      "id": "CANONICAL-COROLLARY22-C2",
+      "kind": "extracted_consequence",
+      "predicate": "CanonicalCorollary22HighHeightEstimate",
+      "open_theorem": "canonicalCorollary22HighHeightEstimate",
+      "source": [
+        {
+          "path": "refer/iut/Iut/Implication/Corollary22.lean",
+          "declarations": [
+            "Iut.deltaBound",
+            "Iut.epsilonE",
+            "Iut.Corollary22Inputs.excCore_finite",
+            "Iut.Corollary22Inputs.threshold",
+            "Iut.Corollary22Inputs.c2"
+          ]
+        },
+        {
+          "path": "refer/iut/Iut/Tripod/Height.lean",
+          "declarations": [
+            "Iut.Tripod.h_eq_finHeight_div"
+          ]
+        }
+      ],
+      "fidelity": "Concrete unconditional open child, not the polymorphic c2 theorem type. Retains positive degree bound, actual compact set, bounded degree, exclusion, non-strict auxiliary-height threshold, exact 1/6 factor, exact epsilonE(deltaBound d,auxiliaryHeight x), and the full three-part c2 conclusion. E may be excCore intersect (K.set intersect ptLE d), so only source-supported finiteness is used. Source dependency bundles are not manufactured.",
+      "source_constant": "C = 40 * pnt.η + I.B / 3",
+      "source_threshold": "H = I.threshold cheb",
+      "future_decomposition_requirement": "When this child is decomposed or proved, supply the actual Corollary22 inputs/Theta data/prime inputs and identify C with 40*pnt.η+I.B/3. Existential C is an extracted consequence, not an invented numerical source witness.",
+      "consumer": "highHeightEstimate_of_canonical_children",
+      "consumed_for": "Supplies finite exception set, uniform threshold and additive constant, and actual epsilon-dependent inequality."
+    },
+    {
+      "id": "COROLLARY22-EPSILON-E-LARGE-HEIGHT",
+      "kind": "exact_source_type_modulo_explicit_binders_and_namespace",
+      "predicate": "EpsilonELargeHeight",
+      "open_theorem": "epsilonELargeHeight",
+      "source": [
+        {
+          "path": "refer/iut/Iut/Implication/Corollary22.lean",
+          "declarations": [
+            "Iut.epsilonE",
+            "Iut.epsilonE_le",
+            "Iut.deltaBound"
+          ]
+        }
+      ],
+      "fidelity": "Exact real-variable statement: delta>=1, epsilon>0, ((60*delta)^2*(2*delta+4)/epsilon)^4<=h and 1<=h imply epsilonE delta h<=epsilon. Both threshold hypotheses remain. deltaBound is exactly 552960*d.",
+      "consumer": "highHeightEstimate_of_canonical_children",
+      "consumed_for": "Makes the exact arithmetic error at auxiliaryHeight x at most the requested epsilon."
+    },
+    {
+      "id": "CANONICAL-HIGH-HEIGHT-COMPOSITION",
+      "kind": "new_sorry_free_composition",
+      "declaration": "highHeightEstimate_of_canonical_children",
+      "source": [
+        {
+          "path": "refer/iut/Iut/Implication/Corollary23.lean",
+          "declarations": [
+            "Iut.statementII_of_cor312"
+          ]
+        }
+      ],
+      "fidelity": "Composes only explicit exact child hypotheses. Absorbs finite exceptional points into an upper htCan threshold using finite-image boundedness; does not invoke Northcott. Uses existing logDiff_nonneg/logCond_nonneg when enlarging the coefficient. Additive output constant is C2+B and output height threshold is max(exception height bound,T/6+B), with T=max(C2 threshold,max(epsilon fourth-power threshold,1)).",
+      "consumers": [
+        "AbcAdaptation.Tripod.highHeightEstimate",
+        "AbcAdaptation.Tripod.statementII_of_children"
+      ]
+    }
+  ],
+  "draft_provenance_status": "Draft only; no compilation, CI, or axiom receipt.",
+  "platform_child_ids": {
+    "AbcAdaptation.Tripod.canonicalLegendreHeightComparison": "84dbea7a-d8ba-4240-8676-b0260f50392e",
+    "AbcAdaptation.Tripod.canonicalCorollary22HighHeightEstimate": "ee827c56-06a5-4702-b9a8-163bb4c539d7",
+    "AbcAdaptation.Tripod.epsilonELargeHeight": "7292ba3c-10d1-4324-ae36-ad6c9a7e1acf"
+  },
+  "platform_submission_id": "fc4e169e-ab98-4ee7-92d1-d3d5288fddfe",
+  "source_lines": {
+    "finHeight": "refer/iut/Iut/Tripod/Height.lean:58",
+    "legendreJ": "refer/iut/Iut/Tripod/Height.lean:246",
+    "h_eq_finHeight_div": "refer/iut/Iut/Tripod/Height.lean:603",
+    "legendreHeight": "refer/iut/Iut/Tripod/Height.lean:791",
+    "epsilonE": "refer/iut/Iut/Implication/Corollary22.lean:107",
+    "epsilonE_le": "refer/iut/Iut/Implication/Corollary22.lean:111",
+    "deltaBound": "refer/iut/Iut/Implication/Corollary22.lean:273",
+    "excCore_finite": "refer/iut/Iut/Implication/Corollary22.lean:338",
+    "threshold": "refer/iut/Iut/Implication/Corollary22.lean:378",
+    "c2": "refer/iut/Iut/Implication/Corollary22.lean:386"
+  }
+}

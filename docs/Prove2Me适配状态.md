@@ -3,12 +3,14 @@
 ## 1. 根据 refer/iut 指示尚未拆分的证明义务
 
 - `refer/iut/Iut/Tripod/ClassicalAbcOfVariant.lean:30`
-- `refer/iut/Iut/Tripod/ClassicalAbc.lean:227`
-- `refer/iut/Iut/Tripod/ClassicalAbc.lean:291`
 - `refer/iut/Iut/Tripod/ClassicalAbc.lean:307`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:269`
 - `refer/iut/Iut/Tripod/Main.lean:129`
 - `refer/iut/Iut/Implication/Corollary23.lean:56`
+- `refer/iut/Iut/Tripod/Northcott.lean:183`
+- `refer/iut/Iut/Tripod/Height.lean:603`
+- `refer/iut/Iut/Tripod/Height.lean:791`
+- `refer/iut/Iut/Implication/Corollary22.lean:111`
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
 - `refer/iut/Iut/Implication/Corollary22.lean:386`
@@ -32,13 +34,13 @@
 
 ## 3. 不属于以上两类来源的证明义务
 
-### 具体代数点的高度估计与有理数高度之间的分解验收
+### 规范高度估计及一般位置传递的剩余分解
 
-有理数高度到整数 abc 的算术组合已验收；仍需把具体代数点上的 `StatementI` 连接到该有理数高度目标。次数一、对数不同理想项为零、实际高度比较、同一整数根基的对数导子上界是四个精确开放子定理；它们必须和 `statementII_of_children`／`statementI_of_statementII` 的来源链实际组合并经 MCP-CI 验收。当前 `Definitions/Def_TripodRationalComposition.lean` 已保留无占位符的组合代码，并移除了未被使用的开放定理导入；`Solutions/Sol_abc_rational_height.lean` 通过真实开放子节点供应全部六个输入。新规范模块名、组合审查和完整盲审读回已验收；仍需完成平台上传并确认实际归约边。闭合组合只消费明确的开放子节点，不等于几何子定理已证明。
+`canonicalLegendreHeightComparison` 仍需追踪实际单生成数域上的有限处高度、Legendre 不变量及其与既有高度的两向比较；`epsilonELargeHeight` 仍需把来源中的具体四次幂阈值与基础实分析依赖接成可验收节点。二者的陈述已固定到实际对象和明确公式，尚未完成其向基础定理的依赖闭包。
 
-新增的命题二子链只使用已有的具体代数点、次数、归一化高度、对数不同理想项、导子和紧有界集合：`BoundedDegreeFiniteness` 要求全部代数点中次数及实际高度有界的子集有限，`HighHeightEstimate` 给出正次数界与每个紧有界集合上的统一高点阈值和误差常数。两项子定理的类型、有限例外组合与独立三语读回均已验收，证据位于 `.local/adaptation/tripod-unit-20261113/`；数学子定理仍开放。仍需将该子链连接到平台的有理数高度目标，并继续拆分高点估计的来源输入。这是对参考 Corollary 2.3 证明中高点估计与有限例外步骤的提取；辅助椭圆曲线高度到实际高度的转换、有限异常核的吸收、Corollary 2.2 的算术来源仍属于高点估计的未拆分债务，不能以这项中间陈述冒充已经归约到 3.12。
+`canonicalCorollary22HighHeightEstimate` 仍需继续拆出推论二点二的共同算术来源、初始 theta 数据、局部理论、所选素数和定理一点一零输入。有限例外集必须识别为来源 `excCore` 与 `K.set ∩ ptLE d` 的交，统一阈值和常数必须分别识别为 `I.threshold cheb` 与 `40*pnt.η+I.B/3`；保留完整三项结论，不以存在某个数值证书代替真实来源。参考工程的真实基本群及缓和基本群构造可从 `ClassicalAbcGenuineCanLift.lean:40` 的特化入口继续追踪，本地还需独立移植并核对相同数据上的消费者。
 
-命题二到命题一的论文来源已核实：望月新一 *Arithmetic Elliptic Curves in General Position*，Theorem 2.1，印刷第 11–13 页。作者官网下载 PDF 的直连回执、SHA-256 与路径保存在 `.local/adaptation/sources/Mochizuki_GenEll_Theorem2.1.pdf.receipt.json`。第 12–13 页使用有限覆盖、非临界 Belyi 映射和统一高度比较；本地当前只有 `statementII` 到 `statementI` 的精确开放归约接口，尚未形式化覆盖／Belyi 子链，所以论文出处并不构成该边已证明的证据。
+`statementI_of_statementII` 仍需拆成真实曲线的高度、不同理想与导子比较、紧有界集合传递、非临界 Belyi 映射、覆盖与一般位置定理。可研究用实际 Fermat 曲线及其函数域、点剩余域和分歧判别式估计给出更小的中间节点，但其规范除子高度代表与当前固定数值高度的对应必须显式登记，尚未验收的草稿不能作为已完成分解。参考工程最强入口在源码层仅接收全称 `h312`；其完整外部依赖闭包尚未在本地验收，这不等于已证明 Joshi 字面三点一二与参考变体相接。
 
 ### Joshi 的 3.12 与参考工程变体之间的适配
 
@@ -50,12 +52,12 @@
 
 ### Prologue 与 Scene1 必要依赖闭包的映射
 
-需要把现有基础定义、构造义务和已证明局部结果映射到平台节点，并逐项确认其实际消费者和共同来源条件。源工程已有义务清单尚未转成当前 `prove2me_workspace` 的完整声明依赖图，不能据此认定必要叶节点全部覆盖。定义文件只供应已验证定义和结构性事实，未证明的构造存在性保留为开放定理；不得把结论藏进任意命题字段或全局实例。尚需对最终目标可达的节点建立来源记录、精确类型、状态及无环依赖关系，并将已完成证明接入对应节点。
+仍需把最终目标实际需要的基础定义、构造义务和局部结果转为平台节点，确认精确类型、共同来源、实际消费者和无环依赖。已有闭合声明可以逐项机械追溯到固定 Mathlib 版本；条件性局部定理必须保留输入法律，接口及结构字段也不等于真实对象的存在性证明。不能据现有 Prologue 清单断言最终 Joshi 路线的必要叶节点已经全部覆盖。
 
-### 私有平台节点与本地分解图的同步
+特别需要细化 `ProducerContracts.lean` 中只选择命题的 `xxxLaw : Prop` 槽位；它们既没有给出具体论文法律，也没有给出其证明。四类真实来源义务仍归 Scene1，不通过扩大 Prologue 假设关闭；旧 `Prologue/Obligations/Constructors.lean` 的四个占位构造器也不能作为现成证明导入。定义文件只供应实际定义与已证明结构事实，尚未实现的存在性保持开放；若后续真实构造揭示新的基础需求，按动态边界审计契约处理。
 
-用户已启动私有 mission `eeb5193f-68c0-41d0-9263-4a5ff7c801ee` 的证明流程。仍需按依赖顺序同步其余定义、开放子定理和已验收组合，逐条保存平台终态与实际消费者；完整数学证明仍要求关闭其余开放叶节点。根节点的第一条归约边已验收，证据保存在 `prove2me_workspace/.local/adaptation/root-fix-sketch-20261113/`，不再列为待办。
+### 尚待同步的后续子链
+
+一般位置、推论二点二及其通向参考三点一二的后续精确节点仍需准备、独占验收、独立三语读回并按依赖顺序接入私有 mission。允许将未定的 Joshi 陈述作为有来源的候选节点继续拆分；一旦发现形状错误，建立修正版、更新依赖并弃用旧节点，不把未解决的对应关系当成既成事实。完整数学证明的剩余债务仍属于另行排除的 Act2 阶段。
 
 ## 4. 未完成自然语言读回的证明义务
-
-- 无。

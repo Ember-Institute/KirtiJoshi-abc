@@ -1,0 +1,21 @@
+{
+  "id": "3a1c2565-a9cb-48c9-a119-534d348ea61f",
+  "kind": "problem",
+  "theorem_name": "AbcAdaptation.Tripod.heightComparisonProjection",
+  "theorem_title": "Comparison with the actual rational logarithmic height",
+  "formal_statement": "theorem AbcAdaptation.Tripod.heightComparisonProjection : AbcAdaptation.Tripod.HeightComparisonProjection := by sorry",
+  "natural_language_statement": "> “Thus, it follows from the equivalence of [GenEll], Theorem 2.1, that, in order to complete the proof of Corollary 2.3, it suffices to verify that [GenEll], Theorem 2.1, (ii), holds.”\n\n— Shinichi Mochizuki, *Inter-universal Teichmüller Theory IV*, §2, proof of Corollary 2.3.\n\n**English**\n\n`AbcAdaptation.Tripod.heightComparisonProjection`\n\nFor every $q\\in\\mathbb Q$ and every pair of proofs $q\\ne0$ and $q\\ne1$, write $q=a/b$ in reduced form with $a\\in\\mathbb Z$ and positive $b\\in\\mathbb N$, let $z$ be its canonical image in $\\overline{\\mathbb Q}$, put $F=\\mathbb Q(z)$, let $g\\in F$ map to $z$, and put $n=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))$. Then $\\log\\max(|a|,b)=\\operatorname{logHeight}_{1,\\mathbb Q}(q)\\le\\operatorname{logHeight}_{1,F}(g)/n$, where the right-hand numerator is Mathlib's relative number-field logarithmic height computed in $F$, and the denominator is the point degree cast to $\\mathbb R$.\n\n**简体中文**\n\n`AbcAdaptation.Tripod.heightComparisonProjection`\n\n对于每个 $q\\in\\mathbb Q$ 和每一对 $q\\ne0$、$q\\ne1$ 的证明，将 $q$ 写成既约分数 $a/b$，其中 $a\\in\\mathbb Z$、$b\\in\\mathbb N$ 且 $b>0$；令 $z$ 是它在 $\\overline{\\mathbb Q}$ 中的典范像，令 $F=\\mathbb Q(z)$，令 $g\\in F$ 映到 $z$，并令 $n=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))$。则 $\\log\\max(|a|,b)=\\operatorname{logHeight}_{1,\\mathbb Q}(q)\\le\\operatorname{logHeight}_{1,F}(g)/n$，其中右侧分子是在 $F$ 中计算的 Mathlib 相对数域对数高度，分母是转换为实数的点次数。\n\n**日本語**\n\n`AbcAdaptation.Tripod.heightComparisonProjection`\n\n各 $q\\in\\mathbb Q$ と、$q\\ne0$ および $q\\ne1$ の各証明の組について、$q=a/b$ を $a\\in\\mathbb Z$、正の $b\\in\\mathbb N$ による既約表示とする。$z$ を $\\overline{\\mathbb Q}$ における標準的な像、$F=\\mathbb Q(z)$、$g\\in F$ を $z$ に移る元、$n=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))$ とする。このとき $\\log\\max(|a|,b)=\\operatorname{logHeight}_{1,\\mathbb Q}(q)\\le\\operatorname{logHeight}_{1,F}(g)/n$ である。右辺の分子は $F$ で計算する Mathlib の相対的な数体の対数的高さ、分母は実数に移した点の次数である。",
+  "definitions": "import Definitions.Def_AbcTripod\n\nset_option autoImplicit false",
+  "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Theorem 2.1(i), rational-tripod specialization; Inter-universal Teichmüller Theory IV, §2, Corollary 2.3. Exact Lean source refer/iut/Iut/Tripod/ClassicalAbc.lean:73 (degree), :93 (different), :198 (height comparison), :144 (conductor), :227 (classical integer implication).",
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-teichmuller-spaces",
+    "arithmetic-geometry"
+  ],
+  "visibility": "private",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "12991d28-2b16-469f-9a8d-6b3029d4311a",
+  "created_at": "2026-11-13T03:37:00.505212+00:00",
+  "updated_at": "2026-11-13T03:37:16.7952+00:00"
+}

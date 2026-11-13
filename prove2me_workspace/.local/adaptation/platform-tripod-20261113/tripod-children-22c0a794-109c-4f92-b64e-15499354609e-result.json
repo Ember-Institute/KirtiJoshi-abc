@@ -1,0 +1,21 @@
+{
+  "id": "22c0a794-109c-4f92-b64e-15499354609e",
+  "kind": "problem",
+  "theorem_name": "AbcAdaptation.Tripod.radicalConductorProjection",
+  "theorem_title": "Rational conductor bounded by the integer radical",
+  "formal_statement": "theorem AbcAdaptation.Tripod.radicalConductorProjection : AbcAdaptation.Tripod.RadicalConductorProjection := by sorry",
+  "natural_language_statement": "> “Thus, it follows from the equivalence of [GenEll], Theorem 2.1, that, in order to complete the proof of Corollary 2.3, it suffices to verify that [GenEll], Theorem 2.1, (ii), holds.”\n\n— Shinichi Mochizuki, *Inter-universal Teichmüller Theory IV*, §2, proof of Corollary 2.3.\n\n**English**\n\n`AbcAdaptation.Tripod.radicalConductorProjection`\n\nFor every $q\\in\\mathbb Q$ and every pair of proofs $q\\ne0$ and $q\\ne1$, write $q=a/b$ in reduced form with $a\\in\\mathbb Z$ and positive $b\\in\\mathbb N$. Let $z$ be its canonical image in $\\overline{\\mathbb Q}$, put $F=\\mathbb Q(z)$, let $g\\in F$ map to $z$, put $n=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))$, and let $B_z$ be exactly the finite set of finite places $v$ of $F$ satisfying $v(g)\\ne1$ or $v(g-1)\\ne1$. Then $\\frac1n\\sum_{v\\in B_z}\\log\\#(\\mathcal O_F/\\mathfrak p_v)\\le\\log\\operatorname{rad}_{\\mathbb Z}(a(a-b)b)$. Each place is counted once, with no additional weight, and the sum is divided by the real cast of the point degree. The product and radical on the right are taken in $\\mathbb Z$, with $b$ cast to $\\mathbb Z$; this integer radical is the positive product of the distinct prime divisors of $|a(a-b)b|$, cast to $\\mathbb R$ before the natural logarithm. The exclusions on $q$ ensure that the integer product is nonzero.\n\n**简体中文**\n\n`AbcAdaptation.Tripod.radicalConductorProjection`\n\n对于每个 $q\\in\\mathbb Q$ 和每一对 $q\\ne0$、$q\\ne1$ 的证明，将 $q$ 写成既约分数 $a/b$，其中 $a\\in\\mathbb Z$、$b\\in\\mathbb N$ 且 $b>0$。令 $z$ 是它在 $\\overline{\\mathbb Q}$ 中的典范像，令 $F=\\mathbb Q(z)$，令 $g\\in F$ 映到 $z$，令 $n=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))$，并令 $B_z$ 恰为所有满足 $v(g)\\ne1$ 或 $v(g-1)\\ne1$ 的 $F$ 的有限位所组成的有限集。则 $\\frac1n\\sum_{v\\in B_z}\\log\\#(\\mathcal O_F/\\mathfrak p_v)\\le\\log\\operatorname{rad}_{\\mathbb Z}(a(a-b)b)$。每个有限位计一次，没有额外权重，求和再除以转换为实数的点次数。右侧的乘积和根基运算均在整数环中进行，$b$ 先转换为整数；该整数根基是 $|a(a-b)b|$ 的所有不同素因子的正乘积，先转换为实数，再取自然对数。对 $q$ 的排除条件保证该整数乘积非零。\n\n**日本語**\n\n`AbcAdaptation.Tripod.radicalConductorProjection`\n\n各 $q\\in\\mathbb Q$ と、$q\\ne0$ および $q\\ne1$ の各証明の組について、$q=a/b$ を $a\\in\\mathbb Z$、正の $b\\in\\mathbb N$ による既約表示とする。$z$ を $\\overline{\\mathbb Q}$ における標準的な像、$F=\\mathbb Q(z)$、$g\\in F$ を $z$ に移る元、$n=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))$ とし、$B_z$ を $v(g)\\ne1$ または $v(g-1)\\ne1$ を満たす $F$ の有限素点すべてからなる有限集合とする。このとき $\\frac1n\\sum_{v\\in B_z}\\log\\#(\\mathcal O_F/\\mathfrak p_v)\\le\\log\\operatorname{rad}_{\\mathbb Z}(a(a-b)b)$ である。各素点を一度だけ数え、追加の重みを付けず、和を実数に移した点の次数で割る。右辺の積と根基は $b$ も整数に移して整数環で計算する。この整数根基は $|a(a-b)b|$ の相異なる素因数すべての正の積であり、実数に移してから自然対数を取る。$q$ の除外条件により整数の積は非零である。",
+  "definitions": "import Definitions.Def_AbcTripod\n\nset_option autoImplicit false",
+  "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Theorem 2.1(i), rational-tripod specialization; Inter-universal Teichmüller Theory IV, §2, Corollary 2.3. Exact Lean source refer/iut/Iut/Tripod/ClassicalAbc.lean:73 (degree), :93 (different), :198 (height comparison), :144 (conductor), :227 (classical integer implication).",
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-teichmuller-spaces",
+    "arithmetic-geometry"
+  ],
+  "visibility": "private",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "d789bc6e-2e85-409f-84e9-a9db251871a9",
+  "created_at": "2026-11-13T03:37:00.577789+00:00",
+  "updated_at": "2026-11-13T03:37:18.071057+00:00"
+}

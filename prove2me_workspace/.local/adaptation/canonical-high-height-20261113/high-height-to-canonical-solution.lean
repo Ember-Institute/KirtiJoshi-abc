@@ -1,0 +1,12 @@
+import Definitions.Def_TripodCanonicalHighHeightComposition
+import Theorems.Thm_AbcAdaptation_Tripod_canonicalLegendreHeightComparison
+import Theorems.Thm_AbcAdaptation_Tripod_canonicalCorollary22HighHeightEstimate
+import Theorems.Thm_AbcAdaptation_Tripod_epsilonELargeHeight
+
+set_option autoImplicit false
+
+theorem solution : AbcAdaptation.Tripod.HighHeightEstimate :=
+  AbcAdaptation.Tripod.highHeightEstimate_of_canonical_children
+    AbcAdaptation.Tripod.canonicalLegendreHeightComparison
+    AbcAdaptation.Tripod.canonicalCorollary22HighHeightEstimate
+    AbcAdaptation.Tripod.epsilonELargeHeight
