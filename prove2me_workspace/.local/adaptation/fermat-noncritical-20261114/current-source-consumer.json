@@ -1,0 +1,58 @@
+{
+  "source_pin": "Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "original_delivery_ledger": "source-consumer.json",
+  "source_boundary_link": "source-ledger-link.json",
+  "definition_hashes": {
+    "Definitions/Def_FermatNoncriticalFunctions.lean": "bb10b218db0d1837c23da15cfe61ea2eac9a5e2d72612c231bcb4cec8f1e07e4",
+    "Definitions/Def_FermatNoncriticalSimpleZeros.lean": "c6ffb6443fa1568cd73e433b200f0ebfb583b2e7efa73dee12c29001607f122d",
+    "Definitions/Def_FermatNoncriticalComposition.lean": "6eee6a52dbb769c44a149a34df447c7dfa54eff9cbe8434015913fcc76b42bd5"
+  },
+  "source_theorem_hashes": {
+    "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite": "6362f6e1f796c2ed8cccfc15518b6bfeedd142a6d13729f5f70bea11318c3a25",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection": "ee2c57c93b4cf0f5587f9da90f9126a9720a54159e46c6bf1fc29be0cc61379a",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite": "7311707c2e5da6a8124df80f028e4a90eaa0dd7f72ab1a2ae4f75db60677e665",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification": "f662ed3ae766fb277544a098d21062aeb098ef5942bc6b11f18cfd9e1802141d",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero": "ad0285b951b5fed29d8c1fb6b2a130e505ec6d3b74f77ccdee1f23f1f8c22c4b"
+  },
+  "source_graph_sha256": "8a46091bd6774954a3195cf01ec5217e435fc2422867573e25e166f199bed7f7",
+  "closed_direct": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite",
+      "submission_id": "663cf4b7-0455-40d4-910e-456acf50de3d",
+      "status": "ACCEPTED"
+    }
+  ],
+  "accepted_reduction": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection",
+    "submission_id": "07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+    "status": "SKETCH_ACCEPTED"
+  },
+  "actual_dependencies": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+    "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+    "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear",
+    "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional"
+  ],
+  "open_mathematical_children": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero"
+  ],
+  "actual_platform_states": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite": "Proved",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection": "Open"
+  },
+  "consumer_chain": [
+    "actual zero/pole supports -> model_cuspsFinite -> cuspsFinite",
+    "closed Riemann finite/upper/eventual -> actual simple-zero function",
+    "simple-zero function + finite ramification + actual composition chain rule + actual P1 list -> noncriticalSelection",
+    "cuspsFinite and conditional noncriticalSelection -> existing ArithmeticDivisorChoices/canonicalEstimate consumers"
+  ],
+  "new_global_assumptions": [],
+  "full_abc_closed": false
+}

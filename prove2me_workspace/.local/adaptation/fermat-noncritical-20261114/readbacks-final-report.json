@@ -1,0 +1,391 @@
+{
+  "date": "2026-11-14",
+  "result": "Static consistency review complete; prose repaired without changing mathematical signatures.",
+  "count": {
+    "source_declaration_count": 33,
+    "readback_count": 33,
+    "languages_per_record": 3,
+    "language_record_count": 99,
+    "signatures_changed": 0,
+    "changed_prose_records": 31,
+    "changed_prose_declarations": [
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.Pt",
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.zeroOneInf",
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.mem_zeroOneInf",
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply",
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.ramIdx",
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.evalComp",
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ramIdxComp",
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.compK",
+      "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero",
+      "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_one",
+      "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_sub",
+      "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero_iff",
+      "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_exists_P_eq",
+      "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_finite_embeddings",
+      "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_finite_setOf_mem",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalGalPoint",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue_gal",
+      "AbcAdaptation.Tripod.Fermat.Proper.model_cuspsFinite",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue_zero_iff",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncritical_cusp_value_iff",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncritical_ramIdx_of_positive_order",
+      "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction",
+      "AbcAdaptation.Tripod.Fermat.Proper.model_infinite_places",
+      "AbcAdaptation.Tripod.Fermat.Proper.simpleZeroFunction_of_polarRealization",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection_of_simpleZeros_and_children",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+      "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection"
+    ],
+    "open_sorry_count": 3,
+    "source_hash_match_to_independent_inputs": [
+      {
+        "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+        "same_as_independent_input": true
+      },
+      {
+        "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+        "same_as_independent_input": true
+      },
+      {
+        "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+        "same_as_independent_input": true
+      },
+      {
+        "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+        "same_as_independent_input": true
+      },
+      {
+        "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+        "same_as_independent_input": true
+      },
+      {
+        "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+        "same_as_independent_input": true
+      },
+      {
+        "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspsFinite.lean",
+        "same_as_independent_input": true
+      },
+      {
+        "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalSelection.lean",
+        "same_as_independent_input": true
+      }
+    ],
+    "checks": [
+      {
+        "topic": "Model/places/values",
+        "result": "All Model-dependent entries account for the concrete intermediate field, u^N+v^N=1, generation, transcendence, finite-dimensionality and degree=N. Places are all proper valuation subrings containing ℚ. Points retain a homomorphism from the full residue field; value=∞ exactly outside its local ring."
+      },
+      {
+        "topic": "Möbius and polynomial data",
+        "result": "Both constructor restrictions are preserved: rational a,b,c,d with ad-bc≠0, or a rational polynomial of strictly positive natDegree. All point-action cases, coefficient extension, polynomial root multiplicity and ordered composite index are explicit. applyK/compK retain total field division conventions."
+      },
+      {
+        "topic": "Chain rule",
+        "result": "The open statement asserts positivity at every place and, for every list and full residue-embedding point, transcendence of the same compK element, actual point-value equality, and the integer ramIdx product. No omitted hypothesis, reversed composite order, or extra free map/index law was found."
+      },
+      {
+        "topic": "Simple zeros and actual Riemann hypotheses",
+        "result": "SimpleZeroFunction retains ψ transcendental, T⊆T′, T′ nonempty, order=1 throughout T′, and order≤0 outside. simpleZeroFunction_of_polarRealization has exactly hRealize as its extra assumption: one integer threshold N1 and exact polar multiplicities for every effective divisor of degree≥N1. The parent imports three actual Riemann statements and applies the existing composition lemma; these are proof dependencies, not new parameters or conclusions of noncriticalSelection."
+      },
+      {
+        "topic": "Actual Riemann statements in current base",
+        "result": "The supplied Riemann proof dependencies have the signatures: ∀A, FiniteDimensional ℚ L(A); ∀A, ℓ(A)≤max(0,deg(A)+ℓ(0)); and ∃g0,N0∈ℤ, ∀A, N0≤deg(A)→ℓ(A)=deg(A)−g0. Here A is any finite-support integer divisor, deg(A)=Σ A(P)[κ(P):ℚ], and L(A)={0}∪{f:∀P,v_P(f)≥−A(P)}. No assumption ℓ(0)=1 or constant field=ℚ is inserted. Static reading checks their use, not compilation or axiom closure."
+      },
+      {
+        "topic": "Finite/Galois-stable branch set (proof internal)",
+        "result": "Composition proof lines 51–66 forms X={x:eψ(x.P)>1}, uses all residue embeddings to prove X finite, and defines S={∞}∪{Vx(ψ):x∈X}. Every ℚ-automorphism acts on ι by σ∘ι and fixes P, so branch membership is retained. Lines 67–85 use exact simple zeros to exclude 0 from S. This is a proof-internal construction, not an additional exported theorem conclusion."
+      },
+      {
+        "topic": "Same global function (proof internal and conclusion quantifier)",
+        "result": "Composition proof line 90 returns φ=compK(hs,ψ) once. Both the Belyi all-place property and avoidance for every P∈T concern this identical field element. The final parent signature similarly has ∀T,∃φ before the universal-place conclusions."
+      },
+      {
+        "topic": "Open proofs and quotations",
+        "result": "The three noncriticalRamificationFinite/noncriticalCompositionRamification/noncriticalP1Zero bodies still contain sorry in the draft source. No prose edit represents them as proved or replaces their mathematical signatures. Every English source quotation remains null. No Mochizuki original text was supplied to this auditor, and no quotation or Joshi attribution was invented."
+      }
+    ],
+    "changes": [
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply",
+        "category": "point_action_precision",
+        "detail": "Finite polynomial values are explicitly p(z); definitions include only the action/index/recursion needed by the declaration."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.ramIdx",
+        "category": "point_action_precision",
+        "detail": "Finite polynomial values are explicitly p(z); definitions include only the action/index/recursion needed by the declaration."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.evalComp",
+        "category": "point_action_precision",
+        "detail": "Finite polynomial values are explicitly p(z); definitions include only the action/index/recursion needed by the declaration."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ramIdxComp",
+        "category": "point_action_precision",
+        "detail": "Finite polynomial values are explicitly p(z); definitions include only the action/index/recursion needed by the declaration."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection_of_simpleZeros_and_children",
+        "category": "point_action_precision",
+        "detail": "Expanded the finite polynomial action and the ordered product of successive indices explicitly, while preserving all quantifiers."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+        "category": "point_action_precision",
+        "detail": "Expanded the finite polynomial action and the ordered product of successive indices explicitly, while preserving all quantifiers."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+        "category": "point_action_precision",
+        "detail": "Expanded the finite polynomial action and the ordered product of successive indices explicitly, while preserving all quantifiers."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.Pt",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.zeroOneInf",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.mem_zeroOneInf",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.compK",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_one",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_sub",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero_iff",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_exists_P_eq",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_finite_embeddings",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_finite_setOf_mem",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalGalPoint",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue_gal",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.model_cuspsFinite",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue_zero_iff",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncritical_cusp_value_iff",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncritical_ramIdx_of_positive_order",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.model_infinite_places",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.simpleZeroFunction_of_polarRealization",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection_of_simpleZeros_and_children",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection",
+        "category": "notation_and_self_containment",
+        "detail": "Corrected set-delimiter rendering and/or residue coset notation; made the maximal ideal and fixed ambient rational-function field explicit where used; retained all mathematical hypotheses."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection_of_simpleZeros_and_children",
+        "category": "quantifier_clarity",
+        "detail": "Spelled out the shared existential global function across every place, without strengthening the existential conclusion."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection",
+        "category": "quantifier_clarity",
+        "detail": "Spelled out the shared existential global function across every place, without strengthening the existential conclusion."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+        "category": "quantifier_clarity",
+        "detail": "Clarified that compK is a fixed K-element, not a point-dependent map chosen separately at each embedding."
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection_of_simpleZeros_and_children",
+        "category": "quantifier_clarity",
+        "detail": "Clarified that compK is a fixed K-element, not a point-dependent map chosen separately at each embedding."
+      }
+    ]
+  },
+  "input_files": [
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+      "sha256": "4eb9f5b38b3b36574430948f7c10952ac156f607c220a9b06012d4362e129ed3"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "sha256": "a4b81a925ba8e1564d01390c79a27956ea7372109ba3fae4a949df39c89be2ad"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "sha256": "0e598d46c7d97b080f0670ba60adfac65551951a6507517c81a9bf3be4df4f86"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspsFinite.lean",
+      "sha256": "6362f6e1f796c2ed8cccfc15518b6bfeedd142a6d13729f5f70bea11318c3a25"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+      "sha256": "f662ed3ae766fb277544a098d21062aeb098ef5942bc6b11f18cfd9e1802141d"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "sha256": "ad0285b951b5fed29d8c1fb6b2a130e505ec6d3b74f77ccdee1f23f1f8c22c4b"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "sha256": "7311707c2e5da6a8124df80f028e4a90eaa0dd7f72ab1a2ae4f75db60677e665"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalSelection.lean",
+      "sha256": "ee2c57c93b4cf0f5587f9da90f9126a9720a54159e46c6bf1fc29be0cc61379a"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+      "sha256": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannSpaces.lean",
+      "sha256": "e75fa0f2f9e79fcf4bc053589d9c21fdd7891f489d347dae2ee24f0b2a7b4809"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannComposition.lean",
+      "sha256": "7a8839a83370ceaec76eb30b0d3b113f9338107db55e1e6e6ab4cc644a99a94f"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean",
+      "sha256": "b0fbdd848db720dcfe36bbe30c14bb33d1af08de6cdbb03b8f253d73bdf839f4"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean",
+      "sha256": "dadd613f3ef3fad0587d9249a8f4e7ae8659a26a4a87c7c1db7cf232c4e6b70e"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean",
+      "sha256": "45694d56d1462b9194414037af5308b71a2cf3e54c0deeb36d336de3b5de4b37"
+    }
+  ],
+  "validation": {
+    "performed": "Static source signature/binder and three-language review, declaration inventory, preserved signature comparison, source SHA256 comparison, JSON parse, math/set delimiters and control-character checks",
+    "compiled": false,
+    "ci_submitted": false,
+    "main_workspace_modified": false,
+    "original_independent_copy_modified": false,
+    "source_inventory_matched": true
+  },
+  "quotation_status": "No supplied/authenticated Mochizuki original quotation; English quotation fields remain null. No Joshi attribution was invented."
+}

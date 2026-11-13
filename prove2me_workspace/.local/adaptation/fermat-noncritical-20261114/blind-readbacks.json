@@ -1,0 +1,674 @@
+{
+  "auditor_role": "Independent blind static Lean read-back auditor",
+  "readback_model": "gpt-6.1-sol",
+  "input_scope": "Specified temporary Definitions/*.lean and Theorems/*.lean, their needed main-workspace Definitions/*.lean dependencies, and references/mission_auditor.md only; no README, source-consumer, external source intentions, compilation, or CI.",
+  "signature_note": "All full signatures are static source reconstructions with section variables expanded. They have not been checked by Lean elaboration. Type u is a static universe placeholder for source Type*. Structure field lists are shown inline with semicolons.",
+  "english_source_quote_note": "No external English quotation was read or invented. The parent agent is to supply source quotations independently.",
+  "coverage_count": 33,
+  "coverage": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.Pt",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 25
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.zeroOneInf",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 27
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.mem_zeroOneInf",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 29
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 34
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 38
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.ramIdx",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 46
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.evalComp",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 52
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ramIdxComp",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 56
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.applyK",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 60
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.compK",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 64
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 74
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_one",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 77
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_sub",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 80
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero_iff",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 85
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_exists_P_eq",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 91
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_finite_embeddings",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 96
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_finite_setOf_mem",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 101
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 114
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalGalPoint",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 118
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue_gal",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 122
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.model_cuspsFinite",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 132
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue_zero_iff",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 140
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncritical_cusp_value_iff",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 150
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncritical_ramIdx_of_positive_order",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 184
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "line": 23
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.model_infinite_places",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "line": 33
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.simpleZeroFunction_of_polarRealization",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "line": 58
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection_of_simpleZeros_and_children",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+      "line": 25
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "line": 16
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+      "line": 17
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "line": 16
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspsFinite.lean",
+      "line": 14
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalSelection.lean",
+      "line": 22
+    }
+  ],
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.Pt",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 25,
+      "kind": "abbrev",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "abbrev NoncriticalP1.Pt : Type := Option Tripod.Qbar",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "With $ℚ̄$ the fixed algebraic closure of $ℚ$, the type of points is $ℚ̄∪{∞}$: each finite point is encoded as `some z` and infinity as `none`.",
+      "zh_Hans": "设 $ℚ̄$ 为固定的 $ℚ$ 的代数闭包。点的类型为 $ℚ̄∪{∞}$：有限点编码为 `some z`，无穷远点编码为 `none`。",
+      "ja": "$ℚ̄$ を固定された $ℚ$ の代数閉包とする。点の型は $ℚ̄∪{∞}$ であり、有限点を `some z`、無限遠点を `none` で表す。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.zeroOneInf",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 27,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "def NoncriticalP1.zeroOneInf : Set NoncriticalP1.Pt := {none, some 0, some 1}",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "On the set $ℚ̄∪{∞}$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$, this defines precisely the three-element subset ${∞,0,1}$; infinity is `none`, while finite points use `some`.",
+      "zh_Hans": "在 $ℚ̄∪{∞}$ 上，此定义恰给出三元素子集 ${∞,0,1}$；这里 $ℚ̄$ 为固定的 $ℚ$ 的代数闭包，无穷远点编码为 `none`，有限点使用 `some`。",
+      "ja": "$ℚ̄$ を固定された $ℚ$ の代数閉包として、$ℚ̄∪{∞}$ のちょうど三元からなる部分集合 ${∞,0,1}$ を定める。無限遠点は `none`、有限点は `some` で表す。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.mem_zeroOneInf",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 29,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem NoncriticalP1.mem_zeroOneInf {z : NoncriticalP1.Pt} : z ∈ NoncriticalP1.zeroOneInf ↔ z = none ∨ z = some 0 ∨ z = some 1",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "For every point $z∈ℚ̄∪{∞}$, with $ℚ̄$ the fixed algebraic closure of $ℚ$, membership in the defined subset ${∞,0,1}$ is equivalent to $z=∞$ or $z=0$ or $z=1$; infinity is encoded by `none` and finite points by `some`.",
+      "zh_Hans": "对每个点 $z∈ℚ̄∪{∞}$，属于所定义的子集 ${∞,0,1}$ 当且仅当 $z=∞$、$z=0$、$z=1$ 三者至少一个成立；$ℚ̄$ 是固定的 $ℚ$ 的代数闭包，无穷远点编码为 `none`，有限点编码为 `some`。",
+      "ja": "固定された $ℚ$ の代数閉包を $ℚ̄$ とする。任意の $z∈ℚ̄∪{∞}$ が定義された部分集合 ${∞,0,1}$ に属することは、$z=∞$ または $z=0$ または $z=1$ と同値である。無限遠点を `none`、有限点を `some` で表す。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 34,
+      "kind": "inductive",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "inductive NoncriticalP1.ElemMap : Type | mob (a b c d : ℚ) (h : a * d - b * c ≠ 0) | poly (p : ℚ[X]) (h : 0 < p.natDegree)",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "The type of elementary-map data has exactly two constructors: four rational numbers $a,b,c,d$ together with a proof that $ad-bc≠0$, or a polynomial $p∈ℚ[X]$ together with a proof that its natural degree is strictly positive. This inductive declaration supplies data and proofs of these restrictions; it does not itself define an action on points.",
+      "zh_Hans": "初等映射数据类型恰有两个构造方式：四个有理数 $a,b,c,d$ 连同 $ad-bc≠0$ 的证明，或多项式 $p∈ℚ[X]$ 连同其自然次数严格为正的证明。此归纳定义给出这些数据及限制条件的证明，本身尚未定义对点的作用。",
+      "ja": "初等写像のデータ型にはちょうど二つの構成子がある。有理数 $a,b,c,d$ と $ad-bc≠0$ の証明、または多項式 $p∈ℚ[X]$ とその自然次数が正であることの証明である。この帰納的宣言はこれらのデータと制限条件の証明を与え、点への作用自体はまだ定めない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 38,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "noncomputable def NoncriticalP1.ElemMap.apply : NoncriticalP1.ElemMap → NoncriticalP1.Pt → NoncriticalP1.Pt",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "An elementary map is either a Möbius map $h(z)=(az+b)/(cz+d)$ with $a,b,c,d∈ℚ$ and $ad-bc≠0$, or a polynomial $p∈ℚ[X]$ with $\\deg p>0$. On $ℚ̄∪{∞}$ a Möbius map sends a finite denominator-zero point to $∞$, and sends $∞$ to $∞$ if $c=0$ and to $a/c$ otherwise; a polynomial sends $∞$ to $∞$. Its index $r_h(z)$ is $1$ for a Möbius map; for a polynomial it is $\\deg p$ at $∞$, and the multiplicity of $z$ as a root of $p(X)-p(z)$ after extending coefficients to $ℚ̄$ at finite $z$. For a finite list $H=(h_1,…,h_k)$, let $F_H=h_k∘⋯∘h_1$ on these points, and let $R_H(z)$ be the product of the successive indices along this orbit. The empty list gives $F_H(z)=z$ and $R_H(z)=1$. This defines the point action $h(z)$ specified above, for every elementary-map datum $h$ and every finite or infinite point $z$. The algebraic numbers are elements of the fixed algebraic closure of $ℚ$.",
+      "zh_Hans": "初等映射指以下两类之一：Möbius 映射 $h(z)=(az+b)/(cz+d)$，其中 $a,b,c,d∈ℚ$ 且 $ad-bc≠0$；或正次数多项式 $p∈ℚ[X]$。在 $ℚ̄∪{∞}$ 上，Möbius 映射把有限的分母为零点映到 $∞$，把 $∞$ 在 $c=0$ 时映到 $∞$、在 $c≠0$ 时映到 $a/c$；多项式把 $∞$ 映到 $∞$。其指数 $r_h(z)$ 对 Möbius 映射恒为 $1$；对多项式，在 $∞$ 处为 $\\deg p$，在有限 $z$ 处为扩充系数到 $ℚ̄$ 后 $z$ 作为 $p(X)-p(z)$ 的根的重数。对有限列表 $H=(h_1,…,h_k)$，令 $F_H=h_k∘⋯∘h_1$ 为点上的复合，$R_H(z)$ 为沿相继像点的这些指数之积。空列表给出 $F_H(z)=z$、$R_H(z)=1$。 此处对每个初等映射数据 $h$ 及每个有限或无穷远点 $z$，定义上述点作用 $h(z)$；代数数取自固定的 $ℚ$ 的代数闭包。",
+      "ja": "初等写像とは、$a,b,c,d∈ℚ$、$ad-bc≠0$ を満たす Möbius 写像 $h(z)=(az+b)/(cz+d)$、または正の次数の多項式 $p∈ℚ[X]$ のいずれかである。$ℚ̄∪{∞}$ 上で Möbius 写像は分母が零の有限点を $∞$ に写し、$∞$ は $c=0$ なら $∞$、そうでなければ $a/c$ に写す。多項式は $∞$ を $∞$ に写す。指数 $r_h(z)$ は Möbius 写像では常に $1$、多項式では $∞$ で $\\deg p$、有限点 $z$ では係数を $ℚ̄$ に拡大した $p(X)-p(z)$ の根 $z$ の重複度である。有限リスト $H=(h_1,…,h_k)$ に対し、点上の合成を $F_H=h_k∘⋯∘h_1$、順次得られる像での指数の積を $R_H(z)$ とする。空リストでは $F_H(z)=z$、$R_H(z)=1$ である。 任意の初等写像データ $h$ と有限点または無限遠点 $z$ に対し、上記の点への作用 $h(z)$ を定める。代数数は固定された $ℚ$ の代数閉包の元である。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.ramIdx",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 46,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "noncomputable def NoncriticalP1.ElemMap.ramIdx : NoncriticalP1.ElemMap → NoncriticalP1.Pt → ℕ",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "An elementary map is either a Möbius map $h(z)=(az+b)/(cz+d)$ with $a,b,c,d∈ℚ$ and $ad-bc≠0$, or a polynomial $p∈ℚ[X]$ with $\\deg p>0$. On $ℚ̄∪{∞}$ a Möbius map sends a finite denominator-zero point to $∞$, and sends $∞$ to $∞$ if $c=0$ and to $a/c$ otherwise; a polynomial sends $∞$ to $∞$. Its index $r_h(z)$ is $1$ for a Möbius map; for a polynomial it is $\\deg p$ at $∞$, and the multiplicity of $z$ as a root of $p(X)-p(z)$ after extending coefficients to $ℚ̄$ at finite $z$. For a finite list $H=(h_1,…,h_k)$, let $F_H=h_k∘⋯∘h_1$ on these points, and let $R_H(z)$ be the product of the successive indices along this orbit. The empty list gives $F_H(z)=z$ and $R_H(z)=1$. This defines the natural-number index $r_h(z)$ specified above for each elementary-map datum and point; root multiplicity is the actual polynomial root multiplicity, rather than separately supplied index data. The algebraic numbers belong to the fixed algebraic closure of $ℚ$.",
+      "zh_Hans": "初等映射指以下两类之一：Möbius 映射 $h(z)=(az+b)/(cz+d)$，其中 $a,b,c,d∈ℚ$ 且 $ad-bc≠0$；或正次数多项式 $p∈ℚ[X]$。在 $ℚ̄∪{∞}$ 上，Möbius 映射把有限的分母为零点映到 $∞$，把 $∞$ 在 $c=0$ 时映到 $∞$、在 $c≠0$ 时映到 $a/c$；多项式把 $∞$ 映到 $∞$。其指数 $r_h(z)$ 对 Möbius 映射恒为 $1$；对多项式，在 $∞$ 处为 $\\deg p$，在有限 $z$ 处为扩充系数到 $ℚ̄$ 后 $z$ 作为 $p(X)-p(z)$ 的根的重数。对有限列表 $H=(h_1,…,h_k)$，令 $F_H=h_k∘⋯∘h_1$ 为点上的复合，$R_H(z)$ 为沿相继像点的这些指数之积。空列表给出 $F_H(z)=z$、$R_H(z)=1$。 此处对每个初等映射数据与点，定义上述自然数值指数 $r_h(z)$；根的重数取实际多项式根重数，并非另行提供的指数数据。代数数属于固定的 $ℚ$ 的代数闭包。",
+      "ja": "初等写像とは、$a,b,c,d∈ℚ$、$ad-bc≠0$ を満たす Möbius 写像 $h(z)=(az+b)/(cz+d)$、または正の次数の多項式 $p∈ℚ[X]$ のいずれかである。$ℚ̄∪{∞}$ 上で Möbius 写像は分母が零の有限点を $∞$ に写し、$∞$ は $c=0$ なら $∞$、そうでなければ $a/c$ に写す。多項式は $∞$ を $∞$ に写す。指数 $r_h(z)$ は Möbius 写像では常に $1$、多項式では $∞$ で $\\deg p$、有限点 $z$ では係数を $ℚ̄$ に拡大した $p(X)-p(z)$ の根 $z$ の重複度である。有限リスト $H=(h_1,…,h_k)$ に対し、点上の合成を $F_H=h_k∘⋯∘h_1$、順次得られる像での指数の積を $R_H(z)$ とする。空リストでは $F_H(z)=z$、$R_H(z)=1$ である。 各初等写像データと点について、上記の自然数値指数 $r_h(z)$ を定める。根の重複度は実際の多項式の根の重複度であり、別に与える指数データではない。代数数は固定された $ℚ$ の代数閉包に属する。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.evalComp",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 52,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "noncomputable def NoncriticalP1.evalComp : List NoncriticalP1.ElemMap → NoncriticalP1.Pt → NoncriticalP1.Pt",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "An elementary map is either a Möbius map $h(z)=(az+b)/(cz+d)$ with $a,b,c,d∈ℚ$ and $ad-bc≠0$, or a polynomial $p∈ℚ[X]$ with $\\deg p>0$. On $ℚ̄∪{∞}$ a Möbius map sends a finite denominator-zero point to $∞$, and sends $∞$ to $∞$ if $c=0$ and to $a/c$ otherwise; a polynomial sends $∞$ to $∞$. Its index $r_h(z)$ is $1$ for a Möbius map; for a polynomial it is $\\deg p$ at $∞$, and the multiplicity of $z$ as a root of $p(X)-p(z)$ after extending coefficients to $ℚ̄$ at finite $z$. For a finite list $H=(h_1,…,h_k)$, let $F_H=h_k∘⋯∘h_1$ on these points, and let $R_H(z)$ be the product of the successive indices along this orbit. The empty list gives $F_H(z)=z$ and $R_H(z)=1$. This defines $F_H(z)$ for every list $H$ and every point $z$ in the fixed algebraic closure of $ℚ$ with infinity adjoined, by applying the head of the list first and then the remaining maps; it allows the empty list.",
+      "zh_Hans": "初等映射指以下两类之一：Möbius 映射 $h(z)=(az+b)/(cz+d)$，其中 $a,b,c,d∈ℚ$ 且 $ad-bc≠0$；或正次数多项式 $p∈ℚ[X]$。在 $ℚ̄∪{∞}$ 上，Möbius 映射把有限的分母为零点映到 $∞$，把 $∞$ 在 $c=0$ 时映到 $∞$、在 $c≠0$ 时映到 $a/c$；多项式把 $∞$ 映到 $∞$。其指数 $r_h(z)$ 对 Möbius 映射恒为 $1$；对多项式，在 $∞$ 处为 $\\deg p$，在有限 $z$ 处为扩充系数到 $ℚ̄$ 后 $z$ 作为 $p(X)-p(z)$ 的根的重数。对有限列表 $H=(h_1,…,h_k)$，令 $F_H=h_k∘⋯∘h_1$ 为点上的复合，$R_H(z)$ 为沿相继像点的这些指数之积。空列表给出 $F_H(z)=z$、$R_H(z)=1$。 此处对每个列表 $H$ 及固定的 $ℚ$ 的代数闭包添上无穷远点后的每个点 $z$，定义 $F_H(z)$：先作用列表首项，再依次作用余项；允许空列表。",
+      "ja": "初等写像とは、$a,b,c,d∈ℚ$、$ad-bc≠0$ を満たす Möbius 写像 $h(z)=(az+b)/(cz+d)$、または正の次数の多項式 $p∈ℚ[X]$ のいずれかである。$ℚ̄∪{∞}$ 上で Möbius 写像は分母が零の有限点を $∞$ に写し、$∞$ は $c=0$ なら $∞$、そうでなければ $a/c$ に写す。多項式は $∞$ を $∞$ に写す。指数 $r_h(z)$ は Möbius 写像では常に $1$、多項式では $∞$ で $\\deg p$、有限点 $z$ では係数を $ℚ̄$ に拡大した $p(X)-p(z)$ の根 $z$ の重複度である。有限リスト $H=(h_1,…,h_k)$ に対し、点上の合成を $F_H=h_k∘⋯∘h_1$、順次得られる像での指数の積を $R_H(z)$ とする。空リストでは $F_H(z)=z$、$R_H(z)=1$ である。 任意のリスト $H$ と、固定された $ℚ$ の代数閉包に無限遠点を加えた集合の任意の点 $z$ に対し、$F_H(z)$ を、リストの先頭から順に写像を作用させて定める。空リストも許す。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ramIdxComp",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 56,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "noncomputable def NoncriticalP1.ramIdxComp : List NoncriticalP1.ElemMap → NoncriticalP1.Pt → ℕ",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "An elementary map is either a Möbius map $h(z)=(az+b)/(cz+d)$ with $a,b,c,d∈ℚ$ and $ad-bc≠0$, or a polynomial $p∈ℚ[X]$ with $\\deg p>0$. On $ℚ̄∪{∞}$ a Möbius map sends a finite denominator-zero point to $∞$, and sends $∞$ to $∞$ if $c=0$ and to $a/c$ otherwise; a polynomial sends $∞$ to $∞$. Its index $r_h(z)$ is $1$ for a Möbius map; for a polynomial it is $\\deg p$ at $∞$, and the multiplicity of $z$ as a root of $p(X)-p(z)$ after extending coefficients to $ℚ̄$ at finite $z$. For a finite list $H=(h_1,…,h_k)$, let $F_H=h_k∘⋯∘h_1$ on these points, and let $R_H(z)$ be the product of the successive indices along this orbit. The empty list gives $F_H(z)=z$ and $R_H(z)=1$. This defines $R_H(z)$ for every list $H$ and point $z$ over the fixed algebraic closure of $ℚ$, with infinity adjoined: the first factor is the head map’s index at $z$, and the remaining product is evaluated at the head map’s image of $z$. The value for the empty list is one.",
+      "zh_Hans": "初等映射指以下两类之一：Möbius 映射 $h(z)=(az+b)/(cz+d)$，其中 $a,b,c,d∈ℚ$ 且 $ad-bc≠0$；或正次数多项式 $p∈ℚ[X]$。在 $ℚ̄∪{∞}$ 上，Möbius 映射把有限的分母为零点映到 $∞$，把 $∞$ 在 $c=0$ 时映到 $∞$、在 $c≠0$ 时映到 $a/c$；多项式把 $∞$ 映到 $∞$。其指数 $r_h(z)$ 对 Möbius 映射恒为 $1$；对多项式，在 $∞$ 处为 $\\deg p$，在有限 $z$ 处为扩充系数到 $ℚ̄$ 后 $z$ 作为 $p(X)-p(z)$ 的根的重数。对有限列表 $H=(h_1,…,h_k)$，令 $F_H=h_k∘⋯∘h_1$ 为点上的复合，$R_H(z)$ 为沿相继像点的这些指数之积。空列表给出 $F_H(z)=z$、$R_H(z)=1$。 此处对每个列表 $H$ 及固定的 $ℚ$ 的代数闭包添上无穷远点后的每个点 $z$，定义 $R_H(z)$：首因子为首映射在 $z$ 处的指数，余下乘积在首映射的像点处计算。空列表取值为一。",
+      "ja": "初等写像とは、$a,b,c,d∈ℚ$、$ad-bc≠0$ を満たす Möbius 写像 $h(z)=(az+b)/(cz+d)$、または正の次数の多項式 $p∈ℚ[X]$ のいずれかである。$ℚ̄∪{∞}$ 上で Möbius 写像は分母が零の有限点を $∞$ に写し、$∞$ は $c=0$ なら $∞$、そうでなければ $a/c$ に写す。多項式は $∞$ を $∞$ に写す。指数 $r_h(z)$ は Möbius 写像では常に $1$、多項式では $∞$ で $\\deg p$、有限点 $z$ では係数を $ℚ̄$ に拡大した $p(X)-p(z)$ の根 $z$ の重複度である。有限リスト $H=(h_1,…,h_k)$ に対し、点上の合成を $F_H=h_k∘⋯∘h_1$、順次得られる像での指数の積を $R_H(z)$ とする。空リストでは $F_H(z)=z$、$R_H(z)=1$ である。 任意のリスト $H$ と、固定された $ℚ$ の代数閉包に無限遠点を加えた集合の点 $z$ に対し、$R_H(z)$ を定める。最初の因子は先頭写像の $z$ における指数であり、残りの積はその写像による $z$ の像で計算する。空リストの値は一である。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.applyK",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 60,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "noncomputable def NoncriticalP1.applyK {K : Type u} [Field K] [CharZero K] : NoncriticalP1.ElemMap → K → K",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be any field of characteristic zero. For an elementary datum consisting of $a,b,c,d∈ℚ$ with $ad-bc≠0$, and any $f∈K$, this defines $(af+b)/(cf+d)$ in $K$; for an elementary datum $p∈ℚ[X]$ of strictly positive natural degree, it defines $p(f)$. Rational numbers are mapped into $K$ by its canonical embedding. This is a total $K$-valued operation: a zero denominator gives zero.",
+      "zh_Hans": "设 $K$ 为任意特征零域。 对初等数据 $a,b,c,d∈ℚ$、$ad-bc≠0$ 及任意 $f∈K$，此定义给出 $K$ 中的 $(af+b)/(cf+d)$；对自然次数严格为正的初等多项式数据 $p∈ℚ[X]$，给出 $p(f)$。有理数通过典范嵌入映入 $K$。这是取值于 $K$ 的全函数，分母为零时值为零。",
+      "ja": "$K$ を任意の標数零の体とする。 初等データ $a,b,c,d∈ℚ$、$ad-bc≠0$ と任意の $f∈K$ に対して、$K$ 内の $(af+b)/(cf+d)$ を定める。自然次数が正の初等多項式データ $p∈ℚ[X]$ に対しては $p(f)$ とする。有理数は標準埋め込みで $K$ に写す。これは $K$ 値の全域演算であり、分母が零なら値は零である。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.compK",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 64,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "noncomputable def NoncriticalP1.compK {K : Type u} [Field K] [CharZero K] : List NoncriticalP1.ElemMap → K → K",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be any field of characteristic zero. For every finite list $H=(h_1,…,h_k)$, where each $h_i$ is rational data $(a,b,c,d)$ with $ad-bc≠0$ acting by $(af+b)/(cf+d)$, or a rational polynomial of strictly positive natural degree acting by evaluation, this defines the $K$-valued substitution $G_H(f)=h_k(⋯h_1(f)⋯)$ for every $f∈K$. The empty list gives $f$. All rational coefficients use the canonical embedding into $K$, and division by zero in $K$ is zero.",
+      "zh_Hans": "设 $K$ 为任意特征零域。 对每个有限列表 $H=(h_1,…,h_k)$ 及每个 $f∈K$，此定义给出 $K$ 值代入 $G_H(f)=h_k(⋯h_1(f)⋯)$。每个 $h_i$ 或为满足 $ad-bc≠0$ 的有理数数据 $(a,b,c,d)$，按 $(af+b)/(cf+d)$ 作用；或为自然次数严格为正、按求值作用的有理系数多项式。空列表给出 $f$。所有有理系数经典范嵌入进入 $K$，域中除以零取值为零。",
+      "ja": "$K$ を任意の標数零の体とする。 任意の有限リスト $H=(h_1,…,h_k)$ と任意の $f∈K$ に対し、$K$ 値の代入 $G_H(f)=h_k(⋯h_1(f)⋯)$ を定める。各 $h_i$ は $ad-bc≠0$ を満たし $(af+b)/(cf+d)$ で作用する有理数データ $(a,b,c,d)$、または評価で作用する自然次数が正の有理係数多項式である。空リストの値は $f$ である。有理係数は標準埋め込みで $K$ に入り、体内の零による除算は零である。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 74,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem QbarPoint.noncritical_eval_zero {K : Type u} [Field K] [CharZero K] (x : QbarPoint K) : x.eval 0 x.P.1.zero_mem = 0",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be any field of characteristic zero. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For every such point $x$, evaluation of the regular element $0$ is $E_x(0)=0$.",
+      "zh_Hans": "设 $K$ 为任意特征零域。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对每个这样的点 $x$，正则元素 $0$ 的求值满足 $E_x(0)=0$。",
+      "ja": "$K$ を任意の標数零の体とする。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 このような任意の点 $x$ で、正則な元 $0$ の評価は $E_x(0)=0$ である。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_one",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 77,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem QbarPoint.noncritical_eval_one {K : Type u} [Field K] [CharZero K] (x : QbarPoint K) : x.eval 1 x.P.1.one_mem = 1",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be any field of characteristic zero. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For every such point $x$, evaluation of the regular element $1$ is $E_x(1)=1$.",
+      "zh_Hans": "设 $K$ 为任意特征零域。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对每个这样的点 $x$，正则元素 $1$ 的求值满足 $E_x(1)=1$。",
+      "ja": "$K$ を任意の標数零の体とする。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 このような任意の点 $x$ で、正則な元 $1$ の評価は $E_x(1)=1$ である。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_sub",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 80,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem QbarPoint.noncritical_eval_sub {K : Type u} [Field K] [CharZero K] (x : QbarPoint K) {f g : K} (hf : f ∈ x.P.1) (hg : g ∈ x.P.1) : x.eval (f - g) (sub_mem hf hg) = x.eval f hf - x.eval g hg",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be any field of characteristic zero. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For every such point $x$ and every $f,g∈K$ with the supplied membership hypotheses $f,g∈O_P$, the difference is regular and $E_x(f-g)=E_x(f)-E_x(g)$.",
+      "zh_Hans": "设 $K$ 为任意特征零域。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对每个这样的点 $x$ 及每对 $f,g∈K$，若给定 $f,g∈O_P$ 的归属假设，则差也正则，并有 $E_x(f-g)=E_x(f)-E_x(g)$。",
+      "ja": "$K$ を任意の標数零の体とする。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 このような任意の点 $x$ と任意の $f,g∈K$ に対し、$f,g∈O_P$ という所属の仮定が与えられれば、差も正則であり、$E_x(f-g)=E_x(f)-E_x(g)$ が成り立つ。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero_iff",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 85,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem QbarPoint.noncritical_eval_zero_iff {K : Type u} [Field K] [CharZero K] (x : QbarPoint K) [IsCurveField K] {f : K} (hf : f ∈ x.P.1) (hf0 : f ≠ 0) : x.eval f hf = 0 ↔ 0 < x.P.ord f",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be a field of characteristic zero such that there is a $t∈K$ transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $t$) and $K$ is finite dimensional over the subfield $ℚ(t)$ generated by $ℚ$ and $t$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For every such point $x$ and every $f∈K$ with $f∈O_P$ and $f≠0$, $E_x(f)=0$ if and only if $v_P(f)>0$, where $v_P$ is the normalized integer order given by minus the integer logarithm of the maximal-ideal valuation of the discrete valuation ring $O_P$, with $v_P(0)=0$. The hypothesis explicitly excludes the zero element.",
+      "zh_Hans": "设 $K$ 为特征零域，并且存在在 $ℚ$ 上超越的 $t∈K$（没有非零有理系数多项式在 $t$ 处为零），使 $K$ 在由 $ℚ$ 与 $t$ 生成的子域 $ℚ(t)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对每个这样的点 $x$ 及每个满足 $f∈O_P$、$f≠0$ 的 $f∈K$，$E_x(f)=0$ 当且仅当 $v_P(f)>0$；其中 $v_P$ 是离散赋值环 $O_P$ 的极大理想赋值的整数对数的相反数所给出的规范化整数阶数，约定 $v_P(0)=0$。假设明确排除了零元素。",
+      "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的な $t∈K$（$t$ で零になる零でない有理係数多項式はない）が存在して、$K$ は $ℚ,t$ が生成する部分体 $ℚ(t)$ 上有限次元であるとする。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 このような任意の点 $x$ と、$f∈O_P$、$f≠0$ を満たす任意の $f∈K$ に対し、$E_x(f)=0$ と $v_P(f)>0$ は同値である。$v_P$ は離散付値環 $O_P$ の極大イデアル付値の整数対数に負号を付けた正規化整数位数で、$v_P(0)=0$ とする。仮定は零元を明示的に除く。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_exists_P_eq",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 91,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem QbarPoint.noncritical_exists_P_eq {K : Type u} [Field K] [CharZero K] [IsCurveField K] (P : Place K) : ∃ x : QbarPoint K, x.P = P",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be a field of characteristic zero such that there is a $t∈K$ transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $t$) and $K$ is finite dimensional over the subfield $ℚ(t)$ generated by $ℚ$ and $t$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For every place $P$ there exists an algebraic point $x$ whose underlying place is exactly $P$; equivalently the full residue field $κ(P)$ has a unital ring homomorphism into the fixed algebraic closure of $ℚ$. No particular embedding is specified and uniqueness is not asserted.",
+      "zh_Hans": "设 $K$ 为特征零域，并且存在在 $ℚ$ 上超越的 $t∈K$（没有非零有理系数多项式在 $t$ 处为零），使 $K$ 在由 $ℚ$ 与 $t$ 生成的子域 $ℚ(t)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对每个处 $P$，存在底层处恰为 $P$ 的代数点 $x$；等价地，整个余域 $κ(P)$ 存在到固定的 $ℚ$ 的代数闭包的保幺环同态。没有指定某个嵌入，也没有断言唯一性。",
+      "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的な $t∈K$（$t$ で零になる零でない有理係数多項式はない）が存在して、$K$ は $ℚ,t$ が生成する部分体 $ℚ(t)$ 上有限次元であるとする。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 任意の素点 $P$ に対し、基礎となる素点がちょうど $P$ である代数点 $x$ が存在する。すなわち剰余体 $κ(P)$ 全体から固定された $ℚ$ の代数閉包への単位的環準同型が存在する。特定の埋め込みは指定せず、一意性も主張しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_finite_embeddings",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 96,
+      "kind": "instance",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "instance QbarPoint.noncritical_finite_embeddings {K : Type u} [Field K] [CharZero K] [IsCurveField K] (P : Place K) : Finite (P.ResidueField →+* Tripod.Qbar)",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be a field of characteristic zero such that there is a $t∈K$ transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $t$) and $K$ is finite dimensional over the subfield $ℚ(t)$ generated by $ℚ$ and $t$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. For each place $P$, the type of all unital ring homomorphisms from its entire residue field $κ(P)$ to the fixed algebraic closure of $ℚ$ is finite. This supplies finiteness, not an enumeration or a specified number of homomorphisms.",
+      "zh_Hans": "设 $K$ 为特征零域，并且存在在 $ℚ$ 上超越的 $t∈K$（没有非零有理系数多项式在 $t$ 处为零），使 $K$ 在由 $ℚ$ 与 $t$ 生成的子域 $ℚ(t)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 对每个处 $P$，从其整个余域 $κ(P)$ 到固定的 $ℚ$ 的代数闭包的所有保幺环同态组成的类型是有限的。此处给出有限性，并未给出枚举或同态个数的指定值。",
+      "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的な $t∈K$（$t$ で零になる零でない有理係数多項式はない）が存在して、$K$ は $ℚ,t$ が生成する部分体 $ℚ(t)$ 上有限次元であるとする。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 各素点 $P$ について、その剰余体 $κ(P)$ 全体から固定された $ℚ$ の代数閉包へのすべての単位的環準同型の型は有限である。有限性を与えるが、列挙や準同型の具体的な個数は与えない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_finite_setOf_mem",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 101,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem QbarPoint.noncritical_finite_setOf_mem {K : Type u} [Field K] [CharZero K] [IsCurveField K] {S : Set (Place K)} (hS : S.Finite) : {x : QbarPoint K | x.P ∈ S}.Finite",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $K$ be a field of characteristic zero such that there is a $t∈K$ transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $t$) and $K$ is finite dimensional over the subfield $ℚ(t)$ generated by $ℚ$ and $t$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For every set $S$ of places and every hypothesis that $S$ is finite, the set of all points $(P,ι)$ with $P∈S$ is finite, retaining every residue-field homomorphism $ι$. The statement includes $S=∅$.",
+      "zh_Hans": "设 $K$ 为特征零域，并且存在在 $ℚ$ 上超越的 $t∈K$（没有非零有理系数多项式在 $t$ 处为零），使 $K$ 在由 $ℚ$ 与 $t$ 生成的子域 $ℚ(t)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对每个处集合 $S$ 及其有限性的假设，所有满足 $P∈S$ 的点 $(P,ι)$ 组成的集合都是有限的，并保留每个余域同态 $ι$。此断言也包含 $S=∅$。",
+      "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的な $t∈K$（$t$ で零になる零でない有理係数多項式はない）が存在して、$K$ は $ℚ,t$ が生成する部分体 $ℚ(t)$ 上有限次元であるとする。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 任意の素点集合 $S$ とその有限性の仮定に対し、$P∈S$ を満たすすべての点 $(P,ι)$ の集合は有限であり、各剰余体準同型 $ι$ をすべて含める。$S=∅$ も含む。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 114,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "noncomputable def noncriticalValue {N : ℕ} (M : Model N) (x : QbarPoint M.K) (φ : M.K) : NoncriticalP1.Pt",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For every such point $x$ and every $φ∈K$, this defines $V_x(φ)∈ℚ̄∪{∞}$ to be $E_x(φ)$ if $φ∈O_P$ and $∞$ otherwise; finite values are encoded with `some` and infinity with `none`. In particular a regular zero value is distinct from infinity.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对每个这样的点 $x$ 及每个 $φ∈K$，此定义给出 $V_x(φ)∈ℚ̄∪{∞}$：$φ∈O_P$ 时为 $E_x(φ)$，否则为 $∞$；有限值使用 `some` 编码，无穷远使用 `none` 编码。因此正则的零值与无穷远不同。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 このような任意の点 $x$ と任意の $φ∈K$ に対し、$V_x(φ)∈ℚ̄∪{∞}$ を、$φ∈O_P$ なら $E_x(φ)$、それ以外なら $∞$ と定める。有限値は `some`、無限遠は `none` で表す。特に正則な零の値と無限遠は異なる。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalGalPoint",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 118,
+      "kind": "def",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "noncomputable def noncriticalGalPoint {N : ℕ} (M : Model N) (σ : Tripod.Qbar ≃ₐ[ℚ] Tripod.Qbar) (x : QbarPoint M.K) : QbarPoint M.K",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For every $ℚ$-algebra automorphism $σ$ of $ℚ̄$ and every point $x=(P,ι)$, this defines the point $(P,σ∘ι)$, leaving its place fixed and composing its entire residue-field embedding with $σ$.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对 $ℚ̄$ 的每个 $ℚ$ 代数自同构 $σ$ 及每个点 $x=(P,ι)$，此定义给出点 $(P,σ∘ι)$：底层处保持为 $P$，整个余域嵌入与 $σ$ 复合。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 $ℚ̄$ の任意の $ℚ$ 代数自己同型 $σ$ と任意の点 $x=(P,ι)$ に対し、点 $(P,σ∘ι)$ を定める。基礎となる素点は $P$ のままで、剰余体全体の埋め込みに $σ$ を合成する。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue_gal",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 122,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem noncriticalValue_gal {N : ℕ} (M : Model N) (σ : Tripod.Qbar ≃ₐ[ℚ] Tripod.Qbar) (x : QbarPoint M.K) (φ : M.K) : noncriticalValue M (noncriticalGalPoint M σ x) φ = (noncriticalValue M x φ).map σ",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. Write $V_x(f)=E_x(f)$ when $f∈O_P$ and $V_x(f)=∞$ otherwise, as an element of $ℚ̄∪{∞}$ (encoded respectively by `some` and `none`). For every $ℚ$-algebra automorphism $σ$ of $ℚ̄$, every point $x=(P,ι)$ and every $φ∈K$, $V_{(P,σ∘ι)}(φ)=σ_*(V_x(φ))$, where $σ_*$ applies $σ$ to finite values and fixes $∞$. No transcendence or nonzero hypothesis on $φ$ is imposed.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 将 $V_x(f)$ 定义为：$f∈O_P$ 时为 $E_x(f)$，否则为 $∞$；它属于 $ℚ̄∪{∞}$（分别用 `some` 和 `none` 编码）。 对 $ℚ̄$ 的每个 $ℚ$ 代数自同构 $σ$、每个点 $x=(P,ι)$ 及每个 $φ∈K$，有 $V_{(P,σ∘ι)}(φ)=σ_*(V_x(φ))$；其中 $σ_*$ 对有限值作用 $σ$，并固定 $∞$。未对 $φ$ 加超越或非零假设。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 $V_x(f)$ は $f∈O_P$ のとき $E_x(f)$、それ以外のとき $∞$ と定め、$ℚ̄∪{∞}$ の元とする（それぞれ `some` と `none` で表す）。 $ℚ̄$ の任意の $ℚ$ 代数自己同型 $σ$、任意の点 $x=(P,ι)$、任意の $φ∈K$ に対し、$V_{(P,σ∘ι)}(φ)=σ_*(V_x(φ))$ である。$σ_*$ は有限値に $σ$ を作用させ、$∞$ を固定する。$φ$ の超越性や非零性は仮定しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.model_cuspsFinite",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 132,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem model_cuspsFinite {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (φ : M.K) : (cusps M hDVR φ).Finite",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. For every $φ∈K$, the set of all places $P$ such that $v_P(φ)≠0$ or $v_P(φ-1)>0$ is finite. The statement includes $φ=0$ and $φ=1$, with the stated zero-order convention, and does not require a Belyi condition.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 对每个 $φ∈K$，满足 $v_P(φ)≠0$ 或 $v_P(φ-1)>0$ 的所有处 $P$ 组成的集合是有限的。按上述零元素阶数约定，此断言也包含 $φ=0$ 与 $φ=1$，并不要求 Belyi 条件。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 任意の $φ∈K$ に対し、$v_P(φ)≠0$ または $v_P(φ-1)>0$ を満たすすべての素点 $P$ の集合は有限である。上記の零元の位数の規約のもとで $φ=0$ と $φ=1$ も含み、Belyi 条件は仮定しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalValue_zero_iff",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 140,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem noncriticalValue_zero_iff {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (x : QbarPoint M.K) {φ : M.K} (hφ0 : φ ≠ 0) : noncriticalValue M x φ = some 0 ↔ 0 < ord M hDVR x.P φ",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. Write $V_x(f)=E_x(f)$ when $f∈O_P$ and $V_x(f)=∞$ otherwise, as an element of $ℚ̄∪{∞}$ (encoded respectively by `some` and `none`). For every such point $x=(P,ι)$ and every nonzero $φ∈K$, $V_x(φ)=0$ if and only if $v_P(φ)>0$; equality to zero means the finite zero point, not infinity. The assertion explicitly excludes $φ=0$.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 将 $V_x(f)$ 定义为：$f∈O_P$ 时为 $E_x(f)$，否则为 $∞$；它属于 $ℚ̄∪{∞}$（分别用 `some` 和 `none` 编码）。 对每个这样的点 $x=(P,ι)$ 及每个非零 $φ∈K$，$V_x(φ)=0$ 当且仅当 $v_P(φ)>0$；这里等于零指有限的零点，而非无穷远点。此断言明确排除了 $φ=0$。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 $V_x(f)$ は $f∈O_P$ のとき $E_x(f)$、それ以外のとき $∞$ と定め、$ℚ̄∪{∞}$ の元とする（それぞれ `some` と `none` で表す）。 このような任意の点 $x=(P,ι)$ と任意の零でない $φ∈K$ に対し、$V_x(φ)=0$ と $v_P(φ)>0$ は同値である。零との等号は有限の零点を意味し、無限遠点ではない。$φ=0$ は明示的に除く。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncritical_cusp_value_iff",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 150,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem noncritical_cusp_value_iff {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (φ : M.K) (hφ : Transcendental ℚ φ) (x : QbarPoint M.K) : x.P ∈ cusps M hDVR φ ↔ noncriticalValue M x φ ∈ NoncriticalP1.zeroOneInf",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. Write $V_x(f)=E_x(f)$ when $f∈O_P$ and $V_x(f)=∞$ otherwise, as an element of $ℚ̄∪{∞}$ (encoded respectively by `some` and `none`). For every $φ∈K$ transcendental over $ℚ$ and every point $x=(P,ι)$, the condition $v_P(φ)≠0$ or $v_P(φ-1)>0$ is equivalent to $V_x(φ)∈{∞,0,1}$. Transcendence means that no nonzero rational-coefficient polynomial vanishes at $φ$.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 将 $V_x(f)$ 定义为：$f∈O_P$ 时为 $E_x(f)$，否则为 $∞$；它属于 $ℚ̄∪{∞}$（分别用 `some` 和 `none` 编码）。 对每个在 $ℚ$ 上超越的 $φ∈K$ 及每个点 $x=(P,ι)$，条件 $v_P(φ)≠0$ 或 $v_P(φ-1)>0$ 等价于 $V_x(φ)∈{∞,0,1}$。超越是指没有非零有理系数多项式在 $φ$ 处为零。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 $V_x(f)$ は $f∈O_P$ のとき $E_x(f)$、それ以外のとき $∞$ と定め、$ℚ̄∪{∞}$ の元とする（それぞれ `some` と `none` で表す）。 $ℚ$ 上超越的な任意の $φ∈K$ と任意の点 $x=(P,ι)$ に対し、$v_P(φ)≠0$ または $v_P(φ-1)>0$ という条件は、$V_x(φ)∈{∞,0,1}$ と同値である。超越的とは、$φ$ で零になる零でない有理係数多項式がないことをいう。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncritical_ramIdx_of_positive_order",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "line": 184,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem noncritical_ramIdx_of_positive_order {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (φ : M.K) (P : Place M.K) (hpos : 0 < ord M hDVR P φ) : ramIdx M hDVR φ P = ord M hDVR P φ",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. For $f∈K$, define $e_f(P)$ as follows: if $f∈O_P$, let $m_{P,f}$ be the minimal polynomial over $ℚ$ of its residue in $κ(P)$ and put $e_f(P)=v_P(m_{P,f}(f))$; if $f∉O_P$, put $e_f(P)=-v_P(f)$. Define $C_f={P:v_P(f)≠0\\text{ or }v_P(f-1)>0}$. For every $φ∈K$ and every place $P$ with $v_P(φ)>0$, the equality $e_φ(P)=v_P(φ)$ holds. No transcendence hypothesis is imposed; the positive-order hypothesis itself excludes $φ=0$ under the stated convention.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 对 $f∈K$，如下定义分歧指数 $e_f(P)$：若 $f∈O_P$，令 $m_{P,f}$ 为 $f$ 的余类在余域 $κ(P)$ 中关于 $ℚ$ 的最小多项式，并令 $e_f(P)=v_P(m_{P,f}(f))$；若 $f∉O_P$，令 $e_f(P)=-v_P(f)$。定义尖点处集合 $C_f={P:v_P(f)≠0\\text{ 或 }v_P(f-1)>0}$。 对每个 $φ∈K$ 及每个满足 $v_P(φ)>0$ 的处 $P$，有 $e_φ(P)=v_P(φ)$。未加超越假设；按上述约定，正阶数假设本身排除了 $φ=0$。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 $f∈K$ の分岐指数 $e_f(P)$ を次で定める。$f∈O_P$ なら、その剰余類の $κ(P)$ における $ℚ$ 上の最小多項式を $m_{P,f}$ として $e_f(P)=v_P(m_{P,f}(f))$ と置き、$f∉O_P$ なら $e_f(P)=-v_P(f)$ と置く。尖点の素点集合を $C_f={P:v_P(f)≠0\\text{ または }v_P(f-1)>0}$ とする。 任意の $φ∈K$ と $v_P(φ)>0$ を満たす任意の素点 $P$ に対し、$e_φ(P)=v_P(φ)$ が成り立つ。超越性は仮定しない。上記の規約のもとで正の位数という仮定自体が $φ=0$ を除く。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "line": 23,
+      "kind": "structure",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "structure SimpleZeroFunction {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (T : Finset (Place M.K)) where ψ : M.K; transcendental : Transcendental ℚ ψ; T' : Finset (Place M.K); contains : T ⊆ T'; nonempty : T'.Nonempty; simple : ∀ P ∈ T', ord M hDVR P ψ = 1; no_other_zeros : ∀ P ∉ T', ord M hDVR P ψ ≤ 0",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. For every finite set $T$ of places, this defines the type of data $(ψ,T′)$ where $ψ∈K$ is transcendental over $ℚ$, $T′$ is a nonempty finite set of places, $T⊆T′$, every $P∈T′$ satisfies $v_P(ψ)=1$, and every $P∉T′$ satisfies $v_P(ψ)≤0$, together with proofs of these conditions. The requested set $T$ may be empty; $T′$ must still be nonempty.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 对每个处的有限集合 $T$，此定义给出数据 $(ψ,T′)$ 及相关证明组成的类型，其中 $ψ∈K$ 在 $ℚ$ 上超越，$T′$ 为处的非空有限集合，$T⊆T′$，每个 $P∈T′$ 满足 $v_P(ψ)=1$，每个 $P∉T′$ 满足 $v_P(ψ)≤0$。指定集合 $T$ 可以为空，但 $T′$ 仍须非空。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 任意の素点の有限集合 $T$ に対し、データ $(ψ,T′)$ とその条件の証明からなる型を定める。$ψ∈K$ は $ℚ$ 上超越的であり、$T′$ は空でない素点の有限集合、$T⊆T′$ であり、$P∈T′$ なら $v_P(ψ)=1$、$P∉T′$ なら $v_P(ψ)≤0$ である。指定する $T$ は空でもよいが、$T′$ は空であってはならない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.model_infinite_places",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "line": 33,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem model_infinite_places {N : ℕ} (M : Model N) : Infinite (Place M.K)",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. The type of all these places of $K$ is infinite. This quantifies over the full proper valuation-subring carrier rather than a chosen affine chart; no discrete-valuation or residue-finiteness hypothesis is separately required.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 $K$ 的所有这些处组成的类型是无限的。所用范围为全部真赋值子环，而非某个选定仿射图中的处；没有另行要求离散赋值或余域有限性假设。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $K$ のこれらすべての素点からなる型は無限である。対象は選択したアフィンチャートではなく、真の付値部分環全体であり、離散付値性や剰余体の有限性は別の仮定として要求しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.simpleZeroFunction_of_polarRealization",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "line": 58,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem simpleZeroFunction_of_polarRealization {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRealize : ∃ N1 : ℤ, ∀ A : Divisor M, 0 ≤ A → N1 ≤ divisorDegree M A → ∃ f : M.K, ∀ P : Place M.K, poleMultiplicity M hDVR f P = A P) (T : Finset (Place M.K)) : Nonempty (SimpleZeroFunction M hDVR T)",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. For a finite set of places $T$, a simple-zero datum consists of $ψ∈K$ transcendental over $ℚ$, a nonempty finite set $T′$ containing $T$, the equalities $v_P(ψ)=1$ for every $P∈T′$, and the inequalities $v_P(ψ)≤0$ for every $P∉T′$. Assume there exists an integer $n_1$ such that every finitely supported integer function $A$ on the places with $A(P)≥0$ for all $P$ and $n_1≤\\sum_P A(P)[κ(P):ℚ]$ is realized by an element $f∈K$ with $\\max(0,-v_P(f))=A(P)$ at every place; the degree $[κ(P):ℚ]$ is the finite vector-space dimension. Then for every finite set $T$ of places there exists at least one simple-zero datum of the specified kind. Neither $n_1$ nor $T$ is required to be positive or nonempty respectively.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 对处的有限集合 $T$，单零点数据包含在 $ℚ$ 上超越的 $ψ∈K$、包含 $T$ 的非空有限集合 $T′$，并满足每个 $P∈T′$ 都有 $v_P(ψ)=1$，每个 $P∉T′$ 都有 $v_P(ψ)≤0$。 假设存在整数 $n_1$，使处上的每个有限支撑整数函数 $A$，只要对所有 $P$ 有 $A(P)≥0$ 且 $n_1≤\\sum_P A(P)[κ(P):ℚ]$，就存在 $f∈K$，使每个处都满足 $\\max(0,-v_P(f))=A(P)$；次数 $[κ(P):ℚ]$ 是有限向量空间维数。则对每个处的有限集合 $T$，至少存在一个上述单零点数据。不要求 $n_1$ 为正，也不要求 $T$ 非空。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 素点の有限集合 $T$ に対する単純零点データとは、$ℚ$ 上超越的な $ψ∈K$ と $T$ を含む空でない有限集合 $T′$ で、$P∈T′$ では $v_P(ψ)=1$、$P∉T′$ では $v_P(ψ)≤0$ を満たすものである。 整数 $n_1$ が存在し、素点上の有限台整数値関数 $A$ がすべての $P$ で $A(P)≥0$ と $n_1≤\\sum_P A(P)[κ(P):ℚ]$ を満たせば、すべての素点で $\\max(0,-v_P(f))=A(P)$ を満たす $f∈K$ が存在すると仮定する。次数 $[κ(P):ℚ]$ は有限なベクトル空間次元である。このとき任意の素点の有限集合 $T$ に対し、上記の単純零点データが少なくとも一つ存在する。$n_1$ の正値性も $T$ の非空性も要求しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection_of_simpleZeros_and_children",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+      "line": 25,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem noncriticalSelection_of_simpleZeros_and_children {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n(hSimple : ∀ T : Finset (Place M.K), Nonempty (SimpleZeroFunction M hDVR T))\n(hFiniteRam : ∀ ψ : M.K, Transcendental ℚ ψ → {P : Place M.K | 1 < ramIdx M hDVR ψ P}.Finite)\n(hCompose : ∀ ψ : M.K, Transcendental ℚ ψ → (∀ P : Place M.K, 0 < ramIdx M hDVR ψ P) ∧ ∀ (hs : List NoncriticalP1.ElemMap) (x : QbarPoint M.K), Transcendental ℚ (NoncriticalP1.compK hs ψ) ∧ noncriticalValue M x (NoncriticalP1.compK hs ψ) = NoncriticalP1.evalComp hs (noncriticalValue M x ψ) ∧ ramIdx M hDVR (NoncriticalP1.compK hs ψ) x.P = ramIdx M hDVR ψ x.P * (NoncriticalP1.ramIdxComp hs (noncriticalValue M x ψ) : ℤ))\n(hP1 : ∀ S : Finset NoncriticalP1.Pt, (∀ σ : Tripod.Qbar ≃ₐ[ℚ] Tripod.Qbar, ∀ z ∈ S, z.map σ ∈ S) → some 0 ∉ S → ∃ hs : List NoncriticalP1.ElemMap, (∀ z ∈ S, NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf) ∧ NoncriticalP1.evalComp hs (some 0) ∉ NoncriticalP1.zeroOneInf ∧ (∀ z, 1 < NoncriticalP1.ramIdxComp hs z → NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf)) : NoncriticalSelection M hDVR",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For $f∈K$, define $e_f(P)$ as follows: if $f∈O_P$, let $m_{P,f}$ be the minimal polynomial over $ℚ$ of its residue in $κ(P)$ and put $e_f(P)=v_P(m_{P,f}(f))$; if $f∉O_P$, put $e_f(P)=-v_P(f)$. Define $C_f={P:v_P(f)≠0\\text{ or }v_P(f-1)>0}$. Write $V_x(f)=E_x(f)$ when $f∈O_P$ and $V_x(f)=∞$ otherwise, as an element of $ℚ̄∪{∞}$ (encoded respectively by `some` and `none`). An elementary map is either a Möbius map $h(z)=(az+b)/(cz+d)$ with $a,b,c,d∈ℚ$ and $ad-bc≠0$, or a polynomial $p∈ℚ[X]$ with $\\deg p>0$. On $ℚ̄∪{∞}$ a Möbius map sends a finite denominator-zero point to $∞$, and sends $∞$ to $∞$ if $c=0$ and to $a/c$ otherwise; a polynomial sends $∞$ to $∞$. Its index $r_h(z)$ is $1$ for a Möbius map; for a polynomial it is $\\deg p$ at $∞$, and the multiplicity of $z$ as a root of $p(X)-p(z)$ after extending coefficients to $ℚ̄$ at finite $z$. For a finite list $H=(h_1,…,h_k)$, let $F_H=h_k∘⋯∘h_1$ on these points, and let $R_H(z)$ be the product of the successive indices along this orbit. The empty list gives $F_H(z)=z$ and $R_H(z)=1$. For $f∈K$ let $G_H(f)$ be the same successive substitution of the rational formulas in $K$, starting with $f$; field division is total, so division by zero gives zero in this definition. For a finite set of places $T$, a simple-zero datum consists of $ψ∈K$ transcendental over $ℚ$, a nonempty finite set $T′$ containing $T$, the equalities $v_P(ψ)=1$ for every $P∈T′$, and the inequalities $v_P(ψ)≤0$ for every $P∉T′$. Assume four hypotheses: (1) every finite set $T$ of places admits a simple-zero datum; (2) for every $ψ∈K$ transcendental over $ℚ$, the set ${P:e_ψ(P)>1}$ is finite; (3) for every such $ψ$, every place has $e_ψ(P)>0$, and for every list $H$ and every point $x=(P,ι)$, $G_H(ψ)$ is transcendental over $ℚ$, $V_x(G_H(ψ))=F_H(V_x(ψ))$, and $e_{G_H(ψ)}(P)=e_ψ(P)R_H(V_x(ψ))$, with the natural product index regarded as an integer; (4) for every finite $S⊆ℚ̄∪{∞}$ stable under all $ℚ$-algebra automorphisms of $ℚ̄$ (which fix $∞$), with $0∉S$, there is a list $H$ such that $F_H(S)⊆{∞,0,1}$, $F_H(0)∉{∞,0,1}$, and for every point $z$, $R_H(z)>1$ implies $F_H(z)∈{∞,0,1}$. Then for every finite set $T$ of places there exists $φ∈K$ transcendental over $ℚ$ such that $e_φ(P)>1$ implies $P∈C_φ$ at every place, and $P∉C_φ$ for every $P∈T$. The finite sets and map lists may be empty wherever the displayed hypotheses permit them; no model existence is asserted.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对 $f∈K$，如下定义分歧指数 $e_f(P)$：若 $f∈O_P$，令 $m_{P,f}$ 为 $f$ 的余类在余域 $κ(P)$ 中关于 $ℚ$ 的最小多项式，并令 $e_f(P)=v_P(m_{P,f}(f))$；若 $f∉O_P$，令 $e_f(P)=-v_P(f)$。定义尖点处集合 $C_f={P:v_P(f)≠0\\text{ 或 }v_P(f-1)>0}$。 将 $V_x(f)$ 定义为：$f∈O_P$ 时为 $E_x(f)$，否则为 $∞$；它属于 $ℚ̄∪{∞}$（分别用 `some` 和 `none` 编码）。 初等映射指以下两类之一：Möbius 映射 $h(z)=(az+b)/(cz+d)$，其中 $a,b,c,d∈ℚ$ 且 $ad-bc≠0$；或正次数多项式 $p∈ℚ[X]$。在 $ℚ̄∪{∞}$ 上，Möbius 映射把有限的分母为零点映到 $∞$，把 $∞$ 在 $c=0$ 时映到 $∞$、在 $c≠0$ 时映到 $a/c$；多项式把 $∞$ 映到 $∞$。其指数 $r_h(z)$ 对 Möbius 映射恒为 $1$；对多项式，在 $∞$ 处为 $\\deg p$，在有限 $z$ 处为扩充系数到 $ℚ̄$ 后 $z$ 作为 $p(X)-p(z)$ 的根的重数。对有限列表 $H=(h_1,…,h_k)$，令 $F_H=h_k∘⋯∘h_1$ 为点上的复合，$R_H(z)$ 为沿相继像点的这些指数之积。空列表给出 $F_H(z)=z$、$R_H(z)=1$。 对 $f∈K$，令 $G_H(f)$ 为从 $f$ 开始、在 $K$ 中相继代入上述有理式所得的元素；这里域除法是全函数，因此此定义中的除以零取值为零。 对处的有限集合 $T$，单零点数据包含在 $ℚ$ 上超越的 $ψ∈K$、包含 $T$ 的非空有限集合 $T′$，并满足每个 $P∈T′$ 都有 $v_P(ψ)=1$，每个 $P∉T′$ 都有 $v_P(ψ)≤0$。 假设四项条件：（1）每个处的有限集合 $T$ 都有单零点数据；（2）对每个在 $ℚ$ 上超越的 $ψ∈K$，集合 ${P:e_ψ(P)>1}$ 有限；（3）对每个这样的 $ψ$，每个处都满足 $e_ψ(P)>0$，并且对每个列表 $H$ 与每个点 $x=(P,ι)$，$G_H(ψ)$ 在 $ℚ$ 上超越，$V_x(G_H(ψ))=F_H(V_x(ψ))$，且 $e_{G_H(ψ)}(P)=e_ψ(P)R_H(V_x(ψ))$，其中自然数值的乘积指数视为整数；（4）对每个在 $ℚ̄$ 的全部 $ℚ$ 代数自同构作用下稳定的有限集合 $S⊆ℚ̄∪{∞}$（自同构固定 $∞$），若 $0∉S$，则存在列表 $H$，使 $F_H(S)⊆{∞,0,1}$、$F_H(0)∉{∞,0,1}$，且对每个点 $z$，$R_H(z)>1$ 蕴含 $F_H(z)∈{∞,0,1}$。则对每个处的有限集合 $T$，存在在 $ℚ$ 上超越的 $φ∈K$，使每个处都满足 $e_φ(P)>1$ 蕴含 $P∈C_φ$，并且每个 $P∈T$ 都有 $P∉C_φ$。凡上述条件允许之处，有限集合与映射列表均可为空；此处不主张模型存在。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 $f∈K$ の分岐指数 $e_f(P)$ を次で定める。$f∈O_P$ なら、その剰余類の $κ(P)$ における $ℚ$ 上の最小多項式を $m_{P,f}$ として $e_f(P)=v_P(m_{P,f}(f))$ と置き、$f∉O_P$ なら $e_f(P)=-v_P(f)$ と置く。尖点の素点集合を $C_f={P:v_P(f)≠0\\text{ または }v_P(f-1)>0}$ とする。 $V_x(f)$ は $f∈O_P$ のとき $E_x(f)$、それ以外のとき $∞$ と定め、$ℚ̄∪{∞}$ の元とする（それぞれ `some` と `none` で表す）。 初等写像とは、$a,b,c,d∈ℚ$、$ad-bc≠0$ を満たす Möbius 写像 $h(z)=(az+b)/(cz+d)$、または正の次数の多項式 $p∈ℚ[X]$ のいずれかである。$ℚ̄∪{∞}$ 上で Möbius 写像は分母が零の有限点を $∞$ に写し、$∞$ は $c=0$ なら $∞$、そうでなければ $a/c$ に写す。多項式は $∞$ を $∞$ に写す。指数 $r_h(z)$ は Möbius 写像では常に $1$、多項式では $∞$ で $\\deg p$、有限点 $z$ では係数を $ℚ̄$ に拡大した $p(X)-p(z)$ の根 $z$ の重複度である。有限リスト $H=(h_1,…,h_k)$ に対し、点上の合成を $F_H=h_k∘⋯∘h_1$、順次得られる像での指数の積を $R_H(z)$ とする。空リストでは $F_H(z)=z$、$R_H(z)=1$ である。 $f∈K$ に対し、$G_H(f)$ を $f$ から始めて同じ有理式を $K$ 内で順次代入した元とする。体の除算は全域的であり、この定義では零による除算の値は零である。 素点の有限集合 $T$ に対する単純零点データとは、$ℚ$ 上超越的な $ψ∈K$ と $T$ を含む空でない有限集合 $T′$ で、$P∈T′$ では $v_P(ψ)=1$、$P∉T′$ では $v_P(ψ)≤0$ を満たすものである。 四つの条件を仮定する。（1）素点の任意の有限集合 $T$ に単純零点データが存在する。（2）$ℚ$ 上超越的な任意の $ψ∈K$ について ${P:e_ψ(P)>1}$ は有限である。（3）そのような各 $ψ$ に対し、すべての素点で $e_ψ(P)>0$ であり、任意のリスト $H$ と任意の点 $x=(P,ι)$ に対して、$G_H(ψ)$ は $ℚ$ 上超越的で、$V_x(G_H(ψ))=F_H(V_x(ψ))$、$e_{G_H(ψ)}(P)=e_ψ(P)R_H(V_x(ψ))$ である。自然数値の積の指数は整数とみなす。（4）$ℚ̄$ のすべての $ℚ$ 代数自己同型で安定な任意の有限集合 $S⊆ℚ̄∪{∞}$（自己同型は $∞$ を固定する）について、$0∉S$ なら、$F_H(S)⊆{∞,0,1}$、$F_H(0)∉{∞,0,1}$、およびすべての点 $z$ で $R_H(z)>1$ なら $F_H(z)∈{∞,0,1}$ を満たすリスト $H$ が存在する。このとき任意の素点の有限集合 $T$ に対して、$ℚ$ 上超越的な $φ∈K$ が存在し、すべての素点で $e_φ(P)>1$ なら $P∈C_φ$、かつすべての $P∈T$ で $P∉C_φ$ となる。表示された条件が許す箇所では有限集合も写像リストも空でよい。モデルの存在は主張しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "line": 16,
+      "kind": "theorem",
+      "proof_status_from_source": "open_sorry",
+      "full_signature_static": "theorem noncriticalRamificationFinite {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ) : {P : Place M.K | 1 < ramIdx M hDVR ψ P}.Finite",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. For $f∈K$, define $e_f(P)$ as follows: if $f∈O_P$, let $m_{P,f}$ be the minimal polynomial over $ℚ$ of its residue in $κ(P)$ and put $e_f(P)=v_P(m_{P,f}(f))$; if $f∉O_P$, put $e_f(P)=-v_P(f)$. Define $C_f={P:v_P(f)≠0\\text{ or }v_P(f-1)>0}$. For every $ψ∈K$ transcendental over $ℚ$ (no nonzero rational-coefficient polynomial vanishes at $ψ$), the set of all places $P$ satisfying the strict inequality $1<e_ψ(P)$ is finite. No assertion about the number of such places is made.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 对 $f∈K$，如下定义分歧指数 $e_f(P)$：若 $f∈O_P$，令 $m_{P,f}$ 为 $f$ 的余类在余域 $κ(P)$ 中关于 $ℚ$ 的最小多项式，并令 $e_f(P)=v_P(m_{P,f}(f))$；若 $f∉O_P$，令 $e_f(P)=-v_P(f)$。定义尖点处集合 $C_f={P:v_P(f)≠0\\text{ 或 }v_P(f-1)>0}$。 对每个在 $ℚ$ 上超越的 $ψ∈K$（没有非零有理系数多项式在 $ψ$ 处为零），满足严格不等式 $1<e_ψ(P)$ 的所有处 $P$ 组成的集合是有限的。没有断言这些处的具体个数。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 $f∈K$ の分岐指数 $e_f(P)$ を次で定める。$f∈O_P$ なら、その剰余類の $κ(P)$ における $ℚ$ 上の最小多項式を $m_{P,f}$ として $e_f(P)=v_P(m_{P,f}(f))$ と置き、$f∉O_P$ なら $e_f(P)=-v_P(f)$ と置く。尖点の素点集合を $C_f={P:v_P(f)≠0\\text{ または }v_P(f-1)>0}$ とする。 $ℚ$ 上超越的な任意の $ψ∈K$（$ψ$ で零になる零でない有理係数多項式はない）について、狭義不等式 $1<e_ψ(P)$ を満たすすべての素点 $P$ の集合は有限である。そのような素点の具体的な個数は主張しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+      "line": 17,
+      "kind": "theorem",
+      "proof_status_from_source": "open_sorry",
+      "full_signature_static": "theorem noncriticalCompositionRamification {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ) : (∀ P : Place M.K, 0 < ramIdx M hDVR ψ P) ∧ ∀ (hs : List NoncriticalP1.ElemMap) (x : QbarPoint M.K), Transcendental ℚ (NoncriticalP1.compK hs ψ) ∧ noncriticalValue M x (NoncriticalP1.compK hs ψ) = NoncriticalP1.evalComp hs (noncriticalValue M x ψ) ∧ ramIdx M hDVR (NoncriticalP1.compK hs ψ) x.P = ramIdx M hDVR ψ x.P * (NoncriticalP1.ramIdxComp hs (noncriticalValue M x ψ) : ℤ)",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. An algebraic point $x=(P,ι)$ consists of such a place and a unital ring homomorphism $ι:κ(P)→ℚ̄$, where $ℚ̄$ is the fixed algebraic closure of $ℚ$; for $f∈O_P$, write $E_x(f)=ι(f mod  𝔪_P)$. For $f∈K$, define $e_f(P)$ as follows: if $f∈O_P$, let $m_{P,f}$ be the minimal polynomial over $ℚ$ of its residue in $κ(P)$ and put $e_f(P)=v_P(m_{P,f}(f))$; if $f∉O_P$, put $e_f(P)=-v_P(f)$. Define $C_f={P:v_P(f)≠0\\text{ or }v_P(f-1)>0}$. Write $V_x(f)=E_x(f)$ when $f∈O_P$ and $V_x(f)=∞$ otherwise, as an element of $ℚ̄∪{∞}$ (encoded respectively by `some` and `none`). An elementary map is either a Möbius map $h(z)=(az+b)/(cz+d)$ with $a,b,c,d∈ℚ$ and $ad-bc≠0$, or a polynomial $p∈ℚ[X]$ with $\\deg p>0$. On $ℚ̄∪{∞}$ a Möbius map sends a finite denominator-zero point to $∞$, and sends $∞$ to $∞$ if $c=0$ and to $a/c$ otherwise; a polynomial sends $∞$ to $∞$. Its index $r_h(z)$ is $1$ for a Möbius map; for a polynomial it is $\\deg p$ at $∞$, and the multiplicity of $z$ as a root of $p(X)-p(z)$ after extending coefficients to $ℚ̄$ at finite $z$. For a finite list $H=(h_1,…,h_k)$, let $F_H=h_k∘⋯∘h_1$ on these points, and let $R_H(z)$ be the product of the successive indices along this orbit. The empty list gives $F_H(z)=z$ and $R_H(z)=1$. For $f∈K$ let $G_H(f)$ be the same successive substitution of the rational formulas in $K$, starting with $f$; field division is total, so division by zero gives zero in this definition. For every $ψ∈K$ transcendental over $ℚ$, both of the following hold: $e_ψ(P)>0$ at every place; and for every list $H$ and every point $x=(P,ι)$, $G_H(ψ)$ is transcendental over $ℚ$, $V_x(G_H(ψ))=F_H(V_x(ψ))$, and $e_{G_H(ψ)}(P)=e_ψ(P)R_H(V_x(ψ))$, with the natural-number factor $R_H$ converted to an integer. Transcendence means no nonzero rational-coefficient polynomial vanishes at the element. The universal list quantifier includes the empty list, and the point quantifier includes every residue-field embedding.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 代数点 $x=(P,ι)$ 由这样的处及保幺环同态 $ι:κ(P)→ℚ̄$ 组成，其中 $ℚ̄$ 是固定的 $ℚ$ 的代数闭包；对 $f∈O_P$，记 $E_x(f)=ι(f mod  𝔪_P)$。 对 $f∈K$，如下定义分歧指数 $e_f(P)$：若 $f∈O_P$，令 $m_{P,f}$ 为 $f$ 的余类在余域 $κ(P)$ 中关于 $ℚ$ 的最小多项式，并令 $e_f(P)=v_P(m_{P,f}(f))$；若 $f∉O_P$，令 $e_f(P)=-v_P(f)$。定义尖点处集合 $C_f={P:v_P(f)≠0\\text{ 或 }v_P(f-1)>0}$。 将 $V_x(f)$ 定义为：$f∈O_P$ 时为 $E_x(f)$，否则为 $∞$；它属于 $ℚ̄∪{∞}$（分别用 `some` 和 `none` 编码）。 初等映射指以下两类之一：Möbius 映射 $h(z)=(az+b)/(cz+d)$，其中 $a,b,c,d∈ℚ$ 且 $ad-bc≠0$；或正次数多项式 $p∈ℚ[X]$。在 $ℚ̄∪{∞}$ 上，Möbius 映射把有限的分母为零点映到 $∞$，把 $∞$ 在 $c=0$ 时映到 $∞$、在 $c≠0$ 时映到 $a/c$；多项式把 $∞$ 映到 $∞$。其指数 $r_h(z)$ 对 Möbius 映射恒为 $1$；对多项式，在 $∞$ 处为 $\\deg p$，在有限 $z$ 处为扩充系数到 $ℚ̄$ 后 $z$ 作为 $p(X)-p(z)$ 的根的重数。对有限列表 $H=(h_1,…,h_k)$，令 $F_H=h_k∘⋯∘h_1$ 为点上的复合，$R_H(z)$ 为沿相继像点的这些指数之积。空列表给出 $F_H(z)=z$、$R_H(z)=1$。 对 $f∈K$，令 $G_H(f)$ 为从 $f$ 开始、在 $K$ 中相继代入上述有理式所得的元素；这里域除法是全函数，因此此定义中的除以零取值为零。 对每个在 $ℚ$ 上超越的 $ψ∈K$，以下两项同时成立：每个处都有 $e_ψ(P)>0$；并且对每个列表 $H$ 及每个点 $x=(P,ι)$，$G_H(ψ)$ 在 $ℚ$ 上超越，$V_x(G_H(ψ))=F_H(V_x(ψ))$，且 $e_{G_H(ψ)}(P)=e_ψ(P)R_H(V_x(ψ))$，其中自然数因子 $R_H$ 转为整数。超越指没有非零有理系数多项式在该元素处为零。对列表的全称量化包含空列表，对点的全称量化包含每个余域嵌入。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 代数点 $x=(P,ι)$ はこのような素点と単位的環準同型 $ι:κ(P)→ℚ̄$ の組であり、$ℚ̄$ は固定された $ℚ$ の代数閉包とする。$f∈O_P$ に対して $E_x(f)=ι(f mod  𝔪_P)$ と書く。 $f∈K$ の分岐指数 $e_f(P)$ を次で定める。$f∈O_P$ なら、その剰余類の $κ(P)$ における $ℚ$ 上の最小多項式を $m_{P,f}$ として $e_f(P)=v_P(m_{P,f}(f))$ と置き、$f∉O_P$ なら $e_f(P)=-v_P(f)$ と置く。尖点の素点集合を $C_f={P:v_P(f)≠0\\text{ または }v_P(f-1)>0}$ とする。 $V_x(f)$ は $f∈O_P$ のとき $E_x(f)$、それ以外のとき $∞$ と定め、$ℚ̄∪{∞}$ の元とする（それぞれ `some` と `none` で表す）。 初等写像とは、$a,b,c,d∈ℚ$、$ad-bc≠0$ を満たす Möbius 写像 $h(z)=(az+b)/(cz+d)$、または正の次数の多項式 $p∈ℚ[X]$ のいずれかである。$ℚ̄∪{∞}$ 上で Möbius 写像は分母が零の有限点を $∞$ に写し、$∞$ は $c=0$ なら $∞$、そうでなければ $a/c$ に写す。多項式は $∞$ を $∞$ に写す。指数 $r_h(z)$ は Möbius 写像では常に $1$、多項式では $∞$ で $\\deg p$、有限点 $z$ では係数を $ℚ̄$ に拡大した $p(X)-p(z)$ の根 $z$ の重複度である。有限リスト $H=(h_1,…,h_k)$ に対し、点上の合成を $F_H=h_k∘⋯∘h_1$、順次得られる像での指数の積を $R_H(z)$ とする。空リストでは $F_H(z)=z$、$R_H(z)=1$ である。 $f∈K$ に対し、$G_H(f)$ を $f$ から始めて同じ有理式を $K$ 内で順次代入した元とする。体の除算は全域的であり、この定義では零による除算の値は零である。 $ℚ$ 上超越的な任意の $ψ∈K$ に対し、次の二つがともに成り立つ。すべての素点で $e_ψ(P)>0$ であり、さらに任意のリスト $H$ と任意の点 $x=(P,ι)$ について、$G_H(ψ)$ は $ℚ$ 上超越的で、$V_x(G_H(ψ))=F_H(V_x(ψ))$、$e_{G_H(ψ)}(P)=e_ψ(P)R_H(V_x(ψ))$ である。自然数の因子 $R_H$ は整数に移す。超越的とは、その元で零になる零でない有理係数多項式がないことをいう。リストの全称量化は空リストを含み、点の全称量化は剰余体のすべての埋め込みを含む。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "line": 16,
+      "kind": "theorem",
+      "proof_status_from_source": "open_sorry",
+      "full_signature_static": "theorem noncriticalP1Zero (S : Finset NoncriticalP1.Pt) (hGal : ∀ σ : Tripod.Qbar ≃ₐ[ℚ] Tripod.Qbar, ∀ z ∈ S, z.map σ ∈ S) (hZero : some 0 ∉ S) : ∃ hs : List NoncriticalP1.ElemMap, (∀ z ∈ S, NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf) ∧ NoncriticalP1.evalComp hs (some 0) ∉ NoncriticalP1.zeroOneInf ∧ (∀ z, 1 < NoncriticalP1.ramIdxComp hs z → NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf)",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "An elementary map is either a Möbius map $h(z)=(az+b)/(cz+d)$ with $a,b,c,d∈ℚ$ and $ad-bc≠0$, or a polynomial $p∈ℚ[X]$ with $\\deg p>0$. On $ℚ̄∪{∞}$ a Möbius map sends a finite denominator-zero point to $∞$, and sends $∞$ to $∞$ if $c=0$ and to $a/c$ otherwise; a polynomial sends $∞$ to $∞$. Its index $r_h(z)$ is $1$ for a Möbius map; for a polynomial it is $\\deg p$ at $∞$, and the multiplicity of $z$ as a root of $p(X)-p(z)$ after extending coefficients to $ℚ̄$ at finite $z$. For a finite list $H=(h_1,…,h_k)$, let $F_H=h_k∘⋯∘h_1$ on these points, and let $R_H(z)$ be the product of the successive indices along this orbit. The empty list gives $F_H(z)=z$ and $R_H(z)=1$. Let $ℚ̄$ be the fixed algebraic closure of $ℚ$. For every finite set $S⊆ℚ̄∪{∞}$, assume that for every $ℚ$-algebra automorphism $σ$ of $ℚ̄$ and every $z∈S$, the point obtained by applying $σ$ to finite $z$ and fixing $∞$ also belongs to $S$, and assume $0∉S$. Then there exists a finite list $H$ of the specified elementary maps such that every $z∈S$ has $F_H(z)∈{∞,0,1}$, $F_H(0)∉{∞,0,1}$, and every $z∈ℚ̄∪{∞}$ with $R_H(z)>1$ has $F_H(z)∈{∞,0,1}$. The set $S$ may be empty; no nonemptiness condition is placed on the witnessing list.",
+      "zh_Hans": "初等映射指以下两类之一：Möbius 映射 $h(z)=(az+b)/(cz+d)$，其中 $a,b,c,d∈ℚ$ 且 $ad-bc≠0$；或正次数多项式 $p∈ℚ[X]$。在 $ℚ̄∪{∞}$ 上，Möbius 映射把有限的分母为零点映到 $∞$，把 $∞$ 在 $c=0$ 时映到 $∞$、在 $c≠0$ 时映到 $a/c$；多项式把 $∞$ 映到 $∞$。其指数 $r_h(z)$ 对 Möbius 映射恒为 $1$；对多项式，在 $∞$ 处为 $\\deg p$，在有限 $z$ 处为扩充系数到 $ℚ̄$ 后 $z$ 作为 $p(X)-p(z)$ 的根的重数。对有限列表 $H=(h_1,…,h_k)$，令 $F_H=h_k∘⋯∘h_1$ 为点上的复合，$R_H(z)$ 为沿相继像点的这些指数之积。空列表给出 $F_H(z)=z$、$R_H(z)=1$。 设 $ℚ̄$ 为固定的 $ℚ$ 的代数闭包。对每个有限集合 $S⊆ℚ̄∪{∞}$，假设对 $ℚ̄$ 的每个 $ℚ$ 代数自同构 $σ$ 及每个 $z∈S$，对有限 $z$ 作用 $σ$、固定 $∞$ 后所得的点仍属于 $S$，并假设 $0∉S$。则存在上述初等映射的有限列表 $H$，使每个 $z∈S$ 都满足 $F_H(z)∈{∞,0,1}$，同时 $F_H(0)∉{∞,0,1}$，并且每个满足 $R_H(z)>1$ 的 $z∈ℚ̄∪{∞}$ 都有 $F_H(z)∈{∞,0,1}$。集合 $S$ 可以为空；未要求作为见证的列表非空。",
+      "ja": "初等写像とは、$a,b,c,d∈ℚ$、$ad-bc≠0$ を満たす Möbius 写像 $h(z)=(az+b)/(cz+d)$、または正の次数の多項式 $p∈ℚ[X]$ のいずれかである。$ℚ̄∪{∞}$ 上で Möbius 写像は分母が零の有限点を $∞$ に写し、$∞$ は $c=0$ なら $∞$、そうでなければ $a/c$ に写す。多項式は $∞$ を $∞$ に写す。指数 $r_h(z)$ は Möbius 写像では常に $1$、多項式では $∞$ で $\\deg p$、有限点 $z$ では係数を $ℚ̄$ に拡大した $p(X)-p(z)$ の根 $z$ の重複度である。有限リスト $H=(h_1,…,h_k)$ に対し、点上の合成を $F_H=h_k∘⋯∘h_1$、順次得られる像での指数の積を $R_H(z)$ とする。空リストでは $F_H(z)=z$、$R_H(z)=1$ である。 $ℚ̄$ を固定された $ℚ$ の代数閉包とする。任意の有限集合 $S⊆ℚ̄∪{∞}$ について、$ℚ̄$ の任意の $ℚ$ 代数自己同型 $σ$ と任意の $z∈S$ に対し、有限の $z$ に $σ$ を作用させ $∞$ を固定して得られる点も $S$ に属すると仮定し、また $0∉S$ と仮定する。このとき上記の初等写像の有限リスト $H$ が存在して、すべての $z∈S$ で $F_H(z)∈{∞,0,1}$、$F_H(0)∉{∞,0,1}$、かつ $R_H(z)>1$ を満たす任意の $z∈ℚ̄∪{∞}$ で $F_H(z)∈{∞,0,1}$ が成り立つ。$S$ は空でもよく、存在するリストに非空という条件は置かない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspsFinite.lean",
+      "line": 14,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem cuspsFinite {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M) (φ : M.K) (hφ : IsBelyi M hDVR φ) : (cusps M hDVR φ).Finite",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. For $f∈K$, define $e_f(P)$ as follows: if $f∈O_P$, let $m_{P,f}$ be the minimal polynomial over $ℚ$ of its residue in $κ(P)$ and put $e_f(P)=v_P(m_{P,f}(f))$; if $f∉O_P$, put $e_f(P)=-v_P(f)$. Define $C_f={P:v_P(f)≠0\\text{ or }v_P(f-1)>0}$. Assume additionally $h_{RF}$: each residue field $κ(P)$ is finite dimensional over $ℚ$. For every $φ∈K$, assume $φ$ is transcendental over $ℚ$ and that for every place $P$, $e_φ(P)>1$ implies $P∈C_φ$; this conjunction is the stated Belyi hypothesis. Then $C_φ$ is finite.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 对 $f∈K$，如下定义分歧指数 $e_f(P)$：若 $f∈O_P$，令 $m_{P,f}$ 为 $f$ 的余类在余域 $κ(P)$ 中关于 $ℚ$ 的最小多项式，并令 $e_f(P)=v_P(m_{P,f}(f))$；若 $f∉O_P$，令 $e_f(P)=-v_P(f)$。定义尖点处集合 $C_f={P:v_P(f)≠0\\text{ 或 }v_P(f-1)>0}$。 再假设 $h_{RF}$：每个余域 $κ(P)$ 在 $ℚ$ 上有限维。对每个 $φ∈K$，假设 $φ$ 在 $ℚ$ 上超越，并且每个处 $P$ 都满足 $e_φ(P)>1$ 蕴含 $P∈C_φ$；这两项的合取就是此处的 Belyi 假设。则 $C_φ$ 是有限的。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 $f∈K$ の分岐指数 $e_f(P)$ を次で定める。$f∈O_P$ なら、その剰余類の $κ(P)$ における $ℚ$ 上の最小多項式を $m_{P,f}$ として $e_f(P)=v_P(m_{P,f}(f))$ と置き、$f∉O_P$ なら $e_f(P)=-v_P(f)$ と置く。尖点の素点集合を $C_f={P:v_P(f)≠0\\text{ または }v_P(f-1)>0}$ とする。 さらに $h_{RF}$ として、各剰余体 $κ(P)$ は $ℚ$ 上有限次元と仮定する。任意の $φ∈K$ に対し、$φ$ は $ℚ$ 上超越的であり、すべての素点 $P$ で $e_φ(P)>1$ なら $P∈C_φ$ であると仮定する。この連言がここでの Belyi 仮定である。このとき $C_φ$ は有限である。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection",
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalSelection.lean",
+      "line": 22,
+      "kind": "theorem",
+      "proof_status_from_source": "definition_or_proved",
+      "full_signature_static": "theorem noncriticalSelection {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M) : NoncriticalSelection M hDVR",
+      "signature_method": "Static source reading with section variables expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. For $f∈K$, define $e_f(P)$ as follows: if $f∈O_P$, let $m_{P,f}$ be the minimal polynomial over $ℚ$ of its residue in $κ(P)$ and put $e_f(P)=v_P(m_{P,f}(f))$; if $f∉O_P$, put $e_f(P)=-v_P(f)$. Define $C_f={P:v_P(f)≠0\\text{ or }v_P(f-1)>0}$. Assume additionally $h_{RF}$: each residue field $κ(P)$ is finite dimensional over $ℚ$. Then for every finite set $T$ of places there exists $φ∈K$ transcendental over $ℚ$ such that for every place $P$, $e_φ(P)>1$ implies $P∈C_φ$, and for every $P∈T$, $P∉C_φ$. Explicitly, the last condition requires both $v_P(φ)=0$ and $v_P(φ-1)≤0$ at every requested place. The finite set $T$ may be empty, $φ$ may depend on $T$, and the statement asserts neither uniqueness of $φ$ nor existence of the initial model data.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 对 $f∈K$，如下定义分歧指数 $e_f(P)$：若 $f∈O_P$，令 $m_{P,f}$ 为 $f$ 的余类在余域 $κ(P)$ 中关于 $ℚ$ 的最小多项式，并令 $e_f(P)=v_P(m_{P,f}(f))$；若 $f∉O_P$，令 $e_f(P)=-v_P(f)$。定义尖点处集合 $C_f={P:v_P(f)≠0\\text{ 或 }v_P(f-1)>0}$。 再假设 $h_{RF}$：每个余域 $κ(P)$ 在 $ℚ$ 上有限维。则对每个处的有限集合 $T$，存在在 $ℚ$ 上超越的 $φ∈K$，使每个处 $P$ 都满足 $e_φ(P)>1$ 蕴含 $P∈C_φ$，并且每个 $P∈T$ 都满足 $P∉C_φ$。明确地，最后一个条件要求每个指定处同时满足 $v_P(φ)=0$ 和 $v_P(φ-1)≤0$。有限集合 $T$ 可以为空，$φ$ 可以依赖于 $T$；此断言既未主张 $φ$ 唯一，也未主张起始模型数据存在。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 $f∈K$ の分岐指数 $e_f(P)$ を次で定める。$f∈O_P$ なら、その剰余類の $κ(P)$ における $ℚ$ 上の最小多項式を $m_{P,f}$ として $e_f(P)=v_P(m_{P,f}(f))$ と置き、$f∉O_P$ なら $e_f(P)=-v_P(f)$ と置く。尖点の素点集合を $C_f={P:v_P(f)≠0\\text{ または }v_P(f-1)>0}$ とする。 さらに $h_{RF}$ として、各剰余体 $κ(P)$ は $ℚ$ 上有限次元と仮定する。このとき任意の素点の有限集合 $T$ に対し、$ℚ$ 上超越的な $φ∈K$ が存在し、すべての素点 $P$ で $e_φ(P)>1$ なら $P∈C_φ$、かつすべての $P∈T$ で $P∉C_φ$ となる。最後の条件は、各指定素点で $v_P(φ)=0$ と $v_P(φ-1)≤0$ の両方を要求する。有限集合 $T$ は空でもよく、$φ$ は $T$ に依存してよい。$φ$ の一意性も初期モデルデータの存在も主張しない。"
+    }
+  ],
+  "coverage_notes": [
+    "All 33 newly declared top-level names in the supplied eight Lean files are included: 28 declarations in Definitions and five theorem declarations.",
+    "Generated structure projections, inductive constructors as separate names, and recursor infrastructure are not separate read-back items; every constructor and structure field is covered in its parent declaration.",
+    "Three supplied theorem bodies contain sorry; this is recorded as open_sorry and is separate from the statement read-back.",
+    "The two parent theorem bodies are syntactic compositions; this static audit does not assert their kernel acceptance or absence of transitive sorryAx."
+  ],
+  "terminology_questions": [
+    {
+      "term": "uniformiser",
+      "resolution": "No supplied declaration requires naming this object. If later needed in Chinese, use 【待确认术语】（赋值为一的元素）; no unapproved translation was introduced."
+    },
+    {
+      "term": "Place",
+      "resolution": "Chinese uses 处; Japanese uses 素点, with the concrete proper valuation-subring definition repeated whenever needed."
+    },
+    {
+      "term": "ramIdx",
+      "resolution": "Rendered as 分歧指数 / 分岐指数 with the exact minpoly-or-negative-order definition, without asserting positivity unless the statement does."
+    },
+    {
+      "term": "cusps",
+      "resolution": "Rendered as 尖点处集合 / 尖点の素点集合 and always expanded by the order conditions; no smooth-curve interpretation is added."
+    },
+    {
+      "term": "Möbius / Belyi / Fermat",
+      "resolution": "Latin personal names retained. No Japanese author with a supplied Japanese-character name occurs."
+    }
+  ],
+  "validation": {
+    "performed": "JSON parse, required-field and declaration coverage inspection only",
+    "compiled": false,
+    "ci_submitted": false,
+    "main_workspace_modified": false
+  },
+  "input_file_sha256": [
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+      "sha256": "4eb9f5b38b3b36574430948f7c10952ac156f607c220a9b06012d4362e129ed3"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "sha256": "a4b81a925ba8e1564d01390c79a27956ea7372109ba3fae4a949df39c89be2ad"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "sha256": "0e598d46c7d97b080f0670ba60adfac65551951a6507517c81a9bf3be4df4f86"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspsFinite.lean",
+      "sha256": "6362f6e1f796c2ed8cccfc15518b6bfeedd142a6d13729f5f70bea11318c3a25"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+      "sha256": "f662ed3ae766fb277544a098d21062aeb098ef5942bc6b11f18cfd9e1802141d"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "sha256": "ad0285b951b5fed29d8c1fb6b2a130e505ec6d3b74f77ccdee1f23f1f8c22c4b"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "sha256": "7311707c2e5da6a8124df80f028e4a90eaa0dd7f72ab1a2ae4f75db60677e665"
+    },
+    {
+      "path": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalSelection.lean",
+      "sha256": "ee2c57c93b4cf0f5587f9da90f9126a9720a54159e46c6bf1fc29be0cc61379a"
+    }
+  ]
+}

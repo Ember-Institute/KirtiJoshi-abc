@@ -1,0 +1,8 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalSelection
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms noncriticalSelection
+#print axioms noncriticalRamificationFinite
+#print axioms noncriticalCompositionRamification
+#print axioms noncriticalP1Zero

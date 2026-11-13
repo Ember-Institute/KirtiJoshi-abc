@@ -1,0 +1,427 @@
+{
+  "review": "independent_read_only_mathematical_shape_review",
+  "date": "2026-11-13",
+  "verdict": "no_detected_mathematical_shape_defect; conditional_source_backed_decomposition; NOT_kernel_validated",
+  "main_workspace_edited": false,
+  "compilation_invoked": false,
+  "MCP_CI_invoked": false,
+  "scope": [
+    "/tmp/p2m-fermat-noncritical-next-20261113",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean",
+    "/tmp/p2m-fermat-riemann-next-design-20261113",
+    "/tmp/p2m-fermat-riemann-dimension-next-20261113"
+  ],
+  "checks": [
+    {
+      "name": "parent_signatures_unchanged",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalSelection.lean",
+          "line": 22
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspsFinite.lean",
+          "line": 14
+        }
+      ],
+      "detail": "Extracted theorem text from theorem name through := is byte-for-byte equal to the respective main-workspace signature. N, M, hDVR and hRF remain; cuspsFinite also retains actual phi : M.K and IsBelyi premise."
+    },
+    {
+      "name": "three_new_children_not_renamed_parent",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+          "line": 16
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+          "line": 17
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+          "line": 16
+        }
+      ],
+      "detail": "Finite ramification is for a supplied actual psi; composition is a universal identity for supplied elementary lists; P1Zero constructs an actual rational list for a supplied finite algebraic-value set. None asserts arbitrary curve-place avoidance or existence of a selected curve Belyi function."
+    },
+    {
+      "name": "no_local_dependency_cycle",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+          "line": 9
+        },
+        {
+          "file": "/tmp/p2m-fermat-riemann-next-design-20261113/Definitions/Def_FermatRiemannComposition.lean",
+          "line": 9
+        },
+        {
+          "file": "/tmp/p2m-fermat-riemann-dimension-next-20261113/Definitions/Def_FermatRiemannDimensionComposition.lean",
+          "line": 9
+        }
+      ],
+      "detail": "Static import traversal over candidate overlays and available local main-workspace modules found no cycle in 31 local modules. Definitions do not import the new open theorem modules. Riemann finite-dimensionality used by basis lower bound is obtained from principal degree zero, not from eventual linearity."
+    },
+    {
+      "name": "actual_function_field_and_no_free_Prop_substitute",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 34
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 60
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+          "line": 23
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+          "line": 90
+        }
+      ],
+      "detail": "Elementary maps are rational Mobius matrices with nonzero determinant or positive-degree rational polynomials. applyK and compK evaluate actual rational expressions in M.K. Final phi is compK hs psi : M.K. SimpleZeroFunction stores actual psi and exact actual orders; no freely supplied map Pt -> Pt or unconstrained ramification law replaces these definitions."
+    },
+    {
+      "name": "all_full_residue_embeddings_in_branch_set",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 91
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 101
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+          "line": 51
+        }
+      ],
+      "detail": "The finite sigma type is over each actual ramified P and every ring hom P.ResidueField ->+* Qbar. Branch set S inserts infinity into the image of ALL such QbarPoints. This does not replace the full residue field by Q(psi(x)) or select one conjugate per place."
+    },
+    {
+      "name": "Galois_stability",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 118
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+          "line": 59
+        }
+      ],
+      "detail": "Every Rat-algebra automorphism acts by composing the stored residue embedding, preserves the actual place, and transports the actual value. Ramification membership is unchanged because ramIdx is a place invariant. Infinity is fixed. Quantification is over all automorphisms."
+    },
+    {
+      "name": "simple_zeros_poles_and_zero_branch_exclusion",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+          "line": 58
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+          "line": 67
+        }
+      ],
+      "detail": "The reduced divisor A has coefficient one exactly on Tprime. Exact polar realization gives ord(f)=-1 on Tprime and ord(f)>=0 outside it; psi=f inverse therefore has order one on Tprime and <=0 elsewhere. Every actual zero belongs to Tprime and has index one via the minpoly-at-zero lemma. Hence zero cannot be a branch value. Poles are retained as value none and infinity is explicitly inserted in S."
+    },
+    {
+      "name": "all_places_chain_rule_and_avoidance",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+          "line": 30
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalComposition.lean",
+          "line": 90
+        }
+      ],
+      "detail": "The open chain rule quantifies over every QbarPoint and all lists. Every actual place admits a point through an embedding of its finite residue field, so the parent proves the condition for all proper places, including infinity. If psi ramifies, its value is in S; otherwise positivity forces its integer index to equal one and the ramification of phi is supplied by H. For every P in T, psi evaluates to zero and H(0) avoids {0,1,infinity}."
+    },
+    {
+      "name": "actual_ramification_indices",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+          "line": 137
+        },
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 46
+        }
+      ],
+      "detail": "Curve ramification uses ord of the minimal polynomial of the actual full residue element at regular places and minus actual order at poles. P1 polynomial ramification is rootMultiplicity of p-p(z), and its value at infinity is p.natDegree; Mobius ramification is one. The universal chain rule asserts precisely the product of these actual quantities."
+    },
+    {
+      "name": "Riemann_polar_realization_shape",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-riemann-next-design-20261113/Definitions/Def_FermatRiemannComposition.lean",
+          "line": 23
+        },
+        {
+          "file": "/tmp/p2m-fermat-riemann-dimension-next-20261113/Definitions/Def_FermatRiemannDimensionComposition.lean",
+          "line": 27
+        }
+      ],
+      "detail": "Actual finite-dimensional L(A), the upper bound with actual ell(0), and eventual degree-minus-defect equality imply strict inclusion for L(A-P) inside L(A), using positive actual residue degree. The finite union argument avoids all insufficient pole loci in A.support. The dimension layer derives eventual linearity from actual principal degrees, approximation and the actual Q(u)-basis power family. No assumption that the constant field is exactly Q is used."
+    },
+    {
+      "name": "empty_T_and_integer_thresholds",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+          "line": 67
+        }
+      ],
+      "detail": "Tprime has cardinal T.card + N1.toNat + 1, so it is nonempty even for T empty and negative N1. Every degree(P)>=1 makes degree(A)>=N1. A place in Tprime witnesses nonzero order and thus transcendence of psi. This excludes a zero or algebraic-constant inverse from the construction."
+    },
+    {
+      "name": "N_degenerate_boundaries",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+          "line": 33
+        }
+      ],
+      "detail": "No new hypothesis N>=4 or division by N*(N-3) occurs in this construction. Model 0 is impossible already: its equation would assert 1+1=1 in characteristic zero; independently finite_u and positive finrank contradict degree_u=0. For any existing Model 1, 2, or 3 the generic curve-field argument still applies. The positive canonical-degree restriction belongs to later StrictQ consumers and is not silently used here."
+    },
+    {
+      "name": "cusp_finiteness_constants_and_support",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-noncritical-next-20261113/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 132
+        }
+      ],
+      "detail": "cusps is exactly the union of support(ord phi) and the positive-order support of phi-1. Both finite-support facts are provided in the prior curve-field layer. This works even for constants using the existing ord(0)=0 convention. The cusp/value equivalence is used only for transcendental functions, so it does not incorrectly classify the identically zero or one function."
+    },
+    {
+      "name": "local_compactness_full_fields_preserved",
+      "status": "pass_static_shape",
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean",
+          "line": 79
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean",
+          "line": 89
+        }
+      ],
+      "detail": "LocalBounds still quantifies over all complex and 2-adic embeddings of x.fieldOf, which is the image of the full residue field. LocalCompactness retains the original sequence degree bound and finite proper-place limit set. Selection retains avoidance for all places in that set. Existing belyiImage_field_le and degree_le use a real field inclusion; no full-point local bound is replaced by a value-field bound."
+    }
+  ],
+  "mathematical_shape_blockers": [],
+  "open_proof_obligations": {
+    "new_noncritical": [
+      "noncriticalRamificationFinite",
+      "noncriticalCompositionRamification",
+      "noncriticalP1Zero"
+    ],
+    "transitive_Riemann": [
+      "functionZeroPoleDegrees",
+      "riemannPolarApproximation",
+      "riemannBasisPowerLowerBound"
+    ],
+    "impact": "The two parent replacement bodies contain no sorry, but noncriticalSelection still depends on six open sorry-bearing theorem nodes under the reviewed Riemann overlay. cuspsFinite does not need those six nodes. Neither an Open decomposition nor this static review proves the selection parent free of sorryAx.",
+    "repair": "Port the cited actual source proofs without weakening the targets, then let the main agent perform MCP-CI leaf and required axiom/import/aggregate checks. In particular the chain-rule port must retain poles and every residue embedding, and the P1 port must construct actual ElemMap lists."
+  },
+  "source_provenance": {
+    "manifest": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+    "manifest_belyi_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "matches_expected_pin": true,
+    "local_reference_hash_entries_checked": 24,
+    "all_local_hashes_match": true,
+    "reference_files": [
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_BelyiRelation.lean",
+        "sha256": "e5d39478fe8ee58c4fcd43e57bea5aac06147179e5c852f1386098cc4ac7b378",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_Noncritical.lean",
+        "sha256": "84080feb746256620cb4b72459fa500720f46125323d808bf11af45890daf718",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_NoncriticalBasic.lean",
+        "sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_NoncriticalBridge.lean",
+        "sha256": "c07f7479b4029bf2f2e5ff9f52057d167d3b21735b05051dc901b6679badc149",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_NoncriticalElem.lean",
+        "sha256": "962260751d00333f25cfcd803626193c053d0a982fb6756823de1cc325f4b783",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_NoncriticalFinite.lean",
+        "sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_Point.lean",
+        "sha256": "58fe7e91e18b73c352b82006242a36dfa1edf667c43add9952130896afd2d11f",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_Riemann.lean",
+        "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_ZerosPoles.lean",
+        "sha256": "e6da7158b3f58a03cc32fc607fc5dfbfa10082229080787fc5d4349a423fb4f6",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_NoncriticalP1_ElemMap.lean",
+        "sha256": "5a39ddb83c19b37af76e573f522463e7baa167cd4dbce8a90c9c3a8d173c63a5",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_NoncriticalP1_Main.lean",
+        "sha256": "368d9baac49838deaf503d72a334b197996b79fe17282f54a44c365c8ab850c4",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-next-design-20261113/reference/Belyi_CurveField_Basic.lean",
+        "sha256": "3657b4ad9c4ecd47307afcff0697e326539ba526dcac61fed2c6c91a827d1eca",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-next-design-20261113/reference/Belyi_CurveField_Chart.lean",
+        "sha256": "ee33368cc6e9a77da21f56995bcbe302293a441672a9f969af588bdcc43f5153",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-next-design-20261113/reference/Belyi_CurveField_Place.lean",
+        "sha256": "f68260416b102e3b60c03e42b016833ded7ed476299d0a0e978e2e89965b2572",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-next-design-20261113/reference/Belyi_CurveField_Residue.lean",
+        "sha256": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-next-design-20261113/reference/Belyi_CurveField_Riemann.lean",
+        "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-next-design-20261113/reference/Belyi_CurveField_RiemannRochSpace.lean",
+        "sha256": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-next-design-20261113/reference/Belyi_CurveField_ZerosPoles.lean",
+        "sha256": "e6da7158b3f58a03cc32fc607fc5dfbfa10082229080787fc5d4349a423fb4f6",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_Degree.lean",
+        "sha256": "5f1b63fc08c02a5c3830131fb32a4164d5ea1e64d757ea9ed4bf040aa6162795",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_Divisor.lean",
+        "sha256": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_Residue.lean",
+        "sha256": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_Riemann.lean",
+        "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_RiemannRochSpace.lean",
+        "sha256": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      },
+      {
+        "file": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_ZerosPoles.lean",
+        "sha256": "e6da7158b3f58a03cc32fc607fc5dfbfa10082229080787fc5d4349a423fb4f6",
+        "matches_local_ledger": true,
+        "declared_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+      }
+    ],
+    "source_shape_comparisons": [
+      "CurveField/Noncritical.lean:44-171 follows the same four-step construction and branch-value set.",
+      "CurveField/Point.lean:172-191 retains every actual residue embedding.",
+      "CurveField/NoncriticalFinite.lean:181-188 supplies the exact finite-ramification statement.",
+      "CurveField/NoncriticalBasic.lean:126-141 supplies positivity and the zero-index identity.",
+      "CurveField/NoncriticalElem.lean:310-344 supplies the exact all-point composite chain rule.",
+      "NoncriticalP1/Main.lean:112-169 supplies the P1 theorem specialized at zero.",
+      "NoncriticalP1/ElemMap.lean defines the same actual constructors and indices."
+    ],
+    "limits": "Checked copied reference contents against their supplied SHA-256 ledger and the repository dependency pin. Did not independently recover Git blobs at the upstream revision or audit the entire upstream transitive dependency closure. No direct sorry, axiom or admit command was found in the supplied reference files; this is a text observation, not an upstream kernel audit."
+  },
+  "integration_findings": [
+    {
+      "id": "LEDGER-1",
+      "severity": "integration_record_required",
+      "location": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+      "finding": "The existing central SOURCE_LEDGER is scoped to ArithmeticTeichmullerSpaces and contains no noncriticalSelection/cuspsFinite/new noncritical producer entries. The candidate has its own detailed source-consumer.json, but no explicit central ledger row or pointer connects this Prove2Me unit to it.",
+      "suggested_repair": "When integrating, register this unit or an explicit scoped link to its reviewed source-consumer ledger in the project source ledger used for acceptance. Preserve exact pin, reference hashes, producer consumers, six open dependencies and uncompiled status. This is a provenance-registration item, not a counterexample to the mathematics."
+    }
+  ],
+  "validation_limits": [
+    "Static source and mathematical-shape review only; Lean elaboration, tactic success, definitional equality and theorem axiom outputs were not checked.",
+    "No kernel-pass claim follows from unchanged signatures, an acyclic local import graph, hashes, or correspondence with reference proof text.",
+    "The parent theorem bodies and prior Riemann candidate remain subject to main-agent integration and scheduler validation."
+  ]
+}

@@ -43,7 +43,11 @@
 
 `Proper.modelExists` 仍需实际构造满足完整 Fermat 方程、生成条件、超越性和对 `ℚ(u)` 次数恰为 `N` 的函数域，给出不可约性与次数证明。`Proper.affineIdentification` 仍需证明全部相关赋值处的仿射开与当前代数坐标对等价，并保持完整剩余域的像；不能只给坐标映射而遗漏域的身份。
 
-`Proper.noncriticalSelection` 仍需继续拆出真实非临界 Belyi 构造；`Proper.cuspsFinite` 仍需接入已移植的零极点有限支撑，保留全部处和无穷点。后续草稿以实际曲线上的有限分歧处、全点域复合分歧公式及射影直线上的具体有理函数序列为子目标，尚未编译或同步。
+`Proper.noncriticalRamificationFinite` 仍需证明任意实际非常数函数 ψ 的分歧处集有限。应在全部真赋值处上，使用实际导数 d/dψ 对正则局部环的保持性、图册的有限个模生成元及 ψ 的有限极点集，证明 `{P | 1 < ramIdx ψ P}` 有限；不能以预先给定的有限分歧值集代替该结论。
+
+`Proper.noncriticalCompositionRamification` 仍需证明实际分歧指数为正，以及每个有理 Möbius 变换／正次数有理多项式列表在实际曲线函数上的复合公式。结论必须同时保留复合函数超越性、所有完整剩余域嵌入下的点值公式，以及原函数分歧指数与实际 P¹ 复合指数的乘积公式；不能只验证单个嵌入或逐点选择不同复合函数。
+
+`Proper.noncriticalP1Zero` 仍需为任意有限且对全部有理代数自同构稳定、又不含零的实际 P¹ 代数点集，构造同一个有理 Möbius 变换／正次数有理多项式列表。该复合须把整个给定集合送入 `{0,1,∞}`，把零送到其外，并把所有分歧点的像送入这三个值；来源中的有理情形、最小多项式降阶及嵌套归纳尚待移植。三个 Open 子节点共同供应既有 `noncriticalSelection` 的实际分解，父归约验收不表示这些数学义务已闭合。
 
 `Proper.canonicalDivisorExists`、`Proper.infinityDivisorExists`、`Proper.planeAdjunctionExists` 和 `Proper.canonicalDivisorDegree` 分别还需证明 `du` 除子的有限支撑、实际坐标极点构成的超平面除子、具体伴随关系，以及真正典范除子次数等于 `N(N−3)`。应逐处追踪分歧系数，证明超平面次数及主除子次数为零，不能把预先定义的数字当作次数等式本身。`Proper.cuspGeneratorsExists` 还需给出尖点补集的实际坐标环有限生成性，并包含所需的三个三支点函数。
 

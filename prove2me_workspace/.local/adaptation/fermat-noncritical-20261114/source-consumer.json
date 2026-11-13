@@ -1,0 +1,366 @@
+{
+  "unit": "Direct actual cusp finiteness and noncritical Belyi selection through Riemann simple zeros and actual P1 composites",
+  "date": "2026-11-13",
+  "status": "uncompiled_candidate_two_parent_replacements_three_new_source_backed_open_children",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "pin_source": "refer/iut/lake-manifest.json package belyi",
+  "reference_hashes": {
+    "Belyi_CurveField_BelyiRelation.lean": {
+      "sha256": "e5d39478fe8ee58c4fcd43e57bea5aac06147179e5c852f1386098cc4ac7b378",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Noncritical.lean": {
+      "sha256": "84080feb746256620cb4b72459fa500720f46125323d808bf11af45890daf718",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_NoncriticalBasic.lean": {
+      "sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_NoncriticalBridge.lean": {
+      "sha256": "c07f7479b4029bf2f2e5ff9f52057d167d3b21735b05051dc901b6679badc149",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_NoncriticalElem.lean": {
+      "sha256": "962260751d00333f25cfcd803626193c053d0a982fb6756823de1cc325f4b783",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_NoncriticalFinite.lean": {
+      "sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Point.lean": {
+      "sha256": "58fe7e91e18b73c352b82006242a36dfa1edf667c43add9952130896afd2d11f",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Riemann.lean": {
+      "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_ZerosPoles.lean": {
+      "sha256": "e6da7158b3f58a03cc32fc607fc5dfbfa10082229080787fc5d4349a423fb4f6",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_NoncriticalP1_ElemMap.lean": {
+      "sha256": "5a39ddb83c19b37af76e573f522463e7baa167cd4dbce8a90c9c3a8d173c63a5",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_NoncriticalP1_Main.lean": {
+      "sha256": "368d9baac49838deaf503d72a334b197996b79fe17282f54a44c365c8ab850c4",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    }
+  },
+  "read_current_inputs": [
+    "prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+    "prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean"
+  ],
+  "prior_candidate_dependencies": [
+    "/tmp/p2m-fermat-riemann-next-design-20261113/",
+    "/tmp/p2m-fermat-riemann-dimension-next-20261113/"
+  ],
+  "definitions": [
+    {
+      "file": "Definitions/Def_FermatNoncriticalFunctions.lean",
+      "provides": [
+        {
+          "name": "NoncriticalP1.Pt",
+          "type": "Option Tripod.Qbar",
+          "meaning": "actual algebraic projective-line values, none=infinity",
+          "consumers": [
+            "NoncriticalP1.ElemMap.apply",
+            "noncriticalValue",
+            "branch-value S"
+          ]
+        },
+        {
+          "name": "NoncriticalP1.ElemMap",
+          "type": "inductive Mobius with rational a,b,c,d and nonzero determinant, or actual rational polynomial of positive degree",
+          "consumers": [
+            "evalComp",
+            "ramIdxComp",
+            "compK",
+            "noncriticalP1Zero"
+          ]
+        },
+        {
+          "name": "NoncriticalP1.ElemMap.ramIdx",
+          "formula": "1 for Mobius; polynomial rootMultiplicity of p-p(z) at finite z, polynomial degree at infinity",
+          "consumers": [
+            "ramIdxComp",
+            "noncriticalCompositionRamification",
+            "noncriticalP1Zero"
+          ]
+        },
+        {
+          "name": "NoncriticalP1.evalComp and compK",
+          "formula": "recursion on actual map list, point-level evaluation and actual rational expression in the curve function field",
+          "consumers": [
+            "actual final phi = compK hs psi",
+            "chain-rule child",
+            "P1 child"
+          ]
+        },
+        {
+          "name": "noncriticalValue",
+          "formula": "some actual sigma(residue psi) if psi regular, none at a pole",
+          "consumers": [
+            "cusp-value bridge",
+            "branch-value S",
+            "all-point chain rule"
+          ]
+        },
+        {
+          "name": "noncriticalGalPoint",
+          "formula": "same actual P; compose every residue embedding with sigma",
+          "consumers": [
+            "noncriticalValue_gal",
+            "Galois stability of branch-value set"
+          ]
+        }
+      ],
+      "proved_source_adaptations": [
+        {
+          "name": "QbarPoint.noncritical_eval_zero_iff",
+          "source": "CurveField/Point.lean eval_eq_zero_iff",
+          "consumers": [
+            "noncriticalValue_zero_iff",
+            "noncritical_cusp_value_iff"
+          ]
+        },
+        {
+          "name": "QbarPoint.noncritical_exists_P_eq",
+          "source": "CurveField/Point.lean:172",
+          "proof": "actual lift from the finite residue field into Qbar",
+          "consumers": [
+            "all-place Belyi proof",
+            "all-place avoidance proof"
+          ]
+        },
+        {
+          "name": "QbarPoint.noncritical_finite_setOf_mem",
+          "source": "CurveField/Point.lean:181",
+          "proof": "finite sigma type over the finite place subset with every actual ResidueField ->+* Qbar embedding",
+          "consumers": [
+            "finite all-embedding branch-value set S"
+          ]
+        },
+        {
+          "name": "model_cuspsFinite",
+          "source": "CurveField/BelyiRelation.lean:35",
+          "proof": "actual support union of ord phi != 0 and positive ord(phi-1), by existing source zero/pole support",
+          "consumers": [
+            "original-signature cuspsFinite replacement",
+            "actual cuspDivisor and downstream height/conductor chain"
+          ]
+        },
+        {
+          "name": "noncriticalValue_zero_iff and noncritical_cusp_value_iff",
+          "source": "NoncriticalBasic.lean values section",
+          "proof": "actual residue evaluation and normalized orders at every proper point, including poles",
+          "consumers": [
+            "branch set does not contain zero",
+            "all-place cusp condition and avoidance in parent composition"
+          ]
+        },
+        {
+          "name": "noncritical_ramIdx_of_positive_order",
+          "source": "NoncriticalBasic.lean ramIdx_of_ord_pos",
+          "proof": "zero residue makes the actual minpoly X; its order equals the zero order",
+          "consumers": [
+            "branch set does not contain zero"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalSimpleZeros.lean",
+      "provides": [
+        {
+          "name": "SimpleZeroFunction",
+          "fields": [
+            "psi : M.K",
+            "Transcendental Rat psi",
+            "actual finite Tprime containing T",
+            "Tprime nonempty",
+            "forall P in Tprime, ord_P psi=1",
+            "forall P outside Tprime, ord_P psi<=0"
+          ],
+          "consumers": [
+            "branch set zero avoidance",
+            "final phi avoids each requested P"
+          ]
+        },
+        {
+          "name": "model_infinite_places",
+          "proof": "actual distinct zeros of u-q over rational q",
+          "source": "CurveField/Noncritical.lean:44-67",
+          "consumers": [
+            "enlarge requested T to enough actual proper places"
+          ]
+        },
+        {
+          "name": "simpleZeroFunction_of_polarRealization",
+          "proof": "actual reduced divisor on a large finite superset Tprime, degree bound from every actual residue degree>=1, exact Riemann polar realization by f, set psi=inverse(f)",
+          "source": "CurveField/Noncritical.lean:98-125",
+          "consumers": [
+            "noncriticalSelection replacement through existing three Riemann children"
+          ],
+          "contains_sorry": false
+        }
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalComposition.lean",
+      "name": "noncriticalSelection_of_simpleZeros_and_children",
+      "source": "CurveField/Noncritical.lean:126-171",
+      "explicit_inputs": [
+        "actual SimpleZeroFunction for each T",
+        "actual finite ramification locus theorem",
+        "actual chain rule and positivity theorem",
+        "actual P1 elementary-map construction theorem"
+      ],
+      "actual_construction": [
+        "finite set of all actual points over ramified places",
+        "S = insert infinity (all actual branch values)",
+        "Galois stability from all residue embeddings",
+        "zero not in S from actual simple-zero order and ramification equality",
+        "hs from P1Zero",
+        "phi=compK hs psi",
+        "Belyi condition at all places via actual point over each place and index chain rule",
+        "avoidance at every requested P from actual zero value and H(0) avoidance"
+      ],
+      "consumers": [
+        "noncriticalSelection replacement"
+      ],
+      "contains_sorry": false
+    }
+  ],
+  "new_open_children": [
+    {
+      "name": "noncriticalRamificationFinite",
+      "type": "forall psi : M.K, Transcendental Rat psi -> Set.Finite {P : Place M.K | 1 < ramIdx M hDVR psi P}",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean:181-188 finite_setOf_one_lt_ramIdx",
+      "remaining_source_proof": [
+        "At a regular ramified P, d/dpsi fails to preserve actual O_P by local uniformizer differential calculation.",
+        "Outside the finite pole set of derivatives of finite chart-module generators, d/dpsi preserves O_P.",
+        "The poles of psi are finite."
+      ],
+      "consumers": [
+        "noncriticalSelection_of_simpleZeros_and_children builds the finite set of all ramified points and values"
+      ],
+      "why_not_parent": "Finite branch locus for a supplied actual function; no Belyi existence or avoidance conclusion.",
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "name": "noncriticalCompositionRamification",
+      "type": "forall psi transcendental, (forall P, 0<ramIdx psi P) and forall hs : List ElemMap and x : QbarPoint M.K, Transcendental Rat (compK hs psi) and value_x(compK hs psi)=evalComp hs(value_x psi) and ramIdx(compK hs psi,x.P)=ramIdx(psi,x.P)*ramIdxComp hs(value_x psi)",
+      "source": [
+        "Belyi/CurveField/NoncriticalBasic.lean ramIdx_pos",
+        "Belyi/CurveField/NoncriticalElem.lean:310-344 applyK_spec and compK_spec"
+      ],
+      "remaining_source_proof": [
+        "Actual minpoly over Rat of the full residue-field element gives positivity.",
+        "Polynomial order equals actual ramification times root multiplicity.",
+        "Inversion preserves the actual index; rational Mobius steps decompose into affine polynomials and inversion.",
+        "Induct over the actual map list."
+      ],
+      "consumers": [
+        "noncriticalSelection_of_simpleZeros_and_children proves all-place Belyi condition for actual compK hs psi and avoidance via value chain rule"
+      ],
+      "why_not_parent": "Chain rule for arbitrary supplied composites; it supplies no list or selected Belyi function.",
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "name": "noncriticalP1Zero",
+      "type": "forall finite S : Option Qbar stable under every Rat-algebra automorphism and some 0 notin S, exists hs : List actual rational ElemMap, evalComp hs(S) subset zeroOneInf and evalComp hs(some 0) notin zeroOneInf and forall z, 1<ramIdxComp hs z -> evalComp hs z in zeroOneInf",
+      "source": "Belyi/NoncriticalP1/Main.lean exists_isNoncriticalBelyi specialized at tau=some 0",
+      "remaining_source_proof": [
+        "Normalize the finite branch-value set with actual rational Mobius transformations.",
+        "Source rational case Lemma 2.2.",
+        "Source minimal-polynomial step reduces maximal algebraic degree and number of maximal-degree points.",
+        "Nested induction of source Lemma 2.4."
+      ],
+      "consumers": [
+        "noncriticalSelection_of_simpleZeros_and_children supplies actual rational list H after constructing branch values S"
+      ],
+      "why_not_parent": "P1 theorem on a supplied finite algebraic-value set; no curve, curve place, residue field, or arbitrary curve-place avoidance parameter occurs.",
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "status": "OPEN_sorry_uncompiled"
+    }
+  ],
+  "parent_replacements": [
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspsFinite.lean",
+      "original_signature_preserved": true,
+      "body": "model_cuspsFinite M hDVR phi",
+      "contains_sorry": false,
+      "new_open_children": [],
+      "compatibility_parameters_retained": [
+        "hRF",
+        "hphi"
+      ],
+      "scope": "This closes cusp finite support if the prior curve-field source adaptation validates."
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalSelection.lean",
+      "original_signature_preserved": true,
+      "contains_sorry": false,
+      "existing_children": [
+        "riemannRochFiniteDimensional",
+        "riemannRochDimensionUpperBound",
+        "riemannRochEventuallyLinear"
+      ],
+      "new_open_children": [
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero"
+      ],
+      "scope": "Parent proof is an actual source construction. It remains conditional on the explicit children."
+    }
+  ],
+  "local_compactness_preservation": {
+    "edited": false,
+    "full_point_field": "QbarPoint.fieldOf = image of actual full residue field under stored embedding",
+    "bounded_degree": "LocalCompactness input forall n, (xs n).degree <= d remains unchanged",
+    "complex_embeddings": "LocalBounds still forall sigma : x.fieldOf ->+* Complex",
+    "padic_embeddings": "LocalBounds still forall tau : x.fieldOf ->+* PadicAlgCl 2",
+    "finite_limit_places": "Actual finite T : Finset (Place M.K), with all-place avoidance selection",
+    "image_degree": "Existing belyiImage_field_le and belyiImage_degree_le remain unchanged; no replacement by a selected embedding or smaller field in local bounds.",
+    "consumers": [
+      "existing AvoidanceRegularity",
+      "existing LocalCompactness",
+      "existing EmbeddingBoundsToSet",
+      "existing BoundedBelyiImages",
+      "existing Fermat canonical/Belyi proof composition"
+    ]
+  },
+  "unused_optional_producer": {
+    "name": "Model.fg_top",
+    "new_consumers": [],
+    "may_omit": true
+  },
+  "scope": {
+    "Act2_proof_added": false,
+    "arbitrary_Pt_to_Pt_maps": false,
+    "free_Prop_structure_laws": false,
+    "parent_renamed_as_child": false,
+    "all_places_retained": true,
+    "full_residue_fields_retained": true,
+    "all_residue_embeddings_retained": true
+  },
+  "validation": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "main_workspace_edited": false,
+    "read_back_written": false,
+    "task_directory": "/tmp/p2m-fermat-noncritical-next-20261113",
+    "integration": "Main agent reviews and integrates prior curve-field/Riemann definitions, then these three new definitions and full-qualified theorem replacements. Only main agent validates via MCP-CI."
+  }
+}

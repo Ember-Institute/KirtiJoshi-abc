@@ -1,0 +1,10 @@
+import Definitions.Def_FermatNoncriticalComposition
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspsFinite
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms model_cuspsFinite
+#print axioms cuspsFinite
+#print axioms model_infinite_places
+#print axioms simpleZeroFunction_of_polarRealization
+#print axioms noncriticalSelection_of_simpleZeros_and_children

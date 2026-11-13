@@ -1,0 +1,65 @@
+{
+  "scope": "Draft-only uploader/finalizer preparation for fermat-noncritical-20261114. No repository writes, compiler/MCP-CI calls, platform requests, staging, or commits executed.",
+  "files": {
+    "delivery_common.py": {
+      "path": "/tmp/p2m-noncritical-delivery-20261114/delivery_common.py",
+      "sha256": "71fd24c42238df42354a20a80ddab055cfebb4d907dbd58871bc9049a6fa73fa"
+    },
+    "finalize.py": {
+      "path": "/tmp/p2m-noncritical-delivery-20261114/finalize.py",
+      "sha256": "5b2b378573b35fa62c4b1c6529ec60c74470a6ab36ec3faf48d56ff30bd66a3f"
+    },
+    "platform_publish.py": {
+      "path": "/tmp/p2m-noncritical-delivery-20261114/platform_publish.py",
+      "sha256": "a3b468d9880d2b2a20a70ab4ed2f0ac209fe9beb81adf5cd2465a0a21823c4ec"
+    }
+  },
+  "validation_performed": [
+    "Python ast.parse for all three scripts",
+    "graph_summary against delivered sourceproof actual graph (12 reductions,43 mathematical children,45 dependency pairs)",
+    "in-memory graph parser check adding three Open children and a six-child reduction (13 reductions,46 mathematical children,51 pairs)",
+    "all eight publication readback groups match current 33-declaration en/zh_Hans/ja evidence",
+    "current pending inventory contains exactly one combined noncriticalSelection/cuspsFinite paragraph"
+  ],
+  "confirmed_with_root": [
+    "Expected source graph is decl_graph.jsonl from source-graph-leaf / ExtractNoncriticalGraph.lean.",
+    "Elaborated type check is elaborated-types-leaf / ValidateElaboratedTypes.lean; upload-elaborated-types.json is an array of {name,type}, compared with source graph elaboratedType.",
+    "Existing target check is existing-types-leaf / ValidateExistingTypes.lean; existing-types-equal.json is JSON true.",
+    "Solutions are Solution_cuspsFinite.lean and Solution_noncriticalSelection.lean, checked through solution-{name}-leaf.",
+    "Root will add upload_problem_items_sha256 to final upload-validation.json after exact type comparison.",
+    "all-definitions-axioms-review uses AuditAllDefinitions.lean and production-gates-review uses ProductionGates.lean.",
+    "Actual expected terminal states are direct cuspsFinite ACCEPTED/Proved; noncriticalSelection SKETCH_ACCEPTED/Open; three new children PUBLISHED/Open.",
+    "Source proof reference is BelyiRelation.lean finite_belyiCusps, not finite_cusps."
+  ],
+  "runtime_requirements_to_confirm_from_actual_receipts": [
+    "Every required leaf/type/audit receipt succeeded with exact source_sha256, exclusive workspace/mode and matching actual arguments. Closed audits contain no sorryAx; reduction audit explicitly contains sorryAx from the three Open children.",
+    "Final solution/type/graph/audit manifests retain final unit hashes. Earlier independent source leaf manifests need only retain their exact own source, so unrelated later proof-only changes do not force rebuilds.",
+    "Three Definition payloads and all publish job IDs terminate PUBLISHED/private for exact validated local source. Three child problem payloads match the hash-bound upload-problem-items types and preambles.",
+    "Actual API theorem snapshots retain private visibility and locked Mathlib; two existing platform formal statements remain byte-identical to before snapshots.",
+    "Actual noncriticalSelection sketch includes exactly the three closed Riemann nodes and three new Open children. Each Riemann node remains Proved.",
+    "Root graph is complete at depth10, with no hidden deprecated nodes/sketches or truncated mathematical children; open frontier pagination is complete and stable.",
+    "Source-ledger-link.json exists; its declared production ledger hash still matches if it supplies production_ledger and production_ledger_sha256.",
+    "Receipt IDs use established API schema: publish result id equals publish job_id; verify result id equals submission_id.",
+    "credentials.json contains protected configured secrets only; final staging scan checks those values without printing them. Only current unit evidence, eight unit Lean sources, two Checks, status inventory and registry are staged."
+  ],
+  "count_semantics": {
+    "before_actual_graph": {
+      "accepted_reductions": 12,
+      "published_children": 43,
+      "dependency_edges": 45
+    },
+    "expected_after_if_no_other_graph_changes": {
+      "accepted_reductions": 13,
+      "published_children": 46,
+      "dependency_edges": 51,
+      "open_frontier": 28,
+      "direct_closed_children": 6
+    },
+    "policy": "Finalizer derives counts from actual mathematical theorem/sketch graph; Definition nodes are excluded. Root is excluded from published children. Only cuspsFinite is added to direct_closed_proofs; reduction and remaining children stay separate."
+  },
+  "safe_replay": "Cached publication payloads and verify request/source snapshots must match exactly before inherited protocol functions run. A prior request-intent without a saved submit receipt stops for reconciliation and does not issue another POST.",
+  "pending_inventory_change": "Replace only the existing combined noncriticalSelection/cuspsFinite paragraph with three detailed Open-child paragraphs. They retain all-place finite ramification, full-residue/all-embedding composition rules, actual rational P1 list construction, and all original unresolved mathematics.",
+  "plan_checkbox_change": null,
+  "mathematical_limits": "No Act2 work, global abc proof, noncriticalSelection mathematical closure, or unrelated obligation closure is claimed. Original source-consumer candidate ledger is retained unchanged and linked from a separate current ledger.",
+  "execution": "Run platform_publish.py only after root reviews and writes all validation evidence; run finalize.py only after platform terminal receipts exist. delivery_common.py must remain beside both scripts. Finalizer copies all three into unit evidence before scanning/staging. No commit or push is performed."
+}
