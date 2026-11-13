@@ -1,0 +1,11 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms functionZeroPoleDegrees
+#print axioms riemannPolarApproximation
+#print axioms riemannBasisPowerLowerBound
+#print axioms riemannRochFiniteDimensional
+#print axioms riemannRochDimensionUpperBound
+#print axioms riemannRochEventuallyLinear
+#print axioms polarPresentationExists

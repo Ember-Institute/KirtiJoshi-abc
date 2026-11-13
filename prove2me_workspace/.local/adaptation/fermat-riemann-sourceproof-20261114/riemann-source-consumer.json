@@ -1,0 +1,288 @@
+{
+  "unit": "Source proofs of actual polar approximation and actual basis-power dimension bound",
+  "date": "2026-11-13",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "reference_hashes": {
+    "Belyi_CurveField_Riemann.lean": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+    "Belyi_CurveField_Divisor.lean": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7",
+    "Belyi_CurveField_RiemannRochSpace.lean": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53"
+  },
+  "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "status": "complete_source_proof_candidates_uncompiled",
+  "source_proof_adaptations": [
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.principalDivisor_div",
+      "source": "Belyi/CurveField/Divisor.lean:137",
+      "content": "The existing principal divisor respects division, using the existing normalized Place.ord_div and ord_eq_placeOrd.",
+      "consumers": [
+        "RiemannApproximation.exists_add_single_add_div_le"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.pow_mem_L",
+      "source": "Belyi/CurveField/Riemann.lean:54-59",
+      "content": "Actual x^k has at most k times the actual pole divisor, at every existing proper place.",
+      "consumers": [
+        "RiemannApproximation.aeval_mem_L"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.aeval_mem_L",
+      "source": "Belyi/CurveField/Riemann.lean:62-66",
+      "content": "Actual polynomial evaluation lies in the actual Riemann-Roch space bounded by its actual natDegree times the actual polar divisor.",
+      "consumers": [
+        "RiemannApproximation.exists_add_single_add_div_le"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_aeval_ord_pos",
+      "source": "Belyi/CurveField/Riemann.lean:70-90",
+      "content": "Take the actual minimal polynomial over Rat of the actual residue of x. Transcendence gives nonzero evaluation, and residue zero gives positive normalized order.",
+      "consumers": [
+        "RiemannApproximation.exists_add_single_add_div_le"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.single_le_polarDivisor",
+      "source": "Belyi/CurveField/Riemann.lean:101-107",
+      "content": "At an actual pole, the actual polar divisor already contains one copy of that actual place.",
+      "consumers": [
+        "RiemannApproximation.exists_add_single_add_div_le"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_add_div_le",
+      "source": "Belyi/CurveField/Riemann.lean:109-131",
+      "content": "At poles enlarge the multiple by one; elsewhere divide the current actual function by the actual residue-minpoly evaluation. The resulting divisor inequality holds at all places.",
+      "consumers": [
+        "RiemannApproximation.exists_add_single_nat_add_div_le"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_nat_add_div_le",
+      "source": "Belyi/CurveField/Riemann.lean:133-141",
+      "content": "Induction on the actual natural multiplicity of a single place.",
+      "consumers": [
+        "RiemannApproximation.exists_add_div_le"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_div_le",
+      "source": "Belyi/CurveField/Riemann.lean:144-158",
+      "content": "Finsupp induction handles actual integer divisor coefficients. Nonpositive coefficients need no new function; positive coefficients use the preceding natural induction.",
+      "consumers": [
+        "riemannPolarApproximation"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannBasisPower.lowerBound",
+      "source": "Belyi/CurveField/Riemann.lean:164-213",
+      "content": "The actual functions M.u^k*functionBasis(M,i), k<=l, lie in the actual target space and are Rat-linearly independent. Actual hFinite permits cardinal<=finrank; Model.degree_u gives exactly N basis elements.",
+      "consumers": [
+        "riemannBasisPowerLowerBound"
+      ],
+      "status": "complete_source_proof_candidate_uncompiled"
+    }
+  ],
+  "basis_proof_internal_consumers": [
+    {
+      "producer": "actual functionBasis M",
+      "source": "Riemann.lean:164-166",
+      "consumer": [
+        "hmem",
+        "hli",
+        "hv",
+        "w"
+      ],
+      "existing_definition": "Module.finBasis Rat(M.u) M.K, using M.finite_u"
+    },
+    {
+      "producer": "actual basisPoleCorrection M hDVR",
+      "source": "Riemann.lean:166",
+      "consumer": [
+        "hmem via local C",
+        "actual target space of w",
+        "hactual"
+      ],
+      "existing_definition": "sum_i functionPoleDivisor(functionBasis M i)"
+    },
+    {
+      "producer": "hmem",
+      "source": "Riemann.lean:175-190",
+      "consumer": [
+        "w"
+      ],
+      "content": "Normalized ord_mul and ord_pow give membership at every actual place."
+    },
+    {
+      "producer": "hpow",
+      "source": "Riemann.lean:192-195",
+      "consumer": [
+        "hb"
+      ],
+      "content": "Injective aeval of transcendental M.u maps the actual monomial basis to independent powers."
+    },
+    {
+      "producer": "b",
+      "source": "Riemann.lean:196",
+      "consumer": [
+        "hb",
+        "hli",
+        "hv"
+      ],
+      "content": "The actual powers of the actual generator in the actual intermediate field Rat(M.u)."
+    },
+    {
+      "producer": "hb",
+      "source": "Riemann.lean:197-201",
+      "consumer": [
+        "hli"
+      ],
+      "content": "The scalar-tower embedding transports the independent finite set of powers."
+    },
+    {
+      "producer": "hli",
+      "source": "Riemann.lean:202",
+      "consumer": [
+        "hw"
+      ],
+      "content": "linearIndependent_smul combines actual Rat-independent powers with the actual Rat(u)-basis."
+    },
+    {
+      "producer": "hv",
+      "source": "Riemann.lean:203-205",
+      "consumer": [
+        "hw"
+      ],
+      "content": "The actual scalar action is multiplication by M.u^k."
+    },
+    {
+      "producer": "w",
+      "source": "Riemann.lean:206",
+      "consumer": [
+        "hw",
+        "hcard"
+      ],
+      "content": "The actual independent family as vectors in the actual Riemann-Roch submodule."
+    },
+    {
+      "producer": "hw",
+      "source": "Riemann.lean:207-211",
+      "consumer": [
+        "hcard"
+      ],
+      "content": "Linear independence survives the actual subtype map."
+    },
+    {
+      "producer": "hcard",
+      "source": "Riemann.lean:212-213",
+      "consumer": [
+        "hactual"
+      ],
+      "content": "The actual cardinal (l+1)*finrank Rat(u) K is at most the actual space dimension."
+    },
+    {
+      "producer": "hactual",
+      "source": "Riemann.lean:212-213 plus Model.degree_u",
+      "consumer": [
+        "RiemannBasisPower.lowerBound final result"
+      ],
+      "content": "Unfold the existing basis correction and dimension definitions, then rewrite finrank to the fixed N."
+    }
+  ],
+  "parent_replacements": [
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+      "original_signature_preserved_byte_for_byte": true,
+      "proof": "Install M.isCurveField, apply RiemannApproximation.exists_add_div_le to M.transcendental_u.",
+      "consumers": [
+        "riemannRochEventuallyLinear",
+        "riemannEventuallyLinear_of_degree_approximation_basis"
+      ]
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannBasisPowerLowerBound",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+      "original_signature_preserved_byte_for_byte": true,
+      "proof": "Apply RiemannBasisPower.lowerBound with the unchanged actual hFinite hypothesis.",
+      "consumers": [
+        "riemannRochEventuallyLinear",
+        "riemannEventuallyLinear_of_degree_approximation_basis"
+      ]
+    }
+  ],
+  "existing_inputs_reused": [
+    "Model",
+    "Model.transcendental_u",
+    "Model.finite_u",
+    "Model.degree_u",
+    "Model.isCurveField",
+    "Place",
+    "Place.residue",
+    "Place.ResidueField",
+    "Place.ord",
+    "ord_eq_placeOrd",
+    "functionDivisor",
+    "functionPoleDivisor",
+    "functionBasis",
+    "basisPoleCorrection",
+    "riemannRochSpace",
+    "riemannEll",
+    "RiemannDimension.mem_L",
+    "Place.riemann_coe_ratHom",
+    "Place.riemann_residue_ratHom"
+  ],
+  "new_open_obligations": [],
+  "source_proof_changes": [
+    "Explicit M and hDVR at the existing model boundary",
+    "Use ord_eq_placeOrd to bridge the existing two normalized order definitions",
+    "Use the existing RiemannDimension.mem_L to expose actual space membership",
+    "Use the existing functionBasis and basisPoleCorrection definitions, with the same actual Module.finBasis",
+    "Install hFinite for the one actual target space before cardinal<=finrank",
+    "Apply the existing Model.degree_u to obtain the exact N count"
+  ],
+  "dependency_on_fiber_degree_draft": false,
+  "dependency_cycle_added": false,
+  "basis_finiteness_flow": "Unchanged hFinite parameter is supplied by the parent finite-dimensionality theorem. These definitions do not import that theorem.",
+  "scope": {
+    "Act2_added": false,
+    "upstream_runtime_dependency_added": false,
+    "constant_field_equals_Rat_assumed": false,
+    "all_places_preserved": true,
+    "infinity_preserved": true,
+    "free_numeric_or_Prop_slots_added": false,
+    "theorem_statement_weakened": false
+  },
+  "validation": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "main_workspace_edited": false,
+    "written_candidates_read_back": false,
+    "in_memory_parent_signature_comparison": true,
+    "in_memory_no_sorry_axiom_import_check": true,
+    "in_memory_whitespace_check": true,
+    "required_main_agent_gates": [
+      "MCP-CI leaf checks",
+      "associated Checks/Axioms",
+      "ImportAudit",
+      "Act1Scene1 aggregate",
+      "AxiomAudit with actual axiom output",
+      "git diff --check"
+    ]
+  },
+  "integration_order": [
+    "Definitions/Def_FermatRiemannPolarApproximation.lean",
+    "Definitions/Def_FermatRiemannBasisPowers.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean"
+  ]
+}

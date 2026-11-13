@@ -1,0 +1,357 @@
+{
+  "unit": "Actual integral-closure fiber degrees for the existing proper Fermat field model",
+  "date": "2026-11-13",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "status": "complete_source_proof_candidate_uncompiled",
+  "reference_hashes": {
+    "Belyi_CurveField_Degree.lean": "5f1b63fc08c02a5c3830131fb32a4164d5ea1e64d757ea9ed4bf040aa6162795",
+    "Belyi_CurveField_Divisor.lean": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7"
+  },
+  "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "mathlib_interfaces_checked": [
+    {
+      "name": "Ideal.sum_ramification_inertia",
+      "path": "Mathlib/NumberTheory/RamificationInertia/Basic.lean:611",
+      "statement": "sum over actual primesOverFinset of actual ramificationIdx times actual inertiaDeg equals finrank of actual fraction fields"
+    },
+    {
+      "name": "Ideal.IsDedekindDomain.ramificationIdx'_eq_multiplicity",
+      "path": "Mathlib/NumberTheory/RamificationInertia/Ramification.lean:268"
+    },
+    {
+      "name": "Ideal.inertiaDeg'_algebraMap",
+      "path": "Mathlib/NumberTheory/RamificationInertia/Inertia.lean:87"
+    }
+  ],
+  "existing_inputs_reused": [
+    "Model",
+    "Model.isCurveField",
+    "chartRing = integralClosure (Algebra.adjoin Rat {t}) K",
+    "Place = all proper valuation subrings containing Rat",
+    "Place.ResidueField",
+    "Place.residue",
+    "Place.degree = finrank Rat Place.ResidueField",
+    "Place.ord",
+    "ord_eq_placeOrd",
+    "functionZeroDivisor",
+    "functionPoleDivisor",
+    "divisorDegree"
+  ],
+  "proof_adaptations": [
+    {
+      "name": "Place.ord_eq_zero_of_valuation_eq_one",
+      "source": "Degree.lean:44-47",
+      "consumers": [
+        "Place.ord_eq_neg_log"
+      ],
+      "mathematical_content": "A valuation unit has normalized order zero.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.ord_eq_neg_log",
+      "source": "Degree.lean:50-88",
+      "consumers": [
+        "Place.ord_ofChart"
+      ],
+      "mathematical_content": "Uniqueness of normalized discrete valuation for the existing valuation ring.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.ord_ofChart",
+      "source": "Degree.lean:97-102",
+      "consumers": [
+        "Place.ord_ofChart_algebraMap"
+      ],
+      "mathematical_content": "The existing normalized order equals the actual prime-adic valuation.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.ord_ofChart_algebraMap",
+      "source": "Degree.lean:104-109",
+      "consumers": [
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "Normalized order equals actual ideal multiplicity.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.chartResidue",
+      "source": "Degree.lean:112-115",
+      "consumers": [
+        "Place.chartResidue_surjective",
+        "Place.ker_chartResidue",
+        "Place.quotientEquivResidueField"
+      ],
+      "mathematical_content": "Restrict the actual residue homomorphism to the integral-closure chart.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.chartResidue_surjective",
+      "source": "Degree.lean:117-119",
+      "consumers": [
+        "Place.quotientEquivResidueField"
+      ],
+      "mathematical_content": "Surjectivity of the actual chart residue map.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.ker_chartResidue",
+      "source": "Degree.lean:121-128",
+      "consumers": [
+        "Place.quotientEquivResidueField"
+      ],
+      "mathematical_content": "Its kernel equals the actual height-one chart prime.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.quotientEquivResidueField",
+      "source": "Degree.lean:131-134",
+      "consumers": [
+        "Place.finrank_quotient_eq_deg"
+      ],
+      "mathematical_content": "Actual ring equivalence A_t/v to the existing residue field.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.finrank_quotient_eq_deg",
+      "source": "Degree.lean:136-141",
+      "consumers": [
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "The quotient degree over Rat equals the existing Place.degree.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.tR (private)",
+      "source": "Degree.lean:150",
+      "consumers": [
+        "Place.algEquiv_X",
+        "Place.isMaximal_span_tR",
+        "Place.span_tR_ne_bot",
+        "Place.finrank_quotient_span_tR",
+        "Place.tS",
+        "Place.mem_primesOver_iff",
+        "Place.inertiaDeg'_eq_finrank",
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "The actual coordinate t as an element of Rat[t].",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.algEquiv_X (private)",
+      "source": "Degree.lean:153-155",
+      "consumers": [
+        "Place.irreducible_tR",
+        "Place.finrank_quotient_span_tR"
+      ],
+      "mathematical_content": "The polynomial-generator equivalence maps X to the actual coordinate.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.irreducible_tR (private)",
+      "source": "Degree.lean:158-161",
+      "consumers": [
+        "Place.isMaximal_span_tR",
+        "Place.span_tR_ne_bot"
+      ],
+      "mathematical_content": "Transport irreducibility of X.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.isMaximal_span_tR (private)",
+      "source": "Degree.lean:164-168",
+      "consumers": [
+        "Place.finrank_quotient_span_tR",
+        "Place.mem_primesOver_iff",
+        "Place.inertiaDeg'_eq_finrank",
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "The coordinate ideal is maximal in Rat[t].",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.span_tR_ne_bot (private)",
+      "source": "Degree.lean:171-173",
+      "consumers": [
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "The coordinate ideal is nonzero.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.finrank_quotient_span_tR (private)",
+      "source": "Degree.lean:177-195",
+      "consumers": [
+        "Place.inertiaDeg'_eq_finrank"
+      ],
+      "mathematical_content": "Rat[t]/(t) has actual Rat-dimension one, by evaluation at zero.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.tS (private)",
+      "source": "Degree.lean:198",
+      "consumers": [
+        "Place.tS_ne_zero",
+        "Place.map_span_tR",
+        "Place.mem_primesOver_iff",
+        "Place.mem_asIdeal_iff",
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "The actual coordinate mapped into integralClosure Rat[t] K.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.tS_ne_zero (private)",
+      "source": "Degree.lean:201-203",
+      "consumers": [
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "Transcendence gives a nonzero chart coordinate.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.map_span_tR (private)",
+      "source": "Degree.lean:206-210",
+      "consumers": [
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "The coordinate ideal maps to the actual chart coordinate ideal.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.mem_primesOver_iff (private)",
+      "source": "Degree.lean:213-222",
+      "consumers": [
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "Primes above (t) are exactly height-one chart primes containing t.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.mem_asIdeal_iff (private)",
+      "source": "Degree.lean:224-229",
+      "consumers": [
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "Such primes correspond exactly to all places where ord(t)>0.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.inertiaDeg'_eq_finrank (private)",
+      "source": "Degree.lean:232-242",
+      "consumers": [
+        "Place.sum_ord_mul_deg_zeros"
+      ],
+      "mathematical_content": "Actual inertia degree equals the chart residue degree over Rat.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.sum_ord_mul_deg_zeros",
+      "source": "Degree.lean:248-289",
+      "consumers": [
+        "Place.sum_ord_mul_deg_poles",
+        "functionZeroDivisor_degree"
+      ],
+      "mathematical_content": "Apply actual Ideal.sum_ramification_inertia, then use the actual chart/place bijection.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "adjoin_inv_eq",
+      "source": "Degree.lean:295-301",
+      "consumers": [
+        "Place.sum_ord_mul_deg_poles"
+      ],
+      "mathematical_content": "The actual intermediate fields Rat(t inverse) and Rat(t) are equal.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "Place.sum_ord_mul_deg_poles",
+      "source": "Degree.lean:308-317",
+      "consumers": [
+        "functionPoleDivisor_degree"
+      ],
+      "mathematical_content": "Apply the zero result to t inverse; this includes all places over infinity.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "divisorDegree_eq_sum_of_support_subset",
+      "source": "Divisor.lean:85-87",
+      "consumers": [
+        "functionZeroDivisor_degree",
+        "functionPoleDivisor_degree"
+      ],
+      "mathematical_content": "Evaluate the existing divisor degree on a finite set containing actual support.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "functionZeroDivisor_degree",
+      "source": "Divisor.lean:190-200",
+      "consumers": [
+        "functionZeroPoleDegrees"
+      ],
+      "mathematical_content": "Use the proven zero-fiber sum and actual max-positive divisor support.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "functionPoleDivisor_degree",
+      "source": "Divisor.lean:203-213",
+      "consumers": [
+        "functionZeroPoleDegrees"
+      ],
+      "mathematical_content": "Use the proven pole-fiber sum and actual max-negative divisor support.",
+      "status": "source_proof_candidate_uncompiled"
+    },
+    {
+      "name": "functionZeroPoleDegrees",
+      "source": "Degree.lean:248-317; Divisor.lean:190-213",
+      "consumers": [
+        "principalDegreeZero_of_zeroPoleDegrees",
+        "riemannRochFiniteDimensional",
+        "riemannRochDimensionUpperBound",
+        "riemannRochEventuallyLinear"
+      ],
+      "mathematical_content": "The unchanged parent statement follows by conjunction of the two proven divisor degrees.",
+      "status": "source_proof_candidate_uncompiled"
+    }
+  ],
+  "new_open_obligations": [],
+  "parent_signature_preserved": true,
+  "source_proof_body_mechanical_equality_checked": true,
+  "source_proof_changes": [
+    "Belyi.CurveField namespace replaced by AbcAdaptation.Tripod.Fermat.Proper",
+    "Belyi imports replaced by existing Definitions modules",
+    "Place.deg replaced by Place.degree",
+    "explicit autoImplicit false added",
+    "source pin and license adaptation notice added"
+  ],
+  "constant_field_equals_Rat_assumed": false,
+  "all_places_preserved": true,
+  "infinity_preserved_by": "Apply the zero-fiber theorem to inverse t; ord(inv t)=-ord(t); Rat(inv t)=Rat(t).",
+  "nonconstant_hypothesis_preserved": "Transcendental Rat f",
+  "free_numeric_or_Prop_slots_added": false,
+  "upstream_runtime_dependency_added": false,
+  "Act2_added": false,
+  "integration_order": [
+    "Definitions/Def_FermatCurveFieldDegree.lean",
+    "Definitions/Def_FermatFunctionFiberDegrees.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean"
+  ],
+  "validation": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "main_workspace_edited": false,
+    "read_back_written": true,
+    "no_sorry_or_axiom_declarations": true,
+    "no_Belyi_imports": true,
+    "proof_body_diff_check": "exact match after three identifier/import adaptations; header and explicit autoImplicit are outside proof body",
+    "required_main_agent_gates": [
+      "new leaves through MCP-CI",
+      "associated Checks/Axioms",
+      "ImportAudit",
+      "Act1Scene1 aggregate",
+      "AxiomAudit with sorryAx and actual axiom output",
+      "git diff --check"
+    ]
+  },
+  "known_interface_note": "Pinned Mathlib keeps the source NumberTheory.RamificationInertia API with deprecation notices. This candidate preserves the existing API instead of rewriting the mathematics."
+}

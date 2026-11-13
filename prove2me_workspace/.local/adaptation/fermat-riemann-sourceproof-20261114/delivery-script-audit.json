@@ -1,0 +1,74 @@
+{
+  "scope": "Static review only; no repository writes, compilation, MCP-CI, or network API calls.",
+  "as_of": "2026-11-14; finalization and platform receipts were not yet present during review",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "medium",
+      "location": "/tmp/p2m-finalize-sourceproof-20261114.py:4",
+      "problem": "Finalizer trusts validation booleans without comparing definition/theorem/graph hashes to current bytes. It could stage files that differ from audited inputs.",
+      "fix": "Rehash all four Definitions, three theorem files, declaration graph and each generated Solution against its successful leaf receipt; require exact-type receipt and equality output. Included in draft."
+    },
+    {
+      "id": "F2",
+      "severity": "medium",
+      "location": "/tmp/p2m-finalize-sourceproof-20261114.py:31",
+      "problem": "Integration status unconditionally claims four Definitions PUBLISHED without checking the four payload/submit/result chains.",
+      "fix": "Compare saved payload code/environment/privacy and each submitted publish job terminal PUBLISHED/private receipt. Included in draft."
+    },
+    {
+      "id": "F3",
+      "severity": "low",
+      "location": "/tmp/p2m-finalize-sourceproof-20261114.py:28",
+      "problem": "riemann_sourceproof_unit.closed_transitive is populated with all seven statuses, including the three direct proofs.",
+      "fix": "Keep direct_closed_children=5; retain the three new direct proof records and only the four parents in closed_transitive. Included in draft."
+    },
+    {
+      "id": "F4",
+      "severity": "low",
+      "location": "prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean:8",
+      "problem": "The current header says only namespace/import/Place.degree changes were made. Current code also has canonical algebra and faithful scalar instances plus direct proof repairs. The original fiber delivery ledger still states mechanical proof-body equality and omits these repairs.",
+      "fix": "Correct the current source header and current source-consumer adaptation description. Preserve the initial candidate ledgers as historical original_delivery_ledgers, rather than representing their mechanical-equality statement as the final state."
+    },
+    {
+      "id": "F5",
+      "severity": "medium",
+      "location": "/tmp/p2m-platform-sourceproof-20261114.py:12",
+      "problem": "Uploader preflight checks only definition_hashes. It does not bind theorem files, exact-type validation, or generated Solution bytes to successful local receipts; inherited publish/verify helpers can reuse cached submissions after overwriting saved payload/request metadata.",
+      "fix": "Validate theorem/graph/exact-type/solution receipt hashes before API requests and refuse cached submission reuse when the original payload or source/target request differs. Included in uploader draft."
+    }
+  ],
+  "verified": {
+    "pending_database": "docs/Prove2Me适配状态.md is the supplied pending inventory. On its current text, the original slice removes exactly the three target paragraphs and leaves canonicalDivisorExists and remaining obligations. It is brittle if markers move or one disappears; draft uses exact paragraph membership and supports a completed rerun.",
+    "seven_node_gate": "Present: all three direct and four parent snapshots must report Proved, private, and the pinned Mathlib revision. Root frontier must be complete and contain none of these seven. Draft additionally matches theorem_name to each expected name.",
+    "registry_counts": "2 existing direct proofs + 3 new ACCEPTED direct proofs = 5 direct_closed_children. Four parent closures do not add to direct_closed_children. New published child and reduction counts are unchanged. Expected open frontier decreases 30 to 27 if no unrelated platform change occurs.",
+    "source_attribution": "Platform prose accurately labels Mochizuki Theorem 2.5 proof p.6 as geometric context and pinned Apache-2.0 Belyi as the Lean proof source. It does not claim that the quotation proves these exact three arithmetic function-field statements. Four Definitions retain source pin and notices and import local Definitions/Mathlib.",
+    "credential_exclusion": {
+      "credential_file_in_planned_scope": false,
+      "known_credential_values_found": [],
+      "files_scanned": 66,
+      "comment": "No current leak found. Existing scanner skips registry and only recognizes two prefixes; draft scans every prospective file, including registry, for configured secret values without printing them."
+    },
+    "staging_scope": "git index was empty during review. Explicit files cover the unit source, checks, inventory, registry and unit evidence; unrelated dirty docs and Scene1 files are not selected. Recursive unit evidence staging also includes original candidate ledgers/attempt receipts intentionally. No broad git add is used."
+  },
+  "plan_checkbox_recommendations": [
+    {
+      "section": "8.3",
+      "item": "转换已完成 proof term 时，使用 Prove2Me 的声明图与语法位置提取工具确定依赖、源范围和 proof 边界；提取脚本也经 MCP-CI 运行。",
+      "when": "After source-graph-leaf and final unit receipts succeed.",
+      "reason": "Follow-through uses elaborated decl_graph source spans and a scheduled extractor, matching this delivery workflow item."
+    },
+    {
+      "section": "8.3",
+      "item": "对上传前后 elaborated type 作一致性核对；证明重命名和平台命名空间变换不会改变数学陈述。",
+      "when": "After exact-platform-types-leaf succeeds and the uploader/finalizer verify its hash binding.",
+      "reason": "The unit explicitly performs Lean.Meta.isDefEq for all three original platform targets."
+    }
+  ],
+  "plan_limits": "No new Act2, whole dependency closure, global mathematical completion, or platform root checkbox is justified by this three-leaf reuse unit. Other unchecked workflow items were not fully established by the reviewed evidence.",
+  "drafts": {
+    "finalizer": "/tmp/p2m-sourceproof-delivery-audit-20261114/finalize-sourceproof-corrected.py",
+    "uploader": "/tmp/p2m-sourceproof-delivery-audit-20261114/platform-sourceproof-corrected.py"
+  },
+  "draft_validation": "Both drafts parsed with Python ast.parse only; they were not executed. All generated files are confined to this /tmp audit directory."
+}

@@ -1,0 +1,703 @@
+{
+  "status": "static_readback_pass_with_mechanical_wording_fixes",
+  "scope": "Seven specified main-workspace Lean source files, the prior blind-readbacks.json, and eight authorized main-workspace Lean dependencies needed to check Model, Place, chart, residue degree, orders, actual Riemann–Roch spaces, and the fixed basis correction. No README, ledger, author-intent document, or reference paper was read.",
+  "coverage": {
+    "original_reviewed": 39,
+    "local_instances_added": 4,
+    "final_total": 43,
+    "private_source_helpers": 12
+  },
+  "mathematical_findings": [
+    {
+      "topic": "actual Model",
+      "result": "The Model expansion agrees with Def_FermatProperCarrier: K is an intermediate field ℚ≤K≤AlgebraicClosure(RatFunc ℚ), u is transcendental, u^N+v^N=1, ℚ(u,v)=K, and [K:ℚ(u)]=N with explicit finite_u. No actualModel selection or model-existence claim is added. N=0 is impossible under the equation in characteristic zero."
+    },
+    {
+      "topic": "Place and all places",
+      "result": "Place is exactly a proper valuation subring containing every rational. Divisors and inequalities quantify over this full carrier, including places at infinity, rather than one affine chart."
+    },
+    {
+      "topic": "degree and constants",
+      "result": "degree is the actual Module.finrank ℚ of the existing residue field. Residue finiteness follows from the curve-field dependency, not from a silently added constant-field equality. No assertion that the full algebraic constant field equals ℚ is introduced."
+    },
+    {
+      "topic": "orders and zero",
+      "result": "The two order definitions use the same maximal-ideal valuation; ord_eq_placeOrd is rfl. v_P(0)=0 is explicit, and function, zero, and pole divisors at zero all vanish. Division identity retains both nonzero hypotheses."
+    },
+    {
+      "topic": "Riemann–Roch finrank",
+      "result": "L(A) is the actual rational subspace with its separate zero clause and inequalities at every place. finrank has natural-number value zero in infinite dimension. Both lower-bound declarations retain hFinite for every divisor, even though their proofs instantiate it only at the target space."
+    },
+    {
+      "topic": "fixed basis correction",
+      "result": "The lower-bound readbacks use the existing functionBasis from Module.finBasis over ℚ(u), indexed by Fin(finrank), and the exact sum of its pole divisors; no arbitrary substitute correction or equality claim is inserted."
+    },
+    {
+      "topic": "auxiliary binders",
+      "result": "All RiemannApproximation auxiliaries retain the explicit included hCurve binder. single_le_polarDivisor omits hx as in source. The three Proper parent theorems have no additional IsCurveField binder."
+    },
+    {
+      "topic": "four local instances",
+      "result": "Each instance has exactly {K}[Field K][CharZero K](t), plus the stated ideal I for quotient instances. IsCurveField, Fact(Transcendental), Model, and finite-dimensionality binders are absent. chartRatAlgebra selects (chartRing t).algebra'; quotient instances select Ideal.Quotient.algebra ℚ; chartFaithfulSMul proves the canonical R_t action faithful from the inclusion into K."
+    },
+    {
+      "topic": "inertia terminology",
+      "result": "The existing Chinese term 惯性次数 is retained. Here it denotes the finrank of the corresponding residue-field extension, the same mathematical degree often called 剩余次数. Because R_t/(t_R) has rational finrank one, the equality specializes this degree to finrank_ℚ(A_t/𝔭). No curve-field or finite-dimensionality binder is added; infinite-dimensional finrank is zero."
+    },
+    {
+      "topic": "source quotations",
+      "result": "Every english_source_quote remains null; the parent must add quotations independently."
+    }
+  ],
+  "changes": {
+    "source_code_changes": false,
+    "path_line_metadata_updated": 39,
+    "chinese_residue_terminology": "余域 → 剩余域 in zh_Hans bodies only",
+    "decoded_actual_double_backslashes_confirmed": true,
+    "normalization": "Single actual backslashes are retained in all mathematical language strings; JSON serialization escapes these as required. Final normalization made zero replacements because the reloaded input was already normalized.",
+    "per_field_mechanical_changes": [
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_zero_of_valuation_eq_one",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_neg_log",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart_algebraMap",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue_surjective",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 2
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ker_chartResidue",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.quotientEquivResidueField",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_eq_deg",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 2
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_asIdeal_iff",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.inertiaDeg'_eq_finrank",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 2
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_zeros",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 2
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_poles",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 2
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_eq_sum_of_support_subset",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroDivisor_degree",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor_degree",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.principalDivisor_div",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.pow_mem_L",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.aeval_mem_L",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_aeval_ord_pos",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.single_le_polarDivisor",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_add_div_le",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_nat_add_div_le",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_div_le",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannBasisPower.lowerBound",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannBasisPowerLowerBound",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation",
+        "field": "zh_Hans",
+        "double_backslash_pairs_normalized": 0,
+        "residue_term_replacements": 1
+      }
+    ],
+    "actual_double_backslash_pairs_normalized_in_final_input": 0,
+    "initial_vs_final_input_note": "Initial read of the supplied artifact showed actual double backslashes. The final generation reloaded the current artifact, whose language bodies already had no actual double backslash pairs. This output therefore performs zero additional backslash replacements and retains the single-backslash text; it does perform 33 Chinese residue-term replacements."
+  },
+  "validation": {
+    "json_parse": true,
+    "unique_declarations": 43,
+    "language_fields_per_declaration": 3,
+    "original_39_field_sets_preserved": true,
+    "original_39_order_preserved": true,
+    "path_line_anchors_checked": true,
+    "compiled": false,
+    "ci_submitted": false,
+    "main_workspace_modified": false,
+    "decoded_double_backslash_pairs_remaining_in_language_bodies": 0,
+    "chinese_legacy_residue_term_remaining": 0
+  },
+  "limits": [
+    "Static source inspection does not certify Lean elaboration, generated internal names, or transitive axiom dependencies.",
+    "No reference paper or English quotation was read."
+  ],
+  "input_file_sha256": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "sha256": "d41a7cef610d1121ee2fd9cd9e5ba47ad1b9ba08f0790520225d20a2f0bc115a"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "sha256": "80239311863e8cc32a8a1dcfeddee7eb48165279c5d7861a78da9b932c742134"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "sha256": "6b1e1216a32ebe3806aaa5aa39a971e0f4e7c941dea00fc8f2245df8dc6bd3c8"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannBasisPowers.lean",
+      "sha256": "09f9a3d8b8d03202b3f7c61c0fbaa79af0ed8d60aeed2d1585882f9e390661f7"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+      "sha256": "ecc2997d43a08556ad2b4ba9af193ac1748c224eb726c8709cbb4ae14d23b8fc"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+      "sha256": "e9c964a47f9103792c52a68b3e2f63b214f311fe470b78d3842bbb81a7d1cef4"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+      "sha256": "0e520363e38f2ba55007843859e21d08026f4cfaee30284a20ffbfa28d33d487"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldChart.lean",
+      "sha256": "90aa4d97587e8ce3ade8cd92b8a566028a4d7ba53a381a023d28f2375fa4a8be"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+      "sha256": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannSpaces.lean",
+      "sha256": "e75fa0f2f9e79fcf4bc053589d9c21fdd7891f489d347dae2ee24f0b2a7b4809"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionDivisors.lean",
+      "sha256": "1219586c9d82f822b770482fb1a267d6499bff9773399cb54de8e6564f26badd"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannLocalDimension.lean",
+      "sha256": "e11c3689ffe7ff4f964703814779411209802c41dce054191801eac0b522a0f7"
+    }
+  ],
+  "declaration_checks": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_zero_of_valuation_eq_one",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 68
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_neg_log",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 74
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 121
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart_algebraMap",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 128
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 136
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue_surjective",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 141
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ker_chartResidue",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 145
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.quotientEquivResidueField",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 155
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_eq_deg",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 160
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tR",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 174
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.algEquiv_X",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 177
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.irreducible_tR",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 182
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.isMaximal_span_tR",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 188
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.span_tR_ne_bot",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 195
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_span_tR",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 201
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tS",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 222
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tS_ne_zero",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 225
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.map_span_tR",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 230
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_primesOver_iff",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 236
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_asIdeal_iff",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 248
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.inertiaDeg'_eq_finrank",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 256
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_zeros",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 278
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.adjoin_inv_eq",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 325
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_poles",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 338
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_eq_sum_of_support_subset",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+        "line": 22
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroDivisor_degree",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+        "line": 28
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor_degree",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+        "line": 45
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+        "line": 21
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.principalDivisor_div",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+        "line": 27
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.pow_mem_L",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+        "line": 34
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.aeval_mem_L",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+        "line": 44
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_aeval_ord_pos",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+        "line": 53
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.single_le_polarDivisor",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+        "line": 84
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_add_div_le",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+        "line": 96
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_nat_add_div_le",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+        "line": 125
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_div_le",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+        "line": 136
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannBasisPower.lowerBound",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannBasisPowers.lean",
+        "line": 22
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannBasisPowerLowerBound",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+        "line": 16
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+        "line": 16
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartRatAlgebra",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 48
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": true
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartQuotientRatAlgebra",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 51
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": true
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.adjoinQuotientRatAlgebra",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 54
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": true
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartFaithfulSMul",
+      "anchor": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+        "line": 57
+      },
+      "result": "consistent_static_source_and_three_language_readback",
+      "new_local_instance": true
+    }
+  ],
+  "source_artifact": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/blind-readbacks.json",
+    "sha256_when_final_checked": "c5685a036551c2ca7b032a35e503e495c44c2f44190956abc391c671d42f4683"
+  }
+}

@@ -1,0 +1,1052 @@
+{
+  "auditor_role": "Independent final blind static Lean read-back auditor",
+  "readback_model": "gpt-6.1-sol",
+  "input_scope": "Seven specified main-workspace Lean source files, the prior blind-readbacks.json, and eight authorized main-workspace Lean dependencies needed to check Model, Place, chart, residue degree, orders, actual Riemann–Roch spaces, and the fixed basis correction. No README, ledger, author-intent document, or reference paper was read.",
+  "signature_note": "Signatures are source-level static reconstructions, with section variables, include/omit directives and local notation expanded. No Lean elaboration or compilation was run. Type u is a static placeholder for source Type*. Private names are source-local qualified names, not verified internal mangled names.",
+  "english_source_quote_note": "No source quotation was read or invented; the parent agent must supply English quotations independently.",
+  "preserved_previous_readbacks": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/blind-readbacks.json",
+  "coverage_count": 43,
+  "coverage": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_zero_of_valuation_eq_one",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 68
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_neg_log",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 74
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 121
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart_algebraMap",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 128
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 136
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue_surjective",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 141
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ker_chartResidue",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 145
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.quotientEquivResidueField",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 155
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_eq_deg",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 160
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tR",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 174
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.algEquiv_X",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 177
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.irreducible_tR",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 182
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.isMaximal_span_tR",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 188
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.span_tR_ne_bot",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 195
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_span_tR",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 201
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tS",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 222
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tS_ne_zero",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 225
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.map_span_tR",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 230
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_primesOver_iff",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 236
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_asIdeal_iff",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 248
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.inertiaDeg'_eq_finrank",
+      "private": true,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 256
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_zeros",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 278
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.adjoin_inv_eq",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 325
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_poles",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 338
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_eq_sum_of_support_subset",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "line": 22
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroDivisor_degree",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "line": 28
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor_degree",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "line": 45
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+      "line": 21
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.principalDivisor_div",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 27
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.pow_mem_L",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 34
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.aeval_mem_L",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 44
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_aeval_ord_pos",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 53
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.single_le_polarDivisor",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 84
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_add_div_le",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 96
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_nat_add_div_le",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 125
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_div_le",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 136
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannBasisPower.lowerBound",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannBasisPowers.lean",
+      "line": 22
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannBasisPowerLowerBound",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+      "line": 16
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+      "line": 16
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartRatAlgebra",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 48
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartQuotientRatAlgebra",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 51
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.adjoinQuotientRatAlgebra",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 54
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartFaithfulSMul",
+      "private": false,
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 57
+    }
+  ],
+  "declarations": [
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_zero_of_valuation_eq_one",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_zero_of_valuation_eq_one",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 68,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.ord_eq_zero_of_valuation_eq_one {K : Type u} [Field K] [CharZero K] [IsCurveField K] (P : Place K) (w : Valuation K ℤᵐ⁰) (hw : ∀ x, x ∈ P.1 ↔ w x ≤ 1) {y : K} (hy : w y = 1) : P.ord y = 0",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. For each place, $v_P(f)$ denotes the normalized integer order obtained by taking minus the integer logarithm of the maximal-ideal valuation of $O_P$; the total-function convention is $v_P(0)=0$. Write $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ for the multiplicative copy of the integers with zero adjoined, where $\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$, the order on nonzero elements follows the integer exponents, and $\\log\\operatorname{exp}(n)=n$, $\\log 0=0$. For every place $P$, every multiplicative valuation $w:K→Γ$ with $x∈O_P$ if and only if $w(x)≤1$ for all $x∈K$, and every $y∈K$ satisfying $w(y)=1$, one has $v_P(y)=0$. The valuation $w$ is not separately assumed to attain every nonzero value of $Γ$.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 对每个处，$v_P(f)$ 表示 $O_P$ 的极大理想赋值的整数对数的相反数所给出的规范化整数阶数；采用全函数约定 $v_P(0)=0$。 记 $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ 为整数的乘法式副本添零所得的群值类型，其中 $\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$，非零元素按整数指数排序，且 $\\log\\operatorname{exp}(n)=n$、$\\log 0=0$。 对每个处 $P$、每个乘法赋值 $w:K→Γ$，若对所有 $x∈K$ 都有 $x∈O_P$ 当且仅当 $w(x)≤1$，则每个满足 $w(y)=1$ 的 $y∈K$ 都有 $v_P(y)=0$。没有另行假设 $w$ 取遍 $Γ$ 的所有非零值。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 各素点に対し、$v_P(f)$ は $O_P$ の極大イデアル付値の整数対数に負号を付けた正規化整数位数を表し、全域関数の規約として $v_P(0)=0$ とする。 $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ を整数の乗法的な写しに零を加えた値型とする。$\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$ であり、零でない元の順序は整数の指数の順序に従い、$\\log\\operatorname{exp}(n)=n$、$\\log 0=0$ とする。 任意の素点 $P$ と、すべての $x∈K$ で $x∈O_P$ と $w(x)≤1$ が同値となる任意の乗法付値 $w:K→Γ$ に対し、$w(y)=1$ を満たす任意の $y∈K$ は $v_P(y)=0$ を満たす。$w$ が $Γ$ のすべての非零値を取ることは別に仮定しない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_neg_log",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_eq_neg_log",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 74,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.ord_eq_neg_log {K : Type u} [Field K] [CharZero K] [IsCurveField K] (P : Place K) (w : Valuation K ℤᵐ⁰) (hw : ∀ x, x ∈ P.1 ↔ w x ≤ 1) (hπ : ∃ π : K, w π = WithZero.exp (-1)) (x : K) : P.ord x = -WithZero.log (w x)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. For each place, $v_P(f)$ denotes the normalized integer order obtained by taking minus the integer logarithm of the maximal-ideal valuation of $O_P$; the total-function convention is $v_P(0)=0$. Write $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ for the multiplicative copy of the integers with zero adjoined, where $\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$, the order on nonzero elements follows the integer exponents, and $\\log\\operatorname{exp}(n)=n$, $\\log 0=0$. For every place $P$ and multiplicative valuation $w:K→Γ$, assume $x∈O_P$ if and only if $w(x)≤1$ for all $x∈K$, and assume there exists $π∈K$ with $w(π)=\\operatorname{exp}(-1)$. Then every $x∈K$, including $x=0$, satisfies $v_P(x)=-\\log w(x)$. The hypothesis asks for an element with precisely this value, not merely a nontrivial valuation.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 对每个处，$v_P(f)$ 表示 $O_P$ 的极大理想赋值的整数对数的相反数所给出的规范化整数阶数；采用全函数约定 $v_P(0)=0$。 记 $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ 为整数的乘法式副本添零所得的群值类型，其中 $\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$，非零元素按整数指数排序，且 $\\log\\operatorname{exp}(n)=n$、$\\log 0=0$。 对每个处 $P$ 及乘法赋值 $w:K→Γ$，假设对所有 $x∈K$ 都有 $x∈O_P$ 当且仅当 $w(x)≤1$，并假设存在 $π∈K$ 满足 $w(π)=\\operatorname{exp}(-1)$。则每个 $x∈K$（包括 $x=0$）都满足 $v_P(x)=-\\log w(x)$。假设要求存在赋值恰为此值的元素，而不只是赋值非平凡。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 各素点に対し、$v_P(f)$ は $O_P$ の極大イデアル付値の整数対数に負号を付けた正規化整数位数を表し、全域関数の規約として $v_P(0)=0$ とする。 $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ を整数の乗法的な写しに零を加えた値型とする。$\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$ であり、零でない元の順序は整数の指数の順序に従い、$\\log\\operatorname{exp}(n)=n$、$\\log 0=0$ とする。 任意の素点 $P$ と乗法付値 $w:K→Γ$ に対し、すべての $x∈K$ で $x∈O_P$ と $w(x)≤1$ が同値であり、$w(π)=\\operatorname{exp}(-1)$ を満たす $π∈K$ が存在すると仮定する。このとき $x=0$ を含むすべての $x∈K$ で $v_P(x)=-\\log w(x)$ が成り立つ。仮定は単なる付値の非自明性ではなく、ちょうどこの値を取る元の存在を要求する。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 121,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.ord_ofChart {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) (x : K) : (Place.ofChart t v).ord x = -WithZero.log (v.valuation K x)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. For each place, $v_P(f)$ denotes the normalized integer order obtained by taking minus the integer logarithm of the maximal-ideal valuation of $O_P$; the total-function convention is $v_P(0)=0$. Write $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ for the multiplicative copy of the integers with zero adjoined, where $\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$, the order on nonzero elements follows the integer exponents, and $\\log\\operatorname{exp}(n)=n$, $\\log 0=0$. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For a nonzero prime ideal $𝔭$ of $A_t$ (an element of the height-one-spectrum carrier), let $P_{t,𝔭}$ be the place with ring $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$, and let $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ send $a$ to its residue through the inclusion into $O_{t,𝔭}$. For every such nonzero prime ideal $𝔭$ and every $x∈K$, $v_{P_{t,𝔭}}(x)=-\\log w_𝔭(x)$, where $w_𝔭:K→Γ$ is the multiplicative $𝔭$-adic valuation associated to the Dedekind domain $A_t$ and its fraction field $K$. This includes $x=0$ with both sides zero.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 对每个处，$v_P(f)$ 表示 $O_P$ 的极大理想赋值的整数对数的相反数所给出的规范化整数阶数；采用全函数约定 $v_P(0)=0$。 记 $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ 为整数的乘法式副本添零所得的群值类型，其中 $\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$，非零元素按整数指数排序，且 $\\log\\operatorname{exp}(n)=n$、$\\log 0=0$。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对 $A_t$ 的非零素理想 $𝔭$（一阶谱类型中的元素），令 $P_{t,𝔭}$ 为赋值环 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ 所给出的处，并令 $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ 把 $a$ 先包含进 $O_{t,𝔭}$ 再取余类。 对每个这样的非零素理想 $𝔭$ 及每个 $x∈K$，有 $v_{P_{t,𝔭}}(x)=-\\log w_𝔭(x)$，其中 $w_𝔭:K→Γ$ 是 Dedekind 整环 $A_t$ 及其分式域 $K$ 所对应的乘法式 $𝔭$ 进赋值。此断言包括 $x=0$，此时两边都为零。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 各素点に対し、$v_P(f)$ は $O_P$ の極大イデアル付値の整数対数に負号を付けた正規化整数位数を表し、全域関数の規約として $v_P(0)=0$ とする。 $Γ=\\{0\\}∪\\{\\operatorname{exp}(n):n∈ℤ\\}$ を整数の乗法的な写しに零を加えた値型とする。$\\operatorname{exp}(n)\\operatorname{exp}(m)=\\operatorname{exp}(n+m)$ であり、零でない元の順序は整数の指数の順序に従い、$\\log\\operatorname{exp}(n)=n$、$\\log 0=0$ とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $A_t$ の零でない素イデアル $𝔭$（高さ一のスペクトルの型の元）に対し、環 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ をもつ素点を $P_{t,𝔭}$ とし、$ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ は $a$ を $O_{t,𝔭}$ に包含してから剰余類を取る写像とする。 このような任意の非零素イデアル $𝔭$ と任意の $x∈K$ に対し、$v_{P_{t,𝔭}}(x)=-\\log w_𝔭(x)$ が成り立つ。$w_𝔭:K→Γ$ は Dedekind 整域 $A_t$ とその分数体 $K$ に付随する乗法的な $𝔭$ 進付値である。$x=0$ も含み、その場合は両辺とも零である。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart_algebraMap",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_ofChart_algebraMap",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 128,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.ord_ofChart_algebraMap {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) {r : chartRing t} (hr : r ≠ 0) : (Place.ofChart t v).ord (algebraMap (chartRing t) K r) = multiplicity v.asIdeal (Ideal.span {r})",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. For each place, $v_P(f)$ denotes the normalized integer order obtained by taking minus the integer logarithm of the maximal-ideal valuation of $O_P$; the total-function convention is $v_P(0)=0$. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For a nonzero prime ideal $𝔭$ of $A_t$ (an element of the height-one-spectrum carrier), let $P_{t,𝔭}$ be the place with ring $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$, and let $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ send $a$ to its residue through the inclusion into $O_{t,𝔭}$. For every such $𝔭$ and every nonzero $r∈A_t$, the order $v_{P_{t,𝔭}}(r)$ of its image in $K$ equals the multiplicity of the prime ideal $𝔭$ in the principal ideal $(r)$ of $A_t$. The explicit nonzero hypothesis excludes the zero principal ideal.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 对每个处，$v_P(f)$ 表示 $O_P$ 的极大理想赋值的整数对数的相反数所给出的规范化整数阶数；采用全函数约定 $v_P(0)=0$。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对 $A_t$ 的非零素理想 $𝔭$（一阶谱类型中的元素），令 $P_{t,𝔭}$ 为赋值环 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ 所给出的处，并令 $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ 把 $a$ 先包含进 $O_{t,𝔭}$ 再取余类。 对每个这样的 $𝔭$ 及每个非零 $r∈A_t$，$r$ 映入 $K$ 后的阶数 $v_{P_{t,𝔭}}(r)$ 等于素理想 $𝔭$ 在 $A_t$ 的主理想 $(r)$ 中的重数。明确的非零假设排除了零主理想。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 各素点に対し、$v_P(f)$ は $O_P$ の極大イデアル付値の整数対数に負号を付けた正規化整数位数を表し、全域関数の規約として $v_P(0)=0$ とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $A_t$ の零でない素イデアル $𝔭$（高さ一のスペクトルの型の元）に対し、環 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ をもつ素点を $P_{t,𝔭}$ とし、$ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ は $a$ を $O_{t,𝔭}$ に包含してから剰余類を取る写像とする。 このような任意の $𝔭$ と零でない任意の $r∈A_t$ に対し、その $K$ における像の位数 $v_{P_{t,𝔭}}(r)$ は、$A_t$ の単項イデアル $(r)$ における素イデアル $𝔭$ の重複度に等しい。明示された非零仮定は零イデアルを除く。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 136,
+      "kind": "def",
+      "private": false,
+      "full_signature_static": "noncomputable def Place.chartResidue {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) : chartRing t →+* (Place.ofChart t v).ResidueField",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "definition",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For a nonzero prime ideal $𝔭$ of $A_t$ (an element of the height-one-spectrum carrier), let $P_{t,𝔭}$ be the place with ring $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$, and let $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ send $a$ to its residue through the inclusion into $O_{t,𝔭}$. For every such $𝔭$, this defines the unital ring homomorphism $ρ_{t,𝔭}$ just described, by composing the inclusion $A_t→O_{t,𝔭}$ with the residue homomorphism $O_{t,𝔭}→O_{t,𝔭}/𝔪_{t,𝔭}$.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对 $A_t$ 的非零素理想 $𝔭$（一阶谱类型中的元素），令 $P_{t,𝔭}$ 为赋值环 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ 所给出的处，并令 $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ 把 $a$ 先包含进 $O_{t,𝔭}$ 再取余类。 对每个这样的 $𝔭$，此处定义上述保幺环同态 $ρ_{t,𝔭}$，即包含映射 $A_t→O_{t,𝔭}$ 与余类同态 $O_{t,𝔭}→O_{t,𝔭}/𝔪_{t,𝔭}$ 的复合。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $A_t$ の零でない素イデアル $𝔭$（高さ一のスペクトルの型の元）に対し、環 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ をもつ素点を $P_{t,𝔭}$ とし、$ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ は $a$ を $O_{t,𝔭}$ に包含してから剰余類を取る写像とする。 このような任意の $𝔭$ に対し、上記の単位的環準同型 $ρ_{t,𝔭}$ を、包含 $A_t→O_{t,𝔭}$ と剰余準同型 $O_{t,𝔭}→O_{t,𝔭}/𝔪_{t,𝔭}$ の合成として定める。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue_surjective",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartResidue_surjective",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 141,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.chartResidue_surjective {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) : Function.Surjective (Place.chartResidue t v)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For a nonzero prime ideal $𝔭$ of $A_t$ (an element of the height-one-spectrum carrier), let $P_{t,𝔭}$ be the place with ring $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$, and let $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ send $a$ to its residue through the inclusion into $O_{t,𝔭}$. For every such $𝔭$, the homomorphism $ρ_{t,𝔭}$ is surjective: each element of the entire residue field $κ(P_{t,𝔭})$ is the residue of an element of $A_t$.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对 $A_t$ 的非零素理想 $𝔭$（一阶谱类型中的元素），令 $P_{t,𝔭}$ 为赋值环 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ 所给出的处，并令 $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ 把 $a$ 先包含进 $O_{t,𝔭}$ 再取余类。 对每个这样的 $𝔭$，同态 $ρ_{t,𝔭}$ 是满射：整个剩余域 $κ(P_{t,𝔭})$ 的每个元素都是某个 $A_t$ 中元素的余类。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $A_t$ の零でない素イデアル $𝔭$（高さ一のスペクトルの型の元）に対し、環 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ をもつ素点を $P_{t,𝔭}$ とし、$ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ は $a$ を $O_{t,𝔭}$ に包含してから剰余類を取る写像とする。 このような任意の $𝔭$ に対し、準同型 $ρ_{t,𝔭}$ は全射である。剰余体 $κ(P_{t,𝔭})$ 全体の各元は、$A_t$ のある元の剰余類である。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.ker_chartResidue",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.ker_chartResidue",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 145,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.ker_chartResidue {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) : RingHom.ker (Place.chartResidue t v) = v.asIdeal",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For a nonzero prime ideal $𝔭$ of $A_t$ (an element of the height-one-spectrum carrier), let $P_{t,𝔭}$ be the place with ring $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$, and let $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ send $a$ to its residue through the inclusion into $O_{t,𝔭}$. For every such $𝔭$, the kernel of $ρ_{t,𝔭}$ is exactly $𝔭$: an element $a∈A_t$ has zero residue at $P_{t,𝔭}$ if and only if $a∈𝔭$.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对 $A_t$ 的非零素理想 $𝔭$（一阶谱类型中的元素），令 $P_{t,𝔭}$ 为赋值环 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ 所给出的处，并令 $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ 把 $a$ 先包含进 $O_{t,𝔭}$ 再取余类。 对每个这样的 $𝔭$，$ρ_{t,𝔭}$ 的核恰为 $𝔭$：$a∈A_t$ 在 $P_{t,𝔭}$ 处的余类为零，当且仅当 $a∈𝔭$。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $A_t$ の零でない素イデアル $𝔭$（高さ一のスペクトルの型の元）に対し、環 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ をもつ素点を $P_{t,𝔭}$ とし、$ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ は $a$ を $O_{t,𝔭}$ に包含してから剰余類を取る写像とする。 このような任意の $𝔭$ に対し、$ρ_{t,𝔭}$ の核はちょうど $𝔭$ である。すなわち $a∈A_t$ の $P_{t,𝔭}$ での剰余類が零であることと $a∈𝔭$ は同値である。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.quotientEquivResidueField",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.quotientEquivResidueField",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 155,
+      "kind": "def",
+      "private": false,
+      "full_signature_static": "noncomputable def Place.quotientEquivResidueField {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) : (chartRing t ⧸ v.asIdeal) ≃+* (Place.ofChart t v).ResidueField",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "definition",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For a nonzero prime ideal $𝔭$ of $A_t$ (an element of the height-one-spectrum carrier), let $P_{t,𝔭}$ be the place with ring $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$, and let $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ send $a$ to its residue through the inclusion into $O_{t,𝔭}$. For every such $𝔭$, this defines a ring isomorphism $A_t/𝔭≅κ(P_{t,𝔭})$, the isomorphism induced by $ρ_{t,𝔭}$ after identifying its kernel with $𝔭$; it sends the class of each $a∈A_t$ to $ρ_{t,𝔭}(a)$.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对 $A_t$ 的非零素理想 $𝔭$（一阶谱类型中的元素），令 $P_{t,𝔭}$ 为赋值环 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ 所给出的处，并令 $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ 把 $a$ 先包含进 $O_{t,𝔭}$ 再取余类。 对每个这样的 $𝔭$，此处定义环同构 $A_t/𝔭≅κ(P_{t,𝔭})$：将 $ρ_{t,𝔭}$ 的核与 $𝔭$ 识别后，由 $ρ_{t,𝔭}$ 诱导该同构；它把每个 $a∈A_t$ 的类映到 $ρ_{t,𝔭}(a)$。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $A_t$ の零でない素イデアル $𝔭$（高さ一のスペクトルの型の元）に対し、環 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ をもつ素点を $P_{t,𝔭}$ とし、$ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ は $a$ を $O_{t,𝔭}$ に包含してから剰余類を取る写像とする。 このような任意の $𝔭$ に対し、環同型 $A_t/𝔭≅κ(P_{t,𝔭})$ を定める。これは $ρ_{t,𝔭}$ の核を $𝔭$ と同一視した後に誘導される同型で、各 $a∈A_t$ の類を $ρ_{t,𝔭}(a)$ に写す。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_eq_deg",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_eq_deg",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 160,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.finrank_quotient_eq_deg {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) : Module.finrank ℚ (chartRing t ⧸ v.asIdeal) = (Place.ofChart t v).degree",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For a nonzero prime ideal $𝔭$ of $A_t$ (an element of the height-one-spectrum carrier), let $P_{t,𝔭}$ be the place with ring $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$, and let $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ send $a$ to its residue through the inclusion into $O_{t,𝔭}$. For every such $𝔭$, $\\dim_{ℚ}(A_t/𝔭)=\\deg P_{t,𝔭}$, where $\\deg P=\\dim_{ℚ}κ(P)$. These are rational vector-space dimensions, taken as natural numbers; the curve-field assumptions ensure the relevant residue spaces are finite dimensional.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对 $A_t$ 的非零素理想 $𝔭$（一阶谱类型中的元素），令 $P_{t,𝔭}$ 为赋值环 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ 所给出的处，并令 $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ 把 $a$ 先包含进 $O_{t,𝔭}$ 再取余类。 对每个这样的 $𝔭$，有 $\\dim_{ℚ}(A_t/𝔭)=\\deg P_{t,𝔭}$，其中 $\\deg P=\\dim_{ℚ}κ(P)$。两边都是自然数值的有理向量空间维数；曲线域假设保证相关剩余域空间有限维。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $A_t$ の零でない素イデアル $𝔭$（高さ一のスペクトルの型の元）に対し、環 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ をもつ素点を $P_{t,𝔭}$ とし、$ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ は $a$ を $O_{t,𝔭}$ に包含してから剰余類を取る写像とする。 このような任意の $𝔭$ に対し、$\\dim_{ℚ}(A_t/𝔭)=\\deg P_{t,𝔭}$ である。ここで $\\deg P=\\dim_{ℚ}κ(P)$ とする。両辺は自然数値の有理ベクトル空間次元であり、曲線体の仮定によって対応する剰余空間は有限次元である。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.tR",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tR",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 174,
+      "kind": "def",
+      "private": true,
+      "full_signature_static": "private noncomputable def Place.tR {K : Type u} [Field K] [CharZero K] (t : K) : Algebra.adjoin ℚ {t} := ⟨t, Algebra.self_mem_adjoin_singleton ℚ t⟩",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "definition",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. For any $t∈K$, set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be the integral closure of $R_t$ in $K$, the elements satisfying a monic polynomial over $R_t$; no transcendence or curve-field hypothesis is imposed here. This defines $t_R$ to be the element $t$, regarded as an element of the subalgebra $R_t$ with its membership proof. This declaration does not assert that $t$ is nonzero.",
+      "zh_Hans": "设 $K$ 为特征零域。 对任意 $t∈K$，令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为 $R_t$ 在 $K$ 中的整闭包，即满足某个 $R_t$ 系数首一多项式的元素所成的环；此处没有超越或曲线域假设。 此处将 $t_R$ 定义为视作子代数 $R_t$ 中元素的 $t$，并带有其归属证明。该声明并未断言 $t$ 非零。",
+      "ja": "$K$ を標数零の体とする。 任意の $t∈K$ に対し、$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ を $R_t$ 上のあるモニック多項式を満たす元からなる $K$ 内の整閉包とする。ここでは超越性や曲線体の仮定を置かない。 $t_R$ を、所属の証明とともに部分代数 $R_t$ の元とみなした $t$ と定める。この宣言は $t$ が零でないことを主張しない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.algEquiv_X",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.algEquiv_X",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 177,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.algEquiv_X {K : Type u} [Field K] [CharZero K] (t : K) [Fact (Transcendental ℚ t)] : Polynomial.algEquivOfTranscendental ℚ t Fact.out X = Place.tR t",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. The polynomial-evaluation $ℚ$-algebra isomorphism $ℚ[X]→R_t$, $p↦p(t)$, maps the indeterminate $X$ to $t_R$, namely $t$ as an element of $R_t$. No curve-field assumption is included.",
+      "zh_Hans": "设 $K$ 为特征零域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 多项式求值所给出的 $ℚ$ 代数同构 $ℚ[X]→R_t$、$p↦p(t)$，把不定元 $X$ 映到 $t_R$，即视作 $R_t$ 中元素的 $t$。此处不包含曲线域假设。",
+      "ja": "$K$ を標数零の体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 多項式の評価による $ℚ$ 代数同型 $ℚ[X]→R_t$、$p↦p(t)$ は、不定元 $X$ を $R_t$ の元としての $t$ である $t_R$ に写す。曲線体の仮定は含まれない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.irreducible_tR",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.irreducible_tR",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 182,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.irreducible_tR {K : Type u} [Field K] [CharZero K] (t : K) [Fact (Transcendental ℚ t)] : Irreducible (Place.tR t)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. The element $t_R=t∈R_t$ is irreducible in $R_t$: it is not a unit, and whenever it is a product of two elements of $R_t$, at least one factor is a unit. No curve-field assumption is included.",
+      "zh_Hans": "设 $K$ 为特征零域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 元素 $t_R=t∈R_t$ 在 $R_t$ 中不可约：它不是单位，且它若等于 $R_t$ 中两个元素的乘积，则至少一个因子是单位。此处不包含曲线域假设。",
+      "ja": "$K$ を標数零の体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 元 $t_R=t∈R_t$ は $R_t$ で既約である。すなわち単元でなく、$R_t$ の二元の積に等しければ少なくとも一方の因子が単元である。曲線体の仮定は含まれない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.isMaximal_span_tR",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.isMaximal_span_tR",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 188,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.isMaximal_span_tR {K : Type u} [Field K] [CharZero K] (t : K) [Fact (Transcendental ℚ t)] : (Ideal.span {Place.tR t}).IsMaximal",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. The principal ideal $(t_R)$ of $R_t$, generated by $t$ regarded as an element of $R_t$, is a maximal ideal. No curve-field assumption is included.",
+      "zh_Hans": "设 $K$ 为特征零域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 $R_t$ 中由视作 $R_t$ 元素的 $t$ 生成的主理想 $(t_R)$ 是极大理想。此处不包含曲线域假设。",
+      "ja": "$K$ を標数零の体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $R_t$ の元としての $t$ が生成する $R_t$ の単項イデアル $(t_R)$ は極大イデアルである。曲線体の仮定は含まれない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.span_tR_ne_bot",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.span_tR_ne_bot",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 195,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.span_tR_ne_bot {K : Type u} [Field K] [CharZero K] (t : K) [Fact (Transcendental ℚ t)] : Ideal.span {Place.tR t} ≠ ⊥",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. The principal ideal $(t_R)$ of $R_t$, with $t_R=t$ considered in $R_t$, is not the zero ideal. No curve-field assumption is included.",
+      "zh_Hans": "设 $K$ 为特征零域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 $R_t$ 的主理想 $(t_R)$ 不是零理想，其中 $t_R$ 为视作 $R_t$ 中元素的 $t$。此处不包含曲线域假设。",
+      "ja": "$K$ を標数零の体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $t_R$ を $R_t$ の元とみなした $t$ とすると、$R_t$ の単項イデアル $(t_R)$ は零イデアルでない。曲線体の仮定は含まれない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_span_tR",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.finrank_quotient_span_tR",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 201,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.finrank_quotient_span_tR {K : Type u} [Field K] [CharZero K] (t : K) [Fact (Transcendental ℚ t)] : Module.finrank ℚ (Algebra.adjoin ℚ {t} ⧸ Ideal.span {Place.tR t}) = 1",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. The rational finrank of the quotient $R_t/(t_R)$ is one, with $t_R=t$ regarded as an element of $R_t$. Finrank is the finite dimension when finite and zero for infinite-dimensional spaces; the asserted value is exactly one. No curve-field assumption is included.",
+      "zh_Hans": "设 $K$ 为特征零域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 商 $R_t/(t_R)$ 的有理秩为一，其中 $t_R$ 是视作 $R_t$ 中元素的 $t$。有理秩在有限维时为维数，在无限维时按定义为零；这里断言其值恰为一。此处不包含曲线域假设。",
+      "ja": "$K$ を標数零の体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $t_R$ を $R_t$ の元としての $t$ とすると、商 $R_t/(t_R)$ の有理階数は一である。階数は有限次元なら次元、無限次元なら定義上零であり、ここでは値がちょうど一であると述べる。曲線体の仮定は含まれない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.tS",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tS",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 222,
+      "kind": "def",
+      "private": true,
+      "full_signature_static": "private noncomputable def Place.tS {K : Type u} [Field K] [CharZero K] (t : K) : chartRing t := algebraMap (Algebra.adjoin ℚ {t}) (chartRing t) (Place.tR t)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "definition",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. For any $t∈K$, set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be the integral closure of $R_t$ in $K$, the elements satisfying a monic polynomial over $R_t$; no transcendence or curve-field hypothesis is imposed here. This defines $t_S$ to be the image of $t_R=t∈R_t$ under the canonical inclusion $R_t→A_t$. Its image in $K$ is $t$.",
+      "zh_Hans": "设 $K$ 为特征零域。 对任意 $t∈K$，令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为 $R_t$ 在 $K$ 中的整闭包，即满足某个 $R_t$ 系数首一多项式的元素所成的环；此处没有超越或曲线域假设。 此处将 $t_S$ 定义为 $t_R=t∈R_t$ 在典范包含映射 $R_t→A_t$ 下的像；它在 $K$ 中的像为 $t$。",
+      "ja": "$K$ を標数零の体とする。 任意の $t∈K$ に対し、$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ を $R_t$ 上のあるモニック多項式を満たす元からなる $K$ 内の整閉包とする。ここでは超越性や曲線体の仮定を置かない。 $t_S$ を、標準包含 $R_t→A_t$ による $t_R=t∈R_t$ の像と定める。その $K$ における像は $t$ である。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.tS_ne_zero",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.tS_ne_zero",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 225,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.tS_ne_zero {K : Type u} [Field K] [CharZero K] (t : K) [Fact (Transcendental ℚ t)] : Place.tS t ≠ 0",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. The element $t_S∈A_t$ obtained by including $t∈R_t$ into $A_t$ is nonzero. No curve-field assumption is included.",
+      "zh_Hans": "设 $K$ 为特征零域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 将 $t∈R_t$ 包含到 $A_t$ 后所得的元素 $t_S∈A_t$ 非零。此处不包含曲线域假设。",
+      "ja": "$K$ を標数零の体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $t∈R_t$ を $A_t$ に包含して得られる元 $t_S∈A_t$ は零でない。曲線体の仮定は含まれない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.map_span_tR",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.map_span_tR",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 230,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.map_span_tR {K : Type u} [Field K] [CharZero K] (t : K) : (Ideal.span {Place.tR t}).map (algebraMap (Algebra.adjoin ℚ {t}) (chartRing t)) = Ideal.span {Place.tS t}",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. For any $t∈K$, set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be the integral closure of $R_t$ in $K$, the elements satisfying a monic polynomial over $R_t$; no transcendence or curve-field hypothesis is imposed here. The ideal generated in $A_t$ by the image of the ideal $(t_R)⊆R_t$ under the canonical inclusion $R_t→A_t$ is exactly the principal ideal $(t_S)⊆A_t$, where $t_R=t∈R_t$ and $t_S$ is its image in $A_t$. This includes $t=0$.",
+      "zh_Hans": "设 $K$ 为特征零域。 对任意 $t∈K$，令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为 $R_t$ 在 $K$ 中的整闭包，即满足某个 $R_t$ 系数首一多项式的元素所成的环；此处没有超越或曲线域假设。 在典范包含映射 $R_t→A_t$ 下，理想 $(t_R)⊆R_t$ 的像在 $A_t$ 中生成的理想恰为主理想 $(t_S)⊆A_t$，其中 $t_R=t∈R_t$，$t_S$ 是其在 $A_t$ 中的像。此断言包含 $t=0$。",
+      "ja": "$K$ を標数零の体とする。 任意の $t∈K$ に対し、$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ を $R_t$ 上のあるモニック多項式を満たす元からなる $K$ 内の整閉包とする。ここでは超越性や曲線体の仮定を置かない。 標準包含 $R_t→A_t$ のもとで、イデアル $(t_R)⊆R_t$ の像が $A_t$ 内で生成するイデアルはちょうど単項イデアル $(t_S)⊆A_t$ である。ここで $t_R=t∈R_t$、$t_S$ はその $A_t$ における像とする。$t=0$ も含む。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_primesOver_iff",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_primesOver_iff",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 236,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.mem_primesOver_iff {K : Type u} [Field K] [CharZero K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) : v.asIdeal ∈ (Ideal.span {Place.tR t}).primesOver (chartRing t) ↔ Place.tS t ∈ v.asIdeal",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For every nonzero prime ideal $𝔭$ of $A_t$ represented by the height-one-spectrum carrier, $𝔭$ belongs to the set of prime ideals lying over $(t_R)⊆R_t$ if and only if $t_S∈𝔭$, where $t_R=t∈R_t$ and $t_S$ is its image in $A_t$. Lying over means that contraction along $R_t→A_t$ is exactly $(t_R)$. No curve-field assumption or finiteness of $K/ℚ(t)$ is included.",
+      "zh_Hans": "设 $K$ 为特征零域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对一阶谱类型所表示的每个 $A_t$ 的非零素理想 $𝔭$，$𝔭$ 属于位于 $(t_R)⊆R_t$ 之上的素理想集合，当且仅当 $t_S∈𝔭$；其中 $t_R=t∈R_t$，$t_S$ 是其在 $A_t$ 中的像。“位于其上”指沿 $R_t→A_t$ 的收缩恰为 $(t_R)$。此处不包含曲线域假设，也不包含 $K/ℚ(t)$ 有限维假设。",
+      "ja": "$K$ を標数零の体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 高さ一のスペクトルの型で表される $A_t$ の任意の非零素イデアル $𝔭$ について、$𝔭$ が $(t_R)⊆R_t$ の上にある素イデアルの集合に属することと $t_S∈𝔭$ は同値である。$t_R=t∈R_t$、$t_S$ はその $A_t$ における像とする。上にあるとは $R_t→A_t$ に沿う縮約がちょうど $(t_R)$ となることをいう。曲線体の仮定や $K/ℚ(t)$ の有限次元性は含まれない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_asIdeal_iff",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.mem_asIdeal_iff",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 248,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.mem_asIdeal_iff {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) [Fact (Transcendental ℚ t)] (v : HeightOneSpectrum (chartRing t)) : Place.tS t ∈ v.asIdeal ↔ 0 < (Place.ofChart t v).ord t",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. For each place, $v_P(f)$ denotes the normalized integer order obtained by taking minus the integer logarithm of the maximal-ideal valuation of $O_P$; the total-function convention is $v_P(0)=0$. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For a nonzero prime ideal $𝔭$ of $A_t$ (an element of the height-one-spectrum carrier), let $P_{t,𝔭}$ be the place with ring $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$, and let $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ send $a$ to its residue through the inclusion into $O_{t,𝔭}$. For every such $𝔭$, the element $t_S$ (the image of $t$ in $A_t$) belongs to $𝔭$ if and only if $v_{P_{t,𝔭}}(t)>0$.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 对每个处，$v_P(f)$ 表示 $O_P$ 的极大理想赋值的整数对数的相反数所给出的规范化整数阶数；采用全函数约定 $v_P(0)=0$。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对 $A_t$ 的非零素理想 $𝔭$（一阶谱类型中的元素），令 $P_{t,𝔭}$ 为赋值环 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ 所给出的处，并令 $ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ 把 $a$ 先包含进 $O_{t,𝔭}$ 再取余类。 对每个这样的 $𝔭$，元素 $t_S$（$t$ 在 $A_t$ 中的像）属于 $𝔭$ 当且仅当 $v_{P_{t,𝔭}}(t)>0$。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 各素点に対し、$v_P(f)$ は $O_P$ の極大イデアル付値の整数対数に負号を付けた正規化整数位数を表し、全域関数の規約として $v_P(0)=0$ とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 $A_t$ の零でない素イデアル $𝔭$（高さ一のスペクトルの型の元）に対し、環 $O_{t,𝔭}=\\{a/b:a,b∈A_t,\\ b∉𝔭\\}⊆K$ をもつ素点を $P_{t,𝔭}$ とし、$ρ_{t,𝔭}:A_t→κ(P_{t,𝔭})$ は $a$ を $O_{t,𝔭}$ に包含してから剰余類を取る写像とする。 このような任意の $𝔭$ に対し、元 $t_S$（$t$ の $A_t$ における像）が $𝔭$ に属することと $v_{P_{t,𝔭}}(t)>0$ は同値である。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.inertiaDeg'_eq_finrank",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.inertiaDeg'_eq_finrank",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 256,
+      "kind": "theorem",
+      "private": true,
+      "full_signature_static": "private theorem Place.inertiaDeg'_eq_finrank {K : Type u} [Field K] [CharZero K] (t : K) [Fact (Transcendental ℚ t)] (P : Ideal (chartRing t)) [P.IsPrime] [P.LiesOver (Ideal.span {Place.tR t})] : Ideal.inertiaDeg' (Ideal.span {Place.tR t}) P = Module.finrank ℚ (chartRing t ⧸ P)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "private_name_note": "Source-local qualified name only. Lean generates an internal private name; that internal name has not been obtained by elaboration.",
+      "en": "Let $K$ be a field of characteristic zero. Let $t∈K$ be supplied with the typeclass assertion that it is transcendental over $ℚ$, meaning no nonzero polynomial in $ℚ[X]$ vanishes at $t$. Set $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ and let $A_t$ be its integral closure in $K$, namely the elements of $K$ satisfying a monic polynomial with coefficients in $R_t$. For every prime ideal $𝔭⊆A_t$ with contraction $(t_R)⊆R_t$, the inertia-degree quantity for $(t_R)$ and $𝔭$, namely the finrank of the corresponding residue extension over the residue field at $(t_R)$, equals $\\operatorname{finrank}_{ℚ}(A_t/𝔭)$, where $t_R=t∈R_t$. There is no curve-field or finite-dimensionality assumption; finrank is the natural-number dimension when finite and zero for an infinite-dimensional space. Both primality and the stated contraction are supplied typeclass hypotheses.",
+      "zh_Hans": "设 $K$ 为特征零域。 设 $t∈K$ 带有类型类形式的超越性断言，即没有非零 $p∈ℚ[X]$ 在 $t$ 处为零。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为其在 $K$ 中的整闭包，即 $K$ 中满足某个首一的 $R_t$ 系数多项式的元素所成的环。 对每个收缩为 $(t_R)⊆R_t$ 的素理想 $𝔭⊆A_t$，$(t_R)$ 与 $𝔭$ 的惯性次数，即相应剩余域扩张在 $(t_R)$ 处的剩余域上的秩，等于 $\\operatorname{finrank}_{ℚ}(A_t/𝔭)$，其中 $t_R=t∈R_t$。没有曲线域或有限维假设；此秩在有限维时为自然数值维数，在无限维时为零。素性及所述收缩等式都作为类型类假设给定。",
+      "ja": "$K$ を標数零の体とする。 $t∈K$ には型クラスとして $ℚ$ 上の超越性、すなわち $t$ で零になる零でない $p∈ℚ[X]$ がないという仮定を与える。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ をその $K$ 内での整閉包、すなわち $R_t$ 係数のあるモニック多項式を満たす $K$ の元の環とする。 縮約が $(t_R)⊆R_t$ である任意の素イデアル $𝔭⊆A_t$ に対し、$(t_R)$ と $𝔭$ の惰性次数、すなわち対応する剰余拡大の $(t_R)$ での剰余体上の階数は、$\\operatorname{finrank}_{ℚ}(A_t/𝔭)$ に等しい。ここで $t_R=t∈R_t$ とする。曲線体や有限次元性は仮定しない。階数は有限次元なら自然数値の次元、無限次元なら零である。素性と上記の縮約の等式はともに型クラス仮定として与える。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_zeros",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_zeros",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 278,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.sum_ord_mul_deg_zeros {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) (ht : Transcendental ℚ t) : ∑ P ∈ (Place.finite_setOf_ord_pos t).toFinset, P.ord t * (P.degree : ℤ) = (Module.finrank ℚ⟮t⟯ K : ℤ)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. For each place, $v_P(f)$ denotes the normalized integer order obtained by taking minus the integer logarithm of the maximal-ideal valuation of $O_P$; the total-function convention is $v_P(0)=0$. For every $t∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $t$), $\\sum_{P:v_P(t)>0}v_P(t)[κ(P):ℚ]=\\dim_{ℚ(t)}K$, as an equality of integers, where $ℚ(t)$ is the subfield generated by $ℚ,t$. The sum is over all places with strictly positive order, a finite set, and each residue degree and extension dimension is the actual finite vector-space dimension. No hypothesis identifies the full algebraic constant field with $ℚ$.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 对每个处，$v_P(f)$ 表示 $O_P$ 的极大理想赋值的整数对数的相反数所给出的规范化整数阶数；采用全函数约定 $v_P(0)=0$。 对每个在 $ℚ$ 上超越的 $t∈K$（没有非零有理系数多项式在 $t$ 处为零），有整数等式 $\\sum_{P:v_P(t)>0}v_P(t)[κ(P):ℚ]=\\dim_{ℚ(t)}K$，其中 $ℚ(t)$ 是由 $ℚ,t$ 生成的子域。求和遍及严格正阶数的所有处，该集合有限；每个剩余域次数及扩张维数均为实际有限向量空间维数。没有假设整个代数常数域等于 $ℚ$。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 各素点に対し、$v_P(f)$ は $O_P$ の極大イデアル付値の整数対数に負号を付けた正規化整数位数を表し、全域関数の規約として $v_P(0)=0$ とする。 $ℚ$ 上超越的な任意の $t∈K$（$t$ で零になる零でない有理係数多項式はない）に対し、整数の等式 $\\sum_{P:v_P(t)>0}v_P(t)[κ(P):ℚ]=\\dim_{ℚ(t)}K$ が成り立つ。$ℚ(t)$ は $ℚ,t$ が生成する部分体である。和は位数が狭義に正であるすべての素点からなる有限集合上で取り、各剰余次数と拡大次元は実際の有限ベクトル空間次元である。代数的な定数体全体が $ℚ$ と等しいという仮定はない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.adjoin_inv_eq",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.adjoin_inv_eq",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 325,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem adjoin_inv_eq {K : Type u} [Field K] [CharZero K] (t : K) : ℚ⟮t⁻¹⟯ = ℚ⟮t⟯",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a field of characteristic zero. For every $t∈K$, the subfield generated by $ℚ$ and $t^{-1}$ equals the subfield generated by $ℚ$ and $t$. This includes $t=0$, since field inversion is total with $0^{-1}=0$; no transcendence or nonzero assumption is imposed.",
+      "zh_Hans": "设 $K$ 为特征零域。 对每个 $t∈K$，由 $ℚ$ 与 $t^{-1}$ 生成的子域等于由 $ℚ$ 与 $t$ 生成的子域。此断言包含 $t=0$，因为域求逆是全函数且 $0^{-1}=0$；没有超越或非零假设。",
+      "ja": "$K$ を標数零の体とする。 任意の $t∈K$ に対し、$ℚ$ と $t^{-1}$ が生成する部分体は $ℚ$ と $t$ が生成する部分体に等しい。体の逆元は $0^{-1}=0$ とする全域関数なので $t=0$ も含む。超越性や非零性は仮定しない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_poles",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.sum_ord_mul_deg_poles",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 338,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem Place.sum_ord_mul_deg_poles {K : Type u} [Field K] [CharZero K] [IsCurveField K] (t : K) (ht : Transcendental ℚ t) : ∑ P ∈ (Place.finite_setOf_ord_neg t).toFinset, (-P.ord t) * (P.degree : ℤ) = (Module.finrank ℚ⟮t⟯ K : ℤ)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $K$ be a characteristic-zero field satisfying the curve-field assumption: there is an element $s∈K$ with no nonzero polynomial over $ℚ$ vanishing at $s$, and $K$ is finite dimensional over the subfield $ℚ(s)$ generated by $ℚ$ and $s$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. For each place, $v_P(f)$ denotes the normalized integer order obtained by taking minus the integer logarithm of the maximal-ideal valuation of $O_P$; the total-function convention is $v_P(0)=0$. For every $t∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $t$), $\\sum_{P:v_P(t)<0}(-v_P(t))[κ(P):ℚ]=\\dim_{ℚ(t)}K$, as an equality of integers, where $ℚ(t)$ is the subfield generated by $ℚ,t$. The sum is over all places with strictly negative order, a finite set, with actual finite residue degrees and finite extension dimension. There is no restriction to an affine chart.",
+      "zh_Hans": "设 $K$ 为满足以下曲线域假设的特征零域：存在 $s∈K$，没有非零有理系数多项式在 $s$ 处为零，并且 $K$ 在由 $ℚ,s$ 生成的子域 $ℚ(s)$ 上有限维。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 对每个处，$v_P(f)$ 表示 $O_P$ 的极大理想赋值的整数对数的相反数所给出的规范化整数阶数；采用全函数约定 $v_P(0)=0$。 对每个在 $ℚ$ 上超越的 $t∈K$（没有非零有理系数多项式在 $t$ 处为零），有整数等式 $\\sum_{P:v_P(t)<0}(-v_P(t))[κ(P):ℚ]=\\dim_{ℚ(t)}K$，其中 $ℚ(t)$ 为由 $ℚ,t$ 生成的子域。求和遍及严格负阶数的所有处，该集合有限，并采用实际有限的剩余域次数及有限扩张维数。没有限定在某个仿射图中。",
+      "ja": "$K$ を次の曲線体の仮定を満たす標数零の体とする。$s∈K$ が存在し、$s$ で零になる零でない有理係数多項式はなく、$K$ は $ℚ,s$ が生成する部分体 $ℚ(s)$ 上有限次元である。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 各素点に対し、$v_P(f)$ は $O_P$ の極大イデアル付値の整数対数に負号を付けた正規化整数位数を表し、全域関数の規約として $v_P(0)=0$ とする。 $ℚ$ 上超越的な任意の $t∈K$（$t$ で零になる零でない有理係数多項式はない）に対し、整数の等式 $\\sum_{P:v_P(t)<0}(-v_P(t))[κ(P):ℚ]=\\dim_{ℚ(t)}K$ が成り立つ。$ℚ(t)$ は $ℚ,t$ が生成する部分体である。和は位数が狭義に負であるすべての素点からなる有限集合上で取り、実際の有限な剰余次数と有限拡大次元を用いる。アフィンチャートへの制限はない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_eq_sum_of_support_subset",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_eq_sum_of_support_subset",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "line": 22,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem divisorDegree_eq_sum_of_support_subset {N : ℕ} (M : Model N) (A : Divisor M) {s : Finset (Place M.K)} (hs : A.support ⊆ s) : divisorDegree M A = ∑ P ∈ s, A P * (P.degree : ℤ)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For every divisor $A$ and finite set $s$ of places containing its support $\\{P:A(P)≠0\\}$, $\\deg A=\\sum_{P∈s}A(P)d_P$. The coefficients of $A$ may be negative, $s$ may contain extra zero-coefficient places, and the statement includes the empty support.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对每个除子 $A$ 及每个包含其支撑 $\\{P:A(P)≠0\\}$ 的处的有限集合 $s$，有 $\\deg A=\\sum_{P∈s}A(P)d_P$。$A$ 的系数可以为负，$s$ 可以额外包含零系数的处；此断言也包含空支撑。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 任意の因子 $A$ と、その台 $\\{P:A(P)≠0\\}$ を含む任意の素点の有限集合 $s$ に対し、$\\deg A=\\sum_{P∈s}A(P)d_P$ である。$A$ の係数は負でもよく、$s$ は係数が零の素点を余分に含んでもよい。空の台も含む。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroDivisor_degree",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroDivisor_degree",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "line": 28,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem functionZeroDivisor_degree {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) {f : M.K} (hf : Transcendental ℚ f) : divisorDegree M (functionZeroDivisor M hDVR f) = (Module.finrank ℚ⟮f⟯ M.K : ℤ)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every $f∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $f$), the zero divisor satisfies $\\deg Z_f=\\dim_{ℚ(f)}K$ as an equality of integers. Here $ℚ(f)$ is the subfield generated by $ℚ,f$ and the right side is the actual finite extension dimension, converted to an integer.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个在 $ℚ$ 上超越的 $f∈K$（没有非零有理系数多项式在 $f$ 处为零），零点除子满足整数等式 $\\deg Z_f=\\dim_{ℚ(f)}K$。这里 $ℚ(f)$ 是由 $ℚ,f$ 生成的子域，右边为转成整数的实际有限扩张维数。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 $ℚ$ 上超越的な任意の $f∈K$（$f$ で零になる零でない有理係数多項式はない）に対し、零点因子は整数の等式 $\\deg Z_f=\\dim_{ℚ(f)}K$ を満たす。ここで $ℚ(f)$ は $ℚ,f$ が生成する部分体で、右辺は実際の有限拡大次元を整数に移したものである。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor_degree",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor_degree",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "line": 45,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem functionPoleDivisor_degree {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) {f : M.K} (hf : Transcendental ℚ f) : divisorDegree M (functionPoleDivisor M hDVR f) = (Module.finrank ℚ⟮f⟯ M.K : ℤ)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every $f∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $f$), the pole divisor satisfies $\\deg B_f=\\dim_{ℚ(f)}K$ as an equality of integers. Here $ℚ(f)$ is the subfield generated by $ℚ,f$ and the right side is the actual finite extension dimension, converted to an integer.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个在 $ℚ$ 上超越的 $f∈K$（没有非零有理系数多项式在 $f$ 处为零），极点除子满足整数等式 $\\deg B_f=\\dim_{ℚ(f)}K$。这里 $ℚ(f)$ 是由 $ℚ,f$ 生成的子域，右边为转成整数的实际有限扩张维数。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 $ℚ$ 上超越的な任意の $f∈K$（$f$ で零になる零でない有理係数多項式はない）に対し、極因子は整数の等式 $\\deg B_f=\\dim_{ℚ(f)}K$ を満たす。ここで $ℚ(f)$ は $ℚ,f$ が生成する部分体で、右辺は実際の有限拡大次元を整数に移したものである。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+      "line": 21,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem functionZeroPoleDegrees {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (f : M.K) (hf : Transcendental ℚ f) : divisorDegree M (functionZeroDivisor M hDVR f) = (Module.finrank ℚ⟮f⟯ M.K : ℤ) ∧ divisorDegree M (functionPoleDivisor M hDVR f) = (Module.finrank ℚ⟮f⟯ M.K : ℤ)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every $f∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $f$), both integer equalities $\\deg Z_f=\\dim_{ℚ(f)}K$ and $\\deg B_f=\\dim_{ℚ(f)}K$ hold. Here $ℚ(f)$ is the subfield generated by $ℚ,f$, and both right sides are the same actual finite extension dimension converted to an integer. There is no hypothesis that all elements of $K$ algebraic over $ℚ$ already belong to $ℚ$.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个在 $ℚ$ 上超越的 $f∈K$（没有非零有理系数多项式在 $f$ 处为零），同时成立两个整数等式 $\\deg Z_f=\\dim_{ℚ(f)}K$ 与 $\\deg B_f=\\dim_{ℚ(f)}K$。这里 $ℚ(f)$ 是由 $ℚ,f$ 生成的子域，两处右边都是转成整数的同一个实际有限扩张维数。未假设 $K$ 中所有在 $ℚ$ 上代数的元素都已属于 $ℚ$。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 $ℚ$ 上超越的な任意の $f∈K$（$f$ で零になる零でない有理係数多項式はない）に対し、二つの整数の等式 $\\deg Z_f=\\dim_{ℚ(f)}K$ と $\\deg B_f=\\dim_{ℚ(f)}K$ がともに成り立つ。$ℚ(f)$ は $ℚ,f$ が生成する部分体で、両右辺は同じ実際の有限拡大次元を整数に移したものである。$K$ の $ℚ$ 上代数的な元がすべて既に $ℚ$ に属するという仮定はない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.principalDivisor_div",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.principalDivisor_div",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 27,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannApproximation.principalDivisor_div {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) [hCurve : IsCurveField M.K] {f g : M.K} (hf : f ≠ 0) (hg : g ≠ 0) : functionDivisor M hDVR (f / g) = functionDivisor M hDVR f - functionDivisor M hDVR g",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A separate supplied typeclass hypothesis $h_{Curve}$ also asserts that some $s∈K$ is transcendental over $ℚ$ and $K$ is finite dimensional over $ℚ(s)$; it remains a binder in this declaration even though the model supplies such data. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every pair $f,g∈K$ with both $f≠0$ and $g≠0$, $\\operatorname{div}(f/g)=\\operatorname{div}(f)-\\operatorname{div}(g)$ as divisors, that is, equality of every coefficient. Both nonzero assumptions are present; the statement does not cover division by zero.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 另有给定的类型类假设 $h_{Curve}$，断言存在在 $ℚ$ 上超越的 $s∈K$，使 $K$ 在 $ℚ(s)$ 上有限维；尽管模型已有这类数据，此假设仍是该声明的一个参数。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每对同时满足 $f≠0$、$g≠0$ 的 $f,g∈K$，有除子等式 $\\operatorname{div}(f/g)=\\operatorname{div}(f)-\\operatorname{div}(g)$，即每个系数都相等。两个非零假设均保留；此断言不包含除以零。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 別に与える型クラス仮定 $h_{Curve}$ は、ある $s∈K$ が $ℚ$ 上超越的で、$K$ が $ℚ(s)$ 上有限次元であると述べる。モデル自体がそのようなデータを与えるが、この宣言ではこの仮定も引数として残る。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 $f≠0$ と $g≠0$ をともに満たす任意の $f,g∈K$ に対し、因子として $\\operatorname{div}(f/g)=\\operatorname{div}(f)-\\operatorname{div}(g)$、すなわちすべての係数の等式が成り立つ。両方の非零仮定が含まれ、零による除算は扱わない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.pow_mem_L",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.pow_mem_L",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 34,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannApproximation.pow_mem_L {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) [hCurve : IsCurveField M.K] (x : M.K) (k : ℕ) : x ^ k ∈ riemannRochSpace M hDVR (k • functionPoleDivisor M hDVR x)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A separate supplied typeclass hypothesis $h_{Curve}$ also asserts that some $s∈K$ is transcendental over $ℚ$ and $K$ is finite dimensional over $ℚ(s)$; it remains a binder in this declaration even though the model supplies such data. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For a divisor $A$, the rational vector space $L(A)$ consists exactly of $f∈K$ such that $f=0$ or $v_P(f)≥-A(P)$ at every place. Write $ℓ(A)=\\operatorname{finrank}_{ℚ} L(A)$; finrank is the dimension when finite, and is the natural-number value zero for an infinite-dimensional space. For every $x∈K$ and every natural number $k$, $x^k∈L(kB_x)$, where $kB_x$ multiplies each divisor coefficient by $k$. Equivalently, either $x^k=0$ or $v_P(x^k)≥-k\\max(0,-v_P(x))$ at every place. This includes $x=0$ and $k=0$, with $0^0=1$.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 另有给定的类型类假设 $h_{Curve}$，断言存在在 $ℚ$ 上超越的 $s∈K$，使 $K$ 在 $ℚ(s)$ 上有限维；尽管模型已有这类数据，此假设仍是该声明的一个参数。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对除子 $A$，有理向量空间 $L(A)$ 恰由满足 $f=0$ 或每个处都有 $v_P(f)≥-A(P)$ 的 $f∈K$ 组成。记 $ℓ(A)=\\operatorname{finrank}_{ℚ}L(A)$；有限维时它为维数，无限维时这个自然数值秩按定义为零。 对每个 $x∈K$ 及每个自然数 $k$，有 $x^k∈L(kB_x)$，其中 $kB_x$ 将每个除子系数乘以 $k$。等价地，要么 $x^k=0$，要么每个处都有 $v_P(x^k)≥-k\\max(0,-v_P(x))$。此断言包含 $x=0$ 和 $k=0$，采用 $0^0=1$。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 別に与える型クラス仮定 $h_{Curve}$ は、ある $s∈K$ が $ℚ$ 上超越的で、$K$ が $ℚ(s)$ 上有限次元であると述べる。モデル自体がそのようなデータを与えるが、この宣言ではこの仮定も引数として残る。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 因子 $A$ に対する有理ベクトル空間 $L(A)$ は、$f=0$ またはすべての素点で $v_P(f)≥-A(P)$ を満たす $f∈K$ 全体である。$ℓ(A)=\\operatorname{finrank}_{ℚ}L(A)$ と書く。有限次元ならこれは次元であり、無限次元ならこの自然数値の階数は定義上零となる。 任意の $x∈K$ と任意の自然数 $k$ に対し、$x^k∈L(kB_x)$ である。$kB_x$ は因子の各係数を $k$ 倍する。すなわち $x^k=0$、またはすべての素点で $v_P(x^k)≥-k\\max(0,-v_P(x))$ が成り立つ。$x=0$ と $k=0$ も含み、$0^0=1$ とする。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.aeval_mem_L",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.aeval_mem_L",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 44,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannApproximation.aeval_mem_L {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) [hCurve : IsCurveField M.K] (x : M.K) (p : ℚ[X]) : Polynomial.aeval x p ∈ riemannRochSpace M hDVR (p.natDegree • functionPoleDivisor M hDVR x)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A separate supplied typeclass hypothesis $h_{Curve}$ also asserts that some $s∈K$ is transcendental over $ℚ$ and $K$ is finite dimensional over $ℚ(s)$; it remains a binder in this declaration even though the model supplies such data. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For a divisor $A$, the rational vector space $L(A)$ consists exactly of $f∈K$ such that $f=0$ or $v_P(f)≥-A(P)$ at every place. Write $ℓ(A)=\\operatorname{finrank}_{ℚ} L(A)$; finrank is the dimension when finite, and is the natural-number value zero for an infinite-dimensional space. For every $x∈K$ and every polynomial $p∈ℚ[X]$, $p(x)∈L(dB_x)$, where $d$ is the natural degree of $p$, taken to be zero for the zero polynomial, and $p(x)$ uses the canonical rational coefficients in $K$. No transcendence, nonzero, or positive-degree assumption is imposed. In particular the zero and constant polynomials are included.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 另有给定的类型类假设 $h_{Curve}$，断言存在在 $ℚ$ 上超越的 $s∈K$，使 $K$ 在 $ℚ(s)$ 上有限维；尽管模型已有这类数据，此假设仍是该声明的一个参数。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对除子 $A$，有理向量空间 $L(A)$ 恰由满足 $f=0$ 或每个处都有 $v_P(f)≥-A(P)$ 的 $f∈K$ 组成。记 $ℓ(A)=\\operatorname{finrank}_{ℚ}L(A)$；有限维时它为维数，无限维时这个自然数值秩按定义为零。 对每个 $x∈K$ 及每个多项式 $p∈ℚ[X]$，有 $p(x)∈L(dB_x)$，其中 $d$ 是 $p$ 的自然次数，零多项式的自然次数取零；$p(x)$ 使用 $K$ 中的典范有理系数。没有超越、非零或正次数假设，尤其包含零多项式及常数多项式。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 別に与える型クラス仮定 $h_{Curve}$ は、ある $s∈K$ が $ℚ$ 上超越的で、$K$ が $ℚ(s)$ 上有限次元であると述べる。モデル自体がそのようなデータを与えるが、この宣言ではこの仮定も引数として残る。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 因子 $A$ に対する有理ベクトル空間 $L(A)$ は、$f=0$ またはすべての素点で $v_P(f)≥-A(P)$ を満たす $f∈K$ 全体である。$ℓ(A)=\\operatorname{finrank}_{ℚ}L(A)$ と書く。有限次元ならこれは次元であり、無限次元ならこの自然数値の階数は定義上零となる。 任意の $x∈K$ と任意の多項式 $p∈ℚ[X]$ に対し、$p(x)∈L(dB_x)$ である。$d$ は $p$ の自然次数で、零多項式では零とし、$p(x)$ の有理係数には $K$ への標準埋め込みを用いる。超越性、非零性、正の次数は仮定しない。特に零多項式と定数多項式を含む。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_aeval_ord_pos",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_aeval_ord_pos",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 53,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannApproximation.exists_aeval_ord_pos {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) [hCurve : IsCurveField M.K] {x : M.K} (hx : Transcendental ℚ x) (P : Place M.K) (hxP : x ∈ P.1) : ∃ p : ℚ[X], Polynomial.aeval x p ≠ 0 ∧ 0 < P.ord (Polynomial.aeval x p)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A separate supplied typeclass hypothesis $h_{Curve}$ also asserts that some $s∈K$ is transcendental over $ℚ$ and $K$ is finite dimensional over $ℚ(s)$; it remains a binder in this declaration even though the model supplies such data. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every $x∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $x$) and every place $P$ with the supplied regularity hypothesis $x∈O_P$, there exists a rational polynomial $p∈ℚ[X]$ such that $p(x)≠0$ and $v_P(p(x))>0$. The signature imposes no particular choice, minimality, degree, or monicity on the witnessing polynomial.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 另有给定的类型类假设 $h_{Curve}$，断言存在在 $ℚ$ 上超越的 $s∈K$，使 $K$ 在 $ℚ(s)$ 上有限维；尽管模型已有这类数据，此假设仍是该声明的一个参数。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个在 $ℚ$ 上超越的 $x∈K$（没有非零有理系数多项式在 $x$ 处为零）及每个带有正则性假设 $x∈O_P$ 的处 $P$，存在有理系数多项式 $p∈ℚ[X]$，使 $p(x)≠0$ 且 $v_P(p(x))>0$。签名没有对作为见证的多项式指定某个选取、最小性、次数或首一性。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 別に与える型クラス仮定 $h_{Curve}$ は、ある $s∈K$ が $ℚ$ 上超越的で、$K$ が $ℚ(s)$ 上有限次元であると述べる。モデル自体がそのようなデータを与えるが、この宣言ではこの仮定も引数として残る。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 $ℚ$ 上超越的な任意の $x∈K$（$x$ で零になる零でない有理係数多項式はない）と、正則性の仮定 $x∈O_P$ を与えた任意の素点 $P$ に対し、有理係数多項式 $p∈ℚ[X]$ が存在して $p(x)≠0$ かつ $v_P(p(x))>0$ となる。シグネチャは、この多項式の特定の選び方、最小性、次数、モニック性を指定しない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.single_le_polarDivisor",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.single_le_polarDivisor",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 84,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannApproximation.single_le_polarDivisor {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) [hCurve : IsCurveField M.K] {x : M.K} {P : Place M.K} (hP : P.ord x < 0) : Finsupp.single P 1 ≤ functionPoleDivisor M hDVR x",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A separate supplied typeclass hypothesis $h_{Curve}$ also asserts that some $s∈K$ is transcendental over $ℚ$ and $K$ is finite dimensional over $ℚ(s)$; it remains a binder in this declaration even though the model supplies such data. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every $x∈K$ and every place $P$ with $v_P(x)<0$, $[P]≤B_x$ coefficientwise. Thus the coefficient of $B_x$ at $P$ is at least one and its other coefficients are at least zero. This declaration has no transcendence hypothesis on $x$; the section’s such hypothesis is explicitly omitted.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 另有给定的类型类假设 $h_{Curve}$，断言存在在 $ℚ$ 上超越的 $s∈K$，使 $K$ 在 $ℚ(s)$ 上有限维；尽管模型已有这类数据，此假设仍是该声明的一个参数。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个 $x∈K$ 及每个满足 $v_P(x)<0$ 的处 $P$，逐系数有 $[P]≤B_x$。即 $B_x$ 在 $P$ 处的系数至少为一，其余系数至少为零。此声明没有对 $x$ 的超越性假设；所在节中的该假设被明确省略。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 別に与える型クラス仮定 $h_{Curve}$ は、ある $s∈K$ が $ℚ$ 上超越的で、$K$ が $ℚ(s)$ 上有限次元であると述べる。モデル自体がそのようなデータを与えるが、この宣言ではこの仮定も引数として残る。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 任意の $x∈K$ と $v_P(x)<0$ を満たす任意の素点 $P$ に対し、係数ごとに $[P]≤B_x$ が成り立つ。すなわち $B_x$ の $P$ での係数は一以上、他の係数は零以上である。この宣言では $x$ の超越性を仮定せず、節にあるその仮定は明示的に除かれている。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_add_div_le",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_add_div_le",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 96,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannApproximation.exists_add_single_add_div_le {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) [hCurve : IsCurveField M.K] {x : M.K} (hx : Transcendental ℚ x) {A : Divisor M} (P : Place M.K) (h : ∃ z : M.K, z ≠ 0 ∧ ∃ l : ℕ, A + functionDivisor M hDVR z ≤ l • functionPoleDivisor M hDVR x) : ∃ z : M.K, z ≠ 0 ∧ ∃ l : ℕ, A + Finsupp.single P 1 + functionDivisor M hDVR z ≤ l • functionPoleDivisor M hDVR x",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A separate supplied typeclass hypothesis $h_{Curve}$ also asserts that some $s∈K$ is transcendental over $ℚ$ and $K$ is finite dimensional over $ℚ(s)$; it remains a binder in this declaration even though the model supplies such data. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every $x∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $x$), every divisor $A$, and every place $P$, assume there exist a nonzero $z∈K$ and a natural number $l$ with $A+\\operatorname{div}(z)≤lB_x$. Then there exist a nonzero $z′∈K$ and a natural number $l′$ with $A+[P]+\\operatorname{div}(z′)≤l′B_x$. All inequalities are at every place. The concluding witnesses need not equal the assumed ones, $A$ need not be effective, and $l,l′$ may be zero.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 另有给定的类型类假设 $h_{Curve}$，断言存在在 $ℚ$ 上超越的 $s∈K$，使 $K$ 在 $ℚ(s)$ 上有限维；尽管模型已有这类数据，此假设仍是该声明的一个参数。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个在 $ℚ$ 上超越的 $x∈K$（没有非零有理系数多项式在 $x$ 处为零）、每个除子 $A$ 及每个处 $P$，假设存在非零 $z∈K$ 与自然数 $l$，使 $A+\\operatorname{div}(z)≤lB_x$。则存在非零 $z′∈K$ 与自然数 $l′$，使 $A+[P]+\\operatorname{div}(z′)≤l′B_x$。所有不等式都对每个处逐系数成立。结论的见证无需等于假设中的见证，$A$ 无需有效，$l,l′$ 均可为零。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 別に与える型クラス仮定 $h_{Curve}$ は、ある $s∈K$ が $ℚ$ 上超越的で、$K$ が $ℚ(s)$ 上有限次元であると述べる。モデル自体がそのようなデータを与えるが、この宣言ではこの仮定も引数として残る。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 $ℚ$ 上超越的な任意の $x∈K$（$x$ で零になる零でない有理係数多項式はない）、任意の因子 $A$、任意の素点 $P$ に対し、零でない $z∈K$ と自然数 $l$ が存在して $A+\\operatorname{div}(z)≤lB_x$ となると仮定する。このとき零でない $z′∈K$ と自然数 $l′$ が存在して $A+[P]+\\operatorname{div}(z′)≤l′B_x$ となる。不等式はすべての素点で係数ごとに成り立つ。結論の存在元は仮定のものと同じでなくてよく、$A$ は有効でなくてもよく、$l,l′$ は零でもよい。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_nat_add_div_le",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_single_nat_add_div_le",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 125,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannApproximation.exists_add_single_nat_add_div_le {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) [hCurve : IsCurveField M.K] {x : M.K} (hx : Transcendental ℚ x) {A : Divisor M} (P : Place M.K) (m : ℕ) (h : ∃ z : M.K, z ≠ 0 ∧ ∃ l : ℕ, A + functionDivisor M hDVR z ≤ l • functionPoleDivisor M hDVR x) : ∃ z : M.K, z ≠ 0 ∧ ∃ l : ℕ, A + Finsupp.single P (m : ℤ) + functionDivisor M hDVR z ≤ l • functionPoleDivisor M hDVR x",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A separate supplied typeclass hypothesis $h_{Curve}$ also asserts that some $s∈K$ is transcendental over $ℚ$ and $K$ is finite dimensional over $ℚ(s)$; it remains a binder in this declaration even though the model supplies such data. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every $x∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $x$), every divisor $A$, every place $P$, and every natural number $m$, assume there exist a nonzero $z∈K$ and natural $l$ with $A+\\operatorname{div}(z)≤lB_x$. Then there exist a nonzero $z′∈K$ and natural $l′$ with $A+m[P]+\\operatorname{div}(z′)≤l′B_x$. The witnesses may change, $A$ may have negative coefficients, and $m=0$ as well as $l=0$ or $l′=0$ is included.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 另有给定的类型类假设 $h_{Curve}$，断言存在在 $ℚ$ 上超越的 $s∈K$，使 $K$ 在 $ℚ(s)$ 上有限维；尽管模型已有这类数据，此假设仍是该声明的一个参数。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个在 $ℚ$ 上超越的 $x∈K$（没有非零有理系数多项式在 $x$ 处为零）、每个除子 $A$、每个处 $P$ 及每个自然数 $m$，假设存在非零 $z∈K$ 与自然数 $l$，使 $A+\\operatorname{div}(z)≤lB_x$。则存在非零 $z′∈K$ 与自然数 $l′$，使 $A+m[P]+\\operatorname{div}(z′)≤l′B_x$。见证可以改变，$A$ 可以有负系数，并包含 $m=0$、$l=0$ 或 $l′=0$。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 別に与える型クラス仮定 $h_{Curve}$ は、ある $s∈K$ が $ℚ$ 上超越的で、$K$ が $ℚ(s)$ 上有限次元であると述べる。モデル自体がそのようなデータを与えるが、この宣言ではこの仮定も引数として残る。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 $ℚ$ 上超越的な任意の $x∈K$（$x$ で零になる零でない有理係数多項式はない）、任意の因子 $A$、任意の素点 $P$、任意の自然数 $m$ に対し、零でない $z∈K$ と自然数 $l$ が存在して $A+\\operatorname{div}(z)≤lB_x$ となると仮定する。このとき零でない $z′∈K$ と自然数 $l′$ が存在して $A+m[P]+\\operatorname{div}(z′)≤l′B_x$ となる。存在元は変わってよく、$A$ は負の係数をもってよく、$m=0$ と $l=0$ または $l′=0$ も含む。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_div_le",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.exists_add_div_le",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "line": 136,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannApproximation.exists_add_div_le {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) [hCurve : IsCurveField M.K] {x : M.K} (hx : Transcendental ℚ x) (A : Divisor M) : ∃ z : M.K, z ≠ 0 ∧ ∃ l : ℕ, A + functionDivisor M hDVR z ≤ l • functionPoleDivisor M hDVR x",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A separate supplied typeclass hypothesis $h_{Curve}$ also asserts that some $s∈K$ is transcendental over $ℚ$ and $K$ is finite dimensional over $ℚ(s)$; it remains a binder in this declaration even though the model supplies such data. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every $x∈K$ transcendental over $ℚ$ (no nonzero rational polynomial vanishes at $x$) and every divisor $A$, there exist a nonzero $z∈K$ and a natural number $l$ such that $A+\\operatorname{div}(z)≤lB_x$, meaning $A(P)+v_P(z)≤l\\max(0,-v_P(x))$ for every place $P$. The divisor $A$ is arbitrary, including negative coefficients and the zero divisor; $l$ is allowed to be zero, and no bound or uniqueness for $l,z$ is asserted.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 另有给定的类型类假设 $h_{Curve}$，断言存在在 $ℚ$ 上超越的 $s∈K$，使 $K$ 在 $ℚ(s)$ 上有限维；尽管模型已有这类数据，此假设仍是该声明的一个参数。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个在 $ℚ$ 上超越的 $x∈K$（没有非零有理系数多项式在 $x$ 处为零）及每个除子 $A$，存在非零 $z∈K$ 与自然数 $l$，使 $A+\\operatorname{div}(z)≤lB_x$，即每个处 $P$ 都满足 $A(P)+v_P(z)≤l\\max(0,-v_P(x))$。除子 $A$ 任意，可有负系数，也可为零除子；允许 $l=0$，且未断言 $l,z$ 的界或唯一性。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 別に与える型クラス仮定 $h_{Curve}$ は、ある $s∈K$ が $ℚ$ 上超越的で、$K$ が $ℚ(s)$ 上有限次元であると述べる。モデル自体がそのようなデータを与えるが、この宣言ではこの仮定も引数として残る。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 $ℚ$ 上超越的な任意の $x∈K$（$x$ で零になる零でない有理係数多項式はない）と任意の因子 $A$ に対し、零でない $z∈K$ と自然数 $l$ が存在して $A+\\operatorname{div}(z)≤lB_x$ となる。すなわちすべての素点 $P$ で $A(P)+v_P(z)≤l\\max(0,-v_P(x))$ が成り立つ。$A$ は任意で、負の係数や零因子も許す。$l=0$ も許し、$l,z$ の上界や一意性は主張しない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.RiemannBasisPower.lowerBound",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannBasisPower.lowerBound",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannBasisPowers.lean",
+      "line": 23,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem RiemannBasisPower.lowerBound {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hFinite : ∀ A : Divisor M, FiniteDimensional ℚ (riemannRochSpace M hDVR A)) (l : ℕ) : (l + 1) * N ≤ riemannEll M hDVR (l • functionPoleDivisor M hDVR M.u + basisPoleCorrection M hDVR)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For a divisor $A$, the rational vector space $L(A)$ consists exactly of $f∈K$ such that $f=0$ or $v_P(f)≥-A(P)$ at every place. Write $ℓ(A)=\\operatorname{finrank}_{ℚ} L(A)$; finrank is the dimension when finite, and is the natural-number value zero for an infinite-dimensional space. Let $(b_i)_{i<n}$ be the fixed basis of $K$ over $ℚ(u)$ selected noncomputably by `functionBasis` using `Module.finBasis`, where $n=\\dim_{ℚ(u)}K=N$. The correction divisor is $C=\\sum_{i<n}B_{b_i}$, so $C(P)=\\sum_{i<n}\\max(0,-v_P(b_i))$. Assume $h_{Finite}$: for every divisor $A$, the actual rational vector space $L(A)$ is finite dimensional. Then every natural number $l$, including $l=0$, satisfies $(l+1)N≤ℓ(lB_u+C)$. Thus the conclusion is a lower bound on the dimension of this particular space with the fixed basis correction; it does not assert equality or quantify over arbitrary substitute correction divisors.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对除子 $A$，有理向量空间 $L(A)$ 恰由满足 $f=0$ 或每个处都有 $v_P(f)≥-A(P)$ 的 $f∈K$ 组成。记 $ℓ(A)=\\operatorname{finrank}_{ℚ}L(A)$；有限维时它为维数，无限维时这个自然数值秩按定义为零。 令 $(b_i)_{i<n}$ 为 `functionBasis` 使用 `Module.finBasis` 以非可计算方式选定的 $K$ 在 $ℚ(u)$ 上的固定基，其中 $n=\\dim_{ℚ(u)}K=N$。修正除子为 $C=\\sum_{i<n}B_{b_i}$，即 $C(P)=\\sum_{i<n}\\max(0,-v_P(b_i))$。 假设 $h_{Finite}$：对每个除子 $A$，实际的有理向量空间 $L(A)$ 都有限维。则每个自然数 $l$（包括 $l=0$）都满足 $(l+1)N≤ℓ(lB_u+C)$。结论是带有固定基修正除子的这个特定空间的维数下界；并未断言等号，也没有对任意替代修正除子量化。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 因子 $A$ に対する有理ベクトル空間 $L(A)$ は、$f=0$ またはすべての素点で $v_P(f)≥-A(P)$ を満たす $f∈K$ 全体である。$ℓ(A)=\\operatorname{finrank}_{ℚ}L(A)$ と書く。有限次元ならこれは次元であり、無限次元ならこの自然数値の階数は定義上零となる。 $(b_i)_{i<n}$ を、`functionBasis` が `Module.finBasis` によって非計算的に選ぶ $ℚ(u)$ 上の $K$ の固定された基底とする。ここで $n=\\dim_{ℚ(u)}K=N$ である。補正因子は $C=\\sum_{i<n}B_{b_i}$、すなわち $C(P)=\\sum_{i<n}\\max(0,-v_P(b_i))$ と定められる。 $h_{Finite}$ として、任意の因子 $A$ に対する実際の有理ベクトル空間 $L(A)$ は有限次元であると仮定する。このとき $l=0$ を含むすべての自然数 $l$ で $(l+1)N≤ℓ(lB_u+C)$ が成り立つ。結論は固定された基底の補正因子をもつこの特定の空間の次元の下界であり、等号や任意の別の補正因子についての量化は主張しない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannBasisPowerLowerBound",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannBasisPowerLowerBound",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+      "line": 16,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem riemannBasisPowerLowerBound {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hFinite : ∀ A : Divisor M, FiniteDimensional ℚ (riemannRochSpace M hDVR A)) (l : ℕ) : (l + 1) * N ≤ riemannEll M hDVR (l • functionPoleDivisor M hDVR M.u + basisPoleCorrection M hDVR)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For a divisor $A$, the rational vector space $L(A)$ consists exactly of $f∈K$ such that $f=0$ or $v_P(f)≥-A(P)$ at every place. Write $ℓ(A)=\\operatorname{finrank}_{ℚ} L(A)$; finrank is the dimension when finite, and is the natural-number value zero for an infinite-dimensional space. Let $(b_i)_{i<n}$ be the fixed basis of $K$ over $ℚ(u)$ selected noncomputably by `functionBasis` using `Module.finBasis`, where $n=\\dim_{ℚ(u)}K=N$. The correction divisor is $C=\\sum_{i<n}B_{b_i}$, so $C(P)=\\sum_{i<n}\\max(0,-v_P(b_i))$. Assume $h_{Finite}$: for every divisor $A$, the actual rational vector space $L(A)$ is finite dimensional. Then every natural number $l$, including $l=0$, satisfies $(l+1)N≤ℓ(lB_u+C)$. Thus the conclusion is a lower bound on the dimension of this particular space with the fixed basis correction; it does not assert equality or quantify over arbitrary substitute correction divisors.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对除子 $A$，有理向量空间 $L(A)$ 恰由满足 $f=0$ 或每个处都有 $v_P(f)≥-A(P)$ 的 $f∈K$ 组成。记 $ℓ(A)=\\operatorname{finrank}_{ℚ}L(A)$；有限维时它为维数，无限维时这个自然数值秩按定义为零。 令 $(b_i)_{i<n}$ 为 `functionBasis` 使用 `Module.finBasis` 以非可计算方式选定的 $K$ 在 $ℚ(u)$ 上的固定基，其中 $n=\\dim_{ℚ(u)}K=N$。修正除子为 $C=\\sum_{i<n}B_{b_i}$，即 $C(P)=\\sum_{i<n}\\max(0,-v_P(b_i))$。 假设 $h_{Finite}$：对每个除子 $A$，实际的有理向量空间 $L(A)$ 都有限维。则每个自然数 $l$（包括 $l=0$）都满足 $(l+1)N≤ℓ(lB_u+C)$。结论是带有固定基修正除子的这个特定空间的维数下界；并未断言等号，也没有对任意替代修正除子量化。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 因子 $A$ に対する有理ベクトル空間 $L(A)$ は、$f=0$ またはすべての素点で $v_P(f)≥-A(P)$ を満たす $f∈K$ 全体である。$ℓ(A)=\\operatorname{finrank}_{ℚ}L(A)$ と書く。有限次元ならこれは次元であり、無限次元ならこの自然数値の階数は定義上零となる。 $(b_i)_{i<n}$ を、`functionBasis` が `Module.finBasis` によって非計算的に選ぶ $ℚ(u)$ 上の $K$ の固定された基底とする。ここで $n=\\dim_{ℚ(u)}K=N$ である。補正因子は $C=\\sum_{i<n}B_{b_i}$、すなわち $C(P)=\\sum_{i<n}\\max(0,-v_P(b_i))$ と定められる。 $h_{Finite}$ として、任意の因子 $A$ に対する実際の有理ベクトル空間 $L(A)$ は有限次元であると仮定する。このとき $l=0$ を含むすべての自然数 $l$ で $(l+1)N≤ℓ(lB_u+C)$ が成り立つ。結論は固定された基底の補正因子をもつこの特定の空間の次元の下界であり、等号や任意の別の補正因子についての量化は主張しない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+      "line": 16,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem riemannPolarApproximation {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (A : Divisor M) : ∃ z : M.K, z ≠ 0 ∧ ∃ l : ℕ, A + functionDivisor M hDVR z ≤ l • functionPoleDivisor M hDVR M.u",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "en": "Let $N$ be a natural number and let $M$ consist of an intermediate field $K$ between $ℚ$ and an algebraic closure of $ℚ(t)$, and elements $u,v∈K$, such that $u$ is transcendental over $ℚ$ (no nonzero polynomial over $ℚ$ vanishes at $u$), $u^N+v^N=1$, the subfield generated by $ℚ,u,v$ is $K$, and $K$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. There is no separate restriction on $N$; the assertion concerns supplied data satisfying all these conditions. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so no such model is supplied and assertions conditional on it are vacuous. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; $κ(P)=O_P/𝔪_P$ is its residue field. Assume $h_{DVR}$: every such $O_P$ is a discrete valuation ring. Write $v_P(f)$ for minus the integer logarithm of its maximal-ideal valuation at $f$, the normalized integer order with the total-function convention $v_P(0)=0$. A divisor $A$ means a finitely supported integer-valued function on all places; inequalities and addition of divisors are coefficientwise. Its degree is $\\deg A=\\sum_P A(P)d_P$, where $d_P=[κ(P):ℚ]$ is the finite rational vector-space dimension. Write $[P]$ for the divisor with coefficient one at $P$ and zero elsewhere. For $f∈K$, its function divisor has coefficient $\\operatorname{div}(f)(P)=v_P(f)$, its zero divisor has coefficient $Z_f(P)=\\max(0,v_P(f))$, and its pole divisor has coefficient $B_f(P)=\\max(0,-v_P(f))$. These are the existing finitely supported divisors and all three are zero at $f=0$ by convention. For every divisor $A$ there exist a nonzero $z∈K$ and a natural number $l$ with $A+\\operatorname{div}(z)≤lB_u$, meaning $A(P)+v_P(z)≤l\\max(0,-v_P(u))$ at every place $P$. The divisor $A$ may have negative coefficients or be zero, $l$ may be zero, and the assertion imposes neither a bound nor uniqueness on the witnesses. No extra curve-field typeclass hypothesis is a binder of this parent declaration.",
+      "zh_Hans": "设 $N$ 为自然数，$M$ 包含 $ℚ$ 与 $ℚ(t)$ 的一个代数闭包之间的中间域 $K$，以及 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越（没有非零有理系数多项式在 $u$ 处为零）、$u^N+v^N=1$、由 $ℚ,u,v$ 生成的子域为整个 $K$，且 $K$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。没有另外限制 $N$；断言仅涉及满足全部这些条件的给定数据。$N=0$ 时方程将成为特征零域中的 $1+1=1$，因而不存在这样的模型，以此为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；$κ(P)=O_P/𝔪_P$ 是其剩余域。 假设 $h_{DVR}$：每个这样的 $O_P$ 都是离散赋值环。记 $v_P(f)$ 为其极大理想赋值在 $f$ 处的整数对数的相反数，即规范化整数阶数，并采用全函数约定 $v_P(0)=0$。 除子 $A$ 指所有处上的有限支撑整数值函数；除子的不等式与加法均逐系数计算。其次数为 $\\deg A=\\sum_P A(P)d_P$，其中 $d_P=[κ(P):ℚ]$ 是有限的有理向量空间维数。记 $[P]$ 为在 $P$ 处系数为一、别处为零的除子。 对 $f∈K$，其函数除子的系数为 $\\operatorname{div}(f)(P)=v_P(f)$，零点除子的系数为 $Z_f(P)=\\max(0,v_P(f))$，极点除子的系数为 $B_f(P)=\\max(0,-v_P(f))$。它们都是既有的有限支撑除子；按约定，$f=0$ 时三者都为零。 对每个除子 $A$，存在非零 $z∈K$ 与自然数 $l$，使 $A+\\operatorname{div}(z)≤lB_u$，即每个处 $P$ 都满足 $A(P)+v_P(z)≤l\\max(0,-v_P(u))$。除子 $A$ 可有负系数或为零，$l$ 可为零，且断言没有对见证给出界或唯一性。此父声明的参数中没有额外的曲线域类型类假设。",
+      "ja": "$N$ を自然数とし、$M$ は $ℚ$ と $ℚ(t)$ の代数閉包との間の中間体 $K$ および $u,v∈K$ からなるとする。$u$ は $ℚ$ 上超越的（$u$ で零になる零でない有理係数多項式はない）であり、$u^N+v^N=1$、$ℚ,u,v$ が生成する部分体は $K$ 全体であり、$K$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ である。$N$ への別の制限はなく、主張はこれらすべての条件を満たす与えられたデータについて述べる。$N=0$ なら方程式は標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊K$ をいい、$κ(P)=O_P/𝔪_P$ をその剰余体とする。 $h_{DVR}$ として、各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ を、その極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数として $v_P(0)=0$ と定める。 因子 $A$ とはすべての素点上の有限台整数値関数をいい、因子の不等式と加法は係数ごとに計算する。次数は $\\deg A=\\sum_P A(P)d_P$ であり、$d_P=[κ(P):ℚ]$ は有限な有理ベクトル空間次元である。$[P]$ は $P$ での係数が一、他では零の因子とする。 $f∈K$ の関数の因子の係数は $\\operatorname{div}(f)(P)=v_P(f)$、零点因子の係数は $Z_f(P)=\\max(0,v_P(f))$、極因子の係数は $B_f(P)=\\max(0,-v_P(f))$ とする。これらは既存の有限台因子であり、規約によって $f=0$ ではいずれも零である。 任意の因子 $A$ に対し、零でない $z∈K$ と自然数 $l$ が存在して $A+\\operatorname{div}(z)≤lB_u$ となる。すなわちすべての素点 $P$ で $A(P)+v_P(z)≤l\\max(0,-v_P(u))$ が成り立つ。$A$ は負の係数をもっても零でもよく、$l$ は零でもよい。存在元の上界や一意性は主張しない。この親宣言の引数には追加の曲線体の型クラス仮定はない。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartRatAlgebra",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartRatAlgebra",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 48,
+      "kind": "instance",
+      "private": false,
+      "local": true,
+      "full_signature_static": "local instance Place.chartRatAlgebra {K : Type u} [Field K] [CharZero K] (t : K) : Algebra ℚ (chartRing t)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "instance_body_present_not_compiled",
+      "en": "Let $K$ be a field of characteristic zero and let $t∈K$. Put $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$, and let $A_t$ be the integral closure of $R_t$ in $K$, the ring of elements satisfying a monic polynomial over $R_t$. This selects the rational algebra structure on $A_t$ given in Lean by `(chartRing t).algebra'`: the rational number $q$ acts by multiplication by its canonical image $q∈A_t⊆K$. The declaration is a local instance. Its binders include no curve-field or transcendence assumption; $t=0$ is allowed.",
+      "zh_Hans": "设 $K$ 为特征零域，$t∈K$。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为 $R_t$ 在 $K$ 中的整闭包，即满足某个 $R_t$ 系数首一多项式的元素所成的环。此处选定 Lean 中由 `(chartRing t).algebra'` 给出的 $A_t$ 的有理代数结构：有理数 $q$ 通过其典范像 $q∈A_t⊆K$ 作乘法作用。该声明是局部实例；其参数没有曲线域或超越性假设，允许 $t=0$。",
+      "ja": "$K$ を標数零の体、$t∈K$ とする。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ を $R_t$ 係数のあるモニック多項式を満たす元からなる $K$ 内の整閉包とする。Lean の `(chartRing t).algebra'` が与える $A_t$ の有理代数構造を選ぶ。有理数 $q$ は標準的な像 $q∈A_t⊆K$ による乗法で作用する。この宣言は局所インスタンスであり、引数には曲線体や超越性の仮定がなく、$t=0$ も許す。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartQuotientRatAlgebra",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartQuotientRatAlgebra",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 51,
+      "kind": "instance",
+      "private": false,
+      "local": true,
+      "full_signature_static": "local instance Place.chartQuotientRatAlgebra {K : Type u} [Field K] [CharZero K] (t : K) (I : Ideal (chartRing t)) : Algebra ℚ (chartRing t ⧸ I)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "instance_body_present_not_compiled",
+      "en": "Let $K$ be a field of characteristic zero and let $t∈K$. Put $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$, and let $A_t$ be the integral closure of $R_t$ in $K$, the ring of elements satisfying a monic polynomial over $R_t$. For every ideal $I$ of $A_t$, this selects the quotient rational algebra structure `Ideal.Quotient.algebra ℚ` on $A_t/I$: $q$ maps to the class of its canonical image in $A_t$, and $q·[a]=[qa]$. The ideal is arbitrary, including the whole ring; the quotient need not be a field. The declaration is a local instance. Its binders include no curve-field or transcendence assumption; $t=0$ is allowed.",
+      "zh_Hans": "设 $K$ 为特征零域，$t∈K$。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为 $R_t$ 在 $K$ 中的整闭包，即满足某个 $R_t$ 系数首一多项式的元素所成的环。对 $A_t$ 的任意理想 $I$，此处选定商环 $A_t/I$ 上由 `Ideal.Quotient.algebra ℚ` 给出的有理代数结构：$q$ 映到其在 $A_t$ 中的典范像的类，且 $q·[a]=[qa]$。理想任意，包括整个环；商环无需是域。该声明是局部实例；其参数没有曲线域或超越性假设，允许 $t=0$。",
+      "ja": "$K$ を標数零の体、$t∈K$ とする。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ を $R_t$ 係数のあるモニック多項式を満たす元からなる $K$ 内の整閉包とする。$A_t$ の任意のイデアル $I$ に対し、`Ideal.Quotient.algebra ℚ` による商環 $A_t/I$ の有理代数構造を選ぶ。$q$ は $A_t$ 内の標準的な像の類に写り、$q·[a]=[qa]$ となる。$I$ は環全体でもよく、商環が体であるとは仮定しない。この宣言は局所インスタンスであり、引数には曲線体や超越性の仮定がなく、$t=0$ も許す。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.adjoinQuotientRatAlgebra",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.adjoinQuotientRatAlgebra",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 54,
+      "kind": "instance",
+      "private": false,
+      "local": true,
+      "full_signature_static": "local instance Place.adjoinQuotientRatAlgebra {K : Type u} [Field K] [CharZero K] (t : K) (I : Ideal (Algebra.adjoin ℚ {t})) : Algebra ℚ (Algebra.adjoin ℚ {t} ⧸ I)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "instance_body_present_not_compiled",
+      "en": "Let $K$ be a field of characteristic zero and let $t∈K$. Put $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$, and let $A_t$ be the integral closure of $R_t$ in $K$, the ring of elements satisfying a monic polynomial over $R_t$. For every ideal $I$ of $R_t$, this selects the quotient rational algebra structure `Ideal.Quotient.algebra ℚ` on $R_t/I$: $q$ maps to the class of the constant element $q∈R_t$, and $q·[r]=[qr]$. The ideal is arbitrary, including the whole ring; the quotient need not be a field. The declaration is a local instance. Its binders include no curve-field or transcendence assumption; $t=0$ is allowed.",
+      "zh_Hans": "设 $K$ 为特征零域，$t∈K$。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为 $R_t$ 在 $K$ 中的整闭包，即满足某个 $R_t$ 系数首一多项式的元素所成的环。对 $R_t$ 的任意理想 $I$，此处选定商环 $R_t/I$ 上由 `Ideal.Quotient.algebra ℚ` 给出的有理代数结构：$q$ 映到常数元素 $q∈R_t$ 的类，且 $q·[r]=[qr]$。理想任意，包括整个环；商环无需是域。该声明是局部实例；其参数没有曲线域或超越性假设，允许 $t=0$。",
+      "ja": "$K$ を標数零の体、$t∈K$ とする。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ を $R_t$ 係数のあるモニック多項式を満たす元からなる $K$ 内の整閉包とする。$R_t$ の任意のイデアル $I$ に対し、`Ideal.Quotient.algebra ℚ` による商環 $R_t/I$ の有理代数構造を選ぶ。$q$ は定数元 $q∈R_t$ の類に写り、$q·[r]=[qr]$ となる。$I$ は環全体でもよく、商環が体であるとは仮定しない。この宣言は局所インスタンスであり、引数には曲線体や超越性の仮定がなく、$t=0$ も許す。"
+    },
+    {
+      "declaration_source_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartFaithfulSMul",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.chartFaithfulSMul",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "line": 57,
+      "kind": "instance",
+      "private": false,
+      "local": true,
+      "full_signature_static": "local instance Place.chartFaithfulSMul {K : Type u} [Field K] [CharZero K] (t : K) : FaithfulSMul (Algebra.adjoin ℚ {t}) (chartRing t)",
+      "signature_method": "Static reconstruction from Lean source with section variables and local notation expanded; not elaborated or compiled.",
+      "english_source_quote": null,
+      "proof_status_from_source": "instance_body_present_not_compiled",
+      "en": "Let $K$ be a field of characteristic zero and let $t∈K$. Put $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$, and let $A_t$ be the integral closure of $R_t$ in $K$, the ring of elements satisfying a monic polynomial over $R_t$. The canonical scalar action of $R_t$ on $A_t$ is faithful: if $r,s∈R_t$ satisfy $r·a=s·a$ for every $a∈A_t$, then $r=s$. Here multiplication uses the canonical inclusion $R_t→A_t$. The instance proves faithfulness from injectivity of that inclusion by comparing the images in $K$. The declaration is a local instance. Its binders include no curve-field or transcendence assumption; $t=0$ is allowed.",
+      "zh_Hans": "设 $K$ 为特征零域，$t∈K$。令 $R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$，并令 $A_t$ 为 $R_t$ 在 $K$ 中的整闭包，即满足某个 $R_t$ 系数首一多项式的元素所成的环。$R_t$ 在 $A_t$ 上的典范标量作用是忠实的：若 $r,s∈R_t$ 对每个 $a∈A_t$ 都满足 $r·a=s·a$，则 $r=s$。此处乘法使用典范包含映射 $R_t→A_t$；实例通过比较 $K$ 中的像证明该包含映射单射，从而得到忠实性。该声明是局部实例；其参数没有曲线域或超越性假设，允许 $t=0$。",
+      "ja": "$K$ を標数零の体、$t∈K$ とする。$R_t=ℚ[t]=\\{p(t):p∈ℚ[X]\\}$ とし、$A_t$ を $R_t$ 係数のあるモニック多項式を満たす元からなる $K$ 内の整閉包とする。$R_t$ の $A_t$ 上の標準スカラー作用は忠実である。すなわち $r,s∈R_t$ がすべての $a∈A_t$ で $r·a=s·a$ を満たせば $r=s$ となる。乗法には標準包含 $R_t→A_t$ を使う。この包含の単射性を $K$ 内の像の比較から示し、忠実性を得る。この宣言は局所インスタンスであり、引数には曲線体や超越性の仮定がなく、$t=0$ も許す。"
+    }
+  ],
+  "input_file_sha256": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+      "sha256": "d41a7cef610d1121ee2fd9cd9e5ba47ad1b9ba08f0790520225d20a2f0bc115a"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "sha256": "80239311863e8cc32a8a1dcfeddee7eb48165279c5d7861a78da9b932c742134"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "sha256": "6b1e1216a32ebe3806aaa5aa39a971e0f4e7c941dea00fc8f2245df8dc6bd3c8"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannBasisPowers.lean",
+      "sha256": "09f9a3d8b8d03202b3f7c61c0fbaa79af0ed8d60aeed2d1585882f9e390661f7"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+      "sha256": "ecc2997d43a08556ad2b4ba9af193ac1748c224eb726c8709cbb4ae14d23b8fc"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+      "sha256": "e9c964a47f9103792c52a68b3e2f63b214f311fe470b78d3842bbb81a7d1cef4"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+      "sha256": "0e520363e38f2ba55007843859e21d08026f4cfaee30284a20ffbfa28d33d487"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldChart.lean",
+      "sha256": "90aa4d97587e8ce3ade8cd92b8a566028a4d7ba53a381a023d28f2375fa4a8be"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+      "sha256": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannSpaces.lean",
+      "sha256": "e75fa0f2f9e79fcf4bc053589d9c21fdd7891f489d347dae2ee24f0b2a7b4809"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionDivisors.lean",
+      "sha256": "1219586c9d82f822b770482fb1a267d6499bff9773399cb54de8e6564f26badd"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannLocalDimension.lean",
+      "sha256": "e11c3689ffe7ff4f964703814779411209802c41dce054191801eac0b522a0f7"
+    }
+  ],
+  "coverage_notes": [
+    "43 source-level declarations are covered: all 39 prior entries retain their fields and order, followed by the four new named local instances.",
+    "The 12 private helpers retain source-level names, not compiler-mangled names. The four explicitly named local instances are not declared private.",
+    "All source anchors now refer to the actual main workspace; current file hashes are recorded.",
+    "Only static source reconstruction was performed. No elaboration, compilation, CI, or axiom audit was run.",
+    "The previous artifact metadata is not evidence of work performed in this final review; final validation and report record only this review."
+  ],
+  "edge_case_notes": [
+    "The Model equation makes N=0 impossible in characteristic zero, and this is stated in every Model-dependent read-back.",
+    "The order at zero is zero; polynomial natural degree at zero is zero; empty supports, natural exponent zero, total inversion at zero, and infinite-dimensional finrank where applicable are stated explicitly.",
+    "The curve-field assumption is absent from the private helpers with omit [IsCurveField K]; this is preserved.",
+    "The explicit hCurve binder in RiemannApproximation remains in every applicable auxiliary signature, including single_le_polarDivisor, whose hx binder is omitted."
+  ],
+  "wording_questions": [
+    {
+      "term": "uniformiser",
+      "resolution": "No such noun occurs in any language body. The source hypothesis is stated exactly as w(π)=exp(-1), which corresponds to normalized integer order v_P(π)=1."
+    },
+    {
+      "term": "Place",
+      "resolution": "Chinese: 处. Japanese: 素点. Every relevant body defines the proper valuation subring containing all rationals."
+    },
+    {
+      "term": "ResidueField",
+      "resolution": "Chinese bodies uniformly use 剩余域; Japanese 剰余体 and English residue field are preserved."
+    },
+    {
+      "term": "inertiaDeg'",
+      "resolution": "The existing Chinese term 惯性次数 is retained. Here it denotes the finrank of the corresponding residue-field extension, the same mathematical degree often called 剩余次数. Because R_t/(t_R) has rational finrank one, the equality specializes this degree to finrank_ℚ(A_t/𝔭). No curve-field or finite-dimensionality binder is added; infinite-dimensional finrank is zero."
+    },
+    {
+      "term": "HeightOneSpectrum",
+      "resolution": "The concrete carrier is described as nonzero prime ideals, with no unsupported Dedekind conclusion in helpers lacking the curve-field hypothesis."
+    }
+  ],
+  "validation": {
+    "json_parse": true,
+    "unique_declarations": 43,
+    "language_fields_per_declaration": 3,
+    "original_39_field_sets_preserved": true,
+    "original_39_order_preserved": true,
+    "path_line_anchors_checked": true,
+    "compiled": false,
+    "ci_submitted": false,
+    "main_workspace_modified": false,
+    "decoded_double_backslash_pairs_remaining_in_language_bodies": 0,
+    "chinese_legacy_residue_term_remaining": 0
+  },
+  "source_span_refresh": {
+    "reason": "Precise Mathlib.Algebra.Module.Rat import inserted for rational-module uniqueness; declaration signature and independent prose unchanged.",
+    "updates": [
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.RiemannBasisPower.lowerBound",
+        "previous_line": 22,
+        "current_line": 23
+      }
+    ]
+  }
+}

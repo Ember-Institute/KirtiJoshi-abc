@@ -1,0 +1,11 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms functionZeroPoleDegrees
+#print axioms riemannPolarApproximation
+#print axioms riemannBasisPowerLowerBound
+#print axioms Place.sum_ord_mul_deg_zeros
+#print axioms Place.sum_ord_mul_deg_poles

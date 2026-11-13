@@ -1,0 +1,366 @@
+{
+  "review": "independent_read_only_fiber_degree_and_Riemann_source_proof_shape_review",
+  "date": "2026-11-13",
+  "verdict": "no_detected_mathematical_shape_defect; complete_source_proof_candidates_only; NOT_kernel_validated",
+  "mathematical_findings": [],
+  "suggested_mathematical_repairs": [],
+  "checks": [
+    {
+      "name": "fiber_rings_and_fraction_fields",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 248
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldChart.lean",
+          "line": 37
+        }
+      ],
+      "detail": "The actual base R is Algebra.adjoin Q {t}, S is integralClosure R K = chartRing t, the base fraction field is the actual intermediate field Q(t), and the upstairs fraction field is K. The adjoin fractional-field and scalar-tower instances are enabled by IntermediateField.algebraAdjoinAdjoin. Existing chart instances provide S Dedekind, Module.Finite R S, and IsFractionRing S K under transcendence and IsCurveField. The call Ideal.sum_ramification_inertia (chartRing t) Q(t) K therefore has the intended actual ring/field identities, not an unrelated numerical degree."
+    },
+    {
+      "name": "fiber_coordinate_prime",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 157
+        }
+      ],
+      "detail": "tR is actual t in R, identified with X by the transcendence polynomial equivalence. Its span is maximal and nonzero. R/(tR) has Q-finrank one via evaluation at zero. tS is its actual image in S, proved nonzero, and mapping the prime ideal gives span(tS). These facts justify the coordinate prime required by the fundamental identity."
+    },
+    {
+      "name": "fiber_orders_are_actual_ramification",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 53
+        },
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 104
+        },
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 284
+        }
+      ],
+      "detail": "The normalization lemma identifies any integer-valued discrete valuation with the existing Place.ord using equality of valuation rings and an actual uniformizer. Applying it to each chart prime identifies ord(t) with ideal multiplicity. Actual Ideal.ramificationIdx' is then identified with that multiplicity; ramification is not an arbitrary input."
+    },
+    {
+      "name": "fiber_residue_and_inertia_identity",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 118
+        },
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 238
+        }
+      ],
+      "detail": "The actual chart residue restriction is surjective and has kernel v; hence S/v is ring-equivalent and Q-algebra-equivalent to the existing full Place.ResidueField. The actual inertia degree is finrank over R/(tR); since its Q-degree is one, the tower formula gives the full residue Q-degree. No smaller image or value field replaces kappa(P)."
+    },
+    {
+      "name": "fiber_all_places_bijection",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 219
+        },
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 254
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+          "line": 245
+        }
+      ],
+      "detail": "Primes over (t) are precisely chart primes containing tS. Chart membership is precisely positive order of t. Both directions and inverse identities of the Finset.sum_bij' use actual toChart/ofChart. Every proper place with positive order is regular and so appears in the chart. There is no chosen affine-place restriction or representative-place omission."
+    },
+    {
+      "name": "fiber_infinity_inverse_chart",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 302
+        },
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+          "line": 315
+        }
+      ],
+      "detail": "The pole sum applies the entire zero sum to t inverse, proves Q(t inverse)=Q(t), and uses ord(t inverse)=-ord(t) to identify the finite sets and summands. Thus all places over infinity are included, including any multiple poles with nontrivial residue fields."
+    },
+    {
+      "name": "fiber_nonconstant_and_constants",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatFunctionFiberDegrees.lean",
+          "line": 28
+        },
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+          "line": 23
+        }
+      ],
+      "detail": "Both zero/pole identities keep Transcendental Q f, which is the relevant nonconstant condition for a curve field whose algebraic constant field may exceed Q. The actual degrees are over Q throughout. The base coordinate quotient is Q independently of the upstairs constants. No assertion that constants equal Q, that algebraic constants satisfy the fiber formula, or that rational-valued residues exhaust points is added. Existing principalDegreeZero_of_zeroPoleDegrees handles algebraic functions separately."
+    },
+    {
+      "name": "fiber_existing_divisors",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatFunctionFiberDegrees.lean",
+          "line": 22
+        }
+      ],
+      "detail": "The support-subset sum lemma expands the existing Finsupp divisorDegree. Actual zero and pole supports lie in the corresponding finite positive/negative order sets; max-positive and max-negative coefficients simplify to the actual order magnitudes. ord_eq_placeOrd identifies the two existing normalized order interfaces. No second divisor carrier is introduced."
+    },
+    {
+      "name": "approximation_actual_residue_minpoly",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannPolarApproximation.lean",
+          "line": 53
+        }
+      ],
+      "detail": "At every regular place P the proof uses the minimal polynomial over Q of the actual residue of x in its full residue field. Residue finiteness makes the element integral. Transcendence of x makes evaluation of this nonzero polynomial nonzero in K. Evaluation commutes with the actual residue homomorphism, making its residue zero and its normalized order positive. This works when the constant field and residue field exceed Q."
+    },
+    {
+      "name": "approximation_simultaneous_all_place_control",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannPolarApproximation.lean",
+          "line": 34
+        },
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannPolarApproximation.lean",
+          "line": 96
+        }
+      ],
+      "detail": "Polynomial evaluation y=p(x) lies in the actual L(deg(p)*(x)_infinity), which gives the lower order bound at EVERY Q. At the chosen regular P, ord_P(y)>=1 gives the additional unit of approximation. Replacing z by z/y and increasing l by deg(p) therefore preserves the inequality simultaneously at every Q, even at additional zeros and poles of y. At a pole of x the existing pole divisor already dominates single P 1, so increasing l by one suffices. The argument does not assume the residue minpoly vanishes at only one place."
+    },
+    {
+      "name": "approximation_finite_support_integer_induction",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannPolarApproximation.lean",
+          "line": 125
+        },
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannPolarApproximation.lean",
+          "line": 136
+        }
+      ],
+      "detail": "Natural induction handles arbitrary positive multiplicity of one place. Finsupp induction handles every finite integer divisor: nonpositive coefficients only lower the divisor and reuse the witness; positive ones reduce to the natural step. The output witness z is an actual nonzero element of M.K throughout. The zero divisor uses z=1 and l=0. All inequalities quantify over the complete proper-place carrier."
+    },
+    {
+      "name": "basis_actual_basis_and_correction",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionDivisors.lean",
+          "line": 81
+        },
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannBasisPowers.lean",
+          "line": 27
+        }
+      ],
+      "detail": "The family uses existing functionBasis M, exactly Module.finBasis over Q(M.u) with instance M.finite_u. n is its actual finrank; C is the actual sum of pole divisors of these basis elements and is definitionally the existing basisPoleCorrection. M.degree_u supplies n=N only at the final counting step; no chosen free basis or correction divisor is assumed."
+    },
+    {
+      "name": "basis_membership_every_place",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannBasisPowers.lean",
+          "line": 36
+        }
+      ],
+      "detail": "For each 0<=k<=l and actual basis vector b_i, ord_Q(u^k*b_i)=k*ord_Q(u)+ord_Q(b_i). Each individual pole divisor is bounded by C, while l times the pole divisor of u controls k*ord_Q(u). These bounds prove membership of the actual nonzero product in the actual L(lB+C) for EVERY Q. This retains both poles and finite places."
+    },
+    {
+      "name": "basis_independence_and_exact_count",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannBasisPowers.lean",
+          "line": 56
+        }
+      ],
+      "detail": "The genuine polynomial monomial basis maps injectively under evaluation at transcendental M.u, giving Q-independence of all powers. Restriction to Fin(l+1) gives powers in Q(u); linearIndependent_smul combines these with the genuine Q(u)-basis of K. Scalar action is explicitly identified with multiplication u^k*b_i. Subtype transport gives independence in L(lB+C); cardinal<=finrank counts (l+1)*n, then degree_u gives exactly (l+1)*N."
+    },
+    {
+      "name": "basis_hFinite_quantifier_and_no_cycle",
+      "status": "no_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannBasisPowers.lean",
+          "line": 22
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean",
+          "line": 32
+        }
+      ],
+      "detail": "The full original hypothesis forall A, FiniteDimensional Q L(A) is retained, and only its target-space instance is used. The two new Riemann Definitions import LocalDimension, whose finiteness theorem takes principal-degree-zero as an explicit premise; they do not import or invoke eventual linearity. The eventual-linearity parent supplies actual finiteness derived from fiber degrees. Static overlay traversal found no local import cycle in 19 modules."
+    },
+    {
+      "name": "all_three_complete_target_signatures_unchanged",
+      "status": "no_shape_defect_detected",
+      "evidence": [],
+      "detail": "Byte-for-byte theorem signature comparison, from theorem name through :=, succeeded for functionZeroPoleDegrees, riemannPolarApproximation, and riemannBasisPowerLowerBound against current main-workspace originals, including the entire forall-A hFinite premise. No target was renamed, weakened, or replaced with free Prop data."
+    }
+  ],
+  "source_provenance": {
+    "belyi_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "belyi_pin_matches_refer_iut_manifest": true,
+    "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "mathlib_HEAD_read_with_command_local_safe_directory": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "all_five_reference_hash_entries_match": true,
+    "reference_hash_checks": [
+      {
+        "candidate_ledger": "/tmp/p2m-fermat-fiber-degree-next-20261113/source-consumer.json",
+        "actual_reference_file_read": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_Degree.lean",
+        "expected_sha256": "5f1b63fc08c02a5c3830131fb32a4164d5ea1e64d757ea9ed4bf040aa6162795",
+        "actual_sha256": "5f1b63fc08c02a5c3830131fb32a4164d5ea1e64d757ea9ed4bf040aa6162795",
+        "matches": true
+      },
+      {
+        "candidate_ledger": "/tmp/p2m-fermat-fiber-degree-next-20261113/source-consumer.json",
+        "actual_reference_file_read": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_Divisor.lean",
+        "expected_sha256": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7",
+        "actual_sha256": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7",
+        "matches": true
+      },
+      {
+        "candidate_ledger": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/source-consumer.json",
+        "actual_reference_file_read": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_Riemann.lean",
+        "expected_sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+        "actual_sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+        "matches": true
+      },
+      {
+        "candidate_ledger": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/source-consumer.json",
+        "actual_reference_file_read": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_Divisor.lean",
+        "expected_sha256": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7",
+        "actual_sha256": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7",
+        "matches": true
+      },
+      {
+        "candidate_ledger": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/source-consumer.json",
+        "actual_reference_file_read": "/tmp/p2m-fermat-riemann-dimension-next-20261113/reference/Belyi_CurveField_RiemannRochSpace.lean",
+        "expected_sha256": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+        "actual_sha256": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+        "matches": true
+      }
+    ],
+    "Degree_entire_body_equality_after_namespace_and_deg_identifier_adaptation": true,
+    "source_comparison": "Approximation is the Riemann.lean:54-158 actual minpoly/finite-support construction. Basis is Riemann.lean:164-213 genuine basis-power subproof, separated from its later defect-bound use. Current local chart/place/residue interfaces were read and retain the needed actual carriers.",
+    "limits": "Reference SHA values were recomputed from the actual local reference source files, not accepted only from ledger text. Upstream Git blobs were not independently recovered. Source correspondence and hashes do not prove Lean acceptance."
+  },
+  "text_observations": {
+    "candidate_Lean_file_count": 7,
+    "new_sorry_commands_detected": false,
+    "new_axiom_or_constant_commands_detected": false,
+    "new_Belyi_runtime_imports_detected": false,
+    "new_open_children_detected": false,
+    "local_import_cycles_detected": false,
+    "local_modules_in_import_traversal": 19
+  },
+  "main_agent_followup": [
+    "Integrate the existing actual statements and source proofs without changing their target types.",
+    "Run MCP-CI leaf checks and required checks/axiom/import/aggregate acceptance, and inspect actual axiom output for sorryAx.",
+    "Retain the source-consumer ledgers with the actual reference-file location or integrate these references into the permanent source ledger."
+  ],
+  "validation": {
+    "compilation_invoked": false,
+    "MCP_CI_invoked": false,
+    "main_workspace_edited": false,
+    "kernel_validation_claimed": false,
+    "limitation": "This review checks mathematical shape and source correspondence. It does not establish Lean elaboration, tactic success, definitional-equality success, or an axiom audit. Existing main-workspace acceptance results were not inferred or rerun."
+  },
+  "input_sha256": [
+    {
+      "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatCurveFieldDegree.lean",
+      "sha256": "8030a7cdd44c41452ee4c4fd9368287c5ecb98cfaf185c856a4fdbf2e60d56fe"
+    },
+    {
+      "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "sha256": "80239311863e8cc32a8a1dcfeddee7eb48165279c5d7861a78da9b932c742134"
+    },
+    {
+      "file": "/tmp/p2m-fermat-fiber-degree-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+      "sha256": "ecc2997d43a08556ad2b4ba9af193ac1748c224eb726c8709cbb4ae14d23b8fc"
+    },
+    {
+      "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannBasisPowers.lean",
+      "sha256": "09f9a3d8b8d03202b3f7c61c0fbaa79af0ed8d60aeed2d1585882f9e390661f7"
+    },
+    {
+      "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Definitions/Def_FermatRiemannPolarApproximation.lean",
+      "sha256": "6b1e1216a32ebe3806aaa5aa39a971e0f4e7c941dea00fc8f2245df8dc6bd3c8"
+    },
+    {
+      "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+      "sha256": "0e520363e38f2ba55007843859e21d08026f4cfaee30284a20ffbfa28d33d487"
+    },
+    {
+      "file": "/tmp/p2m-fermat-riemann-sourceproof-next-20261113/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+      "sha256": "e9c964a47f9103792c52a68b3e2f63b214f311fe470b78d3842bbb81a7d1cef4"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldChart.lean",
+      "sha256": "90aa4d97587e8ce3ade8cd92b8a566028a4d7ba53a381a023d28f2375fa4a8be"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+      "sha256": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldZerosPoles.lean",
+      "sha256": "884d1811c768d63b8a723ae74e7cb826254651cef5ae5e504bcf3c22ac8c3f29"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannComposition.lean",
+      "sha256": "7a8839a83370ceaec76eb30b0d3b113f9338107db55e1e6e6ab4cc644a99a94f"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannDimensionComposition.lean",
+      "sha256": "07bc68f45c33e13ed1f53fedffc5028bf32c516755e1ae36ab6f56afd0e59b89"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannLocalDimension.lean",
+      "sha256": "e11c3689ffe7ff4f964703814779411209802c41dce054191801eac0b522a0f7"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannSpaces.lean",
+      "sha256": "e75fa0f2f9e79fcf4bc053589d9c21fdd7891f489d347dae2ee24f0b2a7b4809"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionDivisors.lean",
+      "sha256": "1219586c9d82f822b770482fb1a267d6499bff9773399cb54de8e6564f26badd"
+    }
+  ]
+}

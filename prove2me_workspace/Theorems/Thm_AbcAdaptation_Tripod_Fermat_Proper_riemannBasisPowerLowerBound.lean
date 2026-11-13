@@ -2,26 +2,23 @@
 Copyright (c) 2026 The Belyi project contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The Belyi project contributors
+
+Independent source-proof adaptation of Belyi/CurveField/Riemann.lean at
+9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8.
 -/
-import Definitions.Def_FermatFunctionDivisors
+import Definitions.Def_FermatRiemannBasisPowers
 
 set_option autoImplicit false
 
 namespace AbcAdaptation.Tripod.Fermat.Proper
 
-/-- OPEN: the actual functions u^k*b_i, 0≤k≤l, for the actual ℚ(u)-basis b_i,
-lie in L(l*(u)_infinity + sum_i (b_i)_infinity) and are ℚ-linearly independent.
-This statement records their resulting dimension bound, with exactly N
-basis entries by Model.degree_u. No free basis, correction divisor, or
-dimension function occurs in the type.
-Source: Belyi/CurveField/Riemann.lean:169-223, inside the proof of
-exists_deg_sub_ell_nsmul_le. -/
+/-- Actual powers of u times the actual functionBasis give the exact count. -/
 theorem riemannBasisPowerLowerBound {N : ℕ} (M : Model N)
     (hDVR : PlacesDiscrete M)
     (hFinite : ∀ A : Divisor M, FiniteDimensional ℚ (riemannRochSpace M hDVR A))
     (l : ℕ) :
     (l + 1) * N ≤ riemannEll M hDVR
-      (l • functionPoleDivisor M hDVR M.u + basisPoleCorrection M hDVR) := by
-  sorry
+      (l • functionPoleDivisor M hDVR M.u + basisPoleCorrection M hDVR) :=
+  RiemannBasisPower.lowerBound M hDVR hFinite l
 
 end AbcAdaptation.Tripod.Fermat.Proper

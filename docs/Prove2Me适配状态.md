@@ -45,12 +45,6 @@
 
 `Proper.noncriticalSelection` 仍需继续拆出真实非临界 Belyi 构造；`Proper.cuspsFinite` 仍需接入已移植的零极点有限支撑，保留全部处和无穷点。后续草稿以实际曲线上的有限分歧处、全点域复合分歧公式及射影直线上的具体有理函数序列为子目标，尚未编译或同步。
 
-`Proper.functionZeroPoleDegrees` 仍需把非恒定函数的零点、极点两条实际纤维次数公式拆到底层：次数为完整域在该函数所生成有理函数域上的有限扩张次数，除子次数按实际剩余域次数加权。需要追踪整闭包的素理想分解、分歧指数与剩余次数求和，并保留非常数条件；不能把已证明的两次数相等当作真实纤维次数公式。
-
-`Proper.riemannPolarApproximation` 仍需拆出实际函数逼近：对任意除子，通过某个非零函数的主除子修改，使结果逐处不超过坐标 u 的极点除子的某个自然数倍。来源使用 u 在正则处的剩余值的最小多项式及有限支撑归纳，必须保留同一个全局函数对所有处同时成立的结论；不能逐处分别选函数。
-
-`Proper.riemannBasisPowerLowerBound` 仍需追踪实际有理函数域基的幂构造：共同极点修正由各个基函数的实际极点除子求和，空间维数下界来自 u 的有限次幂与这些基函数的线性无关性。需要同时保留函数确实属于同一 Riemann 空间、基底指标范围和完整有限维输入；不能用自由维数函数或预先假设的下界替代源构造。
-
 `Proper.canonicalDivisorExists`、`Proper.infinityDivisorExists`、`Proper.planeAdjunctionExists` 和 `Proper.canonicalDivisorDegree` 分别还需证明 `du` 除子的有限支撑、实际坐标极点构成的超平面除子、具体伴随关系，以及真正典范除子次数等于 `N(N−3)`。应逐处追踪分歧系数，证明超平面次数及主除子次数为零，不能把预先定义的数字当作次数等式本身。`Proper.cuspGeneratorsExists` 还需给出尖点补集的实际坐标环有限生成性，并包含所需的三个三支点函数。
 
 `Proper.localCompactness`、`Proper.avoidanceRegularity` 和 `Proper.embeddingBoundsToSet` 还需分别落实有界次数点列的局部紧性、避开尖点后的正则性，以及全部共轭嵌入界向同一赋值紧有界集的传递。固定 Mathlib 已有 `PadicAlgCl 2` 及其谱范数，无须另设该载体的存在性假设；但紧性证明和次数缩放仍需实际接入。
