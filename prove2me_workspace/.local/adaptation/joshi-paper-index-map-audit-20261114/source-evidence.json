@@ -1,0 +1,76 @@
+{
+  "paper_sha256": "b3df2cfb3107c171000b3539b7a4e7fca88ea4b04fbfff34739474992501d151",
+  "source": "Kirti Joshi, Arithmetic Teichmuller Spaces III; original TeX retained",
+  "entries": [
+    {
+      "id": "I1",
+      "source": "refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex",
+      "line": 3030,
+      "end_line": 3041,
+      "sha256": "b3df2cfb3107c171000b3539b7a4e7fca88ea4b04fbfff34739474992501d151",
+      "exact_text": "\\subsubparat{Mochizuki's Procession of prime-strips} Following \\cite[Section 3]{mochizuki-iut3}, for $0\\leq j \\leq \\ells$, let $\\bS_{j+1}=\\{0,1,\\ldots, j\\}$  so that each set $\\bS_{j+1}$ has exactly $j+1$ elements. Similarly define  $\\bS_{j+1}^\\divideontimes=\\{1,\\ldots, j\\}$  so that each set $\\bS_{j+1}^\\divideontimes=\\{1,\\ldots, j\\}$ has exactly $j$ elements. \n\nI will think of these sets as giving functions (with values in finite sets) on the set of $\\ells+1$ tuples rising from $\\tSigma_{L'}$. This is done  as follows. For each $\\ells+1$ tuple $\\bz=(\\bz_0,\\bz_1,\\ldots,\\bz_\\ells)$ of arithmeticoids as above, one has, for each $j=0,1,\\ldots,\\ells$, the sets\n $$\\bS_{j}(\\bz)=\\left\\{ \\bz_0, \\bz_1, \\ldots, \\bz_{j} \\right\\}$$\n and \n $$\\bS_{j}^\\divideontimes(\\bz)=\\left\\{ \\bz_1, \\ldots, \\bz_{j} \\right\\}.$$\n Notably \n $$\\bS_{\\ells}(\\bz)=\\left\\{ \\bz_0, \\bz_1, \\ldots, \\bz_{\\ells} \\right\\}$$\n and\n  $$\\bS_{\\ells}^\\divideontimes(\\bz)=\\left\\{ \\bz_1, \\ldots, \\bz_{\\ells} \\right\\}.$$ The following is an elementary consequence of this observation\n\n\\blem ",
+      "owner": "Scene1/PacketCollationHull",
+      "consumer": [
+        "M-side procession receiver",
+        "theta class tuple",
+        "weighted tensor volume"
+      ],
+      "status": "unresolved source typing/index correspondence; not a Lean proof"
+    },
+    {
+      "id": "I1-codomain",
+      "source": "refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex",
+      "line": 3053,
+      "end_line": 3068,
+      "sha256": "b3df2cfb3107c171000b3539b7a4e7fca88ea4b04fbfff34739474992501d151",
+      "exact_text": "\\subsubparat{Tensor products of Mochizuki's log-shells} Given $\\bz=(\\bz_0,\\bz_1,\\ldots,\\bz_\\ells)\\in \\yadlp'$  and if $A$ is one of the sets $\\bS_{j+1}(\\bz)$ for $1\\leq j \\leq \\ell-1$, obtained using this $\\ells+1$-tuple of arithmeticoids, let \n\\be\\label{eq:tensor1}{}^A{\\sIp}(L')=\\bigotimes_{a\\in A}\\sIp(L')=\\bigotimes_{a\\in A}\\left(\\bigoplus_{w\\in\\ubblv_p}  \\logsh{L_w'}_{\\bz_a}\\right)\\ee\nand \n\\be\\label{eq:tensor2}{}^A\\sIpq(L')=\\bigotimes_{a\\in A}\\sIpq(L')=\\bigotimes_{a\\in A}\\left(\\bigoplus_{w\\in\\ubblv_p}L_w'\\right)_{\\bz_a}.\\ee\n\n\nAlong with \\eqref{eq:tensor1} and \\eqref{eq:tensor2} it is also convenient to consider product versions instead of tensor products. So the product variant is this:\n\\be\\label{eq:prod-tensor1}\\widetilde{{}^A\\sIp}(L')=\\prod_{a\\in A}\\sIp(L')=\\prod_{a\\in A}\\left(\\bigoplus_{w\\in\\ubblv_p}  \\logsh{L_w'}_{\\bz_a}\\right)\\ee\nand \\be\\label{eq:prod-tensor2}\\widetilde{{}^A\\sIpq}(L')=\\prod_{a\\in A}\\sIpq(L')=\\prod_{a\\in A}\\left(\\bigoplus_{w\\in\\ubblv_p}L_{w';\\bz_a}\\right).\\ee\nThese come equipped with canonical homomorphism given by the construction of tensor products:\n\\be\\label{eq:prod-tensor1-mapping}\\widetilde{{}^A\\sIp}(L')\\to{}^{A}\\sIp(L')\\ee\nand \\be\\label{eq:prod-tensor2-mapping}\\widetilde{{}^A\\sIpq}(L')\\to{}^{A}\\sIpq(L').\\ee\n\n\\bdefn\\label{def:mochizuki-adelic-tensor-log-shl} \n\\textit{Mochizuki's adelic tensor product log-shell} is the adelic product \\cite[Theorem 3.11(i)(c)]{mochizuki-iut3}:\n\\be\\label{eq:codmain1}\\sIm(L')=\\prod_{p}\\left(\\prod_{j=1}^\\ells {}^{\\bS_{j+1}}\\sIp(L')\\right)  \\subset  \\prod_{p}\\left(\\prod_{j=1}^\\ells {}^{\\bS_{j+1}}\\sIpq(L')\\right)=\\sImq(L') .\\ee",
+      "owner": "Scene1/PacketCollationHull",
+      "consumer": [
+        "M-side tensor receiver"
+      ],
+      "status": "unresolved source typing/index correspondence; not a Lean proof"
+    },
+    {
+      "id": "I1-class",
+      "source": "refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex",
+      "line": 3312,
+      "end_line": 3318,
+      "sha256": "b3df2cfb3107c171000b3539b7a4e7fca88ea4b04fbfff34739474992501d151",
+      "exact_text": "\t\\item Write $$ {}^{\\bS_{j}}H^1_e(\\arith{L},\\Z(1))=\\prod_{i=0}^{j+1} H^1_e(\\arith{L}_{\\by_i},\\Z(1))$$\n\tand write $(\\by_0,\\by_1,\\ldots,\\by_{\\ells})$ for the extended tuple \\cref{ss:extended-theta-link} associated to $\\bz=(\\by_1,\\ldots,\\by_{\\ells})\\in\\tSigma_{L'}$ and write\n\t\\begin{multline*}\n\t\\sbxi_{\\bz}^{\\scriptscriptstyle{Mochizuki}}=(\\overbrace{({\\bf 1+p^*})}^{\\in \\bS_1},\\overbrace{({\\bf 1+p^*},\\sbxi_{\\uby{\\by}_1})}^{\\in\\bS_2},\\ldots,\\overbrace{({\\bf 1+p^*},{\\bf 1+p^*},\\ldots,{\\bf 1+p^*},\\sbxi_{\\uby{\\by}_\\ells})}^{\\in\\bS_{\\ells+1}}) \\\\ \\in \\prod_{j=1}^\\ells {}^{\\bS_{j}}H^1_e(\\arith{L}_{\\by_j},\\Z(1));\t\n\t\\end{multline*} \n\t\\item  Write $$\\log_{BK}(\\sbxi_{\\bz}^{\\scriptscriptstyle{Mochizuki}})\\in \\tsIm$$ for the image of $\\sbxi_{\\bz}^{\\scriptscriptstyle{Mochizuki}}$ under the Bloch-Kato logarithm \\cref{ss:bloch-kato-logarithm}, \\cref{ss:bloch-kato-isom-extended} and again write \n\t$$\\log_{BK}(\\sbxi_{\\bz}^{\\scriptscriptstyle{Mochizuki}})\\in\\sIm$$ for its image in $\\tsIm$ under the homomorphism $$\\tsIm\\to\\sIm.$$",
+      "owner": "Scene1/PacketCollationHull",
+      "consumer": [
+        "theta class tuple in th:thetam-construction"
+      ],
+      "status": "unresolved source typing/index correspondence; not a Lean proof"
+    },
+    {
+      "id": "I2-product",
+      "source": "refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex",
+      "line": 3059,
+      "end_line": 3064,
+      "sha256": "b3df2cfb3107c171000b3539b7a4e7fca88ea4b04fbfff34739474992501d151",
+      "exact_text": "Along with \\eqref{eq:tensor1} and \\eqref{eq:tensor2} it is also convenient to consider product versions instead of tensor products. So the product variant is this:\n\\be\\label{eq:prod-tensor1}\\widetilde{{}^A\\sIp}(L')=\\prod_{a\\in A}\\sIp(L')=\\prod_{a\\in A}\\left(\\bigoplus_{w\\in\\ubblv_p}  \\logsh{L_w'}_{\\bz_a}\\right)\\ee\nand \\be\\label{eq:prod-tensor2}\\widetilde{{}^A\\sIpq}(L')=\\prod_{a\\in A}\\sIpq(L')=\\prod_{a\\in A}\\left(\\bigoplus_{w\\in\\ubblv_p}L_{w';\\bz_a}\\right).\\ee\nThese come equipped with canonical homomorphism given by the construction of tensor products:\n\\be\\label{eq:prod-tensor1-mapping}\\widetilde{{}^A\\sIp}(L')\\to{}^{A}\\sIp(L')\\ee\nand \\be\\label{eq:prod-tensor2-mapping}\\widetilde{{}^A\\sIpq}(L')\\to{}^{A}\\sIpq(L').\\ee",
+      "owner": "Scene1/PacketCollationHull",
+      "consumer": [
+        "product-to-tensor map",
+        "M/J theta image"
+      ],
+      "status": "unresolved source typing/index correspondence; not a Lean proof"
+    },
+    {
+      "id": "I2-volume",
+      "source": "refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex",
+      "line": 3458,
+      "end_line": 3461,
+      "sha256": "b3df2cfb3107c171000b3539b7a4e7fca88ea4b04fbfff34739474992501d151",
+      "exact_text": "Now let me say how one may deduce the inequality for $\\thetaji$ from $\\thetajti$ (resp. $\\thetami$ from $\\thetamti$). One may pass from the finite direct product $\\prod_{w|p} L'_w$ (equivalently from the finite direct sum) of $\\Q_p$-vector spaces to the tensor product $\\tensor_{w|p} L_w'$ of $\\Q_p$-vector spaces as follows. Consider the mapping $$\\prod_{w|p} L'_w\\ni(a_w)\\mapsto \\otimes_{w|p} (a_w) \\in \\bigotimes_{w|p} L'_w \\mapsto \\abs{\\mathop{\\otimes}\\limits_{w |p} a_w}_{\\tensor_{w |p} L_w'} \\in\\R,$$ where first  mapping is the natural  homomorphism  of  $\\Q_p$-vector spaces: $$\\prod_{w|p} L'_w\\to \\otimes_{w|p} L'_w,$$  and the second mapping is the tensor norm. In other words, one considers the image of the theta-values locii in the tensor product (via the first mapping) and then takes supremum over the tensor norms of all the images under the first homomorphism. This is where  the cross-norm property \\cref{ss:cross-norm-prop} of the tensor product norms comes in to play. This property says one has \n$$\\abs{\\mathop{\\otimes}\\limits_{w |p} a_w}_{\\tensor_{w |p} L_w'}=\\prod_{w |p}\\abs{a_w}_{L_w'}.$$\nHence one may also work with suprema of absolute values of the images of the theta-locii in the tensor products i.e. one can work with $\\thetajti$ instead of $\\thetaji$ (resp. work with $\\thetamti, \\thetami$) and still arrive at the required estimates in the tensor product settings (i.e. for $\\thetami$ (resp. $\\thetaji$) of \\cite{mochizuki-iut3}. \\textit{Notably, since the tensor product $\\tensor_{w |p} L_w'$ is constructed using the product $\\prod_{w |p} L_w'$ (more precisely the tensor product is the quotient of a suitable free $\\Q_p$-module on the set underlying this product), one can expect that the theta-values locus in the tensor product setting (i.e. $\\thetaji,\\thetami$) should provide tighter upper bounds than the theta-values locus in the product setting i.e. $\\thetajti,\\thetamti$.}\n",
+      "owner": "Scene1/VolumeTransfer",
+      "consumer": [
+        "tensor norm/volume image"
+      ],
+      "status": "unresolved source typing/index correspondence; not a Lean proof"
+    }
+  ],
+  "scope": "Source-index/type audit only; no new compiler receipt, platform node, proof or changed production boundary",
+  "paper_form2_closed": false
+}
