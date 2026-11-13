@@ -47,7 +47,7 @@
 
 `Proper.noncriticalDerivativeBadPlacesFinite` 仍需移植固定来源 `CurveField/NoncriticalFinite.finite_setOf_derivAlong_notMem`：对任意实际超越函数 ψ，证明精确集合 `{P | ψ ∈ P.1 ∧ ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1}` 有限。应使用既有实际图册环的有限模生成元、真实局部化的分母／单位条件和有限极点集；不能把该集合改成预先给定的有限分歧值集，也不能把实际导数保持性作为输入。`noncriticalRamificationFinite` 已按固定来源把全部分歧处包含于有限极点集与上述导数失效集之并，覆盖零剩余值、全部正则处及无穷处；其归约验收只登记这两个 Open 子义务，不关闭它们，也不关闭相邻的实际复合分歧公式、P¹ 三个源步骤或既有 `noncriticalSelection` 数学义务。
 
-`Proper.noncriticalCompositionRamification` 仍需证明实际分歧指数为正，以及每个有理 Möbius 变换／正次数有理多项式列表在实际曲线函数上的复合公式。结论必须同时保留复合函数超越性、所有完整剩余域嵌入下的点值公式，以及原函数分歧指数与实际 P¹ 复合指数的乘积公式；不能只验证单个嵌入或逐点选择不同复合函数。
+`Proper.noncriticalElementaryCompositionRamification` 仍需移植固定来源 `CurveField/NoncriticalElem.applyK_spec`：对任意实际超越函数 ψ、全部实际 `QbarPoint M.K` 剩余域嵌入，以及一个真正的有理 Möbius 变换（行列式非零）或正次数有理多项式 h，同时证明实际 `applyK h ψ` 的超越性、`noncriticalValue` 与 h 的实际 P¹ 点作用的精确相容式，以及原有实际分歧指数乘以 h 的实际自然数分歧指数（强制转为整数）的乘法公式。必须保留全部正则处、极点、零剩余值、无穷点和全部剩余域；不能给定任意点函数、抽象链式法则或逐点选择不同映射。来源中的多项式、求逆和 Möbius 论证仍待移植。`noncriticalCompositionRamification` 已用来源的实际指数正性及对输入函数推广的列表归纳组合出原有完整目标；其归约验收只登记此 Open 单映射义务，不关闭它，也不关闭相邻有限分歧／P¹ 源步骤或既有 `noncriticalSelection` 数学义务。既有零求值 producer 的实际后续消费者仍在该单映射源证明的求逆链中，不能据此声称该未消费债务已消除。
 
 `Proper.noncriticalP1Normalize` 仍需移植固定来源 `Reduction.normalize_step`：对完整 Galois 稳定的有限代数点集和其外的有理点，给出实际有理初等映射及单位圆盘中的新点集，把区分点归一化为 9。必须保留完整 Galois 稳定性、所有次数上界以及次数至少为 2 时的最高次数计数不增；具体预复合延续须同时保留原点集像、区分点不落入 `{0,1,∞}` 和所有实际分歧点的像条件。无穷点不能被省略。
 

@@ -1,0 +1,182 @@
+{
+  "schema_version": "independent-trilingual-final-review-v1",
+  "reviewer": "composition_readback_final",
+  "review_mode": "independent Lean-only static final review; no compile or CI",
+  "input": "/tmp/p2m-noncritical-composition-blind-20261114/readbacks.json",
+  "output": "/tmp/p2m-noncritical-composition-readback-final-20261114/fullreadbacks-final.json",
+  "input_sha256": "e5f34af7c4bfb68895a9b2f55cb8d23aa0546291ddebc8f37e237421f605e644",
+  "result": "pass_with_7_language_field_corrections_in_3_declarations",
+  "declarations_checked": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_aeval_mem",
+      "result": "pass_unchanged",
+      "signature": "matches_source_section_binders_statically; no elaboration performed",
+      "exact_source_and_file_sha256": "match",
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_aeval",
+      "result": "pass_unchanged",
+      "signature": "matches_source_section_binders_statically; no elaboration performed",
+      "exact_source_and_file_sha256": "match",
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_isIntegral_residue",
+      "result": "pass_unchanged",
+      "signature": "matches_source_section_binders_statically; no elaboration performed",
+      "exact_source_and_file_sha256": "match",
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_pos_of_residue_eq_zero",
+      "result": "pass_unchanged",
+      "signature": "matches_source_section_binders_statically; no elaboration performed",
+      "exact_source_and_file_sha256": "match",
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationPositive",
+      "result": "pass_after_noted_corrections",
+      "signature": "matches_source_section_binders_statically; no elaboration performed",
+      "exact_source_and_file_sha256": "match",
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+      "result": "pass_after_noted_corrections",
+      "signature": "matches_source_section_binders_statically; no elaboration performed",
+      "exact_source_and_file_sha256": "match",
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "result": "pass_after_noted_corrections",
+      "signature": "matches_source_section_binders_statically; no elaboration performed",
+      "exact_source_and_file_sha256": "match",
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationPositive",
+      "language": "en",
+      "defect": "The phrase finiteness of the full residue field can mean finite cardinality, whereas the actual instance is finite-dimensionality over ℚ.",
+      "old": "At a nonpole, finiteness of the full residue field follows from the model-derived curve-field structure",
+      "new": "At a nonpole, finite-dimensionality of the full residue field over ℚ follows from the model-derived curve-field structure"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+      "language": "en",
+      "defect": "The concrete applyK uses total field division; its zero-denominator value must be distinguished from ElemMap.apply on projective points.",
+      "old": "Its field action h_K uses this rational expression or p(f).",
+      "new": "Its field action h_K uses this rational expression or p(f). The field division is total: a zero denominator gives 0. This differs from the projective rule below, where a finite point with zero denominator is sent to ∞."
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+      "language": "zh_Hans",
+      "defect": "The concrete applyK uses total field division; its zero-denominator value must be distinguished from ElemMap.apply on projective points.",
+      "old": "它在域上的作用 h_K 使用这一有理式或 p(f)。",
+      "new": "它在域上的作用 h_K 使用这一有理式或 p(f)。这里的域除法处处有定义：分母为零时商为零。这与下述射影直线上的规则不同，后者把分母为零的有限点映到 ∞。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+      "language": "ja",
+      "defect": "The concrete applyK uses total field division; its zero-denominator value must be distinguished from ElemMap.apply on projective points.",
+      "old": "体上の作用 h_K は、この有理式または p(f) によって定まる。",
+      "new": "体上の作用 h_K は、この有理式または p(f) によって定まる。この体での除法は全域で定義されており、分母が零ならば商は 0 である。これは、分母が零である有限点を ∞ に写す、以下の射影直線上の規則とは異なる。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "language": "en",
+      "defect": "The concrete applyK uses total field division; its zero-denominator value must be distinguished from ElemMap.apply on projective points.",
+      "old": "Its field action h_K uses this rational expression or p(f).",
+      "new": "Its field action h_K uses this rational expression or p(f). The field division is total: a zero denominator gives 0. This differs from the projective rule below, where a finite point with zero denominator is sent to ∞."
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "language": "zh_Hans",
+      "defect": "The concrete applyK uses total field division; its zero-denominator value must be distinguished from ElemMap.apply on projective points.",
+      "old": "它在域上的作用 h_K 使用这一有理式或 p(f)。",
+      "new": "它在域上的作用 h_K 使用这一有理式或 p(f)。这里的域除法处处有定义：分母为零时商为零。这与下述射影直线上的规则不同，后者把分母为零的有限点映到 ∞。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "language": "ja",
+      "defect": "The concrete applyK uses total field division; its zero-denominator value must be distinguished from ElemMap.apply on projective points.",
+      "old": "体上の作用 h_K は、この有理式または p(f) によって定まる。",
+      "new": "体上の作用 h_K は、この有理式または p(f) によって定まる。この体での除法は全域で定義されており、分母が零ならば商は 0 である。これは、分母が零である有限点を ∞ に写す、以下の射影直線上の規則とは異なる。"
+    }
+  ],
+  "verified": {
+    "public_theorems": 7,
+    "private_declarations": 0,
+    "instances": 0,
+    "other_new_declarations": 0,
+    "concrete_places": "Proper valuation subrings containing ℚ, all places including infinity; no arbitrary place carrier introduced.",
+    "polynomial_membership_and_residue": "Actual valuation-ring membership and actual residue homomorphism, with rational polynomial evaluation and no unnecessary transcendence/nonzero assumptions.",
+    "integrality": "IsCurveField provides finite-dimensionality of the full residue field over ℚ; integrality is a conclusion for every actual residue.",
+    "nonzero_guard": "The zero-residue positive-order helper requires y ≠ 0. The positivity proof separately obtains nonzero minpoly and nonzero evaluation from residue integrality and transcendence.",
+    "ramification": "Integer actual residue-minpoly order in the regular branch and negative integer order in the pole branch; ord(0)=0 is explicitly preserved. Positivity applies only to transcendental input, not constants.",
+    "points": "Every actual full-residue-field ring embedding into the fixed algebraic closure is retained.",
+    "elementary_maps": "Actual nonzero-determinant rational Möbius maps and positive-natural-degree rational polynomials; exact finite/infinite values and natural local indices. Total field division now explicit.",
+    "composition": "Head-first list action; local-index product evaluated along successive projective images; entire natural composite index is cast to ℤ in the final integer equality.",
+    "proof_status": "Five completed proof bodies, one direct sorry elementary child, one parent transitively dependent on that child. No inferred arbitrary laws or constant-function theorem.",
+    "language": "All three languages independently state their contexts. Simplified Chinese mathematical terms and Japanese mathematical terms are consistent; Möbius retains Latin spelling and diacritic. No terminology web lookup was performed.",
+    "quotation": "All english_mochizuki_quote null values remain unchanged; root will prepend its independently verified quotation."
+  },
+  "context_files_read": [
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalFunctions.lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean"
+  ],
+  "preservation": {
+    "all_full_signature_static_fields_unchanged": true,
+    "all_exact_source_fields_unchanged": true,
+    "all_nonlanguage_fields_unchanged": true,
+    "unchanged_declarations": 4,
+    "changed_language_fields": 7
+  },
+  "constraints": {
+    "author_README_or_ledgers_read": false,
+    "compiled": false,
+    "mcp_ci_called": false,
+    "main_workspace_modified": false,
+    "cache_modified": false,
+    "network_used": false
+  },
+  "limitations": [
+    "Static source reading only; generated universe levels, generated instance names, and elaborated binder order were not inspected with Lean.",
+    "No compilation or axiom audit; no upstream equivalence certification."
+  ]
+}

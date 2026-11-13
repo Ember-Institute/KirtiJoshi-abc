@@ -20,6 +20,14 @@
       "status": "SKETCH_ACCEPTED"
     },
     {
+      "parent": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "children": [
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification"
+      ],
+      "submission_id": "fecf05ee-3916-4cb0-b79a-d9d71c2f1e57",
+      "status": "SKETCH_ACCEPTED"
+    },
+    {
       "parent": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
       "children": [
         "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
@@ -259,6 +267,10 @@
       "id": "77802978-99e9-411f-aba6-b77535bcdc07"
     },
     {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+      "id": "c2a137d1-be1a-403f-8615-f4eaed1c43f6"
+    },
+    {
       "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
       "id": "1fc04aee-4488-43ea-bd4f-65efe257b5ad"
     },
@@ -416,12 +428,12 @@
     "AbcAdaptation.Tripod.canonicalCorollary22HighHeightEstimate",
     "AbcAdaptation.Tripod.Fermat.Proper.affineIdentification",
     "AbcAdaptation.Tripod.Fermat.Proper.coordinatePoleMultiplicity_eq",
-    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
-    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite"
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification"
   ],
   "local_statement_ii_children": [
     "AbcAdaptation.Tripod.boundedDegreeFiniteness",
@@ -439,7 +451,7 @@
   "files": {
     "AGENTS.md": "b1fd49ac39ff0af166382148288b9bdbd2b47bdccb9794e9e7def61c4fc5228c",
     ".gitignore": "017a1ff4e588451a86e8ed213b18532f90469a658927faeab1001d8042ab7d2f",
-    "docs/Prove2Me适配状态.md": "25c8c0b5c73d048ffd034b9afc2e5a5593b684c5ba7263ba97041192e6298fc1",
+    "docs/Prove2Me适配状态.md": "b0b51afa9af9755578e9cfc1bb769ae36f8e83019f88b90211dde3166b8694e5",
     "prove2me_workspace/.gitignore": "817595d48805ba0be6c618df746a4f00248544ae22c876cf636208555dbb9b7d",
     "prove2me_workspace/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
     "prove2me_workspace/lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
@@ -1798,7 +1810,7 @@
     "prove2me_workspace/Definitions/Def_FermatNoncriticalComposition.lean": "6eee6a52dbb769c44a149a34df447c7dfa54eff9cbe8434015913fcc76b42bd5",
     "prove2me_workspace/Definitions/Def_FermatNoncriticalFunctions.lean": "bb10b218db0d1837c23da15cfe61ea2eac9a5e2d72612c231bcb4cec8f1e07e4",
     "prove2me_workspace/Definitions/Def_FermatNoncriticalSimpleZeros.lean": "c6ffb6443fa1568cd73e433b200f0ebfb583b2e7efa73dee12c29001607f122d",
-    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean": "f662ed3ae766fb277544a098d21062aeb098ef5942bc6b11f18cfd9e1802141d",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean": "df02b5ef20f944599406b4d1253828888476f0cd3e4a6d346473e16053fb08bf",
     "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean": "cbfc67f1db8260948cae3b5e512befc0426909a5b3161600812639017bb9622e",
     "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean": "5e87bce397ea8c68dafe054aaebaf0fa41679c99ec080de4a86b73bd4ab13f65",
     "prove2me_workspace/Solutions/Checks_FermatNoncriticalClosed.lean": "fe7e3f0225181456f999cfb14d645ed6f6c6b60be04b2448248ae5dc99c57032",
@@ -2401,17 +2413,133 @@
     "prove2me_workspace/.local/adaptation/fermat-noncritical-finite-20261114/upload-preamble-type-owner-repair.json": "de9edcfe7346271ca26aeea723b9895db22d039fa509a2331381fd6976182c50",
     "prove2me_workspace/.local/adaptation/fermat-noncritical-finite-20261114/upload-problem-items.json": "805a6bd93bd9e0d2cb595ddda076b2e2c822bdc2c07d2019f17deb9d3c4e1fee",
     "prove2me_workspace/.local/adaptation/fermat-noncritical-finite-20261114/upload-type-validation.py": "d2c3f41200011dab612e3b7987dafebb4e603b219080475f4fe9cb0870478b04",
-    "prove2me_workspace/.local/adaptation/fermat-noncritical-finite-20261114/upload-validation.json": "ed420c5cca6a1b757796f51f81747a97dad8277c1cc4cad374357e48a5e13b89"
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-finite-20261114/upload-validation.json": "ed420c5cca6a1b757796f51f81747a97dad8277c1cc4cad374357e48a5e13b89",
+    "prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean": "d15d1c7079be4eaa37a568b99715a12d5f1fb070d61d9e8fc0680a9cce18dcdf",
+    "prove2me_workspace/Solutions/Checks_FermatNoncriticalCompositionClosed.lean": "4e89f6e66be680fbb06479246ccdf4b8dcab141ec38a50a73979322eef775a5d",
+    "prove2me_workspace/Solutions/Checks_FermatNoncriticalCompositionReduction.lean": "7a5243c292c0afd12e3064fe7ea5530f20bf11f4f6d2fd80d3420d05a90a99fb",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/AuditAllDefinitions.lean": "6c4186843640171db30f61c1f7cd3453b011803ff1c4f9ffecbb0207ba3aec3d",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/ExtractCompositionGraph.lean": "6a244feeba073fe11967fede2dce0d2d291973d7e58c8c1fbe6c7f16a30cf361",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/FermatNoncriticalRamificationPositive-artifact-request.json": "43940a3421999e1caf28003d1e5b591cb97f040c15e1253bb857c20415e85268",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/FermatNoncriticalRamificationPositive-artifact-result.json": "defa1e3c10086c7a46d6ce39e32eab88988e3dc1a7d26fef9648211c37474eae",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/FermatNoncriticalRamificationPositive-artifact-submit.json": "332bb9b6c8acb3fbabd4851ff87962da40452fb76d1dff5f52535235d87256ca",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/FermatNoncriticalRamificationPositive-leaf-request.json": "cd2df01452dfc53b87f4af238c760faf959c58de0d0fe1801ed0ddbf58df5326",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/FermatNoncriticalRamificationPositive-leaf-result.json": "9a5e0fd6c13c93e3f25eb5f09f2e17d3d56664953ec071634f1c5c25036f2c33",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/FermatNoncriticalRamificationPositive-leaf-submit.json": "5c149c83a71445e1271d4ce0dde8fadba8ba8704a336db1deab5aa4d2b4c372e",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/ProductionGates.lean": "3b08e0bb0b9a1985669816cba5906ebdc8f6fcc81a33790bd79876a972274685",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/Solution_noncriticalCompositionRamification.lean": "3d56c16553b9c28387b8c4859d81d64781afb21d3c1679a6f4c9e993d48e0279",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/ValidateElaboratedTypes.lean": "a9251e2cab880afd683d545191a6d850939e4c9376c77e6b77f29c94f0f7dc41",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/ValidateExistingTypes.lean": "cbf35d163c4f3d2c67d82120450cd51afa2766df4085334b3f938e8fa6af19ea",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/ValidatePublishedChildContext.lean": "78079099e4d5f243a89c2c1411a95d64d579d66bab284b3d39ebd40bc1be7039",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/all-definition-axioms.json": "035ac6472ce79d55dda5919d05f5c2c32c356c7271e9bf1248058975193205e5",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/all-definitions-axioms-review-request.json": "652b31235c10ed1d66a5d8653a9f0f55160a7390d2b168262d7ab0535794df1d",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/all-definitions-axioms-review-result.json": "36b8b2b8042d990dc8d91df0a2018c2dfa660d9e9518df145d1b4e34a2dd5a7c",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/all-definitions-axioms-review-submit.json": "f0773764df6d3cf7fed7b1e1a03923913b30224fabe899d03cac52073bb857f1",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/blind-readbacks.json": "e5f34af7c4bfb68895a9b2f55cb8d23aa0546291ddebc8f37e237421f605e644",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/ci-coordinator.py": "8b42a590b04cd8b1b84a613761df6ad82e3b9806d98b432045a76c0de2c21f0e",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/ci-runtime-client.py": "001be4d271bc7b1ffb5b28caf28934896cd0fc47863a82a75acab3c081843363",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/closed-axioms-review-request.json": "a1d5c74c4c5f57564a50411a233102fab5cd3f6acfddeaef3f2a2c90ec5fddb4",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/closed-axioms-review-result.json": "59e84acba4cd189370657a041088fea5ef873d39c5267c1992be1be13cba6851",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/closed-axioms-review-submit.json": "74115fbaac345357960562d580b860a8cd3cf4ebde910a789981ba74c08ae253",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/composition-children-5966ce57-11b5-4e5c-8e9f-c4dc31db32e4-result.json": "988588e8f11338cc51013ca13980f0961dcd9f90facfd9aeb7397fdb28259c5b",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/composition-children-payload.json": "70813c1dc9d28d6e2525012c50f41e5f96462d8acd5fa3b0b81c3db7b199c24d",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/composition-children-publication-requested.json": "195b52dc2b84a1e1cc76bd6d7fb50face8fe0c6731a77d23c5394613596f37f0",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/composition-children-submit.json": "92d7e017273d18aee1733d828c3a2ea0a58884d0fa0c95531467d54b8ec5cdd9",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/current-source-consumer.json": "2000dfe4b57d8d46a5848eb864754043c237f1d51b17244302bdd4bfa39ef462",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/decl_graph.jsonl": "61857c176145139b39b2c78177275927e80aa95fae12933482d0dd82e4cf22c5",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/def-FermatNoncriticalRamificationPositive-7f3825d2-b75e-45f3-87d0-420dc04dd84e-result.json": "5be2d305faa5158b4e78e6a2e51f4aa132df8de1a4638601b74879c369f460b4",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/def-FermatNoncriticalRamificationPositive-payload.json": "c39a9d24f79cde6d646202c1386e2e1b18c93a81e7586ebe48cda721ae345de7",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/def-FermatNoncriticalRamificationPositive-publication-requested.json": "f71c89200b488cd98706dae7003c3a585136925a13916dd0533b528da2b3afff",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/def-FermatNoncriticalRamificationPositive-submit.json": "a46b7557fdc1803d27bced6326d3af4dca79b7a0aa3fea8549bba0e84d8ca59a",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/delivery-script-audit.json": "104a57f1b2c6756c3f5576c4cef0c1d129d7ded2c03d2b8d3c8ea6d6466e8daa",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/delivery_common.py": "0b59f00be11262f664b806272de654a0e881fff4f17a3d949e63705326978fc1",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/draft-README.md": "44b1e459bd5c5fdbc08bb278df970b61a5568990fb7bb62c69d1b8be24c13bb5",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/draft-static-review.json": "ac5df107d8d1ea14bf192485b7db3f622ecd5cea79aa491ec8d8069a02baece4",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/elaborated-types-leaf-request.json": "71f9dd44ee540522d62334bde24428f74c90c85f5bc3684558c18e8388dc74c9",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/elaborated-types-leaf-result.json": "e21a06144675215f8bef54e4f8a2c5bfbbc401b5de50f8bfa2cc5e32cc0b2ce1",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/elaborated-types-leaf-submit.json": "4975c6b042e9aeccc1a1d6d2256372cd3f9f66af955201be9099bc24cd774aa6",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/existing-types-equal.json": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/existing-types-leaf-request.json": "921c39fe61658dd817bc8cb9a3cb8893e2d3f6685ab51780909dee421f8fff9a",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/existing-types-leaf-result.json": "064948d52973914d24c704adae2fa53e1935a00feff65f14ceea5c82b5772d99",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/existing-types-leaf-submit.json": "30ddb698b0da0d85ce397fe7f2d8fd4733476dd11399b960f51685aec43d061f",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/finalize.py": "2de42396e213a3edf540a87cce7de458239628bee8dabd6d967dacd2d412f276",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/follow-through.py": "a899b3d90ebac59f596a1f9627c51374334ce8341abce03b3adbd84772737cda",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/graph-count-evidence.json": "60fa89c4b5c400517234d0b26c2c4f0c323eb6fc1ddf450c3917917f00ac4a56",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/graph-noncriticalCompositionRamification.json": "e755f56c339e453cb5ce196cf70383dd98af0344493e4e89d4bec9ce7aeeaccc",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/graph-overview-completeness.json": "f6b3985e8a92f9b7878133a1ab9af8af7713f06fe4220b87c6d4475489e0522f",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/graph_completion.py": "8fe93118e8b071f8a013fe4098f38e59c5fa3ab200ab6ad1abdb41e0f41220e6",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/independent-shape-audit.json": "c4635b387fa2ebebf8d2b683b8a2cb204c490121407e19444e1f12053bda9406",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/integration.json": "150b2b641974b3195f151d28d2da1169b710827ecada809ab501a205f977e610",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/mochizuki-quotation.md": "9d5952e5d2ff0195854da43d66d9bbc5f28771ac3ed1ea30b50bf41278b3e9be",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/mochizuki-source-quotations.json": "0be32ee75d02bace8a2e2ab026a6fed33c5398749c79145b2922be75ebd5c059",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalCompositionRamification-artifact-request.json": "c58efe5afa21aadfecef98a8bb5a7990f6bf84f548711759daa48ac247bae016",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalCompositionRamification-artifact-result.json": "ff36be39be05989f28acd85726f93d4c0007975674438bb7867bc047abf65200",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalCompositionRamification-artifact-submit.json": "001d017c25aff5d5b53d7d3005d627cf66aa164a1920a142523a0c34886096f1",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalCompositionRamification-leaf-request.json": "1d2d0dc5d7f3f3afc9e3a9c50f2b939409102f7cc6f8c03daa658125418fdb75",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalCompositionRamification-leaf-result.json": "71adb6810ea31ff499f5cd0c982da60650767c46007d85ce0b13659e62f61a6a",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalCompositionRamification-leaf-submit.json": "c8993128590104fcabbd2713f7a402046ea595c602fee02a4d2494827f8065b2",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalElementaryCompositionRamification-artifact-request.json": "7acd578c08f20ae53c966b07ef527589f956735a65f232ed89d31fa1be085f6f",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalElementaryCompositionRamification-artifact-result.json": "5284573179d0e72f719de7e458fffbdea1f0735eebaba66b178172f96de37e33",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalElementaryCompositionRamification-artifact-submit.json": "7805fb6c2528d2f79c78ac368110478430f04cda5e10c7581c626a7530e1207d",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalElementaryCompositionRamification-leaf-request.json": "8e3ab781e8377336c7e3e140df776e7eb5b51ec38001d8b48f030d1f8674ce67",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalElementaryCompositionRamification-leaf-result.json": "210b8257b0d81ac2f7c86de6dbda831292f87e32db4558dc815157455312c305",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/noncriticalElementaryCompositionRamification-leaf-submit.json": "db4281b952cae7d801229e573fc161e9a39393585bd0d793b53a72a27e4b70a2",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/original-source-hashes.json": "e554a5ef418ee4fdcbd0a31b081aeef41826fb4401f2fb7cd1d550f2b9231a2a",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/plan-checkbox-evidence.json": "86a55f506c922fe6aa6428cdcb911579e4691534af3d2df849d4505cd7268483",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/platform-after-noncriticalCompositionRamification.json": "a0f8dfdc2d02af951506fd3d0e1bd4e2cb13bb881b542a8ae0a79dd02c891ec5",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/platform-after-noncriticalElementaryCompositionRamification.json": "c1992f4c47ffe87b4318691d254a2ab4f906a3bb3d09d59b8109c97d52dbf69b",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/platform-before-noncriticalCompositionRamification.json": "a0f8dfdc2d02af951506fd3d0e1bd4e2cb13bb881b542a8ae0a79dd02c891ec5",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/platform_publish.py": "293f7085e656c036f7c7ed4ed407e31251b218bcc236e15dffe90060824ea706",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/production-gates-review-request.json": "929ab2ce80e4d1fb676dd00ce778ed109f8e8bc8b4e0167e91f0b4c66647ee0e",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/production-gates-review-result.json": "d215db48d1555e8b5f550a62ff2546db3f58484d806b11bd5341efc335f71f26",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/production-gates-review-submit.json": "76b6074f817f21880f09b01e7546ac8b1eb0016a6b2b1217b42e722acbf04b54",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/published-child-context-leaf-request.json": "0983a8b6095aa70626d4658cfbeaeb9f8c8ed6b1d7d7bc0cea66636f13e57c42",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/published-child-context-leaf-result.json": "f3e0b90269ff4f0e1365e9d55bcd7a74f547e621bc5c350854d39d6004efe733",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/published-child-context-leaf-submit.json": "089ae730d44223f5da6c2a4b752dd65b2e1052a3672e2108e5d566d11953a9d9",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/published-child-context-validation.json": "9c75dc40093098fe6ea74dd8bdd3bcbf9dc74ed8b16a752e77203f7d67ad4596",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/published-child-ids.json": "abc3501b58ea8d7c1c04785b594c9dbc4a84b5cc21727a9290d9edd39368cac0",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/readbacks-final-report.json": "379e654b9caaf5a39af74881e45a49618ae25a75dc1e70945621d421917504e4",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/readbacks-final.json": "b8e1dee2f60cf0da755c74c02ad28b8d42f08a24cf1548e9c723b6cf563cbf2c",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/reduce-noncriticalCompositionRamification-solution.lean": "3d56c16553b9c28387b8c4859d81d64781afb21d3c1679a6f4c9e993d48e0279",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/reduce-noncriticalCompositionRamification-verification-requested.json": "6aa271e64a33d756322724d1229c267701f7daca1bef14ec6a90e222d85f7dbc",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/reduce-noncriticalCompositionRamification-verify-request.json": "e4e320cdfa2ed3e324fd82fa000cbbfd4b471eced04cff0daa8c1b03c2400ead",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/reduce-noncriticalCompositionRamification-verify-result.json": "d651c045723381ab59a04f880d65e275e8422d612ca6b2698f314e3cbb40d752",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/reduce-noncriticalCompositionRamification-verify-submit.json": "61520f9fa6f338995f86c9c089becd92154d598949ac5228e107857ddea12a97",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/reduction-axioms-leaf-request.json": "b31463badca1a8a2a6fd904298e17d9823053d1b6a9868e7818313a0eba99903",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/reduction-axioms-leaf-result.json": "ca702572ce75d809a1f7689eeb6acc1633dfae08f3a92ece5bb00f2f3c4581aa",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/reduction-axioms-leaf-submit.json": "27c76af3dc76300c8baebfb41bcacbda5718ca78fc22d058525bb0c52029c038",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/registry-before.json": "9169759f8edf28d2aaec976e0a52dec4d2ad31d2728ea3e0dfe64ab3d30d9d4e",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/root-frontier-after-page-0.json": "961a53cf3c6c124510d592eea697a0863a01180da06610271196d4fe98284f99",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/root-frontier-after.json": "60044336e71f546430c212b27be0f429f1311083d144260c9339ddf5de9442eb",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/root-frontier-before-page-0.json": "d1044f15f84e78adc6e53a1f10f9476d3411bad85dea0affbbe51d73acf16eac",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/root-frontier-before.json": "7268d47370a2e668e856244f5903fcfc13e3297f7b83913f84d1c2d7b67eebdf",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/root-graph-after-overview.json": "ce34e8f6d925ba18298ec1d1398f102ce859e7e4b54eb9daa523157efbb2aeaf",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/root-graph-after.json": "73f1235c9686b26e6434c335b85e48e7db0d6d07b121dc8e40a04d814264a8cd",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/root-graph-before-overview.json": "788fa81f9e7637ab75cfd1e146f443567d62ad1ab235b855ba56625f5184d9ce",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/root-graph-before.json": "6e0d68aa2c57cf433c285aed3317da751731f7fe633841b0a353ddc38a02edea",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/solution-noncriticalCompositionRamification-leaf-request.json": "ef0fffba7b0f286510b9a60457af9d3b680afeb44e4a0fd86c7185c218ac9f54",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/solution-noncriticalCompositionRamification-leaf-result.json": "73fba2d7cd8d6437e46e4966f9f63323e0122345f86ab4561ec8d067998fa149",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/solution-noncriticalCompositionRamification-leaf-submit.json": "13ec97c5b9f2825e2fcad0405d80fec81d79e6f1c333a8b9294c36af4c624d07",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/source-consumer.json": "352a7f6873d9000b106f55dcf36ed0436ac130bcd1a6265927e9d1e8739758bb",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/source-graph-leaf-request.json": "9ca11258259e9fd46af402f70d821e2ae5dfbdfc6280771182bc9e3cc1c595f7",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/source-graph-leaf-result.json": "96db7dc2735a265165db79aa618e44ad0737b00d6ef409ed4a8ad87737ecee37",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/source-graph-leaf-submit.json": "2d8ed5dc9ef27d1f470d984b6f84a1653d65ef292ec249fd1f1fac2efdf8a0cb",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/source-ledger-link.json": "a52652115882a42f0e83a169fcff654bc50d83593fb1b6abf6761682ecb5c1f4",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/unit-ci-summary.json": "d34c96dc49bfb41ade54fb82e7ece90edda88279a5cb84d69469caeb17f88e2e",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/upload-elaborated-types.json": "629c4ddd3df43be784853ab8d9f8f02726a3cc5c002eb36ffc68937cea9b5027",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/upload-problem-items.json": "2dba421c2f233903595c2586d5906b445e5cd49e95f030eab1d328dadbcc8ea2",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/upload-type-validation.py": "bde63a97325a40673d7364ca9bb6c45d9fd265306fbc46432b2f90d53adb6f93",
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-composition-20261114/upload-validation.json": "59fd4d64208a785d00f55e5343c626c170f3b11a1ffe6ce54a5fa6bf5fc8aaf4"
   },
-  "recorded_at": "2026-11-13T21:00:19.701876+00:00",
+  "recorded_at": "2026-11-13T21:16:26.982132+00:00",
   "local_open_children_below_root": 30,
   "published_open_children_below_root": 30,
   "local_rational_projection_edge_verified": true,
   "remaining_platform_edges": [
     "Continue noncritical Belyi, Fermat arithmetic comparisons, genuine universal 3.12 and Joshi Scene1/Prologue source decomposition."
   ],
-  "accepted_platform_reductions": 16,
-  "dependency_edges": 57,
+  "accepted_platform_reductions": 17,
+  "dependency_edges": 58,
   "readback_source": "Every newly published node uses an existing independently generated trilingual read-back; platform natural-language fields retain it with Mochizuki source quotations.",
   "local_high_height_children": [
     "AbcAdaptation.Tripod.canonicalLegendreHeightComparison",
@@ -2421,9 +2549,9 @@
   "local_high_height_composition": "AbcAdaptation.Tripod.highHeightEstimate_of_canonical_children",
   "local_high_height_platform_connected": true,
   "graph_counts": {
-    "accepted_reductions": 16,
-    "published_children": 52,
-    "dependency_edges": 57,
+    "accepted_reductions": 17,
+    "published_children": 53,
+    "dependency_edges": 58,
     "open_frontier": 30,
     "direct_closed_children": 7
   },
@@ -2470,7 +2598,8 @@
     "noncritical_parent_and_six_actual_dependencies_present": true,
     "canonical_parent_and_one_actual_dependency_present": true,
     "noncritical_p1_parent_and_three_actual_dependencies_present": true,
-    "noncritical_finite_parent_and_two_actual_dependencies_present": true
+    "noncritical_finite_parent_and_two_actual_dependencies_present": true,
+    "noncritical_composition_parent_and_one_actual_dependency_present": true
   },
   "direct_closed_proofs": [
     {
@@ -2588,7 +2717,8 @@
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational": "Open",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize": "Open",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem": "Open",
-    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite": "Open"
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification": "Open"
   },
   "riemann_sourceproof_unit": {
     "closed_direct": [
@@ -2713,5 +2843,23 @@
     "remaining_new_open": 2,
     "all_frontier_pages_fetched": true,
     "source_ledger_link": ".local/adaptation/fermat-noncritical-finite-20261114/source-ledger-link.json"
+  },
+  "noncritical_composition_unit": {
+    "source": "fermat-noncritical-composition-20261114",
+    "children": {
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification": "c2a137d1-be1a-403f-8615-f4eaed1c43f6"
+    },
+    "closed_direct": [],
+    "reduction": {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "submission_id": "fecf05ee-3916-4cb0-b79a-d9d71c2f1e57",
+      "status": "SKETCH_ACCEPTED"
+    },
+    "dependencies": [
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification"
+    ],
+    "remaining_new_open": 1,
+    "all_frontier_pages_fetched": true,
+    "source_ledger_link": ".local/adaptation/fermat-noncritical-composition-20261114/source-ledger-link.json"
   }
 }

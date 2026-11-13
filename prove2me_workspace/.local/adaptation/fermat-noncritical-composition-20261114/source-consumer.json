@@ -1,0 +1,170 @@
+{
+  "unit": "Source-backed actual elementary composition and list-induction ramification decomposition",
+  "date": "2026-11-14",
+  "status": "uncompiled_draft_proved_source_positivity_one_concrete_Open_step_parent_source_list_induction",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "pin_source": "refer/iut/lake-manifest.json belyi.rev",
+  "reference_hashes": {
+    "Belyi/CurveDeriv/Local.lean": {
+      "sha256": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+      "fresh_pinned_remote_match": true,
+      "copy": "reference/Belyi_CurveDeriv_Local.lean"
+    },
+    "Belyi/CurveField/NoncriticalBasic.lean": {
+      "sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+      "fresh_pinned_remote_match": true,
+      "copy": "reference/Belyi_CurveField_NoncriticalBasic.lean"
+    },
+    "Belyi/CurveField/NoncriticalElem.lean": {
+      "sha256": "962260751d00333f25cfcd803626193c053d0a982fb6756823de1cc325f4b783",
+      "fresh_pinned_remote_match": true,
+      "copy": "reference/Belyi_CurveField_NoncriticalElem.lean"
+    },
+    "Belyi/CurveField/Point.lean": {
+      "sha256": "58fe7e91e18b73c352b82006242a36dfa1edf667c43add9952130896afd2d11f",
+      "fresh_pinned_remote_match": true,
+      "copy": "reference/Belyi_CurveField_Point.lean"
+    },
+    "Belyi/CurveField/RamIdx.lean": {
+      "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+      "fresh_pinned_remote_match": true,
+      "copy": "reference/Belyi_CurveField_RamIdx.lean"
+    },
+    "Belyi/CurveField/Residue.lean": {
+      "sha256": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+      "fresh_pinned_remote_match": true,
+      "copy": "reference/Belyi_CurveField_Residue.lean"
+    }
+  },
+  "parent_input": {
+    "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+    "sha256": "f662ed3ae766fb277544a098d21062aeb098ef5942bc6b11f18cfd9e1802141d",
+    "exact_statement_preserved": true
+  },
+  "definitions": [
+    {
+      "file": "Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "name": "Place.noncritical_aeval_mem",
+      "source": "Belyi/CurveDeriv/Local.lean aeval_mem",
+      "adaptation": "exact source sum-of-coefficients membership proof specialized to actual P.1; P.algebraMap_mem supplies its rational containment; no derivative imports",
+      "consumers": [
+        "Place.noncritical_residue_aeval",
+        "noncriticalRamificationPositive regular branch"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "name": "Place.noncritical_residue_aeval",
+      "source": "Belyi/CurveField/RamIdx.lean residue_aeval",
+      "adaptation": "source exact helper on actual residue map and actual rational inclusion, prefix changed",
+      "consumers": [
+        "noncriticalRamificationPositive regular branch"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "name": "Place.noncritical_isIntegral_residue",
+      "source": "Belyi/CurveField/RamIdx.lean isIntegral_residue",
+      "adaptation": "source one-line proof from existing finite-dimensional full residue-field instance",
+      "consumers": [
+        "noncriticalRamificationPositive minpoly nonzero"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "name": "Place.noncritical_ord_pos_of_residue_eq_zero",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean ord_pos_of_residue_eq_zero",
+      "adaptation": "source proof via actual maximal ideal and existing normalized ord",
+      "consumers": [
+        "noncriticalRamificationPositive regular branch"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "name": "noncriticalRamificationPositive",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean ramIdx_pos",
+      "adaptation": "completed source proof reparameterized to M.K and existing ramIdx M hDVR ψ P; existing ord_eq_placeOrd bridges identical normalized orders",
+      "consumers": [
+        "noncriticalCompositionRamification first conjunct"
+      ]
+    }
+  ],
+  "open_child": {
+    "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+    "name": "noncriticalElementaryCompositionRamification",
+    "source": "Belyi/CurveField/NoncriticalElem.lean applyK_spec",
+    "type_mapping": {
+      "K": "actual M.K",
+      "IsCurveField K": "M.isCurveField",
+      "phi": "ψ with Transcendental Q ψ",
+      "h": "existing NoncriticalP1.ElemMap, rational Mobius with det != 0 or positive-degree rational polynomial",
+      "val x": "existing noncriticalValue M x",
+      "applyK": "existing NoncriticalP1.applyK",
+      "ramIdx x.P phi": "existing ramIdx M hDVR ψ x.P",
+      "h.ramIdx": "existing elementary actual multiplicity/degree ramification index; natural index coerced to Z",
+      "x": "all actual QbarPoint M.K, retaining full residue field and every embedding"
+    },
+    "debt": "sorry: source polynomial/inversion/Mobius mathematics stays Open; no arbitrary map or chain-rule law is a parameter",
+    "consumer": "noncriticalCompositionRamification cons branch"
+  },
+  "combination": {
+    "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+    "name": "noncriticalCompositionRamification",
+    "source": "Belyi/CurveField/NoncriticalElem.lean compK_spec; NoncriticalBasic.lean ramIdx_pos",
+    "proof": "actual List induction generalizing ψ. Empty list identity. Head step applies concrete child and induction to actual applyK h ψ; value rewrites and actual recursive ramIdxComp product yield result. Multiplication reassociation replaces source push_cast/ring. The named ψ argument in the induction call handles the existing parent explicit ψ binder, while upstream uses an implicit φ binder.",
+    "debt": "none in this proof body; the one child remains Open",
+    "consumers": [
+      "existing noncriticalSelection source chain"
+    ]
+  },
+  "preserved_conditions": [
+    "exact original parent type",
+    "actual M.K field and Q rational algebra",
+    "nonconstant/transcendental function at each list stage",
+    "genuine rational Mobius determinant nonzero",
+    "genuine positive-degree rational polynomials",
+    "all QbarPoint embeddings, no chosen representative or rational-only replacement",
+    "actual pole/regular value distinction",
+    "actual residue-minpoly/pole ramification and elementary root multiplicity",
+    "positivity on every valuative place P, including infinity",
+    "actual source list recursion in both compK and ramIdxComp"
+  ],
+  "zero_eval_future_consumer": {
+    "existing_producer": "Definitions.Def_FermatNoncriticalFunctions QbarPoint.noncritical_eval_zero",
+    "exact_source_consumer": "Belyi/CurveField/Point.lean QbarPoint.eval_inv, zero-function branch: have h0 : forall h, x.eval 0 h = 0 := fun _ => x.eval_zero; simp only [inv_zero, h0]",
+    "necessary_downstream_path": [
+      "Point.eval_inv -> NoncriticalElem.inv_spec order-zero branch",
+      "NoncriticalElem.inv_spec -> NoncriticalElem.mob_spec c != 0 branch",
+      "NoncriticalElem.mob_spec -> NoncriticalElem.applyK_spec",
+      "NoncriticalElem.applyK_spec -> current concrete child"
+    ],
+    "not_implemented_reason": "The current minimal decomposition keeps applyK_spec Open. Adding eval_inv without integrating its actual inv_spec consumer would create another unused producer. No forced reference or old Definition edit is included.",
+    "future_needed_helpers": [
+      "Point.eval_mul",
+      "Point.eval_congr",
+      "existing noncritical_eval_one",
+      "NoncriticalBasic.ord_aeval_eq",
+      "NoncriticalElem.exists_ramIdx_eq_mul_inv",
+      "actual inversion invPt/spec"
+    ],
+    "classification": "specific source-backed future consumption route, not a claim the unused-producer debt is closed"
+  },
+  "validation": {
+    "compiler_run": false,
+    "MCP_CI_run": false,
+    "repository_edited": false,
+    "old_Definitions_edited": false,
+    "cache_edited": false,
+    "publication_performed": false,
+    "static_checks": [
+      "pin matches refer/iut manifest and six reference copies match fresh pinned remote files",
+      "exact existing parent statement unchanged modulo whitespace",
+      "positivity/helpers and parent have no sorry; exactly one concrete elementary-map child has sorry",
+      "residue-of-polynomial helper type/proof exactly matches source modulo prefix and whitespace",
+      "full residue-field integrality helper exactly matches source modulo prefix",
+      "positive-order residue helper exactly matches source modulo prefix",
+      "local import closure contains no derivative module, Act2, Scene2, Prologue, or Obligations, and no full Mathlib import"
+    ]
+  },
+  "resource_note": "Definitions helper file has 81 lines and one elementary source obligation file 29 lines. No performance result is claimed; root must submit first checks with 60s/16GiB estimates."
+}

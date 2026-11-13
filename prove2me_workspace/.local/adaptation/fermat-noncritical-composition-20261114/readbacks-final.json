@@ -1,0 +1,257 @@
+{
+  "schema_version": "independent-trilingual-static-readback-v1",
+  "reviewer": "composition_readback",
+  "review_mode": "Lean-only independent static readback; no compilation",
+  "target_root": "/tmp/p2m-noncritical-composition-next-20261114",
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_aeval_mem",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "line": 24,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_aeval_mem\n    {K : Type*} [Field K] [CharZero K] (P : Place K)\n    {x : K} (hx : x ∈ P.1) (p : ℚ[X]) :\n    aeval x p ∈ P.1",
+      "en": "Let K be a field of characteristic zero, and let P be a proper valuation subring O_P of K containing all rational constants. For any x ∈ K lying in O_P and any polynomial p with rational coefficients, evaluation p(x), formed in K by the canonical rational algebra structure, also lies in O_P. There is no curve-field, transcendence, degree, or nonzero hypothesis. The body expands polynomial evaluation as a finite sum and uses closure of O_P under rational constants, powers, multiplication, and addition. This is a complete proof body in the inspected text; it has not been compiled in this review.",
+      "zh_Hans": "设 K 是特征为零的域，P 是 K 中包含全部有理常数且不等于整个域的赋值子环 O_P。对任意属于 O_P 的元素 x ∈ K 和任意有理系数多项式 p，通过规范的有理数代数结构在 K 中计算的多项式值 p(x) 仍属于 O_P。不要求 K 是曲线函数域，也没有超越性、次数或非零假设。证明将多项式求值展开为有限和，再使用 O_P 对有理常数、幂、乘法和加法的封闭性。所读文本中的证明体完整；本次审阅没有编译。",
+      "ja": "K を標数 0 の体とし、P を、有理定数をすべて含み K 全体とは異なる付値部分環 O_P とする。O_P に属する任意の元 x ∈ K と任意の有理数係数多項式 p に対し、標準的な ℚ 代数構造によって K 内で求めた値 p(x) も O_P に属する。曲線関数体、超越性、次数、非零性の仮定はない。証明は多項式の値を有限和に展開し、O_P が有理定数、冪、積、和について閉じていることを用いる。読んだテキストの証明本体は完結している。本審査ではコンパイルしていない。",
+      "exact_source": {
+        "start_line": 27,
+        "end_line": 31,
+        "text": "theorem noncritical_aeval_mem {x : K} (hx : x ∈ P.1) (p : ℚ[X]) : aeval x p ∈ P.1 := by\n  rw [aeval_eq_sum_range]\n  refine sum_mem fun i _ => ?_\n  rw [Algebra.smul_def]\n  exact mul_mem (P.algebraMap_mem _) (pow_mem hx _)\n",
+        "file_sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890"
+      },
+      "proof_status": "complete_body_static_only",
+      "direct_local_dependencies": [],
+      "english_mochizuki_quote": null,
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_aeval_mem"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_aeval",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "line": 33,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_aeval\n    {K : Type*} [Field K] [CharZero K] (P : Place K)\n    {x : K} (hx : x ∈ P.1) (p : ℚ[X]) :\n    P.residue ⟨aeval x p, P.noncritical_aeval_mem hx p⟩ =\n      aeval (P.residue ⟨x, hx⟩) p",
+      "en": "Let K be a field of characteristic zero, let P be a proper valuation subring O_P containing ℚ, and let res_P : O_P → κ(P) be the actual residue map to the full residue field κ(P). For every x ∈ O_P and every p ∈ ℚ[X], reducing the evaluated element p(x) gives the same result as evaluating p at res_P(x) in κ(P): res_P(p(x)) = p(res_P(x)). The membership proof for p(x) is the preceding helper. This concerns the full residue field, without choosing an embedding into ℚ̄. No curve-field, transcendence, nonzero, or degree assumption is present. The complete body uses compatibility of polynomial evaluation with ring homomorphisms and uniqueness of the rational ring homomorphism; it is not compilation-verified here.",
+      "zh_Hans": "设 K 是特征为零的域，P 是包含 ℚ 且不等于 K 的赋值子环 O_P，res_P : O_P → κ(P) 是通向完整剩余域 κ(P) 的实际剩余映射。对每个 x ∈ O_P 和每个 p ∈ ℚ[X]，先在 K 中求值再取剩余类，与先取 x 的剩余类再在 κ(P) 中求值，结果相同：res_P(p(x)) = p(res_P(x))。p(x) 属于 O_P 由前一个辅助定理保证。这里使用完整剩余域，没有选择到 ℚ̄ 的嵌入。没有曲线函数域、超越性、非零或次数假设。完整证明使用多项式求值与环同态的相容性，以及有理数环同态的唯一性；本次没有通过编译验证。",
+      "ja": "K を標数 0 の体、P を ℚ を含み K 全体とは異なる付値部分環 O_P とし、res_P : O_P → κ(P) を剰余体全体 κ(P) への実際の剰余写像とする。すべての x ∈ O_P と p ∈ ℚ[X] に対し、K で p(x) を求めてから剰余を取る操作と、res_P(x) において κ(P) 内で p を評価する操作は一致する。すなわち res_P(p(x)) = p(res_P(x)) である。p(x) の O_P への所属は先の補助定理で与えられる。対象は剰余体全体であり、ℚ̄ への埋め込みを選んでいない。曲線関数体、超越性、非零性、次数の仮定はない。完結した証明は、多項式評価と環準同型の整合性、および ℚ からの環準同型の一意性を用いる。本審査ではコンパイルによる検証をしていない。",
+      "exact_source": {
+        "start_line": 34,
+        "end_line": 45,
+        "text": "theorem noncritical_residue_aeval {x : K} (hx : x ∈ P.1) (p : ℚ[X]) :\n    P.residue ⟨aeval x p, P.noncritical_aeval_mem hx p⟩ =\n      aeval (P.residue ⟨x, hx⟩) p := by\n  have h1 : (⟨aeval x p, P.noncritical_aeval_mem hx p⟩ : P.1) =\n      eval₂ P.ratHom ⟨x, hx⟩ p := by\n    apply Subtype.ext\n    change aeval x p = P.1.subtype (eval₂ P.ratHom ⟨x, hx⟩ p)\n    rw [hom_eval₂, aeval_def]\n    congr 1\n  rw [h1, hom_eval₂, aeval_def]\n  congr 1\n  exact RingHom.ext_rat _ _\n",
+        "file_sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890"
+      },
+      "proof_status": "complete_body_static_only",
+      "direct_local_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_aeval_mem"
+      ],
+      "english_mochizuki_quote": null,
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_aeval"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_isIntegral_residue",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "line": 49,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_isIntegral_residue\n    {K : Type*} [Field K] [CharZero K] (P : Place K) [IsCurveField K]\n    (a : P.1) : IsIntegral ℚ (P.residue a)",
+      "en": "Let K be a field of characteristic zero with IsCurveField K: there exists t ∈ K transcendental over ℚ such that K is finite-dimensional over ℚ(t). Let P be any proper valuation subring O_P of K containing ℚ, and let κ(P) be its full actual residue field. For every a ∈ O_P, the residue res_P(a) is integral over ℚ; equivalently, it satisfies a monic polynomial with rational coefficients. The existing curve-field theory supplies finite-dimensionality of κ(P) over ℚ, so residue finiteness is not a further hypothesis of this theorem. No assumption that the constant field equals ℚ, no residue embedding choice, and no transcendence or nonzero condition on a occurs. The one-line proof body is complete in the text; no compilation was performed.",
+      "zh_Hans": "设 K 是特征为零的域，并满足 IsCurveField K：存在在 ℚ 上超越的 t ∈ K，使 K 是 ℚ(t) 上的有限维扩张。设 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P，κ(P) 是它的完整实际剩余域。对每个 a ∈ O_P，剩余类 res_P(a) 都在 ℚ 上整，即满足某个有理系数首一多项式。已有曲线函数域理论保证 κ(P) 在 ℚ 上有限维，因此本定理没有另行假设剩余域的有限性。这里不要求常数域等于 ℚ，不选择剩余域嵌入，也不要求 a 超越或非零。文本中的单行证明体完整；本次未编译。",
+      "ja": "K を標数 0 の体とし、IsCurveField K を仮定する。すなわち、ℚ 上超越的な t ∈ K が存在し、K は ℚ(t) 上有限次元である。P を、ℚ を含み K 全体とは異なる任意の付値部分環 O_P とし、κ(P) をその実際の剰余体全体とする。すべての a ∈ O_P に対し、剰余 res_P(a) は ℚ 上整である。つまり、有理数係数のあるモニック多項式を満たす。既存の曲線関数体の理論から κ(P) の ℚ 上の有限次元性が得られるため、剰余体の有限性は本定理の追加仮定ではない。定数体が ℚ と等しいという仮定、剰余体埋め込みの選択、a の超越性や非零性の条件はない。テキストの一行の証明本体は完結している。本審査ではコンパイルしていない。",
+      "exact_source": {
+        "start_line": 51,
+        "end_line": 52,
+        "text": "theorem noncritical_isIntegral_residue (a : P.1) : IsIntegral ℚ (P.residue a) :=\n  Algebra.IsIntegral.isIntegral _\n",
+        "file_sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890"
+      },
+      "proof_status": "complete_body_static_only",
+      "direct_local_dependencies": [],
+      "english_mochizuki_quote": null,
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_isIntegral_residue"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_pos_of_residue_eq_zero",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "line": 54,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_pos_of_residue_eq_zero\n    {K : Type*} [Field K] [CharZero K] (P : Place K) [IsCurveField K]\n    {y : K} (hy : y ∈ P.1) (hy0 : y ≠ 0)\n    (h : P.residue ⟨y, hy⟩ = 0) : 0 < P.ord y",
+      "en": "Let K be a characteristic-zero field which is finite-dimensional over ℚ(t) for some t transcendental over ℚ. Let P be any proper valuation subring O_P of K containing ℚ, with actual residue map res_P to the full residue field κ(P). For y ∈ K, assume y ∈ O_P, y ≠ 0, and res_P(y) = 0. Then the normalized integer order ord_P(y) is strictly positive. The curve-field hypothesis supplies the discrete valuation ring used for this order. The definition has ord_P(0)=0, so the nonzero hypothesis on y is essential to the stated implication. The body identifies the kernel of the residue map with the maximal ideal and applies the positive-order characterization for nonzero elements. It is complete textually and has not been compiled here.",
+      "zh_Hans": "设 K 是特征为零的域，并且对某个在 ℚ 上超越的 t，K 是 ℚ(t) 上的有限维扩张。设 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P，其实际剩余映射 res_P 通向完整剩余域 κ(P)。给定 y ∈ K，假设 y ∈ O_P、y ≠ 0 且 res_P(y) = 0，则规范化整数阶 ord_P(y) 严格大于零。曲线函数域假设提供定义此阶所需的离散赋值环。定义约定 ord_P(0)=0，因此陈述中的非零假设不能省去。证明利用剩余映射的核等于极大理想，再对非零元素应用正阶的刻画。文本证明完整；本次未编译。",
+      "ja": "K を標数 0 の体とし、ℚ 上超越的なある t に対して K が ℚ(t) 上有限次元であると仮定する。P を、ℚ を含み K 全体とは異なる任意の付値部分環 O_P とし、res_P を剰余体全体 κ(P) への実際の剰余写像とする。y ∈ K に対し、y ∈ O_P、y ≠ 0、res_P(y) = 0 を仮定すると、正規化された整数位数 ord_P(y) は正である。曲線関数体の仮定によって、この位数の定義に用いる離散付値環が得られる。ord_P(0)=0 という定義のため、述べられた含意には y ≠ 0 が必要である。証明は、剰余写像の核が極大イデアルであることを用い、非零元に対する正の位数の特徴づけを適用する。テキスト上の証明は完結しているが、本審査ではコンパイルしていない。",
+      "exact_source": {
+        "start_line": 55,
+        "end_line": 58,
+        "text": "theorem noncritical_ord_pos_of_residue_eq_zero {y : K} (hy : y ∈ P.1) (hy0 : y ≠ 0)\n    (h : P.residue ⟨y, hy⟩ = 0) : 0 < P.ord y :=\n  (P.ord_pos_iff_mem_maximalIdeal (a := ⟨y, hy⟩) hy0).mpr\n    ((P.residue_eq_zero_iff).mp h)\n",
+        "file_sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890"
+      },
+      "proof_status": "complete_body_static_only",
+      "direct_local_dependencies": [],
+      "english_mochizuki_quote": null,
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_pos_of_residue_eq_zero"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationPositive",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "line": 62,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationPositive\n    {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) (P : Place M.K) :\n    0 < ramIdx M hDVR ψ P",
+      "en": "Let N be a natural number and M : Model N. Thus M.K is an intermediate field of the algebraic closure of ℚ(t), with elements u and v such that u is transcendental over ℚ, u^N + v^N = 1, ℚ(u,v) = M.K, and M.K is finite of degree N over ℚ(u). Let hDVR assert that every place has a discrete valuation ring. A place P is a proper valuation subring O_P of M.K containing ℚ; no affine restriction is imposed. Write κ(P) for its full residue field and res_P : O_P → κ(P) for the actual residue map. The integer ord_P is the normalized discrete order, with the convention ord_P(0) = 0. For any f ∈ M.K, define the integer e_P(f) as ord_P(q(f)) when f ∈ O_P, where q = minpoly_ℚ(res_P(f)), and as −ord_P(f) when f ∉ O_P. This is the actual definition of ramIdx M hDVR f P. For every ψ ∈ M.K transcendental over ℚ and every place P, the theorem states e_P(ψ) > 0. At a nonpole, finite-dimensionality of the full residue field over ℚ follows from the model-derived curve-field structure, so its residue is integral over ℚ and its minimal polynomial q is nonzero. Transcendence of ψ implies q(ψ) ≠ 0. The evaluated element q(ψ) lies in O_P and has zero residue because q annihilates res_P(ψ). Its nonzero status is what allows zero residue to imply strictly positive order despite ord_P(0)=0. At a pole, ord_P(ψ)<0, hence −ord_P(ψ)>0. This complete proof body adds no assumption beyond the displayed type: in particular no separately supplied residue-finiteness, constant-field, derivative, or composition law. The source comments identify it as an adaptation of ramIdx_pos; this review establishes the body and dependency shape statically, not by compilation or an upstream comparison.",
+      "zh_Hans": "设 N 为自然数，M : Model N。也就是说，M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u、v，满足 u 在 ℚ 上超越，u^N + v^N = 1，ℚ(u,v) = M.K，且 M.K 是 ℚ(u) 的 N 次有限扩张。设 hDVR 表示每个赋值点的赋值环都是离散赋值环。赋值点 P 是 M.K 中包含 ℚ 且不等于整个域的赋值子环 O_P；这里没有仿射开集限制。记 κ(P) 为它的完整剩余域，res_P : O_P → κ(P) 为实际剩余映射。整数 ord_P 是规范化离散阶，并约定 ord_P(0) = 0。对任意 f ∈ M.K，若 f ∈ O_P，令 q = minpoly_ℚ(res_P(f))，并定义整数 e_P(f) = ord_P(q(f))；若 f ∉ O_P，则定义 e_P(f) = −ord_P(f)。这正是 ramIdx M hDVR f P 的定义。对每个在 ℚ 上超越的 ψ ∈ M.K 和每个赋值点 P，定理断言 e_P(ψ) > 0。在非极点情形，模型导出的曲线函数域结构保证完整剩余域在 ℚ 上有限维，因此剩余类在 ℚ 上整，其最小多项式 q 非零。ψ 的超越性保证 q(ψ) ≠ 0。求值元素 q(ψ) 属于 O_P；由于 q 消去 res_P(ψ)，它的剩余类为零。正是 q(ψ) 的非零性，使剩余类为零能够推出严格正阶，而不受 ord_P(0)=0 这一约定影响。在极点情形，ord_P(ψ)<0，所以 −ord_P(ψ)>0。这个完整证明没有增加类型中所列假设之外的条件，尤其没有另行输入剩余域有限性、常数域条件、导数理论或复合规律。源码注释称其改编自 ramIdx_pos；本次仅静态确认了证明体及依赖结构，没有编译，也没有与上游逐项比较。",
+      "ja": "N を自然数、M : Model N とする。M.K は ℚ(t) の代数閉包の中間体であり、元 u、v は、u が ℚ 上超越的、u^N + v^N = 1、ℚ(u,v) = M.K、かつ M.K が ℚ(u) 上 N 次の有限拡大という条件を満たす。hDVR は、すべての付値点の付値環が離散付値環であることを表す。付値点 P は、ℚ を含み M.K 全体とは異なる付値部分環 O_P であり、アフィン開集合への制限はない。κ(P) はその剰余体全体、res_P : O_P → κ(P) は実際の剰余写像である。整数 ord_P は正規化された離散位数であり、ord_P(0) = 0 と定める。f ∈ M.K に対し、f ∈ O_P ならば q = minpoly_ℚ(res_P(f)) として整数 e_P(f) = ord_P(q(f))、f ∉ O_P ならば e_P(f) = −ord_P(f) と定める。これが ramIdx M hDVR f P の定義である。ℚ 上超越的なすべての ψ ∈ M.K とすべての付値点 P に対し、この定理は e_P(ψ) > 0 を述べる。極でない場合、モデルから得られる曲線関数体の構造により、剰余体全体は ℚ 上有限次元である。したがって ψ の剰余は ℚ 上整で、その最小多項式 q は非零である。ψ の超越性から q(ψ) ≠ 0 が従う。q(ψ) は O_P に属し、q が res_P(ψ) を零にするため、その剰余は零である。ord_P(0)=0 と定めているにもかかわらず、剰余が零であることから正の位数を導けるのは、q(ψ) が非零だからである。極の場合には ord_P(ψ)<0 であり、−ord_P(ψ)>0 が従う。完結した証明本体は、表示した型の仮定以外を追加していない。剰余体の有限性、定数体の条件、微分の理論、合成則を別の入力として要求していない。ソースのコメントでは ramIdx_pos の移植とされている。本審査は証明本体と依存関係の静的な確認であり、コンパイルや上流との照合は行っていない。",
+      "exact_source": {
+        "start_line": 64,
+        "end_line": 79,
+        "text": "theorem noncriticalRamificationPositive {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (P : Place M.K) : 0 < ramIdx M hDVR ψ P := by\n  letI : IsCurveField M.K := M.isCurveField\n  unfold ramIdx\n  split_ifs with h\n  · rw [ord_eq_placeOrd]\n    have hr := P.noncritical_isIntegral_residue ⟨ψ, h⟩\n    have hm0 : aeval ψ (minpoly ℚ (P.residue ⟨ψ, h⟩)) ≠ 0 :=\n      fun h0 => hψ ⟨_, minpoly.ne_zero hr, h0⟩\n    refine P.noncritical_ord_pos_of_residue_eq_zero (P.noncritical_aeval_mem h _) hm0 ?_\n    rw [P.noncritical_residue_aeval h]\n    exact minpoly.aeval ℚ _\n  · rw [ord_eq_placeOrd]\n    have := (P.ord_neg_iff).mpr h\n    omega\n",
+        "file_sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890"
+      },
+      "proof_status": "complete_body_static_only",
+      "direct_local_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_isIntegral_residue",
+        "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_pos_of_residue_eq_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_aeval_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_aeval"
+      ],
+      "english_mochizuki_quote": null,
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationPositive"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "line": 17,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification\n    {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) (h : NoncriticalP1.ElemMap) :\n    Transcendental ℚ (NoncriticalP1.applyK h ψ) ∧\n    noncriticalValue M x (NoncriticalP1.applyK h ψ) =\n      h.apply (noncriticalValue M x ψ) ∧\n    ramIdx M hDVR (NoncriticalP1.applyK h ψ) x.P =\n      ramIdx M hDVR ψ x.P * (h.ramIdx (noncriticalValue M x ψ) : ℤ)",
+      "en": "Let N be a natural number and M : Model N. Thus M.K is an intermediate field of the algebraic closure of ℚ(t), with elements u and v such that u is transcendental over ℚ, u^N + v^N = 1, ℚ(u,v) = M.K, and M.K is finite of degree N over ℚ(u). Let hDVR assert that every place has a discrete valuation ring. A place P is a proper valuation subring O_P of M.K containing ℚ; no affine restriction is imposed. Write κ(P) for its full residue field and res_P : O_P → κ(P) for the actual residue map. The integer ord_P is the normalized discrete order, with the convention ord_P(0) = 0. For any f ∈ M.K, define the integer e_P(f) as ord_P(q(f)) when f ∈ O_P, where q = minpoly_ℚ(res_P(f)), and as −ord_P(f) when f ∉ O_P. This is the actual definition of ramIdx M hDVR f P. An algebraic point x consists of any such place P and any ring embedding σ : κ(P) → ℚ̄, where ℚ̄ is the fixed algebraic closure of ℚ. Its value z_x(f) is σ(res_P(f)) if f ∈ O_P, and ∞ otherwise. Thus all places, the full residue fields, and every residue-field embedding are retained. An elementary map h is either a rational Möbius map (az+b)/(cz+d), with a,b,c,d ∈ ℚ and ad−bc ≠ 0, or a polynomial p ∈ ℚ[X] of positive natural degree. Its field action h_K uses this rational expression or p(f). The field division is total: a zero denominator gives 0. This differs from the projective rule below, where a finite point with zero denominator is sent to ∞. On ℙ¹(ℚ̄), a Möbius map sends a finite z with cz+d=0 to ∞ and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ if c=0 and to a/c otherwise. A polynomial sends finite z to p(z) and ∞ to ∞. Its natural-number local index e_h(z) is 1 for a Möbius map, deg(p) for a polynomial at ∞, and the root multiplicity of z in p(X)−p(z) over ℚ̄ for a polynomial at finite z. For each ψ transcendental over ℚ, each algebraic point x=(P,σ), and each elementary h, the statement asserts the conjunction: h_K(ψ) is transcendental over ℚ; z_x(h_K(ψ)) = h(z_x(ψ)); and e_P(h_K(ψ)) = e_P(ψ) · (e_h(z_x(ψ)) : ℤ). The natural local index is explicitly cast to an integer, so this last equality is an equality and product in ℤ. It is postcomposition of ψ by h: first ψ, then h. Input transcendence is required, while output transcendence is part of the conclusion; there is no extra hypothesis that a Möbius denominator is nonzero, no restriction to rational residue values, and no independently assumed chain rule. The body is exactly `by sorry`: this elementary chain-rule child is OPEN, and this statement is not an established theorem in this review.",
+      "zh_Hans": "设 N 为自然数，M : Model N。也就是说，M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u、v，满足 u 在 ℚ 上超越，u^N + v^N = 1，ℚ(u,v) = M.K，且 M.K 是 ℚ(u) 的 N 次有限扩张。设 hDVR 表示每个赋值点的赋值环都是离散赋值环。赋值点 P 是 M.K 中包含 ℚ 且不等于整个域的赋值子环 O_P；这里没有仿射开集限制。记 κ(P) 为它的完整剩余域，res_P : O_P → κ(P) 为实际剩余映射。整数 ord_P 是规范化离散阶，并约定 ord_P(0) = 0。对任意 f ∈ M.K，若 f ∈ O_P，令 q = minpoly_ℚ(res_P(f))，并定义整数 e_P(f) = ord_P(q(f))；若 f ∉ O_P，则定义 e_P(f) = −ord_P(f)。这正是 ramIdx M hDVR f P 的定义。代数点 x 由任意这样的赋值点 P 以及任意环嵌入 σ : κ(P) → ℚ̄ 组成，其中 ℚ̄ 是固定的 ℚ 的代数闭包。若 f ∈ O_P，则它的值为 z_x(f) = σ(res_P(f))；否则值为 ∞。因此，这里保留所有赋值点、完整剩余域以及每一个剩余域嵌入。初等映射 h 或者是有理系数的 Möbius 变换 (az+b)/(cz+d)，其中 a,b,c,d ∈ ℚ 且 ad−bc ≠ 0；或者是正自然次数的多项式 p ∈ ℚ[X]。它在域上的作用 h_K 使用这一有理式或 p(f)。这里的域除法处处有定义：分母为零时商为零。这与下述射影直线上的规则不同，后者把分母为零的有限点映到 ∞。在 ℙ¹(ℚ̄) 上，Möbius 变换把满足 cz+d=0 的有限点 z 映到 ∞，把其他有限点映到 (az+b)/(cz+d)；若 c=0，则把 ∞ 映到 ∞，否则映到 a/c。多项式把有限点 z 映到 p(z)，把 ∞ 映到 ∞。自然数值的局部分歧指数 e_h(z) 定义如下：Möbius 变换处处为 1；多项式在 ∞ 处为 deg(p)，在有限点 z 处为 ℚ̄ 上多项式 p(X)−p(z) 的根 z 的重数。对每个在 ℚ 上超越的 ψ、每个代数点 x=(P,σ) 和每个初等映射 h，陈述同时要求：h_K(ψ) 在 ℚ 上超越；z_x(h_K(ψ)) = h(z_x(ψ))；以及 e_P(h_K(ψ)) = e_P(ψ) · (e_h(z_x(ψ)) : ℤ)。自然数值的局部分歧指数在最后一个等式中显式转换为整数，所以这是 ℤ 中的等式和乘法。复合方向是在 ψ 之后施加 h，即先 ψ、后 h。输入的超越性是假设，输出的超越性是结论的一部分；没有额外假设 Möbius 变换的分母非零，没有将剩余值限制为有理数，也没有另行假设链式法则。证明体恰为 `by sorry`：这个初等复合链式法则子义务尚未完成，本次审阅不能将该陈述视为已证定理。",
+      "ja": "N を自然数、M : Model N とする。M.K は ℚ(t) の代数閉包の中間体であり、元 u、v は、u が ℚ 上超越的、u^N + v^N = 1、ℚ(u,v) = M.K、かつ M.K が ℚ(u) 上 N 次の有限拡大という条件を満たす。hDVR は、すべての付値点の付値環が離散付値環であることを表す。付値点 P は、ℚ を含み M.K 全体とは異なる付値部分環 O_P であり、アフィン開集合への制限はない。κ(P) はその剰余体全体、res_P : O_P → κ(P) は実際の剰余写像である。整数 ord_P は正規化された離散位数であり、ord_P(0) = 0 と定める。f ∈ M.K に対し、f ∈ O_P ならば q = minpoly_ℚ(res_P(f)) として整数 e_P(f) = ord_P(q(f))、f ∉ O_P ならば e_P(f) = −ord_P(f) と定める。これが ramIdx M hDVR f P の定義である。代数点 x は、任意のこのような付値点 P と任意の環埋め込み σ : κ(P) → ℚ̄ の組である。ここで ℚ̄ は固定された ℚ の代数閉包である。f ∈ O_P ならば値を z_x(f) = σ(res_P(f))、それ以外ならば ∞ とする。したがって、すべての付値点、剰余体全体、およびすべての剰余体埋め込みを対象としている。初等写像 h は、有理数係数の Möbius 変換 (az+b)/(cz+d)（a,b,c,d ∈ ℚ、ad−bc ≠ 0）、または正の自然次数をもつ多項式 p ∈ ℚ[X] である。体上の作用 h_K は、この有理式または p(f) によって定まる。この体での除法は全域で定義されており、分母が零ならば商は 0 である。これは、分母が零である有限点を ∞ に写す、以下の射影直線上の規則とは異なる。ℙ¹(ℚ̄) 上では、Möbius 変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。また、c=0 ならば ∞ を ∞ に、それ以外ならば a/c に写す。多項式は有限点 z を p(z) に、∞ を ∞ に写す。自然数値の局所分岐指数 e_h(z) は、Möbius 変換では常に 1、多項式の ∞ では deg(p)、多項式の有限点 z では ℚ̄ 上の多項式 p(X)−p(z) における根 z の重複度である。ℚ 上超越的な各 ψ、各代数点 x=(P,σ)、各初等写像 h に対し、主張は次の三つの連言である。h_K(ψ) は ℚ 上超越的である。z_x(h_K(ψ)) = h(z_x(ψ)) が成り立つ。さらに e_P(h_K(ψ)) = e_P(ψ) · (e_h(z_x(ψ)) : ℤ) が成り立つ。最後の式では自然数値の局所分岐指数を明示的に整数へ変換しており、等式と積はいずれも ℤ 内のものである。合成の向きは ψ の後に h を作用させる向き、すなわち先に ψ、次に h である。入力の超越性は仮定であり、出力の超越性は結論に含まれる。Möbius 変換の分母の非零性を追加の仮定として要求せず、剰余値を有理数に制限せず、連鎖律を別途仮定していない。証明本体は正確に `by sorry` である。この初等合成の連鎖律に関する子課題は未解決であり、本審査では証明済みの定理として扱えない。",
+      "exact_source": {
+        "start_line": 20,
+        "end_line": 27,
+        "text": "theorem noncriticalElementaryCompositionRamification {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) (h : NoncriticalP1.ElemMap) :\n    Transcendental ℚ (NoncriticalP1.applyK h ψ) ∧\n    noncriticalValue M x (NoncriticalP1.applyK h ψ) = h.apply (noncriticalValue M x ψ) ∧\n    ramIdx M hDVR (NoncriticalP1.applyK h ψ) x.P =\n      ramIdx M hDVR ψ x.P * (h.ramIdx (noncriticalValue M x ψ) : ℤ) := by\n  sorry\n",
+        "file_sha256": "d15d1c7079be4eaa37a568b99715a12d5f1fb070d61d9e8fc0680a9cce18dcdf"
+      },
+      "proof_status": "OPEN_direct_sorry",
+      "direct_local_dependencies": [],
+      "english_mochizuki_quote": null,
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+      "line": 18,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification\n    {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) :\n    (∀ P : Place M.K, 0 < ramIdx M hDVR ψ P) ∧\n    ∀ (hs : List NoncriticalP1.ElemMap) (x : QbarPoint M.K),\n      Transcendental ℚ (NoncriticalP1.compK hs ψ) ∧\n      noncriticalValue M x (NoncriticalP1.compK hs ψ) =\n        NoncriticalP1.evalComp hs (noncriticalValue M x ψ) ∧\n      ramIdx M hDVR (NoncriticalP1.compK hs ψ) x.P =\n        ramIdx M hDVR ψ x.P *\n          (NoncriticalP1.ramIdxComp hs (noncriticalValue M x ψ) : ℤ)",
+      "en": "Let N be a natural number and M : Model N. Thus M.K is an intermediate field of the algebraic closure of ℚ(t), with elements u and v such that u is transcendental over ℚ, u^N + v^N = 1, ℚ(u,v) = M.K, and M.K is finite of degree N over ℚ(u). Let hDVR assert that every place has a discrete valuation ring. A place P is a proper valuation subring O_P of M.K containing ℚ; no affine restriction is imposed. Write κ(P) for its full residue field and res_P : O_P → κ(P) for the actual residue map. The integer ord_P is the normalized discrete order, with the convention ord_P(0) = 0. For any f ∈ M.K, define the integer e_P(f) as ord_P(q(f)) when f ∈ O_P, where q = minpoly_ℚ(res_P(f)), and as −ord_P(f) when f ∉ O_P. This is the actual definition of ramIdx M hDVR f P. An algebraic point x consists of any such place P and any ring embedding σ : κ(P) → ℚ̄, where ℚ̄ is the fixed algebraic closure of ℚ. Its value z_x(f) is σ(res_P(f)) if f ∈ O_P, and ∞ otherwise. Thus all places, the full residue fields, and every residue-field embedding are retained. An elementary map h is either a rational Möbius map (az+b)/(cz+d), with a,b,c,d ∈ ℚ and ad−bc ≠ 0, or a polynomial p ∈ ℚ[X] of positive natural degree. Its field action h_K uses this rational expression or p(f). The field division is total: a zero denominator gives 0. This differs from the projective rule below, where a finite point with zero denominator is sent to ∞. On ℙ¹(ℚ̄), a Möbius map sends a finite z with cz+d=0 to ∞ and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ if c=0 and to a/c otherwise. A polynomial sends finite z to p(z) and ∞ to ∞. Its natural-number local index e_h(z) is 1 for a Möbius map, deg(p) for a polynomial at ∞, and the root multiplicity of z in p(X)−p(z) over ℚ̄ for a polynomial at finite z. For a list hs=[h₁,…,hₙ], H_K(ψ)=compK hs ψ means hₙ,K(…h₂,K(h₁,K(ψ))…), and H(z)=evalComp hs z means hₙ(…h₂(h₁(z))…). Thus the head of the list acts first. Put z₀=z and zᵢ=hᵢ(zᵢ₋₁); E_hs(z)=ramIdxComp hs z is the natural-number product ∏ᵢ₌₁ⁿ e_hᵢ(zᵢ₋₁). For the empty list these are ψ, z, and 1. For any ψ transcendental over ℚ, the theorem asserts both: (i) e_P(ψ)>0 for every place P; and (ii) for every finite list hs and every algebraic point x=(P,σ), H_K(ψ) is transcendental over ℚ, z_x(H_K(ψ))=H(z_x(ψ)), and e_P(H_K(ψ))=e_P(ψ)·(E_hs(z_x(ψ)) : ℤ). The product in the last equality is an integer product, with the entire natural-number composite index cast to ℤ. No input beyond M, hDVR, ψ and its transcendence is assumed. The body proves the positivity conjunct with the completed positivity theorem and gives the list induction, using the elementary child to preserve transcendence and establish both equalities at each step. It contains no direct `sorry`, but it invokes noncriticalElementaryCompositionRamification, whose body is `sorry`. Consequently the full-list parent remains dependent on that OPEN child; the induction body alone does not close the parent obligation. No compilation or axiom audit was performed.",
+      "zh_Hans": "设 N 为自然数，M : Model N。也就是说，M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u、v，满足 u 在 ℚ 上超越，u^N + v^N = 1，ℚ(u,v) = M.K，且 M.K 是 ℚ(u) 的 N 次有限扩张。设 hDVR 表示每个赋值点的赋值环都是离散赋值环。赋值点 P 是 M.K 中包含 ℚ 且不等于整个域的赋值子环 O_P；这里没有仿射开集限制。记 κ(P) 为它的完整剩余域，res_P : O_P → κ(P) 为实际剩余映射。整数 ord_P 是规范化离散阶，并约定 ord_P(0) = 0。对任意 f ∈ M.K，若 f ∈ O_P，令 q = minpoly_ℚ(res_P(f))，并定义整数 e_P(f) = ord_P(q(f))；若 f ∉ O_P，则定义 e_P(f) = −ord_P(f)。这正是 ramIdx M hDVR f P 的定义。代数点 x 由任意这样的赋值点 P 以及任意环嵌入 σ : κ(P) → ℚ̄ 组成，其中 ℚ̄ 是固定的 ℚ 的代数闭包。若 f ∈ O_P，则它的值为 z_x(f) = σ(res_P(f))；否则值为 ∞。因此，这里保留所有赋值点、完整剩余域以及每一个剩余域嵌入。初等映射 h 或者是有理系数的 Möbius 变换 (az+b)/(cz+d)，其中 a,b,c,d ∈ ℚ 且 ad−bc ≠ 0；或者是正自然次数的多项式 p ∈ ℚ[X]。它在域上的作用 h_K 使用这一有理式或 p(f)。这里的域除法处处有定义：分母为零时商为零。这与下述射影直线上的规则不同，后者把分母为零的有限点映到 ∞。在 ℙ¹(ℚ̄) 上，Möbius 变换把满足 cz+d=0 的有限点 z 映到 ∞，把其他有限点映到 (az+b)/(cz+d)；若 c=0，则把 ∞ 映到 ∞，否则映到 a/c。多项式把有限点 z 映到 p(z)，把 ∞ 映到 ∞。自然数值的局部分歧指数 e_h(z) 定义如下：Möbius 变换处处为 1；多项式在 ∞ 处为 deg(p)，在有限点 z 处为 ℚ̄ 上多项式 p(X)−p(z) 的根 z 的重数。对列表 hs=[h₁,…,hₙ]，H_K(ψ)=compK hs ψ 表示 hₙ,K(…h₂,K(h₁,K(ψ))…)，H(z)=evalComp hs z 表示 hₙ(…h₂(h₁(z))…)；因此列表头部首先作用。令 z₀=z、zᵢ=hᵢ(zᵢ₋₁)，则 E_hs(z)=ramIdxComp hs z 是自然数乘积 ∏ᵢ₌₁ⁿ e_hᵢ(zᵢ₋₁)。对空列表，这三者分别是 ψ、z 和 1。给定在 ℚ 上超越的 ψ，定理同时断言：（一）对每个赋值点 P 都有 e_P(ψ)>0；（二）对每个有限列表 hs 和每个代数点 x=(P,σ)，H_K(ψ) 在 ℚ 上超越，z_x(H_K(ψ))=H(z_x(ψ))，并且 e_P(H_K(ψ))=e_P(ψ)·(E_hs(z_x(ψ)) : ℤ)。最后一个等式中的乘法是整数乘法，整个自然数值的复合分歧指数转换为 ℤ 中的整数。假设只有 M、hDVR、ψ 及其超越性。证明体用已完成的正性定理证明第一个分量，并给出列表归纳；每一步都使用初等复合子定理保持超越性并建立两个等式。证明体没有直接出现 `sorry`，但是调用了证明体为 `sorry` 的 noncriticalElementaryCompositionRamification。因此完整列表的父义务仍依赖这个尚未完成的子义务，仅有归纳证明体不能关闭父义务。本次没有编译或公理审计。",
+      "ja": "N を自然数、M : Model N とする。M.K は ℚ(t) の代数閉包の中間体であり、元 u、v は、u が ℚ 上超越的、u^N + v^N = 1、ℚ(u,v) = M.K、かつ M.K が ℚ(u) 上 N 次の有限拡大という条件を満たす。hDVR は、すべての付値点の付値環が離散付値環であることを表す。付値点 P は、ℚ を含み M.K 全体とは異なる付値部分環 O_P であり、アフィン開集合への制限はない。κ(P) はその剰余体全体、res_P : O_P → κ(P) は実際の剰余写像である。整数 ord_P は正規化された離散位数であり、ord_P(0) = 0 と定める。f ∈ M.K に対し、f ∈ O_P ならば q = minpoly_ℚ(res_P(f)) として整数 e_P(f) = ord_P(q(f))、f ∉ O_P ならば e_P(f) = −ord_P(f) と定める。これが ramIdx M hDVR f P の定義である。代数点 x は、任意のこのような付値点 P と任意の環埋め込み σ : κ(P) → ℚ̄ の組である。ここで ℚ̄ は固定された ℚ の代数閉包である。f ∈ O_P ならば値を z_x(f) = σ(res_P(f))、それ以外ならば ∞ とする。したがって、すべての付値点、剰余体全体、およびすべての剰余体埋め込みを対象としている。初等写像 h は、有理数係数の Möbius 変換 (az+b)/(cz+d)（a,b,c,d ∈ ℚ、ad−bc ≠ 0）、または正の自然次数をもつ多項式 p ∈ ℚ[X] である。体上の作用 h_K は、この有理式または p(f) によって定まる。この体での除法は全域で定義されており、分母が零ならば商は 0 である。これは、分母が零である有限点を ∞ に写す、以下の射影直線上の規則とは異なる。ℙ¹(ℚ̄) 上では、Möbius 変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。また、c=0 ならば ∞ を ∞ に、それ以外ならば a/c に写す。多項式は有限点 z を p(z) に、∞ を ∞ に写す。自然数値の局所分岐指数 e_h(z) は、Möbius 変換では常に 1、多項式の ∞ では deg(p)、多項式の有限点 z では ℚ̄ 上の多項式 p(X)−p(z) における根 z の重複度である。リスト hs=[h₁,…,hₙ] に対し、H_K(ψ)=compK hs ψ は hₙ,K(…h₂,K(h₁,K(ψ))…) を、H(z)=evalComp hs z は hₙ(…h₂(h₁(z))…) を表す。したがって、リストの先頭が最初に作用する。z₀=z、zᵢ=hᵢ(zᵢ₋₁) と置くと、E_hs(z)=ramIdxComp hs z は自然数の積 ∏ᵢ₌₁ⁿ e_hᵢ(zᵢ₋₁) である。空リストの場合、これらはそれぞれ ψ、z、1 である。ℚ 上超越的な任意の ψ に対し、定理は二つの内容を同時に述べる。第一に、すべての付値点 P について e_P(ψ)>0 である。第二に、すべての有限リスト hs とすべての代数点 x=(P,σ) について、H_K(ψ) は ℚ 上超越的であり、z_x(H_K(ψ))=H(z_x(ψ)) および e_P(H_K(ψ))=e_P(ψ)·(E_hs(z_x(ψ)) : ℤ) が成り立つ。最後の積は整数の積であり、自然数値の合成分岐指数全体を ℤ に変換している。仮定する入力は M、hDVR、ψ とその超越性のみである。証明本体は、完結した正値性の定理で第一の成分を証明し、リストに関する帰納法を与える。各段階で初等合成の子定理を用い、超越性を保ち、二つの等式を導く。直接の `sorry` はないが、証明本体が `sorry` である noncriticalElementaryCompositionRamification を呼び出している。したがって、リスト全体に関する親課題は依然として未解決の子課題に依存し、帰納法の本体があるだけでは親課題は完了しない。本審査ではコンパイルも公理監査も行っていない。",
+      "exact_source": {
+        "start_line": 20,
+        "end_line": 45,
+        "text": "theorem noncriticalCompositionRamification {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ) :\n    (∀ P : Place M.K, 0 < ramIdx M hDVR ψ P) ∧\n    ∀ (hs : List NoncriticalP1.ElemMap) (x : QbarPoint M.K),\n      Transcendental ℚ (NoncriticalP1.compK hs ψ) ∧\n      noncriticalValue M x (NoncriticalP1.compK hs ψ) =\n        NoncriticalP1.evalComp hs (noncriticalValue M x ψ) ∧\n      ramIdx M hDVR (NoncriticalP1.compK hs ψ) x.P =\n        ramIdx M hDVR ψ x.P *\n          (NoncriticalP1.ramIdxComp hs (noncriticalValue M x ψ) : ℤ) := by\n  refine ⟨noncriticalRamificationPositive M hDVR ψ hψ, ?_⟩\n  intro hs x\n  induction hs generalizing ψ with\n  | nil =>\n    exact ⟨hψ, rfl, by simp [NoncriticalP1.compK, NoncriticalP1.ramIdxComp]⟩\n  | cons h hs ih =>\n    obtain ⟨h1, h2, h3⟩ :=\n      noncriticalElementaryCompositionRamification M hDVR ψ hψ x h\n    obtain ⟨i1, i2, i3⟩ := ih (ψ := NoncriticalP1.applyK h ψ) h1\n    refine ⟨i1, ?_, ?_⟩\n    · change noncriticalValue M x (NoncriticalP1.compK hs (NoncriticalP1.applyK h ψ)) = _\n      rw [i2, h2]\n      rfl\n    · change ramIdx M hDVR (NoncriticalP1.compK hs (NoncriticalP1.applyK h ψ)) x.P = _\n      rw [i3, h3, h2]\n      simp only [NoncriticalP1.ramIdxComp, Nat.cast_mul, mul_assoc]\n",
+        "file_sha256": "df02b5ef20f944599406b4d1253828888476f0cd3e4a6d346473e16053fb08bf"
+      },
+      "proof_status": "OPEN_transitively_depends_on_direct_sorry_child",
+      "direct_local_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationPositive",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification"
+      ],
+      "english_mochizuki_quote": null,
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification"
+    }
+  ],
+  "inventory": {
+    "target_lean_files": [
+      "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean"
+    ],
+    "public_theorems": 7,
+    "private_declarations": [],
+    "instances": [],
+    "other_new_declarations": [],
+    "direct_sorry_sites": [
+      {
+        "path": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+        "line": 27
+      }
+    ],
+    "completed_body_theorems": 5,
+    "open_direct_sorry_theorems": 1,
+    "open_dependent_parent_theorems": 1
+  },
+  "static_signature_limit": "Section-variable binders were reconstructed from the Lean text. Type* universe levels, generated instance binder names, and exact elaborated binder order were not checked with Lean. The displayed ordering follows the source section context; it is not a claim to be #print output.",
+  "english_mochizuki_quote": null,
+  "english_mochizuki_quote_status": "Root original was not inspected; no quotation is supplied or inferred.",
+  "source_provenance_limit": "Source locations, pinned commit, and upstream theorem names appear in Lean comments. This readback did not inspect or compare the upstream files, and does not certify exact upstream equivalence.",
+  "blindness": {
+    "read": [
+      "the three target Lean files",
+      "Lean imported context in the permitted main project"
+    ],
+    "not_read": [
+      "README.md",
+      "source-consumer.json",
+      "static-review.json",
+      "reference directory",
+      "author prose outside Lean"
+    ]
+  },
+  "validation": {
+    "compiled": false,
+    "mcp_ci_called": false,
+    "axiom_audit_run": false,
+    "main_workspace_modified": false,
+    "cache_modified": false
+  },
+  "compiled_source_span_refresh": {
+    "receipt": "source-graph-leaf-result.json",
+    "method": "Compiler spans; independently corrected trilingual text unchanged",
+    "updates": [
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_aeval_mem",
+        "old_path": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "old_line": 27,
+        "line": 24
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_aeval",
+        "old_path": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "old_line": 34,
+        "line": 33
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_isIntegral_residue",
+        "old_path": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "old_line": 51,
+        "line": 49
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_pos_of_residue_eq_zero",
+        "old_path": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "old_line": 55,
+        "line": 54
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationPositive",
+        "old_path": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+        "old_line": 64,
+        "line": 62
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+        "old_path": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+        "old_line": 20,
+        "line": 17
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+        "old_path": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+        "old_line": 20,
+        "line": 18
+      }
+    ]
+  }
+}

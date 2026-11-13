@@ -1,0 +1,257 @@
+{
+  "review": "independent_static_composition_decomposition_shape_source_and_consumer_audit",
+  "date": "2026-11-14",
+  "candidate_root": "/tmp/p2m-noncritical-composition-next-20261114",
+  "verdict": "No mathematical-shape, statement-weakening or source-proof-fidelity blocker detected. One actual source positivity proof plus the source full-list induction reduce the unchanged parent to the exact concrete single-elementary-map source obligation. The child remains Open; no kernel/axiom pass or mathematical completion is claimed.",
+  "source_provenance": {
+    "manifest": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+    "belyi_url": "https://github.com/lana-agents/belyi.git",
+    "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "manifest_rev_and_inputRev_match": true,
+    "independent_pinned_reference_checks": [
+      {
+        "upstream_path": "Belyi/CurveDeriv/Local.lean",
+        "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveDeriv/Local.lean",
+        "reference_path": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveDeriv_Local.lean",
+        "sha256": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+        "independently_fetched_pinned_remote_matches_bytes_and_hash": true
+      },
+      {
+        "upstream_path": "Belyi/CurveField/NoncriticalBasic.lean",
+        "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBasic.lean",
+        "reference_path": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_NoncriticalBasic.lean",
+        "sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+        "independently_fetched_pinned_remote_matches_bytes_and_hash": true
+      },
+      {
+        "upstream_path": "Belyi/CurveField/NoncriticalElem.lean",
+        "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalElem.lean",
+        "reference_path": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_NoncriticalElem.lean",
+        "sha256": "962260751d00333f25cfcd803626193c053d0a982fb6756823de1cc325f4b783",
+        "independently_fetched_pinned_remote_matches_bytes_and_hash": true
+      },
+      {
+        "upstream_path": "Belyi/CurveField/Point.lean",
+        "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Point.lean",
+        "reference_path": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_Point.lean",
+        "sha256": "58fe7e91e18b73c352b82006242a36dfa1edf667c43add9952130896afd2d11f",
+        "independently_fetched_pinned_remote_matches_bytes_and_hash": true
+      },
+      {
+        "upstream_path": "Belyi/CurveField/RamIdx.lean",
+        "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/RamIdx.lean",
+        "reference_path": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_RamIdx.lean",
+        "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+        "independently_fetched_pinned_remote_matches_bytes_and_hash": true
+      },
+      {
+        "upstream_path": "Belyi/CurveField/Residue.lean",
+        "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Residue.lean",
+        "reference_path": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_Residue.lean",
+        "sha256": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+        "independently_fetched_pinned_remote_matches_bytes_and_hash": true
+      }
+    ],
+    "notices": "All three candidate files preserve the Belyi contributors copyright/Authors and explicit Apache-2.0 release notice from the verified source files, and state accurate pinned paths/file hashes. The previously observed upstream missing-root-LICENSE limitation is unchanged; this review does not claim a newly verified bundled license file."
+  },
+  "checks": [
+    {
+      "name": "actual_integer_ramification_positivity",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+          "line": 64
+        },
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_NoncriticalBasic.lean",
+          "line": 121
+        }
+      ],
+      "detail": "The theorem proves 0<ramIdx M hDVR ψ P in ℤ for every actual Place M.K, using original transcendence hψ. At every regular place it takes minpoly over ℚ of the actual residue of ψ in the full IsLocalRing.ResidueField P.1. Existing IsCurveField gives integrality of that residue, so the polynomial is nonzero. Its evaluation at ψ is nonzero specifically because hψ contradicts a nonzero rational polynomial vanishing at ψ; nonzeroness is not assumed as a numeric law. Residue evaluation commutation and minpoly.aeval make the actual residue zero, hence normalized order positive. At poles, ψ∉P.1 gives actual order<0, so its negative is positive. Regular zeros, regular nonzero values and places at geometric infinity are all covered; only the globally zero function is excluded by the unchanged transcendence input."
+    },
+    {
+      "name": "actual_polynomial_membership_and_residue_helpers",
+      "status": "source_body_matches_after_explicit_specialization",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+          "line": 27
+        },
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+          "line": 34
+        },
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+          "line": 51
+        }
+      ],
+      "detail": "noncritical_aeval_mem copies the actual source polynomial coefficient-sum proof, specializing its rational containment hQ to P.algebraMap_mem. noncritical_residue_aeval is the exact source residue/eval₂ proof using actual P.ratHom and P.residue, with RingHom.ext_rat identifying canonical rational maps. These two helpers do not add IsCurveField or finiteness assumptions. noncritical_isIntegral_residue uses the existing finite-dimensional full residue-field instance under IsCurveField; no substitute residue carrier or assigned degree is introduced. The normalized-order/residue-zero helper is the source maximal-ideal equivalence with its necessary nonzero argument intact."
+    },
+    {
+      "name": "five_helper_and_positivity_declarations_are_faithful",
+      "status": "mechanically_compared_complete_source_text_or_body",
+      "declarations": [
+        {
+          "name": "Place.noncritical_aeval_mem",
+          "source": "CurveDeriv/Local.lean aeval_mem",
+          "comparison": "Exact body after hQ→P.algebraMap_mem specialization."
+        },
+        {
+          "name": "Place.noncritical_residue_aeval",
+          "source": "CurveField/RamIdx.lean residue_aeval",
+          "comparison": "Exact full declaration after prefix/aeval helper renaming and whitespace normalization."
+        },
+        {
+          "name": "Place.noncritical_isIntegral_residue",
+          "source": "CurveField/RamIdx.lean isIntegral_residue",
+          "comparison": "Exact full declaration after prefix renaming."
+        },
+        {
+          "name": "Place.noncritical_ord_pos_of_residue_eq_zero",
+          "source": "CurveField/NoncriticalBasic.lean ord_pos_of_residue_eq_zero",
+          "comparison": "Exact full declaration after prefix renaming."
+        },
+        {
+          "name": "noncriticalRamificationPositive",
+          "source": "CurveField/NoncriticalBasic.lean ramIdx_pos",
+          "comparison": "Exact body after φ/hφ→ψ/hψ, helper prefixes, local Model.isCurveField instance and the two existing ord_eq_placeOrd rewrites."
+        }
+      ],
+      "detail": "No source lemma is replaced by an assumption, and no new Fermat-specific positivity proof is invented. ord_eq_placeOrd in the current workspace is rfl for the same normalized DVR order. The current complete Model and hDVR arguments are the original concrete interface."
+    },
+    {
+      "name": "single_elementary_child_is_actual_source_applyK_spec",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+          "line": 20
+        },
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_NoncriticalElem.lean",
+          "line": 316
+        }
+      ],
+      "detail": "The child quantifies one existing concrete ElemMap h, actual transcendental ψ, and every actual QbarPoint x. It retains all three source conclusions: transcendence of actual applyK h ψ, value equality noncriticalValue M x (applyK h ψ)=h.apply(noncriticalValue M x ψ), and the integer product ramIdx(new ψ)=ramIdx(old ψ)·(h.ramIdx(old value):ℤ). ElemMap has only rational Mobius matrices with determinant≠0 or rational polynomials of positive natDegree. No arbitrary map, order function, ramification assignment or chain-rule certificate is an input. It is exactly the source structural single-map case used by the list induction, not a renamed full-list target."
+    },
+    {
+      "name": "full_residue_embeddings_value_direction_and_product_factor",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+          "line": 81
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 114
+        },
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+          "line": 24
+        }
+      ],
+      "detail": "QbarPoint retains its actual Place and every ring embedding σ of the entire residue field into the fixed AlgebraicClosure ℚ. noncriticalValue is infinity exactly at a pole and otherwise σ of the actual residue. The child evaluates the elementary index at the old value, not at a selected rational residue, transformed point or abstract placeholder. Both the child and parent quantify every x, and ramification factors multiply the original integer index by the elementary/list natural index cast to ℤ. Rational Mobius zero denominators at places, polynomial zero values, poles and infinity are not removed by additional side conditions."
+    },
+    {
+      "name": "unchanged_complete_parent_type",
+      "status": "exact_signature_compared_byte_for_byte",
+      "existing_parent_sha256": "f662ed3ae766fb277544a098d21062aeb098ef5942bc6b11f18cfd9e1802141d",
+      "candidate_parent_sha256": "df02b5ef20f944599406b4d1253828888476f0cd3e4a6d346473e16053fb08bf",
+      "detail": "The complete source signature before := matches the current main-workspace parent byte-for-byte. The first all-place positivity conjunct and all three full-list conclusions remain, with original M,hDVR,ψ,hψ, every list hs and every full-residue algebraic point x. No hRF, chosen residue embedding, restricted point set or lower-strength result replaces the original target."
+    },
+    {
+      "name": "source_list_induction_and_new_explicit_function_argument",
+      "status": "mathematically_faithful_source_induction_compiler_pending",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+          "line": 34
+        },
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_NoncriticalElem.lean",
+          "line": 329
+        }
+      ],
+      "detail": "The parent first supplies proved actual positivity, then inducts on hs generalizing ψ, as source compK_spec generalizes φ. The empty list is the identity and has actual composite elementary index one. In the cons step the concrete child gives transcendence h1, value h2 and ramification h3 for applyK h ψ. The induction call ih (ψ := applyK h ψ) h1 explicitly instantiates the generalized original explicit ψ binder; this preserves source ih h1 with implicit φ rather than adding a new hypothesis. Rewriting i2/h2 gives the head-first value recursion. Rewriting i3/h3/h2 and unfolding ramIdxComp gives (eψ·r_h)·r_tail=eψ·(r_h·r_tail), with Nat.cast_mul and mul_assoc, the same source product proof expressed by reassociation instead of push_cast/ring. No reverse composition order or missing factor occurs. Lean elaboration of the induction binder remains for root CI."
+    },
+    {
+      "name": "actual_consumers_of_new_producers",
+      "status": "source_level_consumer_chain_verified",
+      "consumer_chain": [
+        "Place.noncritical_aeval_mem → Place.noncritical_residue_aeval and positivity regular branch",
+        "Place.noncritical_isIntegral_residue → minpoly.ne_zero in positivity regular branch",
+        "Place.noncritical_residue_aeval + Place.noncritical_ord_pos_of_residue_eq_zero → positivity regular branch",
+        "noncriticalRamificationPositive → unchanged parent first conjunct",
+        "single concrete Open elementary child → unchanged parent cons induction step",
+        "unchanged parent → existing noncriticalSelection_of_simpleZeros_and_children composition parameter → existing noncriticalSelection"
+      ],
+      "detail": "All five newly introduced Definition theorems have actual source-level proof consumers, and the child is consumed by the parent. No artificial reference was inserted to close an unrelated historical producer debt."
+    },
+    {
+      "name": "prospective_zero_evaluation_route_is_not_current_consumer",
+      "status": "source_route_verified_current_debt_preserved",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_Point.lean",
+          "line": 129
+        },
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_NoncriticalElem.lean",
+          "line": 193
+        },
+        {
+          "file": "/tmp/p2m-noncritical-composition-next-20261114/reference/Belyi_CurveField_NoncriticalElem.lean",
+          "line": 307
+        }
+      ],
+      "detail": "Pinned Point.eval_inv explicitly uses eval_zero in its f=0 branch, then eval_mul/eval_congr/eval_one in the nonzero branch. Pinned NoncriticalElem.inv_spec uses eval_inv in its order-zero branch; mob_spec with c≠0 uses inv_spec; applyK_spec uses mob_spec. This verifies a concrete future source route for existing noncritical_eval_zero. The current draft ports none of eval_inv/inv_spec/mob_spec: applyK_spec remains the single Open child. Therefore this unit does not make noncritical_eval_zero an actual current consumer or close that historical unused-producer obligation. The ledger correctly labels the route prospective; no claim of current closure is justified."
+    },
+    {
+      "name": "imports_scope_cycles_and_open_boundary",
+      "status": "overlay_static_check_pass",
+      "new_Definitions_modules": 1,
+      "new_Definition_theorems": 5,
+      "new_Open_children": 1,
+      "local_project_import_closure_modules": 12,
+      "reachable_sorry_count": 1,
+      "detail": "All local imports resolve against the candidate/main-workspace overlay and no cycle was found. The new Definition module imports no theorem module, derivation module or Open child; all Definitions in the 12-module closure contain no sorry token. The sole reachable sorry is noncriticalElementaryCompositionRamification. No arbitrary-law package, Belyi/Iut/Genl runtime import, whole Mathlib import, Act2, Scene2 or Prologue/Obligations dependency is introduced. CurveDeriv.Local is source reference for a polynomial membership proof only and is not a runtime derivative import. The parent has no own sorry but remains transitively dependent on its Open child."
+    }
+  ],
+  "mathematical_shape_findings": [],
+  "source_proof_fidelity_findings": [],
+  "remaining_mathematical_obligation": "Prove the exact concrete single-elementary-map applyK_spec target, including rational polynomial, inversion and Mobius local value/ramification analysis for every actual residue embedding.",
+  "preserved_unresolved_consumer_debt": "The existing noncritical_eval_zero producer has a verified future source route, but no current consumer was integrated in this draft.",
+  "input_file_sha256": [
+    {
+      "path": "/tmp/p2m-noncritical-composition-next-20261114/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890"
+    },
+    {
+      "path": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification.lean",
+      "sha256": "df02b5ef20f944599406b4d1253828888476f0cd3e4a6d346473e16053fb08bf"
+    },
+    {
+      "path": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "sha256": "d15d1c7079be4eaa37a568b99715a12d5f1fb070d61d9e8fc0680a9cce18dcdf"
+    }
+  ],
+  "validation": {
+    "compiler_run": false,
+    "MCP_CI_invoked": false,
+    "kernel_or_axiom_pass_claimed": false,
+    "pinned_remote_reference_files_independently_compared": 6,
+    "helper_source_body_or_full_declaration_comparisons": 5,
+    "parent_full_signature_compared": true,
+    "parent_list_induction_mathematical_shape_checked": true,
+    "import_overlay_checked": true,
+    "repository_edits": false,
+    "candidate_edits": false,
+    "cache_edits": false,
+    "network_actions": "Read-only pinned GitHub raw source GETs only; no platform calls or publication.",
+    "only_written_artifact": "/tmp/p2m-noncritical-composition-shape-20261114/report.json"
+  },
+  "limits": "Static mathematical shape, pinned source-byte/body, exact parent signature, actual consumer and local import review only. Root must validate elaboration, tactic/typeclass behavior, exact exported signatures and transitive axioms through exclusive MCP-CI before integration acceptance. No whole noncritical pipeline or root mathematical closure is inferred from this unit."
+}

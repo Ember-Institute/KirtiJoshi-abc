@@ -1,0 +1,49 @@
+{
+  "source_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "original_delivery_ledger": "source-consumer.json",
+  "source_boundary_link": "source-ledger-link.json",
+  "definition_hashes": {
+    "Definitions/Def_FermatNoncriticalRamificationPositive.lean": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890"
+  },
+  "source_theorem_hashes": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification": "df02b5ef20f944599406b4d1253828888476f0cd3e4a6d346473e16053fb08bf",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification": "d15d1c7079be4eaa37a568b99715a12d5f1fb070d61d9e8fc0680a9cce18dcdf"
+  },
+  "source_graph_sha256": "61857c176145139b39b2c78177275927e80aa95fae12933482d0dd82e4cf22c5",
+  "closed_direct": [],
+  "accepted_reduction": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification",
+    "submission_id": "fecf05ee-3916-4cb0-b79a-d9d71c2f1e57",
+    "status": "SKETCH_ACCEPTED"
+  },
+  "actual_dependencies": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification"
+  ],
+  "open_mathematical_children": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification"
+  ],
+  "actual_platform_states": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification": "Open"
+  },
+  "consumer_chain": [
+    "source polynomial membership -> actual residue polynomial evaluation",
+    "actual residue integrality/minpoly and normalized order -> actual ramification positivity",
+    "Open single-elementary-map transcendence/value/ramification identity -> list induction generalizing the actual function",
+    "actual positivity + list induction -> unchanged noncriticalCompositionRamification",
+    "noncriticalCompositionRamification with still-Open finite/P¹ source-step chains -> existing noncriticalSelection reduction"
+  ],
+  "new_global_assumptions": [],
+  "full_abc_closed": false,
+  "source_mathematical_step_proved": false,
+  "source_notices": "Apache-2.0 source headers retained.",
+  "other_open_parents_unchanged": [
+    "noncriticalRegularRamifiedDerivNotMem",
+    "noncriticalDerivativeBadPlacesFinite",
+    "noncriticalP1Normalize",
+    "noncriticalP1Rational",
+    "noncriticalP1Minpoly",
+    "noncriticalSelection"
+  ],
+  "existing_zero_eval_producer_debt": "Future actual source route Point.eval_inv -> NoncriticalElem.inv_spec -> mob_spec -> applyK_spec is recorded; it is not implemented or declared consumed by this unit."
+}

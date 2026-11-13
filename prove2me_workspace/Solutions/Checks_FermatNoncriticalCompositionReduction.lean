@@ -1,0 +1,6 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalCompositionRamification
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms noncriticalElementaryCompositionRamification
+#print axioms noncriticalCompositionRamification
