@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+import os
+import shutil
+import sys
+
+binary = shutil.which("rg")
+if binary is None:
+    raise SystemExit("ripgrep is not installed")
+cores = sorted(os.sched_getaffinity(0))
+os.sched_setaffinity(0, cores[:2])
+os.execv(binary, ["rg", "--threads", "2", *sys.argv[1:]])

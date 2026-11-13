@@ -1,0 +1,3 @@
+import Definitions.Def_TripodRationalComposition
+
+#print axioms AbcAdaptation.Tripod.rationalABCHeight_of_statementI

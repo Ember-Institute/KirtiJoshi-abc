@@ -36,14 +36,17 @@ MCP-CI、worktree-isolation、subagent-workspace 技能。本文件统一后续�
 - Lean 叶检查使用 `task_type: "leaf"`、`target: "file"` 和准确的 `parameters.source`。
   通过结构化 `environment.LEAN_PATH` 提供现有依赖搜索路径，直接检查该源文件。
   不把叶检查擅自改为 `lake build <模块>` 或全图构建。
-- 本会话主工作区为 `/home/admin-wsl/Coq/prove-abc`。主智能体执行独占任务时，直接提交
+- 本会话主工作区为改名后的 `/home/admin-wsl/Coq/abc`；Prove2Me 适配在其
+  `prove2me_workspace/` 中进行。主智能体执行独占任务时，直接提交
   当前工作区绝对路径，设置 `exclusive: true`；不用为了规避快照而另建 worktree 或复制整份缓存。
   此时回执应为 `workspace_mode: "exclusive_worktree"`、`snapshot_id: null`。
 - 独占只保证 MCP-CI 内部调度互斥。提交后到终态前，所有协作者必须保持该任务的源文件、
   依赖和缓存输入稳定，不编辑、清理或并发构建这些输入。
 - 其他会话使用各自登记的 worktree；子智能体草稿放在任务专属临时目录，
-  不修改其他会话工作区。共享或需继续修改的输入使用普通快照任务，子智能体默认使用快照。
-- 快照任务填写 `snapshot_inputs`，完整列出目标、传递依赖、构建配置、依赖锁与必要产物；
+  不修改其他会话工作区。子智能体不调用 MCP-CI，也不自行编译；只向主智能体交付草稿及说明。
+- 主智能体接收、审查并整合子智能体草稿后，统一从实际工作区提交 `exclusive: true`
+  的 MCP-CI 任务，终态验收后再整合下一批改动。不得为子智能体验收创建快照任务。
+- 仅在另行明确采用快照的其他工作流中填写 `snapshot_inputs`，完整列出目标、传递依赖、构建配置、依赖锁与必要产物；
   提交后活动目录的修改不得被当作该快照任务的输入。注意迁移目录后相对依赖路径仍须有效。
 - 审查使用 `task_type: "review"`；确需全量验收时使用 `task_type: "full"` 和正确构建目标。
   全量编译独占启动并直接使用稳定的工作区；不另建项目级全局锁。
@@ -84,6 +87,8 @@ MCP-CI、worktree-isolation、subagent-workspace 技能。本文件统一后续�
   峰值物理内存及诊断。窄目标通过只覆盖这些目标，不能宣称整个项目或数学父义务已完成。
 
 ## 证明性能与导入纪律
+
+- 所有 `rg` 搜索一律限制在两个可用核心，并使用至多两个搜索线程；不得让全文搜索争抢全部核心。本会话使用 `prove2me_workspace/.local/bin/rg-two-cores` 执行搜索。
 
 - Mathlib 只精确导入实际需要的模块。Scene1 禁止导入 `Prologue/Obligations`、
   Scene2、Act2 或隐藏全局输入以补齐未完成证明。

@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "lean": "leanprover/lean4:v4.33.1",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+  },
+  "mission_id": "eeb5193f-68c0-41d0-9263-4a5ff7c801ee",
+  "visibility": "private",
+  "root": {
+    "name": "abc.goal.lt_constant_mul_fix",
+    "theorem_id": "e33ff731-60a7-43ef-87ae-c12aeba23cb5"
+  },
+  "edges": [
+    {
+      "parent": "abc.goal.lt_constant_mul_fix",
+      "child": "AbcAdaptation.classical",
+      "submission_id": "80c88f89-ed79-4458-96ac-6744400042a5",
+      "status": "SKETCH_ACCEPTED"
+    },
+    {
+      "parent": "AbcAdaptation.classical",
+      "child": "AbcAdaptation.classicalInt",
+      "submission_id": "6857752c-3cc3-4b15-9eec-d3feb963aeb1",
+      "status": "SKETCH_ACCEPTED"
+    },
+    {
+      "parent": "AbcAdaptation.classicalInt",
+      "child": "AbcAdaptation.rationalHeight",
+      "submission_id": "d8aeee8d-e34b-47dd-8db7-5bd8865f0627",
+      "status": "SKETCH_ACCEPTED"
+    }
+  ],
+  "published_nodes": [
+    {
+      "name": "AbcAdaptation.classical",
+      "id": "19488657-c338-470b-b0b0-eb3eec739d17"
+    },
+    {
+      "name": "AbcAdaptation.classicalInt",
+      "id": "503043eb-a419-42ec-95e1-8e2e193a8bcb"
+    },
+    {
+      "name": "AbcAdaptation.rationalHeight",
+      "id": "905ccf0a-2831-4751-852f-92b19b256a89"
+    }
+  ],
+  "open_frontier": [
+    "AbcAdaptation.rationalHeight"
+  ],
+  "local_statement_ii_children": [
+    "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+    "AbcAdaptation.Tripod.highHeightEstimate"
+  ],
+  "local_statement_ii_composition": "AbcAdaptation.Tripod.statementII_of_children",
+  "local_statement_ii_platform_connected": false,
+  "mathematical_root_proved": false,
+  "policy": {
+    "rg_cores": 2,
+    "rg_threads_max": 2,
+    "subagent_ci_allowed": false,
+    "main_ci_exclusive": true
+  },
+  "files": {
+    "AGENTS.md": "b1fd49ac39ff0af166382148288b9bdbd2b47bdccb9794e9e7def61c4fc5228c",
+    ".gitignore": "017a1ff4e588451a86e8ed213b18532f90469a658927faeab1001d8042ab7d2f",
+    "docs/Prove2Me适配状态.md": "ece28866225791fd7e62e733a2a1c1efd6f0a51768456196bc09a0d9495af68f",
+    "prove2me_workspace/.gitignore": "817595d48805ba0be6c618df746a4f00248544ae22c876cf636208555dbb9b7d",
+    "prove2me_workspace/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "prove2me_workspace/lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+    "prove2me_workspace/lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+    "prove2me_workspace/Definitions/Def_AbcClassical.lean": "d3fd8352eec0a57a4e8c1d1523a0531a073e88b1874352cb33020230998955d8",
+    "prove2me_workspace/Definitions/Def_AbcClassicalInt.lean": "25222352a04f73de7877367556c11c2e2116287fcc9fca89b9290b90b7738f50",
+    "prove2me_workspace/Definitions/Def_AbcRationalHeight.lean": "62178b38347ea6df31e7f7d95df955aa86b5825a503058db95fbfb1951b0818d",
+    "prove2me_workspace/Definitions/Def_AbcTripod.lean": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+    "prove2me_workspace/Definitions/Def_TripodStatementIIInputs.lean": "5ce42a6371d13c7a4fc22dbfcfe7c5d059feb7e7877e9787d53b0eaeb2dee5be",
+    "prove2me_workspace/Definitions/Def_TripodStatementIIComposition.lean": "1c210815c31c613be3dbc6bc49a67f7607fd77fb4f7dfdc40e271eb41f23ee10",
+    "prove2me_workspace/Theorems/Thm_abc_goal_lt_constant_mul_fix.lean": "78ac2d6369b5da463cfb5c5517eecaed01dda6f677428a6487ac5c0df2bb6d4a",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_classical.lean": "f30a39b675eeb3448a340539f8e584d01b0d6ed850ce185ca42843fca2ab92c7",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_classicalInt.lean": "8ddd244139973229f0de2d04061846006260ff2a76a844973758bb92093530c4",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_rationalHeight.lean": "58d8ecf3597cfc0b6ddc2b61f94f666cd06ab6dc27f835e22fb9a3f56ef63b58",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean": "199d189be897d1e5596c3552ceec57731c202c1612752ba342f842e259f3f59d",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_highHeightEstimate.lean": "92dd6c522cd8752c51e0775600f14892fd3881523ffb98f59cc4143011a51fbf",
+    "prove2me_workspace/Solutions/Sol_abc_goal_lt_constant_mul_fix.lean": "047c54d7070166a07338ad7e7c8ec3df7e4e861bdb479b80fbae49a7eaaeedcb",
+    "prove2me_workspace/Solutions/Sol_abc_classical.lean": "1504248a8274f3af452e12ddad7aa92769eb3f9340a43e87d639a3a7bfef2882",
+    "prove2me_workspace/Solutions/Sol_abc_classical_int.lean": "7a7341d26234b45e63c8b64384126b55ae7619b3c77e1d74ea991f0096bb08f8",
+    "prove2me_workspace/Solutions/Sol_TripodStatementII.lean": "47d74a5293d535d9f53639e0888a541b2705a54bf4783e0a8a1a4acaeaec9601",
+    "prove2me_workspace/Solutions/Checks_AbcClassical.lean": "7508d1c3fb8e1c11ad3055221dd1f89e2736597819fffdc521a45c4152ea8de7",
+    "prove2me_workspace/Solutions/Checks_AbcClassicalInt.lean": "c56aedaca5b93cdd19f5f7963ca6d54832ff17b21096ef43d16a702557a80ca3",
+    "prove2me_workspace/Solutions/Checks_AbcRationalHeight.lean": "4dfc3135980c5fa9c4848744260a2286c3cd6d6d0000af0ded4f8fc9a972b7cb",
+    "prove2me_workspace/Solutions/Checks_AbcRadicalTyping.lean": "99c50599d29c8a2eac54a8bdadef63eeb199bbeb996c56f0b5c870beef599a96",
+    "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/result.json": "00b71a036ab19ad707c9cc37864e008546311831d91e06d62a9002b5942fc069",
+    "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/input-hashes.json": "b4d1264456110ab0af7d45990976e8dda7ad6eb3c0a0dcd3041d6a01b17f2f72",
+    "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json": "a198b45b37eabbf0012e7da1e09664fea7a5971c02ba86d39fe0f006f8b855e4",
+    "prove2me_workspace/.local/adaptation/readbacks/abc-int-v1/trilingual.json": "14f6672d96539599708dbb51c657a7d79dc87a30139e8400263fd41389607544",
+    "prove2me_workspace/.local/adaptation/readbacks/abc-int-v1/input-hashes.json": "606691908ceea0060f5fedebc33d86248d9815c4c940c4b456d3d795534298fe",
+    "prove2me_workspace/.local/adaptation/readbacks/abc-int-v1/provenance.json": "1aeb399c9955f8d3e3ae9c30f20ba97ea6736ad306dfeb68b88073fccb04fb2b",
+    "prove2me_workspace/.local/adaptation/readbacks/rational-v1-complete/result.json": "89d1d37886e1ad0f4bfc41efc8e6e47f551c3b0f8d33dfa7070af5c5ffc400f4",
+    "prove2me_workspace/.local/adaptation/readbacks/rational-v1-complete/input-hashes.json": "c5ef4e19c1a3530feadc9aa5804d5abfb33a20220c4d0ab02782d3f96dce18d0",
+    "prove2me_workspace/.local/adaptation/readbacks/rational-v1-complete/provenance.json": "7f0539d112c25856e7fc0dd5210d36fc72544333933cbcb89138d2848d7f42b0",
+    "prove2me_workspace/.local/adaptation/readbacks/statement-ii-v1/result.json": "e2f5b081c6630a4e6c2022f1798fa66cc01af8bad9f8b85704ec2bef8ab71d3c",
+    "prove2me_workspace/.local/adaptation/readbacks/statement-ii-v1/input-hashes.json": "d47df4fad33d5e2a0d9313fc02094650d6cc878018622ea33e7d871fc0a425d0",
+    "prove2me_workspace/.local/adaptation/readbacks/statement-ii-v1/provenance.json": "d55586b7e5066aa27542c053c5b6e89ed9348ef9ce96ee6df0304f9b6b693f1c",
+    "prove2me_workspace/.local/bin/rg-two-cores": "fb230a9003d1e491e79658b88ef5420f9b7012274a2926d2a2b08b4430863885",
+    "prove2me_workspace/Definitions/Def_TripodRationalComposition.lean": "85f8805eb89a5efc1c319d24fc79cf99564b681450cd19cad97addaeef9cf641",
+    "prove2me_workspace/Solutions/Sol_abc_rational_height.lean": "a4f85b8a83f37b621e02221564023bb63f2dae6752bc663f7c370daeb03ed69f",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_degreeOneProjection.lean": "273e8ebd86e831aad54ddcf7ca430f80dba538384441c447228a451036a8b9ee",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_logDifferentZeroProjection.lean": "9203f819c376ba38a975b186150013c6faa56499efe37a4123ff28b7ee226b64",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_heightComparisonProjection.lean": "da6831989ae6556e2ec1edf28b8f4490fd238754e9afff64d160a7b51c0f8bd1",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_radicalConductorProjection.lean": "378998d793fbbe8a8fa18f496b81a710faf921d7f972f081ae9e40139c189537",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_statementII.lean": "e9b043e8b10c4ac2b124db9116216664372076f2488b8768180f407abc6575c5",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_statementI_of_statementII.lean": "32c3a37cc82c8cae375dfd080084c4832ec1e09767a1c363693d320388735b5c",
+    "prove2me_workspace/Solutions/Checks_AbcReduction.lean": "313b168e88e4954f29f8fd54d45105c6295a7fa47b785a627ca5271cad02415c",
+    "prove2me_workspace/Solutions/Checks_AbcIntReduction.lean": "1a1ab7741b7fdeb17d0aaf7e2140ba8532b26cf88f6b3e550f7e4775562ba7c1",
+    "prove2me_workspace/Solutions/Checks_AbcRationalReduction.lean": "eaa65b5926a52b04861f41cbec8e65767ff0f85d51b7a1bbc8ac631324b6b4a3",
+    "prove2me_workspace/Solutions/Checks_TripodRationalComposition.lean": "06d1355436470b5a1b3a777af21445da9939efc3495bf4b521e46df1b8d96eed",
+    "prove2me_workspace/Solutions/Checks_TripodStatementIIComposition.lean": "6caac927f5277acf120a1c940360db01aa15b0f1b0140bdffb040041a3d11a74",
+    "prove2me_workspace/.local/adaptation/readbacks/tripod-current-v1/input-hashes.json": "52fd58e81b2a255b8bac02babfa61c402d9864141943aeefb6f0da3f368d2ea1",
+    "prove2me_workspace/.local/adaptation/readbacks/tripod-current-v1/result.json": "fee8b75fdb1dd3cda8493831861966e08e475a633c729f94bb1935f9abfe4dfe",
+    "prove2me_workspace/.local/adaptation/readbacks/tripod-current-v1/provenance.json": "5b863586882ebd9b052ad21aec98efab0e5179ea1cd6de0a12abee9f1b5b8edf"
+  },
+  "recorded_at": "2026-11-13T03:03:12.384223+00:00",
+  "local_open_children_below_root": 11,
+  "published_open_children_below_root": 3,
+  "accepted_platform_edges": 3,
+  "local_rational_projection_edge_verified": true,
+  "remaining_platform_edges": [
+    "AbcAdaptation.rationalHeight -> concrete tripod StatementII, StatementII -> StatementI and four rational projections",
+    "AbcAdaptation.Tripod.statementII -> boundedDegreeFiniteness and highHeightEstimate"
+  ]
+}

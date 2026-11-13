@@ -1,0 +1,4 @@
+import Definitions.Def_AbcRationalHeight
+
+#print AbcAdaptation.RationalABCHeight
+#print axioms AbcAdaptation.classicalABCInt_of_rationalABCHeight

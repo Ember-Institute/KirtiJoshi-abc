@@ -1,0 +1,3 @@
+import Definitions.Def_TripodStatementIIComposition
+
+#print axioms AbcAdaptation.Tripod.statementII_of_children

@@ -1,0 +1,18 @@
+import Definitions.Def_TripodRationalComposition
+import Theorems.Thm_AbcAdaptation_Tripod_statementI_of_statementII
+import Theorems.Thm_AbcAdaptation_Tripod_statementII
+import Theorems.Thm_AbcAdaptation_Tripod_degreeOneProjection
+import Theorems.Thm_AbcAdaptation_Tripod_logDifferentZeroProjection
+import Theorems.Thm_AbcAdaptation_Tripod_heightComparisonProjection
+import Theorems.Thm_AbcAdaptation_Tripod_radicalConductorProjection
+
+set_option autoImplicit false
+
+theorem solution : AbcAdaptation.RationalABCHeight :=
+  AbcAdaptation.Tripod.rationalABCHeight_of_statementI
+    (AbcAdaptation.Tripod.statementI_of_statementII
+      AbcAdaptation.Tripod.statementII)
+    AbcAdaptation.Tripod.degreeOneProjection
+    AbcAdaptation.Tripod.logDifferentZeroProjection
+    AbcAdaptation.Tripod.heightComparisonProjection
+    AbcAdaptation.Tripod.radicalConductorProjection
