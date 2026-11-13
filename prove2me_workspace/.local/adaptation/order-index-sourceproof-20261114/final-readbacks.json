@@ -1,0 +1,302 @@
+{
+  "schema": "lean_publication_trilingual_readback.v1",
+  "scope": {
+    "input_root": "/tmp/p2m-elementary-order-sourceproof-next-20261114",
+    "read_only_source_directories": [
+      "Definitions",
+      "Theorems"
+    ],
+    "readback_method": "Independent static reading of the four Lean source files and necessary imported Lean definitions in the main prove2me_workspace. Author README, ledger, JSON reviews, and non-Lean prose were not read. No compiler, MCP-CI, network, or publication was used.",
+    "status": "source_proofs_present_not_compiled",
+    "source_quotes": null,
+    "literature_context": "Not assessed here. Separate verified English source quotations and ledger bindings may be attached by the root agent.",
+    "publication_variant_of": "/tmp/p2m-order-sourceproof-blind-20261114/readbacks.json",
+    "blind_readback_sha256": "ede6255d750a83224dcbcac4b4ab42f0f715ccb53fce4a3a425823d2c365e1a7",
+    "publication_transformation": "Keep all declaration identity and static-signature fields. Use self-contained mathematical statements in all three languages. Move proof descriptions to proof_notes. Keep quote slots null for root attachment.",
+    "publication_status": "draft_statements_source_proofs_present_not_compiled"
+  },
+  "inventory": {
+    "lean_files": 4,
+    "declaration_rows": 6,
+    "public_declarations": 5,
+    "private_declarations": 1,
+    "public_helper_theorems_in_Definitions": 2,
+    "public_target_theorems_in_Theorems": 3,
+    "private_helper_theorems_in_Theorems": 1,
+    "definitions": 0,
+    "axiom_declarations": 0,
+    "sorry_tokens_in_code": 0,
+    "source_proofs_with_by": 6,
+    "new_target_statements": 0,
+    "existing_targets_with_full_source_proofs": 3,
+    "import_directives": 12
+  },
+  "files": [
+    {
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Definitions/Def_FermatNoncriticalOrderSource.lean",
+      "sha256": "10eba556c77327cd61ef5a44c1e6e561b2199f484db7793ce3331c6611fbc96a",
+      "line_count": 36,
+      "imports": [
+        "Definitions.Def_FermatNoncriticalRamificationPositive",
+        "Mathlib.Tactic.Push"
+      ],
+      "declarations": 2,
+      "has_sorry_token": false,
+      "has_axiom_declaration": false
+    },
+    {
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "sha256": "ebf33c6f49f04fba24338b3870e64b11d0584d44738f0f18e9f1397ae7e3da74",
+      "line_count": 80,
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource",
+        "Mathlib.Algebra.Polynomial.Reverse",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "declarations": 2,
+      "has_sorry_token": false,
+      "has_axiom_declaration": false
+    },
+    {
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "sha256": "c6f5a9db44dc4e4fb0b5a7db31e701e0f6f4bb915cb1ded6be88f47104d0910e",
+      "line_count": 45,
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource",
+        "Mathlib.Algebra.Polynomial.Reverse"
+      ],
+      "declarations": 1,
+      "has_sorry_token": false,
+      "has_axiom_declaration": false
+    },
+    {
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "sha256": "fd8a531d9dad526624fc7bbaffcce5d6bb0bb00cbf92438ab7638b68a5a24bbf",
+      "line_count": 63,
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource"
+      ],
+      "declarations": 1,
+      "has_sorry_token": false,
+      "has_axiom_declaration": false
+    }
+  ],
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_eq_zero_of_residue_ne_zero",
+      "path": "Definitions/Def_FermatNoncriticalOrderSource.lean",
+      "line": 20,
+      "kind": "public_helper_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_eq_zero_of_residue_ne_zero {K : Type*} [Field K] [CharZero K] [IsCurveField K] (P : Place K) {y : K} (hy : y ∈ P.1)\n    (h : P.residue ⟨y, hy⟩ ≠ 0) : P.ord y = 0",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": "> Theorem 2.5. (Belyi Maps Noncritical at Prescribed Points) Let X be a smooth, proper, connected curve over \\overline{\\mathbb{Q}} and S,T \\subseteq X(\\overline{\\mathbb{Q}}) finite sets of \\overline{\\mathbb{Q}}-rational points such that S \\cap T = \\emptyset. Then there exists a morphism \\phi : X \\to \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}} such that: (a) \\phi is unramified over \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}}\\backslash\\{0,1,\\infty\\}; (b) \\phi(S) \\subseteq \\{0,1,\\infty\\}; (c) we have \\phi(T) \\cap \\{0,1,\\infty\\} = \\emptyset. Moreover, if X, S, and T are defined over a number field F, then \\phi may be taken to be defined over F.\n\n— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp. 5–6.",
+      "en_mochizuki_quote_ledger_binding": {
+        "evidence": "mochizuki-quotation.md",
+        "sha256": "9d5952e5d2ff0195854da43d66d9bbc5f28771ac3ed1ea30b50bf41278b3e9be",
+        "role": "Geometric context only; the exact local order/index theorem comes from the separately pinned Lean source, not an identified numbered paper lemma."
+      },
+      "proof_status": "complete_source_proof_kernel_validated_in_unit; final axiom/type/platform gates recorded separately",
+      "en": "Let K be a characteristic-zero curve field. Thus K is finite over ℚ(t) for some t ∈ K transcendental over ℚ. Let P be any place, including a possible place at infinity. Its ring O_P is a proper valuation subring of K that contains ℚ. Let κ(P) be its entire residue field, and let res_P: O_P → κ(P) be the residue map. Let ord_P be the normalized integer order, with the convention ord_P(0) = 0.\n\nFor every y ∈ K, if y ∈ O_P and res_P(y) ≠ 0, then ord_P(y) = 0. No separate premise y ≠ 0 is required.\n\n$$\n\\operatorname{ord}_P(y)=0\n$$",
+      "zh_Hans": "设 K 是特征零曲线函数域，即对某个在 ℚ 上超越的 t ∈ K，K 是 ℚ(t) 的有限扩张。设 P 是任意处，也允许无穷远处，其赋值环 O_P 是 K 中包含 ℚ 的真赋值子环。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，并约定 ord_P(0) = 0。\n\n对任意 y ∈ K，若 y ∈ O_P 且 res_P(y) ≠ 0，则 ord_P(y) = 0。不另加 y ≠ 0 的前提。\n\n$$\n\\operatorname{ord}_P(y)=0\n$$",
+      "ja": "K を標数零の曲線の関数体とする。つまり、ある ℚ 上超越的な t ∈ K に対して K は ℚ(t) の有限拡大である。P を任意の素点とし、無限遠の素点も許す。その付値環 O_P は ℚ を含む K の真の付値部分環である。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。ord_P(0) = 0 と定める。\n\n任意の y ∈ K について、y ∈ O_P かつ res_P(y) ≠ 0 なら ord_P(y) = 0 である。y ≠ 0 という別の仮定は必要ない。\n\n$$\n\\operatorname{ord}_P(y)=0\n$$",
+      "proof_notes": {
+        "en": "The source proof first derives y ≠ 0 from nonzero residue. Membership gives nonnegative order. Positive order of a nonzero element is equivalent to membership in the maximal ideal. This excludes positive order and gives order zero.",
+        "zh_Hans": "源证明先由剩余值非零推出 y ≠ 0，再由属于赋值环得到阶数非负。非零元素的正阶数等价于属于极大理想，因此排除正阶数并得到阶数为零。",
+        "ja": "ソースの証明は、剰余値が非零であることから y ≠ 0 を得る。付値環への所属により位数は非負である。非零の元の位数が正であることは、極大イデアルへの所属と同値である。正の位数を除外して位数が零であることを得る。"
+      },
+      "publication_statement_rule": "Only mathematical context, premises, conclusions, and scope boundaries occur in en/zh_Hans/ja. Proof process occurs only in proof_notes.",
+      "main_formula": "\\operatorname{ord}_P(y)=0",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_eq_zero_of_residue_ne_zero",
+      "compiler_source_span": {
+        "startLine": 20,
+        "endLine": 28
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) {y : K} (hy : y ∈ ↑P), P.residue ⟨y, hy⟩ ≠ 0 → P.ord y = 0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_eq_zero_of_ord_pos",
+      "path": "Definitions/Def_FermatNoncriticalOrderSource.lean",
+      "line": 30,
+      "kind": "public_helper_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_eq_zero_of_ord_pos {K : Type*} [Field K] [CharZero K] [IsCurveField K] (P : Place K) {y : K} (hy : 0 < P.ord y) :\n    P.residue ⟨y, P.mem_of_ord_nonneg hy.le⟩ = 0",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": "> Theorem 2.5. (Belyi Maps Noncritical at Prescribed Points) Let X be a smooth, proper, connected curve over \\overline{\\mathbb{Q}} and S,T \\subseteq X(\\overline{\\mathbb{Q}}) finite sets of \\overline{\\mathbb{Q}}-rational points such that S \\cap T = \\emptyset. Then there exists a morphism \\phi : X \\to \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}} such that: (a) \\phi is unramified over \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}}\\backslash\\{0,1,\\infty\\}; (b) \\phi(S) \\subseteq \\{0,1,\\infty\\}; (c) we have \\phi(T) \\cap \\{0,1,\\infty\\} = \\emptyset. Moreover, if X, S, and T are defined over a number field F, then \\phi may be taken to be defined over F.\n\n— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp. 5–6.",
+      "en_mochizuki_quote_ledger_binding": {
+        "evidence": "mochizuki-quotation.md",
+        "sha256": "9d5952e5d2ff0195854da43d66d9bbc5f28771ac3ed1ea30b50bf41278b3e9be",
+        "role": "Geometric context only; the exact local order/index theorem comes from the separately pinned Lean source, not an identified numbered paper lemma."
+      },
+      "proof_status": "complete_source_proof_kernel_validated_in_unit; final axiom/type/platform gates recorded separately",
+      "en": "Let K be a characteristic-zero curve field. Thus K is finite over ℚ(t) for some t ∈ K transcendental over ℚ. Let P be any place, including a possible place at infinity. Its ring O_P is a proper valuation subring of K that contains ℚ. Let κ(P) be its entire residue field, and let res_P: O_P → κ(P) be the residue map. Let ord_P be the normalized integer order, with the convention ord_P(0) = 0.\n\nFor every y ∈ K, if 0 < ord_P(y), then y ∈ O_P and res_P(y) = 0. The conclusion supplies membership in O_P; no separate membership premise is required. Positive order also excludes y = 0.\n\n$$\n\\operatorname{ord}_P(y)>0\\;\\Longrightarrow\\; y\\in\\mathcal O_P\\ \\land\\ \\operatorname{res}_P(y)=0\n$$",
+      "zh_Hans": "设 K 是特征零曲线函数域，即对某个在 ℚ 上超越的 t ∈ K，K 是 ℚ(t) 的有限扩张。设 P 是任意处，也允许无穷远处，其赋值环 O_P 是 K 中包含 ℚ 的真赋值子环。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，并约定 ord_P(0) = 0。\n\n对任意 y ∈ K，若 0 < ord_P(y)，则 y ∈ O_P 且 res_P(y) = 0。结论中的赋值环成员关系由正阶数保证，不另加属于赋值环的前提。正阶数也排除 y = 0。\n\n$$\n\\operatorname{ord}_P(y)>0\\;\\Longrightarrow\\; y\\in\\mathcal O_P\\ \\land\\ \\operatorname{res}_P(y)=0\n$$",
+      "ja": "K を標数零の曲線の関数体とする。つまり、ある ℚ 上超越的な t ∈ K に対して K は ℚ(t) の有限拡大である。P を任意の素点とし、無限遠の素点も許す。その付値環 O_P は ℚ を含む K の真の付値部分環である。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。ord_P(0) = 0 と定める。\n\n任意の y ∈ K について、0 < ord_P(y) なら y ∈ O_P かつ res_P(y) = 0 である。O_P への所属は結論に含まれ、別の所属の仮定は必要ない。正の位数は y = 0 も除外する。\n\n$$\n\\operatorname{ord}_P(y)>0\\;\\Longrightarrow\\; y\\in\\mathcal O_P\\ \\land\\ \\operatorname{res}_P(y)=0\n$$",
+      "proof_notes": {
+        "en": "The source proof uses positive order to derive y ≠ 0 and membership in the maximal ideal. The residue is then zero.",
+        "zh_Hans": "源证明由正阶数推出 y ≠ 0 及属于极大理想，随后得到剩余值为零。",
+        "ja": "ソースの証明は正の位数から y ≠ 0 と極大イデアルへの所属を得る。これにより剰余値は零となる。"
+      },
+      "publication_statement_rule": "Only mathematical context, premises, conclusions, and scope boundaries occur in en/zh_Hans/ja. Proof process occurs only in proof_notes.",
+      "main_formula": "\\operatorname{ord}_P(y)>0\\;\\Longrightarrow\\; y\\in\\mathcal O_P\\ \\land\\ \\operatorname{res}_P(y)=0",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_eq_zero_of_ord_pos",
+      "compiler_source_span": {
+        "startLine": 30,
+        "endLine": 33
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) {y : K} (hy : 0 < P.ord y), P.residue ⟨y, ⋯⟩ = 0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "line": 18,
+      "kind": "public_target_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) (h : ψ ∈ x.P.1) {g : ℚ[X]} (hg : g ≠ 0) :\n    letI : IsCurveField M.K := M.isCurveField\n    x.P.ord (aeval ψ g) = ramIdx M hDVR ψ x.P *\n      ((g.map (algebraMap ℚ Tripod.Qbar)).rootMultiplicity (x.eval ψ h) : ℤ)",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": "> Theorem 2.5. (Belyi Maps Noncritical at Prescribed Points) Let X be a smooth, proper, connected curve over \\overline{\\mathbb{Q}} and S,T \\subseteq X(\\overline{\\mathbb{Q}}) finite sets of \\overline{\\mathbb{Q}}-rational points such that S \\cap T = \\emptyset. Then there exists a morphism \\phi : X \\to \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}} such that: (a) \\phi is unramified over \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}}\\backslash\\{0,1,\\infty\\}; (b) \\phi(S) \\subseteq \\{0,1,\\infty\\}; (c) we have \\phi(T) \\cap \\{0,1,\\infty\\} = \\emptyset. Moreover, if X, S, and T are defined over a number field F, then \\phi may be taken to be defined over F.\n\n— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp. 5–6.",
+      "en_mochizuki_quote_ledger_binding": {
+        "evidence": "mochizuki-quotation.md",
+        "sha256": "9d5952e5d2ff0195854da43d66d9bbc5f28771ac3ed1ea30b50bf41278b3e9be",
+        "role": "Geometric context only; the exact local order/index theorem comes from the separately pinned Lean source, not an identified numbered paper lemma."
+      },
+      "proof_status": "complete_source_proof_kernel_validated_in_unit; final axiom/type/platform gates recorded separately",
+      "en": "For every natural number N, let M be a supplied model of degree N, with field K. The field K lies between ℚ and an algebraic closure of ℚ(t). The model contains u,v ∈ K such that u is transcendental over ℚ, u^N + v^N = 1, and ℚ(u,v) = K. The extension K/ℚ(u) is finite of degree N. No additional numerical condition on N is imposed, and model existence is not asserted.\n\nAssume discreteness: every place of K has a discrete valuation ring. A place P is a proper valuation subring O_P of K that contains ℚ. All such places are allowed, including places at infinity. Let κ(P) be the entire residue field, and let res_P: O_P → κ(P) be the residue map. Let ord_P be the normalized integer order, with the convention ord_P(0) = 0. For f ∈ K, define the actual integer ramification index e_P(f) as follows. If f ∈ O_P, let m_f ∈ ℚ[X] be the minimal polynomial of res_P(f), and set e_P(f) = ord_P(m_f(f)). If f ∉ O_P, set e_P(f) = −ord_P(f). The residue field κ(P) is finite over ℚ.\n\nLet ψ ∈ K be transcendental over ℚ. This excludes all elements algebraic over ℚ, not only rational constants. In particular, ψ ≠ 0.\n\nLet x = (P,σ) be an algebraic point with an embedding of the entire residue field. Here σ: κ(P) → ℚ̄ is a unital ring embedding, and ℚ̄ is a fixed algebraic closure of ℚ. The embedding concerns κ(P), not only a subfield generated by one residue value. For f ∈ O_P, define x(f) = σ(res_P(f)).\n\nAssume ψ ∈ O_P, so ψ is regular at P. For every nonzero polynomial g ∈ ℚ[X], let ḡ ∈ ℚ̄[X] be its image under the coefficient embedding ℚ → ℚ̄. Then ord_P(g(ψ)) = e_P(ψ) · (mult_{x(ψ)}(ḡ) : ℤ). Here mult denotes the natural-number multiplicity of the indicated root, viewed as an integer. No positive-degree premise on g is required. For a nonzero constant polynomial, both sides are zero.\n\n$$\n\\operatorname{ord}_P(g(\\psi))=e_P(\\psi)\\,\\operatorname{mult}_{x(\\psi)}(\\bar g)\n$$",
+      "zh_Hans": "对任意自然数 N 及给定的次数为 N 的模型 M，记其域为 K。域 K 介于 ℚ 与 ℚ(t) 的一个代数闭包之间。模型含有元素 u,v ∈ K，满足 u 在 ℚ 上超越、u^N + v^N = 1、ℚ(u,v) = K，且 K/ℚ(u) 是次数为 N 的有限扩张。不对 N 另加数值条件，也不在这里断言模型存在。\n\n采用离散性假设：K 的每个处的赋值环都是离散赋值环。处 P 是 K 中包含 ℚ 的真赋值子环 O_P；允许所有这样的处，包括无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，并约定 ord_P(0) = 0。对 f ∈ K，实际的整数分歧指数 e_P(f) 定义如下：若 f ∈ O_P，令 m_f ∈ ℚ[X] 为 res_P(f) 在 ℚ 上的最小多项式，并令 e_P(f) = ord_P(m_f(f))；若 f ∉ O_P，则令 e_P(f) = −ord_P(f)。剩余域 κ(P) 是 ℚ 的有限扩张。\n\n设 ψ ∈ K 在 ℚ 上超越。此条件排除所有在 ℚ 上代数的元素，而不仅排除有理常数；特别地，ψ ≠ 0。\n\n设 x = (P,σ) 是含完整剩余域嵌入的代数点，其中 σ: κ(P) → ℚ̄ 是保单位元环嵌入，ℚ̄ 是固定的 ℚ 的代数闭包。嵌入的定义域是整个 κ(P)，而非仅为某一个剩余值生成的子域。对 f ∈ O_P，定义点值 x(f) = σ(res_P(f))。\n\n假设 ψ ∈ O_P，即 ψ 在处 P 正则。对任意非零多项式 g ∈ ℚ[X]，令 ḡ ∈ ℚ̄[X] 为沿系数嵌入 ℚ → ℚ̄ 得到的多项式。则 ord_P(g(ψ)) = e_P(ψ) · (mult_{x(ψ)}(ḡ) : ℤ)，其中 mult 表示指定根的自然数重数，并在公式中视为整数。不要求 g 的次数为正；当 g 为非零常数多项式时，等式两边都为零。\n\n$$\n\\operatorname{ord}_P(g(\\psi))=e_P(\\psi)\\,\\operatorname{mult}_{x(\\psi)}(\\bar g)\n$$",
+      "ja": "任意の自然数 N に対し、M を与えられた次数 N のモデルとし、その体を K とする。K は ℚ と ℚ(t) の代数閉包の間の中間体である。モデルは u,v ∈ K を含み、u は ℚ 上超越的で、u^N + v^N = 1、ℚ(u,v) = K を満たす。K/ℚ(u) は次数 N の有限拡大である。N に追加の数値条件は課さず、モデルの存在もここでは主張しない。\n\n離散性を仮定する。つまり K のすべての素点の付値環は離散付値環である。素点 P は ℚ を含む K の真の付値部分環 O_P であり、無限遠の素点も含めてすべてを対象とする。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。ord_P(0) = 0 と定める。f ∈ K の実際の整数値の分岐指数 e_P(f) を次のように定める。f ∈ O_P なら、m_f ∈ ℚ[X] を res_P(f) の ℚ 上の最小多項式として e_P(f) = ord_P(m_f(f)) とする。f ∉ O_P なら e_P(f) = −ord_P(f) とする。剰余体 κ(P) は ℚ の有限拡大である。\n\nψ ∈ K は ℚ 上超越的であるとする。この条件は有理定数だけでなく、ℚ 上代数的なすべての元を除外する。特に ψ ≠ 0 である。\n\nx = (P,σ) を剰余体全体の埋め込みを含む代数点とする。σ: κ(P) → ℚ̄ は単位元を保つ環の埋め込みであり、ℚ̄ は固定した ℚ の代数閉包である。埋め込みの定義域は κ(P) 全体であり、一つの剰余値で生成される部分体だけではない。f ∈ O_P に対して x(f) = σ(res_P(f)) と定める。\n\nψ ∈ O_P、すなわち ψ が P で正則であると仮定する。任意の非零多項式 g ∈ ℚ[X] に対し、ḡ ∈ ℚ̄[X] を係数の埋め込み ℚ → ℚ̄ による像とする。このとき ord_P(g(ψ)) = e_P(ψ) · (mult_{x(ψ)}(ḡ) : ℤ) が成り立つ。mult は指定した根の自然数値の重複度であり、式では整数とみなす。g の次数が正であるという仮定は必要ない。g が非零定数多項式なら両辺とも零である。\n\n$$\n\\operatorname{ord}_P(g(\\psi))=e_P(\\psi)\\,\\operatorname{mult}_{x(\\psi)}(\\bar g)\n$$",
+      "proof_notes": {
+        "en": "The source proof uses strong induction on deg g. Set r = res_P(ψ), and split on whether its minimal polynomial over ℚ divides g. In the divisible case, separability and σ give a simple root at x(ψ). The proof then adds orders and root multiplicities. In the other case, nonzero residue gives order zero, and absence of a root gives multiplicity zero.",
+        "zh_Hans": "源证明对 g 的次数作强归纳。令 r = res_P(ψ)，按 r 在 ℚ 上的最小多项式是否整除 g 分类。在整除情形，最小多项式的可分性及嵌入 σ 给出 x(ψ) 处的单根，再将阶数和根的重数相加。在不整除情形，非零剩余值给出阶数为零，不是根给出重数为零。",
+        "ja": "ソースの証明は g の次数に関する強い帰納法を使う。r = res_P(ψ) とおき、その ℚ 上の最小多項式が g を割り切るかで場合分けする。割り切る場合は、分離性と σ により x(ψ) における単根を得て、位数と根の重複度を加える。それ以外の場合は、剰余値が非零なので位数は零であり、根ではないので重複度も零となる。"
+      },
+      "publication_statement_rule": "Only mathematical context, premises, conclusions, and scope boundaries occur in en/zh_Hans/ja. Proof process occurs only in proof_notes.",
+      "main_formula": "\\operatorname{ord}_P(g(\\psi))=e_P(\\psi)\\,\\operatorname{mult}_{x(\\psi)}(\\bar g)",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+      "compiler_source_span": {
+        "startLine": 18,
+        "endLine": 61
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K) (h : ψ ∈ ↑x.P) {g : Polynomial ℚ},\n      g ≠ 0 →\n        x.P.ord ((Polynomial.aeval ψ) g) =\n          AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ x.P *\n            ↑(Polynomial.rootMultiplicity (x.eval ψ h)\n                (Polynomial.map (Algebra.algebraMap ℚ AbcAdaptation.Tripod.Qbar) g))"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "line": 19,
+      "kind": "public_target_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (P : Place M.K) (h : ψ ∉ P.1) {p : ℚ[X]} (hp : p ≠ 0) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (aeval ψ p) = p.natDegree * P.ord ψ",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": "> Theorem 2.5. (Belyi Maps Noncritical at Prescribed Points) Let X be a smooth, proper, connected curve over \\overline{\\mathbb{Q}} and S,T \\subseteq X(\\overline{\\mathbb{Q}}) finite sets of \\overline{\\mathbb{Q}}-rational points such that S \\cap T = \\emptyset. Then there exists a morphism \\phi : X \\to \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}} such that: (a) \\phi is unramified over \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}}\\backslash\\{0,1,\\infty\\}; (b) \\phi(S) \\subseteq \\{0,1,\\infty\\}; (c) we have \\phi(T) \\cap \\{0,1,\\infty\\} = \\emptyset. Moreover, if X, S, and T are defined over a number field F, then \\phi may be taken to be defined over F.\n\n— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp. 5–6.",
+      "en_mochizuki_quote_ledger_binding": {
+        "evidence": "mochizuki-quotation.md",
+        "sha256": "9d5952e5d2ff0195854da43d66d9bbc5f28771ac3ed1ea30b50bf41278b3e9be",
+        "role": "Geometric context only; the exact local order/index theorem comes from the separately pinned Lean source, not an identified numbered paper lemma."
+      },
+      "proof_status": "complete_source_proof_kernel_validated_in_unit; final axiom/type/platform gates recorded separately",
+      "en": "For every natural number N, let M be a supplied model of degree N, with field K. The field K lies between ℚ and an algebraic closure of ℚ(t). The model contains u,v ∈ K such that u is transcendental over ℚ, u^N + v^N = 1, and ℚ(u,v) = K. The extension K/ℚ(u) is finite of degree N. No additional numerical condition on N is imposed, and model existence is not asserted.\n\nAssume discreteness: every place of K has a discrete valuation ring. A place P is a proper valuation subring O_P of K that contains ℚ. All such places are allowed, including places at infinity. Let κ(P) be the entire residue field, and let res_P: O_P → κ(P) be the residue map. Let ord_P be the normalized integer order, with the convention ord_P(0) = 0. For f ∈ K, define the actual integer ramification index e_P(f) as follows. If f ∈ O_P, let m_f ∈ ℚ[X] be the minimal polynomial of res_P(f), and set e_P(f) = ord_P(m_f(f)). If f ∉ O_P, set e_P(f) = −ord_P(f). The residue field κ(P) is finite over ℚ.\n\nLet ψ ∈ K be transcendental over ℚ. This excludes all elements algebraic over ℚ, not only rational constants. In particular, ψ ≠ 0.\n\nFor every place P, assume ψ ∉ O_P, equivalently ord_P(ψ) < 0. Thus ψ has a pole at P. No residue-field embedding or algebraic point is required. For every nonzero polynomial p ∈ ℚ[X], ord_P(p(ψ)) = (deg p : ℤ) · ord_P(ψ). Here deg p is the natural-number degree of the nonzero polynomial p. Nonzero constant polynomials are included, with order zero. If deg p > 0, the order of p(ψ) is negative.\n\n$$\n\\operatorname{ord}_P(p(\\psi))=\\deg(p)\\,\\operatorname{ord}_P(\\psi)\n$$",
+      "zh_Hans": "对任意自然数 N 及给定的次数为 N 的模型 M，记其域为 K。域 K 介于 ℚ 与 ℚ(t) 的一个代数闭包之间。模型含有元素 u,v ∈ K，满足 u 在 ℚ 上超越、u^N + v^N = 1、ℚ(u,v) = K，且 K/ℚ(u) 是次数为 N 的有限扩张。不对 N 另加数值条件，也不在这里断言模型存在。\n\n采用离散性假设：K 的每个处的赋值环都是离散赋值环。处 P 是 K 中包含 ℚ 的真赋值子环 O_P；允许所有这样的处，包括无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，并约定 ord_P(0) = 0。对 f ∈ K，实际的整数分歧指数 e_P(f) 定义如下：若 f ∈ O_P，令 m_f ∈ ℚ[X] 为 res_P(f) 在 ℚ 上的最小多项式，并令 e_P(f) = ord_P(m_f(f))；若 f ∉ O_P，则令 e_P(f) = −ord_P(f)。剩余域 κ(P) 是 ℚ 的有限扩张。\n\n设 ψ ∈ K 在 ℚ 上超越。此条件排除所有在 ℚ 上代数的元素，而不仅排除有理常数；特别地，ψ ≠ 0。\n\n对任意处 P，假设 ψ ∉ O_P，等价地 ord_P(ψ) < 0，即 ψ 在 P 处有极点。不要求剩余域嵌入或含完整剩余域嵌入的代数点。对任意非零多项式 p ∈ ℚ[X]，有 ord_P(p(ψ)) = (deg p : ℤ) · ord_P(ψ)，其中 deg p 是非零多项式 p 的自然数次数。这包括非零常数多项式，此时阶数为零；若 deg p > 0，则 p(ψ) 的阶数为负。\n\n$$\n\\operatorname{ord}_P(p(\\psi))=\\deg(p)\\,\\operatorname{ord}_P(\\psi)\n$$",
+      "ja": "任意の自然数 N に対し、M を与えられた次数 N のモデルとし、その体を K とする。K は ℚ と ℚ(t) の代数閉包の間の中間体である。モデルは u,v ∈ K を含み、u は ℚ 上超越的で、u^N + v^N = 1、ℚ(u,v) = K を満たす。K/ℚ(u) は次数 N の有限拡大である。N に追加の数値条件は課さず、モデルの存在もここでは主張しない。\n\n離散性を仮定する。つまり K のすべての素点の付値環は離散付値環である。素点 P は ℚ を含む K の真の付値部分環 O_P であり、無限遠の素点も含めてすべてを対象とする。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。ord_P(0) = 0 と定める。f ∈ K の実際の整数値の分岐指数 e_P(f) を次のように定める。f ∈ O_P なら、m_f ∈ ℚ[X] を res_P(f) の ℚ 上の最小多項式として e_P(f) = ord_P(m_f(f)) とする。f ∉ O_P なら e_P(f) = −ord_P(f) とする。剰余体 κ(P) は ℚ の有限拡大である。\n\nψ ∈ K は ℚ 上超越的であるとする。この条件は有理定数だけでなく、ℚ 上代数的なすべての元を除外する。特に ψ ≠ 0 である。\n\n任意の素点 P について ψ ∉ O_P、同値に ord_P(ψ) < 0 と仮定する。つまり ψ は P に極を持つ。剰余体の埋め込みや代数点は必要ない。任意の非零多項式 p ∈ ℚ[X] について ord_P(p(ψ)) = (deg p : ℤ) · ord_P(ψ) が成り立つ。deg p は非零多項式 p の自然数値の次数である。非零定数多項式も含み、その位数は零である。deg p > 0 なら p(ψ) の位数は負である。\n\n$$\n\\operatorname{ord}_P(p(\\psi))=\\deg(p)\\,\\operatorname{ord}_P(\\psi)\n$$",
+      "proof_notes": {
+        "en": "Write p^rev for the reversed polynomial of p. The source proof uses ψ ≠ 0 and the reversal identity p^rev(ψ⁻¹) · ψ^(deg p) = p(ψ). Positive order makes the residue of ψ⁻¹ zero. The reversed-polynomial factor has residue equal to the nonzero leading coefficient of p, so its order is zero. Multiplicativity and the power formula give the equality.",
+        "zh_Hans": "记 p 的反转多项式为 p^rev。源证明使用 ψ ≠ 0 和反转多项式恒等式 p^rev(ψ⁻¹) · ψ^(deg p) = p(ψ)。ψ⁻¹ 的阶数为正，故剩余值为零。反转多项式因子的剩余值等于 p 的非零首项系数，其阶数因此为零。阶数的乘法公式和幂公式给出等式。",
+        "ja": "p^rev を p の反転多項式とする。ソースの証明は ψ ≠ 0 と反転多項式の恒等式 p^rev(ψ⁻¹) · ψ^(deg p) = p(ψ) を使う。ψ⁻¹ の位数が正なので、その剰余値は零である。反転多項式の因子の剰余値は p の非零の最高次係数に等しく、その位数は零である。位数の積とべき乗の公式から等式を得る。"
+      },
+      "publication_statement_rule": "Only mathematical context, premises, conclusions, and scope boundaries occur in en/zh_Hans/ja. Proof process occurs only in proof_notes.",
+      "main_formula": "\\operatorname{ord}_P(p(\\psi))=\\deg(p)\\,\\operatorname{ord}_P(\\psi)",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+      "compiler_source_span": {
+        "startLine": 19,
+        "endLine": 43
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n    ∀ (ψ : ↥M.K),\n      Transcendental ℚ ψ →\n        ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n          ψ ∉ ↑P → ∀ {p : Polynomial ℚ}, p ≠ 0 → P.ord ((Polynomial.aeval ψ) p) = ↑p.natDegree * P.ord ψ"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncritical_exists_ramIdx_eq_mul_inv",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "line": 22,
+      "kind": "private_helper_theorem",
+      "full_signature_static": "private theorem AbcAdaptation.Tripod.Fermat.Proper.noncritical_exists_ramIdx_eq_mul_inv {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K)\n    (h0 : letI : IsCurveField M.K := M.isCurveField; x.P.ord ψ = 0) :\n    ∃ k : ℕ, ramIdx M hDVR ψ x.P = ramIdx M hDVR ψ⁻¹ x.P * (k : ℤ)",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": "> Theorem 2.5. (Belyi Maps Noncritical at Prescribed Points) Let X be a smooth, proper, connected curve over \\overline{\\mathbb{Q}} and S,T \\subseteq X(\\overline{\\mathbb{Q}}) finite sets of \\overline{\\mathbb{Q}}-rational points such that S \\cap T = \\emptyset. Then there exists a morphism \\phi : X \\to \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}} such that: (a) \\phi is unramified over \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}}\\backslash\\{0,1,\\infty\\}; (b) \\phi(S) \\subseteq \\{0,1,\\infty\\}; (c) we have \\phi(T) \\cap \\{0,1,\\infty\\} = \\emptyset. Moreover, if X, S, and T are defined over a number field F, then \\phi may be taken to be defined over F.\n\n— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp. 5–6.",
+      "en_mochizuki_quote_ledger_binding": {
+        "evidence": "mochizuki-quotation.md",
+        "sha256": "9d5952e5d2ff0195854da43d66d9bbc5f28771ac3ed1ea30b50bf41278b3e9be",
+        "role": "Geometric context only; the exact local order/index theorem comes from the separately pinned Lean source, not an identified numbered paper lemma."
+      },
+      "proof_status": "complete_source_proof_kernel_validated_in_unit; final axiom/type/platform gates recorded separately",
+      "en": "For every natural number N, let M be a supplied model of degree N, with field K. The field K lies between ℚ and an algebraic closure of ℚ(t). The model contains u,v ∈ K such that u is transcendental over ℚ, u^N + v^N = 1, and ℚ(u,v) = K. The extension K/ℚ(u) is finite of degree N. No additional numerical condition on N is imposed, and model existence is not asserted.\n\nAssume discreteness: every place of K has a discrete valuation ring. A place P is a proper valuation subring O_P of K that contains ℚ. All such places are allowed, including places at infinity. Let κ(P) be the entire residue field, and let res_P: O_P → κ(P) be the residue map. Let ord_P be the normalized integer order, with the convention ord_P(0) = 0. For f ∈ K, define the actual integer ramification index e_P(f) as follows. If f ∈ O_P, let m_f ∈ ℚ[X] be the minimal polynomial of res_P(f), and set e_P(f) = ord_P(m_f(f)). If f ∉ O_P, set e_P(f) = −ord_P(f). The residue field κ(P) is finite over ℚ.\n\nLet ψ ∈ K be transcendental over ℚ. This excludes all elements algebraic over ℚ, not only rational constants. In particular, ψ ≠ 0.\n\nLet x = (P,σ) be an algebraic point with an embedding of the entire residue field. Here σ: κ(P) → ℚ̄ is a unital ring embedding, and ℚ̄ is a fixed algebraic closure of ℚ. The embedding concerns κ(P), not only a subfield generated by one residue value. For f ∈ O_P, define x(f) = σ(res_P(f)).\n\nAssume ord_P(ψ) = 0. Thus ψ is a unit in O_P, and both ψ and ψ⁻¹ belong to O_P. There exists k ∈ ℕ such that e_P(ψ) = e_P(ψ⁻¹) · (k : ℤ). Here ℕ includes zero. The multiplier is natural, and the equality uses the actual integer indices defined above. No separate positive-multiplier condition or equality k = 1 forms part of the explicit conclusion.\n\n$$\n\\exists k\\in\\mathbb N,\\quad e_P(\\psi)=e_P(\\psi^{-1})\\,k\n$$",
+      "zh_Hans": "对任意自然数 N 及给定的次数为 N 的模型 M，记其域为 K。域 K 介于 ℚ 与 ℚ(t) 的一个代数闭包之间。模型含有元素 u,v ∈ K，满足 u 在 ℚ 上超越、u^N + v^N = 1、ℚ(u,v) = K，且 K/ℚ(u) 是次数为 N 的有限扩张。不对 N 另加数值条件，也不在这里断言模型存在。\n\n采用离散性假设：K 的每个处的赋值环都是离散赋值环。处 P 是 K 中包含 ℚ 的真赋值子环 O_P；允许所有这样的处，包括无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，并约定 ord_P(0) = 0。对 f ∈ K，实际的整数分歧指数 e_P(f) 定义如下：若 f ∈ O_P，令 m_f ∈ ℚ[X] 为 res_P(f) 在 ℚ 上的最小多项式，并令 e_P(f) = ord_P(m_f(f))；若 f ∉ O_P，则令 e_P(f) = −ord_P(f)。剩余域 κ(P) 是 ℚ 的有限扩张。\n\n设 ψ ∈ K 在 ℚ 上超越。此条件排除所有在 ℚ 上代数的元素，而不仅排除有理常数；特别地，ψ ≠ 0。\n\n设 x = (P,σ) 是含完整剩余域嵌入的代数点，其中 σ: κ(P) → ℚ̄ 是保单位元环嵌入，ℚ̄ 是固定的 ℚ 的代数闭包。嵌入的定义域是整个 κ(P)，而非仅为某一个剩余值生成的子域。对 f ∈ O_P，定义点值 x(f) = σ(res_P(f))。\n\n假设 ord_P(ψ) = 0。因此 ψ 是 O_P 中的单位，且 ψ 与 ψ⁻¹ 都属于 O_P。存在自然数 k，使 e_P(ψ) = e_P(ψ⁻¹) · (k : ℤ)。这里自然数包括零，等式使用前述实际的整数分歧指数。显式结论不另加乘数为正的条件，也不包含 k = 1。\n\n$$\n\\exists k\\in\\mathbb N,\\quad e_P(\\psi)=e_P(\\psi^{-1})\\,k\n$$",
+      "ja": "任意の自然数 N に対し、M を与えられた次数 N のモデルとし、その体を K とする。K は ℚ と ℚ(t) の代数閉包の間の中間体である。モデルは u,v ∈ K を含み、u は ℚ 上超越的で、u^N + v^N = 1、ℚ(u,v) = K を満たす。K/ℚ(u) は次数 N の有限拡大である。N に追加の数値条件は課さず、モデルの存在もここでは主張しない。\n\n離散性を仮定する。つまり K のすべての素点の付値環は離散付値環である。素点 P は ℚ を含む K の真の付値部分環 O_P であり、無限遠の素点も含めてすべてを対象とする。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。ord_P(0) = 0 と定める。f ∈ K の実際の整数値の分岐指数 e_P(f) を次のように定める。f ∈ O_P なら、m_f ∈ ℚ[X] を res_P(f) の ℚ 上の最小多項式として e_P(f) = ord_P(m_f(f)) とする。f ∉ O_P なら e_P(f) = −ord_P(f) とする。剰余体 κ(P) は ℚ の有限拡大である。\n\nψ ∈ K は ℚ 上超越的であるとする。この条件は有理定数だけでなく、ℚ 上代数的なすべての元を除外する。特に ψ ≠ 0 である。\n\nx = (P,σ) を剰余体全体の埋め込みを含む代数点とする。σ: κ(P) → ℚ̄ は単位元を保つ環の埋め込みであり、ℚ̄ は固定した ℚ の代数閉包である。埋め込みの定義域は κ(P) 全体であり、一つの剰余値で生成される部分体だけではない。f ∈ O_P に対して x(f) = σ(res_P(f)) と定める。\n\nord_P(ψ) = 0 と仮定する。したがって ψ は O_P の単元であり、ψ と ψ⁻¹ はともに O_P に属する。e_P(ψ) = e_P(ψ⁻¹) · (k : ℤ) を満たす自然数 k が存在する。ここで自然数には零を含む。等式は上で定義した実際の整数値の分岐指数についてのものである。明示された結論には、乗数が正であるという別の条件や k = 1 は含まれない。\n\n$$\n\\exists k\\in\\mathbb N,\\quad e_P(\\psi)=e_P(\\psi^{-1})\\,k\n$$",
+      "proof_notes": {
+        "en": "Set m equal to the minimal polynomial over ℚ of res_P(ψ). Write m^rev for its reversed polynomial. The source proof uses m^rev(ψ⁻¹) · ψ^(deg m) = m(ψ). The unit condition removes the power contribution to the order. Apply the regular-point polynomial-order theorem to ψ⁻¹. The resulting k is the root multiplicity of the image of m^rev at x(ψ⁻¹). The polynomials m and m^rev are nonzero, and ψ⁻¹ is transcendental over ℚ.",
+        "zh_Hans": "令 m 为 res_P(ψ) 在 ℚ 上的最小多项式，记其反转多项式为 m^rev。源证明使用 m^rev(ψ⁻¹) · ψ^(deg m) = m(ψ)，由单位条件消去幂因子的阶数贡献，再将正则处的多项式阶数定理用于 ψ⁻¹。所得 k 为反转多项式 m^rev 映到 ℚ̄ 后在 x(ψ⁻¹) 处的根的重数。m 和 m^rev 都非零，且 ψ⁻¹ 在 ℚ 上超越。",
+        "ja": "m を res_P(ψ) の ℚ 上の最小多項式とし、その反転多項式を m^rev とする。ソースの証明は m^rev(ψ⁻¹) · ψ^(deg m) = m(ψ) を使う。単元の条件によりべき乗の位数の寄与を消し、ψ⁻¹ に正則点の多項式の位数の定理を適用する。得られる k は、反転多項式 m^rev の像の x(ψ⁻¹) における根の重複度である。m と m^rev はともに非零であり、ψ⁻¹ は ℚ 上超越的である。"
+      },
+      "publication_statement_rule": "Only mathematical context, premises, conclusions, and scope boundaries occur in en/zh_Hans/ja. Proof process occurs only in proof_notes.",
+      "main_formula": "\\exists k\\in\\mathbb N,\\quad e_P(\\psi)=e_P(\\psi^{-1})\\,k",
+      "compiler_name": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.0.AbcAdaptation.Tripod.Fermat.Proper.noncritical_exists_ramIdx_eq_mul_inv",
+      "compiler_source_span": {
+        "startLine": 21,
+        "endLine": 41
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      x.P.ord ψ = 0 →\n        ∃ (k : ℕ),\n          AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ x.P =\n            AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ⁻¹ x.P * ↑k"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "line": 43,
+      "kind": "public_target_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) :\n    ramIdx M hDVR ψ⁻¹ x.P = ramIdx M hDVR ψ x.P",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": "> Theorem 2.5. (Belyi Maps Noncritical at Prescribed Points) Let X be a smooth, proper, connected curve over \\overline{\\mathbb{Q}} and S,T \\subseteq X(\\overline{\\mathbb{Q}}) finite sets of \\overline{\\mathbb{Q}}-rational points such that S \\cap T = \\emptyset. Then there exists a morphism \\phi : X \\to \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}} such that: (a) \\phi is unramified over \\mathbb{P}^{1}_{\\overline{\\mathbb{Q}}}\\backslash\\{0,1,\\infty\\}; (b) \\phi(S) \\subseteq \\{0,1,\\infty\\}; (c) we have \\phi(T) \\cap \\{0,1,\\infty\\} = \\emptyset. Moreover, if X, S, and T are defined over a number field F, then \\phi may be taken to be defined over F.\n\n— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp. 5–6.",
+      "en_mochizuki_quote_ledger_binding": {
+        "evidence": "mochizuki-quotation.md",
+        "sha256": "9d5952e5d2ff0195854da43d66d9bbc5f28771ac3ed1ea30b50bf41278b3e9be",
+        "role": "Geometric context only; the exact local order/index theorem comes from the separately pinned Lean source, not an identified numbered paper lemma."
+      },
+      "proof_status": "complete_source_proof_kernel_validated_in_unit; final axiom/type/platform gates recorded separately",
+      "en": "For every natural number N, let M be a supplied model of degree N, with field K. The field K lies between ℚ and an algebraic closure of ℚ(t). The model contains u,v ∈ K such that u is transcendental over ℚ, u^N + v^N = 1, and ℚ(u,v) = K. The extension K/ℚ(u) is finite of degree N. No additional numerical condition on N is imposed, and model existence is not asserted.\n\nAssume discreteness: every place of K has a discrete valuation ring. A place P is a proper valuation subring O_P of K that contains ℚ. All such places are allowed, including places at infinity. Let κ(P) be the entire residue field, and let res_P: O_P → κ(P) be the residue map. Let ord_P be the normalized integer order, with the convention ord_P(0) = 0. For f ∈ K, define the actual integer ramification index e_P(f) as follows. If f ∈ O_P, let m_f ∈ ℚ[X] be the minimal polynomial of res_P(f), and set e_P(f) = ord_P(m_f(f)). If f ∉ O_P, set e_P(f) = −ord_P(f). The residue field κ(P) is finite over ℚ.\n\nLet ψ ∈ K be transcendental over ℚ. This excludes all elements algebraic over ℚ, not only rational constants. In particular, ψ ≠ 0.\n\nLet x = (P,σ) be an algebraic point with an embedding of the entire residue field. Here σ: κ(P) → ℚ̄ is a unital ring embedding, and ℚ̄ is a fixed algebraic closure of ℚ. The embedding concerns κ(P), not only a subfield generated by one residue value. For f ∈ O_P, define x(f) = σ(res_P(f)).\n\nFor every such algebraic point x = (P,σ), the actual indices satisfy e_P(ψ⁻¹) = e_P(ψ). The statement covers all three cases: ord_P(ψ) > 0, ord_P(ψ) = 0, and ord_P(ψ) < 0. These are respectively a zero, a unit, and a pole of ψ at P. No separate positivity premise on the integer indices is required. The conclusion concerns index equality. It does not include a formula for inverse values or a Belyi selection assertion.\n\n$$\ne_P(\\psi^{-1})=e_P(\\psi)\n$$",
+      "zh_Hans": "对任意自然数 N 及给定的次数为 N 的模型 M，记其域为 K。域 K 介于 ℚ 与 ℚ(t) 的一个代数闭包之间。模型含有元素 u,v ∈ K，满足 u 在 ℚ 上超越、u^N + v^N = 1、ℚ(u,v) = K，且 K/ℚ(u) 是次数为 N 的有限扩张。不对 N 另加数值条件，也不在这里断言模型存在。\n\n采用离散性假设：K 的每个处的赋值环都是离散赋值环。处 P 是 K 中包含 ℚ 的真赋值子环 O_P；允许所有这样的处，包括无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，并约定 ord_P(0) = 0。对 f ∈ K，实际的整数分歧指数 e_P(f) 定义如下：若 f ∈ O_P，令 m_f ∈ ℚ[X] 为 res_P(f) 在 ℚ 上的最小多项式，并令 e_P(f) = ord_P(m_f(f))；若 f ∉ O_P，则令 e_P(f) = −ord_P(f)。剩余域 κ(P) 是 ℚ 的有限扩张。\n\n设 ψ ∈ K 在 ℚ 上超越。此条件排除所有在 ℚ 上代数的元素，而不仅排除有理常数；特别地，ψ ≠ 0。\n\n设 x = (P,σ) 是含完整剩余域嵌入的代数点，其中 σ: κ(P) → ℚ̄ 是保单位元环嵌入，ℚ̄ 是固定的 ℚ 的代数闭包。嵌入的定义域是整个 κ(P)，而非仅为某一个剩余值生成的子域。对 f ∈ O_P，定义点值 x(f) = σ(res_P(f))。\n\n对任意这样的含完整剩余域嵌入的代数点 x = (P,σ)，实际分歧指数满足 e_P(ψ⁻¹) = e_P(ψ)。声明涵盖 ord_P(ψ) > 0、ord_P(ψ) = 0 和 ord_P(ψ) < 0 三种情形，分别对应 ψ 在 P 处的零点、单位和极点。不另加整数分歧指数为正的前提。结论是分歧指数相等，不包含倒数的取值公式或 Belyi 选择断言。\n\n$$\ne_P(\\psi^{-1})=e_P(\\psi)\n$$",
+      "ja": "任意の自然数 N に対し、M を与えられた次数 N のモデルとし、その体を K とする。K は ℚ と ℚ(t) の代数閉包の間の中間体である。モデルは u,v ∈ K を含み、u は ℚ 上超越的で、u^N + v^N = 1、ℚ(u,v) = K を満たす。K/ℚ(u) は次数 N の有限拡大である。N に追加の数値条件は課さず、モデルの存在もここでは主張しない。\n\n離散性を仮定する。つまり K のすべての素点の付値環は離散付値環である。素点 P は ℚ を含む K の真の付値部分環 O_P であり、無限遠の素点も含めてすべてを対象とする。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。ord_P(0) = 0 と定める。f ∈ K の実際の整数値の分岐指数 e_P(f) を次のように定める。f ∈ O_P なら、m_f ∈ ℚ[X] を res_P(f) の ℚ 上の最小多項式として e_P(f) = ord_P(m_f(f)) とする。f ∉ O_P なら e_P(f) = −ord_P(f) とする。剰余体 κ(P) は ℚ の有限拡大である。\n\nψ ∈ K は ℚ 上超越的であるとする。この条件は有理定数だけでなく、ℚ 上代数的なすべての元を除外する。特に ψ ≠ 0 である。\n\nx = (P,σ) を剰余体全体の埋め込みを含む代数点とする。σ: κ(P) → ℚ̄ は単位元を保つ環の埋め込みであり、ℚ̄ は固定した ℚ の代数閉包である。埋め込みの定義域は κ(P) 全体であり、一つの剰余値で生成される部分体だけではない。f ∈ O_P に対して x(f) = σ(res_P(f)) と定める。\n\nこのような任意の代数点 x = (P,σ) について、実際の分岐指数は e_P(ψ⁻¹) = e_P(ψ) を満たす。ord_P(ψ) > 0、ord_P(ψ) = 0、ord_P(ψ) < 0 のすべての場合を含む。これらはそれぞれ、P における ψ の零点、単元、極の場合である。整数値の分岐指数が正であるという別の仮定は必要ない。結論は指数の等しさであり、逆数の値の公式や Belyi の選択の主張は含まない。\n\n$$\ne_P(\\psi^{-1})=e_P(\\psi)\n$$",
+      "proof_notes": {
+        "en": "The source proof splits by the sign of ord_P(ψ). At a pole of ψ, both indices equal −ord_P(ψ). At a zero of ψ, both indices equal ord_P(ψ). In the unit case, apply the private helper once to ψ and once to ψ⁻¹. It gives natural k₁,k₂ with e_P(ψ) = e_P(ψ⁻¹)k₁ and e_P(ψ⁻¹) = e_P(ψ)k₂. The imported positivity theorem gives strictly positive integer indices under the stated transcendence assumption. Thus k₁,k₂ ≥ 1, and integer arithmetic gives equality. Positivity is derived for these functions; it is not assumed for arbitrary functions.",
+        "zh_Hans": "源证明按 ord_P(ψ) 的符号分类。若 ψ 有极点，两个指数都等于 −ord_P(ψ)；若 ψ 有零点，两个指数都等于 ord_P(ψ)。在单位情形，分别对 ψ 和 ψ⁻¹ 使用私有辅助定理，得到自然数 k₁,k₂，满足 e_P(ψ) = e_P(ψ⁻¹)k₁ 与 e_P(ψ⁻¹) = e_P(ψ)k₂。在所述超越性假设下，导入的正性定理给出两个整数分歧指数都严格为正，因而 k₁,k₂ ≥ 1，整数算术随后给出指数相等。该正性针对这里的函数导出，并非对任意函数作出的假设。",
+        "ja": "ソースの証明は ord_P(ψ) の符号で場合分けする。ψ が極を持つ場合は両方の指数が −ord_P(ψ) に等しく、零点を持つ場合は ord_P(ψ) に等しい。単元の場合は非公開の補助定理を ψ と ψ⁻¹ に一度ずつ適用する。これにより e_P(ψ) = e_P(ψ⁻¹)k₁ と e_P(ψ⁻¹) = e_P(ψ)k₂ を満たす自然数 k₁,k₂ を得る。インポートされた正値性の定理は、ここでの超越性の仮定の下で、整数値の指数がともに厳密に正であることを与える。したがって k₁,k₂ ≥ 1 であり、整数の算術により指数の等しさを得る。この正値性は対象の関数について導かれ、任意の関数について仮定されるものではない。"
+      },
+      "publication_statement_rule": "Only mathematical context, premises, conclusions, and scope boundaries occur in en/zh_Hans/ja. Proof process occurs only in proof_notes.",
+      "main_formula": "e_P(\\psi^{-1})=e_P(\\psi)",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification",
+      "compiler_source_span": {
+        "startLine": 43,
+        "endLine": 78
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ⁻¹ x.P = AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ x.P"
+    }
+  ],
+  "context_lean_files_read": [
+    "Definitions/Def_FermatNoncriticalElementarySource.lean",
+    "Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+    "Definitions/Def_FermatProperCarrier.lean",
+    "Definitions/Def_FermatCurveFieldBasic.lean",
+    "Definitions/Def_FermatCurveFieldPlace.lean (order-definition excerpt)",
+    "Definitions/Def_FermatCurveFieldResidue.lean"
+  ],
+  "limits": [
+    "Static signatures are transcribed from source and section variables; they are not elaborated or kernel-checked output.",
+    "No claim of successful compilation, axiom audit, aggregate acceptance, model existence, geometric parent obligation completion, or paper-level equivalence is made.",
+    "Root must add any checked literature context separately from these blind readbacks.",
+    "Publication prose uses mathematical notation instead of Lean surface identifiers. Exact Lean identifiers remain in declaration and full_signature_static."
+  ],
+  "input_file_sha256": {
+    "Definitions/Def_FermatNoncriticalOrderSource.lean": "10eba556c77327cd61ef5a44c1e6e561b2199f484db7793ce3331c6611fbc96a",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean": "fd8a531d9dad526624fc7bbaffcce5d6bb0bb00cbf92438ab7638b68a5a24bbf",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean": "c6f5a9db44dc4e4fb0b5a7db31e701e0f6f4bb915cb1ded6be88f47104d0910e",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean": "ebf33c6f49f04fba24338b3870e64b11d0584d44738f0f18e9f1397ae7e3da74"
+  },
+  "publication_review": {
+    "proof_steps_separated": true,
+    "no_new_translation_decisions": true,
+    "all_six_self_contained": true,
+    "checked_original_quote_bound_separately": true
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "scope": "Update delivery scripts to record the actual accepted inverse proof dependency on the existing proved regular theorem",
+  "directory": "/tmp/p2m-order-proof-delivery-20261114",
+  "static_checks": {
+    "AST delivery_common.py": true,
+    "AST finalize.py": true,
+    "AST graph_completion.py": true,
+    "AST platform_publish.py": true,
+    "actual graph accepts unique inverse to regular dependency bound to accepted proof": true,
+    "actual graph preserves all existing reduction identities and legal status upgrades": true,
+    "actual graph counts 18/56/61 to 19/56/62 and frontier 31 to 28": true,
+    "actual target plus two ancestor state changes accepted": true,
+    "default path matches accepted proof and saved submit IDs": true,
+    "reject wrong_new_submission": true,
+    "reject wrong_new_child": true,
+    "reject missing_new_dependency": true,
+    "reject extra_new_dependency": true,
+    "reject old_reduction_identity_changed": true,
+    "reject old_sketch_downgrade": true,
+    "reject unrelated_theorem_closed": true,
+    "reject root_closed": true,
+    "reject wrong_proof_verdict": true,
+    "reject wrong_proof_parent": true,
+    "six readback compiler bindings still match": true,
+    "document limited scope and idempotence preserved": true
+  },
+  "entrypoints_executed": false,
+  "preflight_executed": false,
+  "pure_functions_checked": true,
+  "compiler_or_ci_invoked": false,
+  "platform_calls_performed": false,
+  "main_workspace_modified": false,
+  "cache_modified": false,
+  "git_mutated": false,
+  "publication_scope": {
+    "definition": "FermatNoncriticalOrderSource",
+    "existing_targets": [
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification"
+    ],
+    "new_theorem_nodes": 0,
+    "private": true,
+    "metadata_only_patches": [
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification"
+    ],
+    "formal_statement_changes": 0,
+    "root_must_remain_unproved": true
+  },
+  "runtime_prerequisites": {
+    "validation_schema": "README.md",
+    "compiler_receipts": "Main-agent accepted sourceproof-validation.json.compiler_checks",
+    "readbacks": "final-readbacks.json; six rows and exact input hashes confirmed statically",
+    "baseline": "Preserve supplied before graph/frontier/registry and five theorem metadata baselines"
+  },
+  "replay_rules": [
+    "Freeze exact payload/evidence intent before submission",
+    "Resume original publication job or verification submission",
+    "Refuse duplicate POST when intent exists without submission receipt",
+    "Reconcile metadata PATCH from exact desired server readback",
+    "Never overwrite baseline observations"
+  ],
+  "graph_checks": {
+    "actual_saved_graph_validated_read_only": true,
+    "allowed_observed_ancestor_propagation": [
+      "noncriticalElementaryCompositionRamification",
+      "noncriticalCompositionRamification"
+    ],
+    "allowed_sketch_transition": "Existing SKETCH_ACCEPTED -> ACCEPTED only when all actual children are Proved",
+    "existing_mathematical_node_set_preserved": true,
+    "existing_reduction_identities_preserved": true,
+    "added_existing_child_dependency": {
+      "parent": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification",
+      "parent_theorem_id": "43cb2aa6-3713-4807-b8f4-ec88454dbd2e",
+      "child": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+      "children": [
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint"
+      ],
+      "child_theorem_id": "25a37d47-eae0-4834-a91c-20094093c6d9",
+      "submission_id": "35b90120-f420-49b4-9557-3e185b3fbce5",
+      "status": "ACCEPTED",
+      "parent_status": "Proved",
+      "child_status": "Proved",
+      "proof_type": "prove",
+      "proof_receipt": ".local/adaptation/order-index-sourceproof-20261114/prove-noncriticalInverseRamification-verify-result.json"
+    },
+    "before_counts": {
+      "accepted_reductions": 18,
+      "published_children": 56,
+      "dependency_edges": 61
+    },
+    "after_counts": {
+      "accepted_reductions": 19,
+      "published_children": 56,
+      "dependency_edges": 62
+    },
+    "frontier_before": 31,
+    "frontier_after": 28,
+    "frontier_all_pages_fetched": true,
+    "count_deltas": {
+      "accepted_reductions": 1,
+      "published_children": 0,
+      "dependency_edges": 1,
+      "open_frontier": -3
+    },
+    "counts_from_observed_graph": true,
+    "actual_receipt_binding": {
+      "submit": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/order-index-sourceproof-20261114/prove-noncriticalInverseRamification-verify-submit.json",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/order-index-sourceproof-20261114/prove-noncriticalInverseRamification-verify-result.json",
+      "submission_id": "35b90120-f420-49b4-9557-3e185b3fbce5",
+      "status": "ACCEPTED"
+    },
+    "input_hashes": {
+      "root-graph-before.json": "f63409e9944b857f6dad60a606483ebc18d11479cbdcec62f1e32c07a39237de",
+      "root-graph-after.json": "8118cf8722449487efb8c7f77324e6b757a0a672f3d2ce3027f2da1a4e148ca9",
+      "root-frontier-before.json": "65f938868e1bee78ecc46622b0e9d4d6f26c9dcabba9bbcb151dec46493cfb20",
+      "root-frontier-after.json": "03aba180abbb343f6cd8f6904dc7e7861b5c405165a3ebfe9350e579dc78d658",
+      "prove-noncriticalInverseRamification-verify-submit.json": "1a494e9460ff20885ee4b3f23c9369d0f3db84ee8aa8945425ca02f7d763e2a3",
+      "prove-noncriticalInverseRamification-verify-result.json": "329706fdd3f02b4f9f765938810e12b7e82dbc27f19d52fd20181440c1352f28"
+    }
+  },
+  "local_finalization": {
+    "only_doc": "docs/Prove2Me适配状态.md",
+    "stage_scope": "Four delivered modules, own Checks, this unit evidence, platform registry and only the specified doc",
+    "unrelated_existing_index": "Refuse before registry/doc writes; preserve index",
+    "historical_units_refreshed": [
+      "noncritical_elementary_unit",
+      "noncritical_composition_unit"
+    ],
+    "source_notice": "source copyright, author notices and Apache-2.0 release headers preserved; no bundled upstream license-text claim",
+    "resource_source_and_degraded": "null if receipt omits them"
+  },
+  "limitations": [
+    "Read-only graph and pure-function checks do not execute finalization.",
+    "The parent completed the platform operations; this agent performed no platform request or workspace write."
+  ],
+  "files": {
+    "README.md": {
+      "sha256": "c4bccabc72e21d6895378d5ffb7f88c995b85c5b120902d3649ecaf5992471c3",
+      "lines": 143
+    },
+    "ancestor-metadata-preview.json": {
+      "sha256": "df36036fa45196bd595f8c6f1daadfd68d298216822cd8f9cc8ef7616ea2828b",
+      "lines": 22
+    },
+    "ancestor-metadata.diff": {
+      "sha256": "ab09a904fcd614e030c3f63c2d0831b5741cb6217bfc747f075a4bd24dbeb005",
+      "lines": 29
+    },
+    "delivery_common.py": {
+      "sha256": "8b2197d117248cd6ec7fb5ac81746b9439020f1bd3532aeac7cb6e87257911b9",
+      "lines": 377
+    },
+    "finalize.py": {
+      "sha256": "dfad3b1aa26db739ada4eb529a91902851b19ab324f9341df1eefc4c8ca061a7",
+      "lines": 241
+    },
+    "graph_completion.py": {
+      "sha256": "8fe93118e8b071f8a013fe4098f38e59c5fa3ab200ab6ad1abdb41e0f41220e6",
+      "lines": 58
+    },
+    "platform_publish.py": {
+      "sha256": "6e7a8bf2e04302ad68c1da643e8936ddc7e0e0af1dd04e5a3bbe4c1657bcd298",
+      "lines": 259
+    }
+  },
+  "continuation": "Use the saved after graph/frontier and compare_graphs to save observed-status-changes.json, then run finalize.py. No publisher rerun or API submission is required.",
+  "delivery_note": "Review diff blank context lines normalized for git diff --check; exact PATCH payloads unchanged."
+}

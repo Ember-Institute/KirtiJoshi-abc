@@ -1,0 +1,111 @@
+{
+  "production_ledger": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+  "production_ledger_sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+  "source_consumer_ledger": "source-consumer.json",
+  "scope": "Complete pinned source proof reuse; exact existing mathematical targets, model, normalization and owner preserved.",
+  "producer_consumers": [
+    {
+      "name": "Place.noncritical_ord_eq_zero_of_residue_ne_zero",
+      "file": "Definitions/Def_FermatNoncriticalOrderSource.lean",
+      "source": {
+        "reference": "reference/Belyi_CurveField_NoncriticalBasic.lean",
+        "start_marker": "theorem ord_eq_zero_of_residue_ne_zero",
+        "end_marker_exclusive": "theorem ord_pos_of_residue_eq_zero",
+        "line_start": 49,
+        "line_end_inclusive": 57,
+        "sha256": "289bd34909555af8bee0ac22c2e48ddac570b19e7e85f5954259f9ed090a83f7"
+      },
+      "adaptation": "Namespace and declaration prefix only; complete source proof.",
+      "consumers": [
+        "noncriticalPolynomialOrderAtRegularPoint nondivisible branch",
+        "noncriticalPolynomialOrderAtPole final order rewrite"
+      ]
+    },
+    {
+      "name": "Place.noncritical_residue_eq_zero_of_ord_pos",
+      "file": "Definitions/Def_FermatNoncriticalOrderSource.lean",
+      "source": {
+        "reference": "reference/Belyi_CurveField_NoncriticalBasic.lean",
+        "start_marker": "theorem residue_eq_zero_of_ord_pos",
+        "end_marker_exclusive": "end Place",
+        "line_start": 63,
+        "line_end_inclusive": 66,
+        "sha256": "5431ad5f09c7fcd65deef4d41f9c28b94b07a0e581e85a73319a353a68f03751"
+      },
+      "adaptation": "Namespace and declaration prefix only; complete source proof.",
+      "consumers": [
+        "noncriticalPolynomialOrderAtPole reverse-polynomial residue at the inverse zero"
+      ]
+    },
+    {
+      "name": "noncriticalPolynomialOrderAtRegularPoint",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "source": {
+        "reference": "reference/Belyi_CurveField_NoncriticalBasic.lean",
+        "start_marker": "theorem ord_aeval_eq",
+        "end_marker_exclusive": "/-! ### Values",
+        "line_start": 144,
+        "line_end_inclusive": 184,
+        "sha256": "6b1d37a5a8481450443ef879bd09b382b44515c1f65b46e4caa22677ea0812c2"
+      },
+      "adaptation": "Complete source strong induction. Rename the degree equation h to hdeg_def; retain local regularity h. Transport K, Qbar, helper prefixes, and the existing ramIdx bridge.",
+      "consumers": [
+        "noncritical_exists_ramIdx_eq_mul_inv at the actual inverse and actual reverse minpoly",
+        "existing noncriticalElementaryCompositionRamification polynomial regular branch"
+      ]
+    },
+    {
+      "name": "noncriticalPolynomialOrderAtPole",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "source": {
+        "reference": "reference/Belyi_CurveField_NoncriticalElem.lean",
+        "start_marker": "theorem ord_aeval_of_notMem",
+        "end_marker_exclusive": "/-- The elementary polynomial step",
+        "line_start": 69,
+        "line_end_inclusive": 89,
+        "sha256": "c029d00e39a0b62e02f75a798fcbb25fb24ad54e27476b1930bfb2ab62c34a88"
+      },
+      "adaptation": "Complete source pole proof. Transport K to M.K and local helper prefixes.",
+      "consumers": [
+        "existing noncriticalElementaryCompositionRamification polynomial pole branch"
+      ]
+    },
+    {
+      "name": "noncritical_exists_ramIdx_eq_mul_inv",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "visibility": "private theorem; not a Definitions declaration",
+      "source": {
+        "reference": "reference/Belyi_CurveField_NoncriticalElem.lean",
+        "start_marker": "theorem exists_ramIdx_eq_mul_inv",
+        "end_marker_exclusive": "/-- The inversion step",
+        "line_start": 162,
+        "line_end_inclusive": 177,
+        "sha256": "2248f62a32f7362a8f9dab85db33a1da18a8786467460e48f60028d7ad0757b6"
+      },
+      "adaptation": "Complete source proof; use the existing actual index bridge and the regular-order theorem once. The order-zero premise retains the model IsCurveField letI.",
+      "consumers": [
+        "noncriticalInverseRamification unit branch at ψ",
+        "noncriticalInverseRamification unit branch at ψ⁻¹"
+      ]
+    },
+    {
+      "name": "noncriticalInverseRamification",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "source": {
+        "reference": "reference/Belyi_CurveField_NoncriticalElem.lean",
+        "start_marker": "theorem inv_spec",
+        "end_marker_exclusive": "/-! ### Möbius transformations",
+        "line_start": 180,
+        "line_end_inclusive": 213,
+        "sha256": "36e55d2a8fa09d8775fa37b19f6e96f32cfe46c5312e76fcb7aacbde33e4c58e"
+      },
+      "selected_proof": "The second conjunct in all three order cases. Omit only the separate value conjunct, because this child target is exactly the index equality.",
+      "adaptation": "Use existing noncritical_ramIdx_of_positive_order with ord_eq_placeOrd, and existing ramIdx_of_notMem, for zero/pole formulas. Copy the unit branch arithmetic and its two helper calls.",
+      "consumers": [
+        "existing noncriticalElementaryCompositionRamification Möbius inversion step via inv_spec_of_ramIdx"
+      ]
+    }
+  ],
+  "new_global_assumptions": [],
+  "new_open_obligations": 0
+}

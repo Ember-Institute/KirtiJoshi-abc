@@ -1,0 +1,342 @@
+{
+  "status": "static_shape_audit_passed_kernel_validation_pending",
+  "scope": "Independent source, mathematical shape, target, type, consumer, provenance, and import audit.",
+  "draft_directory": "/tmp/p2m-elementary-order-sourceproof-next-20261114",
+  "current_workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "current_head": "c8148def6072155bc9ea2117dfbaddef89d18f7d",
+  "recorded_draft_input_head": "fe86dfab501fe261e59c72a99129677a211d6c68",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "verdict": {
+    "blocking_findings": [],
+    "mathematical_shape": "pass",
+    "source_fidelity": "pass",
+    "targets": "pass",
+    "consumer_closure": "pass",
+    "platform_import_shape": "pass",
+    "provenance": "pass",
+    "kernel_elaboration": "not_run",
+    "axiom_audit": "not_run"
+  },
+  "target_checks": [
+    {
+      "name": "noncriticalPolynomialOrderAtRegularPoint",
+      "byte_exact": true,
+      "draft_signature_sha256": "a95245814462b8e50634faa1b2b293320d5a1ca400732ddf00ecfd9959dde4f9",
+      "current_signature_sha256": "a95245814462b8e50634faa1b2b293320d5a1ca400732ddf00ecfd9959dde4f9",
+      "current_full_file_sha256": "ffad967a57fb91ee07450acd15a4479ed351aec5afeee0ff575e4a79008f4be9",
+      "matches_recorded_input_file": true,
+      "ledger_target_boundary_sha256": "14c35c57f05d47afb284e9e8fa8ceccee400ae5b48dfb808a1fcb5daf979dd36",
+      "ledger_target_hash_matches": true
+    },
+    {
+      "name": "noncriticalPolynomialOrderAtPole",
+      "byte_exact": true,
+      "draft_signature_sha256": "d52544fdec8990c97335ce8451ac4b1e5d52d146a4cc88e90b40ed2a83d00da3",
+      "current_signature_sha256": "d52544fdec8990c97335ce8451ac4b1e5d52d146a4cc88e90b40ed2a83d00da3",
+      "current_full_file_sha256": "d9150ed705acceb009ccd6ee8b8257b806fc4137f1eb54b8eb863df815bcced6",
+      "matches_recorded_input_file": true,
+      "ledger_target_boundary_sha256": "995292c6703405db3cd8a6cb0aff499ceec292ce1f9674b7ee2692c770509049",
+      "ledger_target_hash_matches": true
+    },
+    {
+      "name": "noncriticalInverseRamification",
+      "byte_exact": true,
+      "draft_signature_sha256": "9e6b685b56850a2fa9599d861fef5eaa4bf1c21ee6fccb69feadd0735d479477",
+      "current_signature_sha256": "9e6b685b56850a2fa9599d861fef5eaa4bf1c21ee6fccb69feadd0735d479477",
+      "current_full_file_sha256": "e1bb6ce12f87c9acb263f91427aee6e313b92c91e9964724e6eb894810ec1732",
+      "matches_recorded_input_file": true,
+      "ledger_target_boundary_sha256": "ec334e3d3ee90c326bd16b83c62aa0de4f6dd57aef16fb314ffdec35e51a99c5",
+      "ledger_target_hash_matches": true
+    }
+  ],
+  "reference_checks": [
+    {
+      "file": "reference/Belyi_CurveField_NoncriticalBasic.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBasic.lean",
+      "local_sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+      "remote_pinned_sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+      "byte_exact": true
+    },
+    {
+      "file": "reference/Belyi_CurveField_NoncriticalElem.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalElem.lean",
+      "local_sha256": "962260751d00333f25cfcd803626193c053d0a982fb6756823de1cc325f4b783",
+      "remote_pinned_sha256": "962260751d00333f25cfcd803626193c053d0a982fb6756823de1cc325f4b783",
+      "byte_exact": true
+    }
+  ],
+  "mathematical_checks": [
+    {
+      "check": "regular_actual_integer_order",
+      "result": "pass",
+      "evidence": "The target retains x.P.ord and ramIdx M hDVR. Both values lie in the existing integer order/index types."
+    },
+    {
+      "check": "regular_complete_strong_induction",
+      "result": "pass",
+      "evidence": "The proof uses Nat.strong_induction_on on g.natDegree. The divisible branch factors minpoly ℚ r and proves strict degree decrease."
+    },
+    {
+      "check": "regular_full_residue_minpoly_separability_embedding",
+      "result": "pass",
+      "evidence": "The residue r belongs to x.P.ResidueField. Integrality gives a nonzero positive-degree minpoly. Characteristic zero gives separability after mapping to Tripod.Qbar."
+    },
+    {
+      "check": "regular_every_embedding",
+      "result": "pass",
+      "evidence": "The proof transports evaluation through the given x.σ.toRatAlgHom and uses x.σ.injective. It does not select an embedding."
+    },
+    {
+      "check": "regular_nondivisible_branch",
+      "result": "pass",
+      "evidence": "minpoly.dvd detects nonzero residue evaluation. Injectivity transfers this fact to Tripod.Qbar. The consumed order-zero helper proves the actual order."
+    },
+    {
+      "check": "constant_field_condition",
+      "result": "pass",
+      "evidence": "M.K remains the actual intermediate field. IsCurveField only requires a finite extension of ℚ⟮t⟯. No premise identifies the constant field with ℚ."
+    },
+    {
+      "check": "pole_complete_reverse_argument",
+      "result": "pass",
+      "evidence": "The proof retains eval₂_reverse_mul_pow over algebraMap ℚ M.K, inverse positive order, zero inverse residue, and nonzero leading coefficient."
+    },
+    {
+      "check": "pole_constants_and_zero_guards",
+      "result": "pass",
+      "evidence": "The theorem allows every nonzero polynomial, including nonzero constants. It excludes the zero polynomial. Transcendence proves ψ ≠ 0 before inversion and order multiplication."
+    },
+    {
+      "check": "inverse_private_integer_multiple_helper",
+      "result": "pass",
+      "evidence": "The helper is private in the inverse theorem file. It returns a natural multiplier cast to ℤ. Its actual residue minpoly is reversed and evaluated at ψ⁻¹."
+    },
+    {
+      "check": "inverse_helper_actual_regular_consumer",
+      "result": "pass",
+      "evidence": "The helper calls noncriticalPolynomialOrderAtRegularPoint once at ψ⁻¹ and m.reverse. It proves reverse nonvanishing before that call."
+    },
+    {
+      "check": "inverse_zero_unit_pole_cases",
+      "result": "pass",
+      "evidence": "lt_trichotomy splits the actual integer order into negative, zero, and positive cases. The outer branches use actual zero/pole index formulas through ord_eq_placeOrd."
+    },
+    {
+      "check": "inverse_unit_helper_twice_and_positivity",
+      "result": "pass",
+      "evidence": "The unit branch calls the private helper at ψ and ψ⁻¹. Existing positivity forces both multipliers to be at least one. The two integer equations then imply equality."
+    },
+    {
+      "check": "source_transport_to_model_field",
+      "result": "pass",
+      "evidence": "The reverse identities use algebraMap ℚ M.K. Source K, φ, hx, Qbar, helper names, and ramIdx bridges receive only the documented transports."
+    },
+    {
+      "check": "full_source_scope",
+      "result": "pass",
+      "evidence": "The regular, pole, and private multiple proofs are complete transported source bodies. The inversion target uses every index branch of inv_spec. It omits only the separate value conjunct."
+    },
+    {
+      "check": "no_new_mathematics_or_assumed_conclusion",
+      "result": "pass",
+      "evidence": "The drafts add two source Definitions helpers and one private source theorem helper. They add no mathematical Open node, new assumption, Dlaw parameter, or conclusion premise."
+    }
+  ],
+  "proof_body_evidence": [
+    {
+      "producer": "regular_order",
+      "complete_transported_body_exact": true
+    },
+    {
+      "producer": "pole_order",
+      "complete_transported_body_exact": true
+    },
+    {
+      "producer": "private_inverse_multiple_helper",
+      "complete_transported_body_exact": true
+    },
+    {
+      "producer": "noncritical_ord_eq_zero_of_residue_ne_zero",
+      "complete_body_exact": true
+    },
+    {
+      "producer": "noncritical_residue_eq_zero_of_ord_pos",
+      "complete_body_exact": true
+    },
+    {
+      "producer": "inverse_unit_branch",
+      "transported_body_exact_modulo_indentation": true
+    }
+  ],
+  "source_span_checks": [
+    {
+      "producer": "Place.noncritical_ord_eq_zero_of_residue_ne_zero",
+      "source_span_hash_matches": true
+    },
+    {
+      "producer": "Place.noncritical_residue_eq_zero_of_ord_pos",
+      "source_span_hash_matches": true
+    },
+    {
+      "producer": "noncriticalPolynomialOrderAtRegularPoint",
+      "source_span_hash_matches": true
+    },
+    {
+      "producer": "noncriticalPolynomialOrderAtPole",
+      "source_span_hash_matches": true
+    },
+    {
+      "producer": "noncritical_exists_ramIdx_eq_mul_inv",
+      "source_span_hash_matches": true
+    },
+    {
+      "producer": "noncriticalInverseRamification",
+      "source_span_hash_matches": true
+    }
+  ],
+  "producer_consumers": [
+    {
+      "producer": "Place.noncritical_ord_eq_zero_of_residue_ne_zero",
+      "consumers": [
+        "regular nondivisible branch",
+        "pole final order rewrite"
+      ]
+    },
+    {
+      "producer": "Place.noncritical_residue_eq_zero_of_ord_pos",
+      "consumers": [
+        "pole reverse-polynomial residue proof"
+      ]
+    },
+    {
+      "producer": "noncriticalPolynomialOrderAtRegularPoint",
+      "consumers": [
+        "private inverse multiple helper",
+        "current elementary polynomial regular branch"
+      ]
+    },
+    {
+      "producer": "noncriticalPolynomialOrderAtPole",
+      "consumers": [
+        "current elementary polynomial pole branch"
+      ]
+    },
+    {
+      "producer": "private noncritical_exists_ramIdx_eq_mul_inv",
+      "consumers": [
+        "inverse unit branch at ψ",
+        "inverse unit branch at ψ⁻¹"
+      ]
+    },
+    {
+      "producer": "noncriticalInverseRamification",
+      "consumers": [
+        "current elementary Möbius inversion step through inv_spec_of_ramIdx"
+      ]
+    }
+  ],
+  "import_checks": {
+    "local_module_count": 15,
+    "cycles": [],
+    "forbidden_imports": [],
+    "definitions_to_theorems_imports": [],
+    "recorded_closure_hash_changes": [],
+    "declaration_risk_tokens": [],
+    "Dlaw_occurrences": 0
+  },
+  "platform_import_requirements": {
+    "Definitions_imports_Theorems": false,
+    "local_import_cycle": false,
+    "forbidden_project_import": false,
+    "umbrella_Mathlib_import": false,
+    "theorem_dependency": "The inverse theorem imports the regular theorem. No reverse dependency exists. The private helper remains outside Definitions.",
+    "required_project_compilation_and_axiom_checks": "Not run. This static report does not replace the project acceptance checks."
+  },
+  "license_and_integrity": {
+    "source_header_first_four_lines_preserved": {
+      "Definitions/Def_FermatNoncriticalOrderSource.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean": true
+    },
+    "license_files_created_in_draft": [],
+    "fabricated_upstream_license_file_found": false,
+    "manifest_checks": [
+      {
+        "path": "Definitions/Def_FermatNoncriticalOrderSource.lean",
+        "matches": true
+      },
+      {
+        "path": "README.md",
+        "matches": true
+      },
+      {
+        "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+        "matches": true
+      },
+      {
+        "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+        "matches": true
+      },
+      {
+        "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+        "matches": true
+      },
+      {
+        "path": "finalize.py",
+        "matches": true
+      },
+      {
+        "path": "prepare.py",
+        "matches": true
+      },
+      {
+        "path": "reference/Belyi_CurveField_NoncriticalBasic.lean",
+        "matches": true
+      },
+      {
+        "path": "reference/Belyi_CurveField_NoncriticalElem.lean",
+        "matches": true
+      },
+      {
+        "path": "source-consumer.json",
+        "matches": true
+      },
+      {
+        "path": "static-review.json",
+        "matches": true
+      }
+    ]
+  },
+  "notes": [
+    {
+      "severity": "information",
+      "topic": "input_head",
+      "detail": "The recorded input HEAD predates current main. All three current target files retain the recorded full-file hashes. All 15 local closure hashes retain the recorded values."
+    },
+    {
+      "severity": "information",
+      "topic": "static_limits",
+      "detail": "Namespace resolution, local instance synthesis, tactic elaboration, and allowed kernel axioms remain unverified. No static concern requires a source change."
+    },
+    {
+      "severity": "information",
+      "topic": "source_proof_scope",
+      "detail": "The inverse theorem reuses the complete index proof of inv_spec. It does not reproduce the unrelated value conjunct."
+    }
+  ],
+  "actions": {
+    "compiler_run": false,
+    "MCP_CI_run": false,
+    "workspace_edits": false,
+    "cache_edits": false,
+    "publish_or_push": false,
+    "writes_limited_to": "/tmp/p2m-order-sourceproof-shape-20261114"
+  },
+  "evidence_files": [
+    "computed.json",
+    "imports.json",
+    "body-evidence.json",
+    "check_body.py"
+  ]
+}

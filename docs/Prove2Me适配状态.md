@@ -53,17 +53,11 @@
 
 `Proper.noncriticalRegularRamifiedDerivNotMem` 仍需移植固定来源 `CurveField/NoncriticalFinite.exists_derivAlong_notMem`：对任意实际超越函数 ψ 和包含 ψ 的任意实际真赋值处 P，若原有实际分歧指数大于 1，则存在同一局部环中的元素 s，使具体构造的 `CurveDeriv.derivAlong ψ s` 不在该局部环中。必须通过实际局部参数的导数阶数／链式法则完成此局部障碍证明，保留全部剩余域和赋值处；不得新增给定导子、导数规律、非零剩余值或坐标特化假设。该子义务不陈述有限性。
 
-`Proper.noncriticalPolynomialOrderAtRegularPoint` 仍需移植固定来源 `CurveField/NoncriticalBasic.ord_aeval_eq`：对任意实际模型 M、显式离散性证明、实际超越函数 ψ、全部 `QbarPoint M.K` 及其完整剩余域嵌入 x.σ、任意 ψ 在 x.P 正则的证明和任意非零有理多项式 g，证明实际标准化阶 `x.P.ord (aeval ψ g)` 等于原有实际 `ramIdx M hDVR ψ x.P` 乘以 g 映入完整 ℚ̄ 后在实际 `x.eval ψ h` 处的根重数（强制转为整数）。不得改为有理剩余点、所选嵌入或自由阶函数。此 Open 子义务由来源 `poly_spec` 的正则分支实际消费：使用实际 `p(ψ)` 剩余值的完整剩余域最小多项式及可分复合根重数；原有 `noncriticalElementaryCompositionRamification` 仅获归约验收，尚未闭合。
-
-`Proper.noncriticalPolynomialOrderAtPole` 仍需移植固定来源 `CurveField/NoncriticalElem.ord_aeval_of_notMem`：对每个实际超越函数 ψ、全部实际赋值处 P（包括无穷处）、ψ 不属于实际赋值环的每个极点和任意非零有理多项式 p（包括常数），证明实际标准化阶 `P.ord (aeval ψ p)` 精确等于 `p.natDegree * P.ord ψ`。来源 `poly_spec` 的极点分支实际使用此式及 ψ 的严格负阶，证明正次数 p(ψ) 仍为极点，并计算双方实际分歧指数。不能删去极点、以有限坐标替代真赋值处或预设多项式求值阶定律。此数学子义务仍 Open。
-
-`Proper.noncriticalInverseRamification` 仍需移植固定来源 `CurveField/NoncriticalElem.inv_spec` 的精确第二合取式：对任意实际超越函数 ψ 及全部完整代数点 x，证明实际 `ramIdx M hDVR ψ⁻¹ x.P = ramIdx M hDVR ψ x.P`；点上零值、单位和极点三种情形均保留，不增加非零剩余值前提。此式在实际非仿射 Möbius 分支作用于 `cψ+d`，作为条件性 `inv_spec_of_ramIdx` 的精确子前提；来源值证明及实际仿射／求逆／仿射组合、`poly_spec`、`mob_spec` 和 `applyK_spec` 构造子组合保持父目标原样，父节点仅 SKETCH_ACCEPTED，三个子义务仍 Open。既有 `noncritical_eval_zero` 已有来源中的真实源码消费链 `noncritical_eval_inv → inv_spec_of_ramIdx → mob_spec → 原有父节点`；这不关闭上述逆指数义务或相邻有限分歧／P¹／noncriticalSelection 义务。
-
 `Proper.noncriticalP1Normalize` 仍需移植固定来源 `Reduction.normalize_step`：对完整 Galois 稳定的有限代数点集和其外的有理点，给出实际有理初等映射及单位圆盘中的新点集，把区分点归一化为 9。必须保留完整 Galois 稳定性、所有次数上界以及次数至少为 2 时的最高次数计数不增；具体预复合延续须同时保留原点集像、区分点不落入 `{0,1,∞}` 和所有实际分歧点的像条件。无穷点不能被省略。
 
 `Proper.noncriticalP1Rational` 仍需移植固定来源 `Reduction.rational_step`：当单位圆盘内有限代数点的有理最小多项式次数均不超过 1 时，构造同一个实际有理 Möbius 变换／正次数有理多项式列表，使含无穷点的整个分支集落入 `{0,1,∞}`、有理点 9 的像在其外，并覆盖所有实际分歧点。不能以任意点函数或额外未审计的规律字段替代该构造。
 
-`Proper.noncriticalP1Minpoly` 仍需移植固定来源 `Reduction.minpoly_step`：对单位圆盘内完整 Galois 稳定、次数至多 d 且含实际次数 d≥2 点的有限集，应用该点的实际有理最小多项式，给出完整 Galois 稳定的新集和其外的有理区分点；保持次数上界，并把最高次数计数上界从 n+1 降到 n。实际初等映射的预复合延续须保留含无穷点的全部三项非临界 Belyi 条件。`noncriticalP1Zero` 已按固定来源完成次数／计数上界的嵌套归纳组合及零点适配；其归约验收只登记这三个 Open 子义务，不关闭它们，也不关闭相邻的分歧有限性、复合分歧公式或既有 `noncriticalSelection` 数学义务。
+`Proper.noncriticalP1Minpoly` 仍需移植固定来源 `Reduction.minpoly_step`：对单位圆盘内完整 Galois 稳定、次数至多 d 且含实际次数 d≥2 点的有限集，应用该点的实际有理最小多项式，给出完整 Galois 稳定的新集和其外的有理区分点；保持次数上界，并把最高次数计数上界从 n+1 降到 n。实际初等映射的预复合延续须保留含无穷点的全部三项非临界 Belyi 条件。`noncriticalP1Zero` 已按固定来源完成次数／计数上界的嵌套归纳组合及零点适配；其归约验收只登记这三个 Open 子义务，不关闭它们，也不关闭相邻的分歧有限性或既有 `noncriticalSelection` 数学义务。
 
 `Proper.canonicalDivisorExists` 仍需证明 `du` 除子的有限支撑；`Proper.planeAdjunctionExists` 仍需证明实际典范除子与坐标超平面除子之间的具体伴随关系。应逐处追踪分歧系数，并保留原来的实际 `K`、`H` 和 `J` 契约；不能把预先定义的数字当作除子身份或次数等式。`Proper.cuspGeneratorsExists` 还需给出尖点补集的实际坐标环有限生成性，并包含所需的三个三支点函数。
 

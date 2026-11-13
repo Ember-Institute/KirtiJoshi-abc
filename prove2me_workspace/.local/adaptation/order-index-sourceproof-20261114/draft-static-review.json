@@ -1,0 +1,195 @@
+{
+  "status": "static_review_passed_uncompiled_draft",
+  "workspace_head": "fe86dfab501fe261e59c72a99129677a211d6c68",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "target_checks": [
+    {
+      "name": "noncriticalPolynomialOrderAtRegularPoint",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "input_file_sha256": "ffad967a57fb91ee07450acd15a4479ed351aec5afeee0ff575e4a79008f4be9",
+      "target_sha256": "14c35c57f05d47afb284e9e8fa8ceccee400ae5b48dfb808a1fcb5daf979dd36",
+      "target_preserved_byte_exact": true
+    },
+    {
+      "name": "noncriticalPolynomialOrderAtPole",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "input_file_sha256": "d9150ed705acceb009ccd6ee8b8257b806fc4137f1eb54b8eb863df815bcced6",
+      "target_sha256": "995292c6703405db3cd8a6cb0aff499ceec292ce1f9674b7ee2692c770509049",
+      "target_preserved_byte_exact": true
+    },
+    {
+      "name": "noncriticalInverseRamification",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "input_file_sha256": "e1bb6ce12f87c9acb263f91427aee6e313b92c91e9964724e6eb894810ec1732",
+      "target_sha256": "ec334e3d3ee90c326bd16b83c62aa0de4f6dd57aef16fb314ffdec35e51a99c5",
+      "target_preserved_byte_exact": true
+    }
+  ],
+  "draft_file_count": 4,
+  "no_sorry_admit_axiom_unsafe_in_drafts": true,
+  "no_heartbeat_override": true,
+  "all_new_producers_have_actual_consumers": true,
+  "inverse_helper_calls_in_unit_branch": 2,
+  "Definitions_imports_no_Theorems": true,
+  "local_import_closure_has_no_forbidden_project_imports": true,
+  "local_import_closure": {
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean": {
+      "sha256": "fd8a531d9dad526624fc7bbaffcce5d6bb0bb00cbf92438ab7638b68a5a24bbf",
+      "source": "draft",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource"
+      ]
+    },
+    "Definitions/Def_FermatNoncriticalOrderSource.lean": {
+      "sha256": "10eba556c77327cd61ef5a44c1e6e561b2199f484db7793ce3331c6611fbc96a",
+      "source": "draft",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalRamificationPositive",
+        "Mathlib.Tactic.Push"
+      ]
+    },
+    "Definitions/Def_FermatNoncriticalRamificationPositive.lean": {
+      "sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalFunctions",
+        "Mathlib.Algebra.Algebra.Hom.Rat"
+      ]
+    },
+    "Definitions/Def_FermatNoncriticalFunctions.lean": {
+      "sha256": "bb10b218db0d1837c23da15cfe61ea2eac9a5e2d72612c231bcb4cec8f1e07e4",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldResidue",
+        "Definitions.Def_FermatCurveFieldZerosPoles",
+        "Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure",
+        "Mathlib.FieldTheory.Minpoly.Field",
+        "Mathlib.Algebra.Polynomial.Roots"
+      ]
+    },
+    "Definitions/Def_FermatCurveFieldZerosPoles.lean": {
+      "sha256": "884d1811c768d63b8a723ae74e7cb826254651cef5ae5e504bcf3c22ac8c3f29",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldPlace",
+        "Mathlib.RingTheory.DedekindDomain.Factorization"
+      ]
+    },
+    "Definitions/Def_FermatCurveFieldPlace.lean": {
+      "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldChart",
+        "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing"
+      ]
+    },
+    "Definitions/Def_FermatCurveFieldChart.lean": {
+      "sha256": "90aa4d97587e8ce3ade8cd92b8a566028a4d7ba53a381a023d28f2375fa4a8be",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldBasic",
+        "Mathlib.Algebra.Polynomial.FieldDivision",
+        "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+        "Mathlib.RingTheory.DedekindDomain.PID",
+        "Mathlib.RingTheory.Valuation.LocalSubring"
+      ]
+    },
+    "Definitions/Def_FermatCurveFieldBasic.lean": {
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_FermatProperCarrier",
+        "Mathlib.Algebra.Algebra.Rat",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+        "Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure",
+        "Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis"
+      ]
+    },
+    "Definitions/Def_FermatProperCarrier.lean": {
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_TripodFermatInputs",
+        "Mathlib.FieldTheory.RatFunc.Basic",
+        "Mathlib.Algebra.Algebra.Hom.Rat",
+        "Mathlib.RingTheory.Valuation.ValuationSubring",
+        "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing",
+        "Mathlib.Data.Finsupp.Basic",
+        "Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure",
+        "Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis"
+      ]
+    },
+    "Definitions/Def_TripodFermatInputs.lean": {
+      "sha256": "099c3a519d2301b4df515a6503ffd62649d62074716e611b6eb9e360a5b5093a",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_AbcTripod",
+        "Mathlib.Data.Fin.VecNotation"
+      ]
+    },
+    "Definitions/Def_AbcTripod.lean": {
+      "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+      "source": "workspace",
+      "imports": [
+        "Mathlib.FieldTheory.AlgebraicClosure",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+        "Mathlib.NumberTheory.Height.NumberField",
+        "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+        "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "Mathlib.RingTheory.Radical.NatInt"
+      ]
+    },
+    "Definitions/Def_FermatCurveFieldResidue.lean": {
+      "sha256": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldPlace",
+        "Mathlib.RingTheory.Jacobson.Ring"
+      ]
+    },
+    "Definitions/Def_FermatNoncriticalElementarySource.lean": {
+      "sha256": "aef871215e64e6d65d9ed46c8eeeefe26b0fd389e892b573bbcc47decaf258c6",
+      "source": "workspace",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalRamificationPositive",
+        "Mathlib.Algebra.Polynomial.Derivative",
+        "Mathlib.FieldTheory.Separable",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.LinearCombination",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean": {
+      "sha256": "c6f5a9db44dc4e4fb0b5a7db31e701e0f6f4bb915cb1ded6be88f47104d0910e",
+      "source": "draft",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource",
+        "Mathlib.Algebra.Polynomial.Reverse"
+      ]
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean": {
+      "sha256": "ebf33c6f49f04fba24338b3870e64b11d0584d44738f0f18e9f1397ae7e3da74",
+      "source": "draft",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource",
+        "Mathlib.Algebra.Polynomial.Reverse",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint",
+        "Mathlib.Tactic.Linarith"
+      ]
+    }
+  },
+  "compiler_run": false,
+  "MCP_CI_run": false,
+  "repository_edits": false,
+  "cache_edits": false,
+  "kernel_validation": "pending root MCP-CI and assumption audits",
+  "whitespace_check": "all four Lean drafts have final newline and no trailing whitespace"
+}

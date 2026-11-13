@@ -1,0 +1,183 @@
+{
+  "schema": "lean_blind_trilingual_readback.v1",
+  "scope": {
+    "input_root": "/tmp/p2m-elementary-order-sourceproof-next-20261114",
+    "read_only_source_directories": [
+      "Definitions",
+      "Theorems"
+    ],
+    "readback_method": "Independent static reading of the four Lean source files and necessary imported Lean definitions in the main prove2me_workspace. Author README, ledger, JSON reviews, and non-Lean prose were not read. No compiler, MCP-CI, network, or publication was used.",
+    "status": "source_proofs_present_not_compiled",
+    "source_quotes": null,
+    "literature_context": "Not assessed. Root may attach separately checked Shinichi Mochizuki context; this Lean-only readback supplies no source quotation or claim of paper equivalence."
+  },
+  "inventory": {
+    "lean_files": 4,
+    "declaration_rows": 6,
+    "public_declarations": 5,
+    "private_declarations": 1,
+    "public_helper_theorems_in_Definitions": 2,
+    "public_target_theorems_in_Theorems": 3,
+    "private_helper_theorems_in_Theorems": 1,
+    "definitions": 0,
+    "axiom_declarations": 0,
+    "sorry_tokens_in_code": 0,
+    "source_proofs_with_by": 6,
+    "new_target_statements": 0,
+    "existing_targets_with_full_source_proofs": 3,
+    "import_directives": 12
+  },
+  "files": [
+    {
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Definitions/Def_FermatNoncriticalOrderSource.lean",
+      "sha256": "10eba556c77327cd61ef5a44c1e6e561b2199f484db7793ce3331c6611fbc96a",
+      "line_count": 36,
+      "imports": [
+        "Definitions.Def_FermatNoncriticalRamificationPositive",
+        "Mathlib.Tactic.Push"
+      ],
+      "declarations": 2,
+      "has_sorry_token": false,
+      "has_axiom_declaration": false
+    },
+    {
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "sha256": "ebf33c6f49f04fba24338b3870e64b11d0584d44738f0f18e9f1397ae7e3da74",
+      "line_count": 80,
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource",
+        "Mathlib.Algebra.Polynomial.Reverse",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "declarations": 2,
+      "has_sorry_token": false,
+      "has_axiom_declaration": false
+    },
+    {
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "sha256": "c6f5a9db44dc4e4fb0b5a7db31e701e0f6f4bb915cb1ded6be88f47104d0910e",
+      "line_count": 45,
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource",
+        "Mathlib.Algebra.Polynomial.Reverse"
+      ],
+      "declarations": 1,
+      "has_sorry_token": false,
+      "has_axiom_declaration": false
+    },
+    {
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "sha256": "fd8a531d9dad526624fc7bbaffcce5d6bb0bb00cbf92438ab7638b68a5a24bbf",
+      "line_count": 63,
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalOrderSource"
+      ],
+      "declarations": 1,
+      "has_sorry_token": false,
+      "has_axiom_declaration": false
+    }
+  ],
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_eq_zero_of_residue_ne_zero",
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Definitions/Def_FermatNoncriticalOrderSource.lean",
+      "line": 20,
+      "kind": "public_helper_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_ord_eq_zero_of_residue_ne_zero {K : Type*} [Field K] [CharZero K] [IsCurveField K] (P : Place K) {y : K} (hy : y ∈ P.1)\n    (h : P.residue ⟨y, hy⟩ ≠ 0) : P.ord y = 0",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": null,
+      "en_mochizuki_quote_ledger_binding": null,
+      "proof_status": "complete_source_proof_present_not_compiled_in_this_readback",
+      "en": "Let K be a characteristic-zero field with a curve-field structure: K is a finite extension of ℚ(t) for some t transcendental over ℚ. Let P be any place, namely a proper valuation subring O_P of K containing ℚ, including a possible place at infinity. Let κ(P) be its full residue field and res_P: O_P → κ(P) its residue map. Use the derived normalized integer order ord_P, with ord_P(0) = 0. For every y ∈ K, if hy: y ∈ O_P and res_P(⟨y,hy⟩) ≠ 0, then ord_P(y) = 0. There is no separate nonzero hypothesis on y: nonzero residue implies it. The source proof combines nonnegative order from membership with the equivalence between positive order of a nonzero element and membership in the maximal ideal.",
+      "zh_Hans": "设 K 是具有曲线函数域结构的特征零域，即对某个在 ℚ 上超越的 t，K 是 ℚ(t) 的有限扩张。设 P 是任意处，即 K 中包含 ℚ 的真赋值子环 O_P，也允许无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射；使用由此导出的规范化整数阶数 ord_P，并约定 ord_P(0) = 0。对任意 y ∈ K，若 hy: y ∈ O_P 且 res_P(⟨y,hy⟩) ≠ 0，则 ord_P(y) = 0。没有单独要求 y 非零，因为剩余值非零已经推出这一点。源证明将环成员关系给出的非负阶数，与非零元素的正阶数等价于属于极大理想这一事实结合。",
+      "ja": "K を曲線の関数体の構造を持つ標数零の体とする。すなわち、ある ℚ 上超越的な t に対して K は ℚ(t) の有限拡大である。P は任意の素点、つまり ℚ を含む K の真の付値部分環 O_P とし、無限遠の素点も許す。κ(P) は剰余体全体、res_P: O_P → κ(P) は剰余写像とする。導かれた正規化整数値の位数 ord_P を使い、ord_P(0) = 0 と定める。任意の y ∈ K について、hy: y ∈ O_P かつ res_P(⟨y,hy⟩) ≠ 0 なら ord_P(y) = 0 である。y ≠ 0 という別の仮定はなく、剰余値が非零であることから従う。ソースの証明は、環への所属から得られる非負の位数と、非零の元について位数が正であることと極大イデアルへの所属が同値であることを用いる。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_eq_zero_of_ord_pos",
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Definitions/Def_FermatNoncriticalOrderSource.lean",
+      "line": 30,
+      "kind": "public_helper_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.Place.noncritical_residue_eq_zero_of_ord_pos {K : Type*} [Field K] [CharZero K] [IsCurveField K] (P : Place K) {y : K} (hy : 0 < P.ord y) :\n    P.residue ⟨y, P.mem_of_ord_nonneg hy.le⟩ = 0",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": null,
+      "en_mochizuki_quote_ledger_binding": null,
+      "proof_status": "complete_source_proof_present_not_compiled_in_this_readback",
+      "en": "Let K be a characteristic-zero curve field, meaning a finite extension of ℚ(t) for some element t transcendental over ℚ. Let P be any place: a proper valuation subring O_P containing ℚ, with full residue field κ(P) and residue map res_P: O_P → κ(P). Infinity places are allowed. Write ord_P for the derived normalized integer order, with ord_P(0) = 0. For every y ∈ K, if 0 < ord_P(y), then y ∈ O_P (using nonnegative order) and res_P(⟨y, P.mem_of_ord_nonneg hy.le⟩) = 0. Membership is constructed inside the conclusion rather than supplied as a separate premise. Positive order also implies y ≠ 0; the source proof uses membership in the maximal ideal.",
+      "zh_Hans": "设 K 是特征零曲线函数域，即对某个在 ℚ 上超越的元素 t，K 是 ℚ(t) 的有限扩张。设 P 是任意处，即包含 ℚ 的真赋值子环 O_P，完整的剩余域为 κ(P)，剩余映射为 res_P: O_P → κ(P)；允许无穷远处。记 ord_P 为由此导出的规范化整数阶数，并约定 ord_P(0) = 0。对任意 y ∈ K，若 0 < ord_P(y)，则由阶数非负得到 y ∈ O_P，且 res_P(⟨y, P.mem_of_ord_nonneg hy.le⟩) = 0。属于赋值环的证明在结论中构造，并非额外前提。正阶数还推出 y ≠ 0；源证明使用该元素属于极大理想。",
+      "ja": "K を標数零の曲線の関数体、すなわち、ある ℚ 上超越的な元 t に対する ℚ(t) の有限拡大とする。P は任意の素点、つまり ℚ を含む真の付値部分環 O_P とし、剰余体全体を κ(P)、剰余写像を res_P: O_P → κ(P) とする。無限遠の素点も許す。導かれた正規化整数値の位数を ord_P とし、ord_P(0) = 0 と定める。任意の y ∈ K について 0 < ord_P(y) なら、位数が非負であることから y ∈ O_P が得られ、res_P(⟨y, P.mem_of_ord_nonneg hy.le⟩) = 0 となる。付値環への所属の証明は結論の内部で構成され、別の仮定ではない。正の位数から y ≠ 0 も従い、ソースの証明は極大イデアルへの所属を使う。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "line": 18,
+      "kind": "public_target_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) (h : ψ ∈ x.P.1) {g : ℚ[X]} (hg : g ≠ 0) :\n    letI : IsCurveField M.K := M.isCurveField\n    x.P.ord (aeval ψ g) = ramIdx M hDVR ψ x.P *\n      ((g.map (algebraMap ℚ Tripod.Qbar)).rootMultiplicity (x.eval ψ h) : ℤ)",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": null,
+      "en_mochizuki_quote_ledger_binding": null,
+      "proof_status": "complete_source_proof_present_not_compiled_in_this_readback",
+      "en": "For every natural number N and every supplied Model N, put K = M.K. This model consists of an intermediate field K between ℚ and an algebraic closure of ℚ(t), elements u,v ∈ K with u transcendental over ℚ, u^N + v^N = 1, ℚ(u,v) = K, and a finite extension K/ℚ(u) of degree N. No additional numerical condition on N or existence claim for a model is a premise here. Assume hDVR: every place of K has a discrete valuation ring. A place P is a proper valuation subring O_P of K containing ℚ; all such places, including places at infinity, are allowed. Write κ(P) for its full residue field, res_P: O_P → κ(P) for the residue map, and ord_P for the normalized integer order (with the implementation convention ord_P(0) = 0). For f ∈ K, the actual integer index e_P(f) = ramIdx M hDVR f P is ord_P(m_f(f)) if f ∈ O_P, where m_f is the minimal polynomial over ℚ of res_P(f), and is −ord_P(f) otherwise. The curve-field structure is derived from M, and the imported results make κ(P) finite over ℚ.\n\nLet ψ ∈ K be transcendental over ℚ. This excludes every element algebraic over ℚ, not merely rational constants, and in particular implies ψ ≠ 0.\n\nA point x = (P,σ) includes a unital ring embedding σ: κ(P) → ℚbar of the entire residue field into the fixed algebraic closure ℚbar of ℚ; it is not only an embedding of the field generated by one residue value. If f ∈ O_P, its value x(f) = x.eval f is σ(res_P(f)).\n\nFor every such point x = (P,σ), assume h: ψ ∈ O_P, so ψ is regular at P. For every nonzero polynomial g ∈ ℚ[X], ord_P(g(ψ)) = e_P(ψ) · mult_{x(ψ)}(g mapped from ℚ to ℚbar), with the natural root multiplicity cast to ℤ. No positive-degree hypothesis on g is present; for a nonzero constant both sides are zero. The complete source proof uses strong induction on natDegree g. It sets r = res_P(ψ), splits on divisibility by minpoly_ℚ(r), uses separability of that minimal polynomial and the embedding σ to give its image a simple root at x(ψ), and adds orders and multiplicities in the divisible branch. In the other branch, nonzero residue gives order zero and absence of a root gives multiplicity zero.",
+      "zh_Hans": "对任意自然数 N 及给定的 Model N，令 K = M.K。该模型由介于 ℚ 与 ℚ(t) 的一个代数闭包之间的中间域 K，以及元素 u,v ∈ K 组成，满足 u 在 ℚ 上超越、u^N + v^N = 1、ℚ(u,v) = K，且 K/ℚ(u) 是次数为 N 的有限扩张。这里没有另加 N 的数值条件，也没有断言模型存在。假设 hDVR：K 的每个处的赋值环都是离散赋值环。处 P 是 K 中包含 ℚ 的真赋值子环 O_P；允许所有这样的处，包括无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，程序约定 ord_P(0) = 0。对 f ∈ K，实际的整数分歧指数 e_P(f) = ramIdx M hDVR f P 定义如下：若 f ∈ O_P，则为 ord_P(m_f(f))，其中 m_f 是 res_P(f) 在 ℚ 上的最小多项式；否则为 −ord_P(f)。曲线函数域结构由 M 导出，导入的结果说明 κ(P) 是 ℚ 的有限扩张。\n\n设 ψ ∈ K 在 ℚ 上超越。此条件排除所有在 ℚ 上代数的元素，而不仅排除有理常数，且特别推出 ψ ≠ 0。\n\n点 x = (P,σ) 包含完整剩余域到固定的 ℚ 的代数闭包 ℚbar 的保单位元环嵌入 σ: κ(P) → ℚbar，并非仅嵌入某一个剩余值生成的子域。若 f ∈ O_P，则点值 x(f) = x.eval f 定义为 σ(res_P(f))。\n\n对任意这样的点 x = (P,σ)，假设 h: ψ ∈ O_P，即 ψ 在处 P 正则。对任意非零多项式 g ∈ ℚ[X]，有 ord_P(g(ψ)) = e_P(ψ) · mult_{x(ψ)}(g 从 ℚ 映到 ℚbar 后所得多项式)，其中根的自然数重数转换为整数。这里没有要求 g 的次数为正；非零常数的两边都为零。完整的源证明对 natDegree g 作强归纳。令 r = res_P(ψ)，按 minpoly_ℚ(r) 是否整除 g 分类；在整除情形，利用最小多项式的可分性及嵌入 σ，得到映射后的最小多项式在 x(ψ) 处有单根，再将阶数和重数相加。在不整除情形，非零剩余值给出阶数为零，不是根给出重数为零。",
+      "ja": "任意の自然数 N と与えられた Model N に対し、K = M.K とする。このモデルは ℚ と ℚ(t) の代数閉包の間の中間体 K、および u,v ∈ K からなり、u は ℚ 上超越的、u^N + v^N = 1、ℚ(u,v) = K であり、K/ℚ(u) は次数 N の有限拡大である。N に対する追加の数値条件もモデルの存在の主張もここにはない。hDVR として、K のすべての素点の付値環が離散付値環であると仮定する。素点 P は ℚ を含む K の真の付値部分環 O_P であり、無限遠の素点も含めてすべてを対象とする。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。実装上 ord_P(0) = 0 と定める。f ∈ K の実際の整数値の分岐指数 e_P(f) = ramIdx M hDVR f P は、f ∈ O_P なら res_P(f) の ℚ 上の最小多項式 m_f による ord_P(m_f(f))、それ以外なら −ord_P(f) である。曲線の関数体の構造は M から導かれ、インポートされた結果により κ(P) は ℚ の有限拡大である。\n\nψ ∈ K は ℚ 上超越的であるとする。この条件は有理定数だけでなく ℚ 上代数的なすべての元を除外し、特に ψ ≠ 0 を与える。\n\n点 x = (P,σ) は、剰余体全体から固定した ℚ の代数閉包 ℚbar への単位元を保つ環の埋め込み σ: κ(P) → ℚbar を含む。一つの剰余値で生成される部分体だけの埋め込みではない。f ∈ O_P のとき、点での値 x(f) = x.eval f は σ(res_P(f)) である。\n\nこのような任意の点 x = (P,σ) について h: ψ ∈ O_P、すなわち ψ が P で正則であると仮定する。任意の非零多項式 g ∈ ℚ[X] に対して ord_P(g(ψ)) = e_P(ψ) · mult_{x(ψ)}(g を ℚ から ℚbar に写した多項式) が成り立つ。根の重複度は自然数から整数に変換する。g の次数が正であるという仮定はなく、非零定数の場合は両辺とも零である。完全なソース証明は natDegree g に関する強い帰納法を使う。r = res_P(ψ) とおき、minpoly_ℚ(r) が g を割り切るかで場合分けする。割り切る場合は最小多項式の分離性と埋め込み σ により、その像が x(ψ) を単根に持つことを示し、位数と重複度を加える。割り切らない場合は、剰余値が非零なので位数は零であり、根ではないので重複度も零である。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "line": 19,
+      "kind": "public_target_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (P : Place M.K) (h : ψ ∉ P.1) {p : ℚ[X]} (hp : p ≠ 0) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (aeval ψ p) = p.natDegree * P.ord ψ",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": null,
+      "en_mochizuki_quote_ledger_binding": null,
+      "proof_status": "complete_source_proof_present_not_compiled_in_this_readback",
+      "en": "For every natural number N and every supplied Model N, put K = M.K. This model consists of an intermediate field K between ℚ and an algebraic closure of ℚ(t), elements u,v ∈ K with u transcendental over ℚ, u^N + v^N = 1, ℚ(u,v) = K, and a finite extension K/ℚ(u) of degree N. No additional numerical condition on N or existence claim for a model is a premise here. Assume hDVR: every place of K has a discrete valuation ring. A place P is a proper valuation subring O_P of K containing ℚ; all such places, including places at infinity, are allowed. Write κ(P) for its full residue field, res_P: O_P → κ(P) for the residue map, and ord_P for the normalized integer order (with the implementation convention ord_P(0) = 0). For f ∈ K, the actual integer index e_P(f) = ramIdx M hDVR f P is ord_P(m_f(f)) if f ∈ O_P, where m_f is the minimal polynomial over ℚ of res_P(f), and is −ord_P(f) otherwise. The curve-field structure is derived from M, and the imported results make κ(P) finite over ℚ.\n\nLet ψ ∈ K be transcendental over ℚ. This excludes every element algebraic over ℚ, not merely rational constants, and in particular implies ψ ≠ 0.\n\nFor every place P, assume h: ψ ∉ O_P, equivalently ord_P(ψ) < 0, so ψ has a pole at P. No residue-field embedding or QbarPoint is required. For every nonzero p ∈ ℚ[X], ord_P(p(ψ)) = (natDegree p : ℤ) · ord_P(ψ). Nonzero constant polynomials are included and give order zero; for positive degree the resulting order is negative. The complete source proof uses ψ ≠ 0 and the reversal identity p.reverse(ψ⁻¹) · ψ^(natDegree p) = p(ψ). Since ord_P(ψ⁻¹) > 0, its residue is zero. The residue of p.reverse(ψ⁻¹) is therefore the nonzero leading coefficient of p, so that factor has order zero. Multiplicativity of order and the power formula give the claimed equality.",
+      "zh_Hans": "对任意自然数 N 及给定的 Model N，令 K = M.K。该模型由介于 ℚ 与 ℚ(t) 的一个代数闭包之间的中间域 K，以及元素 u,v ∈ K 组成，满足 u 在 ℚ 上超越、u^N + v^N = 1、ℚ(u,v) = K，且 K/ℚ(u) 是次数为 N 的有限扩张。这里没有另加 N 的数值条件，也没有断言模型存在。假设 hDVR：K 的每个处的赋值环都是离散赋值环。处 P 是 K 中包含 ℚ 的真赋值子环 O_P；允许所有这样的处，包括无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，程序约定 ord_P(0) = 0。对 f ∈ K，实际的整数分歧指数 e_P(f) = ramIdx M hDVR f P 定义如下：若 f ∈ O_P，则为 ord_P(m_f(f))，其中 m_f 是 res_P(f) 在 ℚ 上的最小多项式；否则为 −ord_P(f)。曲线函数域结构由 M 导出，导入的结果说明 κ(P) 是 ℚ 的有限扩张。\n\n设 ψ ∈ K 在 ℚ 上超越。此条件排除所有在 ℚ 上代数的元素，而不仅排除有理常数，且特别推出 ψ ≠ 0。\n\n对任意处 P，假设 h: ψ ∉ O_P，等价地 ord_P(ψ) < 0，即 ψ 在 P 处有极点。这里不要求剩余域嵌入，也不要求 QbarPoint。对任意非零多项式 p ∈ ℚ[X]，有 ord_P(p(ψ)) = (natDegree p : ℤ) · ord_P(ψ)。这包括非零常数多项式，此时阶数为零；次数为正时所得阶数为负。完整的源证明使用 ψ ≠ 0 和反转多项式恒等式 p.reverse(ψ⁻¹) · ψ^(natDegree p) = p(ψ)。由于 ord_P(ψ⁻¹) > 0，其剩余值为零。因此 p.reverse(ψ⁻¹) 的剩余值就是 p 的非零首项系数，该因子的阶数为零。阶数的乘法公式和幂公式给出所述等式。",
+      "ja": "任意の自然数 N と与えられた Model N に対し、K = M.K とする。このモデルは ℚ と ℚ(t) の代数閉包の間の中間体 K、および u,v ∈ K からなり、u は ℚ 上超越的、u^N + v^N = 1、ℚ(u,v) = K であり、K/ℚ(u) は次数 N の有限拡大である。N に対する追加の数値条件もモデルの存在の主張もここにはない。hDVR として、K のすべての素点の付値環が離散付値環であると仮定する。素点 P は ℚ を含む K の真の付値部分環 O_P であり、無限遠の素点も含めてすべてを対象とする。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。実装上 ord_P(0) = 0 と定める。f ∈ K の実際の整数値の分岐指数 e_P(f) = ramIdx M hDVR f P は、f ∈ O_P なら res_P(f) の ℚ 上の最小多項式 m_f による ord_P(m_f(f))、それ以外なら −ord_P(f) である。曲線の関数体の構造は M から導かれ、インポートされた結果により κ(P) は ℚ の有限拡大である。\n\nψ ∈ K は ℚ 上超越的であるとする。この条件は有理定数だけでなく ℚ 上代数的なすべての元を除外し、特に ψ ≠ 0 を与える。\n\n任意の素点 P について h: ψ ∉ O_P、同値に ord_P(ψ) < 0 と仮定する。つまり ψ は P に極を持つ。剰余体の埋め込みや QbarPoint は必要ない。任意の非零多項式 p ∈ ℚ[X] について ord_P(p(ψ)) = (natDegree p : ℤ) · ord_P(ψ) が成り立つ。非零定数多項式も含み、その位数は零である。次数が正なら得られる位数は負である。完全なソース証明は ψ ≠ 0 と反転多項式の恒等式 p.reverse(ψ⁻¹) · ψ^(natDegree p) = p(ψ) を使う。ord_P(ψ⁻¹) > 0 なので、その剰余値は零である。したがって p.reverse(ψ⁻¹) の剰余値は p の非零の最高次係数であり、この因子の位数は零となる。位数の積の公式とべき乗の公式から等式を得る。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncritical_exists_ramIdx_eq_mul_inv",
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "line": 22,
+      "kind": "private_helper_theorem",
+      "full_signature_static": "private theorem AbcAdaptation.Tripod.Fermat.Proper.noncritical_exists_ramIdx_eq_mul_inv {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K)\n    (h0 : letI : IsCurveField M.K := M.isCurveField; x.P.ord ψ = 0) :\n    ∃ k : ℕ, ramIdx M hDVR ψ x.P = ramIdx M hDVR ψ⁻¹ x.P * (k : ℤ)",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": null,
+      "en_mochizuki_quote_ledger_binding": null,
+      "proof_status": "complete_source_proof_present_not_compiled_in_this_readback",
+      "en": "For every natural number N and every supplied Model N, put K = M.K. This model consists of an intermediate field K between ℚ and an algebraic closure of ℚ(t), elements u,v ∈ K with u transcendental over ℚ, u^N + v^N = 1, ℚ(u,v) = K, and a finite extension K/ℚ(u) of degree N. No additional numerical condition on N or existence claim for a model is a premise here. Assume hDVR: every place of K has a discrete valuation ring. A place P is a proper valuation subring O_P of K containing ℚ; all such places, including places at infinity, are allowed. Write κ(P) for its full residue field, res_P: O_P → κ(P) for the residue map, and ord_P for the normalized integer order (with the implementation convention ord_P(0) = 0). For f ∈ K, the actual integer index e_P(f) = ramIdx M hDVR f P is ord_P(m_f(f)) if f ∈ O_P, where m_f is the minimal polynomial over ℚ of res_P(f), and is −ord_P(f) otherwise. The curve-field structure is derived from M, and the imported results make κ(P) finite over ℚ.\n\nLet ψ ∈ K be transcendental over ℚ. This excludes every element algebraic over ℚ, not merely rational constants, and in particular implies ψ ≠ 0.\n\nA point x = (P,σ) includes a unital ring embedding σ: κ(P) → ℚbar of the entire residue field into the fixed algebraic closure ℚbar of ℚ; it is not only an embedding of the field generated by one residue value. If f ∈ O_P, its value x(f) = x.eval f is σ(res_P(f)).\n\nFor every such point x = (P,σ), assume ord_P(ψ) = 0, so ψ and ψ⁻¹ lie in O_P and ψ is a unit there. Then there exists a natural number k with e_P(ψ) = e_P(ψ⁻¹) · (k : ℤ). The statement asserts this natural multiplier, not an arbitrary chosen or newly defined index. Its complete source proof takes m = minpoly_ℚ(res_P(ψ)), uses m.reverse(ψ⁻¹) · ψ^(natDegree m) = m(ψ), and uses ord_P(ψ) = 0 to remove the power contribution. The regular-point polynomial-order theorem for ψ⁻¹ then gives k as the root multiplicity of m.reverse mapped to ℚbar at x(ψ⁻¹). Both m and m.reverse are nonzero, and ψ⁻¹ is transcendental. The explicit conclusion does not separately assert k > 0 or k = 1.",
+      "zh_Hans": "对任意自然数 N 及给定的 Model N，令 K = M.K。该模型由介于 ℚ 与 ℚ(t) 的一个代数闭包之间的中间域 K，以及元素 u,v ∈ K 组成，满足 u 在 ℚ 上超越、u^N + v^N = 1、ℚ(u,v) = K，且 K/ℚ(u) 是次数为 N 的有限扩张。这里没有另加 N 的数值条件，也没有断言模型存在。假设 hDVR：K 的每个处的赋值环都是离散赋值环。处 P 是 K 中包含 ℚ 的真赋值子环 O_P；允许所有这样的处，包括无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，程序约定 ord_P(0) = 0。对 f ∈ K，实际的整数分歧指数 e_P(f) = ramIdx M hDVR f P 定义如下：若 f ∈ O_P，则为 ord_P(m_f(f))，其中 m_f 是 res_P(f) 在 ℚ 上的最小多项式；否则为 −ord_P(f)。曲线函数域结构由 M 导出，导入的结果说明 κ(P) 是 ℚ 的有限扩张。\n\n设 ψ ∈ K 在 ℚ 上超越。此条件排除所有在 ℚ 上代数的元素，而不仅排除有理常数，且特别推出 ψ ≠ 0。\n\n点 x = (P,σ) 包含完整剩余域到固定的 ℚ 的代数闭包 ℚbar 的保单位元环嵌入 σ: κ(P) → ℚbar，并非仅嵌入某一个剩余值生成的子域。若 f ∈ O_P，则点值 x(f) = x.eval f 定义为 σ(res_P(f))。\n\n对任意这样的点 x = (P,σ)，假设 ord_P(ψ) = 0，因此 ψ 与 ψ⁻¹ 都属于 O_P，且 ψ 是其中的单位。于是存在自然数 k，使 e_P(ψ) = e_P(ψ⁻¹) · (k : ℤ)。声明给出的是这个自然数乘数，不是任意选择或新定义的指数。完整的源证明取 m = minpoly_ℚ(res_P(ψ))，使用 m.reverse(ψ⁻¹) · ψ^(natDegree m) = m(ψ)，并用 ord_P(ψ) = 0 消去幂因子的阶数贡献。随后将正则处的多项式阶数定理用于 ψ⁻¹，得到 k 为 m.reverse 映到 ℚbar 后在 x(ψ⁻¹) 处的根的重数。m 和 m.reverse 都非零，且 ψ⁻¹ 在 ℚ 上超越。显式结论没有另行断言 k > 0 或 k = 1。",
+      "ja": "任意の自然数 N と与えられた Model N に対し、K = M.K とする。このモデルは ℚ と ℚ(t) の代数閉包の間の中間体 K、および u,v ∈ K からなり、u は ℚ 上超越的、u^N + v^N = 1、ℚ(u,v) = K であり、K/ℚ(u) は次数 N の有限拡大である。N に対する追加の数値条件もモデルの存在の主張もここにはない。hDVR として、K のすべての素点の付値環が離散付値環であると仮定する。素点 P は ℚ を含む K の真の付値部分環 O_P であり、無限遠の素点も含めてすべてを対象とする。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。実装上 ord_P(0) = 0 と定める。f ∈ K の実際の整数値の分岐指数 e_P(f) = ramIdx M hDVR f P は、f ∈ O_P なら res_P(f) の ℚ 上の最小多項式 m_f による ord_P(m_f(f))、それ以外なら −ord_P(f) である。曲線の関数体の構造は M から導かれ、インポートされた結果により κ(P) は ℚ の有限拡大である。\n\nψ ∈ K は ℚ 上超越的であるとする。この条件は有理定数だけでなく ℚ 上代数的なすべての元を除外し、特に ψ ≠ 0 を与える。\n\n点 x = (P,σ) は、剰余体全体から固定した ℚ の代数閉包 ℚbar への単位元を保つ環の埋め込み σ: κ(P) → ℚbar を含む。一つの剰余値で生成される部分体だけの埋め込みではない。f ∈ O_P のとき、点での値 x(f) = x.eval f は σ(res_P(f)) である。\n\nこのような任意の点 x = (P,σ) について ord_P(ψ) = 0 と仮定する。したがって ψ と ψ⁻¹ はともに O_P に属し、ψ はその単元である。このとき e_P(ψ) = e_P(ψ⁻¹) · (k : ℤ) を満たす自然数 k が存在する。この主張は自然数の乗数の存在であり、任意に選んだ指数や新しく定義した指数についての主張ではない。完全なソース証明は m = minpoly_ℚ(res_P(ψ)) とおき、m.reverse(ψ⁻¹) · ψ^(natDegree m) = m(ψ) を使う。ord_P(ψ) = 0 によりべき乗の位数の寄与を消し、ψ⁻¹ に正則点の多項式の位数の定理を適用する。その結果、k は m.reverse を ℚbar に写した多項式の x(ψ⁻¹) における根の重複度になる。m と m.reverse はともに非零であり、ψ⁻¹ は超越的である。明示された結論は k > 0 や k = 1 を別には主張しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification",
+      "path": "/tmp/p2m-elementary-order-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "line": 43,
+      "kind": "public_target_theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) :\n    ramIdx M hDVR ψ⁻¹ x.P = ramIdx M hDVR ψ x.P",
+      "source_quotes": null,
+      "en_mochizuki_source_quote": null,
+      "en_mochizuki_quote_ledger_binding": null,
+      "proof_status": "complete_source_proof_present_not_compiled_in_this_readback",
+      "en": "For every natural number N and every supplied Model N, put K = M.K. This model consists of an intermediate field K between ℚ and an algebraic closure of ℚ(t), elements u,v ∈ K with u transcendental over ℚ, u^N + v^N = 1, ℚ(u,v) = K, and a finite extension K/ℚ(u) of degree N. No additional numerical condition on N or existence claim for a model is a premise here. Assume hDVR: every place of K has a discrete valuation ring. A place P is a proper valuation subring O_P of K containing ℚ; all such places, including places at infinity, are allowed. Write κ(P) for its full residue field, res_P: O_P → κ(P) for the residue map, and ord_P for the normalized integer order (with the implementation convention ord_P(0) = 0). For f ∈ K, the actual integer index e_P(f) = ramIdx M hDVR f P is ord_P(m_f(f)) if f ∈ O_P, where m_f is the minimal polynomial over ℚ of res_P(f), and is −ord_P(f) otherwise. The curve-field structure is derived from M, and the imported results make κ(P) finite over ℚ.\n\nLet ψ ∈ K be transcendental over ℚ. This excludes every element algebraic over ℚ, not merely rational constants, and in particular implies ψ ≠ 0.\n\nA point x = (P,σ) includes a unital ring embedding σ: κ(P) → ℚbar of the entire residue field into the fixed algebraic closure ℚbar of ℚ; it is not only an embedding of the field generated by one residue value. If f ∈ O_P, its value x(f) = x.eval f is σ(res_P(f)).\n\nFor every such point x = (P,σ), the actual indices satisfy e_P(ψ⁻¹) = e_P(ψ). No hypothesis restricting P to zeros, units, or poles is added. The complete source proof splits into all three cases. At a pole of ψ, ord_P(ψ) < 0, ψ⁻¹ has positive order, and both indices equal −ord_P(ψ). At a zero of ψ, ord_P(ψ) > 0, ψ⁻¹ has a pole, and both indices equal ord_P(ψ). In the unit case ord_P(ψ) = 0, the private helper, once for ψ and once for ψ⁻¹, gives natural k₁,k₂ with e_P(ψ) = e_P(ψ⁻¹)k₁ and e_P(ψ⁻¹) = e_P(ψ)k₂. The imported positivity theorem gives both actual indices strictly positive as integers, forcing k₁,k₂ ≥ 1; integer arithmetic then proves equality. Positivity is essential to this argument and is derived using transcendence, rather than assumed for arbitrary functions. This theorem states equality of ramification indices; it does not itself state the inverse-value formula or a Belyi selection theorem.",
+      "zh_Hans": "对任意自然数 N 及给定的 Model N，令 K = M.K。该模型由介于 ℚ 与 ℚ(t) 的一个代数闭包之间的中间域 K，以及元素 u,v ∈ K 组成，满足 u 在 ℚ 上超越、u^N + v^N = 1、ℚ(u,v) = K，且 K/ℚ(u) 是次数为 N 的有限扩张。这里没有另加 N 的数值条件，也没有断言模型存在。假设 hDVR：K 的每个处的赋值环都是离散赋值环。处 P 是 K 中包含 ℚ 的真赋值子环 O_P；允许所有这样的处，包括无穷远处。记 κ(P) 为完整的剩余域，res_P: O_P → κ(P) 为剩余映射，ord_P 为规范化整数阶数，程序约定 ord_P(0) = 0。对 f ∈ K，实际的整数分歧指数 e_P(f) = ramIdx M hDVR f P 定义如下：若 f ∈ O_P，则为 ord_P(m_f(f))，其中 m_f 是 res_P(f) 在 ℚ 上的最小多项式；否则为 −ord_P(f)。曲线函数域结构由 M 导出，导入的结果说明 κ(P) 是 ℚ 的有限扩张。\n\n设 ψ ∈ K 在 ℚ 上超越。此条件排除所有在 ℚ 上代数的元素，而不仅排除有理常数，且特别推出 ψ ≠ 0。\n\n点 x = (P,σ) 包含完整剩余域到固定的 ℚ 的代数闭包 ℚbar 的保单位元环嵌入 σ: κ(P) → ℚbar，并非仅嵌入某一个剩余值生成的子域。若 f ∈ O_P，则点值 x(f) = x.eval f 定义为 σ(res_P(f))。\n\n对任意这样的点 x = (P,σ)，实际分歧指数满足 e_P(ψ⁻¹) = e_P(ψ)。没有额外要求 P 仅属于零点、单位情形或极点中的某一类。完整的源证明覆盖三种情形。若 ψ 在 P 处有极点，即 ord_P(ψ) < 0，则 ψ⁻¹ 的阶数为正，两个指数都等于 −ord_P(ψ)。若 ψ 在 P 处有零点，即 ord_P(ψ) > 0，则 ψ⁻¹ 有极点，两个指数都等于 ord_P(ψ)。在单位情形 ord_P(ψ) = 0，分别对 ψ 和 ψ⁻¹ 使用私有辅助定理，得到自然数 k₁,k₂，满足 e_P(ψ) = e_P(ψ⁻¹)k₁ 与 e_P(ψ⁻¹) = e_P(ψ)k₂。导入的正性定理给出两个实际整数指数都严格为正，因而 k₁,k₂ ≥ 1；整数算术随后证明指数相等。正性是此论证的必要条件，由超越性导出，并非对任意函数作出的假设。本定理只陈述分歧指数相等，本身没有陈述倒数的取值公式或 Belyi 选择定理。",
+      "ja": "任意の自然数 N と与えられた Model N に対し、K = M.K とする。このモデルは ℚ と ℚ(t) の代数閉包の間の中間体 K、および u,v ∈ K からなり、u は ℚ 上超越的、u^N + v^N = 1、ℚ(u,v) = K であり、K/ℚ(u) は次数 N の有限拡大である。N に対する追加の数値条件もモデルの存在の主張もここにはない。hDVR として、K のすべての素点の付値環が離散付値環であると仮定する。素点 P は ℚ を含む K の真の付値部分環 O_P であり、無限遠の素点も含めてすべてを対象とする。κ(P) を剰余体全体、res_P: O_P → κ(P) を剰余写像、ord_P を正規化された整数値の位数とする。実装上 ord_P(0) = 0 と定める。f ∈ K の実際の整数値の分岐指数 e_P(f) = ramIdx M hDVR f P は、f ∈ O_P なら res_P(f) の ℚ 上の最小多項式 m_f による ord_P(m_f(f))、それ以外なら −ord_P(f) である。曲線の関数体の構造は M から導かれ、インポートされた結果により κ(P) は ℚ の有限拡大である。\n\nψ ∈ K は ℚ 上超越的であるとする。この条件は有理定数だけでなく ℚ 上代数的なすべての元を除外し、特に ψ ≠ 0 を与える。\n\n点 x = (P,σ) は、剰余体全体から固定した ℚ の代数閉包 ℚbar への単位元を保つ環の埋め込み σ: κ(P) → ℚbar を含む。一つの剰余値で生成される部分体だけの埋め込みではない。f ∈ O_P のとき、点での値 x(f) = x.eval f は σ(res_P(f)) である。\n\nこのような任意の点 x = (P,σ) について、実際の分岐指数は e_P(ψ⁻¹) = e_P(ψ) を満たす。P を零点、単元の場合、極のいずれかに限定する仮定はない。完全なソース証明は三つの場合をすべて扱う。ψ が P に極を持つ場合、ord_P(ψ) < 0 であり、ψ⁻¹ の位数は正で、両方の指数は −ord_P(ψ) に等しい。ψ が P に零点を持つ場合、ord_P(ψ) > 0 であり、ψ⁻¹ は極を持ち、両方の指数は ord_P(ψ) に等しい。単元の場合 ord_P(ψ) = 0 では、非公開の補助定理を ψ と ψ⁻¹ に一度ずつ適用し、e_P(ψ) = e_P(ψ⁻¹)k₁ と e_P(ψ⁻¹) = e_P(ψ)k₂ を満たす自然数 k₁,k₂ を得る。インポートされた正値性の定理により、実際の整数値の指数はともに厳密に正なので k₁,k₂ ≥ 1 となり、整数の算術により指数の等しさを得る。この議論には正値性が必要であり、それは超越性から導かれ、任意の関数について仮定されているわけではない。本定理が述べるのは分岐指数の等しさであり、逆数の値の公式や Belyi の選択定理をそれ自体で述べるものではない。"
+    }
+  ],
+  "context_lean_files_read": [
+    "Definitions/Def_FermatNoncriticalElementarySource.lean",
+    "Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+    "Definitions/Def_FermatProperCarrier.lean",
+    "Definitions/Def_FermatCurveFieldBasic.lean",
+    "Definitions/Def_FermatCurveFieldPlace.lean (order-definition excerpt)",
+    "Definitions/Def_FermatCurveFieldResidue.lean"
+  ],
+  "limits": [
+    "Static signatures are transcribed from source and section variables; they are not elaborated or kernel-checked output.",
+    "No claim of successful compilation, axiom audit, aggregate acceptance, model existence, geometric parent obligation completion, or paper-level equivalence is made.",
+    "Root must add any checked literature context separately from these blind readbacks."
+  ]
+}
