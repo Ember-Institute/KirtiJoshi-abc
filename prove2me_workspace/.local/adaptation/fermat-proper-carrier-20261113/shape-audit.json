@@ -1,0 +1,245 @@
+{
+  "audit": "independent_mathematical_shape_review",
+  "date": "2026-11-13",
+  "agent": "/root/proper_shape_independent",
+  "candidate_root": "/tmp/p2m-fermat-proper-carrier-design-20261113",
+  "status": "no_mathematical_shape_blocker_found_uncompiled",
+  "blockers": [],
+  "scope": "Model, Place, normalized ord, cusps, residual-minpoly ramIdx, IsBelyi, AffineIdentification including field_eq, NoncriticalInput, composition and six open theorem statements",
+  "candidate_inputs": [
+    {
+      "path": "Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+    },
+    {
+      "path": "Definitions/Def_FermatProperComposition.lean",
+      "sha256": "a71031257d9124833bc530b8872f83429eb412914ad31f166e5af052ba10546d"
+    },
+    {
+      "path": "Theorems/Thm_FermatProper_affineIdentification.lean",
+      "sha256": "600f368300af7dd076d2bf8054aa4c519277311f53e20a88ed3b6fe8b9febba1"
+    },
+    {
+      "path": "Theorems/Thm_FermatProper_cuspsFinite.lean",
+      "sha256": "c32960e234945787bc59b4bd69eb4953db4fe4dde137d568c67a1367ca78283e"
+    },
+    {
+      "path": "Theorems/Thm_FermatProper_modelExists.lean",
+      "sha256": "ed75e2740fd1f8a2f5c91f00e64c4bf03700a94aff70b29ddf508c546a0d45a2"
+    },
+    {
+      "path": "Theorems/Thm_FermatProper_noncriticalSelection.lean",
+      "sha256": "52d22272eb14f6c34ac2ef1211091e92bbd5bf40de8fb30d93a7cd30069b4d08"
+    },
+    {
+      "path": "Theorems/Thm_FermatProper_placesDiscrete.lean",
+      "sha256": "6c11bb3362f2f9f39977b03e1c55a29e7a534ce43b2dac9772745757194962b0"
+    },
+    {
+      "path": "Theorems/Thm_FermatProper_residuesFinite.lean",
+      "sha256": "b99c0b08f4a55d5933f4c0e6cb7d58950ce6a3fb1f68146e39a14d54e5a4caaa"
+    }
+  ],
+  "findings": [
+    {
+      "id": "model_zero",
+      "verdict": "pass_vacuous_case",
+      "location": "Definitions/Def_FermatProperCarrier.lean:33-41",
+      "conclusion": "Model 0 is empty; the universally quantified placesDiscrete theorem has no degenerate N=0 counterexample.",
+      "mathematical_argument": "The Fermat equation at N=0 is 1+1=1 in the characteristic-zero field M.K, which is impossible. Independently, finite-dimensional field extensions have positive finrank, whereas degree_u would give zero."
+    },
+    {
+      "id": "model_function_field",
+      "verdict": "pass",
+      "location": "Definitions/Def_FermatProperCarrier.lean:33-52",
+      "conclusion": "Model N fixes the Fermat function field up to Q-isomorphism and derives transcendence degree one.",
+      "mathematical_argument": "Transcendental u identifies Q(u) with Q(T). The equation gives v a root of Y^N-(1-u^N); generate forbids a further unrelated extension, finite_u forbids an infinite extension, and degree_u gives the full N-dimensional extension. Finite extension of Q(u) supplies precisely the source IsCurveField hypothesis. Neither a freely selected order function nor a Belyi/height conclusion is a Model field."
+    },
+    {
+      "id": "constant_field",
+      "verdict": "pass_requires_named_algebraic_proof",
+      "location": "Definitions/Def_FermatProperCarrier.lean:33-41",
+      "conclusion": "An arbitrary enlarged constant field cannot satisfy this full Fermat presentation.",
+      "mathematical_argument": "For N>0, Y^N-(1-T^N) is Eisenstein at T-1 over Q[T], and also over Qbar[T]: 1-T^N has a simple zero there in characteristic zero. Thus the affine equation is geometrically irreducible. Its fraction field has Q algebraically closed in it. All allowed Model embeddings into the fixed ambient algebraic closure present this same field. A proof of geometric irreducibility/full constants is not supplied by the candidate and remains a real supporting proof if required downstream."
+    },
+    {
+      "id": "model_existence",
+      "verdict": "pass_open_obligation",
+      "location": "Theorems/Thm_FermatProper_modelExists.lean:12",
+      "conclusion": "The existence statement for N>3 is mathematically consistent and is not an implicit instance.",
+      "mathematical_argument": "Choose u as the rational-function variable in the ambient algebraic closure and v an Nth root of 1-u^N. Eisenstein at u-1 proves the exact degree N. The pinned Genl Kummer construction only supplies roots and finite generation/finite extension; it does not itself establish this exact degree, which the ledger correctly identifies as a new obligation."
+    },
+    {
+      "id": "places_all",
+      "verdict": "pass",
+      "location": "Definitions/Def_FermatProperCarrier.lean:56-57",
+      "conclusion": "The place carrier includes every closed point of the regular proper curve, including every place at infinity.",
+      "mathematical_argument": "It is exactly the pinned source carrier: nontrivial valuation subrings containing Q. There is no requirement that u, v, or phi lie in the valuation ring. A valuation of a finite extension of Q(u) trivial on Q is discrete and has finite residue extension; it lies in one of the u or inverse-u integral-closure charts. Excluding the top ring excludes the generic/trivial valuation, as required for closed points."
+    },
+    {
+      "id": "discreteness_residues",
+      "verdict": "pass_open_obligations",
+      "location": "Theorems/Thm_FermatProper_placesDiscrete.lean; Theorems/Thm_FermatProper_residuesFinite.lean",
+      "conclusion": "Both universally quantified theorems have the source-strength hypotheses through Model and do not require an extra regularity assumption.",
+      "mathematical_argument": "The source IsCurveField class asks only for one transcendental generator over which K is finite, supplied by M.u, transcendental_u, finite_u. The source proves DVR valuation rings and finite residue fields from integral-closure charts and Zariski lemma. A finite extension of the full constant field is allowed by the generic source, so even that issue would not refute these theorems."
+    },
+    {
+      "id": "order_normalization",
+      "verdict": "pass_with_totalization_caveat",
+      "location": "Definitions/Def_FermatProperCarrier.lean:117-120",
+      "conclusion": "ord is the normalized DVR order, with the source junk value ord 0 = 0.",
+      "mathematical_argument": "The definition uses the valuation of the actual DVR maximal ideal and minus WithZero.log, exactly as the source. Changing a proof hDVR cannot freely change the valuation law. It is not an extended order taking positive infinity at zero.",
+      "followup": "When later proving vanishing or multiplicativity lemmas, retain the source nonzero hypotheses; do not infer positive order from evaluation zero for the identically-zero function."
+    },
+    {
+      "id": "cusps_constant_totalization",
+      "verdict": "pass_on_IsBelyi_domain",
+      "location": "Definitions/Def_FermatProperCarrier.lean:123-139",
+      "conclusion": "cusps 0 and cusps 1 are empty under the totalized order, but neither constant is IsBelyi.",
+      "mathematical_argument": "ord 0=ord 1=ord(-1)=0, so both constant cusp sets are empty. This is exactly the pinned NoncriticalBasic definition. The first IsBelyi conjunct is Transcendental Q phi, excluding 0, 1 and every algebraic constant. For a transcendental phi, phi and phi-1 are nonzero, and the cusp predicate is exactly zeros, poles, and value-one places.",
+      "followup": "The unconditional docstring calling these actual fibers should be read on the nonconstant domain; if generalized to arbitrary functions, add a nonconstancy qualification rather than changing the established source formula."
+    },
+    {
+      "id": "ramification",
+      "verdict": "pass_on_transcendental_finite_residue_domain",
+      "location": "Definitions/Def_FermatProperCarrier.lean:128-139",
+      "conclusion": "The minimal-polynomial formula computes the genuine geometric ramification index at every place.",
+      "mathematical_argument": "With ResiduesFinite, the regular residue alpha is algebraic over Q and its minimal polynomial m is nonzero and separable. m(phi) is nonzero because phi is transcendental and has zero residue, hence positive integral order. Over a selected Qbar embedding m factors as (X-alpha) times factors that are local units; separability shows ord m(phi) is the geometric order of phi-alpha, with no missing residue-degree multiplier. At a pole the index is -ord phi>0. Consequently the implication 1<ramIdx cannot evade a ramification point by a zero/negative index. The carrier quantifies all places, so this also checks all infinities."
+    },
+    {
+      "id": "belyi_fidelity",
+      "verdict": "pass",
+      "location": "Definitions/Def_FermatProperCarrier.lean:137-139",
+      "conclusion": "IsBelyi matches the pinned Noncritical.IsBelyi definition, rather than an affine critical-point surrogate.",
+      "mathematical_argument": "The formulas for ramIdx, cusps, Transcendental and the universal implication agree exactly with pinned NoncriticalBasic. NoncriticalBridge identifies these integral indices with the source natural-valued ramification indices. ResiduesFinite is not a parameter of the definition, but is a bundled property of NoncriticalInput and an explicit hypothesis to the consumers, and is independently true for every Model."
+    },
+    {
+      "id": "affine_equivalence",
+      "verdict": "pass_requires_smooth_chart_proof",
+      "location": "Definitions/Def_FermatProperCarrier.lean:166-179",
+      "conclusion": "The affine equivalence is neither false nor overstrong for a Fermat Model.",
+      "mathematical_argument": "For N>0, the affine curve U^N+V^N=1 is smooth in characteristic zero: both partials can vanish only at U=V=0 (when N>1), which is off the curve; N=1 is a line. Local rings at closed points are the DVRs of the matching valuations. At each affine point the residue field is generated by the coordinate residues. Conversely every pair of nonzero algebraic coordinates gives its closed point and embedding, uniquely. Thus QbarPoint together with regular nonzero coordinates is exactly Fermat.Pt N. N=0 has no Model."
+    },
+    {
+      "id": "point_field_equality",
+      "verdict": "pass",
+      "location": "Definitions/Def_FermatProperCarrier.lean:178-179",
+      "conclusion": "field_eq is a genuine equality of subfields of the same Qbar, and is justified by coordinate residues.",
+      "mathematical_argument": "The affine coordinate ring maps onto the residue field, so kappa(P)=Q(residue u,residue v). Applying the specified sigma gives sigma(kappa(P))=Q(eval u,eval v), exactly the right-hand fieldOf. Smoothness matters: generation of the function field alone would not imply this for a general singular curve, because normalization branches can enlarge residue fields. The Fermat equation supplies the needed smoothness, so that general counterexample does not apply here."
+    },
+    {
+      "id": "noncritical_selection",
+      "verdict": "pass_source_strength",
+      "location": "Definitions/Def_FermatProperCarrier.lean:183-185; Theorems/Thm_FermatProper_noncriticalSelection.lean",
+      "conclusion": "Selection over arbitrary finite sets of closed places is exactly the cited source theorem.",
+      "mathematical_argument": "Pinned Noncritical.lean:81 states exists phi, IsBelyi phi and forall P in T, P notin cusps phi, under IsCurveField. Pinned NoncriticalBridge:47-54 transfers it to the global Belyi predicate. The source includes all embeddings over the selected places in its construction. This candidate does not weaken finite-place avoidance to selected affine points."
+    },
+    {
+      "id": "finite_cusps",
+      "verdict": "pass_open_obligation",
+      "location": "Theorems/Thm_FermatProper_cuspsFinite.lean",
+      "conclusion": "Finite cusp support is true; the candidate theorem even has stronger hypotheses than necessary.",
+      "mathematical_argument": "The source finite_belyiCusps holds for every phi using finite support of orders, including totalized algebraic constants. Requiring IsBelyi in the candidate is harmless. Its finite-support proof does not allow a freely selected finite cusp set; cuspDivisor sums the actual set with coefficient one."
+    },
+    {
+      "id": "degree_strictq",
+      "verdict": "pass_current_scope_with_downstream_condition",
+      "location": "Definitions/Def_FermatProperCarrier.lean:144-163",
+      "conclusion": "The divisor degree and strict degree ratio are concrete; downstream canonical use must keep N>3 and prove adjunction.",
+      "mathematical_argument": "Residue degree is [kappa(P):Q]; for Models this is positive finite once the true residue-finiteness theorem is used. The reduced divisor counts every cusp with coefficient one. N(N-3) is the canonical degree of the smooth degree-N plane Fermat curve for N>0. StrictQ is a total definition, so at N=3 its real denominator is zero and Lean division returns zero. Current noncritical composition is restricted to N>3 and does not consume StrictQ, so this is not a counterexample to any current theorem.",
+      "followup": "Any height-comparison theorem using StrictQ must include 3<N, prove the denominator positive, and identify the actual canonical divisor/height with the fixed Fermat quantities; the candidate ledger correctly leaves these edges open."
+    },
+    {
+      "id": "composition",
+      "verdict": "pass_logical_assembly",
+      "location": "Definitions/Def_FermatProperComposition.lean:14-33",
+      "conclusion": "Composition uses all six explicit children and adds no new geometric assumption.",
+      "mathematical_argument": "For N>3 it chooses M using hModel, obtains its DVR and residue finiteness, and packages affine identification, selection, and cusp finiteness. The witness fields are all concrete geometric predicates or actual function-field data. There is no arbitrary Prop slot, free height/order/conductor function, hidden global input, or replacement mathematical parent conclusion."
+    },
+    {
+      "id": "proof_status",
+      "verdict": "not_proven_not_compiled",
+      "location": "Theorems/*.lean",
+      "conclusion": "All six children are explicitly open with sorry; this audit accepts only statement shape.",
+      "mathematical_argument": "No Lean compiler, MCP-CI task, or axiom check was executed in this independent read-only audit. The composition body being a proof does not remove the six sorryAx dependencies in a solution that imports the open children. No claim of CanonicalEstimate, abc, full project verification, or proof completion follows."
+    }
+  ],
+  "reference_verification": [
+    {
+      "file": "Basic",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Basic.lean",
+      "matches": true,
+      "sha256": "3657b4ad9c4ecd47307afcff0697e326539ba526dcac61fed2c6c91a827d1eca"
+    },
+    {
+      "file": "Place",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Place.lean",
+      "matches": true,
+      "sha256": "f68260416b102e3b60c03e42b016833ded7ed476299d0a0e978e2e89965b2572"
+    },
+    {
+      "file": "Residue",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Residue.lean",
+      "matches": true,
+      "sha256": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a"
+    },
+    {
+      "file": "Point",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Point.lean",
+      "matches": true,
+      "sha256": "58fe7e91e18b73c352b82006242a36dfa1edf667c43add9952130896afd2d11f"
+    },
+    {
+      "file": "NoncriticalBasic",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBasic.lean",
+      "matches": true,
+      "sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3"
+    },
+    {
+      "file": "NoncriticalBridge",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBridge.lean",
+      "matches": true,
+      "sha256": "c07f7479b4029bf2f2e5ff9f52057d167d3b21735b05051dc901b6679badc149"
+    },
+    {
+      "file": "RamIdx",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/RamIdx.lean",
+      "matches": true,
+      "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6"
+    },
+    {
+      "file": "BelyiRelation",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/BelyiRelation.lean",
+      "matches": true,
+      "sha256": "e5d39478fe8ee58c4fcd43e57bea5aac06147179e5c852f1386098cc4ac7b378"
+    },
+    {
+      "file": "Divisor",
+      "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Divisor.lean",
+      "matches": true,
+      "sha256": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7"
+    }
+  ],
+  "additional_pinned_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Noncritical.lean",
+      "local": "/tmp/p2m-proper-shape-Noncritical.lean"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lana-agents/genl/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/Covering.lean",
+      "local": "/tmp/p2m-proper-shape-Covering.lean"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lana-agents/genl/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean",
+      "local": "/tmp/p2m-proper-shape-BelyiDescent.lean"
+    }
+  ],
+  "validation": {
+    "compilation": false,
+    "mcp_ci": false,
+    "main_workspace_edited": false,
+    "other_review_drafts_read": false,
+    "all_rg_used_repository_two_core_wrapper": true
+  },
+  "summary_zh": "未发现当前数学类型必须修改的 blocker。N=0 模型为空；任意模型由完整 Fermat 呈示约束，不能自由扩大常数域；ord 的零总值被 IsBelyi 超越性条件隔离；分歧公式涵盖无穷点；field_eq 需真实光滑坐标环论证但本身成立。六个子定理仍未证明，StrictQ 下游必须保留 N>3 与真正的典范除子/高度桥接。"
+}

@@ -1,0 +1,7 @@
+import Definitions.Def_FermatCanonicalBelyiComposition
+import Definitions.Def_FermatProperComposition
+import Definitions.Def_FermatProperDivisorComposition
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalEstimate_of_belyi_children
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.boundedBelyiImages_of_children
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.arithmeticDivisorChoices_of_children

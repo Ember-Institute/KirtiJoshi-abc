@@ -146,7 +146,7 @@
   "remaining_precise_edges": [
     {
       "name": "local_compact_subsequence",
-      "needs": "A normed algebraic closure of Q_2 and the actual compactness theorem on proper QbarPoints. All coordinate values must be controlled at every embedding, not one chosen embedding.",
+      "needs": "Use pinned Mathlib PadicAlgCl 2 and Complex with all embeddings. Still need the bounded-degree proper-point local compactness theorem; no new algebraic-closure carrier is needed.",
       "intended_type": "For any xs : Nat -> Fermat.Pt N of degree <=d, pass through AffineIdentification to proper QbarPoints; obtain StrictMono s and finite T : Finset (Place M.K), such that any phi with phi,inverse(phi),inverse(phi-1) regular at every P in T has eventually bounded log norms of its nonzero/nonone values at all embeddings into Qbar_2 and Complex.",
       "source": "Heights.Curve.exists_subseq_bounded; Genl/Curves/BelyiDescent.lean:264-282",
       "consumer": "Combine with noncriticalSelection and image-field arithmetic to construct compact Belyi images."
@@ -176,7 +176,7 @@
   "remaining_support_cost": {
     "no_blocker_for_types": "Model, Place, ResidueField, QbarPoint, normalized orders parameterized by explicit DVR proofs, true IsBelyi, divisors, actual cusp divisor and strict degree ratio can be defined now without a theorem proving model existence.",
     "large_future_proof_dependencies": "Proving regularity and residue finiteness requires finite integral closures/Dedekind charts; proving noncritical selection requires the existing source's noncritical construction chain; none are supplied here.",
-    "genuine_current_obstacle_to_full_parent_types": "The actual Weil divisor height and normalized conductor constructions, and the local Q_2 algebraic-closure carrier, are not yet independently ported. This draft deliberately does not replace them by arbitrary real-valued structure fields."
+    "genuine_current_obstacle_to_full_parent_types": "The actual Weil divisor-height and normalized conductor constructions still need independent type-level adaptation. The local Q_2 algebraic-closure carrier is already supplied by Mathlib; bounded-degree local compactness remains a theorem obligation."
   },
   "validation": {
     "compiled": false,
@@ -184,5 +184,17 @@
     "main_workspace_edited": false,
     "read_back_written": false
   },
-  "integration_status": "Candidate type-level design only; not integrated, compiled, read back or published. Must connect an actual downstream CanonicalEstimate consumer before delivery."
+  "integration_status": "Candidate type-level design only; not integrated, compiled, read back or published. Must connect an actual downstream CanonicalEstimate consumer before delivery.",
+  "padic_carrier_correction": {
+    "verified_source": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Padics/Complex.lean",
+    "sha256": "871e53b99b7b974bdd68a596d91663eef37ebb2bb9585511f6ca841a909dbfe6",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "declarations": {
+      "PadicAlgCl": 54,
+      "PadicAlgCl.normedField": 67,
+      "PadicAlgCl.charZero": 130
+    },
+    "conclusion": "Use the pinned Mathlib PadicAlgCl 2 directly. No new carrier existence theorem is needed. Bounded-degree local compactness remains a separate unported theorem.",
+    "superseded_claim": "A previous draft claimed the target Mathlib lacked a matching PadicAlgCl module; that claim was incorrect."
+  }
 }

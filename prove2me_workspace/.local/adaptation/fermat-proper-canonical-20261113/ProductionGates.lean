@@ -1,0 +1,6 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+
+#print axioms JoshiTeich.Prologue.Perfectoid.canonicalPerfectoidData_laws
+#print axioms TateCurvesTheta.TateParameter.toAnalyticQuotient_q_mul

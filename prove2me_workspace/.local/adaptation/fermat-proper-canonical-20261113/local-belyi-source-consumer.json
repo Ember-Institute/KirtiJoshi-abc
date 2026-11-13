@@ -1,0 +1,172 @@
+{
+  "unit": "Full concrete Belyi/local compactness/height-conductor reduction of Fermat.CanonicalEstimate",
+  "status": "uncompiled_draft_with_real_parent_consumer_and_eight_new_open_nodes",
+  "reference_commits": {
+    "genl": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+    "heights": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+    "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+  },
+  "iut_reference": {
+    "file": "refer/iut/Iut/Tripod/GeneralPosition.lean",
+    "sha256": "d617a3971667432719a998ac60138cbe8b2395f076898f3572d18bcaa3b86539",
+    "commit": null
+  },
+  "correction_to_previous_design": {
+    "claim_retracted": "The actual local algebraic-closure carrier was unavailable at the platform Mathlib pin.",
+    "actual_source": "Mathlib/NumberTheory/Padics/Complex.lean:54 PadicAlgCl; :67 spectral normedField; :130 CharZero",
+    "actual_carrier": "PadicAlgCl 2 = AlgebraicClosure Q_2; its spectral norm; no arbitrary local field witness is supplied."
+  },
+  "companion_input": {
+    "directory": "/tmp/p2m-proper-divisor-height-design-20261113",
+    "definitions_file": "Definitions/Def_FermatProperDivisorHeight.lean",
+    "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+    "composition_file": "Definitions/Def_FermatProperDivisorComposition.lean",
+    "required_actual_data": [
+      "CanonicalDivisorData: exact coefficients of div(du)",
+      "InfinityDivisorData: max coordinate pole multiplicities",
+      "PlaneAdjunctionData: actual nonzero rational function r with coefficient equality",
+      "PolarPresentation: exact difference of actual polar divisors",
+      "CuspGenerators: actual finite coordinate-ring generator model containing the tripod functions"
+    ],
+    "computed_functions": [
+      "functionHeight from Mathlib normalized heights of actual rational values",
+      "divHeight R = functionHeight R.f - functionHeight R.g",
+      "logCondOf from actual finite places, evaluated generators, and full point-field degree"
+    ]
+  },
+  "new_children": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean",
+      "full_type_expansion": "forall {N} (M : Model N), PlacesDiscrete M -> ResiduesFinite M -> forall d (xs : Nat -> QbarPoint M.K), (forall n, (xs n).degree <= d) -> exists s, StrictMono s and exists T : Finset (Place M.K), forall phi, phi != 0 -> phi != 1 -> (forall P in T, phi and phi^-1 and (phi-1)^-1 belong to P.O) -> exists c, eventually n, LocalBounds M (xs(s n)) phi c",
+      "source": "Heights/Curve/Compactness.lean:233 exists_subseq_bounded with V={2}; Heights/Local/Compactness.lean:154,:262",
+      "actual_consumer": "boundedBelyiImages_of_children",
+      "fidelity": "Every embedding into actual PadicAlgCl 2 and Complex is bounded. Proper places include infinity. A finite point degree bound is essential; Qbar_2 itself is not locally compact."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.avoidanceRegularity",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_avoidanceRegularity.lean",
+      "full_type_expansion": "forall {N} (M : Model N) (hDVR : PlacesDiscrete M) phi P, P notin cusps M hDVR phi -> phi in P.O and phi^-1 in P.O and (phi-1)^-1 in P.O",
+      "source": "Genl/Curves/BelyiDescent.lean:127 mem_of_notMem_belyiCusps",
+      "actual_consumer": "boundedBelyiImages_of_children",
+      "fidelity": "Concrete normalized valuation statement, not a selected good-place predicate."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_embeddingBoundsToSet.lean",
+      "full_type_expansion": "forall {N} (M : Model N), ResiduesFinite M -> forall x phi d c, x.degree <= d -> LocalBounds M x phi c -> belyiImage M phi x in (localCompactSet d c).set",
+      "source": "Heights/Local/PlaceEmbedding.lean:330; Heights/Local/Bounded.lean:30,:39; Iut/Tripod/GeneralPosition.lean:170-211",
+      "actual_consumer": "boundedBelyiImages_of_children",
+      "fidelity": "One common valuation set V={2}, bound (d+1)*max(c,0), for all selected images. Must prove image-field embedding extension and local-degree scaling."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalHeightIdentification",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalHeightIdentification.lean",
+      "full_type_expansion": "forall {N} M hDVR, 3<N -> ResiduesFinite M -> forall A (K : CanonicalDivisorData M hDVR) (H : InfinityDivisorData M hDVR), PlaneAdjunctionData M hDVR K H -> forall RK : PolarPresentation M hDVR K.D, exists C, forall p : Fermat.Pt N, abs(divHeight RK (affineLift M A p)-Fermat.canonicalHeight p) <= C",
+      "source": "Actual plane adjunction div(du)~(N-3)H, Height tuple evaluation and principal-divisor bounded discrepancy; independent adaptation of Heights.Curve.DivisorHeight and Genl/Curves/Covering.lean:451-454",
+      "actual_consumer": "canonicalEstimate_of_belyi_children",
+      "fidelity": "Explicitly consumes actual K,H,nonzero-r adjunction and actual polar presentation. This is where the fixed (N-3)*normalized[U:V:1] height is identified with the canonical Weil height; it is not treated as proved by naming it canonicalHeight."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.lean",
+      "full_type_expansion": "forall {N} M hDVR hRF A phi, IsBelyi M hDVR phi -> forall hfin (B : ArithmeticDivisorChoices M hDVR phi hfin), exists C, forall p, GoodValue M (affineLift M A p) phi -> abs(divHeight B.canonicalPresentation (affineLift M A p)+divHeight B.cuspPresentation (affineLift M A p)-Tripod.htCan(belyiImage M phi (affineLift M A p))) <= C",
+      "source": "Genl/Curves/BelyiDescent.lean:215-237 divHeight_logCanon_add_cusp; :313-315; actual Belyi relation and tripod height comparison",
+      "actual_consumer": "canonicalEstimate_of_belyi_children",
+      "fidelity": "Uses actual div(du) and actual reduced cusp divisor. Does not define cusp height as imageHeight-canonicalHeight."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_divisorDegreeHeightComparison.lean",
+      "full_type_expansion": "forall {N} M hDVR hRF (D E : Divisor M) (RD : PolarPresentation M hDVR D) (RE : PolarPresentation M hDVR E) q, 0<divisorDegree M D -> (divisorDegree M E : Real)<q*divisorDegree M D -> exists C, forall x : QbarPoint M.K, divHeight RE x <= q*divHeight RD x+C",
+      "source": "Heights.Curve.divHeight_le_mul; Genl/Curves/BelyiDescent.lean:321-327",
+      "actual_consumer": "canonicalEstimate_of_belyi_children, with D=actual canonical divisor and E=actual cusp divisor",
+      "fidelity": "The degree inequality is strict. There is no equality-at-degree-ratio assumption and no free real-valued height parameter."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiDifferentConductorComparison.lean",
+      "full_type_expansion": "forall {N} M hDVR hRF A phi, IsBelyi M hDVR phi -> forall hfin (G : CuspGenerators M hDVR phi hfin), exists C, forall p, GoodValue M (affineLift M A p) phi -> Tripod.logDiff(image p)+Tripod.logCond(image p) <= Fermat.logDiff p+logCondOf M hRF G.G (affineLift M A p)+C",
+      "source": "Heights.Different.logDisc_add_cond_le; Genl/Curves/BelyiDescent.lean:395-445",
+      "actual_consumer": "canonicalEstimate_of_belyi_children",
+      "fidelity": "Every discriminant/conductor uses its actual point-field normalization; AffineIdentification.field_eq and belyiImage_field_le are the field bridges. G generates the actual coordinate ring and contains phi,phi^-1,(1-phi)^-1."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.cuspConductorHeightComparison",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspConductorHeightComparison.lean",
+      "full_type_expansion": "forall {N} M hDVR hRF A phi, IsBelyi M hDVR phi -> forall hfin (G : CuspGenerators M hDVR phi hfin) (RE : PolarPresentation M hDVR (cuspDivisor M hDVR phi hfin)), exists C, forall p, GoodValue M (affineLift M A p) phi -> logCondOf M hRF G.G (affineLift M A p) <= divHeight RE (affineLift M A p)+C",
+      "source": "Heights.Curve.logCondOf_le_divHeight; Genl/Curves/BelyiDescent.lean:316-320",
+      "actual_consumer": "canonicalEstimate_of_belyi_children",
+      "fidelity": "Actual finite-place affine-model conductor and actual effective cusp-divisor height, not interchangeable supplied functions."
+    }
+  ],
+  "reused_open_children": {
+    "proper": [
+      "modelExists",
+      "placesDiscrete",
+      "residuesFinite",
+      "affineIdentification",
+      "noncriticalSelection",
+      "cuspsFinite"
+    ],
+    "divisor": [
+      "polarPresentationExists",
+      "canonicalDivisorExists",
+      "infinityDivisorExists",
+      "planeAdjunctionExists",
+      "cuspGeneratorsExists",
+      "canonicalDivisorDegree"
+    ],
+    "note": "All are explicitly imported/consumed by Sol_FermatCanonicalEstimate. The two existing compositions only assemble concrete mathematical data, not comparison laws."
+  },
+  "local_composition": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.boundedBelyiImages_of_children",
+    "file": "Definitions/Def_FermatLocalBelyiComposition.lean",
+    "inputs": [
+      "LocalCompactness",
+      "AvoidanceRegularity",
+      "existing NoncriticalSelection",
+      "EmbeddingBoundsToSet"
+    ],
+    "output": "For every sequence of actual Fermat points with degree<=d, an actual IsBelyi phi, a StrictMono subsequence s, one Tripod.CompactlyBounded K, and good evaluation/membership/image-degree<=d for every selected term.",
+    "proof": "The finite limit places from compactness are avoided by the actual Belyi function. Passing to an explicit tail preserves strict monotonicity. The original degree bound is preserved via actual image-field inclusion."
+  },
+  "parent_composition": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalEstimate_of_belyi_children",
+    "file": "Definitions/Def_FermatCanonicalBelyiComposition.lean",
+    "target": "Fermat.CanonicalEstimate, unchanged",
+    "solution_file": "Solutions/Sol_FermatCanonicalEstimate.lean",
+    "solution_signature": "theorem solution : AbcAdaptation.Tripod.Fermat.CanonicalEstimate",
+    "proof": "Assume failure at degree<=d and tolerance epsilon. Choose xs with discrepancy>n. Select actual Belyi phi and compact subsequence. Choose actual canonical/infinity/adjunction/polar/generator data. canonicalDivisorDegree proves positive actual canonical degree N(N-3). Choose q=max(degE/degK,0)+1, hence actual StrictQ and q>0. Set delta=epsilon/(1+q*(1+epsilon)), so 1+delta=(1+epsilon)*(1-delta*q). StatementII on the selected images plus the five genuine comparison children gives H<= (1+delta)Diff + delta*q*H+C. StrictMono s implies s(n)>=n; choose n>C/(1-delta*q) to contradict the original failure sequence.",
+    "no_parent_renaming": "No child is NoncriticalInput->CanonicalEstimate, StatementII->CanonicalEstimate, or a freely chosen height theory. Every remaining comparison has actual geometric/rational/divisor/arithmetic inputs and a distinct source theorem."
+  },
+  "strict_q_and_normalization": {
+    "canonical_degree_identity": "Independently supplied canonicalDivisorDegree on the true div(du), actual infinity divisor and actual adjunction witness.",
+    "canonical_height_identity": "Independently open canonicalHeightIdentification relates the true canonical divisor height to the fixed existing Fermat canonicalHeight.",
+    "strict_q": "The proof uses actual degE<q*degK, derived from StrictQ plus the explicit canonical-degree identity. Equality at degree ratio is never used.",
+    "point_fields": "The original Fermat logDiff uses Q(u,v), image logDiff uses Q(phi(p)), and logCondOf uses the full point field. The explicit comparison theorem must prove the normalized tower inequality across those actual fields."
+  },
+  "remaining_decomposition_scope": {
+    "Act1": "This layer now has a concrete complete parent combination, conditional on eight new exact mathematical children and the twelve existing model/divisor children.",
+    "Act2": "No child proof has been filled. The upstream proof packages are references, not runtime imports.",
+    "further_split_targets": [
+      "bounded-degree p-adic compactness and diagonal EPlace limit proof inside localCompactness",
+      "local-place versus embedding arithmetic inside embeddingBoundsToSet",
+      "actual canonical/projective height comparison inside canonicalHeightIdentification",
+      "source generic divisor-height inequalities and normalized conductor tower proofs inside their explicit children"
+    ]
+  },
+  "filename_rule": "Theorems/Thm_<full qualified theorem name with dots replaced by underscores>.lean; all new files follow this rule.",
+  "verification": {
+    "compiled": false,
+    "mcp_ci_called": false,
+    "main_workspace_edited": false,
+    "read_back_written": false,
+    "static_checks": [
+      "Mathlib import file paths exist",
+      "JSON syntax checked",
+      "Theorem filenames use full qualified names"
+    ]
+  }
+}

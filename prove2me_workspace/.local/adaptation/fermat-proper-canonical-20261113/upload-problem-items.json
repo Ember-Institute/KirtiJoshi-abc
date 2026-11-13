@@ -1,0 +1,102 @@
+[
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.modelExists",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.modelExists : ∀ (N : ℕ), 3 < N → Nonempty (AbcAdaptation.Tripod.Fermat.Proper.Model N) := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.placesDiscrete",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.placesDiscrete : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N), AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.residuesFinite",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.residuesFinite : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N), AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.affineIdentification",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.affineIdentification : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n      Nonempty (AbcAdaptation.Tripod.Fermat.Proper.AffineIdentification M) := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.NoncriticalSelection M hDVR := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ → (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (D : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n      Nonempty (AbcAdaptation.Tripod.Fermat.Proper.PolarPresentation M hDVR D) := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    Nonempty (AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR) := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisorExists",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.infinityDivisorExists : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    Nonempty (AbcAdaptation.Tripod.Fermat.Proper.InfinityDivisorData M hDVR) := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.planeAdjunctionExists",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.planeAdjunctionExists : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  3 < N →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n      ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR)\n        (H : AbcAdaptation.Tripod.Fermat.Proper.InfinityDivisorData M hDVR),\n        Nonempty (AbcAdaptation.Tripod.Fermat.Proper.PlaneAdjunctionData M hDVR K H) := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.cuspGeneratorsExists",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.cuspGeneratorsExists : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ →\n        ∀ (hfin : (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite),\n          Nonempty (AbcAdaptation.Tripod.Fermat.Proper.CuspGenerators M hDVR φ hfin) := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorDegree",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorDegree : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  3 < N →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n      ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR)\n        (H : AbcAdaptation.Tripod.Fermat.Proper.InfinityDivisorData M hDVR)\n        (J : AbcAdaptation.Tripod.Fermat.Proper.PlaneAdjunctionData M hDVR K H),\n        AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M K.D =\n          AbcAdaptation.Tripod.Fermat.Proper.planeCanonicalDegree N := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.localCompactness : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.LocalCompactness M := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.avoidanceRegularity",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.avoidanceRegularity : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.AvoidanceRegularity M hDVR := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.EmbeddingBoundsToSet M := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalHeightIdentification",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.canonicalHeightIdentification : AbcAdaptation.Tripod.Fermat.Proper.CanonicalHeightIdentification := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation : AbcAdaptation.Tripod.Fermat.Proper.BelyiHeightRelation := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison : AbcAdaptation.Tripod.Fermat.Proper.DivisorDegreeHeightComparison := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison : AbcAdaptation.Tripod.Fermat.Proper.BelyiDifferentConductorComparison := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.cuspConductorHeightComparison",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.cuspConductorHeightComparison : AbcAdaptation.Tripod.Fermat.Proper.CuspConductorHeightComparison := by sorry"
+  }
+]

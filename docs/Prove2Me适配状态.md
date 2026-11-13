@@ -41,7 +41,17 @@
 
 `Fermat.heightNormalization` 仍需把实际点域 `ℚ(u,v)` 与 `ℚ(u^N)` 的高度归一化、幂的高度公式，以及 `[u:v:1]` 与 `[u:1]` 的一致比较接到底层节点；不能把 `(N−3)/N` 系数误换成覆盖次数 `N²` 的倒数。`Fermat.liftDifferent` 仍需拆出实际根的存在性、完整点域的 `N²` 次数界，以及相同扩张上的归一化判别式／导子估计；单用子域判别式单调性不能证明完整点域的上界。
 
-`Fermat.canonicalEstimate` 的后续义务包括固定适当 Fermat 曲线的函数域、处、代数点及其与当前仿射坐标和剩余域的身份，规范层等于 `O(N−3)` 的伴随公式与固定高度代表的比较，以及非临界 Belyi 映射、局部紧性、紧有界像、尖点除子的真实高度和导子、严格次数比比较及按点次数的归纳。适当曲线和除子载体尚未在本平台工作区独立移植；只检查仿射导数会漏掉无穷点，任意点映射搭配自由高度字段也不能替代这些对象。可将具体方程、域生成、处及剩余域等约束写入精确结构，并将其真实存在性单独列为开放节点；不得在定义层导入未证实例或使用自由命题槽位。
+`Proper.modelExists` 仍需实际构造满足完整 Fermat 方程、生成条件、超越性和对 `ℚ(u)` 次数恰为 `N` 的函数域，给出不可约性与次数证明。`Proper.affineIdentification` 仍需证明全部相关赋值处的仿射开与当前代数坐标对等价，并保持完整剩余域的像；不能只给坐标映射而遗漏域的身份。
+
+`Proper.placesDiscrete`、`Proper.residuesFinite` 还需接入来源的一维函数域、整闭包图册和局部化证明。已核对来源 `IsCurveField` 仅要求存在超越元使其单生成子域上的扩张有限，这一条件可由当前模型的 `u` 及其有限维字段直接提供；不能误加来源没有要求的常数域条件，也不能把有限生成域误称为有限生成有理数代数。`Proper.noncriticalSelection` 和 `Proper.cuspsFinite` 仍需继续拆出真实非临界 Belyi 构造及零极点有限支撑，保留全部处和无穷点。
+
+`Proper.polarPresentationExists` 还需沿来源的实际 Riemann 空间、有限维性、维数上界及最终线性增长拆分。随后应由这些空间中的函数构造两个具有指定极除子的真实有理函数，保留零函数和正负部分的边界，不能用自由高度函数或原目标的改名版本替代。已有整闭包、赋值处和剩余域证明草稿尚未在本工作区验收，不能据静态源码审阅关闭这些节点。
+
+`Proper.canonicalDivisorExists`、`Proper.infinityDivisorExists`、`Proper.planeAdjunctionExists` 和 `Proper.canonicalDivisorDegree` 分别还需证明 `du` 除子的有限支撑、实际坐标极点构成的超平面除子、具体伴随关系，以及真正典范除子次数等于 `N(N−3)`。应逐处追踪分歧系数，证明超平面次数及主除子次数为零，不能把预先定义的数字当作次数等式本身。`Proper.cuspGeneratorsExists` 还需给出尖点补集的实际坐标环有限生成性，并包含所需的三个三支点函数。
+
+`Proper.localCompactness`、`Proper.avoidanceRegularity` 和 `Proper.embeddingBoundsToSet` 还需分别落实有界次数点列的局部紧性、避开尖点后的正则性，以及全部共轭嵌入界向同一赋值紧有界集的传递。固定 Mathlib 已有 `PadicAlgCl 2` 及其谱范数，无须另设该载体的存在性假设；但紧性证明和次数缩放仍需实际接入。
+
+`Proper.canonicalHeightIdentification`、`Proper.belyiHeightRelation`、`Proper.divisorDegreeHeightComparison`、`Proper.belyiDifferentConductorComparison` 和 `Proper.cuspConductorHeightComparison` 仍需向底层高度与算术定理分解。保留极除子表示所定义的真实高度、完整点域和像点域的归一化、统一加法常数、严格除子次数比，以及实际坐标环生成元定义的导子；不得以自由函数、次数比取等或只选一个嵌入代替现有陈述。
 
 参考工程最强入口在源码层仅接收全称 `h312`；其完整外部依赖闭包尚未在本地验收，仍需完成 Joshi 字面三点一二与所需参考变体的精确接合。
 

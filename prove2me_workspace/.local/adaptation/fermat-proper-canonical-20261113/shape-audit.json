@@ -1,0 +1,328 @@
+{
+  "audit": "independent_proper_canonical_mathematical_shape_review",
+  "date": "2026-11-13",
+  "agent": "/root/proper_shape_independent",
+  "status": "no_mathematical_shape_blocker_found_uncompiled",
+  "blockers": [],
+  "candidate_inputs": [
+    {
+      "path": "/tmp/p2m-proper-divisor-height-design-20261113/Definitions/Def_FermatProperDivisorComposition.lean",
+      "sha256": "d4c5425ac07f42729f017abb46dda6639fc206501dd445dec659460d11789a53"
+    },
+    {
+      "path": "/tmp/p2m-proper-divisor-height-design-20261113/Definitions/Def_FermatProperDivisorHeight.lean",
+      "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec"
+    },
+    {
+      "path": "/tmp/p2m-proper-local-belyi-design-20261113/Definitions/Def_FermatBelyiComparisons.lean",
+      "sha256": "c8dd47e099ee4ca6a1715d4034f1c375617d89439130ce8494a720a9359d2813"
+    },
+    {
+      "path": "/tmp/p2m-proper-local-belyi-design-20261113/Definitions/Def_FermatCanonicalBelyiComposition.lean",
+      "sha256": "ed9f9030c6a94e163d0b009d5b6aacbf956d2a1766b656b555f4d6d2e07f1793"
+    },
+    {
+      "path": "/tmp/p2m-proper-local-belyi-design-20261113/Definitions/Def_FermatLocalBelyi.lean",
+      "sha256": "be4b90c5874562cf7fcf604d8916b03885fa1c0f5b866370fa37d522ba7f98a1"
+    },
+    {
+      "path": "/tmp/p2m-proper-local-belyi-design-20261113/Definitions/Def_FermatLocalBelyiComposition.lean",
+      "sha256": "2adc4faf43132716472fcb75232c8a174027e9fde3c65c4dd778b48fbfeeda80"
+    }
+  ],
+  "findings": [
+    {
+      "id": "polar_presentation",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:23-35",
+      "conclusion": "PolarPresentation fixes the actual divisor exactly, and its existence for every divisor is a valid Riemann-theorem obligation.",
+      "reason": "poleMultiplicity=max(0,-ord) is the source polar divisor coefficient, including zero function totalization. Equality is imposed at every proper place, so neither support nor coefficients can be chosen to fit a height estimate. Over a characteristic-zero function field, every divisor is a difference of two exact polar divisors, as in pinned Belyi/CurveField/Riemann.lean exists_eq_polarDivisor_sub_polarDivisor."
+    },
+    {
+      "id": "function_height_normalization",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:41-46",
+      "conclusion": "functionHeight is the genuine absolute logarithmic height of the function value, without double normalization.",
+      "reason": "At a regular point the field Q(f(x)) is the minimal simple number field. Tripod.deg is its degree and Height.logHeight_1 is Mathlib relative number-field height. Division by the degree agrees with pinned Heights/Absolute/Basic.lean logHeight_one_eq_gen. Computing instead in the full point field gives the same value by logHeight_comp_ringHom. A smaller image field therefore does not change the absolute height."
+    },
+    {
+      "id": "height_at_poles",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:41-68",
+      "conclusion": "Zero height at a pole is correct, and is distinct from the regular-zero case.",
+      "reason": "The rational map [1:f] at a pole has value [0:1], whose absolute projective height is zero. This is exactly pinned TupleHeight.tupleHeight_pair_one_of_notMem. A regular zero evaluates to [1:0], also of height zero; no pole order is being mistaken for a value or included in an arithmetic height sum."
+    },
+    {
+      "id": "actual_divisor_height",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:72-83",
+      "conclusion": "divHeight and cuspHeight are explicit Weil divisor heights determined by actual polar data.",
+      "reason": "For D=(f)_infinity-(g)_infinity, functionHeight(f)-functionHeight(g) is the source divisor-height construction. Different valid presentations can change the function only by a uniformly bounded amount, by the tuple comparison/height machine. Their functions are not arbitrary caller-supplied real-valued data. Universal comparisons over all presentations are legitimate, with constants allowed to depend on the presentation."
+    },
+    {
+      "id": "canonical_coefficients",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:90-94",
+      "conclusion": "CanonicalDivisorData is exactly div(du), with correct signs at poles.",
+      "reason": "u is transcendental by Model, so du is nonzero. In characteristic zero the local coefficient is e_u(P)-1 at a regular place and -e_u(P)-1 at a pole. These formulas match pinned Belyi/CurveField/Canonical.lean:72-79. In particular a simple pole contributes -2, not 0 or +2. The exact coefficient constraint uniquely determines D."
+    },
+    {
+      "id": "infinity_divisor",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:99-103",
+      "conclusion": "InfinityDivisorData gives the actual hyperplane divisor W=0.",
+      "reason": "The morphism to projective space is [u:v:1]. Normalizing the tuple at a place gives hyperplane coefficient -min(ord u,ord v,0)=max(pole_u,pole_v). For the smooth Fermat curve the coordinate poles at infinity are simultaneous simple poles; the divisor has total degree N over Q, counting residue degrees and all infinity points."
+    },
+    {
+      "id": "plane_adjunction",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:108-113",
+      "conclusion": "The adjunction equation has the right divisor and sign, with a concrete possible rational function.",
+      "reason": "For N>0 in characteristic zero, the differential du/v^(N-1) has divisor (N-3)H. Hence div(du)=(N-3)H+div(v^(N-1)), so r=v^(N-1) supplies the indicated sign. v is nonzero since otherwise the Fermat equation would make the transcendental u algebraic. The structure does not postulate any height estimate.",
+      "future_proof_requirement": "Prove regularity/geometric identification and the displayed exact divisor identity, including all infinity places; do not replace this by a degree-only equality."
+    },
+    {
+      "id": "coord_ring",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:117-124",
+      "conclusion": "coordRing is the genuine ring of rational functions regular on the complement of supp D.",
+      "reason": "For finitely supported D the condition D(P)=0 is precisely P outside supp D, irrespective of the sign of a nonzero coefficient. Intersecting the corresponding valuation rings gives regular functions on that open regular curve. This agrees with pinned CoordRing after replacing a finite set by support."
+    },
+    {
+      "id": "cusp_generators",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:128-135",
+      "conclusion": "The finite generator package and its three mandatory functions are consistent.",
+      "reason": "A nonconstant phi has nonempty finite cusp support, so its complement is affine and its coordinate ring is finitely generated. phi, inverse phi and inverse(1-phi) are regular off the cusps and can be added to any finite generating set. Actual equality of subalgebras prevents a merely labelled regularity model."
+    },
+    {
+      "id": "conductor_normalization",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:155-164",
+      "conclusion": "logCondOf is the source normalized truncated conductor in the full point field.",
+      "reason": "At a good point every generator has a value in x.fieldOf. Each finite place is counted once exactly when some value has norm greater than one; its contribution is log of its residue-field absolute norm, divided by [x.fieldOf:Q]. Finite G implies finite support, including when some generator evaluates to zero. The out-of-domain zero branch is the source totalization and is not used by the comparisons."
+    },
+    {
+      "id": "point_discriminant",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorHeight.lean:167-172",
+      "conclusion": "pointLogDiff uses the same full point field as the conductor and agrees with Fermat.logDiff after affine identification.",
+      "reason": "The discriminant is normalized by x.degree, not by degree of phi(x). AffineIdentification.field_eq and affineLift_degree_eq transport both numerator and denominator. The final comparison states Fermat.logDiff directly, so the unused helper pointLogDiff is not an extra mathematical assumption."
+    },
+    {
+      "id": "choices_assembly",
+      "status": "pass",
+      "location": "Def_FermatProperDivisorComposition.lean:14",
+      "conclusion": "arithmeticDivisorChoices_of_children packages genuine choices and no parent estimate.",
+      "reason": "It obtains the canonical and infinity divisors, exact adjunction data, two Riemann presentations and actual cusp generators from their separate existence children. These data include no arbitrary heights or conductors and no bound involving StatementII or the desired parent estimate."
+    },
+    {
+      "id": "local_carrier_all_embeddings",
+      "status": "pass",
+      "location": "Def_FermatLocalBelyi.lean:78-94",
+      "conclusion": "LocalBounds and LocalCompactness use the correct local fields and all point-field embeddings.",
+      "reason": "The target is Mathlib PadicAlgCl 2 with spectral norm, rather than an unproved local algebraic-closure carrier or its completion Cp. The archimedean target is Complex. Both universally quantify all ring embeddings of the entire point field; phi(x) and phi(x)-1 are simultaneously bounded away from 0 and infinity. The statement matches pinned Heights/Curve/Compactness.lean:233-244 specialized to V={2}."
+    },
+    {
+      "id": "local_compactness_strength",
+      "status": "pass",
+      "location": "Def_FermatLocalBelyi.lean:88-94",
+      "conclusion": "The uniform subsequence/finite-place avoidance statement is strong but is a genuine source theorem, not an evident false compactness claim.",
+      "reason": "The same subsequence and finite T are chosen before phi, while c and the tail may depend on phi. Degree-bounded points have bounded local degrees, which is essential because PadicAlgCl itself is not locally compact. Generic local limits need not be algebraic over Q, but cannot be zeros or poles of a fixed nonzero Q-rational function; only algebraic closed-place limits need enter T. The pinned proof handles this distinction. d=0 has no degree-bounded point sequence, so it is vacuous."
+    },
+    {
+      "id": "avoidance_regularity",
+      "status": "pass",
+      "location": "Def_FermatLocalBelyi.lean:95-98",
+      "conclusion": "AvoidanceRegularity is valid with the totalized order.",
+      "reason": "For nonzero phi outside cusps, ord phi=0 gives regular phi and inverse; absence of positive ord(phi-1), combined with regularity, gives regular inverse(phi-1). Identically zero or one also satisfy the asserted regularity because Lean inverse zero is zero, so the general quantification introduces no constant-function counterexample. The Belyi consumer separately excludes both constants."
+    },
+    {
+      "id": "embedding_bounds_to_set",
+      "status": "pass",
+      "location": "Def_FermatLocalBelyi.lean:100-114",
+      "conclusion": "The bound (d+1)*max(c,0) is sufficient for the actual CompactlyBounded.set.",
+      "reason": "Every embedding of Q(phi(x)) into either algebraically closed local target extends to x.fieldOf, so the full-point LocalBounds descend to all image embeddings. At a finite place over 2, pinned Heights/Local/PlaceEmbedding.lean:332 gives w(y)=norm(tau(y))^m with 0<m<=[Q(phi(x)):Q]<=x.degree<=d. Thus absolute log w(y)<=d*max(c,0). InfinitePlace.norm_embedding_eq gives the bound max(c,0) without a missing factor two. Both fit (d+1)*max(c,0), including d=0 totalization. The condition residueChar=2 agrees with the place lying over 2."
+    },
+    {
+      "id": "local_composition",
+      "status": "pass",
+      "location": "Def_FermatLocalBelyiComposition.lean:14",
+      "conclusion": "The local composition obtains one noncritical function and converts the eventual bound to an all-terms subsequence.",
+      "reason": "It chooses T and the subsequence from compactness, selects a Belyi phi avoiding T, uses avoidance regularity, then drops the finite initial tail by replacing s(n) with s(n+cut). It preserves strict monotonicity, good evaluation, the original degree bound d and one common compact set. The fallback rational point 2 in belyiImage is never used on this subsequence."
+    },
+    {
+      "id": "canonical_degree_comparison",
+      "status": "pass",
+      "location": "Def_FermatBelyiComparisons.lean:15-20",
+      "conclusion": "CanonicalDegreeIdentity is correct for N>3 and actual adjunction inputs.",
+      "reason": "The degree of a principal divisor is zero and the actual hyperplane infinity divisor has degree N. Therefore deg div(du)=(N-3)N. The theorem includes 3<N, so the final argument can use positive canonical degree without invoking the zero-denominator totalization of StrictQ."
+    },
+    {
+      "id": "canonical_height_identification",
+      "status": "pass",
+      "location": "Def_FermatBelyiComparisons.lean:24-31",
+      "conclusion": "CanonicalHeightIdentification has the correct fixed height and normalization.",
+      "reason": "The divisor divdu is linearly equivalent to (N-3)H. The height of H is the absolute projective height of [u:v:1]. At affine points the existing Fermat.projectiveHeight computes exactly this height in Q(u(x),v(x)), normalized by its degree. Thus every chosen canonical polar height differs from the existing Fermat.canonicalHeight=(N-3)*projectiveHeight by a bounded amount uniformly over all algebraic points. This statement is a height-machine/adjunction fact independent of StatementII and discriminants."
+    },
+    {
+      "id": "belyi_height_relation",
+      "status": "pass",
+      "location": "Def_FermatBelyiComparisons.lean:34-43",
+      "conclusion": "BelyiHeightRelation is the genuine canonical-plus-reduced-cusps relation.",
+      "reason": "For a Belyi phi, div(dphi)+E is linearly equivalent to the polar divisor of phi. divdu and divdphi are linearly equivalent, since their ratio is a nonzero rational function. Therefore h_K+h_E differs from h(phi(x)) by a uniformly bounded amount. GoodValue selects the regular nonzero/nonone branch; Tripod.htCan uses exactly the absolute height of phi(x), even if its minimal field is smaller than the full point field."
+    },
+    {
+      "id": "degree_height_comparison",
+      "status": "pass",
+      "location": "Def_FermatBelyiComparisons.lean:46-52",
+      "conclusion": "DivisorDegreeHeightComparison is valid at its stated strict inequality and full quantifier strength.",
+      "reason": "Pinned Heights/Curve/DivisorHeight.lean:263 states exactly this degree comparison for q real and arbitrary divisors, assuming positive degree of D and deg(E)<q*deg(D). It holds uniformly over all Qbar points, including poles, and allows negative q where the degree inequality permits it. Constants may depend on both presentations. Equality of degrees alone would not suffice, but the candidate uses a strict inequality."
+    },
+    {
+      "id": "different_conductor_comparison",
+      "status": "pass",
+      "location": "Def_FermatBelyiComparisons.lean:56-64",
+      "conclusion": "BelyiDifferentConductorComparison has the correct full-field versus image-field normalization.",
+      "reason": "The image field Q(phi(x)) embeds into the full point field Q(u(x),v(x)). In the image field the three values phi, inverse phi and inverse(1-phi) detect exactly the tripod bad primes, including zeros, ones and poles modulo primes. Their images occur among G values. Pinned Heights/Different/Conductor.lean:202 gives normalized logDisc(image)+cond(image)<=logDisc(full)+cond(full). It absorbs ramification/inertia through the relative different, so no missing extension-degree multiplier is required. The stated additive constant is harmless; this tower part can in fact have constant zero after exact identifications."
+    },
+    {
+      "id": "cusp_conductor_height",
+      "status": "pass",
+      "location": "Def_FermatBelyiComparisons.lean:68-77",
+      "conclusion": "CuspConductorHeightComparison is the valid effective-divisor conductor bound.",
+      "reason": "The reduced cusp divisor is effective. Every chosen generator is regular off its support by the actual subalgebra equality. GoodValue for a transcendental phi places x outside that support, ensuring all G evaluations are regular. Pinned Heights/Curve/CondDivisor.lean logCondOf_le_divHeight gives precisely this bound with coefficient one, uniformly in all algebraic points. Arbitrary chosen Riemann presentations only change the constant."
+    },
+    {
+      "id": "five_comparisons_suffice",
+      "status": "pass",
+      "location": "Def_FermatCanonicalBelyiComposition.lean:20",
+      "conclusion": "The five height/arithmetic comparisons plus canonical degree, local images and concrete choices suffice for the original CanonicalEstimate.",
+      "reason": "The five substantive comparisons are canonical height identification, Belyi height relation, strict degree height comparison, discriminant/conductor tower, and cusp conductor versus height. CanonicalDegreeIdentity supplies positivity. None asserts the parent bound involving StatementII and Fermat.logDiff; each is a separate geometric/arithmetic fact with concrete arguments."
+    },
+    {
+      "id": "final_contradiction_algebra",
+      "status": "pass",
+      "location": "Def_FermatCanonicalBelyiComposition.lean:45-143",
+      "conclusion": "The final contradiction has the correct coefficients and does not switch the parent height.",
+      "reason": "Write H for fixed Fermat.canonicalHeight, D for fixed Fermat.logDiff, hK and hE for the two actual polar heights. StatementII on selected images and the comparisons imply H<=(1+delta)D+delta*q*H+C. The chosen q=max(degE/degK,0)+1 is positive and strictly exceeds the ratio. delta=epsilon/(1+q*(1+epsilon)) gives a=1-delta*q>0 and 1+delta=(1+epsilon)*a. Hence a*H<=(1+epsilon)*a*D+C. Failure points satisfy H>(1+epsilon)*D+s(n); strict monotonicity gives s(n)>=n, so selecting n>C/a contradicts the preceding bound. No nonnegativity of D is needed and no illicit dropping of a signed term occurs."
+    },
+    {
+      "id": "no_hidden_parent",
+      "status": "pass",
+      "location": "all six Definitions files",
+      "conclusion": "No hidden copy of the mathematical parent or freely variable height/conductor function was found.",
+      "reason": "The final result concludes the existing Fermat.CanonicalEstimate directly. Model and affine identity are obtained from NoncriticalInput, actual divisor data from the existence children, and the only use of StatementII is hII d delta hdelta K. The comparisons mention fixed actual functions; the choice structures contain rational functions, exact divisors and finite affine generators. Their future proofs are substantial but they are not mere restatements of CanonicalEstimate."
+    },
+    {
+      "id": "proof_status",
+      "status": "uncompiled_open_obligations",
+      "location": "all six Definitions files",
+      "conclusion": "This is a mathematical-shape pass only; kernel acceptance and the open-child proofs remain unverified.",
+      "reason": "This independent review did not invoke Lean, MCP-CI or shell compilation, and did not inspect another review/read-back draft. Reference matching verifies provenance and formulas, not the kernel acceptance of the candidate adaptations. All universal arithmetic comparisons and existence statements still require real proofs and the project acceptance checks."
+    }
+  ],
+  "reference_verification": [
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Belyi_CurveField_Canonical.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Canonical.lean",
+      "matches": true,
+      "sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Belyi_CurveField_CoordRing.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/CoordRing.lean",
+      "matches": true,
+      "sha256": "d21848a412ff4da577615f237816c973cbe3dfd0790f0123f8ff3bc5b11eb180"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Belyi_CurveField_Riemann.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Riemann.lean",
+      "matches": true,
+      "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Genl_Curves_Covering.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/genl/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/Covering.lean",
+      "matches": true,
+      "sha256": "d6ce0f0b014f6f7f97142e357e55efc202b64c6c9fc6365297ef7d0f89a56cbd"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Heights_Curve_CondDivisor.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/CondDivisor.lean",
+      "matches": true,
+      "sha256": "4995fc867250876d6fe7d7defba62230af1567ba7c608d02a5cff8e31c2f07cd"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Heights_Curve_CondHeight.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/CondHeight.lean",
+      "matches": true,
+      "sha256": "215908f7b4fbb858be7c3e2f436ebaaa39b0e7b4a1cb396eed9fb5ea19c661c7"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Heights_Curve_Conductor.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/Conductor.lean",
+      "matches": true,
+      "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Heights_Curve_DivisorHeight.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/DivisorHeight.lean",
+      "matches": true,
+      "sha256": "950fd1932c5eae4f74b7f9cfed22c28e78d5d9c44fb3356b2200f23caf96a5f3"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Heights_Curve_TupleHeight.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/TupleHeight.lean",
+      "matches": true,
+      "sha256": "63cbbb457a56a44b9c638bdcaf0a724f78a7830fa094a0c6ffda0681ac8485a2"
+    },
+    {
+      "local": "/tmp/p2m-proper-divisor-height-design-20261113/reference/Heights_Different_Conductor.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Different/Conductor.lean",
+      "matches": true,
+      "sha256": "f3e186ddac10d05794d2c2b82f7550f6562ce7e5ea822c452fde211bec01db6c"
+    },
+    {
+      "local": "/tmp/p2m-proper-local-belyi-design-20261113/reference/Heights_Curve_Compactness.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/Compactness.lean",
+      "matches": true,
+      "sha256": "9edc9c5baa8e29109c620e336b4346df878598567928caefab7f2f822514aafd"
+    },
+    {
+      "local": "/tmp/p2m-proper-local-belyi-design-20261113/reference/Heights_Local_Bounded.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/Bounded.lean",
+      "matches": true,
+      "sha256": "61acdef43208c4d32228ed2db8dd874aa930b9d3245672900d8493e3b766ced4"
+    },
+    {
+      "local": "/tmp/p2m-proper-local-belyi-design-20261113/reference/Heights_Local_Compactness.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/Compactness.lean",
+      "matches": true,
+      "sha256": "1d6ad0153b8298a565f165ce2b6aaacb535e3094377e928fbf9e0391d2d9c853"
+    },
+    {
+      "local": "/tmp/p2m-proper-local-belyi-design-20261113/reference/Heights_Local_PlaceEmbedding.lean",
+      "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/PlaceEmbedding.lean",
+      "matches": true,
+      "sha256": "1248cde4339dbbc776d1640a2f9a2d49f9d23c2dcdabdcbb8067410f3066bff2"
+    }
+  ],
+  "additional_reference": {
+    "url": "https://raw.githubusercontent.com/lana-agents/heights/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Absolute/Basic.lean",
+    "local": "/tmp/p2m-canonical-shape-AbsoluteBasic.lean",
+    "sha256": "6c4a3457e93fc70b6973aafeb5e0c1f84757825978221016d99480d8de5f5715",
+    "relevant_theorems": [
+      "logHeight_comp_ringHom",
+      "logHeight_one_eq_gen"
+    ]
+  },
+  "validation": {
+    "compiled": false,
+    "mcp_ci_called": false,
+    "main_workspace_edited": false,
+    "other_review_drafts_read": false,
+    "all_rg_used_repository_two_core_wrapper": true
+  },
+  "summary_zh": "未发现六个定义文件中的具体数学矛盾或隐藏父目标。真实函数高度、极点零高度、最小值域与全点域归一化一致；divdu/无穷超平面/伴随符号正确；导子是全点域正规化截断导子；LocalCompactness 控制 Complex 与 PadicAlgCl2 的全部嵌入；(d+1)max c 0 覆盖有限赋值的局部次数缩放；五个比较加典范次数足以支撑已写出的δ反证链。所有开放孩子仍需证明，本报告不构成编译或公理验收。"
+}

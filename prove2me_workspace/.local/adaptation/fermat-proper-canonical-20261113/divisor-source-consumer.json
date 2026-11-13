@@ -1,0 +1,347 @@
+{
+  "unit": "Concrete proper Fermat divisor heights and cusp conductors",
+  "date": "2026-11-13",
+  "status": "uncompiled_Act1_candidate_six_explicit_open_children",
+  "workspace_policy": {
+    "task_directory": "/tmp/p2m-proper-divisor-height-design-20261113",
+    "main_workspace_edited": false,
+    "compiled": false,
+    "mcp_ci_called": false,
+    "read_back_written": false
+  },
+  "reference_commits": {
+    "heights": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+    "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "genl": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf"
+  },
+  "reference_hashes": {
+    "Belyi_CurveField_Canonical.lean": {
+      "sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Belyi_CurveField_CoordRing.lean": {
+      "sha256": "d21848a412ff4da577615f237816c973cbe3dfd0790f0123f8ff3bc5b11eb180",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Belyi_CurveField_Riemann.lean": {
+      "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Genl_Curves_Covering.lean": {
+      "sha256": "d6ce0f0b014f6f7f97142e357e55efc202b64c6c9fc6365297ef7d0f89a56cbd",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Heights_Curve_CondDivisor.lean": {
+      "sha256": "4995fc867250876d6fe7d7defba62230af1567ba7c608d02a5cff8e31c2f07cd",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Heights_Curve_CondHeight.lean": {
+      "sha256": "215908f7b4fbb858be7c3e2f436ebaaa39b0e7b4a1cb396eed9fb5ea19c661c7",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Heights_Curve_Conductor.lean": {
+      "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Heights_Curve_DivisorHeight.lean": {
+      "sha256": "950fd1932c5eae4f74b7f9cfed22c28e78d5d9c44fb3356b2200f23caf96a5f3",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Heights_Curve_TupleHeight.lean": {
+      "sha256": "63cbbb457a56a44b9c638bdcaf0a724f78a7830fa094a0c6ffda0681ac8485a2",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    },
+    "Heights_Different_Conductor.lean": {
+      "sha256": "f3e186ddac10d05794d2c2b82f7550f6562ce7e5ea822c452fde211bec01db6c",
+      "download": "raw.githubusercontent.com direct; no proxy needed"
+    }
+  },
+  "dependency_candidate": {
+    "path": "/tmp/p2m-fermat-proper-carrier-design-20261113/Definitions/Def_FermatProperCarrier.lean",
+    "provides": [
+      "Model",
+      "PlacesDiscrete",
+      "ResiduesFinite",
+      "Place",
+      "QbarPoint",
+      "ord",
+      "ramIdx",
+      "Divisor",
+      "cuspDivisor",
+      "StrictQ",
+      "planeCanonicalDegree",
+      "AffineIdentification"
+    ]
+  },
+  "definitions": [
+    {
+      "name": "poleMultiplicity",
+      "formula": "max 0 (-ord_P f)",
+      "source": "Belyi/CurveField/Divisor.lean polarDivisor_apply",
+      "consumers": [
+        "PolarPresentation.divisor_eq",
+        "InfinityDivisorData.coefficient"
+      ]
+    },
+    {
+      "name": "PolarPresentation",
+      "formula": "actual f,g in M.K and forall P, D(P)=pole_f(P)-pole_g(P)",
+      "source": "Belyi/CurveField/Riemann.lean:372 exists_eq_polarDivisor_sub_polarDivisor",
+      "consumers": [
+        "divHeight",
+        "ArithmeticDivisorChoices.canonicalPresentation",
+        "ArithmeticDivisorChoices.cuspPresentation"
+      ]
+    },
+    {
+      "name": "functionHeight",
+      "formula": "if f regular at x then Height.logHeight1(gen(eval_x(f)))/deg(eval_x(f)) else zero",
+      "source": "Heights/Curve/TupleHeight.lean tupleHeight and tupleHeight_pair_one; Mathlib.NumberTheory.Height.NumberField",
+      "consumers": [
+        "divHeight",
+        "companion BelyiHeightRelation"
+      ],
+      "boundary_cases": {
+        "pole": "[1:f] extends to [0:1], height zero",
+        "regular_zero": "height of [1:0] is zero; proved in functionHeight_of_eval_zero",
+        "zero_function": "regular everywhere with value zero; polar divisor zero"
+      },
+      "normalization": "actual minimal field Q(eval_x(f)); equivalence with source absolute tuple height uses the normalized height tower formula, not definitional equality"
+    },
+    {
+      "name": "divHeight",
+      "formula": "functionHeight R.f x - functionHeight R.g x",
+      "source": "Heights/Curve/DivisorHeight.lean:107-125 polarRep and divHeight",
+      "consumers": [
+        "cuspHeight",
+        "companion CanonicalHeightIdentification",
+        "companion BelyiHeightRelation",
+        "companion DivisorDegreeHeightComparison",
+        "companion CuspConductorHeightComparison"
+      ],
+      "no_free_point_function": true
+    },
+    {
+      "name": "CanonicalDivisorData",
+      "formula": "D(P)=ramIdx(u,P)-1 when regular; D(P)=-ramIdx(u,P)-1 at poles",
+      "source": "Belyi/CurveField/Canonical.lean:42-83; the source proves this is div(du)",
+      "consumers": [
+        "PlaneAdjunctionData",
+        "ArithmeticDivisorChoices.canonical",
+        "canonicalDivisorDegree",
+        "companion CanonicalHeightIdentification",
+        "companion DivisorDegreeHeightComparison"
+      ]
+    },
+    {
+      "name": "InfinityDivisorData",
+      "formula": "H(P)=max(pole_u(P),pole_v(P))",
+      "source": "Heights/Curve/TupleHeight.lean A_s=-min_i ord_P(s_i) for s=[1,u,v]",
+      "consumers": [
+        "PlaneAdjunctionData",
+        "ArithmeticDivisorChoices.infinity",
+        "canonicalDivisorDegree",
+        "companion CanonicalHeightIdentification"
+      ]
+    },
+    {
+      "name": "PlaneAdjunctionData",
+      "formula": "actual r != zero and K(P)=(N-3)H(P)+ord_P(r)",
+      "source": "New specialization to the smooth plane Fermat equation; pinned Genl/Curves/Covering.lean:94-182 supplies generic Kummer context only",
+      "consumers": [
+        "ArithmeticDivisorChoices.adjunction",
+        "canonicalDivisorDegree",
+        "companion CanonicalHeightIdentification"
+      ],
+      "expected_witness": "v^(N-1)",
+      "faithfulness": "No claim that pinned Genl proves this exact specialization. The local differential calculation remains open."
+    },
+    {
+      "name": "coordRing",
+      "formula": "subalgebra of all f regular at all proper P with D(P)=0",
+      "source": "Belyi/CurveField/CoordRing.lean:28; equivalent support-based form",
+      "consumers": [
+        "CuspGenerators.generate"
+      ]
+    },
+    {
+      "name": "CuspGenerators",
+      "formula": "finite actual G with adjoin_Q G=coordRing(cuspDivisor phi), containing phi, inverse(phi), inverse(1-phi)",
+      "source": "Belyi/CurveField/CoordRing.lean:126; Genl/Curves/BelyiDescent.lean:289-304",
+      "consumers": [
+        "ArithmeticDivisorChoices.generators",
+        "logCondOf via choices.generators.G",
+        "companion BelyiDifferentConductorComparison",
+        "companion CuspConductorHeightComparison"
+      ]
+    },
+    {
+      "name": "pointField_finiteDimensional",
+      "formula": "transport hRF x.P along sigma.toRatAlgHom.equivFieldRange.toLinearEquiv",
+      "source": "Belyi/CurveField/Point.lean residueFieldEquiv and finiteDimensional",
+      "consumers": [
+        "logCondOf",
+        "pointLogDiff"
+      ],
+      "proof": "explicit theorem body; no new open child or global instance"
+    },
+    {
+      "name": "evalInPointField",
+      "formula": "eval_x(f) together with its actual membership in x.fieldOf",
+      "source": "Belyi/CurveField/Point.lean eval_mem_fieldOf",
+      "consumers": [
+        "logCondOf"
+      ]
+    },
+    {
+      "name": "logCondOf",
+      "formula": "sum_finite_w indicator(exists g in G, |g(x)|_w>1)*log(absNorm w) / degree(x), zero if any g has a pole at x",
+      "source": "Heights/Curve/Conductor.lean:104-119 logCondOf; Heights/Different/Conductor.lean:40-82",
+      "consumers": [
+        "companion BelyiDifferentConductorComparison",
+        "companion CuspConductorHeightComparison"
+      ],
+      "normalization": "full actual point field x.fieldOf, degree x.degree; not the image field Q(phi(x))",
+      "finite_support_reason": "finite union of FinitePlace.hasFiniteMulSupport of the nonzero evaluated generators"
+    },
+    {
+      "name": "pointLogDiff",
+      "formula": "log(abs(discr x.fieldOf))/x.degree",
+      "source": "Heights/Curve/Conductor.lean logDiff",
+      "consumers": [
+        "companion BelyiDifferentConductorComparison via AffineIdentification.field_eq"
+      ],
+      "transfer_requirement": "Prove equality with the fixed Fermat.logDiff and its exact point degree using AffineIdentification.field_eq."
+    },
+    {
+      "name": "ArithmeticDivisorChoices",
+      "fields": [
+        "canonical",
+        "infinity",
+        "adjunction",
+        "canonicalPresentation",
+        "cuspPresentation",
+        "generators"
+      ],
+      "consumers": [
+        "companion full CanonicalEstimate composition"
+      ],
+      "contains_estimates": false
+    }
+  ],
+  "open_children": [
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists.lean",
+      "source": "Belyi/CurveField/Riemann.lean:372",
+      "consumers": [
+        "arithmeticDivisorChoices_of_children",
+        "Sol_FermatArithmeticDivisorChoices.arithmeticDivisorChoices"
+      ],
+      "precise_gap": "Riemann theorem for actual fixed function field, including required finite-constant-field and degree arguments.",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.lean",
+      "source": "Belyi/CurveField/Canonical.lean:42-83",
+      "consumers": [
+        "arithmeticDivisorChoices_of_children",
+        "Sol_FermatArithmeticDivisorChoices.arithmeticDivisorChoices"
+      ],
+      "precise_gap": "Finite support of e_u-1 away from poles, plus finite pole support. No canonical divisor is picked freely.",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisorExists",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+      "source": "Belyi finite poles; Heights tuple divisor [1,u,v]",
+      "consumers": [
+        "arithmeticDivisorChoices_of_children",
+        "Sol_FermatArithmeticDivisorChoices.arithmeticDivisorChoices"
+      ],
+      "precise_gap": "Finite union of actual u/v pole sets.",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.planeAdjunctionExists",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_planeAdjunctionExists.lean",
+      "source": "New Fermat specialization; Genl/Curves/Covering.lean gives generic context",
+      "consumers": [
+        "arithmeticDivisorChoices_of_children",
+        "Sol_FermatArithmeticDivisorChoices.arithmeticDivisorChoices"
+      ],
+      "precise_gap": "Prove div(du)=(N-3)H+div(v^(N-1)) by explicit local orders or smooth plane adjunction.",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.cuspGeneratorsExists",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspGeneratorsExists.lean",
+      "source": "Belyi/CurveField/CoordRing.lean:126; Genl/Curves/BelyiDescent.lean:289-304",
+      "consumers": [
+        "arithmeticDivisorChoices_of_children",
+        "Sol_FermatArithmeticDivisorChoices.arithmeticDivisorChoices"
+      ],
+      "precise_gap": "Finite generation of the actual complement ring, extended by the actual three tripod functions; prove cusp support nonempty from transcendence.",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorDegree",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+      "source": "New Fermat degree specialization; Belyi/CurveField/Divisor.lean deg_div",
+      "consumers": [
+        "companion CanonicalDegreeIdentity",
+        "companion strict_q_height_bound"
+      ],
+      "precise_gap": "Compute degree H=N, principal degree zero, and sum the exact adjunction coefficient equality. Statement explicitly accepts actual K,H,J.",
+      "status": "OPEN_sorry_uncompiled"
+    }
+  ],
+  "composition": {
+    "file": "Definitions/Def_FermatProperDivisorComposition.lean",
+    "theorem": "arithmeticDivisorChoices_of_children",
+    "explicit_children": [
+      "polarPresentationExists",
+      "canonicalDivisorExists",
+      "infinityDivisorExists",
+      "planeAdjunctionExists",
+      "cuspGeneratorsExists"
+    ],
+    "output": "Nonempty ArithmeticDivisorChoices",
+    "proof_kind": "concrete existential assembly, no sorry in composition or top assembly body",
+    "scope": "provides real arithmetic choices; does not prove canonicalEstimate"
+  },
+  "companion_task": {
+    "path": "/tmp/p2m-proper-local-belyi-design-20261113/",
+    "agreed_comparisons": [
+      "CanonicalHeightIdentification",
+      "BelyiHeightRelation",
+      "DivisorDegreeHeightComparison",
+      "BelyiDifferentConductorComparison",
+      "CuspConductorHeightComparison"
+    ],
+    "canonical_degree_source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+    "strict_q_requirements": [
+      "actual degree identity",
+      "N>3 gives positive canonical degree",
+      "strict degree comparison, not equality",
+      "canonical height identification for the fixed Mathlib Fermat canonicalHeight"
+    ]
+  },
+  "excluded_substitutions": [
+    "arbitrary Pt -> Real function",
+    "free HeightTheory structure",
+    "fooLaw : Prop as an unchecked interface",
+    "definitions importing open theorems",
+    "Act2 assumptions",
+    "weakened parent conclusion",
+    "renamed canonicalEstimate as a child"
+  ],
+  "validation": {
+    "compiled": false,
+    "mcp_ci_called": false,
+    "main_workspace_edited": false,
+    "read_back_written": false,
+    "required_next_step": "Main agent reviews and integrates; only main agent submits exclusive MCP-CI validation."
+  }
+}

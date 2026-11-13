@@ -1,0 +1,86 @@
+{
+  "scope": "Static local import closure of the eight independent Fermat definition modules. Compilation/axioms are covered by separate MCP-CI receipts.",
+  "forbidden_runtime_imports_found": [],
+  "modules": {
+    "Definitions/Def_FermatCanonicalBelyiComposition.lean": {
+      "sha256": "ed9f9030c6a94e163d0b009d5b6aacbf956d2a1766b656b555f4d6d2e07f1793",
+      "imports": [
+        "Definitions.Def_FermatBelyiComparisons"
+      ]
+    },
+    "Definitions/Def_FermatBelyiComparisons.lean": {
+      "sha256": "c8dd47e099ee4ca6a1715d4034f1c375617d89439130ce8494a720a9359d2813",
+      "imports": [
+        "Definitions.Def_FermatLocalBelyiComposition",
+        "Definitions.Def_FermatProperDivisorHeight"
+      ]
+    },
+    "Definitions/Def_FermatProperDivisorHeight.lean": {
+      "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "imports": [
+        "Definitions.Def_FermatProperCarrier"
+      ]
+    },
+    "Definitions/Def_FermatProperCarrier.lean": {
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "imports": [
+        "Definitions.Def_TripodFermatInputs",
+        "Mathlib.FieldTheory.RatFunc.Basic",
+        "Mathlib.Algebra.Algebra.Hom.Rat",
+        "Mathlib.RingTheory.Valuation.ValuationSubring",
+        "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing",
+        "Mathlib.Data.Finsupp.Basic",
+        "Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure",
+        "Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis"
+      ]
+    },
+    "Definitions/Def_TripodFermatInputs.lean": {
+      "sha256": "099c3a519d2301b4df515a6503ffd62649d62074716e611b6eb9e360a5b5093a",
+      "imports": [
+        "Definitions.Def_AbcTripod",
+        "Mathlib.Data.Fin.VecNotation"
+      ]
+    },
+    "Definitions/Def_AbcTripod.lean": {
+      "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+      "imports": [
+        "Mathlib.FieldTheory.AlgebraicClosure",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+        "Mathlib.NumberTheory.Height.NumberField",
+        "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+        "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "Mathlib.RingTheory.Radical.NatInt"
+      ]
+    },
+    "Definitions/Def_FermatLocalBelyiComposition.lean": {
+      "sha256": "1b9042869d1ac51472d189ada77f5a6057df30fdf3a27d3e210572b82822b45f",
+      "imports": [
+        "Definitions.Def_FermatLocalBelyi"
+      ]
+    },
+    "Definitions/Def_FermatLocalBelyi.lean": {
+      "sha256": "bfceaae185fc536e913ea8772442f2030a780be865115a6bfbf10ccafa2df048",
+      "imports": [
+        "Definitions.Def_FermatProperCarrier",
+        "Mathlib.NumberTheory.Padics.Complex",
+        "Mathlib.Topology.Instances.Complex",
+        "Mathlib.Order.Filter.AtTopBot.Basic"
+      ]
+    },
+    "Definitions/Def_FermatProperDivisorComposition.lean": {
+      "sha256": "d4c5425ac07f42729f017abb46dda6639fc206501dd445dec659460d11789a53",
+      "imports": [
+        "Definitions.Def_FermatProperDivisorHeight"
+      ]
+    },
+    "Definitions/Def_FermatProperComposition.lean": {
+      "sha256": "a71031257d9124833bc530b8872f83429eb412914ad31f166e5af052ba10546d",
+      "imports": [
+        "Definitions.Def_FermatProperCarrier"
+      ]
+    }
+  },
+  "production_scene1_inputs_changed": false
+}

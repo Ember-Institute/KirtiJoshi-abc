@@ -1,0 +1,57 @@
+[{"type":
+  "∀ (N : ℕ), 3 < N → Nonempty (AbcAdaptation.Tripod.Fermat.Proper.Model N)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.modelExists"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N), AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.placesDiscrete"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N), AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.residuesFinite"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n      Nonempty (AbcAdaptation.Tripod.Fermat.Proper.AffineIdentification M)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.affineIdentification"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.NoncriticalSelection M hDVR",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalSelection"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ → (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.cuspsFinite"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (D : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n      Nonempty (AbcAdaptation.Tripod.Fermat.Proper.PolarPresentation M hDVR D)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    Nonempty (AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    Nonempty (AbcAdaptation.Tripod.Fermat.Proper.InfinityDivisorData M hDVR)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisorExists"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  3 < N →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n      ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR)\n        (H : AbcAdaptation.Tripod.Fermat.Proper.InfinityDivisorData M hDVR),\n        Nonempty (AbcAdaptation.Tripod.Fermat.Proper.PlaneAdjunctionData M hDVR K H)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.planeAdjunctionExists"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ →\n        ∀ (hfin : (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite),\n          Nonempty (AbcAdaptation.Tripod.Fermat.Proper.CuspGenerators M hDVR φ hfin)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.cuspGeneratorsExists"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  3 < N →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n      ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR)\n        (H : AbcAdaptation.Tripod.Fermat.Proper.InfinityDivisorData M hDVR)\n        (J : AbcAdaptation.Tripod.Fermat.Proper.PlaneAdjunctionData M hDVR K H),\n        AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M K.D =\n          AbcAdaptation.Tripod.Fermat.Proper.planeCanonicalDegree N",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorDegree"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.LocalCompactness M",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.AvoidanceRegularity M hDVR",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.avoidanceRegularity"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.EmbeddingBoundsToSet M",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet"},
+ {"type": "AbcAdaptation.Tripod.Fermat.Proper.CanonicalHeightIdentification",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalHeightIdentification"},
+ {"type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiHeightRelation",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation"},
+ {"type": "AbcAdaptation.Tripod.Fermat.Proper.DivisorDegreeHeightComparison",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison"},
+ {"type":
+  "AbcAdaptation.Tripod.Fermat.Proper.BelyiDifferentConductorComparison",
+  "name":
+  "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison"},
+ {"type": "AbcAdaptation.Tripod.Fermat.Proper.CuspConductorHeightComparison",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.cuspConductorHeightComparison"}]

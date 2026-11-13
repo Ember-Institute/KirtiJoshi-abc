@@ -1,0 +1,213 @@
+{
+  "unit": "Fixed Fermat function-field presentation and genuine noncritical Belyi input",
+  "date": "2026-11-13",
+  "status": "uncompiled_Act1_candidate_with_six_explicit_open_children",
+  "fixed_height_unchanged": "Fermat.canonicalHeight p = ((N:Real)-3) * Height.logHeight ![u p,v p,1] / degree p (up to the existing definition's parentheses)",
+  "reference_commits": {
+    "genl": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+    "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "heights": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+    "iut": null
+  },
+  "iut_identity": {
+    "file": "refer/iut/Iut/Tripod/GeneralPosition.lean",
+    "sha256": "d617a3971667432719a998ac60138cbe8b2395f076898f3572d18bcaa3b86539",
+    "note": "No independent .git exists under refer/iut. No parent-worktree HEAD is reported as its revision."
+  },
+  "concrete_model": {
+    "carrier": "Model N",
+    "ambient": "Omega = AlgebraicClosure (RatFunc Rat)",
+    "fields": [
+      "K : IntermediateField Rat Omega",
+      "u v : K",
+      "transcendental_u : Transcendental Rat u",
+      "equation : u^N + v^N = 1",
+      "generate : Rat(u,v) = top as an IntermediateField Rat K",
+      "finite_u : FiniteDimensional Rat(u) K",
+      "degree_u : finrank Rat(u) K = N"
+    ],
+    "derived_fact": "Model.trdeg_eq_one : Algebra.trdeg Rat M.K = 1",
+    "why_faithful": "Transcendence, generation, the actual Fermat equation, and degree N over Rat(u) specify the full Fermat function-field presentation, not an unrelated finite extension or algebraic field. Existence must prove irreducibility; it is not assumed in Definitions.",
+    "source": [
+      "Belyi/CurveField/Basic.lean:36 and :67",
+      "Genl/Curves/Covering.lean:97-180"
+    ],
+    "new_adaptation": "Exact degree N over Rat(u) is a new explicit obligation. Genl's Kummer construction alone is not cited as proving that exact degree. An Eisenstein/irreducibility argument for V^N-(1-U^N) over Rat(U) must justify it."
+  },
+  "ported_real_carriers": [
+    {
+      "name": "Place K",
+      "definition": "ValuationSubring K with O != top and all rational constants in O",
+      "source": "Belyi/CurveField/Place.lean:184",
+      "includes_infinity": true
+    },
+    {
+      "name": "Place.ResidueField P",
+      "definition": "IsLocalRing.ResidueField P.O",
+      "source": "Belyi/CurveField/Residue.lean:37"
+    },
+    {
+      "name": "QbarPoint K",
+      "definition": "P : Place K and sigma : ResidueField P ->+* AlgebraicClosure Rat",
+      "source": "Belyi/CurveField/Point.lean:38"
+    },
+    {
+      "name": "ord M hDVR P f",
+      "definition": "minus WithZero.log of the normalized DVR maximal-ideal valuation at f",
+      "source": "Belyi/CurveField/Place.lean:289-293"
+    },
+    {
+      "name": "ramIdx M hDVR phi P",
+      "definition": "ord_P(minpoly(residue phi) evaluated at phi) when regular; minus ord_P(phi) at a pole",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean:88"
+    },
+    {
+      "name": "IsBelyi M hDVR phi",
+      "definition": "Transcendental Rat phi and every place with ramification index >1 is a zero, pole, or value-one place",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean:92-97; equivalence to natural-index version in NoncriticalBridge.lean:24-45"
+    },
+    {
+      "name": "Divisor M",
+      "definition": "Place M.K ->0 Int",
+      "source": "Belyi/CurveField/Divisor.lean:44"
+    },
+    {
+      "name": "cuspDivisor M hDVR phi hfin",
+      "definition": "sum of each actual cusp place with coefficient 1, from explicit finite-support proof hfin",
+      "source": "Belyi/CurveField/BelyiRelation.lean:44-65"
+    },
+    {
+      "name": "StrictQ M hDVR phi hfin q",
+      "definition": "degree(cuspDivisor phi) / (N*(N-3)) < q",
+      "source": "Genl/Curves/BelyiDescent.lean:321-327",
+      "unproved_identification": "The number N*(N-3) still needs identification with the true canonical divisor's degree before using this as the source's strict-q height hypothesis."
+    }
+  ],
+  "open_children": [
+    {
+      "name": "modelExists",
+      "full_type": "forall (N : Nat), 3 < N -> Nonempty (Model N)",
+      "source": "New concrete specialization of Genl/Curves/Covering.lean Kummer-Fermat field, plus explicit irreducibility/degree proof",
+      "consumer": "noncriticalInput_of_children, choosing the actual Fermat function field"
+    },
+    {
+      "name": "placesDiscrete",
+      "full_type": "forall {N : Nat} (M : Model N) (P : Place M.K), IsDiscreteValuationRing P.O",
+      "source": "Belyi/CurveField/Place.lean:283 isDiscreteValuationRing; proof via Dedekind integral-closure charts",
+      "consumer": "ord, ramIdx, IsBelyi, cusps and noncriticalInput_of_children",
+      "why_not_hidden": "This is an independent open theorem. Definitions only accept its proof as an explicit hDVR parameter; no global instance is installed."
+    },
+    {
+      "name": "residuesFinite",
+      "full_type": "forall {N : Nat} (M : Model N) (P : Place M.K), FiniteDimensional Rat P.ResidueField",
+      "source": "Belyi/CurveField/Residue.lean:76; finite-type chart and Zariski lemma",
+      "consumer": "affineIdentification, noncriticalSelection, cuspsFinite, and noncriticalInput_of_children"
+    },
+    {
+      "name": "affineIdentification",
+      "full_type": "forall {N : Nat} (M : Model N), PlacesDiscrete M -> ResiduesFinite M -> Nonempty (AffineIdentification M)",
+      "structure_fields": [
+        "equiv : AffinePoint M equiv Fermat.Pt N",
+        "eval_u : forall x and hu, (equiv x).u = x.eval M.u hu",
+        "eval_v : forall x and hv, (equiv x).v = x.eval M.v hv",
+        "field_eq : forall x, x.fieldOf = Fermat.fieldOf (equiv x)"
+      ],
+      "source": "New Fermat affine specialization of Belyi/CurveField/Point.lean, chart/point correspondence and Genl/Curves/Covering.lean Kummer point identification",
+      "consumer": "noncriticalInput_of_children; future transfer of canonicalHeight, degree, and different to proper-point notation"
+    },
+    {
+      "name": "noncriticalSelection",
+      "full_type": "forall {N : Nat} (M : Model N) (hDVR : PlacesDiscrete M), ResiduesFinite M -> forall T : Finset (Place M.K), exists phi : M.K, IsBelyi M hDVR phi and forall P in T, P notin cusps M hDVR phi",
+      "source": "Belyi/CurveField/NoncriticalBridge.lean:47-54; Noncritical.isBelyi_iff and Noncritical.exists_isBelyi_forall_notMem_cusps; Mochizuki Noncritical Belyi Maps Theorem 2.5",
+      "consumer": "noncriticalInput_of_children; future selection after local compactness produces finite limit places"
+    },
+    {
+      "name": "cuspsFinite",
+      "full_type": "forall {N : Nat} (M : Model N) (hDVR : PlacesDiscrete M), ResiduesFinite M -> forall phi : M.K, IsBelyi M hDVR phi -> (cusps M hDVR phi).Finite",
+      "source": "Belyi/CurveField/BelyiRelation.lean:35 finite_belyiCusps; finite support of zeros and poles from Place.lean",
+      "consumer": "noncriticalInput_of_children; cuspDivisor; future cusp-height and strict-q nodes"
+    }
+  ],
+  "composition": {
+    "declaration": "noncriticalInput_of_children",
+    "children_explicit": [
+      "modelExists",
+      "placesDiscrete",
+      "residuesFinite",
+      "affineIdentification",
+      "noncriticalSelection",
+      "cuspsFinite"
+    ],
+    "solution": "Solutions/Sol_FermatNoncriticalInput.lean: theorem solution (N : Nat) (hN : 3 < N) : NoncriticalInput N",
+    "output": "An actual Fermat function-field model, its exposed DVR and finite-residue proofs, an affine identification, genuine noncritical Belyi selection, and actual finite cusp support",
+    "proof_kind": "Concrete existential/conjunction assembly; no sorry in the composition or top-level solution body",
+    "scope": "This is a real intermediate geometric input. It is not yet a replacement solution for CanonicalEstimate and has no claim to close that parent."
+  },
+  "remaining_precise_edges": [
+    {
+      "name": "local_compact_subsequence",
+      "needs": "Use pinned Mathlib PadicAlgCl 2 and Complex with all embeddings. Still need the bounded-degree proper-point local compactness theorem; no new algebraic-closure carrier is needed.",
+      "intended_type": "For any xs : Nat -> Fermat.Pt N of degree <=d, pass through AffineIdentification to proper QbarPoints; obtain StrictMono s and finite T : Finset (Place M.K), such that any phi with phi,inverse(phi),inverse(phi-1) regular at every P in T has eventually bounded log norms of its nonzero/nonone values at all embeddings into Qbar_2 and Complex.",
+      "source": "Heights.Curve.exists_subseq_bounded; Genl/Curves/BelyiDescent.lean:264-282",
+      "consumer": "Combine with noncriticalSelection and image-field arithmetic to construct compact Belyi images."
+    },
+    {
+      "name": "canonical_and_cusp_height_identification",
+      "needs": "A true canonical divisor and divHeight built from arithmetic coordinates, not an arbitrary function with axioms. The fixed Fermat height is unchanged.",
+      "intended_type": "Identify degree(K_F)=N*(N-3), omega_F with O_F(N-3), and its Weil height with canonicalHeight up to one uniform bounded discrepancy. For actual E=cuspDivisor(phi), identify h_K+h_E with tripod height of phi up to one uniform bounded discrepancy.",
+      "source": "Belyi.CurveField.Canonical; Belyi.CurveField.BelyiRelation; Heights.Curve height construction; Genl/Curves/BelyiDescent.lean:215-237",
+      "consumer": "strict_q_height_bound and final failure-locus contradiction"
+    },
+    {
+      "name": "strict_q_height_bound",
+      "needs": "The genuine Weil height of the actual cusp divisor and the canonical identification above; no free Pt->Real height field",
+      "intended_type": "forall q, StrictQ M hDVR phi hfin q -> exists C, forall affine p, divHeight(cuspDivisor phi)(p) <= q*canonicalHeight(A.equiv p)+C",
+      "source": "Heights.Curve.divHeight_le_mul; Genl/Curves/BelyiDescent.lean:321-327",
+      "consumer": "Contradiction with delta=epsilon/(1+q*(1+epsilon)); equality at the degree ratio is not enough."
+    },
+    {
+      "name": "different_conductor_and_cusp_height_bounds",
+      "needs": "Actual coordinate ring of complement of cuspDivisor(phi), its finite generator set, and actual normalized logCondOf; no free conductor function",
+      "intended_type": "Image logDiff+logCond <= Fermat logDiff + logCond_E + C1 and logCond_E <= divHeight E + C2, uniformly in admissible points",
+      "source": "Heights.Different.logDisc_add_cond_le; Heights.Curve.logCondOf_le_divHeight; Genl/Curves/BelyiDescent.lean:316-320 and :395-445",
+      "consumer": "Final failure-locus contradiction from StatementII"
+    }
+  ],
+  "remaining_support_cost": {
+    "no_blocker_for_types": "Model, Place, ResidueField, QbarPoint, normalized orders parameterized by explicit DVR proofs, true IsBelyi, divisors, actual cusp divisor and strict degree ratio can be defined now without a theorem proving model existence.",
+    "large_future_proof_dependencies": "Proving regularity and residue finiteness requires finite integral closures/Dedekind charts; proving noncritical selection requires the existing source's noncritical construction chain; none are supplied here.",
+    "genuine_current_obstacle_to_full_parent_types": "The actual Weil divisor-height and normalized conductor constructions still need independent type-level adaptation. The local Q_2 algebraic-closure carrier is already supplied by Mathlib; bounded-degree local compactness remains a theorem obligation."
+  },
+  "validation": {
+    "compiled": false,
+    "mcp_ci_called": false,
+    "main_workspace_edited": false,
+    "read_back_written": false
+  },
+  "integration_status": "Candidate source inputs integrated for exclusive compilation. Parent CanonicalEstimate connection is still being prepared; not published or complete.",
+  "files": [
+    "Definitions/Def_FermatProperCarrier.lean",
+    "Definitions/Def_FermatProperComposition.lean",
+    "Theorems/Thm_FermatProper_affineIdentification.lean",
+    "Theorems/Thm_FermatProper_cuspsFinite.lean",
+    "Theorems/Thm_FermatProper_modelExists.lean",
+    "Theorems/Thm_FermatProper_noncriticalSelection.lean",
+    "Theorems/Thm_FermatProper_placesDiscrete.lean",
+    "Theorems/Thm_FermatProper_residuesFinite.lean",
+    "Solutions/Checks_FermatProperCarrier.lean",
+    "Solutions/Sol_FermatNoncriticalInput.lean"
+  ],
+  "draft_directory": "/tmp/p2m-fermat-proper-carrier-design-20261113",
+  "padic_carrier_correction": {
+    "verified_source": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Padics/Complex.lean",
+    "sha256": "871e53b99b7b974bdd68a596d91663eef37ebb2bb9585511f6ca841a909dbfe6",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "declarations": {
+      "PadicAlgCl": 54,
+      "PadicAlgCl.normedField": 67,
+      "PadicAlgCl.charZero": 130
+    },
+    "conclusion": "Use the pinned Mathlib PadicAlgCl 2 directly. No new carrier existence theorem is needed. Bounded-degree local compactness remains a separate unported theorem.",
+    "superseded_claim": "A previous draft claimed the target Mathlib lacked a matching PadicAlgCl module; that claim was incorrect."
+  }
+}

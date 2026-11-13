@@ -1,0 +1,21 @@
+{
+  "id": "199108be-fed5-44af-bc6b-17deb6b4cbc5",
+  "kind": "problem",
+  "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.modelExists",
+  "theorem_title": "Existence of the full Fermat function-field presentation",
+  "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.modelExists : ∀ (N : ℕ), 3 < N → Nonempty (AbcAdaptation.Tripod.Fermat.Proper.Model N) := by sorry",
+  "natural_language_statement": "> “Moreover, if $X$, $S$, and $T$ are defined over a number field $F$, then $\\phi$ may be taken to be defined over $F$.”\n\n— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp.5–6.\n\n**English**\n\n`AbcAdaptation.Tripod.Fermat.Proper.modelExists`\n\nFor every natural number $N$ with $3<N$, there exists a model of $N$. Here a model of a natural number $N$ means a subfield $K$ of an algebraic closure of the rational function field $ℚ(t)$ in one indeterminate $t$, containing $ℚ$, with elements $u,v∈K$ such that $u$ is transcendental over $ℚ$, $u^N+v^N=1$, $K=ℚ(u,v)$, and $K$ is finite dimensional over $ℚ(u)$ with dimension exactly $N$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; write $κ(P)$ for its residue field.\n\n**简体中文**\n\n`AbcAdaptation.Tripod.Fermat.Proper.modelExists`\n\n对每个满足 $3<N$ 的自然数 $N$，存在 $N$ 的模型。 这里，自然数 $N$ 的一个模型是 单不定元 $t$ 的有理函数域 $ℚ(t)$ 的代数闭包中包含 $ℚ$ 的子域 $K$，以及元素 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$K=ℚ(u,v)$，且 $K$ 在 $ℚ(u)$ 上为有限维，维数恰为 $N$。赋值处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；其剩余域记为 $κ(P)$。\n\n**日本語**\n\n`AbcAdaptation.Tripod.Fermat.Proper.modelExists`\n\n$3<N$ を満たす任意の自然数 $N$ に対して、$N$ のモデルが存在する。 ここで自然数 $N$ のモデルとは、一つの不定元 $t$ による有理関数体 $ℚ(t)$ の代数閉包の中の $ℚ$ を含む部分体 $K$ と、$ℚ$ 上超越的な元 $u$ および元 $v∈K$ であって、$u^N+v^N=1$、$K=ℚ(u,v)$、かつ $K$ が $ℚ(u)$ 上有限次元でその次元がちょうど $N$ となるものをいう。素点 $P$ は、すべての有理数を含む真の付値部分環 $O_P⊊K$ を意味し、その剰余体を $κ(P)$ と書く。",
+  "definitions": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+  "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Propositions 1.4, 1.6, 1.7 and Theorem 2.1, printed pp.11–13; https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf . Shinichi Mochizuki, Noncritical Belyi Maps, Theorem 2.5 and Corollary 3.2, pp.5–8; https://www.kurims.kyoto-u.ac.jp/~motizuki/Noncritical%20Belyi%20Maps.pdf . Independent concrete Fermat adaptation of Belyi 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8, Heights 721496ca4c158e511d25d8ccf6bfe8503eda73c1, and Genl ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf. No Iut/Genl/Heights/Belyi runtime import is used. Actual source carriers: Belyi/CurveField/Basic.lean:36,67; Place.lean:184,283,289; Residue.lean:37,76; Point.lean:38; NoncriticalBasic.lean:88–97; NoncriticalBridge.lean:47–54. The full Fermat presentation and its exact N degree over Q(u) are a new explicit specialization; irreducibility and existence remain Open.",
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-geometry",
+    "arithmetic-teichmuller-spaces"
+  ],
+  "visibility": "private",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "0eab95d2-e987-4339-baf2-e495696996f5",
+  "created_at": "2026-11-13T05:39:01.059952+00:00",
+  "updated_at": "2026-11-13T05:39:48.951223+00:00"
+}

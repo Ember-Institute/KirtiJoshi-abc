@@ -1,0 +1,16 @@
+diff --git a/TateCurvesTheta/TateCurve/Quotient.lean b/TateCurvesTheta/TateCurve/Quotient.lean
+index c62e1f7..04572dd 100644
+--- a/TateCurvesTheta/TateCurve/Quotient.lean
++++ b/TateCurvesTheta/TateCurve/Quotient.lean
+@@ -82,7 +82,8 @@ quotient: `[q·u] = [u]`. Consequently every `q`-periodic function on `Kˣ` (e.g
+ coordinates `X`, `Y`, invariant under `u ↦ q·u`) descends to a function on `Kˣ/qᶻ`. -/
+ @[simp] lemma toAnalyticQuotient_q_mul (u : Kˣ) :
+     t.toAnalyticQuotient (t.q * u) = t.toAnalyticQuotient u := by
+-  rw [map_mul, toAnalyticQuotient_q, one_mul]
++  rw [map_mul, toAnalyticQuotient_q]
++  exact one_mul (t.toAnalyticQuotient u)
+
+ end TateParameter
+
+--
+Lean 4.33.1 compatibility; theorem statements unchanged.

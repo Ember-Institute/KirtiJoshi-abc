@@ -1,0 +1,278 @@
+{
+  "schema_version": "scene1-literal-split-design/1",
+  "date": "2026-11-13",
+  "workspace": "/home/admin-wsl/Coq/abc",
+  "source_head": "a0ec7fca244d4ffce0085cd082de1bff44a47473",
+  "artifact_directory": "/tmp/p2m-joshi-literal-scene1-design-20261113",
+  "source_author": "Kirti Joshi",
+  "formal_namespace": "JoshiTeich.Act1Scene1.P2MScene1Candidate",
+  "full_candidate_preamble_and_types": "QAndBlockLayer.lean",
+  "source_and_consumer_explanation": "README.md",
+  "nodes": [
+    {
+      "id": "S1-CS-REUSE",
+      "kind": "existing_same_source",
+      "type_location": "README.md section 3",
+      "dependencies": [],
+      "consumers": [
+        "S1-QPAIR",
+        "S1-QNORM",
+        "S1-RAW-BLOCK",
+        "S1-CORRECTED-BLOCK"
+      ],
+      "proof_status": "existing_proof_terms_static_read_only",
+      "source_author": "Kirti Joshi",
+      "source_labels": [
+        "ss:theta-data-fixing2",
+        "ss:val-sets-defn"
+      ]
+    },
+    {
+      "id": "S1-QPAIR",
+      "kind": "new_definition_and_composition_draft",
+      "declarations": [
+        "RootIndex",
+        "PrimeIndex",
+        "PrimeFiber",
+        "QPair",
+        "rootPairEquiv",
+        "pair_mem_paperVossAtPrime",
+        "pair_prime",
+        "signedQSum_eq_pairSum",
+        "rootProduct_eq_pairProduct"
+      ],
+      "dependencies": [
+        "S1-CS-REUSE"
+      ],
+      "consumers": [
+        "S1-QNORM",
+        "S1-RAW-BLOCK",
+        "S1-CORRECTED-BLOCK"
+      ],
+      "proof_status": "candidate_proof_terms_uncompiled",
+      "source_author": "Kirti Joshi",
+      "source_labels": [
+        "ss:val-sets-defn",
+        "eq:adelic-ansatz2"
+      ]
+    },
+    {
+      "id": "S1-QNORM",
+      "kind": "new_definition_and_reuse_draft",
+      "declarations": [
+        "rawRootFactor",
+        "paperRootFactor",
+        "degreeRootFactor",
+        "rawSignedQSum",
+        "rawRootProduct",
+        "signedQSum",
+        "positiveQSum",
+        "rootProduct",
+        "rawSignedLog_eq_inertia_mul_paperSignedLog",
+        "degreeRootFactor_eq_paper_rpow",
+        "paperNegativeLog_eq_order_term",
+        "positiveQSum_eq_existingPaperSum"
+      ],
+      "dependencies": [
+        "S1-CS-REUSE",
+        "S1-QPAIR"
+      ],
+      "consumers": [
+        "S1-RAW-BLOCK",
+        "S1-CORRECTED-BLOCK",
+        "B-NORM"
+      ],
+      "proof_status": "candidate_proof_terms_uncompiled",
+      "source_author": "Kirti Joshi",
+      "source_labels": [
+        "ss:theta-data-fixing2",
+        "eq:weights",
+        "th:moccor-Mochizuki-form2"
+      ]
+    },
+    {
+      "id": "S1-RAW-BLOCK",
+      "kind": "new_actual_haar_block_composition_draft",
+      "declarations": [
+        "rawGammaVolume",
+        "RawBlockForm2",
+        "RawBlockVolumeDerived312",
+        "RawBlockLiteral312",
+        "rawBlockForm2",
+        "rawBlockVolumeDerived312",
+        "rawSignedQSum_le_corrected",
+        "not_rawBlockLiteral312",
+        "raw_block_split"
+      ],
+      "dependencies": [
+        "S1-CS-REUSE",
+        "S1-QPAIR",
+        "S1-QNORM"
+      ],
+      "consumers": [
+        "B-MIXED",
+        "B-THETA",
+        "B-LITERAL"
+      ],
+      "proof_status": "candidate_proof_terms_uncompiled",
+      "source_author": "Kirti Joshi",
+      "source_labels": [
+        "ss:weighted-vol",
+        "eq:weights",
+        "th:moccor-Mochizuki-form2"
+      ],
+      "limits": [
+        "fixed_moduli_blocks",
+        "standard_untilt_repeated_factors",
+        "not_paper_theta_locus",
+        "no_claim_of_presentation_independence"
+      ]
+    },
+    {
+      "id": "S1-CORRECTED-BLOCK",
+      "kind": "existing_actual_haar_corrected_block_composition_draft",
+      "declarations": [
+        "blockVolume",
+        "BlockForm2",
+        "BlockVolumeDerived312",
+        "BlockLiteral312",
+        "blockForm2",
+        "blockVolumeDerived312",
+        "not_blockLiteral312",
+        "block_split"
+      ],
+      "dependencies": [
+        "S1-CS-REUSE",
+        "S1-QPAIR",
+        "S1-QNORM"
+      ],
+      "consumers": [
+        "B-NORM",
+        "B-MIXED",
+        "B-THETA",
+        "B-LITERAL"
+      ],
+      "proof_status": "candidate_proof_terms_uncompiled",
+      "source_author": "Kirti Joshi",
+      "source_labels": [
+        "ss:weighted-vol",
+        "eq:weights",
+        "cor:cor312"
+      ],
+      "limits": [
+        "residue_degree_correction_not_raw_haar_modulus",
+        "not_paper_theta_locus"
+      ]
+    }
+  ],
+  "unclosed_bridges": [
+    {
+      "id": "B-ANSATZ",
+      "status": "precise_definition_gap_not_formal_theorem",
+      "requires": "Actual FF point/residue-untilt spaces for all places and paper local primitive Ansatz, then paper-defined adelic subset and standard point.",
+      "source_labels": [
+        "def:mochizuki-adelic-ansatz",
+        "eq:adelic-ansatz2"
+      ],
+      "consumer": "B-BK"
+    },
+    {
+      "id": "B-BK",
+      "status": "precise_definition_and_normalization_gap_not_formal_theorem",
+      "requires": "Actual crystalline/Frobenius-trivial H1e from cohomological kernel and integral inverse image, followed by audited source comparison for the SAME principal-unit class. Ordinary comparison gives pStar times witness; normalized comparison fails ordinary small-ball calibration.",
+      "source_labels": [
+        "ss:log-shells",
+        "eq:bloch-kato-log-class"
+      ],
+      "consumer": "B-THETA"
+    },
+    {
+      "id": "B-MIXED",
+      "status": "precise_carrier_gap_not_formal_theorem",
+      "requires": "For each p, tensor over procession factors of the direct sum over all selected w above p, including mixed-moduli terms, with actual normalization/measure transport. Pure tensor map is multilinear; do not assert it is an additive group homomorphism.",
+      "source_labels": [
+        "eq:tensor1",
+        "eq:tensor2",
+        "eq:codmain1",
+        "eq:prod-tensor1-mapping"
+      ],
+      "consumer": "B-THETA"
+    },
+    {
+      "id": "B-NORM",
+      "status": "source_reading_and_measure_identity_open",
+      "requires": "Identify paper absolute-value convention with raw Haar modulus or give an explicit sourced correction; prove weighted-volume representation independence. No free Measure or pointwise power of a measure as a replacement.",
+      "source_labels": [
+        "ss:weighted-vol",
+        "eq:weights",
+        "le:volume-lemma1"
+      ],
+      "consumer": "B-THETA"
+    },
+    {
+      "id": "B-THETA",
+      "status": "precise_collation_definition_gap_not_formal_theorem",
+      "requires": "Define actual union of transported BK classes over ALL Ansatz points and allowed cohomological isomorphisms, then closure/tensor image. Prove standard witness inclusion and transfer a lower bound using hull monotonicity; no required equality with singleton hull.",
+      "source_labels": [
+        "pr:general-cohomology-set-const",
+        "th:thetam-construction",
+        "cor:compactness-of-locii"
+      ],
+      "consumer": "B-FORM2"
+    },
+    {
+      "id": "B-FORM2",
+      "status": "paper_parent_cannot_be_formally_typed_until_above_definitions_exist",
+      "requires": "Both actual paper ThetaM and ThetaJ plus their derived volumes; large-prime quantifiers from a pre-prime curve/global seed. Do not use vacuous per-D threshold.",
+      "source_labels": [
+        "th:moccor-Mochizuki-form2"
+      ],
+      "consumer": "B-LITERAL"
+    },
+    {
+      "id": "B-LITERAL",
+      "status": "candidate_contradicted_under_standard_contracting_norm",
+      "requires": "Retain exact displayed literal formula with source sign; add explicit correction/alternative sourced convention as a separate node. It is not a consequence of the log of Form2.",
+      "source_labels": [
+        "cor:cor312"
+      ],
+      "consumer": "future Scene1 paper target; separate Scene2 bridge remains open"
+    }
+  ],
+  "input_sha256": {
+    "docs/开发计划.Prove2Me适配.md": "57fb04a100172f68888a6cc439cd7a2f2d6df01eb94304ebf849777edba4aacb",
+    "prove2me_workspace/.local/adaptation/source-audits/joshi_existing_map.json": "787ce364cc1f884649bb10572e8a2c10b0cfed83246fa22bb1fdc5b30e9e183b",
+    "refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex": "b3df2cfb3107c171000b3539b7a4e7fca88ea4b04fbfff34739474992501d151",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/Corollary312.lean": "8f691cfe782c3bbf34d01a42ded49f4ecf12f6f68ad2219021258f91a45a3bba",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/ProducerContracts.lean": "cf5afb411dfa05b7484a2881c3184915e84586577e6a2faca45a75ed8efde61e",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperVossPrimeCarrier.lean": "5597d6b610d52b89b8de8f3453fe0b1ce511044a76265aec4286d9b512aa9484",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperSelectedVossCarrier.lean": "41821fda5edaa5d72d2d90e787c4618c9ce3d092f2d2650897933d67ee3a0cd8",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperRelativeNormBridge.lean": "48a536ba700ae27cebe399ac0be519d74cb026491781281660015f3e15d24337",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperRootHaarBridge.lean": "f32264c113e599ce8012f8690434664717397451b794abf737c3c817fd9a7f87",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaSelectedPaperRootNormProduct.lean": "fdf77d514249a00854a5e06cecf399775b5eb4077182d37f1ce9e56ec14374db",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/Corollary312SourceSignAudit.lean": "a5a6704d64bf4b41abb514e33470fe09b10384b49056fd107358ab9e8d7cad0e",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaFullSupportPaperWeightedVolume.lean": "4a499eef643047f3d69e5cb633624174e425fadb59756a7f9467fa4ebb6c2b33",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperWitnessTensorLogShell.lean": "3328292bde3c69733a102fd71f231d7ec3580b69598f6f0212d484c144c3b515",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperLogWitnessHull.lean": "51d8df6d55d57ee172a6474f6bdeafcf73784991891df989137a1537e233b9c2",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperLogShellBridge.lean": "b1b16bb2f2132ff4c1c0a817294d79132bb5f96a5e19d2eb834cae4ff090a4e8",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaFullSupportLogHull.lean": "44953f017eaa8d2f49972179723d075373698c1a9706733cab319b5011413e76",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaRelativeQRootFactor.lean": "afb5fdfd7cda9f5d63a2e3a77f3163baa687cde04765f39f543658ffce129947",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaRelativeQRootProduct.lean": "4b904cbaae21059cb7fdef64a427a62e8d8a9273983cadf065f1213d42e2b1c5",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionTensorNormalizationHaar.lean": "79d73fb77af1f1a1e5d26774bed146f650df8aba6b0e1117be0b42a20ed5870f",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/LocalCompletionTensor.lean": "4a0cfa340e2aa26dc5a938fd45427ff097f28ba28bedbebf203cfd9fc0171fbc",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaGeometryProducerSourceProjection.lean": "8e5273cf1aea1e9b9320b3935fb7e28326e56609801c9e6fd32759786170fedf",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaSeedQRootSource.lean": "bd4682f08b62882f4e78185d52d599952b14a30aa802366973f58045fcdb7273",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaSeedQRootValuation.lean": "3cb6e803934cfeeb21c0f3746b2aabf39243ae6e97edf38299862d3a811bbdb0",
+    "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaBlochKatoNormalizationAudit.lean": "f015fe8760af90d06565967b2e1027ded67db8d8ac80edd9aadbc8f5af4bf29d"
+  },
+  "verification": {
+    "static_only": true,
+    "compiled": false,
+    "MCP_CI_invoked": false,
+    "main_workspace_edited": false,
+    "Act2_implemented": false,
+    "independent_readback_performed": false,
+    "source_map_warning": "The 2026-11-12 map predates several strongest actual block/witness modules; these were read directly."
+  },
+  "integration_status": "Design-only source evidence; not integrated, compiled, independently read back, or published."
+}

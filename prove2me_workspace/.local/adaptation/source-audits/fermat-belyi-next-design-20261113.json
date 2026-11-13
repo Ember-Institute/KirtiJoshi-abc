@@ -72,17 +72,18 @@
     },
     {
       "id": "local_algebraic_closure",
-      "status": "not_implemented_not_a_Lean_node",
-      "required_concrete_carrier": "Heights' normed algebraic closure PadicAlgCl p of Q_p, with its algebraically closed normed-field structure; Mathlib-only workspace currently has no matching PadicAlgCl module",
+      "status": "available_in_pinned_mathlib",
+      "required_concrete_carrier": "PadicAlgCl 2, directly imported from Mathlib.NumberTheory.Padics.Complex",
       "source": [
-        "Heights.Curve.Compactness",
-        "Heights.Local.Bounded",
-        "Genl/Curves/Theory.lean:204-230"
+        "Mathlib/NumberTheory/Padics/Complex.lean:54",
+        "Mathlib/NumberTheory/Padics/Complex.lean:67",
+        "Mathlib/NumberTheory/Padics/Complex.lean:130"
       ],
       "consumers": [
         "local_compact_subsequence",
         "conjugate_bounds_to_valuation_bounds"
-      ]
+      ],
+      "remaining_need": "The actual bounded-degree local compactness theorem and its proper-point transfer."
     },
     {
       "id": "divisor_height_conductor",
@@ -174,5 +175,17 @@
     "main_workspace_edited": false,
     "read_back_written": false
   },
-  "integration_status": "Next-unit design evidence only. Not a compiled or published decomposition."
+  "integration_status": "Next-unit design evidence only. Not a compiled or published decomposition.",
+  "padic_carrier_correction": {
+    "verified_source": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Padics/Complex.lean",
+    "sha256": "871e53b99b7b974bdd68a596d91663eef37ebb2bb9585511f6ca841a909dbfe6",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "declarations": {
+      "PadicAlgCl": 54,
+      "PadicAlgCl.normedField": 67,
+      "PadicAlgCl.charZero": 130
+    },
+    "conclusion": "Use the pinned Mathlib PadicAlgCl 2 directly. No new carrier existence theorem is needed. Bounded-degree local compactness remains a separate unported theorem.",
+    "superseded_claim": "A previous draft claimed the target Mathlib lacked a matching PadicAlgCl module; that claim was incorrect."
+  }
 }
