@@ -1,0 +1,352 @@
+{
+  "unit": "Source-backed dimension decomposition through actual residue maps, function divisors, approximation, and actual basis powers",
+  "date": "2026-11-13",
+  "status": "uncompiled_candidate_three_new_open_children_and_three_parent_proof_replacements",
+  "reference_commits": {
+    "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+  },
+  "reference_hashes": {
+    "Belyi_CurveField_Degree.lean": {
+      "sha256": "5f1b63fc08c02a5c3830131fb32a4164d5ea1e64d757ea9ed4bf040aa6162795",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Divisor.lean": {
+      "sha256": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Residue.lean": {
+      "sha256": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Riemann.lean": {
+      "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_RiemannRochSpace.lean": {
+      "sha256": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_ZerosPoles.lean": {
+      "sha256": "e6da7158b3f58a03cc32fc607fc5dfbfa10082229080787fc5d4349a423fb4f6",
+      "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    }
+  },
+  "candidate_dependency": "/tmp/p2m-fermat-riemann-next-design-20261113/Definitions/",
+  "fixed_input_types": [
+    "Model",
+    "PlacesDiscrete",
+    "Place",
+    "Place.ResidueField",
+    "ord",
+    "Divisor",
+    "divisorDegree",
+    "riemannRochSpace",
+    "riemannEll"
+  ],
+  "new_concrete_definitions": [
+    {
+      "name": "functionDivisor",
+      "formula": "finitely supported ord_P(f), with div(0)=0",
+      "source": "Divisor.lean:124",
+      "consumers": [
+        "principalDegreeZero_of_zeroPoleDegrees",
+        "RiemannDimension.mem_L_of_ne_zero",
+        "RiemannDimension.mulEquiv",
+        "riemannPolarApproximation",
+        "eventual-linear composition"
+      ]
+    },
+    {
+      "name": "functionZeroDivisor",
+      "formula": "finitely supported max(0,ord_P(f))",
+      "source": "Divisor.lean:154",
+      "consumers": [
+        "functionZeroPoleDegrees",
+        "functionDivisor_eq_zero_sub_pole"
+      ]
+    },
+    {
+      "name": "functionPoleDivisor",
+      "formula": "finitely supported max(0,-ord_P(f))",
+      "source": "Divisor.lean:163",
+      "consumers": [
+        "functionZeroPoleDegrees",
+        "functionDivisor_eq_zero_sub_pole",
+        "basisPoleCorrection",
+        "riemannPolarApproximation",
+        "riemannBasisPowerLowerBound",
+        "eventual-linear composition"
+      ]
+    },
+    {
+      "name": "functionBasis",
+      "formula": "actual Module.finBasis Rat(u) M.K; dictionary from M.finite_u",
+      "source": "Riemann.lean:163-166",
+      "consumers": [
+        "basisPoleCorrection",
+        "future source proof of riemannBasisPowerLowerBound"
+      ]
+    },
+    {
+      "name": "basisPoleCorrection",
+      "formula": "sum of the actual polar divisors of all actual basis functions",
+      "source": "Riemann.lean:166",
+      "consumers": [
+        "riemannBasisPowerLowerBound",
+        "riemannEventuallyLinear_of_degree_approximation_basis"
+      ]
+    },
+    {
+      "name": "RiemannDimension.residueMap",
+      "formula": "L(A+P) ->_Rat kappa(P), f -> residue_P(pi^(A(P)+1)*f), ord_P(pi)=1",
+      "source": "RiemannRochSpace.lean:165",
+      "consumers": [
+        "mem_ker_residueMap",
+        "RiemannDimension.step"
+      ]
+    },
+    {
+      "name": "RiemannDimension.mulEquiv",
+      "formula": "L(A+div z) equiv_linear_Rat L(A), f -> f*z, inverse g -> g/z, z != 0",
+      "source": "RiemannRochSpace.lean:132",
+      "consumers": [
+        "ell_add_pdiv",
+        "dimension upper bound",
+        "bounded defect transfer",
+        "eventual equality"
+      ]
+    },
+    {
+      "name": "riemannDefectSup",
+      "formula": "sSup of actual set {degree(A)-ell(A) | A : Divisor M}",
+      "source": "Riemann.lean:236",
+      "consumers": [
+        "boundedness and attained-maximum proof inside riemannEventuallyLinear_of_degree_approximation_basis"
+      ]
+    }
+  ],
+  "closed_source_proof_adaptations": [
+    {
+      "name": "principalDegreeZero_of_zeroPoleDegrees",
+      "source": "Divisor.lean:216-220",
+      "proof": "Constants have order zero everywhere; nonconstants use functionDivisor=zeroDivisor-poleDivisor and subtract identical actual fiber degrees.",
+      "consumers": [
+        "negativeSpace",
+        "finiteDimensional_L",
+        "ell_le_max",
+        "riemannRochEventuallyLinear replacement"
+      ]
+    },
+    {
+      "name": "RiemannDimension.zpow_mul_mem",
+      "source": "RiemannRochSpace.lean:150-162",
+      "proof": "Actual normalized order law puts each scaled function in the actual valuation ring.",
+      "consumers": [
+        "residueMap",
+        "mem_ker_residueMap"
+      ]
+    },
+    {
+      "name": "RiemannDimension.mem_ker_residueMap",
+      "source": "RiemannRochSpace.lean:181-211",
+      "proof": "Actual residue zero iff maximal-ideal membership; positive normalized order removes exactly one unit of allowed pole order at P.",
+      "consumers": [
+        "RiemannDimension.step"
+      ]
+    },
+    {
+      "name": "RiemannDimension.step",
+      "source": "RiemannRochSpace.lean:215-238",
+      "proof": "Explicit kernel equivalence with L(A), finite actual residue field, finite generation, rank-nullity.",
+      "consumers": [
+        "step_nat",
+        "aux",
+        "all finite-dimensionality and dimension upper bounds"
+      ]
+    },
+    {
+      "name": "RiemannDimension.step_nat and aux",
+      "source": "RiemannRochSpace.lean:240-276",
+      "proof": "Natural multiplicity induction and finite-support effective-divisor induction; actual finite-dimensional dictionaries installed explicitly.",
+      "consumers": [
+        "finiteDimensional_L",
+        "ell_le_of_le"
+      ]
+    },
+    {
+      "name": "RiemannDimension.negativeSpace",
+      "source": "RiemannRochSpace.lean:89",
+      "proof": "A nonzero f in L(A) gives an effective A+div f. Its degree contradicts degree(A)<0 and principal degree zero.",
+      "consumers": [
+        "finiteDimensional_L"
+      ]
+    },
+    {
+      "name": "RiemannDimension.finiteDimensional_L",
+      "source": "RiemannRochSpace.lean:283",
+      "proof": "Choose an actual place and subtract enough copies to get negative degree, then add the effective divisor back using aux.",
+      "consumers": [
+        "parent finite-dimensionality",
+        "ell_le_of_le",
+        "ell_eq_zero_iff",
+        "actual basis-power lower-bound input"
+      ]
+    },
+    {
+      "name": "RiemannDimension.ell_le_max",
+      "source": "RiemannRochSpace.lean:330",
+      "proof": "Actual nonzero member makes A linearly equivalent to effective; actual multiplication equivalence preserves ell and principal degree zero preserves degree.",
+      "consumers": [
+        "parent dimension upper bound"
+      ]
+    },
+    {
+      "name": "riemannEventuallyLinear_of_degree_approximation_basis",
+      "source": "Riemann.lean:158-282",
+      "proof": "Basis count and degree polar(u)=N bound polar-multiple defects; actual approximation transfers the bound; attained integer supremum and actual nonzero functions yield eventual equality.",
+      "consumers": [
+        "parent eventual linearity"
+      ]
+    }
+  ],
+  "open_children": [
+    {
+      "name": "functionZeroPoleDegrees",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+      "type": "forall f : M.K, Transcendental Rat f -> degree(functionZeroDivisor f) = finrank Rat(f) M.K and degree(functionPoleDivisor f) = finrank Rat(f) M.K",
+      "source": [
+        "Belyi/CurveField/Degree.lean:248 sum_ord_mul_deg_zeros",
+        "Belyi/CurveField/Degree.lean:308 sum_ord_mul_deg_poles",
+        "Belyi/CurveField/Divisor.lean:190-213 deg_zeroDivisor and deg_polarDivisor"
+      ],
+      "remaining_mathematics": "Actual integral-closure chart prime factorization and sum of ramification times residue degrees.",
+      "consumers": [
+        "principalDegreeZero_of_zeroPoleDegrees",
+        "riemannRochFiniteDimensional replacement",
+        "riemannRochDimensionUpperBound replacement",
+        "riemannRochEventuallyLinear replacement, degree of polar(u) via Model.degree_u"
+      ],
+      "not_parent_renaming": "The type is the finite morphism fiber degree identity. It contains no L(A) or dimension parent.",
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "name": "riemannPolarApproximation",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean",
+      "type": "forall A : Divisor M, exists z : M.K, z != 0 and exists l : Nat, A+functionDivisor(z) <= l*functionPoleDivisor(M.u)",
+      "source": [
+        "Belyi/CurveField/Riemann.lean:94-158 exists_aeval_ord_pos and exists_add_div_le"
+      ],
+      "remaining_mathematics": "At each regular place, evaluate the minpoly over Rat of the actual residue of u to get a vanishing function; at poles use the actual polar divisor; then induct over divisor coefficients.",
+      "consumers": [
+        "riemannEventuallyLinear_of_degree_approximation_basis: transfer bounded defects from polar multiples to all divisors",
+        "riemannRochEventuallyLinear replacement"
+      ],
+      "not_parent_renaming": "The conclusion gives an actual nonzero rational function and a pointwise divisor inequality. It has no dimension expression.",
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation",
+      "status": "OPEN_sorry_uncompiled"
+    },
+    {
+      "name": "riemannBasisPowerLowerBound",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+      "type": "(forall A : Divisor M, FiniteDimensional Rat L(A)) -> forall l : Nat, (l+1)*N <= ell(l*functionPoleDivisor(M.u)+basisPoleCorrection)",
+      "source": [
+        "Belyi/CurveField/Riemann.lean:169-223, the explicit u^k*b_i argument inside exists_deg_sub_ell_nsmul_le"
+      ],
+      "remaining_mathematics": "Actual u^k*b_i membership from normalized orders, monomial independence using transcendence, tensor-like independence over Rat(u), and finite-dimensional rank comparison.",
+      "finite_dimensionality_parameter": "Actual spaces, provided explicitly from functionZeroPoleDegrees through the closed local residue-map induction. This avoids any cycle.",
+      "actual_basis": "functionBasis M = Module.finBasis Rat(M.u) M.K with M.finite_u installed locally",
+      "actual_correction": "basisPoleCorrection M hDVR = sum_i functionPoleDivisor(functionBasis M i)",
+      "exact_count": "Module.finrank Rat(M.u) M.K = N from Model.degree_u",
+      "consumers": [
+        "riemannEventuallyLinear_of_degree_approximation_basis: uniform bound on defects of polar multiples",
+        "riemannRochEventuallyLinear replacement"
+      ],
+      "not_parent_renaming": "This is a concrete lower bound for one explicit family of spaces from specified functions; it does not assert finiteness, the upper bound, or eventual linearity.",
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannBasisPowerLowerBound",
+      "status": "OPEN_sorry_uncompiled"
+    }
+  ],
+  "parent_replacements": [
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean",
+      "original_signature_preserved": true,
+      "explicit_children": [
+        "functionZeroPoleDegrees"
+      ],
+      "proof_path": [
+        "principalDegreeZero_of_zeroPoleDegrees",
+        "actual residue map kernel",
+        "one-place extension",
+        "negativeSpace",
+        "effective-divisor induction"
+      ],
+      "contains_sorry": false
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean",
+      "original_signature_preserved": true,
+      "explicit_children": [
+        "functionZeroPoleDegrees"
+      ],
+      "proof_path": [
+        "principalDegreeZero_of_zeroPoleDegrees",
+        "one-place extension",
+        "mulEquiv",
+        "ell_le_max"
+      ],
+      "contains_sorry": false
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean",
+      "original_signature_preserved": true,
+      "explicit_children": [
+        "functionZeroPoleDegrees",
+        "riemannPolarApproximation",
+        "riemannBasisPowerLowerBound"
+      ],
+      "proof_path": [
+        "actual finite-dimensionality passed to basis child",
+        "degree polar(u)=N via Model.degree_u",
+        "bounded actual defects",
+        "actual attained integer supremum",
+        "eventual equality"
+      ],
+      "contains_sorry": false
+    }
+  ],
+  "old_draft_changes": {
+    "directory": "/tmp/p2m-fermat-riemann-next-design-20261113/",
+    "files": [
+      "README.md",
+      "source-consumer.json",
+      "Definitions/Def_FermatRiemannComposition.lean"
+    ],
+    "change": "replace a real place by an actual place",
+    "mathematical_meaning_unchanged": true
+  },
+  "unused_optional_previous_producer": {
+    "name": "Model.fg_top",
+    "current_consumers": [],
+    "action": "May omit it. The actual Model -> IsCurveField proof and this dimension chain use M.u, M.transcendental_u, and M.finite_u directly.",
+    "no_new_consumer_invented": true
+  },
+  "scope": {
+    "Act2_added": false,
+    "constant_field_equals_Rat_assumed": false,
+    "ell_zero_replaced_by_one": false,
+    "free_height_or_dimension_functions": false,
+    "mechanical_one_step_open_nodes": false
+  },
+  "validation": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "main_workspace_edited": false,
+    "read_back_written": false,
+    "task_directory": "/tmp/p2m-fermat-riemann-dimension-next-20261113",
+    "integration": "Review and integrate prerequisite definition draft first, then these three definitions and replacement theorem modules. Main agent alone runs exclusive MCP-CI."
+  }
+}

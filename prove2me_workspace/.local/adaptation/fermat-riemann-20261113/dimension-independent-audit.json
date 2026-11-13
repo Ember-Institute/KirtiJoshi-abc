@@ -1,0 +1,242 @@
+{
+  "reviewer": "independent_read_only_riemann_dimension_audit",
+  "date": "2026-11-13",
+  "root_target": "abc.goal.lt_constant_mul_fix",
+  "scope": {
+    "directory": "/tmp/p2m-fermat-riemann-dimension-next-20261113",
+    "prerequisite_directory": "/tmp/p2m-fermat-riemann-next-design-20261113",
+    "repository_modified": false,
+    "draft_modified": false,
+    "compiler_invoked": false,
+    "mcp_ci_called": false,
+    "kernel_acceptance_claimed": false,
+    "act2_filled": false,
+    "required_toolchain_context": "Lean 4.33.1; Mathlib 0df444a",
+    "method": "Read-only static mathematical/source and proof-composition audit. Searches used the required rg-two-cores wrapper."
+  },
+  "verdict": {
+    "statement_faithfulness": "PASS_STATIC_REVIEW",
+    "children_distinct_and_sufficient": true,
+    "composition_mathematics": "PASS_STATIC_REVIEW",
+    "hidden_dependency_cycle_found": false,
+    "blocking_mathematical_defects_found": 0,
+    "kernel_verified": false,
+    "safe_to_claim_closed_parents": false,
+    "summary": "No mathematical blocker found. The three new OPENs are substantive and sufficient; all six non-open candidate Lean files contain no literal sorry. This does not establish elaboration, kernel acceptance, or absence of transitive sorryAx."
+  },
+  "checks": [
+    {
+      "id": "C01",
+      "topic": "new open children are distinct from dimension parents",
+      "result": "pass_static",
+      "locations": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean:19",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean:18",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean:19"
+      ],
+      "analysis": "The first child is a fiber-degree identity for each actual transcendental rational function; it contains no Riemann-space dimension. The second gives an actual nonzero z and a pointwise divisor inequality for each A; it contains no dimension expression. The third is a lower bound for the explicit family L(l*polar(u)+C), where C is fixed by an actual field basis; it does not assert any old parent. This is a substantive source-backed decomposition, not a renaming of finite-dimensionality, ell_le_max, or eventual linearity."
+    },
+    {
+      "id": "C02",
+      "topic": "child sufficiency and dependency graph",
+      "result": "pass_static",
+      "analysis": "functionZeroPoleDegrees -> principalDegreeZero -> negativeSpace plus the independently constructed local residue step -> finiteDimensional_L -> dimension estimates. The basis child is applied to that already obtained forall-A finite-dimensionality proof. The approximation child and basis bound, together with degree(polar(u))=N, then imply bounded defects and eventual linearity. None of the three new child module types imports an old dimension theorem. Definitions import no Theorems module. No hidden circular assumption was found."
+    },
+    {
+      "id": "C03",
+      "topic": "actual finite function divisors and zero",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatFunctionDivisors.lean:20",
+        "Definitions/Def_FermatFunctionDivisors.lean:29",
+        "Definitions/Def_FermatFunctionDivisors.lean:40",
+        "Definitions/Def_FermatFunctionDivisors.lean:60"
+      ],
+      "analysis": "All three definitions use Finsupp.ofSupportFinite over the existing full Place carrier. The principal coefficient is ord, the zero coefficient max(0,ord), and the pole coefficient max(0,-ord). Finite support is inherited from the old actual order support theorem. max(0,a)-max(0,-a)=a proves the exact pointwise divisor identity. Because ord(0)=0, all three divisors of 0 are 0. The source convention div(0)=0 is retained; there is no claim that the algebraic zero function has a classical finite zero locus."
+    },
+    {
+      "id": "C04",
+      "topic": "nonrational constants and principal degree zero",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatFunctionDivisors.lean:68",
+        "Definitions/Def_FermatFunctionDivisors.lean:99",
+        "reference/Belyi_CurveField_Divisor.lean:216"
+      ],
+      "analysis": "The algebraic branch includes every element algebraic over Q, not only rational casts, and proves its order zero at every geometric place using the previously ported valuation law. This covers 0. Only the transcendental branch invokes equal zero and pole degrees, so no false fiber-degree identity is asserted for constants. Both degrees and finrank are measured over Q, retaining the constant-field degree factor. For example, the generic source case k(t), [k:Q]=d, has degree(t-zero)=degree(t-pole)=d and [k(t):Q(t)]=d; no normalization is lost. ell(0) remains the actual constant-space dimension."
+    },
+    {
+      "id": "C05",
+      "topic": "local scaling and residue map",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatRiemannLocalDimension.lean:104",
+        "Definitions/Def_FermatRiemannLocalDimension.lean:119"
+      ],
+      "analysis": "For arbitrary integer A(P), pi^(A(P)+1) is an integer power of a nonzero actual uniformizer. Membership in L(A+P) gives ord(f)>=-A(P)-1, so the product has nonnegative order and is in the actual valuation ring. The zero branch is separate. The map sends this product through the actual residue ring hom, and rational-linearity uses the actual rational map into the same valuation ring. No free linear map or regularity assertion is supplied."
+    },
+    {
+      "id": "C06",
+      "topic": "residue-map kernel",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatRiemannLocalDimension.lean:134",
+        "reference/Belyi_CurveField_RiemannRochSpace.lean:181"
+      ],
+      "analysis": "For nonzero f, vanishing residue is equivalent to membership of the scaled product in the maximal ideal, hence integer order >0. This is equivalent to ord_P(f)>=-A(P), removing exactly one unit of permitted pole order. At Q!=P, the inequalities already follow from f in L(A+P); Finsupp.single vanishes there. For f=0 both sides hold, and the proof handles it before using nonzero-order equivalences. Thus ker(phi) is precisely the preimage of actual L(A) under the inclusion into L(A+P). This is a static mathematical check; no kernel theorem has been accepted by the Lean kernel in this audit."
+    },
+    {
+      "id": "C07",
+      "topic": "one-place dimension and finite-dimensional induction",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatRiemannLocalDimension.lean:165",
+        "Definitions/Def_FermatRiemannLocalDimension.lean:191",
+        "Definitions/Def_FermatRiemannLocalDimension.lean:207",
+        "Definitions/Def_FermatRiemannLocalDimension.lean:253"
+      ],
+      "analysis": "The kernel is explicitly linearly equivalent to L(A). The actual finite residue field bounds the range, so a finite kernel and finite range make L(A+P) finite; rank-nullity gives ell(A+P)<=ell(A)+degree(P). Surjectivity of the residue map is not assumed or needed. The code installs each new finite-dimensional proof with letI before the next induction step. Effective-divisor induction only adds nonnegative integer coefficients. For any A, subtract (abs(degree(A))+1)*P0, with degree(P0)>=1, to reach negative degree; principal degree zero forces that starting space to be bot. Adding back those places proves global finite-dimensionality without assuming finite-dimensional L(0) or the parent theorem."
+    },
+    {
+      "id": "C08",
+      "topic": "actual multiplication equivalence and upper bound",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatRiemannLocalDimension.lean:56",
+        "Definitions/Def_FermatRiemannLocalDimension.lean:83",
+        "Definitions/Def_FermatRiemannLocalDimension.lean:305"
+      ],
+      "analysis": "For z!=0, multiplication by z sends L(A+div(z)) to L(A); multiplication by z^-1 is its actual inverse. Nonzero order-multiplication laws are used only after zero cases are handled. The direction of the equivalence and the sign of div(z) agree. If ell(A)!=0, an actual nonzero z in L(A) makes A+div(z) effective. The effective-divisor estimate, finrank invariance under mulEquiv, and principal degree zero then give ell(A)<=degree(A)+ell(0). The zero-dimension branch gives the max(0,...) bound. No arbitrary linear-equivalence relation substitutes for the map."
+    },
+    {
+      "id": "C09",
+      "topic": "N=0 degenerate Model",
+      "result": "pass_static",
+      "analysis": "There is no inhabitant of Model 0: its Fermat equation reads 1+1=1 in a characteristic-zero field. Independently, installing M.finite_u gives positive finrank over Q(u), and M.degree_u identifies it with N. Therefore the universal statements at N=0 are vacuous, and the concrete basis cannot legitimately have zero entries for an inhabited Model. The dimension decomposition does not need an extra assumption N>0 or N>=4. It also does not consume model existence, so it does not claim an inhabited Fermat model at a forbidden N."
+    },
+    {
+      "id": "C10",
+      "topic": "actual basis, correction divisor and quantifiers",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatFunctionDivisors.lean:83",
+        "Definitions/Def_FermatFunctionDivisors.lean:88",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean:19",
+        "reference/Belyi_CurveField_Riemann.lean:169"
+      ],
+      "analysis": "functionBasis is Module.finBasis over Q(u), with the actual M.finite_u instance; C is the finite sum of its actual polar divisors. C is fixed before forall l, is effective, and is not a caller-chosen correction allowed to vary with l. The basis has finrank entries, identified with N by M.degree_u. The new child has the exact cardinal lower bound (l+1)*N for L(l*polar(u)+C); its source proof uses u^k*b_i for 0<=k<=l. The hFinite parameter supplies actual forall-A finiteness and is obtained earlier from principal degree zero. Its conclusion records the bound, not a separately formalized membership/independence witness, which is sufficient for the composition and is described explicitly in its comment."
+    },
+    {
+      "id": "C11",
+      "topic": "bounded defects from basis and approximation",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatRiemannDimensionComposition.lean:42",
+        "Definitions/Def_FermatRiemannDimensionComposition.lean:57"
+      ],
+      "analysis": "With B=polar(u), degree(B)=N and C effective, monotonicity of degree-ell and the lower bound ell(lB+C)>=(l+1)N yield degree(lB)-ell(lB)<=degree(C)-N, uniformly in l. No positivity of the resulting integer bound is required. For every A, approximation chooses z!=0 and l with A+div(z)<=lB; principal degree zero and the actual multiplication equivalence preserve its defect, transferring the same uniform upper bound to all A. The approximation order forall A exists z exists l is sufficient; no uniform z or l is required."
+    },
+    {
+      "id": "C12",
+      "topic": "integer supremum, attainment and eventual threshold",
+      "result": "pass_static",
+      "locations": [
+        "Definitions/Def_FermatRiemannDimensionComposition.lean:20",
+        "Definitions/Def_FermatRiemannDimensionComposition.lean:65",
+        "Definitions/Def_FermatRiemannDimensionComposition.lean:72",
+        "Definitions/Def_FermatRiemannDimensionComposition.lean:75"
+      ],
+      "analysis": "The set of integer defects is nonempty because actual divisors include 0; boundedness is proved before le_csSup or Int.csSup_mem is used. In Z, a nonempty set bounded above attains its supremum, giving an actual divisor A0, not a free maximality hypothesis. Set g0=sup and N0=degree(A0)+g0+1. degree(A)>=N0 and the global defect bound force ell(A-A0)>=1. A nonzero member then gives A0<=A+div(z). Monotonicity puts g0=defect(A0)<=defect(A), while the supremum bound gives the reverse inequality. Hence ell(A)=degree(A)-g0, for every A above the uniform threshold. All constants are selected before forall A. No identification of g0 with genus-1 is made."
+    },
+    {
+      "id": "C13",
+      "topic": "source matching and status of proof bodies",
+      "result": "pass_static",
+      "analysis": "The local map, kernel, induction and mulEquiv track pinned RiemannRochSpace.lean:89-340; the defect/supremum argument tracks pinned Riemann.lean:158-282. Static scanning finds no sorry term in the three definition files or in the three parent replacement bodies. Exactly one sorry occurs in each of the three new open child bodies. This is not an axiom audit or a proof that these files elaborate."
+    }
+  ],
+  "issues": [
+    {
+      "id": "I01",
+      "severity": "expected_open_frontier",
+      "blocks_decomposition": false,
+      "blocks_verified_parent_claim": true,
+      "problem": "The three source-backed open children still contain sorry, so all parent replacements and polarPresentationExists transitively depend on the open frontier. A parent body without a literal sorry is not a sorryAx-free dependency closure.",
+      "locations": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean:25",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean:22",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean:25"
+      ],
+      "feasible_repair": "Keep these nodes OPEN until their pinned source proofs are ported: integral-closure ramification/residue-degree sums; residue-minpoly approximation and divisor induction; actual basis-power membership and linear independence. Main agent must then obtain compilation and explicit axiom receipts. No mathematical weakening or extra constant-field input is required."
+    }
+  ],
+  "proof_paths": {
+    "finiteDimensional_parent": [
+      "functionZeroPoleDegrees",
+      "principalDegreeZero_of_zeroPoleDegrees",
+      "actual residueMap and proved kernel equivalence",
+      "step -> step_nat -> aux",
+      "negativeSpace",
+      "finiteDimensional_L"
+    ],
+    "upperBound_parent": [
+      "functionZeroPoleDegrees",
+      "principalDegreeZero",
+      "finiteDimensional_L",
+      "exists_nonneg_add_pdiv",
+      "actual mulEquiv",
+      "ell_le_of_le",
+      "ell_le_max"
+    ],
+    "eventual_parent": [
+      "functionZeroPoleDegrees -> principalDegreeZero and degree(polar(u))=N",
+      "independently obtained finiteDimensional_L -> parameter of riemannBasisPowerLowerBound",
+      "basis bound plus degreeDefect_mono -> uniform polar-multiple defect bound",
+      "riemannPolarApproximation plus actual mulEquiv -> all-divisor bound",
+      "nonempty bounded integer defect range -> attained maximum",
+      "positive ell(A-A0) above degree(A0)+g0+1 -> eventual equality"
+    ]
+  },
+  "source_verification": {
+    "belyi_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "all_six_reference_hashes_match_ledger": true,
+    "remote_git_objects_fetched_by_reviewer": false,
+    "scope_limit": "The reference files and their local hashes were checked against the draft ledger. Previous audit also matched the pin to refer/iut/lake-manifest.json. The independent geometric decomposition does not require settling Joshi3.12 identity."
+  },
+  "literal_sorry_counts": {
+    "Definitions/Def_FermatFunctionDivisors.lean": 0,
+    "Definitions/Def_FermatRiemannDimensionComposition.lean": 0,
+    "Definitions/Def_FermatRiemannLocalDimension.lean": 0,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean": 1,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean": 1,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean": 1,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean": 0,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean": 0,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean": 0
+  },
+  "integration_notes": [
+    "Use the three new parent theorem files as replacements for the same-named old OPEN module files; do not treat both copies as separate Lean declarations.",
+    "Keep the dependency definitions from the old draft and keep the three new child nodes explicitly OPEN.",
+    "The previously noted optional Model.fg_top is still not used by this chain, as the new README explicitly acknowledges; it may remain outside the integrated batch.",
+    "Main-agent exclusive MCP-CI elaboration, required checks and explicit axiom audit remain separate acceptance work; this reviewer ran none."
+  ],
+  "input_sha256": {
+    "Definitions/Def_FermatFunctionDivisors.lean": "c4fcafc7f62588afd52ff5c1588e5dbad9bf31658d7938072ac67ca8fd9b4ec5",
+    "Definitions/Def_FermatRiemannDimensionComposition.lean": "07bc68f45c33e13ed1f53fedffc5028bf32c516755e1ae36ab6f56afd0e59b89",
+    "Definitions/Def_FermatRiemannLocalDimension.lean": "5f5ff1d039b111761ded1e40836fe817de1c6ba0c8f9179f83d07f674cc530de",
+    "README.md": "8716643eb607a5bd195d0895afcecfabceaea4a97cb5e5639adac36c220ba70c",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean": "da76c846c632bf1d5be350a9cca7e06f2ccc22b249c205d81e26fb9eeb807957",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean": "bdc69d3873cd67417416698fc3b098212e252cdd58ad97354b5d90d454873132",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean": "061f98962fac3a787d26c90864918ed2560fd25f746b07e896c83a51c3652206",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean": "dadd613f3ef3fad0587d9249a8f4e7ae8659a26a4a87c7c1db7cf232c4e6b70e",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean": "45694d56d1462b9194414037af5308b71a2cf3e54c0deeb36d336de3b5de4b37",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean": "b0fbdd848db720dcfe36bbe30c14bb33d1af08de6cdbb03b8f253d73bdf839f4",
+    "reference/Belyi_CurveField_Degree.lean": "5f1b63fc08c02a5c3830131fb32a4164d5ea1e64d757ea9ed4bf040aa6162795",
+    "reference/Belyi_CurveField_Divisor.lean": "be0fe41d34ede08d2ef5c81bf9017940f37dd056258055d6caed5eecfb29dde7",
+    "reference/Belyi_CurveField_Residue.lean": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+    "reference/Belyi_CurveField_Riemann.lean": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+    "reference/Belyi_CurveField_RiemannRochSpace.lean": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+    "reference/Belyi_CurveField_ZerosPoles.lean": "e6da7158b3f58a03cc32fc607fc5dfbfa10082229080787fc5d4349a423fb4f6",
+    "source-consumer.json": "5e8d29950ebb25eb6f851d0cf5510c55a78e21474b30caf0e07fef0f3146a316"
+  }
+}

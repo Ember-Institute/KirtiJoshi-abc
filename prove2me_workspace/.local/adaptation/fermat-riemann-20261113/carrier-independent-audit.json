@@ -1,0 +1,188 @@
+{
+  "reviewer": "independent_read_only_riemann_audit",
+  "date": "2026-11-13",
+  "root_target": "abc.goal.lt_constant_mul_fix",
+  "scope": {
+    "draft_directory": "/tmp/p2m-fermat-riemann-next-design-20261113",
+    "repository_modified": false,
+    "compilation_performed": false,
+    "mcp_ci_called": false,
+    "act2_filled": false,
+    "review_kind": "static statement and proof-composition audit; no elaboration or axiom receipt"
+  },
+  "verdict": {
+    "statement_faithfulness": "PASS_STATIC_REVIEW",
+    "composition_mathematics": "PASS_STATIC_REVIEW",
+    "blocking_mathematical_defects_found": 0,
+    "ready_to_claim_closed_parent": false,
+    "reason": "The three dimension children deliberately remain open; the composed parent depends on them. Lean 4.33.1/Mathlib 0df444a elaboration and axiom checks were not run."
+  },
+  "source_checks": {
+    "iut_manifest": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+    "pins_match_iut_manifest": {
+      "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "heights": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "genl": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf"
+    },
+    "reference_hashes_match_draft_ledger": true,
+    "reference_hash_verification_limit": "Local reference bytes match all seven SHA-256 values in source-consumer.json. This audit did not retrieve the Git objects from the remote.",
+    "iut_context": "refer/iut/Iut/Tripod/GeneralPosition.lean:11-35 and imports of Genl.Curves.ProofPackage place the curve-height/Belyi layer in the StatementII-to-StatementI path. Riemann is a Belyi dependency, not a claim that Iut directly defines these new Fermat adapters.",
+    "identity_scope": "No conclusion about Joshi3.12 or the published Corollary 3.12 is needed for this independent geometric decomposition. Future deprecation does not invalidate this local decomposition."
+  },
+  "checks": [
+    {
+      "id": "C01",
+      "topic": "IsCurveField fields",
+      "result": "pass",
+      "locations": [
+        "Definitions/Def_FermatCurveFieldBasic.lean:41",
+        "Definitions/Def_FermatCurveFieldBasic.lean:114",
+        "reference/Belyi_CurveField_Basic.lean:40"
+      ],
+      "analysis": "The class has only exists_finite: an actual transcendental t and finite-dimensional extension over Q(t). Model.isCurveField supplies exactly M.u, M.transcendental_u, M.finite_u. No Q-algebra finite-type, constant-field-equals-Q, geometric-integrality, or unstated genus assumption is added. The explicit Fermat degree/equation/generation fields remain in the original Model and are not weakened."
+    },
+    {
+      "id": "C02",
+      "topic": "actual places, residue fields and normalized order",
+      "result": "pass",
+      "locations": [
+        "Definitions/Def_FermatCurveFieldPlace.lean",
+        "Definitions/Def_FermatCurveFieldResidue.lean:37",
+        "Definitions/Def_FermatCurveFieldResidue.lean:74"
+      ],
+      "analysis": "The native Place subtype excludes the top valuation ring and includes Q, so it retains all proper geometric places, including infinity. The chart-localization/DVR and finite-type residue-quotient arguments use the existing carriers. Both order definitions use the same normalized maximal-ideal valuation; the rfl bridge is mathematically justified by proof irrelevance for DVR proofs. Residue finiteness and positive place degrees are derived from IsCurveField, not new free inputs."
+    },
+    {
+      "id": "C03",
+      "topic": "Riemann space and zero convention",
+      "result": "pass",
+      "locations": [
+        "Definitions/Def_FermatRiemannSpaces.lean:24",
+        "reference/Belyi_CurveField_RiemannRochSpace.lean:52",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean:26"
+      ],
+      "analysis": "L(A) has carrier f=0 OR forall P, -A(P)<=ord_P(f), exactly the source convention. The zero disjunct is essential because ord(0)=0, especially for negative A. Addition separates f+g=0 before applying the nonzero sum valuation inequality; scalar multiplication separates q*f=0 before using the nonzero product law. poleMultiplicity(0,P)=max(0,-ord_P(0))=0, consistent with the existing target."
+    },
+    {
+      "id": "C04",
+      "topic": "actual dimension and constant field",
+      "result": "pass",
+      "locations": [
+        "Definitions/Def_FermatRiemannSpaces.lean:66",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean:15",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean:16"
+      ],
+      "analysis": "riemannEll is finrank of the actual subspace over Q. hFinite is explicitly supplied before the finrank monotonicity argument. The upper bound retains ell(0), so nontrivial constant extensions are allowed. Eventual linearity uses an integer g0 and does not silently identify it with genus-1: the source notes the general scale [constant field:Q]*(g-1)."
+    },
+    {
+      "id": "C05",
+      "topic": "quantifier strength",
+      "result": "pass",
+      "locations": [
+        "Definitions/Def_FermatRiemannComposition.lean:23",
+        "Definitions/Def_FermatRiemannComposition.lean:28",
+        "Definitions/Def_FermatRiemannComposition.lean:114",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists.lean:21"
+      ],
+      "analysis": "For each fixed Model and hDVR, g0 and N0 are selected before forall A. The large-effective bound N1 is uniform in A. The function is selected before forall P, giving simultaneous all-place equality rather than unrelated per-place functions. The final theorem preserves forall M,hDVR,hRF,D, Nonempty PolarPresentation; no effectiveness, positive degree, nonzero-function, or restricted-support condition is imposed on D."
+    },
+    {
+      "id": "C06",
+      "topic": "large effective realization",
+      "result": "pass",
+      "locations": [
+        "Definitions/Def_FermatRiemannComposition.lean:21",
+        "reference/Belyi_CurveField_Riemann.lean:288"
+      ],
+      "analysis": "The threshold max(max(N0,1),max(0,N0+ell(0))+g0+1) yields a positive degree and strict drop ell(A-P)<ell(A) for every P. For large A-P use eventual equality and positive actual residue degree; otherwise use the dimension upper bound. The finite family indexed by A.support consists of proper subspaces in L(A), and Q is infinite. Positive degree forces nonempty support, so avoiding the family forces the selected function nonzero. At a supported P the failure of L(A-P), combined with membership in L(A), gives exact pole order A(P); outside support the pole order is zero."
+    },
+    {
+      "id": "C07",
+      "topic": "positive and negative parts, signs and anchor divisor",
+      "result": "pass",
+      "locations": [
+        "Definitions/Def_FermatRiemannSpaces.lean:95",
+        "Definitions/Def_FermatRiemannComposition.lean:112",
+        "reference/Belyi_CurveField_Riemann.lean:372"
+      ],
+      "analysis": "A+=max(A,0), A-=max(-A,0), and A+-A-=A. Choose a genuine Place P0 using the source-derived Nonempty instance; E=N1.toNat*P0 is effective and degree(E)>=N1 since degree(P0)>=1. This works also when N1<=0. Realize A++E by f and A-+E by g; subtracting cancels E pointwise. The sign is exactly D(P)=poles(f,P)-poles(g,P), matching the existing PolarPresentation. No degree-one/rational place is assumed, and P0 need not be in supp(D)."
+    },
+    {
+      "id": "C08",
+      "topic": "degenerate input divisors and functions",
+      "result": "pass",
+      "analysis": "D=0 and arbitrary negative coefficients are accepted. The final functions are permitted to be zero as in the existing target, although the actual large-degree realization construction selects nonzero functions. If hRealize has a nonpositive threshold, E may be zero; effective zero is still covered by that hypothesis. The explicit construction of hRealize itself chooses N1>=1, so its nonzero argument does not rely on a zero-support finite-union escape."
+    },
+    {
+      "id": "C09",
+      "topic": "retained residue-finiteness parameter",
+      "result": "pass",
+      "locations": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists.lean:21"
+      ],
+      "analysis": "hRF remains in the original public signature but is not passed to the composition. This is justified because the draft has already derived the same fact from Model.isCurveField using the pinned source proof; positive degrees therefore have an actual instance. The unused hRF does not add a premise or hide a missing existence theorem."
+    }
+  ],
+  "issues": [
+    {
+      "id": "I01",
+      "severity": "open_completion_obligation",
+      "blocks_statement_decomposition": false,
+      "blocks_closed_parent_claim": true,
+      "locations": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean:19",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean:19",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean:21"
+      ],
+      "problem": "Exactly these three new theorem bodies still contain sorry. A sorry-free body of polarPresentationExists does not make its dependency closure sorry-free. This is explicitly documented in the draft, so it is an expected open frontier, not a hidden mathematical defect.",
+      "feasible_repair": "Keep the three leaves marked OPEN. Fill them by porting the actual one-place residue map/kernel, principal degree zero, finite-dimensional induction, multiplication equivalence, basis-power bound and attained Riemann bound from the pinned source. Main agent can then run leaf and axiom checks through MCP-CI. Do not replace ell with a free function or add a constant-field assumption."
+    },
+    {
+      "id": "I02",
+      "severity": "integration_hygiene",
+      "blocks_statement_decomposition": false,
+      "location": "Definitions/Def_FermatCurveFieldBasic.lean:119",
+      "problem": "Model.fg_top has no actual call in any candidate definition or theorem. Its actual two-coordinate proof is faithful, but the current draft has only a future-consumer narrative for this added helper. The active generic chain uses exists_finset_adjoin_eq_top instead. If the helper is included as a delivered producer under the supplied AGENTS source-consumer rule, a real consumer must be recorded; this is an integration observation, not a mathematical defect.",
+      "feasible_repair": "Either keep Model.fg_top out of the integrated batch until a proof actually consumes it, or use it in a concrete Model-level finite-generation/basis step. Record that real consumer and source/fidelity mapping in the canonical ledger when integrating. This is not a request to remove a proof-obligation field or weaken a statement."
+    },
+    {
+      "id": "I03",
+      "severity": "wording_only",
+      "blocks_statement_decomposition": false,
+      "location": "Definitions/Def_FermatRiemannComposition.lean:110",
+      "problem": "The phrase real place can be read as an archimedean real place; here P0 is a geometric valuation place trivial on Q. The same phrase occurs in README/source-consumer narrative.",
+      "feasible_repair": "Use actual geometric place or actual proper place. No proof change is needed."
+    }
+  ],
+  "recommended_integration_order": [
+    "Treat this as an accepted source-faithful decomposition candidate, subject to elaboration.",
+    "First integrate/review the basic chart/place/residue adapters and validate the existing placesDiscrete/residuesFinite leaves through the authorized main-agent workflow.",
+    "Integrate the Riemann definitions and explicit three OPEN nodes plus conditional composition. Preserve OPEN and transitive sorry status.",
+    "Remove or consume the presently unused added producer and register actual source-consumer links.",
+    "Run the required MCP-CI leaf, checks and axiom audits before reporting a verified logical unit. No compiler invocation was performed by this reviewer."
+  ],
+  "input_sha256": {
+    "Definitions/Def_FermatCurveFieldBasic.lean": "b3d1360191ce7ea0c7337dfb552c9dec5eb09fdec88e66a53e99e7efd5828b87",
+    "Definitions/Def_FermatCurveFieldChart.lean": "90aa4d97587e8ce3ade8cd92b8a566028a4d7ba53a381a023d28f2375fa4a8be",
+    "Definitions/Def_FermatCurveFieldPlace.lean": "b183a5f21cdc6572e71ede9cb913ac8f54fdf50a6607280b8cda5ebb5166652e",
+    "Definitions/Def_FermatCurveFieldResidue.lean": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95",
+    "Definitions/Def_FermatCurveFieldZerosPoles.lean": "884d1811c768d63b8a723ae74e7cb826254651cef5ae5e504bcf3c22ac8c3f29",
+    "Definitions/Def_FermatRiemannComposition.lean": "9e8eaf1cf59644686a7932649b69984811581941d45d5b752141c54af6505e64",
+    "Definitions/Def_FermatRiemannSpaces.lean": "10c714da15df7cc98fe3d8549dec9d7c58d2bbc88347c6d4e2fac2f4a6370086",
+    "README.md": "5c87121594006c9f6fbdf084f139678563b5d6ee1c4235f723478c78b5e75d07",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_placesDiscrete.lean": "da653bc616279a35831a8a5c49f7cc57c949f9683a7aa5639663fb594edaa69d",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists.lean": "a64afaab300352d9276ffc9e77097a134e30237261aabebec67f6fec301dac5d",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_residuesFinite.lean": "3ef99bdbd5da59c6afeba4a26e5fe5110882f92558581573180e5465c3b9421d",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean": "aceaee0ff95e45e9c489526f7a8d2be1caf194fad5abe8fd746aefab06019d58",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean": "c1af6f0f41f2a4f7234850f937f14e908b1d2bb324f4ba36a6bab9848fb85743",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean": "99515a885c74e1acfa5d8c575dd1f4c0c1971c3b74cb47a7389d965e0196afef",
+    "reference/Belyi_CurveField_Basic.lean": "3657b4ad9c4ecd47307afcff0697e326539ba526dcac61fed2c6c91a827d1eca",
+    "reference/Belyi_CurveField_Chart.lean": "ee33368cc6e9a77da21f56995bcbe302293a441672a9f969af588bdcc43f5153",
+    "reference/Belyi_CurveField_Place.lean": "f68260416b102e3b60c03e42b016833ded7ed476299d0a0e978e2e89965b2572",
+    "reference/Belyi_CurveField_Residue.lean": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+    "reference/Belyi_CurveField_Riemann.lean": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+    "reference/Belyi_CurveField_RiemannRochSpace.lean": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+    "reference/Belyi_CurveField_ZerosPoles.lean": "e6da7158b3f58a03cc32fc607fc5dfbfa10082229080787fc5d4349a423fb4f6",
+    "source-consumer.json": "1bc96accf71545895b271228576eccbe6944f5bd35386fe0731b054479f65bd1"
+  }
+}

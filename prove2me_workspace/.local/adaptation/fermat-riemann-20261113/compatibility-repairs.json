@@ -1,0 +1,23 @@
+{
+  "statement_shape_changed": false,
+  "repairs": [
+    {
+      "file": "Definitions/Def_FermatCurveFieldPlace.lean",
+      "repair": "Qualify IsLocalRing.residue to avoid project Place.residue shadowing."
+    },
+    {
+      "file": "Definitions/Def_FermatRiemannSpaces.lean",
+      "repair": "Annotate Place and integer variables in Finsupp.sum_single_index."
+    },
+    {
+      "file": "Definitions/Def_FermatFunctionDivisors.lean",
+      "repair": "Unfold Function.support, use map_nsmul argument order, explicit AddMonoidHom coercions, Module.Basis namespace, and a valid hPole identifier."
+    },
+    {
+      "file": "Definitions/Def_FermatRiemannLocalDimension.lean",
+      "repair": "Expand captured local notation in the section variable hDegreeZero; explicit negativeSpace proof and Submodule.mem_bot rational scalar. Diagnostic isolated malformed section type, not a new mathematical premise."
+    }
+  ],
+  "source_implicit_assumption_preserved": "For every f in the actual M.K, divisorDegree M (functionDivisor M hDVR f)=0.",
+  "compiler_diagnostic": "MCP-CI original failed jobs retained in attempts; run-local helpers are diagnostic evidence, not proof modules."
+}

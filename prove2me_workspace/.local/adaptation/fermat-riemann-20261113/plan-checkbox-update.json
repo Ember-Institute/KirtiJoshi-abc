@@ -1,0 +1,679 @@
+{
+  "baseline": "0760951",
+  "source_sha256": "cc4c738c7f58a22cde6292a863b5f9754dd469fcaee26636dfd3f5899abdf9e3",
+  "updated_sha256": "19fce62fd850d1698947e9f20021c2491777af05441aada0ec4c516f2d794e5b",
+  "applied_changes": [
+    {
+      "item_index": 1,
+      "original_line": 9,
+      "before": "- [X] 最终平台目标已确定为 `abc.variants.lt_constant_mul`。",
+      "after": "- [x] 最终平台根目标已纠正为 `abc.goal.lt_constant_mul_fix`；旧 `abc.variants.lt_constant_mul` 不再作为本适配根目标。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json"
+      ]
+    },
+    {
+      "item_index": 2,
+      "original_line": 10,
+      "before": "- [X] 目标陈述、必要导入、来源、双语说明和独立审读已写入现有私有 mission draft，并回读核对。",
+      "after": "- [x] 目标陈述、必要导入、来源、三语说明及独立审读已保存并回读核对；当前私有平台项目已含发布节点和已验收归约。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 3,
+      "original_line": 11,
+      "before": "- [X] 适配环境已确定为 Lean `v4.33.1`、Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。",
+      "after": "- [x] 适配环境已确定为 Lean `v4.33.1`、Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 4,
+      "original_line": 12,
+      "before": "- [X] 工作区已放在 `/home/admin-wsl/Coq/prove-abc/prove2me_workspace`；复用现有工具链和 Mathlib 缓存。",
+      "after": "- [x] 工作区已放在 `/home/admin-wsl/Coq/abc/prove2me_workspace`；复用锁定工具链和 Mathlib 缓存。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/production-gates-result.json"
+      ]
+    },
+    {
+      "item_index": 5,
+      "original_line": 13,
+      "before": "- [X] Prologue 的载体、契约和待证明义务已有本地登记；这是既有清单基础，不表示其全部证明完成，也不表示已经逐项映射到平台。",
+      "after": "- [x] Prologue 的载体、契约和待证明义务已有本地登记；这是既有清单基础，不表示其全部证明完成，也不表示已经逐项映射到平台。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json",
+        "docs/具有明确参考来源指示的证明义务.md"
+      ]
+    },
+    {
+      "item_index": 9,
+      "original_line": 17,
+      "before": "- [ ] 分别登记四种完成状态：陈述已确定、组合证明已验证、条件已由真实构造消除、平台证明已验收。不得用其中一种代替其余状态。",
+      "after": "- [x] 分别登记四种完成状态：陈述已确定、组合证明已验证、条件已由真实构造消除、平台证明已验收。不得用其中一种代替其余状态。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json"
+      ]
+    },
+    {
+      "item_index": 10,
+      "original_line": 18,
+      "before": "- [ ] 本轮适配沿用用户确认的四阶段解释；原冻结工程 `/home/admin-wsl/Coq/abc` 的工具链和依赖不变。",
+      "after": "- [x] 本轮适配沿用用户确认的四阶段解释；主工作区现为 `/home/admin-wsl/Coq/abc`，工具链和依赖版本保持锁定，兼容修补及缓存恢复另存可审查记录。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/production-gates-result.json"
+      ]
+    },
+    {
+      "item_index": 11,
+      "original_line": 22,
+      "before": "- [ ] 统一图的术语：最终 abc 是整张证明依赖图的根目标；3.12 是关键中间目标；Prologue 的基础构造义务是向下展开后需要解决的基础节点。",
+      "after": "- [x] 统一图的术语：最终 abc 是整张证明依赖图的根目标；3.12 是关键中间目标；Prologue 的基础构造义务是向下展开后需要解决的基础节点。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json"
+      ]
+    },
+    {
+      "item_index": 12,
+      "original_line": 23,
+      "before": "- [ ] 将图按有向无环图管理：同一数学对象或子定理可被多处复用，不为显示成树而重复声明不同版本。",
+      "after": "- [x] 将图按有向无环图管理：同一数学对象或子定理可被多处复用，不为显示成树而重复声明不同版本。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 13,
+      "original_line": 24,
+      "before": "- [ ] 区分三种顺序：数学需求按 abc 向下拆分；已完成证明按基础向上组合；平台定义、开放节点和解答按各自依赖顺序上传。",
+      "after": "- [x] 区分三种顺序：数学需求按 abc 向下拆分；已完成证明按基础向上组合；平台定义、开放节点和解答按各自依赖顺序上传。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 14,
+      "original_line": 25,
+      "before": "- [ ] 将 Scene2 定位为“3.12 及明确后续桥梁足以推出最终 abc”的证明层。",
+      "after": "- [x] 将 Scene2 定位为“3.12 及明确后续桥梁足以推出最终 abc”的证明层。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/scene2-chain-20261112.md",
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json",
+        "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene2/Boundary.lean"
+      ]
+    },
+    {
+      "item_index": 15,
+      "original_line": 26,
+      "before": "- [ ] 将 Scene1 定位为“真实来源生产链及明确局部事实足以推出指定版本 3.12”的证明层。",
+      "after": "- [x] 将 Scene1 定位为“真实来源生产链及明确局部事实足以推出指定版本 3.12”的证明层。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/joshi_existing_map.json",
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json"
+      ]
+    },
+    {
+      "item_index": 16,
+      "original_line": 27,
+      "before": "- [ ] 将 Prologue 定位为载体、定义、基础契约及其已登记构造义务，不把目标特有结论混入基础定义。",
+      "after": "- [x] 将 Prologue 定位为载体、定义、基础契约及其已登记构造义务，不把目标特有结论混入基础定义。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/import-boundary-audit.json"
+      ]
+    },
+    {
+      "item_index": 17,
+      "original_line": 28,
+      "before": "- [ ] 将 Act2 定位为开发阶段：在 Act1 骨架、契约和组合关系验收后，集中消除剩余构造与来源证明债务；它不是 abc 之后的数学推论，也不是平台图中额外的公理层。",
+      "after": "- [x] 将 Act2 定位为开发阶段：在 Act1 骨架、契约和组合关系验收后，集中消除剩余构造与来源证明债务；它不是 abc 之后的数学推论，也不是平台图中额外的公理层。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "docs/Prove2Me适配状态.md"
+      ]
+    },
+    {
+      "item_index": 18,
+      "original_line": 29,
+      "before": "- [ ] 保留已经完成的 Scene1 局部证明和其他阶段成果，优先复用其 proof term；不为重新排列开发顺序而撤销已有证明。",
+      "after": "- [x] 保留已经完成的 Scene1 局部证明和其他阶段成果，优先复用其 proof term；不为重新排列开发顺序而撤销已有证明。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/import-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json",
+        "prove2me_workspace/.local/adaptation/source-audits/joshi_existing_map.json"
+      ]
+    },
+    {
+      "item_index": 20,
+      "original_line": 31,
+      "before": "- [ ] Act1 骨架完成时可以有明确登记的开放子目标，但不得称为无条件 abc 已证明；最终完成要求全部必要条件得到真实实例化。",
+      "after": "- [x] Act1 骨架完成时可以有明确登记的开放子目标，但不得称为无条件 abc 已证明；最终完成要求全部必要条件得到真实实例化。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json"
+      ]
+    },
+    {
+      "item_index": 21,
+      "original_line": 32,
+      "before": "- [ ] 按本次阶段解释区分两道门槛：Act2 开始前验收 Act1 的精确分解、无缺口组合证明和显式债务清单；Act2 结束后验收构造实例化及无条件 abc。原 V1 中“最终 abc 闭合”的要求不得被解释成必须先填完同一批债务才能开始填债务；同时不得借骨架验收跳过真实 producer 的存在性证明。",
+      "after": "- [x] 按本次阶段解释区分两道门槛：Act2 开始前验收 Act1 的精确分解、无缺口组合证明和显式债务清单；Act2 结束后验收构造实例化及无条件 abc。原 V1 中“最终 abc 闭合”的要求不得被解释成必须先填完同一批债务才能开始填债务；同时不得借骨架验收跳过真实 producer 的存在性证明。",
+      "evidence": [
+        "docs/Prove2Me适配状态.md",
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json"
+      ]
+    },
+    {
+      "item_index": 22,
+      "original_line": 33,
+      "before": "- [ ] 区分数学依赖与本地模块依赖：最终装配模块可以消费 Act2 的构造，Prologue、Scene1、Scene2 不得反向导入 Act2。",
+      "after": "- [x] 区分数学依赖与本地模块依赖：最终装配模块可以消费 Act2 的构造，Prologue、Scene1、Scene2 不得反向导入 Act2。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/import-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/production-gates-result.json"
+      ]
+    },
+    {
+      "item_index": 23,
+      "original_line": 37,
+      "before": "- [X] 保留现有平台标识 `abc.variants.lt_constant_mul`，不因参考文件外层命名空间为 `ABC` 而另建重复根目标。",
+      "after": "- [x] 使用修正根 `abc.goal.lt_constant_mul_fix`，明确先在自然数上取 `radical` 再转为实数；保存旧根到修正根的替换记录。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json"
+      ]
+    },
+    {
+      "item_index": 24,
+      "original_line": 38,
+      "before": "- [X] 形式陈述明确量化正实数 `ε`、一个实常数 `K`，以及满足正性、集合互素和 `a + b = c` 的自然数三元组。",
+      "after": "- [x] 形式陈述明确量化正实数 `ε`、一个实常数 `K`，以及满足正性、集合互素和 `a + b = c` 的自然数三元组。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/Solutions/Sol_abc_goal_lt_constant_mul_fix.lean",
+        "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json"
+      ]
+    },
+    {
+      "item_index": 25,
+      "original_line": 39,
+      "before": "- [X] 保留目标的严格不等式 `(c : ℝ) < K * (radical (a * b * c) : ℝ) ^ (1 + ε)`；实数幂、根基和强制转换已经明确。",
+      "after": "- [x] 保留目标的严格不等式 `(c : ℝ) < K * (radical (a * b * c) : ℝ) ^ (1 + ε)`；实数幂、根基和强制转换已经明确。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/Solutions/Sol_abc_goal_lt_constant_mul_fix.lean"
+      ]
+    },
+    {
+      "item_index": 26,
+      "original_line": 40,
+      "before": "- [X] 目标使用 Mathlib 的 `UniqueFactorizationMonoid.radical`，已验证它在自然数上等于来源中的不同素因子乘积。",
+      "after": "- [x] 目标使用 Mathlib 的 `UniqueFactorizationMonoid.radical`，已验证它在自然数上等于来源中的不同素因子乘积。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 27,
+      "original_line": 41,
+      "before": "- [ ] 在根目标的最终适配证明中逐项处理参考工程与平台目标的差异：自然数或整数、`≤` 或 `<`、`Nat.Coprime a b` 或集合上的 `Pairwise`、显式或推得的 `c > 0`。",
+      "after": "- [x] 在根目标的最终适配证明中逐项处理参考工程与平台目标的差异：自然数或整数、`≤` 或 `<`、`Nat.Coprime a b` 或集合上的 `Pairwise`、显式或推得的 `c > 0`。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/Definitions/Def_AbcClassicalInt.lean",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 28,
+      "original_line": 42,
+      "before": "- [ ] 针对 `Set.Pairwise` 只约束不同数值的语义证明所需转换；尤其处理 `a = b` 的情形，不以“互素三元组”文字替代此项证明。",
+      "after": "- [x] 针对 `Set.Pairwise` 只约束不同数值的语义证明所需转换；尤其处理 `a = b` 的情形，不以“互素三元组”文字替代此项证明。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 29,
+      "original_line": 43,
+      "before": "- [ ] 如从非严格上界转为严格上界，使用合法的统一常数增大，并证明根基的实数幂为正；不得直接把 `≤` 改写成 `<`。",
+      "after": "- [x] 如从非严格上界转为严格上界，使用合法的统一常数增大，并证明根基的实数幂为正；不得直接把 `≤` 改写成 `<`。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 30,
+      "original_line": 44,
+      "before": "- [ ] 保持 `K` 在三元组量化之前选择，只依赖 `ε`；不得让 `K` 隐含依赖 `a,b,c`。",
+      "after": "- [x] 保持 `K` 在三元组量化之前选择，只依赖 `ε`；不得让 `K` 隐含依赖 `a,b,c`。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/Solutions/Sol_abc_goal_lt_constant_mul_fix.lean"
+      ]
+    },
+    {
+      "item_index": 31,
+      "original_line": 45,
+      "before": "- [ ] 核对不显式要求 `K > 0` 的现有目标与所用参考版本的关系；需要时由合法三元组推出常数正性。",
+      "after": "- [x] 核对不显式要求 `K > 0` 的现有目标与所用参考版本的关系；需要时由合法三元组推出常数正性。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 32,
+      "original_line": 46,
+      "before": "- [ ] 不向最终根目标增加 `h312`、producer、height theory、anabelian theory 或其他未消除数学输入。",
+      "after": "- [x] 不向最终根目标增加 `h312`、producer、height theory、anabelian theory 或其他未消除数学输入。",
+      "evidence": [
+        "prove2me_workspace/Solutions/Sol_abc_goal_lt_constant_mul_fix.lean",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 33,
+      "original_line": 47,
+      "before": "- [ ] 对根目标全文、来源提交和经过验证的类型保存一致性记录；后续更改触发重新编译和独立审读。",
+      "after": "- [x] 对根目标全文、来源提交和经过验证的类型保存一致性记录；后续更改触发重新编译和独立审读。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 34,
+      "original_line": 53,
+      "before": "- [ ] 从最终经典 abc 转换入手，逐项审读 `refer/iut/Iut/Abc/Classical.lean`、`Iut/Tripod/ClassicalAbc.lean` 和 `Iut/Tripod/ClassicalAbcOfVariant.lean`。",
+      "after": "- [x] 从最终经典 abc 转换入手，逐项审读 `refer/iut/Iut/Abc/Classical.lean`、`Iut/Tripod/ClassicalAbc.lean` 和 `Iut/Tripod/ClassicalAbcOfVariant.lean`。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/scene2-chain-20261112.md",
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json"
+      ]
+    },
+    {
+      "item_index": 35,
+      "original_line": 54,
+      "before": "- [ ] 追踪 `Iut/Tripod/Main.lean`、`Iut/Tripod/GeneralPosition.lean`、`Iut/Implication/Corollary23.lean`、`Corollary22.lean`、`Theorem110.lean` 和 `LogVolumeBound.lean` 中实际被消费的前提。",
+      "after": "- [x] 追踪 `Iut/Tripod/Main.lean`、`Iut/Tripod/GeneralPosition.lean`、`Iut/Implication/Corollary23.lean`、`Corollary22.lean`、`Theorem110.lean` 和 `LogVolumeBound.lean` 中实际被消费的前提。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/scene2-chain-20261112.md",
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json"
+      ]
+    },
+    {
+      "item_index": 37,
+      "original_line": 56,
+      "before": "- [ ] 区分参考工程已经给出的 proof term、仍需外部供应的接口，以及模型专用结果；不因文件存在或参考工程编译通过就认定数学输入已构造。",
+      "after": "- [x] 区分参考工程已经给出的 proof term、仍需外部供应的接口，以及模型专用结果；不因文件存在或参考工程编译通过就认定数学输入已构造。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/scene2-chain-20261112.md",
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json"
+      ]
+    },
+    {
+      "item_index": 39,
+      "original_line": 58,
+      "before": "- [ ] 检查对 3.12 的量化需求：是否对所有 admissible data、局部理论和输入成立；不能用某个特选数据的 3.12 结论代替下游所需的全称版本。",
+      "after": "- [x] 检查对 3.12 的量化需求：是否对所有 admissible data、局部理论和输入成立；不能用某个特选数据的 3.12 结论代替下游所需的全称版本。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/scene2-chain-20261112.md",
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json"
+      ]
+    },
+    {
+      "item_index": 41,
+      "original_line": 60,
+      "before": "- [ ] 先作 JoshiTeich 适配性审查，再决定移植；结论、对象或归一化不相容时记录具体阻塞，不删除相应义务。",
+      "after": "- [x] 先作 JoshiTeich 适配性审查，再决定移植；结论、对象或归一化不相容时记录具体阻塞，不删除相应义务。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/source-audits/joshi_existing_map.json",
+        "prove2me_workspace/.local/adaptation/source-audits/joshi-raw-corrected-next-design-20261113.json"
+      ]
+    },
+    {
+      "item_index": 42,
+      "original_line": 66,
+      "before": "- [ ] `S2-01`：确定从自然数常数乘子目标到经典 abc 上界的最后转换，处理第 3 节全部语义差异。",
+      "after": "- [x] `S2-01`：确定从自然数常数乘子目标到经典 abc 上界的最后转换，处理第 3 节全部语义差异。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/Definitions/Def_AbcClassicalInt.lean",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 43,
+      "original_line": 67,
+      "before": "- [ ] `S2-02`：确定从 tripod 上的具体高度不等式到经典 abc 的桥梁，明确高度、根基、conductor 及常数的对应。",
+      "after": "- [x] `S2-02`：确定从 tripod 上的具体高度不等式到经典 abc 的桥梁，明确高度、根基、conductor 及常数的对应。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_TripodRationalComposition.lean",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 44,
+      "original_line": 68,
+      "before": "- [ ] `S2-03`：确定 compactly bounded、general-position 或 bounded-degree 版本向所需 Vojta 型结论的传递，列出例外点和辅助条件。",
+      "after": "- [x] `S2-03`：确定 compactly bounded、general-position 或 bounded-degree 版本向所需 Vojta 型结论的传递，列出例外点和辅助条件。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_TripodFermatInputs.lean",
+        "prove2me_workspace/Definitions/Def_TripodFermatComposition.lean",
+        "prove2me_workspace/.local/adaptation/fermat-general-position-20261113/shape-audit.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 55,
+      "original_line": 84,
+      "before": "- [ ] 同时标明论文的字面公式、上下文符号约定和当前 volume-derived 解释；对冲突作显式适配，不静默替换。",
+      "after": "- [x] 同时标明论文的字面公式、上下文符号约定和当前 volume-derived 解释；对冲突作显式适配，不静默替换。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-tripod-20261113/iut-chain-and-312-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/source-audits/joshi_existing_map.json",
+        "prove2me_workspace/.local/adaptation/source-audits/joshi-raw-corrected-next-design-20261113.json"
+      ]
+    },
+    {
+      "item_index": 67,
+      "original_line": 99,
+      "before": "- [ ] 保持四类 producer 的 owner 为 Scene1；`AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer` 不移回 Prologue/Core。",
+      "after": "- [x] 保持四类 producer 的 owner 为 Scene1；`AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer` 不移回 Prologue/Core。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json",
+        "docs/Prove2Me适配状态.md"
+      ]
+    },
+    {
+      "item_index": 77,
+      "original_line": 112,
+      "before": "- [ ] 将“Prologue 义务列表已有登记”与“最终依赖闭包全部覆盖”分别验收；新增真实需求必须走动态边界审计，不默认原清单永久完备。",
+      "after": "- [x] 将“Prologue 义务列表已有登记”与“最终依赖闭包全部覆盖”分别验收；新增真实需求必须走动态边界审计，不默认原清单永久完备。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json",
+        "docs/Prove2Me适配状态.md"
+      ]
+    },
+    {
+      "item_index": 90,
+      "original_line": 133,
+      "before": "- [ ] 明确 `Definitions` 只供应已验证定义和必要结构性事实；没有证明的数学结论必须作为开放 theorem 节点。",
+      "after": "- [x] 明确 `Definitions` 只供应已验证定义和必要结构性事实；没有证明的数学结论必须作为开放 theorem 节点。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/import-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/closed-compositions-review-result.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 91,
+      "original_line": 134,
+      "before": "- [ ] 定义体所需的定理必须已有无缺口证明；不能让定义导入带占位证明的 theorem，从基础层传播 `sorryAx`。",
+      "after": "- [x] 定义体所需的定理必须已有无缺口证明；不能让定义导入带占位证明的 theorem，从基础层传播 `sorryAx`。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/import-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/closed-compositions-review-result.json",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 93,
+      "original_line": 136,
+      "before": "- [ ] 在 `prove2me_workspace/.local/` 保存机器可读节点清单、依赖边、重命名映射、payload、任务 ID 和回执；不为进度维护另建一批文档。",
+      "after": "- [x] 在 `prove2me_workspace/.local/` 保存机器可读节点清单、依赖边、重命名映射、payload、任务 ID 和回执；不为进度维护另建一批文档。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json"
+      ]
+    },
+    {
+      "item_index": 94,
+      "original_line": 140,
+      "before": "- [ ] 草稿／开放陈述：以平台要求的 `:= by sorry` 标记尚待证明的节点；编译成功只说明陈述可 elaboration，不表示数学结论已证明。",
+      "after": "- [x] 草稿／开放陈述：以平台要求的 `:= by sorry` 标记尚待证明的节点；编译成功只说明陈述可 elaboration，不表示数学结论已证明。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 96,
+      "original_line": 142,
+      "before": "- [ ] 平台 reduction：顶层声明必须为 `theorem solution`，类型与父目标完全一致；通过 `Theorems.Thm_*` 导入实际子节点，不能导入父目标自身。",
+      "after": "- [x] 平台 reduction：顶层声明必须为 `theorem solution`，类型与父目标完全一致；通过 `Theorems.Thm_*` 导入实际子节点，不能导入父目标自身。",
+      "evidence": [
+        "prove2me_workspace/Solutions/Sol_abc_goal_lt_constant_mul_fix.lean",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 97,
+      "original_line": 143,
+      "before": "- [ ] 平台 solution 自身无 `sorry`；导入 Open 子节点时按平台规则得到归约证据，不把其整体公理输出误报为无 `sorryAx` 的完整证明。",
+      "after": "- [x] 平台 solution 自身无 `sorry`；导入 Open 子节点时按平台规则得到归约证据，不把其整体公理输出误报为无 `sorryAx` 的完整证明。",
+      "evidence": [
+        "prove2me_workspace/Solutions/Sol_abc_goal_lt_constant_mul_fix.lean",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 98,
+      "original_line": 144,
+      "before": "- [ ] 分别记录 `SKETCH_ACCEPTED` 与 `ACCEPTED`、相关子节点状态及实际依赖；只有父节点存在完整闭合的证明路径时才报告已证明。",
+      "after": "- [x] 分别记录 `SKETCH_ACCEPTED` 与 `ACCEPTED`、相关子节点状态及实际依赖；只有父节点存在完整闭合的证明路径时才报告已证明。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json"
+      ]
+    },
+    {
+      "item_index": 99,
+      "original_line": 145,
+      "before": "- [ ] 本地生产证明层不为模拟平台导入而导入占位 theorem；平台镜像只在适配工作区中使用，不改变既有信任边界。",
+      "after": "- [x] 本地生产证明层不为模拟平台导入而导入占位 theorem；平台镜像只在适配工作区中使用，不改变既有信任边界。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/import-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/production-gates-result.json"
+      ]
+    },
+    {
+      "item_index": 105,
+      "original_line": 157,
+      "before": "- [ ] 所有本地 Lean 构建、叶检查、类型提取和审查均通过 MCP-CI；遵守 `AGENTS.md` 的独占输入、manifest、幂等键和资源规则。",
+      "after": "- [x] 所有本地 Lean 构建、叶检查、类型提取和审查均通过 MCP-CI；遵守 `AGENTS.md` 的独占输入、manifest、幂等键和资源规则。",
+      "evidence": [
+        "AGENTS.md",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/production-gates-result.json"
+      ]
+    },
+    {
+      "item_index": 107,
+      "original_line": 159,
+      "before": "- [ ] 工作区绝对路径、准确 source、结构化 `LEAN_PATH` 及全部目录外依赖与实际输入一致；独占任务终态前冻结输入。",
+      "after": "- [x] 工作区绝对路径、准确 source、结构化 `LEAN_PATH` 及全部目录外依赖与实际输入一致；独占任务终态前冻结输入。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/production-gates-result.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 109,
+      "original_line": 161,
+      "before": "- [ ] 对草稿条目分别检查陈述编译、定义解释和盲审读；read-back 使用独立 `gpt-6.1-sol` 子智能体，仅提供 Lean 代码及审读规则。",
+      "after": "- [x] 对草稿条目分别检查陈述编译、定义解释和盲审读；read-back 使用独立 `gpt-6.1-sol` 子智能体，仅提供 Lean 代码及审读规则。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json",
+        "prove2me_workspace/.local/adaptation/readbacks/fermat-proper-canonical-v1/provenance.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 110,
+      "original_line": 162,
+      "before": "- [ ] 草稿修改后回读逐字段核对，保存 item ID 和 payload；PATCH 不表示平台已验证证明，也不表示已创建 decomposition。",
+      "after": "- [x] 草稿修改后回读逐字段核对，保存 item ID 和 payload；PATCH 不表示平台已验证证明，也不表示已创建 decomposition。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/readbacks/abc-fix-v1/provenance.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json"
+      ]
+    },
+    {
+      "item_index": 111,
+      "original_line": 163,
+      "before": "- [ ] 草稿阶段完成节点陈述和本地分解工件；只有对应 theorem 节点具备平台 ID 后，才能通过 `/verify` 建立服务端验证的 reduction。",
+      "after": "- [x] 草稿阶段完成节点陈述和本地分解工件；只有对应 theorem 节点具备平台 ID 后，才能通过 `/verify` 建立服务端验证的 reduction。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json"
+      ]
+    },
+    {
+      "item_index": 113,
+      "original_line": 165,
+      "before": "- [ ] 保持当前 mission 的私有 Draft 状态，逐项维护审读。发布、人工确认及提交 Proposal 由用户明确触发，本计划不代替这些操作。",
+      "after": "- [ ] 保持 mission 私有可见范围，逐项维护审读；平台发布、人工确认及提交 Proposal 按用户另行授权执行。本轮已授权的节点发布与归约按真实平台终态登记。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json"
+      ]
+    },
+    {
+      "item_index": 114,
+      "original_line": 166,
+      "before": "- [ ] 启动平台证明上传时，先确认可导入节点已存在且属于相同环境／可见范围；保存 `job_id`、`theorem_id`、`submission_id` 后等待原任务，不因传输故障盲目重发。",
+      "after": "- [x] 启动平台证明上传时，先确认可导入节点已存在且属于相同环境／可见范围；保存 `job_id`、`theorem_id`、`submission_id` 后等待原任务，不因传输故障盲目重发。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json"
+      ]
+    },
+    {
+      "item_index": 115,
+      "original_line": 167,
+      "before": "- [ ] `PUBLISHED`、`ACCEPTED` 或 `SKETCH_ACCEPTED` 等状态必须读取真实终态；排队、请求受理及草稿保存均不算证明验收。",
+      "after": "- [x] `PUBLISHED`、`ACCEPTED` 或 `SKETCH_ACCEPTED` 等状态必须读取真实终态；排队、请求受理及草稿保存均不算证明验收。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/canonical-estimate-to-actual-belyi-verify-result.json"
+      ]
+    },
+    {
+      "item_index": 116,
+      "original_line": 168,
+      "before": "- [ ] 每轮完成一个可审查逻辑单元：陈述和证明变更经必要检查后提交推送；草稿同步范围以当前用户授权为准。",
+      "after": "- [x] 每轮完成一个可审查逻辑单元：陈述和证明变更经必要检查后提交推送；草稿同步范围以当前用户授权为准。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/delivery-push-receipt-20261113.json",
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/unit-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 117,
+      "original_line": 169,
+      "before": "- [ ] API 密钥和令牌仅保存在工作区受保护、被 Git 忽略的凭据文件中；不写入本文、节点清单、日志或提交。",
+      "after": "- [x] API 密钥和令牌仅保存在工作区受保护、被 Git 忽略的凭据文件中；不写入本文、节点清单、日志或提交。",
+      "evidence": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "item_index": 118,
+      "original_line": 173,
+      "before": "- [ ] 第一单元：固定根目标与参考经典 abc 的差异，给出最后一步适配的精确子目标及组合证明。",
+      "after": "- [x] 第一单元：固定根目标与参考经典 abc 的差异，给出最后一步适配的精确子目标及组合证明。",
+      "evidence": [
+        "prove2me_workspace/Definitions/Def_AbcClassical.lean",
+        "prove2me_workspace/Definitions/Def_AbcClassicalInt.lean",
+        "prove2me_workspace/.local/adaptation/delivery-ci-summary.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 129,
+      "original_line": 187,
+      "before": "- [X] 本计划依据用户确认的反向分解结构、`docs/开发计划.V1.md`、`docs/开发计划.V1Act1.md`、`docs/开发计划.V1Act1Scene1.md`、`docs/具有明确参考来源指示的证明义务.md` 和当前源码编写。",
+      "after": "- [x] 本计划依据用户确认的反向分解结构、`docs/开发计划.V1.md`、`docs/开发计划.V1Act1.md`、`docs/开发计划.V1Act1Scene1.md`、`docs/具有明确参考来源指示的证明义务.md` 和当前源码编写。",
+      "evidence": [
+        "docs/开发计划.V1Act1Scene1.md",
+        "docs/具有明确参考来源指示的证明义务.md"
+      ]
+    },
+    {
+      "item_index": 130,
+      "original_line": 188,
+      "before": "- [X] 平台规则依据 `prove2me_workspace/SKILL.md`、`references/mission_captain.md`、`references/mission_auditor.md`、`references/prove.md` 及 `references/upload_full_project.md`。",
+      "after": "- [x] 平台规则依据 `prove2me_workspace/SKILL.md`、`references/mission_captain.md`、`references/mission_auditor.md`、`references/prove.md` 及 `references/upload_full_project.md`。",
+      "evidence": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "item_index": 131,
+      "original_line": 189,
+      "before": "- [X] 本次只新增本计划，不改既有数学义务复选框，不把目标陈述通过编译登记为证明完成。",
+      "after": "- [x] 本计划最初仅新增适配计划；后续按用户授权持续维护本计划复选框，不把陈述通过编译登记为数学证明完成，不据适配进展改勾既有数学义务。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "docs/具有明确参考来源指示的证明义务.md"
+      ]
+    },
+    {
+      "item_index": 132,
+      "original_line": 190,
+      "before": "- [ ] 后续只在义务实际闭合后更新 `具有明确参考来源指示的证明义务.md` 的对应复选框，不在该文件添加适配说明。",
+      "after": "- [x] 后续只在义务实际闭合后更新 `具有明确参考来源指示的证明义务.md` 的对应复选框，不在该文件添加适配说明。",
+      "evidence": [
+        "docs/具有明确参考来源指示的证明义务.md",
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json"
+      ]
+    },
+    {
+      "item_index": 133,
+      "original_line": 191,
+      "before": "- [ ] 动态边界和负面证据仍按既有契约登记；本计划不另行扩大 Prologue/Core，不自动启动 Act2，不授权额外文档维护或平台公开发布。",
+      "after": "- [x] 动态边界和负面证据仍按既有契约登记；本计划不另行扩大 Prologue/Core，不自动启动 Act2，不授权额外文档维护或平台公开发布。",
+      "evidence": [
+        "prove2me_workspace/.local/adaptation/fermat-proper-canonical-20261113/import-boundary-audit.json",
+        "prove2me_workspace/.local/adaptation/source-audits/prologue-mathlib-boundary-20261113.json",
+        "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+        "docs/开发计划.V1Act1Scene1.md"
+      ]
+    }
+  ],
+  "excluded_act2_unchanged": true,
+  "full_mathematical_completion_claimed": false,
+  "new_riemann_platform_results_not_assumed": true
+}

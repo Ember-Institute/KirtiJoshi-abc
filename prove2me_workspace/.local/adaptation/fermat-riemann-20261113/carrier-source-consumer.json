@@ -1,0 +1,357 @@
+{
+  "unit": "Fixed Fermat Model to the source curve-field class, DVR and residue proofs, and the next actual Riemann layer",
+  "date": "2026-11-13",
+  "status": "uncompiled_candidate_two_existing_children_have_closed_source_proof_adapters_three_dimension_children_remain_open",
+  "reference_commits": {
+    "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "heights_context": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+    "genl_context": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf"
+  },
+  "reference_hashes": {
+    "Belyi_CurveField_Basic.lean": {
+      "sha256": "3657b4ad9c4ecd47307afcff0697e326539ba526dcac61fed2c6c91a827d1eca",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Chart.lean": {
+      "sha256": "ee33368cc6e9a77da21f56995bcbe302293a441672a9f969af588bdcc43f5153",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Place.lean": {
+      "sha256": "f68260416b102e3b60c03e42b016833ded7ed476299d0a0e978e2e89965b2572",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Residue.lean": {
+      "sha256": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_Riemann.lean": {
+      "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_RiemannRochSpace.lean": {
+      "sha256": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "Belyi_CurveField_ZerosPoles.lean": {
+      "sha256": "e6da7158b3f58a03cc32fc607fc5dfbfa10082229080787fc5d4349a423fb4f6",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    }
+  },
+  "source_type_correction": {
+    "name": "IsCurveField",
+    "actual_fields": [
+      {
+        "name": "exists_finite",
+        "type": "exists t : K, Transcendental Rat t and FiniteDimensional Rat(t) K"
+      }
+    ],
+    "not_source_fields": [
+      "Algebra.FiniteType Rat K",
+      "constant field equals Rat",
+      "geometric integrality",
+      "freely supplied Prop law"
+    ],
+    "model_witness": [
+      "M.u",
+      "M.transcendental_u",
+      "M.finite_u"
+    ],
+    "proof": "Model.isCurveField := constructor with this exact existential witness",
+    "model_trdeg_status": "Model.trdeg_eq_one already closed in main workspace; generic source theorem is also ported",
+    "field_finite_generation": {
+      "proof": "Model.fg_top uses actual Finset {M.u,M.v} and M.generate",
+      "type": "(top : IntermediateField Rat M.K).FG",
+      "distinction": "Rat(t) is field-finitely generated but not an Algebra.FiniteType Rat algebra"
+    },
+    "constant_field_scope": "No extra constant-field or Fermat geometric-integrality obligation is introduced because these downstream source theorems do not need it. ell(0) remains the actual unknown constant-field dimension."
+  },
+  "definition_modules": [
+    {
+      "file": "Definitions/Def_FermatCurveFieldBasic.lean",
+      "source": "Belyi/CurveField/Basic.lean",
+      "port_changes": [
+        "namespace and native carrier import",
+        "added closed Model.isCurveField",
+        "added closed Model.fg_top"
+      ],
+      "provides": [
+        "IsCurveField",
+        "finiteDimensional_adjoin",
+        "exists_finset_adjoin_eq_top",
+        "Model.isCurveField",
+        "Model.fg_top"
+      ],
+      "consumers": [
+        "chartRing finite-extension instances",
+        "model_placesDiscrete",
+        "model_residuesFinite",
+        "riemannRochSpace",
+        "future actual Riemann basis construction"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveFieldChart.lean",
+      "source": "Belyi/CurveField/Chart.lean",
+      "port_changes": [
+        "native import and namespace only"
+      ],
+      "object": "integralClosure (Algebra.adjoin Rat {t}) K",
+      "proved_instances": [
+        "IsFractionRing (chartRing t) K",
+        "IsDedekindDomain (chartRing t)",
+        "Module.Finite (Algebra.adjoin Rat {t}) (chartRing t)",
+        "Algebra.FiniteType Rat (chartRing t)"
+      ],
+      "consumers": [
+        "Place.toChart",
+        "Place.ofChart",
+        "Place.isDiscreteValuationRing",
+        "Place.curveField_finiteDimensional",
+        "actual zeros/poles"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveFieldPlace.lean",
+      "source": "Belyi/CurveField/Place.lean",
+      "port_changes": [
+        "native import and namespace",
+        "existing actual Place carrier reused",
+        "self-qualified residue_comp_surjective target updated"
+      ],
+      "proved_constructions": [
+        "primeBelow",
+        "heightOneBelow",
+        "valuationSubringAtPrime equality",
+        "chartEquiv",
+        "surjective chart residue map",
+        "actual DVR instance",
+        "actual normalized order and valuation laws",
+        "uniformizer existence"
+      ],
+      "consumers": [
+        "model_placesDiscrete",
+        "Place.curveField_finiteDimensional",
+        "ZerosPoles existence and finite support",
+        "riemannRochSpace closure",
+        "future one-place Riemann residue map"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveFieldResidue.lean",
+      "source": "Belyi/CurveField/Residue.lean:76",
+      "port_changes": [
+        "reuse native residue field and rational embedding",
+        "copy source finite-type quotient proof",
+        "add closed Model adapters and order equality bridge"
+      ],
+      "proof_chain": [
+        "actual chart residue hom",
+        "source chart residue map surjective",
+        "Algebra.FiniteType.of_surjective",
+        "finite_of_finite_type_of_isJacobsonRing"
+      ],
+      "consumers": [
+        "existing placesDiscrete replacement",
+        "existing residuesFinite replacement",
+        "actual Place.degree_pos in Riemann construction",
+        "ord_eq_placeOrd"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveFieldZerosPoles.lean",
+      "source": "Belyi/CurveField/ZerosPoles.lean",
+      "port_changes": [
+        "native import and namespace only"
+      ],
+      "provides": [
+        "Place.exists_ord_pos",
+        "Place.exists_ord_neg",
+        "Nonempty (Place K)",
+        "Place.finite_setOf_ord_ne_zero",
+        "Place.finite_setOf_notMem"
+      ],
+      "consumers": [
+        "actual anchor place P0 in polarPresentation_of_largeEffectivePolarRealization",
+        "future actual principal/polar divisor finite support",
+        "future Riemann proofs"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatRiemannSpaces.lean",
+      "source": "Belyi/CurveField/RiemannRochSpace.lean:49 L; Divisor arithmetic; Riemann.lean posPart",
+      "objects": {
+        "riemannRochSpace": "actual Submodule Rat M.K with carrier f=0 or all P satisfy -A(P)<=ord_P(f)",
+        "riemannEll": "actual Module.finrank Rat of that submodule",
+        "divisorPosPart": "actual finitely supported max(A(P),0)"
+      },
+      "proved": [
+        "submodule closure from actual normalized valuation laws",
+        "space monotonicity",
+        "degree add/sub/single/nonnegative",
+        "positive part nonnegative"
+      ],
+      "zero_boundary": "ord(0)=0 requires the separate f=0 branch; omitting it changes the space",
+      "consumers": [
+        "three open actual dimension children",
+        "largeEffectivePolarRealization_of_riemannChildren",
+        "polarPresentation_of_largeEffectivePolarRealization"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatRiemannComposition.lean",
+      "source": "Belyi/CurveField/Riemann.lean:288-390",
+      "proofs": [
+        "largeEffectivePolarRealization_of_riemannChildren",
+        "polarPresentation_of_largeEffectivePolarRealization",
+        "polarPresentation_of_riemannChildren"
+      ],
+      "constructive_content": [
+        "proper subspaces L(A-P) inside actual L(A)",
+        "finite union of proper subspaces cannot cover the rational vector space",
+        "actual function realizing every large effective polar divisor",
+        "actual positive and negative parts of D",
+        "actual degree-controlled anchor E at an actual place",
+        "actual f,g and exact all-place polar coefficient equality"
+      ],
+      "consumers": [
+        "replacement polarPresentationExists"
+      ],
+      "contains_sorry": false
+    }
+  ],
+  "closed_existing_child_replacements": [
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.placesDiscrete",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_placesDiscrete.lean",
+      "replacement_for_existing_open_child": true,
+      "proof": "exact model_placesDiscrete M",
+      "source_proofs_reused": true,
+      "contains_sorry": false,
+      "compiled": false,
+      "consumers": [
+        "existing noncriticalInput_of_children",
+        "existing Fermat arithmetic and Belyi comparison chain"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.residuesFinite",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_residuesFinite.lean",
+      "replacement_for_existing_open_child": true,
+      "proof": "exact model_residuesFinite M",
+      "source_proofs_reused": true,
+      "contains_sorry": false,
+      "compiled": false,
+      "consumers": [
+        "existing noncriticalInput_of_children",
+        "existing Fermat arithmetic and Belyi comparison chain"
+      ]
+    }
+  ],
+  "open_next_children": [
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean",
+      "formula": "forall A, FiniteDimensional Rat (riemannRochSpace M hDVR A)",
+      "source": "Belyi/CurveField/RiemannRochSpace.lean:283 finiteDimensional_L",
+      "exact_remaining_proof_dependencies": [
+        "actual principal divisor finite support and degree zero",
+        "residue map L(A+P) -> kappa(P) with kernel L(A)",
+        "one-place dimension bound",
+        "induction over finite effective divisors"
+      ],
+      "consumers": [
+        "largeEffectivePolarRealization_of_riemannChildren",
+        "polarPresentation_of_riemannChildren",
+        "replacement polarPresentationExists"
+      ],
+      "status": "OPEN_sorry_uncompiled",
+      "arbitrary_structure_fields": false
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean",
+      "formula": "forall A, (riemannEll M hDVR A : Int) <= max 0 (divisorDegree M A + (riemannEll M hDVR 0 : Int))",
+      "source": "Belyi/CurveField/RiemannRochSpace.lean:330 ell_le_max",
+      "exact_remaining_proof_dependencies": [
+        "actual finite-dimensional Riemann-Roch spaces",
+        "principal divisor linear equivalence by actual multiplication maps",
+        "one-place dimension estimate and principal degree zero"
+      ],
+      "consumers": [
+        "largeEffectivePolarRealization_of_riemannChildren",
+        "polarPresentation_of_riemannChildren",
+        "replacement polarPresentationExists"
+      ],
+      "status": "OPEN_sorry_uncompiled",
+      "arbitrary_structure_fields": false
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean",
+      "formula": "exists g0 N0 : Int, forall A, N0 <= divisorDegree M A -> (riemannEll M hDVR A : Int)=divisorDegree M A-g0",
+      "source": "Belyi/CurveField/Riemann.lean:280 exists_riemann",
+      "exact_remaining_proof_dependencies": [
+        "finite basis of M.K over Rat(M.u)",
+        "linear independence of powers of u times basis entries",
+        "actual finite polar divisors and their degrees",
+        "principal degree zero and L(A+div z) equivalent to L(A)",
+        "boundedness and attained integer supremum of degree(A)-ell(A)"
+      ],
+      "consumers": [
+        "largeEffectivePolarRealization_of_riemannChildren",
+        "polarPresentation_of_riemannChildren",
+        "replacement polarPresentationExists"
+      ],
+      "status": "OPEN_sorry_uncompiled",
+      "arbitrary_structure_fields": false
+    }
+  ],
+  "parent_polar_replacement": {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists",
+    "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists.lean",
+    "original_signature_preserved": true,
+    "contains_sorry": false,
+    "explicit_children": [
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear"
+    ],
+    "construction": "dimension facts -> high-degree exact polar realization -> finite positive-part compensation -> actual PolarPresentation",
+    "why_not_parent_renaming": "The children constrain concrete dimensions of actual L(A); the proof constructs both functions through a finite union argument and exact divisor coefficient subtraction.",
+    "existing_hRF_parameter": "retained for platform compatibility; Model now independently proves the same finiteness fact",
+    "consumers": [
+      "ArithmeticDivisorChoices.canonicalPresentation",
+      "ArithmeticDivisorChoices.cuspPresentation",
+      "existing full Fermat canonical/Belyi composition"
+    ]
+  },
+  "proof_reuse_scope": {
+    "source_proofs_ported_now": [
+      "Basic generic field facts",
+      "Chart all proofs and instances",
+      "Place abstract Dedekind-localization and valuation laws",
+      "Residue finite-dimensionality proof",
+      "ZerosPoles all proofs",
+      "L(A) definition and submodule proof",
+      "large-effective-polar realization proof",
+      "positive-part proof of every divisor as a polar difference"
+    ],
+    "source_proofs_not_yet_ported": [
+      "principal divisor degree theorem from source Degree/Divisor",
+      "one-place Riemann residue map and kernel proof",
+      "finite-dimensional L(A) induction",
+      "L(A+div z) multiplication equivalence",
+      "basis-power independence bound",
+      "attained Riemann supremum and eventual equality"
+    ],
+    "no_existing_source_proof_claimed_compiled_here": true
+  },
+  "validation": {
+    "compiled": false,
+    "mcp_ci_called": false,
+    "main_workspace_edited": false,
+    "read_back_written": false,
+    "temporary_directory": "/tmp/p2m-fermat-riemann-next-design-20261113",
+    "review_requirement": "Main agent reviews, integrates, and validates through exclusive MCP-CI."
+  }
+}

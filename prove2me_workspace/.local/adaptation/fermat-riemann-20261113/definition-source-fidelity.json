@@ -1,0 +1,58 @@
+{
+  "definition_modules": [
+    "Definitions/Def_FermatCurveFieldBasic.lean",
+    "Definitions/Def_FermatCurveFieldChart.lean",
+    "Definitions/Def_FermatCurveFieldPlace.lean",
+    "Definitions/Def_FermatCurveFieldResidue.lean",
+    "Definitions/Def_FermatCurveFieldZerosPoles.lean",
+    "Definitions/Def_FermatRiemannComposition.lean",
+    "Definitions/Def_FermatRiemannSpaces.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_placesDiscrete.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_residuesFinite.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean",
+    "Definitions/Def_FermatFunctionDivisors.lean",
+    "Definitions/Def_FermatRiemannDimensionComposition.lean",
+    "Definitions/Def_FermatRiemannLocalDimension.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannBasisPowerLowerBound.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannPolarApproximation.lean"
+  ],
+  "references": {
+    "Belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+  },
+  "actual_carriers": [
+    "integralClosure Q[t] K",
+    "valuation-subring proper places trivial on Q",
+    "existing LocalRing residue field",
+    "normalized integer order",
+    "finitely supported integer divisors",
+    "residue-field-degree-weighted degree",
+    "actual rational vector subspaces L(A)",
+    "actual Module.finrank",
+    "actual Module.finBasis Q(u) K"
+  ],
+  "no_runtime_source_imports": [
+    "Iut",
+    "Genl",
+    "Belyi",
+    "Heights"
+  ],
+  "closed_proofs_consumed": [
+    "model_placesDiscrete -> existing placesDiscrete",
+    "model_residuesFinite -> existing residuesFinite",
+    "finite_setOf_ord_ne_zero -> functionDivisor/zero/pole",
+    "residueMap+kernel -> step -> finiteDimensional_L/ell_le_max",
+    "principalDegreeZero_of_zeroPoleDegrees -> 3dimension reductions",
+    "riemannEventuallyLinear_of_degree_approximation_basis -> eventual node",
+    "polarPresentation_of_riemannChildren -> polar node"
+  ],
+  "open_leaf_names": [
+    "functionZeroPoleDegrees",
+    "riemannPolarApproximation",
+    "riemannBasisPowerLowerBound"
+  ],
+  "paper_fidelity_limit": "The Mochizuki citation is the actual geometric context; the detailed function-field proof adapters cite pinned Belyi sources. No equality with a Joshi 3.12 object is asserted."
+}

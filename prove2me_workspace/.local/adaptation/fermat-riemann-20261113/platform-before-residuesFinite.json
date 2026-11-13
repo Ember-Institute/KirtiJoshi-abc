@@ -1,0 +1,23 @@
+{
+  "theorem_id": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+  "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.residuesFinite",
+  "theorem_title": "Finite residue fields at all proper Fermat places",
+  "status": "Open",
+  "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.residuesFinite : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N), AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M := by sorry",
+  "natural_language_statement": "> “Moreover, if $X$, $S$, and $T$ are defined over a number field $F$, then $\\phi$ may be taken to be defined over $F$.”\n\n— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp.5–6.\n\n**English**\n\n`AbcAdaptation.Tripod.Fermat.Proper.residuesFinite`\n\nFor every natural number $N$ and every model $M$ of $N$, the residue field $κ(P)$ at every place $P$ is finite dimensional over $ℚ$. Here a model of a natural number $N$ means a subfield $K$ of an algebraic closure of the rational function field $ℚ(t)$ in one indeterminate $t$, containing $ℚ$, with elements $u,v∈K$ such that $u$ is transcendental over $ℚ$, $u^N+v^N=1$, $K=ℚ(u,v)$, and $K$ is finite dimensional over $ℚ(u)$ with dimension exactly $N$. A place $P$ means a valuation subring $O_P⊊K$ containing every rational number; write $κ(P)$ for its residue field. This asserts finite dimension, not a finite underlying set; no hypothesis $N>3$ is imposed. The natural-number quantifier includes $N=0$, but no model of $0$ can satisfy the required finite dimensional field-extension dimension.\n\n**简体中文**\n\n`AbcAdaptation.Tripod.Fermat.Proper.residuesFinite`\n\n对每个自然数 $N$ 及其每个模型 $M$，每个赋值处 $P$ 的剩余域 $κ(P)$ 都在 $ℚ$ 上为有限维。 这里，自然数 $N$ 的一个模型是 单不定元 $t$ 的有理函数域 $ℚ(t)$ 的代数闭包中包含 $ℚ$ 的子域 $K$，以及元素 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$K=ℚ(u,v)$，且 $K$ 在 $ℚ(u)$ 上为有限维，维数恰为 $N$。赋值处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊K$；其剩余域记为 $κ(P)$。 这里断言的是维数有限，而非底层集合有限；没有 $N>3$ 的假设。 自然数的量词包括 $N=0$，但零的模型不可能满足所要求的有限维域扩张维数。\n\n**日本語**\n\n`AbcAdaptation.Tripod.Fermat.Proper.residuesFinite`\n\n任意の自然数 $N$ の任意のモデル $M$ に対して、各素点 $P$ の剰余体 $κ(P)$ は $ℚ$ 上有限次元である。 ここで自然数 $N$ のモデルとは、一つの不定元 $t$ による有理関数体 $ℚ(t)$ の代数閉包の中の $ℚ$ を含む部分体 $K$ と、$ℚ$ 上超越的な元 $u$ および元 $v∈K$ であって、$u^N+v^N=1$、$K=ℚ(u,v)$、かつ $K$ が $ℚ(u)$ 上有限次元でその次元がちょうど $N$ となるものをいう。素点 $P$ は、すべての有理数を含む真の付値部分環 $O_P⊊K$ を意味し、その剰余体を $κ(P)$ と書く。 これは次元の有限性を主張し、台集合の有限性を主張するものではない。$N>3$ は仮定されない。 自然数の量化には $N=0$ も含まれるが、零のモデルは要求される有限次元の体拡大の次元条件を満たし得ない。",
+  "created_at": "2026-11-13T05:39:46.60485+00:00",
+  "vote_count": 0,
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-geometry",
+    "arithmetic-teichmuller-spaces"
+  ],
+  "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatProperComposition\nimport Definitions.Def_FermatProperDivisorHeight\nimport Definitions.Def_FermatProperDivisorComposition\nimport Definitions.Def_FermatLocalBelyi\nimport Definitions.Def_FermatLocalBelyiComposition\nimport Definitions.Def_FermatBelyiComparisons\nimport Definitions.Def_FermatCanonicalBelyiComposition\n\nset_option autoImplicit false",
+  "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Propositions 1.4, 1.6, 1.7 and Theorem 2.1, printed pp.11–13; https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf . Shinichi Mochizuki, Noncritical Belyi Maps, Theorem 2.5 and Corollary 3.2, pp.5–8; https://www.kurims.kyoto-u.ac.jp/~motizuki/Noncritical%20Belyi%20Maps.pdf . Independent concrete Fermat adaptation of Belyi 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8, Heights 721496ca4c158e511d25d8ccf6bfe8503eda73c1, and Genl ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf. No Iut/Genl/Heights/Belyi runtime import is used. Actual source carriers: Belyi/CurveField/Basic.lean:36,67; Place.lean:184,283,289; Residue.lean:37,76; Point.lean:38; NoncriticalBasic.lean:88–97; NoncriticalBridge.lean:47–54. The full Fermat presentation and its exact N degree over Q(u) are a new explicit specialization; irreducibility and existence remain Open.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

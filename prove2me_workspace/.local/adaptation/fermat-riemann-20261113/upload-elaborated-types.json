@@ -1,0 +1,18 @@
+[{"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (f : ↥M.K),\n  Transcendental ℚ f →\n    AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M\n          (AbcAdaptation.Tripod.Fermat.Proper.functionZeroDivisor M hDVR f) =\n        ↑(Module.finrank ↥ℚ⟮f⟯ ↥M.K) ∧\n      AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M\n          (AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor M hDVR f) =\n        ↑(Module.finrank ↥ℚ⟮f⟯ ↥M.K)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (A : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n  ∃ (z : ↥M.K),\n    z ≠ 0 ∧\n      ∃ (l : ℕ),\n        A + AbcAdaptation.Tripod.Fermat.Proper.functionDivisor M hDVR z ≤\n          l • AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor M hDVR M.u",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  (∀ (A : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n      FiniteDimensional ℚ ↥(AbcAdaptation.Tripod.Fermat.Proper.riemannRochSpace M hDVR A)) →\n    ∀ (l : ℕ),\n      (l + 1) * N ≤\n        AbcAdaptation.Tripod.Fermat.Proper.riemannEll M hDVR\n          (l • AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor M hDVR M.u +\n            AbcAdaptation.Tripod.Fermat.Proper.basisPoleCorrection M hDVR)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannBasisPowerLowerBound"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (A : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n  FiniteDimensional ℚ ↥(AbcAdaptation.Tripod.Fermat.Proper.riemannRochSpace M hDVR A)",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (A : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n  ↑(AbcAdaptation.Tripod.Fermat.Proper.riemannEll M hDVR A) ≤\n    Max.max 0\n      (AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M A + ↑(AbcAdaptation.Tripod.Fermat.Proper.riemannEll M hDVR 0))",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  ∃ (g0 : ℤ) (N0 : ℤ),\n    ∀ (A : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n      N0 ≤ AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M A →\n        ↑(AbcAdaptation.Tripod.Fermat.Proper.riemannEll M hDVR A) =\n          AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M A - g0",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear"}]

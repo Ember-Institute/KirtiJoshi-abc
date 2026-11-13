@@ -1,0 +1,45 @@
+from pathlib import Path
+import importlib.util,json,hashlib
+w=Path('/home/admin-wsl/Coq/abc/prove2me_workspace');b=w/'.local/adaptation/fermat-riemann-20261113'
+s=importlib.util.spec_from_file_location('riemann_ci','/tmp/p2m-riemann-ci-20261113.py');ci=importlib.util.module_from_spec(s);s.loader.exec_module(ci)
+for tag in ['closed-axioms-review','sketch-axioms-leaf']:
+ x=json.loads((b/(tag+'-result.json')).read_text());assert x['status']=='succeeded'
+ci.run('declaration-graph-leaf','.local/adaptation/fermat-riemann-20261113/ExtractRiemannGraph.lean')
+rows=[json.loads(t) for t in (b/'decl_graph.jsonl').read_text().splitlines() if t.strip()];by={x['name']:x for x in rows};pre='AbcAdaptation.Tripod.Fermat.Proper.'
+new=['functionZeroPoleDegrees','riemannPolarApproximation','riemannBasisPowerLowerBound','riemannRochFiniteDimensional','riemannRochDimensionUpperBound','riemannRochEventuallyLinear'];existing=['placesDiscrete','residuesFinite','polarPresentationExists'];defs=['FermatCurveFieldBasic','FermatCurveFieldChart','FermatCurveFieldPlace','FermatCurveFieldResidue','FermatCurveFieldZerosPoles','FermatRiemannSpaces','FermatRiemannComposition','FermatFunctionDivisors','FermatRiemannLocalDimension','FermatRiemannDimensionComposition']
+# Audit actual Names from the elaborated environment, including private/generated helpers.
+audit='import Lean\n'+ '\n'.join('import Definitions.Def_'+n for n in defs)+'\nopen Lean\nrun_meta do\n  let mut rows : Array Json := #[]\n'
+audit+='  let modules : Array Name := #['+', '.join('`Definitions.Def_'+n for n in defs)+']\n'
+audit+='  let env ← getEnv\n  for (n, _) in env.constants.toList do\n    let some idx := env.getModuleIdxFor? n | continue\n    let some m := env.header.moduleNames[idx.toNat]? | continue\n    unless modules.contains m do continue\n    let axs ← collectAxioms n\n    for ax in axs do\n      unless #[`propext, `Classical.choice, `Quot.sound].contains ax do throwError "Unapproved axiom {ax} in {n}"\n    rows := rows.push (Json.mkObj [("name", toJson n.toString), ("axioms", toJson (axs.map toString))])\n  IO.FS.writeFile ".local/adaptation/fermat-riemann-20261113/all-definition-axioms.json" (Json.pretty (Json.arr rows))\n'
+f='.local/adaptation/fermat-riemann-20261113/AuditAllDefinitions.lean';(w/f).write_text(audit);ci.run('all-definitions-axioms-review',f,'review')
+preamble='\n'.join('import Definitions.Def_'+n for n in defs)+'\n\nset_option autoImplicit false\nopen scoped IntermediateField'
+items=[]
+for n in new:
+ row=by[pre+n];assert row['kind']=='theorem' and row['module']=='Theorems.Thm_'+(pre+n).replace('.','_')
+ items.append({'theorem_name':pre+n,'preamble':preamble,'formal_statement':'theorem '+pre+n+' : '+row['elaboratedType']+' := by sorry'})
+ci.save('upload-problem-items.json',items)
+code=preamble+'\n\n'+'\n\n'.join(x['formal_statement'] for x in items)+'\n\nset_option pp.fullNames true\nset_option pp.funBinderTypes true\nopen Lean\nrun_meta do\n  let mut rows : Array Json := #[]\n'
+for n in new:
+ code+='  let info ← getConstInfo `'+pre+n+'\n  let fmt ← Lean.Meta.ppExpr info.type\n  rows := rows.push (Json.mkObj [("name", Json.str "'+pre+n+'"), ("type", Json.str fmt.pretty)])\n'
+code+='  IO.FS.writeFile ".local/adaptation/fermat-riemann-20261113/upload-elaborated-types.json" (Json.pretty (Json.arr rows))\n'
+f='.local/adaptation/fermat-riemann-20261113/UploadStatements.lean';(w/f).write_text(code);ci.run('upload-statements-leaf',f)
+got={x['name']:x['type'] for x in json.loads((b/'upload-elaborated-types.json').read_text())};assert all(got[pre+n]==by[pre+n]['elaboratedType'] for n in new)
+# Source spans come from the elaborated environment. Only the known theorem identifier is replaced.
+for n in existing+new[3:]:
+ row=by[pre+n];path=w/(row['module'].replace('.','/')+'.lean');lines=path.read_text().splitlines();decl='\n'.join(lines[row['startLine']-1:row['endLine']]);prefix='theorem '+n;assert decl.count(prefix)==1,(n,decl[:100]);decl=decl.replace(prefix,'theorem solution',1)
+ imports=[l for l in lines if l.startswith('import ')];assert not any('Thm_'+(pre+n).replace('.','_') in l for l in imports)
+ text='\n'.join(imports)+'\n\nset_option autoImplicit false\nopen scoped IntermediateField\nopen AbcAdaptation.Tripod.Fermat.Proper\n\n'+decl+'\n'
+ assert 'sorry' not in text
+ target='.local/adaptation/fermat-riemann-20261113/Solution_'+n+'.lean';(w/target).write_text(text);ci.run('solution-'+n+'-leaf',target)
+# Verify the three already-published target types against the exact local declarations.
+imports='import Lean\n'+'\n'.join('import Theorems.Thm_'+(pre+n).replace('.','_') for n in existing)+'\n\nset_option autoImplicit false\nopen scoped IntermediateField\n'
+code=imports
+for n in existing:
+ old=json.loads((b/('platform-before-'+n+'.json')).read_text());formal=old['formal_statement'];prefix='theorem '+pre+n;assert formal.startswith(prefix);code+='\n'+'theorem PlatformAudit_'+n+formal[len(prefix):]+'\n'
+code+='\nopen Lean\nrun_meta do\n'
+for n in existing:
+ code+='  let a ← getConstInfo `'+pre+n+'\n  let p ← getConstInfo `PlatformAudit_'+n+'\n  unless ← Lean.Meta.isDefEq a.type p.type do throwError "Original platform target type differs: '+n+'"\n'
+code+='  IO.FS.writeFile ".local/adaptation/fermat-riemann-20261113/existing-types-equal.json" "true"\n';f='.local/adaptation/fermat-riemann-20261113/ExistingPlatformTypes.lean';(w/f).write_text(code);ci.run('existing-platform-types-leaf',f)
+ci.save('upload-validation.json',{'passed':True,'elaborated_types_equal':True,'new_theorem_count':len(new),'existing_target_types_definitionally_equal':True,'definition_hashes':{'Definitions/Def_'+n+'.lean':hashlib.sha256((w/('Definitions/Def_'+n+'.lean')).read_bytes()).hexdigest() for n in defs},'source_theorem_hashes':{pre+n:hashlib.sha256((w/('Theorems/Thm_'+(pre+n).replace('.','_')+'.lean')).read_bytes()).hexdigest() for n in existing+new},'source_graph_sha256':hashlib.sha256((b/'decl_graph.jsonl').read_bytes()).hexdigest(),'method':'Prove2Me declaration graph and source spans, elaborated type printing, and Lean.Meta.isDefEq for existing platform targets. No regex declaration splitting.'})
+ci.run('production-gates-review','.local/adaptation/fermat-riemann-20261113/ProductionGates.lean','review',duration='150s',memory='12GiB')
+print('Exact new statements, six submitted proof bodies, and existing target types validated.',flush=True)

@@ -1,0 +1,12 @@
+import Definitions.Def_FermatRiemannComposition
+import Definitions.Def_FermatRiemannDimensionComposition
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms model_placesDiscrete
+#print axioms model_residuesFinite
+#print axioms polarPresentation_of_riemannChildren
+#print axioms principalDegreeZero_of_zeroPoleDegrees
+#print axioms RiemannDimension.finiteDimensional_L
+#print axioms RiemannDimension.ell_le_max
+#print axioms riemannEventuallyLinear_of_degree_approximation_basis

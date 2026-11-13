@@ -43,9 +43,13 @@
 
 `Proper.modelExists` 仍需实际构造满足完整 Fermat 方程、生成条件、超越性和对 `ℚ(u)` 次数恰为 `N` 的函数域，给出不可约性与次数证明。`Proper.affineIdentification` 仍需证明全部相关赋值处的仿射开与当前代数坐标对等价，并保持完整剩余域的像；不能只给坐标映射而遗漏域的身份。
 
-`Proper.placesDiscrete`、`Proper.residuesFinite` 还需接入来源的一维函数域、整闭包图册和局部化证明。已核对来源 `IsCurveField` 仅要求存在超越元使其单生成子域上的扩张有限，这一条件可由当前模型的 `u` 及其有限维字段直接提供；不能误加来源没有要求的常数域条件，也不能把有限生成域误称为有限生成有理数代数。`Proper.noncriticalSelection` 和 `Proper.cuspsFinite` 仍需继续拆出真实非临界 Belyi 构造及零极点有限支撑，保留全部处和无穷点。
+`Proper.noncriticalSelection` 仍需继续拆出真实非临界 Belyi 构造；`Proper.cuspsFinite` 仍需接入已移植的零极点有限支撑，保留全部处和无穷点。后续草稿以实际曲线上的有限分歧处、全点域复合分歧公式及射影直线上的具体有理函数序列为子目标，尚未编译或同步。
 
-`Proper.polarPresentationExists` 还需沿来源的实际 Riemann 空间、有限维性、维数上界及最终线性增长拆分。随后应由这些空间中的函数构造两个具有指定极除子的真实有理函数，保留零函数和正负部分的边界，不能用自由高度函数或原目标的改名版本替代。已有整闭包、赋值处和剩余域证明草稿尚未在本工作区验收，不能据静态源码审阅关闭这些节点。
+`Proper.functionZeroPoleDegrees` 仍需把非恒定函数的零点、极点两条实际纤维次数公式拆到底层：次数为完整域在该函数所生成有理函数域上的有限扩张次数，除子次数按实际剩余域次数加权。需要追踪整闭包的素理想分解、分歧指数与剩余次数求和，并保留非常数条件；不能把已证明的两次数相等当作真实纤维次数公式。
+
+`Proper.riemannPolarApproximation` 仍需拆出实际函数逼近：对任意除子，通过某个非零函数的主除子修改，使结果逐处不超过坐标 u 的极点除子的某个自然数倍。来源使用 u 在正则处的剩余值的最小多项式及有限支撑归纳，必须保留同一个全局函数对所有处同时成立的结论；不能逐处分别选函数。
+
+`Proper.riemannBasisPowerLowerBound` 仍需追踪实际有理函数域基的幂构造：共同极点修正由各个基函数的实际极点除子求和，空间维数下界来自 u 的有限次幂与这些基函数的线性无关性。需要同时保留函数确实属于同一 Riemann 空间、基底指标范围和完整有限维输入；不能用自由维数函数或预先假设的下界替代源构造。
 
 `Proper.canonicalDivisorExists`、`Proper.infinityDivisorExists`、`Proper.planeAdjunctionExists` 和 `Proper.canonicalDivisorDegree` 分别还需证明 `du` 除子的有限支撑、实际坐标极点构成的超平面除子、具体伴随关系，以及真正典范除子次数等于 `N(N−3)`。应逐处追踪分歧系数，证明超平面次数及主除子次数为零，不能把预先定义的数字当作次数等式本身。`Proper.cuspGeneratorsExists` 还需给出尖点补集的实际坐标环有限生成性，并包含所需的三个三支点函数。
 
