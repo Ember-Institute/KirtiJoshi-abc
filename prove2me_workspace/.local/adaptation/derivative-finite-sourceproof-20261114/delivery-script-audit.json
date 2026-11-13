@@ -1,0 +1,94 @@
+{
+  "scope": "Future uploader/finalizer drafts for direct source-proof closure of existing noncriticalDerivativeBadPlacesFinite",
+  "directory": "/tmp/p2m-derivative-proof-delivery-20261114",
+  "syntax_parse_passed": true,
+  "runtime_executed": false,
+  "compiler_or_ci_invoked": false,
+  "platform_calls_performed": false,
+  "main_workspace_modified": false,
+  "cache_modified": false,
+  "git_mutated": false,
+  "files": {
+    "delivery_common.py": {
+      "sha256": "02c083dfef68f6bca655cd0910ea9f101b24c33f6665a9e665f9f40811872ec5",
+      "lines": 202
+    },
+    "finalize.py": {
+      "sha256": "2fb30b5b3a801835bdb02d9fa31c32afad59bce6c97ad29acdb6f22731f52812",
+      "lines": 219
+    },
+    "graph_completion.py": {
+      "sha256": "8fe93118e8b071f8a013fe4098f38e59c5fa3ab200ab6ad1abdb41e0f41220e6",
+      "lines": 58
+    },
+    "platform_publish.py": {
+      "sha256": "efc25d16e0437d96c9d5debfdb6e801a0523d091ca5eebac0ab7ae8d383947f8",
+      "lines": 157
+    }
+  },
+  "publication_scope": {
+    "definitions": [
+      "FermatCurveDerivationAdjoin",
+      "FermatCurveDerivationLocalization"
+    ],
+    "existing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+    "expected_verdict": "ACCEPTED",
+    "new_theorem_nodes": 0,
+    "new_reductions": 0,
+    "private": true
+  },
+  "ci_gates": [
+    "each Definition leaf and artifact",
+    "existing theorem leaf and artifact",
+    "exact Solution leaf",
+    "source-graph-leaf ExtractDerivativeProofGraph.lean",
+    "existing-types-leaf ValidateExistingTypes.lean and existing-types-equal.json=true",
+    "closed-axioms-review Checks_FermatDerivativeFiniteLocalization.lean",
+    "all-definitions-axioms-review AuditAllDefinitions.lean",
+    "production-gates-review ProductionGates.lean"
+  ],
+  "graph_checks": {
+    "adaptive_completion_helper_sha256": "8fe93118e8b071f8a013fe4098f38e59c5fa3ab200ab6ad1abdb41e0f41220e6",
+    "mathematical_node_set_unchanged": true,
+    "reduction_set_unchanged": true,
+    "dependency_pair_set_unchanged": true,
+    "counts_from_actual_before_and_after_graph": true,
+    "expected_direct_proof_delta": 1,
+    "expected_frontier_delta": -1,
+    "predicted_counts_not_hardcoded": true,
+    "consuming_parent_still_open": true,
+    "root_still_open": true
+  },
+  "local_finalization": {
+    "only_document": "docs/Prove2Me适配状态.md",
+    "only_removed_paragraph": "Proper.noncriticalDerivativeBadPlacesFinite",
+    "neighbor_paragraphs_preserved": true,
+    "plan_checkboxes_changed": false,
+    "stages_exact_unit_files": true,
+    "commit_or_push": false
+  },
+  "request_replay_gates": [
+    "exact cached Definition payload",
+    "exact cached verification request and saved Solution bytes",
+    "reconcile intent without receipt before any retry",
+    "CI source hashes and exclusive receipts",
+    "source graph hash",
+    "normalized readback source hashes",
+    "private terminal publication receipts",
+    "exact accepted proof and theorem ids"
+  ],
+  "pending_root_inputs": [
+    "integrated/compiled final source files and matching receipts",
+    "sourceproof-validation.json",
+    "decl_graph.jsonl",
+    "exact Solution and existing-types-equal.json",
+    "normalized readbacks-final.json with nine unique en/zh_Hans/ja rows and input_file_sha256",
+    "checked contextual mochizuki-quotation.md",
+    "source-ledger-link.json and integration.json"
+  ],
+  "limitations": [
+    "AST/static checks are not a successful CI run or platform submission.",
+    "Draft preflight has not run because final evidence is not yet available.",
+    "Before execution root must review evidence schema/path conventions against final integration."
+  ]
+}

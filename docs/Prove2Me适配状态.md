@@ -45,8 +45,6 @@
 
 `Proper.noncriticalRegularRamifiedDerivNotMem` 仍需移植固定来源 `CurveField/NoncriticalFinite.exists_derivAlong_notMem`：对任意实际超越函数 ψ 和包含 ψ 的任意实际真赋值处 P，若原有实际分歧指数大于 1，则存在同一局部环中的元素 s，使具体构造的 `CurveDeriv.derivAlong ψ s` 不在该局部环中。必须通过实际局部参数的导数阶数／链式法则完成此局部障碍证明，保留全部剩余域和赋值处；不得新增给定导子、导数规律、非零剩余值或坐标特化假设。该子义务不陈述有限性。
 
-`Proper.noncriticalDerivativeBadPlacesFinite` 仍需移植固定来源 `CurveField/NoncriticalFinite.finite_setOf_derivAlong_notMem`：对任意实际超越函数 ψ，证明精确集合 `{P | ψ ∈ P.1 ∧ ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1}` 有限。应使用既有实际图册环的有限模生成元、真实局部化的分母／单位条件和有限极点集；不能把该集合改成预先给定的有限分歧值集，也不能把实际导数保持性作为输入。`noncriticalRamificationFinite` 已按固定来源把全部分歧处包含于有限极点集与上述导数失效集之并，覆盖零剩余值、全部正则处及无穷处；其归约验收只登记这两个 Open 子义务，不关闭它们，也不关闭相邻的实际复合分歧公式、P¹ 三个源步骤或既有 `noncriticalSelection` 数学义务。
-
 `Proper.noncriticalPolynomialOrderAtRegularPoint` 仍需移植固定来源 `CurveField/NoncriticalBasic.ord_aeval_eq`：对任意实际模型 M、显式离散性证明、实际超越函数 ψ、全部 `QbarPoint M.K` 及其完整剩余域嵌入 x.σ、任意 ψ 在 x.P 正则的证明和任意非零有理多项式 g，证明实际标准化阶 `x.P.ord (aeval ψ g)` 等于原有实际 `ramIdx M hDVR ψ x.P` 乘以 g 映入完整 ℚ̄ 后在实际 `x.eval ψ h` 处的根重数（强制转为整数）。不得改为有理剩余点、所选嵌入或自由阶函数。此 Open 子义务由来源 `poly_spec` 的正则分支实际消费：使用实际 `p(ψ)` 剩余值的完整剩余域最小多项式及可分复合根重数；原有 `noncriticalElementaryCompositionRamification` 仅获归约验收，尚未闭合。
 
 `Proper.noncriticalPolynomialOrderAtPole` 仍需移植固定来源 `CurveField/NoncriticalElem.ord_aeval_of_notMem`：对每个实际超越函数 ψ、全部实际赋值处 P（包括无穷处）、ψ 不属于实际赋值环的每个极点和任意非零有理多项式 p（包括常数），证明实际标准化阶 `P.ord (aeval ψ p)` 精确等于 `p.natDegree * P.ord ψ`。来源 `poly_spec` 的极点分支实际使用此式及 ψ 的严格负阶，证明正次数 p(ψ) 仍为极点，并计算双方实际分歧指数。不能删去极点、以有限坐标替代真赋值处或预设多项式求值阶定律。此数学子义务仍 Open。

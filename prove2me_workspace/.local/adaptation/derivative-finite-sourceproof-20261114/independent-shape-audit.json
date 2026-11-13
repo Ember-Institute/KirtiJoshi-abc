@@ -1,0 +1,365 @@
+{
+  "audit_kind": "independent read-only static proof-shape and source-reuse review",
+  "candidate": "/tmp/p2m-derivative-finite-next-20261114",
+  "workspace_base": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "auditor": "/root/derivative_finite_shape",
+  "verdict": "static_proof_shape_pass; Lean kernel acceptance and axiom audit unknown",
+  "kernel_validated": false,
+  "compilation_performed": false,
+  "ci_submitted": false,
+  "repository_modified": false,
+  "cache_modified": false,
+  "network_used": false,
+  "proof_shape_blockers_found": [],
+  "checks": [
+    {
+      "id": "exact_parent_type",
+      "status": "pass_static",
+      "detail": "The theorem declaration through := by is byte-for-byte identical to the original workspace obligation, including original Model, actual derivative, full Place carrier, regularity condition and existential witness. No extra hypothesis or reduced conclusion.",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+          "line": 20,
+          "text": "theorem noncriticalDerivativeBadPlacesFinite"
+        }
+      ]
+    },
+    {
+      "id": "actual_finite_module_and_generators",
+      "status": "pass_static",
+      "detail": "Module.Finite.fg_top constructs G spanning the actual integralClosure chartRing over Algebra.adjoin ℚ {ψ}. Module.Finite is the existing integral-closure finite-extension instance derived from Model.isCurveField, not a supplied finite-cover field.",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+          "line": 26,
+          "text": "obtain ⟨G, hG⟩"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldChart.lean",
+          "line": 42,
+          "text": "abbrev chartRing"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldChart.lean",
+          "line": 121,
+          "text": "instance [Fact (Transcendental ℚ t)] : Module.Finite"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+          "line": 114,
+          "text": "theorem Model.isCurveField"
+        }
+      ]
+    },
+    {
+      "id": "actual_derivative_pole_support",
+      "status": "pass_static",
+      "detail": "The exceptional finite union is explicitly over actual field elements CurveDeriv.derivAlong ψ (g : M.K). The existing finite_setOf_notMem theorem proves finite pole support for every actual field element, with no derivative-support assumption. Generator membership is derived by negating this union.",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+          "line": 29,
+          "text": "Place.finite_setOf_notMem (CurveDeriv.derivAlong ψ (g : M.K))"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldZerosPoles.lean",
+          "line": 124,
+          "text": "theorem finite_setOf_notMem"
+        }
+      ]
+    },
+    {
+      "id": "chart_span_scalar_case",
+      "status": "pass_static",
+      "detail": "Submodule.span_induction extends generator membership to every actual chart element. The scalar case uses actual ring inclusion, actual Leibniz rule, and the actual derivAlong_mem_of_mem_adjoin polynomial derivative identity. No arbitrary D or law record replaces derivAlong.",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean",
+          "line": 30,
+          "text": "induction hr using Submodule.span_induction"
+        },
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean",
+          "line": 39,
+          "text": "rw [Derivation.leibniz, smul_eq_mul, smul_eq_mul]"
+        }
+      ]
+    },
+    {
+      "id": "localization_and_denominator_outside_prime",
+      "status": "pass_static",
+      "detail": "Every s in the original local valuation ring is transported through Place.ofChart_toChart and ofChart_val to actual numerator a and denominator u. hu means u lies outside the chart prime. Place.mem_toChart_iff gives u outside P.nonunits; mem_nonunits_iff_or yields u inverse in P. The actual derivation quotient rule then proves derivative membership.",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean",
+          "line": 48,
+          "text": "have hs' : s ∈"
+        },
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean",
+          "line": 53,
+          "text": "rw [← Place.mem_toChart_iff"
+        },
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean",
+          "line": 57,
+          "text": "rw [Derivation.leibniz_div"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+          "line": 229,
+          "text": "theorem mem_toChart_iff"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+          "line": 245,
+          "text": "theorem ofChart_toChart"
+        }
+      ]
+    },
+    {
+      "id": "actual_polynomial_and_extension_identities",
+      "status": "pass_static",
+      "detail": "polyDeriv is the existing aeval-of-formal-polynomial-derivative construction; its map_smul and Leibniz proof are unchanged. extendOfFormallyEtale is the existing Kaehler-differential construction. The new identity evaluates that concrete extension at algebraMap, and derivAlong_aeval unfolds actual derivAlong and applies it to actual polyDeriv. The generic d parameter occurs only in the source extension identity and is instantiated inside the concrete construction.",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+          "line": 30,
+          "text": "theorem extendOfFormallyEtale_algebraMap"
+        },
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+          "line": 40,
+          "text": "theorem polyDeriv_apply"
+        },
+        {
+          "file": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+          "line": 47,
+          "text": "theorem derivAlong_aeval"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+          "line": 41,
+          "text": "noncomputable def polyDeriv"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationBasic.lean",
+          "line": 25,
+          "text": "noncomputable def derivAlong"
+        }
+      ]
+    },
+    {
+      "id": "no_hidden_finite_failure_or_regular_preservation_assumption",
+      "status": "pass_static",
+      "detail": "Parent inputs are exactly N, M, ψ and transcendence. Internal hgood and hA are proved from the finite derivative-pole union and span induction. Local helper premises are consumed by explicitly proved parent facts. No finite-failure, chosen-derivation, global regularity, or law record parameter is added."
+    },
+    {
+      "id": "all_regular_elements_full_places_residue_and_constants",
+      "status": "pass_static",
+      "detail": "Parent retains all Place M.K satisfying ψ regular, and every local element s through the original existential failure predicate. Place remains all non-top valuation subrings containing ℚ, including infinity. Full residue fields remain IsLocalRing.ResidueField P.1 and all QbarPoint embeddings are unchanged. The argument uses only curve-field finiteness over ℚ(t), allowing a larger algebraic constant field; no assumption that constants equal ℚ is added. The proof does not require a residue-field replacement.",
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+          "line": 56,
+          "text": "abbrev Place"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+          "line": 63,
+          "text": "abbrev ResidueField"
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+          "line": 57,
+          "text": "theorem model_residuesFinite"
+        }
+      ]
+    },
+    {
+      "id": "source_body_pin_and_license",
+      "status": "pass_static_with_provenance_limit",
+      "detail": "All supplied reference hashes and current base-input hashes match source-consumer.json. Five complete helper declarations/bodies match supplied sources after the stated extension namespace change; extension identity matches modulo namespace/application spelling; chart span and localization bodies match exact extracted source text. Candidate headers carry commit 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8, source paths/hashes, upstream Apache-2.0 notices and an adaptation notice. LICENSE equals system Apache-2.0 text. Offline audit verifies supplied source copies, not remote Git commit authenticity; no network was used."
+    },
+    {
+      "id": "real_consumers_each_helper",
+      "status": "pass_static",
+      "detail": "Each helper has a proof-body consumer, not only #print axioms. The existing noncriticalRamificationFinite consumes the unchanged parent.",
+      "producer_consumer_map": [
+        {
+          "producer": "extendOfFormallyEtale_algebraMap",
+          "source": "Belyi/CurveDeriv/Basic.lean",
+          "source_declaration_or_block": "Derivation.extendOfFormallyEtale_algebraMap",
+          "consumers": [
+            "derivAlong_aeval"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        },
+        {
+          "producer": "polyDeriv_apply",
+          "source": "Belyi/CurveDeriv/Basic.lean",
+          "source_declaration_or_block": "polyDeriv_apply",
+          "consumers": [
+            "derivAlong_aeval"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        },
+        {
+          "producer": "derivAlong_aeval",
+          "source": "Belyi/CurveDeriv/Basic.lean",
+          "source_declaration_or_block": "derivAlong_aeval",
+          "consumers": [
+            "derivAlong_mem_of_mem_adjoin"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        },
+        {
+          "producer": "aeval_mem",
+          "source": "Belyi/CurveDeriv/Local.lean",
+          "source_declaration_or_block": "aeval_mem",
+          "consumers": [
+            "mem_of_mem_adjoin",
+            "derivAlong_mem_of_mem_adjoin"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        },
+        {
+          "producer": "mem_of_mem_adjoin",
+          "source": "Belyi/CurveDeriv/Local.lean",
+          "source_declaration_or_block": "mem_of_mem_adjoin",
+          "consumers": [
+            "derivAlong_mem_chartRing_of_generators"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        },
+        {
+          "producer": "derivAlong_mem_of_mem_adjoin",
+          "source": "Belyi/CurveDeriv/Local.lean",
+          "source_declaration_or_block": "derivAlong_mem_of_mem_adjoin",
+          "consumers": [
+            "derivAlong_mem_chartRing_of_generators"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        },
+        {
+          "producer": "derivAlong_mem_chartRing_of_generators",
+          "source": "Belyi/CurveField/NoncriticalFinite.lean",
+          "source_declaration_or_block": "finite_setOf_derivAlong_notMem hA/span_induction block",
+          "consumers": [
+            "noncriticalDerivativeBadPlacesFinite"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        },
+        {
+          "producer": "derivAlong_mem_place_of_chartRing",
+          "source": "Belyi/CurveField/NoncriticalFinite.lean",
+          "source_declaration_or_block": "finite_setOf_derivAlong_notMem localization block",
+          "consumers": [
+            "noncriticalDerivativeBadPlacesFinite"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        },
+        {
+          "producer": "noncriticalDerivativeBadPlacesFinite",
+          "source": "Belyi/CurveField/NoncriticalFinite.lean",
+          "source_declaration_or_block": "finite_setOf_derivAlong_notMem",
+          "consumers": [
+            "noncriticalRamificationFinite"
+          ],
+          "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+        }
+      ],
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+          "line": 26,
+          "text": "(noncriticalDerivativeBadPlacesFinite M ψ hψ)"
+        }
+      ]
+    },
+    {
+      "id": "definitions_import_direction_cycles_and_holes",
+      "status": "pass_static",
+      "detail": "Both new Definitions modules and all reachable local dependencies have no Theorems/Solutions/Open imports, cycles, missing local imports or sorry/admit/axiom declarations after comment removal. The parent imports only Definitions, and Checks imports the parent. No Belyi import, full Mathlib import or Act2 dependency is introduced.",
+      "mechanical_evidence": "/tmp/p2m-derivative-finite-shape-20261114/mechanical-evidence.json"
+    },
+    {
+      "id": "no_new_act2_mathematics",
+      "status": "pass_static",
+      "detail": "The candidate reuses pinned source polynomial-adjoin, finite-generation and localization proofs, adapted to existing concrete Model/Place/chart/derivAlong. No new mathematical obligation, strengthened assumption, reduced field, or Act2 proof is introduced."
+    }
+  ],
+  "mechanical_checks": {
+    "parent_type_exact": true,
+    "source_hashes": {
+      "reference/Belyi_CurveDeriv_Basic.lean": true,
+      "reference/Belyi_CurveDeriv_Local.lean": true,
+      "reference/Belyi_CurveField_NoncriticalFinite.lean": true
+    },
+    "candidate_file_hashes": {
+      "Definitions/Def_FermatCurveDerivationAdjoin.lean": true,
+      "Definitions/Def_FermatCurveDerivationLocalization.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean": true,
+      "Solutions/Checks_FermatDerivativeFiniteLocalization.lean": true
+    },
+    "base_input_hashes": {
+      "Definitions/Def_FermatCurveDerivationBasic.lean": true,
+      "Definitions/Def_FermatCurveDerivationEtale.lean": true,
+      "Definitions/Def_FermatCurveDerivationPolynomial.lean": true,
+      "Definitions/Def_FermatCurveFieldBasic.lean": true,
+      "Definitions/Def_FermatCurveFieldChart.lean": true,
+      "Definitions/Def_FermatCurveFieldPlace.lean": true,
+      "Definitions/Def_FermatCurveFieldZerosPoles.lean": true,
+      "Definitions/Def_FermatNoncriticalFunctions.lean": true
+    },
+    "license_matches_system_apache2": true,
+    "definitions_reachable_local_modules": [
+      "Definitions.Def_AbcTripod",
+      "Definitions.Def_FermatCurveDerivationAdjoin",
+      "Definitions.Def_FermatCurveDerivationBasic",
+      "Definitions.Def_FermatCurveDerivationEtale",
+      "Definitions.Def_FermatCurveDerivationLocalization",
+      "Definitions.Def_FermatCurveDerivationPolynomial",
+      "Definitions.Def_FermatCurveFieldBasic",
+      "Definitions.Def_FermatCurveFieldChart",
+      "Definitions.Def_FermatCurveFieldPlace",
+      "Definitions.Def_FermatProperCarrier",
+      "Definitions.Def_TripodFermatInputs"
+    ],
+    "definitions_transitive_forbidden_imports": [],
+    "definitions_transitive_holes_or_axioms": {},
+    "definitions_import_cycles": [],
+    "missing_local_imports": [],
+    "source_declaration_matches": {
+      "polyDeriv_apply": true,
+      "derivAlong_aeval": true,
+      "aeval_mem": true,
+      "mem_of_mem_adjoin": true,
+      "derivAlong_mem_of_mem_adjoin": true
+    },
+    "localization_source_body_exact": true,
+    "chart_span_source_body_exact": true,
+    "extension_identity_source_match_modulo_namespace_and_application_spelling": true
+  },
+  "integration_items": [
+    {
+      "id": "unit_source_ledger_link",
+      "status": "integration_evidence_item",
+      "detail": "The central production ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md contains no Belyi/noncritical/derivative entry. Parent clarified that this independent platform unit must retain exact adapted source-consumer evidence and use source-ledger-link.json with a hash/pointer to the unchanged production ledger. Candidate contains exact source-consumer.json; the expected unit pointer/link belongs to integration evidence. This is not a request to edit central production documentation."
+    },
+    {
+      "id": "kernel_and_axioms",
+      "status": "unknown_not_run_by_design",
+      "detail": "All candidate leaves and Checks/ImportAudit/aggregate/AxiomAudit remain subject to main-agent MCP-CI. #print axioms commands are present, but no output was produced in this audit. No compiler acceptance, sorryAx absence, standard-axiom restriction, resource measurement, or mathematical parent completion is claimed."
+    },
+    {
+      "id": "upstream_commit_authentication",
+      "status": "limited_to_supplied_pinned_copies",
+      "detail": "Source text and hashes are consistent with the pinned source package. Independent remote Git-object verification was outside this read-only/no-network assignment."
+    }
+  ],
+  "report_outputs": [
+    "/tmp/p2m-derivative-finite-shape-20261114/report.json",
+    "/tmp/p2m-derivative-finite-shape-20261114/mechanical-evidence.json"
+  ]
+}

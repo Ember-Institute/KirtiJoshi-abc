@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "review_kind": "independent blind trilingual static Lean-source readback",
+  "scope": [
+    "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+    "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean",
+    "/tmp/p2m-derivative-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean"
+  ],
+  "source_sha256": {
+    "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean": "037ebc54669c50d6e989c28482ca0a6327f59d919fc3193d375188cc6c751303",
+    "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean": "ad042d3066d27aae208a74dbc7ed0da97ef3b2b22517fab990ac6724a08dec21",
+    "/tmp/p2m-derivative-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean": "6003151372f5d6388d0f12428ddd88ffb8ca0bf2c49e8bb53bded09d4f0cbfc2"
+  },
+  "declaration_count": 9,
+  "includes_private_and_instances": true,
+  "private_declaration_count": 0,
+  "instance_declaration_count": 0,
+  "signature_status": "Static reconstruction of source signatures with section variables; no elaborator output.",
+  "proof_status": "All nine declarations have Lean proof bodies. No compilation, CI, axiom audit, or dynamic verification performed.",
+  "quotes": null,
+  "quotation_status": "Null pending separate root review of Mochizuki geometry context.",
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.extendOfFormallyEtale_algebraMap",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+      "line": 29,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.extendOfFormallyEtale_algebraMap\n    {R S T : Type*} [CommRing R] [CommRing S] [CommRing T]\n    [Algebra R S] [Algebra R T] [Algebra S T] [IsScalarTower R S T]\n    [Algebra.FormallyEtale S T] (d : Derivation R S T) (s : S) :\n    extendOfFormallyEtale d (algebraMap S T s) = d s",
+      "en": "Let R, S, T be commutative rings with compatible R-algebra structures on S and T and an S-algebra structure on T, so R → S → T is a scalar tower. If T is formally étale over S, then every R-derivation d : S → T has the specified extension to an R-derivation T → T, and that extension takes the image of every s ∈ S to d(s). The imported extension is actually constructed by the universal Kähler differential D : T → Ω[T/R], the inverse of T ⊗ₛ Ω[S/R] ≃ Ω[T/R], and the base change of the linear map induced by d; this equality proves compatibility with the original derivation on S.",
+      "zh_Hans": "设 R、S、T 是交换环，S 和 T 的 R 代数结构与 T 的 S 代数结构组成相容的标量塔 R → S → T。若 T 在 S 上形式平展，则每个 R 导子 d : S → T 的指定延拓是一个 R 导子 T → T，且对每个 s ∈ S，该延拓在 s 的像处取值 d(s)。导入的延拓实际由通用 Kähler 微分 D : T → Ω[T/R]、同构 T ⊗ₛ Ω[S/R] ≃ Ω[T/R] 的逆，以及 d 所诱导线性映射的基变换复合构造；本等式证明延拓与原导子在 S 上相容。",
+      "ja": "R、S、T を可換環とし、S と T の R 代数構造および T の S 代数構造がスカラーの塔 R → S → T をなすとする。T が S 上形式的エタールならば、任意の R 導分 d : S → T に対して指定された延長は R 導分 T → T となり、すべての s ∈ S の像で d(s) をとる。インポートされた延長は、普遍的なケーラー微分 D : T → Ω[T/R]、同型 T ⊗ₛ Ω[S/R] ≃ Ω[T/R] の逆写像、および d が誘導する線形写像の基底変換の合成で実際に構成される。この等式は、延長が S 上で元の導分と一致することを示す。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.extendOfFormallyEtale_algebraMap",
+      "elaborated_type": "∀ {R : Type u_1} {S : Type u_2} {T : Type u_3} [inst : CommRing R] [inst_1 : CommRing S] [inst_2 : CommRing T]\n  [inst_3 : Algebra R S] [inst_4 : Algebra R T] [inst_5 : Algebra S T] [inst_6 : IsScalarTower R S T]\n  [inst_7 : Algebra.FormallyEtale S T] (d : Derivation R S T) (s : S),\n  (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.extendOfFormallyEtale d) ((Algebra.algebraMap S T) s) = d s"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.polyDeriv_apply",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+      "line": 40,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.polyDeriv_apply\n    {K : Type*} [Field K] [CharZero K] (t : K)\n    (ht : Transcendental ℚ t) (p : ℚ[X]) :\n    polyDeriv t ht (Polynomial.algEquivOfTranscendental ℚ t ht p) =\n      aeval t (derivative p)",
+      "en": "Let K be a field of characteristic zero and let t ∈ K be transcendental over ℚ. For every polynomial p ∈ ℚ[X], the derivation polyDeriv t ht : ℚ[t] → K sends the element corresponding to p under ℚ[X] ≃ ℚ[t] to p′ evaluated at t. Here ℚ[t] is the subalgebra Algebra.adjoin ℚ {t}, the equivalence is the polynomial evaluation equivalence, and polyDeriv is defined by transporting formal polynomial differentiation through its inverse and evaluating in K. No algebraicity of K over ℚ(t) is required.",
+      "zh_Hans": "设 K 是特征为零的域，t ∈ K 在 ℚ 上超越。对每个多项式 p ∈ ℚ[X]，导子 polyDeriv t ht : ℚ[t] → K 将同构 ℚ[X] ≃ ℚ[t] 下与 p 对应的元素映到 p′ 在 t 处的值。这里 ℚ[t] 是子代数 Algebra.adjoin ℚ {t}，该同构是多项式求值同构，而 polyDeriv 的定义是先经其逆同构还原多项式，再进行形式求导并在 K 中求值。此结论不要求 K 在 ℚ(t) 上代数。",
+      "ja": "K を標数零の体、t ∈ K を ℚ 上超越的な元とする。任意の多項式 p ∈ ℚ[X] に対し、導分 polyDeriv t ht : ℚ[t] → K は同型 ℚ[X] ≃ ℚ[t] によって p に対応する元を、形式微分 p′ の t における値に送る。ここで ℚ[t] は部分代数 Algebra.adjoin ℚ {t} であり、この同型は多項式の評価同型である。polyDeriv は逆同型で多項式に戻し、形式微分してから K 内で評価することによって定義される。K が ℚ(t) 上代数的であるという仮定は必要ない。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.polyDeriv_apply",
+      "elaborated_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] (t : K) (ht : Transcendental ℚ t) (p : Polynomial ℚ),\n  (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.polyDeriv t ht) ((Polynomial.algEquivOfTranscendental ℚ t ht) p) =\n    (Polynomial.aeval t) (Polynomial.derivative p)"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_aeval",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+      "line": 47,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_aeval\n    {K : Type*} [Field K] [CharZero K] {t : K}\n    (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K] (p : ℚ[X]) :\n    derivAlong t (aeval t p) = aeval t (derivative p)",
+      "en": "Let K be a field of characteristic zero, t ∈ K transcendental over ℚ, and K algebraic over the intermediate field ℚ(t) = ℚ⟮t⟯. For every p ∈ ℚ[X], the actual ℚ-derivation derivAlong t : K → K satisfies (d/dt)(p(t)) = p′(t). Its imported definition checks exactly the conjunction that t is transcendental over ℚ and K is algebraic over ℚ(t): if true it extends the polynomial derivation ℚ[t] → K through the formally étale algebra ℚ[t] → K using Kähler differentials; otherwise it is the zero derivation. Both guards hold here. The proof uses evaluation into ℚ[t] and compatibility of this extension with ℚ[t].",
+      "zh_Hans": "设 K 是特征为零的域，t ∈ K 在 ℚ 上超越，且 K 在中间域 ℚ(t) = ℚ⟮t⟯ 上代数。对每个 p ∈ ℚ[X]，实际的 ℚ 导子 derivAlong t : K → K 满足 (d/dt)(p(t)) = p′(t)。其导入定义恰好检查两个条件的合取：t 在 ℚ 上超越，以及 K 在 ℚ(t) 上代数；条件成立时，利用 Kähler 微分沿形式平展代数 ℚ[t] → K 延拓多项式导子 ℚ[t] → K，否则取零导子。此处两个条件均成立。证明使用落在 ℚ[t] 中的多项式求值，以及该延拓在 ℚ[t] 上与原导子相容的性质。",
+      "ja": "K を標数零の体、t ∈ K を ℚ 上超越的な元とし、K は中間体 ℚ(t) = ℚ⟮t⟯ 上代数的であるとする。任意の p ∈ ℚ[X] に対し、実際の ℚ 導分 derivAlong t : K → K は (d/dt)(p(t)) = p′(t) を満たす。インポートされた定義は、t が ℚ 上超越的であり、かつ K が ℚ(t) 上代数的であるという条件を正確に検査する。成立すればケーラー微分を使って多項式導分 ℚ[t] → K を形式的エタール代数 ℚ[t] → K に沿って延長し、成立しなければ零導分をとる。ここでは両条件が成立する。証明は ℚ[t] への多項式の評価と、延長が ℚ[t] 上で元の導分と一致することを使う。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_aeval",
+      "elaborated_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K},\n  Transcendental ℚ t →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K] (p : Polynomial ℚ),\n      (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) ((Polynomial.aeval t) p) =\n        (Polynomial.aeval t) (Polynomial.derivative p)"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.aeval_mem",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+      "line": 58,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.aeval_mem\n    {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K}\n    (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O) {x : K} (hx : x ∈ O) (p : ℚ[X]) :\n    aeval x p ∈ O",
+      "en": "Let K be a field of characteristic zero and O a valuation subring of K containing the image of every rational number. If x ∈ O, then p(x) ∈ O for every polynomial p with rational coefficients. The proof expands polynomial evaluation as a finite sum of rational coefficients times powers of x and uses closure of O under powers, multiplication, and addition. No transcendence, algebraic-extension, properness, or curve-field hypothesis is needed.",
+      "zh_Hans": "设 K 是特征为零的域，O 是 K 的赋值子环，并包含每个有理数在 K 中的像。若 x ∈ O，则对每个有理系数多项式 p，均有 p(x) ∈ O。证明将多项式求值展开为有限和，每项是有理系数与 x 的幂的乘积，再使用 O 对乘幂、乘法和加法的封闭性。此结论不需要超越性、代数扩张、真子环或曲线函数域假设。",
+      "ja": "K を標数零の体、O をすべての有理数の K 内での像を含む付値部分環とする。x ∈ O ならば、任意の有理係数多項式 p に対して p(x) ∈ O である。証明は多項式の評価を有理係数と x の冪の積の有限和に展開し、O が冪、積、和について閉じていることを使う。超越性、代数拡大、真部分環であること、曲線の関数体であることは仮定しない。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.aeval_mem",
+      "elaborated_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K},\n  (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) → ∀ {x : K}, x ∈ O → ∀ (p : Polynomial ℚ), (Polynomial.aeval x) p ∈ O"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.mem_of_mem_adjoin",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+      "line": 67,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.mem_of_mem_adjoin\n    {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}\n    (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O) (hπO : π ∈ O) {x : K}\n    (hx : x ∈ Algebra.adjoin ℚ {π}) : x ∈ O",
+      "en": "Let K be a field of characteristic zero and O a valuation subring containing all rational numbers and an element π ∈ K. Then every x in the subalgebra ℚ[π] = Algebra.adjoin ℚ {π} belongs to O. This is a statement about the polynomially generated subalgebra, not the intermediate field ℚ(π): the proof writes x = p(π) for a rational-coefficient polynomial and uses closure under polynomial evaluation. It assumes no transcendence or finite-dimensional extension.",
+      "zh_Hans": "设 K 是特征为零的域，O 是包含全部有理数及某个元素 π ∈ K 的赋值子环。则子代数 ℚ[π] = Algebra.adjoin ℚ {π} 中的每个元素 x 均属于 O。这里使用的是由多项式生成的子代数，而不是中间域 ℚ(π)；证明将 x 写成某个有理系数多项式的值 p(π)，再应用多项式求值的封闭性。不要求超越性或有限维扩张。",
+      "ja": "K を標数零の体、O をすべての有理数とある元 π ∈ K を含む付値部分環とする。このとき、部分代数 ℚ[π] = Algebra.adjoin ℚ {π} のすべての元 x は O に属する。対象は多項式で生成される部分代数であり、中間体 ℚ(π) ではない。証明は x を有理係数多項式の値 p(π) として表し、多項式の評価についての閉性を使う。超越性や拡大の有限次元性は仮定しない。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.mem_of_mem_adjoin",
+      "elaborated_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) → π ∈ O → ∀ {x : K}, x ∈ ℚ[π] → x ∈ O"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_of_mem_adjoin",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+      "line": 77,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_of_mem_adjoin\n    {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}\n    (ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]\n    (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O) (hπO : π ∈ O)\n    {a : K} (ha : a ∈ Algebra.adjoin ℚ {π}) : derivAlong π a ∈ O",
+      "en": "Let K be a field of characteristic zero, π transcendental over ℚ, and K finite-dimensional over ℚ(π). Let O be a valuation subring containing ℚ and π. For every a ∈ ℚ[π] = Algebra.adjoin ℚ {π}, its actual derivative derivAlong π a belongs to O. The derivative is the Kähler-differential extension of polynomial differentiation on ℚ[π]; its transcendence and algebraicity guards hold because π is transcendental and the extension is finite-dimensional. Writing a = p(π) gives derivAlong π a = p′(π), which lies in O. This conclusion is confined to ℚ[π], not all of O.",
+      "zh_Hans": "设 K 是特征为零的域，π 在 ℚ 上超越，且 K 在 ℚ(π) 上有限维。设 O 是包含 ℚ 和 π 的赋值子环。则对每个 a ∈ ℚ[π] = Algebra.adjoin ℚ {π}，实际导数 derivAlong π a 属于 O。该导子是利用 Kähler 微分将 ℚ[π] 上的多项式求导延拓所得；由于 π 超越且扩张有限维，定义中的超越性和代数性条件均成立。将 a 写成 p(π)，便得到 derivAlong π a = p′(π) ∈ O。结论仅涉及 ℚ[π] 中的元素，不涉及 O 的全部元素。",
+      "ja": "K を標数零の体、π を ℚ 上超越的な元とし、K は ℚ(π) 上有限次元であるとする。O を ℚ と π を含む付値部分環とする。このとき、すべての a ∈ ℚ[π] = Algebra.adjoin ℚ {π} に対して実際の導関数 derivAlong π a は O に属する。この導分は、ケーラー微分を使って ℚ[π] 上の多項式の微分を延長したものである。π の超越性と拡大の有限次元性により、定義が要求する超越性と代数性の条件はともに成立する。a = p(π) と書けば derivAlong π a = p′(π) ∈ O を得る。結論の対象は ℚ[π] の元であり、O 全体ではない。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_of_mem_adjoin",
+      "elaborated_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        π ∈ O → ∀ {a : K}, a ∈ ℚ[π] → (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) a ∈ O"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_chartRing_of_generators",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationLocalization.lean",
+      "line": 21,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_chartRing_of_generators\n    {K : Type*} [Field K] [CharZero K] [IsCurveField K]\n    {t : K} [Fact (Transcendental ℚ t)] (ht : Transcendental ℚ t)\n    (P : Place K) (htP : t ∈ P.1) (G : Finset (chartRing t))\n    (hG : Submodule.span (Algebra.adjoin ℚ {t}) (G : Set (chartRing t)) = ⊤)\n    (hgood : ∀ g ∈ G, derivAlong t (g : K) ∈ P.1) :\n    ∀ r : chartRing t, derivAlong t (r : K) ∈ P.1",
+      "en": "Let K be a field of characteristic zero with IsCurveField K, meaning that K is finite over ℚ(z) for some transcendental z. Let t ∈ K be transcendental over ℚ, supplied both by Fact and by ht. Write Aₜ = chartRing t for the integral closure of ℚ[t] in K. Let P be a place, meaning a proper valuation subring O = P.1 of K containing ℚ, and assume t ∈ O. If a finite set G ⊆ Aₜ spans the whole ℚ[t]-module Aₜ and the actual derivatives d g/dt lie in O for every g ∈ G, then d r/dt ∈ O for every r ∈ Aₜ. The proof uses submodule-span induction, additivity, and the Leibniz rule. In the scalar step a ∈ ℚ[t], both a and da/dt lie in O, and every x ∈ Aₜ lies in O. The finite set G and its spanning equation are hypotheses here; existence is obtained in the final theorem from module finiteness. The derivation is the guarded Kähler extension, whose guards hold for this curve field and transcendental t.",
+      "zh_Hans": "设 K 是特征为零的域并满足 IsCurveField K，即存在超越元 z，使 K 在 ℚ(z) 上有限维。设 t ∈ K 在 ℚ 上超越，该条件同时由 Fact 和 ht 提供。记 Aₜ = chartRing t 为 ℚ[t] 在 K 中的整闭包。设 P 是一个处，即 K 中包含 ℚ 的真赋值子环 O = P.1，并假设 t ∈ O。若有限集 G ⊆ Aₜ 在 ℚ[t] 上张成整个模 Aₜ，且每个 g ∈ G 的实际导数 dg/dt 均属于 O，则每个 r ∈ Aₜ 的导数 dr/dt 均属于 O。证明使用子模生成的归纳法、可加性及 Leibniz 法则。在标量步骤中，对 a ∈ ℚ[t]，a 与 da/dt 均在 O 中，而每个 x ∈ Aₜ 也在 O 中。本引理将 G 及其张成等式作为假设；最终定理从模的有限性获得它们。所用导子是带条件分支的 Kähler 延拓；曲线函数域及 t 的超越性保证其条件成立。",
+      "ja": "K を標数零の体とし、IsCurveField K、すなわちある超越元 z に対して K が ℚ(z) 上有限次元であるとする。t ∈ K は ℚ 上超越的とし、その条件を Fact と ht の両方で与える。Aₜ = chartRing t を K における ℚ[t] の整閉包とする。P は位、すなわち ℚ を含む K の真の付値部分環 O = P.1 であり、t ∈ O とする。有限集合 G ⊆ Aₜ が ℚ[t] 加群 Aₜ 全体を生成し、すべての g ∈ G の実際の導関数 dg/dt が O に属するならば、すべての r ∈ Aₜ に対して dr/dt ∈ O となる。証明は部分加群の生成に関する帰納法、加法性、およびライプニッツ則を使う。スカラーの段階では a ∈ ℚ[t] と da/dt がともに O に属し、すべての x ∈ Aₜ も O に属する。この補題では G とその生成条件を仮定する。最終定理では加群の有限生成性からそれらを得る。使用する導分は条件分岐をもつケーラー微分による延長であり、曲線の関数体であることと t の超越性がその条件を保証する。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_chartRing_of_generators",
+      "elaborated_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K] {t : K}\n  [Fact (Transcendental ℚ t)],\n  Transcendental ℚ t →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n      t ∈ ↑P →\n        ∀ (G : Finset ↥(AbcAdaptation.Tripod.Fermat.Proper.chartRing t)),\n          Submodule.span ↥ℚ[t] ↑G = ⊤ →\n            (∀ g ∈ G, (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) ↑g ∈ ↑P) →\n              ∀ (r : ↥(AbcAdaptation.Tripod.Fermat.Proper.chartRing t)),\n                (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) ↑r ∈ ↑P"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_place_of_chartRing",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationLocalization.lean",
+      "line": 44,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_place_of_chartRing\n    {K : Type*} [Field K] [CharZero K] [IsCurveField K]\n    {t : K} [Fact (Transcendental ℚ t)] (P : Place K) (htP : t ∈ P.1)\n    (hA : ∀ r : chartRing t, derivAlong t (r : K) ∈ P.1)\n    {s : K} (hs : s ∈ P.1) : derivAlong t s ∈ P.1",
+      "en": "Let K be a field of characteristic zero that is finite over ℚ(z) for some transcendental z, and let t ∈ K be transcendental over ℚ. Put Aₜ = chartRing t, the integral closure of ℚ[t] in K. Let P be any place, namely a proper valuation subring O = P.1 containing ℚ, with t ∈ O. If every r ∈ Aₜ has its actual derivative dr/dt in O, then every s ∈ O has ds/dt ∈ O. The proof uses the actual equality P = Place.ofChart t (P.toChart t htP): O is Aₜ localized at its height-one prime 𝔭 = P.toChart t htP. Thus s = a/u with a,u ∈ Aₜ and u ∉ 𝔭. The prime-membership equivalence implies u ∉ O.nonunits; the valuation-subring criterion gives u ≠ 0 and u⁻¹ ∈ O. Also a,u ∈ O and da/dt,du/dt ∈ O. The quotient rule yields ds/dt = u⁻²(u·da/dt − a·du/dt) ∈ O. The denominator condition comes from this localization, not from an assumed unit for arbitrary u. The actual derivation is the Kähler extension of d/dt, with transcendence and algebraicity guards satisfied here.",
+      "zh_Hans": "设 K 是特征为零的域，且在某个超越元 z 生成的 ℚ(z) 上有限维，并设 t ∈ K 在 ℚ 上超越。记 Aₜ = chartRing t，即 ℚ[t] 在 K 中的整闭包。设 P 是任意一个处，即包含 ℚ 的真赋值子环 O = P.1，并满足 t ∈ O。若每个 r ∈ Aₜ 的实际导数 dr/dt 均在 O 中，则每个 s ∈ O 的导数 ds/dt 均在 O 中。证明使用实际等式 P = Place.ofChart t (P.toChart t htP)：O 是 Aₜ 在其高度一素理想 𝔭 = P.toChart t htP 处的局部化。因此 s = a/u，其中 a,u ∈ Aₜ 且 u ∉ 𝔭。素理想成员关系的等价式推出 u ∉ O.nonunits，赋值子环的判别式进一步给出 u ≠ 0 且 u⁻¹ ∈ O。又有 a,u ∈ O 及 da/dt,du/dt ∈ O，故商法则给出 ds/dt = u⁻²(u·da/dt − a·du/dt) ∈ O。分母条件来自该局部化表示，并非假设任意分母都是单位。实际导子是 d/dt 的 Kähler 延拓，此处超越性和代数性条件成立。",
+      "ja": "K を標数零の体とし、ある超越元 z に対して ℚ(z) 上有限次元とする。また t ∈ K は ℚ 上超越的とする。Aₜ = chartRing t を K における ℚ[t] の整閉包とする。P は任意の位、すなわち ℚ を含む真の付値部分環 O = P.1 であり、t ∈ O とする。すべての r ∈ Aₜ の実際の導関数 dr/dt が O に属するならば、すべての s ∈ O に対して ds/dt ∈ O となる。証明は実際の等式 P = Place.ofChart t (P.toChart t htP) を使う。つまり O は Aₜ を高さ一の素イデアル 𝔭 = P.toChart t htP で局所化した環である。したがって s = a/u と書け、a,u ∈ Aₜ および u ∉ 𝔭 を満たす。素イデアルへの所属条件の同値から u ∉ O.nonunits が従い、付値部分環の判定条件から u ≠ 0 と u⁻¹ ∈ O を得る。さらに a,u ∈ O かつ da/dt,du/dt ∈ O なので、商の微分法則によって ds/dt = u⁻²(u·da/dt − a·du/dt) ∈ O となる。分母の条件はこの局所化による表示から得られ、任意の分母を単元と仮定しているわけではない。実際の導分は d/dt のケーラー微分による延長であり、ここでは超越性と代数性の条件が成立する。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_place_of_chartRing",
+      "elaborated_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K] {t : K}\n  [Fact (Transcendental ℚ t)] (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n  t ∈ ↑P →\n    (∀ (r : ↥(AbcAdaptation.Tripod.Fermat.Proper.chartRing t)),\n        (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) ↑r ∈ ↑P) →\n      ∀ {s : K}, s ∈ ↑P → (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) s ∈ ↑P"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+      "line": 18,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite\n    {N : ℕ} (M : Model N) (ψ : M.K) (hψ : Transcendental ℚ ψ) :\n    {P : Place M.K | ψ ∈ P.1 ∧\n      ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1}.Finite",
+      "en": "For every natural number N, every supplied Fermat model M : Model N, and every ψ ∈ M.K transcendental over ℚ, the following exact set is finite: all places P of M.K such that ψ ∈ Oₚ = P.1 and there exists s ∈ Oₚ with (d/dψ)(s) ∉ Oₚ. A place ranges over every proper valuation subring of M.K containing ℚ, with no preselected affine chart; the condition ψ ∈ Oₚ is retained in the set. The supplied model presents a field generated by u,v with uᴺ+vᴺ=1, u transcendental, and extension degree [M.K:ℚ(u)]=N; this theorem assumes the model and does not construct one. Its finite-extension datum gives IsCurveField M.K and hence finiteness over ℚ(ψ). Thus the actual derivation CurveDeriv.derivAlong ψ is the Kähler-differential extension of polynomial d/dψ on ℚ[ψ], not its fallback zero branch. The proof obtains a finite ℚ[ψ]-module generating set G for Aψ, the integral closure of ℚ[ψ] in M.K. Each actual derivative dg/dψ has only finitely many places where it is not in the valuation ring. The displayed bad set is contained in the finite union of these sets over g ∈ G: if all generator derivatives belong to Oₚ, span induction controls all of Aψ, then localization at P with denominators outside the associated prime, hence units in Oₚ, controls every s ∈ Oₚ. No arbitrary derivation D, assumed derivative law, or assumed finite exceptional boundary is an argument of this theorem.",
+      "zh_Hans": "对每个自然数 N、每个给定的 Fermat 模型 M : Model N，以及每个在 ℚ 上超越的 ψ ∈ M.K，下列精确集合是有限的：所有满足 ψ ∈ Oₚ = P.1，且存在 s ∈ Oₚ 使 (d/dψ)(s) ∉ Oₚ 的处 P。处遍历 M.K 中包含 ℚ 的全部真赋值子环，不预先选择仿射图册；集合中保留 ψ ∈ Oₚ 条件。给定模型以 u,v 生成一个域，满足 uᴺ+vᴺ=1、u 超越及扩张次数 [M.K:ℚ(u)]=N；本定理假设已有该模型，不构造其存在性。模型的有限扩张数据给出 IsCurveField M.K，进而给出 M.K 在 ℚ(ψ) 上有限维。因此实际导子 CurveDeriv.derivAlong ψ 是利用 Kähler 微分将 ℚ[ψ] 上的多项式求导 d/dψ 延拓所得，而不会取其备用零分支。证明取得 Aψ 在 ℚ[ψ] 上的一组有限模生成元 G，其中 Aψ 是 ℚ[ψ] 在 M.K 中的整闭包。每个实际导数 dg/dψ 不属于赋值环的处只有有限多个。所示坏处集合包含于这些集合对 g ∈ G 的有限并中：若所有生成元的导数均在 Oₚ 中，则生成子模归纳法控制整个 Aψ；随后在 P 处局部化，使用对应素理想之外的分母，即 Oₚ 中的单位，便控制每个 s ∈ Oₚ。本定理的参数不含任意给定导子 D、假设的求导定律或假设的有限异常边界。",
+      "ja": "任意の自然数 N、与えられた Fermat モデル M : Model N、および ℚ 上超越的な ψ ∈ M.K に対して、次の正確な集合は有限である。すなわち、ψ ∈ Oₚ = P.1 であり、ある s ∈ Oₚ に対して (d/dψ)(s) ∉ Oₚ となる位 P 全体である。位は M.K の中で ℚ を含むすべての真の付値部分環を動き、あらかじめアフィンチャートを選ばない。集合には ψ ∈ Oₚ という条件を残す。与えられたモデルは u,v で生成される体を表し、uᴺ+vᴺ=1、u の超越性、および拡大次数 [M.K:ℚ(u)]=N を備える。この定理はモデルの存在を仮定し、その存在を構成しない。モデルの有限拡大のデータから IsCurveField M.K を得て、さらに M.K が ℚ(ψ) 上有限次元であることを得る。したがって実際の導分 CurveDeriv.derivAlong ψ は、ケーラー微分を使って ℚ[ψ] 上の多項式の微分 d/dψ を延長したものであり、代わりの零導分の分岐は選ばれない。証明は、ℚ[ψ] の M.K における整閉包 Aψ について、ℚ[ψ] 加群としての有限生成集合 G を得る。各実際の導関数 dg/dψ が付値環に属さない位は有限個である。表示された集合は、g ∈ G にわたるそれらの有限和集合に含まれる。すべての生成元の導関数が Oₚ に属すれば、生成部分加群に関する帰納法が Aψ 全体を扱い、続いて P における局所化が、対応する素イデアルの外にある分母、すなわち Oₚ の単元を使って、すべての s ∈ Oₚ を扱う。この定理の引数には、任意に与えた導分 D、仮定された微分法則、または有限と仮定された例外境界は含まれない。",
+      "quotes": null,
+      "proof_status": "Proof body present; static source readback only; not compiled or elaborated in this review.",
+      "source_reuse_status": "Reuses imported definitions and theorem proofs; source-level inspection does not independently authenticate upstream provenance.",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+      "elaborated_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    {P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K |\n        ψ ∈ ↑P ∧ ∃ s ∈ ↑P, (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong ψ) s ∉ ↑P}.Finite"
+    }
+  ],
+  "final_corrections": {
+    "independent_report": "readbacks-final-report.json",
+    "root_static_confirmed": true,
+    "changes": [
+      "Kähler base-change equivalence orientation corrected in all three languages: the constructed inverse has domain Ω[T/R].",
+      "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_chartRing_of_generators Chinese mathematical place terminology normalized.",
+      "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_place_of_chartRing Chinese mathematical place terminology normalized.",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite Chinese mathematical place terminology normalized."
+    ]
+  },
+  "input_file_sha256": {
+    "Definitions/Def_FermatCurveDerivationAdjoin.lean": "037ebc54669c50d6e989c28482ca0a6327f59d919fc3193d375188cc6c751303",
+    "Definitions/Def_FermatCurveDerivationLocalization.lean": "ad042d3066d27aae208a74dbc7ed0da97ef3b2b22517fab990ac6724a08dec21",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean": "8d6ddadb25771415565e33626947b480646b5dacb08ff331a412ced7c28d2fae"
+  },
+  "compiled_source_binding": {
+    "receipt": "source-graph-leaf-result.json",
+    "original_independent_input_hashes_retained_as": "source_sha256",
+    "scope": "Compiled declaration ranges/names/types; parent proof received only canonical local algebra/module instance repair. Independent original statement/readback preserved apart from documented Kähler orientation/place wording corrections.",
+    "bindings": [
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.extendOfFormallyEtale_algebraMap",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "original_line": 30,
+        "final_line": 29
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.polyDeriv_apply",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "original_line": 40,
+        "final_line": 40
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_aeval",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "original_line": 47,
+        "final_line": 47
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.aeval_mem",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "original_line": 58,
+        "final_line": 58
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.mem_of_mem_adjoin",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "original_line": 67,
+        "final_line": 67
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_of_mem_adjoin",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+        "original_line": 78,
+        "final_line": 77
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_chartRing_of_generators",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationLocalization.lean",
+        "original_line": 22,
+        "final_line": 21
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem_place_of_chartRing",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Definitions/Def_FermatCurveDerivationLocalization.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationLocalization.lean",
+        "original_line": 45,
+        "final_line": 44
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+        "original_path": "/tmp/p2m-derivative-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+        "final_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+        "original_line": 20,
+        "final_line": 18
+      }
+    ]
+  }
+}

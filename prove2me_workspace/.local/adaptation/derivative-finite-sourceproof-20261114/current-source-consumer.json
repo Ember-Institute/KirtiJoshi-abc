@@ -1,0 +1,114 @@
+{
+  "source_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "original_delivery_ledger": "source-consumer.json",
+  "source_boundary_link": "source-ledger-link.json",
+  "definition_hashes": {
+    "Definitions/Def_FermatCurveDerivationAdjoin.lean": "037ebc54669c50d6e989c28482ca0a6327f59d919fc3193d375188cc6c751303",
+    "Definitions/Def_FermatCurveDerivationLocalization.lean": "ad042d3066d27aae208a74dbc7ed0da97ef3b2b22517fab990ac6724a08dec21"
+  },
+  "theorem_hashes": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite": "8d6ddadb25771415565e33626947b480646b5dacb08ff331a412ced7c28d2fae"
+  },
+  "declaration_graph_sha256": "a079fa5f5c5c4a322af0c1c570554d73e55ff9771e00dd93e5ffb6543610da65",
+  "closed_direct": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+      "submission_id": "85f6f847-d2b7-46c6-8a99-6a0aab1a6e08",
+      "status": "ACCEPTED"
+    }
+  ],
+  "new_open_children": [],
+  "new_reductions": [],
+  "actual_platform_states": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite": "Proved",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite": "Open"
+  },
+  "new_global_assumptions": [],
+  "full_abc_closed": false,
+  "consumer_chain": [
+    {
+      "producer": "extendOfFormallyEtale_algebraMap",
+      "source": "Belyi/CurveDeriv/Basic.lean",
+      "source_declaration_or_block": "Derivation.extendOfFormallyEtale_algebraMap",
+      "consumers": [
+        "derivAlong_aeval"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "polyDeriv_apply",
+      "source": "Belyi/CurveDeriv/Basic.lean",
+      "source_declaration_or_block": "polyDeriv_apply",
+      "consumers": [
+        "derivAlong_aeval"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "derivAlong_aeval",
+      "source": "Belyi/CurveDeriv/Basic.lean",
+      "source_declaration_or_block": "derivAlong_aeval",
+      "consumers": [
+        "derivAlong_mem_of_mem_adjoin"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "aeval_mem",
+      "source": "Belyi/CurveDeriv/Local.lean",
+      "source_declaration_or_block": "aeval_mem",
+      "consumers": [
+        "mem_of_mem_adjoin",
+        "derivAlong_mem_of_mem_adjoin"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "mem_of_mem_adjoin",
+      "source": "Belyi/CurveDeriv/Local.lean",
+      "source_declaration_or_block": "mem_of_mem_adjoin",
+      "consumers": [
+        "derivAlong_mem_chartRing_of_generators"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "derivAlong_mem_of_mem_adjoin",
+      "source": "Belyi/CurveDeriv/Local.lean",
+      "source_declaration_or_block": "derivAlong_mem_of_mem_adjoin",
+      "consumers": [
+        "derivAlong_mem_chartRing_of_generators"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "derivAlong_mem_chartRing_of_generators",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean",
+      "source_declaration_or_block": "finite_setOf_derivAlong_notMem hA/span_induction block",
+      "consumers": [
+        "noncriticalDerivativeBadPlacesFinite"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "derivAlong_mem_place_of_chartRing",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean",
+      "source_declaration_or_block": "finite_setOf_derivAlong_notMem localization block",
+      "consumers": [
+        "noncriticalDerivativeBadPlacesFinite"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "noncriticalDerivativeBadPlacesFinite",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean",
+      "source_declaration_or_block": "finite_setOf_derivAlong_notMem",
+      "consumers": [
+        "noncriticalRamificationFinite"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    }
+  ],
+  "parent_remains_open": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+  "source_notices": "Pinned source copyright, author notices, and Apache-2.0 license retained."
+}

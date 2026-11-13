@@ -1,0 +1,121 @@
+{
+  "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "upstream": "https://github.com/lana-agents/belyi",
+  "parent_type": "unchanged exact text",
+  "new_open_obligations": 0,
+  "kernel_validated": false,
+  "producers": [
+    {
+      "producer": "extendOfFormallyEtale_algebraMap",
+      "source": "Belyi/CurveDeriv/Basic.lean",
+      "source_declaration_or_block": "Derivation.extendOfFormallyEtale_algebraMap",
+      "consumers": [
+        "derivAlong_aeval"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "polyDeriv_apply",
+      "source": "Belyi/CurveDeriv/Basic.lean",
+      "source_declaration_or_block": "polyDeriv_apply",
+      "consumers": [
+        "derivAlong_aeval"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "derivAlong_aeval",
+      "source": "Belyi/CurveDeriv/Basic.lean",
+      "source_declaration_or_block": "derivAlong_aeval",
+      "consumers": [
+        "derivAlong_mem_of_mem_adjoin"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "aeval_mem",
+      "source": "Belyi/CurveDeriv/Local.lean",
+      "source_declaration_or_block": "aeval_mem",
+      "consumers": [
+        "mem_of_mem_adjoin",
+        "derivAlong_mem_of_mem_adjoin"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "mem_of_mem_adjoin",
+      "source": "Belyi/CurveDeriv/Local.lean",
+      "source_declaration_or_block": "mem_of_mem_adjoin",
+      "consumers": [
+        "derivAlong_mem_chartRing_of_generators"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "derivAlong_mem_of_mem_adjoin",
+      "source": "Belyi/CurveDeriv/Local.lean",
+      "source_declaration_or_block": "derivAlong_mem_of_mem_adjoin",
+      "consumers": [
+        "derivAlong_mem_chartRing_of_generators"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "derivAlong_mem_chartRing_of_generators",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean",
+      "source_declaration_or_block": "finite_setOf_derivAlong_notMem hA/span_induction block",
+      "consumers": [
+        "noncriticalDerivativeBadPlacesFinite"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "derivAlong_mem_place_of_chartRing",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean",
+      "source_declaration_or_block": "finite_setOf_derivAlong_notMem localization block",
+      "consumers": [
+        "noncriticalDerivativeBadPlacesFinite"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    },
+    {
+      "producer": "noncriticalDerivativeBadPlacesFinite",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean",
+      "source_declaration_or_block": "finite_setOf_derivAlong_notMem",
+      "consumers": [
+        "noncriticalRamificationFinite"
+      ],
+      "fidelity": "Exact source proof, modulo independent namespace and extraction into smaller lemma; no new hypotheses supplied to parent."
+    }
+  ],
+  "existing_concrete_inputs": [
+    "Model.isCurveField",
+    "chartRing = integralClosure (Algebra.adjoin ℚ {ψ}) M.K",
+    "Module.Finite (Algebra.adjoin ℚ {ψ}) (chartRing ψ)",
+    "Place = existing full valuative place carrier",
+    "Place.algebraMap_chartRing_mem",
+    "Place.ofChart_toChart",
+    "Place.ofChart_val",
+    "Place.mem_toChart_iff",
+    "Place.finite_setOf_notMem"
+  ],
+  "files": {
+    "Definitions/Def_FermatCurveDerivationAdjoin.lean": "037ebc54669c50d6e989c28482ca0a6327f59d919fc3193d375188cc6c751303",
+    "Definitions/Def_FermatCurveDerivationLocalization.lean": "ad042d3066d27aae208a74dbc7ed0da97ef3b2b22517fab990ac6724a08dec21",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean": "6003151372f5d6388d0f12428ddd88ffb8ca0bf2c49e8bb53bded09d4f0cbfc2",
+    "Solutions/Checks_FermatDerivativeFiniteLocalization.lean": "5b1479e8117f777cbd30425e740097066da24de2a05c97a0ab1e435c5a1212da",
+    "reference/Belyi_CurveDeriv_Basic.lean": "cf1b11adab96fbd7d7bb5114e7215dcbf8b8cda1a8eda573e9759ac5316f40b2",
+    "reference/Belyi_CurveDeriv_Local.lean": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+    "reference/Belyi_CurveField_NoncriticalFinite.lean": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8"
+  },
+  "integration_base_inputs": {
+    "Definitions/Def_FermatCurveDerivationBasic.lean": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04",
+    "Definitions/Def_FermatCurveDerivationEtale.lean": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+    "Definitions/Def_FermatCurveDerivationPolynomial.lean": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+    "Definitions/Def_FermatCurveFieldBasic.lean": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+    "Definitions/Def_FermatCurveFieldChart.lean": "90aa4d97587e8ce3ade8cd92b8a566028a4d7ba53a381a023d28f2375fa4a8be",
+    "Definitions/Def_FermatCurveFieldPlace.lean": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+    "Definitions/Def_FermatCurveFieldZerosPoles.lean": "884d1811c768d63b8a723ae74e7cb826254651cef5ae5e504bcf3c22ac8c3f29",
+    "Definitions/Def_FermatNoncriticalFunctions.lean": "bb10b218db0d1837c23da15cfe61ea2eac9a5e2d72612c231bcb4cec8f1e07e4"
+  }
+}

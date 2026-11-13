@@ -1,0 +1,21 @@
+from pathlib import Path
+import json,hashlib,importlib.util,time
+s=importlib.util.spec_from_file_location('unit','/tmp/p2m-derivative-proof-ci-20261114.py');unit=importlib.util.module_from_spec(s);s.loader.exec_module(unit);ci=unit.ci;w=ci.w;b=ci.b
+while True:
+ p=b/'closed-axioms-review-result.json'
+ if p.exists():
+  assert json.loads(p.read_text())['status']=='succeeded';break
+ time.sleep(15)
+def run(*a,**kw):
+ kw.setdefault('version','derivative-proof-validation-v1');return ci.run(*a,**kw)
+run('source-graph-leaf','.local/adaptation/derivative-finite-sourceproof-20261114/ExtractDerivativeProofGraph.lean')
+rows=[json.loads(l) for l in (b/'decl_graph.jsonl').read_text().splitlines() if l];by={x['name']:x for x in rows};pre='AbcAdaptation.Tripod.Fermat.Proper.';n='noncriticalDerivativeBadPlacesFinite';mods=['FermatCurveDerivationAdjoin','FermatCurveDerivationLocalization']
+text='import Lean\n'+'\n'.join('import Definitions.Def_'+m for m in mods)+'\nopen Lean\nrun_meta do\n  let mods : Array Name := #['+', '.join('`Definitions.Def_'+m for m in mods)+']\n  let env ← getEnv\n  let mut out : Array Json := #[]\n  for (name, _) in env.constants.toList do\n    let some idx := env.getModuleIdxFor? name | continue\n    let some m := env.header.moduleNames[idx.toNat]? | continue\n    unless mods.contains m do continue\n    let axs ← collectAxioms name\n    for ax in axs do\n      unless #[`propext, `Classical.choice, `Quot.sound].contains ax do throwError "Unapproved axiom {ax} in {name}"\n    out := out.push (Json.mkObj [("name", toJson name.toString), ("axioms", toJson (axs.map toString))])\n  IO.FS.writeFile ".local/adaptation/derivative-finite-sourceproof-20261114/all-definition-axioms.json" (Json.pretty (Json.arr out))\n'
+f='.local/adaptation/derivative-finite-sourceproof-20261114/AuditAllDefinitions.lean';(w/f).write_text(text);run('all-definitions-axioms-review',f,'review',memory='8GiB')
+row=by[pre+n];lines=(w/(row['module'].replace('.','/')+'.lean')).read_text().splitlines();decl='\n'.join(lines[row['startLine']-1:row['endLine']]);assert decl.count('theorem '+n)==1;decl=decl.replace('theorem '+n,'theorem solution',1);imports=[line for line in lines if line.startswith('import ')];assert not any('import Theorems.' in line for line in imports)
+text='\n'.join(imports)+'\n\nset_option autoImplicit false\nopen AbcAdaptation\nopen AbcAdaptation.Tripod.Fermat.Proper\n\n'+decl+'\n';assert 'sorry' not in text;f='.local/adaptation/derivative-finite-sourceproof-20261114/Solution_'+n+'.lean';(w/f).write_text(text);run('solution-'+n+'-leaf',f)
+old=json.loads((b/('platform-before-'+n+'.json')).read_text());formal=old['formal_statement'];marker='theorem '+pre+n;assert formal.count(marker)==1
+text='import Lean\nimport Theorems.Thm_'+(pre+n).replace('.','_')+'\nset_option autoImplicit false\nopen AbcAdaptation\nopen AbcAdaptation.Tripod.Fermat.Proper\n\n'+formal.replace(marker,'theorem PlatformTarget_'+n,1)+'\n\nopen Lean\nrun_meta do\n  let a ← getConstInfo `'+pre+n+'\n  let b ← getConstInfo `PlatformTarget_'+n+'\n  unless ← Lean.Meta.isDefEq a.type b.type do throwError "Platform target differs"\n  IO.FS.writeFile ".local/adaptation/derivative-finite-sourceproof-20261114/existing-types-equal.json" "true"\n';f='.local/adaptation/derivative-finite-sourceproof-20261114/ValidateExistingTypes.lean';(w/f).write_text(text);run('existing-types-leaf',f)
+run('production-gates-review','.local/adaptation/derivative-finite-sourceproof-20261114/ProductionGates.lean','review',duration='150s',memory='12GiB')
+ci.save('sourceproof-validation.json',{'passed':True,'exact_platform_types_equal':True,'definition_hashes':{'Definitions/Def_'+m+'.lean':hashlib.sha256((w/('Definitions/Def_'+m+'.lean')).read_bytes()).hexdigest() for m in mods},'theorem_hashes':{pre+n:hashlib.sha256((w/('Theorems/Thm_'+(pre+n).replace('.','_')+'.lean')).read_bytes()).hexdigest()},'declaration_graph_sha256':hashlib.sha256((b/'decl_graph.jsonl').read_bytes()).hexdigest(),'method':'Compiler declaration graph/source spans, exact source name substitution, actual platform type checked by Lean.Meta.isDefEq, all new Definitions audited to standard axioms.'})
+print('Complete derivative-finite sourceproof validation passed.',flush=True)

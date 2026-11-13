@@ -1,0 +1,13 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms CurveDeriv.extendOfFormallyEtale_algebraMap
+#print axioms CurveDeriv.polyDeriv_apply
+#print axioms CurveDeriv.derivAlong_aeval
+#print axioms CurveDeriv.aeval_mem
+#print axioms CurveDeriv.mem_of_mem_adjoin
+#print axioms CurveDeriv.derivAlong_mem_of_mem_adjoin
+#print axioms CurveDeriv.derivAlong_mem_chartRing_of_generators
+#print axioms CurveDeriv.derivAlong_mem_place_of_chartRing
+#print axioms noncriticalDerivativeBadPlacesFinite

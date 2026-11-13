@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "partial_static_review_stopped_at_parent_request",
+  "input_readbacks": "/tmp/p2m-derivative-finite-blind-20261114/readbacks.json",
+  "source_scope": "Three designated original candidate Lean files and current imported Lean definitions only.",
+  "checked": [
+    "Read all nine full_signature_static fields and all English, Simplified Chinese, and Japanese prose against all three designated source files.",
+    "Read imported Lean definitions of extendOfFormallyEtale, polyDeriv, derivAlong, IsCurveField, Model, Place, chartRing, and chart/place localization.",
+    "Confirmed stated scalar tower, polynomial-adjoin versus intermediate-field distinction, derivAlong conjunction guard and zero fallback, generator/span hypotheses, exact exceptional-place set, and localization denominator argument at source level.",
+    "No compiler, CI, cache, network, README, or ledger inference was used."
+  ],
+  "findings": [
+    {
+      "severity": "substantive",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.extendOfFormallyEtale_algebraMap",
+      "fields": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ],
+      "issue": "The prose describes the inverse of an equivalence displayed as Ω[T/R] ≃ T ⊗ₛ Ω[S/R]. That gives the wrong direction for the map used after D : T → Ω[T/R].",
+      "source_evidence": "Def_FermatCurveDerivationEtale.lean defines the extension as liftBaseChange composed with (tensorKaehlerEquivOfFormallyEtale R S T).symm.toLinearMap, then compDer (KaehlerDifferential.D R T). Hence the map after D must go from Ω[T/R] to T ⊗ₛ Ω[S/R].",
+      "minimal_fix": "Describe the inverse of T ⊗ₛ Ω[S/R] ≃ Ω[T/R], or directly describe the map Ω[T/R] → T ⊗ₛ Ω[S/R], consistently in all three languages."
+    },
+    {
+      "severity": "terminology_requirement",
+      "fields": [
+        "zh_Hans"
+      ],
+      "issue": "Rows seven through nine use 位 for mathematical place, whereas the requested Chinese terminology is 处. Parent can apply the required terminology substitution without rewriting the good mathematical prose."
+    }
+  ],
+  "confirmed_preserved": {
+    "quotes_null": true,
+    "english_Mochizuki_context": "Pending separate root review; not assessed here.",
+    "finite_field_cardinality_confusion": "No such confusion found in the nine readbacks.",
+    "unsupported_axiom_or_compilation_claim": "None found; readbacks explicitly state static reconstruction and no compilation."
+  },
+  "missing_checks": [
+    "No final adjudication of unused section binder omission or universe parameter generalization by elaborator output; static signatures retain Type* and claim only reconstruction.",
+    "No final source-hash rebinding to subsequently compiled root-integrated sources.",
+    "No final corrected fullreadbacks-final.json was produced before the parent requested immediate stop."
+  ],
+  "blocked_tools": [],
+  "tool_note": "Tool calls completed normally. Review was stopped at the parent request, not by a tool failure.",
+  "corrections_written": false
+}
