@@ -1,0 +1,59 @@
+{
+  "source_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "original_delivery_ledger": "source-consumer.json",
+  "source_boundary_link": "source-ledger-link.json",
+  "definition_hashes": {
+    "Definitions/Def_FermatNoncriticalElementarySource.lean": "aef871215e64e6d65d9ed46c8eeeefe26b0fd389e892b573bbcc47decaf258c6"
+  },
+  "source_theorem_hashes": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification": "60661d14e97c4359a24c42ad653afc0c8cf1974964acd2cb2a107435cdfe6412",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint": "ffad967a57fb91ee07450acd15a4479ed351aec5afeee0ff575e4a79008f4be9",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole": "d9150ed705acceb009ccd6ee8b8257b806fc4137f1eb54b8eb863df815bcced6",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification": "e1bb6ce12f87c9acb263f91427aee6e313b92c91e9964724e6eb894810ec1732"
+  },
+  "source_graph_sha256": "7d8ca649c130ef7462a5f1ffa60784095385e49e7517451d6665d422dd3a4072",
+  "closed_direct": [],
+  "accepted_reduction": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+    "submission_id": "d7af2915-a048-4d42-b1d7-01809c0800a9",
+    "status": "SKETCH_ACCEPTED"
+  },
+  "actual_dependencies": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint"
+  ],
+  "open_mathematical_children": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification"
+  ],
+  "actual_platform_states": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification": "Open"
+  },
+  "consumer_chain": [
+    "existing noncritical_eval_zero -> generic source noncritical_eval_inv actual zero-function branch",
+    "noncritical_eval_inv -> inv_spec_of_ramIdx actual unit value branch",
+    "Open actual inverse-index equality -> conditional inv_spec_of_ramIdx -> actual non-affine mob_spec",
+    "Open regular polynomial order -> actual residue minpoly and separable root multiplicity -> poly_spec regular branch",
+    "Open pole polynomial order -> negative actual normalized order -> poly_spec pole branch",
+    "poly_spec + mob_spec -> unchanged noncriticalElementaryCompositionRamification constructor assembly",
+    "noncriticalElementaryCompositionRamification -> existing list-composition parent with all three Open children"
+  ],
+  "new_global_assumptions": [],
+  "full_abc_closed": false,
+  "source_mathematical_step_proved": false,
+  "source_notices": "Apache-2.0 source headers retained.",
+  "other_open_parents_unchanged": [
+    "noncriticalRegularRamifiedDerivNotMem",
+    "noncriticalDerivativeBadPlacesFinite",
+    "noncriticalP1Normalize",
+    "noncriticalP1Rational",
+    "noncriticalP1Minpoly",
+    "noncriticalSelection"
+  ],
+  "existing_zero_eval_source_consumer": "Actual source chain implemented: noncritical_eval_zero -> generic noncritical_eval_inv zero branch -> inv_spec_of_ramIdx value proof -> actual non-affine mob_spec -> original elementary parent. This is source-consumer closure, not mathematical proof closure; plan checkbox 155 is reserved for an independent root audit."
+}

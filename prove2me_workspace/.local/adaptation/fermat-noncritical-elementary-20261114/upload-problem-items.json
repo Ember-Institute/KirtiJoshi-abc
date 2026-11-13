@@ -1,0 +1,17 @@
+[
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+    "preamble": "import Definitions.Def_FermatNoncriticalElementarySource\n\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation\nopen AbcAdaptation.Tripod.Fermat.Proper",
+    "formal_statement": "/-- OPEN: exact actual-function-field mathematical boundary from Belyi/CurveField/NoncriticalBasic.lean ord_aeval_eq. -/\ntheorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) (h : ψ ∈ x.P.1) {g : ℚ[X]} (hg : g ≠ 0) :\n    letI : IsCurveField M.K := M.isCurveField\n    x.P.ord (aeval ψ g) = ramIdx M hDVR ψ x.P *\n      ((g.map (algebraMap ℚ Tripod.Qbar)).rootMultiplicity (x.eval ψ h) : ℤ) := by\n  letI : IsCurveField M.K := M.isCurveField\n  sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+    "preamble": "import Definitions.Def_FermatNoncriticalElementarySource\n\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation\nopen AbcAdaptation.Tripod.Fermat.Proper",
+    "formal_statement": "/-- OPEN: exact actual-function-field mathematical boundary from Belyi/CurveField/NoncriticalElem.lean ord_aeval_of_notMem. -/\ntheorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (P : Place M.K) (h : ψ ∉ P.1) {p : ℚ[X]} (hp : p ≠ 0) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (aeval ψ p) = p.natDegree * P.ord ψ := by\n  letI : IsCurveField M.K := M.isCurveField\n  sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification",
+    "preamble": "import Definitions.Def_FermatNoncriticalElementarySource\n\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation\nopen AbcAdaptation.Tripod.Fermat.Proper",
+    "formal_statement": "/-- OPEN: exact actual-function-field mathematical boundary from Belyi/CurveField/NoncriticalElem.lean inv_spec second conjunct. -/\ntheorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) :\n    ramIdx M hDVR ψ⁻¹ x.P = ramIdx M hDVR ψ x.P := by\n  letI : IsCurveField M.K := M.isCurveField\n  sorry"
+  }
+]

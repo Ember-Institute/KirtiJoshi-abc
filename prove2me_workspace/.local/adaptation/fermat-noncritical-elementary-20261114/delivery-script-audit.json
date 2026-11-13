@@ -1,0 +1,189 @@
+{
+  "date": "2026-11-14",
+  "status": "prepared_not_executed",
+  "directory": "/tmp/p2m-elementary-delivery-20261114",
+  "model": "Latest /tmp/p2m-composition-delivery-20261114 common/uploader/finalizer and unchanged adaptive graph_completion.py",
+  "files": {
+    "delivery_common.py": {
+      "sha256": "2d0b54cea04ed1e08fe2acc2b1327acae155622a1c9df0baee14f0ca54ceb99a",
+      "python_ast_parse": true,
+      "python_compile_without_execution": true
+    },
+    "platform_publish.py": {
+      "sha256": "baa8dc216b37b98fb1a6963fcd8c7ef021180322a8cecfd23a46d8928cb2249d",
+      "python_ast_parse": true,
+      "python_compile_without_execution": true
+    },
+    "finalize.py": {
+      "sha256": "711cef362cfafde483eb5a80005273343067c6cd703dd008aac672015fe86c18",
+      "python_ast_parse": true,
+      "python_compile_without_execution": true
+    },
+    "graph_completion.py": {
+      "sha256": "8fe93118e8b071f8a013fe4098f38e59c5fa3ab200ab6ad1abdb41e0f41220e6",
+      "python_ast_parse": true,
+      "python_compile_without_execution": true
+    }
+  },
+  "unit": {
+    "evidence": ".local/adaptation/fermat-noncritical-elementary-20261114/",
+    "definition_modules": [
+      "FermatNoncriticalElementarySource"
+    ],
+    "definition_declarations": 21,
+    "open_children": [
+      "noncriticalPolynomialOrderAtRegularPoint",
+      "noncriticalPolynomialOrderAtPole",
+      "noncriticalInverseRamification"
+    ],
+    "existing_parent": "noncriticalElementaryCompositionRamification",
+    "internal_parent_module_helpers": [
+      "NoncriticalElementarySource.poly_spec",
+      "NoncriticalElementarySource.mob_spec"
+    ],
+    "internal_helpers_are_not_extra_platform_nodes": true,
+    "parent_status": "Open",
+    "required_verification": "SKETCH_ACCEPTED",
+    "parent_id_source": ".local/adaptation/fermat-noncritical-composition-20261114/published-child-ids.json",
+    "direct_proofs_added": 0,
+    "direct_proofs_preserved": 7,
+    "new_or_replaced_source_file_count": 5
+  },
+  "math_candidate": "/tmp/p2m-noncritical-elementary-next-20261114",
+  "readbacks": {
+    "root_will_normalize_to": "readbacks-final.json declarations rows with declaration/path/en/zh_Hans/ja",
+    "expected_rows": 27,
+    "inventory": "21 Definition declarations + poly_spec and mob_spec source helpers + 3 Open children + existing parent",
+    "parent_verification_explanation_rows": [
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.poly_spec",
+      "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.mob_spec",
+      "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification"
+    ],
+    "pending_blind_directory": "/tmp/p2m-noncritical-elementary-blind-20261114",
+    "available_at_preparation": false,
+    "all_languages_gated_by_uploader": true
+  },
+  "gates": {
+    "FermatNoncriticalElementarySource-leaf": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+    "noncriticalPolynomialOrderAtRegularPoint-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+    "noncriticalPolynomialOrderAtPole-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+    "noncriticalInverseRamification-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+    "noncriticalElementaryCompositionRamification-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+    "solution-noncriticalElementaryCompositionRamification-leaf": ".local/adaptation/fermat-noncritical-elementary-20261114/Solution_noncriticalElementaryCompositionRamification.lean",
+    "closed-axioms-review": "Solutions/Checks_FermatNoncriticalElementaryClosed.lean",
+    "reduction-axioms-leaf": "Solutions/Checks_FermatNoncriticalElementaryReduction.lean",
+    "source-graph-leaf": ".local/adaptation/fermat-noncritical-elementary-20261114/ExtractElementaryGraph.lean",
+    "all-definitions-axioms-review": ".local/adaptation/fermat-noncritical-elementary-20261114/AuditAllDefinitions.lean",
+    "elaborated-types-leaf": ".local/adaptation/fermat-noncritical-elementary-20261114/ValidateElaboratedTypes.lean",
+    "existing-types-leaf": ".local/adaptation/fermat-noncritical-elementary-20261114/ValidateExistingTypes.lean",
+    "production-gates-review": ".local/adaptation/fermat-noncritical-elementary-20261114/ProductionGates.lean"
+  },
+  "optional_context_mirror": {
+    "required_by_default": false,
+    "provided_via": "upload-validation.json additional_leaf_checks",
+    "schema": [
+      {
+        "tag": "receipt-prefix without -result.json",
+        "source": "exact workspace-relative mirror source",
+        "review": false,
+        "sorry": false
+      }
+    ],
+    "checks": "Provided checks use checked_receipt exact source hash/workspace/exclusive mode/actual arguments and closure input hashes. No additional mirror is inferred."
+  },
+  "required_derived_artifacts": [
+    "upload-validation.json passed/elaborated_types_equal/existing_target_types_definitionally_equal/new_theorem_count=3/definition_hashes/source_theorem_hashes/source_graph_sha256/upload_problem_items_sha256",
+    "decl_graph.jsonl",
+    "upload-problem-items.json",
+    "upload-elaborated-types.json with exactly three child types matching compiler graph",
+    "existing-types-equal.json=true",
+    "integration.json exact five current unit sources",
+    "source-consumer.json reference_commit",
+    "source-ledger-link.json",
+    "mochizuki-quotation.md checked by root as geometric context"
+  ],
+  "protocol": {
+    "private_payloads": true,
+    "exact_environment": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "publication_receipts_required": "PUBLISHED and private",
+    "child_and_parent_nodes_status_required": "Open",
+    "parent_reduction_tag": "reduce-noncriticalElementaryCompositionRamification",
+    "child_publication_tag": "elementary-children",
+    "replay": "Cached payload equality; exact verification target/source hash/explanation/full Solution bytes; uncertain requests require reconciliation before a new POST.",
+    "statement_extraction": "formal_statement may begin with declaration doc comment. Require count(theorem full_name)==1, not startswith.",
+    "Solution_closure": "Accepts compiler-extracted helper declarations and their direct dependency closure. Exact successful leaf receipt, full source hash, full uploaded bytes and absence of sorry are checked; no single-lemma regex is imposed."
+  },
+  "graph": {
+    "adaptive_helper_copied_unchanged": true,
+    "overview_depth_requested": 8,
+    "cap_response": "Drill unresolved mathematical missing_children through depth-2 graphs, merge node/edge IDs, retain raw receipts, permit residual omissions only hidden_by_definitions.",
+    "math_coverage": "Exactly baseline mathematical IDs plus three published child IDs",
+    "reduction_dependencies_exactly": [
+      "noncriticalPolynomialOrderAtRegularPoint",
+      "noncriticalPolynomialOrderAtPole",
+      "noncriticalInverseRamification"
+    ],
+    "frontier": "All before/after pages; after set = baseline minus existing elementary parent plus three actual children.",
+    "deltas": {
+      "accepted_reductions": 1,
+      "published_children": 3,
+      "dependency_edges": 3,
+      "open_frontier": 2,
+      "direct_closed_children": 0
+    },
+    "expected_baseline_if_current_composition_unchanged": {
+      "accepted_reductions": 17,
+      "published_children": 53,
+      "open_frontier": 30,
+      "direct_closed_children": 7,
+      "dependency_edges": 58
+    },
+    "expected_totals_if_baseline_unchanged": {
+      "accepted_reductions": 18,
+      "published_children": 56,
+      "open_frontier": 32,
+      "direct_closed_children": 7,
+      "dependency_edges": 61
+    },
+    "counts_observed_during_preparation": false,
+    "counts_are_derived_from_actual_graph": true
+  },
+  "pending_inventory": {
+    "only_replaced_paragraph": "`Proper.noncriticalElementaryCompositionRamification`",
+    "replacement": "Three detailed actual regular-order, pole-order, and inverse-index mathematical boundaries; exact carriers, all embeddings, minpoly/separability, negative orders and source consumers are stated.",
+    "preview": {
+      "only_expected_parent_replaced": true,
+      "P1_and_finite_neighbors_preserved": true,
+      "idempotent_replay": true,
+      "replacement_count": 3
+    },
+    "current_parent_paragraph_may_not_yet_exist": "Execution requires the parent paragraph written by the preceding composition finalizer, or the exact three-paragraph idempotent replay state.",
+    "plan_checkbox_changes": [],
+    "zero_eval_consumer": "Actual source dependency chain is recorded. No plan checkbox 155 claim is made; any such claim requires independent root audit."
+  },
+  "source_notices": {
+    "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "source_paths": [
+      "Belyi/CurveField/Point.lean",
+      "Belyi/CurveField/NoncriticalBasic.lean",
+      "Belyi/CurveField/NoncriticalElem.lean",
+      "Belyi/NoncriticalP1/ElemMap.lean"
+    ],
+    "headers": "Apache-2.0 release headers and author notices retained; no bundled full-license claim.",
+    "paper_quote_boundary": "Checked Mochizuki quotation supplies geometric context; exact proof identities attributed to pinned Lean implementation."
+  },
+  "finalizer": "Copies four scripts into evidence; preserves every terminal compile attempt with actual CPU/user/system, wall time, physical RSS/PSS and unknown/degraded data; leaves seven direct proofs unchanged; updates unit evidence/registry and only current pending parent paragraph; rejects unrelated staged paths and secret-bearing files; stages five source files, two Checks, evidence and shared registry/status docs. No commit or push.",
+  "execution": {
+    "delivery_scripts_executed": false,
+    "in_memory_pending_block_only": true,
+    "network_requests": false,
+    "publication": false,
+    "repository_edits": false,
+    "math_draft_edits": false,
+    "CI_or_compiler_invoked": false,
+    "staging": false,
+    "commit_or_push": false,
+    "only_written_directory": "/tmp/p2m-elementary-delivery-20261114"
+  },
+  "root_next_steps": "Review scripts; finish preceding composition publication/finalization so parent ID and pending paragraph exist; integrate exact elementary sources; compile required gates exclusively via MCP-CI; normalize 27 readbacks and exact source/type/problem-item/Solution/integration artifacts; optionally list any checked mirror; execute uploader after preflight and finalizer after terminal private publication and SKETCH_ACCEPTED receipts."
+}

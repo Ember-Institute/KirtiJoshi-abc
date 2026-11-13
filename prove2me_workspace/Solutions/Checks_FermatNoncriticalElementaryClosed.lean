@@ -1,0 +1,8 @@
+import Definitions.Def_FermatNoncriticalElementarySource
+
+open AbcAdaptation.Tripod.Fermat.Proper
+open AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource
+
+#print axioms QbarPoint.noncritical_eval_inv
+#print axioms rootMultiplicity_comp_of_separable
+#print axioms inv_spec_of_ramIdx

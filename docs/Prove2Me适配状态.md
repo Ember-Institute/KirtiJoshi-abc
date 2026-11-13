@@ -47,7 +47,11 @@
 
 `Proper.noncriticalDerivativeBadPlacesFinite` 仍需移植固定来源 `CurveField/NoncriticalFinite.finite_setOf_derivAlong_notMem`：对任意实际超越函数 ψ，证明精确集合 `{P | ψ ∈ P.1 ∧ ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1}` 有限。应使用既有实际图册环的有限模生成元、真实局部化的分母／单位条件和有限极点集；不能把该集合改成预先给定的有限分歧值集，也不能把实际导数保持性作为输入。`noncriticalRamificationFinite` 已按固定来源把全部分歧处包含于有限极点集与上述导数失效集之并，覆盖零剩余值、全部正则处及无穷处；其归约验收只登记这两个 Open 子义务，不关闭它们，也不关闭相邻的实际复合分歧公式、P¹ 三个源步骤或既有 `noncriticalSelection` 数学义务。
 
-`Proper.noncriticalElementaryCompositionRamification` 仍需移植固定来源 `CurveField/NoncriticalElem.applyK_spec`：对任意实际超越函数 ψ、全部实际 `QbarPoint M.K` 剩余域嵌入，以及一个真正的有理 Möbius 变换（行列式非零）或正次数有理多项式 h，同时证明实际 `applyK h ψ` 的超越性、`noncriticalValue` 与 h 的实际 P¹ 点作用的精确相容式，以及原有实际分歧指数乘以 h 的实际自然数分歧指数（强制转为整数）的乘法公式。必须保留全部正则处、极点、零剩余值、无穷点和全部剩余域；不能给定任意点函数、抽象链式法则或逐点选择不同映射。来源中的多项式、求逆和 Möbius 论证仍待移植。`noncriticalCompositionRamification` 已用来源的实际指数正性及对输入函数推广的列表归纳组合出原有完整目标；其归约验收只登记此 Open 单映射义务，不关闭它，也不关闭相邻有限分歧／P¹ 源步骤或既有 `noncriticalSelection` 数学义务。既有零求值 producer 的实际后续消费者仍在该单映射源证明的求逆链中，不能据此声称该未消费债务已消除。
+`Proper.noncriticalPolynomialOrderAtRegularPoint` 仍需移植固定来源 `CurveField/NoncriticalBasic.ord_aeval_eq`：对任意实际模型 M、显式离散性证明、实际超越函数 ψ、全部 `QbarPoint M.K` 及其完整剩余域嵌入 x.σ、任意 ψ 在 x.P 正则的证明和任意非零有理多项式 g，证明实际标准化阶 `x.P.ord (aeval ψ g)` 等于原有实际 `ramIdx M hDVR ψ x.P` 乘以 g 映入完整 ℚ̄ 后在实际 `x.eval ψ h` 处的根重数（强制转为整数）。不得改为有理剩余点、所选嵌入或自由阶函数。此 Open 子义务由来源 `poly_spec` 的正则分支实际消费：使用实际 `p(ψ)` 剩余值的完整剩余域最小多项式及可分复合根重数；原有 `noncriticalElementaryCompositionRamification` 仅获归约验收，尚未闭合。
+
+`Proper.noncriticalPolynomialOrderAtPole` 仍需移植固定来源 `CurveField/NoncriticalElem.ord_aeval_of_notMem`：对每个实际超越函数 ψ、全部实际赋值处 P（包括无穷处）、ψ 不属于实际赋值环的每个极点和任意非零有理多项式 p（包括常数），证明实际标准化阶 `P.ord (aeval ψ p)` 精确等于 `p.natDegree * P.ord ψ`。来源 `poly_spec` 的极点分支实际使用此式及 ψ 的严格负阶，证明正次数 p(ψ) 仍为极点，并计算双方实际分歧指数。不能删去极点、以有限坐标替代真赋值处或预设多项式求值阶定律。此数学子义务仍 Open。
+
+`Proper.noncriticalInverseRamification` 仍需移植固定来源 `CurveField/NoncriticalElem.inv_spec` 的精确第二合取式：对任意实际超越函数 ψ 及全部完整代数点 x，证明实际 `ramIdx M hDVR ψ⁻¹ x.P = ramIdx M hDVR ψ x.P`；点上零值、单位和极点三种情形均保留，不增加非零剩余值前提。此式在实际非仿射 Möbius 分支作用于 `cψ+d`，作为条件性 `inv_spec_of_ramIdx` 的精确子前提；来源值证明及实际仿射／求逆／仿射组合、`poly_spec`、`mob_spec` 和 `applyK_spec` 构造子组合保持父目标原样，父节点仅 SKETCH_ACCEPTED，三个子义务仍 Open。既有 `noncritical_eval_zero` 已有来源中的真实源码消费链 `noncritical_eval_inv → inv_spec_of_ramIdx → mob_spec → 原有父节点`；这不关闭上述逆指数义务或相邻有限分歧／P¹／noncriticalSelection 义务。
 
 `Proper.noncriticalP1Normalize` 仍需移植固定来源 `Reduction.normalize_step`：对完整 Galois 稳定的有限代数点集和其外的有理点，给出实际有理初等映射及单位圆盘中的新点集，把区分点归一化为 9。必须保留完整 Galois 稳定性、所有次数上界以及次数至少为 2 时的最高次数计数不增；具体预复合延续须同时保留原点集像、区分点不落入 `{0,1,∞}` 和所有实际分歧点的像条件。无穷点不能被省略。
 

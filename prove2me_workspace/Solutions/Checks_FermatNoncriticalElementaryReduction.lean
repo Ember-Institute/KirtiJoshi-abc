@@ -1,0 +1,8 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms noncriticalPolynomialOrderAtRegularPoint
+#print axioms noncriticalPolynomialOrderAtPole
+#print axioms noncriticalInverseRamification
+#print axioms noncriticalElementaryCompositionRamification

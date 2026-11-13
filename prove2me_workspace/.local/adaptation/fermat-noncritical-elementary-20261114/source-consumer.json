@@ -1,0 +1,361 @@
+{
+  "unit": "Actual elementary rational composition: source order/inverse boundaries",
+  "date": "2026-11-14",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "status": "uncompiled_source_backed_candidate_three_Open_math_leaves",
+  "workspace": "/tmp/p2m-noncritical-elementary-next-20261114",
+  "references": {
+    "Belyi_CurveDeriv_Local.lean": {
+      "sha256": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+      "provenance": "existing parent pinned source copy; no new network access"
+    },
+    "Belyi_CurveField_NoncriticalBasic.lean": {
+      "sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+      "provenance": "existing parent pinned source copy; no new network access"
+    },
+    "Belyi_CurveField_NoncriticalElem.lean": {
+      "sha256": "962260751d00333f25cfcd803626193c053d0a982fb6756823de1cc325f4b783",
+      "provenance": "existing parent pinned source copy; no new network access"
+    },
+    "Belyi_CurveField_Point.lean": {
+      "sha256": "58fe7e91e18b73c352b82006242a36dfa1edf667c43add9952130896afd2d11f",
+      "provenance": "existing parent pinned source copy; no new network access"
+    },
+    "Belyi_CurveField_RamIdx.lean": {
+      "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+      "provenance": "existing parent pinned source copy; no new network access"
+    },
+    "Belyi_CurveField_Residue.lean": {
+      "sha256": "234cbab2f0d2cfb179f87537b30620b6ae87201d3dbfa8c1680d6b5c8b8c927a",
+      "provenance": "existing parent pinned source copy; no new network access"
+    },
+    "Belyi_NoncriticalP1_ElemMap.lean": {
+      "sha256": "5a39ddb83c19b37af76e573f522463e7baa167cd4dbce8a90c9c3a8d173c63a5",
+      "provenance": "existing parent pinned source copy; no new network access"
+    }
+  },
+  "parent": {
+    "name": "noncriticalElementaryCompositionRamification",
+    "input": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+    "input_sha256": "d15d1c7079be4eaa37a568b99715a12d5f1fb070d61d9e8fc0680a9cce18dcdf",
+    "exact_target_type_preserved": true,
+    "exact_target_type": "theorem noncriticalElementaryCompositionRamification {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) (h : NoncriticalP1.ElemMap) :\n    Transcendental ℚ (NoncriticalP1.applyK h ψ) ∧\n    noncriticalValue M x (NoncriticalP1.applyK h ψ) = h.apply (noncriticalValue M x ψ) ∧\n    ramIdx M hDVR (NoncriticalP1.applyK h ψ) x.P =\n      ramIdx M hDVR ψ x.P * (h.ramIdx (noncriticalValue M x ψ) : ℤ) ",
+    "proof_source": "Belyi/CurveField/NoncriticalElem.lean applyK_spec constructor split"
+  },
+  "open_children": [
+    {
+      "name": "noncriticalPolynomialOrderAtRegularPoint",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean ord_aeval_eq",
+      "actual_boundary": "actual P.ord(aeval ψ g) = actual ramIdx(ψ,P) * mapped-polynomial rootMultiplicity at actual residue embedding; all regular ψ, all nonzero rational g",
+      "consumer": "NoncriticalElementarySource.poly_spec regular branch",
+      "status": "Open, sorry retained; no completed proof claim"
+    },
+    {
+      "name": "noncriticalPolynomialOrderAtPole",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean ord_aeval_of_notMem",
+      "actual_boundary": "actual P.ord(aeval ψ p) = natDegree(p) * actual P.ord(ψ); every pole and every nonzero rational polynomial",
+      "consumer": "NoncriticalElementarySource.poly_spec pole branch",
+      "status": "Open, sorry retained; no completed proof claim"
+    },
+    {
+      "name": "noncriticalInverseRamification",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean inv_spec second conjunct",
+      "actual_boundary": "actual ramIdx(ψ^-1,x.P) = actual ramIdx(ψ,x.P); every algebraic point, all zero/regular-unit/pole cases",
+      "consumer": "NoncriticalElementarySource.mob_spec -> inv_spec_of_ramIdx exact explicit hRam premise",
+      "status": "Open, sorry retained; no completed proof claim"
+    }
+  ],
+  "completed_source_candidates": [
+    {
+      "name": "QbarPoint.noncritical_eval_mul",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/Point.lean eval_mul",
+      "consumers": [
+        "QbarPoint.noncritical_eval_inv"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "QbarPoint.noncritical_eval_congr",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/Point.lean eval_congr",
+      "consumers": [
+        "QbarPoint.noncritical_eval_inv"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "QbarPoint.noncritical_eval_inv",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/Point.lean eval_inv",
+      "consumers": [
+        "NoncriticalElementarySource.inv_spec_of_ramIdx order-zero value branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "QbarPoint.noncritical_eval_aeval",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean eval_aeval",
+      "consumers": [
+        "NoncriticalElementarySource.poly_spec regular branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalP1.ElemMap.ramIdx_mob",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean ramIdx_mob",
+      "consumers": [
+        "noncriticalElementaryCompositionRamification mob branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalP1.ElemMap.apply_poly_some",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean apply_poly_some",
+      "consumers": [
+        "NoncriticalElementarySource.mob_apply_eq_poly",
+        "NoncriticalElementarySource.mob_apply_eq_comp"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalP1.ElemMap.apply_mob_none",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean apply_mob_none",
+      "consumers": [
+        "NoncriticalElementarySource.mob_apply_eq_poly",
+        "NoncriticalElementarySource.mob_apply_eq_comp"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalP1.ElemMap.apply_mob_some",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean apply_mob_some",
+      "consumers": [
+        "NoncriticalP1.ElemMap.apply_mob_some_of_ne",
+        "NoncriticalElementarySource.mob_apply_eq_comp"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalP1.ElemMap.apply_mob_some_of_ne",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean apply_mob_some_of_ne",
+      "consumers": [
+        "NoncriticalElementarySource.mob_apply_eq_poly"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalP1.ElemMap.one_lt_ramIdx_poly_some_iff",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean one_lt_ramIdx_poly_some_iff",
+      "consumers": [
+        "NoncriticalElementarySource.ElemMap.ramIdx_poly_of_natDegree_eq_one"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.rootMultiplicity_comp_of_separable",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean rootMultiplicity_comp_of_separable",
+      "consumers": [
+        "NoncriticalElementarySource.poly_spec regular branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.transcendental_aeval",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean transcendental_aeval",
+      "consumers": [
+        "NoncriticalElementarySource.mob_spec affine and non-affine branches",
+        "noncriticalElementaryCompositionRamification polynomial branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.ElemMap.ramIdx_poly_of_natDegree_eq_one",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean ElemMap.ramIdx_poly_of_natDegree_eq_one",
+      "consumers": [
+        "NoncriticalElementarySource.mob_spec affine and non-affine branches"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.invPt",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean invPt",
+      "consumers": [
+        "NoncriticalElementarySource.mob_apply_eq_comp",
+        "NoncriticalElementarySource.inv_spec_of_ramIdx"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.mob_apply_eq_poly",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean mob_apply_eq_poly",
+      "consumers": [
+        "NoncriticalElementarySource.mob_spec c=0 branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.mob_apply_eq_comp",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean mob_apply_eq_comp",
+      "consumers": [
+        "NoncriticalElementarySource.mob_spec c!=0 branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.ramIdx_of_mem",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean ramIdx_of_mem",
+      "consumers": [
+        "NoncriticalElementarySource.poly_spec regular branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.ramIdx_of_notMem",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean ramIdx_of_notMem",
+      "consumers": [
+        "NoncriticalElementarySource.poly_spec pole branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.val_of_mem",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean val_of_mem",
+      "consumers": [
+        "NoncriticalElementarySource.poly_spec regular branch",
+        "NoncriticalElementarySource.inv_spec_of_ramIdx order-zero branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.val_of_notMem",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean val_of_notMem",
+      "consumers": [
+        "NoncriticalElementarySource.poly_spec pole branch",
+        "NoncriticalElementarySource.inv_spec_of_ramIdx positive/negative-order branches"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.inv_spec_of_ramIdx",
+      "file": "Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean inv_spec value proof, with exact second conjunct as child premise",
+      "consumers": [
+        "NoncriticalElementarySource.mob_spec c!=0 branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.poly_spec",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean poly_spec",
+      "consumers": [
+        "NoncriticalElementarySource.mob_spec affine and non-affine branches",
+        "noncriticalElementaryCompositionRamification polynomial branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "NoncriticalElementarySource.mob_spec",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean mob_spec",
+      "consumers": [
+        "noncriticalElementaryCompositionRamification mob branch"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    },
+    {
+      "name": "noncriticalElementaryCompositionRamification",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "source": "Belyi/CurveField/NoncriticalElem.lean applyK_spec",
+      "consumers": [
+        "existing noncriticalCompositionRamification source list induction"
+      ],
+      "fidelity": "Source proof copied with local namespace/actual M.K and ramIdx parameter transport; inv_spec value projection is explicitly conditional on its exact actual inverse equality."
+    }
+  ],
+  "zero_eval_integrated_consumer": {
+    "producer": "existing QbarPoint.noncritical_eval_zero in Def_FermatNoncriticalFunctions",
+    "path": [
+      "noncritical_eval_zero -> noncritical_eval_inv actual zero-function branch",
+      "noncritical_eval_inv -> inv_spec_of_ramIdx actual order-zero value branch",
+      "inv_spec_of_ramIdx with exact hRam -> mob_spec actual c != 0 affine/inverse/affine branch",
+      "mob_spec -> original noncriticalElementaryCompositionRamification mob constructor"
+    ],
+    "forced_reference": false,
+    "unused_debt_closed_at_source_consumer_level": true,
+    "kernel_validated": false
+  },
+  "conditions_preserved": [
+    "actual M.K and M.isCurveField",
+    "actual normalized P.ord bridged to existing ord M hDVR",
+    "full actual residue field and all embeddings x.sigma",
+    "every valuative place including infinity",
+    "all regular/zero/pole branches",
+    "nonzero Mobius determinant and both c=0/c!=0 branches",
+    "positive-degree rational polynomial",
+    "actual ramIdx and actual root multiplicity, no law record or free map",
+    "transcendence at each intermediate affine/inverse/affine stage",
+    "exact parent type"
+  ],
+  "administrative_adaptations": [
+    "Qbar -> Tripod.Qbar; Belyi namespace -> local project namespace",
+    "applyK/val replaced by existing NoncriticalP1.applyK/noncriticalValue M",
+    "source ramIdx P phi replaced by actual ramIdx M hDVR phi P",
+    "canonical P.ord target instances set by letI M.isCurveField; no additional mathematical hypothesis",
+    "ramIdx_of_mem/notMem source dif_pos/dif_neg proof transported through existing ord_eq_placeOrd",
+    "inv_spec pair proof projected to value proof, with exact actual equality explicit premise; no new inverse-index proof invented",
+    "existing actual eval_zero/one and noncriticalValue_zero_iff reused"
+  ],
+  "dependencies": {
+    "new_definitions": "Definitions.Def_FermatNoncriticalElementarySource",
+    "existing_parent_candidate_required": "Definitions.Def_FermatNoncriticalRamificationPositive from previous composition draft",
+    "mathlib_exact": [
+      "Mathlib.Algebra.Polynomial.Derivative",
+      "Mathlib.FieldTheory.Separable",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.LinearCombination",
+      "Mathlib.Tactic.Ring"
+    ],
+    "forbidden_source_runtime_imports": []
+  },
+  "validation": {
+    "compiler": false,
+    "MCP_CI": false,
+    "kernel_validation": false,
+    "network": false,
+    "main_or_cache_writes": false,
+    "target_type_text_equality": true,
+    "open_count": 3,
+    "definitions_open_import_count": 0,
+    "definitions_sorry_count": 0,
+    "all_new_helpers_have_consumer_text": true,
+    "not_claimed": [
+      "compilation success",
+      "axiom audit success",
+      "whole parent obligation complete",
+      "project complete"
+    ]
+  },
+  "resource_estimates_for_root": "All first leaf checks 60s/16GiB unless this exact module already has history. Root must use MCP-CI only."
+}

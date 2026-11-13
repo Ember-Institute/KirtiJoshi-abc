@@ -1,0 +1,856 @@
+{
+  "schema_version": 1,
+  "review_mode": "independent Lean-only static trilingual readback",
+  "scope": {
+    "target": "/tmp/p2m-noncritical-elementary-next-20261114",
+    "target_lean_files": [
+      "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean"
+    ],
+    "row_count": 27,
+    "target_private_declarations": [],
+    "target_instances": [],
+    "imported_context_declarations_are_not_delivery_rows": true
+  },
+  "limitations": [
+    "No compiler or MCP-CI run.",
+    "No README, ledger, reference file, or source-consumer prose read.",
+    "No upstream source, network source, or quotation verification.",
+    "Signatures are static source reconstructions, not compiler output."
+  ],
+  "input_sha256": {
+    "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean": "1114bf7a48c3884de6e6048691929161fad87c422d2ebc4b658d9a510dd42481",
+    "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean": "60661d14e97c4359a24c42ad653afc0c8cf1974964acd2cb2a107435cdfe6412",
+    "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean": "e1bb6ce12f87c9acb263f91427aee6e313b92c91e9964724e6eb894810ec1732",
+    "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean": "d9150ed705acceb009ccd6ee8b8257b806fc4137f1eb54b8eb863df815bcced6",
+    "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean": "ffad967a57fb91ee07450acd15a4479ed351aec5afeee0ff575e4a79008f4be9"
+  },
+  "english_mochizuki_quote": null,
+  "context_readback": {
+    "en": [
+      "Qbar is AlgebraicClosure ℚ. Ω is AlgebraicClosure (RatFunc ℚ). A Model N contains an intermediate field ℚ⊆K⊆Ω and u,v∈K.",
+      "The model assumes u transcendental, u^N+v^N=1, ℚ(u,v)=K, finite dimensionality of K over ℚ(u), and degree [K:ℚ(u)]=N. No model existence is proved here.",
+      "A Place K is a proper valuation subring containing every rational element. O_P denotes its full valuation ring; κ(P) denotes its full residue field.",
+      "A QbarPoint K pairs any such P with any ring embedding σ:κ(P)→Qbar. No selected embedding or smaller residue subfield replaces κ(P).",
+      "x.eval f is σ(res_P(f)) for f∈O_P. For a curve field, κ(P) is finite-dimensional over ℚ; Model supplies the curve-field instance.",
+      "PlacesDiscrete M explicitly requires every O_P to be a discrete valuation ring. The local curve-field instance identifies model ord with normalized P.ord.",
+      "Orders take values in ℤ, with the defined value ord_P(0)=0. For nonzero f, positive order means a zero, and negative order means f∉O_P.",
+      "The actual ramIdx is integer-valued: ord_P(minpoly_ℚ(res_P φ)(φ)) for φ∈O_P, and −ord_P φ otherwise.",
+      "Pt is Option Qbar: none means infinity and some z means finite z. noncriticalValue chooses the actual residue-embedding value or infinity.",
+      "An ElemMap is a rational Möbius map with ad−bc≠0, or a rational polynomial with positive natural degree. Its index is natural-valued.",
+      "For a polynomial p, the elementary index at infinity is natDegree(p). At finite z it is the multiplicity of z in p̄−C(p(z)).",
+      "Field applyK uses total field division, so t/0=0, including 0/0=0. This differs from the Pt Möbius pole convention, which returns none.",
+      "For transcendental field inputs, the proof establishes nonzero Möbius denominators. It does not identify total field division at zero with projective infinity.",
+      "No target declaration concerns a list. Imported evalComp and compK process the head map first, then the tail; [h₁,h₂] acts as h₂∘h₁.",
+      "Imported ramIdxComp multiplies each elementary index at the successive input value. The target parent proves the single-map step only."
+    ],
+    "zh_Hans": [
+      "Qbar 是 ℚ 的代数闭包；Ω 是 ℚ 的有理函数域 RatFunc ℚ 的代数闭包。Model N 包含中间域 ℚ⊆K⊆Ω 及元素 u、v∈K。",
+      "模型假设 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K、K 在 ℚ(u) 上有限维，且扩张次数 [K:ℚ(u)]=N。本批声明未证明模型存在。",
+      "Place K 是包含全部有理元素且不等于 K 的赋值子环。O_P 表示整个赋值环，κ(P) 表示整个剩余域。",
+      "QbarPoint K 由任意此类 P 和任意环嵌入 σ:κ(P)→Qbar 组成。没有将所有嵌入缩减为一个选定嵌入，也没有将整个剩余域替换为较小子域。",
+      "当 f∈O_P 时，x.eval f=σ(res_P(f))。曲线函数域的整个剩余域 κ(P) 在 ℚ 上有限维；Model 提供曲线函数域实例。",
+      "PlacesDiscrete M 显式要求每个 O_P 都为离散赋值环。局部曲线函数域实例使模型的 ord 与规范化的 P.ord 相同。",
+      "阶数取值于 ℤ，且定义约定 ord_P(0)=0。对非零 f，正阶表示零点，负阶等价于 f∉O_P。",
+      "实际 ramIdx 为整数：当 φ∈O_P 时，等于 ord_P(minpoly_ℚ(res_P φ)(φ))；否则等于 −ord_P φ。",
+      "Pt 是 Option Qbar：none 表示无穷远，some z 表示有限值 z。noncriticalValue 取实际剩余域嵌入值或无穷远值。",
+      "ElemMap 或为满足 ad−bc≠0 的有理系数 Möbius 变换，或为自然次数为正的有理系数多项式。其基本分歧指数取自然数值。",
+      "多项式 p 在无穷远处的基本分歧指数为 natDegree(p)，在有限点 z 处为 z 在 p̄−C(p(z)) 中的根重数。",
+      "域上的 applyK 使用全定义的域除法，所以 t/0=0，包括 0/0=0。Pt 上的 Möbius 极点则返回 none。",
+      "对在 ℚ 上超越的域元素，证明会建立 Möbius 分母非零；没有将域除零所得的 0 认作射影无穷远。",
+      "本批声明没有列表结论。导入的 evalComp 与 compK 先作用表头映射，再处理表尾；[h₁,h₂] 表示 h₂∘h₁。",
+      "导入的 ramIdxComp 将各步输入值处的基本分歧指数相乘；本批父定理仅给出单个基本映射的步骤。"
+    ],
+    "ja": [
+      "Qbar は ℚ の代数的閉包であり、Ω は有理関数体 RatFunc ℚ の代数的閉包である。Model N は中間体 ℚ⊆K⊆Ω と元 u,v∈K を含む。",
+      "モデルは u の ℚ 上の超越性、u^N+v^N=1、ℚ(u,v)=K、K の ℚ(u) 上の有限次元性、および拡大次数 [K:ℚ(u)]=N を仮定する。この組ではモデルの存在を証明しない。",
+      "Place K はすべての有理元を含み、K 全体ではない付値部分環である。O_P は付値環全体、κ(P) は剰余体全体を表す。",
+      "QbarPoint K は任意の P と任意の環埋め込み σ:κ(P)→Qbar の組である。剰余体全体も、すべての埋め込みも保持する。",
+      "f∈O_P なら x.eval f=σ(res_P(f)) である。曲線の関数体では κ(P) は ℚ 上有限次元であり、Model は曲線の関数体のインスタンスを与える。",
+      "PlacesDiscrete M は各 O_P が離散付値環であることを明示的に要求する。局所的な曲線の関数体のインスタンスの下で、モデルの ord と正規化した P.ord は一致する。",
+      "位数は ℤ に値をもち、ord_P(0)=0 と定義する。0 でない f では、正の位数は零点を表し、負の位数は f∉O_P と同値である。",
+      "実際の ramIdx は整数値をとる。φ∈O_P では ord_P(minpoly_ℚ(res_P φ)(φ))、それ以外では −ord_P φ である。",
+      "Pt は Option Qbar であり、none は無限遠点、some z は有限点 z を表す。noncriticalValue は実際の剰余体埋め込みによる値か無限遠点を返す。",
+      "ElemMap は ad−bc≠0 を満たす有理係数のメビウス変換、または自然次数が正の有理係数多項式である。その基本分岐指数は自然数値をとる。",
+      "多項式 p の無限遠点での基本分岐指数は natDegree(p) である。有限点 z では p̄−C(p(z)) における z の根の重複度である。",
+      "体上の applyK は全域で定義した除法を使い、t/0=0、特に 0/0=0 となる。Pt 上のメビウス変換では極を none とする。",
+      "超越的な体の元に対しては、証明中でメビウス変換の分母が 0 でないことを示す。体での 0 による除算の値を射影的な無限遠点と同一視しない。",
+      "この組の宣言はリストを扱わない。インポートされた evalComp と compK は先頭の写像から順に作用する。[h₁,h₂] は h₂∘h₁ を表す。",
+      "インポートされた ramIdxComp は各段階の入力値での基本分岐指数を掛ける。この組の親定理は一つの基本写像の段階だけを扱う。"
+    ]
+  },
+  "rows": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_mul",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 25,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_mul {K : Type*} [Field K] [CharZero K] (x : QbarPoint K) {f g : K} (hf : f ∈ x.P.1) (hg : g ∈ x.P.1) :\n    x.eval (f * g) (x.P.1.mul_mem _ _ hf hg) = x.eval f hf * x.eval g hg",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let K be a field of characteristic zero and ℚ̄ the fixed algebraic closure of ℚ. A point x=(P,σ) consists of a proper valuation subring O_P of K containing ℚ and any ring embedding σ of its full residue field κ(P) into ℚ̄. For f∈O_P, write x.eval(f)=σ(res_P(f)), using the actual residue homomorphism res_P:O_P→κ(P). For a characteristic-zero field K and a point x, evaluation preserves f·g when f and g belong to x’s valuation ring.",
+      "zh_Hans": "设 K 为特征为零的域，ℚ̄ 为固定的 ℚ 的代数闭包。点 x=(P,σ) 由 K 中包含 ℚ 且不等于整个域的赋值子环 O_P，以及其完整剩余域 κ(P) 到 ℚ̄ 的任意环嵌入 σ 组成。对 f∈O_P，记 x.eval(f)=σ(res_P(f))，其中 res_P:O_P→κ(P) 为实际剩余同态。设 K 为特征零域，x 为 QbarPoint K，且 f、g 均属于 x 的赋值环。则 x 对 f·g 的求值等于两次求值的乘积。",
+      "ja": "K を標数 0 の体、ℚ̄ を固定された ℚ の代数的閉包とする。点 x=(P,σ) は、ℚ を含み K 全体とは異なる付値部分環 O_P と、その剰余体全体 κ(P) から ℚ̄ への任意の環埋め込み σ の組である。f∈O_P に対し、実際の剰余準同型 res_P:O_P→κ(P) を用いて x.eval(f)=σ(res_P(f)) と書く。標数 0 の体 K の点 x をとる。f と g が x の付値環に属するとき、f·g の値は各値の積に等しい。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_congr",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 30,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_congr {K : Type*} [Field K] [CharZero K] (x : QbarPoint K) {f g : K} (h : f = g) (hf : f ∈ x.P.1) :\n    x.eval f hf = x.eval g (h ▸ hf)",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let K be a field of characteristic zero and ℚ̄ the fixed algebraic closure of ℚ. A point x=(P,σ) consists of a proper valuation subring O_P of K containing ℚ and any ring embedding σ of its full residue field κ(P) into ℚ̄. For f∈O_P, write x.eval(f)=σ(res_P(f)), using the actual residue homomorphism res_P:O_P→κ(P). If f=g and f belongs to x’s valuation ring, their evaluations agree; membership of g uses transport along f=g.",
+      "zh_Hans": "设 K 为特征为零的域，ℚ̄ 为固定的 ℚ 的代数闭包。点 x=(P,σ) 由 K 中包含 ℚ 且不等于整个域的赋值子环 O_P，以及其完整剩余域 κ(P) 到 ℚ̄ 的任意环嵌入 σ 组成。对 f∈O_P，记 x.eval(f)=σ(res_P(f))，其中 res_P:O_P→κ(P) 为实际剩余同态。若 f=g 且 f 属于 x 的赋值环，则两者的求值相等；g 的成员资格由等式 f=g 传递。",
+      "ja": "K を標数 0 の体、ℚ̄ を固定された ℚ の代数的閉包とする。点 x=(P,σ) は、ℚ を含み K 全体とは異なる付値部分環 O_P と、その剰余体全体 κ(P) から ℚ̄ への任意の環埋め込み σ の組である。f∈O_P に対し、実際の剰余準同型 res_P:O_P→κ(P) を用いて x.eval(f)=σ(res_P(f)) と書く。f=g で f が x の付値環に属するとき、両者の値は等しい。g の所属証明は等式 f=g で移送する。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_inv",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 34,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_inv {K : Type*} [Field K] [CharZero K] (x : QbarPoint K) {f : K} (hf : f ∈ x.P.1) (hfi : f⁻¹ ∈ x.P.1) :\n    x.eval f⁻¹ hfi = (x.eval f hf)⁻¹",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let K be a field of characteristic zero and ℚ̄ the fixed algebraic closure of ℚ. A point x=(P,σ) consists of a proper valuation subring O_P of K containing ℚ and any ring embedding σ of its full residue field κ(P) into ℚ̄. For f∈O_P, write x.eval(f)=σ(res_P(f)), using the actual residue homomorphism res_P:O_P→κ(P). If both f and f⁻¹ belong to x’s valuation ring, evaluation preserves inversion, including f=0 under total field inversion. Both membership hypotheses are retained; no hypothesis f≠0 is added. The proof treats f=0 separately using 0⁻¹=0, and uses multiplicativity when f≠0.",
+      "zh_Hans": "设 K 为特征为零的域，ℚ̄ 为固定的 ℚ 的代数闭包。点 x=(P,σ) 由 K 中包含 ℚ 且不等于整个域的赋值子环 O_P，以及其完整剩余域 κ(P) 到 ℚ̄ 的任意环嵌入 σ 组成。对 f∈O_P，记 x.eval(f)=σ(res_P(f))，其中 res_P:O_P→κ(P) 为实际剩余同态。若 f 和 f⁻¹ 都属于 x 的赋值环，则求值保持取逆；此式也包含 f=0，因为域中的逆元运算满足 0⁻¹=0。两个赋值环所属假设均被保留，没有添加 f≠0 的假设。证明在 f=0 时单独使用 0⁻¹=0，在 f≠0 时使用求值的乘法性质。",
+      "ja": "K を標数 0 の体、ℚ̄ を固定された ℚ の代数的閉包とする。点 x=(P,σ) は、ℚ を含み K 全体とは異なる付値部分環 O_P と、その剰余体全体 κ(P) から ℚ̄ への任意の環埋め込み σ の組である。f∈O_P に対し、実際の剰余準同型 res_P:O_P→κ(P) を用いて x.eval(f)=σ(res_P(f)) と書く。f と f⁻¹ がともに x の付値環に属するとき、値をとる操作は逆元と可換である。0⁻¹=0 により f=0 も含む。付値環への二つの所属仮定をともに保ち、f≠0 は追加しない。証明は f=0 の場合に 0⁻¹=0 を使い、f≠0 の場合に値をとる操作の乗法性を使う。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_aeval",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 42,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_aeval {K : Type*} [Field K] [CharZero K] (x : QbarPoint K) {f : K} (hf : f ∈ x.P.1) (p : ℚ[X]) :\n    x.eval (aeval f p) (x.P.noncritical_aeval_mem hf p) = aeval (x.eval f hf) p",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let K be a field of characteristic zero and ℚ̄ the fixed algebraic closure of ℚ. A point x=(P,σ) consists of a proper valuation subring O_P of K containing ℚ and any ring embedding σ of its full residue field κ(P) into ℚ̄. For f∈O_P, write x.eval(f)=σ(res_P(f)), using the actual residue homomorphism res_P:O_P→κ(P). For any rational polynomial p and regular f at x, evaluating p(f) equals applying p to the residue-embedding value of f.",
+      "zh_Hans": "设 K 为特征为零的域，ℚ̄ 为固定的 ℚ 的代数闭包。点 x=(P,σ) 由 K 中包含 ℚ 且不等于整个域的赋值子环 O_P，以及其完整剩余域 κ(P) 到 ℚ̄ 的任意环嵌入 σ 组成。对 f∈O_P，记 x.eval(f)=σ(res_P(f))，其中 res_P:O_P→κ(P) 为实际剩余同态。对任意有理系数多项式 p，若 f 属于 x 的赋值环，则 p(f) 在 x 处的值等于 p 在 f 的剩余域嵌入值处的取值。",
+      "ja": "K を標数 0 の体、ℚ̄ を固定された ℚ の代数的閉包とする。点 x=(P,σ) は、ℚ を含み K 全体とは異なる付値部分環 O_P と、その剰余体全体 κ(P) から ℚ̄ への任意の環埋め込み σ の組である。f∈O_P に対し、実際の剰余準同型 res_P:O_P→κ(P) を用いて x.eval(f)=σ(res_P(f)) と書く。任意の有理係数多項式 p と x の付値環の元 f について、p(f) の値は f の剰余体埋め込みによる値で p を評価したものに等しい。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.ramIdx_mob",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 49,
+      "kind": "lemma",
+      "full_signature_static": "lemma AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.ramIdx_mob {a b c d : ℚ} (h : a * d - b * c ≠ 0) (z : Pt) :\n    (mob a b c d h).ramIdx z = 1",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. For a,b,c,d∈ℚ with ad−bc≠0, the Möbius map sends finite z to ∞ if cz+d=0 and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ when c=0 and to the embedded rational value a/c when c≠0. Every rational Möbius map with nonzero determinant has defined elementary ramification index 1 at every Pt value.",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。对 a,b,c,d∈ℚ 且 ad−bc≠0，Möbius 变换将满足 cz+d=0 的有限点 z 映到 ∞，将其他有限点映到 (az+b)/(cz+d)；c=0 时将 ∞ 映到 ∞，c≠0 时将 ∞ 映到有理数 a/c 在 ℚ̄ 中的像。对行列式非零的任意有理系数 Möbius 变换及任意 Pt 值，其已定义的初等映射分歧指数为 1。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。a,b,c,d∈ℚ、ad−bc≠0 に対し、メビウス変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。c=0 のときは ∞ を ∞ に、c≠0 のときは ∞ を有理数 a/c の ℚ̄ における像に写す。行列式が 0 でない有理係数のメビウス変換の基本写像としての分岐指数は、任意の Pt の点で 1 である。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply_poly_some",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 52,
+      "kind": "lemma",
+      "full_signature_static": "lemma AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply_poly_some {p : ℚ[X]} (hp : 0 < p.natDegree) (z : Tripod.Qbar) :\n    (poly p hp).apply (some z) = some (aeval z p)",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. A rational polynomial p of positive natural degree sends the finite value some z to some p(z).",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。自然次数为正的有理系数多项式 p 将有限值 some z 映为 some p(z)。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。自然次数が正の有理係数多項式 p は、有限点 some z を some p(z) に写す。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply_mob_none",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 54,
+      "kind": "lemma",
+      "full_signature_static": "lemma AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply_mob_none {a b c d : ℚ} (h : a * d - b * c ≠ 0) :\n    (mob a b c d h).apply none = if c = 0 then none else some ((a / c : ℚ) : Tripod.Qbar)",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. For a,b,c,d∈ℚ with ad−bc≠0, the Möbius map sends finite z to ∞ if cz+d=0 and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ when c=0 and to the embedded rational value a/c when c≠0. At infinity, a nonsingular rational Möbius map gives infinity when c=0, and the finite value a/c when c≠0.",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。对 a,b,c,d∈ℚ 且 ad−bc≠0，Möbius 变换将满足 cz+d=0 的有限点 z 映到 ∞，将其他有限点映到 (az+b)/(cz+d)；c=0 时将 ∞ 映到 ∞，c≠0 时将 ∞ 映到有理数 a/c 在 ℚ̄ 中的像。行列式非零的有理系数 Möbius 变换在无穷远点处：若 c=0，值为无穷远；否则值为有限值 a/c。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。a,b,c,d∈ℚ、ad−bc≠0 に対し、メビウス変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。c=0 のときは ∞ を ∞ に、c≠0 のときは ∞ を有理数 a/c の ℚ̄ における像に写す。行列式が 0 でない有理係数のメビウス変換は、無限遠点を c=0 なら無限遠点、それ以外なら有限点 a/c に写す。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply_mob_some",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 57,
+      "kind": "lemma",
+      "full_signature_static": "lemma AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply_mob_some {a b c d : ℚ} (h : a * d - b * c ≠ 0) (z : Tripod.Qbar) :\n    (mob a b c d h).apply (some z) =\n      if (c : Tripod.Qbar) * z + d = 0 then none\n      else some (((a : Tripod.Qbar) * z + b) / ((c : Tripod.Qbar) * z + d))",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. For a,b,c,d∈ℚ with ad−bc≠0, the Möbius map sends finite z to ∞ if cz+d=0 and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ when c=0 and to the embedded rational value a/c when c≠0. At finite z, a nonsingular rational Möbius map gives infinity if cz+d=0; otherwise it gives the finite quotient (az+b)/(cz+d).",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。对 a,b,c,d∈ℚ 且 ad−bc≠0，Möbius 变换将满足 cz+d=0 的有限点 z 映到 ∞，将其他有限点映到 (az+b)/(cz+d)；c=0 时将 ∞ 映到 ∞，c≠0 时将 ∞ 映到有理数 a/c 在 ℚ̄ 中的像。在有限点 z 处，行列式非零的有理系数 Möbius 变换在 cz+d=0 时取无穷远值；否则取有限商 (az+b)/(cz+d)。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。a,b,c,d∈ℚ、ad−bc≠0 に対し、メビウス変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。c=0 のときは ∞ を ∞ に、c≠0 のときは ∞ を有理数 a/c の ℚ̄ における像に写す。有限点 z では、行列式が 0 でない有理係数のメビウス変換は cz+d=0 なら無限遠点、それ以外なら有限点 (az+b)/(cz+d) を与える。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply_mob_some_of_ne",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 62,
+      "kind": "lemma",
+      "full_signature_static": "lemma AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.apply_mob_some_of_ne {a b c d : ℚ} (h : a * d - b * c ≠ 0) {z : Tripod.Qbar}\n    (hz : (c : Tripod.Qbar) * z + d ≠ 0) :\n    (mob a b c d h).apply (some z) = some (((a : Tripod.Qbar) * z + b) / ((c : Tripod.Qbar) * z + d))",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. For a,b,c,d∈ℚ with ad−bc≠0, the Möbius map sends finite z to ∞ if cz+d=0 and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ when c=0 and to the embedded rational value a/c when c≠0. If cz+d≠0 in ℚ̄, with a,b,c,d∈ℚ and ad−bc≠0, the Möbius image of some z is exactly some ((az+b)/(cz+d)).",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。对 a,b,c,d∈ℚ 且 ad−bc≠0，Möbius 变换将满足 cz+d=0 的有限点 z 映到 ∞，将其他有限点映到 (az+b)/(cz+d)；c=0 时将 ∞ 映到 ∞，c≠0 时将 ∞ 映到有理数 a/c 在 ℚ̄ 中的像。若 Qbar 中 cz+d≠0，则 some z 的 Möbius 像恰为 some ((az+b)/(cz+d))；同时仍要求 ad−bc≠0。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。a,b,c,d∈ℚ、ad−bc≠0 に対し、メビウス変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。c=0 のときは ∞ を ∞ に、c≠0 のときは ∞ を有理数 a/c の ℚ̄ における像に写す。Qbar で cz+d≠0 なら、some z のメビウス変換による像は some ((az+b)/(cz+d)) である。ad−bc≠0 も仮定する。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.one_lt_ramIdx_poly_some_iff",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 66,
+      "kind": "lemma",
+      "full_signature_static": "lemma AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.one_lt_ramIdx_poly_some_iff {p : ℚ[X]} (hp : 0 < p.natDegree) (z : Tripod.Qbar) :\n    1 < (poly p hp).ramIdx (some z) ↔ aeval z (derivative p) = 0",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. The natural-number elementary polynomial index is natDegree(p) at ∞ and the root multiplicity of z in p̄(X)−p(z) at finite z, where p̄ is obtained by mapping every rational coefficient into ℚ̄. For positive-degree rational p, its elementary index at finite z exceeds 1 exactly when p′(z)=0.",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。多项式的自然数值初等分歧指数在 ∞ 处为 p 的自然次数 natDegree(p)，在有限点 z 处为 z 在 p̄(X)−p(z) 中的根重数，其中 p̄ 由将 p 的各个有理系数映入 ℚ̄ 得到。对自然次数为正的有理系数多项式 p，其在有限点 z 处的初等映射分歧指数大于 1，当且仅当 p′(z)=0。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。多項式の自然数値の初等分岐指数は、∞ では自然次数 natDegree(p)、有限点 z では p̄(X)−p(z) における z の根の重複度である。p̄ は p の各有理係数を ℚ̄ に写して得る多項式である。自然次数が正の有理係数多項式 p について、有限点 z での基本分岐指数が 1 より大きいことと p′(z)=0 は同値である。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.rootMultiplicity_comp_of_separable",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 81,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.rootMultiplicity_comp_of_separable {F : Type*} [Field F] {M Q : F[X]} {a b : F}\n    (hM : M.Separable) (hb : M.IsRoot b) (hQa : Q.eval a = b) (hQ : Q - C b ≠ 0) :\n    (M.comp Q).rootMultiplicity a = (Q - C b).rootMultiplicity a",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let M,Q be polynomials over a field F. Assume M is separable, M(b)=0, Q(a)=b, and Q−C(b)≠0. Then a has equal root multiplicity in M∘Q and Q−C(b). Here a,b∈F, C(b) is the constant polynomial, and a separable polynomial is nonzero and has no repeated roots over an algebraic closure. No characteristic-zero assumption on F, monicity assumption, or positive-degree assumption on Q is imposed.",
+      "zh_Hans": "设 M、Q 为域 F 上的多项式。假设 M 可分、M(b)=0、Q(a)=b，且 Q−C(b)≠0。则 a 在 M∘Q 中的根重数等于其在 Q−C(b) 中的根重数。这里 a,b∈F，C(b) 为常数多项式，可分多项式非零，且在代数闭包中没有重根。没有特征为零、首一性或 Q 的正次数假设。",
+      "ja": "体 F 上の多項式 M,Q をとる。M が分離的で M(b)=0、Q(a)=b、Q−C(b)≠0 とする。このとき M∘Q と Q−C(b) における a の根の重複度は等しい。ここで a,b∈F であり、C(b) は定数多項式である。分離的な多項式は非零であり、代数的閉包で重根をもたない。標数 0、モニック性、Q の正の次数を仮定しない。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.transcendental_aeval",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 103,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.transcendental_aeval {K : Type*} [Field K] [CharZero K] {φ : K} (hφ : Transcendental ℚ φ) {p : ℚ[X]} (hp : 0 < p.natDegree) :\n    Transcendental ℚ (aeval φ p)",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "For φ transcendental over ℚ in a characteristic-zero field, p(φ) remains transcendental whenever rational p has positive natural degree.",
+      "zh_Hans": "在特征零域中，若 φ 在 ℚ 上超越，且有理系数多项式 p 的自然次数为正，则 p(φ) 也在 ℚ 上超越。",
+      "ja": "標数 0 の体で φ が ℚ 上超越的であり、有理係数多項式 p の自然次数が正なら、p(φ) も ℚ 上超越的である。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.ElemMap.ramIdx_poly_of_natDegree_eq_one",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 107,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.ElemMap.ramIdx_poly_of_natDegree_eq_one {p : ℚ[X]} (hp : 0 < p.natDegree)\n    (h1 : p.natDegree = 1) (z : Pt) : (ElemMap.poly p hp).ramIdx z = 1",
+      "signature_method": "source header with used section variables inserted; no elaboration; exact namespace of dotted declaration UNKNOWN without elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. The natural-number elementary polynomial index is natDegree(p) at ∞ and the root multiplicity of z in p̄(X)−p(z) at finite z, where p̄ is obtained by mapping every rational coefficient into ℚ̄. A rational polynomial with positive natural degree and natural degree exactly 1 has elementary ramification index 1 at every finite or infinite Pt value. The source declares the dotted name ElemMap.ramIdx_poly_of_natDegree_eq_one inside namespace NoncriticalElementarySource after bringing the name ElemMap into scope from NoncriticalP1. The fully elaborated namespace is UNKNOWN in this static review; the displayed full name is a source reconstruction, not compiler output.",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。多项式的自然数值初等分歧指数在 ∞ 处为 p 的自然次数 natDegree(p)，在有限点 z 处为 z 在 p̄(X)−p(z) 中的根重数，其中 p̄ 由将 p 的各个有理系数映入 ℚ̄ 得到。若有理系数多项式 p 的自然次数为正且恰为 1，则其在任意有限或无穷远 Pt 值处的初等映射分歧指数均为 1。源码在打开 NoncriticalP1 中的 ElemMap 名称后，于 NoncriticalElementarySource 命名空间内用带点名称 ElemMap.ramIdx_poly_of_natDegree_eq_one 声明本条。此次静态审阅不能确定其完全展开后的命名空间；显示的全名是源码重构，并非编译器输出。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。多項式の自然数値の初等分岐指数は、∞ では自然次数 natDegree(p)、有限点 z では p̄(X)−p(z) における z の根の重複度である。p̄ は p の各有理係数を ℚ̄ に写して得る多項式である。自然次数が正で、かつ 1 に等しい有理係数多項式 p の基本分岐指数は、有限点でも無限遠点でも 1 である。ソースは NoncriticalP1 の ElemMap という名前を開いた後、NoncriticalElementarySource 名前空間内でドット付きの名前 ElemMap.ramIdx_poly_of_natDegree_eq_one を宣言している。この静的審査では、完全に詳細化された名前空間は未確認である。表示された完全名はソースからの再構成であり、コンパイラの出力ではない。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null,
+      "signature_namespace_status": "UNKNOWN_static_source_reconstruction_only; opened ElemMap dotted declaration not elaborated"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.invPt",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 127,
+      "kind": "definition",
+      "full_signature_static": "noncomputable def AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.invPt : Pt → Pt",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. Define inversion on Pt: infinity maps to the finite value 0; finite 0 maps to infinity; finite nonzero a maps to a⁻¹.",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。定义 Pt 上的取逆映射：无穷远映为有限值 0，有限值 0 映为无穷远，非零有限值 a 映为 a⁻¹。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。Pt 上の反転を定める。無限遠点を有限点 0 に、有限点 0 を無限遠点に、0 でない有限点 a を a⁻¹ に写す。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "definition_by_cases_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.mob_apply_eq_poly",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 130,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.mob_apply_eq_poly {a b d : ℚ} (hdet : a * d - b * 0 ≠ 0)\n    (hp : 0 < (C (a / d) * X + C (b / d)).natDegree) (z : Pt) :\n    (ElemMap.mob a b 0 d hdet).apply z = (ElemMap.poly _ hp).apply z",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. For a,b,c,d∈ℚ with ad−bc≠0, the Möbius map sends finite z to ∞ if cz+d=0 and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ when c=0 and to the embedded rational value a/c when c≠0. For a rational polynomial p of positive natural degree, its projective map sends finite z to p(z) and ∞ to ∞. For c=0 and ad≠0, the Möbius Pt map equals the polynomial map (a/d)X+b/d at every point. Positive degree is explicit.",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。对 a,b,c,d∈ℚ 且 ad−bc≠0，Möbius 变换将满足 cz+d=0 的有限点 z 映到 ∞，将其他有限点映到 (az+b)/(cz+d)；c=0 时将 ∞ 映到 ∞，c≠0 时将 ∞ 映到有理数 a/c 在 ℚ̄ 中的像。自然次数为正的有理系数多项式 p 在射影直线上将有限点 z 映到 p(z)，将 ∞ 映到 ∞。当 c=0 且 ad≠0 时，Möbius 的 Pt 映射在每一点都等于多项式 (a/d)X+b/d 的映射；语句显式要求该多项式自然次数为正。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。a,b,c,d∈ℚ、ad−bc≠0 に対し、メビウス変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。c=0 のときは ∞ を ∞ に、c≠0 のときは ∞ を有理数 a/c の ℚ̄ における像に写す。自然次数が正の有理係数多項式 p の射影直線上の写像は、有限点 z を p(z) に、∞ を ∞ に写す。c=0、ad≠0 の場合、メビウス変換の Pt 上の写像は各点で多項式 (a/d)X+b/d の写像に等しい。多項式の正の自然次数を明示的に仮定する。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.mob_apply_eq_comp",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 145,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.mob_apply_eq_comp {a b c d : ℚ} (hdet : a * d - b * c ≠ 0) (hc : c ≠ 0)\n    (hp₁ : 0 < (C c * X + C d).natDegree)\n    (hp₂ : 0 < (C ((b * c - a * d) / c) * X + C (a / c)).natDegree) (z : Pt) :\n    (ElemMap.mob a b c d hdet).apply z =\n      (ElemMap.poly _ hp₂).apply (invPt ((ElemMap.poly _ hp₁).apply z))",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Here ℚ̄ is the fixed algebraic closure of ℚ and Pt=Option ℚ̄ represents ℙ¹(ℚ̄): none is ∞ and some z is a finite z∈ℚ̄. For a,b,c,d∈ℚ with ad−bc≠0, the Möbius map sends finite z to ∞ if cz+d=0 and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ when c=0 and to the embedded rational value a/c when c≠0. For a rational polynomial p of positive natural degree, its projective map sends finite z to p(z) and ∞ to ∞. The projective inverse invPt exchanges ∞ and finite 0 and sends nonzero finite z to z⁻¹. Assume ad−bc≠0 and c≠0. The Möbius Pt map first applies cX+d, then invPt, then ((bc−ad)/c)X+a/c. Both polynomials have explicit positive-degree premises. The composition order is first the polynomial cX+d, then projective inversion, then the polynomial ((bc−ad)/c)X+a/c. Thus this also covers finite cz+d=0 and the input ∞; invPt is not the total field inverse at zero.",
+      "zh_Hans": "这里 ℚ̄ 为固定的 ℚ 的代数闭包，Pt=Option ℚ̄ 表示射影直线 ℙ¹(ℚ̄)：none 表示 ∞，some z 表示有限点 z∈ℚ̄。对 a,b,c,d∈ℚ 且 ad−bc≠0，Möbius 变换将满足 cz+d=0 的有限点 z 映到 ∞，将其他有限点映到 (az+b)/(cz+d)；c=0 时将 ∞ 映到 ∞，c≠0 时将 ∞ 映到有理数 a/c 在 ℚ̄ 中的像。自然次数为正的有理系数多项式 p 在射影直线上将有限点 z 映到 p(z)，将 ∞ 映到 ∞。射影取逆映射 invPt 交换 ∞ 与有限点 0，并将非零有限点 z 映到 z⁻¹。假设 ad−bc≠0 且 c≠0。Möbius 的 Pt 映射依次施加 cX+d、invPt、((bc−ad)/c)X+a/c；两个多项式的正自然次数均为显式前提。复合顺序是先施加多项式 cX+d，再作射影取逆，最后施加多项式 ((bc−ad)/c)X+a/c。因此等式也涵盖满足 cz+d=0 的有限点和输入 ∞；invPt 并不是在零处取值为零的域取逆运算。",
+      "ja": "ここで ℚ̄ は固定された ℚ の代数的閉包であり、Pt=Option ℚ̄ は射影直線 ℙ¹(ℚ̄) を表す。none は ∞、some z は有限点 z∈ℚ̄ を表す。a,b,c,d∈ℚ、ad−bc≠0 に対し、メビウス変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。c=0 のときは ∞ を ∞ に、c≠0 のときは ∞ を有理数 a/c の ℚ̄ における像に写す。自然次数が正の有理係数多項式 p の射影直線上の写像は、有限点 z を p(z) に、∞ を ∞ に写す。射影直線上の反転 invPt は ∞ と有限点 0 を交換し、0 でない有限点 z を z⁻¹ に写す。ad−bc≠0、c≠0 とする。Pt 上のメビウス変換は、cX+d、invPt、((bc−ad)/c)X+a/c の順に作用する。両多項式の正の自然次数を明示的に仮定する。合成の順序は、多項式 cX+d、射影直線上の反転、多項式 ((bc−ad)/c)X+a/c の順である。したがって cz+d=0 を満たす有限点と入力 ∞ も含む。invPt は、零での値を零とする体の逆元演算とは異なる。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.ramIdx_of_mem",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 169,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.ramIdx_of_mem {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) {φ : M.K} {P : Place M.K} (h : φ ∈ P.1) :\n    letI : IsCurveField M.K := M.isCurveField\n    ramIdx M hDVR φ P = P.ord (aeval φ (minpoly ℚ (P.residue ⟨φ, h⟩)))",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Write e_P(f)=ramIdx M hDVR f P∈ℤ. For f∈O_P this is ord_P(q(f)), with q the minimal polynomial over ℚ of res_P(f); for f∉O_P it is −ord_P(f). The model-derived curve-field structure makes κ(P) finite-dimensional over ℚ. For a model M with discrete places, if φ belongs to O_P, its integer index equals ord_P of the residue minimal polynomial evaluated at φ.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。记 e_P(f)=ramIdx M hDVR f P∈ℤ。若 f∈O_P，则 e_P(f)=ord_P(q(f))，其中 q 为剩余类 res_P(f) 在 ℚ 上的最小多项式；若 f∉O_P，则 e_P(f)=−ord_P(f)。由模型导出的曲线函数域结构保证 κ(P) 在 ℚ 上有限维。设 M 为给定模型，且其各赋值环均为离散赋值环。若 φ∈O_P，则整数值分歧指数等于剩余类在 ℚ 上的最小多项式于 φ 处取值后的 ord_P。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。e_P(f)=ramIdx M hDVR f P∈ℤ と書く。f∈O_P なら、res_P(f) の ℚ 上の最小多項式を q として e_P(f)=ord_P(q(f)) である。f∉O_P なら e_P(f)=−ord_P(f) である。モデルから得られる曲線の関数体の構造により、κ(P) は ℚ 上有限次元である。モデル M の各付値環が離散付値環であり φ∈O_P なら、整数値の分岐指数は、剰余類の ℚ 上の最小多項式を φ で評価した元の ord_P に等しい。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": "ramIdx_of_mem"
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.ramIdx_of_notMem",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 176,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.ramIdx_of_notMem {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) {φ : M.K} {P : Place M.K} (h : φ ∉ P.1) :\n    letI : IsCurveField M.K := M.isCurveField\n    ramIdx M hDVR φ P = -P.ord φ",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Write e_P(f)=ramIdx M hDVR f P∈ℤ. For f∈O_P this is ord_P(q(f)), with q the minimal polynomial over ℚ of res_P(f); for f∉O_P it is −ord_P(f). The model-derived curve-field structure makes κ(P) finite-dimensional over ℚ. For a model M with discrete places, if φ does not belong to O_P, its integer ramification index equals −ord_P(φ).",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。记 e_P(f)=ramIdx M hDVR f P∈ℤ。若 f∈O_P，则 e_P(f)=ord_P(q(f))，其中 q 为剩余类 res_P(f) 在 ℚ 上的最小多项式；若 f∉O_P，则 e_P(f)=−ord_P(f)。由模型导出的曲线函数域结构保证 κ(P) 在 ℚ 上有限维。设 M 的各赋值环均为离散赋值环。若 φ∉O_P，则其整数值分歧指数等于 −ord_P(φ)。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。e_P(f)=ramIdx M hDVR f P∈ℤ と書く。f∈O_P なら、res_P(f) の ℚ 上の最小多項式を q として e_P(f)=ord_P(q(f)) である。f∉O_P なら e_P(f)=−ord_P(f) である。モデルから得られる曲線の関数体の構造により、κ(P) は ℚ 上有限次元である。モデル M の各付値環が離散付値環であり φ∉O_P なら、整数値の分岐指数は −ord_P(φ) に等しい。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": "ramIdx_of_notMem"
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.val_of_mem",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 183,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.val_of_mem {N : ℕ} (M : Model N) {φ : M.K} {x : QbarPoint M.K} (h : φ ∈ x.P.1) :\n    noncriticalValue M x φ = some (x.eval φ h)",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. Fix the algebraic closure ℚ̄ of ℚ. An algebraic point x=(P,σ) includes any such place and any ring embedding σ:κ(P)→ℚ̄ of the full residue field. For f∈O_P, x.eval(f)=σ(res_P(f)). All such places and embeddings are quantified over. The projective value z_x(f)=noncriticalValue M x f is σ(res_P(f)) when f∈O_P and ∞ otherwise; Pt=Option ℚ̄ records finite values as some z and ∞ as none. If φ belongs to x’s valuation ring, its noncriticalValue is the finite value obtained from the actual residue map and x’s embedding.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。固定 ℚ 的代数闭包 ℚ̄。代数点 x=(P,σ) 包含任意这样的赋值点，以及完整剩余域的任意环嵌入 σ:κ(P)→ℚ̄。对 f∈O_P，有 x.eval(f)=σ(res_P(f))。量词涵盖所有这样的赋值点和嵌入。射影值 z_x(f)=noncriticalValue M x f 在 f∈O_P 时为 σ(res_P(f))，否则为 ∞；Pt=Option ℚ̄ 用 some z 记录有限值，用 none 记录 ∞。若 φ 属于 x 的赋值环，则 noncriticalValue 为有限值；该值由实际剩余映射与 x 自带的剩余域嵌入共同给出。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。ℚ の代数的閉包 ℚ̄ を固定する。代数点 x=(P,σ) は、任意のこのような付値点と、剰余体全体の任意の環埋め込み σ:κ(P)→ℚ̄ を含む。f∈O_P では x.eval(f)=σ(res_P(f)) である。すべてのこのような付値点と埋め込みを量化する。射影的な値 z_x(f)=noncriticalValue M x f は、f∈O_P なら σ(res_P(f))、それ以外なら ∞ である。Pt=Option ℚ̄ は有限値を some z、∞ を none で表す。φ が x の付値環に属するとき、noncriticalValue は実際の剰余写像と x の剰余体埋め込みから得る有限点である。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": "val_of_mem"
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.val_of_notMem",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 187,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.val_of_notMem {N : ℕ} (M : Model N) {φ : M.K} {x : QbarPoint M.K} (h : φ ∉ x.P.1) :\n    noncriticalValue M x φ = none",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. Fix the algebraic closure ℚ̄ of ℚ. An algebraic point x=(P,σ) includes any such place and any ring embedding σ:κ(P)→ℚ̄ of the full residue field. For f∈O_P, x.eval(f)=σ(res_P(f)). All such places and embeddings are quantified over. The projective value z_x(f)=noncriticalValue M x f is σ(res_P(f)) when f∈O_P and ∞ otherwise; Pt=Option ℚ̄ records finite values as some z and ∞ as none. If φ does not belong to x’s valuation ring, its noncriticalValue is none, which represents infinity.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。固定 ℚ 的代数闭包 ℚ̄。代数点 x=(P,σ) 包含任意这样的赋值点，以及完整剩余域的任意环嵌入 σ:κ(P)→ℚ̄。对 f∈O_P，有 x.eval(f)=σ(res_P(f))。量词涵盖所有这样的赋值点和嵌入。射影值 z_x(f)=noncriticalValue M x f 在 f∈O_P 时为 σ(res_P(f))，否则为 ∞；Pt=Option ℚ̄ 用 some z 记录有限值，用 none 记录 ∞。若 φ 不属于 x 的赋值环，则 noncriticalValue 为 none，即无穷远值。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。ℚ の代数的閉包 ℚ̄ を固定する。代数点 x=(P,σ) は、任意のこのような付値点と、剰余体全体の任意の環埋め込み σ:κ(P)→ℚ̄ を含む。f∈O_P では x.eval(f)=σ(res_P(f)) である。すべてのこのような付値点と埋め込みを量化する。射影的な値 z_x(f)=noncriticalValue M x f は、f∈O_P なら σ(res_P(f))、それ以外なら ∞ である。Pt=Option ℚ̄ は有限値を some z、∞ を none で表す。φ が x の付値環に属さないとき、noncriticalValue は無限遠点を表す none である。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": "val_of_notMem"
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.inv_spec_of_ramIdx",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "line": 192,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.inv_spec_of_ramIdx {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) {φ : M.K} (hφ : Transcendental ℚ φ) (x : QbarPoint M.K)\n    (hRam : ramIdx M hDVR φ⁻¹ x.P = ramIdx M hDVR φ x.P) :\n    noncriticalValue M x φ⁻¹ = invPt (noncriticalValue M x φ) ∧\n      ramIdx M hDVR φ⁻¹ x.P = ramIdx M hDVR φ x.P",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. Fix the algebraic closure ℚ̄ of ℚ. An algebraic point x=(P,σ) includes any such place and any ring embedding σ:κ(P)→ℚ̄ of the full residue field. For f∈O_P, x.eval(f)=σ(res_P(f)). All such places and embeddings are quantified over. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Write e_P(f)=ramIdx M hDVR f P∈ℤ. For f∈O_P this is ord_P(q(f)), with q the minimal polynomial over ℚ of res_P(f); for f∉O_P it is −ord_P(f). The model-derived curve-field structure makes κ(P) finite-dimensional over ℚ. The projective value z_x(f)=noncriticalValue M x f is σ(res_P(f)) when f∈O_P and ∞ otherwise; Pt=Option ℚ̄ records finite values as some z and ∞ as none. The projective inverse invPt exchanges ∞ and finite 0 and sends nonzero finite z to z⁻¹. Assume φ is transcendental and explicitly assume its inverse has the same actual index at x.P. Then their Pt values differ by invPt, and the index equality is retained. Precisely, for each fixed φ transcendental over ℚ and each fixed x, the one premise hRam is e_{x.P}(φ⁻¹)=e_{x.P}(φ). The conclusion is z_x(φ⁻¹)=invPt(z_x(φ)) together with that same equality. No equality for other functions or other points is assumed.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。固定 ℚ 的代数闭包 ℚ̄。代数点 x=(P,σ) 包含任意这样的赋值点，以及完整剩余域的任意环嵌入 σ:κ(P)→ℚ̄。对 f∈O_P，有 x.eval(f)=σ(res_P(f))。量词涵盖所有这样的赋值点和嵌入。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。记 e_P(f)=ramIdx M hDVR f P∈ℤ。若 f∈O_P，则 e_P(f)=ord_P(q(f))，其中 q 为剩余类 res_P(f) 在 ℚ 上的最小多项式；若 f∉O_P，则 e_P(f)=−ord_P(f)。由模型导出的曲线函数域结构保证 κ(P) 在 ℚ 上有限维。射影值 z_x(f)=noncriticalValue M x f 在 f∈O_P 时为 σ(res_P(f))，否则为 ∞；Pt=Option ℚ̄ 用 some z 记录有限值，用 none 记录 ∞。射影取逆映射 invPt 交换 ∞ 与有限点 0，并将非零有限点 z 映到 z⁻¹。假设 φ 在 ℚ 上超越，并显式假设 φ⁻¹ 与 φ 在 x.P 处的实际分歧指数相等。则二者的 Pt 值由 invPt 联系，且结论同时保留该指数等式。确切地说，对每个固定的、在 ℚ 上超越的 φ 及每个固定的 x，唯一的附加前提 hRam 是 e_{x.P}(φ⁻¹)=e_{x.P}(φ)。结论是 z_x(φ⁻¹)=invPt(z_x(φ))，并同时保留这个指数等式。没有假设其他函数或其他点处的指数等式。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。ℚ の代数的閉包 ℚ̄ を固定する。代数点 x=(P,σ) は、任意のこのような付値点と、剰余体全体の任意の環埋め込み σ:κ(P)→ℚ̄ を含む。f∈O_P では x.eval(f)=σ(res_P(f)) である。すべてのこのような付値点と埋め込みを量化する。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。e_P(f)=ramIdx M hDVR f P∈ℤ と書く。f∈O_P なら、res_P(f) の ℚ 上の最小多項式を q として e_P(f)=ord_P(q(f)) である。f∉O_P なら e_P(f)=−ord_P(f) である。モデルから得られる曲線の関数体の構造により、κ(P) は ℚ 上有限次元である。射影的な値 z_x(f)=noncriticalValue M x f は、f∈O_P なら σ(res_P(f))、それ以外なら ∞ である。Pt=Option ℚ̄ は有限値を some z、∞ を none で表す。射影直線上の反転 invPt は ∞ と有限点 0 を交換し、0 でない有限点 z を z⁻¹ に写す。φ が ℚ 上超越的で、φ⁻¹ と φ の x.P での実際の分岐指数が等しいと明示的に仮定する。その Pt の値は invPt で結ばれ、指数の等式も結論に含む。正確には、ℚ 上超越的な各固定の φ と各固定の x に対し、追加の前提 hRam は一つの等式 e_{x.P}(φ⁻¹)=e_{x.P}(φ) である。結論は z_x(φ⁻¹)=invPt(z_x(φ)) と同じ指数の等式の連言である。他の関数や他の点での等式は仮定しない。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": "inv_spec, value conjunct only; index conjunct is an explicit premise"
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "line": 19,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) (h : ψ ∈ x.P.1) {g : ℚ[X]} (hg : g ≠ 0) :\n    letI : IsCurveField M.K := M.isCurveField\n    x.P.ord (aeval ψ g) = ramIdx M hDVR ψ x.P *\n      ((g.map (algebraMap ℚ Tripod.Qbar)).rootMultiplicity (x.eval ψ h) : ℤ)",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. Fix the algebraic closure ℚ̄ of ℚ. An algebraic point x=(P,σ) includes any such place and any ring embedding σ:κ(P)→ℚ̄ of the full residue field. For f∈O_P, x.eval(f)=σ(res_P(f)). All such places and embeddings are quantified over. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Write e_P(f)=ramIdx M hDVR f P∈ℤ. For f∈O_P this is ord_P(q(f)), with q the minimal polynomial over ℚ of res_P(f); for f∉O_P it is −ord_P(f). The model-derived curve-field structure makes κ(P) finite-dimensional over ℚ. Assume a model M, discrete places, transcendental ψ, a point x, ψ∈O_x, and nonzero rational polynomial g. Then ord_x(g(ψ)) equals the actual index of ψ times the root multiplicity of g over Qbar at x.eval ψ. The root multiplicity is a natural number cast to ℤ, so the product is in ℤ. Only g≠0 is required; nonzero constant g is allowed. The proof body contains sorry, so this is an OPEN child obligation.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。固定 ℚ 的代数闭包 ℚ̄。代数点 x=(P,σ) 包含任意这样的赋值点，以及完整剩余域的任意环嵌入 σ:κ(P)→ℚ̄。对 f∈O_P，有 x.eval(f)=σ(res_P(f))。量词涵盖所有这样的赋值点和嵌入。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。记 e_P(f)=ramIdx M hDVR f P∈ℤ。若 f∈O_P，则 e_P(f)=ord_P(q(f))，其中 q 为剩余类 res_P(f) 在 ℚ 上的最小多项式；若 f∉O_P，则 e_P(f)=−ord_P(f)。由模型导出的曲线函数域结构保证 κ(P) 在 ℚ 上有限维。给定模型 M、各处的离散赋值环、在 ℚ 上超越的 ψ，以及点 x。若 ψ∈O_x 且有理系数多项式 g≠0，则 ord_x(g(ψ)) 等于 ψ 的实际分歧指数乘以 g 经系数嵌入 Qbar 后在 x.eval ψ 处的根重数。根重数为自然数，在公式中转换为整数，故乘法在 ℤ 中进行。这里只要求 g≠0，允许非零常数多项式。证明体含有 sorry，因此该子义务尚未完成。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。ℚ の代数的閉包 ℚ̄ を固定する。代数点 x=(P,σ) は、任意のこのような付値点と、剰余体全体の任意の環埋め込み σ:κ(P)→ℚ̄ を含む。f∈O_P では x.eval(f)=σ(res_P(f)) である。すべてのこのような付値点と埋め込みを量化する。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。e_P(f)=ramIdx M hDVR f P∈ℤ と書く。f∈O_P なら、res_P(f) の ℚ 上の最小多項式を q として e_P(f)=ord_P(q(f)) である。f∉O_P なら e_P(f)=−ord_P(f) である。モデルから得られる曲線の関数体の構造により、κ(P) は ℚ 上有限次元である。モデル M、各点での離散付値環、ℚ 上超越的な ψ、点 x をとる。ψ∈O_x かつ有理係数多項式 g≠0 なら、ord_x(g(ψ)) は ψ の実際の分岐指数と、Qbar に係数を移した g の x.eval ψ における根の重複度の積である。根の重複度は自然数であり、式では ℤ に移すので積は ℤ 内の積である。g≠0 のみを要求し、0 でない定数多項式も許す。証明本体は sorry を含むため、この子課題は未解決である。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": "Belyi/CurveField/NoncriticalBasic.lean ord_aeval_eq"
+      },
+      "proof_status": {
+        "static_status": "open_direct_sorry",
+        "compiled_in_this_readback": false,
+        "direct_sorry": true,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "line": 19,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (P : Place M.K) (h : ψ ∉ P.1) {p : ℚ[X]} (hp : p ≠ 0) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (aeval ψ p) = p.natDegree * P.ord ψ",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Assume a model M, discrete places, transcendental ψ, a place P, ψ∉O_P, and nonzero rational polynomial p. Then ord_P(p(ψ)) equals natDegree(p) times ord_P(ψ), with the degree cast to ℤ. The hypothesis is p≠0, not positive degree; in particular nonzero constant polynomials are included. The proof body contains sorry, so this is an OPEN child obligation.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。给定模型 M、各处的离散赋值环、在 ℚ 上超越的 ψ 和赋值处 P。若 ψ∉O_P 且有理系数多项式 p≠0，则 ord_P(p(ψ)) 等于 p 的自然次数乘以 ord_P(ψ)；次数被转换为整数。假设是 p≠0，没有要求次数为正；尤其允许非零常数多项式。证明体含有 sorry，因此该子义务尚未完成。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。モデル M、各点での離散付値環、ℚ 上超越的な ψ、付値の点 P をとる。ψ∉O_P かつ有理係数多項式 p≠0 なら、ord_P(p(ψ)) は p の自然次数と ord_P(ψ) の積である。次数は ℤ に移す。仮定は p≠0 であり、正の次数は要求しない。特に、0 でない定数多項式も含む。証明本体は sorry を含むため、この子課題は未解決である。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": "Belyi/CurveField/NoncriticalElem.lean ord_aeval_of_notMem"
+      },
+      "proof_status": {
+        "static_status": "open_direct_sorry",
+        "compiled_in_this_readback": false,
+        "direct_sorry": true,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "line": 19,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) :\n    ramIdx M hDVR ψ⁻¹ x.P = ramIdx M hDVR ψ x.P",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. Fix the algebraic closure ℚ̄ of ℚ. An algebraic point x=(P,σ) includes any such place and any ring embedding σ:κ(P)→ℚ̄ of the full residue field. For f∈O_P, x.eval(f)=σ(res_P(f)). All such places and embeddings are quantified over. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Write e_P(f)=ramIdx M hDVR f P∈ℤ. For f∈O_P this is ord_P(q(f)), with q the minimal polynomial over ℚ of res_P(f); for f∉O_P it is −ord_P(f). The model-derived curve-field structure makes κ(P) finite-dimensional over ℚ. For a model M with discrete places, a transcendental ψ, and every point x, the actual integer indices of ψ⁻¹ and ψ at x.P are equal. No separate index equality is assumed here; that equality is the conclusion. The proof body contains sorry, so this is an OPEN child obligation.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。固定 ℚ 的代数闭包 ℚ̄。代数点 x=(P,σ) 包含任意这样的赋值点，以及完整剩余域的任意环嵌入 σ:κ(P)→ℚ̄。对 f∈O_P，有 x.eval(f)=σ(res_P(f))。量词涵盖所有这样的赋值点和嵌入。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。记 e_P(f)=ramIdx M hDVR f P∈ℤ。若 f∈O_P，则 e_P(f)=ord_P(q(f))，其中 q 为剩余类 res_P(f) 在 ℚ 上的最小多项式；若 f∉O_P，则 e_P(f)=−ord_P(f)。由模型导出的曲线函数域结构保证 κ(P) 在 ℚ 上有限维。给定模型 M、各处的离散赋值环和在 ℚ 上超越的 ψ。对每个点 x，ψ⁻¹ 与 ψ 在 x.P 处的实际整数值分歧指数相等。这里没有另行假设指数相等；指数等式正是结论。证明体含有 sorry，因此该子义务尚未完成。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。ℚ の代数的閉包 ℚ̄ を固定する。代数点 x=(P,σ) は、任意のこのような付値点と、剰余体全体の任意の環埋め込み σ:κ(P)→ℚ̄ を含む。f∈O_P では x.eval(f)=σ(res_P(f)) である。すべてのこのような付値点と埋め込みを量化する。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。e_P(f)=ramIdx M hDVR f P∈ℤ と書く。f∈O_P なら、res_P(f) の ℚ 上の最小多項式を q として e_P(f)=ord_P(q(f)) である。f∉O_P なら e_P(f)=−ord_P(f) である。モデルから得られる曲線の関数体の構造により、κ(P) は ℚ 上有限次元である。各点での離散付値環をもつモデル M と ℚ 上超越的な ψ をとる。任意の点 x で、ψ⁻¹ と ψ の x.P における実際の整数値分岐指数は等しい。ここでは指数の等式を別の仮定として置かず、その等式自体が結論である。証明本体は sorry を含むため、この子課題は未解決である。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": "Belyi/CurveField/NoncriticalElem.lean inv_spec, second conjunct"
+      },
+      "proof_status": {
+        "static_status": "open_direct_sorry",
+        "compiled_in_this_readback": false,
+        "direct_sorry": true,
+        "open_dependencies": []
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.poly_spec",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "line": 22,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.poly_spec {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) {φ : M.K} (hφ : Transcendental ℚ φ) (x : QbarPoint M.K) {p : ℚ[X]}\n    (hp : 0 < p.natDegree) :\n    noncriticalValue M x (aeval φ p) = (ElemMap.poly p hp).apply (noncriticalValue M x φ) ∧\n      ramIdx M hDVR (aeval φ p) x.P = ramIdx M hDVR φ x.P * (ElemMap.poly p hp).ramIdx (noncriticalValue M x φ)",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. Fix the algebraic closure ℚ̄ of ℚ. An algebraic point x=(P,σ) includes any such place and any ring embedding σ:κ(P)→ℚ̄ of the full residue field. For f∈O_P, x.eval(f)=σ(res_P(f)). All such places and embeddings are quantified over. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Write e_P(f)=ramIdx M hDVR f P∈ℤ. For f∈O_P this is ord_P(q(f)), with q the minimal polynomial over ℚ of res_P(f); for f∉O_P it is −ord_P(f). The model-derived curve-field structure makes κ(P) finite-dimensional over ℚ. The projective value z_x(f)=noncriticalValue M x f is σ(res_P(f)) when f∈O_P and ∞ otherwise; Pt=Option ℚ̄ records finite values as some z and ∞ as none. For a rational polynomial p of positive natural degree, its projective map sends finite z to p(z) and ∞ to ∞. The natural-number elementary polynomial index is natDegree(p) at ∞ and the root multiplicity of z in p̄(X)−p(z) at finite z, where p̄ is obtained by mapping every rational coefficient into ℚ̄. For transcendental φ, every point x, and positive-degree rational p, the value of p(φ) is the polynomial Pt image of φ’s value. Its actual index is the index of φ times the elementary polynomial index at that value. In symbols, z_x(p(φ))=p(z_x(φ)) on the projective line and e_P(p(φ))=e_P(φ)·(e_p(z_x(φ)):ℤ), with P=x.P. The natural elementary index is cast to ℤ. There is no output-transcendence conjunct in this particular statement. The written proof uses the OPEN regular-point and pole polynomial-order children, so it remains dependent on those obligations.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。固定 ℚ 的代数闭包 ℚ̄。代数点 x=(P,σ) 包含任意这样的赋值点，以及完整剩余域的任意环嵌入 σ:κ(P)→ℚ̄。对 f∈O_P，有 x.eval(f)=σ(res_P(f))。量词涵盖所有这样的赋值点和嵌入。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。记 e_P(f)=ramIdx M hDVR f P∈ℤ。若 f∈O_P，则 e_P(f)=ord_P(q(f))，其中 q 为剩余类 res_P(f) 在 ℚ 上的最小多项式；若 f∉O_P，则 e_P(f)=−ord_P(f)。由模型导出的曲线函数域结构保证 κ(P) 在 ℚ 上有限维。射影值 z_x(f)=noncriticalValue M x f 在 f∈O_P 时为 σ(res_P(f))，否则为 ∞；Pt=Option ℚ̄ 用 some z 记录有限值，用 none 记录 ∞。自然次数为正的有理系数多项式 p 在射影直线上将有限点 z 映到 p(z)，将 ∞ 映到 ∞。多项式的自然数值初等分歧指数在 ∞ 处为 p 的自然次数 natDegree(p)，在有限点 z 处为 z 在 p̄(X)−p(z) 中的根重数，其中 p̄ 由将 p 的各个有理系数映入 ℚ̄ 得到。设 φ 在 ℚ 上超越，x 为任意点，p 为自然次数为正的有理系数多项式。则 p(φ) 的值等于 φ 的值在多项式 Pt 映射下的像；其实际分歧指数等于 φ 的指数乘以该值处的初等多项式分歧指数。用公式表示，射影直线上有 z_x(p(φ))=p(z_x(φ))，并有 e_P(p(φ))=e_P(φ)·(e_p(z_x(φ)):ℤ)，其中 P=x.P。自然数值的初等指数转换为整数。本条陈述本身不包含输出超越性的分量。所写证明使用尚未完成的正则点与极点多项式阶公式子义务，因此仍依赖这些义务。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。ℚ の代数的閉包 ℚ̄ を固定する。代数点 x=(P,σ) は、任意のこのような付値点と、剰余体全体の任意の環埋め込み σ:κ(P)→ℚ̄ を含む。f∈O_P では x.eval(f)=σ(res_P(f)) である。すべてのこのような付値点と埋め込みを量化する。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。e_P(f)=ramIdx M hDVR f P∈ℤ と書く。f∈O_P なら、res_P(f) の ℚ 上の最小多項式を q として e_P(f)=ord_P(q(f)) である。f∉O_P なら e_P(f)=−ord_P(f) である。モデルから得られる曲線の関数体の構造により、κ(P) は ℚ 上有限次元である。射影的な値 z_x(f)=noncriticalValue M x f は、f∈O_P なら σ(res_P(f))、それ以外なら ∞ である。Pt=Option ℚ̄ は有限値を some z、∞ を none で表す。自然次数が正の有理係数多項式 p の射影直線上の写像は、有限点 z を p(z) に、∞ を ∞ に写す。多項式の自然数値の初等分岐指数は、∞ では自然次数 natDegree(p)、有限点 z では p̄(X)−p(z) における z の根の重複度である。p̄ は p の各有理係数を ℚ̄ に写して得る多項式である。φ が ℚ 上超越的で、x を任意の点、p を自然次数が正の有理係数多項式とする。p(φ) の値は φ の値の多項式 Pt 写像による像である。その実際の分岐指数は φ の指数と、その値での基本多項式分岐指数の積である。式で書くと、射影直線上で z_x(p(φ))=p(z_x(φ))、かつ P=x.P として e_P(p(φ))=e_P(φ)·(e_p(z_x(φ)):ℤ) である。自然数値の初等指数を ℤ に移す。この宣言自体には出力の超越性の成分はない。記載された証明は、未解決の正則点および極での多項式の位数に関する子課題を用いるため、それらに依存したままである。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_with_open_dependencies_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": [
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole"
+        ]
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.mob_spec",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "line": 63,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.NoncriticalElementarySource.mob_spec {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) {φ : M.K} (hφ : Transcendental ℚ φ) (x : QbarPoint M.K) {a b c d : ℚ}\n    (hdet : a * d - b * c ≠ 0) :\n    Transcendental ℚ (NoncriticalP1.applyK (.mob a b c d hdet) φ) ∧\n      noncriticalValue M x (NoncriticalP1.applyK (.mob a b c d hdet) φ) = (ElemMap.mob a b c d hdet).apply (noncriticalValue M x φ) ∧\n      ramIdx M hDVR (NoncriticalP1.applyK (.mob a b c d hdet) φ) x.P = ramIdx M hDVR φ x.P",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. Fix the algebraic closure ℚ̄ of ℚ. An algebraic point x=(P,σ) includes any such place and any ring embedding σ:κ(P)→ℚ̄ of the full residue field. For f∈O_P, x.eval(f)=σ(res_P(f)). All such places and embeddings are quantified over. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Write e_P(f)=ramIdx M hDVR f P∈ℤ. For f∈O_P this is ord_P(q(f)), with q the minimal polynomial over ℚ of res_P(f); for f∉O_P it is −ord_P(f). The model-derived curve-field structure makes κ(P) finite-dimensional over ℚ. The projective value z_x(f)=noncriticalValue M x f is σ(res_P(f)) when f∈O_P and ∞ otherwise; Pt=Option ℚ̄ records finite values as some z and ∞ as none. For rational coefficients a,b,c,d with ad−bc≠0, the field action is m_K(f)=(af+b)/(cf+d). Field division is total, so a zero denominator gives 0; the projective map instead sends a finite pole to ∞. For a,b,c,d∈ℚ with ad−bc≠0, the Möbius map sends finite z to ∞ if cz+d=0 and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ when c=0 and to the embedded rational value a/c when c≠0. For transcendental φ and a rational Möbius map with nonzero determinant, applyK remains transcendental. Its Pt value is the Möbius image, and its actual index equals the index of φ at x.P. The proof covers c=0 by the degree-one polynomial (a/d)X+b/d. For c≠0 it uses cX+d, inversion, and ((bc−ad)/c)X+a/c in that order. Nonzero denominators on the transcendental field input are derived, not additional hypotheses. The written proof depends on the OPEN regular-point, pole, and inverse-index children.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。固定 ℚ 的代数闭包 ℚ̄。代数点 x=(P,σ) 包含任意这样的赋值点，以及完整剩余域的任意环嵌入 σ:κ(P)→ℚ̄。对 f∈O_P，有 x.eval(f)=σ(res_P(f))。量词涵盖所有这样的赋值点和嵌入。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。记 e_P(f)=ramIdx M hDVR f P∈ℤ。若 f∈O_P，则 e_P(f)=ord_P(q(f))，其中 q 为剩余类 res_P(f) 在 ℚ 上的最小多项式；若 f∉O_P，则 e_P(f)=−ord_P(f)。由模型导出的曲线函数域结构保证 κ(P) 在 ℚ 上有限维。射影值 z_x(f)=noncriticalValue M x f 在 f∈O_P 时为 σ(res_P(f))，否则为 ∞；Pt=Option ℚ̄ 用 some z 记录有限值，用 none 记录 ∞。对有理系数 a,b,c,d 且 ad−bc≠0，域上的作用为 m_K(f)=(af+b)/(cf+d)。域除法处处有定义，分母为零时商为零；射影直线上的映射则将有限极点映到 ∞。对 a,b,c,d∈ℚ 且 ad−bc≠0，Möbius 变换将满足 cz+d=0 的有限点 z 映到 ∞，将其他有限点映到 (az+b)/(cz+d)；c=0 时将 ∞ 映到 ∞，c≠0 时将 ∞ 映到有理数 a/c 在 ℚ̄ 中的像。设 φ 在 ℚ 上超越，且有理系数 Möbius 变换的行列式非零。则 applyK 的结果仍在 ℚ 上超越，其 Pt 值为原值的 Möbius 像，且在 x.P 处的实际分歧指数等于 φ 的指数。证明在 c=0 时使用一次多项式 (a/d)X+b/d；在 c≠0 时依次使用 cX+d、取逆和 ((bc−ad)/c)X+a/c。对超越域元素输入所需的分母非零性由证明导出，并不是额外假设。所写证明依赖尚未完成的正则点、极点和取逆分歧指数子义务。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。ℚ の代数的閉包 ℚ̄ を固定する。代数点 x=(P,σ) は、任意のこのような付値点と、剰余体全体の任意の環埋め込み σ:κ(P)→ℚ̄ を含む。f∈O_P では x.eval(f)=σ(res_P(f)) である。すべてのこのような付値点と埋め込みを量化する。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。e_P(f)=ramIdx M hDVR f P∈ℤ と書く。f∈O_P なら、res_P(f) の ℚ 上の最小多項式を q として e_P(f)=ord_P(q(f)) である。f∉O_P なら e_P(f)=−ord_P(f) である。モデルから得られる曲線の関数体の構造により、κ(P) は ℚ 上有限次元である。射影的な値 z_x(f)=noncriticalValue M x f は、f∈O_P なら σ(res_P(f))、それ以外なら ∞ である。Pt=Option ℚ̄ は有限値を some z、∞ を none で表す。有理係数 a,b,c,d、ad−bc≠0 に対し、体上の作用は m_K(f)=(af+b)/(cf+d) である。体の除法は全域で定義され、分母が零なら商は 0 となる。射影直線上の写像は有限の極を ∞ に写す。a,b,c,d∈ℚ、ad−bc≠0 に対し、メビウス変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。c=0 のときは ∞ を ∞ に、c≠0 のときは ∞ を有理数 a/c の ℚ̄ における像に写す。φ が ℚ 上超越的で、有理係数のメビウス変換の行列式が 0 でないとする。applyK の結果は ℚ 上超越的で、その Pt の値は元の値のメビウス変換による像であり、x.P での実際の分岐指数は φ の指数に等しい。証明は c=0 の場合を一次多項式 (a/d)X+b/d で扱う。c≠0 の場合には cX+d、逆元、多項式 ((bc−ad)/c)X+a/c の順に用いる。超越的な体の入力における分母の非零性は導かれ、追加の仮定ではない。記載された証明は、未解決の正則点、極、および逆元の分岐指数に関する子課題に依存する。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_with_open_dependencies_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": [
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification"
+        ]
+      },
+      "english_mochizuki_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification",
+      "path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "line": 113,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (x : QbarPoint M.K) (h : NoncriticalP1.ElemMap) :\n    Transcendental ℚ (NoncriticalP1.applyK h ψ) ∧\n    noncriticalValue M x (NoncriticalP1.applyK h ψ) = h.apply (noncriticalValue M x ψ) ∧\n    ramIdx M hDVR (NoncriticalP1.applyK h ψ) x.P =\n      ramIdx M hDVR ψ x.P * (h.ramIdx (noncriticalValue M x ψ) : ℤ)",
+      "signature_method": "source header with used section variables inserted; no elaboration",
+      "en": "Let N∈ℕ and M:Model N. Its field K=M.K is an intermediate field of the algebraic closure of ℚ(t), with u,v∈K such that u is transcendental over ℚ, u^N+v^N=1, ℚ(u,v)=K, and K is finite-dimensional of degree N over ℚ(u). A place P is any proper valuation subring O_P of K containing ℚ; κ(P) is its full residue field and res_P:O_P→κ(P) its actual residue homomorphism. Fix the algebraic closure ℚ̄ of ℚ. An algebraic point x=(P,σ) includes any such place and any ring embedding σ:κ(P)→ℚ̄ of the full residue field. For f∈O_P, x.eval(f)=σ(res_P(f)). All such places and embeddings are quantified over. The explicit hypothesis hDVR:PlacesDiscrete M says every O_P is a discrete valuation ring. The model also supplies IsCurveField K, from which the normalized integer order ord_P=P.ord is obtained; its defined value at 0 is ord_P(0)=0. The model order defined using hDVR agrees with P.ord. Write e_P(f)=ramIdx M hDVR f P∈ℤ. For f∈O_P this is ord_P(q(f)), with q the minimal polynomial over ℚ of res_P(f); for f∉O_P it is −ord_P(f). The model-derived curve-field structure makes κ(P) finite-dimensional over ℚ. The projective value z_x(f)=noncriticalValue M x f is σ(res_P(f)) when f∈O_P and ∞ otherwise; Pt=Option ℚ̄ records finite values as some z and ∞ as none. For rational coefficients a,b,c,d with ad−bc≠0, the field action is m_K(f)=(af+b)/(cf+d). Field division is total, so a zero denominator gives 0; the projective map instead sends a finite pole to ∞. For a,b,c,d∈ℚ with ad−bc≠0, the Möbius map sends finite z to ∞ if cz+d=0 and otherwise to (az+b)/(cz+d); it sends ∞ to ∞ when c=0 and to the embedded rational value a/c when c≠0. For a rational polynomial p of positive natural degree, its projective map sends finite z to p(z) and ∞ to ∞. The natural-number elementary polynomial index is natDegree(p) at ∞ and the root multiplicity of z in p̄(X)−p(z) at finite z, where p̄ is obtained by mapping every rational coefficient into ℚ̄. For a model M with discrete places, transcendental ψ, every point x, and one elementary map h, applyK h ψ stays transcendental. Its Pt value is h applied to ψ’s value. Its actual index equals the index of ψ times h’s elementary index at that input value. The permitted elementary maps are exactly these nonzero-determinant rational Möbius maps and positive-natural-degree rational polynomials. Their field action h_K is the displayed rational expression or p(f), and the Möbius elementary index is 1 everywhere. The final equality is e_P(h_K(ψ))=e_P(ψ)·(e_h(z_x(ψ)):ℤ), with P=x.P; output transcendence is a conclusion. This is postcomposition: first ψ, then h. The written proof has no direct sorry, but depends on the three OPEN regular-point, pole, and inverse-index children.",
+      "zh_Hans": "设 N∈ℕ，M:Model N。其域 K=M.K 是 ℚ(t) 的代数闭包中的中间域，带有元素 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、ℚ(u,v)=K，且 K 是 ℚ(u) 上的 N 次有限扩张。赋值点 P 是 K 中任意包含 ℚ 且不等于整个域的赋值子环 O_P；κ(P) 为其完整剩余域，res_P:O_P→κ(P) 为实际剩余同态。固定 ℚ 的代数闭包 ℚ̄。代数点 x=(P,σ) 包含任意这样的赋值点，以及完整剩余域的任意环嵌入 σ:κ(P)→ℚ̄。对 f∈O_P，有 x.eval(f)=σ(res_P(f))。量词涵盖所有这样的赋值点和嵌入。显式假设 hDVR:PlacesDiscrete M 表示每个 O_P 都是离散赋值环。模型也提供曲线函数域条件 IsCurveField K，由此得到规范化整数阶 ord_P=P.ord，并定义 ord_P(0)=0。用 hDVR 定义的模型阶与 P.ord 相同。记 e_P(f)=ramIdx M hDVR f P∈ℤ。若 f∈O_P，则 e_P(f)=ord_P(q(f))，其中 q 为剩余类 res_P(f) 在 ℚ 上的最小多项式；若 f∉O_P，则 e_P(f)=−ord_P(f)。由模型导出的曲线函数域结构保证 κ(P) 在 ℚ 上有限维。射影值 z_x(f)=noncriticalValue M x f 在 f∈O_P 时为 σ(res_P(f))，否则为 ∞；Pt=Option ℚ̄ 用 some z 记录有限值，用 none 记录 ∞。对有理系数 a,b,c,d 且 ad−bc≠0，域上的作用为 m_K(f)=(af+b)/(cf+d)。域除法处处有定义，分母为零时商为零；射影直线上的映射则将有限极点映到 ∞。对 a,b,c,d∈ℚ 且 ad−bc≠0，Möbius 变换将满足 cz+d=0 的有限点 z 映到 ∞，将其他有限点映到 (az+b)/(cz+d)；c=0 时将 ∞ 映到 ∞，c≠0 时将 ∞ 映到有理数 a/c 在 ℚ̄ 中的像。自然次数为正的有理系数多项式 p 在射影直线上将有限点 z 映到 p(z)，将 ∞ 映到 ∞。多项式的自然数值初等分歧指数在 ∞ 处为 p 的自然次数 natDegree(p)，在有限点 z 处为 z 在 p̄(X)−p(z) 中的根重数，其中 p̄ 由将 p 的各个有理系数映入 ℚ̄ 得到。给定模型 M、各处的离散赋值环、在 ℚ 上超越的 ψ、任意点 x 及一个初等映射 h。则 applyK h ψ 仍在 ℚ 上超越，其 Pt 值等于将 h 作用于 ψ 的值所得的结果；其实际分歧指数等于 ψ 的指数乘以 h 在该输入值处的初等分歧指数。允许的初等映射恰为上述行列式非零的有理系数 Möbius 变换和正自然次数的有理系数多项式。域作用 h_K 是上述有理式或 p(f)，Möbius 变换的初等分歧指数处处为 1。最后的等式是 e_P(h_K(ψ))=e_P(ψ)·(e_h(z_x(ψ)):ℤ)，其中 P=x.P；输出的超越性是结论。复合方向为先 ψ、后 h。所写证明没有直接出现 sorry，但依赖尚未完成的正则点、极点和取逆分歧指数三个子义务。",
+      "ja": "N∈ℕ、M:Model N とする。その体 K=M.K は ℚ(t) の代数的閉包の中間体である。元 u,v∈K は、u が ℚ 上超越的、u^N+v^N=1、ℚ(u,v)=K、K が ℚ(u) 上 N 次の有限拡大という条件を満たす。付値点 P は、ℚ を含み K 全体とは異なる任意の付値部分環 O_P である。κ(P) はその剰余体全体、res_P:O_P→κ(P) は実際の剰余準同型である。ℚ の代数的閉包 ℚ̄ を固定する。代数点 x=(P,σ) は、任意のこのような付値点と、剰余体全体の任意の環埋め込み σ:κ(P)→ℚ̄ を含む。f∈O_P では x.eval(f)=σ(res_P(f)) である。すべてのこのような付値点と埋め込みを量化する。明示的な仮定 hDVR:PlacesDiscrete M は、すべての O_P が離散付値環であることを表す。モデルから曲線の関数体の条件 IsCurveField K も得られ、これにより正規化された整数位数 ord_P=P.ord が定まる。0 での値は ord_P(0)=0 と定義する。hDVR を用いて定義したモデルの位数は P.ord と一致する。e_P(f)=ramIdx M hDVR f P∈ℤ と書く。f∈O_P なら、res_P(f) の ℚ 上の最小多項式を q として e_P(f)=ord_P(q(f)) である。f∉O_P なら e_P(f)=−ord_P(f) である。モデルから得られる曲線の関数体の構造により、κ(P) は ℚ 上有限次元である。射影的な値 z_x(f)=noncriticalValue M x f は、f∈O_P なら σ(res_P(f))、それ以外なら ∞ である。Pt=Option ℚ̄ は有限値を some z、∞ を none で表す。有理係数 a,b,c,d、ad−bc≠0 に対し、体上の作用は m_K(f)=(af+b)/(cf+d) である。体の除法は全域で定義され、分母が零なら商は 0 となる。射影直線上の写像は有限の極を ∞ に写す。a,b,c,d∈ℚ、ad−bc≠0 に対し、メビウス変換は cz+d=0 を満たす有限点 z を ∞ に、それ以外の有限点を (az+b)/(cz+d) に写す。c=0 のときは ∞ を ∞ に、c≠0 のときは ∞ を有理数 a/c の ℚ̄ における像に写す。自然次数が正の有理係数多項式 p の射影直線上の写像は、有限点 z を p(z) に、∞ を ∞ に写す。多項式の自然数値の初等分岐指数は、∞ では自然次数 natDegree(p)、有限点 z では p̄(X)−p(z) における z の根の重複度である。p̄ は p の各有理係数を ℚ̄ に写して得る多項式である。各点での離散付値環をもつモデル M、ℚ 上超越的な ψ、任意の点 x、一つの基本写像 h をとる。applyK h ψ は ℚ 上超越的で、その Pt の値は ψ の値に h を作用させたものである。その実際の分岐指数は ψ の指数と、入力値での h の基本分岐指数の積である。許される初等写像は、上記の行列式が 0 でない有理係数のメビウス変換と、正の自然次数をもつ有理係数多項式に限る。体上の作用 h_K は上記の有理式または p(f) であり、メビウス変換の初等分岐指数はすべての点で 1 である。最後の等式は、P=x.P として e_P(h_K(ψ))=e_P(ψ)·(e_h(z_x(ψ)):ℤ) であり、出力の超越性は結論である。合成の向きは先に ψ、次に h である。記載された証明に直接の sorry はないが、正則点、極、および逆元の分岐指数に関する三つの未解決の子課題に依存する。",
+      "source_anchor": {
+        "status": "Lean-comment claim only; source not checked",
+        "header_path": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+        "header_lines": [
+          6,
+          9
+        ],
+        "pinned_commit_claim": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+        "symbol_claim": null
+      },
+      "proof_status": {
+        "static_status": "proof_script_present_with_open_dependencies_uncompiled",
+        "compiled_in_this_readback": false,
+        "direct_sorry": false,
+        "open_dependencies": [
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint",
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole",
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification"
+        ]
+      },
+      "english_mochizuki_quote": null
+    }
+  ],
+  "unknown_translations": []
+}

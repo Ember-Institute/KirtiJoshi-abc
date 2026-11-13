@@ -1,0 +1,263 @@
+{
+  "reviewer": "/root/elementary_shape",
+  "date": "2026-11-14",
+  "scope": "Independent static shape, actual-carrier, source-fidelity, and producer-consumer audit. No compilation or edits to draft/main/cache.",
+  "input_directory": "/tmp/p2m-noncritical-elementary-next-20261114",
+  "verdict": "static_shape_acceptable_three_Open_leaves_remain",
+  "mathematical_shape_blockers": [],
+  "compilation": {
+    "state": "unknown_uncompiled",
+    "compiler_invoked": false,
+    "MCP_CI_invoked": false,
+    "kernel_validation": false,
+    "axiom_audit": false,
+    "performance_or_memory_result": "unknown",
+    "parent_complete": false,
+    "reason": "Exactly three sorry leaves remain; all assembled consumers inherit their admitted dependencies."
+  },
+  "input_files": [
+    {
+      "file": "/tmp/p2m-noncritical-elementary-next-20261114/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "sha256": "1114bf7a48c3884de6e6048691929161fad87c422d2ebc4b658d9a510dd42481",
+      "lines": 218,
+      "sorry_count": 0
+    },
+    {
+      "file": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+      "sha256": "60661d14e97c4359a24c42ad653afc0c8cf1974964acd2cb2a107435cdfe6412",
+      "lines": 128,
+      "sorry_count": 0
+    },
+    {
+      "file": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalInverseRamification.lean",
+      "sha256": "e1bb6ce12f87c9acb263f91427aee6e313b92c91e9964724e6eb894810ec1732",
+      "lines": 26,
+      "sorry_count": 1
+    },
+    {
+      "file": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtPole.lean",
+      "sha256": "d9150ed705acceb009ccd6ee8b8257b806fc4137f1eb54b8eb863df815bcced6",
+      "lines": 27,
+      "sorry_count": 1
+    },
+    {
+      "file": "/tmp/p2m-noncritical-elementary-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalPolynomialOrderAtRegularPoint.lean",
+      "sha256": "ffad967a57fb91ee07450acd15a4479ed351aec5afeee0ff575e4a79008f4be9",
+      "lines": 28,
+      "sorry_count": 1
+    }
+  ],
+  "parent_target": {
+    "status": "pass",
+    "comparison": "Exact declaration text between theorem name and := by is byte-equal to the original parent in the previous composition draft. Original file SHA-256 matches ledger.",
+    "original": "/tmp/p2m-noncritical-composition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalElementaryCompositionRamification.lean",
+    "original_sha256": "d15d1c7079be4eaa37a568b99715a12d5f1fb070d61d9e8fc0680a9cce18dcdf",
+    "quantifiers": "All N, actual Model N, explicit PlacesDiscrete M, all transcendental ψ : M.K, all actual QbarPoint M.K, and all actual ElemMap.",
+    "conclusions": "Transcendence of actual applyK, actual noncriticalValue equality, and exact actual integer ramification product; no weakened or conditional parent target."
+  },
+  "actual_carrier": {
+    "status": "pass",
+    "evidence": [
+      {
+        "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "lines": [
+          33,
+          58,
+          63,
+          65,
+          81,
+          88,
+          107,
+          117,
+          130
+        ],
+        "finding": "Uses actual Fermat presentation M.K, all proper valuative places, full IsLocalRing.ResidueField P.1, and arbitrary ring embedding σ into fixed Qbar."
+      },
+      {
+        "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+        "lines": [
+          36,
+          64
+        ],
+        "finding": "Actual residue field is finite over ℚ via existing curve-field theorem; ord M hDVR agrees definitionally with normalized P.ord."
+      },
+      {
+        "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+        "lines": [
+          37
+        ],
+        "finding": "IsCurveField states finite extension of ℚ(t); no assertion that the full algebraic constant field equals ℚ is introduced."
+      },
+      {
+        "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalFunctions.lean",
+        "lines": [
+          34,
+          38,
+          47,
+          67,
+          131
+        ],
+        "finding": "Source rational ElemMap constructors retain determinant≠0 and positive polynomial degree. Actual applyK, extended values including infinity, and ramIdx are used."
+      }
+    ],
+    "no_selected_embedding": true,
+    "all_places_including_infinity": true,
+    "zero_and_pole_cases_retained": true,
+    "no_extra_full_constant_field_hypothesis": true,
+    "instance_transport": "letI : IsCurveField M.K := M.isCurveField selects existing canonical order/residue structures. It adds no mathematical assumption. ord_eq_placeOrd preserves the explicit hDVR-dependent target."
+  },
+  "open_leaves": [
+    {
+      "name": "noncriticalPolynomialOrderAtRegularPoint",
+      "status": "pass_exact_source_boundary_Open",
+      "source": "Belyi/CurveField/NoncriticalBasic.lean:144 ord_aeval_eq",
+      "draft_lines": [
+        19,
+        20,
+        23,
+        24,
+        26
+      ],
+      "quantifiers": "All actual models and hDVR, every transcendental ψ, all full algebraic points x and regularity proofs h, every nonzero g : ℚ[X].",
+      "conclusion": "Actual normalized x.P.ord(aeval ψ g) = actual ramIdx M hDVR ψ x.P times actual rootMultiplicity of g mapped into full Qbar at x.eval ψ h.",
+      "consumer": "poly_spec regular branch, parent module line 42, supplied with actual m.comp p and proved nonzeroness."
+    },
+    {
+      "name": "noncriticalPolynomialOrderAtPole",
+      "status": "pass_exact_source_boundary_Open",
+      "source": "Belyi/CurveField/NoncriticalElem.lean:69 ord_aeval_of_notMem",
+      "draft_lines": [
+        19,
+        20,
+        23,
+        25
+      ],
+      "quantifiers": "All actual models/hDVR, every transcendental ψ, every proper place P at which ψ is a pole, every nonzero p : ℚ[X]. Constants remain included.",
+      "conclusion": "Actual P.ord(aeval ψ p) = p.natDegree * actual P.ord ψ.",
+      "consumer": "poly_spec pole branch line 53; negative actual order proves the evaluated polynomial remains at a pole before ramIdx expansion."
+    },
+    {
+      "name": "noncriticalInverseRamification",
+      "status": "pass_exact_source_projection_Open",
+      "source": "Belyi/CurveField/NoncriticalElem.lean:180 inv_spec second conjunct",
+      "draft_lines": [
+        19,
+        20,
+        22,
+        24
+      ],
+      "quantifiers": "Every transcendental ψ in actual M.K and every full algebraic point. No unit/nonzero-value/pole restriction is added.",
+      "conclusion": "Exact actual ramIdx M hDVR ψ⁻¹ x.P = ramIdx M hDVR ψ x.P.",
+      "consumer": "mob_spec non-affine branch lines 104-105 supplies this equality for actual cψ+d to inv_spec_of_ramIdx.",
+      "note": "Transcendence already excludes the identically zero function, as in source. All pointwise zero, unit, and pole cases remain inside this child; no branch is dropped."
+    }
+  ],
+  "polynomial_assembly": {
+    "status": "pass_source_faithful",
+    "source": "NoncriticalElem.poly_spec",
+    "regular_branch": "Uses actual full-residue-field minimal polynomial m of residue of p(φ), proves integrality/nonzero m and nonzero m.comp p, and invokes regular-order child at actual x. No rational-root surrogate.",
+    "separability": "rootMultiplicity_comp_of_separable keeps all source hypotheses: separable M, root b, Q(a)=b, and Q-C b≠0. Consumer supplies mapped minpoly irreducibility/separability in characteristic zero, actual σ-embedded root, evaluation equality, and degree-based nonzeroness.",
+    "pole_branch": "Uses actual negative normalized order and the exact pole-order child, proves p(φ) is outside the valuation ring, then expands both actual pole indices.",
+    "degree_one": "Exact source finite-point derivative/root-multiplicity argument and infinity degree case retained. Polynomial derivative dependency is used only here; no curve derivation carrier/import is added."
+  },
+  "mobius_assembly": {
+    "status": "pass_source_faithful",
+    "source": "NoncriticalElem.mob_apply_eq_poly, mob_apply_eq_comp, mob_spec, applyK_spec",
+    "c_eq_zero": "Nonzero determinant gives d≠0 and a/d≠0; actual affine polynomial has degree one. Transcendence, value, and actual index follow via poly_spec.",
+    "c_ne_zero": "Nonzero determinant gives k=(bc-ad)/c≠0. Actual map is cφ+d, inversion, then kt+a/c. Every intermediate function has source transcendence proof, denominator nonzeroness comes from actual transcendence, and finite/infinite point application retains denominator-zero cases.",
+    "negative_orders": "inv_spec_of_ramIdx retains negative/zero/positive actual P.ord trichotomy. Its value proof treats inverse zeros and poles through actual noncriticalValue_zero_iff and normalized order bridge.",
+    "conditional_inverse": "hRam is the exact inverse-index child equality, not a general law record or hidden parent restatement. It is returned as second conjunct; the first conjunct is source value proof. The only actual consumer supplies the declared Open theorem for the actual affine intermediate."
+  },
+  "producer_consumer_audit": {
+    "status": "pass_genuine_source_dependency",
+    "critical_chain": [
+      {
+        "producer": "existing QbarPoint.noncritical_eval_zero",
+        "consumer": "QbarPoint.noncritical_eval_inv",
+        "evidence": "Definitions line 37 uses it to prove all membership-proof variants of eval 0=0 in the genuine f=0 case; lines 38-40 complete the source inverse evaluation proof."
+      },
+      {
+        "producer": "QbarPoint.noncritical_eval_inv",
+        "consumer": "inv_spec_of_ramIdx",
+        "evidence": "Definitions line 209 rewrites actual inverse evaluation in the order-zero/unit value branch."
+      },
+      {
+        "producer": "inv_spec_of_ramIdx plus exact noncriticalInverseRamification",
+        "consumer": "mob_spec",
+        "evidence": "Theorems parent lines 104-108 project both value and ramification equalities, then rewrite the actual non-affine composite target with hv₂ and he₂."
+      },
+      {
+        "producer": "mob_spec",
+        "consumer": "noncriticalElementaryCompositionRamification",
+        "evidence": "Theorems parent lines 122-123 use all three projected results for actual mob constructor."
+      }
+    ],
+    "forced_reference": false,
+    "qualification": "The generic eval_inv helper retains its source f=0 branch. Its application under transcendence is to a nonzero intermediate; this is a real source helper dependency, not a claim that the parent function is identically zero or that the zero branch is dynamically reached.",
+    "all_new_helpers_consumed": true,
+    "consumer_ledger": "/tmp/p2m-noncritical-elementary-next-20261114/source-consumer.json",
+    "helper_consumer_assessment": "All declared helper outputs have direct proof consumers: evaluation helpers; point-map computations; derivative criterion; root multiplicity; transcendental transport; degree-one index; invPt; affine/non-affine decompositions; order/value expansions; conditional inverse; poly_spec; mob_spec. No unused dummy have/let reference was found."
+  },
+  "source_fidelity": {
+    "status": "pass_administrative_transport_only",
+    "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "manifest": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json:166",
+    "local_reference_hashes_all_match_ledger": true,
+    "fresh_pinned_upstream_hashes_all_match": true,
+    "fresh_pin_evidence": "/tmp/p2m-noncritical-elementary-shape-20261114/pin-check.json",
+    "proof_body_comparison": "Read side by side with pinned Point.eval_mul/eval_congr/eval_inv, NoncriticalBasic.eval_aeval and order/value unfoldings, ElemMap computation/derivative lemmas, and NoncriticalElem rootMultiplicity/poly/mob/applyK proofs. Source proof structure and side conditions are preserved.",
+    "adaptations": [
+      "Namespaces and Qbar qualification",
+      "Actual M.K, M/hDVR ramIdx parameter transport",
+      "Existing P.ord/ord_eq_placeOrd bridge",
+      "inv_spec value-proof projection with exact second conjunct supplied as explicit child, avoiding Definitions importing Open Theorems"
+    ],
+    "novel_mathematical_proof_beyond_source_reuse": false,
+    "headers_preserved": true,
+    "license_notice": "All candidate files preserve source copyright, authors, and Apache 2.0 release notice.",
+    "license_metadata_note": "Pinned upstream LICENSE URL returns 404; the full pinned Git tree has no LICENSE/COPYING/NOTICE paths. Thus source notices are verified but no standalone upstream license text is available in the pinned repository. No publication is performed.",
+    "license_tree_evidence": "/tmp/p2m-noncritical-elementary-shape-20261114/license-tree.json"
+  },
+  "dependency_and_scope": {
+    "status": "pass",
+    "definitions_sorry_count": 0,
+    "definitions_direct_or_transitive_theorems_imports": [],
+    "local_import_closure_modules": 11,
+    "import_cycles": [],
+    "missing_local_modules_under_candidate_overlay": [],
+    "excluded_imports": [],
+    "curve_derivation_imports": [],
+    "runtime_Belyi_import": false,
+    "full_Mathlib_import": false,
+    "free_D_or_arbitrary_order_value_map_law_record": false,
+    "hidden_parent_restatement": false,
+    "parent_restatement_as_child": false,
+    "required_integration_order": [
+      "Previous draft Def_FermatNoncriticalRamificationPositive",
+      "This Def_FermatNoncriticalElementarySource",
+      "Three Open leaves",
+      "Replacement parent"
+    ],
+    "size_assessment": "218-line Definitions source assembly, 128-line parent, 26/27/28-line Open leaves are manageable static modules. Source scopes are concrete and separated. Compilation resource behavior is unknown."
+  },
+  "findings": [
+    {
+      "severity": "info",
+      "category": "remaining-proof-work",
+      "message": "Exactly three actual mathematical leaves remain admitted. Source assembly is conditionally complete; no theorem/parent completion or axiom pass may be claimed."
+    },
+    {
+      "severity": "metadata_note",
+      "category": "source-license-packaging",
+      "message": "Apache 2.0 source notices retained and pinned files verified; standalone upstream license text absent at pinned commit. This is an upstream packaging/provenance limitation, not a mathematical shape defect."
+    }
+  ],
+  "required_root_followup": "Main agent must integrate in dependency order and run MCP-CI leaf/Checks-Axioms/ImportAudit/Act1Scene1/AxiomAudit acceptance with actual stable workspace. Static review provides no compilation/axiom/resource receipt.",
+  "writes": {
+    "only_task_directory": "/tmp/p2m-noncritical-elementary-shape-20261114",
+    "main_workspace_edited": false,
+    "draft_inputs_edited": false,
+    "cache_edited": false,
+    "network": "Read-only fresh pinned raw-source and tree requests; no external write."
+  }
+}

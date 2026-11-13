@@ -1,0 +1,11 @@
+[{"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K) (h : ψ ∈ ↑x.P) {g : ℚ[X]},\n      g ≠ 0 →\n        x.P.ord ((Polynomial.aeval ψ) g) =\n          AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ x.P *\n            ↑(Polynomial.rootMultiplicity (x.eval ψ h)\n                (Polynomial.map (Algebra.algebraMap ℚ AbcAdaptation.Tripod.Qbar) g))",
+  "name":
+  "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n    ∀ (ψ : ↥M.K),\n      Transcendental ℚ ψ →\n        ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n          ψ ∉ ↑P → ∀ {p : ℚ[X]}, p ≠ 0 → P.ord ((Polynomial.aeval ψ) p) = ↑p.natDegree * P.ord ψ",
+  "name":
+  "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole"},
+ {"type":
+  "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ⁻¹ x.P = AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ x.P",
+  "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification"}]
