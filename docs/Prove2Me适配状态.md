@@ -4,7 +4,6 @@
 
 - `refer/iut/Iut/Tripod/ClassicalAbcOfVariant.lean:30`
 - `refer/iut/Iut/Tripod/ClassicalAbc.lean:307`
-- `refer/iut/Iut/Tripod/GeneralPosition.lean:269`
 - `refer/iut/Iut/Tripod/Main.lean:129`
 - `refer/iut/Iut/Implication/Corollary23.lean:56`
 - `refer/iut/Iut/Tripod/Northcott.lean:183`
@@ -40,7 +39,11 @@
 
 `canonicalCorollary22HighHeightEstimate` 仍需继续拆出推论二点二的共同算术来源、初始 theta 数据、局部理论、所选素数和定理一点一零输入。有限例外集必须识别为来源 `excCore` 与 `K.set ∩ ptLE d` 的交，统一阈值和常数必须分别识别为 `I.threshold cheb` 与 `40*pnt.η+I.B/3`；保留完整三项结论，不以存在某个数值证书代替真实来源。参考工程的真实基本群及缓和基本群构造可从 `ClassicalAbcGenuineCanLift.lean:40` 的特化入口继续追踪，本地还需独立移植并核对相同数据上的消费者。
 
-`statementI_of_statementII` 仍需拆成真实曲线的高度、不同理想与导子比较、紧有界集合传递、非临界 Belyi 映射、覆盖与一般位置定理。可研究用实际 Fermat 曲线及其函数域、点剩余域和分歧判别式估计给出更小的中间节点，但其规范除子高度代表与当前固定数值高度的对应必须显式登记，尚未验收的草稿不能作为已完成分解。参考工程最强入口在源码层仅接收全称 `h312`；其完整外部依赖闭包尚未在本地验收，这不等于已证明 Joshi 字面三点一二与参考变体相接。
+`Fermat.heightNormalization` 仍需把实际点域 `ℚ(u,v)` 与 `ℚ(u^N)` 的高度归一化、幂的高度公式，以及 `[u:v:1]` 与 `[u:1]` 的一致比较接到底层节点；不能把 `(N−3)/N` 系数误换成覆盖次数 `N²` 的倒数。`Fermat.liftDifferent` 仍需拆出实际根的存在性、完整点域的 `N²` 次数界，以及相同扩张上的归一化判别式／导子估计；单用子域判别式单调性不能证明完整点域的上界。
+
+`Fermat.canonicalEstimate` 的后续义务包括固定适当 Fermat 曲线的函数域、处、代数点及其与当前仿射坐标和剩余域的身份，规范层等于 `O(N−3)` 的伴随公式与固定高度代表的比较，以及非临界 Belyi 映射、局部紧性、紧有界像、尖点除子的真实高度和导子、严格次数比比较及按点次数的归纳。适当曲线和除子载体尚未在本平台工作区独立移植；只检查仿射导数会漏掉无穷点，任意点映射搭配自由高度字段也不能替代这些对象。可将具体方程、域生成、处及剩余域等约束写入精确结构，并将其真实存在性单独列为开放节点；不得在定义层导入未证实例或使用自由命题槽位。
+
+参考工程最强入口在源码层仅接收全称 `h312`；其完整外部依赖闭包尚未在本地验收，仍需完成 Joshi 字面三点一二与所需参考变体的精确接合。
 
 ### Joshi 的 3.12 与参考工程变体之间的适配
 

@@ -1,0 +1,178 @@
+{
+  "unit": "Fermat rational image arithmetic; design of the next Belyi layer",
+  "date": "2026-11-13",
+  "status": "uncompiled_draft_not_a_complete_CanonicalEstimate_decomposition",
+  "runtime_import_policy": "Mathlib and independent AbcAdaptation definitions only",
+  "fixed_height": "canonicalHeight p = ((N : Real) - 3) * (Height.logHeight ![u p, v p, 1] / degree p)",
+  "reference_identity": {
+    "iut_file": "refer/iut/Iut/Tripod/GeneralPosition.lean",
+    "iut_file_sha256": "d617a3971667432719a998ac60138cbe8b2395f076898f3572d18bcaa3b86539",
+    "iut_git_commit": null,
+    "reason": "refer/iut has no own .git; a parent-worktree rev-parse is not a reference commit",
+    "genl_commit": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+    "genl_belyiDescent_sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+    "heights_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+    "belyi_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+  },
+  "new_lean_module": "Definitions/Def_FermatRationalImage.lean",
+  "new_open_theorems": [],
+  "closed_candidate_declarations": [
+    {
+      "name": "RationalExpression.imagePoint_fieldOf_le",
+      "full_type": "forall {N : Nat} (phi : RationalExpression) (p : Fermat.Pt N) (hp : phi.Admissible p), Tripod.fieldOf (phi.imagePoint p hp).val <= Fermat.fieldOf p",
+      "source": "Genl/Curves/BelyiDescent.lean:187 fieldOf_belyiPt_le",
+      "consumer": "RationalExpression.imagePoint_degree_le; RationalExpression.imagePoint_conjugateBounds; future DiscCondComparison"
+    },
+    {
+      "name": "RationalExpression.imagePoint_degree_le",
+      "full_type": "forall {N : Nat} (phi : RationalExpression) (p : Fermat.Pt N) (hp : phi.Admissible p), Tripod.deg (phi.imagePoint p hp).val <= Fermat.degree p",
+      "source": "Genl/Curves/BelyiDescent.lean:372-374",
+      "consumer": "future compactly bounded Belyi-image node, preserving the original degree bound d"
+    },
+    {
+      "name": "exists_extend_embedding",
+      "full_type": "forall {F1 F2 : IntermediateField Rat Qbar} (h : F1 <= F2) {E : Type} [Field E] [IsAlgClosed E] (tau : F1 ->+* E), exists tau' : F2 ->+* E, forall a : F1, tau' (IntermediateField.inclusion h a) = tau a",
+      "source": "Genl/Curves/BelyiDescent.lean:71 exists_extend_ringHom",
+      "consumer": "RationalExpression.imagePoint_conjugateBounds"
+    },
+    {
+      "name": "RationalExpression.imagePoint_conjugateBounds",
+      "full_type": "forall {N : Nat} (phi : RationalExpression) (p : Fermat.Pt N) (hp : phi.Admissible p) {E : Type} [NormedField E] [IsAlgClosed E] {c : Real}, phi.ConjugateBounds p E c -> forall tau : Tripod.fieldOf (phi.imagePoint p hp).val ->+* E, abs (Real.log (norm (tau (Tripod.gen (phi.imagePoint p hp).val)))) <= c and abs (Real.log (norm (tau (Tripod.gen (phi.imagePoint p hp).val) - 1))) <= c",
+      "source": "Genl/Curves/BelyiDescent.lean:356-371",
+      "consumer": "future compactly bounded Belyi-image node, after local bounds on the full Fermat point field"
+    }
+  ],
+  "required_foundation_ports": [
+    {
+      "id": "proper_fermat_model",
+      "status": "not_implemented_not_a_Lean_node",
+      "required_concrete_carrier": "The smooth proper normalization of U^N+V^N=W^N over Rat, N>3; a fixed function field of Rat[U,V]/(U^N+V^N-1), not an arbitrary Curve parameter",
+      "source": [
+        "Belyi.CurveField.IsCurveField and Place/QbarPoint actual import closures",
+        "Genl/Curves/Theory.lean:57-105",
+        "Genl/Curves/Covering.lean:97-180"
+      ],
+      "required_results": [
+        "coordinate ring is a geometrically integral domain",
+        "the proper Fermat curve is smooth for N>0 in characteristic zero",
+        "function-field constant field is Rat",
+        "affine QbarPoint identity with the existing Fermat.Pt N",
+        "residue-field equality with Rat(u,v)",
+        "degree(K_F)=N*(N-3)",
+        "adjunction omega_F is O_F(N-3)",
+        "bounded discrepancy of true canonical divisor height from the fixed canonicalHeight"
+      ],
+      "consumers": [
+        "noncritical_belyi",
+        "local_compact_subsequence",
+        "cusp_height_comparison",
+        "strict_q_height_comparison",
+        "disc_cond_comparison"
+      ]
+    },
+    {
+      "id": "local_algebraic_closure",
+      "status": "not_implemented_not_a_Lean_node",
+      "required_concrete_carrier": "Heights' normed algebraic closure PadicAlgCl p of Q_p, with its algebraically closed normed-field structure; Mathlib-only workspace currently has no matching PadicAlgCl module",
+      "source": [
+        "Heights.Curve.Compactness",
+        "Heights.Local.Bounded",
+        "Genl/Curves/Theory.lean:204-230"
+      ],
+      "consumers": [
+        "local_compact_subsequence",
+        "conjugate_bounds_to_valuation_bounds"
+      ]
+    },
+    {
+      "id": "divisor_height_conductor",
+      "status": "not_implemented_not_a_Lean_node",
+      "required_concrete_carrier": "Actual divisors on the fixed proper Fermat function field; cuspDivisor(phi); Weil divHeight(E); coordinate-ring generator conductor logCondOf(G). No supplied Pt->Real height or conductor field is permitted",
+      "source": [
+        "Belyi.CurveField.BelyiRelation",
+        "Belyi.CurveField.CoordRing",
+        "Heights.Curve.CondDivisor",
+        "Heights.Curve.ModelChange",
+        "Heights.Curve.CondHeight"
+      ],
+      "consumers": [
+        "cusp_height_comparison",
+        "strict_q_height_comparison",
+        "disc_cond_comparison"
+      ]
+    }
+  ],
+  "planned_precise_geometric_nodes": [
+    {
+      "id": "noncritical_belyi",
+      "status": "type_design_only_requires_fixed_proper_fermat_model",
+      "intended_type": "forall (N : Nat), 3 < N -> forall T : Finset (Place (ProperFermat.functionField N)), exists phi : ProperFermat.functionField N, IsBelyi phi and forall P in T, P notin belyiCusps phi",
+      "source": "Genl/Curves/BelyiDescent.lean:269; Belyi.CurveField.exists_isBelyi_notMem_belyiCusps; Noncritical Belyi Maps Theorem 2.5",
+      "consumer": "compact_belyi_image",
+      "fidelity_requirement": "IsBelyi must be the genuine transcendence/ramification condition on all proper places, including infinity; no affine Jacobian-only surrogate"
+    },
+    {
+      "id": "local_compact_subsequence",
+      "status": "type_design_only_requires_proper_points_and_local_closure",
+      "intended_type": "forall N d (xs : Nat -> Fermat.Pt N), (forall n, degree (xs n) <= d) -> exists (s : Nat -> Nat), StrictMono s and exists T : Finset (Place (ProperFermat.functionField N)), forall phi, phi != 0 -> phi != 1 -> (forall P in T, phi and inverse(phi) and inverse(phi-1) are regular at P) -> exists C : Real, eventually n, phi is evaluable at xs(s n), its value is not 0 or 1, and all its images under embeddings of fieldOf(xs(s n)) into PadicAlgCl 2 and Complex satisfy both absolute-log bounds with C",
+      "source": "Heights.Curve.exists_subseq_bounded; Genl/Curves/BelyiDescent.lean:264-282",
+      "consumer": "compact_belyi_image",
+      "fidelity_requirement": "Must include all conjugate embeddings, not a selected embedding; the proper compactification is needed because u or v may diverge"
+    },
+    {
+      "id": "compact_belyi_image",
+      "status": "blocked_on_two_previous_geometric_nodes_and_local_valuation_bridge",
+      "intended_output": "A StrictMono subsequence, a genuine Belyi phi, its concrete RationalExpression representative, a valuation-bounded Tripod.CompactlyBounded K, an eventual Admissible proof for the selected points, membership of every selected imagePoint in K.set, and imagePoint degree <= d",
+      "sources": [
+        "Genl/Curves/BelyiDescent.lean:283-312 and 356-374",
+        "refer/iut/Iut/Tripod/GeneralPosition.lean:177-220"
+      ],
+      "consumers": [
+        "future failure-locus contradiction from StatementII"
+      ],
+      "implemented_arithmetic_edges": [
+        "imagePoint_fieldOf_le",
+        "imagePoint_degree_le",
+        "imagePoint_gen_eq",
+        "imagePoint_conjugateBounds"
+      ]
+    },
+    {
+      "id": "cusp_height_comparison",
+      "status": "type_design_only_requires_divisor_height_conductor_port",
+      "intended_type": "forall N>3 and genuine Belyi phi on the fixed proper Fermat curve, exists C : Real, forall p in the admissible affine open, abs (canonicalHeight p + divHeight (cuspDivisor phi) p - Tripod.htCan (imagePoint phi p)) <= C",
+      "source": "Genl/Curves/BelyiDescent.lean:215-237 divHeight_logCanon_add_cusp and 313-315",
+      "consumer": "future failure-locus contradiction from StatementII",
+      "fidelity_requirement": "Must consume the fixed-height/canonical-divisor identification from proper_fermat_model; hE is the genuine divHeight(cuspDivisor phi), never an arbitrary function or the definition imageHeight-canonicalHeight"
+    },
+    {
+      "id": "strict_q_height_comparison",
+      "status": "type_design_only_requires_divisor_height_conductor_port",
+      "intended_type": "forall N>3, genuine Belyi phi, and q : Real, (cuspDivisor phi).degree / (N*(N-3) : Real) < q -> exists C : Real, forall p, divHeight (cuspDivisor phi) p <= q * canonicalHeight p + C",
+      "source": "Genl/Curves/BelyiDescent.lean:321-327; Heights.Curve.divHeight_le_mul",
+      "consumer": "future contradiction with tolerance delta=epsilon/(1+q*(1+epsilon))",
+      "fidelity_requirement": "Strict inequality is essential; equality at the degree ratio is not permitted. q positivity follows from effectiveness of the true cusp divisor and degree(K)>0"
+    },
+    {
+      "id": "disc_cond_comparison",
+      "status": "type_design_only_requires_divisor_height_conductor_port",
+      "intended_type": "For the actual coordinate-ring generator model G_E of the complement of E=cuspDivisor(phi), there exist constants C1,C2 independent of p such that Tripod.logDiff(imagePoint p)+Tripod.logCond(imagePoint p) <= Fermat.logDiff p + logCondOf G_E p + C1, and logCondOf G_E p <= divHeight E p + C2",
+      "source": "Genl/Curves/BelyiDescent.lean:316-320 and 397-445; Heights.Different.logDisc_add_cond_le; Heights.Curve.logCondOf_le_divHeight",
+      "consumer": "future failure-locus contradiction from StatementII",
+      "fidelity_requirement": "Normalize every discriminant and conductor by its actual point-field degree and use the concrete inclusion from imagePoint_fieldOf_le"
+    }
+  ],
+  "parent_status": {
+    "CanonicalEstimate": "still open, unchanged",
+    "complete_new_parent_solution": false,
+    "reason": "A truthful Belyi/cusp/strict-q layer needs the fixed proper curve and genuine divisor/height carriers; this unit provides only their concrete pointwise arithmetic edges",
+    "recommended_next_unit": "Port the fixed proper Fermat function-field/Place/QbarPoint and affine identification, then freeze and compile genuine Belyi/cusp types before introducing new open geometric nodes"
+  },
+  "verification": {
+    "compiled": false,
+    "mcp_ci_called": false,
+    "main_workspace_edited": false,
+    "read_back_written": false
+  },
+  "integration_status": "Next-unit design evidence only. Not a compiled or published decomposition."
+}

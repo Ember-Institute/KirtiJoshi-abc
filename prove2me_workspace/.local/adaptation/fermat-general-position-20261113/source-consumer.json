@@ -1,0 +1,93 @@
+{
+  "status": "Main-agent exclusive MCP-CI passed; independent mathematical shape audit and 19 blind trilingual readbacks complete; private platform reduction SKETCH_ACCEPTED; three children remain Open.",
+  "draft_provenance": "/tmp/p2m-general-position-split-20261113",
+  "files": [
+    "Definitions/Def_TripodFermatComposition.lean",
+    "Definitions/Def_TripodFermatInputs.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_canonicalEstimate.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_heightNormalization.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_liftDifferent.lean",
+    "Solutions/Checks_TripodFermatComposition.lean",
+    "Solutions/Sol_TripodStatementI.lean",
+    "Solutions/Checks_TripodFermatReduction.lean"
+  ],
+  "source_reference_root": {
+    "path": "refer/iut",
+    "git_checkout_metadata_present": false,
+    "do_not_infer_commit_from_parent_repo": true,
+    "GeneralPosition.lean_sha256": "d617a3971667432719a998ac60138cbe8b2395f076898f3572d18bcaa3b86539"
+  },
+  "Genl_rev": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+  "Heights_rev": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+  "Belyi_rev": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "runtime_imports_exclude": [
+    "Iut",
+    "Genl",
+    "Heights",
+    "Belyi"
+  ],
+  "source_consumer": [
+    {
+      "predicate": "AbcAdaptation.Tripod.Fermat.HeightNormalization",
+      "theorem": "AbcAdaptation.Tripod.Fermat.heightNormalization",
+      "sources": [
+        "Genl/Curves/Covering.lean:177",
+        "Genl/Curves/Theory.lean:60"
+      ],
+      "fidelity": "New concrete adaptation consequence, not a renamed source theorem. Fixed normalized projective height of [u:v:1] over Q(u,v), explicit tower field inclusion and Nth-power height normalization must be proved.",
+      "consumer": "AbcAdaptation.Tripod.statementI_of_fermat_children"
+    },
+    {
+      "predicate": "AbcAdaptation.Tripod.Fermat.LiftDifferent",
+      "theorem": "AbcAdaptation.Tripod.Fermat.liftDifferent",
+      "sources": [
+        "Genl/Curves/Covering.lean:97",
+        "Genl/Curves/Covering.lean:425",
+        "Genl/Curves/Covering.lean:460"
+      ],
+      "fidelity": "Actual Fermat lift with full point field, degree <= N^2*deg(z), normalized discriminant <= logDiff(z)+logCond(z)+C_N. Constant independent of z. Exact conductor/tower comparison is owned by this Open child.",
+      "consumer": "AbcAdaptation.Tripod.statementI_of_fermat_children"
+    },
+    {
+      "predicate": "AbcAdaptation.Tripod.Fermat.CanonicalEstimate",
+      "theorem": "AbcAdaptation.Tripod.Fermat.canonicalEstimate",
+      "sources": [
+        "Genl/Curves/BelyiDescent.lean:248",
+        "Genl/GeneralPosition/TheoremTwoOne.lean:59",
+        "Genl/GeneralPosition/TheoremTwoOne.lean:132",
+        "refer/iut/Iut/Tripod/GeneralPosition.lean:269"
+      ],
+      "fidelity": "StatementII implies the fixed proper Fermat canonical-height representative estimate on bounded-degree points. Owns smoothness, connectedness, adjunction omega=O(N-3), fixed representative comparison, local compactness, noncritical Belyi, degree/discriminant normalization, cusp conductor, strict-q argument and degree induction; these still need explicit next-level nodes.",
+      "consumer": "AbcAdaptation.Tripod.statementI_of_fermat_children"
+    }
+  ],
+  "closed_composition": "AbcAdaptation.Tripod.statementI_of_fermat_children",
+  "platform_target_id": "29d69993-e4b0-483a-8557-835cf1953b08",
+  "parent_statement_changed": false,
+  "parent_deprecation_required": false,
+  "reference_files_sha256": {
+    "Curves_BelyiDescent.lean": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+    "Curves_Covering.lean": "d6ce0f0b014f6f7f97142e357e55efc202b64c6c9fc6365297ef7d0f89a56cbd",
+    "Curves_Theory.lean": "485faa75bfeec0c76c70d8ce37d52192a9b2e2f0cdd1f73c455f1c6345d1dc7a",
+    "GeneralPosition_HeightTheory.lean": "62b3f7aecfaf6bd9c4fe9fabd9fe1bb20e8c1e672559d13c63e0b93b28136457",
+    "GeneralPosition_ProofPackage.lean": "621a65cb71da15f501626d4e28ab69289ba4c92274a2e8c40831d761ea0a7263",
+    "GeneralPosition_TheoremTwoOne.lean": "c933b2f9638a446c7f9de9c8458f714b8fe9140b64fcc5b69c1f364f60aaa257",
+    "ProofPackage.lean": "4eb5c14504bd752e17cd4c953dcb811d29398d1f148f3db304f25af0494f990d"
+  },
+  "upstream_notices": {
+    "Curves_BelyiDescent.lean": "/-\nCopyright (c) 2026 The genl contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The genl contributors\n-/",
+    "Curves_Covering.lean": "/-\nCopyright (c) 2026 The genl contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The genl contributors\n-/",
+    "Curves_Theory.lean": "/-\nCopyright (c) 2026 The genl contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The genl contributors\n-/",
+    "GeneralPosition_HeightTheory.lean": "/-\nCopyright (c) 2026 Christian Merten. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Christian Merten\n-/",
+    "GeneralPosition_ProofPackage.lean": "/-\nCopyright (c) 2026 Christian Merten. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Christian Merten\n-/",
+    "GeneralPosition_TheoremTwoOne.lean": "/-\nCopyright (c) 2026 Christian Merten. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Christian Merten\n-/",
+    "ProofPackage.lean": "/-\nCopyright (c) 2026 The genl contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The genl contributors\n-/"
+  },
+  "adaptation_notice": "The integrated files are new concrete adaptations. The original source notices are retained verbatim in this distributed source ledger, together with pinned revisions and source file hashes.",
+  "platform_child_ids": {
+    "AbcAdaptation.Tripod.Fermat.heightNormalization": "add93f6a-ec47-4b3a-9f2d-1bb35ffc6b66",
+    "AbcAdaptation.Tripod.Fermat.liftDifferent": "5deab000-c437-4bce-aec4-79896e55e593",
+    "AbcAdaptation.Tripod.Fermat.canonicalEstimate": "7037c68a-1315-46ef-91df-2fae1b9d7b0b"
+  },
+  "platform_submission_id": "56564862-bb67-422f-8ee1-92c737191aed"
+}

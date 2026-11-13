@@ -1,0 +1,65 @@
+{
+  "verdict": "PASS_SHAPE_WITH_OPEN_BRIDGES",
+  "concrete_blockers": [],
+  "scope": "Read-only mathematical shape audit; no compilation, no proof-completeness claim, no readback drafts inspected.",
+  "input_versions": {
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodFermatInputs.lean": "099c3a519d2301b4df515a6503ffd62649d62074716e611b6eb9e360a5b5093a",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodFermatComposition.lean": "e0365789a40d166ca194c01310371486e370210660df7b793f7bf86bdd4ec5c7"
+  },
+  "candidates": {
+    "HeightNormalization": {
+      "verdict": "mathematically consistent; adapted concrete consequence rather than a definitional identity",
+      "evidence": [
+        "Def_TripodFermatInputs.lean:25-31 uses L = Q(u,v) and [L:Q]; :62-63 divides Mathlib relative tuple logHeight by [L:Q]. Def_AbcTripod.lean:46,86-87 uses [Q(z):Q] for the relative scalar height.",
+        "Mathlib NumberTheory/Height/NumberField.lean:118-123 expresses relative logarithmic height as a sum over places, :136-140 defines absolute scalar height using the inverse field degree, and :157-158 identifies totalWeight with [K:Q]. Hence the two degree divisions are required, and normalized heights agree across the actual inclusion Q(u^N) <= Q(u,v) (:51-55).",
+        "For N>0 and u^N+v^N=1, nonarchimedean local maxima max(1,|u|,|v|) and max(1,|u|) agree. At archimedean places the former is at most 2^(1/N) times the latter. Thus 0 <= h([u:v:1])-h(u) <= log(2)/N, uniformly in the point and its field degree.",
+        "Since h(u^N)=N*h(u), the candidate error is bounded by ((N-3)/N)*log(2) for N>3. The coefficient (N-3)/N is correct; it is not divided by N^2.",
+        "Geometrically, deg(pi)=N^2, deg(H|F_N)=N and deg(K_F_N)=N(N-3), so deg(K_F_N)/deg(pi^*O(1))=(N-3)/N. This independently checks the coefficient."
+      ],
+      "future_bridge": "Formalize normalized height invariance in the actual field tower, the power formula, and the local tuple-height comparison. No full geometric canonical-divisor theory is needed for this arithmetic comparison of the explicitly defined heights."
+    },
+    "LiftDifferent": {
+      "verdict": "mathematically consistent with Kummer-cover source; uniform C_N and full-point discriminant are appropriate",
+      "evidence": [
+        "Def_TripodFermatInputs.lean:83-87 quantifies C after N and before z, so C is uniform in z and its degree. The discriminant in :58-59 is that of full L=Q(u,v), not Q(u^N).",
+        "For N>0 choose u^N=z and v^N=1-z in Qbar. Since z is neither 0 nor 1, u and v are nonzero, giving the required affine point and exact equality toTripod p=z.",
+        "Q(z) is contained in Q(u,v); adjoining each root increases field degree by at most N. Therefore [Q(u,v):Q] <= N^2*[Q(z):Q], with no irreducibility assumption.",
+        "Curves_Covering.lean:397-399 and :425-431 bounds normalized logDisc of the entire lifted field by base logDisc plus logCond and a constant depending on N. Its :428-431 invokes logDisc_le_of_eq_adjoin on L=y.fieldOf and proves the full Kummer-adjoin field equality.",
+        "The source constant is Cm+kummerConst N (:398-399), independent of point degree. For the concrete tripod the model comparison is fixed, so the candidate uniformity is credible and matches the source arithmetic bound."
+      ],
+      "future_bridge": "Construct the roots and degree bounds, identify the actual full extension with the Kummer-adjoin field, and adapt the normalized discriminant/conductor estimate. Subfield discriminant monotonicity alone would not prove the stated full-field bound."
+    },
+    "CanonicalEstimate": {
+      "verdict": "plausible concrete specialization of the divisor-free consequence; legitimately remains an open child",
+      "evidence": [
+        "For N>3 over characteristic zero, the proper plane curve U^N+V^N=W^N is smooth and geometrically connected, with adjunction K_F_N = O_F_N(N-3) and positive canonical degree N(N-3). Thus the explicit (N-3)*normalized projective height is a canonical-height representative up to O(1).",
+        "Curves_Theory.lean:227 defines divisor-free by D=empty and :238 uses the canonical divisor height in that case. GeneralPosition_TheoremTwoOne.lean:117-126 gives exactly a bounded-degree inequality htCan <= (1+epsilon)*logDiff+O(1) for divisor-free hyperbolic curves.",
+        "Curves_BelyiDescent.lean:248-250 supplies the noncritical-Belyi/compactness proof-package child for that result. The candidate assigns these substantial unproved bridges to CanonicalEstimate rather than silently assuming an arbitrary height or theory.",
+        "Although Pt N contains only the affine open with u,v nonzero, a canonical estimate on the proper Fermat curve restricts to this open. The candidate does not require proving an open-curve log-canonical estimate without its conductor.",
+        "The current concrete StatementII uses normalized scalar height, while the reference tripod height is a divisor height. Curves_BelyiDescent.lean:100 gives their bounded-discrepancy bridge; transferring the compactly bounded set definition and normalized conductor is also future adaptation work, not a contradiction in the target statement."
+      ],
+      "future_bridge": "Relate affine algebraic points and full Q(u,v) point fields to proper-curve points; establish smooth Fermat adjunction and height comparison; adapt concrete StatementII/compactness/conductor data to the reference Belyi descent. These are proof obligations, not prerequisites for accepting the open-node proposition shape."
+    }
+  },
+  "edge_cases": {
+    "N_zero": "Excluded from LiftDifferent and excluded by N>3 from both other candidates. Pt 0 is empty in characteristic zero, but the reduction never relies on this.",
+    "N_one": "LiftDifferent permits N=1; choose u=z,v=1-z, the field equals Q(z), so a nonnegative constant such as zero suffices for the discriminant comparison.",
+    "N_two_three": "LiftDifferent remains valid; canonical estimate and height normalization deliberately require N>3, so nonpositive canonical degree creates no issue.",
+    "d_zero": "The point field is a finite-dimensional extension of Q and is nonzero, so its finrank is positive. The degree<=0 premise in CanonicalEstimate is empty; no hidden division by zero occurs.",
+    "epsilon": "Composition chooses N>3*(1+epsilon)/epsilon, giving a=(N-3)/N>0 and delta=a*(1+epsilon)-1>0. Therefore the use of CanonicalEstimate at delta and division by a are mathematically valid."
+  },
+  "composition": {
+    "verdict": "algebraically coherent conditional assembly",
+    "evidence": [
+      "Def_TripodFermatComposition.lean:21-39 chooses one N depending only on epsilon and invokes CanonicalEstimate at degree bound N^2*d.",
+      "The lower half of the absolute normalization bound gives a*htCan(z)<=canonicalHeight(p)+CN. Combining the canonical and discriminant bounds gives coefficient (1+delta)/a=1+epsilon, exactly as used in :46-64.",
+      "No requirement that the constants be nonnegative is missing: the inequalities and the positive scaling suffice. Constants depend on epsilon,d through N and the respective witnesses, as StatementI permits."
+    ]
+  },
+  "limitations": [
+    "This audit establishes mathematical compatibility of proposition shapes, not that the open children have been proved or that Lean elaboration succeeds.",
+    "The three candidates are concrete adapted consequences; the reference files do not contain their exact formulations verbatim.",
+    "No compilation or MCP-CI was run, as requested."
+  ],
+  "integration_blocked": false
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "Static import inspection, separate from exclusive scheduled compilation",
+  "scope": "Fermat platform Definitions transitive local input modules only; production project unchanged",
+  "imports": {
+    "Definitions/Def_TripodFermatComposition.lean": [
+      "Definitions.Def_TripodFermatInputs"
+    ],
+    "Definitions/Def_TripodFermatInputs.lean": [
+      "Definitions.Def_AbcTripod",
+      "Mathlib.Data.Fin.VecNotation"
+    ],
+    "Definitions/Def_AbcTripod.lean": [
+      "Mathlib.FieldTheory.AlgebraicClosure",
+      "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+      "Mathlib.NumberTheory.Height.NumberField",
+      "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+      "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+      "Mathlib.RingTheory.Radical.NatInt"
+    ]
+  },
+  "forbidden_imports_found": []
+}

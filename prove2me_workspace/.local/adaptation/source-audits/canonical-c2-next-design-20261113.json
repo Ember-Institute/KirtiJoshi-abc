@@ -1,0 +1,133 @@
+{
+  "status": "Draft design and exact arithmetic leaf only; no compile, CI, repository edits, or read-back audit.",
+  "candidate_revision": "canonical-c2-genuine-common-source-v2; may be revised or deprecated; no Joshi/reference identity assumed",
+  "actual_genuine_specialization": {
+    "Pi1": "genuinePi1Theory canLift27",
+    "Tp": "temperedTheory (genuineEtaleData canLift27)",
+    "canLift27_body": "AffOrbicurve.canLift27_of_complex OrbicurveCores.U2.canLift27C",
+    "source": "refer/iut/Iut/Tripod/ClassicalAbcGenuineCanLift.lean:28,40; ClassicalAbcGenuine.lean:28; Anabelian/GenuineEtale.lean:100,111; Anabelian/Tempered.lean:153",
+    "preferred_open_child": "GenuineUniversalConcreteVariant = forall D LT TL QI, Corollary312Variant (concreteVariantData D LT TL QI), with D over modelAG/modelTG of these fixed actual Pi1/Tp",
+    "consumer": "genuineSourceCanonicalC2 -> CanonicalCorollary22HighHeightEstimate -> highHeightEstimate_of_canonical_children",
+    "external_pins": {
+      "pi1": "ca7def953193f861a462aa0831eec8f0a31ff69f",
+      "orbicurve-cores": "61616dcd77fbe45c083a8ebfa7cc80728f86e841",
+      "tempered-fundamental-groups": "2006651f52b70ea2fe3388238c7d9db14d21748f"
+    },
+    "audit_limit": "Reference has actual proof bodies and no free Pi1/Tp hypothesis at this entrance. Independent adaptation and full transitive kernel audit remain outstanding; no reference existence gap is claimed."
+  },
+  "files": {
+    "Definitions/Def_TripodC2FinalArithmetic.lean": "Exact source c2_final statement and full proof; namespace/import-only port; intended independent review unit.",
+    "source-typed-design.lean.txt": "Complete source-typed canonicalInputs, universal predicates, same-source Theorem110 specialization, finite-exception C2 composition; deliberately not an integration module.",
+    "README.md": "Dependencies, intended consumers, and explicit gaps."
+  },
+  "canonical_source": {
+    "height": "finHeight (legendreJ (gen x.1)) / deg x.1",
+    "legendreJ": "256*(lambda^2-lambda+1)^3/(lambda^2*(lambda-1)^2)",
+    "provider": "Iut.Tripod.tripodProviders",
+    "I": "(curveInputs tripodProviders K d <cyclicBoundOdd> <coreFiniteness Pi1> northcottHyp torsionDegreeBound_three' torsionDegreeBound_five' (legendreHeight ...) (twoAdicBound ...) (logCondGe ...) (logCondLe ...)).toCorollary22Inputs",
+    "B": "max (4*K.c) 0",
+    "TK": "cyclicConst K = (2*log(32*torsionConst K.c)+6*K.c+4*log 4)/6",
+    "E": "I.excCore intersect (K.set intersect ptLE d)",
+    "E_finite": "I.excCore_finite",
+    "H": "I.threshold chebyshevBoundExplicit",
+    "H_expanded": "max (max ((10^12)^2) (49+8*max (cyclicConst K) 0+max(4*K.c,0))) (max ((max(4*K.c,0)+11+2*deltaBound d)^4+1) (((60*deltaBound d)^2*(2*deltaBound d+4))^4+1))",
+    "C": "40*primeCountingBoundExplicit.eta+I.B/3 = 40*primeCountingBoundExplicit.eta+max(4*K.c,0)/3",
+    "eta_witness": "Source Classical.choice (primeCountingBound_of_exists primeCountingHyp_holds); no fabricated numerical value.",
+    "deltaBound": "552960*d",
+    "epsilonE": "(60*delta)^2*log(2*delta*h)/sqrt h",
+    "consumers": [
+      "CanonicalCorollary22HighHeightEstimate",
+      "highHeightEstimate_of_canonical_children",
+      "statementII_of_children"
+    ]
+  },
+  "selected_unit": {
+    "declaration": "AbcAdaptation.Tripod.CanonicalC2.c2_final",
+    "source": "refer/iut/Iut/Implication/Corollary22.lean:214",
+    "fidelity": "exact_source_type_and_proof_except_namespace_and_imports",
+    "reason": "Closed elementary arithmetic unit, with every nontrivial coefficient retained. Does not replace or certify the common theta-data source.",
+    "actual_argument_map": {
+      "h": "auxiliaryHeight x = I.h x",
+      "r": "sqrt h",
+      "lg": "log(2*deltaBound d*h)",
+      "delta": "deltaBound d",
+      "ell": "selected prime ell cast to real",
+      "dm": "X.dmod cast to real",
+      "e": "inv.eStar cast to real",
+      "D": "inv.logDtpd",
+      "F": "inv.logFtpd",
+      "LD": "logDiff x",
+      "LC": "logCond x",
+      "Q": "X.qPilot.logQ = L.heightOther 2 ell",
+      "B": "I.B=max(4*K.c,0)",
+      "eta": "primeCountingBoundExplicit.eta",
+      "epsilon": "epsilonE(deltaBound d,h)"
+    },
+    "consumer": "ported I.c2 final call, after exact source P1-P6 preparation and same-X theorem110"
+  },
+  "common_source_chain": [
+    {
+      "source": "refer/iut/Iut/Tripod/Main.lean:86",
+      "producer": "concreteThetaDataExistence'",
+      "output": "Actual D from same curve x and ell; LT=concreteLocalTheory D.Kt; actual TL, QI, TA=towerArithmetic_of_towerLocalHyp ...",
+      "consumer": "ConcreteThetaDataExistence.toThetaDataExistence"
+    },
+    {
+      "source": "refer/iut/Iut/Concrete/Main.lean:68",
+      "producer": "ConcreteThetaDataExistence.toThetaDataExistence",
+      "output": "X=concreteVariantData D LT TL QI; inv=TL.invariants QI; cert=TA.certificate; est=TA.localEstimate; matches ell,dmod,logQ,diff,cond",
+      "consumer": "Corollary22Inputs.c2"
+    },
+    {
+      "source": "refer/iut/Iut/Concrete/ThetaRegion.lean:299",
+      "producer": "concreteVariantData",
+      "output": "data=D, qPilot=QI.qPilot, rhsData=TL.rhsData; concrete qPilot weights=inertDeg(D.F,w)/finrank(Q,D.F)",
+      "consumer": "h312 and inv.theorem110 on identical X"
+    },
+    {
+      "source": "refer/iut/Iut/Concrete/Invariants.lean:309",
+      "producer": "ThetaLocalData.invariants",
+      "output": "emod=D.dmod; logDtpd=actual tripodal field different; logFtpd=actual conductor; dst=actual distinguished primes; logDK=LT.logDK",
+      "consumer": "TA.certificate and TA.localEstimate and theorem110"
+    },
+    {
+      "source": "refer/iut/Iut/Implication/Theorem110.lean:234",
+      "producer": "Theorem110Invariants.theorem110",
+      "output": "(1/6)*X.qPilot.logQ <= (1+20*X.dmod/X.ell)*(inv.logDtpd+inv.logFtpd)+20*(inv.eStar*X.ell+pnt.eta)",
+      "consumer": "c2_final h110"
+    },
+    {
+      "source": "refer/iut/Iut/Implication/LogVolumeBound.lean:204",
+      "producer": "LocalEstimate.rhs_le",
+      "output": "X.rhsData.rhs <= sum_i(sum_p in inv.dst capsuleBound(card capsule_i,p)+card capsule_i*log pi)/procession.length",
+      "consumer": "theorem110 h312.trans hsum"
+    },
+    {
+      "source": "refer/iut/Iut/Cor312/Statement.lean:89",
+      "producer": "Corollary312Variant definition",
+      "output": "X.qPilot.lhs <= X.rhsData.rhs; lhs=-X.qPilot.logQ/(2*X.ell); rhs=processionVol(thetaHull)",
+      "consumer": "theorem110 h312', with same X"
+    }
+  ],
+  "universal_children": {
+    "literal_universal": "forall X : Corollary312VariantData (modelAG Pi1) (modelTG Pi1 Tp), Corollary312Variant X",
+    "actual_tripod_consumer": "forall D LT TL QI, Corollary312Variant (concreteVariantData D LT TL QI)",
+    "relation": "Literal universal implies actual concrete-family universal by direct instantiation.",
+    "no_free_restriction_P": true,
+    "unproved": true
+  },
+  "remaining_gaps": [
+    "Independent ports of actual source typed data and constructors; none of the source Iut/Genl carrier imports is proposed for current workspace.",
+    "Independently port the existing genuine source models from canLift27/genuineEtaleData/genuinePi1Theory/temperedTheory and audit their pinned external transitive proof dependencies. Reference source constructs them; no reference-model existence hypothesis remains at the strongest entrance.",
+    "Proof of the fixed universal 3.12 variant or its precise actual concrete-family restriction.",
+    "Exact C2 preparation/prime-bound port and same-source matching of all numeric arguments.",
+    "Concrete transport of source Pt/CompactlyBounded/height/different/conductor to existing AbcAdaptation.Tripod types."
+  ],
+  "nonclaims": [
+    "Canonical C2 is not closed.",
+    "No theorem proves universal 3.12 here.",
+    "No project-wide compilation or axiom audit receipt exists for this draft.",
+    "No fake source witnesses, arbitrary Prop slots, freely chosen height, or standalone opaque numerical data bundle was introduced."
+  ],
+  "integration_status": "Next-unit design evidence only. Not a compiled or published decomposition."
+}
