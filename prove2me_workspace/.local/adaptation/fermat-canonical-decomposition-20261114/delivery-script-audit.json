@@ -1,0 +1,122 @@
+{
+  "review": "canonical_delivery_scripts_read_only_review",
+  "date": "2026-11-14",
+  "verdict": "No functional blocker detected in reviewed delivery structure; one stale evidence phrase corrected in a temp-only copy. Main-agent integration and CI evidence are still required before execution.",
+  "checks": {
+    "delivery_common.py": {
+      "ast_parse": true,
+      "bytecode_compile_in_memory": true,
+      "sha256": "b26cdba95b65a1f1751dd37dcd50a29e3b88326d473e01c8fe198dd2f81efa36"
+    },
+    "finalize.py": {
+      "ast_parse": true,
+      "bytecode_compile_in_memory": true,
+      "sha256": "85465cf4ecc101430938384442d1181cd847c975edda065fa77070522c3396c1"
+    },
+    "platform_publish.py": {
+      "ast_parse": true,
+      "bytecode_compile_in_memory": true,
+      "sha256": "e88d808c852ae223b2f41ab9994ed8dcab4123237825c12a7067d04aa8b889e5"
+    },
+    "existing_graph_compatibility": {
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/root-graph-after.json",
+      "derived_counts": {
+        "accepted_reductions": 12,
+        "published_children": 43,
+        "dependency_edges": 45
+      }
+    },
+    "pending_paragraph_transformation": {
+      "matches_actual_current_doc": true,
+      "unrelated_paragraphs_byte_preserved": true,
+      "replay_idempotent": true,
+      "preserved_debts": [
+        "canonicalDivisorExists",
+        "planeAdjunctionExists",
+        "cuspGeneratorsExists"
+      ],
+      "new_open_debt": "coordinatePoleMultiplicity_eq",
+      "only_temp_copy_modified": "/tmp/p2m-canonical-delivery-review-20261114/pending-sandbox/docs/Prove2Me适配状态.md"
+    },
+    "parent_signatures": {
+      "infinityDivisorExists": {
+        "signature_equal_byte_for_byte": true
+      },
+      "canonicalDivisorDegree": {
+        "signature_equal_byte_for_byte": true
+      }
+    },
+    "trilingual_readbacks": {
+      "declarations": 9,
+      "per_definition_selected_declarations": 3,
+      "child_and_parent_selections_unique": true
+    }
+  },
+  "api_field_evidence": [
+    {
+      "kind": "publication job",
+      "source": "prove2me_workspace/.local/adaptation/fermat-noncritical-20261114/def-FermatNoncriticalFunctions-67a8753d-bf29-4562-bf56-41ead160fbb9-result.json",
+      "fields": [
+        "id",
+        "theorem_id",
+        "status=PUBLISHED",
+        "visibility=private"
+      ]
+    },
+    {
+      "kind": "verify submit/result",
+      "source": "prove2me_workspace/.local/adaptation/platform-tripod-20261113/rational-to-tripod-verify-{submit,result}.json",
+      "submit_id_field": "submission_id",
+      "result_id_field": "id",
+      "result_target_field": "theorem_id",
+      "result_status": "SKETCH_ACCEPTED"
+    },
+    {
+      "kind": "theorem detail",
+      "source": "prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/platform-after-riemannRochFiniteDimensional.json",
+      "fields": [
+        "theorem_id",
+        "theorem_name",
+        "formal_statement",
+        "visibility=private",
+        "mathlib_rev",
+        "status=Proved"
+      ]
+    }
+  ],
+  "verified_boundaries": [
+    "Exactly two Definitions, one published Open coordinatePoleMultiplicity_eq child, and two existing parent targets.",
+    "infinityDivisorExists requires ACCEPTED and platform Proved; canonicalDivisorDegree requires SKETCH_ACCEPTED and platform Open.",
+    "Uploader reuses the established publication/verification protocol and blocks blind POST replay after a transport-ambiguous intent.",
+    "Finalizer compares before/after formal_statement for both existing parents and exact source hashes through preflight.",
+    "Finalizer requires canonical reduction dependency set to be exactly the single new child; no root-closure claim.",
+    "Finalizer pending update preserves canonicalDivisorExists, planeAdjunctionExists and cuspGeneratorsExists.",
+    "Old novel Fermat common-pole research file is excluded; no Act2 file is introduced by the file list.",
+    "Required source, solution, elaborated-type, old-type, axiom and production-gate receipt checks remain from the noncritical delivery model."
+  ],
+  "findings": [
+    {
+      "severity": "low",
+      "file": "/tmp/p2m-canonical-delivery-20261114/finalize.py",
+      "line": 246,
+      "issue": "plan-checkbox-evidence reason still says three-child decomposition, copied from noncritical delivery.",
+      "fix": "/tmp/p2m-canonical-delivery-review-20261114/minimal-fix.patch",
+      "corrected_copy": "/tmp/p2m-canonical-delivery-review-20261114/finalize.py"
+    }
+  ],
+  "execution_prerequisites": [
+    "At review time the canonical evidence directory does not yet exist in the main workspace; preflight cannot pass until root integrates and supplies validation/CI/evidence artifacts.",
+    "Source/manifest/receipt checks were reviewed statically against the existing model; no fabricated successful canonical receipt or platform result was used.",
+    "The expected-from-unchanged-baseline graph counts are documentary only; actual counts are derived from graph/frontier evidence."
+  ],
+  "actions": {
+    "lean_compilation": false,
+    "MCP_CI": false,
+    "network_calls": false,
+    "publication": false,
+    "delivery_scripts_executed": false,
+    "repo_edits": false,
+    "original_script_edits": false,
+    "writes_limited_to": "/tmp/p2m-canonical-delivery-review-20261114"
+  }
+}

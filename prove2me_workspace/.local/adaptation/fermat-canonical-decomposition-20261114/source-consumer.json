@@ -1,0 +1,180 @@
+{
+  "unit": "Revised canonical decomposition with independent finite-support infinity unit and one concrete Open Fermat pole child",
+  "date": "2026-11-14",
+  "status": "uncompiled_candidate_with_exactly_one_new_Open_child",
+  "reference_commits": {
+    "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "heights": "721496ca4c158e511d25d8ccf6bfe8503eda73c1"
+  },
+  "reference_hashes": {
+    "Belyi_CurveField_Canonical.lean": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+    "Belyi_CurveField_RamIdx.lean": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+    "Heights_Curve_TupleHeight.lean": "63cbbb457a56a44b9c638bdcaf0a724f78a7830fa094a0c6ffda0681ac8485a2"
+  },
+  "minimal_existing_proof_infinity_unit": {
+    "files": [
+      "Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean"
+    ],
+    "dependency": "Existing Def_FermatFunctionDivisors only; no new conditional-composition file and no Open child imported.",
+    "new_sorry_count": 0,
+    "mathematics": "Use existing actual Place.finite_setOf_ord_ne_zero for u and v; union the finite sets; restrict to support of max(actual pole u, actual pole v); construct Finsupp.ofSupportFinite.",
+    "source": "Existing Belyi ZerosPoles finite-support proof and Divisor Finsupp construction, pinned at 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8; coefficient is the already fixed Heights tuple-divisor convention A_[1,u,v].",
+    "does_not_use": [
+      "Fermat equation",
+      "common pole orders",
+      "fiber-degree theorem",
+      "canonical divisor existence",
+      "plane adjunction",
+      "Act2"
+    ]
+  },
+  "proof_nodes": [
+    {
+      "name": "coordinateInfinityDivisor",
+      "status": "closed_existing_finite_support_adaptation",
+      "content": "Actual Finsupp with fixed max(pole_u,pole_v) coefficient at every proper place.",
+      "source": "Existing Place.finite_setOf_ord_ne_zero and Finsupp.ofSupportFinite pattern; Heights tuple-divisor coefficient convention.",
+      "consumers": [
+        "coordinateInfinityDivisor_apply",
+        "coordinateInfinityData"
+      ]
+    },
+    {
+      "name": "coordinateInfinityDivisor_apply",
+      "status": "closed_definitional_evaluation",
+      "source": "Finsupp.ofSupportFinite actual coefficient evaluation",
+      "consumers": [
+        "coordinateInfinityData.coefficient"
+      ]
+    },
+    {
+      "name": "coordinateInfinityData",
+      "status": "closed_existing_finite_support_adaptation",
+      "source": "Existing InfinityDivisorData exact coefficient contract",
+      "consumers": [
+        "infinityDivisorExists"
+      ]
+    },
+    {
+      "name": "coordinatePoleMultiplicity_eq",
+      "status": "OPEN_NEW_FERMAT_SPECIALIZATION",
+      "module": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+      "type": "forall {N} (M:Model N) (hDVR:PlacesDiscrete M), 0<N -> forall P:Place M.K, poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P",
+      "source_status": "No pinned source proof claimed. This is the exact additional Fermat identity needed by the next composition.",
+      "consumers": [
+        "canonicalDivisorDegree supplies it to canonicalDegree_of_coordinatePoles_and_actualAdjunction"
+      ],
+      "not_parent_renaming": "No canonical divisor, degree, adjunction, height, or target estimate occurs. It states only actual coordinate pole multiplicities at each fixed proper place.",
+      "all_cases": "Quantifies over every place, including regular places, zero-coordinate cases and infinity."
+    },
+    {
+      "name": "infinityDivisor_eq_polar_u_of_coordinatePoles",
+      "status": "closed_conditional_coefficient_calculation",
+      "premise": "The explicit concrete equality forall P, actual poleMultiplicity u P = actual poleMultiplicity v P.",
+      "content": "For the actual fixed InfinityDivisorData H, max of the two equal pole multiplicities is the actual polar-u coefficient.",
+      "consumers": [
+        "infinityDivisor_degree_of_coordinatePoles"
+      ],
+      "imports_Open": false
+    },
+    {
+      "name": "infinityDivisor_degree_of_coordinatePoles",
+      "status": "closed_conditional_existing_fiber_degree_composition",
+      "premise": "The same actual all-place equality.",
+      "source": "Existing source-backed functionPoleDivisor_degree and actual Model.degree_u.",
+      "content": "H=polar(u), so actual divisorDegree(H)=finrank Rat(u) M.K=N.",
+      "consumers": [
+        "canonicalDegree_of_coordinatePoles_and_actualAdjunction"
+      ],
+      "imports_Open": false
+    },
+    {
+      "name": "canonicalDegree_of_coordinatePoles_and_actualAdjunction",
+      "status": "closed_conditional_existing_degree_law_composition",
+      "premises": [
+        "The exact actual all-place coordinate-pole equality",
+        "The original actual PlaneAdjunctionData J"
+      ],
+      "source": "Existing source divisor degree add/nsmul laws, principal degree zero, and actual fiber degree; original J.coefficient.",
+      "content": "Sum the actual identity K.D=(N-3)H+functionDivisor(J.r). Use actual degree(H)=N and actual principal degree zero.",
+      "consumers": [
+        "canonicalDivisorDegree"
+      ],
+      "imports_Open": false
+    }
+  ],
+  "parent_replacements": [
+    {
+      "name": "infinityDivisorExists",
+      "original_signature_preserved_byte_for_byte": true,
+      "proof": "Nonempty.intro coordinateInfinityData",
+      "sorry_dependency_added": false,
+      "consumers": [
+        "existing arithmeticDivisorChoicesExists chain"
+      ]
+    },
+    {
+      "name": "canonicalDivisorDegree",
+      "original_signature_preserved_byte_for_byte": true,
+      "proof": "Apply canonicalDegree_of_coordinatePoles_and_actualAdjunction with coordinatePoleMultiplicity_eq and the original supplied actual K,H,J.",
+      "contains_sorry_in_own_body": false,
+      "depends_on_Open_child": "coordinatePoleMultiplicity_eq",
+      "consumers": [
+        "existing canonical-height/divisor comparison chain"
+      ]
+    }
+  ],
+  "research_draft_excluded": {
+    "path": "/tmp/p2m-fermat-canonical-divisor-next-20261114/Definitions/Def_FermatInfinityDivisor.lean",
+    "excluded_proof": "Place.ord_eq_of_power_add_power_eq_one and its novel Fermat common-pole proof",
+    "reason": "This is new mathematics, not a proof contained in pinned source. The source-reuse task requires that gap to remain explicit.",
+    "old_draft_edited": false,
+    "copied_into_deliverable": false
+  },
+  "other_Open_parents_unchanged": [
+    "canonicalDivisorExists",
+    "planeAdjunctionExists"
+  ],
+  "no_free_Prop_fields": "No law package or arbitrary Prop field is introduced. Conditional Definitions have one theorem argument giving the exact actual coordinate-pole equality; the concrete Open Theorem is its sole intended supplier.",
+  "scope": {
+    "Act2_added": false,
+    "new_novel_proof_included": false,
+    "upstream_runtime_dependency_added": false,
+    "constant_field_equals_Rat_assumed": false,
+    "all_places_and_infinity_preserved": true,
+    "actual_ord_ramIdx_divisor_degree_unchanged": true,
+    "free_degree_or_ramification_numbers_added": false,
+    "parent_statement_weakened": false
+  },
+  "integration_order": {
+    "independent_source_reuse_unit": [
+      "Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean"
+    ],
+    "conditional_decomposition_unit": [
+      "Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean"
+    ]
+  },
+  "validation": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "main_workspace_edited": false,
+    "old_candidates_edited": false,
+    "candidate_files_read_back": false,
+    "in_memory_parent_signature_match": true,
+    "in_memory_exactly_one_sorry": true,
+    "Definitions_import_Theorems": false,
+    "novel_commonpole_proof_name_absent_in_candidate_text": true,
+    "required_main_agent_gates": [
+      "MCP-CI leaves",
+      "associated Checks/Axioms",
+      "ImportAudit",
+      "Act1Scene1 aggregate",
+      "AxiomAudit actual axioms and expected Open-child sorryAx",
+      "git diff --check"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+import Definitions.Def_FermatInfinityDivisorFiniteSupport
+import Definitions.Def_FermatCanonicalCoordinatePoleComposition
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms coordinateInfinityData
+#print axioms infinityDivisorExists
+#print axioms infinityDivisor_degree_of_coordinatePoles
+#print axioms canonicalDegree_of_coordinatePoles_and_actualAdjunction

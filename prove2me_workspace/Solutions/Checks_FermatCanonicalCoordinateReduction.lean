@@ -1,0 +1,6 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms coordinatePoleMultiplicity_eq
+#print axioms canonicalDivisorDegree

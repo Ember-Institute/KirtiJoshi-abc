@@ -1,0 +1,212 @@
+{
+  "review": "independent_read_only_revised_canonical_decomposition_delta_shape_review",
+  "date": "2026-11-14",
+  "previous_report": "/tmp/p2m-canonical-divisor-shape-20261114/report.json",
+  "verdict": "previous_new_proof_scope_finding_resolved_by_explicit_Open_decomposition; no_detected_mathematical_shape_defect; NOT_kernel_validated",
+  "checks": [
+    {
+      "name": "previous_novel_proof_scope_finding_resolved",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+          "line": 21
+        }
+      ],
+      "detail": "The previous actual Fermat pole-order proof has been removed from every revised Lean file. No ord_eq_of_power_add_power_eq_one declaration, equation-specific strict-order proof, ord_add_eq_of_lt use or novel nlinarith pole proof remains. The precise required Fermat identity is now an explicitly Open theorem with a sorry body, rather than a claimed source-extracted proof. Conditional coefficient/degree compositions do not prove this premise. Under the instructed decomposition workflow this resolves the previous SCOPE-NEW-FERMAT-1 integration concern; it does not close the new mathematics."
+    },
+    {
+      "name": "independent_existing_support_unit",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+          "line": 11
+        },
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+          "line": 11
+        }
+      ],
+      "detail": "The finite-support Definitions module imports only existing Def_FermatFunctionDivisors; the infinity parent imports only that finite-support module. Its 13-module local import closure contains no fiber-degree, new composition, new Open pole child, Act2 module or sorry token. It constructs the actual max(pole_u,pole_v) Finsupp from the union of existing finite nonzero-order supports; every proper place and infinity remain. The coefficient is the unchanged InfinityDivisorData contract. No Fermat equation, common-pole argument or adjunction input is needed."
+    },
+    {
+      "name": "original_complete_parent_signatures_preserved",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [],
+      "detail": "The entire signatures from theorem name through := for infinityDivisorExists and canonicalDivisorDegree were compared byte-for-byte against current main-workspace originals and match. All original hRF, hN, actual K/H/J and Model/PlacesDiscrete inputs remain. The child is used inside the canonical parent body, not added as a new parent premise."
+    },
+    {
+      "name": "child_is_exact_concrete_lower_obligation",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+          "line": 21
+        }
+      ],
+      "detail": "The full child type is forall {N:Nat} (M:Model N) (hDVR:PlacesDiscrete M) (hN:0<N) (P:Place M.K), poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P. The actual coordinates, normalized orders and fields are fixed by Model and existing definitions. It has no arbitrary order, numeric degree, freely supplied law or Prop field. It mentions neither canonical divisor, adjunction witness, divisor degree nor canonical parent conclusion. It is a distinct geometric specialization, not a parent rename or tautological desired-degree premise."
+    },
+    {
+      "name": "child_all_places_zero_nonzero_and_N_boundary",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+          "line": 17
+        }
+      ],
+      "detail": "P is unrestricted over all proper places, so the child covers regular places, zeros, poles and infinity. There is no nonzero-coordinate assumption that could erase a branch: poleMultiplicity is the existing max(0,-ord), including the ord(0)=0 convention. M.u is transcendental in the fixed Model and hence nonzero; no unexplained M.v nonzero hypothesis is inserted. The future proof must address zero-coordinate cases or prove their impossibility from Model, rather than quietly exclude them. The child explicitly requires 0<N, and canonical parent 3<N supplies it. N=0 is outside the child and already inconsistent with the current Model equation/characteristic zero. The revised package provides no new proof of these cases; they remain inside the precise Open obligation."
+    },
+    {
+      "name": "Definitions_have_no_Theorems_import_or_Open_installation",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+          "line": 12
+        }
+      ],
+      "detail": "Both revised Definitions import only Definitions modules and Mathlib through their existing dependencies. The canonical composition accepts the explicit actual forall-P pole equality as a theorem argument; it does not import or instantiate the Open theorem as an instance. Its premise is not a new opaque Prop predicate or arbitrary law package. The canonical parent Theorems file is the sole consumer that imports the child and supplies it."
+    },
+    {
+      "name": "conditional_actual_fiber_degree_preserved",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+          "line": 22
+        }
+      ],
+      "detail": "The explicit equality hPoles makes the max of coordinate poles equal to the actual polar-u coefficient pointwise. H.H is therefore proved equal to the existing functionPoleDivisor(u), not assigned a numerical degree. The existing actual pole fiber-degree theorem then computes its full residue-degree-weighted divisorDegree as finrank Q(u) M.K; Model.degree_u gives N. All proper places/inverse infinity chart and full residue degrees over Q remain inherited from the actual fiber theorem; no constant-field=Q assumption is added."
+    },
+    {
+      "name": "conditional_canonical_degree_consumes_original_J",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+          "line": 44
+        }
+      ],
+      "detail": "The original actual J.coefficient yields K.D=(N-3)•H.H+functionDivisor(J.r) at every place. Existing principal-degree-zero and degree add/nsmul laws combine with conditional deg(H)=N. 3<N justifies the natural subtraction cast. The composition proves the required arithmetic consequence while leaving coordinate-pole equality and adjunction existence as explicit inputs. It does not invoke its own conclusion, canonicalDivisorDegree or either canonical/adjunction existence parent."
+    },
+    {
+      "name": "new_Open_dependency_and_no_circularity",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+          "line": 11
+        }
+      ],
+      "detail": "Static traversal of the 16-module canonical-parent overlay found no cycle and exactly one reachable sorry file: the new concrete coordinatePoleMultiplicity_eq child. That child imports only existing ProperDivisorHeight and has no dependency on the canonical parent or conditional degree module. The parent body has no local sorry but is not a closed proof because it consumes the child. This must remain an expected Open-child/sorryAx dependency until an authorized proof is supplied."
+    },
+    {
+      "name": "other_Open_parents_and_source_honesty",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.lean",
+          "line": 16
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_planeAdjunctionExists.lean",
+          "line": 17
+        }
+      ],
+      "detail": "The original canonicalDivisorExists and planeAdjunctionExists files remain unchanged from the previous review SHA values and retain sorry. The source ledger explicitly denies that pinned Belyi/Heights contains the Fermat pole identity proof. Canonical source references support the actual still-unported derivation/ramification construction; they are not invoked as Fermat adjunction or as a proof of the new child. No Act2 file or new Fermat proof enters the revised deliverable."
+    }
+  ],
+  "mathematical_shape_findings": [],
+  "new_scope_blockers_detected": [],
+  "delta": {
+    "old_novel_common_pole_proof_included": false,
+    "new_concrete_Open_children": [
+      "AbcAdaptation.Tripod.Fermat.Proper.coordinatePoleMultiplicity_eq"
+    ],
+    "independent_finite_support_unit_sorry_count": 0,
+    "revised_package_total_sorry_count": 1,
+    "canonical_parent_is_closed_proof": false,
+    "Definitions_import_Theorems": false,
+    "both_original_signatures_preserved_byte_for_byte": true,
+    "previous_scope_finding": "SCOPE-NEW-FERMAT-1 no longer applies as a claim that the novel proof is being integrated: the proof is absent and the exact obligation is explicitly Open. The revised conditional composition must not be represented as closing canonicalDivisorDegree free of sorryAx."
+  },
+  "source_provenance": {
+    "reference_hash_checks": [
+      {
+        "file": "/tmp/p2m-fermat-canonical-divisor-next-20261114/reference/Belyi_CurveField_Canonical.lean",
+        "expected_sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+        "actual_sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+        "matches": true
+      },
+      {
+        "file": "/tmp/p2m-fermat-canonical-divisor-next-20261114/reference/Belyi_CurveField_RamIdx.lean",
+        "expected_sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+        "actual_sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+        "matches": true
+      },
+      {
+        "file": "/tmp/p2m-fermat-canonical-divisor-next-20261114/reference/Heights_Curve_TupleHeight.lean",
+        "expected_sha256": "63cbbb457a56a44b9c638bdcaf0a724f78a7830fa094a0c6ffda0681ac8485a2",
+        "actual_sha256": "63cbbb457a56a44b9c638bdcaf0a724f78a7830fa094a0c6ffda0681ac8485a2",
+        "matches": true
+      }
+    ],
+    "all_three_actual_reference_hashes_match": true,
+    "reference_locations": "The revised package records hashes; actual cited reference files were read from the previous canonical candidate reference directory. No copy or refetch was performed.",
+    "pins": {
+      "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "heights": "721496ca4c158e511d25d8ccf6bfe8503eda73c1"
+    },
+    "pin_comparison": "Same Belyi and Heights pins as previous report, which matched actual refer/iut/lake-manifest.json.",
+    "source_type_scope": "Concrete actual all-place equality is the new theorem target. The reused support, fiber-degree and principal-degree proofs retain their existing actual Model/Place/ord/divisor interfaces. The new target is not claimed to have a pinned-source proof."
+  },
+  "unchanged_Open_parents": [
+    {
+      "theorem": "canonicalDivisorExists",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.lean",
+      "sha256": "d836b5eccd44c7f2bf50d4d02e4acffca84521ec73c78426c526e9d2bc104eb1",
+      "unchanged_since_previous_review": true,
+      "has_sorry": true
+    },
+    {
+      "theorem": "planeAdjunctionExists",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_planeAdjunctionExists.lean",
+      "sha256": "6924ebac4313838d5d91927a6192426cd7ca9300d35f10012741d59dcdd4f1ae",
+      "unchanged_since_previous_review": true,
+      "has_sorry": true
+    }
+  ],
+  "validation": {
+    "compiled": false,
+    "MCP_CI_invoked": false,
+    "repository_or_cache_edits": false,
+    "candidate_Lean_edits": false,
+    "only_written_artifact": "/tmp/p2m-canonical-decomposition-shape-20261114/report.json",
+    "kernel_pass_claimed": false,
+    "limits": "Static mathematical shape, source-hash, complete-signature and import-graph review. Lean elaboration, tactic execution, typeclass synthesis and actual axiom output are not established. Acceptance of the independent finite-support leaf and acceptance of a conditional Open decomposition are separate matters."
+  },
+  "input_hashes": [
+    {
+      "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "sha256": "12681f4d5edc7965de8aa3842f2bebfa7b6853563c3fe958295c06281dd27b2c"
+    },
+    {
+      "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "sha256": "de1c99bc5c672dec739b3828890873bf21e316f994c09c0232d06b0f0095a967"
+    },
+    {
+      "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+      "sha256": "8d3a909a273bcced2f9a9797b5e0e9db12e5b0c9a4d83eddd2940621df2a00e4"
+    },
+    {
+      "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+      "sha256": "8addac9011a185ae02c54b71dc3fd549994285ae8a11d10308d4cde86ed345f5"
+    },
+    {
+      "file": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+      "sha256": "9bf11386cae7890c8d99d37020d969fbea5067f48b7dda88ff53fb248ab17cfb"
+    }
+  ]
+}

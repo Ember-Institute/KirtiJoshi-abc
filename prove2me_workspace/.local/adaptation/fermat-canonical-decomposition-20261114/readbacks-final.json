@@ -1,0 +1,592 @@
+{
+  "auditor_role": "Independent blind static mathematical Lean read-back auditor",
+  "readback_model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "date": "2026-11-14",
+  "input_scope": "All five revised canonical decomposition Lean files and their needed mathematical Lean definitions. No README, source prose, paper, source ledger or source-consumer read.",
+  "signature_note": "full_signature_static expands section binders by static source reading only. No elaboration, compiler or MCP-CI was run. Ambient field F in prose differs from canonical-divisor datum K in Lean.",
+  "english_source_quote_note": "Every English quote is null pending an independently checked Mochizuki original; no quote or Joshi source attribution is invented.",
+  "attribution_note": "Source ownership, independent specialization status and attribution are not inferred from names/comments. The new child is recorded as an open mathematical obligation because its body is sorry.",
+  "prior_original_evidence": {
+    "path": "/tmp/p2m-canonical-divisor-blind-20261114/readbacks.json",
+    "approved_for_integration": false,
+    "note": "Original common-pole-order proof was not approved under parent scope update. Original read-back evidence remains separate; no new common-pole proof is treated as delivered."
+  },
+  "coverage_count": 9,
+  "language_record_count": 27,
+  "source_file_count": 5,
+  "coverage": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityDivisor",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 21,
+      "kind": "def"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityDivisor_apply",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 35,
+      "kind": "theorem"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityData",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 41,
+      "kind": "def"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisor_eq_polar_u_of_coordinatePoles",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 22,
+      "kind": "theorem"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisor_degree_of_coordinatePoles",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 33,
+      "kind": "theorem"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDegree_of_coordinatePoles_and_actualAdjunction",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 44,
+      "kind": "theorem"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.coordinatePoleMultiplicity_eq",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+      "line": 21,
+      "kind": "theorem"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisorExists",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+      "line": 18,
+      "kind": "theorem"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorDegree",
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+      "line": 20,
+      "kind": "theorem"
+    }
+  ],
+  "source_inventory": [
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 22,
+      "source_name": "infinityDivisor_eq_polar_u_of_coordinatePoles",
+      "private": false,
+      "kind": "theorem"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 33,
+      "source_name": "infinityDivisor_degree_of_coordinatePoles",
+      "private": false,
+      "kind": "theorem"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 44,
+      "source_name": "canonicalDegree_of_coordinatePoles_and_actualAdjunction",
+      "private": false,
+      "kind": "theorem"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 21,
+      "source_name": "coordinateInfinityDivisor",
+      "private": false,
+      "kind": "def"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 35,
+      "source_name": "coordinateInfinityDivisor_apply",
+      "private": false,
+      "kind": "theorem"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 41,
+      "source_name": "coordinateInfinityData",
+      "private": false,
+      "kind": "def"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+      "line": 20,
+      "source_name": "canonicalDivisorDegree",
+      "private": false,
+      "kind": "theorem"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+      "line": 21,
+      "source_name": "coordinatePoleMultiplicity_eq",
+      "private": false,
+      "kind": "theorem"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+      "line": 18,
+      "source_name": "infinityDivisorExists",
+      "private": false,
+      "kind": "theorem"
+    }
+  ],
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityDivisor",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 19,
+      "kind": "def",
+      "private": false,
+      "full_signature_static": "noncomputable def coordinateInfinityDivisor {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) : Divisor M",
+      "signature_method": "Static source reconstruction with section variables expanded. Not elaborated, compiled, or checked by MCP-CI. Type u is a static universe placeholder for Type*.",
+      "proof_status_from_source": "definition_body_present_not_compiled",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or source comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. This defines the divisor $D_∞$ whose coefficient at every place is $D_∞(P)=\\max(b_u(P),b_v(P))=\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))$, with finite support supplied by the construction. No positivity hypothesis on $N$ is a separate parameter of this definition, and its coefficients range over all places, including places where a coordinate has a pole.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 此处定义除子 $D_∞$，其在每个处的系数为 $D_∞(P)=\\max(b_u(P),b_v(P))=\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))$，并由构造给出有限支撑。此定义的参数中没有另加 $N$ 为正的假设；系数遍及所有处，包括坐标有极点的处。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 因子 $D_∞$ を、すべての素点での係数 $D_∞(P)=\\max(b_u(P),b_v(P))=\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))$ により定め、構成によって有限台を与える。この定義の引数には $N$ が正であるという別の仮定はなく、座標が極をもつ素点を含むすべての素点に係数を与える。",
+      "source_header_verbatim": "noncomputable def coordinateInfinityDivisor (M : Model N) (hDVR : PlacesDiscrete M) :\n    Divisor M",
+      "source_file_sha256": "de1c99bc5c672dec739b3828890873bf21e316f994c09c0232d06b0f0095a967",
+      "reused_after_signature_check": {
+        "prior_path": "/tmp/p2m-fermat-canonical-divisor-next-20261114/Definitions/Def_FermatInfinityDivisor.lean",
+        "prior_line": 22,
+        "status": "Static expanded mathematical signature unchanged; proof status is recorded independently."
+      },
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityDivisor_apply",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 35,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem coordinateInfinityDivisor_apply {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (P : Place M.K) : coordinateInfinityDivisor M hDVR P = max (poleMultiplicity M hDVR M.u P) (poleMultiplicity M hDVR M.v P)",
+      "signature_method": "Static source reconstruction with section variables expanded. Not elaborated, compiled, or checked by MCP-CI. Type u is a static universe placeholder for Type*.",
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or source comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. For every place $P$, the coefficient of the constructed divisor $D_∞$, defined at a place $Q$ by $D_∞(Q)=\\max(b_u(Q),b_v(Q))$, satisfies $D_∞(P)=\\max(b_u(P),b_v(P))$. This is a coefficient equality, with no extra hypothesis on $P$ or positivity of $N$.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 对每个处 $P$，构造的除子 $D_∞$ 在 $P$ 处的系数满足 $D_∞(P)=\\max(b_u(P),b_v(P))$；该除子在任意处 $Q$ 的定义为 $D_∞(Q)=\\max(b_u(Q),b_v(Q))$。这是系数等式，没有对 $P$ 或 $N$ 的正性另加假设。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 任意の素点 $P$ に対し、構成された因子 $D_∞$ の係数は $D_∞(P)=\\max(b_u(P),b_v(P))$ を満たす。この因子は任意の素点 $Q$ で $D_∞(Q)=\\max(b_u(Q),b_v(Q))$ と定められる。これは係数の等式であり、$P$ に対する追加の仮定や $N$ の正値性を仮定しない。",
+      "source_header_verbatim": "@[simp] theorem coordinateInfinityDivisor_apply (M : Model N) (hDVR : PlacesDiscrete M)\n    (P : Place M.K) :\n    coordinateInfinityDivisor M hDVR P =\n      max (poleMultiplicity M hDVR M.u P) (poleMultiplicity M hDVR M.v P)",
+      "source_file_sha256": "de1c99bc5c672dec739b3828890873bf21e316f994c09c0232d06b0f0095a967",
+      "reused_after_signature_check": {
+        "prior_path": "/tmp/p2m-fermat-canonical-divisor-next-20261114/Definitions/Def_FermatInfinityDivisor.lean",
+        "prior_line": 36,
+        "status": "Static expanded mathematical signature unchanged; proof status is recorded independently."
+      },
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityData",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "line": 40,
+      "kind": "def",
+      "private": false,
+      "full_signature_static": "noncomputable def coordinateInfinityData {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) : InfinityDivisorData M hDVR",
+      "signature_method": "Static source reconstruction with section variables expanded. Not elaborated, compiled, or checked by MCP-CI. Type u is a static universe placeholder for Type*.",
+      "proof_status_from_source": "definition_body_present_not_compiled",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or source comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. An infinity-divisor datum $H$ consists of a divisor $D_H$ and proofs of the exact equalities $D_H(P)=\\max(b_u(P),b_v(P))$ for every place $P$; it is not merely a divisor of some prescribed degree. This defines a particular datum $H$ by taking $D_H$ to be the constructed divisor $D_∞$ with $D_∞(P)=\\max(b_u(P),b_v(P))$ and taking the coefficient proofs to be the preceding coefficient identity. The definition supplies both the finite-support divisor and the required coefficient proofs, without choosing an arbitrary divisor by its degree.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 无穷远除子数据 $H$ 包含除子 $D_H$，以及对每个处 $P$ 的精确等式 $D_H(P)=\\max(b_u(P),b_v(P))$ 的证明；它不只是一个具有某个指定次数的除子。 此处定义特定数据 $H$：取 $D_H$ 为构造的除子 $D_∞$，其系数为 $D_∞(P)=\\max(b_u(P),b_v(P))$，系数证明则取前述系数恒等式。此定义同时给出有限支撑除子及所需的系数证明，没有按次数任意选取除子。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 無限遠因子データ $H$ は、因子 $D_H$ と、各素点 $P$ での正確な等式 $D_H(P)=\\max(b_u(P),b_v(P))$ の証明からなる。単にある指定次数をもつ因子という条件ではない。 特定のデータ $H$ を、$D_H$ として $D_∞(P)=\\max(b_u(P),b_v(P))$ で構成された因子 $D_∞$ を取り、係数の証明としてその係数の恒等式を取ることにより定める。有限台因子と必要な係数の証明をともに与え、次数だけによって任意の因子を選ぶことはない。",
+      "source_header_verbatim": "noncomputable def coordinateInfinityData (M : Model N) (hDVR : PlacesDiscrete M) :\n    InfinityDivisorData M hDVR",
+      "source_file_sha256": "de1c99bc5c672dec739b3828890873bf21e316f994c09c0232d06b0f0095a967",
+      "reused_after_signature_check": {
+        "prior_path": "/tmp/p2m-fermat-canonical-divisor-next-20261114/Definitions/Def_FermatInfinityDivisor.lean",
+        "prior_line": 42,
+        "status": "Static expanded mathematical signature unchanged; proof status is recorded independently."
+      },
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisor_eq_polar_u_of_coordinatePoles",
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem infinityDivisor_eq_polar_u_of_coordinatePoles {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hPoles : ∀ P : Place M.K, poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P) (H : InfinityDivisorData M hDVR) : H.H = functionPoleDivisor M hDVR M.u",
+      "signature_method": "Static source reconstruction with section variables expanded; not elaborated, compiled or checked by MCP-CI.",
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. An infinity-divisor datum $H$ consists of a divisor $D_H$ and proofs of the exact equalities $D_H(P)=\\max(b_u(P),b_v(P))$ for every place $P$; it is not merely a divisor of some prescribed degree. No assumption says that every element of $F$ algebraic over $ℚ$ already belongs to $ℚ$. Assume $h_{Poles}$: every place $P$ satisfies the actual coordinate identity $b_u(P)=b_v(P)$, explicitly $\\max(0,-v_P(u))=\\max(0,-v_P(v))$. Then for every supplied infinity-divisor datum $H$ with the stated exact coefficients, $D_H=B_u$ as divisors, meaning $D_H(P)=\\max(0,-v_P(u))$ at every place $P$. This is conditional on the all-place coordinate-pole identity, not a proof of that identity. There is no separate hypothesis $0<N$ in this declaration.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 无穷远除子数据 $H$ 包含除子 $D_H$，以及对每个处 $P$ 的精确等式 $D_H(P)=\\max(b_u(P),b_v(P))$ 的证明；它不只是一个具有某个指定次数的除子。 没有假设 $F$ 中所有在 $ℚ$ 上代数的元素都已属于 $ℚ$。 假设 $h_{Poles}$：每个处 $P$ 都满足实际坐标恒等式 $b_u(P)=b_v(P)$，即 $\\max(0,-v_P(u))=\\max(0,-v_P(v))$。 则对每个带有上述精确系数的给定无穷远除子数据 $H$，有除子等式 $D_H=B_u$，即每个处 $P$ 都满足 $D_H(P)=\\max(0,-v_P(u))$。此断言以所有处上的坐标极点恒等式为条件，而非证明该恒等式。本声明中没有另加 $0<N$ 假设。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 無限遠因子データ $H$ は、因子 $D_H$ と、各素点 $P$ での正確な等式 $D_H(P)=\\max(b_u(P),b_v(P))$ の証明からなる。単にある指定次数をもつ因子という条件ではない。 $F$ の $ℚ$ 上代数的な元がすべて既に $ℚ$ に属するという仮定はない。 $h_{Poles}$ として、すべての素点 $P$ で実際の座標の恒等式 $b_u(P)=b_v(P)$、すなわち $\\max(0,-v_P(u))=\\max(0,-v_P(v))$ が成り立つと仮定する。 このとき上記の正確な係数をもつ任意の与えられた無限遠因子データ $H$ に対し、因子として $D_H=B_u$、すなわちすべての素点 $P$ で $D_H(P)=\\max(0,-v_P(u))$ である。すべての素点での座標の極の恒等式を仮定する主張であり、その恒等式の証明ではない。この宣言には別の仮定 $0<N$ はない。",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 20,
+      "source_header_verbatim": "theorem infinityDivisor_eq_polar_u_of_coordinatePoles\n    (M : Model N) (hDVR : PlacesDiscrete M)\n    (hPoles : ∀ P : Place M.K,\n      poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P)\n    (H : InfinityDivisorData M hDVR) :\n    H.H = functionPoleDivisor M hDVR M.u",
+      "source_file_sha256": "12681f4d5edc7965de8aa3842f2bebfa7b6853563c3fe958295c06281dd27b2c",
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisor_degree_of_coordinatePoles",
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem infinityDivisor_degree_of_coordinatePoles {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hPoles : ∀ P : Place M.K, poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P) (H : InfinityDivisorData M hDVR) : divisorDegree M H.H = (N : ℤ)",
+      "signature_method": "Static source reconstruction with section variables expanded; not elaborated, compiled or checked by MCP-CI.",
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. An infinity-divisor datum $H$ consists of a divisor $D_H$ and proofs of the exact equalities $D_H(P)=\\max(b_u(P),b_v(P))$ for every place $P$; it is not merely a divisor of some prescribed degree. No assumption says that every element of $F$ algebraic over $ℚ$ already belongs to $ℚ$. The degree of a place is $d_P=\\dim_{ℚ}κ(P)$, the finite rational vector-space dimension, and a divisor $A$ has integer degree $\\deg A=\\sum_P A(P)d_P$, summed over its finite support. Assume $h_{Poles}$: every place $P$ satisfies the actual coordinate identity $b_u(P)=b_v(P)$, explicitly $\\max(0,-v_P(u))=\\max(0,-v_P(v))$. Then every supplied infinity-divisor datum $H$ satisfies the integer equality $\\deg D_H=N$, equivalently $\\sum_P\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))\\dim_{ℚ}κ(P)=N$. The value $N$ is the exact finite extension dimension $\\dim_{ℚ(u)}F$ in the model, and the weights are the actual full residue-field degrees. No separate positivity hypothesis on $N$ occurs; the all-place coordinate-pole identity is an explicit assumption rather than a conclusion.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 无穷远除子数据 $H$ 包含除子 $D_H$，以及对每个处 $P$ 的精确等式 $D_H(P)=\\max(b_u(P),b_v(P))$ 的证明；它不只是一个具有某个指定次数的除子。 没有假设 $F$ 中所有在 $ℚ$ 上代数的元素都已属于 $ℚ$。 处的次数为 $d_P=\\dim_{ℚ}κ(P)$，即有限的有理向量空间维数；除子 $A$ 的整数次数为 $\\deg A=\\sum_P A(P)d_P$，在其有限支撑上求和。 假设 $h_{Poles}$：每个处 $P$ 都满足实际坐标恒等式 $b_u(P)=b_v(P)$，即 $\\max(0,-v_P(u))=\\max(0,-v_P(v))$。 则每个给定的无穷远除子数据 $H$ 都满足整数等式 $\\deg D_H=N$；等价地，$\\sum_P\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))\\dim_{ℚ}κ(P)=N$。此值 $N$ 为模型中精确的有限扩张维数 $\\dim_{ℚ(u)}F$，权重为实际完整余域的次数。没有另加 $N$ 为正的假设；所有处上的坐标极点恒等式是显式假设，而非结论。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 無限遠因子データ $H$ は、因子 $D_H$ と、各素点 $P$ での正確な等式 $D_H(P)=\\max(b_u(P),b_v(P))$ の証明からなる。単にある指定次数をもつ因子という条件ではない。 $F$ の $ℚ$ 上代数的な元がすべて既に $ℚ$ に属するという仮定はない。 素点の次数は $d_P=\\dim_{ℚ}κ(P)$ という有限な有理ベクトル空間次元であり、因子 $A$ の整数次数は有限台上の和 $\\deg A=\\sum_P A(P)d_P$ である。 $h_{Poles}$ として、すべての素点 $P$ で実際の座標の恒等式 $b_u(P)=b_v(P)$、すなわち $\\max(0,-v_P(u))=\\max(0,-v_P(v))$ が成り立つと仮定する。 このとき与えられた任意の無限遠因子データ $H$ は整数の等式 $\\deg D_H=N$、すなわち $\\sum_P\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))\\dim_{ℚ}κ(P)=N$ を満たす。値 $N$ はモデルの正確な有限拡大次元 $\\dim_{ℚ(u)}F$ であり、重みは実際の剰余体全体の次数である。$N$ の正値性は別に仮定しない。すべての素点での座標の極の恒等式は明示的な仮定であり、結論ではない。",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 32,
+      "source_header_verbatim": "theorem infinityDivisor_degree_of_coordinatePoles\n    (M : Model N) (hDVR : PlacesDiscrete M)\n    (hPoles : ∀ P : Place M.K,\n      poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P)\n    (H : InfinityDivisorData M hDVR) :\n    divisorDegree M H.H = (N : ℤ)",
+      "source_file_sha256": "12681f4d5edc7965de8aa3842f2bebfa7b6853563c3fe958295c06281dd27b2c",
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDegree_of_coordinatePoles_and_actualAdjunction",
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem canonicalDegree_of_coordinatePoles_and_actualAdjunction {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hN : 3 < N) (hPoles : ∀ P : Place M.K, poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P) (K : CanonicalDivisorData M hDVR) (H : InfinityDivisorData M hDVR) (J : PlaneAdjunctionData M hDVR K H) : divisorDegree M K.D = planeCanonicalDegree N",
+      "signature_method": "Static source reconstruction with section variables expanded; not elaborated, compiled or checked by MCP-CI.",
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. The degree of a place is $d_P=\\dim_{ℚ}κ(P)$, the finite rational vector-space dimension, and a divisor $A$ has integer degree $\\deg A=\\sum_P A(P)d_P$, summed over its finite support. For $f∈F$, define the integer $e_f(P)$ as follows: if $f∈O_P$, let $m_{P,f}∈ℚ[X]$ be the minimal polynomial over $ℚ$ of the residue $f+𝔪_P$ in the full residue field $κ(P)$ and put $e_f(P)=v_P(m_{P,f}(f))$; otherwise put $e_f(P)=-v_P(f)$. A supplied canonical-divisor datum, named $K$ in the signature, consists of a finite-support divisor $D_K$ with coefficient $D_K(P)=e_u(P)-1$ if $u∈O_P$ and $D_K(P)=-e_u(P)-1$ if $u∉O_P$, together with proofs of those equalities at every place. An infinity-divisor datum $H$ consists of a divisor $D_H$ and proofs of the exact equalities $D_H(P)=\\max(b_u(P),b_v(P))$ for every place $P$; it is not merely a divisor of some prescribed degree. An adjunction datum $J$ for these particular $K,H$ consists of an actual element $r∈F$, a proof $r≠0$, and the coefficientwise identity $D_K(P)=(N-3)D_H(P)+v_P(r)$ for every place $P$. The subtraction $N-3$ is in the integers. No assumption says that every element of $F$ algebraic over $ℚ$ already belongs to $ℚ$. Assume $h_{Poles}$: every place $P$ satisfies the actual coordinate identity $b_u(P)=b_v(P)$, explicitly $\\max(0,-v_P(u))=\\max(0,-v_P(v))$. Assume also $3<N$ and that these particular $K,H,J$ are supplied. Then $\\deg D_K=N(N-3)$, the integer named `planeCanonicalDegree N`. Both the actual coordinate-pole identity and the actual adjunction datum are inputs: this declaration proves neither that identity nor existence of $K,H,J$. No additional identification with an independently defined differential is a conclusion of this signature.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 处的次数为 $d_P=\\dim_{ℚ}κ(P)$，即有限的有理向量空间维数；除子 $A$ 的整数次数为 $\\deg A=\\sum_P A(P)d_P$，在其有限支撑上求和。 对 $f∈F$，如下定义整数值的分歧指数 $e_f(P)$：若 $f∈O_P$，令 $m_{P,f}∈ℚ[X]$ 为余类 $f+𝔪_P$ 在整个余域 $κ(P)$ 中关于 $ℚ$ 的最小多项式，并令 $e_f(P)=v_P(m_{P,f}(f))$；否则令 $e_f(P)=-v_P(f)$。 给定的典范除子数据在签名中名为 $K$，它包含有限支撑除子 $D_K$，并带有每个处上的系数等式证明：$u∈O_P$ 时 $D_K(P)=e_u(P)-1$，$u∉O_P$ 时 $D_K(P)=-e_u(P)-1$。 无穷远除子数据 $H$ 包含除子 $D_H$，以及对每个处 $P$ 的精确等式 $D_H(P)=\\max(b_u(P),b_v(P))$ 的证明；它不只是一个具有某个指定次数的除子。 针对这两个特定数据 $K,H$ 的添附数据 $J$ 包含实际元素 $r∈F$、$r≠0$ 的证明，以及对每个处 $P$ 的逐系数恒等式 $D_K(P)=(N-3)D_H(P)+v_P(r)$。减法 $N-3$ 在整数中进行。 没有假设 $F$ 中所有在 $ℚ$ 上代数的元素都已属于 $ℚ$。 假设 $h_{Poles}$：每个处 $P$ 都满足实际坐标恒等式 $b_u(P)=b_v(P)$，即 $\\max(0,-v_P(u))=\\max(0,-v_P(v))$。 另假设 $3<N$，并给定上述特定数据 $K,H,J$。则 $\\deg D_K=N(N-3)$，即名为 `planeCanonicalDegree N` 的整数。实际坐标极点恒等式与实际添附数据都是输入；本声明既不证明该恒等式，也不证明 $K,H,J$ 存在。该签名没有另行给出与独立定义的微分相识别的结论。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 素点の次数は $d_P=\\dim_{ℚ}κ(P)$ という有限な有理ベクトル空間次元であり、因子 $A$ の整数次数は有限台上の和 $\\deg A=\\sum_P A(P)d_P$ である。 $f∈F$ の整数値の分岐指数 $e_f(P)$ を次で定める。$f∈O_P$ なら、剰余類 $f+𝔪_P$ の剰余体 $κ(P)$ 全体における $ℚ$ 上の最小多項式を $m_{P,f}∈ℚ[X]$ として $e_f(P)=v_P(m_{P,f}(f))$ と置き、それ以外なら $e_f(P)=-v_P(f)$ と置く。 与える標準因子データはシグネチャで $K$ と名付けられ、有限台因子 $D_K$ と、すべての素点での係数の等式の証明からなる。$u∈O_P$ なら $D_K(P)=e_u(P)-1$、$u∉O_P$ なら $D_K(P)=-e_u(P)-1$ である。 無限遠因子データ $H$ は、因子 $D_H$ と、各素点 $P$ での正確な等式 $D_H(P)=\\max(b_u(P),b_v(P))$ の証明からなる。単にある指定次数をもつ因子という条件ではない。 これらの特定の $K,H$ に対する随伴データ $J$ は、実際の元 $r∈F$、$r≠0$ の証明、およびすべての素点 $P$ での係数の恒等式 $D_K(P)=(N-3)D_H(P)+v_P(r)$ からなる。減算 $N-3$ は整数で行う。 $F$ の $ℚ$ 上代数的な元がすべて既に $ℚ$ に属するという仮定はない。 $h_{Poles}$ として、すべての素点 $P$ で実際の座標の恒等式 $b_u(P)=b_v(P)$、すなわち $\\max(0,-v_P(u))=\\max(0,-v_P(v))$ が成り立つと仮定する。 さらに $3<N$ と仮定し、上記の特定のデータ $K,H,J$ を与える。このとき $\\deg D_K=N(N-3)$、すなわち `planeCanonicalDegree N` と名付けられた整数に等しい。実際の座標の極の恒等式と実際の随伴データはともに入力であり、この宣言はその恒等式も $K,H,J$ の存在も証明しない。このシグネチャは独立に定義された微分との同一視を追加の結論として与えない。",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "line": 42,
+      "source_header_verbatim": "theorem canonicalDegree_of_coordinatePoles_and_actualAdjunction\n    (M : Model N) (hDVR : PlacesDiscrete M) (hN : 3 < N)\n    (hPoles : ∀ P : Place M.K,\n      poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P)\n    (K : CanonicalDivisorData M hDVR) (H : InfinityDivisorData M hDVR)\n    (J : PlaneAdjunctionData M hDVR K H) :\n    divisorDegree M K.D = planeCanonicalDegree N",
+      "source_file_sha256": "12681f4d5edc7965de8aa3842f2bebfa7b6853563c3fe958295c06281dd27b2c",
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.coordinatePoleMultiplicity_eq",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+      "line": 17,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem coordinatePoleMultiplicity_eq {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hN : 0 < N) (P : Place M.K) : poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P",
+      "signature_method": "Static source reconstruction with section variables expanded. Not elaborated, compiled, or checked by MCP-CI. Type u is a static universe placeholder for Type*.",
+      "proof_status_from_source": "open_sorry",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or source comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. No assumption says that every element of $F$ algebraic over $ℚ$ already belongs to $ℚ$. Assume additionally $0<N$. For every place $P$, $b_u(P)=b_v(P)$, explicitly $\\max(0,-v_P(u))=\\max(0,-v_P(v))$. This compares pole multiplicities at every place: it includes the case where both values are zero and does not assert $v_P(u)=v_P(v)$ at places where neither coordinate has a pole.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 没有假设 $F$ 中所有在 $ℚ$ 上代数的元素都已属于 $ℚ$。 再假设 $0<N$。对每个处 $P$，有 $b_u(P)=b_v(P)$，即 $\\max(0,-v_P(u))=\\max(0,-v_P(v))$。此断言比较每个处的极点重数，包括两者都为零的情形；没有断言在两个坐标都无极点的处 $v_P(u)=v_P(v)$。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 $F$ の $ℚ$ 上代数的な元がすべて既に $ℚ$ に属するという仮定はない。 さらに $0<N$ と仮定する。任意の素点 $P$ で $b_u(P)=b_v(P)$、すなわち $\\max(0,-v_P(u))=\\max(0,-v_P(v))$ が成り立つ。各素点での極の重複度の比較であり、両方が零の場合も含む。両座標が極をもたない素点で $v_P(u)=v_P(v)$ とは主張しない。",
+      "source_header_verbatim": "theorem coordinatePoleMultiplicity_eq {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (hN : 0 < N) (P : Place M.K) :\n    poleMultiplicity M hDVR M.u P = poleMultiplicity M hDVR M.v P",
+      "source_file_sha256": "8addac9011a185ae02c54b71dc3fd549994285ae8a11d10308d4cde86ed345f5",
+      "reused_after_signature_check": {
+        "prior_path": "/tmp/p2m-fermat-canonical-divisor-next-20261114/Definitions/Def_FermatInfinityDivisor.lean",
+        "prior_line": 84,
+        "status": "Static expanded mathematical signature unchanged; proof status is recorded independently."
+      },
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      },
+      "static_notes": [
+        "The actual body is sorry. The read-back states its mathematical obligation only; no proof, ownership or external-source attribution is inferred."
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisorExists",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+      "line": 17,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem infinityDivisorExists {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M) : Nonempty (InfinityDivisorData M hDVR)",
+      "signature_method": "Static source reconstruction with section variables expanded. Not elaborated, compiled, or checked by MCP-CI. Type u is a static universe placeholder for Type*.",
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or source comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. Assume additionally $h_{RF}$: $κ(P)$ is finite dimensional over $ℚ$ for every place $P$; this assumption is an explicit parameter of this declaration. An infinity-divisor datum $H$ consists of a divisor $D_H$ and proofs of the exact equalities $D_H(P)=\\max(b_u(P),b_v(P))$ for every place $P$; it is not merely a divisor of some prescribed degree. No assumption says that every element of $F$ algebraic over $ℚ$ already belongs to $ℚ$. There exists at least one infinity-divisor datum $H$ with those coefficients at every place. Equivalently there is a finitely supported integer function $D_H$ such that $D_H(P)=\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))$ for every place $P$, together with proofs of the equalities. No separate hypothesis $0<N$ occurs, and no adjunction or canonical-divisor datum is asserted to exist.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 另假设 $h_{RF}$：每个处 $P$ 的余域 $κ(P)$ 在 $ℚ$ 上有限维；此假设是本声明的一个显式参数。 无穷远除子数据 $H$ 包含除子 $D_H$，以及对每个处 $P$ 的精确等式 $D_H(P)=\\max(b_u(P),b_v(P))$ 的证明；它不只是一个具有某个指定次数的除子。 没有假设 $F$ 中所有在 $ℚ$ 上代数的元素都已属于 $ℚ$。 至少存在一个在每个处具有上述系数的无穷远除子数据 $H$。等价地，存在有限支撑整数函数 $D_H$，对每个处 $P$ 都有 $D_H(P)=\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))$，并带有这些等式的证明。签名中没有另加 $0<N$，也没有断言添附数据或典范除子数据存在。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 さらに $h_{RF}$ として、各素点 $P$ の剰余体 $κ(P)$ は $ℚ$ 上有限次元と仮定する。この仮定はこの宣言の明示的な引数である。 無限遠因子データ $H$ は、因子 $D_H$ と、各素点 $P$ での正確な等式 $D_H(P)=\\max(b_u(P),b_v(P))$ の証明からなる。単にある指定次数をもつ因子という条件ではない。 $F$ の $ℚ$ 上代数的な元がすべて既に $ℚ$ に属するという仮定はない。 すべての素点で上記の係数をもつ無限遠因子データ $H$ が少なくとも一つ存在する。すなわち有限台整数値関数 $D_H$ と、すべての素点 $P$ で $D_H(P)=\\max(\\max(0,-v_P(u)),\\max(0,-v_P(v)))$ となることの証明が存在する。別の仮定 $0<N$ はなく、随伴データや標準因子データの存在は主張しない。",
+      "source_header_verbatim": "theorem infinityDivisorExists {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (hRF : ResiduesFinite M) : Nonempty (InfinityDivisorData M hDVR)",
+      "source_file_sha256": "9bf11386cae7890c8d99d37020d969fbea5067f48b7dda88ff53fb248ab17cfb",
+      "reused_after_signature_check": {
+        "prior_path": "/tmp/p2m-fermat-canonical-divisor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+        "prior_line": 19,
+        "status": "Static expanded mathematical signature unchanged; proof status is recorded independently."
+      },
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorDegree",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+      "line": 18,
+      "kind": "theorem",
+      "private": false,
+      "full_signature_static": "theorem canonicalDivisorDegree {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hN : 3 < N) (hRF : ResiduesFinite M) (K : CanonicalDivisorData M hDVR) (H : InfinityDivisorData M hDVR) (J : PlaneAdjunctionData M hDVR K H) : divisorDegree M K.D = planeCanonicalDegree N",
+      "signature_method": "Static source reconstruction with section variables expanded. Not elaborated, compiled, or checked by MCP-CI. Type u is a static universe placeholder for Type*.",
+      "proof_status_from_source": "proof_body_present_not_compiled",
+      "english_source_quote": null,
+      "attribution": "No ownership or source attribution inferred from declaration names or source comments.",
+      "en": "Let $N$ be a natural number and let the supplied model $M$ consist of an intermediate field $F$ between $ℚ$ and the fixed algebraic closure of the rational function field $ℚ(t)$ in an indeterminate $t$, with elements $u,v∈F$. Assume that no nonzero polynomial over $ℚ$ vanishes at $u$, that $u^N+v^N=1$, that the subfield generated by $ℚ,u,v$ is all of $F$, and that $F$ is finite dimensional over the subfield $ℚ(u)$ with dimension exactly $N$. For $N=0$ the equation would be $1+1=1$ in characteristic zero, so there is no such model and an assertion conditional on it is vacuous. A place $P$ means a proper valuation subring $O_P⊊F$ containing every rational number. Its residue field is $κ(P)=O_P/𝔪_P$, where $𝔪_P$ is the maximal ideal of $O_P$. All such places are included; no affine chart is selected. Assume $h_{DVR}$: every $O_P$ is a discrete valuation ring. Let $v_P(f)$ be its normalized integer order, defined as minus the integer logarithm of the maximal-ideal valuation at $f$; the total-function convention is $v_P(0)=0$. A divisor is a finitely supported integer-valued function on all these places; equality of divisors means equality of every coefficient. For $f∈F$ write $b_f(P)=\\max(0,-v_P(f))$ for its pole multiplicity and $B_f$ for the finite-support divisor with these coefficients. In particular $B_0=0$ under the stated convention. Assume additionally $h_{RF}$: $κ(P)$ is finite dimensional over $ℚ$ for every place $P$; this assumption is an explicit parameter of this declaration. The degree of a place is $d_P=\\dim_{ℚ}κ(P)$, the finite rational vector-space dimension, and a divisor $A$ has integer degree $\\deg A=\\sum_P A(P)d_P$, summed over its finite support. For $f∈F$, define the integer $e_f(P)$ as follows: if $f∈O_P$, let $m_{P,f}∈ℚ[X]$ be the minimal polynomial over $ℚ$ of the residue $f+𝔪_P$ in the full residue field $κ(P)$ and put $e_f(P)=v_P(m_{P,f}(f))$; otherwise put $e_f(P)=-v_P(f)$. A supplied canonical-divisor datum, named $K$ in the signature, consists of a finite-support divisor $D_K$ with coefficient $D_K(P)=e_u(P)-1$ if $u∈O_P$ and $D_K(P)=-e_u(P)-1$ if $u∉O_P$, together with proofs of those equalities at every place. An infinity-divisor datum $H$ consists of a divisor $D_H$ and proofs of the exact equalities $D_H(P)=\\max(b_u(P),b_v(P))$ for every place $P$; it is not merely a divisor of some prescribed degree. An adjunction datum $J$ for these particular $K,H$ consists of an actual element $r∈F$, a proof $r≠0$, and the coefficientwise identity $D_K(P)=(N-3)D_H(P)+v_P(r)$ for every place $P$. The subtraction $N-3$ is in the integers. No assumption says that every element of $F$ algebraic over $ℚ$ already belongs to $ℚ$. Assume $3<N$ and that these particular canonical, infinity and adjunction data are supplied. Then $\\deg D_K=N(N-3)$, the integer named `planeCanonicalDegree N`. This is a conditional degree equality consuming the actual coefficient identity and its nonzero element $r$; it does not assert existence of $K$, $H$ or $J$. No identification with an independently defined differential is a separate conclusion of this signature.",
+      "zh_Hans": "设 $N$ 为自然数，给定模型 $M$ 包含 $ℚ$ 与有理函数域 $ℚ(t)$（$t$ 为不定元）的固定代数闭包之间的中间域 $F$，以及 $u,v∈F$。假设没有非零有理系数多项式在 $u$ 处为零，$u^N+v^N=1$，由 $ℚ,u,v$ 生成的子域为整个 $F$，且 $F$ 在子域 $ℚ(u)$ 上有限维、维数恰为 $N$。$N=0$ 时方程将成为特征零域中的 $1+1=1$，故不存在这样的模型，以其为前提的断言是空真的。 处 $P$ 指包含所有有理数的真赋值子环 $O_P⊊F$。其余域为 $κ(P)=O_P/𝔪_P$，其中 $𝔪_P$ 是 $O_P$ 的极大理想。范围包含所有这样的处，没有选定仿射图。 假设 $h_{DVR}$：每个 $O_P$ 都是离散赋值环。令 $v_P(f)$ 为其规范化整数阶数，即极大理想赋值在 $f$ 处的整数对数的相反数；采用全函数约定 $v_P(0)=0$。 除子是所有这些处上的有限支撑整数值函数；除子相等指每个系数都相等。对 $f∈F$，记 $b_f(P)=\\max(0,-v_P(f))$ 为其极点重数，$B_f$ 为以这些数为系数的有限支撑除子。按上述约定，特别有 $B_0=0$。 另假设 $h_{RF}$：每个处 $P$ 的余域 $κ(P)$ 在 $ℚ$ 上有限维；此假设是本声明的一个显式参数。 处的次数为 $d_P=\\dim_{ℚ}κ(P)$，即有限的有理向量空间维数；除子 $A$ 的整数次数为 $\\deg A=\\sum_P A(P)d_P$，在其有限支撑上求和。 对 $f∈F$，如下定义整数值的分歧指数 $e_f(P)$：若 $f∈O_P$，令 $m_{P,f}∈ℚ[X]$ 为余类 $f+𝔪_P$ 在整个余域 $κ(P)$ 中关于 $ℚ$ 的最小多项式，并令 $e_f(P)=v_P(m_{P,f}(f))$；否则令 $e_f(P)=-v_P(f)$。 给定的典范除子数据在签名中名为 $K$，它包含有限支撑除子 $D_K$，并带有每个处上的系数等式证明：$u∈O_P$ 时 $D_K(P)=e_u(P)-1$，$u∉O_P$ 时 $D_K(P)=-e_u(P)-1$。 无穷远除子数据 $H$ 包含除子 $D_H$，以及对每个处 $P$ 的精确等式 $D_H(P)=\\max(b_u(P),b_v(P))$ 的证明；它不只是一个具有某个指定次数的除子。 针对这两个特定数据 $K,H$ 的添附数据 $J$ 包含实际元素 $r∈F$、$r≠0$ 的证明，以及对每个处 $P$ 的逐系数恒等式 $D_K(P)=(N-3)D_H(P)+v_P(r)$。减法 $N-3$ 在整数中进行。 没有假设 $F$ 中所有在 $ℚ$ 上代数的元素都已属于 $ℚ$。 假设 $3<N$，并给定上述特定的典范除子、无穷远除子及添附数据。则 $\\deg D_K=N(N-3)$，即名为 `planeCanonicalDegree N` 的整数。这是使用实际逐系数恒等式及其非零元素 $r$ 的条件性次数等式；没有断言 $K$、$H$ 或 $J$ 的存在。该签名也没有另行给出与独立定义的微分相识别的结论。",
+      "ja": "$N$ を自然数とし、与えられたモデル $M$ は、$ℚ$ と有理関数体 $ℚ(t)$（$t$ は不定元）の固定された代数閉包との間の中間体 $F$ および元 $u,v∈F$ をもつとする。$u$ で零になる零でない有理係数多項式はなく、$u^N+v^N=1$ であり、$ℚ,u,v$ が生成する部分体は $F$ 全体であり、$F$ は部分体 $ℚ(u)$ 上有限次元で次元はちょうど $N$ と仮定する。$N=0$ では標数零の体で $1+1=1$ となるため、そのようなモデルは存在せず、それを仮定する主張は空虚に成立する。 素点 $P$ とはすべての有理数を含む真の付値部分環 $O_P⊊F$ をいう。剰余体は $κ(P)=O_P/𝔪_P$ であり、$𝔪_P$ は $O_P$ の極大イデアルとする。このような素点をすべて含み、アフィンチャートは選ばない。 $h_{DVR}$ として各 $O_P$ は離散付値環であると仮定する。$v_P(f)$ はその極大イデアル付値の $f$ における整数対数に負号を付けた正規化整数位数とし、全域関数の規約として $v_P(0)=0$ とする。 因子とはこれらすべての素点上の有限台整数値関数であり、因子の等式はすべての係数の等式を意味する。$f∈F$ に対し、$b_f(P)=\\max(0,-v_P(f))$ を極の重複度、$B_f$ をその係数をもつ有限台因子とする。上記の規約により、特に $B_0=0$ である。 さらに $h_{RF}$ として、各素点 $P$ の剰余体 $κ(P)$ は $ℚ$ 上有限次元と仮定する。この仮定はこの宣言の明示的な引数である。 素点の次数は $d_P=\\dim_{ℚ}κ(P)$ という有限な有理ベクトル空間次元であり、因子 $A$ の整数次数は有限台上の和 $\\deg A=\\sum_P A(P)d_P$ である。 $f∈F$ の整数値の分岐指数 $e_f(P)$ を次で定める。$f∈O_P$ なら、剰余類 $f+𝔪_P$ の剰余体 $κ(P)$ 全体における $ℚ$ 上の最小多項式を $m_{P,f}∈ℚ[X]$ として $e_f(P)=v_P(m_{P,f}(f))$ と置き、それ以外なら $e_f(P)=-v_P(f)$ と置く。 与える標準因子データはシグネチャで $K$ と名付けられ、有限台因子 $D_K$ と、すべての素点での係数の等式の証明からなる。$u∈O_P$ なら $D_K(P)=e_u(P)-1$、$u∉O_P$ なら $D_K(P)=-e_u(P)-1$ である。 無限遠因子データ $H$ は、因子 $D_H$ と、各素点 $P$ での正確な等式 $D_H(P)=\\max(b_u(P),b_v(P))$ の証明からなる。単にある指定次数をもつ因子という条件ではない。 これらの特定の $K,H$ に対する随伴データ $J$ は、実際の元 $r∈F$、$r≠0$ の証明、およびすべての素点 $P$ での係数の恒等式 $D_K(P)=(N-3)D_H(P)+v_P(r)$ からなる。減算 $N-3$ は整数で行う。 $F$ の $ℚ$ 上代数的な元がすべて既に $ℚ$ に属するという仮定はない。 $3<N$ と仮定し、上記の特定の標準因子、無限遠因子、随伴データを与える。このとき $\\deg D_K=N(N-3)$、すなわち `planeCanonicalDegree N` と名付けられた整数に等しい。実際の係数の恒等式とその零でない元 $r$ を用いる条件付きの次数の等式であり、$K$、$H$、$J$ の存在は主張しない。また、このシグネチャは独立に定義された微分との同一視を別の結論として与えない。",
+      "static_notes": [
+        "hRF remains an explicit parameter. The unchanged parent type uses the open coordinatePoleMultiplicity_eq theorem inside its proof; the parent is not independently certified axiom-free by this static review.",
+        "The actual PlaneAdjunctionData J remains supplied; this parent does not assert its existence."
+      ],
+      "source_header_verbatim": "theorem canonicalDivisorDegree {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (hN : 3 < N) (hRF : ResiduesFinite M)\n    (K : CanonicalDivisorData M hDVR) (H : InfinityDivisorData M hDVR)\n    (J : PlaneAdjunctionData M hDVR K H) :\n    divisorDegree M K.D = planeCanonicalDegree N",
+      "source_file_sha256": "8d3a909a273bcced2f9a9797b5e0e9db12e5b0c9a4d83eddd2940621df2a00e4",
+      "reused_after_signature_check": {
+        "prior_path": "/tmp/p2m-fermat-canonical-divisor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+        "prior_line": 20,
+        "status": "Static expanded mathematical signature unchanged; proof status is recorded independently."
+      },
+      "final_static_review": {
+        "binders_and_types": "Checked against revised source section context",
+        "en": "checked",
+        "zh_Hans": "checked",
+        "ja": "checked",
+        "compiled": false
+      },
+      "proof_dependency_status": "The proof invokes the open_sorry coordinate-pole child; transitive axiom output was not compiled or checked."
+    }
+  ],
+  "input_file_sha256": [
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+      "sha256": "12681f4d5edc7965de8aa3842f2bebfa7b6853563c3fe958295c06281dd27b2c"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+      "sha256": "de1c99bc5c672dec739b3828890873bf21e316f994c09c0232d06b0f0095a967"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+      "sha256": "8d3a909a273bcced2f9a9797b5e0e9db12e5b0c9a4d83eddd2940621df2a00e4"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+      "sha256": "8addac9011a185ae02c54b71dc3fd549994285ae8a11d10308d4cde86ed345f5"
+    },
+    {
+      "path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+      "sha256": "9bf11386cae7890c8d99d37020d969fbea5067f48b7dda88ff53fb248ab17cfb"
+    }
+  ],
+  "dependency_file_sha256": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionFiberDegrees.lean",
+      "sha256": "80239311863e8cc32a8a1dcfeddee7eb48165279c5d7861a78da9b932c742134"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionDivisors.lean",
+      "sha256": "1219586c9d82f822b770482fb1a267d6499bff9773399cb54de8e6564f26badd"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8"
+    }
+  ],
+  "definition_imports": {
+    "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean": [
+      "Definitions.Def_FermatFunctionFiberDegrees"
+    ],
+    "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean": [
+      "Definitions.Def_FermatFunctionDivisors"
+    ]
+  },
+  "coverage_notes": [
+    "All nine declarations covered: three noncomputable definitions, three conditional composition helper theorems, one open coordinate-pole child and two parents.",
+    "No private declaration or instance occurs in the five revised files; all such source-level declarations would be included if present.",
+    "Six unchanged mathematical signatures reuse the prior independent trilingual prose after source-header comparison (with explicit-vs-section N accounted for); the three conditional helpers have new complete read-backs.",
+    "No new common-pole-order helper/proof is present in this revised package.",
+    "Neither Definitions file imports a Theorems module. The open child enters only the canonicalDivisorDegree theorem proof; this observation is static, not an axiom audit."
+  ],
+  "precision_notes": [
+    "The pure finite-support definition constructs the coefficient max(max(0,−vP(u)),max(0,−vP(v))) over all places, without the coordinate-pole identity.",
+    "The conditional helper signatures contain hPoles : ∀P, b_u(P)=b_v(P). They neither prove it nor replace it by a free degree/valuation function.",
+    "The first two conditional helper types have no 0<N binder; the canonical conditional helper keeps 3<N.",
+    "The open coordinatePoleMultiplicity_eq has 0<N and concludes equality of actual pole multiplicities at each place, including the case both are zero; it does not assert equality of orders at every regular place.",
+    "The actual degree=N comes from the fixed model field extension dimension. No full-constant-field=ℚ hypothesis is added.",
+    "Canonical degree consumes the fixed coefficient canonical data and a genuine r≠0 with its all-place adjunction identity. The parent does not prove existence of that datum.",
+    "hRF remains in both parent signatures. The open coordinate-pole premise is discharged in the parent proof by the open child, not introduced as a new parent parameter."
+  ],
+  "uncertainties": [
+    {
+      "topic": "Open child",
+      "status": "coordinatePoleMultiplicity_eq has sorry; its mathematical proof is not supplied."
+    },
+    {
+      "topic": "Compilation and axioms",
+      "status": "Not run; the canonical parent calls the open child and no axiom-closure claim is made."
+    },
+    {
+      "topic": "Mochizuki original",
+      "status": "No checked original supplied; quotation fields remain null."
+    },
+    {
+      "topic": "Attribution",
+      "status": "No source ownership/attribution inferred or independently verified."
+    }
+  ],
+  "wording_questions": [
+    {
+      "term": "canonical divisor",
+      "en": "canonical divisor",
+      "zh_Hans": "典范除子",
+      "ja": "標準因子",
+      "note": "The precise finite-support coefficient definition is expanded in every relevant paragraph."
+    },
+    {
+      "term": "adjunction",
+      "en": "adjunction data",
+      "zh_Hans": "添附数据",
+      "ja": "随伴データ",
+      "note": "This is only the label for the explicit r≠0 and coefficient identity, not an additional assumed geometric theorem."
+    },
+    {
+      "term": "uniformiser",
+      "note": "No such noun is needed. If later needed in Chinese, use 【待确认术语】（赋值为一的元素）."
+    },
+    {
+      "term": "Place",
+      "zh_Hans": "处",
+      "ja": "素点",
+      "note": "Always expanded as a proper valuation subring containing ℚ."
+    }
+  ],
+  "validation": {
+    "json_parse": true,
+    "unique_declarations": 9,
+    "language_records": 27,
+    "revised_source_files": 5,
+    "static_inventory_path_line_match": true,
+    "unchanged_signatures_rechecked": 6,
+    "new_conditional_signatures": 3,
+    "open_sorry_declarations": 1,
+    "private_declarations": 0,
+    "instance_declarations": 0,
+    "definitions_import_open_child": false,
+    "compiled": false,
+    "ci_submitted": false,
+    "repo_modified": false
+  },
+  "compiled_source_span_refresh": {
+    "method": "Exact source spans from MCP-CI elaborated declaration graph; independent prose preserved",
+    "receipt": "source-graph-leaf-result.json",
+    "updates": [
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityDivisor",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+        "old_line": 21,
+        "new_line": 19
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityDivisor_apply",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+        "old_line": 35,
+        "new_line": 35
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateInfinityData",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+        "old_line": 41,
+        "new_line": 40
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisor_eq_polar_u_of_coordinatePoles",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+        "old_line": 22,
+        "new_line": 20
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisor_degree_of_coordinatePoles",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+        "old_line": 33,
+        "new_line": 32
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDegree_of_coordinatePoles_and_actualAdjunction",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalCoordinatePoleComposition.lean",
+        "old_line": 44,
+        "new_line": 42
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinatePoleMultiplicity_eq",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_coordinatePoleMultiplicity_eq.lean",
+        "old_line": 21,
+        "new_line": 17
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.infinityDivisorExists",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_infinityDivisorExists.lean",
+        "old_line": 18,
+        "new_line": 17
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorDegree",
+        "old_path": "/tmp/p2m-fermat-canonical-decomposition-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorDegree.lean",
+        "old_line": 20,
+        "new_line": 18
+      }
+    ]
+  }
+}

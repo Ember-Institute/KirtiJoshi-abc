@@ -49,7 +49,9 @@
 
 `Proper.noncriticalP1Zero` 仍需为任意有限且对全部有理代数自同构稳定、又不含零的实际 P¹ 代数点集，构造同一个有理 Möbius 变换／正次数有理多项式列表。该复合须把整个给定集合送入 `{0,1,∞}`，把零送到其外，并把所有分歧点的像送入这三个值；来源中的有理情形、最小多项式降阶及嵌套归纳尚待移植。三个 Open 子节点共同供应既有 `noncriticalSelection` 的实际分解，父归约验收不表示这些数学义务已闭合。
 
-`Proper.canonicalDivisorExists`、`Proper.infinityDivisorExists`、`Proper.planeAdjunctionExists` 和 `Proper.canonicalDivisorDegree` 分别还需证明 `du` 除子的有限支撑、实际坐标极点构成的超平面除子、具体伴随关系，以及真正典范除子次数等于 `N(N−3)`。应逐处追踪分歧系数，证明超平面次数及主除子次数为零，不能把预先定义的数字当作次数等式本身。`Proper.cuspGeneratorsExists` 还需给出尖点补集的实际坐标环有限生成性，并包含所需的三个三支点函数。
+`Proper.canonicalDivisorExists` 仍需证明 `du` 除子的有限支撑；`Proper.planeAdjunctionExists` 仍需证明实际典范除子与坐标超平面除子之间的具体伴随关系。应逐处追踪分歧系数，并保留原来的实际 `K`、`H` 和 `J` 契约；不能把预先定义的数字当作除子身份或次数等式。`Proper.cuspGeneratorsExists` 还需给出尖点补集的实际坐标环有限生成性，并包含所需的三个三支点函数。
+
+`Proper.coordinatePoleMultiplicity_eq` 仍需证明：对于满足 `0 < N` 的既有实际 Fermat 模型，两个固定坐标 u、v 在每个真赋值处的实际极点重数 `max(0,-ord)` 相等。必须覆盖全部正则处、坐标为零的情形以及无穷点；不得只证明极点支撑相同或排除零坐标。这是新的明确 Fermat 特化义务，固定的 Belyi／Heights 来源及论文引文均未提供其证明。其结论将实际超平面除子识别为 u 的实际极除子，再由已验收的纤维次数公式和主除子次数为零，结合原有实际伴随数据得到典范次数；`canonicalDivisorDegree` 的归约验收不关闭该子义务，也不证明典范除子或伴随数据的存在性。
 
 `Proper.localCompactness`、`Proper.avoidanceRegularity` 和 `Proper.embeddingBoundsToSet` 还需分别落实有界次数点列的局部紧性、避开尖点后的正则性，以及全部共轭嵌入界向同一赋值紧有界集的传递。固定 Mathlib 已有 `PadicAlgCl 2` 及其谱范数，无须另设该载体的存在性假设；但紧性证明和次数缩放仍需实际接入。
 
