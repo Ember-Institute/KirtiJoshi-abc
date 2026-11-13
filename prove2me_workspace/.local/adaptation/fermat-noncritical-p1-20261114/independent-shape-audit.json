@@ -1,0 +1,187 @@
+{
+  "audit": "Independent read-only mathematical and source shape audit",
+  "date": "2026-11-14",
+  "auditor": "/root/p1_shape_review",
+  "draft_workspace": "/tmp/p2m-noncritical-p1-next-20261114",
+  "comparison_workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "verdict": "static_shape_pass_with_explicit_proof_debt_and_license_artifact_qualification",
+  "kernel_validation": {
+    "performed": false,
+    "compiler_invoked": false,
+    "mcp_ci_invoked": false,
+    "accepted_lean_proof_claimed": false,
+    "note": "Static inspection cannot establish elaboration, tactic availability, typeclass synthesis, or kernel acceptance. Three mathematical leaves still contain sorry, so parent would retain their sorryAx dependency until those bodies are proved."
+  },
+  "scope_controls": {
+    "repository_edits": false,
+    "cache_edits": false,
+    "draft_edits": false,
+    "only_output_written": "/tmp/p2m-noncritical-p1-shape-20261114/report.json",
+    "search_command": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/bin/rg-two-cores",
+    "extra_mathematics_added": false
+  },
+  "input_hashes": {
+    "Definitions/Def_FermatNoncriticalP1Reduction.lean": "fd3e941de6fccdd61560f922e86b28fdebf7f3d79e5964e2ae1e7b71b1fa3a38",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean": "32c482d5e0012bc543cb83f0b8b0ced9f09b5d9c7e253c104c14b1bd5927a9e7",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean": "9f2f607046a61ff2a9fd91be102928d8c9f484139ed3a517d9ae587f117a0c67",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean": "460219602698eba4060727ddc297feb22d15383a89a8ea5d92bbed1351f7739f",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean": "cbfc67f1db8260948cae3b5e512befc0426909a5b3161600812639017bb9622e"
+  },
+  "provenance": {
+    "repository": "https://github.com/lana-agents/belyi",
+    "commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "manifest": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json packages[name=belyi].rev",
+    "manifest_pin_matches": true,
+    "reference_copy_hashes_match_source_consumer_json": true,
+    "all_five_reference_files_independently_match_raw_github_at_pinned_commit": true,
+    "reference_hashes": {
+      "Belyi_NoncriticalP1_Analytic.lean": "32ac8aca84e7cfe15e10dab7ca99781a664ed0c44e32ea80906d538e1cb2c4d1",
+      "Belyi_NoncriticalP1_ElemMap.lean": "5a39ddb83c19b37af76e573f522463e7baa167cd4dbce8a90c9c3a8d173c63a5",
+      "Belyi_NoncriticalP1_Main.lean": "368d9baac49838deaf503d72a334b197996b79fe17282f54a44c365c8ab850c4",
+      "Belyi_NoncriticalP1_Rational.lean": "9b98db3bf92266e3aeccd5217fe951a9338c7a909d34f3a223eefc27d9a81267",
+      "Belyi_NoncriticalP1_Reduction.lean": "097aace5620aa31d0eb75b0f976cffff02d655ebcd3c15fd6cee9726f101bc53"
+    },
+    "existing_input_dependency_hashes_match": true,
+    "existing_inputs": [
+      {
+        "file": "Definitions/Def_FermatNoncriticalFunctions.lean",
+        "sha256": "bb10b218db0d1837c23da15cfe61ea2eac9a5e2d72612c231bcb4cec8f1e07e4",
+        "provides": [
+          "NoncriticalP1.Pt",
+          "NoncriticalP1.ElemMap",
+          "NoncriticalP1.ElemMap.apply",
+          "NoncriticalP1.ElemMap.ramIdx",
+          "NoncriticalP1.evalComp",
+          "NoncriticalP1.ramIdxComp"
+        ],
+        "fidelity": "existing actual rational Mobius and positive-degree polynomial constructors reused unchanged"
+      },
+      {
+        "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+        "sha256": "ad0285b951b5fed29d8c1fb6b2a130e505ec6d3b74f77ccdee1f23f1f8c22c4b",
+        "role": "exact current target compared independently"
+      }
+    ],
+    "license_notice": {
+      "apache_2_0_headers_preserved": true,
+      "author_copyright_headers_preserved": true,
+      "pin_url_and_sha_notices_present": true,
+      "full_license_file_in_draft": false,
+      "pinned_upstream_root_license_present": false,
+      "evidence": "Pinned raw /LICENSE returned HTTP 404; GitHub root tree for the pinned commit lists no LICENSE file. The exact upstream headers already refer to LICENSE. This audit confirms preserved notices, not a bundled full license artifact."
+    }
+  },
+  "checks": [
+    {
+      "id": "canonical_target",
+      "status": "pass",
+      "evidence": "noncriticalP1Zero statement is byte-token identical modulo whitespace to the current repository parent. Same S : Finset Pt, all Qbar/ℚ automorphisms, zero exclusion, actual List ElemMap witness, all three conclusions including ramification at every Pt."
+    },
+    {
+      "id": "three_source_contracts",
+      "status": "pass",
+      "evidence": "normalize_step/noncriticalP1Normalize, rational_step/noncriticalP1Rational, minpoly_step/noncriticalP1Minpoly statements compare exactly after theorem-name substitution, Qbar/Tripod.Qbar substitution, and whitespace removal."
+    },
+    {
+      "id": "combination_source_body",
+      "status": "pass",
+      "evidence": "core_key text compares exactly after namespace/theorem-name substitutions, removing added classical, and replacing push Not at hd by have hd : 2 ≤ d := by omega. The latter is equivalent for natural d under ¬d ≤ 1."
+    },
+    {
+      "id": "noncritical_predicate",
+      "status": "pass",
+      "evidence": "The source Prop structure has maps_to, tau_notMem, unramified. Draft transparent conjunction retains exactly these three formulas, in this order, on existing evalComp and ramIdxComp. mono merely restricts the set argument and preserves the two other conjuncts."
+    },
+    {
+      "id": "concrete_elementary_maps",
+      "status": "pass",
+      "evidence": "Current ElemMap contains only mob with a,b,c,d : ℚ and nonzero determinant, and poly p : ℚ[X] with 0 < natDegree. Existing action at finite points, denominator-zero/infinity branches, polynomial action at infinity, rootMultiplicity ramification, and list recursion match pinned source formulas. Draft imports this unchanged file; its recorded hash matches."
+    },
+    {
+      "id": "embedding_degree_galois",
+      "status": "pass",
+      "evidence": "Tripod.Qbar is AlgebraicClosure ℚ. IsGalStable quantifies every Qbar ≃ₐ[ℚ] Qbar. deg is natDegree (minpoly ℚ x). ι is an actual ℚ-algebra homomorphism into ℂ from IsAlgClosed.lift, with an explicit local algebraicity instance; rational image and norm equalities use source proofs. No freely supplied norm law or selected Galois subgroup occurs."
+    },
+    {
+      "id": "definitions_import_discipline",
+      "status": "pass",
+      "evidence": "Traversed all 10 local files in the draft Definitions import closure. No Theorems or Solutions import edge; no unresolved local import; no executable sorry, axiom, unsafe, or admit token. Mathlib imports remain library dependencies; no whole-Mathlib import was added."
+    },
+    {
+      "id": "no_parent_renaming_or_circular_contract",
+      "status": "pass",
+      "evidence": "No leaf references noncriticalP1Zero/core_key/exists_isNoncriticalBelyi_withInf. Rational leaf is a bounded unit-disc degree≤1 base case. Normalize leaf gives a concrete precomposition transfer plus uniform degree/top-count bounds. Minpoly leaf gives a concrete precomposition transfer from a smaller count bound. Transfer hypotheses ask about fixed actual ElemMap lists, and preserve the full three-condition predicate."
+    },
+    {
+      "id": "open_debt",
+      "status": "pass_as_declared",
+      "evidence": "Exactly one executable sorry in each of Normalize, Rational, Minpoly. None in Definitions or replacement parent. Parent is a source combination proof conditional on those three admitted mathematical steps."
+    }
+  ],
+  "induction_analysis": {
+    "well_founded_index": "Lexicographic pair (d,n) of natural upper bounds; d first, n second.",
+    "outer_hypothesis": "ihd e (e < d) handles every n, every finite T, full Galois stability, degree≤e, top-e count≤n, and every rational τ excluded from T.",
+    "base_d_le_one": "Normalize with original τ excluded; instantiate its uniform bound at degree 1; hdeg≤d≤1 supplies the premise; Rational proves the normalized goal at 9; precomposition recovers original τ. Does not recurse.",
+    "lower_degree": "For d≥2 and count(filter deg=d)=0, every point has degree≤d−1. d−1<d. ihd is instantiated at e=d−1, with n inferred as the actual top-(d−1) count so le_rfl is exact. T, full stability and τ exclusion remain unchanged.",
+    "inner_zero": "count≤0 gives count=0; use lower-degree branch.",
+    "inner_successor": "Input count≤n+1. Normalize yields all degrees≤d and normalized count≤original count≤n+1. Unit-disc norm and rational norm identity show 9 excluded. If normalized top count=0, lower degree. Otherwise choose actual σ₀ of degree d and invoke Minpoly, whose output supplies full stability, rational τ₂ exclusion, degree≤d and count≤n. These are exactly the inner induction hypothesis premises.",
+    "continuation_order": "ihn proves hs on T₂,τ₂; minpoly continuation proves v::hs on T₁,9; normalize continuation proves u::v::hs on original T,τ. Existing list evaluation applies the head first, matching source composition order.",
+    "strict_descent_qualification": "The formal induction decreases the numeric bound n+1 to n. If input count has slack below n+1, the minpoly statement alone does not assert output actual count < input actual count; it asserts enough for strict recursion-index descent. The pinned source minpoly proof separately proves actual cardinality loss via a nonempty minpoly-equality fiber and excludes degree-d critical values. Thus no circular parent appeal or unchanged recursion index is hidden.",
+    "endpoint": "Finset.sup deg gives a finite degree bound, and actual top-degree cardinality gives a reflexive bound. No maximum element or nonempty T premise is needed."
+  },
+  "edge_cases": [
+    {
+      "case": "S empty / T empty",
+      "status": "covered_in_shape",
+      "evidence": "eraseNone and Finset.sup apply to empty sets. Sup is 0, base d≤1 handles it; normalization/rational contracts impose no nonempty premise. withInf empty still includes infinity."
+    },
+    {
+      "case": "S includes infinity",
+      "status": "covered_in_shape",
+      "evidence": "S.eraseNone drops only infinity; hST handles none directly by none_mem_withInf and handles some by mem_eraseNone. The enlarged source set always includes actual infinity."
+    },
+    {
+      "case": "S excludes infinity",
+      "status": "covered_in_shape",
+      "evidence": "Proof may enlarge S by infinity and applies mono back to S; no new assumption about S is added."
+    },
+    {
+      "case": "zero excluded / zero degree",
+      "status": "covered_in_shape",
+      "evidence": "hZero transfers exactly to rational 0 excluded from eraseNone. d=0 is an upper-bound case handled by d≤1; the source rationality theorem covers degree≤1. No claim that the minimal polynomial of zero has degree zero is introduced."
+    },
+    {
+      "case": "d=1 and n=0",
+      "status": "covered_in_shape",
+      "evidence": "d≤1 ignores count and terminates in Rational. For d≥2,n=0 the zero-count branch lowers d; subtraction occurs only when d≥2."
+    },
+    {
+      "case": "ramification at infinity / poles / all source points",
+      "status": "covered_in_shape",
+      "evidence": "IsNoncriticalBelyi unramified conjunct quantifies all Pt, including none, without restriction to T. Existing actual ramIdx returns polynomial natDegree at infinity and 1 for Mobius. Continuations preserve this entire conjunct."
+    },
+    {
+      "case": "distinguished point equals infinity",
+      "status": "outside_target",
+      "evidence": "The canonical existing theorem is specialized to some 0. The general source τ=none adapter is intentionally unused; no part of the current target requires it."
+    }
+  ],
+  "local_import_closure": [
+    "Definitions/Def_FermatNoncriticalP1Reduction.lean (draft)",
+    "Definitions/Def_FermatNoncriticalFunctions.lean",
+    "Definitions/Def_FermatCurveFieldZerosPoles.lean",
+    "Definitions/Def_FermatCurveFieldPlace.lean",
+    "Definitions/Def_FermatCurveFieldChart.lean",
+    "Definitions/Def_FermatCurveFieldBasic.lean",
+    "Definitions/Def_FermatProperCarrier.lean",
+    "Definitions/Def_TripodFermatInputs.lean",
+    "Definitions/Def_AbcTripod.lean",
+    "Definitions/Def_FermatCurveFieldResidue.lean"
+  ],
+  "findings": [],
+  "qualifications": [
+    "Static shape approval is not kernel approval or completion of the noncriticalP1 obligation. All three admitted mathematical source steps remain required.",
+    "Strict descent is formalized using upper-bound pair (d,n), not an explicit recursion on actual maximum-degree/cardinality values. This is sufficient and matches the source; the exact slack-bound qualification is recorded above.",
+    "Apache-2.0 notices and authorship are retained; no full LICENSE artifact exists in this draft or at the pinned upstream root checked by this audit."
+  ]
+}

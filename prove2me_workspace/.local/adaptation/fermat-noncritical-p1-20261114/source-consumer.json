@@ -1,0 +1,244 @@
+{
+  "unit": "Concrete P1 noncritical-at-zero source decomposition",
+  "date": "2026-11-14",
+  "status": "uncompiled_draft_three_source_backed_open_children_parent_combination_proof_ported",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "pin_source": "refer/iut/lake-manifest.json packages[name=belyi].rev",
+  "reference_repository": "https://github.com/lana-agents/belyi",
+  "reference_hashes": {
+    "Belyi_NoncriticalP1_Analytic.lean": "32ac8aca84e7cfe15e10dab7ca99781a664ed0c44e32ea80906d538e1cb2c4d1",
+    "Belyi_NoncriticalP1_ElemMap.lean": "5a39ddb83c19b37af76e573f522463e7baa167cd4dbce8a90c9c3a8d173c63a5",
+    "Belyi_NoncriticalP1_Main.lean": "368d9baac49838deaf503d72a334b197996b79fe17282f54a44c365c8ab850c4",
+    "Belyi_NoncriticalP1_Rational.lean": "9b98db3bf92266e3aeccd5217fe951a9338c7a909d34f3a223eefc27d9a81267",
+    "Belyi_NoncriticalP1_Reduction.lean": "097aace5620aa31d0eb75b0f976cffff02d655ebcd3c15fd6cee9726f101bc53"
+  },
+  "input_dependencies": [
+    {
+      "file": "Definitions/Def_FermatNoncriticalFunctions.lean",
+      "sha256": "bb10b218db0d1837c23da15cfe61ea2eac9a5e2d72612c231bcb4cec8f1e07e4",
+      "provides": [
+        "NoncriticalP1.Pt",
+        "NoncriticalP1.ElemMap",
+        "NoncriticalP1.ElemMap.apply",
+        "NoncriticalP1.ElemMap.ramIdx",
+        "NoncriticalP1.evalComp",
+        "NoncriticalP1.ramIdxComp"
+      ],
+      "fidelity": "existing actual rational Mobius and positive-degree polynomial constructors reused unchanged"
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "sha256": "ad0285b951b5fed29d8c1fb6b2a130e505ec6d3b74f77ccdee1f23f1f8c22c4b",
+      "role": "exact current target compared independently"
+    }
+  ],
+  "definitions": [
+    {
+      "file": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "name": "NoncriticalP1.ofRat",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean ofRat",
+      "consumers": [
+        "noncriticalP1Normalize",
+        "noncriticalP1Rational",
+        "noncriticalP1Minpoly",
+        "noncriticalP1Zero"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "name": "NoncriticalP1.IsGalStable",
+      "source": "Belyi/NoncriticalP1/Reduction.lean IsGalStable",
+      "consumers": [
+        "noncriticalP1Normalize",
+        "noncriticalP1Minpoly",
+        "core_key",
+        "noncriticalP1Zero"
+      ],
+      "fidelity": "full Qbar automorphism quantified; no selected embedding or rational-only restriction"
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "name": "NoncriticalP1.deg",
+      "source": "Belyi/NoncriticalP1/Reduction.lean deg",
+      "consumers": [
+        "noncriticalP1Normalize",
+        "noncriticalP1Rational",
+        "noncriticalP1Minpoly",
+        "core_key"
+      ],
+      "fidelity": "natDegree of minpoly over Q"
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "name": "NoncriticalP1.withInf and membership lemmas",
+      "source": "Belyi/NoncriticalP1/Reduction.lean withInf, none_mem_withInf, some_mem_withInf",
+      "consumers": [
+        "all_three_leaves",
+        "core_key",
+        "noncriticalP1Zero"
+      ],
+      "fidelity": "finite algebraic branch points plus actual infinity"
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "name": "NoncriticalP1.ι, ι_ratCast, norm_ι_ratCast",
+      "source": "Belyi/NoncriticalP1/Analytic.lean corresponding declarations",
+      "consumers": [
+        "normalization_unit_disc_contract",
+        "rational_unit_disc_contract",
+        "minpoly_unit_disc_contract",
+        "core_key h9"
+      ],
+      "fidelity": "actual IsAlgClosed.lift fixed embedding; norm equality proved"
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "name": "NoncriticalP1.IsNoncriticalBelyi",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean IsNoncriticalBelyi",
+      "consumers": [
+        "all_three_leaves",
+        "core_key",
+        "noncriticalP1Zero"
+      ],
+      "fidelity": "source three fields expanded to transparent conjunction; actual evalComp and ramIdxComp only; no freely supplied function or law"
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "name": "NoncriticalP1.IsNoncriticalBelyi.mono",
+      "source": "Belyi/NoncriticalP1/ElemMap.lean IsNoncriticalBelyi.mono",
+      "consumers": [
+        "noncriticalP1Zero hfinal"
+      ],
+      "fidelity": "same inclusion proof expressed by conjunction projections"
+    }
+  ],
+  "open_leaves": [
+    {
+      "name": "noncriticalP1Normalize",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean",
+      "source": "Belyi/NoncriticalP1/Reduction.lean normalize_step",
+      "fidelity": "exact theorem statement modulo namespace and transparent conjunction representation",
+      "consumers": [
+        "core_key"
+      ],
+      "debt": "sorry: port source proof in a later decomposition; no new mathematical argument introduced"
+    },
+    {
+      "name": "noncriticalP1Rational",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean",
+      "source": "Belyi/NoncriticalP1/Reduction.lean rational_step",
+      "fidelity": "exact theorem statement modulo namespace and transparent conjunction representation",
+      "consumers": [
+        "core_key"
+      ],
+      "debt": "sorry: port source proof in a later decomposition; no new mathematical argument introduced"
+    },
+    {
+      "name": "noncriticalP1Minpoly",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean",
+      "source": "Belyi/NoncriticalP1/Reduction.lean minpoly_step",
+      "fidelity": "exact theorem statement modulo namespace and transparent conjunction representation",
+      "consumers": [
+        "core_key"
+      ],
+      "debt": "sorry: port source proof in a later decomposition; no new mathematical argument introduced"
+    }
+  ],
+  "combination": [
+    {
+      "name": "core_key",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "source": "Belyi/NoncriticalP1/Main.lean private core_key",
+      "consumers": [
+        "exists_isNoncriticalBelyi_withInf"
+      ],
+      "fidelity": "ported completed source nested induction; hd normalization uses omega instead of push Not"
+    },
+    {
+      "name": "exists_isNoncriticalBelyi_withInf",
+      "source": "Belyi/NoncriticalP1/Main.lean exists_isNoncriticalBelyi_withInf",
+      "consumers": [
+        "noncriticalP1Zero"
+      ],
+      "fidelity": "same source sup degree and cardinality instantiation"
+    },
+    {
+      "name": "noncriticalP1Zero",
+      "source": "Belyi/NoncriticalP1/Main.lean exists_isNoncriticalBelyi, some 0 case",
+      "consumers": [
+        "existing project noncritical-selection chain"
+      ],
+      "fidelity": "exact current parent statement, source eraseNone branch-set construction, full Galois stability transfer, source mono restriction and expansion of three concrete conditions"
+    }
+  ],
+  "preserved_conditions": [
+    "rational coefficients of every elementary map",
+    "nonzero Mobius determinant",
+    "strictly positive polynomial degree",
+    "full Qbar Galois-stability quantification",
+    "zero excluded from original S",
+    "all points including infinity",
+    "all ramified source points quantified with 1 < ramIdxComp",
+    "degree upper bounds and top-degree count descent",
+    "new rational distinguished point excluded from every minpoly branch set"
+  ],
+  "static_checks": [
+    {
+      "check": "source_statement_exact_modulo_namespace_and_whitespace",
+      "source": "normalize_step",
+      "draft": "noncriticalP1Normalize",
+      "passed": true
+    },
+    {
+      "check": "source_statement_exact_modulo_namespace_and_whitespace",
+      "source": "rational_step",
+      "draft": "noncriticalP1Rational",
+      "passed": true
+    },
+    {
+      "check": "source_statement_exact_modulo_namespace_and_whitespace",
+      "source": "minpoly_step",
+      "draft": "noncriticalP1Minpoly",
+      "passed": true
+    },
+    {
+      "check": "parent_target_type_unchanged_modulo_whitespace",
+      "passed": true
+    },
+    {
+      "check": "definitions_have_no_sorry_axiom_unsafe_or_Theorems_import",
+      "passed": true
+    },
+    {
+      "check": "exactly_three_open_math_leaves_and_no_sorry_in_parent_combination",
+      "passed": true
+    }
+  ],
+  "validation": {
+    "compiler_run": false,
+    "mcp_ci_run": false,
+    "repository_modified": false,
+    "publication_performed": false,
+    "note": "Draft only. Parent must integrate and validate through MCP-CI; no compilation claim."
+  },
+  "future_source_decomposition": {
+    "noncriticalP1Normalize": [
+      "Analytic.exists_mob_normalize",
+      "Reduction.ElemMap.deg_le_of_apply_some",
+      "Reduction.pushFin and IsGalStable helpers",
+      "ElemMap.IsNoncriticalBelyi.cons"
+    ],
+    "noncriticalP1Rational": [
+      "Reduction.exists_ratCast_of_deg_le_one",
+      "Rational.exists_isNoncriticalBelyi_rat"
+    ],
+    "noncriticalP1Minpoly": [
+      "Reduction.IsGalStable.mem_of_aeval_minpoly",
+      "Analytic.norm_aeval_le",
+      "Analytic.norm_aeval_crit_le",
+      "Analytic.pow_le_abs_eval_nine",
+      "Polynomial.CritVal.natDegree_minpoly_critVal_lt",
+      "ElemMap.IsNoncriticalBelyi.cons_poly"
+    ]
+  }
+}

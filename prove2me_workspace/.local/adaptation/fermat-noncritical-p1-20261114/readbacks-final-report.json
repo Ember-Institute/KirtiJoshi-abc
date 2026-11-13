@@ -1,0 +1,187 @@
+{
+  "status": "independent_final_static_readback_review_pass_no_changes_needed",
+  "verdict": "No real signature, context, mathematical, Chinese-terminology or placeholder defect detected in the 17 trilingual records. Preserve the original readbacks.json unchanged; no readbacks-final.json is necessary.",
+  "date": "2026-11-14",
+  "input_readbacks": "/tmp/p2m-noncritical-p1-blind-20261114/readbacks.json",
+  "input_readbacks_sha256": "61af3864d3318646007763824b76ef2c90a33f61afe67a1033687373b2acc5c2",
+  "source_root": "/tmp/p2m-noncritical-p1-next-20261114",
+  "review_method": "Compared the five actual Definitions/Theorems files directly, with the imported concrete definitions as context. No author README, source-consumer prose or shape report was used to infer a statement. No compilation or original-paper source check was performed.",
+  "integration_schema": {
+    "preserved_original_schema": true,
+    "qualified_declaration_name_key": "declarations[i].name",
+    "relative_source_path_key": "declarations[i].source",
+    "language_keys": [
+      "declarations[i].readbacks.en",
+      "declarations[i].readbacks.zh_Hans",
+      "declarations[i].readbacks.ja"
+    ],
+    "source_root_key": "source_root",
+    "instruction": "Use the nested language fields from the original artifact. Any uploader normalization should preserve the raw readback artifact; this review does not rewrite its schema."
+  },
+  "coverage": {
+    "declarations": 17,
+    "language_records": 51,
+    "private_declarations": 2,
+    "instance_declarations": 0,
+    "by_file": {
+      "Definitions/Def_FermatNoncriticalP1Reduction.lean": 11,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean": 1,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean": 1,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean": 1,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean": 3
+    },
+    "independent_inventory_matches": true,
+    "all_source_signature_line_prefixes_match": true,
+    "all_five_input_hashes_match": true,
+    "template_residuals": 0
+  },
+  "checks": [
+    {
+      "topic": "Full algebraic closure and projective point carrier",
+      "status": "consistent",
+      "evidence": [
+        "Definitions/Def_FermatNoncriticalP1Reduction.lean:24",
+        "Definitions/Def_FermatNoncriticalP1Reduction.lean:27",
+        "Definitions/Def_FermatNoncriticalP1Reduction.lean:34"
+      ],
+      "detail": "Qbar is the actual AlgebraicClosure ℚ alias. Pt is Option Qbar, with none as infinity. Galois stability ranges over every Qbar ℚ-algebra automorphism and actual members of the finite set; it is not restricted to rational points or a selected finite subextension."
+    },
+    {
+      "topic": "Actual elementary maps, evaluation and ramification conjunction",
+      "status": "consistent",
+      "evidence": [
+        "Definitions/Def_FermatNoncriticalP1Reduction.lean:56",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean:84"
+      ],
+      "detail": "The common context matches the imported rational Mobius and positive-degree polynomial constructors, actual projective evaluation (including zero denominator and infinity), actual rootMultiplicity polynomial difference, and head-first list evaluation. The source predicate is exactly: every source-set point maps into {∞,0,1}; the distinguished point maps outside it; every projective point with composite ramification index >1 maps into it. All three conditions and the unrestricted third quantifier are present in every expanded predicate readback."
+    },
+    {
+      "topic": "Fixed complex embedding and norm conditions",
+      "status": "consistent",
+      "evidence": [
+        "Definitions/Def_FermatNoncriticalP1Reduction.lean:44",
+        "Definitions/Def_FermatNoncriticalP1Reduction.lean:48",
+        "Definitions/Def_FermatNoncriticalP1Reduction.lean:50"
+      ],
+      "detail": "ι is the one noncomputably selected ℚ-algebra map Qbar→ℂ, with the algebraicity instance local in its definition. The readbacks use its injectivity as a field embedding and the same chosen map in all norm bounds. Rational restriction and complex norm=real absolute value are exact. No arbitrary norm law, extra global instance or all-complex-embeddings quantifier is introduced."
+    },
+    {
+      "topic": "Normalization continuation and simultaneous bounds",
+      "status": "consistent",
+      "evidence": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean:23"
+      ],
+      "detail": "The same existential u,T₁ serve every d and every continuation list hs. T₁ is Galois-stable and complex-norm bounded by one. Degree bounds transfer for every d≥1; the count of points of degree exactly d does not increase under the additional condition d≥2. A continuation valid at distinguished point 9 for withInf(T₁) becomes valid at the original rational τ for withInf(T), with u applied first. No bound is asserted for d=0."
+    },
+    {
+      "topic": "Rational base contract",
+      "status": "consistent",
+      "evidence": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean:23"
+      ],
+      "detail": "The finite set has actual complex norm ≤1 and minimal-polynomial degree ≤1. No Galois-stability assumption is added. The distinguished point is the fixed rational 9. The output is a list satisfying the entire source conjunction."
+    },
+    {
+      "topic": "Minimal-polynomial step and descending highest-degree count",
+      "status": "consistent",
+      "evidence": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean:23"
+      ],
+      "detail": "All inputs remain: Galois stability, the actual fixed-embedding bound, d≥2, degrees≤d, degree-d count≤n+1, and an actual σ₀∈T of degree d. The output preserves degrees≤d while replacing the degree-d count bound by ≤n. T₂ is a finite subset of Qbar, not claimed to be a subset of T or to satisfy a new norm bound. τ₂ is rational and outside T₂. The existential elementary map transports every valid later list for T₂,τ₂ back to T,9, in the correct composition order."
+    },
+    {
+      "topic": "Private lexicographic induction contract",
+      "status": "consistent",
+      "evidence": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean:23",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean:77"
+      ],
+      "detail": "core_key quantifies every natural d,n, a Galois-stable finite T, degree bound≤d and degree-d count≤n, and every rational τ outside T. No norm bound occurs in its type; d=0 and n=0 are allowed. The written proof has strong outer induction on d and inner induction on n: the zero-top-count branch lowers d, while Minpoly lowers the count under the same d. The private general withInf theorem discharges bounds by finite sup/card choices, and has no degree/count/norm assumptions in its type. Both private declarations are covered without inventing compiler-mangled names."
+    },
+    {
+      "topic": "Existing zero-specialized parent and open dependencies",
+      "status": "consistent",
+      "evidence": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean:84"
+      ],
+      "detail": "The parent allows infinity in its finite Galois-stable source set but excludes some(0). It concludes the full three-condition property at the specifically excluded source point zero, without adding degree or norm bounds. The three source reduction statements remain explicit sorry leaves; both private combination helpers and the parent remain marked as depending on those leaves rather than as closed proofs."
+    },
+    {
+      "topic": "Chinese terminology and trilingual quantifier agreement",
+      "status": "consistent",
+      "detail": "Chinese degree/ramification/root-multiplicity/finite-set-cardinality terms match their actual uses. Cardinalities count distinct finite-set members rather than polynomial root multiplicities. English, Chinese and Japanese preserve all conditions and the normalizer and minimal-polynomial continuation directions; no cosmetic rewrite was made."
+    }
+  ],
+  "findings": [],
+  "unresolved_uncertainties": [
+    {
+      "topic": "Compiler inference",
+      "status": "pending_main_agent_CI",
+      "detail": "Types of implicit/unannotated hs,d,z binders are statically reconstructed from source uses. This review has not checked elaboration, typeclass synthesis, tactic execution or axioms. The 17 matching source signature strings are exact source text, not a compiler type report."
+    },
+    {
+      "topic": "Private names",
+      "status": "source_identity_only",
+      "detail": "core_key and exists_isNoncriticalBelyi_withInf retain source names with visibility=private. Their actual mangled compiler names remain unknown."
+    },
+    {
+      "topic": "Chosen embedding",
+      "status": "function_choice_unspecified",
+      "detail": "IsAlgClosed.lift selects ι noncomputably. The readbacks correctly fix that choice but do not identify a particular concrete function."
+    },
+    {
+      "topic": "Original English Mochizuki citation",
+      "status": "unchecked",
+      "detail": "No original English paper was independently checked in this review. citation.work, bibliographic_citation, locator and quote remain null, with original_english_source_checked=false."
+    }
+  ],
+  "input_file_sha256": [
+    {
+      "path": "/tmp/p2m-noncritical-p1-next-20261114/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "sha256": "fd3e941de6fccdd61560f922e86b28fdebf7f3d79e5964e2ae1e7b71b1fa3a38",
+      "matches_original_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-p1-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean",
+      "sha256": "32c482d5e0012bc543cb83f0b8b0ced9f09b5d9c7e253c104c14b1bd5927a9e7",
+      "matches_original_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-p1-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean",
+      "sha256": "9f2f607046a61ff2a9fd91be102928d8c9f484139ed3a517d9ae587f117a0c67",
+      "matches_original_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-p1-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean",
+      "sha256": "460219602698eba4060727ddc297feb22d15383a89a8ea5d92bbed1351f7739f",
+      "matches_original_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-p1-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "sha256": "cbfc67f1db8260948cae3b5e512befc0426909a5b3161600812639017bb9622e",
+      "matches_original_readback_input": true
+    }
+  ],
+  "context_sources_checked": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "purpose": "Actual Pt, zeroOneInf, ElemMap constructors, evaluation, ramification and composite order."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+      "line": 23,
+      "purpose": "Qbar is AlgebraicClosure ℚ."
+    }
+  ],
+  "validation": {
+    "json_parse": true,
+    "compiled": false,
+    "MCP_CI_invoked": false,
+    "network_calls": false,
+    "repository_edits": false,
+    "candidate_edits": false,
+    "original_readbacks_edited": false,
+    "new_final_readbacks_written": false,
+    "writes_confined_to": "/tmp/p2m-noncritical-p1-readback-final-20261114"
+  }
+}

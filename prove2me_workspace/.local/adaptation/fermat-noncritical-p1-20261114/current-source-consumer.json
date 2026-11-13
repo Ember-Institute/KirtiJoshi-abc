@@ -1,0 +1,52 @@
+{
+  "source_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "original_delivery_ledger": "source-consumer.json",
+  "source_boundary_link": "source-ledger-link.json",
+  "definition_hashes": {
+    "Definitions/Def_FermatNoncriticalP1Reduction.lean": "fd3e941de6fccdd61560f922e86b28fdebf7f3d79e5964e2ae1e7b71b1fa3a38"
+  },
+  "source_theorem_hashes": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero": "cbfc67f1db8260948cae3b5e512befc0426909a5b3161600812639017bb9622e",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize": "9f2f607046a61ff2a9fd91be102928d8c9f484139ed3a517d9ae587f117a0c67",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational": "460219602698eba4060727ddc297feb22d15383a89a8ea5d92bbed1351f7739f",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly": "32c482d5e0012bc543cb83f0b8b0ced9f09b5d9c7e253c104c14b1bd5927a9e7"
+  },
+  "source_graph_sha256": "adc893a500042ac771ab6a65bb08bce592dd5b59c1759b2849567b0418f64bb9",
+  "closed_direct": [],
+  "accepted_reduction": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+    "submission_id": "b79f5cde-0a93-414a-b0dc-b72e774c05b9",
+    "status": "SKETCH_ACCEPTED"
+  },
+  "actual_dependencies": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational"
+  ],
+  "open_mathematical_children": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly"
+  ],
+  "actual_platform_states": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero": "Open"
+  },
+  "consumer_chain": [
+    "existing concrete rational ElemMap/evaluation/ramification -> transparent noncritical predicate and source reductions",
+    "Open normalize/rational/minpoly steps -> lexicographic degree/count-bound induction -> withInf endpoint",
+    "eraseNone/full Galois transfer/infinity/mono -> unchanged noncriticalP1Zero",
+    "noncriticalP1Zero with still-Open finite ramification and actual composition laws -> existing noncriticalSelection reduction"
+  ],
+  "new_global_assumptions": [],
+  "full_abc_closed": false,
+  "source_mathematical_steps_proved": false,
+  "source_notices": "Apache-2.0 source headers retained.",
+  "other_open_parents_unchanged": [
+    "noncriticalRamificationFinite",
+    "noncriticalCompositionRamification",
+    "noncriticalSelection"
+  ]
+}

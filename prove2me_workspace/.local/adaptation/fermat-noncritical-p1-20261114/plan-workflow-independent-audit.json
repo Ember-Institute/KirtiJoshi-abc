@@ -1,0 +1,373 @@
+{
+  "task": "Read-only delivered-unit workflow checkbox audit",
+  "repo": "/home/admin-wsl/Coq/abc",
+  "plan": "/home/admin-wsl/Coq/abc/docs/开发计划.Prove2Me适配.md",
+  "plan_sha256": "ea4260c4c9e3a1275a1ceb13a8d5661a7f70dd982e683bc08c8acb00fac3bbce",
+  "scope": "Sections 8/9 delivered-unit workflow only, as stated at plan line130. No Act2, global source/math dependency closure, or whole-project completion claim.",
+  "read_only": {
+    "repo_edited": false,
+    "CI_called": false,
+    "compiled": false,
+    "network_used": false,
+    "all_rg_calls_used_required_two_core_wrapper": true
+  },
+  "delivered_commits": [
+    "dcf44eca0a5ea21238c37fc0807f378a2c096810",
+    "65e35e2ac30136148825fbbca4ee07340fd48599",
+    "ceb715c3f92b068a79c90e19fdf2cff9a0ab076f"
+  ],
+  "proposals": [
+    {
+      "line": 154,
+      "exact_checkbox": "- [ ] 保留 section variables、局部实例、记号、命名空间和必要导入；不靠正则分割 Lean 声明或猜测依赖。",
+      "current_value": false,
+      "proposed_value": true,
+      "decision": "CONDITIONAL_ONLY; retain unchecked now until current P1 final gates and actual platform reduction terminal pass",
+      "evidence": [
+        {
+          "path": "prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+          "lines": [
+            15,
+            41,
+            43,
+            47,
+            51,
+            54,
+            57,
+            64,
+            67
+          ],
+          "fact": "Exact local imports, open/scoped namespaces, section variables, include hw, local rational/quotient algebra and faithful-scalar instances are present; source was successfully rechecked by ci-010114-296e1d71 after a comment-only provenance correction."
+        },
+        {
+          "path": "prove2me_workspace/Definitions/Def_FermatRiemannPolarApproximation.lean",
+          "lines": [
+            9,
+            14,
+            16,
+            18,
+            19,
+            20,
+            22,
+            23,
+            24
+          ],
+          "fact": "Necessary imports, namespace, section variables/include and three local notations are retained in compiled source."
+        },
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/ExtractSourceProofGraph.lean",
+          "fact": "Compiler environment extraction retains private declarations with privateToUserName?, traverses internal helper dependencies, records constructor/type/value edges and compiler-reported instances, and uses declaration ranges; no regex declaration splitting."
+        },
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/source-graph-leaf-result.json",
+          "job_id": "ci-010091-e14ce602",
+          "fact": "succeeded; actual_arguments checks the exact extractor; graph file records compiled source ranges."
+        },
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-noncritical-20261114/upload-validation.json",
+          "fact": "passed, compiler-derived elaborated-type equality, explicit no-regex declaration-splitting method; source hash validation matches current delivered definitions."
+        },
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-canonical-decomposition-20261114/upload-validation.json",
+          "fact": "passed; exact elaborated types and unchanged parent types; definitions match current saved hashes."
+        },
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-noncritical-p1-20261114/solution-source-closure.json",
+          "fact": "Compiler graph records both private core_key and exists_isNoncriticalBelyi_withInf; parent proof valueDeps reaches the latter, which reaches core_key; own_target_imported=false. This alone is not final upload/production/platform acceptance."
+        }
+      ]
+    }
+  ],
+  "proposal_prerequisites": [
+    "Current P1 exact full upload solution must retain both private helper source spans and their needed imports/context; upload elaborated type must equal actual parent type.",
+    "Current P1 existing-types, exact upload validation, all relevant final leaf/Checks/Axioms and production-gates receipts must be terminal succeeded with exact current source hashes and approved/expected axiom output.",
+    "Read actual platform noncriticalP1Zero reduction terminal SKETCH_ACCEPTED and exact three-child dependency/read-back records; queued, request accepted, or draft status is insufficient.",
+    "Record pending P1 final delivered state before changing line154. This audit does not itself authorize counting missing receipts as passed."
+  ],
+  "retain_unchecked": [
+    {
+      "line": 155,
+      "exact_checkbox": "- [ ] 对实际可达声明、构造器、必要实例和定义体依赖取闭包，不批量上传无消费者的现有文件。",
+      "current_value": false,
+      "proposed_value": false,
+      "decision": "Do not mark actual reachable source closure complete",
+      "evidence": [
+        {
+          "path": "prove2me_workspace/Definitions/Def_FermatNoncriticalFunctions.lean",
+          "line": 74,
+          "declaration": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero",
+          "fact": "This source theorem is not reached from any imported theorem declaration or compiler-reported instance root in delivered noncritical decl_graph.jsonl; the graph was deliberately rooted generously. No current proof or definition value/type dependency consumes it."
+        },
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-noncritical-20261114/decl_graph.jsonl",
+          "fact": "See graph_checks for exact graph hash and root method. Generated recursors/noConfusion and local-notation parser/macro declarations must not be mistaken for unused mathematical producers."
+        },
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-noncritical-20261114/source-consumer.json",
+          "json_pointer": "/unused_optional_producer",
+          "fact": "Model.fg_top is explicitly listed with new_consumers=[] and may_omit=true. This is historical optional context, not proof that this declaration itself was newly uploaded."
+        },
+        {
+          "path": "/tmp/p2m-fermat-noncritical-next-20261113/reference/Belyi_CurveField_NoncriticalBasic.lean",
+          "fact": "No explicit future x.eval_zero consumer was verified in the targeted Basic/Elem scan. Basic:206/212 explicitly use eval_one; Elem:53 eval_zero concerns a polynomial map and is not a verified consumer of this QbarPoint theorem. Do not force a consumer or delete source merely to obtain this checkbox."
+        }
+      ]
+    },
+    {
+      "line": 157,
+      "exact_checkbox": "- [ ] `refer/iut` 只提供陈述和代码参考；移植前做逐文件许可证审查，保留原路径、作者、提交和通知，在本工程命名空间重新验证，不新增 IUT 上游依赖。",
+      "current_value": false,
+      "proposed_value": false,
+      "decision": "Preserved notices established; complete exact per-file license-review checkbox not established by this targeted audit",
+      "evidence": [
+        {
+          "path": "prove2me_workspace/Definitions/Def_FermatCurveFieldDegree.lean",
+          "lines": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8
+          ],
+          "fact": "Preserves Copyright(c)2026 The Belyi project contributors, Apache2.0 header, Authors, exact Degree.lean path and Belyi commit; candidly records scalar-instance/proof elaboration adaptation."
+        },
+        {
+          "path": "prove2me_workspace/Definitions/Def_FermatInfinityDivisorFiniteSupport.lean",
+          "lines": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fact": "Belyi notice and exact Belyi source pin retained; separately identifies Heights/Curve/TupleHeight.lean@721496ca4c158e511d25d8ccf6bfe8503eda73c1 as coefficient convention. This does not itself record an exact per-file Heights license/author audit."
+        },
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-noncritical-p1-20261114/independent-shape-audit.json",
+          "json_pointer": "/provenance/license_notice",
+          "fact": "Preserved Apache headers, author/copyright, pin URL/SHA are positively verified. It explicitly distinguishes this from a bundled LICENSE artifact; its prior upstream audit reports no root LICENSE at pinned Belyi commit. No new network check was made here. Missing LICENSE artifact alone is not presented as a new checkbox requirement or definitive licensing defect."
+        }
+      ]
+    },
+    {
+      "line": 162,
+      "exact_checkbox": "- [ ] 首次叶检查固定 `60s / 16GiB`；失败后按实测调整，单叶超 16 GiB 必须拆分。保留热缓存，不冷建 Mathlib。",
+      "current_value": false,
+      "proposed_value": false,
+      "decision": "Known historical deviation prevents universal first-leaf resource-compliance claim",
+      "evidence": [
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-noncritical-20261114/unit-ci-summary.json",
+          "json_pointer": "/resource_estimate_deviation",
+          "job_id": "ci-010176-78ccc9c3",
+          "fact": "First leaf Solutions/Checks_FermatNoncriticalReduction.lean requested8GiB instead of required16GiB; succeeded with physical peak RSS4223152128 bytes. Corrective rule is recorded for future first leaves; no unnecessary recompile is required and no historical compliance is inferred."
+        }
+      ]
+    },
+    {
+      "line": 168,
+      "exact_checkbox": "- [ ] 依赖定义在消费者之前准备，完整设置 `item_order`；本地反向设计不等于向平台倒序上传依赖。",
+      "current_value": false,
+      "proposed_value": false,
+      "decision": "Complete item_order evidence absent",
+      "evidence": [
+        {
+          "path": "prove2me_workspace/.local/adaptation/fermat-canonical-decomposition-20261114/platform_publish.py",
+          "lines": [
+            94,
+            114
+          ],
+          "fact": "Definitions are published before children, but targeted published payloads/scripts do not supply complete explicit item_order evidence. Do not infer the full checkbox from publication sequence alone."
+        }
+      ]
+    }
+  ],
+  "other_unchecked_workflow_lines_no_new_proposal": [
+    134,
+    135,
+    136,
+    139,
+    145,
+    164,
+    169
+  ],
+  "other_workflow_note": "Per parent direction, only154 is proposed. Recent delivered units contain substantial positive source/signature/production/private-terminal evidence, but no extra checkbox is marked from this limited audit. In particular current P1 is not yet delivered and its missing final receipts cannot be supplied by earlier units.",
+  "pending_P1_receipts_at_audit": {
+    "source-graph-leaf-result.json": "succeeded",
+    "elaborated-types-leaf-result.json": "succeeded",
+    "existing-types-leaf-result.json": "succeeded",
+    "production-gates-review-result.json": "succeeded",
+    "upload-validation.json": "present",
+    "unit-ci-summary.json": "missing",
+    "current-source-consumer.json": "missing",
+    "reduce-noncriticalP1Zero-verify-result.json": "missing"
+  },
+  "graph_checks": [
+    {
+      "unit": "fermat-riemann-sourceproof-20261114",
+      "definition_hashes_match_current_source": true,
+      "declaration_graph_sha256": "32f7b6603bc77f1f98f1fc6407af095c3fe73874a97e119a9d81a68674efe582",
+      "graph_declarations": 523,
+      "root_count": 22,
+      "root_rule": "All imported Theorems-module declarations plus compiler-reported instance declarations. This is a deliberately generous root set for detecting unused declarations, not a claim of minimal closure.",
+      "unreached_source_rows": [
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation._aux_Definitions_Def_FermatRiemannPolarApproximation___unexpand_AbcAdaptation_Tripod_Fermat_Proper_riemannRochSpace_1",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 22
+        },
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.termL",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 22
+        },
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation._aux_Definitions_Def_FermatRiemannPolarApproximation___unexpand_AbcAdaptation_Tripod_Fermat_Proper_functionDivisor_1",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 23
+        },
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation._aux_Definitions_Def_FermatRiemannPolarApproximation___macroRules__private_Definitions_Def_FermatRiemannPolarApproximation_0_AbcAdaptation_Tripod_Fermat_Proper_RiemannApproximation_termL_1",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 22
+        },
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation._aux_Definitions_Def_FermatRiemannPolarApproximation___unexpand_AbcAdaptation_Tripod_Fermat_Proper_functionPoleDivisor_1",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 24
+        },
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.termPdiv",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 23
+        },
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation.termPole",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 24
+        },
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation._aux_Definitions_Def_FermatRiemannPolarApproximation___macroRules__private_Definitions_Def_FermatRiemannPolarApproximation_0_AbcAdaptation_Tripod_Fermat_Proper_RiemannApproximation_termPole_1",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 24
+        },
+        {
+          "name": "_private.Definitions.Def_FermatRiemannPolarApproximation.0.AbcAdaptation.Tripod.Fermat.Proper.RiemannApproximation._aux_Definitions_Def_FermatRiemannPolarApproximation___macroRules__private_Definitions_Def_FermatRiemannPolarApproximation_0_AbcAdaptation_Tripod_Fermat_Proper_RiemannApproximation_termPdiv_1",
+          "module": "Definitions.Def_FermatRiemannPolarApproximation",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "unit": "fermat-noncritical-20261114",
+      "definition_hashes_match_current_source": true,
+      "declaration_graph_sha256": "8a46091bd6774954a3195cf01ec5217e435fc2422867573e25e166f199bed7f7",
+      "graph_declarations": 603,
+      "root_count": 27,
+      "root_rule": "All imported Theorems-module declarations plus compiler-reported instance declarations. This is a deliberately generous root set for detecting unused declarations, not a claim of minimal closure.",
+      "unreached_source_rows": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.recOn",
+          "module": "Definitions.Def_FermatNoncriticalFunctions",
+          "line": 32
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction.rec",
+          "module": "Definitions.Def_FermatNoncriticalSimpleZeros",
+          "line": 21
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.mob.noConfusion",
+          "module": "Definitions.Def_FermatNoncriticalFunctions",
+          "line": 35
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.noncritical_eval_zero",
+          "module": "Definitions.Def_FermatNoncriticalFunctions",
+          "line": 74
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.poly.elim",
+          "module": "Definitions.Def_FermatNoncriticalFunctions",
+          "line": 36
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction.casesOn",
+          "module": "Definitions.Def_FermatNoncriticalSimpleZeros",
+          "line": 21
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.poly.noConfusion",
+          "module": "Definitions.Def_FermatNoncriticalFunctions",
+          "line": 36
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.ctorElim",
+          "module": "Definitions.Def_FermatNoncriticalFunctions",
+          "line": 32
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction.recOn",
+          "module": "Definitions.Def_FermatNoncriticalSimpleZeros",
+          "line": 21
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.noConfusion",
+          "module": "Definitions.Def_FermatNoncriticalFunctions",
+          "line": 32
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap.mob.elim",
+          "module": "Definitions.Def_FermatNoncriticalFunctions",
+          "line": 35
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction.mk.noConfusion",
+          "module": "Definitions.Def_FermatNoncriticalSimpleZeros",
+          "line": 23
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.SimpleZeroFunction.noConfusion",
+          "module": "Definitions.Def_FermatNoncriticalSimpleZeros",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "unit": "fermat-canonical-decomposition-20261114",
+      "definition_hashes_match_current_source": true,
+      "declaration_graph_sha256": "20eb428abdd0da6082a9d138fd6690422cb5cef7a0cc6218a0c0bfa83cc81ed5",
+      "graph_declarations": 460,
+      "root_count": 18,
+      "root_rule": "All imported Theorems-module declarations plus compiler-reported instance declarations. This is a deliberately generous root set for detecting unused declarations, not a claim of minimal closure.",
+      "unreached_source_rows": []
+    }
+  ],
+  "historical_receipt_examples": [
+    {
+      "unit": "fermat-riemann-sourceproof-20261114",
+      "source_graph_job": "ci-010091-e14ce602",
+      "production_review_job": "ci-010109-453d14a0",
+      "production_review": "passed; no_sorryAx=true; canonicalPerfectoidData_laws only approved standard axioms"
+    },
+    {
+      "unit": "fermat-noncritical-20261114",
+      "source_graph_job": "ci-010177-25b5fbef",
+      "production_review_job": "ci-010200-c35b4c2d",
+      "production_review": "passed; no_sorryAx=true; canonicalPerfectoidData_laws only approved standard axioms"
+    },
+    {
+      "unit": "fermat-canonical-decomposition-20261114",
+      "source_graph_job": "ci-010244-cd33fae6",
+      "production_review_job": "ci-010256-ffc9c256",
+      "production_review": "passed; no_sorryAx=true; canonicalPerfectoidData_laws only approved standard axioms"
+    }
+  ],
+  "verification": "git show --check exited0 for all three delivered commits. No source/code checks were compiled. Current repository contains unrelated dirty/untracked inputs; no clean-workspace claim is made.",
+  "conclusion": "Exactly one conditional proposed change: line154 false->true after current P1 final receipt and actual SKETCH_ACCEPTED gates. No immediate unchecked->checked change is justified by pending P1 partial receipts. Preserve all mathematical/global/Act2 and source-closure/resource-compliance gates."
+}

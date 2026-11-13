@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-14",
+  "status": "prepared_not_executed",
+  "directory": "/tmp/p2m-p1-delivery-20261114",
+  "base_models": [
+    "/tmp/p2m-canonical-delivery-20261114",
+    "/tmp/p2m-noncritical-delivery-20261114"
+  ],
+  "files": {
+    "delivery_common.py": {
+      "sha256": "0ac8bf39a9999722727dadb9fc7a1eb9b095cacb8ee81e42a48fb1c272b82474",
+      "python_ast_parse": true
+    },
+    "finalize.py": {
+      "sha256": "f4ea57cb2826131d38c8c8ea12954d7704b13e71c16c2ac19cec52bad09f356b",
+      "python_ast_parse": true
+    },
+    "platform_publish.py": {
+      "sha256": "2521e7b2eddff768793d7902911f450736caa22b44828d82b208ebcb5fd95d11",
+      "python_ast_parse": true
+    }
+  },
+  "execution": {
+    "uploader_executed": false,
+    "finalizer_executed": false,
+    "network_requests": false,
+    "publication": false,
+    "repository_edits": false,
+    "ci_or_compiler_invoked": false,
+    "staging_performed": false,
+    "commit_or_push": false
+  },
+  "unit": {
+    "evidence": ".local/adaptation/fermat-noncritical-p1-20261114",
+    "definition": "FermatNoncriticalP1Reduction",
+    "children": [
+      "noncriticalP1Normalize",
+      "noncriticalP1Rational",
+      "noncriticalP1Minpoly"
+    ],
+    "existing_parent": "noncriticalP1Zero",
+    "parent_result_required": "SKETCH_ACCEPTED",
+    "parent_status_after": "Open",
+    "direct_proofs_added": 0,
+    "direct_proofs_preserved": 7,
+    "parent_id_source": ".local/adaptation/fermat-noncritical-20261114/published-child-ids.json"
+  },
+  "required_gates": {
+    "FermatNoncriticalP1Reduction-leaf": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+    "noncriticalP1Normalize-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean",
+    "noncriticalP1Rational-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean",
+    "noncriticalP1Minpoly-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean",
+    "noncriticalP1Zero-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+    "solution-noncriticalP1Zero-leaf": "Solution_noncriticalP1Zero.lean",
+    "closed-axioms-review": "Solutions/Checks_FermatNoncriticalP1Closed.lean",
+    "reduction-axioms-leaf": "Solutions/Checks_FermatNoncriticalP1Reduction.lean",
+    "source-graph-leaf": "ExtractP1Graph.lean",
+    "all-definitions-axioms-review": "AuditAllDefinitions.lean",
+    "elaborated-types-leaf": "ValidateElaboratedTypes.lean + upload-elaborated-types.json",
+    "existing-types-leaf": "ValidateExistingTypes.lean + existing-types-equal.json",
+    "production-gates-review": "ProductionGates.lean"
+  },
+  "hash_gates": [
+    "all five unit sources",
+    "decl_graph.jsonl",
+    "upload-problem-items.json via upload_problem_items_sha256",
+    "exact CI target source hash/workspace/exclusive mode/actual arguments",
+    "recorded closure input hashes",
+    "elaborated type equality",
+    "existing target definitional equality",
+    "exact cached publication payload",
+    "exact verification target/source hash/solution bytes"
+  ],
+  "platform_payloads": {
+    "private": true,
+    "definition_tag": "def-FermatNoncriticalP1Reduction",
+    "children_tag": "p1-children",
+    "parent_verification_tag": "reduce-noncriticalP1Zero",
+    "readback_schema": "readbacks-final.json declarations rows with declaration/path/en/zh_Hans/ja",
+    "quotation": "mochizuki-quotation.md",
+    "source_notices": "Retained Apache-2.0 headers and author notices; no claim of bundled LICENSE.",
+    "parent_readbacks": "core_key, exists_isNoncriticalBelyi_withInf and noncriticalP1Zero rows from the parent source path, each in all three normalized languages; no private helper platform node"
+  },
+  "graph_and_frontier": {
+    "root_depth": 8,
+    "omitted_edges_allowed_only_if_hidden_by_definitions": true,
+    "mathematical_coverage": "exactly baseline mathematical IDs plus three new child IDs",
+    "new_reduction": "exactly noncriticalP1Zero -> the three new Open children",
+    "baseline_and_after_frontier": "complete pagination, unique IDs and stable totals",
+    "frontier_set": "exactly baseline frontier minus parent plus three children",
+    "deltas": {
+      "accepted_reductions": 1,
+      "published_children": 3,
+      "dependency_edges": 3,
+      "open_frontier": 2,
+      "direct_closed_children": 0
+    },
+    "expected_totals_if_canonical_baseline_unchanged": {
+      "accepted_reductions": 15,
+      "published_children": 50,
+      "dependency_edges": 55,
+      "open_frontier": 29,
+      "direct_closed_children": 7
+    },
+    "counts_observed_during_preparation": false
+  },
+  "pending_inventory": {
+    "only_replaced_paragraph": "`Proper.noncriticalP1Zero`",
+    "new_detailed_paragraphs": 3,
+    "static_preview_preserves_all_other_paragraphs": true,
+    "neighbor_finite_and_composition_obligations_preserved": true,
+    "replay_requires_exact_new_paragraphs": true,
+    "checkbox_changes": []
+  },
+  "finalizer_staging": "Only five current unit sources, two P1 Checks, current unit evidence, pending status document and platform registry; reject unrelated staged paths; scan credentials/secrets; preserve physical resource data and unknown values; no commit or push.",
+  "remaining_root_work": "Integrate and exclusively validate Lean sources and every gate; produce exact type/source graph/problem items/solutions/upload-validation/readbacks/source-link/quotation/integration evidence; review scripts; only then run uploader and, after terminal private publication/verification receipts, finalizer.",
+  "solution_contract": "The complete compiler-span generated Solution may contain both private helpers before the top-level solution theorem. Both preflight and finalizer bind the entire Solution file hash/bytes and its exact leaf receipt; no single-declaration regex or selfimport assumption is imposed."
+}

@@ -1,0 +1,643 @@
+{
+  "declarations": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ofRat",
+      "source_name": "ofRat",
+      "kind": "noncomputable def",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 23,
+      "source_signature": "noncomputable def ofRat (q : ℚ) : Pt",
+      "reconstructed_binders": [
+        "(q : ℚ)"
+      ],
+      "readbacks": {
+        "en": "For each rational number q, define ofRat(q) to be the finite projective point some(q), using the canonical inclusion ℚ→Q̄. The projective point type is Option Q̄; none represents ∞.",
+        "zh_Hans": "对每个有理数 q，定义 ofRat(q) 为有限射影点 some(q)，其中使用有理数域到其完整代数闭包 Q̄ 的标准嵌入。射影点类型为 Option Q̄，none 表示无穷远点 ∞。",
+        "ja": "各有理数 q に対し、ofRat(q) を、標準埋め込み ℚ→Q̄ による有限射影点 some(q) と定義する。射影点の型は Option Q̄ であり、none は無限遠点 ∞ を表す。"
+      },
+      "proof_status": "definition",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ofRat",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "noncomputable def ofRat (q : ℚ) : Pt",
+      "en": "For each rational number q, define ofRat(q) to be the finite projective point some(q), using the canonical inclusion ℚ→Q̄. The projective point type is Option Q̄; none represents ∞.",
+      "zh_Hans": "对每个有理数 q，定义 ofRat(q) 为有限射影点 some(q)，其中使用有理数域到其完整代数闭包 Q̄ 的标准嵌入。射影点类型为 Option Q̄，none 表示无穷远点 ∞。",
+      "ja": "各有理数 q に対し、ofRat(q) を、標準埋め込み ℚ→Q̄ による有限射影点 some(q) と定義する。射影点の型は Option Q̄ であり、none は無限遠点 ∞ を表す。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ofRat",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ofRat",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsGalStable",
+      "source_name": "IsGalStable",
+      "kind": "def",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 26,
+      "source_signature": "def IsGalStable (T : Finset Tripod.Qbar) : Prop",
+      "reconstructed_binders": [
+        "(T : Finset Tripod.Qbar)"
+      ],
+      "readbacks": {
+        "en": "For a finite subset T of the full algebraic closure Q̄ of ℚ, define IsGalStable(T) as follows. For every ℚ-algebra automorphism σ:Q̄≃Q̄, and every t∈T, one has σ(t)∈T.",
+        "zh_Hans": "对有理数域的完整代数闭包 Q̄ 的有限子集 T，定义 IsGalStable(T) 如下：对 Q̄ 的每个固定有理数的代数自同构 σ，以及每个 t∈T，都有 σ(t)∈T。",
+        "ja": "有理数体の全代数閉包 Q̄ の有限部分集合 T に対し、IsGalStable(T) を次の命題として定義する。Q̄ のすべての ℚ-代数自己同型 σ とすべての t∈T に対して σ(t)∈T が成り立つ。"
+      },
+      "proof_status": "definition",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsGalStable",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "def IsGalStable (T : Finset Tripod.Qbar) : Prop",
+      "en": "For a finite subset T of the full algebraic closure Q̄ of ℚ, define IsGalStable(T) as follows. For every ℚ-algebra automorphism σ:Q̄≃Q̄, and every t∈T, one has σ(t)∈T.",
+      "zh_Hans": "对有理数域的完整代数闭包 Q̄ 的有限子集 T，定义 IsGalStable(T) 如下：对 Q̄ 的每个固定有理数的代数自同构 σ，以及每个 t∈T，都有 σ(t)∈T。",
+      "ja": "有理数体の全代数閉包 Q̄ の有限部分集合 T に対し、IsGalStable(T) を次の命題として定義する。Q̄ のすべての ℚ-代数自己同型 σ とすべての t∈T に対して σ(t)∈T が成り立つ。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsGalStable",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsGalStable",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.deg",
+      "source_name": "deg",
+      "kind": "noncomputable abbrev",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 30,
+      "source_signature": "noncomputable abbrev deg (x : Tripod.Qbar) : ℕ",
+      "reconstructed_binders": [
+        "(x : Tripod.Qbar)"
+      ],
+      "readbacks": {
+        "en": "For each element x of the full algebraic closure Q̄ of ℚ, define deg(x) as the natural-number degree of its minimal polynomial over ℚ.",
+        "zh_Hans": "对有理数域的完整代数闭包 Q̄ 中的每个元素 x，定义 deg(x) 为 x 在有理数域上的最小多项式的自然数次数。",
+        "ja": "有理数体の全代数閉包 Q̄ の各元 x に対し、deg(x) を x の ℚ 上の最小多項式の自然数次数と定義する。"
+      },
+      "proof_status": "definition",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.deg",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "noncomputable abbrev deg (x : Tripod.Qbar) : ℕ",
+      "en": "For each element x of the full algebraic closure Q̄ of ℚ, define deg(x) as the natural-number degree of its minimal polynomial over ℚ.",
+      "zh_Hans": "对有理数域的完整代数闭包 Q̄ 中的每个元素 x，定义 deg(x) 为 x 在有理数域上的最小多项式的自然数次数。",
+      "ja": "有理数体の全代数閉包 Q̄ の各元 x に対し、deg(x) を x の ℚ 上の最小多項式の自然数次数と定義する。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.deg",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.deg",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.withInf",
+      "source_name": "withInf",
+      "kind": "def",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 33,
+      "source_signature": "def withInf (T : Finset Tripod.Qbar) : Set Pt",
+      "reconstructed_binders": [
+        "(T : Finset Tripod.Qbar)"
+      ],
+      "readbacks": {
+        "en": "For a finite subset T of Q̄, define withInf(T) as the set {∞}∪{some(t):t∈T} of projective points. Here a projective point has type Option Q̄, and none represents ∞.",
+        "zh_Hans": "对 Q̄ 的有限子集 T，定义 withInf(T) 为射影点集合 {∞}∪{some(t):t∈T}。射影点类型为 Option Q̄，none 表示 ∞。",
+        "ja": "Q̄ の有限部分集合 T に対し、withInf(T) を射影点集合 {∞}∪{some(t):t∈T} と定義する。射影点の型は Option Q̄ であり、none は ∞ を表す。"
+      },
+      "proof_status": "definition",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.withInf",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "def withInf (T : Finset Tripod.Qbar) : Set Pt",
+      "en": "For a finite subset T of Q̄, define withInf(T) as the set {∞}∪{some(t):t∈T} of projective points. Here a projective point has type Option Q̄, and none represents ∞.",
+      "zh_Hans": "对 Q̄ 的有限子集 T，定义 withInf(T) 为射影点集合 {∞}∪{some(t):t∈T}。射影点类型为 Option Q̄，none 表示 ∞。",
+      "ja": "Q̄ の有限部分集合 T に対し、withInf(T) を射影点集合 {∞}∪{some(t):t∈T} と定義する。射影点の型は Option Q̄ であり、none は ∞ を表す。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.withInf",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.withInf",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.none_mem_withInf",
+      "source_name": "none_mem_withInf",
+      "kind": "simp theorem",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 36,
+      "source_signature": "@[simp] theorem none_mem_withInf (T : Finset Tripod.Qbar) : (none : Pt) ∈ withInf T",
+      "reconstructed_binders": [
+        "(T : Finset Tripod.Qbar)"
+      ],
+      "readbacks": {
+        "en": "For every finite subset T of Q̄, the point ∞ belongs to withInf(T)={∞}∪{some(t):t∈T}. Here ∞ is none in Option Q̄.",
+        "zh_Hans": "对 Q̄ 的每个有限子集 T，无穷远点 ∞ 都属于 withInf(T)={∞}∪{some(t):t∈T}。这里 ∞ 是 Option Q̄ 中的 none。",
+        "ja": "Q̄ のすべての有限部分集合 T に対し、無限遠点 ∞ は withInf(T)={∞}∪{some(t):t∈T} に属する。ここで ∞ は Option Q̄ の none である。"
+      },
+      "proof_status": "proved_in_source",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.none_mem_withInf",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "@[simp] theorem none_mem_withInf (T : Finset Tripod.Qbar) : (none : Pt) ∈ withInf T",
+      "en": "For every finite subset T of Q̄, the point ∞ belongs to withInf(T)={∞}∪{some(t):t∈T}. Here ∞ is none in Option Q̄.",
+      "zh_Hans": "对 Q̄ 的每个有限子集 T，无穷远点 ∞ 都属于 withInf(T)={∞}∪{some(t):t∈T}。这里 ∞ 是 Option Q̄ 中的 none。",
+      "ja": "Q̄ のすべての有限部分集合 T に対し、無限遠点 ∞ は withInf(T)={∞}∪{some(t):t∈T} に属する。ここで ∞ は Option Q̄ の none である。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.none_mem_withInf",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.none_mem_withInf",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.some_mem_withInf",
+      "source_name": "some_mem_withInf",
+      "kind": "theorem",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 39,
+      "source_signature": "theorem some_mem_withInf {T : Finset Tripod.Qbar} {t : Tripod.Qbar} (ht : t ∈ T) :\n    some t ∈ withInf T",
+      "reconstructed_binders": [
+        "{T : Finset Tripod.Qbar}",
+        "{t : Tripod.Qbar}",
+        "(ht : t ∈ T)"
+      ],
+      "readbacks": {
+        "en": "For every finite subset T of Q̄ and every t∈Q̄, if t∈T, then the finite projective point some(t) belongs to withInf(T)={∞}∪{some(x):x∈T}.",
+        "zh_Hans": "对 Q̄ 的每个有限子集 T 和每个 t∈Q̄，若 t∈T，则有限射影点 some(t) 属于 withInf(T)={∞}∪{some(x):x∈T}。",
+        "ja": "Q̄ のすべての有限部分集合 T とすべての t∈Q̄ に対し、t∈T ならば有限射影点 some(t) は withInf(T)={∞}∪{some(x):x∈T} に属する。"
+      },
+      "proof_status": "proved_in_source",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.some_mem_withInf",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "theorem some_mem_withInf {T : Finset Tripod.Qbar} {t : Tripod.Qbar} (ht : t ∈ T) :\n    some t ∈ withInf T",
+      "en": "For every finite subset T of Q̄ and every t∈Q̄, if t∈T, then the finite projective point some(t) belongs to withInf(T)={∞}∪{some(x):x∈T}.",
+      "zh_Hans": "对 Q̄ 的每个有限子集 T 和每个 t∈Q̄，若 t∈T，则有限射影点 some(t) 属于 withInf(T)={∞}∪{some(x):x∈T}。",
+      "ja": "Q̄ のすべての有限部分集合 T とすべての t∈Q̄ に対し、t∈T ならば有限射影点 some(t) は withInf(T)={∞}∪{some(x):x∈T} に属する。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.some_mem_withInf",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.some_mem_withInf",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι",
+      "source_name": "ι",
+      "kind": "noncomputable def",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 43,
+      "source_signature": "noncomputable def ι : Tripod.Qbar →ₐ[ℚ] ℂ",
+      "reconstructed_binders": [],
+      "readbacks": {
+        "en": "Define ι to be one fixed ℚ-algebra homomorphism from the full algebraic closure Q̄ of ℚ into ℂ. The definition supplies the local instance that Q̄ is algebraic over ℚ, then uses IsAlgClosed.lift. As a field homomorphism, ι is an embedding.",
+        "zh_Hans": "定义 ι 为从有理数域的完整代数闭包 Q̄ 到复数域的一个固定有理数代数同态。定义先局部提供 Q̄ 在有理数域上为代数扩张的实例，再使用 IsAlgClosed.lift 选取该同态。域同态 ι 是嵌入。",
+        "ja": "ι を、有理数体の全代数閉包 Q̄ から複素数体への固定した ℚ-代数準同型として定義する。定義内では Q̄ が ℚ 上代数的であるという局所インスタンスを与え、IsAlgClosed.lift を用いる。体準同型であるため、ι は埋め込みである。"
+      },
+      "proof_status": "definition",
+      "open_leaf_dependencies": [],
+      "notes": [
+        "The letI in the body is local. It is not a new source-level instance declaration."
+      ],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "noncomputable def ι : Tripod.Qbar →ₐ[ℚ] ℂ",
+      "en": "Define ι to be one fixed ℚ-algebra homomorphism from the full algebraic closure Q̄ of ℚ into ℂ. The definition supplies the local instance that Q̄ is algebraic over ℚ, then uses IsAlgClosed.lift. As a field homomorphism, ι is an embedding.",
+      "zh_Hans": "定义 ι 为从有理数域的完整代数闭包 Q̄ 到复数域的一个固定有理数代数同态。定义先局部提供 Q̄ 在有理数域上为代数扩张的实例，再使用 IsAlgClosed.lift 选取该同态。域同态 ι 是嵌入。",
+      "ja": "ι を、有理数体の全代数閉包 Q̄ から複素数体への固定した ℚ-代数準同型として定義する。定義内では Q̄ が ℚ 上代数的であるという局所インスタンスを与え、IsAlgClosed.lift を用いる。体準同型であるため、ι は埋め込みである。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι_ratCast",
+      "source_name": "ι_ratCast",
+      "kind": "simp theorem",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 48,
+      "source_signature": "@[simp] theorem ι_ratCast (q : ℚ) : ι (q : Tripod.Qbar) = (q : ℂ)",
+      "reconstructed_binders": [
+        "(q : ℚ)"
+      ],
+      "readbacks": {
+        "en": "For every rational number q, the fixed ℚ-algebra embedding ι:Q̄→ℂ sends the canonical image of q in Q̄ to its canonical image in ℂ: ι((q:Q̄))=(q:ℂ).",
+        "zh_Hans": "对每个有理数 q，固定的有理数代数嵌入 ι:Q̄→ℂ 把 q 在 Q̄ 中的标准像映到 q 在复数域中的标准像，即 ι((q:Q̄))=(q:ℂ)。",
+        "ja": "すべての有理数 q に対し、固定した ℚ-代数埋め込み ι:Q̄→ℂ は Q̄ における q の標準像を複素数体における q の標準像に写す。すなわち ι((q:Q̄))=(q:ℂ) である。"
+      },
+      "proof_status": "proved_in_source",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι_ratCast",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "@[simp] theorem ι_ratCast (q : ℚ) : ι (q : Tripod.Qbar) = (q : ℂ)",
+      "en": "For every rational number q, the fixed ℚ-algebra embedding ι:Q̄→ℂ sends the canonical image of q in Q̄ to its canonical image in ℂ: ι((q:Q̄))=(q:ℂ).",
+      "zh_Hans": "对每个有理数 q，固定的有理数代数嵌入 ι:Q̄→ℂ 把 q 在 Q̄ 中的标准像映到 q 在复数域中的标准像，即 ι((q:Q̄))=(q:ℂ)。",
+      "ja": "すべての有理数 q に対し、固定した ℚ-代数埋め込み ι:Q̄→ℂ は Q̄ における q の標準像を複素数体における q の標準像に写す。すなわち ι((q:Q̄))=(q:ℂ) である。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι_ratCast",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι_ratCast",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.norm_ι_ratCast",
+      "source_name": "norm_ι_ratCast",
+      "kind": "simp theorem",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 50,
+      "source_signature": "@[simp] theorem norm_ι_ratCast (q : ℚ) : ‖ι (q : Tripod.Qbar)‖ = |(q : ℝ)|",
+      "reconstructed_binders": [
+        "(q : ℚ)"
+      ],
+      "readbacks": {
+        "en": "For every rational number q, the complex norm of its image under the fixed ℚ-algebra embedding ι:Q̄→ℂ equals the real absolute value of q: ‖ι((q:Q̄))‖=|(q:ℝ)|.",
+        "zh_Hans": "对每个有理数 q，其在固定有理数代数嵌入 ι:Q̄→ℂ 下的像的复数范数等于 q 的实数绝对值，即 ‖ι((q:Q̄))‖=|(q:ℝ)|。",
+        "ja": "すべての有理数 q に対し、固定した ℚ-代数埋め込み ι:Q̄→ℂ による像の複素数ノルムは q の実数としての絶対値に等しい。すなわち ‖ι((q:Q̄))‖=|(q:ℝ)| である。"
+      },
+      "proof_status": "proved_in_source",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.norm_ι_ratCast",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "@[simp] theorem norm_ι_ratCast (q : ℚ) : ‖ι (q : Tripod.Qbar)‖ = |(q : ℝ)|",
+      "en": "For every rational number q, the complex norm of its image under the fixed ℚ-algebra embedding ι:Q̄→ℂ equals the real absolute value of q: ‖ι((q:Q̄))‖=|(q:ℝ)|.",
+      "zh_Hans": "对每个有理数 q，其在固定有理数代数嵌入 ι:Q̄→ℂ 下的像的复数范数等于 q 的实数绝对值，即 ‖ι((q:Q̄))‖=|(q:ℝ)|。",
+      "ja": "すべての有理数 q に対し、固定した ℚ-代数埋め込み ι:Q̄→ℂ による像の複素数ノルムは q の実数としての絶対値に等しい。すなわち ‖ι((q:Q̄))‖=|(q:ℝ)| である。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.norm_ι_ratCast",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.norm_ι_ratCast",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi",
+      "source_name": "IsNoncriticalBelyi",
+      "kind": "def",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 53,
+      "source_signature": "def IsNoncriticalBelyi (hs : List ElemMap) (S : Set Pt) (τ : Pt) : Prop",
+      "reconstructed_binders": [
+        "(hs : List ElemMap)",
+        "(S : Set Pt)",
+        "(τ : Pt)"
+      ],
+      "readbacks": {
+        "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For every finite list hs of these elementary maps, every set S of projective points, and every projective point τ, define IsNoncriticalBelyi(hs,S,τ) to mean P(hs,S,τ). The definition is exactly the conjunction above.",
+        "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对上述初等映射的每个有限列表 hs、射影点的每个集合 S，以及每个射影点 τ，定义 IsNoncriticalBelyi(hs,S,τ) 为 P(hs,S,τ)，即上述三个条件的合取。",
+        "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。上記の初等写像のすべての有限リスト hs、射影点のすべての集合 S、およびすべての射影点 τ に対し、IsNoncriticalBelyi(hs,S,τ) を P(hs,S,τ)、すなわち上記三条件の連言として定義する。"
+      },
+      "proof_status": "definition",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "def IsNoncriticalBelyi (hs : List ElemMap) (S : Set Pt) (τ : Pt) : Prop",
+      "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For every finite list hs of these elementary maps, every set S of projective points, and every projective point τ, define IsNoncriticalBelyi(hs,S,τ) to mean P(hs,S,τ). The definition is exactly the conjunction above.",
+      "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对上述初等映射的每个有限列表 hs、射影点的每个集合 S，以及每个射影点 τ，定义 IsNoncriticalBelyi(hs,S,τ) 为 P(hs,S,τ)，即上述三个条件的合取。",
+      "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。上記の初等写像のすべての有限リスト hs、射影点のすべての集合 S、およびすべての射影点 τ に対し、IsNoncriticalBelyi(hs,S,τ) を P(hs,S,τ)、すなわち上記三条件の連言として定義する。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi.mono",
+      "source_name": "mono",
+      "kind": "theorem",
+      "visibility": "public",
+      "source": "Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "line": 63,
+      "source_signature": "theorem mono {hs : List ElemMap} {S S' : Set Pt} {τ : Pt}\n    (hg : IsNoncriticalBelyi hs S τ) (hS : S' ⊆ S) : IsNoncriticalBelyi hs S' τ",
+      "reconstructed_binders": [
+        "{hs : List ElemMap}",
+        "{S S' : Set Pt}",
+        "{τ : Pt}",
+        "(hg : IsNoncriticalBelyi hs S τ)",
+        "(hS : S' ⊆ S)"
+      ],
+      "readbacks": {
+        "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For every list hs, sets S and S′, and point τ, suppose P(hs,S,τ) and S′⊆S. Then P(hs,S′,τ) holds for the same list and point.",
+        "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对每个列表 hs、集合 S 与 S′ 以及点 τ，若 P(hs,S,τ) 成立且 S′⊆S，则同一个列表和同一个点满足 P(hs,S′,τ)。",
+        "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。すべてのリスト hs、集合 S、S′ および点 τ に対し、P(hs,S,τ) と S′⊆S を仮定する。このとき同じリストと点について P(hs,S′,τ) が成り立つ。"
+      },
+      "proof_status": "proved_in_source",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi.mono",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+      "full_signature_static": "theorem mono {hs : List ElemMap} {S S' : Set Pt} {τ : Pt}\n    (hg : IsNoncriticalBelyi hs S τ) (hS : S' ⊆ S) : IsNoncriticalBelyi hs S' τ",
+      "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For every list hs, sets S and S′, and point τ, suppose P(hs,S,τ) and S′⊆S. Then P(hs,S′,τ) holds for the same list and point.",
+      "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对每个列表 hs、集合 S 与 S′ 以及点 τ，若 P(hs,S,τ) 成立且 S′⊆S，则同一个列表和同一个点满足 P(hs,S′,τ)。",
+      "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。すべてのリスト hs、集合 S、S′ および点 τ に対し、P(hs,S,τ) と S′⊆S を仮定する。このとき同じリストと点について P(hs,S′,τ) が成り立つ。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi.mono",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi.mono",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
+      "source_name": "noncriticalP1Minpoly",
+      "kind": "theorem",
+      "visibility": "public",
+      "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean",
+      "line": 21,
+      "source_signature": "theorem noncriticalP1Minpoly (T : Finset Tripod.Qbar) (hT : IsGalStable T) (hbd : ∀ y ∈ T, ‖ι y‖ ≤ 1)\n    {d n : ℕ} (hd : 2 ≤ d) (hdeg : ∀ y ∈ T, deg y ≤ d)\n    (hcard : (T.filter fun y => deg y = d).card ≤ n + 1) {σ₀ : Tripod.Qbar} (hσ₀ : σ₀ ∈ T)\n    (hσ₀d : deg σ₀ = d) :\n    ∃ (T₂ : Finset Tripod.Qbar) (τ₂ : ℚ), IsGalStable T₂ ∧ (τ₂ : Tripod.Qbar) ∉ T₂ ∧\n      (∀ y ∈ T₂, deg y ≤ d) ∧ (T₂.filter fun y => deg y = d).card ≤ n ∧\n      ∃ u : ElemMap, ∀ hs, IsNoncriticalBelyi hs (withInf T₂) (ofRat τ₂) →\n        IsNoncriticalBelyi (u :: hs) (withInf T) (ofRat 9)",
+      "reconstructed_binders": [
+        "(T : Finset Tripod.Qbar)",
+        "(hT : IsGalStable T)",
+        "(hbd : ∀ (y : Tripod.Qbar), y ∈ T → ‖ι y‖ ≤ 1)",
+        "{d n : ℕ}",
+        "(hd : 2 ≤ d)",
+        "(hdeg : ∀ (y : Tripod.Qbar), y ∈ T → deg y ≤ d)",
+        "(hcard : (T.filter (fun (y : Tripod.Qbar) => deg y = d)).card ≤ n + 1)",
+        "{σ₀ : Tripod.Qbar}",
+        "(hσ₀ : σ₀ ∈ T)",
+        "(hσ₀d : deg σ₀ = d)",
+        "conclusion ∃ (T₂ : Finset Tripod.Qbar) (τ₂ : ℚ), IsGalStable T₂ ∧ (τ₂ : Tripod.Qbar) ∉ T₂ ∧ (∀ (y : Tripod.Qbar), y ∈ T₂ → deg y ≤ d) ∧ (T₂.filter (fun (y : Tripod.Qbar) => deg y = d)).card ≤ n ∧ ∃ (u : ElemMap), ∀ (hs : List ElemMap), IsNoncriticalBelyi hs (withInf T₂) (ofRat τ₂) → IsNoncriticalBelyi (u :: hs) (withInf T) (ofRat 9)"
+      ],
+      "readbacks": {
+        "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. Let T be a finite Galois-stable subset of Q̄. Assume ‖ι(y)‖≤1 for every y∈T. Let d,n be natural numbers with 2≤d. Assume D(y)≤d for every y∈T and c_d(T)≤n+1. Choose an element σ₀∈T with D(σ₀)=d. Then there exist a finite subset T₂⊆Q̄ and a rational number τ₂ such that all of the following hold. T₂ is Galois-stable, and the image of τ₂ in Q̄ does not belong to T₂. Every y∈T₂ satisfies D(y)≤d, and c_d(T₂)≤n. There also exists one elementary map u such that, for every finite list hs of elementary maps, P(hs,W(T₂),τ̂₂) implies P(u::hs,W(T),9̂). In u::hs, u acts before hs. This is a continuation contract: it converts any suitable later list for the smaller data into a suitable list for the original data.",
+        "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。设 T 是 Q̄ 的有限 Galois 稳定子集，且每个 y∈T 都满足 ‖ι(y)‖≤1。设 d,n 为自然数，2≤d，每个 y∈T 都满足 D(y)≤d，且 c_d(T)≤n+1。给定 σ₀∈T，满足 D(σ₀)=d。则存在有限子集 T₂⊆Q̄ 和有理数 τ₂，满足以下全部条件：T₂ 是 Galois 稳定的；τ₂ 在 Q̄ 中的像不属于 T₂；每个 y∈T₂ 都满足 D(y)≤d；c_d(T₂)≤n。此外，存在一个初等映射 u，使得对每个初等映射有限列表 hs，P(hs,W(T₂),τ̂₂) 都蕴含 P(u::hs,W(T),9̂)。列表 u::hs 中先作用 u，再作用 hs。这是延续条件：它把缩减后数据的任意合适后续列表转为原数据的合适列表。",
+        "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。T を Q̄ の有限なガロア安定部分集合とし、各 y∈T で ‖ι(y)‖≤1 とする。自然数 d,n について 2≤d、各 y∈T で D(y)≤d、かつ c_d(T)≤n+1 とする。さらに σ₀∈T と D(σ₀)=d を仮定する。このとき有限部分集合 T₂⊆Q̄ と有理数 τ₂ が存在し、次をすべて満たす。T₂ はガロア安定であり、τ₂ の Q̄ における像は T₂ に属さない。各 y∈T₂ で D(y)≤d、かつ c_d(T₂)≤n となる。さらに一つの初等写像 u が存在し、初等写像のすべての有限リスト hs に対して、P(hs,W(T₂),τ̂₂) から P(u::hs,W(T),9̂) が従う。リスト u::hs では u が hs より先に作用する。これは、縮小したデータについての任意の適切な後続リストを、元のデータについてのリストに変換する継続条件である。"
+      },
+      "proof_status": "open_sorry_leaf",
+      "open_leaf_dependencies": [],
+      "notes": [
+        "σ₀ is an algebraic point, not an automorphism.",
+        "The conclusion gives no unit-disk bound for T₂.",
+        "The existential u is outside ∀ hs."
+      ],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean",
+      "full_signature_static": "theorem noncriticalP1Minpoly (T : Finset Tripod.Qbar) (hT : IsGalStable T) (hbd : ∀ y ∈ T, ‖ι y‖ ≤ 1)\n    {d n : ℕ} (hd : 2 ≤ d) (hdeg : ∀ y ∈ T, deg y ≤ d)\n    (hcard : (T.filter fun y => deg y = d).card ≤ n + 1) {σ₀ : Tripod.Qbar} (hσ₀ : σ₀ ∈ T)\n    (hσ₀d : deg σ₀ = d) :\n    ∃ (T₂ : Finset Tripod.Qbar) (τ₂ : ℚ), IsGalStable T₂ ∧ (τ₂ : Tripod.Qbar) ∉ T₂ ∧\n      (∀ y ∈ T₂, deg y ≤ d) ∧ (T₂.filter fun y => deg y = d).card ≤ n ∧\n      ∃ u : ElemMap, ∀ hs, IsNoncriticalBelyi hs (withInf T₂) (ofRat τ₂) →\n        IsNoncriticalBelyi (u :: hs) (withInf T) (ofRat 9)",
+      "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. Let T be a finite Galois-stable subset of Q̄. Assume ‖ι(y)‖≤1 for every y∈T. Let d,n be natural numbers with 2≤d. Assume D(y)≤d for every y∈T and c_d(T)≤n+1. Choose an element σ₀∈T with D(σ₀)=d. Then there exist a finite subset T₂⊆Q̄ and a rational number τ₂ such that all of the following hold. T₂ is Galois-stable, and the image of τ₂ in Q̄ does not belong to T₂. Every y∈T₂ satisfies D(y)≤d, and c_d(T₂)≤n. There also exists one elementary map u such that, for every finite list hs of elementary maps, P(hs,W(T₂),τ̂₂) implies P(u::hs,W(T),9̂). In u::hs, u acts before hs. This is a continuation contract: it converts any suitable later list for the smaller data into a suitable list for the original data.",
+      "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。设 T 是 Q̄ 的有限 Galois 稳定子集，且每个 y∈T 都满足 ‖ι(y)‖≤1。设 d,n 为自然数，2≤d，每个 y∈T 都满足 D(y)≤d，且 c_d(T)≤n+1。给定 σ₀∈T，满足 D(σ₀)=d。则存在有限子集 T₂⊆Q̄ 和有理数 τ₂，满足以下全部条件：T₂ 是 Galois 稳定的；τ₂ 在 Q̄ 中的像不属于 T₂；每个 y∈T₂ 都满足 D(y)≤d；c_d(T₂)≤n。此外，存在一个初等映射 u，使得对每个初等映射有限列表 hs，P(hs,W(T₂),τ̂₂) 都蕴含 P(u::hs,W(T),9̂)。列表 u::hs 中先作用 u，再作用 hs。这是延续条件：它把缩减后数据的任意合适后续列表转为原数据的合适列表。",
+      "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。T を Q̄ の有限なガロア安定部分集合とし、各 y∈T で ‖ι(y)‖≤1 とする。自然数 d,n について 2≤d、各 y∈T で D(y)≤d、かつ c_d(T)≤n+1 とする。さらに σ₀∈T と D(σ₀)=d を仮定する。このとき有限部分集合 T₂⊆Q̄ と有理数 τ₂ が存在し、次をすべて満たす。T₂ はガロア安定であり、τ₂ の Q̄ における像は T₂ に属さない。各 y∈T₂ で D(y)≤d、かつ c_d(T₂)≤n となる。さらに一つの初等写像 u が存在し、初等写像のすべての有限リスト hs に対して、P(hs,W(T₂),τ̂₂) から P(u::hs,W(T),9̂) が従う。リスト u::hs では u が hs より先に作用する。これは、縮小したデータについての任意の適切な後続リストを、元のデータについてのリストに変換する継続条件である。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+      "source_name": "noncriticalP1Normalize",
+      "kind": "theorem",
+      "visibility": "public",
+      "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean",
+      "line": 21,
+      "source_signature": "theorem noncriticalP1Normalize (T : Finset Tripod.Qbar) (hT : IsGalStable T) {τ : ℚ} (hτ : (τ : Tripod.Qbar) ∉ T) :\n    ∃ (u : ElemMap) (T₁ : Finset Tripod.Qbar), IsGalStable T₁ ∧ (∀ y ∈ T₁, ‖ι y‖ ≤ 1) ∧\n      (∀ d, 1 ≤ d → (∀ t ∈ T, deg t ≤ d) →\n        (∀ y ∈ T₁, deg y ≤ d) ∧\n        (2 ≤ d → (T₁.filter fun y => deg y = d).card ≤ (T.filter fun t => deg t = d).card)) ∧\n      ∀ hs, IsNoncriticalBelyi hs (withInf T₁) (ofRat 9) →\n        IsNoncriticalBelyi (u :: hs) (withInf T) (ofRat τ)",
+      "reconstructed_binders": [
+        "(T : Finset Tripod.Qbar)",
+        "(hT : IsGalStable T)",
+        "{τ : ℚ}",
+        "(hτ : (τ : Tripod.Qbar) ∉ T)",
+        "conclusion ∃ (u : ElemMap) (T₁ : Finset Tripod.Qbar), IsGalStable T₁ ∧ (∀ (y : Tripod.Qbar), y ∈ T₁ → ‖ι y‖ ≤ 1) ∧ (∀ (d : ℕ), 1 ≤ d → (∀ (t : Tripod.Qbar), t ∈ T → deg t ≤ d) → (∀ (y : Tripod.Qbar), y ∈ T₁ → deg y ≤ d) ∧ (2 ≤ d → (T₁.filter (fun (y : Tripod.Qbar) => deg y = d)).card ≤ (T.filter (fun (t : Tripod.Qbar) => deg t = d)).card)) ∧ ∀ (hs : List ElemMap), IsNoncriticalBelyi hs (withInf T₁) (ofRat 9) → IsNoncriticalBelyi (u :: hs) (withInf T) (ofRat τ)"
+      ],
+      "readbacks": {
+        "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. Let T be a finite Galois-stable subset of Q̄. Let τ be any rational number whose image in Q̄ is not in T. Then there exist one elementary map u and one finite subset T₁⊆Q̄ with the following properties. T₁ is Galois-stable, and every y∈T₁ satisfies ‖ι(y)‖≤1. For every natural number d with 1≤d, if D(t)≤d for every t∈T, then D(y)≤d for every y∈T₁. Under those same assumptions on d and T, if also 2≤d, then c_d(T₁)≤c_d(T). Finally, for every finite list hs of elementary maps, P(hs,W(T₁),9̂) implies P(u::hs,W(T),τ̂). In u::hs, u acts first. The same u and T₁ serve all d and all continuation lists hs.",
+        "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。设 T 是 Q̄ 的有限 Galois 稳定子集。设 τ 是有理数，且其在 Q̄ 中的像不属于 T。则存在一个初等映射 u 和一个有限子集 T₁⊆Q̄，满足以下全部性质：T₁ 是 Galois 稳定的；每个 y∈T₁ 都满足 ‖ι(y)‖≤1。对每个满足 1≤d 的自然数 d，若每个 t∈T 都满足 D(t)≤d，则每个 y∈T₁ 都满足 D(y)≤d。在对 d 与 T 的同样假设下，若还有 2≤d，则 c_d(T₁)≤c_d(T)。最后，对每个初等映射有限列表 hs，P(hs,W(T₁),9̂) 都蕴含 P(u::hs,W(T),τ̂)。在 u::hs 中先作用 u。同一组 u 和 T₁ 同时适用于全部 d 和全部后续列表 hs。",
+        "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。T を Q̄ の有限なガロア安定部分集合とする。有理数 τ の Q̄ における像が T に属さないとする。このとき一つの初等写像 u と一つの有限部分集合 T₁⊆Q̄ が存在し、次をすべて満たす。T₁ はガロア安定であり、各 y∈T₁ で ‖ι(y)‖≤1 となる。1≤d を満たすすべての自然数 d に対して、各 t∈T で D(t)≤d ならば、各 y∈T₁ で D(y)≤d となる。同じ d と T の仮定の下で、さらに 2≤d ならば c_d(T₁)≤c_d(T) となる。最後に、初等写像のすべての有限リスト hs に対して、P(hs,W(T₁),9̂) から P(u::hs,W(T),τ̂) が従う。u::hs では u が最初に作用する。同じ u と T₁ がすべての d とすべての後続リスト hs に共通して使われる。"
+      },
+      "proof_status": "open_sorry_leaf",
+      "open_leaf_dependencies": [],
+      "notes": [
+        "No input norm bound is assumed.",
+        "No degree-exactly-1 cardinality comparison is stated.",
+        "One existential pair u,T₁ precedes both universal d and universal hs."
+      ],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean",
+      "full_signature_static": "theorem noncriticalP1Normalize (T : Finset Tripod.Qbar) (hT : IsGalStable T) {τ : ℚ} (hτ : (τ : Tripod.Qbar) ∉ T) :\n    ∃ (u : ElemMap) (T₁ : Finset Tripod.Qbar), IsGalStable T₁ ∧ (∀ y ∈ T₁, ‖ι y‖ ≤ 1) ∧\n      (∀ d, 1 ≤ d → (∀ t ∈ T, deg t ≤ d) →\n        (∀ y ∈ T₁, deg y ≤ d) ∧\n        (2 ≤ d → (T₁.filter fun y => deg y = d).card ≤ (T.filter fun t => deg t = d).card)) ∧\n      ∀ hs, IsNoncriticalBelyi hs (withInf T₁) (ofRat 9) →\n        IsNoncriticalBelyi (u :: hs) (withInf T) (ofRat τ)",
+      "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. Let T be a finite Galois-stable subset of Q̄. Let τ be any rational number whose image in Q̄ is not in T. Then there exist one elementary map u and one finite subset T₁⊆Q̄ with the following properties. T₁ is Galois-stable, and every y∈T₁ satisfies ‖ι(y)‖≤1. For every natural number d with 1≤d, if D(t)≤d for every t∈T, then D(y)≤d for every y∈T₁. Under those same assumptions on d and T, if also 2≤d, then c_d(T₁)≤c_d(T). Finally, for every finite list hs of elementary maps, P(hs,W(T₁),9̂) implies P(u::hs,W(T),τ̂). In u::hs, u acts first. The same u and T₁ serve all d and all continuation lists hs.",
+      "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。设 T 是 Q̄ 的有限 Galois 稳定子集。设 τ 是有理数，且其在 Q̄ 中的像不属于 T。则存在一个初等映射 u 和一个有限子集 T₁⊆Q̄，满足以下全部性质：T₁ 是 Galois 稳定的；每个 y∈T₁ 都满足 ‖ι(y)‖≤1。对每个满足 1≤d 的自然数 d，若每个 t∈T 都满足 D(t)≤d，则每个 y∈T₁ 都满足 D(y)≤d。在对 d 与 T 的同样假设下，若还有 2≤d，则 c_d(T₁)≤c_d(T)。最后，对每个初等映射有限列表 hs，P(hs,W(T₁),9̂) 都蕴含 P(u::hs,W(T),τ̂)。在 u::hs 中先作用 u。同一组 u 和 T₁ 同时适用于全部 d 和全部后续列表 hs。",
+      "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。T を Q̄ の有限なガロア安定部分集合とする。有理数 τ の Q̄ における像が T に属さないとする。このとき一つの初等写像 u と一つの有限部分集合 T₁⊆Q̄ が存在し、次をすべて満たす。T₁ はガロア安定であり、各 y∈T₁ で ‖ι(y)‖≤1 となる。1≤d を満たすすべての自然数 d に対して、各 t∈T で D(t)≤d ならば、各 y∈T₁ で D(y)≤d となる。同じ d と T の仮定の下で、さらに 2≤d ならば c_d(T₁)≤c_d(T) となる。最後に、初等写像のすべての有限リスト hs に対して、P(hs,W(T₁),9̂) から P(u::hs,W(T),τ̂) が従う。u::hs では u が最初に作用する。同じ u と T₁ がすべての d とすべての後続リスト hs に共通して使われる。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+      "source_name": "noncriticalP1Rational",
+      "kind": "theorem",
+      "visibility": "public",
+      "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean",
+      "line": 21,
+      "source_signature": "theorem noncriticalP1Rational (T : Finset Tripod.Qbar) (hbd : ∀ y ∈ T, ‖ι y‖ ≤ 1)\n    (hdeg : ∀ y ∈ T, deg y ≤ 1) :\n    ∃ hs, IsNoncriticalBelyi hs (withInf T) (ofRat 9)",
+      "reconstructed_binders": [
+        "(T : Finset Tripod.Qbar)",
+        "(hbd : ∀ (y : Tripod.Qbar), y ∈ T → ‖ι y‖ ≤ 1)",
+        "(hdeg : ∀ (y : Tripod.Qbar), y ∈ T → deg y ≤ 1)",
+        "conclusion ∃ (hs : List ElemMap), IsNoncriticalBelyi hs (withInf T) (ofRat 9)"
+      ],
+      "readbacks": {
+        "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. Let T be a finite subset of Q̄. Assume that every y∈T satisfies ‖ι(y)‖≤1 and D(y)≤1. Then there exists a finite list hs of elementary maps such that P(hs,W(T),9̂). No Galois-stability hypothesis is present. The distinguished rational point is 9, not an arbitrary parameter.",
+        "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。设 T 是 Q̄ 的有限子集，并且每个 y∈T 都满足 ‖ι(y)‖≤1 和 D(y)≤1。则存在初等映射的有限列表 hs，使 P(hs,W(T),9̂) 成立。该陈述没有 Galois 稳定假设。指定的有理点是 9，不是任意参数。",
+        "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。T を Q̄ の有限部分集合とし、各 y∈T で ‖ι(y)‖≤1 および D(y)≤1 とする。このとき初等写像の有限リスト hs が存在し、P(hs,W(T),9̂) を満たす。この命題にはガロア安定性の仮定はない。指定された有理点は 9 であり、任意のパラメータではない。"
+      },
+      "proof_status": "open_sorry_leaf",
+      "open_leaf_dependencies": [],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean",
+      "full_signature_static": "theorem noncriticalP1Rational (T : Finset Tripod.Qbar) (hbd : ∀ y ∈ T, ‖ι y‖ ≤ 1)\n    (hdeg : ∀ y ∈ T, deg y ≤ 1) :\n    ∃ hs, IsNoncriticalBelyi hs (withInf T) (ofRat 9)",
+      "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. Let T be a finite subset of Q̄. Assume that every y∈T satisfies ‖ι(y)‖≤1 and D(y)≤1. Then there exists a finite list hs of elementary maps such that P(hs,W(T),9̂). No Galois-stability hypothesis is present. The distinguished rational point is 9, not an arbitrary parameter.",
+      "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。设 T 是 Q̄ 的有限子集，并且每个 y∈T 都满足 ‖ι(y)‖≤1 和 D(y)≤1。则存在初等映射的有限列表 hs，使 P(hs,W(T),9̂) 成立。该陈述没有 Galois 稳定假设。指定的有理点是 9，不是任意参数。",
+      "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。T を Q̄ の有限部分集合とし、各 y∈T で ‖ι(y)‖≤1 および D(y)≤1 とする。このとき初等写像の有限リスト hs が存在し、P(hs,W(T),9̂) を満たす。この命題にはガロア安定性の仮定はない。指定された有理点は 9 であり、任意のパラメータではない。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+      "is_private": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.core_key",
+      "source_name": "core_key",
+      "kind": "private lemma",
+      "visibility": "private",
+      "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "line": 23,
+      "source_signature": "private lemma core_key (d : ℕ) : ∀ (n : ℕ) (T : Finset Tripod.Qbar), IsGalStable T →\n    (∀ t ∈ T, deg t ≤ d) → (T.filter fun t => deg t = d).card ≤ n →\n    ∀ τ : ℚ, (τ : Tripod.Qbar) ∉ T → ∃ hs, IsNoncriticalBelyi hs (withInf T) (ofRat τ)",
+      "reconstructed_binders": [
+        "(d : ℕ)",
+        "∀ (n : ℕ) (T : Finset Tripod.Qbar)",
+        "IsGalStable T →",
+        "(∀ (t : Tripod.Qbar), t ∈ T → deg t ≤ d) →",
+        "(T.filter (fun (t : Tripod.Qbar) => deg t = d)).card ≤ n →",
+        "∀ (τ : ℚ)",
+        "(τ : Tripod.Qbar) ∉ T →",
+        "∃ (hs : List ElemMap), IsNoncriticalBelyi hs (withInf T) (ofRat τ)"
+      ],
+      "readbacks": {
+        "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. For every natural number d, every natural number n, and every finite subset T of Q̄, assume the following. T is Galois-stable; every t∈T satisfies D(t)≤d; and c_d(T)≤n. Then, for every rational number τ whose image in Q̄ does not belong to T, there exists a finite list hs of elementary maps satisfying P(hs,W(T),τ̂). The statement allows d=0 and n=0. It assumes no norm bound. The written proof uses strong induction on d and induction on n; it depends on all three open reduction steps.",
+        "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。对每个自然数 d、每个自然数 n，以及 Q̄ 的每个有限子集 T，作如下假设：T 是 Galois 稳定的；每个 t∈T 都满足 D(t)≤d；c_d(T)≤n。则对每个在 Q̄ 中的像不属于 T 的有理数 τ，存在初等映射的有限列表 hs，使 P(hs,W(T),τ̂) 成立。陈述允许 d=0 和 n=0，也没有范数界假设。给出的证明对 d 使用强归纳，对 n 使用归纳；该证明依赖三个尚由 sorry 占位的归约步骤。",
+        "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。すべての自然数 d、自然数 n、および Q̄ の有限部分集合 T について、次を仮定する。T はガロア安定であり、各 t∈T で D(t)≤d、かつ c_d(T)≤n である。このとき、Q̄ における像が T に属さないすべての有理数 τ に対し、初等写像の有限リスト hs が存在し、P(hs,W(T),τ̂) を満たす。命題は d=0 と n=0 を許し、ノルムの上限を仮定しない。記述された証明は d に関する強い帰納法と n に関する帰納法を用い、sorry で置かれた三つの未完了の帰着段階に依存する。"
+      },
+      "proof_status": "proof_body_depends_on_open_sorry_leaves",
+      "open_leaf_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly"
+      ],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.core_key",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "full_signature_static": "private lemma core_key (d : ℕ) : ∀ (n : ℕ) (T : Finset Tripod.Qbar), IsGalStable T →\n    (∀ t ∈ T, deg t ≤ d) → (T.filter fun t => deg t = d).card ≤ n →\n    ∀ τ : ℚ, (τ : Tripod.Qbar) ∉ T → ∃ hs, IsNoncriticalBelyi hs (withInf T) (ofRat τ)",
+      "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. For every natural number d, every natural number n, and every finite subset T of Q̄, assume the following. T is Galois-stable; every t∈T satisfies D(t)≤d; and c_d(T)≤n. Then, for every rational number τ whose image in Q̄ does not belong to T, there exists a finite list hs of elementary maps satisfying P(hs,W(T),τ̂). The statement allows d=0 and n=0. It assumes no norm bound. The written proof uses strong induction on d and induction on n; it depends on all three open reduction steps.",
+      "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。对每个自然数 d、每个自然数 n，以及 Q̄ 的每个有限子集 T，作如下假设：T 是 Galois 稳定的；每个 t∈T 都满足 D(t)≤d；c_d(T)≤n。则对每个在 Q̄ 中的像不属于 T 的有理数 τ，存在初等映射的有限列表 hs，使 P(hs,W(T),τ̂) 成立。陈述允许 d=0 和 n=0，也没有范数界假设。给出的证明对 d 使用强归纳，对 n 使用归纳；该证明依赖三个尚由 sorry 占位的归约步骤。",
+      "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。すべての自然数 d、自然数 n、および Q̄ の有限部分集合 T について、次を仮定する。T はガロア安定であり、各 t∈T で D(t)≤d、かつ c_d(T)≤n である。このとき、Q̄ における像が T に属さないすべての有理数 τ に対し、初等写像の有限リスト hs が存在し、P(hs,W(T),τ̂) を満たす。命題は d=0 と n=0 を許し、ノルムの上限を仮定しない。記述された証明は d に関する強い帰納法と n に関する帰納法を用い、sorry で置かれた三つの未完了の帰着段階に依存する。",
+      "elaborated_name": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.0.AbcAdaptation.Tripod.Fermat.Proper.core_key",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.core_key",
+      "is_private": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.exists_isNoncriticalBelyi_withInf",
+      "source_name": "exists_isNoncriticalBelyi_withInf",
+      "kind": "private theorem",
+      "visibility": "private",
+      "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "line": 75,
+      "source_signature": "private theorem exists_isNoncriticalBelyi_withInf (T : Finset Tripod.Qbar) (hT : IsGalStable T) {τ : ℚ}\n    (hτ : (τ : Tripod.Qbar) ∉ T) : ∃ hs, IsNoncriticalBelyi hs (withInf T) (ofRat τ)",
+      "reconstructed_binders": [
+        "(T : Finset Tripod.Qbar)",
+        "(hT : IsGalStable T)",
+        "{τ : ℚ}",
+        "(hτ : (τ : Tripod.Qbar) ∉ T)",
+        "conclusion ∃ (hs : List ElemMap), IsNoncriticalBelyi hs (withInf T) (ofRat τ)"
+      ],
+      "readbacks": {
+        "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. For every finite Galois-stable subset T of Q̄ and every rational number τ whose image in Q̄ does not belong to T, there exists a finite list hs of elementary maps satisfying P(hs,W(T),τ̂). There are no degree, cardinality, or norm hypotheses in this theorem. Its written proof applies core_key with finite upper bounds and inherits the three open reduction steps.",
+        "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。对 Q̄ 的每个有限 Galois 稳定子集 T，以及每个在 Q̄ 中的像不属于 T 的有理数 τ，存在初等映射的有限列表 hs，使 P(hs,W(T),τ̂) 成立。本定理没有次数、基数或范数方面的假设。给出的证明使用有限上界应用 core_key，因此继承三个尚由 sorry 占位的归约步骤。",
+        "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。Q̄ のすべての有限なガロア安定部分集合 T と、Q̄ における像が T に属さないすべての有理数 τ に対し、初等写像の有限リスト hs が存在し、P(hs,W(T),τ̂) を満たす。この定理には次数、濃度、ノルムに関する仮定はない。記述された証明は有限の上限を選んで core_key を適用するため、sorry で置かれた三つの未完了の帰着段階に依存する。"
+      },
+      "proof_status": "proof_body_depends_on_open_sorry_leaves",
+      "open_leaf_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly"
+      ],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.exists_isNoncriticalBelyi_withInf",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "full_signature_static": "private theorem exists_isNoncriticalBelyi_withInf (T : Finset Tripod.Qbar) (hT : IsGalStable T) {τ : ℚ}\n    (hτ : (τ : Tripod.Qbar) ∉ T) : ∃ hs, IsNoncriticalBelyi hs (withInf T) (ofRat τ)",
+      "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. For a finite subset T of Q̄, Galois stability means that every ℚ-algebra automorphism σ:Q̄→Q̄ sends every member of T into T. No restriction to a chosen finite extension or rational points occurs. Put D(x)=natDegree(minpoly ℚ x), W(T)={∞}∪{some(x):x∈T}, and q̂=some(q) for q∈ℚ. Fix the ℚ-algebra embedding ι:Q̄→ℂ chosen by IsAlgClosed.lift. Every norm below is the complex norm under this one fixed embedding. Write c_d(T)=#{x∈T:D(x)=d}; this counts distinct elements of the finite set, without multiplicity. For every finite Galois-stable subset T of Q̄ and every rational number τ whose image in Q̄ does not belong to T, there exists a finite list hs of elementary maps satisfying P(hs,W(T),τ̂). There are no degree, cardinality, or norm hypotheses in this theorem. Its written proof applies core_key with finite upper bounds and inherits the three open reduction steps.",
+      "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。对 Q̄ 的有限子集 T，Galois 稳定指：Q̄ 的每个固定有理数的代数自同构 σ 都把 T 的每个元素映到 T 中。量词不局限于某个有限扩张或有理点。令 D(x) 为 x 在有理数域上的最小多项式的自然数次数，W(T)={∞}∪{some(x):x∈T}；对有理数 q，令 q̂=some(q)。固定由 IsAlgClosed.lift 选取的有理数代数嵌入 ι:Q̄→ℂ。以下范数均为经同一个固定嵌入得到的复数范数。令 c_d(T)=#{x∈T:D(x)=d}，这里计数有限集合中的不同元素，不计重数。对 Q̄ 的每个有限 Galois 稳定子集 T，以及每个在 Q̄ 中的像不属于 T 的有理数 τ，存在初等映射的有限列表 hs，使 P(hs,W(T),τ̂) 成立。本定理没有次数、基数或范数方面的假设。给出的证明使用有限上界应用 core_key，因此继承三个尚由 sorry 占位的归约步骤。",
+      "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。Q̄ の有限部分集合 T がガロア安定であるとは、Q̄ のすべての ℚ-代数自己同型 σ が T の各元を T に写すことをいう。量化は特定の有限拡大や有理点には制限されない。D(x) を x の ℚ 上の最小多項式の自然数次数、W(T)={∞}∪{some(x):x∈T}、有理数 q に対して q̂=some(q) と置く。IsAlgClosed.lift が選ぶ ℚ-代数埋め込み ι:Q̄→ℂ を固定する。以下のノルムはすべて、この同じ埋め込みによる複素数のノルムである。c_d(T)=#{x∈T:D(x)=d} と置く。これは有限集合の相異なる元の個数であり、重複度は数えない。Q̄ のすべての有限なガロア安定部分集合 T と、Q̄ における像が T に属さないすべての有理数 τ に対し、初等写像の有限リスト hs が存在し、P(hs,W(T),τ̂) を満たす。この定理には次数、濃度、ノルムに関する仮定はない。記述された証明は有限の上限を選んで core_key を適用するため、sorry で置かれた三つの未完了の帰着段階に依存する。",
+      "elaborated_name": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.0.AbcAdaptation.Tripod.Fermat.Proper.exists_isNoncriticalBelyi_withInf",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.exists_isNoncriticalBelyi_withInf",
+      "is_private": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+      "source_name": "noncriticalP1Zero",
+      "kind": "theorem",
+      "visibility": "public",
+      "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "line": 81,
+      "source_signature": "theorem noncriticalP1Zero (S : Finset NoncriticalP1.Pt)\n    (hGal : ∀ σ : Tripod.Qbar ≃ₐ[ℚ] Tripod.Qbar, ∀ z ∈ S, z.map σ ∈ S)\n    (hZero : some 0 ∉ S) :\n    ∃ hs : List NoncriticalP1.ElemMap,\n      (∀ z ∈ S, NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf) ∧\n      NoncriticalP1.evalComp hs (some 0) ∉ NoncriticalP1.zeroOneInf ∧\n      (∀ z, 1 < NoncriticalP1.ramIdxComp hs z →\n        NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf)",
+      "reconstructed_binders": [
+        "(S : Finset NoncriticalP1.Pt)",
+        "(hGal : ∀ (σ : Tripod.Qbar ≃ₐ[ℚ] Tripod.Qbar), ∀ (z : NoncriticalP1.Pt), z ∈ S → z.map σ ∈ S)",
+        "(hZero : (some (0 : Tripod.Qbar) : NoncriticalP1.Pt) ∉ S)",
+        "conclusion ∃ (hs : List NoncriticalP1.ElemMap), (∀ (z : NoncriticalP1.Pt), z ∈ S → NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf) ∧ NoncriticalP1.evalComp hs (some (0 : Tripod.Qbar)) ∉ NoncriticalP1.zeroOneInf ∧ (∀ (z : NoncriticalP1.Pt), 1 < NoncriticalP1.ramIdxComp hs z → NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf)"
+      ],
+      "readbacks": {
+        "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. Let S be any finite set of projective points over the full algebraic closure Q̄ of ℚ. Assume that every ℚ-algebra automorphism σ of Q̄ sends each z∈S back into S. Its action fixes ∞ and sends some(x) to some(σ(x)). Assume that the finite point some(0) does not belong to S. Then there exists a finite list hs of rational elementary maps with these properties. Every z∈S satisfies F_hs(z)∈{∞,some(0),some(1)}. The image F_hs(some(0)) lies outside that three-point set. For every projective point z, if 1<R_hs(z), then F_hs(z) belongs to that three-point set. The hypothesis permits ∞∈S and imposes no degree or norm bound. The excluded source point is specifically zero. The written combination proof depends on the three open sorry reduction steps, through the private general theorem.",
+        "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。设 S 是有理数域的完整代数闭包 Q̄ 上射影点的任意有限集合。假设 Q̄ 的每个固定有理数的代数自同构 σ 都把 S 的每个点 z 映回 S。其中 σ 固定 ∞，把 some(x) 映为 some(σ(x))。再假设有限点 some(0) 不属于 S。则存在有理系数初等映射的有限列表 hs，满足以下全部性质：每个 z∈S 都满足 F_hs(z)∈{∞,some(0),some(1)}；F_hs(some(0)) 不属于该三点集合；对每个射影点 z，若 1<R_hs(z)，则 F_hs(z) 属于该三点集合。假设允许 ∞∈S，没有次数或范数界。被排除的源点具体为零。给出的组合证明通过私有的一般定理依赖三个尚由 sorry 占位的归约步骤。",
+        "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。S を、有理数体の全代数閉包 Q̄ 上の射影点からなる任意の有限集合とする。Q̄ のすべての ℚ-代数自己同型 σ が、S の各点 z を再び S に写すと仮定する。この作用は ∞ を固定し、some(x) を some(σ(x)) に写す。さらに有限点 some(0) が S に属さないと仮定する。このとき有理数係数の初等写像の有限リスト hs が存在し、次をすべて満たす。各 z∈S で F_hs(z)∈{∞,some(0),some(1)} となる。F_hs(some(0)) はこの三点集合に属さない。すべての射影点 z に対し、1<R_hs(z) ならば F_hs(z) はこの三点集合に属する。仮定は ∞∈S を許し、次数やノルムの上限を課さない。除外される始点は零に固定されている。記述された組合せの証明は、私的な一般定理を介して、sorry で置かれた三つの未完了の帰着段階に依存する。"
+      },
+      "proof_status": "proof_body_depends_on_open_sorry_leaves",
+      "open_leaf_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly"
+      ],
+      "notes": [],
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+      "full_signature_static": "theorem noncriticalP1Zero (S : Finset NoncriticalP1.Pt)\n    (hGal : ∀ σ : Tripod.Qbar ≃ₐ[ℚ] Tripod.Qbar, ∀ z ∈ S, z.map σ ∈ S)\n    (hZero : some 0 ∉ S) :\n    ∃ hs : List NoncriticalP1.ElemMap,\n      (∀ z ∈ S, NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf) ∧\n      NoncriticalP1.evalComp hs (some 0) ∉ NoncriticalP1.zeroOneInf ∧\n      (∀ z, 1 < NoncriticalP1.ramIdxComp hs z →\n        NoncriticalP1.evalComp hs z ∈ NoncriticalP1.zeroOneInf)",
+      "en": "Use the full algebraic closure Q̄ of ℚ. A projective point is either ∞ or a finite point some(x), with x ∈ Q̄. The distinguished set is B = {∞, some(0), some(1)}. An elementary map has one of two forms: a rational Möbius map (az+b)/(cz+d), where a,b,c,d ∈ ℚ and ad−bc ≠ 0; or a polynomial p ∈ ℚ[X] with 0 < natDegree(p). At a finite point, a zero Möbius denominator gives ∞. At ∞, a Möbius map gives ∞ when c=0, and some(a/c) otherwise. A polynomial sends some(x) to some(p(x)) and ∞ to ∞. A Möbius map has index 1 at every point. A polynomial has index natDegree(p) at ∞; at some(x), its index is the root multiplicity of x in p mapped to Q̄[X] minus the constant polynomial p(x). For a finite list h = [h₁,…,hₖ], F_h applies h₁ first and hₖ last. Thus F_[] is the identity and F_(u::h)(z)=F_h(u(z)). Its index is R_[]=1 and R_(u::h)(z)=r_u(z)·R_h(u(z)); equivalently, multiply the elementary indices at successive images of z. Write P(h,A,t) for exactly these three conditions: every z ∈ A satisfies F_h(z) ∈ B; F_h(t) ∉ B; and every projective point z with 1 < R_h(z) satisfies F_h(z) ∈ B. Let S be any finite set of projective points over the full algebraic closure Q̄ of ℚ. Assume that every ℚ-algebra automorphism σ of Q̄ sends each z∈S back into S. Its action fixes ∞ and sends some(x) to some(σ(x)). Assume that the finite point some(0) does not belong to S. Then there exists a finite list hs of rational elementary maps with these properties. Every z∈S satisfies F_hs(z)∈{∞,some(0),some(1)}. The image F_hs(some(0)) lies outside that three-point set. For every projective point z, if 1<R_hs(z), then F_hs(z) belongs to that three-point set. The hypothesis permits ∞∈S and imposes no degree or norm bound. The excluded source point is specifically zero. The written combination proof depends on the three open sorry reduction steps, through the private general theorem.",
+      "zh_Hans": "取有理数域的完整代数闭包 Q̄。射影点是无穷远点 ∞，或者有限点 some(x)，其中 x∈Q̄。指定集合为 B={∞,some(0),some(1)}。初等映射有两类：有理系数的 Möbius 映射 (az+b)/(cz+d)，其中 a,b,c,d∈ℚ 且 ad−bc≠0；以及有理系数多项式 p，其自然数次数严格大于零。Möbius 映射在有限点的分母为零时取值 ∞；在 ∞ 处，当 c=0 时取值 ∞，否则取值 some(a/c)。多项式把 some(x) 映到 some(p(x))，把 ∞ 映到 ∞。Möbius 映射在每一点的分歧指数为 1。多项式在 ∞ 的分歧指数为其自然数次数；在 some(x) 的分歧指数为 x 在多项式 p 的系数嵌入 Q̄ 后减去常数多项式 p(x) 所得多项式中的根重数。对有限列表 h=[h₁,…,hₖ]，复合 F_h 先作用 h₁，最后作用 hₖ。因此 F_[] 为恒等映射，F_(u::h)(z)=F_h(u(z))。复合分歧指数满足 R_[]=1 和 R_(u::h)(z)=r_u(z)·R_h(u(z))，即沿逐次像相乘。记 P(h,A,t) 为以下三个条件的合取：每个 z∈A 都满足 F_h(z)∈B；F_h(t)∉B；每个满足 1<R_h(z) 的射影点 z 都满足 F_h(z)∈B。设 S 是有理数域的完整代数闭包 Q̄ 上射影点的任意有限集合。假设 Q̄ 的每个固定有理数的代数自同构 σ 都把 S 的每个点 z 映回 S。其中 σ 固定 ∞，把 some(x) 映为 some(σ(x))。再假设有限点 some(0) 不属于 S。则存在有理系数初等映射的有限列表 hs，满足以下全部性质：每个 z∈S 都满足 F_hs(z)∈{∞,some(0),some(1)}；F_hs(some(0)) 不属于该三点集合；对每个射影点 z，若 1<R_hs(z)，则 F_hs(z) 属于该三点集合。假设允许 ∞∈S，没有次数或范数界。被排除的源点具体为零。给出的组合证明通过私有的一般定理依赖三个尚由 sorry 占位的归约步骤。",
+      "ja": "有理数体の全代数閉包を Q̄ とする。射影点は無限遠点 ∞ または有限点 some(x)（x∈Q̄）である。指定集合を B={∞,some(0),some(1)} とする。初等写像は、有理数係数のメビウス変換 (az+b)/(cz+d)（a,b,c,d∈ℚ、ad−bc≠0）、または自然数次数が正の有理数係数多項式 p のいずれかである。メビウス変換は有限点で分母が零なら ∞ を与え、∞ では c=0 なら ∞、そうでなければ some(a/c) を与える。多項式は some(x) を some(p(x)) に、∞ を ∞ に写す。メビウス変換の分岐指数は各点で 1 である。多項式の分岐指数は ∞ でその自然数次数、some(x) では p の係数を Q̄ に移した多項式から定数多項式 p(x) を引いた多項式における x の根の重複度である。有限リスト h=[h₁,…,hₖ] の合成 F_h は h₁ を最初に、hₖ を最後に作用させる。従って F_[] は恒等写像であり、F_(u::h)(z)=F_h(u(z)) となる。合成分岐指数は R_[]=1、R_(u::h)(z)=r_u(z)·R_h(u(z)) であり、逐次得られる像での指数を掛け合わせる。P(h,A,t) は次の三条件の連言を表す。A の各点 z で F_h(z)∈B が成り立つ。F_h(t)∉B が成り立つ。さらに、1<R_h(z) を満たすすべての射影点 z で F_h(z)∈B が成り立つ。S を、有理数体の全代数閉包 Q̄ 上の射影点からなる任意の有限集合とする。Q̄ のすべての ℚ-代数自己同型 σ が、S の各点 z を再び S に写すと仮定する。この作用は ∞ を固定し、some(x) を some(σ(x)) に写す。さらに有限点 some(0) が S に属さないと仮定する。このとき有理数係数の初等写像の有限リスト hs が存在し、次をすべて満たす。各 z∈S で F_hs(z)∈{∞,some(0),some(1)} となる。F_hs(some(0)) はこの三点集合に属さない。すべての射影点 z に対し、1<R_hs(z) ならば F_hs(z) はこの三点集合に属する。仮定は ∞∈S を許し、次数やノルムの上限を課さない。除外される始点は零に固定されている。記述された組合せの証明は、私的な一般定理を介して、sorry で置かれた三つの未完了の帰着段階に依存する。",
+      "elaborated_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+      "source_user_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+      "is_private": false
+    }
+  ],
+  "coverage_count": 17,
+  "method": "Lossless key normalization from independent blind readbacks, with independent final prose review; raw original preserved.",
+  "blind_source": "blind-readbacks.json",
+  "review_report": "readbacks-final-report.json",
+  "compiled_source_span_refresh": {
+    "receipt": "source-graph-leaf-result.json",
+    "method": "Compiler source ranges and private-name mapping; mathematical prose preserved",
+    "updates": [
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ofRat",
+        "old_line": 24,
+        "new_line": 23,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsGalStable",
+        "old_line": 27,
+        "new_line": 26,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.deg",
+        "old_line": 31,
+        "new_line": 30,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.withInf",
+        "old_line": 34,
+        "new_line": 33,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι",
+        "old_line": 44,
+        "new_line": 43,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi",
+        "old_line": 56,
+        "new_line": 53,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalP1Reduction.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Minpoly",
+        "old_line": 23,
+        "new_line": 21,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Minpoly.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Normalize",
+        "old_line": 23,
+        "new_line": 21,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Normalize.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+        "old_line": 23,
+        "new_line": 21,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Rational.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.exists_isNoncriticalBelyi_withInf",
+        "old_line": 77,
+        "new_line": 75,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean"
+      },
+      {
+        "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Zero",
+        "old_line": 84,
+        "new_line": 81,
+        "old_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean",
+        "new_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1Zero.lean"
+      }
+    ]
+  }
+}

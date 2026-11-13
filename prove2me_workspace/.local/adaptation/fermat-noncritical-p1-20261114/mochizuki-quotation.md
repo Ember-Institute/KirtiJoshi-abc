@@ -1,0 +1,3 @@
+> Theorem 2.5. (Belyi Maps Noncritical at Prescribed Points) Let X be a smooth, proper, connected curve over \overline{\mathbb{Q}} and S,T \subseteq X(\overline{\mathbb{Q}}) finite sets of \overline{\mathbb{Q}}-rational points such that S \cap T = \emptyset. Then there exists a morphism \phi : X \to \mathbb{P}^{1}_{\overline{\mathbb{Q}}} such that: (a) \phi is unramified over \mathbb{P}^{1}_{\overline{\mathbb{Q}}}\backslash\{0,1,\infty\}; (b) \phi(S) \subseteq \{0,1,\infty\}; (c) we have \phi(T) \cap \{0,1,\infty\} = \emptyset. Moreover, if X, S, and T are defined over a number field F, then \phi may be taken to be defined over F.
+
+— Shinichi Mochizuki, *Noncritical Belyi Maps*, Theorem 2.5, printed pp. 5–6.
