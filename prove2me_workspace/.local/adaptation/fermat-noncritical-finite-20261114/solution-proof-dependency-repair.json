@@ -1,0 +1,14 @@
+{
+  "platform_failed_submission": "51669deb-a9ec-42f8-9602-f8999f95a2fa",
+  "platform_status": "CE",
+  "reason": "Local child modules imported NoncriticalFunctions, whereas the published child preambles import only the exact type owners. The source finite-pole proof is a value dependency and must be imported explicitly by the submitted proof.",
+  "explicit_closed_import": "Definitions.Def_FermatCurveFieldZerosPoles",
+  "actual_value_dependencies": [
+    "IsCurveField",
+    "Model.isCurveField",
+    "Place.finite_setOf_notMem"
+  ],
+  "source_graph": "decl_graph.jsonl",
+  "target_and_children_types_unchanged": true,
+  "next_validation": "ValidatePublishedChildContext.lean excludes local child modules, then rechecks the exact complete submitted proof."
+}

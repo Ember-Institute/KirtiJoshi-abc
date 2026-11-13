@@ -1,0 +1,196 @@
+{
+  "unit": "Concrete finite-ramification decomposition through actual derivAlong",
+  "date": "2026-11-14",
+  "status": "uncompiled_draft_two_concrete_Open_children_source_combination_parent",
+  "reference_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "pin_source": "refer/iut/lake-manifest.json package belyi rev",
+  "reference_hashes": {
+    "Belyi/CurveDeriv/Basic.lean": {
+      "sha256": "cf1b11adab96fbd7d7bb5114e7215dcbf8b8cda1a8eda573e9759ac5316f40b2",
+      "fresh_pinned_remote_match": true,
+      "local_copy": "reference/Belyi_CurveDeriv_Basic.lean"
+    },
+    "Belyi/CurveField/NoncriticalFinite.lean": {
+      "sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+      "fresh_pinned_remote_match": true,
+      "local_copy": "reference/Belyi_CurveField_NoncriticalFinite.lean"
+    }
+  },
+  "input_parent": {
+    "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+    "sha256": "7311707c2e5da6a8124df80f028e4a90eaa0dd7f72ab1a2ae4f75db60677e665",
+    "target_statement_unchanged": true
+  },
+  "actual_derivative_identity": {
+    "field": "M.K, without changing its actual rational algebra structure",
+    "carrier": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong ψ : Derivation ℚ M.K M.K",
+    "polynomial_identity": "polyDeriv ψ h evaluates a in Q[ψ] as aeval ψ (Polynomial.derivative ((Polynomial.algEquivOfTranscendental Q ψ h).symm a))",
+    "extension_identity": "if h : Transcendental Q ψ ∧ Algebra.IsAlgebraic Q(ψ) M.K, derivAlong ψ is extendOfFormallyEtale (polyDeriv ψ h.1), using the actual Kaehler base-change equivalence",
+    "fallback": "exact source zero fallback when either condition fails; under the child hypotheses and M.isCurveField, the true branch is ensured by existing isAlgebraic_adjoin",
+    "not_an_extra_hypothesis": "no D : K -> K, no supplied Derivation, and no law record is an input to either child",
+    "interface_scope": "Only the construction dependency closure is ported. Source self/aeval/chain-rule theorems are not added as unused producers; future child proof decomposition can port their existing source proofs as needed."
+  },
+  "definitions": [
+    {
+      "file": "Definitions/Def_FermatCurveDerivationEtale.lean",
+      "name": "CurveDeriv.extendOfFormallyEtale",
+      "source": "Belyi/CurveDeriv/Basic.lean Derivation.extendOfFormallyEtale",
+      "proof": "exact source construction",
+      "consumers": [
+        "CurveDeriv.derivAlong"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "name": "CurveDeriv.coe_algEquivOfTranscendental",
+      "source": "Belyi/CurveDeriv/Basic.lean coe_algEquivOfTranscendental",
+      "proof": "exact completed source proof",
+      "consumers": [
+        "CurveDeriv.aeval_algEquivOfTranscendental_symm"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "name": "CurveDeriv.aeval_algEquivOfTranscendental_symm",
+      "source": "Belyi/CurveDeriv/Basic.lean aeval_algEquivOfTranscendental_symm",
+      "proof": "exact completed source proof",
+      "consumers": [
+        "CurveDeriv.polyDeriv leibniz proof"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "name": "CurveDeriv.polyDeriv",
+      "source": "Belyi/CurveDeriv/Basic.lean polyDeriv",
+      "proof": "exact actual polynomial-derivative structure with proved laws",
+      "consumers": [
+        "CurveDeriv.derivAlong"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "name": "CurveDeriv.formallyEtale_adjoin",
+      "source": "Belyi/CurveDeriv/Basic.lean formallyEtale_adjoin",
+      "proof": "exact completed source localization/separable-extension proof",
+      "consumers": [
+        "CurveDeriv.derivAlong true branch"
+      ]
+    },
+    {
+      "file": "Definitions/Def_FermatCurveDerivationBasic.lean",
+      "name": "CurveDeriv.derivAlong",
+      "source": "Belyi/CurveDeriv/Basic.lean derivAlong",
+      "proof": "exact source conditional construction, namespace and explicit extension application only",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem conclusion",
+        "noncriticalDerivativeBadPlacesFinite set predicate"
+      ]
+    }
+  ],
+  "open_children": [
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "name": "noncriticalRegularRamifiedDerivNotMem",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean exists_derivAlong_notMem",
+      "mapping": {
+        "K": "M.K",
+        "t": "ψ",
+        "IsCurveField K": "M.isCurveField",
+        "ramIdx P t": "ramIdx M hDVR ψ P (same regular residue-minpoly order, via existing ord_eq_placeOrd)",
+        "derivAlong": "same actual source construction in project namespace"
+      },
+      "hypotheses": "actual transcendental ψ, actual P local ring containing ψ, actual 1 < ramIdx; model/hDVR are existing concrete reparameterization, not new assumptions",
+      "consumers": [
+        "noncriticalRamificationFinite regular branch"
+      ],
+      "debt": "sorry; source local derivative-order and chain-rule proof remains to port"
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+      "name": "noncriticalDerivativeBadPlacesFinite",
+      "source": "Belyi/CurveField/NoncriticalFinite.lean finite_setOf_derivAlong_notMem",
+      "mapping": {
+        "K": "M.K",
+        "t": "ψ",
+        "IsCurveField K": "M.isCurveField",
+        "derivAlong": "same actual source construction in project namespace"
+      },
+      "hypotheses": "actual transcendental ψ; no ramification or finite-support assumption",
+      "consumers": [
+        "noncriticalRamificationFinite finite union operand"
+      ],
+      "debt": "sorry; source finite chart generator/localization proof remains to port"
+    }
+  ],
+  "combination": {
+    "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+    "name": "noncriticalRamificationFinite",
+    "source": "Belyi/CurveField/NoncriticalFinite.lean finite_setOf_one_lt_ramIdx",
+    "proof": "source finite poles union finite regular derivative-failure locus, subset by ψ membership dichotomy",
+    "consumers": [
+      "existing noncriticalSelection source chain"
+    ],
+    "parent_statement": "unchanged"
+  },
+  "preserved_inputs": [
+    "actual Model curve field and rational coefficients",
+    "actual chart integral closure/finite module infrastructure retained for finite-child source proof",
+    "actual valuation local ring P.1",
+    "all places P : Place M.K, including points at infinity",
+    "pole locus handled explicitly by existing Place.finite_setOf_notMem",
+    "actual ramification index residue minpoly/pole-order definition",
+    "transcendence of ψ",
+    "no arbitrary derivative or supplied differential laws",
+    "no extra mathematical assumptions"
+  ],
+  "future_source_boundary": {
+    "local_obstruction": [
+      "NoncriticalFinite elementary valuation/order facts",
+      "CurveDeriv.Basic chain rule and self interface",
+      "CurveDeriv.Order.derivAlong_eq_unit_mul_pow_of_aeval",
+      "CurveDeriv.Local.derivAlong_mem and local unit facts"
+    ],
+    "generic_finiteness": [
+      "existing Module.Finite chartRing and chart localization facts",
+      "CurveDeriv.Basic.derivAlong_aeval source interface",
+      "CurveDeriv.Local.aeval_mem/mem_of_mem_adjoin/derivAlong_mem_of_mem_adjoin"
+    ],
+    "not_imported": [
+      "CurveField.Extension (only uniformizer helpers would later be needed)",
+      "CurveDeriv.Local",
+      "CurveDeriv.Order",
+      "Act2",
+      "differentials/canonical divisors",
+      "Riemann-Hurwitz"
+    ]
+  },
+  "module_size_and_resources": {
+    "definitions_lines": {
+      "Def_FermatCurveDerivationBasic.lean": 32,
+      "Def_FermatCurveDerivationEtale.lean": 33,
+      "Def_FermatCurveDerivationPolynomial.lean": 61
+    },
+    "first_leaf_estimates_if_submitted_by_root": {
+      "expected_duration": "60s",
+      "expected_memory": "16GiB"
+    },
+    "memory_limit_note": "Small separated source declarations intended for leaf validation below 16 GiB. No physical-memory measurement or pass is claimed."
+  },
+  "static_checks": [
+    "actual Kaehler extension definition body and type match source modulo declaration namespace",
+    "polynomial-adjoin equivalence helpers and actual polynomial derivative record match source",
+    "actual formally-etale adjoin proof matches source",
+    "actual conditional derivAlong body matches source modulo explicit extension function application",
+    "original parent target type unchanged",
+    "exactly two Open child proofs; all definition proofs and parent combination have no sorry",
+    "local import closure has no unresolved project module, full Mathlib, Act2, Scene2, Prologue, or Obligations import",
+    "both reference copies match fresh pinned upstream downloads"
+  ],
+  "validation": {
+    "compiler_run": false,
+    "MCP_CI_run": false,
+    "repository_edited": false,
+    "cache_edited": false,
+    "publication_performed": false
+  }
+}

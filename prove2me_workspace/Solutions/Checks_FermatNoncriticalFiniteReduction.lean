@@ -1,0 +1,7 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#print axioms noncriticalRegularRamifiedDerivNotMem
+#print axioms noncriticalDerivativeBadPlacesFinite
+#print axioms noncriticalRamificationFinite

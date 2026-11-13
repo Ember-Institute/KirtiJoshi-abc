@@ -1,0 +1,53 @@
+{
+  "source_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "original_delivery_ledger": "source-consumer.json",
+  "source_boundary_link": "source-ledger-link.json",
+  "definition_hashes": {
+    "Definitions/Def_FermatCurveDerivationEtale.lean": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+    "Definitions/Def_FermatCurveDerivationPolynomial.lean": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+    "Definitions/Def_FermatCurveDerivationBasic.lean": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04"
+  },
+  "source_theorem_hashes": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite": "5e87bce397ea8c68dafe054aaebaf0fa41679c99ec080de4a86b73bd4ab13f65",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem": "b052e76cee122782c48c2e997bae7f7027d77ab27ecd53a3bb302468ad7c8967",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite": "8ac4febdf77c0844da50f3897a0ffda00c5868106a0d9748fe68d9b84df5c56e"
+  },
+  "source_graph_sha256": "abd07cb911d7b379e45fb3c43bf69ae63888bbb8e45391805a9075aa0e5f9aeb",
+  "closed_direct": [],
+  "accepted_reduction": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+    "submission_id": "3ed67172-8a3b-445e-a78e-371a1e99c592",
+    "status": "SKETCH_ACCEPTED"
+  },
+  "actual_dependencies": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem"
+  ],
+  "open_mathematical_children": [
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite"
+  ],
+  "actual_platform_states": {
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite": "Open",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite": "Open"
+  },
+  "consumer_chain": [
+    "source polynomial/adjoin helpers -> actual polynomial derivative",
+    "actual polynomial derivative + source formal-etale extension -> actual derivAlong",
+    "actual derivAlong -> regular ramified local obstruction and exact finite derivative-failure locus",
+    "both Open children + existing finite pole locus -> unchanged noncriticalRamificationFinite",
+    "noncriticalRamificationFinite with still-Open actual composition and P¹ source-step chain -> existing noncriticalSelection reduction"
+  ],
+  "new_global_assumptions": [],
+  "full_abc_closed": false,
+  "source_mathematical_steps_proved": false,
+  "source_notices": "Apache-2.0 source headers retained.",
+  "other_open_parents_unchanged": [
+    "noncriticalCompositionRamification",
+    "noncriticalP1Normalize",
+    "noncriticalP1Rational",
+    "noncriticalP1Minpoly",
+    "noncriticalSelection"
+  ]
+}

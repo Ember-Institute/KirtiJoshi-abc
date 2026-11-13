@@ -1,0 +1,12 @@
+[
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatCurveDerivationEtale\nimport Definitions.Def_FermatCurveDerivationPolynomial\nimport Definitions.Def_FermatCurveDerivationBasic\n\nset_option autoImplicit false\nopen scoped IntermediateField\nopen AbcAdaptation.Tripod.Fermat.Proper",
+    "formal_statement": "/-- OPEN: source local obstruction. At a regular ramified place, the\nactual derivative with respect to ψ fails to preserve the actual local ring.\nBoth local rings and ramification indices are those of the existing model;\nno derivation or derivation law is supplied as a hypothesis. -/\ntheorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (P : Place M.K) (hψP : ψ ∈ P.1) (hram : 1 < ramIdx M hDVR ψ P) :\n    ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1 := by\n  sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+    "preamble": "import Definitions.Def_FermatProperCarrier\nimport Definitions.Def_FermatCurveDerivationEtale\nimport Definitions.Def_FermatCurveDerivationPolynomial\nimport Definitions.Def_FermatCurveDerivationBasic\n\nset_option autoImplicit false\nopen scoped IntermediateField\nopen AbcAdaptation.Tripod.Fermat.Proper",
+    "formal_statement": "/-- OPEN: source generic finite-generation/localization statement. The\nactual derivative with respect to ψ preserves all but finitely many actual\nlocal rings containing ψ. The set ranges over every valuative place of M.K. -/\ntheorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite {N : ℕ} (M : Model N)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) :\n    {P : Place M.K | ψ ∈ P.1 ∧\n      ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1}.Finite := by\n  sorry"
+  }
+]

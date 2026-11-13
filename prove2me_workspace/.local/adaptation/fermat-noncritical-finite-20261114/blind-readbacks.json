@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "source_root": "/tmp/p2m-noncritical-finite-draft-20261114",
+  "output_root": "/tmp/p2m-noncritical-finite-blind-20261114",
+  "method": "Independent readback of target Lean declarations and their concrete imported definitions. No README, ledger, external author prose, or reference directory was read. No Lean elaboration, compilation, or MCP-CI call was made.",
+  "languages": [
+    "en",
+    "zh_Hans",
+    "ja"
+  ],
+  "declaration_count": 9,
+  "private_declaration_count": 0,
+  "source_level_instance_count": 0,
+  "input_files": [
+    {
+      "path": "Definitions/Def_FermatCurveDerivationBasic.lean",
+      "sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04"
+    },
+    {
+      "path": "Definitions/Def_FermatCurveDerivationEtale.lean",
+      "sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28"
+    },
+    {
+      "path": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e"
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+      "sha256": "8ac4febdf77c0844da50f3897a0ffda00c5868106a0d9748fe68d9b84df5c56e"
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "sha256": "5e87bce397ea8c68dafe054aaebaf0fa41679c99ec080de4a86b73bd4ab13f65"
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "sha256": "b052e76cee122782c48c2e997bae7f7027d77ab27ecd53a3bb302468ad7c8967"
+    }
+  ],
+  "context_sources": [
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalFunctions.lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldZerosPoles.lean",
+    "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/Etale/Kaehler.lean",
+    "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/Derivation/Basic.lean",
+    "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/Kaehler/Basic.lean"
+  ],
+  "citation": {
+    "requested_author": "Shinichi Mochizuki",
+    "original_english_source_checked": false,
+    "work": null,
+    "bibliographic_citation": null,
+    "locator": null,
+    "quote": null,
+    "status": "The target Lean declarations do not identify a checked original English Mochizuki source. Leave the quotation and citation unfilled until independently checked."
+  },
+  "unknown_terms": [],
+  "terminology": [
+    {
+      "en": "derivation",
+      "zh_Hans": "导子",
+      "ja": "導分"
+    },
+    {
+      "en": "Kähler differentials",
+      "zh_Hans": "Kähler 微分",
+      "ja": "ケーラー微分"
+    },
+    {
+      "en": "formally étale",
+      "zh_Hans": "形式平展",
+      "ja": "形式的エタール"
+    },
+    {
+      "en": "scalar tower",
+      "zh_Hans": "标量作用塔",
+      "ja": "スカラー作用の塔"
+    },
+    {
+      "en": "valuation subring",
+      "zh_Hans": "赋值子环",
+      "ja": "付値部分環"
+    },
+    {
+      "en": "place",
+      "zh_Hans": "赋值位置",
+      "ja": "場所"
+    },
+    {
+      "en": "discrete valuation ring",
+      "zh_Hans": "离散赋值环",
+      "ja": "離散付値環"
+    },
+    {
+      "en": "residue field",
+      "zh_Hans": "剩余域",
+      "ja": "剰余体"
+    }
+  ],
+  "uncertainties": [
+    "Full signatures are static reconstructions. Section variables and typeclass binders are expanded, but no Lean elaborator verified the reconstruction.",
+    "All unnamed universe levels remain Type*; no compiler-generated universe names are invented.",
+    "No theorem of uniqueness for derivAlong, or unconditional value derivAlong(t)(t)=1, is added. The exact conditional definition is read back.",
+    "No geometric interpretation of ramIdx beyond its actual minpoly/order definition is assumed. The source index is integer-valued.",
+    "The original English Mochizuki citation and exact locator remain unchecked."
+  ],
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.extendOfFormallyEtale",
+      "path": "Definitions/Def_FermatCurveDerivationEtale.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationEtale.lean",
+      "line": 26,
+      "kind": "noncomputable def",
+      "visibility": "public",
+      "full_signature_static": "noncomputable def AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.extendOfFormallyEtale {R S T : Type*} [CommRing R] [CommRing S] [CommRing T] [Algebra R S] [Algebra R T] [Algebra S T] [IsScalarTower R S T] [Algebra.FormallyEtale S T] (d : Derivation R S T) : Derivation R T T",
+      "source_signature": "noncomputable def extendOfFormallyEtale [Algebra.FormallyEtale S T]\n    (d : Derivation R S T) : Derivation R T T",
+      "reconstructed_binders": [
+        "{R S T : Type*}",
+        "[CommRing R]",
+        "[CommRing S]",
+        "[CommRing T]",
+        "[Algebra R S]",
+        "[Algebra R T]",
+        "[Algebra S T]",
+        "[IsScalarTower R S T]",
+        "[Algebra.FormallyEtale S T]",
+        "(d : Derivation R S T)"
+      ],
+      "return_type_static": "Derivation R T T",
+      "en": "Let R,S,T be commutative rings. Give them R-algebra structures on S and T, an S-algebra structure on T, and compatible scalar actions R→S→T. Assume that T is formally étale over S. For any R-derivation d:S→T, define an R-derivation E:T→T by the following concrete construction. Let Ω[S/R] and Ω[T/R] be the Kähler differential modules, with universal derivations D_S and D_T. Let L_d:Ω[S/R]→T be the S-linear map induced by d, so L_d(D_S(s))=d(s). Its T-linear scalar extension μ:T⊗_S Ω[S/R]→T sends a⊗ω to a·L_d(ω). The canonical T-linear equivalence e:T⊗_S Ω[S/R]≃Ω[T/R] comes from formal étaleness. Set E(x)=μ(e⁻¹(D_T(x))) for every x∈T. This formula, with e inverted in this direction, is exactly extendOfFormallyEtale(d). The result is an actual R-derivation of T with values in T. The definition assumes neither fields nor characteristic zero.",
+      "zh_Hans": "设 R、S、T 为交换环，给定 S 和 T 的 R 代数结构、T 的 S 代数结构，以及相容的标量作用塔 R→S→T。假设 T 在 S 上形式平展。对任意 R 导子 d:S→T，通过以下实际构造定义 R 导子 E:T→T。记 Ω[S/R]、Ω[T/R] 为 Kähler 微分模，D_S、D_T 为对应的泛导子。令 L_d:Ω[S/R]→T 为 d 诱导的 S 线性映射，满足 L_d(D_S(s))=d(s)。其 T 线性标量延拓 μ:T⊗_S Ω[S/R]→T 把 a⊗ω 映为 a·L_d(ω)。形式平展性给出标准的 T 线性等价 e:T⊗_S Ω[S/R]≃Ω[T/R]。对每个 x∈T，定义 E(x)=μ(e⁻¹(D_T(x)))。此公式按该方向使用 e 的逆，正是 extendOfFormallyEtale(d) 的定义。输出是从 T 到 T 的实际 R 导子。定义不要求这些环为域，也不要求特征为零。",
+      "ja": "R、S、T を可換環とする。S と T の R-代数構造、T の S-代数構造、および整合的なスカラー作用の塔 R→S→T を与える。T が S 上形式的エタールであると仮定する。任意の R-導分 d:S→T に対し、次の具体的な構成で R-導分 E:T→T を定義する。Ω[S/R]、Ω[T/R] をケーラー微分加群とし、その普遍導分を D_S、D_T とする。d が誘導する S-線形写像 L_d:Ω[S/R]→T は L_d(D_S(s))=d(s) を満たす。その T-線形なスカラー拡大 μ:T⊗_S Ω[S/R]→T は a⊗ω を a·L_d(ω) に写す。形式的エタール性により、標準的な T-線形同値 e:T⊗_S Ω[S/R]≃Ω[T/R] が得られる。各 x∈T に対し E(x)=μ(e⁻¹(D_T(x))) と定める。この向きで e の逆を用いる式が extendOfFormallyEtale(d) の定義そのものである。得られるのは T から T への実際の R-導分である。体であることや標数零は仮定しない。",
+      "proof_status": "definition",
+      "open_leaf_dependencies": [],
+      "notes": [
+        "All section variables and scalar structures occur in the reconstructed signature.",
+        "The inverse Kähler equivalence goes from Ω[T/R] to T⊗[S]Ω[S/R].",
+        "No additional extension or uniqueness theorem is declared in this file."
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.coe_algEquivOfTranscendental",
+      "path": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "line": 29,
+      "kind": "theorem",
+      "visibility": "public",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.coe_algEquivOfTranscendental {K : Type*} [Field K] [CharZero K] (t : K) (ht : Transcendental ℚ t) (p : ℚ[X]) : ((Polynomial.algEquivOfTranscendental ℚ t ht p : Algebra.adjoin ℚ {t}) : K) = aeval t p",
+      "source_signature": "theorem coe_algEquivOfTranscendental (ht : Transcendental ℚ t) (p : ℚ[X]) :\n    ((Polynomial.algEquivOfTranscendental ℚ t ht p : Algebra.adjoin ℚ {t}) : K) = aeval t p",
+      "reconstructed_binders": [
+        "{K : Type*}",
+        "[Field K]",
+        "[CharZero K]",
+        "(t : K)",
+        "(ht : Transcendental ℚ t)",
+        "(p : ℚ[X])"
+      ],
+      "return_type_static": "((Polynomial.algEquivOfTranscendental ℚ t ht p : Algebra.adjoin ℚ {t}) : K) = aeval t p",
+      "en": "Let K be any field of characteristic zero, with its canonical ℚ-algebra structure, and let t∈K. Write A=ℚ[t] for the ℚ-subalgebra generated by t, and F=ℚ(t) for the intermediate field generated by t. These are distinct constructions: A is a subalgebra and F is a field. A ℚ-derivation from A to K is a ℚ-linear map D with D(1)=0 and D(ab)=aD(b)+bD(a), using the inclusion A→K for multiplication. A ℚ-derivation K→K obeys the same rules on K. Assume t is transcendental over ℚ. For every polynomial p∈ℚ[X], apply the canonical ℚ-algebra equivalence e_t:ℚ[X]≃A to p, then include the result in K. The result equals p evaluated at t: (e_t(p):K)=p(t). The equality compares elements of K, not elements of the abstract polynomial ring.",
+      "zh_Hans": "设 K 为任意特征为零的域，赋予其标准的有理数代数结构，并设 t∈K。记 A=ℚ[t] 为由 t 生成的有理数子代数，记 F=ℚ(t) 为由 t 生成的中间域。两者不同：A 是子代数，F 是域。从 A 到 K 的有理数导子是有理数线性映射 D，满足 D(1)=0 和 D(ab)=aD(b)+bD(a)，其中乘法通过 A 到 K 的包含映射解释。从 K 到 K 的有理数导子在 K 上满足同样的规则。假设 t 在有理数域上超越。对每个有理系数多项式 p∈ℚ[X]，先对 p 应用标准的有理数代数等价 e_t:ℚ[X]≃A，再把结果包含到 K 中。所得元素等于 p 在 t 处的值，即 (e_t(p):K)=p(t)。该等式比较的是 K 中的元素，不是抽象多项式环中的元素。",
+      "ja": "K を任意の標数零の体とし、標準的な ℚ-代数構造を入れる。t∈K とする。t が生成する ℚ-部分代数を A=ℚ[t]、t が生成する中間体を F=ℚ(t) と書く。A は部分代数、F は体であり、両者は異なる構成である。A から K への ℚ-導分とは、D(1)=0 および D(ab)=aD(b)+bD(a) を満たす ℚ-線形写像 D である。積には包含写像 A→K を用いる。K から K への ℚ-導分も K 上で同じ規則を満たす。t が ℚ 上超越的であると仮定する。すべての多項式 p∈ℚ[X] に対し、標準的な ℚ-代数同値 e_t:ℚ[X]≃A を p に作用させ、その像を K に含める。その結果は p の t における値に等しい。すなわち (e_t(p):K)=p(t) である。この等式は抽象的な多項式環の元ではなく、K の元を比較する。",
+      "proof_status": "proved_in_source",
+      "open_leaf_dependencies": [],
+      "notes": []
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.aeval_algEquivOfTranscendental_symm",
+      "path": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "line": 34,
+      "kind": "theorem",
+      "visibility": "public",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.aeval_algEquivOfTranscendental_symm {K : Type*} [Field K] [CharZero K] (t : K) (ht : Transcendental ℚ t) (a : Algebra.adjoin ℚ {t}) : aeval t ((Polynomial.algEquivOfTranscendental ℚ t ht).symm a) = (a : K)",
+      "source_signature": "theorem aeval_algEquivOfTranscendental_symm (ht : Transcendental ℚ t)\n    (a : Algebra.adjoin ℚ {t}) :\n    aeval t ((Polynomial.algEquivOfTranscendental ℚ t ht).symm a) = (a : K)",
+      "reconstructed_binders": [
+        "{K : Type*}",
+        "[Field K]",
+        "[CharZero K]",
+        "(t : K)",
+        "(ht : Transcendental ℚ t)",
+        "(a : Algebra.adjoin ℚ {t})"
+      ],
+      "return_type_static": "aeval t ((Polynomial.algEquivOfTranscendental ℚ t ht).symm a) = (a : K)",
+      "en": "Let K be any field of characteristic zero, with its canonical ℚ-algebra structure, and let t∈K. Write A=ℚ[t] for the ℚ-subalgebra generated by t, and F=ℚ(t) for the intermediate field generated by t. These are distinct constructions: A is a subalgebra and F is a field. A ℚ-derivation from A to K is a ℚ-linear map D with D(1)=0 and D(ab)=aD(b)+bD(a), using the inclusion A→K for multiplication. A ℚ-derivation K→K obeys the same rules on K. Assume t is transcendental over ℚ. For every a∈A, let p=e_t⁻¹(a)∈ℚ[X], where e_t:ℚ[X]≃A is the canonical ℚ-algebra equivalence. Evaluating p at t gives the image of a in K: p(t)=(a:K).",
+      "zh_Hans": "设 K 为任意特征为零的域，赋予其标准的有理数代数结构，并设 t∈K。记 A=ℚ[t] 为由 t 生成的有理数子代数，记 F=ℚ(t) 为由 t 生成的中间域。两者不同：A 是子代数，F 是域。从 A 到 K 的有理数导子是有理数线性映射 D，满足 D(1)=0 和 D(ab)=aD(b)+bD(a)，其中乘法通过 A 到 K 的包含映射解释。从 K 到 K 的有理数导子在 K 上满足同样的规则。假设 t 在有理数域上超越。对每个 a∈A，令 p=e_t⁻¹(a)∈ℚ[X]，其中 e_t:ℚ[X]≃A 是标准的有理数代数等价。将 p 在 t 处求值，所得结果等于 a 在 K 中的像，即 p(t)=(a:K)。",
+      "ja": "K を任意の標数零の体とし、標準的な ℚ-代数構造を入れる。t∈K とする。t が生成する ℚ-部分代数を A=ℚ[t]、t が生成する中間体を F=ℚ(t) と書く。A は部分代数、F は体であり、両者は異なる構成である。A から K への ℚ-導分とは、D(1)=0 および D(ab)=aD(b)+bD(a) を満たす ℚ-線形写像 D である。積には包含写像 A→K を用いる。K から K への ℚ-導分も K 上で同じ規則を満たす。t が ℚ 上超越的であると仮定する。各 a∈A に対し、標準的な ℚ-代数同値 e_t:ℚ[X]≃A を用いて p=e_t⁻¹(a)∈ℚ[X] と置く。p を t で評価すると a の K における像が得られる。すなわち p(t)=(a:K) である。",
+      "proof_status": "proved_in_source",
+      "open_leaf_dependencies": [],
+      "notes": []
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.polyDeriv",
+      "path": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "line": 41,
+      "kind": "noncomputable def",
+      "visibility": "public",
+      "full_signature_static": "noncomputable def AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.polyDeriv {K : Type*} [Field K] [CharZero K] (t : K) (ht : Transcendental ℚ t) : Derivation ℚ (Algebra.adjoin ℚ {t}) K",
+      "source_signature": "noncomputable def polyDeriv (ht : Transcendental ℚ t) : Derivation ℚ (Algebra.adjoin ℚ {t}) K",
+      "reconstructed_binders": [
+        "{K : Type*}",
+        "[Field K]",
+        "[CharZero K]",
+        "(t : K)",
+        "(ht : Transcendental ℚ t)"
+      ],
+      "return_type_static": "Derivation ℚ (Algebra.adjoin ℚ {t}) K",
+      "en": "Let K be any field of characteristic zero, with its canonical ℚ-algebra structure, and let t∈K. Write A=ℚ[t] for the ℚ-subalgebra generated by t, and F=ℚ(t) for the intermediate field generated by t. These are distinct constructions: A is a subalgebra and F is a field. A ℚ-derivation from A to K is a ℚ-linear map D with D(1)=0 and D(ab)=aD(b)+bD(a), using the inclusion A→K for multiplication. A ℚ-derivation K→K obeys the same rules on K. Assume t is transcendental over ℚ. Let e_t:ℚ[X]≃A be the canonical ℚ-algebra equivalence. Define polyDeriv(t,ht):A→K by a↦(e_t⁻¹(a))′(t). Thus the definition recovers the unique representing polynomial, takes its formal derivative, and evaluates that derivative at t in K. The source supplies the addition, rational-scalar, value-at-one, and Leibniz proofs, so this function is a ℚ-derivation. The output domain is A=ℚ[t], not the rational function field F or the whole field K.",
+      "zh_Hans": "设 K 为任意特征为零的域，赋予其标准的有理数代数结构，并设 t∈K。记 A=ℚ[t] 为由 t 生成的有理数子代数，记 F=ℚ(t) 为由 t 生成的中间域。两者不同：A 是子代数，F 是域。从 A 到 K 的有理数导子是有理数线性映射 D，满足 D(1)=0 和 D(ab)=aD(b)+bD(a)，其中乘法通过 A 到 K 的包含映射解释。从 K 到 K 的有理数导子在 K 上满足同样的规则。假设 t 在有理数域上超越。令 e_t:ℚ[X]≃A 为标准的有理数代数等价。定义 polyDeriv(t,ht):A→K，把 a 映为 (e_t⁻¹(a))′(t)。因此，定义先取得表示 a 的唯一多项式，再作形式求导，最后在 K 中的 t 处求值。源代码给出加法、有理数标量作用、在一处取值为零以及 Leibniz 乘积法则的证明，所以该函数是有理数导子。输出导子的定义域是 A=ℚ[t]，不是有理函数域 F，也不是整个域 K。",
+      "ja": "K を任意の標数零の体とし、標準的な ℚ-代数構造を入れる。t∈K とする。t が生成する ℚ-部分代数を A=ℚ[t]、t が生成する中間体を F=ℚ(t) と書く。A は部分代数、F は体であり、両者は異なる構成である。A から K への ℚ-導分とは、D(1)=0 および D(ab)=aD(b)+bD(a) を満たす ℚ-線形写像 D である。積には包含写像 A→K を用いる。K から K への ℚ-導分も K 上で同じ規則を満たす。t が ℚ 上超越的であると仮定する。e_t:ℚ[X]≃A を標準的な ℚ-代数同値とする。polyDeriv(t,ht):A→K を a↦(e_t⁻¹(a))′(t) と定義する。すなわち、a を表す一意的な多項式を取り、その形式微分を求め、K の元 t で評価する。ソースは加法、有理数によるスカラー倍、1 での値が零であること、およびライプニッツ則の証明を与える。従って、この関数は ℚ-導分である。その定義域は A=ℚ[t] であり、有理関数体 F や体 K 全体ではない。",
+      "proof_status": "definition_with_structure_field_proofs",
+      "open_leaf_dependencies": [],
+      "notes": []
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.formallyEtale_adjoin",
+      "path": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "line": 54,
+      "kind": "theorem",
+      "visibility": "public",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.formallyEtale_adjoin {K : Type*} [Field K] [CharZero K] (t : K) [Algebra.IsAlgebraic ℚ⟮t⟯ K] : Algebra.FormallyEtale (Algebra.adjoin ℚ {t}) K",
+      "source_signature": "theorem formallyEtale_adjoin [Algebra.IsAlgebraic ℚ⟮t⟯ K] :\n    Algebra.FormallyEtale (Algebra.adjoin ℚ {t}) K",
+      "reconstructed_binders": [
+        "{K : Type*}",
+        "[Field K]",
+        "[CharZero K]",
+        "(t : K)",
+        "[Algebra.IsAlgebraic ℚ⟮t⟯ K]"
+      ],
+      "return_type_static": "Algebra.FormallyEtale (Algebra.adjoin ℚ {t}) K",
+      "en": "Let K be any field of characteristic zero, with its canonical ℚ-algebra structure, and let t∈K. Write A=ℚ[t] for the ℚ-subalgebra generated by t, and F=ℚ(t) for the intermediate field generated by t. These are distinct constructions: A is a subalgebra and F is a field. A ℚ-derivation from A to K is a ℚ-linear map D with D(1)=0 and D(ab)=aD(b)+bD(a), using the inclusion A→K for multiplication. A ℚ-derivation K→K obeys the same rules on K. Assume that K is algebraic over F=ℚ(t). Then K is formally étale as an A=ℚ[t]-algebra. This statement does not require t to be transcendental, and it does not require a finite-dimensional extension. The written proof factors A→K through F: the first map is a localization, the second is formally étale by separability in characteristic zero, and their composite is formally étale.",
+      "zh_Hans": "设 K 为任意特征为零的域，赋予其标准的有理数代数结构，并设 t∈K。记 A=ℚ[t] 为由 t 生成的有理数子代数，记 F=ℚ(t) 为由 t 生成的中间域。两者不同：A 是子代数，F 是域。从 A 到 K 的有理数导子是有理数线性映射 D，满足 D(1)=0 和 D(ab)=aD(b)+bD(a)，其中乘法通过 A 到 K 的包含映射解释。从 K 到 K 的有理数导子在 K 上满足同样的规则。假设 K 在 F=ℚ(t) 上为代数扩张。则 K 作为 A=ℚ[t] 的代数是形式平展的。本陈述不要求 t 超越，也不要求扩张有限维。给出的证明把 A→K 分解为经过 F 的复合：第一个映射是局部化，第二个映射利用特征为零时的可分性得到形式平展性，最后取复合。",
+      "ja": "K を任意の標数零の体とし、標準的な ℚ-代数構造を入れる。t∈K とする。t が生成する ℚ-部分代数を A=ℚ[t]、t が生成する中間体を F=ℚ(t) と書く。A は部分代数、F は体であり、両者は異なる構成である。A から K への ℚ-導分とは、D(1)=0 および D(ab)=aD(b)+bD(a) を満たす ℚ-線形写像 D である。積には包含写像 A→K を用いる。K から K への ℚ-導分も K 上で同じ規則を満たす。K が F=ℚ(t) 上代数的であると仮定する。このとき K は A=ℚ[t]-代数として形式的エタールである。この命題は t の超越性も、拡大の有限次元性も要求しない。記述された証明は A→K を F を経由して分解する。最初の写像は局所化であり、次の写像は標数零における分離性によって形式的エタールとなる。その合成も形式的エタールである。",
+      "proof_status": "proved_in_source",
+      "open_leaf_dependencies": [],
+      "notes": [
+        "There is no Transcendental binder or hypothesis.",
+        "The IsAlgebraic hypothesis is a typeclass binder, not a finite-dimensional hypothesis."
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong",
+      "path": "Definitions/Def_FermatCurveDerivationBasic.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationBasic.lean",
+      "line": 25,
+      "kind": "noncomputable def",
+      "visibility": "public",
+      "full_signature_static": "noncomputable def AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong {K : Type*} [Field K] [CharZero K] (t : K) : Derivation ℚ K K",
+      "source_signature": "noncomputable def derivAlong : Derivation ℚ K K",
+      "reconstructed_binders": [
+        "{K : Type*}",
+        "[Field K]",
+        "[CharZero K]",
+        "(t : K)"
+      ],
+      "return_type_static": "Derivation ℚ K K",
+      "en": "Let K be any field of characteristic zero, with its canonical ℚ-algebra structure, and let t∈K. Write A=ℚ[t] for the ℚ-subalgebra generated by t, and F=ℚ(t) for the intermediate field generated by t. These are distinct constructions: A is a subalgebra and F is a field. A ℚ-derivation from A to K is a ℚ-linear map D with D(1)=0 and D(ab)=aD(b)+bD(a), using the inclusion A→K for multiplication. A ℚ-derivation K→K obeys the same rules on K. Define derivAlong(t) to be the following specific ℚ-derivation K→K. Test the conjunction H: t is transcendental over ℚ, and K is algebraic over F=ℚ(t). If H holds, use its transcendence proof to construct polyDeriv(t):A→K by a↦(e_t⁻¹(a))′(t), where e_t:ℚ[X]≃A. Its algebraicity proof supplies formal étaleness of A→K. Extend that polynomial derivation by the Kähler construction: apply the universal differential K→Ω[K/ℚ], then the inverse equivalence Ω[K/ℚ]→K⊗_A Ω[A/ℚ], then the K-linear scalar extension of the map induced by polyDeriv(t). If H fails, return the zero ℚ-derivation K→K. The function is defined for every t∈K; neither conjunct of H is an argument or an unconditional assertion.",
+      "zh_Hans": "设 K 为任意特征为零的域，赋予其标准的有理数代数结构，并设 t∈K。记 A=ℚ[t] 为由 t 生成的有理数子代数，记 F=ℚ(t) 为由 t 生成的中间域。两者不同：A 是子代数，F 是域。从 A 到 K 的有理数导子是有理数线性映射 D，满足 D(1)=0 和 D(ab)=aD(b)+bD(a)，其中乘法通过 A 到 K 的包含映射解释。从 K 到 K 的有理数导子在 K 上满足同样的规则。将 derivAlong(t) 定义为以下指定的有理数导子 K→K。先检验合取 H：t 在有理数域上超越，并且 K 在 F=ℚ(t) 上为代数扩张。若 H 成立，使用其中的超越性证明，构造 polyDeriv(t):A→K，把 a 映为 (e_t⁻¹(a))′(t)，其中 e_t:ℚ[X]≃A。H 中的代数性证明给出 A→K 的形式平展性。随后按 Kähler 构造延拓该多项式导子：先应用泛导子 K→Ω[K/ℚ]，再应用逆等价 Ω[K/ℚ]→K⊗_A Ω[A/ℚ]，最后应用 polyDeriv(t) 诱导映射的 K 线性标量延拓。若 H 不成立，则返回从 K 到 K 的零有理数导子。此函数对每个 t∈K 都有定义；H 的两个条件既不是传入参数，也不是无条件成立的断言。",
+      "ja": "K を任意の標数零の体とし、標準的な ℚ-代数構造を入れる。t∈K とする。t が生成する ℚ-部分代数を A=ℚ[t]、t が生成する中間体を F=ℚ(t) と書く。A は部分代数、F は体であり、両者は異なる構成である。A から K への ℚ-導分とは、D(1)=0 および D(ab)=aD(b)+bD(a) を満たす ℚ-線形写像 D である。積には包含写像 A→K を用いる。K から K への ℚ-導分も K 上で同じ規則を満たす。derivAlong(t) を次の特定の ℚ-導分 K→K と定義する。まず、t が ℚ 上超越的であり、かつ K が F=ℚ(t) 上代数的であるという連言 H を判定する。H が真ならば、その超越性の証明から polyDeriv(t):A→K を a↦(e_t⁻¹(a))′(t) により構成する。ここで e_t:ℚ[X]≃A である。H の代数性の証明は A→K の形式的エタール性を与える。この多項式導分をケーラー微分の構成で延長する。具体的には、普遍導分 K→Ω[K/ℚ]、逆同値 Ω[K/ℚ]→K⊗_A Ω[A/ℚ]、polyDeriv(t) が誘導する写像の K-線形スカラー拡大を順に適用する。H が偽ならば K から K への零 ℚ-導分を返す。この関数はすべての t∈K に対して定義される。H の二条件は引数でも無条件の主張でもない。",
+      "proof_status": "definition",
+      "open_leaf_dependencies": [],
+      "notes": [
+        "The otherwise-zero branch is part of the definition.",
+        "No unproved uniqueness theorem or unconditional t↦1 law is added to the readback."
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "line": 22,
+      "kind": "theorem",
+      "visibility": "public",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ) (P : Place M.K) (hψP : ψ ∈ P.1) (hram : 1 < ramIdx M hDVR ψ P) : ∃ (s : M.K), s ∈ P.1 ∧ CurveDeriv.derivAlong ψ s ∉ P.1",
+      "source_signature": "theorem noncriticalRegularRamifiedDerivNotMem {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (P : Place M.K) (hψP : ψ ∈ P.1) (hram : 1 < ramIdx M hDVR ψ P) :\n    ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1",
+      "reconstructed_binders": [
+        "{N : ℕ}",
+        "(M : Model N)",
+        "(hDVR : PlacesDiscrete M)",
+        "(ψ : M.K)",
+        "(hψ : Transcendental ℚ ψ)",
+        "(P : Place M.K)",
+        "(hψP : ψ ∈ P.1)",
+        "(hram : 1 < ramIdx M hDVR ψ P)"
+      ],
+      "return_type_static": "∃ (s : M.K), s ∈ P.1 ∧ CurveDeriv.derivAlong ψ s ∉ P.1",
+      "en": "Let N be any natural number and M a given Model(N). This does not assert that such a model exists for every N. Its field K=M.K is an intermediate field over ℚ in an algebraic closure of ℚ(X). It has specified elements u,v with u transcendental over ℚ, u^N+v^N=1, and ℚ(u,v)=K. The extension K/ℚ(u) is finite-dimensional with dimension N. A place P of K is an actual valuation subring O_P⊊K containing every rational number. The carrier includes every such subring; it selects no affine chart. Membership f∈O_P is the source meaning of f being regular at P. A pole here means f∉O_P. The derivative D_ψ is the actual function CurveDeriv.derivAlong(ψ), not an arbitrary supplied derivation. For a characteristic-zero field K and ψ∈K, this function tests whether ψ is transcendental over ℚ and K is algebraic over ℚ(ψ). If both hold, it takes the formal polynomial derivative on ℚ[ψ] and extends it to K through the canonical Kähler differential equivalence for the formally étale extension ℚ[ψ]→K. If the conjunction fails, D_ψ is the zero derivation. Assume hDVR: every place ring O_P is a discrete valuation ring. Write o_P(f) for the exact order ord(M,hDVR,P,f) in the source. It is −WithZero.log(v_P(f)), where v_P is the valuation attached to the maximal ideal of that discrete valuation ring. The integer e_ψ(P)=ramIdx(M,hDVR,ψ,P) is defined by two cases. If ψ∈O_P, take the residue ψ̄ in the residue field of O_P and set e_ψ(P)=o_P(minpoly_ℚ(ψ̄)(ψ)). If ψ∉O_P, set e_ψ(P)=−o_P(ψ). The minimal polynomial is evaluated at the actual field element ψ. No ramification law is an extra parameter. Let ψ∈K be transcendental over ℚ. For every place P of K, assume ψ∈O_P and 1<e_ψ(P), with the strict comparison in ℤ. Then there exists an actual field element s∈K such that s∈O_P but D_ψ(s)∉O_P. Thus the actual derivative with respect to ψ fails to preserve this particular local ring at a regular ramified place. The statement supplies no derivation or preservation law as an additional hypothesis. It assumes hDVR for all places, not just P. This source theorem is open: its body is by sorry.",
+      "zh_Hans": "设 N 为任意自然数，M 为给定的 Model(N)。这里不声称每个 N 都存在这样的模型。其域 K=M.K 是有理函数域 ℚ(X) 的某个代数闭包中包含有理数域的中间域。模型指定元素 u,v，满足 u 在有理数域上超越、u^N+v^N=1、ℚ(u,v)=K；扩张 K/ℚ(u) 有限维且维数为 N。K 的一个赋值位置 P 是实际的赋值子环 O_P，满足 O_P≠K，并包含全部有理数。位置类型遍历所有这样的子环，不选择仿射图。f∈O_P 就是源代码中 f 在 P 处正则的含义；这里的极点指 f∉O_P。导子 D_ψ 是实际定义的函数 CurveDeriv.derivAlong(ψ)，不是任意另给的导子。对特征为零的域 K 及 ψ∈K，该定义检验两个条件：ψ 在有理数域上超越，且 K 在 ℚ(ψ) 上为代数扩张。两个条件都成立时，取 ℚ[ψ] 上的形式多项式求导，并通过形式平展扩张 ℚ[ψ]→K 的标准 Kähler 微分等价将其延拓到 K。若该合取不成立，则 D_ψ 是零导子。假设 hDVR：每个位置环 O_P 都是离散赋值环。记 o_P(f) 为源代码中确切定义的阶 ord(M,hDVR,P,f)。它等于 −WithZero.log(v_P(f))，其中 v_P 是该离散赋值环的极大理想所给出的赋值。整数 e_ψ(P)=ramIdx(M,hDVR,ψ,P) 分两种情况定义。若 ψ∈O_P，取 ψ 在 O_P 的剩余域中的像 ψ̄，令 e_ψ(P)=o_P(minpoly_ℚ(ψ̄)(ψ))。若 ψ∉O_P，令 e_ψ(P)=−o_P(ψ)。最小多项式在实际的域元素 ψ 处求值。分歧规律不是额外传入的参数。设 ψ∈K 在有理数域上超越。对 K 的任意赋值位置 P，假设 ψ∈O_P 且 1<e_ψ(P)，其中严格不等式在整数中比较。则存在实际的域元素 s∈K，使得 s∈O_P，但 D_ψ(s)∉O_P。因此，在 ψ 正则且该整数分歧指数大于一的位置，关于 ψ 的实际导子不保持该局部环。陈述没有额外假设一个导子或导子保持局部环的规律。hDVR 针对全部位置，而不只是 P。该源定理尚未证明，证明体为 by sorry。",
+      "ja": "N を任意の自然数、M を与えられた Model(N) とする。これは各 N に対するモデルの存在を主張しない。その体 K=M.K は、有理関数体 ℚ(X) のある代数閉包内の ℚ 上の中間体である。指定された元 u,v は、u が ℚ 上超越的であること、u^N+v^N=1、および ℚ(u,v)=K を満たす。また K/ℚ(u) は有限次元であり、その次元は N である。K の場所 P は、すべての有理数を含む真の付値部分環 O_P⊊K そのものである。場所の型はこのような部分環すべてを含み、アフィン座標近傍を選ばない。f∈O_P が、このソースで f が P で正則であるという意味であり、ここで極とは f∉O_P をいう。導分 D_ψ は実際に定義された関数 CurveDeriv.derivAlong(ψ) であり、任意に与えた導分ではない。標数零の体 K と ψ∈K に対して、この定義は、ψ が ℚ 上超越的であり、かつ K が ℚ(ψ) 上代数的であるかを調べる。両条件が成り立つ場合、ℚ[ψ] 上の形式的な多項式微分を、形式的エタール拡大 ℚ[ψ]→K に対する標準的なケーラー微分の同値を通じて K に延長する。この連言が偽ならば D_ψ は零導分である。hDVR、すなわちすべての場所の環 O_P が離散付値環であることを仮定する。ソースで定義されたそのままの位数 ord(M,hDVR,P,f) を o_P(f) と書く。これは −WithZero.log(v_P(f)) であり、v_P はその離散付値環の極大イデアルに付随する付値である。整数 e_ψ(P)=ramIdx(M,hDVR,ψ,P) は二つの場合に分けて定義される。ψ∈O_P の場合、O_P の剰余体における ψ の像を ψ̄ とし、e_ψ(P)=o_P(minpoly_ℚ(ψ̄)(ψ)) と置く。ψ∉O_P の場合は e_ψ(P)=−o_P(ψ) と置く。最小多項式は実際の体の元 ψ で評価する。分岐に関する法則は追加の引数ではない。ψ∈K が ℚ 上超越的であるとする。K の任意の場所 P に対し、ψ∈O_P および 1<e_ψ(P) を仮定する。この厳密不等式は整数で比較する。このとき実際の体の元 s∈K が存在し、s∈O_P かつ D_ψ(s)∉O_P となる。従って、ψ が正則で、この整数の分岐指数が 1 より大きい場所では、ψ に関する実際の導分はその局所環を保たない。導分や局所環を保つという法則を追加の仮定として与えてはいない。hDVR は P だけでなく、すべての場所に対する仮定である。このソースの定理は未証明であり、証明本体は by sorry である。",
+      "proof_status": "open_sorry_leaf",
+      "open_leaf_dependencies": [],
+      "notes": [
+        "s is an element of the whole field M.K with an explicit local-ring membership condition.",
+        "The comparison 1<ramIdx is in ℤ.",
+        "No ResiduesFinite hypothesis occurs."
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+      "line": 21,
+      "kind": "theorem",
+      "visibility": "public",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite {N : ℕ} (M : Model N) (ψ : M.K) (hψ : Transcendental ℚ ψ) : {P : Place M.K | ψ ∈ P.1 ∧ ∃ (s : M.K), s ∈ P.1 ∧ CurveDeriv.derivAlong ψ s ∉ P.1}.Finite",
+      "source_signature": "theorem noncriticalDerivativeBadPlacesFinite {N : ℕ} (M : Model N)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) :\n    {P : Place M.K | ψ ∈ P.1 ∧\n      ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1}.Finite",
+      "reconstructed_binders": [
+        "{N : ℕ}",
+        "(M : Model N)",
+        "(ψ : M.K)",
+        "(hψ : Transcendental ℚ ψ)"
+      ],
+      "return_type_static": "{P : Place M.K | ψ ∈ P.1 ∧ ∃ (s : M.K), s ∈ P.1 ∧ CurveDeriv.derivAlong ψ s ∉ P.1}.Finite",
+      "en": "Let N be any natural number and M a given Model(N). This does not assert that such a model exists for every N. Its field K=M.K is an intermediate field over ℚ in an algebraic closure of ℚ(X). It has specified elements u,v with u transcendental over ℚ, u^N+v^N=1, and ℚ(u,v)=K. The extension K/ℚ(u) is finite-dimensional with dimension N. A place P of K is an actual valuation subring O_P⊊K containing every rational number. The carrier includes every such subring; it selects no affine chart. Membership f∈O_P is the source meaning of f being regular at P. A pole here means f∉O_P. The derivative D_ψ is the actual function CurveDeriv.derivAlong(ψ), not an arbitrary supplied derivation. For a characteristic-zero field K and ψ∈K, this function tests whether ψ is transcendental over ℚ and K is algebraic over ℚ(ψ). If both hold, it takes the formal polynomial derivative on ℚ[ψ] and extends it to K through the canonical Kähler differential equivalence for the formally étale extension ℚ[ψ]→K. If the conjunction fails, D_ψ is the zero derivation. Let ψ∈K be transcendental over ℚ. Then the set of all places P of K for which both following conditions hold is finite. First, ψ∈O_P. Second, there exists s∈K with s∈O_P and D_ψ(s)∉O_P. Equivalently, among all places where ψ is regular, only finitely many local rings fail to be preserved by this actual derivation. The conclusion is finiteness of places, not finiteness of possible witnesses s. The theorem has no discrete-valuation, residue-field-finiteness, or ramification hypothesis. This source theorem is open: its body is by sorry.",
+      "zh_Hans": "设 N 为任意自然数，M 为给定的 Model(N)。这里不声称每个 N 都存在这样的模型。其域 K=M.K 是有理函数域 ℚ(X) 的某个代数闭包中包含有理数域的中间域。模型指定元素 u,v，满足 u 在有理数域上超越、u^N+v^N=1、ℚ(u,v)=K；扩张 K/ℚ(u) 有限维且维数为 N。K 的一个赋值位置 P 是实际的赋值子环 O_P，满足 O_P≠K，并包含全部有理数。位置类型遍历所有这样的子环，不选择仿射图。f∈O_P 就是源代码中 f 在 P 处正则的含义；这里的极点指 f∉O_P。导子 D_ψ 是实际定义的函数 CurveDeriv.derivAlong(ψ)，不是任意另给的导子。对特征为零的域 K 及 ψ∈K，该定义检验两个条件：ψ 在有理数域上超越，且 K 在 ℚ(ψ) 上为代数扩张。两个条件都成立时，取 ℚ[ψ] 上的形式多项式求导，并通过形式平展扩张 ℚ[ψ]→K 的标准 Kähler 微分等价将其延拓到 K。若该合取不成立，则 D_ψ 是零导子。设 ψ∈K 在有理数域上超越。则满足以下两个条件的 K 的全部赋值位置 P 所成的集合是有限集：第一，ψ∈O_P；第二，存在 s∈K，使 s∈O_P 且 D_ψ(s)∉O_P。也就是说，在 ψ 正则的全部位置中，只有有限多个位置的局部环不被这个实际导子保持。结论是位置集合有限，不是可能的见证元素 s 只有有限多个。该定理没有离散赋值、剩余域有限维或分歧方面的假设。该源定理尚未证明，证明体为 by sorry。",
+      "ja": "N を任意の自然数、M を与えられた Model(N) とする。これは各 N に対するモデルの存在を主張しない。その体 K=M.K は、有理関数体 ℚ(X) のある代数閉包内の ℚ 上の中間体である。指定された元 u,v は、u が ℚ 上超越的であること、u^N+v^N=1、および ℚ(u,v)=K を満たす。また K/ℚ(u) は有限次元であり、その次元は N である。K の場所 P は、すべての有理数を含む真の付値部分環 O_P⊊K そのものである。場所の型はこのような部分環すべてを含み、アフィン座標近傍を選ばない。f∈O_P が、このソースで f が P で正則であるという意味であり、ここで極とは f∉O_P をいう。導分 D_ψ は実際に定義された関数 CurveDeriv.derivAlong(ψ) であり、任意に与えた導分ではない。標数零の体 K と ψ∈K に対して、この定義は、ψ が ℚ 上超越的であり、かつ K が ℚ(ψ) 上代数的であるかを調べる。両条件が成り立つ場合、ℚ[ψ] 上の形式的な多項式微分を、形式的エタール拡大 ℚ[ψ]→K に対する標準的なケーラー微分の同値を通じて K に延長する。この連言が偽ならば D_ψ は零導分である。ψ∈K が ℚ 上超越的であるとする。このとき、次の二条件をともに満たす K のすべての場所 P の集合は有限である。第一に ψ∈O_P である。第二に、s∈O_P かつ D_ψ(s)∉O_P を満たす元 s∈K が存在する。すなわち、ψ が正則であるすべての場所のうち、この実際の導分が局所環を保たない場所は有限個である。結論は場所の集合の有限性であり、証人となる元 s の候補の有限性ではない。この定理には、離散付値性、剰余体の有限次元性、分岐についての仮定はない。このソースの定理は未証明であり、証明本体は by sorry である。",
+      "proof_status": "open_sorry_leaf",
+      "open_leaf_dependencies": [],
+      "notes": [
+        "The existential witness s is inside the place predicate.",
+        "There is no hDVR parameter.",
+        "The range is all Place M.K, not an affine chart or a selected finite set."
+      ]
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "source_path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "line": 21,
+      "kind": "theorem",
+      "visibility": "public",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ) : {P : Place M.K | 1 < ramIdx M hDVR ψ P}.Finite",
+      "source_signature": "theorem noncriticalRamificationFinite {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ) :\n    {P : Place M.K | 1 < ramIdx M hDVR ψ P}.Finite",
+      "reconstructed_binders": [
+        "{N : ℕ}",
+        "(M : Model N)",
+        "(hDVR : PlacesDiscrete M)",
+        "(ψ : M.K)",
+        "(hψ : Transcendental ℚ ψ)"
+      ],
+      "return_type_static": "{P : Place M.K | 1 < ramIdx M hDVR ψ P}.Finite",
+      "en": "Let N be any natural number and M a given Model(N). This does not assert that such a model exists for every N. Its field K=M.K is an intermediate field over ℚ in an algebraic closure of ℚ(X). It has specified elements u,v with u transcendental over ℚ, u^N+v^N=1, and ℚ(u,v)=K. The extension K/ℚ(u) is finite-dimensional with dimension N. A place P of K is an actual valuation subring O_P⊊K containing every rational number. The carrier includes every such subring; it selects no affine chart. Membership f∈O_P is the source meaning of f being regular at P. A pole here means f∉O_P. The derivative D_ψ is the actual function CurveDeriv.derivAlong(ψ), not an arbitrary supplied derivation. For a characteristic-zero field K and ψ∈K, this function tests whether ψ is transcendental over ℚ and K is algebraic over ℚ(ψ). If both hold, it takes the formal polynomial derivative on ℚ[ψ] and extends it to K through the canonical Kähler differential equivalence for the formally étale extension ℚ[ψ]→K. If the conjunction fails, D_ψ is the zero derivation. Assume hDVR: every place ring O_P is a discrete valuation ring. Write o_P(f) for the exact order ord(M,hDVR,P,f) in the source. It is −WithZero.log(v_P(f)), where v_P is the valuation attached to the maximal ideal of that discrete valuation ring. The integer e_ψ(P)=ramIdx(M,hDVR,ψ,P) is defined by two cases. If ψ∈O_P, take the residue ψ̄ in the residue field of O_P and set e_ψ(P)=o_P(minpoly_ℚ(ψ̄)(ψ)). If ψ∉O_P, set e_ψ(P)=−o_P(ψ). The minimal polynomial is evaluated at the actual field element ψ. No ramification law is an extra parameter. Let ψ∈K be transcendental over ℚ. Then the set of all places P of K with 1<e_ψ(P) is finite, where e_ψ(P) is the actual integer index defined above. The quantifier includes every place, with no restriction to an affine chart or to places where ψ is regular. The written proof puts this set inside the union of two finite sets: the pole set {P:ψ∉O_P}, and the derivative-failure set {P:ψ∈O_P and there exists s∈O_P with D_ψ(s)∉O_P}. At a place in the first case, pole finiteness applies. At a place in the second case, the local derivative-obstruction child supplies the witness s. The existing curve-field theorem gives pole finiteness from Model; the other finite set is exactly the finite-failure child. The parent has a written combination proof, but that proof depends on both open sorry children. No complete proof of finite ramification is claimed by this source package.",
+      "zh_Hans": "设 N 为任意自然数，M 为给定的 Model(N)。这里不声称每个 N 都存在这样的模型。其域 K=M.K 是有理函数域 ℚ(X) 的某个代数闭包中包含有理数域的中间域。模型指定元素 u,v，满足 u 在有理数域上超越、u^N+v^N=1、ℚ(u,v)=K；扩张 K/ℚ(u) 有限维且维数为 N。K 的一个赋值位置 P 是实际的赋值子环 O_P，满足 O_P≠K，并包含全部有理数。位置类型遍历所有这样的子环，不选择仿射图。f∈O_P 就是源代码中 f 在 P 处正则的含义；这里的极点指 f∉O_P。导子 D_ψ 是实际定义的函数 CurveDeriv.derivAlong(ψ)，不是任意另给的导子。对特征为零的域 K 及 ψ∈K，该定义检验两个条件：ψ 在有理数域上超越，且 K 在 ℚ(ψ) 上为代数扩张。两个条件都成立时，取 ℚ[ψ] 上的形式多项式求导，并通过形式平展扩张 ℚ[ψ]→K 的标准 Kähler 微分等价将其延拓到 K。若该合取不成立，则 D_ψ 是零导子。假设 hDVR：每个位置环 O_P 都是离散赋值环。记 o_P(f) 为源代码中确切定义的阶 ord(M,hDVR,P,f)。它等于 −WithZero.log(v_P(f))，其中 v_P 是该离散赋值环的极大理想所给出的赋值。整数 e_ψ(P)=ramIdx(M,hDVR,ψ,P) 分两种情况定义。若 ψ∈O_P，取 ψ 在 O_P 的剩余域中的像 ψ̄，令 e_ψ(P)=o_P(minpoly_ℚ(ψ̄)(ψ))。若 ψ∉O_P，令 e_ψ(P)=−o_P(ψ)。最小多项式在实际的域元素 ψ 处求值。分歧规律不是额外传入的参数。设 ψ∈K 在有理数域上超越。则满足 1<e_ψ(P) 的 K 的全部赋值位置 P 所成的集合是有限集，其中 e_ψ(P) 是上面实际定义的整数指数。量词包括所有位置，不局限于某个仿射图，也不局限于 ψ 正则的位置。给出的证明把该集合包含在两个有限集的并集中：极点集合 {P:ψ∉O_P}，以及导子失效集合 {P:ψ∈O_P，且存在 s∈O_P 使 D_ψ(s)∉O_P}。在第一种情况下使用极点有限性；在第二种情况下由局部导子障碍子定理给出见证元素 s。已有的曲线函数域定理由 Model 得到极点有限性；另一个有限集正是导子失效位置有限性子定理的结论。父定理有写出的组合证明，但该证明依赖两个尚由 sorry 占位的子定理。此源文件包尚未给出分歧位置有限性的完整证明。",
+      "ja": "N を任意の自然数、M を与えられた Model(N) とする。これは各 N に対するモデルの存在を主張しない。その体 K=M.K は、有理関数体 ℚ(X) のある代数閉包内の ℚ 上の中間体である。指定された元 u,v は、u が ℚ 上超越的であること、u^N+v^N=1、および ℚ(u,v)=K を満たす。また K/ℚ(u) は有限次元であり、その次元は N である。K の場所 P は、すべての有理数を含む真の付値部分環 O_P⊊K そのものである。場所の型はこのような部分環すべてを含み、アフィン座標近傍を選ばない。f∈O_P が、このソースで f が P で正則であるという意味であり、ここで極とは f∉O_P をいう。導分 D_ψ は実際に定義された関数 CurveDeriv.derivAlong(ψ) であり、任意に与えた導分ではない。標数零の体 K と ψ∈K に対して、この定義は、ψ が ℚ 上超越的であり、かつ K が ℚ(ψ) 上代数的であるかを調べる。両条件が成り立つ場合、ℚ[ψ] 上の形式的な多項式微分を、形式的エタール拡大 ℚ[ψ]→K に対する標準的なケーラー微分の同値を通じて K に延長する。この連言が偽ならば D_ψ は零導分である。hDVR、すなわちすべての場所の環 O_P が離散付値環であることを仮定する。ソースで定義されたそのままの位数 ord(M,hDVR,P,f) を o_P(f) と書く。これは −WithZero.log(v_P(f)) であり、v_P はその離散付値環の極大イデアルに付随する付値である。整数 e_ψ(P)=ramIdx(M,hDVR,ψ,P) は二つの場合に分けて定義される。ψ∈O_P の場合、O_P の剰余体における ψ の像を ψ̄ とし、e_ψ(P)=o_P(minpoly_ℚ(ψ̄)(ψ)) と置く。ψ∉O_P の場合は e_ψ(P)=−o_P(ψ) と置く。最小多項式は実際の体の元 ψ で評価する。分岐に関する法則は追加の引数ではない。ψ∈K が ℚ 上超越的であるとする。このとき 1<e_ψ(P) を満たす K のすべての場所 P の集合は有限である。ここで e_ψ(P) は上で実際に定義された整数の指数である。量化はすべての場所を含み、アフィン座標近傍や ψ が正則である場所には制限されない。記述された証明は、この集合を二つの有限集合の和集合に含める。一つは極の集合 {P:ψ∉O_P}、もう一つは導分が局所環を保たない場所の集合 {P:ψ∈O_P かつ D_ψ(s)∉O_P を満たす s∈O_P が存在する} である。第一の場合には極の有限性を用い、第二の場合には局所的な導分の障害を述べる子定理から証人 s を得る。既存の曲線関数体の定理が Model から極の有限性を与え、もう一方の集合の有限性は導分失敗場所の有限性を述べる子定理そのものである。親定理には組合せの証明が書かれているが、その証明は sorry で置かれた二つの未証明の子定理に依存する。このソース一式は分岐場所の有限性の完成した証明を与えていない。",
+      "proof_status": "proof_body_depends_on_open_sorry_leaves",
+      "open_leaf_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite"
+      ],
+      "notes": [
+        "The source uses subset of a union, not equality with that union.",
+        "All places, including poles, occur in the target set.",
+        "A local letI installs Model.isCurveField for the proof; this is not a new top-level instance declaration."
+      ]
+    }
+  ],
+  "validation": {
+    "compilation": "not_run_by_instruction",
+    "MCP_CI": "not_called_by_instruction",
+    "repository_edits": false,
+    "cache_edits": false,
+    "static_checks": {
+      "status": "passed",
+      "checks": [
+        "All 9 source-level declarations covered exactly.",
+        "All exact raw source signatures match the assigned input files.",
+        "All 9 rows have the requested schema fields and all 3 languages.",
+        "All section binders are present in static full signatures.",
+        "Two open sorry children and one dependent parent are marked.",
+        "No private or source-level instance declaration omitted.",
+        "The formallyEtale_adjoin signature has algebraicity and no transcendence hypothesis.",
+        "Unchecked Mochizuki quotation remains null."
+      ]
+    }
+  }
+}

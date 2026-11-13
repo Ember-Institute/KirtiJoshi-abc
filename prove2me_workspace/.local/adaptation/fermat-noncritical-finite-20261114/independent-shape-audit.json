@@ -1,0 +1,244 @@
+{
+  "review": "independent_read_only_finite_ramification_decomposition_mathematical_shape_and_source_review",
+  "date": "2026-11-14",
+  "verdict": "No mathematical-shape or source-body-fidelity blocker detected. The six actual derivation-construction declarations and source finite-union combination are faithful to the independently checked pinned sources. Both lower obligations remain Open; kernel validation is not established.",
+  "candidate_root": "/tmp/p2m-noncritical-finite-draft-20261114",
+  "input_file_sha256": [
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationBasic.lean",
+      "sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04"
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationEtale.lean",
+      "sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28"
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e"
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+      "sha256": "8ac4febdf77c0844da50f3897a0ffda00c5868106a0d9748fe68d9b84df5c56e"
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "sha256": "5e87bce397ea8c68dafe054aaebaf0fa41679c99ec080de4a86b73bd4ab13f65"
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "sha256": "b052e76cee122782c48c2e997bae7f7027d77ab27ecd53a3bb302468ad7c8967"
+    }
+  ],
+  "source_provenance": {
+    "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "manifest": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+    "manifest_belyi_url": "https://github.com/lana-agents/belyi.git",
+    "manifest_rev_and_inputRev_match": true,
+    "reference_checks": [
+      {
+        "upstream_path": "Belyi/CurveDeriv/Basic.lean",
+        "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveDeriv/Basic.lean",
+        "local_reference": "/tmp/p2m-noncritical-finite-draft-20261114/reference/Belyi_CurveDeriv_Basic.lean",
+        "expected_sha256": "cf1b11adab96fbd7d7bb5114e7215dcbf8b8cda1a8eda573e9759ac5316f40b2",
+        "actual_local_sha256": "cf1b11adab96fbd7d7bb5114e7215dcbf8b8cda1a8eda573e9759ac5316f40b2",
+        "independently_fetched_pinned_remote_sha256": "cf1b11adab96fbd7d7bb5114e7215dcbf8b8cda1a8eda573e9759ac5316f40b2",
+        "pinned_remote_and_reference_match_byte_for_byte": true
+      },
+      {
+        "upstream_path": "Belyi/CurveField/NoncriticalFinite.lean",
+        "pinned_url": "https://raw.githubusercontent.com/lana-agents/belyi/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalFinite.lean",
+        "local_reference": "/tmp/p2m-noncritical-finite-draft-20261114/reference/Belyi_CurveField_NoncriticalFinite.lean",
+        "expected_sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+        "actual_local_sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+        "independently_fetched_pinned_remote_sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+        "pinned_remote_and_reference_match_byte_for_byte": true
+      }
+    ],
+    "supplemental_pinned_sources_checked": [
+      {
+        "path": "Belyi/CurveField/NoncriticalBasic.lean",
+        "sha256": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+        "purpose": "Exact regular residue-minpoly/pole ramIdx definition."
+      },
+      {
+        "path": "Belyi/CurveField/Place.lean",
+        "sha256": "f68260416b102e3b60c03e42b016833ded7ed476299d0a0e978e2e89965b2572",
+        "purpose": "Exact all-valuative-place carrier."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "actual_derivative_is_fixed_polynomial_derivative_and_formal_etale_extension",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+          "line": 41
+        },
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationEtale.lean",
+          "line": 26
+        },
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationBasic.lean",
+          "line": 25
+        }
+      ],
+      "detail": "polyDeriv is the actual Polynomial.derivative transported by the transcendental polynomial-adjoin equivalence and evaluated in K. It is not a free derivation or law package. extendOfFormallyEtale uses d.liftKaehlerDifferential, actual T-base change of that map, the inverse tensorKaehlerEquivOfFormallyEtale and the universal differential D R T. derivAlong selects that construction when t is transcendental and K is algebraic over the actual intermediate field ℚ⟮t⟯, and the exact source zero fallback otherwise. In the child context M.isCurveField plus hψ gives isAlgebraic_adjoin hψ, so the source true-branch condition holds; no additional caller hypothesis or arbitrary derivative value is inserted."
+    },
+    {
+      "name": "scalar_towers_and_localization_are_source_exact",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationEtale.lean",
+          "line": 19
+        },
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+          "line": 53
+        }
+      ],
+      "detail": "The generic extension retains CommRing R/S/T, Algebra R S, Algebra R T, Algebra S T and IsScalarTower R S T, with FormallyEtale S T. For the field construction the scalars are canonical rational scalars, S is the actual polynomial subalgebra ℚ[t], ℚ⟮t⟯ is the actual generated intermediate field, and the localization is at nonZeroDivisors of ℚ[t]. The local scoped algebraAdjoinAdjoin instance is preserved. The formally-etale tower is the source composition of this localization and the actual characteristic-zero separable algebraic field extension. No scalar law, alternative residue object or relative algebra is freely supplied."
+    },
+    {
+      "name": "all_six_construction_declarations_match_pinned_bodies",
+      "status": "mechanically_compared_modulo_explicit_namespace_notation_changes",
+      "declarations": [
+        "extendOfFormallyEtale",
+        "coe_algEquivOfTranscendental",
+        "aeval_algEquivOfTranscendental_symm",
+        "polyDeriv",
+        "formallyEtale_adjoin",
+        "derivAlong"
+      ],
+      "detail": "Comment-stripped complete declaration text was whitespace-normalized and compared with the pinned Basic reference. The extension declaration moves from Derivation.extendOfFormallyEtale to project CurveDeriv.extendOfFormallyEtale. derivAlong changes (polyDeriv t h.1).extendOfFormallyEtale to the equivalent explicit function call extendOfFormallyEtale (polyDeriv t h.1). Every other selected declaration body/type is identical modulo its enclosing namespace/import/scope arrangement. No new equation-specific proof is added."
+    },
+    {
+      "name": "local_obstruction_child_is_genuinely_lower_and_source_exact",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+          "line": 24
+        },
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/reference/Belyi_CurveField_NoncriticalFinite.lean",
+          "line": 100
+        }
+      ],
+      "detail": "The child fixes actual M.K, transcendental ψ, an unrestricted actual proper valuation place P, ψ∈P.1 and actual ramIdx>1, and concludes existence of s in that same P.1 with actual d/dψ(s) outside P.1. The source witness can be the local uniformizer, but the draft leaves the entire source local derivative-order/chain-rule proof Open. The result concerns one local ring and contains no finite-set conclusion; it is not a parent rename. hDVR is the existing model regularity parameter used by the already fixed ramIdx, not a new order/derivation law. No extra s≠0, ψ-coordinate restriction, finite-place subfamily or residue-field hypothesis is added."
+    },
+    {
+      "name": "finite_failure_locus_child_is_source_exact_and_distinct",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+          "line": 22
+        },
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/reference/Belyi_CurveField_NoncriticalFinite.lean",
+          "line": 145
+        }
+      ],
+      "detail": "The second child states finiteness of the exact set {P | ψ∈P.1 and ∃s∈P.1, d/dψ(s)∉P.1}. Its predicate contains no ramIdx condition. It has only the concrete Model, ψ and actual transcendence input; no finite-support premise, supplied derivative or finiteness certificate occurs. It is the source chart finite-generation/localization theorem left Open. Existing chartRing is the integral closure of ℚ[ψ] in the actual M.K, finite over ℚ[ψ]; existing Place.toChart/ofChart identify every place containing ψ with its actual localization. Source denominator/unit conditions remain part of that future proof rather than being dropped from a supplied proof."
+    },
+    {
+      "name": "actual_place_residue_and_ramification_interfaces_match_source",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+          "line": 55
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+          "line": 128
+        },
+        {
+          "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+          "line": 64
+        }
+      ],
+      "detail": "The carrier matches pinned Place exactly: a proper valuation subring of K containing every rational number. These are all curve places, not an affine chart or an arithmetic p-adic subfamily. Residues are actual IsLocalRing.ResidueField P.1 and residue maps. The source regular ramIdx is ord(minpoly of the actual residue evaluated at ψ), and the pole branch is -ord ψ. The existing ord_eq_placeOrd is rfl, so the hDVR-parameterized model ramIdx has the same regular/pole expression. Residue algebraicity and DVR structure follow from the existing IsCurveField/chart infrastructure; no full-constant-field=ℚ condition is introduced."
+    },
+    {
+      "name": "transcendence_nonzero_zero_residue_and_infinity_cases_preserved",
+      "status": "no_static_shape_defect_detected",
+      "evidence": [
+        {
+          "file": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+          "line": 22
+        }
+      ],
+      "detail": "hψ is the original transcendence of an arbitrary supplied actual function, not only a coordinate or a nonzero residue. It implies ψ≠0 as a field element; regular places where its residue is zero remain included. The parent quantifies every Place M.K, including geometric infinity. Its split ψ∈P.1 versus ψ∉P.1 is exhaustive: poles go to the existing finite pole locus; every regular ramified place goes to the exact derivative-failure locus. There is no exclusion of zeros, units, an affine chart or infinity."
+    },
+    {
+      "name": "unchanged_parent_and_exact_source_union_proof",
+      "status": "mechanically_compared",
+      "existing_parent_sha256": "7311707c2e5da6a8124df80f028e4a90eaa0dd7f72ab1a2ae4f75db60677e665",
+      "candidate_parent_sha256": "5e87bce397ea8c68dafe054aaebaf0fa41679c99ec080de4a86b73bd4ab13f65",
+      "detail": "The full existing parent statement from theorem name through := matches byte-for-byte. It retains {N}, M, hDVR, ψ, hψ and exactly {P | 1<ramIdx M hDVR ψ P}.Finite. The union/subset body matches the pinned finite_setOf_one_lt_ramIdx proof after source t/ht/htP renaming, explicit model reparameterization of the two children, and insertion of letI : IsCurveField M.K := M.isCurveField. This is the source combination proof; it is not a new proof of either Open child."
+    },
+    {
+      "name": "actual_consumers_and_no_orphan_producers",
+      "status": "source_level_chain_verified",
+      "consumer_chain": [
+        "coe_algEquivOfTranscendental → aeval_algEquivOfTranscendental_symm",
+        "aeval_algEquivOfTranscendental_symm → polyDeriv.leibniz proof",
+        "polyDeriv + formallyEtale_adjoin + extendOfFormallyEtale → derivAlong",
+        "derivAlong → both actual Open child conclusion/predicate",
+        "both Open children → noncriticalRamificationFinite",
+        "noncriticalRamificationFinite → existing noncriticalSelection_of_simpleZeros_and_children parameter hRamFinite → current noncriticalSelection"
+      ],
+      "detail": "All six new Definition producers have direct source-level consumers in the checked construction/target statements. The current selection theorem imports and applies the unchanged finite-ramification parent. The ledger correctly leaves unused source self/aeval/chain-rule interfaces for future child decomposition instead of adding unconsumed producers now."
+    },
+    {
+      "name": "imports_cycles_and_open_proof_boundary",
+      "status": "source_level_overlay_checked",
+      "local_module_closure": 15,
+      "new_Definitions_modules": 3,
+      "new_Definition_declarations": 6,
+      "new_Open_children": 2,
+      "reachable_sorry_files": [
+        "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+        "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean"
+      ],
+      "detail": "Overlay traversal resolves all local project imports and finds no cycle. Every source in this closure other than the two new Open theorem files has zero sorry tokens after comments are removed. New Definitions import no Theorems module; no upstream Belyi runtime dependency, whole Mathlib import, Act2, Scene2, Prologue/Obligations, canonical-divisor/differential package or Riemann-Hurwitz proof is introduced. The parent has no local sorry but transitively depends on both children and cannot be claimed closed."
+    },
+    {
+      "name": "source_notice_and_license_claim_scope",
+      "status": "original_notices_preserved_with_upstream_license_file_limitation",
+      "detail": "Both independently fetched pinned source files start with the exact 2026 Belyi-contributors copyright, Apache 2.0 release sentence and Authors notice copied into the six candidate files. Their source paths, pin, upstream URL and file hashes are accurate. No new author or licensing attribution is invented. The pinned repository root tree contains no LICENSE file, and requesting raw /LICENSE returns 404; the same root LICENSE paths are absent in the current delivery workspace. Therefore the phrase as described in the file LICENSE is inherited source wording, not an independently verified bundled license text. This limits the license-file verification; it does not contradict the explicit source Apache-2.0 notice or establish a mathematical-shape blocker."
+    }
+  ],
+  "mathematical_shape_findings": [],
+  "source_fidelity_findings": [],
+  "provenance_limitations": [
+    {
+      "topic": "Referenced LICENSE file",
+      "detail": "Apache 2.0 notices are explicit and preserved, but no root LICENSE file exists in the checked pinned upstream tree or current workspace. No separate bundled license text was verified."
+    }
+  ],
+  "remaining_Open_mathematics": [
+    "Local derivative-order/unit calculation and chain rule proving the regular ramification obstruction.",
+    "Finite chart generators and actual local quotient/unit argument proving finite derivation-failure locus."
+  ],
+  "validation": {
+    "compiler_run": false,
+    "MCP_CI_invoked": false,
+    "kernel_or_axiom_pass_claimed": false,
+    "source_body_comparisons": 6,
+    "parent_signature_compared": true,
+    "source_union_body_compared": true,
+    "actual_import_overlay_checked": true,
+    "repository_edits": false,
+    "candidate_edits": false,
+    "cache_edits": false,
+    "network_actions": "Read-only pinned raw-source and pinned-tree GETs only; no platform calls or publication.",
+    "only_written_artifact": "/tmp/p2m-noncritical-finite-shape-20261114/report.json"
+  },
+  "limits": "Static source-body, mathematical-type-shape, actual carrier/consumer/import and independently pinned-byte review only. Lean elaboration, local instance synthesis, proof execution, transitive axiom output and final platform type equality are not established; root must run the required exclusive MCP-CI validation."
+}

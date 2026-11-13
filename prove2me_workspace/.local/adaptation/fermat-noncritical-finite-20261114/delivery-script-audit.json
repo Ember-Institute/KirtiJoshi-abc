@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-14",
+  "status": "prepared_not_executed",
+  "directory": "/tmp/p2m-finite-delivery-20261114",
+  "model": "Latest /tmp/p2m-p1-delivery-20261114 common/uploader/finalizer with root graph_completion.py",
+  "files": {
+    "delivery_common.py": {
+      "sha256": "c1c84d5708c56294108cc95fc8c22da504675b335cc4ed86a4041b546cf98aba",
+      "python_ast_parse": true
+    },
+    "finalize.py": {
+      "sha256": "34af624341f71c9d3eed2ffee4e0b368deb4a130dffff93815f04864a6258406",
+      "python_ast_parse": true
+    },
+    "graph_completion.py": {
+      "sha256": "8fe93118e8b071f8a013fe4098f38e59c5fa3ab200ab6ad1abdb41e0f41220e6",
+      "python_ast_parse": true
+    },
+    "platform_publish.py": {
+      "sha256": "1a9c7d67b7e80bb71ff2bccc10cbcf0a3ed8dd98a742c6b3d9aff8e87f7a21ea",
+      "python_ast_parse": true
+    }
+  },
+  "unit": {
+    "evidence": ".local/adaptation/fermat-noncritical-finite-20261114/",
+    "definitions": [
+      "FermatCurveDerivationEtale",
+      "FermatCurveDerivationPolynomial",
+      "FermatCurveDerivationBasic"
+    ],
+    "definition_declarations": 6,
+    "children": [
+      "noncriticalRegularRamifiedDerivNotMem",
+      "noncriticalDerivativeBadPlacesFinite"
+    ],
+    "existing_parent": "noncriticalRamificationFinite",
+    "parent_status": "Open",
+    "required_verification": "SKETCH_ACCEPTED",
+    "parent_id_source": ".local/adaptation/fermat-noncritical-20261114/published-child-ids.json",
+    "direct_proofs_added": 0,
+    "direct_proofs_preserved": 7
+  },
+  "inputs": {
+    "draft": "/tmp/p2m-noncritical-finite-draft-20261114",
+    "blind_readbacks": "/tmp/p2m-noncritical-finite-blind-20261114/readbacks.json",
+    "shape_review": "/tmp/p2m-noncritical-finite-shape-20261114/report.json",
+    "blind_readback_declarations": 9,
+    "blind_readback_languages_present": [
+      "en",
+      "zh_Hans",
+      "ja"
+    ],
+    "shape_review_limits": "Read-only source shape and fidelity; no kernel validation."
+  },
+  "gates": {
+    "FermatCurveDerivationEtale-leaf": "Definitions/Def_FermatCurveDerivationEtale.lean",
+    "FermatCurveDerivationPolynomial-leaf": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+    "FermatCurveDerivationBasic-leaf": "Definitions/Def_FermatCurveDerivationBasic.lean",
+    "noncriticalRegularRamifiedDerivNotMem-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+    "noncriticalDerivativeBadPlacesFinite-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+    "noncriticalRamificationFinite-leaf": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+    "solution-noncriticalRamificationFinite-leaf": ".local/adaptation/fermat-noncritical-finite-20261114/Solution_noncriticalRamificationFinite.lean",
+    "closed-axioms-review": "Solutions/Checks_FermatNoncriticalFiniteClosed.lean",
+    "reduction-axioms-leaf": "Solutions/Checks_FermatNoncriticalFiniteReduction.lean",
+    "source-graph-leaf": ".local/adaptation/fermat-noncritical-finite-20261114/ExtractFiniteGraph.lean",
+    "all-definitions-axioms-review": ".local/adaptation/fermat-noncritical-finite-20261114/AuditAllDefinitions.lean",
+    "elaborated-types-leaf": ".local/adaptation/fermat-noncritical-finite-20261114/ValidateElaboratedTypes.lean",
+    "existing-types-leaf": ".local/adaptation/fermat-noncritical-finite-20261114/ValidateExistingTypes.lean",
+    "production-gates-review": ".local/adaptation/fermat-noncritical-finite-20261114/ProductionGates.lean"
+  },
+  "required_derived_artifacts": [
+    "upload-validation.json with passed/elaborated_types_equal/existing_target_types_definitionally_equal/new_theorem_count=2/definition_hashes/source_theorem_hashes/source_graph_sha256/upload_problem_items_sha256",
+    "decl_graph.jsonl",
+    "upload-problem-items.json",
+    "upload-elaborated-types.json",
+    "existing-types-equal.json=true",
+    "readbacks-final.json standard declarations rows (9)",
+    "integration.json exact six unit sources",
+    "source-consumer.json reference_commit",
+    "source-ledger-link.json"
+  ],
+  "protocol": {
+    "private_payloads": true,
+    "exact_environment": true,
+    "publication_receipts_required": "PUBLISHED and private",
+    "children_status_required": "Open",
+    "parent_reduction_tag": "reduce-noncriticalRamificationFinite",
+    "child_publication_tag": "finite-children",
+    "replay": "Cached publication payload equality; cached verification target/source hash/explanation/entire Solution bytes equality. Unacknowledged requests require reconciliation, not a new POST.",
+    "hash_gates": "All six sources, source graph and upload problem-items bytes; exact CI source/workspace/exclusive mode/arguments; recorded closure hashes; uploaded elaborated types; existing target definitional equality; entire Solution leaf hash and bytes."
+  },
+  "graph": {
+    "adaptive_helper_copied_unchanged": true,
+    "overview_depth_requested": 8,
+    "cap_response": "Resolve mathematical missing_children with depth-2 direct subgraphs; merge by node/edge IDs and retain every overview/drill receipt. Residual omitted edges accepted only with hidden_by_definitions.",
+    "math_coverage": "Exactly baseline mathematical IDs plus two child IDs",
+    "reduction_dependencies": "Exactly the two new children",
+    "frontier": "Before and after fully paginated with stable totals and unique IDs; exact after set is baseline minus parent plus two children",
+    "deltas": {
+      "accepted_reductions": 1,
+      "published_children": 2,
+      "dependency_edges": 2,
+      "open_frontier": 1,
+      "direct_closed_children": 0
+    },
+    "expected_totals_if_post_P1_baseline_unchanged": {
+      "accepted_reductions": 16,
+      "published_children": 52,
+      "open_frontier": 30,
+      "direct_closed_children": 7,
+      "dependency_edges": 57
+    },
+    "counts_observed_during_preparation": false
+  },
+  "pending_inventory": {
+    "only_replaced_paragraph": "`Proper.noncriticalRamificationFinite`",
+    "replacement": "Two detailed concrete child obligations, actual arbitrary transcendental ψ, actual derivative, all valuative places, exact finite failure predicate, original local obstruction; parent source finite-union combination remains conditional.",
+    "static_preview_only_parent_changed": true,
+    "P1_and_composition_neighbors_unchanged": true,
+    "idempotent_replay_checks": true,
+    "plan_checkbox_changes": []
+  },
+  "source_notices": {
+    "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "paths": [
+      "Belyi/CurveDeriv/Basic.lean",
+      "Belyi/CurveField/NoncriticalFinite.lean"
+    ],
+    "attribution": "Retained source Apache-2.0 headers and author notices; no bundled-license claim.",
+    "paper_quote_status": "The supplied blind readbacks explicitly leave original English Mochizuki citation unverified. These scripts do not reuse P1 quotes or require an invented quotation. Root can add independently checked finite-unit quotation evidence separately."
+  },
+  "finalizer": "Copies all four delivery scripts into current evidence, records all terminal attempts and physical resource details, preserves seven direct proofs, updates only current unit integration/source ledger/registry/pending paragraph, scans secrets, checks diff, and stages only current unit source/Checks/evidence plus shared registry/status docs. No commit or push.",
+  "execution": {
+    "delivery_scripts_executed": false,
+    "network_requests": false,
+    "publication": false,
+    "repository_edits": false,
+    "draft_edits": false,
+    "ci_or_compiler_invoked": false,
+    "staging": false,
+    "commit_or_push": false,
+    "only_written_directory": "/tmp/p2m-finite-delivery-20261114"
+  },
+  "root_next_steps": "Review scripts; integrate the six math files; run exclusive MCP-CI exact gates; prepare graph/types/problem-items/Solution/readback/integration/source-link evidence; run uploader only after preflight evidence passes and then finalizer only after terminal private PUBLISHED/SKETCH_ACCEPTED receipts."
+}

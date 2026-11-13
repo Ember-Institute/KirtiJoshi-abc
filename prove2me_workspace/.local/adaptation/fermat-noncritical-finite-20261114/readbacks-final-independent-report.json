@@ -1,0 +1,217 @@
+{
+  "status": "independent_final_static_readback_review_complete_with_chinese_precision_fixes",
+  "verdict": "All nine mathematical signatures and core trilingual statements match the actual original Lean draft. Six Chinese fields received necessary terminology/value-at-one/subobject-inequality precision fixes; no English, Japanese, signature, binder or mathematical contract changes were needed.",
+  "date": "2026-11-14",
+  "input_readbacks": "/tmp/p2m-noncritical-finite-blind-20261114/readbacks.json",
+  "output_readbacks": "/tmp/p2m-noncritical-finite-readback-final-20261114/readbacks-final.json",
+  "output_readbacks_sha256": "b135afb6e10e79b0a0673737cc54e6aa082d98b25438694c136e067d9a0b6791",
+  "coverage": {
+    "declarations": 9,
+    "language_records": 27,
+    "private_declarations": 0,
+    "source_level_instances": 0,
+    "by_file": {
+      "Definitions/Def_FermatCurveDerivationBasic.lean": 1,
+      "Definitions/Def_FermatCurveDerivationEtale.lean": 1,
+      "Definitions/Def_FermatCurveDerivationPolynomial.lean": 4,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean": 1,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean": 1,
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean": 1
+    },
+    "all_raw_source_headers_match_line_anchors": true,
+    "all_six_source_hashes_match_blind_input": true,
+    "residual_template_markers": 0
+  },
+  "findings_fixed": [
+    {
+      "id": "FINITE-RB-ZH-ONE",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.polyDeriv",
+      "field": "zh_Hans",
+      "change": "Replace 在一处取值为零 with D(1)=0, which is the actual value-at-one structure field rather than a claim about one unspecified place."
+    },
+    {
+      "id": "FINITE-RB-ZH-SUBOBJECT",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.formallyEtale_adjoin",
+      "field": "zh_Hans",
+      "change": "Describe A as the polynomial subalgebra and F as the generated intermediate field without asserting that their underlying subsets are unequal. Neither statement assumes transcendence; for K=ℚ,t=0 both carriers are ℚ."
+    },
+    {
+      "id": "FINITE-RB-ZH-SUBOBJECT",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong",
+      "field": "zh_Hans",
+      "change": "Describe A as the polynomial subalgebra and F as the generated intermediate field without asserting that their underlying subsets are unequal. Neither statement assumes transcendence; for K=ℚ,t=0 both carriers are ℚ."
+    },
+    {
+      "id": "FINITE-RB-ZH-PLACE",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem",
+      "field": "zh_Hans",
+      "change": "Use the mathematical place term 处 instead of 赋值位置/位置, and 处的局部环 instead of 位置环. The actual valuation-subring definition and every quantifier are unchanged."
+    },
+    {
+      "id": "FINITE-RB-ZH-PLACE",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalDerivativeBadPlacesFinite",
+      "field": "zh_Hans",
+      "change": "Use the mathematical place term 处 instead of 赋值位置/位置, and 处的局部环 instead of 位置环. The actual valuation-subring definition and every quantifier are unchanged."
+    },
+    {
+      "id": "FINITE-RB-ZH-PLACE",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+      "field": "zh_Hans",
+      "change": "Use the mathematical place term 处 instead of 赋值位置/位置, and 处的局部环 instead of 位置环. The actual valuation-subring definition and every quantifier are unchanged."
+    }
+  ],
+  "terminology_table_fix": {
+    "en": "place",
+    "old_zh_Hans": "赋值位置",
+    "new_zh_Hans": "处",
+    "japanese_unchanged": true
+  },
+  "checks": [
+    {
+      "topic": "Kähler equivalence direction and actual scalar extension",
+      "status": "consistent",
+      "evidence": [
+        {
+          "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationEtale.lean",
+          "line": 26
+        },
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/Etale/Kaehler.lean",
+          "line": 38
+        }
+      ],
+      "detail": "Actual Mathlib tensorKaehlerEquivOfFormallyEtale has type T⊗[S]Ω[S/R]≃ₗ[T]Ω[T/R]. The source applies its inverse to D R T, then the T-linear liftBaseChange of the S-linear map induced by d. All languages state E(x)=μ(e⁻¹(D_T(x))) in that exact direction, with the full R/S/T algebra structures and IsScalarTower. There is no field or characteristic-zero hypothesis on this generic construction."
+    },
+    {
+      "topic": "Actual polynomial subalgebra versus intermediate field",
+      "status": "consistent_after_chinese_precision_fix",
+      "evidence": [
+        {
+          "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+          "line": 41
+        }
+      ],
+      "detail": "polyDeriv has domain Algebra.adjoin ℚ {t}, the actual polynomial subalgebra ℚ[t], and codomain K. It recovers the unique representing polynomial via the transcendental algebra equivalence, formally differentiates it and evaluates in K. The readback does not move the derivative domain to ℚ(t) or all K. The two contexts without transcendence now avoid a Chinese phrase that could falsely assert A≠F as underlying subsets."
+    },
+    {
+      "topic": "formallyEtale_adjoin algebraicity binder independent of transcendence",
+      "status": "consistent",
+      "evidence": [
+        {
+          "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+          "line": 54
+        }
+      ],
+      "detail": "The exact type has K a characteristic-zero field, an arbitrary t∈K, and the typeclass [Algebra.IsAlgebraic ℚ⟮t⟯ K]. It has no Transcendental hypothesis and no FiniteDimensional hypothesis. All languages retain that scope and the localization/separable-field-extension composition. In particular t can be algebraic, so ℚ[t] and ℚ(t) can have equal underlying carriers."
+    },
+    {
+      "topic": "derivAlong guard and zero fallback",
+      "status": "consistent",
+      "evidence": [
+        {
+          "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationBasic.lean",
+          "line": 25
+        }
+      ],
+      "detail": "The declaration is defined for every t. The guard is exactly Transcendental ℚ t ∧ Algebra.IsAlgebraic ℚ⟮t⟯ K. The true branch uses its two proofs for the actual polynomial derivative and formal-etale extension; if either conjunct fails the result is the zero derivation. No unconditional derivAlong(t)(t)=1, uniqueness theorem or extra guard hypothesis is added to the statement."
+    },
+    {
+      "topic": "Actual all-place local obstruction",
+      "status": "consistent",
+      "evidence": [
+        {
+          "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+          "line": 22
+        }
+      ],
+      "detail": "The readbacks retain the fixed actual Model field, every proper valuation subring containing ℚ, all-place hDVR, transcendental ψ, regularity ψ∈P.1 and integer 1<ramIdx. The witness is an actual s∈M.K with s∈P.1 and actual derivAlong ψ s outside P.1. No supplied free D or preservation law is an input. Actual residue-minpoly evaluation and the pole-order ramIdx branch remain explicit."
+    },
+    {
+      "topic": "Finite derivative-failure predicate has no ramIdx",
+      "status": "consistent",
+      "evidence": [
+        {
+          "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+          "line": 22
+        }
+      ],
+      "detail": "The exact finite set is {P | ψ∈P.1 ∧ ∃s∈P.1, derivAlong ψ s∉P.1}. All-place quantification and the placement of the existential witness inside the set predicate are preserved. There is no ramification condition, hDVR parameter, ResiduesFinite parameter or free derivation assumption. The conclusion counts places, not witnesses."
+    },
+    {
+      "topic": "Parent covers every place and retains open-child dependence",
+      "status": "consistent",
+      "evidence": [
+        {
+          "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+          "line": 21
+        }
+      ],
+      "detail": "The target is finite ramification over all actual Place M.K, including poles, regular zeros and infinity. The proof places it inside the union of the finite pole locus and finite regular derivation-failure locus; the readbacks do not turn containment into equality. The parent remains explicitly dependent on the two Open sorry children."
+    },
+    {
+      "topic": "Binders, private declarations and source instances",
+      "status": "source_level_complete_compiler_pending",
+      "detail": "All nine source-level declarations are present; there are no private declarations or top-level instance declarations. Static full signatures retain the actual section variables and explicit/typeclass binders, including algebraicity without transcendence for formallyEtale_adjoin. Local have/let instances are not counted as new top-level producers. No compiler-generated universe names or compiled signature claims are made."
+    }
+  ],
+  "preserved_content": {
+    "all_english_and_japanese_prose": true,
+    "all_full_signature_static_fields": true,
+    "all_source_signature_fields": true,
+    "all_reconstructed_binders": true,
+    "all_proof_status_fields": true,
+    "all_source_files": true,
+    "original_citation_fields": true
+  },
+  "citation_scope": "This review performs no network or original-paper lookup. The original Mochizuki work/citation/locator/quote fields remain null. Root may add its independently checked English quotation separately as geometric context only; this review does not attribute either Open child proof to that quotation.",
+  "unresolved_uncertainties": [
+    "No Lean elaborator or compiler checked the reconstructed full types, typeclass synthesis, universe details or proof bodies during this review.",
+    "The primary comparison input is the original draft with the recorded six hashes. Root CI proof-only fixes require root to preserve statement equality; this report does not claim a later source-hash identity.",
+    "Both children remain Open. A local parent proof body is not an axiom-free completion of finite ramification.",
+    "Original English Mochizuki citation remains unchecked here and unchanged."
+  ],
+  "input_file_sha256": [
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationBasic.lean",
+      "sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04",
+      "matches_blind_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationEtale.lean",
+      "sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+      "matches_blind_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "matches_blind_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+      "sha256": "8ac4febdf77c0844da50f3897a0ffda00c5868106a0d9748fe68d9b84df5c56e",
+      "matches_blind_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "sha256": "5e87bce397ea8c68dafe054aaebaf0fa41679c99ec080de4a86b73bd4ab13f65",
+      "matches_blind_readback_input": true
+    },
+    {
+      "path": "/tmp/p2m-noncritical-finite-draft-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "sha256": "b052e76cee122782c48c2e997bae7f7027d77ab27ecd53a3bb302468ad7c8967",
+      "matches_blind_readback_input": true
+    }
+  ],
+  "validation": {
+    "json_parse": true,
+    "source_declarations_independently_inventoried": 9,
+    "source_signature_anchors_checked": 9,
+    "compiled": false,
+    "MCP_CI_invoked": false,
+    "network_calls": false,
+    "repository_edits": false,
+    "candidate_edits": false,
+    "blind_readbacks_edited": false,
+    "writes_confined_to": "/tmp/p2m-noncritical-finite-readback-final-20261114"
+  }
+}
