@@ -1,0 +1,198 @@
+{
+  "verdict": "PASS_STATIC_MATHEMATICAL_SHAPE_AND_REUSE_PLAN; ONE_CONSUMER_CORRECTION_REQUIRED_BEFORE_SIX_HELPER_DELIVERY",
+  "candidate": "/tmp/p2m-c2-carrier-next-20261114",
+  "scope": "Static review of the six-helper composer against current Model/Place/ramIdx/CanonicalDivisorData and the existing proved generic finite-ramification theorem. No compile, MCP-CI, API or Git command run; main workspace read only.",
+  "exact_parent": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+    "original_type": "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M), Nonempty (CanonicalDivisorData M hDVR)",
+    "unchanged": true,
+    "hypotheses": "Retain all original binders including hRF, although the generic finite-ramification theorem does not need hRF. Do not add 3<N, N>0, degree, adjunction, derivative-identity or extra geometric premises.",
+    "data_contract": "D : Place M.K →₀ ℤ, with D P = if M.u ∈ P.1 then ramIdx M hDVR M.u P - 1 else -ramIdx M hDVR M.u P - 1 for every P."
+  },
+  "finite_premise_reuse": {
+    "verdict": "PASS_STATIC_EXACT_TYPE",
+    "existing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite",
+    "existing_type": "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (ψ : M.K), Transcendental ℚ ψ → {P : Place M.K | 1 < ramIdx M hDVR ψ P}.Finite",
+    "exact_composer_argument": "fun M hDVR _ => noncriticalRamificationFinite M hDVR M.u M.transcendental_u",
+    "why_exact": "The expected composer premise universally quantifies implicit n plus Model n/hDVR/hRF. Expected-type inference supplies that implicit n; the lambda retains then ignores only hRF. The result uses the identical M.K, Place, hDVR-dependent ramIdx and coordinate M.u. No cast, toNat, equivalence transport or finite-place restriction is needed.",
+    "platform_registry_status": "Proved",
+    "existing_receipt": {
+      "job_id": "ci-010859-0314d56f",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/ClosedFiniteConsumer.lean"
+      ],
+      "axiom_output": "'AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "source_sha256": "53d70f76048519c8698693766925b4ae830570b59759e09707de377d0c82c2dc",
+      "all_29_current_imported_source_hashes_match_receipt": true
+    },
+    "scope_limit": "Existing receipt supports the generic theorem only; it is not a compile result for the new six-helper composition or new direct payload."
+  },
+  "mathematical_checks": [
+    {
+      "area": "All proper places",
+      "verdict": "PASS_STATIC",
+      "detail": "Place M.K is the existing subtype of every proper valuation subring containing ℚ. It includes places at infinity and is not an affine chart or Qbar-point sample. Every support set and coefficient quantifier uses exactly this Place M.K."
+    },
+    {
+      "area": "Integer ramification positivity",
+      "verdict": "PASS_STATIC",
+      "detail": "ramIdx is the actual integer ord of the residue minimal polynomial at a regular place and minus ord of M.u at a pole. noncriticalRamificationPositive supplies 0<ramIdx for the same M/hDVR/u/P using M.transcendental_u. Thus for a regular place with nonzero e-1, omega derives 1<e. No natural-number truncation or positivity assumption is inserted."
+    },
+    {
+      "area": "Finite poles",
+      "verdict": "PASS_STATIC",
+      "detail": "The local instance IsCurveField M.K := M.isCurveField is derived from the existing model. Place.finite_setOf_notMem M.u gives finite actual poles. The same field/Place carrier is used by hRam. No arbitrary support or omitted infinity branch is substituted."
+    },
+    {
+      "area": "Support inclusion",
+      "verdict": "PASS_STATIC",
+      "detail": "For P in support of the coefficient function, if M.u∉P.1 it belongs to the finite pole set. If M.u∈P.1, support membership rewrites to e-1≠0; actual e>0 yields e>1, putting P in the ramification set. Hence support⊆poles∪ramification. Poles with e=1 still have coefficient -2 and are correctly retained by the pole branch."
+    },
+    {
+      "area": "Coefficient branches and Finsupp",
+      "verdict": "PASS_STATIC",
+      "detail": "Finsupp.ofSupportFinite wraps exactly the existing branch function. coordinateCanonicalDivisor_apply is rfl. coordinateCanonicalData.D is that actual finite divisor and coefficient is definitionally the original if expression. No degree-only divisor, chosen coefficient field, residue-degree substitution or arbitrary rational differential is supplied."
+    },
+    {
+      "area": "Types and universes",
+      "verdict": "PASS_STATIC_SIGNATURE_REVIEW",
+      "detail": "Model N.K is an IntermediateField in fixed Ω=AlgebraicClosure(RatFunc ℚ), so the source functions all use the same fixed model universe. Place supports Type* and Divisor M fixes Place M.K→₀ℤ. Composer quantifies n:ℕ, not a distinct universe. The expected-type lambda specializes the generic theorem with no universe lift. Exact elaboration remains for MCP-CI."
+    },
+    {
+      "area": "Source fidelity boundary",
+      "verdict": "PASS_STATIC",
+      "detail": "Canonical.lean:44-67 proves finite support using finite poles plus finite ramification and constructs a Finsupp; :72-78 supplies the same regular/pole formulas. This adaptation constructs the exact existing CanonicalDivisorData coefficient contract directly. It does not claim a new proof of the differential identity, Hurwitz degree, adjunction, coordinate-pole equality, canonical height or global Fermat estimate."
+    }
+  ],
+  "consumer_issue": {
+    "severity": "REQUIRES_MINIMAL_CORRECTION",
+    "path": "/tmp/p2m-c2-carrier-next-20261114/Definitions/Def_FermatCanonicalFiniteRamificationComposition.lean",
+    "declaration": "coordinateCanonicalDivisor_apply",
+    "line": 54,
+    "problem": "The six-helper draft registers this simp theorem but no actual later proof calls simp or refers to it; coordinateCanonicalData.coefficient is currently fun _ => rfl. Merely registering a simp theorem is not a demonstrated consumer in this unit.",
+    "preferred_minimal_fix": "Keep all six helpers and replace coordinateCanonicalData.coefficient with fun P => coordinateCanonicalDivisor_apply M hDVR hRam P. The theorem right side is definitionally the original if expression, so the contract and mathematics stay unchanged.",
+    "alternative": "Remove the unused apply wrapper and deliver five helpers if no consumer is needed.",
+    "main_workspace_modified_by_reviewer": false
+  },
+  "helper_inventory": [
+    {
+      "name": "canonicalCoordinateCoefficient",
+      "line": 22,
+      "consumers": [
+        "canonicalCoordinateCoefficient_finiteSupport",
+        "coordinateCanonicalDivisor",
+        "coordinateCanonicalDivisor_apply"
+      ],
+      "role": "exact piecewise integer coefficient"
+    },
+    {
+      "name": "canonicalCoordinateCoefficient_finiteSupport",
+      "line": 31,
+      "consumers": [
+        "coordinateCanonicalDivisor"
+      ],
+      "role": "finite support by actual poles union actual ramification"
+    },
+    {
+      "name": "coordinateCanonicalDivisor",
+      "line": 48,
+      "consumers": [
+        "coordinateCanonicalDivisor_apply",
+        "coordinateCanonicalData"
+      ],
+      "role": "actual Finsupp of same coefficient function"
+    },
+    {
+      "name": "coordinateCanonicalDivisor_apply",
+      "line": 54,
+      "consumers": [],
+      "role": "rfl coefficient bridge; currently unused"
+    },
+    {
+      "name": "coordinateCanonicalData",
+      "line": 63,
+      "consumers": [
+        "canonicalDivisorExists_of_finiteCoordinateRamification"
+      ],
+      "role": "constructs exact unchanged data structure"
+    },
+    {
+      "name": "canonicalDivisorExists_of_finiteCoordinateRamification",
+      "line": 72,
+      "consumers": [
+        "proposed original canonicalDivisorExists proof",
+        "proposed remote theorem solution"
+      ],
+      "role": "generic precise composer"
+    }
+  ],
+  "ledger_corrections": [
+    "Add the missing coordinateCanonicalDivisor_apply row; current source-consumer-ledger.json lists only five of the six composer helpers.",
+    "Replace the claimed consumer CanonicalDivisorData.coefficient for canonicalCoordinateCoefficient with the actual new coordinateCanonicalData.coefficient construction, or a compiler-confirmed definition dependency. The old structure declaration does not refer to this new helper.",
+    "In the integrated unit, supersede the old README/ledger story about a missing Local/Order source port and a new Open finiteCoordinateRamification child. The supplement correctly records that the existing proved generic theorem already supplies the premise.",
+    "Do not publish or stage the temporary finiteCoordinateRamification sorry stub, reduction-axiom expectation containing sorryAx, or stale claim that a new child is needed as the final integration design."
+  ],
+  "minimal_delivery_plan": {
+    "verdict": "ACCEPTABLE_AFTER_CONSUMER_FIX",
+    "local": "Place all six helpers in Solutions/Source_FermatCanonicalFiniteRamification.lean, not submit-definition. The finite-support theorem is a multi-step proof; the whole composer is proof implementation, not a necessary platform foundational Definition interface. Preserve original canonicalDivisorExists name/type and instantiate its composer directly using the exact existing finite theorem.",
+    "remote": "Inline the six actual helpers in the direct solution; import the existing platform Proved Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite and existing foundational Definitions. End with theorem solution carrying the original explicit {N}, M, hDVR, hRF binders and Nonempty(CanonicalDivisorData M hDVR). Do not import the original target.",
+    "new_platform_nodes": 0,
+    "new_open_debt": 0,
+    "no_one_line_specialization_node": true,
+    "no_deprecations": true,
+    "preserved_frontier": "Explicit Fermat route, including coordinatePoleMultiplicity_eq and all independent adjunction/degree/height obligations, remains intact. Closing canonicalDivisorExists does not close these other parents.",
+    "validation_later": "Compiler-generated spans, all-helper consumers, blind three-language readbacks, exact target type, permitted axioms and required MCP-CI production gates must be checked on the actual integrated/emitted sources. No such new acceptance is claimed here."
+  },
+  "provenance": {
+    "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "upstream": "https://github.com/lana-agents/belyi",
+    "source_copy_hashes": [
+      {
+        "path": "Belyi/CurveField/Canonical.lean",
+        "sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+        "matches": true
+      },
+      {
+        "path": "Belyi/CurveField/RamIdx.lean",
+        "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+        "matches": true
+      },
+      {
+        "path": "Belyi/CurveField/NoncriticalFinite.lean",
+        "sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+        "matches": true
+      },
+      {
+        "path": "Belyi/CurveDeriv/Local.lean",
+        "sha256": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+        "matches": true
+      },
+      {
+        "path": "Belyi/CurveDeriv/Order.lean",
+        "sha256": "bb39cb855e2157e52eb1caeba74b5a9647a9d94799e6631ec9c7f007b8c1b489",
+        "matches": true
+      }
+    ],
+    "all_6_recorded_workspace_inputs_match": false,
+    "license": "Source and composer retain the Belyi contributors copyright/author and Apache-2.0 notice. Carry these notices and the Apache license text into the local source bundle and emitted copied proof. Existing CanonicalDivisorData additionally retains its heights source notice. No source-copy module should be imported at runtime."
+  },
+  "execution": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "API_called": false,
+    "Git_called": false,
+    "main_workspace_written": false,
+    "draft_written": false,
+    "only_report_written": true,
+    "all_rg_used_required_two_core_wrapper": true
+  },
+  "not_claimed": [
+    "New helper/composer Lean elaboration",
+    "New direct payload kernel acceptance",
+    "Remote canonicalDivisorExists Proved",
+    "Closure of adjunction/degree/height/global C2 or abc obligations"
+  ]
+}

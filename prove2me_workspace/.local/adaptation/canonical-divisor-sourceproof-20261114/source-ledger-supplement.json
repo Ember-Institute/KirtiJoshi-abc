@@ -1,0 +1,195 @@
+{
+  "audit_scope": "Read-only source and existing-receipt audit; all writes confined to this tmp directory. No compiler, MCP-CI, API or Git write.",
+  "conclusion": "finiteCoordinateRamification is already fully supplied by the existing noncriticalRamificationFinite source theorem. No unported source proof or Act2 mathematical obligation is required for this child.",
+  "correction": {
+    "supersedes": [
+      "source-consumer-ledger.json open_source_port_closure second item",
+      "README.md section 明确保留的开放来源移植",
+      "finiteCoordinateRamification draft OPEN status as a statement of mathematical debt"
+    ],
+    "reason": "The earlier pass inspected Definitions/Def_FermatCurveDerivationBasic but missed the already-ported Theorems CurveDeriv Local/Order closure and the existing generic noncriticalRamificationFinite consumer.",
+    "draft_files_preserved": true,
+    "actual_draft_still_contains_sorry": true
+  },
+  "minimal_reuse": {
+    "import": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite",
+    "exact_existing_type": "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (ψ : M.K), Transcendental ℚ ψ → {P : Place M.K | 1 < ramIdx M hDVR ψ P}.Finite",
+    "specialization": "noncriticalRamificationFinite M hDVR M.u M.transcendental_u",
+    "interface_note": "hRF is retained by the proposed fixed-coordinate alias to preserve the parent input interface, but the existing generic theorem does not need it. No type transport and no change of Model, Place, ramIdx, or ord is required.",
+    "future_direction": "Keep the requested explicit child node and close it by this one-line proof; retain its current name and all existing nodes. Alternatively instantiate the already-written generic hFinite composer directly with the same proof. This is reuse of an existing complete source theorem, not new mathematics."
+  },
+  "proof_dag": [
+    {
+      "node": "noncriticalRamificationFinite",
+      "local_file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean",
+      "source": "NoncriticalFinite.lean:182",
+      "children": [
+        "Place.finite_setOf_notMem",
+        "noncriticalDerivativeBadPlacesFinite",
+        "noncriticalRegularRamifiedDerivNotMem"
+      ]
+    },
+    {
+      "node": "noncriticalDerivativeBadPlacesFinite",
+      "local_file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalDerivativeBadPlacesFinite.lean",
+      "source": "NoncriticalFinite.lean:139",
+      "children": [
+        "chartRing finite as module over Algebra.adjoin ℚ {ψ}",
+        "Module.Finite.fg_top",
+        "Place.finite_setOf_notMem",
+        "CurveDeriv.derivAlong_mem_chartRing_of_generators",
+        "CurveDeriv.derivAlong_mem_place_of_chartRing"
+      ]
+    },
+    {
+      "node": "noncriticalRegularRamifiedDerivNotMem",
+      "local_file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "source": "NoncriticalFinite.lean:98",
+      "children": [
+        "Place.uniformizer and full actual residue minpoly",
+        "CurveDeriv.derivAlong_eq_unit_mul_pow_of_aeval",
+        "private derivAlong_mul_derivAlong source chain-rule closure",
+        "actual P.ord multiplication and actual ramIdx_of_mem"
+      ]
+    },
+    {
+      "node": "CurveDeriv.derivAlong_eq_unit_mul_pow_of_aeval",
+      "source": "CurveDeriv/Order.lean:61",
+      "children": [
+        "CurveDeriv.derivAlong_unit_mul_pow",
+        "CurveDeriv.valuation_aeval_derivative_eq_one"
+      ]
+    },
+    {
+      "node": "CurveDeriv.derivAlong_unit_mul_pow",
+      "source": "CurveDeriv/Order.lean:40",
+      "children": [
+        "CurveDeriv.derivAlong_mem",
+        "private valuation/derivAlong_self source closure"
+      ]
+    },
+    {
+      "node": "CurveDeriv.derivAlong_mem",
+      "source": "CurveDeriv/Local.lean:378",
+      "children": [
+        "CurveDeriv.exists_pow_succ_mul_derivAlong_not_mem",
+        "CurveDeriv.exists_pow_mul_derivAlong_mem"
+      ]
+    },
+    {
+      "node": "CurveDeriv.exists_pow_succ_mul_derivAlong_not_mem",
+      "source": "CurveDeriv/Local.lean:176",
+      "children": [
+        "CurveDeriv.exists_irreducible_valuation_lt_one",
+        "CurveDeriv.valuation_aeval_derivative_eq_one",
+        "private valuation/derivAlong_self source closure"
+      ]
+    },
+    {
+      "node": "CurveDeriv.exists_pow_mul_derivAlong_mem",
+      "source": "CurveDeriv/Local.lean:355",
+      "children": [
+        "CurveDeriv.exists_eq_div",
+        "CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure"
+      ]
+    },
+    {
+      "node": "CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure",
+      "source": "CurveDeriv/Local.lean:323",
+      "children": [
+        "finite integral-closure module generators",
+        "private exists_pow_mul_mem and integral regularity source closure"
+      ]
+    },
+    {
+      "node": "CurveDeriv.exists_eq_div",
+      "source": "CurveDeriv/Local.lean:247",
+      "children": [
+        "private integral closure/localization source closure"
+      ]
+    },
+    {
+      "node": "CurveDeriv.exists_irreducible_valuation_lt_one",
+      "source": "CurveDeriv/Local.lean:77",
+      "children": [
+        "private valuation source closure"
+      ]
+    },
+    {
+      "node": "CurveDeriv.valuation_aeval_derivative_eq_one",
+      "source": "CurveDeriv/Local.lean:94",
+      "children": [
+        "CurveDeriv.aeval_mem",
+        "polynomial separability Bezout identity"
+      ]
+    }
+  ],
+  "riemann_relation": "The Riemann dimension/approximation/eventual-linear theorems are independent sibling consumers of curve-field/divisor infrastructure. They are not premises of the finite-ramification proof and are not needed to close this child. Finite support here follows through the actual derivation/localization chain above.",
+  "canonical_source_relation": "Canonical.lean:44 finite_setOf_ord_derivAlong_ne_zero uses finite poles, generic finite ramification, and ramIdx positivity. The draft coefficient-support composer uses the exact already-required CanonicalDivisorData coefficient formulas, so it can consume the existing generic noncriticalRamificationFinite without first porting Canonical.lean derivative formula names. Derivative formula identities are not new assumptions of the unchanged parent contract.",
+  "existing_receipt": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/regular-ramified-obstruction-sourceproof-20261114/finite-consumer-review-result.json",
+    "sha256": "53d70f76048519c8698693766925b4ae830570b59759e09707de377d0c82c2dc",
+    "job_id": "ci-010859-0314d56f",
+    "status": "succeeded",
+    "exit_code": 0,
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/ClosedFiniteConsumer.lean"
+    ],
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_id": null,
+    "axiom_output": "'AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 4067926016
+      },
+      "cpu_time_seconds": 44.29,
+      "peak_rss_bytes": 4221898752,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 2.04,
+      "cpu_system_seconds": 42.25,
+      "wall_time_seconds": 45.11360119999881,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "current_source_hash_match": {
+      "local_module_count": 29,
+      "all_local_modules_match_existing_receipt": true,
+      "all_local_modules_have_no_holes": true
+    },
+    "limit": "Existing accepted generic theorem and its current imported source closure are verified by this prior receipt. No claim of compilation of this tmp draft or the not-yet-integrated canonical composer is made."
+  },
+  "upstream": {
+    "commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "files": [
+      {
+        "path": "Belyi/CurveField/NoncriticalFinite.lean",
+        "sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+        "copy": "reference-copy/NoncriticalFinite.lean"
+      },
+      {
+        "path": "Belyi/CurveDeriv/Local.lean",
+        "sha256": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+        "copy": "reference-copy/CurveDerivLocal.lean"
+      },
+      {
+        "path": "Belyi/CurveDeriv/Order.lean",
+        "sha256": "bb39cb855e2157e52eb1caeba74b5a9647a9d94799e6631ec9c7f007b8c1b489",
+        "copy": "reference-copy/CurveDerivOrder.lean"
+      }
+    ]
+  },
+  "future_open_nodes": [],
+  "no_deprecations": true,
+  "no_new_act2_mathematics": true
+}

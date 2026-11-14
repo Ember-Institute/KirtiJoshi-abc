@@ -1,0 +1,5 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalCoordinateCoefficient_finiteSupport
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists_of_finiteCoordinateRamification
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists

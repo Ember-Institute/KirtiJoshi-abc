@@ -1,0 +1,66 @@
+{
+  "status": "exclusive_local_audits_passed_and_platform_ACCEPTED",
+  "source_project": "Belyi",
+  "source_revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "license": "Apache-2.0; reference/LICENSE and original notices retained",
+  "sources": {
+    "Belyi/CurveField/Canonical.lean": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+    "existing_noncriticalRamificationFinite": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite.lean"
+  },
+  "existing_source_proof": {
+    "name": "noncriticalRamificationFinite",
+    "arguments": "M hDVR M.u M.transcendental_u",
+    "source_receipt": "ci-010859-0314d56f",
+    "current_source_sha256": "5e87bce397ea8c68dafe054aaebaf0fa41679c99ec080de4a86b73bd4ab13f65"
+  },
+  "new_platform_nodes": [],
+  "new_open_debt": 0,
+  "Fermat_route_preserved": true,
+  "original_parent_type_preserved": true,
+  "consumers": {
+    "canonicalCoordinateCoefficient": [
+      "canonicalCoordinateCoefficient_finiteSupport",
+      "coordinateCanonicalDivisor",
+      "coordinateCanonicalDivisor_apply"
+    ],
+    "canonicalCoordinateCoefficient_finiteSupport": [
+      "coordinateCanonicalDivisor"
+    ],
+    "coordinateCanonicalDivisor": [
+      "coordinateCanonicalDivisor_apply",
+      "coordinateCanonicalData"
+    ],
+    "coordinateCanonicalDivisor_apply": [
+      "coordinateCanonicalData"
+    ],
+    "coordinateCanonicalData": [
+      "canonicalDivisorExists_of_finiteCoordinateRamification"
+    ],
+    "canonicalDivisorExists_of_finiteCoordinateRamification": [
+      "canonicalDivisorExists"
+    ]
+  },
+  "production_ledger": {
+    "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+    "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+    "scope": "No production or boundary change; unit source ledger maps actual copied statements and consumers."
+  },
+  "superseded_draft_note": "Initial draft incorrectly labelled finiteCoordinateRamification as new Open debt. Existing source closure already proves the stronger generic theorem; no separate specialization node will be created.",
+  "supersedes_stale_draft_metadata": [
+    "source-consumer-ledger.json: original Open-child and unported Local/Order claims",
+    "original /tmp/p2m-c2-carrier-next-20261114/README.md: superseded by source-ledger-supplement.json"
+  ],
+  "current_validation_sources": [
+    "source-consumer.json",
+    "source-ledger-supplement.json",
+    "final-readbacks.json",
+    "solution-source-closure.json",
+    "delivery-validation.json (after final local gates)"
+  ],
+  "closed_proof": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+    "submission_id": "40b841f9-4137-4664-b75b-0e7d2b300f6e",
+    "status": "ACCEPTED",
+    "existing_proved_dependency": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite"
+  }
+}

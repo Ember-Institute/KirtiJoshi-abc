@@ -1,0 +1,1178 @@
+{
+  "verdict": "PASS_CURRENT_LOCAL_PROOF_SOURCE_CONSUMERS_DIRECT_PAYLOAD_PLATFORM_METADATA_AND_COMPLETE_GRAPH",
+  "scope": "Read-only static review. No compiler, MCP-CI, API, or Git command. Only this /tmp report is written. Actual delivery/finalizer review will be appended separately.",
+  "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "input_hashes": {
+    "Solutions/Source_FermatCanonicalFiniteRamification.lean": "f8f691c3d1f2a899dbee4159b8cf74be09cc04b384c0e5e097dc163e4c8c0370",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.lean": "82904bd3a21e75bcab9b82864d0a10fd381c167d45a07c14cf177fe68c835a39",
+    "Definitions/Def_FermatProperCarrier.lean": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+    "Definitions/Def_FermatProperDivisorHeight.lean": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec"
+  },
+  "exact_parent": {
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    Nonempty (AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR) := by sorry",
+    "elaborated_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    Nonempty (AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR)",
+    "exact_type_string_match": true,
+    "all_original_binders_retained": [
+      "{N : ℕ}",
+      "M : Model N",
+      "hDVR : PlacesDiscrete M",
+      "hRF : ResiduesFinite M"
+    ],
+    "no_added_assumptions": true
+  },
+  "mathematical_checks": [
+    {
+      "area": "all proper places",
+      "verdict": "PASS",
+      "evidence": "Def_FermatProperCarrier.lean:56-57 defines Place K as every proper valuation subring containing ℚ. All new quantifiers use exactly Place M.K, including infinity."
+    },
+    {
+      "area": "actual integer ramification and positivity",
+      "verdict": "PASS",
+      "evidence": "ramIdx : ℤ in Def_FermatProperCarrier.lean:128-133 uses residue-minpoly order at regular places and negative actual order at poles. Source helper line 40 applies existing noncriticalRamificationPositive to M.u and M.transcendental_u, with no toNat or separate positivity premise."
+    },
+    {
+      "area": "finite poles union ramification yields finite coefficient support",
+      "verdict": "PASS",
+      "evidence": "Source lines 35-44 derive IsCurveField M.K from M.isCurveField; Place.finite_setOf_notMem M.u gives actual finite poles; regular support membership gives e-1 ≠ 0; e>0 over ℤ implies e>1. Hence support is a subset of finite poles ∪ actual ramification locus."
+    },
+    {
+      "area": "exact actual divisor coefficients",
+      "verdict": "PASS",
+      "evidence": "Source lines 25-26 use e-1 at u∈P.1 and -e-1 at u∉P.1. Lines 51-52 package precisely that function via Finsupp.ofSupportFinite; lines 67-68 set D to that divisor and prove coefficient by the explicitly consumed apply theorem."
+    },
+    {
+      "area": "existing generic theorem supplies premise",
+      "verdict": "PASS",
+      "evidence": "Parent lines 22-24 use fun M hDVR _ => noncriticalRamificationFinite M hDVR M.u M.transcendental_u. No new finiteCoordinateRamification node is required; hRF remains in original type."
+    },
+    {
+      "area": "proof implementation location",
+      "verdict": "PASS",
+      "evidence": "All six helper declarations are in Solutions.Source_FermatCanonicalFiniteRamification; no new Definition interface or proof-hidden Definition is introduced by this unit."
+    },
+    {
+      "area": "runtime dependencies and holes",
+      "verdict": "PASS_STATIC",
+      "evidence": "Recursive current import reading finds 32 local modules, Mathlib-only external imports, no runtime Iut/Belyi/Heights/Genl imports, and no active sorry/admit/axiom declarations in that local closure."
+    }
+  ],
+  "helpers": [
+    {
+      "name": "canonicalCoordinateCoefficient",
+      "module": "Solutions.Source_FermatCanonicalFiniteRamification",
+      "consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalDivisor",
+          "value_dependency": true,
+          "type_dependency": false
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCoordinateCoefficient_finiteSupport",
+          "value_dependency": true,
+          "type_dependency": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCoordinateCoefficient.eq_1",
+          "value_dependency": true,
+          "type_dependency": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalDivisor_apply",
+          "value_dependency": false,
+          "type_dependency": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCoordinateCoefficient.congr_simp",
+          "value_dependency": true,
+          "type_dependency": true
+        }
+      ],
+      "has_actual_consumer": true
+    },
+    {
+      "name": "canonicalCoordinateCoefficient_finiteSupport",
+      "module": "Solutions.Source_FermatCanonicalFiniteRamification",
+      "consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalDivisor",
+          "value_dependency": true,
+          "type_dependency": false
+        }
+      ],
+      "has_actual_consumer": true
+    },
+    {
+      "name": "coordinateCanonicalDivisor",
+      "module": "Solutions.Source_FermatCanonicalFiniteRamification",
+      "consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalDivisor_apply",
+          "value_dependency": true,
+          "type_dependency": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalData",
+          "value_dependency": true,
+          "type_dependency": false
+        }
+      ],
+      "has_actual_consumer": true
+    },
+    {
+      "name": "coordinateCanonicalDivisor_apply",
+      "module": "Solutions.Source_FermatCanonicalFiniteRamification",
+      "consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalData",
+          "value_dependency": true,
+          "type_dependency": false
+        }
+      ],
+      "has_actual_consumer": true
+    },
+    {
+      "name": "coordinateCanonicalData",
+      "module": "Solutions.Source_FermatCanonicalFiniteRamification",
+      "consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists_of_finiteCoordinateRamification",
+          "value_dependency": true,
+          "type_dependency": false
+        }
+      ],
+      "has_actual_consumer": true
+    },
+    {
+      "name": "canonicalDivisorExists_of_finiteCoordinateRamification",
+      "module": "Solutions.Source_FermatCanonicalFiniteRamification",
+      "consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+          "value_dependency": true,
+          "type_dependency": false
+        }
+      ],
+      "has_actual_consumer": true
+    }
+  ],
+  "existing_ci_receipts": [
+    {
+      "file": "canonicalDivisorExists-artifact-result.json",
+      "job_id": "ci-011125-d7011a69",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.lean",
+        "-o",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 6712975360
+        },
+        "cpu_time_seconds": 43.34,
+        "peak_rss_bytes": 4367278080,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.84,
+        "cpu_system_seconds": 40.5,
+        "wall_time_seconds": 103.44044989999384,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [],
+      "stdout": ""
+    },
+    {
+      "file": "canonicalDivisorExists-leaf-result.json",
+      "job_id": "ci-011123-9b7d1d84",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5203709952
+        },
+        "cpu_time_seconds": 40.18,
+        "peak_rss_bytes": 4266528768,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.31,
+        "cpu_system_seconds": 37.87,
+        "wall_time_seconds": 40.59915590001037,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [],
+      "stdout": ""
+    },
+    {
+      "file": "closed-axioms-review-result.json",
+      "job_id": "ci-011127-32fe7c7e",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        "Solutions/Checks_FermatCanonicalDivisorSourceClosure.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4087377920
+        },
+        "cpu_time_seconds": 40.21,
+        "peak_rss_bytes": 4256718848,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.43,
+        "cpu_system_seconds": 37.78,
+        "wall_time_seconds": 40.645954000006896,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [],
+      "stdout": "'AbcAdaptation.Tripod.Fermat.Proper.canonicalCoordinateCoefficient_finiteSupport' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists_of_finiteCoordinateRamification' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "direct-solution-leaf-result.json",
+      "job_id": "ci-011135-8f978878",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-divisor-sourceproof-20261114/Solution_canonicalDivisorExists.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4250951680
+        },
+        "cpu_time_seconds": 41.17,
+        "peak_rss_bytes": 4240748544,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.25,
+        "cpu_system_seconds": 38.92,
+        "wall_time_seconds": 41.84803480000119,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/canonical-divisor-sourceproof-20261114/Solution_canonicalDivisorExists.lean",
+          "line": 37,
+          "column": 2,
+          "severity": "warning",
+          "message": "Try this:"
+        }
+      ],
+      "stdout": ".local/adaptation/canonical-divisor-sourceproof-20261114/Solution_canonicalDivisorExists.lean:37:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n"
+    },
+    {
+      "file": "solution-type-axioms-review-result.json",
+      "job_id": "ci-011137-5d8c16dc",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-divisor-sourceproof-20261114/AuditSolution.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5243052032
+        },
+        "cpu_time_seconds": 39.19,
+        "peak_rss_bytes": 4262100992,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.26,
+        "cpu_system_seconds": 36.93,
+        "wall_time_seconds": 39.80374449999363,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/canonical-divisor-sourceproof-20261114/AuditSolution.lean",
+          "line": 37,
+          "column": 2,
+          "severity": "warning",
+          "message": "Try this:"
+        }
+      ],
+      "stdout": ".local/adaptation/canonical-divisor-sourceproof-20261114/AuditSolution.lean:37:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n"
+    },
+    {
+      "file": "source-graph-leaf-result.json",
+      "job_id": "ci-011128-5441c83b",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-divisor-sourceproof-20261114/ExtractCanonicalGraph.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5046472704
+        },
+        "cpu_time_seconds": 46.22,
+        "peak_rss_bytes": 5047574528,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 5.4,
+        "cpu_system_seconds": 40.82,
+        "wall_time_seconds": 46.35551250001299,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [],
+      "stdout": "wrote 578 declarations\n"
+    },
+    {
+      "file": "source-helper-artifact-result.json",
+      "job_id": "ci-011122-d4f302cf",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_FermatCanonicalFiniteRamification.lean",
+        "-o",
+        ".lake/build/lib/lean/Solutions/Source_FermatCanonicalFiniteRamification.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4159975424
+        },
+        "cpu_time_seconds": 38.160000000000004,
+        "peak_rss_bytes": 4347277312,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.45,
+        "cpu_system_seconds": 35.71,
+        "wall_time_seconds": 38.35707069998898,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [
+        {
+          "path": "Solutions/Source_FermatCanonicalFiniteRamification.lean",
+          "line": 35,
+          "column": 2,
+          "severity": "warning",
+          "message": "Try this:"
+        }
+      ],
+      "stdout": "Solutions/Source_FermatCanonicalFiniteRamification.lean:35:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n"
+    },
+    {
+      "file": "source-helper-leaf-result.json",
+      "job_id": "ci-011118-6226015c",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_FermatCanonicalFiniteRamification.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4928016384
+        },
+        "cpu_time_seconds": 43.14,
+        "peak_rss_bytes": 4276297728,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.64,
+        "cpu_system_seconds": 40.5,
+        "wall_time_seconds": 43.71876930000144,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [
+        {
+          "path": "Solutions/Source_FermatCanonicalFiniteRamification.lean",
+          "line": 35,
+          "column": 2,
+          "severity": "warning",
+          "message": "Try this:"
+        }
+      ],
+      "stdout": "Solutions/Source_FermatCanonicalFiniteRamification.lean:35:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n"
+    },
+    {
+      "file": "syntax-leaf-result.json",
+      "job_id": "ci-011129-49461371",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-divisor-sourceproof-20261114/ExtractCanonicalSyntax.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "input_hash_count": 186,
+      "current_input_hash_mismatches": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4793880576
+        },
+        "cpu_time_seconds": 44.19,
+        "peak_rss_bytes": 4992057344,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 3.01,
+        "cpu_system_seconds": 41.18,
+        "wall_time_seconds": 44.60427840000193,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [],
+      "stdout": ""
+    }
+  ],
+  "axiom_review": {
+    "job_id": "ci-011127-32fe7c7e",
+    "checked": [
+      "canonicalCoordinateCoefficient_finiteSupport",
+      "canonicalDivisorExists_of_finiteCoordinateRamification",
+      "canonicalDivisorExists"
+    ],
+    "allowed_axioms_only": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sorryAx_present": false
+  },
+  "source_fidelity": {
+    "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "upstream": "https://github.com/lana-agents/belyi",
+    "source_ranges": [
+      "Canonical.lean:44-67 finite support and Finsupp",
+      "Canonical.lean:72-78 exact coefficient branches"
+    ],
+    "adaptation_limit": "Constructs the existing coefficient data contract; does not newly assert differential identity, Hurwitz degree, adjunction, height estimate or global abc parent.",
+    "reference_hashes": {
+      "Canonical.lean": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+      "CurveDerivLocal.lean": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+      "CurveDerivOrder.lean": "bb39cb855e2157e52eb1caeba74b5a9647a9d94799e6631ec9c7f007b8c1b489",
+      "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "NoncriticalFinite.lean": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8",
+      "RamIdx.lean": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6"
+    },
+    "license": "Apache-2.0 original copyright/author notices retained in actual helper and parent source; reference/LICENSE contains Apache 2.0 full text."
+  },
+  "nonblocking_historical_metadata": {
+    "file": "source-consumer-ledger.json",
+    "issue": "Retains initial uncompiled/Open finiteCoordinateRamification child and missing Local/Order narrative.",
+    "superseded_by": [
+      "source-consumer.json",
+      "source-ledger-supplement.json"
+    ],
+    "delivery_requirement": "Use current source-consumer.json and supplement; do not publish historical draft as current evidence."
+  },
+  "remaining_root_work_outside_this_review": [
+    "Archive this report and run final staged checks for the archived report if needed."
+  ],
+  "execution": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "API_called": false,
+    "Git_called": true,
+    "repository_written": false,
+    "all_rg_used_required_two_core_wrapper": true,
+    "only_report_written": true,
+    "Git_usage": "Read-only cached path enumeration, staged blob reads and cached diff check; no mutation."
+  },
+  "direct_delivery_static_review": {
+    "verdict": "PASS_STATIC_CURRENT_PAYLOAD_AND_SUBMISSION_PROTOCOL",
+    "payload_sha256": "24b51fd12956068d96a59ba7f871e64589188190a8f3f2a14a6d04ae1fff8209",
+    "delivery_py_sha256": "e34fcd6e941b78390d3f2850a32f40bb88abe6f6fda56171d2141e13e49495d1",
+    "audit_solution_sha256": "e90506c7cb6400678d6941df35e50cbec487a9d8ad09440b50cdbcfb243318ca",
+    "solution_type_verbatim_platform_original": true,
+    "imports": [
+      "Definitions.Def_FermatProperDivisorHeight",
+      "Definitions.Def_FermatNoncriticalRamificationPositive",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRamificationFinite"
+    ],
+    "target_self_import": false,
+    "six_helpers_inlined_and_used": true,
+    "actual_consumer_chain": "canonicalCoordinateCoefficient → finiteSupport → coordinateCanonicalDivisor → apply → coordinateCanonicalData → composer → closedCanonicalSource → solution; divisor and coefficient helpers also have the direct uses recorded above.",
+    "uses_exact_existing_Proved_generic_theorem": true,
+    "blind_readbacks": [
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCoordinateCoefficient",
+        "all_three_languages_verbatim": true,
+        "current_source_hash_matches": true,
+        "original_blind_input_hash_matches": true,
+        "exact_compiler_type_match": true,
+        "exact_span_match": true
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCoordinateCoefficient_finiteSupport",
+        "all_three_languages_verbatim": true,
+        "current_source_hash_matches": true,
+        "original_blind_input_hash_matches": true,
+        "exact_compiler_type_match": true,
+        "exact_span_match": true
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalDivisor",
+        "all_three_languages_verbatim": true,
+        "current_source_hash_matches": true,
+        "original_blind_input_hash_matches": true,
+        "exact_compiler_type_match": true,
+        "exact_span_match": true
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalDivisor_apply",
+        "all_three_languages_verbatim": true,
+        "current_source_hash_matches": true,
+        "original_blind_input_hash_matches": true,
+        "exact_compiler_type_match": true,
+        "exact_span_match": true
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.coordinateCanonicalData",
+        "all_three_languages_verbatim": true,
+        "current_source_hash_matches": true,
+        "original_blind_input_hash_matches": true,
+        "exact_compiler_type_match": true,
+        "exact_span_match": true
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists_of_finiteCoordinateRamification",
+        "all_three_languages_verbatim": true,
+        "current_source_hash_matches": true,
+        "original_blind_input_hash_matches": true,
+        "exact_compiler_type_match": true,
+        "exact_span_match": true
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+        "all_three_languages_verbatim": true,
+        "current_source_hash_matches": true,
+        "original_blind_input_hash_matches": true,
+        "exact_compiler_type_match": true,
+        "exact_span_match": true
+      }
+    ],
+    "audit_solution": "Current receipt ci-011137-5d8c16dc succeeded and rejects axioms beyond the standard three; generated artifact reports original_type_equal true.",
+    "submission_marker": "delivery.py:106-109 saves verification-requested before verify POST. A known verify-submit receipt is reused only with an identical request; a marker without submit receipt aborts with Reconcile prior POST before retry. Thus transport ambiguity does not trigger blind replay.",
+    "remote_readbacks": "publish checks unchanged formal_statement, Proved generic dependency, exact resulting metadata and parent Proved status, then retrieves full root graph and paged frontier. No remote action was run by reviewer.",
+    "graph_semantics": "No new theorem node is requested. Importing an existing Proved theorem can still produce an ACCEPTED reduction edge. Final graph accounting must compare actual before/after nodes AND edges; do not infer no new edge from no new node.",
+    "nonblocking_note": "final-readbacks retains original proof_notes saying final composition was not verified by the original blind reader. This is accurate historical provenance; final compiler/type binding is separate evidence.",
+    "pending": [
+      "Root report archival"
+    ],
+    "audit_solution_result": {
+      "type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    Nonempty (AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR)",
+      "original_type_equal": true,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "all_constants_axiom_count": 13
+  },
+  "additional_existing_receipts": [
+    {
+      "file": "direct-solution-leaf-result.json",
+      "job_id": "ci-011135-8f978878",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-divisor-sourceproof-20261114/Solution_canonicalDivisorExists.lean"
+      ],
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_hash_matches": true,
+      "current_input_hash_mismatches": [],
+      "review": null,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4250951680
+        },
+        "cpu_time_seconds": 41.17,
+        "peak_rss_bytes": 4240748544,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.25,
+        "cpu_system_seconds": 38.92,
+        "wall_time_seconds": 41.84803480000119,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/canonical-divisor-sourceproof-20261114/Solution_canonicalDivisorExists.lean",
+          "line": 37,
+          "column": 2,
+          "severity": "warning",
+          "message": "Try this:"
+        }
+      ]
+    },
+    {
+      "file": "solution-type-axioms-review-result.json",
+      "job_id": "ci-011137-5d8c16dc",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-divisor-sourceproof-20261114/AuditSolution.lean"
+      ],
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_hash_matches": true,
+      "current_input_hash_mismatches": [],
+      "review": {
+        "language": "lean",
+        "passed": true,
+        "checks": {
+          "no_sorryAx": true,
+          "assumptions_reported": true
+        },
+        "violations": [],
+        "assumptions": [],
+        "diagnostics": [],
+        "output_excerpt": ".local/adaptation/canonical-divisor-sourceproof-20261114/AuditSolution.lean:37:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n"
+      },
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5243052032
+        },
+        "cpu_time_seconds": 39.19,
+        "peak_rss_bytes": 4262100992,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.26,
+        "cpu_system_seconds": 36.93,
+        "wall_time_seconds": 39.80374449999363,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/canonical-divisor-sourceproof-20261114/AuditSolution.lean",
+          "line": 37,
+          "column": 2,
+          "severity": "warning",
+          "message": "Try this:"
+        }
+      ]
+    },
+    {
+      "file": "all-constants-review-result.json",
+      "job_id": "ci-011139-f62f0ad0",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-divisor-sourceproof-20261114/AuditAllConstants.lean"
+      ],
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_hash_matches": true,
+      "current_input_hash_mismatches": [],
+      "review": {
+        "language": "lean",
+        "passed": true,
+        "checks": {
+          "no_sorryAx": true,
+          "assumptions_reported": true
+        },
+        "violations": [],
+        "assumptions": [],
+        "diagnostics": [],
+        "output_excerpt": ""
+      },
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5038292992
+        },
+        "cpu_time_seconds": 83.31,
+        "peak_rss_bytes": 5038292992,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 37.42,
+        "cpu_system_seconds": 45.89,
+        "wall_time_seconds": 83.96768699999666,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "diagnostics": []
+    }
+  ],
+  "finalizer_static_review": {
+    "verdict": "PASS_CURRENT_FINALIZER",
+    "sha256": "11fdb12db8ceb1baead2adfd291c2ae5d7c736f1fc39794d7eff3c6e0ff3c41a",
+    "checks": [
+      "Complete graph_summary closure and no hidden/deprecated math or reduction nodes",
+      "Only canonicalDivisorExists Open→Proved; all other statuses preserved",
+      "All existing reduction identities preserved; exactly actual ACCEPTED submission added",
+      "New reduction is exact parent→existing Proved generic dependency",
+      "Dependency pairs gain exactly the same single edge",
+      "Original formal_statement, private visibility, locked mathlib and final metadata preserved",
+      "Frontier equals original frontier minus target; baseline count24 implies23",
+      "Baseline direct_closed_proofs31 remains unchanged; new accepted proof is recorded separately with existing dependency",
+      "Only three owned Lean sources plus unit evidence directory, pending database and registry staged",
+      "Unrelated staged work aborts; known credential tokens excluded; diff checks run",
+      "Pending database removes only Canonical.lean:44 entry; adjunction/height boundaries remain open"
+    ],
+    "recommended_minimal_correction": {
+      "line": 15,
+      "issue": "Name-set equality after rekeying does not by itself assert theorem_id-set identity.",
+      "add_before_existing_assert": "assert set(before['mathematical']) == set(after['mathematical'])",
+      "reported_to_root": true,
+      "resolved": true
+    },
+    "not_executed": true,
+    "production_gate_receipt": "ci-011144-dd0f5f98",
+    "remote_graph_receipts": "Verified complete root-graph-after.json and paged frontier; details in remote_graph_review"
+  },
+  "remote_graph_review": {
+    "complete_graphs": true,
+    "theorem_ids_identical": true,
+    "theorem_names_identical": true,
+    "changed_statuses": {
+      "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists": [
+        "Open",
+        "Proved"
+      ]
+    },
+    "old_reductions_preserved": true,
+    "new_reductions": {
+      "40b841f9-4137-4664-b75b-0e7d2b300f6e": {
+        "parent": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+        "children": [
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite"
+        ],
+        "status": "ACCEPTED"
+      }
+    },
+    "added_dependency_pairs": [
+      [
+        "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+        "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite"
+      ]
+    ],
+    "removed_dependency_pairs": [],
+    "frontier_before": 24,
+    "frontier_after": 23,
+    "frontier_exact_old_minus_target": true,
+    "all_frontier_pages": true,
+    "direct_closed_proofs_preserved_count": 31,
+    "before_counts": {
+      "mathematical_nodes": 75,
+      "reductions": 28,
+      "dependency_pairs": 81
+    },
+    "after_counts": {
+      "mathematical_nodes": 75,
+      "reductions": 29,
+      "dependency_pairs": 82
+    },
+    "deprecated_nodes": [],
+    "hidden_deprecated": false,
+    "adjunction_status": "Open",
+    "height_status": "Open",
+    "root_status": "Open"
+  },
+  "production_gates_receipt": {
+    "job_id": "ci-011144-dd0f5f98",
+    "status": "succeeded",
+    "exit_code": 0,
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/canonical-divisor-sourceproof-20261114/ProductionGates.lean"
+    ],
+    "review": {
+      "language": "lean",
+      "passed": true,
+      "checks": {
+        "no_sorryAx": true,
+        "assumptions_reported": true
+      },
+      "violations": [],
+      "assumptions": [
+        "'JoshiTeich.Prologue.Perfectoid.canonicalPerfectoidData_laws' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "diagnostics": [],
+      "output_excerpt": "'JoshiTeich.Prologue.Perfectoid.canonicalPerfectoidData_laws' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_id": null,
+    "current_input_hash_mismatches": [],
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 8255344640
+      },
+      "cpu_time_seconds": 92.33000000000001,
+      "peak_rss_bytes": 8632258560,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 5.4,
+      "cpu_system_seconds": 86.93,
+      "wall_time_seconds": 92.84355000000505,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    }
+  },
+  "platform_metadata_review": {
+    "submission_id": "40b841f9-4137-4664-b75b-0e7d2b300f6e",
+    "status": "ACCEPTED",
+    "result_id_matches_submit": true,
+    "result_target_matches_request": true,
+    "submitted_source_hash_matches": true,
+    "submitted_source_bytes_match": true,
+    "formal_statement_verbatim": true,
+    "parent_status": "Proved",
+    "visibility": "private",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "all_patch_fields_exact_readback": true,
+    "exact_parent_three_languages_and_quote": true,
+    "source_discloses_auxiliary_construction_and_existing_proved_dependency": true,
+    "deprecated_at": null
+  },
+  "stage_and_secret_review": {
+    "staged_paths_at_read": [
+      "docs/Prove2Me适配状态.md",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/AuditAllConstants.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/AuditSolution.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/ExtractCanonicalGraph.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/ExtractCanonicalSyntax.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/ProductionGates.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/Solution_canonicalDivisorExists.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/all-constants-review-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/all-constants-review-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/all-constants-review-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/all-module-axioms.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/blind-readbacks-original.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/canonicalDivisorExists-artifact-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/canonicalDivisorExists-artifact-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/canonicalDivisorExists-artifact-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/canonicalDivisorExists-leaf-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/canonicalDivisorExists-leaf-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/canonicalDivisorExists-leaf-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/ci.py",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/closed-axioms-review-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/closed-axioms-review-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/closed-axioms-review-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/decl_graph.jsonl",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/delivery-validation.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/delivery.py",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/direct-solution-leaf-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/direct-solution-leaf-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/direct-solution-leaf-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/final-readbacks.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/finalize.py",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/git-input-state.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/graph-count-evidence.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/independent-delivery-review.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/independent-shape-review.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/integration.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/mochizuki-source-quotations.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/parent-metadata-patch-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/parent-metadata-patch-response.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/pending-db-after.md",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/pending-db-before.md",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/plan-checkbox-boundary-audit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/platform-after-parent.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/platform-before-parent.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/platform-existing-ramification.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/production-gates-review-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/production-gates-review-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/production-gates-review-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/prove-canonicalDivisorExists-solution.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/prove-canonicalDivisorExists-verification-requested.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/prove-canonicalDivisorExists-verify-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/prove-canonicalDivisorExists-verify-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/prove-canonicalDivisorExists-verify-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/quotation.md",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/reference/Canonical.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/reference/CurveDerivLocal.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/reference/CurveDerivOrder.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/reference/LICENSE",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/reference/NoncriticalFinite.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/reference/RamIdx.lean",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/registry-before.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-frontier-after-page-0.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-frontier-after.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-frontier-before-page-0.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-frontier-before.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-1d2205bc-fb40-4de2-b78f-02b067f0b041.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-37855299-f638-49fb-ad17-09e409d28aef.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-43cb2aa6-3713-4807-b8f4-ec88454dbd2e.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-4e9aedd4-c20e-438a-a048-671b7fe4c4e5.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-90a6f1ba-385c-4416-91f1-b6e764774c0d.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-9ea35172-fd58-4868-84a0-4d672a037da2.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-a6fcc25b-32d0-4414-97aa-f0e02d9ab853.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-ad423628-d8a1-4e5e-8a80-0950952bedaf.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-drill-b8119209-2868-48b1-b852-09f51d09a310.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after-overview.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-after.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-1d2205bc-fb40-4de2-b78f-02b067f0b041.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-37855299-f638-49fb-ad17-09e409d28aef.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-43cb2aa6-3713-4807-b8f4-ec88454dbd2e.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-4e9aedd4-c20e-438a-a048-671b7fe4c4e5.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-90a6f1ba-385c-4416-91f1-b6e764774c0d.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-9ea35172-fd58-4868-84a0-4d672a037da2.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-a6fcc25b-32d0-4414-97aa-f0e02d9ab853.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-ad423628-d8a1-4e5e-8a80-0950952bedaf.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-drill-b8119209-2868-48b1-b852-09f51d09a310.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before-overview.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/root-graph-before.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/scheduler_common.py",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/solution-source-closure.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/solution-type-axioms-review-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/solution-type-axioms-review-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/solution-type-axioms-review-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/solution-type-axioms.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-closure-static-audit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-consumer-ledger.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-consumer.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-graph-leaf-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-graph-leaf-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-graph-leaf-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-helper-artifact-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-helper-artifact-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-helper-artifact-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-helper-leaf-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-helper-leaf-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-helper-leaf-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-ledger-supplement.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/source-ledger-supplement.md",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/syntax-boundaries.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/syntax-leaf-request.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/syntax-leaf-result.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/syntax-leaf-submit.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/target-id.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/unit-ci-summary.json",
+      "prove2me_workspace/.local/adaptation/canonical-divisor-sourceproof-20261114/validation.json",
+      "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+      "prove2me_workspace/Solutions/Checks_FermatCanonicalDivisorSourceClosure.lean",
+      "prove2me_workspace/Solutions/Source_FermatCanonicalFiniteRamification.lean",
+      "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.lean"
+    ],
+    "unit_evidence_files_scanned": 112,
+    "secret_scan_violations": [],
+    "finalizer_scope": "Exactly three delivery-validation owned source files plus the unit evidence tree excluding __pycache__, docs/Prove2Me适配状态.md and platform-node-registry.json. No whole-worktree staging.",
+    "finalizer_requires_empty_existing_stage": true,
+    "finalizer_runs_diff_checks": true,
+    "reviewer_staged_anything": false,
+    "limit": "Actual finalizer staging was observed and audited read-only; report is to be archived by root afterward.",
+    "staged_count": 117,
+    "staged_unexpected_paths": [],
+    "staged_missing_expected_paths": [],
+    "staged_blob_worktree_mismatches": [],
+    "staged_secret_scan_violations": [],
+    "cached_diff_check_exit_code": 0
+  },
+  "reviewed_artifact_sha256": {
+    "delivery.py": "e34fcd6e941b78390d3f2850a32f40bb88abe6f6fda56171d2141e13e49495d1",
+    "finalize.py": "11fdb12db8ceb1baead2adfd291c2ae5d7c736f1fc39794d7eff3c6e0ff3c41a",
+    "Solution_canonicalDivisorExists.lean": "24b51fd12956068d96a59ba7f871e64589188190a8f3f2a14a6d04ae1fff8209",
+    "AuditSolution.lean": "e90506c7cb6400678d6941df35e50cbec487a9d8ad09440b50cdbcfb243318ca",
+    "AuditAllConstants.lean": "bfff7b19f3941c4cf741eda780d0120d992c31d89413327a76d44789548b06cf",
+    "final-readbacks.json": "ff728cd771aedfb70d6c91f2e393e51a3b33ba33cbb3be016219e7f749f54a37",
+    "platform-after-parent.json": "a0ca42dfbeb8e0eccfb0c1671d01a7fbdcf0a6cfe7cc313242abccfed401671f",
+    "root-graph-after.json": "01704dc22e8144c9edeac7961a4d71d859f19fb4abd7b0da1079c912f63a6766",
+    "root-frontier-after.json": "ec5057314e9ffafd7d024d6a9a69899f7e6fb63d336bf4e8c31e4eed6396d0fa",
+    "prove-canonicalDivisorExists-verify-result.json": "c5fbcccc1432a8738ff528a0ac690c58aa8ca92d4b4dcb83203949ad8d892cb7",
+    "production-gates-review-result.json": "c428b634745b19240de9b1084d987abb19ebd2ccec7a0714ed1bd1b88ab9e400"
+  },
+  "finalization_observed": {
+    "registry_unit": {
+      "source": ".local/adaptation/canonical-divisor-sourceproof-20261114",
+      "closed_proof": {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+        "submission_id": "40b841f9-4137-4664-b75b-0e7d2b300f6e",
+        "status": "ACCEPTED",
+        "existing_proved_dependency": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite"
+      },
+      "new_nodes": [],
+      "new_open_debt": 0,
+      "actual_new_edge": {
+        "parent": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+        "children": [
+          "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite"
+        ],
+        "submission_id": "40b841f9-4137-4664-b75b-0e7d2b300f6e",
+        "status": "ACCEPTED"
+      },
+      "all_proper_places_preserved": true,
+      "Fermat_route_preserved": true,
+      "deprecations": []
+    },
+    "registry_counts": {
+      "accepted_reductions": 29,
+      "published_children": 74,
+      "dependency_edges": 82,
+      "open_frontier": 23,
+      "direct_closed_children": 31
+    },
+    "registry_direct_closed_count": 31,
+    "document_matches_prepared_after": true,
+    "source_consumer_status": "exclusive_local_audits_passed_and_platform_ACCEPTED",
+    "source_consumer_proof": {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDivisorExists",
+      "submission_id": "40b841f9-4137-4664-b75b-0e7d2b300f6e",
+      "status": "ACCEPTED",
+      "existing_proved_dependency": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRamificationFinite"
+    }
+  }
+}

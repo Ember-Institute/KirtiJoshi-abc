@@ -1,0 +1,117 @@
+{
+  "status": "uncompiled integration draft; exact open child plus closed parent composer",
+  "upstream": {
+    "project": "Belyi",
+    "commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "license": "Apache-2.0",
+    "files": [
+      {
+        "path": "Belyi/CurveField/Canonical.lean",
+        "sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b"
+      },
+      {
+        "path": "Belyi/CurveField/RamIdx.lean",
+        "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6"
+      }
+    ]
+  },
+  "input_hashes": {
+    "prove2me_workspace/Definitions/Def_TripodCanonicalHighHeightInputs.lean": "c3439a404800a6edd860719ac10cb4bc9d5912f7ccdac7d81e71b7082cb773cd",
+    "prove2me_workspace/Definitions/Def_FermatProperCarrier.lean": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+    "prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+    "prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890",
+    "prove2me_workspace/Definitions/Def_FermatCurveFieldZerosPoles.lean": "884d1811c768d63b8a723ae74e7cb826254651cef5ae5e504bcf3c22ac8c3f29",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDivisorExists.lean": "d836b5eccd44c7f2bf50d4d02e4acffca84521ec73c78426c526e9d2bc104eb1"
+  },
+  "nodes": [
+    {
+      "name": "canonicalCoordinateCoefficient",
+      "status": "definition",
+      "actual_types": "Model N, PlacesDiscrete M, Place M.K; fixed M.u; integer ramIdx of actual residue minpoly or pole",
+      "source": "Canonical.lean canonicalDiv_apply_of_mem and canonicalDiv_apply_of_notMem",
+      "consumer": [
+        "canonicalCoordinateCoefficient_finiteSupport",
+        "coordinateCanonicalDivisor",
+        "CanonicalDivisorData.coefficient"
+      ]
+    },
+    {
+      "name": "finiteCoordinateRamification",
+      "status": "Open; intentional sorry only in this child file",
+      "type": "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M), ResiduesFinite M → {P : Place M.K | 1 < ramIdx M hDVR M.u P}.Finite",
+      "source": "RamIdx.lean finite_setOf_one_lt_ramIdx, exact coordinate specialization",
+      "fidelity": "Source ramIdx is a natural number; existing local actual ramIdx is its integer formula. Source ramIdx_of_mem and ramIdx_of_notMem identify the cast with precisely this formula; noncriticalRamificationPositive already proves positivity. No toNat is used to erase negative values.",
+      "consumer": [
+        "canonicalDivisorExists_of_finiteCoordinateRamification"
+      ]
+    },
+    {
+      "name": "canonicalCoordinateCoefficient_finiteSupport",
+      "status": "proof body complete; not compiled",
+      "source": "Canonical.lean finite_setOf_ord_derivAlong_ne_zero, specialized to its exact coefficient formulas",
+      "dependencies": [
+        "finiteCoordinateRamification",
+        "Place.finite_setOf_notMem M.u",
+        "noncriticalRamificationPositive M hDVR M.u M.transcendental_u P"
+      ],
+      "consumer": [
+        "coordinateCanonicalDivisor"
+      ]
+    },
+    {
+      "name": "coordinateCanonicalDivisor",
+      "status": "definition",
+      "source": "Canonical.lean canonicalDiv Finsupp.ofSupportFinite construction, with same exact required coefficient formula",
+      "consumer": [
+        "coordinateCanonicalData"
+      ]
+    },
+    {
+      "name": "coordinateCanonicalData",
+      "status": "definition",
+      "source": "Canonical.lean canonicalDiv_apply_of_mem and canonicalDiv_apply_of_notMem; exact existing contract",
+      "consumer": [
+        "canonicalDivisorExists_of_finiteCoordinateRamification"
+      ]
+    },
+    {
+      "name": "canonicalDivisorExists_of_finiteCoordinateRamification",
+      "status": "proof body complete; not compiled; no sorry",
+      "source": "Canonical.lean finite support plus canonical divisor construction",
+      "consumer": [
+        "canonicalDivisorExists"
+      ]
+    },
+    {
+      "name": "canonicalDivisorExists",
+      "status": "unchanged parent type; proof body complete relative to open child",
+      "source": "Canonical.lean canonicalDiv construction; original parent preserved",
+      "consumer": [
+        "existing arithmeticDivisorChoices_of_children",
+        "existing Sol_FermatCanonicalEstimate.lean"
+      ]
+    }
+  ],
+  "open_source_port_closure": [
+    "RamIdx finite_setOf_one_lt_ramIdx source proof uses actual curve derivation derivAlong t, finite generation of the actual chartRing t, existing finite poles, and derivAlong_uniformizer_notMem.",
+    "Existing local derivation carrier has only the Basic layer; full CurveDeriv Local/Order proofs are not claimed ported. This unit precisely records that remaining source port as finiteCoordinateRamification.",
+    "No full source derivative theorem, Fermat adjunction, coordinate pole identity, canonical height comparison or global canonical estimate is claimed proved."
+  ],
+  "c2_boundary": [
+    "C2 numeric c2_final already has a separate prior independent draft. Concrete C2 local height data uses FinitePlace C.F, real residueChar/inertDeg, actual Tate qOrder and Module.finrank ℚ C.F.",
+    "The C2 source closure additionally requires actual elliptic curve construction, initial theta data, local theory and genuine anabelian model carriers. No arbitrary carrier or Prop/law record is substituted here.",
+    "CanonicalCorollary22HighHeightEstimate and full universal h312 are unchanged and remain open. No node is deprecated."
+  ],
+  "validation": {
+    "compiled": false,
+    "mcp_ci_called": false,
+    "api_called": false,
+    "git_written": false,
+    "main_directory_written": false
+  },
+  "audit_supplement": {
+    "path": "source-ledger-supplement.json",
+    "summary": "finiteCoordinateRamification is already fully supplied by the existing noncriticalRamificationFinite source theorem. No unported source proof or Act2 mathematical obligation is required for this child.",
+    "supersedes_previous_missing_Local_Order_claim": true
+  }
+}
