@@ -1,0 +1,840 @@
+{
+  "schema_version": 1,
+  "requested_model": "gpt-6.1-sol",
+  "actual_model": null,
+  "scope": "Blind source-based formal readbacks for the two requested frozen Lean files only.",
+  "independence": {
+    "read_only_formal_context": true,
+    "papers_read": false,
+    "source_ledger_read": false,
+    "README_read": false,
+    "compiler_run": false,
+    "MCP_run": false,
+    "API_run": false,
+    "git_run": false
+  },
+  "translation_provenance": {
+    "original_language": "en",
+    "translations": [
+      "zh_Hans",
+      "ja"
+    ],
+    "relation": "Chinese and Japanese translations of the English readbacks, checked against the same formal source; these are not three independent audits."
+  },
+  "context_files": [
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "fileSHA": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "role": "Formal definition of TendstoP1 and formal supporting context only"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/Valuation/ValuationSubring.lean",
+      "source_lines": {
+        "start": 34,
+        "end": 42
+      },
+      "role": "Formal expansion of ValuationSubring"
+    }
+  ],
+  "terminology_notes": {
+    "en": "The symbol ∞ is notation introduced by these readbacks for Option.none; finite scalars denote Option.some values. EPlace is expanded in every affected readback, not identified by name alone with any external notion.",
+    "zh_Hans": "“赋值处”为此处展开定义的描述用语；其含义仅为所列子环、环同态及条件。",
+    "ja": "「付値的な場所」「付値部分環」は形式定義に基づく数学用語の類推表現であり、指定の日本語参考文献で確認した訳語とは主張しない。"
+  },
+  "proof_notes": "All statements are source-based and unelaborated. Proof bodies are present in the source, but no build, proof acceptance, trust status, or axiom-dependency conclusion is made. Section variables are reported statically and generalized parameters are inferred separately.",
+  "declarations": [
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace",
+      "source_lines": {
+        "start": 25,
+        "end": 31
+      },
+      "signature": "structure EPlace (K E : Type*) [Field K] [NormedField E]",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "Explicit (K E : Type*) [Field K] [NormedField E]; the same-named outer section variables are shadowed by these explicit structure parameters.",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "For any field $K$ and normed field $E$, the structure $\\operatorname{EPlace}(K,E)$ consists of a valuation subring $O⊆K$ and a unital ring homomorphism $ψ:O→E$, together with the condition that, for every $u∈O$, $ψ(u)=0$ if and only if $u$ is not a unit in $O$. Here a valuation subring means a subring containing $0,1$, closed under addition, multiplication and negation, with $t∈O$ or $t^{-1}∈O$ for every $t∈K$. The inverse is the field inverse, including $0^{-1}=0$. The condition on $ψ$ concerns units in $O$, rather than merely nonzero elements of $K$.",
+        "zh_Hans": "对任意域 $K$ 和赋范域 $E$，结构 $\\operatorname{EPlace}(K,E)$ 由赋值子环 $O⊆K$、保单位元的环同态 $ψ:O→E$，以及以下条件组成：对每个 $u∈O$，$ψ(u)=0$ 当且仅当 $u$ 不是 $O$ 中的可逆元。这里赋值子环是含 $0,1$ 且对加法、乘法、取负封闭的子环，并满足对每个 $t∈K$，$t∈O$ 或 $t^{-1}∈O$。逆元按域的全定义逆运算理解，包括 $0^{-1}=0$。关于 $ψ$ 的条件针对 $O$ 中的可逆元，而不只是 $K$ 中的非零元素。",
+        "ja": "任意の体 $K$ とノルム体 $E$ に対し、構造 $\\operatorname{EPlace}(K,E)$ は付値部分環 $O⊆K$、単位元を保つ環準同型 $ψ:O→E$、およびすべての $u∈O$ に対し $ψ(u)=0$ と $u$ が $O$ の単元でないことが同値となる条件からなる。ここで付値部分環とは、$0,1$ を含み加法・乗法・負元で閉じ、任意の $t∈K$ に対し $t∈O$ または $t^{-1}∈O$ を満たす部分環である。逆元には体の全域的な逆演算を用い、$0^{-1}=0$ とする。$ψ$ の条件で用いる単元は $O$ の単元であり、単に $K$ の非零元を指すものではない。"
+      },
+      "proof_notes": "Structure fields are read as data and a universally quantified proposition; no inhabitance, compilation, or axiom audit is asserted.",
+      "fields": [
+        {
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.O",
+          "source_lines": {
+            "start": 27,
+            "end": 27
+          },
+          "signature": "O : ValuationSubring K",
+          "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+          "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+          "statements": {
+            "en": "For a field $K$ and normed field $E$, the field $O$ of a structure $x: \\operatorname{EPlace}(K,E)$ is a subring of $K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O$ or $t^{-1}∈O$.",
+            "zh_Hans": "对域 $K$ 和赋范域 $E$，结构 $x:\\operatorname{EPlace}(K,E)$ 的字段 $O$ 是 $K$ 的子环，含 $0,1$，对加法、乘法、取负封闭，并且每个 $t∈K$ 都满足 $t∈O$ 或 $t^{-1}∈O$。",
+            "ja": "体 $K$ とノルム体 $E$ に対し、構造 $x:\\operatorname{EPlace}(K,E)$ の成分 $O$ は、$0,1$ を含み加法・乗法・負元で閉じ、すべての $t∈K$ に対し $t∈O$ または $t^{-1}∈O$ を満たす $K$ の部分環である。"
+          },
+          "static_section_context": {
+            "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+            "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+            "open": [
+              "Filter",
+              "Topology"
+            ],
+            "autoImplicit": false,
+            "section": "EPlace"
+          },
+          "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+          "proof_notes": "Structure field readback only; the field participates in the enclosing structure definition. No generated projection signature or proof acceptance was checked."
+        },
+        {
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.ψ",
+          "source_lines": {
+            "start": 29,
+            "end": 29
+          },
+          "signature": "ψ : O →+* E",
+          "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+          "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+          "statements": {
+            "en": "For a field $K$, normed field $E$, and a structure $x:\\operatorname{EPlace}(K,E)$ with valuation subring $O$ (a subring with $t∈O$ or $t^{-1}∈O$ for every $t∈K$), the field $ψ$ is a unital ring homomorphism from $O$ to $E$.",
+            "zh_Hans": "对域 $K$、赋范域 $E$，以及具有赋值子环 $O$ 的结构 $x:\\operatorname{EPlace}(K,E)$，字段 $ψ$ 是从 $O$ 到 $E$ 的保单位元的环同态；这里 $O$ 是子环，满足每个 $t∈K$ 都有 $t∈O$ 或 $t^{-1}∈O$。",
+            "ja": "体 $K$、ノルム体 $E$、付値部分環 $O$ を持つ構造 $x:\\operatorname{EPlace}(K,E)$ に対し、成分 $ψ$ は $O$ から $E$ への単位元を保つ環準同型である。ここで $O$ は、すべての $t∈K$ に対し $t∈O$ または $t^{-1}∈O$ を満たす部分環である。"
+          },
+          "static_section_context": {
+            "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+            "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+            "open": [
+              "Filter",
+              "Topology"
+            ],
+            "autoImplicit": false,
+            "section": "EPlace"
+          },
+          "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+          "proof_notes": "Structure field readback only; the field participates in the enclosing structure definition. No generated projection signature or proof acceptance was checked."
+        },
+        {
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.eq_zero_iff",
+          "source_lines": {
+            "start": 31,
+            "end": 31
+          },
+          "signature": "eq_zero_iff : ∀ f : O, ψ f = 0 ↔ ¬ IsUnit f",
+          "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+          "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+          "statements": {
+            "en": "For a field $K$, normed field $E$, and a structure $x:\\operatorname{EPlace}(K,E)$ with valuation subring $O$ (a subring with $t∈O$ or $t^{-1}∈O$ for every $t∈K$) and unital ring homomorphism $ψ:O→E$, the field eq_zero_iff supplies the following proposition: for every $f∈O$, $ψ(f)=0$ if and only if $f$ is not a unit in $O$.",
+            "zh_Hans": "对域 $K$、赋范域 $E$，以及由赋值子环 $O$ 和保单位元的环同态 $ψ:O→E$ 组成的结构 $x:\\operatorname{EPlace}(K,E)$，字段 eq_zero_iff 提供命题：对每个 $f∈O$，$ψ(f)=0$ 当且仅当 $f$ 不是 $O$ 的可逆元。这里 $O$ 是子环，且每个 $t∈K$ 都有 $t∈O$ 或 $t^{-1}∈O$。",
+            "ja": "体 $K$、ノルム体 $E$、付値部分環 $O$ と単位元を保つ環準同型 $ψ:O→E$ を持つ構造 $x:\\operatorname{EPlace}(K,E)$ に対し、成分 eq_zero_iff は、すべての $f∈O$ について $ψ(f)=0$ と $f$ が $O$ の単元でないことが同値であるという命題を与える。ここで $O$ は、すべての $t∈K$ に対し $t∈O$ または $t^{-1}∈O$ を満たす部分環である。"
+          },
+          "static_section_context": {
+            "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+            "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+            "open": [
+              "Filter",
+              "Topology"
+            ],
+            "autoImplicit": false,
+            "section": "EPlace"
+          },
+          "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+          "proof_notes": "Structure field readback only; the field participates in the enclosing structure definition. No generated projection signature or proof acceptance was checked."
+        }
+      ]
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val",
+      "source_lines": {
+        "start": 37,
+        "end": 38
+      },
+      "signature": "noncomputable def val (x : EPlace K E) (f : K) : Option E",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such place $x$ and every $f∈K$, the definition $v_x(f)∈\\operatorname{Option}(E)$ returns the tagged value $ψ_x(f)$ if $f∈O_x$, and returns $∞$ otherwise. It is a noncomputable definition using a case distinction on membership; the membership witness supplies the element of the subring on which $ψ_x$ is evaluated.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个上述赋值处 $x$ 和每个 $f∈K$，定义 $v_x(f)∈\\operatorname{Option}(E)$：若 $f∈O_x$，则返回带标记的 $ψ_x(f)$；否则返回 $∞$。这是一个不可计算定义，按子环的成员关系分类，并使用成员关系的证明将 $f$ 视为 $O_x$ 的元素后应用 $ψ_x$。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。上記の任意の場所 $x$ と $f∈K$ に対し、$v_x(f)∈\\operatorname{Option}(E)$ は、$f∈O_x$ ならば標識付きの $ψ_x(f)$、それ以外ならば $∞$ と定義される。これは部分環への所属に関する場合分けを用いる非計算的定義であり、所属の証拠により $f$ を $O_x$ の元として $ψ_x$ に代入する。"
+      },
+      "proof_notes": "Noncomputable definition; the source branch expressions are read directly. No compiler or acceptance claim."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_of_mem",
+      "source_lines": {
+        "start": 40,
+        "end": 41
+      },
+      "signature": "theorem val_of_mem (x : EPlace K E) {f : K} (h : f ∈ x.O) : x.val f = some (x.ψ ⟨f, h⟩)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, every $f∈K$, and every witness $h$ that $f∈O_x$, one has $v_x(f)=ψ_x(f)$ as a finite tagged value, with $ψ_x$ applied to the subring element specified by $f$ and $h$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、每个 $f∈K$，以及每个证明 $f∈O_x$ 的见证 $h$，都有 $v_x(f)=ψ_x(f)$，等式右端视为带标记的有限值；$ψ_x$ 作用于由 $f$ 和 $h$ 确定的子环元素。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、任意の $f∈K$、および $f∈O_x$ の任意の証拠 $h$ に対して、$v_x(f)=ψ_x(f)$ が有限値として成り立つ。$ψ_x$ には $f$ と $h$ で定まる部分環の元を代入する。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_of_notMem",
+      "source_lines": {
+        "start": 43,
+        "end": 44
+      },
+      "signature": "theorem val_of_notMem (x : EPlace K E) {f : K} (h : f ∉ x.O) : x.val f = none",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$ and every $f∈K$, if $f∉O_x$, then $v_x(f)=∞$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$ 和每个 $f∈K$，若 $f∉O_x$，则 $v_x(f)=∞$。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ と $f∈K$ に対し、$f∉O_x$ ならば $v_x(f)=∞$ である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_eq_some_iff",
+      "source_lines": {
+        "start": 46,
+        "end": 50
+      },
+      "signature": "theorem val_eq_some_iff (x : EPlace K E) {f : K} {α : E} :\n    x.val f = some α ↔ ∃ h : f ∈ x.O, x.ψ ⟨f, h⟩ = α",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $f∈K$ and $α∈E$, the equality $v_x(f)=α$ as a finite tagged value holds if and only if there exists a witness $h$ of $f∈O_x$ for which $ψ_x$ evaluated at the subring element $(f,h)$ equals $α$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、$f∈K$ 和 $α∈E$，$v_x(f)$ 等于带标记的有限值 $α$ 当且仅当存在 $f∈O_x$ 的见证 $h$，使 $ψ_x$ 在子环元素 $(f,h)$ 上的值等于 $α$。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、$f∈K$、$α∈E$ に対し、$v_x(f)$ が有限値 $α$ に等しいことと、$f∈O_x$ の証拠 $h$ であって、部分環の元 $(f,h)$ における $ψ_x$ の値が $α$ となるものが存在することは同値である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_add",
+      "source_lines": {
+        "start": 52,
+        "end": 59
+      },
+      "signature": "theorem val_add (x : EPlace K E) {f g : K} {α β : E} (hf : x.val f = some α)\n    (hg : x.val g = some β) : x.val (f + g) = some (α + β)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, all $f,g∈K$ and $α,β∈E$, if $v_x(f)=α$ and $v_x(g)=β$ are finite values, then $v_x(f+g)=α+β$ as a finite value. Zero values are included; no nonzero hypothesis is imposed.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、所有 $f,g∈K$ 和 $α,β∈E$，若 $v_x(f)=α$ 且 $v_x(g)=β$ 都是有限值，则和满足 $v_x(f+g)=α+β$，右端也是有限值。这里包括零值，不要求各元素非零。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、すべての $f,g∈K$ と $α,β∈E$ に対し、$v_x(f)=α$ と $v_x(g)=β$ が有限値ならば、和について $v_x(f+g)=α+β$ が有限値として成り立つ。零も含み、非零の仮定はない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_mul",
+      "source_lines": {
+        "start": 61,
+        "end": 68
+      },
+      "signature": "theorem val_mul (x : EPlace K E) {f g : K} {α β : E} (hf : x.val f = some α)\n    (hg : x.val g = some β) : x.val (f * g) = some (α * β)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, all $f,g∈K$ and $α,β∈E$, if $v_x(f)=α$ and $v_x(g)=β$ are finite values, then $v_x(f·g)=α·β$ as a finite value. Zero values are included; no nonzero hypothesis is imposed.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、所有 $f,g∈K$ 和 $α,β∈E$，若 $v_x(f)=α$ 且 $v_x(g)=β$ 都是有限值，则积满足 $v_x(f·g)=α·β$，右端也是有限值。这里包括零值，不要求各元素非零。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、すべての $f,g∈K$ と $α,β∈E$ に対し、$v_x(f)=α$ と $v_x(g)=β$ が有限値ならば、積について $v_x(f·g)=α·β$ が有限値として成り立つ。零も含み、非零の仮定はない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_neg",
+      "source_lines": {
+        "start": 70,
+        "end": 76
+      },
+      "signature": "theorem val_neg (x : EPlace K E) {f : K} {α : E} (hf : x.val f = some α) :\n    x.val (-f) = some (-α)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $f∈K$ and $α∈E$, if $v_x(f)=α$ is finite, then $v_x(-f)=-α$ is finite.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、$f∈K$ 和 $α∈E$，若 $v_x(f)=α$ 为有限值，则 $v_x(-f)=-α$ 也是有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、$f∈K$、$α∈E$ に対し、$v_x(f)=α$ が有限値ならば $v_x(-f)=-α$ も有限値である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_one",
+      "source_lines": {
+        "start": 78,
+        "end": 81
+      },
+      "signature": "theorem val_one (x : EPlace K E) : x.val 1 = some 1",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $v_x(1_K)=1_E$ as a finite tagged value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$，$v_x(1_K)=1_E$，右端为带标记的有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ に対し、$v_x(1_K)=1_E$ が有限値として成り立つ。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_zero",
+      "source_lines": {
+        "start": 83,
+        "end": 86
+      },
+      "signature": "theorem val_zero (x : EPlace K E) : x.val 0 = some 0",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $v_x(0_K)=0_E$ as a finite tagged value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$，$v_x(0_K)=0_E$，右端为带标记的有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ に対し、$v_x(0_K)=0_E$ が有限値として成り立つ。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_ne_zero",
+      "source_lines": {
+        "start": 89,
+        "end": 106
+      },
+      "signature": "theorem val_inv_of_ne_zero (x : EPlace K E) {f : K} {α : E} (hf : x.val f = some α)\n    (hα : α ≠ 0) : x.val f⁻¹ = some α⁻¹",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $f∈K$ and $α∈E$, if $v_x(f)=α$ is finite and $α≠0$, then $v_x(f^{-1})=α^{-1}$ is finite. Nonzeroness of the value $α$ is an explicit premise.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、$f∈K$ 和 $α∈E$，若 $v_x(f)=α$ 为有限值且 $α≠0$，则 $v_x(f^{-1})=α^{-1}$ 为有限值。取值 $α$ 非零是明确的前提。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、$f∈K$、$α∈E$ に対し、$v_x(f)=α$ が有限値かつ $α≠0$ ならば、$v_x(f^{-1})=α^{-1}$ が有限値として成り立つ。値 $α$ が非零であることは明示的な仮定である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_eq_zero",
+      "source_lines": {
+        "start": 109,
+        "end": 117
+      },
+      "signature": "theorem val_inv_of_eq_zero (x : EPlace K E) {f : K} (hf0 : f ≠ 0) (hf : x.val f = some 0) :\n    x.val f⁻¹ = none",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$ and every $f∈K$, if $f≠0$ and $v_x(f)=0$ as a finite value, then $v_x(f^{-1})=∞$. The premise $f≠0$ excludes the field convention $0^{-1}=0$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$ 和每个 $f∈K$，若 $f≠0$ 且 $v_x(f)$ 为有限值 $0$，则 $v_x(f^{-1})=∞$。前提 $f≠0$ 排除了域的约定 $0^{-1}=0$ 所对应的情形。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ と $f∈K$ に対し、$f≠0$ かつ $v_x(f)$ が有限値 $0$ ならば、$v_x(f^{-1})=∞$ である。仮定 $f≠0$ は体の規約 $0^{-1}=0$ に該当する場合を除外する。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_eq_none",
+      "source_lines": {
+        "start": 120,
+        "end": 136
+      },
+      "signature": "theorem val_inv_of_eq_none (x : EPlace K E) {f : K} (hf : x.val f = none) :\n    x.val f⁻¹ = some 0",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "EPlace"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$ and every $f∈K$, if $v_x(f)=∞$, then $v_x(f^{-1})=0$ as a finite value. There is no separately stated nonzero premise on $f$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$ 和每个 $f∈K$，若 $v_x(f)=∞$，则 $v_x(f^{-1})$ 为有限值 $0$。声明没有另外列出 $f$ 非零的前提。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ と $f∈K$ に対し、$v_x(f)=∞$ ならば、$v_x(f^{-1})$ は有限値 $0$ である。$f$ が非零であるという別個の仮定は記載されていない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.tendstoP1_some_iff'",
+      "source_lines": {
+        "start": 147,
+        "end": 175
+      },
+      "signature": "theorem tendstoP1_some_iff' {a : ℕ → Option E} {β : E} :\n    TendstoP1 a (some β) ↔ ∃ α : ℕ → E, (∀ᶠ n in atTop, a n = some (α n)) ∧\n      Tendsto α atTop (𝓝 β)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit"
+      },
+      "effective_parameters_source_inferred": "{E : Type*} [NormedField E] {a : ℕ → Option E} {β : E}; source inference: unused section variables K and [Field K] are not generalized.",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $E$ be any normed field, $a:ℕ→\\operatorname{Option}(E)$ any sequence, and $β∈E$. Interpret some $α$ as the finite value $α$, and none as a separate element $∞$. Then $a→_P β$ holds if and only if there exists a sequence $α:ℕ→E$ for which there is $N∈ℕ$ such that $a_n$ is the finite value $α_n$ for all $n≥N$, and $α_n$ converges to $β$ in the norm topology as $n→∞$. The auxiliary sequence is defined at every natural number, including any initial indices where $a_n=∞$; only its tail must represent $a$. No field $K$ or family of places is a parameter of this assertion.",
+        "zh_Hans": "对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $E$ 为任意赋范域，$a:ℕ→\\operatorname{Option}(E)$ 为任意序列，$β∈E$。将 some $α$ 解释为有限值 $α$，将 none 解释为额外元素 $∞$。则 $a→_P β$ 当且仅当存在序列 $α:ℕ→E$，满足：存在 $N∈ℕ$，使所有 $n≥N$ 都有 $a_n$ 为有限值 $α_n$；并且 $n→∞$ 时 $α_n$ 在范数拓扑中收敛到 $β$。辅助序列在每个自然数处都有定义，包括 $a_n=∞$ 的初始指标；只有尾部必须表示 $a$。这一断言的参数不包括域 $K$ 或赋值处族。",
+        "ja": "数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。任意のノルム体 $E$、任意の数列 $a:ℕ→\\operatorname{Option}(E)$、$β∈E$ を取る。some $α$ を有限値 $α$、none を別の元 $∞$ と解釈する。このとき $a→_P β$ であることは、数列 $α:ℕ→E$ であって、ある $N∈ℕ$ 以降のすべての $n$ で $a_n$ が有限値 $α_n$ となり、かつ $α_n$ が $n→∞$ においてノルム位相で $β$ に収束するものが存在することと同値である。補助数列は、$a_n=∞$ となる初期の添字も含め、すべての自然数で定義されるが、$a$ を表すのは末尾だけでよい。この主張のパラメータに体 $K$ や場所の族は含まれない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_limit",
+      "source_lines": {
+        "start": 180,
+        "end": 210
+      },
+      "signature": "theorem exists_limit [Countable K] {ι : Type*} [Countable ι] [Nonempty ι] {Good : E → Prop}\n    (hcpt : ∀ a : ℕ → E, (∀ n, Good (a n)) → ∃ φ : ℕ → ℕ, StrictMono φ ∧\n      ((∃ b, Tendsto (a ∘ φ) atTop (𝓝 b)) ∨ Tendsto (fun n => ‖a (φ n)‖) atTop atTop))\n    (x : ℕ → ι → EPlace K E) (hgood : ∀ n i f α, (x n i).val f = some α → Good α) :\n    ∃ D : ℕ → ℕ, StrictMono D ∧ ∃ ξ : ι → K → Option E,\n      ∀ i f, TendstoP1 (fun n => (x (D n) i).val f) (ξ i f)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E], followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Assume in addition that the underlying set of $K$ is countable. Let $ι$ be a countable nonempty type and $\\mathrm{Good}:E→\\mathrm{Prop}$ any predicate. Suppose that for every sequence $a:ℕ→E$ whose every term satisfies $\\mathrm{Good}$, there exists a strictly increasing $φ:ℕ→ℕ$ such that either there exists $b∈E$ with $a_{φ(n)}→b$ in the norm topology, or $‖a_{φ(n)}‖→+∞$ (for every real $R$, eventually $R≤‖a_{φ(n)}‖$). For every family $x:ℕ→ι→\\operatorname{EPlace}(K,E)$ satisfying, for all $n∈ℕ$, $i∈ι$, $f∈K$ and $α∈E$, the implication $v_{x_{n,i}}(f)=α$ finite $⇒\\mathrm{Good}(α)$, there exists one strictly increasing $D:ℕ→ℕ$ and then a function $ξ:ι→K→E∪{∞}$ such that for every $i∈ι$ and $f∈K$, $n↦v_{x_{D(n),i}}(f)→_P ξ(i,f)$. Strictly increasing means $m<n⇒D(m)<D(n)$, and likewise for $φ$; natural-number indices include zero. The asserted $D$ is shared by all $i,f$, and no uniqueness of $D$ or $ξ$ is asserted. The hypothesis is exactly the stated subsequence dichotomy for the predicate, without an assumption that all of $E$ is compact.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。再假设 $K$ 的底集可数。设 $ι$ 为可数非空类型，$\\mathrm{Good}:E→\\mathrm{Prop}$ 为任意谓词。假设对每个各项都满足 $\\mathrm{Good}$ 的序列 $a:ℕ→E$，存在严格递增映射 $φ:ℕ→ℕ$，使以下两者至少一个成立：存在 $b∈E$，使 $a_{φ(n)}$ 在范数拓扑中收敛到 $b$；或者 $‖a_{φ(n)}‖→+∞$，即对每个实数 $R$，最终都有 $R≤‖a_{φ(n)}‖$。对任意族 $x:ℕ→ι→\\operatorname{EPlace}(K,E)$，若对所有 $n∈ℕ$、$i∈ι$、$f∈K$、$α∈E$，有限取值 $v_{x_{n,i}}(f)=α$ 都蕴含 $\\mathrm{Good}(α)$，则存在一个严格递增映射 $D:ℕ→ℕ$，并存在函数 $ξ:ι→K→E∪{∞}$，使所有 $i∈ι$、$f∈K$ 都满足 $n↦v_{x_{D(n),i}}(f)→_P ξ(i,f)$。严格递增指 $m<n⇒D(m)<D(n)$，对 $φ$ 亦然；自然数指标包括零。所有 $i,f$ 共用一个 $D$，没有断言 $D$ 或 $ξ$ 唯一。前提仅为所写的谓词序列的子列二择条件，没有假设整个 $E$ 紧致。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。さらに $K$ の台集合は可算であるとする。$ι$ を可算かつ空でない型、$\\mathrm{Good}:E→\\mathrm{Prop}$ を任意の述語とする。各項が $\\mathrm{Good}$ を満たす任意の数列 $a:ℕ→E$ に対して、狭義単調増加写像 $φ:ℕ→ℕ$ が存在し、ある $b∈E$ へ $a_{φ(n)}$ がノルム位相で収束するか、または $‖a_{φ(n)}‖→+∞$、すなわち任意の実数 $R$ に対して十分大きいすべての $n$ で $R≤‖a_{φ(n)}‖$ となると仮定する。任意の族 $x:ℕ→ι→\\operatorname{EPlace}(K,E)$ が、すべての $n∈ℕ$、$i∈ι$、$f∈K$、$α∈E$ に対して、有限値 $v_{x_{n,i}}(f)=α$ ならば $\\mathrm{Good}(α)$ を満たすとする。このとき、一つの狭義単調増加写像 $D:ℕ→ℕ$ と写像 $ξ:ι→K→E∪{∞}$ が存在し、すべての $i∈ι$ と $f∈K$ に対し $n↦v_{x_{D(n),i}}(f)→_P ξ(i,f)$ が成り立つ。狭義単調増加とは $m<n⇒D(m)<D(n)$ という意味であり、$φ$ についても同様である。自然数の添字には零も含む。$D$ はすべての $i,f$ に共通であり、$D$ や $ξ$ の一意性は主張されない。仮定は記載された述語に関する部分列の二者択一であり、$E$ 全体のコンパクト性は仮定されていない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_add",
+      "source_lines": {
+        "start": 26,
+        "end": 36
+      },
+      "signature": "theorem limit_add (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f g : K} {α β : E}\n    (hf : ξ f = some α) (hg : ξ g = some β) : ξ (f + g) = some (α + β)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f,g∈K$ and $α,β∈E$, if $ξ(f)=α$ and $ξ(g)=β$ as finite values, then $ξ(f+g)=α+β$ as a finite value. No nonzero premises are imposed on these four elements.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对所有 $f,g∈K$ 和 $α,β∈E$，若 $ξ(f)=α$、$ξ(g)=β$ 都是有限值，则和满足 $ξ(f+g)=α+β$，右端为有限值。不要求这四个元素非零。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。すべての $f,g∈K$ と $α,β∈E$ に対し、$ξ(f)=α$ と $ξ(g)=β$ が有限値ならば、和について $ξ(f+g)=α+β$ が有限値として成り立つ。これら四つの元に非零の仮定はない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_mul",
+      "source_lines": {
+        "start": 39,
+        "end": 49
+      },
+      "signature": "theorem limit_mul (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f g : K} {α β : E}\n    (hf : ξ f = some α) (hg : ξ g = some β) : ξ (f * g) = some (α * β)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f,g∈K$ and $α,β∈E$, if $ξ(f)=α$ and $ξ(g)=β$ as finite values, then $ξ(f·g)=α·β$ as a finite value. No nonzero premises are imposed on these four elements.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对所有 $f,g∈K$ 和 $α,β∈E$，若 $ξ(f)=α$、$ξ(g)=β$ 都是有限值，则积满足 $ξ(f·g)=α·β$，右端为有限值。不要求这四个元素非零。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。すべての $f,g∈K$ と $α,β∈E$ に対し、$ξ(f)=α$ と $ξ(g)=β$ が有限値ならば、積について $ξ(f·g)=α·β$ が有限値として成り立つ。これら四つの元に非零の仮定はない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_neg",
+      "source_lines": {
+        "start": 51,
+        "end": 58
+      },
+      "signature": "theorem limit_neg (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K} {α : E}\n    (hf : ξ f = some α) : ξ (-f) = some (-α)",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f∈K$ and $α∈E$, if $ξ(f)=α$ is finite, then $ξ(-f)=-α$ is finite.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对每个 $f∈K$ 和 $α∈E$，若 $ξ(f)=α$ 为有限值，则 $ξ(-f)=-α$ 为有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。任意の $f∈K$ と $α∈E$ に対し、$ξ(f)=α$ が有限値ならば、$ξ(-f)=-α$ も有限値である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_one",
+      "source_lines": {
+        "start": 60,
+        "end": 62
+      },
+      "signature": "theorem limit_one (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) : ξ 1 = some 1",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. Then $ξ(1_K)=1_E$ as a finite tagged value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。则 $ξ(1_K)=1_E$，右端为带标记的有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。このとき $ξ(1_K)=1_E$ が有限値として成り立つ。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_zero",
+      "source_lines": {
+        "start": 64,
+        "end": 66
+      },
+      "signature": "theorem limit_zero (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) : ξ 0 = some 0",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. Then $ξ(0_K)=0_E$ as a finite tagged value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。则 $ξ(0_K)=0_E$，右端为带标记的有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。このとき $ξ(0_K)=0_E$ が有限値として成り立つ。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_inv_of_eq_zero",
+      "source_lines": {
+        "start": 69,
+        "end": 92
+      },
+      "signature": "theorem limit_inv_of_eq_zero (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K}\n    (hf0 : f ≠ 0) (hf : ξ f = some 0) : ξ f⁻¹ = none",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f∈K$, if $f≠0$ and $ξ(f)=0$ as a finite value, then $ξ(f^{-1})=∞$. The explicit nonzero premise excludes the field convention $0^{-1}=0$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对每个 $f∈K$，若 $f≠0$ 且 $ξ(f)$ 为有限值 $0$，则 $ξ(f^{-1})=∞$。明确的非零前提排除了域的约定 $0^{-1}=0$ 所对应的情形。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。任意の $f∈K$ に対し、$f≠0$ かつ $ξ(f)$ が有限値 $0$ ならば、$ξ(f^{-1})=∞$ である。明示された非零の仮定は体の規約 $0^{-1}=0$ に該当する場合を除外する。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_inv_of_eq_none",
+      "source_lines": {
+        "start": 95,
+        "end": 112
+      },
+      "signature": "theorem limit_inv_of_eq_none (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K}\n    (hf : ξ f = none) : ξ f⁻¹ = some 0",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f∈K$, if $ξ(f)=∞$, then $ξ(f^{-1})=0$ as a finite value. There is no separately stated nonzero premise on $f$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对每个 $f∈K$，若 $ξ(f)=∞$，则 $ξ(f^{-1})$ 为有限值 $0$。声明没有另外列出 $f$ 非零的前提。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。任意の $f∈K$ に対し、$ξ(f)=∞$ ならば、$ξ(f^{-1})$ は有限値 $0$ である。$f$ が非零であるという別個の仮定は記載されていない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limitSubring",
+      "source_lines": {
+        "start": 115,
+        "end": 134
+      },
+      "signature": "def limitSubring (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) : ValuationSubring K where\n  carrier",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. The definition $O_{ξ,h}=\\operatorname{limitSubring}(h)$ constructs a valuation subring of $K$ whose underlying set is exactly $\\{f∈K:ξ(f)≠∞\\}$. Its supplied structure includes closure under addition, multiplication and negation, membership of $0$ and $1$, and, for every $f∈K$, membership of $f$ or of $f^{-1}$. The definition takes the full pointwise convergence hypothesis $h$, with its sequence $x$ and function $ξ$, as input; it is not a construction asserted for arbitrary functions $ξ$ without that hypothesis. The membership criterion is only that the value is finite, so it includes a finite value equal to zero.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。定义 $O_{ξ,h}=\\operatorname{limitSubring}(h)$ 构造 $K$ 的一个赋值子环，其底集恰为 $\\{f∈K:ξ(f)≠∞\\}$。所给结构包括对加法、乘法、取负封闭，包含 $0$ 和 $1$，以及对每个 $f∈K$，$f$ 或 $f^{-1}$ 至少有一个属于该子环。定义以完整的逐点收敛条件 $h$，连同其序列 $x$ 与函数 $ξ$ 为输入；没有断言可在不满足该条件的任意函数 $ξ$ 上作此构造。成员条件仅要求取值有限，因此包括有限值为零的情形。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。定義 $O_{ξ,h}=\\operatorname{limitSubring}(h)$ は、台集合がちょうど $\\{f∈K:ξ(f)≠∞\\}$ である $K$ の付値部分環を構成する。与えられる構造には、加法・乗法・負元による閉性、$0$ と $1$ の所属、および任意の $f∈K$ に対して $f$ または $f^{-1}$ が所属することが含まれる。この定義は点ごとの収束という仮定 $h$ を、その列 $x$ と写像 $ξ$ とともに入力として受け取る。この仮定を満たさない任意の $ξ$ に対する構成を主張するものではない。所属条件は値が有限であることだけなので、有限値が零である場合も含む。"
+      },
+      "proof_notes": "Definition by a structure expression; closure and the valuation-subring alternative are supplied by proof fields in the source. Source-inferred dependence on h, x, ξ is retained. No elaboration, proof acceptance, or axiom audit was performed."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.mem_limitSubring",
+      "source_lines": {
+        "start": 136,
+        "end": 137
+      },
+      "signature": "theorem mem_limitSubring (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K} :\n    f ∈ limitSubring h ↔ ξ f ≠ none",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. Let $O_{ξ,h}$ denote the valuation subring constructed with underlying set $\\{t∈K:ξ(t)≠∞\\}$ and with closure under addition, multiplication, negation, membership of $0,1$, and the alternative $t∈O_{ξ,h}$ or $t^{-1}∈O_{ξ,h}$ for every $t∈K$. For every $f∈K$, $f∈O_{ξ,h}$ if and only if $ξ(f)≠∞$. Finite zero values satisfy this membership condition.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。记 $O_{ξ,h}$ 为所构造的赋值子环，其底集为 $\\{t∈K:ξ(t)≠∞\\}$，具有对加法、乘法、取负封闭，包含 $0,1$，以及对每个 $t∈K$，$t∈O_{ξ,h}$ 或 $t^{-1}∈O_{ξ,h}$ 的结构。对每个 $f∈K$，$f∈O_{ξ,h}$ 当且仅当 $ξ(f)≠∞$。有限的零值也满足这一成员条件。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。$O_{ξ,h}$ を、台集合が $\\{t∈K:ξ(t)≠∞\\}$ であり、加法・乗法・負元による閉性、$0,1$ の所属、および任意の $t∈K$ に対する $t∈O_{ξ,h}$ または $t^{-1}∈O_{ξ,h}$ という構造を備えた、構成された付値部分環とする。任意の $f∈K$ に対し、$f∈O_{ξ,h}$ と $ξ(f)≠∞$ は同値である。有限の零値もこの所属条件を満たす。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    },
+    {
+      "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "fileSHA": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.eventually_abs_log_le",
+      "source_lines": {
+        "start": 141,
+        "end": 195
+      },
+      "signature": "theorem eventually_abs_log_le (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K} {β : E}\n    (hf : ξ f = some β) (hβ0 : β ≠ 0) (hβ1 : β ≠ 1) :\n    ∃ C : ℝ, ∀ᶠ n in atTop, ∃ α, (x n).val f = some α ∧\n      |Real.log ‖α‖| ≤ C ∧ |Real.log ‖α - 1‖| ≤ C ∧ α ≠ 0 ∧ α ≠ 1",
+      "static_section_context": {
+        "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+        "open": [
+          "Filter",
+          "Topology"
+        ],
+        "autoImplicit": false,
+        "section": "Limit",
+        "additional_section_variables": "{x : ℕ → EPlace K E} {ξ : K → Option E}"
+      },
+      "effective_parameters_source_inferred": "{K : Type*} [Field K] {E : Type*} [NormedField E] {x : ℕ → EPlace K E} {ξ : K → Option E}, followed by the binders displayed in the signature",
+      "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f∈K$ and $β∈E$, if $ξ(f)=β$ is finite, $β≠0$ and $β≠1$, then there exists a real constant $C$ such that there is $N∈ℕ$ with the following property: for every $n≥N$, there exists $α∈E$ such that $v_{x_n}(f)=α$ is finite, $|\\log ‖α‖|≤C$, $|\\log ‖α-1‖|≤C$, $α≠0$ and $α≠1$. Both logarithms are the real natural logarithm of the indicated real norms. The same $C$ bounds both expressions for all these $n$, while $α$ is chosen after $n$. The statement does not separately require $C>0$ or prescribe its value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对每个 $f∈K$ 和 $β∈E$，若 $ξ(f)=β$ 为有限值，且 $β≠0$、$β≠1$，则存在实常数 $C$，并存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足：$v_{x_n}(f)=α$ 为有限值，$|\\log ‖α‖|≤C$，$|\\log ‖α-1‖|≤C$，$α≠0$，且 $α≠1$。两个对数都是所示实范数的实自然对数。同一个 $C$ 同时约束所有这些 $n$ 的两个表达式，而 $α$ 在 $n$ 之后选择。声明没有另外要求 $C>0$，也没有规定 $C$ 的数值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。任意の $f∈K$ と $β∈E$ に対し、$ξ(f)=β$ が有限値で、$β≠0$ かつ $β≠1$ ならば、実定数 $C$ が存在し、さらに $N∈ℕ$ が存在して、すべての $n≥N$ に対し $α∈E$ が存在し、$v_{x_n}(f)=α$ が有限値で、$|\\log ‖α‖|≤C$、$|\\log ‖α-1‖|≤C$、$α≠0$、$α≠1$ が成り立つ。両対数は、記載された実数値のノルムに対する実自然対数である。同じ $C$ が、これらすべての $n$ に対し両方の式を抑え、$α$ は $n$ の後で選ばれる。主張は別途 $C>0$ を要求せず、その値も指定しない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked."
+    }
+  ]
+}

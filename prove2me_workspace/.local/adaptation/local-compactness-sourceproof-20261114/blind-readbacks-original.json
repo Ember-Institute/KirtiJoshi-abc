@@ -1,0 +1,1371 @@
+{
+  "independent_blind_packets": [
+    "blind-readbacks-generic-a.json",
+    "blind-readbacks-generic-b.json",
+    "blind-readbacks-bridge.json"
+  ],
+  "normalization": "Field-name metadata only; statements copied verbatim",
+  "declarations": [
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_strictMono_eq",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 34,
+        "end_line": 39
+      },
+      "statements": {
+        "en": "For every finite type $α$ and every function $f:ℕ→α$, there exist $c∈α$ and a strictly increasing map $φ:ℕ→ℕ$ such that $f(φ(n))=c$ for every $n∈ℕ$; strictly increasing means $m<n$ implies $φ(m)<φ(n)$. The finite type is not separately assumed nonempty: the given function already supplies its values.",
+        "zh_Hans": "对每个有限类型 $α$ 以及每个函数 $f:ℕ→α$，存在 $c∈α$ 和严格递增映射 $φ:ℕ→ℕ$，使得对所有 $n∈ℕ$ 都有 $f(φ(n))=c$；严格递增指 $m<n$ 蕴含 $φ(m)<φ(n)$。未另行假设该有限类型非空；所给函数已经提供其中的元素。",
+        "ja": "任意の有限な型 $α$ と関数 $f:ℕ→α$ に対し、$c∈α$ および狭義単調増加写像 $φ:ℕ→ℕ$ が存在し、すべての $n∈ℕ$ について $f(φ(n))=c$ である。狭義単調増加とは $m<n$ ならば $φ(m)<φ(n)$ という意味である。有限な型の非空性は別には仮定されず、与えられた関数がその元を与える。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem exists_strictMono_eq {α : Type*} [Finite α] (f : ℕ → α) :\n    ∃ (c : α) (φ : ℕ → ℕ), StrictMono φ ∧ ∀ n, f (φ n) = c",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_strictMono_forall_of_infinite",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 42,
+        "end_line": 44
+      },
+      "statements": {
+        "en": "For every predicate $P$ on $ℕ$, if the set $\\{n∈ℕ:P(n)\\}$ is infinite, there exists a strictly increasing map $φ:ℕ→ℕ$ such that $P(φ(n))$ holds for every $n∈ℕ$.",
+        "zh_Hans": "对自然数上的每个谓词 $P$，若集合 $\\{n∈ℕ:P(n)\\}$ 是无限集，则存在严格递增映射 $φ:ℕ→ℕ$，使得对每个 $n∈ℕ$ 都有 $P(φ(n))$。",
+        "ja": "自然数上の任意の述語 $P$ に対し、集合 $\\{n∈ℕ:P(n)\\}$ が無限ならば、狭義単調増加写像 $φ:ℕ→ℕ$ が存在し、すべての $n∈ℕ$ について $P(φ(n))$ が成り立つ。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem exists_strictMono_forall_of_infinite {P : ℕ → Prop} (h : (setOf P).Infinite) :\n    ∃ φ : ℕ → ℕ, StrictMono φ ∧ ∀ n, P (φ n)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_strictMono_eq_of_le",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 47,
+        "end_line": 51
+      },
+      "statements": {
+        "en": "For every function $f:ℕ→ℕ$ and every $d∈ℕ$, if $f(n)≤d$ for every $n∈ℕ$, there exist $c∈ℕ$ and a strictly increasing map $φ:ℕ→ℕ$ such that $f(φ(n))=c$ for every $n∈ℕ$. The value $d=0$ is allowed; the conclusion does not explicitly include a separate bound on $c$.",
+        "zh_Hans": "对每个函数 $f:ℕ→ℕ$ 和每个 $d∈ℕ$，若对所有 $n∈ℕ$ 都有 $f(n)≤d$，则存在 $c∈ℕ$ 和严格递增映射 $φ:ℕ→ℕ$，使得对所有 $n∈ℕ$ 都有 $f(φ(n))=c$。允许 $d=0$；结论没有单独列出 $c$ 的上界。",
+        "ja": "任意の関数 $f:ℕ→ℕ$ と $d∈ℕ$ に対し、すべての $n∈ℕ$ について $f(n)≤d$ ならば、$c∈ℕ$ と狭義単調増加写像 $φ:ℕ→ℕ$ が存在し、すべての $n∈ℕ$ について $f(φ(n))=c$ である。$d=0$ も許され、結論には $c$ の上界が別の条件としては記されていない。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem exists_strictMono_eq_of_le {f : ℕ → ℕ} {d : ℕ} (hf : ∀ n, f n ≤ d) :\n    ∃ (c : ℕ) (φ : ℕ → ℕ), StrictMono φ ∧ ∀ n, f (φ n) = c",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.tendsto_zero_of_pow_le",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 54,
+        "end_line": 67
+      },
+      "statements": {
+        "en": "For real sequences $t,ε:ℕ→ℝ$ and a natural number $c≠0$, if $0≤t(n)$ and $t(n)^c≤ε(n)$ for every $n∈ℕ$, and $ε(n)→0$ as $n→∞$, then $t(n)→0$ as $n→∞$. No separate nonnegativity hypothesis on $ε$ is supplied.",
+        "zh_Hans": "对实数序列 $t,ε:ℕ→ℝ$ 和满足 $c≠0$ 的自然数 $c$，若对每个 $n∈ℕ$ 都有 $0≤t(n)$ 与 $t(n)^c≤ε(n)$，且当 $n→∞$ 时 $ε(n)→0$，则当 $n→∞$ 时 $t(n)→0$。没有另行给出 $ε$ 非负的假设。",
+        "ja": "実数列 $t,ε:ℕ→ℝ$ と $c≠0$ を満たす自然数 $c$ に対し、すべての $n∈ℕ$ について $0≤t(n)$ および $t(n)^c≤ε(n)$ であり、$n→∞$ のとき $ε(n)→0$ ならば、$t(n)→0$ である。$ε$ の非負性は独立した仮定にはなっていない。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem tendsto_zero_of_pow_le {t ε : ℕ → ℝ} {c : ℕ} (hc : c ≠ 0) (ht : ∀ n, 0 ≤ t n)\n    (hle : ∀ n, t n ^ c ≤ ε n) (hε : Tendsto ε atTop (𝓝 0)) : Tendsto t atTop (𝓝 0)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.norm_eq_spectralNorm",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 74,
+        "end_line": 75
+      },
+      "statements": {
+        "en": "For every prime natural number $p$ and every $x$ in the algebraic closure $\\overline{ℚ_p}$ represented by $\\mathrm{PadicAlgCl}(p)$, the norm $‖x‖$ equals the spectral norm of $x$ for the extension $\\overline{ℚ_p}/ℚ_p$.",
+        "zh_Hans": "对每个素自然数 $p$ 和由 $\\mathrm{PadicAlgCl}(p)$ 表示的代数闭包 $\\overline{ℚ_p}$ 中的每个元素 $x$，其范数 $‖x‖$ 等于扩张 $\\overline{ℚ_p}/ℚ_p$ 中 $x$ 的谱范数。",
+        "ja": "任意の素数である自然数 $p$ と、$\\mathrm{PadicAlgCl}(p)$ で表される代数閉包 $\\overline{ℚ_p}$ の任意の元 $x$ に対し、ノルム $‖x‖$ は拡大 $\\overline{ℚ_p}/ℚ_p$ に関する $x$ のスペクトルノルムに等しい。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem PadicAlgCl.norm_eq_spectralNorm (x : PadicAlgCl p) :\n    ‖x‖ = spectralNorm ℚ_[p] (PadicAlgCl p) x := rfl",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.norm_coeff_minpoly_le_one",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 79,
+        "end_line": 83
+      },
+      "statements": {
+        "en": "For every prime natural number $p$, every $x∈\\overline{ℚ_p}$ with $‖x‖≤1$, and every $i∈ℕ$, the coefficient of $X^i$ in the minimal polynomial of $x$ over $ℚ_p$ has norm at most $1$. The quantifier includes $i=0$ and indices above the degree, whose coefficients are zero.",
+        "zh_Hans": "对每个素自然数 $p$、每个满足 $‖x‖≤1$ 的 $x∈\\overline{ℚ_p}$ 以及每个 $i∈ℕ$，$x$ 在 $ℚ_p$ 上的最小多项式中 $X^i$ 的系数的范数不超过 $1$。量词包括 $i=0$ 及高于次数的指标，后者的系数为零。",
+        "ja": "任意の素数である自然数 $p$、$‖x‖≤1$ を満たす任意の $x∈\\overline{ℚ_p}$、および任意の $i∈ℕ$ に対し、$x$ の $ℚ_p$ 上の最小多項式における $X^i$ の係数のノルムは $1$ 以下である。$i=0$ と次数を超える添字も含まれ、後者の係数は零である。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem PadicAlgCl.norm_coeff_minpoly_le_one {x : PadicAlgCl p} (hx : ‖x‖ ≤ 1) (i : ℕ) :\n    ‖(minpoly ℚ_[p] x).coeff i‖ ≤ 1",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.monic_eq_sum",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 86,
+        "end_line": 89
+      },
+      "statements": {
+        "en": "For every commutative ring $R$ and every monic polynomial $P∈R[X]$, let $d$ be its natural-number degree and let $a_i$ be its coefficient of $X^i$. Then $P=X^d+∑_{0≤i<d}a_iX^i$, where a coefficient is included as a constant polynomial. The case $d=0$ is included, with an empty sum. No prime or $p$-adic structure is a parameter of this statement.",
+        "zh_Hans": "对每个交换环 $R$ 和每个首一多项式 $P∈R[X]$，记其自然数次数为 $d$，$X^i$ 的系数为 $a_i$，则 $P=X^d+∑_{0≤i<d}a_iX^i$，其中系数作为常数多项式嵌入。包括 $d=0$ 的情形，此时和为空和。本陈述没有素数或 $p$ 进结构参数。",
+        "ja": "任意の可換環 $R$ と任意のモニック多項式 $P∈R[X]$ に対し、その自然数値の次数を $d$、$X^i$ の係数を $a_i$ とすると、$P=X^d+∑_{0≤i<d}a_iX^i$ である。係数は定数多項式として埋め込む。$d=0$ の場合も含み、その和は空和である。この命題に素数や $p$ 進構造のパラメータはない。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem monic_eq_sum {R : Type*} [CommRing R] {P : R[X]} (hP : P.Monic) :\n    P = X ^ P.natDegree + ∑ i : Fin P.natDegree, C (P.coeff i) * X ^ (i : ℕ)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.natDegree_minpoly_inv",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 92,
+        "end_line": 113
+      },
+      "statements": {
+        "en": "For every pair of fields $K,L$ equipped with a $K$-algebra structure on $L$ and every $x∈L$, the natural-number degree of the minimal polynomial of $x^{-1}$ over $K$ equals that of $x$ over $K$. No algebraicity or nonzero hypothesis on $x$ is assumed: inverse at zero is zero, and for nonintegral elements the formal minimal polynomial is the zero polynomial, whose natural-number degree is zero. No prime or $p$-adic assumption is used as a parameter.",
+        "zh_Hans": "对每对域 $K,L$、$L$ 上的每个 $K$ 代数结构以及每个 $x∈L$，$x^{-1}$ 在 $K$ 上的最小多项式的自然数次数等于 $x$ 在 $K$ 上的最小多项式的自然数次数。不假设 $x$ 代数或非零：零的逆元取为零；对非整元素，形式最小多项式为零多项式，其自然数次数为零。本陈述没有素数或 $p$ 进假设参数。",
+        "ja": "任意の二つの体 $K,L$、$L$ 上の $K$ 代数構造、および任意の $x∈L$ に対し、$x^{-1}$ の $K$ 上の最小多項式の自然数値の次数は、$x$ のそれに等しい。$x$ の代数性も非零性も仮定しない。零の逆元は零であり、整でない元の形式的な最小多項式は零多項式で、その自然数値の次数は零である。素数や $p$ 進の仮定はこの命題のパラメータではない。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem natDegree_minpoly_inv {K L : Type*} [Field K] [Field L] [Algebra K L] (x : L) :\n    (minpoly K x⁻¹).natDegree = (minpoly K x).natDegree",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_mem_roots_norm_sub_pow_le",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 117,
+        "end_line": 143
+      },
+      "statements": {
+        "en": "For every algebraically closed normed field $K$, every monic polynomial $G∈K[X]$ of positive natural-number degree $d$, and every $x∈K$, there exists an element $r$ in the multiset of roots of $G$ such that $‖x-r‖^d≤‖G(x)‖$. The field is not assumed complete, and no prime or $p$-adic parameter occurs.",
+        "zh_Hans": "对每个代数闭赋范域 $K$、每个自然数次数 $d>0$ 的首一多项式 $G∈K[X]$ 以及每个 $x∈K$，存在 $G$ 的根的多重集合中的元素 $r$，使得 $‖x-r‖^d≤‖G(x)‖$。不假设该域完备，也没有素数或 $p$ 进参数。",
+        "ja": "任意の代数閉ノルム体 $K$、正の自然数値の次数 $d$ をもつ任意のモニック多項式 $G∈K[X]$、および任意の $x∈K$ に対し、$G$ の根の多重集合に属する元 $r$ が存在し、$‖x-r‖^d≤‖G(x)‖$ である。体の完備性は仮定せず、素数や $p$ 進のパラメータもない。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem exists_mem_roots_norm_sub_pow_le {K : Type*} [NormedField K] [IsAlgClosed K]\n    {G : K[X]} (hG : G.Monic) (hdeg : 0 < G.natDegree) (x : K) :\n    ∃ r ∈ G.roots, ‖x - r‖ ^ G.natDegree ≤ ‖G.eval x‖",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.exists_tendsto_of_norm_le_one",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 147,
+        "end_line": 251
+      },
+      "statements": {
+        "en": "For every prime natural number $p$, every $d∈ℕ$, and every sequence $a:ℕ→\\overline{ℚ_p}$, if the minimal polynomial of $a(n)$ over $ℚ_p$ has natural-number degree at most $d$ and $‖a(n)‖≤1$ for every $n∈ℕ$, there exist a strictly increasing map $φ:ℕ→ℕ$ and an element $b∈\\overline{ℚ_p}$ such that $a(φ(n))→b$ as $n→∞$, in the norm topology. The bound $d=0$ is permitted syntactically but cannot satisfy the degree hypothesis for such a sequence.",
+        "zh_Hans": "对每个素自然数 $p$、每个 $d∈ℕ$ 和每个序列 $a:ℕ→\\overline{ℚ_p}$，若对每个 $n∈ℕ$，$a(n)$ 在 $ℚ_p$ 上的最小多项式的自然数次数不超过 $d$ 且 $‖a(n)‖≤1$，则存在严格递增映射 $φ:ℕ→ℕ$ 和元素 $b∈\\overline{ℚ_p}$，使得当 $n→∞$ 时，$a(φ(n))$ 在范数拓扑下趋于 $b$。语法上允许 $d=0$，但这样的序列不能满足该次数前提。",
+        "ja": "任意の素数である自然数 $p$、$d∈ℕ$、および列 $a:ℕ→\\overline{ℚ_p}$ に対し、すべての $n∈ℕ$ について $a(n)$ の $ℚ_p$ 上の最小多項式の自然数値の次数が $d$ 以下であり、かつ $‖a(n)‖≤1$ ならば、狭義単調増加写像 $φ:ℕ→ℕ$ と元 $b∈\\overline{ℚ_p}$ が存在し、$n→∞$ のとき $a(φ(n))$ はノルム位相で $b$ に収束する。構文上は $d=0$ も許されるが、その場合、このような列は次数の仮定を満たせない。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem PadicAlgCl.exists_tendsto_of_norm_le_one (d : ℕ) (a : ℕ → PadicAlgCl p)\n    (hdeg : ∀ n, (minpoly ℚ_[p] (a n)).natDegree ≤ d) (hnorm : ∀ n, ‖a n‖ ≤ 1) :\n    ∃ φ : ℕ → ℕ, StrictMono φ ∧ ∃ b, Tendsto (a ∘ φ) atTop (𝓝 b)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.exists_tendsto_or_tendsto_norm_atTop",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 255,
+        "end_line": 305
+      },
+      "statements": {
+        "en": "For every prime natural number $p$, every $d∈ℕ$, and every sequence $a:ℕ→\\overline{ℚ_p}$ whose terms all have minimal-polynomial natural-number degree at most $d$ over $ℚ_p$, there exists a strictly increasing map $φ:ℕ→ℕ$ such that either there is $b∈\\overline{ℚ_p}$ with $a(φ(n))→b$, or $‖a(φ(n))‖→+∞$, as $n→∞$. The second alternative means that for every real $R$, eventually $R<‖a(φ(n))‖$; it asserts more than unboundedness. The degree hypothesis is impossible when $d=0$.",
+        "zh_Hans": "对每个素自然数 $p$、每个 $d∈ℕ$ 以及每个序列 $a:ℕ→\\overline{ℚ_p}$，若其所有项在 $ℚ_p$ 上的最小多项式的自然数次数都不超过 $d$，则存在严格递增映射 $φ:ℕ→ℕ$，使得或者存在 $b∈\\overline{ℚ_p}$ 满足 $a(φ(n))→b$，或者 $‖a(φ(n))‖→+∞$，其中均令 $n→∞$。后一条件指对每个实数 $R$，最终有 $R<‖a(φ(n))‖$，其强度高于无界。当 $d=0$ 时，次数前提无法满足。",
+        "ja": "任意の素数である自然数 $p$、$d∈ℕ$、および各項の $ℚ_p$ 上の最小多項式の自然数値の次数が $d$ 以下である列 $a:ℕ→\\overline{ℚ_p}$ に対し、狭義単調増加写像 $φ:ℕ→ℕ$ が存在し、$n→∞$ のとき、ある $b∈\\overline{ℚ_p}$ に対して $a(φ(n))→b$ であるか、または $‖a(φ(n))‖→+∞$ である。後者は、任意の実数 $R$ に対して最終的に $R<‖a(φ(n))‖$ となることを意味し、単なる非有界性より強い。$d=0$ では次数の仮定は満たせない。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem PadicAlgCl.exists_tendsto_or_tendsto_norm_atTop (d : ℕ) (a : ℕ → PadicAlgCl p)\n    (hdeg : ∀ n, (minpoly ℚ_[p] (a n)).natDegree ≤ d) :\n    ∃ φ : ℕ → ℕ, StrictMono φ ∧\n      ((∃ b, Tendsto (a ∘ φ) atTop (𝓝 b)) ∨ Tendsto (fun n => ‖a (φ n)‖) atTop atTop)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_tendsto_or_tendsto_norm_atTop",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "source_span": {
+        "start_line": 311,
+        "end_line": 332
+      },
+      "statements": {
+        "en": "For every normed field $K$ whose metric space is proper (every closed ball is compact), and every sequence $a:ℕ→K$, there exists a strictly increasing map $φ:ℕ→ℕ$ such that either there is $b∈K$ with $a(φ(n))→b$, or $‖a(φ(n))‖→+∞$, as $n→∞$. In the second alternative, for every real $R$ one eventually has $R<‖a(φ(n))‖$.",
+        "zh_Hans": "对每个闭球均紧的赋范域 $K$ 以及每个序列 $a:ℕ→K$，存在严格递增映射 $φ:ℕ→ℕ$，使得或者存在 $b∈K$ 满足 $a(φ(n))→b$，或者 $‖a(φ(n))‖→+∞$，其中均令 $n→∞$。后一条件指对每个实数 $R$，最终有 $R<‖a(φ(n))‖$。",
+        "ja": "距離空間が固有である（すべての閉球がコンパクトである）任意のノルム体 $K$ と任意の列 $a:ℕ→K$ に対し、狭義単調増加写像 $φ:ℕ→ℕ$ が存在し、$n→∞$ のとき、ある $b∈K$ に対して $a(φ(n))→b$ であるか、または $‖a(φ(n))‖→+∞$ である。後者では任意の実数 $R$ に対して最終的に $R<‖a(φ(n))‖$ である。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem exists_tendsto_or_tendsto_norm_atTop {K : Type*} [NormedField K] [ProperSpace K]\n    (a : ℕ → K) :\n    ∃ φ : ℕ → ℕ, StrictMono φ ∧\n      ((∃ b, Tendsto (a ∘ φ) atTop (𝓝 b)) ∨ Tendsto (fun n => ‖a (φ n)‖) atTop atTop)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "source_span": {
+        "start_line": 29,
+        "end_line": 31
+      },
+      "statements": {
+        "en": "For a normed field $E$ and a sequence $a:ℕ→E_∞$, the definition $\\mathrm{TendstoP1}(a,b)$ assigns to each $b∈E_∞$ the proposition $C(a,b)$. Here $E_∞$ is the disjoint union of $E$ with a symbol $∞$, represented by $\\mathrm{Option}(E)$; write $[x]$ for a finite value. For a sequence $s:ℕ→E_∞$, $C(s,[β])$ means that for every real $ε>0$, eventually there exists $α∈E$ with $s(n)=[α]$ and $‖α-β‖<ε$; $C(s,∞)$ means that for every $R∈ℝ$, eventually every $α∈E$ with $s(n)=[α]$ satisfies $R<‖α‖$. An infinity term imposes no condition in the latter case, so an all-infinity sequence satisfies it.",
+        "zh_Hans": "给定赋范域 $E$ 和序列 $a:ℕ→E_∞$，定义 $\\mathrm{TendstoP1}(a,b)$ 给每个 $b∈E_∞$ 赋予命题 $C(a,b)$。 这里 $E_∞$ 是 $E$ 与符号 $∞$ 的不交并，由 $\\mathrm{Option}(E)$ 表示；用 $[x]$ 表示有限值。对序列 $s:ℕ→E_∞$，$C(s,[β])$ 指对每个实数 $ε>0$，最终存在 $α∈E$ 使 $s(n)=[α]$ 且 $‖α-β‖<ε$；$C(s,∞)$ 指对每个 $R∈ℝ$，最终每个满足 $s(n)=[α]$ 的 $α∈E$ 都满足 $R<‖α‖$。后一情形不对无穷值项施加条件，因此恒为无穷值的序列满足它。",
+        "ja": "ノルム体 $E$ と列 $a:ℕ→E_∞$ に対し、定義 $\\mathrm{TendstoP1}(a,b)$ は各 $b∈E_∞$ に命題 $C(a,b)$ を対応させる。 ここで $E_∞$ は $E$ と記号 $∞$ の直和集合であり、$\\mathrm{Option}(E)$ で表す。有限値を $[x]$ と書く。列 $s:ℕ→E_∞$ に対し、$C(s,[β])$ とは、任意の実数 $ε>0$ について、最終的にある $α∈E$ が存在して $s(n)=[α]$ かつ $‖α-β‖<ε$ となることである。$C(s,∞)$ とは、任意の $R∈ℝ$ について、最終的に $s(n)=[α]$ を満たすすべての $α∈E$ に対して $R<‖α‖$ となることである。後者の場合、無限値の項には条件を課さないので、すべての項が無限値の列もこれを満たす。"
+      },
+      "proof_notes": [
+        "This is a two-clause definition, not a proof. The generalized E and NormedField binders are inferred from source context without elaboration; only this normed-field instance is used to supply the norm."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "def TendstoP1 (a : ℕ → Option E) : Option E → Prop",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1.comp_of_tendsto",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "source_span": {
+        "start_line": 33,
+        "end_line": 37
+      },
+      "statements": {
+        "en": "For every normed field $E$, sequence $a:ℕ→E_∞$, value $b∈E_∞$, and map $φ:ℕ→ℕ$, if $C(a,b)$ and $φ(n)→+∞$ as $n→∞$, then $C(a∘φ,b)$. No monotonicity of $φ$ is required. Here $E_∞$ is the disjoint union of $E$ with a symbol $∞$, represented by $\\mathrm{Option}(E)$; write $[x]$ for a finite value. For a sequence $s:ℕ→E_∞$, $C(s,[β])$ means that for every real $ε>0$, eventually there exists $α∈E$ with $s(n)=[α]$ and $‖α-β‖<ε$; $C(s,∞)$ means that for every $R∈ℝ$, eventually every $α∈E$ with $s(n)=[α]$ satisfies $R<‖α‖$. An infinity term imposes no condition in the latter case, so an all-infinity sequence satisfies it.",
+        "zh_Hans": "对每个赋范域 $E$、序列 $a:ℕ→E_∞$、值 $b∈E_∞$ 和映射 $φ:ℕ→ℕ$，若 $C(a,b)$，且当 $n→∞$ 时 $φ(n)→+∞$，则 $C(a∘φ,b)$。不要求 $φ$ 单调。 这里 $E_∞$ 是 $E$ 与符号 $∞$ 的不交并，由 $\\mathrm{Option}(E)$ 表示；用 $[x]$ 表示有限值。对序列 $s:ℕ→E_∞$，$C(s,[β])$ 指对每个实数 $ε>0$，最终存在 $α∈E$ 使 $s(n)=[α]$ 且 $‖α-β‖<ε$；$C(s,∞)$ 指对每个 $R∈ℝ$，最终每个满足 $s(n)=[α]$ 的 $α∈E$ 都满足 $R<‖α‖$。后一情形不对无穷值项施加条件，因此恒为无穷值的序列满足它。",
+        "ja": "任意のノルム体 $E$、列 $a:ℕ→E_∞$、値 $b∈E_∞$、写像 $φ:ℕ→ℕ$ に対し、$C(a,b)$ であり、$n→∞$ のとき $φ(n)→+∞$ ならば、$C(a∘φ,b)$ である。$φ$ の単調性は要求しない。 ここで $E_∞$ は $E$ と記号 $∞$ の直和集合であり、$\\mathrm{Option}(E)$ で表す。有限値を $[x]$ と書く。列 $s:ℕ→E_∞$ に対し、$C(s,[β])$ とは、任意の実数 $ε>0$ について、最終的にある $α∈E$ が存在して $s(n)=[α]$ かつ $‖α-β‖<ε$ となることである。$C(s,∞)$ とは、任意の $R∈ℝ$ について、最終的に $s(n)=[α]$ を満たすすべての $α∈E$ に対して $R<‖α‖$ となることである。後者の場合、無限値の項には条件を課さないので、すべての項が無限値の列もこれを満たす。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem TendstoP1.comp_of_tendsto {a : ℕ → Option E} {b : Option E} (h : TendstoP1 a b)\n    {φ : ℕ → ℕ} (hφ : Tendsto φ atTop atTop) : TendstoP1 (a ∘ φ) b",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1.congr_eventually",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "source_span": {
+        "start_line": 40,
+        "end_line": 51
+      },
+      "statements": {
+        "en": "For every normed field $E$, sequences $a,a′:ℕ→E_∞$, and $b∈E_∞$, if $C(a,b)$ and $a(n)=a′(n)$ for all sufficiently large $n$, then $C(a′,b)$. Here $E_∞$ is the disjoint union of $E$ with a symbol $∞$, represented by $\\mathrm{Option}(E)$; write $[x]$ for a finite value. For a sequence $s:ℕ→E_∞$, $C(s,[β])$ means that for every real $ε>0$, eventually there exists $α∈E$ with $s(n)=[α]$ and $‖α-β‖<ε$; $C(s,∞)$ means that for every $R∈ℝ$, eventually every $α∈E$ with $s(n)=[α]$ satisfies $R<‖α‖$. An infinity term imposes no condition in the latter case, so an all-infinity sequence satisfies it.",
+        "zh_Hans": "对每个赋范域 $E$、序列 $a,a′:ℕ→E_∞$ 和 $b∈E_∞$，若 $C(a,b)$，且对所有充分大的 $n$ 都有 $a(n)=a′(n)$，则 $C(a′,b)$。 这里 $E_∞$ 是 $E$ 与符号 $∞$ 的不交并，由 $\\mathrm{Option}(E)$ 表示；用 $[x]$ 表示有限值。对序列 $s:ℕ→E_∞$，$C(s,[β])$ 指对每个实数 $ε>0$，最终存在 $α∈E$ 使 $s(n)=[α]$ 且 $‖α-β‖<ε$；$C(s,∞)$ 指对每个 $R∈ℝ$，最终每个满足 $s(n)=[α]$ 的 $α∈E$ 都满足 $R<‖α‖$。后一情形不对无穷值项施加条件，因此恒为无穷值的序列满足它。",
+        "ja": "任意のノルム体 $E$、列 $a,a′:ℕ→E_∞$、および $b∈E_∞$ に対し、$C(a,b)$ であり、十分大きいすべての $n$ について $a(n)=a′(n)$ ならば、$C(a′,b)$ である。 ここで $E_∞$ は $E$ と記号 $∞$ の直和集合であり、$\\mathrm{Option}(E)$ で表す。有限値を $[x]$ と書く。列 $s:ℕ→E_∞$ に対し、$C(s,[β])$ とは、任意の実数 $ε>0$ について、最終的にある $α∈E$ が存在して $s(n)=[α]$ かつ $‖α-β‖<ε$ となることである。$C(s,∞)$ とは、任意の $R∈ℝ$ について、最終的に $s(n)=[α]$ を満たすすべての $α∈E$ に対して $R<‖α‖$ となることである。後者の場合、無限値の項には条件を課さないので、すべての項が無限値の列もこれを満たす。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem TendstoP1.congr_eventually {a a' : ℕ → Option E} {b : Option E} (h : TendstoP1 a b)\n    (h' : ∀ᶠ n in atTop, a n = a' n) : TendstoP1 a' b",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1.unique",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "source_span": {
+        "start_line": 54,
+        "end_line": 95
+      },
+      "statements": {
+        "en": "For every normed field $E$, sequence $a:ℕ→E_∞$, and values $b,b′∈E_∞$, if both $C(a,b)$ and $C(a,b′)$ hold, then $b=b′$. This is uniqueness conditional on the two convergence hypotheses, not an existence assertion. Here $E_∞$ is the disjoint union of $E$ with a symbol $∞$, represented by $\\mathrm{Option}(E)$; write $[x]$ for a finite value. For a sequence $s:ℕ→E_∞$, $C(s,[β])$ means that for every real $ε>0$, eventually there exists $α∈E$ with $s(n)=[α]$ and $‖α-β‖<ε$; $C(s,∞)$ means that for every $R∈ℝ$, eventually every $α∈E$ with $s(n)=[α]$ satisfies $R<‖α‖$. An infinity term imposes no condition in the latter case, so an all-infinity sequence satisfies it.",
+        "zh_Hans": "对每个赋范域 $E$、序列 $a:ℕ→E_∞$ 和值 $b,b′∈E_∞$，若 $C(a,b)$ 与 $C(a,b′)$ 都成立，则 $b=b′$。这是以两项收敛前提为条件的唯一性陈述，不断言极限存在。 这里 $E_∞$ 是 $E$ 与符号 $∞$ 的不交并，由 $\\mathrm{Option}(E)$ 表示；用 $[x]$ 表示有限值。对序列 $s:ℕ→E_∞$，$C(s,[β])$ 指对每个实数 $ε>0$，最终存在 $α∈E$ 使 $s(n)=[α]$ 且 $‖α-β‖<ε$；$C(s,∞)$ 指对每个 $R∈ℝ$，最终每个满足 $s(n)=[α]$ 的 $α∈E$ 都满足 $R<‖α‖$。后一情形不对无穷值项施加条件，因此恒为无穷值的序列满足它。",
+        "ja": "任意のノルム体 $E$、列 $a:ℕ→E_∞$、および値 $b,b′∈E_∞$ に対し、$C(a,b)$ と $C(a,b′)$ の両方が成り立つならば、$b=b′$ である。これは二つの収束を仮定した一意性であり、極限の存在を主張するものではない。 ここで $E_∞$ は $E$ と記号 $∞$ の直和集合であり、$\\mathrm{Option}(E)$ で表す。有限値を $[x]$ と書く。列 $s:ℕ→E_∞$ に対し、$C(s,[β])$ とは、任意の実数 $ε>0$ について、最終的にある $α∈E$ が存在して $s(n)=[α]$ かつ $‖α-β‖<ε$ となることである。$C(s,∞)$ とは、任意の $R∈ℝ$ について、最終的に $s(n)=[α]$ を満たすすべての $α∈E$ に対して $R<‖α‖$ となることである。後者の場合、無限値の項には条件を課さないので、すべての項が無限値の列もこれを満たす。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem TendstoP1.unique {a : ℕ → Option E} {b b' : Option E} (h : TendstoP1 a b)\n    (h' : TendstoP1 a b') : b = b'",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.tendstoP1_some_iff",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "source_span": {
+        "start_line": 98,
+        "end_line": 110
+      },
+      "statements": {
+        "en": "For every normed field $E$, sequence $a:ℕ→E$, and $β∈E$, $C(n↦[a(n)],[β])$ holds if and only if $a(n)→β$ in the norm topology as $n→∞$. Here $E_∞$ is the disjoint union of $E$ with a symbol $∞$, represented by $\\mathrm{Option}(E)$; write $[x]$ for a finite value. For a sequence $s:ℕ→E_∞$, $C(s,[β])$ means that for every real $ε>0$, eventually there exists $α∈E$ with $s(n)=[α]$ and $‖α-β‖<ε$; $C(s,∞)$ means that for every $R∈ℝ$, eventually every $α∈E$ with $s(n)=[α]$ satisfies $R<‖α‖$. An infinity term imposes no condition in the latter case, so an all-infinity sequence satisfies it.",
+        "zh_Hans": "对每个赋范域 $E$、序列 $a:ℕ→E$ 和 $β∈E$，$C(n↦[a(n)],[β])$ 成立，当且仅当当 $n→∞$ 时 $a(n)$ 在范数拓扑下趋于 $β$。 这里 $E_∞$ 是 $E$ 与符号 $∞$ 的不交并，由 $\\mathrm{Option}(E)$ 表示；用 $[x]$ 表示有限值。对序列 $s:ℕ→E_∞$，$C(s,[β])$ 指对每个实数 $ε>0$，最终存在 $α∈E$ 使 $s(n)=[α]$ 且 $‖α-β‖<ε$；$C(s,∞)$ 指对每个 $R∈ℝ$，最终每个满足 $s(n)=[α]$ 的 $α∈E$ 都满足 $R<‖α‖$。后一情形不对无穷值项施加条件，因此恒为无穷值的序列满足它。",
+        "ja": "任意のノルム体 $E$、列 $a:ℕ→E$、および $β∈E$ に対し、$C(n↦[a(n)],[β])$ であることと、$n→∞$ のとき $a(n)$ がノルム位相で $β$ に収束することは同値である。 ここで $E_∞$ は $E$ と記号 $∞$ の直和集合であり、$\\mathrm{Option}(E)$ で表す。有限値を $[x]$ と書く。列 $s:ℕ→E_∞$ に対し、$C(s,[β])$ とは、任意の実数 $ε>0$ について、最終的にある $α∈E$ が存在して $s(n)=[α]$ かつ $‖α-β‖<ε$ となることである。$C(s,∞)$ とは、任意の $R∈ℝ$ について、最終的に $s(n)=[α]$ を満たすすべての $α∈E$ に対して $R<‖α‖$ となることである。後者の場合、無限値の項には条件を課さないので、すべての項が無限値の列もこれを満たす。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem tendstoP1_some_iff {a : ℕ → E} {β : E} :\n    TendstoP1 (fun n => some (a n)) (some β) ↔ Tendsto a atTop (𝓝 β)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_tendstoP1",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "source_span": {
+        "start_line": 114,
+        "end_line": 151
+      },
+      "statements": {
+        "en": "For every normed field $E$ and every predicate $\\mathrm{Good}:E→\\mathrm{Prop}$, assume the following: for each sequence $u:ℕ→E$ with $\\mathrm{Good}(u(n))$ for every $n$, there is a strictly increasing $ψ:ℕ→ℕ$ such that either some $c∈E$ satisfies $u(ψ(n))→c$, or $‖u(ψ(n))‖→+∞$. For every sequence $a:ℕ→E_∞$ such that, for every $n∈ℕ$ and every $α∈E$, $a(n)=[α]$ implies $\\mathrm{Good}(α)$, there then exist a strictly increasing $φ:ℕ→ℕ$ and $b∈E_∞$ with $C(a∘φ,b)$. The predicate may be empty and infinity terms need not satisfy it; norm divergence here means eventual strict exceedance of every real bound. Here $E_∞$ is the disjoint union of $E$ with a symbol $∞$, represented by $\\mathrm{Option}(E)$; write $[x]$ for a finite value. For a sequence $s:ℕ→E_∞$, $C(s,[β])$ means that for every real $ε>0$, eventually there exists $α∈E$ with $s(n)=[α]$ and $‖α-β‖<ε$; $C(s,∞)$ means that for every $R∈ℝ$, eventually every $α∈E$ with $s(n)=[α]$ satisfies $R<‖α‖$. An infinity term imposes no condition in the latter case, so an all-infinity sequence satisfies it.",
+        "zh_Hans": "对每个赋范域 $E$ 和每个谓词 $\\mathrm{Good}:E→\\mathrm{Prop}$，假设：对每个满足所有 $n$ 都有 $\\mathrm{Good}(u(n))$ 的序列 $u:ℕ→E$，存在严格递增 $ψ:ℕ→ℕ$，使得或者存在 $c∈E$ 满足 $u(ψ(n))→c$，或者 $‖u(ψ(n))‖→+∞$。那么对每个序列 $a:ℕ→E_∞$，若对每个 $n∈ℕ$ 和每个 $α∈E$，由 $a(n)=[α]$ 可推出 $\\mathrm{Good}(α)$，则存在严格递增 $φ:ℕ→ℕ$ 和 $b∈E_∞$，使 $C(a∘φ,b)$。该谓词可以不被任何元素满足，无穷值项无需满足它；此处范数趋于无穷指最终严格超过每个实数界。 这里 $E_∞$ 是 $E$ 与符号 $∞$ 的不交并，由 $\\mathrm{Option}(E)$ 表示；用 $[x]$ 表示有限值。对序列 $s:ℕ→E_∞$，$C(s,[β])$ 指对每个实数 $ε>0$，最终存在 $α∈E$ 使 $s(n)=[α]$ 且 $‖α-β‖<ε$；$C(s,∞)$ 指对每个 $R∈ℝ$，最终每个满足 $s(n)=[α]$ 的 $α∈E$ 都满足 $R<‖α‖$。后一情形不对无穷值项施加条件，因此恒为无穷值的序列满足它。",
+        "ja": "任意のノルム体 $E$ と述語 $\\mathrm{Good}:E→\\mathrm{Prop}$ に対し、次を仮定する。すべての $n$ について $\\mathrm{Good}(u(n))$ を満たす各列 $u:ℕ→E$ に対し、狭義単調増加写像 $ψ:ℕ→ℕ$ が存在して、ある $c∈E$ に対し $u(ψ(n))→c$ であるか、または $‖u(ψ(n))‖→+∞$ である。このとき、任意の列 $a:ℕ→E_∞$ が、すべての $n∈ℕ$ と $α∈E$ に対して $a(n)=[α]$ ならば $\\mathrm{Good}(α)$ という条件を満たせば、狭義単調増加写像 $φ:ℕ→ℕ$ と $b∈E_∞$ が存在して $C(a∘φ,b)$ である。この述語を満たす元がなくてもよく、無限値の項にはその述語を課さない。ノルムの無限大への発散は、任意の実数の上限値を最終的に狭義に超えることを意味する。 ここで $E_∞$ は $E$ と記号 $∞$ の直和集合であり、$\\mathrm{Option}(E)$ で表す。有限値を $[x]$ と書く。列 $s:ℕ→E_∞$ に対し、$C(s,[β])$ とは、任意の実数 $ε>0$ について、最終的にある $α∈E$ が存在して $s(n)=[α]$ かつ $‖α-β‖<ε$ となることである。$C(s,∞)$ とは、任意の $R∈ℝ$ について、最終的に $s(n)=[α]$ を満たすすべての $α∈E$ に対して $R<‖α‖$ となることである。後者の場合、無限値の項には条件を課さないので、すべての項が無限値の列もこれを満たす。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem exists_tendstoP1 {Good : E → Prop}\n    (hcpt : ∀ a : ℕ → E, (∀ n, Good (a n)) → ∃ φ : ℕ → ℕ, StrictMono φ ∧\n      ((∃ b, Tendsto (a ∘ φ) atTop (𝓝 b)) ∨ Tendsto (fun n => ‖a (φ n)‖) atTop atTop))\n    (a : ℕ → Option E) (ha : ∀ n α, a n = some α → Good α) :\n    ∃ φ : ℕ → ℕ, StrictMono φ ∧ ∃ b, TendstoP1 (a ∘ φ) b",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_diagonal",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "source_span": {
+        "start_line": 158,
+        "end_line": 205
+      },
+      "statements": {
+        "en": "Let $P$ be any predicate on pairs consisting of $k∈ℕ$ and a map $ℕ→ℕ$. Assume (i) for every $k∈ℕ$ and every strictly increasing $φ:ℕ→ℕ$, there is a strictly increasing $ψ:ℕ→ℕ$ with $P(k,φ∘ψ)$; and (ii) for every $k∈ℕ$ and all maps $φ,ψ:ℕ→ℕ$, if $P(k,φ)$ and $ψ(n)→+∞$, then $P(k,φ∘ψ)$. There exists a strictly increasing $D:ℕ→ℕ$ such that for each $k∈ℕ$ there is a map $χ:ℕ→ℕ$ with $χ(n)→+∞$ and a map $φ:ℕ→ℕ$ with $P(k,φ)$ such that, for every $n∈ℕ$, $k<n$ implies $D(n)=φ(χ(n))$. The maps $χ,φ$ may depend on $k$; neither is required to be strictly increasing in the conclusion, and the factorization is asserted only for $n>k$. No field or norm assumption occurs.",
+        "zh_Hans": "令 $P$ 是由 $k∈ℕ$ 与映射 $ℕ→ℕ$ 组成的有序对上的任意谓词。假设：（一）对每个 $k∈ℕ$ 和每个严格递增 $φ:ℕ→ℕ$，存在严格递增 $ψ:ℕ→ℕ$ 使 $P(k,φ∘ψ)$；（二）对每个 $k∈ℕ$ 和所有映射 $φ,ψ:ℕ→ℕ$，若 $P(k,φ)$ 且 $ψ(n)→+∞$，则 $P(k,φ∘ψ)$。则存在严格递增 $D:ℕ→ℕ$，使得对每个 $k∈ℕ$，存在满足 $χ(n)→+∞$ 的映射 $χ:ℕ→ℕ$ 和满足 $P(k,φ)$ 的映射 $φ:ℕ→ℕ$，并且对每个 $n∈ℕ$，$k<n$ 蕴含 $D(n)=φ(χ(n))$。映射 $χ,φ$ 可以依赖于 $k$；结论不要求它们严格递增，且仅对 $n>k$ 断言上述分解。本陈述没有域或范数假设。",
+        "ja": "$P$ を、$k∈ℕ$ と写像 $ℕ→ℕ$ の対に関する任意の述語とする。次を仮定する。（一）任意の $k∈ℕ$ と狭義単調増加写像 $φ:ℕ→ℕ$ に対し、狭義単調増加写像 $ψ:ℕ→ℕ$ が存在して $P(k,φ∘ψ)$ である。（二）任意の $k∈ℕ$ とすべての写像 $φ,ψ:ℕ→ℕ$ に対し、$P(k,φ)$ かつ $ψ(n)→+∞$ ならば $P(k,φ∘ψ)$ である。このとき狭義単調増加写像 $D:ℕ→ℕ$ が存在し、各 $k∈ℕ$ に対して、$χ(n)→+∞$ となる写像 $χ:ℕ→ℕ$ と $P(k,φ)$ を満たす写像 $φ:ℕ→ℕ$ が存在し、すべての $n∈ℕ$ について $k<n$ ならば $D(n)=φ(χ(n))$ である。$χ,φ$ は $k$ に依存してよく、結論でこれらの狭義単調増加性は要求されない。また、この分解は $n>k$ に対してのみ主張する。体やノルムの仮定はない。"
+      },
+      "proof_notes": [
+        "The source has a proof term or tactic body. It was read as text only; no elaboration, compilation, axiom audit, or proof acceptance is asserted.",
+        "The explicit premise hmono is not referenced in the displayed proof body. It remains part of the stated theorem signature and is retained in all three readbacks."
+      ],
+      "original_packet": "blind-readbacks-generic-a.json",
+      "original_packet_sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "original_signature": "theorem exists_diagonal {P : ℕ → (ℕ → ℕ) → Prop}\n    (hP : ∀ k (φ : ℕ → ℕ), StrictMono φ → ∃ ψ : ℕ → ℕ, StrictMono ψ ∧ P k (φ ∘ ψ))\n    (hmono : ∀ k (φ : ℕ → ℕ) (ψ : ℕ → ℕ), P k φ → Tendsto ψ atTop atTop → P k (φ ∘ ψ)) :\n    ∃ D : ℕ → ℕ, StrictMono D ∧ ∀ k, ∃ χ : ℕ → ℕ, Tendsto χ atTop atTop ∧\n      ∃ φ : ℕ → ℕ, P k φ ∧ ∀ n, k < n → D n = φ (χ n)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 25,
+        "end_line": 31
+      },
+      "statements": {
+        "en": "For any field $K$ and normed field $E$, the structure $\\operatorname{EPlace}(K,E)$ consists of a valuation subring $O⊆K$ and a unital ring homomorphism $ψ:O→E$, together with the condition that, for every $u∈O$, $ψ(u)=0$ if and only if $u$ is not a unit in $O$. Here a valuation subring means a subring containing $0,1$, closed under addition, multiplication and negation, with $t∈O$ or $t^{-1}∈O$ for every $t∈K$. The inverse is the field inverse, including $0^{-1}=0$. The condition on $ψ$ concerns units in $O$, rather than merely nonzero elements of $K$.",
+        "zh_Hans": "对任意域 $K$ 和赋范域 $E$，结构 $\\operatorname{EPlace}(K,E)$ 由赋值子环 $O⊆K$、保单位元的环同态 $ψ:O→E$，以及以下条件组成：对每个 $u∈O$，$ψ(u)=0$ 当且仅当 $u$ 不是 $O$ 中的可逆元。这里赋值子环是含 $0,1$ 且对加法、乘法、取负封闭的子环，并满足对每个 $t∈K$，$t∈O$ 或 $t^{-1}∈O$。逆元按域的全定义逆运算理解，包括 $0^{-1}=0$。关于 $ψ$ 的条件针对 $O$ 中的可逆元，而不只是 $K$ 中的非零元素。",
+        "ja": "任意の体 $K$ とノルム体 $E$ に対し、構造 $\\operatorname{EPlace}(K,E)$ は付値部分環 $O⊆K$、単位元を保つ環準同型 $ψ:O→E$、およびすべての $u∈O$ に対し $ψ(u)=0$ と $u$ が $O$ の単元でないことが同値となる条件からなる。ここで付値部分環とは、$0,1$ を含み加法・乗法・負元で閉じ、任意の $t∈K$ に対し $t∈O$ または $t^{-1}∈O$ を満たす部分環である。逆元には体の全域的な逆演算を用い、$0^{-1}=0$ とする。$ψ$ の条件で用いる単元は $O$ の単元であり、単に $K$ の非零元を指すものではない。"
+      },
+      "proof_notes": "Structure fields are read as data and a universally quantified proposition; no inhabitance, compilation, or axiom audit is asserted.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "structure EPlace (K E : Type*) [Field K] [NormedField E]",
+      "fields": [
+        {
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.O",
+          "source_lines": {
+            "start": 27,
+            "end": 27
+          },
+          "signature": "O : ValuationSubring K",
+          "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+          "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+          "statements": {
+            "en": "For a field $K$ and normed field $E$, the field $O$ of a structure $x: \\operatorname{EPlace}(K,E)$ is a subring of $K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O$ or $t^{-1}∈O$.",
+            "zh_Hans": "对域 $K$ 和赋范域 $E$，结构 $x:\\operatorname{EPlace}(K,E)$ 的字段 $O$ 是 $K$ 的子环，含 $0,1$，对加法、乘法、取负封闭，并且每个 $t∈K$ 都满足 $t∈O$ 或 $t^{-1}∈O$。",
+            "ja": "体 $K$ とノルム体 $E$ に対し、構造 $x:\\operatorname{EPlace}(K,E)$ の成分 $O$ は、$0,1$ を含み加法・乗法・負元で閉じ、すべての $t∈K$ に対し $t∈O$ または $t^{-1}∈O$ を満たす $K$ の部分環である。"
+          },
+          "static_section_context": {
+            "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+            "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+            "open": [
+              "Filter",
+              "Topology"
+            ],
+            "autoImplicit": false,
+            "section": "EPlace"
+          },
+          "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+          "proof_notes": "Structure field readback only; the field participates in the enclosing structure definition. No generated projection signature or proof acceptance was checked."
+        },
+        {
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.ψ",
+          "source_lines": {
+            "start": 29,
+            "end": 29
+          },
+          "signature": "ψ : O →+* E",
+          "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+          "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+          "statements": {
+            "en": "For a field $K$, normed field $E$, and a structure $x:\\operatorname{EPlace}(K,E)$ with valuation subring $O$ (a subring with $t∈O$ or $t^{-1}∈O$ for every $t∈K$), the field $ψ$ is a unital ring homomorphism from $O$ to $E$.",
+            "zh_Hans": "对域 $K$、赋范域 $E$，以及具有赋值子环 $O$ 的结构 $x:\\operatorname{EPlace}(K,E)$，字段 $ψ$ 是从 $O$ 到 $E$ 的保单位元的环同态；这里 $O$ 是子环，满足每个 $t∈K$ 都有 $t∈O$ 或 $t^{-1}∈O$。",
+            "ja": "体 $K$、ノルム体 $E$、付値部分環 $O$ を持つ構造 $x:\\operatorname{EPlace}(K,E)$ に対し、成分 $ψ$ は $O$ から $E$ への単位元を保つ環準同型である。ここで $O$ は、すべての $t∈K$ に対し $t∈O$ または $t^{-1}∈O$ を満たす部分環である。"
+          },
+          "static_section_context": {
+            "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+            "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+            "open": [
+              "Filter",
+              "Topology"
+            ],
+            "autoImplicit": false,
+            "section": "EPlace"
+          },
+          "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+          "proof_notes": "Structure field readback only; the field participates in the enclosing structure definition. No generated projection signature or proof acceptance was checked."
+        },
+        {
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.eq_zero_iff",
+          "source_lines": {
+            "start": 31,
+            "end": 31
+          },
+          "signature": "eq_zero_iff : ∀ f : O, ψ f = 0 ↔ ¬ IsUnit f",
+          "file": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+          "fileSHA": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+          "statements": {
+            "en": "For a field $K$, normed field $E$, and a structure $x:\\operatorname{EPlace}(K,E)$ with valuation subring $O$ (a subring with $t∈O$ or $t^{-1}∈O$ for every $t∈K$) and unital ring homomorphism $ψ:O→E$, the field eq_zero_iff supplies the following proposition: for every $f∈O$, $ψ(f)=0$ if and only if $f$ is not a unit in $O$.",
+            "zh_Hans": "对域 $K$、赋范域 $E$，以及由赋值子环 $O$ 和保单位元的环同态 $ψ:O→E$ 组成的结构 $x:\\operatorname{EPlace}(K,E)$，字段 eq_zero_iff 提供命题：对每个 $f∈O$，$ψ(f)=0$ 当且仅当 $f$ 不是 $O$ 的可逆元。这里 $O$ 是子环，且每个 $t∈K$ 都有 $t∈O$ 或 $t^{-1}∈O$。",
+            "ja": "体 $K$、ノルム体 $E$、付値部分環 $O$ と単位元を保つ環準同型 $ψ:O→E$ を持つ構造 $x:\\operatorname{EPlace}(K,E)$ に対し、成分 eq_zero_iff は、すべての $f∈O$ について $ψ(f)=0$ と $f$ が $O$ の単元でないことが同値であるという命題を与える。ここで $O$ は、すべての $t∈K$ に対し $t∈O$ または $t^{-1}∈O$ を満たす部分環である。"
+          },
+          "static_section_context": {
+            "section_variables": "{K : Type*} [Field K] {E : Type*} [NormedField E]",
+            "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local",
+            "open": [
+              "Filter",
+              "Topology"
+            ],
+            "autoImplicit": false,
+            "section": "EPlace"
+          },
+          "elaboration_status": "unelaborated: source-based readback only; no compiler or declaration-environment query was run",
+          "proof_notes": "Structure field readback only; the field participates in the enclosing structure definition. No generated projection signature or proof acceptance was checked."
+        }
+      ]
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 37,
+        "end_line": 38
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such place $x$ and every $f∈K$, the definition $v_x(f)∈\\operatorname{Option}(E)$ returns the tagged value $ψ_x(f)$ if $f∈O_x$, and returns $∞$ otherwise. It is a noncomputable definition using a case distinction on membership; the membership witness supplies the element of the subring on which $ψ_x$ is evaluated.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个上述赋值处 $x$ 和每个 $f∈K$，定义 $v_x(f)∈\\operatorname{Option}(E)$：若 $f∈O_x$，则返回带标记的 $ψ_x(f)$；否则返回 $∞$。这是一个不可计算定义，按子环的成员关系分类，并使用成员关系的证明将 $f$ 视为 $O_x$ 的元素后应用 $ψ_x$。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。上記の任意の場所 $x$ と $f∈K$ に対し、$v_x(f)∈\\operatorname{Option}(E)$ は、$f∈O_x$ ならば標識付きの $ψ_x(f)$、それ以外ならば $∞$ と定義される。これは部分環への所属に関する場合分けを用いる非計算的定義であり、所属の証拠により $f$ を $O_x$ の元として $ψ_x$ に代入する。"
+      },
+      "proof_notes": "Noncomputable definition; the source branch expressions are read directly. No compiler or acceptance claim.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "noncomputable def val (x : EPlace K E) (f : K) : Option E",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_of_mem",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 40,
+        "end_line": 41
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, every $f∈K$, and every witness $h$ that $f∈O_x$, one has $v_x(f)=ψ_x(f)$ as a finite tagged value, with $ψ_x$ applied to the subring element specified by $f$ and $h$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、每个 $f∈K$，以及每个证明 $f∈O_x$ 的见证 $h$，都有 $v_x(f)=ψ_x(f)$，等式右端视为带标记的有限值；$ψ_x$ 作用于由 $f$ 和 $h$ 确定的子环元素。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、任意の $f∈K$、および $f∈O_x$ の任意の証拠 $h$ に対して、$v_x(f)=ψ_x(f)$ が有限値として成り立つ。$ψ_x$ には $f$ と $h$ で定まる部分環の元を代入する。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_of_mem (x : EPlace K E) {f : K} (h : f ∈ x.O) : x.val f = some (x.ψ ⟨f, h⟩)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_of_notMem",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 43,
+        "end_line": 44
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$ and every $f∈K$, if $f∉O_x$, then $v_x(f)=∞$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$ 和每个 $f∈K$，若 $f∉O_x$，则 $v_x(f)=∞$。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ と $f∈K$ に対し、$f∉O_x$ ならば $v_x(f)=∞$ である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_of_notMem (x : EPlace K E) {f : K} (h : f ∉ x.O) : x.val f = none",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_eq_some_iff",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 46,
+        "end_line": 50
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $f∈K$ and $α∈E$, the equality $v_x(f)=α$ as a finite tagged value holds if and only if there exists a witness $h$ of $f∈O_x$ for which $ψ_x$ evaluated at the subring element $(f,h)$ equals $α$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、$f∈K$ 和 $α∈E$，$v_x(f)$ 等于带标记的有限值 $α$ 当且仅当存在 $f∈O_x$ 的见证 $h$，使 $ψ_x$ 在子环元素 $(f,h)$ 上的值等于 $α$。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、$f∈K$、$α∈E$ に対し、$v_x(f)$ が有限値 $α$ に等しいことと、$f∈O_x$ の証拠 $h$ であって、部分環の元 $(f,h)$ における $ψ_x$ の値が $α$ となるものが存在することは同値である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_eq_some_iff (x : EPlace K E) {f : K} {α : E} :\n    x.val f = some α ↔ ∃ h : f ∈ x.O, x.ψ ⟨f, h⟩ = α",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_add",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 52,
+        "end_line": 59
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, all $f,g∈K$ and $α,β∈E$, if $v_x(f)=α$ and $v_x(g)=β$ are finite values, then $v_x(f+g)=α+β$ as a finite value. Zero values are included; no nonzero hypothesis is imposed.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、所有 $f,g∈K$ 和 $α,β∈E$，若 $v_x(f)=α$ 且 $v_x(g)=β$ 都是有限值，则和满足 $v_x(f+g)=α+β$，右端也是有限值。这里包括零值，不要求各元素非零。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、すべての $f,g∈K$ と $α,β∈E$ に対し、$v_x(f)=α$ と $v_x(g)=β$ が有限値ならば、和について $v_x(f+g)=α+β$ が有限値として成り立つ。零も含み、非零の仮定はない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_add (x : EPlace K E) {f g : K} {α β : E} (hf : x.val f = some α)\n    (hg : x.val g = some β) : x.val (f + g) = some (α + β)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_mul",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 61,
+        "end_line": 68
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, all $f,g∈K$ and $α,β∈E$, if $v_x(f)=α$ and $v_x(g)=β$ are finite values, then $v_x(f·g)=α·β$ as a finite value. Zero values are included; no nonzero hypothesis is imposed.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、所有 $f,g∈K$ 和 $α,β∈E$，若 $v_x(f)=α$ 且 $v_x(g)=β$ 都是有限值，则积满足 $v_x(f·g)=α·β$，右端也是有限值。这里包括零值，不要求各元素非零。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、すべての $f,g∈K$ と $α,β∈E$ に対し、$v_x(f)=α$ と $v_x(g)=β$ が有限値ならば、積について $v_x(f·g)=α·β$ が有限値として成り立つ。零も含み、非零の仮定はない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_mul (x : EPlace K E) {f g : K} {α β : E} (hf : x.val f = some α)\n    (hg : x.val g = some β) : x.val (f * g) = some (α * β)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_neg",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 70,
+        "end_line": 76
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $f∈K$ and $α∈E$, if $v_x(f)=α$ is finite, then $v_x(-f)=-α$ is finite.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、$f∈K$ 和 $α∈E$，若 $v_x(f)=α$ 为有限值，则 $v_x(-f)=-α$ 也是有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、$f∈K$、$α∈E$ に対し、$v_x(f)=α$ が有限値ならば $v_x(-f)=-α$ も有限値である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_neg (x : EPlace K E) {f : K} {α : E} (hf : x.val f = some α) :\n    x.val (-f) = some (-α)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_one",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 78,
+        "end_line": 81
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $v_x(1_K)=1_E$ as a finite tagged value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$，$v_x(1_K)=1_E$，右端为带标记的有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ に対し、$v_x(1_K)=1_E$ が有限値として成り立つ。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_one (x : EPlace K E) : x.val 1 = some 1",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_zero",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 83,
+        "end_line": 86
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $v_x(0_K)=0_E$ as a finite tagged value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$，$v_x(0_K)=0_E$，右端为带标记的有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ に対し、$v_x(0_K)=0_E$ が有限値として成り立つ。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_zero (x : EPlace K E) : x.val 0 = some 0",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_ne_zero",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 89,
+        "end_line": 106
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$, $f∈K$ and $α∈E$, if $v_x(f)=α$ is finite and $α≠0$, then $v_x(f^{-1})=α^{-1}$ is finite. Nonzeroness of the value $α$ is an explicit premise.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$、$f∈K$ 和 $α∈E$，若 $v_x(f)=α$ 为有限值且 $α≠0$，则 $v_x(f^{-1})=α^{-1}$ 为有限值。取值 $α$ 非零是明确的前提。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$、$f∈K$、$α∈E$ に対し、$v_x(f)=α$ が有限値かつ $α≠0$ ならば、$v_x(f^{-1})=α^{-1}$ が有限値として成り立つ。値 $α$ が非零であることは明示的な仮定である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_inv_of_ne_zero (x : EPlace K E) {f : K} {α : E} (hf : x.val f = some α)\n    (hα : α ≠ 0) : x.val f⁻¹ = some α⁻¹",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_eq_zero",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 109,
+        "end_line": 117
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$ and every $f∈K$, if $f≠0$ and $v_x(f)=0$ as a finite value, then $v_x(f^{-1})=∞$. The premise $f≠0$ excludes the field convention $0^{-1}=0$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$ 和每个 $f∈K$，若 $f≠0$ 且 $v_x(f)$ 为有限值 $0$，则 $v_x(f^{-1})=∞$。前提 $f≠0$ 排除了域的约定 $0^{-1}=0$ 所对应的情形。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ と $f∈K$ に対し、$f≠0$ かつ $v_x(f)$ が有限値 $0$ ならば、$v_x(f^{-1})=∞$ である。仮定 $f≠0$ は体の規約 $0^{-1}=0$ に該当する場合を除外する。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_inv_of_eq_zero (x : EPlace K E) {f : K} (hf0 : f ≠ 0) (hf : x.val f = some 0) :\n    x.val f⁻¹ = none",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_eq_none",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 120,
+        "end_line": 136
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For every such $x$ and every $f∈K$, if $v_x(f)=∞$, then $v_x(f^{-1})=0$ as a finite value. There is no separately stated nonzero premise on $f$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对每个这样的 $x$ 和每个 $f∈K$，若 $v_x(f)=∞$，则 $v_x(f^{-1})$ 为有限值 $0$。声明没有另外列出 $f$ 非零的前提。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。このような任意の $x$ と $f∈K$ に対し、$v_x(f)=∞$ ならば、$v_x(f^{-1})$ は有限値 $0$ である。$f$ が非零であるという別個の仮定は記載されていない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem val_inv_of_eq_none (x : EPlace K E) {f : K} (hf : x.val f = none) :\n    x.val f⁻¹ = some 0",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.tendstoP1_some_iff'",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 147,
+        "end_line": 175
+      },
+      "statements": {
+        "en": "For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $E$ be any normed field, $a:ℕ→\\operatorname{Option}(E)$ any sequence, and $β∈E$. Interpret some $α$ as the finite value $α$, and none as a separate element $∞$. Then $a→_P β$ holds if and only if there exists a sequence $α:ℕ→E$ for which there is $N∈ℕ$ such that $a_n$ is the finite value $α_n$ for all $n≥N$, and $α_n$ converges to $β$ in the norm topology as $n→∞$. The auxiliary sequence is defined at every natural number, including any initial indices where $a_n=∞$; only its tail must represent $a$. No field $K$ or family of places is a parameter of this assertion.",
+        "zh_Hans": "对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $E$ 为任意赋范域，$a:ℕ→\\operatorname{Option}(E)$ 为任意序列，$β∈E$。将 some $α$ 解释为有限值 $α$，将 none 解释为额外元素 $∞$。则 $a→_P β$ 当且仅当存在序列 $α:ℕ→E$，满足：存在 $N∈ℕ$，使所有 $n≥N$ 都有 $a_n$ 为有限值 $α_n$；并且 $n→∞$ 时 $α_n$ 在范数拓扑中收敛到 $β$。辅助序列在每个自然数处都有定义，包括 $a_n=∞$ 的初始指标；只有尾部必须表示 $a$。这一断言的参数不包括域 $K$ 或赋值处族。",
+        "ja": "数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。任意のノルム体 $E$、任意の数列 $a:ℕ→\\operatorname{Option}(E)$、$β∈E$ を取る。some $α$ を有限値 $α$、none を別の元 $∞$ と解釈する。このとき $a→_P β$ であることは、数列 $α:ℕ→E$ であって、ある $N∈ℕ$ 以降のすべての $n$ で $a_n$ が有限値 $α_n$ となり、かつ $α_n$ が $n→∞$ においてノルム位相で $β$ に収束するものが存在することと同値である。補助数列は、$a_n=∞$ となる初期の添字も含め、すべての自然数で定義されるが、$a$ を表すのは末尾だけでよい。この主張のパラメータに体 $K$ や場所の族は含まれない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem tendstoP1_some_iff' {a : ℕ → Option E} {β : E} :\n    TendstoP1 a (some β) ↔ ∃ α : ℕ → E, (∀ᶠ n in atTop, a n = some (α n)) ∧\n      Tendsto α atTop (𝓝 β)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_limit",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "source_span": {
+        "start_line": 180,
+        "end_line": 210
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Assume in addition that the underlying set of $K$ is countable. Let $ι$ be a countable nonempty type and $\\mathrm{Good}:E→\\mathrm{Prop}$ any predicate. Suppose that for every sequence $a:ℕ→E$ whose every term satisfies $\\mathrm{Good}$, there exists a strictly increasing $φ:ℕ→ℕ$ such that either there exists $b∈E$ with $a_{φ(n)}→b$ in the norm topology, or $‖a_{φ(n)}‖→+∞$ (for every real $R$, eventually $R≤‖a_{φ(n)}‖$). For every family $x:ℕ→ι→\\operatorname{EPlace}(K,E)$ satisfying, for all $n∈ℕ$, $i∈ι$, $f∈K$ and $α∈E$, the implication $v_{x_{n,i}}(f)=α$ finite $⇒\\mathrm{Good}(α)$, there exists one strictly increasing $D:ℕ→ℕ$ and then a function $ξ:ι→K→E∪{∞}$ such that for every $i∈ι$ and $f∈K$, $n↦v_{x_{D(n),i}}(f)→_P ξ(i,f)$. Strictly increasing means $m<n⇒D(m)<D(n)$, and likewise for $φ$; natural-number indices include zero. The asserted $D$ is shared by all $i,f$, and no uniqueness of $D$ or $ξ$ is asserted. The hypothesis is exactly the stated subsequence dichotomy for the predicate, without an assumption that all of $E$ is compact.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。再假设 $K$ 的底集可数。设 $ι$ 为可数非空类型，$\\mathrm{Good}:E→\\mathrm{Prop}$ 为任意谓词。假设对每个各项都满足 $\\mathrm{Good}$ 的序列 $a:ℕ→E$，存在严格递增映射 $φ:ℕ→ℕ$，使以下两者至少一个成立：存在 $b∈E$，使 $a_{φ(n)}$ 在范数拓扑中收敛到 $b$；或者 $‖a_{φ(n)}‖→+∞$，即对每个实数 $R$，最终都有 $R≤‖a_{φ(n)}‖$。对任意族 $x:ℕ→ι→\\operatorname{EPlace}(K,E)$，若对所有 $n∈ℕ$、$i∈ι$、$f∈K$、$α∈E$，有限取值 $v_{x_{n,i}}(f)=α$ 都蕴含 $\\mathrm{Good}(α)$，则存在一个严格递增映射 $D:ℕ→ℕ$，并存在函数 $ξ:ι→K→E∪{∞}$，使所有 $i∈ι$、$f∈K$ 都满足 $n↦v_{x_{D(n),i}}(f)→_P ξ(i,f)$。严格递增指 $m<n⇒D(m)<D(n)$，对 $φ$ 亦然；自然数指标包括零。所有 $i,f$ 共用一个 $D$，没有断言 $D$ 或 $ξ$ 唯一。前提仅为所写的谓词序列的子列二择条件，没有假设整个 $E$ 紧致。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。さらに $K$ の台集合は可算であるとする。$ι$ を可算かつ空でない型、$\\mathrm{Good}:E→\\mathrm{Prop}$ を任意の述語とする。各項が $\\mathrm{Good}$ を満たす任意の数列 $a:ℕ→E$ に対して、狭義単調増加写像 $φ:ℕ→ℕ$ が存在し、ある $b∈E$ へ $a_{φ(n)}$ がノルム位相で収束するか、または $‖a_{φ(n)}‖→+∞$、すなわち任意の実数 $R$ に対して十分大きいすべての $n$ で $R≤‖a_{φ(n)}‖$ となると仮定する。任意の族 $x:ℕ→ι→\\operatorname{EPlace}(K,E)$ が、すべての $n∈ℕ$、$i∈ι$、$f∈K$、$α∈E$ に対して、有限値 $v_{x_{n,i}}(f)=α$ ならば $\\mathrm{Good}(α)$ を満たすとする。このとき、一つの狭義単調増加写像 $D:ℕ→ℕ$ と写像 $ξ:ι→K→E∪{∞}$ が存在し、すべての $i∈ι$ と $f∈K$ に対し $n↦v_{x_{D(n),i}}(f)→_P ξ(i,f)$ が成り立つ。狭義単調増加とは $m<n⇒D(m)<D(n)$ という意味であり、$φ$ についても同様である。自然数の添字には零も含む。$D$ はすべての $i,f$ に共通であり、$D$ や $ξ$ の一意性は主張されない。仮定は記載された述語に関する部分列の二者択一であり、$E$ 全体のコンパクト性は仮定されていない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem exists_limit [Countable K] {ι : Type*} [Countable ι] [Nonempty ι] {Good : E → Prop}\n    (hcpt : ∀ a : ℕ → E, (∀ n, Good (a n)) → ∃ φ : ℕ → ℕ, StrictMono φ ∧\n      ((∃ b, Tendsto (a ∘ φ) atTop (𝓝 b)) ∨ Tendsto (fun n => ‖a (φ n)‖) atTop atTop))\n    (x : ℕ → ι → EPlace K E) (hgood : ∀ n i f α, (x n i).val f = some α → Good α) :\n    ∃ D : ℕ → ℕ, StrictMono D ∧ ∃ ξ : ι → K → Option E,\n      ∀ i f, TendstoP1 (fun n => (x (D n) i).val f) (ξ i f)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_add",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 26,
+        "end_line": 36
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f,g∈K$ and $α,β∈E$, if $ξ(f)=α$ and $ξ(g)=β$ as finite values, then $ξ(f+g)=α+β$ as a finite value. No nonzero premises are imposed on these four elements.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对所有 $f,g∈K$ 和 $α,β∈E$，若 $ξ(f)=α$、$ξ(g)=β$ 都是有限值，则和满足 $ξ(f+g)=α+β$，右端为有限值。不要求这四个元素非零。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。すべての $f,g∈K$ と $α,β∈E$ に対し、$ξ(f)=α$ と $ξ(g)=β$ が有限値ならば、和について $ξ(f+g)=α+β$ が有限値として成り立つ。これら四つの元に非零の仮定はない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem limit_add (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f g : K} {α β : E}\n    (hf : ξ f = some α) (hg : ξ g = some β) : ξ (f + g) = some (α + β)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_mul",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 39,
+        "end_line": 49
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f,g∈K$ and $α,β∈E$, if $ξ(f)=α$ and $ξ(g)=β$ as finite values, then $ξ(f·g)=α·β$ as a finite value. No nonzero premises are imposed on these four elements.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对所有 $f,g∈K$ 和 $α,β∈E$，若 $ξ(f)=α$、$ξ(g)=β$ 都是有限值，则积满足 $ξ(f·g)=α·β$，右端为有限值。不要求这四个元素非零。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。すべての $f,g∈K$ と $α,β∈E$ に対し、$ξ(f)=α$ と $ξ(g)=β$ が有限値ならば、積について $ξ(f·g)=α·β$ が有限値として成り立つ。これら四つの元に非零の仮定はない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem limit_mul (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f g : K} {α β : E}\n    (hf : ξ f = some α) (hg : ξ g = some β) : ξ (f * g) = some (α * β)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_neg",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 51,
+        "end_line": 58
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f∈K$ and $α∈E$, if $ξ(f)=α$ is finite, then $ξ(-f)=-α$ is finite.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对每个 $f∈K$ 和 $α∈E$，若 $ξ(f)=α$ 为有限值，则 $ξ(-f)=-α$ 为有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。任意の $f∈K$ と $α∈E$ に対し、$ξ(f)=α$ が有限値ならば、$ξ(-f)=-α$ も有限値である。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem limit_neg (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K} {α : E}\n    (hf : ξ f = some α) : ξ (-f) = some (-α)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_one",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 60,
+        "end_line": 62
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. Then $ξ(1_K)=1_E$ as a finite tagged value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。则 $ξ(1_K)=1_E$，右端为带标记的有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。このとき $ξ(1_K)=1_E$ が有限値として成り立つ。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem limit_one (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) : ξ 1 = some 1",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_zero",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 64,
+        "end_line": 66
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. Then $ξ(0_K)=0_E$ as a finite tagged value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。则 $ξ(0_K)=0_E$，右端为带标记的有限值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。このとき $ξ(0_K)=0_E$ が有限値として成り立つ。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem limit_zero (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) : ξ 0 = some 0",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_inv_of_eq_zero",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 69,
+        "end_line": 92
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f∈K$, if $f≠0$ and $ξ(f)=0$ as a finite value, then $ξ(f^{-1})=∞$. The explicit nonzero premise excludes the field convention $0^{-1}=0$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对每个 $f∈K$，若 $f≠0$ 且 $ξ(f)$ 为有限值 $0$，则 $ξ(f^{-1})=∞$。明确的非零前提排除了域的约定 $0^{-1}=0$ 所对应的情形。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。任意の $f∈K$ に対し、$f≠0$ かつ $ξ(f)$ が有限値 $0$ ならば、$ξ(f^{-1})=∞$ である。明示された非零の仮定は体の規約 $0^{-1}=0$ に該当する場合を除外する。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem limit_inv_of_eq_zero (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K}\n    (hf0 : f ≠ 0) (hf : ξ f = some 0) : ξ f⁻¹ = none",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_inv_of_eq_none",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 95,
+        "end_line": 112
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f∈K$, if $ξ(f)=∞$, then $ξ(f^{-1})=0$ as a finite value. There is no separately stated nonzero premise on $f$.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对每个 $f∈K$，若 $ξ(f)=∞$，则 $ξ(f^{-1})$ 为有限值 $0$。声明没有另外列出 $f$ 非零的前提。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。任意の $f∈K$ に対し、$ξ(f)=∞$ ならば、$ξ(f^{-1})$ は有限値 $0$ である。$f$ が非零であるという別個の仮定は記載されていない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem limit_inv_of_eq_none (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K}\n    (hf : ξ f = none) : ξ f⁻¹ = some 0",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limitSubring",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 115,
+        "end_line": 134
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. The definition $O_{ξ,h}=\\operatorname{limitSubring}(h)$ constructs a valuation subring of $K$ whose underlying set is exactly $\\{f∈K:ξ(f)≠∞\\}$. Its supplied structure includes closure under addition, multiplication and negation, membership of $0$ and $1$, and, for every $f∈K$, membership of $f$ or of $f^{-1}$. The definition takes the full pointwise convergence hypothesis $h$, with its sequence $x$ and function $ξ$, as input; it is not a construction asserted for arbitrary functions $ξ$ without that hypothesis. The membership criterion is only that the value is finite, so it includes a finite value equal to zero.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。定义 $O_{ξ,h}=\\operatorname{limitSubring}(h)$ 构造 $K$ 的一个赋值子环，其底集恰为 $\\{f∈K:ξ(f)≠∞\\}$。所给结构包括对加法、乘法、取负封闭，包含 $0$ 和 $1$，以及对每个 $f∈K$，$f$ 或 $f^{-1}$ 至少有一个属于该子环。定义以完整的逐点收敛条件 $h$，连同其序列 $x$ 与函数 $ξ$ 为输入；没有断言可在不满足该条件的任意函数 $ξ$ 上作此构造。成员条件仅要求取值有限，因此包括有限值为零的情形。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。定義 $O_{ξ,h}=\\operatorname{limitSubring}(h)$ は、台集合がちょうど $\\{f∈K:ξ(f)≠∞\\}$ である $K$ の付値部分環を構成する。与えられる構造には、加法・乗法・負元による閉性、$0$ と $1$ の所属、および任意の $f∈K$ に対して $f$ または $f^{-1}$ が所属することが含まれる。この定義は点ごとの収束という仮定 $h$ を、その列 $x$ と写像 $ξ$ とともに入力として受け取る。この仮定を満たさない任意の $ξ$ に対する構成を主張するものではない。所属条件は値が有限であることだけなので、有限値が零である場合も含む。"
+      },
+      "proof_notes": "Definition by a structure expression; closure and the valuation-subring alternative are supplied by proof fields in the source. Source-inferred dependence on h, x, ξ is retained. No elaboration, proof acceptance, or axiom audit was performed.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "def limitSubring (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) : ValuationSubring K where\n  carrier",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.mem_limitSubring",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 136,
+        "end_line": 137
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. Let $O_{ξ,h}$ denote the valuation subring constructed with underlying set $\\{t∈K:ξ(t)≠∞\\}$ and with closure under addition, multiplication, negation, membership of $0,1$, and the alternative $t∈O_{ξ,h}$ or $t^{-1}∈O_{ξ,h}$ for every $t∈K$. For every $f∈K$, $f∈O_{ξ,h}$ if and only if $ξ(f)≠∞$. Finite zero values satisfy this membership condition.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。记 $O_{ξ,h}$ 为所构造的赋值子环，其底集为 $\\{t∈K:ξ(t)≠∞\\}$，具有对加法、乘法、取负封闭，包含 $0,1$，以及对每个 $t∈K$，$t∈O_{ξ,h}$ 或 $t^{-1}∈O_{ξ,h}$ 的结构。对每个 $f∈K$，$f∈O_{ξ,h}$ 当且仅当 $ξ(f)≠∞$。有限的零值也满足这一成员条件。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。$O_{ξ,h}$ を、台集合が $\\{t∈K:ξ(t)≠∞\\}$ であり、加法・乗法・負元による閉性、$0,1$ の所属、および任意の $t∈K$ に対する $t∈O_{ξ,h}$ または $t^{-1}∈O_{ξ,h}$ という構造を備えた、構成された付値部分環とする。任意の $f∈K$ に対し、$f∈O_{ξ,h}$ と $ξ(f)≠∞$ は同値である。有限の零値もこの所属条件を満たす。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem mem_limitSubring (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K} :\n    f ∈ limitSubring h ↔ ξ f ≠ none",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.eventually_abs_log_le",
+      "static_qualified_name": null,
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "source_span": {
+        "start_line": 141,
+        "end_line": 195
+      },
+      "statements": {
+        "en": "Let $K$ be a field and $E$ a normed field. An $E$-valued place $x$ consists of a subring $O_x⊆K$, containing $0,1$ and closed under addition, multiplication and negation, such that every $t∈K$ satisfies $t∈O_x$ or $t^{-1}∈O_x$, together with a unital ring homomorphism $ψ_x:O_x→E$ such that $ψ_x(u)=0$ if and only if $u$ is not a unit of $O_x$. Write $v_x(t)=ψ_x(t)$ when $t∈O_x$, and $v_x(t)=∞$ otherwise; finite values are tagged elements of $E$ and $∞$ is a separate element, corresponding respectively to some and none in $\\operatorname{Option}(E)$. For a sequence $a:ℕ→E∪{∞}$, write $a→_P b$ to mean the following explicitly: if $b=β∈E$, then for every real $ε>0$ there is $N∈ℕ$ such that, for every $n≥N$, there exists $α∈E$ with $a_n=α$ and $‖α-β‖<ε$; if $b=∞$, then for every $R∈ℝ$ there is $N∈ℕ$ such that, for every $n≥N$ and every $α∈E$, $a_n=α$ implies $R<‖α‖$. Thus $a_n=∞$ imposes no restriction in the latter implication. Let $x:ℕ→\\operatorname{EPlace}(K,E)$ be a sequence of such places, and let $ξ:K→E∪{∞}$ be a function. Assume the hypothesis $h$: for every $t∈K$, the sequence $n↦v_{x_n}(t)$ satisfies $n↦v_{x_n}(t)→_P ξ(t)$. For every $f∈K$ and $β∈E$, if $ξ(f)=β$ is finite, $β≠0$ and $β≠1$, then there exists a real constant $C$ such that there is $N∈ℕ$ with the following property: for every $n≥N$, there exists $α∈E$ such that $v_{x_n}(f)=α$ is finite, $|\\log ‖α‖|≤C$, $|\\log ‖α-1‖|≤C$, $α≠0$ and $α≠1$. Both logarithms are the real natural logarithm of the indicated real norms. The same $C$ bounds both expressions for all these $n$, while $α$ is chosen after $n$. The statement does not separately require $C>0$ or prescribe its value.",
+        "zh_Hans": "设 $K$ 为域，$E$ 为赋范域。一个取值于 $E$ 的赋值处 $x$ 由以下数据组成：子环 $O_x⊆K$，它含有 $0,1$，对加法、乘法和取负封闭，并且每个 $t∈K$ 都满足 $t∈O_x$ 或 $t^{-1}∈O_x$；以及保单位元的环同态 $ψ_x:O_x→E$，满足 $ψ_x(u)=0$ 当且仅当 $u$ 不是 $O_x$ 的可逆元。记 $v_x(t)=ψ_x(t)$（当 $t∈O_x$），否则记 $v_x(t)=∞$；有限值是带标记的 $E$ 中元素，$∞$ 是额外的独立元素，分别对应 $\\operatorname{Option}(E)$ 中的 some 与 none。对于序列 $a:ℕ→E∪{∞}$，记 $a→_P b$ 表示以下明确条件：若 $b=β∈E$，则对每个实数 $ε>0$，存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足 $a_n=α$ 且 $‖α-β‖<ε$；若 $b=∞$，则对每个 $R∈ℝ$，存在 $N∈ℕ$，使每个 $n≥N$ 和每个 $α∈E$ 都满足：$a_n=α$ 蕴含 $R<‖α‖$。因此在后一条件中，$a_n=∞$ 时不施加限制。设 $x:ℕ→\\operatorname{EPlace}(K,E)$ 为上述赋值处的序列，$ξ:K→E∪{∞}$ 为函数。假设条件 $h$ 成立：对每个 $t∈K$，都有序列 $n↦v_{x_n}(t)→_P ξ(t)$。对每个 $f∈K$ 和 $β∈E$，若 $ξ(f)=β$ 为有限值，且 $β≠0$、$β≠1$，则存在实常数 $C$，并存在 $N∈ℕ$，使每个 $n≥N$ 都有某个 $α∈E$ 满足：$v_{x_n}(f)=α$ 为有限值，$|\\log ‖α‖|≤C$，$|\\log ‖α-1‖|≤C$，$α≠0$，且 $α≠1$。两个对数都是所示实范数的实自然对数。同一个 $C$ 同时约束所有这些 $n$ 的两个表达式，而 $α$ 在 $n$ 之后选择。声明没有另外要求 $C>0$，也没有规定 $C$ 的数值。",
+        "ja": "$K$ を体、$E$ をノルム体とする。$E$ に値を取る付値的な場所 $x$ は、$0,1$ を含み加法・乗法・負元で閉じた部分環 $O_x⊆K$ であって、すべての $t∈K$ に対し $t∈O_x$ または $t^{-1}∈O_x$ が成り立つものと、単位元を保つ環準同型 $ψ_x:O_x→E$ であって、$ψ_x(u)=0$ と $u$ が $O_x$ の単元でないことが同値となるものからなる。$t∈O_x$ のとき $v_x(t)=ψ_x(t)$、それ以外では $v_x(t)=∞$ と書く。有限値は標識付きの $E$ の元、$∞$ はそれとは別の元であり、それぞれ $\\operatorname{Option}(E)$ の some と none に対応する。数列 $a:ℕ→E∪{∞}$ に対し、$a→_P b$ を次の条件で定める。$b=β∈E$ の場合、任意の実数 $ε>0$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ に対して、$a_n=α$ かつ $‖α-β‖<ε$ を満たす $α∈E$ が存在する。$b=∞$ の場合、任意の $R∈ℝ$ に対し $N∈ℕ$ が存在し、すべての $n≥N$ と $α∈E$ に対して、$a_n=α$ ならば $R<‖α‖$ が成り立つ。後者では $a_n=∞$ の場合に制約はない。$x:ℕ→\\operatorname{EPlace}(K,E)$ を上記の場所の列、$ξ:K→E∪{∞}$ を写像とする。仮定 $h$ として、すべての $t∈K$ に対し数列 $n↦v_{x_n}(t)→_P ξ(t)$ が成り立つとする。任意の $f∈K$ と $β∈E$ に対し、$ξ(f)=β$ が有限値で、$β≠0$ かつ $β≠1$ ならば、実定数 $C$ が存在し、さらに $N∈ℕ$ が存在して、すべての $n≥N$ に対し $α∈E$ が存在し、$v_{x_n}(f)=α$ が有限値で、$|\\log ‖α‖|≤C$、$|\\log ‖α-1‖|≤C$、$α≠0$、$α≠1$ が成り立つ。両対数は、記載された実数値のノルムに対する実自然対数である。同じ $C$ が、これらすべての $n$ に対し両方の式を抑え、$α$ は $n$ の後で選ばれる。主張は別途 $C>0$ を要求せず、その値も指定しない。"
+      },
+      "proof_notes": "The source contains a proof body. This record describes its statement only; proof acceptance and axiom dependencies were not checked.",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "original_packet_sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "original_signature": "theorem eventually_abs_log_le (h : ∀ f, TendstoP1 (fun n => (x n).val f) (ξ f)) {f : K} {β : E}\n    (hf : ξ f = some β) (hβ0 : β ≠ 0) (hβ1 : β ≠ 1) :\n    ∃ C : ℝ, ∀ᶠ n in atTop, ∃ α, (x n).val f = some α ∧\n      |Real.log ‖α‖| ≤ C ∧ |Real.log ‖α - 1‖| ≤ C ∧ α ≠ 0 ∧ α ≠ 1",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.evalF",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.evalF",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 28,
+        "end_line": 30
+      },
+      "statements": {
+        "en": "Let $K$ be a field of characteristic zero and $\\overline{\\mathbb Q}$ the fixed algebraic closure of $\\mathbb Q$. A point $x=(P_x,s_x)$ consists of a proper valuation subring $O_x\\subsetneq K$ containing every rational number, viewed as a place $P_x$, and a unital ring embedding $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ of its residue field. Write $\\rho_x:O_x\\to\\kappa(O_x)$ for the residue map and $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ for the full image field; its degree is $\\deg(x)=\\dim_{\\mathbb Q}F_x$ as a natural-number finite rank, which is zero if the extension is infinite dimensional. For each such point $x$, define the unital ring map $e_x:O_x\\to F_x$ by $e_x(f)=s_x(\\rho_x(f))$, with this value regarded as an element of the full image field $F_x$. The definition requires no assumption that $F_x$ is finite dimensional.",
+        "zh_Hans": "设 $K$ 为特征零的域，$\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包。点 $x=(P_x,s_x)$ 由包含所有有理数的真赋值子环 $O_x\\subsetneq K$（视为处 $P_x$）及其剩余域的含幺环嵌入 $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ 构成。记剩余映射为 $\\rho_x:O_x\\to\\kappa(O_x)$，完整像域为 $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$，点的次数为自然数有限秩 $\\deg(x)=\\dim_{\\mathbb Q}F_x$；若扩张为无限维，此有限秩按约定等于零。 对每个这样的点 $x$，定义含幺环映射 $e_x:O_x\\to F_x$，令 $e_x(f)=s_x(\\rho_x(f))$，并将该值视为完整像域 $F_x$ 的元素。此定义不要求 $F_x$ 为有限维。",
+        "ja": "$K$ を標数零の体、$\\overline{\\mathbb Q}$ を固定した $\\mathbb Q$ の代数閉包とする。点 $x=(P_x,s_x)$ は、すべての有理数を含む真の付値部分環 $O_x\\subsetneq K$（素点 $P_x$ とみなす）と、その剰余体の単位的環埋め込み $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ からなる。剰余写像を $\\rho_x:O_x\\to\\kappa(O_x)$、全像体を $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ と書き、点の次数を自然数値の有限階数 $\\deg(x)=\\dim_{\\mathbb Q}F_x$ とし、拡大が無限次元ならこの有限階数は規約により零とする。 各点 $x$ に対し、単位的環写像 $e_x:O_x\\to F_x$ を $e_x(f)=s_x(\\rho_x(f))$ で定め、この値を全像体 $F_x$ の元とみなす。この定義では $F_x$ の有限次元性を仮定しない。"
+      },
+      "proof_notes": "Noncomputable codomain restriction of the composite residue map and residue-field embedding; no compilation or axiom audit was performed.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "noncomputable def evalF (x : QbarPoint K) : x.P.1 →+* x.fieldOf",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.coe_evalF",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.coe_evalF",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 32,
+        "end_line": 33
+      },
+      "statements": {
+        "en": "Let $K$ be a field of characteristic zero and $\\overline{\\mathbb Q}$ the fixed algebraic closure of $\\mathbb Q$. A point $x=(P_x,s_x)$ consists of a proper valuation subring $O_x\\subsetneq K$ containing every rational number, viewed as a place $P_x$, and a unital ring embedding $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ of its residue field. Write $\\rho_x:O_x\\to\\kappa(O_x)$ for the residue map and $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ for the full image field; its degree is $\\deg(x)=\\dim_{\\mathbb Q}F_x$ as a natural-number finite rank, which is zero if the extension is infinite dimensional. For every $f\\in O_x$, the image in $\\overline{\\mathbb Q}$ of $e_x(f)\\in F_x$, where $e_x:O_x\\to F_x$ is the restricted composite $s_x\\circ\\rho_x$, equals the point evaluation $x(f)=s_x(\\rho_x(f))$.",
+        "zh_Hans": "设 $K$ 为特征零的域，$\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包。点 $x=(P_x,s_x)$ 由包含所有有理数的真赋值子环 $O_x\\subsetneq K$（视为处 $P_x$）及其剩余域的含幺环嵌入 $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ 构成。记剩余映射为 $\\rho_x:O_x\\to\\kappa(O_x)$，完整像域为 $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$，点的次数为自然数有限秩 $\\deg(x)=\\dim_{\\mathbb Q}F_x$；若扩张为无限维，此有限秩按约定等于零。 对每个 $f\\in O_x$，令 $e_x:O_x\\to F_x$ 为复合 $s_x\\circ\\rho_x$ 限制陪域所得的映射，则 $e_x(f)\\in F_x$ 在 $\\overline{\\mathbb Q}$ 中的像等于点评价 $x(f)=s_x(\\rho_x(f))$。",
+        "ja": "$K$ を標数零の体、$\\overline{\\mathbb Q}$ を固定した $\\mathbb Q$ の代数閉包とする。点 $x=(P_x,s_x)$ は、すべての有理数を含む真の付値部分環 $O_x\\subsetneq K$（素点 $P_x$ とみなす）と、その剰余体の単位的環埋め込み $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ からなる。剰余写像を $\\rho_x:O_x\\to\\kappa(O_x)$、全像体を $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ と書き、点の次数を自然数値の有限階数 $\\deg(x)=\\dim_{\\mathbb Q}F_x$ とし、拡大が無限次元ならこの有限階数は規約により零とする。 各 $f\\in O_x$ に対し、$e_x:O_x\\to F_x$ を合成 $s_x\\circ\\rho_x$ の終域を制限した写像とすると、$e_x(f)\\in F_x$ の $\\overline{\\mathbb Q}$ における像は、点での評価 $x(f)=s_x(\\rho_x(f))$ に等しい。"
+      },
+      "proof_notes": "The source proof is rfl.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "@[simp] theorem coe_evalF (x : QbarPoint K) (f : x.P.1) :\n    (evalF x f : Qbar) = x.eval f.1 f.2",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointFieldFinite",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointFieldFinite",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 36,
+        "end_line": 39
+      },
+      "statements": {
+        "en": "For a natural number $N$, let $M$ be the following model: $K$ is an intermediate field of $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$, with elements $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K/\\mathbb Q(u)$ is finite dimensional with dimension $N$. Here $\\overline{\\mathbb Q}$ is the fixed algebraic closure of $\\mathbb Q$, and $\\kappa(O)$ denotes the residue field of a valuation ring $O$. A place $P$ is a proper valuation subring $O_P\\subsetneq K$ containing every rational number. A point $x=(P_x,s_x)$ also specifies a unital ring embedding $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$; its full point field is $F_x=s_x(\\kappa(O_{P_x}))$ and its degree is $\\dim_{\\mathbb Q}F_x$. Assume that for every place $P$ of $K$, the residue field $\\kappa(O_P)$ is finite dimensional over $\\mathbb Q$. Then for every point $x$ of $K$, its full image field $F_x$ is finite dimensional over $\\mathbb Q$.",
+        "zh_Hans": "给定自然数 $N$，设 $M$ 为如下模型：$K$ 是 $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ 的中间域，含元素 $u,v\\in K$，其中 $u$ 在 $\\mathbb Q$ 上超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 为有限维扩张，维数等于 $N$。这里 $\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包，$\\kappa(O)$ 表示赋值环 $O$ 的剩余域。处 $P$ 指包含所有有理数的真赋值子环 $O_P\\subsetneq K$。点 $x=(P_x,s_x)$ 还指定剩余域的含幺环嵌入 $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$；其完整点域为 $F_x=s_x(\\kappa(O_{P_x}))$，次数为 $\\dim_{\\mathbb Q}F_x$。 假设对 $K$ 的每个处 $P$，剩余域 $\\kappa(O_P)$ 在 $\\mathbb Q$ 上有限维。那么对 $K$ 的每个点 $x$，其完整像域 $F_x$ 在 $\\mathbb Q$ 上有限维。",
+        "ja": "自然数 $N$ に対し、$M$ を次の模型とする。$K$ は $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ の中間体であり、元 $u,v\\in K$ は、$u$ が $\\mathbb Q$ 上超越的であること、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、および $K/\\mathbb Q(u)$ が有限次元でその次元が $N$ であることを満たす。ここで $\\overline{\\mathbb Q}$ は固定した $\\mathbb Q$ の代数閉包、$\\kappa(O)$ は付値環 $O$ の剰余体である。素点 $P$ はすべての有理数を含む真の付値部分環 $O_P\\subsetneq K$ である。点 $x=(P_x,s_x)$ はさらに剰余体の単位的環埋め込み $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$ を指定し、その全点体は $F_x=s_x(\\kappa(O_{P_x}))$、次数は $\\dim_{\\mathbb Q}F_x$ である。 $K$ の各素点 $P$ に対し、剰余体 $\\kappa(O_P)$ が $\\mathbb Q$ 上有限次元であると仮定する。このとき $K$ の各点 $x$ の全像体 $F_x$ は $\\mathbb Q$ 上有限次元である。"
+      },
+      "proof_notes": "The source transfers finite dimensionality along the residue-field embedding onto its image.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem pointFieldFinite {N : ℕ} (M : Model N) (hRF : ResiduesFinite M)\n    (x : QbarPoint M.K) : FiniteDimensional ℚ x.fieldOf",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointEPlace",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointEPlace",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 46,
+        "end_line": 63
+      },
+      "statements": {
+        "en": "Let $K$ be a field of characteristic zero and $\\overline{\\mathbb Q}$ the fixed algebraic closure of $\\mathbb Q$. A point $x=(P_x,s_x)$ consists of a proper valuation subring $O_x\\subsetneq K$ containing every rational number, viewed as a place $P_x$, and a unital ring embedding $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ of its residue field. Write $\\rho_x:O_x\\to\\kappa(O_x)$ for the residue map and $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ for the full image field; its degree is $\\deg(x)=\\dim_{\\mathbb Q}F_x$ as a natural-number finite rank, which is zero if the extension is infinite dimensional. Let $E$ be any normed field and $\\tau:F_x\\to E$ a unital ring embedding. Define an $E$-valued place with valuation subring $O_x$ and evaluation map $f\\mapsto\\tau(s_x(\\rho_x(f)))$. Its evaluation is zero exactly on the nonunits of $O_x$, which is the required kernel condition; the embedding domain is the entire field $F_x$.",
+        "zh_Hans": "设 $K$ 为特征零的域，$\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包。点 $x=(P_x,s_x)$ 由包含所有有理数的真赋值子环 $O_x\\subsetneq K$（视为处 $P_x$）及其剩余域的含幺环嵌入 $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ 构成。记剩余映射为 $\\rho_x:O_x\\to\\kappa(O_x)$，完整像域为 $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$，点的次数为自然数有限秩 $\\deg(x)=\\dim_{\\mathbb Q}F_x$；若扩张为无限维，此有限秩按约定等于零。 设 $E$ 为任意赋范域，$\\tau:F_x\\to E$ 为含幺环嵌入。定义一个取值于 $E$ 的处，其赋值子环为 $O_x$，评价映射为 $f\\mapsto\\tau(s_x(\\rho_x(f)))$。评价为零当且仅当输入不是 $O_x$ 的单位，这正是所要求的核条件；嵌入的定义域为整个 $F_x$。",
+        "ja": "$K$ を標数零の体、$\\overline{\\mathbb Q}$ を固定した $\\mathbb Q$ の代数閉包とする。点 $x=(P_x,s_x)$ は、すべての有理数を含む真の付値部分環 $O_x\\subsetneq K$（素点 $P_x$ とみなす）と、その剰余体の単位的環埋め込み $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ からなる。剰余写像を $\\rho_x:O_x\\to\\kappa(O_x)$、全像体を $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ と書き、点の次数を自然数値の有限階数 $\\deg(x)=\\dim_{\\mathbb Q}F_x$ とし、拡大が無限次元ならこの有限階数は規約により零とする。 $E$ を任意のノルム体、$\\tau:F_x\\to E$ を単位的環埋め込みとする。付値部分環を $O_x$、評価写像を $f\\mapsto\\tau(s_x(\\rho_x(f)))$ とする $E$ に値をとる素点を定める。その評価が零となることと入力が $O_x$ の非単元であることは同値であり、これが要求される核条件である。埋め込みの定義域は $F_x$ 全体である。"
+      },
+      "proof_notes": "The source constructs the valuation subring and map and supplies the zero/nonunit condition.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "noncomputable def pointEPlace (x : QbarPoint K) (τ : x.fieldOf →+* E) : EPlace K E",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointEPlace_val_of_mem",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointEPlace_val_of_mem",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 65,
+        "end_line": 67
+      },
+      "statements": {
+        "en": "Let $K$ be a field of characteristic zero and $\\overline{\\mathbb Q}$ the fixed algebraic closure of $\\mathbb Q$. A point $x=(P_x,s_x)$ consists of a proper valuation subring $O_x\\subsetneq K$ containing every rational number, viewed as a place $P_x$, and a unital ring embedding $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ of its residue field. Write $\\rho_x:O_x\\to\\kappa(O_x)$ for the residue map and $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ for the full image field; its degree is $\\deg(x)=\\dim_{\\mathbb Q}F_x$ as a natural-number finite rank, which is zero if the extension is infinite dimensional. For any normed field $E$, any unital ring embedding $\\tau:F_x\\to E$, and any $f\\in K$ with a specified witness $h_f:f\\in O_x$, the extended value of the place with ring $O_x$ and map $\\tau\\circ s_x\\circ\\rho_x$ at $f$ is the finite value $\\tau(e_x(\\langle f,h_f\\rangle))$, where $e_x:O_x\\to F_x$ is the residue evaluation.",
+        "zh_Hans": "设 $K$ 为特征零的域，$\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包。点 $x=(P_x,s_x)$ 由包含所有有理数的真赋值子环 $O_x\\subsetneq K$（视为处 $P_x$）及其剩余域的含幺环嵌入 $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ 构成。记剩余映射为 $\\rho_x:O_x\\to\\kappa(O_x)$，完整像域为 $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$，点的次数为自然数有限秩 $\\deg(x)=\\dim_{\\mathbb Q}F_x$；若扩张为无限维，此有限秩按约定等于零。 对任意赋范域 $E$、含幺环嵌入 $\\tau:F_x\\to E$ 及带有隶属见证 $h_f:f\\in O_x$ 的 $f\\in K$，由环 $O_x$ 和映射 $\\tau\\circ s_x\\circ\\rho_x$ 构成的处在 $f$ 处的扩充值是有限值 $\\tau(e_x(\\langle f,h_f\\rangle))$，其中 $e_x:O_x\\to F_x$ 为剩余评价。",
+        "ja": "$K$ を標数零の体、$\\overline{\\mathbb Q}$ を固定した $\\mathbb Q$ の代数閉包とする。点 $x=(P_x,s_x)$ は、すべての有理数を含む真の付値部分環 $O_x\\subsetneq K$（素点 $P_x$ とみなす）と、その剰余体の単位的環埋め込み $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ からなる。剰余写像を $\\rho_x:O_x\\to\\kappa(O_x)$、全像体を $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ と書き、点の次数を自然数値の有限階数 $\\deg(x)=\\dim_{\\mathbb Q}F_x$ とし、拡大が無限次元ならこの有限階数は規約により零とする。 任意のノルム体 $E$、単位的環埋め込み $\\tau:F_x\\to E$、および所属の証拠 $h_f:f\\in O_x$ を伴う $f\\in K$ に対し、環 $O_x$ と写像 $\\tau\\circ s_x\\circ\\rho_x$ からなる素点の $f$ における拡張値は有限値 $\\tau(e_x(\\langle f,h_f\\rangle))$ である。ここで $e_x:O_x\\to F_x$ は剰余評価である。"
+      },
+      "proof_notes": "The source applies EPlace.val_of_mem.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem pointEPlace_val_of_mem (x : QbarPoint K) (τ : x.fieldOf →+* E) {f : K}\n    (hf : f ∈ x.P.1) : (pointEPlace x τ).val f = some (τ (evalF x ⟨f, hf⟩))",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.natDegree_minpoly_padic_le",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.natDegree_minpoly_padic_le",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 72,
+        "end_line": 88
+      },
+      "statements": {
+        "en": "For every prime natural number $p$, every number field $F$ (a characteristic-zero field finite dimensional over $\\mathbb Q$), every unital ring embedding $\\tau:F\\to\\overline{\\mathbb Q_p}$ into the algebraic closure of the $p$-adic field, and every $a\\in F$, the natural degree of the minimal polynomial of $\\tau(a)$ over $\\mathbb Q_p$ is at most $\\dim_{\\mathbb Q}F$. The assertion includes $a=0$.",
+        "zh_Hans": "对每个素自然数 $p$、每个数域 $F$（即在 $\\mathbb Q$ 上有限维的特征零域）、每个到 $p$ 进域的代数闭包的含幺环嵌入 $\\tau:F\\to\\overline{\\mathbb Q_p}$ 以及每个 $a\\in F$，$\\tau(a)$ 在 $\\mathbb Q_p$ 上的最小多项式的自然数次数不超过 $\\dim_{\\mathbb Q}F$。此断言包括 $a=0$。",
+        "ja": "各素数である自然数 $p$、各数体 $F$（$\\mathbb Q$ 上有限次元の標数零の体）、各単位的環埋め込み $\\tau:F\\to\\overline{\\mathbb Q_p}$、および各 $a\\in F$ に対し、$\\tau(a)$ の $\\mathbb Q_p$ 上の最小多項式の自然数次数は $\\dim_{\\mathbb Q}F$ 以下である。ここで $\\overline{\\mathbb Q_p}$ は $p$ 進体の代数閉包であり、$a=0$ も含まれる。"
+      },
+      "proof_notes": "The source compares minimal polynomials by divisibility after extending rational coefficients to the p-adic field.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem natDegree_minpoly_padic_le {p : ℕ} [Fact p.Prime] {F : Type*} [Field F] [NumberField F]\n    (τ : F →+* PadicAlgCl p) (a : F) :\n    (minpoly ℚ_[p] (τ a)).natDegree ≤ Module.finrank ℚ F",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.model_countable",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.model_countable",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 91,
+        "end_line": 114
+      },
+      "statements": {
+        "en": "For a natural number $N$, let $M$ be the following model: $K$ is an intermediate field of $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$, with elements $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K/\\mathbb Q(u)$ is finite dimensional with dimension $N$. The underlying set of $K$ is countable.",
+        "zh_Hans": "给定自然数 $N$，设 $M$ 为如下模型：$K$ 是 $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ 的中间域，含元素 $u,v\\in K$，其中 $u$ 在 $\\mathbb Q$ 上超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 为有限维扩张，维数等于 $N$。域 $K$ 的底集是可数集。",
+        "ja": "自然数 $N$ に対し、$M$ を次の模型とする。$K$ は $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ の中間体であり、元 $u,v\\in K$ は、$u$ が $\\mathbb Q$ 上超越的であること、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、および $K/\\mathbb Q(u)$ が有限次元でその次元が $N$ であることを満たす。$K$ の台集合は可算である。"
+      },
+      "proof_notes": "The source obtains countability of the simple field and then of its finite-dimensional extension.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem model_countable {N : ℕ} (M : Model N) : Countable M.K",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_surj_embeddings",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_surj_embeddings",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 120,
+        "end_line": 133
+      },
+      "statements": {
+        "en": "Let $K$ be a field of characteristic zero and $\\overline{\\mathbb Q}$ the fixed algebraic closure of $\\mathbb Q$. A point $x=(P_x,s_x)$ consists of a proper valuation subring $O_x\\subsetneq K$ containing every rational number, viewed as a place $P_x$, and a unital ring embedding $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ of its residue field. Write $\\rho_x:O_x\\to\\kappa(O_x)$ for the residue map and $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ for the full image field; its degree is $\\deg(x)=\\dim_{\\mathbb Q}F_x$ as a natural-number finite rank, which is zero if the extension is infinite dimensional. Let $E$ be an algebraically closed field of characteristic zero and assume $F_x$ is finite dimensional over $\\mathbb Q$. For each natural number $d$ satisfying $\\deg(x)\\le d$, there is a surjection from $\\{0,\\ldots,d-1\\}$ onto the set of all unital ring embeddings $F_x\\to E$. Repetitions are allowed; this is not a claim of a bijection. The finite-dimensional field has positive degree, so the degree hypothesis cannot hold for $d=0$.",
+        "zh_Hans": "设 $K$ 为特征零的域，$\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包。点 $x=(P_x,s_x)$ 由包含所有有理数的真赋值子环 $O_x\\subsetneq K$（视为处 $P_x$）及其剩余域的含幺环嵌入 $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ 构成。记剩余映射为 $\\rho_x:O_x\\to\\kappa(O_x)$，完整像域为 $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$，点的次数为自然数有限秩 $\\deg(x)=\\dim_{\\mathbb Q}F_x$；若扩张为无限维，此有限秩按约定等于零。 设 $E$ 为特征零的代数闭域，并假设 $F_x$ 在 $\\mathbb Q$ 上有限维。对每个满足 $\\deg(x)\\le d$ 的自然数 $d$，存在从 $\\{0,\\ldots,d-1\\}$ 到所有含幺环嵌入 $F_x\\to E$ 所成集合的满射。允许重复，断言并不要求双射。有限维域的次数为正，因此 $d=0$ 时次数前提不可能成立。",
+        "ja": "$K$ を標数零の体、$\\overline{\\mathbb Q}$ を固定した $\\mathbb Q$ の代数閉包とする。点 $x=(P_x,s_x)$ は、すべての有理数を含む真の付値部分環 $O_x\\subsetneq K$（素点 $P_x$ とみなす）と、その剰余体の単位的環埋め込み $s_x:\\kappa(O_x)\\to\\overline{\\mathbb Q}$ からなる。剰余写像を $\\rho_x:O_x\\to\\kappa(O_x)$、全像体を $F_x=s_x(\\kappa(O_x))\\subseteq\\overline{\\mathbb Q}$ と書き、点の次数を自然数値の有限階数 $\\deg(x)=\\dim_{\\mathbb Q}F_x$ とし、拡大が無限次元ならこの有限階数は規約により零とする。 $E$ を標数零の代数閉体とし、$F_x$ は $\\mathbb Q$ 上有限次元と仮定する。$\\deg(x)\\le d$ を満たす各自然数 $d$ に対し、$\\{0,\\ldots,d-1\\}$ からすべての単位的環埋め込み $F_x\\to E$ の集合への全射が存在する。重複は許され、全単射は主張されない。有限次元の体の次数は正であるため、$d=0$ では次数の仮定は成立しない。"
+      },
+      "proof_notes": "The source enumerates all embeddings and pads unused indices with an arbitrary embedding.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem exists_surj_embeddings {E : Type*} [Field E] [CharZero E] [IsAlgClosed E]\n    (x : QbarPoint K) [FiniteDimensional ℚ x.fieldOf] {d : ℕ} (hd : x.degree ≤ d) :\n    ∃ e : Fin d → (x.fieldOf →+* E), Function.Surjective e",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.EPlace.val_ratCast",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.EPlace.val_ratCast",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 142,
+        "end_line": 156
+      },
+      "statements": {
+        "en": "For a field $K$ and a normed field $E$, an $E$-valued place $y$ consists of a valuation subring $O_y$ of $K$ and a unital ring map $r_y:O_y\\to E$ with $r_y(f)=0$ exactly when $f$ is not a unit of $O_y$. Its extended value $v_y(f)$ is $r_y(f)$ if $f\\in O_y$ and $\\infty$ otherwise. Assume $K$ and $E$ have characteristic zero and every rational number belongs to $O_y$. Then for every $q\\in\\mathbb Q$, the extended value $v_y(q)$ is the finite value equal to the canonical image of $q$ in $E$.",
+        "zh_Hans": "对域 $K$ 和赋范域 $E$，一个取值于 $E$ 的处 $y$ 由 $K$ 的赋值子环 $O_y$ 及含幺环映射 $r_y:O_y\\to E$ 构成，且 $r_y(f)=0$ 当且仅当 $f$ 不是 $O_y$ 的单位。扩充值 $v_y(f)$ 在 $f\\in O_y$ 时为 $r_y(f)$，否则为 $\\infty$。 假设 $K,E$ 都具有特征零，且每个有理数都属于 $O_y$。那么对每个 $q\\in\\mathbb Q$，扩充值 $v_y(q)$ 是有限值，等于 $q$ 在 $E$ 中的典范像。",
+        "ja": "体 $K$ とノルム体 $E$ に対し、$E$ に値をとる素点 $y$ は $K$ の付値部分環 $O_y$ と単位的環写像 $r_y:O_y\\to E$ からなり、$r_y(f)=0$ であることと $f$ が $O_y$ の単元でないことが同値である。拡張値 $v_y(f)$ は $f\\in O_y$ のとき $r_y(f)$、それ以外では $\\infty$ である。 $K,E$ はともに標数零であり、すべての有理数が $O_y$ に属すると仮定する。このとき各 $q\\in\\mathbb Q$ に対し、拡張値 $v_y(q)$ は $q$ の $E$ における標準的な像に等しい有限値である。"
+      },
+      "proof_notes": "The source uses preservation of integer and natural casts and the rational numerator/denominator identity.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem EPlace.val_ratCast (y : EPlace K E) (hQ : ∀ q : ℚ, (q : K) ∈ y.O) (q : ℚ) :\n    y.val (q : K) = some (q : E)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.ratCast_mem_limitSubring",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.ratCast_mem_limitSubring",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 161,
+        "end_line": 168
+      },
+      "statements": {
+        "en": "For a field $K$ and a normed field $E$, an $E$-valued place $y$ consists of a valuation subring $O_y$ of $K$ and a unital ring map $r_y:O_y\\to E$ with $r_y(f)=0$ exactly when $f$ is not a unit of $O_y$. Its extended value $v_y(f)$ is $r_y(f)$ if $f\\in O_y$ and $\\infty$ otherwise. Assume $K$ and $E$ have characteristic zero, let $(y_n)_{n\\in\\mathbb N}$ be a sequence of such places and $\\xi:K\\to E\\cup\\{\\infty\\}$, assume every $O_{y_n}$ contains every rational number and $v_{y_n}(f)\\to\\xi(f)$ for every $f\\in K$, and put $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$, a valuation subring. Here the extended line is $E\\cup\\{\\infty\\}$: convergence to $b\\in E$ means that for every $\\varepsilon>0$, eventually the values are finite and within norm distance $\\varepsilon$ of $b$; convergence to $\\infty$ means that for every real $R$, eventually each finite value has norm greater than $R$, with infinite values allowed. For every $q\\in\\mathbb Q$, its canonical image in $K$ belongs to $O_\\xi$, that is, $\\xi(q)\\ne\\infty$.",
+        "zh_Hans": "对域 $K$ 和赋范域 $E$，一个取值于 $E$ 的处 $y$ 由 $K$ 的赋值子环 $O_y$ 及含幺环映射 $r_y:O_y\\to E$ 构成，且 $r_y(f)=0$ 当且仅当 $f$ 不是 $O_y$ 的单位。扩充值 $v_y(f)$ 在 $f\\in O_y$ 时为 $r_y(f)$，否则为 $\\infty$。 设 $K,E$ 都具有特征零，$(y_n)_{n\\in\\mathbb N}$ 为这样的处序列，$\\xi:K\\to E\\cup\\{\\infty\\}$。假设每个 $O_{y_n}$ 包含所有有理数，且对每个 $f\\in K$ 都有 $v_{y_n}(f)\\to\\xi(f)$；置 $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$，它是赋值子环。 这里扩充直线为 $E\\cup\\{\\infty\\}$：收敛到 $b\\in E$ 指对每个 $\\varepsilon>0$，最终各值有限且与 $b$ 的范数距离小于 $\\varepsilon$；收敛到 $\\infty$ 指对每个实数 $R$，最终每个有限值的范数都大于 $R$，并允许出现无穷值。 对每个 $q\\in\\mathbb Q$，它在 $K$ 中的典范像都属于 $O_\\xi$，即 $\\xi(q)\\ne\\infty$。",
+        "ja": "体 $K$ とノルム体 $E$ に対し、$E$ に値をとる素点 $y$ は $K$ の付値部分環 $O_y$ と単位的環写像 $r_y:O_y\\to E$ からなり、$r_y(f)=0$ であることと $f$ が $O_y$ の単元でないことが同値である。拡張値 $v_y(f)$ は $f\\in O_y$ のとき $r_y(f)$、それ以外では $\\infty$ である。 $K,E$ はともに標数零とし、$(y_n)_{n\\in\\mathbb N}$ をこのような素点の列、$\\xi:K\\to E\\cup\\{\\infty\\}$ とする。各 $O_{y_n}$ がすべての有理数を含み、各 $f\\in K$ に対して $v_{y_n}(f)\\to\\xi(f)$ と仮定し、付値部分環 $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$ を定める。 ここで拡張直線は $E\\cup\\{\\infty\\}$ であり、$b\\in E$ への収束とは、各 $\\varepsilon>0$ に対して十分大きい添字の値が有限で $b$ とのノルム距離が $\\varepsilon$ 未満になることをいう。$\\infty$ への収束とは、各実数 $R$ に対して十分大きい添字の有限な値すべてのノルムが $R$ を超えることをいい、無限の値も許される。 各 $q\\in\\mathbb Q$ の $K$ における標準的な像は $O_\\xi$ に属する。すなわち $\\xi(q)\\ne\\infty$ である。"
+      },
+      "proof_notes": "The source identifies the rational limit using uniqueness and constant rational values.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem ratCast_mem_limitSubring (hQ : ∀ n (q : ℚ), (q : K) ∈ (y n).O)\n    (h : ∀ f, TendstoP1 (fun n => (y n).val f) (ξ f)) (q : ℚ) : (q : K) ∈ limitSubring h",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.limitPlace",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.limitPlace",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 171,
+        "end_line": 174
+      },
+      "statements": {
+        "en": "For a field $K$ and a normed field $E$, an $E$-valued place $y$ consists of a valuation subring $O_y$ of $K$ and a unital ring map $r_y:O_y\\to E$ with $r_y(f)=0$ exactly when $f$ is not a unit of $O_y$. Its extended value $v_y(f)$ is $r_y(f)$ if $f\\in O_y$ and $\\infty$ otherwise. Assume $K$ and $E$ have characteristic zero, let $(y_n)_{n\\in\\mathbb N}$ be a sequence of such places and $\\xi:K\\to E\\cup\\{\\infty\\}$, assume every $O_{y_n}$ contains every rational number and $v_{y_n}(f)\\to\\xi(f)$ for every $f\\in K$, and put $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$, a valuation subring. Here the extended line is $E\\cup\\{\\infty\\}$: convergence to $b\\in E$ means that for every $\\varepsilon>0$, eventually the values are finite and within norm distance $\\varepsilon$ of $b$; convergence to $\\infty$ means that for every real $R$, eventually each finite value has norm greater than $R$, with infinite values allowed. Define an optional place of $K$ as follows: if $O_\\xi=K$, the result is absent; otherwise the result is the place whose valuation subring is $O_\\xi$, together with its properness and containment of every rational number. The absent result denotes absence of a proper place, rather than a particular place of $K$.",
+        "zh_Hans": "对域 $K$ 和赋范域 $E$，一个取值于 $E$ 的处 $y$ 由 $K$ 的赋值子环 $O_y$ 及含幺环映射 $r_y:O_y\\to E$ 构成，且 $r_y(f)=0$ 当且仅当 $f$ 不是 $O_y$ 的单位。扩充值 $v_y(f)$ 在 $f\\in O_y$ 时为 $r_y(f)$，否则为 $\\infty$。 设 $K,E$ 都具有特征零，$(y_n)_{n\\in\\mathbb N}$ 为这样的处序列，$\\xi:K\\to E\\cup\\{\\infty\\}$。假设每个 $O_{y_n}$ 包含所有有理数，且对每个 $f\\in K$ 都有 $v_{y_n}(f)\\to\\xi(f)$；置 $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$，它是赋值子环。 这里扩充直线为 $E\\cup\\{\\infty\\}$：收敛到 $b\\in E$ 指对每个 $\\varepsilon>0$，最终各值有限且与 $b$ 的范数距离小于 $\\varepsilon$；收敛到 $\\infty$ 指对每个实数 $R$，最终每个有限值的范数都大于 $R$，并允许出现无穷值。 如下定义一个可缺省的 $K$ 的处：若 $O_\\xi=K$，结果为空；否则结果为赋值子环等于 $O_\\xi$ 的处，并附带真子环性和包含所有有理数的条件。空结果表示没有得到真赋值子环所对应的处，并非指定 $K$ 的某个处。",
+        "ja": "体 $K$ とノルム体 $E$ に対し、$E$ に値をとる素点 $y$ は $K$ の付値部分環 $O_y$ と単位的環写像 $r_y:O_y\\to E$ からなり、$r_y(f)=0$ であることと $f$ が $O_y$ の単元でないことが同値である。拡張値 $v_y(f)$ は $f\\in O_y$ のとき $r_y(f)$、それ以外では $\\infty$ である。 $K,E$ はともに標数零とし、$(y_n)_{n\\in\\mathbb N}$ をこのような素点の列、$\\xi:K\\to E\\cup\\{\\infty\\}$ とする。各 $O_{y_n}$ がすべての有理数を含み、各 $f\\in K$ に対して $v_{y_n}(f)\\to\\xi(f)$ と仮定し、付値部分環 $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$ を定める。 ここで拡張直線は $E\\cup\\{\\infty\\}$ であり、$b\\in E$ への収束とは、各 $\\varepsilon>0$ に対して十分大きい添字の値が有限で $b$ とのノルム距離が $\\varepsilon$ 未満になることをいう。$\\infty$ への収束とは、各実数 $R$ に対して十分大きい添字の有限な値すべてのノルムが $R$ を超えることをいい、無限の値も許される。 次のように、存在しない場合もある $K$ の素点を定める。$O_\\xi=K$ ならば結果は存在せず、そうでなければ、付値部分環が $O_\\xi$ である素点を、その真の部分環であることおよびすべての有理数を含むこととともに返す。空の結果は真の付値部分環による素点が得られないことを表し、特定の素点を表すものではない。"
+      },
+      "proof_notes": "Noncomputable case distinction on whether the limit valuation subring is the whole field.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "noncomputable def limitPlace (hQ : ∀ n (q : ℚ), (q : K) ∈ (y n).O)\n    (h : ∀ f, TendstoP1 (fun n => (y n).val f) (ξ f)) : Option (Place K)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.eventually_bounded_of_limitPlace",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.eventually_bounded_of_limitPlace",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 178,
+        "end_line": 206
+      },
+      "statements": {
+        "en": "For a field $K$ and a normed field $E$, an $E$-valued place $y$ consists of a valuation subring $O_y$ of $K$ and a unital ring map $r_y:O_y\\to E$ with $r_y(f)=0$ exactly when $f$ is not a unit of $O_y$. Its extended value $v_y(f)$ is $r_y(f)$ if $f\\in O_y$ and $\\infty$ otherwise. Assume $K$ and $E$ have characteristic zero, let $(y_n)_{n\\in\\mathbb N}$ be a sequence of such places and $\\xi:K\\to E\\cup\\{\\infty\\}$, assume every $O_{y_n}$ contains every rational number and $v_{y_n}(f)\\to\\xi(f)$ for every $f\\in K$, and put $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$, a valuation subring. Here the extended line is $E\\cup\\{\\infty\\}$: convergence to $b\\in E$ means that for every $\\varepsilon>0$, eventually the values are finite and within norm distance $\\varepsilon$ of $b$; convergence to $\\infty$ means that for every real $R$, eventually each finite value has norm greater than $R$, with infinite values allowed. Let $\\varphi\\in K$ satisfy $\\varphi\\ne0,1$. If $O_\\xi\\ne K$, require $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_\\xi$; equivalently, for every place $P$ returned by the optional construction that returns $O_\\xi$ when it is proper and returns nothing otherwise, require these three elements to belong to $O_P$. When $O_\\xi=K$, this condition on returned places is vacuous. Then there exists a real $C$ such that for all sufficiently large $n$ there is $\\alpha\\in E$ with $v_{y_n}(\\varphi)=\\alpha$, $|\\log\\|\\alpha\\||\\le C$, $|\\log\\|\\alpha-1\\||\\le C$, $\\alpha\\ne0$, and $\\alpha\\ne1$. One $C$ and one eventual range work for both inequalities and both exclusions.",
+        "zh_Hans": "对域 $K$ 和赋范域 $E$，一个取值于 $E$ 的处 $y$ 由 $K$ 的赋值子环 $O_y$ 及含幺环映射 $r_y:O_y\\to E$ 构成，且 $r_y(f)=0$ 当且仅当 $f$ 不是 $O_y$ 的单位。扩充值 $v_y(f)$ 在 $f\\in O_y$ 时为 $r_y(f)$，否则为 $\\infty$。 设 $K,E$ 都具有特征零，$(y_n)_{n\\in\\mathbb N}$ 为这样的处序列，$\\xi:K\\to E\\cup\\{\\infty\\}$。假设每个 $O_{y_n}$ 包含所有有理数，且对每个 $f\\in K$ 都有 $v_{y_n}(f)\\to\\xi(f)$；置 $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$，它是赋值子环。 这里扩充直线为 $E\\cup\\{\\infty\\}$：收敛到 $b\\in E$ 指对每个 $\\varepsilon>0$，最终各值有限且与 $b$ 的范数距离小于 $\\varepsilon$；收敛到 $\\infty$ 指对每个实数 $R$，最终每个有限值的范数都大于 $R$，并允许出现无穷值。 设 $\\varphi\\in K$ 满足 $\\varphi\\ne0,1$。若 $O_\\xi\\ne K$，要求 $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_\\xi$；等价地，对可缺省构造返回的每个处 $P$，要求这三个元素均属于 $O_P$，该构造在 $O_\\xi$ 为真子环时返回此处，否则不返回处。$O_\\xi=K$ 时，对返回处的条件为空真。那么存在实数 $C$，使每个充分大的 $n$ 都有 $\\alpha\\in E$ 满足 $v_{y_n}(\\varphi)=\\alpha$、$|\\log\\|\\alpha\\||\\le C$、$|\\log\\|\\alpha-1\\||\\le C$、$\\alpha\\ne0$ 且 $\\alpha\\ne1$。两个不等式及两个排除条件共用同一个 $C$ 和同一段最终范围。",
+        "ja": "体 $K$ とノルム体 $E$ に対し、$E$ に値をとる素点 $y$ は $K$ の付値部分環 $O_y$ と単位的環写像 $r_y:O_y\\to E$ からなり、$r_y(f)=0$ であることと $f$ が $O_y$ の単元でないことが同値である。拡張値 $v_y(f)$ は $f\\in O_y$ のとき $r_y(f)$、それ以外では $\\infty$ である。 $K,E$ はともに標数零とし、$(y_n)_{n\\in\\mathbb N}$ をこのような素点の列、$\\xi:K\\to E\\cup\\{\\infty\\}$ とする。各 $O_{y_n}$ がすべての有理数を含み、各 $f\\in K$ に対して $v_{y_n}(f)\\to\\xi(f)$ と仮定し、付値部分環 $O_\\xi=\\{f\\in K:\\xi(f)\\ne\\infty\\}$ を定める。 ここで拡張直線は $E\\cup\\{\\infty\\}$ であり、$b\\in E$ への収束とは、各 $\\varepsilon>0$ に対して十分大きい添字の値が有限で $b$ とのノルム距離が $\\varepsilon$ 未満になることをいう。$\\infty$ への収束とは、各実数 $R$ に対して十分大きい添字の有限な値すべてのノルムが $R$ を超えることをいい、無限の値も許される。 $\\varphi\\in K$ は $\\varphi\\ne0,1$ を満たすとする。$O_\\xi\\ne K$ の場合は $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_\\xi$ を要求する。同値に、$O_\\xi$ が真の部分環ならそれを素点として返し、そうでなければ何も返さない構成について、返される各素点 $P$ でこの三元が $O_P$ に属することを要求する。$O_\\xi=K$ ならこの条件は空虚に成立する。このとき実数 $C$ が存在し、十分大きいすべての $n$ で、ある $\\alpha\\in E$ が $v_{y_n}(\\varphi)=\\alpha$、$|\\log\\|\\alpha\\||\\le C$、$|\\log\\|\\alpha-1\\||\\le C$、$\\alpha\\ne0$、$\\alpha\\ne1$ を満たす。一つの $C$ と共通の最終的な添字範囲がすべての条件に用いられる。"
+      },
+      "proof_notes": "The source first excludes the three infinite limit values, then excludes limit values zero and one, and applies eventually_abs_log_le.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem eventually_bounded_of_limitPlace (hQ : ∀ n (q : ℚ), (q : K) ∈ (y n).O)\n    (h : ∀ f, TendstoP1 (fun n => (y n).val f) (ξ f)) {φ : K} (hφ0 : φ ≠ 0) (hφ1 : φ ≠ 1)\n    (hP : ∀ P, limitPlace hQ h = some P → φ ∈ P.1 ∧ φ⁻¹ ∈ P.1 ∧ (φ - 1)⁻¹ ∈ P.1) :\n    ∃ C : ℝ, ∀ᶠ n in atTop, ∃ α, (y n).val φ = some α ∧\n      |Real.log ‖α‖| ≤ C ∧ |Real.log ‖α - 1‖| ≤ C ∧ α ≠ 0 ∧ α ≠ 1",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_limit",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_limit",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 215,
+        "end_line": 224
+      },
+      "statements": {
+        "en": "For a field $K$ and a normed field $E$, an $E$-valued place $y$ consists of a valuation subring $O_y$ of $K$ and a unital ring map $r_y:O_y\\to E$ with $r_y(f)=0$ exactly when $f$ is not a unit of $O_y$. Its extended value $v_y(f)$ is $r_y(f)$ if $f\\in O_y$ and $\\infty$ otherwise. Assume $K$ is countable. Fix a predicate $G$ on $E$ with this property: every sequence $a:\\mathbb N\\to E$ satisfying $G(a_n)$ for all $n$ has a strictly increasing index map $\\theta:\\mathbb N\\to\\mathbb N$ such that either $a_{\\theta(n)}$ converges to some $b\\in E$, or $\\|a_{\\theta(n)}\\|$ tends to $+\\infty$. Let $d$ be a nonzero natural number, let $y_{n,i}$ be such places for $n\\in\\mathbb N$ and $i\\in\\{0,\\ldots,d-1\\}$, and suppose every finite value $v_{y_{n,i}}(f)=\\alpha$ satisfies $G(\\alpha)$ for all $n,i,f,\\alpha$. For every strictly increasing $D_0:\\mathbb N\\to\\mathbb N$, there is a strictly increasing $D:\\mathbb N\\to\\mathbb N$, itself of the form $D=D_0\\circ\\psi$ for some strictly increasing $\\psi:\\mathbb N\\to\\mathbb N$, and a function $\\xi:\\{0,\\ldots,d-1\\}\\times K\\to E\\cup\\{\\infty\\}$ such that $v_{y_{D(n),i}}(f)\\to\\xi(i,f)$ for every $i,f$. The same $D$ works for all $i,f$. Here the extended line is $E\\cup\\{\\infty\\}$: convergence to $b\\in E$ means that for every $\\varepsilon>0$, eventually the values are finite and within norm distance $\\varepsilon$ of $b$; convergence to $\\infty$ means that for every real $R$, eventually each finite value has norm greater than $R$, with infinite values allowed. ",
+        "zh_Hans": "对域 $K$ 和赋范域 $E$，一个取值于 $E$ 的处 $y$ 由 $K$ 的赋值子环 $O_y$ 及含幺环映射 $r_y:O_y\\to E$ 构成，且 $r_y(f)=0$ 当且仅当 $f$ 不是 $O_y$ 的单位。扩充值 $v_y(f)$ 在 $f\\in O_y$ 时为 $r_y(f)$，否则为 $\\infty$。 假设 $K$ 可数。固定 $E$ 上的谓词 $G$，并假设：每个处处满足 $G(a_n)$ 的序列 $a:\\mathbb N\\to E$ 都存在严格递增的指标映射 $\\theta:\\mathbb N\\to\\mathbb N$，使 $a_{\\theta(n)}$ 收敛到某个 $b\\in E$，或者 $\\|a_{\\theta(n)}\\|$ 趋于 $+\\infty$。设 $d$ 为非零自然数，对 $n\\in\\mathbb N$、$i\\in\\{0,\\ldots,d-1\\}$ 给定上述处 $y_{n,i}$，并假设对所有 $n,i,f,\\alpha$，每个有限值 $v_{y_{n,i}}(f)=\\alpha$ 都满足 $G(\\alpha)$。对每个严格递增的 $D_0:\\mathbb N\\to\\mathbb N$，存在严格递增的 $D:\\mathbb N\\to\\mathbb N$、严格递增的 $\\psi:\\mathbb N\\to\\mathbb N$ 及函数 $\\xi:\\{0,\\ldots,d-1\\}\\times K\\to E\\cup\\{\\infty\\}$，满足 $D=D_0\\circ\\psi$，且对所有 $i,f$ 都有 $v_{y_{D(n),i}}(f)\\to\\xi(i,f)$。所有 $i,f$ 共用同一个 $D$。 这里扩充直线为 $E\\cup\\{\\infty\\}$：收敛到 $b\\in E$ 指对每个 $\\varepsilon>0$，最终各值有限且与 $b$ 的范数距离小于 $\\varepsilon$；收敛到 $\\infty$ 指对每个实数 $R$，最终每个有限值的范数都大于 $R$，并允许出现无穷值。 ",
+        "ja": "体 $K$ とノルム体 $E$ に対し、$E$ に値をとる素点 $y$ は $K$ の付値部分環 $O_y$ と単位的環写像 $r_y:O_y\\to E$ からなり、$r_y(f)=0$ であることと $f$ が $O_y$ の単元でないことが同値である。拡張値 $v_y(f)$ は $f\\in O_y$ のとき $r_y(f)$、それ以外では $\\infty$ である。 $K$ は可算とする。$E$ 上の述語 $G$ を固定し、すべての $n$ で $G(a_n)$ を満たす各列 $a:\\mathbb N\\to E$ に対し、狭義単調増加写像 $\\theta:\\mathbb N\\to\\mathbb N$ が存在して、$a_{\\theta(n)}$ がある $b\\in E$ に収束するか、または $\\|a_{\\theta(n)}\\|$ が $+\\infty$ に発散すると仮定する。$d$ を零でない自然数とし、$n\\in\\mathbb N$ と $i\\in\\{0,\\ldots,d-1\\}$ に対し上記の素点 $y_{n,i}$ を与え、すべての $n,i,f,\\alpha$ について、有限値 $v_{y_{n,i}}(f)=\\alpha$ は $G(\\alpha)$ を満たすと仮定する。各狭義単調増加写像 $D_0:\\mathbb N\\to\\mathbb N$ に対し、狭義単調増加写像 $D,\\psi:\\mathbb N\\to\\mathbb N$ と関数 $\\xi:\\{0,\\ldots,d-1\\}\\times K\\to E\\cup\\{\\infty\\}$ が存在し、$D=D_0\\circ\\psi$ であり、すべての $i,f$ で $v_{y_{D(n),i}}(f)\\to\\xi(i,f)$ となる。同じ $D$ がすべての $i,f$ に用いられる。 ここで拡張直線は $E\\cup\\{\\infty\\}$ であり、$b\\in E$ への収束とは、各 $\\varepsilon>0$ に対して十分大きい添字の値が有限で $b$ とのノルム距離が $\\varepsilon$ 未満になることをいう。$\\infty$ への収束とは、各実数 $R$ に対して十分大きい添字の有限な値すべてのノルムが $R$ を超えることをいい、無限の値も許される。 "
+      },
+      "proof_notes": "The source invokes exists_limit on the sequence restricted by D₀ and composes the resulting index map with D₀. No characteristic-zero condition on K is added merely from the ambient section.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem exists_subseq_limit [Countable K] {E : Type*} [NormedField E] {Good : E → Prop}\n    (hcpt : ∀ a : ℕ → E, (∀ n, Good (a n)) → ∃ φ : ℕ → ℕ, StrictMono φ ∧\n      ((∃ b, Tendsto (a ∘ φ) atTop (𝓝 b)) ∨ Tendsto (fun n => ‖a (φ n)‖) atTop atTop))\n    {d : ℕ} [NeZero d] (y : ℕ → Fin d → EPlace K E)\n    (hgood : ∀ n i f α, (y n i).val f = some α → Good α) (D₀ : ℕ → ℕ) (hD₀ : StrictMono D₀) :\n    ∃ D : ℕ → ℕ, StrictMono D ∧ (∃ ψ : ℕ → ℕ, StrictMono ψ ∧ D = D₀ ∘ ψ) ∧\n      ∃ ξ : Fin d → K → Option E, ∀ i f, TendstoP1 (fun n => (y (D n) i).val f) (ξ i f)",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.tendstoP1_comp_subseq",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.tendstoP1_comp_subseq",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "source_span": {
+        "start_line": 227,
+        "end_line": 229
+      },
+      "statements": {
+        "en": "Let $E$ be any normed field, $a:\\mathbb N\\to E\\cup\\{\\infty\\}$ any sequence, and $b\\in E\\cup\\{\\infty\\}$. If $a$ converges to $b$ in the following sense, then for every strictly increasing $\\psi:\\mathbb N\\to\\mathbb N$, $a\\circ\\psi$ converges to the same $b$ in that sense. Here the extended line is $E\\cup\\{\\infty\\}$: convergence to $b\\in E$ means that for every $\\varepsilon>0$, eventually the values are finite and within norm distance $\\varepsilon$ of $b$; convergence to $\\infty$ means that for every real $R$, eventually each finite value has norm greater than $R$, with infinite values allowed. ",
+        "zh_Hans": "设 $E$ 为任意赋范域，$a:\\mathbb N\\to E\\cup\\{\\infty\\}$ 为任意序列，$b\\in E\\cup\\{\\infty\\}$。若 $a$ 按如下意义收敛到 $b$，则对每个严格递增的 $\\psi:\\mathbb N\\to\\mathbb N$，$a\\circ\\psi$ 都按同一意义收敛到同一个 $b$。 这里扩充直线为 $E\\cup\\{\\infty\\}$：收敛到 $b\\in E$ 指对每个 $\\varepsilon>0$，最终各值有限且与 $b$ 的范数距离小于 $\\varepsilon$；收敛到 $\\infty$ 指对每个实数 $R$，最终每个有限值的范数都大于 $R$，并允许出现无穷值。 ",
+        "ja": "$E$ を任意のノルム体、$a:\\mathbb N\\to E\\cup\\{\\infty\\}$ を任意の列、$b\\in E\\cup\\{\\infty\\}$ とする。$a$ が以下の意味で $b$ に収束するならば、各狭義単調増加写像 $\\psi:\\mathbb N\\to\\mathbb N$ に対し、$a\\circ\\psi$ も同じ意味で同じ $b$ に収束する。 ここで拡張直線は $E\\cup\\{\\infty\\}$ であり、$b\\in E$ への収束とは、各 $\\varepsilon>0$ に対して十分大きい添字の値が有限で $b$ とのノルム距離が $\\varepsilon$ 未満になることをいう。$\\infty$ への収束とは、各実数 $R$ に対して十分大きい添字の有限な値すべてのノルムが $R$ を超えることをいい、無限の値も許される。 "
+      },
+      "proof_notes": "The source applies composition of TendstoP1 with the atTop convergence of a strictly increasing map. The declaration has no K parameter.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem tendstoP1_comp_subseq {E : Type*} [NormedField E] {a : ℕ → Option E} {b : Option E}\n    (h : TendstoP1 a b) {ψ : ℕ → ℕ} (hψ : StrictMono ψ) : TendstoP1 (a ∘ ψ) b",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.factPrimes",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.factPrimes",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactness.lean",
+      "sha256": "729ffdbbf14e81a220e0c3c2aab879d951a6b969b47e19663635dd21d10c0b54",
+      "source_span": {
+        "start_line": 23,
+        "end_line": 23
+      },
+      "statements": {
+        "en": "For each element $p$ of the subtype of natural primes, provide the proposition that its underlying natural number is prime as a local typeclass fact.",
+        "zh_Hans": "对自然数中素数构成的子类型的每个元素 $p$，将“$p$ 的底层自然数是素数”这一命题提供为局部类型类事实。",
+        "ja": "自然数の素数からなる部分型の各元 $p$ に対し、その台となる自然数が素数であるという命題を局所的な型クラスの事実として与える。"
+      },
+      "proof_notes": "The instance wraps the primality proof already stored in p. Its scope is local to the source section.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "local instance factPrimes (p : Nat.Primes) : Fact (p : ℕ).Prime",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactness.lean",
+      "sha256": "729ffdbbf14e81a220e0c3c2aab879d951a6b969b47e19663635dd21d10c0b54",
+      "source_span": {
+        "start_line": 31,
+        "end_line": 155
+      },
+      "statements": {
+        "en": "For a natural number $N$, let $M$ be the following model: $K$ is an intermediate field of $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$, with elements $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K/\\mathbb Q(u)$ is finite dimensional with dimension $N$. Here $\\overline{\\mathbb Q}$ is the fixed algebraic closure of $\\mathbb Q$, and $\\kappa(O)$ denotes the residue field of a valuation ring $O$. A place $P$ is a proper valuation subring $O_P\\subsetneq K$ containing every rational number. A point $x=(P_x,s_x)$ also specifies a unital ring embedding $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$; its full point field is $F_x=s_x(\\kappa(O_{P_x}))$ and its degree is $\\dim_{\\mathbb Q}F_x$. Assume every residue field $\\kappa(O_P)$ is finite dimensional over $\\mathbb Q$. For every natural degree bound $d$ and sequence $(x_n)_{n\\in\\mathbb N}$ of these points with $\\dim_{\\mathbb Q}F_{x_n}\\le d$ for every $n$, and for every finite set $V$ of natural primes, there exist a strictly increasing $D:\\mathbb N\\to\\mathbb N$ and a finite set $T$ of places of $K$ with this property: for every $\\varphi\\in K$ with $\\varphi\\ne0$, $\\varphi\\ne1$, and $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ for every $P\\in T$, there is a real constant $C$ such that for every sufficiently large $n$ there is a membership witness $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$. Writing $e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$, its image in $\\overline{\\mathbb Q}$ is neither $0$ nor $1$; for every unital ring embedding $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$ one has $|\\log\\|\\sigma(e_n)\\||\\le C$ and $|\\log\\|\\sigma(e_n)-1\\||\\le C$; and for every $p\\in V$ and every unital ring embedding $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_p}$ one has $|\\log\\|\\tau(e_n)\\||\\le C$ and $|\\log\\|\\tau(e_n)-1\\||\\le C$, using the respective complex and $p$-adic algebraic-closure norms. The same $D$ and $T$ serve all eligible $\\varphi$; $C$ and the eventual index threshold may depend on $\\varphi$, but are common to all the indicated embeddings and all $p\\in V$. The embedding domains are the full fields $F_{x_{D(n)}}$, not merely the fields generated by $e_n$. The set $T$ may be empty, and $V$ may be empty, in which case the $p$-adic clauses are vacuous. The degree hypotheses cannot hold for $d=0$.",
+        "zh_Hans": "给定自然数 $N$，设 $M$ 为如下模型：$K$ 是 $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ 的中间域，含元素 $u,v\\in K$，其中 $u$ 在 $\\mathbb Q$ 上超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 为有限维扩张，维数等于 $N$。这里 $\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包，$\\kappa(O)$ 表示赋值环 $O$ 的剩余域。处 $P$ 指包含所有有理数的真赋值子环 $O_P\\subsetneq K$。点 $x=(P_x,s_x)$ 还指定剩余域的含幺环嵌入 $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$；其完整点域为 $F_x=s_x(\\kappa(O_{P_x}))$，次数为 $\\dim_{\\mathbb Q}F_x$。 假设每个剩余域 $\\kappa(O_P)$ 在 $\\mathbb Q$ 上有限维。 对每个自然数次数上界 $d$ 和每项满足 $\\dim_{\\mathbb Q}F_{x_n}\\le d$ 的上述点序列 $(x_n)_{n\\in\\mathbb N}$，以及每个由素自然数组成的有限集 $V$，存在严格递增的 $D:\\mathbb N\\to\\mathbb N$ 及 $K$ 的处的有限集 $T$，使得：对每个满足 $\\varphi\\ne0$、$\\varphi\\ne1$ 且对所有 $P\\in T$ 都有 $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ 的 $\\varphi\\in K$，存在实常数 $C$，使每个充分大的 $n$ 都有隶属见证 $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$。记 $e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$，则它在 $\\overline{\\mathbb Q}$ 中的像不等于 $0$ 或 $1$；对每个含幺环嵌入 $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$，有 $|\\log\\|\\sigma(e_n)\\||\\le C$ 及 $|\\log\\|\\sigma(e_n)-1\\||\\le C$；对每个 $p\\in V$ 及每个含幺环嵌入 $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_p}$，有 $|\\log\\|\\tau(e_n)\\||\\le C$ 及 $|\\log\\|\\tau(e_n)-1\\||\\le C$，其中分别使用复数范数和 $p$ 进代数闭包上的范数。所有合适的 $\\varphi$ 共用同一个 $D$ 和同一个 $T$；$C$ 及最终成立的指标起点可依赖 $\\varphi$，但所有指定嵌入和所有 $p\\in V$共用它们。嵌入的定义域为完整的 $F_{x_{D(n)}}$，而不只是 $e_n$ 生成的域。允许 $T$ 为空，也允许 $V$ 为空，此时所有 $p$ 进条件为空真。$d=0$ 时次数前提不可能成立。",
+        "ja": "自然数 $N$ に対し、$M$ を次の模型とする。$K$ は $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ の中間体であり、元 $u,v\\in K$ は、$u$ が $\\mathbb Q$ 上超越的であること、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、および $K/\\mathbb Q(u)$ が有限次元でその次元が $N$ であることを満たす。ここで $\\overline{\\mathbb Q}$ は固定した $\\mathbb Q$ の代数閉包、$\\kappa(O)$ は付値環 $O$ の剰余体である。素点 $P$ はすべての有理数を含む真の付値部分環 $O_P\\subsetneq K$ である。点 $x=(P_x,s_x)$ はさらに剰余体の単位的環埋め込み $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$ を指定し、その全点体は $F_x=s_x(\\kappa(O_{P_x}))$、次数は $\\dim_{\\mathbb Q}F_x$ である。 各剰余体 $\\kappa(O_P)$ は $\\mathbb Q$ 上有限次元と仮定する。 各自然数の次数上界 $d$ と、すべての $n$ で $\\dim_{\\mathbb Q}F_{x_n}\\le d$ を満たす上記の点の列 $(x_n)_{n\\in\\mathbb N}$ に対し、また素数である自然数の各有限集合 $V$ に対し、狭義単調増加写像 $D:\\mathbb N\\to\\mathbb N$ と $K$ の素点の有限集合 $T$ が存在し、次が成り立つ。$\\varphi\\ne0$、$\\varphi\\ne1$、およびすべての $P\\in T$ で $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ を満たす各 $\\varphi\\in K$ に対し、実定数 $C$ が存在し、十分大きいすべての $n$ について所属の証拠 $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$ が存在する。$e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$ と書くと、その $\\overline{\\mathbb Q}$ における像は $0$ でも $1$ でもなく、各単位的環埋め込み $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$ について $|\\log\\|\\sigma(e_n)\\||\\le C$ および $|\\log\\|\\sigma(e_n)-1\\||\\le C$ が成り立ち、各 $p\\in V$ と各単位的環埋め込み $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_p}$ について $|\\log\\|\\tau(e_n)\\||\\le C$ および $|\\log\\|\\tau(e_n)-1\\||\\le C$ が成り立つ。ノルムはそれぞれ複素数のノルムと $p$ 進体の代数閉包のノルムである。同じ $D,T$ がすべての該当する $\\varphi$ に用いられる。$C$ と最終的に成立する添字の下限は $\\varphi$ に依存してよいが、指定されたすべての埋め込みおよびすべての $p\\in V$に共通である。埋め込みの定義域は全体の $F_{x_{D(n)}}$ であり、$e_n$ の生成する体だけではない。$T$ は空でもよい。$V$ も空でよく、その場合 $p$ 進の条件は空虚に成立する。$d=0$ では次数の仮定は成立しない。"
+      },
+      "proof_notes": "The source chooses finite enumerations of all full point-field embeddings, successively refines subsequences for the complex place and the primes in V, forms T from the proper limit places, and combines finitely many bounds. This is a description of the written proof only; no compiler or axiom-audit result is asserted.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem exists_subseq_bounded {N : ℕ} (M : Model N) (hRF : ResiduesFinite M)\n    (V : Finset Nat.Primes) {d : ℕ} (x : ℕ → QbarPoint M.K)\n    (hx : ∀ n, (x n).degree ≤ d) :\n    ∃ D : ℕ → ℕ, StrictMono D ∧ ∃ T : Finset (Place M.K), ∀ φ : M.K, φ ≠ 0 → φ ≠ 1 →\n      (∀ P ∈ T, φ ∈ P.1 ∧ φ⁻¹ ∈ P.1 ∧ (φ - 1)⁻¹ ∈ P.1) →\n      ∃ C : ℝ, ∀ᶠ n in atTop, ∃ hφ : φ ∈ (x (D n)).P.1,\n        (x (D n)).eval φ hφ ≠ 0 ∧ (x (D n)).eval φ hφ ≠ 1 ∧\n        (∀ σ : (x (D n)).fieldOf →+* ℂ,\n          |Real.log ‖σ (evalF (x (D n)) ⟨φ, hφ⟩)‖| ≤ C ∧\n          |Real.log ‖σ (evalF (x (D n)) ⟨φ, hφ⟩) - 1‖| ≤ C) ∧\n        ∀ p ∈ V, ∀ τ : (x (D n)).fieldOf →+* PadicAlgCl (p : ℕ),\n          |Real.log ‖τ (evalF (x (D n)) ⟨φ, hφ⟩)‖| ≤ C ∧\n          |Real.log ‖τ (evalF (x (D n)) ⟨φ, hφ⟩) - 1‖| ≤ C",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.localCompactness_source",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Source.localCompactness_source",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactness.lean",
+      "sha256": "729ffdbbf14e81a220e0c3c2aab879d951a6b969b47e19663635dd21d10c0b54",
+      "source_span": {
+        "start_line": 161,
+        "end_line": 173
+      },
+      "statements": {
+        "en": "For a natural number $N$, let $M$ be the following model: $K$ is an intermediate field of $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$, with elements $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K/\\mathbb Q(u)$ is finite dimensional with dimension $N$. Here $\\overline{\\mathbb Q}$ is the fixed algebraic closure of $\\mathbb Q$, and $\\kappa(O)$ denotes the residue field of a valuation ring $O$. A place $P$ is a proper valuation subring $O_P\\subsetneq K$ containing every rational number. A point $x=(P_x,s_x)$ also specifies a unital ring embedding $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$; its full point field is $F_x=s_x(\\kappa(O_{P_x}))$ and its degree is $\\dim_{\\mathbb Q}F_x$. Assume every residue field $\\kappa(O_P)$ is finite dimensional over $\\mathbb Q$. For every natural degree bound $d$ and sequence $(x_n)_{n\\in\\mathbb N}$ of these points with $\\dim_{\\mathbb Q}F_{x_n}\\le d$ for every $n$, there exist a strictly increasing $D:\\mathbb N\\to\\mathbb N$ and a finite set $T$ of places of $K$ with this property: for every $\\varphi\\in K$ with $\\varphi\\ne0$, $\\varphi\\ne1$, and $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ for every $P\\in T$, there is a real constant $C$ such that for every sufficiently large $n$ there is a membership witness $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$. Writing $e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$, its image in $\\overline{\\mathbb Q}$ is neither $0$ nor $1$; for every unital ring embedding $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$ one has $|\\log\\|\\sigma(e_n)\\||\\le C$ and $|\\log\\|\\sigma(e_n)-1\\||\\le C$; and for every unital ring embedding $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_2}$ one has $|\\log\\|\\tau(e_n)\\||\\le C$ and $|\\log\\|\\tau(e_n)-1\\||\\le C$, using the respective complex and $p$-adic algebraic-closure norms. The same $D$ and $T$ serve all eligible $\\varphi$; $C$ and the eventual index threshold may depend on $\\varphi$, but are common to all the indicated embeddings. The embedding domains are the full fields $F_{x_{D(n)}}$, not merely the fields generated by $e_n$. The set $T$ may be empty. The finite-prime support is exactly $\\{2\\}$. The degree hypotheses cannot hold for $d=0$.",
+        "zh_Hans": "给定自然数 $N$，设 $M$ 为如下模型：$K$ 是 $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ 的中间域，含元素 $u,v\\in K$，其中 $u$ 在 $\\mathbb Q$ 上超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 为有限维扩张，维数等于 $N$。这里 $\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包，$\\kappa(O)$ 表示赋值环 $O$ 的剩余域。处 $P$ 指包含所有有理数的真赋值子环 $O_P\\subsetneq K$。点 $x=(P_x,s_x)$ 还指定剩余域的含幺环嵌入 $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$；其完整点域为 $F_x=s_x(\\kappa(O_{P_x}))$，次数为 $\\dim_{\\mathbb Q}F_x$。 假设每个剩余域 $\\kappa(O_P)$ 在 $\\mathbb Q$ 上有限维。 对每个自然数次数上界 $d$ 和每项满足 $\\dim_{\\mathbb Q}F_{x_n}\\le d$ 的上述点序列 $(x_n)_{n\\in\\mathbb N}$，存在严格递增的 $D:\\mathbb N\\to\\mathbb N$ 及 $K$ 的处的有限集 $T$，使得：对每个满足 $\\varphi\\ne0$、$\\varphi\\ne1$ 且对所有 $P\\in T$ 都有 $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ 的 $\\varphi\\in K$，存在实常数 $C$，使每个充分大的 $n$ 都有隶属见证 $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$。记 $e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$，则它在 $\\overline{\\mathbb Q}$ 中的像不等于 $0$ 或 $1$；对每个含幺环嵌入 $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$，有 $|\\log\\|\\sigma(e_n)\\||\\le C$ 及 $|\\log\\|\\sigma(e_n)-1\\||\\le C$；对每个含幺环嵌入 $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_2}$，有 $|\\log\\|\\tau(e_n)\\||\\le C$ 及 $|\\log\\|\\tau(e_n)-1\\||\\le C$，其中分别使用复数范数和 $p$ 进代数闭包上的范数。所有合适的 $\\varphi$ 共用同一个 $D$ 和同一个 $T$；$C$ 及最终成立的指标起点可依赖 $\\varphi$，但所有指定嵌入共用它们。嵌入的定义域为完整的 $F_{x_{D(n)}}$，而不只是 $e_n$ 生成的域。允许 $T$ 为空。有限素数支撑恰为 $\\{2\\}$。$d=0$ 时次数前提不可能成立。",
+        "ja": "自然数 $N$ に対し、$M$ を次の模型とする。$K$ は $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ の中間体であり、元 $u,v\\in K$ は、$u$ が $\\mathbb Q$ 上超越的であること、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、および $K/\\mathbb Q(u)$ が有限次元でその次元が $N$ であることを満たす。ここで $\\overline{\\mathbb Q}$ は固定した $\\mathbb Q$ の代数閉包、$\\kappa(O)$ は付値環 $O$ の剰余体である。素点 $P$ はすべての有理数を含む真の付値部分環 $O_P\\subsetneq K$ である。点 $x=(P_x,s_x)$ はさらに剰余体の単位的環埋め込み $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$ を指定し、その全点体は $F_x=s_x(\\kappa(O_{P_x}))$、次数は $\\dim_{\\mathbb Q}F_x$ である。 各剰余体 $\\kappa(O_P)$ は $\\mathbb Q$ 上有限次元と仮定する。 各自然数の次数上界 $d$ と、すべての $n$ で $\\dim_{\\mathbb Q}F_{x_n}\\le d$ を満たす上記の点の列 $(x_n)_{n\\in\\mathbb N}$ に対し、狭義単調増加写像 $D:\\mathbb N\\to\\mathbb N$ と $K$ の素点の有限集合 $T$ が存在し、次が成り立つ。$\\varphi\\ne0$、$\\varphi\\ne1$、およびすべての $P\\in T$ で $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ を満たす各 $\\varphi\\in K$ に対し、実定数 $C$ が存在し、十分大きいすべての $n$ について所属の証拠 $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$ が存在する。$e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$ と書くと、その $\\overline{\\mathbb Q}$ における像は $0$ でも $1$ でもなく、各単位的環埋め込み $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$ について $|\\log\\|\\sigma(e_n)\\||\\le C$ および $|\\log\\|\\sigma(e_n)-1\\||\\le C$ が成り立ち、各単位的環埋め込み $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_2}$ について $|\\log\\|\\tau(e_n)\\||\\le C$ および $|\\log\\|\\tau(e_n)-1\\||\\le C$ が成り立つ。ノルムはそれぞれ複素数のノルムと $p$ 進体の代数閉包のノルムである。同じ $D,T$ がすべての該当する $\\varphi$ に用いられる。$C$ と最終的に成立する添字の下限は $\\varphi$ に依存してよいが、指定されたすべての埋め込みに共通である。埋め込みの定義域は全体の $F_{x_{D(n)}}$ であり、$e_n$ の生成する体だけではない。$T$ は空でもよい。有限素数の台はちょうど $\\{2\\}$ である。$d=0$ では次数の仮定は成立しない。"
+      },
+      "proof_notes": "The source specializes exists_subseq_bounded to the singleton prime set containing 2 and packages its conclusion as LocalCompactness M.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem localCompactness_source {N : ℕ} (M : Model N) (hRF : ResiduesFinite M) :\n    LocalCompactness M",
+      "fields": null
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness",
+      "static_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness",
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean",
+      "sha256": "9a18d2bd3aa25d7835fb1c28c40f1a646d2a78330a1974e3ff34dbee2fc1f41d",
+      "source_span": {
+        "start_line": 12,
+        "end_line": 14
+      },
+      "statements": {
+        "en": "For a natural number $N$, let $M$ be the following model: $K$ is an intermediate field of $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$, with elements $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K/\\mathbb Q(u)$ is finite dimensional with dimension $N$. Here $\\overline{\\mathbb Q}$ is the fixed algebraic closure of $\\mathbb Q$, and $\\kappa(O)$ denotes the residue field of a valuation ring $O$. A place $P$ is a proper valuation subring $O_P\\subsetneq K$ containing every rational number. A point $x=(P_x,s_x)$ also specifies a unital ring embedding $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$; its full point field is $F_x=s_x(\\kappa(O_{P_x}))$ and its degree is $\\dim_{\\mathbb Q}F_x$. Assume every residue field $\\kappa(O_P)$ is finite dimensional over $\\mathbb Q$. Assume also that every $O_P$ is a discrete valuation ring. For every natural degree bound $d$ and sequence $(x_n)_{n\\in\\mathbb N}$ of these points with $\\dim_{\\mathbb Q}F_{x_n}\\le d$ for every $n$, there exist a strictly increasing $D:\\mathbb N\\to\\mathbb N$ and a finite set $T$ of places of $K$ with this property: for every $\\varphi\\in K$ with $\\varphi\\ne0$, $\\varphi\\ne1$, and $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ for every $P\\in T$, there is a real constant $C$ such that for every sufficiently large $n$ there is a membership witness $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$. Writing $e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$, its image in $\\overline{\\mathbb Q}$ is neither $0$ nor $1$; for every unital ring embedding $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$ one has $|\\log\\|\\sigma(e_n)\\||\\le C$ and $|\\log\\|\\sigma(e_n)-1\\||\\le C$; and for every unital ring embedding $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_2}$ one has $|\\log\\|\\tau(e_n)\\||\\le C$ and $|\\log\\|\\tau(e_n)-1\\||\\le C$, using the respective complex and $p$-adic algebraic-closure norms. The same $D$ and $T$ serve all eligible $\\varphi$; $C$ and the eventual index threshold may depend on $\\varphi$, but are common to all the indicated embeddings. The embedding domains are the full fields $F_{x_{D(n)}}$, not merely the fields generated by $e_n$. The set $T$ may be empty. The finite-prime support is exactly $\\{2\\}$. The degree hypotheses cannot hold for $d=0$.",
+        "zh_Hans": "给定自然数 $N$，设 $M$ 为如下模型：$K$ 是 $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ 的中间域，含元素 $u,v\\in K$，其中 $u$ 在 $\\mathbb Q$ 上超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 为有限维扩张，维数等于 $N$。这里 $\\overline{\\mathbb Q}$ 为固定的 $\\mathbb Q$ 的代数闭包，$\\kappa(O)$ 表示赋值环 $O$ 的剩余域。处 $P$ 指包含所有有理数的真赋值子环 $O_P\\subsetneq K$。点 $x=(P_x,s_x)$ 还指定剩余域的含幺环嵌入 $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$；其完整点域为 $F_x=s_x(\\kappa(O_{P_x}))$，次数为 $\\dim_{\\mathbb Q}F_x$。 假设每个剩余域 $\\kappa(O_P)$ 在 $\\mathbb Q$ 上有限维。 另假设每个 $O_P$ 都是离散赋值环。 对每个自然数次数上界 $d$ 和每项满足 $\\dim_{\\mathbb Q}F_{x_n}\\le d$ 的上述点序列 $(x_n)_{n\\in\\mathbb N}$，存在严格递增的 $D:\\mathbb N\\to\\mathbb N$ 及 $K$ 的处的有限集 $T$，使得：对每个满足 $\\varphi\\ne0$、$\\varphi\\ne1$ 且对所有 $P\\in T$ 都有 $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ 的 $\\varphi\\in K$，存在实常数 $C$，使每个充分大的 $n$ 都有隶属见证 $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$。记 $e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$，则它在 $\\overline{\\mathbb Q}$ 中的像不等于 $0$ 或 $1$；对每个含幺环嵌入 $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$，有 $|\\log\\|\\sigma(e_n)\\||\\le C$ 及 $|\\log\\|\\sigma(e_n)-1\\||\\le C$；对每个含幺环嵌入 $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_2}$，有 $|\\log\\|\\tau(e_n)\\||\\le C$ 及 $|\\log\\|\\tau(e_n)-1\\||\\le C$，其中分别使用复数范数和 $p$ 进代数闭包上的范数。所有合适的 $\\varphi$ 共用同一个 $D$ 和同一个 $T$；$C$ 及最终成立的指标起点可依赖 $\\varphi$，但所有指定嵌入共用它们。嵌入的定义域为完整的 $F_{x_{D(n)}}$，而不只是 $e_n$ 生成的域。允许 $T$ 为空。有限素数支撑恰为 $\\{2\\}$。$d=0$ 时次数前提不可能成立。",
+        "ja": "自然数 $N$ に対し、$M$ を次の模型とする。$K$ は $\\operatorname{AlgebraicClosure}(\\mathbb Q(t))/\\mathbb Q$ の中間体であり、元 $u,v\\in K$ は、$u$ が $\\mathbb Q$ 上超越的であること、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、および $K/\\mathbb Q(u)$ が有限次元でその次元が $N$ であることを満たす。ここで $\\overline{\\mathbb Q}$ は固定した $\\mathbb Q$ の代数閉包、$\\kappa(O)$ は付値環 $O$ の剰余体である。素点 $P$ はすべての有理数を含む真の付値部分環 $O_P\\subsetneq K$ である。点 $x=(P_x,s_x)$ はさらに剰余体の単位的環埋め込み $s_x:\\kappa(O_{P_x})\\to\\overline{\\mathbb Q}$ を指定し、その全点体は $F_x=s_x(\\kappa(O_{P_x}))$、次数は $\\dim_{\\mathbb Q}F_x$ である。 各剰余体 $\\kappa(O_P)$ は $\\mathbb Q$ 上有限次元と仮定する。 さらに、各 $O_P$ は離散付値環と仮定する。 各自然数の次数上界 $d$ と、すべての $n$ で $\\dim_{\\mathbb Q}F_{x_n}\\le d$ を満たす上記の点の列 $(x_n)_{n\\in\\mathbb N}$ に対し、狭義単調増加写像 $D:\\mathbb N\\to\\mathbb N$ と $K$ の素点の有限集合 $T$ が存在し、次が成り立つ。$\\varphi\\ne0$、$\\varphi\\ne1$、およびすべての $P\\in T$ で $\\varphi,\\varphi^{-1},(\\varphi-1)^{-1}\\in O_P$ を満たす各 $\\varphi\\in K$ に対し、実定数 $C$ が存在し、十分大きいすべての $n$ について所属の証拠 $h_n:\\varphi\\in O_{P_{x_{D(n)}}}$ が存在する。$e_n=s_{x_{D(n)}}(\\rho_{x_{D(n)}}(\\langle\\varphi,h_n\\rangle))\\in F_{x_{D(n)}}$ と書くと、その $\\overline{\\mathbb Q}$ における像は $0$ でも $1$ でもなく、各単位的環埋め込み $\\sigma:F_{x_{D(n)}}\\to\\mathbb C$ について $|\\log\\|\\sigma(e_n)\\||\\le C$ および $|\\log\\|\\sigma(e_n)-1\\||\\le C$ が成り立ち、各単位的環埋め込み $\\tau:F_{x_{D(n)}}\\to\\overline{\\mathbb Q_2}$ について $|\\log\\|\\tau(e_n)\\||\\le C$ および $|\\log\\|\\tau(e_n)-1\\||\\le C$ が成り立つ。ノルムはそれぞれ複素数のノルムと $p$ 進体の代数閉包のノルムである。同じ $D,T$ がすべての該当する $\\varphi$ に用いられる。$C$ と最終的に成立する添字の下限は $\\varphi$ に依存してよいが、指定されたすべての埋め込みに共通である。埋め込みの定義域は全体の $F_{x_{D(n)}}$ であり、$e_n$ の生成する体だけではない。$T$ は空でもよい。有限素数の台はちょうど $\\{2\\}$ である。$d=0$ では次数の仮定は成立しない。"
+      },
+      "proof_notes": "The written proof invokes Source.localCompactness_source M hRF; the explicit hDVR parameter remains in the theorem statement but is not passed to that invocation. No proof acceptance or axiom audit is claimed.",
+      "original_packet": "blind-readbacks-bridge.json",
+      "original_packet_sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "original_signature": "theorem localCompactness {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (hRF : ResiduesFinite M) : LocalCompactness M",
+      "fields": null
+    }
+  ]
+}

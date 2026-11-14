@@ -1,0 +1,38 @@
+{
+  "author": "Shinichi Mochizuki",
+  "title": "Arithmetic Elliptic Curves in General Position",
+  "version": "February 2009 (PDF title page)",
+  "url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+  "local_path": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Arithmetic Elliptic Curves in General Position.pdf",
+  "pdf_sha256": "b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768",
+  "verified_on": "2026-11-14",
+  "source_location": "Proof of Theorem 2.1, reduction to D = empty set and compactness extraction",
+  "printed_page": 12,
+  "pdf_page": 12,
+  "page_discrepancy": "The requested/source-code pointer around p. 13 corresponds to the compactness argument on printed/PDF p. 12 of this February 2009 PDF. Page 13 continues with the height inequalities.",
+  "quotations": [
+    {
+      "id": "compactness-and-conjugate-tuple-limits",
+      "printed_page": 12,
+      "pdf_page": 12,
+      "quote": "Let \\(V \\subseteq \\mathbb{V}(\\mathbb{Q})\\) be a finite subset that contains \\(\\mathbb{V}(\\mathbb{Q})^{\\mathrm{arc}}\\) and [the subset of \\(\\mathbb{V}(\\mathbb{Q})^{\\mathrm{non}}\\) determined by] \\(\\Sigma\\). Then it follows immediately from the compactness of the set of rational points of \\(X\\) over any finite extension of \\(\\mathbb{Q}_v\\) for \\(v \\in V\\) that there exists a subset \\(\\Xi \\subseteq X(\\overline{\\mathbb{Q}})^{=d}\\), together with a(n) [unordered] \\(d\\)-tuple of points \\(\\Xi_v\\) of \\(X(\\overline{\\mathbb{Q}}_v)\\) for each \\(v \\in V\\), such that the inequality \\(\\operatorname{ht}_{\\omega_X} \\lesssim (1+\\epsilon)\\cdot\\operatorname{log\\text{-}diff}_X\\) is false on \\(\\Xi\\), and, moreover, the [unordered] \\(d\\)-tuples of \\(\\mathbb{Q}\\)-conjugates of points \\(\\in \\Xi\\) converge, as [unordered] \\(d\\)-tuples of points of \\(X(\\overline{\\mathbb{Q}}_v)\\), to \\(\\Xi_v\\)."
+    },
+    {
+      "id": "intervening-noncritical-belyi-map",
+      "printed_page": 12,
+      "pdf_page": 12,
+      "quote": "Moreover, by the main result of [Mzk1] [cf. [Mzk1], Theorem 2.5], there exists a “noncritical Belyi map”\n\\[\n\\phi : X \\to P\n\\]\nwhich is unramified over \\(U_P\\), and, moreover, “noncritical” at the points of each \\(\\Xi_v\\) [i.e., maps the points of each \\(\\Xi_v\\) into \\(U_P(\\overline{\\mathbb{Q}}_v)\\)]."
+    },
+    {
+      "id": "compactly-bounded-image-consequence",
+      "printed_page": 12,
+      "pdf_page": 12,
+      "quote": "In particular, [after possibly eliminating finitely many elements from \\(\\Xi\\)] it follows that there exists a compactly bounded subset \\(\\mathcal{K}_V \\subseteq U_P(\\overline{\\mathbb{Q}})\\) [i.e., whose bounding domains are the unions of Galois-conjugates of images via \\(\\phi\\) of sufficiently small compact neighborhoods of the points of \\(\\Xi_v\\) in \\(X(\\overline{\\mathbb{Q}}_v)\\), for \\(v \\in V\\)] such that \\(\\phi(\\Xi)\\subseteq\\mathcal{K}_V\\)."
+    }
+  ],
+  "explanatory_boundary": "The paper supplies the compactness argument in the proof of Theorem 2.1: it passes to a subset of points of fixed degree d whose unordered conjugate d-tuples converge to local algebraic points, then uses a noncritical Belyi map to obtain a compactly bounded image. The explicit bounded-degree subsequence construction, quantification over all embeddings, and the precise target of the current localCompactness unit are established by the formal Heights source proof. These are a formal elaboration of the cited argument; the quoted paragraph is not a verbatim statement of the current formal auxiliary theorem. The paper passage uses a subset Xi and convergence of unordered tuples; it does not itself display a sequence-indexed subsequence or an explicit all-embeddings formula.",
+  "transcription": "Exact English wording checked visually against rendered PDF page 12. Original mathematics is represented in LaTeX; line wrapping and typographic emphasis normalized. The a(n) wording and bracketed words are retained as printed.",
+  "visual_verification": "/tmp/p2m-local-compactness-mochizuki-context-20261114/pdf-page-12.png",
+  "retrieval": "Existing official PDF reused; no download. Existing receipt records direct HTTP 200 retrieval on 2026-11-12.",
+  "existing_receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/sources/Mochizuki_GenEll_Theorem2.1.pdf.receipt.json"
+}

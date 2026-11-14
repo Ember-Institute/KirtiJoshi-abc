@@ -1,0 +1,498 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "task": "Complete source-proof draft for existing Proper.localCompactness",
+  "status": "exclusive_local_audits_passed_and_platform_ACCEPTED",
+  "draft_directory": "/tmp/p2m-local-compactness-source-next-20261114",
+  "source_files": [
+    {
+      "path": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/Compactness.lean",
+      "sha256": "1d6ad0153b8298a565f165ce2b6aaacb535e3094377e928fbf9e0391d2d9c853",
+      "lines": 341,
+      "source": "Heights/Local/Compactness.lean",
+      "repository": "https://github.com/lana-agents/heights",
+      "commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "url": "https://github.com/lana-agents/heights/blob/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/Compactness.lean",
+      "license": "Apache-2.0",
+      "license_evidence": "Verbatim source header: Released under Apache 2.0 license as described in the file LICENSE.",
+      "copyright": "Copyright (c) 2026 The heights contributors. All rights reserved.",
+      "authors": "The heights contributors",
+      "consumers": [
+        "Solutions/Source_FermatLocalSequence.lean"
+      ],
+      "reuse": [
+        "Lines 40-72: finite-fiber subsequences and the power estimate.",
+        "Lines 80-153: spectral norm, minimal polynomial coefficients, inversion degree, and nearby roots.",
+        "Lines 154-309: bounded-degree p-adic sequence compactness.",
+        "Lines 318-339: proper normed field sequence compactness."
+      ],
+      "archived_reference": ".local/adaptation/local-compactness-sourceproof-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Heights-Local-Compactness.lean.txt",
+      "archive_sha256": "1d6ad0153b8298a565f165ce2b6aaacb535e3094377e928fbf9e0391d2d9c853"
+    },
+    {
+      "path": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/LimitPlace.lean",
+      "sha256": "97e6b7055177f6d0888c08c4cb6b131e385415ec5339ef329373a9636fff1022",
+      "lines": 596,
+      "source": "Heights/Local/LimitPlace.lean",
+      "repository": "https://github.com/lana-agents/heights",
+      "commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "url": "https://github.com/lana-agents/heights/blob/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/LimitPlace.lean",
+      "license": "Apache-2.0",
+      "license_evidence": "Verbatim source header: Released under Apache 2.0 license as described in the file LICENSE.",
+      "copyright": "Copyright (c) 2026 The heights contributors. All rights reserved.",
+      "authors": "The heights contributors",
+      "consumers": [
+        "Solutions/Source_FermatLocalProjectiveConvergence.lean",
+        "Solutions/Source_FermatLocalValuedPlace.lean",
+        "Solutions/Source_FermatLocalLimitValuation.lean"
+      ],
+      "reuse": [
+        "Lines 47-228: Option-valued projective convergence and diagonal subsequences.",
+        "Lines 233-414: actual valued-place structure, valuation-ring algebra, and simultaneous subsequence limits.",
+        "Lines 416-594: limit algebra, genuine limit valuation subring, and logarithm bounds."
+      ],
+      "archived_reference": ".local/adaptation/local-compactness-sourceproof-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Heights-Local-LimitPlace.lean.txt",
+      "archive_sha256": "97e6b7055177f6d0888c08c4cb6b131e385415ec5339ef329373a9636fff1022"
+    },
+    {
+      "path": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/Compactness.lean",
+      "sha256": "9edc9c5baa8e29109c620e336b4346df878598567928caefab7f2f822514aafd",
+      "lines": 356,
+      "source": "Heights/Curve/Compactness.lean",
+      "repository": "https://github.com/lana-agents/heights",
+      "commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "url": "https://github.com/lana-agents/heights/blob/721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/Compactness.lean",
+      "license": "Apache-2.0",
+      "license_evidence": "Verbatim source header: Released under Apache 2.0 license as described in the file LICENSE.",
+      "copyright": "Copyright (c) 2026 The heights contributors. All rights reserved.",
+      "authors": "The heights contributors",
+      "consumers": [
+        "Solutions/Source_FermatLocalCompactnessBridge.lean",
+        "Solutions/Source_FermatLocalCompactness.lean"
+      ],
+      "reuse": [
+        "Lines 43-55: actual point-to-valued-place construction, adapted to the residue-image point field.",
+        "Lines 59-119: minimal polynomial degree bound, countability, and embedding enumeration.",
+        "Lines 128-217: proper limit places, logarithm bounds, and subsequence refinement.",
+        "Lines 233-352: full finite-prime subsequence extraction. Final draft specializes it to {2}."
+      ],
+      "archived_reference": ".local/adaptation/local-compactness-sourceproof-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Heights-Curve-Compactness.lean.txt",
+      "archive_sha256": "9edc9c5baa8e29109c620e336b4346df878598567928caefab7f2f822514aafd"
+    }
+  ],
+  "context_sources": [
+    {
+      "path": "/tmp/p2m-height-general-position-source-audit-20261114/genl-ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean",
+      "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+      "lines": 441,
+      "source": "Genl/Curves/BelyiDescent.lean:265-267",
+      "repository": "https://github.com/lana-agents/genl",
+      "commit": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+      "license": "Apache-2.0",
+      "copyright": "Copyright (c) 2026 The genl contributors. All rights reserved.",
+      "reuse": "Context only: selects V={2} and invokes exists_subseq_bounded. No proof body copied.",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.localCompactness_source",
+      "archived_reference": ".local/adaptation/local-compactness-sourceproof-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Genl-Curves-BelyiDescent.lean.txt",
+      "archive_sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596"
+    }
+  ],
+  "source_toolchain": "leanprover/lean4:v4.32.0",
+  "source_mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+  "current_toolchain": "leanprover/lean4:v4.33.1",
+  "current_mathlib_directory": "/home/admin-wsl/Coq/mathlib4-0df444a",
+  "current_mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "license_text": {
+    "path": "/tmp/p2m-local-compactness-source-next-20261114/LICENSE",
+    "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "lines": 201,
+    "source_path": "/home/admin-wsl/Coq/mathlib4-0df444a/LICENSE",
+    "license": "Apache-2.0"
+  },
+  "outputs": [
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Checks_FermatLocalCompactness.lean",
+      "sha256": "2ca2e8eba6c6bdf5ddfa73660a92380d1a65319f61a5ec49b3bf85302bd69261",
+      "lines": 24,
+      "relative_path": "Solutions/Checks_FermatLocalCompactness.lean"
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactness.lean",
+      "sha256": "729ffdbbf14e81a220e0c3c2aab879d951a6b969b47e19663635dd21d10c0b54",
+      "lines": 175,
+      "relative_path": "Solutions/Source_FermatLocalCompactness.lean"
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "29d854a2736d246945d3cb2b82e901c8469c5ac9cb9a2beb8371584b60adbb17",
+      "lines": 234,
+      "relative_path": "Solutions/Source_FermatLocalCompactnessBridge.lean"
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "lines": 200,
+      "relative_path": "Solutions/Source_FermatLocalLimitValuation.lean"
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "lines": 209,
+      "relative_path": "Solutions/Source_FermatLocalProjectiveConvergence.lean"
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "lines": 334,
+      "relative_path": "Solutions/Source_FermatLocalSequence.lean"
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "lines": 214,
+      "relative_path": "Solutions/Source_FermatLocalValuedPlace.lean"
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean",
+      "sha256": "9a18d2bd3aa25d7835fb1c28c40f1a646d2a78330a1974e3ff34dbee2fc1f41d",
+      "lines": 16,
+      "relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean"
+    }
+  ],
+  "upstream_copies": [
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/upstream/Curve/Compactness.lean",
+      "sha256": "9edc9c5baa8e29109c620e336b4346df878598567928caefab7f2f822514aafd",
+      "lines": 356
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/upstream/Local/Compactness.lean",
+      "sha256": "1d6ad0153b8298a565f165ce2b6aaacb535e3094377e928fbf9e0391d2d9c853",
+      "lines": 341
+    },
+    {
+      "path": "/tmp/p2m-local-compactness-source-next-20261114/upstream/Local/LimitPlace.lean",
+      "sha256": "97e6b7055177f6d0888c08c4cb6b131e385415ec5339ef329373a9636fff1022",
+      "lines": 596
+    }
+  ],
+  "current_interface_inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean",
+      "sha256": "bfceaae185fc536e913ea8772442f2030a780be865115a6bfbf10ccafa2df048",
+      "lines": 127
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "lines": 195
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyiComposition.lean",
+      "sha256": "1b9042869d1ac51472d189ada77f5a6057df30fdf3a27d3e210572b82822b45f",
+      "lines": 47
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalBelyiComposition.lean",
+      "sha256": "ed9f9030c6a94e163d0b009d5b6aacbf956d2a1766b656b555f4d6d2e07f1793",
+      "lines": 117
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean",
+      "sha256": "9a18d2bd3aa25d7835fb1c28c40f1a646d2a78330a1974e3ff34dbee2fc1f41d",
+      "lines": 16
+    }
+  ],
+  "consumer_chain": [
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.exists_tendsto_or_tendsto_norm_atTop",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded: hgoodP and successive p-adic extraction"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_tendsto_or_tendsto_norm_atTop",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded: complex extraction"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 and AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_diagonal",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_limit"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.evalF and AbcAdaptation.Tripod.Fermat.Proper.Source.pointEPlace",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded: yC and yP"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointFieldFinite and AbcAdaptation.Tripod.Fermat.Proper.Source.model_countable",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded: finite point fields and diagonal hypotheses"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_surj_embeddings",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded: eC/heC and eP/heP"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limitSubring",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.limitPlace"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.eventually_abs_log_le",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.eventually_bounded_of_limitPlace"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.limitPlace and AbcAdaptation.Tripod.Fermat.Proper.Source.eventually_bounded_of_limitPlace",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded: actual finite T and uniform constants"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.Source.localCompactness_source: V={2}"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.Source.localCompactness_source",
+      "consumer": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness"
+    },
+    {
+      "producer": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness",
+      "consumer": "Definitions/Def_FermatLocalBelyiComposition.lean: boundedBelyiImages_of_children"
+    },
+    {
+      "producer": "boundedBelyiImages_of_children",
+      "consumer": "Definitions/Def_FermatCanonicalBelyiComposition.lean: explicit Fermat canonical estimate composition"
+    }
+  ],
+  "faithfulness": {
+    "target_unchanged": true,
+    "new_assumptions": [],
+    "new_law_fields": [],
+    "new_axioms": [],
+    "new_open_children": [],
+    "support": [
+      2
+    ],
+    "local_fields": [
+      "ℂ",
+      "PadicAlgCl 2"
+    ],
+    "embeddings": "Every ring hom from the same complete x.fieldOf.",
+    "point_field": "The actual x.σ.toRatAlgHom.fieldRange, unchanged.",
+    "places": "Proper ValuationSubring M.K objects containing every rational constant; full-field limit rings omitted.",
+    "finite_dimensional_input": "Existing hRF at the actual residue field, transported through its image equivalence.",
+    "countability_input": "Existing M.u and M.finite_u; no countability hypothesis introduced.",
+    "hDVR": "Existing wrapper argument retained; compactness proof does not use it.",
+    "fermat_route": "Preserved. No generic Genl proof package is imported.",
+    "excluded_unused_dependency": "Heights/Curve/Integrality.lean import: no proof from this file is used in Curve/Compactness."
+  },
+  "static_checks": {
+    "method": "Static text/source review only. No Lean execution.",
+    "all_local_mathlib_import_paths_exist": true,
+    "missing_imports": [],
+    "target_type_byte_identical": true,
+    "target_type": "{N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (hRF : ResiduesFinite M) : LocalCompactness M",
+    "forbidden_proof_placeholder_or_axiom_declarations": [],
+    "main_workspace_modified": false,
+    "compiler_invoked": false,
+    "mcp_invoked": false,
+    "platform_api_invoked": false,
+    "git_used": false,
+    "axioms_checked": false,
+    "ci_result": null,
+    "frozen_files": [
+      "Solutions/Checks_FermatLocalCompactness.lean",
+      "Solutions/Source_FermatLocalCompactness.lean",
+      "Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "Solutions/Source_FermatLocalLimitValuation.lean",
+      "Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "Solutions/Source_FermatLocalSequence.lean",
+      "Solutions/Source_FermatLocalValuedPlace.lean",
+      "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean"
+    ],
+    "frozen_file_rule": "Do not modify these draft paths. Use revision copies for fixes."
+  },
+  "mathlib_api_source_hashes": [
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Padics/Complex.lean",
+      "sha256": "871e53b99b7b974bdd68a596d91663eef37ebb2bb9585511f6ca841a909dbfe6",
+      "lines": 258,
+      "api": "PadicAlgCl normedField, normedAlgebra and spectralNorm_eq",
+      "consumer": "Source_FermatLocalSequence.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Analysis/Normed/Unbundled/SpectralNorm.lean",
+      "sha256": "c9e7fb25c888e2c36030371e2f78c6f8d3c7415fd6741fd1d6f90412880e5357",
+      "lines": 1015,
+      "api": "spectralValue_le_one_iff",
+      "consumer": "Source_FermatLocalSequence.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Padics/ProperSpace.lean",
+      "sha256": "b0683c18c6745be2b88f7691e54776597958d64a93980baff0dfda6c764b2d04",
+      "lines": 71,
+      "api": "ProperSpace ℚ_[p]",
+      "consumer": "Source_FermatLocalSequence.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Topology/MetricSpace/ProperSpace.lean",
+      "sha256": "90f07050ff70c609b6afb085f47d297e6f1505834fe02d8f95a3e8038a3d51e4",
+      "lines": 151,
+      "api": "pi_properSpace; isCompact_closedBall",
+      "consumer": "Source_FermatLocalSequence.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Topology/Sequences.lean",
+      "sha256": "68f2cf45dfc7fe556f4d09a7a2e5d9408721ad6c790eac93e88b4c0c32a9fdcb",
+      "lines": 419,
+      "api": "IsCompact.tendsto_subseq",
+      "consumer": "Source_FermatLocalSequence.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/FieldTheory/IntermediateField/Adjoin/Basic.lean",
+      "sha256": "657f34bb6b19d57cf1f96dec3ded1265ac6133675d6fd7c769a71eb31223df7b",
+      "lines": 803,
+      "api": "IntermediateField.adjoin.finrank; mem_adjoin_simple_iff",
+      "consumer": "Source_FermatLocalSequence.lean and Source_FermatLocalCompactnessBridge.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/NumberField/InfinitePlace/Embeddings.lean",
+      "sha256": "1c387b8e514d0511c5a6164bc2c661d9de542114b6b56a67449626d8f2aa0634",
+      "lines": 382,
+      "api": "NumberField.Embeddings.card and Fintype/Nonempty embeddings",
+      "consumer": "Source_FermatLocalCompactnessBridge.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/LinearAlgebra/Countable.lean",
+      "sha256": "78722ac35abaf2b426eb18d35b60539a431bd4ad639256905b6661437efc9fcc",
+      "lines": 43,
+      "api": "Finsupp.Countable.of_moduleFinite",
+      "consumer": "Source_FermatLocalCompactnessBridge.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/LinearAlgebra/FiniteDimensional/Defs.lean",
+      "sha256": "cd27bf526a78e6c5ec852d4f9d4c0c6c7ef7e63e543b1011aa9ac715aebaffc1",
+      "lines": 254,
+      "api": "LinearEquiv.finiteDimensional",
+      "consumer": "Source_FermatLocalCompactnessBridge.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/LocalRing/ResidueField/Defs.lean",
+      "sha256": "5b9d61b479e6491d03e7a23b2ec862a2c87a6fea1207529a47d96138a1129773",
+      "lines": 41,
+      "api": "IsLocalRing.residue = Ideal.Quotient.mk",
+      "consumer": "Source_FermatLocalCompactnessBridge.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/LinearAlgebra/Dimension/Finite.lean",
+      "sha256": "7cee03d86a5949f4c4a2cac1ffd8110e29701ed6f78d6449b4998029b849e1d6",
+      "lines": 555,
+      "api": "Module.finrank_pos",
+      "consumer": "Source_FermatLocalCompactness.lean",
+      "validation": "Read local source; no elaboration or compilation."
+    }
+  ],
+  "unverified_apis": [
+    {
+      "site": "Source_FermatLocalSequence.lean: PadicAlgCl.norm_eq_spectralNorm",
+      "detail": "The rfl proof and rewrite to spectralNorm need current-toolchain elaboration. Local Mathlib has the reverse rfl theorem PadicAlgCl.spectralNorm_eq."
+    },
+    {
+      "site": "Source_FermatLocalSequence.lean: exists_tendsto_of_norm_le_one",
+      "detail": "The source proof uses coefficient-vector compactness, polynomial degree conversion, norm_algebraMap', root pigeonhole, and continuity APIs. Narrow imports need CI confirmation."
+    },
+    {
+      "site": "Source_FermatLocalProjectiveConvergence.lean and Source_FermatLocalValuedPlace.lean",
+      "detail": "Proof bodies are preserved from Lean 4.32 source. The Lean 4.33 parser, push Not syntax, Nat.nth, Countable enumeration, and Option equality proofs need CI confirmation."
+    },
+    {
+      "site": "Source_FermatLocalLimitValuation.lean: limitSubring and eventually_abs_log_le",
+      "detail": "The ValuationSubring structure fields and the Real.log continuity/order lemmas need CI confirmation."
+    },
+    {
+      "site": "Source_FermatLocalCompactnessBridge.lean: evalF/pointEPlace",
+      "detail": "The codRestrict membership witness, residue quotient definitional reduction, map_eq_zero_iff rewrite, and mem_nonunits_iff need elaboration."
+    },
+    {
+      "site": "Source_FermatLocalCompactnessBridge.lean: pointFieldFinite",
+      "detail": "The exact fieldRange equivalence transfer matches the preceding embedding proof unit. This declaration itself remains uncompiled."
+    },
+    {
+      "site": "Source_FermatLocalCompactnessBridge.lean: model_countable",
+      "detail": "Definitional equality between local t=M.u and M.finite_u, rational-function enumeration, Cardinal bounds, and Finsupp countability need CI confirmation."
+    },
+    {
+      "site": "Source_FermatLocalCompactnessBridge.lean: exists_surj_embeddings",
+      "detail": "The local NumberField instance, Fintype embedding cardinality, and explicit Fin d surjection need CI confirmation."
+    },
+    {
+      "site": "Source_FermatLocalCompactness.lean: exists_subseq_bounded",
+      "detail": "The dependent local instances letI (n : ℕ) for each point field must synthesize at all uses. Finset.biUnion, Filter.eventually_all, and source-level type inference need CI confirmation."
+    },
+    {
+      "site": "Source_FermatLocalCompactness.lean: localCompactness_source",
+      "detail": "The two exact terms use definitional equality of evalF and evalInField. The singleton-prime cast and Fact proof irrelevance need CI confirmation."
+    },
+    {
+      "site": "Solutions/Checks_FermatLocalCompactness.lean",
+      "detail": "Every printed axiom set needs review for sorryAx and nonstandard axioms. Expected allowed axioms are Lean standard axioms only; no output exists yet."
+    }
+  ],
+  "required_root_acceptance": [
+    "Every new leaf via MCP-CI",
+    "Checks and printed axioms via MCP-CI",
+    "ImportAudit via MCP-CI",
+    "Act1Scene1 aggregate via MCP-CI",
+    "AxiomAudit via MCP-CI",
+    "git diff --check by root"
+  ],
+  "resources": "Unknown: no compiler or CI job ran in this subagent.",
+  "draft_status_at_receipt": "Uncompiled source draft, frozen for root integration. Not an acceptance receipt.",
+  "production_ledger": {
+    "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+    "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+    "scope": "No production or boundary change; reuse compactness source at the existing exact consumer"
+  },
+  "new_nodes": [],
+  "new_open_debt": 0,
+  "elaboration_adaptations": "elaboration-adaptations.json",
+  "paper_location_correction": "paper-page-correction.json",
+  "initial_integrated_source_hashes": {
+    "Solutions/Source_FermatLocalCompactness.lean": "729ffdbbf14e81a220e0c3c2aab879d951a6b969b47e19663635dd21d10c0b54",
+    "Solutions/Source_FermatLocalCompactnessBridge.lean": "7bf30004983cb18da662979697d7e98e52a51a3887d3acf7b28fcffd85ee4894",
+    "Solutions/Source_FermatLocalLimitValuation.lean": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+    "Solutions/Source_FermatLocalProjectiveConvergence.lean": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+    "Solutions/Source_FermatLocalSequence.lean": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+    "Solutions/Source_FermatLocalValuedPlace.lean": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean": "9a18d2bd3aa25d7835fb1c28c40f1a646d2a78330a1974e3ff34dbee2fc1f41d"
+  },
+  "integrated_source_hashes": {
+    "Solutions/Source_FermatLocalCompactness.lean": "729ffdbbf14e81a220e0c3c2aab879d951a6b969b47e19663635dd21d10c0b54",
+    "Solutions/Source_FermatLocalCompactnessBridge.lean": "867f88eac76f21f0e257675bff557b13e092000dc3614093d9fae5205045eca6",
+    "Solutions/Source_FermatLocalLimitValuation.lean": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+    "Solutions/Source_FermatLocalProjectiveConvergence.lean": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+    "Solutions/Source_FermatLocalSequence.lean": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+    "Solutions/Source_FermatLocalValuedPlace.lean": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean": "9a18d2bd3aa25d7835fb1c28c40f1a646d2a78330a1974e3ff34dbee2fc1f41d"
+  },
+  "integration_hash_scope": "Current delivered source hashes; original received draft and initial integration hashes retained separately.",
+  "historical_draft_fields": [
+    "source_toolchain",
+    "source_mathlib_commit",
+    "outputs",
+    "current_interface_inputs",
+    "static_checks",
+    "unverified_apis",
+    "resources"
+  ],
+  "historical_draft_field_scope": "These fields preserve the original subagent draft ledger. Current acceptance is recorded by the unit status, compiled/platform_status and complete MCP-CI receipts, final-readbacks.json and delivery-validation.json.",
+  "compiled": true,
+  "platform_status": "Proved",
+  "closed_direct": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness",
+    "submission_id": "b14793d0-4b91-4b28-942e-6ee0e1e987ed",
+    "status": "ACCEPTED"
+  }
+}

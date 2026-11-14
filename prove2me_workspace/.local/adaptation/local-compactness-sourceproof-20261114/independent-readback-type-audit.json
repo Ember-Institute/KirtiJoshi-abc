@@ -1,0 +1,1370 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "reviewer": "/root/local_compactness_source_review",
+  "kind": "Independent formal-scope comparison of original trilingual blind readbacks against captured compiler signatures, plus compiler-graph producer consumption audit",
+  "verdict": "ONE_CONFIRMED_READBACK_SCOPE_DEFECT",
+  "counts": {
+    "top_level_readbacks": 62,
+    "languages": 3,
+    "top_level_language_statements_reviewed": 186,
+    "top_level_readbacks_without_scope_defect": 61,
+    "top_level_readbacks_with_scope_defect": 1,
+    "language_statements_with_defect": 3,
+    "supplementary_nested_field_readbacks": 3
+  },
+  "inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/local-compactness-sourceproof-20261114/decl_graph.jsonl",
+      "sha256": "f2b5ab2171af8e470aa6705115f46e067440511d05566499b8609410b90e6d40",
+      "bytes": 232853
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/local-compactness-sourceproof-20261114/blind-readbacks-original.json",
+      "sha256": "f16a481b5f40cc46717b0c815a9d9350140836b31527a1dbceb3964b55daa6de",
+      "bytes": 248187
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/local-compactness-sourceproof-20261114/blind-readbacks-generic-a.json",
+      "sha256": "3f8e45868493c6ec4d0287160f6d94be0aa28bb003222e5a2223d4eb8739c617",
+      "bytes": 58481
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/local-compactness-sourceproof-20261114/blind-readbacks-generic-b.json",
+      "sha256": "2c7127d164425ec27495529ca19faa94d637a504cd43ee0330a07110f0d57615",
+      "bytes": 129119
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/local-compactness-sourceproof-20261114/blind-readbacks-bridge.json",
+      "sha256": "b6ff33f46afc0b85279a47529363ee2843ba8c514901e549902f2dda14614631",
+      "bytes": 237516
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatLocalSequence.lean",
+      "sha256": "5e72b96f04a7b7f4f00c9afdc18e2832935b4de4b6ce419214d6ad181430a8f9",
+      "bytes": 15847
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatLocalProjectiveConvergence.lean",
+      "sha256": "05540ca15d3d676a30451fb791b0dd56ba3ff6c2ece3f98df182f7a57b6d1783",
+      "bytes": 8788
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatLocalValuedPlace.lean",
+      "sha256": "394af5a8bafa243320a098c141e9fb8431b2004fb20f8ccae0ece9ce3615638d",
+      "bytes": 8245
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatLocalLimitValuation.lean",
+      "sha256": "9e248bdbd2dca4d524bf48b131ebd00e0fda81406d4f6171739e6da2fbc1f500",
+      "bytes": 8442
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "867f88eac76f21f0e257675bff557b13e092000dc3614093d9fae5205045eca6",
+      "bytes": 11136
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatLocalCompactness.lean",
+      "sha256": "729ffdbbf14e81a220e0c3c2aab879d951a6b969b47e19663635dd21d10c0b54",
+      "bytes": 9628
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness.lean",
+      "sha256": "9a18d2bd3aa25d7835fb1c28c40f1a646d2a78330a1974e3ff34dbee2fc1f41d",
+      "bytes": 515
+    }
+  ],
+  "method": {
+    "authority": "Compiler elaboratedType is used for actual declaration scope, including retained implicit typeclasses. Source text is used only to expand local definitions and interpret binder meanings.",
+    "checked": [
+      "Every type/typeclass/data/proof binder",
+      "Hypotheses and exclusions",
+      "Existential/universal quantifier order and permitted dependence",
+      "Finite versus infinite Option values",
+      "All embeddings over the same full point fields",
+      "Actual degree bounds",
+      "Shared subsequence and finite set versus function-dependent constants/tails",
+      "Supplementary EPlace field projections"
+    ],
+    "normalization_check": "All 62 normalized statements dictionaries equal their corresponding original packets byte for byte at JSON string level. No blind readback text was rewritten.",
+    "language_provenance": "Three languages are texts from each original reader, not three independent audits. This audit independently compared all three against compiler scope.",
+    "not_defects": [
+      "Equivalent reordering of independent universal data or hypotheses",
+      "Strict versus non-strict eventual exceedance of every real threshold for tending to atTop",
+      "Omission of universe variable names or Lean implicit/explicit argument notation when arbitrary mathematical scope is preserved"
+    ]
+  },
+  "findings": [
+    {
+      "id": "RB-SCOPE-001",
+      "severity": "scope_mismatch",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_limit",
+      "original_packet": "blind-readbacks-bridge.json",
+      "normalized_index": 56,
+      "compiler_elaborated_type": "∀ {K : Type u_1} [inst : Field K] [CharZero K] [Countable K] {E : Type u_2} [inst_3 : NormedField E] {Good : E → Prop},\n  (∀ (a : ℕ → E),\n      (∀ (n : ℕ), Good (a n)) →\n        ∃ (φ : ℕ → ℕ),\n          StrictMono φ ∧\n            ((∃ (b : E), Filter.Tendsto (a ∘ φ) Filter.atTop (nhds b)) ∨\n              Filter.Tendsto (fun (n : ℕ) => ‖a (φ n)‖) Filter.atTop Filter.atTop)) →\n    ∀ {d : ℕ} [NeZero d] (y : ℕ → Fin d → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E),\n      (∀ (n : ℕ) (i : Fin d) (f : K) (α : E), (y n i).val f = Option.some α → Good α) →\n        ∀ (D₀ : ℕ → ℕ),\n          StrictMono D₀ →\n            ∃ (D : ℕ → ℕ),\n              StrictMono D ∧\n                (∃ (ψ : ℕ → ℕ), StrictMono ψ ∧ D = D₀ ∘ ψ) ∧\n                  ∃ (ξ : Fin d → K → Option E),\n                    ∀ (i : Fin d) (f : K),\n                      AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (y (D n) i).val f)\n                        (ξ i f)",
+      "missing_binder": "[CharZero K]",
+      "affected_languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ],
+      "exact_evidence": {
+        "en": [
+          "For a field $K$ and a normed field $E$",
+          "Assume $K$ is countable."
+        ],
+        "zh_Hans": [
+          "对域 $K$ 和赋范域 $E$",
+          "假设 $K$ 可数。"
+        ],
+        "ja": [
+          "体 $K$ とノルム体 $E$",
+          " $K$ は可算とする。"
+        ]
+      },
+      "explanation": "The actual compiler type requires characteristic zero on K in addition to Field K and Countable K. Each readback states an arbitrary countable field and gives no characteristic-zero qualification. The source theorem inherits the unused ambient section class [CharZero K]; ignoring proof use does not remove the actual binder.",
+      "metadata_also_affected": "The original packet static_context.parameters_and_names for this declaration lists Field K and Countable K but omits CharZero K.",
+      "impact": "Each language readback describes a more general scope than this elaborated theorem. The proof and final localCompactness statement are not invalidated; this is an exact readback defect.",
+      "required_correction_scope": "A subsequent reviewed correction must include characteristic zero for K in all three language renderings and formal parameter metadata, while preserving these original blind packets. This audit does not provide replacement blind text.",
+      "other_binders_and_quantifiers": "Reviewed and matched."
+    }
+  ],
+  "declaration_results": [
+    {
+      "index": 0,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_strictMono_eq",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 32,
+        "endLine": 39
+      },
+      "elaboratedType": "∀ {α : Type u_1} [Finite α] (f : ℕ → α), ∃ (c : α) (φ : ℕ → ℕ), StrictMono φ ∧ ∀ (n : ℕ), f (φ n) = c",
+      "scope_review": "Finite type and arbitrary ℕ-indexed map; existential c then strict subsequence, ∀n equality. No Nonempty binder.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 1,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_strictMono_forall_of_infinite",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 41,
+        "endLine": 44
+      },
+      "elaboratedType": "∀ {P : ℕ → Prop}, (setOf P).Infinite → ∃ (φ : ℕ → ℕ), StrictMono φ ∧ ∀ (n : ℕ), P (φ n)",
+      "scope_review": "Predicate on ℕ, infinite satisfaction set, strict subsequence, all indices.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 2,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_strictMono_eq_of_le",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 46,
+        "endLine": 51
+      },
+      "elaboratedType": "∀ {f : ℕ → ℕ} {d : ℕ}, (∀ (n : ℕ), f n ≤ d) → ∃ (c : ℕ) (φ : ℕ → ℕ), StrictMono φ ∧ ∀ (n : ℕ), f (φ n) = c",
+      "scope_review": "Uniform natural bound d including zero; c has no separately stated bound.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 3,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.tendsto_zero_of_pow_le",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 53,
+        "endLine": 67
+      },
+      "elaboratedType": "∀ {t ε : ℕ → ℝ} {c : ℕ},\n  c ≠ 0 →\n    (∀ (n : ℕ), 0 ≤ t n) →\n      (∀ (n : ℕ), t n ^ c ≤ ε n) → Filter.Tendsto ε Filter.atTop (nhds 0) → Filter.Tendsto t Filter.atTop (nhds 0)",
+      "scope_review": "Real sequences, c≠0, t≥0, pointwise power inequality, ε→0; no extra ε hypothesis.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 4,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.norm_eq_spectralNorm",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 73,
+        "endLine": 75
+      },
+      "elaboratedType": "∀ {p : ℕ} [inst : Fact (Nat.Prime p)] (x : PadicAlgCl p), ‖x‖ = spectralNorm ℚ_[p] (PadicAlgCl p) x",
+      "scope_review": "Prime natural p through Fact; PadicAlgCl p element and spectral norm over ℚ_p.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 5,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.norm_coeff_minpoly_le_one",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 77,
+        "endLine": 83
+      },
+      "elaboratedType": "∀ {p : ℕ} [inst : Fact (Nat.Prime p)] {x : PadicAlgCl p}, ‖x‖ ≤ 1 → ∀ (i : ℕ), ‖(minpoly ℚ_[p] x).coeff i‖ ≤ 1",
+      "scope_review": "Prime p, norm bound, every natural coefficient index including zero.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 6,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.monic_eq_sum",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 85,
+        "endLine": 89
+      },
+      "elaboratedType": "∀ {R : Type u_1} [inst : CommRing R] {P : Polynomial R},\n  P.Monic → P = Polynomial.X ^ P.natDegree + ∑ i : Fin P.natDegree, Polynomial.C (P.coeff ↑i) * Polynomial.X ^ ↑i",
+      "scope_review": "CommRing R and monic polynomial only; ambient p/primality absent in compiler type as readback states.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 7,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.natDegree_minpoly_inv",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 91,
+        "endLine": 113
+      },
+      "elaboratedType": "∀ {K : Type u_1} {L : Type u_2} [inst : Field K] [inst_1 : Field L] [inst_2 : Algebra K L] (x : L),\n  (minpoly K x⁻¹).natDegree = (minpoly K x).natDegree",
+      "scope_review": "Fields K,L and Algebra K L; no integral, nonzero or p/primality assumption.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 8,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_mem_roots_norm_sub_pow_le",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 115,
+        "endLine": 143
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : NormedField K] [IsAlgClosed K] {G : Polynomial K},\n  G.Monic → 0 < G.natDegree → ∀ (x : K), ∃ r ∈ G.roots, ‖x - r‖ ^ G.natDegree ≤ ‖Polynomial.eval x G‖",
+      "scope_review": "NormedField and IsAlgClosed, monic positive natDegree polynomial and arbitrary x; no completeness or p binder.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 9,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.exists_tendsto_of_norm_le_one",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 145,
+        "endLine": 251
+      },
+      "elaboratedType": "∀ {p : ℕ} [inst : Fact (Nat.Prime p)] (d : ℕ) (a : ℕ → PadicAlgCl p),\n  (∀ (n : ℕ), (minpoly ℚ_[p] (a n)).natDegree ≤ d) →\n    (∀ (n : ℕ), ‖a n‖ ≤ 1) →\n      ∃ (φ : ℕ → ℕ), StrictMono φ ∧ ∃ (b : PadicAlgCl p), Filter.Tendsto (a ∘ φ) Filter.atTop (nhds b)",
+      "scope_review": "Prime p, arbitrary natural d, all-term degree and norm hypotheses; strict subsequence with limit in PadicAlgCl p.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 10,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.PadicAlgCl.exists_tendsto_or_tendsto_norm_atTop",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 253,
+        "endLine": 305
+      },
+      "elaboratedType": "∀ {p : ℕ} [inst : Fact (Nat.Prime p)] (d : ℕ) (a : ℕ → PadicAlgCl p),\n  (∀ (n : ℕ), (minpoly ℚ_[p] (a n)).natDegree ≤ d) →\n    ∃ (φ : ℕ → ℕ),\n      StrictMono φ ∧\n        ((∃ (b : PadicAlgCl p), Filter.Tendsto (a ∘ φ) Filter.atTop (nhds b)) ∨\n          Filter.Tendsto (fun (n : ℕ) => ‖a (φ n)‖) Filter.atTop Filter.atTop)",
+      "scope_review": "Prime p, all-term degree bound, subsequence convergence-or-norm-tends-atTop disjunction; divergence stronger than unboundedness.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 11,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_tendsto_or_tendsto_norm_atTop",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalSequence",
+      "compiler_span": {
+        "startLine": 309,
+        "endLine": 332
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : NormedField K] [ProperSpace K] (a : ℕ → K),\n  ∃ (φ : ℕ → ℕ),\n    StrictMono φ ∧\n      ((∃ (b : K), Filter.Tendsto (a ∘ φ) Filter.atTop (nhds b)) ∨\n        Filter.Tendsto (fun (n : ℕ) => ‖a (φ n)‖) Filter.atTop Filter.atTop)",
+      "scope_review": "NormedField plus ProperSpace; arbitrary sequence and same subsequence dichotomy.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 12,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalProjectiveConvergence",
+      "compiler_span": {
+        "startLine": 28,
+        "endLine": 31
+      },
+      "elaboratedType": "{E : Type u_1} → [NormedField E] → (ℕ → Option E) → Option E → Prop",
+      "scope_review": "NormedField E; arbitrary Option-valued sequence and Option limit. Finite/infinite convergence definitions correctly expanded.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 13,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1.comp_of_tendsto",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalProjectiveConvergence",
+      "compiler_span": {
+        "startLine": 33,
+        "endLine": 37
+      },
+      "elaboratedType": "∀ {E : Type u_1} [inst : NormedField E] {a : ℕ → Option E} {b : Option E},\n  AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 a b →\n    ∀ {φ : ℕ → ℕ},\n      Filter.Tendsto φ Filter.atTop Filter.atTop → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (a ∘ φ) b",
+      "scope_review": "NormedField E, a,b,h and cofinal φ; no monotonicity hypothesis added.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 14,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1.congr_eventually",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalProjectiveConvergence",
+      "compiler_span": {
+        "startLine": 39,
+        "endLine": 51
+      },
+      "elaboratedType": "∀ {E : Type u_1} [inst : NormedField E] {a a' : ℕ → Option E} {b : Option E},\n  AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 a b →\n    (∀ᶠ (n : ℕ) in Filter.atTop, a n = a' n) → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 a' b",
+      "scope_review": "NormedField E; eventual equality with a′ transfers convergence.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 15,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1.unique",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalProjectiveConvergence",
+      "compiler_span": {
+        "startLine": 53,
+        "endLine": 95
+      },
+      "elaboratedType": "∀ {E : Type u_1} [inst : NormedField E] {a : ℕ → Option E} {b b' : Option E},\n  AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 a b →\n    AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 a b' → b = b'",
+      "scope_review": "NormedField E, same a and two putative limits; two convergence hypotheses imply equality, no existence assertion.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 16,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.tendstoP1_some_iff",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalProjectiveConvergence",
+      "compiler_span": {
+        "startLine": 97,
+        "endLine": 110
+      },
+      "elaboratedType": "∀ {E : Type u_1} [inst : NormedField E] {a : ℕ → E} {β : E},\n  AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => Option.some (a n)) (Option.some β) ↔\n    Filter.Tendsto a Filter.atTop (nhds β)",
+      "scope_review": "NormedField E, entirely finite sequence and finite limit; equivalence with ordinary norm-topology convergence.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 17,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_tendstoP1",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalProjectiveConvergence",
+      "compiler_span": {
+        "startLine": 112,
+        "endLine": 151
+      },
+      "elaboratedType": "∀ {E : Type u_1} [inst : NormedField E] {Good : E → Prop},\n  (∀ (a : ℕ → E),\n      (∀ (n : ℕ), Good (a n)) →\n        ∃ (φ : ℕ → ℕ),\n          StrictMono φ ∧\n            ((∃ (b : E), Filter.Tendsto (a ∘ φ) Filter.atTop (nhds b)) ∨\n              Filter.Tendsto (fun (n : ℕ) => ‖a (φ n)‖) Filter.atTop Filter.atTop)) →\n    ∀ (a : ℕ → Option E),\n      (∀ (n : ℕ) (α : E), a n = Option.some α → Good α) →\n        ∃ (φ : ℕ → ℕ),\n          StrictMono φ ∧ ∃ (b : Option E), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (a ∘ φ) b",
+      "scope_review": "Predicate Good, exact sequential dichotomy, Good on every finite term; same extracted φ and Option limit.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 18,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_diagonal",
+      "original_packet": "blind-readbacks-generic-a.json",
+      "compiler_module": "Solutions.Source_FermatLocalProjectiveConvergence",
+      "compiler_span": {
+        "startLine": 157,
+        "endLine": 205
+      },
+      "elaboratedType": "∀ {P : ℕ → (ℕ → ℕ) → Prop},\n  (∀ (k : ℕ) (φ : ℕ → ℕ), StrictMono φ → ∃ (ψ : ℕ → ℕ), StrictMono ψ ∧ P k (φ ∘ ψ)) →\n    (∀ (k : ℕ) (φ ψ : ℕ → ℕ), P k φ → Filter.Tendsto ψ Filter.atTop Filter.atTop → P k (φ ∘ ψ)) →\n      ∃ (D : ℕ → ℕ),\n        StrictMono D ∧\n          ∀ (k : ℕ),\n            ∃ (χ : ℕ → ℕ),\n              Filter.Tendsto χ Filter.atTop Filter.atTop ∧ ∃ (φ : ℕ → ℕ), P k φ ∧ ∀ (n : ℕ), k < n → D n = φ (χ n)",
+      "scope_review": "Both universal refinement hypotheses preserved; ∃D strict then ∀k∃χ cofinal∃φ P; factorization only n>k. No extra monotonicity for χ or φ.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 19,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 23,
+        "endLine": 31
+      },
+      "elaboratedType": "(K : Type u_3) → (E : Type u_4) → [Field K] → [NormedField E] → Type (max u_3 u_4)",
+      "scope_review": "Explicit K,E, Field K, NormedField E; data O,ψ and exact nonunit kernel law; no inhabitance assertion.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 20,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 36,
+        "endLine": 38
+      },
+      "elaboratedType": "{K : Type u_1} →\n  [inst : Field K] →\n    {E : Type u_2} →\n      [inst_1 : NormedField E] → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E → K → Option E",
+      "scope_review": "Field K and NormedField E, arbitrary EPlace x and f; exact finite/none case split.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 21,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_of_mem",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 40,
+        "endLine": 41
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f : K} (h : f ∈ x.O),\n  x.val f = Option.some (x.ψ ⟨f, h⟩)",
+      "scope_review": "Field/normed-field, x,f and specified membership witness h; exact tagged evaluation.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 22,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_of_notMem",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 43,
+        "endLine": 44
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f : K}, f ∉ x.O → x.val f = Option.none",
+      "scope_review": "Field/normed-field, x,f, nonmembership implies none.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 23,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_eq_some_iff",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 46,
+        "endLine": 50
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f : K} {α : E},\n  x.val f = Option.some α ↔ ∃ (h : f ∈ x.O), x.ψ ⟨f, h⟩ = α",
+      "scope_review": "Field/normed-field, x,f,α; iff existential membership witness with ψ-value α.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 24,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_add",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 52,
+        "endLine": 59
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f g : K} {α β : E},\n  x.val f = Option.some α → x.val g = Option.some β → x.val (f + g) = Option.some (α + β)",
+      "scope_review": "Field/normed-field, x,f,g,α,β and two finite value equalities; finite additive conclusion; no nonzero hypotheses.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 25,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_mul",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 61,
+        "endLine": 68
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f g : K} {α β : E},\n  x.val f = Option.some α → x.val g = Option.some β → x.val (f * g) = Option.some (α * β)",
+      "scope_review": "Same binders and hypotheses as val_add with multiplicative conclusion.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 26,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_neg",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 70,
+        "endLine": 76
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f : K} {α : E},\n  x.val f = Option.some α → x.val (-f) = Option.some (-α)",
+      "scope_review": "Field/normed-field, x,f,α; finite value equality implies finite negated value.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 27,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_one",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 78,
+        "endLine": 81
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E), x.val 1 = Option.some 1",
+      "scope_review": "Field/normed-field, arbitrary x; value of 1 is finite 1.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 28,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_zero",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 83,
+        "endLine": 86
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E), x.val 0 = Option.some 0",
+      "scope_review": "Field/normed-field, arbitrary x; value of 0 is finite 0.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 29,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_ne_zero",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 88,
+        "endLine": 106
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f : K} {α : E},\n  x.val f = Option.some α → α ≠ 0 → x.val f⁻¹ = Option.some α⁻¹",
+      "scope_review": "Field/normed-field, x,f,α; finite value plus α≠0, inverse has finite inverse value.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 30,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_eq_zero",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 108,
+        "endLine": 117
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f : K},\n  f ≠ 0 → x.val f = Option.some 0 → x.val f⁻¹ = Option.none",
+      "scope_review": "Field/normed-field, x,f; explicit f≠0 and finite zero value imply inverse none.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 31,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.val_inv_of_eq_none",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 119,
+        "endLine": 136
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) {f : K},\n  x.val f = Option.none → x.val f⁻¹ = Option.some 0",
+      "scope_review": "Field/normed-field, x,f; none implies inverse finite zero; no separately stated f≠0.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 32,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.tendstoP1_some_iff'",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 146,
+        "endLine": 175
+      },
+      "elaboratedType": "∀ {E : Type u_2} [inst : NormedField E] {a : ℕ → Option E} {β : E},\n  AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 a (Option.some β) ↔\n    ∃ (α : ℕ → E), (∀ᶠ (n : ℕ) in Filter.atTop, a n = Option.some (α n)) ∧ Filter.Tendsto α Filter.atTop (nhds β)",
+      "scope_review": "Only E/NormedField, a and β generalized; ambient K/Field K absent as the readback explicitly states. Eventual finite representatives form one total sequence.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 33,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.exists_limit",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalValuedPlace",
+      "compiler_span": {
+        "startLine": 177,
+        "endLine": 210
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E] [Countable K] {ι : Type u_3} [Countable ι]\n  [Nonempty ι] {Good : E → Prop},\n  (∀ (a : ℕ → E),\n      (∀ (n : ℕ), Good (a n)) →\n        ∃ (φ : ℕ → ℕ),\n          StrictMono φ ∧\n            ((∃ (b : E), Filter.Tendsto (a ∘ φ) Filter.atTop (nhds b)) ∨\n              Filter.Tendsto (fun (n : ℕ) => ‖a (φ n)‖) Filter.atTop Filter.atTop)) →\n    ∀ (x : ℕ → ι → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E),\n      (∀ (n : ℕ) (i : ι) (f : K) (α : E), (x n i).val f = Option.some α → Good α) →\n        ∃ (D : ℕ → ℕ),\n          StrictMono D ∧\n            ∃ (ξ : ι → K → Option E),\n              ∀ (i : ι) (f : K),\n                AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x (D n) i).val f) (ξ i f)",
+      "scope_review": "Field K, NormedField E, Countable K and countable nonempty ι; Good dichotomy and all finite values; ∃D strict∃ξ∀i f convergence. No finite-ι assumption.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 34,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_add",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 25,
+        "endLine": 36
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n    ∀ {f g : K} {α β : E}, ξ f = Option.some α → ξ g = Option.some β → ξ (f + g) = Option.some (α + β)",
+      "scope_review": "Field/normed-field, family x, ξ and full ∀f convergence; finite ξf,ξg imply additive identity.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 35,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_mul",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 38,
+        "endLine": 49
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n    ∀ {f g : K} {α β : E}, ξ f = Option.some α → ξ g = Option.some β → ξ (f * g) = Option.some (α * β)",
+      "scope_review": "Same ambient binders as limit_add; multiplicative identity under both finite limit hypotheses.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 36,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_neg",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 51,
+        "endLine": 58
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n    ∀ {f : K} {α : E}, ξ f = Option.some α → ξ (-f) = Option.some (-α)",
+      "scope_review": "Same ambient family/full convergence; arbitrary f,α and finite ξf imply negation identity.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 37,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_one",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 60,
+        "endLine": 62
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n    ξ 1 = Option.some 1",
+      "scope_review": "Same ambient family/full convergence; ξ1=finite 1.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 38,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_zero",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 64,
+        "endLine": 66
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n    ξ 0 = Option.some 0",
+      "scope_review": "Same ambient family/full convergence; ξ0=finite 0.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 39,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_inv_of_eq_zero",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 68,
+        "endLine": 92
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n    ∀ {f : K}, f ≠ 0 → ξ f = Option.some 0 → ξ f⁻¹ = Option.none",
+      "scope_review": "Same ambient family/full convergence; explicit f≠0 and finite ξf=0 imply ξ(f⁻¹)=none.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 40,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limit_inv_of_eq_none",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 94,
+        "endLine": 112
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n    ∀ {f : K}, ξ f = Option.none → ξ f⁻¹ = Option.some 0",
+      "scope_review": "Same ambient family/full convergence; ξf=none implies inverse finite zero; no explicit f≠0.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 41,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limitSubring",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 114,
+        "endLine": 134
+      },
+      "elaboratedType": "{K : Type u_1} →\n  [inst : Field K] →\n    {E : Type u_2} →\n      [inst_1 : NormedField E] →\n        {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} →\n          {ξ : K → Option E} →\n            (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n              ValuationSubring K",
+      "scope_review": "Family x,ξ and full pointwise convergence h required; produces valuation subring with exact finite-value carrier.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 42,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.mem_limitSubring",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 136,
+        "endLine": 137
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E}\n  (h : ∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) {f : K},\n  f ∈ AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limitSubring h ↔ ξ f ≠ Option.none",
+      "scope_review": "Same family,ξ,h and arbitrary f; membership iff ξf≠none, including finite zero.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 43,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.eventually_abs_log_le",
+      "original_packet": "blind-readbacks-generic-b.json",
+      "compiler_module": "Solutions.Source_FermatLocalLimitValuation",
+      "compiler_span": {
+        "startLine": 139,
+        "endLine": 195
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] {E : Type u_2} [inst_1 : NormedField E]\n  {x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (x n).val f) (ξ f)) →\n    ∀ {f : K} {β : E},\n      ξ f = Option.some β →\n        β ≠ 0 →\n          β ≠ 1 →\n            ∃ (C : ℝ),\n              ∀ᶠ (n : ℕ) in Filter.atTop,\n                ∃ (α : E), (x n).val f = Option.some α ∧ |Real.log ‖α‖| ≤ C ∧ |Real.log ‖α - 1‖| ≤ C ∧ α ≠ 0 ∧ α ≠ 1",
+      "scope_review": "Same family/full convergence; finite β excluding 0,1; ∃C∃tail∀n∃α with both log bounds and exclusions, no positivity added to C.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 44,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.evalF",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 27,
+        "endLine": 30
+      },
+      "elaboratedType": "{K : Type u_1} →\n  [inst : Field K] → [inst_1 : CharZero K] → (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K) → ↥↑x.P →+* ↥x.fieldOf",
+      "scope_review": "Field K, CharZero K, actual QbarPoint x; full residue-image ring map, no finite-dimensionality binder.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 45,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.coe_evalF",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 32,
+        "endLine": 33
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K)\n  (f : ↥↑x.P), ↑((AbcAdaptation.Tripod.Fermat.Proper.Source.evalF x) f) = x.eval ↑f ⋯",
+      "scope_review": "Field K, CharZero K, x and subring f; coercion equality with existing point evaluation.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 46,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointFieldFinite",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 35,
+        "endLine": 39
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K), FiniteDimensional ℚ ↥x.fieldOf",
+      "scope_review": "Natural N, Model M, ResiduesFinite M then arbitrary actual point x; finite dimensional full fieldOf.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 47,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointEPlace",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 45,
+        "endLine": 65
+      },
+      "elaboratedType": "{K : Type u_1} →\n  [inst : Field K] →\n    [inst_1 : CharZero K] →\n      {E : Type u_2} →\n        [inst_2 : NormedField E] →\n          (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K) →\n            (↥x.fieldOf →+* E) → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E",
+      "scope_review": "Field K, CharZero K, arbitrary NormedField E, point x and full-field ring hom τ; exact EPlace data and kernel law. No CharZero E or finiteness assumption added.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 48,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.pointEPlace_val_of_mem",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 67,
+        "endLine": 69
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {E : Type u_2} [inst_2 : NormedField E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K) (τ : ↥x.fieldOf →+* E) {f : K} (hf : f ∈ ↑x.P),\n  (AbcAdaptation.Tripod.Fermat.Proper.Source.pointEPlace x τ).val f =\n    Option.some (τ ((AbcAdaptation.Tripod.Fermat.Proper.Source.evalF x) ⟨f, hf⟩))",
+      "scope_review": "Same actual point/embedding ambient binders; f and specified hf yield tagged τ-evaluation.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 49,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.natDegree_minpoly_padic_le",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 73,
+        "endLine": 90
+      },
+      "elaboratedType": "∀ {p : ℕ} [inst : Fact (Nat.Prime p)] {F : Type u_2} [inst_1 : Field F] [inst_2 : NumberField F]\n  (τ : F →+* PadicAlgCl p) (a : F), (minpoly ℚ_[p] (τ a)).natDegree ≤ Module.finrank ℚ F",
+      "scope_review": "Prime p via Fact, Field F and NumberField F; arbitrary τ,a; p-adic minpoly degree ≤ full finrank over ℚ.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 50,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.model_countable",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 92,
+        "endLine": 116
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N), Countable ↥M.K",
+      "scope_review": "Natural N and actual Model M only; full model data expanded and countability concluded without extra hRF or hDVR.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 51,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_surj_embeddings",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 120,
+        "endLine": 135
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {E : Type u_2} [inst_2 : Field E] [CharZero E] [IsAlgClosed E]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K) [FiniteDimensional ℚ ↥x.fieldOf] {d : ℕ},\n  x.degree ≤ d → ∃ (e : Fin d → ↥x.fieldOf →+* E), Function.Surjective e",
+      "scope_review": "Field K/CharZero K and Field E/CharZero E/IsAlgClosed E; actual point, FiniteDimensional full field, d and degree bound; surjection Fin d onto all ring embeddings.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 52,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.EPlace.val_ratCast",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 143,
+        "endLine": 158
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [CharZero K] {E : Type u_2} [inst_2 : NormedField E] [CharZero E]\n  (y : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E),\n  (∀ (q : ℚ), ↑q ∈ y.O) → ∀ (q : ℚ), y.val ↑q = Option.some ↑q",
+      "scope_review": "Field K/CharZero K, NormedField E/CharZero E; EPlace y and all rational membership; ∀q exact rational cast finite value.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 53,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.ratCast_mem_limitSubring",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 162,
+        "endLine": 170
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [CharZero K] {E : Type u_2} [inst_2 : NormedField E] [CharZero E]\n  {y : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E},\n  (∀ (n : ℕ) (q : ℚ), ↑q ∈ (y n).O) →\n    ∀ (h : ∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (y n).val f) (ξ f))\n      (q : ℚ), ↑q ∈ AbcAdaptation.Tripod.Fermat.Proper.Source.Local.limitSubring h",
+      "scope_review": "Both characteristic-zero assumptions, sequence y and ξ, all rational memberships and full convergence h, arbitrary rational q; limit ring membership.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 54,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.limitPlace",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 172,
+        "endLine": 176
+      },
+      "elaboratedType": "{K : Type u_1} →\n  [inst : Field K] →\n    [CharZero K] →\n      {E : Type u_2} →\n        [inst_2 : NormedField E] →\n          [CharZero E] →\n            {y : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} →\n              {ξ : K → Option E} →\n                (∀ (n : ℕ) (q : ℚ), ↑q ∈ (y n).O) →\n                  (∀ (f : K),\n                      AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (y n).val f) (ξ f)) →\n                    Option (AbcAdaptation.Tripod.Fermat.Proper.Place K)",
+      "scope_review": "Same characteristic-zero/rational/full-convergence inputs; optional proper place, none iff limit ring is top; no finite-field assumptions added.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 55,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.eventually_bounded_of_limitPlace",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 178,
+        "endLine": 208
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {E : Type u_2} [inst_2 : NormedField E] [inst_3 : CharZero E]\n  {y : ℕ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E} {ξ : K → Option E}\n  (hQ : ∀ (n : ℕ) (q : ℚ), ↑q ∈ (y n).O)\n  (h : ∀ (f : K), AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (y n).val f) (ξ f)) {φ : K},\n  φ ≠ 0 →\n    φ ≠ 1 →\n      (∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n          AbcAdaptation.Tripod.Fermat.Proper.Source.limitPlace hQ h = Option.some P →\n            φ ∈ ↑P ∧ φ⁻¹ ∈ ↑P ∧ (φ - 1)⁻¹ ∈ ↑P) →\n        ∃ (C : ℝ),\n          ∀ᶠ (n : ℕ) in Filter.atTop,\n            ∃ (α : E), (y n).val φ = Option.some α ∧ |Real.log ‖α‖| ≤ C ∧ |Real.log ‖α - 1‖| ≤ C ∧ α ≠ 0 ∧ α ≠ 1",
+      "scope_review": "Same characteristic-zero inputs; arbitrary φ≠0,1 and all places returned by exact optional construction satisfy three membership requirements; ∃C eventual α with both bounds/exclusions.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 56,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_limit",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 216,
+        "endLine": 226
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [CharZero K] [Countable K] {E : Type u_2} [inst_3 : NormedField E] {Good : E → Prop},\n  (∀ (a : ℕ → E),\n      (∀ (n : ℕ), Good (a n)) →\n        ∃ (φ : ℕ → ℕ),\n          StrictMono φ ∧\n            ((∃ (b : E), Filter.Tendsto (a ∘ φ) Filter.atTop (nhds b)) ∨\n              Filter.Tendsto (fun (n : ℕ) => ‖a (φ n)‖) Filter.atTop Filter.atTop)) →\n    ∀ {d : ℕ} [NeZero d] (y : ℕ → Fin d → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E),\n      (∀ (n : ℕ) (i : Fin d) (f : K) (α : E), (y n i).val f = Option.some α → Good α) →\n        ∀ (D₀ : ℕ → ℕ),\n          StrictMono D₀ →\n            ∃ (D : ℕ → ℕ),\n              StrictMono D ∧\n                (∃ (ψ : ℕ → ℕ), StrictMono ψ ∧ D = D₀ ∘ ψ) ∧\n                  ∃ (ξ : Fin d → K → Option E),\n                    ∀ (i : Fin d) (f : K),\n                      AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (fun (n : ℕ) => (y (D n) i).val f)\n                        (ξ i f)",
+      "scope_review": "All data, Good dichotomy, nonzero d, all finite-value condition, strict D₀, refinement ψ and common limit quantifiers match. Compiler-retained [CharZero K] is omitted from all language texts and packet parameter metadata.",
+      "languages": {
+        "en": "defect:RB-SCOPE-001",
+        "zh_Hans": "defect:RB-SCOPE-001",
+        "ja": "defect:RB-SCOPE-001"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 57,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.tendstoP1_comp_subseq",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactnessBridge",
+      "compiler_span": {
+        "startLine": 228,
+        "endLine": 231
+      },
+      "elaboratedType": "∀ {E : Type u_2} [inst : NormedField E] {a : ℕ → Option E} {b : Option E},\n  AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 a b →\n    ∀ {ψ : ℕ → ℕ}, StrictMono ψ → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.TendstoP1 (a ∘ ψ) b",
+      "scope_review": "Only NormedField E, a,b,h,ψ and StrictMono ψ generalized; no K/CharZero K binder.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 58,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.factPrimes",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactness",
+      "compiler_span": {
+        "startLine": 22,
+        "endLine": 23
+      },
+      "elaboratedType": "∀ (p : Nat.Primes), Fact (Nat.Prime ↑p)",
+      "scope_review": "Each Nat.Primes subtype element gives a local Fact primality instance on its natural coercion.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 59,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.exists_subseq_bounded",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactness",
+      "compiler_span": {
+        "startLine": 25,
+        "endLine": 155
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (V : Finset Nat.Primes) {d : ℕ} (x : ℕ → AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      (∀ (n : ℕ), (x n).degree ≤ d) →\n        ∃ (D : ℕ → ℕ),\n          StrictMono D ∧\n            ∃ (T : Finset (AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K)),\n              ∀ (φ : ↥M.K),\n                φ ≠ 0 →\n                  φ ≠ 1 →\n                    (∀ P ∈ T, φ ∈ ↑P ∧ φ⁻¹ ∈ ↑P ∧ (φ - 1)⁻¹ ∈ ↑P) →\n                      ∃ (C : ℝ),\n                        ∀ᶠ (n : ℕ) in Filter.atTop,\n                          ∃ (hφ : φ ∈ ↑(x (D n)).P),\n                            (x (D n)).eval φ hφ ≠ 0 ∧\n                              (x (D n)).eval φ hφ ≠ 1 ∧\n                                (∀ (σ : ↥(x (D n)).fieldOf →+* ℂ),\n                                    |Real.log\n                                            ‖σ ((AbcAdaptation.Tripod.Fermat.Proper.Source.evalF (x (D n))) ⟨φ, hφ⟩)‖| ≤\n                                        C ∧\n                                      |Real.log\n                                            ‖σ ((AbcAdaptation.Tripod.Fermat.Proper.Source.evalF (x (D n))) ⟨φ, hφ⟩) -\n                                                1‖| ≤\n                                        C) ∧\n                                  ∀ p ∈ V,\n                                    ∀ (τ : ↥(x (D n)).fieldOf →+* PadicAlgCl ↑p),\n                                      |Real.log\n                                              ‖τ\n                                                  ((AbcAdaptation.Tripod.Fermat.Proper.Source.evalF (x (D n)))\n                                                    ⟨φ, hφ⟩)‖| ≤\n                                          C ∧\n                                        |Real.log\n                                              ‖τ ((AbcAdaptation.Tripod.Fermat.Proper.Source.evalF (x (D n))) ⟨φ, hφ⟩) -\n                                                  1‖| ≤\n                                          C",
+      "scope_review": "Natural N, actual Model M and hRF, arbitrary finite prime set V,d,points and all-term full-field degree bound. Shared D,T before φ; C and tail after φ but before all embeddings; exact full fields and nonzero/one evaluations.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 60,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.localCompactness_source",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Solutions.Source_FermatLocalCompactness",
+      "compiler_span": {
+        "startLine": 160,
+        "endLine": 173
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.LocalCompactness M",
+      "scope_review": "Natural N, actual Model M,hRF; LocalCompactness fully expanded with same universal/all-embedding scope, fixed 2-adic field and common c per φ.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    },
+    {
+      "index": 61,
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.localCompactness",
+      "original_packet": "blind-readbacks-bridge.json",
+      "compiler_module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_localCompactness",
+      "compiler_span": {
+        "startLine": 12,
+        "endLine": 14
+      },
+      "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.LocalCompactness M",
+      "scope_review": "Same target as localCompactness_source with pre-existing PlacesDiscrete binder retained in all languages, even though unused by body.",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "statement_text_matches_original_packet": true
+    }
+  ],
+  "supplementary_structure_fields": [
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.O",
+      "elaboratedType": "{K : Type u_3} →\n  {E : Type u_4} →\n    [inst : Field K] →\n      [inst_1 : NormedField E] → AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E → ValuationSubring K",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "note": "Supplementary nested structure-field readback; not an extra top-level record among the 62. Exact Field K/NormedField E/self and dependent field binders match."
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.ψ",
+      "elaboratedType": "{K : Type u_3} →\n  {E : Type u_4} →\n    [inst : Field K] →\n      [inst_1 : NormedField E] → (self : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) → ↥self.O →+* E",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "note": "Supplementary nested structure-field readback; not an extra top-level record among the 62. Exact Field K/NormedField E/self and dependent field binders match."
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.eq_zero_iff",
+      "elaboratedType": "∀ {K : Type u_3} {E : Type u_4} [inst : Field K] [inst_1 : NormedField E]\n  (self : AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace K E) (f : ↥self.O), self.ψ f = 0 ↔ ¬IsUnit f",
+      "languages": {
+        "en": "pass",
+        "zh_Hans": "pass",
+        "ja": "pass"
+      },
+      "note": "Supplementary nested structure-field readback; not an extra top-level record among the 62. Exact Field K/NormedField E/self and dependent field binders match."
+    }
+  ],
+  "producer_consumption": {
+    "graph_rule": "Reachability starts at Proper.localCompactness and recursively follows both typeDeps and valueDeps. Helpers are declarations in Solutions.Source_FermatLocal* with startLine > 0.",
+    "positive_span_helper_count": 70,
+    "reachable_positive_span_helper_count": 64,
+    "unreached_positive_span_helpers": [
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.Source.coe_evalF",
+        "kind": "theorem",
+        "startLine": 32,
+        "endLine": 33,
+        "direct_users_in_captured_graph": [],
+        "classification": "authored_theorem_without_consumer_in_captured_graph"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.casesOn",
+        "kind": "def",
+        "startLine": 23,
+        "endLine": 31,
+        "direct_users_in_captured_graph": [
+          "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.noConfusion",
+          "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.noConfusionType"
+        ],
+        "classification": "Lean_generated_structure_eliminator"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.noConfusion",
+        "kind": "def",
+        "startLine": 23,
+        "endLine": 31,
+        "direct_users_in_captured_graph": [
+          "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.mk.noConfusion"
+        ],
+        "classification": "Lean_generated_structure_eliminator"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.rec",
+        "kind": "rec",
+        "startLine": 23,
+        "endLine": 31,
+        "direct_users_in_captured_graph": [
+          "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.mk.sizeOf_spec",
+          "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.casesOn",
+          "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.recOn"
+        ],
+        "classification": "Lean_generated_structure_eliminator"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.recOn",
+        "kind": "def",
+        "startLine": 23,
+        "endLine": 31,
+        "direct_users_in_captured_graph": [],
+        "classification": "Lean_generated_structure_eliminator"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.mk.noConfusion",
+        "kind": "def",
+        "startLine": 25,
+        "endLine": 25,
+        "direct_users_in_captured_graph": [
+          "AbcAdaptation.Tripod.Fermat.Proper.Source.Local.EPlace.mk.inj"
+        ],
+        "classification": "Lean_generated_structure_eliminator"
+      }
+    ],
+    "conclusion": "The captured graph agrees with the root count: 70 helpers, 64 reached. Five unreached constants are generated EPlace eliminators; coe_evalF is the sole authored unreached helper.",
+    "current_source_observation": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatLocalCompactnessBridge.lean",
+      "sha256": "867f88eac76f21f0e257675bff557b13e092000dc3614093d9fae5205045eca6",
+      "explicit_coe_evalF_use_in_pointEPlace": true,
+      "expression": "(coe_evalF x f).symm.trans (hz.trans (map_zero x.σ).symm)",
+      "assessment": "Natural mathematical consumer: converts the Qbar-coerced zero equality for evalF into zero of x.σ applied to the actual residue, before using injectivity. It preserves the kernel statement and target signatures.",
+      "validation_limit": "The captured graph predates this proof-term adaptation. This text observation does not assert compiler acceptance or updated reachability; root must refresh the graph after accepted compilation."
+    }
+  },
+  "prior_source_fidelity_review": "Remains valid for statements and mathematical shape. Current pointEPlace proof-term adaptation is consistent with that shape and provides an explicit consumer for coe_evalF; compiler acceptance and full axioms remain root responsibilities.",
+  "execution_limits": {
+    "compiler_invoked": false,
+    "mcp_invoked": false,
+    "api_invoked": false,
+    "git_used": false,
+    "main_workspace_edited": false,
+    "blind_text_edited": false,
+    "writes": "Only /tmp/p2m-local-compactness-readback-type-audit-20261114/report.json",
+    "axiom_acceptance_claimed": false,
+    "syntax_acceptance_claimed": false
+  }
+}
