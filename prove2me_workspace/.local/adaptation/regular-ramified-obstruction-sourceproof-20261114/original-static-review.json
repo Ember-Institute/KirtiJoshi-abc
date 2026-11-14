@@ -1,0 +1,414 @@
+{
+  "status": "static_source_review_passed_uncompiled_draft",
+  "input_head_at_start": "c8148def6072155bc9ea2117dfbaddef89d18f7d",
+  "reference_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "reference_pin_matches_project_manifest": true,
+  "parent_statement_preserved_byte_exact": true,
+  "parent_target_sha256": "713ca9459af857e3dc656dfe1231dfa9981be72999ba24e5faa23d0e03cbe217",
+  "parent_input_file_sha256": "b052e76cee122782c48c2e997bae7f7027d77ab27ecd53a3bb302468ad7c8967",
+  "actual_derivation_source_alignment": {
+    "Derivation.extendOfFormallyEtale": {
+      "existing_file": "Definitions/Def_FermatCurveDerivationEtale.lean",
+      "existing_file_sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+      "exact_modulo_namespace_and_method_notation": true
+    },
+    "polyDeriv": {
+      "existing_file": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "existing_file_sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "exact_modulo_namespace_and_method_notation": true
+    },
+    "formallyEtale_adjoin": {
+      "existing_file": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "existing_file_sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "exact_modulo_namespace_and_method_notation": true
+    },
+    "derivAlong": {
+      "existing_file": "Definitions/Def_FermatCurveDerivationBasic.lean",
+      "existing_file_sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04",
+      "exact_modulo_namespace_and_method_notation": true
+    }
+  },
+  "complete_source_declarations": 34,
+  "all_source_text_matches_modulo_documented_transports": true,
+  "all_new_producers_have_checked_actual_consumers": true,
+  "new_Open_nodes": 0,
+  "new_assumptions": 0,
+  "Definitions_import_no_Theorems": true,
+  "substantive_derivation_proofs_in_Theorems": true,
+  "module_line_counts": {
+    "Definitions/Def_FermatCurveDerivationValuationElementary.lean": 85,
+    "Definitions/Def_FermatCurveFieldUniformizer.lean": 35,
+    "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean": 86,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationAscent.lean": 57,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureBound.lean": 65,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureQuotient.lean": 116,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationLocalBound.lean": 49,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationOrderAtRegularPoint.lean": 48,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationPreservesLocalRing.lean": 41,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationResiduePolynomial.lean": 58,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniformizerPower.lean": 47,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean": 87,
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean": 69
+  },
+  "maximum_module_lines": 116,
+  "project_import_closure": {
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean": {
+      "sha256": "101a6a1be840a6e52a61443d054b42248fe5594b8c05da248e4076add7432adc",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatNoncriticalRegularRamificationSource",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationOrderAtRegularPoint"
+      ],
+      "source": "draft"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationOrderAtRegularPoint.lean": {
+      "sha256": "803b7443a041ebe09a5d5df866214be51b71e56b1c76538e452c5f51247d952f",
+      "imports": [
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniformizerPower"
+      ],
+      "source": "draft"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniformizerPower.lean": {
+      "sha256": "3444526843cfbe7c54797c671573cabd0273c07e7fed67dae99d71a908f6dabd",
+      "imports": [
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationPreservesLocalRing",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "source": "draft"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationPreservesLocalRing.lean": {
+      "sha256": "002fae315969dac5065f4b31771a68ca471272c6b2c6bd201316c5597cc5e52d",
+      "imports": [
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationLocalBound",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationAscent"
+      ],
+      "source": "draft"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationAscent.lean": {
+      "sha256": "0fcbbdb814fb1b400508e2d8b29e18d97cd4f604a5c63dc66503ef86f724ef84",
+      "imports": [
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationResiduePolynomial",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness",
+        "Mathlib.Tactic.LinearCombination"
+      ],
+      "source": "draft"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean": {
+      "sha256": "008a98bb3cdb45500ec9915a6026b329734fd82d2023a9d478a74ad1b16a3996",
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.Unramified.Field"
+      ],
+      "source": "draft"
+    },
+    "Definitions/Def_FermatCurveDerivationAdjoin.lean": {
+      "sha256": "037ebc54669c50d6e989c28482ca0a6327f59d919fc3193d375188cc6c751303",
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationBasic",
+        "Mathlib.RingTheory.Valuation.ValuationSubring"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveDerivationBasic.lean": {
+      "sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04",
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationEtale",
+        "Definitions.Def_FermatCurveDerivationPolynomial"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveDerivationPolynomial.lean": {
+      "sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "imports": [
+        "Mathlib.RingTheory.Etale.Field",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra",
+        "Mathlib.RingTheory.Algebraic.Basic",
+        "Mathlib.Algebra.Polynomial.Derivation",
+        "Mathlib.Algebra.Algebra.Rat",
+        "Mathlib.FieldTheory.Separable",
+        "Mathlib.Tactic.Ring"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveDerivationEtale.lean": {
+      "sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+      "imports": [
+        "Mathlib.RingTheory.Etale.Kaehler"
+      ],
+      "source": "existing_workspace"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationResiduePolynomial.lean": {
+      "sha256": "7063feef681817e86ecc03d2cc781692aaa9e2c831ad2bd262f3071601f7781a",
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationValuationElementary"
+      ],
+      "source": "draft"
+    },
+    "Definitions/Def_FermatCurveDerivationValuationElementary.lean": {
+      "sha256": "989af33bc8f245ee24256a32dcc31bcde9432334eac2eab90e25e95da7e41afa",
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "source": "draft"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationLocalBound.lean": {
+      "sha256": "9f68900878eede4c0e7c37b9222ae0a41aff7322de1eaf6c12fdc07743784c72",
+      "imports": [
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureBound"
+      ],
+      "source": "draft"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureBound.lean": {
+      "sha256": "797b2ca439937ff68606937ce7e86de78ceb573e894bdb98eaf6554cf271ab02",
+      "imports": [
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureQuotient"
+      ],
+      "source": "draft"
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureQuotient.lean": {
+      "sha256": "9c29db26cced894bf33eafc08dc3f9ca7ac8e9f5a8899ad4479158cc3daebbff",
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationValuationElementary",
+        "Mathlib.RingTheory.Valuation.LocalSubring",
+        "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.Tactic.LinearCombination"
+      ],
+      "source": "draft"
+    },
+    "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean": {
+      "sha256": "c061b4a9b6d42217ddf56707226617c50c7a8035fa722c9930b1f965dad7d539",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldUniformizer",
+        "Definitions.Def_FermatCurveDerivationValuationElementary",
+        "Definitions.Def_FermatNoncriticalRamificationPositive"
+      ],
+      "source": "draft"
+    },
+    "Definitions/Def_FermatNoncriticalRamificationPositive.lean": {
+      "sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalFunctions",
+        "Mathlib.Algebra.Algebra.Hom.Rat"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatNoncriticalFunctions.lean": {
+      "sha256": "bb10b218db0d1837c23da15cfe61ea2eac9a5e2d72612c231bcb4cec8f1e07e4",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldResidue",
+        "Definitions.Def_FermatCurveFieldZerosPoles",
+        "Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure",
+        "Mathlib.FieldTheory.Minpoly.Field",
+        "Mathlib.Algebra.Polynomial.Roots"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveFieldZerosPoles.lean": {
+      "sha256": "884d1811c768d63b8a723ae74e7cb826254651cef5ae5e504bcf3c22ac8c3f29",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldPlace",
+        "Mathlib.RingTheory.DedekindDomain.Factorization"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveFieldPlace.lean": {
+      "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldChart",
+        "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveFieldChart.lean": {
+      "sha256": "90aa4d97587e8ce3ade8cd92b8a566028a4d7ba53a381a023d28f2375fa4a8be",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldBasic",
+        "Mathlib.Algebra.Polynomial.FieldDivision",
+        "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+        "Mathlib.RingTheory.DedekindDomain.PID",
+        "Mathlib.RingTheory.Valuation.LocalSubring"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveFieldBasic.lean": {
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+      "imports": [
+        "Definitions.Def_FermatProperCarrier",
+        "Mathlib.Algebra.Algebra.Rat",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+        "Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure",
+        "Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatProperCarrier.lean": {
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "imports": [
+        "Definitions.Def_TripodFermatInputs",
+        "Mathlib.FieldTheory.RatFunc.Basic",
+        "Mathlib.Algebra.Algebra.Hom.Rat",
+        "Mathlib.RingTheory.Valuation.ValuationSubring",
+        "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing",
+        "Mathlib.Data.Finsupp.Basic",
+        "Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure",
+        "Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_TripodFermatInputs.lean": {
+      "sha256": "099c3a519d2301b4df515a6503ffd62649d62074716e611b6eb9e360a5b5093a",
+      "imports": [
+        "Definitions.Def_AbcTripod",
+        "Mathlib.Data.Fin.VecNotation"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_AbcTripod.lean": {
+      "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+      "imports": [
+        "Mathlib.FieldTheory.AlgebraicClosure",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+        "Mathlib.NumberTheory.Height.NumberField",
+        "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+        "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "Mathlib.RingTheory.Radical.NatInt"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveFieldResidue.lean": {
+      "sha256": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldPlace",
+        "Mathlib.RingTheory.Jacobson.Ring"
+      ],
+      "source": "existing_workspace"
+    },
+    "Definitions/Def_FermatCurveFieldUniformizer.lean": {
+      "sha256": "c4d9985ff824cd1fdaec85190e07db867268ec89c9b8ac31ccc0ddc8aa75100f",
+      "imports": [
+        "Definitions.Def_FermatCurveFieldPlace"
+      ],
+      "source": "draft"
+    },
+    "Definitions/Def_FermatNoncriticalElementarySource.lean": {
+      "sha256": "aef871215e64e6d65d9ed46c8eeeefe26b0fd389e892b573bbcc47decaf258c6",
+      "imports": [
+        "Definitions.Def_FermatNoncriticalRamificationPositive",
+        "Mathlib.Algebra.Polynomial.Derivative",
+        "Mathlib.FieldTheory.Separable",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.LinearCombination",
+        "Mathlib.Tactic.Ring"
+      ],
+      "source": "existing_workspace"
+    }
+  },
+  "Mathlib_import_paths_verified": [
+    "Mathlib.Algebra.Algebra.Hom.Rat",
+    "Mathlib.Algebra.Algebra.Rat",
+    "Mathlib.Algebra.Polynomial.Derivation",
+    "Mathlib.Algebra.Polynomial.Derivative",
+    "Mathlib.Algebra.Polynomial.FieldDivision",
+    "Mathlib.Algebra.Polynomial.Roots",
+    "Mathlib.Data.Fin.VecNotation",
+    "Mathlib.Data.Finsupp.Basic",
+    "Mathlib.FieldTheory.AlgebraicClosure",
+    "Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra",
+    "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+    "Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure",
+    "Mathlib.FieldTheory.Minpoly.Field",
+    "Mathlib.FieldTheory.RatFunc.Basic",
+    "Mathlib.FieldTheory.Separable",
+    "Mathlib.NumberTheory.Height.NumberField",
+    "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+    "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+    "Mathlib.RingTheory.Algebraic.Basic",
+    "Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure",
+    "Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis",
+    "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+    "Mathlib.RingTheory.DedekindDomain.Dvr",
+    "Mathlib.RingTheory.DedekindDomain.Factorization",
+    "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+    "Mathlib.RingTheory.DedekindDomain.PID",
+    "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+    "Mathlib.RingTheory.Etale.Field",
+    "Mathlib.RingTheory.Etale.Kaehler",
+    "Mathlib.RingTheory.Jacobson.Ring",
+    "Mathlib.RingTheory.Radical.NatInt",
+    "Mathlib.RingTheory.Unramified.Field",
+    "Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing",
+    "Mathlib.RingTheory.Valuation.LocalSubring",
+    "Mathlib.RingTheory.Valuation.ValuationSubring",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.LinearCombination",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring"
+  ],
+  "whitespace": [
+    {
+      "file": "Definitions/Def_FermatCurveDerivationValuationElementary.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Definitions/Def_FermatCurveFieldUniformizer.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationAscent.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureBound.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureQuotient.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationLocalBound.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationOrderAtRegularPoint.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationPreservesLocalRing.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationResiduePolynomial.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniformizerPower.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean",
+      "no_whitespace_diagnostics": true
+    },
+    {
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "no_whitespace_diagnostics": true
+    }
+  ],
+  "compiler_run": false,
+  "MCP_CI_run": false,
+  "repository_edits": false,
+  "cache_edits": false,
+  "limitations": "Static source comparison does not establish elaboration, kernel acceptance, or allowed axiom dependencies."
+}

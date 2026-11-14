@@ -1,0 +1,431 @@
+{
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_irreducible_valuation_lt_one": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nimport Mathlib.RingTheory.DiscreteValuationRing.Basic\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K}\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_irreducible_valuation_lt_one (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O) {x : K}\n    (hx : x ∈ O) {p : ℚ[X]} (hp : p ≠ 0) (hv : O.valuation (aeval x p) < 1) :\n    ∃ q : ℚ[X], Irreducible q ∧ O.valuation (aeval x q) < 1 := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 1955,
+        "line": 55,
+        "col": 60
+      },
+      "nameText": "exists_irreducible_valuation_lt_one",
+      "nameRange": {
+        "start": {
+          "offset": 1716,
+          "line": 53,
+          "col": 8
+        },
+        "end": {
+          "offset": 1751,
+          "line": 53,
+          "col": 43
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 1708,
+        "line": 53,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 2446,
+        "line": 67,
+        "col": 20
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K},\n  (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n    ∀ {x : K},\n      x ∈ O →\n        ∀ {p : Polynomial ℚ},\n          p ≠ 0 →\n            O.valuation ((Polynomial.aeval x) p) < 1 →\n              ∃ (q : Polynomial ℚ), Irreducible q ∧ O.valuation ((Polynomial.aeval x) q) < 1",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.valuation_aeval_derivative_eq_one": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K}\n\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.valuation_aeval_derivative_eq_one (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O) {x : K}\n    (hx : x ∈ O) {q : ℚ[X]} (hq : q.Separable) (hv : O.valuation (aeval x q) < 1) :\n    O.valuation (aeval x (derivative q)) = 1 := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 960,
+        "line": 26,
+        "col": 45
+      },
+      "nameText": "valuation_aeval_derivative_eq_one",
+      "nameRange": {
+        "start": {
+          "offset": 740,
+          "line": 24,
+          "col": 8
+        },
+        "end": {
+          "offset": 773,
+          "line": 24,
+          "col": 41
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 732,
+        "line": 24,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 1690,
+        "line": 41,
+        "col": 24
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K},\n  (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n    ∀ {x : K},\n      x ∈ O →\n        ∀ {q : Polynomial ℚ},\n          q.Separable →\n            O.valuation ((Polynomial.aeval x) q) < 1 → O.valuation ((Polynomial.aeval x) (Polynomial.derivative q)) = 1",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_succ_mul_derivAlong_not_mem": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nimport Mathlib.RingTheory.DiscreteValuationRing.Basic\nimport Mathlib.Tactic.FieldSimp\nimport Mathlib.Tactic.LinearCombination\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}\n  (ht : Transcendental ℚ π) [Algebra.IsAlgebraic ℚ⟮π⟯ K]\n  (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O)\n  (hres : ∀ x ∈ O, ∃ p : ℚ[X], p ≠ 0 ∧ O.valuation (aeval x p) < 1)\n  [IsDiscreteValuationRing O] (hπO : π ∈ O) (hirr : Irreducible (⟨π, hπO⟩ : O))\ninclude ht hQ hres hirr\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_succ_mul_derivAlong_not_mem {k : ℕ} {x : K} (hx : x ∈ O)\n    (hk : π ^ k * derivAlong π x ∉ O) : ∃ y ∈ O, π ^ (k + 1) * derivAlong π y ∉ O := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 3623,
+        "line": 105,
+        "col": 82
+      },
+      "nameText": "exists_pow_succ_mul_derivAlong_not_mem",
+      "nameRange": {
+        "start": {
+          "offset": 3457,
+          "line": 104,
+          "col": 8
+        },
+        "end": {
+          "offset": 3495,
+          "line": 104,
+          "col": 46
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 3449,
+        "line": 104,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 4810,
+        "line": 129,
+        "col": 94
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        (∀ x ∈ O, ∃ (p : Polynomial ℚ), p ≠ 0 ∧ O.valuation ((Polynomial.aeval x) p) < 1) →\n          ∀ [IsDiscreteValuationRing ↥O] (hπO : π ∈ O),\n            Irreducible ⟨π, hπO⟩ →\n              ∀ {k : ℕ} {x : K},\n                x ∈ O →\n                  π ^ k * (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) x ∉ O →\n                    ∃ y ∈ O, π ^ (k + 1) * (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) y ∉ O",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_eq_div": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nimport Mathlib.RingTheory.DiscreteValuationRing.Basic\nimport Mathlib.RingTheory.Valuation.LocalSubring\nimport Mathlib.RingTheory.DedekindDomain.IntegralClosure\nimport Mathlib.RingTheory.DedekindDomain.Dvr\nimport Mathlib.Tactic.LinearCombination\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}\n\nopen scoped IntermediateField.algebraAdjoinAdjoin\nset_option quotPrecheck false in\nlocal notation \"𝓑\" => integralClosure (Algebra.adjoin ℚ ({π} : Set K)) K\n\n\n\n\n\nvariable (ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]\n  (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O) (hπO : π ∈ O)\ninclude ht hQ hπO\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_eq_div (hπ1 : O.valuation π < 1) {x : K} (hx : x ∈ O) :\n    ∃ b s : 𝓑, O.valuation (s : K) = 1 ∧ x = b / s := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 2362,
+        "line": 55,
+        "col": 51
+      },
+      "nameText": "exists_eq_div",
+      "nameRange": {
+        "start": {
+          "offset": 2237,
+          "line": 54,
+          "col": 8
+        },
+        "end": {
+          "offset": 2250,
+          "line": 54,
+          "col": 21
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 2229,
+        "line": 54,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 5619,
+        "line": 117,
+        "col": 27
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        π ∈ O →\n          O.valuation π < 1 →\n            ∀ {x : K},\n              x ∈ O →\n                ∃ (b : ↥(integralClosure (↥ℚ[π]) K)) (s : ↥(integralClosure (↥ℚ[π]) K)),\n                  O.valuation ↑s = 1 ∧ x = ↑b / ↑s",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nimport Mathlib.RingTheory.DiscreteValuationRing.Basic\nimport Mathlib.RingTheory.Valuation.LocalSubring\nimport Mathlib.RingTheory.DedekindDomain.IntegralClosure\nimport Mathlib.Tactic.FieldSimp\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}\n\nopen scoped IntermediateField.algebraAdjoinAdjoin\nset_option quotPrecheck false in\nlocal notation \"𝓑\" => integralClosure (Algebra.adjoin ℚ ({π} : Set K)) K\n\nvariable (ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]\n  (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O) (hπO : π ∈ O)\ninclude ht hQ hπO\n\nvariable [IsDiscreteValuationRing O] (hirr : Irreducible (⟨π, hπO⟩ : O))\ninclude hirr\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure :\n    ∃ N : ℕ, ∀ b : 𝓑, π ^ N * derivAlong π b ∈ O := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 4699,
+        "line": 124,
+        "col": 49
+      },
+      "nameText": "exists_pow_mul_derivAlong_mem_integralClosure",
+      "nameRange": {
+        "start": {
+          "offset": 4589,
+          "line": 123,
+          "col": 8
+        },
+        "end": {
+          "offset": 4634,
+          "line": 123,
+          "col": 53
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 4581,
+        "line": 123,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 6276,
+        "line": 155,
+        "col": 52
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        ∀ (hπO : π ∈ O) [IsDiscreteValuationRing ↥O],\n          Irreducible ⟨π, hπO⟩ →\n            ∃ (N : ℕ),\n              ∀ (b : ↥(integralClosure (↥ℚ[π]) K)),\n                π ^ N * (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) ↑b ∈ O",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nimport Mathlib.RingTheory.DiscreteValuationRing.Basic\nimport Mathlib.RingTheory.Valuation.LocalSubring\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}\n\nopen scoped IntermediateField.algebraAdjoinAdjoin\nset_option quotPrecheck false in\nlocal notation \"𝓑\" => integralClosure (Algebra.adjoin ℚ ({π} : Set K)) K\n\nvariable (ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]\n  (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O) (hπO : π ∈ O)\ninclude ht hQ hπO\n\nvariable [IsDiscreteValuationRing O] (hirr : Irreducible (⟨π, hπO⟩ : O))\ninclude hirr\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem :\n    ∃ N : ℕ, ∀ x ∈ O, π ^ N * derivAlong π x ∈ O := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 3800,
+        "line": 104,
+        "col": 49
+      },
+      "nameText": "exists_pow_mul_derivAlong_mem",
+      "nameRange": {
+        "start": {
+          "offset": 3707,
+          "line": 103,
+          "col": 8
+        },
+        "end": {
+          "offset": 3736,
+          "line": 103,
+          "col": 37
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 3699,
+        "line": 103,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 4524,
+        "line": 116,
+        "col": 63
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        ∀ (hπO : π ∈ O) [IsDiscreteValuationRing ↥O],\n          Irreducible ⟨π, hπO⟩ →\n            ∃ (N : ℕ), ∀ x ∈ O, π ^ N * (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) x ∈ O",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nimport Mathlib.RingTheory.DiscreteValuationRing.Basic\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] (O : ValuationSubring K)\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem {π : K} (ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]\n    (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O)\n    (hres : ∀ x ∈ O, ∃ p : ℚ[X], p ≠ 0 ∧ O.valuation (aeval x p) < 1)\n    [IsDiscreteValuationRing O] (hπO : π ∈ O) (hirr : Irreducible (⟨π, hπO⟩ : O))\n    {x : K} (hx : x ∈ O) : derivAlong π x ∈ O := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 1301,
+        "line": 29,
+        "col": 46
+      },
+      "nameText": "derivAlong_mem",
+      "nameRange": {
+        "start": {
+          "offset": 940,
+          "line": 25,
+          "col": 8
+        },
+        "end": {
+          "offset": 954,
+          "line": 25,
+          "col": 22
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 932,
+        "line": 25,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 1738,
+        "line": 40,
+        "col": 21
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] (O : ValuationSubring K) {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        (∀ x ∈ O, ∃ (p : Polynomial ℚ), p ≠ 0 ∧ O.valuation ((Polynomial.aeval x) p) < 1) →\n          ∀ [IsDiscreteValuationRing ↥O] (hπO : π ∈ O),\n            Irreducible ⟨π, hπO⟩ → ∀ {x : K}, x ∈ O → (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) x ∈ O",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_unit_mul_pow": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nimport Mathlib.RingTheory.DiscreteValuationRing.Basic\nimport Mathlib.Tactic.Positivity\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}\n  (ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]\n  (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O)\n  (hres : ∀ x ∈ O, ∃ p : ℚ[X], p ≠ 0 ∧ O.valuation (aeval x p) < 1)\n  [IsDiscreteValuationRing O] (hπO : π ∈ O) (hirr : Irreducible (⟨π, hπO⟩ : O))\ninclude ht hQ hres hirr\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_unit_mul_pow {u : K} (hu : O.valuation u = 1) (k : ℕ) :\n    ∃ w : K, O.valuation w = 1 ∧ derivAlong π (u * π ^ (k + 1)) = w * π ^ k := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 3312,
+        "line": 100,
+        "col": 76
+      },
+      "nameText": "derivAlong_unit_mul_pow",
+      "nameRange": {
+        "start": {
+          "offset": 3160,
+          "line": 99,
+          "col": 8
+        },
+        "end": {
+          "offset": 3183,
+          "line": 99,
+          "col": 31
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 3152,
+        "line": 99,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 4147,
+        "line": 115,
+        "col": 8
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        (∀ x ∈ O, ∃ (p : Polynomial ℚ), p ≠ 0 ∧ O.valuation ((Polynomial.aeval x) p) < 1) →\n          ∀ [IsDiscreteValuationRing ↥O] (hπO : π ∈ O),\n            Irreducible ⟨π, hπO⟩ →\n              ∀ {u : K},\n                O.valuation u = 1 →\n                  ∀ (k : ℕ),\n                    ∃ (w : K),\n                      O.valuation w = 1 ∧\n                        (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) (u * π ^ (k + 1)) = w * π ^ k",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_pow_of_aeval": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval.lean",
+    "preamble": "import Definitions.Def_FermatCurveDerivationAdjoin\nimport Mathlib.RingTheory.DiscreteValuationRing.Basic\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nvariable {K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}\n  (ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]\n  (hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O)\n  (hres : ∀ x ∈ O, ∃ p : ℚ[X], p ≠ 0 ∧ O.valuation (aeval x p) < 1)\n  [IsDiscreteValuationRing O] (hπO : π ∈ O) (hirr : Irreducible (⟨π, hπO⟩ : O))\ninclude ht hQ hres hirr\n\n\n",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_pow_of_aeval {t : K} (htO : t ∈ O) {m : ℚ[X]}\n    (hm : m.Separable) {u : K} (hu : O.valuation u = 1) {e : ℕ} (he : 1 ≤ e)\n    (hmt : aeval t m = u * π ^ e) :\n    ∃ w : K, O.valuation w = 1 ∧ derivAlong π t = w * π ^ (e - 1) := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 2321,
+        "line": 62,
+        "col": 66
+      },
+      "nameText": "derivAlong_eq_unit_mul_pow_of_aeval",
+      "nameRange": {
+        "start": {
+          "offset": 2058,
+          "line": 59,
+          "col": 8
+        },
+        "end": {
+          "offset": 2093,
+          "line": 59,
+          "col": 43
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 2050,
+        "line": 59,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 3106,
+        "line": 77,
+        "col": 68
+      }
+    },
+    "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        (∀ x ∈ O, ∃ (p : Polynomial ℚ), p ≠ 0 ∧ O.valuation ((Polynomial.aeval x) p) < 1) →\n          ∀ [IsDiscreteValuationRing ↥O] (hπO : π ∈ O),\n            Irreducible ⟨π, hπO⟩ →\n              ∀ {t : K},\n                t ∈ O →\n                  ∀ {m : Polynomial ℚ},\n                    m.Separable →\n                      ∀ {u : K},\n                        O.valuation u = 1 →\n                          ∀ {e : ℕ},\n                            1 ≤ e →\n                              (Polynomial.aeval t) m = u * π ^ e →\n                                ∃ (w : K),\n                                  O.valuation w = 1 ∧\n                                    (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) t = w * π ^ (e - 1)",
+    "universeParams": [
+      "u_1"
+    ],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  },
+  "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem": {
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+    "preamble": "import Definitions.Def_FermatNoncriticalElementarySource\nimport Definitions.Def_FermatCurveFieldUniformizer\nimport Mathlib.RingTheory.Unramified.Field\nset_option autoImplicit false\nopen Polynomial\nopen scoped IntermediateField\nopen AbcAdaptation AbcAdaptation.Tripod AbcAdaptation.Tripod.Fermat AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv\n\n\nopen NoncriticalRegularRamificationSource\n\n\n",
+    "formal_statement": "/-- Complete source local obstruction for the actual derivation and actual ramification index. -/\ntheorem AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) (ψ : M.K) (hψ : Transcendental ℚ ψ)\n    (P : Place M.K) (hψP : ψ ∈ P.1) (hram : 1 < ramIdx M hDVR ψ P) :\n    ∃ s ∈ P.1, CurveDeriv.derivAlong ψ s ∉ P.1 := by sorry",
+    "syntax": {
+      "valStart": {
+        "offset": 8882,
+        "line": 226,
+        "col": 47
+      },
+      "nameText": "noncriticalRegularRamifiedDerivNotMem",
+      "nameRange": {
+        "start": {
+          "offset": 8621,
+          "line": 223,
+          "col": 8
+        },
+        "end": {
+          "offset": 8658,
+          "line": 223,
+          "col": 45
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "docstring": {
+        "start": {
+          "offset": 8515,
+          "line": 222,
+          "col": 0
+        },
+        "end": {
+          "offset": 8612,
+          "line": 222,
+          "col": 97
+        }
+      },
+      "declStart": {
+        "offset": 8515,
+        "line": 222,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 11056,
+        "line": 264,
+        "col": 7
+      }
+    },
+    "elaboratedType": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n      ψ ∈ ↑P →\n        1 < AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P →\n          ∃ s ∈ ↑P, (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong ψ) s ∉ ↑P",
+    "universeParams": [],
+    "statement_method": "Exact Lean AST source statement plus retained section-variable and notation context; no pretty-printer coercion reconstruction."
+  }
+}

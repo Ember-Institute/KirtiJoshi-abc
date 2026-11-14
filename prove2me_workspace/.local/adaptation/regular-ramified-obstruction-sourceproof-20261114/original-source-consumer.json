@@ -1,0 +1,639 @@
+{
+  "unit": "Complete source proof for the existing regular ramified derivative obstruction",
+  "status": "uncompiled_source_proof_draft",
+  "date": "2026-11-14",
+  "reference_repository": "https://github.com/lana-agents/belyi",
+  "reference_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "pin_source": {
+    "file": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+    "entry": "belyi.rev",
+    "matches": true,
+    "manifest_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+  },
+  "reference_provenance": "Copied existing pinned files from /tmp/p2m-noncritical-finite-next-20261114/reference; checked all six hashes against its source-specs.json. No new network fetch.",
+  "reference_hashes": {
+    "Belyi_CurveDeriv_Basic.lean": "cf1b11adab96fbd7d7bb5114e7215dcbf8b8cda1a8eda573e9759ac5316f40b2",
+    "Belyi_CurveDeriv_Local.lean": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+    "Belyi_CurveDeriv_Order.lean": "bb39cb855e2157e52eb1caeba74b5a9647a9d94799e6631ec9c7f007b8c1b489",
+    "Belyi_CurveField_Extension.lean": "690dcc66979c9da2c21c1b765ce6d53eb41e5e850a71e42de91fa8ffc3839ddb",
+    "Belyi_CurveField_NoncriticalBasic.lean": "0bbc09343228185b5c499b9f4563dbcb69fd6338e7b05c107ad784149bfc01a3",
+    "Belyi_CurveField_NoncriticalFinite.lean": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8"
+  },
+  "license": {
+    "type": "Apache-2.0",
+    "file": "LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "provenance": "Existing /tmp/p2m-derivative-finite-next-20261114/LICENSE; each source header retains copyright, authors, and Apache-2.0 notice."
+  },
+  "workspace_input_head": "c8148def6072155bc9ea2117dfbaddef89d18f7d",
+  "parent_target": {
+    "name": "noncriticalRegularRamifiedDerivNotMem",
+    "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+    "target_sha256": "713ca9459af857e3dc656dfe1231dfa9981be72999ba24e5faa23d0e03cbe217",
+    "preserved_byte_exact": true,
+    "proof": "Complete source exists_derivAlong_notMem proof with namespace and explicit model/index transport only."
+  },
+  "derivAlong_alignment": {
+    "Derivation.extendOfFormallyEtale": {
+      "existing_file": "Definitions/Def_FermatCurveDerivationEtale.lean",
+      "existing_file_sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+      "exact_modulo_namespace_and_method_notation": true
+    },
+    "polyDeriv": {
+      "existing_file": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "existing_file_sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "exact_modulo_namespace_and_method_notation": true
+    },
+    "formallyEtale_adjoin": {
+      "existing_file": "Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "existing_file_sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "exact_modulo_namespace_and_method_notation": true
+    },
+    "derivAlong": {
+      "existing_file": "Definitions/Def_FermatCurveDerivationBasic.lean",
+      "existing_file_sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04",
+      "exact_modulo_namespace_and_method_notation": true
+    }
+  },
+  "source_declarations_and_consumers": [
+    {
+      "source_file": "Belyi_CurveDeriv_Basic.lean",
+      "source_name": "Derivation.eq_zero_of_formallyUnramified",
+      "line_start": 65,
+      "line_end": 78,
+      "source_span_sha256": "4955178cd22331d5f2185734f53eafdf25b1734e365219480041443bb5bd7ac2",
+      "local_name": "eq_zero_of_formallyUnramified",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "ext_of_formallyUnramified"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Basic.lean",
+      "source_name": "Derivation.ext_of_formallyUnramified",
+      "line_start": 82,
+      "line_end": 86,
+      "source_span_sha256": "f1d56125961a13b92bcca8644ed0db7427906d1cfd7648ce2d633d4df3357221",
+      "local_name": "ext_of_formallyUnramified",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "derivation_ext_of_eq"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Basic.lean",
+      "source_name": "derivAlong_self",
+      "line_start": 183,
+      "line_end": 185,
+      "source_span_sha256": "c295c3d902b01e7c9cdbf7fc4df40ed64e6d99821eb3d07f4cb558af79c86474",
+      "local_name": "derivAlong_self",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "eq_smul_derivAlong",
+        "derivAlong_mul_derivAlong",
+        "exists_pow_succ_mul_derivAlong_not_mem",
+        "derivAlong_unit_mul_pow"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Basic.lean",
+      "source_name": "derivation_ext_of_eq",
+      "line_start": 188,
+      "line_end": 195,
+      "source_span_sha256": "3e81b61ec0898cf67f2c2e72abce420dcf3f4b3f4d3299d219c8ef138dd96d42",
+      "local_name": "derivation_ext_of_eq",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "eq_smul_derivAlong"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Basic.lean",
+      "source_name": "eq_smul_derivAlong",
+      "line_start": 204,
+      "line_end": 206,
+      "source_span_sha256": "f6581f7843cad26700d85bf9b05f5d382c5f518e92419c17ad67b584d3d72b6d",
+      "local_name": "eq_smul_derivAlong",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "derivAlong_eq_smul"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Basic.lean",
+      "source_name": "derivAlong_eq_smul",
+      "line_start": 209,
+      "line_end": 211,
+      "source_span_sha256": "f3346cfbcbd79708b5e41becd95e125ca43481ab0ca1fb1dab37fb3b081d94df",
+      "local_name": "derivAlong_eq_smul",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "derivAlong_mul_derivAlong"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Basic.lean",
+      "source_name": "derivAlong_mul_derivAlong",
+      "line_start": 214,
+      "line_end": 219,
+      "source_span_sha256": "6dc8df2cdedaea91b0556188537b5af881013395b9aeede332057942f1d3cc24",
+      "local_name": "derivAlong_mul_derivAlong",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "valuation_algebraMap_rat",
+      "line_start": 63,
+      "line_end": 69,
+      "source_span_sha256": "4935615e73a3eaaa873f68dcfcfbcea2443bf2dabe703f39673cf6c180c585be",
+      "local_name": "valuation_algebraMap_rat",
+      "file": "Definitions/Def_FermatCurveDerivationValuationElementary.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_irreducible_valuation_lt_one",
+        "derivAlong_unit_mul_pow"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "inv_mem_of_valuation_eq_one",
+      "line_start": 72,
+      "line_end": 73,
+      "source_span_sha256": "0bcddb9dfc6b2faefc5991508eb0f2a76359a251b8b8a08f6ce41a3c1cac2724",
+      "local_name": "inv_mem_of_valuation_eq_one",
+      "file": "Definitions/Def_FermatCurveDerivationValuationElementary.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_pow_succ_mul_derivAlong_not_mem",
+        "exists_pow_mul_derivAlong_mem",
+        "ord_eq_zero_of_valuation_eq_one"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "ne_zero_of_irreducible",
+      "line_start": 118,
+      "line_end": 119,
+      "source_span_sha256": "36b41c258d3419b7a95c607533a66bd39122e2cf13e77907f57b724d7735b23e",
+      "local_name": "ne_zero_of_irreducible",
+      "file": "Definitions/Def_FermatCurveDerivationValuationElementary.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "mul_inv_mem_of_valuation_lt_one",
+        "exists_pow_mul_mem",
+        "exists_pow_succ_mul_derivAlong_not_mem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "valuation_lt_one_of_irreducible",
+      "line_start": 122,
+      "line_end": 126,
+      "source_span_sha256": "06a7f07078b2a96f1bf69c3b19d09bdff8def169820840c21ff31bd96bb47297",
+      "local_name": "valuation_lt_one_of_irreducible",
+      "file": "Definitions/Def_FermatCurveDerivationValuationElementary.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_pow_mul_derivAlong_mem",
+        "derivAlong_unit_mul_pow",
+        "derivAlong_eq_unit_mul_pow_of_aeval"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "mul_inv_mem_of_valuation_lt_one",
+      "line_start": 130,
+      "line_end": 138,
+      "source_span_sha256": "1946f37e1c5470b74ba60221a56447b42c5c945fcf605af437c43fa98005ca6b",
+      "local_name": "mul_inv_mem_of_valuation_lt_one",
+      "file": "Definitions/Def_FermatCurveDerivationValuationElementary.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_pow_succ_mul_derivAlong_not_mem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "exists_pow_mul_mem",
+      "line_start": 142,
+      "line_end": 160,
+      "source_span_sha256": "ee7e19fff13557f9cf3b34164d0f297c26c7a14e9d6c887940f6f8fcc021f6b7",
+      "local_name": "exists_pow_mul_mem",
+      "file": "Definitions/Def_FermatCurveDerivationValuationElementary.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_pow_mul_derivAlong_mem_integralClosure"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "exists_irreducible_valuation_lt_one",
+      "line_start": 77,
+      "line_end": 91,
+      "source_span_sha256": "e3725246e3610e19b72c296df3a43449f3b677a73c9478327cbde75cc453d6dc",
+      "local_name": "exists_irreducible_valuation_lt_one",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationResiduePolynomial.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_pow_succ_mul_derivAlong_not_mem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "valuation_aeval_derivative_eq_one",
+      "line_start": 94,
+      "line_end": 111,
+      "source_span_sha256": "0ce7123ca5f38f2ee037a8b511324d6573fb4dba221ffaf9f6fd512dbdf89ba8",
+      "local_name": "valuation_aeval_derivative_eq_one",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationResiduePolynomial.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_pow_succ_mul_derivAlong_not_mem",
+        "derivAlong_eq_unit_mul_pow_of_aeval"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "exists_pow_succ_mul_derivAlong_not_mem",
+      "line_start": 176,
+      "line_end": 201,
+      "source_span_sha256": "5288cdf208bec38f0ceb760988d07a11bebc3e8e0d9885f65c00f0449944c066",
+      "local_name": "exists_pow_succ_mul_derivAlong_not_mem",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationAscent.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "derivAlong_mem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "mem_of_isIntegral",
+      "line_start": 223,
+      "line_end": 233,
+      "source_span_sha256": "55d85a67d22c94168b2b74274675a6b081e95971957e3d6735735b446907f978",
+      "local_name": "mem_of_isIntegral",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureQuotient.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_eq_div",
+        "exists_pow_mul_derivAlong_mem_integralClosure",
+        "exists_pow_mul_derivAlong_mem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "isPrincipalIdealRing_adjoin",
+      "line_start": 235,
+      "line_end": 239,
+      "source_span_sha256": "9dfe0d77001ad3bf4b092cad0f9a15cc1558aa067ea973339c37266f22f3c6fe",
+      "local_name": "isPrincipalIdealRing_adjoin",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureQuotient.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_eq_div",
+        "exists_pow_mul_derivAlong_mem_integralClosure"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "exists_eq_div",
+      "line_start": 247,
+      "line_end": 308,
+      "source_span_sha256": "b0ba2dbd151fde7cc8ace6b544a64da143de8a56cfcf128ede8e4095dbc52c1a",
+      "local_name": "exists_eq_div",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureQuotient.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_pow_mul_derivAlong_mem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "exists_pow_mul_derivAlong_mem_integralClosure",
+      "line_start": 323,
+      "line_end": 352,
+      "source_span_sha256": "7bf12faaf6d29094fd61970bed00af3e905fe1ddc17e466a527d640342b14f6f",
+      "local_name": "exists_pow_mul_derivAlong_mem_integralClosure",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureBound.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "exists_pow_mul_derivAlong_mem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "exists_pow_mul_derivAlong_mem",
+      "line_start": 355,
+      "line_end": 368,
+      "source_span_sha256": "1c099fbd0f608f2e245225056cc7b4c036cf85da3f2eb56c2e05546fdeb4a384",
+      "local_name": "exists_pow_mul_derivAlong_mem",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationLocalBound.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "derivAlong_mem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Local.lean",
+      "source_name": "derivAlong_mem",
+      "line_start": 378,
+      "line_end": 393,
+      "source_span_sha256": "87d2df8c66bec4fcc91ec6e5ac9bdf0db3e1553d7a945e54cdeecd76b7f77136",
+      "local_name": "derivAlong_mem",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationPreservesLocalRing.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "derivAlong_unit_mul_pow"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Order.lean",
+      "source_name": "derivAlong_unit_mul_pow",
+      "line_start": 40,
+      "line_end": 56,
+      "source_span_sha256": "a37874f1a7f2c8a214c7a83b877c150ccdb80a693dbea4ff50e049dafd7eaaf1",
+      "local_name": "derivAlong_unit_mul_pow",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniformizerPower.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "derivAlong_eq_unit_mul_pow_of_aeval"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveDeriv_Order.lean",
+      "source_name": "derivAlong_eq_unit_mul_pow_of_aeval",
+      "line_start": 61,
+      "line_end": 79,
+      "source_span_sha256": "dee98273fa3e138c8a586bedf61a2deb53a4521ea47dcd260a8ebfdf14315415",
+      "local_name": "derivAlong_eq_unit_mul_pow_of_aeval",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationOrderAtRegularPoint.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_Extension.lean",
+      "source_name": "uniformizer",
+      "line_start": 94,
+      "line_end": 94,
+      "source_span_sha256": "601c9ed6fb7aba3e03102647b2f7301f62a67ad9a703b694565a9eaab91bbcba",
+      "local_name": "uniformizer",
+      "file": "Definitions/Def_FermatCurveFieldUniformizer.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Place",
+      "consumers": [
+        "ord_uniformizer",
+        "uniformizer_ne_zero",
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_Extension.lean",
+      "source_name": "ord_uniformizer",
+      "line_start": 97,
+      "line_end": 98,
+      "source_span_sha256": "ed840cdd22c9c01127555b2c90749ac2acbe3be8389f666a732dccb84da30d94",
+      "local_name": "ord_uniformizer",
+      "file": "Definitions/Def_FermatCurveFieldUniformizer.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Place",
+      "consumers": [
+        "uniformizer_ne_zero",
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_Extension.lean",
+      "source_name": "uniformizer_ne_zero",
+      "line_start": 100,
+      "line_end": 104,
+      "source_span_sha256": "9013a15ffb1a2a09baf577f9921ecc04c1779df53bcd6832454f239d75bf9c0a",
+      "local_name": "uniformizer_ne_zero",
+      "file": "Definitions/Def_FermatCurveFieldUniformizer.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.Place",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_NoncriticalFinite.lean",
+      "source_name": "transcendental_of_ord_ne_zero",
+      "line_start": 34,
+      "line_end": 36,
+      "source_span_sha256": "40526365d0d49db2113646b88581993953bb10bd10a24753fa8e7f61e0539cd5",
+      "local_name": "transcendental_of_ord_ne_zero",
+      "file": "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_NoncriticalFinite.lean",
+      "source_name": "isUnit_iff_ord_eq_zero",
+      "line_start": 38,
+      "line_end": 53,
+      "source_span_sha256": "d8a0de8111519cf5e81d952f46d05c183a855f93710dde65f898ce413d326a01",
+      "local_name": "isUnit_iff_ord_eq_zero",
+      "file": "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource",
+      "consumers": [
+        "irreducible_of_ord_eq_one",
+        "valuation_eq_one_of_ord_eq_zero"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_NoncriticalFinite.lean",
+      "source_name": "irreducible_of_ord_eq_one",
+      "line_start": 56,
+      "line_end": 72,
+      "source_span_sha256": "8297713e4d4316d9f1807c90eba0185cae1fa7e68a979031105a254dba34cc8e",
+      "local_name": "irreducible_of_ord_eq_one",
+      "file": "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_NoncriticalFinite.lean",
+      "source_name": "exists_valuation_aeval_lt_one",
+      "line_start": 76,
+      "line_end": 82,
+      "source_span_sha256": "310d7f09559f614634e503b4f52eb17235484c152524e6202de5dfe5bba0cab2",
+      "local_name": "exists_valuation_aeval_lt_one",
+      "file": "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_NoncriticalFinite.lean",
+      "source_name": "valuation_eq_one_of_ord_eq_zero",
+      "line_start": 84,
+      "line_end": 89,
+      "source_span_sha256": "136b1d57bf69c1fc7e6277cd786d858a8ba2a578853c36b5ca49d98bc6c2ff1a",
+      "local_name": "valuation_eq_one_of_ord_eq_zero",
+      "file": "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_NoncriticalFinite.lean",
+      "source_name": "ord_eq_zero_of_valuation_eq_one",
+      "line_start": 91,
+      "line_end": 95,
+      "source_span_sha256": "a888a28b20b8ddfe4b69ba72fc6102650f59be00e3c12a694c0aa764658a0b8c",
+      "local_name": "ord_eq_zero_of_valuation_eq_one",
+      "file": "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource",
+      "consumers": [
+        "noncriticalRegularRamifiedDerivNotMem"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    },
+    {
+      "source_file": "Belyi_CurveField_NoncriticalFinite.lean",
+      "source_name": "exists_derivAlong_notMem",
+      "line_start": 98,
+      "line_end": 136,
+      "source_span_sha256": "a3f9c55de74f312a3c363a33b86b032276e085a495c1df8715c29bb9b4e5b930",
+      "local_name": "noncriticalRegularRamifiedDerivNotMem",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+      "consumers": [
+        "noncriticalRamificationFinite"
+      ],
+      "proof_source_match_modulo_documented_transport": true
+    }
+  ],
+  "transport": [
+    "Move source namespaces to AbcAdaptation.Tripod.Fermat.Proper and its CurveDeriv namespace.",
+    "Move source Derivation extension uniqueness helpers into the local CurveDeriv namespace; preserve their proof text.",
+    "Reuse existing actual derivAlong, polyDeriv, formallyEtale_adjoin, extension, and Adjoin helper proofs.",
+    "Prefix existing actual residue helpers with noncritical_.",
+    "In the parent proof, replace source K,t,ht,htP with actual M.K,ψ,hψ,hψP.",
+    "Replace source ramIdx P t with existing ramIdx M hDVR ψ P and its source-backed ramIdx_of_mem bridge.",
+    "Supply only the existing M.isCurveField instance locally; add no theorem premise.",
+    "Keep source uniformizer choice and facts exactly, using existing Place.exists_ord_eq_one."
+  ],
+  "kept_mathematics": [
+    "Actual normalized place order and actual valuation subring.",
+    "Full actual residue field and its minpoly.",
+    "Characteristic-zero separability and genuine transcendental uniformizer.",
+    "Actual formally étale derivative and its source uniqueness/chain rule.",
+    "Complete ascent and integral-closure uniform bound proofs.",
+    "Actual source unit/power derivative formula and inverse chain-rule obstruction."
+  ],
+  "omitted_unused_source": [
+    "eq_derivAlong wrapper",
+    "map_eq_zero_of_isAlgebraic and constant derivative wrappers",
+    "derivAlong_mem_of_maximalIdeal_eq wrapper",
+    "negative-zpow pole derivative formula",
+    "valuation_derivAlong_uniformizer",
+    "CurveField.Extension outside its three uniformizer declarations"
+  ],
+  "existing_generic_finiteness": "Def_FermatCurveDerivationLocalization and noncriticalDerivativeBadPlacesFinite stay unchanged; the existing noncriticalRamificationFinite consumes this exact local obstruction.",
+  "kernel_validation": "pending root MCP-CI leaf/Checks/Axioms/import/aggregate audits",
+  "new_Open_nodes": 0,
+  "new_assumptions": 0,
+  "files": {
+    "Definitions/Def_FermatCurveDerivationValuationElementary.lean": {
+      "sha256": "989af33bc8f245ee24256a32dcc31bcde9432334eac2eab90e25e95da7e41afa",
+      "lines": 85
+    },
+    "Definitions/Def_FermatCurveFieldUniformizer.lean": {
+      "sha256": "c4d9985ff824cd1fdaec85190e07db867268ec89c9b8ac31ccc0ddc8aa75100f",
+      "lines": 35
+    },
+    "Definitions/Def_FermatNoncriticalRegularRamificationSource.lean": {
+      "sha256": "c061b4a9b6d42217ddf56707226617c50c7a8035fa722c9930b1f965dad7d539",
+      "lines": 86
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationAscent.lean": {
+      "sha256": "0fcbbdb814fb1b400508e2d8b29e18d97cd4f604a5c63dc66503ef86f724ef84",
+      "lines": 57
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureBound.lean": {
+      "sha256": "797b2ca439937ff68606937ce7e86de78ceb573e894bdb98eaf6554cf271ab02",
+      "lines": 65
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationIntegralClosureQuotient.lean": {
+      "sha256": "9c29db26cced894bf33eafc08dc3f9ca7ac8e9f5a8899ad4479158cc3daebbff",
+      "lines": 116
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationLocalBound.lean": {
+      "sha256": "9f68900878eede4c0e7c37b9222ae0a41aff7322de1eaf6c12fdc07743784c72",
+      "lines": 49
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationOrderAtRegularPoint.lean": {
+      "sha256": "803b7443a041ebe09a5d5df866214be51b71e56b1c76538e452c5f51247d952f",
+      "lines": 48
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationPreservesLocalRing.lean": {
+      "sha256": "002fae315969dac5065f4b31771a68ca471272c6b2c6bd201316c5597cc5e52d",
+      "lines": 41
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationResiduePolynomial.lean": {
+      "sha256": "7063feef681817e86ecc03d2cc781692aaa9e2c831ad2bd262f3071601f7781a",
+      "lines": 58
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniformizerPower.lean": {
+      "sha256": "3444526843cfbe7c54797c671573cabd0273c07e7fed67dae99d71a908f6dabd",
+      "lines": 47
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_curveDerivationUniqueness.lean": {
+      "sha256": "008a98bb3cdb45500ec9915a6026b329734fd82d2023a9d478a74ad1b16a3996",
+      "lines": 87
+    },
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean": {
+      "sha256": "101a6a1be840a6e52a61443d054b42248fe5594b8c05da248e4076add7432adc",
+      "lines": 69
+    }
+  },
+  "static_review": "static-review.json"
+}

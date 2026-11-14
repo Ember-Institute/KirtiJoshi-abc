@@ -1,0 +1,40 @@
+{
+  "source_pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "source_declaration_ledger": "source-consumer.json",
+  "canonical_owner_ledger": "private-owners.json",
+  "final_source_hashes": {
+    "Definitions/Def_FermatCurveFieldUniformizer.lean": "c09dd4e8f3558ae72fd0496cb9414c0b41ffd366ddb835b1ca954503b8cf0d4a",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one.lean": "bceb7ebce91f53b4aee61ae304ec362e770cb856fc8855b642d66c137c015f9e",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one.lean": "3d206051315d6bab34215db2507cfc47fb06ca401066629b8bdaee88a49f2aac",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem.lean": "da5263b83bab9cd39ff2c4cf9ef8cd1649204f7c5887dc7a18607b61dad5c4d0",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div.lean": "dfbc7165ea17d449f887ce32dcf036db62d13dc09910d9b9f4837a8feb50bdd4",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure.lean": "7f9f69c29dc579a454d5bd644b73d0b031748740de5307f5da92dfd3da73a26c",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem.lean": "b0dae97a38ab9f1bbf555d4f36dbb383cc044b233c2c59ef47898631a9a37d55",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem.lean": "5f7d93862e42c481b7a5bde68e4f640090809f3fb871e6ba5c2ba6f9d9fed553",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow.lean": "0c3ba6f5931452475ecce7c7a5c88c5b6ed1dcc351a8ea4d2fd825bb0b1070bf",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval.lean": "7bbf99ee48b6092b6428915eea89fc13abbcd369024695fab0637d0d2927869e",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean": "72abfba107ddd5abdea30f471055c92d5a169a1688a4f36e52991976bf869bb0"
+  },
+  "final_solution_hashes": {
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_exists_irreducible_valuation_lt_one.lean": "c2f7a19e46ca4dd3de0335bd862264f36112cff6dfb0977a81d9a0fa491bc885",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_valuation_aeval_derivative_eq_one.lean": "7a6896f331433807810c1a0c547db2b2c86ea7d466481ec47a611fe52448325c",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem.lean": "404146155def9e9f5c4daf8dd13bb38ea00df18057a284f8f03cb790a1c3966e",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_exists_eq_div.lean": "847f6d1aff743021f1e0dd37ce385fda757a016b24a4becb6caf26933b5146b2",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure.lean": "e102c6ef45d8abc14aea7231fd77c8cc8350dbb01845f93a0d4f3814a8159db8",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_exists_pow_mul_derivAlong_mem.lean": "bdc0bd3c8ea2a82973ceabdeae73e0676a7c3432ca21ab8d0d3b0c8898d79458",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_derivAlong_mem.lean": "b79ca9b1b61e6b2a5fb9635ff5298c82a38f08a559431f37576e7612aeb51d90",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_derivAlong_unit_mul_pow.lean": "97696a89bf435785f0b6f3c018632f90a3b89350057b28ad72f1296c9e350f88",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval.lean": "ae671bbb8c28a2636f69c3e2faa5159fe906d4e0e62383147f6ec4f73d927aa3",
+    ".local/adaptation/regular-ramified-obstruction-sourceproof-20261114/Solution_noncriticalRegularRamifiedDerivNotMem.lean": "06fbb06d3103e90297d41777244e12dee7bcbe5d9d21223342d1ed763a915260"
+  },
+  "full_statement_types_preserved": true,
+  "new_open_debt": 0,
+  "adaptations": [
+    "Exact canonical module imports; explicit Mathlib.RingTheory.DiscreteValuationRing.Basic import where required.",
+    "In the integral-closure bound, explicitly use the canonical integralClosure Algebra and Module to avoid expensive instance inference without adding a premise.",
+    "In exists_eq_div, provide the existing derived ValuationRing instance and pass its PreValuationRing projection explicitly to the unchanged total-divisibility theorem.",
+    "Keep private source proof closures inside their real consumer modules; use compiler Syntax ranges to extract top-level solutions."
+  ],
+  "source_quote_scope": "Mochizuki original Theorem 2.5 is geometric context; exact local derivative results come from pinned Lean source.",
+  "upstream_license_limit": "Original copyright/authors and Apache-2.0 release headers retained; included license text has separately documented local provenance."
+}

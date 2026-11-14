@@ -1,0 +1,151 @@
+{
+  "nodes": [
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_irreducible_valuation_lt_one",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one.lean",
+      "direct_node_dependencies": [],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.valuation_aeval_derivative_eq_one",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one.lean",
+      "direct_node_dependencies": [],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_succ_mul_derivAlong_not_mem",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem.lean",
+      "direct_node_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_irreducible_valuation_lt_one",
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.valuation_aeval_derivative_eq_one"
+      ],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.LinearCombination",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_eq_div",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div.lean",
+      "direct_node_dependencies": [],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.Valuation.LocalSubring",
+        "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.Tactic.LinearCombination"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure.lean",
+      "direct_node_dependencies": [],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.RingTheory.Valuation.LocalSubring",
+        "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+        "Mathlib.Tactic.FieldSimp"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem.lean",
+      "direct_node_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_eq_div",
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure"
+      ],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.RingTheory.Valuation.LocalSubring",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem.lean",
+      "direct_node_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_succ_mul_derivAlong_not_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem"
+      ],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_unit_mul_pow",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow.lean",
+      "direct_node_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem"
+      ],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.Tactic.Positivity",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_pow_of_aeval",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval.lean",
+      "direct_node_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_unit_mul_pow",
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.valuation_aeval_derivative_eq_one"
+      ],
+      "imports": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one"
+      ]
+    },
+    {
+      "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem",
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "direct_node_dependencies": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_pow_of_aeval"
+      ],
+      "imports": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatCurveFieldUniformizer",
+        "Mathlib.RingTheory.Unramified.Field",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval"
+      ]
+    }
+  ],
+  "topological_order": [
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_irreducible_valuation_lt_one",
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.valuation_aeval_derivative_eq_one",
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_succ_mul_derivAlong_not_mem",
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_eq_div",
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure",
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem",
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mem",
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_unit_mul_pow",
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_pow_of_aeval",
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalRegularRamifiedDerivNotMem"
+  ],
+  "validation": "static source-use mapping; no Lean elaboration or compiler invocation"
+}
