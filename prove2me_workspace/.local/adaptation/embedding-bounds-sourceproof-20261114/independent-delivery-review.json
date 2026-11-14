@@ -1,0 +1,688 @@
+{
+  "schema_version": 1,
+  "reviewer": "embedding_delivery_review",
+  "reviewed_at": "2026-11-14T09:32:25.034715+00:00",
+  "scope": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/embedding-bounds-sourceproof-20261114",
+  "method": "Independent read-only inspection; no compiler, MCP, API or Git calls. Only report files under unique /tmp directory written.",
+  "verdict": "pass_for_this_logical_unit",
+  "blocking_proof_defects": [],
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "medium",
+      "status": "resolved_and_independently_rechecked",
+      "area": "natural language scope",
+      "declaration": "AbcAdaptation.Tripod.Local.ringHomAbv",
+      "evidence": {
+        "path": "final-readbacks.json",
+        "declaration_index": 9,
+        "compiler_type": "{p : ℕ} → [hp : Fact (Nat.Prime p)] → {F : Type u_1} → [inst : Field F] → (F →+* PadicAlgCl p) → AbsoluteValue F ℝ",
+        "source": "Solutions/Source_TripodLocalPlaceEmbeddingBasic.lean:78",
+        "en_opening": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹",
+        "affected_languages": [
+          "en",
+          "zh_Hans",
+          "ja"
+        ]
+      },
+      "description": "The compiled definition requires Field F, but all three blind readbacks restrict F to a number field. This is a strict specialization in prose; it does not weaken the Lean theorem or proof.",
+      "requested_action": "Retain original blind text unchanged and obtain fresh independent readback from the actual compiler type; bind the replacement while retaining provenance.",
+      "resolution": {
+        "fresh_packet": "blind-readback-ringHomAbv-compiler-type.json",
+        "exact_language_type_and_source_hash_binding": true,
+        "all_three_languages_cover_arbitrary_Field_F": true,
+        "original_blind_packet_sha256": "ca78a378caf6b9acf1eaa91b8065e75293ad09a3e26e84abacda44a14f5126fb",
+        "original_preserved": true,
+        "proof_inputs_changed": false
+      }
+    },
+    {
+      "id": "R2",
+      "severity": "medium",
+      "status": "resolved_and_hash_verified",
+      "area": "reference preservation",
+      "description": "Two Mathlib Basic.lean references originally used one archive basename. Root restored distinct path-qualified archives and regenerated NOTICE; both now match their pinned SHA256 values and original author notices."
+    }
+  ],
+  "positive_checks": {
+    "original_platform_formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.EmbeddingBoundsToSet M := by sorry",
+    "exact_solution_statement_copied_verbatim_modulo_name": true,
+    "compiled_solution_original_type_equal": true,
+    "fixed_interface_inputs_unchanged": true,
+    "all_helpers_count": 25,
+    "all_helpers_reachable_directly_from_parent_without_extra_instance_roots": true,
+    "helper_consumption": [
+      {
+        "name": "AbcAdaptation.Tripod.Local.exists_ringHom_padicAlgCl_eq_pow",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.abs_log_finitePlace_le"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.abs_log_infinitePlace_le",
+        "consumers": [
+          "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet_source"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.exists_ringHom_padicAlgCl_eq_pow"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.ringHomAbv_apply",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.isEquiv_ringHomAbv"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet_source",
+        "consumers": [
+          "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.norm_ringHom_natCast_p",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv",
+          "AbcAdaptation.Tripod.Local.natCast_p_mem_primeOfRingHom"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.primeOfRingHom_ne_bot",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.placeOfRingHom"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.valuation_le_one_iff_norm_le_one",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.adicAbv_le_one_iff"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.instIsPrimeRingOfIntegersPrimeOfRingHom",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.placeOfRingHom",
+          "AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.exists_ringHom_extension",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.allEmbedding_bounds_descend"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.isEquiv_ringHomAbv",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.mem_primeOfRingHom",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.instIsPrimeRingOfIntegersPrimeOfRingHom",
+          "AbcAdaptation.Tripod.Local.norm_eq_one_of_notMem",
+          "AbcAdaptation.Tripod.Local.natCast_p_mem_primeOfRingHom"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.placeOfRingHom",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.exists_ringHom_padicAlgCl_eq_pow",
+          "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv",
+          "AbcAdaptation.Tripod.Local.valuation_le_one_iff_norm_le_one",
+          "AbcAdaptation.Tripod.Local.isEquiv_ringHomAbv",
+          "AbcAdaptation.Tripod.Local.adicAbv_le_one_iff",
+          "AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.adicAbv_le_one_iff",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.isEquiv_ringHomAbv"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.instFactPrimeOfNatNat_solutions",
+        "consumers": [
+          "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet_source"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.allEmbedding_bounds_descend",
+        "consumers": [
+          "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet_source"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.norm_ringHom_le_one",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.valuation_le_one_iff_norm_le_one",
+          "AbcAdaptation.Tripod.Local.primeOfRingHom",
+          "AbcAdaptation.Tripod.Local.norm_eq_one_of_notMem"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.abs_log_finitePlace_le",
+        "consumers": [
+          "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet_source"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.primeOfRingHom",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.primeOfRingHom_ne_bot",
+          "AbcAdaptation.Tripod.Local.instIsPrimeRingOfIntegersPrimeOfRingHom",
+          "AbcAdaptation.Tripod.Local.mem_primeOfRingHom",
+          "AbcAdaptation.Tripod.Local.placeOfRingHom",
+          "AbcAdaptation.Tripod.Local.norm_eq_one_of_notMem",
+          "AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq",
+          "AbcAdaptation.Tripod.Local.natCast_p_mem_primeOfRingHom"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.exists_absNorm_eq_pow",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv",
+          "AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.norm_eq_one_of_notMem",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.valuation_le_one_iff_norm_le_one",
+          "AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.ringHomAbv",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv",
+          "AbcAdaptation.Tripod.Local.ringHomAbv_apply",
+          "AbcAdaptation.Tripod.Local.isEquiv_ringHomAbv"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.exists_ringHom_padicAlgCl_eq_pow"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.norm_le_one_of_monic_of_eval_eq_zero",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.norm_ringHom_le_one"
+        ]
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Local.natCast_p_mem_primeOfRingHom",
+        "consumers": [
+          "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv",
+          "AbcAdaptation.Tripod.Local.primeOfRingHom_ne_bot"
+        ]
+      }
+    ],
+    "math_readbacks_count": 25,
+    "readback_coverage": "24 mathematical helper declarations plus parent = 25 readbacks; local Fact Prime 2 helper is compiler-reachable and has no independent mathematical obligation.",
+    "anonymous_prime_ideal_instance_bound_by_position": "compiler source position and isInstance, not guessed name",
+    "all_blind_readbacks_verbatim": "24 original mathematical readbacks retained verbatim; ringHomAbv replaced by exact fresh blind packet, superseded original retained",
+    "all_original_blind_source_hashes_valid": true,
+    "all_readback_current_source_hashes_valid": true,
+    "all_readback_compiler_types_valid": true,
+    "all_readback_compiler_spans_valid": true,
+    "remaining_24_readbacks_conditions_and_quantifiers_covered": true,
+    "embedding_conditions": "All embeddings of the same full point field, both evaluations, image-field inclusion, actual places, finite support {2}, original d/c and scale (d+1)*max c 0 retained. No new hypotheses.",
+    "self_contained_solution_no_Solutions_or_Theorems_imports": true,
+    "self_contained_solution_no_sorry_or_axiom_tokens": true,
+    "reference_archives": [
+      {
+        "source": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/PlaceEmbedding.lean",
+        "archive": ".local/adaptation/embedding-bounds-sourceproof-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-PlaceEmbedding.lean.txt",
+        "sha256_valid": true
+      },
+      {
+        "source": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Local/Bounded.lean",
+        "archive": ".local/adaptation/embedding-bounds-sourceproof-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Bounded.lean.txt",
+        "sha256_valid": true
+      },
+      {
+        "source": "/tmp/p2m-height-general-position-source-audit-20261114/genl-ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean",
+        "archive": ".local/adaptation/embedding-bounds-sourceproof-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-BelyiDescent.lean.txt",
+        "sha256_valid": true
+      },
+      {
+        "source": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/GeneralPosition.lean",
+        "archive": ".local/adaptation/embedding-bounds-sourceproof-20261114/reference/iut-filesha-GeneralPosition.lean.txt",
+        "sha256_valid": true
+      },
+      {
+        "source": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/FieldTheory/IsAlgClosed/Basic.lean",
+        "archive": ".local/adaptation/embedding-bounds-sourceproof-20261114/reference/0df444a360eaa60ab8c11dca51a86af692955474-FieldTheory-IsAlgClosed-Basic.lean.txt",
+        "sha256_valid": true
+      },
+      {
+        "source": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/NumberField/InfinitePlace/Basic.lean",
+        "archive": ".local/adaptation/embedding-bounds-sourceproof-20261114/reference/0df444a360eaa60ab8c11dca51a86af692955474-NumberTheory-NumberField-InfinitePlace-Basic.lean.txt",
+        "sha256_valid": true
+      }
+    ],
+    "independent_engineering": "Only Mathlib and fixed Definitions imported; upstream Heights/Genl/Iut sources archived for attribution and proof provenance. No upstream project dependency added.",
+    "all_module_axioms_count": 39,
+    "all_module_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "solution_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "first_five_leaf_resource_estimates": "All 60s / 16GiB; process-tree peak RSS of each inspected leaf below 16GiB. PSS unavailable, not reported as zero.",
+    "production_ledger_unchanged": true,
+    "plan_boundary_audit": {
+      "plan": "docs/开发计划.Prove2Me适配.md",
+      "sha256": "f43e1d51309fdbdd67cd94519e04b7547d1e43f0a43194a4c04e5561b55d8711",
+      "newly_complete_broad_checkboxes": [],
+      "reason": "This closes one existing arithmetic source obligation. Complete Scene2/Scene1/Prologue source mappings remain unfinished.",
+      "boundary_changed": false,
+      "explicit_Fermat_route_preserved": true,
+      "deprecations": []
+    },
+    "historical_source_consumer_compiled_false": "Historical draft status, not treated as failure.",
+    "all_25_readbacks_conditions_and_quantifiers_covered": true,
+    "final_readbacks_sha256": "d301add20123262fcaacd1e857ec7786df2bfbce6b17a80dc262b126096743b7",
+    "reference_source_consumer_sha256": "655cb8bbb0a1e5b41c10575bf67206537c7087ffc6ae3b38e09af66a62f41955"
+  },
+  "receipts": [
+    {
+      "tag": "TripodLocalPlaceEmbeddingBasic-leaf",
+      "job_id": "ci-011256-5d86be74",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "Solutions/Source_TripodLocalPlaceEmbeddingBasic.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_TripodLocalPlaceEmbeddingBasic.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 45.17238509999879,
+      "cpu_time_seconds": 44.71,
+      "cpu_user_seconds": 3.17,
+      "cpu_system_seconds": 41.54,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4241428480,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "TripodLocalPlaceEmbeddingDegree-leaf",
+      "job_id": "ci-011263-6f0bcfbe",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "Solutions/Source_TripodLocalPlaceEmbeddingDegree.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_TripodLocalPlaceEmbeddingDegree.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 41.89909770000668,
+      "cpu_time_seconds": 41.26,
+      "cpu_user_seconds": 2.78,
+      "cpu_system_seconds": 38.48,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4219588608,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "TripodLocalPlaceEmbedding-leaf",
+      "job_id": "ci-011266-9e87db7b",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "Solutions/Source_TripodLocalPlaceEmbedding.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_TripodLocalPlaceEmbedding.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 43.92954450000252,
+      "cpu_time_seconds": 43.33,
+      "cpu_user_seconds": 3.1,
+      "cpu_system_seconds": 40.23,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4219891712,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "TripodLocalEmbeddingBounds-leaf",
+      "job_id": "ci-011280-683edae0",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "Solutions/Source_TripodLocalEmbeddingBounds.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_TripodLocalEmbeddingBounds.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 42.32086629999685,
+      "cpu_time_seconds": 42.2,
+      "cpu_user_seconds": 2.92,
+      "cpu_system_seconds": 39.28,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4229943296,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "FermatEmbeddingBoundsSource-leaf",
+      "job_id": "ci-011283-5002921e",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "Solutions/Source_FermatEmbeddingBoundsSource.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_FermatEmbeddingBoundsSource.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 48.9248271999968,
+      "cpu_time_seconds": 48.93000000000001,
+      "cpu_user_seconds": 4.23,
+      "cpu_system_seconds": 44.7,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4377075712,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "embeddingBoundsToSet-leaf",
+      "job_id": "ci-011288-5c539c16",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_embeddingBoundsToSet.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_embeddingBoundsToSet.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 50.82225800000015,
+      "cpu_time_seconds": 50.26,
+      "cpu_user_seconds": 2.37,
+      "cpu_system_seconds": 47.89,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4256342016,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "closed-axioms-review",
+      "job_id": "ci-011293-2a4e17de",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "Solutions/Checks_FermatEmbeddingBounds.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Checks_FermatEmbeddingBounds.lean"
+      ],
+      "review_passed": true,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 41.53086830000393,
+      "cpu_time_seconds": 41.19,
+      "cpu_user_seconds": 2.65,
+      "cpu_system_seconds": 38.54,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4309032960,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "source-graph-leaf",
+      "job_id": "ci-011297-20423330",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": ".local/adaptation/embedding-bounds-sourceproof-20261114/ExtractEmbeddingGraph.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/embedding-bounds-sourceproof-20261114/ExtractEmbeddingGraph.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 54.38062429999991,
+      "cpu_time_seconds": 54.18,
+      "cpu_user_seconds": 4.76,
+      "cpu_system_seconds": 49.42,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 5046808576,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "syntax-leaf",
+      "job_id": "ci-011302-485e39a6",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": ".local/adaptation/embedding-bounds-sourceproof-20261114/ExtractEmbeddingSyntax.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/embedding-bounds-sourceproof-20261114/ExtractEmbeddingSyntax.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 52.760714899995946,
+      "cpu_time_seconds": 52.46,
+      "cpu_user_seconds": 3.2,
+      "cpu_system_seconds": 49.26,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4997357568,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "all-constants-review",
+      "job_id": "ci-011307-f3448b0e",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": ".local/adaptation/embedding-bounds-sourceproof-20261114/AuditAllConstants.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/embedding-bounds-sourceproof-20261114/AuditAllConstants.lean"
+      ],
+      "review_passed": true,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 88.745665800001,
+      "cpu_time_seconds": 88.47,
+      "cpu_user_seconds": 38.43,
+      "cpu_system_seconds": 50.04,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 5038096384,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "direct-solution-leaf",
+      "job_id": "ci-011310-baf8392f",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": ".local/adaptation/embedding-bounds-sourceproof-20261114/Solution_embeddingBoundsToSet.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/embedding-bounds-sourceproof-20261114/Solution_embeddingBoundsToSet.lean"
+      ],
+      "review_passed": null,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 48.582666800008155,
+      "cpu_time_seconds": 52.21,
+      "cpu_user_seconds": 8.25,
+      "cpu_system_seconds": 43.96,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4440752128,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "solution-type-axioms-review",
+      "job_id": "ci-011313-9ba22e84",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": ".local/adaptation/embedding-bounds-sourceproof-20261114/AuditSolution.lean",
+      "current_source_hash_matches": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/embedding-bounds-sourceproof-20261114/AuditSolution.lean"
+      ],
+      "review_passed": true,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 43.72656389999611,
+      "cpu_time_seconds": 46.85,
+      "cpu_user_seconds": 7.43,
+      "cpu_system_seconds": 39.42,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 4437000192,
+      "peak_pss_bytes": null
+    },
+    {
+      "tag": "production-gates-review",
+      "job_id": "ci-011314-ba9453cb",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": ".local/adaptation/embedding-bounds-sourceproof-20261114/ProductionGates.lean",
+      "current_source_hash_matches": true,
+      "all_195_recorded_input_hashes_match": true,
+      "exclusive": true,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/embedding-bounds-sourceproof-20261114/ProductionGates.lean"
+      ],
+      "review_passed": true,
+      "no_sorryAx": true,
+      "allowed_axioms_only": true,
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "wall_time_seconds": 110.43791490000149,
+      "cpu_time_seconds": 109.47,
+      "cpu_user_seconds": 4.9,
+      "cpu_system_seconds": 104.57,
+      "cpu_total_sum_valid": true,
+      "peak_rss_bytes": 8411508736,
+      "peak_pss_bytes": null
+    }
+  ],
+  "pending_checks": [],
+  "limits": [
+    "Root whole mission remains Open.",
+    "No Scene1/Scene2/Prologue or broad plan checkbox completion asserted.",
+    "No Fermat deprecation or route removal.",
+    "No independent recompilation performed."
+  ],
+  "platform_parent_recheck": {
+    "status": "Proved",
+    "exact_original_type_preserved": true,
+    "theorem_id": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+    "visibility": "private",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+  },
+  "platform_verification": {
+    "verification_id": "d9d0f956-972e-4487-8728-752ea4f48647",
+    "status": "ACCEPTED",
+    "parent_status": "Proved",
+    "exact_original_formal_statement_preserved": true,
+    "mathematical_nodes_before": 125,
+    "mathematical_nodes_after": 125,
+    "mathematical_node_identities_unchanged": true,
+    "all_mathematical_formal_statements_unchanged": true,
+    "mathematical_edges_before": 324,
+    "mathematical_edges_after": 324,
+    "mathematical_edges_unchanged": true,
+    "only_theorem_status_change": {
+      "theorem_id": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "before": "Open",
+      "after": "Proved"
+    },
+    "new_deprecations": [],
+    "frontier_before": 21,
+    "frontier_after": 20,
+    "frontier_removed_ids": [
+      "e6835cd2-634e-4bc7-90bb-df92b33386d5"
+    ],
+    "frontier_added_ids": [],
+    "both_graphs_mathematical_closure_complete": true,
+    "both_frontiers_all_pages_fetched": true,
+    "root_status": "Open"
+  },
+  "reviewer_exclusions": [
+    "Root-run git diff --check and final administrative records belong to the main agent; this reviewer made no Git call."
+  ]
+}

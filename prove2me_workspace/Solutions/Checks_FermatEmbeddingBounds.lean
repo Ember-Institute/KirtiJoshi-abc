@@ -1,0 +1,12 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_embeddingBoundsToSet
+
+#print axioms AbcAdaptation.Tripod.Local.norm_le_one_of_monic_of_eval_eq_zero
+#print axioms AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv
+#print axioms AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq
+#print axioms AbcAdaptation.Tripod.Local.exists_ringHom_padicAlgCl_eq_pow
+#print axioms AbcAdaptation.Tripod.Local.abs_log_finitePlace_le
+#print axioms AbcAdaptation.Tripod.Local.abs_log_infinitePlace_le
+#print axioms AbcAdaptation.Tripod.Local.exists_ringHom_extension
+#print axioms AbcAdaptation.Tripod.Local.allEmbedding_bounds_descend
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet_source
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet

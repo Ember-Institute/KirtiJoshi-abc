@@ -1,0 +1,947 @@
+{
+  "metadata": {
+    "task": "Independent static trilingual readback of the next embedding-bounds unit",
+    "created_date": "2026-11-14",
+    "requested_model": "gpt-6.1-sol",
+    "actual_backend_model_id": null,
+    "model_provenance_note": "The requested model is recorded as instructed. No actual backend identifier was exposed to this agent; the actual backend field is null.",
+    "source_root": "/tmp/p2m-embedding-bounds-next-20261114",
+    "output_root": "/tmp/p2m-embedding-bounds-readback-next-20261114",
+    "declaration_count": 25,
+    "named_declaration_count": 24,
+    "anonymous_instance_count": 1,
+    "counts_by_module": {
+      "Definitions.Def_FermatEmbeddingBoundsSource": 3,
+      "Definitions.Def_TripodLocalEmbeddingBounds": 2,
+      "Definitions.Def_TripodLocalPlaceEmbedding": 2,
+      "Definitions.Def_TripodLocalPlaceEmbeddingBasic": 15,
+      "Definitions.Def_TripodLocalPlaceEmbeddingDegree": 2,
+      "Theorems.Thm_embeddingBoundsToSet": 1
+    },
+    "blind_readback_scope": "Read target Lean files and necessary Definitions dependencies plus the two readback/terminology rules. Did not read README, source-ledger, refer material, papers or nonformal source explanations. Source comments were not used as mathematical authority.",
+    "readback_language_provenance": {
+      "en": "Original independent static readback by this agent.",
+      "zh_Hans": "Translation of the English readback by the same agent, checked against the same Lean source.",
+      "ja": "Translation of the English readback by the same agent, checked against the same Lean source. These are not three independent audits."
+    },
+    "terminology_note": "Ordinary number-theory terms are translated as used in the readback. No disputed project-specific perfectoid, Frobenioid or arithmeticoid terminology is used. Japanese mathematical wording is ordinary domain usage, not a claim of verification in any external reference.",
+    "source_manifest": [
+      {
+        "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_FermatEmbeddingBoundsSource.lean",
+        "sha256": "9071eebb78e64dab42120355a01927352a1c8f11288ccef96dab64fbc87e06cc"
+      },
+      {
+        "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalEmbeddingBounds.lean",
+        "sha256": "273c87f81f4829c68b604d709fc4c8545afbdcec2558aed4592e15e3be2d942c"
+      },
+      {
+        "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbedding.lean",
+        "sha256": "eb200e6cb52a1b7ea6c4567533efe29333c8aaf0f037553e18a835f73953b650"
+      },
+      {
+        "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+        "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a"
+      },
+      {
+        "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingDegree.lean",
+        "sha256": "60796d6cc7633d87bb01473f783556cc3136d00afcaad235a665d6e57a75ecf5"
+      },
+      {
+        "path": "/tmp/p2m-embedding-bounds-next-20261114/Theorems/Thm_embeddingBoundsToSet.lean",
+        "sha256": "e78198e0bd0feb861c46d826cf6eac6b77cc1f030c3a4ebf09d494d74023bdd9"
+      }
+    ],
+    "necessary_dependency_manifest": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean",
+        "sha256": "bfceaae185fc536e913ea8772442f2030a780be865115a6bfbf10ccafa2df048"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+        "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230"
+      }
+    ],
+    "rule_manifest": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/docs/三语自然语言读回原则.md",
+        "sha256": "180c67d086707376e296b6e66a0abb54657454e67a700e2fa4444a6d8516c400"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/docs/三语术语名词关键对照.md",
+        "sha256": "c359fefad83c56790fa3c4302eb9306e43c7036c82cab249b9dbf3e3860f8e18"
+      }
+    ],
+    "verification": "JSON structure, declaration coverage and static hashes only; no compilation or axiom audit.",
+    "scope_limits": "Only these 25 mathematical declarations are read back. The input Model and residue-finiteness hypothesis are not asserted to exist or to have been proved. Quotations are null throughout."
+  },
+  "declarations": [
+    {
+      "userName": "AbcAdaptation.Tripod.Local.exists_ringHom_extension",
+      "static_label": "AbcAdaptation.Tripod.Local.exists_ringHom_extension",
+      "kind": "theorem",
+      "module": "Definitions.Def_FermatEmbeddingBoundsSource",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_FermatEmbeddingBoundsSource.lean",
+      "sha256": "9071eebb78e64dab42120355a01927352a1c8f11288ccef96dab64fbc87e06cc",
+      "source_span": {
+        "start_line": 23,
+        "end_line": 28,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem exists_ringHom_extension {F L E : Type*} [Field F] [Field L] [Field E]\n    [Algebra F L] [Algebra.IsAlgebraic F L] [IsAlgClosed E] (σ : F →+* E) :\n    ∃ τ : L →+* E, ∀ a : F, τ (algebraMap F L a) = σ a",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let F,L,E be fields, let L be an F-algebra algebraic over F, and let E be algebraically closed. For every unital ring homomorphism σ:F→E there exists a unital ring homomorphism τ:L→E such that τ(algebraMap_{F,L}(a))=σ(a) for every a∈F. Thus τ extends the specified σ along the specified algebra map; finite dimensionality and a norm are not required.",
+        "zh_Hans": "设 F、L、E 为域，L 带有 F 代数结构且在 F 上是代数扩张，E 为代数闭域。对每个保幺环同态 σ:F→E，存在保幺环同态 τ:L→E，使每个 a∈F 都满足 τ(algebraMap_{F,L}(a))=σ(a)。因此 τ 沿指定代数结构映射延拓指定的 σ；命题不要求有限维性或范数。",
+        "ja": "F,L,E を体とし、L は F 上代数的な F 代数、E は代数閉体とする。任意の単位元を保つ環準同型 σ:F→E に対し、単位元を保つ環準同型 τ:L→E が存在し、すべての a∈F に対して τ(algebraMap_{F,L}(a))=σ(a) が成り立つ。τ は指定された代数構造写像に沿って指定された σ を延長する。有限次元性やノルムは仮定しない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.allEmbedding_bounds_descend",
+      "static_label": "AbcAdaptation.Tripod.Local.allEmbedding_bounds_descend",
+      "kind": "theorem",
+      "module": "Definitions.Def_FermatEmbeddingBoundsSource",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_FermatEmbeddingBoundsSource.lean",
+      "sha256": "9071eebb78e64dab42120355a01927352a1c8f11288ccef96dab64fbc87e06cc",
+      "source_span": {
+        "start_line": 32,
+        "end_line": 45,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem allEmbedding_bounds_descend (F L : IntermediateField ℚ Tripod.Qbar)\n    [FiniteDimensional ℚ L] (hFL : F ≤ L)\n    {E : Type*} [NormedField E] [IsAlgClosed E]\n    (a : F) (b : L) (hab : (a : Tripod.Qbar) = (b : Tripod.Qbar)) (c : ℝ)\n    (hb : ∀ τ : L →+* E,\n      |Real.log ‖τ b‖| ≤ c ∧ |Real.log ‖τ b - 1‖| ≤ c) :\n    ∀ σ : F →+* E, |Real.log ‖σ a‖| ≤ c ∧ |Real.log ‖σ a - 1‖| ≤ c",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ and F,L intermediate fields of ℚ̄/ℚ with F⊆L and [L:ℚ] finite. Let E be an algebraically closed normed field. Choose a∈F and b∈L that are equal as elements of ℚ̄, and choose c∈ℝ. If for every embedding τ:L→E both |log ‖τ(b)‖|≤c and |log ‖τ(b)−1‖|≤c hold, then for every embedding σ:F→E both |log ‖σ(a)‖|≤c and |log ‖σ(a)−1‖|≤c hold. The inclusion F⊆L is the map along which embeddings extend. The conclusion uses the same c for both evaluations; no nonnegativity assumption on c or nonzero assumption on a,b is added, and log 0=0.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包，F、L 为 ℚ̄/ℚ 的中间域，F⊆L，且 [L:ℚ] 有限。设 E 为代数闭赋范域，a∈F 与 b∈L 在 ℚ̄ 中相等，c∈ℝ。若每个嵌入 τ:L→E 都同时满足 |log ‖τ(b)‖|≤c 和 |log ‖τ(b)−1‖|≤c，则每个嵌入 σ:F→E 都同时满足 |log ‖σ(a)‖|≤c 和 |log ‖σ(a)−1‖|≤c。嵌入沿包含映射 F⊆L 延拓；结论的两个求值使用同一个 c。命题没有另加 c 非负或 a、b 非零的假设，且约定 log 0=0。",
+        "ja": "ℚ̄ を ℚ の代数閉包とし、F,L を ℚ̄/ℚ の中間体で F⊆L、[L:ℚ] が有限とする。E を代数閉ノルム体とし、a∈F と b∈L は ℚ̄ の元として等しく、c∈ℝ とする。すべての埋め込み τ:L→E に対して |log ‖τ(b)‖|≤c および |log ‖τ(b)−1‖|≤c が成り立つならば、すべての埋め込み σ:F→E に対して |log ‖σ(a)‖|≤c および |log ‖σ(a)−1‖|≤c が成り立つ。埋め込みは包含写像 F⊆L に沿って延長される。結論の両方の評価には同じ c を用いる。c の非負性や a,b の非零性は別に仮定しない。log 0=0 とする。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet_source",
+      "static_label": "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet_source",
+      "kind": "theorem",
+      "module": "Definitions.Def_FermatEmbeddingBoundsSource",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_FermatEmbeddingBoundsSource.lean",
+      "sha256": "9071eebb78e64dab42120355a01927352a1c8f11288ccef96dab64fbc87e06cc",
+      "source_span": {
+        "start_line": 56,
+        "end_line": 107,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem embeddingBoundsToSet_source (M : Model N) (hRF : ResiduesFinite M) :\n    EmbeddingBoundsToSet M",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "variable_commands": [
+          "variable {N : ℕ}"
+        ],
+        "local_instance_commands": [
+          "local instance : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩"
+        ],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let N be a natural number and M a Model N. Explicitly, M consists of a ℚ-subfield K of the algebraic closure of ℚ(T), elements u,v∈K with u transcendental over ℚ, u^N+v^N=1, K=ℚ(u,v), and K finite dimensional of degree N over ℚ(u). Assume ResiduesFinite M: every nontrivial valuation subring O⊂K containing ℚ has residue field κ(O) finite dimensional over ℚ. A point x consists of such O and an embedding ι:κ(O)→ℚ̄. Its full point field L=ι(κ(O))⊂ℚ̄ has degree deg(x)=[L:ℚ]; evaluation of φ∈O is z=ι(φ mod the maximal ideal of O), considered as b∈L.\nFor every such x, every φ∈K, every natural d and every real c, assume deg(x)≤d and LocalBounds M x φ c. The latter means that φ∈O, z≠0, z≠1, and BOTH following conditions hold on this same full point field L: (i) for EVERY embedding σ:L→ℂ, |log ‖σ(b)‖|≤c and |log ‖σ(b)−1‖|≤c; (ii) for EVERY embedding τ:L→ℚ̄₂, |log ‖τ(b)‖|≤c and |log ‖τ(b)−1‖|≤c, where ‖2‖=1/2 on ℚ̄₂. Then the actual image z=belyiImage M φ x belongs to (localCompactSet d c).set.\nExplicitly, let F_z=ℚ(z)⊆L be the actual image field and a its generator z. The fixed bound is C=(d+1)·max(c,0), with the original d and c from the hypotheses. For EVERY finite place w of F_z whose residue field 𝓞_{F_z}/𝔭_w has characteristic 2, |log w(a)|≤C and |log w(a−1)|≤C; and for EVERY infinite place w of F_z the same two inequalities hold. Finite places use w(y)=|𝓞_{F_z}/𝔭_w|^(−ord_{𝔭_w}(y)) for y≠0, while infinite places use w(y)=‖σ_w(y)‖, without a complex-place square. Finite-place bounds are required precisely at the places over the rational prime 2; no finite-place bound away from 2 is asserted. The total definition of belyiImage uses the rational point 2 when good evaluation fails, but the present hypotheses select the actual evaluation branch. No positive lower bound on d or c is separately assumed. This statement is conditional on M and ResiduesFinite M.",
+        "zh_Hans": "设 N 为自然数，M 为 Model N。具体地，M 给出 ℚ(T) 的代数闭包中的 ℚ 子域 K，以及 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、K=ℚ(u,v)，且 K 在 ℚ(u) 上有限维并且次数为 N。假设 ResiduesFinite M：每个包含 ℚ 的非平凡赋值子环 O⊂K 的剩余域 κ(O) 在 ℚ 上有限维。点 x 由这样的 O 和嵌入 ι:κ(O)→ℚ̄ 构成。其完整点域为 L=ι(κ(O))⊂ℚ̄，点的次数为 deg(x)=[L:ℚ]；φ∈O 的求值为 z=ι(φ 在 O 的极大理想模下的像)，也将此求值看作 b∈L。\n对每个这样的 x、每个 φ∈K、自然数 d 和实数 c，假设 deg(x)≤d 以及 LocalBounds M x φ c。后一个条件的完整含义是：φ∈O、z≠0、z≠1，并且在同一个完整点域 L 上同时满足以下两组条件：(i) 对每个嵌入 σ:L→ℂ，都有 |log ‖σ(b)‖|≤c 及 |log ‖σ(b)−1‖|≤c；(ii) 对每个嵌入 τ:L→ℚ̄₂，都有 |log ‖τ(b)‖|≤c 及 |log ‖τ(b)−1‖|≤c，其中 ℚ̄₂ 上 ‖2‖=1/2。则实际像点 z=belyiImage M φ x 属于 (localCompactSet d c).set。\n展开结论，令 F_z=ℚ(z)⊆L 为实际像域，a 为其生成元 z。固定界为 C=(d+1)·max(c,0)，使用假设中原来的 d 和 c。对 F_z 的每个有限位点 w，若剩余域 𝓞_{F_z}/𝔭_w 的特征为 2，则 |log w(a)|≤C 且 |log w(a−1)|≤C；对 F_z 的每个无限位点 w，同样有这两个不等式。有限位点在 y≠0 时采用归一化 w(y)=|𝓞_{F_z}/𝔭_w|^(−ord_{𝔭_w}(y))，无限位点采用 w(y)=‖σ_w(y)‖，在复位点不取平方。有限位点条件恰指有理素数 2 上方的位点，没有断言其他有限位点的界。belyiImage 的全函数定义在好求值条件失败时使用有理点 2，但本命题的假设选中实际求值分支。命题没有另加 d 或 c 的正下界。此命题以 M 和 ResiduesFinite M 为前提。",
+        "ja": "N を自然数、M を Model N とする。具体的には、M は ℚ(T) の代数閉包に含まれる ℚ 部分体 K と u,v∈K を与え、u は ℚ 上超越的であり、u^N+v^N=1、K=ℚ(u,v) を満たし、K は ℚ(u) 上有限次元でその次数は N である。ResiduesFinite M を仮定する。これは ℚ を含む任意の非自明な付値部分環 O⊂K の剰余体 κ(O) が ℚ 上有限次元であることを意味する。点 x はこのような O と埋め込み ι:κ(O)→ℚ̄ からなる。その点全体の定義体は L=ι(κ(O))⊂ℚ̄ であり、点の次数は deg(x)=[L:ℚ] である。φ∈O の評価値を z=ι(φ の O の極大イデアルによる剰余類) とし、同じ値を b∈L とも見る。\nこのような任意の x、φ∈K、自然数 d、実数 c に対し、deg(x)≤d および LocalBounds M x φ c を仮定する。後者の完全な意味は、φ∈O、z≠0、z≠1 に加え、この同じ点全体の定義体 L 上で次の二条件がともに成り立つことである。(i) すべての埋め込み σ:L→ℂ に対して |log ‖σ(b)‖|≤c および |log ‖σ(b)−1‖|≤c。(ii) すべての埋め込み τ:L→ℚ̄₂ に対して |log ‖τ(b)‖|≤c および |log ‖τ(b)−1‖|≤c。ℚ̄₂ のノルムは ‖2‖=1/2 と正規化される。このとき実際の像 z=belyiImage M φ x は (localCompactSet d c).set に属する。\n結論を展開すると、F_z=ℚ(z)⊆L を実際の像の定義体、a をその生成元 z とする。固定された上界は、仮定に現れる元の d と c による C=(d+1)·max(c,0) である。F_z のすべての有限素点 w のうち、剰余体 𝓞_{F_z}/𝔭_w の標数が 2 であるものに対して |log w(a)|≤C および |log w(a−1)|≤C が成り立つ。また F_z のすべての無限素点 w に対しても同じ二つの不等式が成り立つ。有限素点では y≠0 に対して w(y)=|𝓞_{F_z}/𝔭_w|^(−ord_{𝔭_w}(y))、無限素点では w(y)=‖σ_w(y)‖ を用い、複素素点でも二乗しない。有限素点の条件は有理素数 2 の上にある素点を正確に指し、2 以外の有限素点での上界は主張しない。belyiImage は良い評価の条件が失敗すると有理点 2 を返す全域関数であるが、本命題の仮定では実際の評価値を返す分岐が選ばれる。d や c の正の下界は別に仮定しない。この命題は M および ResiduesFinite M を前提とする。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "The source contains a proof term using extension of every image-field embedding to the same full point field L, then normalized finite/infinite place bounds. Static reading only; no typecheck or axiom audit was performed."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.abs_log_finitePlace_le",
+      "static_label": "AbcAdaptation.Tripod.Local.abs_log_finitePlace_le",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalEmbeddingBounds",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalEmbeddingBounds.lean",
+      "sha256": "273c87f81f4829c68b604d709fc4c8545afbdcec2558aed4592e15e3be2d942c",
+      "source_span": {
+        "start_line": 30,
+        "end_line": 36,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem abs_log_finitePlace_le {p : ℕ} [Fact p.Prime] {c : ℝ} (hc : 0 ≤ c) {y : F}\n    (hy : ∀ τ : F →+* PadicAlgCl p, |Real.log ‖τ y‖| ≤ c) (w : FinitePlace F)\n    (hpw : ((p : ℕ) : 𝓞 F) ∈ w.maximalIdeal.asIdeal) :\n    |Real.log (w y)| ≤ Module.finrank ℚ F * c",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. Let c∈ℝ with c≥0 and y∈F. If |log ‖τ(y)‖|≤c for every embedding τ:F→ℚ̄_p, then every finite place w whose prime ideal contains p satisfies |log w(y)|≤[F:ℚ]·c. The finite-place normalization is w(y)=|𝓞_F/𝔭_w|^(−ord_{𝔭_w}(y)) for y≠0 and w(0)=0. No nonzero assumption on y is imposed; Lean’s real logarithm has log 0=0.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。设 c∈ℝ、c≥0，且 y∈F。若每个嵌入 τ:F→ℚ̄_p 都满足 |log ‖τ(y)‖|≤c，则对应素理想包含 p 的每个有限位点 w 都满足 |log w(y)|≤[F:ℚ]·c。有限位点归一化为：y≠0 时 w(y)=|𝓞_F/𝔭_w|^(−ord_{𝔭_w}(y))，且 w(0)=0。命题不要求 y 非零；Lean 的实对数约定 log 0=0。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。c∈ℝ、c≥0、y∈F とする。すべての埋め込み τ:F→ℚ̄_p に対して |log ‖τ(y)‖|≤c ならば、対応する素イデアルが p を含む任意の有限素点 w は |log w(y)|≤[F:ℚ]·c を満たす。有限素点は y≠0 では w(y)=|𝓞_F/𝔭_w|^(−ord_{𝔭_w}(y))、w(0)=0 と正規化される。y≠0 という仮定はない。Lean の実対数は log 0=0 と定義される。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.abs_log_infinitePlace_le",
+      "static_label": "AbcAdaptation.Tripod.Local.abs_log_infinitePlace_le",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalEmbeddingBounds",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalEmbeddingBounds.lean",
+      "sha256": "273c87f81f4829c68b604d709fc4c8545afbdcec2558aed4592e15e3be2d942c",
+      "source_span": {
+        "start_line": 39,
+        "end_line": 42,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem abs_log_infinitePlace_le {c : ℝ} {y : F} (hy : ∀ σ : F →+* ℂ, |Real.log ‖σ y‖| ≤ c)\n    (w : InfinitePlace F) : |Real.log (w y)| ≤ c",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let F be a number field, c∈ℝ and y∈F. If |log ‖σ(y)‖|≤c for every embedding σ:F→ℂ, then every infinite place w of F satisfies |log w(y)|≤c. The infinite-place normalization is w(y)=‖σ_w(y)‖ for a representing complex embedding, without squaring at complex places. There is no separate c≥0 or y≠0 hypothesis; Lean has log 0=0.",
+        "zh_Hans": "设 F 为数域，c∈ℝ，y∈F。若每个嵌入 σ:F→ℂ 都满足 |log ‖σ(y)‖|≤c，则 F 的每个无限位点 w 都满足 |log w(y)|≤c。无限位点归一化为代表性复嵌入下的 w(y)=‖σ_w(y)‖，在复位点不取平方。命题没有另加 c≥0 或 y≠0 的假设；Lean 约定 log 0=0。",
+        "ja": "F を数体、c∈ℝ、y∈F とする。すべての埋め込み σ:F→ℂ に対して |log ‖σ(y)‖|≤c ならば、F の任意の無限素点 w は |log w(y)|≤c を満たす。無限素点の正規化は、代表する複素埋め込みによる w(y)=‖σ_w(y)‖ であり、複素素点でも二乗しない。c≥0 または y≠0 という別の仮定はない。Lean では log 0=0 である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq",
+      "static_label": "AbcAdaptation.Tripod.Local.exists_placeOfRingHom_eq",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbedding",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbedding.lean",
+      "sha256": "eb200e6cb52a1b7ea6c4567533efe29333c8aaf0f037553e18a835f73953b650",
+      "source_span": {
+        "start_line": 16,
+        "end_line": 63,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem exists_placeOfRingHom_eq {v : HeightOneSpectrum (𝓞 F)}\n    (hpv : ((p : ℕ) : 𝓞 F) ∈ v.asIdeal) : ∃ τ : F →+* PadicAlgCl p, placeOfRingHom τ = v",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For every nonzero prime ideal v of 𝓞_F containing p, there exists an embedding τ:F→ℚ̄_p such that placeOfRingHom τ=v; equivalently, v has precisely the elements a∈𝓞_F with ‖τ(a)‖<1.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对 𝓞_F 中每个包含 p 的非零素理想 v，存在嵌入 τ:F→ℚ̄_p，使 placeOfRingHom τ=v；等价地，v 的元素恰为满足 ‖τ(a)‖<1 的 a∈𝓞_F。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。p を含む 𝓞_F の任意の非零素イデアル v に対し、placeOfRingHom τ=v となる埋め込み τ:F→ℚ̄_p が存在する。すなわち v は ‖τ(a)‖<1 を満たす a∈𝓞_F 全体である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.exists_ringHom_padicAlgCl_eq_pow",
+      "static_label": "AbcAdaptation.Tripod.Local.exists_ringHom_padicAlgCl_eq_pow",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbedding",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbedding.lean",
+      "sha256": "eb200e6cb52a1b7ea6c4567533efe29333c8aaf0f037553e18a835f73953b650",
+      "source_span": {
+        "start_line": 68,
+        "end_line": 75,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem exists_ringHom_padicAlgCl_eq_pow (w : FinitePlace F)\n    (hpw : ((p : ℕ) : 𝓞 F) ∈ w.maximalIdeal.asIdeal) :\n    ∃ τ : F →+* PadicAlgCl p, ∃ N : ℕ, 0 < N ∧ N ≤ Module.finrank ℚ F ∧\n      ∀ y : F, w y = ‖τ y‖ ^ N",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For every finite place w of F whose associated nonzero prime ideal contains p, there exist an embedding τ:F→ℚ̄_p and a natural number N with 0<N≤[F:ℚ] such that w(y)=‖τ(y)‖^N for every y∈F. The same τ and N work for all y. Here w is Mathlib’s real absolute value normalized by w(y)=|𝓞_F/𝔭_w|^(−ord_{𝔭_w}(y)) for y≠0 and w(0)=0.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对 F 的每个有限位点 w，若其对应的非零素理想包含 p，则存在嵌入 τ:F→ℚ̄_p 和满足 0<N≤[F:ℚ] 的自然数 N，使所有 y∈F 都满足 w(y)=‖τ(y)‖^N。同一 τ 和 N 适用于所有 y。这里 w 是 Mathlib 的实值绝对值，归一化为：y≠0 时 w(y)=|𝓞_F/𝔭_w|^(−ord_{𝔭_w}(y))，且 w(0)=0。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。対応する非零素イデアルが p を含む F の任意の有限素点 w に対し、埋め込み τ:F→ℚ̄_p と 0<N≤[F:ℚ] を満たす自然数 N が存在し、すべての y∈F について w(y)=‖τ(y)‖^N が成り立つ。同じ τ と N がすべての y に適用される。w は Mathlib の実数値絶対値であり、y≠0 では w(y)=|𝓞_F/𝔭_w|^(−ord_{𝔭_w}(y))、w(0)=0 と正規化される。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.norm_le_one_of_monic_of_eval_eq_zero",
+      "static_label": "AbcAdaptation.Tripod.Local.norm_le_one_of_monic_of_eval_eq_zero",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 30,
+        "end_line": 58,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem norm_le_one_of_monic_of_eval_eq_zero {E : Type*} [NormedField E] [IsUltrametricDist E]\n    {P : E[X]} (hP : P.Monic) (hc : ∀ i, ‖P.coeff i‖ ≤ 1) {x : E} (hx : P.eval x = 0) :\n    ‖x‖ ≤ 1",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let E be a normed field whose norm is ultrametric: ‖a+b‖≤max(‖a‖,‖b‖). For every monic polynomial P∈E[X] with ‖coeff_i(P)‖≤1 for every natural index i, and every x∈E satisfying P(x)=0, one has ‖x‖≤1. No separate positive-degree hypothesis is imposed.",
+        "zh_Hans": "设 E 为范数满足超度量不等式 ‖a+b‖≤max(‖a‖,‖b‖) 的赋范域。对任意首一多项式 P∈E[X]，若每个自然数指标 i 都满足 ‖coeff_i(P)‖≤1，则任意满足 P(x)=0 的 x∈E 都满足 ‖x‖≤1。命题没有另加次数为正的假设。",
+        "ja": "E を ‖a+b‖≤max(‖a‖,‖b‖) を満たす超距離ノルムを持つノルム体とする。任意のモニック多項式 P∈E[X] について、すべての自然数 i に対して ‖coeff_i(P)‖≤1 ならば、P(x)=0 を満たす任意の x∈E は ‖x‖≤1 を満たす。次数が正であるという別の仮定はない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.norm_ringHom_le_one",
+      "static_label": "AbcAdaptation.Tripod.Local.norm_ringHom_le_one",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 63,
+        "end_line": 75,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem norm_ringHom_le_one (τ : F →+* PadicAlgCl p) (y : 𝓞 F) : ‖τ y‖ ≤ 1",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For every embedding τ:F→ℚ̄_p and every algebraic integer a∈𝓞_F, ‖τ(a)‖≤1.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对每个嵌入 τ:F→ℚ̄_p 及每个代数整数 a∈𝓞_F，都有 ‖τ(a)‖≤1。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。任意の埋め込み τ:F→ℚ̄_p と任意の代数的整数 a∈𝓞_F に対して ‖τ(a)‖≤1 である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.ringHomAbv",
+      "static_label": "AbcAdaptation.Tripod.Local.ringHomAbv",
+      "kind": "def",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 78,
+        "end_line": 79,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "noncomputable def ringHomAbv (τ : F →+* PadicAlgCl p) : AbsoluteValue F ℝ",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For each embedding τ:F→ℚ̄_p, ringHomAbv τ is the real-valued absolute value on F defined by y↦‖τ(y)‖.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对每个嵌入 τ:F→ℚ̄_p，ringHomAbv τ 定义为 F 上的实值绝对值 y↦‖τ(y)‖。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。各埋め込み τ:F→ℚ̄_p に対し、ringHomAbv τ は F 上の実数値絶対値 y↦‖τ(y)‖ と定義される。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "Definition includes a source construction; its elaboration was not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.ringHomAbv_apply",
+      "static_label": "AbcAdaptation.Tripod.Local.ringHomAbv_apply",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 81,
+        "end_line": 82,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "@[simp] theorem ringHomAbv_apply (τ : F →+* PadicAlgCl p) (y : F) :\n    ringHomAbv τ y = ‖τ y‖",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For every τ:F→ℚ̄_p and y∈F, the absolute value ringHomAbv τ, defined by the norm after τ, satisfies (ringHomAbv τ)(y)=‖τ(y)‖.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对每个 τ:F→ℚ̄_p 及 y∈F，由 τ 后的范数定义的绝对值满足 (ringHomAbv τ)(y)=‖τ(y)‖。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。任意の τ:F→ℚ̄_p と y∈F に対し、τ の後にノルムを取って定義した絶対値は (ringHomAbv τ)(y)=‖τ(y)‖ を満たす。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.norm_ringHom_natCast_p",
+      "static_label": "AbcAdaptation.Tripod.Local.norm_ringHom_natCast_p",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 85,
+        "end_line": 89,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem norm_ringHom_natCast_p (τ : F →+* PadicAlgCl p) : ‖τ (p : F)‖ = (p : ℝ)⁻¹",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. Every embedding τ:F→ℚ̄_p satisfies ‖τ(p·1_F)‖=(p:ℝ)⁻¹.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。每个嵌入 τ:F→ℚ̄_p 都满足 ‖τ(p·1_F)‖=(p:ℝ)⁻¹。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。すべての埋め込み τ:F→ℚ̄_p に対して ‖τ(p·1_F)‖=(p:ℝ)⁻¹ である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.primeOfRingHom",
+      "static_label": "AbcAdaptation.Tripod.Local.primeOfRingHom",
+      "kind": "def",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 92,
+        "end_line": 102,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "noncomputable def primeOfRingHom (τ : F →+* PadicAlgCl p) : Ideal (𝓞 F)",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For each τ:F→ℚ̄_p, primeOfRingHom τ is the ideal of 𝓞_F whose elements are exactly the a satisfying ‖τ(a)‖<1.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对每个 τ:F→ℚ̄_p，primeOfRingHom τ 定义为 𝓞_F 中恰由满足 ‖τ(a)‖<1 的元素 a 构成的理想。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。各 τ:F→ℚ̄_p に対し、primeOfRingHom τ は ‖τ(a)‖<1 を満たす a∈𝓞_F 全体からなるイデアルと定義される。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "Definition includes a source construction; its elaboration was not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.mem_primeOfRingHom",
+      "static_label": "AbcAdaptation.Tripod.Local.mem_primeOfRingHom",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 104,
+        "end_line": 105,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem mem_primeOfRingHom {τ : F →+* PadicAlgCl p} {y : 𝓞 F} :\n    y ∈ primeOfRingHom τ ↔ ‖τ y‖ < 1",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. For every τ and a∈𝓞_F, a∈𝔭_τ if and only if ‖τ(a)‖<1.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。对每个 τ 及 a∈𝓞_F，a∈𝔭_τ 当且仅当 ‖τ(a)‖<1。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。任意の τ と a∈𝓞_F に対し、a∈𝔭_τ と ‖τ(a)‖<1 は同値である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.natCast_p_mem_primeOfRingHom",
+      "static_label": "AbcAdaptation.Tripod.Local.natCast_p_mem_primeOfRingHom",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 107,
+        "end_line": 112,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem natCast_p_mem_primeOfRingHom (τ : F →+* PadicAlgCl p) :\n    ((p : ℕ) : 𝓞 F) ∈ primeOfRingHom τ",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. For every τ, the integer p viewed as an element of 𝓞_F lies in 𝔭_τ.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。对每个 τ，将整数 p 看作 𝓞_F 中元素时，有 p∈𝔭_τ。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。任意の τ に対し、整数 p を 𝓞_F の元と見たとき p∈𝔭_τ である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": null,
+      "static_label": "AbcAdaptation.Tripod.Local.__anonymous_prime_instance__",
+      "kind": "instance",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 114,
+        "end_line": 126,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "instance (τ : F →+* PadicAlgCl p) : (primeOfRingHom τ).IsPrime",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. For every τ, 𝔭_τ is a prime ideal of 𝓞_F: it is proper, and ab∈𝔭_τ implies a∈𝔭_τ or b∈𝔭_τ for all a,b∈𝓞_F. This assertion is installed as a type-class instance.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。对每个 τ，𝔭_τ 都是 𝓞_F 的素理想：它是真理想，且对所有 a,b∈𝓞_F，ab∈𝔭_τ 蕴含 a∈𝔭_τ 或 b∈𝔭_τ。该断言在此作为一个类型类实例声明。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。任意の τ に対し、𝔭_τ は 𝓞_F の素イデアルである。すなわち真のイデアルであり、任意の a,b∈𝓞_F について ab∈𝔭_τ ならば a∈𝔭_τ または b∈𝔭_τ である。この断言はここで型クラスのインスタンスとして宣言される。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "Anonymous instance: no elaboration was run, so the generated declaration name is unknown. userName is null; static_label identifies the source instance. No compilation or instance audit was performed."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.primeOfRingHom_ne_bot",
+      "static_label": "AbcAdaptation.Tripod.Local.primeOfRingHom_ne_bot",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 128,
+        "end_line": 132,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem primeOfRingHom_ne_bot (τ : F →+* PadicAlgCl p) : primeOfRingHom τ ≠ ⊥",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. For every τ, 𝔭_τ is not the zero ideal of 𝓞_F.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。对每个 τ，𝔭_τ 都不等于 𝓞_F 的零理想。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。任意の τ に対し、𝔭_τ は 𝓞_F の零イデアルではない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.placeOfRingHom",
+      "static_label": "AbcAdaptation.Tripod.Local.placeOfRingHom",
+      "kind": "def",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 135,
+        "end_line": 136,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "noncomputable def placeOfRingHom (τ : F →+* PadicAlgCl p) : HeightOneSpectrum (𝓞 F)",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. For each τ, placeOfRingHom τ is the element of HeightOneSpectrum(𝓞_F) with underlying ideal 𝔭_τ, using that 𝔭_τ is prime and nonzero. Here HeightOneSpectrum is the carrier of nonzero prime ideals of this Dedekind domain.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。对每个 τ，placeOfRingHom τ 定义为 HeightOneSpectrum(𝓞_F) 中底层理想为 𝔭_τ 的元素，使用 𝔭_τ 为非零素理想这一性质。这里的高度一谱承载此 Dedekind 整环的非零素理想。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。各 τ に対し、placeOfRingHom τ は基礎となるイデアルが 𝔭_τ である HeightOneSpectrum(𝓞_F) の元と定義される。この定義では 𝔭_τ が非零素イデアルであることを用いる。ここで高さ一スペクトルは、この Dedekind 整域の非零素イデアルを要素とする。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "Definition includes a source construction; its elaboration was not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.norm_eq_one_of_notMem",
+      "static_label": "AbcAdaptation.Tripod.Local.norm_eq_one_of_notMem",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 139,
+        "end_line": 142,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem norm_eq_one_of_notMem {τ : F →+* PadicAlgCl p} {d : 𝓞 F}\n    (hd : d ∉ primeOfRingHom τ) : ‖τ d‖ = 1",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. For every τ and d∈𝓞_F, d∉𝔭_τ implies ‖τ(d)‖=1.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。对每个 τ 及 d∈𝓞_F，若 d∉𝔭_τ，则 ‖τ(d)‖=1。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。任意の τ と d∈𝓞_F に対し、d∉𝔭_τ ならば ‖τ(d)‖=1 である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.valuation_le_one_iff_norm_le_one",
+      "static_label": "AbcAdaptation.Tripod.Local.valuation_le_one_iff_norm_le_one",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 146,
+        "end_line": 183,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem valuation_le_one_iff_norm_le_one (τ : F →+* PadicAlgCl p) (y : F) :\n    (placeOfRingHom τ).valuation F y ≤ 1 ↔ ‖τ y‖ ≤ 1",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. For every τ and y∈F, the multiplicative discrete valuation at v_τ=placeOfRingHom τ, taking values in ℤ with multiplicative notation and an added zero, satisfies v_τ(y)≤1 if and only if ‖τ(y)‖≤1. This is an equivalence of unit-ball conditions, including y=0.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。对每个 τ 及 y∈F，v_τ=placeOfRingHom τ 处的乘法离散赋值取值于按乘法记号书写并添零的整数群；它满足 v_τ(y)≤1 当且仅当 ‖τ(y)‖≤1。这是两个单位球条件的等价关系，包含 y=0 的情形。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。任意の τ と y∈F について、v_τ=placeOfRingHom τ における乗法的離散付値は、乗法記法の整数群に零を加えた集合に値を取る。この付値について v_τ(y)≤1 と ‖τ(y)‖≤1 は同値である。これは y=0 を含む単位球条件の同値である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.adicAbv_le_one_iff",
+      "static_label": "AbcAdaptation.Tripod.Local.adicAbv_le_one_iff",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 186,
+        "end_line": 191,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem adicAbv_le_one_iff (τ : F →+* PadicAlgCl p) (y : F) :\n    adicAbv F (placeOfRingHom τ) y ≤ 1 ↔ ‖τ y‖ ≤ 1",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. The place v_τ is the height-one prime with underlying ideal 𝔭_τ. Its real absolute value A_τ(y)=adicAbv F v_τ y uses the residue-norm normalization A_τ(y)=|𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y)) for y≠0 and A_τ(0)=0. For every τ and y∈F, A_τ(y)≤1 if and only if ‖τ(y)‖≤1, including y=0.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。v_τ 是底层理想为 𝔭_τ 的高度一素理想；其实值绝对值 A_τ(y)=adicAbv F v_τ y 采用剩余域范数归一化：y≠0 时为 |𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y))，零点处取零。对每个 τ 及 y∈F，A_τ(y)≤1 当且仅当 ‖τ(y)‖≤1，且包含 y=0 的情形。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。v_τ は基礎となるイデアルが 𝔭_τ である高さ一の素イデアルである。その実数値絶対値 A_τ(y)=adicAbv F v_τ y は剰余体の位数による正規化を用いる。すなわち y≠0 では |𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y))、y=0 では 0 である。任意の τ と y∈F に対し、A_τ(y)≤1 と ‖τ(y)‖≤1 は同値である。y=0 も含む。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.isEquiv_ringHomAbv",
+      "static_label": "AbcAdaptation.Tripod.Local.isEquiv_ringHomAbv",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingBasic",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingBasic.lean",
+      "sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+      "source_span": {
+        "start_line": 194,
+        "end_line": 202,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem isEquiv_ringHomAbv (τ : F →+* PadicAlgCl p) :\n    (ringHomAbv τ).IsEquiv (adicAbv F (placeOfRingHom τ))",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. The place v_τ is the height-one prime with underlying ideal 𝔭_τ. Its real absolute value A_τ(y)=adicAbv F v_τ y uses the residue-norm normalization A_τ(y)=|𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y)) for y≠0 and A_τ(0)=0. For every τ, the real absolute values B_τ(y)=‖τ(y)‖ and A_τ are equivalent in the stated sense: for all x,y∈F, B_τ(x)≤B_τ(y) if and only if A_τ(x)≤A_τ(y).",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。v_τ 是底层理想为 𝔭_τ 的高度一素理想；其实值绝对值 A_τ(y)=adicAbv F v_τ y 采用剩余域范数归一化：y≠0 时为 |𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y))，零点处取零。对每个 τ，实值绝对值 B_τ(y)=‖τ(y)‖ 与 A_τ 在如下意义下等价：对所有 x,y∈F，B_τ(x)≤B_τ(y) 当且仅当 A_τ(x)≤A_τ(y)。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。v_τ は基礎となるイデアルが 𝔭_τ である高さ一の素イデアルである。その実数値絶対値 A_τ(y)=adicAbv F v_τ y は剰余体の位数による正規化を用いる。すなわち y≠0 では |𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y))、y=0 では 0 である。任意の τ に対し、実数値絶対値 B_τ(y)=‖τ(y)‖ と A_τ は次の意味で同値である。任意の x,y∈F について B_τ(x)≤B_τ(y) と A_τ(x)≤A_τ(y) が同値となる。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.exists_absNorm_eq_pow",
+      "static_label": "AbcAdaptation.Tripod.Local.exists_absNorm_eq_pow",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingDegree",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingDegree.lean",
+      "sha256": "60796d6cc7633d87bb01473f783556cc3136d00afcaad235a665d6e57a75ecf5",
+      "source_span": {
+        "start_line": 16,
+        "end_line": 27,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem exists_absNorm_eq_pow {v : HeightOneSpectrum (𝓞 F)} (hpv : ((p : ℕ) : 𝓞 F) ∈ v.asIdeal) :\n    ∃ j : ℕ, 0 < j ∧ Ideal.absNorm v.asIdeal = p ^ j",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For every nonzero prime ideal v of 𝓞_F containing p, there exists a natural number j>0 such that its absolute ideal norm, the cardinality |𝓞_F/v|, equals p^j.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对 𝓞_F 中每个包含 p 的非零素理想 v，存在自然数 j>0，使其绝对理想范数（即剩余域的基数 |𝓞_F/v|）等于 p^j。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。p を含む 𝓞_F の任意の非零素イデアル v に対し、自然数 j>0 が存在して、その絶対イデアルノルム、すなわち剰余体の位数 |𝓞_F/v| が p^j に等しくなる。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv",
+      "static_label": "AbcAdaptation.Tripod.Local.exists_pow_eq_adicAbv",
+      "kind": "theorem",
+      "module": "Definitions.Def_TripodLocalPlaceEmbeddingDegree",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Definitions/Def_TripodLocalPlaceEmbeddingDegree.lean",
+      "sha256": "60796d6cc7633d87bb01473f783556cc3136d00afcaad235a665d6e57a75ecf5",
+      "source_span": {
+        "start_line": 30,
+        "end_line": 75,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem exists_pow_eq_adicAbv (τ : F →+* PadicAlgCl p) :\n    ∃ N : ℕ, 0 < N ∧ N ≤ Module.finrank ℚ F ∧\n      ∀ y : F, adicAbv F (placeOfRingHom τ) y = ‖τ y‖ ^ N",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Local",
+        "variable_commands": [
+          "variable {p : ℕ} [hp : Fact p.Prime]",
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let p be a prime natural number, F a number field (a field of characteristic zero, finite dimensional over ℚ), 𝓞_F its ring of integers, and ℚ̄_p = PadicAlgCl p the p-adic algebraic closure with its norm normalized by ‖p‖ = p⁻¹. Ring homomorphisms from F are unital and hence injective. For an embedding τ:F→ℚ̄_p, write 𝔭_τ = {a∈𝓞_F : ‖τ(a)‖<1}; a is first included into F. The place v_τ is the height-one prime with underlying ideal 𝔭_τ. Its real absolute value A_τ(y)=adicAbv F v_τ y uses the residue-norm normalization A_τ(y)=|𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y)) for y≠0 and A_τ(0)=0. For every embedding τ:F→ℚ̄_p, there exists a natural number N with 0<N≤[F:ℚ] such that, simultaneously for every y∈F, A_τ(y)=‖τ(y)‖^N. N may depend on τ and is independent of y.",
+        "zh_Hans": "设 p 为素数，F 为数域（即特征为零且在 ℚ 上有限维的域），𝓞_F 为其整数环，ℚ̄_p = PadicAlgCl p 为带有 ‖p‖ = p⁻¹ 归一化范数的 p 进代数闭包。以下从 F 出发的环同态均保幺，因而都是单射。对嵌入 τ:F→ℚ̄_p，记 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1}，其中先将 a 包含到 F 中。v_τ 是底层理想为 𝔭_τ 的高度一素理想；其实值绝对值 A_τ(y)=adicAbv F v_τ y 采用剩余域范数归一化：y≠0 时为 |𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y))，零点处取零。对每个嵌入 τ:F→ℚ̄_p，存在满足 0<N≤[F:ℚ] 的自然数 N，使所有 y∈F 同时满足 A_τ(y)=‖τ(y)‖^N。N 可依赖于 τ，但不依赖于 y。",
+        "ja": "p を素数、F を数体（標数零で ℚ 上有限次元の体）、𝓞_F をその整数環とする。ℚ̄_p = PadicAlgCl p は ‖p‖ = p⁻¹ と正規化したノルムを持つ p 進代数閉包である。F からの環準同型は単位元を保ち、したがって単射である。埋め込み τ:F→ℚ̄_p に対して 𝔭_τ={a∈𝓞_F : ‖τ(a)‖<1} と書く。ここで a はまず F に含めて考える。v_τ は基礎となるイデアルが 𝔭_τ である高さ一の素イデアルである。その実数値絶対値 A_τ(y)=adicAbv F v_τ y は剰余体の位数による正規化を用いる。すなわち y≠0 では |𝓞_F/𝔭_τ|^(−ord_{𝔭_τ}(y))、y=0 では 0 である。任意の埋め込み τ:F→ℚ̄_p に対し、0<N≤[F:ℚ] を満たす自然数 N が存在し、すべての y∈F について同時に A_τ(y)=‖τ(y)‖^N が成り立つ。N は τ に依存してよいが y には依存しない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "A source proof term is present; elaboration and assumptions were not checked."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet",
+      "static_label": "AbcAdaptation.Tripod.Fermat.Proper.embeddingBoundsToSet",
+      "kind": "theorem",
+      "module": "Theorems.Thm_embeddingBoundsToSet",
+      "path": "/tmp/p2m-embedding-bounds-next-20261114/Theorems/Thm_embeddingBoundsToSet.lean",
+      "sha256": "e78198e0bd0feb861c46d826cf6eac6b77cc1f030c3a4ebf09d494d74023bdd9",
+      "source_span": {
+        "start_line": 12,
+        "end_line": 14,
+        "line_numbering": "1-based inclusive"
+      },
+      "static_signature": "theorem embeddingBoundsToSet {N : ℕ} (M : Model N)\n    (hRF : ResiduesFinite M) : EmbeddingBoundsToSet M",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "variable_commands": [],
+        "local_instance_commands": [],
+        "elaboration_performed": false,
+        "note": "Textual active section context; Lean may omit unused section variables from the elaborated declaration."
+      },
+      "statements": {
+        "en": "Let N be a natural number and M a Model N. Explicitly, M consists of a ℚ-subfield K of the algebraic closure of ℚ(T), elements u,v∈K with u transcendental over ℚ, u^N+v^N=1, K=ℚ(u,v), and K finite dimensional of degree N over ℚ(u). Assume ResiduesFinite M: every nontrivial valuation subring O⊂K containing ℚ has residue field κ(O) finite dimensional over ℚ. A point x consists of such O and an embedding ι:κ(O)→ℚ̄. Its full point field L=ι(κ(O))⊂ℚ̄ has degree deg(x)=[L:ℚ]; evaluation of φ∈O is z=ι(φ mod the maximal ideal of O), considered as b∈L.\nFor every such x, every φ∈K, every natural d and every real c, assume deg(x)≤d and LocalBounds M x φ c. The latter means that φ∈O, z≠0, z≠1, and BOTH following conditions hold on this same full point field L: (i) for EVERY embedding σ:L→ℂ, |log ‖σ(b)‖|≤c and |log ‖σ(b)−1‖|≤c; (ii) for EVERY embedding τ:L→ℚ̄₂, |log ‖τ(b)‖|≤c and |log ‖τ(b)−1‖|≤c, where ‖2‖=1/2 on ℚ̄₂. Then the actual image z=belyiImage M φ x belongs to (localCompactSet d c).set.\nExplicitly, let F_z=ℚ(z)⊆L be the actual image field and a its generator z. The fixed bound is C=(d+1)·max(c,0), with the original d and c from the hypotheses. For EVERY finite place w of F_z whose residue field 𝓞_{F_z}/𝔭_w has characteristic 2, |log w(a)|≤C and |log w(a−1)|≤C; and for EVERY infinite place w of F_z the same two inequalities hold. Finite places use w(y)=|𝓞_{F_z}/𝔭_w|^(−ord_{𝔭_w}(y)) for y≠0, while infinite places use w(y)=‖σ_w(y)‖, without a complex-place square. Finite-place bounds are required precisely at the places over the rational prime 2; no finite-place bound away from 2 is asserted. The total definition of belyiImage uses the rational point 2 when good evaluation fails, but the present hypotheses select the actual evaluation branch. No positive lower bound on d or c is separately assumed. This statement is conditional on M and ResiduesFinite M.",
+        "zh_Hans": "设 N 为自然数，M 为 Model N。具体地，M 给出 ℚ(T) 的代数闭包中的 ℚ 子域 K，以及 u,v∈K，满足 u 在 ℚ 上超越、u^N+v^N=1、K=ℚ(u,v)，且 K 在 ℚ(u) 上有限维并且次数为 N。假设 ResiduesFinite M：每个包含 ℚ 的非平凡赋值子环 O⊂K 的剩余域 κ(O) 在 ℚ 上有限维。点 x 由这样的 O 和嵌入 ι:κ(O)→ℚ̄ 构成。其完整点域为 L=ι(κ(O))⊂ℚ̄，点的次数为 deg(x)=[L:ℚ]；φ∈O 的求值为 z=ι(φ 在 O 的极大理想模下的像)，也将此求值看作 b∈L。\n对每个这样的 x、每个 φ∈K、自然数 d 和实数 c，假设 deg(x)≤d 以及 LocalBounds M x φ c。后一个条件的完整含义是：φ∈O、z≠0、z≠1，并且在同一个完整点域 L 上同时满足以下两组条件：(i) 对每个嵌入 σ:L→ℂ，都有 |log ‖σ(b)‖|≤c 及 |log ‖σ(b)−1‖|≤c；(ii) 对每个嵌入 τ:L→ℚ̄₂，都有 |log ‖τ(b)‖|≤c 及 |log ‖τ(b)−1‖|≤c，其中 ℚ̄₂ 上 ‖2‖=1/2。则实际像点 z=belyiImage M φ x 属于 (localCompactSet d c).set。\n展开结论，令 F_z=ℚ(z)⊆L 为实际像域，a 为其生成元 z。固定界为 C=(d+1)·max(c,0)，使用假设中原来的 d 和 c。对 F_z 的每个有限位点 w，若剩余域 𝓞_{F_z}/𝔭_w 的特征为 2，则 |log w(a)|≤C 且 |log w(a−1)|≤C；对 F_z 的每个无限位点 w，同样有这两个不等式。有限位点在 y≠0 时采用归一化 w(y)=|𝓞_{F_z}/𝔭_w|^(−ord_{𝔭_w}(y))，无限位点采用 w(y)=‖σ_w(y)‖，在复位点不取平方。有限位点条件恰指有理素数 2 上方的位点，没有断言其他有限位点的界。belyiImage 的全函数定义在好求值条件失败时使用有理点 2，但本命题的假设选中实际求值分支。命题没有另加 d 或 c 的正下界。此命题以 M 和 ResiduesFinite M 为前提。",
+        "ja": "N を自然数、M を Model N とする。具体的には、M は ℚ(T) の代数閉包に含まれる ℚ 部分体 K と u,v∈K を与え、u は ℚ 上超越的であり、u^N+v^N=1、K=ℚ(u,v) を満たし、K は ℚ(u) 上有限次元でその次数は N である。ResiduesFinite M を仮定する。これは ℚ を含む任意の非自明な付値部分環 O⊂K の剰余体 κ(O) が ℚ 上有限次元であることを意味する。点 x はこのような O と埋め込み ι:κ(O)→ℚ̄ からなる。その点全体の定義体は L=ι(κ(O))⊂ℚ̄ であり、点の次数は deg(x)=[L:ℚ] である。φ∈O の評価値を z=ι(φ の O の極大イデアルによる剰余類) とし、同じ値を b∈L とも見る。\nこのような任意の x、φ∈K、自然数 d、実数 c に対し、deg(x)≤d および LocalBounds M x φ c を仮定する。後者の完全な意味は、φ∈O、z≠0、z≠1 に加え、この同じ点全体の定義体 L 上で次の二条件がともに成り立つことである。(i) すべての埋め込み σ:L→ℂ に対して |log ‖σ(b)‖|≤c および |log ‖σ(b)−1‖|≤c。(ii) すべての埋め込み τ:L→ℚ̄₂ に対して |log ‖τ(b)‖|≤c および |log ‖τ(b)−1‖|≤c。ℚ̄₂ のノルムは ‖2‖=1/2 と正規化される。このとき実際の像 z=belyiImage M φ x は (localCompactSet d c).set に属する。\n結論を展開すると、F_z=ℚ(z)⊆L を実際の像の定義体、a をその生成元 z とする。固定された上界は、仮定に現れる元の d と c による C=(d+1)·max(c,0) である。F_z のすべての有限素点 w のうち、剰余体 𝓞_{F_z}/𝔭_w の標数が 2 であるものに対して |log w(a)|≤C および |log w(a−1)|≤C が成り立つ。また F_z のすべての無限素点 w に対しても同じ二つの不等式が成り立つ。有限素点では y≠0 に対して w(y)=|𝓞_{F_z}/𝔭_w|^(−ord_{𝔭_w}(y))、無限素点では w(y)=‖σ_w(y)‖ を用い、複素素点でも二乗しない。有限素点の条件は有理素数 2 の上にある素点を正確に指し、2 以外の有限素点での上界は主張しない。belyiImage は良い評価の条件が失敗すると有理点 2 を返す全域関数であるが、本命題の仮定では実際の評価値を返す分岐が選ばれる。d や c の正の下界は別に仮定しない。この命題は M および ResiduesFinite M を前提とする。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "source_term_present_not_verified",
+        "readback_basis": "Static source reading only. No Lean, MCP-CI, API or Git writes were performed. No proof or axiom-audit success is claimed.",
+        "specific_note": "The source term delegates exactly to embeddingBoundsToSet_source M hRF. This is the same conditional mathematical statement, not existence of M or an unconditional residue-finiteness result. Static reading only; no typecheck or axiom audit was performed."
+      }
+    }
+  ]
+}

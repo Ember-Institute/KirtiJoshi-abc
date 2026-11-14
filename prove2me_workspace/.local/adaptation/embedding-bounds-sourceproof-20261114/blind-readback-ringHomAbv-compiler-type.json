@@ -1,0 +1,13 @@
+{
+  "target": "AbcAdaptation.Tripod.Local.ringHomAbv",
+  "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodLocalPlaceEmbeddingBasic.lean",
+  "source_sha256": "fc7a544459e48e5835bc58a2c143b24d74c2de09774c22ea62f19faea6525e0a",
+  "compiler_type": "{p : ℕ} → [hp : Fact (Nat.Prime p)] → {F : Type u_1} → [inst : Field F] → (F →+* PadicAlgCl p) → AbsoluteValue F ℝ",
+  "statements": {
+    "en": "Let $p$ be a natural number equipped with the assumption that $p$ is prime, let $F$ be a field whose underlying type lies in an arbitrary universe, and let $\\tau:F\\to\\overline{\\mathbb Q_p}$ be a ring homomorphism preserving $0$, $1$, addition, and multiplication. Here $\\overline{\\mathbb Q_p}$ is the fixed algebraic closure of the field of $p$-adic numbers, equipped with the spectral norm induced by the $p$-adic norm on $\\mathbb Q_p$. The definition assigns to these data the real-valued absolute value $a_\\tau:F\\to\\mathbb R$ given, for every $x\\in F$, by $a_\\tau(x)=\\lVert\\tau(x)\\rVert$. Thus its underlying function is the composition of $\\tau$ with this norm, bundled with the absolute-value conditions: for all $x,y\\in F$, $a_\\tau(x)\\ge0$, $a_\\tau(x)=0\\iff x=0$, $a_\\tau(xy)=a_\\tau(x)a_\\tau(y)$, and $a_\\tau(x+y)\\le a_\\tau(x)+a_\\tau(y)$.",
+    "zh_Hans": "设 $p$ 是一个自然数，并给定 $p$ 为素数的假设；设 $F$ 是一个域，其底层类型可以属于任意宇宙；设 $\\tau:F\\to\\overline{\\mathbb Q_p}$ 是保持 $0$、$1$、加法和乘法的环同态。这里 $\\overline{\\mathbb Q_p}$ 是 $p$ 进数域的一个固定代数闭包，配备由 $\\mathbb Q_p$ 上的 $p$ 进范数诱导的谱范数。该定义为这些数据指定实值绝对值 $a_\\tau:F\\to\\mathbb R$，其在每个 $x\\in F$ 处的值为 $a_\\tau(x)=\\lVert\\tau(x)\\rVert$。因此，其底层函数是 $\\tau$ 与此范数的复合，并连同以下绝对值条件一起给出：对所有 $x,y\\in F$，有 $a_\\tau(x)\\ge0$、$a_\\tau(x)=0\\iff x=0$、$a_\\tau(xy)=a_\\tau(x)a_\\tau(y)$ 以及 $a_\\tau(x+y)\\le a_\\tau(x)+a_\\tau(y)$。",
+    "ja": "$p$ を自然数とし、$p$ が素数であるという仮定を与える。$F$ を、その台となる型が任意の宇宙に属する体とし、$\\tau:F\\to\\overline{\\mathbb Q_p}$ を $0$、$1$、加法および乗法を保つ環準同型とする。ここで $\\overline{\\mathbb Q_p}$ は $p$ 進数体の固定された代数閉包であり、$\\mathbb Q_p$ 上の $p$ 進ノルムから誘導されるスペクトルノルムを備える。この定義は、これらのデータに対して、各 $x\\in F$ における値が $a_\\tau(x)=\\lVert\\tau(x)\\rVert$ である実数値絶対値 $a_\\tau:F\\to\\mathbb R$ を与える。その台となる関数は $\\tau$ とこのノルムとの合成であり、次の絶対値の条件を伴う：すべての $x,y\\in F$ に対して、$a_\\tau(x)\\ge0$、$a_\\tau(x)=0\\iff x=0$、$a_\\tau(xy)=a_\\tau(x)a_\\tau(y)$、および $a_\\tau(x+y)\\le a_\\tau(x)+a_\\tau(y)$ が成り立つ。"
+  },
+  "requested_model": "gpt-6.1-sol",
+  "actual_model": null
+}
