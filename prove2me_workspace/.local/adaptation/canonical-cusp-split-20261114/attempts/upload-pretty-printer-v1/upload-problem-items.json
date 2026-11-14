@@ -1,0 +1,12 @@
+[
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange",
+    "preamble": "import Definitions.Def_FermatProperDivisorHeight\n\nset_option autoImplicit false\n\nopen scoped Classical",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      Transcendental ℚ φ →\n        ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR),\n          ∃ (q : ↥M.K),\n            q ≠ 0 ∧\n              ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n                K.D P =\n                  (if φ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1\n                    else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1) +\n                    AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P q := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity",
+    "preamble": "import Definitions.Def_FermatProperDivisorHeight\n\nset_option autoImplicit false\n\nopen scoped Classical",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ →\n        ∀ (hfin : (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite)\n          (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n          (if φ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1\n              else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1) +\n              (AbcAdaptation.Tripod.Fermat.Proper.cuspDivisor M hDVR φ hfin) P =\n            AbcAdaptation.Tripod.Fermat.Proper.poleMultiplicity M hDVR φ P +\n              AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P (φ * (φ - 1)) := by sorry"
+  }
+]

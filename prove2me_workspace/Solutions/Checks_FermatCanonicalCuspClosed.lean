@@ -1,0 +1,3 @@
+import Solutions.Source_FermatCanonicalCuspComposition
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence_of_children

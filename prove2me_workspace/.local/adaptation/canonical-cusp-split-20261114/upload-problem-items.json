@@ -1,0 +1,12 @@
+[
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange",
+    "preamble": "import Definitions.Def_FermatProperDivisorHeight\n\nset_option autoImplicit false\n\nopen scoped Classical\nopen AbcAdaptation.Tripod.Fermat.Proper",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange {N : ℕ}\n    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)\n    (φ : M.K) (hφ : Transcendental ℚ φ) (K : CanonicalDivisorData M hDVR) :\n    ∃ q : M.K, q ≠ 0 ∧ ∀ P : Place M.K,\n      K.D P =\n        (if φ ∈ P.1 then ramIdx M hDVR φ P - 1\n          else -ramIdx M hDVR φ P - 1) + ord M hDVR P q := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity",
+    "preamble": "import Definitions.Def_FermatProperDivisorHeight\n\nset_option autoImplicit false\n\nopen scoped Classical\nopen AbcAdaptation.Tripod.Fermat.Proper",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity {N : ℕ}\n    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)\n    (φ : M.K) (hφ : IsBelyi M hDVR φ)\n    (hfin : (cusps M hDVR φ).Finite) :\n    ∀ P : Place M.K,\n      (if φ ∈ P.1 then ramIdx M hDVR φ P - 1\n        else -ramIdx M hDVR φ P - 1) + cuspDivisor M hDVR φ hfin P =\n        poleMultiplicity M hDVR φ P + ord M hDVR P (φ * (φ - 1)) := by sorry"
+  }
+]

@@ -1,0 +1,759 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-14T11:18:18.828173+00:00",
+  "reviewer": "independent_delivery_review",
+  "review_scope": "Read only. No compiler, MCP-CI, API, Git commands or source edits; report only in task-specific /tmp directory. All receipts are independently read from root-created evidence.",
+  "verdict": {
+    "source_shape": "PASS",
+    "readback_and_graph_binding": "PASS for exactly four authored public declarations",
+    "closed_composer": "PASS, standard Lean axioms only",
+    "mathematical_completion": "NOT COMPLETE: both actual children remain Open and parent transitively contains sorryAx",
+    "delivery_readiness": "PASS for local source/API/type/production checks and private platform exact two-child Sketch decomposition; final root diff/DB bookkeeping remains root-owned.",
+    "platform_state": "Two private PUBLISHED child records are mathematically Open. Exact parent SKETCH_ACCEPTED. Parent and root remain Open; no proof-completion claim."
+  },
+  "blockers": [],
+  "pending_validation": [
+    "root final git diff --check receipt and local DB bookkeeping confirmation"
+  ],
+  "readbacks": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange",
+      "source_hash_matches_live": true,
+      "compiler_type_matches_graph": true,
+      "original_blind_source_hash_matches": true,
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ],
+      "TeX": "Balanced inline math delimiters, no control characters; mathematical formulas and quantifiers agree across the three languages.",
+      "quotation_is_separate": true
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity",
+      "source_hash_matches_live": true,
+      "compiler_type_matches_graph": true,
+      "original_blind_source_hash_matches": true,
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ],
+      "TeX": "Balanced inline math delimiters, no control characters; mathematical formulas and quantifiers agree across the three languages.",
+      "quotation_is_separate": true
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence_of_children",
+      "source_hash_matches_live": true,
+      "compiler_type_matches_graph": true,
+      "original_blind_source_hash_matches": true,
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ],
+      "TeX": "Balanced inline math delimiters, no control characters; mathematical formulas and quantifiers agree across the three languages.",
+      "quotation_is_separate": true
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence",
+      "source_hash_matches_live": true,
+      "compiler_type_matches_graph": true,
+      "original_blind_source_hash_matches": true,
+      "languages": [
+        "en",
+        "zh_Hans",
+        "ja"
+      ],
+      "TeX": "Balanced inline math delimiters, no control characters; mathematical formulas and quantifiers agree across the three languages.",
+      "quotation_is_separate": true
+    }
+  ],
+  "quantifiers": {
+    "N_Model": "All N and actual intermediate-field Model N, including equation, generation, transcendence and finite degree N; no extra N lower bound or constant-field law.",
+    "M_K": "K in CanonicalDivisorData is the supplied exact finite-support du coefficient datum, not an arbitrary right-degree divisor. Every such datum is retained.",
+    "hDVR_hRF": "Both supplied hypotheses remain explicit, universally quantified in each child and composer input.",
+    "differential_child": "Arbitrary transcendental φ, with no Belyi or cusp-finiteness restriction.",
+    "coefficient_child": "Actual IsBelyi condition, every supplied hfin on the actual cusp set.",
+    "composer_inputs": "Precisely two universally quantified child statements, each ranging independently across all N/models/proofs; no desired-parent assumption.",
+    "places": "Every proper rational-containing valuation subring, including all poles of u and φ; no selected chart or exception.",
+    "ord0": "Totalized ord(0)=0 is stated in all readbacks. No multiplicative order law is applied to a zero factor."
+  },
+  "composer": {
+    "placeholder_free": true,
+    "imports_open_child_theorems": false,
+    "explicit_inputs": [
+      "canonicalDifferentialChange statement",
+      "belyiCanonicalCuspCoefficientIdentity statement"
+    ],
+    "witness": "r=(φ*(φ-1))*q",
+    "principal_sign": "positive ord(r), obtained by adding positive ord(φ*(φ-1)) and positive ord(q)",
+    "nonzero": "φ≠0 and φ-1≠0 from Belyi transcendence; q≠0 from first explicit input; product nonzero proven before Place.ord_mul",
+    "not_tautology": "Conclusion is algebraically composed from two distinct exact source identities; no new law, new Definition node, desired-parent hypothesis or target weakening.",
+    "existing_helper": "Only generated ord.congr_simp is additional in the classified constant inventory; it is closed under standard axioms."
+  },
+  "parent_and_consumer": {
+    "original_parent_signature_verbatim": true,
+    "saved_platform_parent_type_matches": true,
+    "outer_Source_FermatBelyiHeightComparison_sha256": "14023e62311c4fd0d6aace39033d97c7f76fcd5f61730c42d02063ab3288e062",
+    "outer_consumer_unchanged": true,
+    "outer_height_theorem_unchanged": true,
+    "consumer_path": "two children -> closed explicit-hypothesis composer -> exact canonicalCuspPolarLinearEquivalence -> existing belyiHeightRelation_of_children at B.canonical"
+  },
+  "axioms": [
+    {
+      "open_dependency_expected": true,
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiCanonicalCuspCoefficientIdentity",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "open_dependency_expected": true,
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "open_dependency_expected": false,
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ord.congr_simp",
+      "module": "Solutions.Source_FermatCanonicalCuspComposition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "open_dependency_expected": false,
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence_of_children",
+      "module": "Solutions.Source_FermatCanonicalCuspComposition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "open_dependency_expected": true,
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "solution_review": {
+    "copied_composer_source_verbatim": true,
+    "open_imports": "Exactly the two intended children; no original parent or open theorem beyond them.",
+    "solution_type": "PASS: successful standalone solution receipt and successful Meta.isDefEq audit confirm exact saved original parent type.",
+    "expected_axioms": "standard Lean axioms plus sorryAx from the two intended Open children; no new law.",
+    "isolated_inputs": "Corrected source-header API payloads independently checked exactly against UploadType0/1; both isolated receipts pass.",
+    "preamble": "Definition import, autoImplicit false, open scoped Classical. Scope must remain because explicit if types need decidable membership.",
+    "partial_audit_json": "Failed ci-011571 output archived separately; current type-audit.json accepted only against successful ci-011574-4ba50049.",
+    "alias_body_correction": "Only alias proof applications changed to pass local parameters to each exact child theorem; source-header types and API payload remain unchanged."
+  },
+  "sources": {
+    "archived_sources": [
+      {
+        "file": ".local/adaptation/canonical-cusp-split-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-Belyi-CurveField-Canonical.lean.txt",
+        "sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+        "matches": true
+      },
+      {
+        "file": ".local/adaptation/canonical-cusp-split-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-Belyi-CurveField-BelyiRelation.lean.txt",
+        "sha256": "e5d39478fe8ee58c4fcd43e57bea5aac06147179e5c852f1386098cc4ac7b378",
+        "matches": true
+      },
+      {
+        "file": ".local/adaptation/canonical-cusp-split-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-Belyi-CurveField-RamIdx.lean.txt",
+        "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+        "matches": true
+      },
+      {
+        "file": ".local/adaptation/canonical-cusp-split-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-Belyi-CurveField-Place.lean.txt",
+        "sha256": "f68260416b102e3b60c03e42b016833ded7ed476299d0a0e978e2e89965b2572",
+        "matches": true
+      },
+      {
+        "file": ".local/adaptation/canonical-cusp-split-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-Belyi-CurveField-Basic.lean.txt",
+        "sha256": "3657b4ad9c4ecd47307afcff0697e326539ba526dcac61fed2c6c91a827d1eca",
+        "matches": true
+      },
+      {
+        "file": ".local/adaptation/canonical-cusp-split-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-Belyi-CurveDeriv-Basic.lean.txt",
+        "sha256": "cf1b11adab96fbd7d7bb5114e7215dcbf8b8cda1a8eda573e9759ac5316f40b2",
+        "matches": true
+      },
+      {
+        "file": ".local/adaptation/canonical-cusp-split-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-Belyi-CurveDeriv-Order.lean.txt",
+        "sha256": "bb39cb855e2157e52eb1caeba74b5a9647a9d94799e6631ec9c7f007b8c1b489",
+        "matches": true
+      }
+    ],
+    "notices": "All seven pinned source files and four authored production files retain Apache-2.0 copyright and authorship notices; reference/NOTICE retained. Flattened archive paths are explicitly mapped in source-consumer archived_reference.",
+    "known_parent_hash_change": "Original parent hash to candidate replacement is expected, with signature unchanged; other 15 current-input ledger hashes match.",
+    "paper": "Mochizuki passages are separately labeled parent context, not represented as verbatim auxiliary rational-witness statements."
+  },
+  "reuse_inventory": {
+    "correction_confirmed": true,
+    "existing_indicator": "CuspCoordRingSource.cuspDivisor_apply, Solutions/Source_FermatCoordRingSource.lean:177",
+    "exact_scope": "Actual cuspDivisor with arbitrary supplied hfin; coefficients are its cusp indicator.",
+    "remaining_list_interpretation": "The initial draft says prove the indicator; explicit reuse_inventory_correction now identifies the existing public result and says this is assembly/transport debt. Do not recreate an Open indicator node.",
+    "already_closed_source_order61": "Existing regular local derivative theorem remains reusable; full pole/order transport is still Open."
+  },
+  "pendingDB": {
+    "diff": "Exactly two source-parent mapping lines removed and six lower reference lines added. This is mapping/decomposition refinement, not proof completion.",
+    "removed": [
+      "CurveField/Canonical.lean:159",
+      "CurveField/BelyiRelation.lean:85"
+    ],
+    "added": [
+      "CurveDeriv/Basic.lean:209",
+      "CurveDeriv/Basic.lean:214",
+      "CurveDeriv/Order.lean:83",
+      "CurveField/RamIdx.lean:218",
+      "CurveField/RamIdx.lean:237",
+      "CurveField/RamIdx.lean:257"
+    ],
+    "not_duplicated": [
+      "CurveDeriv/Order.lean:61",
+      "BelyiRelation.lean:61 exact supplied-hfin indicator"
+    ]
+  },
+  "receipt_review": [
+    {
+      "file": "all-constants-leaf-result.json",
+      "job_id": "ci-011533-bdb0580a",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-cusp-split-20261114/AuditAllConstants.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "fe39f72c97ec97784bbbeec71901aec0b7178c85efe7881138b0972b1aeb1f40",
+      "wall_time_seconds": 82.89711700000043,
+      "cpu_time_seconds": 82.32,
+      "cpu_user_seconds": 37.43,
+      "cpu_system_seconds": 44.89,
+      "peak_rss_bytes": 5029101568,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "belyiCanonicalCuspCoefficientIdentity-artifact-result.json",
+      "job_id": "ci-011513-e4ebbc43",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiCanonicalCuspCoefficientIdentity.lean",
+        "-o",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiCanonicalCuspCoefficientIdentity.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "5c4272e54f24d5dc804bb57b61826f3c15459e11d379fce78bbecc6f0ff56b63",
+      "wall_time_seconds": 43.28864819998853,
+      "cpu_time_seconds": 43.16,
+      "cpu_user_seconds": 2.93,
+      "cpu_system_seconds": 40.23,
+      "peak_rss_bytes": 4348002304,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "belyiCanonicalCuspCoefficientIdentity-leaf-result.json",
+      "job_id": "ci-011511-7bc4c13c",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiCanonicalCuspCoefficientIdentity.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "5c4272e54f24d5dc804bb57b61826f3c15459e11d379fce78bbecc6f0ff56b63",
+      "wall_time_seconds": 40.079398700007005,
+      "cpu_time_seconds": 39.27,
+      "cpu_user_seconds": 2.31,
+      "cpu_system_seconds": 36.96,
+      "peak_rss_bytes": 4202319872,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "canonicalCuspPolarLinearEquivalence-artifact-result.json",
+      "job_id": "ci-011517-6b893597",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.lean",
+        "-o",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "e9a5c5a746e5c1603d8db60a0f2c2bea89f412444800f59e6947240b6c0a5bf4",
+      "wall_time_seconds": 41.838115599995945,
+      "cpu_time_seconds": 41.18,
+      "cpu_user_seconds": 2.92,
+      "cpu_system_seconds": 38.26,
+      "peak_rss_bytes": 4268269568,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "canonicalCuspPolarLinearEquivalence-leaf-result.json",
+      "job_id": "ci-011514-222d9f1a",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "e9a5c5a746e5c1603d8db60a0f2c2bea89f412444800f59e6947240b6c0a5bf4",
+      "wall_time_seconds": 42.88383269999758,
+      "cpu_time_seconds": 42.34,
+      "cpu_user_seconds": 2.59,
+      "cpu_system_seconds": 39.75,
+      "peak_rss_bytes": 4249739264,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "canonicalDifferentialChange-artifact-result.json",
+      "job_id": "ci-011508-97db271a",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange.lean",
+        "-o",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "5fef472c9124cc4549fe843d6af6338634f73a287045eb7f64a762f80a380eb6",
+      "wall_time_seconds": 46.19734959999914,
+      "cpu_time_seconds": 45.230000000000004,
+      "cpu_user_seconds": 2.17,
+      "cpu_system_seconds": 43.06,
+      "peak_rss_bytes": 4209221632,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "canonicalDifferentialChange-leaf-result.json",
+      "job_id": "ci-011507-2c1b9797",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "5fef472c9124cc4549fe843d6af6338634f73a287045eb7f64a762f80a380eb6",
+      "wall_time_seconds": 42.12197120000201,
+      "cpu_time_seconds": 41.22,
+      "cpu_user_seconds": 2.32,
+      "cpu_system_seconds": 38.9,
+      "peak_rss_bytes": 4209205248,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "closed-axioms-review-result.json",
+      "job_id": "ci-011520-fefdf112",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Checks_FermatCanonicalCuspClosed.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "e5dfa84159aa4e20dec2db0e1797c7ada06842863cbe2e1e79b1d395e03d130d",
+      "wall_time_seconds": 42.66111899999669,
+      "cpu_time_seconds": 42.14,
+      "cpu_user_seconds": 2.35,
+      "cpu_system_seconds": 39.79,
+      "peak_rss_bytes": 4248256512,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "composer-source-artifact-result.json",
+      "job_id": "ci-011505-7abf9ee3",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_FermatCanonicalCuspComposition.lean",
+        "-o",
+        ".lake/build/lib/lean/Solutions/Source_FermatCanonicalCuspComposition.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "6d439408b0983f6fb2def05584eddecdd17f6d809c9695c282f7c79a293a8c1b",
+      "wall_time_seconds": 45.87135240000498,
+      "cpu_time_seconds": 45.4,
+      "cpu_user_seconds": 2.89,
+      "cpu_system_seconds": 42.51,
+      "peak_rss_bytes": 4350099456,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "composer-source-leaf-result.json",
+      "job_id": "ci-011503-3eee7ed4",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_FermatCanonicalCuspComposition.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "6d439408b0983f6fb2def05584eddecdd17f6d809c9695c282f7c79a293a8c1b",
+      "wall_time_seconds": 43.53801449999446,
+      "cpu_time_seconds": 43.21,
+      "cpu_user_seconds": 3.18,
+      "cpu_system_seconds": 40.03,
+      "peak_rss_bytes": 4352602112,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "reduction-axioms-leaf-result.json",
+      "job_id": "ci-011521-47ee110b",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Solutions/Checks_FermatCanonicalCuspReduction.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "031d12c2ba689df19f94cafcf0804d285704ee1c341c6e65a4102b40dafe04b8",
+      "wall_time_seconds": 41.576095900003565,
+      "cpu_time_seconds": 41.239999999999995,
+      "cpu_user_seconds": 2.51,
+      "cpu_system_seconds": 38.73,
+      "peak_rss_bytes": 4331040768,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "source-graph-leaf-result.json",
+      "job_id": "ci-011528-68c4b785",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-cusp-split-20261114/ExtractCanonicalCuspGraph.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "b911871efda5eb02891f2d6373bb71165a3e3b4e4ff8746d05a23279040e2809",
+      "wall_time_seconds": 47.68478910000704,
+      "cpu_time_seconds": 47.17,
+      "cpu_user_seconds": 4.32,
+      "cpu_system_seconds": 42.85,
+      "peak_rss_bytes": 5036744704,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "syntax-leaf-result.json",
+      "job_id": "ci-011530-59e7b0f8",
+      "status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-cusp-split-20261114/ExtractCanonicalCuspSyntax.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "a97fca52e9abff076ec751fe2cb263f6e986a301ce7486dd6a7186b7296f843f",
+      "wall_time_seconds": 48.153163900002255,
+      "cpu_time_seconds": 47.22,
+      "cpu_user_seconds": 2.65,
+      "cpu_system_seconds": 44.57,
+      "peak_rss_bytes": 4868550656,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    },
+    {
+      "file": "upload-type-0-leaf-result.json",
+      "job_id": "ci-011552-505a556e",
+      "status": "failed",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/canonical-cusp-split-20261114/UploadType0.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "source_sha256": "a6cbbd745220a58db2b4cb50a8d930c8a350b14e7652ed8451fa134ce8e82bd3",
+      "wall_time_seconds": 43.447918200006825,
+      "cpu_time_seconds": 43.17,
+      "cpu_user_seconds": 2.71,
+      "cpu_system_seconds": 40.46,
+      "peak_rss_bytes": 4337561600,
+      "peak_pss_bytes": null,
+      "cpu_sum_matches": true
+    }
+  ],
+  "limitations": [
+    "Both mathematical children remain Open and parent transitively depends on sorryAx. SKETCH_ACCEPTED validates the exact decomposition, not a closed proof.",
+    "This independent reviewer did not run Git or mutate main workspace/DB; final diff and DB bookkeeping are root-owned."
+  ],
+  "resolved_blockers": [
+    {
+      "id": "upload_type_round_trip",
+      "severity": "blocking_for_API_delivery",
+      "job_id": "ci-011552-505a556e",
+      "input_sha256": "a6cbbd745220a58db2b4cb50a8d930c8a350b14e7652ed8451fa134ce8e82bd3",
+      "file": "UploadType0.lean",
+      "line": 16,
+      "reason": "Pretty-printed membership `φ ∈ ↑P` does not round-trip in the fully qualified isolated statement: Lean requests Membership (↥M.K) (Place ↥M.K). Classical scope is already present and is not the cause.",
+      "resolution": "Use explicit P.1 as in the source, or an explicit typed valuation-subring coercion, in both uploaded child formal statements and both child type audit statements. Retain open scoped Classical. Check exact API preamble+statement in isolated files and child definitional equality before upload."
+    },
+    {
+      "id": "type_alias_application",
+      "severity": "blocking_for_type_audit_acceptance",
+      "job_id": "ci-011571-6087982e",
+      "reason": "Exact source-header aliases introduce local parameters. Bare child theorem proof bodies fail because they are not applied to those parameters. type-audit.json was emitted after elaboration errors and is not acceptance evidence.",
+      "resolution": "Apply each child theorem to its explicit parameters in alias proof body; recheck complete AuditSolution file and accept JSON only with succeeded exit0 receipt."
+    }
+  ],
+  "serialization_followup": {
+    "reviewed_at_utc": "2026-11-14T11:07:39.161320+00:00",
+    "method": "Independently reconstructed exact child headers from parser byte offsets; only declaration name qualified, docstring removed. No compiler/API call.",
+    "source_headers_preserved": true,
+    "all_original_binders_preserved": true,
+    "explicit_membership_projection_preserved": true,
+    "preamble": "import Definitions.Def_FermatProperDivisorHeight; set_option autoImplicit false; open scoped Classical; open AbcAdaptation.Tripod.Fermat.Proper",
+    "isolated_inputs_exactly_planned_payload": true,
+    "failed_attempt_archived_at": "attempts/upload-pretty-printer-v1",
+    "receipts": [
+      {
+        "file": "upload-type-0-leaf-result.json",
+        "job_id": "ci-011563-56220ec8",
+        "status": "succeeded",
+        "exit_code": 0,
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/canonical-cusp-split-20261114/UploadType0.lean"
+        ],
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "source_sha256": "02ec00180e4e4ea4c880655ea3d8aa8ed01ef5711b30bff7a42f9449d6f9eaa8",
+        "live_hash_matches": true,
+        "wall_time_seconds": 41.34942270000465,
+        "cpu_time_seconds": 41.25,
+        "cpu_user_seconds": 3.04,
+        "cpu_system_seconds": 38.21,
+        "peak_rss_bytes": 4338274304,
+        "peak_pss_bytes": null
+      },
+      {
+        "file": "upload-type-1-leaf-result.json",
+        "job_id": "ci-011566-6b977ea5",
+        "status": "succeeded",
+        "exit_code": 0,
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/canonical-cusp-split-20261114/UploadType1.lean"
+        ],
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "source_sha256": "2bb09bba8a8fb01f1a0ac2cffeb2ec7f3c8a7c163f60a0c1a1fbf84be2968d64",
+        "live_hash_matches": true,
+        "wall_time_seconds": 44.4716150000022,
+        "cpu_time_seconds": 44.2,
+        "cpu_user_seconds": 2.56,
+        "cpu_system_seconds": 41.64,
+        "peak_rss_bytes": 4336955392,
+        "peak_pss_bytes": null
+      }
+    ]
+  },
+  "type_audit_followup": {
+    "type_audit_sha256": "b0b3df7c96dc9a76d42aa79860b786e33bd0567d65c08bdf34af221a35320b02",
+    "original_parent_type_equal": true,
+    "child_type_equality": "Both exact source-header aliases checked by Lean.Meta.isDefEq against production child types",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "receipts": [
+      {
+        "file": "solution-leaf-result.json",
+        "job_id": "ci-011568-2c264985",
+        "status": "succeeded",
+        "exit_code": 0,
+        "source": ".local/adaptation/canonical-cusp-split-20261114/Solution_canonicalCuspPolarLinearEquivalence.lean",
+        "source_sha256": "295495d68fb901bb842328c079826e3cb8458a64089a3cb33d8c6b66dcc69733",
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/canonical-cusp-split-20261114/Solution_canonicalCuspPolarLinearEquivalence.lean"
+        ],
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "wall_time_seconds": 42.219778500002576,
+        "cpu_time_seconds": 41.25,
+        "cpu_user_seconds": 2.18,
+        "cpu_system_seconds": 39.07,
+        "cpu_sum_matches": true,
+        "peak_rss_bytes": 4230950912,
+        "peak_pss_bytes": null
+      },
+      {
+        "file": "types-leaf-result.json",
+        "job_id": "ci-011574-4ba50049",
+        "status": "succeeded",
+        "exit_code": 0,
+        "source": ".local/adaptation/canonical-cusp-split-20261114/AuditSolution.lean",
+        "source_sha256": "7ef90eb0f21bd9adbef791d660b7cb15094a7543417227246e3bcaf125709aab",
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/canonical-cusp-split-20261114/AuditSolution.lean"
+        ],
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "wall_time_seconds": 49.21087439999974,
+        "cpu_time_seconds": 48.19,
+        "cpu_user_seconds": 2.9,
+        "cpu_system_seconds": 45.29,
+        "cpu_sum_matches": true,
+        "peak_rss_bytes": 4884549632,
+        "peak_pss_bytes": null
+      }
+    ]
+  },
+  "platform_followup": {
+    "reviewed_at_utc": "2026-11-14T11:18:18.828173+00:00",
+    "scope": "Read-only independent comparison of root-created platform receipts; no API/compiler/MCP/Git calls.",
+    "verdict": "PASS",
+    "publication": [
+      {
+        "theorem_id": "71e5b4ea-eadb-4a6b-ae89-721544e88706",
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange",
+        "publication_job_id": "3b2e7f3a-18bb-470c-9a0a-7aabece7ca68",
+        "publication_status": "PUBLISHED",
+        "mathematical_status": "Open",
+        "visibility": "private",
+        "exact_raw_source_formal_statement": true,
+        "exact_isolated_preamble": true,
+        "exact_three_language_text": true,
+        "not_deprecated": true
+      },
+      {
+        "theorem_id": "43fd7bb1-1660-4a1b-8ab3-3b91bcb8cccc",
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity",
+        "publication_job_id": "f853618b-31ac-4a1d-a083-85cded22b663",
+        "publication_status": "PUBLISHED",
+        "mathematical_status": "Open",
+        "visibility": "private",
+        "exact_raw_source_formal_statement": true,
+        "exact_isolated_preamble": true,
+        "exact_three_language_text": true,
+        "not_deprecated": true
+      }
+    ],
+    "submission_id": "59c48672-32d1-4f21-8298-718ba95c7efe",
+    "submission_status": "SKETCH_ACCEPTED",
+    "actual_sketch_child_ids": [
+      "43fd7bb1-1660-4a1b-8ab3-3b91bcb8cccc",
+      "71e5b4ea-eadb-4a6b-ae89-721544e88706"
+    ],
+    "actual_math_edge_exactly_intended_children": true,
+    "parent": {
+      "id": "d6a1ff14-5bc3-4b24-bdda-966c29d20c2c",
+      "formal_statement_unchanged": true,
+      "preamble_unchanged": true,
+      "status": "Open",
+      "private_environment_deprecation_unchanged": true
+    },
+    "complete_graph": {
+      "before_complete": true,
+      "after_complete": true,
+      "before_math_theorems": 77,
+      "after_math_theorems": 79,
+      "existing_nodes_missing": [],
+      "all_existing_theorem_statuses_unchanged": true,
+      "all_existing_deprecations_unchanged": true,
+      "new_theorem_ids": [
+        "43fd7bb1-1660-4a1b-8ab3-3b91bcb8cccc",
+        "71e5b4ea-eadb-4a6b-ae89-721544e88706"
+      ],
+      "new_Definitions": [],
+      "hidden_deprecation_flags_false": true,
+      "root_status": "Open"
+    },
+    "frontier": {
+      "before": 20,
+      "after": 21,
+      "all_after_pages_fetched": true,
+      "removed_ids": [
+        "d6a1ff14-5bc3-4b24-bdda-966c29d20c2c"
+      ],
+      "added_ids": [
+        "43fd7bb1-1660-4a1b-8ab3-3b91bcb8cccc",
+        "71e5b4ea-eadb-4a6b-ae89-721544e88706"
+      ],
+      "only_parent_replaced_by_two_children": true
+    },
+    "evidence_sha256": {
+      "root-graph-after.json": "439598743570a06252ab3ad8ad1c9e6c14046081236aa1682ded7f40f7a073a7",
+      "root-frontier-after.json": "f09f7f7ccae24cd274481d7eb3fcd412855c64254e5d61d43924bd4246459ef4",
+      "direct-graph-evidence.json": "39cc1bbb450bed8f24c16e8497b9a1ea9c5068745f3ecb05364fff0d30a14e15",
+      "platform-after-parent.json": "d548244dee334e3c71cb5dbaecdb96c4ad55a61d6c07740b79434570b4485613",
+      "reduce-parent-verify-result.json": "43d469b8050c3440c0f7a1b6c5d6fd24741215d9f0299ea99fcbff9aac47a496"
+    }
+  },
+  "production_receipt_followup": {
+    "job_id": "ci-011576-dddc8e1b",
+    "status": "succeeded",
+    "exit_code": 0,
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/canonical-cusp-split-20261114/ProductionGates.lean"
+    ],
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_id": null,
+    "source_sha256": "3b08e0bb0b9a1985669816cba5906ebdc8f6fcc81a33790bd79876a972274685",
+    "wall_time_seconds": 94.76160870000604,
+    "cpu_time_seconds": 94.47,
+    "cpu_user_seconds": 5.43,
+    "cpu_system_seconds": 89.04,
+    "peak_rss_bytes": 8650575872,
+    "peak_pss_bytes": null
+  }
+}

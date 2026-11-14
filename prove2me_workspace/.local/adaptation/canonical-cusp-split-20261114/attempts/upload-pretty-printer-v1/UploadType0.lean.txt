@@ -1,0 +1,18 @@
+import Definitions.Def_FermatProperDivisorHeight
+
+set_option autoImplicit false
+
+open scoped Classical
+
+theorem AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),
+  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →
+    ∀ (φ : ↥M.K),
+      Transcendental ℚ φ →
+        ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR),
+          ∃ (q : ↥M.K),
+            q ≠ 0 ∧
+              ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),
+                K.D P =
+                  (if φ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1
+                    else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1) +
+                    AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P q := by sorry

@@ -1,0 +1,17 @@
+import Definitions.Def_FermatProperDivisorHeight
+
+set_option autoImplicit false
+
+open scoped Classical
+
+theorem AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),
+  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →
+    ∀ (φ : ↥M.K),
+      AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ →
+        ∀ (hfin : (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite)
+          (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),
+          (if φ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1
+              else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1) +
+              (AbcAdaptation.Tripod.Fermat.Proper.cuspDivisor M hDVR φ hfin) P =
+            AbcAdaptation.Tripod.Fermat.Proper.poleMultiplicity M hDVR φ P +
+              AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P (φ * (φ - 1)) := by sorry

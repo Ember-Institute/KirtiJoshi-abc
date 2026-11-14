@@ -1,0 +1,12 @@
+{"solution_type":
+ "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M),\n  ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      IsBelyi M hDVR φ →\n        ∀ (hfin : (cusps M hDVR φ).Finite) (K : CanonicalDivisorData M hDVR),\n          ∃ r,\n            r ≠ 0 ∧\n              ∀ (P : Place ↥M.K), K.D P + (cuspDivisor M hDVR φ hfin) P = poleMultiplicity M hDVR φ P + ord M hDVR P r",
+ "original_parent_type_equal": true,
+ "child_types":
+ [{"type":
+   "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M),\n  ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      Transcendental ℚ φ →\n        ∀ (K : CanonicalDivisorData M hDVR),\n          ∃ q,\n            q ≠ 0 ∧\n              ∀ (P : Place ↥M.K),\n                K.D P = (if φ ∈ ↑P then ramIdx M hDVR φ P - 1 else -ramIdx M hDVR φ P - 1) + ord M hDVR P q",
+   "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange"},
+  {"type":
+   "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M),\n  ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      IsBelyi M hDVR φ →\n        ∀ (hfin : (cusps M hDVR φ).Finite) (P : Place ↥M.K),\n          (if φ ∈ ↑P then ramIdx M hDVR φ P - 1 else -ramIdx M hDVR φ P - 1) + (cuspDivisor M hDVR φ hfin) P =\n            poleMultiplicity M hDVR φ P + ord M hDVR P (φ * (φ - 1))",
+   "name":
+   "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity"}],
+ "axioms": ["propext", "sorryAx", "Classical.choice", "Quot.sound"]}
