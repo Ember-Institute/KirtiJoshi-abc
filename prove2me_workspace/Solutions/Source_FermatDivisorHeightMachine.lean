@@ -1,0 +1,266 @@
+/-
+Copyright (c) 2026 The heights contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The heights contributors
+
+Independent source-proof adaptation; receipts are recorded with this unit. Complete source laws from Heights/Curve/DivisorHeight.lean
+at 721496ca4c158e511d25d8ccf6bfe8503eda73c1, adapted to the existing Model,
+PolarPresentation, actual divisorDegree, and already-proved tuple-height APIs.
+Internal choices are constructed by the existing actual Riemann theorem.
+-/
+import Solutions.Source_FermatDivisorTupleEquivalence
+import Solutions.Source_FermatPositiveDegreePolar
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists
+
+set_option autoImplicit false
+namespace AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine
+open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute
+open scoped Classical
+
+variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]
+
+/-- A one-entry tuple `(r)` has divisor `−div r`. -/
+theorem minOrd_single {r : K} (hr : r ≠ 0) (P : Place K) : minOrd P ![r] = P.ord r := by
+  have hs : ∃ i, (![r] : Fin 1 → K) i ≠ 0 := ⟨0, by simpa using hr⟩
+  rw [minOrd_eq hs]
+  have : normIdx P ![r] hs = 0 := Subsingleton.elim _ _
+  rw [this]
+  rfl
+
+/-- The height of a point of `ℙ⁰` is `0`. -/
+theorem tupleHeight_single {r : K} (hr : r ≠ 0) (x : QbarPoint K) : tupleHeight ![r] x = 0 := by
+  have hs : ∃ i, (![r] : Fin 1 → K) i ≠ 0 := ⟨0, by simpa using hr⟩
+  rw [tupleHeight_def hs, PolarAbsolute.logHeight, Height.logHeight_eq_zero_of_subsingleton,
+    zero_div]
+
+variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)
+variable [IsCurveField M.K]
+
+/-- Internal choice from an already proved Riemann construction. -/
+noncomputable def polarRep (D : Divisor M) : M.K × M.K :=
+  let R := Classical.choice (polarPresentationExists M hDVR hRF D)
+  (R.f, R.g)
+
+theorem polarRep_spec (D : Divisor M) :
+    D = functionPoleDivisor M hDVR (polarRep M hDVR hRF D).1 -
+      functionPoleDivisor M hDVR (polarRep M hDVR hRF D).2 := by
+  let R := Classical.choice (polarPresentationExists M hDVR hRF D)
+  ext P
+  exact R.divisor_eq P
+
+/-- An internal representative of the existing actual presentation height.
+The final theorem transports this representative back to supplied RD and RE. -/
+noncomputable def chosenHeight (D : Divisor M) (x : QbarPoint M.K) : ℝ :=
+  tupleHeight ![1, (polarRep M hDVR hRF D).1] x -
+    tupleHeight ![1, (polarRep M hDVR hRF D).2] x
+
+theorem minOrd_pair_one (f : M.K) (P : Place M.K) :
+    minOrd P ![1, f] = -functionPoleDivisor M hDVR f P := by
+  simpa only [pairOne, functionPoleDivisor_apply, poleMultiplicity] using
+    minOrd_pairOne_eq_neg_pole M hDVR P f
+
+variable {ι κ : Type*} [Fintype ι] [Fintype κ]
+
+/-- **The height of a divisor is the height of any representation by tuples**: if
+`D + div r = A_s − A_{s'}`, then `chosenHeight M hDVR hRF D ≈ h_s − h_{s'}`. -/
+theorem chosenHeight_approx (D : Divisor M) {s : ι → M.K} {s' : κ → M.K} (hs : ∃ i, s i ≠ 0)
+    (hs' : ∃ i, s' i ≠ 0) {r : M.K} (hr : r ≠ 0)
+    (hD : ∀ P : Place M.K, D P + P.ord r = minOrd P s' - minOrd P s) :
+    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF D x - (tupleHeight s x - tupleHeight s' x)| ≤ C := by
+  have hrep := polarRep_spec M hDVR hRF D
+  refine abs_tupleHeight_sub_sub_le (pairOne_nonzero _) (pairOne_nonzero _)
+    hs hs' hr fun P => ?_
+  have h1 := congrArg (fun E : Divisor M => E P) hrep
+  simp only [Finsupp.coe_sub, Pi.sub_apply] at h1
+  rw [minOrd_pair_one M hDVR, minOrd_pair_one M hDVR]
+  have := hD P
+  linarith
+
+/-- The height of a principal divisor is bounded. -/
+theorem chosenHeight_div {r : M.K} (hr : r ≠ 0) :
+    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (functionDivisor M hDVR r) x| ≤ C := by
+  have h1 : ∃ i, (![1] : Fin 1 → M.K) i ≠ 0 := ⟨0, by simp⟩
+  obtain ⟨C, hC⟩ := chosenHeight_approx M hDVR hRF (functionDivisor M hDVR r) h1 h1 (inv_ne_zero hr) fun P => by
+    rw [functionDivisor_apply, ord_eq_placeOrd, Place.ord_inv]
+    ring
+  exact ⟨C, fun x => by simpa using hC x⟩
+
+/-- The height of a polar divisor is the height of the values. -/
+theorem chosenHeight_polar (f : M.K) :
+    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (functionPoleDivisor M hDVR f) x - tupleHeight ![1, f] x| ≤ C := by
+  have h1 : ∃ i, (![1] : Fin 1 → M.K) i ≠ 0 := ⟨0, by simp⟩
+  obtain ⟨C, hC⟩ := chosenHeight_approx M hDVR hRF (functionPoleDivisor M hDVR f) (pairOne_nonzero f) h1 one_ne_zero
+    fun P => by
+      rw [minOrd_pair_one M hDVR, minOrd_single one_ne_zero, Place.ord_one]
+      ring
+  refine ⟨C, fun x => ?_⟩
+  have := hC x
+  rwa [tupleHeight_single one_ne_zero, sub_zero] at this
+
+/-- **Additivity** ([GenEll], Proposition 1.4 (i)). -/
+theorem chosenHeight_add (D₁ D₂ : Divisor M) :
+    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D₁ + D₂) x - (chosenHeight M hDVR hRF D₁ x + chosenHeight M hDVR hRF D₂ x)| ≤ C := by
+  set f₁ := (polarRep M hDVR hRF D₁).1
+  set g₁ := (polarRep M hDVR hRF D₁).2
+  set f₂ := (polarRep M hDVR hRF D₂).1
+  set g₂ := (polarRep M hDVR hRF D₂).2
+  have hS := pairOne_nonzero f₁
+  obtain ⟨C, hC⟩ := chosenHeight_approx M hDVR hRF (D₁ + D₂)
+    (s := fun p : Fin 2 × Fin 2 => (![1, f₁] : Fin 2 → M.K) p.1 * (![1, f₂] : Fin 2 → M.K) p.2)
+    (s' := fun p : Fin 2 × Fin 2 => (![1, g₁] : Fin 2 → M.K) p.1 * (![1, g₂] : Fin 2 → M.K) p.2)
+    ⟨(0, 0), by simp⟩ ⟨(0, 0), by simp⟩ one_ne_zero fun P => by
+      rw [minOrd_mul (pairOne_nonzero _) (pairOne_nonzero _),
+        minOrd_mul (pairOne_nonzero _) (pairOne_nonzero _),
+        minOrd_pair_one M hDVR, minOrd_pair_one M hDVR, minOrd_pair_one M hDVR, minOrd_pair_one M hDVR, Place.ord_one]
+      have h1 := congrArg (fun E : Divisor M => E P) (polarRep_spec M hDVR hRF D₁)
+      have h2 := congrArg (fun E : Divisor M => E P) (polarRep_spec M hDVR hRF D₂)
+      simp only [Finsupp.coe_sub, Pi.sub_apply] at h1 h2
+      simp only [Finsupp.coe_add, Pi.add_apply]
+      linarith
+  refine ⟨C, fun x => ?_⟩
+  have := hC x
+  rw [tupleHeight_mul (pairOne_nonzero _) (pairOne_nonzero _),
+    tupleHeight_mul (pairOne_nonzero _) (pairOne_nonzero _)] at this
+  calc |chosenHeight M hDVR hRF (D₁ + D₂) x - (chosenHeight M hDVR hRF D₁ x + chosenHeight M hDVR hRF D₂ x)|
+      = |chosenHeight M hDVR hRF (D₁ + D₂) x - ((tupleHeight ![1, f₁] x + tupleHeight ![1, f₂] x) -
+          (tupleHeight ![1, g₁] x + tupleHeight ![1, g₂] x))| := by
+        congr 2
+        dsimp only [chosenHeight]
+        ring
+    _ ≤ C := this
+
+/-- The height of the zero divisor is bounded. -/
+theorem chosenHeight_zero : ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (0 : Divisor M) x| ≤ C := by
+  have := chosenHeight_div M hDVR hRF one_ne_zero
+  simpa using this
+
+/-- **Linear equivalence** ([GenEll], Proposition 1.4 (iii)): `D ~ D'` implies
+`chosenHeight M hDVR hRF D ≈ chosenHeight M hDVR hRF D'`. -/
+theorem chosenHeight_add_div (D : Divisor M) {r : M.K} (hr : r ≠ 0) :
+    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D + functionDivisor M hDVR r) x - chosenHeight M hDVR hRF D x| ≤ C := by
+  obtain ⟨C₁, hC₁⟩ := chosenHeight_add M hDVR hRF D (functionDivisor M hDVR r)
+  obtain ⟨C₂, hC₂⟩ := chosenHeight_div M hDVR hRF hr
+  refine ⟨C₁ + C₂, fun x => ?_⟩
+  have h1 := hC₁ x
+  have h2 := hC₂ x
+  rw [abs_le] at h1 h2 ⊢
+  constructor <;> linarith
+
+/-- Heights of multiples. -/
+theorem chosenHeight_nsmul (D : Divisor M) (n : ℕ) :
+    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (n • D) x - n * chosenHeight M hDVR hRF D x| ≤ C := by
+  induction n with
+  | zero =>
+    obtain ⟨C, hC⟩ := chosenHeight_zero M hDVR hRF
+    exact ⟨C, fun x => by simpa using hC x⟩
+  | succ n ih =>
+    obtain ⟨C₁, hC₁⟩ := ih
+    obtain ⟨C₂, hC₂⟩ := chosenHeight_add M hDVR hRF (n • D) D
+    refine ⟨C₁ + C₂, fun x => ?_⟩
+    have h1 := hC₁ x
+    have h2 := hC₂ x
+    rw [succ_nsmul]
+    push_cast
+    rw [abs_le] at h1 h2 ⊢
+    constructor <;> linarith
+
+/-- Heights of differences. -/
+theorem chosenHeight_sub (D₁ D₂ : Divisor M) :
+    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D₁ - D₂) x - (chosenHeight M hDVR hRF D₁ x - chosenHeight M hDVR hRF D₂ x)| ≤ C := by
+  obtain ⟨C, hC⟩ := chosenHeight_add M hDVR hRF (D₁ - D₂) D₂
+  refine ⟨C, fun x => ?_⟩
+  have := hC x
+  rw [sub_add_cancel] at this
+  rw [abs_le] at this ⊢
+  constructor <;> linarith
+
+/-- Heights of integer multiples. -/
+theorem chosenHeight_zsmul' (D : Divisor M) (n : ℤ) :
+    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (n • D) x - n * chosenHeight M hDVR hRF D x| ≤ C := by
+  rcases Int.eq_nat_or_neg n with ⟨m, rfl | rfl⟩
+  · obtain ⟨C, hC⟩ := chosenHeight_nsmul M hDVR hRF D m
+    exact ⟨C, fun x => by simpa [natCast_zsmul] using hC x⟩
+  · obtain ⟨C₁, hC₁⟩ := chosenHeight_nsmul M hDVR hRF D m
+    obtain ⟨C₂, hC₂⟩ := chosenHeight_sub M hDVR hRF 0 ((m : ℤ) • D)
+    obtain ⟨C₃, hC₃⟩ := chosenHeight_zero M hDVR hRF
+    refine ⟨C₁ + C₂ + C₃, fun x => ?_⟩
+    have h1 := hC₁ x
+    have h2 := hC₂ x
+    have h3 := hC₃ x
+    rw [zero_sub, ← neg_zsmul] at h2
+    rw [natCast_zsmul] at h2
+    push_cast
+    rw [abs_le] at h1 h2 h3 ⊢
+    constructor <;> linarith
+
+/-- **Positivity** ([GenEll], Proposition 1.4 (ii)): a divisor of positive degree has height
+bounded below. -/
+theorem chosenHeight_bddBelow {A : Divisor M} (hA : 0 < (divisorDegree M A)) :
+    ∃ C, ∀ x : QbarPoint M.K, -C ≤ chosenHeight M hDVR hRF A x := by
+  obtain ⟨n, hn, f, r, hr, hf⟩ := positiveDegreePolarRealization M hDVR hA
+  obtain ⟨C₁, hC₁⟩ := chosenHeight_polar M hDVR hRF f
+  obtain ⟨C₂, hC₂⟩ := chosenHeight_add_div M hDVR hRF (n • A) hr
+  obtain ⟨C₃, hC₃⟩ := chosenHeight_nsmul M hDVR hRF A n
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast hn
+  refine ⟨(C₁ + C₂ + C₃) / n, fun x => ?_⟩
+  have h1 := hC₁ x
+  have h2 := hC₂ x
+  have h3 := hC₃ x
+  rw [← hf] at h2
+  rw [abs_le] at h1 h2 h3
+  have h0 := tupleHeight_nonneg ![1, f] x
+  rw [neg_le, le_div_iff₀ hnpos]
+  nlinarith
+
+/-- **Comparison of heights of divisors by degree**: if `deg B > 0` and `deg A < q · deg B`,
+then `ht_A ≲ q · ht_B`. -/
+theorem chosenHeight_le_mul {A B : Divisor M} (hB : 0 < (divisorDegree M B)) {q : ℝ}
+    (hq : ((divisorDegree M A) : ℝ) < q * (divisorDegree M B)) :
+    ∃ C, ∀ x : QbarPoint M.K, chosenHeight M hDVR hRF A x ≤ q * chosenHeight M hDVR hRF B x + C := by
+  have hBR : (0 : ℝ) < (divisorDegree M B) := by exact_mod_cast hB
+  -- a rational `a / b` with `deg A / deg B < a / b < q`
+  obtain ⟨ρ, hρ1, hρ2⟩ := exists_rat_btwn (show ((divisorDegree M A) : ℝ) / (divisorDegree M B) < q by
+    rw [div_lt_iff₀ hBR]; exact hq)
+  set a : ℤ := ρ.num
+  set b : ℕ := ρ.den
+  have hb : (0 : ℝ) < b := by exact_mod_cast ρ.den_pos
+  have hρ : (ρ : ℝ) = a / b := by
+    rw [Rat.cast_def]
+  -- `a • B − b • A` has positive degree
+  set D : Divisor M := a • B - (b : ℤ) • A
+  have hD : 0 < (divisorDegree M D) := by
+    have h1 : ((divisorDegree M A) : ℝ) * b < a * (divisorDegree M B) := by
+      rw [hρ, lt_div_iff₀ hb] at hρ1
+      have := mul_lt_mul_of_pos_right hρ1 hBR
+      have h2 : ((divisorDegree M A) : ℝ) / (divisorDegree M B) * b * (divisorDegree M B) = (divisorDegree M A) * b := by
+        field_simp
+      linarith
+    simp only [D, divisorDegree_sub M, divisorDegree_zsmul M]
+    have : ((b : ℤ) * (divisorDegree M A) : ℝ) < a * (divisorDegree M B) := by push_cast; linarith
+    exact_mod_cast (by linarith : (0 : ℝ) < a * (divisorDegree M B) - b * (divisorDegree M A))
+  obtain ⟨C₁, hC₁⟩ := chosenHeight_bddBelow M hDVR hRF hD
+  obtain ⟨C₂, hC₂⟩ := chosenHeight_sub M hDVR hRF (a • B) ((b : ℤ) • A)
+  obtain ⟨C₃, hC₃⟩ := chosenHeight_zsmul' M hDVR hRF B a
+  obtain ⟨C₄, hC₄⟩ := chosenHeight_zsmul' M hDVR hRF A b
+  obtain ⟨C₅, hC₅⟩ := chosenHeight_bddBelow M hDVR hRF hB
+  have hqρ : (0 : ℝ) < q - a / b := by rw [← hρ]; linarith
+  refine ⟨(C₁ + C₂ + C₃ + C₄) / b + (q - a / b) * C₅, fun x => ?_⟩
+  have h1 := hC₁ x
+  have h2 := hC₂ x
+  have h3 := hC₃ x
+  have h4 := hC₄ x
+  have h5 := hC₅ x
+  rw [abs_le] at h2 h3 h4
+  -- `b · ht_A ≤ a · ht_B + const`
+  have key : (b : ℝ) * chosenHeight M hDVR hRF A x ≤ a * chosenHeight M hDVR hRF B x + (C₁ + C₂ + C₃ + C₄) := by
+    push_cast at h4
+    linarith
+  have key' : chosenHeight M hDVR hRF A x ≤ (a / b) * chosenHeight M hDVR hRF B x + (C₁ + C₂ + C₃ + C₄) / b := by
+    rw [div_mul_eq_mul_div, ← add_div, le_div_iff₀ hb]
+    linarith
+  have : (a / b : ℝ) * chosenHeight M hDVR hRF B x ≤ q * chosenHeight M hDVR hRF B x + (q - a / b) * C₅ := by
+    nlinarith
+  linarith
+
+
+end AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine

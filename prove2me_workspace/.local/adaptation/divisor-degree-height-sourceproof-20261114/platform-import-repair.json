@@ -1,0 +1,15 @@
+{
+  "failed_submission_id": "f40b7666-7f4e-4ea5-9c16-b619a6fb6492",
+  "terminal_status": "CE",
+  "reason": "functionZeroPoleDegrees was visible through a local theorem proof dependency, but the platform imports theorem statements and did not expose that transitive name",
+  "repair": "Explicitly import every theorem module directly referenced by retained source declarations using compiler dependency rows",
+  "mathematical_target_changed": false,
+  "new_open_debt": 0,
+  "proof_body_changed": false,
+  "retry_only_after_new_exact_solution_checks": true,
+  "solution_diff": "--- old\n+++ new\n@@ -24,6 +24,7 @@\n import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear\n import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists\n import Definitions.Def_FermatBelyiComparisons\n+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees\n \n set_option autoImplicit false\n \n",
+  "old_solution_sha256": "8e185e350ba602d6eb0f5f77c9c71aaa619c9ebd3677176193a9080096ec1798",
+  "new_solution_sha256": "88f15efed41b2cbfd5b48d8605417a90d1b5fd1384eedb14160d848e1ac1b96f",
+  "direct_solution_job": "ci-012018-107e4fb5",
+  "type_axioms_job": "ci-012019-52153804"
+}

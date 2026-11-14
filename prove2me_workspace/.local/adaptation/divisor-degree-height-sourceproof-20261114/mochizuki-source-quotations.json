@@ -1,0 +1,103 @@
+{
+  "author": "Shinichi Mochizuki",
+  "title": "Arithmetic Elliptic Curves in General Position",
+  "version": "February 2009 (PDF title page)",
+  "url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+  "local_path": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Arithmetic Elliptic Curves in General Position.pdf",
+  "pdf_sha256": "b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768",
+  "verified_on": "2026-11-14",
+  "quotations": [
+    {
+      "id": "canonical-sheaf-context",
+      "location": "Theorem 2.1(i)",
+      "printed_page": 11,
+      "pdf_page": 11,
+      "quote": "Write \\(\\omega_X\\) for the canonical sheaf on \\(X\\). Suppose that \\(U_X\\) is a hyperbolic curve — i.e., that the degree of the line bundle \\(\\omega_X(D)\\) is positive."
+    },
+    {
+      "id": "three-cusps-context",
+      "location": "Theorem 2.1(ii), opening clauses",
+      "printed_page": 11,
+      "pdf_page": 11,
+      "quote": "Let \\(P \\overset{\\mathrm{def}}{=} \\mathbb{P}^1_{\\mathbb{Q}}\\) be the projective line over \\(\\mathbb{Q}\\); \\(C \\subseteq P\\) the divisor consisting of the three points “0”, “1”, and “\\(\\infty\\)”;",
+      "selection_note": "A selected opening clause; the original sentence continues with further data."
+    },
+    {
+      "id": "belyi-log-canonical-pullback",
+      "location": "Proof of Theorem 2.1",
+      "printed_page": 12,
+      "pdf_page": 12,
+      "quote": "Now set \\(E \\overset{\\mathrm{def}}{=} \\phi^{-1}(C)_{\\mathrm{red}} \\subseteq X\\) [so \\(\\phi^*\\omega_P(C) \\cong \\omega_X(E)\\)]."
+    },
+    {
+      "id": "height-additivity",
+      "location": "Proposition 1.4(i)",
+      "printed_page": 6,
+      "pdf_page": 6,
+      "quote": "(i) We have\n\\[\n\\operatorname{ht}_{\\overline{\\mathcal{L}}\\otimes\\overline{\\mathcal{M}}}(x)=\\operatorname{ht}_{\\overline{\\mathcal{L}}}(x)+\\operatorname{ht}_{\\overline{\\mathcal{M}}}(x)\n\\]\nfor \\(x \\in X(\\overline{\\mathbb{Q}})\\)."
+    },
+    {
+      "id": "height-isomorphism-bd-class",
+      "location": "Proposition 1.4(iii)",
+      "printed_page": 6,
+      "pdf_page": 6,
+      "quote": "(iii) The BD-class of \\(\\operatorname{ht}_{\\overline{\\mathcal{L}}}\\) depends only on the isomorphism class of the line bundle \\(\\mathcal{L}_{\\mathbb{Q}}\\) on \\(X_{\\mathbb{Q}}\\). In particular, it makes sense to write \\([\\operatorname{ht}_{\\mathcal{L}}]\\) or \\([\\operatorname{ht}_{\\mathcal{L}_{\\mathbb{Q}}}]\\) for the BD-class \\([\\operatorname{ht}_{\\overline{\\mathcal{L}}}]\\) of \\(\\operatorname{ht}_{\\overline{\\mathcal{L}}}\\)."
+    },
+    {
+      "id": "bounded-discrepancy-meaning",
+      "location": "Definition 1.2(ii), opening segment",
+      "printed_page": 5,
+      "pdf_page": 5,
+      "quote": "(ii) Fix a subset \\(\\mathcal{F} \\subseteq X(\\overline{\\mathbb{Q}})\\). If \\(\\alpha,\\beta : \\mathcal{F} \\to \\mathbb{R}\\) are functions, then we shall write\n\\[\n\\alpha \\lesssim_{\\mathcal{F}} \\beta\\quad (\\text{respectively, }\\alpha \\gtrsim_{\\mathcal{F}} \\beta;\\ \\alpha \\approx_{\\mathcal{F}} \\beta)\n\\]\nif there exists a [“constant”] \\(C \\in \\mathbb{R}\\) such that \\(\\beta(x)-\\alpha(x)\\leq C\\) (respectively, \\(\\alpha(x)-\\beta(x)\\leq C;\\ |\\alpha(x)-\\beta(x)|\\leq C\\)) for all \\(x \\in \\mathcal{F}\\);",
+      "selection_note": "Opening segment ends at the original semicolon. The order of the two one-sided inequalities is transcribed as printed; the two-sided absolute-value condition is the relevant one here."
+    },
+    {
+      "id": "belyi-height-decomposition",
+      "location": "Proof of Theorem 2.1, lead-in and first line of displayed calculation",
+      "printed_page": 13,
+      "pdf_page": 13,
+      "quote": "Thus, by Proposition 1.4, (i), (iii), we compute to find that\n\\[\n\\operatorname{ht}_{\\omega_X}\\ \\approx\\ \\operatorname{ht}_{\\omega_X(E)}-\\operatorname{ht}_E\\ \\approx\\ \\operatorname{ht}_{\\omega_P(C)}-\\operatorname{ht}_E\n\\]",
+      "selection_note": "Only the first line of the displayed calculation is selected. The display continues with inequalities. The source uses the height on P along the map phi in this calculation; no pullback/composition symbol has been inserted into the quotation."
+    }
+  ],
+  "node_mapping": [
+    {
+      "node": "canonical+cusp = polar(phi)+div(r)",
+      "paper_passage_ids": [
+        "canonical-sheaf-context",
+        "three-cusps-context",
+        "belyi-log-canonical-pullback"
+      ],
+      "limit": "Paper gives the log-canonical line-bundle isomorphism. Explicit divisors and rational witness r are supplied by the formal auxiliary proof."
+    },
+    {
+      "node": "uniform heights for arbitrary explicit polar presentations from a principal relation",
+      "paper_passage_ids": [
+        "height-additivity",
+        "height-isomorphism-bd-class",
+        "bounded-discrepancy-meaning"
+      ],
+      "limit": "Paper gives additivity and bounded discrepancy at the line-bundle level. Arbitrary explicit presentations and the required uniformity are the formal proof obligation."
+    },
+    {
+      "node": "Belyi height decomposition",
+      "paper_passage_ids": [
+        "belyi-log-canonical-pullback",
+        "belyi-height-decomposition"
+      ],
+      "limit": "Paper displays the resulting decomposition up to bounded discrepancy. Precise source/target height presentations are part of the formal statement."
+    }
+  ],
+  "explanatory_boundary": "These passages supply the original-paper parent context: the three-cusp divisor C, the log-canonical pullback isomorphism for the reduced inverse-image divisor E, additive heights, invariance of height BD-classes under line-bundle isomorphism, and the resulting height decomposition in the proof of Theorem 2.1. The exact auxiliary identity canonical+cusp = polar(phi)+div(r), with an explicit rational-function witness r, is a statement to be proved in the formal Genl/Heights/Belyi source; it is not quoted verbatim from this paper. Likewise, a uniform bound for arbitrary explicit polar presentations from a principal relation requires the precise quantifiers, presentation data, and constants established by the formal source. The paper states the parent relation using line bundles and BD-classes; it does not state those two auxiliary lemmas in their explicit presentation-level form.",
+  "selection_scope": "GenEll directly supplies the required parent context. Definition 1.5 defines reduced divisors, log-different, and log-conductor; it is not a source of an explicit polar-presentation height decomposition. Noncritical Belyi Maps Theorem 2.5 is the existence premise for the map cited in GenEll; no additional quotation from it is needed for these height/divisor nodes.",
+  "transcription": "English wording checked against the official PDF. Mathematics represented in LaTeX; line wrapping and typographic emphasis normalized. Selected clauses and display lines are explicitly marked. No formal theorem names or presentation-level quantifiers are inserted into the quotations.",
+  "visual_verification": [
+    "/tmp/p2m-belyi-height-split-mochizuki-context-20261114/pdf-page-5.png",
+    "/tmp/p2m-belyi-height-split-mochizuki-context-20261114/pdf-page-6.png",
+    "/tmp/p2m-belyi-height-split-mochizuki-context-20261114/pdf-page-11.png",
+    "/tmp/p2m-belyi-height-split-mochizuki-context-20261114/pdf-page-12.png",
+    "/tmp/p2m-belyi-height-split-mochizuki-context-20261114/pdf-page-13.png"
+  ],
+  "retrieval": "Existing official PDF reused; no download. Existing receipt records direct HTTP 200 retrieval on 2026-11-12.",
+  "existing_receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/sources/Mochizuki_GenEll_Theorem2.1.pdf.receipt.json"
+}

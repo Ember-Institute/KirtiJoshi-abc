@@ -1,0 +1,61 @@
+/-
+Copyright (c) 2026 The heights contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The heights contributors
+
+Independent source-proof adaptation; receipts are recorded with this unit. The exact supplied PolarPresentations are restored
+using Heights/Curve/DivisorHeight.lean:112,263 source proofs.
+-/
+import Solutions.Source_FermatDivisorHeightMachine
+import Definitions.Def_FermatBelyiComparisons
+
+set_option autoImplicit false
+
+namespace AbcAdaptation.Tripod.Fermat.Proper
+
+open PolarTuple
+open scoped Classical
+
+/-- Any supplied presentation differs from the source's internally chosen
+actual presentation by a uniform bound on every proper algebraic point. -/
+theorem suppliedPresentationHeight_approx_chosen {N : ℕ}
+    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)
+    (D : Divisor M) (R : PolarPresentation M hDVR D) :
+    ∃ C : ℝ, ∀ x : QbarPoint M.K,
+      |DegreeHeightMachine.chosenHeight M hDVR hRF D x - divHeight R x| ≤ C := by
+  letI : IsCurveField M.K := M.isCurveField
+  obtain ⟨C, hC⟩ := DegreeHeightMachine.chosenHeight_approx M hDVR hRF D
+    (pairOne_nonzero R.f) (pairOne_nonzero R.g) one_ne_zero (fun P => by
+      rw [minOrd_pairOne_eq_neg_pole M hDVR,
+        minOrd_pairOne_eq_neg_pole M hDVR, Place.ord_one, R.divisor_eq P]
+      ring)
+  refine ⟨C, fun x => ?_⟩
+  have hx := hC x
+  rw [tupleHeight_pairOne_eq_functionHeight M,
+    tupleHeight_pairOne_eq_functionHeight M] at hx
+  exact hx
+
+/-- Complete source comparison transported to the two arbitrary presentations.
+The |q| term retains the original theorem for negative q as well. -/
+theorem divisorDegreeHeightComparison_source : DivisorDegreeHeightComparison := by
+  intro N M hDVR hRF D E RD RE q hDpos hstrict
+  letI : IsCurveField M.K := M.isCurveField
+  obtain ⟨C, hC⟩ := DegreeHeightMachine.chosenHeight_le_mul M hDVR hRF
+    (A := E) (B := D) hDpos hstrict
+  obtain ⟨CD, hCD⟩ := suppliedPresentationHeight_approx_chosen M hDVR hRF D RD
+  obtain ⟨CE, hCE⟩ := suppliedPresentationHeight_approx_chosen M hDVR hRF E RE
+  refine ⟨C + CE + |q| * CD, fun x => ?_⟩
+  have hE := (abs_le.mp (hCE x)).1
+  have hscaled : q * (DegreeHeightMachine.chosenHeight M hDVR hRF D x - divHeight RD x)
+      ≤ |q| * CD := by
+    calc
+      q * (DegreeHeightMachine.chosenHeight M hDVR hRF D x - divHeight RD x)
+          ≤ |q * (DegreeHeightMachine.chosenHeight M hDVR hRF D x - divHeight RD x)| :=
+        le_abs_self _
+      _ = |q| * |DegreeHeightMachine.chosenHeight M hDVR hRF D x - divHeight RD x| :=
+        abs_mul _ _
+      _ ≤ |q| * CD := mul_le_mul_of_nonneg_left (hCD x) (abs_nonneg q)
+  rw [mul_sub] at hscaled
+  linarith [hC x]
+
+end AbcAdaptation.Tripod.Fermat.Proper

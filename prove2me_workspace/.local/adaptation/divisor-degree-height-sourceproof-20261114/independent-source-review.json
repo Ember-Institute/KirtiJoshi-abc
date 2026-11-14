@@ -1,0 +1,350 @@
+{
+  "review_date": "2026-11-14",
+  "reviewer": "/root/divisor_degree_height_source_review",
+  "draft_root": "/tmp/p2m-divisor-degree-height-next-20261114",
+  "report_path": "/tmp/p2m-divisor-degree-height-source-review-20261114/review.json",
+  "mode": "read-only source/shape/fidelity review; no compilation, MCP-CI, APIs, Git mutation, main edits, or agent spawning",
+  "verdict": "Static source, mathematical-shape, and fidelity review passes. No mathematical conclusion weakening or added assumption found. Elaboration and axiom acceptance remain with root exclusive MCP-CI.",
+  "original_property": {
+    "reference": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiComparisons.lean:46",
+    "wrapper": "drafts/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_divisorDegreeHeightComparison.lean:15",
+    "exact_type": "divisorDegreeHeightComparison : DivisorDegreeHeightComparison",
+    "all_models_and_N": true,
+    "arbitrary_supplied_RD_RE": true,
+    "all_full_proper_QbarPoints": true,
+    "q_arbitrary_real_including_negative": true,
+    "D_actual_degree_strictly_positive": true,
+    "E_actual_degree_strictly_less_than_q_degree_D": true,
+    "one_C_before_all_x": true,
+    "no_good_value_or_affine_filter": true,
+    "no_N_lower_bound_added": true,
+    "Fermat_route_retained": true,
+    "consumer": "Definitions/Def_FermatCanonicalBelyiComposition.lean:20,34,72,100; hStrictHeight yields hCQ used in canonical estimate"
+  },
+  "positive_degree_construction": {
+    "file": "drafts/Solutions/Source_FermatPositiveDegreePolar.lean:26",
+    "assumptions": "M, PlacesDiscrete M, and positive actual divisorDegree A only; IsCurveField M.K is supplied by M.isCurveField inside proof",
+    "actual_existing_producers": [
+      "riemannRochFiniteDimensional",
+      "riemannRochDimensionUpperBound",
+      "riemannRochEventuallyLinear",
+      "largeEffectivePolarRealization_of_riemannChildren",
+      "principalDegreeZero_of_zeroPoleDegrees(functionZeroPoleDegrees)",
+      "RiemannDimension.exists_nonneg_add_pdiv"
+    ],
+    "argument": "Choose n above N0,N1,g0+1. Integral positive deg A is at least one, so deg(n A) >= n. Eventual Riemann equality forces actual L(n A) to have nonzero dimension. Existing nonzero-space producer yields actual r != 0 with n A + div(r) effective. Principal degree zero preserves the degree bound. Existing large-effective realization yields actual f with exact coefficient identity at every Place. Final ext establishes the genuine divisor equality.",
+    "extra_height_axiom": false,
+    "new_open_predicate": false,
+    "freely_supplied_height_function": false,
+    "consumer": "DegreeHeightMachine.chosenHeight_bddBelow:202-220",
+    "fidelity": "Faithful adaptation of Belyi/CurveField/Riemann.lean:393-412; replaces source global Riemann inequality by already-proved eventual equality at an explicitly sufficiently large multiple."
+  },
+  "height_machine_and_transport": {
+    "internal_presentation": "polarRep uses Classical.choice of existing polarPresentationExists; polarRep_spec proves the actual divisor equality. chosenHeight is the existing tupleHeight difference, not arbitrary input.",
+    "tuple_equivalence": "Both comparison theorem bodies from LinearEquiv.lean:61-108 match the pinned source verbatim; actual tuple/minOrd/Segre/scaling APIs are imported rather than redeclared.",
+    "lower_bound": "chosenHeight_bddBelow combines actual positive-degree polar realization, tuple nonnegativity, principal invariance and nsmul with n>0.",
+    "strict_comparison": "chosenHeight_le_mul chooses rational rho=a/b strictly between deg E/deg D and q; b>0. The actual a D-b E has positive degree, including when a or q is negative. Lower bounds on it and D give the original source constant.",
+    "external_presentations": "suppliedPresentationHeight_approx_chosen applies actual approximation to arbitrary R.f,R.g,r=1 and uses existing tupleHeight_pairOne_eq_functionHeight.",
+    "final_constant": "C + CE + |q| * CD",
+    "negative_q_check": "q*(chosenHeight D-divHeight RD) <= |q|*|chosenHeight D-divHeight RD| <= |q|*CD. Thus the sign of q does not require a stronger hypothesis.",
+    "uniformity": "Every approximation and comparison constant is chosen before x. No point-field degree or good-value restriction is introduced.",
+    "point_and_height_identity": "Existing QbarPoint, actual minimal number field normalization and pole-height-zero branch are reused through Source_FermatPolarPresentationHeights. No carrier or normalization replacement occurs.",
+    "unused_typeclass_review": "The model-bound machine uses IsCurveField M.K for actual tuple operations; final theorem supplies M.isCurveField locally. No unprovided caller-facing typeclass appears in the wrapper or exact Checks example. Generic K and finite tuple-index section variables are inherited source context, not new mathematical input."
+  },
+  "source_and_license": {
+    "pins": {
+      "heights": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8"
+    },
+    "source_snapshot_hashes": "All four retained snapshots match SOURCE_LEDGER.json SHA256 values.",
+    "copyright_and_license_headers": "Heights and Belyi draft adaptations preserve their corresponding 2026 contributor copyright/author names and Apache-2.0 declaration. The wrapper preserves genl header.",
+    "license_file_observation": "Downloaded upstream source trees have no standalone LICENSE/NOTICE file at root; their retained source files declare Apache-2.0. Existing repository Apache text is ArithmeticTeichmullerSpaces/LICENSE. This review does not invent a missing upstream license document.",
+    "production_ledger_context": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md is the only repository SOURCE_LEDGER.md discovered, and covers that separate project/toolchain. Per root task scope and prior-unit practice, link its path/hash as production context in the accepted machine unit ledger, and record this Fermat source/consumer chain there. No production documentation mutation requested.",
+    "upstream_toolchain": "leanprover/lean4:v4.32.0",
+    "local_toolchain": "leanprover/lean4:v4.33.1",
+    "local_mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474; lakefile local path /home/admin-wsl/Coq/mathlib4-0df444a",
+    "dependency_policy": "No new upstream Heights/Belyi Lake dependency or import; precise local modules are used.",
+    "production_ledger_reference": {
+      "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+      "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+      "read_only": true,
+      "boundary_changed": false
+    }
+  },
+  "findings": [
+    {
+      "id": "API-1",
+      "severity": "elaboration-only",
+      "file": "drafts/Solutions/Source_FermatPositiveDegreePolar.lean:22",
+      "detail": "Root reported first exclusive CI found global map_zsmul argument ordering incompatible with draft invocation. Root plans (divisorDegreeHom M).map_zsmul n A. This leaves divisorDegree_zsmul statement and mathematical proof unchanged. Reviewer did not run CI.",
+      "required_action": "Root integrates API fix and validates through MCP-CI; refresh accepted input hashes after edits."
+    },
+    {
+      "id": "PIN-1",
+      "severity": "informational",
+      "detail": "All draft and source hashes match the draft ledger at review time. Historical main-wrapper input hash differs from current main wrapper, which root has already integrated and edited. Other 24 historical local inputs match.",
+      "required_action": "Use final workspace hashes in the accepted unit receipt; retain the draft ledger as historical provenance."
+    }
+  ],
+  "checks_module": {
+    "explicit_axiom_prints": [
+      "positiveDegreePolarRealization",
+      "PolarTuple.abs_tupleHeight_sub_sub_le",
+      "DegreeHeightMachine.chosenHeight_approx",
+      "DegreeHeightMachine.chosenHeight_bddBelow",
+      "DegreeHeightMachine.chosenHeight_le_mul",
+      "suppliedPresentationHeight_approx_chosen",
+      "divisorDegreeHeightComparison"
+    ],
+    "consumer_example": "Exact all-model/all-presentations/arbitrary-q/all-full-points signature is restated and consumed directly.",
+    "no_axiom_output_inspected": true
+  },
+  "remaining_acceptance": "Root owns exclusive MCP-CI elaboration, Checks/Axioms and project-required audits/aggregation; inspect sorryAx and allowed standard axioms. Static review is not a compilation or parent-obligation completion claim.",
+  "hash_evidence": [
+    {
+      "group": "source_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/reference/Heights/Curve/DivisorHeight.lean",
+      "expected_sha256": "950fd1932c5eae4f74b7f9cfed22c28e78d5d9c44fb3356b2200f23caf96a5f3",
+      "observed_sha256": "950fd1932c5eae4f74b7f9cfed22c28e78d5d9c44fb3356b2200f23caf96a5f3",
+      "matches": true
+    },
+    {
+      "group": "source_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/reference/Heights/Curve/LinearEquiv.lean",
+      "expected_sha256": "3f368338e8e835c62b165789cc044a9ad3da86ef6c037295b53425f518f023ce",
+      "observed_sha256": "3f368338e8e835c62b165789cc044a9ad3da86ef6c037295b53425f518f023ce",
+      "matches": true
+    },
+    {
+      "group": "source_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/reference/Belyi/CurveField/Riemann.lean",
+      "expected_sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+      "observed_sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+      "matches": true
+    },
+    {
+      "group": "source_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/reference/Belyi/CurveField/RiemannRochSpace.lean",
+      "expected_sha256": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+      "observed_sha256": "06e72b29afd1a0a53c88b2f862e4b3800da9a57334a18877d42c2b2999ce2d53",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_divisorDegreeHeightComparison.lean",
+      "expected_sha256": "f8cb90269e6915efa917a92720257b614bc5395e6c6de4e043a4806ada2130a7",
+      "observed_sha256": "6d063f155c8ab06aa217e3b9af1972df8094332bbd42a17ddd809bc5bb68922f",
+      "matches": false
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiComparisons.lean",
+      "expected_sha256": "c8dd47e099ee4ca6a1715d4034f1c375617d89439130ce8494a720a9359d2813",
+      "observed_sha256": "c8dd47e099ee4ca6a1715d4034f1c375617d89439130ce8494a720a9359d2813",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "expected_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "observed_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannSpaces.lean",
+      "expected_sha256": "e75fa0f2f9e79fcf4bc053589d9c21fdd7891f489d347dae2ee24f0b2a7b4809",
+      "observed_sha256": "e75fa0f2f9e79fcf4bc053589d9c21fdd7891f489d347dae2ee24f0b2a7b4809",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannComposition.lean",
+      "expected_sha256": "7a8839a83370ceaec76eb30b0d3b113f9338107db55e1e6e6ab4cc644a99a94f",
+      "observed_sha256": "7a8839a83370ceaec76eb30b0d3b113f9338107db55e1e6e6ab4cc644a99a94f",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannLocalDimension.lean",
+      "expected_sha256": "e11c3689ffe7ff4f964703814779411209802c41dce054191801eac0b522a0f7",
+      "observed_sha256": "e11c3689ffe7ff4f964703814779411209802c41dce054191801eac0b522a0f7",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatRiemannDimensionComposition.lean",
+      "expected_sha256": "07bc68f45c33e13ed1f53fedffc5028bf32c516755e1ae36ab6f56afd0e59b89",
+      "observed_sha256": "07bc68f45c33e13ed1f53fedffc5028bf32c516755e1ae36ab6f56afd0e59b89",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionDivisors.lean",
+      "expected_sha256": "1219586c9d82f822b770482fb1a267d6499bff9773399cb54de8e6564f26badd",
+      "observed_sha256": "1219586c9d82f822b770482fb1a267d6499bff9773399cb54de8e6564f26badd",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalBelyiComposition.lean",
+      "expected_sha256": "ed9f9030c6a94e163d0b009d5b6aacbf956d2a1766b656b555f4d6d2e07f1793",
+      "observed_sha256": "ed9f9030c6a94e163d0b009d5b6aacbf956d2a1766b656b555f4d6d2e07f1793",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_functionZeroPoleDegrees.lean",
+      "expected_sha256": "ecc2997d43a08556ad2b4ba9af193ac1748c224eb726c8709cbb4ae14d23b8fc",
+      "observed_sha256": "ecc2997d43a08556ad2b4ba9af193ac1748c224eb726c8709cbb4ae14d23b8fc",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean",
+      "expected_sha256": "b0fbdd848db720dcfe36bbe30c14bb33d1af08de6cdbb03b8f253d73bdf839f4",
+      "observed_sha256": "b0fbdd848db720dcfe36bbe30c14bb33d1af08de6cdbb03b8f253d73bdf839f4",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean",
+      "expected_sha256": "dadd613f3ef3fad0587d9249a8f4e7ae8659a26a4a87c7c1db7cf232c4e6b70e",
+      "observed_sha256": "dadd613f3ef3fad0587d9249a8f4e7ae8659a26a4a87c7c1db7cf232c4e6b70e",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean",
+      "expected_sha256": "45694d56d1462b9194414037af5308b71a2cf3e54c0deeb36d336de3b5de4b37",
+      "observed_sha256": "45694d56d1462b9194414037af5308b71a2cf3e54c0deeb36d336de3b5de4b37",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationExists.lean",
+      "expected_sha256": "75e030c4745c7b4f165d576cc1dde586096a8ad079566c49b912cf84004a5e58",
+      "observed_sha256": "75e030c4745c7b4f165d576cc1dde586096a8ad079566c49b912cf84004a5e58",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "expected_sha256": "f878dd84a50d2dc02b7398a0189fa32dc884a925c285bd3d8205f7e8a8498bcc",
+      "observed_sha256": "f878dd84a50d2dc02b7398a0189fa32dc884a925c285bd3d8205f7e8a8498bcc",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "expected_sha256": "82c8f6010892e9bdb868487668c9a08ccfdc9b53f9f08e6961225eb18d7c58b8",
+      "observed_sha256": "82c8f6010892e9bdb868487668c9a08ccfdc9b53f9f08e6961225eb18d7c58b8",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+      "expected_sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+      "observed_sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarMinOrd.lean",
+      "expected_sha256": "8f09a82e2cd831c94f014823aa5e9f26f75849a7a92709836426ed37167cd854",
+      "observed_sha256": "8f09a82e2cd831c94f014823aa5e9f26f75849a7a92709836426ed37167cd854",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPointAdapters.lean",
+      "expected_sha256": "90ae60c0a4756a439c1b1a1002b30b5646fae635edf15fc0ea9634c7b57cb761",
+      "observed_sha256": "90ae60c0a4756a439c1b1a1002b30b5646fae635edf15fc0ea9634c7b57cb761",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "expected_sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+      "observed_sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+      "expected_sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+      "observed_sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarTupleHeight.lean",
+      "expected_sha256": "aa5a9b6afdd87776cc03f12b79a91b8a0436076e05488f1dd8f9380347eef541",
+      "observed_sha256": "aa5a9b6afdd87776cc03f12b79a91b8a0436076e05488f1dd8f9380347eef541",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/lean-toolchain",
+      "expected_sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "observed_sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/lake-manifest.json",
+      "expected_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "observed_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "matches": true
+    },
+    {
+      "group": "existing_local_inputs",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/lakefile.lean",
+      "expected_sha256": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+      "observed_sha256": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+      "matches": true
+    },
+    {
+      "group": "draft_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Checks_FermatDivisorDegreeHeightComparison.lean",
+      "expected_sha256": "3157b3568aceb9983680b6eb7272af2134823f3a0944467684a170bbfc2a5d76",
+      "observed_sha256": "3157b3568aceb9983680b6eb7272af2134823f3a0944467684a170bbfc2a5d76",
+      "matches": true
+    },
+    {
+      "group": "draft_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorDegreeHeightComparison.lean",
+      "expected_sha256": "96e979747c900d62895c60ecd885658acc2aebec7631476545a1f0111b405a4e",
+      "observed_sha256": "96e979747c900d62895c60ecd885658acc2aebec7631476545a1f0111b405a4e",
+      "matches": true
+    },
+    {
+      "group": "draft_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "expected_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "observed_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "matches": true
+    },
+    {
+      "group": "draft_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorTupleEquivalence.lean",
+      "expected_sha256": "95cab321cb0d57c33a33a449bc305d73a314b5367bd754fd4326dd603703e60e",
+      "observed_sha256": "95cab321cb0d57c33a33a449bc305d73a314b5367bd754fd4326dd603703e60e",
+      "matches": true
+    },
+    {
+      "group": "draft_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatPositiveDegreePolar.lean",
+      "expected_sha256": "def8a455323a8a06780174450e02484bde28e60887f7fba7f26f9ca5ff083d42",
+      "observed_sha256": "def8a455323a8a06780174450e02484bde28e60887f7fba7f26f9ca5ff083d42",
+      "matches": true
+    },
+    {
+      "group": "draft_files",
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_divisorDegreeHeightComparison.lean",
+      "expected_sha256": "3629039eceb40d6a7425206ba359a146de179a2fa90c12a970388069df0d45f5",
+      "observed_sha256": "3629039eceb40d6a7425206ba359a146de179a2fa90c12a970388069df0d45f5",
+      "matches": true
+    }
+  ]
+}

@@ -1,0 +1,3209 @@
+{
+  "status": "exclusive_local_audits_passed_and_platform_ACCEPTED",
+  "source_archive": "source-archive.json",
+  "draft_source_ledger": "draft-source-ledger.json",
+  "source_review": "independent-source-review.json",
+  "production_ledger": {
+    "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+    "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+    "scope": "Adaptation source-proof child only, no productionboundarychange"
+  },
+  "exact_target": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison",
+  "mathematical_preservation": [
+    "Every original model and all proper points/residue embeddings",
+    "Arbitrary supplied RD/RE and any real q",
+    "Positive degree base, strict degree ratio, one constant before all points",
+    "Actual positive-degree Riemann construction; no height-law assumption"
+  ],
+  "actual_consumer": "Definitions.Def_FermatCanonicalBelyiComposition.canonicalEstimate_of_belyi_children: hStrictHeight argument",
+  "new_nodes": [],
+  "new_open_debt": 0,
+  "Fermat_route_preserved": true,
+  "deprecations": [],
+  "upstream_runtime_imports": [],
+  "producer_consumers_at_draft_receipt": [
+    {
+      "producer": "PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq",
+      "source": "Heights/Curve/LinearEquiv.lean:61",
+      "consumer": "PolarTuple.abs_tupleHeight_sub_sub_le"
+    },
+    {
+      "producer": "PolarTuple.abs_tupleHeight_sub_sub_le",
+      "source": "Heights/Curve/LinearEquiv.lean:74",
+      "consumer": "DegreeHeightMachine.chosenHeight_approx"
+    },
+    {
+      "producer": "positiveDegreePolarRealization",
+      "source": "Belyi/CurveField/Riemann.lean:393-412 + existing local Riemann producer chain",
+      "consumer": "DegreeHeightMachine.chosenHeight_bddBelow"
+    },
+    {
+      "producer": "DegreeHeightMachine.polarRep",
+      "source": "actual existing polarPresentationExists, constructed via Def_FermatRiemannComposition",
+      "consumer": "chosenHeight_approx/add and every internal chosen height"
+    },
+    {
+      "producer": "DegreeHeightMachine.chosenHeight_approx",
+      "source": "Heights/Curve/DivisorHeight.lean:112",
+      "consumer": "principal/polar/additive laws and suppliedPresentationHeight_approx_chosen"
+    },
+    {
+      "producer": "DegreeHeightMachine.chosenHeight_bddBelow",
+      "source": "Heights/Curve/DivisorHeight.lean:244",
+      "consumer": "chosenHeight_le_mul both positive-degree divisor and D"
+    },
+    {
+      "producer": "DegreeHeightMachine.chosenHeight_le_mul",
+      "source": "Heights/Curve/DivisorHeight.lean:263",
+      "consumer": "divisorDegreeHeightComparison_source"
+    },
+    {
+      "producer": "divisorDegreeHeightComparison",
+      "source": "exact current target",
+      "consumer": "Definitions/Def_FermatCanonicalBelyiComposition.lean:canonicalEstimate_of_belyi_children hStrictHeight; hCQ"
+    }
+  ],
+  "transformations_at_draft_receipt": [
+    "Import and reuse all eight existing Source_FermatPolar* modules through their actual dependency graph. No copies/redeclarations of tuple height, minOrd, Segre/scaling or monotonicity.",
+    "Port missing LinearEquiv:61-108 consequences into existing PolarTuple namespace.",
+    "Port DivisorHeight:112-309 into DegreeHeightMachine with Model-bound Divisor, functionPoleDivisor/functionDivisor, divisorDegree, and internally chosen actual polarRep from existing polarPresentationExists.",
+    "Positive-degree producer adapts Belyi Riemann:393-412 using existing eventual equality with n above N0,N1,g0+1, rather than reproducing a global Riemann inequality.",
+    "Final exact supplied presentations recovered using source approximation and current functionHeight-pair tuple identity; |q| controls the arbitrary real scalar.",
+    "No new opaque proposition, open child predicate, strengthened positivity hypothesis or weakened degree endpoint."
+  ],
+  "local_target_leaf_job": "ci-011984-c5a6fe11",
+  "local_primary_axiom_review": "ci-011986-9ae39a06",
+  "declarations": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_ne_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_ne_zero",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 146,
+        "end_line": 150
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_sub",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_sub",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 167,
+        "end_line": 175
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_sumElim_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_sumElim_zero",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 160,
+        "end_line": 170
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 147,
+        "end_line": 156
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 222,
+        "end_line": 248
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_self",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_self",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 147,
+        "end_line": 150
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 91,
+        "end_line": 94
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne_eq_neg_pole",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd.congr_simp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+        "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_pair_one",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTupleHeightMonotonicity",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_single"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.infPart",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.infPart",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 56,
+        "end_line": 58
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_algebraMap",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_eq_infPart_mul_finPart",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.infPart_algebraMap",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.infPart.eq_1"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_mul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_mul",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 150,
+        "end_line": 157
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_zsmul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_zsmul",
+      "path": "Solutions/Source_FermatPositiveDegreePolar.lean",
+      "module": "Solutions.Source_FermatPositiveDegreePolar",
+      "source": "Belyi/CurveField/Riemann.lean:393–412 at 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8; current exact Riemann producer chain",
+      "source_span": {
+        "start_line": 19,
+        "end_line": 22
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.normIdx",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.normIdx",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 74,
+        "end_line": 77
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_ne_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.normIdx.congr_simp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_normIdx",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.normIdx_ne_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_normIdx_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.ord_normIdx_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_single"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 166,
+        "end_line": 168
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_coeffBound",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_coeffBound",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound.eq_1"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 393,
+        "end_line": 447
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_eq_comp",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_eq_comp",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 98,
+        "end_line": 103
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne_eq_neg_pole",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne_eq_neg_pole",
+      "path": "Solutions/Source_FermatPolarPresentationHeights.lean",
+      "module": "Solutions.Source_FermatPolarPresentationHeights",
+      "source": "Heights/Curve/LinearEquiv.lean:74; Curve/TupleHeight.lean:249,268; Absolute/Basic.lean:204 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 58,
+        "end_line": 64
+      },
+      "fidelity": "Explicit actual-presentation specialization/composition; arbitrary RD/RE, full points, pole branch, inverse principal factor and uniform constants retained",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_pair_one"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_mem",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_mem",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 261,
+        "end_line": 278
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_mem",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_mem",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 105,
+        "end_line": 109
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_forall_mem"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_normIdx",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_normIdx",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 141,
+        "end_line": 144
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_ne_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_eq_sum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_eq_sum",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 293,
+        "end_line": 301
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 51,
+        "end_line": 55
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_sub",
+        "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison_source",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add_div",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight.congr_simp",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_nsmul",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.prod_pow_mult_eq_prod_embeddings",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.prod_pow_mult_eq_prod_embeddings",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 78,
+        "end_line": 87
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.infPart_algebraMap"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finPart",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finPart",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 60,
+        "end_line": 62
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finPart_algebraMap_of_integral",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_algebraMap",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_eq_infPart_mul_finPart",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finPart.congr_simp"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 250,
+        "end_line": 265
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.abs_logHeight_one_add_sub_le"
+      ],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison_source",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison_source",
+      "path": "Solutions/Source_FermatDivisorDegreeHeightComparison.lean",
+      "module": "Solutions.Source_FermatDivisorDegreeHeightComparison",
+      "source": "Current arbitrary-presentation transport of fixed source degree comparison",
+      "source_span": {
+        "start_line": 39,
+        "end_line": 60
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.exists_integral_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.exists_integral_eq",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 275,
+        "end_line": 306
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 316,
+        "end_line": 318
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.aeval_mem_and_evalF",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF_comp_ratHom",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coe_evalF"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_equiv",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_equiv",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 152,
+        "end_line": 158
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.normIdx_ne_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.normIdx_ne_zero",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 81,
+        "end_line": 84
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_normIdx",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_normIdx_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "_private.Solutions.Source_FermatPolarAbsoluteBasic.0.AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mem_adjoin_pair_left",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mem_adjoin_pair_left",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 244,
+        "end_line": 245
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_mul_le"
+      ],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.iSup_finitePlace_pos",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.iSup_finitePlace_pos",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 270,
+        "end_line": 273
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_sum"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+      "path": "Solutions/Source_FermatDivisorTupleEquivalence.lean",
+      "module": "Solutions.Source_FermatDivisorTupleEquivalence",
+      "source": "Heights/Curve/LinearEquiv.lean:61–108 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 32,
+        "end_line": 69
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_eq",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 96,
+        "end_line": 97
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_single"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_smul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_smul",
+      "path": "Solutions/Source_FermatPolarMinOrd.lean",
+      "module": "Solutions.Source_FermatPolarMinOrd",
+      "source": "Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/LinearEquiv.lean:37–72",
+      "source_span": {
+        "start_line": 61,
+        "end_line": 73
+      },
+      "fidelity": "Original product/scaling minimum-order proof; exact existing proper-place order and zero-entry convention",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.iSup_infinitePlace_pos",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.iSup_infinitePlace_pos",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 265,
+        "end_line": 268
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_sum"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_coeffBound",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_coeffBound",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 173,
+        "end_line": 176
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_prod_of_one_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_prod_of_one_le",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 79,
+        "end_line": 88
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.le_prod_of_one_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_coeffBound"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 88,
+        "end_line": 98
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 280,
+        "end_line": 313
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 215,
+        "end_line": 263
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison_source"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_inv",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_inv",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 228,
+        "end_line": 232
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_mul_table",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_mul_table",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 180,
+        "end_line": 199
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep_spec",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep_spec",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 44,
+        "end_line": 49
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringEquiv",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringEquiv",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 246,
+        "end_line": 254
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_pos_real",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_pos_real",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 120,
+        "end_line": 122
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.positiveDegreePolarRealization",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.positiveDegreePolarRealization",
+      "path": "Solutions/Source_FermatPositiveDegreePolar.lean",
+      "module": "Solutions.Source_FermatPositiveDegreePolar",
+      "source": "Belyi/CurveField/Riemann.lean:393–412 at 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8; current exact Riemann producer chain",
+      "source_span": {
+        "start_line": 24,
+        "end_line": 73
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 77,
+        "end_line": 96
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_self",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_eq_comp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_comp_ringHom_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_one_comp_ringHom_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_ratCast"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+      "path": "Solutions/Source_FermatDivisorDegreeHeightComparison.lean",
+      "module": "Solutions.Source_FermatDivisorDegreeHeightComparison",
+      "source": "Current arbitrary-presentation transport of fixed source degree comparison",
+      "source_span": {
+        "start_line": 19,
+        "end_line": 37
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison_source"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coe_coords",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coe_coords",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 66,
+        "end_line": 67
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_normIdx_mem",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_normIdx_mem",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 113,
+        "end_line": 114
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_normIdx",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 198,
+        "end_line": 230
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.polar_eval_eq_zero_iff'",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.polar_eval_eq_zero_iff'",
+      "path": "Solutions/Source_FermatPolarPointAdapters.lean",
+      "module": "Solutions.Source_FermatPolarPointAdapters",
+      "source": "Existing QbarPoint.noncritical_eval_zero_iff and actual finite residue image equivalence; Belyi/CurveField/Point.lean at 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "source_span": {
+        "start_line": 22,
+        "end_line": 27
+      },
+      "fidelity": "Proved zero-inclusive evaluation wrapper and full point-field finite-dimensional instance; no point-field replacement",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_add_sum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_add_sum",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 143,
+        "end_line": 148
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_comp_ringHom_eq_sum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_comp_ringHom_eq_sum",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 303,
+        "end_line": 310
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.eval_monicOf",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.eval_monicOf",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 132,
+        "end_line": 134
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_one_comp_ringHom_eq_sum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_one_comp_ringHom_eq_sum",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 312,
+        "end_line": 325
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 136,
+        "end_line": 145
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_sum_le_of_isNonarchimedean",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_sum_le_of_isNonarchimedean",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 59,
+        "end_line": 69
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_of_isNonarchimedean"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 232,
+        "end_line": 259
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.pow_natDegree_eq_neg_sum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.pow_natDegree_eq_neg_sum",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 42,
+        "end_line": 48
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.natDegree_pos_of_root",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_of_isNonarchimedean"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 178,
+        "end_line": 197
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_nonneg",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_nonneg",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 135,
+        "end_line": 139
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 79,
+        "end_line": 86
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add_div"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_nonneg",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_nonneg",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 220,
+        "end_line": 220
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.absNorm_map_algebraMap",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.absNorm_map_algebraMap",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 138,
+        "end_line": 141
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finPart_algebraMap_of_integral"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_posLog",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_posLog",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 382,
+        "end_line": 391
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 199,
+        "end_line": 220
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq_gen",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq_gen",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 214,
+        "end_line": 218
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_inv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_neg"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 203,
+        "end_line": 212
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_inv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq_gen",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_mul_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_neg"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zero",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 132,
+        "end_line": 135
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_nsmul",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finPart_algebraMap_of_integral",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finPart_algebraMap_of_integral",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 143,
+        "end_line": 168
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_algebraMap"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.aeval_mem_and_evalF",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.aeval_mem_and_evalF",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 326,
+        "end_line": 343
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_nonneg",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_nonneg",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 124,
+        "end_line": 125
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_nonneg"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 196,
+        "end_line": 213
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.natDegree_pos_of_root",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.natDegree_pos_of_root",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 50,
+        "end_line": 57
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_of_isNonarchimedean"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_algebraMap",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_algebraMap",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 226,
+        "end_line": 230
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_div_finrank"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq",
+      "path": "Solutions/Source_FermatDivisorTupleEquivalence.lean",
+      "module": "Solutions.Source_FermatDivisorTupleEquivalence",
+      "source": "Heights/Curve/LinearEquiv.lean:61–108 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 22,
+        "end_line": 30
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 122,
+        "end_line": 124
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_ne_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple_normIdx",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple.congr_simp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalTuple.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_def"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.filter_ne_zero_nonempty",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.filter_ne_zero_nonempty",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 69,
+        "end_line": 72
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.normIdx",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.normIdx_ne_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.ord_normIdx_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 126,
+        "end_line": 129
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem",
+        "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight.congr_simp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_def",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTupleHeightMonotonicity"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_mul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_mul",
+      "path": "Solutions/Source_FermatPolarMinOrd.lean",
+      "module": "Solutions.Source_FermatPolarMinOrd",
+      "source": "Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/LinearEquiv.lean:37–72",
+      "source_span": {
+        "start_line": 43,
+        "end_line": 59
+      },
+      "fidelity": "Original product/scaling minimum-order proof; exact existing proper-place order and zero-entry convention",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add_div",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add_div",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 137,
+        "end_line": 147
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 500,
+        "end_line": 520
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_forall_mem",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_forall_mem",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 111,
+        "end_line": 116
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_sumElim_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_equiv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_mul_table",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_smul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_sum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_sum",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 115,
+        "end_line": 141
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_add_sum"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.fieldOf",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.fieldOf",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 58,
+        "end_line": 60
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_sumElim_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_self",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_equiv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coe_coords",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coords",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight.eq_1"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_of_isNonarchimedean",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_of_isNonarchimedean",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 101,
+        "end_line": 106
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.polar_finiteDimensional_fieldOf",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.polar_finiteDimensional_fieldOf",
+      "path": "Solutions/Source_FermatPolarPointAdapters.lean",
+      "module": "Solutions.Source_FermatPolarPointAdapters",
+      "source": "Existing QbarPoint.noncritical_eval_zero_iff and actual finite residue image equivalence; Belyi/CurveField/Point.lean at 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "source_span": {
+        "start_line": 17,
+        "end_line": 20
+      },
+      "fidelity": "Proved zero-inclusive evaluation wrapper and full point-field finite-dimensional instance; no point-field replacement",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_mul_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_mul_le",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 267,
+        "end_line": 278
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.le_prod_of_one_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.le_prod_of_one_le",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 90,
+        "end_line": 96
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_le",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 172,
+        "end_line": 178
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.ord_normIdx_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.ord_normIdx_le",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 86,
+        "end_line": 89
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_normIdx_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF_comp_ratHom",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF_comp_ratHom",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 323,
+        "end_line": 324
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.aeval_mem_and_evalF"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeff_monicOf",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeff_monicOf",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 122,
+        "end_line": 130
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 250,
+        "end_line": 265
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 98,
+        "end_line": 100
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.eval_monicOf",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeff_monicOf",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf_monic",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.natDegree_monicOf"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coords",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coords",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 62,
+        "end_line": 64
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_sumElim_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_self",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_equiv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coe_coords",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight.eq_1"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_iSup_of_isNonarchimedean",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_iSup_of_isNonarchimedean",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 108,
+        "end_line": 113
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf_monic",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf_monic",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 109,
+        "end_line": 113
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.isIntegral",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.isIntegral",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 46,
+        "end_line": 48
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finiteDimensional_adjoin"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_zero",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 127,
+        "end_line": 132
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+      "path": "Solutions/Source_FermatPolarPresentationHeights.lean",
+      "module": "Solutions.Source_FermatPolarPresentationHeights",
+      "source": "Heights/Curve/LinearEquiv.lean:74; Curve/TupleHeight.lean:249,268; Absolute/Basic.lean:204 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 81,
+        "end_line": 143
+      },
+      "fidelity": "Explicit actual-presentation specialization/composition; arbitrary RD/RE, full points, pole branch, inverse principal factor and uniform constants retained",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_algebraMap",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_algebraMap",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 190,
+        "end_line": 224
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_algebraMap"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_zero",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 222,
+        "end_line": 226
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_pair_one",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_pair_one",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 57,
+        "end_line": 60
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_minimal",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_minimal",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 103,
+        "end_line": 111
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_normIdx_mem"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_eq_infPart_mul_finPart",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_eq_infPart_mul_finPart",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 64,
+        "end_line": 66
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_algebraMap"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 30,
+        "end_line": 34
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+      "path": "Solutions/Source_FermatPolarPresentationHeights.lean",
+      "module": "Solutions.Source_FermatPolarPresentationHeights",
+      "source": "Heights/Curve/LinearEquiv.lean:74; Curve/TupleHeight.lean:249,268; Absolute/Basic.lean:204 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 44,
+        "end_line": 56
+      },
+      "fidelity": "Explicit actual-presentation specialization/composition; arbitrary RD/RE, full points, pole branch, inverse principal factor and uniform constants retained",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_smul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_smul",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 134,
+        "end_line": 145
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_iSup_le_of_forall",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_iSup_le_of_forall",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 457,
+        "end_line": 498
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_sum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_sum",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 275,
+        "end_line": 286
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_comp_ringHom_eq_sum"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.exists_ne_zero_of_ne_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.exists_ne_zero_of_ne_zero",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 63,
+        "end_line": 67
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 522,
+        "end_line": 750
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_le",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 99,
+        "end_line": 101
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.abs_logHeight_one_add_sub_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.abs_logHeight_one_add_sub_le",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 280,
+        "end_line": 287
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "_private.Solutions.Source_FermatPolarAbsoluteBasic.0.AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mem_adjoin_pair_right",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mem_adjoin_pair_right",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 247,
+        "end_line": 248
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_mul_le"
+      ],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_neg",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_neg",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 234,
+        "end_line": 238
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.abs_logHeight_one_add_sub_le"
+      ],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne_nonzero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne_nonzero",
+      "path": "Solutions/Source_FermatPolarPresentationHeights.lean",
+      "module": "Solutions.Source_FermatPolarPresentationHeights",
+      "source": "Heights/Curve/LinearEquiv.lean:74; Curve/TupleHeight.lean:249,268; Absolute/Basic.lean:204 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 22,
+        "end_line": 22
+      },
+      "fidelity": "Explicit actual-presentation specialization/composition; arbitrary RD/RE, full points, pole branch, inverse principal factor and uniform constants retained",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+        "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+      "path": "Solutions/Source_FermatPolarPresentationHeights.lean",
+      "module": "Solutions.Source_FermatPolarPresentationHeights",
+      "source": "Heights/Curve/LinearEquiv.lean:74; Curve/TupleHeight.lean:249,268; Absolute/Basic.lean:204 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 24,
+        "end_line": 42
+      },
+      "fidelity": "Explicit actual-presentation specialization/composition; arbitrary RD/RE, full points, pole branch, inverse principal factor and uniform constants retained",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne_eq_neg_pole"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.prod_comp_algebraMap",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.prod_comp_algebraMap",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 108,
+        "end_line": 117
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.infPart_algebraMap"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_div_finrank",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_div_finrank",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 233,
+        "end_line": 243
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringEquiv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_log_iSup",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_log_iSup",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 353,
+        "end_line": 380
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne",
+      "path": "Solutions/Source_FermatPolarPresentationHeights.lean",
+      "module": "Solutions.Source_FermatPolarPresentationHeights",
+      "source": "Heights/Curve/LinearEquiv.lean:74; Curve/TupleHeight.lean:249,268; Absolute/Basic.lean:204 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 20,
+        "end_line": 20
+      },
+      "fidelity": "Explicit actual-presentation specialization/composition; arbitrary RD/RE, full points, pole branch, inverse principal factor and uniform constants retained",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne_eq_neg_pole",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+        "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne_nonzero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 152,
+        "end_line": 196
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 100,
+        "end_line": 130
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_sub",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add_div",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_nsmul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_def",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_def",
+      "path": "Solutions/Source_FermatPolarTupleHeight.lean",
+      "module": "Solutions.Source_FermatPolarTupleHeight",
+      "source": "Heights/Curve/TupleHeight.lean",
+      "source_span": {
+        "start_line": 131,
+        "end_line": 133
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.infPart_algebraMap",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.infPart_algebraMap",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 119,
+        "end_line": 127
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_algebraMap"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 71,
+        "end_line": 75
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_sumElim_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_self",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_eq_comp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight.congr_simp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_equiv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_inv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_mul_table",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_comp_ringHom_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_one_comp_ringHom_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq_gen",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_forall_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_mul_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.abs_logHeight_one_add_sub_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_neg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_def",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_ratCast"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 64,
+        "end_line": 77
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+        "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.card_filter_comp_algebraMap_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.card_filter_comp_algebraMap_eq",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 92,
+        "end_line": 106
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.prod_comp_algebraMap"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coe_evalF",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coe_evalF",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 320,
+        "end_line": 321
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTupleHeightMonotonicity",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTupleHeightMonotonicity",
+      "path": "Solutions/Source_FermatPolarPresentationHeights.lean",
+      "module": "Solutions.Source_FermatPolarPresentationHeights",
+      "source": "Heights/Curve/LinearEquiv.lean:74; Curve/TupleHeight.lean:249,268; Absolute/Basic.lean:204 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 70,
+        "end_line": 79
+      },
+      "fidelity": "Explicit actual-presentation specialization/composition; arbitrary RD/RE, full points, pole branch, inverse principal factor and uniform constants retained",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity"
+      ],
+      "needed_by_target_or_instance_roots": false,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": false
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finiteDimensional_adjoin",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finiteDimensional_adjoin",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 51,
+        "end_line": 54
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_sumElim_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_self",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_equiv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_mul_table",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_mul_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight.eq_1"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_coeffBound",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_coeffBound",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 170,
+        "end_line": 171
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_single",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_single",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 22,
+        "end_line": 28
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_nsmul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_nsmul",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 149,
+        "end_line": 165
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 177,
+        "end_line": 194
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.natDegree_monicOf",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.natDegree_monicOf",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 115,
+        "end_line": 120
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.degree_sum_lt",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.degree_sum_lt",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights/Curve/Integrality.lean",
+      "source_span": {
+        "start_line": 102,
+        "end_line": 107
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf_monic",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.natDegree_monicOf"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep",
+      "path": "Solutions/Source_FermatDivisorHeightMachine.lean",
+      "module": "Solutions.Source_FermatDivisorHeightMachine",
+      "source": "Heights/Curve/DivisorHeight.lean:112–309 at 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "source_span": {
+        "start_line": 39,
+        "end_line": 42
+      },
+      "fidelity": "Exact all-point/source statement; no new mathematical assumption, proof API adaptations recorded separately",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep.congr_simp",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep_spec",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": true,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_ratCast",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_ratCast",
+      "path": "Solutions/Source_FermatPolarIntegrality.lean",
+      "module": "Solutions.Source_FermatPolarIntegrality",
+      "source": "Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Absolute/Northcott.lean:25–38",
+      "source_span": {
+        "start_line": 55,
+        "end_line": 64
+      },
+      "fidelity": "Exact rational specialization; preceding embedding lemma inlined in proof; no new upstream import",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.exists_int_smul_integral",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.exists_int_smul_integral",
+      "path": "Solutions/Source_FermatPolarAbsoluteExtension.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteExtension",
+      "source": "Heights/Absolute/Extension.lean",
+      "source_span": {
+        "start_line": 179,
+        "end_line": 188
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mulHeight_algebraMap"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.Qbar",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.Qbar",
+      "path": "Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "module": "Solutions.Source_FermatPolarAbsoluteBasic",
+      "source": "Heights/Absolute/Basic.lean",
+      "source_span": {
+        "start_line": 43,
+        "end_line": 44
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_sumElim_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom_self",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_eq_comp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight.congr_simp",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_add_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_equiv",
+        "_private.Solutions.Source_FermatPolarAbsoluteBasic.0.AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mem_adjoin_pair_left",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pair_one_of_notMem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_inv",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_mul_table",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_pos_real",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_ringHom",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coe_coords",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_comp_ringHom_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finrank_mul_logHeight_one_comp_ringHom_eq_sum",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq_gen",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_eq",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_nonneg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_eq_of_forall_mem",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.fieldOf",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_mul_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_comp_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.coords",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.isIntegral",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_smul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.abs_logHeight_one_add_sub_le",
+        "_private.Solutions.Source_FermatPolarAbsoluteBasic.0.AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.mem_adjoin_pair_right",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_neg",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_eq_of_mul",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight.eq_1",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finiteDimensional_adjoin",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_ratCast"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_of_isNonarchimedean",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_of_isNonarchimedean",
+      "path": "Solutions/Source_FermatPolarRootBound.lean",
+      "module": "Solutions.Source_FermatPolarRootBound",
+      "source": "Heights/Absolute/RootBound.lean",
+      "source_span": {
+        "start_line": 71,
+        "end_line": 99
+      },
+      "fidelity": "Fixed reference proof transported into local namespaces; recorded API fixes change proof terms only, retaining exact source statements",
+      "direct_consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_of_isNonarchimedean",
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_iSup_of_isNonarchimedean"
+      ],
+      "needed_by_target_or_instance_roots": true,
+      "is_new": false,
+      "proof_status": "Local source module and exhaustive axiom audit passed; exact target ACCEPTED. Helper is not a separate platform theorem node.",
+      "platform_solution_inlined": true
+    }
+  ],
+  "compiler_inventory": {
+    "graph_sha256": "fe3eba6e139dc58ebc747e4bb42c8fd6740a606ae1e7bba3be47b9be4df7bfd7",
+    "authored": 144,
+    "retained": 122,
+    "new_authored": 23,
+    "extra_instance_roots": [
+      "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.finiteDimensional_adjoin",
+      "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.polar_finiteDimensional_fieldOf"
+    ],
+    "unconsumed_new_outputs": []
+  },
+  "compiled": true,
+  "platform_status": "Proved",
+  "canonicalEstimate": "Open",
+  "closed_proof": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison",
+    "submission_id": "91918c74-a21f-4903-a42a-37aa111fdd77",
+    "status": "ACCEPTED",
+    "existing_proved_dependencies": [
+      "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+      "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional"
+    ],
+    "existing_proved_dependency_ids": {
+      "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear": "ad423628-d8a1-4e5e-8a80-0950952bedaf"
+    },
+    "classification": "Direct accepted source proof; existing private Proved theorem dependencies recorded by actual API graph"
+  },
+  "graph_counts": {
+    "accepted_reductions": 34,
+    "published_children": 78,
+    "dependency_edges": 96,
+    "open_frontier": 17,
+    "direct_closed_children": 38
+  },
+  "new_reductions": [
+    {
+      "parent": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison",
+      "children": [
+        "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+        "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists",
+        "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+        "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear",
+        "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional"
+      ],
+      "submission_id": "91918c74-a21f-4903-a42a-37aa111fdd77",
+      "status": "ACCEPTED"
+    }
+  ],
+  "new_dependencies": [
+    {
+      "id": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.functionZeroPoleDegrees",
+      "status": "Proved"
+    },
+    {
+      "id": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+      "status": "Proved"
+    },
+    {
+      "id": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationExists",
+      "status": "Proved"
+    },
+    {
+      "id": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional",
+      "status": "Proved"
+    },
+    {
+      "id": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear",
+      "status": "Proved"
+    }
+  ],
+  "automatically_closed_parents": []
+}

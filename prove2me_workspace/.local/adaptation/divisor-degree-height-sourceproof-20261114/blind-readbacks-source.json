@@ -1,0 +1,1533 @@
+{
+  "schema_version": "blind-trilingual-readback-v1",
+  "scope": "four future source units only",
+  "requested_model": "gpt-6.1-sol",
+  "actual_backend": null,
+  "readback_model": null,
+  "model_attribution_note": "Requested model is recorded separately; no runtime backend identifier was exposed to this auditor.",
+  "method": {
+    "independent_readback": true,
+    "semantic_evidence": "formal Lean code and necessary formal definitions only",
+    "excluded_semantic_evidence": [
+      "README",
+      "SOURCE_LEDGER",
+      "paper text",
+      "comments and proof narrative",
+      "author intent"
+    ],
+    "english_status": "original independent readback, frozen in this artifact",
+    "translations_status": "Simplified Chinese and Japanese translations of each English row; not three independent audits",
+    "compiler_used": false,
+    "mcp_ci_used": false,
+    "platform_api_used": false,
+    "git_used": false
+  },
+  "wrapper_policy": "Existing original wrapper readback is to be reused externally; no new wrapper row is included.",
+  "source_manifest": [
+    {
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorTupleEquivalence.lean",
+      "sha256": "95cab321cb0d57c33a33a449bc305d73a314b5367bd754fd4326dd603703e60e",
+      "bytes": 3766,
+      "declarations": 2
+    },
+    {
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatPositiveDegreePolar.lean",
+      "sha256": "def8a455323a8a06780174450e02484bde28e60887f7fba7f26f9ca5ff083d42",
+      "bytes": 3256,
+      "declarations": 2
+    },
+    {
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "bytes": 13103,
+      "declarations": 17
+    },
+    {
+      "path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorDegreeHeightComparison.lean",
+      "sha256": "96e979747c900d62895c60ecd885658acc2aebec7631476545a1f0111b405a4e",
+      "bytes": 2719,
+      "declarations": 2
+    }
+  ],
+  "necessary_formal_definition_manifest": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+      "needed_declaration_names": [
+        "IsCurveField"
+      ],
+      "semantic_use": "formal definitions only; no documentary comments, source notes, or proof narrative used"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "needed_declaration_names": [
+        "Ω",
+        "Model",
+        "Place",
+        "ResidueField",
+        "degree",
+        "QbarPoint",
+        "eval",
+        "fieldOf",
+        "PlacesDiscrete",
+        "ResiduesFinite",
+        "ord",
+        "Divisor",
+        "divisorDegree"
+      ],
+      "semantic_use": "formal definitions only; no documentary comments, source notes, or proof narrative used"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "needed_declaration_names": [
+        "poleMultiplicity",
+        "PolarPresentation",
+        "functionHeight",
+        "divHeight"
+      ],
+      "semantic_use": "formal definitions only; no documentary comments, source notes, or proof narrative used"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatFunctionDivisors.lean",
+      "sha256": "1219586c9d82f822b770482fb1a267d6499bff9773399cb54de8e6564f26badd",
+      "needed_declaration_names": [
+        "functionDivisor",
+        "functionPoleDivisor"
+      ],
+      "semantic_use": "formal definitions only; no documentary comments, source notes, or proof narrative used"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarTupleHeight.lean",
+      "sha256": "aa5a9b6afdd87776cc03f12b79a91b8a0436076e05488f1dd8f9380347eef541",
+      "needed_declaration_names": [
+        "normIdx",
+        "minOrd",
+        "evalTuple",
+        "tupleHeight"
+      ],
+      "semantic_use": "formal definitions only; no documentary comments, source notes, or proof narrative used"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "sha256": "f878dd84a50d2dc02b7398a0189fa32dc884a925c285bd3d8205f7e8a8498bcc",
+      "needed_declaration_names": [
+        "Qbar",
+        "fieldOf",
+        "coords",
+        "logHeight"
+      ],
+      "semantic_use": "formal definitions only; no documentary comments, source notes, or proof narrative used"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiComparisons.lean",
+      "sha256": "c8dd47e099ee4ca6a1715d4034f1c375617d89439130ce8494a720a9359d2813",
+      "needed_declaration_names": [
+        "DivisorDegreeHeightComparison"
+      ],
+      "semantic_use": "formal definitions only; no documentary comments, source notes, or proof narrative used"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "needed_declaration_names": [
+        "ord"
+      ],
+      "semantic_use": "formal definitions only; no documentary comments, source notes, or proof narrative used"
+    }
+  ],
+  "context_notes": [
+    "Source signatures are raw, not pretty-printed or elaborated.",
+    "Spans use one-based line/column coordinates and zero-based UTF-8 byte offsets; end is exclusive.",
+    "All authored declarations are public; no authored structures, classes, instances or meaningful fields occur in these four files.",
+    "The variable context records in-scope commands without pretending that every section variable is generalized.",
+    "No new terminology from pending TERM-002/004/005/006 is needed; Japanese ordinary algebraic-geometric terms are conventional compositional translations, not alleged paper quotations."
+  ],
+  "readbacks": [
+    {
+      "name": "abs_tupleHeight_sub_le_of_minOrd_eq",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem abs_tupleHeight_sub_le_of_minOrd_eq {s : ι → K} {t : κ → K} (hs : ∃ i, s i ≠ 0)\n    (ht : ∃ j, t j ≠ 0) (heq : ∀ P : Place K, minOrd P s = minOrd P t) :\n    ∃ C, ∀ x : QbarPoint K, |tupleHeight s x - tupleHeight t x| ≤ C",
+      "signature_span": {
+        "start_byte": 932,
+        "end_byte_exclusive": 1182,
+        "start_line": 23,
+        "start_column": 1,
+        "end_line": 25,
+        "end_column_exclusive": 68
+      },
+      "signature_sha256": "24c4899e70d0a88569a22e5c103ce993816d7434f6cc7315bfc8e7e3c8630c32",
+      "declaration_span": {
+        "start_byte": 932,
+        "end_byte_exclusive": 1514,
+        "start_line": 23,
+        "start_column": 1,
+        "end_line": 30,
+        "end_column_exclusive": 40
+      },
+      "declaration_sha256": "a56dfe6a8dd964dd1fb111324e5af9e7a81638efe53370f170b600bdaac53682",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorTupleEquivalence.lean",
+      "source_sha256": "95cab321cb0d57c33a33a449bc305d73a314b5367bd754fd4326dd603703e60e",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K] {ι κ ι' κ' : Type*}\n  [Fintype ι] [Fintype κ] [Fintype ι'] [Fintype κ']"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $K$ be a characteristic-zero field with an element $t$ transcendental over $ℚ$ such that $K/ℚ(t)$ is finite-dimensional. A place $P$ means a proper valuation subring of $K$ containing $ℚ$, including places at infinity; $o_P$ is its normalized integer order, with $o_P(0)=0$. A point $x$ consists of such a place and a ring embedding of its entire residue field into $\\overline{ℚ}$. For a finite tuple $s$, $m_P(s)$ is the least $o_P(s_i)$ among its nonzero entries, or $0$ if all entries are zero. Its height $h_s(x)$ is $0$ for the zero tuple; otherwise, choose a nonzero entry of least order at $x.P$, divide every entry by it, evaluate in the residue field and its specified embedding, and take the relative logarithmic projective height of these algebraic coordinates in their generated field, divided by that field’s degree over $ℚ$. For finite index types $ι,κ$, tuples $s:ι→K$ and $t:κ→K$, each with at least one nonzero entry, suppose $m_P(s)=m_P(t)$ at every place. There exists $C∈ℝ$ such that $|h_s(x)-h_t(x)|≤C$ for every point $x$. The nonzero-entry assumptions exclude empty index types. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "设 $K$ 是特征零域，存在在 $ℚ$ 上超越的元素 $t$，使 $K/ℚ(t)$ 为有限维扩张。处 $P$ 指 $K$ 中包含 $ℚ$ 的真赋值子环，也包括无穷远处；$o_P$ 是其归一化整数阶，并约定 $o_P(0)=0$。点 $x$ 由这样的处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成。有限元组 $s$ 的 $m_P(s)$ 是所有非零分量的阶的最小值；全零时取 $0$。元组高度 $h_s(x)$ 在全零时取 $0$；否则选取在 $x.P$ 处阶最小的非零分量，用它除各分量，在剩余域及指定嵌入中求值，再将所得代数坐标在它们生成的域中的相对对数射影高度除以该域在 $ℚ$ 上的次数。任取有限指标类型 $ι,κ$ 以及各自至少有一个非零分量的元组 $s:ι→K$、$t:κ→K$。若每个处都满足 $m_P(s)=m_P(t)$，则存在 $C∈ℝ$，使每个点 $x$ 都满足 $|h_s(x)-h_t(x)|≤C$。非零分量假设排除了空指标类型。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的な元 $t$ で $K/ℚ(t)$ が有限次元となるものが存在するとする。素点 $P$ は $ℚ$ を含む $K$ の真の付値部分環であり、無限遠の素点も含む。$o_P$ は正規化された整数値の位数で、$o_P(0)=0$ とする。点 $x$ はこのような素点と、その剰余体全体から $\\overline{ℚ}$ への環埋め込みからなる。有限組 $s$ に対し、$m_P(s)$ は非零成分の位数の最小値であり、全成分が零なら $0$ である。高さ $h_s(x)$ は零の組では $0$、それ以外では $x.P$ で位数最小の非零成分で各成分を割り、剰余体と指定の埋め込みで評価した代数的座標の生成体における相対対数射影高さを、その生成体の $ℚ$ 上の次数で割った値である。有限添字型 $ι,κ$ と、それぞれ少なくとも一つの非零成分を持つ組 $s:ι→K$、$t:κ→K$ を取る。すべての素点で $m_P(s)=m_P(t)$ なら、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|h_s(x)-h_t(x)|≤C$ となる。非零成分の仮定により空の添字型は除かれる。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "abs_tupleHeight_sub_sub_le",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem abs_tupleHeight_sub_sub_le {s : ι → K} {s' : κ → K} {u : ι' → K} {u' : κ' → K}\n    (hs : ∃ i, s i ≠ 0) (hs' : ∃ i, s' i ≠ 0) (hu : ∃ i, u i ≠ 0) (hu' : ∃ i, u' i ≠ 0)\n    {r : K} (hr : r ≠ 0)\n    (heq : ∀ P : Place K, minOrd P s + minOrd P u' = P.ord r + (minOrd P u + minOrd P s')) :\n    ∃ C, ∀ x : QbarPoint K,\n      |(tupleHeight s x - tupleHeight s' x) - (tupleHeight u x - tupleHeight u' x)| ≤ C",
+      "signature_span": {
+        "start_byte": 1742,
+        "end_byte_exclusive": 2188,
+        "start_line": 35,
+        "start_column": 1,
+        "end_line": 40,
+        "end_column_exclusive": 88
+      },
+      "signature_sha256": "fe58fc982bd8920afc8117f0260a217e0d3ece8cee49f35a87d0b553473a61fc",
+      "declaration_span": {
+        "start_byte": 1742,
+        "end_byte_exclusive": 3713,
+        "start_line": 35,
+        "start_column": 1,
+        "end_line": 69,
+        "end_column_exclusive": 18
+      },
+      "declaration_sha256": "749ab43a49e3efc5f30a18f3e5ae66c56ec4d6e892aed9a3159cb82b6e4a9282",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorTupleEquivalence.lean",
+      "source_sha256": "95cab321cb0d57c33a33a449bc305d73a314b5367bd754fd4326dd603703e60e",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K] {ι κ ι' κ' : Type*}\n  [Fintype ι] [Fintype κ] [Fintype ι'] [Fintype κ']"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $K$ be a characteristic-zero field with an element $t$ transcendental over $ℚ$ such that $K/ℚ(t)$ is finite-dimensional. A place $P$ means a proper valuation subring of $K$ containing $ℚ$, including places at infinity; $o_P$ is its normalized integer order, with $o_P(0)=0$. A point $x$ consists of such a place and a ring embedding of its entire residue field into $\\overline{ℚ}$. For a finite tuple $s$, $m_P(s)$ is the least $o_P(s_i)$ among its nonzero entries, or $0$ if all entries are zero. Its height $h_s(x)$ is $0$ for the zero tuple; otherwise, choose a nonzero entry of least order at $x.P$, divide every entry by it, evaluate in the residue field and its specified embedding, and take the relative logarithmic projective height of these algebraic coordinates in their generated field, divided by that field’s degree over $ℚ$. For four finite index types $ι,κ,ι′,κ′$ and tuples $s:ι→K$, $s′:κ→K$, $u:ι′→K$, $u′:κ′→K$, each having a nonzero entry, take $r∈K$ with $r≠0$. If every place satisfies $m_P(s)+m_P(u′)=o_P(r)+m_P(u)+m_P(s′)$, then there exists $C∈ℝ$ such that $|(h_s(x)-h_{s′}(x))-(h_u(x)-h_{u′}(x))|≤C$ for every point $x$. All four index types are consequently nonempty. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "设 $K$ 是特征零域，存在在 $ℚ$ 上超越的元素 $t$，使 $K/ℚ(t)$ 为有限维扩张。处 $P$ 指 $K$ 中包含 $ℚ$ 的真赋值子环，也包括无穷远处；$o_P$ 是其归一化整数阶，并约定 $o_P(0)=0$。点 $x$ 由这样的处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成。有限元组 $s$ 的 $m_P(s)$ 是所有非零分量的阶的最小值；全零时取 $0$。元组高度 $h_s(x)$ 在全零时取 $0$；否则选取在 $x.P$ 处阶最小的非零分量，用它除各分量，在剩余域及指定嵌入中求值，再将所得代数坐标在它们生成的域中的相对对数射影高度除以该域在 $ℚ$ 上的次数。任取四个有限指标类型 $ι,κ,ι′,κ′$ 以及各自含非零分量的元组 $s:ι→K$、$s′:κ→K$、$u:ι′→K$、$u′:κ′→K$，再取 $r∈K$ 且 $r≠0$。若每个处均有 $m_P(s)+m_P(u′)=o_P(r)+m_P(u)+m_P(s′)$，则存在 $C∈ℝ$，使每个点 $x$ 都满足 $|(h_s(x)-h_{s′}(x))-(h_u(x)-h_{u′}(x))|≤C$。四个指标类型因而均非空。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的な元 $t$ で $K/ℚ(t)$ が有限次元となるものが存在するとする。素点 $P$ は $ℚ$ を含む $K$ の真の付値部分環であり、無限遠の素点も含む。$o_P$ は正規化された整数値の位数で、$o_P(0)=0$ とする。点 $x$ はこのような素点と、その剰余体全体から $\\overline{ℚ}$ への環埋め込みからなる。有限組 $s$ に対し、$m_P(s)$ は非零成分の位数の最小値であり、全成分が零なら $0$ である。高さ $h_s(x)$ は零の組では $0$、それ以外では $x.P$ で位数最小の非零成分で各成分を割り、剰余体と指定の埋め込みで評価した代数的座標の生成体における相対対数射影高さを、その生成体の $ℚ$ 上の次数で割った値である。四つの有限添字型 $ι,κ,ι′,κ′$ と、それぞれ非零成分を持つ組 $s:ι→K$、$s′:κ→K$、$u:ι′→K$、$u′:κ′→K$、および $r≠0$ を満たす $r∈K$ を取る。すべての素点で $m_P(s)+m_P(u′)=o_P(r)+m_P(u)+m_P(s′)$ なら、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|(h_s(x)-h_{s′}(x))-(h_u(x)-h_{u′}(x))|≤C$ となる。したがって四つの添字型はいずれも空でない。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "divisorDegree_zsmul",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem divisorDegree_zsmul {N : ℕ} (M : Model N) (A : Divisor M) (n : ℤ) :\n    divisorDegree M (n • A) = n * divisorDegree M A",
+      "signature_span": {
+        "start_byte": 822,
+        "end_byte_exclusive": 955,
+        "start_line": 20,
+        "start_column": 1,
+        "end_line": 21,
+        "end_column_exclusive": 52
+      },
+      "signature_sha256": "595a81c4d616d85b2472f22c7e9bf0c3b56c254227c1a75aa11079059d61703d",
+      "declaration_span": {
+        "start_byte": 822,
+        "end_byte_exclusive": 1030,
+        "start_line": 20,
+        "start_column": 1,
+        "end_line": 22,
+        "end_column_exclusive": 69
+      },
+      "declaration_sha256": "9b4e3cf30f8b693763657c31520bcb1ce3c78500197f168cd6a8d657994da073",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatPositiveDegreePolar.lean",
+      "source_sha256": "def8a455323a8a06780174450e02484bde28e60887f7fba7f26f9ca5ff083d42",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_zsmul",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+      "section_names": [],
+      "active_section_variable_commands_raw": [],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Write $\\deg A=\\sum_P A(P)[κ(P):ℚ]$, using vector-space finrank for each residue-field degree. For every divisor $A$ and integer $n$, $\\deg(nA)=n\\deg A$; multiplication acts on every coefficient and includes $n=0$ and negative $n$. No discrete-valuation or residue-finiteness assumption is an argument.",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。记 $\\deg A=\\sum_P A(P)[κ(P):ℚ]$，剩余域次数按向量空间有限秩计算。对任意除子 $A$ 和整数 $n$，$\\deg(nA)=n\\deg A$；乘法逐系数进行，包括零和负整数。离散赋值假设和剩余域有限性假设都不是本声明的参数。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$\\deg A=\\sum_P A(P)[κ(P):ℚ]$ と書き、剰余体の次数はベクトル空間の有限ランクで計算する。任意の因子 $A$ と整数 $n$ について $\\deg(nA)=n\\deg A$ である。係数ごとの積であり、零および負の整数も含む。離散付値の仮定も剰余体の有限性の仮定もこの宣言の引数ではない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "positiveDegreePolarRealization",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem positiveDegreePolarRealization {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) {A : Divisor M} (hA : 0 < divisorDegree M A) :\n    ∃ n : ℕ, 0 < n ∧ ∃ f r : M.K, r ≠ 0 ∧\n      functionPoleDivisor M hDVR f = n • A + functionDivisor M hDVR r",
+      "signature_span": {
+        "start_byte": 1179,
+        "end_byte_exclusive": 1444,
+        "start_line": 26,
+        "start_column": 1,
+        "end_line": 29,
+        "end_column_exclusive": 70
+      },
+      "signature_sha256": "62c0b15fbe79d75c09715cbd5819023d480226ececf661fa4e8a3a55b87e4f4d",
+      "declaration_span": {
+        "start_byte": 1179,
+        "end_byte_exclusive": 3215,
+        "start_line": 26,
+        "start_column": 1,
+        "end_line": 73,
+        "end_column_exclusive": 70
+      },
+      "declaration_sha256": "469d26cfca52d3a9073eb72914128579ed91b2907ff6847165a398fe55612ad3",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatPositiveDegreePolar.lean",
+      "source_sha256": "def8a455323a8a06780174450e02484bde28e60887f7fba7f26f9ca5ff083d42",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.positiveDegreePolarRealization",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+      "section_names": [],
+      "active_section_variable_commands_raw": [],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. For every divisor $A$ with $0<\\deg A$, there exist a natural number $n>0$ and actual elements $f,r∈K$ with $r≠0$ such that $\\operatorname{pole}(f)=nA+\\operatorname{div}(r)$ as divisors, hence coefficientwise at all places. There is no nonzero hypothesis on $f$, no uniqueness conclusion, no height hypothesis, and no residue-finiteness argument in the statement.",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。对任意满足 $0<\\deg A$ 的除子 $A$，存在正自然数 $n$ 及实际域元素 $f,r∈K$，满足 $r≠0$ 且 $\\operatorname{pole}(f)=nA+\\operatorname{div}(r)$。这是除子的等式，因而在所有处逐系数成立。没有要求 $f≠0$，也没有唯一性结论、高度假设或作为参数给出的剩余域有限性假设。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。$0<\\deg A$ を満たす任意の因子 $A$ に対し、正の自然数 $n$ と実際の体の元 $f,r∈K$ が存在し、$r≠0$ かつ $\\operatorname{pole}(f)=nA+\\operatorname{div}(r)$ となる。これは因子の等式であり、すべての素点で係数ごとに成り立つ。$f≠0$ の仮定、一意性の結論、高さの仮定、引数としての剰余体有限性の仮定はない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "minOrd_single",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem minOrd_single {r : K} (hr : r ≠ 0) (P : Place K) : minOrd P ![r] = P.ord r",
+      "signature_span": {
+        "start_byte": 970,
+        "end_byte_exclusive": 1054,
+        "start_line": 23,
+        "start_column": 1,
+        "end_line": 23,
+        "end_column_exclusive": 83
+      },
+      "signature_sha256": "d31ff23655e265e15b562aa85f90905763cec4832cf058ecc1fa2093a5738a3c",
+      "declaration_span": {
+        "start_byte": 970,
+        "end_byte_exclusive": 1232,
+        "start_line": 23,
+        "start_column": 1,
+        "end_line": 28,
+        "end_column_exclusive": 6
+      },
+      "declaration_sha256": "3a983f68f23b76d7c42cac5e31c0c13fc563760cacabe722b398123530684cfc",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_single",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $K$ be a characteristic-zero field with an element $t$ transcendental over $ℚ$ such that $K/ℚ(t)$ is finite-dimensional. A place $P$ means a proper valuation subring of $K$ containing $ℚ$, including places at infinity; $o_P$ is its normalized integer order, with $o_P(0)=0$. A point $x$ consists of such a place and a ring embedding of its entire residue field into $\\overline{ℚ}$. For a finite tuple $s$, $m_P(s)$ is the least $o_P(s_i)$ among its nonzero entries, or $0$ if all entries are zero. Its height $h_s(x)$ is $0$ for the zero tuple; otherwise, choose a nonzero entry of least order at $x.P$, divide every entry by it, evaluate in the residue field and its specified embedding, and take the relative logarithmic projective height of these algebraic coordinates in their generated field, divided by that field’s degree over $ℚ$. For every $r∈K$ with $r≠0$ and every place $P$, the singleton tuple satisfies $m_P((r))=o_P(r)$.",
+        "zh-Hans": "设 $K$ 是特征零域，存在在 $ℚ$ 上超越的元素 $t$，使 $K/ℚ(t)$ 为有限维扩张。处 $P$ 指 $K$ 中包含 $ℚ$ 的真赋值子环，也包括无穷远处；$o_P$ 是其归一化整数阶，并约定 $o_P(0)=0$。点 $x$ 由这样的处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成。有限元组 $s$ 的 $m_P(s)$ 是所有非零分量的阶的最小值；全零时取 $0$。元组高度 $h_s(x)$ 在全零时取 $0$；否则选取在 $x.P$ 处阶最小的非零分量，用它除各分量，在剩余域及指定嵌入中求值，再将所得代数坐标在它们生成的域中的相对对数射影高度除以该域在 $ℚ$ 上的次数。对任意非零 $r∈K$ 和任意处 $P$，单分量元组满足 $m_P((r))=o_P(r)$。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的な元 $t$ で $K/ℚ(t)$ が有限次元となるものが存在するとする。素点 $P$ は $ℚ$ を含む $K$ の真の付値部分環であり、無限遠の素点も含む。$o_P$ は正規化された整数値の位数で、$o_P(0)=0$ とする。点 $x$ はこのような素点と、その剰余体全体から $\\overline{ℚ}$ への環埋め込みからなる。有限組 $s$ に対し、$m_P(s)$ は非零成分の位数の最小値であり、全成分が零なら $0$ である。高さ $h_s(x)$ は零の組では $0$、それ以外では $x.P$ で位数最小の非零成分で各成分を割り、剰余体と指定の埋め込みで評価した代数的座標の生成体における相対対数射影高さを、その生成体の $ℚ$ 上の次数で割った値である。任意の非零元 $r∈K$ と素点 $P$ に対し、一成分の組は $m_P((r))=o_P(r)$ を満たす。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "tupleHeight_single",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem tupleHeight_single {r : K} (hr : r ≠ 0) (x : QbarPoint K) : tupleHeight ![r] x = 0",
+      "signature_span": {
+        "start_byte": 1283,
+        "end_byte_exclusive": 1375,
+        "start_line": 31,
+        "start_column": 1,
+        "end_line": 31,
+        "end_column_exclusive": 91
+      },
+      "signature_sha256": "8487a28271d87a363e84e18d26d03af6ab84a9abe8d9dc31fdb778336e56ad7d",
+      "declaration_span": {
+        "start_byte": 1283,
+        "end_byte_exclusive": 1566,
+        "start_line": 31,
+        "start_column": 1,
+        "end_line": 34,
+        "end_column_exclusive": 14
+      },
+      "declaration_sha256": "98e8deb68de4f2a1d0114bd082349245627b6741d4653f645962a4858ec3b944",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $K$ be a characteristic-zero field with an element $t$ transcendental over $ℚ$ such that $K/ℚ(t)$ is finite-dimensional. A place $P$ means a proper valuation subring of $K$ containing $ℚ$, including places at infinity; $o_P$ is its normalized integer order, with $o_P(0)=0$. A point $x$ consists of such a place and a ring embedding of its entire residue field into $\\overline{ℚ}$. For a finite tuple $s$, $m_P(s)$ is the least $o_P(s_i)$ among its nonzero entries, or $0$ if all entries are zero. Its height $h_s(x)$ is $0$ for the zero tuple; otherwise, choose a nonzero entry of least order at $x.P$, divide every entry by it, evaluate in the residue field and its specified embedding, and take the relative logarithmic projective height of these algebraic coordinates in their generated field, divided by that field’s degree over $ℚ$. For every $r∈K$ with $r≠0$ and every point $x$, the singleton tuple has height $h_{(r)}(x)=0$, even when $r$ has a zero or pole at the underlying place, because this is the tuple height defined by normalization.",
+        "zh-Hans": "设 $K$ 是特征零域，存在在 $ℚ$ 上超越的元素 $t$，使 $K/ℚ(t)$ 为有限维扩张。处 $P$ 指 $K$ 中包含 $ℚ$ 的真赋值子环，也包括无穷远处；$o_P$ 是其归一化整数阶，并约定 $o_P(0)=0$。点 $x$ 由这样的处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成。有限元组 $s$ 的 $m_P(s)$ 是所有非零分量的阶的最小值；全零时取 $0$。元组高度 $h_s(x)$ 在全零时取 $0$；否则选取在 $x.P$ 处阶最小的非零分量，用它除各分量，在剩余域及指定嵌入中求值，再将所得代数坐标在它们生成的域中的相对对数射影高度除以该域在 $ℚ$ 上的次数。对任意非零 $r∈K$ 和任意点 $x$，单分量元组的高度为 $h_{(r)}(x)=0$；也包括 $r$ 在该处有零点或极点的情形，所用的是先归一化再求值的元组高度。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的な元 $t$ で $K/ℚ(t)$ が有限次元となるものが存在するとする。素点 $P$ は $ℚ$ を含む $K$ の真の付値部分環であり、無限遠の素点も含む。$o_P$ は正規化された整数値の位数で、$o_P(0)=0$ とする。点 $x$ はこのような素点と、その剰余体全体から $\\overline{ℚ}$ への環埋め込みからなる。有限組 $s$ に対し、$m_P(s)$ は非零成分の位数の最小値であり、全成分が零なら $0$ である。高さ $h_s(x)$ は零の組では $0$、それ以外では $x.P$ で位数最小の非零成分で各成分を割り、剰余体と指定の埋め込みで評価した代数的座標の生成体における相対対数射影高さを、その生成体の $ℚ$ 上の次数で割った値である。任意の非零元 $r∈K$ と点 $x$ に対し、一成分の組の高さは $h_{(r)}(x)=0$ である。基となる素点で $r$ が零点または極を持つ場合も含み、用いるのは正規化後に評価する組の高さである。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "polarRep",
+      "kind": "def",
+      "private": false,
+      "raw_signature": "noncomputable def polarRep (D : Divisor M) : M.K × M.K",
+      "signature_span": {
+        "start_byte": 1749,
+        "end_byte_exclusive": 1804,
+        "start_line": 40,
+        "start_column": 1,
+        "end_line": 40,
+        "end_column_exclusive": 55
+      },
+      "signature_sha256": "82c05f780817117a19aa7e1d96cf058bf9dca25559bf440afd7810bd14ceacf8",
+      "declaration_span": {
+        "start_byte": 1749,
+        "end_byte_exclusive": 1887,
+        "start_line": 40,
+        "start_column": 1,
+        "end_line": 42,
+        "end_column_exclusive": 13
+      },
+      "declaration_sha256": "5ad0f9df2eb5f873f078cc2ea20cd1864c26f575eaa4a1f6fafbcb68f5a8f6de",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. For each divisor $D$, define a pair in $K×K$ by choosing an element $R$ of the nonempty type of polar presentations of $D$ and returning $(R.f,R.g)$. Such a presentation has $R.f,R.g∈K$ and satisfies $D(P)=\\operatorname{pole}(R.f)(P)-\\operatorname{pole}(R.g)(P)$ at every place. This is a noncomputable choice, with neither component required to be nonzero and without a uniqueness assertion.",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。对每个除子 $D$，从 $D$ 的极除子表示构成的非空类型中选取一个 $R$，返回 $(R.f,R.g)∈K×K$。这种表示的两个分量属于 $K$，且每个处都有 $D(P)=\\operatorname{pole}(R.f)(P)-\\operatorname{pole}(R.g)(P)$。这是非计算性的选择；不要求任一分量非零，也不宣称选择唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。各因子 $D$ に対し、その極因子表示の非空な型から一つの $R$ を選び、$(R.f,R.g)∈K×K$ を返すと定める。この表示の成分は $K$ に属し、各素点で $D(P)=\\operatorname{pole}(R.f)(P)-\\operatorname{pole}(R.g)(P)$ を満たす。非計算的な選択であり、いずれの成分にも非零性を要求せず、選択の一意性も主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "polarRep_spec",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem polarRep_spec (D : Divisor M) :\n    D = functionPoleDivisor M hDVR (polarRep M hDVR hRF D).1 -\n      functionPoleDivisor M hDVR (polarRep M hDVR hRF D).2",
+      "signature_span": {
+        "start_byte": 1889,
+        "end_byte_exclusive": 2050,
+        "start_line": 44,
+        "start_column": 1,
+        "end_line": 46,
+        "end_column_exclusive": 59
+      },
+      "signature_sha256": "f5ddd4d227efe0abdbf960e514da33213dbd26ee0159677c0142f4a4ec377ef8",
+      "declaration_span": {
+        "start_byte": 1889,
+        "end_byte_exclusive": 2154,
+        "start_line": 44,
+        "start_column": 1,
+        "end_line": 49,
+        "end_column_exclusive": 23
+      },
+      "declaration_sha256": "1b11268fda79a1de62c52d23e01395b205a16315ab3b00dfcf2dedd248fd46ac",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep_spec",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. For each divisor $D$, let $(f_D,g_D)$ be the pair chosen by selecting one polar presentation of $D$. Then $D=\\operatorname{pole}(f_D)-\\operatorname{pole}(g_D)$ as finitely supported divisors, so the equality holds at every place. No uniqueness or nonzero-component condition is asserted.",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。对每个除子 $D$，设 $(f_D,g_D)$ 是从 $D$ 的极除子表示中选定一份后得到的函数对。则作为有限支撑除子，$D=\\operatorname{pole}(f_D)-\\operatorname{pole}(g_D)$，所以等式在所有处逐项成立。未断言唯一性，也未要求分量非零。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。各因子 $D$ について、$(f_D,g_D)$ を $D$ の極因子表示を一つ選んで得られる関数の組とする。有限台を持つ因子として $D=\\operatorname{pole}(f_D)-\\operatorname{pole}(g_D)$ であり、すべての素点で係数が一致する。一意性も成分の非零性も主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight",
+      "kind": "def",
+      "private": false,
+      "raw_signature": "noncomputable def chosenHeight (D : Divisor M) (x : QbarPoint M.K) : ℝ",
+      "signature_span": {
+        "start_byte": 2311,
+        "end_byte_exclusive": 2383,
+        "start_line": 53,
+        "start_column": 1,
+        "end_line": 53,
+        "end_column_exclusive": 71
+      },
+      "signature_sha256": "0b524534f62c3df26c291b6add70ea3540f45765611d527bdbb8800fc9407553",
+      "declaration_span": {
+        "start_byte": 2311,
+        "end_byte_exclusive": 2486,
+        "start_line": 53,
+        "start_column": 1,
+        "end_line": 55,
+        "end_column_exclusive": 50
+      },
+      "declaration_sha256": "b4870b9ab0bc8bc9acb1212d939f5140c6154582ddb806322ea54c22c48aa8de",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. This noncomputable definition assigns to each divisor $D$ and each point $x$ the real number $H_D(x)$ just specified. It uses the internally selected pair for $D$, and takes no caller-supplied polar presentation or arbitrary function on points as an argument.",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。此非计算性定义把每个除子 $D$ 和每个点 $x$ 映为上述实数 $H_D(x)$。它使用为 $D$ 内部选定的函数对，并不以调用者给定的极除子表示或任意点函数为参数。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。この非計算的定義は、各因子 $D$ と各点 $x$ に、上記の実数 $H_D(x)$ を対応させる。$D$ に対して内部で選択した関数の組を使い、呼出し側が与える極因子表示や任意の点上の関数は引数に取らない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "minOrd_pair_one",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem minOrd_pair_one (f : M.K) (P : Place M.K) :\n    minOrd P ![1, f] = -functionPoleDivisor M hDVR f P",
+      "signature_span": {
+        "start_byte": 2488,
+        "end_byte_exclusive": 2594,
+        "start_line": 57,
+        "start_column": 1,
+        "end_line": 58,
+        "end_column_exclusive": 55
+      },
+      "signature_sha256": "8ae9113fa190aa605ac7ee3ac831afa2310fda1cad6b63fc3c1d9d1bb9a509b7",
+      "declaration_span": {
+        "start_byte": 2488,
+        "end_byte_exclusive": 2716,
+        "start_line": 57,
+        "start_column": 1,
+        "end_line": 60,
+        "end_column_exclusive": 42
+      },
+      "declaration_sha256": "e9a3c62a5b46f83cdb538a3c91be35e9c951848d39e548a8f8a6b415f9e7d5b0",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_pair_one",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. With the curve-field structure on $K$ in scope, for every $f∈K$ and place $P$, let $m_P((1,f))$ be the minimum order of its nonzero entries. Then $m_P((1,f))=-\\operatorname{pole}(f)(P)$. This includes $f=0$; the zero entry is excluded from the minimum and the pole coefficient is zero.",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。在作用域内给定 $K$ 的曲线函数域结构。对任意 $f∈K$ 和处 $P$，令 $m_P((1,f))$ 为元组非零分量的最小阶，则 $m_P((1,f))=-\\operatorname{pole}(f)(P)$。包括 $f=0$；零分量不参与取最小值，极点系数为零。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。$K$ の曲線関数体構造を作用域内で与える。任意の $f∈K$ と素点 $P$ に対し、$m_P((1,f))$ を非零成分の位数の最小値とすると、$m_P((1,f))=-\\operatorname{pole}(f)(P)$ である。$f=0$ も含み、零成分は最小値の対象から除かれ、極の係数は零である。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_approx",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_approx (D : Divisor M) {s : ι → M.K} {s' : κ → M.K} (hs : ∃ i, s i ≠ 0)\n    (hs' : ∃ i, s' i ≠ 0) {r : M.K} (hr : r ≠ 0)\n    (hD : ∀ P : Place M.K, D P + P.ord r = minOrd P s' - minOrd P s) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF D x - (tupleHeight s x - tupleHeight s' x)| ≤ C",
+      "signature_span": {
+        "start_byte": 2938,
+        "end_byte_exclusive": 3277,
+        "start_line": 66,
+        "start_column": 1,
+        "end_line": 69,
+        "end_column_exclusive": 103
+      },
+      "signature_sha256": "254790236815fd3edba06142e678ec5fba872b65a3e30e3da1c61fb5cc2eed9f",
+      "declaration_span": {
+        "start_byte": 2938,
+        "end_byte_exclusive": 3611,
+        "start_line": 66,
+        "start_column": 1,
+        "end_line": 77,
+        "end_column_exclusive": 11
+      },
+      "declaration_sha256": "5275e427b7a156f37824ec97a360138ef292af70e515dcbe08f0fc4dbbcf25e7",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For a divisor $D$, finite index types $ι,κ$, nonzero tuples $s:ι→K$, $s′:κ→K$ (each has a nonzero entry), and $r∈K$ with $r≠0$, assume $D(P)+o_P(r)=m_P(s′)-m_P(s)$ for every place, where $m_P$ is the minimum order of the nonzero entries. There exists $C∈ℝ$ such that $|H_D(x)-(h_s(x)-h_{s′}(x))|≤C$ for every point $x$. The tuple-index types cannot be empty under these hypotheses. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。任取除子 $D$、有限指标类型 $ι,κ$、各自含非零分量的元组 $s:ι→K$、$s′:κ→K$，以及非零 $r∈K$。假设每个处均有 $D(P)+o_P(r)=m_P(s′)-m_P(s)$，其中 $m_P$ 为非零分量阶的最小值。则存在 $C∈ℝ$，使所有点 $x$ 均有 $|H_D(x)-(h_s(x)-h_{s′}(x))|≤C$。这些假设排除了空指标类型。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。因子 $D$、有限添字型 $ι,κ$、それぞれ非零成分を持つ組 $s:ι→K$、$s′:κ→K$、および非零元 $r∈K$ を取る。各素点で $D(P)+o_P(r)=m_P(s′)-m_P(s)$ と仮定する。ここで $m_P$ は非零成分の位数の最小値である。ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_D(x)-(h_s(x)-h_{s′}(x))|≤C$ となる。この仮定のもとでは添字型は空でない。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_div",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_div {r : M.K} (hr : r ≠ 0) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (functionDivisor M hDVR r) x| ≤ C",
+      "signature_span": {
+        "start_byte": 3666,
+        "end_byte_exclusive": 3812,
+        "start_line": 80,
+        "start_column": 1,
+        "end_line": 81,
+        "end_column_exclusive": 89
+      },
+      "signature_sha256": "e7c80af7bb6069dbdd1b7dbb5df0762576c6b4e75615fe64cda91b61b4a9ba54",
+      "declaration_span": {
+        "start_byte": 3666,
+        "end_byte_exclusive": 4123,
+        "start_line": 80,
+        "start_column": 1,
+        "end_line": 86,
+        "end_column_exclusive": 42
+      },
+      "declaration_sha256": "49c55ed3298e5386919fd193f9b174536b7ef06557dd9b9db3b363a8815de95b",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For every $r∈K$ with $r≠0$, there exists $C∈ℝ$ such that $|H_{\\operatorname{div}(r)}(x)|≤C$ for every point $x$. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。对任意非零 $r∈K$，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_{\\operatorname{div}(r)}(x)|≤C$。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。任意の非零元 $r∈K$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_{\\operatorname{div}(r)}(x)|≤C$ となる。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_polar",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_polar (f : M.K) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (functionPoleDivisor M hDVR f) x - tupleHeight ![1, f] x| ≤ C",
+      "signature_span": {
+        "start_byte": 4191,
+        "end_byte_exclusive": 4352,
+        "start_line": 89,
+        "start_column": 1,
+        "end_line": 90,
+        "end_column_exclusive": 117
+      },
+      "signature_sha256": "1afbdd8dca7db4839a80343eb671654f8f4e5c8eb533b07ade142bfcfd770494",
+      "declaration_span": {
+        "start_byte": 4191,
+        "end_byte_exclusive": 4754,
+        "start_line": 89,
+        "start_column": 1,
+        "end_line": 98,
+        "end_column_exclusive": 57
+      },
+      "declaration_sha256": "6c2035c3b43f45ba8c0f3e82086a2c77c276e1efce52da88ea63317334b3f17f",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For every $f∈K$, including $f=0$, there exists $C∈ℝ$ such that $|H_{\\operatorname{pole}(f)}(x)-h_{(1,f)}(x)|≤C$ for every point $x$. The tuple height is defined at poles through normalization as well as at regular points. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。对任意 $f∈K$，包括 $f=0$，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_{\\operatorname{pole}(f)}(x)-h_{(1,f)}(x)|≤C$。元组高度经过归一化，因而既适用于正则点，也适用于极点。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。$f=0$ も含む任意の $f∈K$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_{\\operatorname{pole}(f)}(x)-h_{(1,f)}(x)|≤C$ となる。組の高さは正規化を用いるため、正則な点でも極でも定義される。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_add",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_add (D₁ D₂ : Divisor M) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D₁ + D₂) x - (chosenHeight M hDVR hRF D₁ x + chosenHeight M hDVR hRF D₂ x)| ≤ C",
+      "signature_span": {
+        "start_byte": 4811,
+        "end_byte_exclusive": 5011,
+        "start_line": 101,
+        "start_column": 1,
+        "end_line": 102,
+        "end_column_exclusive": 136
+      },
+      "signature_sha256": "e9b08de7f0ed031ce8b07029589b02f2d0b878bb98b9e7b9797d2f293be3d08b",
+      "declaration_span": {
+        "start_byte": 4811,
+        "end_byte_exclusive": 6673,
+        "start_line": 101,
+        "start_column": 1,
+        "end_line": 130,
+        "end_column_exclusive": 18
+      },
+      "declaration_sha256": "e13428980af41ec65a9d1be70b945bc2aed7a5d99e895824f62fe50ed5b0a51d",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For any divisors $D_1,D_2$, there exists $C∈ℝ$ such that $|H_{D_1+D_2}(x)-(H_{D_1}(x)+H_{D_2}(x))|≤C$ for every point $x$. Each height uses the independently fixed internal representative of its indicated divisor. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。对任意除子 $D_1,D_2$，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_{D_1+D_2}(x)-(H_{D_1}(x)+H_{D_2}(x))|≤C$。各高度分别使用其相应除子的内部固定表示。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。任意の因子 $D_1,D_2$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_{D_1+D_2}(x)-(H_{D_1}(x)+H_{D_2}(x))|≤C$ となる。各高さは対応する因子について内部で固定した表示を使う。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_zero",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_zero : ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (0 : Divisor M) x| ≤ C",
+      "signature_span": {
+        "start_byte": 6725,
+        "end_byte_exclusive": 6832,
+        "start_line": 133,
+        "start_column": 1,
+        "end_line": 133,
+        "end_column_exclusive": 102
+      },
+      "signature_sha256": "df7cf6f9e8a78d8dc72e894e1e889571e96fb127416fae9c5ede689b92c2a131",
+      "declaration_span": {
+        "start_byte": 6725,
+        "end_byte_exclusive": 6907,
+        "start_line": 133,
+        "start_column": 1,
+        "end_line": 135,
+        "end_column_exclusive": 19
+      },
+      "declaration_sha256": "a9b3d7cc78abaf00c2f09f793a2506a28bbc61218a48ea58b537a8b715fff4c7",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zero",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. There exists $C∈ℝ$ such that $|H_0(x)|≤C$ for every point $x$, where $0$ is the divisor whose coefficient at every place is zero. The assertion is boundedness of this chosen height, not its exact vanishing. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_0(x)|≤C$，其中 $0$ 是所有处系数均为零的除子。结论是此选定高度有界，并未断言其恒为零。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_0(x)|≤C$ となる。$0$ はすべての素点で係数が零の因子である。この選択された高さの有界性を述べ、恒等的に零であるとは主張しない。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_add_div",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_add_div (D : Divisor M) {r : M.K} (hr : r ≠ 0) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D + functionDivisor M hDVR r) x - chosenHeight M hDVR hRF D x| ≤ C",
+      "signature_span": {
+        "start_byte": 7051,
+        "end_byte_exclusive": 7251,
+        "start_line": 139,
+        "start_column": 1,
+        "end_line": 140,
+        "end_column_exclusive": 123
+      },
+      "signature_sha256": "8b8e10d4f1fc7bf64a4042ca6eb62b2597067a10b9efceaac5939f5f739566bb",
+      "declaration_span": {
+        "start_byte": 7051,
+        "end_byte_exclusive": 7541,
+        "start_line": 139,
+        "start_column": 1,
+        "end_line": 147,
+        "end_column_exclusive": 27
+      },
+      "declaration_sha256": "ec239720d1d8a056ccd6513244e2bbeeef688c13d0eddfcebc09da2e0a3703ec",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add_div",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For every divisor $D$ and every $r∈K$ with $r≠0$, there exists $C∈ℝ$ such that $|H_{D+\\operatorname{div}(r)}(x)-H_D(x)|≤C$ for every point $x$. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。对任意除子 $D$ 和任意非零 $r∈K$，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_{D+\\operatorname{div}(r)}(x)-H_D(x)|≤C$。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。任意の因子 $D$ と非零元 $r∈K$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_{D+\\operatorname{div}(r)}(x)-H_D(x)|≤C$ となる。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_nsmul",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_nsmul (D : Divisor M) (n : ℕ) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (n • D) x - n * chosenHeight M hDVR hRF D x| ≤ C",
+      "signature_span": {
+        "start_byte": 7572,
+        "end_byte_exclusive": 7738,
+        "start_line": 150,
+        "start_column": 1,
+        "end_line": 151,
+        "end_column_exclusive": 104
+      },
+      "signature_sha256": "d042f3057550bc40074f7ed60f902627c3133f6934e52363e1020295d4314a20",
+      "declaration_span": {
+        "start_byte": 7572,
+        "end_byte_exclusive": 8182,
+        "start_line": 150,
+        "start_column": 1,
+        "end_line": 165,
+        "end_column_exclusive": 29
+      },
+      "declaration_sha256": "f440338db505477033b83ade8891f5e9214d08e1fec860b32f34d9576d3e360d",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_nsmul",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For every divisor $D$ and natural number $n$, including $n=0$, there exists $C∈ℝ$ such that $|H_{nD}(x)-nH_D(x)|≤C$ for every point $x$, with $n$ cast to a real number in the height expression. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。对任意除子 $D$ 和任意自然数 $n$，包括 $n=0$，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_{nD}(x)-nH_D(x)|≤C$，高度表达式中的 $n$ 视为实数。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。任意の因子 $D$ と、零も含む自然数 $n$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_{nD}(x)-nH_D(x)|≤C$ となる。高さの式では $n$ を実数とみなす。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_sub",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_sub (D₁ D₂ : Divisor M) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D₁ - D₂) x - (chosenHeight M hDVR hRF D₁ x - chosenHeight M hDVR hRF D₂ x)| ≤ C",
+      "signature_span": {
+        "start_byte": 8215,
+        "end_byte_exclusive": 8415,
+        "start_line": 168,
+        "start_column": 1,
+        "end_line": 169,
+        "end_column_exclusive": 136
+      },
+      "signature_sha256": "857a025542b685b661b90817b5f21ef6fb92ea880d7954dd3c687d0335997962",
+      "declaration_span": {
+        "start_byte": 8215,
+        "end_byte_exclusive": 8620,
+        "start_line": 168,
+        "start_column": 1,
+        "end_line": 175,
+        "end_column_exclusive": 27
+      },
+      "declaration_sha256": "0145a768ded61194f629a07a8e34f3a06c3ac4767fb333cfa361ff5a9f25792b",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_sub",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For every pair of divisors $D_1,D_2$, there exists $C∈ℝ$ such that $|H_{D_1-D_2}(x)-(H_{D_1}(x)-H_{D_2}(x))|≤C$ for every point $x$. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。对任意两个除子 $D_1,D_2$，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_{D_1-D_2}(x)-(H_{D_1}(x)-H_{D_2}(x))|≤C$。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。任意の二つの因子 $D_1,D_2$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_{D_1-D_2}(x)-(H_{D_1}(x)-H_{D_2}(x))|≤C$ となる。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_zsmul'",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_zsmul' (D : Divisor M) (n : ℤ) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (n • D) x - n * chosenHeight M hDVR hRF D x| ≤ C",
+      "signature_span": {
+        "start_byte": 8659,
+        "end_byte_exclusive": 8826,
+        "start_line": 178,
+        "start_column": 1,
+        "end_line": 179,
+        "end_column_exclusive": 104
+      },
+      "signature_sha256": "5baac6d35288f085b1e7b68af6f71f4c226cbcb462a95ed7ac8a46fdd243eba5",
+      "declaration_span": {
+        "start_byte": 8659,
+        "end_byte_exclusive": 9479,
+        "start_line": 178,
+        "start_column": 1,
+        "end_line": 194,
+        "end_column_exclusive": 29
+      },
+      "declaration_sha256": "667ef2dfdfe16461122a3054d690109880c9a8b15d3f711da7ef8c674303d473",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For every divisor $D$ and every integer $n$, including zero and negative integers, there exists $C∈ℝ$ such that $|H_{nD}(x)-nH_D(x)|≤C$ for every point $x$, with $n$ cast to a real number in the height expression. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。对任意除子 $D$ 和任意整数 $n$，包括零和负整数，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_{nD}(x)-nH_D(x)|≤C$，高度表达式中的 $n$ 视为实数。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。任意の因子 $D$ と、零および負の整数も含む任意の整数 $n$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_{nD}(x)-nH_D(x)|≤C$ となる。高さの式では $n$ を実数とみなす。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_bddBelow",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_bddBelow {A : Divisor M} (hA : 0 < (divisorDegree M A)) :\n    ∃ C, ∀ x : QbarPoint M.K, -C ≤ chosenHeight M hDVR hRF A x",
+      "signature_span": {
+        "start_byte": 9592,
+        "end_byte_exclusive": 9739,
+        "start_line": 198,
+        "start_column": 1,
+        "end_line": 199,
+        "end_column_exclusive": 63
+      },
+      "signature_sha256": "95f6d950b8ce5a757e3ae89262c4b5deb9752ea40a7407ed1ed9d2cd8179997c",
+      "declaration_span": {
+        "start_byte": 9592,
+        "end_byte_exclusive": 10329,
+        "start_line": 198,
+        "start_column": 1,
+        "end_line": 213,
+        "end_column_exclusive": 12
+      },
+      "declaration_sha256": "e2d2c7a88b0fca76a425c1b114bcc1f239a82b51ae8249cc0aa4cc5d60c250a9",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For every divisor $A$ with $0<\\deg A$, there exists $C∈ℝ$ such that $-C≤H_A(x)$ for every point $x$. The degree condition is strict and the conclusion is a uniform lower bound, not nonnegativity of the chosen height. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。对任意满足 $0<\\deg A$ 的除子 $A$，存在 $C∈ℝ$，使每个点 $x$ 均有 $-C≤H_A(x)$。次数条件是严格正，结论是统一下界，并未断言所选高度非负。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。$0<\\deg A$ を満たす任意の因子 $A$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $-C≤H_A(x)$ となる。次数は厳密に正であり、結論は一様な下界であって、選択された高さの非負性ではない。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "chosenHeight_le_mul",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem chosenHeight_le_mul {A B : Divisor M} (hB : 0 < (divisorDegree M B)) {q : ℝ}\n    (hq : ((divisorDegree M A) : ℝ) < q * (divisorDegree M B)) :\n    ∃ C, ∀ x : QbarPoint M.K, chosenHeight M hDVR hRF A x ≤ q * chosenHeight M hDVR hRF B x + C",
+      "signature_span": {
+        "start_byte": 10455,
+        "end_byte_exclusive": 10710,
+        "start_line": 217,
+        "start_column": 1,
+        "end_line": 219,
+        "end_column_exclusive": 96
+      },
+      "signature_sha256": "3b8d3581561cc6dbbb31963fcf226c5cba012318d9321e82470a1fd13907a98e",
+      "declaration_span": {
+        "start_byte": 10455,
+        "end_byte_exclusive": 13041,
+        "start_line": 217,
+        "start_column": 1,
+        "end_line": 263,
+        "end_column_exclusive": 11
+      },
+      "declaration_sha256": "569f30a8730437dbfb0c797dc55d0e98d55802799a47f80f54b4ddb4d82446b4",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorHeightMachine.lean",
+      "source_sha256": "da4ce7d6347c999d40c1fdb3dcfc50661a0fa3074dc8c96b6c2858e7fb385b79",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine",
+      "section_names": [],
+      "active_section_variable_commands_raw": [
+        "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]",
+        "variable {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)",
+        "variable [IsCurveField M.K]",
+        "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+      ],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open AbcAdaptation.Tripod.Fermat.Proper PolarTuple PolarAbsolute",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. For arbitrary divisors $A,B$ and any real number $q$, assume $0<\\deg B$ and $\\deg A<q\\deg B$ after casting degrees to $ℝ$. Then there exists $C∈ℝ$ such that $H_A(x)≤qH_B(x)+C$ for every point $x$. No positivity assumption is imposed on $q$; negative and zero $q$ are covered when the strict degree inequality holds. Equality of the two degrees in that inequality is not included. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。任取除子 $A,B$ 和任意实数 $q$。假设 $0<\\deg B$，并在将次数视为实数后满足 $\\deg A<q\\deg B$。则存在 $C∈ℝ$，使每个点 $x$ 均有 $H_A(x)≤qH_B(x)+C$。不要求 $q$ 为正；只要严格次数不等式成立，零及负的 $q$ 也包括在内。不包含次数不等式取等号的情形。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。任意の因子 $A,B$ と任意の実数 $q$ に対し、$0<\\deg B$ および、次数を実数に写したとき $\\deg A<q\\deg B$ を仮定する。ある $C∈ℝ$ が存在し、すべての点 $x$ で $H_A(x)≤qH_B(x)+C$ となる。$q$ に正の条件はなく、厳密な次数不等式が成立すれば零や負の $q$ も含む。次数不等式が等号となる場合は含まない。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "suppliedPresentationHeight_approx_chosen",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem suppliedPresentationHeight_approx_chosen {N : ℕ}\n    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)\n    (D : Divisor M) (R : PolarPresentation M hDVR D) :\n    ∃ C : ℝ, ∀ x : QbarPoint M.K,\n      |DegreeHeightMachine.chosenHeight M hDVR hRF D x - divHeight R x| ≤ C",
+      "signature_span": {
+        "start_byte": 675,
+        "end_byte_exclusive": 975,
+        "start_line": 21,
+        "start_column": 1,
+        "end_line": 25,
+        "end_column_exclusive": 76
+      },
+      "signature_sha256": "b24e055cf719683a6d63830ff04cfe776a8c928e52fbb0d4362c3a7d5cd1b7bb",
+      "declaration_span": {
+        "start_byte": 675,
+        "end_byte_exclusive": 1463,
+        "start_line": 21,
+        "start_column": 1,
+        "end_line": 36,
+        "end_column_exclusive": 11
+      },
+      "declaration_sha256": "1fd94b038b0d9b418b97fd19cf99979534f92c85659a58e69f93aa9724f82dd9",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorDegreeHeightComparison.lean",
+      "source_sha256": "96e979747c900d62895c60ecd885658acc2aebec7631476545a1f0111b405a4e",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+      "section_names": [],
+      "active_section_variable_commands_raw": [],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open PolarTuple",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. The curve-field structure in scope means that $K/ℚ(t)$ is finite for some transcendental $t$. An arbitrary supplied polar presentation $R$ of $D$ consists of $f,g∈K$ satisfying $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ at every place. Its height is $h_R(x)=F_f(x)-F_g(x)$, where $F_f(x)=0$ when $f$ is not in the place ring, and otherwise is the relative logarithmic projective height of $[1:f(x)]$ in its actual generated field $ℚ(f(x))$, divided by $[ℚ(f(x)):ℚ]$. This normalization uses the value field; the point itself still carries its entire residue-field embedding. For every divisor $D$ and every supplied polar presentation $R$ of that same divisor, there exists $C∈ℝ$ such that $|H_D(x)-h_R(x)|≤C$ for every point $x$. The chosen internal pair and the arbitrary supplied pair need not coincide. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。作用域内的曲线函数域结构指存在超越元 $t$，使 $K/ℚ(t)$ 有限。调用者任意给定的除子 $D$ 的极除子表示 $R$，由 $f,g∈K$ 及对每个处成立的等式 $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ 组成。其高度为 $h_R(x)=F_f(x)-F_g(x)$：若 $f$ 不属于该处环，则 $F_f(x)=0$；否则，将射影点 $[1:f(x)]$ 在实际取值生成域 $ℚ(f(x))$ 中的相对对数射影高度除以 $[ℚ(f(x)):ℚ]$。此处归一化使用取值域，点本身仍保有整个剩余域的嵌入。对任意除子 $D$ 及其任意给定极除子表示 $R$，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_D(x)-h_R(x)|≤C$。内部选定的函数对不必等于调用者给定的函数对。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。作用域内の曲線関数体構造は、ある超越元 $t$ に対し $K/ℚ(t)$ が有限であることを意味する。任意に与えられた因子 $D$ の極因子表示 $R$ は、元 $f,g∈K$ と、すべての素点における等式 $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ からなる。その高さは $h_R(x)=F_f(x)-F_g(x)$ である。$f$ が素点環に属さなければ $F_f(x)=0$、属すれば射影点 $[1:f(x)]$ の、実際の値の生成体 $ℚ(f(x))$ における相対対数射影高さを $[ℚ(f(x)):ℚ]$ で割る。この正規化には値の体を用いるが、点自体は剰余体全体の埋め込みを保持する。任意の因子 $D$ と、その任意に与えられた極因子表示 $R$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_D(x)-h_R(x)|≤C$ となる。内部で選んだ組と与えられた組が一致する必要はない。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    },
+    {
+      "name": "divisorDegreeHeightComparison_source",
+      "kind": "theorem",
+      "private": false,
+      "raw_signature": "theorem divisorDegreeHeightComparison_source : DivisorDegreeHeightComparison",
+      "signature_span": {
+        "start_byte": 1613,
+        "end_byte_exclusive": 1689,
+        "start_line": 40,
+        "start_column": 1,
+        "end_line": 40,
+        "end_column_exclusive": 77
+      },
+      "signature_sha256": "67d770b314820fd27218d763f9931dcaccd53b68c02bd5abdda858b6561e9e4f",
+      "declaration_span": {
+        "start_byte": 1613,
+        "end_byte_exclusive": 2678,
+        "start_line": 40,
+        "start_column": 1,
+        "end_line": 59,
+        "end_column_exclusive": 18
+      },
+      "declaration_sha256": "0c581ac26e065b2012fa526952e562f0a2cced459267cd5c0e006c39d0bab153",
+      "source_path": "/tmp/p2m-divisor-degree-height-next-20261114/drafts/Solutions/Source_FermatDivisorDegreeHeightComparison.lean",
+      "source_sha256": "96e979747c900d62895c60ecd885658acc2aebec7631476545a1f0111b405a4e",
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison_source",
+      "compiler_name": null,
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+      "section_names": [],
+      "active_section_variable_commands_raw": [],
+      "active_include_commands_raw": [],
+      "active_omit_commands_raw": [],
+      "open_commands_raw": [
+        "open PolarTuple",
+        "open scoped Classical"
+      ],
+      "options_raw": [
+        "set_option autoImplicit false"
+      ],
+      "inferred_compiler_parameters": {
+        "status": "unelaborated",
+        "elaborated_type": null,
+        "note": "No Lean elaboration was performed. The exact written signature and full active variable context are preserved separately. Active variables are not asserted to be exactly the generalized parameters."
+      },
+      "readback": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. An arbitrary supplied polar presentation $R$ of $D$ consists of $f,g∈K$ satisfying $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ at every place. Its height is $h_R(x)=F_f(x)-F_g(x)$, where $F_f(x)=0$ when $f$ is not in the place ring, and otherwise is the relative logarithmic projective height of $[1:f(x)]$ in its actual generated field $ℚ(f(x))$, divided by $[ℚ(f(x)):ℚ]$. This normalization uses the value field; the point itself still carries its entire residue-field embedding. The proposition asserted is this: for every pair of divisors $D,E$, every supplied polar presentation $R_D$ of $D$ and $R_E$ of $E$, and every real $q$, if $0<\\deg D$ and $\\deg E<q\\deg D$ after casting degrees to $ℝ$, then there exists $C∈ℝ$ such that $h_{R_E}(x)≤q h_{R_D}(x)+C$ for every point $x$. The two supplied presentations remain the ones in the conclusion. The real number $q$ may be positive, zero, or negative when the hypotheses hold; the strict inequality cannot be replaced here by equality. There is no restriction such as $N>3$ in this proposition. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh-Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。调用者任意给定的除子 $D$ 的极除子表示 $R$，由 $f,g∈K$ 及对每个处成立的等式 $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ 组成。其高度为 $h_R(x)=F_f(x)-F_g(x)$：若 $f$ 不属于该处环，则 $F_f(x)=0$；否则，将射影点 $[1:f(x)]$ 在实际取值生成域 $ℚ(f(x))$ 中的相对对数射影高度除以 $[ℚ(f(x)):ℚ]$。此处归一化使用取值域，点本身仍保有整个剩余域的嵌入。所断言的命题是：对任意两个除子 $D,E$、任意给定的 $D$ 的极除子表示 $R_D$ 与 $E$ 的极除子表示 $R_E$，以及任意实数 $q$，若 $0<\\deg D$，且在将次数视为实数后有 $\\deg E<q\\deg D$，则存在 $C∈ℝ$，使每个点 $x$ 均有 $h_{R_E}(x)≤q h_{R_D}(x)+C$。结论仍使用最初给定的两份表示。满足假设时，$q$ 可为正、零或负；此处的严格不等式不包含取等号的情形。本命题不要求 $N>3$。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。任意に与えられた因子 $D$ の極因子表示 $R$ は、元 $f,g∈K$ と、すべての素点における等式 $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ からなる。その高さは $h_R(x)=F_f(x)-F_g(x)$ である。$f$ が素点環に属さなければ $F_f(x)=0$、属すれば射影点 $[1:f(x)]$ の、実際の値の生成体 $ℚ(f(x))$ における相対対数射影高さを $[ℚ(f(x)):ℚ]$ で割る。この正規化には値の体を用いるが、点自体は剰余体全体の埋め込みを保持する。主張する命題は次のとおりである。任意の因子 $D,E$、$D$ の任意に与えられた極因子表示 $R_D$ と $E$ の極因子表示 $R_E$、および任意の実数 $q$ に対し、$0<\\deg D$ かつ、次数を実数に写したとき $\\deg E<q\\deg D$ なら、ある $C∈ℝ$ が存在し、すべての点 $x$ で $h_{R_E}(x)≤q h_{R_D}(x)+C$ となる。結論には最初に与えられた二つの表示をそのまま使う。仮定が成立すれば $q$ は正、零、負のいずれでもよく、厳密な不等式が等号となる場合は含まない。この命題に $N>3$ という制限はない。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      },
+      "original_readback_language": "en",
+      "translation_provenance": {
+        "zh-Hans": "Translation of this row’s frozen English readback, checked against formal definitions.",
+        "ja": "Translation of this row’s frozen English readback, checked against formal definitions."
+      },
+      "meaningful_fields": [],
+      "proof_status_note": "Source body present; not compiled, elaborated, axiom-audited, or otherwise certified in this readback task. Proof narrative and comments are not semantic evidence."
+    }
+  ]
+}

@@ -1,0 +1,846 @@
+{
+  "passed": true,
+  "passed_semantics": "Every compiler-retained declaration now has a complete matching trilingual statement, using corrected_trilingual_statement when non-null. Original packets remain unchanged; original_readback_passed records historical omissions independently.",
+  "compiler_evidence": {
+    "graph_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/divisor-degree-height-sourceproof-20261114/decl_graph.jsonl",
+    "graph_sha256": "fe3eba6e139dc58ebc747e4bb42c8fd6740a606ae1e7bba3be47b9be4df7bfd7",
+    "job_id": "ci-011988-32c8e7f6"
+  },
+  "original_packets": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/divisor-degree-height-sourceproof-20261114/blind-readbacks-source.json",
+      "sha256": "8ba38a4334520c31611555f350aff108246d097c12038e6a4665d629973d2a92",
+      "unchanged": true
+    }
+  ],
+  "requested_model": "gpt-6.1-sol",
+  "actual_backend": null,
+  "review_scope": "Compiler-retained types, current raw source signatures, and necessary formal definitions only. No proof assessment.",
+  "summary": {
+    "declarations_reviewed": 23,
+    "historical_prose_binder_omissions": 1,
+    "complete_trilingual_corrections": 2,
+    "new_external_hypotheses_from_helper_letI": 0
+  },
+  "declarations23": [
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {ι : Type u_2} {κ : Type u_3} [inst_3 : Fintype ι] [inst_4 : Fintype κ] {s : ι → K} {t : κ → K},\n  (∃ (i : ι), s i ≠ 0) →\n    (∃ (j : κ), t j ≠ 0) →\n      (∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n          AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P s =\n            AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P t) →\n        ∃ (C : ℝ),\n          ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K),\n            |AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight s x -\n                  AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight t x| ≤\n              C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_le_of_minOrd_eq",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorTupleEquivalence",
+        "start_line": 22,
+        "end_line": 30
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorTupleEquivalence.lean",
+        "sha256": "1245255e3598224a58a6e4a38c61cbc0924391780a03d633d99c137e9b5261de",
+        "raw_signature": "theorem abs_tupleHeight_sub_le_of_minOrd_eq {s : ι → K} {t : κ → K} (hs : ∃ i, s i ≠ 0)\n    (ht : ∃ j, t j ≠ 0) (heq : ∀ P : Place K, minOrd P s = minOrd P t) :\n    ∃ C, ∀ x : QbarPoint K, |tupleHeight s x - tupleHeight t x| ≤ C",
+        "signature_sha256": "24c4899e70d0a88569a22e5c103ce993816d7434f6cc7315bfc8e7e3c8630c32",
+        "signature_span": {
+          "start_line": 23,
+          "end_line": 25,
+          "start_byte": 983,
+          "end_byte_exclusive": 1233
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "K; Field K; CharZero K; IsCurveField K; finite index types ι and κ with Fintype instances; s, t; nonzero-entry witnesses hs and ht; equality of minimum orders at every place. The unused section types ι′ and κ′ and their Fintype instances are not retained.",
+        "conclusion_and_conditions": "Equal all-place minimum orders imply one real absolute-difference bound uniform over all proper algebraic points.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "24c4899e70d0a88569a22e5c103ce993816d7434f6cc7315bfc8e7e3c8630c32",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {ι : Type u_2} {κ : Type u_3} {ι' : Type u_4} {κ' : Type u_5} [inst_3 : Fintype ι] [inst_4 : Fintype κ]\n  [inst_5 : Fintype ι'] [inst_6 : Fintype κ'] {s : ι → K} {s' : κ → K} {u : ι' → K} {u' : κ' → K},\n  (∃ (i : ι), s i ≠ 0) →\n    (∃ (i : κ), s' i ≠ 0) →\n      (∃ (i : ι'), u i ≠ 0) →\n        (∃ (i : κ'), u' i ≠ 0) →\n          ∀ {r : K},\n            r ≠ 0 →\n              (∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n                  AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P s +\n                      AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P u' =\n                    P.ord r +\n                      (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P u +\n                        AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P s')) →\n                ∃ (C : ℝ),\n                  ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K),\n                    |AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight s x -\n                            AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight s' x -\n                          (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight u x -\n                            AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight u' x)| ≤\n                      C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.abs_tupleHeight_sub_sub_le",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorTupleEquivalence",
+        "start_line": 32,
+        "end_line": 69
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorTupleEquivalence.lean",
+        "sha256": "1245255e3598224a58a6e4a38c61cbc0924391780a03d633d99c137e9b5261de",
+        "raw_signature": "theorem abs_tupleHeight_sub_sub_le {s : ι → K} {s' : κ → K} {u : ι' → K} {u' : κ' → K}\n    (hs : ∃ i, s i ≠ 0) (hs' : ∃ i, s' i ≠ 0) (hu : ∃ i, u i ≠ 0) (hu' : ∃ i, u' i ≠ 0)\n    {r : K} (hr : r ≠ 0)\n    (heq : ∀ P : Place K, minOrd P s + minOrd P u' = P.ord r + (minOrd P u + minOrd P s')) :\n    ∃ C, ∀ x : QbarPoint K,\n      |(tupleHeight s x - tupleHeight s' x) - (tupleHeight u x - tupleHeight u' x)| ≤ C",
+        "signature_sha256": "fe58fc982bd8920afc8117f0260a217e0d3ece8cee49f35a87d0b553473a61fc",
+        "signature_span": {
+          "start_line": 35,
+          "end_line": 40,
+          "start_byte": 1793,
+          "end_byte_exclusive": 2239
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "K; Field K; CharZero K; IsCurveField K; all four finite index types and Fintype instances; four tuples and four nonzero-entry witnesses; r and r ≠ 0; the exact all-place order relation.",
+        "conclusion_and_conditions": "The all-place relation is minOrd s + minOrd u′ = ord r + (minOrd u + minOrd s′); the conclusion bounds |(h_s-h_s′)-(h_u-h_u′)| uniformly.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "fe58fc982bd8920afc8117f0260a217e0d3ece8cee49f35a87d0b553473a61fc",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_zsmul",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (A : AbcAdaptation.Tripod.Fermat.Proper.Divisor M) (n : ℤ),\n  AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M (n • A) = n * AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M A",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_zsmul",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatPositiveDegreePolar",
+        "start_line": 19,
+        "end_line": 22
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPositiveDegreePolar.lean",
+        "sha256": "31a84ba342bde63d7b7d50302fa0246fa692769ee8ab3e72cd11d2d3b8a271c4",
+        "raw_signature": "theorem divisorDegree_zsmul {N : ℕ} (M : Model N) (A : Divisor M) (n : ℤ) :\n    divisorDegree M (n • A) = n * divisorDegree M A",
+        "signature_sha256": "595a81c4d616d85b2472f22c7e9bf0c3b56c254227c1a75aa11079059d61703d",
+        "signature_span": {
+          "start_line": 20,
+          "end_line": 21,
+          "start_byte": 873,
+          "end_byte_exclusive": 1006
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M : Model N; A : Divisor M; n : ℤ. No hDVR, hRF or IsCurveField instance argument is retained.",
+        "conclusion_and_conditions": "The equality is integer degree(n • A) = n * degree(A), including negative n.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "595a81c4d616d85b2472f22c7e9bf0c3b56c254227c1a75aa11079059d61703d",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.positiveDegreePolarRealization",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  {A : AbcAdaptation.Tripod.Fermat.Proper.Divisor M},\n  0 < AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M A →\n    ∃ (n : ℕ),\n      0 < n ∧\n        ∃ (f : ↥M.K) (r : ↥M.K),\n          r ≠ 0 ∧\n            AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor M hDVR f =\n              n • A + AbcAdaptation.Tripod.Fermat.Proper.functionDivisor M hDVR r",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.positiveDegreePolarRealization",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatPositiveDegreePolar",
+        "start_line": 24,
+        "end_line": 73
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPositiveDegreePolar.lean",
+        "sha256": "31a84ba342bde63d7b7d50302fa0246fa692769ee8ab3e72cd11d2d3b8a271c4",
+        "raw_signature": "theorem positiveDegreePolarRealization {N : ℕ} (M : Model N)\n    (hDVR : PlacesDiscrete M) {A : Divisor M} (hA : 0 < divisorDegree M A) :\n    ∃ n : ℕ, 0 < n ∧ ∃ f r : M.K, r ≠ 0 ∧\n      functionPoleDivisor M hDVR f = n • A + functionDivisor M hDVR r",
+        "signature_sha256": "62c0b15fbe79d75c09715cbd5819023d480226ececf661fa4e8a3a55b87e4f4d",
+        "signature_span": {
+          "start_line": 26,
+          "end_line": 29,
+          "start_byte": 1298,
+          "end_byte_exclusive": 1563
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M : Model N; hDVR; A; strict positive-degree hypothesis. No hRF or IsCurveField instance is an external argument. Existentials remain n : ℕ, 0 < n, f, r, r ≠ 0 and the actual divisor identity.",
+        "conclusion_and_conditions": "The positive-degree conclusion retains actual existential n > 0 and f,r in M.K with r ≠ 0 and pole(f) = n • A + div(r); f is not required nonzero.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "62c0b15fbe79d75c09715cbd5819023d480226ececf661fa4e8a3a55b87e4f4d",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_single",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {r : K},\n  r ≠ 0 →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n      AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P ![r] = P.ord r",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_single",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 22,
+        "end_line": 28
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem minOrd_single {r : K} (hr : r ≠ 0) (P : Place K) : minOrd P ![r] = P.ord r",
+        "signature_sha256": "d31ff23655e265e15b562aa85f90905763cec4832cf058ecc1fa2093a5738a3c",
+        "signature_span": {
+          "start_line": 23,
+          "end_line": 23,
+          "start_byte": 1021,
+          "end_byte_exclusive": 1105
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "K; Field K; CharZero K; IsCurveField K; r; r ≠ 0; P : Place K. No model-section parameters.",
+        "conclusion_and_conditions": "The singleton minimum order equals ord_P(r), under r ≠ 0.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "d31ff23655e265e15b562aa85f90905763cec4832cf058ecc1fa2093a5738a3c",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {r : K},\n  r ≠ 0 →\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K),\n      AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight ![r] x = 0",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.tupleHeight_single",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 30,
+        "end_line": 34
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem tupleHeight_single {r : K} (hr : r ≠ 0) (x : QbarPoint K) : tupleHeight ![r] x = 0",
+        "signature_sha256": "8487a28271d87a363e84e18d26d03af6ab84a9abe8d9dc31fdb778336e56ad7d",
+        "signature_span": {
+          "start_line": 31,
+          "end_line": 31,
+          "start_byte": 1334,
+          "end_byte_exclusive": 1426
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "K; Field K; CharZero K; IsCurveField K; r; r ≠ 0; x : QbarPoint K. No model-section parameters.",
+        "conclusion_and_conditions": "The normalized singleton tuple height is exactly zero for every point, under r ≠ 0.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "8487a28271d87a363e84e18d26d03af6ab84a9abe8d9dc31fdb778336e56ad7d",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep",
+      "passed": true,
+      "compiler_type": "{N : ℕ} →\n  (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) →\n    AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n      AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M → AbcAdaptation.Tripod.Fermat.Proper.Divisor M → ↥M.K × ↥M.K",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "def",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 39,
+        "end_line": 42
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "noncomputable def polarRep (D : Divisor M) : M.K × M.K",
+        "signature_sha256": "82c05f780817117a19aa7e1d96cf058bf9dca25559bf440afd7810bd14ceacf8",
+        "signature_span": {
+          "start_line": 40,
+          "end_line": 40,
+          "start_byte": 1800,
+          "end_byte_exclusive": 1855
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; D. No IsCurveField M.K instance argument is retained, despite its presence in the source section context.",
+        "conclusion_and_conditions": "The codomain is M.K × M.K and the formal definition selects f,g from an actual nonempty polar-presentation type.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "82c05f780817117a19aa7e1d96cf058bf9dca25559bf440afd7810bd14ceacf8",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep_spec",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M) [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K]\n  (D : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n  D =\n    AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor M hDVR\n        (AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep M hDVR hRF D).1 -\n      AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor M hDVR\n        (AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep M hDVR hRF D).2",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.polarRep_spec",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 44,
+        "end_line": 49
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem polarRep_spec (D : Divisor M) :\n    D = functionPoleDivisor M hDVR (polarRep M hDVR hRF D).1 -\n      functionPoleDivisor M hDVR (polarRep M hDVR hRF D).2",
+        "signature_sha256": "f5ddd4d227efe0abdbf960e514da33213dbd26ee0159677c0142f4a4ec377ef8",
+        "signature_span": {
+          "start_line": 44,
+          "end_line": 46,
+          "start_byte": 1940,
+          "end_byte_exclusive": 2101
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; an unnamed IsCurveField M.K instance argument; D. This unnamed retained instance was omitted from the original prose and is now stated in all three full corrected versions.",
+        "conclusion_and_conditions": "The selected pair represents the divisor exactly as pole(f_D) - pole(g_D), not merely a degree or height relation.",
+        "original_readback_passed": false,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "f5ddd4d227efe0abdbf960e514da33213dbd26ee0159677c0142f4a4ec377ef8",
+        "finding": "Original prose omitted the compiler-retained unnamed IsCurveField M.K instance argument. Complete corrected English, Simplified Chinese and Japanese statements are supplied. The full historical section context already recorded this instance, but the prose must state it too."
+      },
+      "corrected_trilingual_statement": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. For each divisor $D$, let $(f_D,g_D)$ be the pair chosen by selecting one polar presentation of $D$. Then $D=\\operatorname{pole}(f_D)-\\operatorname{pole}(g_D)$ as finitely supported divisors, so the equality holds at every place. No uniqueness or nonzero-component condition is asserted.Also quantify over a supplied curve-field class witness on $K$, namely a witness that there exists $t∈K$ transcendental over $ℚ$ for which $K/ℚ(t)$ is finite-dimensional. This is a retained instance argument of this declaration. ",
+        "zh_Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。对每个除子 $D$，设 $(f_D,g_D)$ 是从 $D$ 的极除子表示中选定一份后得到的函数对。则作为有限支撑除子，$D=\\operatorname{pole}(f_D)-\\operatorname{pole}(g_D)$，所以等式在所有处逐项成立。未断言唯一性，也未要求分量非零。还须对一个给定的 $K$ 的曲线函数域类见证取全称量词，即存在在 $ℚ$ 上超越的 $t∈K$，使 $K/ℚ(t)$ 有限维的见证。这是本声明实际保留的实例参数。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。各因子 $D$ について、$(f_D,g_D)$ を $D$ の極因子表示を一つ選んで得られる関数の組とする。有限台を持つ因子として $D=\\operatorname{pole}(f_D)-\\operatorname{pole}(g_D)$ であり、すべての素点で係数が一致する。一意性も成分の非零性も主張しない。さらに、$K$ の曲線関数体クラスの与えられた証人、すなわち $ℚ$ 上超越的な $t∈K$ で $K/ℚ(t)$ が有限次元となるものの存在の証人についても全称量化する。これはこの宣言に実際に保持されたインスタンス引数である。"
+      }
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight",
+      "passed": true,
+      "compiler_type": "{N : ℕ} →\n  (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) →\n    AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M →\n      AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n        [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] →\n          AbcAdaptation.Tripod.Fermat.Proper.Divisor M → AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K → ℝ",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "def",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 51,
+        "end_line": 55
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "noncomputable def chosenHeight (D : Divisor M) (x : QbarPoint M.K) : ℝ",
+        "signature_sha256": "0b524534f62c3df26c291b6add70ea3540f45765611d527bdbb8800fc9407553",
+        "signature_span": {
+          "start_line": 53,
+          "end_line": 53,
+          "start_byte": 2362,
+          "end_byte_exclusive": 2434
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; D; x. The original prose explicitly describes the curve-field structure in scope.",
+        "conclusion_and_conditions": "The definition takes the difference of the two actual tuple heights associated with polarRep; it does not take an arbitrary height function as input.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "0b524534f62c3df26c291b6add70ea3540f45765611d527bdbb8800fc9407553",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_pair_one",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] (f : ↥M.K)\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n  AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P ![1, f] =\n    -(AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor M hDVR f) P",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.minOrd_pair_one",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 57,
+        "end_line": 60
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem minOrd_pair_one (f : M.K) (P : Place M.K) :\n    minOrd P ![1, f] = -functionPoleDivisor M hDVR f P",
+        "signature_sha256": "8ae9113fa190aa605ac7ee3ac831afa2310fda1cad6b63fc3c1d9d1bb9a509b7",
+        "signature_span": {
+          "start_line": 57,
+          "end_line": 58,
+          "start_byte": 2539,
+          "end_byte_exclusive": 2645
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; IsCurveField M.K instance; f; P. hRF and the unrelated K section variable are not retained. The original prose states the curve-field structure.",
+        "conclusion_and_conditions": "The minimum order of (1,f) is the negative of the actual pole coefficient, including f = 0.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "8ae9113fa190aa605ac7ee3ac831afa2310fda1cad6b63fc3c1d9d1bb9a509b7",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] {ι : Type u_2} {κ : Type u_3} [inst_1 : Fintype ι]\n  [inst_2 : Fintype κ] (D : AbcAdaptation.Tripod.Fermat.Proper.Divisor M) {s : ι → ↥M.K} {s' : κ → ↥M.K},\n  (∃ (i : ι), s i ≠ 0) →\n    (∃ (i : κ), s' i ≠ 0) →\n      ∀ {r : ↥M.K},\n        r ≠ 0 →\n          (∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n              D P + P.ord r =\n                AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P s' -\n                  AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P s) →\n            ∃ (C : ℝ),\n              ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n                |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D x -\n                      (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight s x -\n                        AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight s' x)| ≤\n                  C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_approx",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 64,
+        "end_line": 77
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_approx (D : Divisor M) {s : ι → M.K} {s' : κ → M.K} (hs : ∃ i, s i ≠ 0)\n    (hs' : ∃ i, s' i ≠ 0) {r : M.K} (hr : r ≠ 0)\n    (hD : ∀ P : Place M.K, D P + P.ord r = minOrd P s' - minOrd P s) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF D x - (tupleHeight s x - tupleHeight s' x)| ≤ C",
+        "signature_sha256": "254790236815fd3edba06142e678ec5fba872b65a3e30e3da1c61fb5cc2eed9f",
+        "signature_span": {
+          "start_line": 66,
+          "end_line": 69,
+          "start_byte": 2989,
+          "end_byte_exclusive": 3328
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; ι, κ with Fintype instances; D; s, s′ and their nonzero-entry witnesses; r; r ≠ 0; the exact all-place coefficient relation.",
+        "conclusion_and_conditions": "D(P) + ord_P(r) = minOrd_P(s′) - minOrd_P(s); the conclusion bounds |H_D-(h_s-h_s′)| uniformly.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "254790236815fd3edba06142e678ec5fba872b65a3e30e3da1c61fb5cc2eed9f",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] {r : ↥M.K},\n  r ≠ 0 →\n    ∃ (C : ℝ),\n      ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n        |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF\n              (AbcAdaptation.Tripod.Fermat.Proper.functionDivisor M hDVR r) x| ≤\n          C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_div",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 79,
+        "end_line": 86
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_div {r : M.K} (hr : r ≠ 0) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (functionDivisor M hDVR r) x| ≤ C",
+        "signature_sha256": "e7c80af7bb6069dbdd1b7dbb5df0762576c6b4e75615fe64cda91b61b4a9ba54",
+        "signature_span": {
+          "start_line": 80,
+          "end_line": 81,
+          "start_byte": 3717,
+          "end_byte_exclusive": 3863
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; r; r ≠ 0. Tuple-index section variables are not retained.",
+        "conclusion_and_conditions": "The absolute value of the chosen height of the actual principal divisor of nonzero r is uniformly bounded.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "e7c80af7bb6069dbdd1b7dbb5df0762576c6b4e75615fe64cda91b61b4a9ba54",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] (f : ↥M.K),\n  ∃ (C : ℝ),\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF\n              (AbcAdaptation.Tripod.Fermat.Proper.functionPoleDivisor M hDVR f) x -\n            AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight ![1, f] x| ≤\n        C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_polar",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 88,
+        "end_line": 98
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_polar (f : M.K) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (functionPoleDivisor M hDVR f) x - tupleHeight ![1, f] x| ≤ C",
+        "signature_sha256": "1afbdd8dca7db4839a80343eb671654f8f4e5c8eb533b07ade142bfcfd770494",
+        "signature_span": {
+          "start_line": 89,
+          "end_line": 90,
+          "start_byte": 4242,
+          "end_byte_exclusive": 4403
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; f, without a nonzero hypothesis. Tuple-index section variables are not retained.",
+        "conclusion_and_conditions": "The difference between the chosen height of the actual pole divisor and tupleHeight(1,f) is uniformly bounded.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "1afbdd8dca7db4839a80343eb671654f8f4e5c8eb533b07ade142bfcfd770494",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] (D₁ D₂ : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n  ∃ (C : ℝ),\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF (D₁ + D₂) x -\n            (AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D₁ x +\n              AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D₂ x)| ≤\n        C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 100,
+        "end_line": 130
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_add (D₁ D₂ : Divisor M) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D₁ + D₂) x - (chosenHeight M hDVR hRF D₁ x + chosenHeight M hDVR hRF D₂ x)| ≤ C",
+        "signature_sha256": "e9b08de7f0ed031ce8b07029589b02f2d0b878bb98b9e7b9797d2f293be3d08b",
+        "signature_span": {
+          "start_line": 101,
+          "end_line": 102,
+          "start_byte": 4862,
+          "end_byte_exclusive": 5062
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; D₁, D₂. Tuple-index section variables are not retained.",
+        "conclusion_and_conditions": "The absolute additivity error for D₁+D₂ is uniformly bounded.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "e9b08de7f0ed031ce8b07029589b02f2d0b878bb98b9e7b9797d2f293be3d08b",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zero",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K],\n  ∃ (C : ℝ),\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF 0 x| ≤ C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zero",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 132,
+        "end_line": 135
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_zero : ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (0 : Divisor M) x| ≤ C",
+        "signature_sha256": "df7cf6f9e8a78d8dc72e894e1e889571e96fb127416fae9c5ede689b92c2a131",
+        "signature_span": {
+          "start_line": 133,
+          "end_line": 133,
+          "start_byte": 6766,
+          "end_byte_exclusive": 6873
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance. No divisor argument; the zero divisor is fixed in the conclusion.",
+        "conclusion_and_conditions": "The chosen height of the zero divisor is uniformly bounded; exact vanishing is not asserted.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "df7cf6f9e8a78d8dc72e894e1e889571e96fb127416fae9c5ede689b92c2a131",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add_div",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] (D : AbcAdaptation.Tripod.Fermat.Proper.Divisor M)\n  {r : ↥M.K},\n  r ≠ 0 →\n    ∃ (C : ℝ),\n      ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n        |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF\n                (D + AbcAdaptation.Tripod.Fermat.Proper.functionDivisor M hDVR r) x -\n              AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D x| ≤\n          C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_add_div",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 137,
+        "end_line": 147
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_add_div (D : Divisor M) {r : M.K} (hr : r ≠ 0) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D + functionDivisor M hDVR r) x - chosenHeight M hDVR hRF D x| ≤ C",
+        "signature_sha256": "8b8e10d4f1fc7bf64a4042ca6eb62b2597067a10b9efceaac5939f5f739566bb",
+        "signature_span": {
+          "start_line": 139,
+          "end_line": 140,
+          "start_byte": 7092,
+          "end_byte_exclusive": 7292
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; D; r; r ≠ 0.",
+        "conclusion_and_conditions": "The absolute change under addition of the actual principal divisor of nonzero r is uniformly bounded.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "8b8e10d4f1fc7bf64a4042ca6eb62b2597067a10b9efceaac5939f5f739566bb",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_nsmul",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] (D : AbcAdaptation.Tripod.Fermat.Proper.Divisor M)\n  (n : ℕ),\n  ∃ (C : ℝ),\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF (n • D) x -\n            ↑n * AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D x| ≤\n        C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_nsmul",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 149,
+        "end_line": 165
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_nsmul (D : Divisor M) (n : ℕ) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (n • D) x - n * chosenHeight M hDVR hRF D x| ≤ C",
+        "signature_sha256": "d042f3057550bc40074f7ed60f902627c3133f6934e52363e1020295d4314a20",
+        "signature_span": {
+          "start_line": 150,
+          "end_line": 151,
+          "start_byte": 7613,
+          "end_byte_exclusive": 7779
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; D; n : ℕ, including zero.",
+        "conclusion_and_conditions": "The absolute error between H_(nD) and the real-cast multiple n H_D is uniformly bounded for every natural n.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "d042f3057550bc40074f7ed60f902627c3133f6934e52363e1020295d4314a20",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_sub",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] (D₁ D₂ : AbcAdaptation.Tripod.Fermat.Proper.Divisor M),\n  ∃ (C : ℝ),\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF (D₁ - D₂) x -\n            (AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D₁ x -\n              AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D₂ x)| ≤\n        C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_sub",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 167,
+        "end_line": 175
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_sub (D₁ D₂ : Divisor M) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (D₁ - D₂) x - (chosenHeight M hDVR hRF D₁ x - chosenHeight M hDVR hRF D₂ x)| ≤ C",
+        "signature_sha256": "857a025542b685b661b90817b5f21ef6fb92ea880d7954dd3c687d0335997962",
+        "signature_span": {
+          "start_line": 168,
+          "end_line": 169,
+          "start_byte": 8256,
+          "end_byte_exclusive": 8456
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; D₁, D₂.",
+        "conclusion_and_conditions": "The absolute error between H_(D₁-D₂) and H_D₁-H_D₂ is uniformly bounded.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "857a025542b685b661b90817b5f21ef6fb92ea880d7954dd3c687d0335997962",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] (D : AbcAdaptation.Tripod.Fermat.Proper.Divisor M)\n  (n : ℤ),\n  ∃ (C : ℝ),\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF (n • D) x -\n            ↑n * AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D x| ≤\n        C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_zsmul'",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 177,
+        "end_line": 194
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_zsmul' (D : Divisor M) (n : ℤ) :\n    ∃ C, ∀ x : QbarPoint M.K, |chosenHeight M hDVR hRF (n • D) x - n * chosenHeight M hDVR hRF D x| ≤ C",
+        "signature_sha256": "5baac6d35288f085b1e7b68af6f71f4c226cbcb462a95ed7ac8a46fdd243eba5",
+        "signature_span": {
+          "start_line": 178,
+          "end_line": 179,
+          "start_byte": 8700,
+          "end_byte_exclusive": 8867
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; D; n : ℤ, including zero and negative integers.",
+        "conclusion_and_conditions": "The absolute error between H_(nD) and the real-cast multiple n H_D is uniformly bounded for every integer n.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "5baac6d35288f085b1e7b68af6f71f4c226cbcb462a95ed7ac8a46fdd243eba5",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] {A : AbcAdaptation.Tripod.Fermat.Proper.Divisor M},\n  0 < AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M A →\n    ∃ (C : ℝ),\n      ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n        -C ≤ AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF A x",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_bddBelow",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 196,
+        "end_line": 213
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_bddBelow {A : Divisor M} (hA : 0 < (divisorDegree M A)) :\n    ∃ C, ∀ x : QbarPoint M.K, -C ≤ chosenHeight M hDVR hRF A x",
+        "signature_sha256": "95f6d950b8ce5a757e3ae89262c4b5deb9752ea40a7407ed1ed9d2cd8179997c",
+        "signature_span": {
+          "start_line": 198,
+          "end_line": 199,
+          "start_byte": 9633,
+          "end_byte_exclusive": 9780
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; A; strict positive-degree hypothesis.",
+        "conclusion_and_conditions": "Strict positive degree gives one real constant C with -C ≤ H_A(x) for every proper algebraic point.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "95f6d950b8ce5a757e3ae89262c4b5deb9752ea40a7407ed1ed9d2cd8179997c",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] {A B : AbcAdaptation.Tripod.Fermat.Proper.Divisor M},\n  0 < AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M B →\n    ∀ {q : ℝ},\n      ↑(AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M A) <\n          q * ↑(AbcAdaptation.Tripod.Fermat.Proper.divisorDegree M B) →\n        ∃ (C : ℝ),\n          ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n            AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF A x ≤\n              q * AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF B x + C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight_le_mul",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorHeightMachine",
+        "start_line": 215,
+        "end_line": 263
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorHeightMachine.lean",
+        "sha256": "54c81d904dd77355808918525b8cc55304b94b82af1c26e9a61f030d1d94eb64",
+        "raw_signature": "theorem chosenHeight_le_mul {A B : Divisor M} (hB : 0 < (divisorDegree M B)) {q : ℝ}\n    (hq : ((divisorDegree M A) : ℝ) < q * (divisorDegree M B)) :\n    ∃ C, ∀ x : QbarPoint M.K, chosenHeight M hDVR hRF A x ≤ q * chosenHeight M hDVR hRF B x + C",
+        "signature_sha256": "3b8d3581561cc6dbbb31963fcf226c5cba012318d9321e82470a1fd13907a98e",
+        "signature_span": {
+          "start_line": 217,
+          "end_line": 219,
+          "start_byte": 10496,
+          "end_byte_exclusive": 10751
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; IsCurveField M.K instance; A, B; 0 < deg B; arbitrary real q; strict inequality deg A < q deg B. No q > 0 hypothesis.",
+        "conclusion_and_conditions": "Strict degree comparison and positive degree B give H_A(x) ≤ q H_B(x)+C, for any real q satisfying the hypotheses.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "3b8d3581561cc6dbbb31963fcf226c5cba012318d9321e82470a1fd13907a98e",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+      "passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M) (D : AbcAdaptation.Tripod.Fermat.Proper.Divisor M)\n  (R : AbcAdaptation.Tripod.Fermat.Proper.PolarPresentation M hDVR D),\n  ∃ (C : ℝ),\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      |AbcAdaptation.Tripod.Fermat.Proper.DegreeHeightMachine.chosenHeight M hDVR hRF D x -\n            AbcAdaptation.Tripod.Fermat.Proper.divHeight R x| ≤\n        C",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.suppliedPresentationHeight_approx_chosen",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorDegreeHeightComparison",
+        "start_line": 19,
+        "end_line": 37
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorDegreeHeightComparison.lean",
+        "sha256": "2478caaa758c6542537807980895c88878e66ca785bd422aaabf145047d3f7be",
+        "raw_signature": "theorem suppliedPresentationHeight_approx_chosen {N : ℕ}\n    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)\n    (D : Divisor M) (R : PolarPresentation M hDVR D) :\n    letI : IsCurveField M.K := M.isCurveField\n    ∃ C : ℝ, ∀ x : QbarPoint M.K,\n      |DegreeHeightMachine.chosenHeight M hDVR hRF D x - divHeight R x| ≤ C",
+        "signature_sha256": "ef2107089391fbef3294ab69aaa830f72bfce3f1e31498a59d069aa4190f1f98",
+        "signature_span": {
+          "start_line": 21,
+          "end_line": 26,
+          "start_byte": 726,
+          "end_byte_exclusive": 1072
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "N; M; hDVR; hRF; D; arbitrary supplied PolarPresentation R of D. No additional IsCurveField argument. The current raw result type installs the exact derived witness M.isCurveField with letI before forming the chosenHeight expression.",
+        "conclusion_and_conditions": "The absolute difference compares the internally chosen height with the height of the same arbitrary supplied R, uniformly on every proper algebraic point.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": true,
+        "historical_signature_sha256": "b24e055cf719683a6d63830ff04cfe776a8c928e52fbb0d4362c3a7d5cd1b7bb",
+        "finding": "Current raw signature has a local letI := M.isCurveField before the existential conclusion. The compiler-retained type has no extra external instance parameter. The derived witness exactly uses M.u, M.transcendental_u and M.finite_u; its mathematical content matches the model data. Revised full trilingual prose makes this local derivation explicit; the mathematical inequality and arbitrary supplied R remain unchanged.",
+        "derived_instance": {
+          "source_expression": "M.isCurveField",
+          "formal_definition": "theorem Model.isCurveField {N : ℕ} (M : Model N) : IsCurveField M.K :=\n  ⟨⟨M.u, M.transcendental_u, M.finite_u⟩⟩",
+          "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N), AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K",
+          "not_an_external_hypothesis": true
+        }
+      },
+      "corrected_trilingual_statement": {
+        "en": "Let $N$ be any natural number and $M$ a model: its field $K$ is an intermediate field of an algebraic closure of $ℚ(T)$, with $u,v∈K$, $u$ transcendental over $ℚ$, $u^N+v^N=1$, $ℚ(u,v)=K$, and $K/ℚ(u)$ finite-dimensional of degree $N$. A place is a proper valuation subring containing $ℚ$, with none omitted at infinity. A divisor is a finitely supported integer function on all these places. Assume $h_{DVR}$ says each place ring is a discrete valuation ring. Write $o_P(f)$ for the negative logarithm of its maximal-ideal valuation (in particular $o_P(0)=0$), $\\operatorname{div}(r)(P)=o_P(r)$, $\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$, and $\\deg D=\\sum_P D(P)[κ(P):ℚ]$, with the degrees computed by vector-space finrank. Also assume $h_{RF}$: every place’s residue field is finite-dimensional over $ℚ$. A point $x$ ranges over every pair of a place and a ring embedding of its entire residue field into $\\overline{ℚ}$; neither an affine-open condition nor a bound on the full point-field degree is imposed. For each divisor $D$, choose a polar presentation $(f_D,g_D)$ whose coefficients satisfy $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ for every place. This is the choice made by `polarRep` from the nonempty type of such presentations. Define $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$, where $h_s$ normalizes a finite tuple at $x.P$ by a nonzero entry of minimal order, evaluates through the residue embedding, and divides the relative logarithmic projective height by the degree of the field generated by all resulting coordinates; the zero tuple has height zero. When forming $H_D$, use the derived curve-field class witness `M.isCurveField`: it uses the model’s own transcendental element $u$ and its finite-dimensional extension $K/ℚ(u)$. The declaration installs this witness locally in its result type; it is not an additional hypothesis or externally supplied instance argument. An arbitrary supplied polar presentation $R$ of $D$ consists of $f,g∈K$ satisfying $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ at every place. Its height is $h_R(x)=F_f(x)-F_g(x)$, where $F_f(x)=0$ when $f$ is not in the place ring, and otherwise is the relative logarithmic projective height of $[1:f(x)]$ in its actual generated field $ℚ(f(x))$, divided by $[ℚ(f(x)):ℚ]$. This normalization uses the value field; the point itself still carries its entire residue-field embedding. For every divisor $D$ and every supplied polar presentation $R$ of that same divisor, there exists $C∈ℝ$ such that $|H_D(x)-h_R(x)|≤C$ for every point $x$. The chosen internal pair and the arbitrary supplied pair need not coincide. The real constant may depend on all fixed data and hypotheses, but is chosen before $x$ and is independent of $x$ and of its field degree; no nonnegativity or uniqueness of the constant is asserted. ",
+        "zh_Hans": "任取自然数 $N$ 和模型 $M$：其域 $K$ 是 $ℚ(T)$ 的一个代数闭包中的中间域，带有 $u,v∈K$，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$ℚ(u,v)=K$，且 $K/ℚ(u)$ 为次数恰为 $N$ 的有限维扩张。处指包含 $ℚ$ 的真赋值子环，无穷远处也不排除。除子是所有这些处上的有限支撑整数函数。假设 $h_{DVR}$ 断言每个处环都是离散赋值环。以 $o_P(f)$ 表示其极大理想赋值的负对数阶，特别地 $o_P(0)=0$；记 $\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$，并定义 $\\deg D=\\sum_P D(P)[κ(P):ℚ]$，域次数按向量空间有限秩计算。另假设 $h_{RF}$：每个处的剩余域在 $ℚ$ 上有限维。点 $x$ 遍历由一个处及其整个剩余域到 $\\overline{ℚ}$ 的环嵌入组成的所有点；不限制在仿射开集上，也不限制完整点域的次数。对每个除子 $D$，从所有满足逐处等式 $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ 的极除子表示构成的非空类型中，用 `polarRep` 选定一对 $(f_D,g_D)$。定义 $H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$。其中，$h_s$ 先用在 $x.P$ 处阶最小的非零分量归一化有限元组，经剩余域嵌入求值，再将相对对数射影高度除以所得全部坐标生成的域的次数；全零元组高度为零。构造 $H_D$ 时，使用派生的曲线函数域类见证 `M.isCurveField`：它使用模型自身的超越元 $u$ 和有限维扩张 $K/ℚ(u)$。本声明在结果类型中局部设置此见证；这不是新增假设，也不是外部给定的实例参数。调用者任意给定的除子 $D$ 的极除子表示 $R$，由 $f,g∈K$ 及对每个处成立的等式 $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ 组成。其高度为 $h_R(x)=F_f(x)-F_g(x)$：若 $f$ 不属于该处环，则 $F_f(x)=0$；否则，将射影点 $[1:f(x)]$ 在实际取值生成域 $ℚ(f(x))$ 中的相对对数射影高度除以 $[ℚ(f(x)):ℚ]$。此处归一化使用取值域，点本身仍保有整个剩余域的嵌入。对任意除子 $D$ 及其任意给定极除子表示 $R$，存在 $C∈ℝ$，使每个点 $x$ 均有 $|H_D(x)-h_R(x)|≤C$。内部选定的函数对不必等于调用者给定的函数对。实常数可依赖所有已固定的数据和假设，但须先于 $x$ 选定，不依赖 $x$ 或其域次数；未断言该常数非负或唯一。",
+        "ja": "任意の自然数 $N$ とモデル $M$ を取る。その体 $K$ は $ℚ(T)$ の代数閉包の中間体であり、元 $u,v∈K$ は $u$ が $ℚ$ 上超越的、$u^N+v^N=1$、$ℚ(u,v)=K$ を満たし、$K/ℚ(u)$ は次数がちょうど $N$ の有限次元拡大である。素点は $ℚ$ を含む真の付値部分環で、無限遠の素点も除かない。因子はこれらすべての素点上の有限台を持つ整数値関数である。$h_{DVR}$ により各素点環が離散付値環であると仮定する。極大イデアルの付値の負の対数で定める位数を $o_P(f)$ と書き、特に $o_P(0)=0$ とする。$\\operatorname{div}(r)(P)=o_P(r)$、$\\operatorname{pole}(f)(P)=\\max(0,-o_P(f))$、$\\deg D=\\sum_P D(P)[κ(P):ℚ]$ と定める。体の次数はベクトル空間の有限ランクで計算する。さらに $h_{RF}$ として、すべての素点の剰余体が $ℚ$ 上有限次元であると仮定する。点 $x$ は素点とその剰余体全体から $\\overline{ℚ}$ への環埋め込みのすべての組を動き、アフィン開集合への制限も点の体全体の次数の上限も課さない。各因子 $D$ について、すべての素点で $D(P)=\\operatorname{pole}(f_D)(P)-\\operatorname{pole}(g_D)(P)$ を満たす極因子表示の非空な型から、`polarRep` により一組 $(f_D,g_D)$ を選ぶ。$H_D(x)=h_{(1,f_D)}(x)-h_{(1,g_D)}(x)$ と定める。$h_s$ は有限組を $x.P$ で位数最小の非零成分により正規化し、剰余体埋め込みを通して評価した座標の相対対数射影高さを、すべての座標が生成する体の次数で割った値である。零の組の高さは零とする。$H_D$ を構成するときは、導出された曲線関数体クラスの証人 `M.isCurveField` を使う。これはモデル自身の超越元 $u$ と有限次元拡大 $K/ℚ(u)$ を用いる。この宣言は結果の型においてこの証人を局所的に設定するのであり、追加の仮定や外部から与えるインスタンス引数ではない。任意に与えられた因子 $D$ の極因子表示 $R$ は、元 $f,g∈K$ と、すべての素点における等式 $D(P)=\\operatorname{pole}(f)(P)-\\operatorname{pole}(g)(P)$ からなる。その高さは $h_R(x)=F_f(x)-F_g(x)$ である。$f$ が素点環に属さなければ $F_f(x)=0$、属すれば射影点 $[1:f(x)]$ の、実際の値の生成体 $ℚ(f(x))$ における相対対数射影高さを $[ℚ(f(x)):ℚ]$ で割る。この正規化には値の体を用いるが、点自体は剰余体全体の埋め込みを保持する。任意の因子 $D$ と、その任意に与えられた極因子表示 $R$ に対し、ある $C∈ℝ$ が存在し、すべての点 $x$ で $|H_D(x)-h_R(x)|≤C$ となる。内部で選んだ組と与えられた組が一致する必要はない。実定数は固定したデータと仮定すべてに依存してよいが、$x$ より前に選ばれ、$x$ およびその体の次数には依存しない。定数の非負性や一意性は主張しない。"
+      }
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison_source",
+      "passed": true,
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.DivisorDegreeHeightComparison",
+      "compiler_user_name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison_source",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_kind": "theorem",
+      "compiler_source_span": {
+        "module": "Solutions.Source_FermatDivisorDegreeHeightComparison",
+        "start_line": 39,
+        "end_line": 60
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDivisorDegreeHeightComparison.lean",
+        "sha256": "2478caaa758c6542537807980895c88878e66ca785bd422aaabf145047d3f7be",
+        "raw_signature": "theorem divisorDegreeHeightComparison_source : DivisorDegreeHeightComparison",
+        "signature_sha256": "67d770b314820fd27218d763f9931dcaccd53b68c02bd5abdda858b6561e9e4f",
+        "signature_span": {
+          "start_line": 41,
+          "end_line": 41,
+          "start_byte": 1710,
+          "end_byte_exclusive": 1786
+        }
+      },
+      "binder_findings": {
+        "retained_parameters": "The compiler type is the closed named proposition DivisorDegreeHeightComparison, whose formal definition quantifies N, M, hDVR, hRF, D, E, the arbitrary supplied presentations RD and RE, arbitrary real q, 0 < deg D and strict deg E < q deg D. No external curve-field instance, affine-open condition, or point-degree bound is introduced.",
+        "conclusion_and_conditions": "Unfolding the formal named proposition gives divHeight RE x ≤ q * divHeight RD x + C, with the originally supplied presentations, arbitrary real q, strict degree inequality, and C before every proper algebraic point.",
+        "original_readback_passed": true,
+        "signature_changed_from_historical_packet": false,
+        "historical_signature_sha256": "67d770b314820fd27218d763f9931dcaccd53b68c02bd5abdda858b6561e9e4f",
+        "finding": "No omitted mathematical binder or dropped condition found."
+      },
+      "corrected_trilingual_statement": null
+    }
+  ]
+}

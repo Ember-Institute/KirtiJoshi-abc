@@ -1,0 +1,75 @@
+/-
+Copyright (c) 2026 The Belyi project contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The Belyi project contributors
+
+Independent source-proof adaptation; receipts are recorded with this unit. Source: pinned Belyi/CurveField/Riemann.lean:393-412.
+The existing concrete Riemann and polar-realization theorems are reused.
+-/
+import Definitions.Def_FermatRiemannComposition
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear
+import Mathlib.Tactic.Linarith
+
+set_option autoImplicit false
+
+namespace AbcAdaptation.Tripod.Fermat.Proper
+
+/-- The actual integer degree homomorphism respects integer multiples. -/
+theorem divisorDegree_zsmul {N : ℕ} (M : Model N) (A : Divisor M) (n : ℤ) :
+    divisorDegree M (n • A) = n * divisorDegree M A := by
+  simpa only [zsmul_eq_mul] using (divisorDegreeHom M).map_zsmul n A
+
+/-- An actual positive multiple is represented by an actual polar divisor
+through an actual nonzero principal factor. No height law is assumed. -/
+theorem positiveDegreePolarRealization {N : ℕ} (M : Model N)
+    (hDVR : PlacesDiscrete M) {A : Divisor M} (hA : 0 < divisorDegree M A) :
+    ∃ n : ℕ, 0 < n ∧ ∃ f r : M.K, r ≠ 0 ∧
+      functionPoleDivisor M hDVR f = n • A + functionDivisor M hDVR r := by
+  letI : IsCurveField M.K := M.isCurveField
+  have hPrincipal := principalDegreeZero_of_zeroPoleDegrees M hDVR
+    (functionZeroPoleDegrees M hDVR)
+  obtain ⟨N1, hRealize⟩ := largeEffectivePolarRealization_of_riemannChildren M hDVR
+    (riemannRochFiniteDimensional M hDVR)
+    (riemannRochDimensionUpperBound M hDVR)
+    (riemannRochEventuallyLinear M hDVR)
+  obtain ⟨g0, N0, hRiemann⟩ := riemannRochEventuallyLinear M hDVR
+  -- Eventual equality suffices; no separately assumed Riemann inequality.
+  let T : ℤ := max (max N0 N1) (g0 + 1)
+  let n : ℕ := T.toNat + 1
+  have hn : T < (n : ℤ) := by
+    have := Int.self_le_toNat T
+    dsimp only [n]
+    push_cast
+    omega
+  change max (max N0 N1) (g0 + 1) < (n : ℤ) at hn
+  have hnpos : 0 < n := Nat.succ_pos _
+  have hdeg : (n : ℤ) ≤ divisorDegree M (n • A) := by
+    rw [divisorDegree_nsmul]
+    have hn0 : (0 : ℤ) ≤ n := Int.natCast_nonneg _
+    nlinarith
+  have hN0 : N0 ≤ divisorDegree M (n • A) := by
+    have := le_max_left N0 N1
+    have := le_max_left (max N0 N1) (g0 + 1)
+    omega
+  have hN1 : N1 ≤ divisorDegree M (n • A) := by
+    have := le_max_right N0 N1
+    have := le_max_left (max N0 N1) (g0 + 1)
+    omega
+  have hell : riemannEll M hDVR (n • A) ≠ 0 := by
+    have heq := hRiemann (n • A) hN0
+    have := le_max_right (max N0 N1) (g0 + 1)
+    intro hzero
+    rw [hzero] at heq
+    omega
+  obtain ⟨r, hr, hEffective⟩ :=
+    RiemannDimension.exists_nonneg_add_pdiv M hDVR hPrincipal hell
+  obtain ⟨f, hf⟩ := hRealize (n • A + functionDivisor M hDVR r) hEffective (by
+    rw [divisorDegree_add, hPrincipal, add_zero]
+    exact hN1)
+  refine ⟨n, hnpos, f, r, hr, ?_⟩
+  ext P
+  simpa only [functionPoleDivisor_apply, poleMultiplicity] using hf P
+
+end AbcAdaptation.Tripod.Fermat.Proper
