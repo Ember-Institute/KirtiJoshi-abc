@@ -1,0 +1,487 @@
+{
+  "schema": "independent-wrapped-numeric-type-readback-review-v1",
+  "status": "passed",
+  "reviewer_model": "gpt-6.1-sol",
+  "new_compilation_performed": false,
+  "readback_body_changed": false,
+  "input_readbacks_file": "/tmp/p2m-numeric-assembly-readbacks-20261115/readbacks.json",
+  "input_readbacks_sha256": "a5e71e65057660ec1df1df905af3231f77a8f42dec3c044238fa86bcd7b52172",
+  "original_exprs_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/original-exprs.json",
+  "original_exprs_sha256": "53b9fa50dacc204c546453f927e52b41d0040bab1fdccaa1a869b39bbcc2c226",
+  "nodes": [
+    {
+      "original_name": "Iut.assembly",
+      "status": "passed",
+      "wrapped_name": "AbcAdaptation.Reference.Iut.assembly",
+      "audit_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/type-audits/Iut-assembly.json",
+      "audit_sha256": "1b1a1ab03fea925f8145e7e3d940883652cbf44591a066d795340d145b40c1eb",
+      "audit_schema": "numeric-kernel-type-axiom-audit-v1",
+      "original_compiler_version": "4.35.0-rc3",
+      "wrapped_compiler_version": "4.33.1",
+      "compiler_flags": {
+        "metaTargetSolutionTypeEqual": true,
+        "kernelTargetSolutionTypeEqual": true,
+        "kernelOriginalTargetTypeEqual": true,
+        "kernelOriginalSolutionTypeEqual": true,
+        "allExpressionBinderInfoEqual": true,
+        "originalTypeStandardConstantsOnly": true,
+        "originalExprMetadataErased": true
+      },
+      "axioms_status": {
+        "solutionAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "solutionHasTransitiveSorryAx": false,
+        "solutionBodyDirectSorryAx": false,
+        "solutionClosureStandardAxiomsOnly": true,
+        "permitsOpenChildren": false
+      },
+      "binder_count": 28,
+      "implicit_real_binder_count": 11,
+      "explicit_proposition_binder_count": 17,
+      "universe_alpha_renaming": {
+        "wrappedKernelOrder": [],
+        "solutionKernelOrder": [],
+        "originalKernelOrder": [],
+        "canonicalOrder": []
+      },
+      "original_wrapped_solution_raw_expr_identical": true,
+      "signature_and_binder_visibility_identical": true,
+      "readback_body_changed": false,
+      "definitions_bundle_count": 0,
+      "project_constant_relocations": [],
+      "ci_job_prefix_reported_by_parent": "ci-013216",
+      "ci_status_reported_by_parent": "succeeded",
+      "scope": "Exact numerical theorem type and its closed wrapped solution. No additional source-paper meaning or larger mathematical obligation is asserted.",
+      "all_binder_names": [
+        "ℓ",
+        "d",
+        "D",
+        "Q",
+        "S",
+        "T",
+        "P",
+        "DF",
+        "E",
+        "e",
+        "lg",
+        "hℓ",
+        "hd",
+        "_hD",
+        "_hQ",
+        "_hS",
+        "_hT",
+        "_hP0",
+        "hP",
+        "hDF",
+        "_hlg0",
+        "hlg",
+        "he",
+        "hE",
+        "h1",
+        "h2",
+        "h3",
+        "h4"
+      ],
+      "wrapped_signature_from_compiler": {
+        "result": "LE.le.{0} (HMul.hMul.{0, 0, 0} ℓ Q)\n  (HAdd.hAdd.{0, 0, 0}\n    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 6 (HAdd.hAdd.{0, 0, 0} ℓ (HMul.hMul.{0, 0, 0} 20 d))) DF)\n    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 120 ℓ) E))",
+        "implicitRealCount": 11,
+        "explicitPropositionCount": 17,
+        "binders": [
+          {
+            "type": "ℝ",
+            "name": "ℓ",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "d",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "D",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "Q",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "S",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "T",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "P",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "DF",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "E",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "e",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "lg",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "LE.le.{0} 7 ℓ",
+            "name": "hℓ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 1 d",
+            "name": "hd",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 D",
+            "name": "_hD",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 Q",
+            "name": "_hQ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 S",
+            "name": "_hS",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 T",
+            "name": "_hT",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 P",
+            "name": "_hP0",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} P 2",
+            "name": "hP",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 DF",
+            "name": "hDF",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 lg",
+            "name": "_hlg0",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} lg ℓ",
+            "name": "hlg",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (HMul.hMul.{0, 0, 0} 552960 ℓ) e",
+            "name": "he",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} e E",
+            "name": "hE",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (HMul.hMul.{0, 0, 0} (-12) Q)\n  (HAdd.hAdd.{0, 0, 0}\n    (HAdd.hAdd.{0, 0, 0}\n      (HAdd.hAdd.{0, 0, 0}\n        (HSub.hSub.{0, 0, 0}\n          (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 6 ℓ) (HAdd.hAdd.{0, 0, 0} ℓ 5)) D)\n          (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} ℓ (HAdd.hAdd.{0, 0, 0} ℓ 1)) Q))\n        (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 24 ℓ) S))\n      (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 24 ℓ) (HAdd.hAdd.{0, 0, 0} ℓ 5)) T))\n    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 6 ℓ) (HAdd.hAdd.{0, 0, 0} ℓ 5)) P))",
+            "name": "h1",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} D (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} DF (HMul.hMul.{0, 0, 0} 2 lg)) 21)",
+            "name": "h2",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} S (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 d) DF) 5) lg)",
+            "name": "h3",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (HMul.hMul.{0, 0, 0} 2 T) (HMul.hMul.{0, 0, 0} 3 E)",
+            "name": "h4",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      }
+    },
+    {
+      "original_name": "Iut.c2_final",
+      "status": "passed",
+      "wrapped_name": "AbcAdaptation.Reference.Iut.c2_final",
+      "audit_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/type-audits/Iut-c2_final.json",
+      "audit_sha256": "b731e924189f0778e6a5b281e778cdbefa9b56d42156a3dfb82dd006db5bd8db",
+      "audit_schema": "numeric-kernel-type-axiom-audit-v1",
+      "original_compiler_version": "4.35.0-rc3",
+      "wrapped_compiler_version": "4.33.1",
+      "compiler_flags": {
+        "metaTargetSolutionTypeEqual": true,
+        "kernelTargetSolutionTypeEqual": true,
+        "kernelOriginalTargetTypeEqual": true,
+        "kernelOriginalSolutionTypeEqual": true,
+        "allExpressionBinderInfoEqual": true,
+        "originalTypeStandardConstantsOnly": true,
+        "originalExprMetadataErased": true
+      },
+      "axioms_status": {
+        "solutionAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "solutionHasTransitiveSorryAx": false,
+        "solutionBodyDirectSorryAx": false,
+        "solutionClosureStandardAxiomsOnly": true,
+        "permitsOpenChildren": false
+      },
+      "binder_count": 32,
+      "implicit_real_binder_count": 15,
+      "explicit_proposition_binder_count": 17,
+      "universe_alpha_renaming": {
+        "wrappedKernelOrder": [],
+        "solutionKernelOrder": [],
+        "originalKernelOrder": [],
+        "canonicalOrder": []
+      },
+      "original_wrapped_solution_raw_expr_identical": true,
+      "signature_and_binder_visibility_identical": true,
+      "readback_body_changed": false,
+      "definitions_bundle_count": 0,
+      "project_constant_relocations": [],
+      "ci_job_prefix_reported_by_parent": "ci-013219",
+      "ci_status_reported_by_parent": "succeeded",
+      "scope": "Exact numerical theorem type and its closed wrapped solution. No additional source-paper meaning or larger mathematical obligation is asserted.",
+      "all_binder_names": [
+        "h",
+        "r",
+        "lg",
+        "δ",
+        "ℓ",
+        "dm",
+        "e",
+        "D",
+        "F",
+        "LD",
+        "LC",
+        "Q",
+        "B",
+        "η",
+        "ε",
+        "hr0",
+        "hrr",
+        "hlg1",
+        "hδ1",
+        "hℓlo",
+        "hℓhi",
+        "hdm",
+        "he",
+        "hDF0",
+        "hB",
+        "hη",
+        "h110",
+        "hlogQ",
+        "hD",
+        "hF",
+        "hε",
+        "hε1"
+      ],
+      "wrapped_signature_from_compiler": {
+        "result": "LE.le.{0} (HMul.hMul.{0, 0, 0} (1 / 6) h)\n  (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} 1 ε) (HAdd.hAdd.{0, 0, 0} LD LC))\n    (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 40 η) (HDiv.hDiv.{0, 0, 0} B 3)))",
+        "implicitRealCount": 15,
+        "explicitPropositionCount": 17,
+        "binders": [
+          {
+            "type": "ℝ",
+            "name": "h",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "r",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "lg",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "δ",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "ℓ",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "dm",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "e",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "D",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "F",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "LD",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "LC",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "Q",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "B",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "η",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "ℝ",
+            "name": "ε",
+            "binderInfo": "Lean.BinderInfo.implicit"
+          },
+          {
+            "type": "LT.lt.{0} 0 r",
+            "name": "hr0",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Eq.{1} (HMul.hMul.{0, 0, 0} r r) h",
+            "name": "hrr",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 1 lg",
+            "name": "hlg1",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 1 δ",
+            "name": "hδ1",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} r ℓ",
+            "name": "hℓlo",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} ℓ (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) r) lg)",
+            "name": "hℓhi",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (HMul.hMul.{0, 0, 0} 20 dm) δ",
+            "name": "hdm",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} e δ",
+            "name": "he",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 (HAdd.hAdd.{0, 0, 0} D F)",
+            "name": "hDF0",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 B",
+            "name": "hB",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 0 η",
+            "name": "hη",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (HMul.hMul.{0, 0, 0} (1 / 6) Q)\n  (HAdd.hAdd.{0, 0, 0}\n    (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} 1 (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} 20 dm) ℓ))\n      (HAdd.hAdd.{0, 0, 0} D F))\n    (HMul.hMul.{0, 0, 0} 20 (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} e ℓ) η)))",
+            "name": "h110",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} h (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} Q B) (HMul.hMul.{0, 0, 0} 6 (HMul.hMul.{0, 0, 0} r lg)))",
+            "name": "hlogQ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Eq.{1} LD D",
+            "name": "hD",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} F LC",
+            "name": "hF",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Eq.{1} ε (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HPow.hPow.{0, 0, 0} (HMul.hMul.{0, 0, 0} 60 δ) 2) lg) r)",
+            "name": "hε",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} ε 1",
+            "name": "hε1",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      }
+    }
+  ],
+  "final_readbacks_file": "/tmp/p2m-numeric-assembly-readbacks-20261115/final-readbacks.json",
+  "final_readbacks_sha256": "295af5a33fee3299ce89486e9866d7a8d2e3cf7d6c6803eca90b2a4ccb6cfeec"
+}

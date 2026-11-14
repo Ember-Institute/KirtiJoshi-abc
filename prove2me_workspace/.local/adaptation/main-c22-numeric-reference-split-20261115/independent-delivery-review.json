@@ -1,0 +1,208 @@
+{
+  "schema": "numeric-private-delivery-independent-review-v1",
+  "reviewed_at_utc": "2026-11-14T21:33:00.557454+00:00",
+  "decision": "tool-static-and-offline-prepare-passed; final-ready-and-platform-delivery-not-reviewed",
+  "boundaries": {
+    "api_called": false,
+    "credentials_read": false,
+    "ci_called": false,
+    "git_called": false,
+    "main_unit_edited": false,
+    "paper_or_author_lean_used_to_infer_readback_types": false
+  },
+  "reviewed_files": {
+    "/tmp/p2m-numeric-platform-delivery-20261115/delivery.py": "7d7a3f6f06f2f57ef2d2d2b7e640a8f9c1d253d183660755505fd0f9f2f5e9fa",
+    "/tmp/p2m-numeric-platform-delivery-20261115/README.md": "89e0280fbc871421993f74a810b48a08cde7bdcbe25f0a6d44ce27fc5973161d"
+  },
+  "protocol_references": [
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/contribute.md",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/prove.md",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/missions.md",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/mission_captain.md"
+  ],
+  "prior_accepted_tool_reference": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/delivery.py",
+  "findings": [],
+  "checks": {
+    "python_syntax": "passed via compile() without bytecode output",
+    "offline_prepare": "passed against actual current metadata; save replaced by in-memory capture",
+    "metadata_shapes": "SOURCE_LEDGER.entries[].producer + provenance.repositoryOriginalSource.sourceURL; nodes[].readbacks.{en,zh_Hans,ja}; context source_adaptation_note_en all match",
+    "payload_source_identity": "prepare assertions passed for both theorem/preamble and exact solution bytes",
+    "publication_count": 2,
+    "verification_count": 2,
+    "definition_count": 0,
+    "children_uploaded": 0,
+    "env": "0df444a360eaa60ab8c11dca51a86af692955474 (Lean v4.33.1 per current refs)",
+    "private": true,
+    "title_lengths": [
+      59,
+      73
+    ],
+    "source_urls": [
+      "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/Theorem110.lean#L75-L123",
+      "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/Corollary22.lean#L207-L267"
+    ],
+    "publish_protocol": "single JSON /submit-problem with env/private; save actual jobs response before polling /publish-jobs/:job_id through PENDING/COMPILING to PUBLISHED",
+    "verify_protocol": "multipart /verify with theorem_id,proof_type=prove,explanation,file; save actual submission_id before /verify?submission_id poll to ACCEPTED",
+    "mutation_resume": "saved intent and response reused; existing intent without response raises unknown-POST-outcome assertion and does not POST again",
+    "ready_binding": "packet/source/metadata/evidence SHA; successful exact-argument exclusive-worktree CI receipts bound to current source SHA; no PANIC/error diagnostics; review passed; leaf RSS <=16GiB",
+    "direct_proof_scope": "solution code rejects all import Theorems. lines; ACCEPTED required, not SKETCH_ACCEPTED",
+    "readback_scope": "full original trilingual readback retained; paper English context and short quotations in separate sections",
+    "readback_compiled_expr": "current metadata reports accepted original Expr comparison for all 28/32 binders; wrapped final kernel identity still requires final evidence",
+    "translation_terms_pending": [],
+    "mission_scope": "same existing private creator/root/environment; detached-source-consumer-preparation; root_graph_membership=false; canonicalC22Connected=false; root graph before/after equality checked",
+    "no_scope_expansion": "no launch/release/mission edit/discussion/registry mutation code"
+  },
+  "observed_successful_leaf_evidence": [
+    {
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_assembly-leaf-result.json",
+      "receipt_sha256": "f4934908064dc82fbf2aca78fdff85a524ff48c4b340cc26c79c18c9a5f5174d",
+      "job_id": "ci-013198-a1de037c",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_assembly.lean",
+      "current_source_sha_matches_manifest": true,
+      "peak_rss_bytes": 2127335424,
+      "peak_rss_GiB": 1.9812355041503906,
+      "wall_time_seconds": 23.608664499988663,
+      "cpu_time_seconds": 23.1,
+      "cpu_user_seconds": 0.96,
+      "cpu_system_seconds": 22.14
+    },
+    {
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_c2_final-leaf-result.json",
+      "receipt_sha256": "20444c32784345e9716d50caf8f2a52a078ef3538365241c0ac8298c8ca03d9a",
+      "job_id": "ci-013200-c7fe236d",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_c2_final.lean",
+      "current_source_sha_matches_manifest": true,
+      "peak_rss_bytes": 2152361984,
+      "peak_rss_GiB": 2.0045433044433594,
+      "wall_time_seconds": 23.361380499991355,
+      "cpu_time_seconds": 23.13,
+      "cpu_user_seconds": 1.29,
+      "cpu_system_seconds": 21.84
+    },
+    {
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_assembly-leaf-result.json",
+      "receipt_sha256": "4d2349821dcf06e2cc5119e06dbe048c35b10857ea4b52f4598109081f95a5e6",
+      "job_id": "ci-013204-ab99920a",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_assembly.lean",
+      "current_source_sha_matches_manifest": true,
+      "peak_rss_bytes": 2227081216,
+      "peak_rss_GiB": 2.0741310119628906,
+      "wall_time_seconds": 42.71836810000241,
+      "cpu_time_seconds": 42.230000000000004,
+      "cpu_user_seconds": 14.73,
+      "cpu_system_seconds": 27.5
+    },
+    {
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_c2_final-leaf-result.json",
+      "receipt_sha256": "e424e7cf81ef28a3989cd15cc66c7a26d2a9a801b9fe9e013678ddbc9a59814b",
+      "job_id": "ci-013208-1e70a770",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_c2_final.lean",
+      "current_source_sha_matches_manifest": true,
+      "peak_rss_bytes": 2230046720,
+      "peak_rss_GiB": 2.076892852783203,
+      "wall_time_seconds": 37.36907479999354,
+      "cpu_time_seconds": 36.18,
+      "cpu_user_seconds": 12.04,
+      "cpu_system_seconds": 24.14
+    }
+  ],
+  "accepted_extraction_evidence": [
+    {
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts-result.json",
+      "receipt_sha256": "6a62a6ef4a2abad7e7b6c71c8aed0e79887acedd9b57c73b83392de893e6af67",
+      "job_id": "ci-013138-69f3617f",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/QueryNumericSourceFacts.lean",
+      "current_source_sha_matches_manifest": true,
+      "peak_rss_bytes": 8784846848,
+      "peak_rss_GiB": 8.181526184082031,
+      "wall_time_seconds": 168.43422149999242,
+      "cpu_time_seconds": 164.68,
+      "cpu_user_seconds": 11.64,
+      "cpu_system_seconds": 153.04
+    },
+    {
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges-result.json",
+      "receipt_sha256": "7dbe4fd2e2bd42c04439a923decb5739eeadf551810df800e2b11525342deabd",
+      "job_id": "ci-013170-34692bb5",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/QueryNumericParserRanges.lean",
+      "current_source_sha_matches_manifest": true,
+      "peak_rss_bytes": 8777768960,
+      "peak_rss_GiB": 8.174934387207031,
+      "wall_time_seconds": 152.4699794999906,
+      "cpu_time_seconds": 151.8,
+      "cpu_user_seconds": 7.9,
+      "cpu_system_seconds": 143.9
+    },
+    {
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1-result.json",
+      "receipt_sha256": "f5c4a63bca04b9bbf4357bb2412d54380b1fd72d01915194e2b5975988e5d187",
+      "job_id": "ci-013179-d4f3a95b",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/ExtractNumericSourceOracle.lean",
+      "current_source_sha_matches_manifest": true,
+      "peak_rss_bytes": 11284979712,
+      "peak_rss_GiB": 10.509956359863281,
+      "wall_time_seconds": 202.35464009999123,
+      "cpu_time_seconds": 201.19,
+      "cpu_user_seconds": 24.12,
+      "cpu_system_seconds": 177.07
+    },
+    {
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2-result.json",
+      "receipt_sha256": "e578941560d9dba661830496ce83315e8762ff53ba1735d2098960a92e4c8b01",
+      "job_id": "ci-013192-7dc23963",
+      "status": "succeeded",
+      "exit_code": 0,
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/ExtractSmallNumericOracle.lean",
+      "current_source_sha_matches_manifest": true,
+      "peak_rss_bytes": 5576466432,
+      "peak_rss_GiB": 5.193489074707031,
+      "wall_time_seconds": 88.210181500006,
+      "cpu_time_seconds": 87.65,
+      "cpu_user_seconds": 16.7,
+      "cpu_system_seconds": 70.95
+    }
+  ],
+  "explicitly_not_accepted": [
+    {
+      "job_id": "ci-013120-b4d8ec7a",
+      "reason": "whole-source extraction failed exit 1; peak_rss_bytes=24759988224"
+    },
+    {
+      "job_id": "ci-013148-8c54ef14",
+      "reason": "scheduler succeeded but 17236500480 physical RSS bytes exceeds 16GiB=17179869184; split accepted small-source oracle replaces this attempt"
+    }
+  ],
+  "pending_acceptance": [
+    "main-agent final ready.json and packet SHA",
+    "wrapped kernel type/axiom audits",
+    "all project delivery gates and required final review receipts",
+    "actual two private PUBLISHED nodes plus two direct ACCEPTED submissions",
+    "root graph after delivery unchanged and actual IDs persisted"
+  ],
+  "claim_limit": "This review accepts the tool and current offline preparation only. It does not mark mathematical C2.2 parent obligations or platform delivery complete.",
+  "concrete_packet_review": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery/packet.json",
+    "sha256": "818d07a87645e883a06ad13c18f9f56e94d49c9f4d7a391e026d7cf2ea8b34ea",
+    "status": "passed",
+    "publications": 2,
+    "verification": 2,
+    "four_source_and_all_metadata_sha256": "match current files",
+    "all_private_and_pinned_environment": true,
+    "root_graph_membership": false,
+    "canonicalC22Connected": false
+  }
+}

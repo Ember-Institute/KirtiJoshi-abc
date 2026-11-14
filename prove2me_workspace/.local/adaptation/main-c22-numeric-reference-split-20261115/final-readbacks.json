@@ -1,0 +1,1016 @@
+{
+  "schema": "numeric-reference-independent-readbacks-v1",
+  "date": "2026-11-15",
+  "audit_boundary": "Read actual numerical declaration types; no source docstring, paper meaning, or intended arithmetic interpretation is used in the read-backs. Static proof text is used only for premise-role notes.",
+  "instructions_read": [
+    "docs/三语自然语言读回原则.md",
+    "docs/三语术语名词关键对照.md",
+    "prove2me_workspace/references/mission_auditor.md"
+  ],
+  "ci_performed_by_this_auditor": false,
+  "api_or_git_mutations_performed": false,
+  "translation_terms_pending": [],
+  "nodes": [
+    {
+      "declaration": "Iut.assembly",
+      "readback_model": "gpt-6.1-sol",
+      "readbacks": {
+        "en": "For every choice of real numbers $\\ell,d,D,Q,S,T,P,\\mathrm{DF},E,e,\\mathrm{lg}$, assume all the following conditions: $$\\begin{gathered}7\\le\\ell,\\quad1\\le d,\\quad0\\le D,\\quad0\\le Q,\\quad0\\le S,\\quad0\\le T,\\quad0\\le P,\\quad P\\le2,\\quad0\\le\\mathrm{DF},\\quad0\\le\\mathrm{lg},\\quad\\mathrm{lg}\\le\\ell,\\\\552960\\ell\\le e,\\quad e\\le E,\\\\-12Q\\le6\\ell(\\ell+5)D-\\ell(\\ell+1)Q+24\\ell S+24\\ell(\\ell+5)T+6\\ell(\\ell+5)P,\\\\D\\le\\mathrm{DF}+2\\mathrm{lg}+21,\\quad S\\le2d\\,\\mathrm{DF}+5+\\mathrm{lg},\\quad2T\\le3E.\\end{gathered}$$ Then $$\\ell Q\\le6(\\ell+20d)\\mathrm{DF}+120\\ell E.$$ Here $\\mathrm{DF}$ and $\\mathrm{lg}$ are individual real variables. In particular, $\\ell$ and $d$ are real numbers; the conditions impose no integrality or primality requirement. The six conditions $0\\le D$, $0\\le Q$, $0\\le S$, $0\\le T$, $0\\le P$, and $0\\le\\mathrm{lg}$ remain premises although their named hypotheses are not referenced in the source proof. The conditions allow $Q,S,T,P,\\mathrm{DF},\\mathrm{lg}$ to be zero; they imply $\\ell>0$ and $E\\ge e\\ge552960\\ell>0$.",
+        "zh_Hans": "任取实数 $\\ell,d,D,Q,S,T,P,\\mathrm{DF},E,e,\\mathrm{lg}$，假设以下全部条件成立：$$\\begin{gathered}7\\le\\ell,\\quad1\\le d,\\quad0\\le D,\\quad0\\le Q,\\quad0\\le S,\\quad0\\le T,\\quad0\\le P,\\quad P\\le2,\\quad0\\le\\mathrm{DF},\\quad0\\le\\mathrm{lg},\\quad\\mathrm{lg}\\le\\ell,\\\\552960\\ell\\le e,\\quad e\\le E,\\\\-12Q\\le6\\ell(\\ell+5)D-\\ell(\\ell+1)Q+24\\ell S+24\\ell(\\ell+5)T+6\\ell(\\ell+5)P,\\\\D\\le\\mathrm{DF}+2\\mathrm{lg}+21,\\quad S\\le2d\\,\\mathrm{DF}+5+\\mathrm{lg},\\quad2T\\le3E.\\end{gathered}$$ 则有 $$\\ell Q\\le6(\\ell+20d)\\mathrm{DF}+120\\ell E.$$ 这里 $\\mathrm{DF}$ 与 $\\mathrm{lg}$ 各是单独的实数变量；$\\ell$ 与 $d$ 也是实数，条件没有要求它们是整数或素数。虽然源代码证明未按名称引用 $0\\le D$、$0\\le Q$、$0\\le S$、$0\\le T$、$0\\le P$、$0\\le\\mathrm{lg}$ 这六个假设，它们仍是声明的前提。条件允许 $Q,S,T,P,\\mathrm{DF},\\mathrm{lg}$ 取零，并推出 $\\ell>0$ 以及 $E\\ge e\\ge552960\\ell>0$。",
+        "ja": "任意の実数 $\\ell,d,D,Q,S,T,P,\\mathrm{DF},E,e,\\mathrm{lg}$ に対して、次の条件をすべて仮定する：$$\\begin{gathered}7\\le\\ell,\\quad1\\le d,\\quad0\\le D,\\quad0\\le Q,\\quad0\\le S,\\quad0\\le T,\\quad0\\le P,\\quad P\\le2,\\quad0\\le\\mathrm{DF},\\quad0\\le\\mathrm{lg},\\quad\\mathrm{lg}\\le\\ell,\\\\552960\\ell\\le e,\\quad e\\le E,\\\\-12Q\\le6\\ell(\\ell+5)D-\\ell(\\ell+1)Q+24\\ell S+24\\ell(\\ell+5)T+6\\ell(\\ell+5)P,\\\\D\\le\\mathrm{DF}+2\\mathrm{lg}+21,\\quad S\\le2d\\,\\mathrm{DF}+5+\\mathrm{lg},\\quad2T\\le3E.\\end{gathered}$$ このとき $$\\ell Q\\le6(\\ell+20d)\\mathrm{DF}+120\\ell E.$$ が成り立つ。ここで $\\mathrm{DF}$ と $\\mathrm{lg}$ は、それぞれ一つの実数変数である。$\\ell$ と $d$ も実数であり、整数性や素数性は条件に含まれない。$0\\le D$、$0\\le Q$、$0\\le S$、$0\\le T$、$0\\le P$、$0\\le\\mathrm{lg}$ の六つの仮定は、ソースコードの証明でその仮定名が参照されていなくても、声明の前提である。条件は $Q,S,T,P,\\mathrm{DF},\\mathrm{lg}$ がゼロである場合を許し、$\\ell>0$ および $E\\ge e\\ge552960\\ell>0$ を導く。"
+      },
+      "translation_provenance": {
+        "original_language": "en",
+        "zh_Hans": "Translation of this node’s frozen English read-back, checked against the same static declaration.",
+        "ja": "Translation of this node’s frozen English read-back, checked against the same static declaration.",
+        "independent_audit_count": 1
+      },
+      "formal_statement_static": "lemma assembly {ℓ d D Q S T P DF E e lg : ℝ} (hℓ : 7 ≤ ℓ) (hd : 1 ≤ d) (_hD : 0 ≤ D)\n    (_hQ : 0 ≤ Q) (_hS : 0 ≤ S) (_hT : 0 ≤ T) (_hP0 : 0 ≤ P) (hP : P ≤ 2) (hDF : 0 ≤ DF)\n    (_hlg0 : 0 ≤ lg) (hlg : lg ≤ ℓ) (he : 552960 * ℓ ≤ e) (hE : e ≤ E)\n    (h1 : -12 * Q ≤ 6 * ℓ * (ℓ + 5) * D - ℓ * (ℓ + 1) * Q + 24 * ℓ * S +\n      24 * ℓ * (ℓ + 5) * T + 6 * ℓ * (ℓ + 5) * P)\n    (h2 : D ≤ DF + 2 * lg + 21) (h3 : S ≤ 2 * d * DF + 5 + lg) (h4 : 2 * T ≤ 3 * E) :\n    ℓ * Q ≤ 6 * (ℓ + 20 * d) * DF + 120 * ℓ * E := by",
+      "implicit_real_parameters_static": [
+        "ℓ",
+        "d",
+        "D",
+        "Q",
+        "S",
+        "T",
+        "P",
+        "DF",
+        "E",
+        "e",
+        "lg"
+      ],
+      "explicit_proposition_binders_static": [
+        "hℓ",
+        "hd",
+        "_hD",
+        "_hQ",
+        "_hS",
+        "_hT",
+        "_hP0",
+        "hP",
+        "hDF",
+        "_hlg0",
+        "hlg",
+        "he",
+        "hE",
+        "h1",
+        "h2",
+        "h3",
+        "h4"
+      ],
+      "premises": [
+        {
+          "binder": "hℓ",
+          "condition_math": "7\\le\\ell",
+          "role": {
+            "en": "Lower bound on the real variable ℓ; it gives positivity of ℓ and of ℓ²+ℓ−12.",
+            "zh_Hans": "限定实数 ℓ 的下界，推出 ℓ 与 ℓ²+ℓ−12 为正。",
+            "ja": "実数 ℓ の下限であり、ℓ と ℓ²+ℓ−12 の正値性を導く。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hd",
+          "condition_math": "1\\le d",
+          "role": {
+            "en": "Lower bound on the real coefficient d.",
+            "zh_Hans": "限定实系数 d 的下界。",
+            "ja": "実係数 d の下限を定める。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "_hD",
+          "condition_math": "0\\le D",
+          "role": {
+            "en": "Explicit nonnegativity premise; the source proof does not reference this hypothesis by name.",
+            "zh_Hans": "明确的非负前提；源代码证明未按名称引用此假设。",
+            "ja": "明示された非負性の前提であり、ソースコードの証明はこの仮定名を参照しない。"
+          },
+          "unused_named_hypothesis_in_static_proof": true
+        },
+        {
+          "binder": "_hQ",
+          "condition_math": "0\\le Q",
+          "role": {
+            "en": "Explicit nonnegativity premise; the source proof does not reference this hypothesis by name.",
+            "zh_Hans": "明确的非负前提；源代码证明未按名称引用此假设。",
+            "ja": "明示された非負性の前提であり、ソースコードの証明はこの仮定名を参照しない。"
+          },
+          "unused_named_hypothesis_in_static_proof": true
+        },
+        {
+          "binder": "_hS",
+          "condition_math": "0\\le S",
+          "role": {
+            "en": "Explicit nonnegativity premise; the source proof does not reference this hypothesis by name.",
+            "zh_Hans": "明确的非负前提；源代码证明未按名称引用此假设。",
+            "ja": "明示された非負性の前提であり、ソースコードの証明はこの仮定名を参照しない。"
+          },
+          "unused_named_hypothesis_in_static_proof": true
+        },
+        {
+          "binder": "_hT",
+          "condition_math": "0\\le T",
+          "role": {
+            "en": "Explicit nonnegativity premise; the source proof does not reference this hypothesis by name.",
+            "zh_Hans": "明确的非负前提；源代码证明未按名称引用此假设。",
+            "ja": "明示された非負性の前提であり、ソースコードの証明はこの仮定名を参照しない。"
+          },
+          "unused_named_hypothesis_in_static_proof": true
+        },
+        {
+          "binder": "_hP0",
+          "condition_math": "0\\le P",
+          "role": {
+            "en": "Explicit nonnegativity premise; the source proof does not reference this hypothesis by name.",
+            "zh_Hans": "明确的非负前提；源代码证明未按名称引用此假设。",
+            "ja": "明示された非負性の前提であり、ソースコードの証明はこの仮定名を参照しない。"
+          },
+          "unused_named_hypothesis_in_static_proof": true
+        },
+        {
+          "binder": "hP",
+          "condition_math": "P\\le2",
+          "role": {
+            "en": "Upper bound on P, used when replacing its contribution.",
+            "zh_Hans": "给出 P 的上界，用于放大其贡献项。",
+            "ja": "P の上限であり、その寄与項の上からの評価に用いられる。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hDF",
+          "condition_math": "0\\le\\mathrm{DF}",
+          "role": {
+            "en": "Nonnegativity of DF permits coefficient comparisons after multiplication by DF.",
+            "zh_Hans": "DF 非负，允许将系数比较乘以 DF。",
+            "ja": "DF の非負性により、係数の比較に DF を掛けられる。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "_hlg0",
+          "condition_math": "0\\le\\mathrm{lg}",
+          "role": {
+            "en": "Explicit lower bound on lg; the source proof does not reference this hypothesis by name.",
+            "zh_Hans": "明确给出 lg 的下界；源代码证明未按名称引用此假设。",
+            "ja": "lg の明示的な下限であり、ソースコードの証明はこの仮定名を参照しない。"
+          },
+          "unused_named_hypothesis_in_static_proof": true
+        },
+        {
+          "binder": "hlg",
+          "condition_math": "\\mathrm{lg}\\le\\ell",
+          "role": {
+            "en": "Upper bound on lg in the numerical comparison.",
+            "zh_Hans": "为数值比较提供 lg 的上界。",
+            "ja": "数値比較で用いる lg の上限である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "he",
+          "condition_math": "552960\\ell\\le e",
+          "role": {
+            "en": "Large lower bound on e in terms of ℓ.",
+            "zh_Hans": "以 ℓ 给出 e 的下界。",
+            "ja": "ℓ を用いて e の下限を定める。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hE",
+          "condition_math": "e\\le E",
+          "role": {
+            "en": "Upper comparison of e with E; together with he it gives E≥552960ℓ.",
+            "zh_Hans": "将 e 与 E 比较；结合 he 推出 E≥552960ℓ。",
+            "ja": "e と E を比較し、he と合わせて E≥552960ℓ を導く。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "h1",
+          "condition_math": "-12Q\\le6\\ell(\\ell+5)D-\\ell(\\ell+1)Q+24\\ell S+24\\ell(\\ell+5)T+6\\ell(\\ell+5)P",
+          "role": {
+            "en": "Input inequality linking Q with D, S, T, and P.",
+            "zh_Hans": "连接 Q 与 D、S、T、P 的输入不等式。",
+            "ja": "Q と D、S、T、P を結ぶ入力不等式である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "h2",
+          "condition_math": "D\\le\\mathrm{DF}+2\\mathrm{lg}+21",
+          "role": {
+            "en": "Upper bound substituted for D.",
+            "zh_Hans": "替换 D 时使用的上界。",
+            "ja": "D の置換に用いる上限である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "h3",
+          "condition_math": "S\\le2d\\,\\mathrm{DF}+5+\\mathrm{lg}",
+          "role": {
+            "en": "Upper bound substituted for S.",
+            "zh_Hans": "替换 S 时使用的上界。",
+            "ja": "S の置換に用いる上限である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "h4",
+          "condition_math": "2T\\le3E",
+          "role": {
+            "en": "Upper bound on 2T in terms of E.",
+            "zh_Hans": "以 E 给出 2T 的上界。",
+            "ja": "E を用いて 2T の上限を定める。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        }
+      ],
+      "conclusion_math": "\\ell Q\\le6(\\ell+20d)\\mathrm{DF}+120\\ell E.",
+      "scope": {
+        "all_parameters_universally_quantified": true,
+        "parameter_type": "ℝ",
+        "no_existential_quantifiers_in_static_statement": true,
+        "no_additional_typeclass_binders_in_static_statement": true,
+        "nonstandard_definitions_in_static_statement": [],
+        "interpretation": "Only the displayed real-number equalities and inequalities. Names do not assign arithmetic-geometric meanings to the variables.",
+        "universe_parameters": []
+      },
+      "evidence": {
+        "kind": "static_readback_cross_checked_against_accepted_original_compiler_expr",
+        "source_file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Theorem110.lean",
+        "source_file_sha256_static": "f121c6299e6c5aed8d2904d8342c51c150a7421d3c23aec16ec01eebcf921788",
+        "statement_sha256_static": "257deceea5d502d09bc11a4f4db9ee31d7138b15d91495dcf70dd01de008c144",
+        "statement_range_static_1_based": {
+          "start_line": 79,
+          "end_line": 85
+        },
+        "historical_graph_range_verbatim": {
+          "end": {
+            "col": 40,
+            "line": 126
+          },
+          "endUtf16": 40,
+          "start": {
+            "col": 0,
+            "line": 78
+          },
+          "startUtf16": 0
+        },
+        "historical_graph_selection_range_verbatim": {
+          "end": {
+            "col": 14,
+            "line": 82
+          },
+          "endUtf16": 14,
+          "start": {
+            "col": 6,
+            "line": 82
+          },
+          "startUtf16": 6
+        },
+        "historical_graph_elaboratedType": null,
+        "historical_graph_elaboratedTelescope": null,
+        "universe_parameters": [],
+        "elaborated_binders": [
+          {
+            "name": "ℓ",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "d",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "D",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "Q",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "S",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "T",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "P",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "DF",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "E",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "e",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "lg",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "hℓ",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(7 ≤ ℓ)"
+          },
+          {
+            "name": "hd",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(1 ≤ d)"
+          },
+          {
+            "name": "_hD",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ D)"
+          },
+          {
+            "name": "_hQ",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ Q)"
+          },
+          {
+            "name": "_hS",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ S)"
+          },
+          {
+            "name": "_hT",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ T)"
+          },
+          {
+            "name": "_hP0",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ P)"
+          },
+          {
+            "name": "hP",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(P ≤ 2)"
+          },
+          {
+            "name": "hDF",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ DF)"
+          },
+          {
+            "name": "_hlg0",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ lg)"
+          },
+          {
+            "name": "hlg",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(lg ≤ ℓ)"
+          },
+          {
+            "name": "he",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "((552960 · ℓ) ≤ e)"
+          },
+          {
+            "name": "hE",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(e ≤ E)"
+          },
+          {
+            "name": "h1",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(((−12) · Q) ≤ (((((((6 · ℓ) · (ℓ + 5)) · D) − ((ℓ · (ℓ + 1)) · Q)) + ((24 · ℓ) · S)) + (((24 · ℓ) · (ℓ + 5)) · T)) + (((6 · ℓ) · (ℓ + 5)) · P)))"
+          },
+          {
+            "name": "h2",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(D ≤ ((DF + (2 · lg)) + 21))"
+          },
+          {
+            "name": "h3",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(S ≤ ((((2 · d) · DF) + 5) + lg))"
+          },
+          {
+            "name": "h4",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "((2 · T) ≤ (3 · E))"
+          }
+        ],
+        "new_ci_job_id": "ci-013138-69f3617f",
+        "verification_unit": "main-c22-numeric-reference-split-20261115/source-oracle",
+        "historical_graph_caution": "Range data and null elaboration fields are historical extraction metadata, not a new elaboration receipt.",
+        "elaborated_binder_count": 28,
+        "decoded_conclusion_from_accepted_expr": "((ℓ · Q) ≤ (((6 · (ℓ + (20 · d))) · DF) + ((120 · ℓ) · E)))",
+        "original_expr_facts_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/original-exprs.json",
+        "original_expr_facts_sha256": "53b9fa50dacc204c546453f927e52b41d0040bab1fdccaa1a869b39bbcc2c226",
+        "source_fact_normalized_sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0",
+        "normalized_source_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/Iut-Implication-Theorem110.normalized.lean",
+        "compiler_version": "4.35.0-rc3",
+        "expr_schema": "numeric-source-original-expr-v1",
+        "axioms_from_accepted_query": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "expr_cross_check": {
+          "status": "matched",
+          "binders_order_names_types_and_visibility": "matched all 28 or 32 forall binders; no extra binder",
+          "all_17_premise_arithmetic_expressions_and_conclusion": "checked against the decoded accepted Expr; no read-back condition changes needed",
+          "presentation_equalities": [
+            "For c2_final, r·r=h is written r²=h.",
+            "For c2_final, (1/6)·Q and (1/6)·h are written Q/6 and h/6."
+          ],
+          "decoding_note": "Parenthesized mathematical strings are a local structural decode of the accepted compiler Expr, not compiler pretty-printer output or a new compilation.",
+          "static_vs_normalized_sha": "Raw static source SHA and accepted Lean-normalized coordinate source SHA are distinct records; each is labeled."
+        }
+      },
+      "wrapped_type_review": {
+        "status": "passed",
+        "wrapped_name": "AbcAdaptation.Reference.Iut.assembly",
+        "audit_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/type-audits/Iut-assembly.json",
+        "audit_sha256": "1b1a1ab03fea925f8145e7e3d940883652cbf44591a066d795340d145b40c1eb",
+        "audit_schema": "numeric-kernel-type-axiom-audit-v1",
+        "original_compiler_version": "4.35.0-rc3",
+        "wrapped_compiler_version": "4.33.1",
+        "compiler_flags": {
+          "metaTargetSolutionTypeEqual": true,
+          "kernelTargetSolutionTypeEqual": true,
+          "kernelOriginalTargetTypeEqual": true,
+          "kernelOriginalSolutionTypeEqual": true,
+          "allExpressionBinderInfoEqual": true,
+          "originalTypeStandardConstantsOnly": true,
+          "originalExprMetadataErased": true
+        },
+        "axioms_status": {
+          "solutionAxioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "solutionHasTransitiveSorryAx": false,
+          "solutionBodyDirectSorryAx": false,
+          "solutionClosureStandardAxiomsOnly": true,
+          "permitsOpenChildren": false
+        },
+        "binder_count": 28,
+        "implicit_real_binder_count": 11,
+        "explicit_proposition_binder_count": 17,
+        "universe_alpha_renaming": {
+          "wrappedKernelOrder": [],
+          "solutionKernelOrder": [],
+          "originalKernelOrder": [],
+          "canonicalOrder": []
+        },
+        "original_wrapped_solution_raw_expr_identical": true,
+        "signature_and_binder_visibility_identical": true,
+        "readback_body_changed": false,
+        "definitions_bundle_count": 0,
+        "project_constant_relocations": [],
+        "ci_job_prefix_reported_by_parent": "ci-013216",
+        "ci_status_reported_by_parent": "succeeded",
+        "scope": "Exact numerical theorem type and its closed wrapped solution. No additional source-paper meaning or larger mathematical obligation is asserted."
+      }
+    },
+    {
+      "declaration": "Iut.c2_final",
+      "readback_model": "gpt-6.1-sol",
+      "readbacks": {
+        "en": "For every choice of real numbers $h,r,\\mathrm{lg},\\delta,\\ell,\\mathrm{dm},e,D,F,\\mathrm{LD},\\mathrm{LC},Q,B,\\eta,\\varepsilon$, assume all the following conditions: $$\\begin{gathered}0<r,\\quad r^2=h,\\quad1\\le\\mathrm{lg},\\quad1\\le\\delta,\\quad r\\le\\ell,\\quad\\ell\\le10\\delta r\\,\\mathrm{lg},\\\\20\\mathrm{dm}\\le\\delta,\\quad e\\le\\delta,\\quad0\\le D+F,\\quad0\\le B,\\quad0\\le\\eta,\\\\\\frac{Q}{6}\\le\\left(1+\\frac{20\\mathrm{dm}}{\\ell}\\right)(D+F)+20(e\\ell+\\eta),\\quad h\\le Q+B+6r\\,\\mathrm{lg},\\\\\\mathrm{LD}=D,\\quad F\\le\\mathrm{LC},\\quad\\varepsilon=\\frac{(60\\delta)^2\\mathrm{lg}}{r},\\quad\\varepsilon\\le1.\\end{gathered}$$ Then $$\\frac{h}{6}\\le(1+\\varepsilon)(\\mathrm{LD}+\\mathrm{LC})+40\\eta+\\frac{B}{3}.$$ Each displayed letter or multi-letter name denotes a real variable. In particular, $\\ell$ is real, with no integrality or primality assumption. The conditions give $\\ell\\ge r>0$, so both variable denominators $\\ell$ and $r$ are positive. They also give $h>0$ and $0<\\varepsilon\\le1$. There are no separate nonnegativity assumptions on $\\mathrm{dm}$, $e$, $D$, $F$, $\\mathrm{LD}$, $\\mathrm{LC}$, or $Q$; the stated sum condition is $D+F\\ge0$, and $\\mathrm{LD}+\\mathrm{LC}\\ge0$ follows from it and the two comparison conditions. The conditions permit $B=0$ and $\\eta=0$.",
+        "zh_Hans": "任取实数 $h,r,\\mathrm{lg},\\delta,\\ell,\\mathrm{dm},e,D,F,\\mathrm{LD},\\mathrm{LC},Q,B,\\eta,\\varepsilon$，假设以下全部条件成立：$$\\begin{gathered}0<r,\\quad r^2=h,\\quad1\\le\\mathrm{lg},\\quad1\\le\\delta,\\quad r\\le\\ell,\\quad\\ell\\le10\\delta r\\,\\mathrm{lg},\\\\20\\mathrm{dm}\\le\\delta,\\quad e\\le\\delta,\\quad0\\le D+F,\\quad0\\le B,\\quad0\\le\\eta,\\\\\\frac{Q}{6}\\le\\left(1+\\frac{20\\mathrm{dm}}{\\ell}\\right)(D+F)+20(e\\ell+\\eta),\\quad h\\le Q+B+6r\\,\\mathrm{lg},\\\\\\mathrm{LD}=D,\\quad F\\le\\mathrm{LC},\\quad\\varepsilon=\\frac{(60\\delta)^2\\mathrm{lg}}{r},\\quad\\varepsilon\\le1.\\end{gathered}$$ 则有 $$\\frac{h}{6}\\le(1+\\varepsilon)(\\mathrm{LD}+\\mathrm{LC})+40\\eta+\\frac{B}{3}.$$ 每个字母或多字母名称均表示一个实数变量；特别地，$\\ell$ 是实数，未被要求是整数或素数。条件推出 $\\ell\\ge r>0$，因此两个可变分母 $\\ell$ 与 $r$ 都是正数；还推出 $h>0$ 与 $0<\\varepsilon\\le1$。声明没有分别要求 $\\mathrm{dm}$、$e$、$D$、$F$、$\\mathrm{LD}$、$\\mathrm{LC}$ 或 $Q$ 非负；所给的和式条件是 $D+F\\ge0$，再由 $\\mathrm{LD}=D$ 与 $F\\le\\mathrm{LC}$ 可推出 $\\mathrm{LD}+\\mathrm{LC}\\ge0$。条件允许 $B=0$ 与 $\\eta=0$。",
+        "ja": "任意の実数 $h,r,\\mathrm{lg},\\delta,\\ell,\\mathrm{dm},e,D,F,\\mathrm{LD},\\mathrm{LC},Q,B,\\eta,\\varepsilon$ に対して、次の条件をすべて仮定する：$$\\begin{gathered}0<r,\\quad r^2=h,\\quad1\\le\\mathrm{lg},\\quad1\\le\\delta,\\quad r\\le\\ell,\\quad\\ell\\le10\\delta r\\,\\mathrm{lg},\\\\20\\mathrm{dm}\\le\\delta,\\quad e\\le\\delta,\\quad0\\le D+F,\\quad0\\le B,\\quad0\\le\\eta,\\\\\\frac{Q}{6}\\le\\left(1+\\frac{20\\mathrm{dm}}{\\ell}\\right)(D+F)+20(e\\ell+\\eta),\\quad h\\le Q+B+6r\\,\\mathrm{lg},\\\\\\mathrm{LD}=D,\\quad F\\le\\mathrm{LC},\\quad\\varepsilon=\\frac{(60\\delta)^2\\mathrm{lg}}{r},\\quad\\varepsilon\\le1.\\end{gathered}$$ このとき $$\\frac{h}{6}\\le(1+\\varepsilon)(\\mathrm{LD}+\\mathrm{LC})+40\\eta+\\frac{B}{3}.$$ が成り立つ。各文字または複数字の名称は一つの実数変数を表す。特に $\\ell$ は実数であり、整数性や素数性は仮定されていない。条件から $\\ell\\ge r>0$ が従うため、変数を含む二つの分母 $\\ell$ と $r$ はともに正である。また $h>0$ および $0<\\varepsilon\\le1$ が従う。$\\mathrm{dm}$、$e$、$D$、$F$、$\\mathrm{LD}$、$\\mathrm{LC}$、$Q$ のそれぞれについて非負性の仮定はない。与えられた和の条件は $D+F\\ge0$ であり、これと $\\mathrm{LD}=D$、$F\\le\\mathrm{LC}$ から $\\mathrm{LD}+\\mathrm{LC}\\ge0$ が従う。条件は $B=0$ および $\\eta=0$ の場合を許す。"
+      },
+      "translation_provenance": {
+        "original_language": "en",
+        "zh_Hans": "Translation of this node’s frozen English read-back, checked against the same static declaration.",
+        "ja": "Translation of this node’s frozen English read-back, checked against the same static declaration.",
+        "independent_audit_count": 1
+      },
+      "formal_statement_static": "lemma c2_final {h r lg δ ℓ dm e D F LD LC Q B η ε : ℝ}\n    (hr0 : 0 < r) (hrr : r * r = h) (hlg1 : 1 ≤ lg) (hδ1 : 1 ≤ δ)\n    (hℓlo : r ≤ ℓ) (hℓhi : ℓ ≤ 10 * δ * r * lg)\n    (hdm : 20 * dm ≤ δ) (he : e ≤ δ) (hDF0 : 0 ≤ D + F) (hB : 0 ≤ B) (hη : 0 ≤ η)\n    (h110 : 1 / 6 * Q ≤ (1 + 20 * dm / ℓ) * (D + F) + 20 * (e * ℓ + η))\n    (hlogQ : h ≤ Q + B + 6 * (r * lg))\n    (hD : LD = D) (hF : F ≤ LC)\n    (hε : ε = (60 * δ) ^ 2 * lg / r) (hε1 : ε ≤ 1) :\n    1 / 6 * h ≤ (1 + ε) * (LD + LC) + (40 * η + B / 3) := by",
+      "implicit_real_parameters_static": [
+        "h",
+        "r",
+        "lg",
+        "δ",
+        "ℓ",
+        "dm",
+        "e",
+        "D",
+        "F",
+        "LD",
+        "LC",
+        "Q",
+        "B",
+        "η",
+        "ε"
+      ],
+      "explicit_proposition_binders_static": [
+        "hr0",
+        "hrr",
+        "hlg1",
+        "hδ1",
+        "hℓlo",
+        "hℓhi",
+        "hdm",
+        "he",
+        "hDF0",
+        "hB",
+        "hη",
+        "h110",
+        "hlogQ",
+        "hD",
+        "hF",
+        "hε",
+        "hε1"
+      ],
+      "premises": [
+        {
+          "binder": "hr0",
+          "condition_math": "0<r",
+          "role": {
+            "en": "Strict positivity of r; it excludes division by zero and fixes the direction of division comparisons.",
+            "zh_Hans": "保证 r 严格为正，排除除以零，并确定含 r 的除法比较方向。",
+            "ja": "r の正値性によりゼロ除算を除き、r による除算の不等号の向きを定める。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hrr",
+          "condition_math": "r^2=h",
+          "role": {
+            "en": "Exact relation between h and r; with r>0 it implies h>0.",
+            "zh_Hans": "精确规定 h 与 r 的关系；结合 r>0 推出 h>0。",
+            "ja": "h と r の厳密な関係であり、r>0 と合わせて h>0 を導く。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hlg1",
+          "condition_math": "1\\le\\mathrm{lg}",
+          "role": {
+            "en": "Lower bound on lg, in particular lg>0.",
+            "zh_Hans": "给出 lg 的下界，特别推出 lg>0。",
+            "ja": "lg の下限であり、特に lg>0 を導く。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hδ1",
+          "condition_math": "1\\le\\delta",
+          "role": {
+            "en": "Lower bound on δ, in particular δ>0.",
+            "zh_Hans": "给出 δ 的下界，特别推出 δ>0。",
+            "ja": "δ の下限であり、特に δ>0 を導く。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hℓlo",
+          "condition_math": "r\\le\\ell",
+          "role": {
+            "en": "Lower comparison of ℓ with r; with r>0 it makes the denominator ℓ positive.",
+            "zh_Hans": "给出 ℓ 相对于 r 的下界，结合 r>0 保证分母 ℓ 为正。",
+            "ja": "ℓ と r の下からの比較であり、r>0 と合わせて分母 ℓ を正にする。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hℓhi",
+          "condition_math": "\\ell\\le10\\delta r\\,\\mathrm{lg}",
+          "role": {
+            "en": "Upper bound on ℓ, used to bound eℓ.",
+            "zh_Hans": "给出 ℓ 的上界，用于估计 eℓ。",
+            "ja": "ℓ の上限であり、eℓ の評価に用いられる。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hdm",
+          "condition_math": "20\\mathrm{dm}\\le\\delta",
+          "role": {
+            "en": "Upper bound on 20dm; it bounds 20dm/ℓ by δ/r together with the positive-denominator conditions.",
+            "zh_Hans": "给出 20dm 的上界；结合正分母条件将 20dm/ℓ 控制在 δ/r 以下。",
+            "ja": "20dm の上限であり、分母の正値性の条件と合わせて 20dm/ℓ≤δ/r を導く。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "he",
+          "condition_math": "e\\le\\delta",
+          "role": {
+            "en": "Upper bound on e; there is no separate lower bound on e.",
+            "zh_Hans": "给出 e 的上界，未另给 e 的下界。",
+            "ja": "e の上限であり、e の下限は別に仮定されていない。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hDF0",
+          "condition_math": "0\\le D+F",
+          "role": {
+            "en": "Nonnegativity of the sum D+F permits coefficient comparisons; it does not assert individual nonnegativity.",
+            "zh_Hans": "和 D+F 非负，允许乘以该和比较系数；不分别断言两项非负。",
+            "ja": "和 D+F の非負性により係数を比較できるが、各項の非負性は主張しない。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hB",
+          "condition_math": "0\\le B",
+          "role": {
+            "en": "Nonnegativity of the additive error variable B.",
+            "zh_Hans": "加法误差变量 B 非负。",
+            "ja": "加法的な誤差変数 B の非負性である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hη",
+          "condition_math": "0\\le\\eta",
+          "role": {
+            "en": "Nonnegativity of the additive error variable η.",
+            "zh_Hans": "加法误差变量 η 非负。",
+            "ja": "加法的な誤差変数 η の非負性である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "h110",
+          "condition_math": "Q/6\\le(1+20\\mathrm{dm}/\\ell)(D+F)+20(e\\ell+\\eta)",
+          "role": {
+            "en": "Input inequality bounding Q/6.",
+            "zh_Hans": "控制 Q/6 的输入不等式。",
+            "ja": "Q/6 を上から評価する入力不等式である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hlogQ",
+          "condition_math": "h\\le Q+B+6r\\,\\mathrm{lg}",
+          "role": {
+            "en": "Input inequality comparing h with Q plus the stated additive terms.",
+            "zh_Hans": "将 h 与 Q 及所列加法项比较的输入不等式。",
+            "ja": "h と Q および明示された加法項を比較する入力不等式である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hD",
+          "condition_math": "\\mathrm{LD}=D",
+          "role": {
+            "en": "Identifies LD with D exactly.",
+            "zh_Hans": "规定 LD 与 D 完全相等。",
+            "ja": "LD と D の等しさを定める。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hF",
+          "condition_math": "F\\le\\mathrm{LC}",
+          "role": {
+            "en": "Upper comparison replacing F by LC in the final sum.",
+            "zh_Hans": "将最终和中的 F 放大为 LC。",
+            "ja": "最終的な和で F を LC に置き換える上からの比較である。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hε",
+          "condition_math": "\\varepsilon=(60\\delta)^2\\mathrm{lg}/r",
+          "role": {
+            "en": "Exact value of ε; the other positivity conditions imply ε>0.",
+            "zh_Hans": "精确规定 ε 的值；其余正性条件推出 ε>0。",
+            "ja": "ε の厳密な値であり、他の正値性の条件から ε>0 が従う。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        },
+        {
+          "binder": "hε1",
+          "condition_math": "\\varepsilon\\le1",
+          "role": {
+            "en": "Upper bound on ε; it implies 1−2ε/5≥3/5>0 and permits absorption of the stated errors.",
+            "zh_Hans": "给出 ε 的上界，推出 1−2ε/5≥3/5>0，并允许吸收所列误差项。",
+            "ja": "ε の上限であり、1−2ε/5≥3/5>0 を導き、明示された誤差項の吸収を可能にする。"
+          },
+          "unused_named_hypothesis_in_static_proof": false
+        }
+      ],
+      "conclusion_math": "\\frac{h}{6}\\le(1+\\varepsilon)(\\mathrm{LD}+\\mathrm{LC})+40\\eta+\\frac{B}{3}.",
+      "scope": {
+        "all_parameters_universally_quantified": true,
+        "parameter_type": "ℝ",
+        "no_existential_quantifiers_in_static_statement": true,
+        "no_additional_typeclass_binders_in_static_statement": true,
+        "nonstandard_definitions_in_static_statement": [],
+        "interpretation": "Only the displayed real-number equalities and inequalities. Names do not assign arithmetic-geometric meanings to the variables.",
+        "universe_parameters": []
+      },
+      "evidence": {
+        "kind": "static_readback_cross_checked_against_accepted_original_compiler_expr",
+        "source_file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Corollary22.lean",
+        "source_file_sha256_static": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+        "statement_sha256_static": "e1d059498b76cedf9255c9ec32b3123f4a812de191ff9ab510dc47d3a6f8d13d",
+        "statement_range_static_1_based": {
+          "start_line": 210,
+          "end_line": 218
+        },
+        "historical_graph_range_verbatim": {
+          "end": {
+            "col": 10,
+            "line": 270
+          },
+          "endUtf16": 10,
+          "start": {
+            "col": 0,
+            "line": 210
+          },
+          "startUtf16": 0
+        },
+        "historical_graph_selection_range_verbatim": {
+          "end": {
+            "col": 14,
+            "line": 213
+          },
+          "endUtf16": 14,
+          "start": {
+            "col": 6,
+            "line": 213
+          },
+          "startUtf16": 6
+        },
+        "historical_graph_elaboratedType": null,
+        "historical_graph_elaboratedTelescope": null,
+        "universe_parameters": [],
+        "elaborated_binders": [
+          {
+            "name": "h",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "r",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "lg",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "δ",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "ℓ",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "dm",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "e",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "D",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "F",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "LD",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "LC",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "Q",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "B",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "η",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "ε",
+            "binder_info": "implicit",
+            "type_decoded_from_accepted_expr": "Real"
+          },
+          {
+            "name": "hr0",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 < r)"
+          },
+          {
+            "name": "hrr",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "((r · r) = h)"
+          },
+          {
+            "name": "hlg1",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(1 ≤ lg)"
+          },
+          {
+            "name": "hδ1",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(1 ≤ δ)"
+          },
+          {
+            "name": "hℓlo",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(r ≤ ℓ)"
+          },
+          {
+            "name": "hℓhi",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(ℓ ≤ (((10 · δ) · r) · lg))"
+          },
+          {
+            "name": "hdm",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "((20 · dm) ≤ δ)"
+          },
+          {
+            "name": "he",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(e ≤ δ)"
+          },
+          {
+            "name": "hDF0",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ (D + F))"
+          },
+          {
+            "name": "hB",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ B)"
+          },
+          {
+            "name": "hη",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(0 ≤ η)"
+          },
+          {
+            "name": "h110",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(((1 / 6) · Q) ≤ (((1 + ((20 · dm) / ℓ)) · (D + F)) + (20 · ((e · ℓ) + η))))"
+          },
+          {
+            "name": "hlogQ",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(h ≤ ((Q + B) + (6 · (r · lg))))"
+          },
+          {
+            "name": "hD",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(LD = D)"
+          },
+          {
+            "name": "hF",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(F ≤ LC)"
+          },
+          {
+            "name": "hε",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(ε = ((((60 · δ) ^ 2) · lg) / r))"
+          },
+          {
+            "name": "hε1",
+            "binder_info": "default",
+            "type_decoded_from_accepted_expr": "(ε ≤ 1)"
+          }
+        ],
+        "new_ci_job_id": "ci-013138-69f3617f",
+        "verification_unit": "main-c22-numeric-reference-split-20261115/source-oracle",
+        "historical_graph_caution": "Range data and null elaboration fields are historical extraction metadata, not a new elaboration receipt.",
+        "elaborated_binder_count": 32,
+        "decoded_conclusion_from_accepted_expr": "(((1 / 6) · h) ≤ (((1 + ε) · (LD + LC)) + ((40 · η) + (B / 3))))",
+        "original_expr_facts_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/original-exprs.json",
+        "original_expr_facts_sha256": "53b9fa50dacc204c546453f927e52b41d0040bab1fdccaa1a869b39bbcc2c226",
+        "source_fact_normalized_sha256": "ee2936fcf7c4d85f0e776fc0ce7e96dbdad7cfc2cf6261759358bb6d24af4909",
+        "normalized_source_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/Iut-Implication-Corollary22.normalized.lean",
+        "compiler_version": "4.35.0-rc3",
+        "expr_schema": "numeric-source-original-expr-v1",
+        "axioms_from_accepted_query": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "expr_cross_check": {
+          "status": "matched",
+          "binders_order_names_types_and_visibility": "matched all 28 or 32 forall binders; no extra binder",
+          "all_17_premise_arithmetic_expressions_and_conclusion": "checked against the decoded accepted Expr; no read-back condition changes needed",
+          "presentation_equalities": [
+            "For c2_final, r·r=h is written r²=h.",
+            "For c2_final, (1/6)·Q and (1/6)·h are written Q/6 and h/6."
+          ],
+          "decoding_note": "Parenthesized mathematical strings are a local structural decode of the accepted compiler Expr, not compiler pretty-printer output or a new compilation.",
+          "static_vs_normalized_sha": "Raw static source SHA and accepted Lean-normalized coordinate source SHA are distinct records; each is labeled."
+        }
+      },
+      "wrapped_type_review": {
+        "status": "passed",
+        "wrapped_name": "AbcAdaptation.Reference.Iut.c2_final",
+        "audit_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/type-audits/Iut-c2_final.json",
+        "audit_sha256": "b731e924189f0778e6a5b281e778cdbefa9b56d42156a3dfb82dd006db5bd8db",
+        "audit_schema": "numeric-kernel-type-axiom-audit-v1",
+        "original_compiler_version": "4.35.0-rc3",
+        "wrapped_compiler_version": "4.33.1",
+        "compiler_flags": {
+          "metaTargetSolutionTypeEqual": true,
+          "kernelTargetSolutionTypeEqual": true,
+          "kernelOriginalTargetTypeEqual": true,
+          "kernelOriginalSolutionTypeEqual": true,
+          "allExpressionBinderInfoEqual": true,
+          "originalTypeStandardConstantsOnly": true,
+          "originalExprMetadataErased": true
+        },
+        "axioms_status": {
+          "solutionAxioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "solutionHasTransitiveSorryAx": false,
+          "solutionBodyDirectSorryAx": false,
+          "solutionClosureStandardAxiomsOnly": true,
+          "permitsOpenChildren": false
+        },
+        "binder_count": 32,
+        "implicit_real_binder_count": 15,
+        "explicit_proposition_binder_count": 17,
+        "universe_alpha_renaming": {
+          "wrappedKernelOrder": [],
+          "solutionKernelOrder": [],
+          "originalKernelOrder": [],
+          "canonicalOrder": []
+        },
+        "original_wrapped_solution_raw_expr_identical": true,
+        "signature_and_binder_visibility_identical": true,
+        "readback_body_changed": false,
+        "definitions_bundle_count": 0,
+        "project_constant_relocations": [],
+        "ci_job_prefix_reported_by_parent": "ci-013219",
+        "ci_status_reported_by_parent": "succeeded",
+        "scope": "Exact numerical theorem type and its closed wrapped solution. No additional source-paper meaning or larger mathematical obligation is asserted."
+      }
+    }
+  ],
+  "accepted_original_expr_cross_check": {
+    "job_id": "ci-013138-69f3617f",
+    "status": "accepted",
+    "facts_sha256": "53b9fa50dacc204c546453f927e52b41d0040bab1fdccaa1a869b39bbcc2c226",
+    "binder_counts": {
+      "Iut.assembly": 28,
+      "Iut.c2_final": 32
+    },
+    "readback_text_changed": false,
+    "performed_new_compilation": false
+  },
+  "wrapped_type_review_status": "passed",
+  "wrapped_type_review_file": "/tmp/p2m-numeric-assembly-readbacks-20261115/wrapped-type-review.json"
+}

@@ -1,0 +1,1215 @@
+{
+  "schema": "numeric-staging-independent-review-v1",
+  "reviewed_at_utc": "2026-11-14T21:46:57.962478+00:00",
+  "verdict": "passed",
+  "findings": [],
+  "repository": "/home/admin-wsl/Coq/abc",
+  "reviewed_head": "4c2d61e27dbbe43629c2709717977ef431a4a287",
+  "staged_path_count": 182,
+  "allowlist_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/staging-allowlist.json",
+  "allowlist_sha256": "c2d14ebad8dd3948315c98a990f4afd0ad537b1a3c9e174975295b889ef68e82",
+  "cached_names_exactly_allowlist": true,
+  "all_staged_bytes_exactly_disk": true,
+  "cached_diff_check": "passed",
+  "scope": {
+    "new_platform_Lean_files": [
+      "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_assembly.lean",
+      "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_c2_final.lean",
+      "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_assembly.lean",
+      "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_c2_final.lean"
+    ],
+    "unit_evidence_file_count": 177,
+    "registry_file": "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+    "unrelated_user_docs_staged": false,
+    "temporary_drafts_outside_unit_staged": false,
+    "credentials_or_env_files_staged": false,
+    "lake_or_build_artifacts_staged": false,
+    "symlinks_or_gitlinks_staged": false,
+    "RootOnly_sources": "Two small validated immutable compiler inputs; retained intentionally"
+  },
+  "archive_validation": {
+    "count": 7,
+    "all_source_and_archive_sha256_and_byte_counts_match": true,
+    "all_roundtrips_exact": true,
+    "all_uncompressed_duplicates_excluded": true,
+    "records": [
+      {
+        "source": "original-wrapped-expr-name-map.json",
+        "archive": "archives/original-wrapped-expr-name-map.json.gz",
+        "original_bytes": 1725433,
+        "archive_bytes": 42187,
+        "source_sha256": "c238cf9ef3dd25deb41bc991ccfad565c04896dbb54de2433cf82e6c35d7fd4e",
+        "archive_sha256": "1df0fb276e3443d90d07a772dcb0118307560761c0918e251f28d419bb3e9fc5",
+        "exact_gzip_roundtrip": true,
+        "raw_duplicate_excluded": true
+      },
+      {
+        "source": "registry-before.json",
+        "archive": "archives/registry-before.json.gz",
+        "original_bytes": 1151475,
+        "archive_bytes": 284056,
+        "source_sha256": "a71541622b8ac0ca0d88f0737f34cf8c1c12ce0d8c97575675b7363e57d4c28d",
+        "archive_sha256": "42cc1269b02e19e47d15a780c926ad9703365d9260e51b55dd501b41d6b68cba",
+        "exact_gzip_roundtrip": true,
+        "raw_duplicate_excluded": true
+      },
+      {
+        "source": "type-audits/Iut-assembly.json",
+        "archive": "archives/type-audits__Iut-assembly.json.gz",
+        "original_bytes": 1069142,
+        "archive_bytes": 34738,
+        "source_sha256": "1b1a1ab03fea925f8145e7e3d940883652cbf44591a066d795340d145b40c1eb",
+        "archive_sha256": "c1eb236254b914f8df92d6df95a09aba964a1000abc65ecfd492fc5227cbcc23",
+        "exact_gzip_roundtrip": true,
+        "raw_duplicate_excluded": true
+      },
+      {
+        "source": "type-audits/Iut-c2_final.json",
+        "archive": "archives/type-audits__Iut-c2_final.json.gz",
+        "original_bytes": 849234,
+        "archive_bytes": 30243,
+        "source_sha256": "b731e924189f0778e6a5b281e778cdbefa9b56d42156a3dfb82dd006db5bd8db",
+        "archive_sha256": "a2b10d82df1bbcb77fb398583f2566ccdcd5d1394477d22951f0a85771e07581",
+        "exact_gzip_roundtrip": true,
+        "raw_duplicate_excluded": true
+      },
+      {
+        "source": "ExtractNumericSourceOracle.lean",
+        "archive": "archives/ExtractNumericSourceOracle.lean.gz",
+        "original_bytes": 15751,
+        "archive_bytes": 5033,
+        "source_sha256": "7af3a26e145fddebd5f258599e01b0518c739b55f5579d599aa58f128449df72",
+        "archive_sha256": "bc2acc3455394871acc2d26c2593060f8fe50135e0d3b15177d5bd1a0b2f6e7f",
+        "exact_gzip_roundtrip": true,
+        "raw_duplicate_excluded": true
+      },
+      {
+        "source": "ExtractSmallNumericOracle.lean",
+        "archive": "archives/ExtractSmallNumericOracle.lean.gz",
+        "original_bytes": 15868,
+        "archive_bytes": 5068,
+        "source_sha256": "39eb6edff9608be302d1b94b35a0c9f80f9cb75da588aff66d1cf492cfdedb15",
+        "archive_sha256": "5d4a4bd3e4514e2533c0000549839ba555899689eed9bc066d3ff56b465c5731",
+        "exact_gzip_roundtrip": true,
+        "raw_duplicate_excluded": true
+      },
+      {
+        "source": "attempts/two-file-oracle-env-memory/ExtractNumericSourceOracle.lean",
+        "archive": "archives/attempts__two-file-oracle-env-memory__ExtractNumericSourceOracle.lean.gz",
+        "original_bytes": 15751,
+        "archive_bytes": 5033,
+        "source_sha256": "7af3a26e145fddebd5f258599e01b0518c739b55f5579d599aa58f128449df72",
+        "archive_sha256": "bc2acc3455394871acc2d26c2593060f8fe50135e0d3b15177d5bd1a0b2f6e7f",
+        "exact_gzip_roundtrip": true,
+        "raw_duplicate_excluded": true
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/AuditAssembly.lean",
+      "mode": "100644",
+      "bytes": 18118,
+      "sha256": "238d153e545f41e225f84fd293ef4df52877388a8c0fddf3b699a0ce07cc5287"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/AuditC2Final.lean",
+      "mode": "100644",
+      "bytes": 18118,
+      "sha256": "2abf2d3eb3cbbf20ea8013caae19448ea6dc0d1b4b153460ba350e33f41c1392"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/LICENSE.iut.Apache-2.0",
+      "mode": "100644",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/QueryNumericParserRanges.lean",
+      "mode": "100644",
+      "bytes": 7606,
+      "sha256": "3cd4b4e07fa0028dda5515a5c7da7ec2cc6343e7fcb12129dcf9270c8055b249"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/QueryNumericSourceFacts.lean",
+      "mode": "100644",
+      "bytes": 9769,
+      "sha256": "f737b6f2d9ad646884b6c82fc534d72dfaf6720355b4cb92cf9f7467290036ae"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/RootOnly/Numeric_Iut_assembly.lean",
+      "mode": "100644",
+      "bytes": 3779,
+      "sha256": "a6efd1448aa2e6842d853a9d70b9edb9844ff8b23f5c7593a5c2da0d088a4a2c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/RootOnly/Numeric_Iut_c2_final.lean",
+      "mode": "100644",
+      "bytes": 3881,
+      "sha256": "836b78370230a9ba0d881b95ac85e056684a3e000c17826b1c62a98635167ac4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/SOURCE_LEDGER.json",
+      "mode": "100644",
+      "bytes": 9576,
+      "sha256": "c2bb93142d70a9400e193e4ba4b6d7765f3bde43edf9388ac23cd0c6cd4e06f0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_assembly-artifact-request.json",
+      "mode": "100644",
+      "bytes": 45947,
+      "sha256": "1e06fe242b9dfad51ec65604cf301b174c29812ce68a1ee9736647b2c69f6617"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_assembly-artifact-result.json",
+      "mode": "100644",
+      "bytes": 138022,
+      "sha256": "c5d49dee91292628c13781abe20f205b12c6c199d667c3f1ae741af7805ae173"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_assembly-artifact-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "25f01135acf8f6bd76fdf28669cbdfad492ef34d37e2900449f5e5f8833b1294"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_assembly-leaf-request.json",
+      "mode": "100644",
+      "bytes": 45831,
+      "sha256": "eac8ae67e97dc22e9a64ad53eea7d2c11833c0cae1fbf452dc155023e9b0a75c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_assembly-leaf-result.json",
+      "mode": "100644",
+      "bytes": 137797,
+      "sha256": "4d2349821dcf06e2cc5119e06dbe048c35b10857ea4b52f4598109081f95a5e6"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_assembly-leaf-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "331c0e7189d61b692e057a0a90d2b0901a29ee614b4aa26a09b63d14e9d2d4a5"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_c2_final-artifact-request.json",
+      "mode": "100644",
+      "bytes": 45947,
+      "sha256": "a59d9b3171c6752be9f4771b7a5f942a5aad1f6adec249b8584208d8c38c11d4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_c2_final-artifact-result.json",
+      "mode": "100644",
+      "bytes": 137992,
+      "sha256": "586b91517abb9368dd87176f05d67c6afbb8fbc0ace71170dd4620ee350c7286"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_c2_final-artifact-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "173717b974c650699fe4b431ee5f1aaa9ed20a55f1dfae54f5373b30c8e078fd"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_c2_final-leaf-request.json",
+      "mode": "100644",
+      "bytes": 45831,
+      "sha256": "574ca555fa8bee0e772ac79b67b0c1fb57189aab5aaf4d047c3487d1dcc3d081"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_c2_final-leaf-result.json",
+      "mode": "100644",
+      "bytes": 137770,
+      "sha256": "e424e7cf81ef28a3989cd15cc66c7a26d2a9a801b9fe9e013678ddbc9a59814b"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_c2_final-leaf-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "defce2bace694afb75e44241616f434532f5680f1578482d9e40791c0a7101c5"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_assembly-artifact-request.json",
+      "mode": "100644",
+      "bytes": 45945,
+      "sha256": "f999a6b91b4d1d918f76d7c222f8fcd07c0adf419a5fff7ed6e3b4bf08d48e2b"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_assembly-artifact-result.json",
+      "mode": "100644",
+      "bytes": 138299,
+      "sha256": "10d139ab24163acea62b457aa6189fa0d3f1cfea883a672e6ea8b702006fa731"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_assembly-artifact-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "f7347b544d8c9e17655ec4688b9d413e51bccd4c8196767fd42dcdc14ec6eb27"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_assembly-leaf-request.json",
+      "mode": "100644",
+      "bytes": 45830,
+      "sha256": "e20a73c5cf5ee86869e2ae1d15e9bdc3629fc2949a71cd5cafd6978b4b94dd12"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_assembly-leaf-result.json",
+      "mode": "100644",
+      "bytes": 138074,
+      "sha256": "f4934908064dc82fbf2aca78fdff85a524ff48c4b340cc26c79c18c9a5f5174d"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_assembly-leaf-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "6b733ef44f1b006de77a30c1022d197d7a56dab8b516aa37e95b2801d8194af1"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_c2_final-artifact-request.json",
+      "mode": "100644",
+      "bytes": 45945,
+      "sha256": "cec0919268363581b1ae06ebfaad7d3a24cf851f3f749b13b18631302cb86ce3"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_c2_final-artifact-result.json",
+      "mode": "100644",
+      "bytes": 138323,
+      "sha256": "4a796eb28b69d82d74307fa6c1b462c0e3d3e328fe252170c3853f928c74eb97"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_c2_final-artifact-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "9f45fbf726cb43bb35609b45971f2cac7dcdea429200850faad6b67191a3dde4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_c2_final-leaf-request.json",
+      "mode": "100644",
+      "bytes": 45830,
+      "sha256": "c39b0c3d5e306e5c8791e723c15c545145374ed82f0e16c7cf312b0cb5fb66ca"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_c2_final-leaf-result.json",
+      "mode": "100644",
+      "bytes": 138079,
+      "sha256": "20444c32784345e9716d50caf8f2a52a078ef3538365241c0ac8298c8ca03d9a"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_c2_final-leaf-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "6a2811088902b70b9557e7c873bea4f48919fc5c7bfca4bbd60e347fc7e7c86f"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/archive-manifest.json",
+      "mode": "100644",
+      "bytes": 3618,
+      "sha256": "5ab519b02fbc3f2b4bbac824e4f6baaf7ae3803c70e8b24fdc586bf33fc272a3"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/archives/ExtractNumericSourceOracle.lean.gz",
+      "mode": "100644",
+      "bytes": 5033,
+      "sha256": "bc2acc3455394871acc2d26c2593060f8fe50135e0d3b15177d5bd1a0b2f6e7f"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/archives/ExtractSmallNumericOracle.lean.gz",
+      "mode": "100644",
+      "bytes": 5068,
+      "sha256": "5d4a4bd3e4514e2533c0000549839ba555899689eed9bc066d3ff56b465c5731"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/archives/attempts__two-file-oracle-env-memory__ExtractNumericSourceOracle.lean.gz",
+      "mode": "100644",
+      "bytes": 5033,
+      "sha256": "bc2acc3455394871acc2d26c2593060f8fe50135e0d3b15177d5bd1a0b2f6e7f"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/archives/original-wrapped-expr-name-map.json.gz",
+      "mode": "100644",
+      "bytes": 42187,
+      "sha256": "1df0fb276e3443d90d07a772dcb0118307560761c0918e251f28d419bb3e9fc5"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/archives/registry-before.json.gz",
+      "mode": "100644",
+      "bytes": 284056,
+      "sha256": "42cc1269b02e19e47d15a780c926ad9703365d9260e51b55dd501b41d6b68cba"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/archives/type-audits__Iut-assembly.json.gz",
+      "mode": "100644",
+      "bytes": 34738,
+      "sha256": "c1eb236254b914f8df92d6df95a09aba964a1000abc65ecfd492fc5227cbcc23"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/archives/type-audits__Iut-c2_final.json.gz",
+      "mode": "100644",
+      "bytes": 30243,
+      "sha256": "a2b10d82df1bbcb77fb398583f2566ccdcd5d1394477d22951f0a85771e07581"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/assembly-type-axioms-review-request.json",
+      "mode": "100644",
+      "bytes": 45838,
+      "sha256": "909018787b297161eb8d5c1275e777edec718902f52ebe9619d124c4538b26e5"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/assembly-type-axioms-review-result.json",
+      "mode": "100644",
+      "bytes": 138856,
+      "sha256": "99e69564b98fca8c3674dd0da226bcca4be32010c7736e4373f262d0baad94dc"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/assembly-type-axioms-review-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "7f5f905c0a7e0e1927ef8162fe7c46ce57bdcb01dd08fa512f409e851ba0a254"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/source-facts-first-timeout/source-facts-request.json",
+      "mode": "100644",
+      "bytes": 215107,
+      "sha256": "c5199986073c48da4ea31814c33218f345313d3023e0bc008969afd6119928f3"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/source-facts-first-timeout/source-facts-result.json",
+      "mode": "100644",
+      "bytes": 445748,
+      "sha256": "5c557f6374af7bd03ce6f76b740296721a445e27d6c23331a878ddfd7da37f8c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/source-facts-first-timeout/source-facts-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "60032824899fccdba80e2f76bd6819f8f923a6f1d3860f09c1c77e03c286f6ce"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle-config.json",
+      "mode": "100644",
+      "bytes": 2019,
+      "sha256": "3cf0d3e0b0b51892356c1ef32c19d088f12e45e3c7d47834a233efb88feb5ebb"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle-request.json",
+      "mode": "100644",
+      "bytes": 215199,
+      "sha256": "310199c27bde44c826c306667f2d7bb612990275afb439484a40c4141c0ccb5a"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle-result.json",
+      "mode": "100644",
+      "bytes": 678161,
+      "sha256": "a855536cc9f7f62a48793d5564f211ac8238d3dee1b82325de67a47c6457464c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "987151d3a176808d7252ee0ca6bf442077f594d6a0801984c931d9e03a2f5246"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle/Iut/Implication/Corollary22.diagnostics.json",
+      "mode": "100644",
+      "bytes": 17337,
+      "sha256": "0e28e5db441c4e5e7a8b94a2d4baecb5ae6aaa2757cb800834626bbb162d08fb"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle/Iut/Implication/Corollary22.normalized.lean",
+      "mode": "100644",
+      "bytes": 30279,
+      "sha256": "ee2936fcf7c4d85f0e776fc0ce7e96dbdad7cfc2cf6261759358bb6d24af4909"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle/Iut/Implication/Theorem110.diagnostics.json",
+      "mode": "100644",
+      "bytes": 232,
+      "sha256": "f00930402aa299a3af4efb0e82a209024597334fca5433369d9cfd511f8041a9"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle/Iut/Implication/Theorem110.jsonl",
+      "mode": "100644",
+      "bytes": 310357,
+      "sha256": "ac59b3c680f0aa00d41e2062f4d220853ec351b42197e41c3c551aa7b53f877c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle/Iut/Implication/Theorem110.normalized.lean",
+      "mode": "100644",
+      "bytes": 17493,
+      "sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/attempts/two-file-oracle-env-memory/source-oracle/index.json",
+      "mode": "100644",
+      "bytes": 3683,
+      "sha256": "fe86c2d41a9a435677acd0f4501538b323e5ee3bcb6dddac2fc41b0894ecf284"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/before-private-upload-initial-review.json",
+      "mode": "100644",
+      "bytes": 3316,
+      "sha256": "ba3a5962e665e691cfcc0c69f2c151a5b41936f3e78bcd0e58c173775d94082c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/before-private-upload-review.json",
+      "mode": "100644",
+      "bytes": 4163,
+      "sha256": "f06c576e519b0a4515a01fb4443108a0d5cef11810b3b48ee90c951ebc12bc88"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/c2-final-type-axioms-review-request.json",
+      "mode": "100644",
+      "bytes": 45837,
+      "sha256": "5b2b06ad02bcd3b89a854254410330b91f4028cf6f1e02f6336b070ae487709f"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/c2-final-type-axioms-review-result.json",
+      "mode": "100644",
+      "bytes": 138850,
+      "sha256": "503a33f668a5ace66c08b2193bf6c73510f2d3308f211144f2668ac6ffa4ec17"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/c2-final-type-axioms-review-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "923036cf8459769b2573c575652dfb03ab88747aa658d78536928c4dc1aeeb58"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/ci-summary.json",
+      "mode": "100644",
+      "bytes": 7284,
+      "sha256": "65b290933b1c860f703805850f0ca2e950652f7a851e13114fce14b91146ec31"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/ci.py",
+      "mode": "100644",
+      "bytes": 3905,
+      "sha256": "f494b58ce58fb2e0149bf6c921341561f2e338c1c8a217cd26dcc8164b5ad1bf"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/def-closure-review.json",
+      "mode": "100644",
+      "bytes": 71551,
+      "sha256": "2c4244d565e96c5ab21bb17e32e5b4924b9a6efcb2c3c7630ea36f49fd3c517d"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery.py",
+      "mode": "100644",
+      "bytes": 14862,
+      "sha256": "7d7a3f6f06f2f57ef2d2d2b7e640a8f9c1d253d183660755505fd0f9f2f5e9fa"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery/packet.json",
+      "mode": "100644",
+      "bytes": 17724,
+      "sha256": "818d07a87645e883a06ad13c18f9f56e94d49c9f4d7a391e026d7cf2ea8b34ea"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery/ready.json",
+      "mode": "100644",
+      "bytes": 15064,
+      "sha256": "b4f0d4d3d3a612dbb20b84c50681b45b5c65f2b5da2927b68baabf20a18f60b6"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/draft-manifest.json",
+      "mode": "100644",
+      "bytes": 1032,
+      "sha256": "783a06998275bfa432f1bbf34ec726da8c531e1fe91395e6e76ea8ffdf7b38fc"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/final-generation-report.json",
+      "mode": "100644",
+      "bytes": 11322,
+      "sha256": "41a590fe20dd2071b51764298bd15b30b073e98fb18595c489cdfaefcfd3155d"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/final-handoff-identity.json",
+      "mode": "100644",
+      "bytes": 2667,
+      "sha256": "e0085730a08709edc3b3e0439a5b7ddf1afb39460f2636d634fd06eeeacbebcf"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/final-platform-review.json",
+      "mode": "100644",
+      "bytes": 4977,
+      "sha256": "11383b0c484ae2dfd13df793d0bc1319905ff3375db5e131067ab4fb7510cdaf"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/final-readbacks.json",
+      "mode": "100644",
+      "bytes": 48527,
+      "sha256": "295af5a33fee3299ce89486e9866d7a8d2e3cf7d6c6803eca90b2a4ccb6cfeec"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/generate_from_small_oracles.py",
+      "mode": "100644",
+      "bytes": 19335,
+      "sha256": "b380423fb55a8903213311e155e67ede4b6a8c70b19f1486feed809f6a0259cd"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/generate_numeric.py",
+      "mode": "100644",
+      "bytes": 16822,
+      "sha256": "ada46786fa0030fee0d31fc516df9293c4b6d06681a8a85b9dd8454b08cfa453"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/generate_root_only.py",
+      "mode": "100644",
+      "bytes": 8871,
+      "sha256": "ecd45569ec7f6526525e2249ec482f792e71b1a7c5d1573840b8017808afc8d4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/independent-delivery-review.json",
+      "mode": "100644",
+      "bytes": 11407,
+      "sha256": "276de58ebd60801701d41ce5623e2377c552148ae59fb68744e1772a22b787fa"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/independent-source-review.json",
+      "mode": "100644",
+      "bytes": 31721,
+      "sha256": "604bfe51efd6f55a753c2bf3f4b6d6a1c0d0155fcb048941d6823f5292699d00"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/integration.json",
+      "mode": "100644",
+      "bytes": 1214,
+      "sha256": "9ccd5ffc1ca9677c6ae81bde8e37575fa8d93a63915ee0539dd34edcba3b4db2"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/numeric-graph-receipt.json",
+      "mode": "100644",
+      "bytes": 838,
+      "sha256": "15bd3ba8a36c8758324f78233f2d360ae09114662c131abfa6bab8380548e32a"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/numeric-root-compiler-graph.jsonl",
+      "mode": "100644",
+      "bytes": 63199,
+      "sha256": "46c3b73c129f39f21af0db1b9783c9e85dbc2210401e5475845d36cb05a84738"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/paper-pdf-manifest.json",
+      "mode": "100644",
+      "bytes": 1138,
+      "sha256": "9778592b7a17f864a45b0605be448fd591d36ee7205a36f29d3f5aac02d81bb9"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/paper-quotation-verification.json",
+      "mode": "100644",
+      "bytes": 1558,
+      "sha256": "834a55fdf834b4df7877f3df81ec8d64b1fe25bcf68fca8024cc8ee18b161319"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/paper-source-context.en.json",
+      "mode": "100644",
+      "bytes": 7418,
+      "sha256": "70b48bba2d13dbef491a95489083a04ba815e707327c1f5303c542336173d35a"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-acceptance.json",
+      "mode": "100644",
+      "bytes": 1244,
+      "sha256": "4d595ae04aba1645e87c042fc0a374e5241b645240d894fda9c85835bbb76852"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges-config.json",
+      "mode": "100644",
+      "bytes": 837,
+      "sha256": "b1c95077dc6118aeb64b0bd71a58f7235c4be5de84e81dd8aef5c61e74242a71"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges-request.json",
+      "mode": "100644",
+      "bytes": 215201,
+      "sha256": "02e205c06c00417a8bceb5e3cf8b34cabd6f8d9190e14fb761a0fd2aa3f93913"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges-result.json",
+      "mode": "100644",
+      "bytes": 677797,
+      "sha256": "7dbe4fd2e2bd42c04439a923decb5739eeadf551810df800e2b11525342deabd"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "9b49c31319d6e6f61492abe3513cacf4afcaccd5ea4a64f31eda3d1e4bab574b"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges/Iut-Implication-Corollary22.normalized.lean",
+      "mode": "100644",
+      "bytes": 30279,
+      "sha256": "ee2936fcf7c4d85f0e776fc0ce7e96dbdad7cfc2cf6261759358bb6d24af4909"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges/Iut-Implication-Theorem110.normalized.lean",
+      "mode": "100644",
+      "bytes": 17493,
+      "sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges/Iut-assembly.jsonl",
+      "mode": "100644",
+      "bytes": 80858,
+      "sha256": "f8fe5d53509fea419233060ed483614a6cf6e77bdc203012fbb2354ddb9acd96"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/parser-ranges/Iut-c2_final.jsonl",
+      "mode": "100644",
+      "bytes": 89668,
+      "sha256": "9f284f581e13a99ad563480e0b99697f5da7f0a3fc9c88e5d7cc17ee82a96131"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/payloads/AbcAdaptation_Reference_Iut_assembly.json",
+      "mode": "100644",
+      "bytes": 5015,
+      "sha256": "75e79029e9e45428abbc6cc02904e21708701ad76128fe65370421284b756b1c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/payloads/AbcAdaptation_Reference_Iut_c2_final.json",
+      "mode": "100644",
+      "bytes": 5192,
+      "sha256": "404b166f2940eceb06845a8f9ed0440891bc4500fac580a41a074d543be1f994"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/plan-checkbox-audit.json",
+      "mode": "100644",
+      "bytes": 468,
+      "sha256": "f87af433bd830166f431f5380f509740c7083304c03f8018b7f5872e7e43acbe"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/plan.json",
+      "mode": "100644",
+      "bytes": 237440,
+      "sha256": "8c20878aa39c64d8737cf00184e5621a2d99d85f5c67c68ac9985abd5d219d0d"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_assembly-intent.json",
+      "mode": "100644",
+      "bytes": 6958,
+      "sha256": "6ae42131320ad236b2eef6cca7f26ab58f02d87a05427752eeb68cccca02593f"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_assembly-published-item.json",
+      "mode": "100644",
+      "bytes": 7104,
+      "sha256": "584bbd33f23574920477a92738461a6d8a7346b7b6a17a8a81a93a7c517f460b"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_assembly-result.json",
+      "mode": "100644",
+      "bytes": 7090,
+      "sha256": "e55429d96173eff336bf4339c69d1f2ae4d63e1925debf3f04feb08f25f28b69"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_assembly-submit.json",
+      "mode": "100644",
+      "bytes": 857,
+      "sha256": "8bb8a57d7e4db359eb33d208e8f60dfde48fd58a9ab59ca8647930c47749ab5e"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_c2_final-intent.json",
+      "mode": "100644",
+      "bytes": 7801,
+      "sha256": "6c8c96d4b4f93d671f17a5d6f00386ddf8b38d220b8b9121d5bc7417a093671c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_c2_final-published-item.json",
+      "mode": "100644",
+      "bytes": 7947,
+      "sha256": "b6d3fdae6f65e235ff3e40b58ae9e62fa69f160761782395a8fde121c875d134"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_c2_final-result.json",
+      "mode": "100644",
+      "bytes": 7933,
+      "sha256": "a67396b17856b5324b60c5a7d07c8c61d65eef04537593b12daef01391e16f30"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_c2_final-submit.json",
+      "mode": "100644",
+      "bytes": 857,
+      "sha256": "714da80fabed23c6f9970858f0fb62b6ee877a478119a9dde1965566b917f2f1"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/delivery-summary.json",
+      "mode": "100644",
+      "bytes": 495,
+      "sha256": "dc6a4a75bfc5368c843f75c86c2b626bac7d598d31499eb67b3856e67ace24a2"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/final-AbcAdaptation_Reference_Iut_assembly.json",
+      "mode": "100644",
+      "bytes": 7106,
+      "sha256": "523390bc380b3e69b79c717ae27d507153486f73b1fd12850c8dac941bad3638"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/final-AbcAdaptation_Reference_Iut_c2_final.json",
+      "mode": "100644",
+      "bytes": 7949,
+      "sha256": "25706c73ccda92108128eecd2b29c7f19583f2fbaba5841b6b2f583974534c09"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/final-statuses.json",
+      "mode": "100644",
+      "bytes": 455,
+      "sha256": "cf6db9badf3bbc36255ebf92c447ba6351eec2a7906bf234b139a568c9518180"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/mission-list-readback.json",
+      "mode": "100644",
+      "bytes": 21679,
+      "sha256": "834ad7be66d2a3ee650fa662f9be36b116673e0d16ad220e8e43291865269df3"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/mission-scope.json",
+      "mode": "100644",
+      "bytes": 4173,
+      "sha256": "d7c64b74ac0cb853d827a8fac6b2659e18f8a8fde6b1bfba8e8a2a50690ea735"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/published-ids.json",
+      "mode": "100644",
+      "bytes": 167,
+      "sha256": "91d3bc1664a542c6af8419956521c7bad02fdb019a5b49f9b1e0c2397051ae5a"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/root-graph-after.json",
+      "mode": "100644",
+      "bytes": 292899,
+      "sha256": "3947435df13436638c5ae9073453c953b22b0ccd3d378954439b704528dc43fe"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/root-graph-before.json",
+      "mode": "100644",
+      "bytes": 292899,
+      "sha256": "3947435df13436638c5ae9073453c953b22b0ccd3d378954439b704528dc43fe"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_assembly-intent.json",
+      "mode": "100644",
+      "bytes": 2775,
+      "sha256": "feaac8ec6bdec28ecc8a2ed55c43c25a352da83d820b788f7c3a7f9b3fa4fb99"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_assembly-result.json",
+      "mode": "100644",
+      "bytes": 445,
+      "sha256": "4088fadef820dff66ea38bb39a202e12cd5c913f00e51decaf1422775f185e60"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_assembly-solution.lean",
+      "mode": "100644",
+      "bytes": 3574,
+      "sha256": "f225ee5d8712871fff1ad6c5da55acd57c4094728570835be82c6c42c89be743"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_assembly-submit.json",
+      "mode": "100644",
+      "bytes": 565,
+      "sha256": "c0249665c2e06b600b88047a943c295505e13cc8c258b46fdb00ab6eeb819af7"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_c2_final-intent.json",
+      "mode": "100644",
+      "bytes": 3291,
+      "sha256": "c786bf2077b14a7d69183fd08f68c0966e6eda6284384817dfa046c3ef78b6ce"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_c2_final-result.json",
+      "mode": "100644",
+      "bytes": 443,
+      "sha256": "e406fb10d6b90297108a516dfa2ae5e2d547df868f6d6add53f7bbaecc7509dd"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_c2_final-solution.lean",
+      "mode": "100644",
+      "bytes": 3705,
+      "sha256": "0eac9cd87c6ac6162fface20264c89e50814c7450db06e7daed50adc3cc9634c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_c2_final-submit.json",
+      "mode": "100644",
+      "bytes": 565,
+      "sha256": "e0115783d7682f0aa4add202e288942aeb71bf00345e7bd0d5cf5bb38d07b62d"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/production-gates-request.json",
+      "mode": "100644",
+      "bytes": 45520,
+      "sha256": "e1e6a56cdf1e8e94707d3addef1353f6b1c4d20cd7b545760bfe7cfd734c3db0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/production-gates-result.json",
+      "mode": "100644",
+      "bytes": 138150,
+      "sha256": "71254cb49cf64ebf66ae84ed2d56f762c9a0e40afca671647e2b45d395a87f96"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/production-gates-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "ac5094d0e57e750f7707ac8fcb07016219f2a71a5536ab49ae7adeb818bea67f"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/root-direct-dependencies.json",
+      "mode": "100644",
+      "bytes": 15340,
+      "sha256": "5a440d64585edad11e036a910eec1886b58b79dcf1a3031d08590b2b6c4b065b"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/root-only-report.json",
+      "mode": "100644",
+      "bytes": 26810,
+      "sha256": "84430d9d750ec6ef03aeb9427d8537b3ad4a6793b935280cd8f693505aa826c9"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/single-file-oracle-memory-negative.json",
+      "mode": "100644",
+      "bytes": 937,
+      "sha256": "ce50b5658d79b4d9d3256fe7b081d3551405833ef77fb0112a8530cd0b7d378b"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-oracle-import-scope.json",
+      "mode": "100644",
+      "bytes": 437,
+      "sha256": "67fdd40d02805e08ae5aa477b409df09b6d1b17e823d4dd01d9da8467cd625e7"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1-config.json",
+      "mode": "100644",
+      "bytes": 854,
+      "sha256": "79786cbe69760f7bd02f2465ce06ed8b5274ddf685c0567cef42c49042341f80"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1-receipt.json",
+      "mode": "100644",
+      "bytes": 3281,
+      "sha256": "452bcaa6c18b81fb5bd9d4084392c13dd0c426b44ac006afaeb1e9a3f2e90d4e"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1-request.json",
+      "mode": "100644",
+      "bytes": 215338,
+      "sha256": "785cc3fdb909cee0801190188973fcd0c07379d3eeced1f2035256baecd8fe18"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1-result.json",
+      "mode": "100644",
+      "bytes": 678027,
+      "sha256": "f5c4a63bca04b9bbf4357bb2412d54380b1fd72d01915194e2b5975988e5d187"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "855ee96261b502ef3e4f8a74da8211de6c616669145fb233bb5e4e1f8a2a78b0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1/Iut/Implication/Theorem110.diagnostics.json",
+      "mode": "100644",
+      "bytes": 232,
+      "sha256": "05d1a1b0f725ec6368f006018daa690896db50b41deca05a74c9747469c67ab0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1/Iut/Implication/Theorem110.jsonl",
+      "mode": "100644",
+      "bytes": 69640,
+      "sha256": "a28a70d99f9a5f2c7a743a624a0029b05e92de7d04e0e78eade519a50826653c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1/Iut/Implication/Theorem110.normalized.lean",
+      "mode": "100644",
+      "bytes": 3779,
+      "sha256": "a6efd1448aa2e6842d853a9d70b9edb9844ff8b23f5c7593a5c2da0d088a4a2c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-1/index.json",
+      "mode": "100644",
+      "bytes": 2091,
+      "sha256": "f95effdf2ab73fce0c8d9545752ae4fa84ab92fec0d857712cd3f39ef3f74409"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2-config.json",
+      "mode": "100644",
+      "bytes": 856,
+      "sha256": "9c7fdb63156cbfebaf4690af6834ed55b75ed3b50245d4d18b65728829f302db"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2-receipt.json",
+      "mode": "100644",
+      "bytes": 3288,
+      "sha256": "7c5a407068c1dcd0ca4300211eaeda1209c523725ecaaa63c0942e98ee6af287"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2-request.json",
+      "mode": "100644",
+      "bytes": 215273,
+      "sha256": "9245b4047bf541baced38ecd6eb5a7e9f28bad5d7904eae241fd8e7f7b396802"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2-result.json",
+      "mode": "100644",
+      "bytes": 678243,
+      "sha256": "e578941560d9dba661830496ce83315e8762ff53ba1735d2098960a92e4c8b01"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "fc2c29b654057b04588c2c0927d07731146a271f104289b05082c37edbbc969b"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2/Iut/Implication/Corollary22.diagnostics.json",
+      "mode": "100644",
+      "bytes": 233,
+      "sha256": "87ad6941342c27529a2bba8e089dac7f4965319671f06291d2554f1be45ebcf8"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2/Iut/Implication/Corollary22.jsonl",
+      "mode": "100644",
+      "bytes": 69585,
+      "sha256": "0339417bd906c5137bf28bfbf7f8b1552f35432a024a2c1106606a58106a24fd"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2/Iut/Implication/Corollary22.normalized.lean",
+      "mode": "100644",
+      "bytes": 3881,
+      "sha256": "836b78370230a9ba0d881b95ac85e056684a3e000c17826b1c62a98635167ac4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/small-source-oracle-2/index.json",
+      "mode": "100644",
+      "bytes": 2098,
+      "sha256": "930b0972794f58b35d4c032492b6a9d8f664d7343b2a11b64f711cf84123c444"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-blind-readbacks.json",
+      "mode": "100644",
+      "bytes": 30935,
+      "sha256": "025e9fe53d5f63228fa604f82a5b86b62edfb740f2009807ed56972648d5d42c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-compiler-reviewed-readbacks.json",
+      "mode": "100644",
+      "bytes": 44192,
+      "sha256": "a5e71e65057660ec1df1df905af3231f77a8f42dec3c044238fa86bcd7b52172"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts-acceptance.json",
+      "mode": "100644",
+      "bytes": 377,
+      "sha256": "ac6ea06a336b6bcc4fe58ef50bd013953b5325863985f671946167b8437de21a"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts-config.json",
+      "mode": "100644",
+      "bytes": 836,
+      "sha256": "fbaa4bd9b24760ee35e76b2497d4aee320804613e21458480828b3fa357748d9"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts-request.json",
+      "mode": "100644",
+      "bytes": 215279,
+      "sha256": "974e6883faee03ae0599d7fe387808d179ca764b79d8f78c96e4bc2a6a9d20b4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts-result.json",
+      "mode": "100644",
+      "bytes": 677886,
+      "sha256": "6a62a6ef4a2abad7e7b6c71c8aed0e79887acedd9b57c73b83392de893e6af67"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "ca51a9ebe6ac0e859004a67bebb402af32dc890a6426e6575066cbcd3df12a1e"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts-timeout-retry.json",
+      "mode": "100644",
+      "bytes": 315,
+      "sha256": "532577c259c310a78a138daa2c300201241487559b5d9380622f5a300ec2e5f4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/Iut-Implication-Corollary22.normalized.lean",
+      "mode": "100644",
+      "bytes": 30279,
+      "sha256": "ee2936fcf7c4d85f0e776fc0ce7e96dbdad7cfc2cf6261759358bb6d24af4909"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/Iut-Implication-Theorem110.normalized.lean",
+      "mode": "100644",
+      "bytes": 17493,
+      "sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/keywords.jsonl",
+      "mode": "100644",
+      "bytes": 1508,
+      "sha256": "068d696b768b0aa701b06865ef80a17843ba03674b9b08a81122b2021f9a2a85"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-facts/original-exprs.json",
+      "mode": "100644",
+      "bytes": 487569,
+      "sha256": "53b9fa50dacc204c546453f927e52b41d0040bab1fdccaa1a869b39bbcc2c226"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-1-config.json",
+      "mode": "100644",
+      "bytes": 1337,
+      "sha256": "b4e208c90cb135270030a3314ada53d9498eb569958ed92978da60918d3c6ac7"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-1-request.json",
+      "mode": "100644",
+      "bytes": 215164,
+      "sha256": "1d8a033e05b124d56a5e221ef4f67e9909713bcaef33de5afc6d92e840c32846"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-1-result.json",
+      "mode": "100644",
+      "bytes": 677509,
+      "sha256": "63b32b2761023d80558098b74ced9c91b7a2854450e653a1a6cb52b1de334255"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-1-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "8914dad5eecfc8573812b54908ef4d1787d2e61d7cad8733464d717c74fe11c6"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-1/Iut/Implication/Theorem110.diagnostics.json",
+      "mode": "100644",
+      "bytes": 232,
+      "sha256": "f00930402aa299a3af4efb0e82a209024597334fca5433369d9cfd511f8041a9"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-1/Iut/Implication/Theorem110.jsonl",
+      "mode": "100644",
+      "bytes": 310359,
+      "sha256": "4182c9a6b43cc08f491b99979fa846bd4e5e4c4434d6fd4473f39f6a809a9d3d"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-1/Iut/Implication/Theorem110.normalized.lean",
+      "mode": "100644",
+      "bytes": 17493,
+      "sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-1/index.json",
+      "mode": "100644",
+      "bytes": 2552,
+      "sha256": "f2addf8bcd5a3aed82e347afdd53cf5496d8c7b0aee1c840344f7f869b1d6494"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-2-config.json",
+      "mode": "100644",
+      "bytes": 1341,
+      "sha256": "59f472eda58a0bc1be80e6522bf532bf4134c2570c0444a8012ff4d1cf9624ae"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-2-request.json",
+      "mode": "100644",
+      "bytes": 215165,
+      "sha256": "90151884633278e353354347a2d90a90d015d21f20d47e2d2f93e352ca2fe1c4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-config.json",
+      "mode": "100644",
+      "bytes": 2019,
+      "sha256": "3cf0d3e0b0b51892356c1ef32c19d088f12e45e3c7d47834a233efb88feb5ebb"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-request.json",
+      "mode": "100644",
+      "bytes": 215199,
+      "sha256": "310199c27bde44c826c306667f2d7bb612990275afb439484a40c4141c0ccb5a"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-result.json",
+      "mode": "100644",
+      "bytes": 678161,
+      "sha256": "a855536cc9f7f62a48793d5564f211ac8238d3dee1b82325de67a47c6457464c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-split.json",
+      "mode": "100644",
+      "bytes": 799,
+      "sha256": "38227a9159343ce32d63cd3e5d28d5621266bc56d3da804b9c5d3f595c9fd4cf"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/source-oracle-submit.json",
+      "mode": "100644",
+      "bytes": 84,
+      "sha256": "987151d3a176808d7252ee0ca6bf442077f594d6a0801984c931d9e03a2f5246"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/staging-allowlist.json",
+      "mode": "100644",
+      "bytes": 23564,
+      "sha256": "c2d14ebad8dd3948315c98a990f4afd0ad537b1a3c9e174975295b889ef68e82"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/static-identity-report.json",
+      "mode": "100644",
+      "bytes": 8728,
+      "sha256": "6d42dec78e9bbbb1ebacff84cb5df462b4cae25d15a6c379f719fc5394de685c"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/unit-outcome.json",
+      "mode": "100644",
+      "bytes": 787,
+      "sha256": "967d3437bfb6c22fdd689d362fa0dfa0487a7565e4a886b879fe63cabb376ef2"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/wrapped-type-review.json",
+      "mode": "100644",
+      "bytes": 16326,
+      "sha256": "b9bf270e58b042c875d175b59838c3f49fac24ae5fc798b0f924ac0995f2eaf4"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+      "mode": "100644",
+      "bytes": 1154605,
+      "sha256": "82854acfd4d386882781b6bad67ff5119e08d8bcf670b63d9f9b219b8c95c9b2"
+    },
+    {
+      "path": "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_assembly.lean",
+      "mode": "100644",
+      "bytes": 3574,
+      "sha256": "f225ee5d8712871fff1ad6c5da55acd57c4094728570835be82c6c42c89be743"
+    },
+    {
+      "path": "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_c2_final.lean",
+      "mode": "100644",
+      "bytes": 3705,
+      "sha256": "0eac9cd87c6ac6162fface20264c89e50814c7450db06e7daed50adc3cc9634c"
+    },
+    {
+      "path": "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_assembly.lean",
+      "mode": "100644",
+      "bytes": 1147,
+      "sha256": "9a290de3389e74fda6ab790cc9b33044385cbecac22489c95882c7e074b4d038"
+    },
+    {
+      "path": "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_c2_final.lean",
+      "mode": "100644",
+      "bytes": 1152,
+      "sha256": "8cdc0ab696a111b56c577c87c789b0fa1d6a31b9fac5a17369b3644eedac9b5e"
+    }
+  ],
+  "prior_final_platform_review": {
+    "path": "/tmp/p2m-numeric-delivery-review-20261115/final-platform-review.json",
+    "sha256": "11383b0c484ae2dfd13df793d0bc1319905ff3375db5e131067ab4fb7510cdaf",
+    "verdict": "passed"
+  },
+  "boundaries": {
+    "git_reads_only": true,
+    "git_mutations": false,
+    "api_called": false,
+    "ci_called": false,
+    "main_files_edited": false
+  },
+  "next_incremental_change": "Main agent may add this report and update allowlist; verify those exact additional paths and hashes before commit."
+}

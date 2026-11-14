@@ -1,0 +1,91 @@
+{
+  "schema": "numeric-before-private-upload-review-v1",
+  "reviewed_at_utc": "2026-11-14T21:38:47.400822+00:00",
+  "verdict": "passed",
+  "ready_for_private_upload": true,
+  "blocking_findings": [],
+  "passed_checks": {
+    "actual_delivery_preflight": true,
+    "packet_sha256_unchanged": true,
+    "source4_sha256_current": true,
+    "all_packet_metadata_sha256_current": true,
+    "all_ready_evidence_sha256_current": true,
+    "accepted_ci_receipt_count": 15,
+    "accepted_list_matches_ci_summary": true,
+    "oversized_attempts_excluded": true,
+    "both_kernel_audits": [
+      {
+        "name": "AbcAdaptation.Reference.Iut.assembly",
+        "sha256": "1b1a1ab03fea925f8145e7e3d940883652cbf44591a066d795340d145b40c1eb",
+        "binder_count": 28,
+        "kernel_type_equalities": true,
+        "standard_axioms_only": true,
+        "no_sorryAx_or_open_children": true
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.c2_final",
+        "sha256": "b731e924189f0778e6a5b281e778cdbefa9b56d42156a3dfb82dd006db5bd8db",
+        "binder_count": 32,
+        "kernel_type_equalities": true,
+        "standard_axioms_only": true,
+        "no_sorryAx_or_open_children": true
+      }
+    ],
+    "final_blind_readbacks_passed_and_body_unchanged": true,
+    "all_three_published_readback_bodies_equal_final_readbacks": true,
+    "translation_unknowns": [],
+    "two_private_publications_two_direct_proofs": true,
+    "pinned_mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "same_existing_private_mission_detached_preparation_scope": true,
+    "root_graph_membership": false,
+    "canonicalC22Connected": false
+  },
+  "packet_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery/packet.json",
+  "packet_sha256": "818d07a87645e883a06ad13c18f9f56e94d49c9f4d7a391e026d7cf2ea8b34ea",
+  "ready_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery/ready.json",
+  "ready_sha256": "b4f0d4d3d3a612dbb20b84c50681b45b5c65f2b5da2927b68baabf20a18f60b6",
+  "delivery_tool_sha256": "7d7a3f6f06f2f57ef2d2d2b7e640a8f9c1d253d183660755505fd0f9f2f5e9fa",
+  "evidence_count": 28,
+  "boundaries": {
+    "api_called": false,
+    "credentials_read": false,
+    "ci_called": false,
+    "git_called": false,
+    "main_files_edited": false
+  },
+  "claim_limit": "Offline pre-upload review passed for exactly the two private numerical theorem publications and two direct proofs in this packet. Actual platform PUBLISHED/ACCEPTED and unchanged root graph are still to be established by delivery receipts.",
+  "explanation_sha256": {
+    "AbcAdaptation.Reference.Iut.assembly": "6b573c46ca731836dafba4ed82356fcdca3570b99ec7b457a69a4c04e69ca76f",
+    "AbcAdaptation.Reference.Iut.c2_final": "e7d410384c0c74043d7d9ab25d4a322291cd3b4cc78f1e5ace1f281eadabbf18"
+  },
+  "resolved_findings": [
+    {
+      "id": "explanation-math-content",
+      "resolution": "Distinct English/Chinese/Japanese mathematical explanations now state each target and the numerical argument; technical transplant-only text removed."
+    }
+  ],
+  "incremental_explanation_review": {
+    "assembly": {
+      "three_language_statement_and_proof": true,
+      "B0_expansion_matches_input_h1": true,
+      "positive_ell_and_denominator_for_ell_ge7": true,
+      "polynomial_comparison_uses_stated_bounds": true,
+      "conclusion_matches_target": true
+    },
+    "c2_final": {
+      "three_language_statement_and_proof": true,
+      "epsilon_formula_and_key_hypotheses_match": true,
+      "Q_bound_follows_from_h110_and_ell_bounds": true,
+      "delta_over_r_at_most_epsilon_over5": true,
+      "error_absorption_bound": true,
+      "one_minus_two_epsilon_over5_at_least_three_over5": true,
+      "final_coefficient_and_nonnegative_constant_comparisons_valid": true,
+      "final_LD_LC_comparison_valid": true
+    }
+  },
+  "previous_review": {
+    "ready_sha256": "8a7c53f76a65d50af943315211421b97787199a6780a1af6eba42604ad25fe20",
+    "verdict": "changes_requested",
+    "retained_at": "/tmp/p2m-numeric-delivery-review-20261115/before-private-upload-initial.json"
+  }
+}

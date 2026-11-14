@@ -1,0 +1,493 @@
+{
+  "Iut.Corollary22Inputs.c2": {
+    "name": "Iut.Corollary22Inputs.c2",
+    "module": "Iut.Implication.Corollary22",
+    "kind": "theorem",
+    "sourceFile": "Iut/Implication/Corollary22.lean",
+    "range": {
+      "end": {
+        "col": 87,
+        "line": 557
+      },
+      "endUtf16": 87,
+      "start": {
+        "col": 0,
+        "line": 386
+      },
+      "startUtf16": 0
+    },
+    "selectionRange": {
+      "end": {
+        "col": 10,
+        "line": 389
+      },
+      "endUtf16": 10,
+      "start": {
+        "col": 8,
+        "line": 389
+      },
+      "startUtf16": 8
+    },
+    "typeDeps": [
+      "Genl.HeightTheory",
+      "Iut.AnabelianGeometry",
+      "Iut.ChebyshevBound",
+      "Iut.Corollary22Inputs",
+      "Iut.Corollary312Variant",
+      "Iut.Corollary312VariantData",
+      "Iut.PrimeCountingBound",
+      "Iut.TemperedGeometry",
+      "Iut.ThetaDataExistence",
+      "Iut.deltaBound",
+      "Iut.epsilonE",
+      "Genl.HeightTheory.CBS",
+      "Genl.HeightTheory.Pt",
+      "Genl.HeightTheory.cbsSet",
+      "Genl.HeightTheory.logCond",
+      "Genl.HeightTheory.logDiff",
+      "Genl.HeightTheory.ptLE",
+      "Genl.HeightTheory.tripod",
+      "Iut.Corollary22Inputs.B",
+      "Iut.Corollary22Inputs.excCore",
+      "Iut.Corollary22Inputs.h",
+      "Iut.Corollary22Inputs.threshold",
+      "Iut.PrimeCountingBound.η"
+    ],
+    "valueDeps": [
+      "Genl.HeightTheory",
+      "Iut.AnabelianGeometry",
+      "Iut.ChebyshevBound",
+      "Iut.Corollary22Inputs",
+      "Iut.Corollary312Variant",
+      "Iut.Corollary312VariantData",
+      "Iut.LocalHeightData",
+      "Iut.PrimeCountingBound",
+      "Iut.TemperedGeometry",
+      "Iut.Theorem110Certificate",
+      "Iut.Theorem110Invariants",
+      "Iut.ThetaDataExistence",
+      "Iut.c2_final",
+      "Iut.deltaBound",
+      "Iut.epsilonE",
+      "Iut.epsilonE_le",
+      "Iut.log_bound_ell",
+      "Iut.log_ell_bound",
+      "Iut.log_le_four_mul_sqrt_sqrt",
+      "Iut.log_le_half_of_pos",
+      "Iut.log_le_self_of_pos",
+      "Iut.p5_height_bound",
+      "Genl.HeightTheory.CBS",
+      "Genl.HeightTheory.Pt",
+      "Genl.HeightTheory.cbsSet",
+      "Genl.HeightTheory.logCond",
+      "Genl.HeightTheory.logDiff",
+      "Genl.HeightTheory.ptLE",
+      "Genl.HeightTheory.tripod",
+      "Iut.ChebyshevBound.five_le",
+      "Iut.ChebyshevBound.ξ",
+      "Iut.Corollary22Inputs.B",
+      "Iut.Corollary22Inputs.B_nonneg",
+      "Iut.Corollary22Inputs.HasCyclicSubgroup",
+      "Iut.Corollary22Inputs.SL2Image",
+      "Iut.Corollary22Inputs.TK",
+      "Iut.Corollary22Inputs.cyclic_bound",
+      "Iut.Corollary22Inputs.excCore",
+      "Iut.Corollary22Inputs.h",
+      "Iut.Corollary22Inputs.heightEq_two_le",
+      "Iut.Corollary22Inputs.localData",
+      "Iut.Corollary22Inputs.localData_deg_le",
+      "Iut.Corollary22Inputs.localData_height",
+      "Iut.Corollary22Inputs.sl2_of",
+      "Iut.Corollary22Inputs.threshold",
+      "Iut.Corollary312VariantData.data",
+      "Iut.Corollary312VariantData.dmod",
+      "Iut.Corollary312VariantData.qPilot",
+      "Iut.Corollary312VariantData.ℓ",
+      "Iut.LocalHeightData.bad",
+      "Iut.LocalHeightData.deg",
+      "Iut.LocalHeightData.exists_prime_selection",
+      "Iut.LocalHeightData.f",
+      "Iut.LocalHeightData.height",
+      "Iut.LocalHeightData.heightEq",
+      "Iut.LocalHeightData.heightOther",
+      "Iut.LocalHeightData.height_eq_add",
+      "Iut.LocalHeightData.hv",
+      "Iut.LocalHeightData.one_le_deg",
+      "Iut.LocalHeightData.p",
+      "Iut.LocalHeightData.sum_f_le",
+      "Iut.LocalHeightData.ι",
+      "Iut.PrimeCountingBound.one_lt_η",
+      "Iut.PrimeCountingBound.η",
+      "Iut.QPilotData.logQ",
+      "Iut.Theorem110Invariants.LocalEstimate",
+      "Iut.Theorem110Invariants.eStar",
+      "Iut.Theorem110Invariants.eStar_cast",
+      "Iut.Theorem110Invariants.emod",
+      "Iut.Theorem110Invariants.emod_le_dmod",
+      "Iut.Theorem110Invariants.logDtpd",
+      "Iut.Theorem110Invariants.logDtpd_nonneg",
+      "Iut.Theorem110Invariants.logFtpd",
+      "Iut.Theorem110Invariants.logFtpd_nonneg",
+      "Iut.Theorem110Invariants.theorem110",
+      "Iut.ThetaDataExistence.thetaData",
+      "Iut.deltaBound._proof_1",
+      "Iut.epsilonE._proof_1",
+      "Iut.epsilonE._proof_2",
+      "Iut.epsilonE.eq_1",
+      "Iut.Corollary22Inputs.c2._proof_1_2",
+      "Iut.Corollary22Inputs.c2.match_1_3",
+      "Iut.Corollary22Inputs.threshold._proof_1",
+      "Iut.Corollary22Inputs.threshold._proof_2",
+      "Iut.Corollary22Inputs.threshold._proof_3",
+      "Iut.Corollary22Inputs.threshold._proof_4"
+    ],
+    "constructors": [],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "hasSorryAx": false,
+    "elaboratedType": "∀ {T : Genl.HeightTheory} {AG : Iut.AnabelianGeometry} {TG : Iut.TemperedGeometry AG} {K : T.CBS} {d : ℕ}\n  (I : Iut.Corollary22Inputs T K d) {P : Iut.Corollary312VariantData AG TG → Prop},\n  1 ≤ d →\n    Iut.ThetaDataExistence P I →\n      ∀ (cheb : Iut.ChebyshevBound) (pnt : Iut.PrimeCountingBound),\n        (∀ (X : Iut.Corollary312VariantData AG TG), P X → Iut.Corollary312Variant X) →\n          ∀ x ∈ T.cbsSet K ∩ T.ptLE T.tripod d,\n            x ∉ I.excCore →\n              I.threshold cheb ≤ I.h x →\n                1 / 6 * I.h x ≤\n                    (1 + Iut.epsilonE (Iut.deltaBound d) (I.h x)) * (T.logDiff T.tripod x + T.logCond T.tripod x) +\n                      (40 * pnt.η + I.B / 3) ∧\n                  Iut.epsilonE (Iut.deltaBound d) (I.h x) ≤ 1 ∧ 0 ≤ T.logDiff T.tripod x + T.logCond T.tripod x",
+    "consumers": []
+  },
+  "Iut.Theorem110Invariants.theorem110": {
+    "name": "Iut.Theorem110Invariants.theorem110",
+    "module": "Iut.Implication.Theorem110",
+    "kind": "theorem",
+    "sourceFile": "Iut/Implication/Theorem110.lean",
+    "range": {
+      "end": {
+        "col": 16,
+        "line": 331
+      },
+      "endUtf16": 16,
+      "start": {
+        "col": 0,
+        "line": 233
+      },
+      "startUtf16": 0
+    },
+    "selectionRange": {
+      "end": {
+        "col": 18,
+        "line": 240
+      },
+      "endUtf16": 18,
+      "start": {
+        "col": 8,
+        "line": 240
+      },
+      "startUtf16": 8
+    },
+    "typeDeps": [
+      "Iut.AnabelianGeometry",
+      "Iut.Corollary312Variant",
+      "Iut.Corollary312VariantData",
+      "Iut.PrimeCountingBound",
+      "Iut.TemperedGeometry",
+      "Iut.Theorem110Certificate",
+      "Iut.Theorem110Invariants",
+      "Iut.Corollary312VariantData.data",
+      "Iut.Corollary312VariantData.dmod",
+      "Iut.Corollary312VariantData.qPilot",
+      "Iut.Corollary312VariantData.ℓ",
+      "Iut.PrimeCountingBound.η",
+      "Iut.QPilotData.logQ",
+      "Iut.Theorem110Invariants.LocalEstimate",
+      "Iut.Theorem110Invariants.eStar",
+      "Iut.Theorem110Invariants.logDtpd",
+      "Iut.Theorem110Invariants.logFtpd"
+    ],
+    "valueDeps": [
+      "Iut.AnabelianGeometry",
+      "Iut.Corollary312Variant",
+      "Iut.Corollary312VariantData",
+      "Iut.Place",
+      "Iut.PrimeCountingBound",
+      "Iut.Procession",
+      "Iut.TemperedGeometry",
+      "Iut.Theorem110Certificate",
+      "Iut.Theorem110Invariants",
+      "Iut.assembly",
+      "Iut.log_pi_le_two",
+      "Iut.log_pi_nonneg",
+      "Iut.AdmissiblePrimeData.five_le",
+      "Iut.AdmissiblePrimeData.torsionField",
+      "Iut.Capsule.card",
+      "Iut.Corollary312VariantData.data",
+      "Iut.Corollary312VariantData.dmod",
+      "Iut.Corollary312VariantData.logQAt",
+      "Iut.Corollary312VariantData.logQAt_nonneg",
+      "Iut.Corollary312VariantData.lstar",
+      "Iut.Corollary312VariantData.one_le_dmod",
+      "Iut.Corollary312VariantData.qPilot",
+      "Iut.Corollary312VariantData.rhsData",
+      "Iut.Corollary312VariantData.sum_logQAt",
+      "Iut.Corollary312VariantData.ℓ",
+      "Iut.InitialThetaData.E",
+      "Iut.InitialThetaData.F",
+      "Iut.InitialThetaData.Fbar",
+      "Iut.InitialThetaData.VBad",
+      "Iut.InitialThetaData.algebraFbar",
+      "Iut.InitialThetaData.fieldF",
+      "Iut.InitialThetaData.fieldFbar",
+      "Iut.InitialThetaData.isElliptic",
+      "Iut.InitialThetaData.numberFieldF",
+      "Iut.InitialThetaData.numberFieldK",
+      "Iut.InitialThetaData.prime",
+      "Iut.InitialThetaData.ℓ",
+      "Iut.LargeVolumeContainerData.proc",
+      "Iut.PrimeCountingBound.one_lt_η",
+      "Iut.PrimeCountingBound.η",
+      "Iut.Procession.capsule",
+      "Iut.Procession.length",
+      "Iut.Procession.standard",
+      "Iut.Procession.standard_length",
+      "Iut.QPilotData.logQ",
+      "Iut.RHSData.container",
+      "Iut.RHSData.proc_standard",
+      "Iut.RHSData.rhs",
+      "Iut.Theorem110Certificate.bad_mem_dst",
+      "Iut.Theorem110Certificate.seven_le",
+      "Iut.Theorem110Certificate.step_ii",
+      "Iut.Theorem110Certificate.step_iii",
+      "Iut.Theorem110Invariants.LocalEstimate",
+      "Iut.Theorem110Invariants.capsuleBound",
+      "Iut.Theorem110Invariants.dst",
+      "Iut.Theorem110Invariants.eStar",
+      "Iut.Theorem110Invariants.eStar_cast",
+      "Iut.Theorem110Invariants.emod",
+      "Iut.Theorem110Invariants.lmod",
+      "Iut.Theorem110Invariants.lmod_mul_logSle_le",
+      "Iut.Theorem110Invariants.logDK",
+      "Iut.Theorem110Invariants.logDKtot",
+      "Iut.Theorem110Invariants.logDKtot_nonneg",
+      "Iut.Theorem110Invariants.logDtpd",
+      "Iut.Theorem110Invariants.logDtpd_nonneg",
+      "Iut.Theorem110Invariants.logFtpd",
+      "Iut.Theorem110Invariants.logFtpd_nonneg",
+      "Iut.Theorem110Invariants.logSQ",
+      "Iut.Theorem110Invariants.logSQ_nonneg",
+      "Iut.Theorem110Invariants.logSle",
+      "Iut.Theorem110Invariants.logSle_nonneg",
+      "Iut.Theorem110Invariants.one_le_emod",
+      "Iut.Theorem110Invariants.sum_arch",
+      "Iut.Theorem110Invariants.sum_capsuleBound",
+      "Iut.Theorem110Invariants.sum_card_standard",
+      "Iut.Theorem110Invariants.two_mul_lstar_add_one",
+      "Iut.Theorem110Invariants.ι",
+      "Iut.Theorem110Invariants.LocalEstimate.rhs_le"
+    ],
+    "constructors": [],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "hasSorryAx": false,
+    "elaboratedType": "∀ {AG : Iut.AnabelianGeometry} {TG : Iut.TemperedGeometry AG} {X : Iut.Corollary312VariantData AG TG}\n  (inv : Iut.Theorem110Invariants X),\n  Iut.Theorem110Certificate inv →\n    ∀ (est : inv.LocalEstimate) (pnt : Iut.PrimeCountingBound),\n      Iut.Corollary312Variant X →\n        1 / 6 * X.qPilot.logQ ≤\n          (1 + 20 * ↑X.dmod / ↑X.ℓ) * (inv.logDtpd + inv.logFtpd) + 20 * (↑inv.eStar * ↑X.ℓ + pnt.η)",
+    "consumers": [
+      {
+        "consumer": "Iut.Corollary22Inputs.c2",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "value"
+      }
+    ]
+  },
+  "Iut.ThetaDataExistence": {
+    "name": "Iut.ThetaDataExistence",
+    "module": "Iut.Implication.Corollary22",
+    "kind": "inductive",
+    "sourceFile": "Iut/Implication/Corollary22.lean",
+    "range": {
+      "end": {
+        "col": 59,
+        "line": 374
+      },
+      "endUtf16": 59,
+      "start": {
+        "col": 0,
+        "line": 346
+      },
+      "startUtf16": 0
+    },
+    "selectionRange": {
+      "end": {
+        "col": 28,
+        "line": 360
+      },
+      "endUtf16": 28,
+      "start": {
+        "col": 10,
+        "line": 360
+      },
+      "startUtf16": 10
+    },
+    "typeDeps": [
+      "Genl.HeightTheory",
+      "Iut.AnabelianGeometry",
+      "Iut.Corollary22Inputs",
+      "Iut.Corollary312VariantData",
+      "Iut.TemperedGeometry",
+      "Genl.HeightTheory.CBS"
+    ],
+    "valueDeps": [],
+    "constructors": [
+      "Iut.ThetaDataExistence.mk"
+    ],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "hasSorryAx": false,
+    "elaboratedType": "{T : Genl.HeightTheory} →\n  {AG : Iut.AnabelianGeometry} →\n    {TG : Iut.TemperedGeometry AG} →\n      (Iut.Corollary312VariantData AG TG → Prop) → {K : T.CBS} → {d : ℕ} → Iut.Corollary22Inputs T K d → Prop",
+    "consumers": [
+      {
+        "consumer": "Iut.Corollary22Inputs.c2",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "type"
+      },
+      {
+        "consumer": "Iut.Corollary22Inputs.c2",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "value"
+      },
+      {
+        "consumer": "Iut.ThetaDataExistence.casesOn",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "type"
+      },
+      {
+        "consumer": "Iut.ThetaDataExistence.casesOn",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "value"
+      },
+      {
+        "consumer": "Iut.ThetaDataExistence.mk",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "type"
+      },
+      {
+        "consumer": "Iut.ThetaDataExistence.rec",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "type"
+      },
+      {
+        "consumer": "Iut.ThetaDataExistence.recOn",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "type"
+      },
+      {
+        "consumer": "Iut.ThetaDataExistence.thetaData",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "type"
+      },
+      {
+        "consumer": "Iut.ThetaDataExistence.thetaData",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "value"
+      },
+      {
+        "consumer": "Iut.ThetaDataExistence.mk._flat_ctor",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "type"
+      }
+    ]
+  },
+  "Iut.assembly": {
+    "name": "Iut.assembly",
+    "module": "Iut.Implication.Theorem110",
+    "kind": "theorem",
+    "sourceFile": "Iut/Implication/Theorem110.lean",
+    "range": {
+      "end": {
+        "col": 40,
+        "line": 126
+      },
+      "endUtf16": 40,
+      "start": {
+        "col": 0,
+        "line": 78
+      },
+      "startUtf16": 0
+    },
+    "selectionRange": {
+      "end": {
+        "col": 14,
+        "line": 82
+      },
+      "endUtf16": 14,
+      "start": {
+        "col": 6,
+        "line": 82
+      },
+      "startUtf16": 6
+    },
+    "typeDeps": [],
+    "valueDeps": [],
+    "constructors": [],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "hasSorryAx": false,
+    "elaboratedType": null,
+    "consumers": [
+      {
+        "consumer": "Iut.Theorem110Invariants.theorem110",
+        "module": "Iut.Implication.Theorem110",
+        "edge": "value"
+      }
+    ]
+  },
+  "Iut.c2_final": {
+    "name": "Iut.c2_final",
+    "module": "Iut.Implication.Corollary22",
+    "kind": "theorem",
+    "sourceFile": "Iut/Implication/Corollary22.lean",
+    "range": {
+      "end": {
+        "col": 10,
+        "line": 270
+      },
+      "endUtf16": 10,
+      "start": {
+        "col": 0,
+        "line": 210
+      },
+      "startUtf16": 0
+    },
+    "selectionRange": {
+      "end": {
+        "col": 14,
+        "line": 213
+      },
+      "endUtf16": 14,
+      "start": {
+        "col": 6,
+        "line": 213
+      },
+      "startUtf16": 6
+    },
+    "typeDeps": [],
+    "valueDeps": [],
+    "constructors": [],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "hasSorryAx": false,
+    "elaboratedType": null,
+    "consumers": [
+      {
+        "consumer": "Iut.Corollary22Inputs.c2",
+        "module": "Iut.Implication.Corollary22",
+        "edge": "value"
+      }
+    ]
+  }
+}

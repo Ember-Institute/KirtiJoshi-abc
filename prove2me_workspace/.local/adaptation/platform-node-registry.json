@@ -6266,9 +6266,13 @@
     "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean": "7a93274feb64b982871817cad36657028b8b542851bcaa8773ac741c05412a60",
     "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean": "3c23079be1157f246ef528016fb97b9a47e33d06438073ac3279ef615460de0a",
     "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean": "249b6d6c6d4ebc35fa7dfdfcc4318ae1ca0d637e9191848cff1e0aea251d527a",
-    "docs/三语术语名词关键对照.md": "e2cf4a6b27edde9f68e8733045e87925490ce8de51aec79c76589563ce1d5660"
+    "docs/三语术语名词关键对照.md": "e2cf4a6b27edde9f68e8733045e87925490ce8de51aec79c76589563ce1d5660",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_assembly.lean": "9a290de3389e74fda6ab790cc9b33044385cbecac22489c95882c7e074b4d038",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_c2_final.lean": "8cdc0ab696a111b56c577c87c789b0fa1d6a31b9fac5a17369b3644eedac9b5e",
+    "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_assembly.lean": "f225ee5d8712871fff1ad6c5da55acd57c4094728570835be82c6c42c89be743",
+    "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_c2_final.lean": "0eac9cd87c6ac6162fface20264c89e50814c7450db06e7daed50adc3cc9634c"
   },
-  "recorded_at": "2026-11-14T20:46:04.150343+00:00",
+  "recorded_at": "2026-11-14T21:43:00.837606+00:00",
   "local_open_children_below_root": 16,
   "published_open_children_below_root": 16,
   "local_rational_projection_edge_verified": true,
@@ -8034,6 +8038,26 @@
         "source": "refer/iut/Iut/Implication/PrimeSelection.lean",
         "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
         "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.assembly",
+        "theorem_id": "0b590c9f-4db2-4fc6-a880-59c223ef8178",
+        "status": "Proved",
+        "submission_id": "63d509e0-1438-4baf-80a9-efb42ddfb0cc",
+        "verification_status": "ACCEPTED",
+        "source": "refer/iut/Iut/Implication/Theorem110.lean",
+        "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.c2_final",
+        "theorem_id": "b119c3a6-7508-42b5-935b-a34dad458c3d",
+        "status": "Proved",
+        "submission_id": "e10707b9-f245-43c9-a643-431f232d3575",
+        "verification_status": "ACCEPTED",
+        "source": "refer/iut/Iut/Implication/Corollary22.lean",
+        "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "root_graph_membership": false
       }
     ],
     "dependency_pairs": [
@@ -8061,6 +8085,47 @@
     },
     "source_unit": ".local/adaptation/prime-selection-reference-split-20261115",
     "source_graph": ".local/adaptation/reference-extraction-20261115/archives/c22-decl-graph.jsonl.gz",
-    "readback_types_kernel_checked": true
+    "readback_types_kernel_checked": true,
+    "numeric_unit": {
+      "source_unit": ".local/adaptation/main-c22-numeric-reference-split-20261115",
+      "proofs": [
+        {
+          "name": "AbcAdaptation.Reference.Iut.assembly",
+          "theorem_id": "0b590c9f-4db2-4fc6-a880-59c223ef8178",
+          "status": "Proved",
+          "submission_id": "63d509e0-1438-4baf-80a9-efb42ddfb0cc",
+          "verification_status": "ACCEPTED",
+          "source": "refer/iut/Iut/Implication/Theorem110.lean",
+          "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+          "root_graph_membership": false
+        },
+        {
+          "name": "AbcAdaptation.Reference.Iut.c2_final",
+          "theorem_id": "b119c3a6-7508-42b5-935b-a34dad458c3d",
+          "status": "Proved",
+          "submission_id": "e10707b9-f245-43c9-a643-431f232d3575",
+          "verification_status": "ACCEPTED",
+          "source": "refer/iut/Iut/Implication/Corollary22.lean",
+          "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+          "root_graph_membership": false
+        }
+      ],
+      "actual_source_consumers": [
+        {
+          "producer": "AbcAdaptation.Reference.Iut.assembly",
+          "consumer": "Iut.Theorem110Invariants.theorem110",
+          "original_source_line": 316
+        },
+        {
+          "producer": "AbcAdaptation.Reference.Iut.c2_final",
+          "consumer": "Iut.Corollary22Inputs.c2",
+          "original_source_line": 553
+        }
+      ],
+      "original_statement_proof_bytes_preserved": true,
+      "all_original_assumptions_preserved": true,
+      "original_kernel_type_matched": true,
+      "canonicalC22Connected": false
+    }
   }
 }

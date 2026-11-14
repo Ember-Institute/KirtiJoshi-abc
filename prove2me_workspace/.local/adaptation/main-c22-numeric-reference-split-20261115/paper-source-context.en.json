@@ -1,0 +1,109 @@
+[
+  {
+    "declaration": "Iut.assembly",
+    "source_description_en": "The paper context is Shinichi Mochizuki, Inter-universal Teichmüller Theory IV (April 2020), proof of Theorem 1.10, Step (viii), printed/PDF pp. 30–31. The step sums the local procession-normalized upper bounds obtained in Steps (v)–(vii), combines the sum with the arithmetic estimate from Step (iii), and bounds the prime-counting contribution l*_mod·log(s^≤). On p. 31 the latter is at most (4/3)(e*_mod·ℓ + η_prm), regardless of whether e*_mod·ℓ is above or below η_prm. The remaining logarithmic and constant errors are absorbed into this term. The final paragraph then obtains the theorem’s numerical constants using ℓ ≥ 7 and d_mod ≥ 1, in particular the estimates (1 − 12/ℓ²)^(−1) ≤ 2 and (1 − 12/ℓ²)^(−1)(1 + 12d_mod/ℓ) ≤ 1 + 20d_mod/ℓ. The reference implementation extracts this numerical assembly into a separate real-inequality helper. The paper does not state a separately numbered lemma with the helper’s full list of parameters and hypotheses.",
+    "source_location": {
+      "paper": "iut4",
+      "printed_pages": [
+        30,
+        31
+      ],
+      "file_pages": [
+        30,
+        31
+      ],
+      "label": "Theorem 1.10 proof, Step (viii); prime-counting estimate, error absorption, and final coefficient estimates"
+    },
+    "normalized_paper_formulas": [
+      "p. 31: l*_mod·log(s^≤) ≤ (4/3)(e*_mod·ℓ + η_prm).",
+      "p. 31: (1/3)·(4/3)·(e*_mod·ℓ + η_prm) ≥ 2log(ℓ) + 56.",
+      "p. 31: ((20 + 1)/3)·(4/3) = (7·4)/3 ≤ 10.",
+      "p. 31: (1 − 12/ℓ²)^(−1) ≤ 2; (1 − 12/ℓ²)^(−1)·(1 + 12d_mod/ℓ) ≤ 1 + 20d_mod/ℓ, using ℓ ≥ 7 and d_mod ≥ 1."
+    ],
+    "source_adaptation_note_en": "The printed prime-counting factor in this step is 4/3. The reference implementation’s numerical helper accepts the weaker inequality 2T ≤ 3E, corresponding to factor 3/2, and uses a direct polynomial comparison with sufficient slack to retain the final constants. Thus the helper is an implementation-level extraction of the paper’s numerical argument, not a literal transcription of its intermediate formulas or a paper theorem bearing the name assembly.",
+    "code_provenance": {
+      "file": "refer/iut/Iut/Implication/Theorem110.lean",
+      "declaration_line": 79,
+      "direct_consumer": "Iut.Theorem110Invariants.theorem110",
+      "direct_call_line": 316,
+      "note": "The direct call is inside the proof of theorem110; the following lines clear the final denominator and finish the theorem. This records the actual reference-code consumer only and is not a formal readback.",
+      "file_sha256_at_inspection": "f121c6299e6c5aed8d2904d8342c51c150a7421d3c23aec16ec01eebcf921788"
+    },
+    "short_verbatim_quotes": [
+      {
+        "printed_page": 30,
+        "file_page": 30,
+        "quote": "(viii) Now we return to the discussion of Step (iv).",
+        "normalization": "line indentation removed"
+      },
+      {
+        "printed_page": 31,
+        "file_page": 31,
+        "quote": "[i.e., regardless of the size of",
+        "normalization": "contiguous prose fragment; quote ends before the mathematical expression"
+      },
+      {
+        "printed_page": 31,
+        "file_page": 31,
+        "quote": "The final portion of Theorem 1.10 follows immediately",
+        "normalization": "ﬁ ligature expanded; line break joined"
+      }
+    ]
+  },
+  {
+    "declaration": "Iut.c2_final",
+    "source_description_en": "The paper context is Mochizuki, IUT IV, proof of Corollary 2.2(ii), printed/PDF pp. 46–48. At the end of p. 46 the proof applies Theorem 1.10 and uses the selected-prime estimates to replace its numerical coefficients by bounds involving δ and h = log(q_∀). Page 47 bounds the difference between the q-height away from 2 and the q-height away from both 2 and ℓ, absorbs the bounded contribution at 2 into C_K, and introduces ε_E = (60δ)²h^(−1/2)log(2δh). After arranging ε_E ≤ 1 outside the exceptional set, the first display of p. 48 absorbs the error proportional to h/6 by division by 1 − (2/5)ε_E. The elementary estimates there give the coefficient 1 + ε_E and an additive constant C_K. The paragraph then substitutes the equality with the tripodal different and the lower comparison with the conductor to conclude (C2). The reference implementation packages this final numerical absorption as a separate real-inequality helper. The paper does not give that helper’s complete parameter list as an independently numbered statement.",
+    "source_location": {
+      "paper": "iut4",
+      "printed_pages": [
+        46,
+        47,
+        48
+      ],
+      "file_pages": [
+        46,
+        47,
+        48
+      ],
+      "label": "Corollary 2.2(ii) proof, application of Theorem 1.10 after (P7), absorption of errors, and final C2 inequalities"
+    },
+    "normalized_paper_formulas": [
+      "p. 46: (1/6)log(q) ≤ (1 + δh^(−1/2))·(log(d_{F_tpd}) + log(f_{F_tpd})) + 200δ²√h·log(2δh) + 20η_prm.",
+      "p. 47: (1/6)log(q_{∤2}) − (1/6)log(q) ≤ √h·log(2δh).",
+      "p. 47: C_K := 40η_prm + 2B_K, where B_K bounds (log(q_∀) − log(q_{∤2}))/6.",
+      "p. 47: ε_E := (60δ)²h^(−1/2)log(2δh) ≥ 5δh^(−1/2).",
+      "pp. 47–48: (h/6) ≤ (1 − (2/5)ε_E)^(−1)(1 + (1/5)ε_E)·(log(d_{F_tpd}) + log(f_{F_tpd})) + (1 − (2/5)ε_E)^(−1)·C_K/2 ≤ (1 + ε_E)·(log(d_{F_tpd}) + log(f_{F_tpd})) + C_K.",
+      "p. 48: (1 + (1/5)ε_E)/(1 − (2/5)ε_E) ≤ 1 + ε_E; 1 − (2/5)ε_E ≥ 1/2, for 0 < ε_E ≤ 1.",
+      "p. 48: log-diff_X(x_E) = log(d_{F_tpd}); log(f_{F_tpd}) ≤ log-cond_D(x_E) ≤ log(f_{F_tpd}) + log(2ℓ)."
+    ],
+    "source_adaptation_note_en": "The paper uses C_K = 40η_prm + 2B_K, with B_K bounding a height difference already divided by 6. The reference helper uses the numerical constant 40η + B/3, with its B occurring before that division. This is a normalization difference in the extracted helper, not a new constant definition attributed to the paper. The helper does not itself assert the prime-selection, geometric, or exceptional-set constructions: the paper’s argument supplies the surrounding context.",
+    "code_provenance": {
+      "file": "refer/iut/Iut/Implication/Corollary22.lean",
+      "declaration_line": 210,
+      "direct_consumer": "Iut.Corollary22Inputs.c2",
+      "direct_call_line": 553,
+      "note": "The c2 proof invokes c2_final directly after applying theorem110, bounding its coefficients, and bounding the excluded local-height contributions. This records the actual reference-code consumer only and is not a formal readback.",
+      "file_sha256_at_inspection": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15"
+    },
+    "short_verbatim_quotes": [
+      {
+        "printed_page": 46,
+        "file_page": 46,
+        "quote": "In light of (P7), we may apply Theorem 1.10",
+        "normalization": "contiguous prose before the bracketed cross-reference"
+      },
+      {
+        "printed_page": 48,
+        "file_page": 48,
+        "quote": "Thus, in summary, we obtain inequalities",
+        "normalization": "line indentation removed"
+      },
+      {
+        "printed_page": 48,
+        "file_page": 48,
+        "quote": "This completes the proof of assertion (ii).",
+        "normalization": "line break joined"
+      }
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "schema": "numeric-before-private-upload-review-v1",
+  "reviewed_at_utc": "2026-11-14T21:37:14.308452+00:00",
+  "verdict": "changes_requested",
+  "ready_for_private_upload": false,
+  "blocking_findings": [
+    {
+      "id": "explanation-math-content",
+      "severity": "medium",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery/ready.json",
+      "field": "explanations",
+      "issue": "Both theorem explanations are identical technical transplant notes, with no theorem formula, actual hypotheses, numerical proof idea or mathematical argument.",
+      "reference": "/home/admin-wsl/Coq/abc/prove2me_workspace/references/prove.md — Attach an explanation",
+      "required_change": "Provide a distinct reviewed English/Chinese/Japanese mathematical proof explanation for assembly and c2_final before upload. Keep technical provenance as a short final formalization note if useful.",
+      "lean_or_api_schema_defect": false
+    }
+  ],
+  "passed_checks": {
+    "actual_delivery_preflight": true,
+    "packet_sha256_unchanged": true,
+    "source4_sha256_current": true,
+    "all_packet_metadata_sha256_current": true,
+    "all_ready_evidence_sha256_current": true,
+    "accepted_ci_receipt_count": 15,
+    "accepted_list_matches_ci_summary": true,
+    "oversized_attempts_excluded": true,
+    "both_kernel_audits": [
+      {
+        "name": "AbcAdaptation.Reference.Iut.assembly",
+        "sha256": "1b1a1ab03fea925f8145e7e3d940883652cbf44591a066d795340d145b40c1eb",
+        "binder_count": 28,
+        "kernel_type_equalities": true,
+        "standard_axioms_only": true,
+        "no_sorryAx_or_open_children": true
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.c2_final",
+        "sha256": "b731e924189f0778e6a5b281e778cdbefa9b56d42156a3dfb82dd006db5bd8db",
+        "binder_count": 32,
+        "kernel_type_equalities": true,
+        "standard_axioms_only": true,
+        "no_sorryAx_or_open_children": true
+      }
+    ],
+    "final_blind_readbacks_passed_and_body_unchanged": true,
+    "all_three_published_readback_bodies_equal_final_readbacks": true,
+    "translation_unknowns": [],
+    "two_private_publications_two_direct_proofs": true,
+    "pinned_mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "same_existing_private_mission_detached_preparation_scope": true,
+    "root_graph_membership": false,
+    "canonicalC22Connected": false
+  },
+  "packet_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery/packet.json",
+  "packet_sha256": "818d07a87645e883a06ad13c18f9f56e94d49c9f4d7a391e026d7cf2ea8b34ea",
+  "ready_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-reference-split-20261115/delivery/ready.json",
+  "ready_sha256": "8a7c53f76a65d50af943315211421b97787199a6780a1af6eba42604ad25fe20",
+  "delivery_tool_sha256": "7d7a3f6f06f2f57ef2d2d2b7e640a8f9c1d253d183660755505fd0f9f2f5e9fa",
+  "evidence_count": 28,
+  "boundaries": {
+    "api_called": false,
+    "credentials_read": false,
+    "ci_called": false,
+    "git_called": false,
+    "main_files_edited": false
+  },
+  "claim_limit": "This is an offline pre-upload review. No PUBLISHED, ACCEPTED or completed root obligation is claimed."
+}
