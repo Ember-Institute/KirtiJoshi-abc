@@ -1,0 +1,5 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_principalRelation
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation

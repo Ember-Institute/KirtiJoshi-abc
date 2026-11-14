@@ -1,0 +1,1317 @@
+{
+  "schema": "compiler-type-review/v1",
+  "reviewed_date": "2026-11-14",
+  "passed": true,
+  "passed_semantics": "All 44 effective statements match the retained compiler binders/types and the necessary unchanged definition bodies after applying the four supplied trilingual text corrections. This does not claim that all immutable original statements passed unchanged.",
+  "original_statements_all_passed": false,
+  "original_statement_pass_count": 40,
+  "original_statements_requiring_correction": 4,
+  "effective_statement_pass_count": 44,
+  "declaration_count": 44,
+  "requested_review_model": "gpt-6.1-sol",
+  "actual_backend_model": null,
+  "compiler_evidence": {
+    "graph_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/polar-presentation-height-sourceproof-20261114/decl_graph.jsonl",
+    "graph_sha256": "edb1f32ba90d745f7a920a40f2b7465aae94141069a0f8d8126b6202fd48adcb",
+    "graph_rows": 614,
+    "receipt_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/polar-presentation-height-sourceproof-20261114/source-graph-leaf-result.json",
+    "receipt_sha256": "e34a937a589923e9bcac65107a6de22c346f5b0e5c3e7866bed175f09f4a0774",
+    "job_id": "ci-011823-6d7cc241",
+    "status": "succeeded",
+    "exit_code": 0,
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/polar-presentation-height-sourceproof-20261114/ExtractPolarHeightGraph.lean"
+    ],
+    "all_reviewed_current_source_hashes_match_compilation_manifest": true
+  },
+  "original_packets": [
+    {
+      "path": "blind-readbacks-comparison.json",
+      "absolute_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/polar-presentation-height-sourceproof-20261114/blind-readbacks-comparison.json",
+      "sha256": "4b8c5860c8df1e058ce90f610481bd4eeac128d6afbe52b391b5f2ca7d668300"
+    }
+  ],
+  "scope": {
+    "original_declarations_reviewed": 44,
+    "new_separate_rational_height_theorem_reviewed": false,
+    "proofs_reviewed": false,
+    "wording_and_retained_binders_only": true,
+    "original_packet_modified": false,
+    "source_files_modified": false,
+    "compilation_or_mcp_called": false,
+    "other_source_material_used": "Only necessary formal definitions already present in the original blind packet and current formal source signatures/definition bodies; no README, ledger, paper, or proof narrative used.",
+    "compiler_type_note": "Compiler types are copied verbatim from elaboratedType; pretty-printer proof ellipses remain as supplied. Current definition bodies were compared separately because a definition type alone does not expose its defining formula.",
+    "universes": "Compiler universe parameters are preserved in compiler_type. Generic arbitrary-universe source declarations are read as arbitrary types. PolarTupleHeightMonotonicity explicitly restricts its quantified field and finite index types to Type (universe zero), as retained in its unchanged definition."
+  },
+  "correction_names": [
+    "one_le_coeffBound",
+    "log_coeffBound",
+    "pairOne_nonzero",
+    "evalF"
+  ],
+  "declarations": [
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.pow_natDegree_eq_neg_sum",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.pow_natDegree_eq_neg_sum",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] {p : Polynomial F},\n  p.Monic → ∀ {z : F}, Polynomial.eval z p = 0 → z ^ p.natDegree = -∑ i ∈ Finset.range p.natDegree, p.coeff i * z ^ i",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 42,
+        "compiler_end_line": 48,
+        "signature_start_line": 43,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retained context is exactly an arbitrary-universe field F, monic polynomial p, and root z with p(z)=0. The ambient absolute value v is absent, as the readback states. Coefficients and natural-number degree match the formula."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "87e6706cd52bfe3ecdac1eeeeffddb2f177ca1eec1762a2576a997568de7aa0f",
+      "effective_english_readback_sha256": "87e6706cd52bfe3ecdac1eeeeffddb2f177ca1eec1762a2576a997568de7aa0f"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.natDegree_pos_of_root",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.natDegree_pos_of_root",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] {p : Polynomial F}, p.Monic → ∀ {z : F}, Polynomial.eval z p = 0 → 0 < p.natDegree",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 50,
+        "compiler_end_line": 57,
+        "signature_start_line": 51,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Only F with Field, monic p, and the root equation for z are retained; v is absent. Strict positivity of the natural-number degree is stated in all languages."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "e7b0a2953ad3fc3e2b2e2f5ae35d37882e791784b3c13f027ef6bf029b521320",
+      "effective_english_readback_sha256": "e7b0a2953ad3fc3e2b2e2f5ae35d37882e791784b3c13f027ef6bf029b521320"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_sum_le_of_isNonarchimedean",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_sum_le_of_isNonarchimedean",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (v : AbsoluteValue F ℝ),\n  (∀ (a b : F), v (a + b) ≤ Max.max (v a) (v b)) →\n    ∀ {ι : Type u_2} (s : Finset ι) (f : ι → F) {M : ℝ}, 0 ≤ M → (∀ i ∈ s, v (f i) ≤ M) → v (∑ i ∈ s, f i) ≤ M",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 59,
+        "compiler_end_line": 69,
+        "signature_start_line": 60,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains F, Field, the absolute value v, its strong triangle inequality, arbitrary index type ι, finite set s, family f, real M≥0, and each membership-indexed bound. The finite set may be empty; conclusion is non-strict ≤."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "cd63db65f00bfd80a08edbd20dcad884ada5acac50ba1132e34efde24cb4e1b7",
+      "effective_english_readback_sha256": "cd63db65f00bfd80a08edbd20dcad884ada5acac50ba1132e34efde24cb4e1b7"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_of_isNonarchimedean",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_of_isNonarchimedean",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (v : AbsoluteValue F ℝ),\n  (∀ (a b : F), v (a + b) ≤ Max.max (v a) (v b)) →\n    ∀ {p : Polynomial F},\n      p.Monic → ∀ {z : F}, Polynomial.eval z p = 0 → ∀ {B : ℝ}, 1 ≤ B → (∀ i < p.natDegree, v (p.coeff i) ≤ B) → v z ≤ B",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 71,
+        "compiler_end_line": 99,
+        "signature_start_line": 74,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains the strong triangle inequality, monicity, root equation, real B≥1, and all coefficient bounds for natural indices below natDegree. The readback preserves every hypothesis and v(z)≤B."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "7efebdca96a7e48f488a112268131326cd70b12f29ff48d7385001b7c8b68252",
+      "effective_english_readback_sha256": "7efebdca96a7e48f488a112268131326cd70b12f29ff48d7385001b7c8b68252"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_of_isNonarchimedean",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_of_isNonarchimedean",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (v : AbsoluteValue F ℝ),\n  (∀ (a b : F), v (a + b) ≤ Max.max (v a) (v b)) →\n    ∀ {p : Polynomial F},\n      p.Monic → ∀ {z : F}, Polynomial.eval z p = 0 → (∀ i < p.natDegree, v (p.coeff i) ≤ 1) → v z ≤ 1",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 101,
+        "compiler_end_line": 106,
+        "signature_start_line": 103,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains v and its strong triangle inequality, monic p, root z, and every lower coefficient bounded by 1; conclusion v(z)≤1 is unchanged."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "70bf6e568db830fb92c6dc3ebc88a1daf8499644dd7666bd4eeacc28960ecd37",
+      "effective_english_readback_sha256": "70bf6e568db830fb92c6dc3ebc88a1daf8499644dd7666bd4eeacc28960ecd37"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_iSup_of_isNonarchimedean",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_iSup_of_isNonarchimedean",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (v : AbsoluteValue F ℝ),\n  (∀ (a b : F), v (a + b) ≤ Max.max (v a) (v b)) →\n    ∀ {p : Polynomial F},\n      p.Monic → ∀ {z : F}, Polynomial.eval z p = 0 → v z ≤ Max.max 1 (⨆ (i : Fin p.natDegree), v (p.coeff ↑i))",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 108,
+        "compiler_end_line": 113,
+        "signature_start_line": 109,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains v and its strong triangle inequality, monic p, and root z. The supremum has finite index Fin p.natDegree and does not include the leading coefficient."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "fbc4695963127ac2b83790236e6f2f0425a2e8ca174a92edab3baccba4abb11d",
+      "effective_english_readback_sha256": "fbc4695963127ac2b83790236e6f2f0425a2e8ca174a92edab3baccba4abb11d"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_sum",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_sum",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (v : AbsoluteValue F ℝ) {p : Polynomial F},\n  p.Monic → ∀ {z : F}, Polynomial.eval z p = 0 → v z ≤ Max.max 1 (∑ i ∈ Finset.range p.natDegree, v (p.coeff i))",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 115,
+        "compiler_end_line": 141,
+        "signature_start_line": 117,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains only F, Field, v, monicity, and the root equation; no nonarchimedean hypothesis is present. The maximum with 1 and the finite coefficient sum match."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "d8f4417f7c672037602e13f43d96cccd28b666e626b2a87358ff80dee9356208",
+      "effective_english_readback_sha256": "d8f4417f7c672037602e13f43d96cccd28b666e626b2a87358ff80dee9356208"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_add_sum",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_add_sum",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (v : AbsoluteValue F ℝ) {p : Polynomial F},\n  p.Monic → ∀ {z : F}, Polynomial.eval z p = 0 → v z ≤ 1 + ∑ i ∈ Finset.range p.natDegree, v (p.coeff i)",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 143,
+        "compiler_end_line": 148,
+        "signature_start_line": 144,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains only F, Field, v, monicity, and the root equation; no nonarchimedean hypothesis is present. The additive 1 and finite coefficient sum match."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "e9d0d5c2e84fc19847bbac38ce4ad62993b551f50787d720a67f1b2d3ceee239",
+      "effective_english_readback_sha256": "e9d0d5c2e84fc19847bbac38ce4ad62993b551f50787d720a67f1b2d3ceee239"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_mul",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_mul",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (v : AbsoluteValue F ℝ) {p : Polynomial F},\n  p.Monic →\n    ∀ {z : F},\n      Polynomial.eval z p = 0 → ∀ {B : ℝ}, (∀ i < p.natDegree, v (p.coeff i) ≤ B) → v z ≤ Max.max 1 (↑p.natDegree * B)",
+      "compiler_module": "Solutions.Source_FermatPolarRootBound",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "9d1b70cb760d0372399c17870afe8519d432843209f8beab6119c08bfc37c382",
+        "compiler_start_line": 150,
+        "compiler_end_line": 157,
+        "signature_start_line": 152,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "B is an arbitrary real; no explicit B≥0 or B≥1 binder is retained. The conclusion is the maximum of 1 and the real-cast degree times B, as stated."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "6e37d265e795c06786755b20471afed31643ab89e8c5a5d855905a2005e0d260",
+      "effective_english_readback_sha256": "6e37d265e795c06786755b20471afed31643ab89e8c5a5d855905a2005e0d260"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_prod_of_one_le",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_prod_of_one_le",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {α : Type u_2} (s : Finset α) {f : α → ℝ}, (∀ a ∈ s, 1 ≤ f a) → 1 ≤ ∏ a ∈ s, f a",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 79,
+        "compiler_end_line": 88,
+        "signature_start_line": 80,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Only α, finite set s, real-valued family f, and the bounds f(a)≥1 on s survive. Ambient F, Field, and w are absent. Empty product and non-strict inequality are preserved."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "7bebf65deeb0f5b6040e38b386604cffebd82e4c1f962887f074d49db9cb66c9",
+      "effective_english_readback_sha256": "7bebf65deeb0f5b6040e38b386604cffebd82e4c1f962887f074d49db9cb66c9"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.le_prod_of_one_le",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.le_prod_of_one_le",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {α : Type u_2} {s : Finset α} {f : α → ℝ}, (∀ a ∈ s, 1 ≤ f a) → ∀ {a : α}, a ∈ s → f a ≤ ∏ b ∈ s, f b",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 90,
+        "compiler_end_line": 96,
+        "signature_start_line": 91,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Only α, s, real f, its bounds on s, and a member a∈s survive. Ambient F, Field, and w are absent; membership makes the empty-set case unavailable."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "1c6648870d2537cefc0d67e5510a9f0c364531ef480d674827041b29fdcb45c5",
+      "effective_english_readback_sha256": "1c6648870d2537cefc0d67e5510a9f0c364531ef480d674827041b29fdcb45c5"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "{F : Type u_1} → [inst : Field F] → ℕ → (ℕ → F) → Polynomial F",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 98,
+        "compiler_end_line": 100,
+        "signature_start_line": 99,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": true,
+      "binder_findings": [
+        "Definition retains exactly F with Field, n:ℕ, and c:ℕ→F; the ambient absolute value w is absent. Current definition body equals the original, including n=0 and coefficients below n only."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "5170aff523f2e1b41fcb944e3025b335fefac31c07256a7a9665f946b51f2405",
+      "effective_english_readback_sha256": "5170aff523f2e1b41fcb944e3025b335fefac31c07256a7a9665f946b51f2405"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.degree_sum_lt",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.degree_sum_lt",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (n : ℕ) (c : ℕ → F),\n  (∑ k ∈ Finset.range n, Polynomial.C (c k) * Polynomial.X ^ k).degree < ↑n",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 102,
+        "compiler_end_line": 107,
+        "signature_start_line": 102,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains F with Field, n, and c; w is absent. Polynomial.degree is a WithBot ℕ value, so the strict comparison and the -∞ convention for the zero polynomial in the readback match."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "cc1d7e680e08783031f842592c30f75258f4a4436ebeed63d96bbe4d4c3839c6",
+      "effective_english_readback_sha256": "cc1d7e680e08783031f842592c30f75258f4a4436ebeed63d96bbe4d4c3839c6"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf_monic",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf_monic",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (n : ℕ) (c : ℕ → F), (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf n c).Monic",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 109,
+        "compiler_end_line": 113,
+        "signature_start_line": 109,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains only F with Field, n, and c; w is absent. Monicity of the specified polynomial, including n=0, is exactly the type."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "ce187dcc21ca3452a8a4d00db0bee8d20c810816e99b624680380b44c23cbb07",
+      "effective_english_readback_sha256": "ce187dcc21ca3452a8a4d00db0bee8d20c810816e99b624680380b44c23cbb07"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.natDegree_monicOf",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.natDegree_monicOf",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (n : ℕ) (c : ℕ → F),\n  (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf n c).natDegree = n",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 115,
+        "compiler_end_line": 120,
+        "signature_start_line": 115,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains only F with Field, n, and c; w is absent. The equality of natural-number degree with n is exact."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "5515f1186f3c72a8f2f09067122692a103b81322b3e21a8972226017d72d21be",
+      "effective_english_readback_sha256": "5515f1186f3c72a8f2f09067122692a103b81322b3e21a8972226017d72d21be"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeff_monicOf",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeff_monicOf",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] {n : ℕ} (c : ℕ → F) {k : ℕ},\n  k < n → (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf n c).coeff k = c k",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 122,
+        "compiler_end_line": 130,
+        "signature_start_line": 122,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains F with Field, implicit n and k, explicit c, and strict k<n. Only the coefficient at k is asserted to equal c(k)."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "7baf80434706a0a90aa9abed79e7b7e30ce452e40cca4377d5f7c4982c1d863a",
+      "effective_english_readback_sha256": "7baf80434706a0a90aa9abed79e7b7e30ce452e40cca4377d5f7c4982c1d863a"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.eval_monicOf",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.eval_monicOf",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (n : ℕ) (c : ℕ → F) (z : F),\n  Polynomial.eval z (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf n c) =\n    z ^ n + ∑ k ∈ Finset.range n, c k * z ^ k",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 132,
+        "compiler_end_line": 134,
+        "signature_start_line": 132,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains F with Field, n, c, and z. No absolute value is retained. Both sides are evaluations in F and the finite sum is over k<n."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "9c0fff4fab6dbf236832205c4fcb46128e13e99cadb91520cac9eb347ae7578b",
+      "effective_english_readback_sha256": "9c0fff4fab6dbf236832205c4fcb46128e13e99cadb91520cac9eb347ae7578b"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (w : AbsoluteValue F ℝ),\n  (∀ (a b : F), w (a + b) ≤ Max.max (w a) (w b)) →\n    ∀ {n : ℕ} {c : ℕ → F} {z : F},\n      z ^ n + ∑ k ∈ Finset.range n, c k * z ^ k = 0 → ∀ {B : ℝ}, 1 ≤ B → (∀ k < n, w (c k) ≤ B) → w z ≤ B",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 136,
+        "compiler_end_line": 145,
+        "signature_start_line": 137,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains F with Field, w, strong triangle inequality, n,c,z, the displayed monic equation, real B≥1, and all coefficient bounds. It has no separate positive-degree or nonzero-z premise."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "5834c3ca3ac2a463311b94ecaee501d48a36ab2f64fa65ccb9fdcd67e3c058ca",
+      "effective_english_readback_sha256": "5834c3ca3ac2a463311b94ecaee501d48a36ab2f64fa65ccb9fdcd67e3c058ca"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] (w : AbsoluteValue F ℝ) {n : ℕ} {c : ℕ → F} {z : F},\n  z ^ n + ∑ k ∈ Finset.range n, c k * z ^ k = 0 → w z ≤ 1 + ∑ k ∈ Finset.range n, w (c k)",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 147,
+        "compiler_end_line": 156,
+        "signature_start_line": 148,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains F with Field, w, n,c,z, and the displayed equation. It has neither a strong-triangle-inequality premise nor z≠0. The additive coefficient bound matches."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "4102981bf4ea699fd58071571a8afd48cd6329c5fa4ebf2789466485c45ee9e1",
+      "effective_english_readback_sha256": "4102981bf4ea699fd58071571a8afd48cd6329c5fa4ebf2789466485c45ee9e1"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "{F : Type u_1} → [inst : Field F] → AbsoluteValue F ℝ → {κ : Type u_2} → MvPolynomial κ ℚ → ℝ",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 166,
+        "compiler_end_line": 168,
+        "signature_start_line": 167,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": true,
+      "binder_findings": [
+        "Definition retains F with Field, w, arbitrary κ, and Q; CharZero F is not retained here. The original generic-field wording is therefore exact for this definition. The current body equals the original."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "9279904a1150094d3c3420cb444e8d19234b6eabff4b397d747f12a8fd838952",
+      "effective_english_readback_sha256": "9279904a1150094d3c3420cb444e8d19234b6eabff4b397d747f12a8fd838952"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_coeffBound",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_coeffBound",
+      "passed": true,
+      "original_statement_passed": false,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type u_2} (Q : MvPolynomial κ ℚ),\n  1 ≤ AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound w Q",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 170,
+        "compiler_end_line": 171,
+        "signature_start_line": 170,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Compiler retains [CharZero F] in addition to [Field F], w, κ, and Q. All three original texts omitted characteristic zero. The supplied full trilingual replacement adds exactly this retained assumption."
+      ],
+      "corrected_trilingual_statement": {
+        "en": "Let $F$ be a field of characteristic zero, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. For every such $Q$, $1≤B_w(Q)$.",
+        "zh_Hans": "设 $F$ 是特征为零的域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。对每个这样的 $Q$，有 $1≤B_w(Q)$。",
+        "ja": "$F$ を標数零の体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。このようなすべての $Q$ に対し $1≤B_w(Q)$ である。"
+      },
+      "original_english_readback_sha256": "bc5d7ec96791152646a37680ba76bec197280f7059fb6147035b160b5274d928",
+      "effective_english_readback_sha256": "baa1449f2153781ab05082bbd72452504da731fc6f15d0bf196cf2b1671d131d"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_coeffBound",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_coeffBound",
+      "passed": true,
+      "original_statement_passed": false,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type u_2} (Q : MvPolynomial κ ℚ),\n  Real.log (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound w Q) =\n    ∑ m ∈ Q.support, (w ↑(MvPolynomial.coeff m Q)).posLog",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 173,
+        "compiler_end_line": 176,
+        "signature_start_line": 173,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Compiler retains [CharZero F] in addition to [Field F], w, κ, and Q. All three original texts omitted characteristic zero. The supplied full trilingual replacement adds exactly this retained assumption; the logarithmic identity is unchanged."
+      ],
+      "corrected_trilingual_statement": {
+        "en": "Let $F$ be a field of characteristic zero, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. For every such $Q$, $log B_w(Q)=∑_{m∈S(Q)}L(w(q_m))$.",
+        "zh_Hans": "设 $F$ 是特征为零的域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。对每个这样的 $Q$，有 $log B_w(Q)=∑_{m∈S(Q)}L(w(q_m))$。",
+        "ja": "$F$ を標数零の体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。このようなすべての $Q$ に対し $log B_w(Q)=∑_{m∈S(Q)}L(w(q_m))$ である。"
+      },
+      "original_english_readback_sha256": "2a4beb464cf624dc0329c1661a375b74757303d3e74ed1f2ed59610eaef1dd08",
+      "effective_english_readback_sha256": "2dbc56b69e6066d0f6c4c8eae205557f66ab59db631996a583e2af20abff258f"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : CharZero F] (w : AbsoluteValue F ℝ) {κ : Type u_2},\n  (∀ (a b : F), w (a + b) ≤ Max.max (w a) (w b)) →\n    ∀ {a : κ → F},\n      (∀ (l : κ), w (a l) ≤ 1) →\n        ∀ (Q : MvPolynomial κ ℚ),\n          w (MvPolynomial.eval₂ (Rat.castHom F) a Q) ≤ AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound w Q",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 178,
+        "compiler_end_line": 197,
+        "signature_start_line": 180,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains Field F, CharZero F, w, arbitrary κ, its strong triangle inequality, assignment a with all coordinate bounds, and Q. Rational evaluation is by Rat.castHom F; the readback preserves this and imposes no finiteness on κ."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "334726997cd075156ace93fba0df5c3c49f0af49293289d223a3ffe805ebf29a",
+      "effective_english_readback_sha256": "334726997cd075156ace93fba0df5c3c49f0af49293289d223a3ffe805ebf29a"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : CharZero F] (w : AbsoluteValue F ℝ) {κ : Type u_2} {a : κ → F},\n  (∀ (l : κ), w (a l) ≤ 1) →\n    ∀ (Q : MvPolynomial κ ℚ),\n      w (MvPolynomial.eval₂ (Rat.castHom F) a Q) ≤\n        ↑Q.support.card * AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound w Q",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 199,
+        "compiler_end_line": 220,
+        "signature_start_line": 201,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains Field F, CharZero F, w, arbitrary κ, bounded assignment a, and Q. The support cardinal is cast to ℝ and multiplies coeffBound; the zero-polynomial case matches."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "c0fd3e10f3478b4d69d8e49122c68e2a5a5931aea72f61a0cc4a042cd27ef909",
+      "effective_english_readback_sha256": "c0fd3e10f3478b4d69d8e49122c68e2a5a5931aea72f61a0cc4a042cd27ef909"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : CharZero F] (w : AbsoluteValue F ℝ) {κ : Type u_2} {a : κ → F},\n  (∀ (l : κ), w (a l) ≤ 1) →\n    ∀ {n : ℕ} (Q : ℕ → MvPolynomial κ ℚ) {z : F},\n      z ≠ 0 →\n        z ^ n + ∑ k ∈ Finset.range n, MvPolynomial.eval₂ (Rat.castHom F) a (Q k) * z ^ k = 0 →\n          Real.log (w z) ≤\n            Real.log (1 + ∑ k ∈ Finset.range n, ↑(Q k).support.card) +\n              ∑ k ∈ Finset.range n, ∑ m ∈ (Q k).support, (w ↑(MvPolynomial.coeff m (Q k))).posLog",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 222,
+        "compiler_end_line": 248,
+        "signature_start_line": 224,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains Field F, CharZero F, w, κ, assignment a with all bounds, n, polynomial sequence Q, z≠0, and the polynomial equation. The logarithmic support-cardinality term and double sum of positive logarithms are both preserved."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "cdd07c12587dfa611d4ad42e0e7761717e65c4fafbe488e67d3ad3b5c8c1a4d9",
+      "effective_english_readback_sha256": "cdd07c12587dfa611d4ad42e0e7761717e65c4fafbe488e67d3ad3b5c8c1a4d9"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : CharZero F] (w : AbsoluteValue F ℝ) {κ : Type u_2},\n  (∀ (a b : F), w (a + b) ≤ Max.max (w a) (w b)) →\n    ∀ {a : κ → F},\n      (∀ (l : κ), w (a l) ≤ 1) →\n        ∀ {n : ℕ} (Q : ℕ → MvPolynomial κ ℚ) {z : F},\n          z ≠ 0 →\n            z ^ n + ∑ k ∈ Finset.range n, MvPolynomial.eval₂ (Rat.castHom F) a (Q k) * z ^ k = 0 →\n              Real.log (w z) ≤ ∑ k ∈ Finset.range n, ∑ m ∈ (Q k).support, (w ↑(MvPolynomial.coeff m (Q k))).posLog",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 250,
+        "compiler_end_line": 265,
+        "signature_start_line": 251,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains every characteristic-zero field, absolute-value, assignment, n,Q,z, nonzero, and equation binder, together with the strong triangle inequality. The conclusion has only the coefficient positive-logarithm double sum."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "0f2c606ccc7af1317fc880c719e77926af1ac74b8506e1addebbcc5d19f30642",
+      "effective_english_readback_sha256": "0f2c606ccc7af1317fc880c719e77926af1ac74b8506e1addebbcc5d19f30642"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.exists_integral_eq",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.exists_integral_eq",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {κ : Type u_2} (g : κ → K) (r : K),\n  (∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place K), (∀ (l : κ), g l ∈ ↑P) → r ∈ ↑P) →\n    ∃ (n : ℕ) (Q : ℕ → MvPolynomial κ ℚ), r ^ n + ∑ k ∈ Finset.range n, (MvPolynomial.aeval g) (Q k) * r ^ k = 0",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 275,
+        "compiler_end_line": 306,
+        "signature_start_line": 277,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains Field K, CharZero K, IsCurveField K, arbitrary κ, g and r, and the regularity implication at every proper rational place. Both existential witnesses n and the entire polynomial sequence Q are preserved; no finiteness of κ or r≠0 is retained."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "83a81235f037a9816397acc0f6eb19cb092da71d41cfb2a35a6dc6d4859bceb1",
+      "effective_english_readback_sha256": "83a81235f037a9816397acc0f6eb19cb092da71d41cfb2a35a6dc6d4859bceb1"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF",
+      "passed": true,
+      "original_statement_passed": false,
+      "effective_statement_passed": true,
+      "compiler_type": "{K : Type u_1} →\n  [inst : Field K] → [inst_1 : CharZero K] → (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K) → ↥↑x.P →+* ↥x.fieldOf",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 316,
+        "compiler_end_line": 318,
+        "signature_start_line": 317,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": true,
+      "binder_findings": [
+        "Compiler retains Field K and CharZero K but does not retain IsCurveField K. The original texts unnecessarily required a finite extension of a rational function field and described discrete orders unavailable in this generality. The replacement removes both restrictions while preserving the full point, residue embedding, field range, and ring-homomorphism construction."
+      ],
+      "corrected_trilingual_statement": {
+        "en": "Let $K$ be any field of characteristic zero. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For every $x$, this defines the ring homomorphism $evalF_x:O_P→F_x$ obtained by the residue map $O_P→k(P)$ followed by the isomorphism of $k(P)$ onto the image of $σ$. Its value is the element of $F_x$ represented by $a(x)$.",
+        "zh_Hans": "设 $K$ 是任意特征为零的域。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对每个 $x$，此定义给出环同态 $evalF_x:O_P→F_x$：先取剩余映射 $O_P→k(P)$，再取 $k(P)$ 到 $σ$ 的像的同构。其值是由 $a(x)$ 表示的 $F_x$ 中元素。",
+        "ja": "$K$ を任意の標数零の体とする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。各 $x$ に対し、剰余写像 $O_P→k(P)$ と $k(P)$ から $σ$ の像への同型を合成した環準同型 $evalF_x:O_P→F_x$ を定義する。その値は $a(x)$ で表される $F_x$ の元である。"
+      },
+      "original_english_readback_sha256": "77cbf64ae710cbb15bf788b72b50963447fea4e227c09a7260d6b52ffd08e4f9",
+      "effective_english_readback_sha256": "2387e534a5c65701ce19dad6854af96f81c88e8097840a9a6b6e93385ddc910d"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coe_evalF",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coe_evalF",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K) (f : ↥↑x.P),\n  ↑((AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF x) f) = x.eval ↑f ⋯",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 320,
+        "compiler_end_line": 321,
+        "signature_start_line": 320,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Unlike the definition evalF, this theorem retains IsCurveField K together with Field and CharZero. The original curve-field readback is exact. It retains point x and local-ring element f; the equality concerns coercion to the fixed algebraic closure."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "f716b72b9db05606621b7b5090a03ad8b442a598652a077c1f13c66d84216b42",
+      "effective_english_readback_sha256": "f716b72b9db05606621b7b5090a03ad8b442a598652a077c1f13c66d84216b42"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF_comp_ratHom",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF_comp_ratHom",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K),\n  (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF x).comp x.P.ratHom = Rat.castHom ↥x.fieldOf",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 323,
+        "compiler_end_line": 324,
+        "signature_start_line": 323,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains Field K, CharZero K, IsCurveField K, and point x. The original curve-field assumptions are exact for this theorem. The conclusion is equality of the rational-map composite and Rat.castHom of the full point field."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "4f0a1183800723a5dd9650b6b09c67925d20e7ee18e7234e2dcdfb9c0dd33513",
+      "effective_english_readback_sha256": "4f0a1183800723a5dd9650b6b09c67925d20e7ee18e7234e2dcdfb9c0dd33513"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.aeval_mem_and_evalF",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.aeval_mem_and_evalF",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {κ : Type u_2} (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K) (g : κ → K) (hg : ∀ (l : κ), g l ∈ ↑x.P)\n  (Q : MvPolynomial κ ℚ),\n  ∃ (h : (MvPolynomial.aeval g) Q ∈ ↑x.P),\n    (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF x) ⟨(MvPolynomial.aeval g) Q, h⟩ =\n      MvPolynomial.eval₂ (Rat.castHom ↥x.fieldOf)\n        (fun (l : κ) => (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF x) ⟨g l, ⋯⟩) Q",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 326,
+        "compiler_end_line": 343,
+        "signature_start_line": 328,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains Field K, CharZero K, IsCurveField K, arbitrary κ, x, family g, regularity of every coordinate, and Q. The existential witness is a membership proof for Q(g); the equality is in x.fieldOf and uses the entire assignment."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "35ec819053db4db1fb0b76507eabc1ee34e94d043b5ed89855bd1d5f2a10399d",
+      "effective_english_readback_sha256": "35ec819053db4db1fb0b76507eabc1ee34e94d043b5ed89855bd1d5f2a10399d"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_log_iSup",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_log_iSup",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {ι : Type u_1} [Fintype ι] (F : IntermediateField ℚ AbcAdaptation.Tripod.Qbar) [inst : FiniteDimensional ℚ ↥F]\n  {y : ι → ↥F}, y ≠ 0 → Function.HasFiniteSupport fun (v : NumberField.FinitePlace ↥F) => Real.log (⨆ (i : ι), v (y i))",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 353,
+        "compiler_end_line": 380,
+        "signature_start_line": 354,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Only ι with Fintype, the intermediate field F with FiniteDimensional ℚ F, nonzero tuple y, and its nonzero proof are retained. Ambient κ and its Fintype are absent. Finite support and all finite places are stated correctly."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "8dd4167f58ba1c4ec7b3eeae99277f6a2a16e5822e12477a39aa08c8bd8df541",
+      "effective_english_readback_sha256": "8dd4167f58ba1c4ec7b3eeae99277f6a2a16e5822e12477a39aa08c8bd8df541"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_posLog",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_posLog",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ (F : IntermediateField ℚ AbcAdaptation.Tripod.Qbar) [inst : FiniteDimensional ℚ ↥F] (b : ↥F),\n  Function.HasFiniteSupport fun (v : NumberField.FinitePlace ↥F) => (v b).posLog",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 382,
+        "compiler_end_line": 391,
+        "signature_start_line": 382,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Neither ι nor κ nor any Fintype binder survives. Only the finite-dimensional intermediate field F and its element b are retained. The original statement does not impose any tuple or nonzero-b assumption."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "e60a43ffe6e16c7770e5c70481f48b852ad2bf62d1fcff611967239f28bf5af5",
+      "effective_english_readback_sha256": "e60a43ffe6e16c7770e5c70481f48b852ad2bf62d1fcff611967239f28bf5af5"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {ι : Type u_1} {κ : Type u_2} [inst : Fintype ι] [inst_1 : Fintype κ]\n  (F : IntermediateField ℚ AbcAdaptation.Tripod.Qbar) [inst_2 : FiniteDimensional ℚ ↥F] {y : ι → ↥F} {z : κ → ↥F},\n  y ≠ 0 →\n    z ≠ 0 →\n      ∀ (c : ℝ) {T : Type u_3} (U : Finset T) (q : T → ℚ),\n        (∀ (w : NumberField.InfinitePlace ↥F),\n            Real.log (⨆ (i : ι), w (y i)) ≤ Real.log (⨆ (l : κ), w (z l)) + c + ∑ τ ∈ U, (w ↑(q τ)).posLog) →\n          (∀ (v : NumberField.FinitePlace ↥F),\n              Real.log (⨆ (i : ι), v (y i)) ≤ Real.log (⨆ (l : κ), v (z l)) + ∑ τ ∈ U, (v ↑(q τ)).posLog) →\n            (AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight fun (i : ι) => ↑(y i)) ≤\n              (AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight fun (l : κ) => ↑(z l)) + c +\n                ∑ τ ∈ U, Height.logHeight₁ (q τ)",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 393,
+        "compiler_end_line": 447,
+        "signature_start_line": 396,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains both arbitrary-universe finite index types and their Fintype instances, finite-dimensional F, nonzero tuples y,z, real c, arbitrary T, finite U, q:T→ℚ, and both placewise premises. The conclusion and uniform c,U,q in the readback match exactly."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "4dcc22fa7cbc6810ce5c5b50913c7145482d5ef7cc80d02e2f953c2a44842b5f",
+      "effective_english_readback_sha256": "4dcc22fa7cbc6810ce5c5b50913c7145482d5ef7cc80d02e2f953c2a44842b5f"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_iSup_le_of_forall",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_iSup_le_of_forall",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {ι : Type u_2} {κ : Type u_3} [Fintype ι] [Fintype κ] {F : Type u_4} [inst : Field F] (W : AbsoluteValue F ℝ)\n  {y : ι → F} {z : κ → F},\n  y ≠ 0 →\n    z ≠ 0 →\n      ∀ (B : ℝ),\n        (∀ (i : ι) (j : κ), (∀ (l : κ), W (z l) ≤ W (z j)) → z j ≠ 0 → y i ≠ 0 → Real.log (W (y i / z j)) ≤ B) →\n          Real.log (⨆ (i : ι), W (y i)) ≤ Real.log (⨆ (l : κ), W (z l)) + B",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 457,
+        "compiler_end_line": 498,
+        "signature_start_line": 459,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "K, CharZero K, and IsCurveField K from the ambient section do not survive. Retained binders are finite ι,κ, arbitrary field F, absolute value W, nonzero tuples y,z, B, and the maximal-coordinate implication. The original explicitly states this generality."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "681ef4fb0891f5978c926674e127772937768538589f0416a596bf8304ef95cc",
+      "effective_english_readback_sha256": "681ef4fb0891f5978c926674e127772937768538589f0416a596bf8304ef95cc"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {ι : Type u_2} {κ : Type u_3} [inst_3 : Fintype ι] [inst_4 : Fintype κ] {s : ι → K} {t : κ → K},\n  (∃ (i : ι), s i ≠ 0) →\n    (∃ (j : κ), t j ≠ 0) →\n      ∀ {P : AbcAdaptation.Tripod.Fermat.Proper.Place K},\n        AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P t ≤\n            AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P s →\n          ∀ (i : ι) (j : κ), (∀ (l : κ), t l / t j ∈ ↑P) → s i / t j ∈ ↑P",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 500,
+        "compiler_end_line": 520,
+        "signature_start_line": 502,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains K with Field, CharZero and IsCurveField, finite ι,κ, tuples s,t with nonzero-coordinate witnesses, place P, minOrd(t)≤minOrd(s), indices i,j, and regularity of all t_l/t_j. No t_j≠0 binder is retained; total division-by-zero wording is exact."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "ec39d413532901b0dd0371432fd27151d9b312726235bac4c9d4d01ef6fd7252",
+      "effective_english_readback_sha256": "ec39d413532901b0dd0371432fd27151d9b312726235bac4c9d4d01ef6fd7252"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {ι : Type u_2} {κ : Type u_3} [inst_3 : Fintype ι] [inst_4 : Fintype κ] {s : ι → K} {t : κ → K},\n  (∃ (i : ι), s i ≠ 0) →\n    (∃ (j : κ), t j ≠ 0) →\n      (∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n          AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P t ≤\n            AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P s) →\n        ∃ (C : ℝ),\n          ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint K),\n            AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight s x ≤\n              AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight t x + C",
+      "compiler_module": "Solutions.Source_FermatPolarIntegrality",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "5eda7e5870e5589de71dae4d9dd312759a499721c9e1e65e6e082bfd7c145fcf",
+        "compiler_start_line": 522,
+        "compiler_end_line": 750,
+        "signature_start_line": 525,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains K with Field, CharZero and IsCurveField, both finite index types, tuples with nonzero-coordinate witnesses, and the minOrd inequality at every place. The existential real C precedes all full points x, preserving the uniformity over all residue embeddings and field degrees."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "7d917a7ec29759c6eb895cca61cc4c24c2e645bcdfd2283915eed91727344ea1",
+      "effective_english_readback_sha256": "7d917a7ec29759c6eb895cca61cc4c24c2e645bcdfd2283915eed91727344ea1"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "{K : Type u_1} → [Field K] → K → Fin 2 → K",
+      "compiler_module": "Solutions.Source_FermatPolarPresentationHeights",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+        "compiler_start_line": 20,
+        "compiler_end_line": 20,
+        "signature_start_line": 20,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": true,
+      "binder_findings": [
+        "Definition retains K with Field only; CharZero and IsCurveField are absent. Its generic-field original readback is exact. The current body equals the original ordered tuple (1,f)."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "126be4c66dc41460b31f138b4f5aa8024e322cadce830d5c5a007eae0ae9ff93",
+      "effective_english_readback_sha256": "126be4c66dc41460b31f138b4f5aa8024e322cadce830d5c5a007eae0ae9ff93"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne_nonzero",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne_nonzero",
+      "passed": true,
+      "original_statement_passed": false,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K] (f : K),\n  ∃ (i : Fin 2), AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne f i ≠ 0",
+      "compiler_module": "Solutions.Source_FermatPolarPresentationHeights",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+        "compiler_start_line": 22,
+        "compiler_end_line": 22,
+        "signature_start_line": 22,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Compiler retains Field K, CharZero K, and IsCurveField K before f. The original generic-field texts omitted the latter two retained assumptions. The full replacements state characteristic zero and expand IsCurveField as finite dimensionality over ℚ(t) for some transcendental t."
+      ],
+      "corrected_trilingual_statement": {
+        "en": "Let $K$ be a field of characteristic zero for which there exists an element $t$ transcendental over $ℚ$ such that $K$ is finite dimensional over $ℚ(t)$. For every $f∈K$, some coordinate of the ordered tuple $(1,f):Fin(2)→K$ is nonzero. The assertion includes $f=0$ and does not claim that both coordinates are nonzero.",
+        "zh_Hans": "设 $K$ 是特征为零的域，并且存在在 $ℚ$ 上超越的元素 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。对任意 $f∈K$，有序元组 $(1,f):Fin(2)→K$ 至少有一个非零分量。断言包括 $f=0$ 的情形，不声称两个分量都非零。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある元 $t$ が存在して $K$ は $ℚ(t)$ 上有限次元であるとする。すべての $f∈K$ に対し、順序付きの組 $(1,f):Fin(2)→K$ は非零成分を持つ。$f=0$ も含み、両方の成分が非零であるとは主張しない。"
+      },
+      "original_english_readback_sha256": "9e1a3aadc7348ced78557a8bae34242c0ce5dc6e288a031aca3b21ffed6beaa6",
+      "effective_english_readback_sha256": "9619cc43f3a09ae6bb2b87a07ae7fe09a169aecf8d33ae7b72b77bd41c8153b9"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) (f : K),\n  AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne f) =\n    Min.min 0 (P.ord f)",
+      "compiler_module": "Solutions.Source_FermatPolarPresentationHeights",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+        "compiler_start_line": 24,
+        "compiler_end_line": 42,
+        "signature_start_line": 25,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains K with Field, CharZero and IsCurveField, place P, and f. The original readback includes all of them and preserves the minimum over nonzero coordinates and the ord(0)=0 convention."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "bd59f5a5bc41ff6809510cfc2d8673aca69ef3c9efc92a6ed2093318fc772567",
+      "effective_english_readback_sha256": "bd59f5a5bc41ff6809510cfc2d8673aca69ef3c9efc92a6ed2093318fc772567"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K]\n  (f : ↥M.K) (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n  AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne f)\n      x =\n    AbcAdaptation.Tripod.Fermat.Proper.functionHeight M f x",
+      "compiler_module": "Solutions.Source_FermatPolarPresentationHeights",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+        "compiler_start_line": 44,
+        "compiler_end_line": 56,
+        "signature_start_line": 45,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "No generic ambient K survives. Retains N, model M, an explicit IsCurveField M.K instance, f, and the full point x. The original states the model fields, supplied curve-field structure, both exact height normalizations, and regular/zero/pole branches."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "fea7dbcef0b82b99e6fa7f8d637a5a4f7996262f0b47219d93f500eaec86d381",
+      "effective_english_readback_sha256": "fea7dbcef0b82b99e6fa7f8d637a5a4f7996262f0b47219d93f500eaec86d381"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne_eq_neg_pole",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne_eq_neg_pole",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) [inst : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K]\n  (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M) (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K)\n  (f : ↥M.K),\n  AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd P (AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne f) =\n    -AbcAdaptation.Tripod.Fermat.Proper.poleMultiplicity M hDVR f P",
+      "compiler_module": "Solutions.Source_FermatPolarPresentationHeights",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+        "compiler_start_line": 58,
+        "compiler_end_line": 64,
+        "signature_start_line": 59,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "No generic ambient K survives. Retains N, M, IsCurveField M.K, hDVR, P, and f. The readback distinguishes minOrd based on Place.ord from the model order used by poleMultiplicity and preserves zero and pole conventions."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "e91c30f733bc28426aafe86d4d69ce7c82402bff6b1e6762b7567b0598b552e5",
+      "effective_english_readback_sha256": "e91c30f733bc28426aafe86d4d69ce7c82402bff6b1e6762b7567b0598b552e5"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTupleHeightMonotonicity",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTupleHeightMonotonicity",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "Prop",
+      "compiler_module": "Solutions.Source_FermatPolarPresentationHeights",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+        "compiler_start_line": 70,
+        "compiler_end_line": 79,
+        "signature_start_line": 73,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": true,
+      "binder_findings": [
+        "The compiler type is Prop, with no outer retained parameter. Its current definition body is identical to the original: universally quantified universe-zero K with Field, CharZero, IsCurveField, universe-zero finite ι,κ, nonzero tuples, all-place minOrd inequality, and a constant chosen before all full points. The source-definition readback covers those internal binders."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "6383cb2a76f31d1fdc7a4ba9d5d4cb0f9b516757ef3a816d5ce7fcc5c2cef2b8",
+      "effective_english_readback_sha256": "6383cb2a76f31d1fdc7a4ba9d5d4cb0f9b516757ef3a816d5ce7fcc5c2cef2b8"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+      "user_name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+      "passed": true,
+      "original_statement_passed": true,
+      "effective_statement_passed": true,
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.PolarTupleHeightMonotonicity →\n  ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N)\n    (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n      ∀ (D E : AbcAdaptation.Tripod.Fermat.Proper.Divisor M)\n        (RD : AbcAdaptation.Tripod.Fermat.Proper.PolarPresentation M hDVR D)\n        (RE : AbcAdaptation.Tripod.Fermat.Proper.PolarPresentation M hDVR E) (f r : ↥M.K),\n        r ≠ 0 →\n          (∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n              D P + E P =\n                AbcAdaptation.Tripod.Fermat.Proper.poleMultiplicity M hDVR f P +\n                  AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P r) →\n            ∃ (C : ℝ),\n              ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n                |AbcAdaptation.Tripod.Fermat.Proper.divHeight RD x + AbcAdaptation.Tripod.Fermat.Proper.divHeight RE x -\n                      AbcAdaptation.Tripod.Fermat.Proper.functionHeight M f x| ≤\n                  C",
+      "compiler_module": "Solutions.Source_FermatPolarPresentationHeights",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "sha256": "bd8488d28160da8bcd13a352269f2366604c318da53c6eba94866a9b735e00b3",
+        "compiler_start_line": 81,
+        "compiler_end_line": 143,
+        "signature_start_line": 83,
+        "sha256_matches_compilation_manifest": true
+      },
+      "original_packet": "blind-readbacks-comparison.json",
+      "original_signature_unchanged": true,
+      "definition_body_unchanged": null,
+      "binder_findings": [
+        "Retains hMono, N, M, hDVR, hRF, D,E, arbitrary chosen RD,RE, f,r, r≠0, and the pointwise principal relation, with no extra IsCurveField M.K binder. The readback expands hMono and both presentation fields, keeps +ord(r), and quantifies one real C before all full points. The inverse-r construction remains a separate source observation, not an added premise."
+      ],
+      "corrected_trilingual_statement": null,
+      "original_english_readback_sha256": "6605d254dcf78e6d0a2a5d76de3a45f38aafd16be46886c07bbfd60654b0fdad",
+      "effective_english_readback_sha256": "6605d254dcf78e6d0a2a5d76de3a45f38aafd16be46886c07bbfd60654b0fdad"
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "declarations_resolved_uniquely": 44,
+    "current_source_signature_matches_original_count": 44,
+    "unchanged_definition_body_count": 5,
+    "current_source_sha256_matches_compiler_manifest": true,
+    "original_packet_sha256_unchanged": true,
+    "correction_language_count": 12,
+    "correction_inline_math_expressions": 169,
+    "correction_dollars_and_braces_balanced": true,
+    "correction_control_characters_absent": true,
+    "json_parse_roundtrip": true
+  }
+}

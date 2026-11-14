@@ -1,0 +1,30 @@
+from scheduler_common import run
+if __name__ == "__main__":
+    f='Solutions/Source_FermatPolarAbsoluteExtension.lean'
+    run('FermatPolarAbsoluteExtension'+"-leaf",f,version='rank-v2',duration='68s',memory='6GiB')
+    run('FermatPolarAbsoluteExtension'+"-artifact",f,artifact=True)
+    f='Solutions/Source_FermatPolarAbsoluteBasic.lean'
+    run('FermatPolarAbsoluteBasic'+"-leaf",f)
+    run('FermatPolarAbsoluteBasic'+"-artifact",f,artifact=True)
+    f='Solutions/Source_FermatPolarPointAdapters.lean'
+    run('FermatPolarPointAdapters'+"-leaf",f)
+    run('FermatPolarPointAdapters'+"-artifact",f,artifact=True)
+    f='Solutions/Source_FermatPolarTupleHeight.lean'
+    run('FermatPolarTupleHeight'+"-leaf",f)
+    run('FermatPolarTupleHeight'+"-artifact",f,artifact=True)
+    f='Solutions/Source_FermatPolarMinOrd.lean'
+    run('FermatPolarMinOrd'+"-leaf",f)
+    run('FermatPolarMinOrd'+"-artifact",f,artifact=True)
+    f='Solutions/Source_FermatPolarRootBound.lean'
+    run('FermatPolarRootBound'+"-leaf",f)
+    run('FermatPolarRootBound'+"-artifact",f,artifact=True)
+    f='Solutions/Source_FermatPolarIntegrality.lean'
+    run('FermatPolarIntegrality'+"-leaf",f,version='membership-v2',duration='65s',memory='6GiB')
+    run('FermatPolarIntegrality'+"-artifact",f,artifact=True)
+    f='Solutions/Source_FermatPolarPresentationHeights.lean'
+    run('FermatPolarPresentationHeights'+"-leaf",f)
+    run('FermatPolarPresentationHeights'+"-artifact",f,artifact=True)
+    f='Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.lean'
+    run('Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation'+"-leaf",f)
+    run('Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation'+"-artifact",f,artifact=True)
+    run("closed-axioms-review",'Solutions/Checks_FermatPolarPresentationHeights.lean',"review")

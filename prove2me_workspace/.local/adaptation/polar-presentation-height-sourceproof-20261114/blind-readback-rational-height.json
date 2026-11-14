@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "independent_trilingual_formal_readback",
+  "requested_model": "gpt-6.1-sol",
+  "actual_backend_model": null,
+  "model_disclosure": "The requested model identifier is recorded as requested; the actual backend identifier is not exposed and is therefore null.",
+  "status": "source-only readback; no Lean elaboration, compilation or proof-correctness assessment",
+  "formal_input_scope": "lemma.lean and necessary formal definitions; no paper sources or author narrative used",
+  "source_binding": "This artifact binds only to the bytes and spans of lemma.lean recorded here. No independently copied file is treated as identical by this readback.",
+  "historical_proof_notes": [],
+  "paper_quotes": [],
+  "declarations": [
+    {
+      "kind": "theorem",
+      "source_name": "logHeight_one_ratCast",
+      "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.logHeight_one_ratCast",
+      "namespace": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute",
+      "section_stack": [],
+      "section_binder_context": [],
+      "omit_include_context": [],
+      "private": false,
+      "kernel_name": null,
+      "source_file": "/tmp/p2m-polar-rational-height-readback-next-20261114/lemma.lean",
+      "file_sha256": "c49612573035ee0883f4605fb53697ee2c4bbf15d1b879703161fb2e7306a9d8",
+      "source_span": {
+        "line_start": 6,
+        "line_end": 14
+      },
+      "raw_declaration": "theorem logHeight_one_ratCast (q : ℚ) :\n    logHeight ![1, algebraMap ℚ Qbar q] = Height.logHeight₁ q := by\n  have H := logHeight_comp_ringHom (algebraMap ℚ Qbar) ![1, q]\n  have hfun : (fun i => (algebraMap ℚ Qbar) ((![1, q] : Fin 2 → ℚ) i)) =\n      ![1, algebraMap ℚ Qbar q] := by\n    ext i\n    fin_cases i <;> simp\n  rw [hfun, Height.logHeight_swap, ← Height.logHeight₁_eq_logHeight] at H\n  simpa only [Module.finrank_self, Nat.cast_one, div_one] using H\n",
+      "source_declaration_sha256": "8ae71b6dd671b005ccc80eee7becb12bee5bd774dee832e243cde87b9792c403",
+      "raw_signature": "theorem logHeight_one_ratCast (q : ℚ) :\n    logHeight ![1, algebraMap ℚ Qbar q] = Height.logHeight₁ q ",
+      "signature_span": {
+        "line_start": 6,
+        "line_end": 7
+      },
+      "signature_sha256": "68e4f88716d1764debb75056935eecade05b35ee033271eccaa18c026a71428b",
+      "explicit_parameters": "(q : ℚ)",
+      "inferred_parameters": {
+        "elaborated": false,
+        "note": "No inferred mathematical parameter is apparent in the written signature. The elaborated type, universe parameters, instance synthesis, name resolution and final kernel name have not been checked. The exact source signature and context are preserved instead."
+      },
+      "readback": {
+        "en": "Let $\\overline{\\mathbb Q}$ be the fixed algebraic closure of $\\mathbb Q$, and let $\\iota:\\mathbb Q\\to\\overline{\\mathbb Q}$ be the canonical unital algebra embedding. For a finite tuple $z$ in $\\overline{\\mathbb Q}$, its absolute logarithmic height is $h(z)=A_{F_z}(z)/[F_z:\\mathbb Q]$, where $F_z=\\mathbb Q(z_i\\mid i)$, the coordinates on the right are viewed in $F_z$, and $A_F$ is the relative logarithmic tuple height: the logarithm of the product of local coordinate maxima, with infinite-place multiplicities, and with relative multiplicative height $1$ for a zero tuple. For every rational number $q$, the theorem asserts $h((1,\\iota(q)))=A_{\\mathbb Q}^{(1)}(q)$, where $A_{\\mathbb Q}^{(1)}$ is the relative logarithmic element height over $\\mathbb Q$; explicitly, for the reduced expression $q=a/b$ with $a\\in\\mathbb Z$ and $b\\in\\mathbb N$ positive, its value is $\\log\\max(|a|,b)$. The left side uses the ordered two-coordinate tuple indexed by $\\{0,1\\}$. No nonzero hypothesis is imposed on $q$; $q=0$ is included.",
+        "zh_Hans": "令 $\\overline{\\mathbb Q}$ 为固定的有理数域代数闭包，$\\iota:\\mathbb Q\\to\\overline{\\mathbb Q}$ 为典范的保单位代数嵌入。对 $\\overline{\\mathbb Q}$ 中的有限元组 $z$，其绝对对数高度为 $h(z)=A_{F_z}(z)/[F_z:\\mathbb Q]$，其中 $F_z=\\mathbb Q(z_i\\mid i)$，右侧坐标视为 $F_z$ 中的元素，$A_F$ 是相对对数元组高度，即各处坐标绝对值最大值乘积的对数，无限处带重数，零元组的相对乘法高度约定为 $1$。该定理对每个有理数 $q$ 断言 $h((1,\\iota(q)))=A_{\\mathbb Q}^{(1)}(q)$，其中 $A_{\\mathbb Q}^{(1)}$ 是有理数域上的相对对数元素高度；具体地，若 $q=a/b$ 是既约表示，$a\\in\\mathbb Z$ 且 $b\\in\\mathbb N$ 为正数，则其值为 $\\log\\max(|a|,b)$。左侧使用以 $\\{0,1\\}$ 为指标的有序二坐标元组。未对 $q$ 施加非零假设，包括 $q=0$。",
+        "ja": "$\\overline{\\mathbb Q}$ を固定した有理数体の代数閉包、$\\iota:\\mathbb Q\\to\\overline{\\mathbb Q}$ を標準的な単位的代数埋め込みとする。$\\overline{\\mathbb Q}$ 内の有限の組 $z$ の絶対対数的高さは $h(z)=A_{F_z}(z)/[F_z:\\mathbb Q]$ である。ここで $F_z=\\mathbb Q(z_i\\mid i)$ とし、右辺の座標を $F_z$ の元と見る。$A_F$ は相対的対数的高さ、すなわち各素点での座標の絶対値の最大値の積の対数であり、無限素点には重複度を付け、零の組の相対的乗法的高さは $1$ とする。この定理は、すべての有理数 $q$ に対して $h((1,\\iota(q)))=A_{\\mathbb Q}^{(1)}(q)$ と主張する。$A_{\\mathbb Q}^{(1)}$ は有理数体上の相対的な元の対数的高さであり、既約表示 $q=a/b$ において $a\\in\\mathbb Z$、$b\\in\\mathbb N$ が正なら、その値は $\\log\\max(|a|,b)$ である。左辺は $\\{0,1\\}$ を添字とする順序付き二成分の組を用いる。$q$ の非零性は仮定せず、$q=0$ も含む。"
+      }
+    }
+  ],
+  "necessary_formal_context": [
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "file_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+      "line_start": 44,
+      "line_end": 44,
+      "raw_formal_context": "abbrev Qbar := AlgebraicClosure ℚ\n",
+      "span_sha256": "bce60a2a28e62a80a67373629c4f786202c8c5fcbde209775111601396a28463"
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "file_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+      "line_start": 59,
+      "line_end": 60,
+      "raw_formal_context": "noncomputable abbrev fieldOf (x : ι → Qbar) : IntermediateField ℚ Qbar :=\n  IntermediateField.adjoin ℚ (Set.range x)\n",
+      "span_sha256": "19bbbfb3fb920da768541b91024d185fee7d360f99d2b94c8f2f6e6754f9106a"
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "file_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+      "line_start": 63,
+      "line_end": 64,
+      "raw_formal_context": "noncomputable def coords (x : ι → Qbar) : ι → fieldOf x :=\n  fun i => ⟨x i, IntermediateField.subset_adjoin _ _ ⟨i, rfl⟩⟩\n",
+      "span_sha256": "8e644d15f06e5ac00db2f5bf7b0a716fcdc75b9159d8d54fc4dd65276e3169bf"
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "file_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+      "line_start": 74,
+      "line_end": 75,
+      "raw_formal_context": "noncomputable def logHeight (x : ι → Qbar) : ℝ :=\n  Height.logHeight (coords x) / finrank ℚ (fieldOf x)\n",
+      "span_sha256": "fe8427e956672dd80d274ac5838534fce918b513ef85efedd917357a4af9fd42"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/Basic.lean",
+      "file_sha256": "73168a1cb0b29ad7cdac761fa385956e91a426ccfeb0c9b0cb2ea07dafb1500f",
+      "line_start": 115,
+      "line_end": 116,
+      "raw_formal_context": "def mulHeight₁ (x : K) : ℝ :=\n  (archAbsVal.map fun v ↦ max (v x) 1).prod * ∏ᶠ v : nonarchAbsVal, max (v.val x) 1\n",
+      "span_sha256": "ba8cb73117f82002a34c69ac417f64a1049e0a4a7d95ce0a28a85e006f0d0711"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/Basic.lean",
+      "file_sha256": "73168a1cb0b29ad7cdac761fa385956e91a426ccfeb0c9b0cb2ea07dafb1500f",
+      "line_start": 148,
+      "line_end": 148,
+      "raw_formal_context": "def logHeight₁ (x : K) : ℝ := log (mulHeight₁ x)\n",
+      "span_sha256": "06f07802f199e213a8722f102ec2889b230f6d0c6a07d73a07a60dba06e2d70b"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/Basic.lean",
+      "file_sha256": "73168a1cb0b29ad7cdac761fa385956e91a426ccfeb0c9b0cb2ea07dafb1500f",
+      "line_start": 234,
+      "line_end": 237,
+      "raw_formal_context": "def mulHeight (x : ι → K) : ℝ :=\n  have : Decidable (x = 0) := Classical.propDecidable _\n  if x = 0 then 1 else\n    (archAbsVal.map fun v ↦ ⨆ i, v (x i)).prod * ∏ᶠ v : nonarchAbsVal, ⨆ i, v.val (x i)\n",
+      "span_sha256": "702635e494adf7898656a68b75f86f3a48cd9b35dba8fb56e662a6e2808f62ef"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/Basic.lean",
+      "file_sha256": "73168a1cb0b29ad7cdac761fa385956e91a426ccfeb0c9b0cb2ea07dafb1500f",
+      "line_start": 273,
+      "line_end": 273,
+      "raw_formal_context": "def logHeight (x : ι → K) : ℝ := log (mulHeight x)\n",
+      "span_sha256": "8f8db6eaa572bfdee20651d650343a24859c4081bb0dc23d960f5bb73f2636f3"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/NumberField.lean",
+      "file_sha256": "e1628937331e7e69f01b96dcc1116da4d3d0ab57cc4f3a1b0a634c8c614a3ed3",
+      "line_start": 542,
+      "line_end": 542,
+      "raw_formal_context": "lemma logHeight₁_eq_log_max (q : ℚ) : logHeight₁ q = log ↑(max q.num.natAbs q.den) := by\n",
+      "span_sha256": "603da97891a99a49f6802fe26fe97503fbb8450115ef61e285e391bdbba76f81"
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "errors": [],
+    "checks": [
+      "source stability and SHA-256",
+      "exact raw signature and span",
+      "source declaration SHA-256",
+      "necessary formal dependency hashes and spans",
+      "all three language fields",
+      "no control characters in readback paragraphs",
+      "balanced inline math delimiters and braces"
+    ],
+    "limits": [
+      "No elaboration, compilation or proof audit.",
+      "Math delimiters and braces checked structurally; no KaTeX engine run."
+    ]
+  }
+}

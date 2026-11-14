@@ -1,0 +1,2299 @@
+{
+  "schema": "blind-trilingual-formal-readback/v1",
+  "created_date": "2026-11-14",
+  "target_scope": "Only Source_FermatPolarRootBound.lean, Source_FermatPolarIntegrality.lean, Source_FermatPolarPresentationHeights.lean future drafts. No wrapper or LinearEquiv readback.",
+  "requested_readback_model": "gpt-6.1-sol",
+  "actual_backend_model": null,
+  "actual_backend_model_note": "Backend model identifier is not exposed to this reviewer; requested model is not asserted to be actual.",
+  "review_method": {
+    "blind_materials": "Assigned formal Lean source, necessary formal definitions, project trilingual rules, terminology table, mission_auditor.md. No README, SOURCE_LEDGER, paper, or external proof narrative was used. Lean comments were excluded as a semantic basis.",
+    "original_language": "en",
+    "translation_languages": [
+      "zh_Hans",
+      "ja"
+    ],
+    "translation_authorship": "Chinese and Japanese are translations checked by this same reviewer against the English and code; they are not three independent audits.",
+    "proof_correctness_assessed": false,
+    "elaboration_performed": false,
+    "compilation_performed": false,
+    "proof_status": "Not assessed. The files are draft inputs; source-only readback makes no compilation, axiom, or proof-completion claim.",
+    "main_workspace_edits": false
+  },
+  "sources": [
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "bytes": 7427,
+      "lines": 159,
+      "imports": [
+        "import Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "import Mathlib.Analysis.SpecialFunctions.Pow.Real",
+        "import Mathlib.Analysis.Normed.Field.Basic",
+        "import Mathlib.Algebra.Polynomial.BigOperators",
+        "import Mathlib.Tactic.FinCases",
+        "import Mathlib.Tactic.Linarith",
+        "import Mathlib.Tactic.Positivity",
+        "import Mathlib.Tactic.FieldSimp",
+        "import Mathlib.Tactic.Ring",
+        "import Mathlib.Tactic.NormNum",
+        "import Mathlib.Tactic.Push"
+      ]
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "bytes": 35473,
+      "lines": 735,
+      "imports": [
+        "import Solutions.Source_FermatPolarTupleHeight",
+        "import Solutions.Source_FermatPolarRootBound",
+        "import Mathlib.RingTheory.Valuation.LocalSubring",
+        "import Mathlib.Algebra.MvPolynomial.CommRing",
+        "import Mathlib.Tactic.FinCases",
+        "import Mathlib.Tactic.Linarith",
+        "import Mathlib.Tactic.Positivity",
+        "import Mathlib.Tactic.FieldSimp",
+        "import Mathlib.Tactic.Ring",
+        "import Mathlib.Tactic.NormNum",
+        "import Mathlib.Tactic.Push",
+        "import Mathlib.Tactic.Choose"
+      ]
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+      "bytes": 6918,
+      "lines": 145,
+      "imports": [
+        "import Solutions.Source_FermatPolarMinOrd",
+        "import Definitions.Def_FermatProperDivisorHeight"
+      ]
+    }
+  ],
+  "necessary_formal_definitions": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "source_sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+      "start_line": 37,
+      "end_line": 38,
+      "raw_formal_code": "class IsCurveField (K : Type*) [Field K] [CharZero K] : Prop where\n  exists_finite : ∃ t : K, Transcendental ℚ t ∧ FiniteDimensional ℚ⟮t⟯ K",
+      "formal_code_without_comments": "class IsCurveField (K : Type*) [Field K] [CharZero K] : Prop where\n  exists_finite : ∃ t : K, Transcendental ℚ t ∧ FiniteDimensional ℚ⟮t⟯ K",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. ",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "start_line": 33,
+      "end_line": 42,
+      "raw_formal_code": "structure Model (N : ℕ) where\n  K : IntermediateField ℚ Ω\n  u : K\n  v : K\n  transcendental_u : Transcendental ℚ u\n  equation : u ^ N + v ^ N = 1\n  generate : ℚ⟮u, v⟯ = ⊤\n  finite_u : FiniteDimensional ℚ⟮u⟯ K\n  degree_u : Module.finrank ℚ⟮u⟯ K = N\n",
+      "formal_code_without_comments": "structure Model (N : ℕ) where\n  K : IntermediateField ℚ Ω\n  u : K\n  v : K\n  transcendental_u : Transcendental ℚ u\n  equation : u ^ N + v ^ N = 1\n  generate : ℚ⟮u, v⟯ = ⊤\n  finite_u : FiniteDimensional ℚ⟮u⟯ K\n  degree_u : Module.finrank ℚ⟮u⟯ K = N",
+      "readback": {
+        "en": "Let $N∈ℕ$ and let $M$ be a model consisting of a subfield $K⊆\\overline{ℚ(T)}$, elements $u,v∈K$, with $u$ transcendental over $ℚ$, $u^N+v^N=1$, $K=ℚ(u,v)$, and $K/ℚ(u)$ finite of degree $N$. ",
+        "zh_Hans": "设 $N∈ℕ$，模型 $M$ 由子域 $K⊆\\overline{ℚ(T)}$ 和元素 $u,v∈K$ 构成，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$K=ℚ(u,v)$，且 $K/ℚ(u)$ 是次数为 $N$ 的有限扩张。",
+        "ja": "$N∈ℕ$ とし、モデル $M$ は部分体 $K⊆\\overline{ℚ(T)}$ と元 $u,v∈K$ からなり、$u$ は $ℚ$ 上超越的、$u^N+v^N=1$、$K=ℚ(u,v)$、かつ $K/ℚ(u)$ は次数 $N$ の有限拡大であるとする。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "start_line": 56,
+      "end_line": 57,
+      "raw_formal_code": "abbrev Place (K : Type*) [Field K] : Type _ :=\n  {O : ValuationSubring K // O ≠ ⊤ ∧ ∀ q : ℚ, (q : K) ∈ O}",
+      "formal_code_without_comments": "abbrev Place (K : Type*) [Field K] : Type _ :=\n  {O : ValuationSubring K // O ≠ ⊤ ∧ ∀ q : ℚ, (q : K) ∈ O}",
+      "readback": {
+        "en": "A place is a valuation subring of $K$ different from the whole field and containing every rational number.",
+        "zh_Hans": "处是不同于整个域 $K$ 且包含每个有理数的赋值子环。",
+        "ja": "場所は、体 $K$ 全体とは異なり、すべての有理数を含む付値部分環である。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "start_line": 81,
+      "end_line": 96,
+      "raw_formal_code": "structure QbarPoint (K : Type*) [Field K] [CharZero K] where\n  P : Place K\n  σ : P.ResidueField →+* Qbar\n\nnamespace QbarPoint\n\nvariable {K : Type*} [Field K] [CharZero K]\n\nnoncomputable def eval (x : QbarPoint K) (f : K) (hf : f ∈ x.P.1) : Qbar :=\n  x.σ (x.P.residue ⟨f, hf⟩)\n\nnoncomputable def fieldOf (x : QbarPoint K) : IntermediateField ℚ Qbar :=\n  x.σ.toRatAlgHom.fieldRange\n\nnoncomputable def degree (x : QbarPoint K) : ℕ :=\n  Module.finrank ℚ x.fieldOf",
+      "formal_code_without_comments": "structure QbarPoint (K : Type*) [Field K] [CharZero K] where\n  P : Place K\n  σ : P.ResidueField →+* Qbar\n\nnamespace QbarPoint\n\nvariable {K : Type*} [Field K] [CharZero K]\n\nnoncomputable def eval (x : QbarPoint K) (f : K) (hf : f ∈ x.P.1) : Qbar :=\n  x.σ (x.P.residue ⟨f, hf⟩)\n\nnoncomputable def fieldOf (x : QbarPoint K) : IntermediateField ℚ Qbar :=\n  x.σ.toRatAlgHom.fieldRange\n\nnoncomputable def degree (x : QbarPoint K) : ℕ :=\n  Module.finrank ℚ x.fieldOf",
+      "readback": {
+        "en": "An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. ",
+        "zh_Hans": "代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。",
+        "ja": "代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "start_line": 108,
+      "end_line": 121,
+      "raw_formal_code": "def PlacesDiscrete (M : Model N) : Prop :=\n  ∀ P : Place M.K, IsDiscreteValuationRing P.1\n\n/-- Precise residue-field finiteness obligation, independently supplied. -/\ndef ResiduesFinite (M : Model N) : Prop :=\n  ∀ P : Place M.K, FiniteDimensional ℚ P.ResidueField\n\n/-- The source's normalized discrete order, parameterized by the explicit\nregularity theorem. This is not an arbitrary order-valued function. -/\nnoncomputable def ord (M : Model N) (hDVR : PlacesDiscrete M)\n    (P : Place M.K) (f : M.K) : ℤ := by\n  letI : IsDiscreteValuationRing P.1 := hDVR P\n  exact -WithZero.log (((IsDiscreteValuationRing.maximalIdeal P.1).valuation M.K) f)\n",
+      "formal_code_without_comments": "def PlacesDiscrete (M : Model N) : Prop :=\n  ∀ P : Place M.K, IsDiscreteValuationRing P.1\n\n                                                                           \ndef ResiduesFinite (M : Model N) : Prop :=\n  ∀ P : Place M.K, FiniteDimensional ℚ P.ResidueField\n\n                                                                         \n                                                                      \nnoncomputable def ord (M : Model N) (hDVR : PlacesDiscrete M)\n    (P : Place M.K) (f : M.K) : ℤ := by\n  letI : IsDiscreteValuationRing P.1 := hDVR P\n  exact -WithZero.log (((IsDiscreteValuationRing.maximalIdeal P.1).valuation M.K) f)",
+      "readback": {
+        "en": "PlacesDiscrete requires every place subring to be a discrete valuation ring. ResiduesFinite requires every residue field to be finite dimensional over $ℚ$. The order is minus the integer logarithm of the normalized maximal-ideal valuation, with value zero at the zero element.",
+        "zh_Hans": "PlacesDiscrete 要求每个处的子环都是离散赋值环。ResiduesFinite 要求每个剩余域都在 $ℚ$ 上有限维。阶定义为归一化极大理想赋值的整数对数的相反数，零元的阶为零。",
+        "ja": "PlacesDiscrete は各場所の部分環が離散付値環であること、ResiduesFinite は各剰余体が $ℚ$ 上有限次元であることを要求する。位数は正規化された極大イデアルの付値の整数対数の負として定義され、零元の位数は零である。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "start_line": 142,
+      "end_line": 142,
+      "raw_formal_code": "abbrev Divisor (M : Model N) : Type := Place M.K →₀ ℤ",
+      "formal_code_without_comments": "abbrev Divisor (M : Model N) : Type := Place M.K →₀ ℤ",
+      "readback": {
+        "en": "A divisor is a finitely supported integer-valued function on all places.",
+        "zh_Hans": "除子是全部处上的有限支撑整数值函数。",
+        "ja": "因子は全場所上の有限台の整数値関数である。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "source_sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "start_line": 285,
+      "end_line": 290,
+      "raw_formal_code": "/-- The normalised discrete valuation of `K` at the place `P`, with values in `ℤᵐ⁰`. -/\nnoncomputable def valuation (P : Place K) : Valuation K ℤᵐ⁰ :=\n  (IsDiscreteValuationRing.maximalIdeal P.1).valuation K\n\n/-- The order of vanishing `ord_P f ∈ ℤ` of `f` at the place `P` (junk value `ord_P 0 = 0`). -/\nnoncomputable def ord (P : Place K) (f : K) : ℤ := -WithZero.log (P.valuation f)",
+      "formal_code_without_comments": "noncomputable def valuation (P : Place K) : Valuation K ℤᵐ⁰ :=\n  (IsDiscreteValuationRing.maximalIdeal P.1).valuation K\n\n                                                                                               \nnoncomputable def ord (P : Place K) (f : K) : ℤ := -WithZero.log (P.valuation f)",
+      "readback": {
+        "en": "For a place of a curve field, valuation is the normalized discrete valuation of its maximal ideal; $ord_P(f)$ is its negative integer logarithm, with $ord_P(0)=0$.",
+        "zh_Hans": "曲线函数域的处的赋值是其极大理想的归一化离散赋值；$ord_P(f)$ 是该赋值的整数对数的相反数，且 $ord_P(0)=0$。",
+        "ja": "曲線関数体の場所の付値はその極大イデアルの正規化離散付値であり、$ord_P(f)$ はその整数対数の負である。$ord_P(0)=0$ とする。"
+      }
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarTupleHeight.lean",
+      "source_sha256": "34f5965a008cc516caa476517ea326a8821658ed30df9077596b6b0e446d1319",
+      "start_line": 75,
+      "end_line": 77,
+      "raw_formal_code": "noncomputable def normIdx (hs : ∃ i, s i ≠ 0) : ι :=\n  (Finset.exists_min_image (Finset.univ.filter fun i => s i ≠ 0) (fun i => P.ord (s i))\n    (filter_ne_zero_nonempty hs)).choose",
+      "formal_code_without_comments": "noncomputable def normIdx (hs : ∃ i, s i ≠ 0) : ι :=\n  (Finset.exists_min_image (Finset.univ.filter fun i => s i ≠ 0) (fun i => P.ord (s i))\n    (filter_ne_zero_nonempty hs)).choose",
+      "readback": {
+        "en": "A normalization index is a chosen index of a nonzero coordinate with least order; it is supplied only with a proof that such a coordinate exists.",
+        "zh_Hans": "归一化指标是选取的一个阶最小的非零分量的指标，只有给定非零分量存在的证明时才提供。",
+        "ja": "正規化の添字は、位数が最小の非零成分から選んだ添字であり、非零成分の存在の証明とともにのみ与えられる。"
+      }
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarTupleHeight.lean",
+      "source_sha256": "34f5965a008cc516caa476517ea326a8821658ed30df9077596b6b0e446d1319",
+      "start_line": 93,
+      "end_line": 94,
+      "raw_formal_code": "noncomputable def minOrd (P : Place K) (s : ι → K) : ℤ :=\n  if hs : ∃ i, s i ≠ 0 then P.ord (s (normIdx P s hs)) else 0",
+      "formal_code_without_comments": "noncomputable def minOrd (P : Place K) (s : ι → K) : ℤ :=\n  if hs : ∃ i, s i ≠ 0 then P.ord (s (normIdx P s hs)) else 0",
+      "readback": {
+        "en": "For a finite tuple $s$ in $K$, $m_P(s)$ is the least $ord_P(s_i)$ among nonzero entries, and is zero if all entries vanish. At $x=(P,σ)$ choose a nonzero coordinate $s_j$ with this least order and put $h_s(x)=h(((s_i/s_j)(x))_i)$; put $h_s(x)=0$ for the zero tuple. ",
+        "zh_Hans": "对 $K$ 中的有限元组 $s$，$m_P(s)$ 是所有非零分量的 $ord_P(s_i)$ 的最小值；若全部分量为零，则取零。在 $x=(P,σ)$ 处，选取达到此最小阶的非零分量 $s_j$，定义 $h_s(x)=h(((s_i/s_j)(x))_i)$；零元组则定义为 $h_s(x)=0$。",
+        "ja": "$K$ の有限の組 $s$ に対し、$m_P(s)$ は非零成分の $ord_P(s_i)$ の最小値であり、全成分が零なら零とする。$x=(P,σ)$ でこの最小位数を持つ非零成分 $s_j$ を選び、$h_s(x)=h(((s_i/s_j)(x))_i)$ と定める。零の組には $h_s(x)=0$ を用いる。"
+      }
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarTupleHeight.lean",
+      "source_sha256": "34f5965a008cc516caa476517ea326a8821658ed30df9077596b6b0e446d1319",
+      "start_line": 123,
+      "end_line": 129,
+      "raw_formal_code": "noncomputable def evalTuple (x : QbarPoint K) (s : ι → K) (hs : ∃ i, s i ≠ 0) : ι → Qbar :=\n  fun j => x.eval (s j / s (normIdx x.P s hs)) (div_normIdx_mem hs j)\n\n/-- **The height of the tuple `s` at the point `x`**: the absolute logarithmic Weil height of\n`[s₀ : ⋯ : s_n](x)` (`0` for the zero tuple). -/\nnoncomputable def tupleHeight (s : ι → K) (x : QbarPoint K) : ℝ :=\n  if hs : ∃ i, s i ≠ 0 then logHeight (evalTuple x s hs) else 0",
+      "formal_code_without_comments": "noncomputable def evalTuple (x : QbarPoint K) (s : ι → K) (hs : ∃ i, s i ≠ 0) : ι → Qbar :=\n  fun j => x.eval (s j / s (normIdx x.P s hs)) (div_normIdx_mem hs j)\n\n                                                                                             \n                                                \nnoncomputable def tupleHeight (s : ι → K) (x : QbarPoint K) : ℝ :=\n  if hs : ∃ i, s i ≠ 0 then logHeight (evalTuple x s hs) else 0",
+      "readback": {
+        "en": "For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. For a finite tuple $s$ in $K$, $m_P(s)$ is the least $ord_P(s_i)$ among nonzero entries, and is zero if all entries vanish. At $x=(P,σ)$ choose a nonzero coordinate $s_j$ with this least order and put $h_s(x)=h(((s_i/s_j)(x))_i)$; put $h_s(x)=0$ for the zero tuple. ",
+        "zh_Hans": "对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。对 $K$ 中的有限元组 $s$，$m_P(s)$ 是所有非零分量的 $ord_P(s_i)$ 的最小值；若全部分量为零，则取零。在 $x=(P,σ)$ 处，选取达到此最小阶的非零分量 $s_j$，定义 $h_s(x)=h(((s_i/s_j)(x))_i)$；零元组则定义为 $h_s(x)=0$。",
+        "ja": "有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。$K$ の有限の組 $s$ に対し、$m_P(s)$ は非零成分の $ord_P(s_i)$ の最小値であり、全成分が零なら零とする。$x=(P,σ)$ でこの最小位数を持つ非零成分 $s_j$ を選び、$h_s(x)=h(((s_i/s_j)(x))_i)$ と定める。零の組には $h_s(x)=0$ を用いる。"
+      }
+    },
+    {
+      "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+      "source_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+      "start_line": 59,
+      "end_line": 75,
+      "raw_formal_code": "noncomputable abbrev fieldOf (x : ι → Qbar) : IntermediateField ℚ Qbar :=\n  IntermediateField.adjoin ℚ (Set.range x)\n\n/-- The coordinates of `x`, viewed in `ℚ(x)`. -/\nnoncomputable def coords (x : ι → Qbar) : ι → fieldOf x :=\n  fun i => ⟨x i, IntermediateField.subset_adjoin _ _ ⟨i, rfl⟩⟩\n\n@[simp]\nlemma coe_coords (x : ι → Qbar) (i : ι) : (coords x i : Qbar) = x i := rfl\n\nvariable [Finite ι] [Finite κ]\n\n/-- **The absolute logarithmic Weil height** of the point of projective space with homogeneous\ncoordinates `x` (it is `0` for `x = 0`): the relative height of `x` in `ℚ(x)` divided by the\ndegree `[ℚ(x) : ℚ]`. -/\nnoncomputable def logHeight (x : ι → Qbar) : ℝ :=\n  Height.logHeight (coords x) / finrank ℚ (fieldOf x)",
+      "formal_code_without_comments": "noncomputable abbrev fieldOf (x : ι → Qbar) : IntermediateField ℚ Qbar :=\n  IntermediateField.adjoin ℚ (Set.range x)\n\n                                                \nnoncomputable def coords (x : ι → Qbar) : ι → fieldOf x :=\n  fun i => ⟨x i, IntermediateField.subset_adjoin _ _ ⟨i, rfl⟩⟩\n\n@[simp]\nlemma coe_coords (x : ι → Qbar) (i : ι) : (coords x i : Qbar) = x i := rfl\n\nvariable [Finite ι] [Finite κ]\n\n                                                                                              \n                                                                                            \n                       \nnoncomputable def logHeight (x : ι → Qbar) : ℝ :=\n  Height.logHeight (coords x) / finrank ℚ (fieldOf x)",
+      "readback": {
+        "en": "For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. ",
+        "zh_Hans": "对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。",
+        "ja": "有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "source_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "start_line": 23,
+      "end_line": 35,
+      "raw_formal_code": "noncomputable def poleMultiplicity (M : Model N) (hDVR : PlacesDiscrete M)\n    (f : M.K) (P : Place M.K) : ℤ :=\n  max 0 (-ord M hDVR P f)\n\n/-- An exact presentation of a genuine divisor by two rational functions.\nThe pointwise equality fixes every coefficient on the proper model.\nThe existence of this data is Riemann's theorem, a separate open child. -/\nstructure PolarPresentation (M : Model N) (hDVR : PlacesDiscrete M)\n    (D : Divisor M) where\n  f : M.K\n  g : M.K\n  divisor_eq : ∀ P : Place M.K,\n    D P = poleMultiplicity M hDVR f P - poleMultiplicity M hDVR g P",
+      "formal_code_without_comments": "noncomputable def poleMultiplicity (M : Model N) (hDVR : PlacesDiscrete M)\n    (f : M.K) (P : Place M.K) : ℤ :=\n  max 0 (-ord M hDVR P f)\n\n                                                                         \n                                                                   \n                                                                          \nstructure PolarPresentation (M : Model N) (hDVR : PlacesDiscrete M)\n    (D : Divisor M) where\n  f : M.K\n  g : M.K\n  divisor_eq : ∀ P : Place M.K,\n    D P = poleMultiplicity M hDVR f P - poleMultiplicity M hDVR g P",
+      "readback": {
+        "en": "Pole multiplicity is $max(0,-ord_P(f))$, with zero multiplicity for $f=0$. A polar presentation of $D$ has two fields $f,g∈K$ and a proof field asserting, at every place, $D(P)=pole_f(P)-pole_g(P)$. Neither function is required to be nonzero.",
+        "zh_Hans": "极点重数是 $max(0,-ord_P(f))$，$f=0$ 时重数为零。$D$ 的一个极点表示包含两个域元素字段 $f,g∈K$ 和一个证明字段，要求每个处都有 $D(P)=pole_f(P)-pole_g(P)$。两个函数都不要求非零。",
+        "ja": "極の重複度は $max(0,-ord_P(f))$ であり、$f=0$ の重複度は零である。$D$ の極表示は二つの体の元のフィールド $f,g∈K$ と、全場所で $D(P)=pole_f(P)-pole_g(P)$ を要求する証明フィールドからなる。どちらの関数にも非零性は要求しない。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "source_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "start_line": 41,
+      "end_line": 47,
+      "raw_formal_code": "noncomputable def functionHeight (M : Model N) (f : M.K)\n    (x : QbarPoint M.K) : ℝ :=\n  if hf : f ∈ x.P.1 then\n    Height.logHeight₁ (AbcAdaptation.Tripod.gen (x.eval f hf)) /\n      AbcAdaptation.Tripod.deg (x.eval f hf)\n  else 0\n",
+      "formal_code_without_comments": "noncomputable def functionHeight (M : Model N) (f : M.K)\n    (x : QbarPoint M.K) : ℝ :=\n  if hf : f ∈ x.P.1 then\n    Height.logHeight₁ (AbcAdaptation.Tripod.gen (x.eval f hf)) /\n      AbcAdaptation.Tripod.deg (x.eval f hf)\n  else 0",
+      "readback": {
+        "en": "Define $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$ when $f∈O_P$, and $h_f(x)=0$ when $f∉O_P$ (a pole). Here the scalar relative height means the height of $[1:f(x)]$, measured in its generated field; a regular value zero also has height zero. ",
+        "zh_Hans": "当 $f∈O_P$ 时，定义 $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$；当 $f∉O_P$，即为极点时，定义 $h_f(x)=0$。这里标量的相对高度指 $[1:f(x)]$ 在函数值生成域中的高度；正则值为零时高度也为零。",
+        "ja": "$f∈O_P$ のとき $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$、$f∉O_P$、すなわち極のとき $h_f(x)=0$ と定める。スカラーの相対高さは、値の生成体で測った $[1:f(x)]$ の高さを意味する。正則な値が零のときも高さは零である。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "source_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "start_line": 72,
+      "end_line": 75,
+      "raw_formal_code": "noncomputable def divHeight {M : Model N} {hDVR : PlacesDiscrete M}\n    {D : Divisor M} (R : PolarPresentation M hDVR D)\n    (x : QbarPoint M.K) : ℝ :=\n  functionHeight M R.f x - functionHeight M R.g x",
+      "formal_code_without_comments": "noncomputable def divHeight {M : Model N} {hDVR : PlacesDiscrete M}\n    {D : Divisor M} (R : PolarPresentation M hDVR D)\n    (x : QbarPoint M.K) : ℝ :=\n  functionHeight M R.f x - functionHeight M R.g x",
+      "readback": {
+        "en": "For a chosen polar presentation $R=(f,g)$, the divisor height is $h_R(x)=h_f(x)-h_g(x)$. The choice of presentation is explicit input.",
+        "zh_Hans": "对选定的极点表示 $R=(f,g)$，除子高度为 $h_R(x)=h_f(x)-h_g(x)$。表示的选择是显式输入。",
+        "ja": "選んだ極表示 $R=(f,g)$ に対し、因子の高さは $h_R(x)=h_f(x)-h_g(x)$ である。表示の選択は明示的な入力である。"
+      }
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+      "source_sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+      "start_line": 32,
+      "end_line": 50,
+      "raw_formal_code": "noncomputable def deg (z : Qbar) : ℕ := (minpoly ℚ z).natDegree\n\ntheorem deg_pos (z : Qbar) : 0 < deg z := minpoly.natDegree_pos (isIntegral z)\n\ntheorem deg_pos_real (z : Qbar) : (0 : ℝ) < deg z := by\n  exact_mod_cast deg_pos z\n\nnoncomputable abbrev fieldOf (z : Qbar) : IntermediateField ℚ Qbar := ℚ⟮z⟯\n\ninstance (z : Qbar) : FiniteDimensional ℚ (fieldOf z) :=\n  IntermediateField.adjoin.finiteDimensional (isIntegral z)\n\ninstance (F : IntermediateField ℚ Qbar) [FiniteDimensional ℚ F] : NumberField F where\n\ntheorem deg_eq_finrank (z : Qbar) : deg z = Module.finrank ℚ (fieldOf z) :=\n  (IntermediateField.adjoin.finrank (isIntegral z)).symm\n\n/-- The generator of the simple intermediate field `ℚ(z)`, identified with `z`. -/\nnoncomputable def gen (z : Qbar) : fieldOf z := IntermediateField.AdjoinSimple.gen ℚ z",
+      "formal_code_without_comments": "noncomputable def deg (z : Qbar) : ℕ := (minpoly ℚ z).natDegree\n\ntheorem deg_pos (z : Qbar) : 0 < deg z := minpoly.natDegree_pos (isIntegral z)\n\ntheorem deg_pos_real (z : Qbar) : (0 : ℝ) < deg z := by\n  exact_mod_cast deg_pos z\n\nnoncomputable abbrev fieldOf (z : Qbar) : IntermediateField ℚ Qbar := ℚ⟮z⟯\n\ninstance (z : Qbar) : FiniteDimensional ℚ (fieldOf z) :=\n  IntermediateField.adjoin.finiteDimensional (isIntegral z)\n\ninstance (F : IntermediateField ℚ Qbar) [FiniteDimensional ℚ F] : NumberField F where\n\ntheorem deg_eq_finrank (z : Qbar) : deg z = Module.finrank ℚ (fieldOf z) :=\n  (IntermediateField.adjoin.finrank (isIntegral z)).symm\n\n                                                                                  \nnoncomputable def gen (z : Qbar) : fieldOf z := IntermediateField.AdjoinSimple.gen ℚ z",
+      "readback": {
+        "en": "For an algebraic number $z$, $deg(z)$ is the natural-number degree of its minimal polynomial over $ℚ$, $fieldOf(z)=ℚ(z)$, and $gen(z)$ is $z$ regarded as an element of this simple field. The displayed degree identity identifies $deg(z)$ with $[ℚ(z):ℚ]$.",
+        "zh_Hans": "对代数数 $z$，$deg(z)$ 是其在 $ℚ$ 上最小多项式的自然数次数，$fieldOf(z)=ℚ(z)$，$gen(z)$ 是将 $z$ 视为此单扩张中的元素。所列次数等式将 $deg(z)$ 与 $[ℚ(z):ℚ]$ 相等同。",
+        "ja": "代数的数 $z$ に対し、$deg(z)$ は $ℚ$ 上の最小多項式の自然数値の次数、$fieldOf(z)=ℚ(z)$、$gen(z)$ はこの単拡大の元とみなした $z$ である。表示された次数の等式は $deg(z)$ と $[ℚ(z):ℚ]$ を同一視する。"
+      }
+    }
+  ],
+  "records": [
+    {
+      "declaration_name": "pow_natDegree_eq_neg_sum",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.pow_natDegree_eq_neg_sum",
+      "kind": "lemma",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 43,
+      "signature_end_line": 44,
+      "raw_signature": "lemma pow_natDegree_eq_neg_sum {p : F[X]} (hp : p.Monic) {z : F} (hz : p.eval z = 0) :\n    z ^ p.natDegree = -∑ i ∈ range p.natDegree, p.coeff i * z ^ i",
+      "raw_signature_sha256": "1d9bb117948e4c23aa19d99caa194ae78f37c5eb9adf9e72e413901e7ef8c5ed",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "For a field $F$, any monic polynomial $p∈F[X]$ and any $z∈F$ with $p(z)=0$, writing $n=natDegree(p)$ and $c_i$ for its coefficients gives $z^n=-∑_{0≤i<n}c_i z^i$. No absolute value is an argument of this assertion.",
+        "zh_Hans": "对任意域 $F$、首一多项式 $p∈F[X]$ 和满足 $p(z)=0$ 的 $z∈F$，记 $n=natDegree(p)$，$c_i$ 为系数，则 $z^n=-∑_{0≤i<n}c_i z^i$。此断言不以绝对值为参数。",
+        "ja": "任意の体 $F$、モニック多項式 $p∈F[X]$、$p(z)=0$ を満たす $z∈F$ について、$n=natDegree(p)$、$c_i$ を係数とすると $z^n=-∑_{0≤i<n}c_i z^i$ である。この主張は絶対値を引数としない。"
+      },
+      "english_readback_sha256": "87e6706cd52bfe3ecdac1eeeeffddb2f177ca1eec1762a2576a997568de7aa0f",
+      "translation_of_english_sha256": "87e6706cd52bfe3ecdac1eeeeffddb2f177ca1eec1762a2576a997568de7aa0f"
+    },
+    {
+      "declaration_name": "natDegree_pos_of_root",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.natDegree_pos_of_root",
+      "kind": "lemma",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 51,
+      "signature_end_line": 52,
+      "raw_signature": "lemma natDegree_pos_of_root {p : F[X]} (hp : p.Monic) {z : F} (hz : p.eval z = 0) :\n    0 < p.natDegree",
+      "raw_signature_sha256": "aead80d0bf2e46acd0e535e888965b975f7bcee165359bb342782e9ade807c03",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "For any field $F$, monic polynomial $p∈F[X]$, and $z∈F$ with $p(z)=0$, the natural-number degree satisfies $0<natDegree(p)$.",
+        "zh_Hans": "对任意域 $F$、首一多项式 $p∈F[X]$ 和满足 $p(z)=0$ 的 $z∈F$，其自然数次数满足 $0<natDegree(p)$。",
+        "ja": "任意の体 $F$、モニック多項式 $p∈F[X]$、$p(z)=0$ を満たす $z∈F$ に対し、自然数値の次数は $0<natDegree(p)$ を満たす。"
+      },
+      "english_readback_sha256": "e7b0a2953ad3fc3e2b2e2f5ae35d37882e791784b3c13f027ef6bf029b521320",
+      "translation_of_english_sha256": "e7b0a2953ad3fc3e2b2e2f5ae35d37882e791784b3c13f027ef6bf029b521320"
+    },
+    {
+      "declaration_name": "apply_sum_le_of_isNonarchimedean",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_sum_le_of_isNonarchimedean",
+      "kind": "lemma",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 60,
+      "signature_end_line": 62,
+      "raw_signature": "lemma apply_sum_le_of_isNonarchimedean (hv : ∀ a b, v (a + b) ≤ max (v a) (v b))\n    {ι : Type*} (s : Finset ι) (f : ι → F) {M : ℝ} (hM : 0 ≤ M) (hf : ∀ i ∈ s, v (f i) ≤ M) :\n    v (∑ i ∈ s, f i) ≤ M",
+      "raw_signature_sha256": "82f7150bf35b2fac33cc2fa2ddabf47365481cb7ee88fab9d2a4014c2511bd1d",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $v:F→ℝ$ an absolute value. Assume $v(a+b)≤max(v(a),v(b))$ for all $a,b∈F$. For any index type $ι$, finite set $s⊆ι$, function $f:ι→F$, and real $M≥0$, if $v(f_i)≤M$ for every $i∈s$, then $v(∑_{i∈s}f_i)≤M$. The set may be empty.",
+        "zh_Hans": "设 $F$ 是域，$v:F→ℝ$ 是绝对值。假设对任意 $a,b∈F$ 都有 $v(a+b)≤max(v(a),v(b))$。对任意指标类型 $ι$、有限集 $s⊆ι$、函数 $f:ι→F$ 和实数 $M≥0$，若每个 $i∈s$ 都满足 $v(f_i)≤M$，则 $v(∑_{i∈s}f_i)≤M$。允许 $s$ 为空。",
+        "ja": "$F$ を体、$v:F→ℝ$ を絶対値とする。任意の $a,b∈F$ に対し $v(a+b)≤max(v(a),v(b))$ と仮定する。任意の添字型 $ι$、有限集合 $s⊆ι$、関数 $f:ι→F$、実数 $M≥0$ に対し、すべての $i∈s$ で $v(f_i)≤M$ なら $v(∑_{i∈s}f_i)≤M$ である。空集合も含む。"
+      },
+      "english_readback_sha256": "cd63db65f00bfd80a08edbd20dcad884ada5acac50ba1132e34efde24cb4e1b7",
+      "translation_of_english_sha256": "cd63db65f00bfd80a08edbd20dcad884ada5acac50ba1132e34efde24cb4e1b7"
+    },
+    {
+      "declaration_name": "apply_le_of_isNonarchimedean",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_of_isNonarchimedean",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 74,
+      "signature_end_line": 76,
+      "raw_signature": "theorem apply_le_of_isNonarchimedean (hv : ∀ a b, v (a + b) ≤ max (v a) (v b))\n    {p : F[X]} (hp : p.Monic) {z : F} (hz : p.eval z = 0) {B : ℝ} (hB : 1 ≤ B)\n    (hc : ∀ i < p.natDegree, v (p.coeff i) ≤ B) : v z ≤ B",
+      "raw_signature_sha256": "973d273091ea2a87647687e5de2429018277003b38b107da0039508e77b2b85f",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $v:F→ℝ$ an absolute value. Let $p∈F[X]$ be monic, $z∈F$ satisfy $p(z)=0$, and write $n=natDegree(p)$ and $c_i=p_i$. Assume $v(a+b)≤max(v(a),v(b))$ for all $a,b∈F$. For any real $B$ with $1≤B$, if $v(c_i)≤B$ for every natural $i<n$, then $v(z)≤B$.",
+        "zh_Hans": "设 $F$ 是域，$v:F→ℝ$ 是绝对值。设 $p∈F[X]$ 是首一多项式，$z∈F$ 满足 $p(z)=0$，记 $n=natDegree(p)$、$c_i=p_i$。假设对任意 $a,b∈F$ 都有 $v(a+b)≤max(v(a),v(b))$。对任意满足 $1≤B$ 的实数 $B$，若每个自然数 $i<n$ 都满足 $v(c_i)≤B$，则 $v(z)≤B$。",
+        "ja": "$F$ を体、$v:F→ℝ$ を絶対値とする。$p∈F[X]$ をモニック多項式、$z∈F$ を $p(z)=0$ を満たす元とし、$n=natDegree(p)$、$c_i=p_i$ と書く。任意の $a,b∈F$ で $v(a+b)≤max(v(a),v(b))$ と仮定する。$1≤B$ を満たす任意の実数 $B$ について、すべての自然数 $i<n$ で $v(c_i)≤B$ なら $v(z)≤B$ である。"
+      },
+      "english_readback_sha256": "7efebdca96a7e48f488a112268131326cd70b12f29ff48d7385001b7c8b68252",
+      "translation_of_english_sha256": "7efebdca96a7e48f488a112268131326cd70b12f29ff48d7385001b7c8b68252"
+    },
+    {
+      "declaration_name": "apply_le_one_of_isNonarchimedean",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_of_isNonarchimedean",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 103,
+      "signature_end_line": 105,
+      "raw_signature": "theorem apply_le_one_of_isNonarchimedean (hv : ∀ a b, v (a + b) ≤ max (v a) (v b))\n    {p : F[X]} (hp : p.Monic) {z : F} (hz : p.eval z = 0)\n    (hc : ∀ i < p.natDegree, v (p.coeff i) ≤ 1) : v z ≤ 1",
+      "raw_signature_sha256": "8e83ab7cca6a1c347fdd0b74f072f0e97fff6da1c4cd097c0f75191c76b0e0e4",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $v:F→ℝ$ an absolute value. Let $p∈F[X]$ be monic, $z∈F$ satisfy $p(z)=0$, and write $n=natDegree(p)$ and $c_i=p_i$. Assume $v(a+b)≤max(v(a),v(b))$ for all $a,b∈F$. If $v(c_i)≤1$ for every natural $i<n$, then $v(z)≤1$.",
+        "zh_Hans": "设 $F$ 是域，$v:F→ℝ$ 是绝对值。设 $p∈F[X]$ 是首一多项式，$z∈F$ 满足 $p(z)=0$，记 $n=natDegree(p)$、$c_i=p_i$。假设对任意 $a,b∈F$ 都有 $v(a+b)≤max(v(a),v(b))$。若每个自然数 $i<n$ 都满足 $v(c_i)≤1$，则 $v(z)≤1$。",
+        "ja": "$F$ を体、$v:F→ℝ$ を絶対値とする。$p∈F[X]$ をモニック多項式、$z∈F$ を $p(z)=0$ を満たす元とし、$n=natDegree(p)$、$c_i=p_i$ と書く。任意の $a,b∈F$ で $v(a+b)≤max(v(a),v(b))$ と仮定する。すべての自然数 $i<n$ で $v(c_i)≤1$ なら $v(z)≤1$ である。"
+      },
+      "english_readback_sha256": "70bf6e568db830fb92c6dc3ebc88a1daf8499644dd7666bd4eeacc28960ecd37",
+      "translation_of_english_sha256": "70bf6e568db830fb92c6dc3ebc88a1daf8499644dd7666bd4eeacc28960ecd37"
+    },
+    {
+      "declaration_name": "apply_le_max_one_iSup_of_isNonarchimedean",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_iSup_of_isNonarchimedean",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 109,
+      "signature_end_line": 111,
+      "raw_signature": "theorem apply_le_max_one_iSup_of_isNonarchimedean (hv : ∀ a b, v (a + b) ≤ max (v a) (v b))\n    {p : F[X]} (hp : p.Monic) {z : F} (hz : p.eval z = 0) :\n    v z ≤ max 1 (⨆ i : Fin p.natDegree, v (p.coeff i))",
+      "raw_signature_sha256": "5ba720414422c5daea86365ca2f0957c94153672a7f5c93eb52d4f6931ce61a0",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $v:F→ℝ$ an absolute value. Let $p∈F[X]$ be monic, $z∈F$ satisfy $p(z)=0$, and write $n=natDegree(p)$ and $c_i=p_i$. Assume $v(a+b)≤max(v(a),v(b))$ for all $a,b∈F$. Then $v(z)≤max(1,sup_{i∈Fin(n)}v(c_i))$. The finite supremum ranges only over coefficients below the leading term.",
+        "zh_Hans": "设 $F$ 是域，$v:F→ℝ$ 是绝对值。设 $p∈F[X]$ 是首一多项式，$z∈F$ 满足 $p(z)=0$，记 $n=natDegree(p)$、$c_i=p_i$。假设对任意 $a,b∈F$ 都有 $v(a+b)≤max(v(a),v(b))$。则 $v(z)≤max(1,sup_{i∈Fin(n)}v(c_i))$。此有限上确界只遍历首项以下的系数。",
+        "ja": "$F$ を体、$v:F→ℝ$ を絶対値とする。$p∈F[X]$ をモニック多項式、$z∈F$ を $p(z)=0$ を満たす元とし、$n=natDegree(p)$、$c_i=p_i$ と書く。任意の $a,b∈F$ で $v(a+b)≤max(v(a),v(b))$ と仮定する。このとき $v(z)≤max(1,sup_{i∈Fin(n)}v(c_i))$ である。有限上限は最高次項より下の係数のみを走る。"
+      },
+      "english_readback_sha256": "fbc4695963127ac2b83790236e6f2f0425a2e8ca174a92edab3baccba4abb11d",
+      "translation_of_english_sha256": "fbc4695963127ac2b83790236e6f2f0425a2e8ca174a92edab3baccba4abb11d"
+    },
+    {
+      "declaration_name": "apply_le_max_one_sum",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_sum",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 117,
+      "signature_end_line": 118,
+      "raw_signature": "theorem apply_le_max_one_sum {p : F[X]} (hp : p.Monic) {z : F} (hz : p.eval z = 0) :\n    v z ≤ max 1 (∑ i ∈ range p.natDegree, v (p.coeff i))",
+      "raw_signature_sha256": "34329ffc6e73b02248d79f0e8f9661ea37ee25858e57d42d0e549aa30b60c8d2",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $v:F→ℝ$ an absolute value. Let $p∈F[X]$ be monic, $z∈F$ satisfy $p(z)=0$, and write $n=natDegree(p)$ and $c_i=p_i$. Then $v(z)≤max(1,∑_{0≤i<n}v(c_i))$. No nonarchimedean assumption is imposed.",
+        "zh_Hans": "设 $F$ 是域，$v:F→ℝ$ 是绝对值。设 $p∈F[X]$ 是首一多项式，$z∈F$ 满足 $p(z)=0$，记 $n=natDegree(p)$、$c_i=p_i$。则 $v(z)≤max(1,∑_{0≤i<n}v(c_i))$，不要求非 Archimedes 性。",
+        "ja": "$F$ を体、$v:F→ℝ$ を絶対値とする。$p∈F[X]$ をモニック多項式、$z∈F$ を $p(z)=0$ を満たす元とし、$n=natDegree(p)$、$c_i=p_i$ と書く。このとき $v(z)≤max(1,∑_{0≤i<n}v(c_i))$ である。非アルキメデス性は仮定しない。"
+      },
+      "english_readback_sha256": "d8f4417f7c672037602e13f43d96cccd28b666e626b2a87358ff80dee9356208",
+      "translation_of_english_sha256": "d8f4417f7c672037602e13f43d96cccd28b666e626b2a87358ff80dee9356208"
+    },
+    {
+      "declaration_name": "apply_le_one_add_sum",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_one_add_sum",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 144,
+      "signature_end_line": 145,
+      "raw_signature": "theorem apply_le_one_add_sum {p : F[X]} (hp : p.Monic) {z : F} (hz : p.eval z = 0) :\n    v z ≤ 1 + ∑ i ∈ range p.natDegree, v (p.coeff i)",
+      "raw_signature_sha256": "fe29ebbc789dbd6803efcdf37fd70c288fdeb0d3a1c1f60bc64d6e90c6d739b6",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $v:F→ℝ$ an absolute value. Let $p∈F[X]$ be monic, $z∈F$ satisfy $p(z)=0$, and write $n=natDegree(p)$ and $c_i=p_i$. Then $v(z)≤1+∑_{0≤i<n}v(c_i)$. No nonarchimedean assumption is imposed.",
+        "zh_Hans": "设 $F$ 是域，$v:F→ℝ$ 是绝对值。设 $p∈F[X]$ 是首一多项式，$z∈F$ 满足 $p(z)=0$，记 $n=natDegree(p)$、$c_i=p_i$。则 $v(z)≤1+∑_{0≤i<n}v(c_i)$，不要求非 Archimedes 性。",
+        "ja": "$F$ を体、$v:F→ℝ$ を絶対値とする。$p∈F[X]$ をモニック多項式、$z∈F$ を $p(z)=0$ を満たす元とし、$n=natDegree(p)$、$c_i=p_i$ と書く。このとき $v(z)≤1+∑_{0≤i<n}v(c_i)$ である。非アルキメデス性は仮定しない。"
+      },
+      "english_readback_sha256": "e9d0d5c2e84fc19847bbac38ce4ad62993b551f50787d720a67f1b2d3ceee239",
+      "translation_of_english_sha256": "e9d0d5c2e84fc19847bbac38ce4ad62993b551f50787d720a67f1b2d3ceee239"
+    },
+    {
+      "declaration_name": "apply_le_max_one_mul",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute.apply_le_max_one_mul",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+      "source_sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+      "signature_start_line": 152,
+      "signature_end_line": 153,
+      "raw_signature": "theorem apply_le_max_one_mul {p : F[X]} (hp : p.Monic) {z : F} (hz : p.eval z = 0) {B : ℝ}\n    (hc : ∀ i < p.natDegree, v (p.coeff i) ≤ B) : v z ≤ max 1 (p.natDegree * B)",
+      "raw_signature_sha256": "cf41c418729a6830b23ced037264563ba52e3dbb942a96aedb8f1700b39b5b9e",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 40,
+          "raw": "variable {F : Type*} [Field F] (v : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 38,
+          "raw": "open Polynomial Finset"
+        }
+      ],
+      "source_options_seen": [
+        "set_option linter.style.header false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $v:F→ℝ$ an absolute value. Let $p∈F[X]$ be monic, $z∈F$ satisfy $p(z)=0$, and write $n=natDegree(p)$ and $c_i=p_i$. For any real $B$, if $v(c_i)≤B$ for every natural $i<n$, then $v(z)≤max(1,nB)$, with $n$ cast to $ℝ$. There is no explicit positivity assumption on $B$.",
+        "zh_Hans": "设 $F$ 是域，$v:F→ℝ$ 是绝对值。设 $p∈F[X]$ 是首一多项式，$z∈F$ 满足 $p(z)=0$，记 $n=natDegree(p)$、$c_i=p_i$。对任意实数 $B$，若每个自然数 $i<n$ 都满足 $v(c_i)≤B$，则 $v(z)≤max(1,nB)$，其中 $n$ 映为实数。不另设 $B$ 的正性假设。",
+        "ja": "$F$ を体、$v:F→ℝ$ を絶対値とする。$p∈F[X]$ をモニック多項式、$z∈F$ を $p(z)=0$ を満たす元とし、$n=natDegree(p)$、$c_i=p_i$ と書く。任意の実数 $B$ に対し、すべての自然数 $i<n$ で $v(c_i)≤B$ なら $v(z)≤max(1,nB)$ である。$n$ は実数に写して用い、$B$ の正値性は明示的には仮定しない。"
+      },
+      "english_readback_sha256": "6e37d265e795c06786755b20471afed31643ab89e8c5a5d855905a2005e0d260",
+      "translation_of_english_sha256": "6e37d265e795c06786755b20471afed31643ab89e8c5a5d855905a2005e0d260"
+    },
+    {
+      "declaration_name": "one_le_prod_of_one_le",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_prod_of_one_le",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 64,
+      "signature_end_line": 65,
+      "raw_signature": "theorem one_le_prod_of_one_le {α : Type*} (s : Finset α) {f : α → ℝ} (hf : ∀ a ∈ s, 1 ≤ f a) :\n    1 ≤ ∏ a ∈ s, f a",
+      "raw_signature_sha256": "b16cd2bc196ca34419bb8c91f04ecb4947ad14462446aa1b2c05857faca436c6",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "For any index type $α$, finite set $s⊆α$, and function $f:α→ℝ$, if $1≤f(a)$ for every $a∈s$, then $1≤∏_{a∈s}f(a)$. An empty product is $1$.",
+        "zh_Hans": "对任意指标类型 $α$、有限集 $s⊆α$ 和函数 $f:α→ℝ$，若每个 $a∈s$ 都满足 $1≤f(a)$，则 $1≤∏_{a∈s}f(a)$。空积为 $1$。",
+        "ja": "任意の添字型 $α$、有限集合 $s⊆α$、関数 $f:α→ℝ$ に対し、すべての $a∈s$ で $1≤f(a)$ なら $1≤∏_{a∈s}f(a)$ である。空積は $1$ である。"
+      },
+      "english_readback_sha256": "7bebf65deeb0f5b6040e38b386604cffebd82e4c1f962887f074d49db9cb66c9",
+      "translation_of_english_sha256": "7bebf65deeb0f5b6040e38b386604cffebd82e4c1f962887f074d49db9cb66c9"
+    },
+    {
+      "declaration_name": "le_prod_of_one_le",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.le_prod_of_one_le",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 75,
+      "signature_end_line": 76,
+      "raw_signature": "theorem le_prod_of_one_le {α : Type*} {s : Finset α} {f : α → ℝ} (hf : ∀ a ∈ s, 1 ≤ f a)\n    {a : α} (ha : a ∈ s) : f a ≤ ∏ b ∈ s, f b",
+      "raw_signature_sha256": "7de3c35a0734e38b4a3efba3fb2a4ca56236ed44e519c03e20d1f1cd2f7ebe00",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "For any index type $α$, finite set $s⊆α$, function $f:α→ℝ$ with $1≤f(b)$ for all $b∈s$, and any $a∈s$, one has $f(a)≤∏_{b∈s}f(b)$. Membership of $a$ excludes an empty set.",
+        "zh_Hans": "对任意指标类型 $α$、有限集 $s⊆α$、满足每个 $b∈s$ 都有 $1≤f(b)$ 的函数 $f:α→ℝ$，以及任意 $a∈s$，有 $f(a)≤∏_{b∈s}f(b)$。$a∈s$ 排除了空集情形。",
+        "ja": "任意の添字型 $α$、有限集合 $s⊆α$、すべての $b∈s$ で $1≤f(b)$ を満たす関数 $f:α→ℝ$、および $a∈s$ に対し $f(a)≤∏_{b∈s}f(b)$ である。$a$ の所属により空集合は除かれる。"
+      },
+      "english_readback_sha256": "1c6648870d2537cefc0d67e5510a9f0c364531ef480d674827041b29fdcb45c5",
+      "translation_of_english_sha256": "1c6648870d2537cefc0d67e5510a9f0c364531ef480d674827041b29fdcb45c5"
+    },
+    {
+      "declaration_name": "monicOf",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf",
+      "kind": "def",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 83,
+      "signature_end_line": 83,
+      "raw_signature": "noncomputable def monicOf (n : ℕ) (c : ℕ → F) : F[X]",
+      "raw_signature_sha256": "226e81b02eaac6e28e000086b99bfe1eddd2a78a2381ee3b8b725e9e11b7f316",
+      "raw_definition": "noncomputable def monicOf (n : ℕ) (c : ℕ → F) : F[X] :=\n  X ^ n + ∑ k ∈ Finset.range n, C (c k) * X ^ k",
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $n∈ℕ$, and $c:ℕ→F$. Write $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$. This defines the polynomial $monicOf(n,c)=p_{n,c}∈F[X]$; coefficients $c_k$ with $k≥n$ are ignored, and $p_{0,c}=1$.",
+        "zh_Hans": "设 $F$ 是域，$n∈ℕ$，$c:ℕ→F$。记 $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$。此定义给出多项式 $monicOf(n,c)=p_{n,c}∈F[X]$；不使用 $k≥n$ 的系数，且 $p_{0,c}=1$。",
+        "ja": "$F$ を体、$n∈ℕ$、$c:ℕ→F$ とし、$p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$ と書く。これは多項式 $monicOf(n,c)=p_{n,c}∈F[X]$ の定義である。$k≥n$ の係数は使わず、$p_{0,c}=1$ である。"
+      },
+      "english_readback_sha256": "5170aff523f2e1b41fcb944e3025b335fefac31c07256a7a9665f946b51f2405",
+      "translation_of_english_sha256": "5170aff523f2e1b41fcb944e3025b335fefac31c07256a7a9665f946b51f2405"
+    },
+    {
+      "declaration_name": "degree_sum_lt",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.degree_sum_lt",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 86,
+      "signature_end_line": 87,
+      "raw_signature": "theorem degree_sum_lt (n : ℕ) (c : ℕ → F) :\n    (∑ k ∈ Finset.range n, C (c k) * X ^ k).degree < (n : WithBot ℕ)",
+      "raw_signature_sha256": "8032a5fc744573fc768b6af4249e41190ace2d56845a019c2e4c887fc0268f76",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $n∈ℕ$, and $c:ℕ→F$. Write $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$. The polynomial $∑_{0≤k<n}c_kX^k$ has degree strictly less than $n$ in $ℕ∪\\{-∞\\}$. The degree of the zero polynomial is $-∞$, so the assertion also includes $n=0$.",
+        "zh_Hans": "设 $F$ 是域，$n∈ℕ$，$c:ℕ→F$。记 $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$。多项式 $∑_{0≤k<n}c_kX^k$ 的次数在 $ℕ∪\\{-∞\\}$ 中严格小于 $n$。零多项式的次数为 $-∞$，因此断言也涵盖 $n=0$。",
+        "ja": "$F$ を体、$n∈ℕ$、$c:ℕ→F$ とし、$p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$ と書く。多項式 $∑_{0≤k<n}c_kX^k$ の次数は $ℕ∪\\{-∞\\}$ において $n$ より真に小さい。零多項式の次数を $-∞$ とするため、$n=0$ も含む。"
+      },
+      "english_readback_sha256": "cc1d7e680e08783031f842592c30f75258f4a4436ebeed63d96bbe4d4c3839c6",
+      "translation_of_english_sha256": "cc1d7e680e08783031f842592c30f75258f4a4436ebeed63d96bbe4d4c3839c6"
+    },
+    {
+      "declaration_name": "monicOf_monic",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.monicOf_monic",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 93,
+      "signature_end_line": 93,
+      "raw_signature": "theorem monicOf_monic (n : ℕ) (c : ℕ → F) : (monicOf n c).Monic",
+      "raw_signature_sha256": "57865327374af448a1507c1c1a9886d5c639c69bc26abf868d8e3e5285733907",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $n∈ℕ$, and $c:ℕ→F$. Write $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$. The polynomial $p_{n,c}$ is monic, including $n=0$.",
+        "zh_Hans": "设 $F$ 是域，$n∈ℕ$，$c:ℕ→F$。记 $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$。多项式 $p_{n,c}$ 是首一多项式，包括 $n=0$ 的情形。",
+        "ja": "$F$ を体、$n∈ℕ$、$c:ℕ→F$ とし、$p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$ と書く。$p_{n,c}$ はモニックである。$n=0$ も含む。"
+      },
+      "english_readback_sha256": "ce187dcc21ca3452a8a4d00db0bee8d20c810816e99b624680380b44c23cbb07",
+      "translation_of_english_sha256": "ce187dcc21ca3452a8a4d00db0bee8d20c810816e99b624680380b44c23cbb07"
+    },
+    {
+      "declaration_name": "natDegree_monicOf",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.natDegree_monicOf",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 99,
+      "signature_end_line": 99,
+      "raw_signature": "theorem natDegree_monicOf (n : ℕ) (c : ℕ → F) : (monicOf n c).natDegree = n",
+      "raw_signature_sha256": "30a2a79fb9ff375a483dfcbd941c6f7fdfb582eb8dc26955b381ca74df002fb1",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $n∈ℕ$, and $c:ℕ→F$. Write $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$. The natural-number degree of $p_{n,c}$ equals $n$, including $n=0$.",
+        "zh_Hans": "设 $F$ 是域，$n∈ℕ$，$c:ℕ→F$。记 $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$。$p_{n,c}$ 的自然数次数等于 $n$，包括 $n=0$ 的情形。",
+        "ja": "$F$ を体、$n∈ℕ$、$c:ℕ→F$ とし、$p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$ と書く。$p_{n,c}$ の自然数値の次数は $n$ に等しい。$n=0$ も含む。"
+      },
+      "english_readback_sha256": "5515f1186f3c72a8f2f09067122692a103b81322b3e21a8972226017d72d21be",
+      "translation_of_english_sha256": "5515f1186f3c72a8f2f09067122692a103b81322b3e21a8972226017d72d21be"
+    },
+    {
+      "declaration_name": "coeff_monicOf",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeff_monicOf",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 106,
+      "signature_end_line": 106,
+      "raw_signature": "theorem coeff_monicOf {n : ℕ} (c : ℕ → F) {k : ℕ} (hk : k < n) : (monicOf n c).coeff k = c k",
+      "raw_signature_sha256": "e4d1714de40e366d59c135e47a35aeb73ab4be5588f9b1456088b7514775c59d",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $n∈ℕ$, and $c:ℕ→F$. Write $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$. For every natural $k<n$, the coefficient of $X^k$ in $p_{n,c}$ is $c_k$. This asserts nothing about such $k$ when $n=0$.",
+        "zh_Hans": "设 $F$ 是域，$n∈ℕ$，$c:ℕ→F$。记 $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$。对每个自然数 $k<n$，$p_{n,c}$ 中 $X^k$ 的系数为 $c_k$。当 $n=0$ 时不存在这样的 $k$。",
+        "ja": "$F$ を体、$n∈ℕ$、$c:ℕ→F$ とし、$p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$ と書く。自然数 $k<n$ ごとに、$p_{n,c}$ の $X^k$ の係数は $c_k$ である。$n=0$ の場合にはそのような $k$ はない。"
+      },
+      "english_readback_sha256": "7baf80434706a0a90aa9abed79e7b7e30ce452e40cca4377d5f7c4982c1d863a",
+      "translation_of_english_sha256": "7baf80434706a0a90aa9abed79e7b7e30ce452e40cca4377d5f7c4982c1d863a"
+    },
+    {
+      "declaration_name": "eval_monicOf",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.eval_monicOf",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 116,
+      "signature_end_line": 117,
+      "raw_signature": "theorem eval_monicOf (n : ℕ) (c : ℕ → F) (z : F) :\n    (monicOf n c).eval z = z ^ n + ∑ k ∈ Finset.range n, c k * z ^ k",
+      "raw_signature_sha256": "e1cea7e613a0aa247aceecc9244139d541c24eb29b1d40a507e5005f5f1e22e4",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $n∈ℕ$, and $c:ℕ→F$. Write $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$. For every $z∈F$, $p_{n,c}(z)=z^n+∑_{0≤k<n}c_kz^k$.",
+        "zh_Hans": "设 $F$ 是域，$n∈ℕ$，$c:ℕ→F$。记 $p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$。对任意 $z∈F$，有 $p_{n,c}(z)=z^n+∑_{0≤k<n}c_kz^k$。",
+        "ja": "$F$ を体、$n∈ℕ$、$c:ℕ→F$ とし、$p_{n,c}(X)=X^n+∑_{0≤k<n}c_kX^k$ と書く。任意の $z∈F$ に対し $p_{n,c}(z)=z^n+∑_{0≤k<n}c_kz^k$ である。"
+      },
+      "english_readback_sha256": "9c0fff4fab6dbf236832205c4fcb46128e13e99cadb91520cac9eb347ae7578b",
+      "translation_of_english_sha256": "9c0fff4fab6dbf236832205c4fcb46128e13e99cadb91520cac9eb347ae7578b"
+    },
+    {
+      "declaration_name": "apply_le_of_eq_nonarch",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq_nonarch",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 121,
+      "signature_end_line": 123,
+      "raw_signature": "theorem apply_le_of_eq_nonarch (hw : ∀ a b, w (a + b) ≤ max (w a) (w b)) {n : ℕ} {c : ℕ → F}\n    {z : F} (hz : z ^ n + ∑ k ∈ Finset.range n, c k * z ^ k = 0) {B : ℝ} (hB : 1 ≤ B)\n    (hc : ∀ k < n, w (c k) ≤ B) : w z ≤ B",
+      "raw_signature_sha256": "fcf7d7a694cba63e64e791c6286be702614c6a790ee2d570faacdac4f2b491f5",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $w:F→ℝ$ an absolute value. For $n∈ℕ$, $c:ℕ→F$, and $z∈F$, assume $z^n+∑_{0≤k<n}c_kz^k=0$. If $w(a+b)≤max(w(a),w(b))$ for all $a,b∈F$, $B∈ℝ$ satisfies $1≤B$, and $w(c_k)≤B$ for all $k<n$, then $w(z)≤B$. No positive-degree hypothesis is supplied separately.",
+        "zh_Hans": "设 $F$ 是域，$w:F→ℝ$ 是绝对值。对 $n∈ℕ$、$c:ℕ→F$ 和 $z∈F$，假设 $z^n+∑_{0≤k<n}c_kz^k=0$。若对任意 $a,b∈F$ 都有 $w(a+b)≤max(w(a),w(b))$，实数 $B$ 满足 $1≤B$，且所有 $k<n$ 都满足 $w(c_k)≤B$，则 $w(z)≤B$。不另给次数为正的假设。",
+        "ja": "$F$ を体、$w:F→ℝ$ を絶対値とする。$n∈ℕ$、$c:ℕ→F$、$z∈F$ に対し $z^n+∑_{0≤k<n}c_kz^k=0$ と仮定する。任意の $a,b∈F$ で $w(a+b)≤max(w(a),w(b))$、実数 $B$ について $1≤B$、すべての $k<n$ で $w(c_k)≤B$ なら $w(z)≤B$ である。次数が正であるとの別の仮定はない。"
+      },
+      "english_readback_sha256": "5834c3ca3ac2a463311b94ecaee501d48a36ab2f64fa65ccb9fdcd67e3c058ca",
+      "translation_of_english_sha256": "5834c3ca3ac2a463311b94ecaee501d48a36ab2f64fa65ccb9fdcd67e3c058ca"
+    },
+    {
+      "declaration_name": "apply_le_of_eq",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_le_of_eq",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 132,
+      "signature_end_line": 134,
+      "raw_signature": "theorem apply_le_of_eq {n : ℕ} {c : ℕ → F} {z : F}\n    (hz : z ^ n + ∑ k ∈ Finset.range n, c k * z ^ k = 0) :\n    w z ≤ 1 + ∑ k ∈ Finset.range n, w (c k)",
+      "raw_signature_sha256": "f93b00bb8ab5ae2c08cbd266d5d8f3d12e49bcca2e6921667b57c0578e7020e2",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "RootBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 61,
+          "raw": "variable {F : Type*} [Field F] (w : AbsoluteValue F ℝ)"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field and $w:F→ℝ$ an absolute value. For $n∈ℕ$, $c:ℕ→F$, and $z∈F$, assume $z^n+∑_{0≤k<n}c_kz^k=0$. Then $w(z)≤1+∑_{0≤k<n}w(c_k)$. Neither nonarchimedean behavior nor $z≠0$ is assumed.",
+        "zh_Hans": "设 $F$ 是域，$w:F→ℝ$ 是绝对值。对 $n∈ℕ$、$c:ℕ→F$ 和 $z∈F$，假设 $z^n+∑_{0≤k<n}c_kz^k=0$。则 $w(z)≤1+∑_{0≤k<n}w(c_k)$。不假设非 Archimedes 性，也不要求 $z≠0$。",
+        "ja": "$F$ を体、$w:F→ℝ$ を絶対値とする。$n∈ℕ$、$c:ℕ→F$、$z∈F$ に対し $z^n+∑_{0≤k<n}c_kz^k=0$ と仮定する。このとき $w(z)≤1+∑_{0≤k<n}w(c_k)$ である。非アルキメデス性も $z≠0$ も仮定しない。"
+      },
+      "english_readback_sha256": "4102981bf4ea699fd58071571a8afd48cd6329c5fa4ebf2789466485c45ee9e1",
+      "translation_of_english_sha256": "4102981bf4ea699fd58071571a8afd48cd6329c5fa4ebf2789466485c45ee9e1"
+    },
+    {
+      "declaration_name": "coeffBound",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coeffBound",
+      "kind": "def",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 151,
+      "signature_end_line": 151,
+      "raw_signature": "noncomputable def coeffBound (Q : MvPolynomial κ ℚ) : ℝ",
+      "raw_signature_sha256": "c39118db5dd6ad9570f30e7b8a16177ef7aedd17d8ad86555fbba15d4d12601a",
+      "raw_definition": "noncomputable def coeffBound (Q : MvPolynomial κ ℚ) : ℝ :=\n  ∏ m ∈ Q.support, max 1 (w ((Q.coeff m : ℚ) : F))",
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "PolyBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 148,
+          "raw": "variable {F : Type*} [Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type*}"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. The definition assigns $coeffBound(w,Q)=B_w(Q)∈ℝ$. The empty support of the zero polynomial gives the empty product $1$.",
+        "zh_Hans": "设 $F$ 是域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。此定义令 $coeffBound(w,Q)=B_w(Q)∈ℝ$。零多项式的支撑为空，其空积为 $1$。",
+        "ja": "$F$ を体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。この定義は $coeffBound(w,Q)=B_w(Q)∈ℝ$ を与える。零多項式の台は空であり、その空積は $1$ である。"
+      },
+      "english_readback_sha256": "9279904a1150094d3c3420cb444e8d19234b6eabff4b397d747f12a8fd838952",
+      "translation_of_english_sha256": "9279904a1150094d3c3420cb444e8d19234b6eabff4b397d747f12a8fd838952"
+    },
+    {
+      "declaration_name": "one_le_coeffBound",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.one_le_coeffBound",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 154,
+      "signature_end_line": 154,
+      "raw_signature": "theorem one_le_coeffBound (Q : MvPolynomial κ ℚ) : 1 ≤ coeffBound w Q",
+      "raw_signature_sha256": "9bd31c39f06517e721d5f5bdb6229c16554e6ce31fd9663049e58524bb80bdf6",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "PolyBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 148,
+          "raw": "variable {F : Type*} [Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type*}"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. For every such $Q$, $1≤B_w(Q)$.",
+        "zh_Hans": "设 $F$ 是域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。对每个这样的 $Q$，有 $1≤B_w(Q)$。",
+        "ja": "$F$ を体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。このようなすべての $Q$ に対し $1≤B_w(Q)$ である。"
+      },
+      "english_readback_sha256": "bc5d7ec96791152646a37680ba76bec197280f7059fb6147035b160b5274d928",
+      "translation_of_english_sha256": "bc5d7ec96791152646a37680ba76bec197280f7059fb6147035b160b5274d928"
+    },
+    {
+      "declaration_name": "log_coeffBound",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_coeffBound",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 157,
+      "signature_end_line": 158,
+      "raw_signature": "theorem log_coeffBound (Q : MvPolynomial κ ℚ) :\n    Real.log (coeffBound w Q) = ∑ m ∈ Q.support, Real.posLog (w ((Q.coeff m : ℚ) : F))",
+      "raw_signature_sha256": "b6bbb976c066cc6400c88ec7422238db6890719bebce8a577797d1490f6eabfe",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "PolyBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 148,
+          "raw": "variable {F : Type*} [Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type*}"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. For every such $Q$, $log B_w(Q)=∑_{m∈S(Q)}L(w(q_m))$.",
+        "zh_Hans": "设 $F$ 是域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。对每个这样的 $Q$，有 $log B_w(Q)=∑_{m∈S(Q)}L(w(q_m))$。",
+        "ja": "$F$ を体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。このようなすべての $Q$ に対し $log B_w(Q)=∑_{m∈S(Q)}L(w(q_m))$ である。"
+      },
+      "english_readback_sha256": "2a4beb464cf624dc0329c1661a375b74757303d3e74ed1f2ed59610eaef1dd08",
+      "translation_of_english_sha256": "2a4beb464cf624dc0329c1661a375b74757303d3e74ed1f2ed59610eaef1dd08"
+    },
+    {
+      "declaration_name": "apply_eval₂_le_nonarch",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le_nonarch",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 164,
+      "signature_end_line": 166,
+      "raw_signature": "theorem apply_eval₂_le_nonarch (hw : ∀ a b, w (a + b) ≤ max (w a) (w b)) {a : κ → F}\n    (ha : ∀ l, w (a l) ≤ 1) (Q : MvPolynomial κ ℚ) :\n    w (MvPolynomial.eval₂ (Rat.castHom F) a Q) ≤ coeffBound w Q",
+      "raw_signature_sha256": "f42ddaa284d5b2d2fe755d555942f7633ff6d6d97549a509711c0c102580a44c",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "PolyBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 148,
+          "raw": "variable {F : Type*} [Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type*}"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field of characteristic zero, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. Suppose $w(a+b)≤max(w(a),w(b))$ for all $a,b∈F$. For any assignment $a:κ→F$ satisfying $w(a_l)≤1$ for all $l$, and every $Q$, one has $w(Q(a))≤B_w(Q)$. No finiteness of $κ$ is assumed.",
+        "zh_Hans": "设 $F$ 是特征为零的域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。假设任意 $a,b∈F$ 都满足 $w(a+b)≤max(w(a),w(b))$。对任意满足所有 $l$ 都有 $w(a_l)≤1$ 的赋值 $a:κ→F$ 和每个 $Q$，有 $w(Q(a))≤B_w(Q)$。不要求 $κ$ 有限。",
+        "ja": "$F$ を標数零の体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。任意の $a,b∈F$ で $w(a+b)≤max(w(a),w(b))$ と仮定する。すべての $l$ で $w(a_l)≤1$ を満たす任意の代入 $a:κ→F$ と任意の $Q$ に対し $w(Q(a))≤B_w(Q)$ である。$κ$ の有限性は仮定しない。"
+      },
+      "english_readback_sha256": "334726997cd075156ace93fba0df5c3c49f0af49293289d223a3ffe805ebf29a",
+      "translation_of_english_sha256": "334726997cd075156ace93fba0df5c3c49f0af49293289d223a3ffe805ebf29a"
+    },
+    {
+      "declaration_name": "apply_eval₂_le",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.apply_eval₂_le",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 185,
+      "signature_end_line": 186,
+      "raw_signature": "theorem apply_eval₂_le {a : κ → F} (ha : ∀ l, w (a l) ≤ 1) (Q : MvPolynomial κ ℚ) :\n    w (MvPolynomial.eval₂ (Rat.castHom F) a Q) ≤ Q.support.card * coeffBound w Q",
+      "raw_signature_sha256": "79014a5c418ccacab40ce810d172d1fee312dcb0d5479a6b8d539ab257d16741",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "PolyBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 148,
+          "raw": "variable {F : Type*} [Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type*}"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field of characteristic zero, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. For any assignment $a:κ→F$ with $w(a_l)≤1$ for every $l$, and every $Q$, $w(Q(a))≤|S(Q)|B_w(Q)$, where the cardinal is viewed as a real number. This includes $Q=0$, for which the right side is zero.",
+        "zh_Hans": "设 $F$ 是特征为零的域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。对任意满足每个 $l$ 都有 $w(a_l)≤1$ 的赋值 $a:κ→F$ 和每个 $Q$，有 $w(Q(a))≤|S(Q)|B_w(Q)$，其中基数映为实数。包括 $Q=0$，此时右边为零。",
+        "ja": "$F$ を標数零の体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。すべての $l$ で $w(a_l)≤1$ を満たす任意の代入 $a:κ→F$ と任意の $Q$ に対し $w(Q(a))≤|S(Q)|B_w(Q)$ である。基数は実数とみなす。$Q=0$ も含み、この場合右辺は零である。"
+      },
+      "english_readback_sha256": "c0fd3e10f3478b4d69d8e49122c68e2a5a5931aea72f61a0cc4a042cd27ef909",
+      "translation_of_english_sha256": "c0fd3e10f3478b4d69d8e49122c68e2a5a5931aea72f61a0cc4a042cd27ef909"
+    },
+    {
+      "declaration_name": "log_apply_le_of_eq",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 208,
+      "signature_end_line": 212,
+      "raw_signature": "theorem log_apply_le_of_eq {a : κ → F} (ha : ∀ l, w (a l) ≤ 1) {n : ℕ}\n    (Q : ℕ → MvPolynomial κ ℚ) {z : F} (hz0 : z ≠ 0)\n    (hz : z ^ n + ∑ k ∈ Finset.range n, MvPolynomial.eval₂ (Rat.castHom F) a (Q k) * z ^ k = 0) :\n    Real.log (w z) ≤ Real.log (1 + ∑ k ∈ Finset.range n, ((Q k).support.card : ℝ)) +\n      ∑ k ∈ Finset.range n, ∑ m ∈ (Q k).support, Real.posLog (w (((Q k).coeff m : ℚ) : F))",
+      "raw_signature_sha256": "9bf8188ef4981217836608a77f6b21cff17e40177e4470f7c52e6cbc0199f08e",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "PolyBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 148,
+          "raw": "variable {F : Type*} [Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type*}"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field of characteristic zero, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. Let $a:κ→F$ satisfy $w(a_l)≤1$ for every $l$, let $n∈ℕ$, let $Q:ℕ→ℚ[κ]$ be a sequence of multivariable polynomials, and let $z∈F$ be nonzero with $z^n+∑_{0≤k<n}Q_k(a)z^k=0$. Write $q_{k,m}$ for the coefficient of $m$ in $Q_k$. Then $log w(z)≤log(1+∑_{0≤k<n}|S(Q_k)|)+∑_{0≤k<n}∑_{m∈S(Q_k)}L(w(q_{k,m}))$.",
+        "zh_Hans": "设 $F$ 是特征为零的域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。设 $a:κ→F$ 满足每个 $l$ 都有 $w(a_l)≤1$，$n∈ℕ$，$Q:ℕ→ℚ[κ]$ 是多元多项式序列，非零元 $z∈F$ 满足 $z^n+∑_{0≤k<n}Q_k(a)z^k=0$。记 $q_{k,m}$ 为 $Q_k$ 中 $m$ 的系数。则 $log w(z)≤log(1+∑_{0≤k<n}|S(Q_k)|)+∑_{0≤k<n}∑_{m∈S(Q_k)}L(w(q_{k,m}))$。",
+        "ja": "$F$ を標数零の体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。$a:κ→F$ はすべての $l$ で $w(a_l)≤1$ を満たし、$n∈ℕ$、$Q:ℕ→ℚ[κ]$ は多変数多項式の列、非零元 $z∈F$ は $z^n+∑_{0≤k<n}Q_k(a)z^k=0$ を満たすとする。$q_{k,m}$ は $Q_k$ の $m$ の係数とする。このとき $log w(z)≤log(1+∑_{0≤k<n}|S(Q_k)|)+∑_{0≤k<n}∑_{m∈S(Q_k)}L(w(q_{k,m}))$ である。"
+      },
+      "english_readback_sha256": "cdd07c12587dfa611d4ad42e0e7761717e65c4fafbe488e67d3ad3b5c8c1a4d9",
+      "translation_of_english_sha256": "cdd07c12587dfa611d4ad42e0e7761717e65c4fafbe488e67d3ad3b5c8c1a4d9"
+    },
+    {
+      "declaration_name": "log_apply_le_of_eq_nonarch",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_apply_le_of_eq_nonarch",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 235,
+      "signature_end_line": 239,
+      "raw_signature": "theorem log_apply_le_of_eq_nonarch (hw : ∀ a b, w (a + b) ≤ max (w a) (w b)) {a : κ → F}\n    (ha : ∀ l, w (a l) ≤ 1) {n : ℕ} (Q : ℕ → MvPolynomial κ ℚ) {z : F} (hz0 : z ≠ 0)\n    (hz : z ^ n + ∑ k ∈ Finset.range n, MvPolynomial.eval₂ (Rat.castHom F) a (Q k) * z ^ k = 0) :\n    Real.log (w z) ≤\n      ∑ k ∈ Finset.range n, ∑ m ∈ (Q k).support, Real.posLog (w (((Q k).coeff m : ℚ) : F))",
+      "raw_signature_sha256": "d2b40a233b2ab48d2aa1312c732a98c9da9badf0a9560c7890cb68377dbe69f9",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "PolyBound"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 148,
+          "raw": "variable {F : Type*} [Field F] [CharZero F] (w : AbsoluteValue F ℝ) {κ : Type*}"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a field of characteristic zero, $w:F→ℝ$ an absolute value, and $κ$ any index type. For a polynomial $Q$ over $ℚ$ in variables indexed by $κ$, write $S(Q)$ for its finite set of finitely supported exponent vectors with nonzero coefficient (including the zero vector when the constant coefficient is nonzero), $q_m$ for the coefficient at $m$, $B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$, and $L(u)=max(0,log u)$, with $L(0)=0$; rational coefficients are mapped to $F$. Let $a:κ→F$ satisfy $w(a_l)≤1$ for every $l$, let $n∈ℕ$, let $Q:ℕ→ℚ[κ]$ be a sequence of multivariable polynomials, and let $z∈F$ be nonzero with $z^n+∑_{0≤k<n}Q_k(a)z^k=0$. Write $q_{k,m}$ for the coefficient of $m$ in $Q_k$. If also $w(b+c)≤max(w(b),w(c))$ for all $b,c∈F$, then $log w(z)≤∑_{0≤k<n}∑_{m∈S(Q_k)}L(w(q_{k,m}))$.",
+        "zh_Hans": "设 $F$ 是特征为零的域，$w:F→ℝ$ 是绝对值，$κ$ 是任意指标类型。对于以 $κ$ 为变量指标、系数在 $ℚ$ 中的多项式 $Q$，记 $S(Q)$ 为其系数非零的有限支撑指数向量构成的有限集合（常数项非零时包含零向量），$q_m$ 为 $m$ 的系数，$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$，$L(u)=max(0,log u)$，其中 $L(0)=0$；有理系数映入 $F$。设 $a:κ→F$ 满足每个 $l$ 都有 $w(a_l)≤1$，$n∈ℕ$，$Q:ℕ→ℚ[κ]$ 是多元多项式序列，非零元 $z∈F$ 满足 $z^n+∑_{0≤k<n}Q_k(a)z^k=0$。记 $q_{k,m}$ 为 $Q_k$ 中 $m$ 的系数。若还对任意 $b,c∈F$ 都有 $w(b+c)≤max(w(b),w(c))$，则 $log w(z)≤∑_{0≤k<n}∑_{m∈S(Q_k)}L(w(q_{k,m}))$。",
+        "ja": "$F$ を標数零の体、$w:F→ℝ$ を絶対値、$κ$ を任意の添字型とする。$κ$ を変数の添字とする $ℚ$ 係数多項式 $Q$ について、$S(Q)$ は係数が非零となる有限台の指数ベクトルの有限集合（定数項が非零なら零ベクトルも含む）、$q_m$ は $m$ の係数、$B_w(Q)=∏_{m∈S(Q)}max(1,w(q_m))$、$L(u)=max(0,log u)$ とし、$L(0)=0$ とする。有理係数は $F$ に写す。$a:κ→F$ はすべての $l$ で $w(a_l)≤1$ を満たし、$n∈ℕ$、$Q:ℕ→ℚ[κ]$ は多変数多項式の列、非零元 $z∈F$ は $z^n+∑_{0≤k<n}Q_k(a)z^k=0$ を満たすとする。$q_{k,m}$ は $Q_k$ の $m$ の係数とする。さらに任意の $b,c∈F$ で $w(b+c)≤max(w(b),w(c))$ なら $log w(z)≤∑_{0≤k<n}∑_{m∈S(Q_k)}L(w(q_{k,m}))$ である。"
+      },
+      "english_readback_sha256": "0f2c606ccc7af1317fc880c719e77926af1ac74b8506e1addebbcc5d19f30642",
+      "translation_of_english_sha256": "0f2c606ccc7af1317fc880c719e77926af1ac74b8506e1addebbcc5d19f30642"
+    },
+    {
+      "declaration_name": "exists_integral_eq",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.exists_integral_eq",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 261,
+      "signature_end_line": 264,
+      "raw_signature": "theorem exists_integral_eq {κ : Type*} (g : κ → K) (r : K)\n    (hr : ∀ P : Place K, (∀ l, g l ∈ P.1) → r ∈ P.1) :\n    ∃ n : ℕ, ∃ Q : ℕ → MvPolynomial κ ℚ,\n      r ^ n + ∑ k ∈ Finset.range n, MvPolynomial.aeval g (Q k) * r ^ k = 0",
+      "raw_signature_sha256": "9900423e008b7216a816f9f11dffdd07f41bb807aaed9230453e4ba590f3c626",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "Integral"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 257,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. For any index type $κ$, family $g:κ→K$, and $r∈K$, suppose that for every place $P$, regularity of every $g_l$ at $P$ implies $r∈O_P$. Then there exist $n∈ℕ$ and a sequence $Q:ℕ→ℚ[κ]$ of multivariable polynomials such that $r^n+∑_{0≤k<n}Q_k(g)r^k=0$. The index type need not be finite, and no nonzero assumption on $r$ is imposed.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。对任意指标类型 $κ$、族 $g:κ→K$ 和 $r∈K$，假设对每个处 $P$，若所有 $g_l$ 都在 $P$ 正则，则 $r∈O_P$。那么存在 $n∈ℕ$ 和多元多项式序列 $Q:ℕ→ℚ[κ]$，使 $r^n+∑_{0≤k<n}Q_k(g)r^k=0$。不要求指标类型有限，也不要求 $r$ 非零。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。任意の添字型 $κ$、族 $g:κ→K$、$r∈K$ に対し、すべての場所 $P$ で、全 $g_l$ が $P$ で正則なら $r∈O_P$ と仮定する。このとき $n∈ℕ$ と多変数多項式の列 $Q:ℕ→ℚ[κ]$ が存在し、$r^n+∑_{0≤k<n}Q_k(g)r^k=0$ である。添字型の有限性も $r$ の非零性も仮定しない。"
+      },
+      "english_readback_sha256": "83a81235f037a9816397acc0f6eb19cb092da71d41cfb2a35a6dc6d4859bceb1",
+      "translation_of_english_sha256": "83a81235f037a9816397acc0f6eb19cb092da71d41cfb2a35a6dc6d4859bceb1"
+    },
+    {
+      "declaration_name": "evalF",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF",
+      "kind": "def",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 301,
+      "signature_end_line": 301,
+      "raw_signature": "noncomputable def evalF (x : QbarPoint K) : x.P.1 →+* x.fieldOf",
+      "raw_signature_sha256": "59897bbe79db391d8f64e2bd1e70408d03fbda0d158220abfc98f11ccb546ace",
+      "raw_definition": "noncomputable def evalF (x : QbarPoint K) : x.P.1 →+* x.fieldOf :=\n  x.σ.toRatAlgHom.equivFieldRange.toRingHom.comp x.P.residue",
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "Evaluation"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 298,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For every $x$, this defines the ring homomorphism $evalF_x:O_P→F_x$ obtained by the residue map $O_P→k(P)$ followed by the isomorphism of $k(P)$ onto the image of $σ$. Its value is the element of $F_x$ represented by $a(x)$.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对每个 $x$，此定义给出环同态 $evalF_x:O_P→F_x$：先取剩余映射 $O_P→k(P)$，再取 $k(P)$ 到 $σ$ 的像的同构。其值是由 $a(x)$ 表示的 $F_x$ 中元素。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。各 $x$ に対し、剰余写像 $O_P→k(P)$ と $k(P)$ から $σ$ の像への同型を合成した環準同型 $evalF_x:O_P→F_x$ を定義する。その値は $a(x)$ で表される $F_x$ の元である。"
+      },
+      "english_readback_sha256": "77cbf64ae710cbb15bf788b72b50963447fea4e227c09a7260d6b52ffd08e4f9",
+      "translation_of_english_sha256": "77cbf64ae710cbb15bf788b72b50963447fea4e227c09a7260d6b52ffd08e4f9"
+    },
+    {
+      "declaration_name": "coe_evalF",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.coe_evalF",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 304,
+      "signature_end_line": 305,
+      "raw_signature": "theorem coe_evalF (x : QbarPoint K) (f : x.P.1) : ((evalF x f : x.fieldOf) : Qbar) =\n    x.eval f.1 f.2",
+      "raw_signature_sha256": "3f0d9bd40d10a91e324810487ff296fc0f1cffdbe8eb135643f71b851af5b581",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "Evaluation"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 298,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For every $x$ and every $f∈O_P$ regarded as a subring element with its membership proof, the image of $evalF_x(f)$ under $F_x↪\\overline{ℚ}$ equals $f(x)$.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对每个 $x$ 和每个带有所属证明、视为子环元素的 $f∈O_P$，$evalF_x(f)$ 经 $F_x↪\\overline{ℚ}$ 的像等于 $f(x)$。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。各 $x$ と、所属の証明を備えた部分環の元 $f∈O_P$ に対し、$evalF_x(f)$ の $F_x↪\\overline{ℚ}$ による像は $f(x)$ に等しい。"
+      },
+      "english_readback_sha256": "f716b72b9db05606621b7b5090a03ad8b442a598652a077c1f13c66d84216b42",
+      "translation_of_english_sha256": "f716b72b9db05606621b7b5090a03ad8b442a598652a077c1f13c66d84216b42"
+    },
+    {
+      "declaration_name": "evalF_comp_ratHom",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.evalF_comp_ratHom",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 307,
+      "signature_end_line": 308,
+      "raw_signature": "theorem evalF_comp_ratHom (x : QbarPoint K) :\n    (evalF x).comp x.P.ratHom = Rat.castHom x.fieldOf",
+      "raw_signature_sha256": "21a2d5000d755de7e85b523b7092bd04a34c21b9d5d2fe5f1f47ece7f9e65f34",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "Evaluation"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 298,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For every $x$, composing the canonical rational map $ℚ→O_P$ with $evalF_x:O_P→F_x$, the residue map followed by $σ$ with codomain restricted to its image, gives the canonical rational ring map $ℚ→F_x$. This is equality of ring homomorphisms.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对每个 $x$，典范有理数映射 $ℚ→O_P$ 与 $evalF_x:O_P→F_x$ 的复合等于典范有理数环映射 $ℚ→F_x$。这里 $evalF_x$ 是剩余映射与 $σ$ 的复合并将陪域限制到其像；结论是环同态的相等。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。各 $x$ に対し、標準的な有理数の写像 $ℚ→O_P$ と $evalF_x:O_P→F_x$ の合成は標準的な有理数の環写像 $ℚ→F_x$ に等しい。$evalF_x$ は剰余写像と $σ$ の合成の終域を像に制限したものであり、結論は環準同型の等式である。"
+      },
+      "english_readback_sha256": "4f0a1183800723a5dd9650b6b09c67925d20e7ee18e7234e2dcdfb9c0dd33513",
+      "translation_of_english_sha256": "4f0a1183800723a5dd9650b6b09c67925d20e7ee18e7234e2dcdfb9c0dd33513"
+    },
+    {
+      "declaration_name": "aeval_mem_and_evalF",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.aeval_mem_and_evalF",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 312,
+      "signature_end_line": 315,
+      "raw_signature": "theorem aeval_mem_and_evalF {κ : Type*} (x : QbarPoint K) (g : κ → K) (hg : ∀ l, g l ∈ x.P.1)\n    (Q : MvPolynomial κ ℚ) : ∃ h : MvPolynomial.aeval g Q ∈ x.P.1,\n      evalF x ⟨_, h⟩ = MvPolynomial.eval₂ (Rat.castHom x.fieldOf)\n        (fun l => evalF x ⟨g l, hg l⟩) Q",
+      "raw_signature_sha256": "da451dcaf63f2fa79dcfcdd05f1519ae013c2c0adbd3aa36ddb38993d9ed5681",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "Evaluation"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 298,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For any index type $κ$, point $x$, family $g:κ→K$ with every $g_l∈O_P$, and multivariable polynomial $Q∈ℚ[κ]$, there exists a proof that $Q(g)∈O_P$ such that $evalF_x(Q(g))=Q((evalF_x(g_l))_l)$ in $F_x$. Here $evalF_x$ evaluates residues through $σ$ with codomain $F_x$, and rational coefficients on both sides use the canonical rational maps.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对任意指标类型 $κ$、点 $x$、每个 $g_l∈O_P$ 的族 $g:κ→K$ 和多元多项式 $Q∈ℚ[κ]$，存在 $Q(g)∈O_P$ 的证明，使 $F_x$ 中有 $evalF_x(Q(g))=Q((evalF_x(g_l))_l)$。这里 $evalF_x$ 经 $σ$ 对剩余类求值，陪域为 $F_x$，两边的有理系数均使用典范有理数映射。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。任意の添字型 $κ$、点 $x$、全 $g_l∈O_P$ を満たす族 $g:κ→K$、多変数多項式 $Q∈ℚ[κ]$ に対し、$Q(g)∈O_P$ の証明が存在し、$F_x$ で $evalF_x(Q(g))=Q((evalF_x(g_l))_l)$ が成り立つ。$evalF_x$ は剰余類を $σ$ で評価して $F_x$ に値を取り、両辺の有理係数には標準的な有理数の写像を用いる。"
+      },
+      "english_readback_sha256": "35ec819053db4db1fb0b76507eabc1ee34e94d043b5ed89855bd1d5f2a10399d",
+      "translation_of_english_sha256": "35ec819053db4db1fb0b76507eabc1ee34e94d043b5ed89855bd1d5f2a10399d"
+    },
+    {
+      "declaration_name": "hasFiniteSupport_log_iSup",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_log_iSup",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 338,
+      "signature_end_line": 340,
+      "raw_signature": "theorem hasFiniteSupport_log_iSup (F : IntermediateField ℚ Qbar) [FiniteDimensional ℚ F]\n    {y : ι → F} (hy : y ≠ 0) :\n    (fun v : FinitePlace F => Real.log (⨆ i, v (y i))).HasFiniteSupport",
+      "raw_signature_sha256": "5a897aa1a003288d5a8b768a730392029d9febd9cb26e8d0420b6815ec3fe9f2",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "LocalGlobal"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 335,
+          "raw": "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a finite-dimensional intermediate field of $\\overline{ℚ}/ℚ$, hence a number field. Its finite places are the usual nonarchimedean absolute values, and its infinite places are the usual real or complex absolute values. For any finite index type $ι$ equipped with an enumeration and any nonzero tuple $y:ι→F$, the function on finite places $v↦log(sup_{i∈ι}v(y_i))$ is zero outside a finite set. Nonzero means that some coordinate is nonzero; in particular this hypothesis excludes an empty index type.",
+        "zh_Hans": "设 $F$ 是 $\\overline{ℚ}/ℚ$ 的有限维中间域，因此是数域。其有限处是通常的非 Archimedes 绝对值，无穷处是通常的实或复绝对值。对任意配有枚举的有限指标类型 $ι$ 和任意非零元组 $y:ι→F$，有限处上的函数 $v↦log(sup_{i∈ι}v(y_i))$ 在某个有限集以外恒为零。非零指至少一个分量非零，因而此假设排除了空指标类型。",
+        "ja": "$F$ を $\\overline{ℚ}/ℚ$ の有限次元中間体、したがって数体とする。有限素点は通常の非アルキメデス絶対値、無限素点は通常の実または複素絶対値である。列挙を備えた任意の有限添字型 $ι$ と非零の組 $y:ι→F$ に対し、有限素点上の関数 $v↦log(sup_{i∈ι}v(y_i))$ はある有限集合の外で零である。非零とはある成分が非零であることであり、空の添字型はこの仮定によって除かれる。"
+      },
+      "english_readback_sha256": "8dd4167f58ba1c4ec7b3eeae99277f6a2a16e5822e12477a39aa08c8bd8df541",
+      "translation_of_english_sha256": "8dd4167f58ba1c4ec7b3eeae99277f6a2a16e5822e12477a39aa08c8bd8df541"
+    },
+    {
+      "declaration_name": "hasFiniteSupport_posLog",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.hasFiniteSupport_posLog",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 366,
+      "signature_end_line": 367,
+      "raw_signature": "theorem hasFiniteSupport_posLog (F : IntermediateField ℚ Qbar) [FiniteDimensional ℚ F] (b : F) :\n    (fun v : FinitePlace F => Real.posLog (v b)).HasFiniteSupport",
+      "raw_signature_sha256": "1b169146cb12bc80fb423d55bce528bc60b36911f783aab63e9f321214e1e62d",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "LocalGlobal"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 335,
+          "raw": "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a finite-dimensional intermediate field of $\\overline{ℚ}/ℚ$, hence a number field. Its finite places are the usual nonarchimedean absolute values, and its infinite places are the usual real or complex absolute values. For every $b∈F$, the function on finite places $v↦L(v(b))$ has finite support, where $L(u)=max(0,log u)$ and $L(0)=0$. The case $b=0$ is included.",
+        "zh_Hans": "设 $F$ 是 $\\overline{ℚ}/ℚ$ 的有限维中间域，因此是数域。其有限处是通常的非 Archimedes 绝对值，无穷处是通常的实或复绝对值。对任意 $b∈F$，有限处上的函数 $v↦L(v(b))$ 具有有限支撑，其中 $L(u)=max(0,log u)$，$L(0)=0$。包括 $b=0$ 的情形。",
+        "ja": "$F$ を $\\overline{ℚ}/ℚ$ の有限次元中間体、したがって数体とする。有限素点は通常の非アルキメデス絶対値、無限素点は通常の実または複素絶対値である。任意の $b∈F$ に対し、有限素点上の関数 $v↦L(v(b))$ は有限の台を持つ。ここで $L(u)=max(0,log u)$、$L(0)=0$ である。$b=0$ も含む。"
+      },
+      "english_readback_sha256": "e60a43ffe6e16c7770e5c70481f48b852ad2bf62d1fcff611967239f28bf5af5",
+      "translation_of_english_sha256": "e60a43ffe6e16c7770e5c70481f48b852ad2bf62d1fcff611967239f28bf5af5"
+    },
+    {
+      "declaration_name": "logHeight_le_of_forall_place",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.logHeight_le_of_forall_place",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 380,
+      "signature_end_line": 388,
+      "raw_signature": "theorem logHeight_le_of_forall_place (F : IntermediateField ℚ Qbar) [FiniteDimensional ℚ F]\n    {y : ι → F} {z : κ → F} (hy : y ≠ 0) (hz : z ≠ 0) (c : ℝ) {T : Type*} (U : Finset T)\n    (q : T → ℚ)\n    (hinf : ∀ w : InfinitePlace F, Real.log (⨆ i, w (y i)) ≤\n      Real.log (⨆ l, w (z l)) + c + ∑ τ ∈ U, Real.posLog (w (q τ : F)))\n    (hfin : ∀ v : FinitePlace F, Real.log (⨆ i, v (y i)) ≤\n      Real.log (⨆ l, v (z l)) + ∑ τ ∈ U, Real.posLog (v (q τ : F))) :\n    logHeight (fun i => (y i : Qbar)) ≤ logHeight (fun l => (z l : Qbar)) + c +\n      ∑ τ ∈ U, Height.logHeight₁ (q τ)",
+      "raw_signature_sha256": "8a6175e721e6b76e7561215aed84e4e40735942dcd9fe8bbd1f863f1e3559eee",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "LocalGlobal"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 335,
+          "raw": "variable {ι κ : Type*} [Fintype ι] [Fintype κ]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be a finite-dimensional intermediate field of $\\overline{ℚ}/ℚ$, hence a number field. Its finite places are the usual nonarchimedean absolute values, and its infinite places are the usual real or complex absolute values. For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. Let $ι,κ$ be finite index types with enumerations, $y:ι→F$ and $z:κ→F$ nonzero tuples, $c∈ℝ$, $T$ any type, $U⊆T$ finite, and $q:T→ℚ$. Put $L(u)=max(0,log u)$ with $L(0)=0$. Assume for every infinite place $w$ that $log(sup_i w(y_i))≤log(sup_l w(z_l))+c+∑_{τ∈U}L(w(q_τ))$, and for every finite place $v$ that $log(sup_i v(y_i))≤log(sup_l v(z_l))+∑_{τ∈U}L(v(q_τ))$. Then, viewing both tuples in $\\overline{ℚ}$, $h(y)≤h(z)+c+∑_{τ∈U}H_ℚ([1:q_τ])$. The same $c,U,q$ apply at every place; $U$ may be empty and some $q_τ$ may vanish.",
+        "zh_Hans": "设 $F$ 是 $\\overline{ℚ}/ℚ$ 的有限维中间域，因此是数域。其有限处是通常的非 Archimedes 绝对值，无穷处是通常的实或复绝对值。对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。设 $ι,κ$ 是配有枚举的有限指标类型，$y:ι→F$ 和 $z:κ→F$ 是非零元组，$c∈ℝ$，$T$ 是任意类型，$U⊆T$ 有限，$q:T→ℚ$。令 $L(u)=max(0,log u)$，$L(0)=0$。假设每个无穷处 $w$ 都有 $log(sup_i w(y_i))≤log(sup_l w(z_l))+c+∑_{τ∈U}L(w(q_τ))$，每个有限处 $v$ 都有 $log(sup_i v(y_i))≤log(sup_l v(z_l))+∑_{τ∈U}L(v(q_τ))$。则将两个元组视为 $\\overline{ℚ}$ 中的元组后，有 $h(y)≤h(z)+c+∑_{τ∈U}H_ℚ([1:q_τ])$。各处使用同一组 $c,U,q$；允许 $U$ 为空及某些 $q_τ$ 为零。",
+        "ja": "$F$ を $\\overline{ℚ}/ℚ$ の有限次元中間体、したがって数体とする。有限素点は通常の非アルキメデス絶対値、無限素点は通常の実または複素絶対値である。有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。$ι,κ$ を列挙を備えた有限添字型、$y:ι→F$ と $z:κ→F$ を非零の組、$c∈ℝ$、$T$ を任意の型、$U⊆T$ を有限集合、$q:T→ℚ$ とする。$L(u)=max(0,log u)$、$L(0)=0$ とする。すべての無限素点 $w$ で $log(sup_i w(y_i))≤log(sup_l w(z_l))+c+∑_{τ∈U}L(w(q_τ))$、すべての有限素点 $v$ で $log(sup_i v(y_i))≤log(sup_l v(z_l))+∑_{τ∈U}L(v(q_τ))$ と仮定する。このとき両方の組を $\\overline{ℚ}$ の組とみなすと $h(y)≤h(z)+c+∑_{τ∈U}H_ℚ([1:q_τ])$ である。同じ $c,U,q$ をすべての素点に用いる。$U$ は空でもよく、一部の $q_τ$ は零でもよい。"
+      },
+      "english_readback_sha256": "4dcc22fa7cbc6810ce5c5b50913c7145482d5ef7cc80d02e2f953c2a44842b5f",
+      "translation_of_english_sha256": "4dcc22fa7cbc6810ce5c5b50913c7145482d5ef7cc80d02e2f953c2a44842b5f"
+    },
+    {
+      "declaration_name": "log_iSup_le_of_forall",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.log_iSup_le_of_forall",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 443,
+      "signature_end_line": 446,
+      "raw_signature": "theorem log_iSup_le_of_forall {F : Type*} [Field F] (W : AbsoluteValue F ℝ) {y : ι → F}\n    {z : κ → F} (hy : y ≠ 0) (hz : z ≠ 0) (B : ℝ)\n    (h : ∀ i j, (∀ l, W (z l) ≤ W (z j)) → z j ≠ 0 → y i ≠ 0 → Real.log (W (y i / z j)) ≤ B) :\n    Real.log (⨆ i, W (y i)) ≤ Real.log (⨆ l, W (z l)) + B",
+      "raw_signature_sha256": "3c92a05ff9b7a6aa0e92fcb739d1087973c2998e04b5bd5b93087b1ba6fcae85",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "Comparison"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 439,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K] {ι κ : Type*} [Fintype ι] [Fintype κ]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $F$ be any field, $W:F→ℝ$ an absolute value, $ι,κ$ finite index types with enumerations, $y:ι→F$ and $z:κ→F$ nonzero tuples, and $B∈ℝ$. Suppose that for every $i∈ι$ and $j∈κ$, if $W(z_l)≤W(z_j)$ for every $l∈κ$, $z_j≠0$, and $y_i≠0$, then $log W(y_i/z_j)≤B$. Then $log(sup_i W(y_i))≤log(sup_l W(z_l))+B$. No characteristic-zero or curve-field hypothesis is part of this assertion.",
+        "zh_Hans": "设 $F$ 是任意域，$W:F→ℝ$ 是绝对值，$ι,κ$ 是配有枚举的有限指标类型，$y:ι→F$ 和 $z:κ→F$ 是非零元组，$B∈ℝ$。假设对每个 $i∈ι$ 和 $j∈κ$，若所有 $l∈κ$ 都有 $W(z_l)≤W(z_j)$，且 $z_j≠0$、$y_i≠0$，则 $log W(y_i/z_j)≤B$。那么 $log(sup_i W(y_i))≤log(sup_l W(z_l))+B$。此断言不含特征为零或曲线函数域的假设。",
+        "ja": "$F$ を任意の体、$W:F→ℝ$ を絶対値、$ι,κ$ を列挙を備えた有限添字型、$y:ι→F$ と $z:κ→F$ を非零の組、$B∈ℝ$ とする。すべての $i∈ι$、$j∈κ$ について、すべての $l∈κ$ で $W(z_l)≤W(z_j)$、かつ $z_j≠0$、$y_i≠0$ なら $log W(y_i/z_j)≤B$ と仮定する。このとき $log(sup_i W(y_i))≤log(sup_l W(z_l))+B$ である。この主張には標数零や曲線の関数体の仮定はない。"
+      },
+      "english_readback_sha256": "681ef4fb0891f5978c926674e127772937768538589f0416a596bf8304ef95cc",
+      "translation_of_english_sha256": "681ef4fb0891f5978c926674e127772937768538589f0416a596bf8304ef95cc"
+    },
+    {
+      "declaration_name": "div_mem_of_forall_div_mem",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.div_mem_of_forall_div_mem",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 486,
+      "signature_end_line": 488,
+      "raw_signature": "theorem div_mem_of_forall_div_mem {s : ι → K} {t : κ → K} (hs : ∃ i, s i ≠ 0)\n    (ht : ∃ j, t j ≠ 0) {P : Place K} (hle : minOrd P t ≤ minOrd P s) (i : ι) (j : κ)\n    (hj : ∀ l, t l / t j ∈ P.1) : s i / t j ∈ P.1",
+      "raw_signature_sha256": "85686a662fb91ec289552bb0f3fe0f43a6fc044a2051fd78e25027ec8c3fe447",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "Comparison"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 439,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K] {ι κ : Type*} [Fintype ι] [Fintype κ]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. Let $ι,κ$ be finite index types with enumerations, and $s:ι→K$, $t:κ→K$ each have a nonzero coordinate. For any place $P$, let $m_P(s)$ and $m_P(t)$ denote the respective minimum orders among nonzero coordinates. Suppose $m_P(t)≤m_P(s)$. For any $i∈ι$ and $j∈κ$, if $t_l/t_j∈O_P$ for every $l∈κ$, then $s_i/t_j∈O_P$. The statement does not require $t_j≠0$ or $s_i≠0$; division by zero has the field convention $a/0=0$.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。设 $ι,κ$ 是配有枚举的有限指标类型，$s:ι→K$、$t:κ→K$ 各有至少一个非零分量。对任意处 $P$，令 $m_P(s)$ 和 $m_P(t)$ 分别为各自非零分量阶的最小值，假设 $m_P(t)≤m_P(s)$。对任意 $i∈ι$ 和 $j∈κ$，若每个 $l∈κ$ 都有 $t_l/t_j∈O_P$，则 $s_i/t_j∈O_P$。不要求 $t_j≠0$ 或 $s_i≠0$；采用域中除以零的约定 $a/0=0$。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。$ι,κ$ を列挙を備えた有限添字型とし、$s:ι→K$、$t:κ→K$ はそれぞれ非零成分を持つとする。任意の場所 $P$ について $m_P(s)$、$m_P(t)$ をそれぞれの非零成分の位数の最小値とし、$m_P(t)≤m_P(s)$ と仮定する。任意の $i∈ι$ と $j∈κ$ に対し、すべての $l∈κ$ で $t_l/t_j∈O_P$ なら $s_i/t_j∈O_P$ である。$t_j≠0$ も $s_i≠0$ も要求しない。零による除算には体の規約 $a/0=0$ を用いる。"
+      },
+      "english_readback_sha256": "ec39d413532901b0dd0371432fd27151d9b312726235bac4c9d4d01ef6fd7252",
+      "translation_of_english_sha256": "ec39d413532901b0dd0371432fd27151d9b312726235bac4c9d4d01ef6fd7252"
+    },
+    {
+      "declaration_name": "tupleHeight_le_of_minOrd_le",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_le_of_minOrd_le",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+      "source_sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+      "signature_start_line": 509,
+      "signature_end_line": 511,
+      "raw_signature": "theorem tupleHeight_le_of_minOrd_le {s : ι → K} {t : κ → K} (hs : ∃ i, s i ≠ 0)\n    (ht : ∃ j, t j ≠ 0) (hle : ∀ P : Place K, minOrd P t ≤ minOrd P s) :\n    ∃ C, ∀ x : QbarPoint K, tupleHeight s x ≤ tupleHeight t x + C",
+      "raw_signature_sha256": "e243176eb4a7b4369efa5349f282bfe6b84460621cb94cc93a06a166bf6746e8",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple"
+      ],
+      "section_context": [
+        "Comparison"
+      ],
+      "ambient_variable_commands": [
+        {
+          "line": 439,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K] {ι κ : Type*} [Fintype ι] [Fintype κ]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 54,
+          "raw": "open AbcAdaptation.Tripod.Fermat.Proper AbcAdaptation.Tripod.Fermat.Proper.PolarAbsolute NumberField Polynomial"
+        },
+        {
+          "line": 55,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. For a finite tuple $s$ in $K$, $m_P(s)$ is the least $ord_P(s_i)$ among nonzero entries, and is zero if all entries vanish. At $x=(P,σ)$ choose a nonzero coordinate $s_j$ with this least order and put $h_s(x)=h(((s_i/s_j)(x))_i)$; put $h_s(x)=0$ for the zero tuple. For finite index types $ι,κ$ with enumerations and tuples $s:ι→K$, $t:κ→K$, suppose each tuple has a nonzero coordinate and $m_P(t)≤m_P(s)$ for every place $P$. Then there exists a real $C$ such that $h_s(x)≤h_t(x)+C$ for every algebraic point $x=(P,σ)$. The constant is chosen after the field and tuples and before the point, so it is uniform in the place, the residue-field embedding, and the degree of the full point field.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。对 $K$ 中的有限元组 $s$，$m_P(s)$ 是所有非零分量的 $ord_P(s_i)$ 的最小值；若全部分量为零，则取零。在 $x=(P,σ)$ 处，选取达到此最小阶的非零分量 $s_j$，定义 $h_s(x)=h(((s_i/s_j)(x))_i)$；零元组则定义为 $h_s(x)=0$。对配有枚举的有限指标类型 $ι,κ$ 和元组 $s:ι→K$、$t:κ→K$，假设两个元组各有一个非零分量，且对每个处 $P$ 都有 $m_P(t)≤m_P(s)$。那么存在实数 $C$，使每个代数点 $x=(P,σ)$ 都有 $h_s(x)≤h_t(x)+C$。常数在域和元组之后、点之前选定，因而对处、剩余域嵌入和完整点域的次数一致。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。$K$ の有限の組 $s$ に対し、$m_P(s)$ は非零成分の $ord_P(s_i)$ の最小値であり、全成分が零なら零とする。$x=(P,σ)$ でこの最小位数を持つ非零成分 $s_j$ を選び、$h_s(x)=h(((s_i/s_j)(x))_i)$ と定める。零の組には $h_s(x)=0$ を用いる。列挙を備えた有限添字型 $ι,κ$ と組 $s:ι→K$、$t:κ→K$ について、両方が非零成分を持ち、すべての場所 $P$ で $m_P(t)≤m_P(s)$ と仮定する。このとき実数 $C$ が存在し、すべての代数点 $x=(P,σ)$ で $h_s(x)≤h_t(x)+C$ である。定数は体と組の後、点の前に選ばれるため、場所、剰余体の埋め込み、完全な点の体の次数に関して一様である。"
+      },
+      "english_readback_sha256": "7d917a7ec29759c6eb895cca61cc4c24c2e645bcdfd2283915eed91727344ea1",
+      "translation_of_english_sha256": "7d917a7ec29759c6eb895cca61cc4c24c2e645bcdfd2283915eed91727344ea1"
+    },
+    {
+      "declaration_name": "pairOne",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne",
+      "kind": "abbrev",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "source_sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+      "signature_start_line": 20,
+      "signature_end_line": 20,
+      "raw_signature": "abbrev pairOne (f : K) : Fin 2 → K",
+      "raw_signature_sha256": "c4250c89be3e474974ab9e11d57a7ab814bde732a5cce464aca7a72fb72cce54",
+      "raw_definition": "abbrev pairOne (f : K) : Fin 2 → K := ![1, f]",
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper",
+        "PolarTuple"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 18,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 14,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [
+        "set_option autoImplicit false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "For any field $K$ and $f∈K$, $pairOne(f)$ is the function $Fin(2)→K$ with value $1$ at $0$ and value $f$ at $1$. It is the ordered tuple $(1,f)$, including $f=0$.",
+        "zh_Hans": "对任意域 $K$ 和 $f∈K$，$pairOne(f)$ 是函数 $Fin(2)→K$，在 $0$ 处取 $1$，在 $1$ 处取 $f$。它就是有序元组 $(1,f)$，包括 $f=0$ 的情形。",
+        "ja": "任意の体 $K$ と $f∈K$ に対し、$pairOne(f)$ は $0$ で $1$、$1$ で $f$ を取る関数 $Fin(2)→K$ である。これは順序付きの組 $(1,f)$ であり、$f=0$ も含む。"
+      },
+      "english_readback_sha256": "126be4c66dc41460b31f138b4f5aa8024e322cadce830d5c5a007eae0ae9ff93",
+      "translation_of_english_sha256": "126be4c66dc41460b31f138b4f5aa8024e322cadce830d5c5a007eae0ae9ff93"
+    },
+    {
+      "declaration_name": "pairOne_nonzero",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.pairOne_nonzero",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "source_sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+      "signature_start_line": 22,
+      "signature_end_line": 22,
+      "raw_signature": "theorem pairOne_nonzero (f : K) : ∃ i, pairOne f i ≠ 0",
+      "raw_signature_sha256": "d016c6276f3b39637e8410dc256f49bf5a87c6db3494b98d1289122a5938d393",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper",
+        "PolarTuple"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 18,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 14,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [
+        "set_option autoImplicit false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "For any field $K$ and every $f∈K$, some coordinate of the ordered tuple $(1,f):Fin(2)→K$ is nonzero. The assertion includes $f=0$ and does not claim that both coordinates are nonzero.",
+        "zh_Hans": "对任意域 $K$ 和任意 $f∈K$，有序元组 $(1,f):Fin(2)→K$ 至少有一个非零分量。包括 $f=0$，不声称两个分量都非零。",
+        "ja": "任意の体 $K$ とすべての $f∈K$ に対し、順序付きの組 $(1,f):Fin(2)→K$ は非零成分を持つ。$f=0$ も含み、両方の成分が非零であるとは主張しない。"
+      },
+      "english_readback_sha256": "9e1a3aadc7348ced78557a8bae34242c0ce5dc6e288a031aca3b21ffed6beaa6",
+      "translation_of_english_sha256": "9e1a3aadc7348ced78557a8bae34242c0ce5dc6e288a031aca3b21ffed6beaa6"
+    },
+    {
+      "declaration_name": "minOrd_pairOne",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "source_sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+      "signature_start_line": 25,
+      "signature_end_line": 26,
+      "raw_signature": "theorem minOrd_pairOne (P : Place K) (f : K) :\n    minOrd P (pairOne f) = min 0 (P.ord f)",
+      "raw_signature_sha256": "09ca635b388305f5541a1a0da75808d4a4e2505747e8bafa9a62e9a01a11690b",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper",
+        "PolarTuple"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 18,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 14,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [
+        "set_option autoImplicit false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. For every place $P$ and $f∈K$, the minimum order among the nonzero coordinates of $(1,f)$ is $min(0,ord_P(f))$. This includes $f=0$: the zero coordinate is omitted from the minimum and $ord_P(0)=0$.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。对每个处 $P$ 和 $f∈K$，$(1,f)$ 的非零分量的最小阶为 $min(0,ord_P(f))$。包括 $f=0$：取最小时略去零分量，而 $ord_P(0)=0$。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。すべての場所 $P$ と $f∈K$ に対し、$(1,f)$ の非零成分の位数の最小値は $min(0,ord_P(f))$ である。$f=0$ も含む。この場合、零成分は最小値から除かれ、$ord_P(0)=0$ である。"
+      },
+      "english_readback_sha256": "bd59f5a5bc41ff6809510cfc2d8673aca69ef3c9efc92a6ed2093318fc772567",
+      "translation_of_english_sha256": "bd59f5a5bc41ff6809510cfc2d8673aca69ef3c9efc92a6ed2093318fc772567"
+    },
+    {
+      "declaration_name": "tupleHeight_pairOne_eq_functionHeight",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.tupleHeight_pairOne_eq_functionHeight",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "source_sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+      "signature_start_line": 45,
+      "signature_end_line": 47,
+      "raw_signature": "theorem tupleHeight_pairOne_eq_functionHeight {N : ℕ} (M : Model N) [IsCurveField M.K]\n    (f : M.K) (x : QbarPoint M.K) :\n    tupleHeight (pairOne f) x = functionHeight M f x",
+      "raw_signature_sha256": "71e03d9b25d160f8aa32633a59b525a1b75dbc789dbad7679d44f33ba1e6c097",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper",
+        "PolarTuple"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 18,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 14,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [
+        "set_option autoImplicit false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $N∈ℕ$ and let $M$ be a model consisting of a subfield $K⊆\\overline{ℚ(T)}$, elements $u,v∈K$, with $u$ transcendental over $ℚ$, $u^N+v^N=1$, $K=ℚ(u,v)$, and $K/ℚ(u)$ finite of degree $N$. Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. For a finite tuple $s$ in $K$, $m_P(s)$ is the least $ord_P(s_i)$ among nonzero entries, and is zero if all entries vanish. At $x=(P,σ)$ choose a nonzero coordinate $s_j$ with this least order and put $h_s(x)=h(((s_i/s_j)(x))_i)$; put $h_s(x)=0$ for the zero tuple. Define $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$ when $f∈O_P$, and $h_f(x)=0$ when $f∉O_P$ (a pole). Here the scalar relative height means the height of $[1:f(x)]$, measured in its generated field; a regular value zero also has height zero. Assume additionally the supplied curve-field structure on $M.K=K$. For every $f∈K$ and every point $x$, $h_{(1,f)}(x)=h_f(x)$. The equality covers regular values, zeros, and poles, with the generated-value-field normalization on the right and the tuple normalization on the left.",
+        "zh_Hans": "设 $N∈ℕ$，模型 $M$ 由子域 $K⊆\\overline{ℚ(T)}$ 和元素 $u,v∈K$ 构成，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$K=ℚ(u,v)$，且 $K/ℚ(u)$ 是次数为 $N$ 的有限扩张。设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。对 $K$ 中的有限元组 $s$，$m_P(s)$ 是所有非零分量的 $ord_P(s_i)$ 的最小值；若全部分量为零，则取零。在 $x=(P,σ)$ 处，选取达到此最小阶的非零分量 $s_j$，定义 $h_s(x)=h(((s_i/s_j)(x))_i)$；零元组则定义为 $h_s(x)=0$。当 $f∈O_P$ 时，定义 $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$；当 $f∉O_P$，即为极点时，定义 $h_f(x)=0$。这里标量的相对高度指 $[1:f(x)]$ 在函数值生成域中的高度；正则值为零时高度也为零。另外假设给定 $M.K=K$ 的曲线函数域结构。对任意 $f∈K$ 和每个点 $x$，有 $h_{(1,f)}(x)=h_f(x)$。等式涵盖正则值、零值和极点；右边使用函数值生成域的归一化，左边使用元组的归一化。",
+        "ja": "$N∈ℕ$ とし、モデル $M$ は部分体 $K⊆\\overline{ℚ(T)}$ と元 $u,v∈K$ からなり、$u$ は $ℚ$ 上超越的、$u^N+v^N=1$、$K=ℚ(u,v)$、かつ $K/ℚ(u)$ は次数 $N$ の有限拡大であるとする。$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。$K$ の有限の組 $s$ に対し、$m_P(s)$ は非零成分の $ord_P(s_i)$ の最小値であり、全成分が零なら零とする。$x=(P,σ)$ でこの最小位数を持つ非零成分 $s_j$ を選び、$h_s(x)=h(((s_i/s_j)(x))_i)$ と定める。零の組には $h_s(x)=0$ を用いる。$f∈O_P$ のとき $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$、$f∉O_P$、すなわち極のとき $h_f(x)=0$ と定める。スカラーの相対高さは、値の生成体で測った $[1:f(x)]$ の高さを意味する。正則な値が零のときも高さは零である。さらに $M.K=K$ の曲線関数体構造が与えられているとする。任意の $f∈K$ とすべての点 $x$ に対し $h_{(1,f)}(x)=h_f(x)$ である。等式は正則な値、零の値、極を含む。右辺は値の生成体による正規化、左辺は組による正規化を用いる。"
+      },
+      "english_readback_sha256": "fea7dbcef0b82b99e6fa7f8d637a5a4f7996262f0b47219d93f500eaec86d381",
+      "translation_of_english_sha256": "fea7dbcef0b82b99e6fa7f8d637a5a4f7996262f0b47219d93f500eaec86d381"
+    },
+    {
+      "declaration_name": "minOrd_pairOne_eq_neg_pole",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTuple.minOrd_pairOne_eq_neg_pole",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "source_sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+      "signature_start_line": 59,
+      "signature_end_line": 61,
+      "raw_signature": "theorem minOrd_pairOne_eq_neg_pole {N : ℕ} (M : Model N) [IsCurveField M.K]\n    (hDVR : PlacesDiscrete M) (P : Place M.K) (f : M.K) :\n    minOrd P (pairOne f) = -poleMultiplicity M hDVR f P",
+      "raw_signature_sha256": "3300812e99b84a9d9c2fbe44e2767ccf736e3e8c4fb84a27c7c4c856d9cbaa28",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper",
+        "PolarTuple"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [
+        {
+          "line": 18,
+          "raw": "variable {K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        }
+      ],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 14,
+          "raw": "open scoped Classical"
+        }
+      ],
+      "source_options_seen": [
+        "set_option autoImplicit false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $N∈ℕ$ and let $M$ be a model consisting of a subfield $K⊆\\overline{ℚ(T)}$, elements $u,v∈K$, with $u$ transcendental over $ℚ$, $u^N+v^N=1$, $K=ℚ(u,v)$, and $K/ℚ(u)$ finite of degree $N$. Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. Assume the supplied curve-field structure on $K=M.K$ and a proof $hDVR$ that $O_P$ is a discrete valuation ring at every place. For every place $P$ and $f∈K$, $m_P((1,f))=-max(0,-ord_{M,hDVR,P}(f))$, where $m_P$ is the least order among the nonzero coordinates and $ord_{M,hDVR,P}$ is the normalized discrete order defined using $hDVR$. This is the negative of the defined pole multiplicity, including multiplicity zero for $f=0$.",
+        "zh_Hans": "设 $N∈ℕ$，模型 $M$ 由子域 $K⊆\\overline{ℚ(T)}$ 和元素 $u,v∈K$ 构成，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$K=ℚ(u,v)$，且 $K/ℚ(u)$ 是次数为 $N$ 的有限扩张。设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。假设给定 $K=M.K$ 的曲线函数域结构，以及证明 $hDVR$，表明每个处的 $O_P$ 都是离散赋值环。对每个处 $P$ 和 $f∈K$，有 $m_P((1,f))=-max(0,-ord_{M,hDVR,P}(f))$，其中 $m_P$ 为非零分量的最小阶，$ord_{M,hDVR,P}$ 是使用 $hDVR$ 定义的归一化离散阶。它是所定义极点重数的相反数，包括 $f=0$ 时重数为零的情形。",
+        "ja": "$N∈ℕ$ とし、モデル $M$ は部分体 $K⊆\\overline{ℚ(T)}$ と元 $u,v∈K$ からなり、$u$ は $ℚ$ 上超越的、$u^N+v^N=1$、$K=ℚ(u,v)$、かつ $K/ℚ(u)$ は次数 $N$ の有限拡大であるとする。$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。$K=M.K$ の曲線関数体構造と、すべての場所で $O_P$ が離散付値環であることの証明 $hDVR$ が与えられているとする。すべての場所 $P$ と $f∈K$ に対し $m_P((1,f))=-max(0,-ord_{M,hDVR,P}(f))$ である。$m_P$ は非零成分の位数の最小値、$ord_{M,hDVR,P}$ は $hDVR$ を用いて定義した正規化離散位数である。これは定義された極の重複度の負であり、$f=0$ の重複度は零である。"
+      },
+      "english_readback_sha256": "e91c30f733bc28426aafe86d4d69ce7c82402bff6b1e6762b7567b0598b552e5",
+      "translation_of_english_sha256": "e91c30f733bc28426aafe86d4d69ce7c82402bff6b1e6762b7567b0598b552e5"
+    },
+    {
+      "declaration_name": "PolarTupleHeightMonotonicity",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.PolarTupleHeightMonotonicity",
+      "kind": "def",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "source_sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+      "signature_start_line": 73,
+      "signature_end_line": 73,
+      "raw_signature": "def PolarTupleHeightMonotonicity : Prop",
+      "raw_signature_sha256": "da14bb2eece998322825b72bec754f7680765ce4f326c7c8f83258547ca431c7",
+      "raw_definition": "def PolarTupleHeightMonotonicity : Prop :=\n  ∀ {K : Type} [Field K] [CharZero K] [IsCurveField K]\n    {ι κ : Type} [Fintype ι] [Fintype κ]\n    (s : ι → K) (t : κ → K)\n    (hs : ∃ i, s i ≠ 0) (ht : ∃ j, t j ≠ 0)\n    (hle : ∀ P : Place K, minOrd P t ≤ minOrd P s),\n    ∃ C : ℝ, ∀ x : QbarPoint K, tupleHeight s x ≤ tupleHeight t x + C",
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 14,
+          "raw": "open scoped Classical"
+        },
+        {
+          "line": 68,
+          "raw": "open PolarTuple"
+        }
+      ],
+      "source_options_seen": [
+        "set_option autoImplicit false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. For a finite tuple $s$ in $K$, $m_P(s)$ is the least $ord_P(s_i)$ among nonzero entries, and is zero if all entries vanish. At $x=(P,σ)$ choose a nonzero coordinate $s_j$ with this least order and put $h_s(x)=h(((s_i/s_j)(x))_i)$; put $h_s(x)=0$ for the zero tuple. This defines a proposition requiring the following for every such field $K$ whose underlying type lies in $Type$ (universe zero), every pair of finite index types $ι,κ$ in $Type$ with enumerations, and every $s:ι→K$, $t:κ→K$: if each tuple has a nonzero coordinate and $m_P(t)≤m_P(s)$ for all places $P$, then there exists $C∈ℝ$ such that $h_s(x)≤h_t(x)+C$ for all points $x=(P,σ)$. Thus $C$ may depend on $K,s,t$ but is chosen before $x$ and is uniform in all places, embeddings, and full point-field degrees. The definition asserts this condition as a proposition; it does not itself supply a proof of it.",
+        "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。对 $K$ 中的有限元组 $s$，$m_P(s)$ 是所有非零分量的 $ord_P(s_i)$ 的最小值；若全部分量为零，则取零。在 $x=(P,σ)$ 处，选取达到此最小阶的非零分量 $s_j$，定义 $h_s(x)=h(((s_i/s_j)(x))_i)$；零元组则定义为 $h_s(x)=0$。此处定义一个命题，要求对底层类型属于 $Type$（零层宇宙）的每个这样的域 $K$、属于 $Type$ 且配有枚举的任意一对有限指标类型 $ι,κ$，以及任意 $s:ι→K$、$t:κ→K$，都满足：若两个元组各有非零分量，且所有处 $P$ 都有 $m_P(t)≤m_P(s)$，则存在 $C∈ℝ$，使所有点 $x=(P,σ)$ 都有 $h_s(x)≤h_t(x)+C$。因此 $C$ 可依赖 $K,s,t$，但在 $x$ 之前选定，对所有处、嵌入和完整点域次数一致。此定义只把该条件定义为命题，并不自身提供其证明。",
+        "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。$K$ の有限の組 $s$ に対し、$m_P(s)$ は非零成分の $ord_P(s_i)$ の最小値であり、全成分が零なら零とする。$x=(P,σ)$ でこの最小位数を持つ非零成分 $s_j$ を選び、$h_s(x)=h(((s_i/s_j)(x))_i)$ と定める。零の組には $h_s(x)=0$ を用いる。これは、台の型が $Type$（宇宙零）に属するすべてのこのような体 $K$、$Type$ に属する列挙付きの任意の有限添字型 $ι,κ$、およびすべての $s:ι→K$、$t:κ→K$ に対し、次の条件を要求する命題を定義する。両方の組が非零成分を持ち、すべての場所 $P$ で $m_P(t)≤m_P(s)$ なら、実数 $C$ が存在し、すべての点 $x=(P,σ)$ で $h_s(x)≤h_t(x)+C$ である。$C$ は $K,s,t$ に依存してよいが、$x$ の前に選ばれ、すべての場所、埋め込み、完全な点の体の次数に関して一様である。この定義は条件を命題として定めるものであり、それ自体はその証明を与えない。"
+      },
+      "english_readback_sha256": "6383cb2a76f31d1fdc7a4ba9d5d4cb0f9b516757ef3a816d5ce7fcc5c2cef2b8",
+      "translation_of_english_sha256": "6383cb2a76f31d1fdc7a4ba9d5d4cb0f9b516757ef3a816d5ce7fcc5c2cef2b8"
+    },
+    {
+      "declaration_name": "polarPresentationHeightSum_of_tupleMonotonicity",
+      "qualified_logical_name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_tupleMonotonicity",
+      "kind": "theorem",
+      "private": false,
+      "compiler_private_name": null,
+      "compiler_private_name_status": "not applicable: source declaration is public",
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "source_sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+      "signature_start_line": 83,
+      "signature_end_line": 91,
+      "raw_signature": "theorem polarPresentationHeightSum_of_tupleMonotonicity\n    (hMono : PolarTupleHeightMonotonicity) {N : ℕ}\n    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)\n    (D E : Divisor M) (RD : PolarPresentation M hDVR D)\n    (RE : PolarPresentation M hDVR E) (f r : M.K) (hr : r ≠ 0)\n    (hrel : ∀ P : Place M.K,\n      D P + E P = poleMultiplicity M hDVR f P + ord M hDVR P r) :\n    ∃ C : ℝ, ∀ x : QbarPoint M.K,\n      |divHeight RD x + divHeight RE x - functionHeight M f x| ≤ C",
+      "raw_signature_sha256": "6b0c75427c69fd79622e12b8db807f30aeb18abe99c8d45e755be376c4a24663",
+      "raw_definition": null,
+      "namespace_context": [
+        "AbcAdaptation.Tripod.Fermat.Proper"
+      ],
+      "section_context": [],
+      "ambient_variable_commands": [],
+      "ambient_include_omit_commands": [],
+      "ambient_open_commands": [
+        {
+          "line": 14,
+          "raw": "open scoped Classical"
+        },
+        {
+          "line": 68,
+          "raw": "open PolarTuple"
+        }
+      ],
+      "source_options_seen": [
+        "set_option autoImplicit false"
+      ],
+      "parameter_status": "Source-only, unelaborated. Explicit and implicit source binders are preserved verbatim. Exact section-variable generalization, generated instance binders, and universe parameters have not been checked by the Lean elaborator; ambient variables are context, not a claim that all are parameters.",
+      "readback": {
+        "en": "Let $N∈ℕ$ and let $M$ be a model consisting of a subfield $K⊆\\overline{ℚ(T)}$, elements $u,v∈K$, with $u$ transcendental over $ℚ$, $u^N+v^N=1$, $K=ℚ(u,v)$, and $K/ℚ(u)$ finite of degree $N$. Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. For a finite tuple $s$ in $K$, $m_P(s)$ is the least $ord_P(s_i)$ among nonzero entries, and is zero if all entries vanish. At $x=(P,σ)$ choose a nonzero coordinate $s_j$ with this least order and put $h_s(x)=h(((s_i/s_j)(x))_i)$; put $h_s(x)=0$ for the zero tuple. Define $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$ when $f∈O_P$, and $h_f(x)=0$ when $f∉O_P$ (a pole). Here the scalar relative height means the height of $[1:f(x)]$, measured in its generated field; a regular value zero also has height zero. Assume that for every characteristic-zero curve field $L$ finite over $ℚ(t)$ for some transcendental $t$, and every two finite nonzero tuples $s,t$ over $L$, the inequalities $min_{j:t_j≠0}ord_P(t_j)≤min_{i:s_i≠0}ord_P(s_i)$ at all proper rational valuation subrings imply a real bound $h_s(x)≤h_t(x)+C_{s,t}$ for all algebraic points, with $C_{s,t}$ chosen before the point; these fields and finite index types lie in universe zero. Suppose $hDVR$ makes every $O_P$ a discrete valuation ring, and $hRF$ makes every residue field $k(P)$ finite dimensional over $ℚ$. Let $D,E$ be any finitely supported integer functions on the places. Define $p_a(P)=max(0,-ord_{M,hDVR,P}(a))$. Choose arbitrary polar presentations $R_D=(a_D,b_D)$ and $R_E=(a_E,b_E)$ with $D(P)=p_{a_D}(P)-p_{b_D}(P)$ and $E(P)=p_{a_E}(P)-p_{b_E}(P)$ at every place, and set $h_{R_D}(x)=h_{a_D}(x)-h_{b_D}(x)$ and likewise for $R_E$. For arbitrary $f,r∈K$ with $r≠0$, assume $D(P)+E(P)=p_f(P)+ord_{M,hDVR,P}(r)$ for every place. Then there exists one real $C$ such that $|h_{R_D}(x)+h_{R_E}(x)-h_f(x)|≤C$ for every point $x=(P,σ)$. The bound may depend on the model, supplied data, both arbitrary presentations, $f,r$, and the monotonicity hypothesis, but not on the point, its embedding, or the degree of its full field. No nonzero assumption on $f$ or on presentation functions is imposed.",
+        "zh_Hans": "设 $N∈ℕ$，模型 $M$ 由子域 $K⊆\\overline{ℚ(T)}$ 和元素 $u,v∈K$ 构成，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$K=ℚ(u,v)$，且 $K/ℚ(u)$ 是次数为 $N$ 的有限扩张。设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。对 $K$ 中的有限元组 $s$，$m_P(s)$ 是所有非零分量的 $ord_P(s_i)$ 的最小值；若全部分量为零，则取零。在 $x=(P,σ)$ 处，选取达到此最小阶的非零分量 $s_j$，定义 $h_s(x)=h(((s_i/s_j)(x))_i)$；零元组则定义为 $h_s(x)=0$。当 $f∈O_P$ 时，定义 $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$；当 $f∉O_P$，即为极点时，定义 $h_f(x)=0$。这里标量的相对高度指 $[1:f(x)]$ 在函数值生成域中的高度；正则值为零时高度也为零。假设对每个特征为零、在某个超越元生成的 $ℚ(t)$ 上有限的曲线函数域 $L$，以及其上任意两个有限非零元组 $s,t$，若所有包含有理数的真赋值子环处都有 $min_{j:t_j≠0}ord_P(t_j)≤min_{i:s_i≠0}ord_P(s_i)$，则存在在点之前选定的实常数 $C_{s,t}$，使全部代数点都有 $h_s(x)≤h_t(x)+C_{s,t}$；这里的域和有限指标类型属于零层宇宙。假设 $hDVR$ 表明每个 $O_P$ 都是离散赋值环，$hRF$ 表明每个剩余域 $k(P)$ 都在 $ℚ$ 上有限维。设 $D,E$ 是处上的任意有限支撑整数值函数，定义 $p_a(P)=max(0,-ord_{M,hDVR,P}(a))$。任取极点表示 $R_D=(a_D,b_D)$ 和 $R_E=(a_E,b_E)$，使每个处都有 $D(P)=p_{a_D}(P)-p_{b_D}(P)$、$E(P)=p_{a_E}(P)-p_{b_E}(P)$，并令 $h_{R_D}(x)=h_{a_D}(x)-h_{b_D}(x)$，$R_E$ 同理。对任意 $f,r∈K$ 且 $r≠0$，假设每个处都有 $D(P)+E(P)=p_f(P)+ord_{M,hDVR,P}(r)$。那么存在一个实数 $C$，使每个点 $x=(P,σ)$ 都有 $|h_{R_D}(x)+h_{R_E}(x)-h_f(x)|≤C$。此界可依赖模型、给定数据、任意选取的两个表示、$f,r$ 和单调性假设，但不依赖点、嵌入或其完整点域的次数。不要求 $f$ 或表示中的函数非零。",
+        "ja": "$N∈ℕ$ とし、モデル $M$ は部分体 $K⊆\\overline{ℚ(T)}$ と元 $u,v∈K$ からなり、$u$ は $ℚ$ 上超越的、$u^N+v^N=1$、$K=ℚ(u,v)$、かつ $K/ℚ(u)$ は次数 $N$ の有限拡大であるとする。$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。$K$ の有限の組 $s$ に対し、$m_P(s)$ は非零成分の $ord_P(s_i)$ の最小値であり、全成分が零なら零とする。$x=(P,σ)$ でこの最小位数を持つ非零成分 $s_j$ を選び、$h_s(x)=h(((s_i/s_j)(x))_i)$ と定める。零の組には $h_s(x)=0$ を用いる。$f∈O_P$ のとき $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$、$f∉O_P$、すなわち極のとき $h_f(x)=0$ と定める。スカラーの相対高さは、値の生成体で測った $[1:f(x)]$ の高さを意味する。正則な値が零のときも高さは零である。標数零で、ある超越元が生成する $ℚ(t)$ 上有限なすべての曲線関数体 $L$ と、その上の任意の有限非零の組 $s,t$ について、すべての有理数を含む真の付値部分環で $min_{j:t_j≠0}ord_P(t_j)≤min_{i:s_i≠0}ord_P(s_i)$ なら、点の前に選ばれる実定数 $C_{s,t}$ が存在し、全代数点で $h_s(x)≤h_t(x)+C_{s,t}$ となると仮定する。ここで体と有限添字型は宇宙零に属する。$hDVR$ によりすべての $O_P$ が離散付値環、$hRF$ によりすべての剰余体 $k(P)$ が $ℚ$ 上有限次元であるとする。$D,E$ は場所上の任意の有限台の整数値関数とし、$p_a(P)=max(0,-ord_{M,hDVR,P}(a))$ と定める。すべての場所で $D(P)=p_{a_D}(P)-p_{b_D}(P)$、$E(P)=p_{a_E}(P)-p_{b_E}(P)$ を満たす任意の極表示 $R_D=(a_D,b_D)$、$R_E=(a_E,b_E)$ を選び、$h_{R_D}(x)=h_{a_D}(x)-h_{b_D}(x)$、$R_E$ に対しても同様に定める。任意の $f,r∈K$ で $r≠0$ とし、すべての場所で $D(P)+E(P)=p_f(P)+ord_{M,hDVR,P}(r)$ と仮定する。このとき一つの実数 $C$ が存在し、すべての点 $x=(P,σ)$ で $|h_{R_D}(x)+h_{R_E}(x)-h_f(x)|≤C$ である。上界はモデル、与えられたデータ、任意に選んだ両表示、$f,r$、単調性の仮定に依存してよいが、点、埋め込み、完全な点の体の次数には依存しない。$f$ や表示の関数の非零性は仮定しない。"
+      },
+      "english_readback_sha256": "6605d254dcf78e6d0a2a5d76de3a45f38aafd16be46886c07bbfd60654b0fdad",
+      "translation_of_english_sha256": "6605d254dcf78e6d0a2a5d76de3a45f38aafd16be46886c07bbfd60654b0fdad"
+    }
+  ],
+  "separate_source_observations": {
+    "proof_correctness_judgment": null,
+    "principal_factor_construction": {
+      "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+      "lines": [
+        93,
+        97
+      ],
+      "text": "Separate source observation, not an extra theorem premise or correctness assessment: the parent proof sets s from the numerator presentation pairs, d from the denominator pairs, t₀ from (1,f) times d, and t=r⁻¹·t₀. The principal factor is the inverse of r, while the statement retains +ord(r) in D+E=polar(f)+div(r).",
+      "formal_construction": "s_(i,j)=(1,a_D)_i(1,a_E)_j; d_(i,j)=(1,b_D)_i(1,b_E)_j; t₀_(k,i,j)=(1,f)_k d_(i,j); t_(k,i,j)=r⁻¹ t₀_(k,i,j).",
+      "readback": {
+        "en": "Source construction only, without a proof-correctness assessment: the tuples are s=(1,a_D)×(1,a_E), d=(1,b_D)×(1,b_E), t₀=(1,f)×d, and t=r⁻¹·t₀. The factor is the inverse of the nonzero principal function r, whereas the theorem premise has +ord(r).",
+        "zh_Hans": "仅记录源码构造，不评价证明正确性：元组为 s=(1,a_D)×(1,a_E)、d=(1,b_D)×(1,b_E)、t₀=(1,f)×d，以及 t=r⁻¹·t₀。所用因子是非零主函数 r 的逆，而定理前提中是 +ord(r)。",
+        "ja": "証明の正しさを評価せず、ソースの構成のみを記録する。組は s=(1,a_D)×(1,a_E)、d=(1,b_D)×(1,b_E)、t₀=(1,f)×d、t=r⁻¹·t₀ である。因子は非零の主関数 r の逆元であり、定理の仮定には +ord(r) が現れる。"
+      }
+    },
+    "inferred_parameters": "Exact inferred section parameters and universes are unelaborated. Source binders and section context are preserved for all records. No compiler-generated private identifiers can be certified without elaboration; target sources contain no private declarations.",
+    "notation": "Readbacks use standard mathematical notation. h_s denotes the defined tuple height; h_f denotes the defined function height, with subscript interpretation stated in each paragraph. No point carrier is quotiented by embeddings.",
+    "terminology": "No unsettled six-term project glossary entries occur. Japanese mathematical terms here follow ordinary domain usage or direct compositional analogy, not a claimed quotation from Japanese references."
+  }
+}

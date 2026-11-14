@@ -1,0 +1,184 @@
+{
+  "review_kind": "read_only_static_source_and_shape_review",
+  "review_date": "2026-11-14",
+  "candidate_root": "/tmp/p2m-polar-presentation-height-next-20261114",
+  "review_scope": [
+    "PresentationHeights",
+    "TupleHeight",
+    "MinOrd",
+    "PointAdapters",
+    "exact theorem wrapper",
+    "actual Belyi consumer",
+    "pinned source ledger and import closure"
+  ],
+  "verdict": "No concrete mathematical, signature, source-fidelity, or import-cycle blocker found. Candidate remains uncompiled and unaccepted.",
+  "concrete_blockers": [],
+  "verified": [
+    {
+      "claim": "Exact original theorem signature retained",
+      "evidence": [
+        "drafts/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.lean:14",
+        "Current main theorem statement compared after whitespace normalization; equal."
+      ]
+    },
+    {
+      "claim": "Arbitrary supplied RD and RE are consumed without replacement",
+      "evidence": [
+        "drafts/Solutions/Source_FermatPolarPresentationHeights.lean:86",
+        "Numerator tuples use RD.f and RE.f; denominator tuple uses RD.g and RE.g; only their divisor_eq fields are used. No canonical replacement or strengthened presentation hypothesis."
+      ]
+    },
+    {
+      "claim": "Full proper places and every residue embedding are retained",
+      "evidence": [
+        "Definitions/Def_FermatProperCarrier.lean:55,84",
+        "drafts/Solutions/Source_FermatPolarPresentationHeights.lean:90,92,104",
+        "QbarPoint contains arbitrary P and arbitrary residue embedding sigma; all points remain in the theorem quantifier, with no affine, degree or good-value restriction."
+      ]
+    },
+    {
+      "claim": "Projective function height and actual minimal value field match, including poles",
+      "evidence": [
+        "drafts/Solutions/Source_FermatPolarPresentationHeights.lean:45",
+        "drafts/Solutions/Source_FermatPolarTupleHeight.lean:262,281",
+        "drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean:216",
+        "Definitions/Def_AbcTripod.lean:46",
+        "Regular branch rewrites to Height.logHeight1 of gen divided by actual degree; deg_eq_finrank identifies denominator. Pole branch evaluates normalized pair to [0:1] and gives zero."
+      ]
+    },
+    {
+      "claim": "Full point field is used in global comparison",
+      "evidence": [
+        "drafts/Solutions/Source_FermatPolarPointAdapters.lean:18",
+        "drafts/Solutions/Source_FermatPolarIntegrality.lean:301,380,609",
+        "fieldOf is sigma.toRatAlgHom.fieldRange, not Q(f(x)); global estimate ranges over all InfinitePlace and FinitePlace of that full field. Existing residue finiteDimensional instance supplies its finiteness."
+      ]
+    },
+    {
+      "claim": "Principal factor sign is r inverse",
+      "evidence": [
+        "drafts/Solutions/Source_FermatPolarPresentationHeights.lean:98,100,113",
+        "A_s=-minOrd(s); given D+E=pole(f)+ord(r), minOrd(numerators)=minOrd(pair(f)*denominators)-ord(r), exactly the minOrd of r^-1 times that tuple."
+      ]
+    },
+    {
+      "claim": "minOrd relation handles zero functions and arbitrary proper places",
+      "evidence": [
+        "drafts/Solutions/Source_FermatPolarPresentationHeights.lean:25,59,104",
+        "Each pairOne has first coordinate 1, so every tuple has a nonzero coordinate even when functions vanish identically. minOrd_pairOne excludes zero entries; Place.ord_zero=0 and poleMultiplicity zero agree. heq derives equality for every P from the supplied coefficient relation."
+      ]
+    },
+    {
+      "claim": "Uniform constant is selected before the point",
+      "evidence": [
+        "drafts/Solutions/Source_FermatPolarPresentationHeights.lean:117",
+        "Two applications of monotonicity obtain C1 and C2 before introducing x; max C1 C2 bounds both inequalities. Integrality similarly constructs constants before x."
+      ]
+    },
+    {
+      "claim": "Conditional boundary is discharged by full source-body theorem",
+      "evidence": [
+        "drafts/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.lean:22",
+        "drafts/Solutions/Source_FermatPolarIntegrality.lean:509",
+        "hMono is proved by tupleHeight_le_of_minOrd_le; it is not an added premise of the original theorem."
+      ]
+    },
+    {
+      "claim": "Actual existing consumer is exact",
+      "evidence": [
+        "drafts/Solutions/Checks_FermatPolarPresentationHeights.lean:17",
+        "Solutions/Source_FermatBelyiHeightComparison.lean:28",
+        "Checks applies belyiHeightRelation_of_children to this exact theorem, retaining the independent geometry input. The existing consumer supplies its actual canonical and cusp presentations."
+      ]
+    },
+    {
+      "claim": "Import closure has no circular import or hidden target assumption",
+      "evidence": [
+        "26 local modules visited through draft-over-current-workspace overlay from Solutions.Checks_FermatPolarPresentationHeights",
+        "No cycles, missing direct import paths, forbidden upstream/project imports, proof-hole tokens, axiom declarations or unsafe declarations in local closure. Optional Source_FermatPolarLinearEquiv is absent from that closure."
+      ]
+    },
+    {
+      "claim": "Pinned copied references and candidate files match ledger hashes",
+      "evidence": [
+        "All six reference copies match source_sha256 at Heights commit 721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+        "All draft files match recorded draft hashes. Existing local inputs match except main theorem changed during root integration; see metadata note."
+      ]
+    },
+    {
+      "claim": "Current named local adapter APIs exist with matching shapes",
+      "evidence": [
+        "Definitions/Def_FermatCurveFieldResidue.lean:34,64",
+        "Definitions/Def_FermatNoncriticalFunctions.lean:74,77,85,101",
+        "Definitions/Def_FermatNoncriticalElementarySource.lean:23,28",
+        "Model.isCurveField is Prop-valued, so reintroducing its local instance does not create a distinct data choice; ord_eq_placeOrd is rfl."
+      ]
+    }
+  ],
+  "unverified_api_risks": [
+    {
+      "kind": "elaboration",
+      "severity": "unverified",
+      "files": [
+        "Source_FermatPolarPresentationHeights.lean",
+        "Source_FermatPolarTupleHeight.lean",
+        "Source_FermatPolarPointAdapters.lean"
+      ],
+      "detail": "Dependent evaluation membership proofs, definitional conversion among local Qbar aliases, and gen/fieldOf denominator rewrites have been inspected statically but not elaborated."
+    },
+    {
+      "kind": "import_sufficiency",
+      "severity": "unverified",
+      "files": [
+        "Source_FermatPolarAbsoluteExtension.lean",
+        "Source_FermatPolarAbsoluteBasic.lean",
+        "Source_FermatPolarRootBound.lean",
+        "Source_FermatPolarIntegrality.lean"
+      ],
+      "detail": "Every direct module path exists, but replacing upstream import Mathlib by selective imports can leave tactic or theorem exports unavailable. Declaration existence alone is not elaboration evidence."
+    },
+    {
+      "kind": "upstream_mathlib_migration",
+      "severity": "unverified",
+      "files": [
+        "Source_FermatPolarAbsoluteExtension.lean",
+        "Source_FermatPolarAbsoluteBasic.lean",
+        "Source_FermatPolarRootBound.lean",
+        "Source_FermatPolarIntegrality.lean"
+      ],
+      "detail": "Long adapted proof bodies target Lean v4.33.1 with Mathlib 0df444a360eaa60ab8c11dca51a86af692955474. These bodies require scheduler compilation to establish compatibility and resource bounds."
+    },
+    {
+      "kind": "axiom_acceptance",
+      "severity": "unverified",
+      "files": [
+        "Checks_FermatPolarPresentationHeights.lean"
+      ],
+      "detail": "Print-axioms commands exist but have not executed. Static absence of sorry/admit/axiom is not an axiom audit; sorryAx and all printed axioms still need terminal CI receipts."
+    }
+  ],
+  "resolved_static_concerns": [
+    {
+      "location": "drafts/Solutions/Source_FermatPolarMinOrd.lean:73",
+      "detail": "No add_le_add_right blocker: current global Mathlib theorem is generated from mul_le_mul_right in Algebra/Order/Monoid/Unbundled/Basic.lean:70 and adds the same term on the left. Do not confuse it with qualified Int.add_le_add_right."
+    }
+  ],
+  "metadata_notes": [
+    {
+      "kind": "expected_main_input_drift_during_root_integration",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.lean",
+      "ledger_sha256": "5fa12ac6a0612f30c3ec9db79e4818716d78b88d7e81da97944d5ccb4734d4b7",
+      "observed_sha256": "aa092ab39b4287627d7f23800ab8b81b176339f780d64b9cceacba4ec9be51a3",
+      "action": "Record integrated actual input hashes in final acceptance manifest/ledger. Statement equality remains true."
+    }
+  ],
+  "actions_performed": {
+    "compile": false,
+    "MCP_CI": false,
+    "external_API": false,
+    "git": false,
+    "main_workspace_edits": false,
+    "subagents": false
+  },
+  "acceptance_boundary": "Static result only; root must integrate, submit exclusive MCP-CI, inspect receipts and axioms, and run required logical-unit acceptance. This review does not complete the mathematical parent or Fermat route."
+}

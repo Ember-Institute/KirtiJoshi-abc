@@ -1,0 +1,134 @@
+{
+  "review_kind": "read_only_static_delivery_and_finalize_review",
+  "review_date": "2026-11-14",
+  "unit": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/polar-presentation-height-sourceproof-20261114",
+  "script_sha256": {
+    "delivery.py": "925830213e7d66439530f25f987c7056d58ea1cdf8f92d0d422a5aa23f8e6e97",
+    "finalize.py": "09e1c1c1e32eedf5c6cc5719eed3a451220499183137bbea12c9e4fe7cc57d27"
+  },
+  "verdict": "Delivery/finalization design satisfies the requested gates statically. One concrete current source-consumer schema gap was reported and root has committed to populate it from the successful compiler graph before finalization. Generated solution and final receipts still require actual independent acceptance.",
+  "concrete_findings": [
+    {
+      "id": "ledger-declarations",
+      "severity": "blocking_until_populated",
+      "file": "finalize.py",
+      "line": 285,
+      "finding": "Current source-consumer.json has no declarations key, but finalizer iterates source[declarations].",
+      "root_resolution": "Root will populate authored helper names/modules/spans, pinned module sources, actual direct type/value consumers, and retained/unused status from successful compiler graph; no completion rows are to be invented.",
+      "verification_status": "Resolution announced by root, not yet read back in this review."
+    }
+  ],
+  "verified_static": [
+    {
+      "topic": "minimal closure",
+      "evidence": [
+        "delivery.py:163-182",
+        "delivery.py:184-225"
+      ],
+      "finding": "Closure traverses elaborated typeDeps and valueDeps from exact target, plus every helper instance as explicit extra root. Authored helper rows are filtered after transitive reachability. All helper modules must be present in graph. This retains class instances which elaborated terms might otherwise omit."
+    },
+    {
+      "topic": "whole-command source ranges",
+      "evidence": [
+        "delivery.py:205-216",
+        "ExtractPolarHeightSyntax.lean:35"
+      ],
+      "finding": "cmdStart is correctly treated as a range object; start=cmdStart.start.offset and end=cmdEnd.offset, and cmdStart.end.offset must equal end. Removes entire outer command including open/omit-in wrapper and docstring; detects overlaps before reverse-order byte edits. UTF-8 byte offsets match read_bytes slicing."
+    },
+    {
+      "topic": "raw source solution binder",
+      "evidence": [
+        "delivery.py:70-78",
+        "delivery.py:227-236"
+      ],
+      "finding": "Solution copies declaration header bytes, only substitutes solution for target name, and explicitly requires theorem solution {N : Nat} source form. Target wrapper is renamed closedPolarHeightSource inside preserved namespace context. The target theorem module itself is not imported."
+    },
+    {
+      "topic": "original platform forall alias",
+      "evidence": [
+        "delivery.py:239-254"
+      ],
+      "finding": "Original platform formal_statement is independently reconstructed as PlatformOriginalType := solution; compiler Meta.isDefEq compares its type to solution, and collectAxioms restricts solution to propext/Classical.choice/Quot.sound. This establishes the source binder presentation against original forall type rather than treating pretty-printed text as source."
+    },
+    {
+      "topic": "all 121 source readback bindings",
+      "evidence": [
+        "delivery.py:85-147",
+        "delivery.py:306-317",
+        "finalize.py:134-157"
+      ],
+      "finding": "Packets contain 76+44+1=121 rows. bind checks original source hashes, exact raw signature suffix, unique current graph owner with source span, current type and parser span; per-helper parser command names/counts exactly match bound rows including unused declarations. Reused target makes 122 rows and requires exact previous compiler type equality. Finalizer checks unique names and graph/module/source-hash equality."
+    },
+    {
+      "topic": "independent retained binder review mandatory",
+      "evidence": [
+        "delivery.py:309-317",
+        "finalize.py:147-157"
+      ],
+      "finding": "preflight requires passed compiler-readback-type-review with current graph hash, all original packet hashes, and exactly the 121 helper names. Each row must pass with exact compiler type and current source hash. No source-only historical parameter notes are presented as compiler review."
+    },
+    {
+      "topic": "independent final delivery review mandatory",
+      "evidence": [
+        "delivery.py:322-323",
+        "finalize.py:164-167"
+      ],
+      "finding": "preflight/publish require independent-delivery-review.passed and exact generated solution hash; validation also binds the review file hash, and finalizer rechecks it. Merely creating a draft review cannot satisfy absent file gate."
+    },
+    {
+      "topic": "CI and axiom gates",
+      "evidence": [
+        "delivery.py:257-305",
+        "delivery.py:280-329",
+        "finalize.py:94-179"
+      ],
+      "finding": "Requires final current source leaf and artifact jobs for all 8 helpers and target, closed Checks review, compiler graph/parser extraction, all constants axiom review, direct solution leaf, solution type/axioms review, production gate review, and actual consumer leaf/artifact/axiom review. Checks exclusive workspace/arguments/mode/hash/status, permitted standard axioms and sorryAx absence; records physical resource details separately."
+    },
+    {
+      "topic": "uncertain verification POST",
+      "evidence": [
+        "delivery.py:379-389",
+        "platform-tripod-20261113/executed-platform-publish.py:verify"
+      ],
+      "finding": "Writes verification-requested sentinel before calling established verify. If submit receipt exists, it requires identical request and reuses submission ID; if sentinel exists without submit receipt, it stops for reconciliation rather than posting again. Established verify only posts when submit receipt is absent and otherwise polls known submission."
+    },
+    {
+      "topic": "exact graph status bookkeeping",
+      "evidence": [
+        "finalize.py:185-252",
+        "delivery.py:419-438"
+      ],
+      "finding": "Requires identical mathematical node IDs/names; exactly target and existing Belyi parent Open->Proved; root remains Open. No new reduction IDs or dependency pairs are allowed. Existing reductions may only promote SKETCH_ACCEPTED->ACCEPTED with all children proved. Direct proof registry increases 36->37; reductions/children/edges remain 33/78/91; frontier is 19->18 by removing exact target. Automatic parent closure has no new proof submission."
+    },
+    {
+      "topic": "Fermat and pending ledger scope",
+      "evidence": [
+        "finalize.py:253-264",
+        "finalize.py:273-302"
+      ],
+      "finding": "Removes only exact five discharged pinned height source references; does not complete broad checkboxes, change production boundary, deprecate nodes or close mathematical root. Registry and document must equal captured before versions to reject concurrent changes."
+    },
+    {
+      "topic": "local allowlist and source stable input",
+      "evidence": [
+        "finalize.py:303-331"
+      ],
+      "finding": "Stages 10 owned Lean files, exact pending document, registry and unit evidence; excludes pycache, rejects symlink/out-of-repo targets, scans credential values without printing them, checks whitespace and preserves unrelated index entries. Actual consumer source is separately hash-bound and remains outside owned-source changes."
+    }
+  ],
+  "static_syntax_check": "ast.parse succeeded for delivery.py and finalize.py; neither script was imported or executed by reviewer.",
+  "runtime_limitations": [
+    "At read time generated graph/parser/readback/solution and final acceptance artifacts were not yet available. Whole-command pruning and 121 binding execution remain mandatory actual gates, not passed evidence from this static review.",
+    "Source-consumer declarations resolution must be read back after graph inventory is populated.",
+    "Required independent-delivery-review must examine final generated solution hash; this tooling review is not a substitute.",
+    "No API, CI, Git, compiler or main-workspace mutation was performed."
+  ],
+  "actions_performed": {
+    "compile": false,
+    "MCP_CI": false,
+    "API": false,
+    "Git": false,
+    "main_edits": false,
+    "subagents": false
+  }
+}

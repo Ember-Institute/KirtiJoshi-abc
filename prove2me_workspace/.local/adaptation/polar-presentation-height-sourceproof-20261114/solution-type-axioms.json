@@ -1,0 +1,4 @@
+{"type":
+ "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M),\n  ResiduesFinite M →\n    ∀ (D E : Divisor M) (RD : PolarPresentation M hDVR D) (RE : PolarPresentation M hDVR E) (f r : ↥M.K),\n      r ≠ 0 →\n        (∀ (P : Place ↥M.K), D P + E P = poleMultiplicity M hDVR f P + ord M hDVR P r) →\n          ∃ C, ∀ (x : QbarPoint ↥M.K), |divHeight RD x + divHeight RE x - functionHeight M f x| ≤ C",
+ "original_type_equal": true,
+ "axioms": ["propext", "Classical.choice", "Quot.sound"]}

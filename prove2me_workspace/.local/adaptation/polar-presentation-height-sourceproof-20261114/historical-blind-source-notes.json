@@ -1,0 +1,845 @@
+{
+  "blind-readbacks-tuple.json": {
+    "schema_version": 1,
+    "artifact_kind": "blind_trilingual_formal_readback",
+    "requested_model": "gpt-6.1-sol",
+    "actual_backend_model": null,
+    "model_disclosure": "The task requested gpt-6.1-sol. The actual backend model identifier is not exposed to this reader; it is not inferred from the request.",
+    "status": "source-only; no elaboration, compilation, proof audit, or acceptance determination",
+    "scope": "Five future-draft Lean files only; imported mathematical definitions and structure fields needed to interpret them are separately preserved.",
+    "blindness": {
+      "basis": "Formal declaration signatures, bodies where needed to identify definitions, necessary imported formal definitions, and the supplied readback/terminology rules.",
+      "not_used_as_semantic_evidence": [
+        "README",
+        "SOURCE_LEDGER",
+        "paper sources",
+        "historical proof notes",
+        "module descriptions",
+        "docstrings",
+        "proof narratives"
+      ],
+      "exposure_note": "Initial file views included source comments. Their nonformal mathematical descriptions were excluded from the reading basis; this was not a physically comment-isolated input. No separate README, SOURCE_LEDGER, or paper was opened.",
+      "historical_proof_notes": [],
+      "paper_source_quotes": [],
+      "proof_correctness_assessed": false
+    },
+    "notation_conventions": {
+      "finite_support_operations": "The total finite-support sum/product is the sum/product of nonzero/nonidentity terms if its support is finite; otherwise it is the additive/multiplicative identity. No analytic infinite-series or infinite-product convergence is asserted.",
+      "suprema": "Suprema are the total real conditional-completeness operations used by Lean; arbitrary-index declarations do not add a boundedness hypothesis or assert a maximum exists.",
+      "total_operations": "Field inverse has 0 inverse = 0, real division uses that inverse, Real.log 0 = 0, and place order at 0 = 0. Nonzero premises are retained where written.",
+      "inferred_binders": "Each row preserves exact source context. No elaborated declaration type was obtained; unused ambient binders can be omitted by Lean, and inferred parameters are expressly unverified.",
+      "formula_symbol_renamings": {
+        "ι": "I",
+        "κ": "J",
+        "fieldOf tuple": "F_z",
+        "Height.mulHeight": "H_F",
+        "Height.logHeight": "A_F",
+        "PolarAbsolute.logHeight": "h",
+        "Place.ord": "ord_P",
+        "normIdx": "n(P,s), with the supplied existence witness understood",
+        "minOrd": "m(P,s)",
+        "QbarPoint.eval": "E_x",
+        "evalTuple": "e_x",
+        "tupleHeight": "T"
+      }
+    },
+    "files": [
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteExtension.lean",
+        "sha256": "b20ed5c70d13b9f480106f133baa480d1db69e176511c85561fac193492a293f",
+        "line_count": 294,
+        "imports": [
+          "import Definitions.Def_AbcTripod",
+          "import Mathlib.NumberTheory.NumberField.InfinitePlace.Embeddings",
+          "import Mathlib.RingTheory.Ideal.Norm.RelNorm",
+          "import Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+          "import Mathlib.Tactic.FinCases",
+          "import Mathlib.Tactic.Linarith",
+          "import Mathlib.Tactic.Positivity",
+          "import Mathlib.Tactic.FieldSimp",
+          "import Mathlib.Tactic.Ring",
+          "import Mathlib.Tactic.NormNum",
+          "import Mathlib.Tactic.Push"
+        ],
+        "source_options": [
+          "set_option linter.style.header false"
+        ]
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+        "sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+        "line_count": 327,
+        "imports": [
+          "import Solutions.Source_FermatPolarAbsoluteExtension",
+          "import Mathlib.Tactic.FinCases",
+          "import Mathlib.Tactic.Linarith",
+          "import Mathlib.Tactic.Positivity",
+          "import Mathlib.Tactic.FieldSimp",
+          "import Mathlib.Tactic.Ring",
+          "import Mathlib.Tactic.NormNum",
+          "import Mathlib.Tactic.Push"
+        ],
+        "source_options": [
+          "set_option linter.style.header false"
+        ]
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPointAdapters.lean",
+        "sha256": "958029608f011ffa4cfe80f3af54d5e0b814e15bc14ba8b469e020ce0cb8acc1",
+        "line_count": 30,
+        "imports": [
+          "import Definitions.Def_FermatNoncriticalElementarySource",
+          "import Definitions.Def_FermatProperDivisorHeight"
+        ],
+        "source_options": [
+          "set_option autoImplicit false"
+        ]
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarTupleHeight.lean",
+        "sha256": "34f5965a008cc516caa476517ea326a8821658ed30df9077596b6b0e446d1319",
+        "line_count": 317,
+        "imports": [
+          "import Solutions.Source_FermatPolarAbsoluteBasic",
+          "import Solutions.Source_FermatPolarPointAdapters",
+          "import Mathlib.Tactic.FinCases",
+          "import Mathlib.Tactic.Linarith",
+          "import Mathlib.Tactic.Positivity",
+          "import Mathlib.Tactic.FieldSimp",
+          "import Mathlib.Tactic.Ring",
+          "import Mathlib.Tactic.NormNum",
+          "import Mathlib.Tactic.Push"
+        ],
+        "source_options": []
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarMinOrd.lean",
+        "sha256": "e78a64579efbc9f0ce7e831e9ac968bc3bf9f4b74c9372c2f3a8b836c5e3a04d",
+        "line_count": 76,
+        "imports": [
+          "import Solutions.Source_FermatPolarTupleHeight",
+          "import Mathlib.Tactic.FinCases",
+          "import Mathlib.Tactic.Linarith",
+          "import Mathlib.Tactic.Positivity",
+          "import Mathlib.Tactic.FieldSimp",
+          "import Mathlib.Tactic.Ring",
+          "import Mathlib.Tactic.NormNum",
+          "import Mathlib.Tactic.Push"
+        ],
+        "source_options": []
+      }
+    ],
+    "necessary_imported_definitions": [
+      {
+        "scope": "necessary_imported_formal_definition_or_field",
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+        "file_sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+        "source_span": {
+          "line_start": 37,
+          "line_end": 38
+        },
+        "source_declaration_sha256": "e08e6feff97dc51d1d96dfc618befc3ae5686b3ab2d681eac1c5fb5ecb83c392",
+        "raw_signature": "class IsCurveField (K : Type*) [Field K] [CharZero K] : Prop where\n  exists_finite : ∃ t : K, Transcendental ℚ t ∧ FiniteDimensional ℚ⟮t⟯ K",
+        "signature_sha256": "d449ffff79a652fbe72196bd72e7d29d7b36f12062db1a30a9c3e6ff8ebdaad1",
+        "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.IsCurveField",
+        "private": false,
+        "kind": "class",
+        "section_binder_context": [],
+        "elaboration": {
+          "performed": false,
+          "inferred_parameters": "Source-only context; inferred universe/instance parameters and kernel name not checked."
+        },
+        "readback": {
+          "en": "For a characteristic-zero field $K$, define the proposition that there exists $t\\in K$ transcendental over $\\mathbb Q$ for which $K$ is finite-dimensional over the intermediate field $\\mathbb Q(t)$. This proposition is packaged as a typeclass with one field, the stated existence claim.",
+          "zh-Hans": "对特征为零的域 $K$，定义如下命题：存在对 $\\mathbb Q$ 超越的 $t\\in K$，使 $K$ 在中间域 $\\mathbb Q(t)$ 上有限维。该命题包装为只有一个字段的类型类，字段就是此存在断言。",
+          "ja": "標数零の体 $K$ に対し、$\\mathbb Q$ 上超越的な $t\\in K$ で $K$ が中間体 $\\mathbb Q(t)$ 上有限次元となるものが存在するという命題を定義する。これは、その存在主張を唯一のフィールドとする型クラスとしてまとめられる。"
+        }
+      },
+      {
+        "scope": "necessary_imported_formal_definition_or_field",
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+        "file_sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+        "source_span": {
+          "line_start": 38,
+          "line_end": 38
+        },
+        "source_declaration_sha256": "f226d3049f745836d453da6749b60246c386d723e468ea5f680b9bdee92826a4",
+        "raw_signature": "  exists_finite : ∃ t : K, Transcendental ℚ t ∧ FiniteDimensional ℚ⟮t⟯ K",
+        "signature_sha256": "ade0206d59a65d1066a68ed1d2a5768e3abf1b53e2e40ccb55a0ef79cd57b4b3",
+        "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.IsCurveField.exists_finite",
+        "private": false,
+        "kind": "field",
+        "section_binder_context": [
+          "(K : Type*) [Field K] [CharZero K]"
+        ],
+        "elaboration": {
+          "performed": false,
+          "inferred_parameters": "Source-only context; inferred universe/instance parameters and kernel name not checked."
+        },
+        "readback": {
+          "en": "Given a characteristic-zero field $K$ and its curve-field class, this field is evidence for the existence of $t\\in K$ transcendental over $\\mathbb Q$ such that $K$ is finite-dimensional over $\\mathbb Q(t)$.",
+          "zh-Hans": "给定特征为零的域 $K$ 及其曲线函数域类型类，该字段提供以下证据：存在对 $\\mathbb Q$ 超越的 $t\\in K$，使 $K$ 在 $\\mathbb Q(t)$ 上有限维。",
+          "ja": "標数零の体 $K$ とその曲線関数体の型クラスが与えられたとき、このフィールドは、$\\mathbb Q$ 上超越的な $t\\in K$ で $K$ が $\\mathbb Q(t)$ 上有限次元となるものの存在を表す。"
+        }
+      },
+      {
+        "scope": "necessary_imported_formal_definition_or_field",
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "source_span": {
+          "line_start": 56,
+          "line_end": 57
+        },
+        "source_declaration_sha256": "abe37e170c54e4db6b23ebf7b3ff2eccc5178b43158943c628af28bba14b4f0e",
+        "raw_signature": "abbrev Place (K : Type*) [Field K] : Type _ :=\n  {O : ValuationSubring K // O ≠ ⊤ ∧ ∀ q : ℚ, (q : K) ∈ O}",
+        "signature_sha256": "8db7bd6acd6f4c41d8843ad34696bc38f02855fd9d992e24e82805641eaf0a30",
+        "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Place",
+        "private": false,
+        "kind": "abbrev",
+        "section_binder_context": [],
+        "elaboration": {
+          "performed": false,
+          "inferred_parameters": "Source-only context; inferred universe/instance parameters and kernel name not checked."
+        },
+        "readback": {
+          "en": "For every field $K$, define the type of places to consist of valuation subrings $O$ of $K$ together with proofs that $O\\ne K$ and that every rational constant $q\\in\\mathbb Q$, interpreted in $K$, belongs to $O$. No affine chart is part of this data.",
+          "zh-Hans": "对任意域 $K$，将处的类型定义为 $K$ 的赋值子环 $O$ 连同两个证明：$O\\ne K$，以及每个有理常数 $q\\in\\mathbb Q$ 在 $K$ 中的像均属于 $O$。数据中没有指定仿射图。",
+          "ja": "任意の体 $K$ に対し、素点の型を、$K$ の付値部分環 $O$ と、$O\\ne K$ および $K$ で解釈したすべての有理定数 $q\\in\\mathbb Q$ が $O$ に属することの証明からなるものとして定める。アフィンチャートはこのデータに含まれない。"
+        }
+      },
+      {
+        "scope": "necessary_imported_formal_definition_or_field",
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "source_span": {
+          "line_start": 81,
+          "line_end": 83
+        },
+        "source_declaration_sha256": "027d0dc648221efaef9ca1a520847ef98e4c3e051a93248f97757ec165832d22",
+        "raw_signature": "structure QbarPoint (K : Type*) [Field K] [CharZero K] where\n  P : Place K\n  σ : P.ResidueField →+* Qbar",
+        "signature_sha256": "c6835982988cf90a3cd485a8e487d0c716a250eab37ed43d1457d16115fbd1a7",
+        "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint",
+        "private": false,
+        "kind": "structure",
+        "section_binder_context": [],
+        "elaboration": {
+          "performed": false,
+          "inferred_parameters": "Source-only context; inferred universe/instance parameters and kernel name not checked."
+        },
+        "readback": {
+          "en": "For a characteristic-zero field $K$, a point is the data of a place $P$, meaning a proper valuation subring containing the rational constants, and a unital ring embedding $\\sigma:\\kappa(P)\\to\\overline{\\mathbb Q}$ from its entire residue field. No choice of smaller value field is included.",
+          "zh-Hans": "对特征为零的域 $K$，点的数据为处 $P$，即包含有理常数的真赋值子环，以及从整个剩余域出发的保单位环嵌入 $\\sigma:\\kappa(P)\\to\\overline{\\mathbb Q}$。数据中没有选择更小的取值域。",
+          "ja": "標数零の体 $K$ に対し、点は有理定数を含む真の付値部分環である素点 $P$ と、その剰余体全体からの単位的環埋め込み $\\sigma:\\kappa(P)\\to\\overline{\\mathbb Q}$ のデータである。より小さい値の体を選ぶデータは含まない。"
+        }
+      },
+      {
+        "scope": "necessary_imported_formal_definition_or_field",
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "source_span": {
+          "line_start": 82,
+          "line_end": 82
+        },
+        "source_declaration_sha256": "b4f0d5327c37e389779acd8acd98b016184459f466a274235f76866740ca1012",
+        "raw_signature": "  P : Place K",
+        "signature_sha256": "647a32539536124d736b67e6f939758f0294549a5c1526cd729e5d25d62c26d0",
+        "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.P",
+        "private": false,
+        "kind": "field",
+        "section_binder_context": [
+          "(K : Type*) [Field K] [CharZero K]"
+        ],
+        "elaboration": {
+          "performed": false,
+          "inferred_parameters": "Source-only context; inferred universe/instance parameters and kernel name not checked."
+        },
+        "readback": {
+          "en": "For a characteristic-zero field $K$ and a point $x$, the field $P$ of $x$ is a place of $K$: a proper valuation subring containing every rational constant.",
+          "zh-Hans": "对特征为零的域 $K$ 及点 $x$，$x$ 的字段 $P$ 是 $K$ 的处，即包含全部有理常数的真赋值子环。",
+          "ja": "標数零の体 $K$ と点 $x$ に対し、$x$ のフィールド $P$ は、すべての有理定数を含む $K$ の真の付値部分環である。"
+        }
+      },
+      {
+        "scope": "necessary_imported_formal_definition_or_field",
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "source_span": {
+          "line_start": 83,
+          "line_end": 83
+        },
+        "source_declaration_sha256": "0e498c58671bfb2facc81c2e3c873a389e4525663cf2b4450fa9f84496af94f3",
+        "raw_signature": "  σ : P.ResidueField →+* Qbar",
+        "signature_sha256": "b18d53b16df6f85eda225b3979b4b38d32f6370acddb2f106e7862e1bdb0f52d",
+        "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.σ",
+        "private": false,
+        "kind": "field",
+        "section_binder_context": [
+          "(K : Type*) [Field K] [CharZero K]",
+          "P : Place K"
+        ],
+        "elaboration": {
+          "performed": false,
+          "inferred_parameters": "Source-only context; inferred universe/instance parameters and kernel name not checked."
+        },
+        "readback": {
+          "en": "For a characteristic-zero field $K$ and a point $x$ with place $P_x$, its field $\\sigma_x$ is a unital ring homomorphism from the entire residue field $\\kappa(P_x)$ to $\\overline{\\mathbb Q}$. Being a unital ring map from a field, it is an embedding; no smaller domain is substituted.",
+          "zh-Hans": "对特征为零的域 $K$ 及带处 $P_x$ 的点 $x$，其字段 $\\sigma_x$ 是从整个剩余域 $\\kappa(P_x)$ 到 $\\overline{\\mathbb Q}$ 的保单位环同态。它从域出发，因而是嵌入；不将定义域替换为更小的域。",
+          "ja": "標数零の体 $K$ と素点 $P_x$ を持つ点 $x$ に対し、そのフィールド $\\sigma_x$ は剰余体全体 $\\kappa(P_x)$ から $\\overline{\\mathbb Q}$ への単位的環準同型である。体からの単位的環写像なので埋め込みであり、定義域をより小さい体に置き換えない。"
+        }
+      },
+      {
+        "scope": "necessary_imported_formal_definition_or_field",
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "source_span": {
+          "line_start": 89,
+          "line_end": 90
+        },
+        "source_declaration_sha256": "a25420bf9f365a3189a218129b423ba0a08c3c66ef5441b767b1ff8f4d526dd1",
+        "raw_signature": "noncomputable def eval (x : QbarPoint K) (f : K) (hf : f ∈ x.P.1) : Qbar :=\n  x.σ (x.P.residue ⟨f, hf⟩)",
+        "signature_sha256": "99332d0c75d1b5065a4a7bc9c841ffd2f9a5f64e327a574d46f2456f0e90bacb",
+        "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.eval",
+        "private": false,
+        "kind": "def",
+        "section_binder_context": [
+          "variable {K : Type*} [Field K] [CharZero K]"
+        ],
+        "elaboration": {
+          "performed": false,
+          "inferred_parameters": "Source-only context; inferred universe/instance parameters and kernel name not checked."
+        },
+        "readback": {
+          "en": "For a characteristic-zero field $K$, a point $x=(P_x,\\sigma_x)$, $f\\in K$, and a proof $f\\in O_{P_x}$, define its value to be $E_x(f)=\\sigma_x(f\\bmod\\mathfrak m_{P_x})\\in\\overline{\\mathbb Q}$. Evaluation is only given with this membership evidence.",
+          "zh-Hans": "对特征为零的域 $K$、点 $x=(P_x,\\sigma_x)$、$f\\in K$ 及所属证明 $f\\in O_{P_x}$，定义其取值 $E_x(f)=\\sigma_x(f\\bmod\\mathfrak m_{P_x})\\in\\overline{\\mathbb Q}$。只有提供该所属证明时才给出取值。",
+          "ja": "標数零の体 $K$、点 $x=(P_x,\\sigma_x)$、$f\\in K$、所属証明 $f\\in O_{P_x}$ に対し、値を $E_x(f)=\\sigma_x(f\\bmod\\mathfrak m_{P_x})\\in\\overline{\\mathbb Q}$ と定める。評価はこの所属証明を与えた場合にのみ定義される。"
+        }
+      },
+      {
+        "scope": "necessary_imported_formal_definition_or_field",
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "source_span": {
+          "line_start": 92,
+          "line_end": 93
+        },
+        "source_declaration_sha256": "5b30641db51274e6688ef545a5c3cef59f00775abe6ef245733791a3a0865821",
+        "raw_signature": "noncomputable def fieldOf (x : QbarPoint K) : IntermediateField ℚ Qbar :=\n  x.σ.toRatAlgHom.fieldRange",
+        "signature_sha256": "c9f2dfc16cefc8cf67b0d46a833dfc4b4bd6fb01c1cdf6c95cc9393a0aeed53a",
+        "source_level_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.QbarPoint.fieldOf",
+        "private": false,
+        "kind": "def",
+        "section_binder_context": [
+          "variable {K : Type*} [Field K] [CharZero K]"
+        ],
+        "elaboration": {
+          "performed": false,
+          "inferred_parameters": "Source-only context; inferred universe/instance parameters and kernel name not checked."
+        },
+        "readback": {
+          "en": "For a characteristic-zero field $K$ and every point $x=(P_x,\\sigma_x)$, define its point field to be the intermediate field of $\\overline{\\mathbb Q}/\\mathbb Q$ equal to the full image of the rational algebra map associated to $\\sigma_x$, namely $\\sigma_x(\\kappa(P_x))$.",
+          "zh-Hans": "对特征为零的域 $K$ 及任意点 $x=(P_x,\\sigma_x)$，将点域定义为 $\\overline{\\mathbb Q}/\\mathbb Q$ 中由 $\\sigma_x$ 对应的有理代数映射的完整像组成的中间域，即 $\\sigma_x(\\kappa(P_x))$。",
+          "ja": "標数零の体 $K$ と任意の点 $x=(P_x,\\sigma_x)$ に対し、点の体を $\\sigma_x$ に対応する有理数体上の代数写像の像全体、すなわち $\\sigma_x(\\kappa(P_x))$ である $\\overline{\\mathbb Q}/\\mathbb Q$ の中間体と定める。"
+        }
+      }
+    ],
+    "necessary_formal_source_spans": [
+      {
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+        "file_sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+        "line_start": 37,
+        "line_end": 38,
+        "raw_formal_context": "class IsCurveField (K : Type*) [Field K] [CharZero K] : Prop where\n  exists_finite : ∃ t : K, Transcendental ℚ t ∧ FiniteDimensional ℚ⟮t⟯ K\n",
+        "span_sha256": "e08e6feff97dc51d1d96dfc618befc3ae5686b3ab2d681eac1c5fb5ecb83c392"
+      },
+      {
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "line_start": 56,
+        "line_end": 57,
+        "raw_formal_context": "abbrev Place (K : Type*) [Field K] : Type _ :=\n  {O : ValuationSubring K // O ≠ ⊤ ∧ ∀ q : ℚ, (q : K) ∈ O}\n",
+        "span_sha256": "abe37e170c54e4db6b23ebf7b3ff2eccc5178b43158943c628af28bba14b4f0e"
+      },
+      {
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "line_start": 63,
+        "line_end": 66,
+        "raw_formal_context": "abbrev ResidueField (P : Place K) : Type _ := IsLocalRing.ResidueField P.1\n\nnoncomputable def residue (P : Place K) : P.1 →+* P.ResidueField :=\n  IsLocalRing.residue P.1\n",
+        "span_sha256": "32a8cb2c6c1c98532b8b5d4033733406884d40bf72a3d2bf7e8011cb8961ff6b"
+      },
+      {
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "line_start": 81,
+        "line_end": 83,
+        "raw_formal_context": "structure QbarPoint (K : Type*) [Field K] [CharZero K] where\n  P : Place K\n  σ : P.ResidueField →+* Qbar\n",
+        "span_sha256": "027d0dc648221efaef9ca1a520847ef98e4c3e051a93248f97757ec165832d22"
+      },
+      {
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "file_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "line_start": 89,
+        "line_end": 93,
+        "raw_formal_context": "noncomputable def eval (x : QbarPoint K) (f : K) (hf : f ∈ x.P.1) : Qbar :=\n  x.σ (x.P.residue ⟨f, hf⟩)\n\nnoncomputable def fieldOf (x : QbarPoint K) : IntermediateField ℚ Qbar :=\n  x.σ.toRatAlgHom.fieldRange\n",
+        "span_sha256": "d491da439d13ca000c6a1f56bed27b6841847ece8207fea15ba145d2ea09bf8d"
+      },
+      {
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+        "file_sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+        "line_start": 286,
+        "line_end": 290,
+        "raw_formal_context": "noncomputable def valuation (P : Place K) : Valuation K ℤᵐ⁰ :=\n  (IsDiscreteValuationRing.maximalIdeal P.1).valuation K\n\n/-- The order of vanishing `ord_P f ∈ ℤ` of `f` at the place `P` (junk value `ord_P 0 = 0`). -/\nnoncomputable def ord (P : Place K) (f : K) : ℤ := -WithZero.log (P.valuation f)\n",
+        "span_sha256": "b59bb9f894863bd31a9bf2a58e0b2f7190acbd34ec056f9ba30423c24b4b9ef6"
+      },
+      {
+        "source_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+        "file_sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+        "line_start": 302,
+        "line_end": 303,
+        "raw_formal_context": "@[simp]\ntheorem ord_zero : P.ord 0 = 0 := by simp [ord]\n",
+        "span_sha256": "0b67221a98add9ed4564d658a167594af2fd380e8158420ae36a9ddba86f049c"
+      }
+    ],
+    "validation": {
+      "passed": true,
+      "authored_declaration_count": 76,
+      "imported_definition_field_count": 8,
+      "per_file_count": {
+        "Source_FermatPolarAbsoluteExtension.lean": 17,
+        "Source_FermatPolarAbsoluteBasic.lean": 34,
+        "Source_FermatPolarPointAdapters.lean": 2,
+        "Source_FermatPolarTupleHeight.lean": 21,
+        "Source_FermatPolarMinOrd.lean": 2
+      },
+      "checks": [
+        "all authored declarations covered in source order",
+        "file SHA-256 against current bytes",
+        "declaration spans and SHA-256",
+        "exact raw signatures and SHA-256",
+        "namespace qualification and private status",
+        "verbatim ambient binders and scoped wrappers",
+        "imported context hashes",
+        "three languages per row",
+        "no forbidden parsed control characters",
+        "one paragraph per language per row",
+        "balanced inline math delimiters and braces",
+        "math commands remain inside math delimiters",
+        "unknown actual backend remains null"
+      ],
+      "errors": [],
+      "limitations": [
+        "No Lean elaboration or compilation performed.",
+        "Inferred parameters, final kernel names and proof correctness are unverified.",
+        "Math validation checks delimiter and brace structure; no KaTeX rendering engine was run.",
+        "Initial source views exposed comments; nonformal descriptions were not used as semantic evidence."
+      ]
+    },
+    "readback_rules": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/docs/三语自然语言读回原则.md",
+        "sha256": "180c67d086707376e296b6e66a0abb54657454e67a700e2fa4444a6d8516c400"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/docs/三语术语名词关键对照.md",
+        "sha256": "c359fefad83c56790fa3c4302eb9306e43c7036c82cab249b9dbf3e3860f8e18"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/references/mission_auditor.md",
+        "sha256": "7250f650867c2beff91e613e069eb25e469ff2114573131b591074f949ba0ea5"
+      }
+    ]
+  },
+  "blind-readbacks-comparison.json": {
+    "schema": "blind-trilingual-formal-readback/v1",
+    "created_date": "2026-11-14",
+    "target_scope": "Only Source_FermatPolarRootBound.lean, Source_FermatPolarIntegrality.lean, Source_FermatPolarPresentationHeights.lean future drafts. No wrapper or LinearEquiv readback.",
+    "requested_readback_model": "gpt-6.1-sol",
+    "actual_backend_model": null,
+    "actual_backend_model_note": "Backend model identifier is not exposed to this reviewer; requested model is not asserted to be actual.",
+    "review_method": {
+      "blind_materials": "Assigned formal Lean source, necessary formal definitions, project trilingual rules, terminology table, mission_auditor.md. No README, SOURCE_LEDGER, paper, or external proof narrative was used. Lean comments were excluded as a semantic basis.",
+      "original_language": "en",
+      "translation_languages": [
+        "zh_Hans",
+        "ja"
+      ],
+      "translation_authorship": "Chinese and Japanese are translations checked by this same reviewer against the English and code; they are not three independent audits.",
+      "proof_correctness_assessed": false,
+      "elaboration_performed": false,
+      "compilation_performed": false,
+      "proof_status": "Not assessed. The files are draft inputs; source-only readback makes no compilation, axiom, or proof-completion claim.",
+      "main_workspace_edits": false
+    },
+    "sources": [
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarRootBound.lean",
+        "sha256": "a2aa679a81cae03444ca0b5f3cbc7980525b4010de638d7db09c5d06cee0fda0",
+        "bytes": 7427,
+        "lines": 159,
+        "imports": [
+          "import Mathlib.Analysis.SpecialFunctions.Log.Basic",
+          "import Mathlib.Analysis.SpecialFunctions.Pow.Real",
+          "import Mathlib.Analysis.Normed.Field.Basic",
+          "import Mathlib.Algebra.Polynomial.BigOperators",
+          "import Mathlib.Tactic.FinCases",
+          "import Mathlib.Tactic.Linarith",
+          "import Mathlib.Tactic.Positivity",
+          "import Mathlib.Tactic.FieldSimp",
+          "import Mathlib.Tactic.Ring",
+          "import Mathlib.Tactic.NormNum",
+          "import Mathlib.Tactic.Push"
+        ]
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarIntegrality.lean",
+        "sha256": "36abe9062cf7337ec0e05c588a8677b2b4e1ef8708ccbaa47b3b717b522652ae",
+        "bytes": 35473,
+        "lines": 735,
+        "imports": [
+          "import Solutions.Source_FermatPolarTupleHeight",
+          "import Solutions.Source_FermatPolarRootBound",
+          "import Mathlib.RingTheory.Valuation.LocalSubring",
+          "import Mathlib.Algebra.MvPolynomial.CommRing",
+          "import Mathlib.Tactic.FinCases",
+          "import Mathlib.Tactic.Linarith",
+          "import Mathlib.Tactic.Positivity",
+          "import Mathlib.Tactic.FieldSimp",
+          "import Mathlib.Tactic.Ring",
+          "import Mathlib.Tactic.NormNum",
+          "import Mathlib.Tactic.Push",
+          "import Mathlib.Tactic.Choose"
+        ]
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "sha256": "51729d282c0af8832f3ac3522b12a66c11a97c16703aed52f9e721fc24228d5b",
+        "bytes": 6918,
+        "lines": 145,
+        "imports": [
+          "import Solutions.Source_FermatPolarMinOrd",
+          "import Definitions.Def_FermatProperDivisorHeight"
+        ]
+      }
+    ],
+    "necessary_formal_definitions": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+        "source_sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+        "start_line": 37,
+        "end_line": 38,
+        "raw_formal_code": "class IsCurveField (K : Type*) [Field K] [CharZero K] : Prop where\n  exists_finite : ∃ t : K, Transcendental ℚ t ∧ FiniteDimensional ℚ⟮t⟯ K",
+        "formal_code_without_comments": "class IsCurveField (K : Type*) [Field K] [CharZero K] : Prop where\n  exists_finite : ∃ t : K, Transcendental ℚ t ∧ FiniteDimensional ℚ⟮t⟯ K",
+        "readback": {
+          "en": "Let $K$ be a field of characteristic zero that is finite dimensional over $ℚ(t)$ for some $t$ transcendental over $ℚ$. A place $P$ means a proper valuation subring $O_P⊊K$ containing all rational numbers. Its normalized discrete order is $ord_P$, with the total convention $ord_P(0)=0$. ",
+          "zh_Hans": "设 $K$ 是特征为零的域，且存在在 $ℚ$ 上超越的 $t$，使 $K$ 在 $ℚ(t)$ 上有限维。处 $P$ 指包含全部有理数的真赋值子环 $O_P⊊K$。记其归一化离散阶为 $ord_P$，并约定 $ord_P(0)=0$。",
+          "ja": "$K$ を標数零の体とし、$ℚ$ 上超越的なある $t$ に対して $K$ は $ℚ(t)$ 上有限次元であるとする。場所 $P$ はすべての有理数を含む真の付値部分環 $O_P⊊K$ を意味する。その正規化された離散位数を $ord_P$ とし、全域的な規約 $ord_P(0)=0$ を用いる。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "start_line": 33,
+        "end_line": 42,
+        "raw_formal_code": "structure Model (N : ℕ) where\n  K : IntermediateField ℚ Ω\n  u : K\n  v : K\n  transcendental_u : Transcendental ℚ u\n  equation : u ^ N + v ^ N = 1\n  generate : ℚ⟮u, v⟯ = ⊤\n  finite_u : FiniteDimensional ℚ⟮u⟯ K\n  degree_u : Module.finrank ℚ⟮u⟯ K = N\n",
+        "formal_code_without_comments": "structure Model (N : ℕ) where\n  K : IntermediateField ℚ Ω\n  u : K\n  v : K\n  transcendental_u : Transcendental ℚ u\n  equation : u ^ N + v ^ N = 1\n  generate : ℚ⟮u, v⟯ = ⊤\n  finite_u : FiniteDimensional ℚ⟮u⟯ K\n  degree_u : Module.finrank ℚ⟮u⟯ K = N",
+        "readback": {
+          "en": "Let $N∈ℕ$ and let $M$ be a model consisting of a subfield $K⊆\\overline{ℚ(T)}$, elements $u,v∈K$, with $u$ transcendental over $ℚ$, $u^N+v^N=1$, $K=ℚ(u,v)$, and $K/ℚ(u)$ finite of degree $N$. ",
+          "zh_Hans": "设 $N∈ℕ$，模型 $M$ 由子域 $K⊆\\overline{ℚ(T)}$ 和元素 $u,v∈K$ 构成，满足 $u$ 在 $ℚ$ 上超越、$u^N+v^N=1$、$K=ℚ(u,v)$，且 $K/ℚ(u)$ 是次数为 $N$ 的有限扩张。",
+          "ja": "$N∈ℕ$ とし、モデル $M$ は部分体 $K⊆\\overline{ℚ(T)}$ と元 $u,v∈K$ からなり、$u$ は $ℚ$ 上超越的、$u^N+v^N=1$、$K=ℚ(u,v)$、かつ $K/ℚ(u)$ は次数 $N$ の有限拡大であるとする。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "start_line": 56,
+        "end_line": 57,
+        "raw_formal_code": "abbrev Place (K : Type*) [Field K] : Type _ :=\n  {O : ValuationSubring K // O ≠ ⊤ ∧ ∀ q : ℚ, (q : K) ∈ O}",
+        "formal_code_without_comments": "abbrev Place (K : Type*) [Field K] : Type _ :=\n  {O : ValuationSubring K // O ≠ ⊤ ∧ ∀ q : ℚ, (q : K) ∈ O}",
+        "readback": {
+          "en": "A place is a valuation subring of $K$ different from the whole field and containing every rational number.",
+          "zh_Hans": "处是不同于整个域 $K$ 且包含每个有理数的赋值子环。",
+          "ja": "場所は、体 $K$ 全体とは異なり、すべての有理数を含む付値部分環である。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "start_line": 81,
+        "end_line": 96,
+        "raw_formal_code": "structure QbarPoint (K : Type*) [Field K] [CharZero K] where\n  P : Place K\n  σ : P.ResidueField →+* Qbar\n\nnamespace QbarPoint\n\nvariable {K : Type*} [Field K] [CharZero K]\n\nnoncomputable def eval (x : QbarPoint K) (f : K) (hf : f ∈ x.P.1) : Qbar :=\n  x.σ (x.P.residue ⟨f, hf⟩)\n\nnoncomputable def fieldOf (x : QbarPoint K) : IntermediateField ℚ Qbar :=\n  x.σ.toRatAlgHom.fieldRange\n\nnoncomputable def degree (x : QbarPoint K) : ℕ :=\n  Module.finrank ℚ x.fieldOf",
+        "formal_code_without_comments": "structure QbarPoint (K : Type*) [Field K] [CharZero K] where\n  P : Place K\n  σ : P.ResidueField →+* Qbar\n\nnamespace QbarPoint\n\nvariable {K : Type*} [Field K] [CharZero K]\n\nnoncomputable def eval (x : QbarPoint K) (f : K) (hf : f ∈ x.P.1) : Qbar :=\n  x.σ (x.P.residue ⟨f, hf⟩)\n\nnoncomputable def fieldOf (x : QbarPoint K) : IntermediateField ℚ Qbar :=\n  x.σ.toRatAlgHom.fieldRange\n\nnoncomputable def degree (x : QbarPoint K) : ℕ :=\n  Module.finrank ℚ x.fieldOf",
+        "readback": {
+          "en": "An algebraic point $x=(P,σ)$ consists of any such place and any ring embedding $σ:k(P)→\\overline{ℚ}$ of its residue field into the fixed algebraic closure $\\overline{ℚ}$ of $ℚ$. For $a∈O_P$, $a(x)=σ(\\bar a)$ is its residue evaluated by $σ$. The full point field is $F_x=σ(k(P))⊆\\overline{ℚ}$, not just the field generated by one value. ",
+          "zh_Hans": "代数点 $x=(P,σ)$ 由任意这样的处和剩余域到 $\\overline{ℚ}$ 的任意环嵌入 $σ:k(P)→\\overline{ℚ}$ 组成，其中 $\\overline{ℚ}$ 是 $ℚ$ 的代数闭包。对 $a∈O_P$，$a(x)=σ(\\bar a)$ 是其剩余类经 $σ$ 得到的值。完整点域为 $F_x=σ(k(P))⊆\\overline{ℚ}$，并非仅由一个函数值生成的域。",
+          "ja": "代数点 $x=(P,σ)$ は、このような任意の場所と、その剰余体から $ℚ$ の代数閉包 $\\overline{ℚ}$ への任意の環埋め込み $σ:k(P)→\\overline{ℚ}$ からなる。$a∈O_P$ に対し $a(x)=σ(\\bar a)$ は剰余類を $σ$ で写した値である。完全な点の体は $F_x=σ(k(P))⊆\\overline{ℚ}$ であり、単一の値で生成される体とは限らない。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "start_line": 108,
+        "end_line": 121,
+        "raw_formal_code": "def PlacesDiscrete (M : Model N) : Prop :=\n  ∀ P : Place M.K, IsDiscreteValuationRing P.1\n\n/-- Precise residue-field finiteness obligation, independently supplied. -/\ndef ResiduesFinite (M : Model N) : Prop :=\n  ∀ P : Place M.K, FiniteDimensional ℚ P.ResidueField\n\n/-- The source's normalized discrete order, parameterized by the explicit\nregularity theorem. This is not an arbitrary order-valued function. -/\nnoncomputable def ord (M : Model N) (hDVR : PlacesDiscrete M)\n    (P : Place M.K) (f : M.K) : ℤ := by\n  letI : IsDiscreteValuationRing P.1 := hDVR P\n  exact -WithZero.log (((IsDiscreteValuationRing.maximalIdeal P.1).valuation M.K) f)\n",
+        "formal_code_without_comments": "def PlacesDiscrete (M : Model N) : Prop :=\n  ∀ P : Place M.K, IsDiscreteValuationRing P.1\n\n                                                                           \ndef ResiduesFinite (M : Model N) : Prop :=\n  ∀ P : Place M.K, FiniteDimensional ℚ P.ResidueField\n\n                                                                         \n                                                                      \nnoncomputable def ord (M : Model N) (hDVR : PlacesDiscrete M)\n    (P : Place M.K) (f : M.K) : ℤ := by\n  letI : IsDiscreteValuationRing P.1 := hDVR P\n  exact -WithZero.log (((IsDiscreteValuationRing.maximalIdeal P.1).valuation M.K) f)",
+        "readback": {
+          "en": "PlacesDiscrete requires every place subring to be a discrete valuation ring. ResiduesFinite requires every residue field to be finite dimensional over $ℚ$. The order is minus the integer logarithm of the normalized maximal-ideal valuation, with value zero at the zero element.",
+          "zh_Hans": "PlacesDiscrete 要求每个处的子环都是离散赋值环。ResiduesFinite 要求每个剩余域都在 $ℚ$ 上有限维。阶定义为归一化极大理想赋值的整数对数的相反数，零元的阶为零。",
+          "ja": "PlacesDiscrete は各場所の部分環が離散付値環であること、ResiduesFinite は各剰余体が $ℚ$ 上有限次元であることを要求する。位数は正規化された極大イデアルの付値の整数対数の負として定義され、零元の位数は零である。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "source_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+        "start_line": 142,
+        "end_line": 142,
+        "raw_formal_code": "abbrev Divisor (M : Model N) : Type := Place M.K →₀ ℤ",
+        "formal_code_without_comments": "abbrev Divisor (M : Model N) : Type := Place M.K →₀ ℤ",
+        "readback": {
+          "en": "A divisor is a finitely supported integer-valued function on all places.",
+          "zh_Hans": "除子是全部处上的有限支撑整数值函数。",
+          "ja": "因子は全場所上の有限台の整数値関数である。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+        "source_sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+        "start_line": 285,
+        "end_line": 290,
+        "raw_formal_code": "/-- The normalised discrete valuation of `K` at the place `P`, with values in `ℤᵐ⁰`. -/\nnoncomputable def valuation (P : Place K) : Valuation K ℤᵐ⁰ :=\n  (IsDiscreteValuationRing.maximalIdeal P.1).valuation K\n\n/-- The order of vanishing `ord_P f ∈ ℤ` of `f` at the place `P` (junk value `ord_P 0 = 0`). -/\nnoncomputable def ord (P : Place K) (f : K) : ℤ := -WithZero.log (P.valuation f)",
+        "formal_code_without_comments": "noncomputable def valuation (P : Place K) : Valuation K ℤᵐ⁰ :=\n  (IsDiscreteValuationRing.maximalIdeal P.1).valuation K\n\n                                                                                               \nnoncomputable def ord (P : Place K) (f : K) : ℤ := -WithZero.log (P.valuation f)",
+        "readback": {
+          "en": "For a place of a curve field, valuation is the normalized discrete valuation of its maximal ideal; $ord_P(f)$ is its negative integer logarithm, with $ord_P(0)=0$.",
+          "zh_Hans": "曲线函数域的处的赋值是其极大理想的归一化离散赋值；$ord_P(f)$ 是该赋值的整数对数的相反数，且 $ord_P(0)=0$。",
+          "ja": "曲線関数体の場所の付値はその極大イデアルの正規化離散付値であり、$ord_P(f)$ はその整数対数の負である。$ord_P(0)=0$ とする。"
+        }
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarTupleHeight.lean",
+        "source_sha256": "34f5965a008cc516caa476517ea326a8821658ed30df9077596b6b0e446d1319",
+        "start_line": 75,
+        "end_line": 77,
+        "raw_formal_code": "noncomputable def normIdx (hs : ∃ i, s i ≠ 0) : ι :=\n  (Finset.exists_min_image (Finset.univ.filter fun i => s i ≠ 0) (fun i => P.ord (s i))\n    (filter_ne_zero_nonempty hs)).choose",
+        "formal_code_without_comments": "noncomputable def normIdx (hs : ∃ i, s i ≠ 0) : ι :=\n  (Finset.exists_min_image (Finset.univ.filter fun i => s i ≠ 0) (fun i => P.ord (s i))\n    (filter_ne_zero_nonempty hs)).choose",
+        "readback": {
+          "en": "A normalization index is a chosen index of a nonzero coordinate with least order; it is supplied only with a proof that such a coordinate exists.",
+          "zh_Hans": "归一化指标是选取的一个阶最小的非零分量的指标，只有给定非零分量存在的证明时才提供。",
+          "ja": "正規化の添字は、位数が最小の非零成分から選んだ添字であり、非零成分の存在の証明とともにのみ与えられる。"
+        }
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarTupleHeight.lean",
+        "source_sha256": "34f5965a008cc516caa476517ea326a8821658ed30df9077596b6b0e446d1319",
+        "start_line": 93,
+        "end_line": 94,
+        "raw_formal_code": "noncomputable def minOrd (P : Place K) (s : ι → K) : ℤ :=\n  if hs : ∃ i, s i ≠ 0 then P.ord (s (normIdx P s hs)) else 0",
+        "formal_code_without_comments": "noncomputable def minOrd (P : Place K) (s : ι → K) : ℤ :=\n  if hs : ∃ i, s i ≠ 0 then P.ord (s (normIdx P s hs)) else 0",
+        "readback": {
+          "en": "For a finite tuple $s$ in $K$, $m_P(s)$ is the least $ord_P(s_i)$ among nonzero entries, and is zero if all entries vanish. At $x=(P,σ)$ choose a nonzero coordinate $s_j$ with this least order and put $h_s(x)=h(((s_i/s_j)(x))_i)$; put $h_s(x)=0$ for the zero tuple. ",
+          "zh_Hans": "对 $K$ 中的有限元组 $s$，$m_P(s)$ 是所有非零分量的 $ord_P(s_i)$ 的最小值；若全部分量为零，则取零。在 $x=(P,σ)$ 处，选取达到此最小阶的非零分量 $s_j$，定义 $h_s(x)=h(((s_i/s_j)(x))_i)$；零元组则定义为 $h_s(x)=0$。",
+          "ja": "$K$ の有限の組 $s$ に対し、$m_P(s)$ は非零成分の $ord_P(s_i)$ の最小値であり、全成分が零なら零とする。$x=(P,σ)$ でこの最小位数を持つ非零成分 $s_j$ を選び、$h_s(x)=h(((s_i/s_j)(x))_i)$ と定める。零の組には $h_s(x)=0$ を用いる。"
+        }
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarTupleHeight.lean",
+        "source_sha256": "34f5965a008cc516caa476517ea326a8821658ed30df9077596b6b0e446d1319",
+        "start_line": 123,
+        "end_line": 129,
+        "raw_formal_code": "noncomputable def evalTuple (x : QbarPoint K) (s : ι → K) (hs : ∃ i, s i ≠ 0) : ι → Qbar :=\n  fun j => x.eval (s j / s (normIdx x.P s hs)) (div_normIdx_mem hs j)\n\n/-- **The height of the tuple `s` at the point `x`**: the absolute logarithmic Weil height of\n`[s₀ : ⋯ : s_n](x)` (`0` for the zero tuple). -/\nnoncomputable def tupleHeight (s : ι → K) (x : QbarPoint K) : ℝ :=\n  if hs : ∃ i, s i ≠ 0 then logHeight (evalTuple x s hs) else 0",
+        "formal_code_without_comments": "noncomputable def evalTuple (x : QbarPoint K) (s : ι → K) (hs : ∃ i, s i ≠ 0) : ι → Qbar :=\n  fun j => x.eval (s j / s (normIdx x.P s hs)) (div_normIdx_mem hs j)\n\n                                                                                             \n                                                \nnoncomputable def tupleHeight (s : ι → K) (x : QbarPoint K) : ℝ :=\n  if hs : ∃ i, s i ≠ 0 then logHeight (evalTuple x s hs) else 0",
+        "readback": {
+          "en": "For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. For a finite tuple $s$ in $K$, $m_P(s)$ is the least $ord_P(s_i)$ among nonzero entries, and is zero if all entries vanish. At $x=(P,σ)$ choose a nonzero coordinate $s_j$ with this least order and put $h_s(x)=h(((s_i/s_j)(x))_i)$; put $h_s(x)=0$ for the zero tuple. ",
+          "zh_Hans": "对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。对 $K$ 中的有限元组 $s$，$m_P(s)$ 是所有非零分量的 $ord_P(s_i)$ 的最小值；若全部分量为零，则取零。在 $x=(P,σ)$ 处，选取达到此最小阶的非零分量 $s_j$，定义 $h_s(x)=h(((s_i/s_j)(x))_i)$；零元组则定义为 $h_s(x)=0$。",
+          "ja": "有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。$K$ の有限の組 $s$ に対し、$m_P(s)$ は非零成分の $ord_P(s_i)$ の最小値であり、全成分が零なら零とする。$x=(P,σ)$ でこの最小位数を持つ非零成分 $s_j$ を選び、$h_s(x)=h(((s_i/s_j)(x))_i)$ と定める。零の組には $h_s(x)=0$ を用いる。"
+        }
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+        "source_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+        "start_line": 59,
+        "end_line": 75,
+        "raw_formal_code": "noncomputable abbrev fieldOf (x : ι → Qbar) : IntermediateField ℚ Qbar :=\n  IntermediateField.adjoin ℚ (Set.range x)\n\n/-- The coordinates of `x`, viewed in `ℚ(x)`. -/\nnoncomputable def coords (x : ι → Qbar) : ι → fieldOf x :=\n  fun i => ⟨x i, IntermediateField.subset_adjoin _ _ ⟨i, rfl⟩⟩\n\n@[simp]\nlemma coe_coords (x : ι → Qbar) (i : ι) : (coords x i : Qbar) = x i := rfl\n\nvariable [Finite ι] [Finite κ]\n\n/-- **The absolute logarithmic Weil height** of the point of projective space with homogeneous\ncoordinates `x` (it is `0` for `x = 0`): the relative height of `x` in `ℚ(x)` divided by the\ndegree `[ℚ(x) : ℚ]`. -/\nnoncomputable def logHeight (x : ι → Qbar) : ℝ :=\n  Height.logHeight (coords x) / finrank ℚ (fieldOf x)",
+        "formal_code_without_comments": "noncomputable abbrev fieldOf (x : ι → Qbar) : IntermediateField ℚ Qbar :=\n  IntermediateField.adjoin ℚ (Set.range x)\n\n                                                \nnoncomputable def coords (x : ι → Qbar) : ι → fieldOf x :=\n  fun i => ⟨x i, IntermediateField.subset_adjoin _ _ ⟨i, rfl⟩⟩\n\n@[simp]\nlemma coe_coords (x : ι → Qbar) (i : ι) : (coords x i : Qbar) = x i := rfl\n\nvariable [Finite ι] [Finite κ]\n\n                                                                                              \n                                                                                            \n                       \nnoncomputable def logHeight (x : ι → Qbar) : ℝ :=\n  Height.logHeight (coords x) / finrank ℚ (fieldOf x)",
+        "readback": {
+          "en": "For a finite algebraic tuple $a$, let $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$, where $ℚ(a)$ is generated by all its coordinates and $H_L$ is the usual relative logarithmic projective height over the number field $L$; the zero tuple has height zero. ",
+          "zh_Hans": "对有限代数数元组 $a$，令 $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$，其中 $ℚ(a)$ 由全部坐标生成，$H_L$ 是数域 $L$ 上通常的相对对数射影高度；零元组的高度为零。",
+          "ja": "有限個の代数的数からなる組 $a$ に対し $h(a)=H_{ℚ(a)}(a)/[ℚ(a):ℚ]$ とする。ここで $ℚ(a)$ は全座標で生成される体、$H_L$ は数体 $L$ 上の通常の相対対数射影高さである。零の組の高さは零である。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+        "source_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+        "start_line": 23,
+        "end_line": 35,
+        "raw_formal_code": "noncomputable def poleMultiplicity (M : Model N) (hDVR : PlacesDiscrete M)\n    (f : M.K) (P : Place M.K) : ℤ :=\n  max 0 (-ord M hDVR P f)\n\n/-- An exact presentation of a genuine divisor by two rational functions.\nThe pointwise equality fixes every coefficient on the proper model.\nThe existence of this data is Riemann's theorem, a separate open child. -/\nstructure PolarPresentation (M : Model N) (hDVR : PlacesDiscrete M)\n    (D : Divisor M) where\n  f : M.K\n  g : M.K\n  divisor_eq : ∀ P : Place M.K,\n    D P = poleMultiplicity M hDVR f P - poleMultiplicity M hDVR g P",
+        "formal_code_without_comments": "noncomputable def poleMultiplicity (M : Model N) (hDVR : PlacesDiscrete M)\n    (f : M.K) (P : Place M.K) : ℤ :=\n  max 0 (-ord M hDVR P f)\n\n                                                                         \n                                                                   \n                                                                          \nstructure PolarPresentation (M : Model N) (hDVR : PlacesDiscrete M)\n    (D : Divisor M) where\n  f : M.K\n  g : M.K\n  divisor_eq : ∀ P : Place M.K,\n    D P = poleMultiplicity M hDVR f P - poleMultiplicity M hDVR g P",
+        "readback": {
+          "en": "Pole multiplicity is $max(0,-ord_P(f))$, with zero multiplicity for $f=0$. A polar presentation of $D$ has two fields $f,g∈K$ and a proof field asserting, at every place, $D(P)=pole_f(P)-pole_g(P)$. Neither function is required to be nonzero.",
+          "zh_Hans": "极点重数是 $max(0,-ord_P(f))$，$f=0$ 时重数为零。$D$ 的一个极点表示包含两个域元素字段 $f,g∈K$ 和一个证明字段，要求每个处都有 $D(P)=pole_f(P)-pole_g(P)$。两个函数都不要求非零。",
+          "ja": "極の重複度は $max(0,-ord_P(f))$ であり、$f=0$ の重複度は零である。$D$ の極表示は二つの体の元のフィールド $f,g∈K$ と、全場所で $D(P)=pole_f(P)-pole_g(P)$ を要求する証明フィールドからなる。どちらの関数にも非零性は要求しない。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+        "source_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+        "start_line": 41,
+        "end_line": 47,
+        "raw_formal_code": "noncomputable def functionHeight (M : Model N) (f : M.K)\n    (x : QbarPoint M.K) : ℝ :=\n  if hf : f ∈ x.P.1 then\n    Height.logHeight₁ (AbcAdaptation.Tripod.gen (x.eval f hf)) /\n      AbcAdaptation.Tripod.deg (x.eval f hf)\n  else 0\n",
+        "formal_code_without_comments": "noncomputable def functionHeight (M : Model N) (f : M.K)\n    (x : QbarPoint M.K) : ℝ :=\n  if hf : f ∈ x.P.1 then\n    Height.logHeight₁ (AbcAdaptation.Tripod.gen (x.eval f hf)) /\n      AbcAdaptation.Tripod.deg (x.eval f hf)\n  else 0",
+        "readback": {
+          "en": "Define $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$ when $f∈O_P$, and $h_f(x)=0$ when $f∉O_P$ (a pole). Here the scalar relative height means the height of $[1:f(x)]$, measured in its generated field; a regular value zero also has height zero. ",
+          "zh_Hans": "当 $f∈O_P$ 时，定义 $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$；当 $f∉O_P$，即为极点时，定义 $h_f(x)=0$。这里标量的相对高度指 $[1:f(x)]$ 在函数值生成域中的高度；正则值为零时高度也为零。",
+          "ja": "$f∈O_P$ のとき $h_f(x)=H_{ℚ(f(x))}(f(x))/[ℚ(f(x)):ℚ]$、$f∉O_P$、すなわち極のとき $h_f(x)=0$ と定める。スカラーの相対高さは、値の生成体で測った $[1:f(x)]$ の高さを意味する。正則な値が零のときも高さは零である。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+        "source_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+        "start_line": 72,
+        "end_line": 75,
+        "raw_formal_code": "noncomputable def divHeight {M : Model N} {hDVR : PlacesDiscrete M}\n    {D : Divisor M} (R : PolarPresentation M hDVR D)\n    (x : QbarPoint M.K) : ℝ :=\n  functionHeight M R.f x - functionHeight M R.g x",
+        "formal_code_without_comments": "noncomputable def divHeight {M : Model N} {hDVR : PlacesDiscrete M}\n    {D : Divisor M} (R : PolarPresentation M hDVR D)\n    (x : QbarPoint M.K) : ℝ :=\n  functionHeight M R.f x - functionHeight M R.g x",
+        "readback": {
+          "en": "For a chosen polar presentation $R=(f,g)$, the divisor height is $h_R(x)=h_f(x)-h_g(x)$. The choice of presentation is explicit input.",
+          "zh_Hans": "对选定的极点表示 $R=(f,g)$，除子高度为 $h_R(x)=h_f(x)-h_g(x)$。表示的选择是显式输入。",
+          "ja": "選んだ極表示 $R=(f,g)$ に対し、因子の高さは $h_R(x)=h_f(x)-h_g(x)$ である。表示の選択は明示的な入力である。"
+        }
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+        "source_sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+        "start_line": 32,
+        "end_line": 50,
+        "raw_formal_code": "noncomputable def deg (z : Qbar) : ℕ := (minpoly ℚ z).natDegree\n\ntheorem deg_pos (z : Qbar) : 0 < deg z := minpoly.natDegree_pos (isIntegral z)\n\ntheorem deg_pos_real (z : Qbar) : (0 : ℝ) < deg z := by\n  exact_mod_cast deg_pos z\n\nnoncomputable abbrev fieldOf (z : Qbar) : IntermediateField ℚ Qbar := ℚ⟮z⟯\n\ninstance (z : Qbar) : FiniteDimensional ℚ (fieldOf z) :=\n  IntermediateField.adjoin.finiteDimensional (isIntegral z)\n\ninstance (F : IntermediateField ℚ Qbar) [FiniteDimensional ℚ F] : NumberField F where\n\ntheorem deg_eq_finrank (z : Qbar) : deg z = Module.finrank ℚ (fieldOf z) :=\n  (IntermediateField.adjoin.finrank (isIntegral z)).symm\n\n/-- The generator of the simple intermediate field `ℚ(z)`, identified with `z`. -/\nnoncomputable def gen (z : Qbar) : fieldOf z := IntermediateField.AdjoinSimple.gen ℚ z",
+        "formal_code_without_comments": "noncomputable def deg (z : Qbar) : ℕ := (minpoly ℚ z).natDegree\n\ntheorem deg_pos (z : Qbar) : 0 < deg z := minpoly.natDegree_pos (isIntegral z)\n\ntheorem deg_pos_real (z : Qbar) : (0 : ℝ) < deg z := by\n  exact_mod_cast deg_pos z\n\nnoncomputable abbrev fieldOf (z : Qbar) : IntermediateField ℚ Qbar := ℚ⟮z⟯\n\ninstance (z : Qbar) : FiniteDimensional ℚ (fieldOf z) :=\n  IntermediateField.adjoin.finiteDimensional (isIntegral z)\n\ninstance (F : IntermediateField ℚ Qbar) [FiniteDimensional ℚ F] : NumberField F where\n\ntheorem deg_eq_finrank (z : Qbar) : deg z = Module.finrank ℚ (fieldOf z) :=\n  (IntermediateField.adjoin.finrank (isIntegral z)).symm\n\n                                                                                  \nnoncomputable def gen (z : Qbar) : fieldOf z := IntermediateField.AdjoinSimple.gen ℚ z",
+        "readback": {
+          "en": "For an algebraic number $z$, $deg(z)$ is the natural-number degree of its minimal polynomial over $ℚ$, $fieldOf(z)=ℚ(z)$, and $gen(z)$ is $z$ regarded as an element of this simple field. The displayed degree identity identifies $deg(z)$ with $[ℚ(z):ℚ]$.",
+          "zh_Hans": "对代数数 $z$，$deg(z)$ 是其在 $ℚ$ 上最小多项式的自然数次数，$fieldOf(z)=ℚ(z)$，$gen(z)$ 是将 $z$ 视为此单扩张中的元素。所列次数等式将 $deg(z)$ 与 $[ℚ(z):ℚ]$ 相等同。",
+          "ja": "代数的数 $z$ に対し、$deg(z)$ は $ℚ$ 上の最小多項式の自然数値の次数、$fieldOf(z)=ℚ(z)$、$gen(z)$ はこの単拡大の元とみなした $z$ である。表示された次数の等式は $deg(z)$ と $[ℚ(z):ℚ]$ を同一視する。"
+        }
+      }
+    ],
+    "separate_source_observations": {
+      "proof_correctness_judgment": null,
+      "principal_factor_construction": {
+        "source_file": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarPresentationHeights.lean",
+        "lines": [
+          93,
+          97
+        ],
+        "text": "Separate source observation, not an extra theorem premise or correctness assessment: the parent proof sets s from the numerator presentation pairs, d from the denominator pairs, t₀ from (1,f) times d, and t=r⁻¹·t₀. The principal factor is the inverse of r, while the statement retains +ord(r) in D+E=polar(f)+div(r).",
+        "formal_construction": "s_(i,j)=(1,a_D)_i(1,a_E)_j; d_(i,j)=(1,b_D)_i(1,b_E)_j; t₀_(k,i,j)=(1,f)_k d_(i,j); t_(k,i,j)=r⁻¹ t₀_(k,i,j).",
+        "readback": {
+          "en": "Source construction only, without a proof-correctness assessment: the tuples are s=(1,a_D)×(1,a_E), d=(1,b_D)×(1,b_E), t₀=(1,f)×d, and t=r⁻¹·t₀. The factor is the inverse of the nonzero principal function r, whereas the theorem premise has +ord(r).",
+          "zh_Hans": "仅记录源码构造，不评价证明正确性：元组为 s=(1,a_D)×(1,a_E)、d=(1,b_D)×(1,b_E)、t₀=(1,f)×d，以及 t=r⁻¹·t₀。所用因子是非零主函数 r 的逆，而定理前提中是 +ord(r)。",
+          "ja": "証明の正しさを評価せず、ソースの構成のみを記録する。組は s=(1,a_D)×(1,a_E)、d=(1,b_D)×(1,b_E)、t₀=(1,f)×d、t=r⁻¹·t₀ である。因子は非零の主関数 r の逆元であり、定理の仮定には +ord(r) が現れる。"
+        }
+      },
+      "inferred_parameters": "Exact inferred section parameters and universes are unelaborated. Source binders and section context are preserved for all records. No compiler-generated private identifiers can be certified without elaboration; target sources contain no private declarations.",
+      "notation": "Readbacks use standard mathematical notation. h_s denotes the defined tuple height; h_f denotes the defined function height, with subscript interpretation stated in each paragraph. No point carrier is quotiented by embeddings.",
+      "terminology": "No unsettled six-term project glossary entries occur. Japanese mathematical terms here follow ordinary domain usage or direct compositional analogy, not a claimed quotation from Japanese references."
+    }
+  },
+  "blind-readback-rational-height.json": {
+    "schema_version": 1,
+    "artifact_kind": "independent_trilingual_formal_readback",
+    "requested_model": "gpt-6.1-sol",
+    "actual_backend_model": null,
+    "model_disclosure": "The requested model identifier is recorded as requested; the actual backend identifier is not exposed and is therefore null.",
+    "status": "source-only readback; no Lean elaboration, compilation or proof-correctness assessment",
+    "formal_input_scope": "lemma.lean and necessary formal definitions; no paper sources or author narrative used",
+    "source_binding": "This artifact binds only to the bytes and spans of lemma.lean recorded here. No independently copied file is treated as identical by this readback.",
+    "historical_proof_notes": [],
+    "paper_quotes": [],
+    "necessary_formal_context": [
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+        "file_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+        "line_start": 44,
+        "line_end": 44,
+        "raw_formal_context": "abbrev Qbar := AlgebraicClosure ℚ\n",
+        "span_sha256": "bce60a2a28e62a80a67373629c4f786202c8c5fcbde209775111601396a28463"
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+        "file_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+        "line_start": 59,
+        "line_end": 60,
+        "raw_formal_context": "noncomputable abbrev fieldOf (x : ι → Qbar) : IntermediateField ℚ Qbar :=\n  IntermediateField.adjoin ℚ (Set.range x)\n",
+        "span_sha256": "19bbbfb3fb920da768541b91024d185fee7d360f99d2b94c8f2f6e6754f9106a"
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+        "file_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+        "line_start": 63,
+        "line_end": 64,
+        "raw_formal_context": "noncomputable def coords (x : ι → Qbar) : ι → fieldOf x :=\n  fun i => ⟨x i, IntermediateField.subset_adjoin _ _ ⟨i, rfl⟩⟩\n",
+        "span_sha256": "8e644d15f06e5ac00db2f5bf7b0a716fcdc75b9159d8d54fc4dd65276e3169bf"
+      },
+      {
+        "path": "/tmp/p2m-polar-presentation-height-next-20261114/drafts/Solutions/Source_FermatPolarAbsoluteBasic.lean",
+        "file_sha256": "1032c5558eb16aa358311d433feb6c685c94d2bfebd41b81695e31cf1fdf8ba7",
+        "line_start": 74,
+        "line_end": 75,
+        "raw_formal_context": "noncomputable def logHeight (x : ι → Qbar) : ℝ :=\n  Height.logHeight (coords x) / finrank ℚ (fieldOf x)\n",
+        "span_sha256": "fe8427e956672dd80d274ac5838534fce918b513ef85efedd917357a4af9fd42"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/Basic.lean",
+        "file_sha256": "73168a1cb0b29ad7cdac761fa385956e91a426ccfeb0c9b0cb2ea07dafb1500f",
+        "line_start": 115,
+        "line_end": 116,
+        "raw_formal_context": "def mulHeight₁ (x : K) : ℝ :=\n  (archAbsVal.map fun v ↦ max (v x) 1).prod * ∏ᶠ v : nonarchAbsVal, max (v.val x) 1\n",
+        "span_sha256": "ba8cb73117f82002a34c69ac417f64a1049e0a4a7d95ce0a28a85e006f0d0711"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/Basic.lean",
+        "file_sha256": "73168a1cb0b29ad7cdac761fa385956e91a426ccfeb0c9b0cb2ea07dafb1500f",
+        "line_start": 148,
+        "line_end": 148,
+        "raw_formal_context": "def logHeight₁ (x : K) : ℝ := log (mulHeight₁ x)\n",
+        "span_sha256": "06f07802f199e213a8722f102ec2889b230f6d0c6a07d73a07a60dba06e2d70b"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/Basic.lean",
+        "file_sha256": "73168a1cb0b29ad7cdac761fa385956e91a426ccfeb0c9b0cb2ea07dafb1500f",
+        "line_start": 234,
+        "line_end": 237,
+        "raw_formal_context": "def mulHeight (x : ι → K) : ℝ :=\n  have : Decidable (x = 0) := Classical.propDecidable _\n  if x = 0 then 1 else\n    (archAbsVal.map fun v ↦ ⨆ i, v (x i)).prod * ∏ᶠ v : nonarchAbsVal, ⨆ i, v.val (x i)\n",
+        "span_sha256": "702635e494adf7898656a68b75f86f3a48cd9b35dba8fb56e662a6e2808f62ef"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/Basic.lean",
+        "file_sha256": "73168a1cb0b29ad7cdac761fa385956e91a426ccfeb0c9b0cb2ea07dafb1500f",
+        "line_start": 273,
+        "line_end": 273,
+        "raw_formal_context": "def logHeight (x : ι → K) : ℝ := log (mulHeight x)\n",
+        "span_sha256": "8f8db6eaa572bfdee20651d650343a24859c4081bb0dc23d960f5bb73f2636f3"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/NumberField.lean",
+        "file_sha256": "e1628937331e7e69f01b96dcc1116da4d3d0ab57cc4f3a1b0a634c8c614a3ed3",
+        "line_start": 542,
+        "line_end": 542,
+        "raw_formal_context": "lemma logHeight₁_eq_log_max (q : ℚ) : logHeight₁ q = log ↑(max q.num.natAbs q.den) := by\n",
+        "span_sha256": "603da97891a99a49f6802fe26fe97503fbb8450115ef61e285e391bdbba76f81"
+      }
+    ],
+    "validation": {
+      "passed": true,
+      "errors": [],
+      "checks": [
+        "source stability and SHA-256",
+        "exact raw signature and span",
+        "source declaration SHA-256",
+        "necessary formal dependency hashes and spans",
+        "all three language fields",
+        "no control characters in readback paragraphs",
+        "balanced inline math delimiters and braces"
+      ],
+      "limits": [
+        "No elaboration, compilation or proof audit.",
+        "Math delimiters and braces checked structurally; no KaTeX engine run."
+      ]
+    }
+  }
+}
