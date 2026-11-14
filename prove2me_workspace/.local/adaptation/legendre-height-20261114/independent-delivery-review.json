@@ -1,0 +1,242 @@
+{
+  "verdict": "PASS_STATIC",
+  "scope": "Read-only review of delivery.py, ci.py, all eight integrated Lean files, and directly used publication/readback/audit helper files. No compilation, MCP-CI call, API call, Git write, main-workspace write or cache write performed by this reviewer.",
+  "blocking_issues": [],
+  "resolved_during_review": [
+    {
+      "issue": "Final delivery checked individual statuses but did not assert that the accepted parent sketch has exactly the four new mathematical child edges.",
+      "resolution": "delivery.py:128-137 now binds the unique SKETCH_ACCEPTED node by original parent ID and this verification submission ID, checks the exact child-ID set, checks two Proved and two Open child statuses, checks parent/root still Open, and saves direct-graph-evidence.json.",
+      "status": "resolved_by_parent_and_reinspected"
+    }
+  ],
+  "parent_and_math": {
+    "verdict": "PASS_STATIC",
+    "original_parent_reused": "AbcAdaptation.Tripod.CanonicalLegendreHeightComparison is imported unchanged; existing original canonicalLegendreHeightComparison theorem source remains unchanged.",
+    "exact_type": "forall K : CompactlyBounded, exists B : Real, forall x : Pt, x in K.set -> abs(auxiliaryHeight x / 6 - htCan x) <= B",
+    "actual_field_and_degree": "Existing fieldOf x = Q adjoin x; deg is actual minimal-polynomial degree, equal to finrank Q (fieldOf x). No field provider or point-degree bound is introduced.",
+    "coefficient": "Exact original /6, equivalent to composer (1/6)*auxiliaryHeight.",
+    "finite_upper": "Exact source Height.lean:714; all points; coefficient 2 and all three actual finite-height terms retained.",
+    "finite_lower": "Exact source Height.lean:743; actual compact membership and j != 0; correction 6*c*V.card*deg retained.",
+    "archimedean": "Exact three simultaneous bounds, using actual relative number-field log height and c*deg.",
+    "zero_j": "Actual generator j=0 implies sixth root; source polynomial proof and actual point exclusions retained.",
+    "all_four_consumed": {
+      "upper": "hUpper x in upper key inequality",
+      "lower": "hLower K x hx hj in nonzero-j lower key inequality",
+      "archimedean": "hArch K x hx destructured into all three bounds in nonzero-j lower key inequality",
+      "zero_j": "hZero x hj in zero-j branch proving relative logHeight=0"
+    },
+    "uniform_B": "max (log(2)/3) (c*V.card+c+log(2)/3), depends only on K.",
+    "empty_K": "No nonempty hypothesis added. c>=0 is derived only from an actual member. Empty K.set remains valid and vacuous.",
+    "Definitions": "Only exact predicates, actual infHeight, necessary structural source helpers, and the conditional source composer. No mathOpen, sorry, axiom, Theorems imports, free Prop input, arbitrary height provider or lowered target found."
+  },
+  "proof_state": {
+    "two_expected_Open": [
+      "AbcAdaptation.Tripod.legendreFiniteUpperBound",
+      "AbcAdaptation.Tripod.legendreFiniteLowerBound"
+    ],
+    "two_complete_source_bodies": [
+      "AbcAdaptation.Tripod.legendreArchimedeanTripleBound",
+      "AbcAdaptation.Tripod.legendreZeroJRootOfUnity"
+    ],
+    "parent_solution": "No literal sorry; composes the four canonical theorem constants. It inherits the two explicit Open source leaves, so full mathematical closure is intentionally not claimed.",
+    "platform_expected": "Four new problem nodes initially published as exact Open theorem statements; only archimedean and zero-j receive proof verification expected ACCEPTED. Parent reduction expected SKETCH_ACCEPTED; parent and root remain Open.",
+    "closed_solution_uploads": "Both isolated Solution files contain copied actual proof bodies, import only Definitions/Mathlib, contain no sorry and do not import their target Theorems module.",
+    "axiom_checks": "AuditAllConstants visits every environment constant owned by the three new Definitions modules and two closed theorem modules; only propext, Classical.choice and Quot.sound allowed. Closed Checks prints composer and two closed theorem axioms; reduction Checks separately expects sorryAx for parent solution."
+  },
+  "canonical_filenames": {
+    "verdict": "PASS_STATIC",
+    "all_four_ascii": true,
+    "all_four_exact_fully_qualified_name_mapping": true,
+    "upload_preambles": "All four exact uploaded theorem statements import the Inputs Definitions module, not their own Theorems modules.",
+    "uploaded_types": "upload-problem-items.json has exactly the four expected theorem names and exact predicate types; ValidateTypes compares corresponding local typed aliases with elaborated canonical theorem types and compares solution type to the original parent theorem type."
+  },
+  "blind_readbacks": {
+    "verdict": "PASS_STATIC",
+    "selected_declarations": 21,
+    "all_original_draft_hashes_match": true,
+    "all_eight_integrated_code_bodies_identical_to_blind_draft_ignoring_comments": true,
+    "binding": "delivery.bind matches unique module+userName with source span, preserves original readback path/hash, and attaches current source SHA256, elaborated type and source span. The current integrated code has independently been compared to the original blind draft.",
+    "consumer_closure": "Compiler declaration graph traverses both typeDeps and valueDeps from solution and the two proved child theorems; every new Definitions declaration must be reachable.",
+    "pending_runtime_outputs": "This review does not execute bind/preflight. Parent agent must obtain their successful outputs from the scheduled compilation workflow before publishing."
+  },
+  "publication_protocol": {
+    "verdict": "PASS_STATIC",
+    "privacy": "Definitions and child-problem POST payloads explicitly private=True; proof verification checks target privacy and Mathlib revision; final GET verifies each child and parent remain private.",
+    "ambiguous_POST": "Durable publication-requested and verification-requested markers are written before POST. If receipt is missing on restart, script stops for reconciliation. If receipt exists, exact payload/verification metadata must match before polling the existing job/submission. No automatic publication or proof POST retry was found in imported protocol or api.request.",
+    "protocol_loading": "Only publish/verify function ASTs are extracted from the previous unit; its top-level actions do not execute.",
+    "PATCH": "Parent formal statement is checked against archived before state. Only natural-language statement and source metadata are patched. PATCH retry is an exact desired-state reconciliation via GET.",
+    "graph": "Final accepted sketch is uniquely bound to parent and this submission; its incoming mathematical child IDs must equal all four newly published theorem IDs, with exactly the expected 2 Proved/2 Open statuses.",
+    "frontier": "Complete mathematical root graph is fetched using existing drill helper; open-leaves pagination is fully stored and total checked.",
+    "Fermat_route": "No deprecation request or Fermat-node mutation is present. Latest user instruction to retain Fermat route is respected."
+  },
+  "ci_script": {
+    "verdict": "PASS_STATIC",
+    "scheduler_only": "All Lean invocations occur through structured scheduler ci_submit calls. No direct shell Lean/Lake/Agda/Coq compilation.",
+    "leaves": "task_type leaf, target file, exact parameters.source; inherited structured LEAN_PATH; first checks default 60s and 16GiB.",
+    "exclusive": "exclusive=True and actual workspace path; manifest records HEAD, dirty/untracked files, toolchain/config/lock hashes, source hashes and external dependencies. Terminal receipt checks exclusive_worktree and snapshot_id=None.",
+    "artifacts": "Separate scheduled artifact production uses measured prior leaf time/RSS estimates and structured Lean arguments; no dependency cache deletion or cold rebuild.",
+    "transport": "Reconnects to same scheduler and replays same args and idempotency key. Existing submit receipt reuses job ID. ci_wait timeout_seconds=20 is below socket timeout 40; queued/running/preparing_snapshot are not terminal success.",
+    "results": "Checks terminal succeeded, exit code, actual arguments, review passed where requested, and available process-tree peak RSS <=16GiB. Raw receipts preserved; absent metrics are not synthesized as zero.",
+    "preflight": "Requires all source/check/type/axiom/production gate receipts, matches owned source hashes and exact parent type flag before publication.",
+    "review_limitation": "No current build terminal state or resource success is asserted here; active compilation remains owned by parent agent."
+  },
+  "licence_and_source": {
+    "verdict": "PASS_STATIC",
+    "all_eight_original_headers_present": true,
+    "Height_exactSHA256": "1de154fbca7da4ac9510537384ae9f8756e998c4de26e01162b4957c807c7df1",
+    "TwoAdic_exactSHA256": "213d57f352bbd1e00efc7b3f570849f6eed0f467c7bfc3b75631286a7bd8f719",
+    "archived_LICENSE_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "historical_upstream_revision": "Explicitly unverified in source-consumer, copied file notices and publication source prose.",
+    "source_context": "Paper quotation is separate from blind readbacks and is described as mathematical context. Exact local inequalities and zero-j proof are attributed to archived Height.lean with SHA256."
+  },
+  "files": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodLegendreHeightBasics.lean",
+      "sha256": "e5310355215b1e468bec258b6eb906f916b95885403dc6f9ca167f796b84becf",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodLegendreHeightComparisonComposition.lean",
+      "sha256": "a86fdd54151d866cbe2d17b6ba3295aefae1a937b43e3b4e0bba04fc439cbe40",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodLegendreHeightComparisonInputs.lean",
+      "sha256": "e47cb0d5296ad7c4b7eddbdd16637a14b187e08ed455a6f2fd653fa2a70dab51",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_CanonicalLegendreHeightComparison.lean",
+      "sha256": "4eef0019e25c0bb5a78a115c757429a038e08fd55df24bdd793964e2d2644fec",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_legendreArchimedeanTripleBound.lean",
+      "sha256": "d5616a3542fbd938cad39a2ff9b5fc5cf52ebb9c0e808a2be7cb2cb505069ad3",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound.lean",
+      "sha256": "e4e9eeca33ad65fc1360be83cdd54bafc25bda54f0c1429ffeba3edfd28789df",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound.lean",
+      "sha256": "654f334397c794627bf999febd530e602b70e4d78b4ac5bf914d76e69366f4b0",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_legendreZeroJRootOfUnity.lean",
+      "sha256": "5ec9054a362589fe275ff9bee79ea5065eb1fd191f599da547c5d415a27efdcc",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/legendre-height-20261114/delivery.py",
+      "sha256": "249792560872e13703803c9f229b2db2bfe13e20024447125138b2348eb461c3",
+      "entire_file_inspected": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/legendre-height-20261114/ci.py",
+      "sha256": "d6df7e3f37a6feb61dd97a78d1222259ccb376a3d25aa247941bd11f694e99f7",
+      "entire_file_inspected": true
+    }
+  ],
+  "helper_files_inspected": [
+    "upload-problem-items.json",
+    "blind-readbacks-original.json",
+    "source-consumer.json",
+    "ExtractLegendreGraph.lean",
+    "ValidateTypes.lean",
+    "AuditAllConstants.lean",
+    "ProductionGates.lean",
+    "Solution_legendreArchimedeanTripleBound.lean",
+    "Solution_legendreZeroJRootOfUnity.lean",
+    "Solutions/Checks_TripodLegendreHeightClosed.lean",
+    "Solutions/Checks_TripodLegendreHeightReduction.lean",
+    "platform-tripod-20261113/executed-platform-publish.py publish/verify function ASTs",
+    "abc-item/api.py request function AST",
+    "northcott-sourceproof-20261114/graph_completion.py"
+  ],
+  "not_claimed": [
+    "Successful current MCP-CI acceptance",
+    "Successful API publication/verification",
+    "Actual final platform graph state",
+    "Closure of the two finite source ports",
+    "Completion of original parent mathematics or abc"
+  ],
+  "finalization_review": {
+    "verdict": "PASS_STATIC",
+    "files": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/legendre-height-20261114/finalize.py",
+        "sha256": "8bacfb9826562e3148c7cb7a8df5a44531d20b381913be3bf8929b7ef67a40b5",
+        "entire_file_inspected": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/legendre-height-20261114/pending-db-before.md",
+        "sha256": "e0167275417c4c46bd8e335563e05fc34354c94c4088c3ed0dfa6be135d79fd4",
+        "entire_file_inspected": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/legendre-height-20261114/pending-db-after.md",
+        "sha256": "318aaf58fa74b7ff0d196e8a4d438b1c5efeaa8af24ea733a739357060fcee77",
+        "entire_file_inspected": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/legendre-height-20261114/pending-db-classification.json",
+        "sha256": "b0f3bbd8d204def4332fd7b08cbb947f7e899254cbc4421df6f414b67cc6325d",
+        "entire_file_inspected": true
+      }
+    ],
+    "blocking_issues": [],
+    "graph_delta": {
+      "baseline_confirmed": {
+        "published_children": 70,
+        "accepted_reductions": 27,
+        "dependency_edges": 77,
+        "open_frontier": 25,
+        "direct_closed_children": 27
+      },
+      "expected_after": {
+        "published_children": 74,
+        "accepted_reductions": 28,
+        "dependency_edges": 81,
+        "open_frontier": 26,
+        "direct_closed_children": 29
+      },
+      "mathematical_nodes": "Before graph contains none of the four new child names. finalize requires after names equal old names union published-child IDs keys: exactly four new mathematical nodes.",
+      "reductions": "Preserves each old accepted reduction record exactly; adds exactly one reduction, binds its submission to reduce-parent verify receipt, binds its parent to original canonicalLegendreHeightComparison and its children to exactly the four new theorem names.",
+      "edges": "Requires existing dependency pairs to remain and exactly four new pairs.",
+      "frontier": "Baseline actually has 25 unique fully fetched Open leaves, including the Legendre parent. Exact name-set replacement removes that parent leaf and adds the two absent finite children, so the asserted new set has 26 unique leaves. Parent itself remains Open.",
+      "direct_proofs": "Exactly two new closed-child proof records are inserted into registry after checking ACCEPTED verification result ID, submission ID, target theorem ID, current file hash, and byte-for-byte uploaded solution copy.",
+      "existing_proofs": "All previous direct-closed proof names remain and must still be Proved.",
+      "no_deprecations": "Imported graph_summary rejects hidden deprecated nodes/sketches and deprecated_at on all mathematical nodes and accepted sketches. Existing mathematical statuses and reduction records are preserved. No API or deprecation call occurs in finalize."
+    },
+    "Fermat_route": {
+      "verdict": "preserved",
+      "graph": "Existing mathematical node statuses and accepted reductions are retained; graph_summary requires no Deprecated state hidden or visible.",
+      "database": "Section 3 retains Fermat.heightNormalization, Fermat.liftDifferent, Proper.modelExists, Proper.affineIdentification, Proper.planeAdjunctionExists, Proper.coordinatePoleMultiplicity_eq and the concrete canonicalHeightIdentification.",
+      "classification": "Section 1 now lists generic source-proved Belyi/Heights/Genl obligations with exact locked source paths, while section 3 keeps the extra actual Fermat model, full field identity, pole, adjunction and height identification obligations. No local mathematical completion is inferred from source proof-body availability.",
+      "source_entries_verified": "All 21 newly classified source_directed_entries resolve at the listed line to an actual named source declaration with a proof term/body. Height:791 is removed only from the undecomposed list; Height:714 and :743 are retained as exact Open leaves. Historical upstream Iut revision remains unverified as previously reported."
+    },
+    "staging_scope": {
+      "verdict": "PASS_STATIC",
+      "allowed_paths": "Owned eight sources plus two unit Checks files; docs/Prove2Me适配状态.md; platform-node-registry.json; files under this exact Legendre evidence directory excluding __pycache__. git add uses this explicit path list, not repository-wide add.",
+      "dirty_work": "Current unrelated modified/deleted docs and untracked Scene1 sources are outside the explicit path set. Existing staged work must be empty or finalize stops before document/registry writes. No reset, restore, clean or deletion appears.",
+      "concurrent_data": "Current database bytes equal pending-db-before.md at review time. finalize checks exact database-before and registry-before equality before replacing them, so concurrent unrelated edits cause a stop.",
+      "credentials": "credentials.json is outside allowlisted paths and explicitly forbidden by basename. Before Git staging, prospective bytes are scanned for current api_key/access_token/refresh_token/token values and the additional token signature. Credentials are read locally for this scan and not printed or staged.",
+      "checks": "Runs git diff --check, then explicit git add -f paths, then staged diff --check. This review executed none of these mutation steps.",
+      "registry_file_hashes": "Latest addition updates reg.files only for the same allowlisted unit paths, hashes pending database final content, excludes registry self-hash, preserves prior file entries and sorts keys. Reinspected and remains PASS_STATIC."
+    },
+    "resource_records": "finalize preserves per-job input HEAD/source SHA, actual arguments, exit/diagnostics, wall/CPU user/system/total, RSS/PSS and resource-source/degraded fields; known CPU components must sum within tolerance; absent values stay null/unknown, not zero.",
+    "not_executed": [
+      "finalize.py main",
+      "compilation",
+      "MCP-CI",
+      "API",
+      "Git staging or other Git writes",
+      "main workspace writes"
+    ],
+    "limit": "PASS_STATIC covers planned finalization. API publication had not begun and final graph/proof receipts did not yet exist; this review does not assert actual post-publication counts."
+  }
+}

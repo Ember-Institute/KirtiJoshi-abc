@@ -1,0 +1,7 @@
+import Definitions.Def_TripodLegendreHeightComparisonComposition
+import Theorems.Thm_AbcAdaptation_Tripod_legendreArchimedeanTripleBound
+import Theorems.Thm_AbcAdaptation_Tripod_legendreZeroJRootOfUnity
+
+#print axioms AbcAdaptation.Tripod.canonicalLegendreHeightComparison_of_source_children
+#print axioms AbcAdaptation.Tripod.legendreArchimedeanTripleBound
+#print axioms AbcAdaptation.Tripod.legendreZeroJRootOfUnity

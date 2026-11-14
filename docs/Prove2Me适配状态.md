@@ -7,13 +7,33 @@
 - `refer/iut/Iut/Tripod/Main.lean:129`
 - `refer/iut/Iut/Implication/Corollary23.lean:56`
 - `refer/iut/Iut/Tripod/Height.lean:603`
-- `refer/iut/Iut/Tripod/Height.lean:791`
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
 - `refer/iut/Iut/Implication/Corollary22.lean:386`
 - `refer/iut/Iut/Implication/Theorem110.lean:234`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:205`
+- `refer/iut/Iut/Tripod/Height.lean:714`
+- `refer/iut/Iut/Tripod/Height.lean:743`
+- `refer/iut/Iut/Tripod/GeneralPosition.lean:52`
+- `refer/iut/Iut/Tripod/GeneralPosition.lean:72`
+- `refer/iut/Iut/Tripod/GeneralPosition.lean:108`
+- `refer/iut/Iut/Tripod/GeneralPosition.lean:170`
+- `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean:215`
+- `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean:248`
+- `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/Covering.lean:243`
+- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/Compactness.lean:233`
+- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/DivisorHeight.lean:112`
+- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/DivisorHeight.lean:263`
+- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/CondDivisor.lean:61`
+- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Different/Conductor.lean:202`
+- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/KummerPoint.lean:45`
+- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Canonical.lean:44`
+- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/CoordRing.lean:126`
+- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBridge.lean:49`
+- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:155`
+- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:201`
+- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:219`
 
 ## 2. Joshi 论文直接列出而尚未拆分的证明义务
 
@@ -45,21 +65,11 @@
 
 `Proper.modelExists` 仍需实际构造满足完整 Fermat 方程、生成条件、超越性和对 `ℚ(u)` 次数恰为 `N` 的函数域，给出不可约性与次数证明。`Proper.affineIdentification` 仍需证明全部相关赋值处的仿射开与当前代数坐标对等价，并保持完整剩余域的像；不能只给坐标映射而遗漏域的身份。
 
-`Proper.noncriticalP1Normalize` 仍需移植固定来源 `Reduction.normalize_step`：对完整 Galois 稳定的有限代数点集和其外的有理点，给出实际有理初等映射及单位圆盘中的新点集，把区分点归一化为 9。必须保留完整 Galois 稳定性、所有次数上界以及次数至少为 2 时的最高次数计数不增；具体预复合延续须同时保留原点集像、区分点不落入 `{0,1,∞}` 和所有实际分歧点的像条件。无穷点不能被省略。
-
-`Proper.noncriticalP1Rational` 仍需移植固定来源 `Reduction.rational_step`：当单位圆盘内有限代数点的有理最小多项式次数均不超过 1 时，构造同一个实际有理 Möbius 变换／正次数有理多项式列表，使含无穷点的整个分支集落入 `{0,1,∞}`、有理点 9 的像在其外，并覆盖所有实际分歧点。不能以任意点函数或额外未审计的规律字段替代该构造。
-
-`Proper.noncriticalP1Minpoly` 仍需移植固定来源 `Reduction.minpoly_step`：对单位圆盘内完整 Galois 稳定、次数至多 d 且含实际次数 d≥2 点的有限集，应用该点的实际有理最小多项式，给出完整 Galois 稳定的新集和其外的有理区分点；保持次数上界，并把最高次数计数上界从 n+1 降到 n。实际初等映射的预复合延续须保留含无穷点的全部三项非临界 Belyi 条件。`noncriticalP1Zero` 已按固定来源完成次数／计数上界的嵌套归纳组合及零点适配；其归约验收只登记这三个 Open 子义务，不关闭它们，也不关闭既有 `noncriticalSelection` 数学义务。
-
-`Proper.canonicalDivisorExists` 仍需证明 `du` 除子的有限支撑；`Proper.planeAdjunctionExists` 仍需证明实际典范除子与坐标超平面除子之间的具体伴随关系。应逐处追踪分歧系数，并保留原来的实际 `K`、`H` 和 `J` 契约；不能把预先定义的数字当作除子身份或次数等式。`Proper.cuspGeneratorsExists` 还需给出尖点补集的实际坐标环有限生成性，并包含所需的三个三支点函数。
+`Proper.planeAdjunctionExists` 仍需证明固定 Fermat 曲线的实际典范除子、实际无穷超平面除子与非零有理函数之间的逐处伴随公式。原来的 `K`、`H` 和 `J` 契约必须保持；一般典范除子有限支撑及尖点坐标环有限生成性已有第一类固定来源，其移植不代替这里的具体伴随身份。
 
 `Proper.coordinatePoleMultiplicity_eq` 仍需证明：对于满足 `0 < N` 的既有实际 Fermat 模型，两个固定坐标 u、v 在每个真赋值处的实际极点重数 `max(0,-ord)` 相等。必须覆盖全部正则处、坐标为零的情形以及无穷点；不得只证明极点支撑相同或排除零坐标。这是新的明确 Fermat 特化义务，固定的 Belyi／Heights 来源及论文引文均未提供其证明。其结论将实际超平面除子识别为 u 的实际极除子，再由已验收的纤维次数公式和主除子次数为零，结合原有实际伴随数据得到典范次数；`canonicalDivisorDegree` 的归约验收不关闭该子义务，也不证明典范除子或伴随数据的存在性。
 
-`Proper.localCompactness`、`Proper.avoidanceRegularity` 和 `Proper.embeddingBoundsToSet` 还需分别落实有界次数点列的局部紧性、避开尖点后的正则性，以及全部共轭嵌入界向同一赋值紧有界集的传递。固定 Mathlib 已有 `PadicAlgCl 2` 及其谱范数，无须另设该载体的存在性假设；但紧性证明和次数缩放仍需实际接入。
-
-`Proper.canonicalHeightIdentification`、`Proper.belyiHeightRelation`、`Proper.divisorDegreeHeightComparison`、`Proper.belyiDifferentConductorComparison` 和 `Proper.cuspConductorHeightComparison` 仍需向底层高度与算术定理分解。保留极除子表示所定义的真实高度、完整点域和像点域的归一化、统一加法常数、严格除子次数比，以及实际坐标环生成元定义的导子；不得以自由函数、次数比取等或只选一个嵌入代替现有陈述。
-
-参考工程最强入口在源码层仅接收全称 `h312`；其完整外部依赖闭包尚未在本地验收，仍需完成 Joshi 字面三点一二与所需参考变体的精确接合。
+`Proper.canonicalHeightIdentification` 的具体 Fermat 特化仍需把实际平面伴随公式、实际超平面高度与固定 `[u:v:1]` 高度连接起来，并对任意明确极除子表示保留统一有界误差。一般除子高度比较、Belyi 高度关系、除子次数高度比较、像点域上的不同理想／导子比较及尖点导子高度比较已有第一类固定来源；其完整点域、像点域、归一化、统一常数、严格次数比及实际生成元的传递仍须按对应来源拆分。
 
 ### Joshi 的 3.12 与参考工程变体之间的适配
 
@@ -74,9 +84,5 @@
 仍需把最终目标实际需要的基础定义、构造义务和局部结果转为平台节点，确认精确类型、共同来源、实际消费者和无环依赖。已有闭合声明可以逐项机械追溯到固定 Mathlib 版本；条件性局部定理必须保留输入法律，接口及结构字段也不等于真实对象的存在性证明。不能据现有 Prologue 清单断言最终 Joshi 路线的必要叶节点已经全部覆盖。
 
 特别需要细化 `ProducerContracts.lean` 中只选择命题的 `xxxLaw : Prop` 槽位；它们既没有给出具体论文法律，也没有给出其证明。四类真实来源义务仍归 Scene1，不通过扩大 Prologue 假设关闭；旧 `Prologue/Obligations/Constructors.lean` 的四个占位构造器也不能作为现成证明导入。定义文件只供应实际定义与已证明结构事实，尚未实现的存在性保持开放；若后续真实构造揭示新的基础需求，按动态边界审计契约处理。
-
-### 尚待同步的后续子链
-
-一般位置、推论二点二及其通向参考三点一二的后续精确节点仍需准备、独占验收、独立三语读回并按依赖顺序接入私有 mission。允许将未定的 Joshi 陈述作为有来源的候选节点继续拆分；一旦发现形状错误，建立修正版、更新依赖并弃用旧节点，不把未解决的对应关系当成既成事实。完整数学证明的剩余债务仍属于另行排除的 Act2 阶段。
 
 ## 4. 未完成自然语言读回的证明义务

@@ -1,0 +1,66 @@
+{
+  "status": "exclusive_local_audits_passed_and_platform_reduction_accepted",
+  "reference_git_revision": null,
+  "reference_git_note": "No independent refer/iut .git metadata; do not infer parent repository HEAD.",
+  "source_hashes": {
+    "Iut/Tripod/Height.lean": "1de154fbca7da4ac9510537384ae9f8756e998c4de26e01162b4957c807c7df1",
+    "Iut/Tripod/TwoAdic.lean": "213d57f352bbd1e00efc7b3f570849f6eed0f467c7bfc3b75631286a7bd8f719"
+  },
+  "source_parent": "Iut/Tripod/Height.lean:791 legendreHeight",
+  "source_licenses": "reference/LICENSE; Apache-2.0 original author/copyright notices retained in each adapted Lean file",
+  "children": [
+    {
+      "declaration": "AbcAdaptation.Tripod.legendreFiniteUpperBound",
+      "predicate": "AbcAdaptation.Tripod.LegendreFiniteUpperBound",
+      "source": "refer/iut/Iut/Tripod/Height.lean:714",
+      "consumer": "AbcAdaptation.Tripod.canonicalLegendreHeightComparison_of_source_children",
+      "consumer_role": "upper numeric discrepancy",
+      "proof_status": "exact_open_source_port"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.legendreFiniteLowerBound",
+      "predicate": "AbcAdaptation.Tripod.LegendreFiniteLowerBound",
+      "source": "refer/iut/Iut/Tripod/Height.lean:743",
+      "consumer": "AbcAdaptation.Tripod.canonicalLegendreHeightComparison_of_source_children",
+      "consumer_role": "nonzero-j lower numeric discrepancy",
+      "proof_status": "exact_open_source_port"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.legendreArchimedeanTripleBound",
+      "predicate": "AbcAdaptation.Tripod.LegendreArchimedeanTripleBound",
+      "source": "refer/iut/Iut/Tripod/Height.lean:657",
+      "consumer": "AbcAdaptation.Tripod.canonicalLegendreHeightComparison_of_source_children",
+      "consumer_role": "lower numeric discrepancy",
+      "proof_status": "source_proof_locally_audited_and_platform_Proved",
+      "platform_proof": {
+        "name": "AbcAdaptation.Tripod.legendreArchimedeanTripleBound",
+        "submission_id": "667a9cdd-f19b-4e36-86fc-17f570e375c7",
+        "status": "ACCEPTED"
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.legendreZeroJRootOfUnity",
+      "predicate": "AbcAdaptation.Tripod.LegendreZeroJRootOfUnity",
+      "source": "refer/iut/Iut/Tripod/Height.lean:490",
+      "consumer": "AbcAdaptation.Tripod.canonicalLegendreHeightComparison_of_source_children",
+      "consumer_role": "zero-j exceptional branch",
+      "proof_status": "source_proof_locally_audited_and_platform_Proved",
+      "platform_proof": {
+        "name": "AbcAdaptation.Tripod.legendreZeroJRootOfUnity",
+        "submission_id": "0fca5c00-aa7d-47de-8e01-2251b715fdda",
+        "status": "ACCEPTED"
+      }
+    }
+  ],
+  "parent_type_preserved": true,
+  "exact_field": "Q(x)",
+  "degree": "actual [Q(x):Q], no bound",
+  "coefficient": "1/6",
+  "provider_rewrite": "auxiliaryHeight is definitionally finiteHeight(j)/degree; no provider existence is assumed by the numeric comparison",
+  "source_fidelity": "Explicit inequalities and constants belong to the archived formal source; Mochizuki quotation supplies parent mathematical context, not verbatim local estimates.",
+  "production_ledger": {
+    "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+    "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+    "scope": "No production/Scene1/Prologue boundary change. Unit ledger maps exact new local consumers."
+  }
+}

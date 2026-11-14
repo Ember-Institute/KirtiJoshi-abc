@@ -1,0 +1,340 @@
+{
+  "audit_kind": "independent_static_decomposition_shape_and_source_audit",
+  "candidate": "/tmp/p2m-legendre-height-next-20261114",
+  "main_workspace_read_only": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "scope": "nonAct2 exact decomposition; two finite source leaves are authorized expected Open residuals",
+  "static_decomposition_shape": {
+    "status": "pass_by_static_inspection",
+    "blocking_shape_issues": [],
+    "lean_elaboration_verified": false
+  },
+  "complete_proof_closure": {
+    "status": "not_complete_as_expected",
+    "remaining_exact_Open": [
+      "AbcAdaptation.Tripod.legendreFiniteUpperBound",
+      "AbcAdaptation.Tripod.legendreFiniteLowerBound"
+    ],
+    "solution_depends_on_sorryAx_expected": true,
+    "axioms_actually_printed": false,
+    "not_a_decomposition_plan_failure": true
+  },
+  "parent": {
+    "predicate": "AbcAdaptation.Tripod.CanonicalLegendreHeightComparison",
+    "original_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodCanonicalHighHeightInputs.lean:44-46",
+    "original_type": "forall K : CompactlyBounded, exists B : Real, forall x : Pt, x in K.set -> abs(auxiliaryHeight x / 6 - htCan x) <= B",
+    "original_definition_reused_without_redefinition": true,
+    "solution_type_exact": true,
+    "no_degree_bound_added": true,
+    "auxiliaryHeight": "finHeight (legendreJ (gen x.1)) / deg x.1",
+    "htCan": "Height.logHeight1 (gen x.1) / deg x.1",
+    "actual_field": "fieldOf x.1 = Q adjoin x.1, not a chosen provider field",
+    "actual_degree": "minpoly Q x.1 natDegree = Module.finrank Q (fieldOf x.1)",
+    "coefficient_preserved": "exact 1/6; /6 in parent is algebraically equal to (1/6)* in composer",
+    "uniform_B": "max (Real.log 2 / 3) (K.c * K.V.card + K.c + Real.log 2 / 3)",
+    "empty_compactly_bounded_handling": "K arbitrary, including empty K.set and negative c. B does not require nonempty; c_nonneg is derived only after introducing an actual member hx. Empty membership obligations remain vacuous.",
+    "uniformity": "B depends only on K; no dependence on x or an added degree restriction",
+    "provider_removal_sound": "Parent already defines auxiliaryHeight to the source h_eq_finHeight_div RHS. This proves only numeric comparison and does not supply elliptic providers or Corollary 2.2."
+  },
+  "normalization": {
+    "finite_height": "Existing actual finite-place finsum Real.posLog (v y), exactly source Iut.finHeight. No division by degree inside finite height.",
+    "finite_upper": "No compactness/degree assumption. Exact coefficient 2 and all three finite terms retained.",
+    "finite_lower": "Exact 6*c*|V|*deg correction; retains all V with 2 in V through unchanged actual CompactlyBounded structure.",
+    "archimedean": "Existing NumberField.logHeight1_eq decomposes relative log height as weighted InfinitePlace sum plus actual finite finsum; source weighting mult and degree finrank retained.",
+    "mathlib_definition_inspected": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/NumberField.lean:119-124,157-158",
+    "zero_j_boundary": "No application of finite lower lemma when j=0. Exact sixth-root branch supplies height zero; finite height of zero simplifies to zero."
+  },
+  "children": [
+    {
+      "predicate": "AbcAdaptation.Tripod.LegendreFiniteUpperBound",
+      "theorem": "AbcAdaptation.Tripod.legendreFiniteUpperBound",
+      "source": "refer/iut/Iut/Tripod/Height.lean:714-718",
+      "statement_match": "exact after local namespace substitution and explicit universal point quantifier",
+      "consumer": "canonicalLegendreHeightComparison_of_source_children.upper: hUpper x feeds the one-sixth finite-height key inequality",
+      "proof_status": "expected_exact_Open",
+      "body": "by sorry"
+    },
+    {
+      "predicate": "AbcAdaptation.Tripod.LegendreFiniteLowerBound",
+      "theorem": "AbcAdaptation.Tripod.legendreFiniteLowerBound",
+      "source": "refer/iut/Iut/Tripod/Height.lean:743-784",
+      "statement_match": "exact after local namespace substitution and explicit K/x quantifiers; preserves membership, j != 0, factor 6, c, full support cardinality and exact degree",
+      "consumer": "canonicalLegendreHeightComparison_of_source_children.lower nonzero-j branch: hLower K x hx hj feeds the lower key inequality",
+      "proof_status": "expected_exact_Open",
+      "body": "by sorry"
+    },
+    {
+      "predicate": "AbcAdaptation.Tripod.LegendreArchimedeanTripleBound",
+      "theorem": "AbcAdaptation.Tripod.legendreArchimedeanTripleBound",
+      "source": "refer/iut/Iut/Tripod/Height.lean:632-640,657-667",
+      "statement_match": "exact simultaneous conjunction for gen, gen inverse and (gen-1) inverse with c*deg",
+      "consumer": "canonicalLegendreHeightComparison_of_source_children.lower nonzero-j branch destructures hArch into h2,h3,h4, all used by linarith",
+      "proof_status": "complete_source_proof_body_uncompiled",
+      "body": "source posLog_infinite_le inlined and exact source key proof adapted"
+    },
+    {
+      "predicate": "AbcAdaptation.Tripod.LegendreZeroJRootOfUnity",
+      "theorem": "AbcAdaptation.Tripod.legendreZeroJRootOfUnity",
+      "source": "refer/iut/Iut/Tripod/Height.lean:490-504",
+      "statement_match": "exact specialization of source sixth-root statement to actual gen of Pt; nonzero and not-one supplied by Pt and characteristic-zero number field supplies NeZero 2",
+      "consumer": "canonicalLegendreHeightComparison_of_source_children.lower zero-j branch: hZero x hj yields gen^6=1 and logHeight=0",
+      "proof_status": "complete_source_proof_body_uncompiled",
+      "body": "full polynomial/denominator case-split source proof adapted"
+    }
+  ],
+  "definitions_discipline": {
+    "no_mathOpen": true,
+    "no_Theorems_imports": true,
+    "no_Iut_Genl_or_prohibited_project_imports": true,
+    "no_free_Prop_or_height_provider_inputs": true,
+    "no_new_axioms": true,
+    "no_sorry_in_Definitions": true,
+    "basics_necessary_structural_helpers": [
+      {
+        "name": "infHeight",
+        "consumer": "logHeight1 decomposition and infHeight bounds",
+        "source": "Height.lean:62"
+      },
+      {
+        "name": "logHeight1_eq_infHeight_add_finHeight",
+        "consumer": "finHeight_le_logHeight1 and archimedean key",
+        "source": "Height.lean:66-68"
+      },
+      {
+        "name": "infHeight_nonneg",
+        "consumer": "finHeight_le_logHeight1",
+        "source": "Height.lean:70-71"
+      },
+      {
+        "name": "finHeight_le_logHeight1",
+        "consumer": "composer upper h2/h3/h4",
+        "source": "Height.lean:76-78"
+      },
+      {
+        "name": "finHeight_zero",
+        "consumer": "composer zero-j branch",
+        "source": "Height.lean:80-81"
+      },
+      {
+        "name": "infHeight_le_of_forall",
+        "consumer": "archimedean key",
+        "source": "Height.lean:509-519"
+      },
+      {
+        "name": "posLog_le_abs_log",
+        "consumer": "archimedean hplace first bound",
+        "source": "Height.lean:522-524"
+      },
+      {
+        "name": "posLog_inv_le_abs_log",
+        "consumer": "archimedean hplace second and third bounds",
+        "source": "Height.lean:527-529"
+      },
+      {
+        "name": "CompactlyBounded.c_nonneg",
+        "consumer": "composer lower zero-j branch and bound nonnegativity",
+        "source": "TwoAdic.lean:470-472"
+      },
+      {
+        "name": "gen_ne_one",
+        "consumer": "zero-j denominator proof",
+        "source": "Height.lean:711"
+      }
+    ],
+    "multi_step_proofs_in_Definitions_assessment": "Necessary structural numeric/source bridges with actual consumers. No finite-place valuation frontier or extra mathematical goal hidden here.",
+    "composition_assessment": "A real source-derived conditional parent proof; hUpper,hLower,hArch,hZero all consumed in substantive proof steps."
+  },
+  "canonical_Theorems_filenames": [
+    {
+      "filename": "Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound.lean",
+      "actual_fully_qualified_name": "AbcAdaptation.Tripod.legendreFiniteUpperBound",
+      "ascii": true,
+      "exact_correspondence": true
+    },
+    {
+      "filename": "Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound.lean",
+      "actual_fully_qualified_name": "AbcAdaptation.Tripod.legendreFiniteLowerBound",
+      "ascii": true,
+      "exact_correspondence": true
+    },
+    {
+      "filename": "Thm_AbcAdaptation_Tripod_legendreArchimedeanTripleBound.lean",
+      "actual_fully_qualified_name": "AbcAdaptation.Tripod.legendreArchimedeanTripleBound",
+      "ascii": true,
+      "exact_correspondence": true
+    },
+    {
+      "filename": "Thm_AbcAdaptation_Tripod_legendreZeroJRootOfUnity.lean",
+      "actual_fully_qualified_name": "AbcAdaptation.Tripod.legendreZeroJRootOfUnity",
+      "ascii": true,
+      "exact_correspondence": true
+    }
+  ],
+  "source_reuse": {
+    "parent": "Entire numeric composition reused from Height.lean:791-840 after definitional provider rewrite, followed by uniform absolute-bound assembly.",
+    "archimedean": "Entire proof chain reused: pointwise triple log bound, weighted infHeight bound and simultaneous logHeight result.",
+    "zero_j": "Entire sixth-root source proof reused, specialized to actual generator.",
+    "finite_leaves": "Full upstream finite proofs exist but remain explicitly unported; accepted exact Open frontier for this decomposition. README lists required lower-level source chain.",
+    "no_whole_source_closure_claim": true
+  },
+  "source_provenance": {
+    "Height.lean": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+      "exactSHA256": "1de154fbca7da4ac9510537384ae9f8756e998c4de26e01162b4957c807c7df1",
+      "manifest_hash_matches": true
+    },
+    "TwoAdic.lean": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/TwoAdic.lean",
+      "exactSHA256": "213d57f352bbd1e00efc7b3f570849f6eed0f467c7bfc3b75631286a7bd8f719"
+    },
+    "historical_upstream_revision": "unverified; not inferred from local SHA256 or unrelated ledger entries",
+    "source_licence": "Sources contain Copyright (c) 2026 The iut contributors, Apache 2.0 licence and author notice.",
+    "candidate_manifest_all_eight_Lean_hashes_match": true,
+    "source_ledger": "Existing repository ledger was read; candidate has no new ledger entry. Source links and consumers are explicit in README, manifest and code; main integration ledger work is outside this static draft."
+  },
+  "delivery_followups": [
+    {
+      "severity": "required_before_copying_source_adaptation_to_main",
+      "issue": "All eight draft Lean files lack the source copyright/licence/author header. Parent agent has explicitly taken this correction. This is separate from theorem-shape acceptance."
+    }
+  ],
+  "imported_main_files_inspected": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodCanonicalHighHeightInputs.lean",
+      "sha256": "c3439a404800a6edd860719ac10cb4bc9d5912f7ccdac7d81e71b7082cb773cd",
+      "inspected_entire_file": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodStatementIIInputs.lean",
+      "sha256": "5ce42a6371d13c7a4fc22dbfcfe7c5d059feb7e7877e9787d53b0eaeb2dee5be",
+      "inspected_entire_file": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+      "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+      "inspected_entire_file": true
+    }
+  ],
+  "files": [
+    {
+      "path": "Definitions/Def_TripodLegendreHeightBasics.lean",
+      "sha256": "706ba7a7c342c7c8802bf11e8eb81da065af3b16dfcb80feef3dbc79d483a7a1",
+      "inspected_entire_file": true,
+      "imports": [
+        "Definitions.Def_TripodLegendreHeightComparisonInputs",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "contains_sorry": false,
+      "source_license_header_present": false
+    },
+    {
+      "path": "Definitions/Def_TripodLegendreHeightComparisonComposition.lean",
+      "sha256": "ed5be61e4674e62fd3bd0c7da9991bbb6349406969ac1beba3b5caedaea3106e",
+      "inspected_entire_file": true,
+      "imports": [
+        "Definitions.Def_TripodLegendreHeightBasics",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "contains_sorry": false,
+      "source_license_header_present": false
+    },
+    {
+      "path": "Definitions/Def_TripodLegendreHeightComparisonInputs.lean",
+      "sha256": "df7ca6b9c7f081926bd1499ed278d0c12a3181c5c8aab9db6c208e9542d49907",
+      "inspected_entire_file": true,
+      "imports": [
+        "Definitions.Def_TripodCanonicalHighHeightInputs"
+      ],
+      "contains_sorry": false,
+      "source_license_header_present": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "231ef8f9d5ced073f23c62e73dc71a926afa4adbec94369e721ac277f311e2d8",
+      "inspected_entire_file": true,
+      "imports": [],
+      "contains_sorry": true,
+      "source_license_header_present": null
+    },
+    {
+      "path": "Solutions/Sol_CanonicalLegendreHeightComparison.lean",
+      "sha256": "97acf3b11ba303399f3cb5ed2e56132f3225a6c795198897f5621b9d3d70e1ff",
+      "inspected_entire_file": true,
+      "imports": [
+        "Definitions.Def_TripodLegendreHeightComparisonComposition",
+        "Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound",
+        "Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound",
+        "Theorems.Thm_AbcAdaptation_Tripod_legendreArchimedeanTripleBound",
+        "Theorems.Thm_AbcAdaptation_Tripod_legendreZeroJRootOfUnity"
+      ],
+      "contains_sorry": false,
+      "source_license_header_present": false
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_legendreArchimedeanTripleBound.lean",
+      "sha256": "cd418e7f7b2a4a005e53f7270aad4ff92c7d926be8912aa1f0812d6c0ec291dc",
+      "inspected_entire_file": true,
+      "imports": [
+        "Definitions.Def_TripodLegendreHeightBasics"
+      ],
+      "contains_sorry": false,
+      "source_license_header_present": false
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound.lean",
+      "sha256": "34ff0e866c0757ed604a713051742a545155fbc2aec5e5726cee30f2b3dfc1fb",
+      "inspected_entire_file": true,
+      "imports": [
+        "Definitions.Def_TripodLegendreHeightComparisonInputs"
+      ],
+      "contains_sorry": true,
+      "source_license_header_present": false
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound.lean",
+      "sha256": "76c325b46543a4f036142b4505369697460ae52536adc5eb075cb5134c277155",
+      "inspected_entire_file": true,
+      "imports": [
+        "Definitions.Def_TripodLegendreHeightComparisonInputs"
+      ],
+      "contains_sorry": true,
+      "source_license_header_present": false
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_legendreZeroJRootOfUnity.lean",
+      "sha256": "5e3d71213b6a444224c1ba92fb5566ff91c3b3896186c27b3e5a6b1d166f52d1",
+      "inspected_entire_file": true,
+      "imports": [
+        "Definitions.Def_TripodLegendreHeightBasics",
+        "Mathlib.Tactic.LinearCombination",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
+      ],
+      "contains_sorry": false,
+      "source_license_header_present": false
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "eb1e995c91e7768384521efc50601417ad52a0b5a0234a99cd8a180e4412b05d",
+      "inspected_entire_file": true,
+      "imports": [],
+      "contains_sorry": false,
+      "source_license_header_present": null
+    }
+  ],
+  "execution_limits": {
+    "compiled": false,
+    "MCP_CI_calls": 0,
+    "main_workspace_writes": false,
+    "candidate_writes": false,
+    "git_writes": false,
+    "cache_writes": false,
+    "API_writes": false,
+    "only_audit_report_written": true,
+    "all_rg_invocations_used_required_two_core_wrapper": true
+  },
+  "limitations": [
+    "Static source review does not prove Lean elaboration, tactic success, absence of sorryAx beyond the explicitly known two Open leaves, or whole-project acceptance.",
+    "No theorem-type lowering, arbitrary proposition provider, arbitrary height provider, omitted child consumer or extra parent hypothesis was found."
+  ]
+}

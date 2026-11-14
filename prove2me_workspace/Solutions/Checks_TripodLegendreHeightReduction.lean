@@ -1,0 +1,2 @@
+import Solutions.Sol_CanonicalLegendreHeightComparison
+#print axioms solution
