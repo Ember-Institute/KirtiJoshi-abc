@@ -1,0 +1,29 @@
+{
+  "failure_job": "ci-012175-3b208021",
+  "mathematical_statement_changed": false,
+  "new_assumptions": [],
+  "cause": [
+    "change could not align finite-place indicator decidability",
+    "FiniteSet inclusion AlgHom/RingHom coercion and decidable equality differed"
+  ],
+  "repair": [
+    "Unfold existing finiteSetLogCond and rewrite indicator by explicit membership",
+    "Use classical local instance and membership-level inclusion transport"
+  ],
+  "measured_wall_seconds": 41.67172240000218,
+  "peak_rss_bytes": 4383473664,
+  "retry_expected_duration": "55s",
+  "retry_expected_memory": "6GiB",
+  "second_failure_job": "ci-012181-48968dde",
+  "second_failure_wall": 42.16971070000727,
+  "second_failure_peak_rss_bytes": 4341886976,
+  "additional_repair": "Construct inclusion premise at the generic lemma expected type and explicitly normalize AlgHom.toRingHom",
+  "third_failure_job": "ci-012187-84b0b4c3",
+  "third_failure_wall": 44.31338420000975,
+  "third_failure_peak_rss_bytes": 4397916160,
+  "dependent_elimination_repair": "Keep the mem_image equality named; transport only the element-membership proof, avoiding dependent rfl elimination across decidable-equality instances",
+  "fourth_failure_job": "ci-012192-9ed83253",
+  "fourth_failure_wall": 50.093736299997545,
+  "fourth_failure_peak_rss_bytes": 4368011264,
+  "final_inclusion_transport": "Rewrite both image-subset propositions using Finset.image_subset_iff before normalizing the algebra-map coercion; no dependent elimination through Finset.image is required"
+}

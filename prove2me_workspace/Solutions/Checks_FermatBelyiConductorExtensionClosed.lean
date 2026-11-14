@@ -1,0 +1,5 @@
+import Solutions.Source_FermatBelyiConductorExtensionAdapters
+
+open AbcAdaptation.Tripod.Fermat.Proper
+#print axioms ConductorExtensionSource.finiteSetLogCond_le_of_local_and_accounting
+#print axioms belyiActualFieldConductorExtension_of_local_and_accounting

@@ -1,0 +1,1318 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "actual_model": null,
+  "declarations": [
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+      "source_sha256": "2282d3f5d9dc037da6f6fe84fc64dcfd4ea31da9c297799deaa8b2dd2d9f8401",
+      "source_span": {
+        "start_byte": 761,
+        "end_byte_exclusive": 1476,
+        "line": 21,
+        "end_line": 30
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldLocalConductorComparison",
+      "raw_declaration": "def BelyiActualFieldLocalConductorComparison : Prop :=\n  ∀ {N : ℕ} (M : Model N) (hRF : ResiduesFinite M) (φ : M.K)\n    (x : QbarPoint M.K) (hgood : GoodValue M x φ),\n    letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n    letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=\n      (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra\n    ∀ u : FinitePlace (Tripod.fieldOf (belyiImage M φ x).1),\n      Real.log (placeNorm u) / finrank ℚ (Tripod.fieldOf (belyiImage M φ x).1) ≤\n        (∑ w ∈ placesOver x.fieldOf u, Real.log (placeNorm w) / finrank ℚ x.fieldOf) +\n          diffContrib x.fieldOf u.maximalIdeal.asIdeal",
+      "raw_declaration_sha256": "e394b4204c82387da1b512aee5016e8cf2277f984df35ac9e44c0db7815781cc",
+      "raw_signature": "def BelyiActualFieldLocalConductorComparison : Prop",
+      "readback": {
+        "en": "The proposition is that Consider every natural number $N$ and every intermediate field $K$ between $\\mathbb Q$ and the fixed algebraic closure of $\\mathbb Q(t)$, equipped with $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K$ is finite dimensional over $\\mathbb Q(u)$ of degree $N$. Assume that every proper valuation subring $O\\subset K$ containing $\\mathbb Q$ has residue field $\\kappa(O)$ finite dimensional over $\\mathbb Q$. For every point $x=(O,\\sigma)$, with such $O$ and a ring homomorphism $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$, and every $\\varphi\\in K$ regular at $O$ with $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$, put $L=\\sigma(\\kappa(O))$ and $F=\\mathbb Q(a)\\subseteq L$. The finite dimensional structure of $L/\\mathbb Q$ is that obtained from residue finiteness; the $F$-algebra structure on $L$ is induced by this actual inclusion. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. For every finite place $u$ of the actual image field $F$, $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$. Here the sum ranges over all finite places of the actual point field $L$ above $u$; the left denominator is $n_F$, while each right denominator is $n_L$.",
+        "zh-Hans": "本定义的命题是：对每个自然数 $N$，取固定的 $\\mathbb Q(t)$ 的代数闭包中介于 $\\mathbb Q$ 与该闭包之间的域 $K$，并取 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K$ 在 $\\mathbb Q(u)$ 上有限维、次数为 $N$。假设 $K$ 的每个包含 $\\mathbb Q$ 的真赋值子环 $O$ 的剩余域 $\\kappa(O)$ 都在 $\\mathbb Q$ 上有限维。对每个由这种 $O$ 与环同态 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ 组成的点 $x=(O,\\sigma)$，以及每个在 $O$ 中正则、满足 $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ 的 $\\varphi\\in K$，令 $L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$。$L$ 在 $\\mathbb Q$ 上的有限维结构取自剩余域有限性；$L$ 的 $F$ 代数结构由这一实际包含映射诱导。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对实际像域 $F$ 的每个有限处 $u$，有 $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$。求和遍及实际点域 $L$ 中位于 $u$ 之上的全部有限处；左侧分母是 $n_F$，右侧各项分母是 $n_L$。",
+        "ja": "定義する命題は次のとおりである。任意の自然数 $N$ に対し、固定された $\\mathbb Q(t)$ の代数閉包の中間体 $\\mathbb Q\\subseteq K$ と $u,v\\in K$ をとる。$u$ は $\\mathbb Q$ 上超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$ であり、$K$ は $\\mathbb Q(u)$ 上有限次元で次数が $N$ であるとする。$\\mathbb Q$ を含む $K$ の任意の真の付値部分環 $O$ について剰余体 $\\kappa(O)$ が $\\mathbb Q$ 上有限次元であると仮定する。このような $O$ と環準同型 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ からなる任意の点 $x=(O,\\sigma)$、および $O$ で正則で $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ を満たす任意の $\\varphi\\in K$ に対し、$L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$ とおく。$L/\\mathbb Q$ の有限次元構造は剰余体の有限性から得たものとし、$L$ の $F$ 代数構造はこの実際の包含から誘導する。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。実際の像体 $F$ の任意の有限素点 $u$ について $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$ が成り立つ。和は実際の点の体 $L$ の $u$ 上にあるすべての有限素点にわたり、左辺の分母は $n_F$、右辺の各分母は $n_L$ である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "section": "",
+        "variables": "No section variables; proposition definitions provide the explicit actual-model binders.",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+      "source_sha256": "2282d3f5d9dc037da6f6fe84fc64dcfd4ea31da9c297799deaa8b2dd2d9f8401",
+      "source_span": {
+        "start_byte": 1733,
+        "end_byte_exclusive": 2583,
+        "line": 35,
+        "end_line": 48
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentAccounting",
+      "raw_declaration": "def BelyiActualFieldDifferentAccounting : Prop :=\n  ∀ {N : ℕ} (M : Model N) (hRF : ResiduesFinite M) (φ : M.K)\n    (x : QbarPoint M.K) (hgood : GoodValue M x φ),\n    letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n    letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=\n      (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra\n    (Function.support fun 𝔭 : HeightOneSpectrum\n      (𝓞 (Tripod.fieldOf (belyiImage M φ x).1)) =>\n        diffContrib x.fieldOf 𝔭.asIdeal).Finite ∧\n    Real.log (Ideal.absNorm\n      (differentIdeal (𝓞 (Tripod.fieldOf (belyiImage M φ x).1)) (𝓞 x.fieldOf))) /\n        finrank ℚ x.fieldOf =\n      ∑ᶠ 𝔭 : HeightOneSpectrum (𝓞 (Tripod.fieldOf (belyiImage M φ x).1)),\n        diffContrib x.fieldOf 𝔭.asIdeal",
+      "raw_declaration_sha256": "c4e0b7cbe575e7a68bf00d60ae479ddeaddc530461ca534e2cf9a404803af31a",
+      "raw_signature": "def BelyiActualFieldDifferentAccounting : Prop",
+      "readback": {
+        "en": "Consider every natural number $N$ and every intermediate field $K$ between $\\mathbb Q$ and the fixed algebraic closure of $\\mathbb Q(t)$, equipped with $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K$ is finite dimensional over $\\mathbb Q(u)$ of degree $N$. Assume that every proper valuation subring $O\\subset K$ containing $\\mathbb Q$ has residue field $\\kappa(O)$ finite dimensional over $\\mathbb Q$. For every point $x=(O,\\sigma)$, with such $O$ and a ring homomorphism $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$, and every $\\varphi\\in K$ regular at $O$ with $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$, put $L=\\sigma(\\kappa(O))$ and $F=\\mathbb Q(a)\\subseteq L$. The finite dimensional structure of $L/\\mathbb Q$ is that obtained from residue finiteness; the $F$-algebra structure on $L$ is induced by this actual inclusion. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. The proposition requires both that the support $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ is finite and that $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$. The index set consists of the nonzero prime ideals of $\\mathcal O_F$; finiteness of this support is an explicit conjunct, separate from the sum identity.",
+        "zh-Hans": "对每个自然数 $N$，取固定的 $\\mathbb Q(t)$ 的代数闭包中介于 $\\mathbb Q$ 与该闭包之间的域 $K$，并取 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K$ 在 $\\mathbb Q(u)$ 上有限维、次数为 $N$。假设 $K$ 的每个包含 $\\mathbb Q$ 的真赋值子环 $O$ 的剩余域 $\\kappa(O)$ 都在 $\\mathbb Q$ 上有限维。对每个由这种 $O$ 与环同态 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ 组成的点 $x=(O,\\sigma)$，以及每个在 $O$ 中正则、满足 $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ 的 $\\varphi\\in K$，令 $L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$。$L$ 在 $\\mathbb Q$ 上的有限维结构取自剩余域有限性；$L$ 的 $F$ 代数结构由这一实际包含映射诱导。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。本命题同时要求支撑集 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ 是有限集，并且 $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$。指标集是 $\\mathcal O_F$ 的非零素理想；支撑有限是独立列出的合取条件，并未省略为求和记号的一部分。",
+        "ja": "任意の自然数 $N$ に対し、固定された $\\mathbb Q(t)$ の代数閉包の中間体 $\\mathbb Q\\subseteq K$ と $u,v\\in K$ をとる。$u$ は $\\mathbb Q$ 上超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$ であり、$K$ は $\\mathbb Q(u)$ 上有限次元で次数が $N$ であるとする。$\\mathbb Q$ を含む $K$ の任意の真の付値部分環 $O$ について剰余体 $\\kappa(O)$ が $\\mathbb Q$ 上有限次元であると仮定する。このような $O$ と環準同型 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ からなる任意の点 $x=(O,\\sigma)$、および $O$ で正則で $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ を満たす任意の $\\varphi\\in K$ に対し、$L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$ とおく。$L/\\mathbb Q$ の有限次元構造は剰余体の有限性から得たものとし、$L$ の $F$ 代数構造はこの実際の包含から誘導する。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。この命題は、台 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ が有限であること、および $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$ の両方を要求する。添字は $\\mathcal O_F$ の非零素イデアルであり、台の有限性は和の等式とは別の明示的な連言条件である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "section": "",
+        "variables": "No section variables; proposition definitions provide the explicit actual-model binders.",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 788,
+        "end_byte_exclusive": 1028,
+        "line": 24,
+        "end_line": 27
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeBelow",
+      "raw_declaration": "def primeBelow (P : HeightOneSpectrum (𝓞 L)) : HeightOneSpectrum (𝓞 F) where\n  asIdeal := P.asIdeal.comap (algebraMap (𝓞 F) (𝓞 L))\n  isPrime := Ideal.IsPrime.comap _\n  ne_bot := fun h => P.ne_bot (Ideal.eq_bot_of_comap_eq_bot h)",
+      "raw_declaration_sha256": "d5e0973c17004ae0cf81e39a2d45cf5c01c64268c503fb47016336d2e5fec631",
+      "raw_signature": "def primeBelow (P : HeightOneSpectrum (𝓞 L)) : HeightOneSpectrum (𝓞 F)",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every nonzero prime ideal $P$ of $\\mathcal O_L$, this defines the nonzero prime ideal of $\\mathcal O_F$ whose underlying ideal is $i_{\\mathcal O}^{-1}(P)$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对 $\\mathcal O_L$ 的每个非零素理想 $P$，本定义给出 $\\mathcal O_F$ 中以 $i_{\\mathcal O}^{-1}(P)$ 为底层理想的非零素理想。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$\\mathcal O_L$ の任意の非零素イデアル $P$ に対し、底にあるイデアルが $i_{\\mathcal O}^{-1}(P)$ である $\\mathcal O_F$ の非零素イデアルを定義する。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "DifferentCarriers",
+        "variables": "{F : Type*} [Field F] [NumberField F] (L : Type*) [Field L] [NumberField L] [Algebra F L]; variable {L} after diffContrib",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 1177,
+        "end_byte_exclusive": 1413,
+        "line": 31,
+        "end_line": 34
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib",
+      "raw_declaration": "noncomputable def diffContrib (𝔭 : Ideal (𝓞 F)) : ℝ :=\n  ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n    (multiplicity P (differentIdeal (𝓞 F) (𝓞 L)) : ℝ) * Real.log (Ideal.absNorm P) /\n      finrank ℚ L",
+      "raw_declaration_sha256": "9a86cfbcf092d7cd5f84d5fb727b96212ad87d30c38f3e22d6500d42d420372b",
+      "raw_signature": "noncomputable def diffContrib (𝔭 : Ideal (𝓞 F)) : ℝ",
+      "readback": {
+        "en": "For a field $F$, a number field $L$, and an $F$-algebra structure on $L$, let $\\mathcal O_E$ denote the ring of integers of $E$. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. For every ideal $\\mathfrak q$ of $\\mathcal O_F$, this noncomputable real-valued definition is exactly $\\delta_{L/F}(\\mathfrak q)$; no nonzero or maximality assumption is imposed on $\\mathfrak q$.",
+        "zh-Hans": "设 $F$ 是域、$L$ 是数域，$L$ 带 $F$ 代数结构，$\\mathcal O_E$ 表示域 $E$ 的整数环。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对 $\\mathcal O_F$ 的任意理想 $\\mathfrak q$，本不可计算实值定义恰为 $\\delta_{L/F}(\\mathfrak q)$；未要求 $\\mathfrak q$ 非零或极大。",
+        "ja": "$F$ を体、$L$ を数体とし、$L$ の $F$ 代数構造を指定する。$\\mathcal O_E$ は $E$ の整数環を表す。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。$\\mathcal O_F$ の任意のイデアル $\\mathfrak q$ に対するこの非計算的実数値定義は $\\delta_{L/F}(\\mathfrak q)$ そのものである。$\\mathfrak q$ が非零または極大であるという仮定はない。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "DifferentCarriers",
+        "variables": "{F : Type*} [Field F] [NumberField F] (L : Type*) [Field L] [NumberField L] [Algebra F L]; variable {L} after diffContrib",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 1453,
+        "end_byte_exclusive": 1650,
+        "line": 39,
+        "end_line": 41
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_nonneg",
+      "raw_declaration": "lemma diffContrib_nonneg (𝔭 : Ideal (𝓞 F)) : 0 ≤ diffContrib L 𝔭 :=\n  Finset.sum_nonneg fun _ _ => div_nonneg (mul_nonneg (by positivity)\n    (Real.log_natCast_nonneg _)) (by positivity)",
+      "raw_declaration_sha256": "2b279549e6560c3e1dbb5b789634a1c7a0d4a1a1a2fb28935865c656e82b5e65",
+      "raw_signature": "lemma diffContrib_nonneg (𝔭 : Ideal (𝓞 F)) : 0 ≤ diffContrib L 𝔭",
+      "readback": {
+        "en": "For every field $F$, number field $L$ with an $F$-algebra structure, and ideal $\\mathfrak q$ of $\\mathcal O_F$, Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. one has $0\\le\\delta_{L/F}(\\mathfrak q)$. No number-field instance for $F$ is assumed in this declaration.",
+        "zh-Hans": "对每个域 $F$、带 $F$ 代数结构的数域 $L$，以及 $\\mathcal O_F$ 的每个理想 $\\mathfrak q$，记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。有 $0\\le\\delta_{L/F}(\\mathfrak q)$。本声明未假设 $F$ 本身带数域实例。",
+        "ja": "任意の体 $F$、$F$ 代数構造を持つ数体 $L$、および $\\mathcal O_F$ の任意のイデアル $\\mathfrak q$ について、$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。$0\\le\\delta_{L/F}(\\mathfrak q)$ が成り立つ。この宣言では $F$ に数体のインスタンスを仮定しない。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "DifferentCarriers",
+        "variables": "{F : Type*} [Field F] [NumberField F] (L : Type*) [Field L] [NumberField L] [Algebra F L]; variable {L} after diffContrib",
+        "local_command_modifiers": [
+          "omit [NumberField F] in"
+        ],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 1676,
+        "end_byte_exclusive": 1957,
+        "line": 44,
+        "end_line": 48
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primesOverFinset_iff'",
+      "raw_declaration": "lemma mem_primesOverFinset_iff' {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal] (h𝔭 : 𝔭 ≠ ⊥)\n    {P : Ideal (𝓞 L)} :\n    P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L) ↔ P.IsPrime ∧ P.LiesOver 𝔭 := by\n  rw [IsDedekindDomain.mem_primesOverFinset_iff h𝔭]\n  rfl",
+      "raw_declaration_sha256": "5b400e345404cff26565d60bb723d0af53969a56c64bb745d96087a818d94963",
+      "raw_signature": "lemma mem_primesOverFinset_iff' {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal] (h𝔭 : 𝔭 ≠ ⊥)\n    {P : Ideal (𝓞 L)} :\n    P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L) ↔ P.IsPrime ∧ P.LiesOver 𝔭",
+      "readback": {
+        "en": "For a field $F$, a number field $L$ with an $F$-algebra structure, every nonzero maximal ideal $\\mathfrak q$ of $\\mathcal O_F$ with its maximality instance, and every ideal $P$ of $\\mathcal O_L$, membership of $P$ in the library finite set $\\Pi_L(\\mathfrak q)$ is equivalent to the conjunction that $P$ is prime and the inverse image of $P$ under $\\mathcal O_F\\to\\mathcal O_L$ equals $\\mathfrak q$. A number-field instance for $F$ is omitted.",
+        "zh-Hans": "设 $F$ 是域，$L$ 是带 $F$ 代数结构的数域。对 $\\mathcal O_F$ 的每个带极大性实例且非零的极大理想 $\\mathfrak q$，以及 $\\mathcal O_L$ 的任意理想 $P$，$P$ 属于库中的有限集 $\\Pi_L(\\mathfrak q)$，当且仅当 $P$ 是素理想且它在 $\\mathcal O_F\\to\\mathcal O_L$ 下的原像等于 $\\mathfrak q$。本声明省略 $F$ 的数域实例。",
+        "ja": "$F$ を体、$L$ を $F$ 代数構造を持つ数体とする。極大性のインスタンスを持つ $\\mathcal O_F$ の任意の非零極大イデアル $\\mathfrak q$ と、$\\mathcal O_L$ の任意のイデアル $P$ に対し、$P$ がライブラリの有限集合 $\\Pi_L(\\mathfrak q)$ に属することと、$P$ が素イデアルで $\\mathcal O_F\\to\\mathcal O_L$ による逆像が $\\mathfrak q$ であることとは同値である。$F$ の数体インスタンスは省かれる。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "DifferentCarriers",
+        "variables": "{F : Type*} [Field F] [NumberField F] (L : Type*) [Field L] [NumberField L] [Algebra F L]; variable {L} after diffContrib",
+        "local_command_modifiers": [
+          "omit [NumberField F] in"
+        ],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 2164,
+        "end_byte_exclusive": 2257,
+        "line": 59,
+        "end_line": 59
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm",
+      "raw_declaration": "noncomputable def placeNorm (w : FinitePlace K) : ℕ := Ideal.absNorm w.maximalIdeal.asIdeal",
+      "raw_declaration_sha256": "e9fb8fbfc988190bb3ea4ee3eedeb182f402100e58f3c8c1d3c4a597326e9097",
+      "raw_signature": "noncomputable def placeNorm (w : FinitePlace K) : ℕ",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. This noncomputable function from finite places of $K$ to $\\mathbb N$ returns exactly $N(w)$.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。本不可计算函数的定义域是 $K$ 的有限处，陪域是自然数，其在 $w$ 处的值恰为 $N(w)$。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。この非計算的関数は $K$ の有限素点から自然数への関数であり、$w$ に対してちょうど $N(w)$ を返す。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Norm",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 2259,
+        "end_byte_exclusive": 2384,
+        "line": 61,
+        "end_line": 62
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.one_lt_placeNorm",
+      "raw_declaration": "lemma one_lt_placeNorm (w : FinitePlace K) : 1 < placeNorm w :=\n  NumberField.HeightOneSpectrum.one_lt_absNorm w.maximalIdeal",
+      "raw_declaration_sha256": "216b13ff2324a3033dfda2f3ef1e9b745162b5bb3afdffaca58394f1c266e879",
+      "raw_signature": "lemma one_lt_placeNorm (w : FinitePlace K) : 1 < placeNorm w",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every such $w$, $1<N(w)$.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个这样的 $w$，有 $1<N(w)$。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意のそのような $w$ について $1<N(w)$ が成り立つ。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Norm",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 2386,
+        "end_byte_exclusive": 2515,
+        "line": 64,
+        "end_line": 65
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_pos",
+      "raw_declaration": "lemma log_placeNorm_pos (w : FinitePlace K) : 0 < Real.log (placeNorm w) :=\n  Real.log_pos (by exact_mod_cast one_lt_placeNorm w)",
+      "raw_declaration_sha256": "5a9d2853e001ecd2ce9fb6e71594a4fe98ad90b5a6e7b795bacdd5f7a8b84396",
+      "raw_signature": "lemma log_placeNorm_pos (w : FinitePlace K) : 0 < Real.log (placeNorm w)",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every such $w$, $0<\\log N(w)$.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个这样的 $w$，有 $0<\\log N(w)$。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意のそのような $w$ について $0<\\log N(w)$ が成り立つ。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Norm",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 2517,
+        "end_byte_exclusive": 2624,
+        "line": 67,
+        "end_line": 68
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_nonneg",
+      "raw_declaration": "lemma log_placeNorm_nonneg (w : FinitePlace K) : 0 ≤ Real.log (placeNorm w) :=\n  (log_placeNorm_pos w).le",
+      "raw_declaration_sha256": "c4d1aaed103814c09e12d3aab3111b0348400fca8ac7a7751cfb99478781e433",
+      "raw_signature": "lemma log_placeNorm_nonneg (w : FinitePlace K) : 0 ≤ Real.log (placeNorm w)",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every such $w$, $0\\le\\log N(w)$.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个这样的 $w$，有 $0\\le\\log N(w)$。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意のそのような $w$ について $0\\le\\log N(w)$ が成り立つ。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Norm",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 2695,
+        "end_byte_exclusive": 2957,
+        "line": 71,
+        "end_line": 74
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finitePlace_apply_eq",
+      "raw_declaration": "lemma finitePlace_apply_eq (w : FinitePlace K) (x : K) :\n    w x = (WithZeroMulInt.toNNReal (HeightOneSpectrum.absNorm_ne_zero w.maximalIdeal)\n      (w.maximalIdeal.valuation K x) : ℝ) := by\n  rw [← FinitePlace.norm_embedding_eq, FinitePlace.norm_embedding']",
+      "raw_declaration_sha256": "78b90d2ca1e5976f58ba7a91ec81c2bfc7d2973096d0a120d2b12922fc1fcd0e",
+      "raw_signature": "lemma finitePlace_apply_eq (w : FinitePlace K) (x : K) :\n    w x = (WithZeroMulInt.toNNReal (HeightOneSpectrum.absNorm_ne_zero w.maximalIdeal)\n      (w.maximalIdeal.valuation K x) : ℝ)",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every finite place $w$ and every $x\\in K$, $w(x)$ equals the real coercion of $\\tau_{N(w)}(v_{\\mathfrak p_w}(x))$, where $v_{\\mathfrak p_w}:K\\to\\mathbb Z_{\\mathrm{mult}}\\cup\\{0\\}$ is its multiplicative integer-valued valuation and $\\tau_e(0)=0$, $\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$. The nonzero-base witness is the nonvanishing of the ideal norm. This includes $x=0$.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个有限处 $w$ 和每个 $x\\in K$，$w(x)$ 等于 $\\tau_{N(w)}(v_{\\mathfrak p_w}(x))$ 映入实数后的值；其中 $v_{\\mathfrak p_w}:K\\to\\mathbb Z_{\\mathrm{mult}}\\cup\\{0\\}$ 为取值于乘法整数及附加零元的赋值，$\\tau_e(0)=0$，$\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$。底数非零的证明取为理想范数非零。此式也包括 $x=0$。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意の有限素点 $w$ と $x\\in K$ に対し、$w(x)$ は $\\tau_{N(w)}(v_{\\mathfrak p_w}(x))$ を実数に写した値に等しい。ここで $v_{\\mathfrak p_w}:K\\to\\mathbb Z_{\\mathrm{mult}}\\cup\\{0\\}$ は乗法的整数と付加した零を値域とする付値であり、$\\tau_e(0)=0$、$\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$ である。底の非零性にはイデアルノルムの非零性を用いる。$x=0$ も含まれる。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Norm",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 3056,
+        "end_byte_exclusive": 3236,
+        "line": 84,
+        "end_line": 88
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.toNNReal_congr",
+      "raw_declaration": "lemma toNNReal_congr {e e' : NNReal} (h : e = e') (he : e ≠ 0) (he' : e' ≠ 0)\n    (m : WithZero (Multiplicative ℤ)) :\n    toNNReal he m = toNNReal he' m := by\n  subst h\n  rfl",
+      "raw_declaration_sha256": "adb30bb4de7aaf33cb1474a6db0f4023b64d5256be5086f155dd93a9f55013c5",
+      "raw_signature": "lemma toNNReal_congr {e e' : NNReal} (h : e = e') (he : e ≠ 0) (he' : e' ≠ 0)\n    (m : WithZero (Multiplicative ℤ)) :\n    toNNReal he m = toNNReal he' m",
+      "readback": {
+        "en": "For $e\\in\\mathbb R_{\\ge0}$ with a specified proof $h_e:e\\ne0$, let $\\tau_e$ be the map from the multiplicative integers with an added zero to nonnegative reals defined by $\\tau_e(0)=0$ and $\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$. For every pair $e,e^{\\prime}$ of nonnegative real numbers, equality proof $h:e=e^{\\prime}$, nonzero proofs $h_e$ and $h_{e^{\\prime}}$, and every input $m$, $\\tau_e(m)=\\tau_{e^{\\prime}}(m)$. Both choices of nonzero witness are quantified.",
+        "zh-Hans": "对带指定非零证明 $h_e:e\\ne0$ 的非负实数 $e$，令 $\\tau_e$ 为从乘法整数附加零元所得集合到非负实数的映射，定义为 $\\tau_e(0)=0$、$\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$。对任意两个非负实数 $e,e^{\\prime}$、相等证明 $h:e=e^{\\prime}$、分别给定的非零证明 $h_e,h_{e^{\\prime}}$，以及任意输入 $m$，有 $\\tau_e(m)=\\tau_{e^{\\prime}}(m)$。两个非零证明均在量化范围内。",
+        "ja": "指定された非零性の証明 $h_e:e\\ne0$ を持つ非負実数 $e$ について、$\\tau_e$ を零を付加した乗法的整数から非負実数への写像とし、$\\tau_e(0)=0$、$\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$ と定義する。任意の非負実数 $e,e^{\\prime}$、等式の証明 $h:e=e^{\\prime}$、それぞれの非零性の証明 $h_e,h_{e^{\\prime}}$、および任意の入力 $m$ に対して $\\tau_e(m)=\\tau_{e^{\\prime}}(m)$ が成り立つ。両方の非零性の証明を量化する。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "ToNNReal",
+        "variables": "open WithZeroMulInt; no section variables",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 3298,
+        "end_byte_exclusive": 3696,
+        "line": 91,
+        "end_line": 97
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.toNNReal_pow_base",
+      "raw_declaration": "lemma toNNReal_pow_base {e : NNReal} (he : e ≠ 0) {f : ℕ} (hf : f ≠ 0) (hef : e ^ f ≠ 0)\n    (m : WithZero (Multiplicative ℤ)) : toNNReal hef m = toNNReal he m ^ f := by\n  by_cases hm : m = 0\n  · subst hm\n    rw [map_zero, map_zero, zero_pow hf]\n  · rw [toNNReal_neg_apply hef hm, toNNReal_neg_apply he hm, ← zpow_natCast, ← zpow_natCast,\n      ← zpow_mul, ← zpow_mul, mul_comm]",
+      "raw_declaration_sha256": "0fc312779e26dff751d71d3a0200e1ba1eb89c750bc9b74b20cbc707ab3ae1c5",
+      "raw_signature": "lemma toNNReal_pow_base {e : NNReal} (he : e ≠ 0) {f : ℕ} (hf : f ≠ 0) (hef : e ^ f ≠ 0)\n    (m : WithZero (Multiplicative ℤ)) : toNNReal hef m = toNNReal he m ^ f",
+      "readback": {
+        "en": "For $e\\in\\mathbb R_{\\ge0}$ with a specified proof $h_e:e\\ne0$, let $\\tau_e$ be the map from the multiplicative integers with an added zero to nonnegative reals defined by $\\tau_e(0)=0$ and $\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$. For every such $e,h_e$, every natural number $f$ with a proof $h_f:f\\ne0$, a proof $h_{ef}:e^f\\ne0$, and every input $m$ (including zero), $\\tau_{e^f}(m)=\\tau_e(m)^f$, with the left map using $h_{ef}$.",
+        "zh-Hans": "对带指定非零证明 $h_e:e\\ne0$ 的非负实数 $e$，令 $\\tau_e$ 为从乘法整数附加零元所得集合到非负实数的映射，定义为 $\\tau_e(0)=0$、$\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$。对任意这样的 $e,h_e$、带非零证明 $h_f:f\\ne0$ 的自然数 $f$、证明 $h_{ef}:e^f\\ne0$，以及任意输入 $m$（包括零元），有 $\\tau_{e^f}(m)=\\tau_e(m)^f$，左侧映射使用证明 $h_{ef}$。",
+        "ja": "指定された非零性の証明 $h_e:e\\ne0$ を持つ非負実数 $e$ について、$\\tau_e$ を零を付加した乗法的整数から非負実数への写像とし、$\\tau_e(0)=0$、$\\tau_e(\\operatorname{ofAdd}(z))=e^{-z}$ と定義する。任意のそのような $e,h_e$、非零性の証明 $h_f:f\\ne0$ を持つ自然数 $f$、証明 $h_{ef}:e^f\\ne0$、および零も含む任意の入力 $m$ について、$\\tau_{e^f}(m)=\\tau_e(m)^f$ が成り立つ。左辺の写像には $h_{ef}$ を用いる。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "ToNNReal",
+        "variables": "open WithZeroMulInt; no section variables",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 3955,
+        "end_byte_exclusive": 4082,
+        "line": 109,
+        "end_line": 110
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver",
+      "raw_declaration": "abbrev PlaceLiesOver (w : FinitePlace L) (u : FinitePlace F) : Prop :=\n  w.maximalIdeal.asIdeal.LiesOver u.maximalIdeal.asIdeal",
+      "raw_declaration_sha256": "89aaea8d565ada12ad8c3a55318631e958511ea69aaab0d23161aa5e4cd44bdc",
+      "raw_signature": "abbrev PlaceLiesOver (w : FinitePlace L) (u : FinitePlace F) : Prop",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every such $w,u$, this proposition is defined to be precisely $w\\mid u$, that is, contraction of the underlying ideal of $w$ is the underlying ideal of $u$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对每个这样的 $w,u$，本命题定义为 $w\\mid u$，即 $w$ 的底层理想的收缩恰为 $u$ 的底层理想。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。任意のそのような $w,u$ に対し、この命題は $w\\mid u$、すなわち $w$ の底にあるイデアルの縮約が $u$ の底にあるイデアルに等しいことと定義される。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 4124,
+        "end_byte_exclusive": 4270,
+        "line": 113,
+        "end_line": 114
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx",
+      "raw_declaration": "noncomputable abbrev placeRamIdx (w : FinitePlace L) (u : FinitePlace F) : ℕ :=\n  u.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal",
+      "raw_declaration_sha256": "94ff100251228013d201d2b9f23bbf3a3075a0fe51c66f583bab482f863eac91",
+      "raw_signature": "noncomputable abbrev placeRamIdx (w : FinitePlace L) (u : FinitePlace F) : ℕ",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every such pair $w,u$, this noncomputable natural-number-valued abbreviation returns $e(w/u)$. Its definition does not require $w\\mid u$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对任意这样的 $w,u$，本不可计算的自然数值缩写取值为 $e(w/u)$；定义本身不要求 $w\\mid u$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。任意のそのような $w,u$ に対し、この非計算的な自然数値の略記は $e(w/u)$ を返す。定義自体は $w\\mid u$ を仮定しない。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 4308,
+        "end_byte_exclusive": 4453,
+        "line": 117,
+        "end_line": 118
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg",
+      "raw_declaration": "noncomputable abbrev placeInertiaDeg (w : FinitePlace L) (u : FinitePlace F) : ℕ :=\n  u.maximalIdeal.asIdeal.inertiaDeg' w.maximalIdeal.asIdeal",
+      "raw_declaration_sha256": "7968b02e3bdc4737d3b8a7d6cdda5672cc31116981e20d07f83cbdb8fca831e3",
+      "raw_signature": "noncomputable abbrev placeInertiaDeg (w : FinitePlace L) (u : FinitePlace F) : ℕ",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every such pair $w,u$, this noncomputable natural-number-valued abbreviation returns $f(w/u)$. Its definition does not require $w\\mid u$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对任意这样的 $w,u$，本不可计算的自然数值缩写取值为 $f(w/u)$；定义本身不要求 $w\\mid u$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。任意のそのような $w,u$ に対し、この非計算的な自然数値の略記は $f(w/u)$ を返す。定義自体は $w\\mid u$ を仮定しない。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 4455,
+        "end_byte_exclusive": 4661,
+        "line": 120,
+        "end_line": 122
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx_ne_zero",
+      "raw_declaration": "lemma placeRamIdx_ne_zero {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    placeRamIdx w u ≠ 0 :=\n  Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver _ u.maximalIdeal.ne_bot",
+      "raw_declaration_sha256": "810d28b75786d25f80ac3defb596c323115282862ffcbca60db528bb17107232",
+      "raw_signature": "lemma placeRamIdx_ne_zero {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    placeRamIdx w u ≠ 0",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every $w,u$ and every hypothesis $h:w\\mid u$, $e(w/u)\\ne0$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对任意 $w,u$ 以及假设 $h:w\\mid u$，有 $e(w/u)\\ne0$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。任意の $w,u$ と仮定 $h:w\\mid u$ に対し、$e(w/u)\\ne0$ である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 4663,
+        "end_byte_exclusive": 4870,
+        "line": 124,
+        "end_line": 127
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg_ne_zero",
+      "raw_declaration": "lemma placeInertiaDeg_ne_zero {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    placeInertiaDeg w u ≠ 0 := by\n  haveI := u.maximalIdeal.isMaximal\n  exact (Ideal.inertiaDeg'_pos _ _).ne'",
+      "raw_declaration_sha256": "eeba3151f5209651c0b637a89077059e12d34e8a4ac6de4abcb5d70be9ee7742",
+      "raw_signature": "lemma placeInertiaDeg_ne_zero {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    placeInertiaDeg w u ≠ 0",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every $w,u$ and every hypothesis $h:w\\mid u$, $f(w/u)\\ne0$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对任意 $w,u$ 以及假设 $h:w\\mid u$，有 $f(w/u)\\ne0$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。任意の $w,u$ と仮定 $h:w\\mid u$ に対し、$f(w/u)\\ne0$ である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 4917,
+        "end_byte_exclusive": 5149,
+        "line": 130,
+        "end_line": 132
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm_eq_pow",
+      "raw_declaration": "theorem placeNorm_eq_pow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    placeNorm w = placeNorm u ^ placeInertiaDeg w u :=\n  Ideal.absNorm_eq_pow_inertiaDeg'_of_liesOver _ _ inferInstance u.maximalIdeal.ne_bot",
+      "raw_declaration_sha256": "647c0a4c08634c0cfc72f9cee4e98c24ff4edf26ef7165bf0dfdf2469c1e3f51",
+      "raw_signature": "theorem placeNorm_eq_pow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    placeNorm w = placeNorm u ^ placeInertiaDeg w u",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every $w,u$ satisfying $w\\mid u$, $N(w)=N(u)^{f(w/u)}$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对每对满足 $w\\mid u$ 的 $w,u$，有 $N(w)=N(u)^{f(w/u)}$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$w\\mid u$ を満たす任意の $w,u$ に対して $N(w)=N(u)^{f(w/u)}$ である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 5217,
+        "end_byte_exclusive": 5933,
+        "line": 135,
+        "end_line": 144
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.apply_algebraMap_eq_pow",
+      "raw_declaration": "theorem apply_algebraMap_eq_pow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u)\n    (a : F) : w (algebraMap F L a) = u a ^ (placeRamIdx w u * placeInertiaDeg w u) := by\n  rw [finitePlace_apply_eq, finitePlace_apply_eq,\n    ← HeightOneSpectrum.valuation_liesOver L u.maximalIdeal w.maximalIdeal, map_pow]\n  have hN : (Ideal.absNorm w.maximalIdeal.asIdeal : NNReal) =\n      (Ideal.absNorm u.maximalIdeal.asIdeal : NNReal) ^ placeInertiaDeg w u := by\n    exact_mod_cast placeNorm_eq_pow h\n  rw [toNNReal_congr hN _ (pow_ne_zero _ (HeightOneSpectrum.absNorm_ne_zero _)),\n    toNNReal_pow_base (HeightOneSpectrum.absNorm_ne_zero _) (placeInertiaDeg_ne_zero h),\n    ← pow_mul, NNReal.coe_pow, mul_comm]",
+      "raw_declaration_sha256": "32d7fd5a2f903c169bb7c53642d7453f4e9f638d4bd4c762611d93c4dff36e46",
+      "raw_signature": "theorem apply_algebraMap_eq_pow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u)\n    (a : F) : w (algebraMap F L a) = u a ^ (placeRamIdx w u * placeInertiaDeg w u)",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every $w,u$ satisfying $w\\mid u$ and every $a\\in F$, including $a=0$, $w(i(a))=u(a)^{e(w/u)f(w/u)}$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对每对满足 $w\\mid u$ 的 $w,u$ 和每个 $a\\in F$（包括 $a=0$），有 $w(i(a))=u(a)^{e(w/u)f(w/u)}$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$w\\mid u$ を満たす任意の $w,u$ と、$a=0$ も含む任意の $a\\in F$ に対し、$w(i(a))=u(a)^{e(w/u)f(w/u)}$ である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 6011,
+        "end_byte_exclusive": 6320,
+        "line": 147,
+        "end_line": 151
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.one_lt_apply_algebraMap_iff",
+      "raw_declaration": "lemma one_lt_apply_algebraMap_iff {w : FinitePlace L} {u : FinitePlace F}\n    (h : PlaceLiesOver w u) (a : F) : 1 < w (algebraMap F L a) ↔ 1 < u a := by\n  rw [apply_algebraMap_eq_pow h]\n  exact one_lt_pow_iff_of_nonneg (apply_nonneg u a)\n    (mul_ne_zero (placeRamIdx_ne_zero h) (placeInertiaDeg_ne_zero h))",
+      "raw_declaration_sha256": "aa549b8e0bc2056c515ac63415baa4a8369573856bc630bae941e347f4f0d514",
+      "raw_signature": "lemma one_lt_apply_algebraMap_iff {w : FinitePlace L} {u : FinitePlace F}\n    (h : PlaceLiesOver w u) (a : F) : 1 < w (algebraMap F L a) ↔ 1 < u a",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every $w,u$ satisfying $w\\mid u$ and every $a\\in F$, $1<w(i(a))$ if and only if $1<u(a)$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对每对满足 $w\\mid u$ 的 $w,u$ 和每个 $a\\in F$，$1<w(i(a))$ 当且仅当 $1<u(a)$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$w\\mid u$ を満たす任意の $w,u$ と任意の $a\\in F$ に対し、$1<w(i(a))$ と $1<u(a)$ は同値である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 6427,
+        "end_byte_exclusive": 6541,
+        "line": 157,
+        "end_line": 158
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeBelow",
+      "raw_declaration": "noncomputable def placeBelow (w : FinitePlace L) : FinitePlace F :=\n  FinitePlace.mk (primeBelow L w.maximalIdeal)",
+      "raw_declaration_sha256": "ce25e3d09a9efa4e02e2055a87eadf4f8b106318c4e3d89f749a6b2c8b5e29d6",
+      "raw_signature": "noncomputable def placeBelow (w : FinitePlace L) : FinitePlace F",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every finite place $w$ of $L$, this noncomputable definition returns the finite place of $F$ constructed from the nonzero prime ideal with underlying ideal $i_{\\mathcal O}^{-1}(\\mathfrak p_w)$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对 $L$ 的每个有限处 $w$，本不可计算定义返回由底层理想为 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)$ 的非零素理想构造的 $F$ 的有限处。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$L$ の任意の有限素点 $w$ に対し、この非計算的定義は、底にあるイデアルが $i_{\\mathcal O}^{-1}(\\mathfrak p_w)$ となる非零素イデアルから構成した $F$ の有限素点を返す。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [
+          "variable (L) in"
+        ],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 6543,
+        "end_byte_exclusive": 6709,
+        "line": 160,
+        "end_line": 162
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeBelow_maximalIdeal",
+      "raw_declaration": "lemma placeBelow_maximalIdeal (w : FinitePlace L) :\n    (placeBelow L w : FinitePlace F).maximalIdeal = primeBelow L w.maximalIdeal :=\n  FinitePlace.maximalIdeal_mk _",
+      "raw_declaration_sha256": "54e37eaa6a8effe0b824dbd1200fc37c9fe3d0728d5972c6cff8785232fe4d10",
+      "raw_signature": "lemma placeBelow_maximalIdeal (w : FinitePlace L) :\n    (placeBelow L w : FinitePlace F).maximalIdeal = primeBelow L w.maximalIdeal",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every finite place $w$ of $L$, the nonzero prime ideal associated to the place constructed from $i_{\\mathcal O}^{-1}(\\mathfrak p_w)$ equals the nonzero prime ideal obtained by contracting $\\mathfrak p_w$ to $\\mathcal O_F$; the equality is between height-one-spectrum elements, not merely their underlying ideals.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对 $L$ 的每个有限处 $w$，由 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)$ 构造的有限处所对应的非零素理想，等于将 $\\mathfrak p_w$ 收缩到 $\\mathcal O_F$ 所得的非零素理想；等式比较的是高度为一的谱中的元素。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$L$ の任意の有限素点 $w$ に対し、$i_{\\mathcal O}^{-1}(\\mathfrak p_w)$ から構成した素点に対応する非零素イデアルは、$\\mathfrak p_w$ を $\\mathcal O_F$ に縮約して得る非零素イデアルに等しい。これは高さ一のスペクトルの元の等式である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 6804,
+        "end_byte_exclusive": 7036,
+        "line": 165,
+        "end_line": 170
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.eq_placeBelow",
+      "raw_declaration": "theorem eq_placeBelow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    u = placeBelow L w := by\n  rw [← FinitePlace.maximalIdeal_inj]\n  apply HeightOneSpectrum.ext\n  rw [placeBelow_maximalIdeal]\n  exact h.over",
+      "raw_declaration_sha256": "ede0d802d190b43f73437ae0645e2f7583c24c386608c5d1157f1ea1af781211",
+      "raw_signature": "theorem eq_placeBelow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    u = placeBelow L w",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every $w,u$ and every hypothesis $w\\mid u$, $u$ equals the finite place of $F$ constructed from the contracted prime ideal $i_{\\mathcal O}^{-1}(\\mathfrak p_w)$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对任意 $w,u$ 及假设 $w\\mid u$，$u$ 等于从收缩素理想 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)$ 构造的 $F$ 的有限处。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。任意の $w,u$ と仮定 $w\\mid u$ に対し、$u$ は縮約素イデアル $i_{\\mathcal O}^{-1}(\\mathfrak p_w)$ から構成した $F$ の有限素点に等しい。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 7038,
+        "end_byte_exclusive": 7384,
+        "line": 172,
+        "end_line": 176
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primesOverFinset_of_placeLiesOver",
+      "raw_declaration": "lemma mem_primesOverFinset_of_placeLiesOver {w : FinitePlace L} {u : FinitePlace F}\n    (h : PlaceLiesOver w u) :\n    w.maximalIdeal.asIdeal ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L) := by\n  haveI := u.maximalIdeal.isMaximal\n  exact (mem_primesOverFinset_iff' u.maximalIdeal.ne_bot).mpr ⟨w.maximalIdeal.isPrime, h⟩",
+      "raw_declaration_sha256": "d8c7168af03a980503ccfbd5477ec9be3a689d2c7187deeac49bc8c26ab6e0ae",
+      "raw_signature": "lemma mem_primesOverFinset_of_placeLiesOver {w : FinitePlace L} {u : FinitePlace F}\n    (h : PlaceLiesOver w u) :\n    w.maximalIdeal.asIdeal ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every $w,u$ satisfying $w\\mid u$, the ideal $\\mathfrak p_w$ belongs to the library finite set of prime ideals of $\\mathcal O_L$ over $\\mathfrak p_u$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对每对满足 $w\\mid u$ 的 $w,u$，理想 $\\mathfrak p_w$ 属于库中给出的 $\\mathcal O_L$ 中位于 $\\mathfrak p_u$ 之上的素理想有限集。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$w\\mid u$ を満たす任意の $w,u$ に対し、イデアル $\\mathfrak p_w$ は $\\mathfrak p_u$ の上にある $\\mathcal O_L$ の素イデアルからなるライブラリの有限集合に属する。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 7451,
+        "end_byte_exclusive": 7948,
+        "line": 180,
+        "end_line": 189
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finite_placeLiesOver",
+      "raw_declaration": "lemma finite_placeLiesOver (u : FinitePlace F) :\n    {w : FinitePlace L | PlaceLiesOver w u}.Finite := by\n  refine Set.Finite.of_finite_image ?_\n    (f := fun w : FinitePlace L => w.maximalIdeal.asIdeal) ?_\n  · refine (IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal\n      (𝓞 L)).finite_toSet.subset ?_\n    rintro _ ⟨w, hw, rfl⟩\n    exact mem_primesOverFinset_of_placeLiesOver hw\n  · intro w₁ _ w₂ _ h\n    exact (FinitePlace.maximalIdeal_inj _ _).mp (HeightOneSpectrum.ext h)",
+      "raw_declaration_sha256": "43731bad98c068398cfd11a8e38dfd36b3cdd2d3e42f29dd6d0a5791aa495dfc",
+      "raw_signature": "lemma finite_placeLiesOver (u : FinitePlace F) :\n    {w : FinitePlace L | PlaceLiesOver w u}.Finite",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every finite place $u$ of $F$, the set $\\{w\\text{ finite in }L:w\\mid u\\}$ is finite.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对 $F$ 的每个有限处 $u$，集合 $\\{w\\text{ 为 }L\\text{ 的有限处}:w\\mid u\\}$ 是有限集。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$F$ の任意の有限素点 $u$ に対し、集合 $\\{w\\text{ は }L\\text{ の有限素点}:w\\mid u\\}$ は有限である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [
+          "variable (L) in"
+        ],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 8015,
+        "end_byte_exclusive": 8129,
+        "line": 193,
+        "end_line": 194
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver",
+      "raw_declaration": "noncomputable def placesOver (u : FinitePlace F) : Finset (FinitePlace L) :=\n  (finite_placeLiesOver L u).toFinset",
+      "raw_declaration_sha256": "2fbd7b54d0babecda237e269cdf5b0b30224a4543e9fb6599f1fd7c029a44f31",
+      "raw_signature": "noncomputable def placesOver (u : FinitePlace F) : Finset (FinitePlace L)",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every finite place $u$ of $F$, this noncomputable function returns the finite set consisting exactly of the finite places $w$ of $L$ satisfying $w\\mid u$, by converting the proved-finite set into a finite-set value.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对 $F$ 的每个有限处 $u$，本不可计算函数将已证明有限的集合转换成有限集值，恰好包含满足 $w\\mid u$ 的 $L$ 的全部有限处 $w$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$F$ の任意の有限素点 $u$ に対し、この非計算的関数は、有限性が示された集合を有限集合の値に変換し、$w\\mid u$ を満たす $L$ の有限素点 $w$ をちょうどすべて含む有限集合を返す。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [
+          "variable (L) in"
+        ],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+      "source_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+      "source_span": {
+        "start_byte": 8131,
+        "end_byte_exclusive": 8307,
+        "line": 196,
+        "end_line": 198
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_placesOver",
+      "raw_declaration": "lemma mem_placesOver {u : FinitePlace F} {w : FinitePlace L} :\n    w ∈ placesOver L u ↔ PlaceLiesOver w u := by\n  rw [placesOver, Set.Finite.mem_toFinset, Set.mem_setOf_eq]",
+      "raw_declaration_sha256": "bfaac64758dbdedac761066d8c2405656c3c9807d91f22bc0fb471fb1c6dfaa7",
+      "raw_signature": "lemma mem_placesOver {u : FinitePlace F} {w : FinitePlace L} :\n    w ∈ placesOver L u ↔ PlaceLiesOver w u",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. For every finite place $u$ of $F$ and $w$ of $L$, membership of $w$ in the finite set of all places of $L$ over $u$ is equivalent to $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对 $F$ 的每个有限处 $u$ 和 $L$ 的每个有限处 $w$，$w$ 属于 $L$ 中位于 $u$ 之上的全部有限处构成的有限集，当且仅当 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$F$ の任意の有限素点 $u$ と $L$ の任意の有限素点 $w$ について、$w$ が $u$ の上にある $L$ のすべての素点の有限集合に属することは、$i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ と同値である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "LiesOver",
+        "variables": "{F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_sha256": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+      "source_span": {
+        "start_byte": 642,
+        "end_byte_exclusive": 718,
+        "line": 22,
+        "end_line": 22
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meets",
+      "raw_declaration": "def meets (G : Finset K) : Set (FinitePlace K) := {w | ∃ g ∈ G, 1 < w g}",
+      "raw_declaration_sha256": "89d0af355b5afc37ad321abbbaad616bd4ddfc4b6e518ee93b0d72d829ad3bae",
+      "raw_signature": "def meets (G : Finset K) : Set (FinitePlace K)",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every finite subset $G\\subset K$, let $M_G=\\{w\\text{ finite in }K:\\exists g\\in G,\\ 1<w(g)\\}$. This definition returns exactly the set $M_G$; $G$ may be empty and may contain zero.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个有限子集 $G\\subset K$，令 $M_G=\\{w\\text{ 为 }K\\text{ 的有限处}:\\exists g\\in G,\\ 1<w(g)\\}$。本定义返回的集合恰为 $M_G$；允许 $G$ 为空集或含有零。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意の有限部分集合 $G\\subset K$ について $M_G=\\{w\\text{ は }K\\text{ の有限素点}:\\exists g\\in G,\\ 1<w(g)\\}$ とおく。この定義はちょうど集合 $M_G$ を返す。$G$ は空でも零を含んでもよい。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Meets",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_sha256": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+      "source_span": {
+        "start_byte": 779,
+        "end_byte_exclusive": 1251,
+        "line": 25,
+        "end_line": 37
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meets_finite",
+      "raw_declaration": "theorem meets_finite (G : Finset K) : (meets G).Finite := by\n  have h : meets G = ⋃ g ∈ G, {w : FinitePlace K | 1 < w g} := by\n    ext w\n    simp [meets]\n  rw [h]\n  refine Set.Finite.biUnion G.finite_toSet fun g _ => ?_\n  by_cases hg : g = 0\n  · subst hg\n    refine Set.finite_empty.subset fun w (hw : 1 < w 0) => ?_\n    rw [map_zero] at hw\n    exact absurd hw (by norm_num)\n  · refine (FinitePlace.hasFiniteMulSupport hg).subset fun w hw => ?_\n    exact ne_of_gt hw",
+      "raw_declaration_sha256": "f389ea6a27dfb87f5fba47769b369a87fed3f4e68edcf2489f099c6b71a4f63e",
+      "raw_signature": "theorem meets_finite (G : Finset K) : (meets G).Finite",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every finite subset $G\\subset K$, let $M_G=\\{w\\text{ finite in }K:\\exists g\\in G,\\ 1<w(g)\\}$. The set $M_G$ is finite for every such $G$, including the empty set.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个有限子集 $G\\subset K$，令 $M_G=\\{w\\text{ 为 }K\\text{ 的有限处}:\\exists g\\in G,\\ 1<w(g)\\}$。对每个这样的 $G$，集合 $M_G$ 都有限；其中也包括空集情形。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意の有限部分集合 $G\\subset K$ について $M_G=\\{w\\text{ は }K\\text{ の有限素点}:\\exists g\\in G,\\ 1<w(g)\\}$ とおく。空集合の場合も含め、任意のそのような $G$ に対して集合 $M_G$ は有限である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Meets",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_sha256": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+      "source_span": {
+        "start_byte": 1283,
+        "end_byte_exclusive": 1381,
+        "line": 40,
+        "end_line": 40
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meetsFinset",
+      "raw_declaration": "noncomputable def meetsFinset (G : Finset K) : Finset (FinitePlace K) := (meets_finite G).toFinset",
+      "raw_declaration_sha256": "1c8014621b4b5fbd9d08efe245a21da3da5c9664040b8a92be28d08a540f7d10",
+      "raw_signature": "noncomputable def meetsFinset (G : Finset K) : Finset (FinitePlace K)",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every finite subset $G\\subset K$, let $M_G=\\{w\\text{ finite in }K:\\exists g\\in G,\\ 1<w(g)\\}$. This noncomputable definition converts $M_G$, using its finiteness proof, into a finite-set value containing exactly its elements.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个有限子集 $G\\subset K$，令 $M_G=\\{w\\text{ 为 }K\\text{ 的有限处}:\\exists g\\in G,\\ 1<w(g)\\}$。本不可计算定义利用 $M_G$ 的有限性证明，将其转换为恰好含有相同元素的有限集值。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意の有限部分集合 $G\\subset K$ について $M_G=\\{w\\text{ は }K\\text{ の有限素点}:\\exists g\\in G,\\ 1<w(g)\\}$ とおく。この非計算的定義は $M_G$ の有限性の証明を使い、同じ元をちょうど含む有限集合の値へ変換する。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Meets",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "definition",
+        "contains_sorry": false,
+        "text": "Readback renders the definition. No compilation was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_sha256": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+      "source_span": {
+        "start_byte": 1383,
+        "end_byte_exclusive": 1546,
+        "line": 42,
+        "end_line": 45
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_meetsFinset",
+      "raw_declaration": "lemma mem_meetsFinset {G : Finset K} {w : FinitePlace K} :\n    w ∈ meetsFinset G ↔ ∃ g ∈ G, 1 < w g := by\n  rw [meetsFinset, Set.Finite.mem_toFinset]\n  rfl",
+      "raw_declaration_sha256": "c70c6db9ff408727fc6b7ce5d5cc4fa77c44d61a38a15603e6dd11d45957fa7e",
+      "raw_signature": "lemma mem_meetsFinset {G : Finset K} {w : FinitePlace K} :\n    w ∈ meetsFinset G ↔ ∃ g ∈ G, 1 < w g",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every finite subset $G\\subset K$, let $M_G=\\{w\\text{ finite in }K:\\exists g\\in G,\\ 1<w(g)\\}$. For every such $G$ and finite place $w$, membership of $w$ in the finite-set version of $M_G$ is equivalent to the existence of $g\\in G$ with $1<w(g)$.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个有限子集 $G\\subset K$，令 $M_G=\\{w\\text{ 为 }K\\text{ 的有限处}:\\exists g\\in G,\\ 1<w(g)\\}$。对每个这样的 $G$ 和有限处 $w$，$w$ 属于 $M_G$ 对应的有限集，当且仅当存在 $g\\in G$ 满足 $1<w(g)$。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意の有限部分集合 $G\\subset K$ について $M_G=\\{w\\text{ は }K\\text{ の有限素点}:\\exists g\\in G,\\ 1<w(g)\\}$ とおく。任意のそのような $G$ と有限素点 $w$ に対し、$w$ が $M_G$ の有限集合版に属することと、$1<w(g)$ を満たす $g\\in G$ が存在することとは同値である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Meets",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_sha256": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+      "source_span": {
+        "start_byte": 1636,
+        "end_byte_exclusive": 2230,
+        "line": 48,
+        "end_line": 61
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteSetLogCond_eq_sum",
+      "raw_declaration": "theorem finiteSetLogCond_eq_sum (G : Finset K) :\n    finiteSetLogCond G = (∑ w ∈ meetsFinset G, Real.log (placeNorm w)) / finrank ℚ K := by\n  classical\n  change (∑ᶠ w : FinitePlace K, if w ∈ meets G then Real.log (placeNorm w) else 0) /\n    finrank ℚ K = _\n  rw [finsum_eq_sum_of_support_subset _ (s := meetsFinset G)]\n  · congr 1\n    refine Finset.sum_congr rfl fun w hw => ?_\n    rw [if_pos (by rw [mem_meetsFinset] at hw; exact hw)]\n  · intro w hw\n    rw [Function.mem_support] at hw\n    rw [Finset.mem_coe, mem_meetsFinset]\n    by_contra h\n    exact hw (if_neg (by exact h))",
+      "raw_declaration_sha256": "c2188339a60605b0cc5008430cc6ebfa20e2072438e772b97ff70ac0a3307ded",
+      "raw_signature": "theorem finiteSetLogCond_eq_sum (G : Finset K) :\n    finiteSetLogCond G = (∑ w ∈ meetsFinset G, Real.log (placeNorm w)) / finrank ℚ K",
+      "readback": {
+        "en": "For every number field $K$ (a field finite dimensional over $\\mathbb Q$), write $\\mathcal O_K$ for its ring of integers. For a finite place $w$ of $K$, let $\\mathfrak p_w$ be its associated nonzero prime ideal and $N(w)=|\\mathcal O_K/\\mathfrak p_w|$. For every finite subset $G\\subset K$, let $M_G=\\{w\\text{ finite in }K:\\exists g\\in G,\\ 1<w(g)\\}$. For a finite subset $A$ of a number field $E$, define $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ finite in }E} b_A(v))/n_E$, where $b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$ if some $a\\in A$ satisfies $v(a)>1$, and $b_A(v)=0$ otherwise; $\\sum^{\\mathrm f}$ is the finite-support sum used in the code. Empty element sets are allowed. For every such $G$, $C_K(G)=(\\sum_{w\\in M_G}\\log N(w))/[K:\\mathbb Q]$, where the right sum is over the finite-set version of $M_G$.",
+        "zh-Hans": "对每个数域 $K$（即作为 $\\mathbb Q$ 上向量空间为有限维的域），记其整数环为 $\\mathcal O_K$。对 $K$ 的有限处 $w$，记对应的非零素理想为 $\\mathfrak p_w$，并令 $N(w)=|\\mathcal O_K/\\mathfrak p_w|$。对每个有限子集 $G\\subset K$，令 $M_G=\\{w\\text{ 为 }K\\text{ 的有限处}:\\exists g\\in G,\\ 1<w(g)\\}$。对数域 $E$ 的任意有限子集 $A$，定义 $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ 为 }E\\text{ 的有限处}} b_A(v))/n_E$：当存在 $a\\in A$ 使 $v(a)>1$ 时，$b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$，否则为零；$\\sum^{\\mathrm f}$ 表示代码中的有限支撑求和。允许 $A$ 为空集。对每个这样的 $G$，有 $C_K(G)=(\\sum_{w\\in M_G}\\log N(w))/[K:\\mathbb Q]$；右侧对 $M_G$ 对应的有限集求和。",
+        "ja": "任意の数体 $K$（$\\mathbb Q$ 上有限次元の体）について、その整数環を $\\mathcal O_K$ とする。$K$ の有限素点 $w$ に対応する非零素イデアルを $\\mathfrak p_w$ とし、$N(w)=|\\mathcal O_K/\\mathfrak p_w|$ とおく。任意の有限部分集合 $G\\subset K$ について $M_G=\\{w\\text{ は }K\\text{ の有限素点}:\\exists g\\in G,\\ 1<w(g)\\}$ とおく。数体 $E$ の有限部分集合 $A$ について $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ は }E\\text{ の有限素点}} b_A(v))/n_E$ と定義する。ある $a\\in A$ が $v(a)>1$ を満たす場合は $b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$、それ以外は $b_A(v)=0$ である。$\\sum^{\\mathrm f}$ はコードの有限台和である。$A$ は空集合でもよい。任意のそのような $G$ に対して $C_K(G)=(\\sum_{w\\in M_G}\\log N(w))/[K:\\mathbb Q]$ が成り立つ。右辺は $M_G$ の有限集合版についての和である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Meets",
+        "variables": "{K : Type*} [Field K] [NumberField K]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_sha256": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+      "source_span": {
+        "start_byte": 2544,
+        "end_byte_exclusive": 3706,
+        "line": 72,
+        "end_line": 91
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_diffContrib_le_of_accounting",
+      "raw_declaration": "theorem sum_diffContrib_le_of_accounting\n    (hfinite : (Function.support fun 𝔭 : HeightOneSpectrum (𝓞 F) =>\n      diffContrib L 𝔭.asIdeal).Finite)\n    (haccount : Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L =\n      ∑ᶠ 𝔭 : HeightOneSpectrum (𝓞 F), diffContrib L 𝔭.asIdeal)\n    (U : Finset (FinitePlace F)) :\n    ∑ u ∈ U, diffContrib L u.maximalIdeal.asIdeal ≤\n      Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L := by\n  classical\n  have hinj : Set.InjOn (fun u : FinitePlace F => u.maximalIdeal) U :=\n    fun _ _ _ _ h => (FinitePlace.maximalIdeal_inj _ _).mp h\n  rw [← Finset.sum_image (g := fun u : FinitePlace F => u.maximalIdeal)\n    (f := fun 𝔭 : HeightOneSpectrum (𝓞 F) => diffContrib L 𝔭.asIdeal) hinj, haccount]\n  set s := U.image (fun u : FinitePlace F => u.maximalIdeal) ∪ hfinite.toFinset\n  rw [finsum_eq_sum_of_support_subset _ (s := s)]\n  · exact Finset.sum_le_sum_of_subset_of_nonneg Finset.subset_union_left\n      fun _ _ _ => diffContrib_nonneg _\n  · intro 𝔭 h𝔭\n    rw [Finset.coe_union, Set.Finite.coe_toFinset]\n    exact Or.inr h𝔭",
+      "raw_declaration_sha256": "8ea3eabf5f9690095354dfdb545fa839c75f4a646171a6dad89d1ded1ffadda8",
+      "raw_signature": "theorem sum_diffContrib_le_of_accounting\n    (hfinite : (Function.support fun 𝔭 : HeightOneSpectrum (𝓞 F) =>\n      diffContrib L 𝔭.asIdeal).Finite)\n    (haccount : Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L =\n      ∑ᶠ 𝔭 : HeightOneSpectrum (𝓞 F), diffContrib L 𝔭.asIdeal)\n    (U : Finset (FinitePlace F)) :\n    ∑ u ∈ U, diffContrib L u.maximalIdeal.asIdeal ≤\n      Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. Assume explicitly that the support $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ is finite and that $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$. Then, for every finite set $U$ of finite places of $F$ (including the empty set), $\\sum_{u\\in U}\\delta_{L/F}(\\mathfrak p_u)\\le\\log|\\mathcal O_L/D_{L/F}|/n_L$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。明确假设支撑集 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ 有限，并且 $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$。那么对 $F$ 的有限处组成的任意有限集 $U$（包括空集），有 $\\sum_{u\\in U}\\delta_{L/F}(\\mathfrak p_u)\\le\\log|\\mathcal O_L/D_{L/F}|/n_L$。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。台 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ の有限性と $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$ を明示的に仮定する。このとき、空集合も含む $F$ の有限素点の任意の有限集合 $U$ に対して $\\sum_{u\\in U}\\delta_{L/F}(\\mathfrak p_u)\\le\\log|\\mathcal O_L/D_{L/F}|/n_L$ が成り立つ。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Global",
+        "variables": "{F : Type*} [Field F] [NumberField F] {L : Type*} [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_sha256": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+      "source_span": {
+        "start_byte": 3893,
+        "end_byte_exclusive": 6108,
+        "line": 95,
+        "end_line": 133
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteSetLogCond_le_of_local_and_accounting",
+      "raw_declaration": "theorem finiteSetLogCond_le_of_local_and_accounting\n    (hlocal : ∀ u : FinitePlace F,\n      Real.log (placeNorm u) / finrank ℚ F ≤\n        (∑ w ∈ placesOver L u, Real.log (placeNorm w) / finrank ℚ L) +\n          diffContrib L u.maximalIdeal.asIdeal)\n    (hfinite : (Function.support fun 𝔭 : HeightOneSpectrum (𝓞 F) =>\n      diffContrib L 𝔭.asIdeal).Finite)\n    (haccount : Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L =\n      ∑ᶠ 𝔭 : HeightOneSpectrum (𝓞 F), diffContrib L 𝔭.asIdeal)\n    (S : Finset F) (T : Finset L) (hST : S.image (algebraMap F L) ⊆ T) :\n    finiteSetLogCond S ≤ finiteSetLogCond T +\n      Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L := by\n  classical\n  set U := meetsFinset S\n  set V := meetsFinset T\n  have hdisj : Set.PairwiseDisjoint (U : Set (FinitePlace F)) (placesOver L) := by\n    intro u₁ _ u₂ _ hne\n    refine Finset.disjoint_left.mpr fun w hw₁ hw₂ => hne ?_\n    rw [eq_placeBelow (mem_placesOver.mp hw₁), eq_placeBelow (mem_placesOver.mp hw₂)]\n  have hsub : U.biUnion (placesOver L) ⊆ V := by\n    intro w hw\n    obtain ⟨u, hu, hwu⟩ := Finset.mem_biUnion.mp hw\n    obtain ⟨a, ha, hua⟩ := mem_meetsFinset.mp hu\n    refine mem_meetsFinset.mpr ⟨algebraMap F L a,\n      hST (Finset.mem_image_of_mem _ ha), ?_⟩\n    exact (one_lt_apply_algebraMap_iff (mem_placesOver.mp hwu) a).mpr hua\n  rw [finiteSetLogCond_eq_sum, finiteSetLogCond_eq_sum, Finset.sum_div, Finset.sum_div]\n  calc ∑ u ∈ U, Real.log (placeNorm u) / finrank ℚ F\n      ≤ ∑ u ∈ U, ((∑ w ∈ placesOver L u,\n          Real.log (placeNorm w) / finrank ℚ L) +\n            diffContrib L u.maximalIdeal.asIdeal) :=\n        Finset.sum_le_sum fun u _ => hlocal u\n    _ = (∑ w ∈ U.biUnion (placesOver L), Real.log (placeNorm w) / finrank ℚ L) +\n          ∑ u ∈ U, diffContrib L u.maximalIdeal.asIdeal := by\n        rw [Finset.sum_add_distrib, Finset.sum_biUnion hdisj]\n    _ ≤ _ := add_le_add\n        (Finset.sum_le_sum_of_subset_of_nonneg hsub fun w _ _ =>\n          div_nonneg (log_placeNorm_nonneg w) (by positivity))\n        (sum_diffContrib_le_of_accounting hfinite haccount U)",
+      "raw_declaration_sha256": "7cbf814e6677d55d52ba81a9c92cada14159166d1f7eea565cdcf6ab3e85590a",
+      "raw_signature": "theorem finiteSetLogCond_le_of_local_and_accounting\n    (hlocal : ∀ u : FinitePlace F,\n      Real.log (placeNorm u) / finrank ℚ F ≤\n        (∑ w ∈ placesOver L u, Real.log (placeNorm w) / finrank ℚ L) +\n          diffContrib L u.maximalIdeal.asIdeal)\n    (hfinite : (Function.support fun 𝔭 : HeightOneSpectrum (𝓞 F) =>\n      diffContrib L 𝔭.asIdeal).Finite)\n    (haccount : Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L =\n      ∑ᶠ 𝔭 : HeightOneSpectrum (𝓞 F), diffContrib L 𝔭.asIdeal)\n    (S : Finset F) (T : Finset L) (hST : S.image (algebraMap F L) ⊆ T) :\n    finiteSetLogCond S ≤ finiteSetLogCond T +\n      Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L",
+      "readback": {
+        "en": "For number fields $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, let $i:F\\to L$ be its algebra map and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ the induced map on rings of integers. For finite places $u$ of $F$ and $w$ of $L$, write $w\\mid u$ when $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$, $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ and $f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$; $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ for a finite place $v$ of $E$. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. For a finite subset $A$ of a number field $E$, define $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ finite in }E} b_A(v))/n_E$, where $b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$ if some $a\\in A$ satisfies $v(a)>1$, and $b_A(v)=0$ otherwise; $\\sum^{\\mathrm f}$ is the finite-support sum used in the code. Empty element sets are allowed. Assume that $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$ for every finite place $u$ of $F$, that the support $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ is finite, and that $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$. For every finite subset $S\\subset F$ and $T\\subset L$, if $i(S)\\subseteq T$, then $C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$. The local sum uses the finite set of all $w\\mid u$.",
+        "zh-Hans": "设 $F,L$ 是带指定域结构的数域，$L$ 带指定的 $F$ 代数结构，代数映射为 $i:F\\to L$，整数环上的诱导映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $F$ 的有限处 $u$ 和 $L$ 的有限处 $w$，以 $w\\mid u$ 表示 $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$；记 $e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ 为代码采用的分歧指数，$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ 为代码采用的惯性次数。对域 $E$ 的有限处 $v$，令 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对数域 $E$ 的任意有限子集 $A$，定义 $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ 为 }E\\text{ 的有限处}} b_A(v))/n_E$：当存在 $a\\in A$ 使 $v(a)>1$ 时，$b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$，否则为零；$\\sum^{\\mathrm f}$ 表示代码中的有限支撑求和。允许 $A$ 为空集。假设对 $F$ 的每个有限处 $u$ 都有 $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$，假设支撑集 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ 有限，并假设 $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$。对任意有限子集 $S\\subset F$ 和 $T\\subset L$，若 $i(S)\\subseteq T$，则 $C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$。局部求和遍及全部满足 $w\\mid u$ 的有限处组成的有限集。",
+        "ja": "指定された体構造を持つ数体 $F,L$ と、指定された $L$ の $F$ 代数構造をとり、その代数写像を $i:F\\to L$、整数環上の誘導写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$F$ の有限素点 $u$ と $L$ の有限素点 $w$ について、$w\\mid u$ は $i_{\\mathcal O}^{-1}(\\mathfrak p_w)=\\mathfrak p_u$ を表す。$e(w/u)=\\mathfrak p_u.\\mathrm{ramificationIdx}^{\\prime}(\\mathfrak p_w)$ をコードで用いる分岐指数、$f(w/u)=\\mathfrak p_u.\\mathrm{inertiaDeg}^{\\prime}(\\mathfrak p_w)$ をコードで用いる惰性次数とする。$E$ の有限素点 $v$ について $N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とおく。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。数体 $E$ の有限部分集合 $A$ について $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ は }E\\text{ の有限素点}} b_A(v))/n_E$ と定義する。ある $a\\in A$ が $v(a)>1$ を満たす場合は $b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$、それ以外は $b_A(v)=0$ である。$\\sum^{\\mathrm f}$ はコードの有限台和である。$A$ は空集合でもよい。$F$ の任意の有限素点 $u$ について $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$ が成り立ち、台 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ が有限で、さらに $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$ が成り立つと仮定する。任意の有限部分集合 $S\\subset F$、$T\\subset L$ に対し、$i(S)\\subseteq T$ ならば $C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$ である。局所的な和は $w\\mid u$ を満たすすべての有限素点の有限集合についてとる。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource",
+        "section": "Global",
+        "variables": "{F : Type*} [Field F] [NumberField F] {L : Type*} [Field L] [NumberField L] [Algebra F L]",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+      "source_sha256": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+      "source_span": {
+        "start_byte": 6344,
+        "end_byte_exclusive": 7258,
+        "line": 141,
+        "end_line": 156
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension_of_local_and_accounting",
+      "raw_declaration": "theorem belyiActualFieldConductorExtension_of_local_and_accounting\n    (hlocal : BelyiActualFieldLocalConductorComparison)\n    (haccount : BelyiActualFieldDifferentAccounting) :\n    BelyiActualFieldConductorExtension := by\n  intro N M hRF φ x hgood\n  letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n  letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=\n    (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra\n  intro S T hST\n  have hl := hlocal M hRF φ x hgood\n  obtain ⟨hf, ha⟩ := haccount M hRF φ x hgood\n  have hST' : S.image (algebraMap (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf) ⊆ T := by\n    simpa only [RingHom.algebraMap_toAlgebra] using hST\n  have h := ConductorExtensionSource.finiteSetLogCond_le_of_local_and_accounting\n    hl hf ha S T hST'\n  simpa only [belyiRelativeLogDifferent, QbarPoint.degree] using h",
+      "raw_declaration_sha256": "46e3c0653f4b622d4b82d0fce995ea5988bc7351673ed617dbae8a0e97df7f7a",
+      "raw_signature": "theorem belyiActualFieldConductorExtension_of_local_and_accounting\n    (hlocal : BelyiActualFieldLocalConductorComparison)\n    (haccount : BelyiActualFieldDifferentAccounting) :\n    BelyiActualFieldConductorExtension",
+      "readback": {
+        "en": "Consider every natural number $N$ and every intermediate field $K$ between $\\mathbb Q$ and the fixed algebraic closure of $\\mathbb Q(t)$, equipped with $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K$ is finite dimensional over $\\mathbb Q(u)$ of degree $N$. Assume that every proper valuation subring $O\\subset K$ containing $\\mathbb Q$ has residue field $\\kappa(O)$ finite dimensional over $\\mathbb Q$. For every point $x=(O,\\sigma)$, with such $O$ and a ring homomorphism $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$, and every $\\varphi\\in K$ regular at $O$ with $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$, put $L=\\sigma(\\kappa(O))$ and $F=\\mathbb Q(a)\\subseteq L$. The finite dimensional structure of $L/\\mathbb Q$ is that obtained from residue finiteness; the $F$-algebra structure on $L$ is induced by this actual inclusion. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. For a finite subset $A$ of a number field $E$, define $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ finite in }E} b_A(v))/n_E$, where $b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$ if some $a\\in A$ satisfies $v(a)>1$, and $b_A(v)=0$ otherwise; $\\sum^{\\mathrm f}$ is the finite-support sum used in the code. Empty element sets are allowed. Assume two globally quantified hypotheses: for every collection of the model and point data just described, $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$ for every finite place $u$ of $F$; and, for every such collection, the support $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ is finite and $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$. Under these two hypotheses, For every such collection of actual model and point data and all finite subsets $S\\subset F$, $T\\subset L$, if the image of $S$ under the actual inclusion $F\\hookrightarrow L$ is contained in $T$, then $C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$.",
+        "zh-Hans": "对每个自然数 $N$，取固定的 $\\mathbb Q(t)$ 的代数闭包中介于 $\\mathbb Q$ 与该闭包之间的域 $K$，并取 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K$ 在 $\\mathbb Q(u)$ 上有限维、次数为 $N$。假设 $K$ 的每个包含 $\\mathbb Q$ 的真赋值子环 $O$ 的剩余域 $\\kappa(O)$ 都在 $\\mathbb Q$ 上有限维。对每个由这种 $O$ 与环同态 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ 组成的点 $x=(O,\\sigma)$，以及每个在 $O$ 中正则、满足 $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ 的 $\\varphi\\in K$，令 $L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$。$L$ 在 $\\mathbb Q$ 上的有限维结构取自剩余域有限性；$L$ 的 $F$ 代数结构由这一实际包含映射诱导。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对数域 $E$ 的任意有限子集 $A$，定义 $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ 为 }E\\text{ 的有限处}} b_A(v))/n_E$：当存在 $a\\in A$ 使 $v(a)>1$ 时，$b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$，否则为零；$\\sum^{\\mathrm f}$ 表示代码中的有限支撑求和。允许 $A$ 为空集。假设两个全局量化的前提：对上述每组模型与点的数据，$F$ 的每个有限处 $u$ 都满足 $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$；对上述每组数据，支撑集 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ 有限且 $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$。在这两个前提下，对上述每组实际模型与点的数据，以及任意有限子集 $S\\subset F$、$T\\subset L$，若 $S$ 在实际包含映射 $F\\hookrightarrow L$ 下的像包含于 $T$，则 $C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$。",
+        "ja": "任意の自然数 $N$ に対し、固定された $\\mathbb Q(t)$ の代数閉包の中間体 $\\mathbb Q\\subseteq K$ と $u,v\\in K$ をとる。$u$ は $\\mathbb Q$ 上超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$ であり、$K$ は $\\mathbb Q(u)$ 上有限次元で次数が $N$ であるとする。$\\mathbb Q$ を含む $K$ の任意の真の付値部分環 $O$ について剰余体 $\\kappa(O)$ が $\\mathbb Q$ 上有限次元であると仮定する。このような $O$ と環準同型 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ からなる任意の点 $x=(O,\\sigma)$、および $O$ で正則で $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ を満たす任意の $\\varphi\\in K$ に対し、$L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$ とおく。$L/\\mathbb Q$ の有限次元構造は剰余体の有限性から得たものとし、$L$ の $F$ 代数構造はこの実際の包含から誘導する。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。数体 $E$ の有限部分集合 $A$ について $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ は }E\\text{ の有限素点}} b_A(v))/n_E$ と定義する。ある $a\\in A$ が $v(a)>1$ を満たす場合は $b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$、それ以外は $b_A(v)=0$ である。$\\sum^{\\mathrm f}$ はコードの有限台和である。$A$ は空集合でもよい。大域的に量化された二つの仮定を置く。第一に、記述したモデルと点のデータの任意の組について、$F$ の任意の有限素点 $u$ が $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$ を満たす。第二に、任意のそのようなデータの組について、台 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ が有限で $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$ である。この二つの仮定のもとで、このような実際のモデルと点のデータの任意の組、および任意の有限部分集合 $S\\subset F$、$T\\subset L$ について、実際の包含 $F\\hookrightarrow L$ による $S$ の像が $T$ に含まれるならば、$C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$ が成り立つ。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "section": "",
+        "variables": "No section variables; proposition definitions provide the explicit actual-model binders.",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "proof_body_present",
+        "contains_sorry": false,
+        "text": "A proof term or tactic body is present in this source declaration. This does not certify elaboration, compilation, or absence of axioms in its dependencies. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+      "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+      "source_sha256": "de52900f652864c2080ad9bc794cd17aa7b58539f2054e90217ef335c224941b",
+      "source_span": {
+        "start_byte": 643,
+        "end_byte_exclusive": 867,
+        "line": 16,
+        "end_line": 18
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+      "raw_declaration": "theorem belyiActualFieldConductorExtension : BelyiActualFieldConductorExtension :=\n  belyiActualFieldConductorExtension_of_local_and_accounting\n    belyiActualFieldLocalConductorComparison belyiActualFieldDifferentAccounting",
+      "raw_declaration_sha256": "a97a5891da43887dc0cd4f183a9124f3b269b4cd8e4b32d72d03dfd4de299fcb",
+      "raw_signature": "theorem belyiActualFieldConductorExtension : BelyiActualFieldConductorExtension",
+      "readback": {
+        "en": "Consider every natural number $N$ and every intermediate field $K$ between $\\mathbb Q$ and the fixed algebraic closure of $\\mathbb Q(t)$, equipped with $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K$ is finite dimensional over $\\mathbb Q(u)$ of degree $N$. Assume that every proper valuation subring $O\\subset K$ containing $\\mathbb Q$ has residue field $\\kappa(O)$ finite dimensional over $\\mathbb Q$. For every point $x=(O,\\sigma)$, with such $O$ and a ring homomorphism $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$, and every $\\varphi\\in K$ regular at $O$ with $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$, put $L=\\sigma(\\kappa(O))$ and $F=\\mathbb Q(a)\\subseteq L$. The finite dimensional structure of $L/\\mathbb Q$ is that obtained from residue finiteness; the $F$-algebra structure on $L$ is induced by this actual inclusion. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. For a finite subset $A$ of a number field $E$, define $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ finite in }E} b_A(v))/n_E$, where $b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$ if some $a\\in A$ satisfies $v(a)>1$, and $b_A(v)=0$ otherwise; $\\sum^{\\mathrm f}$ is the finite-support sum used in the code. Empty element sets are allowed. For every such collection of actual model and point data and all finite subsets $S\\subset F$, $T\\subset L$, if the image of $S$ under the actual inclusion $F\\hookrightarrow L$ is contained in $T$, then $C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$.",
+        "zh-Hans": "对每个自然数 $N$，取固定的 $\\mathbb Q(t)$ 的代数闭包中介于 $\\mathbb Q$ 与该闭包之间的域 $K$，并取 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K$ 在 $\\mathbb Q(u)$ 上有限维、次数为 $N$。假设 $K$ 的每个包含 $\\mathbb Q$ 的真赋值子环 $O$ 的剩余域 $\\kappa(O)$ 都在 $\\mathbb Q$ 上有限维。对每个由这种 $O$ 与环同态 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ 组成的点 $x=(O,\\sigma)$，以及每个在 $O$ 中正则、满足 $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ 的 $\\varphi\\in K$，令 $L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$。$L$ 在 $\\mathbb Q$ 上的有限维结构取自剩余域有限性；$L$ 的 $F$ 代数结构由这一实际包含映射诱导。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对数域 $E$ 的任意有限子集 $A$，定义 $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ 为 }E\\text{ 的有限处}} b_A(v))/n_E$：当存在 $a\\in A$ 使 $v(a)>1$ 时，$b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$，否则为零；$\\sum^{\\mathrm f}$ 表示代码中的有限支撑求和。允许 $A$ 为空集。对上述每组实际模型与点的数据，以及任意有限子集 $S\\subset F$、$T\\subset L$，若 $S$ 在实际包含映射 $F\\hookrightarrow L$ 下的像包含于 $T$，则 $C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$。",
+        "ja": "任意の自然数 $N$ に対し、固定された $\\mathbb Q(t)$ の代数閉包の中間体 $\\mathbb Q\\subseteq K$ と $u,v\\in K$ をとる。$u$ は $\\mathbb Q$ 上超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$ であり、$K$ は $\\mathbb Q(u)$ 上有限次元で次数が $N$ であるとする。$\\mathbb Q$ を含む $K$ の任意の真の付値部分環 $O$ について剰余体 $\\kappa(O)$ が $\\mathbb Q$ 上有限次元であると仮定する。このような $O$ と環準同型 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ からなる任意の点 $x=(O,\\sigma)$、および $O$ で正則で $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ を満たす任意の $\\varphi\\in K$ に対し、$L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$ とおく。$L/\\mathbb Q$ の有限次元構造は剰余体の有限性から得たものとし、$L$ の $F$ 代数構造はこの実際の包含から誘導する。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。数体 $E$ の有限部分集合 $A$ について $C_E(A)=(\\sum^{\\mathrm f}_{v\\text{ は }E\\text{ の有限素点}} b_A(v))/n_E$ と定義する。ある $a\\in A$ が $v(a)>1$ を満たす場合は $b_A(v)=\\log|\\mathcal O_E/\\mathfrak p_v|$、それ以外は $b_A(v)=0$ である。$\\sum^{\\mathrm f}$ はコードの有限台和である。$A$ は空集合でもよい。このような実際のモデルと点のデータの任意の組、および任意の有限部分集合 $S\\subset F$、$T\\subset L$ について、実際の包含 $F\\hookrightarrow L$ による $S$ の像が $T$ に含まれるならば、$C_F(S)\\le C_L(T)+\\log|\\mathcal O_L/D_{L/F}|/n_L$ が成り立つ。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "section": "",
+        "variables": "No section variables; proposition definitions provide the explicit actual-model binders.",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "composition_with_open_dependencies",
+        "contains_sorry": false,
+        "text": "The body composes the two arithmetic child theorem names; both supplied child theorem bodies contain sorry in this frozen bundle. The readback renders the statement, independently of that proof status. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean",
+      "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean",
+      "source_sha256": "938ab3bc2d1a328a7a6be513edc4b4f5e91dfffe65659c7fc1336aadec7e2af7",
+      "source_span": {
+        "start_byte": 738,
+        "end_byte_exclusive": 833,
+        "line": 17,
+        "end_line": 18
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "raw_declaration": "theorem belyiActualFieldDifferentAccounting : BelyiActualFieldDifferentAccounting := by\n  sorry",
+      "raw_declaration_sha256": "25366740b5adf804a33bcb1b4fac8cfb8ac2b847c2e9e21d2e83db0c6af9c9ba",
+      "raw_signature": "theorem belyiActualFieldDifferentAccounting : BelyiActualFieldDifferentAccounting",
+      "readback": {
+        "en": "Consider every natural number $N$ and every intermediate field $K$ between $\\mathbb Q$ and the fixed algebraic closure of $\\mathbb Q(t)$, equipped with $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K$ is finite dimensional over $\\mathbb Q(u)$ of degree $N$. Assume that every proper valuation subring $O\\subset K$ containing $\\mathbb Q$ has residue field $\\kappa(O)$ finite dimensional over $\\mathbb Q$. For every point $x=(O,\\sigma)$, with such $O$ and a ring homomorphism $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$, and every $\\varphi\\in K$ regular at $O$ with $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$, put $L=\\sigma(\\kappa(O))$ and $F=\\mathbb Q(a)\\subseteq L$. The finite dimensional structure of $L/\\mathbb Q$ is that obtained from residue finiteness; the $F$-algebra structure on $L$ is induced by this actual inclusion. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. The proposition requires both that the support $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ is finite and that $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$. The index set consists of the nonzero prime ideals of $\\mathcal O_F$; finiteness of this support is an explicit conjunct, separate from the sum identity.",
+        "zh-Hans": "对每个自然数 $N$，取固定的 $\\mathbb Q(t)$ 的代数闭包中介于 $\\mathbb Q$ 与该闭包之间的域 $K$，并取 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K$ 在 $\\mathbb Q(u)$ 上有限维、次数为 $N$。假设 $K$ 的每个包含 $\\mathbb Q$ 的真赋值子环 $O$ 的剩余域 $\\kappa(O)$ 都在 $\\mathbb Q$ 上有限维。对每个由这种 $O$ 与环同态 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ 组成的点 $x=(O,\\sigma)$，以及每个在 $O$ 中正则、满足 $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ 的 $\\varphi\\in K$，令 $L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$。$L$ 在 $\\mathbb Q$ 上的有限维结构取自剩余域有限性；$L$ 的 $F$ 代数结构由这一实际包含映射诱导。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。本命题同时要求支撑集 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ 是有限集，并且 $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$。指标集是 $\\mathcal O_F$ 的非零素理想；支撑有限是独立列出的合取条件，并未省略为求和记号的一部分。",
+        "ja": "任意の自然数 $N$ に対し、固定された $\\mathbb Q(t)$ の代数閉包の中間体 $\\mathbb Q\\subseteq K$ と $u,v\\in K$ をとる。$u$ は $\\mathbb Q$ 上超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$ であり、$K$ は $\\mathbb Q(u)$ 上有限次元で次数が $N$ であるとする。$\\mathbb Q$ を含む $K$ の任意の真の付値部分環 $O$ について剰余体 $\\kappa(O)$ が $\\mathbb Q$ 上有限次元であると仮定する。このような $O$ と環準同型 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ からなる任意の点 $x=(O,\\sigma)$、および $O$ で正則で $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ を満たす任意の $\\varphi\\in K$ に対し、$L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$ とおく。$L/\\mathbb Q$ の有限次元構造は剰余体の有限性から得たものとし、$L$ の $F$ 代数構造はこの実際の包含から誘導する。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。この命題は、台 $\\{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F):\\delta_{L/F}(\\mathfrak q)\\ne0\\}$ が有限であること、および $\\log|\\mathcal O_L/D_{L/F}|/n_L=\\sum^{\\mathrm f}_{\\mathfrak q\\in\\operatorname{Spec}^{(1)}(\\mathcal O_F)}\\delta_{L/F}(\\mathfrak q)$ の両方を要求する。添字は $\\mathcal O_F$ の非零素イデアルであり、台の有限性は和の等式とは別の明示的な連言条件である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "section": "",
+        "variables": "No section variables; proposition definitions provide the explicit actual-model binders.",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "placeholder",
+        "contains_sorry": true,
+        "text": "The source body contains sorry. The readback renders only the statement. No compilation or axiom audit was performed."
+      }
+    },
+    {
+      "source_path": "/tmp/p2m-conductor-extension-lower-split-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+      "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+      "source_sha256": "fdfec78eade9d2499235b0bc941fb94ae102cd3ef60f66a48c8bff80298a9bf5",
+      "source_span": {
+        "start_byte": 811,
+        "end_byte_exclusive": 916,
+        "line": 18,
+        "end_line": 19
+      },
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "raw_declaration": "theorem belyiActualFieldLocalConductorComparison : BelyiActualFieldLocalConductorComparison := by\n  sorry",
+      "raw_declaration_sha256": "3901a4a76d8f59c035c8ebce310113a686a8791a414920901b146b23daeabc03",
+      "raw_signature": "theorem belyiActualFieldLocalConductorComparison : BelyiActualFieldLocalConductorComparison",
+      "readback": {
+        "en": "The assertion is that Consider every natural number $N$ and every intermediate field $K$ between $\\mathbb Q$ and the fixed algebraic closure of $\\mathbb Q(t)$, equipped with $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K$ is finite dimensional over $\\mathbb Q(u)$ of degree $N$. Assume that every proper valuation subring $O\\subset K$ containing $\\mathbb Q$ has residue field $\\kappa(O)$ finite dimensional over $\\mathbb Q$. For every point $x=(O,\\sigma)$, with such $O$ and a ring homomorphism $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$, and every $\\varphi\\in K$ regular at $O$ with $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$, put $L=\\sigma(\\kappa(O))$ and $F=\\mathbb Q(a)\\subseteq L$. The finite dimensional structure of $L/\\mathbb Q$ is that obtained from residue finiteness; the $F$-algebra structure on $L$ is induced by this actual inclusion. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. For every finite place $u$ of the actual image field $F$, $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$. Here the sum ranges over all finite places of the actual point field $L$ above $u$; the left denominator is $n_F$, while each right denominator is $n_L$.",
+        "zh-Hans": "本声明断言：对每个自然数 $N$，取固定的 $\\mathbb Q(t)$ 的代数闭包中介于 $\\mathbb Q$ 与该闭包之间的域 $K$，并取 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K$ 在 $\\mathbb Q(u)$ 上有限维、次数为 $N$。假设 $K$ 的每个包含 $\\mathbb Q$ 的真赋值子环 $O$ 的剩余域 $\\kappa(O)$ 都在 $\\mathbb Q$ 上有限维。对每个由这种 $O$ 与环同态 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ 组成的点 $x=(O,\\sigma)$，以及每个在 $O$ 中正则、满足 $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ 的 $\\varphi\\in K$，令 $L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$。$L$ 在 $\\mathbb Q$ 上的有限维结构取自剩余域有限性；$L$ 的 $F$ 代数结构由这一实际包含映射诱导。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（【译名待定：DIFFERENT-IDEAL】），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对实际像域 $F$ 的每个有限处 $u$，有 $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$。求和遍及实际点域 $L$ 中位于 $u$ 之上的全部有限处；左侧分母是 $n_F$，右侧各项分母是 $n_L$。",
+        "ja": "主張は次のとおりである。任意の自然数 $N$ に対し、固定された $\\mathbb Q(t)$ の代数閉包の中間体 $\\mathbb Q\\subseteq K$ と $u,v\\in K$ をとる。$u$ は $\\mathbb Q$ 上超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$ であり、$K$ は $\\mathbb Q(u)$ 上有限次元で次数が $N$ であるとする。$\\mathbb Q$ を含む $K$ の任意の真の付値部分環 $O$ について剰余体 $\\kappa(O)$ が $\\mathbb Q$ 上有限次元であると仮定する。このような $O$ と環準同型 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ からなる任意の点 $x=(O,\\sigma)$、および $O$ で正則で $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ を満たす任意の $\\varphi\\in K$ に対し、$L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$ とおく。$L/\\mathbb Q$ の有限次元構造は剰余体の有限性から得たものとし、$L$ の $F$ 代数構造はこの実際の包含から誘導する。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。実際の像体 $F$ の任意の有限素点 $u$ について $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$ が成り立つ。和は実際の点の体 $L$ の $u$ 上にあるすべての有限素点にわたり、左辺の分母は $n_F$、右辺の各分母は $n_L$ である。"
+      },
+      "section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "section": "",
+        "variables": "No section variables; proposition definitions provide the explicit actual-model binders.",
+        "local_command_modifiers": [],
+        "open": "NumberField IsDedekindDomain Module; scoped Classical IntermediateField (except theorem wrappers which only open the namespace)",
+        "signature_note": "raw_signature is source text, not an elaborated #print signature. Section variable text records in-scope context; Lean may omit unused section variables."
+      },
+      "proof_notes": {
+        "status": "placeholder",
+        "contains_sorry": true,
+        "text": "The source body contains sorry. The readback renders only the statement. No compilation or axiom audit was performed."
+      }
+    }
+  ],
+  "metadata": {
+    "independence": "Readback based only on the six target Lean files, necessary actual Definitions in the main workspace, and the three specified audit/translation rules. No ledger, README, paper, or prior review was used.",
+    "language_provenance": "English independent readbacks with corresponding Simplified Chinese and Japanese translations by the same auditor; these are not three independent audits.",
+    "compilation_performed": false,
+    "source_hashes_verified_before_and_after": true,
+    "terminology_placeholders": {
+      "DIFFERENT-IDEAL": {
+        "english": "different ideal",
+        "zh-Hans": "【译名待定：DIFFERENT-IDEAL】",
+        "status": "No confirmed Simplified Chinese term was available in the supplied terminology table. The Lean identifier and exact formula identify the object; no API or web lookup was performed."
+      }
+    },
+    "source_span_convention": "UTF-8 byte offsets; start inclusive, end exclusive; line and end_line are one-based. Declaration spans begin at def/abbrev/lemma/theorem (including noncomputable); command wrappers are recorded in section_context.",
+    "scope": "39 named declarations from exactly the six requested files; imported declarations are context only."
+  }
+}

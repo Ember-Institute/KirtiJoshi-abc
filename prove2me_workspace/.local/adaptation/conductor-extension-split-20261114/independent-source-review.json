@@ -1,0 +1,71 @@
+{
+  "review_kind": "independent_static_mathematical_source_review",
+  "reviewer": "/root/conductor_extension_lower_source_review_next",
+  "reviewed_at_utc": "2026-11-14T14:33:05.101400+00:00",
+  "draft_workspace": "/tmp/p2m-conductor-extension-lower-split-next-20261114",
+  "verdict": "static_pass_with_two_explicit_open_arithmetic_leaves",
+  "blocking_findings": [],
+  "summary": "修订后的两叶拆分在静态数学、来源忠实度和依赖方向上成立。未发现新增数学阻断；未编译，不能据此宣称 Lean elaboration、公理审查或算术义务已完成。",
+  "statement_review": {
+    "unchanged_parent": "reference/baseline/Definitions/Def_FermatBelyiDifferentConductorChildren.lean 与当前主区对应文件字节一致；替换父定理保留原名称和 BelyiActualFieldConductorExtension 类型。",
+    "actual_fields": "两子谓词均固定 F = Tripod.fieldOf (belyiImage M φ x).1、L = x.fieldOf。均安装由 belyiImage_field_le 给出的 IntermediateField.inclusion.toRingHom.toAlgebra，未传入任意域或任意数值修正。",
+    "quantifiers": "N、M、hRF、φ、x、hgood 均保留。父命题及通用composer仍对任意 S : Finset F、T : Finset L 量化，并要求 S.image inclusion ⊆ T；hST 到 algebraMap 的转换仅使用 RingHom.algebraMap_toAlgebra。",
+    "normalizations": "局部左项严格使用 finrank ℚ F；L 上conductor各项、diffContrib及relative different均使用 finrank ℚ L。末尾展开 QbarPoint.degree 后与 x.degree 相符，未假设两个域的次数相等。",
+    "local_child": "Def_FermatBelyiConductorExtensionChildren.lean:21 的局部不等式精确对应 Conductor.lean:104；它没有把有限集比较、height估计或几何输入藏入局部算术叶。",
+    "accounting_child": "Def_FermatBelyiConductorExtensionChildren.lean:35 同时给出实际 relative different 的归一化 grouped finsum 恒等式和实际 diffContrib 的有限支撑。两者分别对应 NumberField.lean:228、256，未以可任意选择的 correction term 替代。"
+  },
+  "composer_review": {
+    "sufficiency": "local comparison + accounting identity + accounting finite support 足够。sum_diffContrib_le_of_accounting 先将 U 的素理想像与有限支撑并集，再改写 finsum；利用真实 multiplicity/log norm 项的非负性控制有限子和。仅有 finsum 恒等式会不充分，当前草稿已保留需要的有限支撑。",
+    "finite_place_argument": "meetsFinset 将已有 finiteSetLogCond 改写为有限和；eq_placeBelow 保证不同底域素位的提升纤维不交；one_lt_apply_algebraMap_iff 与 hST 保证提升极点集包含于 T 的极点集。对非负和应用子集估计后得到原父命题。",
+    "noncircular": "Adapters只导入子谓词/载体定义，不导入两个开放叶或替换父定理。替换父定理导入adapter与两叶并应用条件composer，方向无环；条件composer的proof body不引用 belyiActualFieldConductorExtension 或更高层comparison。",
+    "dependency_scan": "递归检查15个项目模块，无项目导入环、缺失项目导入或禁用项目导入。闭包中声明级sorry恰为两个预期算术叶，未见axiom声明。此为文本/依赖审查，非#print axioms结果。"
+  },
+  "source_fidelity": {
+    "conductor_172": "Conductor.lean:170-195 的 cond_le_cond_add（结论在172行）与当前有限集composer一致，使用同一包含假设、不同归一化和relative different项。",
+    "conductor_104": "保留实际局部不等式，并把它作为显式premise输入composer。",
+    "numberfield_228_256": "保留 grouped decomposition 与 finite support 两项原始事实，二者均在有限子和adapter实际消费。",
+    "lower_different_bound": "Bounds.lean:169-173 的 e-1 ≤ multiplicity 由 Mathlib pow_sub_one_dvd_differentIdeal、mapped-power divisibility、prime/different非零及有限multiplicity得到；Bounds.lean:240-261 再以非负权重求和。该路线足够证明局部child，不需要 Serre upper bound、tame equality或wild upper bound。",
+    "geometry": "新增child/adapter没有增加 PlacesDiscrete、AffineIdentification、LocalCompactness、Riemann、height law或其他几何假设。保留的 hRF 与 hgood 是原实际域carrier所需输入。",
+    "reference_separation": "Bounds/Conductor/NumberField/Places 原文及 FutureFinitePlaceArithmetic 仅位于 reference，未被集成导入图导入。"
+  },
+  "pinned_mathlib_api_review": {
+    "pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "status": "已只读核对所列源文件哈希及关键声明签名；未运行 Lean。",
+    "checked": [
+      "NumberField.HeightOneSpectrum.one_lt_absNorm；FinitePlace.norm_embedding_eq、norm_embedding'、maximalIdeal_inj、hasFiniteMulSupport：真实素位、范数和有限极点支撑接口存在。",
+      "HeightOneSpectrum.valuation_liesOver：范畴/参数方向为底域valuation的ramification幂等于扩域algebraMap后的valuation，与pole transport匹配。",
+      "Ideal.absNorm_eq_pow_inertiaDeg'_of_liesOver、ramificationIdx'_ne_zero_of_liesOver、inertiaDeg'_pos：实际理想 lies-over 和非零/极大条件匹配。",
+      "Real.log_natCast_nonneg：可直接替代上游非负性alias。",
+      "pow_sub_one_dvd_differentIdeal：签名确给出 P^(e-1) ∣ differentIdeal A B；Mathlib特征零number field环境提供所需可分性路线。",
+      "Ideal.sum_ramification_inertia：固定版本存在，当前仅为reference中的未来局部证明路线。"
+    ],
+    "manifest_hash_mismatches": []
+  },
+  "resolved_findings": [
+    {
+      "id": "R1_unused_future_producers",
+      "original_issue": "初稿中 log_placeNorm_eq、sum_placesOver_mul_eq_finrank 及仅服务未来证明的辅助闭包没有active消费者；未来路线文字和sorry叶不能算实际消费。",
+      "resolution": "作者已将九项未消费辅助移至 reference/FutureFinitePlaceArithmetic.lean；当前集成carrier仅保留closed composer与child statements的依赖闭包。复查未发现其被active导入，ledger明确区分未来路线与实际消费。",
+      "status": "resolved_in_reviewed_revision"
+    }
+  ],
+  "required_source_revisions": [],
+  "remaining_acceptance": "未来单元集成后仍需主智能体按仓库约定执行独占MCP-CI叶检查、Checks/Axioms、ImportAudit、Act1Scene1聚合、AxiomAudit与git diff --check；条件composer应不含sorryAx，两开放算术叶及assembled parent预期仍含sorryAx。当前单元提交前不应集成该未来单元。",
+  "actions_not_performed": [
+    "compiler invocation",
+    "MCP-CI submission",
+    "API call",
+    "Git command or mutation",
+    "main workspace edits"
+  ],
+  "reviewed_active_file_sha256": {
+    "Definitions/Def_FermatBelyiConductorExtensionChildren.lean": "2282d3f5d9dc037da6f6fe84fc64dcfd4ea31da9c297799deaa8b2dd2d9f8401",
+    "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+    "Solutions/Checks_FermatBelyiConductorExtensionReduction.lean": "7e774e96aaa3b0b08b8f4a56b0a6b5b22cd0e0a12c39b3ea9296e0a5acc79153",
+    "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean": "319093e5a9dab98b0e33df17570f0f490f135f8bcc4516a9aa69da1b03412a29",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean": "de52900f652864c2080ad9bc794cd17aa7b58539f2054e90217ef335c224941b",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean": "938ab3bc2d1a328a7a6be513edc4b4f5e91dfffe65659c7fc1336aadec7e2af7",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean": "fdfec78eade9d2499235b0bc941fb94ae102cd3ef60f66a48c8bff80298a9bf5"
+  },
+  "reviewed_sha256sums_digest": "497c511c365f46b7bd02e91c7ed731c3511abc5f4ce6561a0681b9422008fc28"
+}

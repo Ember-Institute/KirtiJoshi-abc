@@ -1,0 +1,10 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension
+
+-- Conditional composers must be free of sorryAx.
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteSetLogCond_le_of_local_and_accounting
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension_of_local_and_accounting
+
+-- The two arithmetic leaves remain explicit open obligations.
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension

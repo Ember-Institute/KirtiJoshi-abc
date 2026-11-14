@@ -1,0 +1,281 @@
+import Lean
+import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces
+import Definitions.Def_FermatBelyiDifferentConductorChildren
+import Mathlib.NumberTheory.RamificationInertia.Basic
+import Mathlib.NumberTheory.RamificationInertia.Valuation
+import Definitions.Def_FermatBelyiConductorExtensionChildren
+
+open AbcAdaptation
+open AbcAdaptation.Tripod.Fermat.Proper
+
+/-
+Copyright (c) 2026 The heights contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The heights contributors
+
+Independent source adaptation; source mappings are recorded in SOURCE_LEDGER.md.
+-/
+
+set_option autoImplicit false
+open NumberField IsDedekindDomain Module
+open scoped Classical IntermediateField
+
+namespace PlatformDefinitionAudit.ConductorExtensionSource
+
+section DifferentCarriers
+
+variable {F : Type*} [Field F] [NumberField F] (L : Type*) [Field L] [NumberField L]
+  [Algebra F L]
+
+/-- The prime of `F` below a prime of `L`. -/
+def primeBelow (P : HeightOneSpectrum (𝓞 L)) : HeightOneSpectrum (𝓞 F) where
+  asIdeal := P.asIdeal.comap (algebraMap (𝓞 F) (𝓞 L))
+  isPrime := Ideal.IsPrime.comap _
+  ne_bot := fun h => P.ne_bot (Ideal.eq_bot_of_comap_eq_bot h)
+
+/-- The contribution of the primes of `L` over `𝔭` to `log N(𝔇_{L/F}) / [L : ℚ]`:
+`∑_{P ∣ 𝔭} ord_P(𝔇)·log N(P) / [L : ℚ]`. -/
+noncomputable def diffContrib (𝔭 : Ideal (𝓞 F)) : ℝ :=
+  ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),
+    (multiplicity P (differentIdeal (𝓞 F) (𝓞 L)) : ℝ) * Real.log (Ideal.absNorm P) /
+      finrank ℚ L
+
+variable {L}
+
+omit [NumberField F] in
+lemma diffContrib_nonneg (𝔭 : Ideal (𝓞 F)) : 0 ≤ diffContrib L 𝔭 :=
+  Finset.sum_nonneg fun _ _ => div_nonneg (mul_nonneg (by positivity)
+    (Real.log_natCast_nonneg _)) (by positivity)
+
+omit [NumberField F] in
+lemma mem_primesOverFinset_iff' {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal] (h𝔭 : 𝔭 ≠ ⊥)
+    {P : Ideal (𝓞 L)} :
+    P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L) ↔ P.IsPrime ∧ P.LiesOver 𝔭 := by
+  rw [IsDedekindDomain.mem_primesOverFinset_iff h𝔭]
+  rfl
+
+end DifferentCarriers
+
+/-! ### The absolute norm of a finite place -/
+
+section Norm
+
+variable {K : Type*} [Field K] [NumberField K]
+
+/-- The absolute norm `N(w) = #(𝓞 K / 𝔭_w)` of a finite place. -/
+noncomputable def placeNorm (w : FinitePlace K) : ℕ := Ideal.absNorm w.maximalIdeal.asIdeal
+
+lemma one_lt_placeNorm (w : FinitePlace K) : 1 < placeNorm w :=
+  NumberField.HeightOneSpectrum.one_lt_absNorm w.maximalIdeal
+
+lemma log_placeNorm_pos (w : FinitePlace K) : 0 < Real.log (placeNorm w) :=
+  Real.log_pos (by exact_mod_cast one_lt_placeNorm w)
+
+lemma log_placeNorm_nonneg (w : FinitePlace K) : 0 ≤ Real.log (placeNorm w) :=
+  (log_placeNorm_pos w).le
+
+/-- `w x = N(w)^{-ord_w x}`, in the form of Mathlib's `toNNReal`. -/
+lemma finitePlace_apply_eq (w : FinitePlace K) (x : K) :
+    w x = (WithZeroMulInt.toNNReal (HeightOneSpectrum.absNorm_ne_zero w.maximalIdeal)
+      (w.maximalIdeal.valuation K x) : ℝ) := by
+  rw [← FinitePlace.norm_embedding_eq, FinitePlace.norm_embedding']
+
+end Norm
+
+/-! ### `toNNReal` under powers of the base -/
+
+section ToNNReal
+
+open WithZeroMulInt
+
+lemma toNNReal_congr {e e' : NNReal} (h : e = e') (he : e ≠ 0) (he' : e' ≠ 0)
+    (m : WithZero (Multiplicative ℤ)) :
+    toNNReal he m = toNNReal he' m := by
+  subst h
+  rfl
+
+/-- `toNNReal_{e^f}(m) = toNNReal_e(m)^f` for `f ≠ 0`. -/
+lemma toNNReal_pow_base {e : NNReal} (he : e ≠ 0) {f : ℕ} (hf : f ≠ 0) (hef : e ^ f ≠ 0)
+    (m : WithZero (Multiplicative ℤ)) : toNNReal hef m = toNNReal he m ^ f := by
+  by_cases hm : m = 0
+  · subst hm
+    rw [map_zero, map_zero, zero_pow hf]
+  · rw [toNNReal_neg_apply hef hm, toNNReal_neg_apply he hm, ← zpow_natCast, ← zpow_natCast,
+      ← zpow_mul, ← zpow_mul, mul_comm]
+
+end ToNNReal
+
+/-! ### Places over places -/
+
+section LiesOver
+
+variable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]
+
+/-- The finite place `w` of `L` lies over the finite place `u` of `F`:
+`𝔭_w ∩ 𝓞 F = 𝔭_u`. -/
+abbrev PlaceLiesOver (w : FinitePlace L) (u : FinitePlace F) : Prop :=
+  w.maximalIdeal.asIdeal.LiesOver u.maximalIdeal.asIdeal
+
+/-- The ramification index `e(w|u)`. -/
+noncomputable abbrev placeRamIdx (w : FinitePlace L) (u : FinitePlace F) : ℕ :=
+  u.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal
+
+/-- The inertia degree `f(w|u)`. -/
+noncomputable abbrev placeInertiaDeg (w : FinitePlace L) (u : FinitePlace F) : ℕ :=
+  u.maximalIdeal.asIdeal.inertiaDeg' w.maximalIdeal.asIdeal
+
+lemma placeRamIdx_ne_zero {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :
+    placeRamIdx w u ≠ 0 :=
+  Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver _ u.maximalIdeal.ne_bot
+
+lemma placeInertiaDeg_ne_zero {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :
+    placeInertiaDeg w u ≠ 0 := by
+  haveI := u.maximalIdeal.isMaximal
+  exact (Ideal.inertiaDeg'_pos _ _).ne'
+
+/-- **`N(w) = N(u)^f`** for `w` over `u`. -/
+theorem placeNorm_eq_pow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :
+    placeNorm w = placeNorm u ^ placeInertiaDeg w u :=
+  Ideal.absNorm_eq_pow_inertiaDeg'_of_liesOver _ _ inferInstance u.maximalIdeal.ne_bot
+
+/-- **`w (a) = u (a)^{e·f}`** for `a ∈ F` and `w` over `u`. -/
+theorem apply_algebraMap_eq_pow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u)
+    (a : F) : w (algebraMap F L a) = u a ^ (placeRamIdx w u * placeInertiaDeg w u) := by
+  rw [finitePlace_apply_eq, finitePlace_apply_eq,
+    ← HeightOneSpectrum.valuation_liesOver L u.maximalIdeal w.maximalIdeal, map_pow]
+  have hN : (Ideal.absNorm w.maximalIdeal.asIdeal : NNReal) =
+      (Ideal.absNorm u.maximalIdeal.asIdeal : NNReal) ^ placeInertiaDeg w u := by
+    exact_mod_cast placeNorm_eq_pow h
+  rw [toNNReal_congr hN _ (pow_ne_zero _ (HeightOneSpectrum.absNorm_ne_zero _)),
+    toNNReal_pow_base (HeightOneSpectrum.absNorm_ne_zero _) (placeInertiaDeg_ne_zero h),
+    ← pow_mul, NNReal.coe_pow, mul_comm]
+
+/-- `u (a) = 1 → w (a) = 1`, and more generally `1 < u a ↔ 1 < w a`. -/
+lemma one_lt_apply_algebraMap_iff {w : FinitePlace L} {u : FinitePlace F}
+    (h : PlaceLiesOver w u) (a : F) : 1 < w (algebraMap F L a) ↔ 1 < u a := by
+  rw [apply_algebraMap_eq_pow h]
+  exact one_lt_pow_iff_of_nonneg (apply_nonneg u a)
+    (mul_ne_zero (placeRamIdx_ne_zero h) (placeInertiaDeg_ne_zero h))
+
+/-! #### The place below -/
+
+variable (L) in
+/-- The finite place of `F` below a finite place of `L`. -/
+noncomputable def placeBelow (w : FinitePlace L) : FinitePlace F :=
+  FinitePlace.mk (primeBelow L w.maximalIdeal)
+
+lemma placeBelow_maximalIdeal (w : FinitePlace L) :
+    (placeBelow L w : FinitePlace F).maximalIdeal = primeBelow L w.maximalIdeal :=
+  FinitePlace.maximalIdeal_mk _
+
+/-- **The place below is unique**: if `w` lies over `u`, then `u` is the place below `w`. -/
+theorem eq_placeBelow {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :
+    u = placeBelow L w := by
+  rw [← FinitePlace.maximalIdeal_inj]
+  apply HeightOneSpectrum.ext
+  rw [placeBelow_maximalIdeal]
+  exact h.over
+
+lemma mem_primesOverFinset_of_placeLiesOver {w : FinitePlace L} {u : FinitePlace F}
+    (h : PlaceLiesOver w u) :
+    w.maximalIdeal.asIdeal ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L) := by
+  haveI := u.maximalIdeal.isMaximal
+  exact (mem_primesOverFinset_iff' u.maximalIdeal.ne_bot).mpr ⟨w.maximalIdeal.isPrime, h⟩
+
+variable (L) in
+/-- The finitely many places of `L` over `u`. -/
+lemma finite_placeLiesOver (u : FinitePlace F) :
+    {w : FinitePlace L | PlaceLiesOver w u}.Finite := by
+  refine Set.Finite.of_finite_image ?_
+    (f := fun w : FinitePlace L => w.maximalIdeal.asIdeal) ?_
+  · refine (IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal
+      (𝓞 L)).finite_toSet.subset ?_
+    rintro _ ⟨w, hw, rfl⟩
+    exact mem_primesOverFinset_of_placeLiesOver hw
+  · intro w₁ _ w₂ _ h
+    exact (FinitePlace.maximalIdeal_inj _ _).mp (HeightOneSpectrum.ext h)
+
+variable (L) in
+/-- The finite set of places of `L` over `u`. -/
+noncomputable def placesOver (u : FinitePlace F) : Finset (FinitePlace L) :=
+  (finite_placeLiesOver L u).toFinset
+
+lemma mem_placesOver {u : FinitePlace F} {w : FinitePlace L} :
+    w ∈ placesOver L u ↔ PlaceLiesOver w u := by
+  rw [placesOver, Set.Finite.mem_toFinset, Set.mem_setOf_eq]
+
+end LiesOver
+
+end PlatformDefinitionAudit.ConductorExtensionSource
+
+/-
+Copyright (c) 2026 The heights contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The heights contributors
+
+Independent source adaptation; see SOURCE_LEDGER.md.
+-/
+
+set_option autoImplicit false
+open NumberField IsDedekindDomain Module
+open scoped Classical IntermediateField
+
+namespace PlatformDefinitionAudit
+
+open PlatformDefinitionAudit.ConductorExtensionSource
+
+/-- Exact source Conductor.lean:104, restricted to the actual inclusion φ(x)-field ⊆ x-field.
+The left term is normalized by the image-field degree; all right terms by the full point-field
+ degree. No field, algebra, height, or correction term is supplied by a model law. -/
+def BelyiActualFieldLocalConductorComparison : Prop :=
+  ∀ {N : ℕ} (M : Model N) (hRF : ResiduesFinite M) (φ : M.K)
+    (x : QbarPoint M.K) (hgood : GoodValue M x φ),
+    letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x
+    letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=
+      (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra
+    ∀ u : FinitePlace (Tripod.fieldOf (belyiImage M φ x).1),
+      Real.log (placeNorm u) / finrank ℚ (Tripod.fieldOf (belyiImage M φ x).1) ≤
+        (∑ w ∈ placesOver x.fieldOf u, Real.log (placeNorm w) / finrank ℚ x.fieldOf) +
+          diffContrib x.fieldOf u.maximalIdeal.asIdeal
+
+/-- Exact source NumberField.lean:228/256, for the same actual inclusion.
+The support finiteness is explicit: `finsum` alone does not justify a finite-subsum bound.
+This child has no conductor inequality or finite element sets hidden in its statement. -/
+def BelyiActualFieldDifferentAccounting : Prop :=
+  ∀ {N : ℕ} (M : Model N) (hRF : ResiduesFinite M) (φ : M.K)
+    (x : QbarPoint M.K) (hgood : GoodValue M x φ),
+    letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x
+    letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=
+      (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra
+    (Function.support fun 𝔭 : HeightOneSpectrum
+      (𝓞 (Tripod.fieldOf (belyiImage M φ x).1)) =>
+        diffContrib x.fieldOf 𝔭.asIdeal).Finite ∧
+    Real.log (Ideal.absNorm
+      (differentIdeal (𝓞 (Tripod.fieldOf (belyiImage M φ x).1)) (𝓞 x.fieldOf))) /
+        finrank ℚ x.fieldOf =
+      ∑ᶠ 𝔭 : HeightOneSpectrum (𝓞 (Tripod.fieldOf (belyiImage M φ x).1)),
+        diffContrib x.fieldOf 𝔭.asIdeal
+
+end PlatformDefinitionAudit
+
+open Lean
+run_meta do
+  let pairs : Array (Name × Name × Bool) := #[(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.toNNReal_congr, `PlatformDefinitionAudit.ConductorExtensionSource.toNNReal_congr, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_nonneg, `PlatformDefinitionAudit.ConductorExtensionSource.log_placeNorm_nonneg, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.one_lt_apply_algebraMap_iff, `PlatformDefinitionAudit.ConductorExtensionSource.one_lt_apply_algebraMap_iff, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib, `PlatformDefinitionAudit.ConductorExtensionSource.diffContrib, true),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx, `PlatformDefinitionAudit.ConductorExtensionSource.placeRamIdx, true),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.one_lt_placeNorm, `PlatformDefinitionAudit.ConductorExtensionSource.one_lt_placeNorm, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.eq_placeBelow, `PlatformDefinitionAudit.ConductorExtensionSource.eq_placeBelow, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_placesOver, `PlatformDefinitionAudit.ConductorExtensionSource.mem_placesOver, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver, `PlatformDefinitionAudit.ConductorExtensionSource.PlaceLiesOver, true),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finite_placeLiesOver, `PlatformDefinitionAudit.ConductorExtensionSource.finite_placeLiesOver, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_nonneg, `PlatformDefinitionAudit.ConductorExtensionSource.diffContrib_nonneg, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeBelow, `PlatformDefinitionAudit.ConductorExtensionSource.placeBelow, true),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx_ne_zero, `PlatformDefinitionAudit.ConductorExtensionSource.placeRamIdx_ne_zero, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm, `PlatformDefinitionAudit.ConductorExtensionSource.placeNorm, true),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primesOverFinset_iff', `PlatformDefinitionAudit.ConductorExtensionSource.mem_primesOverFinset_iff', false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primesOverFinset_of_placeLiesOver, `PlatformDefinitionAudit.ConductorExtensionSource.mem_primesOverFinset_of_placeLiesOver, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver, `PlatformDefinitionAudit.ConductorExtensionSource.placesOver, true),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeBelow, `PlatformDefinitionAudit.ConductorExtensionSource.primeBelow, true),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg, `PlatformDefinitionAudit.ConductorExtensionSource.placeInertiaDeg, true),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm_eq_pow, `PlatformDefinitionAudit.ConductorExtensionSource.placeNorm_eq_pow, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeBelow_maximalIdeal, `PlatformDefinitionAudit.ConductorExtensionSource.placeBelow_maximalIdeal, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.toNNReal_pow_base, `PlatformDefinitionAudit.ConductorExtensionSource.toNNReal_pow_base, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg_ne_zero, `PlatformDefinitionAudit.ConductorExtensionSource.placeInertiaDeg_ne_zero, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_pos, `PlatformDefinitionAudit.ConductorExtensionSource.log_placeNorm_pos, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finitePlace_apply_eq, `PlatformDefinitionAudit.ConductorExtensionSource.finitePlace_apply_eq, false),(`AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.apply_algebraMap_eq_pow, `PlatformDefinitionAudit.ConductorExtensionSource.apply_algebraMap_eq_pow, false),(`AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldLocalConductorComparison, `PlatformDefinitionAudit.BelyiActualFieldLocalConductorComparison, true),(`AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentAccounting, `PlatformDefinitionAudit.BelyiActualFieldDifferentAccounting, true)]
+  let mut rows : Array Json := #[]
+  for (original, uploaded, compareBody) in pairs do
+    let a ← getConstInfo original
+    let c ← getConstInfo uploaded
+    unless ← Meta.isDefEq a.type c.type do throwError "Definition-module type differs: {original}"
+    let aExpr ← Meta.mkConstWithFreshMVarLevels original
+    let cExpr ← Meta.mkConstWithFreshMVarLevels uploaded
+    unless ← Meta.withTransparency .all (Meta.isDefEq aExpr cExpr) do
+      throwError "Definition-module term differs: {original}"
+    let axs ← collectAxioms uploaded
+    for ax in axs do
+      unless #[`propext, `Classical.choice, `Quot.sound].contains ax do
+        throwError "Unexpected Definition-module axiom {ax}"
+    rows := rows.push (Json.mkObj [("name",toJson original.toString),
+      ("uploaded",toJson uploaded.toString),("type_equal",Json.bool true),
+      ("body_equal",Json.bool true),("computational_declaration",Json.bool compareBody),
+      ("axioms",toJson (axs.map toString))])
+  IO.FS.writeFile ".local/adaptation/conductor-extension-split-20261114/definition-type-audit.json" (Json.pretty (Json.arr rows))

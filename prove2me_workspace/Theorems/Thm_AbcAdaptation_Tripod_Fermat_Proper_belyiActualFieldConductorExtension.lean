@@ -3,18 +3,18 @@ Copyright (c) 2026 The heights contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The heights contributors
 
-Independent source adaptation; validation and source mappings are recorded with this unit.
+Independent source adaptation; see SOURCE_LEDGER.md.
 -/
-import Definitions.Def_FermatBelyiDifferentConductorChildren
+import Solutions.Source_FermatBelyiConductorExtensionAdapters
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting
 
 set_option autoImplicit false
 namespace AbcAdaptation.Tripod.Fermat.Proper
 
-/-- OPEN exact port: Heights/Different/Conductor.lean:170 cond_le_cond_add.
-The complete pinned proof body and necessary source files are copied under reference/.
-Port only the local lower bound e-1 ≤ different exponent; no Serre upper bound is needed.
-Do not close this with an axiom, a smaller field, or a height surrogate. -/
-theorem belyiActualFieldConductorExtension : BelyiActualFieldConductorExtension := by
-  sorry
+/-- Original exact statement, now composed from the two explicit arithmetic children. -/
+theorem belyiActualFieldConductorExtension : BelyiActualFieldConductorExtension :=
+  belyiActualFieldConductorExtension_of_local_and_accounting
+    belyiActualFieldLocalConductorComparison belyiActualFieldDifferentAccounting
 
 end AbcAdaptation.Tripod.Fermat.Proper

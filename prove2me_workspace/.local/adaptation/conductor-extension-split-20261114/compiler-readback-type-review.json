@@ -1,0 +1,1061 @@
+{
+  "passed": true,
+  "compiler_evidence": {
+    "graph_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/conductor-extension-split-20261114/decl_graph.jsonl",
+    "graph_sha256": "36c2cc4b71c3c50d1aff37830dfea414d19e669ae3b42c94bb9bf52fff5ce785",
+    "graph_declaration_count": 336,
+    "parser_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/conductor-extension-split-20261114/syntax-boundaries.json",
+    "parser_sha256": "4f539467746e0cce2dd063350e7d18610f669683441883e274637a4c84ed2449",
+    "parser_declaration_count": 39,
+    "graph_job_id": "ci-012216-111a9f78",
+    "parser_job_id": "ci-012221",
+    "reviewer_ran_compilation": false,
+    "evidence_scope": "Compiler types are copied verbatim from the supplied graph. Source bodies are used to unfold closed proposition/definition types; parser boundaries identify current declarations. Job success was supplied by the parent; no scheduler/API call was made by this reviewer."
+  },
+  "original_packets": [
+    {
+      "path": "blind-readbacks-source.json",
+      "sha256": "12617a611eba2a2fa0992d08cb118d8723214636bf57ffb7171bd00be992d6d3",
+      "absolute_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/conductor-extension-split-20261114/blind-readbacks-source.json"
+    }
+  ],
+  "declarations": [
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldLocalConductorComparison",
+      "passed": true,
+      "compiler_type": "Prop",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+        "sha256": "2282d3f5d9dc037da6f6fe84fc64dcfd4ea31da9c297799deaa8b2dd2d9f8401"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Closed Prop definition with no external N binder. Unchanged definition body was checked separately: its internal quantifiers include N, Model N, residue finiteness, phi, point, and GoodValue; it installs point-field finiteness and the algebra from the actual image-field inclusion. Image-field degree and point-field degree remain distinct.",
+        "Every image-field finite place is quantified; the left denominator is the image-field degree, while the fiber sum and different contribution use the full point-field degree."
+      ],
+      "compiler_parser_match": {
+        "name": "BelyiActualFieldLocalConductorComparison",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+        "start_line": 18,
+        "end_line": 30,
+        "parser_declaration_start_line": 18,
+        "parser_declaration_end_line": 30
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentAccounting",
+      "passed": true,
+      "compiler_type": "Prop",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+        "sha256": "2282d3f5d9dc037da6f6fe84fc64dcfd4ea31da9c297799deaa8b2dd2d9f8401"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Closed Prop definition with no external N binder. Unchanged definition body was checked separately: its internal quantifiers include N, Model N, residue finiteness, phi, point, and GoodValue; it installs point-field finiteness and the algebra from the actual image-field inclusion. Image-field degree and point-field degree remain distinct.",
+        "Both finite support and the normalized different identity remain explicit conjuncts; no conductor inequality or element-set parameter is inserted into this statement."
+      ],
+      "compiler_parser_match": {
+        "name": "BelyiActualFieldDifferentAccounting",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionChildren.lean",
+        "start_line": 32,
+        "end_line": 48,
+        "parser_declaration_start_line": 32,
+        "parser_declaration_end_line": 48
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeBelow",
+      "passed": true,
+      "compiler_type": "{F : Type u_1} →\n  [inst : Field F] →\n    (L : Type u_2) →\n      [inst_1 : Field L] →\n        [Algebra F L] →\n          IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers L) →\n            IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": false,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Both NumberField section instances are omitted by elaboration. The original trilingual statement imposed extra number-field hypotheses; the corrected statement removes both. Field F, Field L, and Algebra F L remain. The definition body and signature are unchanged."
+      ],
+      "compiler_parser_match": {
+        "name": "primeBelow",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 23,
+        "end_line": 27,
+        "parser_declaration_start_line": 23,
+        "parser_declaration_end_line": 27
+      },
+      "corrected_trilingual_statement": {
+        "en": "For arbitrary types $F,L$ with specified field structures and a specified $F$-algebra structure on $L$, write $\\mathcal O_F,\\mathcal O_L$ for their rings of integers and $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ for the induced algebra map. For every height-one-spectrum element $P$ of $\\mathcal O_L$ (a nonzero prime ideal together with its primality and nonzero witnesses), this definition returns the height-one-spectrum element of $\\mathcal O_F$ whose underlying ideal is $i_{\\mathcal O}^{-1}(P)$. Neither $F$ nor $L$ has a number-field assumption in the compiler type; the definition quantifies over the given algebra structure, rather than choosing one.",
+        "zh_Hans": "设 $F,L$ 为任意带指定域结构的类型，并为 $L$ 指定一个 $F$ 代数结构。记二者的整数环为 $\\mathcal O_F,\\mathcal O_L$，整数环上诱导的代数映射为 $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$。对 $\\mathcal O_L$ 的高度为一的谱中的每个元素 $P$（带素性与非零证明的非零素理想），本定义返回 $\\mathcal O_F$ 的高度为一的谱中底层理想为 $i_{\\mathcal O}^{-1}(P)$ 的元素。编译器类型既不假设 $F$ 是数域，也不假设 $L$ 是数域；定义对给定的代数结构量化，而非自行选择代数结构。",
+        "ja": "$F,L$ を指定された体構造を持つ任意の型とし、$L$ の $F$ 代数構造を指定する。それぞれの整数環を $\\mathcal O_F,\\mathcal O_L$、整数環上の誘導代数写像を $i_{\\mathcal O}:\\mathcal O_F\\to\\mathcal O_L$ とする。$\\mathcal O_L$ の高さ一のスペクトルの任意の元 $P$、すなわち素性と非零性の証明を備えた非零素イデアルに対し、この定義は、底にあるイデアルが $i_{\\mathcal O}^{-1}(P)$ である $\\mathcal O_F$ の高さ一のスペクトルの元を返す。コンパイラ型には $F$ にも $L$ にも数体の仮定がない。代数構造は定義が選ぶのではなく、与えられた構造として量化される。"
+      },
+      "disposition": "passed_with_explicit_binder_correction"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib",
+      "passed": true,
+      "compiler_type": "{F : Type u_1} →\n  [inst : Field F] →\n    (L : Type u_2) → [inst_1 : Field L] → [NumberField L] → [Algebra F L] → Ideal (NumberField.RingOfIntegers F) → ℝ",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Compiler retains Field F, Field L, NumberField L and Algebra F L, but has no NumberField F binder. Original readback already states the broader field F scope. Ideal arguments, maximality instance/nonzero assumption where present, and logical direction agree."
+      ],
+      "compiler_parser_match": {
+        "name": "diffContrib",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 29,
+        "end_line": 34,
+        "parser_declaration_start_line": 29,
+        "parser_declaration_end_line": 34
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_nonneg",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] {L : Type u_2} [inst_1 : Field L] [inst_2 : NumberField L] [inst_3 : Algebra F L]\n  (𝔭 : Ideal (NumberField.RingOfIntegers F)),\n  0 ≤ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Compiler retains Field F, Field L, NumberField L and Algebra F L, but has no NumberField F binder. Original readback already states the broader field F scope. Ideal arguments, maximality instance/nonzero assumption where present, and logical direction agree."
+      ],
+      "compiler_parser_match": {
+        "name": "diffContrib_nonneg",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 39,
+        "end_line": 41,
+        "parser_declaration_start_line": 38,
+        "parser_declaration_end_line": 41
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primesOverFinset_iff'",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] {L : Type u_2} [inst_1 : Field L] [inst_2 : NumberField L] [inst_3 : Algebra F L]\n  {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    ∀ {P : Ideal (NumberField.RingOfIntegers L)},\n      P ∈ IsDedekindDomain.primesOverFinset 𝔭 (NumberField.RingOfIntegers L) ↔ P.IsPrime ∧ P.LiesOver 𝔭",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, Field L, NumberField L and Algebra F L, but has no NumberField F binder. Original readback already states the broader field F scope. Ideal arguments, maximality instance/nonzero assumption where present, and logical direction agree."
+      ],
+      "compiler_parser_match": {
+        "name": "mem_primesOverFinset_iff'",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 44,
+        "end_line": 48,
+        "parser_declaration_start_line": 43,
+        "parser_declaration_end_line": 48
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm",
+      "passed": true,
+      "compiler_type": "{K : Type u_1} → [inst : Field K] → [inst_1 : NumberField K] → NumberField.FinitePlace K → ℕ",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "placeNorm",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 58,
+        "end_line": 59,
+        "parser_declaration_start_line": 58,
+        "parser_declaration_end_line": 59
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.one_lt_placeNorm",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] (w : NumberField.FinitePlace K),\n  1 < AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "one_lt_placeNorm",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 61,
+        "end_line": 62,
+        "parser_declaration_start_line": 61,
+        "parser_declaration_end_line": 62
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_pos",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] (w : NumberField.FinitePlace K),\n  0 < Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "log_placeNorm_pos",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 64,
+        "end_line": 65,
+        "parser_declaration_start_line": 64,
+        "parser_declaration_end_line": 65
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_nonneg",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] (w : NumberField.FinitePlace K),\n  0 ≤ Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "log_placeNorm_nonneg",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 67,
+        "end_line": 68,
+        "parser_declaration_start_line": 67,
+        "parser_declaration_end_line": 68
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finitePlace_apply_eq",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] (w : NumberField.FinitePlace K) (x : K),\n  w x = ↑((WithZeroMulInt.toNNReal ⋯) ((IsDedekindDomain.HeightOneSpectrum.valuation K w.maximalIdeal) x))",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "finitePlace_apply_eq",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 70,
+        "end_line": 74,
+        "parser_declaration_start_line": 70,
+        "parser_declaration_end_line": 74
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.toNNReal_congr",
+      "passed": true,
+      "compiler_type": "∀ {e e' : NNReal},\n  e = e' →\n    ∀ (he : e ≠ 0) (he' : e' ≠ 0) (m : WithZero (Multiplicative ℤ)),\n      (WithZeroMulInt.toNNReal he) m = (WithZeroMulInt.toNNReal he') m",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "No field/number-field/algebra section parameters occur. Nonnegative-real bases, equality or exponent/nonzero witnesses, and every WithZero(Multiplicative Z) input, including zero, match the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "toNNReal_congr",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 84,
+        "end_line": 88,
+        "parser_declaration_start_line": 84,
+        "parser_declaration_end_line": 88
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.toNNReal_pow_base",
+      "passed": true,
+      "compiler_type": "∀ {e : NNReal} (he : e ≠ 0) {f : ℕ},\n  f ≠ 0 →\n    ∀ (hef : e ^ f ≠ 0) (m : WithZero (Multiplicative ℤ)),\n      (WithZeroMulInt.toNNReal hef) m = (WithZeroMulInt.toNNReal he) m ^ f",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "No field/number-field/algebra section parameters occur. Nonnegative-real bases, equality or exponent/nonzero witnesses, and every WithZero(Multiplicative Z) input, including zero, match the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "toNNReal_pow_base",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 90,
+        "end_line": 97,
+        "parser_declaration_start_line": 90,
+        "parser_declaration_end_line": 97
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver",
+      "passed": true,
+      "compiler_type": "{F : Type u_1} →\n  {L : Type u_2} →\n    [inst : Field F] →\n      [inst_1 : NumberField F] →\n        [inst_2 : Field L] →\n          [inst_3 : NumberField L] → [Algebra F L] → NumberField.FinitePlace L → NumberField.FinitePlace F → Prop",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "PlaceLiesOver",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 107,
+        "end_line": 110,
+        "parser_declaration_start_line": 107,
+        "parser_declaration_end_line": 110
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx",
+      "passed": true,
+      "compiler_type": "{F : Type u_1} →\n  {L : Type u_2} →\n    [inst : Field F] →\n      [inst_1 : NumberField F] →\n        [inst_2 : Field L] →\n          [inst_3 : NumberField L] → [Algebra F L] → NumberField.FinitePlace L → NumberField.FinitePlace F → ℕ",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "placeRamIdx",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 112,
+        "end_line": 114,
+        "parser_declaration_start_line": 112,
+        "parser_declaration_end_line": 114
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg",
+      "passed": true,
+      "compiler_type": "{F : Type u_1} →\n  {L : Type u_2} →\n    [inst : Field F] →\n      [inst_1 : NumberField F] →\n        [inst_2 : Field L] →\n          [inst_3 : NumberField L] → [Algebra F L] → NumberField.FinitePlace L → NumberField.FinitePlace F → ℕ",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "placeInertiaDeg",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 116,
+        "end_line": 118,
+        "parser_declaration_start_line": 116,
+        "parser_declaration_end_line": 118
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx_ne_zero",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx w u ≠ 0",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "placeRamIdx_ne_zero",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 120,
+        "end_line": 122,
+        "parser_declaration_start_line": 120,
+        "parser_declaration_end_line": 122
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg_ne_zero",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg w u ≠ 0",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "placeInertiaDeg_ne_zero",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 124,
+        "end_line": 127,
+        "parser_declaration_start_line": 124,
+        "parser_declaration_end_line": 127
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm_eq_pow",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w =\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm u ^\n        AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg w u",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "placeNorm_eq_pow",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 129,
+        "end_line": 132,
+        "parser_declaration_start_line": 129,
+        "parser_declaration_end_line": 132
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.apply_algebraMap_eq_pow",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    ∀ (a : F),\n      w ((Algebra.algebraMap F L) a) =\n        u a ^\n          (AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx w u *\n            AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg w u)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "apply_algebraMap_eq_pow",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 134,
+        "end_line": 144,
+        "parser_declaration_start_line": 134,
+        "parser_declaration_end_line": 144
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.one_lt_apply_algebraMap_iff",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    ∀ (a : F), 1 < w ((Algebra.algebraMap F L) a) ↔ 1 < u a",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "one_lt_apply_algebraMap_iff",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 146,
+        "end_line": 151,
+        "parser_declaration_start_line": 146,
+        "parser_declaration_end_line": 151
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeBelow",
+      "passed": true,
+      "compiler_type": "{F : Type u_1} →\n  (L : Type u_2) →\n    [inst : Field F] →\n      [inst_1 : NumberField F] →\n        [inst_2 : Field L] →\n          [inst_3 : NumberField L] → [Algebra F L] → NumberField.FinitePlace L → NumberField.FinitePlace F",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "placeBelow",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 156,
+        "end_line": 158,
+        "parser_declaration_start_line": 156,
+        "parser_declaration_end_line": 158
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeBelow_maximalIdeal",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (w : NumberField.FinitePlace L),\n  (AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeBelow L w).maximalIdeal =\n    AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeBelow L w.maximalIdeal",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "placeBelow_maximalIdeal",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 160,
+        "end_line": 162,
+        "parser_declaration_start_line": 160,
+        "parser_declaration_end_line": 162
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.eq_placeBelow",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    u = AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeBelow L w",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "eq_placeBelow",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 164,
+        "end_line": 170,
+        "parser_declaration_start_line": 164,
+        "parser_declaration_end_line": 170
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primesOverFinset_of_placeLiesOver",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    w.maximalIdeal.asIdeal ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "mem_primesOverFinset_of_placeLiesOver",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 172,
+        "end_line": 176,
+        "parser_declaration_start_line": 172,
+        "parser_declaration_end_line": 176
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finite_placeLiesOver",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} (L : Type u_2) [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F),\n  {w : NumberField.FinitePlace L | AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u}.Finite",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "finite_placeLiesOver",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 179,
+        "end_line": 189,
+        "parser_declaration_start_line": 178,
+        "parser_declaration_end_line": 189
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver",
+      "passed": true,
+      "compiler_type": "{F : Type u_1} →\n  (L : Type u_2) →\n    [inst : Field F] →\n      [inst_1 : NumberField F] →\n        [inst_2 : Field L] →\n          [inst_3 : NumberField L] → [Algebra F L] → NumberField.FinitePlace F → Finset (NumberField.FinitePlace L)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "placesOver",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 192,
+        "end_line": 194,
+        "parser_declaration_start_line": 192,
+        "parser_declaration_end_line": 194
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_placesOver",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {u : NumberField.FinitePlace F} {w : NumberField.FinitePlace L},\n  w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver L u ↔\n    AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "relative_path": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Compiler retains Field F, NumberField F, Field L, NumberField L and Algebra F L. Place arguments, any lies-over hypothesis, and the exact equality/equivalence/finiteness assertion match the original readback. No extra finite-dimensional, ramification, or positivity hypothesis is introduced."
+      ],
+      "compiler_parser_match": {
+        "name": "mem_placesOver",
+        "file": "Definitions/Def_FermatBelyiConductorExtensionFinitePlaces.lean",
+        "start_line": 196,
+        "end_line": 198,
+        "parser_declaration_start_line": 196,
+        "parser_declaration_end_line": 198
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meets",
+      "passed": true,
+      "compiler_type": "{K : Type u_1} → [inst : Field K] → [inst_1 : NumberField K] → Finset K → Set (NumberField.FinitePlace K)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "meets",
+        "file": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "start_line": 21,
+        "end_line": 22,
+        "parser_declaration_start_line": 21,
+        "parser_declaration_end_line": 22
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meets_finite",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] (G : Finset K),\n  (AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meets G).Finite",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "meets_finite",
+        "file": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "start_line": 24,
+        "end_line": 37,
+        "parser_declaration_start_line": 24,
+        "parser_declaration_end_line": 37
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meetsFinset",
+      "passed": true,
+      "compiler_type": "{K : Type u_1} → [inst : Field K] → [inst_1 : NumberField K] → Finset K → Finset (NumberField.FinitePlace K)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "meetsFinset",
+        "file": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "start_line": 39,
+        "end_line": 40,
+        "parser_declaration_start_line": 39,
+        "parser_declaration_end_line": 40
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_meetsFinset",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] {G : Finset K} {w : NumberField.FinitePlace K},\n  w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meetsFinset G ↔ ∃ g ∈ G, 1 < w g",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "mem_meetsFinset",
+        "file": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "start_line": 42,
+        "end_line": 45,
+        "parser_declaration_start_line": 42,
+        "parser_declaration_end_line": 45
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteSetLogCond_eq_sum",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] (G : Finset K),\n  AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond G =\n    (∑ w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.meetsFinset G,\n        Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w)) /\n      ↑(Module.finrank ℚ K)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "no_pending_marker_in_this_statement",
+      "review_notes": [
+        "Field K and NumberField K are retained, with no F/L algebra parameters. Finite-place and element-set/element arguments, positivity strictness, equivalence or equality, and the [K : Q] normalization where present agree with the compiler type."
+      ],
+      "compiler_parser_match": {
+        "name": "finiteSetLogCond_eq_sum",
+        "file": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "start_line": 47,
+        "end_line": 60,
+        "parser_declaration_start_line": 47,
+        "parser_declaration_end_line": 60
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_diffContrib_le_of_accounting",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : NumberField F] {L : Type u_2} [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L],\n  (Function.support fun (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)) =>\n        AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal).Finite →\n    Real.log ↑(Ideal.absNorm (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) /\n          ↑(Module.finrank ℚ L) =\n        ∑ᶠ (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)),\n          AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal →\n      ∀ (U : Finset (NumberField.FinitePlace F)),\n        ∑ u ∈ U, AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L u.maximalIdeal.asIdeal ≤\n          Real.log ↑(Ideal.absNorm (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) /\n            ↑(Module.finrank ℚ L)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Both number-field instances and the algebra instance remain. Finite support and accounting equality are separate ordered hypotheses, followed by universally quantified finite U; conclusion denominator is [L : Q]. Empty U remains allowed."
+      ],
+      "compiler_parser_match": {
+        "name": "sum_diffContrib_le_of_accounting",
+        "file": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "start_line": 69,
+        "end_line": 90,
+        "parser_declaration_start_line": 69,
+        "parser_declaration_end_line": 90
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteSetLogCond_le_of_local_and_accounting",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : NumberField F] {L : Type u_2} [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L],\n  (∀ (u : NumberField.FinitePlace F),\n      Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm u) / ↑(Module.finrank ℚ F) ≤\n        ∑ w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver L u,\n            Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w) /\n              ↑(Module.finrank ℚ L) +\n          AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L u.maximalIdeal.asIdeal) →\n    (Function.support fun (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)) =>\n          AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal).Finite →\n      Real.log ↑(Ideal.absNorm (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) /\n            ↑(Module.finrank ℚ L) =\n          ∑ᶠ (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)),\n            AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal →\n        ∀ (S : Finset F) (T : Finset L),\n          Finset.image (⇑(Algebra.algebraMap F L)) S ⊆ T →\n            AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond S ≤\n              AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond T +\n                Real.log\n                    ↑(Ideal.absNorm (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) /\n                  ↑(Module.finrank ℚ L)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Both number-field instances and the algebra instance remain. Local inequality, finite support, accounting equality, arbitrary finite S and T, and algebra-map containment are all retained in compiler order. The image-side denominator is [F : Q], all point-side/different denominators are [L : Q]. No proof-only disjointness, subset, injectivity, or positivity fact is made an additional premise in the readback."
+      ],
+      "compiler_parser_match": {
+        "name": "finiteSetLogCond_le_of_local_and_accounting",
+        "file": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "start_line": 92,
+        "end_line": 132,
+        "parser_declaration_start_line": 92,
+        "parser_declaration_end_line": 132
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension_of_local_and_accounting",
+      "passed": true,
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldLocalConductorComparison →\n  AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentAccounting →\n    AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "relative_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Compiler type is exactly LocalConductorComparison → DifferentAccounting → ConductorExtension: no root N, Model, field, finite-set or proof-only binder was added. The actual model/point and finite-set quantifiers occur inside those closed propositions. Current source signature is byte-identical to the frozen source signature; proof-body repairs add no premise to the statement or readback."
+      ],
+      "compiler_parser_match": {
+        "name": "belyiActualFieldConductorExtension_of_local_and_accounting",
+        "file": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+        "start_line": 138,
+        "end_line": 156,
+        "parser_declaration_start_line": 138,
+        "parser_declaration_end_line": 156
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+      "passed": true,
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+        "relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+        "sha256": "de52900f652864c2080ad9bc794cd17aa7b58539f2054e90217ef335c224941b"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Compiler type is the named closed proposition, with no external N binder. Readback expands the unchanged proposition definition and keeps its internal actual-field quantifiers/instances and all conjunctions or finite-set hypotheses. Proof status is not included as a statement hypothesis."
+      ],
+      "compiler_parser_match": {
+        "name": "belyiActualFieldConductorExtension",
+        "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+        "start_line": 15,
+        "end_line": 18,
+        "parser_declaration_start_line": 15,
+        "parser_declaration_end_line": 18
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "passed": true,
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentAccounting",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean",
+        "relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean",
+        "sha256": "938ab3bc2d1a328a7a6be513edc4b4f5e91dfffe65659c7fc1336aadec7e2af7"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Compiler type is the named closed proposition, with no external N binder. Readback expands the unchanged proposition definition and keeps its internal actual-field quantifiers/instances and all conjunctions or finite-set hypotheses. Proof status is not included as a statement hypothesis."
+      ],
+      "compiler_parser_match": {
+        "name": "belyiActualFieldDifferentAccounting",
+        "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean",
+        "start_line": 13,
+        "end_line": 18,
+        "parser_declaration_start_line": 13,
+        "parser_declaration_end_line": 18
+      },
+      "disposition": "original_statement_passed"
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "passed": true,
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldLocalConductorComparison",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+        "relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+        "sha256": "fdfec78eade9d2499235b0bc941fb94ae102cd3ef60f66a48c8bff80298a9bf5"
+      },
+      "source_signature_unchanged": true,
+      "original_trilingual_statement_passed": true,
+      "math_alignment": true,
+      "term_status": "pending",
+      "review_notes": [
+        "Compiler type is the named closed proposition, with no external N binder. Readback expands the unchanged proposition definition and keeps its internal actual-field quantifiers/instances and all conjunctions or finite-set hypotheses. Proof status is not included as a statement hypothesis."
+      ],
+      "compiler_parser_match": {
+        "name": "belyiActualFieldLocalConductorComparison",
+        "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+        "start_line": 13,
+        "end_line": 19,
+        "parser_declaration_start_line": 13,
+        "parser_declaration_end_line": 19
+      },
+      "disposition": "original_statement_passed"
+    }
+  ],
+  "review_summary": {
+    "reviewed_declarations": 39,
+    "original_statements_passed": 38,
+    "statements_corrected": 1,
+    "corrected_declarations": [
+      "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeBelow"
+    ],
+    "passed_semantics": "passed records agreement after applying the explicitly supplied correction where present. The original packet remains unchanged; primeBelow original_trilingual_statement_passed is false. This is a binder/type and mathematical statement alignment review, not proof closure or an axiom audit.",
+    "root_adapter_signature_unchanged": true,
+    "proof_only_hypotheses_added_to_readbacks": false,
+    "term_status": "pending",
+    "term_status_note": "Existing 【译名待定：DIFFERENT-IDEAL】 markers remain pending independently of mathematical alignment; no Chinese term was finalized.",
+    "independence": "Only target Lean, necessary actual Definitions, supplied compiler graph/parser, original blind packet, and previously supplied audit/translation rules were used. No paper, author explanation, source ledger, README, prior review, CI invocation, API, Git operation, or main-workspace edit."
+  },
+  "requested_model": "gpt-6.1-sol",
+  "actual_model": null
+}
