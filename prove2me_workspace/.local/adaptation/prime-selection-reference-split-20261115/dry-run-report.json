@@ -1,0 +1,235 @@
+{
+  "status": "generated-draft-requires-main-agent-CI",
+  "compilation": "not-run",
+  "api": "not-used",
+  "platform": {
+    "lean": "4.33.1",
+    "mathlib": "0df444a"
+  },
+  "sourceCompiler": "4.35.0-rc3",
+  "generatedFiles": [
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+      "path": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection.lean",
+      "sha256": "1abaf603978b055799618026ec0394e48a6df241e44a4375f596d76ab3a528f6",
+      "bytes": 4097
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem",
+      "path": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/Theorems/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean",
+      "sha256": "2539ec8f5f539a03efaf8b018ca25dced929147b11cbc96735139a384da858b4",
+      "bytes": 2203
+    },
+    {
+      "module": "Solutions.Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem",
+      "path": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/Solutions/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean",
+      "sha256": "7a93274feb64b982871817cad36657028b8b542851bcaa8773ac741c05412a60",
+      "bytes": 3601
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection",
+      "path": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/Theorems/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean",
+      "sha256": "f7c6d6538a93ca978b784ec38255d3a2e8b25de5460a903d995c87a58f10083a",
+      "bytes": 2506
+    },
+    {
+      "module": "Solutions.Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection",
+      "path": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/Solutions/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean",
+      "sha256": "3c23079be1157f246ef528016fb97b9a47e33d06438073ac3279ef615460de0a",
+      "bytes": 12714
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le",
+      "path": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/Theorems/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean",
+      "sha256": "b779219a38fc8d5ed3b97efe7140aa9e6836d3f36c55964b6924f4b691961567",
+      "bytes": 2093
+    },
+    {
+      "module": "Solutions.Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le",
+      "path": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/Solutions/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean",
+      "sha256": "249b6d6c6d4ebc35fa7dfdfcc4318ae1ca0d637e9191848cff1e0aea251d527a",
+      "bytes": 2462
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Iut.ChebyshevBound.exists_prime_notMem",
+      "theoremName": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+      "proofLines": 23,
+      "children": [],
+      "inlineHelpers": [
+        "Iut.thetaSet_nonneg",
+        "Iut.log_natCast_nonneg"
+      ],
+      "targetCommandRange": [
+        4365,
+        5698
+      ],
+      "originalProofSha256": "f8108a450a5ce86f6812a927bd4d5f485cbe15531b7499340fb07bbc7ead0641",
+      "generatedProofSha256": "95ed028b96f52cba5d15dfaadd99981ea162c5d7a79d40f27ee626d5ac110fc8",
+      "originalProofBytesIdentical": false,
+      "proofTransformation": "Original proof bytes with only the listed compiler-reference relocations",
+      "referenceRelocations": [
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 66,
+              "line": 125,
+              "offset": 5521
+            },
+            "end": {
+              "col": 84,
+              "line": 125,
+              "offset": 5539
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        }
+      ],
+      "payload": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/payloads/AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.json"
+    },
+    {
+      "name": "Iut.LocalHeightData.exists_prime_selection",
+      "theoremName": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+      "proofLines": 163,
+      "children": [
+        "Iut.ChebyshevBound.exists_prime_notMem",
+        "Iut.sum_log_primeFactors_le"
+      ],
+      "inlineHelpers": [
+        "Iut.log_natCast_nonneg",
+        "Iut.sum_union_le_of_nonneg",
+        "Iut.sum_biUnion_le_of_nonneg",
+        "Iut.LocalHeightData.term_nonneg",
+        "Iut.LocalHeightData.height_nonneg",
+        "Iut.LocalHeightData.deg_mul_height"
+      ],
+      "targetCommandRange": [
+        9087,
+        18237
+      ],
+      "originalProofSha256": "be4da9e7aba64291a8fa3edf660739ca70ee03d6e4a4235179189e2c309d0529",
+      "generatedProofSha256": "103372b081cbbe67bb938eafdc5552a18d9cd27426947d504c950fbb45d37f82",
+      "originalProofBytesIdentical": false,
+      "proofTransformation": "Original proof bytes with only the listed compiler-reference relocations",
+      "referenceRelocations": [
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 23,
+              "line": 281,
+              "offset": 13009
+            },
+            "end": {
+              "col": 41,
+              "line": 281,
+              "offset": 13027
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 45,
+              "line": 326,
+              "offset": 15792
+            },
+            "end": {
+              "col": 63,
+              "line": 326,
+              "offset": 15810
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 43,
+              "line": 328,
+              "offset": 15910
+            },
+            "end": {
+              "col": 61,
+              "line": 328,
+              "offset": 15928
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 6,
+              "line": 338,
+              "offset": 16394
+            },
+            "end": {
+              "col": 24,
+              "line": 338,
+              "offset": 16412
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        }
+      ],
+      "payload": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/payloads/AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.json"
+    },
+    {
+      "name": "Iut.sum_log_primeFactors_le",
+      "theoremName": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+      "proofLines": 9,
+      "children": [],
+      "inlineHelpers": [],
+      "targetCommandRange": [
+        3711,
+        4303
+      ],
+      "originalProofSha256": "931aa7339046ab09198f96cf7a918f6e2ad2d9f19e62b39356adc51baa2da6a6",
+      "generatedProofSha256": "931aa7339046ab09198f96cf7a918f6e2ad2d9f19e62b39356adc51baa2da6a6",
+      "originalProofBytesIdentical": true,
+      "proofTransformation": "Original proof bytes with only the listed compiler-reference relocations",
+      "referenceRelocations": [],
+      "payload": "/tmp/p2m-prime-selection-mechanical-adapter-20261115/generated/payloads/AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.json"
+    }
+  ],
+  "definitionCommands": [
+    "Iut.ChebyshevBound",
+    "Iut.thetaSet",
+    "Iut.LocalHeightData",
+    "Iut.LocalHeightData.height"
+  ],
+  "source": {
+    "graphSha256": "edceca49d76d4f88e22ac5e9958fdd6a2733fa8a90b1ac82c1a09446f3c63a83",
+    "graphReceiptSha256": "ca52eed1629fc735d2d999864715bb38964bff74ccab0920b06e8853769c9e87",
+    "stage2ReceiptSha256": "5f50fbb1c34699f14f23c718aab49120a4f88eece34dbdcc94bccef6ab13d009",
+    "stage2CiResultSha256": "87b099d0a059d5e1a7caf67156a840784bc9e3b2e34b89e0c2f659bd2089792b",
+    "stage2CiJobId": "ci-012862-305a2a5f",
+    "keywordFactsSha256": "4f6dbb656961977ae2e7c2145117d1ba4631a4d78cea0615c2af103458793cb0",
+    "normalizedSha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580"
+  },
+  "subtraction": {
+    "retainedSourceCommands": 14,
+    "allSourceCommands": 17
+  },
+  "acceptance": {
+    "exactTextCompilation": false,
+    "typeComparison": false,
+    "axiomAudit": false
+  },
+  "consumer": {
+    "actualOriginalConsumer": "Iut.Corollary22Inputs.c2 proof directly calls L.exists_prime_selection (original line 441), producing the P1-P3 witness",
+    "canonicalC22Connected": false
+  }
+}

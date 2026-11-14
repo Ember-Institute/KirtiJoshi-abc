@@ -1,0 +1,524 @@
+{
+  "schema": "p2m-reference-extraction-read-only-review-v1",
+  "reviewed_at_utc": "2026-11-14T18:05:07.019442+00:00",
+  "reviewer": "/root/reference_extraction_review",
+  "scope": "Tool implementation, existing receipts, declaration-record integrity, import graph closure, and exact source-byte hashes. No compiler, CI, API, Git operations or mathematical correctness review. Main workspace and caches were not modified.",
+  "status": "partial_extraction_valid_with_coordinate_metadata_issue; seven-module extension not accepted",
+  "declaration_graph": {
+    "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/decl_graph_cached32.jsonl",
+    "sha256": "5aff85c4c69dcc9bfc8587e6e5252b465ec6440cd8bcba495b452bf2bc120d68",
+    "declarations": 929,
+    "unique_names": 929,
+    "explicit_iut_imports": 32,
+    "modules_with_declarations": 31,
+    "import_without_declarations": [
+      "Iut.Basic"
+    ],
+    "empty_module_checked": "Iut.Basic source consists only of documentation comment",
+    "kinds": {
+      "def": 382,
+      "theorem": 483,
+      "rec": 21,
+      "inductive": 21,
+      "ctor": 22
+    },
+    "module_counts": {
+      "Iut.Abc.Classical": 12,
+      "Iut.Abc.Target": 2,
+      "Iut.Anabelian.Genuine.Basic": 40,
+      "Iut.Cor312.Container": 49,
+      "Iut.Cor312.ContainerHull": 22,
+      "Iut.Cor312.HolomorphicHull": 37,
+      "Iut.Cor312.LeftHandSide": 20,
+      "Iut.Cor312.PacketPresentation": 34,
+      "Iut.Cor312.Procession": 44,
+      "Iut.Cor312.RationalPlace": 26,
+      "Iut.Cor312.ThetaData.AdmissiblePrime": 33,
+      "Iut.Cor312.ThetaData.BadPlaceNorm": 5,
+      "Iut.Cor312.ThetaData.Basic": 37,
+      "Iut.Cor312.ThetaData.GlobalField": 25,
+      "Iut.Cor312.ThetaData.LocalConditions": 69,
+      "Iut.Cor312.ThetaData.Orbicurve": 66,
+      "Iut.Cor312.ThetaData.PlaceUnder": 11,
+      "Iut.Cor312.ThetaData.Places": 11,
+      "Iut.Cor312.ThetaData.PlacesOver": 21,
+      "Iut.Cor312.ThetaData.PointMap": 6,
+      "Iut.Cor312.ThetaData.QuadraticExtension": 42,
+      "Iut.Cor312.ThetaData.ReductionNorm": 23,
+      "Iut.Cor312.ThetaData.TateFamily": 24,
+      "Iut.Cor312.ThetaData.TateStructure": 31,
+      "Iut.Cor312.ThetaData.TateStructureOfIso": 15,
+      "Iut.Cor312.ThetaData.VariableChangePoint": 38,
+      "Iut.Implication.PrimeSelection": 54,
+      "Iut.Torsion.EDS": 65,
+      "Iut.Torsion.Identities": 15,
+      "Iut.Tripod.CyclicPoints": 22,
+      "Iut.Tripod.Legendre": 30
+    },
+    "axiom_usage_counts": {
+      "propext": 897,
+      "Classical.choice": 821,
+      "Quot.sound": 859
+    },
+    "sorryAx_found": false,
+    "nonstandard_axioms": [],
+    "axiom_declaration_rows": [],
+    "type_edges": 3732,
+    "value_edges": 3846,
+    "dangling_internal_dependencies": [],
+    "coverage": "Only retained declarations from the imported cached Iut module environments; not the complete Iut source declaration graph. Internal helper declarations are contracted through the extractor keep/collect policy. External library declaration edges are not exported."
+  },
+  "source_header_closure": {
+    "schema": "reference-header-closure-v1",
+    "phase": "Phase0-header-only",
+    "complete": true,
+    "modules": 11383,
+    "unique_modules": 11383,
+    "parsed": 11383,
+    "missing": [],
+    "header_errors": [],
+    "edges": 52071,
+    "dangling_import_edges": [],
+    "union_exact_reach": true,
+    "groups": [
+      {
+        "name": "classical-abc",
+        "roots": [
+          "Iut.Tripod.ClassicalAbcOfVariant"
+        ],
+        "modules": 11383,
+        "iut_modules": 153,
+        "missing": [],
+        "header_errors": [],
+        "exact_reach": true
+      },
+      {
+        "name": "canonical-c22",
+        "roots": [
+          "Iut.Implication.Corollary22"
+        ],
+        "modules": 11160,
+        "iut_modules": 26,
+        "missing": [],
+        "header_errors": [],
+        "exact_reach": true
+      },
+      {
+        "name": "main-bound",
+        "roots": [
+          "Iut.Implication.Theorem110"
+        ],
+        "modules": 11155,
+        "iut_modules": 23,
+        "missing": [],
+        "header_errors": [],
+        "exact_reach": true
+      }
+    ],
+    "duplicate_candidates": 0,
+    "hash_modules_checked": 11383,
+    "source_bytes_checked": 133554745,
+    "source_hash_or_size_mismatches": [],
+    "auxiliary_inputs": [
+      {
+        "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/module-closure.json",
+        "sha256": "43dc0ac35f1d603e6dd0bea0c83c6d5e262bf2d7293fd8ccfdc5cf7b7f086a06",
+        "actual_sha256": "43dc0ac35f1d603e6dd0bea0c83c6d5e262bf2d7293fd8ccfdc5cf7b7f086a06",
+        "matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/header-config.json",
+        "sha256": "15ad40b5f4d4cbd8ffd326fed45ca68c0e7b9fd9ac4d16f8ed9a9d08c2a4c1cc",
+        "actual_sha256": "15ad40b5f4d4cbd8ffd326fed45ca68c0e7b9fd9ac4d16f8ed9a9d08c2a4c1cc",
+        "matches": true
+      },
+      {
+        "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractReferenceHeaders.lean",
+        "sha256": "f7182efef1b1c2ffad17b856be8177e18d1040e6ac57fae3af900f1236e634d1",
+        "actual_sha256": "f7182efef1b1c2ffad17b856be8177e18d1040e6ac57fae3af900f1236e634d1",
+        "matches": true
+      },
+      {
+        "path": "refer/iut/lake-manifest.json",
+        "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "actual_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "matches": true
+      },
+      {
+        "path": "refer/iut/lean-toolchain",
+        "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+        "actual_sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+        "matches": true
+      }
+    ],
+    "hash_receipt_preserves_raw_parser_records": true,
+    "validationScope": "Lean parser header import closure and exact source hashes; no declaration elaboration or theorem verification",
+    "explicit_import_ranges_checked": 42753,
+    "crlf_source_modules": 8595,
+    "raw_byte_range_mismatches": 32499,
+    "modules_with_raw_byte_range_mismatches": 8594,
+    "normalized_byte_range_mismatches": 0,
+    "normalized_byte_range_mismatch_examples": []
+  },
+  "source_extension": {
+    "purpose": "Original reference environment, exact source proof graph extraction only",
+    "module_count": 7,
+    "compiler_pin": "leanprover/lean4:v4.35.0-rc3",
+    "production_pins": {
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/lean-toolchain": "leanprover/lean4:v4.33.1",
+      "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/lean-toolchain": "leanprover/lean4:v4.33.1"
+    },
+    "readonly_cache": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/build/lib/lean",
+    "overlay_precedes_original_cache": true,
+    "cache_writes": "build_reference.py writes only its source-project/.lake/build/lib/lean overlay for -o output; original cache is LEAN_PATH input only",
+    "actual_build_workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "working_directory": ".local/adaptation/reference-extraction-20261115/source-project",
+    "first_leaf_resources": "60s / 16GiB",
+    "scheduler_only": true,
+    "structured_transport": "scheduler_common.rpc connects to the existing MCP-CI daemon socket; ci_wait timeout 20s below transport 40s; retries preserve method/arguments and submission idempotency key",
+    "logging": "Full ci_result persisted, including complete stdout/stderr, CPU total/user/system, wall and RSS. Console prints only diagnostic tails.",
+    "retry_requirement": "Current v2 script uses new idempotency keys and measured LogVolume estimates 208s / 10GiB after v1 wall 159.28s and RSS 7.69GiB. Remaining first leaf checks stay 60s / 16GiB.",
+    "source_provenance_and_mirror_checks": {
+      "Iut.Cor312.LogVolume": {
+        "original_sha256_matches": true,
+        "current_sha256_matches": true,
+        "exact_declared_header_insertion": true,
+        "original_has_crlf": false,
+        "configuration_mirror": {
+          "insertion_original_offset": 195,
+          "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+          "reason": "Restore semantic source lake options when checking directly with Lean",
+          "offset_coordinate": "raw utf8; this source asserts no CRLF"
+        }
+      },
+      "Iut.Cor312.RightHandSide": {
+        "original_sha256_matches": true,
+        "current_sha256_matches": true,
+        "exact_declared_header_insertion": true,
+        "original_has_crlf": false,
+        "configuration_mirror": {
+          "insertion_original_offset": 261,
+          "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+          "reason": "Restore semantic source lake options when checking directly with Lean",
+          "offset_coordinate": "raw utf8; this source asserts no CRLF"
+        }
+      },
+      "Iut.Cor312.Statement": {
+        "original_sha256_matches": true,
+        "current_sha256_matches": true,
+        "exact_declared_header_insertion": true,
+        "original_has_crlf": false,
+        "configuration_mirror": {
+          "insertion_original_offset": 230,
+          "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+          "reason": "Restore semantic source lake options when checking directly with Lean",
+          "offset_coordinate": "raw utf8; this source asserts no CRLF"
+        }
+      },
+      "Iut.Implication.Invariants": {
+        "original_sha256_matches": true,
+        "current_sha256_matches": true,
+        "exact_declared_header_insertion": true,
+        "original_has_crlf": false,
+        "configuration_mirror": {
+          "insertion_original_offset": 195,
+          "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+          "reason": "Restore semantic source lake options when checking directly with Lean",
+          "offset_coordinate": "raw utf8; this source asserts no CRLF"
+        }
+      },
+      "Iut.Implication.LogVolumeBound": {
+        "original_sha256_matches": true,
+        "current_sha256_matches": true,
+        "exact_declared_header_insertion": true,
+        "original_has_crlf": false,
+        "configuration_mirror": {
+          "insertion_original_offset": 201,
+          "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+          "reason": "Restore semantic source lake options when checking directly with Lean",
+          "offset_coordinate": "raw utf8; this source asserts no CRLF"
+        }
+      },
+      "Iut.Implication.Theorem110": {
+        "original_sha256_matches": true,
+        "current_sha256_matches": true,
+        "exact_declared_header_insertion": true,
+        "original_has_crlf": false,
+        "configuration_mirror": {
+          "insertion_original_offset": 205,
+          "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+          "reason": "Restore semantic source lake options when checking directly with Lean",
+          "offset_coordinate": "raw utf8; this source asserts no CRLF"
+        }
+      },
+      "Iut.Implication.Corollary22": {
+        "original_sha256_matches": true,
+        "current_sha256_matches": true,
+        "exact_declared_header_insertion": true,
+        "original_has_crlf": false,
+        "configuration_mirror": {
+          "insertion_original_offset": 261,
+          "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+          "reason": "Restore semantic source lake options when checking directly with Lean",
+          "offset_coordinate": "raw utf8; this source asserts no CRLF"
+        }
+      }
+    },
+    "semantic_lean_options": {
+      "relaxedAutoImplicit": false,
+      "maxSynthPendingDepth": 3
+    },
+    "retry_state": "Main agent archived failed v1 and prepared/runs v2; this reviewer did not submit or query CI.",
+    "current_script_sha256": "8bc9fb9fb270bee88831b0c48e3be89d72a00c5289a7c83e4de501af62b03db3",
+    "plan_sha256": "59bb290a9d8466e2c89da38229d34e11b561e318a5d5f969f9b38a760ee357b8"
+  },
+  "receipts": [
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/cached32-result.json",
+      "job_id": "ci-012558-fe99381c",
+      "status": "succeeded",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "working_directory": null,
+      "task_type": "leaf",
+      "target": "file",
+      "parameters": {
+        "source": ".local/adaptation/reference-extraction-20261115/ExtractCachedReferenceGraph.lean"
+      },
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "exclusive": true,
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/reference-extraction-20261115/ExtractCachedReferenceGraph.lean"
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 9353265152
+        },
+        "cpu_time_seconds": 152.76,
+        "peak_rss_bytes": 8881922048,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 10.51,
+        "cpu_system_seconds": 142.25,
+        "wall_time_seconds": 161.30556319998868,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "cpu_sum_matches": true,
+      "peak_rss_gib": 8.271934509277344,
+      "peak_pss_status": "unknown",
+      "resource_source": "MCP-CI structured resources; no degraded/source metadata provided in this receipt",
+      "stdout_sha256": "76fddb15c426fdaed44d90c262ba0ea2991261e649f6535548dd2ea4bbf39dae",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/headers-v1/headers-result.json",
+      "job_id": "ci-012568-217dc4f7",
+      "status": "failed",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "working_directory": null,
+      "task_type": "leaf",
+      "target": "file",
+      "parameters": {
+        "source": ".local/adaptation/reference-extraction-20261115/ExtractReferenceHeaders.lean"
+      },
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "exclusive": true,
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/reference-extraction-20261115/ExtractReferenceHeaders.lean"
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 2550321152
+        },
+        "cpu_time_seconds": 23.270000000000003,
+        "peak_rss_bytes": 2091622400,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 0.92,
+        "cpu_system_seconds": 22.35,
+        "wall_time_seconds": 23.869261200001347,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "cpu_sum_matches": true,
+      "peak_rss_gib": 1.9479751586914062,
+      "peak_pss_status": "unknown",
+      "resource_source": "MCP-CI structured resources; no degraded/source metadata provided in this receipt",
+      "stdout_sha256": "0f33c03680f3f10cb93bf947b84a1352eb8a8d9301f7f7b0b5c7fa65080e5bd6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/headers-result.json",
+      "job_id": "ci-012575-eefbc36c",
+      "status": "succeeded",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "working_directory": null,
+      "task_type": "leaf",
+      "target": "file",
+      "parameters": {
+        "source": ".local/adaptation/reference-extraction-20261115/ExtractReferenceHeaders.lean"
+      },
+      "expected_duration": 32.0,
+      "expected_memory": 3221225472,
+      "exclusive": true,
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/reference-extraction-20261115/ExtractReferenceHeaders.lean"
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 3336437760
+        },
+        "cpu_time_seconds": 68.9,
+        "peak_rss_bytes": 2502221824,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 12.7,
+        "cpu_system_seconds": 56.2,
+        "wall_time_seconds": 70.63637029999518,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "cpu_sum_matches": true,
+      "peak_rss_gib": 2.3303756713867188,
+      "peak_pss_status": "unknown",
+      "resource_source": "MCP-CI structured resources; no degraded/source metadata provided in this receipt",
+      "stdout_sha256": "c960239d0a47898de4f4b980074188b888bbefb3ad81e34a46ce1c781eef673e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v1/Iut-Cor312-LogVolume-leaf-result.json",
+      "job_id": "ci-012585-d85afa5c",
+      "status": "failed",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "working_directory": ".local/adaptation/reference-extraction-20261115/source-project",
+      "expected_duration": 60.0,
+      "expected_memory": 17179869184,
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        "Iut/Cor312/LogVolume.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 12886929408
+        },
+        "cpu_time_seconds": 158.17,
+        "peak_rss_bytes": 8256745472,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 6.75,
+        "cpu_system_seconds": 151.42,
+        "wall_time_seconds": 159.28156960000342,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "cpu_sum_matches": true,
+      "peak_rss_gib": 7.689693450927734,
+      "peak_pss_status": "unknown"
+    }
+  ],
+  "findings": [
+    {
+      "id": "normalized-source-offsets",
+      "severity": "medium",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractReferenceHeaders.lean",
+      "summary": "range/moduleRange/headerEnd.offset are normalized input UTF-8 offsets, while sourceSha256/sourceBytes describe raw source bytes. Their coordinate system is currently unlabeled.",
+      "evidence": [
+        {
+          "module": "Mathlib.RingTheory.Radical.NatInt",
+          "import": "Mathlib.Algebra.EuclideanDomain.Int",
+          "start": 202,
+          "end": 237,
+          "raw_source_slice": "import Mathlib.Algebra.EuclideanDom",
+          "normalized_source_slice": "Mathlib.Algebra.EuclideanDomain.Int"
+        },
+        {
+          "module": "Mathlib.RingTheory.Radical.NatInt",
+          "import": "Mathlib.Data.Nat.Prime.Int",
+          "start": 245,
+          "end": 271,
+          "raw_source_slice": "\nimport Mathlib.Data.Nat.P",
+          "normalized_source_slice": "Mathlib.Data.Nat.Prime.Int"
+        },
+        {
+          "module": "Mathlib.RingTheory.Radical.NatInt",
+          "import": "Mathlib.Data.Nat.Squarefree",
+          "start": 286,
+          "end": 313,
+          "raw_source_slice": "c import Mathlib.Data.Nat.S",
+          "normalized_source_slice": "Mathlib.Data.Nat.Squarefree"
+        }
+      ],
+      "root_cause": "Lean.Parser.mkInputContext defaults normalizeLineEndings=true; Lean/Parser/Extension.lean:458-476 uses crlfToLf. Logical line/column coordinates are preserved.",
+      "impact": "Import names, implicit Init edges, reachability, group completeness and raw-byte hashes remain valid; raw source slicing by offset is wrong for CRLF files.",
+      "action": "Keep existing header report unchanged; explicitly document normalized_input_utf8 offsets now. In a future parser-tool update, add a declared coordinate system or conversion to original-byte coordinates. Do not use current normalized offsets for raw CRLF source editing."
+    },
+    {
+      "id": "scope-comment",
+      "severity": "low",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractCachedReferenceGraph.lean",
+      "summary": "Inherited header comments say whole-project/every declaration-level question, although this extractor imports only cached32.",
+      "action": "Use partial cached declaration graph wording in the user-facing report and future tool documentation."
+    },
+    {
+      "id": "source-extension-not-accepted",
+      "severity": "status",
+      "summary": "Archived original direct-Lean Iut.Cor312.LogVolume v1 leaf failed as ci-012585-d85afa5c. Main agent identified missing source-lake semantic options, mirrored them as explicit documented header insertions into seven overlay sources, and started v2. No v2 terminal receipt was used in this review.",
+      "evidence": "First diagnostic: line 101 missing Monoid instance. Further cascading elaboration diagnostics and recovery sorry warnings occur in the failed leaf; these are not accepted graph or axiom audit evidence."
+    }
+  ],
+  "suggested_next_steps": [
+    "Preserve cached32 declaration graph and Phase0 header closure as separate artifacts with their actual scopes.",
+    "Parser offset correction can proceed later; current closure algorithm and exact source hashes remain valid.",
+    "Continue source-extension compilation under the restored semantic lake options and keep all proof-source changes explicit in original/current hashes and insertion maps.",
+    "A separate small declaration slice or three-language readback can proceed without waiting for full reference-graph completion; report its own scope and receipts."
+  ]
+}

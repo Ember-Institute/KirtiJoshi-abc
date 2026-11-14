@@ -1,0 +1,1093 @@
+{
+  "schema": "independent-definition-compiler-field-review-v1",
+  "readback_model": "gpt-6.1-sol",
+  "independent_reader_count": 1,
+  "translations_are_additional_independent_audits": false,
+  "source_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection.lean",
+  "source_sha256": "1abaf603978b055799618026ec0394e48a6df241e44a4375f596d76ab3a528f6",
+  "source_sha256_rechecked_unchanged": true,
+  "original_readbacks_path": "/tmp/p2m-prime-selection-definition-readback-20261115/readbacks.json",
+  "original_readbacks_sha256": "094dfa7f9c1501aef060fa098cde7992ad414fd849f8dfd0ea50f8bf369e9b0d",
+  "original_readbacks_preserved": true,
+  "compiler_audit_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-ChebyshevBound-exists_prime_notMem.json",
+  "compiler_audit_sha256": "9c60a800683fdde0b4e9f51ee396eea25ea55f5ca4ccd45e723f15ffc3052d4d",
+  "compiler_version": "4.33.1",
+  "parent_provided_job_id": "ci-013042-673e0d96",
+  "compiler_job_not_requeried_by_this_reader": true,
+  "compiler_module": "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+  "scope": "Four mathematical declarations, two constructors, and all 15 structure projections: 21 selected compiler constants.",
+  "structure_reviews": [
+    {
+      "name": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+      "compiler_type_evidence": {
+        "valueAxioms": [],
+        "typeAxioms": [],
+        "type": "Type",
+        "telescope": {
+          "result": "Type",
+          "binders": []
+        },
+        "name": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+        "levelParams": [],
+        "kind": "inductive",
+        "hasValue": false,
+        "hasSorryAx": false,
+        "closureAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "constructor_evidence": {
+        "valueAxioms": [],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "type": "(ξ : ℝ) →\n  LE.le.{0} 5 ξ →\n    (∀ (x : ℝ), LE.le.{0} ξ x → LE.le.{0} (HMul.hMul.{0, 0, 0} (2 / 3) x) (Chebyshev.theta x)) →\n      (∀ (x : ℝ), LE.le.{0} ξ x → LE.le.{0} (Chebyshev.theta x) (HMul.hMul.{0, 0, 0} 2 x)) →\n        AbcAdaptation.Reference.Iut.ChebyshevBound",
+        "telescope": {
+          "result": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+          "binders": [
+            {
+              "type": "ℝ",
+              "name": "ξ",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "LE.le.{0} 5 ξ",
+              "name": "five_le",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "∀ (x : ℝ), LE.le.{0} ξ x → LE.le.{0} (HMul.hMul.{0, 0, 0} (2 / 3) x) (Chebyshev.theta x)",
+              "name": "lower",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "∀ (x : ℝ), LE.le.{0} ξ x → LE.le.{0} (Chebyshev.theta x) (HMul.hMul.{0, 0, 0} 2 x)",
+              "name": "upper",
+              "binderInfo": "Lean.BinderInfo.default"
+            }
+          ]
+        },
+        "name": "AbcAdaptation.Reference.Iut.ChebyshevBound.mk",
+        "levelParams": [],
+        "kind": "constructor",
+        "hasValue": false,
+        "hasSorryAx": false,
+        "closureAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "fields_in_constructor_order": [
+        "ξ",
+        "five_le",
+        "lower",
+        "upper"
+      ],
+      "fields": [
+        {
+          "constructor_position_one_based": 1,
+          "field": "ξ",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "AbcAdaptation.Reference.Iut.ChebyshevBound → ℝ",
+            "telescope": {
+              "result": "ℝ",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.ChebyshevBound.ξ",
+            "levelParams": [],
+            "kind": "definition",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "ℝ",
+            "name": "ξ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "A real threshold, with no fixed numerical value or leastness requirement.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 2,
+          "field": "five_le",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "∀ (self : AbcAdaptation.Reference.Iut.ChebyshevBound), LE.le.{0} 5 self.ξ",
+            "telescope": {
+              "result": "LE.le.{0} 5 self.ξ",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.ChebyshevBound.five_le",
+            "levelParams": [],
+            "kind": "theorem",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "LE.le.{0} 5 ξ",
+            "name": "five_le",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "The non-strict inequality 5 <= xi.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 3,
+          "field": "lower",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "∀ (self : AbcAdaptation.Reference.Iut.ChebyshevBound) (x : ℝ),\n  LE.le.{0} self.ξ x → LE.le.{0} (HMul.hMul.{0, 0, 0} (2 / 3) x) (Chebyshev.theta x)",
+            "telescope": {
+              "result": "LE.le.{0} (HMul.hMul.{0, 0, 0} (2 / 3) x) (Chebyshev.theta x)",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "ℝ",
+                  "name": "x",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "LE.le.{0} self.ξ x",
+                  "name": "a._@._internal._hyg.0",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.ChebyshevBound.lower",
+            "levelParams": [],
+            "kind": "theorem",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "∀ (x : ℝ), LE.le.{0} ξ x → LE.le.{0} (HMul.hMul.{0, 0, 0} (2 / 3) x) (Chebyshev.theta x)",
+            "name": "lower",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "For every real x, xi <= x implies (2/3)*x <= Chebyshev.theta x.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 4,
+          "field": "upper",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "∀ (self : AbcAdaptation.Reference.Iut.ChebyshevBound) (x : ℝ),\n  LE.le.{0} self.ξ x → LE.le.{0} (Chebyshev.theta x) (HMul.hMul.{0, 0, 0} 2 x)",
+            "telescope": {
+              "result": "LE.le.{0} (Chebyshev.theta x) (HMul.hMul.{0, 0, 0} 2 x)",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "ℝ",
+                  "name": "x",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "LE.le.{0} self.ξ x",
+                  "name": "a._@._internal._hyg.0",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.ChebyshevBound.upper",
+            "levelParams": [],
+            "kind": "theorem",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "∀ (x : ℝ), LE.le.{0} ξ x → LE.le.{0} (Chebyshev.theta x) (HMul.hMul.{0, 0, 0} 2 x)",
+            "name": "upper",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "For every real x, xi <= x implies Chebyshev.theta x <= 2*x; endpoint included.",
+          "en_zh_Hans_ja_alignment": "matched"
+        }
+      ],
+      "result": "matched"
+    },
+    {
+      "name": "AbcAdaptation.Reference.Iut.LocalHeightData",
+      "compiler_type_evidence": {
+        "valueAxioms": [],
+        "typeAxioms": [],
+        "type": "Type (w + 1)",
+        "telescope": {
+          "result": "Type (w + 1)",
+          "binders": []
+        },
+        "name": "AbcAdaptation.Reference.Iut.LocalHeightData",
+        "levelParams": [
+          "w"
+        ],
+        "kind": "inductive",
+        "hasValue": false,
+        "hasSorryAx": false,
+        "closureAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "constructor_evidence": {
+        "valueAxioms": [],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "type": "(ι : Type w) →\n  (bad : Finset.{w} ι) →\n    (p hv f : ι → ℕ) →\n      (deg : ℕ) →\n        LE.le.{0} 1 deg →\n          (∀ (v : ι), Membership.mem.{w, w} bad v → Nat.Prime (p v)) →\n            (∀ (v : ι), Membership.mem.{w, w} bad v → LE.le.{0} 1 (hv v)) →\n              (∀ (v : ι), Membership.mem.{w, w} bad v → LE.le.{0} 1 (f v)) →\n                (∀ (q : ℕ), LE.le.{0} (∑ v ∈ bad with Eq.{1} (p v) q, f v) deg) →\n                  AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+        "telescope": {
+          "result": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+          "binders": [
+            {
+              "type": "Type w",
+              "name": "ι",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "Finset.{w} ι",
+              "name": "bad",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "ι → ℕ",
+              "name": "p",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "ι → ℕ",
+              "name": "hv",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "ι → ℕ",
+              "name": "f",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "ℕ",
+              "name": "deg",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "LE.le.{0} 1 deg",
+              "name": "one_le_deg",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "∀ (v : ι), Membership.mem.{w, w} bad v → Nat.Prime (p v)",
+              "name": "p_prime",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "∀ (v : ι), Membership.mem.{w, w} bad v → LE.le.{0} 1 (hv v)",
+              "name": "one_le_hv",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "∀ (v : ι), Membership.mem.{w, w} bad v → LE.le.{0} 1 (f v)",
+              "name": "one_le_f",
+              "binderInfo": "Lean.BinderInfo.default"
+            },
+            {
+              "type": "∀ (q : ℕ), LE.le.{0} (∑ v ∈ bad with Eq.{1} (p v) q, f v) deg",
+              "name": "sum_f_le",
+              "binderInfo": "Lean.BinderInfo.default"
+            }
+          ]
+        },
+        "name": "AbcAdaptation.Reference.Iut.LocalHeightData.mk",
+        "levelParams": [
+          "w"
+        ],
+        "kind": "constructor",
+        "hasValue": false,
+        "hasSorryAx": false,
+        "closureAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "fields_in_constructor_order": [
+        "ι",
+        "bad",
+        "p",
+        "hv",
+        "f",
+        "deg",
+        "one_le_deg",
+        "p_prime",
+        "one_le_hv",
+        "one_le_f",
+        "sum_f_le"
+      ],
+      "fields": [
+        {
+          "constructor_position_one_based": 1,
+          "field": "ι",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w} → Type w",
+            "telescope": {
+              "result": "Type w",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.ι",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "definition",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "Type w",
+            "name": "ι",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "An arbitrary type in Type w, with no finiteness or inhabitation assumption.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 2,
+          "field": "bad",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "(self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}) →\n  Finset.{w} (AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self)",
+            "telescope": {
+              "result": "Finset.{w} (AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self)",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.bad",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "definition",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "Finset.{w} ι",
+            "name": "bad",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "A Finset of the selected index type; only this subset is required to be finite.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 3,
+          "field": "p",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "(self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}) → AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self → ℕ",
+            "telescope": {
+              "result": "ℕ",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self",
+                  "name": "a._@._internal._hyg.0",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.p",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "definition",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "ι → ℕ",
+            "name": "p",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "A total map from the entire index type to natural numbers.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 4,
+          "field": "hv",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "(self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}) → AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self → ℕ",
+            "telescope": {
+              "result": "ℕ",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self",
+                  "name": "a._@._internal._hyg.0",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.hv",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "definition",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "ι → ℕ",
+            "name": "hv",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "A total map from the entire index type to natural numbers.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 5,
+          "field": "f",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "(self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}) → AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self → ℕ",
+            "telescope": {
+              "result": "ℕ",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self",
+                  "name": "a._@._internal._hyg.0",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.f",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "definition",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "ι → ℕ",
+            "name": "f",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "A total map from the entire index type to natural numbers.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 6,
+          "field": "deg",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w} → ℕ",
+            "telescope": {
+              "result": "ℕ",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.deg",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "definition",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "ℕ",
+            "name": "deg",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "A natural number d.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 7,
+          "field": "one_le_deg",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "∀ (self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}),\n  LE.le.{0} 1 (AbcAdaptation.Reference.Iut.LocalHeightData.deg.{w} self)",
+            "telescope": {
+              "result": "LE.le.{0} 1 (AbcAdaptation.Reference.Iut.LocalHeightData.deg.{w} self)",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.one_le_deg",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "theorem",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "LE.le.{0} 1 deg",
+            "name": "one_le_deg",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "The non-strict inequality 1 <= d; d=0 is excluded and d=1 is allowed.",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 8,
+          "field": "p_prime",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "∀ (self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}) (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self),\n  Membership.mem.{w, w} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{w} self) v →\n    Nat.Prime (AbcAdaptation.Reference.Iut.LocalHeightData.p.{w} self v)",
+            "telescope": {
+              "result": "Nat.Prime (AbcAdaptation.Reference.Iut.LocalHeightData.p.{w} self v)",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self",
+                  "name": "v",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "Membership.mem.{w, w} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{w} self) v",
+                  "name": "a._@._internal._hyg.0",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.p_prime",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "theorem",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "∀ (v : ι), Membership.mem.{w, w} bad v → Nat.Prime (p v)",
+            "name": "p_prime",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "For every index v, membership in bad implies primality of p(v).",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 9,
+          "field": "one_le_hv",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "∀ (self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}) (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self),\n  Membership.mem.{w, w} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{w} self) v →\n    LE.le.{0} 1 (AbcAdaptation.Reference.Iut.LocalHeightData.hv.{w} self v)",
+            "telescope": {
+              "result": "LE.le.{0} 1 (AbcAdaptation.Reference.Iut.LocalHeightData.hv.{w} self v)",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self",
+                  "name": "v",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "Membership.mem.{w, w} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{w} self) v",
+                  "name": "a._@._internal._hyg.0",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.one_le_hv",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "theorem",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "∀ (v : ι), Membership.mem.{w, w} bad v → LE.le.{0} 1 (hv v)",
+            "name": "one_le_hv",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "For every index v, membership in bad implies 1 <= hv(v).",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 10,
+          "field": "one_le_f",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "∀ (self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}) (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self),\n  Membership.mem.{w, w} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{w} self) v →\n    LE.le.{0} 1 (AbcAdaptation.Reference.Iut.LocalHeightData.f.{w} self v)",
+            "telescope": {
+              "result": "LE.le.{0} 1 (AbcAdaptation.Reference.Iut.LocalHeightData.f.{w} self v)",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.ι.{w} self",
+                  "name": "v",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "Membership.mem.{w, w} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{w} self) v",
+                  "name": "a._@._internal._hyg.0",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.one_le_f",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "theorem",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "∀ (v : ι), Membership.mem.{w, w} bad v → LE.le.{0} 1 (f v)",
+            "name": "one_le_f",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "For every index v, membership in bad implies 1 <= f(v).",
+          "en_zh_Hans_ja_alignment": "matched"
+        },
+        {
+          "constructor_position_one_based": 11,
+          "field": "sum_f_le",
+          "compiler_projection_evidence": {
+            "valueAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "typeAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "type": "∀ (self : AbcAdaptation.Reference.Iut.LocalHeightData.{w}) (q : ℕ),\n  LE.le.{0}\n    (∑ v ∈ AbcAdaptation.Reference.Iut.LocalHeightData.bad.{w} self with\n      Eq.{1} (AbcAdaptation.Reference.Iut.LocalHeightData.p.{w} self v) q,\n      AbcAdaptation.Reference.Iut.LocalHeightData.f.{w} self v)\n    (AbcAdaptation.Reference.Iut.LocalHeightData.deg.{w} self)",
+            "telescope": {
+              "result": "LE.le.{0}\n  (∑ v ∈ AbcAdaptation.Reference.Iut.LocalHeightData.bad.{w} self with\n    Eq.{1} (AbcAdaptation.Reference.Iut.LocalHeightData.p.{w} self v) q,\n    AbcAdaptation.Reference.Iut.LocalHeightData.f.{w} self v)\n  (AbcAdaptation.Reference.Iut.LocalHeightData.deg.{w} self)",
+              "binders": [
+                {
+                  "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{w}",
+                  "name": "self",
+                  "binderInfo": "Lean.BinderInfo.default"
+                },
+                {
+                  "type": "ℕ",
+                  "name": "q",
+                  "binderInfo": "Lean.BinderInfo.default"
+                }
+              ]
+            },
+            "name": "AbcAdaptation.Reference.Iut.LocalHeightData.sum_f_le",
+            "levelParams": [
+              "w"
+            ],
+            "kind": "theorem",
+            "hasValue": true,
+            "hasSorryAx": false,
+            "closureAxioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "compiler_constructor_binder_evidence": {
+            "type": "∀ (q : ℕ), LE.le.{0} (∑ v ∈ bad with Eq.{1} (p v) q, f v) deg",
+            "name": "sum_f_le",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          "readback_meaning_checked": "For every natural number q, the natural-number sum of f(v) over v in bad with p(v)=q is <= d. There is no primality premise on q and no finiteness premise on the entire index type.",
+          "en_zh_Hans_ja_alignment": "matched"
+        }
+      ],
+      "result": "matched"
+    }
+  ],
+  "definition_reviews": [
+    {
+      "name": "AbcAdaptation.Reference.Iut.thetaSet",
+      "compiler_evidence": {
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "type": "Finset.{0} ℕ → ℝ",
+        "telescope": {
+          "result": "ℝ",
+          "binders": [
+            {
+              "type": "Finset.{0} ℕ",
+              "name": "A",
+              "binderInfo": "Lean.BinderInfo.default"
+            }
+          ]
+        },
+        "name": "AbcAdaptation.Reference.Iut.thetaSet",
+        "levelParams": [],
+        "kind": "definition",
+        "hasValue": true,
+        "hasSorryAx": false,
+        "closureAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "result": "matched",
+      "details": "One explicit finite-natural-set argument A, real result, no universe parameters, no ChebyshevBound or primality argument. Formula and empty/0/1 cases remain grounded in the unchanged source definition body."
+    },
+    {
+      "name": "AbcAdaptation.Reference.Iut.LocalHeightData.height",
+      "compiler_evidence": {
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{u_1} → ℝ",
+        "telescope": {
+          "result": "ℝ",
+          "binders": [
+            {
+              "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{u_1}",
+              "name": "L",
+              "binderInfo": "Lean.BinderInfo.default"
+            }
+          ]
+        },
+        "name": "AbcAdaptation.Reference.Iut.LocalHeightData.height",
+        "levelParams": [
+          "u_1"
+        ],
+        "kind": "definition",
+        "hasValue": true,
+        "hasSorryAx": false,
+        "closureAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "result": "matched",
+      "details": "One explicit LocalHeightData argument L and real result. The sole compiler universe parameter u_1 may be renamed to the arbitrary w used in the readback. There are no extra arithmetic objects, independent height argument, or typeclass premises. The computed formula remains grounded in the unchanged source definition body."
+    }
+  ],
+  "universe_checks": {
+    "ChebyshevBound": "Type = Type 0, no level parameters; added explicitly to compiler-reviewed translations for completeness.",
+    "thetaSet": "No level parameters; domain Finset.{0} Nat and real codomain.",
+    "LocalHeightData": "levelParams [w], result Type (w + 1), selected index field Type w.",
+    "LocalHeightData.height": "levelParams [u_1], argument LocalHeightData.{u_1}, result Real; alpha-renaming u_1 to w preserves the readback."
+  },
+  "binder_checks": {
+    "all_constructor_fields_explicit": true,
+    "selected_types_have_no_hidden_typeclass_premises": true,
+    "field_order_taken_from_constructor_not_projection_enumeration": true
+  },
+  "axiom_checks": {
+    "selected_constants_count": 21,
+    "selected_constants_have_no_reported_sorryAx": true,
+    "all_selected_type_value_closures_within": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "compiler_definitions_global_standard_axiom_flag": true,
+    "scope_note": "These are compiler-exported facts about the selected definitions and generated constants; they do not certify mathematical realization by a number field or curve."
+  },
+  "top_level_theorem_equality_flags": {
+    "kernelTargetSolutionTypeEqual": true,
+    "kernelOriginalExprRelocatedTypeEqual": true,
+    "allExpressionBinderInfoEqual": true,
+    "topLevelBinderInfoEqual": true
+  },
+  "top_level_flags_scope_note": "These flags belong to the enclosing theorem audit and are not misreported here as per-definition body equality checks.",
+  "definition_body_evidence_limit": "The definitions section exports types/telescopes/constructors/fields/axioms, not the definition bodies. Formula readback is checked against the unchanged source and is not inferred solely from a result type.",
+  "static_source_ranges_remain_static_not_parser_ranges": true,
+  "unknown_terms": [],
+  "mathematical_discrepancies": [],
+  "revision": {
+    "path": "/tmp/p2m-prime-selection-definition-readback-20261115/readbacks.compiler-reviewed.json",
+    "sha256": "1a69eb80fd8bb84afc3badcccf5633ced4c62e06f089606390bc76bcef0af17a",
+    "changes": [
+      "Explicitly state ChebyshevBound lies in Type_0 and has no universe parameters, in en/zh-Hans/ja.",
+      "Mark compiler field review passed and bind the actual audit JSON hash."
+    ],
+    "mathematical_conditions_changed": false
+  },
+  "result": "passed",
+  "actions": "Read-only repository inspection and writes only inside the assigned /tmp directory; no CI, API, Git, or repository write."
+}

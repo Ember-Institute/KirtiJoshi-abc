@@ -1,0 +1,3220 @@
+{
+  "schema": "prime-selection-staging-readonly-review-v1",
+  "reviewed_at_utc": "2026-11-14T20:52:08.473755+00:00",
+  "reviewer": "/root/prime_selection_delivery_review",
+  "model": "gpt-6.1-sol",
+  "verdict": "accepted-staged-384-files",
+  "checks": {
+    "exact_384_staged_paths_match_384_allowlisted_paths": true,
+    "every_staged_blob_byte_identical_to_disk": true,
+    "only_seven_main_Lean_two_authorized_docs_registry_and_two_units": true,
+    "no_credentials_caches_bytecode_or_build_products": true,
+    "no_symlinks_or_unmerged_index_entries": true,
+    "all_lossless_archives_preserve_exact_source_hashes_and_bytes": true,
+    "plan_diff_exactly_three_delivered_unit_checkbox_flips": true
+  },
+  "blocking_findings": [],
+  "allowlist_sha256": "05cf521cc326e3e8b7996f8c969fa74a71d34982159836b3cd6ad1b04c15d0ec",
+  "staged_file_count": 384,
+  "staged_bytes": 20509936,
+  "scope_counts": {
+    "main_Lean": 7,
+    "authorized_docs": 2,
+    "registry": 1,
+    "reference_unit": 217,
+    "prime_unit": 157
+  },
+  "extra_staged_paths": [],
+  "missing_staged_paths": [],
+  "stage_disk_mismatches": [],
+  "archives": [
+    {
+      "source": "module-closure.json",
+      "archive": "archives/module-closure.json.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 25397330,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "module-closure-hashes.json",
+      "archive": "archives/module-closure-hashes.json.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 44203483,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "c22-decl-graph.jsonl",
+      "archive": "archives/c22-decl-graph.jsonl.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 20183092,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "decl_graph_cached32.jsonl",
+      "archive": "archives/decl_graph_cached32.jsonl.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 1045132,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "cached32-result.json",
+      "archive": "archives/cached32-result.json.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 673961,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "headers-result.json",
+      "archive": "archives/headers-result.json.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 677154,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "attempts/headers-v1/headers-result.json",
+      "archive": "archives/attempts__headers-v1__headers-result.json.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 678978,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "attempts/stage2-first-v1-outer-environment/stage2-first-result.json",
+      "archive": "archives/attempts__stage2-first-v1-outer-environment__stage2-first-result.json.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 1247630,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "ExtractReferenceStage2Batch.lean",
+      "archive": "archives/ExtractReferenceStage2Batch.lean.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 15751,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    },
+    {
+      "source": "attempts/stage2-first-v1-outer-environment/ExtractReferenceStage2Batch.lean",
+      "archive": "archives/attempts__stage2-first-v1-outer-environment__ExtractReferenceStage2Batch.lean.gz",
+      "compressed_hash_matches_manifest": true,
+      "uncompressed_hash_matches_original": true,
+      "uncompressed_bytes_match_original": true,
+      "source_bytes": 15648,
+      "source_not_duplicated_in_stage": true,
+      "archive_staged": true
+    }
+  ],
+  "staged_files": [
+    {
+      "path": "docs/三语术语名词关键对照.md",
+      "mode": "100644",
+      "blob_oid": "74d2d68b49cc2e9182806a3b36064bf4bc2b54a0",
+      "sha256": "e2cf4a6b27edde9f68e8733045e87925490ce8de51aec79c76589563ce1d5660",
+      "bytes": 21004,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "docs/开发计划.Prove2Me适配.md",
+      "mode": "100644",
+      "blob_oid": "6255bf376f79393e5eeff170c2c4b429e7f50d5a",
+      "sha256": "a22dcf07cd004b7bd9acc6b1f62c0fb384036580c395c2e8b437b1c278c513f2",
+      "bytes": 22824,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/platform-node-registry.json",
+      "mode": "100644",
+      "blob_oid": "77ed9ace59810181b156f758dc52d799cc919414",
+      "sha256": "a71541622b8ac0ca0d88f0737f34cf8c1c12ce0d8c97575675b7363e57d4c28d",
+      "bytes": 1151475,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/AuditChebyshevBound.lean",
+      "mode": "100644",
+      "blob_oid": "1516dec40551b0a2f37af87efb353c0c05cbe2f9",
+      "sha256": "de1106d8c3e7d96d51c1a03077746ac6e308ba4eab611b19ce3a571bca39bbd0",
+      "bytes": 23363,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/AuditPrimeSelection.lean",
+      "mode": "100644",
+      "blob_oid": "8cfb5f029a8f5f49fd2e81e7855ee21a2aadc948",
+      "sha256": "2e8917cb350eab2b4a8e900265c736ff36cfe6e1de3eac7959cfee1485cfe31c",
+      "bytes": 23575,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/AuditSumPrimeFactors.lean",
+      "mode": "100644",
+      "blob_oid": "3726315ff2e7ae058e14f63d08c15bc4f70a1de7",
+      "sha256": "54dd9a7af14f235fb8d56a8cffe09999f922f43379184a09721108e0a7d516fb",
+      "bytes": 23319,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "329286c21decdb28f9756fbe4398f6abc505a9ca",
+      "sha256": "51e2df0de923491c0c48c8d6d7e56ae995464abd8c335c0c1901505802aac822",
+      "bytes": 45635,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "27e8beab1297e26b79c12e9b9be6d84447e1a9db",
+      "sha256": "beb68813a5378ac7c674671b0b1e969fcf308200a8e2f9f7d9be16e49d38c375",
+      "bytes": 137624,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "51aff6ebf76c4c9b7858bfd05d960e56572421b6",
+      "sha256": "e560b788048584c2c59374c3f8b72dd5ab7d45ae55c76f9e83a10da881667f9d",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "e2f8845c50f532a3bd05974bb18a4d68e0e86e0c",
+      "sha256": "caab4423514b066d3db400e0280431eec37745475a4fa7c82bd8b7256fe5fb68",
+      "bytes": 45499,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "12d4c5a0b60e0a932c8e89e73b09423308d16ab0",
+      "sha256": "d1d5ee38c767de4c168f7cc6fc4b7a2cd03011b4bc33e3e4b3d8254d88437545",
+      "bytes": 137364,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "b146fae3c7b63d5924e2e7ce620f77775ac1a56a",
+      "sha256": "e3d4580759635bd350809bf26276f8fce1bf262ee6346504536769780952a42b",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/LICENSE.iut.Apache-2.0",
+      "mode": "100644",
+      "blob_oid": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/QueryPrimeSelectionOriginalExpr.lean",
+      "mode": "100644",
+      "blob_oid": "addb0c7d118e957200a8a112dd122dbde35bacbf",
+      "sha256": "55a11dcc8d667ebeeda4a05604b5eb3e450a84a06eb673a6eec727eb1fa295d6",
+      "bytes": 6284,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/SOURCE_LEDGER.json",
+      "mode": "100644",
+      "blob_oid": "035b7214998b0abc18609c617fdd07377da2c53a",
+      "sha256": "55569cfadce54bede511f3d1e993fceb99c8ef50914bc4260ff48d4bdebf5851",
+      "bytes": 29804,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "e9ed4593726e151c19041563716d18938a3d2aab",
+      "sha256": "df2362a071a77d38ecb956651bd1d71d8e26f4e88eaac99d6c15d3bec917462f",
+      "bytes": 45655,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "c51ef232bf38d109c5d10b04337b2a7aba5e85c7",
+      "sha256": "152e8b93cbeec17e5bc19c2315e72ef4d02348f73c5dd4c1ab220d9b5833aad7",
+      "bytes": 137655,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "9d1b29ee02a16e6e7c20b68b89fe44464fd5d525",
+      "sha256": "cd18e31430f2f19f335d88cf97a52f47109a4e1f40821dd2ac5ac7787d2e7451",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "690910190e77ba52b1b7f3aa801199f775cfd3e5",
+      "sha256": "8053ae81760f8867e4fc5a7e3537a65481e16ddb367b462b9787c3768028c2e7",
+      "bytes": 45513,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "f210712ed111924c11b0f4b1ef6d055c77ec7cc3",
+      "sha256": "17b6c5a0ca2faf0847b0f9bc2a123a3b945be34d2e555a1471bd735d95c7517c",
+      "bytes": 137390,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "c0238c3ea92f25b7f65ef9437082c4c12977270e",
+      "sha256": "ff334126a52db5b076902c04dad8e5a673051d635e0c45453db475e4eb83785c",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "e3cf560a652789d2555db8b68c4c119e46771a12",
+      "sha256": "867dec59fbffe0ca9116128831d3be92ccd3d013b94df77f78048ace709fc595",
+      "bytes": 45667,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "2f69b398c58c2154449afac2cf5faa0da1da95c1",
+      "sha256": "b6307c5b60b9f0dfde2853b22772802eb0564f1c6fff27484f05bfaba090915f",
+      "bytes": 137682,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "0c714664ddf4440afd9493cf3f6f43bfa140a5aa",
+      "sha256": "7d2fa3112dae1c2e014323cac437d27c89922a05b0e737332c717f4b83cb3a8d",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "90c934096a8ba94015c9070adeeefd5d63a2d37e",
+      "sha256": "f0c96eae5279553f170d5a65ec8bd56ebc28fb85ff60e9aaecd592be1cef0ba2",
+      "bytes": 45520,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "d7fccd5fe1200af51f26a4770b0e89a22ebd349b",
+      "sha256": "8ffa88bb3d6274da009381849c619385316b1f3509aa87c27a563634dd5e99de",
+      "bytes": 137403,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "2be1a568183482196615f324c8a8d7899716f939",
+      "sha256": "e3277abe9b4a60e09313c945f3bf44b1bca09a810b35632d7dba4c8bcabeb60f",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "ef958416394f3e8c5c1eb5bf186045b79e79b60d",
+      "sha256": "1c5f716267df10a00b8636239ce4f73081bce0779bc843f0986ff0ef9fa5f4f8",
+      "bytes": 45622,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "f4d6780f38b9c33418a9b0bfbd976c9a4acfb9fe",
+      "sha256": "5992d8a60e0bb8e3859ab0d9726f41c06febc3157ea12b17e9db83276c3d2249",
+      "bytes": 137596,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "c744ebf619d81ed153f86257f896ae4135366c3e",
+      "sha256": "802ef6d1c53a9fcc80743111047dca8a569156fa9a641776dc7288c1fe2ace24",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "940f2278ca8da5a01493f28752d93aebfca81075",
+      "sha256": "db4b01728d8a87fd06bfd102aa9f0ef30afbad2e6e83b2bd0d9cfd29b8a65ea5",
+      "bytes": 45491,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "f4981d1b6be58a889e901f177bc0f1d719337569",
+      "sha256": "f7da061520ce2ad7f8c50b451fa9bd36775788b293cc163eafb1e631747c069b",
+      "bytes": 137376,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "8636ef525ed1be845b4e5201093aa77e4e4bc2b3",
+      "sha256": "a749e3da9e204c71f47e04f2bb22c6cd51884b42a44b90450f442ac7041a4d92",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "423952221f367f92be40fe1a3009cdd9508e7294",
+      "sha256": "3e199b836ff96b4c5628fe1f5df23d392a84b597343a99e8d6a59d5873e3c52f",
+      "bytes": 45653,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "b017fc5c69e41b6a86658ed9b8a899d10a54f2b4",
+      "sha256": "b787e538dcd0df7ca290c807f6a6dbf8f64e0b0de9b29584b66cd6104ee06bd3",
+      "bytes": 138013,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "fa79c0ee393aa00966b2941f76db2fb926e9fcbf",
+      "sha256": "dd0695d25ac593be179d721120e0b71f250ec5d85ff2a7467f2bd0e7e83e0afc",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "f2ba1d646b7a0c777c1350bf325fbd89b516b287",
+      "sha256": "5502ca4e7b8dadbb09b4056842c924d59d2181dd97e748832576658731be1701",
+      "bytes": 45512,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "b342f3263b4d47a621f7e075ccf71ee4654a6632",
+      "sha256": "88f5c1d0b5b7b086f2f0ce010d5d647680064c6fda8df016c2da05807c745da3",
+      "bytes": 137764,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "76af0ea4c802af76b72db55d614ec59e7ec84168",
+      "sha256": "ca52fc21f792ca0bf242d2f2e95fa215be04481a40f318608334248cc97c3cff",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "0d9c159230e43ff59170a5fb7a3cde337e3b0b52",
+      "sha256": "5017a6ea7112be8338a34b4169ba6d3c4843723af799a7efa6bd4ebbebd52f4e",
+      "bytes": 45665,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "00f724ae32933e6c59d655a9436bc0a3def5de16",
+      "sha256": "46ead5df36239309879f8b51e22173fc7123731424041f09c779387cdfcb07ec",
+      "bytes": 138041,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "4f568dc5d9c0f9f66e42b46e3446de7ed59f4e43",
+      "sha256": "fb2a8816f57ce11f7654b66e25daa50aefe1f54dbc8a50c59c646ec7ab7ed133",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "2737f01b8e7a4c2d9ad721ad62fd81097d52317f",
+      "sha256": "1f1f008cde1de5a674561ee527c09f672af94db6b5982b6a4985995f2288f74a",
+      "bytes": 45520,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "4ae4d41626e01470f48a522b932bf1de7545cc1c",
+      "sha256": "3f4b2cb0e4c920d697bac05e5bdbfe5edc559c922c8084eb7fb1e437acb2a70e",
+      "bytes": 137761,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "0e7a17168cadd54520f80fe9da5af7b23f7d3429",
+      "sha256": "088f339e35567912211b0e873f0cfdde82bf0504c6b5100835400ceee55f0a04",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "6c59c64262570ac967d73cc9137b385bfcd93aa7",
+      "sha256": "78d560d52cd4e7921e884d920e7ed08fba21d4f4353ba1cc50d02b4fbedb5663",
+      "bytes": 45620,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "65a2b7bd042b16f71f5761ba40bbcb6357b8febb",
+      "sha256": "342603c5de67b6bd32b0c4587aaacdcbcb9c8e06bbf7d90c1ea1d7b51c9d90a4",
+      "bytes": 137943,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "31a52334209248ac2301de75d3998cc343906ac3",
+      "sha256": "340d145699dd1908b0d448667e3689030e85b8df520372a07eeb707c5122e50f",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "9304354ee5bd6b6419d31bb6646bd970747f8dda",
+      "sha256": "89e69f4ec90e1d85857b185d1f8f125c6b5374274bc50e76bfc54bddbe830897",
+      "bytes": 45490,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "9fde38d828506c2899aec4dad6233909c1a3cdf6",
+      "sha256": "e0c5a0181455a36136a6ebeac94a247ca45a44550cd07d0c9802015ed38d42ea",
+      "bytes": 137685,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "83f46e5df2521136877280c1ffc0f114b093d237",
+      "sha256": "a1a3da5b8dedd341e1f10c7a98d4dd7731e23eb411dd53a5f00962308f93285d",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/chebyshev-solution-ambiguity/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "2d3e37fd931a0152e16c54870d402004f53b1552",
+      "sha256": "ec90ec119956a74dfc9a1a14804c179de3a7d341f3e4f835c3685b8d6c8c86ae",
+      "bytes": 45513,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/chebyshev-solution-ambiguity/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "77a9aa030e54fb5fa542a08b5675769ad6f7282e",
+      "sha256": "2ac8ce20a4cfdbc168bb72ae4f3656e4058845830160c76025ba0205b988c7c8",
+      "bytes": 137893,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/chebyshev-solution-ambiguity/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "1691f6963230cd787c123caceda035c17166e8f8",
+      "sha256": "67e8e1120f3ec5be871868f3cdcce934ef5b58ebfb56b5737cefa2f5d0dd298f",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/chebyshev-type-audit-v1-syntax/AuditChebyshevBound.lean",
+      "mode": "100644",
+      "blob_oid": "ce1fe64387b04086236a0ddd0cd3d7816d35fa22",
+      "sha256": "53b4f420cc7ae47898efd975a54734083e6796f9df9f74aca2bbd6c88ddf287b",
+      "bytes": 23327,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/chebyshev-type-audit-v1-syntax/chebyshev-type-axioms-review-request.json",
+      "mode": "100644",
+      "blob_oid": "cd9ac1fe44038dfe7bb53975845c5848b1e8604a",
+      "sha256": "3dcd6b62a33c5e5c8a2b64cd8ffd8daf49b10c8cc6fa20e0b5229e940aecb613",
+      "bytes": 46136,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/chebyshev-type-audit-v1-syntax/chebyshev-type-axioms-review-result.json",
+      "mode": "100644",
+      "blob_oid": "b0f3b490c04828f96cb5295d31969856e144c6e6",
+      "sha256": "a62bb8576a4316b2af2b1a48e990e11d02cc662b45dba6979bcd534357e7d39d",
+      "bytes": 142896,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/chebyshev-type-audit-v1-syntax/chebyshev-type-axioms-review-submit.json",
+      "mode": "100644",
+      "blob_oid": "5c137d88c597cb3d26ed59083eada8d627c838af",
+      "sha256": "c09a47679bfd1c55055d2258ee4c6a59961bb5350802778b15eadca1cd74a82d",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/main-solution-ambiguity/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "42371693cfbf46185ac9d81a7aeb83da0989f0c2",
+      "sha256": "81fc940848c8b3aad52aa2124d713c0ad32ba207a840e234a4cd5d8bce565abb",
+      "bytes": 45521,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/main-solution-ambiguity/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "ed7f92faddd43d7672dd42222a90ea2618e7b80a",
+      "sha256": "ea3c66b3b9883cf1111ba43e1192f009700252b6fa0088f1b908db2f9aced501",
+      "bytes": 139556,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/main-solution-ambiguity/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "d72c1f9a26b86fba738f488e7cd105bc33f6ddb2",
+      "sha256": "a5001cca7c8702a452cf9998192d444c09964acb7465e2b844afd49ed10b43ec",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/main-solution-ambiguity/source.lean",
+      "mode": "100644",
+      "blob_oid": "811085b94e010fb4a4bfd129a975cba49dafec6d",
+      "sha256": "18b14ffa96c03f5bdf10cec92aacb8eb89aab49f1032217ad77915f1073cf8a9",
+      "bytes": 12602,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/original-expr-v1-decoder/QueryPrimeSelectionOriginalExpr.lean",
+      "mode": "100644",
+      "blob_oid": "eb003a4d118544acc9616094e8b1e429489ad746",
+      "sha256": "8a39510d3ca11ab0a42c397fa5d694050baaa5f3e8deb1ff1e0eb5ad205f7028",
+      "bytes": 7755,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/original-expr-v1-decoder/original-expr-request.json",
+      "mode": "100644",
+      "blob_oid": "1ad83cf94f01235215b951d87426880368b4d485",
+      "sha256": "d0bba8c9c761ba0d87b5425d4b0f3c4c062db88a810fc0cb37921ae45c7b7323",
+      "bytes": 11895,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/original-expr-v1-decoder/original-expr-result.json",
+      "mode": "100644",
+      "blob_oid": "c91832fcee906b9cbeaba3c60502a51df8dc1729",
+      "sha256": "83c27f82d9fc9a0a563da10b30925c9ab994ee91e74ebe7a04634174eda1dae4",
+      "bytes": 33938,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/original-expr-v1-decoder/original-expr-submit.json",
+      "mode": "100644",
+      "blob_oid": "6b80cee9583179c715a1e3a750a334da5c7f7e6a",
+      "sha256": "1dc57d2995058fe2d6912ab866f77807cffc62a5bf2776730627d9fd1c36fd8d",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/attempts/original-expr-v1-decoder/original-exprs.json",
+      "mode": "100644",
+      "blob_oid": "66464e24508f099e558df9ff96914d87f80552a6",
+      "sha256": "ba492c088d0e1f3cbbc1e136cbeadf7e8cd277d6163a361ceba0b647058bb054",
+      "bytes": 65361,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/before-private-upload-review.json",
+      "mode": "100644",
+      "blob_oid": "538a37139e7e7f2e4a9112a3d143a0696a2b91fd",
+      "sha256": "3a02d67057fae68495f57f4f7a367c4b1f9e446aad2bfa3e1ac369c475c254bd",
+      "bytes": 13562,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/chebyshev-solution-ambiguity-repair.json",
+      "mode": "100644",
+      "blob_oid": "11c0ed1514adf16afae3c77ac72a0ad318610052",
+      "sha256": "d354b4897eac39d64506c0b40fa7baf8d7e4559fd58aabc3c22da314f0ef4328",
+      "bytes": 435,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/chebyshev-type-axioms-review-request.json",
+      "mode": "100644",
+      "blob_oid": "a55550371495a1920de2f9298e3a462ba10069ce",
+      "sha256": "0a0088cd8a94784dbb718cf6f1da0b19953df8b8fd8cf7455211bfd000dba52a",
+      "bytes": 46136,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/chebyshev-type-axioms-review-result.json",
+      "mode": "100644",
+      "blob_oid": "9a7e2b08472bf0866e0f86e458dc37e46b697458",
+      "sha256": "65616726371162de5eed6edc5806e4c29b418bcaef2e099097b49b4af7e3de8e",
+      "bytes": 140549,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/chebyshev-type-axioms-review-submit.json",
+      "mode": "100644",
+      "blob_oid": "d6d26ebabcfcf56631ab33e4549c939396d2e815",
+      "sha256": "a363a11769a6f78690fe7943b3099ba333528fe3f63656c41bcf034ae1210df9",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/ci-summary.json",
+      "mode": "100644",
+      "blob_oid": "c2a71fb929184eb90a7522b3a1689c1f1822f7ef",
+      "sha256": "55fabfa1024ef865a170fb5e58bd85adffba461eb5917634867bb3eda42372bf",
+      "bytes": 7113,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/ci.py",
+      "mode": "100644",
+      "blob_oid": "10120f1a272f0b45f5c7a7a4575fecde2aa9608a",
+      "sha256": "d0fe71850336561b58981923434352b6473c6ae1ca43d964e4ec54f6f07eea19",
+      "bytes": 3784,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/conditional-reduction-review-scope.json",
+      "mode": "100644",
+      "blob_oid": "8cf4e541595971056adc1974f8719e7a77f84451",
+      "sha256": "7c03780aeca99bbd169ef418b8725d8a5338d9a33b1c2297092228537719cdce",
+      "bytes": 724,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/definition-blind-readbacks.json",
+      "mode": "100644",
+      "blob_oid": "8f2510e1ed6ca0b21f4b42d91da614b6b9f10498",
+      "sha256": "094dfa7f9c1501aef060fa098cde7992ad414fd849f8dfd0ea50f8bf369e9b0d",
+      "bytes": 16634,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/definition-compiler-field-review.json",
+      "mode": "100644",
+      "blob_oid": "8de6f7791eeb465a88ffacd0b5d121f5ab030e5e",
+      "sha256": "a05b335eceb84154dd6b04db1af0f11b368619c58c2bf7b7061d0e8d2d3fa07e",
+      "bytes": 40977,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/definition-compiler-reviewed-readbacks.json",
+      "mode": "100644",
+      "blob_oid": "cf24ccf5c37209ff1c216d9dcb9d9b8497d5e0a3",
+      "sha256": "1a69eb80fd8bb84afc3badcccf5633ced4c62e06f089606390bc76bcef0af17a",
+      "bytes": 17889,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/definition-metadata.json",
+      "mode": "100644",
+      "blob_oid": "aad43f16d9e397ac08ec3d5920f7be0abae99fc2",
+      "sha256": "ab634f919c39923bbd4d5e99e943ca6a84ac0a93891a05394e3920b5082db296",
+      "bytes": 14056,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/delivery.py",
+      "mode": "100644",
+      "blob_oid": "5edddce836e9793abe1ca48b99461fa8ee9fef9c",
+      "sha256": "540e52307780cee08c2363cee5ea867ee0a94b1efc59f2601da3a2d6d0dd4678",
+      "bytes": 15046,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/delivery/packet.json",
+      "mode": "100644",
+      "blob_oid": "c449a8f803e869a4adf4c874cf0e8bac64036438",
+      "sha256": "55d7799e6b9a32069e081f4d99f458df01a26b1b7271e27eb8a891091c249039",
+      "bytes": 47596,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/delivery/ready.json",
+      "mode": "100644",
+      "blob_oid": "3cf4214f4f87f5a074095fba52aeade388a1456a",
+      "sha256": "d00de5a53f9a8cc988e31c6896ea116fce1900e28ba3fe9d479dcc782390c043",
+      "bytes": 15363,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/draft-manifest.json",
+      "mode": "100644",
+      "blob_oid": "dcc88f92ac13ffcf355b57c700b8c255700f6b76",
+      "sha256": "05180fed1666e63ef55fe70cc273cf95ce2d978b59a002393feb0ec0ab237b80",
+      "bytes": 2130,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/dry-run-report.json",
+      "mode": "100644",
+      "blob_oid": "ec33cb983f33156e9a9df0f2755ed06d7b8ef140",
+      "sha256": "64a15f1b9a506f843494d118a77aaa519891ffa0b020a38be8bce63b5d4e878b",
+      "bytes": 9220,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/final-readbacks.json",
+      "mode": "100644",
+      "blob_oid": "82d1cf1e423bad396a1cd0e0bb3fcedd5be50a73",
+      "sha256": "4daaae37dae4246ef45196552c5fde84265339a70fbabd2931959784c72ff415",
+      "bytes": 44695,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/generate_prime_selection.py",
+      "mode": "100644",
+      "blob_oid": "304322d8f9df6994f9ae540054250beccbfd2849",
+      "sha256": "3db65a80494c864d2900828ac0b651bd86ca8d6087a15ade65192f6ac5f9eb62",
+      "bytes": 22188,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/independent-delivery-review.json",
+      "mode": "100644",
+      "blob_oid": "9a2bf8047fac711efee0352d1c89bfd713e3713b",
+      "sha256": "19cbcbf4dad8ce89ff8d1503925d050115ed04bc70ef9f8957050b1dc3a0b242",
+      "bytes": 13638,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/independent-source-review.json",
+      "mode": "100644",
+      "blob_oid": "92ea9efc84b000a9d1875ca6ccea2cef34553d17",
+      "sha256": "6881a1c1707ff95e38f57fdf695e66ddecaf1d0bbd9421ef0268274c3d147cb2",
+      "bytes": 677907,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/integration.json",
+      "mode": "100644",
+      "blob_oid": "bb11b2394e836a1b07223d235924c3b6c5c5a125",
+      "sha256": "23d6f0655db48c216504a4b7e69a4c19a58e94b64b1c57eb4c4e1311652bc510",
+      "bytes": 2162,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/metadata-assembly-status.json",
+      "mode": "100644",
+      "blob_oid": "1e9321f3bb7ff780a9223a21b70cb33e87091553",
+      "sha256": "c6508359bedd44de56c886a192ec90158909312ce15662993f33157e45323423",
+      "bytes": 840,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/missions-before.json",
+      "mode": "100644",
+      "blob_oid": "42fa0f5dc322bebdccbee28c8f14d47b293ef415",
+      "sha256": "834ad7be66d2a3ee650fa662f9be36b116673e0d16ad220e8e43291865269df3",
+      "bytes": 21679,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/original-expr-query-repair.json",
+      "mode": "100644",
+      "blob_oid": "a2116995f66e92855db80f36d82026eea859e7e2",
+      "sha256": "73425d0bd2b7cb1edd635a73bdf677d5743fb56d0b068dc60e9b2dbe3067cc85",
+      "bytes": 400,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/original-expr-request.json",
+      "mode": "100644",
+      "blob_oid": "b035dc71e0b019bcec2883c0ae6162a589589e9e",
+      "sha256": "8081dbd7db028c312cd3e917e6cbfdceb195cbd9fdf6a0f06202948945053386",
+      "bytes": 11895,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/original-expr-result.json",
+      "mode": "100644",
+      "blob_oid": "92d7b4a5c10ba16c623e272aafc569cbb83a948b",
+      "sha256": "4118cae5099df143f9e6baa57c883c3cc9be1e8d10edbddf76cedf19d4511f57",
+      "bytes": 32455,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/original-expr-submit.json",
+      "mode": "100644",
+      "blob_oid": "f775a72ffef5be05ed74a522273e658c441e3a42",
+      "sha256": "4162259b737d304f447ca9e34d6936982335289f1c5227ee1075df838eb58873",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/original-exprs.json",
+      "mode": "100644",
+      "blob_oid": "66464e24508f099e558df9ff96914d87f80552a6",
+      "sha256": "ba492c088d0e1f3cbbc1e136cbeadf7e8cd277d6163a361ceba0b647058bb054",
+      "bytes": 65361,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/original-wrapped-type-name-map.json",
+      "mode": "100644",
+      "blob_oid": "b133c420ed18220a88ee1413c8fa6e65d621a122",
+      "sha256": "991a7b1b7b6dc4fd9bcb96eeee8212dfe524c7a643dc05e8a91c19247ca4631a",
+      "bytes": 17618,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/paper-pdf-manifest.json",
+      "mode": "100644",
+      "blob_oid": "e005830ec34fd5755aa4a26dbfa8172f65917983",
+      "sha256": "0511df56a9968439a6269f31bf82ed513d677e86a80a3376ec9b7935946cdfd2",
+      "bytes": 1106,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/paper-quotation-verification.json",
+      "mode": "100644",
+      "blob_oid": "500d3edf1074c469c0ecc042b297f4d7044ed50b",
+      "sha256": "22e7240e71e47f8a3bcbe18e1cbe671ef3601bd23a8f32e268dd6aca1a602276",
+      "bytes": 968,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/paper-source-context.en.json",
+      "mode": "100644",
+      "blob_oid": "9211afff64f6608764b3ad5629075e857cf392b2",
+      "sha256": "c28540397f8fb1bd5fa252418fd1bf41e75c7cfd4632ff33f201b82bba66ee65",
+      "bytes": 8033,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/payloads/AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.json",
+      "mode": "100644",
+      "blob_oid": "6d989211d5d06088c1e34e0304e229ed926b0853",
+      "sha256": "15eb429b18b1f2eed38adff5f0c13aa7ec783c324c223b063c68422c3e102895",
+      "bytes": 6178,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/payloads/AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.json",
+      "mode": "100644",
+      "blob_oid": "405ec7a811750ab7ab24865386ffecaf6bfc2b0d",
+      "sha256": "f63b77010d05d50eb65d9b92aee7b86127b1dba9adac898657ede0b7b6f756c0",
+      "bytes": 15766,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/payloads/AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.json",
+      "mode": "100644",
+      "blob_oid": "2a9d6ae9cb8ad9bf4cf864eba3d4466100778591",
+      "sha256": "313364179af984d2998d176057cea4d4bb38236c158cd6d7a26aad6b4bb49abb",
+      "bytes": 4893,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/plan-checkbox-boundary-audit.json",
+      "mode": "100644",
+      "blob_oid": "c11fc968c82cbb0cc900b4f3213d204f6646539c",
+      "sha256": "17222fab7843ce325790a1f97943b45e10a082b87791a0decd06f51d9d892618",
+      "bytes": 626,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-intent.json",
+      "mode": "100644",
+      "blob_oid": "0c62aa3e93a1b81919f272d4f20434ef18585fca",
+      "sha256": "fc65e3ea82341e4a6ff6f28b12dbf89ef90cd81efa2689e8077a1679935c0af4",
+      "bytes": 7261,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-published-item.json",
+      "mode": "100644",
+      "blob_oid": "e8b4205a16d56ff1af502dd0a1fc69f795850f44",
+      "sha256": "c2c4f4c9ef066cd71a3555197c6035949fac6ded948bea232777ab561dd38293",
+      "bytes": 7381,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-result.json",
+      "mode": "100644",
+      "blob_oid": "43a75c7a294b570f973deb253709692b381e8652",
+      "sha256": "88b0bce4dc241a97605fefda1aa7690d3e04d314dae11f3aab52e25d0171daaa",
+      "bytes": 7367,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-submit.json",
+      "mode": "100644",
+      "blob_oid": "cd1d59edf44abe5c8954eb36af109ae5fd9db76e",
+      "sha256": "09a00dac4f4c3e90b4f0f3e8983d5d64aba9374f0e6a23d012a4cf7818844827",
+      "bytes": 883,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-intent.json",
+      "mode": "100644",
+      "blob_oid": "65d1062a717f2680fadab2aa16e9fb83abdccc6b",
+      "sha256": "33f7a68f3a84f3da0fbcfb980d4ce1d94b1b1fc57c3ae2ba29ed35b39bffa542",
+      "bytes": 11118,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-published-item.json",
+      "mode": "100644",
+      "blob_oid": "5503a10cecf162426f176eb56333ee275a233d8e",
+      "sha256": "b2ee01a759c3ff98b81bcf046b5768b72f405f1b7e20b2eb587b0bd216f6c9af",
+      "bytes": 11233,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-result.json",
+      "mode": "100644",
+      "blob_oid": "0ff79609580246f96aefec8c778c2ec061db4f6c",
+      "sha256": "7a207d3e9b198ea1d336f28c35a8e69f34202d384d49aa5a1bc69ca6d072f17c",
+      "bytes": 11220,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-submit.json",
+      "mode": "100644",
+      "blob_oid": "f691fcf49ee7cae95e4208132a990390fde18152",
+      "sha256": "4f0b173e3becbd9879aa1247e2c569ba002d0f536b0ee936893007713bf8498f",
+      "bytes": 887,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-intent.json",
+      "mode": "100644",
+      "blob_oid": "62601e7cd1e665f8d61fc1672fa6ae91458448d0",
+      "sha256": "046b7bc68738fa1a70da6e6487242948bd82248a586ef7ccea080b5a932d5a51",
+      "bytes": 6377,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-published-item.json",
+      "mode": "100644",
+      "blob_oid": "bd6e1801d6dbe1ebdea1b4d7170fce49ca040701",
+      "sha256": "fb3fad8a12b8996f40b72067968eb112e043ffbdd84b82d5bf58907c502b6c1d",
+      "bytes": 6508,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-result.json",
+      "mode": "100644",
+      "blob_oid": "a39e4dfaecea7bf3b0d6d1e806aeb66e422513f1",
+      "sha256": "7e7bde22a0aee1e5c60ce5a251384d72152bddb2efc37f0049734b0353ed8371",
+      "bytes": 6494,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-submit.json",
+      "mode": "100644",
+      "blob_oid": "4f0e7751afcafedb39f1b50aae6e54c8c9d8aac3",
+      "sha256": "98ae12f3a565f0296891bedbb35f3ca539b9e64e00fa6db2ea96fcba44cdd63e",
+      "bytes": 872,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/definition-intent.json",
+      "mode": "100644",
+      "blob_oid": "1d08c72d6e5207d6a0348efa8a95b4cc25d0b340",
+      "sha256": "ce2acc662db499b1f41e887eccbf39d344d82997d1536c40c5c83da79928158e",
+      "bytes": 18412,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/definition-published-item.json",
+      "mode": "100644",
+      "blob_oid": "38ac8f964dcede457c30cde3bb7822c8f3462539",
+      "sha256": "fe7813f11e778e6474d151be468252ff54c2326e0bff02392236ede6032de620",
+      "bytes": 18566,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/definition-result.json",
+      "mode": "100644",
+      "blob_oid": "0061b9737099ee0fff9cd6ce7b3c93d80529a812",
+      "sha256": "1ae6c4367060ad734f23188ee8bcb426e2c30558ab3f2c60dec738398227266f",
+      "bytes": 18590,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/definition-submit.json",
+      "mode": "100644",
+      "blob_oid": "6b7c20f897442d724344931ee9259bf8f34e3696",
+      "sha256": "9e08f8fd3171c61d7324a7b5385d7130bbe924ea0b46fc5364c1561b36e072b7",
+      "bytes": 881,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/delivery-summary.json",
+      "mode": "100644",
+      "blob_oid": "2d6a63bf40937ec8c17996d32951af019057bdd0",
+      "sha256": "a659210b3800c3cb0b6eddac7deb408bec2e857dd7be713fb0eac3800a415258",
+      "bytes": 750,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/final-AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.json",
+      "mode": "100644",
+      "blob_oid": "cc46bbb94a9c0183819e9be70570e6d459dee3c7",
+      "sha256": "78b5bcd4bab0a929278a312d95c499842d0e0b8b4a7b056d7994a7b99ba2e489",
+      "bytes": 7383,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/final-AbcAdaptation_Reference_Iut_Implication_PrimeSelection.json",
+      "mode": "100644",
+      "blob_oid": "38ac8f964dcede457c30cde3bb7822c8f3462539",
+      "sha256": "fe7813f11e778e6474d151be468252ff54c2326e0bff02392236ede6032de620",
+      "bytes": 18566,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/final-AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.json",
+      "mode": "100644",
+      "blob_oid": "a6938f74ad33cb2dc4363105afb18a201629ebb8",
+      "sha256": "6bad10a164f16844d18ac9b967628714b3a61a651e0ec70bc0f51e127cd44a67",
+      "bytes": 11235,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/final-AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.json",
+      "mode": "100644",
+      "blob_oid": "70aec88994b09e3da299e63d86c94857b43460b4",
+      "sha256": "a8603aa9e2b8e32018310e4594cc4b6ca4e93dc2a194f0b892f71bb08e49d400",
+      "bytes": 6510,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/final-statuses.json",
+      "mode": "100644",
+      "blob_oid": "8320431f6cdb22997ccc8a620d465ab16d4734c8",
+      "sha256": "2f81296924bb037de86634051c9310cf7d51425cce42e9befcb7d5953afd3f91",
+      "bytes": 740,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/main-decompositions.json",
+      "mode": "100644",
+      "blob_oid": "e2d58663b9ef8c837879ed6455cad495fc547005",
+      "sha256": "dd705aa3c4e126af6169333077f7955b8ed79b6d8a3c184f0f99539aad2b5e85",
+      "bytes": 2229,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/mission-list-readback.json",
+      "mode": "100644",
+      "blob_oid": "42fa0f5dc322bebdccbee28c8f14d47b293ef415",
+      "sha256": "834ad7be66d2a3ee650fa662f9be36b116673e0d16ad220e8e43291865269df3",
+      "bytes": 21679,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/mission-scope.json",
+      "mode": "100644",
+      "blob_oid": "507360231aadc42c567335bd04f95707702f34a6",
+      "sha256": "d7c64b74ac0cb853d827a8fac6b2659e18f8a8fde6b1bfba8e8a2a50690ea735",
+      "bytes": 4173,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/published-ids.json",
+      "mode": "100644",
+      "blob_oid": "96a81611452f43e189c69ea55d967f8c68c68a5b",
+      "sha256": "607818796283d4ae4640db99ec882bbc56cffde58d6c57c6a586700e9b0c9c1e",
+      "bytes": 420,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/root-graph-after.json",
+      "mode": "100644",
+      "blob_oid": "3e1323e270ab866a1b4710fe87d81a6529961250",
+      "sha256": "3947435df13436638c5ae9073453c953b22b0ccd3d378954439b704528dc43fe",
+      "bytes": 292899,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/root-graph-before.json",
+      "mode": "100644",
+      "blob_oid": "3e1323e270ab866a1b4710fe87d81a6529961250",
+      "sha256": "3947435df13436638c5ae9073453c953b22b0ccd3d378954439b704528dc43fe",
+      "bytes": 292899,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-intent.json",
+      "mode": "100644",
+      "blob_oid": "18e00ac46cfc699f18c165eab17919cb00a967a2",
+      "sha256": "d8549a6d776327600f68b52cac13ce4c2bf36709ec8aebd79b984509f44a391e",
+      "bytes": 1298,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-result.json",
+      "mode": "100644",
+      "blob_oid": "fe9bab2ac0ac07ec0ba7028c8140bb330af26311",
+      "sha256": "552f3900753f50bef41146cee8c7296eaac79e6f9b9a44aa147f1373a6ccb9ec",
+      "bytes": 445,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-solution.lean",
+      "mode": "100644",
+      "blob_oid": "067e0e67aa6068471775366e1a5139ee06181f21",
+      "sha256": "7a93274feb64b982871817cad36657028b8b542851bcaa8773ac741c05412a60",
+      "bytes": 3601,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem-submit.json",
+      "mode": "100644",
+      "blob_oid": "fface132b70c54cac3017248f12814d93f395047",
+      "sha256": "c0d4b336630b6818dcdfaaf7b4d926f3e4892fb2e56091404f5829a157554308",
+      "bytes": 565,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-intent.json",
+      "mode": "100644",
+      "blob_oid": "ee00f0fc31a830983f3901d5c64b0a7e494cccbc",
+      "sha256": "3fb34f865337fa4759b3b09b0368365c46a4f38201e86f0fccb539b9f459b0cc",
+      "bytes": 1382,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-result.json",
+      "mode": "100644",
+      "blob_oid": "11b2f690f15734a84753d016251793044143e561",
+      "sha256": "baeb5074237a603485432615300d4470b0f792cdaea8f683cde471f65843a3a3",
+      "bytes": 445,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-solution.lean",
+      "mode": "100644",
+      "blob_oid": "52f09b99829bc4574a9bd1e411a9ca2deefb0b40",
+      "sha256": "3c23079be1157f246ef528016fb97b9a47e33d06438073ac3279ef615460de0a",
+      "bytes": 12714,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection-submit.json",
+      "mode": "100644",
+      "blob_oid": "96c98a81ec18685c8676d78813d7cbb5178a70c2",
+      "sha256": "aeed382a4a86f708746533efacbe3be4712e9ce0a971050587474f0746bd657b",
+      "bytes": 565,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-intent.json",
+      "mode": "100644",
+      "blob_oid": "94119a0faf72325dcf1626f4f1b32d34a3eb193a",
+      "sha256": "b5d73e7a2161291e56b7b007b89994e6b89b1b8b93e84bb8b9ba5218ed7a5d9d",
+      "bytes": 1265,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-result.json",
+      "mode": "100644",
+      "blob_oid": "0f6eb1e6d7b98ca07b9130d368a9d5074ce0ded1",
+      "sha256": "f4997abef894a4330d55a34d53803eccdaf4eab412863d1952cd39949eb6669d",
+      "bytes": 445,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-solution.lean",
+      "mode": "100644",
+      "blob_oid": "7add29a83d23215986def0edde95feddb259bdcd",
+      "sha256": "249b6d6c6d4ebc35fa7dfdfcc4318ae1ca0d637e9191848cff1e0aea251d527a",
+      "bytes": 2462,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/verify-AbcAdaptation_Reference_Iut_sum_log_primeFactors_le-submit.json",
+      "mode": "100644",
+      "blob_oid": "22565a17f511c41df17fcd71af99ffece9ea538d",
+      "sha256": "69def2dd1786a62dca5fcdcb744f551d301beb95975f6eb592305fd49964a51b",
+      "bytes": 565,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/prime-selection-type-axioms-review-request.json",
+      "mode": "100644",
+      "blob_oid": "447954c73f061aaf2ba96fcbf9e45fcd4ae3f883",
+      "sha256": "36a071a9d9684d40ac0f5cf2511d5f4b647e601f148435bf2039e71adfdd2ace",
+      "bytes": 46142,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/prime-selection-type-axioms-review-result.json",
+      "mode": "100644",
+      "blob_oid": "bb71a98566da8008cb3bbd432f88bdfe64c2a03c",
+      "sha256": "29ea8890aefab630682acf63de8521f2be0b8369214abf8afc738cd357515107",
+      "bytes": 140308,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/prime-selection-type-axioms-review-submit.json",
+      "mode": "100644",
+      "blob_oid": "6bdd5bd6a736eb13d1c8eccbbaaf3013ca45ae1f",
+      "sha256": "cc306579c024a087c3763c8ad312f0b6860edd2fbf77f17f73d5c9371b78b99f",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/registry-before.json",
+      "mode": "100644",
+      "blob_oid": "47b44594a8d1c0845d08fc007c37c770aa830b50",
+      "sha256": "27403c9b9f499734dc7ffefc76096f2b591db103af2eea121dde03e4675c6379",
+      "bytes": 1147262,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/source-blind-readbacks.json",
+      "mode": "100644",
+      "blob_oid": "8cb4408d496884107d53a39c6bab2a8d8a51506c",
+      "sha256": "c245a171c050b901e4189221de36fb2cfd8f4e57b631cf90c30a0cbf1f2b5a44",
+      "bytes": 18628,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/source-compiler-binder-review.json",
+      "mode": "100644",
+      "blob_oid": "5fb5d6d857f2ca8efb35c6bcfadf0e7faf581c89",
+      "sha256": "3829269632044277a777113268e4d0d6d722269769d27fe95fae6dc92e8a167f",
+      "bytes": 10935,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/source-compiler-reviewed-readbacks.json",
+      "mode": "100644",
+      "blob_oid": "222b51a93bc8c9ed45edbe8b1f80071f46c56162",
+      "sha256": "e3eb54f8cd0811183f66bd39a541b6abaff62e0ee9824c667b44a33eb90a4182",
+      "bytes": 26270,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/staging-allowlist.json",
+      "mode": "100644",
+      "blob_oid": "fe0830e5c9a422d4558d3ce83ccf330b487820da",
+      "sha256": "05cf521cc326e3e8b7996f8c969fa74a71d34982159836b3cd6ad1b04c15d0ec",
+      "bytes": 49724,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/static-identity-report.json",
+      "mode": "100644",
+      "blob_oid": "e0438a5ced2b5f96538ccc10efc014b1b2473062",
+      "sha256": "dafb671d57667c2be0d00bbd74f01843b0e38749f5020a3bb18991caa4cb5ecc",
+      "bytes": 4928,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/sum-prime-factors-type-axioms-review-request.json",
+      "mode": "100644",
+      "blob_oid": "e28bac3ac63d80833514e9ce225b1c0c8068e2bf",
+      "sha256": "c896e23a8bfcde9193b76fe3210e61b3cd1abc0ecd927f8e0b9b42c9abb9d2bf",
+      "bytes": 46145,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/sum-prime-factors-type-axioms-review-result.json",
+      "mode": "100644",
+      "blob_oid": "93604601e4e93a4dc570697910d9dd3196cc5054",
+      "sha256": "714e11b379e9d202c383f6391966ec6b7f2678542c2e075f547a8e77c844f367",
+      "bytes": 140510,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/sum-prime-factors-type-axioms-review-submit.json",
+      "mode": "100644",
+      "blob_oid": "e2570cc5463d06dcd9c00836c2c089e1a3949304",
+      "sha256": "cd25c9910a503e05d27cb18837ab5a4155886c9ad00a265c304c5904da4d85fb",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-ChebyshevBound-exists_prime_notMem.json",
+      "mode": "100644",
+      "blob_oid": "cf1171c47ec729461f407f0e4c56cdb6fbdbbe51",
+      "sha256": "9c60a800683fdde0b4e9f51ee396eea25ea55f5ca4ccd45e723f15ffc3052d4d",
+      "bytes": 77127,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-LocalHeightData-exists_prime_selection.json",
+      "mode": "100644",
+      "blob_oid": "db529c3a4c20af45bef0cbc31a6192e11d50cf33",
+      "sha256": "1bf4df8ba72e37817bc9d528ad4616c0cdcd4d3c618c7278dbd71700b98af22c",
+      "bytes": 86098,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-sum_log_primeFactors_le.json",
+      "mode": "100644",
+      "blob_oid": "88291b10cdac2b0688676f5e015811f4ee7b2d72",
+      "sha256": "296702cca2fb5d8490b8554b2a64f9c836a73f6047b73e61994da8f208c7c5d4",
+      "bytes": 75423,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/wrapped-compiler-binder-review.json",
+      "mode": "100644",
+      "blob_oid": "aa79eacdf17f18d5db46b5cd6faaa5ccc666d319",
+      "sha256": "02206ae719a430a3669c557ad49eb90e9feaad9349ca27705c6972ac0c30a67f",
+      "bytes": 13557,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractC22Graph.lean",
+      "mode": "100644",
+      "blob_oid": "26fd8c3ce6e3ad2e01543b5b48944b24a9bca188",
+      "sha256": "997f6fa4efa1174be8c272e369ca3dfe0d0ec3c4c6ebf1f9121f8455dbd7b542",
+      "bytes": 10210,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractCachedReferenceGraph.lean",
+      "mode": "100644",
+      "blob_oid": "97fa7b43c997029e3ac41d1858c9f3d6698396df",
+      "sha256": "fc3c999fc0e31809ecd8608c7d1e4f40640db444997a99cbe8786fbcb7983999",
+      "bytes": 6674,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractReferenceGraph.lean",
+      "mode": "100644",
+      "blob_oid": "75101cb66152d91cf5b2ad30544fb01aa33ada21",
+      "sha256": "d0a8e949c13ab9489f35c883d5b83c406033607162f8b7e6d14b84c7efa2f35a",
+      "bytes": 5753,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractReferenceHeaders.lean",
+      "mode": "100644",
+      "blob_oid": "f03867eeae1418d855ee2fbcb473e4310ab16840",
+      "sha256": "f7182efef1b1c2ffad17b856be8177e18d1040e6ac57fae3af900f1236e634d1",
+      "bytes": 7790,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractReferenceSyntax.lean",
+      "mode": "100644",
+      "blob_oid": "39b877580845131536de1767e3cef974aff37f81",
+      "sha256": "834baed3cafe6ae22e71d586458d3b6c50abc7654f67db86187af27e3b1a6578",
+      "bytes": 11996,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "de513f7e463f3f68e144128c3242818c9f965e16",
+      "sha256": "88ac2f8f399064be60f7ff8947d85a94bf8914af0f477cb8db83a8575b7295b6",
+      "bytes": 11558,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "be3e99c5c28f6530a5b9d53f49ec1a3c1d46ca35",
+      "sha256": "4d12a00afdc53d36d17f1f65273a940553b6dbd88dcbf5c65eaf491d57b1f131",
+      "bytes": 31907,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "bc89fcfaa4bc461b1fd6f976255d7524806ab4cf",
+      "sha256": "38b02ce54d7e383d6359c005ea9238025c18a9073eedc04f04247eb77fe49052",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "96f58460ad385b226ff0691e7811a5f98f569e40",
+      "sha256": "3199014228be547d08fd06aa704d3037098788b71ee2aacb877ffd42a0fe010c",
+      "bytes": 11221,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "b74443793c7c1a5cec38272a3ea88a2af0128784",
+      "sha256": "0ffc5d52d521e2838ac834dfc8a8f4784ff0b9dffe7877b094213045ae186e51",
+      "bytes": 30952,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "b05c4f0f3bac76a533fcf2aebe0b3bd62a47780a",
+      "sha256": "a8344b2ec183fa349e71c87d3bda2b837a8c8a8685129bd9d0ab85da4ecd027e",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-RightHandSide-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "627aeb0701f8370324e7f6c2febaae9bf8613011",
+      "sha256": "b27a93947ac930ddce0b4f308dfd47d88d05e9c671ba03f6b7fe5b894a47508a",
+      "bytes": 11608,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-RightHandSide-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "ae37f804ededa46dc0ec26cd53ef91a1741f185d",
+      "sha256": "88fc5e7ef6a5a5cb3ed819b95f2edb3f62a9b9eb60a6a3e4e36f57323413fdf3",
+      "bytes": 32027,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-RightHandSide-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "f2a50e9e02d8dd5d27f46dfac8e460fa2bea8e12",
+      "sha256": "52ff1b37f74e41a9df128c0178b2ce67ec95f645d0725293c44d8126a916a2c5",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-RightHandSide-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "d3a77f0530c48f3aa303dbf32cf4070bf35d53be",
+      "sha256": "15216bf278523eb08c4a7f15cc149b226539e3c9c7f3b9f5090e57597e1e6baa",
+      "bytes": 11516,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-RightHandSide-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "47c0002be223a58538eecf737bc389a3d460b56f",
+      "sha256": "55adfbb12d7227c7be3d874b70d6f5ab45c9768accfbf8f88485945be512344c",
+      "bytes": 31856,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-RightHandSide-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "cd5a93a446bd2aed4b6d35c1967904eea88021ee",
+      "sha256": "be6a272d55ae90f42836ec8af651cddb571986b3b88caac3be7c97a58c0a0aaa",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-Statement-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "78455eaa989d068237dc71a0f02dbad6aac322a0",
+      "sha256": "770829ab35e918df6a4668b84172406e50e9ea613f41ff90ebceda7b70b140d4",
+      "bytes": 11644,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-Statement-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "b86debe9b48711744feb3a0281634547e9ec2b56",
+      "sha256": "7c10399b678746dea365ef0f1ff3f25f0b56f2914c462a2c24b6a3488fb6a3e4",
+      "bytes": 32159,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-Statement-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "4088422ac93504b5a228f847998294573daad2b9",
+      "sha256": "9b9d3a88ca8528438268ddfdb1cbbeb8cb5ed67675cdb6274c11568e2d89c858",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-Statement-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "7db4f1933e90567c63b2abac2727d701c60a30f7",
+      "sha256": "ed730888e84de1cab062a467563a5e432ba5bf3278f8838fce2a2131221a6991",
+      "bytes": 11556,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-Statement-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "2a4eca9504b0383fe607211e7bee8e05f6fbb9d7",
+      "sha256": "7d2d01f58151a85d8a3bed4aebb0061face34d4172b45f63c5c0f8dafe4f3bb8",
+      "bytes": 31993,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-Statement-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "96b0365c67bd7ca459c426b0470d28d8c5673068",
+      "sha256": "98e6428d693f93786f1760cd3908e840b63a6aa78ae93f69782bbe7f4711e3fd",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Corollary22Inputs-c2-compiler-type.json",
+      "mode": "100644",
+      "blob_oid": "596c4433d7bc7722250d7423dde1ab19e8e3727d",
+      "sha256": "f5a84bf63eb36c984bdd9d9a9383bd01540df667ce5478664a3f45ff60123447",
+      "bytes": 64328,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Corollary22-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "b051a91cf18c19d1866e33c2c9089e0697d2d314",
+      "sha256": "257ac80313985acfb49c0d4108a5a8f70b9b17fb9a2912fce2a10ee8c0c62e4a",
+      "bytes": 11665,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Corollary22-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "2afb69680cdc5d63e6526a71b88cffd464587c94",
+      "sha256": "dca6d83a1edc38e453cab2deba92d8d7b30ef971196308fbeda85b2ba8e080dc",
+      "bytes": 32216,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Corollary22-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "260cbe3c226d2f59d3d69013950066a7693795b0",
+      "sha256": "61264eaefcdaf0b74b1a980c663b49bbdb7f1b092dd39c6365ef45df66f6ad03",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Corollary22-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "c23ad1e5f76870e2c5b1d6e37c6ab5cfad57e004",
+      "sha256": "460c8d175c6f8a98234d8336d0f5bb185a56b2cf610d3d6895f23ea48e73203a",
+      "bytes": 11571,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Corollary22-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "7451d5e464df15d62fececbfb3766cba1f0507b1",
+      "sha256": "16e78959feac2dd9b6480af42a5b4c7cb4a58fe87871e25a4a948e1903cf8117",
+      "bytes": 32027,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Corollary22-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "f0ce00b5772da9d49e01de0c5d5cc2cb50321548",
+      "sha256": "b8e522f839343d91492cc56bcc3b57387c2eb6dedb232fd65674969a5c33c385",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Invariants-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "e82d2b4c8f89a8e351bd42be6229bb354e7bd1e3",
+      "sha256": "695485102a85d8318c0ce0e21f3941c89cf81b26aac0421611ef92698dfb1aa3",
+      "bytes": 11662,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Invariants-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "1649bf5783288b1fbdbf4c063820de205bb0793d",
+      "sha256": "acc47d7cdf25ca1088de0a09423a3a7671d4188f82c8c884fd785243a02296c0",
+      "bytes": 32189,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Invariants-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "509029e8f4034c8258c12e6eb0cc8373a622c4c3",
+      "sha256": "044dbe604fdca1cd4bf241ef03e431f1665e0b08c8331debb289d3f2b6da0e98",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Invariants-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "dda68e88671e3263ee2ab6707e7252f0df046278",
+      "sha256": "89923983f78d74712f3dc7196281fcdcf153d5dedc72b54dcbbec16641aa3aef",
+      "bytes": 11568,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Invariants-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "58a0a883208001ad48c9216edeab03717502bed7",
+      "sha256": "755b7ece33a9a0b54b6555bf179f1e2540fe55aaed4b1dc269c253a871673880",
+      "bytes": 32030,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Invariants-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "c68e26ecaf5125e2ebe74b2a6472dd6d1fc7b41b",
+      "sha256": "2e3bb974854fe1c3a50161e893e567cede5d18ecb96edb9b9ce9156a32f23c66",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-LogVolumeBound-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "f883bf3d199441ec0f1536b3968ef3084514d4d4",
+      "sha256": "e0d6d40ecef4d92154b1381a93d72bd19f3c7532cf53af15479987f2638115f5",
+      "bytes": 11674,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-LogVolumeBound-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "46118b8f4aff680ed2bd6ea48949cb0a4ab5c1fc",
+      "sha256": "eb7dddbc55960c42888a0ac96a25af8db6fb88d80384efec99b34506c35d149c",
+      "bytes": 33063,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-LogVolumeBound-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "657660f9ac8b91e4cec82eb266e7b42659953f20",
+      "sha256": "bd975134920bb6d8433ef4b909c520ae38487f7baf02a8ed4b52aa5bdd2cb77b",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-LogVolumeBound-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "c7d8238efb4b8cb411472d8be591f89e324ea021",
+      "sha256": "1b1aec29af0fdf0b1d7c53bdbe851a2da0136b52c36c3812c16a0583b74569f0",
+      "bytes": 11576,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-LogVolumeBound-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "c09adcaebbab3f803831eaa848cdcb3ccf0896c6",
+      "sha256": "30d2fbe9220da584cb3d6462fb988d865140882b673df542cc76a805261ef7bc",
+      "bytes": 32879,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-LogVolumeBound-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "a5396721001e9c950980084f50cc7f7c62d665a3",
+      "sha256": "4cd3a95e2b8b71d45349459e4a23d26166085ae98a1acc1882552e9a66c6266b",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Theorem110-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "f4553999c2a6373bba6d3fa33f9c8e1d9c79ab0c",
+      "sha256": "820831e2b8fe3740906948a5d0868a1b65cc1e229eb0ab37278e9eaca9eaca64",
+      "bytes": 11662,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Theorem110-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "354f7af3471b0c4ca0c438fcc3194a40965e11ee",
+      "sha256": "1a89daa1b99e1b19329940df24c1d526c138f7bf39abacc1bba05c7ca9f47c97",
+      "bytes": 32186,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Theorem110-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "46529eb9ac31a971a024be4f1165cbaad8fc845d",
+      "sha256": "650a294bbae46df2b27fa4b96abda993192ccafccce7e3bb8a53d95b32485fb1",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Theorem110-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "c3fac0835531e8372d534c518869d083bf00c570",
+      "sha256": "c0488bc30c263281a27744a73f4014cf5684e6b389ec13186abf1692aaec44cc",
+      "bytes": 11569,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Theorem110-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "78c056c6f1ec510f6935a882a7a640cf89359d72",
+      "sha256": "58ea085b0a9515129addf428e6febc89dd4cffa2373bec49e4747763f5ed83a6",
+      "bytes": 32019,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Theorem110-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "12cc4c1275c0719388cb7a6ca0ec51b1dbc9e647",
+      "sha256": "7a99c432074b83081a967c2d47b87c2a429b9f656da5be5c6b795e172a4b17cb",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Theorem110Invariants-theorem110-compiler-type.json",
+      "mode": "100644",
+      "blob_oid": "bedd1a076fccb805b9b858d4385c599a2cc249a9",
+      "sha256": "c8ecf2ddadb01421962ea8f770e46d272e896142eb803d64e2892223b5418f46",
+      "bytes": 61475,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-ThetaDataExistence-compiler-type.json",
+      "mode": "100644",
+      "blob_oid": "192599f9b37d86aac1dabdc9a5f43ed72a35182b",
+      "sha256": "986860b1ed296ca41be8de4ca9fbba749e07518a6bdca7b1a36a775a339b6680",
+      "bytes": 2588,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/LICENSE.iut.Apache-2.0",
+      "mode": "100644",
+      "blob_oid": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/ProductionGates.lean",
+      "mode": "100644",
+      "blob_oid": "33388b7a22b675479c38e0ca81e03e95b2a7c5f0",
+      "sha256": "3b08e0bb0b9a1985669816cba5906ebdc8f6fcc81a33790bd79876a972274685",
+      "bytes": 244,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/QueryC22RootUniverses.lean",
+      "mode": "100644",
+      "blob_oid": "149420f287d0f192b6225046d450e7765d1e13fd",
+      "sha256": "e7f848bf18ce4de81dcc65eb6d6c5cd76c67ebfc0edc126c9e024bb45afacf0d",
+      "bytes": 3668,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/QueryPrimeSelectionSourceFacts.lean",
+      "mode": "100644",
+      "blob_oid": "ccd8a2dc2114e02778007e061334149b40673931",
+      "sha256": "55f3a02d1f147f8acf13f9e6cdbd64931fc7c4bcd0883e96d3bde553f9ae7ec9",
+      "bytes": 6094,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/SOURCE_LEDGER.json",
+      "mode": "100644",
+      "blob_oid": "dc6991ca4c6ac37e34dd79e0a09ec0008a0b75e9",
+      "sha256": "4ddafbd06e53bcc787abafd8b386273325c6cc82755e9a1a90bdac7c20ac939f",
+      "bytes": 7593,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archive-manifest.json",
+      "mode": "100644",
+      "blob_oid": "630a52e6008eadf9de0aa7e42b4272d72f8a1a12",
+      "sha256": "9e5325b7a54a1d41bca7d9eaf56ef2767e84cd960c34ab909800f3ba0107b566",
+      "bytes": 4776,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/ExtractReferenceStage2Batch.lean.gz",
+      "mode": "100644",
+      "blob_oid": "920c3fa8e30a6bac34189d4147470e6722929fcf",
+      "sha256": "bc2acc3455394871acc2d26c2593060f8fe50135e0d3b15177d5bd1a0b2f6e7f",
+      "bytes": 5033,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/attempts__headers-v1__headers-result.json.gz",
+      "mode": "100644",
+      "blob_oid": "87bdb7e66244e7936367474052b086bac3fc4763",
+      "sha256": "ebde381b894ed4d239af2679da46b8caf693e84e521faa39de50965c5b2933f9",
+      "bytes": 72398,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/attempts__stage2-first-v1-outer-environment__ExtractReferenceStage2Batch.lean.gz",
+      "mode": "100644",
+      "blob_oid": "f92cd1002107b48ba650b335e76b5f4eb31e246e",
+      "sha256": "7e8585c9bab4a6db14b2115b90312e4587f018961e2b87161c99bf33849dd735",
+      "bytes": 4988,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/attempts__stage2-first-v1-outer-environment__stage2-first-result.json.gz",
+      "mode": "100644",
+      "blob_oid": "dc1deeb6b4b1761be35c0355167411b891dc1156",
+      "sha256": "3e3040f27578f4c5e223f0852f272d679c15f048981567db1d7a62e5c25baa20",
+      "bytes": 19430,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/c22-decl-graph.jsonl.gz",
+      "mode": "100644",
+      "blob_oid": "293f2b3056f3cd237b7afccdf0e1b5e257958e17",
+      "sha256": "7e0b80a1719865d6172a3083b4764046acab5507bc1dc9278e1ecf7932a906fc",
+      "bytes": 1104225,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/cached32-result.json.gz",
+      "mode": "100644",
+      "blob_oid": "1b5c7b8a347a6878567ebd51f76972f73dfe7369",
+      "sha256": "02b397a52945c09fe43b7e02cd295ec7aba59fa4a868f323f39bf3f4a46a9238",
+      "bytes": 71396,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/decl_graph_cached32.jsonl.gz",
+      "mode": "100644",
+      "blob_oid": "2d5577ff917ad03fab288114bd0b805891e8d8e3",
+      "sha256": "b4428b5bc24b4b5fa2915d7371aaee4ff82ad054117ff2423a50e6b1cbd04e05",
+      "bytes": 128032,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/headers-result.json.gz",
+      "mode": "100644",
+      "blob_oid": "b7cfa911a5ff7d52e886fed3ad4349643def8111",
+      "sha256": "93473f883107db7e21735124df23e4ce13e5208f4f07129637d1a01c2e6daa80",
+      "bytes": 71930,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/module-closure-hashes.json.gz",
+      "mode": "100644",
+      "blob_oid": "a9f20cd841a192762eeea9c277b8496216fbf4a2",
+      "sha256": "ddd0fce4d9a1022fc0b745ed17a4311f5ccd96f9f5611702ce620536f00ee2ca",
+      "bytes": 3275535,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/archives/module-closure.json.gz",
+      "mode": "100644",
+      "blob_oid": "78dd5c1b5210a628f50d1597d2bf47f019f7efc5",
+      "sha256": "6c55ed7b63c5efc2fb25da4810ca91bd411489e38bac56400dd4555d2eaf40ba",
+      "bytes": 1989546,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/artifact-manifest.json",
+      "mode": "100644",
+      "blob_oid": "13db2dda915ad4c1223e74c6b0bc121f4d738012",
+      "sha256": "48d1f1c7c894968ff4a60a794cb22d56831d4b6acdc4d611ea70c851b9a01b83",
+      "bytes": 186753,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v1-heartbeats/ExtractC22Graph.lean",
+      "mode": "100644",
+      "blob_oid": "cf86db47b5b1f23c1f029ebe75db45470b78ae43",
+      "sha256": "cf893b38f345e77cd82d8bf6e9bdc48266c10e8ee6cc5b692f4d291ed1587337",
+      "bytes": 9663,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v1-heartbeats/c22-graph-request.json",
+      "mode": "100644",
+      "blob_oid": "c4626ab83f9fe19837d2ebdd38181140361171de",
+      "sha256": "06078546a1089f2105bcc63a7acdd370043fd62d54043a4413db4ee78df57ea4",
+      "bytes": 11314,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v1-heartbeats/c22-graph-result.json",
+      "mode": "100644",
+      "blob_oid": "c70a7e23c994267a1645667ae7979ce4a01fa586",
+      "sha256": "267a76327c75b72b34b48ce9aa86bde4f04df9e4aba765087528836e288c086e",
+      "bytes": 33506,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v1-heartbeats/c22-graph-submit.json",
+      "mode": "100644",
+      "blob_oid": "93bdbf6d32ce4ab5ea7f9765028e3ebbe084d11a",
+      "sha256": "3dcb8f8ccd3352ebb135c69c2bfcbdba395e4f58c8f9afa4ac834ee7ed332b73",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v2-heartbeats/ExtractC22Graph.lean",
+      "mode": "100644",
+      "blob_oid": "6772799dc030ebfc4521187aa6a3f06cb9c5a9ae",
+      "sha256": "48bb95cfc1ffb25d8bf5f41d70ce87581443ae2179c92575217fc7a00afcc17f",
+      "bytes": 9736,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v2-heartbeats/c22-graph-request.json",
+      "mode": "100644",
+      "blob_oid": "b94a6d1cdeaf8eedceb8ec3887638e3a77bb91fa",
+      "sha256": "dee7ebce297991997d9e69f75164e847f37f6dc8428715939086b273d8af008a",
+      "bytes": 11315,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v2-heartbeats/c22-graph-result.json",
+      "mode": "100644",
+      "blob_oid": "80ef15ba2632c16f29ee72051a8ad21a3d275b88",
+      "sha256": "06c4f38e0c682ea82f10fa16a181d3c06cfe70f6f9a2e20d7de677cbb4199c19",
+      "bytes": 33509,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v2-heartbeats/c22-graph-submit.json",
+      "mode": "100644",
+      "blob_oid": "41b52c93bace386ee41aef2d74b6809853563757",
+      "sha256": "dbe3760a4d2a49c68636e578f37803f2e5de1c3bc13275dddf60793612a9bf86",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v3-heartbeats/ExtractC22Graph.lean",
+      "mode": "100644",
+      "blob_oid": "fa0b3f69415f4bd447a88432966f121dcaa33b8a",
+      "sha256": "5dbed2122e1f66acf5806a05e7813c1aabb8d97241d8513b50cab99f774371e6",
+      "bytes": 9950,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v3-heartbeats/c22-graph-request.json",
+      "mode": "100644",
+      "blob_oid": "6f62ccb879acd598d54aaad060fe0a4c481da222",
+      "sha256": "db1076fa91dbc460c903d52cc95d133c2787bba4b540e4f0e1d1ec2905399add",
+      "bytes": 11315,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v3-heartbeats/c22-graph-result.json",
+      "mode": "100644",
+      "blob_oid": "9cde20207cfbe186d0a7a5bfccc09596b140d25a",
+      "sha256": "8e6f40ba5d203f4922f05149c1dfcfe486c543fb066babcf60deb69972df1d86",
+      "bytes": 33506,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v3-heartbeats/c22-graph-submit.json",
+      "mode": "100644",
+      "blob_oid": "7b57ed74df8363f6e001597f908e66b66e2e3182",
+      "sha256": "14bd28ee4834cfbf8b0fc3982c619dbb9964876c141d7bfe89d5115b050ac130",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/corollary22-first-timeout/Iut-Implication-Corollary22-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "5e8a677cfdde0fe84dfb2fb3d3469ebb96439c46",
+      "sha256": "b9a505cf0fd96d96ac1e152aa010ace2bad01f0b00cfe0726a75b17abd09b646",
+      "bytes": 11570,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/corollary22-first-timeout/Iut-Implication-Corollary22-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "30e60b516900c4b658e2718ffe511d53c1e7eb4d",
+      "sha256": "59689888a1b91f489b16b0a05e7dd45183844f28c133dc337c2eea83dae8a039",
+      "bytes": 21443,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/corollary22-first-timeout/Iut-Implication-Corollary22-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "0811e91e6840866aba8a26461ad262011ffd4bcf",
+      "sha256": "c87aa25c6fe26b1e9e8cda76adbcf12174f7c9f77203661ee8a46297becab381",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/headers-v1/ExtractReferenceHeaders.lean",
+      "mode": "100644",
+      "blob_oid": "5c236818692e6d8a5e6b74e411e7db27cac1d0fd",
+      "sha256": "868599f1f45f4a0f3c604adfeff1ae57f3ddc788daa798a48d03d0b338a51735",
+      "bytes": 7769,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/headers-v1/headers-request.json",
+      "mode": "100644",
+      "blob_oid": "6adfcae52e21b53bbea3b8a324b18d588e3fbd05",
+      "sha256": "24832aafe66466bcada5138677f61d12c5992ab14a278231fd9a240283c6ee50",
+      "bytes": 214561,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/headers-v1/headers-submit.json",
+      "mode": "100644",
+      "blob_oid": "6397ecb09e52d62e39967ca875b182e469576486",
+      "sha256": "50da8c1991857a6beb7975d0fe0ed3768222b209eb3b853d06ac98384751343d",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-artifact-v3/Iut-Cor312-LogVolume-artifact-request.json",
+      "mode": "100644",
+      "blob_oid": "059c9484c71200817bf4d4af5a7f87f3f3f3fc9e",
+      "sha256": "057a8799aede825ae9d0a6eac2691b2b98edb3994ef343f987826c740649a527",
+      "bytes": 11308,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-artifact-v3/Iut-Cor312-LogVolume-artifact-result.json",
+      "mode": "100644",
+      "blob_oid": "6d1ce83d2b619e19fa3bbbef6c41f55b7f6ee70c",
+      "sha256": "d24d70e384e91072a7f0327ff2d4853a175b4413ebac89fd029a86af863143ef",
+      "bytes": 31747,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-artifact-v3/Iut-Cor312-LogVolume-artifact-submit.json",
+      "mode": "100644",
+      "blob_oid": "7908fc872878e06adf433c689d1144ae787f1e1a",
+      "sha256": "028805f3bc6dbb86a6468860fcdab2b5fa90ecab8141c57b0b4779a4883b6d9f",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v1/Iut-Cor312-LogVolume-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "faaba4ab5927b1c51510e86420062cfcfa8e433a",
+      "sha256": "408fc5d65c45418939104ba8f3696fa6b8f1297f50f5eef90ab1d4a949e11ef6",
+      "bytes": 11220,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v1/Iut-Cor312-LogVolume-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "f6446218736305b97f99a38aebd520599102d442",
+      "sha256": "6ea545131e6d2d486a8f502c94cb8b9b67f9c90c2fafd67c129a93b9f16c61b8",
+      "bytes": 39732,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v1/Iut-Cor312-LogVolume-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "690498e5948b68884aaae723f24a36f10214c7cb",
+      "sha256": "9d51ab924e5efbbd1b0968481697f258ef47036ed23c17f11d2d44fa5a7f53e2",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v1/LogVolume.lean",
+      "mode": "100644",
+      "blob_oid": "0415c756966155e5286911d75f26fbd0c8f0366c",
+      "sha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+      "bytes": 11792,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v2/Iut-Cor312-LogVolume-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "dd0339769c6f5b2b1d26053ae66f896528136c6e",
+      "sha256": "0c935d61c54faf690fb9b1fa8a37f716377b93676b8bd50bc1c340ece4698ddc",
+      "bytes": 11221,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v2/Iut-Cor312-LogVolume-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "4ca007d8715ee127e6ba23082693f3913c0ddba3",
+      "sha256": "125b4da7254a64594e979e26291e0b054f7495d681e20f44f7ac76bc55fc6652",
+      "bytes": 39637,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v2/Iut-Cor312-LogVolume-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "cc836fc5d0ce52252351b532e656602d89a7e017",
+      "sha256": "ec82900e34f63332d041c76ca6e0d7b98544a5cd88ce6ec48c504bb7ab7ed6d9",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/log-volume-v2/LogVolume.lean",
+      "mode": "100644",
+      "blob_oid": "85e3bd5536ecad0d2461edeb8c9bd46197fc8eaf",
+      "sha256": "b6c1dfdc068e170e4404f9027264525099c76b569bdcca7506b29bdd53745d8f",
+      "bytes": 11864,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/production-gates-v1-import-path/ProductionGates.lean",
+      "mode": "100644",
+      "blob_oid": "7d1d1a9c96b6929382aa5476a195023c9047640a",
+      "sha256": "4e4a48ae317562c530f9c98927ac66a1d00cf68746ba2e868ed4790fe54d9d6f",
+      "bytes": 161,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/production-gates-v1-import-path/production-gates-request.json",
+      "mode": "100644",
+      "blob_oid": "431634e7bf43ac06b924920578082a39c8b59779",
+      "sha256": "12ca4b5bf11df6ba0430386cf874e48a699ea600606c0644c7f77a9653b81d36",
+      "bytes": 44146,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/production-gates-v1-import-path/production-gates-result.json",
+      "mode": "100644",
+      "blob_oid": "4131218f2205079b224a2c856d9dcfbbb2d79bae",
+      "sha256": "3ca14fe8ef9bb55d9440901a16757c72bfa7e38c12a1b307a282c89595712aee",
+      "bytes": 134658,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/production-gates-v1-import-path/production-gates-submit.json",
+      "mode": "100644",
+      "blob_oid": "4b1eabab3fc22e4d540c4ef6ff7dfab00edc56f4",
+      "sha256": "fb7e5419398960f40a31f3d49d5b89aa26a0bec3bc76eb10d4943f1b7dffcb53",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v1-outer-environment/stage2-first-config.json",
+      "mode": "100644",
+      "blob_oid": "9d9518efee96c1e43aa2206d30834cba395af9d5",
+      "sha256": "b4d2d8fbdec9bc0ccfc3a41ce64d204bc3b2f26d03ea5767befee5a0e5c8fdb4",
+      "bytes": 640,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v1-outer-environment/stage2-first-request.json",
+      "mode": "100644",
+      "blob_oid": "55690b27f7c31da390ec76d49e24059b0a5cf4d2",
+      "sha256": "fb37932210d9a53b63ba8e4e024af6a5164a069569c8f6ba32c2f49aea79fcdb",
+      "bytes": 11582,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v1-outer-environment/stage2-first-submit.json",
+      "mode": "100644",
+      "blob_oid": "3050a66c21ba0a108c812887a6c5294c233acfad",
+      "sha256": "72f30c598146c9b8edab438ce8ee72e06ef8cd9738f0e1322de9c4595f185bbc",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v1-outer-environment/stage2-first/Iut/Abc/Classical.diagnostics.json",
+      "mode": "100644",
+      "blob_oid": "352369366121b19f06db100709a6a8a7c7579a59",
+      "sha256": "7d98c4d156de5ba8a093384bb96e287c2720bfe578b773cb44d45f2acf49bec3",
+      "bytes": 141,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v1-outer-environment/stage2-first/Iut/Abc/Classical.jsonl",
+      "mode": "100644",
+      "blob_oid": "d95a1e8e1a7ea72ee04b7aef76267f3a53619f58",
+      "sha256": "dbdacffd462b8d7168e00f20192b83d4d7f1e64e7f47d470817c330c3b5ae359",
+      "bytes": 208564,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v1-outer-environment/stage2-first/Iut/Abc/Classical.normalized.lean",
+      "mode": "100644",
+      "blob_oid": "923f43aab777bfd826be8c1b135809e186f938b3",
+      "sha256": "54c7357892339ea5237238df55933ea39c2a5741e27d0e066168e2c7b094a7cd",
+      "bytes": 7174,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v1-outer-environment/stage2-first/index.json",
+      "mode": "100644",
+      "blob_oid": "a2eb4bf154b474f90ffe540fae46d5cb2f9c9b84",
+      "sha256": "6afe7c239afd92aa61b326c220579390903e0e70f688ad64923142f5531a67cf",
+      "bytes": 1660,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v2-accepted/ExtractReferenceStage2Batch.lean",
+      "mode": "100644",
+      "blob_oid": "4e1b9ee26a7b4de476f978c69c9001caf3d9136a",
+      "sha256": "3669478d77eee2260ed194b16a194bc321dab2d1a7f8c2eabf47b1a41ea89bb7",
+      "bytes": 18918,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v2-accepted/stage2-first-config.json",
+      "mode": "100644",
+      "blob_oid": "9d9518efee96c1e43aa2206d30834cba395af9d5",
+      "sha256": "b4d2d8fbdec9bc0ccfc3a41ce64d204bc3b2f26d03ea5767befee5a0e5c8fdb4",
+      "bytes": 640,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v2-accepted/stage2-first-receipt.json",
+      "mode": "100644",
+      "blob_oid": "cf73eb3a5cd458d4621faf08518978a4edc175f5",
+      "sha256": "0543c1a39d4fbddfeb369ddd6d60b3effab5b6dd59cd1465cd4799a3ba0978c2",
+      "bytes": 2857,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v2-accepted/stage2-first-request.json",
+      "mode": "100644",
+      "blob_oid": "22c4335566a0547ded0748033089bb7296dad2fb",
+      "sha256": "6cfc231cd59013bd92afb27655682b381cd427aabbaa33d3059b10524c7c999d",
+      "bytes": 11868,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v2-accepted/stage2-first-result.json",
+      "mode": "100644",
+      "blob_oid": "91f90980e0f6979acebd6c6432782fe2c3402179",
+      "sha256": "0c0cd4695032e6b1469bf949119ec0de6b902bef9467ffccac2be82e837bdf7d",
+      "bytes": 33993,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/stage2-first-v2-accepted/stage2-first-submit.json",
+      "mode": "100644",
+      "blob_oid": "bc3e5985e20014d0f5008b45548b110157d05071",
+      "sha256": "aca1071457ecd71a8256753f669fbcaccbdb3b25dbbf7acc22caa0c69b8a98ce",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/theorem110-fin-transparency-v2/Iut-Implication-Theorem110-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "59709f5344ec32ff5d877723c57daa44dd174e06",
+      "sha256": "3966ddf794d18239536ead4cad9ba6e33df9bb2cf68748f638161f2e9caffbf3",
+      "bytes": 11569,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/theorem110-fin-transparency-v2/Iut-Implication-Theorem110-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "25e3ea431cd18f6f4992d05c9053efd9c6efa454",
+      "sha256": "3955a4b589a6ae8c1d0dcec74d18e77eeb3a4f53b38dbc94958cb674aa1e5ce9",
+      "bytes": 33148,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/theorem110-fin-transparency-v2/Iut-Implication-Theorem110-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "0b7783f54c52e0e0721ea8b86ca1cf98a8181632",
+      "sha256": "ef16fdcd5f73eea2f93980c1d397309726713011ec76fe19b645370d8ab581c9",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/theorem110-fin-transparency-v2/Theorem110.lean",
+      "mode": "100644",
+      "blob_oid": "f3ae0a9ba1c9f09055203610a59c527c06796908",
+      "sha256": "897265005f852fb6541b54266f697db2f9b8b6119f11f2ef0a6c72ef542bb2c5",
+      "bytes": 17380,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/theorem110-first-timeout/Iut-Implication-Theorem110-leaf-request.json",
+      "mode": "100644",
+      "blob_oid": "4537ff1a3b77bacedf141c9aa9435d0e35306eef",
+      "sha256": "3f2e8893d01479e2f2590ccf218a013c4268b0d68c8e5f23903b3a775306762b",
+      "bytes": 11568,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/theorem110-first-timeout/Iut-Implication-Theorem110-leaf-result.json",
+      "mode": "100644",
+      "blob_oid": "0adc1338a74c9ac2e82c63844dd114f488104550",
+      "sha256": "78f3b1e470f1025281a01c48bb48adc2ecc5f4a657f6228c2588338ec8f30270",
+      "bytes": 21439,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/theorem110-first-timeout/Iut-Implication-Theorem110-leaf-submit.json",
+      "mode": "100644",
+      "blob_oid": "f726fd229df54984bb3c3bb03bbc6875cea61f3e",
+      "sha256": "9e9ace26d28e5f3830a5fc2c3689c65bcdff354a819a1808e2938100050ef6c6",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/build_reference.py",
+      "mode": "100644",
+      "blob_oid": "b16bb113d976bff76a8caa80b81c2a7ba94a56eb",
+      "sha256": "6892cd799087748df95ce37bd3ce18b01409e86b947bf7579f301750c261e2d0",
+      "bytes": 5044,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-optimization.json",
+      "mode": "100644",
+      "blob_oid": "13c6a74abae7019e80319227a9bc5d7e274950c8",
+      "sha256": "bb531627fcc80e0dcadff9a94137feb1d9cc46183a8e6d115148161f4c2a877f",
+      "bytes": 616,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-request.json",
+      "mode": "100644",
+      "blob_oid": "88ce1fc20b49232ea2ad55a35a9887b96ba0e910",
+      "sha256": "040c4ce37088891390a5b32c2747b61dc2b3c2686b23678f0d3ad1366ab503fb",
+      "bytes": 11315,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-result.json",
+      "mode": "100644",
+      "blob_oid": "a9125d1546c5cfcf570d1fbf011d37f81e4dd219",
+      "sha256": "9195a0e87434c662c2da293875840c4d7ce7dddcb9a3383d0b003fde03a661f0",
+      "bytes": 32958,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-second-optimization.json",
+      "mode": "100644",
+      "blob_oid": "60c1682f5492db377a4cb30cf7ae36cb4eed974a",
+      "sha256": "3ab4c44a858f5645f0df3610d3866f010796c69e6c22160266cda12952c6a750",
+      "bytes": 618,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-sort-optimization.json",
+      "mode": "100644",
+      "blob_oid": "eaec6b3b4577a8f15392c471efdb573ce8dd8e3b",
+      "sha256": "5bfde7f9ea354a4ebaed4c5895e3a2f5fba6d7a5c1157ebfd988d6b3da0c8489",
+      "bytes": 552,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-source-receipt.json",
+      "mode": "100644",
+      "blob_oid": "135a6d489fab3b9ba94b5540a00e936fb6cbff56",
+      "sha256": "6677a0d0e2ad0903d6347bdea8af083bb07cd0f60d8c662836c7fce709dd02aa",
+      "bytes": 22575,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-submit.json",
+      "mode": "100644",
+      "blob_oid": "6b2832c348c6518f5062f313d42f0c1990bb6eba",
+      "sha256": "3731ee7d2dc42c5e80b51d988317c1a83bb40e7ff7ffb421ca2e4adf3b7469f7",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-validation.json",
+      "mode": "100644",
+      "blob_oid": "702dd088bb941fef06ebd91e082ab8e1f666e4a1",
+      "sha256": "6330b92bc3271f16664e0b55131aaa6816f20aedef9e3bc011dd2ba17ecb86ce",
+      "bytes": 704,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-instance-root-reachability.json",
+      "mode": "100644",
+      "blob_oid": "df3ea37bbb6ddca16cf808c01a8d5b7ccfe26a71",
+      "sha256": "90b3a3be5636342e197af51638ac5455f1f1974223c2955b62b99eacb99c3b5b",
+      "bytes": 4504,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-participating-modules.json",
+      "mode": "100644",
+      "blob_oid": "81c8a5142194e031b1e327b74bba3ca7a97bd8a1",
+      "sha256": "9fec2738c3256769db925e0b98bc162bcc3652aae8908182aa35a1e7ee78d6b9",
+      "bytes": 29899,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-source-coordinate-audit.json",
+      "mode": "100644",
+      "blob_oid": "eb7eba06db46591346f6333a60f727144277581c",
+      "sha256": "e7458862221a00ff62055d94c462e347ade46fc19efc13d7eac284a1b74d5ae3",
+      "bytes": 64356,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/cached32-request.json",
+      "mode": "100644",
+      "blob_oid": "30128d1f3154f6b39d2cc3a7bb1bf9400fe05884",
+      "sha256": "7041a08edbc7393ebf999c960231c1eda63066a95a6e355957be1f9d02bceafa",
+      "bytes": 213873,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/cached32-submit.json",
+      "mode": "100644",
+      "blob_oid": "7a0310df7544d263fd525c47ead938549c99f4f6",
+      "sha256": "1daca7f34a213017689534c324403f4ee0803b81809229a35f180bce8943f651",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/ci-acceptance-progress.json",
+      "mode": "100644",
+      "blob_oid": "915f51b4a4c01d8eb45378c90572a4338db572b5",
+      "sha256": "4dadf2810476a99f22e3fbb7b81ba377ff6056acfd63416ca99de94f815c8cdd",
+      "bytes": 10444,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/compiler-binder-review.json",
+      "mode": "100644",
+      "blob_oid": "f6ae39720251775df2a442c457dd4ad6a1f6c588",
+      "sha256": "a30d0bf54735dca300485391359163bc319bc5dca0dcf5ef0d057e3aa7886167",
+      "bytes": 69936,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/compiler-root-dependency-inventory.json",
+      "mode": "100644",
+      "blob_oid": "c31a015c1dc111fb4bc282f1de2fa208e2e8a804",
+      "sha256": "ea26cde8e714a9a4c2fe96acd5d1d851b195433dbfcb09b467f99d0c9f173400",
+      "bytes": 42207,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/corollary22-timeout-retry.json",
+      "mode": "100644",
+      "blob_oid": "444932eb17e2807f707eba90f026fce206c151da",
+      "sha256": "0d0e5b26e729fb41a7502ba2a24c1a9d8cfb252a80081c2376b9c6ab523658a3",
+      "bytes": 666,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/final-source-readbacks.json",
+      "mode": "100644",
+      "blob_oid": "24900d52ee7959d6fd7c809a17fe27a7518d05bf",
+      "sha256": "dfbf1f18d674d68324325ba6db991c2776f9d80823834ea2f6ad6ab8f0bd30e7",
+      "bytes": 243342,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/hash_header_receipt.py",
+      "mode": "100644",
+      "blob_oid": "84f8ec0885f1bdad1a29cf92fe989d84ac6a4cd0",
+      "sha256": "e6acf031d9fa42ea23e5dadc537c6d6005947ec9b6a82178ee9abcb240254c1a",
+      "bytes": 1876,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/hash_stage2_receipts.py",
+      "mode": "100644",
+      "blob_oid": "11f474072c30c4122d5aadb537ec77e71aaf065c",
+      "sha256": "e010ef356ccc38b2c19afc32491cc46bb65d3b56872e87bc14d1f8d01b983c05",
+      "bytes": 5312,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/header-config.json",
+      "mode": "100644",
+      "blob_oid": "7825b95aad909e3dcce39f78304246157de5dca4",
+      "sha256": "15ad40b5f4d4cbd8ffd326fed45ca68c0e7b9fd9ac4d16f8ed9a9d08c2a4c1cc",
+      "bytes": 1976,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/header-coordinate-review-resolution.json",
+      "mode": "100644",
+      "blob_oid": "02fe2d5ded5f369063de8f079feebbc7fef2d286",
+      "sha256": "14ee7919b07bf3a9cdebfb3076db428583317364f613207e7edf7ca211a234c9",
+      "bytes": 469,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/headers-repair.json",
+      "mode": "100644",
+      "blob_oid": "da79d3bb7288ff9191fef5e22ac61d4457e7aa16",
+      "sha256": "abdc312ad7466b340851e575b0ee18bfdd6036c38b658420e1d895f47b088b2c",
+      "bytes": 328,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/headers-request.json",
+      "mode": "100644",
+      "blob_oid": "f0e55c35139a5e15f9d15f33a3dee8f50aaccda6",
+      "sha256": "39bfd3db34eabbedbe94cb05e4e001bc0a43a72d6ce3533abf0a07688806b685",
+      "bytes": 214560,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/headers-submit.json",
+      "mode": "100644",
+      "blob_oid": "38554396dcde9e389066638ac84050c2625d9245",
+      "sha256": "53b5daba4547fcffd79b876a4c7300c9829d83d48c4f56ffb766ec5cfbe584cb",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/hull-japanese-terminology-evidence.json",
+      "mode": "100644",
+      "blob_oid": "920e0ec650e24801f1291e4db68216a217a3cc72",
+      "sha256": "4ee104846f5b1d154bc6145b7e77a94c4ec5464226265a3eac234a85fa961166",
+      "bytes": 2128,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/independent-c22-graph-review.json",
+      "mode": "100644",
+      "blob_oid": "240f77f4a3414d9432504da42de4d413db9a9aae",
+      "sha256": "0d5d5775ab4701b9b3f6e2a94f8980c1fa5877b5096506f0c50808a2b69b4bc7",
+      "bytes": 36906,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/independent-extraction-review.json",
+      "mode": "100644",
+      "blob_oid": "5461bda1d78f166f43fba0a796e2f525bb8e8217",
+      "sha256": "267552b0dff954b46ef517131908975b552363c3be4eab2c765c2937a87dd4d3",
+      "bytes": 22872,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/independent-generator-review.json",
+      "mode": "100644",
+      "blob_oid": "6f921fabe0e669f6766ab03ce5de6f0e2eb2ef8c",
+      "sha256": "d5bdb3055316da60196129f426af0eec499df014671357f593b7b58e4f18983d",
+      "bytes": 13375,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/independent-log-volume-instance-review.md",
+      "mode": "100644",
+      "blob_oid": "50acfc44d152bcb6f99c2dc6326d59440a8d9829",
+      "sha256": "c6d1f287d62bedfa660af100392364f1a7ae3e203875d1620cd3d10710441780",
+      "bytes": 4319,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/independent-readback-terminology-revision.json",
+      "mode": "100644",
+      "blob_oid": "c8c445ac7c447ed841c642cd5f5bb46002d82f10",
+      "sha256": "a7fa013801a365d3b5e9f6ae3f5affb07bcd0920be837eef88f6764f32d3967d",
+      "bytes": 14728,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/log-volume-config-repair.json",
+      "mode": "100644",
+      "blob_oid": "a2936059e5ee042a49e73fca07f4817fb610dfe4",
+      "sha256": "f7d9892d0121eeaf532dc02a2457997e807ed4948060947f4547057a3931d5a5",
+      "bytes": 564,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/log-volume-instance-repair.json",
+      "mode": "100644",
+      "blob_oid": "fa3df23e514d4460c907312ee545200070cc1a69",
+      "sha256": "51ba78dc7f27934a95d87ed4d02519989d84e4e80f3a55e847edca5d06024490",
+      "bytes": 653,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/make_stage2_config.py",
+      "mode": "100644",
+      "blob_oid": "9b4fc65271a693f2d45a65e877eab10e70fe3c04",
+      "sha256": "b3e07355271f88ce903f558f9c34085fee688ed03c16269a2b92ee1d290913ea",
+      "bytes": 5111,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/original-lean-path.txt",
+      "mode": "100644",
+      "blob_oid": "fd5c9ae80fc7ca8448ccaec837b2275dc7380f6a",
+      "sha256": "83d75dc6b745aedd8fd7b83d3fdea538417fba089f4ef1d282cb633777be227f",
+      "bytes": 1564,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/paper-SOURCE-NOTES.en.md",
+      "mode": "100644",
+      "blob_oid": "556ef3d2b8790593fa6a1fb24576699f24b6834a",
+      "sha256": "d5e967a652889445341a40ae5b8c3d768c26a2ff9d63daad1d4b4b4acfbfcd88",
+      "bytes": 11058,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/paper-pdf-manifest.json",
+      "mode": "100644",
+      "blob_oid": "4cddfb3e51b34ed2edb9f32a9750b8694bc5c622",
+      "sha256": "178492167ecf5140d25139937870e0c4c74d1b2367b8964609508b6f88ef4d56",
+      "bytes": 3094,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/paper-source-descriptions.en.json",
+      "mode": "100644",
+      "blob_oid": "79d8064c673ca65a9c0ae2952fe70f4fb4ecf15e",
+      "sha256": "95e61d0ddbc03e9c001481dde33be034d31127531be52a0541f1ee57b8cb2859",
+      "bytes": 9805,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/plan-checkbox-audit.json",
+      "mode": "100644",
+      "blob_oid": "283868900dfe71d382ffec6492fa607ded534876",
+      "sha256": "166c4e3407b0eeb5c86b28666a191e6b0b6fb3efadf78233307668ac6ae83e95",
+      "bytes": 269,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/plan_reference.py",
+      "mode": "100644",
+      "blob_oid": "180a2fccd374ec3a206744e5b0500b642467409c",
+      "sha256": "18ca1d1de97a09d624fb16b9423d7752f44e09f2d6b9bf91620199f14db6a83f",
+      "bytes": 15986,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-decl-graph.jsonl",
+      "mode": "100644",
+      "blob_oid": "ee52ca191b49897142f1d9599abd0f3e752c827f",
+      "sha256": "edceca49d76d4f88e22ac5e9958fdd6a2733fa8a90b1ac82c1a09446f3c63a83",
+      "bytes": 307748,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-graph-source-receipt.json",
+      "mode": "100644",
+      "blob_oid": "0ca65b1252d067e512f6400872695b37af973ce6",
+      "sha256": "ca52eed1629fc735d2d999864715bb38964bff74ccab0920b06e8853769c9e87",
+      "bytes": 666,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-ChebyshevBound-exists_prime_notMem.json",
+      "mode": "100644",
+      "blob_oid": "e26652880ef8945bc309c4a2682a1b61b073a5af",
+      "sha256": "14a353b14da918a8e2b24f0a804632da7a3892889efd0d8e3bc33577db6bf331",
+      "bytes": 949,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-LocalHeightData-exists_prime_selection.json",
+      "mode": "100644",
+      "blob_oid": "8bb57e658877aaac61d7671c28834ee80cce1e2c",
+      "sha256": "367ba32cbb893af38b3ca4a05e69d60ad98faf0c8842fcb1a74fbd4f475b6638",
+      "bytes": 3189,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-sum_log_primeFactors_le.json",
+      "mode": "100644",
+      "blob_oid": "d12a6d89d4dc8b0209fb9c210d11c365622e3243",
+      "sha256": "88cdfe1e2a4614a5b77b51acff368ddb294d836dd9b37279b4eb48e2f5fa8610",
+      "bytes": 754,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/PrimeSelection.normalized.lean",
+      "mode": "100644",
+      "blob_oid": "6cc802918d95693db3d50186ce42820ce7d01be0",
+      "sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+      "bytes": 18268,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/keywords.jsonl",
+      "mode": "100644",
+      "blob_oid": "0813e4c735860e21fbbd7f77cdeba98d5e536c5d",
+      "sha256": "4f6dbb656961977ae2e7c2145117d1ba4631a4d78cea0615c2af103458793cb0",
+      "bytes": 971,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-source-facts-acceptance.json",
+      "mode": "100644",
+      "blob_oid": "3c13da8d3a38b7844ab95d6329415294f1daf44b",
+      "sha256": "ec4e3b0ed507dfa1121e96cce94087dfff452aa1506de7cdde1647741ac08d49",
+      "bytes": 452,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-source-facts-request.json",
+      "mode": "100644",
+      "blob_oid": "3ab0f90ab2949037259e4ed3df0306272b834f6f",
+      "sha256": "bf6a624f2e29c64fa21cc6decbb7f38a90550b63792f99771868ba6d2293e1af",
+      "bytes": 11695,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-source-facts-result.json",
+      "mode": "100644",
+      "blob_oid": "ff3906fe02977fed33aa2c26980eb017afa65689",
+      "sha256": "bbac4d19e389a2ea65842afd22a3fbeb1e4592c2f430abb245eebffe39709911",
+      "bytes": 33091,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-source-facts-submit.json",
+      "mode": "100644",
+      "blob_oid": "7dae47019b2266c271c3e057b360b6e709d403a5",
+      "sha256": "29521bc3b1e7cb7714e82c099dc03b1ca9c009c5f8862d8dfe86285ff615e64e",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/production-gates-repair.json",
+      "mode": "100644",
+      "blob_oid": "64d4a275a64681e142dff05f423a74c1bc5957a2",
+      "sha256": "269aa2102c579f0e29d0f7e21bd6b2f4ad808f50c2cd55271f0e35028655c3b6",
+      "bytes": 849,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/production-gates-request.json",
+      "mode": "100644",
+      "blob_oid": "0c78b9f5d2c5707327b824ef800e8662e408546b",
+      "sha256": "33c95cb90a738c0b223ef31600e7efc17d4d4ff0fc07581055214886d8c66769",
+      "bytes": 43590,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/production-gates-result.json",
+      "mode": "100644",
+      "blob_oid": "86972de697779ecbf434e0718d385eab99666e90",
+      "sha256": "f3ec10883140e668dcf69457574907e6e8d697f6c581b5cef869b403d30aea19",
+      "bytes": 132312,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/production-gates-submit.json",
+      "mode": "100644",
+      "blob_oid": "e44198d3b5732e42ec292b19125afbfa78e9dcbd",
+      "sha256": "acdae5a93638104b39c323da69b824d7ead56b37cdd7405c815b4d93dfc1e785",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/read-only-cache-links.json",
+      "mode": "100644",
+      "blob_oid": "5af99b23059ac158f3367cf58726e407b1883db3",
+      "sha256": "7fa08f8835311113a9f9a6bd38f68fc718c8ca6611affe6ac0e8f7b22014df67",
+      "bytes": 26218,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/readback-status.json",
+      "mode": "100644",
+      "blob_oid": "fc4fd39b36bb4749bf389e0e96af84c942c973bc",
+      "sha256": "ecb13fc31d763722de42f706b7c6e454c107325bdeee69fcdfbe82fe9bd817d1",
+      "bytes": 996,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/corollary22-c2.json",
+      "mode": "100644",
+      "blob_oid": "abcea98b84a9a71a3b54258b0e7d84241b43043c",
+      "sha256": "d7d4f8e930a2cbbb530ddd53b45f13d3f456332f23898c0a9e4abce31dd3467f",
+      "bytes": 5477,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theorem110.json",
+      "mode": "100644",
+      "blob_oid": "3c908764a48e39cb365695cac1d4dc43a79387a0",
+      "sha256": "5ed77782cde8391222d7196f57fbbaef27a66b448ed6de8b030ab95c0b2e2583",
+      "bytes": 3175,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theta-data-constructor.json",
+      "mode": "100644",
+      "blob_oid": "4b4ed502eb87f4e64b702e9a76a3951e13888b5d",
+      "sha256": "ba44c3301d58cee2ddeb60c827e1508c8d6c999d2e56cf6a132a919079a6df74",
+      "bytes": 8733,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theta-data-existence.json",
+      "mode": "100644",
+      "blob_oid": "d58a5d4f26964978073a34a5abea6983839c0bc1",
+      "sha256": "172a29824b8ddd2f2d86bd53a21f7fbee6864383f14be0120e24ce1b7c8f6b25",
+      "bytes": 1478,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theta-data-field.json",
+      "mode": "100644",
+      "blob_oid": "996ee4cd469883bc40aec422e56f48a85f79bb0a",
+      "sha256": "269a5f8e478de555b816c5fbd742552036b879d19faf77af0a3470c3a194aae9",
+      "bytes": 8998,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/skeleton_subtract.py",
+      "mode": "100644",
+      "blob_oid": "29516087f2f7379828ab41a248ebfd63b8d59f6a",
+      "sha256": "b7f5d05a334915c483fceada96be4e3215be044cc6c91354bf324d7dd7380775",
+      "bytes": 2652,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-build-plan.json",
+      "mode": "100644",
+      "blob_oid": "93b726a89315a69408c34e532391f7d45d87268a",
+      "sha256": "803d3674fa23cf6def0408775cb2869069221be612bbe4962e6012fd9dce463c",
+      "bytes": 7998,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/LogVolume.lean",
+      "mode": "100644",
+      "blob_oid": "6b07b6383779a97ae9550a13d815867a68f79a82",
+      "sha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+      "bytes": 12067,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/RightHandSide.lean",
+      "mode": "100644",
+      "blob_oid": "b171b726f0979d19f3402e12f23810902cba5ec1",
+      "sha256": "112186f17d7ae4829d46909f66bacf7f54607ada490286ba9197b99ede54d12c",
+      "bytes": 5814,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/Statement.lean",
+      "mode": "100644",
+      "blob_oid": "e2682dd048bd4743a5f3cc940eba364f6ab7f5e5",
+      "sha256": "c8a4acda8503dcbbe163a647254ef4b025628c323f3721c9f94ec7f60d375a1f",
+      "bytes": 4515,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Corollary22.lean",
+      "mode": "100644",
+      "blob_oid": "d9f94b6ae199e739a351ea58bf05ab9f69d56e3f",
+      "sha256": "ee2936fcf7c4d85f0e776fc0ce7e96dbdad7cfc2cf6261759358bb6d24af4909",
+      "bytes": 30279,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Invariants.lean",
+      "mode": "100644",
+      "blob_oid": "9c649df224287a484ad6e592deb4753d0db89124",
+      "sha256": "5826090f3a4e8e27fa915a133df4cbcd1b3f42881c00f55b2fe25d8a53e346f1",
+      "bytes": 10134,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/LogVolumeBound.lean",
+      "mode": "100644",
+      "blob_oid": "8cbccf92105373cbd6f568d35b5c69026a6821db",
+      "sha256": "90867d7f5b3181149c51c489d84e34533be3db266683533b3423fbbb20801342",
+      "bytes": 11562,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Theorem110.lean",
+      "mode": "100644",
+      "blob_oid": "4458943923cbf4c9bc537da607a4b74ebca6127d",
+      "sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0",
+      "bytes": 17493,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/lean-toolchain",
+      "mode": "100644",
+      "blob_oid": "f0e00b3338bac0d6f050d9a64e277314a9f7830f",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+      "bytes": 29,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-readbacks-pending-compiler.json",
+      "mode": "100644",
+      "blob_oid": "d602cf38abc96e9d2f65b4b20544c23ec6f7482b",
+      "sha256": "0199ca983ad6c9b3469055f8a04f2f4d3106f7b4304a224a645687e136d15dda",
+      "bytes": 223185,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-readbacks-terminology-resolved-pending-compiler.json",
+      "mode": "100644",
+      "blob_oid": "8537bed620a9d2bd64ff452ae9715d6199cd101f",
+      "sha256": "a090dc8d007db9aaf8ae6384d4e1ef8ad0dbcb70ee6c7308540e11d772175900",
+      "bytes": 226921,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first-config.json",
+      "mode": "100644",
+      "blob_oid": "9d9518efee96c1e43aa2206d30834cba395af9d5",
+      "sha256": "b4d2d8fbdec9bc0ccfc3a41ce64d204bc3b2f26d03ea5767befee5a0e5c8fdb4",
+      "bytes": 640,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first-panic-repair.json",
+      "mode": "100644",
+      "blob_oid": "bd65ed3204b37e450a2e9de578bd14b8dacf9b53",
+      "sha256": "6942641ab1058a7314be82ce1b4fe770c244f3e9f0ef7243c3d8e4a685205c70",
+      "bytes": 853,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first-receipt.json",
+      "mode": "100644",
+      "blob_oid": "cf73eb3a5cd458d4621faf08518978a4edc175f5",
+      "sha256": "0543c1a39d4fbddfeb369ddd6d60b3effab5b6dd59cd1465cd4799a3ba0978c2",
+      "bytes": 2857,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first-request.json",
+      "mode": "100644",
+      "blob_oid": "22c4335566a0547ded0748033089bb7296dad2fb",
+      "sha256": "6cfc231cd59013bd92afb27655682b381cd427aabbaa33d3059b10524c7c999d",
+      "bytes": 11868,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first-result.json",
+      "mode": "100644",
+      "blob_oid": "91f90980e0f6979acebd6c6432782fe2c3402179",
+      "sha256": "0c0cd4695032e6b1469bf949119ec0de6b902bef9467ffccac2be82e837bdf7d",
+      "bytes": 33993,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first-submit.json",
+      "mode": "100644",
+      "blob_oid": "bc3e5985e20014d0f5008b45548b110157d05071",
+      "sha256": "aca1071457ecd71a8256753f669fbcaccbdb3b25dbbf7acc22caa0c69b8a98ce",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first/Iut/Abc/Classical.diagnostics.json",
+      "mode": "100644",
+      "blob_oid": "352369366121b19f06db100709a6a8a7c7579a59",
+      "sha256": "7d98c4d156de5ba8a093384bb96e287c2720bfe578b773cb44d45f2acf49bec3",
+      "bytes": 141,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first/Iut/Abc/Classical.jsonl",
+      "mode": "100644",
+      "blob_oid": "d95a1e8e1a7ea72ee04b7aef76267f3a53619f58",
+      "sha256": "dbdacffd462b8d7168e00f20192b83d4d7f1e64e7f47d470817c330c3b5ae359",
+      "bytes": 208564,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first/Iut/Abc/Classical.normalized.lean",
+      "mode": "100644",
+      "blob_oid": "923f43aab777bfd826be8c1b135809e186f938b3",
+      "sha256": "54c7357892339ea5237238df55933ea39c2a5741e27d0e066168e2c7b094a7cd",
+      "bytes": 7174,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-first/index.json",
+      "mode": "100644",
+      "blob_oid": "a2eb4bf154b474f90ffe540fae46d5cb2f9c9b84",
+      "sha256": "6afe7c239afd92aa61b326c220579390903e0e70f688ad64923142f5531a67cf",
+      "bytes": 1660,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection-config.json",
+      "mode": "100644",
+      "blob_oid": "34e567957d1f419d26b3d5e929bba35a10c5ea9a",
+      "sha256": "f88fad58ac1883699cd27528ae064fc629f17541b9bf9d741836689fc416f860",
+      "bytes": 689,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection-receipt.json",
+      "mode": "100644",
+      "blob_oid": "d4092d715bf49fb5bcb9dbe6ee8e309de2ce646d",
+      "sha256": "5f50fbb1c34699f14f23c718aab49120a4f88eece34dbdcc94bccef6ab13d009",
+      "bytes": 3026,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection-request.json",
+      "mode": "100644",
+      "blob_oid": "b1076bdf04d16af77d678b0ba1fff6c3c4b6da38",
+      "sha256": "faafc1764d21bf96dd98d68b5182cc1297c693b18e7f0e86b1f7db909bfbbeb8",
+      "bytes": 11709,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection-result.json",
+      "mode": "100644",
+      "blob_oid": "47de73b17601ebab582cf4e69b256d1295b4411d",
+      "sha256": "87b099d0a059d5e1a7caf67156a840784bc9e3b2e34b89e0c2f659bd2089792b",
+      "bytes": 32487,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection-submit.json",
+      "mode": "100644",
+      "blob_oid": "28fe91ad24b468da4f84b8390caeece1c3741aa3",
+      "sha256": "821130aa299fa5a6c24fcb8fd403c95a34d382bb8585ca854f9af91908af572d",
+      "bytes": 84,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection/Iut/Implication/PrimeSelection.diagnostics.json",
+      "mode": "100644",
+      "blob_oid": "0ea2761c5c4cb937d7c96494d480315ed954b8a6",
+      "sha256": "42bf4f30b9e1f572cca6958f6ebe293f03ec849bfc4f7002c6660d61daec6d20",
+      "bytes": 168,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection/Iut/Implication/PrimeSelection.jsonl",
+      "mode": "100644",
+      "blob_oid": "ce0891d61c287503e4996df737bd8c69de040cf8",
+      "sha256": "3b41dd33d10401e1b2069bf8af57e5a3aa3acc1c9b2d804bb42d4e18997fd0bc",
+      "bytes": 315633,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection/Iut/Implication/PrimeSelection.normalized.lean",
+      "mode": "100644",
+      "blob_oid": "6cc802918d95693db3d50186ce42820ce7d01be0",
+      "sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+      "bytes": 18268,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/stage2-prime-selection/index.json",
+      "mode": "100644",
+      "blob_oid": "9443d0cae25c045a3838df1aba94216f34e7c266",
+      "sha256": "ebaaf4780d8b5a29173a8ec7b8a3ca6870698e4f286f78eded2a127eaaaf9aaa",
+      "bytes": 1836,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/theorem110-timeout-retry.json",
+      "mode": "100644",
+      "blob_oid": "fc6bdb4aeb401ec61d0a228726b59517b9888f54",
+      "sha256": "fde337f2e4fc037aa15723858713160a7680e7c61897b4942ad4b74cc67d2cc7",
+      "bytes": 793,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/theorem110-transparency-repair.json",
+      "mode": "100644",
+      "blob_oid": "7cbe034022431a845be3dcc6fbb47ac475267e33",
+      "sha256": "d462410d32b8047df58d983bd1d9568e4d0f0bc2907e9e0e3b8e0da1bc055168",
+      "bytes": 814,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/reference-extraction-20261115/user-approved-title-map.json",
+      "mode": "100644",
+      "blob_oid": "a523e150368116edfb20d9b8f29e6a5f5bdac641",
+      "sha256": "39c9d2c5aca921a920044dfa0098d23701dc3a80e340bc44d024a4a889b2bc40",
+      "bytes": 1693,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection.lean",
+      "mode": "100644",
+      "blob_oid": "efeb56f28670f869641b4a3235cbe2ef9d8d565f",
+      "sha256": "1abaf603978b055799618026ec0394e48a6df241e44a4375f596d76ab3a528f6",
+      "bytes": 4097,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean",
+      "mode": "100644",
+      "blob_oid": "067e0e67aa6068471775366e1a5139ee06181f21",
+      "sha256": "7a93274feb64b982871817cad36657028b8b542851bcaa8773ac741c05412a60",
+      "bytes": 3601,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean",
+      "mode": "100644",
+      "blob_oid": "52f09b99829bc4574a9bd1e411a9ca2deefb0b40",
+      "sha256": "3c23079be1157f246ef528016fb97b9a47e33d06438073ac3279ef615460de0a",
+      "bytes": 12714,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean",
+      "mode": "100644",
+      "blob_oid": "7add29a83d23215986def0edde95feddb259bdcd",
+      "sha256": "249b6d6c6d4ebc35fa7dfdfcc4318ae1ca0d637e9191848cff1e0aea251d527a",
+      "bytes": 2462,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean",
+      "mode": "100644",
+      "blob_oid": "13c5a4bbfc17b3dced106e6e91d5f421709a5cdb",
+      "sha256": "2539ec8f5f539a03efaf8b018ca25dced929147b11cbc96735139a384da858b4",
+      "bytes": 2203,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean",
+      "mode": "100644",
+      "blob_oid": "641f2e6a6e66f67135dfaa025a468e6667396f5d",
+      "sha256": "f7c6d6538a93ca978b784ec38255d3a2e8b25de5460a903d995c87a58f10083a",
+      "bytes": 2506,
+      "stage_equals_disk": true
+    },
+    {
+      "path": "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean",
+      "mode": "100644",
+      "blob_oid": "5b13f53db952a180b96b9debc5c65cf67f7079ac",
+      "sha256": "b779219a38fc8d5ed3b97efe7140aa9e6836d3f36c55964b6924f4b691961567",
+      "bytes": 2093,
+      "stage_equals_disk": true
+    }
+  ],
+  "limits": "Attests the exact current 384-file index. Later report/outcome/allowlist additions need their own narrow staged-byte check by the main agent. No new CI or platform verification was performed.",
+  "actions": {
+    "API_calls": 0,
+    "CI_calls": 0,
+    "Git_mutations": 0,
+    "credential_reads": 0,
+    "main_workspace_writes": 0,
+    "Git_read_commands": [
+      "diff --cached --name-only -z",
+      "ls-files --stage -z",
+      "cat-file --batch",
+      "diff --cached --unified=0 -- docs/开发计划.Prove2Me适配.md"
+    ]
+  }
+}

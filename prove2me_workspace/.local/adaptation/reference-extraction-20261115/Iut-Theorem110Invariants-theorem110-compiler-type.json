@@ -1,0 +1,2285 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructors": [],
+  "directTypeDeps": [
+    "Nat",
+    "Real",
+    "instHAdd",
+    "instHDiv",
+    "instHMul",
+    "instOfNatAtLeastTwo",
+    "instOfNatNat",
+    "DivInvMonoid.toDiv",
+    "HAdd.hAdd",
+    "HDiv.hDiv",
+    "HMul.hMul",
+    "Iut.AnabelianGeometry",
+    "Iut.Corollary312Variant",
+    "Iut.Corollary312VariantData",
+    "Iut.PrimeCountingBound",
+    "Iut.TemperedGeometry",
+    "Iut.Theorem110Certificate",
+    "Iut.Theorem110Invariants",
+    "LE.le",
+    "Nat.cast",
+    "Nat.instAtLeastTwoHAddOfNat",
+    "Nat.instNeZeroSucc",
+    "OfNat.ofNat",
+    "One.toOfNat1",
+    "Real.instAdd",
+    "Real.instDivInvMonoid",
+    "Real.instLE",
+    "Real.instMul",
+    "Real.instNatCast",
+    "Real.instOne",
+    "Iut.Corollary312VariantData.data",
+    "Iut.Corollary312VariantData.dmod",
+    "Iut.Corollary312VariantData.qPilot",
+    "Iut.Corollary312VariantData.ℓ",
+    "Iut.PrimeCountingBound.η",
+    "Iut.QPilotData.logQ",
+    "Iut.Theorem110Invariants.LocalEstimate",
+    "Iut.Theorem110Invariants.eStar",
+    "Iut.Theorem110Invariants.logDtpd",
+    "Iut.Theorem110Invariants.logFtpd"
+  ],
+  "directValueDeps": [
+    "AddMonoidWithOne",
+    "Bool",
+    "CommGroupWithZero",
+    "Eq",
+    "Exists",
+    "Fin",
+    "Finset",
+    "GroupWithZero",
+    "Int",
+    "IntermediateField",
+    "Mul",
+    "Nat",
+    "Prod",
+    "Real",
+    "Ring",
+    "Subtype",
+    "True",
+    "cast",
+    "congr",
+    "congrArg",
+    "congrFun'",
+    "congr_arg₂",
+    "div_one",
+    "eq_self",
+    "id",
+    "inferInstance",
+    "instAddNat",
+    "instDistribLatticeOfLinearOrder",
+    "instDistribOfSemiring",
+    "instHAdd",
+    "instHDiv",
+    "instHMul",
+    "instHPow",
+    "instHSub",
+    "instIsCancelMulZero",
+    "instLENat",
+    "instMulNat",
+    "instMulZeroClassOfSemiring",
+    "instNeZeroNatHAdd_1",
+    "instOfNat",
+    "instOfNatAtLeastTwo",
+    "instOfNatNat",
+    "le_div_iff₀",
+    "le_of_lt",
+    "le_of_mul_le_mul_left",
+    "le_of_not_gt",
+    "lt_of_lt_of_le",
+    "lt_of_not_ge",
+    "mul_le_mul",
+    "mul_le_mul_of_nonneg_left",
+    "mul_le_mul_of_nonneg_right",
+    "mul_nonneg",
+    "mul_one",
+    "mul_pos",
+    "ne_of_gt",
+    "neg_eq_zero",
+    "neg_neg_of_pos",
+    "of_decide_eq_true",
+    "of_eq_true",
+    "one_mul",
+    "one_ne_zero",
+    "propext",
+    "rfl",
+    "sub_eq_zero_of_eq",
+    "AddCommGroup.toDivisionAddCommMonoid",
+    "AddCommMonoid.toAddMonoid",
+    "AddCommMonoidWithOne.toAddMonoidWithOne",
+    "AddGroup.toSubNegMonoid",
+    "AddGroupWithOne.toAddGroup",
+    "AddGroupWithOne.toAddMonoidWithOne",
+    "AddMonoid.toAddSemigroup",
+    "AddMonoid.toAddZeroClass",
+    "AddMonoidWithOne.toAddMonoid",
+    "AddMonoidWithOne.toNatCast",
+    "AddMonoidWithOne.toOne",
+    "AddSemigroup.toAdd",
+    "AddZero.toAdd",
+    "AddZeroClass.toAddZero",
+    "Bool.false",
+    "Bool.true",
+    "CommGroupWithZero.toDivisionCommMonoid",
+    "CommGroupWithZero.toGroupWithZero",
+    "CommRing.toNonUnitalCommRing",
+    "CommRing.toRing",
+    "CommSemiring.toSemiring",
+    "Decidable.decide",
+    "Distrib.toAdd",
+    "Distrib.toMul",
+    "DistribLattice.toLattice",
+    "DivInvMonoid.toDiv",
+    "DivInvOneMonoid.toInvOneClass",
+    "DivisionCommMonoid.toDivisionMonoid",
+    "DivisionMonoid.toDivInvOneMonoid",
+    "DivisionRing.toDivInvMonoid",
+    "DivisionRing.toRing",
+    "DivisionSemiring.toGroupWithZero",
+    "DivisionSemiring.toSemiring",
+    "Eq.mp",
+    "Eq.mpr",
+    "Eq.rec",
+    "Eq.refl",
+    "Eq.symm",
+    "Eq.trans",
+    "Exists.casesOn",
+    "Exists.intro",
+    "Field.toCommRing",
+    "Field.toDivisionRing",
+    "Field.toSemifield",
+    "Fin.fintype",
+    "Fin.val",
+    "Finset.instSetLike",
+    "Finset.mul_sum",
+    "Finset.sum",
+    "Finset.sum_add_distrib",
+    "Finset.sum_comm",
+    "Finset.sum_congr",
+    "Finset.sum_div",
+    "Finset.sum_mul",
+    "Finset.sum_nonneg",
+    "Finset.sum_sub_distrib",
+    "Finset.univ",
+    "FloorRing.toFloorSemiring",
+    "FloorSemiring.instCharZero",
+    "GroupWithZero.toDivInvMonoid",
+    "GroupWithZero.toDivisionMonoid",
+    "GroupWithZero.toMonoidWithZero",
+    "GroupWithZero.toNontrivial",
+    "HAdd.hAdd",
+    "HDiv.hDiv",
+    "HMul.hMul",
+    "HPow.hPow",
+    "HSub.hSub",
+    "Iff.mpr",
+    "Int.instDecidableEq",
+    "Int.instNegInt",
+    "Int.mul",
+    "Int.negOfNat",
+    "Int.ofNat",
+    "Int.rawCast",
+    "IntermediateField.instSetLike",
+    "IntermediateField.toField",
+    "Inv.inv",
+    "InvOneClass.toInv",
+    "InvOneClass.toOne",
+    "IsCancelMulZero.toIsLeftCancelMulZero",
+    "IsOrderedAddMonoid.toAddLeftMono",
+    "IsOrderedRing.toMulPosMono",
+    "IsOrderedRing.toPosMulMono",
+    "IsStrictOrderedRing.toMulPosStrictMono",
+    "IsStrictOrderedRing.toPosMulStrictMono",
+    "Iut.AnabelianGeometry",
+    "Iut.Corollary312Variant",
+    "Iut.Corollary312VariantData",
+    "Iut.Place",
+    "Iut.PrimeCountingBound",
+    "Iut.Procession",
+    "Iut.TemperedGeometry",
+    "Iut.Theorem110Certificate",
+    "Iut.Theorem110Invariants",
+    "Iut.assembly",
+    "Iut.log_pi_le_two",
+    "Iut.log_pi_nonneg",
+    "LE.le",
+    "LT.lt",
+    "Lattice.toSemilatticeInf",
+    "LinearOrder.toPartialOrder",
+    "List.nil",
+    "Membership.mem",
+    "Monoid.toNPow",
+    "MonoidWithZero.toMulZeroOneClass",
+    "MulPosReflectLE.toMulPosReflectLT",
+    "MulPosStrictMono.toMulPosReflectLE",
+    "MulZeroClass.toMul",
+    "MulZeroClass.toZero",
+    "MulZeroOneClass.toMulOneClass",
+    "MulZeroOneClass.toMulZeroClass",
+    "NNRat.rawCast",
+    "NPow.toPow",
+    "Nat.ble",
+    "Nat.cast",
+    "Nat.cast_add",
+    "Nat.cast_mul",
+    "Nat.cast_one",
+    "Nat.cast_zero",
+    "Nat.instAddMonoidWithOne",
+    "Nat.instAtLeastTwoHAddOfNat",
+    "Nat.instCommSemiring",
+    "Nat.instNeZeroSucc",
+    "Nat.mul",
+    "Nat.rawCast",
+    "NeZero.one",
+    "Neg.neg",
+    "NegZeroClass.toNeg",
+    "NegZeroClass.toZero",
+    "NonAssocSemiring.toAddCommMonoidWithOne",
+    "NonAssocSemiring.toNonUnitalNonAssocSemiring",
+    "NonUnitalCommRing.toNonUnitalNonAssocCommRing",
+    "NonUnitalNonAssocCommRing.toNonUnitalNonAssocRing",
+    "NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring",
+    "NonUnitalNonAssocSemiring.toAddCommMonoid",
+    "NonUnitalNonAssocSemiring.toDistrib",
+    "Not.intro",
+    "OfNat.ofNat",
+    "One.toOfNat1",
+    "PartialOrder.toPreorder",
+    "PosMulStrictMono.toPosMulReflectLE",
+    "Preorder.toLE",
+    "Preorder.toLT",
+    "Prod.fst",
+    "Prod.mk",
+    "Prod.snd",
+    "Rat.rawCast",
+    "Real.commRing",
+    "Real.instAdd",
+    "Real.instAddCommGroup",
+    "Real.instAddCommMonoid",
+    "Real.instAddGroup",
+    "Real.instAddMonoid",
+    "Real.instCommSemiring",
+    "Real.instDivInvMonoid",
+    "Real.instDivisionRing",
+    "Real.instField",
+    "Real.instFloorRing",
+    "Real.instIsOrderedAddMonoid",
+    "Real.instIsOrderedRing",
+    "Real.instIsStrictOrderedRing",
+    "Real.instLE",
+    "Real.instLT",
+    "Real.instMonoid",
+    "Real.instMul",
+    "Real.instNatCast",
+    "Real.instNeg",
+    "Real.instNontrivial",
+    "Real.instOne",
+    "Real.instPreorder",
+    "Real.instRing",
+    "Real.instSub",
+    "Real.instZero",
+    "Real.instZeroLEOneClass",
+    "Real.linearOrder",
+    "Real.log",
+    "Real.log_le_sub_one_of_pos",
+    "Real.log_nonneg",
+    "Real.partialOrder",
+    "Real.pi",
+    "Real.semiring",
+    "Ring.toAddCommGroup",
+    "Ring.toAddGroupWithOne",
+    "Ring.toSemiring",
+    "Semifield.toCommGroupWithZero",
+    "Semifield.toCommSemiring",
+    "Semifield.toDivisionSemiring",
+    "SemilatticeInf.toPartialOrder",
+    "Semiring.toAddCommMonoid",
+    "Semiring.toMonoid",
+    "Semiring.toNonAssocSemiring",
+    "SetLike.instMembership",
+    "SubNegMonoid.toSub",
+    "SubNegZeroMonoid.toNegZeroClass",
+    "SubtractionCommMonoid.toAddCommMonoid",
+    "SubtractionCommMonoid.toSubtractionMonoid",
+    "SubtractionMonoid.toSubNegMonoid",
+    "SubtractionMonoid.toSubNegZeroMonoid",
+    "Zero.toOfNat0",
+    "Iut.AdmissiblePrimeData.five_le",
+    "Iut.AdmissiblePrimeData.torsionField",
+    "Iut.Capsule.card",
+    "Iut.Corollary312VariantData.data",
+    "Iut.Corollary312VariantData.dmod",
+    "Iut.Corollary312VariantData.logQAt",
+    "Iut.Corollary312VariantData.logQAt_nonneg",
+    "Iut.Corollary312VariantData.lstar",
+    "Iut.Corollary312VariantData.one_le_dmod",
+    "Iut.Corollary312VariantData.qPilot",
+    "Iut.Corollary312VariantData.rhsData",
+    "Iut.Corollary312VariantData.sum_logQAt",
+    "Iut.Corollary312VariantData.ℓ",
+    "Iut.InitialThetaData.E",
+    "Iut.InitialThetaData.F",
+    "Iut.InitialThetaData.Fbar",
+    "Iut.InitialThetaData.VBad",
+    "Iut.InitialThetaData.algebraFbar",
+    "Iut.InitialThetaData.fieldF",
+    "Iut.InitialThetaData.fieldFbar",
+    "Iut.InitialThetaData.isElliptic",
+    "Iut.InitialThetaData.numberFieldF",
+    "Iut.InitialThetaData.numberFieldK",
+    "Iut.InitialThetaData.prime",
+    "Iut.InitialThetaData.ℓ",
+    "Iut.LargeVolumeContainerData.proc",
+    "Iut.PrimeCountingBound.one_lt_η",
+    "Iut.PrimeCountingBound.η",
+    "Iut.Procession.capsule",
+    "Iut.Procession.length",
+    "Iut.Procession.standard",
+    "Iut.Procession.standard_length",
+    "Iut.QPilotData.logQ",
+    "Iut.RHSData.container",
+    "Iut.RHSData.proc_standard",
+    "Iut.RHSData.rhs",
+    "Iut.Theorem110Certificate.bad_mem_dst",
+    "Iut.Theorem110Certificate.seven_le",
+    "Iut.Theorem110Certificate.step_ii",
+    "Iut.Theorem110Certificate.step_iii",
+    "Iut.Theorem110Invariants.LocalEstimate",
+    "Iut.Theorem110Invariants.capsuleBound",
+    "Iut.Theorem110Invariants.dst",
+    "Iut.Theorem110Invariants.eStar",
+    "Iut.Theorem110Invariants.eStar_cast",
+    "Iut.Theorem110Invariants.emod",
+    "Iut.Theorem110Invariants.lmod",
+    "Iut.Theorem110Invariants.lmod_mul_logSle_le",
+    "Iut.Theorem110Invariants.logDK",
+    "Iut.Theorem110Invariants.logDKtot",
+    "Iut.Theorem110Invariants.logDKtot_nonneg",
+    "Iut.Theorem110Invariants.logDtpd",
+    "Iut.Theorem110Invariants.logDtpd_nonneg",
+    "Iut.Theorem110Invariants.logFtpd",
+    "Iut.Theorem110Invariants.logFtpd_nonneg",
+    "Iut.Theorem110Invariants.logSQ",
+    "Iut.Theorem110Invariants.logSQ_nonneg",
+    "Iut.Theorem110Invariants.logSle",
+    "Iut.Theorem110Invariants.logSle_nonneg",
+    "Iut.Theorem110Invariants.one_le_emod",
+    "Iut.Theorem110Invariants.sum_arch",
+    "Iut.Theorem110Invariants.sum_capsuleBound",
+    "Iut.Theorem110Invariants.sum_card_standard",
+    "Iut.Theorem110Invariants.two_mul_lstar_add_one",
+    "Iut.Theorem110Invariants.ι",
+    "LE.le.trans",
+    "LT.lt.le",
+    "Nat.cast_le._simp_1",
+    "Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+    "Mathlib.Meta.NormNum.instAddMonoidWithOne",
+    "Mathlib.Meta.NormNum.instAddMonoidWithOne'",
+    "Mathlib.Meta.NormNum.instAtLeastTwo",
+    "Mathlib.Meta.NormNum.isInt_add",
+    "Mathlib.Meta.NormNum.isInt_mul",
+    "Mathlib.Meta.NormNum.isInt_neg",
+    "Mathlib.Meta.NormNum.isNNRat_div",
+    "Mathlib.Meta.NormNum.isNNRat_inv_pos",
+    "Mathlib.Meta.NormNum.isNNRat_mul",
+    "Mathlib.Meta.NormNum.isNat_add",
+    "Mathlib.Meta.NormNum.isNat_eq_false",
+    "Mathlib.Meta.NormNum.isNat_eq_true",
+    "Mathlib.Meta.NormNum.isNat_le_true",
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_mul",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "Mathlib.Meta.NormNum.isRat_mul",
+    "Mathlib.Meta.NormNum.isRat_neg",
+    "Mathlib.Meta.Positivity.pos_of_isNat",
+    "Mathlib.Tactic.CancelDenoms.add_subst",
+    "Mathlib.Tactic.CancelDenoms.derive_trans",
+    "Mathlib.Tactic.CancelDenoms.div_subst",
+    "Mathlib.Tactic.CancelDenoms.mul_subst",
+    "Mathlib.Tactic.CancelDenoms.neg_subst",
+    "Mathlib.Tactic.CancelDenoms.sub_subst",
+    "Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst",
+    "Mathlib.Tactic.FieldSimp.eq_eq_cancel_eq",
+    "Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul",
+    "Mathlib.Tactic.FieldSimp.subst_add",
+    "Mathlib.Tactic.FieldSimp.zpow'",
+    "Mathlib.Tactic.FieldSimp.zpow'_one",
+    "Mathlib.Tactic.Linarith.add_lt_of_le_of_neg",
+    "Mathlib.Tactic.Linarith.add_lt_of_neg_of_le",
+    "Mathlib.Tactic.Linarith.add_neg",
+    "Mathlib.Tactic.Linarith.eq_of_not_lt_of_not_gt",
+    "Mathlib.Tactic.Linarith.le_of_eq_of_le",
+    "Mathlib.Tactic.Linarith.le_of_le_of_eq",
+    "Mathlib.Tactic.Linarith.lt_irrefl",
+    "Mathlib.Tactic.Linarith.lt_of_eq_of_lt",
+    "Mathlib.Tactic.Linarith.lt_of_lt_of_eq",
+    "Mathlib.Tactic.Linarith.mul_eq",
+    "Mathlib.Tactic.Linarith.mul_neg",
+    "Mathlib.Tactic.Linarith.mul_nonpos",
+    "Mathlib.Tactic.Linarith.sub_neg_of_lt",
+    "Mathlib.Tactic.Linarith.sub_nonpos_of_le",
+    "Mathlib.Tactic.Linarith.zero_lt_one",
+    "Mathlib.Tactic.Ring.cast_pos",
+    "Mathlib.Tactic.Ring.cast_zero",
+    "Mathlib.Tactic.Ring.of_eq",
+    "Mathlib.Meta.NormNum.IsInt.of_raw",
+    "Mathlib.Meta.NormNum.IsInt.to_isNat",
+    "Mathlib.Meta.NormNum.IsInt.to_raw_eq",
+    "Mathlib.Meta.NormNum.IsNNRat.den_nz",
+    "Mathlib.Meta.NormNum.IsNNRat.of_raw",
+    "Mathlib.Meta.NormNum.IsNNRat.to_eq",
+    "Mathlib.Meta.NormNum.IsNNRat.to_isNat",
+    "Mathlib.Meta.NormNum.IsNNRat.to_isRat",
+    "Mathlib.Meta.NormNum.IsNNRat.to_raw_eq",
+    "Mathlib.Meta.NormNum.IsNat.mk",
+    "Mathlib.Meta.NormNum.IsNat.of_raw",
+    "Mathlib.Meta.NormNum.IsNat.to_isInt",
+    "Mathlib.Meta.NormNum.IsNat.to_isNNRat",
+    "Mathlib.Meta.NormNum.IsNat.to_raw_eq",
+    "Mathlib.Meta.NormNum.IsRat.den_nz",
+    "Mathlib.Meta.NormNum.IsRat.of_raw",
+    "Mathlib.Meta.NormNum.IsRat.to_isInt",
+    "Mathlib.Meta.NormNum.IsRat.to_raw_eq",
+    "Mathlib.Tactic.FieldSimp.NF.atom_eq_eval",
+    "Mathlib.Tactic.FieldSimp.NF.cons",
+    "Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div",
+    "Mathlib.Tactic.FieldSimp.NF.cons_ne_zero",
+    "Mathlib.Tactic.FieldSimp.NF.div_eq_eval",
+    "Mathlib.Tactic.FieldSimp.NF.div_eq_eval₁",
+    "Mathlib.Tactic.FieldSimp.NF.div_eq_eval₃",
+    "Mathlib.Tactic.FieldSimp.NF.eval",
+    "Mathlib.Tactic.FieldSimp.NF.eval_cons",
+    "Mathlib.Tactic.FieldSimp.NF.eval_cons_mul_eval",
+    "Mathlib.Tactic.FieldSimp.NF.eval_cons_mul_eval_cons_neg",
+    "Mathlib.Tactic.FieldSimp.NF.eval_cons_of_pow_eq_zero",
+    "Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons",
+    "Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons_zero",
+    "Mathlib.Tactic.FieldSimp.NF.mul_eq_eval",
+    "Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₁",
+    "Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₂",
+    "Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₃",
+    "Mathlib.Tactic.FieldSimp.NF.one_div_eq_eval",
+    "Mathlib.Tactic.FieldSimp.NF.one_eq_eval",
+    "Mathlib.Tactic.Ring.Common.add_congr",
+    "Mathlib.Tactic.Ring.Common.add_mul",
+    "Mathlib.Tactic.Ring.Common.add_overlap_pf",
+    "Mathlib.Tactic.Ring.Common.add_overlap_pf_zero",
+    "Mathlib.Tactic.Ring.Common.add_pf_add_gt",
+    "Mathlib.Tactic.Ring.Common.add_pf_add_lt",
+    "Mathlib.Tactic.Ring.Common.add_pf_add_overlap",
+    "Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero",
+    "Mathlib.Tactic.Ring.Common.add_pf_add_zero",
+    "Mathlib.Tactic.Ring.Common.add_pf_zero_add",
+    "Mathlib.Tactic.Ring.Common.atom_pf",
+    "Mathlib.Tactic.Ring.Common.div_congr",
+    "Mathlib.Tactic.Ring.Common.div_pf",
+    "Mathlib.Tactic.Ring.Common.inv_mul",
+    "Mathlib.Tactic.Ring.Common.inv_single",
+    "Mathlib.Tactic.Ring.Common.mul_add",
+    "Mathlib.Tactic.Ring.Common.mul_congr",
+    "Mathlib.Tactic.Ring.Common.mul_pf_left",
+    "Mathlib.Tactic.Ring.Common.mul_pf_right",
+    "Mathlib.Tactic.Ring.Common.mul_pow_mul",
+    "Mathlib.Tactic.Ring.Common.mul_pp_pf_overlap",
+    "Mathlib.Tactic.Ring.Common.mul_zero",
+    "Mathlib.Tactic.Ring.Common.neg_add",
+    "Mathlib.Tactic.Ring.Common.neg_congr",
+    "Mathlib.Tactic.Ring.Common.neg_mul",
+    "Mathlib.Tactic.Ring.Common.neg_zero",
+    "Mathlib.Tactic.Ring.Common.one_pow",
+    "Mathlib.Tactic.Ring.Common.pow_add",
+    "Mathlib.Tactic.Ring.Common.pow_congr",
+    "Mathlib.Tactic.Ring.Common.pow_zero",
+    "Mathlib.Tactic.Ring.Common.single_pow",
+    "Mathlib.Tactic.Ring.Common.sub_congr",
+    "Mathlib.Tactic.Ring.Common.sub_pf",
+    "Mathlib.Tactic.Ring.Common.zero_mul"
+  ],
+  "elaboratedTelescope": {
+    "binders": [
+      {
+        "binderInfo": "Lean.BinderInfo.implicit",
+        "name": "AG",
+        "type": "Iut.AnabelianGeometry"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.implicit",
+        "name": "TG",
+        "type": "Iut.TemperedGeometry AG"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.implicit",
+        "name": "X",
+        "type": "Iut.Corollary312VariantData AG TG"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.default",
+        "name": "inv",
+        "type": "Iut.Theorem110Invariants X"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.default",
+        "name": "cert",
+        "type": "Iut.Theorem110Certificate inv"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.default",
+        "name": "est",
+        "type": "inv.LocalEstimate"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.default",
+        "name": "pnt",
+        "type": "Iut.PrimeCountingBound"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.default",
+        "name": "h312",
+        "type": "Iut.Corollary312Variant X"
+      }
+    ],
+    "result": "1 / 6 * X.qPilot.logQ ≤ (1 + 20 * ↑X.dmod / ↑X.ℓ) * (inv.logDtpd + inv.logFtpd) + 20 * (↑inv.eStar * ↑X.ℓ + pnt.η)"
+  },
+  "elaboratedType": "∀ {AG : Iut.AnabelianGeometry} {TG : Iut.TemperedGeometry AG} {X : Iut.Corollary312VariantData AG TG}\n  (inv : Iut.Theorem110Invariants X),\n  Iut.Theorem110Certificate inv →\n    ∀ (est : inv.LocalEstimate) (pnt : Iut.PrimeCountingBound),\n      Iut.Corollary312Variant X →\n        1 / 6 * X.qPilot.logQ ≤\n          (1 + 20 * ↑X.dmod / ↑X.ℓ) * (inv.logDtpd + inv.logFtpd) + 20 * (↑inv.eStar * ↑X.ℓ + pnt.η)",
+  "endLine": 331,
+  "externalDependencies": [
+    {
+      "module": "Init.Prelude",
+      "name": "LE.le"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instLE"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "HMul.hMul"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instHMul"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instMul"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "HDiv.hDiv"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instHDiv"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "DivInvMonoid.toDiv"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instDivInvMonoid"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "OfNat.ofNat"
+    },
+    {
+      "module": "Init.Data.Zero",
+      "name": "One.toOfNat1"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instOne"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "instOfNatAtLeastTwo"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instNatCast"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Init",
+      "name": "Nat.instAtLeastTwoHAddOfNat"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Nat"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instOfNatNat"
+    },
+    {
+      "module": "Init.Data.Nat.Basic",
+      "name": "Nat.instNeZeroSucc"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "HAdd.hAdd"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instHAdd"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instAdd"
+    },
+    {
+      "module": "Init.Data.Cast",
+      "name": "Nat.cast"
+    },
+    {
+      "module": "Init.Core",
+      "name": "Exists.casesOn"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Nat"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Eq"
+    },
+    {
+      "module": "Init.Core",
+      "name": "Exists"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "LE.le"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instLE"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "HMul.hMul"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instHMul"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instMul"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "HDiv.hDiv"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instHDiv"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "DivInvMonoid.toDiv"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instDivInvMonoid"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "OfNat.ofNat"
+    },
+    {
+      "module": "Init.Data.Zero",
+      "name": "One.toOfNat1"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instOne"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "instOfNatAtLeastTwo"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instNatCast"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Init",
+      "name": "Nat.instAtLeastTwoHAddOfNat"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instOfNatNat"
+    },
+    {
+      "module": "Init.Data.Nat.Basic",
+      "name": "Nat.instNeZeroSucc"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "HAdd.hAdd"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instHAdd"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instAdd"
+    },
+    {
+      "module": "Init.Data.Cast",
+      "name": "Nat.cast"
+    },
+    {
+      "module": "Init.Core",
+      "name": "Exists.intro"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "rfl"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instAddNat"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instMulNat"
+    },
+    {
+      "module": "Init.Core",
+      "name": "Eq.mpr"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "id"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "congrArg"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Eq.symm"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Semigroup",
+      "name": "AddSemigroup.toAdd"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "AddMonoid.toAddSemigroup"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "AddMonoidWithOne.toAddMonoid"
+    },
+    {
+      "module": "Mathlib.Data.Int.Cast.Defs",
+      "name": "AddGroupWithOne.toAddMonoidWithOne"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Ring.toAddGroupWithOne"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instRing"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Distrib.toMul"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "NonUnitalNonAssocSemiring.toDistrib"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "NonAssocSemiring.toNonUnitalNonAssocSemiring"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.semiring"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "AddMonoidWithOne.toNatCast"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "AddCommMonoidWithOne.toAddMonoidWithOne"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "NonAssocSemiring.toAddCommMonoidWithOne"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "AddMonoidWithOne.toOne"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "congrFun'"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Eq.trans"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "Nat.cast_add"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "congr"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Basic",
+      "name": "Nat.cast_mul"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "Nat.cast_one"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Basic",
+      "name": "Mathlib.Tactic.Ring.of_eq"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Distrib.toAdd"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "instDistribOfSemiring"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "CommSemiring.toSemiring"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instCommSemiring"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Nat.rawCast"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "HPow.hPow"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instHPow"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "NPow.toPow"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "Monoid.toNPow"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Semiring.toMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Nat",
+      "name": "Nat.instCommSemiring"
+    },
+    {
+      "module": "Init.Data.Zero",
+      "name": "Zero.toOfNat0"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "MulZeroClass.toZero"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "instMulZeroClassOfSemiring"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_congr"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.mul_congr"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Basic",
+      "name": "Mathlib.Tactic.Ring.cast_pos"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isNat_ofNat"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Eq.refl"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.instAtLeastTwo"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.atom_pf"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.mul_add"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.mul_pf_right"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNat.to_raw_eq"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isNat_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNat.of_raw"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.mul_zero"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_pf_add_zero"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.zero_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_pf_add_gt"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "cast"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instLENat"
+    },
+    {
+      "module": "Mathlib.Order.Defs.PartialOrder",
+      "name": "Preorder.toLE"
+    },
+    {
+      "module": "Mathlib.Order.Defs.PartialOrder",
+      "name": "PartialOrder.toPreorder"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.partialOrder"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Order.Basic",
+      "name": "Nat.cast_le._simp_1"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Monoid.Defs",
+      "name": "IsOrderedAddMonoid.toAddLeftMono"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instAddCommMonoid"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instPreorder"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instIsOrderedAddMonoid"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instZeroLEOneClass"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Floor.Defs",
+      "name": "FloorSemiring.instCharZero"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Ring.toSemiring"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Floor.Defs",
+      "name": "FloorRing.toFloorSemiring"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.linearOrder"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+      "name": "Real.instFloorRing"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "LT.lt"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instLT"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instZero"
+    },
+    {
+      "module": "Mathlib.Order.Defs.LinearOrder",
+      "name": "lt_of_not_ge"
+    },
+    {
+      "module": "Mathlib.Order.Defs.LinearOrder",
+      "name": "LinearOrder.toPartialOrder"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.lt_irrefl"
+    },
+    {
+      "module": "Init.Core",
+      "name": "Eq.mp"
+    },
+    {
+      "module": "Mathlib.Order.Defs.PartialOrder",
+      "name": "Preorder.toLT"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instAddMonoid"
+    },
+    {
+      "module": "Init.Data.NeZero",
+      "name": "instNeZeroNatHAdd_1"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Neg.neg"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "NegZeroClass.toNeg"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "SubNegZeroMonoid.toNegZeroClass"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Basic",
+      "name": "SubtractionMonoid.toSubNegZeroMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "SubtractionCommMonoid.toSubtractionMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Defs",
+      "name": "AddCommGroup.toDivisionAddCommMonoid"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instAddCommGroup"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "HSub.hSub"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "instHSub"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "SubNegMonoid.toSub"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Defs",
+      "name": "AddGroup.toSubNegMonoid"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instAddGroup"
+    },
+    {
+      "module": "Mathlib.Data.Int.Cast.Defs",
+      "name": "AddGroupWithOne.toAddGroup"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Int.rawCast"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "inferInstance"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Ring"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "CommRing.toRing"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.commRing"
+    },
+    {
+      "module": "Init.Data.Int.Basic",
+      "name": "Int.negOfNat"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.neg_congr"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.neg_add"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsInt.to_raw_eq"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Ring.toAddCommGroup"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isInt_neg"
+    },
+    {
+      "module": "Init.Data.Int.Basic",
+      "name": "Int.ofNat"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNat.to_isInt"
+    },
+    {
+      "module": "Init.Data.Int.Basic",
+      "name": "Int"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.neg_zero"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isInt_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsInt.of_raw"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.sub_congr"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.sub_pf"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.neg_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_pf_add_lt"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_pf_zero_add"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_pf_add_overlap"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isInt_add"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsInt.to_isNat"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_overlap_pf_zero"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Basic",
+      "name": "Mathlib.Tactic.Ring.cast_zero"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "Nat.cast_zero"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.add_lt_of_neg_of_le"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instIsStrictOrderedRing"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.lt_of_lt_of_eq"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.mul_neg"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Group.Defs",
+      "name": "neg_neg_of_pos"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.zero_lt_one"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Ineq",
+      "name": "Mathlib.Meta.NormNum.isNat_lt_true"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instIsOrderedRing"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Bool"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Bool.false"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Basic",
+      "name": "sub_eq_zero_of_eq"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.sub_nonpos_of_le"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.mul_nonpos"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+      "name": "Finset.sum"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Fin"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Subtype"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Membership.mem"
+    },
+    {
+      "module": "Mathlib.FieldTheory.IntermediateField.Basic",
+      "name": "IntermediateField"
+    },
+    {
+      "module": "Mathlib.Basic.SetLike.Basic",
+      "name": "SetLike.instMembership"
+    },
+    {
+      "module": "Mathlib.FieldTheory.IntermediateField.Basic",
+      "name": "IntermediateField.instSetLike"
+    },
+    {
+      "module": "Mathlib.FieldTheory.IntermediateField.Basic",
+      "name": "IntermediateField.toField"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Defs",
+      "name": "Finset.univ"
+    },
+    {
+      "module": "Mathlib.Data.Fintype.Basic",
+      "name": "Fin.fintype"
+    },
+    {
+      "module": "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "name": "Real.log"
+    },
+    {
+      "module": "Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic",
+      "name": "Real.pi"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Fin.val"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instSub"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "AddZero.toAdd"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "AddZeroClass.toAddZero"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "AddMonoid.toAddZeroClass"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "AddCommMonoid.toAddMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_add_distrib"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "SubtractionMonoid.toSubNegMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "SubtractionCommMonoid.toAddCommMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+      "name": "Finset.sum_sub_distrib"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "NonUnitalNonAssocCommRing.toNonUnitalNonAssocRing"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "NonUnitalCommRing.toNonUnitalNonAssocCommRing"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "CommRing.toNonUnitalCommRing"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "NonUnitalNonAssocSemiring.toAddCommMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "name": "Finset.sum_mul"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "GroupWithZero.toDivInvMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "DivisionSemiring.toGroupWithZero"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "Semifield.toDivisionSemiring"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "Field.toSemifield"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instField"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Defs",
+      "name": "Semiring.toAddCommMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "DivisionSemiring.toSemiring"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Field",
+      "name": "Finset.sum_div"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "name": "Finset.mul_sum"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instNeg"
+    },
+    {
+      "module": "Init.SimpLemmas",
+      "name": "of_eq_true"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "True"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.eq_eq_cancel_eq"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "GroupWithZero.toMonoidWithZero"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "CommGroupWithZero.toGroupWithZero"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "Semifield.toCommGroupWithZero"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "IsCancelMulZero.toIsLeftCancelMulZero"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "MulZeroClass.toMul"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "MulZeroOneClass.toMulZeroClass"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "MonoidWithZero.toMulZeroOneClass"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Basic",
+      "name": "instIsCancelMulZero"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.eval"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "List.nil"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Prod"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.cons"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Prod.mk"
+    },
+    {
+      "module": "Init.Data.Int.Basic",
+      "name": "instOfNat"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.atom_eq_eval"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "one_mul"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "MulZeroOneClass.toMulOneClass"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Basic",
+      "name": "DivisionMonoid.toDivInvOneMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "DivisionCommMonoid.toDivisionMonoid"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Units.Basic",
+      "name": "CommGroupWithZero.toDivisionCommMonoid"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Basic",
+      "name": "div_one"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "InvOneClass.toOne"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "DivInvOneMonoid.toInvOneClass"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "CommGroupWithZero"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.zpow'"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Prod.snd"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Prod.fst"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.eval_cons"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.zpow'_one"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "GroupWithZero"
+    },
+    {
+      "module": "Batteries.Logic",
+      "name": "congr_arg₂"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.mul_eq_eval"
+    },
+    {
+      "module": "Init.Data.Int.Basic",
+      "name": "Int.instNegInt"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₃"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "name": "mul_one"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.div_eq_eval"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.div_eq_eval₃"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₂"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons_zero"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.eval_cons_of_pow_eq_zero"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "of_decide_eq_true"
+    },
+    {
+      "module": "Init.Data.Int.Basic",
+      "name": "Int.instDecidableEq"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Decidable.decide"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Bool.true"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Eq",
+      "name": "Mathlib.Meta.NormNum.isNat_eq_false"
+    },
+    {
+      "module": "Mathlib.Order.Defs.PartialOrder",
+      "name": "ne_of_gt"
+    },
+    {
+      "module": "Mathlib.Order.Defs.PartialOrder",
+      "name": "lt_of_lt_of_le"
+    },
+    {
+      "module": "Mathlib.Tactic.Positivity.Core",
+      "name": "Mathlib.Meta.Positivity.pos_of_isNat"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instNontrivial"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Nat.ble"
+    },
+    {
+      "module": "Mathlib.Algebra.NeZero",
+      "name": "one_ne_zero"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.NeZero",
+      "name": "NeZero.one"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Defs",
+      "name": "GroupWithZero.toNontrivial"
+    },
+    {
+      "module": "Init.SimpLemmas",
+      "name": "eq_self"
+    },
+    {
+      "module": "Mathlib.Order.Basic",
+      "name": "LE.le.trans"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_congr"
+    },
+    {
+      "module": "Mathlib.Data.Finset.Defs",
+      "name": "Finset"
+    },
+    {
+      "module": "Mathlib.Data.Finset.Defs",
+      "name": "Finset.instSetLike"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+      "name": "Finset.sum_comm"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Defs",
+      "name": "mul_le_mul_of_nonneg_left"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Ring.Defs",
+      "name": "IsOrderedRing.toPosMulMono"
+    },
+    {
+      "module": "Init.Core",
+      "name": "propext"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Basic",
+      "name": "le_div_iff₀"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Basic",
+      "name": "MulPosReflectLE.toMulPosReflectLT"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Defs",
+      "name": "MulPosStrictMono.toMulPosReflectLE"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Ring.Defs",
+      "name": "IsStrictOrderedRing.toMulPosStrictMono"
+    },
+    {
+      "module": "Mathlib.Order.Defs.PartialOrder",
+      "name": "le_of_lt"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Basic",
+      "name": "mul_pos"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Ring.Defs",
+      "name": "IsStrictOrderedRing.toPosMulStrictMono"
+    },
+    {
+      "module": "Mathlib.Order.Defs.LinearOrder",
+      "name": "le_of_not_gt"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "DivisionRing.toRing"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "Field.toDivisionRing"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "Semifield.toCommSemiring"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Cast.Defs",
+      "name": "AddMonoidWithOne"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Inv.inv"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "InvOneClass.toInv"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instDivisionRing"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.instAddMonoidWithOne"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Rat.rawCast"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "NNRat.rawCast"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.div_congr"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.div_pf"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.inv_single"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.inv_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNNRat.to_raw_eq"
+    },
+    {
+      "module": "Mathlib.Algebra.GroupWithZero.Basic",
+      "name": "GroupWithZero.toDivisionMonoid"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Inv",
+      "name": "Mathlib.Meta.NormNum.isNNRat_inv_pos"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNat.to_isNNRat"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Eq.rec"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isNNRat_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNNRat.of_raw"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNNRat.den_nz"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Nat.mul"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.mul_pf_left"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsRat.to_raw_eq"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isRat_neg"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNNRat.to_isRat"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsRat.to_isInt"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isRat_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsRat.of_raw"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsRat.den_nz"
+    },
+    {
+      "module": "Init.Data.Int.Basic",
+      "name": "Int.mul"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.instAddMonoidWithOne'"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.mul_pp_pf_overlap"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isNat_add"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.add_overlap_pf"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNNRat.to_isNat"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.add_lt_of_le_of_neg"
+    },
+    {
+      "module": "Mathlib.Tactic.CancelDenoms.Core",
+      "name": "Mathlib.Tactic.CancelDenoms.sub_subst"
+    },
+    {
+      "module": "Mathlib.Tactic.CancelDenoms.Core",
+      "name": "Mathlib.Tactic.CancelDenoms.mul_subst"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "Field.toCommRing"
+    },
+    {
+      "module": "Init.Prelude",
+      "name": "Mul"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isNat_eq_true"
+    },
+    {
+      "module": "Mathlib.Tactic.CancelDenoms.Core",
+      "name": "Mathlib.Tactic.CancelDenoms.neg_subst"
+    },
+    {
+      "module": "Mathlib.Tactic.CancelDenoms.Core",
+      "name": "Mathlib.Tactic.CancelDenoms.add_subst"
+    },
+    {
+      "module": "Mathlib.Tactic.CancelDenoms.Core",
+      "name": "Mathlib.Tactic.CancelDenoms.div_subst"
+    },
+    {
+      "module": "Mathlib.Algebra.Field.Defs",
+      "name": "DivisionRing.toDivInvMonoid"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "name": "Mathlib.Meta.NormNum.isNNRat_div"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.sub_neg_of_lt"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Defs",
+      "name": "le_of_mul_le_mul_left"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Defs",
+      "name": "PosMulStrictMono.toPosMulReflectLE"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.eq_of_not_lt_of_not_gt"
+    },
+    {
+      "module": "Init.Core",
+      "name": "Not.intro"
+    },
+    {
+      "module": "Mathlib.Order.Defs.Lattice",
+      "name": "SemilatticeInf.toPartialOrder"
+    },
+    {
+      "module": "Mathlib.Order.Defs.Lattice",
+      "name": "Lattice.toSemilatticeInf"
+    },
+    {
+      "module": "Mathlib.Order.Defs.Lattice",
+      "name": "DistribLattice.toLattice"
+    },
+    {
+      "module": "Mathlib.Order.Lattice",
+      "name": "instDistribLatticeOfLinearOrder"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.lt_of_eq_of_lt"
+    },
+    {
+      "module": "Init.Core",
+      "name": "Iff.mpr"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.DivInvMonoid",
+      "name": "NegZeroClass.toZero"
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Basic",
+      "name": "neg_eq_zero"
+    },
+    {
+      "module": "Mathlib.Basic.Real.Basic",
+      "name": "Real.instMonoid"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.pow_congr"
+    },
+    {
+      "module": "Mathlib.Algebra.Ring.Nat",
+      "name": "Nat.instAddMonoidWithOne"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.pow_add"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.single_pow"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.mul_pow_mul"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.one_pow"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNat.mk"
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Common",
+      "name": "Mathlib.Tactic.Ring.Common.pow_zero"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.le_of_le_of_eq"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.le_of_eq_of_le"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.mul_eq"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+      "name": "Finset.sum_nonneg"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Basic",
+      "name": "mul_nonneg"
+    },
+    {
+      "module": "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "name": "Real.log_nonneg"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Defs",
+      "name": "mul_le_mul"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Ring.Defs",
+      "name": "IsOrderedRing.toMulPosMono"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Ineq",
+      "name": "Mathlib.Meta.NormNum.isNat_le_true"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "name": "Mathlib.Tactic.Linarith.add_neg"
+    },
+    {
+      "module": "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "name": "Real.log_le_sub_one_of_pos"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.GroupWithZero.Defs",
+      "name": "mul_le_mul_of_nonneg_right"
+    },
+    {
+      "module": "Mathlib.Order.Basic",
+      "name": "LT.lt.le"
+    },
+    {
+      "module": "Mathlib.Tactic.CancelDenoms.Core",
+      "name": "Mathlib.Tactic.CancelDenoms.derive_trans"
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "name": "Mathlib.Meta.NormNum.IsNNRat.to_eq"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.subst_add"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.one_eq_eval"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.eval_cons_mul_eval_cons_neg"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.eval_cons_mul_eval"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₁"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.div_eq_eval₁"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.one_div_eq_eval"
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp.Lemmas",
+      "name": "Mathlib.Tactic.FieldSimp.NF.cons_ne_zero"
+    }
+  ],
+  "hasSorryAx": false,
+  "isInstance": false,
+  "isInternal": false,
+  "isPrivate": false,
+  "kind": "theorem",
+  "module": "Iut.Implication.Theorem110",
+  "name": "Iut.Theorem110Invariants.theorem110",
+  "range": {
+    "end": {
+      "col": 16,
+      "line": 331
+    },
+    "endUtf16": 16,
+    "start": {
+      "col": 0,
+      "line": 233
+    },
+    "startUtf16": 0
+  },
+  "record": "decl",
+  "selectionRange": {
+    "end": {
+      "col": 18,
+      "line": 240
+    },
+    "endUtf16": 18,
+    "start": {
+      "col": 8,
+      "line": 240
+    },
+    "startUtf16": 8
+  },
+  "sourceFile": "Iut/Implication/Theorem110.lean",
+  "startLine": 233,
+  "typeDeps": [
+    "Iut.AnabelianGeometry",
+    "Iut.Corollary312Variant",
+    "Iut.Corollary312VariantData",
+    "Iut.PrimeCountingBound",
+    "Iut.TemperedGeometry",
+    "Iut.Theorem110Certificate",
+    "Iut.Theorem110Invariants",
+    "Iut.Corollary312VariantData.data",
+    "Iut.Corollary312VariantData.dmod",
+    "Iut.Corollary312VariantData.qPilot",
+    "Iut.Corollary312VariantData.ℓ",
+    "Iut.PrimeCountingBound.η",
+    "Iut.QPilotData.logQ",
+    "Iut.Theorem110Invariants.LocalEstimate",
+    "Iut.Theorem110Invariants.eStar",
+    "Iut.Theorem110Invariants.logDtpd",
+    "Iut.Theorem110Invariants.logFtpd"
+  ],
+  "userName": "Iut.Theorem110Invariants.theorem110",
+  "valueDeps": [
+    "Iut.AnabelianGeometry",
+    "Iut.Corollary312Variant",
+    "Iut.Corollary312VariantData",
+    "Iut.Place",
+    "Iut.PrimeCountingBound",
+    "Iut.Procession",
+    "Iut.TemperedGeometry",
+    "Iut.Theorem110Certificate",
+    "Iut.Theorem110Invariants",
+    "Iut.assembly",
+    "Iut.log_pi_le_two",
+    "Iut.log_pi_nonneg",
+    "Iut.AdmissiblePrimeData.five_le",
+    "Iut.AdmissiblePrimeData.torsionField",
+    "Iut.Capsule.card",
+    "Iut.Corollary312VariantData.data",
+    "Iut.Corollary312VariantData.dmod",
+    "Iut.Corollary312VariantData.logQAt",
+    "Iut.Corollary312VariantData.logQAt_nonneg",
+    "Iut.Corollary312VariantData.lstar",
+    "Iut.Corollary312VariantData.one_le_dmod",
+    "Iut.Corollary312VariantData.qPilot",
+    "Iut.Corollary312VariantData.rhsData",
+    "Iut.Corollary312VariantData.sum_logQAt",
+    "Iut.Corollary312VariantData.ℓ",
+    "Iut.InitialThetaData.E",
+    "Iut.InitialThetaData.F",
+    "Iut.InitialThetaData.Fbar",
+    "Iut.InitialThetaData.VBad",
+    "Iut.InitialThetaData.algebraFbar",
+    "Iut.InitialThetaData.fieldF",
+    "Iut.InitialThetaData.fieldFbar",
+    "Iut.InitialThetaData.isElliptic",
+    "Iut.InitialThetaData.numberFieldF",
+    "Iut.InitialThetaData.numberFieldK",
+    "Iut.InitialThetaData.prime",
+    "Iut.InitialThetaData.ℓ",
+    "Iut.LargeVolumeContainerData.proc",
+    "Iut.PrimeCountingBound.one_lt_η",
+    "Iut.PrimeCountingBound.η",
+    "Iut.Procession.capsule",
+    "Iut.Procession.length",
+    "Iut.Procession.standard",
+    "Iut.Procession.standard_length",
+    "Iut.QPilotData.logQ",
+    "Iut.RHSData.container",
+    "Iut.RHSData.proc_standard",
+    "Iut.RHSData.rhs",
+    "Iut.Theorem110Certificate.bad_mem_dst",
+    "Iut.Theorem110Certificate.seven_le",
+    "Iut.Theorem110Certificate.step_ii",
+    "Iut.Theorem110Certificate.step_iii",
+    "Iut.Theorem110Invariants.LocalEstimate",
+    "Iut.Theorem110Invariants.capsuleBound",
+    "Iut.Theorem110Invariants.dst",
+    "Iut.Theorem110Invariants.eStar",
+    "Iut.Theorem110Invariants.eStar_cast",
+    "Iut.Theorem110Invariants.emod",
+    "Iut.Theorem110Invariants.lmod",
+    "Iut.Theorem110Invariants.lmod_mul_logSle_le",
+    "Iut.Theorem110Invariants.logDK",
+    "Iut.Theorem110Invariants.logDKtot",
+    "Iut.Theorem110Invariants.logDKtot_nonneg",
+    "Iut.Theorem110Invariants.logDtpd",
+    "Iut.Theorem110Invariants.logDtpd_nonneg",
+    "Iut.Theorem110Invariants.logFtpd",
+    "Iut.Theorem110Invariants.logFtpd_nonneg",
+    "Iut.Theorem110Invariants.logSQ",
+    "Iut.Theorem110Invariants.logSQ_nonneg",
+    "Iut.Theorem110Invariants.logSle",
+    "Iut.Theorem110Invariants.logSle_nonneg",
+    "Iut.Theorem110Invariants.one_le_emod",
+    "Iut.Theorem110Invariants.sum_arch",
+    "Iut.Theorem110Invariants.sum_capsuleBound",
+    "Iut.Theorem110Invariants.sum_card_standard",
+    "Iut.Theorem110Invariants.two_mul_lstar_add_one",
+    "Iut.Theorem110Invariants.ι",
+    "Iut.Theorem110Invariants.LocalEstimate.rhs_le"
+  ]
+}

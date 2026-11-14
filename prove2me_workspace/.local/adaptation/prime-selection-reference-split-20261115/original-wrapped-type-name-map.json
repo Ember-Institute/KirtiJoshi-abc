@@ -1,0 +1,367 @@
+{
+  "schema": "prime-selection-type-name-map-v1",
+  "status": "source-signature-identity-checked-wrapped-kernel-types-pending",
+  "sourceSymbolMap": [
+    {
+      "original": "Iut.ChebyshevBound",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+      "class": "definition-command"
+    },
+    {
+      "original": "Iut.thetaSet",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.thetaSet",
+      "class": "definition-command"
+    },
+    {
+      "original": "Iut.LocalHeightData",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData",
+      "class": "definition-command"
+    },
+    {
+      "original": "Iut.LocalHeightData.height",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.height",
+      "class": "definition-command"
+    },
+    {
+      "original": "Iut.LocalHeightData.deg_mul_height",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.deg_mul_height",
+      "class": "inline-helper",
+      "scope": "Only in listed consuming solution files"
+    },
+    {
+      "original": "Iut.LocalHeightData.height_nonneg",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.height_nonneg",
+      "class": "inline-helper",
+      "scope": "Only in listed consuming solution files"
+    },
+    {
+      "original": "Iut.LocalHeightData.term_nonneg",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.term_nonneg",
+      "class": "inline-helper",
+      "scope": "Only in listed consuming solution files"
+    },
+    {
+      "original": "Iut.log_natCast_nonneg",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.log_natCast_nonneg",
+      "class": "inline-helper",
+      "scope": "Only in listed consuming solution files"
+    },
+    {
+      "original": "Iut.sum_biUnion_le_of_nonneg",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.sum_biUnion_le_of_nonneg",
+      "class": "inline-helper",
+      "scope": "Only in listed consuming solution files"
+    },
+    {
+      "original": "Iut.sum_union_le_of_nonneg",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.sum_union_le_of_nonneg",
+      "class": "inline-helper",
+      "scope": "Only in listed consuming solution files"
+    },
+    {
+      "original": "Iut.thetaSet_nonneg",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.thetaSet_nonneg",
+      "class": "inline-helper",
+      "scope": "Only in listed consuming solution files"
+    },
+    {
+      "original": "Iut.ChebyshevBound.exists_prime_notMem",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+      "class": "theorem-node",
+      "solutionName": "solution"
+    },
+    {
+      "original": "Iut.LocalHeightData.exists_prime_selection",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+      "class": "theorem-node",
+      "solutionName": "solution"
+    },
+    {
+      "original": "Iut.sum_log_primeFactors_le",
+      "expectedWrapped": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+      "class": "theorem-node",
+      "solutionName": "solution"
+    }
+  ],
+  "nodes": [
+    {
+      "originalName": "Iut.ChebyshevBound.exists_prime_notMem",
+      "wrappedTheoremName": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+      "solutionDeclarationName": "solution",
+      "theoremModule": "Theorems.Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem",
+      "solutionModule": "Solutions.Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem",
+      "originalTypeQuery": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-ChebyshevBound-exists_prime_notMem.json",
+      "originalTypeQuerySha256": "14a353b14da918a8e2b24f0a804632da7a3892889efd0d8e3bc33577db6bf331",
+      "originalLevelParamsInKernelOrder": [],
+      "originalElaboratedType": "∀ (cheb : Iut.ChebyshevBound) (A : Finset.{0} ℕ),\n  ∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (Iut.thetaSet A) cheb.ξ))",
+      "originalElaboratedTelescope": {
+        "result": "∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (Iut.thetaSet A) cheb.ξ))",
+        "binders": [
+          {
+            "type": "Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Finset.{0} ℕ",
+            "name": "A",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "originalAxioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "typeProjectConstantRelocations": [
+        {
+          "original": "Iut.ChebyshevBound",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.ChebyshevBound"
+        },
+        {
+          "original": "Iut.thetaSet",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.thetaSet"
+        },
+        {
+          "original": "Iut.ChebyshevBound.ξ",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.ChebyshevBound.ξ"
+        }
+      ],
+      "exactSourceSignatureAfterBinding": " (A : Finset ℕ) :\n    ∃ p : ℕ, p.Prime ∧ p ∉ A ∧ (p : ℝ) ≤ 2 * (thetaSet A + cheb.ξ) ",
+      "exactSourceSignatureSha256": "1c20a7e54ed04a98f7f4bc38bb3701253e971359c79585ad90a644401fcf8c5e",
+      "wrappedFormalStatement": "\ntheorem AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem (A : Finset ℕ) :\n    ∃ p : ℕ, p.Prime ∧ p ∉ A ∧ (p : ℝ) ≤ 2 * (thetaSet A + cheb.ξ) := by\n  sorry",
+      "originalProofSha256": "f8108a450a5ce86f6812a927bd4d5f485cbe15531b7499340fb07bbc7ead0641",
+      "generatedProofSha256": "95ed028b96f52cba5d15dfaadd99981ea162c5d7a79d40f27ee626d5ac110fc8",
+      "referenceRelocations": [
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 66,
+              "line": 125,
+              "offset": 5521
+            },
+            "end": {
+              "col": 84,
+              "line": 125,
+              "offset": 5539
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        }
+      ],
+      "wrappedElaboratedType": null,
+      "typeIdentityStatus": "Exact source signature preserved. Main-agent compiler query must verify the relocated elaborated type on Lean 4.33.1."
+    },
+    {
+      "originalName": "Iut.LocalHeightData.exists_prime_selection",
+      "wrappedTheoremName": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+      "solutionDeclarationName": "solution",
+      "theoremModule": "Theorems.Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection",
+      "solutionModule": "Solutions.Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection",
+      "originalTypeQuery": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-LocalHeightData-exists_prime_selection.json",
+      "originalTypeQuerySha256": "367ba32cbb893af38b3ca4a05e69d60ad98faf0c8842fcb1a74fbd4f475b6638",
+      "originalLevelParamsInKernelOrder": [
+        "u_1"
+      ],
+      "originalElaboratedType": "∀ (L : Iut.LocalHeightData.{u_1}) (cheb : Iut.ChebyshevBound) (δ : ℝ),\n  LE.le.{0} 2 δ →\n    LE.le.{0} (↑(Iut.LocalHeightData.deg.{u_1} L)) δ →\n      LE.le.{0} cheb.ξ √(Iut.LocalHeightData.height.{u_1} L) →\n        ∃ (ℓ : ℕ),\n          Nat.Prime ℓ ∧\n            LE.le.{0} √(Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n              LE.le.{0} (↑ℓ)\n                  (HMul.hMul.{0, 0, 0}\n                    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) √(Iut.LocalHeightData.height.{u_1} L))\n                    (Real.log (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ) (Iut.LocalHeightData.height.{u_1} L)))) ∧\n                (∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n                      ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_1} L v)) ∧\n                  ∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n                      Eq.{1} (Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                        LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_1} L v) √(Iut.LocalHeightData.height.{u_1} L)",
+      "originalElaboratedTelescope": {
+        "result": "∃ (ℓ : ℕ),\n  Nat.Prime ℓ ∧\n    LE.le.{0} √(Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n      LE.le.{0} (↑ℓ)\n          (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) √(Iut.LocalHeightData.height.{u_1} L))\n            (Real.log (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ) (Iut.LocalHeightData.height.{u_1} L)))) ∧\n        (∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n              ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_1} L v)) ∧\n          ∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n              Eq.{1} (Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_1} L v) √(Iut.LocalHeightData.height.{u_1} L)",
+        "binders": [
+          {
+            "type": "Iut.LocalHeightData.{u_1}",
+            "name": "L",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "ℝ",
+            "name": "δ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 2 δ",
+            "name": "hδ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (↑(Iut.LocalHeightData.deg.{u_1} L)) δ",
+            "name": "hdeg",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} cheb.ξ √(Iut.LocalHeightData.height.{u_1} L)",
+            "name": "hξ",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "originalAxioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "typeProjectConstantRelocations": [
+        {
+          "original": "Iut.ChebyshevBound",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.ChebyshevBound"
+        },
+        {
+          "original": "Iut.LocalHeightData",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData"
+        },
+        {
+          "original": "Iut.ChebyshevBound.ξ",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.ChebyshevBound.ξ"
+        },
+        {
+          "original": "Iut.LocalHeightData.bad",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.bad"
+        },
+        {
+          "original": "Iut.LocalHeightData.deg",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.deg"
+        },
+        {
+          "original": "Iut.LocalHeightData.height",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.height"
+        },
+        {
+          "original": "Iut.LocalHeightData.hv",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.hv"
+        },
+        {
+          "original": "Iut.LocalHeightData.p",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.p"
+        },
+        {
+          "original": "Iut.LocalHeightData.ι",
+          "expectedWrapped": "AbcAdaptation.Reference.Iut.LocalHeightData.ι"
+        }
+      ],
+      "exactSourceSignatureAfterBinding": " (cheb : ChebyshevBound) (δ : ℝ) (hδ : 2 ≤ δ)\n    (hdeg : (L.deg : ℝ) ≤ δ) (hξ : cheb.ξ ≤ Real.sqrt L.height) :\n    ∃ ℓ : ℕ, ℓ.Prime ∧ Real.sqrt L.height ≤ ℓ ∧\n      (ℓ : ℝ) ≤ 10 * δ * Real.sqrt L.height * Real.log (2 * δ * L.height) ∧\n      (∀ v ∈ L.bad, ¬ ℓ ∣ L.hv v) ∧\n      (∀ v ∈ L.bad, L.p v = ℓ → (L.hv v : ℝ) < Real.sqrt L.height) ",
+      "exactSourceSignatureSha256": "5dc585d1fef98706872de2d1ea8113c7b48121ca0769847a0c9c234ef94dc45b",
+      "wrappedFormalStatement": "\ntheorem AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection (cheb : ChebyshevBound) (δ : ℝ) (hδ : 2 ≤ δ)\n    (hdeg : (L.deg : ℝ) ≤ δ) (hξ : cheb.ξ ≤ Real.sqrt L.height) :\n    ∃ ℓ : ℕ, ℓ.Prime ∧ Real.sqrt L.height ≤ ℓ ∧\n      (ℓ : ℝ) ≤ 10 * δ * Real.sqrt L.height * Real.log (2 * δ * L.height) ∧\n      (∀ v ∈ L.bad, ¬ ℓ ∣ L.hv v) ∧\n      (∀ v ∈ L.bad, L.p v = ℓ → (L.hv v : ℝ) < Real.sqrt L.height) := by\n  sorry",
+      "originalProofSha256": "be4da9e7aba64291a8fa3edf660739ca70ee03d6e4a4235179189e2c309d0529",
+      "generatedProofSha256": "103372b081cbbe67bb938eafdc5552a18d9cd27426947d504c950fbb45d37f82",
+      "referenceRelocations": [
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 23,
+              "line": 281,
+              "offset": 13009
+            },
+            "end": {
+              "col": 41,
+              "line": 281,
+              "offset": 13027
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 45,
+              "line": 326,
+              "offset": 15792
+            },
+            "end": {
+              "col": 63,
+              "line": 326,
+              "offset": 15810
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 43,
+              "line": 328,
+              "offset": 15910
+            },
+            "end": {
+              "col": 61,
+              "line": 328,
+              "offset": 15928
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 6,
+              "line": 338,
+              "offset": 16394
+            },
+            "end": {
+              "col": 24,
+              "line": 338,
+              "offset": 16412
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        }
+      ],
+      "wrappedElaboratedType": null,
+      "typeIdentityStatus": "Exact source signature preserved. Main-agent compiler query must verify the relocated elaborated type on Lean 4.33.1."
+    },
+    {
+      "originalName": "Iut.sum_log_primeFactors_le",
+      "wrappedTheoremName": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+      "solutionDeclarationName": "solution",
+      "theoremModule": "Theorems.Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le",
+      "solutionModule": "Solutions.Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le",
+      "originalTypeQuery": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-sum_log_primeFactors_le.json",
+      "originalTypeQuerySha256": "88cdfe1e2a4614a5b77b51acff368ddb294d836dd9b37279b4eb48e2f5fa8610",
+      "originalLevelParamsInKernelOrder": [],
+      "originalElaboratedType": "∀ (n : ℕ), Ne.{1} n 0 → LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+      "originalElaboratedTelescope": {
+        "result": "LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+        "binders": [
+          {
+            "type": "ℕ",
+            "name": "n",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Ne.{1} n 0",
+            "name": "hn",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "originalAxioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "typeProjectConstantRelocations": [],
+      "exactSourceSignatureAfterBinding": " (n : ℕ) (hn : n ≠ 0) :\n    ∑ p ∈ n.primeFactors, Real.log p ≤ Real.log n ",
+      "exactSourceSignatureSha256": "79dcba7945645a64bc2f88b29389a7e598f1bb3a8cbd7cf1fe2324917b4ef8a9",
+      "wrappedFormalStatement": "\ntheorem AbcAdaptation.Reference.Iut.sum_log_primeFactors_le (n : ℕ) (hn : n ≠ 0) :\n    ∑ p ∈ n.primeFactors, Real.log p ≤ Real.log n := by\n  sorry",
+      "originalProofSha256": "931aa7339046ab09198f96cf7a918f6e2ad2d9f19e62b39356adc51baa2da6a6",
+      "generatedProofSha256": "931aa7339046ab09198f96cf7a918f6e2ad2d9f19e62b39356adc51baa2da6a6",
+      "referenceRelocations": [],
+      "wrappedElaboratedType": null,
+      "typeIdentityStatus": "Exact source signature preserved. Main-agent compiler query must verify the relocated elaborated type on Lean 4.33.1."
+    }
+  ]
+}

@@ -1,0 +1,865 @@
+{
+  "schema": "p2m-c22-declaration-graph-independent-review-v1",
+  "reviewed_at_utc": "2026-11-14T19:24:50.707986+00:00",
+  "reviewer": "/root/reference_extraction_review",
+  "status": "passed_for_stated_C22_reference_graph_scope; universe_metadata_pending",
+  "scope": "Incremental read-only graph, compiler receipt, source-plan and seven overlay artifact audit. No CI, API, Git or main-workspace writes. Prior 11383 source SHA audit reused; not rerun. No mathematical proof review or platform S204 completion claim.",
+  "counts": {
+    "declarations": 2871,
+    "participating_modules": 96,
+    "modules_with_constants": 94,
+    "kinds": {
+      "def": 769,
+      "theorem": 1987,
+      "inductive": 38,
+      "ctor": 39,
+      "rec": 38
+    },
+    "type_edges": 10011,
+    "value_edges": 12638,
+    "constructor_edges": 39,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "unexpected_axioms": [],
+    "has_sorryAx": false,
+    "unresolved_internal_edges": [],
+    "graph_sha256": "861ad257b5657ac581fcaf138890383fd53caba157ff99fa07a903c0ab03f6ed"
+  },
+  "unique_names": 2871,
+  "duplicate_names": [],
+  "record_kinds": {
+    "manifest": 1,
+    "decl": 2871
+  },
+  "internal_constants": 1134,
+  "private_constants": 437,
+  "modules_without_constants": [
+    "TateCurvesTheta",
+    "TateCurvesTheta.Basic"
+  ],
+  "participating_module_list_matches_graph": true,
+  "participating_matches_nonplatform_header_closure": true,
+  "edge_partition_problems": [],
+  "validation_receipt_mismatches": {},
+  "root_types": {
+    "Iut.ThetaDataExistence": {
+      "kind": "inductive",
+      "module": "Iut.Implication.Corollary22",
+      "elaboratedType": "{T : Genl.HeightTheory} →\n  {AG : Iut.AnabelianGeometry} →\n    {TG : Iut.TemperedGeometry AG} →\n      (Iut.Corollary312VariantData AG TG → Prop) → {K : T.CBS} → {d : ℕ} → Iut.Corollary22Inputs T K d → Prop",
+      "elaboratedTelescope": {
+        "binders": [
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "T",
+            "type": "Genl.HeightTheory"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "AG",
+            "type": "Iut.AnabelianGeometry"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "TG",
+            "type": "Iut.TemperedGeometry AG"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "P",
+            "type": "Iut.Corollary312VariantData AG TG → Prop"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "K",
+            "type": "T.CBS"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "d",
+            "type": "ℕ"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "I",
+            "type": "Iut.Corollary22Inputs T K d"
+          }
+        ],
+        "result": "Prop"
+      },
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hasSorryAx": false,
+      "typeDeps": [
+        "Genl.HeightTheory",
+        "Iut.AnabelianGeometry",
+        "Iut.Corollary22Inputs",
+        "Iut.Corollary312VariantData",
+        "Iut.TemperedGeometry",
+        "Genl.HeightTheory.CBS"
+      ],
+      "constructors": [
+        "Iut.ThetaDataExistence.mk"
+      ]
+    },
+    "Iut.Corollary22Inputs.c2": {
+      "kind": "theorem",
+      "module": "Iut.Implication.Corollary22",
+      "elaboratedType": "∀ {T : Genl.HeightTheory} {AG : Iut.AnabelianGeometry} {TG : Iut.TemperedGeometry AG} {K : T.CBS} {d : ℕ}\n  (I : Iut.Corollary22Inputs T K d) {P : Iut.Corollary312VariantData AG TG → Prop},\n  1 ≤ d →\n    Iut.ThetaDataExistence P I →\n      ∀ (cheb : Iut.ChebyshevBound) (pnt : Iut.PrimeCountingBound),\n        (∀ (X : Iut.Corollary312VariantData AG TG), P X → Iut.Corollary312Variant X) →\n          ∀ x ∈ T.cbsSet K ∩ T.ptLE T.tripod d,\n            x ∉ I.excCore →\n              I.threshold cheb ≤ I.h x →\n                1 / 6 * I.h x ≤\n                    (1 + Iut.epsilonE (Iut.deltaBound d) (I.h x)) * (T.logDiff T.tripod x + T.logCond T.tripod x) +\n                      (40 * pnt.η + I.B / 3) ∧\n                  Iut.epsilonE (Iut.deltaBound d) (I.h x) ≤ 1 ∧ 0 ≤ T.logDiff T.tripod x + T.logCond T.tripod x",
+      "elaboratedTelescope": {
+        "binders": [
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "T",
+            "type": "Genl.HeightTheory"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "AG",
+            "type": "Iut.AnabelianGeometry"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "TG",
+            "type": "Iut.TemperedGeometry AG"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "K",
+            "type": "T.CBS"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "d",
+            "type": "ℕ"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "I",
+            "type": "Iut.Corollary22Inputs T K d"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "P",
+            "type": "Iut.Corollary312VariantData AG TG → Prop"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "hd",
+            "type": "1 ≤ d"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "ex",
+            "type": "Iut.ThetaDataExistence P I"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "cheb",
+            "type": "Iut.ChebyshevBound"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "pnt",
+            "type": "Iut.PrimeCountingBound"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "h312",
+            "type": "∀ (X : Iut.Corollary312VariantData AG TG), P X → Iut.Corollary312Variant X"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "x",
+            "type": "T.Pt T.tripod"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "hx",
+            "type": "x ∈ T.cbsSet K ∩ T.ptLE T.tripod d"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "hxe",
+            "type": "x ∉ I.excCore"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "hH",
+            "type": "I.threshold cheb ≤ I.h x"
+          }
+        ],
+        "result": "1 / 6 * I.h x ≤\n    (1 + Iut.epsilonE (Iut.deltaBound d) (I.h x)) * (T.logDiff T.tripod x + T.logCond T.tripod x) +\n      (40 * pnt.η + I.B / 3) ∧\n  Iut.epsilonE (Iut.deltaBound d) (I.h x) ≤ 1 ∧ 0 ≤ T.logDiff T.tripod x + T.logCond T.tripod x"
+      },
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hasSorryAx": false,
+      "typeDeps": [
+        "Genl.HeightTheory",
+        "Iut.AnabelianGeometry",
+        "Iut.ChebyshevBound",
+        "Iut.Corollary22Inputs",
+        "Iut.Corollary312Variant",
+        "Iut.Corollary312VariantData",
+        "Iut.PrimeCountingBound",
+        "Iut.TemperedGeometry",
+        "Iut.ThetaDataExistence",
+        "Iut.deltaBound",
+        "Iut.epsilonE",
+        "Genl.HeightTheory.CBS",
+        "Genl.HeightTheory.Pt",
+        "Genl.HeightTheory.cbsSet",
+        "Genl.HeightTheory.logCond",
+        "Genl.HeightTheory.logDiff",
+        "Genl.HeightTheory.ptLE",
+        "Genl.HeightTheory.tripod",
+        "Iut.Corollary22Inputs.B",
+        "Iut.Corollary22Inputs.excCore",
+        "Iut.Corollary22Inputs.h",
+        "Iut.Corollary22Inputs.threshold",
+        "Iut.PrimeCountingBound.η"
+      ],
+      "constructors": []
+    },
+    "Iut.Theorem110Invariants.theorem110": {
+      "kind": "theorem",
+      "module": "Iut.Implication.Theorem110",
+      "elaboratedType": "∀ {AG : Iut.AnabelianGeometry} {TG : Iut.TemperedGeometry AG} {X : Iut.Corollary312VariantData AG TG}\n  (inv : Iut.Theorem110Invariants X),\n  Iut.Theorem110Certificate inv →\n    ∀ (est : inv.LocalEstimate) (pnt : Iut.PrimeCountingBound),\n      Iut.Corollary312Variant X →\n        1 / 6 * X.qPilot.logQ ≤\n          (1 + 20 * ↑X.dmod / ↑X.ℓ) * (inv.logDtpd + inv.logFtpd) + 20 * (↑inv.eStar * ↑X.ℓ + pnt.η)",
+      "elaboratedTelescope": {
+        "binders": [
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "AG",
+            "type": "Iut.AnabelianGeometry"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "TG",
+            "type": "Iut.TemperedGeometry AG"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.implicit",
+            "name": "X",
+            "type": "Iut.Corollary312VariantData AG TG"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "inv",
+            "type": "Iut.Theorem110Invariants X"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "cert",
+            "type": "Iut.Theorem110Certificate inv"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "est",
+            "type": "inv.LocalEstimate"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "pnt",
+            "type": "Iut.PrimeCountingBound"
+          },
+          {
+            "binderInfo": "Lean.BinderInfo.default",
+            "name": "h312",
+            "type": "Iut.Corollary312Variant X"
+          }
+        ],
+        "result": "1 / 6 * X.qPilot.logQ ≤ (1 + 20 * ↑X.dmod / ↑X.ℓ) * (inv.logDtpd + inv.logFtpd) + 20 * (↑inv.eStar * ↑X.ℓ + pnt.η)"
+      },
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hasSorryAx": false,
+      "typeDeps": [
+        "Iut.AnabelianGeometry",
+        "Iut.Corollary312Variant",
+        "Iut.Corollary312VariantData",
+        "Iut.PrimeCountingBound",
+        "Iut.TemperedGeometry",
+        "Iut.Theorem110Certificate",
+        "Iut.Theorem110Invariants",
+        "Iut.Corollary312VariantData.data",
+        "Iut.Corollary312VariantData.dmod",
+        "Iut.Corollary312VariantData.qPilot",
+        "Iut.Corollary312VariantData.ℓ",
+        "Iut.PrimeCountingBound.η",
+        "Iut.QPilotData.logQ",
+        "Iut.Theorem110Invariants.LocalEstimate",
+        "Iut.Theorem110Invariants.eStar",
+        "Iut.Theorem110Invariants.logDtpd",
+        "Iut.Theorem110Invariants.logFtpd"
+      ],
+      "constructors": []
+    }
+  },
+  "root_type_limits": "Pretty-printing uses pp.fullNames, pp.funBinderTypes and pp.piBinderTypes but does not enable pp.universes. There are no serialized root levelParams in this graph. Separate level-parameter query is pending; do not infer monomorphism from the displayed types.",
+  "root_dependency_observations": [
+    "theorem110 remains conditional on inv, certificate, LocalEstimate, PrimeCountingBound and Corollary312Variant.",
+    "c2 remains conditional on ThetaDataExistence P I, h312, ChebyshevBound, PrimeCountingBound and explicit point/height hypotheses.",
+    "ThetaDataExistence is an inductive Prop; its constructor edge is retained."
+  ],
+  "receipt": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-result.json",
+    "job_id": "ci-012771-ee109b3e",
+    "status": "succeeded",
+    "exit_code": 0,
+    "task_type": "review",
+    "target": "file",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "parameters": {
+      "source": ".local/adaptation/reference-extraction-20261115/ExtractC22Graph.lean"
+    },
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/reference-extraction-20261115/ExtractC22Graph.lean"
+    ],
+    "arguments_match": true,
+    "exclusive": true,
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_id": null,
+    "review": {
+      "language": "lean",
+      "passed": true,
+      "checks": {
+        "no_sorryAx": true,
+        "assumptions_reported": true
+      },
+      "violations": [],
+      "assumptions": [
+        "'Iut.Theorem110Invariants.theorem110' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'Iut.ThetaDataExistence' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'Iut.Corollary22Inputs.c2' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "diagnostics": [],
+      "output_excerpt": "Extracting 2871 participating constants from 96 modules\nwrote 2871 project constants to /home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-decl-graph.jsonl\n'Iut.Theorem110Invariants.theorem110' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Iut.ThetaDataExistence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Iut.Corollary22Inputs.c2' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 15823491072
+      },
+      "cpu_time_seconds": 332.17999999999995,
+      "peak_rss_bytes": 8849260544,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 197.01,
+      "cpu_system_seconds": 135.17,
+      "wall_time_seconds": 333.42882619999,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "cpu_sum_matches": true,
+    "peak_rss_gib": 8.24151611328125,
+    "peak_pss_status": "unknown",
+    "resource_source": "MCP-CI structured process-tree physical RSS/resources; degraded/source indicator not provided.",
+    "no_user_timeout_override": true,
+    "stdout": "Extracting 2871 participating constants from 96 modules\nwrote 2871 project constants to /home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-decl-graph.jsonl\n'Iut.Theorem110Invariants.theorem110' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Iut.ThetaDataExistence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Iut.Corollary22Inputs.c2' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+    "stderr": "",
+    "diagnostics": []
+  },
+  "input_hash_checks": {
+    "source_sha256": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/ExtractC22Graph.lean",
+      "actual": "997f6fa4efa1174be8c272e369ca3dfe0d0ec3c4c6ebf1f9121f8455dbd7b542",
+      "recorded": "997f6fa4efa1174be8c272e369ca3dfe0d0ec3c4c6ebf1f9121f8455dbd7b542",
+      "matches": true
+    },
+    "source_build_plan_sha256": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-build-plan.json",
+      "actual": "803d3674fa23cf6def0408775cb2869069221be612bbe4962e6012fd9dce463c",
+      "recorded": "803d3674fa23cf6def0408775cb2869069221be612bbe4962e6012fd9dce463c",
+      "matches": true
+    },
+    "participating_modules_sha256": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-participating-modules.json",
+      "actual": "9fec2738c3256769db925e0b98bc162bcc3652aae8908182aa35a1e7ee78d6b9",
+      "recorded": "9fec2738c3256769db925e0b98bc162bcc3652aae8908182aa35a1e7ee78d6b9",
+      "matches": true
+    },
+    "source_import_closure_sha256": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/module-closure-hashes.json",
+      "actual": "d87383ea6e8786cae07237dbdc64c09dd02524866c5c6f4950591d5562bc6e44",
+      "recorded": "d87383ea6e8786cae07237dbdc64c09dd02524866c5c6f4950591d5562bc6e44",
+      "matches": true
+    },
+    "cache_overlay_links_sha256": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/read-only-cache-links.json",
+      "actual": "7fa08f8835311113a9f9a6bd38f68fc718c8ca6611affe6ac0e8f7b22014df67",
+      "recorded": "7fa08f8835311113a9f9a6bd38f68fc718c8ca6611affe6ac0e8f7b22014df67",
+      "matches": true
+    },
+    "external_dependency_manifest_sha256": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/artifact-manifest.json",
+      "actual": "48d1f1c7c894968ff4a60a794cb22d56831d4b6acdc4d611ea70c851b9a01b83",
+      "recorded": "48d1f1c7c894968ff4a60a794cb22d56831d4b6acdc4d611ea70c851b9a01b83",
+      "matches": true
+    }
+  },
+  "source_versions": [
+    {
+      "module": "Iut.Cor312.LogVolume",
+      "original_sha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+      "original_matches_plan": true,
+      "current_sha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+      "current_matches_plan": true,
+      "overlay_artifact_sha256": "0f557e36e83b749f627b69cd9279521b630f92a9ec674bcb8847663b9c3162b3",
+      "artifact_matches_graph_manifest": true,
+      "configuration_mirror": {
+        "insertion_original_offset": 195,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": {
+        "field": "LogVolumeData.componentVol_prime_preimage",
+        "change": "Use the existing packet ring projection via a letI; annotate lambda domain and nat cast target",
+        "new_assumptions": false,
+        "reason": "Lean4.35 elaboration failed to infer the dependent ring instance/cast from original4.32 source syntax"
+      },
+      "receipts": {
+        "leaf": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-leaf-result.json",
+          "job_id": "ci-012606-3dbf7af3",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Cor312/LogVolume.lean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        },
+        "artifact": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-artifact-result.json",
+          "job_id": "ci-012615-0d66b454",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Cor312/LogVolume.lean",
+            "-o",
+            ".lake/build/lib/lean/Iut/Cor312/LogVolume.olean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        }
+      }
+    },
+    {
+      "module": "Iut.Cor312.RightHandSide",
+      "original_sha256": "3bb1a972b8b3d20c06b25a5729507f1317e4d700115642a009224b9618a6a82a",
+      "original_matches_plan": true,
+      "current_sha256": "112186f17d7ae4829d46909f66bacf7f54607ada490286ba9197b99ede54d12c",
+      "current_matches_plan": true,
+      "overlay_artifact_sha256": "ac0b218c51eb2b738984357e116806c2b860a629d854d777764aca419c53ad6d",
+      "artifact_matches_graph_manifest": true,
+      "configuration_mirror": {
+        "insertion_original_offset": 261,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": null,
+      "receipts": {
+        "leaf": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-RightHandSide-leaf-result.json",
+          "job_id": "ci-012621-b2856137",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Cor312/RightHandSide.lean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        },
+        "artifact": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-RightHandSide-artifact-result.json",
+          "job_id": "ci-012627-d92a37a8",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Cor312/RightHandSide.lean",
+            "-o",
+            ".lake/build/lib/lean/Iut/Cor312/RightHandSide.olean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        }
+      }
+    },
+    {
+      "module": "Iut.Cor312.Statement",
+      "original_sha256": "26ae504b38e02d3df5626b2af5850f118a089f176cad9e35b78fc6a96703e44e",
+      "original_matches_plan": true,
+      "current_sha256": "c8a4acda8503dcbbe163a647254ef4b025628c323f3721c9f94ec7f60d375a1f",
+      "current_matches_plan": true,
+      "overlay_artifact_sha256": "c655ce87a51fecc04a65015848f94bd96bd8331b7897ab78694c5d05d806cd45",
+      "artifact_matches_graph_manifest": true,
+      "configuration_mirror": {
+        "insertion_original_offset": 230,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": null,
+      "receipts": {
+        "leaf": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-Statement-leaf-result.json",
+          "job_id": "ci-012631-7c6a3ad1",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Cor312/Statement.lean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        },
+        "artifact": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-Statement-artifact-result.json",
+          "job_id": "ci-012635-cbcbf5b5",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Cor312/Statement.lean",
+            "-o",
+            ".lake/build/lib/lean/Iut/Cor312/Statement.olean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        }
+      }
+    },
+    {
+      "module": "Iut.Implication.Invariants",
+      "original_sha256": "cef53e39e80da02efc741741d70801f167ea34cdf8b5ce87f42f2e28178018a0",
+      "original_matches_plan": true,
+      "current_sha256": "5826090f3a4e8e27fa915a133df4cbcd1b3f42881c00f55b2fe25d8a53e346f1",
+      "current_matches_plan": true,
+      "overlay_artifact_sha256": "f095db62251e67b71625dcfe3c9b3fe0afd918259b8cd4478524241623c8c280",
+      "artifact_matches_graph_manifest": true,
+      "configuration_mirror": {
+        "insertion_original_offset": 195,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": null,
+      "receipts": {
+        "leaf": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Invariants-leaf-result.json",
+          "job_id": "ci-012639-e2a8fbd9",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Implication/Invariants.lean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        },
+        "artifact": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Invariants-artifact-result.json",
+          "job_id": "ci-012644-d7527b95",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Implication/Invariants.lean",
+            "-o",
+            ".lake/build/lib/lean/Iut/Implication/Invariants.olean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        }
+      }
+    },
+    {
+      "module": "Iut.Implication.LogVolumeBound",
+      "original_sha256": "6924a12a53a97620068d01bfc37a7ef74807b001cf26f91bd7ca9f60b7a9f71f",
+      "original_matches_plan": true,
+      "current_sha256": "90867d7f5b3181149c51c489d84e34533be3db266683533b3423fbbb20801342",
+      "current_matches_plan": true,
+      "overlay_artifact_sha256": "a82ca9f0298209908ff1b1247621033b79d41976298c61445ac308b3d31b6d11",
+      "artifact_matches_graph_manifest": true,
+      "configuration_mirror": {
+        "insertion_original_offset": 201,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": null,
+      "receipts": {
+        "leaf": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-LogVolumeBound-leaf-result.json",
+          "job_id": "ci-012651-989e2b73",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Implication/LogVolumeBound.lean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        },
+        "artifact": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-LogVolumeBound-artifact-result.json",
+          "job_id": "ci-012662-9ad1ce2c",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Implication/LogVolumeBound.lean",
+            "-o",
+            ".lake/build/lib/lean/Iut/Implication/LogVolumeBound.olean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        }
+      }
+    },
+    {
+      "module": "Iut.Implication.Theorem110",
+      "original_sha256": "f121c6299e6c5aed8d2904d8342c51c150a7421d3c23aec16ec01eebcf921788",
+      "original_matches_plan": true,
+      "current_sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0",
+      "current_matches_plan": true,
+      "overlay_artifact_sha256": "8085b73729275083eabd393cf67a839bd3efd8216f05c329d433d21c7ae095c5",
+      "artifact_matches_graph_manifest": true,
+      "configuration_mirror": {
+        "insertion_original_offset": 205,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": {
+        "lemma": "sum_card_standard",
+        "change": "Expose the definitionally identical Fin L sum domain; use congrArg f with explicit source cardinality lemma instead of dependent rw",
+        "new_assumptions": false,
+        "statement_changed": false
+      },
+      "receipts": {
+        "leaf": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Theorem110-leaf-result.json",
+          "job_id": "ci-012687-a65b901b",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Implication/Theorem110.lean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        },
+        "artifact": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Theorem110-artifact-result.json",
+          "job_id": "ci-012695-fb0ef629",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Implication/Theorem110.lean",
+            "-o",
+            ".lake/build/lib/lean/Iut/Implication/Theorem110.olean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        }
+      }
+    },
+    {
+      "module": "Iut.Implication.Corollary22",
+      "original_sha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+      "original_matches_plan": true,
+      "current_sha256": "ee2936fcf7c4d85f0e776fc0ce7e96dbdad7cfc2cf6261759358bb6d24af4909",
+      "current_matches_plan": true,
+      "overlay_artifact_sha256": "3d5d0316b8bab43d7a739210f1e628dd9a28ab74e8aae63b3696517b0907e12c",
+      "artifact_matches_graph_manifest": true,
+      "configuration_mirror": {
+        "insertion_original_offset": 261,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": null,
+      "receipts": {
+        "leaf": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Corollary22-leaf-result.json",
+          "job_id": "ci-012718-c37aefd2",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Implication/Corollary22.lean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        },
+        "artifact": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Implication-Corollary22-artifact-result.json",
+          "job_id": "ci-012726-17e3ea69",
+          "status": "succeeded",
+          "source_sha_matches": true,
+          "exit_code": 0,
+          "actual_arguments": [
+            "lean",
+            "Iut/Implication/Corollary22.lean",
+            "-o",
+            ".lake/build/lib/lean/Iut/Implication/Corollary22.olean"
+          ],
+          "exclusive_mode": "exclusive_worktree",
+          "snapshot_id": null
+        }
+      }
+    }
+  ],
+  "source_version_limits": "Current seven overlay sources match their current plan and their successful leaf/artifact receipts. Two files contain declared compatibility edits; these are not byte-identical originals. Current olean hashes match the graph job manifest. Original source hashes remain exact.",
+  "prior_graph_attempts": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v1-heartbeats/c22-graph-result.json",
+      "job_id": "ci-012737-7cf68ce0",
+      "status": "failed",
+      "exit_code": 1,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 8830169088
+        },
+        "cpu_time_seconds": 201.21,
+        "peak_rss_bytes": 8830197760,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 68.06,
+        "cpu_system_seconds": 133.15,
+        "wall_time_seconds": 201.9006401999941,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "failure_category": "Lean deterministic heartbeat exhaustion, not scheduler wall timeout",
+      "diagnostic": ".local/adaptation/reference-extraction-20261115/ExtractC22Graph.lean:54:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached",
+      "scheduler_timeout_observed": false,
+      "complete_compile_time": "unknown because this attempt failed before completion; recorded wall/CPU are actual attempt measurements",
+      "peak_pss": "unknown",
+      "cpu_sum_matches": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v2-heartbeats/c22-graph-result.json",
+      "job_id": "ci-012743-7c69b3fa",
+      "status": "failed",
+      "exit_code": 1,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 13190717440
+        },
+        "cpu_time_seconds": 237.71,
+        "peak_rss_bytes": 8831877120,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 91.59,
+        "cpu_system_seconds": 146.12,
+        "wall_time_seconds": 238.95631069999945,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "failure_category": "Lean deterministic heartbeat exhaustion, not scheduler wall timeout",
+      "diagnostic": ".local/adaptation/reference-extraction-20261115/ExtractC22Graph.lean:54:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached",
+      "scheduler_timeout_observed": false,
+      "complete_compile_time": "unknown because this attempt failed before completion; recorded wall/CPU are actual attempt measurements",
+      "peak_pss": "unknown",
+      "cpu_sum_matches": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/attempts/c22-graph-v3-heartbeats/c22-graph-result.json",
+      "job_id": "ci-012754-b5d9f235",
+      "status": "failed",
+      "exit_code": 1,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 15584493568
+        },
+        "cpu_time_seconds": 252.13,
+        "peak_rss_bytes": 8831299584,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 93.79,
+        "cpu_system_seconds": 158.34,
+        "wall_time_seconds": 253.42438770001172,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      },
+      "failure_category": "Lean deterministic heartbeat exhaustion, not scheduler wall timeout",
+      "diagnostic": ".local/adaptation/reference-extraction-20261115/ExtractC22Graph.lean:54:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached",
+      "scheduler_timeout_observed": false,
+      "complete_compile_time": "unknown because this attempt failed before completion; recorded wall/CPU are actual attempt measurements",
+      "peak_pss": "unknown",
+      "cpu_sum_matches": true
+    }
+  ],
+  "coverage_limits": [
+    "All constants from the 96 explicitly participating C22 source-closure modules are retained, including auxiliaries; exact direct type/value edges include external names.",
+    "Internal graph closure is complete; external library declarations are represented as boundary references and are not recursively exported as declaration rows.",
+    "Only three root types/telescopes are printed; other declaration types are not serialized.",
+    "This is not the full classical-abc reference declaration graph and does not establish platform S204 reduction, domain equivalence, or proof obligation completion."
+  ],
+  "minor_documentation_issue": "ExtractC22Graph.lean header still says Draft, not yet compiled; successful receipt supersedes that stale status wording."
+}

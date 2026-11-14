@@ -1,0 +1,112 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructors": [
+    "Iut.ThetaDataExistence.mk"
+  ],
+  "directTypeDeps": [
+    "Nat",
+    "Genl.HeightTheory",
+    "Iut.AnabelianGeometry",
+    "Iut.Corollary22Inputs",
+    "Iut.Corollary312VariantData",
+    "Iut.TemperedGeometry",
+    "Genl.HeightTheory.CBS"
+  ],
+  "directValueDeps": [],
+  "elaboratedTelescope": {
+    "binders": [
+      {
+        "binderInfo": "Lean.BinderInfo.implicit",
+        "name": "T",
+        "type": "Genl.HeightTheory"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.implicit",
+        "name": "AG",
+        "type": "Iut.AnabelianGeometry"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.implicit",
+        "name": "TG",
+        "type": "Iut.TemperedGeometry AG"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.default",
+        "name": "P",
+        "type": "Iut.Corollary312VariantData AG TG → Prop"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.implicit",
+        "name": "K",
+        "type": "T.CBS"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.implicit",
+        "name": "d",
+        "type": "ℕ"
+      },
+      {
+        "binderInfo": "Lean.BinderInfo.default",
+        "name": "I",
+        "type": "Iut.Corollary22Inputs T K d"
+      }
+    ],
+    "result": "Prop"
+  },
+  "elaboratedType": "{T : Genl.HeightTheory} →\n  {AG : Iut.AnabelianGeometry} →\n    {TG : Iut.TemperedGeometry AG} →\n      (Iut.Corollary312VariantData AG TG → Prop) → {K : T.CBS} → {d : ℕ} → Iut.Corollary22Inputs T K d → Prop",
+  "endLine": 374,
+  "externalDependencies": [
+    {
+      "module": "Init.Prelude",
+      "name": "Nat"
+    }
+  ],
+  "hasSorryAx": false,
+  "isInstance": false,
+  "isInternal": false,
+  "isPrivate": false,
+  "kind": "inductive",
+  "module": "Iut.Implication.Corollary22",
+  "name": "Iut.ThetaDataExistence",
+  "range": {
+    "end": {
+      "col": 59,
+      "line": 374
+    },
+    "endUtf16": 59,
+    "start": {
+      "col": 0,
+      "line": 346
+    },
+    "startUtf16": 0
+  },
+  "record": "decl",
+  "selectionRange": {
+    "end": {
+      "col": 28,
+      "line": 360
+    },
+    "endUtf16": 28,
+    "start": {
+      "col": 10,
+      "line": 360
+    },
+    "startUtf16": 10
+  },
+  "sourceFile": "Iut/Implication/Corollary22.lean",
+  "startLine": 346,
+  "typeDeps": [
+    "Genl.HeightTheory",
+    "Iut.AnabelianGeometry",
+    "Iut.Corollary22Inputs",
+    "Iut.Corollary312VariantData",
+    "Iut.TemperedGeometry",
+    "Genl.HeightTheory.CBS"
+  ],
+  "userName": "Iut.ThetaDataExistence",
+  "valueDeps": []
+}

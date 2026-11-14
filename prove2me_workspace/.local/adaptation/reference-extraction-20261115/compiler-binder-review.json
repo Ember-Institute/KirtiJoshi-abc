@@ -1,0 +1,1417 @@
+{
+  "schema": "p2m.compiler_binder_review.v1",
+  "status": "passed",
+  "reviewed_package": "/tmp/p2m-reference-main-bound-readback-20261115/readbacks.compiler-reviewed.json",
+  "reviewed_package_sha256": "dfbf1f18d674d68324325ba6db991c2776f9d80823834ea2f6ad6ab8f0bd30e7",
+  "original_package_preserved": true,
+  "readback_model_actual": null,
+  "review_basis": "independent comparison of supplied actual compiler telescopes/types with the frozen terminology-revised trilingual read-backs and their formal input definitions",
+  "not_a_faithfulness_or_proof_judgment": true,
+  "new_compilation_or_api_calls_performed": false,
+  "main_workspace_modified": false,
+  "compiler_job_evidence": {
+    "result_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-result.json",
+    "sha256": "9195a0e87434c662c2da293875840c4d7ce7dddcb9a3383d0b003fde03a661f0",
+    "job_id": "ci-012771-ee109b3e",
+    "status": "succeeded",
+    "exit_code": 0,
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree"
+  },
+  "graph_evidence": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-decl-graph.jsonl",
+    "sha256": "861ad257b5657ac581fcaf138890383fd53caba157ff99fa07a903c0ab03f6ed",
+    "validation_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-validation.json",
+    "validation_sha256": "6330b92bc3271f16664e0b55131aaa6816f20aedef9e3bc011dd2ba17ecb86ce",
+    "declarations": 2871,
+    "participating_modules": 96,
+    "unexpected_axioms": [],
+    "has_sorryAx": false,
+    "scope": "Complete declaration graph for the source C22 import closure (96 participating non-Mathlib modules), not the complete classical-abc reference graph or a platform reduction."
+  },
+  "items": [
+    {
+      "declaration": "Iut.Theorem110Invariants.theorem110",
+      "compiler_input": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Theorem110Invariants-theorem110-compiler-type.json",
+        "sha256": "c8ecf2ddadb01421962ea8f770e46d272e896142eb803d64e2892223b5418f46",
+        "name": "Iut.Theorem110Invariants.theorem110",
+        "kind": "theorem",
+        "module": "Iut.Implication.Theorem110",
+        "compiler_sourceFile": "Iut/Implication/Theorem110.lean",
+        "compiler_range": {
+          "end": {
+            "col": 16,
+            "line": 331
+          },
+          "endUtf16": 16,
+          "start": {
+            "col": 0,
+            "line": 233
+          },
+          "startUtf16": 0
+        },
+        "range_status": "compiler-provided metadata for source-project input; not a replacement for original static source span"
+      },
+      "compiler_elaborated_type": "∀ {AG : Iut.AnabelianGeometry} {TG : Iut.TemperedGeometry AG} {X : Iut.Corollary312VariantData AG TG}\n  (inv : Iut.Theorem110Invariants X),\n  Iut.Theorem110Certificate inv →\n    ∀ (est : inv.LocalEstimate) (pnt : Iut.PrimeCountingBound),\n      Iut.Corollary312Variant X →\n        1 / 6 * X.qPilot.logQ ≤\n          (1 + 20 * ↑X.dmod / ↑X.ℓ) * (inv.logDtpd + inv.logFtpd) + 20 * (↑inv.eStar * ↑X.ℓ + pnt.η)",
+      "compiler_result": "1 / 6 * X.qPilot.logQ ≤ (1 + 20 * ↑X.dmod / ↑X.ℓ) * (inv.logDtpd + inv.logFtpd) + 20 * (↑inv.eStar * ↑X.ℓ + pnt.η)",
+      "binder_count": 8,
+      "binder_review": [
+        {
+          "position": 1,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "AG",
+          "type": "Iut.AnabelianGeometry",
+          "coverage_status": "retained",
+          "readback_coverage": "A is universally supplied; its record fields and their conditions are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Iut.AnabelianGeometry.{u}",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 2,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "TG",
+          "type": "Iut.TemperedGeometry AG",
+          "coverage_status": "retained",
+          "readback_coverage": "G is supplied over A; its group/topology/comparison and local operations are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Iut.TemperedGeometry.{u} AG",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 3,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "X",
+          "type": "Iut.Corollary312VariantData AG TG",
+          "coverage_status": "retained",
+          "readback_coverage": "Universal X with InitialThetaData, QPilotData and RHSData; the exact product-of-rings carrier and volume/hull data are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Iut.Corollary312VariantData.{u, v} AG TG",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 4,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "inv",
+          "type": "Iut.Theorem110Invariants X",
+          "coverage_status": "retained",
+          "readback_coverage": "Universal invariant record with m,D0,F0,S,k and all positivity/support constraints.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.Theorem110Invariants.{u, v} X",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 5,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "cert",
+          "type": "Iut.Theorem110Certificate inv",
+          "coverage_status": "retained",
+          "readback_coverage": "Assumed four-field certificate: seven_le, bad_mem_dst, step_ii, step_iii.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.Theorem110Certificate.{u, v} inv",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 6,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "est",
+          "type": "inv.LocalEstimate",
+          "coverage_status": "retained",
+          "readback_coverage": "An actual local-estimate record, with chosen containing sets and all seven field conditions; distinguished from Nonempty in ThetaDataExistence.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.Theorem110Invariants.LocalEstimate.{u, v} inv",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 7,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "pnt",
+          "type": "Iut.PrimeCountingBound",
+          "coverage_status": "retained",
+          "readback_coverage": "Supplied eta>1 with the prime-counting inequality for all t>=eta.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.PrimeCountingBound",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 8,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "h312",
+          "type": "Iut.Corollary312Variant X",
+          "coverage_status": "retained",
+          "readback_coverage": "Assumption Corollary312Variant is expanded as the negative-Qtotal bound against the chosen RHS volume; c2 retains the universal P-restricted implication.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.Corollary312Variant.{u, v} X",
+          "signature_with_universes_matches": true
+        }
+      ],
+      "omitted_top_level_binders": [],
+      "added_top_level_hypotheses": [],
+      "unexpected_top_level_instance_binders": [],
+      "implicit_default_order_match": true,
+      "formula_review": [
+        {
+          "compiler_term": "1 / 6 * X.qPilot.logQ",
+          "readback_term": "Qtotal/6",
+          "status": "equal real expressions"
+        },
+        {
+          "compiler_term": "1 + 20 * ↑X.dmod / ↑X.ℓ",
+          "readback_term": "1+20d0/ell",
+          "status": "preserved; natural-to-real casts retained semantically"
+        },
+        {
+          "compiler_term": "inv.logDtpd + inv.logFtpd",
+          "readback_term": "D0+F0",
+          "status": "preserved; both are supplied nonnegative real fields"
+        },
+        {
+          "compiler_term": "20 * (↑inv.eStar * ↑X.ℓ + pnt.η)",
+          "readback_term": "20(e ell+eta), e=552960m",
+          "status": "preserved"
+        },
+        {
+          "compiler_term": "LE.le over Real",
+          "readback_term": "non-strict ≤",
+          "status": "preserved"
+        }
+      ],
+      "readback_status": {
+        "top_level_binder_match": true,
+        "top_level_result_match": true,
+        "full_universe_match": true,
+        "universe_reason": "Actual ordered levelParams and pp.universes=true query supplied; reviewed package explicitly records the independent height and local-index levels.",
+        "theta_field_compiler_match": "not applicable",
+        "full_compiler_semantic_match": true,
+        "full_compiler_semantic_match_scope": "named root statement; expanded ThetaData field when present; auxiliary-definition semantics remain source-checked"
+      },
+      "axiom_metadata": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "hasSorryAx": false,
+        "assessment_scope": "recorded compiler metadata only, not a mathematical faithfulness judgment"
+      },
+      "readback_revision_required_for_top_level_parameters_or_result": false,
+      "universe_completion": {
+        "status": "passed",
+        "levelParams_in_compiler_order": [
+          "u",
+          "v"
+        ],
+        "ppUniverses": true,
+        "query_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theorem110.json",
+        "query_sha256": "5ed77782cde8391222d7196f57fbbaef27a66b448ed6de8b030ab95c0b2e2583",
+        "universe_map": {
+          "u": "A/AG object and field-data universe",
+          "v": "component ring universe"
+        }
+      },
+      "compiler_universe_displayed_type": "∀ {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry.{u} AG} {X : Iut.Corollary312VariantData.{u, v} AG TG}\n  (inv : Iut.Theorem110Invariants.{u, v} X),\n  Iut.Theorem110Certificate.{u, v} inv →\n    ∀ (est : Iut.Theorem110Invariants.LocalEstimate.{u, v} inv) (pnt : Iut.PrimeCountingBound),\n      Iut.Corollary312Variant.{u, v} X →\n        LE.le.{0} (HMul.hMul.{0, 0, 0} (1 / 6) (Iut.QPilotData.logQ.{u} (Iut.Corollary312VariantData.qPilot.{u, v} X)))\n          (HAdd.hAdd.{0, 0, 0}\n            (HMul.hMul.{0, 0, 0}\n              (HAdd.hAdd.{0, 0, 0} 1\n                (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} 20 ↑(Iut.Corollary312VariantData.dmod.{u, v} X))\n                  ↑(Iut.Corollary312VariantData.ℓ.{u, v} X)))\n              (HAdd.hAdd.{0, 0, 0} (Iut.Theorem110Invariants.logDtpd.{u, v} inv)\n                (Iut.Theorem110Invariants.logFtpd.{u, v} inv)))\n            (HMul.hMul.{0, 0, 0} 20\n              (HAdd.hAdd.{0, 0, 0}\n                (HMul.hMul.{0, 0, 0} ↑(Iut.Theorem110Invariants.eStar.{u, v} inv)\n                  ↑(Iut.Corollary312VariantData.ℓ.{u, v} X))\n                pnt.η)))",
+      "passed": true
+    },
+    {
+      "declaration": "Iut.ThetaDataExistence",
+      "compiler_input": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-ThetaDataExistence-compiler-type.json",
+        "sha256": "986860b1ed296ca41be8de4ca9fbba749e07518a6bdca7b1a36a775a339b6680",
+        "name": "Iut.ThetaDataExistence",
+        "kind": "inductive",
+        "module": "Iut.Implication.Corollary22",
+        "compiler_sourceFile": "Iut/Implication/Corollary22.lean",
+        "compiler_range": {
+          "end": {
+            "col": 59,
+            "line": 374
+          },
+          "endUtf16": 59,
+          "start": {
+            "col": 0,
+            "line": 346
+          },
+          "startUtf16": 0
+        },
+        "range_status": "compiler-provided metadata for source-project input; not a replacement for original static source span"
+      },
+      "compiler_elaborated_type": "{T : Genl.HeightTheory} →\n  {AG : Iut.AnabelianGeometry} →\n    {TG : Iut.TemperedGeometry AG} →\n      (Iut.Corollary312VariantData AG TG → Prop) → {K : T.CBS} → {d : ℕ} → Iut.Corollary22Inputs T K d → Prop",
+      "compiler_result": "Prop",
+      "binder_count": 7,
+      "binder_review": [
+        {
+          "position": 1,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "T",
+          "type": "Genl.HeightTheory",
+          "coverage_status": "retained",
+          "readback_coverage": "Arbitrary HeightTheory with actual abstract curve/point carriers and all record conditions expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Genl.HeightTheory.{u_1}",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 2,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "AG",
+          "type": "Iut.AnabelianGeometry",
+          "coverage_status": "retained",
+          "readback_coverage": "A is universally supplied; its record fields and their conditions are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Iut.AnabelianGeometry.{u}",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 3,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "TG",
+          "type": "Iut.TemperedGeometry AG",
+          "coverage_status": "retained",
+          "readback_coverage": "G is supplied over A; its group/topology/comparison and local operations are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Iut.TemperedGeometry.{u} AG",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 4,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "P",
+          "type": "Iut.Corollary312VariantData AG TG → Prop",
+          "coverage_status": "retained",
+          "readback_coverage": "Arbitrary predicate on all indicated X; kept as a parameter, not replaced by True or an existentially chosen predicate.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.Corollary312VariantData.{u, v} AG TG → Prop",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 5,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "K",
+          "type": "T.CBS",
+          "coverage_status": "retained",
+          "readback_coverage": "Arbitrary K0 in the supplied T.CBS, giving B0=T.cbsSet(K0).",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Genl.HeightTheory.CBS.{u_1} T",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 6,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "d",
+          "type": "ℕ",
+          "coverage_status": "retained",
+          "readback_coverage": "Natural d; ThetaDataExistence includes zero, c2 separately assumes 1<=d.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "ℕ",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 7,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "I",
+          "type": "Iut.Corollary22Inputs T K d",
+          "coverage_status": "retained",
+          "readback_coverage": "Supplied input record for exactly T,K,d; all fields including custom predicates are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.Corollary22Inputs.{u_2, u_1} T K d",
+          "signature_with_universes_matches": true
+        }
+      ],
+      "omitted_top_level_binders": [],
+      "added_top_level_hypotheses": [],
+      "unexpected_top_level_instance_binders": [],
+      "implicit_default_order_match": true,
+      "formula_review": [
+        {
+          "compiler_term": "result Prop",
+          "readback_term": "proposition with a single thetaData field",
+          "status": "compiler-confirmed by actual field and constructor queries"
+        },
+        {
+          "compiler_term": "Iut.ThetaDataExistence.mk",
+          "readback_term": "record proposition, not an existence theorem proved here",
+          "status": "inductive kind and constructor name compiler-confirmed"
+        },
+        {
+          "compiler_term": "thetaData field / mk elaboratedType not supplied",
+          "readback_term": "quantified implication ending in ∃ X inv and nine conjuncts",
+          "status": "compiler-confirmed by theta-data-field.json and theta-data-constructor.json; all inner quantifiers and nine conjuncts retained"
+        }
+      ],
+      "readback_status": {
+        "top_level_binder_match": true,
+        "top_level_result_match": true,
+        "full_universe_match": true,
+        "universe_reason": "Actual ordered levelParams and pp.universes=true query supplied; reviewed package explicitly records the independent height and local-index levels.",
+        "theta_field_compiler_match": true,
+        "full_compiler_semantic_match": true,
+        "full_compiler_semantic_match_scope": "named root statement; expanded ThetaData field when present; auxiliary-definition semantics remain source-checked"
+      },
+      "axiom_metadata": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "hasSorryAx": false,
+        "assessment_scope": "recorded compiler metadata only, not a mathematical faithfulness judgment"
+      },
+      "readback_revision_required_for_top_level_parameters_or_result": false,
+      "universe_completion": {
+        "status": "passed",
+        "levelParams_in_compiler_order": [
+          "u",
+          "v",
+          "u_1",
+          "u_2"
+        ],
+        "ppUniverses": true,
+        "query_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theta-data-existence.json",
+        "query_sha256": "172a29824b8ddd2f2d86bd53a21f7fbee6864383f14be0120e24ce1b7c8f6b25",
+        "universe_map": {
+          "u": "A/AG object and field-data universe",
+          "v": "component ring universe",
+          "u_1": "HeightTheory curve/point/CBS universe",
+          "u_2": "LocalHeightData index universe; w in prior source read-back"
+        }
+      },
+      "compiler_universe_displayed_type": "{T : Genl.HeightTheory.{u_1}} →\n  {AG : Iut.AnabelianGeometry.{u}} →\n    {TG : Iut.TemperedGeometry.{u} AG} →\n      (Iut.Corollary312VariantData.{u, v} AG TG → Prop) →\n        {K : Genl.HeightTheory.CBS.{u_1} T} → {d : ℕ} → Iut.Corollary22Inputs.{u_2, u_1} T K d → Prop",
+      "passed": true
+    },
+    {
+      "declaration": "Iut.Corollary22Inputs.c2",
+      "compiler_input": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Corollary22Inputs-c2-compiler-type.json",
+        "sha256": "f5a84bf63eb36c984bdd9d9a9383bd01540df667ce5478664a3f45ff60123447",
+        "name": "Iut.Corollary22Inputs.c2",
+        "kind": "theorem",
+        "module": "Iut.Implication.Corollary22",
+        "compiler_sourceFile": "Iut/Implication/Corollary22.lean",
+        "compiler_range": {
+          "end": {
+            "col": 87,
+            "line": 557
+          },
+          "endUtf16": 87,
+          "start": {
+            "col": 0,
+            "line": 386
+          },
+          "startUtf16": 0
+        },
+        "range_status": "compiler-provided metadata for source-project input; not a replacement for original static source span"
+      },
+      "compiler_elaborated_type": "∀ {T : Genl.HeightTheory} {AG : Iut.AnabelianGeometry} {TG : Iut.TemperedGeometry AG} {K : T.CBS} {d : ℕ}\n  (I : Iut.Corollary22Inputs T K d) {P : Iut.Corollary312VariantData AG TG → Prop},\n  1 ≤ d →\n    Iut.ThetaDataExistence P I →\n      ∀ (cheb : Iut.ChebyshevBound) (pnt : Iut.PrimeCountingBound),\n        (∀ (X : Iut.Corollary312VariantData AG TG), P X → Iut.Corollary312Variant X) →\n          ∀ x ∈ T.cbsSet K ∩ T.ptLE T.tripod d,\n            x ∉ I.excCore →\n              I.threshold cheb ≤ I.h x →\n                1 / 6 * I.h x ≤\n                    (1 + Iut.epsilonE (Iut.deltaBound d) (I.h x)) * (T.logDiff T.tripod x + T.logCond T.tripod x) +\n                      (40 * pnt.η + I.B / 3) ∧\n                  Iut.epsilonE (Iut.deltaBound d) (I.h x) ≤ 1 ∧ 0 ≤ T.logDiff T.tripod x + T.logCond T.tripod x",
+      "compiler_result": "1 / 6 * I.h x ≤\n    (1 + Iut.epsilonE (Iut.deltaBound d) (I.h x)) * (T.logDiff T.tripod x + T.logCond T.tripod x) +\n      (40 * pnt.η + I.B / 3) ∧\n  Iut.epsilonE (Iut.deltaBound d) (I.h x) ≤ 1 ∧ 0 ≤ T.logDiff T.tripod x + T.logCond T.tripod x",
+      "binder_count": 16,
+      "binder_review": [
+        {
+          "position": 1,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "T",
+          "type": "Genl.HeightTheory",
+          "coverage_status": "retained",
+          "readback_coverage": "Arbitrary HeightTheory with actual abstract curve/point carriers and all record conditions expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Genl.HeightTheory.{u_1}",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 2,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "AG",
+          "type": "Iut.AnabelianGeometry",
+          "coverage_status": "retained",
+          "readback_coverage": "A is universally supplied; its record fields and their conditions are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Iut.AnabelianGeometry.{u}",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 3,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "TG",
+          "type": "Iut.TemperedGeometry AG",
+          "coverage_status": "retained",
+          "readback_coverage": "G is supplied over A; its group/topology/comparison and local operations are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Iut.TemperedGeometry.{u} AG",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 4,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "K",
+          "type": "T.CBS",
+          "coverage_status": "retained",
+          "readback_coverage": "Arbitrary K0 in the supplied T.CBS, giving B0=T.cbsSet(K0).",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Genl.HeightTheory.CBS.{u_1} T",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 5,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "d",
+          "type": "ℕ",
+          "coverage_status": "retained",
+          "readback_coverage": "Natural d; ThetaDataExistence includes zero, c2 separately assumes 1<=d.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "ℕ",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 6,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "I",
+          "type": "Iut.Corollary22Inputs T K d",
+          "coverage_status": "retained",
+          "readback_coverage": "Supplied input record for exactly T,K,d; all fields including custom predicates are expanded.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.Corollary22Inputs.{u_2, u_1} T K d",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 7,
+          "binderInfo": "Lean.BinderInfo.implicit",
+          "name": "P",
+          "type": "Iut.Corollary312VariantData AG TG → Prop",
+          "coverage_status": "retained",
+          "readback_coverage": "Arbitrary predicate on all indicated X; kept as a parameter, not replaced by True or an existentially chosen predicate.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed implicit",
+          "type_with_universes": "Iut.Corollary312VariantData.{u, v} AG TG → Prop",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 8,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "hd",
+          "type": "1 ≤ d",
+          "coverage_status": "retained",
+          "readback_coverage": "Explicit assumption d>=1 in c2.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "LE.le.{0} 1 d",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 9,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "ex",
+          "type": "Iut.ThetaDataExistence P I",
+          "coverage_status": "retained",
+          "readback_coverage": "Assumption of the entire single-field ThetaDataExistence(P,I) condition, expanded before c2.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.ThetaDataExistence.{u, v, u_1, u_2} P I",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 10,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "cheb",
+          "type": "Iut.ChebyshevBound",
+          "coverage_status": "retained",
+          "readback_coverage": "Supplied xi>=5 with lower and upper theta bounds for every t>=xi.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.ChebyshevBound",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 11,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "pnt",
+          "type": "Iut.PrimeCountingBound",
+          "coverage_status": "retained",
+          "readback_coverage": "Supplied eta>1 with the prime-counting inequality for all t>=eta.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Iut.PrimeCountingBound",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 12,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "h312",
+          "type": "∀ (X : Iut.Corollary312VariantData AG TG), P X → Iut.Corollary312Variant X",
+          "coverage_status": "retained",
+          "readback_coverage": "Assumption Corollary312Variant is expanded as the negative-Qtotal bound against the chosen RHS volume; c2 retains the universal P-restricted implication.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "∀ (X : Iut.Corollary312VariantData.{u, v} AG TG), P X → Iut.Corollary312Variant.{u, v} X",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 13,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "x",
+          "type": "T.Pt T.tripod",
+          "coverage_status": "retained",
+          "readback_coverage": "Universal x of actual carrier T.Pt T.tripod, not a silently substituted concrete algebraic-point type.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Genl.HeightTheory.Pt.{u_1} T (Genl.HeightTheory.tripod.{u_1} T)",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 14,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "hx",
+          "type": "x ∈ T.cbsSet K ∩ T.ptLE T.tripod d",
+          "coverage_status": "retained",
+          "readback_coverage": "Membership in the intersection B0 ∩ E_le(t,d); local data may depend on this membership proof.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "Membership.mem.{u_1, u_1}\n  (Inter.inter.{u_1} (Genl.HeightTheory.cbsSet.{u_1} T K)\n    (Genl.HeightTheory.ptLE.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) d))\n  x",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 15,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "hxe",
+          "type": "x ∉ I.excCore",
+          "coverage_status": "retained",
+          "readback_coverage": "x excluded from the supplied Exc set, whose intersection with U is finite.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "x ∉ Iut.Corollary22Inputs.excCore.{u_2, u_1} I",
+          "signature_with_universes_matches": true
+        },
+        {
+          "position": 16,
+          "binderInfo": "Lean.BinderInfo.default",
+          "name": "hH",
+          "type": "I.threshold cheb ≤ I.h x",
+          "coverage_status": "retained",
+          "readback_coverage": "I.threshold cheb<=I.h x; threshold is fully expanded with its nested maxima and fourth powers.",
+          "languages_checked": [
+            "en",
+            "zh-Hans",
+            "ja"
+          ],
+          "signature_matches_static_inventory": true,
+          "implicit_status": "compiler-confirmed default",
+          "type_with_universes": "LE.le.{0} (Iut.Corollary22Inputs.threshold.{u_1, u_2} I cheb) (Iut.Corollary22Inputs.h.{u_2, u_1} I x)",
+          "signature_with_universes_matches": true
+        }
+      ],
+      "omitted_top_level_binders": [],
+      "added_top_level_hypotheses": [],
+      "unexpected_top_level_instance_binders": [],
+      "implicit_default_order_match": true,
+      "formula_review": [
+        {
+          "compiler_term": "1 / 6 * I.h x",
+          "readback_term": "h(x)/6",
+          "status": "equal real expressions"
+        },
+        {
+          "compiler_term": "1 + Iut.epsilonE (Iut.deltaBound d) (I.h x)",
+          "readback_term": "1+eps(delta,h(x)); delta=552960d; eps=(60delta)^2 log(2delta H)/sqrt(H)",
+          "status": "outer expression compiler-confirmed; auxiliary definitions source-confirmed"
+        },
+        {
+          "compiler_term": "T.logDiff T.tripod x + T.logCond T.tripod x",
+          "readback_term": "Diff(x)+Cond(x)",
+          "status": "preserved with actual T.Pt T.tripod carrier"
+        },
+        {
+          "compiler_term": "40 * pnt.η + I.B / 3",
+          "readback_term": "40eta+B/3",
+          "status": "preserved"
+        },
+        {
+          "compiler_term": "main inequality ∧ epsilonE ... ≤ 1 ∧ 0 ≤ logDiff ... + logCond ...",
+          "readback_term": "all three inequalities hold together",
+          "status": "all three conjuncts retained; associativity of conjunction rendered as a three-item conjunction"
+        },
+        {
+          "compiler_term": "I.threshold cheb ≤ I.h x",
+          "readback_term": "A0≤h(x), explicit four-term nested maximum",
+          "status": "outer premise compiler-confirmed; full threshold definition source-confirmed"
+        }
+      ],
+      "readback_status": {
+        "top_level_binder_match": true,
+        "top_level_result_match": true,
+        "full_universe_match": true,
+        "universe_reason": "Actual ordered levelParams and pp.universes=true query supplied; reviewed package explicitly records the independent height and local-index levels.",
+        "theta_field_compiler_match": true,
+        "full_compiler_semantic_match": true,
+        "full_compiler_semantic_match_scope": "named root statement; expanded ThetaData field when present; auxiliary-definition semantics remain source-checked"
+      },
+      "axiom_metadata": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "hasSorryAx": false,
+        "assessment_scope": "recorded compiler metadata only, not a mathematical faithfulness judgment"
+      },
+      "readback_revision_required_for_top_level_parameters_or_result": false,
+      "universe_completion": {
+        "status": "passed",
+        "levelParams_in_compiler_order": [
+          "u",
+          "v",
+          "u_1",
+          "u_2"
+        ],
+        "ppUniverses": true,
+        "query_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/corollary22-c2.json",
+        "query_sha256": "d7d4f8e930a2cbbb530ddd53b45f13d3f456332f23898c0a9e4abce31dd3467f",
+        "universe_map": {
+          "u": "A/AG object and field-data universe",
+          "v": "component ring universe",
+          "u_1": "HeightTheory curve/point/CBS universe",
+          "u_2": "LocalHeightData index universe; w in prior source read-back"
+        }
+      },
+      "compiler_universe_displayed_type": "∀ {T : Genl.HeightTheory.{u_1}} {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry.{u} AG}\n  {K : Genl.HeightTheory.CBS.{u_1} T} {d : ℕ} (I : Iut.Corollary22Inputs.{u_2, u_1} T K d)\n  {P : Iut.Corollary312VariantData.{u, v} AG TG → Prop},\n  LE.le.{0} 1 d →\n    Iut.ThetaDataExistence.{u, v, u_1, u_2} P I →\n      ∀ (cheb : Iut.ChebyshevBound) (pnt : Iut.PrimeCountingBound),\n        (∀ (X : Iut.Corollary312VariantData.{u, v} AG TG), P X → Iut.Corollary312Variant.{u, v} X) →\n          ∀ (x : Genl.HeightTheory.Pt.{u_1} T (Genl.HeightTheory.tripod.{u_1} T)),\n            Membership.mem.{u_1, u_1}\n                (Inter.inter.{u_1} (Genl.HeightTheory.cbsSet.{u_1} T K)\n                  (Genl.HeightTheory.ptLE.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) d))\n                x →\n              x ∉ Iut.Corollary22Inputs.excCore.{u_2, u_1} I →\n                LE.le.{0} (Iut.Corollary22Inputs.threshold.{u_1, u_2} I cheb) (Iut.Corollary22Inputs.h.{u_2, u_1} I x) →\n                  LE.le.{0} (HMul.hMul.{0, 0, 0} (1 / 6) (Iut.Corollary22Inputs.h.{u_2, u_1} I x))\n                      (HAdd.hAdd.{0, 0, 0}\n                        (HMul.hMul.{0, 0, 0}\n                          (HAdd.hAdd.{0, 0, 0} 1\n                            (Iut.epsilonE (Iut.deltaBound d) (Iut.Corollary22Inputs.h.{u_2, u_1} I x)))\n                          (HAdd.hAdd.{0, 0, 0} (Genl.HeightTheory.logDiff.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x)\n                            (Genl.HeightTheory.logCond.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x)))\n                        (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} 40 pnt.η)\n                          (HDiv.hDiv.{0, 0, 0} (Iut.Corollary22Inputs.B.{u_2, u_1} I) 3))) ∧\n                    LE.le.{0} (Iut.epsilonE (Iut.deltaBound d) (Iut.Corollary22Inputs.h.{u_2, u_1} I x)) 1 ∧\n                      LE.le.{0} 0\n                        (HAdd.hAdd.{0, 0, 0} (Genl.HeightTheory.logDiff.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x)\n                          (Genl.HeightTheory.logCond.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x))",
+      "passed": true
+    }
+  ],
+  "theta_field_source_review": {
+    "compiler_field_type_available": true,
+    "field_name": "Iut.ThetaDataExistence.thetaData",
+    "constructor_name": "Iut.ThetaDataExistence.mk",
+    "field_quantifier_order": [
+      "x : T.Pt T.tripod",
+      "hx : x ∈ T.cbsSet K ∩ T.ptLE T.tripod d",
+      "x ∉ I.excCore",
+      "ell : Nat",
+      "ell.Prime",
+      "7 ≤ ell",
+      "∀ v∈bad, ¬ell∣hv(v)",
+      "∀ v∈bad, p(v)=ell → (hv(v):Real)<sqrt(I.h x)",
+      "∃ v∈bad, p(v)≠2 ∧ p(v)≠ell",
+      "I.SL2Image x ell"
+    ],
+    "existentials": [
+      "X : Corollary312VariantData AG TG",
+      "inv : Theorem110Invariants X"
+    ],
+    "conjuncts": [
+      "P X",
+      "Theorem110Certificate inv",
+      "Nonempty inv.LocalEstimate",
+      "X.ell=ell",
+      "X.dmod≤d",
+      "X.qPilot.logQ=(I.localData x hx).heightOther 2 ell",
+      "T.logDiff T.tripod x=inv.logDtpd",
+      "inv.logFtpd≤T.logCond T.tripod x",
+      "T.logCond T.tripod x≤inv.logFtpd+log(2ell)"
+    ],
+    "readback_omissions_detected": [],
+    "source_quantifiers_and_nine_conjuncts_retained": true,
+    "source_review_limitation_previous": "Compiler graph currently stores null elaboratedType for thetaData and mk; no field-level compiler match is claimed.",
+    "status": "passed; actual field and constructor types reviewed",
+    "compiler_field_and_constructor_match": true,
+    "compiler_inner_binder_review": [
+      {
+        "position": 1,
+        "type": "Genl.HeightTheory.Pt.{u_1} T (Genl.HeightTheory.tripod.{u_1} T)",
+        "name": "x",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "Universal x has carrier T.Pt T.tripod at u_1.",
+        "status": "retained; passed"
+      },
+      {
+        "position": 2,
+        "type": "Membership.mem.{u_1, u_1}\n  (Inter.inter.{u_1} (Genl.HeightTheory.cbsSet.{u_1} T K)\n    (Genl.HeightTheory.ptLE.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) d))\n  x",
+        "name": "hx",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "Universal membership proof hx retained; localData depends on it.",
+        "status": "retained; passed"
+      },
+      {
+        "position": 3,
+        "type": "x ∉ Iut.Corollary22Inputs.excCore.{u_2, u_1} I",
+        "name": "a._@._internal._hyg.0",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "Exclusion x∉I.excCore retained before ell.",
+        "status": "retained; passed"
+      },
+      {
+        "position": 4,
+        "type": "ℕ",
+        "name": "ℓ",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "ell ranges over natural numbers.",
+        "status": "retained; passed"
+      },
+      {
+        "position": 5,
+        "type": "Nat.Prime ℓ",
+        "name": "a._@._internal._hyg.0",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "Prime ell assumption retained.",
+        "status": "retained; passed"
+      },
+      {
+        "position": 6,
+        "type": "LE.le.{0} 7 ℓ",
+        "name": "a._@._internal._hyg.0",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "Non-strict 7≤ell retained.",
+        "status": "retained; passed"
+      },
+      {
+        "position": 7,
+        "type": "∀ (v : Iut.LocalHeightData.ι.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)),\n  Membership.mem.{u_2, u_2} (Iut.LocalHeightData.bad.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)) v →\n    ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v)",
+        "name": "a._@._internal._hyg.0",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "Every v in the supplied bad finite subset has ¬ell∣hv(v); underlying v carrier is supplied LocalHeightData.ι at u_2.",
+        "status": "retained; passed"
+      },
+      {
+        "position": 8,
+        "type": "∀ (v : Iut.LocalHeightData.ι.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)),\n  Membership.mem.{u_2, u_2} (Iut.LocalHeightData.bad.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)) v →\n    Eq.{1} (Iut.LocalHeightData.p.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v) ℓ →\n      LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v)\n        √(Iut.Corollary22Inputs.h.{u_2, u_1} I x)",
+        "name": "a._@._internal._hyg.0",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "For every v in bad, p(v)=ell implies the real cast of hv(v) is strictly less than sqrt(I.h x).",
+        "status": "retained; passed"
+      },
+      {
+        "position": 9,
+        "type": "∃ (v : Iut.LocalHeightData.ι.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)),\n  Membership.mem.{u_2, u_2} (Iut.LocalHeightData.bad.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)) v ∧\n    Ne.{1} (Iut.LocalHeightData.p.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v) 2 ∧\n      Ne.{1} (Iut.LocalHeightData.p.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v) ℓ",
+        "name": "a._@._internal._hyg.0",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "There exists v in bad with both p(v)≠2 and p(v)≠ell, same witness for both inequalities.",
+        "status": "retained; passed"
+      },
+      {
+        "position": 10,
+        "type": "Iut.Corollary22Inputs.SL2Image.{u_2, u_1} I x ℓ",
+        "name": "a._@._internal._hyg.0",
+        "binderInfo": "Lean.BinderInfo.default",
+        "readback_coverage": "The supplied abstract I.SL2Image x ell predicate is required; no extra representation definition introduced.",
+        "status": "retained; passed"
+      }
+    ],
+    "compiler_outer_projection_binders": [
+      {
+        "type": "Genl.HeightTheory.{u_1}",
+        "name": "T",
+        "binderInfo": "Lean.BinderInfo.implicit"
+      },
+      {
+        "type": "Iut.AnabelianGeometry.{u}",
+        "name": "AG",
+        "binderInfo": "Lean.BinderInfo.implicit"
+      },
+      {
+        "type": "Iut.TemperedGeometry.{u} AG",
+        "name": "TG",
+        "binderInfo": "Lean.BinderInfo.implicit"
+      },
+      {
+        "type": "Iut.Corollary312VariantData.{u, v} AG TG → Prop",
+        "name": "P",
+        "binderInfo": "Lean.BinderInfo.implicit"
+      },
+      {
+        "type": "Genl.HeightTheory.CBS.{u_1} T",
+        "name": "K",
+        "binderInfo": "Lean.BinderInfo.implicit"
+      },
+      {
+        "type": "ℕ",
+        "name": "d",
+        "binderInfo": "Lean.BinderInfo.implicit"
+      },
+      {
+        "type": "Iut.Corollary22Inputs.{u_2, u_1} T K d",
+        "name": "I",
+        "binderInfo": "Lean.BinderInfo.implicit"
+      },
+      {
+        "type": "Iut.ThetaDataExistence.{u, v, u_1, u_2} P I",
+        "name": "self",
+        "binderInfo": "Lean.BinderInfo.default"
+      }
+    ],
+    "projection_self_note": "The field projection has seven implicit parameters and an explicit self : ThetaDataExistence P I; the definition read-back says that the proposition has this single field. self is the record whose field is projected, not an extra mathematical antecedent omitted from that definition.",
+    "compiler_existential_result": "∃ (X : Iut.Corollary312VariantData.{u, v} AG TG) (inv : Iut.Theorem110Invariants.{u, v} X),\n  P X ∧\n    Iut.Theorem110Certificate.{u, v} inv ∧\n      Nonempty.{max (u + 1) (v + 1)} (Iut.Theorem110Invariants.LocalEstimate.{u, v} inv) ∧\n        Eq.{1} (Iut.Corollary312VariantData.ℓ.{u, v} X) ℓ ∧\n          LE.le.{0} (Iut.Corollary312VariantData.dmod.{u, v} X) d ∧\n            Eq.{1} (Iut.QPilotData.logQ.{u} (Iut.Corollary312VariantData.qPilot.{u, v} X))\n                (Iut.LocalHeightData.heightOther.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) 2 ℓ) ∧\n              Eq.{1} (Genl.HeightTheory.logDiff.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x)\n                  (Iut.Theorem110Invariants.logDtpd.{u, v} inv) ∧\n                LE.le.{0} (Iut.Theorem110Invariants.logFtpd.{u, v} inv)\n                    (Genl.HeightTheory.logCond.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x) ∧\n                  LE.le.{0} (Genl.HeightTheory.logCond.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x)\n                    (HAdd.hAdd.{0, 0, 0} (Iut.Theorem110Invariants.logFtpd.{u, v} inv)\n                      (Real.log (HMul.hMul.{0, 0, 0} 2 ↑ℓ)))",
+    "compiler_constructor_type": "∀ {T : Genl.HeightTheory.{u_1}} {AG : Iut.AnabelianGeometry.{u}} {TG : Iut.TemperedGeometry.{u} AG}\n  {P : Iut.Corollary312VariantData.{u, v} AG TG → Prop} {K : Genl.HeightTheory.CBS.{u_1} T} {d : ℕ}\n  {I : Iut.Corollary22Inputs.{u_2, u_1} T K d},\n  (∀ (x : Genl.HeightTheory.Pt.{u_1} T (Genl.HeightTheory.tripod.{u_1} T))\n      (hx :\n        Membership.mem.{u_1, u_1}\n          (Inter.inter.{u_1} (Genl.HeightTheory.cbsSet.{u_1} T K)\n            (Genl.HeightTheory.ptLE.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) d))\n          x),\n      x ∉ Iut.Corollary22Inputs.excCore.{u_2, u_1} I →\n        ∀ (ℓ : ℕ),\n          Nat.Prime ℓ →\n            LE.le.{0} 7 ℓ →\n              (∀ (v : Iut.LocalHeightData.ι.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)),\n                  Membership.mem.{u_2, u_2}\n                      (Iut.LocalHeightData.bad.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)) v →\n                    ¬Dvd.dvd.{0} ℓ\n                        (Iut.LocalHeightData.hv.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v)) →\n                (∀ (v : Iut.LocalHeightData.ι.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)),\n                    Membership.mem.{u_2, u_2}\n                        (Iut.LocalHeightData.bad.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)) v →\n                      Eq.{1} (Iut.LocalHeightData.p.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v) ℓ →\n                        LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v)\n                          √(Iut.Corollary22Inputs.h.{u_2, u_1} I x)) →\n                  (∃ (v : Iut.LocalHeightData.ι.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)),\n                      Membership.mem.{u_2, u_2}\n                          (Iut.LocalHeightData.bad.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx)) v ∧\n                        Ne.{1} (Iut.LocalHeightData.p.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v) 2 ∧\n                          Ne.{1} (Iut.LocalHeightData.p.{u_2} (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) v)\n                            ℓ) →\n                    Iut.Corollary22Inputs.SL2Image.{u_2, u_1} I x ℓ →\n                      ∃ (X : Iut.Corollary312VariantData.{u, v} AG TG) (inv : Iut.Theorem110Invariants.{u, v} X),\n                        P X ∧\n                          Iut.Theorem110Certificate.{u, v} inv ∧\n                            Nonempty.{max (u + 1) (v + 1)} (Iut.Theorem110Invariants.LocalEstimate.{u, v} inv) ∧\n                              Eq.{1} (Iut.Corollary312VariantData.ℓ.{u, v} X) ℓ ∧\n                                LE.le.{0} (Iut.Corollary312VariantData.dmod.{u, v} X) d ∧\n                                  Eq.{1} (Iut.QPilotData.logQ.{u} (Iut.Corollary312VariantData.qPilot.{u, v} X))\n                                      (Iut.LocalHeightData.heightOther.{u_2}\n                                        (Iut.Corollary22Inputs.localData.{u_2, u_1} I x hx) 2 ℓ) ∧\n                                    Eq.{1} (Genl.HeightTheory.logDiff.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x)\n                                        (Iut.Theorem110Invariants.logDtpd.{u, v} inv) ∧\n                                      LE.le.{0} (Iut.Theorem110Invariants.logFtpd.{u, v} inv)\n                                          (Genl.HeightTheory.logCond.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x) ∧\n                                        LE.le.{0}\n                                          (Genl.HeightTheory.logCond.{u_1} T (Genl.HeightTheory.tripod.{u_1} T) x)\n                                          (HAdd.hAdd.{0, 0, 0} (Iut.Theorem110Invariants.logFtpd.{u, v} inv)\n                                            (Real.log (HMul.hMul.{0, 0, 0} 2 ↑ℓ)))) →\n    Iut.ThetaDataExistence.{u, v, u_1, u_2} P I",
+    "constructor_review": {
+      "outer_implicit_parameters": [
+        {
+          "type": "Genl.HeightTheory.{u_1}",
+          "name": "T",
+          "binderInfo": "Lean.BinderInfo.implicit"
+        },
+        {
+          "type": "Iut.AnabelianGeometry.{u}",
+          "name": "AG",
+          "binderInfo": "Lean.BinderInfo.implicit"
+        },
+        {
+          "type": "Iut.TemperedGeometry.{u} AG",
+          "name": "TG",
+          "binderInfo": "Lean.BinderInfo.implicit"
+        },
+        {
+          "type": "Iut.Corollary312VariantData.{u, v} AG TG → Prop",
+          "name": "P",
+          "binderInfo": "Lean.BinderInfo.implicit"
+        },
+        {
+          "type": "Genl.HeightTheory.CBS.{u_1} T",
+          "name": "K",
+          "binderInfo": "Lean.BinderInfo.implicit"
+        },
+        {
+          "type": "ℕ",
+          "name": "d",
+          "binderInfo": "Lean.BinderInfo.implicit"
+        },
+        {
+          "type": "Iut.Corollary22Inputs.{u_2, u_1} T K d",
+          "name": "I",
+          "binderInfo": "Lean.BinderInfo.implicit"
+        }
+      ],
+      "explicit_field_name": "thetaData",
+      "explicit_field_count": 1,
+      "result": "Iut.ThetaDataExistence.{u, v, u_1, u_2} P I",
+      "field_type_matches_projection_body_after_whitespace_normalization": true,
+      "normalization_scope": "whitespace only; no mathematical rewrites or type simplification",
+      "passed": true
+    },
+    "nine_conjunct_review": [
+      {
+        "position": 1,
+        "condition": "P X",
+        "status": "compiler-confirmed and retained in all three languages"
+      },
+      {
+        "position": 2,
+        "condition": "Theorem110Certificate inv",
+        "status": "compiler-confirmed and retained in all three languages"
+      },
+      {
+        "position": 3,
+        "condition": "Nonempty inv.LocalEstimate",
+        "status": "compiler-confirmed and retained in all three languages"
+      },
+      {
+        "position": 4,
+        "condition": "X.ell=ell",
+        "status": "compiler-confirmed and retained in all three languages"
+      },
+      {
+        "position": 5,
+        "condition": "X.dmod≤d",
+        "status": "compiler-confirmed and retained in all three languages"
+      },
+      {
+        "position": 6,
+        "condition": "X.qPilot.logQ=(I.localData x hx).heightOther 2 ell",
+        "status": "compiler-confirmed and retained in all three languages"
+      },
+      {
+        "position": 7,
+        "condition": "T.logDiff T.tripod x=inv.logDtpd",
+        "status": "compiler-confirmed and retained in all three languages"
+      },
+      {
+        "position": 8,
+        "condition": "inv.logFtpd≤T.logCond T.tripod x",
+        "status": "compiler-confirmed and retained in all three languages"
+      },
+      {
+        "position": 9,
+        "condition": "T.logCond T.tripod x≤inv.logFtpd+log(2ell)",
+        "status": "compiler-confirmed and retained in all three languages"
+      }
+    ],
+    "existential_review": [
+      {
+        "position": 1,
+        "name": "X",
+        "type": "Iut.Corollary312VariantData.{u,v} AG TG",
+        "status": "retained; existence without uniqueness"
+      },
+      {
+        "position": 2,
+        "name": "inv",
+        "type": "Iut.Theorem110Invariants.{u,v} X",
+        "status": "retained; depends on X"
+      }
+    ],
+    "no_extra_h312_requirement": true,
+    "no_existential_uniqueness_added": true
+  },
+  "formal_input_correspondence": [
+    {
+      "original_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Theorem110.lean",
+      "original_sha256": "f121c6299e6c5aed8d2904d8342c51c150a7421d3c23aec16ec01eebcf921788",
+      "compiled_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Theorem110.lean",
+      "compiled_input_sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0",
+      "comparison_method": "regex comment stripping and blank-line normalization; no parser-range/equivalence claim",
+      "status": "source differences manually reviewed",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -1,2 +1,4 @@\n",
+        " import Iut.Implication.LogVolumeBound",
+        "+set_option relaxedAutoImplicit false",
+        "+set_option maxSynthPendingDepth 3",
+        " namespace Iut",
+        "@@ -79,3 +81,6 @@\n",
+        "   subst hP",
+        "-  exact Finset.sum_congr rfl fun i _ => by rw [Procession.standard_capsule_card]",
+        "+  change (∑ i : Fin L, f ((Procession.standard L).capsule i).card) =",
+        "+    ∑ i : Fin L, f (i + 2)",
+        "+  exact Finset.sum_congr rfl fun i _ =>",
+        "+    congrArg f (Procession.standard_capsule_card L i)",
+        " lemma sum_capsuleBound (L : ℕ) (p : ℕ) :"
+      ]
+    },
+    {
+      "original_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Corollary22.lean",
+      "original_sha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+      "compiled_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Corollary22.lean",
+      "compiled_input_sha256": "ee2936fcf7c4d85f0e776fc0ce7e96dbdad7cfc2cf6261759358bb6d24af4909",
+      "comparison_method": "regex comment stripping and blank-line normalization; no parser-range/equivalence claim",
+      "status": "source differences manually reviewed",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -3,2 +3,4 @@\n",
+        " import Iut.Abc.Target",
+        "+set_option relaxedAutoImplicit false",
+        "+set_option maxSynthPendingDepth 3",
+        " namespace Iut"
+      ]
+    },
+    {
+      "original_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Invariants.lean",
+      "original_sha256": "cef53e39e80da02efc741741d70801f167ea34cdf8b5ce87f42f2e28178018a0",
+      "compiled_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Invariants.lean",
+      "compiled_input_sha256": "5826090f3a4e8e27fa915a133df4cbcd1b3f42881c00f55b2fe25d8a53e346f1",
+      "comparison_method": "regex comment stripping and blank-line normalization; no parser-range/equivalence claim",
+      "status": "source differences manually reviewed",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -1,2 +1,4 @@\n",
+        " import Iut.Cor312.Statement",
+        "+set_option relaxedAutoImplicit false",
+        "+set_option maxSynthPendingDepth 3",
+        " namespace Iut"
+      ]
+    },
+    {
+      "original_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/LogVolumeBound.lean",
+      "original_sha256": "6924a12a53a97620068d01bfc37a7ef74807b001cf26f91bd7ca9f60b7a9f71f",
+      "compiled_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/LogVolumeBound.lean",
+      "compiled_input_sha256": "90867d7f5b3181149c51c489d84e34533be3db266683533b3423fbbb20801342",
+      "comparison_method": "regex comment stripping and blank-line normalization; no parser-range/equivalence claim",
+      "status": "source differences manually reviewed",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -1,2 +1,4 @@\n",
+        " import Iut.Implication.Invariants",
+        "+set_option relaxedAutoImplicit false",
+        "+set_option maxSynthPendingDepth 3",
+        " namespace Iut"
+      ]
+    },
+    {
+      "original_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/Statement.lean",
+      "original_sha256": "26ae504b38e02d3df5626b2af5850f118a089f176cad9e35b78fc6a96703e44e",
+      "compiled_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/Statement.lean",
+      "compiled_input_sha256": "c8a4acda8503dcbbe163a647254ef4b025628c323f3721c9f94ec7f60d375a1f",
+      "comparison_method": "regex comment stripping and blank-line normalization; no parser-range/equivalence claim",
+      "status": "source differences manually reviewed",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -2,2 +2,4 @@\n",
+        " import Iut.Cor312.RightHandSide",
+        "+set_option relaxedAutoImplicit false",
+        "+set_option maxSynthPendingDepth 3",
+        " namespace Iut"
+      ]
+    },
+    {
+      "original_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/RightHandSide.lean",
+      "original_sha256": "3bb1a972b8b3d20c06b25a5729507f1317e4d700115642a009224b9618a6a82a",
+      "compiled_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/RightHandSide.lean",
+      "compiled_input_sha256": "112186f17d7ae4829d46909f66bacf7f54607ada490286ba9197b99ede54d12c",
+      "comparison_method": "regex comment stripping and blank-line normalization; no parser-range/equivalence claim",
+      "status": "source differences manually reviewed",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -3,2 +3,4 @@\n",
+        " import Iut.Cor312.LogVolume",
+        "+set_option relaxedAutoImplicit false",
+        "+set_option maxSynthPendingDepth 3",
+        " namespace Iut"
+      ]
+    },
+    {
+      "original_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/LogVolume.lean",
+      "original_sha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+      "compiled_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/LogVolume.lean",
+      "compiled_input_sha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+      "comparison_method": "regex comment stripping and blank-line normalization; no parser-range/equivalence claim",
+      "status": "source differences manually reviewed",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -1,2 +1,4 @@\n",
+        " import Iut.Cor312.Container",
+        "+set_option relaxedAutoImplicit false",
+        "+set_option maxSynthPendingDepth 3",
+        " namespace Iut",
+        "@@ -14,6 +16,10 @@\n",
+        "     componentVol i (.finite p) c ((D.packet i (.finite p)).integral c) = 0",
+        "-  componentVol_prime_preimage : ∀ i (p : Nat.Primes) (c : D.Components i (.finite p))",
+        "-    (a : (D.packet i (.finite p)).Summand c), IsUnit a →",
+        "+  componentVol_prime_preimage : ∀ i (p : Nat.Primes) (c : D.Components i (.finite p)),",
+        "+    letI : CommRing ((D.packet i (.finite p)).Summand c) :=",
+        "+      (D.packet i (.finite p)).ring_summand c",
+        "+    ∀ (a : (D.packet i (.finite p)).Summand c), IsUnit a →",
+        "     componentVol i (.finite p) c",
+        "-        ((fun x => ((p : ℕ) : _) * x) ⁻¹' (a • (D.packet i (.finite p)).integral c)) =",
+        "+        ((fun x : (D.packet i (.finite p)).Summand c =>",
+        "+          ((p : ℕ) : (D.packet i (.finite p)).Summand c) * x) ⁻¹'",
+        "+            (a • (D.packet i (.finite p)).integral c)) =",
+        "       componentVol i (.finite p) c (a • (D.packet i (.finite p)).integral c) + Real.log p"
+      ]
+    }
+  ],
+  "input_difference_assessment": [
+    {
+      "files": [
+        "Theorem110",
+        "Corollary22",
+        "Invariants",
+        "LogVolumeBound",
+        "Statement",
+        "RightHandSide",
+        "LogVolume"
+      ],
+      "difference": "relaxedAutoImplicit/maxSynthPendingDepth options added",
+      "impact_on_this_review": "actual target telescope now supplied and checked; no extra binders present"
+    },
+    {
+      "files": [
+        "Theorem110"
+      ],
+      "difference": "sum_card_standard auxiliary proof rewritten with change/congrArg",
+      "impact_on_this_review": "target theorem type and referenced definition meanings unchanged"
+    },
+    {
+      "files": [
+        "LogVolume"
+      ],
+      "difference": "componentVol_prime_preimage locally binds the already-supplied commutative-ring instance and explicitly types the multiplication map",
+      "impact_on_this_review": "read-back already uses that supplied commutative-ring multiplication; no extra mathematical premise"
+    }
+  ],
+  "required_next_evidence": [],
+  "explicit_readback_differences": [
+    {
+      "declarations": [
+        "Iut.ThetaDataExistence",
+        "Iut.Corollary22Inputs.c2"
+      ],
+      "languages": [
+        "en",
+        "zh-Hans",
+        "ja"
+      ],
+      "change": "Prepend the exact four independent universe levels u,v,u_1,u_2 and their assignments; identify prior w with compiler u_2.",
+      "semantic_impact": "Makes the previously unspecified HeightTheory universe explicit; no added equality between universes, no removed binder and no changed hypothesis or conclusion."
+    }
+  ],
+  "revision_needed_now": false,
+  "scope_limit": "This is an audit of the three named read-backs against their supplied compiler output. It does not assert that all 2871 declarations have independent natural-language read-backs or that a broader mathematical obligation is complete.",
+  "prior_partial_review": {
+    "path": "/tmp/p2m-reference-main-bound-readback-20261115/compiler-binder-review.before-universe-completion.json",
+    "sha256": "98815ea15e796ff4cea93b71f07b2faddaec8f91185b477b81ef53618fc68fd1",
+    "status": "preserved as historical partial review"
+  },
+  "passed": true,
+  "reviewed_package_previous": "/tmp/p2m-reference-main-bound-readback-20261115/readbacks.terminology-revised.json",
+  "reviewed_package_previous_sha256": "a090dc8d007db9aaf8ae6384d4e1ef8ad0dbcb70ee6c7308540e11d772175900",
+  "completion_evidence": {
+    "query_job": {
+      "job_id": "ci-012821-e57c05a4",
+      "status": "succeeded",
+      "provenance": "Parent supplied this successful MCP-CI receipt identity; this auditor read the five resulting JSON artifacts without running a new CI job."
+    },
+    "graph_job_id": "ci-012771-ee109b3e",
+    "ppUniverses": true,
+    "compilerVersion": "4.35.0-rc3",
+    "query_files": [
+      {
+        "name": "Iut.Theorem110Invariants.theorem110",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theorem110.json",
+        "sha256": "5ed77782cde8391222d7196f57fbbaef27a66b448ed6de8b030ab95c0b2e2583",
+        "levelParams": [
+          "u",
+          "v"
+        ],
+        "hasSorryAx": false,
+        "unexpectedAxioms": []
+      },
+      {
+        "name": "Iut.ThetaDataExistence",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theta-data-existence.json",
+        "sha256": "172a29824b8ddd2f2d86bd53a21f7fbee6864383f14be0120e24ce1b7c8f6b25",
+        "levelParams": [
+          "u",
+          "v",
+          "u_1",
+          "u_2"
+        ],
+        "hasSorryAx": false,
+        "unexpectedAxioms": []
+      },
+      {
+        "name": "Iut.Corollary22Inputs.c2",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/corollary22-c2.json",
+        "sha256": "d7d4f8e930a2cbbb530ddd53b45f13d3f456332f23898c0a9e4abce31dd3467f",
+        "levelParams": [
+          "u",
+          "v",
+          "u_1",
+          "u_2"
+        ],
+        "hasSorryAx": false,
+        "unexpectedAxioms": []
+      },
+      {
+        "name": "Iut.ThetaDataExistence.thetaData",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theta-data-field.json",
+        "sha256": "269a5f8e478de555b816c5fbd742552036b879d19faf77af0a3470c3a194aae9",
+        "levelParams": [
+          "u",
+          "v",
+          "u_1",
+          "u_2"
+        ],
+        "hasSorryAx": false,
+        "unexpectedAxioms": []
+      },
+      {
+        "name": "Iut.ThetaDataExistence.mk",
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/root-universe-types/theta-data-constructor.json",
+        "sha256": "ba44c3301d58cee2ddeb60c827e1508c8d6c999d2e56cf6a132a919079a6df74",
+        "levelParams": [
+          "u",
+          "v",
+          "u_1",
+          "u_2"
+        ],
+        "hasSorryAx": false,
+        "unexpectedAxioms": []
+      }
+    ],
+    "corollary22_type_no_omission_warning": {
+      "value": true,
+      "provenance": "Parent reports exact C22 type query has no omission warning; complete actual JSON type was inspected."
+    }
+  },
+  "verification_summary": {
+    "status": "passed",
+    "top_level_binders": 31,
+    "theorem110_binders": 8,
+    "theta_existence_parameters": 7,
+    "c2_binders": 16,
+    "theta_projection_outer_parameters_and_self": 8,
+    "theta_inner_binders_and_antecedents": 10,
+    "theta_existentials": 2,
+    "theta_conjuncts": 9,
+    "constructor_explicit_fields": 1,
+    "universe_parameters_verified": true,
+    "omitted_binders": [],
+    "formula_mismatches": [],
+    "pending_items": [],
+    "prior_packages_preserved": true,
+    "new_readback_package": "/tmp/p2m-reference-main-bound-readback-20261115/readbacks.compiler-reviewed.json",
+    "new_readback_sha256": "dfbf1f18d674d68324325ba6db991c2776f9d80823834ea2f6ad6ab8f0bd30e7"
+  }
+}

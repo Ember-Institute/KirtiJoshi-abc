@@ -1,0 +1,173 @@
+{
+  "schema": "local.compiler-binder-review.v1",
+  "reviewer_model": "gpt-6.1-sol",
+  "date": "2026-11-15",
+  "original_package": "/tmp/p2m-prime-selection-readbacks-20261115",
+  "original_readbacks_sha256": "c245a171c050b901e4189221de36fb2cfd8f4e57b631cf90c30a0cbf1f2b5a44",
+  "original_package_retained": true,
+  "scope": "Independent comparison of supplied original-source compiler full types, explicit universe levels, telescopes, and axiom fields against the retained static readbacks. No new compilation, CI call, API request, Git operation, or main-workspace mutation by this reviewer.",
+  "parent_reported_acceptance": {
+    "job": "ci-012880",
+    "status": "succeeded and accepted",
+    "verification_scope": "reported by parent; not independently queried by this reviewer"
+  },
+  "outcome": "All three readbacks cover every compiler binder and hypothesis. No mathematical or translation text revision is needed.",
+  "changes": "Only binder/universe verification and supplied compiler-fact provenance metadata are added to the derived package. The English original and both translations are byte-identical strings to the original JSON package.",
+  "range_status": "Original ranges remain static source line counts; this review does not promote them to parser facts.",
+  "unknown_terms": [],
+  "declarations": [
+    {
+      "declaration": "Iut.ChebyshevBound.exists_prime_notMem",
+      "compiler_facts_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-ChebyshevBound-exists_prime_notMem.json",
+      "compiler_facts_sha256": "14a353b14da918a8e2b24f0a804632da7a3892889efd0d8e3bc33577db6bf331",
+      "compiler_version": "4.35.0-rc3",
+      "fact_graph_job_id": "ci-012771-ee109b3e",
+      "ppUniverses": true,
+      "levelParams": [],
+      "elaboratedType": "∀ (cheb : Iut.ChebyshevBound) (A : Finset.{0} ℕ),\n  ∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (Iut.thetaSet A) cheb.ξ))",
+      "elaboratedTelescope": {
+        "result": "∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (Iut.thetaSet A) cheb.ξ))",
+        "binders": [
+          {
+            "type": "Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Finset.{0} ℕ",
+            "name": "A",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "binder_coverage": {
+        "cheb": "For every datum cheb, real ξ ≥ 5 and both Chebyshev bounds for every real x ≥ ξ.",
+        "A": "For every finite A ⊆ Nat, including 0/1 and the empty set.",
+        "result": "A prime p outside A with the exact upper bound 2(sum of logs + ξ)."
+      },
+      "binder_check": "Every listed binder is Lean.BinderInfo.default, hence explicit; no implicit or instance-implicit binders occur in the theorem telescope.",
+      "universe_check": "The declaration has no universe parameters. Displayed fixed levels on Finset, real operations, Eq, or Ne do not introduce additional declaration universe parameters.",
+      "nested_quantifier_check": "The existential natural-number prime and all membership and conditional premises in the result are retained in the readback.",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hasSorryAx": false,
+      "unexpectedAxioms": [],
+      "status": "matched",
+      "text_changes": []
+    },
+    {
+      "declaration": "Iut.LocalHeightData.exists_prime_selection",
+      "compiler_facts_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-LocalHeightData-exists_prime_selection.json",
+      "compiler_facts_sha256": "367ba32cbb893af38b3ca4a05e69d60ad98faf0c8842fcb1a74fbd4f475b6638",
+      "compiler_version": "4.35.0-rc3",
+      "fact_graph_job_id": "ci-012771-ee109b3e",
+      "ppUniverses": true,
+      "levelParams": [
+        "u_1"
+      ],
+      "elaboratedType": "∀ (L : Iut.LocalHeightData.{u_1}) (cheb : Iut.ChebyshevBound) (δ : ℝ),\n  LE.le.{0} 2 δ →\n    LE.le.{0} (↑(Iut.LocalHeightData.deg.{u_1} L)) δ →\n      LE.le.{0} cheb.ξ √(Iut.LocalHeightData.height.{u_1} L) →\n        ∃ (ℓ : ℕ),\n          Nat.Prime ℓ ∧\n            LE.le.{0} √(Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n              LE.le.{0} (↑ℓ)\n                  (HMul.hMul.{0, 0, 0}\n                    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) √(Iut.LocalHeightData.height.{u_1} L))\n                    (Real.log (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ) (Iut.LocalHeightData.height.{u_1} L)))) ∧\n                (∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n                      ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_1} L v)) ∧\n                  ∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n                      Eq.{1} (Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                        LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_1} L v) √(Iut.LocalHeightData.height.{u_1} L)",
+      "elaboratedTelescope": {
+        "result": "∃ (ℓ : ℕ),\n  Nat.Prime ℓ ∧\n    LE.le.{0} √(Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n      LE.le.{0} (↑ℓ)\n          (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) √(Iut.LocalHeightData.height.{u_1} L))\n            (Real.log (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ) (Iut.LocalHeightData.height.{u_1} L)))) ∧\n        (∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n              ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_1} L v)) ∧\n          ∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n              Eq.{1} (Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_1} L v) √(Iut.LocalHeightData.height.{u_1} L)",
+        "binders": [
+          {
+            "type": "Iut.LocalHeightData.{u_1}",
+            "name": "L",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "ℝ",
+            "name": "δ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 2 δ",
+            "name": "hδ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (↑(Iut.LocalHeightData.deg.{u_1} L)) δ",
+            "name": "hdeg",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} cheb.ξ √(Iut.LocalHeightData.height.{u_1} L)",
+            "name": "hξ",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "binder_coverage": {
+        "L": "Every LocalHeightData at an arbitrary universe level, with all structure fields and restrictions expanded.",
+        "cheb": "Every certificate with real ξ ≥ 5 and both bounds.",
+        "δ": "Every real δ; all natural numbers in real expressions are embedded in Real.",
+        "hδ": "2 ≤ δ.",
+        "hdeg": "L.deg ≤ δ.",
+        "hξ": "ξ ≤ sqrt(h), where h is the formula-defined L.height.",
+        "result": "Prime ℓ, lower and upper bounds, nondivisibility for each v in L.bad, and strict local-height inequality conditional on p(v)=ℓ."
+      },
+      "binder_check": "Every listed binder is Lean.BinderInfo.default, hence explicit; no implicit or instance-implicit binders occur in the theorem telescope.",
+      "universe_check": "The declaration has exactly one universe parameter u_1. The original readback calls it w; this is a universe-variable renaming. L : Iut.LocalHeightData.{u_1}; from the unchanged source structure, its index type is in Type u_1 and LocalHeightData is in Type (u_1 + 1). All occurrences of the LocalHeightData projections in the compiler type carry this same u_1.",
+      "nested_quantifier_check": "The existential natural-number prime and all membership and conditional premises in the result are retained in the readback.",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hasSorryAx": false,
+      "unexpectedAxioms": [],
+      "status": "matched",
+      "text_changes": []
+    },
+    {
+      "declaration": "Iut.sum_log_primeFactors_le",
+      "compiler_facts_file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/prime-selection-source-facts/Iut-sum_log_primeFactors_le.json",
+      "compiler_facts_sha256": "88cdfe1e2a4614a5b77b51acff368ddb294d836dd9b37279b4eb48e2f5fa8610",
+      "compiler_version": "4.35.0-rc3",
+      "fact_graph_job_id": "ci-012771-ee109b3e",
+      "ppUniverses": true,
+      "levelParams": [],
+      "elaboratedType": "∀ (n : ℕ), Ne.{1} n 0 → LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+      "elaboratedTelescope": {
+        "result": "LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+        "binders": [
+          {
+            "type": "ℕ",
+            "name": "n",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Ne.{1} n 0",
+            "name": "hn",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "binder_coverage": {
+        "n": "Every natural number n.",
+        "hn": "The explicit hypothesis n ≠ 0.",
+        "result": "Sum of real logs over the finite set of distinct prime factors ≤ real log of n, with 0/1 boundary conventions described."
+      },
+      "binder_check": "Every listed binder is Lean.BinderInfo.default, hence explicit; no implicit or instance-implicit binders occur in the theorem telescope.",
+      "universe_check": "The declaration has no universe parameters. Displayed fixed levels on Finset, real operations, Eq, or Ne do not introduce additional declaration universe parameters.",
+      "nested_quantifier_check": "The existential natural-number prime and all membership and conditional premises in the result are retained in the readback.",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hasSorryAx": false,
+      "unexpectedAxioms": [],
+      "status": "matched",
+      "text_changes": []
+    }
+  ],
+  "original_source_sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580"
+}

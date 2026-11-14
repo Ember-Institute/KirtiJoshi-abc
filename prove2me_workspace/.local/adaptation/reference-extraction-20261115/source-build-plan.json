@@ -1,0 +1,160 @@
+{
+  "purpose": "Original reference environment, exact source proof graph extraction only",
+  "original_source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+  "effective_toolchain": "leanprover/lean4:v4.35.0-rc3",
+  "mathlib_rev": "389347a7c1cfa76f6bd5be2ca35d4cb621610ad3",
+  "production_environment_unchanged": true,
+  "read_only_cache": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/build/lib/lean",
+  "no_cache_copy": true,
+  "input_modules": [
+    {
+      "module": "Iut.Cor312.LogVolume",
+      "source": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/LogVolume.lean",
+      "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/LogVolume.lean",
+      "sha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+      "header_imports": [
+        "Init",
+        "Iut.Cor312.Container"
+      ],
+      "original_sha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+      "configuration_mirror": {
+        "insertion_original_offset": 195,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": {
+        "field": "LogVolumeData.componentVol_prime_preimage",
+        "change": "Use the existing packet ring projection via a letI; annotate lambda domain and nat cast target",
+        "new_assumptions": false,
+        "reason": "Lean4.35 elaboration failed to infer the dependent ring instance/cast from original4.32 source syntax"
+      }
+    },
+    {
+      "module": "Iut.Cor312.RightHandSide",
+      "source": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/RightHandSide.lean",
+      "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/RightHandSide.lean",
+      "sha256": "112186f17d7ae4829d46909f66bacf7f54607ada490286ba9197b99ede54d12c",
+      "header_imports": [
+        "Init",
+        "Iut.Cor312.ThetaData.Basic",
+        "Iut.Cor312.ContainerHull",
+        "Iut.Cor312.LogVolume"
+      ],
+      "original_sha256": "3bb1a972b8b3d20c06b25a5729507f1317e4d700115642a009224b9618a6a82a",
+      "configuration_mirror": {
+        "insertion_original_offset": 261,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      }
+    },
+    {
+      "module": "Iut.Cor312.Statement",
+      "source": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/Statement.lean",
+      "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/Statement.lean",
+      "sha256": "c8a4acda8503dcbbe163a647254ef4b025628c323f3721c9f94ec7f60d375a1f",
+      "header_imports": [
+        "Init",
+        "Iut.Cor312.LeftHandSide",
+        "Iut.Cor312.RightHandSide"
+      ],
+      "original_sha256": "26ae504b38e02d3df5626b2af5850f118a089f176cad9e35b78fc6a96703e44e",
+      "configuration_mirror": {
+        "insertion_original_offset": 230,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      }
+    },
+    {
+      "module": "Iut.Implication.Invariants",
+      "source": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Invariants.lean",
+      "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Invariants.lean",
+      "sha256": "5826090f3a4e8e27fa915a133df4cbcd1b3f42881c00f55b2fe25d8a53e346f1",
+      "header_imports": [
+        "Init",
+        "Iut.Cor312.Statement"
+      ],
+      "original_sha256": "cef53e39e80da02efc741741d70801f167ea34cdf8b5ce87f42f2e28178018a0",
+      "configuration_mirror": {
+        "insertion_original_offset": 195,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      }
+    },
+    {
+      "module": "Iut.Implication.LogVolumeBound",
+      "source": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/LogVolumeBound.lean",
+      "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/LogVolumeBound.lean",
+      "sha256": "90867d7f5b3181149c51c489d84e34533be3db266683533b3423fbbb20801342",
+      "header_imports": [
+        "Init",
+        "Iut.Implication.Invariants"
+      ],
+      "original_sha256": "6924a12a53a97620068d01bfc37a7ef74807b001cf26f91bd7ca9f60b7a9f71f",
+      "configuration_mirror": {
+        "insertion_original_offset": 201,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      }
+    },
+    {
+      "module": "Iut.Implication.Theorem110",
+      "source": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Theorem110.lean",
+      "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Theorem110.lean",
+      "sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0",
+      "header_imports": [
+        "Init",
+        "Iut.Implication.LogVolumeBound"
+      ],
+      "original_sha256": "f121c6299e6c5aed8d2904d8342c51c150a7421d3c23aec16ec01eebcf921788",
+      "configuration_mirror": {
+        "insertion_original_offset": 205,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      },
+      "compatibility_fix": {
+        "lemma": "sum_card_standard",
+        "change": "Expose the definitionally identical Fin L sum domain; use congrArg f with explicit source cardinality lemma instead of dependent rw",
+        "new_assumptions": false,
+        "statement_changed": false
+      }
+    },
+    {
+      "module": "Iut.Implication.Corollary22",
+      "source": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Corollary22.lean",
+      "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Implication/Corollary22.lean",
+      "sha256": "ee2936fcf7c4d85f0e776fc0ce7e96dbdad7cfc2cf6261759358bb6d24af4909",
+      "header_imports": [
+        "Init",
+        "Iut.Implication.Theorem110",
+        "Iut.Implication.PrimeSelection",
+        "Iut.Abc.Target"
+      ],
+      "original_sha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+      "configuration_mirror": {
+        "insertion_original_offset": 261,
+        "text": "set_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\n",
+        "reason": "Restore semantic source lake options when checking directly with Lean",
+        "offset_coordinate": "raw utf8; this source asserts no CRLF"
+      }
+    }
+  ],
+  "order": [
+    "Iut.Cor312.LogVolume",
+    "Iut.Cor312.RightHandSide",
+    "Iut.Cor312.Statement",
+    "Iut.Implication.Invariants",
+    "Iut.Implication.LogVolumeBound",
+    "Iut.Implication.Theorem110",
+    "Iut.Implication.Corollary22"
+  ],
+  "semantic_lean_options": {
+    "relaxedAutoImplicit": false,
+    "maxSynthPendingDepth": 3
+  }
+}

@@ -1,0 +1,22 @@
+{"unexpectedAxioms": [],
+ "schema": "prime-selection-type-query-v1",
+ "ppUniverses": true,
+ "name": "Iut.ChebyshevBound.exists_prime_notMem",
+ "module": "Iut.Implication.PrimeSelection",
+ "levelParams": [],
+ "hasSorryAx": false,
+ "graphJobId": "ci-012771-ee109b3e",
+ "elaboratedType":
+ "∀ (cheb : Iut.ChebyshevBound) (A : Finset.{0} ℕ),\n  ∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (Iut.thetaSet A) cheb.ξ))",
+ "elaboratedTelescope":
+ {"result":
+  "∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (Iut.thetaSet A) cheb.ξ))",
+  "binders":
+  [{"type": "Iut.ChebyshevBound",
+    "name": "cheb",
+    "binderInfo": "Lean.BinderInfo.default"},
+   {"type": "Finset.{0} ℕ",
+    "name": "A",
+    "binderInfo": "Lean.BinderInfo.default"}]},
+ "compilerVersion": "4.35.0-rc3",
+ "axioms": ["propext", "Classical.choice", "Quot.sound"]}

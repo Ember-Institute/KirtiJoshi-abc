@@ -1,0 +1,104 @@
+[
+  {
+    "declaration": "Iut.ChebyshevBound.exists_prime_notMem",
+    "source_description_en": "Mochizuki, Inter-universal Teichmüller Theory IV (April 2020), Proposition 2.1(ii), printed/PDF p. 40, states that there is a real threshold ξ_prm ≥ 5 for which (2/3)x ≤ θ(x) ≤ (4/3)x for every real x ≥ ξ_prm, with θ(x) = ∑_{p ≤ x} log p. Its final assertion says that, for a finite set A of prime numbers and θ_A = ∑_{p ∈ A} log p (with empty sum 0), there is a prime p outside A such that p ≤ 2(θ_A + ξ_prm). This last assertion is the direct original-paper source for the prime-avoidance step. In the proof of Corollary 2.2(ii), pp. 44–45, the finite set A is chosen to exclude small primes, prime divisors of local heights, and residue characteristics at places of large local height.",
+    "source_formula_transcription": [
+      "ξ_prm ≥ 5; for x ≥ ξ_prm, (2/3)x ≤ θ(x) := ∑_{p ≤ x} log p ≤ (4/3)x.",
+      "θ_A := ∑_{p ∈ A} log p; ∃ prime p ∉ A, p ≤ 2(θ_A + ξ_prm)."
+    ],
+    "source_location": {
+      "paper": "iut4",
+      "printed_pages": [
+        40
+      ],
+      "file_pages": [
+        40
+      ],
+      "label": "Proposition 2.1(ii), including its final “In particular” assertion"
+    },
+    "code_provenance_note_en": "The node is implemented in refer/iut/Iut/Implication/PrimeSelection.lean:104. Its ChebyshevBound interface uses upper coefficient 2 in place of the paper’s 4/3; this is a source-to-code adaptation. The existence argument at this node uses the lower bound, so the prime-avoidance conclusion has the same coefficient 2 as the paper. The code statement permits a finite set of natural numbers A, extending the printed statement for a finite set of primes; this does not require interpreting composite elements as primes.",
+    "short_verbatim_quotes": [
+      {
+        "printed_page": 40,
+        "file_page": 40,
+        "quote": "In particular, if A is a finite set of prime numbers, and we write",
+        "normalization": "ﬁ ligature expanded; line break joined"
+      },
+      {
+        "printed_page": 40,
+        "file_page": 40,
+        "quote": "then there exists a prime number p ⁄∈A",
+        "normalization": "line break joined; p ⁄∈A preserves extracted non-membership glyph sequence"
+      }
+    ]
+  },
+  {
+    "declaration": "Iut.LocalHeightData.exists_prime_selection",
+    "source_description_en": "The original source is Mochizuki, IUT IV, proof of Corollary 2.2(ii), printed/PDF pp. 44–45, especially (P1)–(P3) on p. 45. On p. 44 the paper writes h = log(q_∀) = [F:ℚ]^(−1)∑_v h_v f_v log(p_v), with h_v = 0 at good reduction and positive integral h_v at bad multiplicative reduction, assumes √h ≥ ξ_prm ≥ 5 after enlarging the finite exceptional set, and uses [F:ℚ] ≤ δ. It bounds the sums of log(p_v) and log(h_v) over places with h_v ≥ √h. The excluded finite set A consists of primes p satisfying one of (S1) p ≤ √h, (S2) p divides a nonzero h_v, or (S3) p = p_v at a place with h_v ≥ √h. Page 45 gives θ_A ≤ 2√h + δ√h + 2δ√h log(2δh) ≤ 4δ√h log(2δh) ≤ −ξ_prm + 5δ√h log(2δh). Applying Proposition 2.1 yields a prime ℓ satisfying (P1) √h ≤ ℓ ≤ 10δ√h log(2δh), (P2) ℓ divides no nonzero h_v, and (P3) h_v < √h whenever p_v = ℓ. These three conditions are the direct paper source for the prime-selection node.",
+    "source_formula_transcription": [
+      "h := log(q_∀) = (1/[F:ℚ])∑_{v∈V(F)^non} h_v f_v log(p_v); √h ≥ ξ_prm ≥ 5; [F:ℚ] ≤ δ.",
+      "A = {prime p : p ≤ √h, or p divides a nonzero h_v, or p = p_v for some v with h_v ≥ √h}.",
+      "θ_A ≤ 2√h + δ√h + 2δ√h log(2δh) ≤ 4δ√h log(2δh) ≤ −ξ_prm + 5δ√h log(2δh).",
+      "(P1) (5 ≤)√h ≤ ℓ ≤ 10δ√h log(2δh) ≤ 20δ²h².",
+      "(P2) ℓ divides no nonzero h_v.",
+      "(P3) If ℓ = p_v, then h_v < √h."
+    ],
+    "source_location": {
+      "paper": "iut4",
+      "printed_pages": [
+        44,
+        45
+      ],
+      "file_pages": [
+        44,
+        45
+      ],
+      "label": "Corollary 2.2(ii) proof: local-height formula, excluded set (S1)–(S3), θ_A estimate, and (P1)–(P3)"
+    },
+    "code_provenance_note_en": "The node is implemented in refer/iut/Iut/Implication/PrimeSelection.lean:213. The code uses the supplied finite LocalHeightData package; it does not construct elliptic-curve local heights. Its exclusion set stores prime factors and residue characteristics only for places with h_v ≥ √h, in addition to the primes ≤ √h. The remaining small positive h_v cannot have a prime divisor ℓ > √h. This is a finite-set implementation of the paper’s exclusion argument. The coefficient 2 in the code’s upper Chebyshev bound differs from the printed 4/3, while the paper’s displayed θ_A estimate on p. 45 already uses 2√h for the small-prime contribution. The output retains the first two bounds of (P1) and conditions (P2), (P3); the additional elementary upper estimate 20δ²h² is printed in (P1) but is not a conclusion field of this node.",
+    "short_verbatim_quotes": [
+      {
+        "printed_page": 45,
+        "file_page": 45,
+        "quote": "there exists a prime number l such that",
+        "normalization": "contiguous PDF-extracted prose"
+      },
+      {
+        "printed_page": 45,
+        "file_page": 45,
+        "quote": "l does not divide any nonzero",
+        "normalization": "contiguous words after label (P2); math subscripted local-height symbol omitted by ending quote here"
+      }
+    ]
+  },
+  {
+    "declaration": "Iut.sum_log_primeFactors_le",
+    "source_description_en": "This node is an elementary number-theory helper used to implement the prime-selection argument in Mochizuki, IUT IV, proof of Corollary 2.2(ii), printed/PDF pp. 44–45. It bounds the sum of logarithms of the distinct prime divisors of a nonzero natural number n by log n: the product of those distinct prime divisors divides n, so taking logarithms gives the bound. In the paper’s argument, primes dividing a nonzero local height h_v are excluded by (S2), p. 45, and the logarithmic size of the excluded set is controlled using the sum of log(h_v) over places with h_v ≥ √h estimated on p. 44. The helper supplies the elementary bridge between prime divisors and the logarithm of the corresponding local height. No separately numbered statement of this helper has been identified in these inspected original-paper pages; Proposition 2.1(ii) is the source for the subsequent prime-avoidance step, not a paper number for this helper.",
+    "source_formula_transcription": [
+      "Elementary helper (code statement, not a numbered paper formula): for n ∈ ℕ with n ≠ 0, ∑_{p∈primeFactors(n)} log p ≤ log n.",
+      "Paper application, p. 44: ∑_{h_v ≥ √h} log(h_v) ≤ 2δ√h·log(2δh).",
+      "Paper excluded condition (S2), p. 45: prime p divides a nonzero h_v for some v ∈ V(F)^non."
+    ],
+    "source_location": {
+      "paper": "iut4",
+      "printed_pages": [
+        44,
+        45
+      ],
+      "file_pages": [
+        44,
+        45
+      ],
+      "label": "application context only: local-height logarithm estimate and excluded-prime condition (S2); no numbered source assertion for the helper"
+    },
+    "code_provenance_note_en": "The declaration is in refer/iut/Iut/Implication/PrimeSelection.lean:86 and is used in the same file at line 329 while bounding thetaSet A. Its proof uses Real.log_prod, monotonicity of log, Nat.prod_primeFactors_dvd, and Nat.le_of_dvd. This is the code provenance of the proved helper; the paper provenance is the surrounding local-height exclusion argument. These two attributions should remain separate.",
+    "short_verbatim_quotes": [
+      {
+        "printed_page": 45,
+        "file_page": 45,
+        "quote": "(S2) divides a nonzero",
+        "normalization": "contiguous words beginning label (S2); quote ends before subscripted math symbol"
+      }
+    ]
+  }
+]

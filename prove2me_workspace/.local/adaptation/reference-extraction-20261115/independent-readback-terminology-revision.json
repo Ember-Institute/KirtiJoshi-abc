@@ -1,0 +1,361 @@
+{
+  "prior_package": "/tmp/p2m-reference-main-bound-readback-20261115/readbacks.json",
+  "prior_sha256": "0199ca983ad6c9b3469055f8a04f2f4d3106f7b4304a224a645687e136d15dda",
+  "revised_package": "/tmp/p2m-reference-main-bound-readback-20261115/readbacks.terminology-revised.json",
+  "revised_sha256": "a090dc8d007db9aaf8ae6384d4e1ef8ad0dbcb70ee6c7308540e11d772175900",
+  "formal_semantic_differences": [],
+  "explicit_revision_list": [
+    {
+      "id": "R1",
+      "scope": "all three Chinese read-backs",
+      "change": "Replace 积分区域/积分子集 with 指定子集形成的区域/指定子集 J_izc.",
+      "reason": "P.integral c is a supplied Set, not an integration construction."
+    },
+    {
+      "id": "R2",
+      "scope": "all three Chinese read-backs",
+      "change": "Replace hull placeholders with 包络区域/包络系统 and name the least selected region 最小包络区域.",
+      "reason": "Apply user-finalized 包络, retaining the exact componentwise-unit and least-in-subclass definitions."
+    },
+    {
+      "id": "R3",
+      "scope": "all three Japanese read-backs",
+      "change": "Replace ハル with 正則包; region 正則包領域 and system 正則包系. Replace 整領域/整部分集合 by explicit supplied-subset wording.",
+      "reason": "Apply supplied verified base term and contextual derivatives; avoid interpreting 整領域 as an integral domain."
+    },
+    {
+      "id": "R4",
+      "scope": "all three English read-backs",
+      "change": "Explain integralRegion as the region formed from the supplied subsets; replace finite integral subsets with supplied subsets at finite places.",
+      "reason": "The former finite wording could imply that the subsets themselves are finite; only the place was finite."
+    },
+    {
+      "id": "R5",
+      "scope": "all three languages",
+      "change": "Explicitly state that J_izc is a supplied subset of S_izc, with the supplied commutative-ring structure on S_izc.",
+      "reason": "Preserve the actual carrier and field type without adding a subring or ring-of-integers assumption."
+    },
+    {
+      "id": "R6",
+      "scope": "all three English read-backs",
+      "change": "Use positive integer q-order instead of positive integral q-order.",
+      "reason": "Clarify the natural-number value; no mathematical change."
+    }
+  ],
+  "per_declaration_edits": [
+    {
+      "declaration": "Iut.Theorem110Invariants.theorem110",
+      "changes": [
+        {
+          "language": "en",
+          "before": "positive integral q-order",
+          "after": "positive integer q-order",
+          "occurrences": 2
+        },
+        {
+          "language": "en",
+          "before": "The integral region is J_iz=product over c of J_izc.",
+          "after": "The specified subsets form the region J_iz=product over c of J_izc, called integralRegion in the code. Each J_izc is only a supplied subset of S_izc; the supplied commutative-ring structure is on S_izc.",
+          "occurrences": 1
+        },
+        {
+          "language": "en",
+          "before": "Component volumes vanish on the finite integral subsets and on specified infinite balls;",
+          "after": "At finite places the component volumes vanish on the supplied subsets J_izc, and at infinity they vanish on specified balls;",
+          "occurrences": 1
+        },
+        {
+          "language": "en",
+          "before": "a unit multiple of an integral subset",
+          "after": "a unit multiple of the supplied subset J_izc",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "积分区域 J_iz=product_c J_izc；",
+          "after": "指定子集形成的区域为 J_iz=product_c J_izc，代码将其命名为 integralRegion；这里每个 J_izc 仅为 S_izc 的指定子集，给定的交换环结构在 S_izc 上。",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "【译名待定：TERM-RMB-001】区域",
+          "after": "包络区域",
+          "occurrences": 2
+        },
+        {
+          "language": "zh-Hans",
+          "before": "【译名待定：TERM-RMB-001】系统",
+          "after": "包络系统",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "分量体积在有限处的指定积分子集和无限处的指定球上为零",
+          "after": "分量体积在有限处的指定子集 J_izc 和无限处的指定球上为零",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "单位元乘积分子集在乘 p 映射下的原像",
+          "after": "指定子集 J_izc 的单位元倍在乘 p 映射下的原像",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "令 HTheta_iz 为 Theta_iz 的上述最小区域",
+          "after": "令 HTheta_iz 为 Theta_iz 的上述最小包络区域",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "整領域は J_iz=product_c J_izc である。",
+          "after": "指定部分集合からなる領域は J_iz=product_c J_izc であり、コードでは integralRegion と呼ぶ。各 J_izc は S_izc の指定部分集合そのものであり、与えられた可換環構造は S_izc 上のものである。",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "ハル領域",
+          "after": "正則包領域",
+          "occurrences": 4
+        },
+        {
+          "language": "ja",
+          "before": "ハル系",
+          "after": "正則包系",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "最小ハル",
+          "after": "最小正則包",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "成分体積は有限素点の指定整部分集合と無限素点の指定球で零であり",
+          "after": "成分体積は有限素点の指定部分集合 J_izc と無限素点の指定球で零であり",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "整部分集合の単元倍",
+          "after": "指定部分集合 J_izc の単元倍",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "declaration": "Iut.ThetaDataExistence",
+      "changes": [
+        {
+          "language": "en",
+          "before": "positive integral q-order",
+          "after": "positive integer q-order",
+          "occurrences": 2
+        },
+        {
+          "language": "en",
+          "before": "The integral region is J_iz=product over c of J_izc.",
+          "after": "The specified subsets form the region J_iz=product over c of J_izc, called integralRegion in the code. Each J_izc is only a supplied subset of S_izc; the supplied commutative-ring structure is on S_izc.",
+          "occurrences": 1
+        },
+        {
+          "language": "en",
+          "before": "Component volumes vanish on the finite integral subsets and on specified infinite balls;",
+          "after": "At finite places the component volumes vanish on the supplied subsets J_izc, and at infinity they vanish on specified balls;",
+          "occurrences": 1
+        },
+        {
+          "language": "en",
+          "before": "a unit multiple of an integral subset",
+          "after": "a unit multiple of the supplied subset J_izc",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "积分区域 J_iz=product_c J_izc；",
+          "after": "指定子集形成的区域为 J_iz=product_c J_izc，代码将其命名为 integralRegion；这里每个 J_izc 仅为 S_izc 的指定子集，给定的交换环结构在 S_izc 上。",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "【译名待定：TERM-RMB-001】区域",
+          "after": "包络区域",
+          "occurrences": 2
+        },
+        {
+          "language": "zh-Hans",
+          "before": "【译名待定：TERM-RMB-001】系统",
+          "after": "包络系统",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "分量体积在有限处的指定积分子集和无限处的指定球上为零",
+          "after": "分量体积在有限处的指定子集 J_izc 和无限处的指定球上为零",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "单位元乘积分子集在乘 p 映射下的原像",
+          "after": "指定子集 J_izc 的单位元倍在乘 p 映射下的原像",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "令 HTheta_iz 为 Theta_iz 的上述最小区域",
+          "after": "令 HTheta_iz 为 Theta_iz 的上述最小包络区域",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "整領域は J_iz=product_c J_izc である。",
+          "after": "指定部分集合からなる領域は J_iz=product_c J_izc であり、コードでは integralRegion と呼ぶ。各 J_izc は S_izc の指定部分集合そのものであり、与えられた可換環構造は S_izc 上のものである。",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "ハル領域",
+          "after": "正則包領域",
+          "occurrences": 4
+        },
+        {
+          "language": "ja",
+          "before": "ハル系",
+          "after": "正則包系",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "最小ハル",
+          "after": "最小正則包",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "成分体積は有限素点の指定整部分集合と無限素点の指定球で零であり",
+          "after": "成分体積は有限素点の指定部分集合 J_izc と無限素点の指定球で零であり",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "整部分集合の単元倍",
+          "after": "指定部分集合 J_izc の単元倍",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "declaration": "Iut.Corollary22Inputs.c2",
+      "changes": [
+        {
+          "language": "en",
+          "before": "positive integral q-order",
+          "after": "positive integer q-order",
+          "occurrences": 2
+        },
+        {
+          "language": "en",
+          "before": "The integral region is J_iz=product over c of J_izc.",
+          "after": "The specified subsets form the region J_iz=product over c of J_izc, called integralRegion in the code. Each J_izc is only a supplied subset of S_izc; the supplied commutative-ring structure is on S_izc.",
+          "occurrences": 1
+        },
+        {
+          "language": "en",
+          "before": "Component volumes vanish on the finite integral subsets and on specified infinite balls;",
+          "after": "At finite places the component volumes vanish on the supplied subsets J_izc, and at infinity they vanish on specified balls;",
+          "occurrences": 1
+        },
+        {
+          "language": "en",
+          "before": "a unit multiple of an integral subset",
+          "after": "a unit multiple of the supplied subset J_izc",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "积分区域 J_iz=product_c J_izc；",
+          "after": "指定子集形成的区域为 J_iz=product_c J_izc，代码将其命名为 integralRegion；这里每个 J_izc 仅为 S_izc 的指定子集，给定的交换环结构在 S_izc 上。",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "【译名待定：TERM-RMB-001】区域",
+          "after": "包络区域",
+          "occurrences": 2
+        },
+        {
+          "language": "zh-Hans",
+          "before": "【译名待定：TERM-RMB-001】系统",
+          "after": "包络系统",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "分量体积在有限处的指定积分子集和无限处的指定球上为零",
+          "after": "分量体积在有限处的指定子集 J_izc 和无限处的指定球上为零",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "单位元乘积分子集在乘 p 映射下的原像",
+          "after": "指定子集 J_izc 的单位元倍在乘 p 映射下的原像",
+          "occurrences": 1
+        },
+        {
+          "language": "zh-Hans",
+          "before": "令 HTheta_iz 为 Theta_iz 的上述最小区域",
+          "after": "令 HTheta_iz 为 Theta_iz 的上述最小包络区域",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "整領域は J_iz=product_c J_izc である。",
+          "after": "指定部分集合からなる領域は J_iz=product_c J_izc であり、コードでは integralRegion と呼ぶ。各 J_izc は S_izc の指定部分集合そのものであり、与えられた可換環構造は S_izc 上のものである。",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "ハル領域",
+          "after": "正則包領域",
+          "occurrences": 4
+        },
+        {
+          "language": "ja",
+          "before": "ハル系",
+          "after": "正則包系",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "最小ハル",
+          "after": "最小正則包",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "成分体積は有限素点の指定整部分集合と無限素点の指定球で零であり",
+          "after": "成分体積は有限素点の指定部分集合 J_izc と無限素点の指定球で零であり",
+          "occurrences": 1
+        },
+        {
+          "language": "ja",
+          "before": "整部分集合の単元倍",
+          "after": "指定部分集合 J_izc の単元倍",
+          "occurrences": 1
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "json_valid": true,
+    "all_three_declarations_checked": true,
+    "no_Chinese_积分_in_revised_readbacks": true,
+    "no_unresolved_hull_placeholder": true,
+    "no_Japanese_ハル_or_整領域": true,
+    "prior_package_unchanged": true,
+    "compiler_verified": false,
+    "matches_compiler": null,
+    "main_workspace_modified": false
+  }
+}

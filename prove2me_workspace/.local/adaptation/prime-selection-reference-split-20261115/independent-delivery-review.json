@@ -1,0 +1,157 @@
+{
+  "schema": "prime-selection-delivery-readonly-review-v1",
+  "reviewed_at_utc": "2026-11-14T20:38:07.100432+00:00",
+  "reviewer": "/root/prime_selection_delivery_review",
+  "model": "gpt-6.1-sol",
+  "scope": "Delivery script and platform protocol, checkpoints, current metadata/source consistency, and existence/authentic structure of locally supplied review evidence. No platform delivery or compilation certification performed.",
+  "outcome": "accepted_for_main_agent_packet_and_ready_review; no blocking delivery-code findings",
+  "blocking_findings": [],
+  "nonblocking_findings": [
+    {
+      "file": "/tmp/p2m-prime-selection-platform-delivery-20261115/README.md",
+      "location": "step 1",
+      "issue": "The statement that the currently inspected Chebyshev payload is stale is outdated. All three current payload solution strings equal their actual Solution files.",
+      "suggested_change": "Describe refreshing and checking current payloads as a requirement without asserting that the present payload remains stale.",
+      "reported_to_parent": true
+    }
+  ],
+  "protocol": {
+    "definition": "Single POST /submit-definition body matches documented fields; private true and pinned env are explicit; response job_id saved before publish polling.",
+    "theorems": "Single-problem unwrapped POST /submit-problem is documented; exactly one jobs[].job_id accepted; PENDING and COMPILING polled to PUBLISHED; server theorem_id saved in result then published-ids before readback.",
+    "verify": "Multipart theorem_id, proof_type=prove, explanation and solution.lean match prove.md; no env field is sent because target environment controls verification. submission_id saved before polling; final id and theorem_id checked; ACCEPTED required.",
+    "order": "Definition and theorem statements publish before proof submissions. Both closed child proofs are verified before the main proof; ordering matches import dependencies.",
+    "privacy_environment_creator": "Every creation explicitly uses private true and ENV. Publish jobs and readbacks check private visibility; readbacks check mathlib_rev. Private exact mission listing is available only to its creator and confirms expected creator/root, so it supplies account context without a new /me identity assumption.",
+    "mission": "Supported GET /missions?q=Arithmetic%20Teichmuller&limit=100 followed by exact known ID match is used. Offline missions-before.json confirms private visibility, creator 89966734-f388-427a-9ea1-983923ff28a1 and root e33ff731-60a7-43ef-87ae-c12aeba23cb5. No unsupported GET /missions/:id call remains.",
+    "scope": "Packet/summary expressly label detached source-consumer preparation, root_graph_membership false and canonicalC22Connected false. No proposal, launch, release, milestone, mission PATCH or root proof POST occurs. This does not claim canonical C2.2 closure or leaderboard membership.",
+    "root_graph": "Root graph is read before and after delivery and compared; the script never writes the root. Equality is evidence about the returned capped graph, not a new independent proof of the entire mathematical mission."
+  },
+  "checkpoint_review": {
+    "intent_before_post": true,
+    "job_or_submission_response_before_poll": true,
+    "resume_reads_saved_response": true,
+    "unknown_post_stops_without_retry": true,
+    "unknown_post_requires_manual_reconciliation": true,
+    "failed_terminal_attempt_retained": true,
+    "mock_checks": {
+      "syntax": "passed",
+      "module_load_without_API": "passed",
+      "two_mutation_calls_same_intent_one_POST": "passed",
+      "simulated_lost_POST_second_call_no_POST": "passed",
+      "exact_mission_from_real_offline_listing": "passed"
+    }
+  },
+  "metadata_current_checks": [
+    {
+      "theorem_name": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+      "theorem_payload_matches_current_source": true,
+      "solution_payload_matches_current_source": true
+    },
+    {
+      "theorem_name": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+      "theorem_payload_matches_current_source": true,
+      "solution_payload_matches_current_source": true
+    },
+    {
+      "theorem_name": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+      "theorem_payload_matches_current_source": true,
+      "solution_payload_matches_current_source": true
+    }
+  ],
+  "evidence_review": {
+    "definition_readback": {
+      "result": "passed",
+      "source_hash_matches_current_definition": true,
+      "compiler_audit_hash_matches": true,
+      "scope": "Four mathematical declarations, two constructors, and all 15 structure projections: 21 selected compiler constants.",
+      "independent_reader_count": 1,
+      "translations_are_additional_independent_audits": false,
+      "definition_body_evidence_limit": "The definitions section exports types/telescopes/constructors/fields/axioms, not the definition bodies. Formula readback is checked against the unchanged source and is not inferred solely from a result type."
+    },
+    "kernel_identity": "Inspected actual audit code: original 4.35.0-rc3 ConstantInfo Expr JSON is decoded with explicit project name relocation and universe alpha-renaming; closed expressions are Kernel.check-ed before Kernel.isDefEq. Top-level and full binder inventories are checked. Result true flags occur only after these checks. This is not a text-only signature comparison.",
+    "axioms": "Closed child audits require standard Lean axioms only and reject every direct proof dependency carrying sorryAx. Main audit explicitly allows only the two declared imported open stubs, requires both as actual consumers, rejects direct sorryAx and unrelated paths to sorryAx. Local stub assumptions are distinguished from platform ACCEPTED verification.",
+    "local_type_audit_receipts": [
+      {
+        "target": "chebyshev",
+        "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/chebyshev-type-axioms-review-result.json",
+        "job_id": "ci-013042-673e0d96",
+        "status": "succeeded",
+        "exit_code": 0,
+        "review_passed": true,
+        "audit_source_hash_matches_current_file": true,
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/prime-selection-reference-split-20261115/AuditChebyshevBound.lean"
+        ]
+      },
+      {
+        "target": "sum-prime-factors",
+        "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/sum-prime-factors-type-axioms-review-result.json",
+        "job_id": "ci-013048-103f0131",
+        "status": "succeeded",
+        "exit_code": 0,
+        "review_passed": true,
+        "audit_source_hash_matches_current_file": true,
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/prime-selection-reference-split-20261115/AuditSumPrimeFactors.lean"
+        ]
+      },
+      {
+        "target": "prime-selection",
+        "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/prime-selection-type-axioms-review-result.json",
+        "job_id": "ci-013058-3a24466b",
+        "status": "succeeded",
+        "exit_code": 0,
+        "review_passed": true,
+        "audit_source_hash_matches_current_file": true,
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/prime-selection-reference-split-20261115/AuditPrimeSelection.lean"
+        ]
+      }
+    ],
+    "source_review": "The independent source review records static source/reference/namespace fidelity and explicitly excludes target compiler certification; its limited scope is retained rather than promoted to mathematical parent completion."
+  },
+  "main_agent_remaining_work": [
+    "Assemble real reviewed Definition metadata from all four declarations and actual source citation; do not insert placeholder readbacks.",
+    "Generate packet and ready from current source/metadata only after required gate evidence exists.",
+    "Check each ready gate against its actual supporting receipt/review, including Checks/Axioms, ImportAudit, Act1Scene1, AxiomAudit and git diff --check where applicable; this review does not fabricate these gates.",
+    "Review final packet, then main agent may explicitly call deliver under the existing user authorization; retain actual platform receipts and final registry/source-consumer integration."
+  ],
+  "actions": {
+    "API_calls": 0,
+    "MCP_CI_calls": 0,
+    "Git_commands": 0,
+    "credential_file_reads": 0,
+    "main_workspace_writes": 0,
+    "writes": "Only this report and automatically deleted temporary checkpoint test directory.",
+    "search_tool": "prove2me_workspace/.local/bin/rg-two-cores"
+  },
+  "evidence_sha256": {
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/delivery.py": "540e52307780cee08c2363cee5ea867ee0a94b1efc59f2601da3a2d6d0dd4678",
+    "/tmp/p2m-prime-selection-platform-delivery-20261115/README.md": "e027191d00efe1634b2f10238c26a1922d856ee8fb7137a01fbf7a3bec396ee3",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/prove.md": "5e4b4b1137f6924f6324759c25d8699a1e3e08fa7ef0bcc8f3c1619e73f3ff27",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/contribute.md": "90ec285678a98d22eaf50f6d3c5462a986ebd6e2cb92abbc166ca83fec1c9764",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/mission_captain.md": "b16fa487a740b9c53e001d652ee7387fa9ae981f2c4e3b68d37091d7c319ae01",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/missions.md": "2653606835298f817582d46d1d1630afb461bc4202842635c97f1ac45d43a914",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/missions-before.json": "834ad7be66d2a3ee650fa662f9be36b116673e0d16ad220e8e43291865269df3",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/independent-source-review.json": "6881a1c1707ff95e38f57fdf695e66ddecaf1d0bbd9421ef0268274c3d147cb2",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/source-compiler-reviewed-readbacks.json": "e3eb54f8cd0811183f66bd39a541b6abaff62e0ee9824c667b44a33eb90a4182",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/original-exprs.json": "ba492c088d0e1f3cbbc1e136cbeadf7e8cd277d6163a361ceba0b647058bb054",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/original-wrapped-type-name-map.json": "991a7b1b7b6dc4fd9bcb96eeee8212dfe524c7a643dc05e8a91c19247ca4631a",
+    "/tmp/p2m-prime-selection-definition-readback-20261115/compiler-field-review.json": "a05b335eceb84154dd6b04db1af0f11b368619c58c2bf7b7061d0e8d2d3fa07e",
+    "/tmp/p2m-prime-selection-definition-readback-20261115/readbacks.compiler-reviewed.json": "1a69eb80fd8bb84afc3badcccf5633ced4c62e06f089606390bc76bcef0af17a",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/chebyshev-type-axioms-review-result.json": "65616726371162de5eed6edc5806e4c29b418bcaef2e099097b49b4af7e3de8e",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/sum-prime-factors-type-axioms-review-result.json": "714e11b379e9d202c383f6391966ec6b7f2678542c2e075f547a8e77c844f367",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/prime-selection-type-axioms-review-result.json": "29ea8890aefab630682acf63de8521f2be0b8369214abf8afc738cd357515107",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/payloads/AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.json": "15eb429b18b1f2eed38adff5f0c13aa7ec783c324c223b063c68422c3e102895",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean": "2539ec8f5f539a03efaf8b018ca25dced929147b11cbc96735139a384da858b4",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean": "7a93274feb64b982871817cad36657028b8b542851bcaa8773ac741c05412a60",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/payloads/AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.json": "f63b77010d05d50eb65d9b92aee7b86127b1dba9adac898657ede0b7b6f756c0",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean": "f7c6d6538a93ca978b784ec38255d3a2e8b25de5460a903d995c87a58f10083a",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean": "3c23079be1157f246ef528016fb97b9a47e33d06438073ac3279ef615460de0a",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/payloads/AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.json": "313364179af984d2998d176057cea4d4bb38236c158cd6d7a26aad6b4bb49abb",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean": "b779219a38fc8d5ed3b97efe7140aa9e6836d3f36c55964b6924f4b691961567",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean": "249b6d6c6d4ebc35fa7dfdfcc4318ae1ca0d637e9191848cff1e0aea251d527a"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "previous_job": "ci-012676-af0135f2",
+  "previous_status": "failed",
+  "observed_wall_seconds": 163.62488780000422,
+  "observed_cpu_seconds": 170.53,
+  "observed_peak_rss_bytes": 8440934400,
+  "diagnostic": "Dependent rw inferred Fin (Procession.standard L).length vs Fin L under implicit transparency",
+  "repair": {
+    "lemma": "sum_card_standard",
+    "change": "Expose the definitionally identical Fin L sum domain; use congrArg f with explicit source cardinality lemma instead of dependent rw",
+    "new_assumptions": false,
+    "statement_changed": false
+  },
+  "source_sha256": "b51aa0fa91b0c5ba0ce8c6611112fbb95f124537bb24337bd7858ee8328c41b0",
+  "retry_estimate_basis": "Measured complete failure plus remaining proof elaboration; same import closure. Earlier timeout remained only a lower bound."
+}

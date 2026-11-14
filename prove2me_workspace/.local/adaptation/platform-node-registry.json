@@ -737,7 +737,7 @@
     "ArithmeticTeichmullerSpaces/migration/environment.lock.json": "b4291edc40e6769fdb87edc27287bdfd9fb32ea8e7b3f5241bb80439c77b0ac7",
     "ArithmeticTeichmullerSpaces/migration/patches/tate-curves-theta-lean433.patch": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0",
     "docs/Prove2Me适配状态.md": "cffde4b5e16943d8fe0944129d1a22fb1302f353f8793c99bdd7bf185e3705e8",
-    "docs/开发计划.Prove2Me适配.md": "f43e1d51309fdbdd67cd94519e04b7547d1e43f0a43194a4c04e5561b55d8711",
+    "docs/开发计划.Prove2Me适配.md": "a22dcf07cd004b7bd9acc6b1f62c0fb384036580c395c2e8b437b1c278c513f2",
     "prove2me_workspace/.gitignore": "817595d48805ba0be6c618df746a4f00248544ae22c876cf636208555dbb9b7d",
     "prove2me_workspace/.local/adaptation/avoidance-regularity-sourceproof-20261114/AuditSolution.lean": "b6ee06e7288b449f69cf3d4eb29cc13b7289411deb79053f638addc98929590e",
     "prove2me_workspace/.local/adaptation/avoidance-regularity-sourceproof-20261114/ExtractAvoidanceFacts.lean": "0cf0b216bdeaa5737efaa4fef708e0950f74743115ac808668de1046cafe6108",
@@ -6258,9 +6258,17 @@
     "prove2me_workspace/Theorems/Thm_abc_goal_lt_constant_mul_fix.lean": "78ac2d6369b5da463cfb5c5517eecaed01dda6f677428a6487ac5c0df2bb6d4a",
     "prove2me_workspace/lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
     "prove2me_workspace/lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
-    "prove2me_workspace/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    "prove2me_workspace/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection.lean": "1abaf603978b055799618026ec0394e48a6df241e44a4375f596d76ab3a528f6",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean": "2539ec8f5f539a03efaf8b018ca25dced929147b11cbc96735139a384da858b4",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean": "f7c6d6538a93ca978b784ec38255d3a2e8b25de5460a903d995c87a58f10083a",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean": "b779219a38fc8d5ed3b97efe7140aa9e6836d3f36c55964b6924f4b691961567",
+    "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem.lean": "7a93274feb64b982871817cad36657028b8b542851bcaa8773ac741c05412a60",
+    "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection.lean": "3c23079be1157f246ef528016fb97b9a47e33d06438073ac3279ef615460de0a",
+    "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le.lean": "249b6d6c6d4ebc35fa7dfdfcc4318ae1ca0d637e9191848cff1e0aea251d527a",
+    "docs/三语术语名词关键对照.md": "e2cf4a6b27edde9f68e8733045e87925490ce8de51aec79c76589563ce1d5660"
   },
-  "recorded_at": "2026-11-14T17:17:41.466769+00:00",
+  "recorded_at": "2026-11-14T20:46:04.150343+00:00",
   "local_open_children_below_root": 16,
   "published_open_children_below_root": 16,
   "local_rational_projection_edge_verified": true,
@@ -7983,5 +7991,76 @@
     "source": ".local/adaptation/local-conductor-sourceproof-20261115",
     "exact_original_target_type_preserved": true,
     "submission_id": "46ebad1b-0c01-48c0-8ee6-97b2b971098d"
+  },
+  "reference_source_preparation": {
+    "scope": "detached-source-consumer-preparation-for-existing-private-mission",
+    "environment": {
+      "lean": "leanprover/lean4:v4.33.1",
+      "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+    },
+    "definitions": [
+      {
+        "name": "AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+        "id": "ca8c8d06-ce2b-4683-8de7-662afa4a0138"
+      }
+    ],
+    "proved_nodes": [
+      {
+        "name": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+        "theorem_id": "c88bbbcd-c15a-4675-b427-f78281a93da0",
+        "status": "Proved",
+        "submission_id": "0e691ace-f3f3-4924-8c6b-95f348859c0d",
+        "verification_status": "ACCEPTED",
+        "source": "refer/iut/Iut/Implication/PrimeSelection.lean",
+        "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+        "theorem_id": "11dce176-f080-46cd-908a-061f1e521828",
+        "status": "Proved",
+        "submission_id": "5806a818-3ba0-41b3-be46-df20f612f81c",
+        "verification_status": "ACCEPTED",
+        "source": "refer/iut/Iut/Implication/PrimeSelection.lean",
+        "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+        "theorem_id": "e49caa2e-206d-492c-ab04-1aafcf1a9539",
+        "status": "Proved",
+        "submission_id": "18001d80-d79c-4508-bb79-4a6695e0ae3b",
+        "verification_status": "ACCEPTED",
+        "source": "refer/iut/Iut/Implication/PrimeSelection.lean",
+        "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "root_graph_membership": false
+      }
+    ],
+    "dependency_pairs": [
+      {
+        "producer": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+        "consumer": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      },
+      {
+        "producer": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+        "consumer": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      }
+    ],
+    "actual_source_consumer": {
+      "name": "Iut.Corollary22Inputs.c2",
+      "file": "refer/iut/Iut/Implication/Corollary22.lean",
+      "line": 441
+    },
+    "canonicalC22Connected": false,
+    "root_graph_counts_unchanged": {
+      "accepted_reductions": 36,
+      "published_children": 83,
+      "dependency_edges": 101,
+      "open_frontier": 16,
+      "direct_closed_children": 42
+    },
+    "source_unit": ".local/adaptation/prime-selection-reference-split-20261115",
+    "source_graph": ".local/adaptation/reference-extraction-20261115/archives/c22-decl-graph.jsonl.gz",
+    "readback_types_kernel_checked": true
   }
 }

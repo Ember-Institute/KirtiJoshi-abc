@@ -1,0 +1,13 @@
+{
+  "first_job": "ci-012791-e49fd3aa",
+  "scheduler_status": "succeeded",
+  "exit_code": 0,
+  "accepted": false,
+  "reason": "Post-output PANIC in an outer Lean linter due to invalid environment extension",
+  "source_facts": "Index complete and output exists, retained under attempts; not promoted to validated oracle facts",
+  "hypothesis": "Nested processHeader loads Mathlib persistent extensions after the Lean-only outer environment was created",
+  "repair": "Import the exact accepted C22 reference closure in outer driver before nested frontend elaboration; query precise root universe and thetaData field types in the same job",
+  "expected_duration": "200s",
+  "expected_memory": "12GiB",
+  "estimate_basis": "First oracle 99.71s and5.05GiB; new outer import uses the measured8.24GiB reference environment, shared with nested subset imports"
+}

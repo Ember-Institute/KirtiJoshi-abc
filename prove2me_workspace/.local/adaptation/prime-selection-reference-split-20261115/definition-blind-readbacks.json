@@ -1,0 +1,99 @@
+{
+  "schema": "independent-definition-readbacks-v1",
+  "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection.lean",
+  "source_sha256": "1abaf603978b055799618026ec0394e48a6df241e44a4375f596d76ab3a528f6",
+  "readback_model": "gpt-6.1-sol",
+  "model_attribution": "Parent-assigned auditor model; no separate model-introspection tool was used.",
+  "provenance": {
+    "role": "one independent source-code reader, followed by translations of that reader's English text",
+    "independent_audit_count": 1,
+    "languages": [
+      "en",
+      "zh-Hans",
+      "ja"
+    ],
+    "mathematical_semantics_basis": "Formal structure fields and definition bodies, together with the imported definition of Chebyshev.theta. Source documentation comments are not mathematical premises.",
+    "source_comments_used_for_semantics": false,
+    "papers_consulted": false,
+    "prior_readbacks_consulted": false,
+    "translation_basis": "The English readback in the same entry, checked against the same source declarations.",
+    "rules": [
+      "docs/三语自然语言读回原则.md",
+      "docs/三语术语名词关键对照.md",
+      "prove2me_workspace/references/mission_auditor.md"
+    ],
+    "compiler_receipt": null,
+    "compiler_field_review": "pending: the parent will supply compiler-extracted fields and types; static source line ranges below are not parser ranges",
+    "compilation_performed_by_this_reader": false,
+    "platform_actions_performed_by_this_reader": false
+  },
+  "unknown_terms": [],
+  "declarations": [
+    {
+      "name": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+      "kind": "structure",
+      "source_range": {
+        "start_line": 45,
+        "end_line": 53,
+        "basis": "static numbered source inspection; declaration body only; not compiler/parser extraction"
+      },
+      "source_excerpt_sha256": "41cb1a8e2e36519c71e010459f6c6484d82225a8543bea2e3b77c4d679e12116",
+      "readback_en": "A Chebyshev bound is a record containing a real number $\\xi$, a proof that $5\\le\\xi$, and proofs of the following two assertions: for every real number $x$, if $\\xi\\le x$, then $\\frac{2}{3}x\\le\\theta(x)$, and for every real number $x$, if $\\xi\\le x$, then $\\theta(x)\\le 2x$. Here $\\theta(x)=\\sum_{\\substack{p\\in\\mathbb N,\\ 0<p\\le\\lfloor x\\rfloor_{\\mathbb N}\\\\p\\text{ prime}}}\\log p$, where $\\lfloor x\\rfloor_{\\mathbb N}$ is the floor into the natural numbers, equal to zero when $x<0$, and $\\log$ is the real natural logarithm. Both non-strict bounds include the endpoint $x=\\xi$. The record imposes no bound through these two fields when $x<\\xi$, and it specifies neither a numerical choice nor a least or unique choice of $\\xi$. The declaration defines the type of such records; it does not itself provide a record or assert the selection of any prime.",
+      "readback_zh_Hans": "一个 Chebyshev 界记录包含实数 $\\xi$、$5\\le\\xi$ 的证明，以及下列两个断言的证明：对每个实数 $x$，若 $\\xi\\le x$，则 $\\frac{2}{3}x\\le\\theta(x)$；对每个实数 $x$，若 $\\xi\\le x$，则 $\\theta(x)\\le 2x$。这里 $\\theta(x)=\\sum_{\\substack{p\\in\\mathbb N,\\ 0<p\\le\\lfloor x\\rfloor_{\\mathbb N}\\\\p\\text{ 为素数}}}\\log p$，其中 $\\lfloor x\\rfloor_{\\mathbb N}$ 是取值于自然数的向下取整，在 $x<0$ 时等于零，$\\log$ 是实自然对数。两个非严格不等式都包含端点 $x=\\xi$。当 $x<\\xi$ 时，这两个字段不给出界；该记录既不指定 $\\xi$ 的具体数值，也不要求它是最小或唯一的选择。此声明定义这种记录的类型，本身没有给出一个这样的记录，也没有断言选出任何素数。",
+      "readback_ja": "Chebyshev 境界の記録は、実数 $\\xi$、$5\\le\\xi$ の証明、および次の二つの主張の証明からなる。任意の実数 $x$ について、$\\xi\\le x$ ならば $\\frac{2}{3}x\\le\\theta(x)$ であり、任意の実数 $x$ について、$\\xi\\le x$ ならば $\\theta(x)\\le 2x$ である。ここで $\\theta(x)=\\sum_{\\substack{p\\in\\mathbb N,\\ 0<p\\le\\lfloor x\\rfloor_{\\mathbb N}\\\\p\\text{ は素数}}}\\log p$ とし、$\\lfloor x\\rfloor_{\\mathbb N}$ は自然数に値を取る床関数で、$x<0$ のときは零である。$\\log$ は実数の自然対数である。二つの非狭義不等式はいずれも端点 $x=\\xi$ を含む。$x<\\xi$ の場合、この二つのフィールドは境界を課さず、$\\xi$ の具体的な値、最小性、一意性も指定しない。この宣言はこのような記録の型を定義するものであり、記録そのものを与えることも、何らかの素数の選択を主張することもない。"
+    },
+    {
+      "name": "AbcAdaptation.Reference.Iut.thetaSet",
+      "kind": "noncomputable definition",
+      "source_range": {
+        "start_line": 56,
+        "end_line": 56,
+        "basis": "static numbered source inspection; declaration body only; not compiler/parser extraction"
+      },
+      "source_excerpt_sha256": "b901e8f12784afdd85ff2a835c843c7c3e022e4a2470b737b853544647c535ad",
+      "readback_en": "For every finite set $A$ of natural numbers, define the real number $\\theta_A=\\sum_{p\\in A}\\log(p)$, with each natural number viewed as a real number and $\\log$ the real natural logarithm. There is no assumption that members of $A$ are prime, positive, or distinct beyond their being elements of a set, so each member is counted once. The empty set gives $\\theta_{\\varnothing}=0$. The values $0$ and $1$ are allowed members and each contributes zero, because the real logarithm used here is total with $\\log 0=0$ and $\\log 1=0$. No Chebyshev-bound record is an argument to this definition. The definition is marked noncomputable.",
+      "readback_zh_Hans": "对每个自然数的有限集 $A$，定义实数 $\\theta_A=\\sum_{p\\in A}\\log(p)$，其中每个自然数都视为实数，$\\log$ 是实自然对数。不要求 $A$ 的元素为素数或正数；除集合本身不重复计数之外，也没有其他互异条件，每个元素恰好计入一次。空集给出 $\\theta_{\\varnothing}=0$。允许 $0$ 和 $1$ 属于 $A$，二者各自贡献零，因为这里的实对数是全定义函数，满足 $\\log 0=0$ 和 $\\log 1=0$。此定义不接收 Chebyshev 界记录作为参数，并标记为非可计算定义。",
+      "readback_ja": "任意の自然数の有限集合 $A$ に対して、実数 $\\theta_A=\\sum_{p\\in A}\\log(p)$ を定義する。各自然数は実数とみなし、$\\log$ は実数の自然対数である。$A$ の元が素数または正数であるという仮定はない。集合として元が重複しないこと以外に相異性の条件はなく、各元は一度ずつ数えられる。空集合では $\\theta_{\\varnothing}=0$ となる。$0$ と $1$ も元として許され、それぞれの寄与は零である。ここで用いる実数の対数は全域で定義され、$\\log 0=0$ および $\\log 1=0$ を満たすためである。この定義は Chebyshev 境界の記録を引数に取らず、非計算的な定義と指定されている。"
+    },
+    {
+      "name": "AbcAdaptation.Reference.Iut.LocalHeightData",
+      "kind": "structure",
+      "source_range": {
+        "start_line": 81,
+        "end_line": 104,
+        "basis": "static numbered source inspection; declaration body only; not compiler/parser extraction"
+      },
+      "source_excerpt_sha256": "f24c0f458337ab9e3f124d8d5c9bcd5f50730737ed714e334fe1275d5ba021ae",
+      "readback_en": "For an arbitrary universe level $w$, this record type lies in universe $w+1$. A record consists of an index type $I$ in universe $w$, a finite subset $B\\subseteq I$, three total maps $p,h_v,f:I\\to\\mathbb N$, and a natural number $d$, together with proofs that $1\\le d$; that, for every $v\\in B$, $p(v)$ is prime, $1\\le h_v(v)$, and $1\\le f(v)$; and that, for every natural number $q$, $\\sum_{\\substack{v\\in B\\\\p(v)=q}}f(v)\\le d$, where this last sum and inequality are in the natural numbers. The type $I$ need not be finite or inhabited. The finite subset $B$ may be empty, in which case its three pointwise conditions are vacuous and all the displayed sums are zero. The maps are defined on all of $I$, but outside $B$ their values are unrestricted natural numbers, including zero. Equal values of $p$ at different members of $B$ are allowed, subject to the bound on the corresponding sum of $f$. The bound is required for every $q$, including $0$, $1$, composite numbers, and values not attained on $B$; whenever the filtered subset is empty the sum is zero. The field $d$ may equal $1$ and has no specified upper bound. No field has a default value. These fields specify only such finite numerical data and their constraints: they contain no number field, elliptic curve, places of a field, or realization map, and do not assert that a number field or curve realizing the data has been constructed.",
+      "readback_zh_Hans": "对任意宇宙层级 $w$，此记录类型位于宇宙 $w+1$。一个记录包含宇宙 $w$ 中的索引类型 $I$、有限子集 $B\\subseteq I$、三个全定义映射 $p,h_v,f:I\\to\\mathbb N$ 和自然数 $d$，以及下列条件的证明：$1\\le d$；对每个 $v\\in B$，$p(v)$ 是素数、$1\\le h_v(v)$ 且 $1\\le f(v)$；对每个自然数 $q$，$\\sum_{\\substack{v\\in B\\\\p(v)=q}}f(v)\\le d$，最后这个和及不等式都在自然数中取值。类型 $I$ 不必有限，也不必有元素。有限子集 $B$ 可以为空，此时三个逐点条件都真空成立，所列的和都为零。这些映射定义在整个 $I$ 上，但在 $B$ 外的取值是不受限制的自然数，包括零。允许 $B$ 的不同元素具有相同的 $p$ 值，但相应的 $f$ 值之和仍须满足上述界。这个界要求对所有 $q$ 成立，包括 $0$、$1$、合数以及不在 $B$ 上出现的值；筛出的子集为空时，和为零。字段 $d$ 可以等于 $1$，没有指定上界。没有字段带有默认值。这些字段只规定这样的有限数值数据及其约束；其中没有数域、椭圆曲线、域的处或实现映射，也没有断言已构造出实现这些数据的数域或曲线。",
+      "readback_ja": "任意の宇宙レベル $w$ に対して、この記録の型は宇宙 $w+1$ に属する。記録は、宇宙 $w$ に属する添字型 $I$、有限部分集合 $B\\subseteq I$、三つの全域写像 $p,h_v,f:I\\to\\mathbb N$、自然数 $d$、および次の条件の証明からなる。$1\\le d$ であり、任意の $v\\in B$ について $p(v)$ は素数、$1\\le h_v(v)$、$1\\le f(v)$ であり、任意の自然数 $q$ について $\\sum_{\\substack{v\\in B\\\\p(v)=q}}f(v)\\le d$ である。最後の和と不等式は自然数におけるものである。型 $I$ は有限である必要も、元を持つ必要もない。有限部分集合 $B$ は空でもよく、その場合は三つの各点条件が空虚に成立し、表示された和はすべて零となる。写像は $I$ 全体で定義されるが、$B$ の外の値は零を含む任意の自然数でよい。$B$ の異なる元で $p$ の値が等しくてもよいが、対応する $f$ の値の和は指定された境界を満たす必要がある。この境界は $0$、$1$、合成数、$B$ 上で現れない値を含むすべての $q$ に対して要求され、抽出された部分集合が空ならば和は零である。$d$ は $1$ でもよく、上限は指定されていない。既定値を持つフィールドはない。これらのフィールドが指定するのはこのような有限の数値データと制約だけであり、数体、楕円曲線、体の素点、実現写像は含まれず、データを実現する数体や曲線が構成されたとは主張しない。"
+    },
+    {
+      "name": "AbcAdaptation.Reference.Iut.LocalHeightData.height",
+      "kind": "noncomputable definition",
+      "source_range": {
+        "start_line": 111,
+        "end_line": 112,
+        "basis": "static numbered source inspection; declaration body only; not compiler/parser extraction"
+      },
+      "source_excerpt_sha256": "ff782ce51c6c6dfc8e0265e53f78a18163bd5ffaaef6c198fcfa1ba4566ac55d",
+      "readback_en": "For every record $L$ at an arbitrary universe level $w$, with an index type $I$ in universe $w$, a finite subset $B\\subseteq I$, total maps $p,h_v,f:I\\to\\mathbb N$, and $d\\in\\mathbb N$ satisfying $1\\le d$, primality of $p(v)$ and $1\\le h_v(v),1\\le f(v)$ for every $v\\in B$, and $\\sum_{v\\in B,\\ p(v)=q}f(v)\\le d$ for every $q\\in\\mathbb N$, define its real height by $H(L)=\\dfrac{\\sum_{v\\in B}h_v(v)f(v)\\log(p(v))}{d}$. All natural numbers in this formula are coerced to real numbers before the multiplication or division, and $\\log$ is the real natural logarithm. The denominator is positive by $1\\le d$, so division by zero does not occur. The type $I$ may be infinite or empty and $B$ may be empty; an empty $B$ gives $H(L)=0$. Only values on $B$ contribute to the sum, so unrestricted values of the three maps outside $B$, including zero, do not affect it; on $B$, $p(v)\\ge2$ and the other two factors are at least one, so no zero-logarithm convention is needed for those summands. The height is computed from $L$ by this formula; there is no additional independent height field, number field, curve, or identification with an arithmetic height among the arguments. The definition is marked noncomputable.",
+      "readback_zh_Hans": "对任意宇宙层级 $w$ 上的每个记录 $L$，其数据为宇宙 $w$ 中的索引类型 $I$、有限子集 $B\\subseteq I$、全定义映射 $p,h_v,f:I\\to\\mathbb N$ 以及 $d\\in\\mathbb N$，并满足 $1\\le d$，对每个 $v\\in B$，$p(v)$ 是素数且 $1\\le h_v(v)$、$1\\le f(v)$，以及对每个 $q\\in\\mathbb N$，$\\sum_{v\\in B,\\ p(v)=q}f(v)\\le d$。定义其实数高度为 $H(L)=\\dfrac{\\sum_{v\\in B}h_v(v)f(v)\\log(p(v))}{d}$。公式中的所有自然数都在乘法或除法之前转为实数，$\\log$ 是实自然对数。由 $1\\le d$ 可知分母为正，因此不会除以零。类型 $I$ 可以无限或为空，$B$ 也可以为空；$B$ 为空时 $H(L)=0$。只有 $B$ 上的取值参与求和，所以三个映射在 $B$ 外不受限制的取值，包括零，都不影响结果；在 $B$ 上，$p(v)\\ge2$，另两个因子至少为一，因此这些求和项不需要用到零的对数约定。高度由 $L$ 通过该公式计算出来；参数中没有另行给定的独立高度字段、数域、曲线或与算术高度的认同。此定义标记为非可计算定义。",
+      "readback_ja": "任意の宇宙レベル $w$ における任意の記録 $L$ を取る。そのデータは、宇宙 $w$ の添字型 $I$、有限部分集合 $B\\subseteq I$、全域写像 $p,h_v,f:I\\to\\mathbb N$、および $d\\in\\mathbb N$ であり、$1\\le d$、任意の $v\\in B$ に対する $p(v)$ の素数性と $1\\le h_v(v),1\\le f(v)$、任意の $q\\in\\mathbb N$ に対する $\\sum_{v\\in B,\\ p(v)=q}f(v)\\le d$ を満たす。この記録の実数値の高さを $H(L)=\\dfrac{\\sum_{v\\in B}h_v(v)f(v)\\log(p(v))}{d}$ と定義する。式中の自然数は、乗算または除算の前にすべて実数に移され、$\\log$ は実数の自然対数である。$1\\le d$ により分母は正であり、零による除算は生じない。型 $I$ は無限でも空でもよく、$B$ も空でよい。$B$ が空ならば $H(L)=0$ である。和に寄与するのは $B$ 上の値だけなので、零を含む $B$ の外の制約されない値は結果に影響しない。$B$ 上では $p(v)\\ge2$ で他の二つの因子も一以上であるため、これらの項では零の対数の規約を使う必要はない。高さはこの式により $L$ から算出される。引数には別個に与えられた高さのフィールド、数体、曲線、算術的な高さとの同一視は含まれない。この定義は非計算的な定義と指定されている。"
+    }
+  ],
+  "local_validation": {
+    "json_parse": "passed",
+    "declaration_count": 4,
+    "nonempty_language_fields_per_declaration": [
+      "en",
+      "zh-Hans",
+      "ja"
+    ],
+    "one_paragraph_per_declaration_per_language": true,
+    "source_hash_rechecked": true,
+    "static_range_hashes_rechecked": true,
+    "compiler_field_check": "pending parent-supplied compiler data",
+    "notes": "No Lean process, MCP-CI job, platform API, Git operation, or repository write was performed."
+  }
+}

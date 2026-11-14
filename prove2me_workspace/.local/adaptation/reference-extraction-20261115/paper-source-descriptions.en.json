@@ -1,0 +1,190 @@
+[
+  {
+    "declaration": "Iut.Theorem110Invariants.theorem110",
+    "source_description_en": "Mochizuki, Inter-universal Teichmüller Theory IV (April 2020), Theorem 1.10, printed/PDF pp. 22–23, gives a log-volume estimate for initial Θ-data satisfying the setting of IUT III, Corollary 3.12, the stated good-reduction condition, and the specified torsion-field construction. With d_mod = [F_mod : ℚ], e*_mod = 2¹²·3³·5·e_mod, and F_tpd = F_mod(E[2]), the first inequality in the final display on p. 23 is (1/6) log(q) ≤ (1 + 20 d_mod/ℓ)(log(d_F_tpd) + log(f_F_tpd)) + 20(e*_mod ℓ + η_prm). Here the different and conductor terms are normalized degrees of the arithmetic divisors defined on p. 23. The same page identifies the Corollary 3.12 normalization |log(q)| with log(q)/(2ℓ). The proof is on pp. 23–31; its arithmetic, local-volume, weighted-average, and prime-counting inputs are explicit parts of that argument.",
+    "formal_readback_en": "In refer/iut, this declaration proves the displayed numerical inequality for an existing Corollary312VariantData bundle X, supplied invariants inv, a Theorem110Certificate, a LocalEstimate, a PrimeCountingBound, and a proof of Corollary312Variant X. The degree d_mod and the q-pilot expression are derived from the supplied bundle. The maximal ramification index, tripodal different/conductor degrees, distinguished-prime set, and local different contributions are fields supplied through inv; their arithmetic interpretation is not constructed by this theorem. The certificate and local estimates remain explicit premises. The formal prime-counting interface uses 3/2 instead of the printed 4/3 in Proposition 1.6; its arithmetic assembly still proves the printed final constants 20. This is a conditional implication at these interfaces.",
+    "locations": [
+      {
+        "pdf": "iut4",
+        "printed_pages": [
+          22,
+          23
+        ],
+        "file_pages": [
+          22,
+          23
+        ],
+        "label": "Theorem 1.10 statement; final unnumbered display on p. 23"
+      },
+      {
+        "pdf": "iut4",
+        "printed_pages": [
+          23,
+          31
+        ],
+        "file_pages": [
+          23,
+          31
+        ],
+        "label": "proof Steps (i)–(viii); final step on pp. 30–31"
+      },
+      {
+        "pdf": "iut4",
+        "printed_pages": [
+          16
+        ],
+        "file_pages": [
+          16
+        ],
+        "label": "Proposition 1.6; printed prime-counting factor 4/3"
+      }
+    ],
+    "short_verbatim_quotes": [
+      {
+        "pdf": "iut4",
+        "printed_page": 22,
+        "file_page": 22,
+        "quote": "Fix a collection of initial Θ-data as in [IUTchI], Definition 3.1.",
+        "transcription": "line break in collection joined; ﬁ ligature expanded"
+      },
+      {
+        "pdf": "iut4",
+        "printed_page": 23,
+        "file_page": 23,
+        "quote": "and hence, by applying the inequality “CΘ ≥−1” of [IUTchIII], Corollary 3.12,",
+        "transcription": "line break joined; subscript Θ retained as inline glyph"
+      }
+    ],
+    "formal_files": [
+      "refer/iut/Iut/Implication/Theorem110.lean",
+      "refer/iut/Iut/Implication/Invariants.lean",
+      "refer/iut/Iut/Implication/LogVolumeBound.lean"
+    ]
+  },
+  {
+    "declaration": "Iut.ThetaDataExistence",
+    "source_description_en": "The direct source for the existence step is Mochizuki, IUT IV, proof of Corollary 2.2(ii), printed/PDF p. 46, paragraph immediately before (P7), (P7), and the following paragraph. After (P1), (P2), (P5), and (P6), the paper asserts the existence of C̲_K, V, and ε satisfying IUT I, Definition 3.1(a)–(f), and says that the resulting initial Θ-data satisfy Theorem 1.10. The next paragraph links the existence of V and ε to the full SL₂(𝔽_ℓ) Galois image in (P6). These are geometric data: IUT I (May 2020), Definition 3.1(d), p. 62, specifies a hyperbolic orbicurve of type (1,ℓ-tors)± with its K-core; (e), pp. 62–63, specifies a section V of the valuations and the required local type at bad places; (f), p. 63, specifies a cusp ε and its local compatibility. The different/conductor identifications used after (P7) appear in Corollary 2.2(ii), p. 43, and at the end of its proof, p. 48.",
+    "formal_readback_en": "ThetaDataExistence is a proposition-valued structure with a thetaData field; it is an input to the formal Corollary 2.2 argument. For an admissible point outside the supplied exceptional set and a prime ℓ ≥ 7 satisfying the encoded (P2), (P3), (P5), and (P6), the field returns an abstract Corollary312VariantData bundle X, numerical invariants inv, a predicate P X, a certificate, and a nonempty local-estimate structure. It also returns equality of ℓ, the degree bound, the q-height comparison, and the different/conductor readback relations. Those output relations adapt the paper to the formal interfaces. This definition does not itself construct C̲_K, the compatible valuation section, the cusp, or the local geometry in IUT I, Definition 3.1(d)–(f). Nor does it prove Corollary312Variant X: that is a separate hypothesis restricted to bundles satisfying P.",
+    "locations": [
+      {
+        "pdf": "iut4",
+        "printed_pages": [
+          46
+        ],
+        "file_pages": [
+          46
+        ],
+        "label": "proof of Corollary 2.2(ii), paragraph before (P7), (P7), and next paragraph"
+      },
+      {
+        "pdf": "iut1",
+        "printed_pages": [
+          61,
+          62,
+          63
+        ],
+        "file_pages": [
+          61,
+          62,
+          63
+        ],
+        "label": "Definition 3.1(a)–(f), especially (d)–(f)"
+      },
+      {
+        "pdf": "iut4",
+        "printed_pages": [
+          43,
+          48
+        ],
+        "file_pages": [
+          43,
+          48
+        ],
+        "label": "log-different equality and conductor inequalities"
+      }
+    ],
+    "short_verbatim_quotes": [
+      {
+        "pdf": "iut4",
+        "printed_page": 46,
+        "file_page": 46,
+        "quote": "the resulting initial Θ-data",
+        "transcription": "contiguous words from (P7)"
+      },
+      {
+        "pdf": "iut4",
+        "printed_page": 46,
+        "file_page": 46,
+        "quote": "satisfies the various conditions in the statement of Theorem 1.10.",
+        "transcription": "ﬁ ligature expanded"
+      },
+      {
+        "pdf": "iut1",
+        "printed_page": 61,
+        "file_page": 61,
+        "quote": "We shall refer to as initial Θ-data any collection of data",
+        "transcription": "contiguous words following Definition 3.1 heading"
+      }
+    ],
+    "formal_files": [
+      "refer/iut/Iut/Implication/Corollary22.lean"
+    ]
+  },
+  {
+    "declaration": "Iut.Corollary22Inputs.c2",
+    "source_description_en": "Mochizuki, IUT IV, Corollary 2.2(ii), printed/PDF pp. 41–43, applies to the λ-line ℙ¹ minus {0,1,∞}, a compactly bounded subset whose support contains 2 and which satisfies the stated bounded 2-adic j-invariant condition. Outside a finite exceptional set, it constructs suitable initial Θ-data with (C1) and (C2). With h = log(q_∀) and δ = 2¹²·3³·5·d, (C2), p. 42, bounds (1/6)h by (1 + ε_E)(log-diff_X(x_E) + log-cond_D(x_E)) + C_K, where ε_E = (60δ)² h^(−1/2) log(2δh). The proof selects ℓ through (P1)–(P3), p. 45, excludes cyclic subgroups in (P4), p. 45, obtains (P5), (P6), and (P7), p. 46, then applies Theorem 1.10. Pages 47–48 absorb the terms into ε_E and C_K and finish (C2). The exact comparison with the tripodal different and conductor is stated on p. 43 and repeated on p. 48.",
+    "formal_readback_en": "For a fixed Corollary22Inputs package I, the formal c2 theorem assumes d ≥ 1, ThetaDataExistence P I, the Chebyshev and prime-counting interfaces, and the Corollary 3.12 variant for every produced bundle satisfying P. At an admissible point outside I.excCore whose supplied height is above I.threshold cheb, it proves the upper inequality in (C2) with the explicit formal constant 40 pnt.η + I.B/3, together with ε_E ≤ 1 and nonnegativity of logDiff + logCond. The package I supplies the standard height, cyclic-subgroup, Galois-image, exceptional-set, and finiteness facts used by the proof. The declaration does not establish those geometric inputs, prove the variant input, or state the full uniform bounds for the exceptional sets from Corollary 2.2(ii)–(iii). The displayed paper constant is 40η_prm + 2B_K on p. 47, where B_K bounds a difference of heights after division by 6; the formal I.B bounds the unscaled local contribution at 2, so the additive constants use different normalization conventions.",
+    "locations": [
+      {
+        "pdf": "iut4",
+        "printed_pages": [
+          41,
+          42,
+          43
+        ],
+        "file_pages": [
+          41,
+          42,
+          43
+        ],
+        "label": "Corollary 2.2 assumptions and (ii), formulas (C1), (C2)"
+      },
+      {
+        "pdf": "iut4",
+        "printed_pages": [
+          45,
+          46
+        ],
+        "file_pages": [
+          45,
+          46
+        ],
+        "label": "proof conditions (P1)–(P7)"
+      },
+      {
+        "pdf": "iut4",
+        "printed_pages": [
+          47,
+          48
+        ],
+        "file_pages": [
+          47,
+          48
+        ],
+        "label": "absorption of error terms and final C2"
+      }
+    ],
+    "short_verbatim_quotes": [
+      {
+        "pdf": "iut4",
+        "printed_page": 42,
+        "file_page": 42,
+        "quote": "(C2) we have inequalities",
+        "transcription": "contiguous label and prose; following mathematical display recorded separately"
+      }
+    ],
+    "formal_files": [
+      "refer/iut/Iut/Implication/Corollary22.lean"
+    ]
+  }
+]

@@ -1,0 +1,432 @@
+{
+  "schema": "local.trilingual-readbacks.wrapped-reviewed.v1",
+  "date": "2026-11-15",
+  "assigned_model": "gpt-6.1-sol",
+  "scope": "formal code and required definitions only; source intention comments and paper explanations are not evidence",
+  "namespace_status": "Display names relocated from Iut to AbcAdaptation.Reference.Iut; mathematical English, Chinese, and Japanese readback text strings are unchanged.",
+  "source_sha256_byte_method": "SHA-256 of Path.read_bytes(), with no newline normalization",
+  "readbacks": [
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+      "en": "For every datum $\\mathrm{cheb}$ consisting of a real number $\\xi\\ge 5$ and bounds $\\frac23x\\le\\theta(x)\\le 2x$ for every real $x\\ge\\xi$, where $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ prime},\\ p\\le x}\\log p$ and $\\log$ is the real natural logarithm, and for every finite set $A\\subseteq\\mathbb N$, there exists a natural number $p$ such that $p$ is prime, $p\\notin A$, and $p\\le 2(\\sum_{a\\in A}\\log a+\\xi)$. Natural numbers in real expressions are interpreted as real numbers. The hypotheses do not require the elements of $A$ to be prime, positive, or greater than $1$; in the real logarithm used here, $\\log 0=\\log 1=0$. The set $A$ may be empty, in which case its sum is $0$ and the asserted bound is $p\\le 2\\xi$. The same numerical coefficient $2$ applies to every such datum and finite set; the prime is existentially quantified after both inputs, with no uniqueness assertion.",
+      "zh-Hans": "对每一份数据 $\\mathrm{cheb}$，它包含一个实数 $\\xi\\ge 5$，以及对每个实数 $x\\ge\\xi$ 都成立的界 $\\frac23x\\le\\theta(x)\\le 2x$，其中 $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ 为素数},\\ p\\le x}\\log p$，$\\log$ 表示实自然对数；再对每个有限集合 $A\\subseteq\\mathbb N$，都存在一个自然数 $p$，使得 $p$ 是素数、$p\\notin A$，且 $p\\le 2(\\sum_{a\\in A}\\log a+\\xi)$。实数表达式中的自然数均按其对应实数理解。前提不要求 $A$ 的元素为素数、为正或大于 $1$；这里使用的实对数满足 $\\log 0=\\log 1=0$。集合 $A$ 可以为空，此时其求和为 $0$，结论中的上界为 $p\\le 2\\xi$。数值系数 $2$ 对所有这样的数据及有限集合一致适用；素数的存在量词位于这两个输入之后，结论不要求唯一性。",
+      "ja": "実数 $\\xi\\ge 5$ と、すべての実数 $x\\ge\\xi$ に対する評価 $\\frac23x\\le\\theta(x)\\le 2x$ からなる任意のデータ $\\mathrm{cheb}$ を考える。ここで $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ は素数},\\ p\\le x}\\log p$ であり、$\\log$ は実数の自然対数である。このような各データと任意の有限集合 $A\\subseteq\\mathbb N$ に対して、素数である自然数 $p$ が存在し、$p\\notin A$ かつ $p\\le 2(\\sum_{a\\in A}\\log a+\\xi)$ が成り立つ。実数の式に現れる自然数は、その実数への埋め込みとして解釈する。$A$ の要素が素数、正数、または $1$ より大きいことは仮定しない。ここで用いる実対数では $\\log 0=\\log 1=0$ である。$A$ は空集合でもよく、その場合、和は $0$ となり、結論の上界は $p\\le 2\\xi$ である。数値係数 $2$ はすべての当該データと有限集合に共通であり、素数の存在量化はこの二つの入力の後に置かれる。一意性は主張しない。",
+      "readback_model": "gpt-6.1-sol",
+      "readback_kind": "wrapped_compiler_review_of_frozen_blind_readback",
+      "english_role": "frozen independent original readback",
+      "translation_role": "Chinese and Japanese translations by the same agent from the frozen English readback; not independent audits",
+      "source_file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/PrimeSelection.lean",
+      "source_sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+      "cached_elaborated_type": "∀ (cheb : Iut.ChebyshevBound) (A : Finset ℕ), ∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ ↑p ≤ 2 * (Iut.thetaSet A + cheb.ξ)",
+      "binder_universe_status": "Every actual top-level binder is explicit and matches the original compiler telescope after the displayed namespace and universe-alpha relocation. No new implicit or instance binder is present. The theorem has no declaration universe parameters.",
+      "static_source_range_1based_inclusive": [
+        104,
+        128
+      ],
+      "range_evidence": "static source line count, not a parser fact; cached graph ranges retained separately",
+      "cached_graph_range": {
+        "end": {
+          "col": 30,
+          "line": 128
+        },
+        "endUtf16": 30,
+        "start": {
+          "col": 0,
+          "line": 102
+        },
+        "startUtf16": 0
+      },
+      "direct_type_dependencies": [
+        "And",
+        "Exists",
+        "Finset",
+        "Nat",
+        "Not",
+        "Real",
+        "instHAdd",
+        "instHMul",
+        "instOfNatAtLeastTwo",
+        "instOfNatNat",
+        "Finset.instSetLike",
+        "HAdd.hAdd",
+        "HMul.hMul",
+        "Iut.ChebyshevBound",
+        "Iut.thetaSet",
+        "LE.le",
+        "Membership.mem",
+        "Nat.Prime",
+        "Nat.cast",
+        "Nat.instAtLeastTwoHAddOfNat",
+        "Nat.instNeZeroSucc",
+        "OfNat.ofNat",
+        "Real.instAdd",
+        "Real.instLE",
+        "Real.instMul",
+        "Real.instNatCast",
+        "SetLike.instMembership",
+        "Iut.ChebyshevBound.ξ"
+      ],
+      "cached_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "cached_hasSorryAx": false,
+      "proof_status": "The supplied wrapped audit reports no direct or transitive sorryAx in the solution and solution axioms propext, Classical.choice, Quot.sound. This reviewer made no new compilation or CI query.",
+      "unknown_terms": [],
+      "compiler_full_type": "∀ (cheb : AbcAdaptation.Reference.Iut.ChebyshevBound) (A : Finset.{0} ℕ),\n  ∃ (p : ℕ),\n    Nat.Prime p ∧\n      p ∉ A ∧\n        LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (AbcAdaptation.Reference.Iut.thetaSet A) cheb.ξ))",
+      "compiler_telescope": {
+        "result": "∃ (p : ℕ),\n  Nat.Prime p ∧\n    p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (AbcAdaptation.Reference.Iut.thetaSet A) cheb.ξ))",
+        "binders": [
+          {
+            "type": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Finset.{0} ℕ",
+            "name": "A",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "compiler_universe_parameters": [],
+      "compiler_review": {
+        "file": "/tmp/p2m-prime-selection-readbacks-20261115/wrapped-compiler-binder-review.json",
+        "audit_input": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-ChebyshevBound-exists_prime_notMem.json",
+        "audit_input_sha256": "9c60a800683fdde0b4e9f51ee396eea25ea55f5ca4ccd45e723f15ffc3052d4d",
+        "outcome": "matched"
+      },
+      "original_declaration": "Iut.ChebyshevBound.exists_prime_notMem",
+      "display_name": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+      "original_compiler_full_type": "∀ (cheb : Iut.ChebyshevBound) (A : Finset.{0} ℕ),\n  ∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (Iut.thetaSet A) cheb.ξ))",
+      "original_compiler_telescope": {
+        "result": "∃ (p : ℕ), Nat.Prime p ∧ p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (Iut.thetaSet A) cheb.ξ))",
+        "binders": [
+          {
+            "type": "Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Finset.{0} ℕ",
+            "name": "A",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "wrapped_solution_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "wrapped_solution_has_transitive_sorryAx": false,
+      "wrapped_solution_body_direct_sorryAx": false,
+      "wrapped_imported_open_children": [],
+      "readback": "[English — frozen independent original]\n\nFor every datum $\\mathrm{cheb}$ consisting of a real number $\\xi\\ge 5$ and bounds $\\frac23x\\le\\theta(x)\\le 2x$ for every real $x\\ge\\xi$, where $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ prime},\\ p\\le x}\\log p$ and $\\log$ is the real natural logarithm, and for every finite set $A\\subseteq\\mathbb N$, there exists a natural number $p$ such that $p$ is prime, $p\\notin A$, and $p\\le 2(\\sum_{a\\in A}\\log a+\\xi)$. Natural numbers in real expressions are interpreted as real numbers. The hypotheses do not require the elements of $A$ to be prime, positive, or greater than $1$; in the real logarithm used here, $\\log 0=\\log 1=0$. The set $A$ may be empty, in which case its sum is $0$ and the asserted bound is $p\\le 2\\xi$. The same numerical coefficient $2$ applies to every such datum and finite set; the prime is existentially quantified after both inputs, with no uniqueness assertion.\n\n[简体中文 — 英文读回的译文]\n\n对每一份数据 $\\mathrm{cheb}$，它包含一个实数 $\\xi\\ge 5$，以及对每个实数 $x\\ge\\xi$ 都成立的界 $\\frac23x\\le\\theta(x)\\le 2x$，其中 $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ 为素数},\\ p\\le x}\\log p$，$\\log$ 表示实自然对数；再对每个有限集合 $A\\subseteq\\mathbb N$，都存在一个自然数 $p$，使得 $p$ 是素数、$p\\notin A$，且 $p\\le 2(\\sum_{a\\in A}\\log a+\\xi)$。实数表达式中的自然数均按其对应实数理解。前提不要求 $A$ 的元素为素数、为正或大于 $1$；这里使用的实对数满足 $\\log 0=\\log 1=0$。集合 $A$ 可以为空，此时其求和为 $0$，结论中的上界为 $p\\le 2\\xi$。数值系数 $2$ 对所有这样的数据及有限集合一致适用；素数的存在量词位于这两个输入之后，结论不要求唯一性。\n\n[日本語 — 英語読回の翻訳]\n\n実数 $\\xi\\ge 5$ と、すべての実数 $x\\ge\\xi$ に対する評価 $\\frac23x\\le\\theta(x)\\le 2x$ からなる任意のデータ $\\mathrm{cheb}$ を考える。ここで $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ は素数},\\ p\\le x}\\log p$ であり、$\\log$ は実数の自然対数である。このような各データと任意の有限集合 $A\\subseteq\\mathbb N$ に対して、素数である自然数 $p$ が存在し、$p\\notin A$ かつ $p\\le 2(\\sum_{a\\in A}\\log a+\\xi)$ が成り立つ。実数の式に現れる自然数は、その実数への埋め込みとして解釈する。$A$ の要素が素数、正数、または $1$ より大きいことは仮定しない。ここで用いる実対数では $\\log 0=\\log 1=0$ である。$A$ は空集合でもよく、その場合、和は $0$ となり、結論の上界は $p\\le 2\\xi$ である。数値係数 $2$ はすべての当該データと有限集合に共通であり、素数の存在量化はこの二つの入力の後に置かれる。一意性は主張しない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+      "en": "At an arbitrary universe level $w$, let $L$ be any datum consisting of a type $\\iota$ in $\\mathrm{Type}\\,w$, a finite subset $B\\subseteq\\iota$, three functions $p,h_v,f:\\iota\\to\\mathbb N$, and a natural number $d\\ge1$, with the following conditions: for every $v\\in B$, $p(v)$ is prime, $h_v(v)\\ge1$, and $f(v)\\ge1$; and for every natural number $q$, $\\sum_{v\\in B,\\ p(v)=q} f(v)\\le d$. The type $\\iota$ need not be finite, the functions have no additional restrictions outside $B$, and different members of $B$ may have the same value of $p$. Define the real number $h=\\frac1d\\sum_{v\\in B}h_v(v)f(v)\\log p(v)$, where $\\log$ is the real natural logarithm and all natural numbers in real expressions are embedded in $\\mathbb R$. For every datum $\\mathrm{cheb}$ consisting of a real $\\xi\\ge5$ with $\\frac23x\\le\\theta(x)\\le2x$ for every real $x\\ge\\xi$, where $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ prime},\\ p\\le x}\\log p$, and for every real number $\\delta$ satisfying $2\\le\\delta$, $d\\le\\delta$, and $\\xi\\le\\sqrt h$, there exists a natural number $\\ell$ such that $\\ell$ is prime, $\\sqrt h\\le\\ell\\le10\\delta\\sqrt h\\log(2\\delta h)$, $\\ell\\nmid h_v(v)$ for every $v\\in B$, and $h_v(v)<\\sqrt h$ for every $v\\in B$ with $p(v)=\\ell$. Here $\\sqrt h$ is the nonnegative real square root; the hypotheses imply $h\\ge25$, so the denominator $d$ and logarithm argument $2\\delta h$ are positive. Although the data structure permits $B=\\varnothing$ (then $h=0$), such data do not satisfy $\\xi\\le\\sqrt h$. The coefficient $10$ applies to all these inputs; the prime is quantified after $L$, $\\mathrm{cheb}$, and $\\delta$, with no uniqueness assertion. The quantified input consists of the specified data and their formula-defined $h$; neither a number field nor a curve is a quantified object or an existential conclusion.",
+      "zh-Hans": "任取宇宙层级 $w$，设 $L$ 是这样一份数据：一个属于 $\\mathrm{Type}\\,w$ 的类型 $\\iota$、一个有限子集 $B\\subseteq\\iota$、三个函数 $p,h_v,f:\\iota\\to\\mathbb N$，以及一个自然数 $d\\ge1$；它们满足：对每个 $v\\in B$，$p(v)$ 是素数，$h_v(v)\\ge1$，且 $f(v)\\ge1$；对每个自然数 $q$，有 $\\sum_{v\\in B,\\ p(v)=q} f(v)\\le d$。类型 $\\iota$ 不必有限；这三个函数在 $B$ 外没有其他限制，$B$ 中的不同元素也可以具有相同的 $p$ 值。定义实数 $h=\\frac1d\\sum_{v\\in B}h_v(v)f(v)\\log p(v)$，其中 $\\log$ 是实自然对数，实数表达式中的自然数均按其对应实数理解。对每一份数据 $\\mathrm{cheb}$，它给出一个实数 $\\xi\\ge5$，并使每个实数 $x\\ge\\xi$ 都满足 $\\frac23x\\le\\theta(x)\\le2x$，其中 $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ 为素数},\\ p\\le x}\\log p$；再对每个满足 $2\\le\\delta$、$d\\le\\delta$ 和 $\\xi\\le\\sqrt h$ 的实数 $\\delta$，都存在自然数 $\\ell$，使得 $\\ell$ 是素数，$\\sqrt h\\le\\ell\\le10\\delta\\sqrt h\\log(2\\delta h)$，对每个 $v\\in B$ 都有 $\\ell\\nmid h_v(v)$，并且对每个满足 $p(v)=\\ell$ 的 $v\\in B$ 都有 $h_v(v)<\\sqrt h$。这里 $\\sqrt h$ 是非负实平方根；前提蕴含 $h\\ge25$，所以分母 $d$ 和对数真数 $2\\delta h$ 均为正。数据结构允许 $B=\\varnothing$，此时 $h=0$，但这样的数据不满足 $\\xi\\le\\sqrt h$。系数 $10$ 对所有这些输入一致适用；素数的量词位于 $L$、$\\mathrm{cheb}$ 和 $\\delta$ 之后，结论不要求唯一性。所量化的输入就是上述数据及按公式计算的 $h$；数域和曲线均不在量化对象或存在性结论之中。",
+      "ja": "任意の宇宙レベル $w$ において、$L$ を次のデータとする。すなわち、$\\mathrm{Type}\\,w$ に属する型 $\\iota$、有限部分集合 $B\\subseteq\\iota$、三つの関数 $p,h_v,f:\\iota\\to\\mathbb N$、および自然数 $d\\ge1$ からなり、すべての $v\\in B$ に対して $p(v)$ が素数、$h_v(v)\\ge1$、$f(v)\\ge1$ であり、すべての自然数 $q$ に対して $\\sum_{v\\in B,\\ p(v)=q}f(v)\\le d$ を満たすものとする。型 $\\iota$ 自体が有限である必要はなく、三つの関数には $B$ の外で追加の制約はなく、$B$ の異なる要素が同じ $p$ の値を持つことも許される。実数 $h=\\frac1d\\sum_{v\\in B}h_v(v)f(v)\\log p(v)$ を定義する。ここで $\\log$ は実数の自然対数であり、実数の式に現れる自然数は実数に埋め込んで解釈する。実数 $\\xi\\ge5$ と、すべての実数 $x\\ge\\xi$ に対する評価 $\\frac23x\\le\\theta(x)\\le2x$ からなる任意のデータ $\\mathrm{cheb}$ を与える。ただし $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ は素数},\\ p\\le x}\\log p$ である。このとき、$2\\le\\delta$、$d\\le\\delta$、$\\xi\\le\\sqrt h$ を満たすすべての実数 $\\delta$ に対して、素数である自然数 $\\ell$ が存在し、$\\sqrt h\\le\\ell\\le10\\delta\\sqrt h\\log(2\\delta h)$、すべての $v\\in B$ に対する $\\ell\\nmid h_v(v)$、および $p(v)=\\ell$ を満たすすべての $v\\in B$ に対する $h_v(v)<\\sqrt h$ が成り立つ。$\\sqrt h$ は非負の実平方根である。仮定から $h\\ge25$ が従うため、分母 $d$ と対数の引数 $2\\delta h$ は正である。データ構造は $B=\\varnothing$ も許し、その場合 $h=0$ となるが、このデータは $\\xi\\le\\sqrt h$ を満たさない。係数 $10$ はこれらすべての入力に共通であり、素数の量化は $L$、$\\mathrm{cheb}$、$\\delta$ の後に置かれる。一意性は主張しない。量化される入力は上記のデータと式によって計算される $h$ であり、数体も曲線も量化対象または存在結論には含まれない。",
+      "readback_model": "gpt-6.1-sol",
+      "readback_kind": "wrapped_compiler_review_of_frozen_blind_readback",
+      "english_role": "frozen independent original readback",
+      "translation_role": "Chinese and Japanese translations by the same agent from the frozen English readback; not independent audits",
+      "source_file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/PrimeSelection.lean",
+      "source_sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+      "cached_elaborated_type": "∀ (L : Iut.LocalHeightData) (cheb : Iut.ChebyshevBound) (δ : ℝ),\n  2 ≤ δ →\n    ↑L.deg ≤ δ →\n      cheb.ξ ≤ √L.height →\n        ∃ (ℓ : ℕ),\n          Nat.Prime ℓ ∧\n            √L.height ≤ ↑ℓ ∧\n              ↑ℓ ≤ 10 * δ * √L.height * Real.log (2 * δ * L.height) ∧\n                (∀ v ∈ L.bad, ¬ℓ ∣ L.hv v) ∧ ∀ v ∈ L.bad, L.p v = ℓ → ↑(L.hv v) < √L.height",
+      "binder_universe_status": "Every actual top-level binder is explicit and matches the original compiler telescope after the displayed namespace and universe-alpha relocation. No new implicit or instance binder is present. The sole theorem universe is the arbitrary index-type universe already called w in the readback; LocalHeightData : Type (w + 1), index type : Type w.",
+      "static_source_range_1based_inclusive": [
+        213,
+        381
+      ],
+      "range_evidence": "static source line count, not a parser fact; cached graph ranges retained separately",
+      "cached_graph_range": {
+        "end": {
+          "col": 43,
+          "line": 381
+        },
+        "endUtf16": 43,
+        "start": {
+          "col": 0,
+          "line": 209
+        },
+        "startUtf16": 0
+      },
+      "direct_type_dependencies": [
+        "And",
+        "Eq",
+        "Exists",
+        "Finset",
+        "Nat",
+        "Not",
+        "Real",
+        "instHMul",
+        "instOfNatAtLeastTwo",
+        "instOfNatNat",
+        "Dvd.dvd",
+        "Finset.instSetLike",
+        "HMul.hMul",
+        "Iut.ChebyshevBound",
+        "Iut.LocalHeightData",
+        "LE.le",
+        "LT.lt",
+        "Membership.mem",
+        "Nat.Prime",
+        "Nat.cast",
+        "Nat.instAtLeastTwoHAddOfNat",
+        "Nat.instDvd",
+        "Nat.instNeZeroSucc",
+        "OfNat.ofNat",
+        "Real.instLE",
+        "Real.instLT",
+        "Real.instMul",
+        "Real.instNatCast",
+        "Real.log",
+        "Real.sqrt",
+        "SetLike.instMembership",
+        "Iut.ChebyshevBound.ξ",
+        "Iut.LocalHeightData.bad",
+        "Iut.LocalHeightData.deg",
+        "Iut.LocalHeightData.height",
+        "Iut.LocalHeightData.hv",
+        "Iut.LocalHeightData.p",
+        "Iut.LocalHeightData.ι"
+      ],
+      "cached_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "cached_hasSorryAx": false,
+      "proof_status": "The supplied wrapped audit reports no direct sorryAx in the solution body, but reports transitive sorryAx from the listed imported open child declarations. This records a solution conditional on those open children and does not establish a closed mathematical proof.",
+      "unknown_terms": [],
+      "compiler_full_type": "∀ (L : AbcAdaptation.Reference.Iut.LocalHeightData.{u_1}) (cheb : AbcAdaptation.Reference.Iut.ChebyshevBound) (δ : ℝ),\n  LE.le.{0} 2 δ →\n    LE.le.{0} (↑(AbcAdaptation.Reference.Iut.LocalHeightData.deg.{u_1} L)) δ →\n      LE.le.{0} cheb.ξ √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L) →\n        ∃ (ℓ : ℕ),\n          Nat.Prime ℓ ∧\n            LE.le.{0} √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n              LE.le.{0} (↑ℓ)\n                  (HMul.hMul.{0, 0, 0}\n                    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ)\n                      √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L))\n                    (Real.log\n                      (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ)\n                        (AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)))) ∧\n                (∀ (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{u_1} L) v →\n                      ¬Dvd.dvd.{0} ℓ (AbcAdaptation.Reference.Iut.LocalHeightData.hv.{u_1} L v)) ∧\n                  ∀ (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{u_1} L) v →\n                      Eq.{1} (AbcAdaptation.Reference.Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                        LT.lt.{0} ↑(AbcAdaptation.Reference.Iut.LocalHeightData.hv.{u_1} L v)\n                          √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)",
+      "compiler_telescope": {
+        "result": "∃ (ℓ : ℕ),\n  Nat.Prime ℓ ∧\n    LE.le.{0} √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n      LE.le.{0} (↑ℓ)\n          (HMul.hMul.{0, 0, 0}\n            (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ)\n              √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L))\n            (Real.log\n              (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ)\n                (AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)))) ∧\n        (∀ (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{u_1} L) v →\n              ¬Dvd.dvd.{0} ℓ (AbcAdaptation.Reference.Iut.LocalHeightData.hv.{u_1} L v)) ∧\n          ∀ (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{u_1} L) v →\n              Eq.{1} (AbcAdaptation.Reference.Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                LT.lt.{0} ↑(AbcAdaptation.Reference.Iut.LocalHeightData.hv.{u_1} L v)\n                  √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)",
+        "binders": [
+          {
+            "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{u_1}",
+            "name": "L",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "ℝ",
+            "name": "δ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 2 δ",
+            "name": "hδ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (↑(AbcAdaptation.Reference.Iut.LocalHeightData.deg.{u_1} L)) δ",
+            "name": "hdeg",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} cheb.ξ √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)",
+            "name": "hξ",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "compiler_universe_parameters": [
+        "u_1"
+      ],
+      "compiler_review": {
+        "file": "/tmp/p2m-prime-selection-readbacks-20261115/wrapped-compiler-binder-review.json",
+        "audit_input": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-LocalHeightData-exists_prime_selection.json",
+        "audit_input_sha256": "1bf4df8ba72e37817bc9d528ad4616c0cdcd4d3c618c7278dbd71700b98af22c",
+        "outcome": "matched"
+      },
+      "original_declaration": "Iut.LocalHeightData.exists_prime_selection",
+      "display_name": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+      "original_compiler_full_type": "∀ (L : Iut.LocalHeightData.{u_1}) (cheb : Iut.ChebyshevBound) (δ : ℝ),\n  LE.le.{0} 2 δ →\n    LE.le.{0} (↑(Iut.LocalHeightData.deg.{u_1} L)) δ →\n      LE.le.{0} cheb.ξ √(Iut.LocalHeightData.height.{u_1} L) →\n        ∃ (ℓ : ℕ),\n          Nat.Prime ℓ ∧\n            LE.le.{0} √(Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n              LE.le.{0} (↑ℓ)\n                  (HMul.hMul.{0, 0, 0}\n                    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) √(Iut.LocalHeightData.height.{u_1} L))\n                    (Real.log (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ) (Iut.LocalHeightData.height.{u_1} L)))) ∧\n                (∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n                      ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_1} L v)) ∧\n                  ∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n                      Eq.{1} (Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                        LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_1} L v) √(Iut.LocalHeightData.height.{u_1} L)",
+      "original_compiler_telescope": {
+        "result": "∃ (ℓ : ℕ),\n  Nat.Prime ℓ ∧\n    LE.le.{0} √(Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n      LE.le.{0} (↑ℓ)\n          (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) √(Iut.LocalHeightData.height.{u_1} L))\n            (Real.log (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ) (Iut.LocalHeightData.height.{u_1} L)))) ∧\n        (∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n              ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_1} L v)) ∧\n          ∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n              Eq.{1} (Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_1} L v) √(Iut.LocalHeightData.height.{u_1} L)",
+        "binders": [
+          {
+            "type": "Iut.LocalHeightData.{u_1}",
+            "name": "L",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "ℝ",
+            "name": "δ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 2 δ",
+            "name": "hδ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (↑(Iut.LocalHeightData.deg.{u_1} L)) δ",
+            "name": "hdeg",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} cheb.ξ √(Iut.LocalHeightData.height.{u_1} L)",
+            "name": "hξ",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "wrapped_solution_axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "wrapped_solution_has_transitive_sorryAx": true,
+      "wrapped_solution_body_direct_sorryAx": false,
+      "wrapped_imported_open_children": [
+        {
+          "name": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+          "isExpectedOpenStub": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+          "isExpectedOpenStub": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "readback": "[English — frozen independent original]\n\nAt an arbitrary universe level $w$, let $L$ be any datum consisting of a type $\\iota$ in $\\mathrm{Type}\\,w$, a finite subset $B\\subseteq\\iota$, three functions $p,h_v,f:\\iota\\to\\mathbb N$, and a natural number $d\\ge1$, with the following conditions: for every $v\\in B$, $p(v)$ is prime, $h_v(v)\\ge1$, and $f(v)\\ge1$; and for every natural number $q$, $\\sum_{v\\in B,\\ p(v)=q} f(v)\\le d$. The type $\\iota$ need not be finite, the functions have no additional restrictions outside $B$, and different members of $B$ may have the same value of $p$. Define the real number $h=\\frac1d\\sum_{v\\in B}h_v(v)f(v)\\log p(v)$, where $\\log$ is the real natural logarithm and all natural numbers in real expressions are embedded in $\\mathbb R$. For every datum $\\mathrm{cheb}$ consisting of a real $\\xi\\ge5$ with $\\frac23x\\le\\theta(x)\\le2x$ for every real $x\\ge\\xi$, where $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ prime},\\ p\\le x}\\log p$, and for every real number $\\delta$ satisfying $2\\le\\delta$, $d\\le\\delta$, and $\\xi\\le\\sqrt h$, there exists a natural number $\\ell$ such that $\\ell$ is prime, $\\sqrt h\\le\\ell\\le10\\delta\\sqrt h\\log(2\\delta h)$, $\\ell\\nmid h_v(v)$ for every $v\\in B$, and $h_v(v)<\\sqrt h$ for every $v\\in B$ with $p(v)=\\ell$. Here $\\sqrt h$ is the nonnegative real square root; the hypotheses imply $h\\ge25$, so the denominator $d$ and logarithm argument $2\\delta h$ are positive. Although the data structure permits $B=\\varnothing$ (then $h=0$), such data do not satisfy $\\xi\\le\\sqrt h$. The coefficient $10$ applies to all these inputs; the prime is quantified after $L$, $\\mathrm{cheb}$, and $\\delta$, with no uniqueness assertion. The quantified input consists of the specified data and their formula-defined $h$; neither a number field nor a curve is a quantified object or an existential conclusion.\n\n[简体中文 — 英文读回的译文]\n\n任取宇宙层级 $w$，设 $L$ 是这样一份数据：一个属于 $\\mathrm{Type}\\,w$ 的类型 $\\iota$、一个有限子集 $B\\subseteq\\iota$、三个函数 $p,h_v,f:\\iota\\to\\mathbb N$，以及一个自然数 $d\\ge1$；它们满足：对每个 $v\\in B$，$p(v)$ 是素数，$h_v(v)\\ge1$，且 $f(v)\\ge1$；对每个自然数 $q$，有 $\\sum_{v\\in B,\\ p(v)=q} f(v)\\le d$。类型 $\\iota$ 不必有限；这三个函数在 $B$ 外没有其他限制，$B$ 中的不同元素也可以具有相同的 $p$ 值。定义实数 $h=\\frac1d\\sum_{v\\in B}h_v(v)f(v)\\log p(v)$，其中 $\\log$ 是实自然对数，实数表达式中的自然数均按其对应实数理解。对每一份数据 $\\mathrm{cheb}$，它给出一个实数 $\\xi\\ge5$，并使每个实数 $x\\ge\\xi$ 都满足 $\\frac23x\\le\\theta(x)\\le2x$，其中 $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ 为素数},\\ p\\le x}\\log p$；再对每个满足 $2\\le\\delta$、$d\\le\\delta$ 和 $\\xi\\le\\sqrt h$ 的实数 $\\delta$，都存在自然数 $\\ell$，使得 $\\ell$ 是素数，$\\sqrt h\\le\\ell\\le10\\delta\\sqrt h\\log(2\\delta h)$，对每个 $v\\in B$ 都有 $\\ell\\nmid h_v(v)$，并且对每个满足 $p(v)=\\ell$ 的 $v\\in B$ 都有 $h_v(v)<\\sqrt h$。这里 $\\sqrt h$ 是非负实平方根；前提蕴含 $h\\ge25$，所以分母 $d$ 和对数真数 $2\\delta h$ 均为正。数据结构允许 $B=\\varnothing$，此时 $h=0$，但这样的数据不满足 $\\xi\\le\\sqrt h$。系数 $10$ 对所有这些输入一致适用；素数的量词位于 $L$、$\\mathrm{cheb}$ 和 $\\delta$ 之后，结论不要求唯一性。所量化的输入就是上述数据及按公式计算的 $h$；数域和曲线均不在量化对象或存在性结论之中。\n\n[日本語 — 英語読回の翻訳]\n\n任意の宇宙レベル $w$ において、$L$ を次のデータとする。すなわち、$\\mathrm{Type}\\,w$ に属する型 $\\iota$、有限部分集合 $B\\subseteq\\iota$、三つの関数 $p,h_v,f:\\iota\\to\\mathbb N$、および自然数 $d\\ge1$ からなり、すべての $v\\in B$ に対して $p(v)$ が素数、$h_v(v)\\ge1$、$f(v)\\ge1$ であり、すべての自然数 $q$ に対して $\\sum_{v\\in B,\\ p(v)=q}f(v)\\le d$ を満たすものとする。型 $\\iota$ 自体が有限である必要はなく、三つの関数には $B$ の外で追加の制約はなく、$B$ の異なる要素が同じ $p$ の値を持つことも許される。実数 $h=\\frac1d\\sum_{v\\in B}h_v(v)f(v)\\log p(v)$ を定義する。ここで $\\log$ は実数の自然対数であり、実数の式に現れる自然数は実数に埋め込んで解釈する。実数 $\\xi\\ge5$ と、すべての実数 $x\\ge\\xi$ に対する評価 $\\frac23x\\le\\theta(x)\\le2x$ からなる任意のデータ $\\mathrm{cheb}$ を与える。ただし $\\theta(x)=\\sum_{p\\in\\mathbb N,\\ p\\text{ は素数},\\ p\\le x}\\log p$ である。このとき、$2\\le\\delta$、$d\\le\\delta$、$\\xi\\le\\sqrt h$ を満たすすべての実数 $\\delta$ に対して、素数である自然数 $\\ell$ が存在し、$\\sqrt h\\le\\ell\\le10\\delta\\sqrt h\\log(2\\delta h)$、すべての $v\\in B$ に対する $\\ell\\nmid h_v(v)$、および $p(v)=\\ell$ を満たすすべての $v\\in B$ に対する $h_v(v)<\\sqrt h$ が成り立つ。$\\sqrt h$ は非負の実平方根である。仮定から $h\\ge25$ が従うため、分母 $d$ と対数の引数 $2\\delta h$ は正である。データ構造は $B=\\varnothing$ も許し、その場合 $h=0$ となるが、このデータは $\\xi\\le\\sqrt h$ を満たさない。係数 $10$ はこれらすべての入力に共通であり、素数の量化は $L$、$\\mathrm{cheb}$、$\\delta$ の後に置かれる。一意性は主張しない。量化される入力は上記のデータと式によって計算される $h$ であり、数体も曲線も量化対象または存在結論には含まれない。"
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+      "en": "For every natural number $n$, under the hypothesis $n\\ne0$, let $P(n)$ be its finite set of distinct prime divisors, so that each prime appears once regardless of its multiplicity in $n$. Then $\\sum_{p\\in P(n)}\\log p\\le\\log n$, where $\\log$ is the real natural logarithm and $p,n$ are embedded in $\\mathbb R$ before taking logarithms. The value $n=1$ is included: $P(1)=\\varnothing$, so this case asserts $0\\le0$. The finite-set function used in the declaration also has $P(0)=\\varnothing$, and the real logarithm has $\\log0=0$, but $n=0$ is excluded by the explicit hypothesis; the declaration makes its inequality conditional on $n\\ne0$. There are no other parameters or hypotheses.",
+      "zh-Hans": "对每个自然数 $n$，在前提 $n\\ne0$ 下，令 $P(n)$ 为 $n$ 的互异素因子组成的有限集合，即每个素因子只出现一次，不按它在 $n$ 中的重数重复计入。则有 $\\sum_{p\\in P(n)}\\log p\\le\\log n$，其中 $\\log$ 是实自然对数，取对数前将 $p$ 和 $n$ 视为对应实数。允许 $n=1$：此时 $P(1)=\\varnothing$，结论为 $0\\le0$。声明中使用的有限集合函数还满足 $P(0)=\\varnothing$，实对数满足 $\\log0=0$，但显式前提排除了 $n=0$；该声明的不等式以 $n\\ne0$ 为条件。没有其他参数或前提。",
+      "ja": "任意の自然数 $n$ に対して、$n\\ne0$ を仮定し、$P(n)$ を $n$ の相異なる素因数からなる有限集合とする。各素因数は、$n$ における重複度によらず一度だけ含まれる。このとき $\\sum_{p\\in P(n)}\\log p\\le\\log n$ が成り立つ。ここで $\\log$ は実数の自然対数であり、対数を取る前に $p$ と $n$ を実数に埋め込む。$n=1$ も含まれ、この場合は $P(1)=\\varnothing$ であるため、結論は $0\\le0$ である。この宣言で用いる有限集合の関数は $P(0)=\\varnothing$ も満たし、実対数では $\\log0=0$ であるが、明示された仮定は $n=0$ を除外する。この宣言の不等式は $n\\ne0$ を条件とするものである。他のパラメータや仮定はない。",
+      "readback_model": "gpt-6.1-sol",
+      "readback_kind": "wrapped_compiler_review_of_frozen_blind_readback",
+      "english_role": "frozen independent original readback",
+      "translation_role": "Chinese and Japanese translations by the same agent from the frozen English readback; not independent audits",
+      "source_file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/PrimeSelection.lean",
+      "source_sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+      "cached_elaborated_type": "∀ (n : ℕ), n ≠ 0 → ∑ p ∈ n.primeFactors, Real.log ↑p ≤ Real.log ↑n",
+      "binder_universe_status": "Every actual top-level binder is explicit and matches the original compiler telescope after the displayed namespace and universe-alpha relocation. No new implicit or instance binder is present. The theorem has no declaration universe parameters.",
+      "static_source_range_1based_inclusive": [
+        86,
+        96
+      ],
+      "range_evidence": "static source line count, not a parser fact; cached graph ranges retained separately",
+      "cached_graph_range": {
+        "end": {
+          "col": 61,
+          "line": 96
+        },
+        "endUtf16": 61,
+        "start": {
+          "col": 0,
+          "line": 85
+        },
+        "startUtf16": 0
+      },
+      "direct_type_dependencies": [
+        "Nat",
+        "Ne",
+        "Real",
+        "instOfNatNat",
+        "Finset.sum",
+        "LE.le",
+        "Nat.cast",
+        "Nat.primeFactors",
+        "OfNat.ofNat",
+        "Real.instAddCommMonoid",
+        "Real.instLE",
+        "Real.instNatCast",
+        "Real.log"
+      ],
+      "cached_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "cached_hasSorryAx": false,
+      "proof_status": "The supplied wrapped audit reports no direct or transitive sorryAx in the solution and solution axioms propext, Classical.choice, Quot.sound. This reviewer made no new compilation or CI query.",
+      "unknown_terms": [],
+      "compiler_full_type": "∀ (n : ℕ), Ne.{1} n 0 → LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+      "compiler_telescope": {
+        "result": "LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+        "binders": [
+          {
+            "type": "ℕ",
+            "name": "n",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Ne.{1} n 0",
+            "name": "hn",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "compiler_universe_parameters": [],
+      "compiler_review": {
+        "file": "/tmp/p2m-prime-selection-readbacks-20261115/wrapped-compiler-binder-review.json",
+        "audit_input": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-sum_log_primeFactors_le.json",
+        "audit_input_sha256": "296702cca2fb5d8490b8554b2a64f9c836a73f6047b73e61994da8f208c7c5d4",
+        "outcome": "matched"
+      },
+      "original_declaration": "Iut.sum_log_primeFactors_le",
+      "display_name": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+      "original_compiler_full_type": "∀ (n : ℕ), Ne.{1} n 0 → LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+      "original_compiler_telescope": {
+        "result": "LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+        "binders": [
+          {
+            "type": "ℕ",
+            "name": "n",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Ne.{1} n 0",
+            "name": "hn",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "wrapped_solution_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "wrapped_solution_has_transitive_sorryAx": false,
+      "wrapped_solution_body_direct_sorryAx": false,
+      "wrapped_imported_open_children": [],
+      "readback": "[English — frozen independent original]\n\nFor every natural number $n$, under the hypothesis $n\\ne0$, let $P(n)$ be its finite set of distinct prime divisors, so that each prime appears once regardless of its multiplicity in $n$. Then $\\sum_{p\\in P(n)}\\log p\\le\\log n$, where $\\log$ is the real natural logarithm and $p,n$ are embedded in $\\mathbb R$ before taking logarithms. The value $n=1$ is included: $P(1)=\\varnothing$, so this case asserts $0\\le0$. The finite-set function used in the declaration also has $P(0)=\\varnothing$, and the real logarithm has $\\log0=0$, but $n=0$ is excluded by the explicit hypothesis; the declaration makes its inequality conditional on $n\\ne0$. There are no other parameters or hypotheses.\n\n[简体中文 — 英文读回的译文]\n\n对每个自然数 $n$，在前提 $n\\ne0$ 下，令 $P(n)$ 为 $n$ 的互异素因子组成的有限集合，即每个素因子只出现一次，不按它在 $n$ 中的重数重复计入。则有 $\\sum_{p\\in P(n)}\\log p\\le\\log n$，其中 $\\log$ 是实自然对数，取对数前将 $p$ 和 $n$ 视为对应实数。允许 $n=1$：此时 $P(1)=\\varnothing$，结论为 $0\\le0$。声明中使用的有限集合函数还满足 $P(0)=\\varnothing$，实对数满足 $\\log0=0$，但显式前提排除了 $n=0$；该声明的不等式以 $n\\ne0$ 为条件。没有其他参数或前提。\n\n[日本語 — 英語読回の翻訳]\n\n任意の自然数 $n$ に対して、$n\\ne0$ を仮定し、$P(n)$ を $n$ の相異なる素因数からなる有限集合とする。各素因数は、$n$ における重複度によらず一度だけ含まれる。このとき $\\sum_{p\\in P(n)}\\log p\\le\\log n$ が成り立つ。ここで $\\log$ は実数の自然対数であり、対数を取る前に $p$ と $n$ を実数に埋め込む。$n=1$ も含まれ、この場合は $P(1)=\\varnothing$ であるため、結論は $0\\le0$ である。この宣言で用いる有限集合の関数は $P(0)=\\varnothing$ も満たし、実対数では $\\log0=0$ であるが、明示された仮定は $n=0$ を除外する。この宣言の不等式は $n\\ne0$ を条件とするものである。他のパラメータや仮定はない。"
+    }
+  ],
+  "compiler_review_file": "/tmp/p2m-prime-selection-readbacks-20261115/wrapped-compiler-binder-review.json",
+  "retained_original_readbacks_file": "/tmp/p2m-prime-selection-readbacks-20261115/readbacks.json",
+  "retained_original_readbacks_sha256": "c245a171c050b901e4189221de36fb2cfd8f4e57b631cf90c30a0cbf1f2b5a44",
+  "compiler_review_summary": "All three actual wrapped types and binder/universe sequences match the retained blind readbacks after namespace relocation; all nine mathematical text strings are unchanged.",
+  "retained_original_compiler_reviewed_readbacks_file": "/tmp/p2m-prime-selection-readbacks-20261115/compiler-reviewed-readbacks.json",
+  "retained_original_compiler_reviewed_readbacks_sha256": "e3eb54f8cd0811183f66bd39a541b6abaff62e0ee9824c667b44a33eb90a4182"
+}

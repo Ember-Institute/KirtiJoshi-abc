@@ -1,0 +1,1707 @@
+{"sourceModule": "Iut.Implication.PrimeSelection",
+ "serialization":
+ "compiler ConstantInfo.type; recursive metadata erasure; no pretty-printer round-trip",
+ "schema": "prime-selection-original-expr-v1",
+ "records":
+ [{"nameExpr":
+   [[[[], "str", "Iut"], "str", "ChebyshevBound"],
+    "str",
+    "exists_prime_notMem"],
+   "name": "Iut.ChebyshevBound.exists_prime_notMem",
+   "levelParams": [],
+   "levelParamDisplay": [],
+   "elaboratedExpr":
+   {"type":
+    {"name": [[[], "str", "Iut"], "str", "ChebyshevBound"],
+     "levels": [],
+     "kind": "const"},
+    "name": [[], "str", "cheb"],
+    "kind": "forall",
+    "body":
+    {"type":
+     {"kind": "app",
+      "fn":
+      {"name": [[], "str", "Finset"],
+       "levels": [{"kind": "zero"}],
+       "kind": "const"},
+      "arg": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+     "name": [[], "str", "A"],
+     "kind": "forall",
+     "body":
+     {"kind": "app",
+      "fn":
+      {"kind": "app",
+       "fn":
+       {"name": [[], "str", "Exists"],
+        "levels": [{"kind": "succ", "arg": {"kind": "zero"}}],
+        "kind": "const"},
+       "arg": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+      "arg":
+      {"type": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"},
+       "name": [[], "str", "p"],
+       "kind": "lam",
+       "body":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn": {"name": [[], "str", "And"], "levels": [], "kind": "const"},
+         "arg":
+         {"kind": "app",
+          "fn":
+          {"name": [[[], "str", "Nat"], "str", "Prime"],
+           "levels": [],
+           "kind": "const"},
+          "arg": {"kind": "bvar", "index": 0}}},
+        "arg":
+        {"kind": "app",
+         "fn":
+         {"kind": "app",
+          "fn": {"name": [[], "str", "And"], "levels": [], "kind": "const"},
+          "arg":
+          {"kind": "app",
+           "fn": {"name": [[], "str", "Not"], "levels": [], "kind": "const"},
+           "arg":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"name": [[[], "str", "Membership"], "str", "mem"],
+                 "levels": [{"kind": "zero"}, {"kind": "zero"}],
+                 "kind": "const"},
+                "arg":
+                {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+               "arg":
+               {"kind": "app",
+                "fn":
+                {"name": [[], "str", "Finset"],
+                 "levels": [{"kind": "zero"}],
+                 "kind": "const"},
+                "arg":
+                {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}}},
+              "arg":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"kind": "app",
+                 "fn":
+                 {"name": [[[], "str", "SetLike"], "str", "instMembership"],
+                  "levels": [{"kind": "zero"}, {"kind": "zero"}],
+                  "kind": "const"},
+                 "arg":
+                 {"kind": "app",
+                  "fn":
+                  {"name": [[], "str", "Finset"],
+                   "levels": [{"kind": "zero"}],
+                   "kind": "const"},
+                  "arg":
+                  {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}}},
+                "arg":
+                {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+               "arg":
+               {"kind": "app",
+                "fn":
+                {"name": [[[], "str", "Finset"], "str", "instSetLike"],
+                 "levels": [{"kind": "zero"}],
+                 "kind": "const"},
+                "arg":
+                {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}}}},
+             "arg": {"kind": "bvar", "index": 1}},
+            "arg": {"kind": "bvar", "index": 0}}}},
+         "arg":
+         {"kind": "app",
+          "fn":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"name": [[[], "str", "LE"], "str", "le"],
+              "levels": [{"kind": "zero"}],
+              "kind": "const"},
+             "arg":
+             {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+            "arg":
+            {"name": [[[], "str", "Real"], "str", "instLE"],
+             "levels": [],
+             "kind": "const"}},
+           "arg":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"kind": "app",
+              "fn":
+              {"name": [[[], "str", "Nat"], "str", "cast"],
+               "levels": [{"kind": "zero"}],
+               "kind": "const"},
+              "arg":
+              {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+             "arg":
+             {"name": [[[], "str", "Real"], "str", "instNatCast"],
+              "levels": [],
+              "kind": "const"}},
+            "arg": {"kind": "bvar", "index": 0}}},
+          "arg":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"name": [[[], "str", "HMul"], "str", "hMul"],
+                 "levels":
+                 [{"kind": "zero"}, {"kind": "zero"}, {"kind": "zero"}],
+                 "kind": "const"},
+                "arg":
+                {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+               "arg":
+               {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+              "arg":
+              {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+             "arg":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"name": [[], "str", "instHMul"],
+                "levels": [{"kind": "zero"}],
+                "kind": "const"},
+               "arg":
+               {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+              "arg":
+              {"name": [[[], "str", "Real"], "str", "instMul"],
+               "levels": [],
+               "kind": "const"}}},
+            "arg":
+            {"kind": "app",
+             "fn":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                "levels": [{"kind": "zero"}],
+                "kind": "const"},
+               "arg":
+               {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+              "arg": {"value": 2, "kind": "nat"}},
+             "arg":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"kind": "app",
+                 "fn":
+                 {"name": [[], "str", "instOfNatAtLeastTwo"],
+                  "levels": [{"kind": "zero"}],
+                  "kind": "const"},
+                 "arg":
+                 {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+                "arg": {"value": 2, "kind": "nat"}},
+               "arg":
+               {"name": [[[], "str", "Real"], "str", "instNatCast"],
+                "levels": [],
+                "kind": "const"}},
+              "arg":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"name": [[[], "str", "Nat"], "str", "instAtLeastTwoHAddOfNat"],
+                 "levels": [],
+                 "kind": "const"},
+                "arg":
+                {"kind": "app",
+                 "fn":
+                 {"kind": "app",
+                  "fn":
+                  {"kind": "app",
+                   "fn":
+                   {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                    "levels": [{"kind": "zero"}],
+                    "kind": "const"},
+                   "arg":
+                   {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+                  "arg": {"value": 1, "kind": "nat"}},
+                 "arg":
+                 {"kind": "app",
+                  "fn":
+                  {"name": [[], "str", "instOfNatNat"],
+                   "levels": [],
+                   "kind": "const"},
+                  "arg": {"value": 1, "kind": "nat"}}}},
+               "arg":
+               {"kind": "app",
+                "fn":
+                {"name": [[[], "str", "Nat"], "str", "instNeZeroSucc"],
+                 "levels": [],
+                 "kind": "const"},
+                "arg":
+                {"kind": "app",
+                 "fn":
+                 {"kind": "app",
+                  "fn":
+                  {"kind": "app",
+                   "fn":
+                   {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                    "levels": [{"kind": "zero"}],
+                    "kind": "const"},
+                   "arg":
+                   {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+                  "arg": {"value": 0, "kind": "nat"}},
+                 "arg":
+                 {"kind": "app",
+                  "fn":
+                  {"name": [[], "str", "instOfNatNat"],
+                   "levels": [],
+                   "kind": "const"},
+                  "arg": {"value": 0, "kind": "nat"}}}}}}}},
+           "arg":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"kind": "app",
+                 "fn":
+                 {"name": [[[], "str", "HAdd"], "str", "hAdd"],
+                  "levels":
+                  [{"kind": "zero"}, {"kind": "zero"}, {"kind": "zero"}],
+                  "kind": "const"},
+                 "arg":
+                 {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+                "arg":
+                {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+               "arg":
+               {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+              "arg":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"name": [[], "str", "instHAdd"],
+                 "levels": [{"kind": "zero"}],
+                 "kind": "const"},
+                "arg":
+                {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+               "arg":
+               {"name": [[[], "str", "Real"], "str", "instAdd"],
+                "levels": [],
+                "kind": "const"}}},
+             "arg":
+             {"kind": "app",
+              "fn":
+              {"name": [[[], "str", "Iut"], "str", "thetaSet"],
+               "levels": [],
+               "kind": "const"},
+              "arg": {"kind": "bvar", "index": 1}}},
+            "arg":
+            {"kind": "app",
+             "fn":
+             {"name":
+              [[[[], "str", "Iut"], "str", "ChebyshevBound"], "str", "ξ"],
+              "levels": [],
+              "kind": "const"},
+             "arg": {"kind": "bvar", "index": 2}}}}}}},
+       "binder": "default"}},
+     "binder": "default"},
+    "binder": "default"},
+   "axioms": ["propext", "Classical.choice", "Quot.sound"]},
+  {"nameExpr":
+   [[[[], "str", "Iut"], "str", "LocalHeightData"],
+    "str",
+    "exists_prime_selection"],
+   "name": "Iut.LocalHeightData.exists_prime_selection",
+   "levelParams": [[[], "str", "u_1"]],
+   "levelParamDisplay": ["u_1"],
+   "elaboratedExpr":
+   {"type":
+    {"name": [[[], "str", "Iut"], "str", "LocalHeightData"],
+     "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+     "kind": "const"},
+    "name": [[], "str", "L"],
+    "kind": "forall",
+    "body":
+    {"type":
+     {"name": [[[], "str", "Iut"], "str", "ChebyshevBound"],
+      "levels": [],
+      "kind": "const"},
+     "name": [[], "str", "cheb"],
+     "kind": "forall",
+     "body":
+     {"type": {"name": [[], "str", "Real"], "levels": [], "kind": "const"},
+      "name": [[], "str", "δ"],
+      "kind": "forall",
+      "body":
+      {"type":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"kind": "app",
+          "fn":
+          {"kind": "app",
+           "fn":
+           {"name": [[[], "str", "LE"], "str", "le"],
+            "levels": [{"kind": "zero"}],
+            "kind": "const"},
+           "arg": {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+          "arg":
+          {"name": [[[], "str", "Real"], "str", "instLE"],
+           "levels": [],
+           "kind": "const"}},
+         "arg":
+         {"kind": "app",
+          "fn":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+             "levels": [{"kind": "zero"}],
+             "kind": "const"},
+            "arg":
+            {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+           "arg": {"value": 2, "kind": "nat"}},
+          "arg":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"kind": "app",
+              "fn":
+              {"name": [[], "str", "instOfNatAtLeastTwo"],
+               "levels": [{"kind": "zero"}],
+               "kind": "const"},
+              "arg":
+              {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+             "arg": {"value": 2, "kind": "nat"}},
+            "arg":
+            {"name": [[[], "str", "Real"], "str", "instNatCast"],
+             "levels": [],
+             "kind": "const"}},
+           "arg":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"name": [[[], "str", "Nat"], "str", "instAtLeastTwoHAddOfNat"],
+              "levels": [],
+              "kind": "const"},
+             "arg":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                 "levels": [{"kind": "zero"}],
+                 "kind": "const"},
+                "arg":
+                {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+               "arg": {"value": 1, "kind": "nat"}},
+              "arg":
+              {"kind": "app",
+               "fn":
+               {"name": [[], "str", "instOfNatNat"],
+                "levels": [],
+                "kind": "const"},
+               "arg": {"value": 1, "kind": "nat"}}}},
+            "arg":
+            {"kind": "app",
+             "fn":
+             {"name": [[[], "str", "Nat"], "str", "instNeZeroSucc"],
+              "levels": [],
+              "kind": "const"},
+             "arg":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                 "levels": [{"kind": "zero"}],
+                 "kind": "const"},
+                "arg":
+                {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+               "arg": {"value": 0, "kind": "nat"}},
+              "arg":
+              {"kind": "app",
+               "fn":
+               {"name": [[], "str", "instOfNatNat"],
+                "levels": [],
+                "kind": "const"},
+               "arg": {"value": 0, "kind": "nat"}}}}}}}},
+        "arg": {"kind": "bvar", "index": 0}},
+       "name": [[], "str", "hδ"],
+       "kind": "forall",
+       "body":
+       {"type":
+        {"kind": "app",
+         "fn":
+         {"kind": "app",
+          "fn":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"name": [[[], "str", "LE"], "str", "le"],
+             "levels": [{"kind": "zero"}],
+             "kind": "const"},
+            "arg":
+            {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+           "arg":
+           {"name": [[[], "str", "Real"], "str", "instLE"],
+            "levels": [],
+            "kind": "const"}},
+          "arg":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"name": [[[], "str", "Nat"], "str", "cast"],
+              "levels": [{"kind": "zero"}],
+              "kind": "const"},
+             "arg":
+             {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+            "arg":
+            {"name": [[[], "str", "Real"], "str", "instNatCast"],
+             "levels": [],
+             "kind": "const"}},
+           "arg":
+           {"kind": "app",
+            "fn":
+            {"name":
+             [[[[], "str", "Iut"], "str", "LocalHeightData"], "str", "deg"],
+             "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+             "kind": "const"},
+            "arg": {"kind": "bvar", "index": 3}}}},
+         "arg": {"kind": "bvar", "index": 1}},
+        "name": [[], "str", "hdeg"],
+        "kind": "forall",
+        "body":
+        {"type":
+         {"kind": "app",
+          "fn":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"name": [[[], "str", "LE"], "str", "le"],
+              "levels": [{"kind": "zero"}],
+              "kind": "const"},
+             "arg":
+             {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+            "arg":
+            {"name": [[[], "str", "Real"], "str", "instLE"],
+             "levels": [],
+             "kind": "const"}},
+           "arg":
+           {"kind": "app",
+            "fn":
+            {"name":
+             [[[[], "str", "Iut"], "str", "ChebyshevBound"], "str", "ξ"],
+             "levels": [],
+             "kind": "const"},
+            "arg": {"kind": "bvar", "index": 3}}},
+          "arg":
+          {"kind": "app",
+           "fn":
+           {"name": [[[], "str", "Real"], "str", "sqrt"],
+            "levels": [],
+            "kind": "const"},
+           "arg":
+           {"kind": "app",
+            "fn":
+            {"name":
+             [[[[], "str", "Iut"], "str", "LocalHeightData"], "str", "height"],
+             "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+             "kind": "const"},
+            "arg": {"kind": "bvar", "index": 4}}}},
+         "name": [[], "str", "hξ"],
+         "kind": "forall",
+         "body":
+         {"kind": "app",
+          "fn":
+          {"kind": "app",
+           "fn":
+           {"name": [[], "str", "Exists"],
+            "levels": [{"kind": "succ", "arg": {"kind": "zero"}}],
+            "kind": "const"},
+           "arg": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+          "arg":
+          {"type": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"},
+           "name": [[], "str", "ℓ"],
+           "kind": "lam",
+           "body":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn": {"name": [[], "str", "And"], "levels": [], "kind": "const"},
+             "arg":
+             {"kind": "app",
+              "fn":
+              {"name": [[[], "str", "Nat"], "str", "Prime"],
+               "levels": [],
+               "kind": "const"},
+              "arg": {"kind": "bvar", "index": 0}}},
+            "arg":
+            {"kind": "app",
+             "fn":
+             {"kind": "app",
+              "fn": {"name": [[], "str", "And"], "levels": [], "kind": "const"},
+              "arg":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"kind": "app",
+                 "fn":
+                 {"kind": "app",
+                  "fn":
+                  {"name": [[[], "str", "LE"], "str", "le"],
+                   "levels": [{"kind": "zero"}],
+                   "kind": "const"},
+                  "arg":
+                  {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+                 "arg":
+                 {"name": [[[], "str", "Real"], "str", "instLE"],
+                  "levels": [],
+                  "kind": "const"}},
+                "arg":
+                {"kind": "app",
+                 "fn":
+                 {"name": [[[], "str", "Real"], "str", "sqrt"],
+                  "levels": [],
+                  "kind": "const"},
+                 "arg":
+                 {"kind": "app",
+                  "fn":
+                  {"name":
+                   [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                    "str",
+                    "height"],
+                   "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+                   "kind": "const"},
+                  "arg": {"kind": "bvar", "index": 6}}}},
+               "arg":
+               {"kind": "app",
+                "fn":
+                {"kind": "app",
+                 "fn":
+                 {"kind": "app",
+                  "fn":
+                  {"name": [[[], "str", "Nat"], "str", "cast"],
+                   "levels": [{"kind": "zero"}],
+                   "kind": "const"},
+                  "arg":
+                  {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+                 "arg":
+                 {"name": [[[], "str", "Real"], "str", "instNatCast"],
+                  "levels": [],
+                  "kind": "const"}},
+                "arg": {"kind": "bvar", "index": 0}}}},
+             "arg":
+             {"kind": "app",
+              "fn":
+              {"kind": "app",
+               "fn":
+               {"name": [[], "str", "And"], "levels": [], "kind": "const"},
+               "arg":
+               {"kind": "app",
+                "fn":
+                {"kind": "app",
+                 "fn":
+                 {"kind": "app",
+                  "fn":
+                  {"kind": "app",
+                   "fn":
+                   {"name": [[[], "str", "LE"], "str", "le"],
+                    "levels": [{"kind": "zero"}],
+                    "kind": "const"},
+                   "arg":
+                   {"name": [[], "str", "Real"],
+                    "levels": [],
+                    "kind": "const"}},
+                  "arg":
+                  {"name": [[[], "str", "Real"], "str", "instLE"],
+                   "levels": [],
+                   "kind": "const"}},
+                 "arg":
+                 {"kind": "app",
+                  "fn":
+                  {"kind": "app",
+                   "fn":
+                   {"kind": "app",
+                    "fn":
+                    {"name": [[[], "str", "Nat"], "str", "cast"],
+                     "levels": [{"kind": "zero"}],
+                     "kind": "const"},
+                    "arg":
+                    {"name": [[], "str", "Real"],
+                     "levels": [],
+                     "kind": "const"}},
+                   "arg":
+                   {"name": [[[], "str", "Real"], "str", "instNatCast"],
+                    "levels": [],
+                    "kind": "const"}},
+                  "arg": {"kind": "bvar", "index": 0}}},
+                "arg":
+                {"kind": "app",
+                 "fn":
+                 {"kind": "app",
+                  "fn":
+                  {"kind": "app",
+                   "fn":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"name": [[[], "str", "HMul"], "str", "hMul"],
+                       "levels":
+                       [{"kind": "zero"}, {"kind": "zero"}, {"kind": "zero"}],
+                       "kind": "const"},
+                      "arg":
+                      {"name": [[], "str", "Real"],
+                       "levels": [],
+                       "kind": "const"}},
+                     "arg":
+                     {"name": [[], "str", "Real"],
+                      "levels": [],
+                      "kind": "const"}},
+                    "arg":
+                    {"name": [[], "str", "Real"],
+                     "levels": [],
+                     "kind": "const"}},
+                   "arg":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"name": [[], "str", "instHMul"],
+                      "levels": [{"kind": "zero"}],
+                      "kind": "const"},
+                     "arg":
+                     {"name": [[], "str", "Real"],
+                      "levels": [],
+                      "kind": "const"}},
+                    "arg":
+                    {"name": [[[], "str", "Real"], "str", "instMul"],
+                     "levels": [],
+                     "kind": "const"}}},
+                  "arg":
+                  {"kind": "app",
+                   "fn":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"kind": "app",
+                        "fn":
+                        {"name": [[[], "str", "HMul"], "str", "hMul"],
+                         "levels":
+                         [{"kind": "zero"}, {"kind": "zero"}, {"kind": "zero"}],
+                         "kind": "const"},
+                        "arg":
+                        {"name": [[], "str", "Real"],
+                         "levels": [],
+                         "kind": "const"}},
+                       "arg":
+                       {"name": [[], "str", "Real"],
+                        "levels": [],
+                        "kind": "const"}},
+                      "arg":
+                      {"name": [[], "str", "Real"],
+                       "levels": [],
+                       "kind": "const"}},
+                     "arg":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"name": [[], "str", "instHMul"],
+                        "levels": [{"kind": "zero"}],
+                        "kind": "const"},
+                       "arg":
+                       {"name": [[], "str", "Real"],
+                        "levels": [],
+                        "kind": "const"}},
+                      "arg":
+                      {"name": [[[], "str", "Real"], "str", "instMul"],
+                       "levels": [],
+                       "kind": "const"}}},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"kind": "app",
+                        "fn":
+                        {"kind": "app",
+                         "fn":
+                         {"kind": "app",
+                          "fn":
+                          {"name": [[[], "str", "HMul"], "str", "hMul"],
+                           "levels":
+                           [{"kind": "zero"},
+                            {"kind": "zero"},
+                            {"kind": "zero"}],
+                           "kind": "const"},
+                          "arg":
+                          {"name": [[], "str", "Real"],
+                           "levels": [],
+                           "kind": "const"}},
+                         "arg":
+                         {"name": [[], "str", "Real"],
+                          "levels": [],
+                          "kind": "const"}},
+                        "arg":
+                        {"name": [[], "str", "Real"],
+                         "levels": [],
+                         "kind": "const"}},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"kind": "app",
+                         "fn":
+                         {"name": [[], "str", "instHMul"],
+                          "levels": [{"kind": "zero"}],
+                          "kind": "const"},
+                         "arg":
+                         {"name": [[], "str", "Real"],
+                          "levels": [],
+                          "kind": "const"}},
+                        "arg":
+                        {"name": [[[], "str", "Real"], "str", "instMul"],
+                         "levels": [],
+                         "kind": "const"}}},
+                      "arg":
+                      {"kind": "app",
+                       "fn":
+                       {"kind": "app",
+                        "fn":
+                        {"kind": "app",
+                         "fn":
+                         {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                          "levels": [{"kind": "zero"}],
+                          "kind": "const"},
+                         "arg":
+                         {"name": [[], "str", "Real"],
+                          "levels": [],
+                          "kind": "const"}},
+                        "arg": {"value": 10, "kind": "nat"}},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"kind": "app",
+                         "fn":
+                         {"kind": "app",
+                          "fn":
+                          {"kind": "app",
+                           "fn":
+                           {"name": [[], "str", "instOfNatAtLeastTwo"],
+                            "levels": [{"kind": "zero"}],
+                            "kind": "const"},
+                           "arg":
+                           {"name": [[], "str", "Real"],
+                            "levels": [],
+                            "kind": "const"}},
+                          "arg": {"value": 10, "kind": "nat"}},
+                         "arg":
+                         {"name": [[[], "str", "Real"], "str", "instNatCast"],
+                          "levels": [],
+                          "kind": "const"}},
+                        "arg":
+                        {"kind": "app",
+                         "fn":
+                         {"kind": "app",
+                          "fn":
+                          {"name":
+                           [[[], "str", "Nat"],
+                            "str",
+                            "instAtLeastTwoHAddOfNat"],
+                           "levels": [],
+                           "kind": "const"},
+                          "arg":
+                          {"kind": "app",
+                           "fn":
+                           {"kind": "app",
+                            "fn":
+                            {"kind": "app",
+                             "fn":
+                             {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                              "levels": [{"kind": "zero"}],
+                              "kind": "const"},
+                             "arg":
+                             {"name": [[], "str", "Nat"],
+                              "levels": [],
+                              "kind": "const"}},
+                            "arg": {"value": 9, "kind": "nat"}},
+                           "arg":
+                           {"kind": "app",
+                            "fn":
+                            {"name": [[], "str", "instOfNatNat"],
+                             "levels": [],
+                             "kind": "const"},
+                            "arg": {"value": 9, "kind": "nat"}}}},
+                         "arg":
+                         {"kind": "app",
+                          "fn":
+                          {"name":
+                           [[[], "str", "Nat"], "str", "instNeZeroSucc"],
+                           "levels": [],
+                           "kind": "const"},
+                          "arg":
+                          {"kind": "app",
+                           "fn":
+                           {"kind": "app",
+                            "fn":
+                            {"kind": "app",
+                             "fn":
+                             {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                              "levels": [{"kind": "zero"}],
+                              "kind": "const"},
+                             "arg":
+                             {"name": [[], "str", "Nat"],
+                              "levels": [],
+                              "kind": "const"}},
+                            "arg": {"value": 8, "kind": "nat"}},
+                           "arg":
+                           {"kind": "app",
+                            "fn":
+                            {"name": [[], "str", "instOfNatNat"],
+                             "levels": [],
+                             "kind": "const"},
+                            "arg": {"value": 8, "kind": "nat"}}}}}}}},
+                     "arg": {"kind": "bvar", "index": 4}}},
+                   "arg":
+                   {"kind": "app",
+                    "fn":
+                    {"name": [[[], "str", "Real"], "str", "sqrt"],
+                     "levels": [],
+                     "kind": "const"},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"name":
+                      [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                       "str",
+                       "height"],
+                      "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+                      "kind": "const"},
+                     "arg": {"kind": "bvar", "index": 6}}}}},
+                 "arg":
+                 {"kind": "app",
+                  "fn":
+                  {"name": [[[], "str", "Real"], "str", "log"],
+                   "levels": [],
+                   "kind": "const"},
+                  "arg":
+                  {"kind": "app",
+                   "fn":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"kind": "app",
+                        "fn":
+                        {"name": [[[], "str", "HMul"], "str", "hMul"],
+                         "levels":
+                         [{"kind": "zero"}, {"kind": "zero"}, {"kind": "zero"}],
+                         "kind": "const"},
+                        "arg":
+                        {"name": [[], "str", "Real"],
+                         "levels": [],
+                         "kind": "const"}},
+                       "arg":
+                       {"name": [[], "str", "Real"],
+                        "levels": [],
+                        "kind": "const"}},
+                      "arg":
+                      {"name": [[], "str", "Real"],
+                       "levels": [],
+                       "kind": "const"}},
+                     "arg":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"name": [[], "str", "instHMul"],
+                        "levels": [{"kind": "zero"}],
+                        "kind": "const"},
+                       "arg":
+                       {"name": [[], "str", "Real"],
+                        "levels": [],
+                        "kind": "const"}},
+                      "arg":
+                      {"name": [[[], "str", "Real"], "str", "instMul"],
+                       "levels": [],
+                       "kind": "const"}}},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"kind": "app",
+                        "fn":
+                        {"kind": "app",
+                         "fn":
+                         {"kind": "app",
+                          "fn":
+                          {"name": [[[], "str", "HMul"], "str", "hMul"],
+                           "levels":
+                           [{"kind": "zero"},
+                            {"kind": "zero"},
+                            {"kind": "zero"}],
+                           "kind": "const"},
+                          "arg":
+                          {"name": [[], "str", "Real"],
+                           "levels": [],
+                           "kind": "const"}},
+                         "arg":
+                         {"name": [[], "str", "Real"],
+                          "levels": [],
+                          "kind": "const"}},
+                        "arg":
+                        {"name": [[], "str", "Real"],
+                         "levels": [],
+                         "kind": "const"}},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"kind": "app",
+                         "fn":
+                         {"name": [[], "str", "instHMul"],
+                          "levels": [{"kind": "zero"}],
+                          "kind": "const"},
+                         "arg":
+                         {"name": [[], "str", "Real"],
+                          "levels": [],
+                          "kind": "const"}},
+                        "arg":
+                        {"name": [[[], "str", "Real"], "str", "instMul"],
+                         "levels": [],
+                         "kind": "const"}}},
+                      "arg":
+                      {"kind": "app",
+                       "fn":
+                       {"kind": "app",
+                        "fn":
+                        {"kind": "app",
+                         "fn":
+                         {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                          "levels": [{"kind": "zero"}],
+                          "kind": "const"},
+                         "arg":
+                         {"name": [[], "str", "Real"],
+                          "levels": [],
+                          "kind": "const"}},
+                        "arg": {"value": 2, "kind": "nat"}},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"kind": "app",
+                         "fn":
+                         {"kind": "app",
+                          "fn":
+                          {"kind": "app",
+                           "fn":
+                           {"name": [[], "str", "instOfNatAtLeastTwo"],
+                            "levels": [{"kind": "zero"}],
+                            "kind": "const"},
+                           "arg":
+                           {"name": [[], "str", "Real"],
+                            "levels": [],
+                            "kind": "const"}},
+                          "arg": {"value": 2, "kind": "nat"}},
+                         "arg":
+                         {"name": [[[], "str", "Real"], "str", "instNatCast"],
+                          "levels": [],
+                          "kind": "const"}},
+                        "arg":
+                        {"kind": "app",
+                         "fn":
+                         {"kind": "app",
+                          "fn":
+                          {"name":
+                           [[[], "str", "Nat"],
+                            "str",
+                            "instAtLeastTwoHAddOfNat"],
+                           "levels": [],
+                           "kind": "const"},
+                          "arg":
+                          {"kind": "app",
+                           "fn":
+                           {"kind": "app",
+                            "fn":
+                            {"kind": "app",
+                             "fn":
+                             {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                              "levels": [{"kind": "zero"}],
+                              "kind": "const"},
+                             "arg":
+                             {"name": [[], "str", "Nat"],
+                              "levels": [],
+                              "kind": "const"}},
+                            "arg": {"value": 1, "kind": "nat"}},
+                           "arg":
+                           {"kind": "app",
+                            "fn":
+                            {"name": [[], "str", "instOfNatNat"],
+                             "levels": [],
+                             "kind": "const"},
+                            "arg": {"value": 1, "kind": "nat"}}}},
+                         "arg":
+                         {"kind": "app",
+                          "fn":
+                          {"name":
+                           [[[], "str", "Nat"], "str", "instNeZeroSucc"],
+                           "levels": [],
+                           "kind": "const"},
+                          "arg":
+                          {"kind": "app",
+                           "fn":
+                           {"kind": "app",
+                            "fn":
+                            {"kind": "app",
+                             "fn":
+                             {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+                              "levels": [{"kind": "zero"}],
+                              "kind": "const"},
+                             "arg":
+                             {"name": [[], "str", "Nat"],
+                              "levels": [],
+                              "kind": "const"}},
+                            "arg": {"value": 0, "kind": "nat"}},
+                           "arg":
+                           {"kind": "app",
+                            "fn":
+                            {"name": [[], "str", "instOfNatNat"],
+                             "levels": [],
+                             "kind": "const"},
+                            "arg": {"value": 0, "kind": "nat"}}}}}}}},
+                     "arg": {"kind": "bvar", "index": 4}}},
+                   "arg":
+                   {"kind": "app",
+                    "fn":
+                    {"name":
+                     [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                      "str",
+                      "height"],
+                     "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+                     "kind": "const"},
+                    "arg": {"kind": "bvar", "index": 6}}}}}}},
+              "arg":
+              {"kind": "app",
+               "fn":
+               {"kind": "app",
+                "fn":
+                {"name": [[], "str", "And"], "levels": [], "kind": "const"},
+                "arg":
+                {"type":
+                 {"kind": "app",
+                  "fn":
+                  {"name":
+                   [[[[], "str", "Iut"], "str", "LocalHeightData"], "str", "ι"],
+                   "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+                   "kind": "const"},
+                  "arg": {"kind": "bvar", "index": 6}},
+                 "name": [[], "str", "v"],
+                 "kind": "forall",
+                 "body":
+                 {"type":
+                  {"kind": "app",
+                   "fn":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"name": [[[], "str", "Membership"], "str", "mem"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"},
+                         {"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"name":
+                         [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                          "str",
+                          "ι"],
+                         "levels":
+                         [{"name": [[], "str", "u_1"], "kind": "param"}],
+                         "kind": "const"},
+                        "arg": {"kind": "bvar", "index": 7}}},
+                      "arg":
+                      {"kind": "app",
+                       "fn":
+                       {"name": [[], "str", "Finset"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"name":
+                         [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                          "str",
+                          "ι"],
+                         "levels":
+                         [{"name": [[], "str", "u_1"], "kind": "param"}],
+                         "kind": "const"},
+                        "arg": {"kind": "bvar", "index": 7}}}},
+                     "arg":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"kind": "app",
+                        "fn":
+                        {"name":
+                         [[[], "str", "SetLike"], "str", "instMembership"],
+                         "levels":
+                         [{"name": [[], "str", "u_1"], "kind": "param"},
+                          {"name": [[], "str", "u_1"], "kind": "param"}],
+                         "kind": "const"},
+                        "arg":
+                        {"kind": "app",
+                         "fn":
+                         {"name": [[], "str", "Finset"],
+                          "levels":
+                          [{"name": [[], "str", "u_1"], "kind": "param"}],
+                          "kind": "const"},
+                         "arg":
+                         {"kind": "app",
+                          "fn":
+                          {"name":
+                           [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                            "str",
+                            "ι"],
+                           "levels":
+                           [{"name": [[], "str", "u_1"], "kind": "param"}],
+                           "kind": "const"},
+                          "arg": {"kind": "bvar", "index": 7}}}},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"name":
+                         [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                          "str",
+                          "ι"],
+                         "levels":
+                         [{"name": [[], "str", "u_1"], "kind": "param"}],
+                         "kind": "const"},
+                        "arg": {"kind": "bvar", "index": 7}}},
+                      "arg":
+                      {"kind": "app",
+                       "fn":
+                       {"name": [[[], "str", "Finset"], "str", "instSetLike"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"name":
+                         [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                          "str",
+                          "ι"],
+                         "levels":
+                         [{"name": [[], "str", "u_1"], "kind": "param"}],
+                         "kind": "const"},
+                        "arg": {"kind": "bvar", "index": 7}}}}},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"name":
+                      [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                       "str",
+                       "bad"],
+                      "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+                      "kind": "const"},
+                     "arg": {"kind": "bvar", "index": 7}}},
+                   "arg": {"kind": "bvar", "index": 0}},
+                  "name":
+                  [[[[[[], "str", "a"], "str", "_@"], "str", "_internal"],
+                    "str",
+                    "_hyg"],
+                   "num",
+                   0],
+                  "kind": "forall",
+                  "body":
+                  {"kind": "app",
+                   "fn":
+                   {"name": [[], "str", "Not"], "levels": [], "kind": "const"},
+                   "arg":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"name": [[[], "str", "Dvd"], "str", "dvd"],
+                        "levels": [{"kind": "zero"}],
+                        "kind": "const"},
+                       "arg":
+                       {"name": [[], "str", "Nat"],
+                        "levels": [],
+                        "kind": "const"}},
+                      "arg":
+                      {"name": [[[], "str", "Nat"], "str", "instDvd"],
+                       "levels": [],
+                       "kind": "const"}},
+                     "arg": {"kind": "bvar", "index": 2}},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"name":
+                       [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                        "str",
+                        "hv"],
+                       "levels":
+                       [{"name": [[], "str", "u_1"], "kind": "param"}],
+                       "kind": "const"},
+                      "arg": {"kind": "bvar", "index": 8}},
+                     "arg": {"kind": "bvar", "index": 1}}}},
+                  "binder": "default"},
+                 "binder": "default"}},
+               "arg":
+               {"type":
+                {"kind": "app",
+                 "fn":
+                 {"name":
+                  [[[[], "str", "Iut"], "str", "LocalHeightData"], "str", "ι"],
+                  "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+                  "kind": "const"},
+                 "arg": {"kind": "bvar", "index": 6}},
+                "name": [[], "str", "v"],
+                "kind": "forall",
+                "body":
+                {"type":
+                 {"kind": "app",
+                  "fn":
+                  {"kind": "app",
+                   "fn":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"name": [[[], "str", "Membership"], "str", "mem"],
+                       "levels":
+                       [{"name": [[], "str", "u_1"], "kind": "param"},
+                        {"name": [[], "str", "u_1"], "kind": "param"}],
+                       "kind": "const"},
+                      "arg":
+                      {"kind": "app",
+                       "fn":
+                       {"name":
+                        [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                         "str",
+                         "ι"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg": {"kind": "bvar", "index": 7}}},
+                     "arg":
+                     {"kind": "app",
+                      "fn":
+                      {"name": [[], "str", "Finset"],
+                       "levels":
+                       [{"name": [[], "str", "u_1"], "kind": "param"}],
+                       "kind": "const"},
+                      "arg":
+                      {"kind": "app",
+                       "fn":
+                       {"name":
+                        [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                         "str",
+                         "ι"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg": {"kind": "bvar", "index": 7}}}},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"name":
+                        [[[], "str", "SetLike"], "str", "instMembership"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"},
+                         {"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg":
+                       {"kind": "app",
+                        "fn":
+                        {"name": [[], "str", "Finset"],
+                         "levels":
+                         [{"name": [[], "str", "u_1"], "kind": "param"}],
+                         "kind": "const"},
+                        "arg":
+                        {"kind": "app",
+                         "fn":
+                         {"name":
+                          [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                           "str",
+                           "ι"],
+                          "levels":
+                          [{"name": [[], "str", "u_1"], "kind": "param"}],
+                          "kind": "const"},
+                         "arg": {"kind": "bvar", "index": 7}}}},
+                      "arg":
+                      {"kind": "app",
+                       "fn":
+                       {"name":
+                        [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                         "str",
+                         "ι"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg": {"kind": "bvar", "index": 7}}},
+                     "arg":
+                     {"kind": "app",
+                      "fn":
+                      {"name": [[[], "str", "Finset"], "str", "instSetLike"],
+                       "levels":
+                       [{"name": [[], "str", "u_1"], "kind": "param"}],
+                       "kind": "const"},
+                      "arg":
+                      {"kind": "app",
+                       "fn":
+                       {"name":
+                        [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                         "str",
+                         "ι"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg": {"kind": "bvar", "index": 7}}}}},
+                   "arg":
+                   {"kind": "app",
+                    "fn":
+                    {"name":
+                     [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                      "str",
+                      "bad"],
+                     "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+                     "kind": "const"},
+                    "arg": {"kind": "bvar", "index": 7}}},
+                  "arg": {"kind": "bvar", "index": 0}},
+                 "name":
+                 [[[[[[], "str", "a"], "str", "_@"], "str", "_internal"],
+                   "str",
+                   "_hyg"],
+                  "num",
+                  0],
+                 "kind": "forall",
+                 "body":
+                 {"type":
+                  {"kind": "app",
+                   "fn":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"name": [[], "str", "Eq"],
+                      "levels": [{"kind": "succ", "arg": {"kind": "zero"}}],
+                      "kind": "const"},
+                     "arg":
+                     {"name": [[], "str", "Nat"],
+                      "levels": [],
+                      "kind": "const"}},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"name":
+                       [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                        "str",
+                        "p"],
+                       "levels":
+                       [{"name": [[], "str", "u_1"], "kind": "param"}],
+                       "kind": "const"},
+                      "arg": {"kind": "bvar", "index": 8}},
+                     "arg": {"kind": "bvar", "index": 1}}},
+                   "arg": {"kind": "bvar", "index": 2}},
+                  "name":
+                  [[[[[[], "str", "a"], "str", "_@"], "str", "_internal"],
+                    "str",
+                    "_hyg"],
+                   "num",
+                   0],
+                  "kind": "forall",
+                  "body":
+                  {"kind": "app",
+                   "fn":
+                   {"kind": "app",
+                    "fn":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"name": [[[], "str", "LT"], "str", "lt"],
+                       "levels": [{"kind": "zero"}],
+                       "kind": "const"},
+                      "arg":
+                      {"name": [[], "str", "Real"],
+                       "levels": [],
+                       "kind": "const"}},
+                     "arg":
+                     {"name": [[[], "str", "Real"], "str", "instLT"],
+                      "levels": [],
+                      "kind": "const"}},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"name": [[[], "str", "Nat"], "str", "cast"],
+                        "levels": [{"kind": "zero"}],
+                        "kind": "const"},
+                       "arg":
+                       {"name": [[], "str", "Real"],
+                        "levels": [],
+                        "kind": "const"}},
+                      "arg":
+                      {"name": [[[], "str", "Real"], "str", "instNatCast"],
+                       "levels": [],
+                       "kind": "const"}},
+                     "arg":
+                     {"kind": "app",
+                      "fn":
+                      {"kind": "app",
+                       "fn":
+                       {"name":
+                        [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                         "str",
+                         "hv"],
+                        "levels":
+                        [{"name": [[], "str", "u_1"], "kind": "param"}],
+                        "kind": "const"},
+                       "arg": {"kind": "bvar", "index": 9}},
+                      "arg": {"kind": "bvar", "index": 2}}}},
+                   "arg":
+                   {"kind": "app",
+                    "fn":
+                    {"name": [[[], "str", "Real"], "str", "sqrt"],
+                     "levels": [],
+                     "kind": "const"},
+                    "arg":
+                    {"kind": "app",
+                     "fn":
+                     {"name":
+                      [[[[], "str", "Iut"], "str", "LocalHeightData"],
+                       "str",
+                       "height"],
+                      "levels": [{"name": [[], "str", "u_1"], "kind": "param"}],
+                      "kind": "const"},
+                     "arg": {"kind": "bvar", "index": 9}}}},
+                  "binder": "default"},
+                 "binder": "default"},
+                "binder": "default"}}}}},
+           "binder": "default"}},
+         "binder": "default"},
+        "binder": "default"},
+       "binder": "default"},
+      "binder": "default"},
+     "binder": "default"},
+    "binder": "default"},
+   "axioms": ["propext", "Classical.choice", "Quot.sound"]},
+  {"nameExpr": [[[], "str", "Iut"], "str", "sum_log_primeFactors_le"],
+   "name": "Iut.sum_log_primeFactors_le",
+   "levelParams": [],
+   "levelParamDisplay": [],
+   "elaboratedExpr":
+   {"type": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"},
+    "name": [[], "str", "n"],
+    "kind": "forall",
+    "body":
+    {"type":
+     {"kind": "app",
+      "fn":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"name": [[], "str", "Ne"],
+         "levels": [{"kind": "succ", "arg": {"kind": "zero"}}],
+         "kind": "const"},
+        "arg": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+       "arg": {"kind": "bvar", "index": 0}},
+      "arg":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"name": [[[], "str", "OfNat"], "str", "ofNat"],
+          "levels": [{"kind": "zero"}],
+          "kind": "const"},
+         "arg": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+        "arg": {"value": 0, "kind": "nat"}},
+       "arg":
+       {"kind": "app",
+        "fn":
+        {"name": [[], "str", "instOfNatNat"], "levels": [], "kind": "const"},
+        "arg": {"value": 0, "kind": "nat"}}}},
+     "name": [[], "str", "hn"],
+     "kind": "forall",
+     "body":
+     {"kind": "app",
+      "fn":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"name": [[[], "str", "LE"], "str", "le"],
+          "levels": [{"kind": "zero"}],
+          "kind": "const"},
+         "arg": {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+        "arg":
+        {"name": [[[], "str", "Real"], "str", "instLE"],
+         "levels": [],
+         "kind": "const"}},
+       "arg":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"kind": "app",
+          "fn":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"name": [[[], "str", "Finset"], "str", "sum"],
+             "levels": [{"kind": "zero"}, {"kind": "zero"}],
+             "kind": "const"},
+            "arg": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+           "arg": {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+          "arg":
+          {"name": [[[], "str", "Real"], "str", "instAddCommMonoid"],
+           "levels": [],
+           "kind": "const"}},
+         "arg":
+         {"kind": "app",
+          "fn":
+          {"name": [[[], "str", "Nat"], "str", "primeFactors"],
+           "levels": [],
+           "kind": "const"},
+          "arg": {"kind": "bvar", "index": 1}}},
+        "arg":
+        {"type": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"},
+         "name": [[], "str", "p"],
+         "kind": "lam",
+         "body":
+         {"kind": "app",
+          "fn":
+          {"name": [[[], "str", "Real"], "str", "log"],
+           "levels": [],
+           "kind": "const"},
+          "arg":
+          {"kind": "app",
+           "fn":
+           {"kind": "app",
+            "fn":
+            {"kind": "app",
+             "fn":
+             {"name": [[[], "str", "Nat"], "str", "cast"],
+              "levels": [{"kind": "zero"}],
+              "kind": "const"},
+             "arg":
+             {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+            "arg":
+            {"name": [[[], "str", "Real"], "str", "instNatCast"],
+             "levels": [],
+             "kind": "const"}},
+           "arg": {"kind": "bvar", "index": 0}}},
+         "binder": "default"}}},
+      "arg":
+      {"kind": "app",
+       "fn":
+       {"name": [[[], "str", "Real"], "str", "log"],
+        "levels": [],
+        "kind": "const"},
+       "arg":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"kind": "app",
+          "fn":
+          {"name": [[[], "str", "Nat"], "str", "cast"],
+           "levels": [{"kind": "zero"}],
+           "kind": "const"},
+          "arg": {"name": [[], "str", "Real"], "levels": [], "kind": "const"}},
+         "arg":
+         {"name": [[[], "str", "Real"], "str", "instNatCast"],
+          "levels": [],
+          "kind": "const"}},
+        "arg": {"kind": "bvar", "index": 1}}}},
+     "binder": "default"},
+    "binder": "default"},
+   "axioms": ["propext", "Classical.choice", "Quot.sound"]}],
+ "compilerVersion": "4.35.0-rc3"}

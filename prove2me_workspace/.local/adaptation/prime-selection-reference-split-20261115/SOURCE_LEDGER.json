@@ -1,0 +1,825 @@
+{
+  "schema": "prime-selection-source-ledger-v1",
+  "status": "draft-not-compiled-not-uploaded",
+  "source_repository": "https://github.com/lana-agents/iut",
+  "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+  "source_file": "Iut/Implication/PrimeSelection.lean",
+  "source_sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+  "license": "Apache-2.0",
+  "license_file": "LICENSE.iut.Apache-2.0",
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "compiler_jobs": {
+    "graph": "ci-012771-ee109b3e",
+    "stage2": "ci-012862-305a2a5f",
+    "keyword_and_original_types": "ci-012880-698b3696"
+  },
+  "target_environment": {
+    "lean": "4.33.1",
+    "mathlib": "0df444a"
+  },
+  "definitions": [
+    {
+      "producer": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+      "original_name": "Iut.ChebyshevBound",
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L38-L50",
+      "source_command_sha256": "30b3d6a60bf4f29a23abe3ba60272ed703af187b6f085e139873db180a4066d5",
+      "fidelity": "Original complete definition/structure command preserved byte-for-byte inside upload namespace.",
+      "compiler_reported_consumers": [
+        {
+          "original": "Iut.ChebyshevBound._sizeOf_1",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound._sizeOf_1",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound._sizeOf_inst",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound._sizeOf_inst",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.casesOn",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.casesOn",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.ctorIdx",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.ctorIdx",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.exists_prime_notMem",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.exists_prime_notMem",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.five_le",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.five_le",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.lower",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.lower",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.noConfusion",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.noConfusion",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.noConfusionType",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.noConfusionType",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.rec",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.recOn",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.recOn",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.upper",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.upper",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.ξ",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.ξ",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.exists_prime_notMem._proof_1_1",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.exists_prime_notMem._proof_1_1",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk._flat_ctor",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk.inj",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk.inj",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk.injEq",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk.injEq",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk.noConfusion",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk.noConfusion",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.mk.sizeOf_spec",
+          "edge": "typeDeps"
+        }
+      ],
+      "actual_generated_node_consumers": [
+        "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ],
+      "property_accessors": "provided by structure command; no independent platform nodes"
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.thetaSet",
+      "original_name": "Iut.thetaSet",
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L52-L53",
+      "source_command_sha256": "f1a967e1c49ef38436311184bae8b49c3cf398cdff24a56ee7720be6e8cd0a3b",
+      "fidelity": "Original complete definition/structure command preserved byte-for-byte inside upload namespace.",
+      "compiler_reported_consumers": [
+        {
+          "original": "Iut.thetaSet_nonneg",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.exists_prime_notMem",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.exists_prime_notMem",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.exists_prime_notMem._proof_1_1",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.ChebyshevBound.exists_prime_notMem._proof_1_1",
+          "edge": "valueDeps"
+        }
+      ],
+      "actual_generated_node_consumers": [
+        "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ],
+      "property_accessors": "provided by structure command; no independent platform nodes"
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.LocalHeightData",
+      "original_name": "Iut.LocalHeightData",
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L132-L160",
+      "source_command_sha256": "f7d890c536e3564051776c3edc6cae93b30ab318c94527a504f88396c240d7e0",
+      "fidelity": "Original complete definition/structure command preserved byte-for-byte inside upload namespace.",
+      "compiler_reported_consumers": [
+        {
+          "original": "Iut.LocalHeightData._sizeOf_1",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData._sizeOf_1",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData._sizeOf_inst",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData._sizeOf_inst",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.bad",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.bad",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.casesOn",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.casesOn",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.ctorIdx",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.ctorIdx",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.deg",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.deg",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.deg_mul_height",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.deg_mul_height",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.f",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.f",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.heightEq",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.heightEq",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.heightOther",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.heightOther",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height_eq_add",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height_eq_add",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height_nonneg",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height_nonneg",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.hv",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.hv",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.noConfusion",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.noConfusion",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.noConfusionType",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.noConfusionType",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.one_le_deg",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.one_le_deg",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.one_le_f",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.one_le_f",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.one_le_hv",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.one_le_hv",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.p",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.p",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.p_prime",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.p_prime",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.rec",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.recOn",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.recOn",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.sum_f_le",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.sum_f_le",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.term_nonneg",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.term_nonneg",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.ι",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.ι",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.deg_mul_height._proof_1_1",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.deg_mul_height._proof_1_1",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection._proof_1_1",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection._proof_1_1",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection._proof_1_2",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection._proof_1_2",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection._proof_1_3",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection._proof_1_3",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk._flat_ctor",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk.inj",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk.inj",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk.injEq",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk.injEq",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk.noConfusion",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk.noConfusion",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.mk.sizeOf_spec",
+          "edge": "typeDeps"
+        }
+      ],
+      "actual_generated_node_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ],
+      "property_accessors": "provided by structure command; no independent platform nodes"
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.LocalHeightData.height",
+      "original_name": "Iut.LocalHeightData.height",
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L166-L168",
+      "source_command_sha256": "d1af0dc9449c443590725f182194874194252389642f8d9a92d2ff990b751703",
+      "fidelity": "Original complete definition/structure command preserved byte-for-byte inside upload namespace.",
+      "compiler_reported_consumers": [
+        {
+          "original": "Iut.LocalHeightData.deg_mul_height",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.deg_mul_height",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.exists_prime_selection",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height_eq_add",
+          "edge": "typeDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height_eq_add",
+          "edge": "valueDeps"
+        },
+        {
+          "original": "Iut.LocalHeightData.height_nonneg",
+          "edge": "typeDeps"
+        }
+      ],
+      "actual_generated_node_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ],
+      "property_accessors": "provided by structure command; no independent platform nodes"
+    }
+  ],
+  "theorems": [
+    {
+      "producer": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L102-L128",
+      "source_sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+      "original_name": "Iut.ChebyshevBound.exists_prime_notMem",
+      "fidelity": "Original statement signature preserved byte-for-byte. Proof preserves all bytes except listed exact InfoTree reference relocations to disambiguate the hoisted helper; theorem name wrapped; source lemma keyword normalized through compiler AST range when needed.",
+      "actual_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ],
+      "canonical_c22_connected": false,
+      "source_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "wrapped_axioms": "pending main-agent CI",
+      "dependencies": [],
+      "inline_helpers": [
+        "AbcAdaptation.Reference.Iut.thetaSet_nonneg",
+        "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+      ],
+      "original_proof_sha256": "f8108a450a5ce86f6812a927bd4d5f485cbe15531b7499340fb07bbc7ead0641",
+      "generated_proof_sha256": "95ed028b96f52cba5d15dfaadd99981ea162c5d7a79d40f27ee626d5ac110fc8",
+      "original_proof_bytes_identical": false,
+      "reference_relocations": [
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 66,
+              "line": 125,
+              "offset": 5521
+            },
+            "end": {
+              "col": 84,
+              "line": 125,
+              "offset": 5539
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        }
+      ],
+      "theorem_module": "Theorems.Thm_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem",
+      "solution_module": "Solutions.Sol_AbcAdaptation_Reference_Iut_ChebyshevBound_exists_prime_notMem"
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L209-L381",
+      "source_sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+      "original_name": "Iut.LocalHeightData.exists_prime_selection",
+      "fidelity": "Original statement signature preserved byte-for-byte. Proof preserves all bytes except listed exact InfoTree reference relocations to disambiguate the hoisted helper; theorem name wrapped; source lemma keyword normalized through compiler AST range when needed.",
+      "actual_consumers": [
+        "Original Iut.Corollary22Inputs.c2 proof directly calls L.exists_prime_selection at original line 441, producing the P1-P3 witness; existing canonical C22 connection pending"
+      ],
+      "canonical_c22_connected": false,
+      "source_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "wrapped_axioms": "pending main-agent CI",
+      "dependencies": [
+        "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+        "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le"
+      ],
+      "inline_helpers": [
+        "AbcAdaptation.Reference.Iut.log_natCast_nonneg",
+        "AbcAdaptation.Reference.Iut.sum_union_le_of_nonneg",
+        "AbcAdaptation.Reference.Iut.sum_biUnion_le_of_nonneg",
+        "AbcAdaptation.Reference.Iut.LocalHeightData.term_nonneg",
+        "AbcAdaptation.Reference.Iut.LocalHeightData.height_nonneg",
+        "AbcAdaptation.Reference.Iut.LocalHeightData.deg_mul_height"
+      ],
+      "original_proof_sha256": "be4da9e7aba64291a8fa3edf660739ca70ee03d6e4a4235179189e2c309d0529",
+      "generated_proof_sha256": "103372b081cbbe67bb938eafdc5552a18d9cd27426947d504c950fbb45d37f82",
+      "original_proof_bytes_identical": false,
+      "reference_relocations": [
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 23,
+              "line": 281,
+              "offset": 13009
+            },
+            "end": {
+              "col": 41,
+              "line": 281,
+              "offset": 13027
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 45,
+              "line": 326,
+              "offset": 15792
+            },
+            "end": {
+              "col": 63,
+              "line": 326,
+              "offset": 15810
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 43,
+              "line": 328,
+              "offset": 15910
+            },
+            "end": {
+              "col": 61,
+              "line": 328,
+              "offset": 15928
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        },
+        {
+          "const": "Iut.log_natCast_nonneg",
+          "sourceRange": {
+            "start": {
+              "col": 6,
+              "line": 338,
+              "offset": 16394
+            },
+            "end": {
+              "col": 24,
+              "line": 338,
+              "offset": 16412
+            }
+          },
+          "originalText": "log_natCast_nonneg",
+          "replacement": "AbcAdaptation.Reference.Iut.log_natCast_nonneg"
+        }
+      ],
+      "theorem_module": "Theorems.Thm_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection",
+      "solution_module": "Solutions.Sol_AbcAdaptation_Reference_Iut_LocalHeightData_exists_prime_selection"
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L85-L96",
+      "source_sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580",
+      "original_name": "Iut.sum_log_primeFactors_le",
+      "fidelity": "Original statement signature preserved byte-for-byte. Proof preserves all bytes except listed exact InfoTree reference relocations to disambiguate the hoisted helper; theorem name wrapped; source lemma keyword normalized through compiler AST range when needed.",
+      "actual_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ],
+      "canonical_c22_connected": false,
+      "source_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "wrapped_axioms": "pending main-agent CI",
+      "dependencies": [],
+      "inline_helpers": [],
+      "original_proof_sha256": "931aa7339046ab09198f96cf7a918f6e2ad2d9f19e62b39356adc51baa2da6a6",
+      "generated_proof_sha256": "931aa7339046ab09198f96cf7a918f6e2ad2d9f19e62b39356adc51baa2da6a6",
+      "original_proof_bytes_identical": true,
+      "reference_relocations": [],
+      "theorem_module": "Theorems.Thm_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le",
+      "solution_module": "Solutions.Sol_AbcAdaptation_Reference_Iut_sum_log_primeFactors_le"
+    }
+  ],
+  "inline_helpers": [
+    {
+      "producer": "AbcAdaptation.Reference.Iut.LocalHeightData.deg_mul_height",
+      "original_name": "Iut.LocalHeightData.deg_mul_height",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L187-L192",
+      "source_command_sha256": "ac4f29a9b1af0ed3392a2e779749dc6b3ff53495611b7d781b64f48b1ec5b7bc",
+      "fidelity": "Whole helper command copied byte-for-byte inside its original namespace plus upload wrapper.",
+      "proofLines": 4,
+      "actual_solution_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ]
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.LocalHeightData.height_nonneg",
+      "original_name": "Iut.LocalHeightData.height_nonneg",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L184-L185",
+      "source_command_sha256": "8f9bfc27d5f2e77fe1306e1650230de2557bea2641a2803f201f26b42bd11f63",
+      "fidelity": "Whole helper command copied byte-for-byte inside its original namespace plus upload wrapper.",
+      "proofLines": 1,
+      "actual_solution_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ]
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.LocalHeightData.term_nonneg",
+      "original_name": "Iut.LocalHeightData.term_nonneg",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L181-L182",
+      "source_command_sha256": "02b53e843cdcb9bdf0acd33eace02a09449152b7b7906adbfafedd1b3de5883c",
+      "fidelity": "Whole helper command copied byte-for-byte inside its original namespace plus upload wrapper.",
+      "proofLines": 1,
+      "actual_solution_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ]
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.log_natCast_nonneg",
+      "original_name": "Iut.log_natCast_nonneg",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L61-L64",
+      "source_command_sha256": "3e3c3fa02e4d02ac9be4b2e7b7cec76f8d21ce37364e81ba8776185af1221633",
+      "fidelity": "Whole helper command copied byte-for-byte inside its original namespace plus upload wrapper.",
+      "proofLines": 3,
+      "actual_solution_consumers": [
+        "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ]
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.sum_biUnion_le_of_nonneg",
+      "original_name": "Iut.sum_biUnion_le_of_nonneg",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L73-L83",
+      "source_command_sha256": "d4d49cfcbfb28a4727d10e229034c4f75e0bd4a6a1f96a87adc24aaa878edf69",
+      "fidelity": "Whole helper command copied byte-for-byte inside its original namespace plus upload wrapper.",
+      "proofLines": 6,
+      "actual_solution_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ]
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.sum_union_le_of_nonneg",
+      "original_name": "Iut.sum_union_le_of_nonneg",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L66-L71",
+      "source_command_sha256": "131a733ec6323963a0623f4884970ef9981f64b01836f9fdb03a30c0b73fb463",
+      "fidelity": "Whole helper command copied byte-for-byte inside its original namespace plus upload wrapper.",
+      "proofLines": 3,
+      "actual_solution_consumers": [
+        "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      ]
+    },
+    {
+      "producer": "AbcAdaptation.Reference.Iut.thetaSet_nonneg",
+      "original_name": "Iut.thetaSet_nonneg",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L55-L59",
+      "source_command_sha256": "03734497d41d88049c7e7c62ea9f31259d1803dbbcc80cd995229f3e803f1415",
+      "fidelity": "Whole helper command copied byte-for-byte inside its original namespace plus upload wrapper.",
+      "proofLines": 4,
+      "actual_solution_consumers": [
+        "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem"
+      ]
+    }
+  ],
+  "limits": [
+    "No existing canonical C22 consumer was changed.",
+    "Lean 4.33.1 exact-text compilation, elaborated-type comparison, and wrapped axiom audit remain main-agent acceptance gates."
+  ]
+}

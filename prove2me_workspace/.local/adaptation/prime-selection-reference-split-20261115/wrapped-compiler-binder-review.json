@@ -1,0 +1,213 @@
+{
+  "schema": "local.wrapped-compiler-binder-review.v1",
+  "reviewer_model": "gpt-6.1-sol",
+  "original_readbacks": "/tmp/p2m-prime-selection-readbacks-20261115/readbacks.json",
+  "original_readbacks_sha256": "c245a171c050b901e4189221de36fb2cfd8f4e57b631cf90c30a0cbf1f2b5a44",
+  "original_compiler_reviewed_readbacks": "/tmp/p2m-prime-selection-readbacks-20261115/compiler-reviewed-readbacks.json",
+  "original_compiler_reviewed_readbacks_sha256": "e3eb54f8cd0811183f66bd39a541b6abaff62e0ee9824c667b44a33eb90a4182",
+  "scope": "Read-only comparison of supplied wrapped compiler types, telescopes, universe alpha-renaming, kernel equality flags, and axiom provenance. No new compilation, CI/API calls, Git operations, or main-workspace writes by this reviewer.",
+  "mathematical_text_changes": [],
+  "all_three_input_files_present": true,
+  "range_status": "Static original-source ranges remain static; this review makes no parser-range assertion.",
+  "proof_scope": "Kernel type equality establishes correspondence of statements and solution types. It does not close imported open proof obligations. Per-node direct and transitive sorryAx fields and axiom lists are recorded separately below.",
+  "declarations": [
+    {
+      "originalName": "Iut.ChebyshevBound.exists_prime_notMem",
+      "wrappedName": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+      "auditInput": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-ChebyshevBound-exists_prime_notMem.json",
+      "auditInputSha256": "9c60a800683fdde0b4e9f51ee396eea25ea55f5ca4ccd45e723f15ffc3052d4d",
+      "compilerVersion": "4.33.1",
+      "kernelOriginalExprRelocatedTypeEqual": true,
+      "kernelTargetSolutionTypeEqual": true,
+      "metaTargetSolutionTypeEqual": true,
+      "topLevelBinderInfoEqual": true,
+      "allExpressionBinderInfoEqual": true,
+      "levelParamAlphaRenaming": {
+        "wrappedKernelOrder": [],
+        "solutionKernelOrder": [],
+        "originalKernelOrder": [],
+        "canonicalOrder": []
+      },
+      "wrappedType": "∀ (cheb : AbcAdaptation.Reference.Iut.ChebyshevBound) (A : Finset.{0} ℕ),\n  ∃ (p : ℕ),\n    Nat.Prime p ∧\n      p ∉ A ∧\n        LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (AbcAdaptation.Reference.Iut.thetaSet A) cheb.ξ))",
+      "wrappedTelescope": {
+        "result": "∃ (p : ℕ),\n  Nat.Prime p ∧\n    p ∉ A ∧ LE.le.{0} (↑p) (HMul.hMul.{0, 0, 0} 2 (HAdd.hAdd.{0, 0, 0} (AbcAdaptation.Reference.Iut.thetaSet A) cheb.ξ))",
+        "binders": [
+          {
+            "type": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Finset.{0} ℕ",
+            "name": "A",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "binderCheck": "Every actual top-level binder is explicit and matches the original compiler telescope after the displayed namespace and universe-alpha relocation. No new implicit or instance binder is present.",
+      "universeCheck": "The theorem has no declaration universe parameters.",
+      "expandedStructureFieldCheck": "ChebyshevBound constructor fields ξ/five_le/lower/upper and LocalHeightData constructor fields ι/bad/p/hv/f/deg/one_le_deg/p_prime/one_le_hv/one_le_f/sum_f_le match the expanded readback.",
+      "solutionBodyDirectSorryAx": false,
+      "solutionHasTransitiveSorryAx": false,
+      "solutionAxioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "permitsOnlyListedImportedOpenStubs": false,
+      "importedOpenChildren": [],
+      "proofStatus": "The supplied wrapped audit reports no direct or transitive sorryAx in the solution and solution axioms propext, Classical.choice, Quot.sound. This reviewer made no new compilation or CI query.",
+      "mathematicalTextChanges": [],
+      "outcome": "matched"
+    },
+    {
+      "originalName": "Iut.LocalHeightData.exists_prime_selection",
+      "wrappedName": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection",
+      "auditInput": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-LocalHeightData-exists_prime_selection.json",
+      "auditInputSha256": "1bf4df8ba72e37817bc9d528ad4616c0cdcd4d3c618c7278dbd71700b98af22c",
+      "compilerVersion": "4.33.1",
+      "kernelOriginalExprRelocatedTypeEqual": true,
+      "kernelTargetSolutionTypeEqual": true,
+      "metaTargetSolutionTypeEqual": true,
+      "topLevelBinderInfoEqual": true,
+      "allExpressionBinderInfoEqual": true,
+      "levelParamAlphaRenaming": {
+        "wrappedKernelOrder": [
+          "u_1"
+        ],
+        "solutionKernelOrder": [
+          "u_1"
+        ],
+        "originalKernelOrder": [
+          "u_1"
+        ],
+        "canonicalOrder": [
+          "_primeSelectionAuditUniverse.0"
+        ]
+      },
+      "wrappedType": "∀ (L : AbcAdaptation.Reference.Iut.LocalHeightData.{u_1}) (cheb : AbcAdaptation.Reference.Iut.ChebyshevBound) (δ : ℝ),\n  LE.le.{0} 2 δ →\n    LE.le.{0} (↑(AbcAdaptation.Reference.Iut.LocalHeightData.deg.{u_1} L)) δ →\n      LE.le.{0} cheb.ξ √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L) →\n        ∃ (ℓ : ℕ),\n          Nat.Prime ℓ ∧\n            LE.le.{0} √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n              LE.le.{0} (↑ℓ)\n                  (HMul.hMul.{0, 0, 0}\n                    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ)\n                      √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L))\n                    (Real.log\n                      (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ)\n                        (AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)))) ∧\n                (∀ (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{u_1} L) v →\n                      ¬Dvd.dvd.{0} ℓ (AbcAdaptation.Reference.Iut.LocalHeightData.hv.{u_1} L v)) ∧\n                  ∀ (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{u_1} L) v →\n                      Eq.{1} (AbcAdaptation.Reference.Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                        LT.lt.{0} ↑(AbcAdaptation.Reference.Iut.LocalHeightData.hv.{u_1} L v)\n                          √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)",
+      "wrappedTelescope": {
+        "result": "∃ (ℓ : ℕ),\n  Nat.Prime ℓ ∧\n    LE.le.{0} √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n      LE.le.{0} (↑ℓ)\n          (HMul.hMul.{0, 0, 0}\n            (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ)\n              √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L))\n            (Real.log\n              (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ)\n                (AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)))) ∧\n        (∀ (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{u_1} L) v →\n              ¬Dvd.dvd.{0} ℓ (AbcAdaptation.Reference.Iut.LocalHeightData.hv.{u_1} L v)) ∧\n          ∀ (v : AbcAdaptation.Reference.Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (AbcAdaptation.Reference.Iut.LocalHeightData.bad.{u_1} L) v →\n              Eq.{1} (AbcAdaptation.Reference.Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                LT.lt.{0} ↑(AbcAdaptation.Reference.Iut.LocalHeightData.hv.{u_1} L v)\n                  √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)",
+        "binders": [
+          {
+            "type": "AbcAdaptation.Reference.Iut.LocalHeightData.{u_1}",
+            "name": "L",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "AbcAdaptation.Reference.Iut.ChebyshevBound",
+            "name": "cheb",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "ℝ",
+            "name": "δ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} 2 δ",
+            "name": "hδ",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} (↑(AbcAdaptation.Reference.Iut.LocalHeightData.deg.{u_1} L)) δ",
+            "name": "hdeg",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "LE.le.{0} cheb.ξ √(AbcAdaptation.Reference.Iut.LocalHeightData.height.{u_1} L)",
+            "name": "hξ",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "binderCheck": "Every actual top-level binder is explicit and matches the original compiler telescope after the displayed namespace and universe-alpha relocation. No new implicit or instance binder is present.",
+      "universeCheck": "The sole theorem universe is the arbitrary index-type universe already called w in the readback; LocalHeightData : Type (w + 1), index type : Type w.",
+      "expandedStructureFieldCheck": "ChebyshevBound constructor fields ξ/five_le/lower/upper and LocalHeightData constructor fields ι/bad/p/hv/f/deg/one_le_deg/p_prime/one_le_hv/one_le_f/sum_f_le match the expanded readback.",
+      "solutionBodyDirectSorryAx": false,
+      "solutionHasTransitiveSorryAx": true,
+      "solutionAxioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "permitsOnlyListedImportedOpenStubs": true,
+      "importedOpenChildren": [
+        {
+          "name": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+          "isExpectedOpenStub": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem",
+          "isExpectedOpenStub": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "proofStatus": "The supplied wrapped audit reports no direct sorryAx in the solution body, but reports transitive sorryAx from the listed imported open child declarations. This records a solution conditional on those open children and does not establish a closed mathematical proof.",
+      "mathematicalTextChanges": [],
+      "outcome": "matched"
+    },
+    {
+      "originalName": "Iut.sum_log_primeFactors_le",
+      "wrappedName": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
+      "auditInput": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/type-audits/Iut-sum_log_primeFactors_le.json",
+      "auditInputSha256": "296702cca2fb5d8490b8554b2a64f9c836a73f6047b73e61994da8f208c7c5d4",
+      "compilerVersion": "4.33.1",
+      "kernelOriginalExprRelocatedTypeEqual": true,
+      "kernelTargetSolutionTypeEqual": true,
+      "metaTargetSolutionTypeEqual": true,
+      "topLevelBinderInfoEqual": true,
+      "allExpressionBinderInfoEqual": true,
+      "levelParamAlphaRenaming": {
+        "wrappedKernelOrder": [],
+        "solutionKernelOrder": [],
+        "originalKernelOrder": [],
+        "canonicalOrder": []
+      },
+      "wrappedType": "∀ (n : ℕ), Ne.{1} n 0 → LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+      "wrappedTelescope": {
+        "result": "LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+        "binders": [
+          {
+            "type": "ℕ",
+            "name": "n",
+            "binderInfo": "Lean.BinderInfo.default"
+          },
+          {
+            "type": "Ne.{1} n 0",
+            "name": "hn",
+            "binderInfo": "Lean.BinderInfo.default"
+          }
+        ]
+      },
+      "binderCheck": "Every actual top-level binder is explicit and matches the original compiler telescope after the displayed namespace and universe-alpha relocation. No new implicit or instance binder is present.",
+      "universeCheck": "The theorem has no declaration universe parameters.",
+      "expandedStructureFieldCheck": "ChebyshevBound constructor fields ξ/five_le/lower/upper and LocalHeightData constructor fields ι/bad/p/hv/f/deg/one_le_deg/p_prime/one_le_hv/one_le_f/sum_f_le match the expanded readback.",
+      "solutionBodyDirectSorryAx": false,
+      "solutionHasTransitiveSorryAx": false,
+      "solutionAxioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "permitsOnlyListedImportedOpenStubs": false,
+      "importedOpenChildren": [],
+      "proofStatus": "The supplied wrapped audit reports no direct or transitive sorryAx in the solution and solution axioms propext, Classical.choice, Quot.sound. This reviewer made no new compilation or CI query.",
+      "mathematicalTextChanges": [],
+      "outcome": "matched"
+    }
+  ],
+  "outcome": "All three actual wrapped types and binder/universe sequences match the retained blind readbacks after namespace relocation; all nine mathematical text strings are unchanged."
+}

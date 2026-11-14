@@ -1,0 +1,19 @@
+{"unexpectedAxioms": [],
+ "schema": "prime-selection-type-query-v1",
+ "ppUniverses": true,
+ "name": "Iut.sum_log_primeFactors_le",
+ "module": "Iut.Implication.PrimeSelection",
+ "levelParams": [],
+ "hasSorryAx": false,
+ "graphJobId": "ci-012771-ee109b3e",
+ "elaboratedType":
+ "∀ (n : ℕ), Ne.{1} n 0 → LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+ "elaboratedTelescope":
+ {"result": "LE.le.{0} (∑ p ∈ n.primeFactors, Real.log ↑p) (Real.log ↑n)",
+  "binders":
+  [{"type": "ℕ", "name": "n", "binderInfo": "Lean.BinderInfo.default"},
+   {"type": "Ne.{1} n 0",
+    "name": "hn",
+    "binderInfo": "Lean.BinderInfo.default"}]},
+ "compilerVersion": "4.35.0-rc3",
+ "axioms": ["propext", "Classical.choice", "Quot.sound"]}

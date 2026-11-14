@@ -1,0 +1,32 @@
+{"unexpectedAxioms": [],
+ "schema": "prime-selection-type-query-v1",
+ "ppUniverses": true,
+ "name": "Iut.LocalHeightData.exists_prime_selection",
+ "module": "Iut.Implication.PrimeSelection",
+ "levelParams": ["u_1"],
+ "hasSorryAx": false,
+ "graphJobId": "ci-012771-ee109b3e",
+ "elaboratedType":
+ "∀ (L : Iut.LocalHeightData.{u_1}) (cheb : Iut.ChebyshevBound) (δ : ℝ),\n  LE.le.{0} 2 δ →\n    LE.le.{0} (↑(Iut.LocalHeightData.deg.{u_1} L)) δ →\n      LE.le.{0} cheb.ξ √(Iut.LocalHeightData.height.{u_1} L) →\n        ∃ (ℓ : ℕ),\n          Nat.Prime ℓ ∧\n            LE.le.{0} √(Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n              LE.le.{0} (↑ℓ)\n                  (HMul.hMul.{0, 0, 0}\n                    (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) √(Iut.LocalHeightData.height.{u_1} L))\n                    (Real.log (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ) (Iut.LocalHeightData.height.{u_1} L)))) ∧\n                (∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n                      ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_1} L v)) ∧\n                  ∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n                    Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n                      Eq.{1} (Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                        LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_1} L v) √(Iut.LocalHeightData.height.{u_1} L)",
+ "elaboratedTelescope":
+ {"result":
+  "∃ (ℓ : ℕ),\n  Nat.Prime ℓ ∧\n    LE.le.{0} √(Iut.LocalHeightData.height.{u_1} L) ↑ℓ ∧\n      LE.le.{0} (↑ℓ)\n          (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 10 δ) √(Iut.LocalHeightData.height.{u_1} L))\n            (Real.log (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 δ) (Iut.LocalHeightData.height.{u_1} L)))) ∧\n        (∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n              ¬Dvd.dvd.{0} ℓ (Iut.LocalHeightData.hv.{u_1} L v)) ∧\n          ∀ (v : Iut.LocalHeightData.ι.{u_1} L),\n            Membership.mem.{u_1, u_1} (Iut.LocalHeightData.bad.{u_1} L) v →\n              Eq.{1} (Iut.LocalHeightData.p.{u_1} L v) ℓ →\n                LT.lt.{0} ↑(Iut.LocalHeightData.hv.{u_1} L v) √(Iut.LocalHeightData.height.{u_1} L)",
+  "binders":
+  [{"type": "Iut.LocalHeightData.{u_1}",
+    "name": "L",
+    "binderInfo": "Lean.BinderInfo.default"},
+   {"type": "Iut.ChebyshevBound",
+    "name": "cheb",
+    "binderInfo": "Lean.BinderInfo.default"},
+   {"type": "ℝ", "name": "δ", "binderInfo": "Lean.BinderInfo.default"},
+   {"type": "LE.le.{0} 2 δ",
+    "name": "hδ",
+    "binderInfo": "Lean.BinderInfo.default"},
+   {"type": "LE.le.{0} (↑(Iut.LocalHeightData.deg.{u_1} L)) δ",
+    "name": "hdeg",
+    "binderInfo": "Lean.BinderInfo.default"},
+   {"type": "LE.le.{0} cheb.ξ √(Iut.LocalHeightData.height.{u_1} L)",
+    "name": "hξ",
+    "binderInfo": "Lean.BinderInfo.default"}]},
+ "compilerVersion": "4.35.0-rc3",
+ "axioms": ["propext", "Classical.choice", "Quot.sound"]}

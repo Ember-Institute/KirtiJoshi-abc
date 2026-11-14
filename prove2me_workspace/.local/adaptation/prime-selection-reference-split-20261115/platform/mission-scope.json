@@ -1,0 +1,40 @@
+{
+  "scope": "detached-source-consumer-preparation-for-existing-private-mission",
+  "mission": {
+    "id": "eeb5193f-68c0-41d0-9263-4a5ff7c801ee",
+    "name": "From Arithmetic Teichmuller Spaces to the abc Conjecture",
+    "description": "Let us examine whether Kirti Joshi really proved the abc-conjecture independently or is merely dreaming.\n\n让我们检查一下 Kirti Joshi 到底是独立证明了 abc 猜想还是白日做梦。\n\n数学者Kirti Joshiによる数論的タイヒミュラー空間を用いたabc予想の証明主張について、定理証明支援系「Lean」を用いた形式化検証を通じ、その論理的妥当性を検証することを目的としたプロジェクトである。",
+    "created_at": "2026-11-13T02:05:22.484514+00:00",
+    "mission_type": "OpenProblem",
+    "visibility": "private",
+    "release_requested_at": null,
+    "fields": [
+      {
+        "id": "b12c7fa2-c6fe-4f99-957d-c41ee8cfc708",
+        "slug": "arithmetic-geometry",
+        "name": "Arithmetic Geometry"
+      },
+      {
+        "id": "e76e77ab-38dd-426d-a533-0b37fb6dbabc",
+        "slug": "number-theory",
+        "name": "Number Theory"
+      }
+    ],
+    "creator": {
+      "id": "89966734-f388-427a-9ea1-983923ff28a1",
+      "username": "EmberEdison"
+    },
+    "main_theorem": {
+      "theorem_id": "e33ff731-60a7-43ef-87ae-c12aeba23cb5",
+      "theorem_name": "abc.goal.lt_constant_mul_fix",
+      "theorem_title": "The abc conjecture — abc 猜想 — abc予想",
+      "formal_statement": "theorem abc.goal.lt_constant_mul_fix (ε : ℝ) (hε : 0 < ε) : ∃ K : ℝ,\n    ∀ (a b c : ℕ), 0 < a → 0 < b → 0 < c →\n      ({a, b, c} : Set ℕ).Pairwise Nat.Coprime → a + b = c →\n      (c : ℝ) < K * ((radical (a * b * c) : ℕ) : ℝ) ^ (1 + ε) := by sorry",
+      "natural_language_statement": "**English**\n\nFor every positive real number $ε$, there exists a real constant $K_{ε}$, depending only on $ε$, such that all positive natural numbers $a,b,c$ with $a+b=c$ and with any two distinct elements of $\\{a,b,c\\}$ coprime satisfy\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\nHere $\\operatorname{rad}_{\\mathbb N}(n)$ is the product of the distinct prime divisors of the natural number $n$. The product $abc$ and its radical are computed in $\\mathbb N$ before the radical and $c$ are cast to $\\mathbb R$; the power is a real power. No positivity hypothesis on $K_{ε}$ is included in the formal statement; the bound for $(1,1,2)$ implies positivity.\n\n**简体中文**\n\n对每个正实数 $ε$，存在只依赖于 $ε$ 的实常数 $K_{ε}$，使得所有满足 $a+b=c$、且集合 $\\{a,b,c\\}$ 中任意两个不同元素互素的正自然数 $a,b,c$ 都满足\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\n这里，$\\operatorname{rad}_{\\mathbb N}(n)$ 是自然数 $n$ 的所有不同素因子的乘积。先在自然数中计算 $abc$ 及其根基，再将根基与 $c$ 转为实数，并使用实数幂。形式陈述没有另行假设常数为正；将界应用于 $(1,1,2)$ 即可推出其为正。\n\n**日本語**\n\n任意の正の実数 $ε$ に対し、$ε$ のみに依存する実定数 $K_{ε}$ が存在し、$a+b=c$ を満たし、集合 $\\{a,b,c\\}$ の相異なるどの二つの元も互いに素であるすべての正の自然数 $a,b,c$ について、\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\nが成り立つ。ここで、$\\operatorname{rad}_{\\mathbb N}(n)$ は自然数 $n$ の相異なる素因数すべての積である。積 $abc$ とその根基を自然数の範囲で計算した後、根基と $c$ を実数に変換し、実数のべき乗を用いる。形式的な命題では定数が正であることを別途仮定しないが、$(1,1,2)$ にこの不等式を適用すると正であることが従う。",
+      "status": "Open",
+      "deprecated_at": null
+    }
+  },
+  "root_graph_membership": false,
+  "root_id": "e33ff731-60a7-43ef-87ae-c12aeba23cb5",
+  "environment": "0df444a360eaa60ab8c11dca51a86af692955474"
+}
