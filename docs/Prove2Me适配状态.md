@@ -26,7 +26,6 @@
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/CondDivisor.lean:61`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Different/Conductor.lean:202`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/KummerPoint.lean:45`
-- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/CoordRing.lean:126`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBridge.lean:49`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:155`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:201`
@@ -62,7 +61,7 @@
 
 `Proper.modelExists` 仍需实际构造满足完整 Fermat 方程、生成条件、超越性和对 `ℚ(u)` 次数恰为 `N` 的函数域，给出不可约性与次数证明。`Proper.affineIdentification` 仍需证明全部相关赋值处的仿射开与当前代数坐标对等价，并保持完整剩余域的像；不能只给坐标映射而遗漏域的身份。
 
-`Proper.planeAdjunctionExists` 仍需证明固定 Fermat 曲线的实际典范除子、实际无穷超平面除子与非零有理函数之间的逐处伴随公式。原来的 `K`、`H` 和 `J` 契约必须保持；一般典范除子有限支撑及尖点坐标环有限生成性已有第一类固定来源，其移植不代替这里的具体伴随身份。
+`Proper.planeAdjunctionExists` 仍需证明固定 Fermat 曲线的实际典范除子、实际无穷超平面除子与非零有理函数之间的逐处伴随公式。原来的 `K`、`H` 和 `J` 契约必须保持；须逐处证明这一具体伴随身份，不能以有限支撑或坐标环有限生成的结论代替。
 
 `Proper.coordinatePoleMultiplicity_eq` 仍需证明：对于满足 `0 < N` 的既有实际 Fermat 模型，两个固定坐标 u、v 在每个真赋值处的实际极点重数 `max(0,-ord)` 相等。必须覆盖全部正则处、坐标为零的情形以及无穷点；不得只证明极点支撑相同或排除零坐标。这是新的明确 Fermat 特化义务，固定的 Belyi／Heights 来源及论文引文均未提供其证明。其结论将实际超平面除子识别为 u 的实际极除子，再由已验收的纤维次数公式和主除子次数为零，结合原有实际伴随数据得到典范次数；`canonicalDivisorDegree` 的归约验收不关闭该子义务，也不证明典范除子或伴随数据的存在性。
 

@@ -1,0 +1,349 @@
+{
+  "date": "2026-11-14",
+  "status": "Draft frozen; no compilation or API calls performed by this subagent",
+  "layer": "local Solutions/Source; not platform Definition",
+  "reference_chain": "refer/iut manifest -> genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf manifest -> belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+  "reference_iut_commit": null,
+  "reference_iut_note": "refer/iut has no independent Git commit; the manifest content hash and dependency revisions are the evidence.",
+  "dependency_locks": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+      "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+      "relevant_packages": [
+        {
+          "url": "https://github.com/lana-agents/genl",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+          "name": "genl",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+          "inherited": false,
+          "configFile": "lakefile.toml"
+        },
+        {
+          "url": "https://github.com/lana-agents/belyi.git",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+          "name": "belyi",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+          "inherited": true,
+          "configFile": "lakefile.toml"
+        }
+      ]
+    },
+    {
+      "path": "/tmp/p2m-height-general-position-source-audit-20261114/genl-ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/lake-manifest.json",
+      "sha256": "fa1245bd7f4e7893e4730653b7560d9d68871f1a6c824c99ece37eef85f5119d",
+      "relevant_packages": [
+        {
+          "url": "https://github.com/lana-agents/belyi.git",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+          "name": "belyi",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+          "inherited": true,
+          "configFile": "lakefile.toml"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "belyi-coord-ring",
+      "repository": "https://github.com/lana-agents/belyi",
+      "commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "path": "Belyi/CurveField/CoordRing.lean",
+      "local_path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/CoordRing.lean",
+      "authors": "The Belyi project contributors",
+      "license": "Apache-2.0",
+      "sha256": "d21848a412ff4da577615f237816c973cbe3dfd0790f0123f8ff3bc5b11eb180"
+    },
+    {
+      "id": "belyi-riemann",
+      "repository": "https://github.com/lana-agents/belyi",
+      "commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "path": "Belyi/CurveField/Riemann.lean",
+      "local_path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Riemann.lean",
+      "authors": "The Belyi project contributors",
+      "license": "Apache-2.0",
+      "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b"
+    },
+    {
+      "id": "genl-cusp-invocation",
+      "repository": "https://github.com/lana-agents/genl",
+      "commit": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+      "path": "Genl/Curves/BelyiDescent.lean",
+      "local_path": "/tmp/p2m-height-general-position-source-audit-20261114/genl-ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean",
+      "authors": "The genl contributors",
+      "license": "Apache-2.0",
+      "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596"
+    }
+  ],
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.mem_chartRing_iff_forall",
+      "draft_file": "Solutions/Source_FermatCoordRingSource.lean",
+      "line": 31,
+      "source_id": "belyi-coord-ring",
+      "source_lines": "38-63",
+      "fidelity": "Proof retained; names and actual field carrier adapted.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.coordRing_eq_chartRing"
+      ],
+      "substantial_proof": true,
+      "platform_definition_submission": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.exists_notMem_iff_support",
+      "draft_file": "Solutions/Source_FermatCoordRingSource.lean",
+      "line": 58,
+      "source_id": "belyi-coord-ring",
+      "source_lines": "66-114",
+      "fidelity": "The finite set is the support of existing D; actual existing large polar realization is supplied explicitly; support positivity is proved directly.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.exists_finset_adjoin_eq_coordRing"
+      ],
+      "substantial_proof": true,
+      "platform_definition_submission": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.coordRing_eq_chartRing",
+      "draft_file": "Solutions/Source_FermatCoordRingSource.lean",
+      "line": 118,
+      "source_id": "belyi-coord-ring",
+      "source_lines": "117-122",
+      "fidelity": "The original coordRing M D is retained; D(P)=0 is identified with absence from the exact pole support.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.exists_finset_adjoin_eq_coordRing"
+      ],
+      "substantial_proof": true,
+      "platform_definition_submission": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.exists_finset_adjoin_eq_coordRing",
+      "draft_file": "Solutions/Source_FermatCoordRingSource.lean",
+      "line": 131,
+      "source_id": "belyi-coord-ring",
+      "source_lines": "126-163",
+      "fidelity": "Full chartRing finite-type and adjoin-induction argument retained, including arbitrary prescribed regular finite S.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspGenerators_of_polarRealization"
+      ],
+      "substantial_proof": true,
+      "platform_definition_submission": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_apply",
+      "draft_file": "Solutions/Source_FermatCoordRingSource.lean",
+      "line": 174,
+      "source_id": "belyi-coord-ring",
+      "source_lines": "70-75",
+      "fidelity": "Existing cuspDivisor is exactly the reduced finite-support sum, as in source A0; no new divisor carrier.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_ne_zero",
+        "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspGenerators_of_polarRealization"
+      ],
+      "substantial_proof": true,
+      "platform_definition_submission": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_ne_zero",
+      "draft_file": "Solutions/Source_FermatCoordRingSource.lean",
+      "line": 185,
+      "source_id": "genl-cusp-invocation",
+      "source_lines": "289-295",
+      "fidelity": "A pole of actual transcendental phi belongs to cusps and has cusp divisor coefficient one.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspGenerators_of_polarRealization"
+      ],
+      "substantial_proof": true,
+      "platform_definition_submission": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.tripod_regular_of_notMem_cusps",
+      "draft_file": "Solutions/Source_FermatCoordRingSource.lean",
+      "line": 198,
+      "source_id": "genl-cusp-invocation",
+      "source_lines": "296-304",
+      "fidelity": "The invoked mem_of_notMem_belyiCusps conclusion is proved from existing ord_eq_zero_iff on the project cusp definition.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspGenerators_of_polarRealization"
+      ],
+      "substantial_proof": true,
+      "platform_definition_submission": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspGenerators_of_polarRealization",
+      "draft_file": "Solutions/Source_FermatCoordRingSource.lean",
+      "line": 224,
+      "source_id": "genl-cusp-invocation",
+      "source_lines": "289-304",
+      "fidelity": "Exact assembly of original CuspGenerators; generate equality and phi, inverse phi, inverse (1-phi) memberships preserved.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.cuspGeneratorsExists"
+      ],
+      "substantial_proof": true,
+      "platform_definition_submission": false
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.cuspGeneratorsExists",
+      "draft_file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspGeneratorsExists.lean",
+      "source_id": "genl-cusp-invocation",
+      "source_lines": "289-304",
+      "fidelity": "Original complete target and signature retained, including hRF; exact polar realization is obtained from the three existing Proved Riemann children.",
+      "consumers": [
+        "AbcAdaptation.Tripod.Fermat.Proper.arithmeticDivisorChoices_of_children.hGenerators",
+        "AbcAdaptation.Tripod.Fermat.Proper.ArithmeticDivisorChoices.generators"
+      ],
+      "substantial_proof": false
+    }
+  ],
+  "existing_riemann_dependencies": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional",
+      "platform_id": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "last_recorded_platform_status": "Proved",
+      "status_evidence": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/integration.json",
+      "status_evidence_sha256": "625e665ab37370bbbdbc5f4c709b7bb23a5212cbcc04bf5eba7a932d84dbe456",
+      "local_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean",
+      "source_sha256": "b0fbdd848db720dcfe36bbe30c14bb33d1af08de6cdbb03b8f253d73bdf839f4",
+      "local_source_contains_sorry": false,
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/derived-riemannRochFiniteDimensional-leaf-result.json",
+      "job_id": "ci-010071-3a622108",
+      "job_status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochFiniteDimensional.lean"
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4152639488
+        },
+        "cpu_time_seconds": 36.15,
+        "peak_rss_bytes": 4346634240,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.65,
+        "cpu_system_seconds": 33.5,
+        "wall_time_seconds": 36.301192699997046,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+      "platform_id": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "last_recorded_platform_status": "Proved",
+      "status_evidence": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/integration.json",
+      "status_evidence_sha256": "625e665ab37370bbbdbc5f4c709b7bb23a5212cbcc04bf5eba7a932d84dbe456",
+      "local_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean",
+      "source_sha256": "dadd613f3ef3fad0587d9249a8f4e7ae8659a26a4a87c7c1db7cf232c4e6b70e",
+      "local_source_contains_sorry": false,
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/derived-riemannRochDimensionUpperBound-leaf-result.json",
+      "job_id": "ci-010074-6e0fdf4b",
+      "job_status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochDimensionUpperBound.lean"
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4035493888
+        },
+        "cpu_time_seconds": 36.150000000000006,
+        "peak_rss_bytes": 4229644288,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 1.95,
+        "cpu_system_seconds": 34.2,
+        "wall_time_seconds": 37.045682700001635,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear",
+      "platform_id": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "last_recorded_platform_status": "Proved",
+      "status_evidence": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/integration.json",
+      "status_evidence_sha256": "625e665ab37370bbbdbc5f4c709b7bb23a5212cbcc04bf5eba7a932d84dbe456",
+      "local_source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean",
+      "source_sha256": "45694d56d1462b9194414037af5308b71a2cf3e54c0deeb36d336de3b5de4b37",
+      "local_source_contains_sorry": false,
+      "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-riemann-sourceproof-20261114/derived-riemannRochEventuallyLinear-leaf-result.json",
+      "job_id": "ci-010081-9f33fc0d",
+      "job_status": "succeeded",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_riemannRochEventuallyLinear.lean"
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4026785792
+        },
+        "cpu_time_seconds": 36.099999999999994,
+        "peak_rss_bytes": 4187377664,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 1.73,
+        "cpu_system_seconds": 34.37,
+        "wall_time_seconds": 37.150174599999445,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    }
+  ],
+  "other_existing_dependencies": [
+    "AbcAdaptation.Tripod.Fermat.Proper.Model.isCurveField",
+    "AbcAdaptation.Tripod.Fermat.Proper.chartRing finite-type instance",
+    "AbcAdaptation.Tripod.Fermat.Proper.largeEffectivePolarRealization_of_riemannChildren",
+    "AbcAdaptation.Tripod.Fermat.Proper.divisorDegree_nsmul"
+  ],
+  "new_open_nodes": 0,
+  "new_free_prop_or_law_inputs": 0,
+  "no_Act2_imports_added": true,
+  "explicit_Fermat_route": "preserved, not deprecated",
+  "draft_hashes": {
+    "Solutions/Checks_FermatCuspGeneratorsClosed.lean": "b5d70737e16a6b2fdd63238ad37373cbdb6b528c2b6b14e85575c3628249e944",
+    "Solutions/Checks_FermatCuspGeneratorsSource.lean": "167a7ec20c6901bb78e9ebb5933ffdc15d67e955d95e807e12615ad3724da065",
+    "Solutions/Source_FermatCoordRingSource.lean": "54958794843a5457c51417f84123d55d92ba0d12afc3d5c7949220dc9a965116",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspGeneratorsExists.lean": "10548663a18e64b8b3176c7a28a477fc17cdec97ed2d33e4f65d887fdca8b299"
+  },
+  "static_closure_report": "static-import-closure.json",
+  "validation_needed": "Root reviews and integrates source proofs; all Lean checks and axiom audits through MCP-CI. No claim that this uncompiled draft is accepted."
+}

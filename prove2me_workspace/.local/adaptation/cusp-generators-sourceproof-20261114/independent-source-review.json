@@ -1,0 +1,432 @@
+{
+  "verdict": "PASS_CURRENT_LEAN_STATIC_MATHEMATICS_SOURCE_FIDELITY_AND_CONSUMERS; CURRENT_HELPER_LEAF_SUCCEEDED",
+  "scope": "Read-only static review of frozen 8-helper source plus original parent. No compiler, MCP-CI, API, Git command, or repository write. Report only under task-specific /tmp.",
+  "draft": "/tmp/p2m-cusp-generators-next-20261114",
+  "source_hashes": {
+    "Solutions/Source_FermatCoordRingSource.lean": "54958794843a5457c51417f84123d55d92ba0d12afc3d5c7949220dc9a965116",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspGeneratorsExists.lean": "10548663a18e64b8b3176c7a28a477fc17cdec97ed2d33e4f65d887fdca8b299"
+  },
+  "exact_parent": {
+    "original_formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.cuspGeneratorsExists : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ →\n        ∀ (hfin : (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite),\n          Nonempty (AbcAdaptation.Tripod.Fermat.Proper.CuspGenerators M hDVR φ hfin) := by sorry",
+    "binders_retained": [
+      "{N : ℕ}",
+      "M : Model N",
+      "hDVR : PlacesDiscrete M",
+      "hRF : ResiduesFinite M",
+      "φ : M.K",
+      "hφ : IsBelyi M hDVR φ",
+      "hfin : (cusps M hDVR φ).Finite"
+    ],
+    "result": "Nonempty (CuspGenerators M hDVR φ hfin)",
+    "type_preservation": "PASS_STATIC_SIGNATURE_REVIEW; compiler exact-type audit remains required",
+    "no_new_N_restriction": true,
+    "hRF_and_full_IsBelyi_retained": true
+  },
+  "mathematical_checks": [
+    {
+      "area": "all proper places and original full coordinate ring",
+      "verdict": "PASS_STATIC",
+      "evidence": "Existing Place is every proper valuation subring containing ℚ (Def_FermatProperCarrier:56-57). Source uses Place M.K throughout. Existing coordRing carrier is ∀P, D P=0→f∈P.1, and final generate is equality of this whole Subalgebra with Algebra.adjoin ℚ G, not containment or a selected chart."
+    },
+    {
+      "area": "actual large-degree polar realization",
+      "verdict": "PASS_STATIC",
+      "evidence": "Source:59-60 hRealize quantifies every actual effective Divisor M above a uniform integer threshold and fixes every actual polar multiplicity. Parent:28-31 obtains it from existing largeEffectivePolarRealization_of_riemannChildren and three actual dimension theorems; it is not added as a final parent assumption."
+    },
+    {
+      "area": "positive degree constructed without losing support",
+      "verdict": "PASS_STATIC_MATH; ELABORATION_FIX_NEEDED",
+      "evidence": "Source:65-80 builds A₀=ΣP∈D.support [P] from the actual finite support; D≠0 gives a place P₀ and actual residue degree P₀.degree_pos gives deg A₀>0. n=N1.toNat+1 is positive and reaches the required degree. toNat is used only to choose a scaling integer, not to truncate an order or divisor coefficient."
+    },
+    {
+      "area": "exact poles and transcendence",
+      "verdict": "PASS_STATIC",
+      "evidence": "Source:93-114 realizes n•A₀; max(0,-ord_P(t))=n or 0 gives t∉O_P iff P∈D.support iff D(P)≠0. A pole at P₀ contradicts algebraicity because every algebraic constant lies in every place, hence t is transcendental."
+    },
+    {
+      "area": "chartRing membership and equality",
+      "verdict": "PASS_STATIC",
+      "evidence": "Source:31-53 identifies the integral closure chartRing t with functions in all proper valuation rings containing t. Top valuation ring contributes trivially; every non-top one is an actual Place. Source:120-127 converts exact pole support to D(P)=0 iff t∈O_P, so the complete original coordRing equals that chart ring at membership level."
+    },
+    {
+      "area": "finite generation extends the specified functions",
+      "verdict": "PASS_STATIC_MATH; INSTANCE_ELABORATION_FIX_NEEDED",
+      "evidence": "Source:138-171 takes finite algebra generators s₀ of actual chartRing t, maps them into M.K, and chooses G=S∪image(s₀). It proves both algebra inclusions by generator membership and adjoin induction, keeping all S members."
+    },
+    {
+      "area": "actual cusp support and all three inverses",
+      "verdict": "PASS_STATIC",
+      "evidence": "Source:174-194 computes cuspDivisor(P)=1 on actual cusps and 0 off them; a pole of transcendental φ proves divisor≠0. Source:198-220 proves φ, φ⁻¹ and (1-φ)⁻¹ regular off all actual cusps, using integer ord φ=0 and ord(φ-1)=0. Source:230-247 takes exactly those three functions as S, then fills all three original CuspGenerators membership fields."
+    },
+    {
+      "area": "source layer and assumptions",
+      "verdict": "PASS_STATIC",
+      "evidence": "All eight new proof declarations reside in Solutions/Source_FermatCoordRingSource.lean and are intended for remote inlining. No new Definition or theorem node is mathematically needed; no new final-parent premise is introduced."
+    }
+  ],
+  "helpers": [
+    {
+      "name": "mem_chartRing_iff_forall",
+      "consumers": [
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 122,
+          "expression": "rw [mem_chartRing_iff_forall M]"
+        }
+      ],
+      "all_consumed": true
+    },
+    {
+      "name": "exists_notMem_iff_support",
+      "consumers": [
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 138,
+          "expression": "obtain ⟨t, htr, ht⟩ := exists_notMem_iff_support M hDVR hRealize D hD"
+        }
+      ],
+      "all_consumed": true
+    },
+    {
+      "name": "coordRing_eq_chartRing",
+      "consumers": [
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 149,
+          "expression": "exact (coordRing_eq_chartRing M ht a.1).mpr a.2"
+        },
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 151,
+          "expression": "have hfc : f ∈ chartRing t := (coordRing_eq_chartRing M ht f).mp hf"
+        }
+      ],
+      "all_consumed": true
+    },
+    {
+      "name": "exists_finset_adjoin_eq_coordRing",
+      "consumers": [
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 244,
+          "expression": "obtain ⟨G, hSG, hG⟩ := exists_finset_adjoin_eq_coordRing M hDVR hRealize"
+        }
+      ],
+      "all_consumed": true
+    },
+    {
+      "name": "cuspDivisor_apply",
+      "consumers": [
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 192,
+          "expression": "have h := cuspDivisor_apply M hDVR φ hfin P"
+        },
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 235,
+          "expression": "have hcoef := cuspDivisor_apply M hDVR φ hfin P"
+        }
+      ],
+      "all_consumed": true
+    },
+    {
+      "name": "cuspDivisor_ne_zero",
+      "consumers": [
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 245,
+          "expression": "(cuspDivisor M hDVR φ hfin) (cuspDivisor_ne_zero M hDVR φ hφ hfin)"
+        }
+      ],
+      "all_consumed": true
+    },
+    {
+      "name": "tripod_regular_of_notMem_cusps",
+      "consumers": [
+        {
+          "file": "Solutions/Source_FermatCoordRingSource.lean",
+          "line": 238,
+          "expression": "have hreg := tripod_regular_of_notMem_cusps M hDVR φ hφ P hP"
+        }
+      ],
+      "all_consumed": true
+    },
+    {
+      "name": "cuspGenerators_of_polarRealization",
+      "consumers": [
+        {
+          "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_cuspGeneratorsExists.lean",
+          "line": 27,
+          "expression": "exact CuspCoordRingSource.cuspGenerators_of_polarRealization M hDVR"
+        }
+      ],
+      "all_consumed": true
+    }
+  ],
+  "riemann_dependency_evidence": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional",
+      "platform_status": "Proved",
+      "theorem_id": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "visibility": "private",
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "existing_leaf_job": "ci-010071-3a622108",
+      "existing_leaf_status": "succeeded",
+      "theorem_source_hash_matches_receipt": true,
+      "transitive_local_modules": 16,
+      "current_transitive_source_mismatches_against_old_receipt": [
+        "Definitions/Def_FermatCurveFieldDegree.lean"
+      ]
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+      "platform_status": "Proved",
+      "theorem_id": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "visibility": "private",
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "existing_leaf_job": "ci-010074-6e0fdf4b",
+      "existing_leaf_status": "succeeded",
+      "theorem_source_hash_matches_receipt": true,
+      "transitive_local_modules": 16,
+      "current_transitive_source_mismatches_against_old_receipt": [
+        "Definitions/Def_FermatCurveFieldDegree.lean"
+      ]
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear",
+      "platform_status": "Proved",
+      "theorem_id": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "visibility": "private",
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "existing_leaf_job": "ci-010081-9f33fc0d",
+      "existing_leaf_status": "succeeded",
+      "theorem_source_hash_matches_receipt": true,
+      "transitive_local_modules": 21,
+      "current_transitive_source_mismatches_against_old_receipt": [
+        "Definitions/Def_FermatCurveFieldDegree.lean"
+      ]
+    }
+  ],
+  "current_registry_statuses": {
+    "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional": "Proved",
+    "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound": "Proved",
+    "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear": "Proved"
+  },
+  "source_fidelity": {
+    "claimed_pins": {
+      "Belyi": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "Genl": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf"
+    },
+    "claimed_ranges": [
+      "Belyi/CurveField/CoordRing.lean:38-163",
+      "Genl/Curves/BelyiDescent.lean:289-304"
+    ],
+    "original_source_text_review": "PASS_STATIC_ORIGINAL_TEXT_COMPARISON",
+    "license": "PASS: Belyi/genl copyright/author/Apache-2.0 notices retained; unit reference/LICENSE is full Apache 2.0 text.",
+    "source_ledger_hash": "86cdf336c871d8b286fe29c0c09cadfaced70ccdb76f0d498e96a84e8b112fc0",
+    "comparison": [
+      {
+        "upstream": "CoordRing.lean:38-60",
+        "adaptation": "mem_chartRing_iff_forall",
+        "result": "Same valuation-subring intersection and integral-closure proof on actual field/places."
+      },
+      {
+        "upstream": "CoordRing.lean:63-114",
+        "adaptation": "exists_notMem_iff_support",
+        "result": "Source finite set is adapted exactly to support of actual D. Actual high-degree polar realization and residue-degree positivity replace source global realization/degree wrapper with explicit audited project statements."
+      },
+      {
+        "upstream": "CoordRing.lean:117-122",
+        "adaptation": "coordRing_eq_chartRing",
+        "result": "Equivalent membership predicate for complete original coordinate ring; support nonmembership translates to D(P)=0."
+      },
+      {
+        "upstream": "CoordRing.lean:126-163",
+        "adaptation": "exists_finset_adjoin_eq_coordRing",
+        "result": "Same finite-type generator extraction, union with arbitrary prescribed S and complete adjoin induction."
+      },
+      {
+        "upstream": "BelyiDescent.lean:292-306",
+        "adaptation": "cuspDivisor_ne_zero, tripod_regular_of_notMem_cusps, cuspGenerators_of_polarRealization",
+        "result": "Same actual cusp nonemptiness and exact {φ,φ⁻¹,(1−φ)⁻¹} extension. Local regularity is proved from actual ord and cusp definitions rather than assumed."
+      }
+    ],
+    "nonblocking_range_note": "Genl invocation actually occupies lines292-306. Some frozen header/draft ledger ranges289-304 omit the last two branches. Report has correct full range; root notified to clarify current metadata without changing frozen Lean input.",
+    "source_hash_checks": [
+      {
+        "id": "belyi-coord-ring",
+        "path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/CoordRing.lean",
+        "sha256": "d21848a412ff4da577615f237816c973cbe3dfd0790f0123f8ff3bc5b11eb180",
+        "matches_claim": true,
+        "bundled_copy_exists": true,
+        "bundled_copy_matches": true
+      },
+      {
+        "id": "belyi-riemann",
+        "path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Riemann.lean",
+        "sha256": "c0fcc983b3c8be9b5995992c8118d82002023199cf14d48adfe5c7f824c0dd7b",
+        "matches_claim": true,
+        "bundled_copy_exists": false,
+        "bundled_copy_matches": null
+      },
+      {
+        "id": "genl-cusp-invocation",
+        "path": "/tmp/p2m-height-general-position-source-audit-20261114/genl-ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean",
+        "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+        "matches_claim": true,
+        "bundled_copy_exists": true,
+        "bundled_copy_matches": true
+      }
+    ],
+    "dependency_lock_checks": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+        "matches": true
+      },
+      {
+        "path": "/tmp/p2m-height-general-position-source-audit-20261114/genl-ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/lake-manifest.json",
+        "matches": true
+      }
+    ]
+  },
+  "expected_platform_delta": {
+    "new_theorem_nodes": 0,
+    "new_ACCEPTED_reductions": 1,
+    "expected_math_dependencies": [
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochFiniteDimensional",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochDimensionUpperBound",
+      "AbcAdaptation.Tripod.Fermat.Proper.riemannRochEventuallyLinear"
+    ],
+    "frontier_expected": [
+      23,
+      22
+    ],
+    "status": "Expected only; actual complete before/after graph must be read after platform acceptance.",
+    "direct_closed_children": "Do not count this dependency-bearing ACCEPTED reduction as a new dependency-free direct proof."
+  },
+  "not_claimed": [
+    "New helper elaboration or axiom acceptance",
+    "Remote parent Proved",
+    "New direct payload acceptance",
+    "Adjunction, canonical height, global canonical estimate or abc closure"
+  ],
+  "execution": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "API_called": false,
+    "Git_called": false,
+    "repository_written": false,
+    "all_rg_used_two_core_wrapper": true,
+    "only_report_written": true
+  },
+  "current_source_review": {
+    "helper_path": "Solutions/Source_FermatCoordRingSource.lean",
+    "helper_sha256": "196b2b4a4ecf4d404983b4d2ab62e1af2b12fc6673bc94ae1b93b96a0eb5b699",
+    "parent_sha256": "10548663a18e64b8b3176c7a28a477fc17cdec97ed2d33e4f65d887fdca8b299",
+    "root_v3_changes": [
+      "open scoped Classical supplies statement decidability",
+      "Explicit change exposes A₀(P₀)*degree before one_mul",
+      "Local Algebra ℚ (chartRing t) := (chartRing t).algebra' and explicit FiniteType.out parameters",
+      "neg_mem explicit element argument"
+    ],
+    "mathematical_changes": false,
+    "maxHeartbeats_increased": false
+  },
+  "latest_leaf_receipt": {
+    "job_id": "ci-011169-6c6db4ca",
+    "status": "succeeded",
+    "exit_code": 0,
+    "actual_arguments": [
+      "lean",
+      "Solutions/Source_FermatCoordRingSource.lean"
+    ],
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 6434172928
+      },
+      "cpu_time_seconds": 43.15,
+      "peak_rss_bytes": 4402630656,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 5.89,
+      "cpu_system_seconds": 37.26,
+      "wall_time_seconds": 41.33512389998941,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "diagnostics": [
+      {
+        "path": "Solutions/Source_FermatCoordRingSource.lean",
+        "line": 32,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.mem_chartRing_iff_forall`:"
+      },
+      {
+        "path": "Solutions/Source_FermatCoordRingSource.lean",
+        "line": 141,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_FermatCoordRingSource.lean",
+        "line": 142,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_FermatCoordRingSource.lean",
+        "line": 177,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_apply`:"
+      }
+    ],
+    "source_hash_matches": true,
+    "input_hash_count": 189,
+    "current_input_hash_mismatches": [],
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_id": null
+  },
+  "remaining_acceptance_work": [
+    "Fresh current helper and parent compilation, precise parent-type comparison and all-constant standard-axiom audit",
+    "Remote actual payload with inline helper closure and only existing three Proved Riemann theorem imports",
+    "Complete before/after platform graph, metadata readbacks and frontier counts",
+    "Required production gates and final diff check"
+  ],
+  "historical_leaf_failure": {
+    "job_id": "ci-011160-f36c0cee",
+    "status": "failed",
+    "exit_code": 1,
+    "main_errors": [
+      {
+        "line": 79,
+        "issue": "one_mul rewrite sees unreduced lambda application after A₀ coefficient rewrite; simplify/change target first."
+      },
+      {
+        "line": 140,
+        "issue": "FiniteType.out elaboration enters SeminormedRing instance search and reaches typeclass heartbeat timeout; make algebraic instance/projection explicit before considering heartbeat changes."
+      },
+      {
+        "line": 176,
+        "issue": "if in theorem statement needs Decidable before the proof-body classical command; add a declaration-context Classical proposition decidability."
+      }
+    ],
+    "mathematical_scope": "These are elaboration failures, not evidence of a different mathematical target. Subsequent synthetic sorry warnings are failure consequences; this source is not accepted.",
+    "root_notified": true,
+    "historical": true,
+    "resolved_by": "ci-011169-6c6db4ca succeeded on current root v3 source"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "attempt": "ci-011155-3eda603b",
+  "scope": "Original statements preserved; source proof elaboration fixes",
+  "changes": [
+    "Reduce beta-redex before one_mul rewrite",
+    "Provide R and A explicitly to Algebra.FiniteType.out",
+    "Open scoped Classical for proposition conditionals in signatures",
+    "Provide explicit value argument to ValuationSubring.neg_mem"
+  ],
+  "heartbeats_increased": false,
+  "followup": {
+    "attempt": "ci-011160-f36c0cee",
+    "remaining_cause": "Canonical rational scalar algebra on chartRing was inferred through irrelevant normed-ring paths in nested adjoin expressions.",
+    "fix": "Supply the actual canonical (chartRing t).algebra' locally, as existing CurveFieldDegree source already does.",
+    "maxHeartbeats_increased": false
+  }
+}
