@@ -1,0 +1,130 @@
+{
+  "reviewer": "/root/foundation_final_delivery_review_v2",
+  "scope": "Readonly source/byte provenance, actual source consumers, license, compiler Expr inventory, blind readbacks, paper service context and detached private publication metadata. No compiler, CI call, API, network or main-workspace write performed by this reviewer.",
+  "verdict": "pass-requested-substantive-scope",
+  "blocking_findings": [],
+  "resolved_findings": [
+    {
+      "id": "R1",
+      "issue": "PacketPresentation paper implementation scope incorrectly implied units are stronger than nonzero in all CommRings, although trivial rings are allowed.",
+      "resolution": "Final paper-context.json and PAPER-CONTEXT.en.md distinguish field/nontrivial/trivial rings; original context retained and editorial changes recorded."
+    },
+    {
+      "id": "R2",
+      "issue": "Its json_sha256 and markdown_sha256 still name the original context rather than final context. Main notified; final packet already binds final context correctly.",
+      "resolution": "Updated paper-context-validation.json binds final context and Markdown hashes, retains the original-context validation hash and editorial-review hash; all four bindings independently verified."
+    }
+  ],
+  "source_provenance": {
+    "original_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+    "independent_commit_blob_location": "/home/admin-wsl/Coq/abc.old/refer/iut",
+    "five_original_sources_and_license_exact": true,
+    "selected_source_commands_byte_identical": 26,
+    "selected_declarations": 83,
+    "all_retained_small_commands_checked": 74,
+    "all_wrapper_command_maps_checked": 69,
+    "small_provenance_segments_checked": 42,
+    "wrapper_segments_checked": 168,
+    "authenticated_blind_narrative_deletions_checked": 48,
+    "all_five_installed_wrapper_bytes_match": true,
+    "original_compiler_expr_records_and_mapping_rows": 151,
+    "standard_dependency_renames": []
+  },
+  "consumers": {
+    "actual_recorded_direct_consumer_edges_checked": 2591,
+    "nonnull_paths_checked": 56,
+    "path_edge_types": "typeDeps, valueDeps, and explicit inductive constructors incidence. Constructor-to-owner steps use graph constructors data, not invented type/value dependencies.",
+    "null_paths": "27 selected compiler companions/helpers have no direct path. Ledger preserves null rather than claiming an invented path. Bundles have real source-graph consumers; helpers and generated companions are explicitly accounted for.",
+    "live_root_membership_claimed": false,
+    "canonicalC22Connected": false
+  },
+  "blind_review": {
+    "all_original_artifact_hashes_and_blind_input_hashes_checked": true,
+    "all_english_and_japanese_readbacks_unchanged": true,
+    "chinese_editorial_changes": "Places terminology 位→处; Procession adds user-approved Capsule=标签集 and Procession=标签集递增族, retaining non-strict inclusion. Raw originals remain unchanged.",
+    "semantic_review": "All 26 source commands represented. Correctly retains finite-only domain of Places.residueChar; separate zero-at-infinity convention of RationalPlace; arbitrary fields and potentially singular Weierstrass equation for pointMap; arbitrary ambient label types, zero length and +1 standard indexing for Procession; arbitrary/infinite/empty C, CommRing including trivial rings, arbitrary topologies/subsets, dependent product and unit multiplier predicate for PacketPresentation."
+  },
+  "paper_review": {
+    "rendered_pages_independently_viewed": [
+      "I-33",
+      "I-34",
+      "I-35",
+      "I-61",
+      "I-62",
+      "III-10",
+      "III-11",
+      "III-126",
+      "III-127"
+    ],
+    "quotation_count": 11,
+    "scope": "Source context describes service roles, never identifies the universal pointMap helper with a paper theorem. Capsule specialization and omitted singleton are stated. RationalPlace identification is intended indexing rather than a proved equivalence. Hull quotation retains finite-log-volume relatively compact subset prerequisite and both relatively compact/noncompact branches. No local-field tensor decomposition proof or S2-04 closure is claimed.",
+    "publication": "All five payloads retain exact code/source/title, all three finalized readbacks, unmodified final publication_markdown, private visibility, target environment and detached-source warning. All packet metadata hashes checked."
+  },
+  "kernel_audit": {
+    "job_id": "ci-013377-98675e26",
+    "status": "succeeded",
+    "exit_code": 0,
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean"
+    ],
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_id": null,
+    "required_compared": 83,
+    "total_compared": 110,
+    "owned_declarations": 110,
+    "target_only": [],
+    "missing_unselected_originals": 41,
+    "hasSorryAx": false,
+    "allowed_axioms_only": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "computational_values_compared": 74,
+    "proof_declarations_with_exact_types": 23,
+    "recursor_rules_compared": 5,
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 6454300672
+      },
+      "cpu_time_seconds": 114.43,
+      "peak_rss_bytes": 4966359040,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 45.64,
+      "cpu_system_seconds": 68.79,
+      "wall_time_seconds": 116.18743499999982,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "auditor_config_expr_hashes_still_match_receipt": true
+  },
+  "limits": "This review does not authorize or execute publication, certify unchanged remote root state, or substitute for the main agent’s complete ready-record gates and project aggregate receipts. Five leaf and artifact receipts were inspected and succeeded; their actual arguments target the exact installed files.",
+  "reviewed_sha256": {
+    "SOURCE_LEDGER.json": "c0c2fe431498cca6600cd0c99b7d43ab480b303dee80fe4451a7a8fd6575ad09",
+    "source-license-audit.json": "201baa1206d1be4e213b546acfcfc2bb4500eb23ac9b460da2335112ea7fab7a",
+    "original-exprs.json": "24b21d41c8c8c048cdde2a079cad8b8fc440fe84bf8eda92e398f1ebea3c9255",
+    "wrapped/foundation-wrapper-report.json": "e2084000fdbe0cfe08fe883aaaa21d80e1be79e7ba57ca15f83061529cc40bba",
+    "wrapped/typed-original-source-wrapped-map.json": "198f5ffc870b55992f932d5becea78ae6e7513119a3c5b0a2bff99a5094ebfeb",
+    "blind-originals/places-points.json": "78c6797bddb031632638c23a5f79c36df451e97a2bd8c118e0ad1fa13900ddf8",
+    "blind-originals/sequence-packet.json": "5819bd845ba611963d3b3b68ca5f2b5548a208518e05ab24120bb191948cdb01",
+    "blind-readbacks.json": "2efd2523c4e81bec8e7ee9e2198c1381aaa8009c1e7c786d1951121408ba36c0",
+    "paper-context.json": "f001b60ce8e07241ef0764884b944cd4be19e4c6284911532cd758de462bb270",
+    "PAPER-CONTEXT.en.md": "33c413a7f394a89f44dc2130e2dabc2a8a1af70392a26a9ccea2316034e0abc2",
+    "delivery/packet.json": "785b56835bda72f67b45fd4a0189a1e9f987d74e07bd22ec6f28eca290a413b6",
+    "kernel-audit-v2-result.json": "dbeabd98a7e37d20e5b01ee6f9be7f6fc88126989fae48e0b94f8d911989dfed",
+    "kernel-audit/foundation-kernel-audit.json": "0202e21c6ecc8992972a81d485e10242c48182de699c5b6baf4984f3af09dd39",
+    "paper-context-validation.json": "9557d261101f19e1de7e281112cc2c971e3308375a73597a88339a74d1165043"
+  },
+  "remaining_evidence_housekeeping": []
+}

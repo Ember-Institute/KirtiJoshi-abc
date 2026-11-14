@@ -1,0 +1,4 @@
+{
+  "definition_name": "AbcAdaptation_Reference_Iut_Cor312_RationalPlace",
+  "code": "import Mathlib.Data.Nat.Prime.Defs\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n\n\nnamespace Iut\n\n\ninductive RationalPlace : Type\n  \n  | finite (p : Nat.Primes) : RationalPlace\n  \n  | infinite : RationalPlace\n  deriving DecidableEq\n\nnamespace RationalPlace\n\n\ndef IsFinite : RationalPlace → Prop\n  | finite _ => True\n  | infinite => False\n\n\ndef residueChar : RationalPlace → ℕ\n  | finite p => p\n  | infinite => 0\n\nend RationalPlace\n\nend Iut\n\nend AbcAdaptation.Reference\n"
+}

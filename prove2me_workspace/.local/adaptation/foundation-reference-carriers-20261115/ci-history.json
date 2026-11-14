@@ -1,0 +1,426 @@
+{
+  "schema": "foundation-ci-history-v1",
+  "jobs": [
+    {
+      "tag": "kernel-audit",
+      "job_id": "ci-013368-efa8b294",
+      "status": "failed",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean",
+      "input_sha256": "8baccfe7f30cd1988b12212426c5a6a039abf4ecf4b6523be4a2b5e15c9ce19d",
+      "exit_code": 1,
+      "resources": {
+        "wall_time_seconds": 64.71821369999088,
+        "cpu_time_seconds": 65.10000000000001,
+        "cpu_user_seconds": 5.76,
+        "cpu_system_seconds": 59.34,
+        "peak_rss_bytes": 4927533056,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ".local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean:220:20: error: Type mismatch\n  Expr.lam __do_lift✝\nhas type\n  Expr → Expr → BinderInfo → Expr\nbut is expected to have type\n  Expr\n.local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean:209:2: error: Failed to compile pattern matching: Stuck at\n  remaining variables: [__do_lift✝:(String)]\n  alternatives:\n    |- [\"bvar\"] => h_1 ()\n    |- [\"sort\"] => h_2 ()\n    |- [\"const\"] => h_3 ()\n    |- [\"app\"] => h_4 ()\n    |- [\"lam\"] => h_5 ()\n  examples:_\n  \n.local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean:223:2: error: unexpected token '|'; expected command\n.local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean:246:64: error: unexpected token 'unless'; expected 'then'\n.local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean:364:29: error: Type mismatch\n  __do_lift✝.toList\nhas type\n  List Level\nbut is expected to have type\n  Json\n.local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean:508:0: error: elaboration function for `auditFoundation` has not been implemented\n"
+    },
+    {
+      "tag": "kernel-audit-v2",
+      "job_id": "ci-013377-98675e26",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/AuditFoundationCarriers.lean",
+      "input_sha256": "59977ae57d71dec234e6502fba28f74b41f67f3dcc00e73fc69f112901295bab",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 116.18743499999982,
+        "cpu_time_seconds": 114.43,
+        "cpu_user_seconds": 45.64,
+        "cpu_system_seconds": 68.79,
+        "peak_rss_bytes": 4966359040,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "original-exprs",
+      "job_id": "ci-013297-86f06185",
+      "status": "failed",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/QueryFoundationOriginalExprs.lean",
+      "input_sha256": "d362d8d0cdac1099b18695301285e0f77ac3360788520b2b06264bac09e8c7f2",
+      "exit_code": 1,
+      "resources": {
+        "wall_time_seconds": 152.31320679999772,
+        "cpu_time_seconds": 150.95999999999998,
+        "cpu_user_seconds": 6.7,
+        "cpu_system_seconds": 144.26,
+        "peak_rss_bytes": 8692621312,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ".local/adaptation/foundation-reference-carriers-20261115/QueryFoundationOriginalExprs.lean:95:63: error: Nested action `← IO.FS.readFile p` must be nested inside a `do` expression.\n.local/adaptation/foundation-reference-carriers-20261115/QueryFoundationOriginalExprs.lean:170:0: error: Aborting evaluation since the expression depends on the 'sorry' axiom, which can lead to runtime instability and crashes.\n\nTo attempt to evaluate anyway despite the risks, use the '#eval!' command.\n"
+    },
+    {
+      "tag": "original-exprs-v2",
+      "job_id": "ci-013305-064be4ac",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/QueryFoundationOriginalExprs.lean",
+      "input_sha256": "400eda0ad260b92e4a3eeb9dea70f1a2adca3a00d0e5186f73d8ccf9098c940d",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 152.1513932000089,
+        "cpu_time_seconds": 150.71,
+        "cpu_user_seconds": 7.59,
+        "cpu_system_seconds": 143.12,
+        "peak_rss_bytes": 8718180352,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "parser-ranges",
+      "job_id": "ci-013283-faafeb4e",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/QueryFoundationParserRanges.lean",
+      "input_sha256": "0d7e1b5d315f9dda994044934082e3c0fa83df2b9d08dbf5bdd6555369bd570b",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 169.4006262999901,
+        "cpu_time_seconds": 168.54,
+        "cpu_user_seconds": 7.53,
+        "cpu_system_seconds": 161.01,
+        "peak_rss_bytes": 8780079104,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-PacketPresentation-artifact",
+      "job_id": "ci-013367-60d468e4",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation.lean",
+      "input_sha256": "5adc4bb513cf98b744fbd10a7bd542976acabd6295bf478c88454dd09ff87889",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 25.57186979999824,
+        "cpu_time_seconds": 25.29,
+        "cpu_user_seconds": 1.7,
+        "cpu_system_seconds": 23.59,
+        "peak_rss_bytes": 2072993792,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-PacketPresentation-leaf",
+      "job_id": "ci-013366-8d7c45f1",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation.lean",
+      "input_sha256": "5adc4bb513cf98b744fbd10a7bd542976acabd6295bf478c88454dd09ff87889",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 31.5863199000014,
+        "cpu_time_seconds": 31.28,
+        "cpu_user_seconds": 2.25,
+        "cpu_system_seconds": 29.03,
+        "peak_rss_bytes": 2078117888,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-Places-artifact",
+      "job_id": "ci-013350-efade28a",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Places.lean",
+      "input_sha256": "07d1b1ed67690cfe2e8b4582ec382b6c5a39a2fb3c4c22a65aebee920d6c2645",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 57.187824100008584,
+        "cpu_time_seconds": 56.64,
+        "cpu_user_seconds": 2.89,
+        "cpu_system_seconds": 53.75,
+        "peak_rss_bytes": 4189990912,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-Places-leaf",
+      "job_id": "ci-013344-eeae5204",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Places.lean",
+      "input_sha256": "07d1b1ed67690cfe2e8b4582ec382b6c5a39a2fb3c4c22a65aebee920d6c2645",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 62.395666399999755,
+        "cpu_time_seconds": 61.6,
+        "cpu_user_seconds": 2.56,
+        "cpu_system_seconds": 59.04,
+        "peak_rss_bytes": 4121878528,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-PointMap-artifact",
+      "job_id": "ci-013354-32321c3c",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_PointMap.lean",
+      "input_sha256": "2966a2a8a94d1c66edf08b34334f08e7beb1abead691ce9a0dad9f48a3b17f69",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 30.906125900000916,
+        "cpu_time_seconds": 30.3,
+        "cpu_user_seconds": 1.62,
+        "cpu_system_seconds": 28.68,
+        "peak_rss_bytes": 2902253568,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-PointMap-leaf",
+      "job_id": "ci-013353-ba09b24d",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_PointMap.lean",
+      "input_sha256": "2966a2a8a94d1c66edf08b34334f08e7beb1abead691ce9a0dad9f48a3b17f69",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 36.43749270000262,
+        "cpu_time_seconds": 36.160000000000004,
+        "cpu_user_seconds": 1.96,
+        "cpu_system_seconds": 34.2,
+        "peak_rss_bytes": 2997841920,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-Procession-artifact",
+      "job_id": "ci-013364-1f7f3b40",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_Procession.lean",
+      "input_sha256": "3b39ff044c0cf2bcc03e79c6bb6a5b8a852535aa381103f3731a60e026b910d5",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 29.199674300005427,
+        "cpu_time_seconds": 28.11,
+        "cpu_user_seconds": 1.32,
+        "cpu_system_seconds": 26.79,
+        "peak_rss_bytes": 1976311808,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-Procession-leaf",
+      "job_id": "ci-013362-7d15ad3d",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_Procession.lean",
+      "input_sha256": "3b39ff044c0cf2bcc03e79c6bb6a5b8a852535aa381103f3731a60e026b910d5",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 26.121361199999228,
+        "cpu_time_seconds": 25.15,
+        "cpu_user_seconds": 1.09,
+        "cpu_system_seconds": 24.06,
+        "peak_rss_bytes": 1949294592,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-RationalPlace-artifact",
+      "job_id": "ci-013359-158c6f74",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_RationalPlace.lean",
+      "input_sha256": "2a5f5df2dbae26840a494745079d09837ea6bad001494549862dac35ef18beb3",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 19.134265500004403,
+        "cpu_time_seconds": 19.16,
+        "cpu_user_seconds": 1.34,
+        "cpu_system_seconds": 17.82,
+        "peak_rss_bytes": 1896955904,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "platform-RationalPlace-leaf",
+      "job_id": "ci-013355-208de862",
+      "status": "succeeded",
+      "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_RationalPlace.lean",
+      "input_sha256": "2a5f5df2dbae26840a494745079d09837ea6bad001494549862dac35ef18beb3",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 19.55214949999936,
+        "cpu_time_seconds": 19.1,
+        "cpu_user_seconds": 0.92,
+        "cpu_system_seconds": 18.18,
+        "peak_rss_bytes": 1805053952,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "production-gates",
+      "job_id": "ci-013381-6f65dc52",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/ProductionGates.lean",
+      "input_sha256": "3b08e0bb0b9a1985669816cba5906ebdc8f6fcc81a33790bd79876a972274685",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 137.71151259999897,
+        "cpu_time_seconds": 136.73,
+        "cpu_user_seconds": 7.67,
+        "cpu_system_seconds": 129.06,
+        "peak_rss_bytes": 8650563584,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "small-oracle-PacketPresentation",
+      "job_id": "ci-013334-b91ff43e",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/ExtractSmallPacketPresentationOracle.lean",
+      "input_sha256": "07cd1c643a7a7b7b52e4e4694621e597ba6ec94e750bf667a1fe2fc0d081ba31",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 75.28764889999002,
+        "cpu_time_seconds": 74.85000000000001,
+        "cpu_user_seconds": 5.4,
+        "cpu_system_seconds": 69.45,
+        "peak_rss_bytes": 5274996736,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "small-oracle-Places",
+      "job_id": "ci-013310-b258c76e",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/ExtractSmallPlacesOracle.lean",
+      "input_sha256": "6d7278f34f7adf061a8fc90b176f4290ea1a7c6c3501b9da9b6a5e79eb5a13d9",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 146.0680951999966,
+        "cpu_time_seconds": 145.37,
+        "cpu_user_seconds": 7.78,
+        "cpu_system_seconds": 137.59,
+        "peak_rss_bytes": 9432121344,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "small-oracle-PointMap",
+      "job_id": "ci-013317-15ac8c23",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/ExtractSmallPointMapOracle.lean",
+      "input_sha256": "148ccb0728e39985e9c5aada8084f373f589fa5145b17f15977e151913af5e25",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 106.77952000001096,
+        "cpu_time_seconds": 105.8,
+        "cpu_user_seconds": 6.21,
+        "cpu_system_seconds": 99.59,
+        "peak_rss_bytes": 7031037952,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "small-oracle-Procession",
+      "job_id": "ci-013329-13fa0d26",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/ExtractSmallProcessionOracle.lean",
+      "input_sha256": "11b55e26bf05748aa1bbb737cc5afe9d5bfaa6e2172ec834550215ac39e83c62",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 74.6631297999993,
+        "cpu_time_seconds": 74.72,
+        "cpu_user_seconds": 5.01,
+        "cpu_system_seconds": 69.71,
+        "peak_rss_bytes": 5222084608,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    },
+    {
+      "tag": "small-oracle-RationalPlace",
+      "job_id": "ci-013328-3e7a3367",
+      "status": "succeeded",
+      "source": ".local/adaptation/foundation-reference-carriers-20261115/ExtractSmallRationalPlaceOracle.lean",
+      "input_sha256": "9f1ad638208c2157c0b2e3524c1fd8a6a98da71d1a9f4c8d5366f907fab15c84",
+      "exit_code": 0,
+      "resources": {
+        "wall_time_seconds": 74.55959279999661,
+        "cpu_time_seconds": 74.58000000000001,
+        "cpu_user_seconds": 5.18,
+        "cpu_system_seconds": 69.4,
+        "peak_rss_bytes": 4869525504,
+        "peak_pss_bytes": null
+      },
+      "memory_source": "scheduler process-tree physical peak RSS; PSS unavailable when null",
+      "memory_confidence": "not supplied in receipt",
+      "degraded_flag": "not supplied in receipt",
+      "diagnostics": ""
+    }
+  ],
+  "allSuccessfulLeavesBelow16GiB": true
+}

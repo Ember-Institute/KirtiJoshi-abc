@@ -1,0 +1,99 @@
+{
+  "status": "draft-only-no-CI-no-source-generation-no-API-no-Git",
+  "modules": [
+    "Iut.Cor312.ThetaData.Places",
+    "Iut.Cor312.ThetaData.PointMap",
+    "Iut.Cor312.RationalPlace",
+    "Iut.Cor312.Procession",
+    "Iut.Cor312.PacketPresentation"
+  ],
+  "sourceCommandCandidates": 26,
+  "sourceHelpers": {
+    "Iut.RationalPlace.IsFinite": {
+      "policy": "retain original source command before residueChar; no separate platform node",
+      "reason": "The accepted residueChar value uses the matcher also used by earlier IsFinite; preserving the earlier equations command retains its compiler-generated identity.",
+      "sharedCompilerConstant": "Iut.RationalPlace.IsFinite.match_1",
+      "actualConsumer": "Iut.RationalPlace.residueChar",
+      "ownershipStatus": "source-command owner must be confirmed by the small-source compiler oracle; do not infer ownership solely from the matcher name",
+      "acceptedCompilerSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/RationalPlace.lean",
+      "acceptedCompilerDeclarationRange": {
+        "end": {
+          "col": 21,
+          "line": 42
+        },
+        "endUtf16": 21,
+        "start": {
+          "col": 0,
+          "line": 39
+        },
+        "startUtf16": 0
+      },
+      "normalizedByteStart": 1341,
+      "normalizedByteEnd": 1502,
+      "compilerRangeBytesSha256": "3a53aff67f4e155ec029f8ae3ab4f8b62f120cebceaac73a9c8d2b7a59c2e5b0",
+      "exactParserCommandSpan": "pending main MCP-CI parser acceptance; no regex",
+      "proofSubspan": "pending AST, not claimed known"
+    },
+    "Iut.procLabels_mono": {
+      "policy": "retain exact source proof inline in Procession Def bundle; no separate platform node",
+      "actualConsumerChain": [
+        "Iut.Procession.standard",
+        "Iut.Procession.standard._proof_1",
+        "Iut.procLabels_mono"
+      ],
+      "acceptedCompilerSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/Procession.lean",
+      "acceptedCompilerDeclarationRange": {
+        "end": {
+          "col": 29,
+          "line": 50
+        },
+        "endUtf16": 29,
+        "start": {
+          "col": 0,
+          "line": 49
+        },
+        "startUtf16": 0
+      },
+      "normalizedByteStart": 2069,
+      "normalizedByteEnd": 2181,
+      "compilerRangeBytesSha256": "7d1ad2007f2cb229a5075c2ca5f2de117834331cc52150931c53ea9787ffbcdf",
+      "exactParserCommandSpan": "pending main MCP-CI parser acceptance; no regex",
+      "proofSubspan": "pending AST, not claimed known"
+    }
+  },
+  "maximumSourceHelpers": 10,
+  "parserOnly": {
+    "query": "QueryFoundationParserRanges.lean",
+    "config": "parser-config.json",
+    "environmentVariable": "FOUNDATION_PARSER_CONFIG",
+    "compiler": "4.35.0-rc3",
+    "mode": "single cached C22 import; testParseModule only; no processHeader or processCommands",
+    "firstLeafEstimate": {
+      "expected_duration": "60s",
+      "expected_memory": "16GiB"
+    }
+  },
+  "gatesBeforeSourceGeneration": [
+    "Main agent accepts exclusive MCP-CI parser receipt, actual arguments, no diagnostics, and process-tree peak RSS <= 16GiB.",
+    "Verify graph/config/query/fact hashes, raw SHA256, normalized LF SHA256, and all compiler range offsets.",
+    "Join selected ranged graph declarations to exactly one complete parser command by compiler-range containment; reject unsupported atomic groups.",
+    "Retain every original context command and the original command order; include RationalPlace.IsFinite helper before residueChar.",
+    "Review no-range compiler auxiliaries as small-source reconstruction obligations, never handwritten declarations."
+  ],
+  "smallSourceFollowup": [
+    "Only after parser acceptance: slice complete selected declaration commands by AST byte ranges. Keep all source context commands and license/module documentation.",
+    "Replace only the import header with reviewed exact Mathlib candidates; no import Mathlib. Five small source files remain separate.",
+    "Run the existing small-source InfoTree oracle through MCP-CI on these selected source commands, not the full original modules.",
+    "Check generated declarations, constructor/projection completeness, every selected definition body and auxiliary dependency; audit sorryAx and allowed axioms.",
+    "Use accepted small-source refs to wrap in namespace AbcAdaptation.Reference. Reuse the existing PrimeSelection namespace and Def bundle without redefining its carriers.",
+    "Kernel-compare original/wrapped Exprs with a complete original-to-wrapped constant-name map; require precise consumers before platform node publication."
+  ],
+  "platformBundlePolicy": "At most five carrier Def bundles; source helper lemmas stay inline. No independent orphan theorem or auto-generated projection nodes.",
+  "preservedInstances": [
+    "RationalPlace deriving DecidableEq",
+    "Capsule LabelType DecidableEq/Fintype",
+    "DirectSumPresentation ring_summand/topology_summand instance attributes",
+    "DirectSumPresentation Total topology"
+  ],
+  "scope": "Real source carriers for Theorem110 signature; no Act2, no new Fermat slots, no mathematical parent-obligation completion claim"
+}

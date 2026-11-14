@@ -1,0 +1,590 @@
+{
+  "schema": "prove2me-reference-foundation-paper-context-v1",
+  "language": "en",
+  "purpose": "Publication author/source context for five carrier definition bundles; not a blind readback.",
+  "created_date": "2026-11-15",
+  "author_model": "gpt-6.1-sol",
+  "paper_sources": {
+    "I": {
+      "author": "Shinichi Mochizuki",
+      "title": "Inter-universal Teichmüller Theory I: Construction of Hodge Theaters",
+      "version": "May 2020",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20I.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Inter-universal Teichmuller Theory I.pdf",
+      "retrieved_date": "2026-11-12 (existing project provenance)",
+      "sha256": "7360e3ed27c235b5497a0743d3ed1646fbb97688547d16b7c784fc7f127f1f03",
+      "file_page_count": 186,
+      "page_number_convention": "One-based PDF file pages; the printed headers on the cited pages carry the same page numbers."
+    },
+    "III": {
+      "author": "Shinichi Mochizuki",
+      "title": "Inter-universal Teichmüller Theory III: Canonical Splittings of the Log-theta-lattice",
+      "version": "May 2020",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20III.pdf",
+      "local_pdf": "/tmp/p2m-foundation-readback-v2-20261115/Inter-universal Teichmuller Theory III.pdf",
+      "retrieved_date": "2026-11-15; direct HTTP 200; receipt iut-III-download.json",
+      "sha256": "9a7ee3c77b1c7717210c0613eb39b6844649d0040dc3d9e1be7d544f8f91a0b9",
+      "file_page_count": 199,
+      "page_number_convention": "One-based PDF file pages; the printed headers on the cited pages carry the same page numbers."
+    },
+    "IV": {
+      "author": "Shinichi Mochizuki",
+      "title": "Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations",
+      "version": "April 2020",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Inter-universal Teichmuller Theory IV.pdf",
+      "retrieved_date": "2026-11-12 (existing project provenance)",
+      "sha256": "5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f",
+      "file_page_count": 87,
+      "page_number_convention": "One-based PDF file pages; the printed headers on the cited pages carry the same page numbers."
+    }
+  },
+  "quotations": [
+    {
+      "id": "I-places",
+      "paper_id": "I",
+      "locator": "§0, Numbers, paragraph defining V(F)",
+      "printed_pages": [
+        35
+      ],
+      "file_pages": [
+        35
+      ],
+      "quote_markdown": "Let $F$ be a number field [i.e., a finite extension of the field of rational numbers]. Then we shall write\n\n$$\\mathbb V(F)=\\mathbb V(F)^{\\mathrm{arc}}\\bigcup\\mathbb V(F)^{\\mathrm{non}}$$\n\nfor the set of valuations of $F$, that is to say, the union of the sets of archimedean [i.e., $\\mathbb V(F)^{\\mathrm{arc}}$] and nonarchimedean [i.e., $\\mathbb V(F)^{\\mathrm{non}}$] valuations of $F$. Here, we note that this terminology “valuation”, as it is applied in the present series of papers, corresponds to such terminology as “place” or “absolute value” in the work of other authors.",
+      "quote_scope": "First three sentences of the paragraph; the subsequent completion/integrality discussion is outside this excerpt.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "blackboard-bold V with superscripts arc and non",
+          "katex": "\\mathbb V(F),\\ \\mathbb V(F)^{\\mathrm{arc}},\\ \\mathbb V(F)^{\\mathrm{non}}",
+          "meaning": "All, archimedean, and nonarchimedean places of F."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 35,
+          "file_page": 35,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-035.raw.txt",
+          "raw_text_sha256": "f61cbab4ec38eceaf63021bc7214639497ac7928911f5fd7233c9ab4bf6a34ca",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-035.png",
+          "page_image_sha256": "37b2fd9d2c46265dd7d29bf76e68cf78385a4df519cbd88427f6c2efcc3d14cc"
+        }
+      ]
+    },
+    {
+      "id": "I-initial-field",
+      "paper_id": "I",
+      "locator": "Definition 3.1(a), complete item",
+      "printed_pages": [
+        61
+      ],
+      "file_pages": [
+        61
+      ],
+      "quote_markdown": "$F$ is a number field such that $\\sqrt{-1}\\in F$; $\\overline F$ is an algebraic closure of $F$. Write $G_F\\overset{\\mathrm{def}}{=}\\operatorname{Gal}(\\overline F/F)$.",
+      "quote_scope": "Complete sentences from the identified paragraph; excerpt boundaries are stated separately.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "F with overbar",
+          "katex": "\\overline F",
+          "meaning": "The algebraic closure in Definition 3.1(a)."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 61,
+          "file_page": 61,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-061.raw.txt",
+          "raw_text_sha256": "6118120b55017414ff713d326633ad3dfefc55f33653b29aded868410ef5c34d",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-061.png",
+          "page_image_sha256": "ca52ffd8b1f141260db0adf0549f641f8dc40bf7a3cd64a8dfc0028ba18630a1"
+        }
+      ]
+    },
+    {
+      "id": "I-initial-curve",
+      "paper_id": "I",
+      "locator": "Definition 3.1(b), opening sentences through the clause defining E_F",
+      "printed_pages": [
+        61
+      ],
+      "file_pages": [
+        61
+      ],
+      "quote_markdown": "$X_F$ is a once-punctured elliptic curve [i.e., a hyperbolic curve of type $(1,1)$] over $F$ that admits stable reduction over all $v\\in\\mathbb V(F)^{\\mathrm{non}}$. Write $E_F$ for the elliptic curve over $F$ determined by $X_F$ [so $X_F\\subseteq E_F$];",
+      "quote_scope": "Opening sentences ending at the printed semicolon; later definitions in item (b) are omitted, not replaced.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "X_F and E_F",
+          "katex": "X_F\\subseteq E_F",
+          "meaning": "The punctured curve and its containing elliptic curve."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 61,
+          "file_page": 61,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-061.raw.txt",
+          "raw_text_sha256": "6118120b55017414ff713d326633ad3dfefc55f33653b29aded868410ef5c34d",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-061.png",
+          "page_image_sha256": "ca52ffd8b1f141260db0adf0549f641f8dc40bf7a3cd64a8dfc0028ba18630a1"
+        }
+      ]
+    },
+    {
+      "id": "I-torsion-extension",
+      "paper_id": "I",
+      "locator": "Definition 3.1(c), first sentence through the definition of K",
+      "printed_pages": [
+        62
+      ],
+      "file_pages": [
+        62
+      ],
+      "quote_markdown": "$l$ is a prime number $\\geq5$ such that the image of the outer homomorphism\n\n$$G_F\\to GL_2(\\mathbb F_l)$$\n\ndetermined by the $l$-torsion points of $E_F$ contains the subgroup $SL_2(\\mathbb F_l)\\subseteq GL_2(\\mathbb F_l)$; write $K\\subseteq\\overline F$ for the finite Galois extension of $F$ determined by the kernel of this homomorphism.",
+      "quote_scope": "First sentence only; the additional coprimality assumptions in the rest of item (c) are not quoted here.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "l",
+          "katex": "l",
+          "meaning": "The paper’s chosen prime; its counterpart in the reference code is ℓ."
+        },
+        {
+          "paper_symbol": "blackboard-bold F_l",
+          "katex": "\\mathbb F_l",
+          "meaning": "The finite field in the displayed torsion representation."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 62,
+          "file_page": 62,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-062.raw.txt",
+          "raw_text_sha256": "77185e0736cf8bd5510b26423ddffc342d6fe4422e5338bde1a0f8a5d51f794a",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-062.png",
+          "page_image_sha256": "c46734c5d96bb0ead4d376c99f4ccf423b070734d12abc8602fb1b5daf7b5ccc"
+        }
+      ]
+    },
+    {
+      "id": "I-capsule",
+      "paper_id": "I",
+      "locator": "§0, Monoids and Categories, paragraph defining capsules (crosses the page break)",
+      "printed_pages": [
+        33,
+        34
+      ],
+      "file_pages": [
+        33,
+        34
+      ],
+      "quote_markdown": "Let $\\mathcal C$ be a category. We define a capsule of objects of $\\mathcal C$ to be a finite collection $\\{A_j\\}_{j\\in J}$ [i.e., where $J$ is a finite index set] of objects $A_j$ of $\\mathcal C$; if $|J|$ denotes the cardinality of $J$, then we shall refer to a capsule with index set $J$ as a $|J|$-capsule; also, we shall write $\\pi_0(\\{A_j\\}_{j\\in J})\\overset{\\mathrm{def}}{=}J$.",
+      "quote_scope": "Complete first two sentences of the capsule-definition paragraph, including the cardinality convention and π₀ notation.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "calligraphic C",
+          "katex": "\\mathcal C",
+          "meaning": "An arbitrary category; the extraction of the adjacent prose as “ofC” is not used."
+        },
+        {
+          "paper_symbol": "indexed family A_j",
+          "katex": "\\{A_j\\}_{j\\in J}",
+          "meaning": "Objects indexed by the finite set J; repeated isomorphic or equal objects are not ruled out."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 33,
+          "file_page": 33,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-033.raw.txt",
+          "raw_text_sha256": "5b76e97acb86fd1b3eefbc88f02e7834531402cdf461de1afbddd64d016ceb99",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-033.png",
+          "page_image_sha256": "f45557f28ce2c02c35fb12764d335abc51966f0da8224893b4c3593b6013d314"
+        },
+        {
+          "paper_id": "I",
+          "printed_page": 34,
+          "file_page": 34,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-034.raw.txt",
+          "raw_text_sha256": "f66bfc2770c891d35590b5ad5f892eb78b895ac2490965e21110c2265e0f4386",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-034.png",
+          "page_image_sha256": "de09627488564c286623d3b660c709ab0f16635b4cde07343266422d09b4992c"
+        }
+      ]
+    },
+    {
+      "id": "I-capsule-morphism",
+      "paper_id": "I",
+      "locator": "§0, immediately after the capsule definition, first morphism sentence and its consequence",
+      "printed_pages": [
+        34
+      ],
+      "file_pages": [
+        34
+      ],
+      "quote_markdown": "A morphism of capsules of objects of $\\mathcal C$\n\n$$\\{A_j\\}_{j\\in J}\\to\\{A'_{j'}\\}_{j'\\in J'}$$\n\nis defined to consist of an injection $\\iota:J\\hookrightarrow J'$, together with, for each $j\\in J$, a morphism $A_j\\to A'_{\\iota(j)}$ of objects of $\\mathcal C$. Thus, the capsules of objects of $\\mathcal C$ form a category $\\operatorname{Capsule}(\\mathcal C)$.",
+      "quote_scope": "Complete sentences from the identified paragraph; excerpt boundaries are stated separately.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "iota from J into J prime",
+          "katex": "\\iota:J\\hookrightarrow J\\prime",
+          "meaning": "The injection of index sets accompanying a capsule morphism."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 34,
+          "file_page": 34,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-034.raw.txt",
+          "raw_text_sha256": "f66bfc2770c891d35590b5ad5f892eb78b895ac2490965e21110c2265e0f4386",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/I-page-034.png",
+          "page_image_sha256": "de09627488564c286623d3b660c709ab0f16635b4cde07343266422d09b4992c"
+        }
+      ]
+    },
+    {
+      "id": "III-procession",
+      "paper_id": "III",
+      "locator": "Introduction, sentence introducing the alternative approach via processions",
+      "printed_pages": [
+        10
+      ],
+      "file_pages": [
+        10
+      ],
+      "quote_markdown": "Thus, we consider the following alternative approach, via processions [cf. [IUTchI], Propositions, 4.11, 6.9].",
+      "quote_scope": "Complete sentence; the following diagram and label formulas are described outside the quotation with an explicit symbol correspondence.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [],
+      "evidence": [
+        {
+          "paper_id": "III",
+          "printed_page": 10,
+          "file_page": 10,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-010.raw.txt",
+          "raw_text_sha256": "d0c5f026da83d2dc990d6b5adc12c4c150e005bdc62aafaf83f0c52689c2dce3",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-010.png",
+          "page_image_sha256": "5abc8512ee2e3392a373a112fe31bc8e38f3edd0daae1931390b9ae35b08edc0"
+        }
+      ]
+    },
+    {
+      "id": "III-rational-index",
+      "paper_id": "III",
+      "locator": "Introduction, sentence defining the rational valuation index",
+      "printed_pages": [
+        11
+      ],
+      "file_pages": [
+        11
+      ],
+      "quote_markdown": "Write $\\mathbb V_{\\mathbb Q}$ for the set of valuations of $\\mathbb Q$.",
+      "quote_scope": "Complete sentences from the identified paragraph; excerpt boundaries are stated separately.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "blackboard-bold V with blackboard-bold Q subscript",
+          "katex": "\\mathbb V_{\\mathbb Q}",
+          "meaning": "The rational valuation index; visually separated from “Write” in the original, unlike the extraction “WriteVQ”."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "III",
+          "printed_page": 11,
+          "file_page": 11,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-011.raw.txt",
+          "raw_text_sha256": "0d65757c51992c7e1a9ff018e8f9dc7f20efc04c93abe3b24c2b86bf8b59cf49",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-011.png",
+          "page_image_sha256": "186730d4913da6070e602cc9c50e07f53f963b5716473febdf709ef140200f16"
+        }
+      ]
+    },
+    {
+      "id": "III-packet-construction",
+      "paper_id": "III",
+      "locator": "Introduction, construction paragraph and both bullets, ending with the name tensor packet",
+      "printed_pages": [
+        11
+      ],
+      "file_pages": [
+        11
+      ],
+      "quote_markdown": "Then, in order to obtain objects that are immune to the various label indeterminacies discussed above, we consider, for each element $*\\in\\mathbb S_{j+1}^{\\pm}$, and for each [say, for simplicity, nonarchimedean] $v_{\\mathbb Q}\\in\\mathbb V_{\\mathbb Q}$,\n\n- the direct sum of the log-shells associated to the prime-strip labeled by the given element $*\\in\\mathbb S_{j+1}^{\\pm}$ at the $\\underline v\\in\\underline{\\mathbb V}$ that lie over $v_{\\mathbb Q}$;\n\nwe then form\n\n- the tensor product, over the elements $*\\in\\mathbb S_{j+1}^{\\pm}$, of these direct sums.\n\nThis collection of tensor products associated to $v_{\\mathbb Q}\\in\\mathbb V_{\\mathbb Q}$ will be referred to as the tensor packet associated to the collection of prime-strips indexed by elements of $\\mathbb S_{j+1}^{\\pm}$.",
+      "quote_scope": "Contiguous passage starting after the definition of the rational index; the following comparison of holomorphic and mono-analytic packets is not included.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "blackboard-bold S with superscript ± and subscript j+1",
+          "katex": "\\mathbb S_{j+1}^{\\pm}",
+          "meaning": "The paper’s label container, not a local declaration name."
+        },
+        {
+          "paper_symbol": "underlined v and underlined blackboard-bold V",
+          "katex": "\\underline v\\in\\underline{\\mathbb V}",
+          "meaning": "The chosen places used for the local direct sums."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "III",
+          "printed_page": 11,
+          "file_page": 11,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-011.raw.txt",
+          "raw_text_sha256": "0d65757c51992c7e1a9ff018e8f9dc7f20efc04c93abe3b24c2b86bf8b59cf49",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-011.png",
+          "page_image_sha256": "186730d4913da6070e602cc9c50e07f53f963b5716473febdf709ef140200f16"
+        }
+      ]
+    },
+    {
+      "id": "III-hull-opening",
+      "paper_id": "III",
+      "locator": "Remark 3.9.5, complete opening paragraph",
+      "printed_pages": [
+        126
+      ],
+      "file_pages": [
+        126
+      ],
+      "quote_markdown": "In situations that involve consideration of various sorts of regions [cf. the discussion of Remarks 3.1.1, (iii), (iv); 3.9.4] to which the log-volume may be applied, it is often of use to consider the notion of the holomorphic hull of a region.",
+      "quote_scope": "Complete sentences from the identified paragraph; excerpt boundaries are stated separately.",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [],
+      "evidence": [
+        {
+          "paper_id": "III",
+          "printed_page": 126,
+          "file_page": 126,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-126.raw.txt",
+          "raw_text_sha256": "36d1b7d24cb27182d48e7dee2db643ad4422ae3957cdf0aee0037757721e70f2",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-126.png",
+          "page_image_sha256": "963c9c57a246af273e8bf21177d3a5988d68dbd5d2ea565f1be9c5c47811574a"
+        }
+      ]
+    },
+    {
+      "id": "III-hull-definition",
+      "paper_id": "III",
+      "locator": "Remark 3.9.5(i), complete item",
+      "printed_pages": [
+        127
+      ],
+      "file_pages": [
+        127
+      ],
+      "quote_markdown": "Suppose that we are in the situation of Proposition 3.9, (i). Let\n\n$$ {}^{\\alpha}U\\subseteq\\mathcal I^{\\mathbb Q}({}^{\\alpha}\\mathcal F_{v_{\\mathbb Q}})\\quad\\text{(respectively, }{}^{A}U\\subseteq\\mathcal I^{\\mathbb Q}({}^{A}\\mathcal F_{v_{\\mathbb Q}});\\quad{}^{A,\\alpha}U\\subseteq\\mathcal I^{\\mathbb Q}({}^{A,\\alpha}\\mathcal F_{\\underline v})\\text{)} $$\n\nbe a subset that contains a relatively compact subset whose log-volume [cf. the discussion of Remark 3.1.1, (iii), (iv), as well as Remark 3.9.7, (ii), below] is finite [i.e., $>-\\infty$]. If ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$) is relatively compact, then we define the holomorphic hull of ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$) to be the smallest subset of the form\n\n$$ {}^{\\alpha}H\\overset{\\mathrm{def}}{=}\\lambda\\cdot\\mathcal O_{{}^{\\alpha}\\mathcal F_{v_{\\mathbb Q}}}\\quad\\text{(respectively, }{}^{A}H\\overset{\\mathrm{def}}{=}\\lambda\\cdot\\mathcal O_{{}^{A}\\mathcal F_{v_{\\mathbb Q}}};\\quad{}^{A,\\alpha}H\\overset{\\mathrm{def}}{=}\\lambda\\cdot\\mathcal O_{{}^{A,\\alpha}\\mathcal F_{\\underline v}}\\text{)} $$\n\n— where, relative to the direct sum decomposition of $\\mathcal I^{\\mathbb Q}((-))$ as a direct sum of fields [cf. the discussion of Proposition 3.9, (i)], $\\lambda\\in\\mathcal I^{\\mathbb Q}((-))$ is an element such that each component of $\\lambda$ [i.e., relative to this direct sum decomposition] is nonzero — that contains ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$). If ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$) is not relatively compact, then we define the holomorphic hull of ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$) to be $\\mathcal I^{\\mathbb Q}({}^{\\alpha}\\mathcal F_{v_{\\mathbb Q}})$ (respectively, $\\mathcal I^{\\mathbb Q}({}^{A}\\mathcal F_{v_{\\mathbb Q}})$; $\\mathcal I^{\\mathbb Q}({}^{A,\\alpha}\\mathcal F_{\\underline v})$). One verifies immediately that the holomorphic hull is well-defined [under the conditions stated].",
+      "quote_scope": "Complete item (i), including the relatively compact finite-log-volume-subset prerequisite and the non-relatively-compact branch. The introductory clause retains the paper’s dependency on Proposition 3.9(i).",
+      "transcription_status": "Manually transcribed and visually checked against the cited rendered original PDF page(s).",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined; typographic ligatures are written as ordinary letters. Mathematical symbols are transcribed as KaTeX below. No extraction concatenation is presented as original typesetting.",
+      "symbol_transcription": [
+        {
+          "paper_symbol": "script I with superscript blackboard-bold Q",
+          "katex": "\\mathcal I^{\\mathbb Q}((-))",
+          "meaning": "The rational span ambient space used in the paper; not a value constructed by DirectSumPresentation."
+        },
+        {
+          "paper_symbol": "script O indexed by a prime-strip expression",
+          "katex": "\\mathcal O_{{}^{\\alpha}\\mathcal F_{v_{\\mathbb Q}}}",
+          "meaning": "The paper’s integral structure; the local interface instead carries arbitrary subsets O_c."
+        },
+        {
+          "paper_symbol": "superscripts α, A, and A,α before U and H",
+          "katex": "{}^{\\alpha}U,\\ {}^AU,\\ {}^{A,\\alpha}U;\\quad{}^{\\alpha}H,\\ {}^AH,\\ {}^{A,\\alpha}H",
+          "meaning": "Three parallel paper ambient spaces; these decorations are retained in the transcription."
+        }
+      ],
+      "evidence": [
+        {
+          "paper_id": "III",
+          "printed_page": 127,
+          "file_page": 127,
+          "raw_text_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-127.raw.txt",
+          "raw_text_sha256": "31c5adb28c73107e21eb3072fa7bec134ed43865a7e62c0662699af8af6982e8",
+          "page_image_path": "/tmp/p2m-foundation-readback-v2-20261115/paper-context-evidence/III-page-127.png",
+          "page_image_sha256": "f23a0d02593898a2fe69bf2c90bffecece7e099cf6141442cf32307ef2b38371"
+        }
+      ]
+    }
+  ],
+  "bundles": [
+    {
+      "module": "Iut.Cor312.ThetaData.Places",
+      "source_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/Places.lean",
+      "source_sha256": "89f2ac970ed85ad962dd69e0bd29fe1ea2323d67f0a69acb2b1cfdb7a626a415",
+      "source_context_en": "Mochizuki I, §0, “Numbers” (p. 35), fixes $\\mathbb V(F)$ as the union of archimedean and nonarchimedean valuations of a number field. The same paragraph explicitly relates “valuation” to “place” and “absolute value.” Definition 3.1(b) later uses $\\mathbb V_{\\mathrm{mod}}=\\mathbb V(F_{\\mathrm{mod}})$, and Definition 3.1(e) selects places above this set (pp. 61–63). This is the paper setting served by the local place carrier.",
+      "implementation_scope_en": "The reference implementation uses Mathlib’s finite and infinite places as a tagged disjoint union. It also supplies the embeddings of both summands, an ideal-theoretic relation between finite places, and the residue characteristic of a finite place. Those are local implementation choices supporting the paper notation. This bundle alone does not construct the full initial $\\Theta$-data or establish every normalization comparison between Mathlib and the paper.",
+      "consumer_scope_en": "Place indices enter RHSData and the later local estimates. Finite residue characteristics and the lies-over relation also feed the q-order expressions. These dependencies reach Theorem110Invariants.theorem110, whose arithmetic certificate, local estimates, prime-counting bound, and Corollary 3.12 variant remain supplied premises.",
+      "quotation_ids": [
+        "I-places"
+      ],
+      "symbol_correspondence": [
+        {
+          "paper": "\\mathbb V(F)",
+          "local": "Iut.Place k",
+          "relation": "Carrier correspondence; F is instantiated by the local number field k."
+        },
+        {
+          "paper": "\\mathbb V(F)^{\\mathrm{non}},\\ \\mathbb V(F)^{\\mathrm{arc}}",
+          "local": "NumberField.FinitePlace k; NumberField.InfinitePlace k",
+          "relation": "The two tagged summands; paper/Mathlib normalization matching is surrounding arithmetic work."
+        }
+      ],
+      "attribution_status": "Verified original-paper service context; local implementation scope is explicitly distinguished.",
+      "blocks_definition_delivery": false,
+      "publication_markdown": "**Paper source context.** Mochizuki I, §0, “Numbers” (p. 35), fixes $\\mathbb V(F)$ as the union of archimedean and nonarchimedean valuations of a number field. The same paragraph explicitly relates “valuation” to “place” and “absolute value.” Definition 3.1(b) later uses $\\mathbb V_{\\mathrm{mod}}=\\mathbb V(F_{\\mathrm{mod}})$, and Definition 3.1(e) selects places above this set (pp. 61–63). This is the paper setting served by the local place carrier.\n\n**Implementation scope.** The reference implementation uses Mathlib’s finite and infinite places as a tagged disjoint union. It also supplies the embeddings of both summands, an ideal-theoretic relation between finite places, and the residue characteristic of a finite place. Those are local implementation choices supporting the paper notation. This bundle alone does not construct the full initial $\\Theta$-data or establish every normalization comparison between Mathlib and the paper.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), §0, Numbers, paragraph defining V(F); printed/PDF page(s) 35.\n\n> Let $F$ be a number field [i.e., a finite extension of the field of rational numbers]. Then we shall write\n>\n> $$\\mathbb V(F)=\\mathbb V(F)^{\\mathrm{arc}}\\bigcup\\mathbb V(F)^{\\mathrm{non}}$$\n>\n> for the set of valuations of $F$, that is to say, the union of the sets of archimedean [i.e., $\\mathbb V(F)^{\\mathrm{arc}}$] and nonarchimedean [i.e., $\\mathbb V(F)^{\\mathrm{non}}$] valuations of $F$. Here, we note that this terminology “valuation”, as it is applied in the present series of papers, corresponds to such terminology as “place” or “absolute value” in the work of other authors.\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\n**Actual consumer.** Place indices enter RHSData and the later local estimates. Finite residue characteristics and the lies-over relation also feed the q-order expressions. These dependencies reach Theorem110Invariants.theorem110, whose arithmetic certificate, local estimates, prime-counting bound, and Corollary 3.12 variant remain supplied premises."
+    },
+    {
+      "module": "Iut.Cor312.ThetaData.PointMap",
+      "source_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/PointMap.lean",
+      "source_sha256": "9ae2050c53e47f0c325622e031ee6db86f9e8b7512b98c874831dd47c5867eb9",
+      "source_context_en": "Mochizuki I, Definition 3.1(a)–(c) (pp. 61–62), starts from a number field $F$, its algebraic closure $\\overline F$, an elliptic curve $E_F$ obtained by filling the puncture of $X_F$, and a torsion-defined finite Galois extension $K/F$. This concrete curve-and-extension setting supplies the service context for transporting points after extending the coefficient field. The excerpts identify this setting; they do not state the local helper’s universal type.",
+      "implementation_scope_en": "Iut.Anabelian.pointMap is a local wrapper around Mathlib’s base-change map on nonsingular Weierstrass points. For arbitrary fields $k,K$, a Weierstrass curve $E/k$, and a ring homomorphism $f:k\\to K$, it gives the additive map on nonsingular-point groups, carrying infinity to infinity and $(x,y)$ to $(f(x),f(y))$. Its universal field-level statement is not attributed verbatim to Mochizuki. Applying it to the paper’s field inclusions is ordinary supporting infrastructure, not an identification with a paper theorem or an anabelian reconstruction claim.",
+      "consumer_scope_en": "The dependency graph uses pointMap in TateFamily, then InitialThetaData, then Corollary312VariantData.data and theorem110. This helper transports existing points; it does not supply the Tate uniformization, initial-data existence, or final numerical estimate.",
+      "quotation_ids": [
+        "I-initial-field",
+        "I-initial-curve",
+        "I-torsion-extension"
+      ],
+      "symbol_correspondence": [
+        {
+          "paper": "F,\\ K,\\ E_F",
+          "local": "k, K, E (in a paper-specific instantiation)",
+          "relation": "Service instantiation only; the local helper allows arbitrary fields and any Weierstrass curve."
+        },
+        {
+          "paper": "F\\hookrightarrow K",
+          "local": "f : k →+* K",
+          "relation": "A field inclusion is one possible input ring homomorphism; the local API is more general."
+        }
+      ],
+      "attribution_status": "Verified original-paper service context; local implementation scope is explicitly distinguished.",
+      "blocks_definition_delivery": false,
+      "publication_markdown": "**Paper source context.** Mochizuki I, Definition 3.1(a)–(c) (pp. 61–62), starts from a number field $F$, its algebraic closure $\\overline F$, an elliptic curve $E_F$ obtained by filling the puncture of $X_F$, and a torsion-defined finite Galois extension $K/F$. This concrete curve-and-extension setting supplies the service context for transporting points after extending the coefficient field. The excerpts identify this setting; they do not state the local helper’s universal type.\n\n**Implementation scope.** Iut.Anabelian.pointMap is a local wrapper around Mathlib’s base-change map on nonsingular Weierstrass points. For arbitrary fields $k,K$, a Weierstrass curve $E/k$, and a ring homomorphism $f:k\\to K$, it gives the additive map on nonsingular-point groups, carrying infinity to infinity and $(x,y)$ to $(f(x),f(y))$. Its universal field-level statement is not attributed verbatim to Mochizuki. Applying it to the paper’s field inclusions is ordinary supporting infrastructure, not an identification with a paper theorem or an anabelian reconstruction claim.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), Definition 3.1(a), complete item; printed/PDF page(s) 61.\n\n> $F$ is a number field such that $\\sqrt{-1}\\in F$; $\\overline F$ is an algebraic closure of $F$. Write $G_F\\overset{\\mathrm{def}}{=}\\operatorname{Gal}(\\overline F/F)$.\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), Definition 3.1(b), opening sentences through the clause defining E_F; printed/PDF page(s) 61.\n\n> $X_F$ is a once-punctured elliptic curve [i.e., a hyperbolic curve of type $(1,1)$] over $F$ that admits stable reduction over all $v\\in\\mathbb V(F)^{\\mathrm{non}}$. Write $E_F$ for the elliptic curve over $F$ determined by $X_F$ [so $X_F\\subseteq E_F$];\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), Definition 3.1(c), first sentence through the definition of K; printed/PDF page(s) 62.\n\n> $l$ is a prime number $\\geq5$ such that the image of the outer homomorphism\n>\n> $$G_F\\to GL_2(\\mathbb F_l)$$\n>\n> determined by the $l$-torsion points of $E_F$ contains the subgroup $SL_2(\\mathbb F_l)\\subseteq GL_2(\\mathbb F_l)$; write $K\\subseteq\\overline F$ for the finite Galois extension of $F$ determined by the kernel of this homomorphism.\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\n**Actual consumer.** The dependency graph uses pointMap in TateFamily, then InitialThetaData, then Corollary312VariantData.data and theorem110. This helper transports existing points; it does not supply the Tate uniformization, initial-data existence, or final numerical estimate."
+    },
+    {
+      "module": "Iut.Cor312.RationalPlace",
+      "source_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/RationalPlace.lean",
+      "source_sha256": "1aa27b7930fda145d566b3b34780d3b2e9ff8cac8db79ab0e284c209ff1b4af3",
+      "source_context_en": "Mochizuki III, Introduction (p. 11), calls $\\mathbb V_{\\mathbb Q}$ the set of valuations of $\\mathbb Q$. The following passage constructs one local tensor product for each $v_{\\mathbb Q}$ by first summing over chosen places above $v_{\\mathbb Q}$ and then tensoring over the labels. The opening of §3 repeats $\\mathbb V_{\\mathbb Q}\\overset{\\mathrm{def}}{=}\\mathbb V(\\mathbb Q)$ (p. 92). Mochizuki I, §0, p. 35, supplies the general place terminology.",
+      "implementation_scope_en": "The local RationalPlace type represents this index by one constructor for each rational prime and a separate infinity constructor. Its IsFinite predicate tests the constructor. Its residueChar function returns the prime on a finite label and returns $0$ at infinity by an explicit implementation convention. The definition does not itself construct absolute values or prove equivalence with Mathlib’s places of $\\mathbb Q$. The direct paper location for this index is III, pp. 11 and 92; I, Definition 3.1(e), provides broader initial-data background.",
+      "consumer_scope_en": "RationalPlace indexes the local packet data and LogVolumeData.globalVol. The graph proceeds through LocalEstimate.rhs_le to theorem110. This indexing retains the separate rational-place contributions used when IV, Theorem 1.10, proof Step (viii), sums local upper bounds (p. 30); the carrier does not prove those bounds.",
+      "quotation_ids": [
+        "III-rational-index",
+        "III-packet-construction"
+      ],
+      "symbol_correspondence": [
+        {
+          "paper": "\\mathbb V_{\\mathbb Q}",
+          "local": "Iut.RationalPlace",
+          "relation": "Implementation index intended to represent rational places; no equivalence theorem is included in this bundle."
+        },
+        {
+          "paper": "v_{\\mathbb Q}",
+          "local": "a RationalPlace value",
+          "relation": "Local contribution index; not the same datum as a chosen place above it."
+        }
+      ],
+      "attribution_status": "Verified original-paper service context; local implementation scope is explicitly distinguished.",
+      "blocks_definition_delivery": false,
+      "publication_markdown": "**Paper source context.** Mochizuki III, Introduction (p. 11), calls $\\mathbb V_{\\mathbb Q}$ the set of valuations of $\\mathbb Q$. The following passage constructs one local tensor product for each $v_{\\mathbb Q}$ by first summing over chosen places above $v_{\\mathbb Q}$ and then tensoring over the labels. The opening of §3 repeats $\\mathbb V_{\\mathbb Q}\\overset{\\mathrm{def}}{=}\\mathbb V(\\mathbb Q)$ (p. 92). Mochizuki I, §0, p. 35, supplies the general place terminology.\n\n**Implementation scope.** The local RationalPlace type represents this index by one constructor for each rational prime and a separate infinity constructor. Its IsFinite predicate tests the constructor. Its residueChar function returns the prime on a finite label and returns $0$ at infinity by an explicit implementation convention. The definition does not itself construct absolute values or prove equivalence with Mathlib’s places of $\\mathbb Q$. The direct paper location for this index is III, pp. 11 and 92; I, Definition 3.1(e), provides broader initial-data background.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory III: Canonical Splittings of the Log-theta-lattice* (May 2020), Introduction, sentence defining the rational valuation index; printed/PDF page(s) 11.\n\n> Write $\\mathbb V_{\\mathbb Q}$ for the set of valuations of $\\mathbb Q$.\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory III: Canonical Splittings of the Log-theta-lattice* (May 2020), Introduction, construction paragraph and both bullets, ending with the name tensor packet; printed/PDF page(s) 11.\n\n> Then, in order to obtain objects that are immune to the various label indeterminacies discussed above, we consider, for each element $*\\in\\mathbb S_{j+1}^{\\pm}$, and for each [say, for simplicity, nonarchimedean] $v_{\\mathbb Q}\\in\\mathbb V_{\\mathbb Q}$,\n>\n> - the direct sum of the log-shells associated to the prime-strip labeled by the given element $*\\in\\mathbb S_{j+1}^{\\pm}$ at the $\\underline v\\in\\underline{\\mathbb V}$ that lie over $v_{\\mathbb Q}$;\n>\n> we then form\n>\n> - the tensor product, over the elements $*\\in\\mathbb S_{j+1}^{\\pm}$, of these direct sums.\n>\n> This collection of tensor products associated to $v_{\\mathbb Q}\\in\\mathbb V_{\\mathbb Q}$ will be referred to as the tensor packet associated to the collection of prime-strips indexed by elements of $\\mathbb S_{j+1}^{\\pm}$.\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\n**Actual consumer.** RationalPlace indexes the local packet data and LogVolumeData.globalVol. The graph proceeds through LocalEstimate.rhs_le to theorem110. This indexing retains the separate rational-place contributions used when IV, Theorem 1.10, proof Step (viii), sums local upper bounds (p. 30); the carrier does not prove those bounds."
+    },
+    {
+      "module": "Iut.Cor312.Procession",
+      "source_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/Procession.lean",
+      "source_sha256": "9a69b33a65a6754617b11f612531b048594a5c74da1edd344c14828ad7bb52f4",
+      "source_context_en": "Mochizuki I, §0 (pp. 33–34), defines a capsule as a finite indexed family of objects of a category, and defines its morphisms using injections of index sets together with component morphisms. III, Introduction (p. 10), replaces a single label container by a diagram of inclusions of finite sets, referring to I, Propositions 4.11 and 6.9. The displayed sets are $\\mathbb S^{\\pm}_{j+1}=\\{0,1,\\ldots,j\\}$, including $j=0$. The local combinatorial carrier retains only the finite label sets and their monotone inclusions.",
+      "implementation_scope_en": "Capsule stores a finite subset of a fixed label type, with its cardinality and its label subtype. Procession stores a finite, non-strictly increasing chain of such finite subsets. This is a specialization to label bookkeeping, not the full paper capsule of objects and morphisms; it stores neither the attached objects nor their component morphisms. In standard(n), local index $i$ corresponds to paper label bound $j=i+1$, so the local chain starts with $\\mathbb S^{\\pm}_2$ and omits the paper’s initial singleton $\\mathbb S^{\\pm}_1$. The generic definitions allow empty label sets and length $0$.",
+      "consumer_scope_en": "Theorem110’s proof rewrites the supplied container chain to Procession.standard(X.lstar). It then uses capsule cardinalities in the normalized sum. The combinatorics organize the supplied local estimates and do not prove the paper’s symmetry, prime-strip, or Corollary 3.12 assertions.",
+      "quotation_ids": [
+        "I-capsule",
+        "I-capsule-morphism",
+        "III-procession"
+      ],
+      "symbol_correspondence": [
+        {
+          "paper": "J=\\pi_0(\\{A_j\\}_{j\\in J})",
+          "local": "Capsule.labels and Capsule.LabelType",
+          "relation": "Finite-label specialization only; the family of objects A_j is not stored."
+        },
+        {
+          "paper": "\\mathbb S^{\\pm}_{j+1}=\\{0,\\ldots,j\\}",
+          "local": "procLabels j",
+          "relation": "The finite natural-number label set corresponds to the displayed labels; the ± decoration is paper context, not an added formal structure."
+        },
+        {
+          "paper": "j=i+1",
+          "local": "Procession.standard n, capsule index i",
+          "relation": "Local standard chain begins at the two-label set."
+        }
+      ],
+      "attribution_status": "Verified original-paper service context; local implementation scope is explicitly distinguished.",
+      "blocks_definition_delivery": false,
+      "publication_markdown": "**Paper source context.** Mochizuki I, §0 (pp. 33–34), defines a capsule as a finite indexed family of objects of a category, and defines its morphisms using injections of index sets together with component morphisms. III, Introduction (p. 10), replaces a single label container by a diagram of inclusions of finite sets, referring to I, Propositions 4.11 and 6.9. The displayed sets are $\\mathbb S^{\\pm}_{j+1}=\\{0,1,\\ldots,j\\}$, including $j=0$. The local combinatorial carrier retains only the finite label sets and their monotone inclusions.\n\n**Implementation scope.** Capsule stores a finite subset of a fixed label type, with its cardinality and its label subtype. Procession stores a finite, non-strictly increasing chain of such finite subsets. This is a specialization to label bookkeeping, not the full paper capsule of objects and morphisms; it stores neither the attached objects nor their component morphisms. In standard(n), local index $i$ corresponds to paper label bound $j=i+1$, so the local chain starts with $\\mathbb S^{\\pm}_2$ and omits the paper’s initial singleton $\\mathbb S^{\\pm}_1$. The generic definitions allow empty label sets and length $0$.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), §0, Monoids and Categories, paragraph defining capsules (crosses the page break); printed/PDF page(s) 33, 34.\n\n> Let $\\mathcal C$ be a category. We define a capsule of objects of $\\mathcal C$ to be a finite collection $\\{A_j\\}_{j\\in J}$ [i.e., where $J$ is a finite index set] of objects $A_j$ of $\\mathcal C$; if $|J|$ denotes the cardinality of $J$, then we shall refer to a capsule with index set $J$ as a $|J|$-capsule; also, we shall write $\\pi_0(\\{A_j\\}_{j\\in J})\\overset{\\mathrm{def}}{=}J$.\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), §0, immediately after the capsule definition, first morphism sentence and its consequence; printed/PDF page(s) 34.\n\n> A morphism of capsules of objects of $\\mathcal C$\n>\n> $$\\{A_j\\}_{j\\in J}\\to\\{A'_{j'}\\}_{j'\\in J'}$$\n>\n> is defined to consist of an injection $\\iota:J\\hookrightarrow J'$, together with, for each $j\\in J$, a morphism $A_j\\to A'_{\\iota(j)}$ of objects of $\\mathcal C$. Thus, the capsules of objects of $\\mathcal C$ form a category $\\operatorname{Capsule}(\\mathcal C)$.\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory III: Canonical Splittings of the Log-theta-lattice* (May 2020), Introduction, sentence introducing the alternative approach via processions; printed/PDF page(s) 10.\n\n> Thus, we consider the following alternative approach, via processions [cf. [IUTchI], Propositions, 4.11, 6.9].\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\n**Actual consumer.** Theorem110’s proof rewrites the supplied container chain to Procession.standard(X.lstar). It then uses capsule cardinalities in the normalized sum. The combinatorics organize the supplied local estimates and do not prove the paper’s symmetry, prime-strip, or Corollary 3.12 assertions."
+    },
+    {
+      "module": "Iut.Cor312.PacketPresentation",
+      "source_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/PacketPresentation.lean",
+      "source_sha256": "acb70ab583caca3ff85064bb8dc3b23991150937356df2e545b73213609e8972",
+      "source_context_en": "Mochizuki III, Proposition 3.1 (pp. 92–93), describes local tensor packets, their ring decompositions, and integral structures. Remark 3.9.5 (pp. 126–127) then defines holomorphic hulls in that arithmetic setting. Item (i) retains a finite-log-volume, relatively compact subset prerequisite. For a relatively compact input it chooses the smallest containing region obtained by scaling the integral structure by an element nonzero in every field component. For an input that is not relatively compact, the paper instead assigns the full ambient space. Both branches belong to the quoted paper definition.",
+      "implementation_scope_en": "DirectSumPresentation is only an interface: an arbitrary index type $C$, component commutative rings $A_c$, a topology on each component, and designated subsets $O_c$. It does not require $C$ to be finite, the rings to be fields, the ring operations to be continuous, or the subsets to be actual integer rings. Its total space is the dependent product. Product regions impose separate component conditions. IsHullRegion means $R=aO$ for a componentwise invertible multiplier. In a field, invertible agrees with nonzero, but in a general commutative ring it is stronger. This bundle neither constructs the paper’s tensor decomposition nor provides the qualification, leastness, or full-space branch of the paper’s hull operation.",
+      "consumer_scope_en": "The presentation and region predicates feed the large volume container, LogVolumeData, and LocalEstimate. The resulting dependency paths reach theorem110. The paper’s use of a hull volume is explicit in IV, Theorem 1.10, proof Step (iv) (p. 26); the formal numerical theorem receives the corresponding local estimates as premises.",
+      "quotation_ids": [
+        "III-hull-opening",
+        "III-hull-definition"
+      ],
+      "symbol_correspondence": [
+        {
+          "paper": "\\mathcal I^{\\mathbb Q}((-))",
+          "local": "P.Total = ∏ c, P.Summand c",
+          "relation": "Intended presentation interface; the required arithmetic identification is not constructed here."
+        },
+        {
+          "paper": "\\mathcal O_{(-)}",
+          "local": "P.integral c and P.integralRegion",
+          "relation": "Designated subsets model the intended integral structure; the interface does not assert their arithmetic properties."
+        },
+        {
+          "paper": "\\lambda\\cdot\\mathcal O_{(-)}",
+          "local": "P.scaledIntegral a; P.IsHullRegion",
+          "relation": "The formal multiplier is a unit in every component. This supplies a candidate-region predicate, not the whole holomorphic hull definition."
+        }
+      ],
+      "attribution_status": "Verified original-paper service context; local implementation scope is explicitly distinguished.",
+      "blocks_definition_delivery": false,
+      "publication_markdown": "**Paper source context.** Mochizuki III, Proposition 3.1 (pp. 92–93), describes local tensor packets, their ring decompositions, and integral structures. Remark 3.9.5 (pp. 126–127) then defines holomorphic hulls in that arithmetic setting. Item (i) retains a finite-log-volume, relatively compact subset prerequisite. For a relatively compact input it chooses the smallest containing region obtained by scaling the integral structure by an element nonzero in every field component. For an input that is not relatively compact, the paper instead assigns the full ambient space. Both branches belong to the quoted paper definition.\n\n**Implementation scope.** DirectSumPresentation is only an interface: an arbitrary index type $C$, component commutative rings $A_c$, a topology on each component, and designated subsets $O_c$. It does not require $C$ to be finite, the rings to be fields, the ring operations to be continuous, or the subsets to be actual integer rings. Its total space is the dependent product. Product regions impose separate component conditions. IsHullRegion means $R=aO$ for a componentwise invertible multiplier. In a field, invertible agrees with nonzero, but in a general commutative ring it is stronger. This bundle neither constructs the paper’s tensor decomposition nor provides the qualification, leastness, or full-space branch of the paper’s hull operation.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory III: Canonical Splittings of the Log-theta-lattice* (May 2020), Remark 3.9.5, complete opening paragraph; printed/PDF page(s) 126.\n\n> In situations that involve consideration of various sorts of regions [cf. the discussion of Remarks 3.1.1, (iii), (iv); 3.9.4] to which the log-volume may be applied, it is often of use to consider the notion of the holomorphic hull of a region.\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory III: Canonical Splittings of the Log-theta-lattice* (May 2020), Remark 3.9.5(i), complete item; printed/PDF page(s) 127.\n\n> Suppose that we are in the situation of Proposition 3.9, (i). Let\n>\n> $$ {}^{\\alpha}U\\subseteq\\mathcal I^{\\mathbb Q}({}^{\\alpha}\\mathcal F_{v_{\\mathbb Q}})\\quad\\text{(respectively, }{}^{A}U\\subseteq\\mathcal I^{\\mathbb Q}({}^{A}\\mathcal F_{v_{\\mathbb Q}});\\quad{}^{A,\\alpha}U\\subseteq\\mathcal I^{\\mathbb Q}({}^{A,\\alpha}\\mathcal F_{\\underline v})\\text{)} $$\n>\n> be a subset that contains a relatively compact subset whose log-volume [cf. the discussion of Remark 3.1.1, (iii), (iv), as well as Remark 3.9.7, (ii), below] is finite [i.e., $>-\\infty$]. If ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$) is relatively compact, then we define the holomorphic hull of ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$) to be the smallest subset of the form\n>\n> $$ {}^{\\alpha}H\\overset{\\mathrm{def}}{=}\\lambda\\cdot\\mathcal O_{{}^{\\alpha}\\mathcal F_{v_{\\mathbb Q}}}\\quad\\text{(respectively, }{}^{A}H\\overset{\\mathrm{def}}{=}\\lambda\\cdot\\mathcal O_{{}^{A}\\mathcal F_{v_{\\mathbb Q}}};\\quad{}^{A,\\alpha}H\\overset{\\mathrm{def}}{=}\\lambda\\cdot\\mathcal O_{{}^{A,\\alpha}\\mathcal F_{\\underline v}}\\text{)} $$\n>\n> — where, relative to the direct sum decomposition of $\\mathcal I^{\\mathbb Q}((-))$ as a direct sum of fields [cf. the discussion of Proposition 3.9, (i)], $\\lambda\\in\\mathcal I^{\\mathbb Q}((-))$ is an element such that each component of $\\lambda$ [i.e., relative to this direct sum decomposition] is nonzero — that contains ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$). If ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$) is not relatively compact, then we define the holomorphic hull of ${}^{\\alpha}U$ (respectively, ${}^{A}U$; ${}^{A,\\alpha}U$) to be $\\mathcal I^{\\mathbb Q}({}^{\\alpha}\\mathcal F_{v_{\\mathbb Q}})$ (respectively, $\\mathcal I^{\\mathbb Q}({}^{A}\\mathcal F_{v_{\\mathbb Q}})$; $\\mathcal I^{\\mathbb Q}({}^{A,\\alpha}\\mathcal F_{\\underline v})$). One verifies immediately that the holomorphic hull is well-defined [under the conditions stated].\n\nTranscription: visually checked; line breaks and typography are normalized as recorded in the source evidence.\n\n**Actual consumer.** The presentation and region predicates feed the large volume container, LogVolumeData, and LocalEstimate. The resulting dependency paths reach theorem110. The paper’s use of a hull volume is explicit in IV, Theorem 1.10, proof Step (iv) (p. 26); the formal numerical theorem receives the corresponding local estimates as premises."
+    }
+  ],
+  "evidence_policy": "Original PDF file hashes identify source versions. Raw extraction files are retained without repair, separately from manually transcribed publication quotations. Each selected quote was visually checked against rendered original pages. Explicit symbol transcriptions expose mathematical typography decisions.",
+  "platform_field_guidance": "Use publication_markdown as author/source context in supported natural_language_statement text. Do not overwrite independently frozen blind readbacks or their model metadata. This file introduces no platform API schema beyond these local JSON fields.",
+  "validation": {
+    "five_bundles": true,
+    "all_quotation_ids_resolve": true,
+    "extraction_concatenations_absent_from_publication_quotes": true,
+    "all_quotes_visually_checked": true,
+    "no_exact_pointMap_paper_lemma_claim": true,
+    "no_blind_readback_field": true,
+    "no_source_gap_blocks_definition_delivery": true
+  }
+}

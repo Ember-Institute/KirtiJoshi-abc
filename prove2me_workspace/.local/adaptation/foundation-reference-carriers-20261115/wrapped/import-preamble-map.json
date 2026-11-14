@@ -1,0 +1,316 @@
+{
+  "schema": "foundation-import-preamble-map-v1",
+  "bundles": [
+    {
+      "module": "Iut.Cor312.ThetaData.Places",
+      "definitionName": "AbcAdaptation_Reference_Iut_Cor312_ThetaData_Places",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Places",
+      "platformImports": [
+        "Mathlib.Algebra.Algebra.Defs",
+        "Mathlib.Algebra.CharP.Defs",
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Quotient",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.NumberTheory.NumberField.Basic",
+        "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "Mathlib.NumberTheory.NumberField.InfinitePlace.Basic",
+        "Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas",
+        "Mathlib.RingTheory.Ideal.Defs",
+        "Mathlib.RingTheory.Ideal.Over",
+        "Mathlib.RingTheory.Ideal.Quotient.Defs"
+      ],
+      "sourceImports": [
+        "Mathlib.Algebra.Algebra.Defs",
+        "Mathlib.Algebra.CharP.Defs",
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Quotient",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.NumberTheory.NumberField.Basic",
+        "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "Mathlib.NumberTheory.NumberField.InfinitePlace.Basic",
+        "Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas",
+        "Mathlib.RingTheory.Ideal.Defs",
+        "Mathlib.RingTheory.Ideal.Over",
+        "Mathlib.RingTheory.Ideal.Quotient.Defs"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: refer/iut/Iut/Cor312/ThetaData/Places.lean\nOriginal authors: The iut contributors\nOriginal repository: https://github.com/lana-agents/iut\nOriginal commit: 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.Algebra.Algebra.Defs\nimport Mathlib.Algebra.CharP.Defs\nimport Mathlib.Algebra.Field.Defs\nimport Mathlib.Algebra.Quotient\nimport Mathlib.Algebra.Ring.Defs\nimport Mathlib.NumberTheory.NumberField.Basic\nimport Mathlib.NumberTheory.NumberField.Completion.FinitePlace\nimport Mathlib.NumberTheory.NumberField.InfinitePlace.Basic\nimport Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas\nimport Mathlib.RingTheory.Ideal.Defs\nimport Mathlib.RingTheory.Ideal.Over\nimport Mathlib.RingTheory.Ideal.Quotient.Defs\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "12b96231686f25f87646e96bc5658cf8d1eb17738475ac4256453c78fe8a0a8d",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 32,
+          "col": 0,
+          "offset": 1204
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "refer/iut/Iut/Cor312/ThetaData/Places.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "originalNoticeRetained": true
+      }
+    },
+    {
+      "module": "Iut.Cor312.ThetaData.PointMap",
+      "definitionName": "AbcAdaptation_Reference_Iut_Cor312_ThetaData_PointMap",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_PointMap",
+      "platformImports": [
+        "Mathlib.Algebra.Algebra.Defs",
+        "Mathlib.Algebra.Algebra.Hom",
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Group.Action.Defs",
+        "Mathlib.Algebra.Group.Hom.Defs",
+        "Mathlib.Algebra.Group.Defs",
+        "Mathlib.Algebra.GroupWithZero.Action.Defs",
+        "Mathlib.Algebra.Module.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Algebra.Ring.Hom.Defs",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass"
+      ],
+      "sourceImports": [
+        "Mathlib.Algebra.Algebra.Defs",
+        "Mathlib.Algebra.Algebra.Hom",
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Group.Action.Defs",
+        "Mathlib.Algebra.Group.Hom.Defs",
+        "Mathlib.Algebra.Group.Monoid",
+        "Mathlib.Algebra.GroupWithZero.Action.Defs",
+        "Mathlib.Algebra.Module.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Algebra.Ring.Hom.Defs",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: refer/iut/Iut/Cor312/ThetaData/PointMap.lean\nOriginal authors: The iut contributors\nOriginal repository: https://github.com/lana-agents/iut\nOriginal commit: 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.Algebra.Algebra.Defs\nimport Mathlib.Algebra.Algebra.Hom\nimport Mathlib.Algebra.Field.Defs\nimport Mathlib.Algebra.Group.Action.Defs\nimport Mathlib.Algebra.Group.Hom.Defs\nimport Mathlib.Algebra.Group.Defs\nimport Mathlib.Algebra.GroupWithZero.Action.Defs\nimport Mathlib.Algebra.Module.Defs\nimport Mathlib.Algebra.Ring.Defs\nimport Mathlib.Algebra.Ring.Hom.Defs\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "96c983dd551e6bb525dd6fb36abe761d00f685c4c0c42bd70f52446f02bc883c",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 33,
+          "col": 0,
+          "offset": 1245
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "refer/iut/Iut/Cor312/ThetaData/PointMap.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "originalNoticeRetained": true
+      }
+    },
+    {
+      "module": "Iut.Cor312.RationalPlace",
+      "definitionName": "AbcAdaptation_Reference_Iut_Cor312_RationalPlace",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_RationalPlace",
+      "platformImports": [
+        "Mathlib.Data.Nat.Prime.Defs"
+      ],
+      "sourceImports": [
+        "Mathlib.Data.Nat.Prime.Defs"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: refer/iut/Iut/Cor312/RationalPlace.lean\nOriginal authors: The iut contributors\nOriginal repository: https://github.com/lana-agents/iut\nOriginal commit: 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.Data.Nat.Prime.Defs\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "0a69365578462635d370f3afa8281f83506055e5888322308d74eca1af7f4ccf",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 21,
+          "col": 0,
+          "offset": 724
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "refer/iut/Iut/Cor312/RationalPlace.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "originalNoticeRetained": true
+      }
+    },
+    {
+      "module": "Iut.Cor312.Procession",
+      "definitionName": "AbcAdaptation_Reference_Iut_Cor312_Procession",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Procession",
+      "platformImports": [
+        "Mathlib.Data.SetLike.Basic",
+        "Mathlib.Data.Finset.Attach",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Defs",
+        "Mathlib.Data.Fintype.Defs",
+        "Mathlib.Data.Nat.Basic",
+        "Mathlib.Order.Defs.PartialOrder",
+        "Mathlib.Order.Interval.Finset.Basic",
+        "Mathlib.Order.Interval.Finset.Defs",
+        "Mathlib.Order.Interval.Finset.Nat",
+        "Mathlib.Order.Nat"
+      ],
+      "sourceImports": [
+        "Mathlib.Basic.SetLike.Basic",
+        "Mathlib.Data.Finset.Attach",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Defs",
+        "Mathlib.Data.Fintype.Defs",
+        "Mathlib.Data.Nat.Basic",
+        "Mathlib.Order.Defs.PartialOrder",
+        "Mathlib.Order.Interval.Finset.Basic",
+        "Mathlib.Order.Interval.Finset.Defs",
+        "Mathlib.Order.Interval.Finset.Nat",
+        "Mathlib.Order.Nat"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: refer/iut/Iut/Cor312/Procession.lean\nOriginal authors: The iut contributors\nOriginal repository: https://github.com/lana-agents/iut\nOriginal commit: 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.Data.SetLike.Basic\nimport Mathlib.Data.Finset.Attach\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Finset.Defs\nimport Mathlib.Data.Fintype.Defs\nimport Mathlib.Data.Nat.Basic\nimport Mathlib.Order.Defs.PartialOrder\nimport Mathlib.Order.Interval.Finset.Basic\nimport Mathlib.Order.Interval.Finset.Defs\nimport Mathlib.Order.Interval.Finset.Nat\nimport Mathlib.Order.Nat\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "9caed532e60565c30bb3f5787d969723e611e7154c5fea1162293cf028ae8c6f",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 31,
+          "col": 0,
+          "offset": 1071
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "refer/iut/Iut/Cor312/Procession.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "originalNoticeRetained": true
+      }
+    },
+    {
+      "module": "Iut.Cor312.PacketPresentation",
+      "definitionName": "AbcAdaptation_Reference_Iut_Cor312_PacketPresentation",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation",
+      "platformImports": [
+        "Mathlib.Algebra.Group.Pointwise.Set.Scalar",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Data.Set.Defs",
+        "Mathlib.Topology.Constructions",
+        "Mathlib.Topology.Defs.Basic"
+      ],
+      "sourceImports": [
+        "Mathlib.Algebra.Group.Pointwise.Set.Scalar",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Data.Set.Defs",
+        "Mathlib.Topology.Constructions",
+        "Mathlib.Topology.Defs.Basic"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: refer/iut/Iut/Cor312/PacketPresentation.lean\nOriginal authors: The iut contributors\nOriginal repository: https://github.com/lana-agents/iut\nOriginal commit: 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.Algebra.Group.Pointwise.Set.Scalar\nimport Mathlib.Algebra.Group.Units.Defs\nimport Mathlib.Algebra.Ring.Defs\nimport Mathlib.Data.Set.Defs\nimport Mathlib.Topology.Constructions\nimport Mathlib.Topology.Defs.Basic\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "51930df4a03f83d7027bad0d7d498fde955f80dffa3d020ea46c4f5436efd866",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 26,
+          "col": 0,
+          "offset": 919
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "refer/iut/Iut/Cor312/PacketPresentation.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "originalNoticeRetained": true
+      }
+    }
+  ]
+}

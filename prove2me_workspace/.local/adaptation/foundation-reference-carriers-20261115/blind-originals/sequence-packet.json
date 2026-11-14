@@ -1,0 +1,131 @@
+{
+  "author_model": "gpt-6.1-sol",
+  "fresh_context": true,
+  "input_only_formal_code": true,
+  "input_paths_and_hashes": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/foundation-reference-carriers-20261115/wrapped/blind/Def_AbcAdaptation_Reference_Iut_Cor312_Procession.lean",
+      "sha256": "a92690613febdc8a9cea09677ec7afb304dcbf370382b7b142ca1b809c458d6f"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/foundation-reference-carriers-20261115/wrapped/blind/Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation.lean",
+      "sha256": "2a1aac52d999837634e7cbee1253f0788880b5f858ce41a48901f108c8e60070"
+    }
+  ],
+  "audit_rules": {
+    "path": "/home/admin-wsl/Coq/abc/docs/三语自然语言读回原则.md",
+    "applicable_sections": [
+      "3",
+      "5",
+      "6",
+      "7"
+    ]
+  },
+  "language_provenance": "English is the original independent formal-code readback. The simplified Chinese and Japanese texts are aligned translations written by the same independent reader against the same formal code; they are not three separate independent audits.",
+  "validation_scope": "Textual semantic audit only. No compilation, axiom audit, external source consultation, or source-fidelity conclusion is claimed.",
+  "bundles": [
+    {
+      "definition_name": "Def_AbcAdaptation_Reference_Iut_Cor312_Procession",
+      "en": "All declarations are in the namespace AbcAdaptation.Reference.Iut. The natural numbers include zero. For every natural number j, procLabels(j) is the finite set {m ∈ ℕ | m ≤ j}, namely {0, …, j}. The lemma procLabels_mono states that, for every pair of natural numbers i and j, the assumption i ≤ j implies procLabels(i) ⊆ procLabels(j).\n\nFor an arbitrary type ι, Capsule ι is finite label-set data consisting of one field, labels : Finset ι. No finiteness, nonemptiness, ordering, or decidable equality is assumed for the ambient type ι. For every S : Capsule ι, Capsule.card(S) : ℕ is the cardinality of S.labels. Capsule.LabelType(S) is the subtype {x : ι // x ∈ S.labels}; its elements are labels together with proofs of membership, rather than all elements of ι. The code provides an instance of decidable equality on this subtype when ι has decidable equality. It also provides a Fintype instance on this subtype for every S, with no decidable-equality hypothesis on ι for that instance. An empty labels field is allowed; then card(S) = 0 and LabelType(S) is empty. No nonempty-label condition is imposed on a general Capsule.\n\nFor an arbitrary type ι, Procession ι consists of a natural number length, a function capsule : Fin length → Capsule ι, and a proof labels_mono. Here Fin length is the type of natural indices i with 0 ≤ i < length, with the usual order. The proof requires, for every i, j : Fin length, that i ≤ j imply (capsule i).labels ⊆ (capsule j).labels. This is a finite sequence of finite label sets in the same ambient type, increasing in the non-strict sense of inclusion. Equal sets at different indices and empty label sets are permitted. There is no requirement of strict growth, prescribed cardinality, or coverage of the ambient type. The length may be zero, in which case the index type is empty and the monotonicity condition is vacuous.\n\nFor every n : ℕ, Procession.standard(n) : Procession ℕ is the specified sequence of length n. At index i : Fin n, its finite label set is procLabels(↑i + 1) = {m : ℕ | m ≤ ↑i + 1}, where ↑i is the underlying natural number. The monotonicity field is supplied using procLabels_mono and preservation of ≤ under addition of 1. This definition has no parameter P : Procession ι; the namespace variable P is unused in its definition. When n = 0 the sequence has no entries. When n > 0 its first label set is {0, 1}; the set at index i has ↑i + 2 elements, and its last set is {0, …, n}. Thus the definition does not begin with {0}. These descriptions concern the actual finite-set construction and carry no additional interpretation of its identifiers.",
+      "zh-Hans": "所有声明均位于命名空间 AbcAdaptation.Reference.Iut 中。自然数包含零。对每个自然数 j，procLabels(j) 是有限集 {m ∈ ℕ | m ≤ j}，即 {0, …, j}。引理 procLabels_mono 断言：对任意自然数 i、j，若 i ≤ j，则 procLabels(i) ⊆ procLabels(j)。\n\n对任意类型 ι，Capsule ι 是有限标签集数据，仅含一个字段 labels : Finset ι。不要求整个类型 ι 有限、非空、有序或具有可判定的相等关系。对每个 S : Capsule ι，Capsule.card(S) : ℕ 是有限集 S.labels 的基数。Capsule.LabelType(S) 是子类型 {x : ι // x ∈ S.labels}；其元素由标签及其属于该有限集的证明组成，而不是 ι 中的所有元素。若 ι 上的相等关系可判定，代码便为该子类型提供可判定的相等关系实例。此外，对每个 S，代码都为该子类型提供有限类型实例；这个实例不要求 ι 上的相等关系可判定。允许 labels 为空，此时 card(S) = 0，LabelType(S) 为空类型。一般的 Capsule 不要求标签集非空。\n\n对任意类型 ι，Procession ι 由自然数 length、函数 capsule : Fin length → Capsule ι 以及证明 labels_mono 组成。其中，Fin length 是满足 0 ≤ i < length 的自然数指标构成的类型，采用通常的次序。证明字段要求：对任意 i、j : Fin length，若 i ≤ j，则 (capsule i).labels ⊆ (capsule j).labels。因此，这是一列取自同一类型的递增有限标签集，递增指非严格的包含关系。不同位置的标签集可以相等，标签集也可以为空。不要求严格增长、指定基数或覆盖整个类型。length 可以为零；此时指标类型为空，单调性条件自然成立。\n\n对每个 n : ℕ，Procession.standard(n) : Procession ℕ 是长度为 n 的指定序列。在指标 i : Fin n 处，其有限标签集为 procLabels(↑i + 1) = {m : ℕ | m ≤ ↑i + 1}，其中 ↑i 表示 i 对应的自然数。单调性字段使用 procLabels_mono 以及加上 1 保持非严格不等式的性质构造。该定义不含参数 P : Procession ι；命名空间内声明的变量 P 没有在该定义中使用。n = 0 时，序列没有任何项。n > 0 时，第一项的标签集是 {0, 1}；指标 i 处的标签集含 ↑i + 2 个元素，最后一项是 {0, …, n}。因此，该构造的第一项不是 {0}。这些说明仅解释实际的有限集构造，不为其标识符添加额外含义。",
+      "ja": "すべての宣言は名前空間 AbcAdaptation.Reference.Iut に属する。自然数には零を含む。各自然数 j に対し、procLabels(j) は有限集合 {m ∈ ℕ | m ≤ j}、すなわち {0, …, j} である。補題 procLabels_mono は、任意の自然数 i、j について、i ≤ j ならば procLabels(i) ⊆ procLabels(j) であることを述べる。\n\n任意の型 ι に対し、Capsule ι は有限なラベル集合のデータであり、唯一のフィールド labels : Finset ι を持つ。型 ι 全体が有限、非空、順序付きであることも、その等号が決定可能であることも仮定しない。各 S : Capsule ι に対し、Capsule.card(S) : ℕ は S.labels の要素数である。Capsule.LabelType(S) は部分型 {x : ι // x ∈ S.labels} であり、その要素はラベルと所属の証明からなる。ι のすべての要素を表す型ではない。ι の等号が決定可能である場合、この部分型にも等号の決定可能性のインスタンスが与えられる。また、各 S について、この部分型の有限型インスタンスが与えられる。この有限型インスタンスには ι の等号の決定可能性を仮定しない。labels は空でもよく、その場合 card(S) = 0 で、LabelType(S) は空の型である。一般の Capsule にラベル集合の非空性は要求されない。\n\n任意の型 ι に対し、Procession ι は自然数 length、関数 capsule : Fin length → Capsule ι、および証明 labels_mono からなる。Fin length は 0 ≤ i < length を満たす自然数の添字の型であり、通常の順序を持つ。証明フィールドは、任意の i、j : Fin length について、i ≤ j ならば (capsule i).labels ⊆ (capsule j).labels であることを要求する。したがって、同一の型に属する有限なラベル集合の有限列であり、包含関係について広義単調増加する。異なる位置で集合が等しくてもよく、ラベル集合が空でもよい。真の包含による増大、指定された要素数、型全体の被覆は要求されない。length は零でもよく、その場合は添字の型が空で、単調性条件は空虚に成り立つ。\n\n各 n : ℕ に対し、Procession.standard(n) : Procession ℕ は長さ n の指定された列である。添字 i : Fin n における有限なラベル集合は procLabels(↑i + 1) = {m : ℕ | m ≤ ↑i + 1} であり、↑i は i の基となる自然数を表す。単調性のフィールドは procLabels_mono と、両辺に 1 を加える操作が ≤ を保つことによって与えられる。この定義は P : Procession ι を引数に持たず、名前空間で宣言された変数 P は定義に使われていない。n = 0 の場合、列に項はない。n > 0 の場合、最初のラベル集合は {0, 1} であり、添字 i の集合の要素数は ↑i + 2、最後の集合は {0, …, n} である。したがって、この構成は {0} から始まるものではない。以上は有限集合の構成自体の説明であり、識別子にそれ以外の意味を付与するものではない。",
+      "declaration_coverage": [
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.procLabels",
+          "covered": "Parameter j : ℕ; finite closed lower interval through j, including zero."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.procLabels_mono",
+          "covered": "Implicit i j : ℕ; hypothesis i ≤ j; conclusion subset inclusion."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.Capsule",
+          "covered": "Arbitrary ambient type ι; sole data field labels : Finset ι; empty finite set permitted."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.Capsule.card",
+          "covered": "Implicit ι; input S; codomain ℕ; cardinality of labels."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.Capsule.LabelType",
+          "covered": "Implicit ι; input S; subtype of labels with membership proofs."
+        },
+        {
+          "declaration": "Capsule anonymous DecidableEq instance",
+          "covered": "Hypothesis [DecidableEq ι]; input S; decidable equality on S.LabelType."
+        },
+        {
+          "declaration": "Capsule anonymous Fintype instance",
+          "covered": "Input S only; finite-type structure on S.LabelType without [DecidableEq ι]."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.Procession",
+          "covered": "Arbitrary ι; length : ℕ; capsule : Fin length → Capsule ι; labels_mono for all implicit ordered indices; zero length, equal and empty sets permitted."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.Procession.standard",
+          "covered": "Input n : ℕ only; codomain Procession ℕ; all fields, index coercion and +1 offset; no parameter P; n = 0 and first/last finite sets."
+        }
+      ],
+      "possible_ambiguities": [
+        "Capsule and Procession are identifiers; the formal data alone does not determine any specialized external mathematical meaning for them.",
+        "The word increasing must mean non-strict inclusion for a general Procession; strict inclusion is not a field.",
+        "The namespace variable P does not become a parameter of standard because standard does not use it.",
+        "The lower interval includes zero, and the +1 offset makes the first standard finite set {0,1}, not a singleton."
+      ]
+    },
+    {
+      "definition_name": "Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation",
+      "en": "All declarations are in the namespace AbcAdaptation.Reference.Iut. Let u and v be universe levels and let C : Type u be an arbitrary index type. DirectSumPresentation C is a structure in Type (max u (v + 1)). It consists of a family Summand : C → Type v; for every c : C, a commutative ring structure with identity on Summand(c); for every c : C, a topological-space structure on Summand(c); and a family integral assigning an arbitrary subset integral(c) ⊆ Summand(c) to every c. The ring_summand and topology_summand fields are registered as typeclass instances, so these structures are available after a presentation is fixed. There is no finiteness or nonemptiness hypothesis on C. No axiom relates the topologies to the ring operations, and no algebraic or topological condition is imposed on the subsets integral(c). In particular, the rings are not required to be nontrivial.\n\nFix P : DirectSumPresentation C. The definition Total(P) : Type (max u v) is the dependent function type ∀ c : C, P.Summand(c): an element x supplies one coordinate x(c) in each summand. The explicitly provided topological-space instance is the product topology inherited from this dependent function type. Despite the structure's identifier, Total is a full dependent product; the definition imposes no finite-support condition and does not require C to be finite.\n\nThe definition integralRegion(P) is the subset of Total(P) consisting of those x such that, for every c : C, x(c) ∈ P.integral(c). For any R ⊆ Total(P), IsProductRegion(P,R) is the proposition that there exists a family of subsets U, with U(c) ⊆ P.Summand(c) for each c, for which R = {x | ∀ c, x(c) ∈ U(c)}. The existential quantifier chooses one family U for the whole set R; no uniqueness is required. Conversely, for every such family U, productRegion(P,U) is exactly {x | ∀ c, x(c) ∈ U(c)}. Neither definition requires the coordinate subsets to be open, closed, nonempty, or to have any other regularity.\n\nFor any a : Total(P), scaledIntegral(P,a) is the subset {x | ∀ c, x(c) ∈ a(c) • P.integral(c)}. Here the set action is multiplication by a(c) in the ring P.Summand(c): membership at coordinate c means that there exists b ∈ P.integral(c) with a(c) · b = x(c). The definition scaledIntegral itself puts no unit or nonzero condition on a. For any R ⊆ Total(P), IsHullRegion(P,R) means that there exists one a : Total(P) such that every a(c) is a unit in its ring and R = scaledIntegral(P,a). Being a unit means having a multiplicative inverse; it is not a separate nonzero assumption, and in a trivial ring zero is a unit. The multiplier family a is not required to be unique. The equality is equality with that one scaled set; the definition states no minimality, closure operation, or condition of containing a separately given region, and no holomorphic condition occurs.\n\nEmpty and unrestricted cases follow directly from these definitions. If C is empty, Total(P) has exactly one element, all universal coordinate conditions are vacuous, and integralRegion, every productRegion, and every scaledIntegral are the whole Total(P). In that case IsProductRegion(P,R) and IsHullRegion(P,R) each hold exactly when R is the whole singleton Total(P). If C has a coordinate c₀ with P.integral(c₀) empty, integralRegion and every scaledIntegral are empty; the empty region then satisfies IsHullRegion by taking a(c) = 1 at every coordinate. For a nonempty C, an empty coordinate subset in U makes productRegion(P,U) empty, so the empty region satisfies IsProductRegion. None of these predicates use the supplied topologies; topology is part of the presentation and of the Total instance, not an additional condition in the region formulas.",
+      "zh-Hans": "所有声明均位于命名空间 AbcAdaptation.Reference.Iut 中。设 u、v 为宇宙层级，C : Type u 为任意指标类型。DirectSumPresentation C 是位于 Type (max u (v + 1)) 中的结构，包含以下数据：类型族 Summand : C → Type v；对每个 c : C，在 Summand(c) 上给出的含幺交换环结构；对每个 c : C，在 Summand(c) 上给出的拓扑空间结构；以及集合族 integral，为每个 c 指定任意子集 integral(c) ⊆ Summand(c)。字段 ring_summand 和 topology_summand 被登记为类型类实例，因此固定该结构后即可使用这些环结构和拓扑结构。不要求 C 有限或非空。没有任何公理要求拓扑与环运算相容，也没有对各子集 integral(c) 施加代数或拓扑条件。特别地，不要求这些环非平凡。\n\n固定 P : DirectSumPresentation C。定义 Total(P) : Type (max u v) 为依赖函数类型 ∀ c : C, P.Summand(c)；其元素 x 在每个指标 c 处给出坐标 x(c) ∈ P.Summand(c)。代码显式提供的拓扑空间实例是该依赖函数类型所带的乘积拓扑。尽管结构标识符中含有 DirectSum，Total 的实际定义是完整的依赖直积，没有有限支撑条件，也不要求 C 有限。\n\n定义 integralRegion(P) 为 Total(P) 中满足以下条件的元素构成的子集：对每个 c : C，都有 x(c) ∈ P.integral(c)。对任意 R ⊆ Total(P)，IsProductRegion(P,R) 是如下命题：存在一个子集族 U，其中每个 U(c) ⊆ P.Summand(c)，使得 R = {x | ∀ c, x(c) ∈ U(c)}。这里的存在量词为整个集合 R 选择同一个集合族 U，不要求唯一性。反过来，对每个这样的集合族 U，productRegion(P,U) 就是集合 {x | ∀ c, x(c) ∈ U(c)}。这两个定义均不要求坐标子集为开集、闭集、非空集或具有其他正则性。\n\n对任意 a : Total(P)，scaledIntegral(P,a) 定义为子集 {x | ∀ c, x(c) ∈ a(c) • P.integral(c)}。这里对集合的作用是环 P.Summand(c) 中乘以 a(c) 的运算：坐标 c 处的成员条件等价于存在 b ∈ P.integral(c)，使 a(c) · b = x(c)。scaledIntegral 本身不要求 a 的坐标为可逆元或非零。对任意 R ⊆ Total(P)，IsHullRegion(P,R) 表示存在同一个 a : Total(P)，使每个 a(c) 都是所在环的可逆元，且 R = scaledIntegral(P,a)。可逆元是具有乘法逆元的元素；这里没有额外的非零假设，在平凡环中零也是可逆元。不要求乘子族 a 唯一。该等式只要求 R 等于某个这样的缩放集合；定义没有断言最小性、闭包运算或包含另一个给定区域，也没有全纯条件。因此，标识符中的包络不应自行解释为全纯包络。\n\n空集等边界情形由定义直接确定。若 C 为空，Total(P) 恰有一个元素，所有逐坐标的全称条件都自然成立，integralRegion、任意 productRegion 和任意 scaledIntegral 都等于整个 Total(P)。此时，IsProductRegion(P,R) 和 IsHullRegion(P,R) 均当且仅当 R 是整个单点集 Total(P) 时成立。若存在指标 c₀ 使 P.integral(c₀) 为空，则 integralRegion 和任意 scaledIntegral 均为空；此时逐坐标取 a(c) = 1，即可使空区域满足 IsHullRegion。若 C 非空且 U 的某个坐标子集为空，则 productRegion(P,U) 为空，因而空区域满足 IsProductRegion。这些谓词均不使用给定的拓扑；拓扑属于结构数据并用于 Total 的拓扑实例，而不是区域公式中的额外条件。",
+      "ja": "すべての宣言は名前空間 AbcAdaptation.Reference.Iut に属する。u、v を宇宙レベルとし、C : Type u を任意の添字の型とする。DirectSumPresentation C は Type (max u (v + 1)) に属する構造であり、型の族 Summand : C → Type v、各 c : C に対する Summand(c) 上の単位元を持つ可換環構造、各 c : C に対する Summand(c) 上の位相空間構造、および各 c に任意の部分集合 integral(c) ⊆ Summand(c) を割り当てる族 integral からなる。フィールド ring_summand と topology_summand は型クラスのインスタンスとして登録されており、この構造を固定すると各環構造と位相構造が利用できる。C の有限性や非空性は仮定しない。位相と環演算の両立性を課す公理はなく、部分集合 integral(c) に代数的・位相的条件も課さない。特に、環が非自明であることは要求されない。\n\nP : DirectSumPresentation C を固定する。Total(P) : Type (max u v) は依存関数の型 ∀ c : C, P.Summand(c) と定義される。その要素 x は、各添字 c において座標 x(c) ∈ P.Summand(c) を与える。明示的に与えられる位相空間のインスタンスは、この依存関数の型の積位相である。構造の識別子に DirectSum が含まれるが、Total の実際の定義は依存直積の全体であり、有限台の条件も C の有限性も要求しない。\n\nintegralRegion(P) は、すべての c : C について x(c) ∈ P.integral(c) を満たす x からなる Total(P) の部分集合である。任意の R ⊆ Total(P) に対し、IsProductRegion(P,R) は、各 U(c) が P.Summand(c) の部分集合であるような族 U が存在して、R = {x | ∀ c, x(c) ∈ U(c)} となるという命題である。存在量化は集合 R 全体に対して一つの族 U を選ぶものであり、一意性は要求しない。また、このような任意の族 U に対し、productRegion(P,U) は集合 {x | ∀ c, x(c) ∈ U(c)} そのものである。いずれの定義も、各座標の部分集合が開集合、閉集合、非空集合であることや、その他の正則性を要求しない。\n\n任意の a : Total(P) に対し、scaledIntegral(P,a) は部分集合 {x | ∀ c, x(c) ∈ a(c) • P.integral(c)} である。集合への作用は環 P.Summand(c) における a(c) による乗法であり、座標 c における所属条件は、ある b ∈ P.integral(c) が存在して a(c) · b = x(c) となることである。scaledIntegral 自体は a の座標が可逆元であることも零でないことも要求しない。任意の R ⊆ Total(P) に対し、IsHullRegion(P,R) は、ある一つの a : Total(P) が存在して、各 a(c) がその環の可逆元であり、R = scaledIntegral(P,a) となることを意味する。可逆元とは乗法逆元を持つ元であり、別に零でないことを仮定しているわけではない。自明な環では零も可逆元である。乗数の族 a の一意性は要求されない。この等式はそのように座標ごとに乗算して得られる一つの集合との一致を述べるだけであり、最小性、閉包操作、別に指定された領域の包含は述べない。正則性に関する条件もなく、識別子の Hull を正則包と解釈する根拠はこのコードにはない。\n\n空の場合などの境界事例も定義から決まる。C が空ならば Total(P) の要素はちょうど一つであり、すべての座標に関する全称条件は空虚に成り立つ。integralRegion、任意の productRegion、任意の scaledIntegral はすべて Total(P) 全体に等しい。このとき IsProductRegion(P,R) と IsHullRegion(P,R) は、いずれも R が一元集合 Total(P) 全体である場合に限って成り立つ。ある添字 c₀ で P.integral(c₀) が空ならば、integralRegion と任意の scaledIntegral は空である。この場合、各座標で a(c) = 1 とすれば、空の領域は IsHullRegion を満たす。C が非空で U のある座標の部分集合が空ならば、productRegion(P,U) は空であり、空の領域は IsProductRegion を満たす。これらの述語は、与えられた位相を使用しない。位相は構造のデータおよび Total の位相インスタンスを構成するが、領域の式に付加された条件ではない。",
+      "declaration_coverage": [
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.DirectSumPresentation",
+          "covered": "Universes u,v; arbitrary C : Type u; structure universe max u (v+1); Summand family, coordinate CommRing and TopologicalSpace structures, arbitrary integral subsets; no compatibility or nontriviality hypotheses."
+        },
+        {
+          "declaration": "DirectSumPresentation.ring_summand and topology_summand instance attributes",
+          "covered": "Coordinate structures are registered as instances, not additional regularity hypotheses."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.DirectSumPresentation.Total",
+          "covered": "Implicit C and fixed P; full dependent function type in Type(max u v); arbitrary/infinite/empty C."
+        },
+        {
+          "declaration": "DirectSumPresentation anonymous TopologicalSpace instance",
+          "covered": "The dependent product topology on P.Total."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.DirectSumPresentation.integralRegion",
+          "covered": "Set P.Total; universal coordinate membership in P.integral."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.DirectSumPresentation.IsProductRegion",
+          "covered": "Input R : Set P.Total; existential family U of coordinate subsets; exact equality; no uniqueness or regularity."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.DirectSumPresentation.productRegion",
+          "covered": "Input U : ∀ c, Set(P.Summand c); codomain Set P.Total; universal coordinate membership."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.DirectSumPresentation.scaledIntegral",
+          "covered": "Input a : P.Total; codomain Set P.Total; pointwise multiplicative images of integral subsets; a need not be a unit."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.Iut.DirectSumPresentation.IsHullRegion",
+          "covered": "Input R : Set P.Total; one existential a followed by universal unit condition and exact set equality; no uniqueness, topological closure, minimality, or holomorphic assumption; empty-index and empty-coordinate cases."
+        }
+      ],
+      "possible_ambiguities": [
+        "DirectSumPresentation is an identifier. Its Total is a dependent product without any finite-support restriction, including for infinite index types.",
+        "The label integral has no integrality, subring, lattice, openness, or compactness axiom in these declarations.",
+        "The supplied ring and topology structures do not include a topological-ring hypothesis.",
+        "The pointwise set scalar action here is multiplication in each commutative ring, not an independently specified scalar field or module.",
+        "IsHullRegion defines precisely a product of unit multiples of the specified subsets. It supplies no usual closure or minimal-containing-set property of a hull and no holomorphic content.",
+        "A unit must not be replaced by a nonzero element: nontriviality and field hypotheses are absent.",
+        "The degenerate empty-index case makes all constructed regions the whole singleton product, so the empty set is then neither a product region nor a hull region."
+      ]
+    }
+  ]
+}
