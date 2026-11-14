@@ -1,0 +1,8 @@
+{
+  "kind": "idempotency_key_collision_observed_before_acceptance",
+  "job_id": "ci-010989-07f917ab",
+  "expected_source": ".local/adaptation/legendre-finite-sourceproof-20261114/ProductionGates.lean",
+  "actual_source": ".local/adaptation/legendre-height-20261114/ProductionGates.lean",
+  "cause": "Reused coordinator key used tag/content hash but omitted the new unit; identical production audit source bytes retrieved an older accepted task. Actual-arguments check rejected it.",
+  "correction": "Dedicated per-unit scheduler prefix; submit intended new audit with fresh key. No source proof changed."
+}

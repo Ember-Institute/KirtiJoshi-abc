@@ -1,0 +1,15 @@
+import Definitions.Def_TripodLegendreHeightComparisonComposition
+import Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound
+import Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound
+import Theorems.Thm_AbcAdaptation_Tripod_legendreArchimedeanTripleBound
+import Theorems.Thm_AbcAdaptation_Tripod_legendreZeroJRootOfUnity
+
+set_option autoImplicit false
+
+open AbcAdaptation.Tripod
+
+/-- Existing exact parent; every finite-source declaration flows into this consumer. -/
+theorem solution : CanonicalLegendreHeightComparison :=
+  canonicalLegendreHeightComparison_of_source_children
+    legendreFiniteUpperBound legendreFiniteLowerBound
+    legendreArchimedeanTripleBound legendreZeroJRootOfUnity

@@ -1,0 +1,571 @@
+{
+  "date": "2026-11-14",
+  "status": "uncompiled_source_proof_draft",
+  "scope": "finite Legendre upper/lower exact parents; source proof extraction to existing Mathlib APIs",
+  "compiled": false,
+  "mcp_ci_called": false,
+  "main_workspace_edited": false,
+  "git_called": false,
+  "remote_api_called": false,
+  "reference_imports": false,
+  "arbitrary_law_parameters_added": false,
+  "mathematical_target_changed": false,
+  "parent_types": [
+    "LegendreFiniteUpperBound",
+    "LegendreFiniteLowerBound"
+  ],
+  "prerequisite_draft": "/tmp/p2m-legendre-height-next-20261114",
+  "source_files": [
+    {
+      "path": "refer/iut/Iut/Tripod/Height.lean",
+      "sha256": "1de154fbca7da4ac9510537384ae9f8756e998c4de26e01162b4957c807c7df1"
+    },
+    {
+      "path": "refer/iut/Iut/Tripod/TwoAdic.lean",
+      "sha256": "213d57f352bbd1e00efc7b3f570849f6eed0f467c7bfc3b75631286a7bd8f719"
+    },
+    {
+      "path": "refer/iut/Iut/Tripod/LogCond.lean",
+      "sha256": "921e45b68a1177595150eeb72e8972805522968c0424dc114b50004e539a39f7"
+    },
+    {
+      "path": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "sha256": "d541992c44c62eedd0009700bb2d47b7d149fbfd15bfdb8288da176ae3374963"
+    },
+    {
+      "path": "refer/iut/Iut/Concrete/LocalTheory.lean",
+      "sha256": "e3e4c9db67a8e69f6a0e818f6d503f785a7c4f2b4a210853c01c7922de109403"
+    },
+    {
+      "path": "refer/iut/Iut/Cor312/ThetaData/Places.lean",
+      "sha256": "89f2ac970ed85ad962dd69e0bd29fe1ea2323d67f0a69acb2b1cfdb7a626a415"
+    },
+    {
+      "path": "refer/iut/Iut/Cor312/ThetaData/BadPlaceNorm.lean",
+      "sha256": "fa6c5a16f93cd2832fe1ebbe05a6b3deac6f97e14cfe95d0db990f19f3c1be71"
+    }
+  ],
+  "declarations": [
+    {
+      "name": "support_posLog_subset",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 21,
+      "source": "refer/iut/Iut/Tripod/Height.lean:84",
+      "consumers": [
+        "hasFiniteSupport_posLog"
+      ]
+    },
+    {
+      "name": "hasFiniteSupport_posLog",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 31,
+      "source": "refer/iut/Iut/Tripod/Height.lean:94",
+      "consumers": [
+        "suppFinset"
+      ]
+    },
+    {
+      "name": "finHeight_eq_sum",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 41,
+      "source": "refer/iut/Iut/Tripod/Height.lean:104",
+      "consumers": [
+        "finHeight_gen_eq_sum",
+        "finHeight_gen_inv_eq_sum",
+        "finHeight_gen_sub_one_inv_eq_sum",
+        "finHeight_legendreJ_eq_sum"
+      ]
+    },
+    {
+      "name": "posLog_finite_le",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 51,
+      "source": "refer/iut/Iut/Tripod/Height.lean:644",
+      "consumers": [
+        "legendreFiniteLowerBound"
+      ]
+    },
+    {
+      "name": "suppFinset",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 62,
+      "source": "refer/iut/Iut/Tripod/Height.lean:673",
+      "consumers": [
+        "mem_suppFinset_of_ne",
+        "finHeight_gen_eq_sum",
+        "finHeight_gen_inv_eq_sum",
+        "finHeight_gen_sub_one_inv_eq_sum",
+        "finHeight_legendreJ_eq_sum",
+        "two_mul_finHeight_sum_eq",
+        "legendreFiniteLowerBound"
+      ]
+    },
+    {
+      "name": "mem_suppFinset_of_ne",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 68,
+      "source": "refer/iut/Iut/Tripod/Height.lean:679",
+      "consumers": [
+        "finHeight_gen_eq_sum",
+        "finHeight_gen_inv_eq_sum",
+        "finHeight_gen_sub_one_inv_eq_sum",
+        "finHeight_legendreJ_eq_sum"
+      ]
+    },
+    {
+      "name": "finHeight_gen_eq_sum",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 76,
+      "source": "refer/iut/Iut/Tripod/Height.lean:687",
+      "consumers": [
+        "two_mul_finHeight_sum_eq"
+      ]
+    },
+    {
+      "name": "finHeight_gen_inv_eq_sum",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 80,
+      "source": "refer/iut/Iut/Tripod/Height.lean:691",
+      "consumers": [
+        "two_mul_finHeight_sum_eq"
+      ]
+    },
+    {
+      "name": "finHeight_gen_sub_one_inv_eq_sum",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 84,
+      "source": "refer/iut/Iut/Tripod/Height.lean:695",
+      "consumers": [
+        "two_mul_finHeight_sum_eq"
+      ]
+    },
+    {
+      "name": "finHeight_legendreJ_eq_sum",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 88,
+      "source": "refer/iut/Iut/Tripod/Height.lean:699",
+      "consumers": [
+        "legendreFiniteLowerBound",
+        "legendreFiniteUpperBound"
+      ]
+    },
+    {
+      "name": "two_mul_finHeight_sum_eq",
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "line": 93,
+      "source": "refer/iut/Iut/Tripod/Height.lean:704",
+      "consumers": [
+        "legendreFiniteLowerBound",
+        "legendreFiniteUpperBound"
+      ]
+    },
+    {
+      "name": "inertDeg",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 23,
+      "source": "refer/iut/Iut/Concrete/LocalTheory.lean:61",
+      "consumers": [
+        "localDeg",
+        "absNorm_eq_pow_residueChar",
+        "inertDeg_pos'",
+        "norm_eq_zpow_of_valued",
+        "log_apply_eq",
+        "finWeight",
+        "localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+        "sum_inertDeg_filter_le",
+        "card_filter_residueChar_mem_le"
+      ]
+    },
+    {
+      "name": "ramIdx",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 26,
+      "source": "refer/iut/Iut/Concrete/LocalTheory.lean:57",
+      "consumers": [
+        "localDeg",
+        "ramIdx_pos'",
+        "localDeg_eq_ramificationIdx'_mul_inertiaDeg'"
+      ]
+    },
+    {
+      "name": "localDeg",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 29,
+      "source": "refer/iut/Iut/Concrete/LocalTheory.lean:65",
+      "consumers": [
+        "localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+        "sum_localDeg_filter_le",
+        "sum_inertDeg_filter_le"
+      ]
+    },
+    {
+      "name": "completionAt",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 32,
+      "source": "refer/iut/Iut/Concrete/LocalTheory.lean:52",
+      "consumers": [
+        "norm_eq_zpow_of_valued"
+      ]
+    },
+    {
+      "name": "residueChar_prime",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 37,
+      "source": "refer/iut/Iut/Cor312/ThetaData/Places.lean:76",
+      "consumers": [
+        "under_int_eq",
+        "under_int_ne_bot",
+        "under_int_isMaximal",
+        "two_mem_maximalIdeal_iff",
+        "finWeight_pos",
+        "sum_localDeg_filter_le"
+      ]
+    },
+    {
+      "name": "under_int_eq",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 48,
+      "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:41",
+      "consumers": [
+        "under_int_ne_bot",
+        "under_int_isMaximal",
+        "liesOver_span_residueChar",
+        "localDeg_eq_ramificationIdx'_mul_inertiaDeg'"
+      ]
+    },
+    {
+      "name": "under_int_ne_bot",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 70,
+      "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:63",
+      "consumers": [
+        "localDeg_eq_ramificationIdx'_mul_inertiaDeg'"
+      ]
+    },
+    {
+      "name": "under_int_isMaximal",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 75,
+      "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:68",
+      "consumers": [
+        "localDeg_eq_ramificationIdx'_mul_inertiaDeg'"
+      ]
+    },
+    {
+      "name": "liesOver_span_residueChar",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 86,
+      "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:79",
+      "consumers": [
+        "absNorm_eq_pow_residueChar",
+        "sum_localDeg_filter_le"
+      ]
+    },
+    {
+      "name": "absNorm_eq_pow_residueChar",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 91,
+      "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:84",
+      "consumers": [
+        "norm_eq_zpow_of_valued"
+      ]
+    },
+    {
+      "name": "inertDeg_pos'",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 97,
+      "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:90",
+      "consumers": [
+        "finWeight_pos",
+        "card_filter_residueChar_mem_le"
+      ]
+    },
+    {
+      "name": "ramIdx_pos'",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 101,
+      "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:94",
+      "consumers": [
+        "sum_inertDeg_filter_le"
+      ]
+    },
+    {
+      "name": "norm_eq_zpow_of_valued",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 105,
+      "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:98",
+      "consumers": [
+        "log_apply_eq"
+      ]
+    },
+    {
+      "name": "two_mem_maximalIdeal_iff",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 115,
+      "source": "refer/iut/Iut/Cor312/ThetaData/BadPlaceNorm.lean:28",
+      "consumers": [
+        "valuation_two_eq_one_of_ne"
+      ]
+    },
+    {
+      "name": "log_apply_eq",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 125,
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:459",
+      "consumers": [
+        "posLog_apply_eq"
+      ]
+    },
+    {
+      "name": "valuation_256_le_one",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 135,
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:494",
+      "consumers": [
+        "posLog_legendreJ_le"
+      ]
+    },
+    {
+      "name": "valuation_two_eq_one_of_ne",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 142,
+      "source": "refer/iut/Iut/Tripod/LogCond.lean:50",
+      "consumers": [
+        "posLog_legendreJ_ge"
+      ]
+    },
+    {
+      "name": "finWeight",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 148,
+      "source": "refer/iut/Iut/Tripod/Height.lean:120",
+      "consumers": [
+        "finWeight_pos",
+        "posLog_apply_eq",
+        "posLog_terms_eq"
+      ]
+    },
+    {
+      "name": "finWeight_pos",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 150,
+      "source": "refer/iut/Iut/Tripod/Height.lean:122",
+      "consumers": [
+        "posLog_apply_eq",
+        "posLog_legendreJ_le",
+        "posLog_legendreJ_ge"
+      ]
+    },
+    {
+      "name": "posLog_apply_eq",
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "line": 155,
+      "source": "refer/iut/Iut/Tripod/Height.lean:127",
+      "consumers": [
+        "posLog_terms_eq",
+        "posLog_legendreJ_le",
+        "posLog_legendreJ_ge"
+      ]
+    },
+    {
+      "name": "localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+      "path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+      "line": 20,
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:110",
+      "consumers": [
+        "sum_localDeg_filter_le"
+      ]
+    },
+    {
+      "name": "sum_localDeg_filter_le",
+      "path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+      "line": 36,
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:126",
+      "consumers": [
+        "sum_inertDeg_filter_le"
+      ]
+    },
+    {
+      "name": "sum_inertDeg_filter_le",
+      "path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+      "line": 87,
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:177",
+      "consumers": [
+        "card_filter_residueChar_mem_le"
+      ]
+    },
+    {
+      "name": "card_filter_residueChar_mem_le",
+      "path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+      "line": 94,
+      "source": "refer/iut/Iut/Tripod/Height.lean:722",
+      "consumers": [
+        "legendreFiniteLowerBound"
+      ]
+    },
+    {
+      "name": "posLog_terms_eq",
+      "path": "Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "line": 24,
+      "source": "refer/iut/Iut/Tripod/Height.lean:445",
+      "consumers": [
+        "posLog_legendreJ_le",
+        "posLog_legendreJ_ge"
+      ]
+    },
+    {
+      "name": "posLog_legendreJ_le",
+      "path": "Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "line": 35,
+      "source": "refer/iut/Iut/Tripod/Height.lean:456",
+      "consumers": [
+        "legendreFiniteUpperBound"
+      ]
+    },
+    {
+      "name": "posLog_legendreJ_ge",
+      "path": "Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "line": 51,
+      "source": "refer/iut/Iut/Tripod/Height.lean:472",
+      "consumers": [
+        "legendreFiniteLowerBound"
+      ]
+    },
+    {
+      "name": "legendreBound",
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "line": 25,
+      "source": "refer/iut/Iut/Tripod/Height.lean:263",
+      "consumers": [
+        "posLog_terms_eq",
+        "posLog_legendreJ_le",
+        "posLog_legendreJ_ge",
+        "legendreBound_nonneg",
+        "legendre_valuation_cases",
+        "max_log_valuation_legendreJ_le",
+        "legendreBound_le_max_log_valuation_legendreJ"
+      ]
+    },
+    {
+      "name": "legendreBound_nonneg",
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "line": 28,
+      "source": "refer/iut/Iut/Tripod/Height.lean:266",
+      "consumers": [
+        "posLog_legendreJ_le",
+        "max_log_valuation_legendreJ_le"
+      ]
+    },
+    {
+      "name": "valuation_legendreJ_ne_zero_iff",
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "line": 39,
+      "source": "refer/iut/Iut/Tripod/Height.lean:277",
+      "consumers": [
+        "max_log_valuation_legendreJ_le",
+        "legendreBound_le_max_log_valuation_legendreJ"
+      ]
+    },
+    {
+      "name": "log_valuation_legendreJ",
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "line": 53,
+      "source": "refer/iut/Iut/Tripod/Height.lean:291",
+      "consumers": [
+        "max_log_valuation_legendreJ_le",
+        "legendreBound_le_max_log_valuation_legendreJ"
+      ]
+    },
+    {
+      "name": "legendre_valuation_cases",
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "line": 73,
+      "source": "refer/iut/Iut/Tripod/Height.lean:311",
+      "consumers": [
+        "max_log_valuation_legendreJ_le",
+        "legendreBound_le_max_log_valuation_legendreJ"
+      ]
+    },
+    {
+      "name": "max_log_valuation_legendreJ_le",
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "line": 114,
+      "source": "refer/iut/Iut/Tripod/Height.lean:352",
+      "consumers": [
+        "posLog_legendreJ_le"
+      ]
+    },
+    {
+      "name": "legendreBound_le_max_log_valuation_legendreJ",
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "line": 166,
+      "source": "refer/iut/Iut/Tripod/Height.lean:404",
+      "consumers": [
+        "posLog_legendreJ_ge"
+      ]
+    },
+    {
+      "name": "solution",
+      "path": "Solutions/Sol_LegendreFiniteSourceClosure.lean",
+      "line": 12,
+      "consumers": [
+        "exact existing CanonicalLegendreHeightComparison platform parent"
+      ],
+      "source": "existing four-child composer from /tmp/p2m-legendre-height-next-20261114"
+    },
+    {
+      "name": "legendreFiniteLowerBound",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound.lean",
+      "line": 22,
+      "consumers": [
+        "solution",
+        "existing canonicalLegendreHeightComparison_of_source_children"
+      ],
+      "source": "refer/iut/Iut/Tripod/Height.lean:743 finHeight_legendreJ_ge"
+    },
+    {
+      "name": "legendreFiniteUpperBound",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound.lean",
+      "line": 20,
+      "consumers": [
+        "solution",
+        "existing canonicalLegendreHeightComparison_of_source_children"
+      ],
+      "source": "refer/iut/Iut/Tripod/Height.lean:714 finHeight_legendreJ_le"
+    }
+  ],
+  "files": [
+    {
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3"
+    },
+    {
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e"
+    },
+    {
+      "path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+      "sha256": "77e30f94f07cb1d89cd5367d89b3cef8a706d5333e5be934fe4a723b7b397e51"
+    },
+    {
+      "path": "Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "sha256": "4b97610d9cc394d47c99690a30a74ac963470463680397e673dc0adaab322cdb"
+    },
+    {
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8"
+    },
+    {
+      "path": "Solutions/Sol_LegendreFiniteSourceClosure.lean",
+      "sha256": "7c4e9f62ae22697ed4c43c2730741aee24ff5dc503f2180901b48588454b65a8"
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound.lean",
+      "sha256": "f0a556ac3b5c04d09f49e615d66bf092ed4c196cf71a5bc85ffc6e8961e99a7a"
+    },
+    {
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound.lean",
+      "sha256": "8f334e512fcf4606d69cab8acd7d8f68481ff71b9d0d6d6a5b013a3a80f40cba"
+    }
+  ]
+}

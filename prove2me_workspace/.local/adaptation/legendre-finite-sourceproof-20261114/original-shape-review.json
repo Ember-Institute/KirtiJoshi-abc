@@ -1,0 +1,254 @@
+{
+  "verdict": "PASS_STATIC_SOURCE_SHAPE",
+  "candidate": "/tmp/p2m-legendre-finite-next-20261114",
+  "scope": "Independent read-only source-fidelity, mathematical-shape, actual-consumer and pinned-source API review of all 8 Lean files / 48 declarations. No compilation or elaboration acceptance claimed.",
+  "blocking_shape_issues": [],
+  "nonblocking_metadata_corrections": [
+    {
+      "path": "source-consumer-ledger.json",
+      "declaration": "legendreBound",
+      "issue": "The named consumer legendre_valuation_cases does not refer to legendreBound. Remove that one extra consumer entry; the other listed valuation/posLog consumers actually use it, so the declaration is not dead."
+    }
+  ],
+  "parent_type_fidelity": {
+    "verdict": "PASS_STATIC",
+    "original_predicates": "Both theorem names are retained at their original canonical Theorems paths and state exactly LegendreFiniteUpperBound / LegendreFiniteLowerBound imported from the existing Inputs module.",
+    "upper": "forall x : Pt, finHeight(j(gen x)) <= 2*(finHeight(gen x)+finHeight(gen x inverse)+finHeight((gen x-1) inverse)). No compactness or degree hypothesis added.",
+    "lower": "forall K x, x in K.set -> j(gen x) != 0 -> 2*(same three finite heights) <= finHeight(j(gen x))+6*K.c*K.V.card*deg x. Exact membership, nonzero-j hypothesis and constants retained.",
+    "point_field": "All actual finite places are FinitePlace(fieldOf x.1) for existing fieldOf x.1 = Q adjoin x.1. No replacement field or chosen place subset used in either original finsum.",
+    "degree": "Counting ends in Module.finrank Q (fieldOf x.1) = deg x.1, with no added bound on point degree.",
+    "parent_consumer": "Sol_LegendreFiniteSourceClosure imports the same four canonical children and existing exact composer, yielding CanonicalLegendreHeightComparison with original Q(x), degree normalization and exact factor 1/6. No import of the old canonical parent theorem or a self theorem proves the result."
+  },
+  "valuation_chain": {
+    "source": "refer/iut/Iut/Tripod/Height.lean:258-436",
+    "actual_valuation": "Valuation R (WithZero Multiplicative Int), with legendreBound defined by the three actual integer logarithms; no supplied valuation laws.",
+    "exhaustive_cases": [
+      "v(lambda)<1: v(lambda-1)=1 and v(lambda^2-lambda+1)=1",
+      "v(lambda)=1, v(lambda-1)<1: numerator polynomial valuation=1",
+      "v(lambda)=v(lambda-1)=1: numerator polynomial valuation<=1",
+      "v(lambda)>1: v(lambda-1)=v(lambda) and numerator polynomial valuation=v(lambda)^2"
+    ],
+    "case_proof": "Direct valuation unequal-term sum/subtraction identities, ultrametric inequality, and polynomial identities. Cases lemma omits the nonzero/not-one assumptions and remains valid at lambda=0 and lambda=1.",
+    "log_j": "Uses exact 256*(lambda^2-lambda+1)^3/(lambda^2*(lambda-1)^2); denominator nonzero follows from lambda != 0 and lambda != 1. NeZero 2 makes 256 nonzero.",
+    "upper": "v(256)<=1 gives log v(256)<=0; all four cases prove max(0,log v(j))<=legendreBound. Valuation-j-zero branch is explicit.",
+    "lower": "v(256)=1 and valuation j != 0 retain the exact source lower result. Applies only to odd residue characteristic at the finite-place step.",
+    "field_generality": "Pure algebraic lemmas require only the stated Field/valuation and where needed NeZero 2; no curve/provider/Tate/theta parameter introduced."
+  },
+  "finite_normalization": {
+    "source_chain": [
+      "LocalTheory.lean:52-65",
+      "Places.lean:76",
+      "Ordp.lean:41-105",
+      "BadPlaceNorm.lean:28",
+      "TwoAdic.lean:459,494",
+      "LogCond.lean:50",
+      "Height.lean:120-132,445-484"
+    ],
+    "actual_invariants": "residueChar is the existing ring characteristic of the actual residue field; inertDeg and ramIdx are Mathlib Ideal.inertiaDeg / ramificationIdx at the actual maximal ideal; localDeg=e*f; completionAt is the actual adic completion.",
+    "normalization": "Under-prime equality identifies (p); norm of maximal ideal is p^f. Actual finite-place real log is integer valuation log multiplied by f*log p. Pointwise finWeight is f*log p, not e*f*log p.",
+    "positive_weight": "p is prime hence p>1; f>0; finWeight>0 is proved from actual Mathlib invariants.",
+    "posLog_conversion": "log+ value = finWeight * max(0, integer valuation log), with nonzero input hypothesis before the logarithmic conversion.",
+    "all_primes_upper": "256 is an actual algebraic integer, so its valuation<=1 at every finite place, including residue characteristic 2.",
+    "odd_prime_lower": "2 belongs to the maximal ideal iff residue characteristic=2; outside 2 its actual valuation equals1, hence valuation256=1. No characteristic-2 lower claim is made."
+  },
+  "support_and_counting": {
+    "finite_support": "For nonzero y uses actual FinitePlace.hasFiniteMulSupport and support inclusion; y=0 is handled separately with empty support.",
+    "common_support": "suppFinset is the union of supports of all four actual functions: log+lambda, log+lambda inverse, log+(lambda-1) inverse, log+j. Proven support inclusion turns original all-place finsums into exact finite sums.",
+    "compact_triple": "The actual K membership bounds absolute logs of generator and generator-1. Positive-log and inverse-log lemmas supply all three needed finite bounds at every place over V.",
+    "count_chain": "For q prime, actual ideals below each place lie over (q); injectivity of place->maximal ideal and subset of all primes over q permit sum(e*f)<=finrank. For q nonprime, filter is empty because every actual residue characteristic is prime.",
+    "inertia_and_cardinality": "e>=1 gives sum f<=sum e*f; f>=1 gives number of places over each q<=sum f. Finite union over arbitrary V yields card(filter(S,residueChar in V))<=V.card*deg x.",
+    "lower_sum": "Splits same common support into over-V and outside-V. Over-V contribution <=6*c times count; outside-V odd-prime pointwise lower bound applies using 2 in V. Remainder j terms are bounded by full j sum using nonnegativity. Exact final error 6*c*V.card*deg x retained."
+  },
+  "special_cases": {
+    "lambda_zero_or_one": "Actual parents are on existing Pt, which excludes both; gen_ne_zero/gen_ne_one supply needed denominators. Pure exhaustive cases itself still covers these boundary values.",
+    "j_zero": "Upper theorem explicitly simplifies j=0 to zero positive logarithm. Lower theorem retains j != 0; existing final composer continues to use the separate sixth-root argument when j=0.",
+    "empty_or_negative_bound_K": "No global c>=0 is assumed. Lower proof derives c>=0 only from an actual member hx via existing c_nonneg, so empty K.set remains valid.",
+    "q_zero_one_or_composite": "Counting proof handles all q via nonprime-empty-filter branch; no false log-positive fact is used there."
+  },
+  "no_hidden_frontier": {
+    "no_sorry_admit_axiom_unsafe_implemented_by_extern_in_Lean_code": true,
+    "no_free_law_or_Prop_provider": "All hypotheses are actual nonzero/equality/compact membership or standard Field/NumberField assumptions matching source. No law structures or freely selected heights/places/counts.",
+    "Definitions_import_boundary": "All five new Definitions modules import only earlier Definitions, their new structural/source chain, precise Mathlib modules or Lean Omega. No Theorems, Iut, Genl, Heights, Belyi, Scene2, Act2 or Prologue/Obligations imports.",
+    "source_proof_bodies": "Full source proof bodies retained for pure valuation, actual finite-place arithmetic, support, counting, pointwise comparisons and both finite parents. Statement renaming is limited to the existing parent theorem names/types.",
+    "actual_consumers": "All 48 drafted declarations have an actual textual downstream consumer or the final exact-parent solution role. The one ledger overstatement is separately noted; no unconsumed helper was found."
+  },
+  "pinned_API_review": {
+    "mathlib_revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "lean_toolchain": "leanprover/lean4:v4.33.1",
+    "all_direct_import_source_files_found": true,
+    "verified_existing_APIs": [
+      {
+        "path": "Mathlib/RingTheory/Valuation/Basic.lean:304-322",
+        "apis": [
+          "map_add_eq_of_lt_right",
+          "map_add_eq_of_lt_left",
+          "map_sub_eq_of_lt_right",
+          "map_sub_eq_of_lt_left"
+        ]
+      },
+      {
+        "path": "Mathlib/NumberTheory/NumberField/Completion/FinitePlace.lean:377,434",
+        "apis": [
+          "norm_embedding_eq",
+          "hasFiniteMulSupport"
+        ]
+      },
+      {
+        "path": "Mathlib/RingTheory/DedekindDomain/AdicValuation.lean:346,362,945",
+        "apis": [
+          "valuation_le_one",
+          "valuation_eq_one_iff_notMem",
+          "valuedAdicCompletion_eq_valuation'"
+        ]
+      },
+      {
+        "path": "Mathlib/RingTheory/RamificationInertia/Inertia.lean:63,119,210",
+        "apis": [
+          "inertiaDeg_pos",
+          "inertiaDeg'_eq_inertiaDeg",
+          "pow_inertiaDeg"
+        ]
+      },
+      {
+        "path": "Mathlib/RingTheory/RamificationInertia/Ramification.lean:70,160",
+        "apis": [
+          "ramificationIdx_pos",
+          "ramificationIdx'_eq_ramificationIdx"
+        ]
+      },
+      {
+        "path": "Mathlib/NumberTheory/RamificationInertia/Basic.lean:614",
+        "apis": [
+          "sum_ramification_inertia"
+        ]
+      }
+    ],
+    "transitive_ramification_import": "New RingTheory ramification API is reachable through existing Def_AbcTripod import Mathlib.NumberTheory.NumberField.Discriminant.Different -> Ideal.Norm.RelNorm -> NumberTheory.RamificationInertia.Galois -> RingTheory.RamificationInertia.Basic -> RingTheory.RamificationInertia.Ramification.",
+    "deprecated_API": "Ideal.sum_ramification_inertia exists with the source expected signature but is marked deprecated in the pin. This is a warning/API migration point, not a missing theorem or mathematical gap.",
+    "no_static_missing_API_identified": true
+  },
+  "unverified_elaboration_checkpoints": [
+    {
+      "area": "Residue fields and ideals",
+      "details": "Local Field/Finite/CharP and LiesOver/IsMaximal typeclass synthesis, ringChar unfolding, Nat/Int casts and prime-under rewrites. APIs and source proof bodies exist; exact elaboration remains untested."
+    },
+    {
+      "area": "Adic completion normalization",
+      "details": "Definitional identification of completionAt and FinitePlace.embedding, valuedAdicCompletion_eq_valuation' rewrite and WithZeroMulInt/NNReal coercions in norm_eq_zpow_of_valued/log_apply_eq require local elaboration."
+    },
+    {
+      "area": "Valuation arithmetic tactics",
+      "details": "WithZero integer log/pow rewrite orientation, push_cast, ring and omega proof search may need local syntax or small proof adjustments; no concrete error has been observed without compiling."
+    },
+    {
+      "area": "Counting and finite sums",
+      "details": "Old/new ramification-index bridge casts, sum_image InjOn elaboration, exact_mod_cast and Nat.le_mul_of_pos_left inference require compiler confirmation."
+    },
+    {
+      "area": "Resource limits and axiom closure",
+      "details": "Full 48-declaration source chain still needs authorized MCP-CI leaf/resource checks, current Checks/Axioms, import/aggregate/axiom audits and compiler consumer graph before any closure claim."
+    }
+  ],
+  "provenance": {
+    "all_7_source_SHA256_match_current_archived_sources": true,
+    "all_8_candidate_manifest_SHA256_match": true,
+    "historical_upstream_revision": "unverified; no new historical Git-revision claim made here",
+    "source_files": [
+      {
+        "path": "refer/iut/Iut/Tripod/Height.lean",
+        "sha256": "1de154fbca7da4ac9510537384ae9f8756e998c4de26e01162b4957c807c7df1"
+      },
+      {
+        "path": "refer/iut/Iut/Tripod/TwoAdic.lean",
+        "sha256": "213d57f352bbd1e00efc7b3f570849f6eed0f467c7bfc3b75631286a7bd8f719"
+      },
+      {
+        "path": "refer/iut/Iut/Tripod/LogCond.lean",
+        "sha256": "921e45b68a1177595150eeb72e8972805522968c0424dc114b50004e539a39f7"
+      },
+      {
+        "path": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+        "sha256": "d541992c44c62eedd0009700bb2d47b7d149fbfd15bfdb8288da176ae3374963"
+      },
+      {
+        "path": "refer/iut/Iut/Concrete/LocalTheory.lean",
+        "sha256": "e3e4c9db67a8e69f6a0e818f6d503f785a7c4f2b4a210853c01c7922de109403"
+      },
+      {
+        "path": "refer/iut/Iut/Cor312/ThetaData/Places.lean",
+        "sha256": "89f2ac970ed85ad962dd69e0bd29fe1ea2323d67f0a69acb2b1cfdb7a626a415"
+      },
+      {
+        "path": "refer/iut/Iut/Cor312/ThetaData/BadPlaceNorm.lean",
+        "sha256": "fa6c5a16f93cd2832fe1ebbe05a6b3deac6f97e14cfe95d0db990f19f3c1be71"
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "entire_file_inspected": true,
+      "declaration_count": 11
+    },
+    {
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "entire_file_inspected": true,
+      "declaration_count": 20
+    },
+    {
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePrimeCounting.lean",
+      "sha256": "77e30f94f07cb1d89cd5367d89b3cef8a706d5333e5be934fe4a723b7b397e51",
+      "entire_file_inspected": true,
+      "declaration_count": 4
+    },
+    {
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "sha256": "4b97610d9cc394d47c99690a30a74ac963470463680397e673dc0adaab322cdb",
+      "entire_file_inspected": true,
+      "declaration_count": 3
+    },
+    {
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8",
+      "entire_file_inspected": true,
+      "declaration_count": 7
+    },
+    {
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Solutions/Sol_LegendreFiniteSourceClosure.lean",
+      "sha256": "7c4e9f62ae22697ed4c43c2730741aee24ff5dc503f2180901b48588454b65a8",
+      "entire_file_inspected": true,
+      "declaration_count": 1
+    },
+    {
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound.lean",
+      "sha256": "f0a556ac3b5c04d09f49e615d66bf092ed4c196cf71a5bc85ffc6e8961e99a7a",
+      "entire_file_inspected": true,
+      "declaration_count": 1
+    },
+    {
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound.lean",
+      "sha256": "8f334e512fcf4606d69cab8acd7d8f68481ff71b9d0d6d6a5b013a3a80f40cba",
+      "entire_file_inspected": true,
+      "declaration_count": 1
+    }
+  ],
+  "review_execution": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "API_called": false,
+    "main_workspace_written": false,
+    "Git_written": false,
+    "cache_written": false,
+    "all_rg_used_required_two_core_wrapper": true,
+    "only_report_written": true
+  },
+  "not_claimed": [
+    "Lean elaboration or kernel acceptance",
+    "successful memory/CPU measurement",
+    "compiler-confirmed axiom closure",
+    "complete platform proof closure",
+    "completion of original parent mathematics or abc"
+  ]
+}

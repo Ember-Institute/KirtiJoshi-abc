@@ -1,0 +1,384 @@
+{
+  "verdict": "PASS_STATIC_GENERATED_PAYLOAD_AND_DELIVERY_REVIEW; DIRECT_COMPILE_AND_PLATFORM_GATES_PENDING",
+  "date": "2026-11-14",
+  "scope": "Read-only review of delivery.py, finalize.py and the invoked verification/graph/extraction routines. Scripts were parsed/read, not imported or executed. CI inputs remained frozen. No compile, API, MCP-CI or Git write performed.",
+  "blocking_findings": [],
+  "reviewed_files": [
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/delivery.py",
+      "sha256": "2f47f3aedecdaa0387213074ffe758796f413e3cdc351400c45726261cb1ad0e"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/finalize.py",
+      "sha256": "c1bc59498a7ccc23710c03cdcd9d15f83dbbb903bb3be886b7929f3bea90d5b0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/ExtractFiniteGraph.lean",
+      "sha256": "dde8390c8b85d530652d1b2f1db8f77b9297d8ebfb4c9a762a770743931d01a8"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/ExtractFiniteSyntax.lean",
+      "sha256": "16bde5aea1457c6d0b6ba43a5e1dbc8bf6b7f3207321e2cd4dfdb53889c05b84"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/AuditAllConstants.lean",
+      "sha256": "60ea198c46318f3dfd2b15c3e2f1e705385896c6231afc8b2dac8fcd6c61346d"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/ProductionGates.lean",
+      "sha256": "3b08e0bb0b9a1985669816cba5906ebdc8f6fcc81a33790bd79876a972274685"
+    },
+    {
+      "path": "prove2me_workspace/Solutions/Checks_LegendreFiniteSourceClosure.lean",
+      "sha256": "5b3f4149370a336029eaaaee9fabb3ff059bf854488b3bf3b556577bcd457100"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/platform-tripod-20261113/executed-platform-publish.py",
+      "sha256": "9a24fa8bde2d16d66da45921be82c9d8f8c36c29246406db09ae111d0b6977fc"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/delivery_common.py",
+      "sha256": "a3c177b0fbb495e646f219ce0c68e1449091f173853faea9ae91fa753580ce32"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/graph_completion.py",
+      "sha256": "8fe93118e8b071f8a013fe4098f38e59c5fa3ab200ab6ad1abdb41e0f41220e6"
+    },
+    {
+      "path": "prove2me_workspace/.local/abc-item/api.py",
+      "sha256": "5b398ecbaa34f49a949ce0db34ee79b422acb5c433fdba6527d7f75b2e4c7730"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/scheduler_common.py",
+      "sha256": "f18bcefdb1b0d1311ff12b85f30c194c826dd4b9ed6c16b1c4b09b34c55f8211"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/ci.py",
+      "sha256": "c72d9ce9c576056a4fb3d48f42999fefb0eecee03ae2c82fa2dd132af610e504"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/idempotency-collision-resolution.json",
+      "sha256": "47df7e488744294b2d30abb3ff1c412436ec4fa22801ed5d1b2635e0ce8ae777"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/decl_graph.jsonl",
+      "sha256": "adf35020e4b722219d0f841255410e934cb227bb0a5342fbf54b2b41616fe734"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/syntax-boundaries.json",
+      "sha256": "4f9f177cc53c68a1ff7caaa283328b5d189bd2a0866df4650f7c42ff64eaa0ba"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/final-readbacks.json",
+      "sha256": "e9f6e71793bb7ec4baef55c040773c88daf04042e5886e2a77012bb0cefe7109"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/solution-source-closure.json",
+      "sha256": "b2bac2b21d0909ddc5a7dfa96ed0c79eb5ea81185c50962daae5ddb685dafd9a"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/Solution_legendreFiniteUpperBound.lean",
+      "sha256": "1efcedb7f0803997383623fa05d65a9e0ded38edfe904ff8c3b99cb609618bd0"
+    },
+    {
+      "path": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/Solution_legendreFiniteLowerBound.lean",
+      "sha256": "9c9929aaa2f945eba503836ff4285b39646f7977256f0046ce3614399ca4a269"
+    }
+  ],
+  "checks": [
+    {
+      "area": "Exact compiler dependency closure and syntax-span inlining",
+      "verdict": "PASS_STATIC_ACTUAL_PAYLOAD",
+      "evidence": [
+        "delivery.py:13-23 uses elaborated typeDeps/valueDeps and traverses the reachable graph from the actual upper/lower theorem.",
+        "ExtractFiniteGraph.lean traverses through internal proof auxiliaries and retains spanless constants for reachability; source emission later selects spanful declarations.",
+        "delivery.py:25-42 matches parser output by file/user declaration name, removes unreachable complete declaration ranges by byte offsets, handles preceding docstrings, and renames only the original target name span to closedFiniteSource.",
+        "delivery.py:43-54 removes local Solutions.Source_* imports, retains/deduplicates precise original imports, rejects Theorems imports, orders the five source modules before the parent body, and appends the exact original predicate as theorem solution.",
+        "delivery.py:70-72 requires every new source declaration to be consumed by the union of both generated proofs. No arbitrary replacement law fields are introduced."
+      ],
+      "limits": "The exact emitted files still require direct leaf/type/axiom acceptance before platform submission. This static review independently replayed closure traversal and byte-range splicing in memory and compared both outputs byte-for-byte; no files were regenerated or modified."
+    },
+    {
+      "area": "Original target types and self-import exclusion",
+      "verdict": "PASS_STATIC_ACTUAL_PAYLOAD",
+      "evidence": [
+        "delivery.py:53-67 emits the original LegendreFiniteUpperBound/LegendreFiniteLowerBound predicates and generates Lean isDefEq checks against those exact constants.",
+        "delivery.py:55 excludes sorry and original theorem-name redeclarations; 48 original readbacks include both exact targets.",
+        "delivery.py:128 compares remote formal_statement to the saved before payload and enforces private visibility and pinned environment.",
+        "The established verify function separately rejects import of the actual target module and checks the target environment before POST.",
+        "finalize.py:32-33 compares after and before formal statements, status, visibility and environment."
+      ],
+      "limits": "This is a script review, not evidence that generated direct files typecheck or that the platform has accepted them."
+    },
+    {
+      "area": "Definitions discipline and minimal platform graph",
+      "verdict": "PASS_STATIC_DESIGN",
+      "evidence": [
+        "The five mathematical proof helper modules are local Solutions.Source_Tripod* files. They are inlined into complete direct proofs and are not submitted via submit-definition.",
+        "publish() has no submit-definition or submit-problem endpoint; it verifies exactly the two existing finite theorem IDs.",
+        "Substantive valuation/case/counting/normalization proofs stay in the proof layer. Existing platform Inputs/Basics supply the actual target interfaces.",
+        "The direct proofs and final composer retain the original field, all-place finite heights, constants, normalization and hypotheses; no additional law/provider assumptions are inserted."
+      ]
+    },
+    {
+      "area": "Blind trilingual readbacks and compiler binding",
+      "verdict": "PASS_STATIC_ACTUAL_BINDINGS",
+      "evidence": [
+        "The original readback file currently contains 48 distinct userName entries and three statement keys en, zh_Hans, ja for each reviewed entry.",
+        "delivery.py:75-85 checks original source hashes, maps original paths to the new source modules, requires a unique compiler module/userName match, records elaboratedType, source span and current source hash, and preserves the original three-language statements.",
+        "delivery.py:110-111 checks bound file hashes before publication.",
+        "delivery.py:129-131 selects explanation rows for the exact inlined declaration set plus the original target and keeps paper quotations in a separate prefix."
+      ],
+      "limits": "All 48 final rows are unique, their compiler_type exactly equals graph.elaboratedType, their current source hashes match and all three original blind-language texts are unchanged. This binding remains provenance/type linkage, not a mechanical proof of natural-language equivalence."
+    },
+    {
+      "area": "Unknown POST outcome and retry behavior",
+      "verdict": "PASS_STATIC_DESIGN",
+      "evidence": [
+        "delivery.py:132-136 saves the exact request and verification-requested marker before invoking the POST-capable function.",
+        "If a verify-submit receipt already exists, the requested theorem/file/hash/explanation must match. The established verify function then reuses the saved submission_id and polls it.",
+        "If no submit receipt exists but the marker exists, publish() stops with Reconcile prior POST before retry; it does not automatically POST again.",
+        "The established verify function contains one POST and no blind retry path. HTTP/transport/JSON failures propagate while leaving the marker."
+      ],
+      "limits": "An unknown POST result still needs manual/read-only reconciliation before a deliberate recovery; this script safely stops rather than claiming the platform never received it."
+    },
+    {
+      "area": "Two direct proofs and canonical automatic closure",
+      "verdict": "PASS_STATIC_DESIGN",
+      "evidence": [
+        "delivery.py:137 narrows the established helper acceptance to ACCEPTED, so SKETCH_ACCEPTED is insufficient.",
+        "delivery.py:138 requires both existing finite nodes to read back Proved without statement changes.",
+        "delivery.py:139-140 reads back the existing canonical Legendre parent as Proved; it does not create a replacement parent proof/reduction.",
+        "finalize.py:35-38 requires the existing parent to have exactly the original four children and each child Proved.",
+        "finalize.py:16-20 requires existing reduction identities unchanged and exactly upper, lower and canonical parent to change Open to Proved."
+      ]
+    },
+    {
+      "area": "Complete mathematical graph, frontier and explicit Fermat route",
+      "verdict": "PASS_STATIC_DESIGN",
+      "evidence": [
+        "fetch_complete_math_graph fetches the overview, drills unresolved mathematical children, retains hidden-by-Definitions markers, and rejects unresolved mathematical truncation.",
+        "graph_summary requires complete mathematical closure, rejects hidden deprecated nodes/sketches and any deprecated mathematical node, and derives the reduction graph from actual edges.",
+        "finalize.py:13-20 compares mathematical theorem-name sets, dependency-pair sets, counts, reduction parent/children/submission identities and all non-target statuses.",
+        "The saved before frontier currently has 26 unique entries. finalize.py:23-25 requires complete/unique pages and the after name-set to equal before minus exactly the two finite targets; therefore the required result is 24.",
+        "Fermat frontier entries, including heightNormalization and Proper.coordinatePoleMultiplicity_eq, are still in the before frontier and are retained by the set-difference rule.",
+        "finalize.py:61-63 preserves the pending database under a before-text concurrency check and removes only the Height.lean:714 and :743 pending entries.",
+        "The root abc.goal.lt_constant_mul_fix is explicitly required to remain Open; no global 3.12 completion is claimed."
+      ]
+    },
+    {
+      "area": "Credential handling and staging scope",
+      "verdict": "PASS_STATIC_DESIGN",
+      "evidence": [
+        "The verification function sends credentials only as an Authorization header through the fixed prove2.me base; credentials are read at runtime, not copied to verification payload archives.",
+        "api.py uses a no-redirect opener; the delivery script asserts its expected HTTPS base.",
+        "finalize.py:64 enumerates owned source hashes, the two intended metadata files and files below the specific unit evidence directory; it does not broadly stage the repository.",
+        "finalize.py:69 requires the shared index to be empty before staging.",
+        "finalize.py:70-76 excludes credentials.json, checks the current known credential values/token prefix, and performs whitespace checks before modifying the shared index.",
+        "finalize.py:77-80 writes the intended status/registry metadata, runs diff checks and stages only the explicit list. No commit/push operation appears."
+      ],
+      "limits": "Credential scanning is for the actual selected output bytes and current configured keys. This review did not read or print credential values, and did not execute staging."
+    },
+    {
+      "area": "CI receipt and axiom/resource gates",
+      "verdict": "PASS_STATIC_DESIGN",
+      "evidence": [
+        "preflight checks all five source leaves, both finite leaves, final parent solution, closed axiom review, graph/syntax extraction, all-constant audit, both direct payload leaves and exact-target audits, plus production gates.",
+        "Each checked receipt must have succeeded/exit 0, the actual exclusive workspace/source/hash/lean arguments, exclusive_worktree mode and null snapshot.",
+        "All-module and exact direct-solution audits enforce only propext, Classical.choice and Quot.sound, excluding sorryAx rather than relying solely on successful compilation.",
+        "finalize.py:47-57 retains failed/other receipts separately, checks total CPU against user+system when present, enforces <=16 GiB measured RSS and preserves missing resources as unknown.",
+        "ProductionGates.lean imports ImportAudit, Act1Scene1 and AxiomAudit without adding those imports to the mathematical direct solution."
+      ],
+      "limits": "The currently active CI run is outside this review; no terminal success or measured resource figure is asserted here."
+    }
+  ],
+  "corrected_prior_metadata": {
+    "legendreBound_false_consumer_removed": true,
+    "current_consumers": [
+      "posLog_terms_eq",
+      "posLog_legendreJ_le",
+      "posLog_legendreJ_ge",
+      "legendreBound_nonneg",
+      "max_log_valuation_legendreJ_le",
+      "legendreBound_le_max_log_valuation_legendreJ"
+    ]
+  },
+  "pending_runtime_artifacts_at_review": {
+    "decl_graph.jsonl": true,
+    "syntax-boundaries.json": true,
+    "final-readbacks.json": true,
+    "solution-source-closure.json": true,
+    "delivery-validation.json": false,
+    "root-graph-after.json": false,
+    "root-frontier-after.json": false
+  },
+  "execution": {
+    "only_report_written": true,
+    "report_path": "/tmp/p2m-legendre-finite-delivery-review-20261114/report.json",
+    "main_workspace_written": false,
+    "source_inputs_modified": false,
+    "compiled": false,
+    "API_called": false,
+    "MCP_CI_called": false,
+    "Git_called": false,
+    "all_rg_used_required_two_core_wrapper": true
+  },
+  "not_claimed": [
+    "Direct payload compilation/kernel/axiom acceptance",
+    "Platform ACCEPTED/Proved state changes",
+    "Observed 26-to-24 final frontier",
+    "Completed production/resource gates",
+    "Mathematical root or abc proved"
+  ],
+  "refresh_scope": "Actual two generated payloads, parser output, compiler declaration graph, source-closure inventory and 48 final readback bindings were reviewed read-only after generation. Prior script-design review remains in force; no compiler or scripts were run by this reviewer.",
+  "generated_payload_review": {
+    "syntax_boundaries": {
+      "count": 47,
+      "unique_file_name_pairs": 47,
+      "expected": 47,
+      "macro_and_scope_repairs": "Current extractor opens WithZero/Real/Classical scopes and finds declId before falling back to the outer command for lemma macros. This covers all 45 source helper declarations plus the two parents."
+    },
+    "payloads": [
+      {
+        "source": ".local/adaptation/legendre-finite-sourceproof-20261114/Solution_legendreFiniteUpperBound.lean",
+        "source_sha256": "1efcedb7f0803997383623fa05d65a9e0ded38edfe904ff8c3b99cb609618bd0",
+        "inlined_declarations": [
+          "AbcAdaptation.Tripod.legendre_valuation_cases",
+          "AbcAdaptation.Tripod.valuation_legendreJ_ne_zero_iff",
+          "AbcAdaptation.Tripod.legendreBound_nonneg",
+          "AbcAdaptation.Tripod.legendreBound",
+          "AbcAdaptation.Tripod.max_log_valuation_legendreJ_le",
+          "AbcAdaptation.Tripod.log_valuation_legendreJ",
+          "AbcAdaptation.Tripod.under_int_eq",
+          "AbcAdaptation.Tripod.finWeight_pos",
+          "AbcAdaptation.Tripod.norm_eq_zpow_of_valued",
+          "AbcAdaptation.Tripod.log_apply_eq",
+          "AbcAdaptation.Tripod.valuation_256_le_one",
+          "AbcAdaptation.Tripod.posLog_apply_eq",
+          "AbcAdaptation.Tripod.completionAt",
+          "AbcAdaptation.Tripod.inertDeg",
+          "AbcAdaptation.Tripod.finWeight",
+          "AbcAdaptation.Tripod.residueChar_prime",
+          "AbcAdaptation.Tripod.liesOver_span_residueChar",
+          "AbcAdaptation.Tripod.absNorm_eq_pow_residueChar",
+          "AbcAdaptation.Tripod.inertDeg_pos'",
+          "AbcAdaptation.Tripod.finHeight_legendreJ_eq_sum",
+          "AbcAdaptation.Tripod.mem_suppFinset_of_ne",
+          "AbcAdaptation.Tripod.suppFinset",
+          "AbcAdaptation.Tripod.two_mul_finHeight_sum_eq",
+          "AbcAdaptation.Tripod.hasFiniteSupport_posLog",
+          "AbcAdaptation.Tripod.support_posLog_subset",
+          "AbcAdaptation.Tripod.finHeight_gen_inv_eq_sum",
+          "AbcAdaptation.Tripod.finHeight_gen_sub_one_inv_eq_sum",
+          "AbcAdaptation.Tripod.finHeight_gen_eq_sum",
+          "AbcAdaptation.Tripod.finHeight_eq_sum",
+          "AbcAdaptation.Tripod.posLog_legendreJ_le",
+          "AbcAdaptation.Tripod.posLog_terms_eq"
+        ],
+        "exact_target_predicate": "AbcAdaptation.Tripod.LegendreFiniteUpperBound",
+        "compiler_name_spans_used": true,
+        "no_source_module_imports": true,
+        "target": "legendreFiniteUpperBound",
+        "helper_count": 31,
+        "actual_sha256": "1efcedb7f0803997383623fa05d65a9e0ded38edfe904ff8c3b99cb609618bd0",
+        "independent_dependency_closure_matches": true,
+        "actual_declaration_set_matches_inventory": true,
+        "independent_byte_exact_span_replay_matches": true,
+        "no_sorry_or_axiom_or_unsafe_commands": true,
+        "no_Theorems_or_Solutions_or_Iut_imports": true,
+        "exact_final_solution_type": "AbcAdaptation.Tripod.LegendreFiniteUpperBound"
+      },
+      {
+        "source": ".local/adaptation/legendre-finite-sourceproof-20261114/Solution_legendreFiniteLowerBound.lean",
+        "source_sha256": "9c9929aaa2f945eba503836ff4285b39646f7977256f0046ce3614399ca4a269",
+        "inlined_declarations": [
+          "AbcAdaptation.Tripod.legendre_valuation_cases",
+          "AbcAdaptation.Tripod.valuation_legendreJ_ne_zero_iff",
+          "AbcAdaptation.Tripod.legendreBound",
+          "AbcAdaptation.Tripod.legendreBound_le_max_log_valuation_legendreJ",
+          "AbcAdaptation.Tripod.log_valuation_legendreJ",
+          "AbcAdaptation.Tripod.valuation_two_eq_one_of_ne",
+          "AbcAdaptation.Tripod.under_int_eq",
+          "AbcAdaptation.Tripod.finWeight_pos",
+          "AbcAdaptation.Tripod.norm_eq_zpow_of_valued",
+          "AbcAdaptation.Tripod.ramIdx",
+          "AbcAdaptation.Tripod.two_mem_maximalIdeal_iff",
+          "AbcAdaptation.Tripod.log_apply_eq",
+          "AbcAdaptation.Tripod.under_int_isMaximal",
+          "AbcAdaptation.Tripod.posLog_apply_eq",
+          "AbcAdaptation.Tripod.completionAt",
+          "AbcAdaptation.Tripod.inertDeg",
+          "AbcAdaptation.Tripod.finWeight",
+          "AbcAdaptation.Tripod.under_int_ne_bot",
+          "AbcAdaptation.Tripod.residueChar_prime",
+          "AbcAdaptation.Tripod.liesOver_span_residueChar",
+          "AbcAdaptation.Tripod.absNorm_eq_pow_residueChar",
+          "AbcAdaptation.Tripod.ramIdx_pos'",
+          "AbcAdaptation.Tripod.localDeg",
+          "AbcAdaptation.Tripod.inertDeg_pos'",
+          "AbcAdaptation.Tripod.finHeight_legendreJ_eq_sum",
+          "AbcAdaptation.Tripod.mem_suppFinset_of_ne",
+          "AbcAdaptation.Tripod.suppFinset",
+          "AbcAdaptation.Tripod.two_mul_finHeight_sum_eq",
+          "AbcAdaptation.Tripod.hasFiniteSupport_posLog",
+          "AbcAdaptation.Tripod.support_posLog_subset",
+          "AbcAdaptation.Tripod.finHeight_gen_inv_eq_sum",
+          "AbcAdaptation.Tripod.finHeight_gen_sub_one_inv_eq_sum",
+          "AbcAdaptation.Tripod.posLog_finite_le",
+          "AbcAdaptation.Tripod.finHeight_gen_eq_sum",
+          "AbcAdaptation.Tripod.finHeight_eq_sum",
+          "AbcAdaptation.Tripod.posLog_legendreJ_ge",
+          "AbcAdaptation.Tripod.posLog_terms_eq",
+          "AbcAdaptation.Tripod.sum_localDeg_filter_le",
+          "AbcAdaptation.Tripod.sum_inertDeg_filter_le",
+          "AbcAdaptation.Tripod.localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+          "AbcAdaptation.Tripod.card_filter_residueChar_mem_le"
+        ],
+        "exact_target_predicate": "AbcAdaptation.Tripod.LegendreFiniteLowerBound",
+        "compiler_name_spans_used": true,
+        "no_source_module_imports": true,
+        "target": "legendreFiniteLowerBound",
+        "helper_count": 41,
+        "actual_sha256": "9c9929aaa2f945eba503836ff4285b39646f7977256f0046ce3614399ca4a269",
+        "independent_dependency_closure_matches": true,
+        "actual_declaration_set_matches_inventory": true,
+        "independent_byte_exact_span_replay_matches": true,
+        "no_sorry_or_axiom_or_unsafe_commands": true,
+        "no_Theorems_or_Solutions_or_Iut_imports": true,
+        "exact_final_solution_type": "AbcAdaptation.Tripod.LegendreFiniteLowerBound"
+      }
+    ],
+    "all_source_helpers": 45,
+    "unique_consumed_union": 45,
+    "all_source_helpers_consumed": true,
+    "final_readbacks": {
+      "count": 48,
+      "unique_declarations": 48,
+      "all_compiler_types_equal_graph": true,
+      "all_current_source_hashes_match": true,
+      "all_original_blind_trilingual_texts_identical": true,
+      "all_original_blind_source_hashes_bound": true
+    },
+    "types_and_semantics": "The original compiler types are exactly AbcAdaptation.Tripod.LegendreFiniteUpperBound and AbcAdaptation.Tripod.LegendreFiniteLowerBound. Both generated final declarations use those predicates. The complete upper/lower proof bodies are retained and named closedFiniteSource; no original target constant declaration or target import remains.",
+    "normalization": "Actual finite-place f log p weights, all four support functions, full Q(x) field/degree, upper j=0 branch and residue-characteristic 2 coverage, lower j!=0/2 in V conditions and exact 6*c*card(V)*deg error remain in the emitted code.",
+    "scope_residue": {
+      "severity": "NONBLOCKING",
+      "path": ".local/adaptation/legendre-finite-sourceproof-20261114/Solution_legendreFiniteUpperBound.lean",
+      "detail": "Removing the unused two_mem_maximalIdeal_iff declaration leaves an empty section with its variable {k : Type*} [Field k] [NumberField k], followed immediately by end. This creates no declaration or assumption in solution and is not an unrelated mathematical skeleton. Other retained source namespace/open/variable commands support the selected declarations. No edit is requested during the input freeze."
+    },
+    "license": "Both emitted files retain original Apache-2.0 copyright/author headers on copied source sections. The existing source-line provenance is preserved."
+  },
+  "scheduler_collision_refresh": {
+    "dedicated_prefix": "p2m-legendre-finite-sourceproof-",
+    "verification": "scheduler_common.py now incorporates this unit prefix with tag/version/source hash in idempotency_key. ci.py imports that local helper and replaces its old default evidence directory, session_id and manifest function before exposing run, so the copied legacy defaults are inactive in this workflow.",
+    "collision_record": "idempotency-collision-resolution.json identifies the unrelated older production-audit receipt and records why actual-arguments validation rejected it.",
+    "quarantined_evidence": [
+      "observation-errors/collision-request.json",
+      "observation-errors/collision-submit.json",
+      "observation-errors/collision-result.json"
+    ],
+    "finalizer": "finalize.py skips any *-result.json below observation-errors before collecting resource totals; it still stages the quarantined observations as history and references the resolution in unit-ci-summary.json.",
+    "source_proof_changed": false,
+    "reviewer_submitted_or_retried_any_job": false
+  }
+}

@@ -1,0 +1,808 @@
+{
+  "verdict": "PASS_STATIC_MATHEMATICAL_SHAPE; CURRENT_DEFINITIONS_PACKAGING_REQUIRES_CHANGE; PROPOSED_DIRECT_SOLUTION_PACKAGING_ACCEPTABLE",
+  "candidate": "/tmp/p2m-legendre-finite-next-20261114",
+  "date": "2026-11-14",
+  "scope": "Read-only refresh of source fidelity, exact target types, Definitions discipline, actual consumers and minimal delivery partition. No Lean/elaboration/API/CI/Git operation.",
+  "prior_report": {
+    "path": "/tmp/p2m-legendre-finite-shape-20261114/report.json",
+    "relationship": "All 8 candidate file hashes are unchanged and all 7 archived source hashes still match; prior detailed source-shape review remains applicable. Its PASS did not assess the Definitions submission discipline and must not be read as approval to publish the five files as Definitions."
+  },
+  "rules": [
+    {
+      "path": "prove2me_workspace/references/contribute.md",
+      "section": "Submit Definitions",
+      "quote": "keep it lightweight: include only `def`, `structure`, or `inductive` declarations, along with essential typeclass instances, trivial \"structural\" lemmas (such as simp lemmas for projections), and helper theorems or proofs only if necessary. Avoid embedding complex theorems or multi-step proofs",
+      "application": "The current five Def_ modules contain the mathematical proof chain, so they should not be published unchanged via submit-definition."
+    },
+    {
+      "path": "prove2me_workspace/references/contribute.md",
+      "section": "Submit Definitions",
+      "quote": "If your definition needs supporting theorems or lemmas, upload those as separate theorems via `submit-problem` and then import them",
+      "application": "If these helpers become platform foundational Definition interfaces, their substantial supporting lemmas must move to separately proved theorem nodes. This is not a requirement to turn all internal declarations in a complete direct solution into platform nodes."
+    },
+    {
+      "path": "prove2me_workspace/references/prove.md",
+      "section": "Reductions (Decompose Core Proofs)",
+      "quote": "Beyond submitting a single-file direct proof, you can submit a reduction that imports other platform theorems as lemmas.",
+      "application": "A complete self-contained proof of each existing finite target is an available delivery mode."
+    },
+    {
+      "path": "prove2me_workspace/references/prove.md",
+      "section": "Reductions (Decompose Core Proofs)",
+      "quote": "avoid over-decomposing into many trivial, non-reusable lemmas",
+      "application": "Do not mechanically publish 48 nodes merely because 48 local declarations exist."
+    }
+  ],
+  "blocking_current_packaging_issues": [
+    {
+      "path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+      "lines": [
+        53,
+        73,
+        114,
+        166
+      ],
+      "declarations": [
+        "log_valuation_legendreJ",
+        "legendre_valuation_cases",
+        "max_log_valuation_legendreJ_le",
+        "legendreBound_le_max_log_valuation_legendreJ"
+      ],
+      "reason": "Nonzero denominator/logarithm algebra, four exhaustive ultrametric cases and separate inequality proofs are substantive multi-step mathematics; they are not constructor/projection APIs."
+    },
+    {
+      "path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+      "lines": [
+        20,
+        36,
+        87,
+        94
+      ],
+      "declarations": [
+        "localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+        "sum_localDeg_filter_le",
+        "sum_inertDeg_filter_le",
+        "card_filter_residueChar_mem_le"
+      ],
+      "reason": "Prime-under/old-new invariant bridge and fundamental ramification-sum/cardinality counting chain constitute proof content. Especially the prime/nonprime split and image/subset/injectivity sum argument cannot be described as lightweight foundational definitions."
+    },
+    {
+      "path": "Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "lines": [
+        24,
+        35,
+        51
+      ],
+      "declarations": [
+        "posLog_terms_eq",
+        "posLog_legendreJ_le",
+        "posLog_legendreJ_ge"
+      ],
+      "reason": "The latter two are the actual pointwise number-field comparison theorems; the first is their normalization calculation and can stay local with them."
+    },
+    {
+      "path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "lines": [
+        48,
+        105,
+        115,
+        125
+      ],
+      "declarations": [
+        "under_int_eq",
+        "norm_eq_zpow_of_valued",
+        "two_mem_maximalIdeal_iff",
+        "log_apply_eq"
+      ],
+      "reason": "Prime-under identification, norm/completion normalization, residue-characteristic arithmetic and logarithm conversion are substantive mathematical support, even where exact Mathlib APIs shorten the proof."
+    },
+    {
+      "path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+      "lines": [
+        51
+      ],
+      "declarations": [
+        "posLog_finite_le"
+      ],
+      "reason": "Compact-bound extraction and inverse-log estimates are a proof-layer comparison; the remaining support/sum API is a plausible lightweight structural bridge if truly needed by a published Definition."
+    }
+  ],
+  "preferred_minimal_delivery": {
+    "verdict": "ACCEPTABLE_STATIC_DESIGN",
+    "new_platform_nodes_required": 0,
+    "local_layout": "Move/rename the five original Def_ draft modules to local Solutions/Source_Tripod*.lean proof modules, update their local imports, and let the two local finite proof targets consume them. They are source-proof implementation modules, not submit-definition payloads.",
+    "remote_layout": "Generate two independent self-contained Solutions/Sol_... files. Inline each target's required complete helper closure in topological source order; retain existing mathematical names/types/namespace. Use precise Mathlib imports and only already-existing compatible platform Inputs/Basics/Definitions imports. Do not import local Solutions.Source_* or unpublished modules. Finish with theorem solution : LegendreFiniteUpperBound or theorem solution : LegendreFiniteLowerBound.",
+    "parent_handling": "Keep canonical Theorems target stubs and original formal statements; submit the full proof through separate Solutions. A solution must never import its own target. Existing final CanonicalLegendreHeightComparison solution continues to import the two finite targets after their proof acceptance.",
+    "custom_def_scope": "The prohibition on local defs in problem preambles and the lightweight submit-definition discipline must still be obeyed. Internal, fully proved helper code in a self-contained direct proof is not being submitted as a foundational Definition. No cited rule requires it to be published as a separate node merely because it has a local name.",
+    "consumer_preservation": "Keep the 48-declaration source inventory and real consumer graph across both local proofs/final closure. Per-target remote payloads may omit unreachable helpers; do not keep otherwise-unused lower/counting helpers in the upper payload simply to copy all 48 into both files.",
+    "conditions": [
+      "Keep all proof bodies and original upper/lower conclusions unchanged.",
+      "No new law fields, supplied valuation axioms, arbitrary proposition/provider parameters, hidden source imports, or pre-proved-target imports.",
+      "Retain source line/hash provenance and notices in emitted self-contained proof files.",
+      "After integration, validate exact generated payloads and dependency/axiom closure using authorized MCP-CI; this static review makes no acceptance claim."
+    ]
+  },
+  "if_reusable_platform_interfaces_are_later_needed": {
+    "keep_lightweight": "The 7 actual definitions inertDeg, ramIdx, localDeg, completionAt, finWeight, legendreBound, suppFinset may form small foundational modules; their direct projection/rewriting wrappers may stay only when necessary. Support inclusion, finite support from existing finite multiplicative support plus the y=0 branch, support-union membership, exact finsum conversion and sum distribution are reasonable lightweight bridges. Direct positivity or cast wrappers must not import the larger theorem chain back into the same foundational file.",
+    "move_substantial": "Publish meaningful independently reused mathematical results, such as the actual valuation case/bounds, finite-place normalization, pointwise upper/lower comparisons or residue-characteristic place count, as Theorems targets plus Solutions. Their fully closed smaller internal support lemmas can remain in those Solutions rather than each becoming a node.",
+    "dag": "Base definitions -> substantial supporting theorem proof -> optional small Definition interface that imports that proved theorem -> later comparison/counting theorem proofs -> existing upper/lower targets. In particular suppFinset may import an independently proved finite-support result if that result becomes too complex for the allowed necessary bridge. Never let a theorem import a Definition that imports that same theorem.",
+    "not_required_now": "This alternative is needed only for actual cross-node reuse or justified compilation partitioning; current complete direct proofs do not require new platform Definitions or helper targets."
+  },
+  "parent_type_fidelity": {
+    "verdict": "PASS_STATIC",
+    "upper": "Exact existing LegendreFiniteUpperBound, forall x:Pt, finHeight(j(gen x)) <= 2*(finHeight(gen x)+finHeight((gen x)^-1)+finHeight((gen x-1)^-1)). No compactness or degree bound added.",
+    "lower": "Exact existing LegendreFiniteLowerBound with K, x, membership, j != 0, and error 6*K.c*K.V.card*deg x. No weakened target or new hypotheses.",
+    "normalization": "Actual fieldOf x = Q adjoin x; all-place finsums are represented by the union of the FOUR actual supports, not an arbitrary subset. Actual finite-place log weight is f_v*log p_v (not e_v*f_v*log p_v); counting ends at finrank Q(fieldOf x)=deg x. Final composer retains factor 1/6.",
+    "boundary_cases": "Upper covers residue characteristic 2 and j=0; lower retains j!=0 and uses 2 in K.V. No global positivity assumption on K.c; it follows from actual membership. Counting covers nonprime q by empty filter.",
+    "fermat_route": "Preserve the explicit Fermat route and its existing nodes; no deprecation proposed or performed."
+  },
+  "consumer_audit": {
+    "declaration_count": 48,
+    "all_have_actual_internal_consumer_or_exact_terminal_role": true,
+    "false_entry_still_present": {
+      "name": "legendreBound",
+      "incorrect_consumer": "legendre_valuation_cases",
+      "fixed": false,
+      "action": "Remove only this extra ledger entry. The cases proof does not mention legendreBound; actual remaining consumers keep the definition live. Strip doc comments when checking references so the following upper-bound comment is not misread as a cases-proof dependency."
+    },
+    "composer_note": "The generic existing composer consumes the proofs at its application in solution; it does not textually refer to these theorem constants in its own generic definition. Ledger should distinguish this application/terminal role from a direct declaration-body reference.",
+    "rows": [
+      {
+        "name": "support_posLog_subset",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 21,
+        "source": "refer/iut/Iut/Tripod/Height.lean:84",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "hasFiniteSupport_posLog"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "hasFiniteSupport_posLog",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 31,
+        "source": "refer/iut/Iut/Tripod/Height.lean:94",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "suppFinset"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "finHeight_eq_sum",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 41,
+        "source": "refer/iut/Iut/Tripod/Height.lean:104",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "finHeight_gen_eq_sum",
+          "finHeight_gen_inv_eq_sum",
+          "finHeight_gen_sub_one_inv_eq_sum",
+          "finHeight_legendreJ_eq_sum"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "posLog_finite_le",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 51,
+        "source": "refer/iut/Iut/Tripod/Height.lean:644",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "legendreFiniteLowerBound"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "suppFinset",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 62,
+        "source": "refer/iut/Iut/Tripod/Height.lean:673",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "mem_suppFinset_of_ne",
+          "finHeight_gen_eq_sum",
+          "finHeight_gen_inv_eq_sum",
+          "finHeight_gen_sub_one_inv_eq_sum",
+          "finHeight_legendreJ_eq_sum",
+          "two_mul_finHeight_sum_eq",
+          "legendreFiniteLowerBound"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "mem_suppFinset_of_ne",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 68,
+        "source": "refer/iut/Iut/Tripod/Height.lean:679",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "finHeight_gen_eq_sum",
+          "finHeight_gen_inv_eq_sum",
+          "finHeight_gen_sub_one_inv_eq_sum",
+          "finHeight_legendreJ_eq_sum"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "finHeight_gen_eq_sum",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 76,
+        "source": "refer/iut/Iut/Tripod/Height.lean:687",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "two_mul_finHeight_sum_eq"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "finHeight_gen_inv_eq_sum",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 80,
+        "source": "refer/iut/Iut/Tripod/Height.lean:691",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "two_mul_finHeight_sum_eq"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "finHeight_gen_sub_one_inv_eq_sum",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 84,
+        "source": "refer/iut/Iut/Tripod/Height.lean:695",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "two_mul_finHeight_sum_eq"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "finHeight_legendreJ_eq_sum",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 88,
+        "source": "refer/iut/Iut/Tripod/Height.lean:699",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "legendreFiniteLowerBound",
+          "legendreFiniteUpperBound"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "two_mul_finHeight_sum_eq",
+        "current_path": "Definitions/Def_TripodFiniteHeightSupport.lean",
+        "line": 93,
+        "source": "refer/iut/Iut/Tripod/Height.lean:704",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "legendreFiniteLowerBound",
+          "legendreFiniteUpperBound"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "inertDeg",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 23,
+        "source": "refer/iut/Iut/Concrete/LocalTheory.lean:61",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "localDeg",
+          "absNorm_eq_pow_residueChar",
+          "inertDeg_pos'",
+          "norm_eq_zpow_of_valued",
+          "log_apply_eq",
+          "finWeight",
+          "localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+          "sum_inertDeg_filter_le",
+          "card_filter_residueChar_mem_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "ramIdx",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 26,
+        "source": "refer/iut/Iut/Concrete/LocalTheory.lean:57",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "localDeg",
+          "ramIdx_pos'",
+          "localDeg_eq_ramificationIdx'_mul_inertiaDeg'"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "localDeg",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 29,
+        "source": "refer/iut/Iut/Concrete/LocalTheory.lean:65",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+          "sum_localDeg_filter_le",
+          "sum_inertDeg_filter_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "completionAt",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 32,
+        "source": "refer/iut/Iut/Concrete/LocalTheory.lean:52",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "norm_eq_zpow_of_valued"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "residueChar_prime",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 37,
+        "source": "refer/iut/Iut/Cor312/ThetaData/Places.lean:76",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "under_int_eq",
+          "under_int_ne_bot",
+          "under_int_isMaximal",
+          "two_mem_maximalIdeal_iff",
+          "finWeight_pos",
+          "sum_localDeg_filter_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "under_int_eq",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 48,
+        "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:41",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "under_int_ne_bot",
+          "under_int_isMaximal",
+          "liesOver_span_residueChar",
+          "localDeg_eq_ramificationIdx'_mul_inertiaDeg'"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "under_int_ne_bot",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 70,
+        "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:63",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "localDeg_eq_ramificationIdx'_mul_inertiaDeg'"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "under_int_isMaximal",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 75,
+        "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:68",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "localDeg_eq_ramificationIdx'_mul_inertiaDeg'"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "liesOver_span_residueChar",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 86,
+        "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:79",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "absNorm_eq_pow_residueChar",
+          "sum_localDeg_filter_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "absNorm_eq_pow_residueChar",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 91,
+        "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:84",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "norm_eq_zpow_of_valued"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "inertDeg_pos'",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 97,
+        "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:90",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "finWeight_pos",
+          "card_filter_residueChar_mem_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "ramIdx_pos'",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 101,
+        "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:94",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "sum_inertDeg_filter_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "norm_eq_zpow_of_valued",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 105,
+        "source": "refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:98",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "log_apply_eq"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "two_mem_maximalIdeal_iff",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 115,
+        "source": "refer/iut/Iut/Cor312/ThetaData/BadPlaceNorm.lean:28",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "valuation_two_eq_one_of_ne"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "log_apply_eq",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 125,
+        "source": "refer/iut/Iut/Tripod/TwoAdic.lean:459",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "posLog_apply_eq"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "valuation_256_le_one",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 135,
+        "source": "refer/iut/Iut/Tripod/TwoAdic.lean:494",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "posLog_legendreJ_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "valuation_two_eq_one_of_ne",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 142,
+        "source": "refer/iut/Iut/Tripod/LogCond.lean:50",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "posLog_legendreJ_ge"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "finWeight",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 148,
+        "source": "refer/iut/Iut/Tripod/Height.lean:120",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "finWeight_pos",
+          "posLog_apply_eq",
+          "posLog_terms_eq"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "finWeight_pos",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 150,
+        "source": "refer/iut/Iut/Tripod/Height.lean:122",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "posLog_apply_eq",
+          "posLog_legendreJ_le",
+          "posLog_legendreJ_ge"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "posLog_apply_eq",
+        "current_path": "Definitions/Def_TripodFinitePlaceArithmetic.lean",
+        "line": 155,
+        "source": "refer/iut/Iut/Tripod/Height.lean:127",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "posLog_terms_eq",
+          "posLog_legendreJ_le",
+          "posLog_legendreJ_ge"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+        "current_path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+        "line": 20,
+        "source": "refer/iut/Iut/Tripod/TwoAdic.lean:110",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "sum_localDeg_filter_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "sum_localDeg_filter_le",
+        "current_path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+        "line": 36,
+        "source": "refer/iut/Iut/Tripod/TwoAdic.lean:126",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "sum_inertDeg_filter_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "sum_inertDeg_filter_le",
+        "current_path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+        "line": 87,
+        "source": "refer/iut/Iut/Tripod/TwoAdic.lean:177",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "card_filter_residueChar_mem_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "card_filter_residueChar_mem_le",
+        "current_path": "Definitions/Def_TripodFinitePrimeCounting.lean",
+        "line": 94,
+        "source": "refer/iut/Iut/Tripod/Height.lean:722",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "legendreFiniteLowerBound"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "posLog_terms_eq",
+        "current_path": "Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+        "line": 24,
+        "source": "refer/iut/Iut/Tripod/Height.lean:445",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "posLog_legendreJ_le",
+          "posLog_legendreJ_ge"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "posLog_legendreJ_le",
+        "current_path": "Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+        "line": 35,
+        "source": "refer/iut/Iut/Tripod/Height.lean:456",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "legendreFiniteUpperBound"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "posLog_legendreJ_ge",
+        "current_path": "Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+        "line": 51,
+        "source": "refer/iut/Iut/Tripod/Height.lean:472",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "legendreFiniteLowerBound"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "legendreBound",
+        "current_path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+        "line": 25,
+        "source": "refer/iut/Iut/Tripod/Height.lean:263",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "posLog_terms_eq",
+          "posLog_legendreJ_le",
+          "posLog_legendreJ_ge",
+          "legendreBound_nonneg",
+          "max_log_valuation_legendreJ_le",
+          "legendreBound_le_max_log_valuation_legendreJ"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "legendreBound_nonneg",
+        "current_path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+        "line": 28,
+        "source": "refer/iut/Iut/Tripod/Height.lean:266",
+        "classification": "optional_lightweight_definition_or_structural_bridge",
+        "verified_internal_consumers": [
+          "posLog_legendreJ_le",
+          "max_log_valuation_legendreJ_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "valuation_legendreJ_ne_zero_iff",
+        "current_path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+        "line": 39,
+        "source": "refer/iut/Iut/Tripod/Height.lean:277",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "max_log_valuation_legendreJ_le",
+          "legendreBound_le_max_log_valuation_legendreJ"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "log_valuation_legendreJ",
+        "current_path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+        "line": 53,
+        "source": "refer/iut/Iut/Tripod/Height.lean:291",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "max_log_valuation_legendreJ_le",
+          "legendreBound_le_max_log_valuation_legendreJ"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "legendre_valuation_cases",
+        "current_path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+        "line": 73,
+        "source": "refer/iut/Iut/Tripod/Height.lean:311",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "max_log_valuation_legendreJ_le",
+          "legendreBound_le_max_log_valuation_legendreJ"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "max_log_valuation_legendreJ_le",
+        "current_path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+        "line": 114,
+        "source": "refer/iut/Iut/Tripod/Height.lean:352",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "posLog_legendreJ_le"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "legendreBound_le_max_log_valuation_legendreJ",
+        "current_path": "Definitions/Def_TripodLegendreValuationBounds.lean",
+        "line": 166,
+        "source": "refer/iut/Iut/Tripod/Height.lean:404",
+        "classification": "proof_layer",
+        "verified_internal_consumers": [
+          "posLog_legendreJ_ge"
+        ],
+        "external_role": [],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "solution",
+        "current_path": "Solutions/Sol_LegendreFiniteSourceClosure.lean",
+        "line": 12,
+        "source": "existing four-child composer from /tmp/p2m-legendre-height-next-20261114",
+        "classification": "exact_parent_or_closure_solution",
+        "verified_internal_consumers": [],
+        "external_role": [
+          "exact existing CanonicalLegendreHeightComparison platform parent"
+        ],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "legendreFiniteLowerBound",
+        "current_path": "Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound.lean",
+        "line": 22,
+        "source": "refer/iut/Iut/Tripod/Height.lean:743 finHeight_legendreJ_ge",
+        "classification": "exact_parent_or_closure_solution",
+        "verified_internal_consumers": [
+          "solution"
+        ],
+        "external_role": [
+          "existing canonicalLegendreHeightComparison_of_source_children"
+        ],
+        "has_actual_consumer_or_terminal_role": true
+      },
+      {
+        "name": "legendreFiniteUpperBound",
+        "current_path": "Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound.lean",
+        "line": 20,
+        "source": "refer/iut/Iut/Tripod/Height.lean:714 finHeight_legendreJ_le",
+        "classification": "exact_parent_or_closure_solution",
+        "verified_internal_consumers": [
+          "solution"
+        ],
+        "external_role": [
+          "existing canonicalLegendreHeightComparison_of_source_children"
+        ],
+        "has_actual_consumer_or_terminal_role": true
+      }
+    ]
+  },
+  "license_and_provenance": {
+    "all_7_archived_source_hashes_match": true,
+    "all_8_candidate_hashes_match": true,
+    "source_license": "refer/iut/LICENSE contains Apache License Version 2.0; original source headers are retained in the 7 substantive draft files. The closure-only solution currently has no copyright header.",
+    "delivery_action": "Retain original copyright/author/license notices and identify the adaptation. Include the Apache 2.0 license text with any distributed source bundle (current temporary draft and prove2me_workspace have no root LICENSE); do not leave a distributed header pointing to an absent LICENSE. Emitted remote proofs containing copied source should retain the same notices.",
+    "historical_revision": "Unverified; archived hashes establish the reviewed local source, not an upstream historical revision."
+  },
+  "execution": {
+    "compiled": false,
+    "MCP_CI_called": false,
+    "API_called": false,
+    "Git_called": false,
+    "main_workspace_written": false,
+    "draft_written": false,
+    "only_report_written": true,
+    "all_rg_used_required_two_core_wrapper": true
+  },
+  "not_claimed": [
+    "Lean elaboration/kernel acceptance",
+    "compiler-confirmed consumers or standard-axiom closure",
+    "resource measurements",
+    "platform proof closure",
+    "completion of original mathematical parent or abc"
+  ]
+}

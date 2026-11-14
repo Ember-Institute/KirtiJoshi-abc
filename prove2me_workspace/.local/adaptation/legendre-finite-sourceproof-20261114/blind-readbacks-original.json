@@ -1,0 +1,1313 @@
+{
+  "metadata": {
+    "schema": "blind_trilingual_lean_readback_v1",
+    "scope": "48 declarations in the eight supplied Lean draft files only",
+    "reader": "Codex independent finite_readback session",
+    "requested_model": "gpt-6.1-sol",
+    "runtime_model_id": null,
+    "model_provenance": "Parent confirms spawn_agent requested model=gpt-6.1-sol with fork_turns=none and the tool accepted that request; this reader does not claim a separately exposed runtime model ID.",
+    "created_date": "2026-11-14",
+    "status": "static source readback; no Lean elaboration, compilation, MCP-CI submission, API operation, or Git operation performed",
+    "independence": {
+      "english": "Independently read from the supplied Lean files, necessary current Definitions dependencies and the two specified trilingual rules documents. No source paper, README, source ledger, refer proof or expected natural-language statement was read.",
+      "translations": "zh_Hans and ja were authored by the same reader as translations aligned to the English readback and the same formal code. They are not two additional independent audits.",
+      "quotations": "All quotations fields are null; no paper quotation was produced."
+    },
+    "binding_note": "static_signature is the literal declaration header before :=. static_section_context records inherited source binders and include/omit conditions; neither is a compiler-elaborated type. source_span covers the declaration including its body. Root must bind compiler-produced full names, universes, parameter order, types and axiom output to the recorded source hashes.",
+    "notations": {
+      "real_log_at_zero": "Real.log 0 = 0; log⁺ t = max(0, Real.log t)",
+      "integer_valuation_log": "ℓ is WithZero.log on ℤᵐ⁰, not Real.log; ℓ(0)=0 and ℓ(exp m)=m",
+      "actual_point_field": "F_x = ℚ(x) as the actual simple intermediate field inside AlgebraicClosure ℚ; λ_x is its generator and d_x=[F_x:ℚ]",
+      "finite_height_normalization": "H_fin is a sum over every finite place of the actual field, without degree division or infinite-place contribution",
+      "finite_place_logarithmic_weight": "f_w log p_w; e_w occurs in the counting product e_w f_w, not in this weight"
+    },
+    "dependencies_read": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+        "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodStatementIIInputs.lean",
+        "sha256": "5ce42a6371d13c7a4fc22dbfcfe7c5d059feb7e7877e9787d53b0eaeb2dee5be"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodCanonicalHighHeightInputs.lean",
+        "sha256": "c3439a404800a6edd860719ac10cb4bc9d5912f7ccdac7d81e71b7082cb773cd"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodLegendreHeightComparisonInputs.lean",
+        "sha256": "e47cb0d5296ad7c4b7eddbdd16637a14b187e08ed455a6f2fd653fa2a70dab51"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodLegendreHeightBasics.lean",
+        "sha256": "e5310355215b1e468bec258b6eb906f916b95885403dc6f9ca167f796b84becf"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodLegendreHeightComparisonComposition.lean",
+        "sha256": "a86fdd54151d866cbe2d17b6ba3295aefae1a937b43e3b4e0bba04fc439cbe40"
+      }
+    ],
+    "rules_read": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/docs/三语自然语言读回原则.md",
+        "sha256": "180c67d086707376e296b6e66a0abb54657454e67a700e2fa4444a6d8516c400"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/docs/三语术语名词关键对照.md",
+        "sha256": "c359fefad83c56790fa3c4302eb9306e43c7036c82cab249b9dbf3e3860f8e18"
+      }
+    ],
+    "declaration_count": 48,
+    "compilation_or_proof_status": "The supplied draft proofs and their imported children have not been compiled or axiom-audited by this reader. Readback of a proposition does not certify that its proof typechecks or that a larger mathematical parent obligation is closed."
+  },
+  "declarations": [
+    {
+      "userName": "AbcAdaptation.Tripod.support_posLog_subset",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 21,
+        "end_line": 28
+      },
+      "signature_span": {
+        "start_line": 21,
+        "end_line": 23
+      },
+      "static_signature": "lemma support_posLog_subset (y : T) :\n    Function.support (fun v : FinitePlace T => log⁺ (v y)) ⊆\n      Function.mulSupport (fun v : FinitePlace T => v y)",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. For y∈K define H_fin(y)=∑ᶠ_{w finite place of K}log⁺|y|_w, the unnormalized finite part of the relative logarithmic height; it includes all finite places and no infinite places. In particular H_fin(0)=0. For every y∈K, {w finite : log⁺|y|_w≠0}⊆{w finite : |y|_w≠1}. This includes y=0: its left-hand set is empty.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 对 y∈K，定义 H_fin(y)=∑ᶠ_{w 为 K 的有限处}log⁺|y|_w，这是未按次数归一化的相对对数高度的有限部分；求和涵盖所有有限处，不含无限处。特别地 H_fin(0)=0。 对每个 y∈K，均有 {w 为有限处：log⁺|y|_w≠0}⊆{w 为有限处：|y|_w≠1}。这里允许 y=0，此时左侧集合为空。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 y∈K に対し、H_fin(y)=∑ᶠ_{w は K の有限素点}log⁺|y|_w と定める。これは次数で正規化していない相対対数高さの有限部分であり、すべての有限素点を含み、無限素点を含まない。特に H_fin(0)=0 である。 すべての y∈K に対し、{w は有限素点 : log⁺|y|_w≠0}⊆{w は有限素点 : |y|_w≠1} である。y=0 も許され、その場合左辺は空集合である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.hasFiniteSupport_posLog",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 31,
+        "end_line": 38
+      },
+      "signature_span": {
+        "start_line": 31,
+        "end_line": 32
+      },
+      "static_signature": "lemma hasFiniteSupport_posLog (y : T) :\n    Function.HasFiniteSupport (fun v : FinitePlace T => log⁺ (v y))",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. For y∈K define H_fin(y)=∑ᶠ_{w finite place of K}log⁺|y|_w, the unnormalized finite part of the relative logarithmic height; it includes all finite places and no infinite places. In particular H_fin(0)=0. For every y∈K, the set {w finite : log⁺|y|_w≠0} is finite. For y=0 it is empty; the assertion has no nonzero hypothesis.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 对 y∈K，定义 H_fin(y)=∑ᶠ_{w 为 K 的有限处}log⁺|y|_w，这是未按次数归一化的相对对数高度的有限部分；求和涵盖所有有限处，不含无限处。特别地 H_fin(0)=0。 对每个 y∈K，集合 {w 为有限处：log⁺|y|_w≠0} 都是有限集。y=0 时该集合为空；声明没有要求 y 非零。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 y∈K に対し、H_fin(y)=∑ᶠ_{w は K の有限素点}log⁺|y|_w と定める。これは次数で正規化していない相対対数高さの有限部分であり、すべての有限素点を含み、無限素点を含まない。特に H_fin(0)=0 である。 すべての y∈K に対し、集合 {w は有限素点 : log⁺|y|_w≠0} は有限である。y=0 の場合は空集合であり、非零性は仮定されていない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The proof separates y=0 from y≠0; only the latter branch uses finite multiplicative support."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.finHeight_eq_sum",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 41,
+        "end_line": 44
+      },
+      "signature_span": {
+        "start_line": 41,
+        "end_line": 43
+      },
+      "static_signature": "lemma finHeight_eq_sum {y : T} {S : Finset (FinitePlace T)}\n    (hS : ∀ v : FinitePlace T, log⁺ (v y) ≠ 0 → v ∈ S) :\n    finHeight y = ∑ v ∈ S, log⁺ (v y)",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. For y∈K define H_fin(y)=∑ᶠ_{w finite place of K}log⁺|y|_w, the unnormalized finite part of the relative logarithmic height; it includes all finite places and no infinite places. In particular H_fin(0)=0. For every y∈K and every finite set S of finite places of K such that, for every finite place w, log⁺|y|_w≠0 implies w∈S, one has H_fin(y)=∑_{w∈S}log⁺|y|_w. S need only contain the support, not equal it; S may be empty, including when y=0.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 对 y∈K，定义 H_fin(y)=∑ᶠ_{w 为 K 的有限处}log⁺|y|_w，这是未按次数归一化的相对对数高度的有限部分；求和涵盖所有有限处，不含无限处。特别地 H_fin(0)=0。 对每个 y∈K 及 K 的有限处的每个有限集 S，若对任意有限处 w 均有 log⁺|y|_w≠0 ⇒ w∈S，则 H_fin(y)=∑_{w∈S}log⁺|y|_w。只要求 S 包含支撑，不要求相等；S 可以为空，y=0 也在允许范围内。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 y∈K に対し、H_fin(y)=∑ᶠ_{w は K の有限素点}log⁺|y|_w と定める。これは次数で正規化していない相対対数高さの有限部分であり、すべての有限素点を含み、無限素点を含まない。特に H_fin(0)=0 である。 すべての y∈K と K の有限素点の任意の有限集合 S に対し、すべての有限素点 w について log⁺|y|_w≠0 ⇒ w∈S ならば、H_fin(y)=∑_{w∈S}log⁺|y|_w である。S は台を含めばよく、一致する必要はない。S は空でもよく、y=0 も許される。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.posLog_finite_le",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 51,
+        "end_line": 60
+      },
+      "signature_span": {
+        "start_line": 51,
+        "end_line": 54
+      },
+      "static_signature": "lemma posLog_finite_le (hx : x ∈ K.set) (v : FinitePlace (fieldOf x.1))\n    (hv : residueChar v ∈ K.V) :\n    log⁺ (v (gen x.1)) ≤ K.c ∧ log⁺ (v (gen x.1)⁻¹) ≤ K.c ∧\n      log⁺ (v (gen x.1 - 1)⁻¹) ≤ K.c",
+      "static_section_context": "{K : CompactlyBounded} {x : Pt}; only variables used by the statement are generalized",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. A compactly bounded datum C consists of a finite set V_C of prime natural numbers containing 2 and a real number c_C. Membership x∈C.set means: for every finite place v of F_x with p_v=char(O_{F_x}/P_v)∈V_C, both |log|λ_x|_v|≤c_C and |log|λ_x−1|_v|≤c_C; and for every infinite place w of F_x, both |log|λ_x|_w|≤c_C and |log|λ_x−1|_w|≤c_C. No degree bound is part of this datum. Its real parameter is not assumed nonnegative by the structure, although membership forces c_C≥0. For every such C and every point x∈C.set, and for each finite place v of F_x satisfying p_v∈V_C, the three bounds log⁺|λ_x|_v≤c_C, log⁺|λ_x⁻¹|_v≤c_C, and log⁺|(λ_x−1)⁻¹|_v≤c_C hold simultaneously. There is no conclusion here for finite places outside V_C.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 一组紧有界数据 C 包含由素自然数组成且含 2 的有限集 V_C，以及实数 c_C。条件 x∈C.set 的实际含义是：对 F_x 的每个满足 p_v=char(O_{F_x}/P_v)∈V_C 的有限处 v，均有 |log|λ_x|_v|≤c_C 和 |log|λ_x−1|_v|≤c_C；对 F_x 的每个无限处 w，也均有 |log|λ_x|_w|≤c_C 和 |log|λ_x−1|_w|≤c_C。这组数据不含次数上界。结构本身未假设实参数非负，但成员条件推出 c_C≥0。 对每组这样的 C、每个 x∈C.set 及 F_x 中每个满足 p_v∈V_C 的有限处 v，以下三个界同时成立：log⁺|λ_x|_v≤c_C、log⁺|λ_x⁻¹|_v≤c_C、log⁺|(λ_x−1)⁻¹|_v≤c_C。此声明未对剩余有限处给出这三个界。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 コンパクト有界データ C は、2 を含む素数からなる有限集合 V_C と実数 c_C からなる。x∈C.set とは、F_x の有限素点 v で p_v=char(O_{F_x}/P_v)∈V_C を満たすすべてのものに対し |log|λ_x|_v|≤c_C と |log|λ_x−1|_v|≤c_C が成り立ち、さらに F_x のすべての無限素点 w に対し |log|λ_x|_w|≤c_C と |log|λ_x−1|_w|≤c_C が成り立つことである。このデータに次数の上界は含まれない。構造の実数パラメータ自体に非負性の仮定はないが、所属条件から c_C≥0 が従う。 このような任意の C、任意の x∈C.set、および p_v∈V_C を満たす F_x の任意の有限素点 v に対し、log⁺|λ_x|_v≤c_C、log⁺|λ_x⁻¹|_v≤c_C、log⁺|(λ_x−1)⁻¹|_v≤c_C が同時に成り立つ。V_C の外の有限素点についてこの三つの上界を主張していない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.suppFinset",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 62,
+        "end_line": 66
+      },
+      "signature_span": {
+        "start_line": 62,
+        "end_line": 62
+      },
+      "static_signature": "noncomputable def suppFinset (x : Pt) : Finset (FinitePlace (fieldOf x.1))",
+      "static_section_context": "{K : CompactlyBounded} {x : Pt} are in scope; the explicit (x : Pt) shadows x where present; unused K is not generalized",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. For each point x, suppFinset(x) is defined to be the finite set S_x consisting exactly of every finite place v of F_x where at least one of log⁺|λ_x|_v, log⁺|λ_x⁻¹|_v, log⁺|(λ_x−1)⁻¹|_v, log⁺|j(λ_x)|_v is nonzero. It is the union of these four supports, converted from a finite set to a finset; it is not restricted to primes in any chosen V. If j(λ_x)=0, the fourth support is empty.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 对每个点 x，suppFinset(x) 定义为有限集 S_x，精确包含以下四项至少一项非零的全部有限处 v：log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v。它由这四个支撑的并经有限集合转为有限集数据而得，并未限于某个选定 V 中的素数。若 j(λ_x)=0，则第四个支撑为空。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 各点 x に対し、suppFinset(x) は、log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v の少なくとも一つが零でないすべての有限素点 v からなる有限集合 S_x と定義される。これは四つの台の和集合を有限集合データへ変換したものであり、選ばれた V の素数だけに制限されない。j(λ_x)=0 ならば第四の台は空である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.mem_suppFinset_of_ne",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 68,
+        "end_line": 74
+      },
+      "signature_span": {
+        "start_line": 68,
+        "end_line": 71
+      },
+      "static_signature": "lemma mem_suppFinset_of_ne {v : FinitePlace (fieldOf x.1)}\n    (h : log⁺ (v (gen x.1)) ≠ 0 ∨ log⁺ (v (gen x.1)⁻¹) ≠ 0 ∨\n      log⁺ (v (gen x.1 - 1)⁻¹) ≠ 0 ∨ log⁺ (v (legendreJ (gen x.1))) ≠ 0) :\n    v ∈ suppFinset x",
+      "static_section_context": "{K : CompactlyBounded} {x : Pt}; only variables used by the statement are generalized",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. Define S_x to be the finite set of all finite places v of F_x at which at least one of log⁺|λ_x|_v, log⁺|λ_x⁻¹|_v, log⁺|(λ_x−1)⁻¹|_v, log⁺|j(λ_x)|_v is nonzero. For every point x and every finite place v of F_x, if log⁺|λ_x|_v≠0 or log⁺|λ_x⁻¹|_v≠0 or log⁺|(λ_x−1)⁻¹|_v≠0 or log⁺|j(λ_x)|_v≠0, then v∈suppFinset(x)=S_x. This is a one-direction implication with a four-way disjunctive premise, and does not require j(λ_x)≠0.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 令 S_x 为 F_x 中满足以下四项至少一项非零的所有有限处 v 所组成的有限集：log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v。 对每个点 x 及 F_x 的每个有限处 v，若 log⁺|λ_x|_v≠0、log⁺|λ_x⁻¹|_v≠0、log⁺|(λ_x−1)⁻¹|_v≠0、log⁺|j(λ_x)|_v≠0 中至少一项成立，则 v∈suppFinset(x)=S_x。形式声明是以前述四项析取为前提的单向蕴含，不要求 j(λ_x)≠0。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 S_x を、log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v のうち少なくとも一つが零でない F_x のすべての有限素点 v からなる有限集合とする。 任意の点 x と F_x の任意の有限素点 v に対し、log⁺|λ_x|_v≠0、log⁺|λ_x⁻¹|_v≠0、log⁺|(λ_x−1)⁻¹|_v≠0、log⁺|j(λ_x)|_v≠0 の少なくとも一つが成り立てば、v∈suppFinset(x)=S_x である。形式的主張は四つの選言を前提とする一方向の含意であり、j(λ_x)≠0 は仮定しない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.finHeight_gen_eq_sum",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 76,
+        "end_line": 78
+      },
+      "signature_span": {
+        "start_line": 76,
+        "end_line": 77
+      },
+      "static_signature": "lemma finHeight_gen_eq_sum (x : Pt) :\n    finHeight (gen x.1) = ∑ v ∈ suppFinset x, log⁺ (v (gen x.1))",
+      "static_section_context": "{K : CompactlyBounded} {x : Pt} are in scope; the explicit (x : Pt) shadows x where present; unused K is not generalized",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. Define S_x to be the finite set of all finite places v of F_x at which at least one of log⁺|λ_x|_v, log⁺|λ_x⁻¹|_v, log⁺|(λ_x−1)⁻¹|_v, log⁺|j(λ_x)|_v is nonzero. For every point x, H_fin(λ_x)=∑_{v∈S_x}log⁺|λ_x|_v. The finite set is the common union of all four supports, including finite places above every rational prime that occurs. No compactly bounded datum or j≠0 hypothesis is used; if j(λ_x)=0 its height and all its local terms are zero.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 令 S_x 为 F_x 中满足以下四项至少一项非零的所有有限处 v 所组成的有限集：log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v。 对每个点 x，H_fin(λ_x)=∑_{v∈S_x}log⁺|λ_x|_v。所用有限集是四个支撑的公共并集，保留所出现的每个有理素数上方的有限处。这里不使用紧有界数据，也不要求 j≠0；若 j(λ_x)=0，则其高度与全部局部项均为零。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 S_x を、log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v のうち少なくとも一つが零でない F_x のすべての有限素点 v からなる有限集合とする。 すべての点 x に対し、H_fin(λ_x)=∑_{v∈S_x}log⁺|λ_x|_v である。有限集合は四つの台の共通の和集合であり、現れるすべての有理素数の上の有限素点を含む。コンパクト有界データも j≠0 の仮定も用いない。j(λ_x)=0 ならば、その高さとすべての局所項は零である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.finHeight_gen_inv_eq_sum",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 80,
+        "end_line": 82
+      },
+      "signature_span": {
+        "start_line": 80,
+        "end_line": 81
+      },
+      "static_signature": "lemma finHeight_gen_inv_eq_sum (x : Pt) :\n    finHeight (gen x.1)⁻¹ = ∑ v ∈ suppFinset x, log⁺ (v (gen x.1)⁻¹)",
+      "static_section_context": "{K : CompactlyBounded} {x : Pt} are in scope; the explicit (x : Pt) shadows x where present; unused K is not generalized",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. Define S_x to be the finite set of all finite places v of F_x at which at least one of log⁺|λ_x|_v, log⁺|λ_x⁻¹|_v, log⁺|(λ_x−1)⁻¹|_v, log⁺|j(λ_x)|_v is nonzero. For every point x, H_fin(λ_x⁻¹)=∑_{v∈S_x}log⁺|λ_x⁻¹|_v. The finite set is the common union of all four supports, including finite places above every rational prime that occurs. No compactly bounded datum or j≠0 hypothesis is used; if j(λ_x)=0 its height and all its local terms are zero.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 令 S_x 为 F_x 中满足以下四项至少一项非零的所有有限处 v 所组成的有限集：log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v。 对每个点 x，H_fin(λ_x⁻¹)=∑_{v∈S_x}log⁺|λ_x⁻¹|_v。所用有限集是四个支撑的公共并集，保留所出现的每个有理素数上方的有限处。这里不使用紧有界数据，也不要求 j≠0；若 j(λ_x)=0，则其高度与全部局部项均为零。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 S_x を、log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v のうち少なくとも一つが零でない F_x のすべての有限素点 v からなる有限集合とする。 すべての点 x に対し、H_fin(λ_x⁻¹)=∑_{v∈S_x}log⁺|λ_x⁻¹|_v である。有限集合は四つの台の共通の和集合であり、現れるすべての有理素数の上の有限素点を含む。コンパクト有界データも j≠0 の仮定も用いない。j(λ_x)=0 ならば、その高さとすべての局所項は零である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.finHeight_gen_sub_one_inv_eq_sum",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 84,
+        "end_line": 86
+      },
+      "signature_span": {
+        "start_line": 84,
+        "end_line": 85
+      },
+      "static_signature": "lemma finHeight_gen_sub_one_inv_eq_sum (x : Pt) :\n    finHeight (gen x.1 - 1)⁻¹ = ∑ v ∈ suppFinset x, log⁺ (v (gen x.1 - 1)⁻¹)",
+      "static_section_context": "{K : CompactlyBounded} {x : Pt} are in scope; the explicit (x : Pt) shadows x where present; unused K is not generalized",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. Define S_x to be the finite set of all finite places v of F_x at which at least one of log⁺|λ_x|_v, log⁺|λ_x⁻¹|_v, log⁺|(λ_x−1)⁻¹|_v, log⁺|j(λ_x)|_v is nonzero. For every point x, H_fin((λ_x−1)⁻¹)=∑_{v∈S_x}log⁺|(λ_x−1)⁻¹|_v. The finite set is the common union of all four supports, including finite places above every rational prime that occurs. No compactly bounded datum or j≠0 hypothesis is used; if j(λ_x)=0 its height and all its local terms are zero.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 令 S_x 为 F_x 中满足以下四项至少一项非零的所有有限处 v 所组成的有限集：log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v。 对每个点 x，H_fin((λ_x−1)⁻¹)=∑_{v∈S_x}log⁺|(λ_x−1)⁻¹|_v。所用有限集是四个支撑的公共并集，保留所出现的每个有理素数上方的有限处。这里不使用紧有界数据，也不要求 j≠0；若 j(λ_x)=0，则其高度与全部局部项均为零。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 S_x を、log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v のうち少なくとも一つが零でない F_x のすべての有限素点 v からなる有限集合とする。 すべての点 x に対し、H_fin((λ_x−1)⁻¹)=∑_{v∈S_x}log⁺|(λ_x−1)⁻¹|_v である。有限集合は四つの台の共通の和集合であり、現れるすべての有理素数の上の有限素点を含む。コンパクト有界データも j≠0 の仮定も用いない。j(λ_x)=0 ならば、その高さとすべての局所項は零である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.finHeight_legendreJ_eq_sum",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 88,
+        "end_line": 90
+      },
+      "signature_span": {
+        "start_line": 88,
+        "end_line": 89
+      },
+      "static_signature": "lemma finHeight_legendreJ_eq_sum (x : Pt) :\n    finHeight (legendreJ (gen x.1)) = ∑ v ∈ suppFinset x, log⁺ (v (legendreJ (gen x.1)))",
+      "static_section_context": "{K : CompactlyBounded} {x : Pt} are in scope; the explicit (x : Pt) shadows x where present; unused K is not generalized",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. Define S_x to be the finite set of all finite places v of F_x at which at least one of log⁺|λ_x|_v, log⁺|λ_x⁻¹|_v, log⁺|(λ_x−1)⁻¹|_v, log⁺|j(λ_x)|_v is nonzero. For every point x, H_fin(j(λ_x))=∑_{v∈S_x}log⁺|j(λ_x)|_v. The finite set is the common union of all four supports, including finite places above every rational prime that occurs. No compactly bounded datum or j≠0 hypothesis is used; if j(λ_x)=0 its height and all its local terms are zero.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 令 S_x 为 F_x 中满足以下四项至少一项非零的所有有限处 v 所组成的有限集：log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v。 对每个点 x，H_fin(j(λ_x))=∑_{v∈S_x}log⁺|j(λ_x)|_v。所用有限集是四个支撑的公共并集，保留所出现的每个有理素数上方的有限处。这里不使用紧有界数据，也不要求 j≠0；若 j(λ_x)=0，则其高度与全部局部项均为零。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 S_x を、log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v のうち少なくとも一つが零でない F_x のすべての有限素点 v からなる有限集合とする。 すべての点 x に対し、H_fin(j(λ_x))=∑_{v∈S_x}log⁺|j(λ_x)|_v である。有限集合は四つの台の共通の和集合であり、現れるすべての有理素数の上の有限素点を含む。コンパクト有界データも j≠0 の仮定も用いない。j(λ_x)=0 ならば、その高さとすべての局所項は零である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.two_mul_finHeight_sum_eq",
+      "module": "Definitions.Def_TripodFiniteHeightSupport",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFiniteHeightSupport.lean",
+      "sha256": "99f1147d3ac2f3df591faeb5f1a05b032d6edf2001fa015623973b624c24e8b3",
+      "source_span": {
+        "start_line": 93,
+        "end_line": 98
+      },
+      "signature_span": {
+        "start_line": 93,
+        "end_line": 96
+      },
+      "static_signature": "lemma two_mul_finHeight_sum_eq (x : Pt) :\n    2 * (finHeight (gen x.1) + finHeight (gen x.1)⁻¹ + finHeight (gen x.1 - 1)⁻¹) =\n      ∑ v ∈ suppFinset x,\n        2 * (log⁺ (v (gen x.1)) + log⁺ (v (gen x.1)⁻¹) + log⁺ (v (gen x.1 - 1)⁻¹))",
+      "static_section_context": "{K : CompactlyBounded} {x : Pt} are in scope; the explicit (x : Pt) shadows x where present; unused K is not generalized",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. Define S_x to be the finite set of all finite places v of F_x at which at least one of log⁺|λ_x|_v, log⁺|λ_x⁻¹|_v, log⁺|(λ_x−1)⁻¹|_v, log⁺|j(λ_x)|_v is nonzero. For every point x, 2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹))=∑_{v∈S_x}2(log⁺|λ_x|_v+log⁺|λ_x⁻¹|_v+log⁺|(λ_x−1)⁻¹|_v). All three finite heights use the same finite-place set S_x on the right. There is no j≠0, compactness, or degree-bound premise.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 令 S_x 为 F_x 中满足以下四项至少一项非零的所有有限处 v 所组成的有限集：log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v。 对每个点 x，2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹))=∑_{v∈S_x}2(log⁺|λ_x|_v+log⁺|λ_x⁻¹|_v+log⁺|(λ_x−1)⁻¹|_v)。右侧三种有限高度的局部项统一在同一个有限处集 S_x 上求和。不以 j≠0、紧有界性或次数上界为前提。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 S_x を、log⁺|λ_x|_v、log⁺|λ_x⁻¹|_v、log⁺|(λ_x−1)⁻¹|_v、log⁺|j(λ_x)|_v のうち少なくとも一つが零でない F_x のすべての有限素点 v からなる有限集合とする。 すべての点 x に対し、2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹))=∑_{v∈S_x}2(log⁺|λ_x|_v+log⁺|λ_x⁻¹|_v+log⁺|(λ_x−1)⁻¹|_v) である。右辺では三つの有限部分の局所項を同じ有限素点集合 S_x 上で足す。j≠0、コンパクト有界性、次数の上界は仮定しない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.inertDeg",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 23,
+        "end_line": 24
+      },
+      "signature_span": {
+        "start_line": 23,
+        "end_line": 23
+      },
+      "static_signature": "noncomputable def inertDeg (K : Type*) [Field K] [NumberField K] (w : FinitePlace K) : ℕ",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, inertDeg(K,w) is defined as the natural-number inertia degree Ideal.inertiaDeg(P_w,ℤ), namely f_w, the residue-field extension degree [O_K/P_w:ℤ/(P_w∩ℤ)].",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，inertDeg(K,w) 定义为自然数值的惯性次数 Ideal.inertiaDeg(P_w,ℤ)，即剩余域扩张次数 f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K の任意の有限素点 w に対し、inertDeg(K,w) は自然数値の惰性次数 Ideal.inertiaDeg(P_w,ℤ)、すなわち剰余体の拡大次数 f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] と定義される。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.ramIdx",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 26,
+        "end_line": 27
+      },
+      "signature_span": {
+        "start_line": 26,
+        "end_line": 26
+      },
+      "static_signature": "noncomputable def ramIdx (K : Type*) [Field K] [NumberField K] (w : FinitePlace K) : ℕ",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, ramIdx(K,w) is defined as the natural-number ramification index Ideal.ramificationIdx(P_w,ℤ), namely e_w; it is the exponent of P_w in the factorization of the extension of its underlying prime of ℤ to O_K.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，ramIdx(K,w) 定义为自然数值的分歧指数 Ideal.ramificationIdx(P_w,ℤ)，即 e_w；它是 ℤ 中下方素理想扩张到 O_K 后的素理想分解中 P_w 的指数。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K の任意の有限素点 w に対し、ramIdx(K,w) は自然数値の分岐指数 Ideal.ramificationIdx(P_w,ℤ)、すなわち e_w と定義される。これは ℤ の下にある素イデアルを O_K に拡張したイデアルの素イデアル分解における P_w の指数である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.localDeg",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 29,
+        "end_line": 30
+      },
+      "signature_span": {
+        "start_line": 29,
+        "end_line": 29
+      },
+      "static_signature": "noncomputable def localDeg (K : Type*) [Field K] [NumberField K] (w : FinitePlace K) : ℕ",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, localDeg(K,w) is defined as the natural-number product ramIdx(K,w)·inertDeg(K,w)=e_w f_w. This declaration defines that product; its statement is not an independent identification with a completion dimension.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，localDeg(K,w) 定义为自然数乘积 ramIdx(K,w)·inertDeg(K,w)=e_w f_w。本声明定义这一乘积，其陈述本身未另行断言该乘积等于某个完备化的维数。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K の任意の有限素点 w に対し、localDeg(K,w) は自然数の積 ramIdx(K,w)·inertDeg(K,w)=e_w f_w と定義される。この宣言は積を定義するものであり、その主張自体は完備化の次元との同一視ではない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.completionAt",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 32,
+        "end_line": 33
+      },
+      "signature_span": {
+        "start_line": 32,
+        "end_line": 33
+      },
+      "static_signature": "noncomputable abbrev completionAt (K : Type*) [Field K] [NumberField K]\n    (w : FinitePlace K)",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, completionAt(K,w) abbreviates P_w.adicCompletion(K), the completion of K for the adic valuation associated with P_w. The inputs are the actual number field K and its finite place w; no additional local field is supplied.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，completionAt(K,w) 是 P_w.adicCompletion(K) 的缩写，即 K 关于 P_w 所关联的进赋值的完备化。输入为实际数域 K 及其有限处 w，并未另给一个局部域。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K の任意の有限素点 w に対し、completionAt(K,w) は P_w.adicCompletion(K)、すなわち P_w に対応する進付値に関する K の完備化の略記である。入力は実際の数体 K とその有限素点 w であり、別の局所体を与えるものではない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.residueChar_prime",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 37,
+        "end_line": 43
+      },
+      "signature_span": {
+        "start_line": 37,
+        "end_line": 37
+      },
+      "static_signature": "lemma residueChar_prime (w : FinitePlace k) : (residueChar w).Prime",
+      "static_section_context": "{k : Type*} [Field k] [NumberField k]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, p_w=ringChar(O_K/P_w) is a prime natural number. In particular p_w is neither 0 nor 1; the statement ranges over every finite place.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，p_w=ringChar(O_K/P_w) 是素自然数。特别地 p_w 不等于 0 或 1；声明覆盖全部有限处。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、p_w=ringChar(O_K/P_w) は素数である。特に p_w は 0 でも 1 でもなく、主張はすべての有限素点に及ぶ。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.under_int_eq",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 48,
+        "end_line": 67
+      },
+      "signature_span": {
+        "start_line": 48,
+        "end_line": 49
+      },
+      "static_signature": "lemma under_int_eq (v : FinitePlace K) :\n    v.maximalIdeal.asIdeal.under ℤ = Ideal.span {(residueChar v : ℤ)}",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, the contraction P_w∩ℤ of its prime ideal along ℤ→O_K equals the principal ideal (p_w)=Ideal.span{(p_w:ℤ)} in ℤ.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，沿 ℤ→O_K 收缩其素理想得到的 P_w∩ℤ 等于 ℤ 中的主理想 (p_w)=Ideal.span{(p_w:ℤ)}。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、ℤ→O_K に沿う素イデアルの縮約 P_w∩ℤ は、ℤ の単項イデアル (p_w)=Ideal.span{(p_w:ℤ)} に等しい。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.under_int_ne_bot",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 70,
+        "end_line": 72
+      },
+      "signature_span": {
+        "start_line": 70,
+        "end_line": 70
+      },
+      "static_signature": "lemma under_int_ne_bot (v : FinitePlace K) : v.maximalIdeal.asIdeal.under ℤ ≠ ⊥",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, its contracted ideal P_w∩ℤ is not the zero ideal of ℤ.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，其收缩理想 P_w∩ℤ 都不是 ℤ 的零理想。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、縮約イデアル P_w∩ℤ は ℤ の零イデアルではない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.under_int_isMaximal",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 75,
+        "end_line": 83
+      },
+      "signature_span": {
+        "start_line": 75,
+        "end_line": 75
+      },
+      "static_signature": "lemma under_int_isMaximal (v : FinitePlace K) : (v.maximalIdeal.asIdeal.under ℤ).IsMaximal",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, its contracted ideal P_w∩ℤ is a maximal ideal of ℤ.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，其收缩理想 P_w∩ℤ 都是 ℤ 的极大理想。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、縮約イデアル P_w∩ℤ は ℤ の極大イデアルである。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.liesOver_span_residueChar",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 86,
+        "end_line": 88
+      },
+      "signature_span": {
+        "start_line": 86,
+        "end_line": 87
+      },
+      "static_signature": "lemma liesOver_span_residueChar (v : FinitePlace K) :\n    v.maximalIdeal.asIdeal.LiesOver (Ideal.span {(residueChar v : ℤ)})",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, P_w lies over the ideal (p_w) of ℤ: contraction along ℤ→O_K gives exactly P_w∩ℤ=(p_w). This is a LiesOver assertion for this specified prime ideal, not an existence assertion for an unspecified prime.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，P_w 位于 ℤ 的理想 (p_w) 上方，即沿 ℤ→O_K 收缩后精确有 P_w∩ℤ=(p_w)。这是针对该指定素理想的 LiesOver 断言，不是关于未指定素理想的存在性断言。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、P_w は ℤ のイデアル (p_w) の上にある。すなわち ℤ→O_K に沿う縮約は正確に P_w∩ℤ=(p_w) である。指定された素イデアルについての LiesOver の主張であり、不特定の素イデアルの存在主張ではない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.absNorm_eq_pow_residueChar",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 91,
+        "end_line": 94
+      },
+      "signature_span": {
+        "start_line": 91,
+        "end_line": 92
+      },
+      "static_signature": "lemma absNorm_eq_pow_residueChar (v : FinitePlace K) :\n    Ideal.absNorm v.maximalIdeal.asIdeal = residueChar v ^ inertDeg K v",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, the absolute ideal norm satisfies N(P_w)=#(O_K/P_w)=p_w^{f_w}, as an equality of natural numbers.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，绝对理想范数满足自然数等式 N(P_w)=#(O_K/P_w)=p_w^{f_w}。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、絶対イデアルノルムは自然数の等式 N(P_w)=#(O_K/P_w)=p_w^{f_w} を満たす。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.inertDeg_pos'",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 97,
+        "end_line": 98
+      },
+      "signature_span": {
+        "start_line": 97,
+        "end_line": 97
+      },
+      "static_signature": "lemma inertDeg_pos' (v : FinitePlace K) : 0 < inertDeg K v",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, 0<inertDeg(K,w)=f_w. This is strict positivity of a natural number.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，都有 0<inertDeg(K,w)=f_w。这是自然数的严格正性。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、0<inertDeg(K,w)=f_w である。これは自然数の厳密な正値性である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.ramIdx_pos'",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 101,
+        "end_line": 102
+      },
+      "signature_span": {
+        "start_line": 101,
+        "end_line": 101
+      },
+      "static_signature": "lemma ramIdx_pos' (v : FinitePlace K) : 0 < ramIdx K v",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, 0<ramIdx(K,w)=e_w. This is strict positivity of a natural number.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，都有 0<ramIdx(K,w)=e_w。这是自然数的严格正性。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、0<ramIdx(K,w)=e_w である。これは自然数の厳密な正値性である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.norm_eq_zpow_of_valued",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 105,
+        "end_line": 110
+      },
+      "signature_span": {
+        "start_line": 105,
+        "end_line": 107
+      },
+      "static_signature": "lemma norm_eq_zpow_of_valued (v : FinitePlace K) (x : completionAt K v) (m : ℤ)\n    (hx : Valued.v x = exp m) :\n    ‖x‖ = ((residueChar v : ℝ) ^ inertDeg K v) ^ m",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. For every finite place w, every element a of completionAt(K,w)=P_w.adicCompletion(K), and every integer m, if its canonical completion valuation satisfies Valued.v(a)=exp(m), then its real norm satisfies ‖a‖=((p_w:ℝ)^{f_w})^m. The exponent m can be negative, zero, or positive; the rightmost power is an integer power. The premise forces a≠0 and does not cover the zero valuation value.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 对每个有限处 w、完备化 completionAt(K,w)=P_w.adicCompletion(K) 的每个元素 a 及每个整数 m，若其典范完备化赋值满足 Valued.v(a)=exp(m)，则实范数满足 ‖a‖=((p_w:ℝ)^{f_w})^m。m 可为负、零或正，最外层幂为整数幂。前提迫使 a≠0，不涵盖赋值为零的情形。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 任意の有限素点 w、完備化 completionAt(K,w)=P_w.adicCompletion(K) の任意の元 a、および任意の整数 m に対し、標準の完備化付値が Valued.v(a)=exp(m) を満たすならば、実ノルムは ‖a‖=((p_w:ℝ)^{f_w})^m を満たす。m は負・零・正のいずれでもよく、外側の冪は整数冪である。前提から a≠0 が従い、付値が零である場合は含まない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.two_mem_maximalIdeal_iff",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 115,
+        "end_line": 122
+      },
+      "signature_span": {
+        "start_line": 115,
+        "end_line": 116
+      },
+      "static_signature": "lemma two_mem_maximalIdeal_iff (v : FinitePlace k) :\n    (2 : 𝓞 k) ∈ v.maximalIdeal.asIdeal ↔ residueChar v = 2",
+      "static_section_context": "{k : Type*} [Field k] [NumberField k]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, the ring-of-integers element (2:O_K) belongs to P_w if and only if p_w=2. This is an equivalence and covers both residue-characteristic branches.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，整数环元素 (2:O_K) 属于 P_w，当且仅当 p_w=2。这是等价关系，涵盖剩余特征为 2 和不为 2 的两支。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、整数環の元 (2:O_K) が P_w に属することと p_w=2 は同値である。これは同値命題であり、剰余標数が 2 の場合とそれ以外の双方を含む。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.log_apply_eq",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 125,
+        "end_line": 133
+      },
+      "signature_span": {
+        "start_line": 125,
+        "end_line": 128
+      },
+      "static_signature": "theorem log_apply_eq {T : Type*} [Field T] [NumberField T] (𝔭 : FinitePlace T) {y : T}\n    (hy : y ≠ 0) :\n    Real.log (𝔭 y) = ((log (𝔭.maximalIdeal.valuation T y) : ℤ) : ℝ) *\n      (inertDeg T 𝔭 * Real.log (residueChar 𝔭))",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. For every finite place w of K and every y∈K with y≠0, log|y|_w=(ℓ(v_w(y)):ℝ)·((f_w:ℝ)log(p_w:ℝ)). Thus the integer valuation exponent is multiplied by f_w log p_w, with no e_w factor. No claim at y=0 is part of this theorem.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 对 K 的每个有限处 w 及每个非零 y∈K，有 log|y|_w=(ℓ(v_w(y)):ℝ)·((f_w:ℝ)log(p_w:ℝ))。因此整数赋值指数乘以的权重为 f_w log p_w，不含 e_w 因子。本定理未断言 y=0 时的公式。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 K のすべての有限素点 w とすべての零でない y∈K に対し、log|y|_w=(ℓ(v_w(y)):ℝ)·((f_w:ℝ)log(p_w:ℝ)) である。したがって整数値の付値指数に掛かる重みは f_w log p_w であり、e_w 因子は含まない。y=0 における公式はこの定理の主張には含まれない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.valuation_256_le_one",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 135,
+        "end_line": 139
+      },
+      "signature_span": {
+        "start_line": 135,
+        "end_line": 136
+      },
+      "static_signature": "theorem valuation_256_le_one {T : Type*} [Field T] [NumberField T] (w : FinitePlace T) :\n    w.maximalIdeal.valuation T 256 ≤ 1",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. For every finite place w of K, v_w(256)≤1 in the ordered monoid ℤᵐ⁰. This holds at every residue characteristic, including 2; no equality with 1 is asserted here.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 对 K 的每个有限处 w，在有序幺半群 ℤᵐ⁰ 中均有 v_w(256)≤1。这适用于所有剩余特征，包括 2；此处未断言它等于 1。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 K のすべての有限素点 w に対し、順序付きモノイド ℤᵐ⁰ において v_w(256)≤1 である。剰余標数が 2 の場合も含むすべての有限素点に適用され、ここでは 1 との等号は主張しない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.valuation_two_eq_one_of_ne",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 142,
+        "end_line": 146
+      },
+      "signature_span": {
+        "start_line": 142,
+        "end_line": 143
+      },
+      "static_signature": "lemma valuation_two_eq_one_of_ne {w : FinitePlace T} (h2 : residueChar w ≠ 2) :\n    w.maximalIdeal.valuation T 2 = 1",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. For every finite place w of K whose residue characteristic satisfies p_w≠2, v_w(2)=1. Because p_w is prime, this premise selects odd residue characteristic; the case p_w=2 is excluded.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 对 K 中每个满足剩余特征 p_w≠2 的有限处 w，有 v_w(2)=1。由于 p_w 为素数，前提选定奇剩余特征，排除了 p_w=2。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 剰余標数が p_w≠2 を満たす K のすべての有限素点 w に対し、v_w(2)=1 である。p_w は素数であるため、前提は奇剰余標数を選び、p_w=2 の場合を除く。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.finWeight",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 148,
+        "end_line": 148
+      },
+      "signature_span": {
+        "start_line": 148,
+        "end_line": 148
+      },
+      "static_signature": "noncomputable def finWeight (w : FinitePlace T) : ℝ",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, finWeight(w) is defined as the real number W_w=(f_w:ℝ)·log(p_w:ℝ). The factor is the inertia degree times the logarithm of residue characteristic, rather than e_w f_w or log p_w alone.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，finWeight(w) 定义为实数 W_w=(f_w:ℝ)·log(p_w:ℝ)。其因子为惯性次数乘以剩余特征的对数，而不是 e_w f_w 或单独的 log p_w。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、finWeight(w) は実数 W_w=(f_w:ℝ)·log(p_w:ℝ) と定義される。因子は惰性次数と剰余標数の対数の積であり、e_w f_w や log p_w だけではない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.finWeight_pos",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 150,
+        "end_line": 152
+      },
+      "signature_span": {
+        "start_line": 150,
+        "end_line": 150
+      },
+      "static_signature": "lemma finWeight_pos (w : FinitePlace T) : 0 < finWeight w",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K, the real weight finWeight(w)=f_w log p_w is strictly positive.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w，实权重 finWeight(w)=f_w log p_w 都严格大于零。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w に対し、実数の重み finWeight(w)=f_w log p_w は厳密に正である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.posLog_apply_eq",
+      "module": "Definitions.Def_TripodFinitePlaceArithmetic",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e",
+      "source_span": {
+        "start_line": 155,
+        "end_line": 159
+      },
+      "signature_span": {
+        "start_line": 155,
+        "end_line": 156
+      },
+      "static_signature": "lemma posLog_apply_eq (w : FinitePlace T) {y : T} (hy : y ≠ 0) :\n    log⁺ (w y) = finWeight w * max 0 ((log (w.maximalIdeal.valuation T y) : ℤ) : ℝ)",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. For every finite place w of K and every y∈K with y≠0, log⁺|y|_w=(f_w log p_w)·max(0,(ℓ(v_w(y)):ℝ)). The maximum on the right is a real maximum after casting the integer exponent; no e_w factor occurs. Although the formal functions are defined at zero, the hypothesis here excludes y=0.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 对 K 的每个有限处 w 及每个非零 y∈K，有 log⁺|y|_w=(f_w log p_w)·max(0,(ℓ(v_w(y)):ℝ))。右侧先将整数指数嵌入实数，再取实数最大值；不含 e_w 因子。虽然形式函数在零处也有定义，本声明的前提仍排除 y=0。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 K のすべての有限素点 w とすべての零でない y∈K に対し、log⁺|y|_w=(f_w log p_w)·max(0,(ℓ(v_w(y)):ℝ)) である。右辺の最大値は整数の指数を実数に写してから取る実数の最大値であり、e_w 因子を含まない。形式的な関数は零でも定義されるが、この主張の前提は y=0 を除く。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.localDeg_eq_ramificationIdx'_mul_inertiaDeg'",
+      "module": "Definitions.Def_TripodFinitePrimeCounting",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePrimeCounting.lean",
+      "sha256": "77e30f94f07cb1d89cd5367d89b3cef8a706d5333e5be934fe4a723b7b397e51",
+      "source_span": {
+        "start_line": 20,
+        "end_line": 32
+      },
+      "signature_span": {
+        "start_line": 20,
+        "end_line": 23
+      },
+      "static_signature": "lemma localDeg_eq_ramificationIdx'_mul_inertiaDeg' (w : FinitePlace K) {q : ℕ}\n    (hq : residueChar w = q) :\n    localDeg K w = (Ideal.span {(q : ℤ)}).ramificationIdx' w.maximalIdeal.asIdeal *\n      (Ideal.span {(q : ℤ)}).inertiaDeg' w.maximalIdeal.asIdeal",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite place w of K and every natural number q with p_w=q, let Q=(q:ℤ) be the principal ideal of ℤ. Then localDeg(K,w)=e_w f_w=Q.ramificationIdx′(P_w)·Q.inertiaDeg′(P_w), as a natural-number equality. Here the primed indices are relative to the explicitly chosen base ideal Q. The premise forces q to be prime, so q=0 and q=1 cannot satisfy it.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的每个有限处 w 及每个满足 p_w=q 的自然数 q，令 Q=(q:ℤ) 为 ℤ 的主理想，则有自然数等式 localDeg(K,w)=e_w f_w=Q.ramificationIdx′(P_w)·Q.inertiaDeg′(P_w)。带撇号的指数相对于明确选定的基底理想 Q。前提迫使 q 为素数，故 q=0、q=1 均不能满足前提。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K のすべての有限素点 w と p_w=q を満たすすべての自然数 q に対し、Q=(q:ℤ) を ℤ の単項イデアルとする。このとき自然数の等式 localDeg(K,w)=e_w f_w=Q.ramificationIdx′(P_w)·Q.inertiaDeg′(P_w) が成り立つ。プライム付きの指数は、明示的に選んだ基底イデアル Q に関するものである。前提から q は素数となるため、q=0 と q=1 は前提を満たさない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.sum_localDeg_filter_le",
+      "module": "Definitions.Def_TripodFinitePrimeCounting",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePrimeCounting.lean",
+      "sha256": "77e30f94f07cb1d89cd5367d89b3cef8a706d5333e5be934fe4a723b7b397e51",
+      "source_span": {
+        "start_line": 36,
+        "end_line": 84
+      },
+      "signature_span": {
+        "start_line": 36,
+        "end_line": 37
+      },
+      "static_signature": "lemma sum_localDeg_filter_le (S : Finset (FinitePlace K)) (q : ℕ) :\n    ∑ w ∈ S.filter (fun w => residueChar w = q), localDeg K w ≤ Module.finrank ℚ K",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite set S of finite places of K and every natural number q, ∑_{w∈S, p_w=q}localDeg(K,w)=∑_{w∈S, p_w=q}e_w f_w≤[K:ℚ]. The sum is a natural-number sum over the indicated filtered subset of S. There is no primality assumption on q and S need not contain all places above q. If q is nonprime (in particular 0 or 1), this filtered set is empty and the sum is 0. If S is empty the same convention applies.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的有限处的任意有限集 S 及任意自然数 q，有 ∑_{w∈S, p_w=q}localDeg(K,w)=∑_{w∈S, p_w=q}e_w f_w≤[K:ℚ]。这里在 S 的指定筛选子集上作自然数求和。不要求 q 为素数，也不要求 S 包含 q 上方的所有处。若 q 不是素数（特别是 0 或 1），筛选集合为空，和为 0；S 为空时同样如此。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K の有限素点の任意の有限集合 S と任意の自然数 q に対し、∑_{w∈S, p_w=q}localDeg(K,w)=∑_{w∈S, p_w=q}e_w f_w≤[K:ℚ] である。これは S の指定された部分集合上での自然数の和である。q の素数性は仮定せず、S が q の上のすべての素点を含む必要もない。q が素数でない場合（特に 0 または 1）、抽出された集合は空であり和は 0 である。S が空の場合も同じである。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source branches on q.Prime, uses the full ramification–inertia sum in the prime branch, and proves the filtered sum zero in the nonprime branch. The asserted result is only an upper bound for an arbitrary finite subset."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.sum_inertDeg_filter_le",
+      "module": "Definitions.Def_TripodFinitePrimeCounting",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePrimeCounting.lean",
+      "sha256": "77e30f94f07cb1d89cd5367d89b3cef8a706d5333e5be934fe4a723b7b397e51",
+      "source_span": {
+        "start_line": 87,
+        "end_line": 91
+      },
+      "signature_span": {
+        "start_line": 87,
+        "end_line": 88
+      },
+      "static_signature": "lemma sum_inertDeg_filter_le (S : Finset (FinitePlace K)) (q : ℕ) :\n    ∑ w ∈ S.filter (fun w => residueChar w = q), inertDeg K w ≤ Module.finrank ℚ K",
+      "static_section_context": "{K : Type*} [Field K] [NumberField K]",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. For every finite set S of finite places of K and every natural number q, ∑_{w∈S, p_w=q}inertDeg(K,w)=∑_{w∈S, p_w=q}f_w≤[K:ℚ]. No assumption that q is prime or S is exhaustive is imposed. For nonprime q, including 0 and 1, the set is empty and the sum equals 0. The positive ramification indices allow each f_w to be bounded by e_w f_w.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 对 K 的有限处的任意有限集 S 及任意自然数 q，有 ∑_{w∈S, p_w=q}inertDeg(K,w)=∑_{w∈S, p_w=q}f_w≤[K:ℚ]。不假设 q 为素数，也不假设 S 穷尽相关处。q 非素数时（包括 0 和 1）集合为空，和等于 0。分歧指数的正性给出逐项界 f_w≤e_w f_w。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 K の有限素点の任意の有限集合 S と任意の自然数 q に対し、∑_{w∈S, p_w=q}inertDeg(K,w)=∑_{w∈S, p_w=q}f_w≤[K:ℚ] である。q の素数性も S の網羅性も仮定しない。q が素数でない場合（0 と 1 を含む）、集合は空で和は 0 である。分岐指数の正値性により、各項で f_w≤e_w f_w が成り立つ。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.card_filter_residueChar_mem_le",
+      "module": "Definitions.Def_TripodFinitePrimeCounting",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodFinitePrimeCounting.lean",
+      "sha256": "77e30f94f07cb1d89cd5367d89b3cef8a706d5333e5be934fe4a723b7b397e51",
+      "source_span": {
+        "start_line": 94,
+        "end_line": 112
+      },
+      "signature_span": {
+        "start_line": 94,
+        "end_line": 96
+      },
+      "static_signature": "lemma card_filter_residueChar_mem_le (x : Pt) (S : Finset (FinitePlace (fieldOf x.1)))\n    (V : Finset ℕ) :\n    (S.filter (fun v => residueChar v ∈ V)).card ≤ V.card * deg x.1",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. For every point x, every finite set S of finite places of its actual field F_x=ℚ(x), and every finite set V of natural numbers, #{v∈S:p_v∈V}≤#V·d_x, where p_v=char(O_{F_x}/P_v) and d_x=[ℚ(x):ℚ]. The set V is arbitrary: no primality assumption and no requirement 2∈V is made. Empty S or V gives a zero left-hand side. This counts places, not their weights; the degree estimate comes through 1≤f_v≤e_v f_v and the primewise degree bounds.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 对每个点 x、其实际域 F_x=ℚ(x) 的有限处的任意有限集 S，以及自然数的任意有限集 V，均有 #{v∈S:p_v∈V}≤#V·d_x，其中 p_v=char(O_{F_x}/P_v)，d_x=[ℚ(x):ℚ]。V 是任意的：不要求其元素为素数，也不要求 2∈V。S 或 V 为空时左侧为零。这是处的个数界，不是权重和；次数估计通过 1≤f_v≤e_v f_v 及逐素数次数界取得。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 任意の点 x、その実際の体 F_x=ℚ(x) の有限素点の任意の有限集合 S、および自然数の任意の有限集合 V に対し、#{v∈S:p_v∈V}≤#V·d_x である。ここで p_v=char(O_{F_x}/P_v)、d_x=[ℚ(x):ℚ] である。V は任意であり、要素の素数性も 2∈V も仮定しない。S または V が空ならば左辺は零である。これは素点数の上界であり、重みの和ではない。次数の評価には 1≤f_v≤e_v f_v と素数ごとの次数の上界を用いる。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.posLog_terms_eq",
+      "module": "Definitions.Def_TripodLegendreFinitePlaceBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "sha256": "4b97610d9cc394d47c99690a30a74ac963470463680397e673dc0adaab322cdb",
+      "source_span": {
+        "start_line": 24,
+        "end_line": 32
+      },
+      "signature_span": {
+        "start_line": 24,
+        "end_line": 26
+      },
+      "static_signature": "lemma posLog_terms_eq :\n    2 * (log⁺ (w l) + log⁺ (w l⁻¹) + log⁺ (w (l - 1)⁻¹)) =\n      finWeight w * (legendreBound (w.maximalIdeal.valuation T) l : ℝ)",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T] (w : FinitePlace T) {l : T} (hl0 : l ≠ 0) (hl1 : l ≠ 1); include hl0 hl1",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. Put j(l)=256(l²−l+1)³/(l²(l−1)²) and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1)))). Write W_w=f_w log p_w. For every finite place w of K and every l∈K with l≠0 and l≠1, 2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w)=W_w·(B_{v_w}(l):ℝ). The factor W_w is exactly f_w log p_w. This equality holds at every finite place, including residue characteristic 2, and does not require j(l)≠0.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 令 j(l)=256(l²−l+1)³/(l²(l−1)²)，并令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))。记 W_w=f_w log p_w。 对 K 的每个有限处 w 及每个满足 l≠0、l≠1 的 l∈K，有 2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w)=W_w·(B_{v_w}(l):ℝ)。因子 W_w 精确为 f_w log p_w。等式用于全部有限处，包括剩余特征为 2 的处，不要求 j(l)≠0。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 j(l)=256(l²−l+1)³/(l²(l−1)²)、B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1)))) と定める。W_w=f_w log p_w と書く。 K のすべての有限素点 w と l≠0、l≠1 を満たすすべての l∈K に対し、2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w)=W_w·(B_{v_w}(l):ℝ) である。因子 W_w は正確に f_w log p_w である。この等式は剰余標数 2 を含むすべての有限素点で成り立ち、j(l)≠0 を仮定しない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.posLog_legendreJ_le",
+      "module": "Definitions.Def_TripodLegendreFinitePlaceBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "sha256": "4b97610d9cc394d47c99690a30a74ac963470463680397e673dc0adaab322cdb",
+      "source_span": {
+        "start_line": 35,
+        "end_line": 47
+      },
+      "signature_span": {
+        "start_line": 35,
+        "end_line": 36
+      },
+      "static_signature": "theorem posLog_legendreJ_le :\n    log⁺ (w (legendreJ l)) ≤ 2 * (log⁺ (w l) + log⁺ (w l⁻¹) + log⁺ (w (l - 1)⁻¹))",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T] (w : FinitePlace T) {l : T} (hl0 : l ≠ 0) (hl1 : l ≠ 1); include hl0 hl1",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. Put j(l)=256(l²−l+1)³/(l²(l−1)²) and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1)))). Write W_w=f_w log p_w. For every finite place w of K and every l∈K satisfying l≠0 and l≠1, log⁺|j(l)|_w≤2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w). No finite place is excluded, in particular not those with p_w=2. The comparison uses the same positive weight W_w=f_w log p_w for the valuation expressions on both sides, so no weight appears in the displayed absolute-value inequality. If j(l)=0, the left-hand side is 0 and the assertion still applies.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 令 j(l)=256(l²−l+1)³/(l²(l−1)²)，并令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))。记 W_w=f_w log p_w。 对 K 的每个有限处 w 及每个满足 l≠0、l≠1 的 l∈K，有 log⁺|j(l)|_w≤2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w)。不排除任何有限处，特别不排除 p_w=2 的处。两侧赋值表达式使用同一正权重 W_w=f_w log p_w，故显示的绝对值不等式中不再出现权重。若 j(l)=0，左侧为 0，断言仍适用。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 j(l)=256(l²−l+1)³/(l²(l−1)²)、B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1)))) と定める。W_w=f_w log p_w と書く。 K のすべての有限素点 w と l≠0、l≠1 を満たすすべての l∈K に対し、log⁺|j(l)|_w≤2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w) である。除外する有限素点はなく、特に p_w=2 の素点も含む。両辺の付値による表示には同じ正の重み W_w=f_w log p_w を使うため、表示された絶対値の不等式には重みが現れない。j(l)=0 ならば左辺は 0 であり、この主張はなお適用される。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source separates j(l)=0 before using the nonzero-element logarithm identity. It then multiplies the integer valuation upper bound by the positive real weight f_w log p_w."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.posLog_legendreJ_ge",
+      "module": "Definitions.Def_TripodLegendreFinitePlaceBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreFinitePlaceBounds.lean",
+      "sha256": "4b97610d9cc394d47c99690a30a74ac963470463680397e673dc0adaab322cdb",
+      "source_span": {
+        "start_line": 51,
+        "end_line": 62
+      },
+      "signature_span": {
+        "start_line": 51,
+        "end_line": 52
+      },
+      "static_signature": "theorem posLog_legendreJ_ge (h2 : residueChar w ≠ 2) (hj : legendreJ l ≠ 0) :\n    2 * (log⁺ (w l) + log⁺ (w l⁻¹) + log⁺ (w (l - 1)⁻¹)) ≤ log⁺ (w (legendreJ l))",
+      "static_section_context": "{T : Type*} [Field T] [NumberField T] (w : FinitePlace T) {l : T} (hl0 : l ≠ 0) (hl1 : l ≠ 1); include hl0 hl1",
+      "statements": {
+        "en": "Let K be any number field (a field of characteristic zero, finite dimensional over ℚ). A finite place w is indexed by a nonzero prime ideal P_w of its ring of integers O_K; write p_w=char(O_K/P_w), f_w=[O_K/P_w:ℤ/(P_w∩ℤ)], and e_w for the ramification index of P_w over ℤ. The symbol |y|_w means the real nonarchimedean absolute value implemented by w, not an additive order. Write log⁺t=max(0,log t), with the formal real logarithm convention log 0=0, so log⁺0=0. Write v_w:K→ℤᵐ⁰ for the multiplicative ideal valuation, ℓ:ℤᵐ⁰→ℤ for its exponent map with ℓ(0)=0 and ℓ(exp m)=m. Put j(l)=256(l²−l+1)³/(l²(l−1)²) and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1)))). Write W_w=f_w log p_w. For every finite place w of K and every l∈K with l≠0 and l≠1, if p_w≠2 and j(l)≠0, then 2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w)≤log⁺|j(l)|_w. The premise p_w≠2 means odd residue characteristic. Both sides arise with the same weight W_w=f_w log p_w; the conditions allow the valuation lower bound with v_w(256)=1. The p_w=2 and j(l)=0 branches are outside this statement.",
+        "zh_Hans": "设 K 为任意数域，即特征为零且在 ℚ 上有限维的域。有限处 w 对应整数环 O_K 的非零素理想 P_w；记 p_w=char(O_K/P_w)，f_w=[O_K/P_w:ℤ/(P_w∩ℤ)]，e_w 为 P_w 在 ℤ 上的分歧指数。|y|_w 表示 w 给出的实值非 Archimedes 绝对值，而非加法阶数。 记 log⁺t=max(0,log t)；形式实对数约定 log 0=0，故 log⁺0=0。记 v_w:K→ℤᵐ⁰ 为该素理想的乘法赋值；令 ℓ:ℤᵐ⁰→ℤ 满足 ℓ(0)=0 且 ℓ(exp m)=m，即读取乘法记号中的整数指数。 令 j(l)=256(l²−l+1)³/(l²(l−1)²)，并令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))。记 W_w=f_w log p_w。 对 K 的每个有限处 w 及每个满足 l≠0、l≠1 的 l∈K，若 p_w≠2 且 j(l)≠0，则 2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w)≤log⁺|j(l)|_w。p_w≠2 表示奇剩余特征。两侧均带同一权重 W_w=f_w log p_w；这些条件允许使用 v_w(256)=1 时的赋值下界。p_w=2 和 j(l)=0 两支不在本声明范围内。",
+        "ja": "K を任意の数体、すなわち標数零で ℚ 上有限次元の体とする。有限素点 w は整数環 O_K の零でない素イデアル P_w に対応する。p_w=char(O_K/P_w)、f_w=[O_K/P_w:ℤ/(P_w∩ℤ)] とし、e_w を ℤ 上の分岐指数とする。|y|_w は w が定める実数値の非アルキメデス絶対値であり、加法的な位数ではない。 log⁺t=max(0,log t) と書く。形式的な実対数では log 0=0 であるため、log⁺0=0 である。v_w:K→ℤᵐ⁰ をこの素イデアルの乗法的付値、ℓ:ℤᵐ⁰→ℤ を ℓ(0)=0、ℓ(exp m)=m を満たす指数写像とする。 j(l)=256(l²−l+1)³/(l²(l−1)²)、B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1)))) と定める。W_w=f_w log p_w と書く。 K のすべての有限素点 w と l≠0、l≠1 を満たすすべての l∈K に対し、p_w≠2 かつ j(l)≠0 ならば、2(log⁺|l|_w+log⁺|l⁻¹|_w+log⁺|(l−1)⁻¹|_w)≤log⁺|j(l)|_w である。p_w≠2 は奇剰余標数を意味する。両辺に同じ重み W_w=f_w log p_w が対応し、条件により v_w(256)=1 のときの付値の下界を使える。p_w=2 と j(l)=0 の分岐はこの主張の範囲外である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.legendreBound",
+      "module": "Definitions.Def_TripodLegendreValuationBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8",
+      "source_span": {
+        "start_line": 25,
+        "end_line": 26
+      },
+      "signature_span": {
+        "start_line": 25,
+        "end_line": 25
+      },
+      "static_signature": "def legendreBound (l : R) : ℤ",
+      "static_section_context": "{R : Type*} [Field R] (v : Valuation R ℤᵐ⁰); explicit (l : R) in declaration",
+      "statements": {
+        "en": "Let R be any field and v:R→ℤᵐ⁰ any multiplicative nonarchimedean valuation into the ordered multiplicative copy of ℤ with an adjoined zero. Write ℓ(0)=0 and ℓ(exp m)=m∈ℤ for the exponent map (this is not the real logarithm). Put j(l)=256(l²−l+1)³/(l²(l−1)²), with total field division, and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ. For every l∈R, legendreBound(v,l) is defined to be the integer B_v(l) displayed above. There are no hypotheses l≠0, l≠1, or 2≠0. Because ℓ(0)=ℓ(1)=0, both B_v(0) and B_v(1) equal 0, including in characteristic 2. The definition is not a sum of real absolute-value logarithms.",
+        "zh_Hans": "设 R 为任意域，v:R→ℤᵐ⁰ 为任意非 Archimedes 乘法赋值，值域为 ℤ 的有序乘法副本并添零。令 ℓ(0)=0，且 ℓ(exp m)=m∈ℤ，即读取乘法记号中的整数指数（它不是实对数）。令 j(l)=256(l²−l+1)³/(l²(l−1)²)，除法采用域上的全定义除法；令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ。 对每个 l∈R，legendreBound(v,l) 定义为上述整数 B_v(l)。不以 l≠0、l≠1 或 2≠0 为假设。由于 ℓ(0)=ℓ(1)=0，有 B_v(0)=B_v(1)=0，包括特征为 2 的情形。此定义不是实值绝对值的对数之和。",
+        "ja": "R を任意の体、v:R→ℤᵐ⁰ を任意の非アルキメデス乗法的付値とする。値域は ℤ の順序付き乗法的コピーに零を加えたものである。ℓ(0)=0、ℓ(exp m)=m∈ℤ を満たす指数写像を ℓ と書く（実対数ではない）。j(l)=256(l²−l+1)³/(l²(l−1)²) とし、除法には体の全域で定義された除法を用いる。また B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ とする。 すべての l∈R に対し、legendreBound(v,l) は上記の整数 B_v(l) と定義される。l≠0、l≠1、2≠0 は仮定しない。ℓ(0)=ℓ(1)=0 であるため、標数 2 の場合も含め B_v(0)=B_v(1)=0 である。この定義は実数値の絶対値の対数の和ではない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.legendreBound_nonneg",
+      "module": "Definitions.Def_TripodLegendreValuationBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8",
+      "source_span": {
+        "start_line": 28,
+        "end_line": 33
+      },
+      "signature_span": {
+        "start_line": 28,
+        "end_line": 28
+      },
+      "static_signature": "lemma legendreBound_nonneg (l : R) : 0 ≤ legendreBound v l",
+      "static_section_context": "{R : Type*} [Field R] (v : Valuation R ℤᵐ⁰); explicit (l : R) in declaration",
+      "statements": {
+        "en": "Let R be any field and v:R→ℤᵐ⁰ any multiplicative nonarchimedean valuation into the ordered multiplicative copy of ℤ with an adjoined zero. Write ℓ(0)=0 and ℓ(exp m)=m∈ℤ for the exponent map (this is not the real logarithm). Put j(l)=256(l²−l+1)³/(l²(l−1)²), with total field division, and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ. For every l∈R, 0≤B_v(l) as an integer inequality. No exclusion of l=0 or l=1 and no nonzero hypothesis on 2 are made; at l=0 and l=1 the bound is exactly 0.",
+        "zh_Hans": "设 R 为任意域，v:R→ℤᵐ⁰ 为任意非 Archimedes 乘法赋值，值域为 ℤ 的有序乘法副本并添零。令 ℓ(0)=0，且 ℓ(exp m)=m∈ℤ，即读取乘法记号中的整数指数（它不是实对数）。令 j(l)=256(l²−l+1)³/(l²(l−1)²)，除法采用域上的全定义除法；令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ。 对每个 l∈R，整数不等式 0≤B_v(l) 成立。不排除 l=0、l=1，也不要求 2 非零；l=0 或 l=1 时此界恰为 0。",
+        "ja": "R を任意の体、v:R→ℤᵐ⁰ を任意の非アルキメデス乗法的付値とする。値域は ℤ の順序付き乗法的コピーに零を加えたものである。ℓ(0)=0、ℓ(exp m)=m∈ℤ を満たす指数写像を ℓ と書く（実対数ではない）。j(l)=256(l²−l+1)³/(l²(l−1)²) とし、除法には体の全域で定義された除法を用いる。また B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ とする。 すべての l∈R に対し、整数の不等式 0≤B_v(l) が成り立つ。l=0 と l=1 は除かず、2 の非零性も仮定しない。l=0 または l=1 では値はちょうど 0 である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.valuation_legendreJ_ne_zero_iff",
+      "module": "Definitions.Def_TripodLegendreValuationBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8",
+      "source_span": {
+        "start_line": 39,
+        "end_line": 50
+      },
+      "signature_span": {
+        "start_line": 39,
+        "end_line": 40
+      },
+      "static_signature": "lemma valuation_legendreJ_ne_zero_iff [NeZero (2 : R)] :\n    v (legendreJ l) ≠ 0 ↔ v (l ^ 2 - l + 1) ≠ 0",
+      "static_section_context": "{R : Type*} [Field R] (v : Valuation R ℤᵐ⁰) {l : R} (hl0 : l ≠ 0) (hl1 : l ≠ 1); include hl0 hl1; [NeZero (2 : R)] supplied in declaration",
+      "statements": {
+        "en": "Let R be any field and v:R→ℤᵐ⁰ any multiplicative nonarchimedean valuation into the ordered multiplicative copy of ℤ with an adjoined zero. Write ℓ(0)=0 and ℓ(exp m)=m∈ℤ for the exponent map (this is not the real logarithm). Put j(l)=256(l²−l+1)³/(l²(l−1)²), with total field division, and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ. Assume (2:R)≠0. For every l∈R satisfying l≠0 and l≠1, v(j(l))≠0 if and only if v(l²−l+1)≠0. These are nonzero values in ℤᵐ⁰; the equivalence does not assert nonvanishing unconditionally. In particular it preserves the branch where j(l)=0, equivalently l²−l+1=0 under the hypotheses.",
+        "zh_Hans": "设 R 为任意域，v:R→ℤᵐ⁰ 为任意非 Archimedes 乘法赋值，值域为 ℤ 的有序乘法副本并添零。令 ℓ(0)=0，且 ℓ(exp m)=m∈ℤ，即读取乘法记号中的整数指数（它不是实对数）。令 j(l)=256(l²−l+1)³/(l²(l−1)²)，除法采用域上的全定义除法；令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ。 假设 (2:R)≠0。对每个满足 l≠0、l≠1 的 l∈R，有 v(j(l))≠0 当且仅当 v(l²−l+1)≠0。这里是 ℤᵐ⁰ 中赋值值的非零性，并未无条件断言非零。特别地，该等价保留了 j(l)=0 的分支；在这些前提下它等价于 l²−l+1=0。",
+        "ja": "R を任意の体、v:R→ℤᵐ⁰ を任意の非アルキメデス乗法的付値とする。値域は ℤ の順序付き乗法的コピーに零を加えたものである。ℓ(0)=0、ℓ(exp m)=m∈ℤ を満たす指数写像を ℓ と書く（実対数ではない）。j(l)=256(l²−l+1)³/(l²(l−1)²) とし、除法には体の全域で定義された除法を用いる。また B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ とする。 (2:R)≠0 と仮定する。l≠0、l≠1 を満たすすべての l∈R に対し、v(j(l))≠0 と v(l²−l+1)≠0 は同値である。これは ℤᵐ⁰ 内の付値の非零性であり、無条件の非零性を主張していない。特に j(l)=0 の分岐を残しており、仮定の下でこれは l²−l+1=0 と同値である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.log_valuation_legendreJ",
+      "module": "Definitions.Def_TripodLegendreValuationBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8",
+      "source_span": {
+        "start_line": 53,
+        "end_line": 69
+      },
+      "signature_span": {
+        "start_line": 53,
+        "end_line": 55
+      },
+      "static_signature": "lemma log_valuation_legendreJ [NeZero (2 : R)] (hc : v (l ^ 2 - l + 1) ≠ 0) :\n    log (v (legendreJ l)) = log (v 256) + 3 * log (v (l ^ 2 - l + 1)) -\n      (2 * log (v l) + 2 * log (v (l - 1)))",
+      "static_section_context": "{R : Type*} [Field R] (v : Valuation R ℤᵐ⁰) {l : R} (hl0 : l ≠ 0) (hl1 : l ≠ 1); include hl0 hl1; [NeZero (2 : R)] supplied in declaration",
+      "statements": {
+        "en": "Let R be any field and v:R→ℤᵐ⁰ any multiplicative nonarchimedean valuation into the ordered multiplicative copy of ℤ with an adjoined zero. Write ℓ(0)=0 and ℓ(exp m)=m∈ℤ for the exponent map (this is not the real logarithm). Put j(l)=256(l²−l+1)³/(l²(l−1)²), with total field division, and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ. Assume (2:R)≠0. For every l∈R with l≠0, l≠1, and v(l²−l+1)≠0, the integer equality ℓ(v(j(l)))=ℓ(v(256))+3ℓ(v(l²−l+1))−(2ℓ(v(l))+2ℓ(v(l−1))) holds. All logarithms here are integer exponent maps. The hypotheses imply j(l)≠0, so its zero branch is excluded; no assumption v(256)=1 or v(256)≤1 is required.",
+        "zh_Hans": "设 R 为任意域，v:R→ℤᵐ⁰ 为任意非 Archimedes 乘法赋值，值域为 ℤ 的有序乘法副本并添零。令 ℓ(0)=0，且 ℓ(exp m)=m∈ℤ，即读取乘法记号中的整数指数（它不是实对数）。令 j(l)=256(l²−l+1)³/(l²(l−1)²)，除法采用域上的全定义除法；令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ。 假设 (2:R)≠0。对每个满足 l≠0、l≠1、v(l²−l+1)≠0 的 l∈R，整数等式 ℓ(v(j(l)))=ℓ(v(256))+3ℓ(v(l²−l+1))−(2ℓ(v(l))+2ℓ(v(l−1))) 成立。这里全部“对数”均指读取乘法记号中整数指数的函数。前提推出 j(l)≠0，因而排除其零分支；不要求 v(256)=1 或 v(256)≤1。",
+        "ja": "R を任意の体、v:R→ℤᵐ⁰ を任意の非アルキメデス乗法的付値とする。値域は ℤ の順序付き乗法的コピーに零を加えたものである。ℓ(0)=0、ℓ(exp m)=m∈ℤ を満たす指数写像を ℓ と書く（実対数ではない）。j(l)=256(l²−l+1)³/(l²(l−1)²) とし、除法には体の全域で定義された除法を用いる。また B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ とする。 (2:R)≠0 と仮定する。l≠0、l≠1、v(l²−l+1)≠0 を満たすすべての l∈R に対し、整数の等式 ℓ(v(j(l)))=ℓ(v(256))+3ℓ(v(l²−l+1))−(2ℓ(v(l))+2ℓ(v(l−1))) が成り立つ。ここでの対数はすべて整数値の指数写像である。仮定から j(l)≠0 が従うため、その零の分岐は除かれる。v(256)=1 も v(256)≤1 も仮定しない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.legendre_valuation_cases",
+      "module": "Definitions.Def_TripodLegendreValuationBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8",
+      "source_span": {
+        "start_line": 73,
+        "end_line": 111
+      },
+      "signature_span": {
+        "start_line": 73,
+        "end_line": 77
+      },
+      "static_signature": "lemma legendre_valuation_cases :\n    (v l < 1 ∧ v (l - 1) = 1 ∧ v (l ^ 2 - l + 1) = 1) ∨\n    (v l = 1 ∧ v (l - 1) < 1 ∧ v (l ^ 2 - l + 1) = 1) ∨\n    (v l = 1 ∧ v (l - 1) = 1 ∧ v (l ^ 2 - l + 1) ≤ 1) ∨\n    (1 < v l ∧ v (l - 1) = v l ∧ v (l ^ 2 - l + 1) = v l ^ 2)",
+      "static_section_context": "{R : Type*} [Field R] (v : Valuation R ℤᵐ⁰) {l : R}; surrounding hl0 : l ≠ 0 and hl1 : l ≠ 1 are explicitly omitted",
+      "statements": {
+        "en": "Let R be any field and v:R→ℤᵐ⁰ any multiplicative nonarchimedean valuation into the ordered multiplicative copy of ℤ with an adjoined zero. Write ℓ(0)=0 and ℓ(exp m)=m∈ℤ for the exponent map (this is not the real logarithm). Put j(l)=256(l²−l+1)³/(l²(l−1)²), with total field division, and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ. For every l∈R, at least one of the following four alternatives holds: (i) v(l)<1, v(l−1)=1, v(l²−l+1)=1; (ii) v(l)=1, v(l−1)<1, v(l²−l+1)=1; (iii) v(l)=1, v(l−1)=1, v(l²−l+1)≤1; (iv) 1<v(l), v(l−1)=v(l), v(l²−l+1)=v(l)². The formal connective is an inclusive disjunction of these conjunctions. There are no assumptions l≠0, l≠1, or 2≠0: l=0 is in case (i), l=1 in case (ii); the polynomial may vanish in case (iii). This statement applies to arbitrary such valuations, without selecting any rational prime.",
+        "zh_Hans": "设 R 为任意域，v:R→ℤᵐ⁰ 为任意非 Archimedes 乘法赋值，值域为 ℤ 的有序乘法副本并添零。令 ℓ(0)=0，且 ℓ(exp m)=m∈ℤ，即读取乘法记号中的整数指数（它不是实对数）。令 j(l)=256(l²−l+1)³/(l²(l−1)²)，除法采用域上的全定义除法；令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ。 对每个 l∈R，下列四种情况至少一种成立：(i) v(l)<1、v(l−1)=1、v(l²−l+1)=1；(ii) v(l)=1、v(l−1)<1、v(l²−l+1)=1；(iii) v(l)=1、v(l−1)=1、v(l²−l+1)≤1；(iv) 1<v(l)、v(l−1)=v(l)、v(l²−l+1)=v(l)²。形式连接词为这四组合取条件的相容析取。不要求 l≠0、l≠1 或 2≠0：l=0 属于 (i)，l=1 属于 (ii)；多项式可在 (iii) 中为零。该声明用于任意这样的赋值，不选定有理素数。",
+        "ja": "R を任意の体、v:R→ℤᵐ⁰ を任意の非アルキメデス乗法的付値とする。値域は ℤ の順序付き乗法的コピーに零を加えたものである。ℓ(0)=0、ℓ(exp m)=m∈ℤ を満たす指数写像を ℓ と書く（実対数ではない）。j(l)=256(l²−l+1)³/(l²(l−1)²) とし、除法には体の全域で定義された除法を用いる。また B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ とする。 すべての l∈R に対し、次の四つの少なくとも一つが成り立つ。(i) v(l)<1、v(l−1)=1、v(l²−l+1)=1。(ii) v(l)=1、v(l−1)<1、v(l²−l+1)=1。(iii) v(l)=1、v(l−1)=1、v(l²−l+1)≤1。(iv) 1<v(l)、v(l−1)=v(l)、v(l²−l+1)=v(l)²。形式的な結合は、これら四つの連言の包含的な選言である。l≠0、l≠1、2≠0 は仮定しない。l=0 は (i)、l=1 は (ii) に属し、(iii) では多項式が零でもよい。この主張は任意のこのような付値に適用され、有理素数は選ばない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source explicitly omits the surrounding l≠0 and l≠1 hypotheses for this lemma. They must not be reintroduced into its readback."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.max_log_valuation_legendreJ_le",
+      "module": "Definitions.Def_TripodLegendreValuationBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8",
+      "source_span": {
+        "start_line": 114,
+        "end_line": 163
+      },
+      "signature_span": {
+        "start_line": 114,
+        "end_line": 115
+      },
+      "static_signature": "lemma max_log_valuation_legendreJ_le [NeZero (2 : R)] (h256 : v 256 ≤ 1) :\n    max 0 (log (v (legendreJ l))) ≤ legendreBound v l",
+      "static_section_context": "{R : Type*} [Field R] (v : Valuation R ℤᵐ⁰) {l : R} (hl0 : l ≠ 0) (hl1 : l ≠ 1); include hl0 hl1; [NeZero (2 : R)] supplied in declaration",
+      "statements": {
+        "en": "Let R be any field and v:R→ℤᵐ⁰ any multiplicative nonarchimedean valuation into the ordered multiplicative copy of ℤ with an adjoined zero. Write ℓ(0)=0 and ℓ(exp m)=m∈ℤ for the exponent map (this is not the real logarithm). Put j(l)=256(l²−l+1)³/(l²(l−1)²), with total field division, and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ. Assume (2:R)≠0. For every l∈R with l≠0 and l≠1, if v(256)≤1, then max(0,ℓ(v(j(l))))≤B_v(l), as an integer inequality. No nonzero hypothesis on j(l) is imposed: when j(l)=0 the left-hand side is 0 by ℓ(0)=0. No number-field structure or residue-characteristic condition is assumed; the only condition on the constant is v(256)≤1.",
+        "zh_Hans": "设 R 为任意域，v:R→ℤᵐ⁰ 为任意非 Archimedes 乘法赋值，值域为 ℤ 的有序乘法副本并添零。令 ℓ(0)=0，且 ℓ(exp m)=m∈ℤ，即读取乘法记号中的整数指数（它不是实对数）。令 j(l)=256(l²−l+1)³/(l²(l−1)²)，除法采用域上的全定义除法；令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ。 假设 (2:R)≠0。对每个满足 l≠0、l≠1 的 l∈R，若 v(256)≤1，则整数不等式 max(0,ℓ(v(j(l))))≤B_v(l) 成立。不要求 j(l) 非零；j(l)=0 时由 ℓ(0)=0，左侧为 0。不假设数域结构或剩余特征条件；对常数的条件仅为 v(256)≤1。",
+        "ja": "R を任意の体、v:R→ℤᵐ⁰ を任意の非アルキメデス乗法的付値とする。値域は ℤ の順序付き乗法的コピーに零を加えたものである。ℓ(0)=0、ℓ(exp m)=m∈ℤ を満たす指数写像を ℓ と書く（実対数ではない）。j(l)=256(l²−l+1)³/(l²(l−1)²) とし、除法には体の全域で定義された除法を用いる。また B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ とする。 (2:R)≠0 と仮定する。l≠0、l≠1 を満たすすべての l∈R に対し、v(256)≤1 ならば、整数の不等式 max(0,ℓ(v(j(l))))≤B_v(l) が成り立つ。j(l) の非零性は仮定しない。j(l)=0 では ℓ(0)=0 により左辺は 0 である。数体構造や剰余標数の条件は仮定せず、定数に関する条件は v(256)≤1 だけである。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source first handles v(j(l))=0, then applies the exponent identity and the four valuation cases. No compilation was performed."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.legendreBound_le_max_log_valuation_legendreJ",
+      "module": "Definitions.Def_TripodLegendreValuationBounds",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Definitions/Def_TripodLegendreValuationBounds.lean",
+      "sha256": "33d4e08087c83237dda2c57ebf88e03dd9aa700293d7c90cf8fa0f9607449bc8",
+      "source_span": {
+        "start_line": 166,
+        "end_line": 194
+      },
+      "signature_span": {
+        "start_line": 166,
+        "end_line": 168
+      },
+      "static_signature": "lemma legendreBound_le_max_log_valuation_legendreJ [NeZero (2 : R)] (h256 : v 256 = 1)\n    (hj : v (legendreJ l) ≠ 0) :\n    legendreBound v l ≤ max 0 (log (v (legendreJ l)))",
+      "static_section_context": "{R : Type*} [Field R] (v : Valuation R ℤᵐ⁰) {l : R} (hl0 : l ≠ 0) (hl1 : l ≠ 1); include hl0 hl1; [NeZero (2 : R)] supplied in declaration",
+      "statements": {
+        "en": "Let R be any field and v:R→ℤᵐ⁰ any multiplicative nonarchimedean valuation into the ordered multiplicative copy of ℤ with an adjoined zero. Write ℓ(0)=0 and ℓ(exp m)=m∈ℤ for the exponent map (this is not the real logarithm). Put j(l)=256(l²−l+1)³/(l²(l−1)²), with total field division, and B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ. Assume (2:R)≠0. For every l∈R with l≠0 and l≠1, if v(256)=1 and v(j(l))≠0, then B_v(l)≤max(0,ℓ(v(j(l)))) as an integer inequality. Unlike the upper inequality, this statement requires nonvanishing of the valued j, equivalently j(l)≠0. The hypotheses also exclude l=0 and l=1; no number-field structure is assumed.",
+        "zh_Hans": "设 R 为任意域，v:R→ℤᵐ⁰ 为任意非 Archimedes 乘法赋值，值域为 ℤ 的有序乘法副本并添零。令 ℓ(0)=0，且 ℓ(exp m)=m∈ℤ，即读取乘法记号中的整数指数（它不是实对数）。令 j(l)=256(l²−l+1)³/(l²(l−1)²)，除法采用域上的全定义除法；令 B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ。 假设 (2:R)≠0。对每个满足 l≠0、l≠1 的 l∈R，若 v(256)=1 且 v(j(l))≠0，则整数不等式 B_v(l)≤max(0,ℓ(v(j(l)))) 成立。该下界确实要求 j 的赋值非零，等价于 j(l)≠0。前提也排除 l=0、l=1；未假设数域结构。",
+        "ja": "R を任意の体、v:R→ℤᵐ⁰ を任意の非アルキメデス乗法的付値とする。値域は ℤ の順序付き乗法的コピーに零を加えたものである。ℓ(0)=0、ℓ(exp m)=m∈ℤ を満たす指数写像を ℓ と書く（実対数ではない）。j(l)=256(l²−l+1)³/(l²(l−1)²) とし、除法には体の全域で定義された除法を用いる。また B_v(l)=2(max(0,ℓ(v(l)))+max(0,−ℓ(v(l)))+max(0,−ℓ(v(l−1))))∈ℤ とする。 (2:R)≠0 と仮定する。l≠0、l≠1 を満たすすべての l∈R に対し、v(256)=1 かつ v(j(l))≠0 ならば、整数の不等式 B_v(l)≤max(0,ℓ(v(j(l)))) が成り立つ。この下界には付値を取った j の非零性、すなわち j(l)≠0 が必要である。前提は l=0 と l=1 も除き、数体構造は仮定しない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source supplies a proof term or proof script; this blind readback does not certify compilation or axiom closure."
+      }
+    },
+    {
+      "userName": "solution",
+      "module": "Solutions.Sol_LegendreFiniteSourceClosure",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Solutions/Sol_LegendreFiniteSourceClosure.lean",
+      "sha256": "7c4e9f62ae22697ed4c43c2730741aee24ff5dc503f2180901b48588454b65a8",
+      "source_span": {
+        "start_line": 12,
+        "end_line": 15
+      },
+      "signature_span": {
+        "start_line": 12,
+        "end_line": 12
+      },
+      "static_signature": "theorem solution : CanonicalLegendreHeightComparison",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. A compactly bounded datum C consists of a finite set V_C of prime natural numbers containing 2 and a real number c_C. Membership x∈C.set means: for every finite place v of F_x with p_v=char(O_{F_x}/P_v)∈V_C, both |log|λ_x|_v|≤c_C and |log|λ_x−1|_v|≤c_C; and for every infinite place w of F_x, both |log|λ_x|_w|≤c_C and |log|λ_x−1|_w|≤c_C. No degree bound is part of this datum. Its real parameter is not assumed nonnegative by the structure, although membership forces c_C≥0. Define auxiliaryHeight(x)=H_fin(j(λ_x))/d_x and htCan(x)=Height.logHeight₁(λ_x)/d_x, where Height.logHeight₁ is the relative logarithmic height in F_x: its finite part is H_fin and its infinite part is ∑_{w infinite}(w.mult)log⁺|λ_x|_w, with multiplicity 1 for a real place and 2 for a complex place. The proposition asserted is: for every compactly bounded datum C there exists a real number B, depending on C but chosen before x, such that for every algebraic point x∈ℚ̄∖{0,1}, if x∈C.set then |H_fin(j(λ_x))/(6d_x)−Height.logHeight₁(λ_x)/d_x|≤B. There is no degree bound and no j≠0 premise. The j=0 branch is included. The x=0 and x=1 branches are excluded by the point type, not by an additional premise of this theorem.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 一组紧有界数据 C 包含由素自然数组成且含 2 的有限集 V_C，以及实数 c_C。条件 x∈C.set 的实际含义是：对 F_x 的每个满足 p_v=char(O_{F_x}/P_v)∈V_C 的有限处 v，均有 |log|λ_x|_v|≤c_C 和 |log|λ_x−1|_v|≤c_C；对 F_x 的每个无限处 w，也均有 |log|λ_x|_w|≤c_C 和 |log|λ_x−1|_w|≤c_C。这组数据不含次数上界。结构本身未假设实参数非负，但成员条件推出 c_C≥0。 定义 auxiliaryHeight(x)=H_fin(j(λ_x))/d_x，htCan(x)=Height.logHeight₁(λ_x)/d_x，其中 Height.logHeight₁ 是 F_x 中的相对对数高度：其有限部分为 H_fin，无限部分为 ∑_{w 为无限处}(w.mult)log⁺|λ_x|_w，实处重数为 1，复处重数为 2。声明断言：对每组紧有界数据 C，存在实数 B，B 可依赖 C 但在 x 之前选定，使得对每个代数点 x∈ℚ̄∖{0,1}，若 x∈C.set，则 |H_fin(j(λ_x))/(6d_x)−Height.logHeight₁(λ_x)/d_x|≤B。不设次数上界，也不要求 j≠0。j=0 分支包括在内。x=0 和 x=1 是由点类型排除的，而不是本定理另加的前提。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 コンパクト有界データ C は、2 を含む素数からなる有限集合 V_C と実数 c_C からなる。x∈C.set とは、F_x の有限素点 v で p_v=char(O_{F_x}/P_v)∈V_C を満たすすべてのものに対し |log|λ_x|_v|≤c_C と |log|λ_x−1|_v|≤c_C が成り立ち、さらに F_x のすべての無限素点 w に対し |log|λ_x|_w|≤c_C と |log|λ_x−1|_w|≤c_C が成り立つことである。このデータに次数の上界は含まれない。構造の実数パラメータ自体に非負性の仮定はないが、所属条件から c_C≥0 が従う。 auxiliaryHeight(x)=H_fin(j(λ_x))/d_x、htCan(x)=Height.logHeight₁(λ_x)/d_x と定義する。Height.logHeight₁ は F_x における相対対数高さであり、有限部分は H_fin、無限部分は ∑_{w は無限素点}(w.mult)log⁺|λ_x|_w である。実素点の重複度は 1、複素素点の重複度は 2 である。主張は次のとおりである。任意のコンパクト有界データ C に対し、C に依存してよい実数 B が x より先に存在し、すべての代数点 x∈ℚ̄∖{0,1} について、x∈C.set ならば |H_fin(j(λ_x))/(6d_x)−Height.logHeight₁(λ_x)/d_x|≤B である。次数の上界も j≠0 の前提もない。j=0 の分岐も含む。x=0 と x=1 は、この定理に追加された前提ではなく点の型によって除かれる。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The final source declaration applies canonicalLegendreHeightComparison_of_source_children to four imported children: legendreFiniteUpperBound, legendreFiniteLowerBound, legendreArchimedeanTripleBound, and legendreZeroJRootOfUnity. This is an unconditional proposition at the declared type, whose supplied proof term depends on those children. The two nonfinite children are imported; they were not compiled or separately audited in this readback. No claim that this draft closes a larger mathematical obligation is made. The imported composition explicitly splits on j(λ_x)=0 and uses λ_x^6=1 in that branch."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.legendreFiniteLowerBound",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound.lean",
+      "sha256": "f0a556ac3b5c04d09f49e615d66bf092ed4c196cf71a5bc85ffc6e8961e99a7a",
+      "source_span": {
+        "start_line": 22,
+        "end_line": 62
+      },
+      "signature_span": {
+        "start_line": 22,
+        "end_line": 22
+      },
+      "static_signature": "theorem legendreFiniteLowerBound : LegendreFiniteLowerBound",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. A compactly bounded datum C consists of a finite set V_C of prime natural numbers containing 2 and a real number c_C. Membership x∈C.set means: for every finite place v of F_x with p_v=char(O_{F_x}/P_v)∈V_C, both |log|λ_x|_v|≤c_C and |log|λ_x−1|_v|≤c_C; and for every infinite place w of F_x, both |log|λ_x|_w|≤c_C and |log|λ_x−1|_w|≤c_C. No degree bound is part of this datum. Its real parameter is not assumed nonnegative by the structure, although membership forces c_C≥0. For every compactly bounded datum C and every point x∈C.set with j(λ_x)≠0, 2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹))≤H_fin(j(λ_x))+6 c_C #V_C d_x. The quantifier on C precedes x and there is no degree bound on x. The full finite heights retain all finite places; the term 6 c_C #V_C d_x accounts for places with residue characteristic in V_C, which includes 2. Outside V_C the local lower inequality applies since p_v≠2. The explicit j≠0 hypothesis excludes its zero branch.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 一组紧有界数据 C 包含由素自然数组成且含 2 的有限集 V_C，以及实数 c_C。条件 x∈C.set 的实际含义是：对 F_x 的每个满足 p_v=char(O_{F_x}/P_v)∈V_C 的有限处 v，均有 |log|λ_x|_v|≤c_C 和 |log|λ_x−1|_v|≤c_C；对 F_x 的每个无限处 w，也均有 |log|λ_x|_w|≤c_C 和 |log|λ_x−1|_w|≤c_C。这组数据不含次数上界。结构本身未假设实参数非负，但成员条件推出 c_C≥0。 对每组紧有界数据 C 及每个满足 x∈C.set、j(λ_x)≠0 的点 x，有 2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹))≤H_fin(j(λ_x))+6 c_C #V_C d_x。C 的量词在 x 之前，且不对 x 施加次数上界。完整有限高度保留全部有限处；项 6 c_C #V_C d_x 计入剩余特征属于 V_C 的处，其中包含 2。V_C 外的处因 p_v≠2 而适用局部下界。显式假设 j≠0 排除其零分支。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 コンパクト有界データ C は、2 を含む素数からなる有限集合 V_C と実数 c_C からなる。x∈C.set とは、F_x の有限素点 v で p_v=char(O_{F_x}/P_v)∈V_C を満たすすべてのものに対し |log|λ_x|_v|≤c_C と |log|λ_x−1|_v|≤c_C が成り立ち、さらに F_x のすべての無限素点 w に対し |log|λ_x|_w|≤c_C と |log|λ_x−1|_w|≤c_C が成り立つことである。このデータに次数の上界は含まれない。構造の実数パラメータ自体に非負性の仮定はないが、所属条件から c_C≥0 が従う。 任意のコンパクト有界データ C と x∈C.set、j(λ_x)≠0 を満たす任意の点 x に対し、2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹))≤H_fin(j(λ_x))+6 c_C #V_C d_x である。C の量化が x に先行し、x の次数の上界は課さない。完全な有限高さにはすべての有限素点を残す。項 6 c_C #V_C d_x は剰余標数が V_C に属する素点を処理し、V_C は 2 を含む。V_C の外では p_v≠2 により局所的な下界が適用される。明示的な j≠0 の仮定は零の分岐を除く。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The source splits the common finite support by p_v∈V_C. Each exceptional-place triple contributes at most 6 c_C; the place-count bound gives #V_C·d_x. The complementary branch uses odd residue characteristic. This does not cover the zero-j case. The count follows from the e_w f_w degree bound, then f_w≤e_w f_w and 1≤f_w; no e_w factor belongs in the local logarithmic weight."
+      }
+    },
+    {
+      "userName": "AbcAdaptation.Tripod.legendreFiniteUpperBound",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound",
+      "path": "/tmp/p2m-legendre-finite-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound.lean",
+      "sha256": "8f334e512fcf4606d69cab8acd7d8f68481ff71b9d0d6d6a5b013a3a80f40cba",
+      "source_span": {
+        "start_line": 20,
+        "end_line": 23
+      },
+      "signature_span": {
+        "start_line": 20,
+        "end_line": 20
+      },
+      "static_signature": "theorem legendreFiniteUpperBound : LegendreFiniteUpperBound",
+      "static_section_context": "No inherited section parameters; all parameters or the named proposition appear in the source header.",
+      "statements": {
+        "en": "Let ℚ̄ be the algebraic closure of ℚ. For an algebraic point x∈ℚ̄∖{0,1}, take the actual subfield F_x=ℚ(x)⊆ℚ̄, its generator λ_x=x viewed in F_x, and d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0. All places and heights below are taken in F_x. Set j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²), using field division. Define H_fin(y)=∑ᶠ_{v finite place of F_x}log⁺|y|_v, where log⁺t=max(0,log t) and log 0=0; this sum includes every finite place, has no infinite-place terms and has no division by d_x. For every point x, H_fin(j(λ_x))≤2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹)). The finite-place heights all use the actual field F_x=ℚ(x). No finite place, including those above 2, is removed. There is no compactly bounded-set hypothesis, no degree bound, and no requirement j(λ_x)≠0; if j(λ_x)=0 the left-hand side is 0. This is an unnormalized finite-height comparison, before division by d_x.",
+        "zh_Hans": "设 ℚ̄ 为 ℚ 的代数闭包。对代数点 x∈ℚ̄∖{0,1}，取实际子域 F_x=ℚ(x)⊆ℚ̄，将其生成元记为 λ_x（即在 F_x 中看待的 x），并记 d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0。以下各处与高度均在 F_x 中取。令 j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²)，除法为域上的除法。定义 H_fin(y)=∑ᶠ_{v 为 F_x 的有限处}log⁺|y|_v，其中 log⁺t=max(0,log t)，且 log 0=0；求和涵盖全部有限处，不含无限处项，也未除以 d_x。 对每个点 x，有 H_fin(j(λ_x))≤2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹))。这些有限处高度全部在实际域 F_x=ℚ(x) 中取。没有删去任何有限处，包括 2 上方的处。不以紧有界集合条件、次数上界或 j(λ_x)≠0 为前提；j(λ_x)=0 时左侧为 0。这是除以 d_x 之前、尚未归一化的有限高度比较。",
+        "ja": "ℚ̄ を ℚ の代数閉包とする。代数点 x∈ℚ̄∖{0,1} に対し、実際の部分体 F_x=ℚ(x)⊆ℚ̄ を取り、その生成元を λ_x（F_x の元としての x）と書き、d_x=[F_x:ℚ]=deg(minpoly_ℚ x)>0 とする。以下の素点と高さはすべて F_x で取る。j(λ)=256(λ²−λ+1)³/(λ²(λ−1)²) と定め、除法は体の除法とする。H_fin(y)=∑ᶠ_{v は F_x の有限素点}log⁺|y|_v と定める。ここで log⁺t=max(0,log t)、log 0=0 である。この和はすべての有限素点を含み、無限素点の項を含まず、d_x で割っていない。 すべての点 x に対し、H_fin(j(λ_x))≤2(H_fin(λ_x)+H_fin(λ_x⁻¹)+H_fin((λ_x−1)⁻¹)) である。有限素点に関する高さはすべて実際の体 F_x=ℚ(x) で取る。2 の上の素点も含め、どの有限素点も除かない。コンパクト有界集合への所属、次数の上界、j(λ_x)≠0 は仮定しない。j(λ_x)=0 ならば左辺は 0 である。これは d_x で割る前の、正規化していない有限高さの比較である。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "uncompiled_source_readback",
+        "notes": "The proof sums the local upper inequality over the common support finset. This readback only records the finite-height child, not the entire project or any broader parent obligation."
+      }
+    }
+  ]
+}

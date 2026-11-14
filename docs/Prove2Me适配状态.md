@@ -13,8 +13,6 @@
 - `refer/iut/Iut/Implication/Theorem110.lean:234`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:205`
-- `refer/iut/Iut/Tripod/Height.lean:714`
-- `refer/iut/Iut/Tripod/Height.lean:743`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:52`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:72`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:108`
