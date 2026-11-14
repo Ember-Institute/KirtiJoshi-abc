@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-11-14T11:27:56.169267+00:00",
+  "reviewer": "/root/belyi_coefficient_unit_review",
+  "candidate_directory": "/tmp/p2m-belyi-cusp-coefficient-source-next-20261114",
+  "verdict": "No mathematical blocker or concrete API mismatch found by source inspection. Ready for root MCP-CI elaboration and axiom review.",
+  "validation_scope": {
+    "source_review": true,
+    "compiler_used": false,
+    "mcp_ci_used": false,
+    "platform_api_used": false,
+    "git_mutations": false,
+    "main_workspace_edits": false,
+    "subagents": false,
+    "axiom_audit_performed": false
+  },
+  "input_versions": {
+    "original_child_sha256": "5c4272e54f24d5dc804bb57b61826f3c15459e11d379fce78bbecc6f0ff56b63",
+    "candidate_wrapper_sha256": "ec2234df1565c9e55d468776efa212b10d7086842a62527003c22bc2f12e1644",
+    "candidate_source_sha256": "74535d690383d0ead6ebf2401bb31289eace164688811a77d4477ff65248abb8",
+    "current_integrated_wrapper_sha256": "ec2234df1565c9e55d468776efa212b10d7086842a62527003c22bc2f12e1644",
+    "hash_observation": "Root integrated the candidate during review. The original input hash remains historical provenance; the current child equals candidate output.",
+    "other_recorded_current_input_hashes_match": true,
+    "root_reported_source_ci_job": "ci-011596-74c1a591",
+    "ci_job_independently_queried": false
+  },
+  "checks": [
+    {
+      "name": "unchanged_exact_type",
+      "status": "pass_source_review",
+      "evidence": "Original child read at review start, candidate wrapper lines 21-29, and source lines 34-41 retain every binder and the exact coefficient equality. No strengthened premise or weakened conclusion."
+    },
+    {
+      "name": "actual_consumer",
+      "status": "pass_source_review",
+      "evidence": "Source_FermatCanonicalCuspComposition.lean:31-37 has the same universal child type. Lines 59-66 use its positive principal-divisor sign with witness (phi*(phi-1))*q. The separate hChange input remains required."
+    },
+    {
+      "name": "all_places_and_infinity",
+      "status": "pass_source_review",
+      "evidence": "Place is the full nontrivial rational-containing valuation-subring carrier (Def_FermatProperCarrier.lean:54-57). Candidate quantifies every Place and splits only on phi membership/order. No affine-chart restriction removes infinity."
+    },
+    {
+      "name": "supplied_hfin",
+      "status": "pass_source_review",
+      "evidence": "Source lines 69,86,103,116 pass the same supplied hfin to CuspCoordRingSource.cuspDivisor_apply. That theorem computes the actual supplied finite sum (Source_FermatCoordRingSource.lean:177-184)."
+    },
+    {
+      "name": "integer_ramification_and_signs",
+      "status": "pass_source_review",
+      "evidence": "Existing ramIdx is Int (Def_FermatProperCarrier.lean:128-133). No Nat conversion occurs. Zero and value-one cases give e; pole case gives -e; noncusp case gives zero."
+    },
+    {
+      "name": "ord_zero_convention",
+      "status": "pass_source_review",
+      "evidence": "Candidate lines 44-49 prove phi != 0 and phi-1 != 0 before line 53 ord_mul. Both unequal-order sum uses supply nonzero factors. It does not apply unrestricted order additivity to zero."
+    },
+    {
+      "name": "rational_residue_helper",
+      "status": "pass_source_review",
+      "evidence": "Candidate lines 25-30 unfold the existing index, substitute a rational residue, and use pinned minpoly.eq_X_sub_C. This establishes only the supplied rational residue case; it does not assume the full constant field is Q."
+    },
+    {
+      "name": "noncusp_index_one",
+      "status": "pass_source_review",
+      "evidence": "Candidate lines 96-99 combine actual integer index positivity with the contrapositive Belyi condition. Over Int, 0 < e and not 1 < e imply e = 1."
+    },
+    {
+      "name": "source_fidelity",
+      "status": "pass_source_review",
+      "evidence": "The four branches follow BelyiRelation.lean:85-139. The helper follows RamIdx.lean:218-223. Reference files match their recorded SHA-256 and archived bytes. Copyright notices remain."
+    },
+    {
+      "name": "no_added_assumptions",
+      "status": "pass_source_review",
+      "evidence": "The source and wrapper add no axiom, sorry, model field, carrier, canonical data, parent equality, constant-field restriction, or extra theorem premise. IsCurveField is derived from M.isCurveField. Existing hRF remains in the exact public type."
+    },
+    {
+      "name": "concrete_api_inspection",
+      "status": "no_mismatch_found",
+      "evidence": "Checked ramIdx definition, ord_eq_placeOrd, residue_eq_zero_iff, ord_pos_iff_mem_maximalIdeal, ord_mul, ord_add_eq_of_lt, ramIdx_of_notMem, noncritical_ramIdx_of_positive_order, noncriticalRamificationPositive, cuspDivisor_apply, and minpoly.eq_X_sub_C. Compilation remains the elaborator check."
+    },
+    {
+      "name": "local_dependency_closure",
+      "status": "pass_textual_check",
+      "evidence": "Sixteen local transitive dependencies found. No missing local imports, textual proof holes, child import, or composer import found. Textual scans do not establish kernel axiom acceptance."
+    }
+  ],
+  "case_arithmetic": [
+    {
+      "case": "zero",
+      "differential": "e-1",
+      "cusp": "1",
+      "pole": "0",
+      "product_order": "e",
+      "both_sides": "e"
+    },
+    {
+      "case": "value_one",
+      "differential": "e-1",
+      "cusp": "1",
+      "pole": "0",
+      "product_order": "e",
+      "both_sides": "e"
+    },
+    {
+      "case": "pole",
+      "differential": "-e-1",
+      "cusp": "1",
+      "pole": "e",
+      "product_order": "-2e",
+      "both_sides": "-e"
+    },
+    {
+      "case": "noncusp",
+      "differential": "0",
+      "cusp": "0",
+      "pole": "0",
+      "product_order": "0",
+      "both_sides": "0"
+    }
+  ],
+  "mathematical_blockers": [],
+  "concrete_api_issues": [],
+  "provenance_issues": [],
+  "required_remaining_validation": [
+    "Root MCP-CI elaboration of this source and wrapper.",
+    "Required consumer, Checks/Axioms, ImportAudit, Act1Scene1, and AxiomAudit gates.",
+    "Check sorryAx and axiom output, plus receipt arguments and physical resource data."
+  ],
+  "parent_obligation_status": "This child does not prove canonicalDifferentialChange or complete the Fermat parent route."
+}

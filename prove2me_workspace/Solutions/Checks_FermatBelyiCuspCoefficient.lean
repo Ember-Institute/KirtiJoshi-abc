@@ -1,0 +1,5 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiCanonicalCuspCoefficientIdentity
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.BelyiCuspCoefficientSource.ramIdx_of_residue_eq
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.BelyiCuspCoefficientSource.belyiCanonicalCuspCoefficientIdentity_source
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity

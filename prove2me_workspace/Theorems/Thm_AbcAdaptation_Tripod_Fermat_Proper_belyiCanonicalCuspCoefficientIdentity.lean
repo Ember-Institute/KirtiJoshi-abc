@@ -3,10 +3,10 @@ Copyright (c) 2026 The Belyi project contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The Belyi project contributors
 
-DRAFT: exact open source obligation from Belyi/CurveField/BelyiRelation.lean:85,
+Source-proof adaptation from Belyi/CurveField/BelyiRelation.lean:85,
 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8.
 -/
-import Definitions.Def_FermatProperDivisorHeight
+import Solutions.Source_FermatBelyiCuspCoefficient
 
 set_option autoImplicit false
 
@@ -26,6 +26,7 @@ theorem belyiCanonicalCuspCoefficientIdentity {N : ℕ}
       (if φ ∈ P.1 then ramIdx M hDVR φ P - 1
         else -ramIdx M hDVR φ P - 1) + cuspDivisor M hDVR φ hfin P =
         poleMultiplicity M hDVR φ P + ord M hDVR P (φ * (φ - 1)) := by
-  sorry
+  exact BelyiCuspCoefficientSource.belyiCanonicalCuspCoefficientIdentity_source
+    M hDVR hRF φ hφ hfin
 
 end AbcAdaptation.Tripod.Fermat.Proper

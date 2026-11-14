@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-11-14T11:41:58.266374+00:00",
+  "reviewer": "/root/belyi_coefficient_unit_review",
+  "unit_directory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/belyi-cusp-coefficient-sourceproof-20261114",
+  "verdict": "Generated proof and provenance checks pass source review.",
+  "mathematical_blockers": [],
+  "concrete_api_blockers": [],
+  "actionable_issues": [],
+  "checks": [
+    {
+      "name": "actual_minimal_closure",
+      "status": "pass",
+      "evidence": "Recomputed graph reachability matches exactly the three recorded inline helpers. Generated source contains exactly cuspDivisor_apply, ramIdx_of_residue_eq, belyiCanonicalCuspCoefficientIdentity_source, and solution. The two source helper bodies and parsed coordinate coefficient declaration are copied exactly."
+    },
+    {
+      "name": "source_hash_binding",
+      "status": "pass",
+      "evidence": "All four final readback rows match current file hashes and declaration graph compiler types. Both new blind packets and both reused packet hashes match. The closure source hash matches the actual standalone file."
+    },
+    {
+      "name": "original_platform_binder_type",
+      "status": "pass",
+      "evidence": "The generated solution signature equals the saved raw API formal_statement after only theorem-name and proof-body replacement. AuditSolution begins with the exact standalone source. Its extra PlatformOriginalType has the same raw signature."
+    },
+    {
+      "name": "standalone_imports",
+      "status": "pass",
+      "evidence": "Generated source imports four Definitions modules. It has no Solutions import, Theorems import, or own-target import. It contains no textual sorry."
+    },
+    {
+      "name": "source_consumer_provenance",
+      "status": "pass",
+      "evidence": "Both archived source files match their recorded hashes. The production SOURCE_LEDGER hash matches the actual file. Source-consumer records retain exact source spans, actual consumers, all-place fidelity, no added assumptions, and the separate canonicalDifferentialChange obligation."
+    },
+    {
+      "name": "pending_database_scope",
+      "status": "pass",
+      "evidence": "Proposed after-file differs only by removal of the RamIdx.lean:218 pending reference. Differential-change source lines remain. The live database still equals the before-file. finalize.py permits the removal only after preflight, ACCEPTED/Proved platform checks, unchanged graph structure, and the exact one-line diff."
+    },
+    {
+      "name": "module_axioms",
+      "status": "pass_receipt_and_output_review",
+      "evidence": "All-constants output covers seven module declarations, including generated auxiliaries. Every axiom set contains only propext, Classical.choice, and Quot.sound."
+    },
+    {
+      "name": "standalone_type_and_axioms",
+      "status": "pass_receipt_and_output_review",
+      "output": {
+        "type": "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M),\n  ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      IsBelyi M hDVR φ →\n        ∀ (hfin : (cusps M hDVR φ).Finite) (P : Place ↥M.K),\n          (if φ ∈ ↑P then ramIdx M hDVR φ P - 1 else -ramIdx M hDVR φ P - 1) + (cuspDivisor M hDVR φ hfin) P =\n            poleMultiplicity M hDVR φ P + ord M hDVR P (φ * (φ - 1))",
+        "original_type_equal": true,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "current_hashes": {
+    "Solutions/Source_FermatBelyiCuspCoefficient.lean": "4d1e312f84ce89f5fc863e5475b9a3ad29780d7877289f6873002f2880d40d90",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiCanonicalCuspCoefficientIdentity.lean": "6427f57bc315db5bf6c588dde69e2b80fb034e445a66968dcefb305bc48cb757",
+    ".local/adaptation/belyi-cusp-coefficient-sourceproof-20261114/Solution_belyiCanonicalCuspCoefficientIdentity.lean": "fd19fd37c7c26d0473121f54050f9cb161af2dd838becb14e4cfc36626a9a1fe",
+    ".local/adaptation/belyi-cusp-coefficient-sourceproof-20261114/final-readbacks.json": "559870aa72f9f8ea605310edaf89c7891a6eb2ba36217ed1b9e67e75ecc5682e"
+  },
+  "observed_receipts": [
+    {
+      "tag": "coefficient-source-leaf",
+      "job_id": "ci-011611-e8c3d2c9",
+      "status": "succeeded",
+      "exit_code": 0
+    },
+    {
+      "tag": "coefficient-target-leaf",
+      "job_id": "ci-011616-832e65c8",
+      "status": "succeeded",
+      "exit_code": 0
+    },
+    {
+      "tag": "closed-axioms-review",
+      "job_id": "ci-011618-b833fcac",
+      "status": "succeeded",
+      "exit_code": 0
+    },
+    {
+      "tag": "source-graph-leaf",
+      "job_id": "ci-011619-db0def75",
+      "status": "succeeded",
+      "exit_code": 0
+    },
+    {
+      "tag": "syntax-leaf",
+      "job_id": "ci-011621-38065be2",
+      "status": "succeeded",
+      "exit_code": 0
+    },
+    {
+      "tag": "all-constants-review",
+      "job_id": "ci-011623-c581f924",
+      "status": "succeeded",
+      "exit_code": 0
+    },
+    {
+      "tag": "direct-solution-leaf",
+      "job_id": "ci-011625-dda8a44a",
+      "status": "succeeded",
+      "exit_code": 0
+    },
+    {
+      "tag": "solution-type-axioms-review",
+      "job_id": "ci-011627-b48cf460",
+      "status": "succeeded",
+      "exit_code": 0
+    }
+  ],
+  "pending_gates": [
+    "production-gates-review",
+    "Platform verification ACCEPTED and final Proved readback.",
+    "Final complete graph/frontier comparison and pending-database application."
+  ],
+  "validation_scope": {
+    "read_only_main_workspace": true,
+    "compiled_by_reviewer": false,
+    "mcp_ci_calls_by_reviewer": false,
+    "platform_api_calls": false,
+    "git_mutations": false,
+    "note": "Receipts and generated output were read from disk. New receipt files can appear after this review snapshot."
+  },
+  "parent_status": "canonicalDifferentialChange and the mathematical root remain open; the Fermat route remains unchanged.",
+  "resolved_observations": [
+    {
+      "id": "historical-proof-note",
+      "status": "resolved_and_rechecked",
+      "evidence": "The old by-sorry note is preserved under original_proof_notes. Current proof_notes identifies historical readback scope and records the exact source theorem application with CI evidence. No Lean source changed."
+    }
+  ]
+}

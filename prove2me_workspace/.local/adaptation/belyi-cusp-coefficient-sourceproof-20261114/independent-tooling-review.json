@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-11-14T11:34:04.098292+00:00",
+  "reviewer": "/root/belyi_coefficient_unit_review",
+  "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/belyi-cusp-coefficient-sourceproof-20261114/delivery.py",
+  "source_sha256": "bd712aaf7e16594f46fff65fcc81e001d666f15609a96013c053bea9602619e7",
+  "verdict": "No actionable issue found by read-only source inspection. Final receipt gates remain pending.",
+  "actionable_issues": [],
+  "checks": [
+    {
+      "name": "minimal_source_closure",
+      "status": "pass_source_review",
+      "lines": "33-56,75",
+      "evidence": "Reachability includes type and value dependencies. The exact selected-name assertion requires the two authored source theorems and cuspDivisor_apply. The generator copies only that coordinate-ring declaration with its lexical namespace, variables, and imports. The current authored helper file contains exactly the two selected theorem declarations."
+    },
+    {
+      "name": "original_binder_style_platform_type",
+      "status": "pass_source_review",
+      "lines": "57-74",
+      "evidence": "The generator reads the saved raw formal_statement and retains its binders. It replaces only the theorem name and final sorry body. The generated PlatformOriginalType uses the same raw statement. Its audit checks definitional equality against solution."
+    },
+    {
+      "name": "source_and_axiom_preflight",
+      "status": "pass_source_review",
+      "lines": "76-93",
+      "evidence": "Nine successful receipts are required. Checks bind each direct source to its recorded hash, workspace, exclusive mode, arguments, and exit code. Review receipts must pass. Axiom sets allow only propext, Classical.choice, and Quot.sound. The generated solution has a separate original-type and axiom audit. Production gates bind the owned source, wrapper, and Checks hashes."
+    },
+    {
+      "name": "uncertain_post_replay",
+      "status": "pass_source_review",
+      "lines": "111-116",
+      "evidence": "Before POST, the script writes a verification-requested record. If no submit receipt exists after an uncertain request, the next run stops for reconciliation. If a submit receipt exists, the request must match its stored metadata. The imported verify function then reuses the saved submission_id and performs GET polling."
+    },
+    {
+      "name": "accepted_only_completion",
+      "status": "pass_source_review",
+      "lines": "116-126",
+      "evidence": "The outer publish function requires ACCEPTED, even though the reused verifier also recognizes SKETCH_ACCEPTED. Final readback requires status Proved and the unchanged original formal statement. Metadata PATCH retry compares current values before writing."
+    },
+    {
+      "name": "source_readback_provenance",
+      "status": "pass_source_review",
+      "lines": "19-31,91",
+      "evidence": "New readbacks bind original file hashes and parsed declaration headers to current compiler types. The reused target readback requires the same compiler type. The reused cusp coefficient readback also requires the same source file hash. Final preflight binds every readback source hash to the current source."
+    },
+    {
+      "name": "final_comment_only_change",
+      "status": "pass_independent_textual_check",
+      "evidence": "Both blind-source readback rows retain valid original hashes. After removing nested block comments, line comments, and whitespace differences, their source file equals the finalized current helper. The current helper still has exactly the same two theorem declarations."
+    },
+    {
+      "name": "no_extra_platform_nodes",
+      "status": "pass_source_review",
+      "evidence": "The publish path verifies the existing theorem ID, patches its metadata, and fetches graph/frontier data. It does not submit new definitions or problems."
+    }
+  ],
+  "validation_limits": [
+    "delivery.py was parsed with Python ast only; no generator or preflight function was executed.",
+    "Final generated artifacts and final CI receipts were not yet all present during review.",
+    "This reviewer did not compile, call MCP-CI, call the platform API, mutate Git, or edit the main workspace."
+  ],
+  "related_review": "/tmp/p2m-belyi-coefficient-unit-review-20261114/review.json"
+}

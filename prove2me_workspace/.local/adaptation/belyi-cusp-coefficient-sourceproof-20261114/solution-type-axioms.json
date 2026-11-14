@@ -1,0 +1,4 @@
+{"type":
+ "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M),\n  ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      IsBelyi M hDVR φ →\n        ∀ (hfin : (cusps M hDVR φ).Finite) (P : Place ↥M.K),\n          (if φ ∈ ↑P then ramIdx M hDVR φ P - 1 else -ramIdx M hDVR φ P - 1) + (cuspDivisor M hDVR φ hfin) P =\n            poleMultiplicity M hDVR φ P + ord M hDVR P (φ * (φ - 1))",
+ "original_type_equal": true,
+ "axioms": ["propext", "Classical.choice", "Quot.sound"]}

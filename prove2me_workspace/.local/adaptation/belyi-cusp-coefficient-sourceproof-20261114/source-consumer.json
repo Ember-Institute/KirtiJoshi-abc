@@ -1,0 +1,97 @@
+{
+  "status": "exclusive_local_audits_passed_and_platform_ACCEPTED",
+  "source_records": [
+    {
+      "project": "belyi",
+      "commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_file": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/BelyiRelation.lean",
+      "draft_file": "/tmp/p2m-belyi-cusp-coefficient-source-next-20261114/reference/Belyi/CurveField/BelyiRelation.lean",
+      "sha256": "e5d39478fe8ee58c4fcd43e57bea5aac06147179e5c852f1386098cc4ac7b378",
+      "copied_bytes_equal": true,
+      "spans": [
+        {
+          "lines": "85-139",
+          "consumer": "BelyiCuspCoefficientSource.belyiCanonicalCuspCoefficientIdentity_source",
+          "fidelity": "Four source valuation cases; current supplied finite sum and Int index retained."
+        }
+      ],
+      "notice_preserved": "/-\nCopyright (c) 2026 The Belyi project contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The Belyi project contributors",
+      "archived_reference": ".local/adaptation/belyi-cusp-coefficient-sourceproof-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-BelyiRelation.lean.txt",
+      "archive_sha256": "e5d39478fe8ee58c4fcd43e57bea5aac06147179e5c852f1386098cc4ac7b378"
+    },
+    {
+      "project": "belyi",
+      "commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_file": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/RamIdx.lean",
+      "draft_file": "/tmp/p2m-belyi-cusp-coefficient-source-next-20261114/reference/Belyi/CurveField/RamIdx.lean",
+      "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+      "copied_bytes_equal": true,
+      "spans": [
+        {
+          "lines": "218-223",
+          "consumer": "BelyiCuspCoefficientSource.ramIdx_of_residue_eq",
+          "fidelity": "Exact rational-residue specialization of actual current index; order has explicit hDVR."
+        }
+      ],
+      "notice_preserved": "/-\nCopyright (c) 2026 The Belyi project contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The Belyi project contributors",
+      "archived_reference": ".local/adaptation/belyi-cusp-coefficient-sourceproof-20261114/reference/9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8-RamIdx.lean.txt",
+      "archive_sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6"
+    }
+  ],
+  "declarations": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiCuspCoefficientSource.ramIdx_of_residue_eq",
+      "source": "Belyi/CurveField/RamIdx.lean:218–223",
+      "consumer": "BelyiCuspCoefficientSource.belyiCanonicalCuspCoefficientIdentity_source, value-one case",
+      "fidelity": "Actual integer index, rational residue minimal polynomial; no transcendence or residue-finiteness assumption added."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiCuspCoefficientSource.belyiCanonicalCuspCoefficientIdentity_source",
+      "source": "Belyi/CurveField/BelyiRelation.lean:85–139",
+      "consumer": "belyiCanonicalCuspCoefficientIdentity wrapper",
+      "fidelity": "All four source cases, every proper place and caller-supplied hfin retained."
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity",
+      "source": "Exact existing child statement",
+      "consumer": "canonicalCuspPolarLinearEquivalence_of_children.hBelyiCoefficient",
+      "fidelity": "Original exact public type."
+    }
+  ],
+  "reused_indicator": {
+    "name": "CuspCoordRingSource.cuspDivisor_apply",
+    "file": "Solutions/Source_FermatCoordRingSource.lean",
+    "line": 177,
+    "use": "Indicator coefficient for arbitrary supplied hfin."
+  },
+  "preservation": {
+    "type": "Exact current child signature, checked verbatim.",
+    "parameters": "Every N, Model, supplied hDVR, supplied hRF, phi, actual IsBelyi proof, supplied hfin, and every proper place remain quantified.",
+    "hfin": "Existing public cuspDivisor_apply computes precisely the caller-supplied sum.",
+    "ramIdx": "Existing Int ramification index, no Nat conversion or new law.",
+    "nonzero": "phi != 0 and phi-1 != 0 precede the only Place.ord_mul use.",
+    "places": "All actual proper places, including all poles and infinity.",
+    "constant_field": "No assumption that algebraic constants equal Q.",
+    "canonical": "No canonical divisor or desired parent equality is assumed by this child."
+  },
+  "production_ledger": {
+    "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+    "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+    "scope": "Existing adaptation proof child only; no production or boundary change"
+  },
+  "source_review": "independent-source-review.json",
+  "candidate_input_ledger": "draft-source-ledger.json",
+  "upstream_runtime_imports": [],
+  "new_nodes": [],
+  "new_assumptions": [],
+  "separate_open_obligation": "canonicalDifferentialChange",
+  "Fermat_route_preserved": true,
+  "deprecations": [],
+  "compiled": true,
+  "platform_status": "Proved",
+  "closed_direct": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity",
+    "submission_id": "710916d9-cefb-41dd-ac7a-08ad2b999729",
+    "status": "ACCEPTED"
+  }
+}

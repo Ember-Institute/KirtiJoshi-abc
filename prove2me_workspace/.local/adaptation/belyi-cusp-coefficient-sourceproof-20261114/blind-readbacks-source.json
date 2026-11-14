@@ -1,0 +1,187 @@
+{
+  "readback_scope": "NEXT source file only; two mathematical declarations; no new wrapper row",
+  "requested_model": "gpt-6.1-sol",
+  "actual_model": null,
+  "language_provenance": {
+    "en": "Independent formal readback from the supplied Lean declarations and necessary formal definitions.",
+    "zh_Hans": "Translation of this English readback, checked against the same formal definitions; not a separate independent audit.",
+    "ja": "Translation of this English readback, checked against the same formal definitions; not a separate independent audit."
+  },
+  "readbacks": [
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiCuspCoefficientSource.ramIdx_of_residue_eq",
+      "path": "/tmp/p2m-belyi-cusp-coefficient-source-next-20261114/Solutions/Source_FermatBelyiCuspCoefficient.lean",
+      "sourceSHA": "74535d690383d0ead6ebf2401bb31289eace164688811a77d4477ff65248abb8",
+      "source_sha256": "74535d690383d0ead6ebf2401bb31289eace164688811a77d4477ff65248abb8",
+      "signature": "theorem ramIdx_of_residue_eq {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    {φ : M.K} {P : Place M.K} (h : φ ∈ P.1) {c : ℚ}\n    (hc : P.residue ⟨φ, h⟩ = algebraMap ℚ P.ResidueField c) :\n    ramIdx M hDVR φ P = ord M hDVR P (φ - algebraMap ℚ M.K c)",
+      "spans": {
+        "declaration": {
+          "start_line": 25,
+          "end_line": 30
+        },
+        "signature": {
+          "start_line": 25,
+          "end_line": 28
+        },
+        "proof": {
+          "start_line": 28,
+          "end_line": 30
+        },
+        "line_numbering": "1-based, inclusive; signature endpoint also contains := by in source"
+      },
+      "staticcontext": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.BelyiCuspCoefficientSource",
+        "source_imports": [
+          "import Definitions.Def_FermatProperDivisorHeight",
+          "import Definitions.Def_FermatNoncriticalElementarySource",
+          "import Solutions.Source_FermatCoordRingSource"
+        ],
+        "source_options": [
+          "set_option autoImplicit false",
+          "open Polynomial",
+          "open scoped Classical"
+        ],
+        "ambient_declaration_binders": [],
+        "binder_policy": "The source declarations introduce their own binders. There is no additional surrounding variable declaration or typeclass binder. Field, characteristic-zero, and rational algebra structures come from Model.K as an intermediate field of the fixed algebraic closure of RatFunc ℚ.",
+        "formal_context_files": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+            "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+            "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+            "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalElementarySource.lean",
+            "sha256": "aef871215e64e6d65d9ed46c8eeeefe26b0fd389e892b573bbcc47decaf258c6"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatCoordRingSource.lean",
+            "sha256": "196b2b4a4ecf4d404983b4d2ab62e1af2b12fc6673bc94ae1b93b96a0eb5b699"
+          }
+        ],
+        "definitions": {
+          "Model": "For N : ℕ, K : IntermediateField ℚ (AlgebraicClosure (RatFunc ℚ)); u,v : K; Transcendental ℚ u; u^N + v^N = 1; ℚ⟮u,v⟯ = ⊤; finite_u : FiniteDimensional ℚ⟮u⟯ K; Module.finrank ℚ⟮u⟯ K = N.",
+          "Place": "All valuation subrings O of K with O ≠ ⊤ and ∀ q : ℚ, (q : K) ∈ O. No affine chart restriction.",
+          "PlacesDiscrete": "∀ P : Place M.K, IsDiscreteValuationRing P.1.",
+          "ResiduesFinite": "∀ P : Place M.K, FiniteDimensional ℚ P.ResidueField.",
+          "residue": "IsLocalRing.residue P.1 : P.1 →+* IsLocalRing.ResidueField P.1; the residue field has its induced characteristic-zero and rational algebra structures.",
+          "ord": "-WithZero.log (((IsDiscreteValuationRing.maximalIdeal P.1).valuation M.K) f), with the IsDiscreteValuationRing instance supplied by hDVR P. This integer order is totalized by ord P 0 = 0.",
+          "ramIdx": "if h : φ ∈ P.1 then ord M hDVR P (Polynomial.aeval φ (minpoly ℚ (P.residue ⟨φ,h⟩))) else -ord M hDVR P φ; its codomain is ℤ.",
+          "cusps": "{P | ord M hDVR P φ ≠ 0 ∨ 0 < ord M hDVR P (φ - 1)}.",
+          "IsBelyi": "Transcendental ℚ φ ∧ ∀ P : Place M.K, 1 < ramIdx M hDVR φ P → P ∈ cusps M hDVR φ.",
+          "cuspDivisor": "∑ P ∈ hfin.toFinset, Finsupp.single P 1, as a finitely supported integer function on all places; its coefficient is 1 at a cusp and 0 otherwise.",
+          "poleMultiplicity": "max 0 (-ord M hDVR P φ)."
+        }
+      },
+      "statements": {
+        "en": "For every natural number $N$ and every model $M$, let $K=M.K$ be an intermediate field over $\\mathbb{Q}$ in the fixed algebraic closure of $\\mathbb{Q}(T)$, with specified $u,v\\in K$ such that $u$ is transcendental over $\\mathbb{Q}$, $u^N+v^N=1$, $K=\\mathbb{Q}(u,v)$, and $K/\\mathbb{Q}(u)$ is finite dimensional of degree $N$. Assume $h_{\\mathrm{DVR}}$: every proper valuation subring of $K$ containing every rational constant is a discrete valuation ring. A place $P$ means any such proper valuation subring $\\mathcal{O}_P$, with residue field $\\kappa(P)$ and quotient homomorphism $\\operatorname{res}_P:\\mathcal{O}_P\\to\\kappa(P)$; this carrier includes places at infinity. Write $i_K$ and $i_P$ for the rational algebra maps into $K$ and $\\kappa(P)$. Write $\\operatorname{ord}_P(f)\\in\\mathbb{Z}$ for the negative exponent of the normalized multiplicative valuation associated with the maximal ideal of $\\mathcal{O}_P$, using the discrete valuation ring structure supplied by $h_{\\mathrm{DVR}}$ and the totalization $\\operatorname{ord}_P(0)=0$. For every $\\varphi\\in K$, every such $P$, every proof $h$ that $\\varphi\\in\\mathcal{O}_P$, and every $c\\in\\mathbb{Q}$, if $\\operatorname{res}_P(\\varphi)=i_P(c)$, then $e_\\varphi(P)=\\operatorname{ord}_P(\\varphi-i_K(c))$, where at this regular place the integer $e_\\varphi(P)$ is defined to be $\\operatorname{ord}_P(m_P(\\varphi))$ and $m_P(X)$ is the minimal polynomial over $\\mathbb{Q}$ of the actual residue $\\operatorname{res}_P(\\varphi)$. No transcendence or nonzero assumption is imposed on $\\varphi$ or $\\varphi-i_K(c)$, and no finite-dimensionality assumption is imposed on $\\kappa(P)/\\mathbb{Q}$; in particular, when $\\varphi=i_K(c)$ the orders of zero use the stated totalization.",
+        "zh_Hans": "对任意自然数 $N$ 及任意模型 $M$，令 $K=M.K$ 为固定的 $\\mathbb{Q}(T)$ 的代数闭包中的一个含 $\\mathbb{Q}$ 的中间域，并给定 $u,v\\in K$，满足 $u$ 在 $\\mathbb{Q}$ 上超越、$u^N+v^N=1$、$K=\\mathbb{Q}(u,v)$，且 $K/\\mathbb{Q}(u)$ 是次数为 $N$ 的有限维扩张。假设 $h_{\\mathrm{DVR}}$：$K$ 中每个包含全部有理常数且不等于 $K$ 的赋值子环都是离散赋值环。这里的一个处 $P$ 就是任意这样的赋值子环 $\\mathcal{O}_P$，其剩余域为 $\\kappa(P)$，商同态为 $\\operatorname{res}_P:\\mathcal{O}_P\\to\\kappa(P)$；这个处的集合包括无穷远处。用 $i_K$ 和 $i_P$ 分别表示到 $K$ 和 $\\kappa(P)$ 的有理数代数映射。令 $\\operatorname{ord}_P(f)\\in\\mathbb{Z}$ 为由 $\\mathcal{O}_P$ 的极大理想给出的规范化乘法赋值的指数的相反数，其中离散赋值环结构由 $h_{\\mathrm{DVR}}$ 提供，并约定 $\\operatorname{ord}_P(0)=0$。对每个 $\\varphi\\in K$、每个这样的处 $P$、每个证明 $\\varphi\\in\\mathcal{O}_P$ 的 $h$ 及每个 $c\\in\\mathbb{Q}$，若 $\\operatorname{res}_P(\\varphi)=i_P(c)$，则 $e_\\varphi(P)=\\operatorname{ord}_P(\\varphi-i_K(c))$；在此正则处，整数 $e_\\varphi(P)$ 定义为 $\\operatorname{ord}_P(m_P(\\varphi))$，其中 $m_P(X)$ 是实际剩余类 $\\operatorname{res}_P(\\varphi)$ 在 $\\mathbb{Q}$ 上的极小多项式。此声明不假设 $\\varphi$ 或 $\\varphi-i_K(c)$ 超越或非零，也不假设 $\\kappa(P)/\\mathbb{Q}$ 有限维；特别地，当 $\\varphi=i_K(c)$ 时，零的阶数按上述约定取值。",
+        "ja": "任意の自然数 $N$ と任意のモデル $M$ に対し、$K=M.K$ は固定された $\\mathbb{Q}(T)$ の代数閉包内の $\\mathbb{Q}$ 上の中間体であり、指定された $u,v\\in K$ は、$u$ が $\\mathbb{Q}$ 上超越的であること、$u^N+v^N=1$、$K=\\mathbb{Q}(u,v)$、および $K/\\mathbb{Q}(u)$ が次数 $N$ の有限次拡大であることを満たすものとする。仮定 $h_{\\mathrm{DVR}}$ は、有理定数をすべて含み $K$ 全体とは異なる任意の付値部分環が離散付値環であるという条件である。素点 $P$ はこのような任意の付値部分環 $\\mathcal{O}_P$ を意味し、その剰余体を $\\kappa(P)$、商準同型を $\\operatorname{res}_P:\\mathcal{O}_P\\to\\kappa(P)$ とする。この素点の全体には無限遠の素点も含まれる。$i_K$ と $i_P$ をそれぞれ $K$ と $\\kappa(P)$ への有理数の代数写像とする。$\\operatorname{ord}_P(f)\\in\\mathbb{Z}$ は、$h_{\\mathrm{DVR}}$ が与える離散付値環構造を用い、$\\mathcal{O}_P$ の極大イデアルに付随する正規化された乗法的付値の指数の符号を反転したものであり、$\\operatorname{ord}_P(0)=0$ と全域化する。任意の $\\varphi\\in K$、任意のそのような $P$、$\\varphi\\in\\mathcal{O}_P$ の任意の証明 $h$、および任意の $c\\in\\mathbb{Q}$ に対し、$\\operatorname{res}_P(\\varphi)=i_P(c)$ ならば、$e_\\varphi(P)=\\operatorname{ord}_P(\\varphi-i_K(c))$ である。ここで、この正則な素点における整数 $e_\\varphi(P)$ は $\\operatorname{ord}_P(m_P(\\varphi))$ と定義され、$m_P(X)$ は実際の剰余類 $\\operatorname{res}_P(\\varphi)$ の $\\mathbb{Q}$ 上の最小多項式である。$\\varphi$ や $\\varphi-i_K(c)$ に超越性または非零性を仮定せず、$\\kappa(P)/\\mathbb{Q}$ の有限次元性も仮定しない。特に $\\varphi=i_K(c)$ の場合には、零の位数に上記の全域化を用いる。"
+      },
+      "proof_notes": {
+        "status": "Formal text readback only. No compiler, proof audit, or fidelity assessment was performed.",
+        "proof_text_present": true,
+        "separation": "The statements render the types; they do not certify the tactic proof bodies."
+      },
+      "requested_model": "gpt-6.1-sol",
+      "actual_model": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiCuspCoefficientSource.belyiCanonicalCuspCoefficientIdentity_source",
+      "path": "/tmp/p2m-belyi-cusp-coefficient-source-next-20261114/Solutions/Source_FermatBelyiCuspCoefficient.lean",
+      "sourceSHA": "74535d690383d0ead6ebf2401bb31289eace164688811a77d4477ff65248abb8",
+      "source_sha256": "74535d690383d0ead6ebf2401bb31289eace164688811a77d4477ff65248abb8",
+      "signature": "theorem belyiCanonicalCuspCoefficientIdentity_source {N : ℕ}\n    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)\n    (φ : M.K) (hφ : IsBelyi M hDVR φ)\n    (hfin : (cusps M hDVR φ).Finite) :\n    ∀ P : Place M.K,\n      (if φ ∈ P.1 then ramIdx M hDVR φ P - 1\n        else -ramIdx M hDVR φ P - 1) + cuspDivisor M hDVR φ hfin P =\n        poleMultiplicity M hDVR φ P + ord M hDVR P (φ * (φ - 1))",
+      "spans": {
+        "declaration": {
+          "start_line": 34,
+          "end_line": 118
+        },
+        "signature": {
+          "start_line": 34,
+          "end_line": 41
+        },
+        "proof": {
+          "start_line": 41,
+          "end_line": 118
+        },
+        "line_numbering": "1-based, inclusive; signature endpoint also contains := by in source"
+      },
+      "staticcontext": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper.BelyiCuspCoefficientSource",
+        "source_imports": [
+          "import Definitions.Def_FermatProperDivisorHeight",
+          "import Definitions.Def_FermatNoncriticalElementarySource",
+          "import Solutions.Source_FermatCoordRingSource"
+        ],
+        "source_options": [
+          "set_option autoImplicit false",
+          "open Polynomial",
+          "open scoped Classical"
+        ],
+        "ambient_declaration_binders": [],
+        "binder_policy": "The source declarations introduce their own binders. There is no additional surrounding variable declaration or typeclass binder. Field, characteristic-zero, and rational algebra structures come from Model.K as an intermediate field of the fixed algebraic closure of RatFunc ℚ.",
+        "formal_context_files": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+            "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+            "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+            "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalElementarySource.lean",
+            "sha256": "aef871215e64e6d65d9ed46c8eeeefe26b0fd389e892b573bbcc47decaf258c6"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatCoordRingSource.lean",
+            "sha256": "196b2b4a4ecf4d404983b4d2ab62e1af2b12fc6673bc94ae1b93b96a0eb5b699"
+          }
+        ],
+        "definitions": {
+          "Model": "For N : ℕ, K : IntermediateField ℚ (AlgebraicClosure (RatFunc ℚ)); u,v : K; Transcendental ℚ u; u^N + v^N = 1; ℚ⟮u,v⟯ = ⊤; finite_u : FiniteDimensional ℚ⟮u⟯ K; Module.finrank ℚ⟮u⟯ K = N.",
+          "Place": "All valuation subrings O of K with O ≠ ⊤ and ∀ q : ℚ, (q : K) ∈ O. No affine chart restriction.",
+          "PlacesDiscrete": "∀ P : Place M.K, IsDiscreteValuationRing P.1.",
+          "ResiduesFinite": "∀ P : Place M.K, FiniteDimensional ℚ P.ResidueField.",
+          "residue": "IsLocalRing.residue P.1 : P.1 →+* IsLocalRing.ResidueField P.1; the residue field has its induced characteristic-zero and rational algebra structures.",
+          "ord": "-WithZero.log (((IsDiscreteValuationRing.maximalIdeal P.1).valuation M.K) f), with the IsDiscreteValuationRing instance supplied by hDVR P. This integer order is totalized by ord P 0 = 0.",
+          "ramIdx": "if h : φ ∈ P.1 then ord M hDVR P (Polynomial.aeval φ (minpoly ℚ (P.residue ⟨φ,h⟩))) else -ord M hDVR P φ; its codomain is ℤ.",
+          "cusps": "{P | ord M hDVR P φ ≠ 0 ∨ 0 < ord M hDVR P (φ - 1)}.",
+          "IsBelyi": "Transcendental ℚ φ ∧ ∀ P : Place M.K, 1 < ramIdx M hDVR φ P → P ∈ cusps M hDVR φ.",
+          "cuspDivisor": "∑ P ∈ hfin.toFinset, Finsupp.single P 1, as a finitely supported integer function on all places; its coefficient is 1 at a cusp and 0 otherwise.",
+          "poleMultiplicity": "max 0 (-ord M hDVR P φ)."
+        }
+      },
+      "statements": {
+        "en": "For every natural number $N$ and every model $M$, let $K=M.K$ be an intermediate field over $\\mathbb{Q}$ in the fixed algebraic closure of $\\mathbb{Q}(T)$, with specified $u,v\\in K$ satisfying: $u$ is transcendental over $\\mathbb{Q}$, $u^N+v^N=1$, $K=\\mathbb{Q}(u,v)$, and $K/\\mathbb{Q}(u)$ is finite dimensional of degree $N$. A place $P$ is any valuation subring $\\mathcal{O}_P$ of $K$ that is not $K$ and contains every rational constant; all these places are used, including places at infinity. Assume $h_{\\mathrm{DVR}}$: every $\\mathcal{O}_P$ is a discrete valuation ring, and $h_{\\mathrm{RF}}$: every residue field $\\kappa(P)$ is finite dimensional over $\\mathbb{Q}$. Let $\\operatorname{res}_P:\\mathcal{O}_P\\to\\kappa(P)$ be the residue quotient map and let $\\operatorname{ord}_P(f)\\in\\mathbb{Z}$ be the negative exponent of the normalized multiplicative valuation associated with the maximal ideal of $\\mathcal{O}_P$, using $h_{\\mathrm{DVR}}$ and totalized by $\\operatorname{ord}_P(0)=0$. For $\\varphi\\in K$, define the integer $e_\\varphi(P)$ to be $\\operatorname{ord}_P(m_P(\\varphi))$ if $\\varphi\\in\\mathcal{O}_P$, where $m_P(X)$ is the minimal polynomial over $\\mathbb{Q}$ of its actual residue $\\operatorname{res}_P(\\varphi)$, and to be $-\\operatorname{ord}_P(\\varphi)$ otherwise. Define $C_\\varphi=\\{P:\\operatorname{ord}_P(\\varphi)\\ne0\\ \\text{or}\\ 0<\\operatorname{ord}_P(\\varphi-1)\\}$. Assume $h_\\varphi$: $\\varphi$ is transcendental over $\\mathbb{Q}$ and, for every place $P$, $1<e_\\varphi(P)$ implies $P\\in C_\\varphi$. For every supplied proof $h_{\\mathrm{fin}}$ that this particular set $C_\\varphi$ is finite, let $D_{\\varphi,h_{\\mathrm{fin}}}=\\sum_{Q\\in C_\\varphi}[Q]$, the finitely supported integer divisor with coefficient $1$ on $C_\\varphi$ and $0$ elsewhere, formed using that same finiteness proof. Then for every place $P$ the following equality of integers holds: $\\bigl(\\begin{cases}e_\\varphi(P)-1,&\\varphi\\in\\mathcal{O}_P,\\\\-e_\\varphi(P)-1,&\\varphi\\notin\\mathcal{O}_P\\end{cases}\\bigr)+D_{\\varphi,h_{\\mathrm{fin}}}(P)=\\max\\{0,-\\operatorname{ord}_P(\\varphi)\\}+\\operatorname{ord}_P(\\varphi(\\varphi-1))$. The maximum is the defined pole multiplicity; the equality includes poles, not just regular places. The transcendence condition in $h_\\varphi$ excludes $\\varphi=0$ and $\\varphi=1$, so $\\varphi$, $\\varphi-1$, and their product are nonzero here; the stated convention for the order of zero remains part of the order's definition. Finiteness of $C_\\varphi$ is an input to this equality.",
+        "zh_Hans": "对任意自然数 $N$ 及任意模型 $M$，令 $K=M.K$ 为固定的 $\\mathbb{Q}(T)$ 的代数闭包中的一个含 $\\mathbb{Q}$ 的中间域，并给定 $u,v\\in K$，满足：$u$ 在 $\\mathbb{Q}$ 上超越、$u^N+v^N=1$、$K=\\mathbb{Q}(u,v)$，且 $K/\\mathbb{Q}(u)$ 是次数为 $N$ 的有限维扩张。一个处 $P$ 是 $K$ 中任意包含全部有理常数且不等于 $K$ 的赋值子环 $\\mathcal{O}_P$；使用所有这样的处，包括无穷远处。假设 $h_{\\mathrm{DVR}}$：每个 $\\mathcal{O}_P$ 都是离散赋值环；并假设 $h_{\\mathrm{RF}}$：每个剩余域 $\\kappa(P)$ 在 $\\mathbb{Q}$ 上都有限维。令 $\\operatorname{res}_P:\\mathcal{O}_P\\to\\kappa(P)$ 为剩余商映射，令 $\\operatorname{ord}_P(f)\\in\\mathbb{Z}$ 为由 $\\mathcal{O}_P$ 的极大理想给出的规范化乘法赋值的指数的相反数，使用 $h_{\\mathrm{DVR}}$ 提供的结构，并约定 $\\operatorname{ord}_P(0)=0$。对 $\\varphi\\in K$，若 $\\varphi\\in\\mathcal{O}_P$，则定义整数 $e_\\varphi(P)=\\operatorname{ord}_P(m_P(\\varphi))$，其中 $m_P(X)$ 是实际剩余类 $\\operatorname{res}_P(\\varphi)$ 在 $\\mathbb{Q}$ 上的极小多项式；否则定义 $e_\\varphi(P)=-\\operatorname{ord}_P(\\varphi)$。定义 $C_\\varphi=\\{P:\\operatorname{ord}_P(\\varphi)\\ne0\\ \\text{或}\\ 0<\\operatorname{ord}_P(\\varphi-1)\\}$。假设 $h_\\varphi$：$\\varphi$ 在 $\\mathbb{Q}$ 上超越，且对每个处 $P$，若 $1<e_\\varphi(P)$，则 $P\\in C_\\varphi$。对每个给定的、证明此特定集合 $C_\\varphi$ 有限的 $h_{\\mathrm{fin}}$，令 $D_{\\varphi,h_{\\mathrm{fin}}}=\\sum_{Q\\in C_\\varphi}[Q]$ 为使用同一个有限性证明形成的有限支撑整数除子，其系数在 $C_\\varphi$ 上为 $1$，在其他处为 $0$。则对每个处 $P$，都有如下整数等式：$\\bigl(\\begin{cases}e_\\varphi(P)-1,&\\varphi\\in\\mathcal{O}_P,\\\\-e_\\varphi(P)-1,&\\varphi\\notin\\mathcal{O}_P\\end{cases}\\bigr)+D_{\\varphi,h_{\\mathrm{fin}}}(P)=\\max\\{0,-\\operatorname{ord}_P(\\varphi)\\}+\\operatorname{ord}_P(\\varphi(\\varphi-1))$。此最大值就是所定义的极点重数；等式也涵盖极点。$h_\\varphi$ 中的超越性条件排除了 $\\varphi=0$ 和 $\\varphi=1$，因此此处的 $\\varphi$、$\\varphi-1$ 及其乘积均非零；零的阶数的上述约定仍是阶数定义的一部分。$C_\\varphi$ 的有限性是此等式的输入条件。",
+        "ja": "任意の自然数 $N$ と任意のモデル $M$ に対し、$K=M.K$ は固定された $\\mathbb{Q}(T)$ の代数閉包内の $\\mathbb{Q}$ 上の中間体であり、指定された $u,v\\in K$ は、$u$ が $\\mathbb{Q}$ 上超越的であること、$u^N+v^N=1$、$K=\\mathbb{Q}(u,v)$、および $K/\\mathbb{Q}(u)$ が次数 $N$ の有限次拡大であることを満たすものとする。素点 $P$ は、有理定数をすべて含み $K$ 全体とは異なる任意の付値部分環 $\\mathcal{O}_P$ であり、無限遠の素点も含むすべての素点を用いる。$h_{\\mathrm{DVR}}$ として各 $\\mathcal{O}_P$ が離散付値環であること、$h_{\\mathrm{RF}}$ として各剰余体 $\\kappa(P)$ が $\\mathbb{Q}$ 上有限次元であることを仮定する。$\\operatorname{res}_P:\\mathcal{O}_P\\to\\kappa(P)$ を剰余商写像とし、$\\operatorname{ord}_P(f)\\in\\mathbb{Z}$ を、$h_{\\mathrm{DVR}}$ が与える構造を用い、$\\mathcal{O}_P$ の極大イデアルに付随する正規化された乗法的付値の指数の符号を反転したものとし、$\\operatorname{ord}_P(0)=0$ と全域化する。$\\varphi\\in K$ に対し、$\\varphi\\in\\mathcal{O}_P$ ならば整数 $e_\\varphi(P)$ を $\\operatorname{ord}_P(m_P(\\varphi))$ と定義する。ここで $m_P(X)$ は実際の剰余類 $\\operatorname{res}_P(\\varphi)$ の $\\mathbb{Q}$ 上の最小多項式である。$\\varphi\\notin\\mathcal{O}_P$ ならば $e_\\varphi(P)=-\\operatorname{ord}_P(\\varphi)$ と定義する。$C_\\varphi=\\{P:\\operatorname{ord}_P(\\varphi)\\ne0\\ \\text{または}\\ 0<\\operatorname{ord}_P(\\varphi-1)\\}$ とおく。$h_\\varphi$ として、$\\varphi$ が $\\mathbb{Q}$ 上超越的であり、各素点 $P$ について $1<e_\\varphi(P)$ ならば $P\\in C_\\varphi$ であることを仮定する。この特定の集合 $C_\\varphi$ の有限性の任意の指定された証明 $h_{\\mathrm{fin}}$ に対し、同じ有限性の証明を用いて作られる有限台を持つ整数係数因子を $D_{\\varphi,h_{\\mathrm{fin}}}=\\sum_{Q\\in C_\\varphi}[Q]$ とする。その係数は $C_\\varphi$ 上で $1$、それ以外で $0$ である。このとき、任意の素点 $P$ で次の整数の等式が成り立つ：$\\bigl(\\begin{cases}e_\\varphi(P)-1,&\\varphi\\in\\mathcal{O}_P,\\\\-e_\\varphi(P)-1,&\\varphi\\notin\\mathcal{O}_P\\end{cases}\\bigr)+D_{\\varphi,h_{\\mathrm{fin}}}(P)=\\max\\{0,-\\operatorname{ord}_P(\\varphi)\\}+\\operatorname{ord}_P(\\varphi(\\varphi-1))$。この最大値が定義された極の重複度であり、等式は極も含む。$h_\\varphi$ の超越性条件から $\\varphi=0$ と $\\varphi=1$ は除外されるため、ここでは $\\varphi$、$\\varphi-1$、およびそれらの積は非零である。零の位数に関する上記の全域化は位数の定義の一部である。$C_\\varphi$ の有限性はこの等式の入力条件である。"
+      },
+      "proof_notes": {
+        "status": "Formal text readback only. No compiler, proof audit, or fidelity assessment was performed.",
+        "proof_text_present": true,
+        "separation": "The statements render the types; they do not certify the tactic proof bodies."
+      },
+      "requested_model": "gpt-6.1-sol",
+      "actual_model": null
+    }
+  ],
+  "validation": {
+    "json_round_trip": true,
+    "decoded_statement_control_characters": "none (U+0000–U+001F and U+007F checked)",
+    "inline_math": "balanced dollar delimiters; no empty segments; braces balanced per segment; no TeX backslash outside math",
+    "source_declaration_coverage": "2 of 2 top-level mathematical declarations in the supplied new Source file",
+    "rendering_engine": "not invoked"
+  }
+}

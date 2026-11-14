@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-11-14T11:47:33.361639+00:00",
+  "reviewer": "/root/belyi_coefficient_unit_review",
+  "verdict": "No blocker found.",
+  "blockers": [],
+  "checks": [
+    {
+      "name": "complete_unchanged_mathematical_graph",
+      "passed": true,
+      "evidence": {
+        "counts": {
+          "accepted_reductions": 32,
+          "published_children": 78,
+          "dependency_edges": 89
+        },
+        "mathematical_nodes": 79
+      }
+    },
+    {
+      "name": "only_requested_status_changed",
+      "passed": true,
+      "evidence": {
+        "changed": [
+          "AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity"
+        ]
+      }
+    },
+    {
+      "name": "root_and_differential_change_open",
+      "passed": true,
+      "evidence": {
+        "root": "Open",
+        "canonicalDifferentialChange": "Open"
+      }
+    },
+    {
+      "name": "no_deprecations",
+      "passed": true,
+      "evidence": "No deprecated node or hidden deprecation flag."
+    },
+    {
+      "name": "complete_exact_frontier_change",
+      "passed": true,
+      "evidence": {
+        "before": 21,
+        "after": 20
+      }
+    },
+    {
+      "name": "registry_consistency",
+      "passed": true,
+      "evidence": {
+        "accepted_reductions": 32,
+        "published_children": 78,
+        "dependency_edges": 89,
+        "open_frontier": 20,
+        "direct_closed_children": 35
+      }
+    },
+    {
+      "name": "platform_accepted_private_exact_proof",
+      "passed": true,
+      "evidence": {
+        "submission_id": "710916d9-cefb-41dd-ac7a-08ad2b999729",
+        "status": "Proved",
+        "visibility": "private"
+      }
+    },
+    {
+      "name": "ci_sixteen_successes",
+      "passed": true,
+      "evidence": {
+        "successes": 16,
+        "failures": 0,
+        "peak_rss_bytes": 8459767808
+      }
+    },
+    {
+      "name": "pending_database_only_requested_line_removed",
+      "passed": true,
+      "evidence": "Only RamIdx.lean:218 removed; differential-change sources remain."
+    },
+    {
+      "name": "staged_exact_120_file_allowlist",
+      "passed": true,
+      "evidence": {
+        "staged_count": 120,
+        "allowlist_count": 120,
+        "unexpected": [],
+        "missing": [],
+        "staged_working_mismatches": []
+      }
+    },
+    {
+      "name": "registered_staged_hashes",
+      "passed": true,
+      "evidence": "Registry hashes match all staged inputs other than the registry itself."
+    },
+    {
+      "name": "git_diff_check_working",
+      "passed": true,
+      "evidence": "Read-only whitespace validation."
+    },
+    {
+      "name": "git_diff_check_staged",
+      "passed": true,
+      "evidence": "Read-only whitespace validation."
+    }
+  ],
+  "scope": "Read local platform/CI receipts and current/staged Git contents only. No API call, compilation, or Git mutation.",
+  "remaining_mathematical_debt": "Root and canonicalDifferentialChange remain Open. Fermat route retained."
+}
