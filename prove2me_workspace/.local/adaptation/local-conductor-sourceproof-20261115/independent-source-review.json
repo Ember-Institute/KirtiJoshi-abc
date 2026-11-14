@@ -1,0 +1,162 @@
+{
+  "review_id": "local-conductor-sourceproof-next-independent-static-review-20261114",
+  "reviewer": "/root/local_conductor_sourceproof_review_next",
+  "reviewed_workspace": "/tmp/p2m-local-conductor-sourceproof-next-20261114",
+  "source_checkout": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+  "main_workspace_read_only": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "verdict": "PASS_STATIC_REVIEW_PENDING_MCP_CI",
+  "summary_zh": "未发现静态阻断。原 actual-field 谓词和精确 inclusion 保持不变；下界仅使用 Mathlib 的 different 下界，17 个 producer 均有实际消费者。此结论不表示 Lean 编译、公理审查或父义务已完成。",
+  "findings": [],
+  "blocking_findings": [],
+  "checked": {
+    "unchanged_predicate": {
+      "result": "pass",
+      "evidence": "reference/baseline/Definitions/Def_FermatBelyiConductorExtensionChildren.lean 与当前主区逐字节相同；草稿不提供或替换该定义。新 wrapper 仍声明 theorem belyiActualFieldLocalConductorComparison : BelyiActualFieldLocalConductorComparison。",
+      "baseline_sha256": "2282d3f5d9dc037da6f6fe84fc64dcfd4ea31da9c297799deaa8b2dd2d9f8401"
+    },
+    "actual_fields_algebra_denominators": {
+      "result": "pass",
+      "evidence": "wrapper 的唯一 F→L Algebra 是 (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra，与谓词一致。F=Tripod.fieldOf (belyiImage M φ x).1，L=x.fieldOf；左侧 /finrank ℚ F，右侧 place 项和 diffContrib 均 /finrank ℚ L。未假设这两个绝对次数相等。",
+      "files": [
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean:19",
+        "Solutions/Source_FermatConductorLocalComparison.lean:27"
+      ]
+    },
+    "lower_bound_only": {
+      "result": "pass",
+      "evidence": "pow_ramificationIdx'_dvd 用 Ideal.le_pow_ramificationIdx' 得 P^e ∣ map(𝔭)；ramificationIdx'_sub_one_le_multiplicity 仅调用 pow_sub_one_dvd_differentIdeal (𝓞 F) P e h𝔭，得到 P^(e−1) ∣ differentIdeal。未使用 Serre、上界、tame/wild 等式或额外局部假设。",
+      "mathlib_witness": "Mathlib/RingTheory/DedekindDomain/Different.lean:740",
+      "file": "Solutions/Source_FermatConductorLowerMultiplicity.lean:56"
+    },
+    "finite_multiplicity_and_nonzero_hypotheses": {
+      "result": "pass",
+      "evidence": "finiteMultiplicity_of_isPrime 同时要求 [P.IsPrime]、hP:P≠⊥ 和 hI:I≠⊥，调用 FiniteMultiplicity.of_prime_left；没有把 infinite multiplicity 的自然数截断值当作有限阶。实际 hP 来自非零 base prime 的 lies-over；hI 来自 differentIdeal_ne_bot。NumberField 的整数环提供 Dedekind、finite module、char-zero separability 和 faithful algebra；源局部 FractionRing.liftAlgebra/isScalarTower 实例按原文保留，无新增定理假设。",
+      "mathlib_witnesses": [
+        "Mathlib/RingTheory/UniqueFactorizationDomain/Multiplicity.lean:49",
+        "Mathlib/RingTheory/Multiplicity.lean:262",
+        "Mathlib/RingTheory/Ideal/Over.lean:270",
+        "Mathlib/RingTheory/DedekindDomain/Different.lean:540"
+      ]
+    },
+    "norm_inertia_and_weighted_lower_sum": {
+      "result": "pass",
+      "evidence": "log_absNorm_eq_inertiaDeg_mul 用 actual ideal norm identity N(P)=N(𝔭)^f；diffContrib_eq 展开既有 actual contribution。每项依赖 primesOverFinset 的 prime/lies-over 性质；乘上的 f、log N(𝔭) 和除数的非负性显式证明。用 Real.log_natCast_nonneg 代替源 alias 不改变数学陈述。",
+      "files": [
+        "Solutions/Source_FermatConductorLowerMultiplicity.lean:44",
+        "Solutions/Source_FermatConductorLowerContribution.lean:20",
+        "Solutions/Source_FermatConductorLowerContribution.lean:29"
+      ]
+    },
+    "place_prime_bijection_and_degree_counting": {
+      "result": "pass",
+      "evidence": "placeOfPrimeOver 从真实非零 prime 构造 FinitePlace；sum_placesOver_eq 用 maximalIdeal_inj 证明单射，并用该构造证明满射。sum_placesOver_mul_eq_finrank 精确调用 Ideal.sum_ramification_inertia，得到 ∑e*f=finrank F L，没有省略分歧或惯性权重。",
+      "files": [
+        "Solutions/Source_FermatConductorPlaceDegree.lean:23",
+        "Solutions/Source_FermatConductorPlaceDegree.lean:46",
+        "Solutions/Source_FermatConductorPlaceDegree.lean:59"
+      ],
+      "compatibility_note": "Pinned Mathlib 中 Ideal.sum_ramification_inertia 确实存在，带 deprecation 属性；这是既有 API 兼容性提示，未发现静态缺失。"
+    },
+    "complete_local_proof": {
+      "result": "pass",
+      "evidence": "log_placeNorm_div_le 的 theorem 声明与整个 proof body 是 pinned reference/Conductor.lean 的精确文本子串；域塔 finrank_mul_finrank、有限域次数正性、placeRamIdx_ne_zero 提供 e≥1，然后合法使用 Nat.cast_sub，最终由 sum_le_diffContrib 收尾。",
+      "source_lines": "Heights/Different/Conductor.lean:104–136"
+    },
+    "producer_consumption": {
+      "result": "pass",
+      "count": 17,
+      "excludes_check_prints": true,
+      "consumers": {
+        "finiteMultiplicity_of_isPrime": [
+          "pow_dvd_iff_le_multiplicity"
+        ],
+        "pow_dvd_iff_le_multiplicity": [
+          "ramificationIdx'_sub_one_le_multiplicity"
+        ],
+        "ne_bot_of_liesOver": [
+          "ramificationIdx'_sub_one_le_multiplicity"
+        ],
+        "log_absNorm_eq_inertiaDeg_mul": [
+          "diffContrib_eq"
+        ],
+        "pow_ramificationIdx'_dvd": [
+          "ramificationIdx'_sub_one_le_multiplicity"
+        ],
+        "ramificationIdx'_sub_one_le_multiplicity": [
+          "sum_le_diffContrib"
+        ],
+        "diffContrib_eq": [
+          "sum_le_diffContrib"
+        ],
+        "sum_le_diffContrib": [
+          "log_placeNorm_div_le"
+        ],
+        "log_placeNorm_eq": [
+          "log_placeNorm_div_le"
+        ],
+        "placeOfPrimeOver": [
+          "placeOfPrimeOver_maximalIdeal",
+          "placeLiesOver_placeOfPrimeOver",
+          "sum_placesOver_eq"
+        ],
+        "placeOfPrimeOver_maximalIdeal": [
+          "placeLiesOver_placeOfPrimeOver",
+          "sum_placesOver_eq"
+        ],
+        "placeLiesOver_placeOfPrimeOver": [
+          "sum_placesOver_eq"
+        ],
+        "sum_placesOver_eq": [
+          "sum_placesOver_mul_eq_finrank",
+          "log_placeNorm_div_le"
+        ],
+        "sum_placesOver_mul_eq_finrank": [
+          "log_placeNorm_div_le"
+        ],
+        "finrank_ℚ_pos": [
+          "log_placeNorm_div_le"
+        ],
+        "log_placeNorm_div_le": [
+          "belyiActualFieldLocalConductorComparison"
+        ],
+        "belyiActualFieldLocalConductorComparison": [
+          "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean:belyiActualFieldConductorExtension"
+        ]
+      },
+      "note": "最后一个 wrapper 的实际 consumer 位于既有主区 composer，不在新草稿的单独导入闭包中；已只读核对其 theorem body 的真实应用。"
+    },
+    "import_closure_no_open_proofs_or_extra_assumptions": {
+      "result": "pass_static",
+      "project_module_count": 15,
+      "evidence": "独立重建 overlay 导入闭包，15 个 project module 与 manifest 一致。去除注释后未发现 sorry、admit 或 axiom 声明；未导入 reference、upstream Bounds/Serre/Places/Conductor、FutureFinitePlaceArithmetic、Obligations、Scene2 或 Act2。11 个列出的 Mathlib witness module 都在实际继承导入闭包内。没有新增数学输入字段或弱化目标。",
+      "axiom_audit": "not_run"
+    },
+    "provenance_hashes_license": {
+      "result": "pass",
+      "source_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "mathlib_pin_verification": "只读读取 .git/HEAD 和对应 ref，实值与 manifest 相同；未运行 Git 命令。",
+      "lean_toolchain": "leanprover/lean4:v4.33.1",
+      "evidence": "独立核对全部 SHA256SUMS、7 个 reference hash、11 个 Mathlib witness hash 和 15 个 closure input hash，均一致。4 个 source reference 与给定 source checkout 逐字节一致；3 个 baseline 与当前主区逐字节一致。3 个 archive hash/entry count/root prefix 符合 manifest，均无 LICENSE/NOTICE(.txt/.md) entry。",
+      "license_evidence": "源 Apache 2.0 headers 被保留；LICENSE 与 /usr/share/common-licenses/Apache-2.0 的 SHA256 一致。归属说明准确说明其是标准文本补充，并未伪称取回 upstream LICENSE 或发明 NOTICE。"
+    }
+  },
+  "actions": {
+    "compilation_performed": false,
+    "mcp_ci_used": false,
+    "api_calls_performed": false,
+    "git_mutation_performed": false,
+    "git_commands_performed": false,
+    "main_workspace_edits_performed": false,
+    "draft_edits_performed": false,
+    "searches": "全部 rg 调用使用主区 prove2me_workspace/.local/bin/rg-two-cores；其余为定点文件读取、哈希和串行只读导入解析。",
+    "output_only": "/tmp/p2m-local-conductor-sourceproof-review-next-20261114/review.json"
+  },
+  "acceptance_remaining": [
+    "主智能体在当前两叶单元终态验收后整合草稿，再通过 exclusive MCP-CI 检查新叶与现有 wrapper。",
+    "编译后必须读取 #print axioms 输出并核对 sorryAx 及允许的 Lean 标准公理；静态扫描不能替代此项。",
+    "按仓库要求完成所属 Checks/Axioms、ImportAudit、Act1Scene1 聚合、AxiomAudit 和 git diff --check。",
+    "brand-new leaf 首次预估固定 60s/16GiB；实际 RSS/PSS、CPU 和墙钟尚未知。",
+    "本地比较证明闭合不代表 different accounting 或 conductor-extension 数学父义务已闭合；accounting 仍独立验收。"
+  ]
+}

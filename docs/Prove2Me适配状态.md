@@ -20,7 +20,6 @@
 - `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean:248`
 - `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/Covering.lean:243`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/CondDivisor.lean:61`
-- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Different/Conductor.lean:104`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/KummerPoint.lean:45`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBridge.lean:49`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:155`
@@ -61,7 +60,7 @@
 
 `Proper.coordinatePoleMultiplicity_eq` 仍需证明：对于满足 `0 < N` 的既有实际 Fermat 模型，两个固定坐标 u、v 在每个真赋值处的实际极点重数 `max(0,-ord)` 相等。必须覆盖全部正则处、坐标为零的情形以及无穷点；不得只证明极点支撑相同或排除零坐标。这是新的明确 Fermat 特化义务，固定的 Belyi／Heights 来源及论文引文均未提供其证明。其结论将实际超平面除子识别为 u 的实际极除子，再由已验收的纤维次数公式和主除子次数为零，结合原有实际伴随数据得到典范次数；`canonicalDivisorDegree` 的归约验收不关闭该子义务，也不证明典范除子或伴随数据的存在性。
 
-`Proper.canonicalHeightIdentification` 的具体 Fermat 特化仍需把实际平面伴随公式、实际超平面高度与固定 `[u:v:1]` 高度连接起来，并对任意明确极除子表示保留统一有界误差。一般除子高度比较、Belyi 高度关系、除子次数高度比较、像点域上的不同理想／导子比较及尖点导子高度比较已有第一类固定来源；其完整点域、像点域、归一化、统一常数、严格次数比及实际生成元的传递仍须按对应来源拆分。
+`Proper.canonicalHeightIdentification` 的具体 Fermat 特化仍需把实际平面伴随公式、实际超平面高度与固定 `[u:v:1]` 高度连接起来，并对任意明确极除子表示保留统一有界误差。尖点导子高度比较仍须按第一类固定来源拆分，保留完整点域、归一化、统一常数与实际生成元。
 
 ### Joshi 的 3.12 与参考工程变体之间的适配
 

@@ -1,0 +1,10 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison

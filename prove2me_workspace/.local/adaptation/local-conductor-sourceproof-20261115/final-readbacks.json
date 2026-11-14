@@ -1,0 +1,1740 @@
+{
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_eq",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w) =\n      ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg w u) *\n        Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm u)",
+      "source_span": {
+        "start_line": 17,
+        "end_line": 20
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 773,
+          "line": 19,
+          "col": 74
+        },
+        "nameText": "log_placeNorm_eq",
+        "nameRange": {
+          "start": {
+            "offset": 616,
+            "line": 18,
+            "col": 6
+          },
+          "end": {
+            "offset": 632,
+            "line": 18,
+            "col": 22
+          }
+        },
+        "file": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "docstring": {
+          "start": {
+            "offset": 560,
+            "line": 17,
+            "col": 0
+          },
+          "end": {
+            "offset": 609,
+            "line": 17,
+            "col": 48
+          }
+        },
+        "declStart": {
+          "offset": 560,
+          "line": 17,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 832,
+          "line": 20,
+          "col": 53
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 560,
+            "line": 17,
+            "col": 0
+          },
+          "end": {
+            "offset": 832,
+            "line": 20,
+            "col": 53
+          }
+        },
+        "cmdEnd": {
+          "offset": 832,
+          "line": 20,
+          "col": 53
+        }
+      },
+      "raw_signature": "lemma log_placeNorm_eq {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    Real.log (placeNorm w) = placeInertiaDeg w u * Real.log (placeNorm u)",
+      "original_raw_signature": "lemma log_placeNorm_eq {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    Real.log (placeNorm w) = placeInertiaDeg w u * Real.log (placeNorm u)",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+        "source_span": {
+          "start_byte": 610,
+          "end_byte_exclusive": 832,
+          "line": 18,
+          "end_line": 20
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_eq",
+        "raw_declaration": "lemma log_placeNorm_eq {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    Real.log (placeNorm w) = placeInertiaDeg w u * Real.log (placeNorm u) := by\n  rw [placeNorm_eq_pow h, Nat.cast_pow, Real.log_pow]",
+        "raw_declaration_sha256": "fb7866ac54b49f050fd2bb7cc707770cbaa4e3233a8aaeff83f1320bf236c060",
+        "raw_signature": "lemma log_placeNorm_eq {w : FinitePlace L} {u : FinitePlace F} (h : PlaceLiesOver w u) :\n    Real.log (placeNorm w) = placeInertiaDeg w u * Real.log (placeNorm u)",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every such w and u, if w lies over u, then $\\log N(w)=f(w\\mid u)\\log N(u)$, with the natural-number inertia degree viewed as a real number and log the real natural logarithm.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对任意这样的 w、u，若 w 位于 u 上方，则 $\\log N(w)=f(w\\mid u)\\log N(u)$；等式中惯性次数由自然数转为实数，log 为实自然对数。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。そのような任意の w、u について、w が u の上にあるならば $\\log N(w)=f(w\\mid u)\\log N(u)$ である。惰性次数は実数とみなし、log は実自然対数である。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+      "blind_original_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every such w and u, if w lies over u, then $\\log N(w)=f(w\\mid u)\\log N(u)$, with the natural-number inertia degree viewed as a real number and log the real natural logarithm.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对任意这样的 w、u，若 w 位于 u 上方，则 $\\log N(w)=f(w\\mid u)\\log N(u)$；等式中惯性次数由自然数转为实数，log 为实自然对数。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。そのような任意の w、u について、w が u の上にあるならば $\\log N(w)=f(w\\mid u)\\log N(u)$ である。惰性次数は実数とみなし、log は実自然対数である。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "{F : Type u_1} →\n  {L : Type u_2} →\n    [inst : Field F] →\n      [inst_1 : NumberField F] →\n        [inst_2 : Field L] →\n          [inst_3 : NumberField L] →\n            [inst_4 : Algebra F L] →\n              (u : NumberField.FinitePlace F) →\n                {P : Ideal (NumberField.RingOfIntegers L)} →\n                  P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L) →\n                    NumberField.FinitePlace L",
+      "source_span": {
+        "start_line": 22,
+        "end_line": 29
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 1078,
+          "line": 24,
+          "col": 94
+        },
+        "nameText": "placeOfPrimeOver",
+        "nameRange": {
+          "start": {
+            "offset": 921,
+            "line": 23,
+            "col": 18
+          },
+          "end": {
+            "offset": 937,
+            "line": 23,
+            "col": 34
+          }
+        },
+        "file": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "docstring": {
+          "start": {
+            "offset": 834,
+            "line": 22,
+            "col": 0
+          },
+          "end": {
+            "offset": 902,
+            "line": 22,
+            "col": 62
+          }
+        },
+        "declStart": {
+          "offset": 834,
+          "line": 22,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 1364,
+          "line": 29,
+          "col": 71
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 834,
+            "line": 22,
+            "col": 0
+          },
+          "end": {
+            "offset": 1364,
+            "line": 29,
+            "col": 71
+          }
+        },
+        "cmdEnd": {
+          "offset": 1364,
+          "line": 29,
+          "col": 71
+        }
+      },
+      "raw_signature": "noncomputable def placeOfPrimeOver (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) : FinitePlace L",
+      "original_raw_signature": "noncomputable def placeOfPrimeOver (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) : FinitePlace L",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+        "source_span": {
+          "start_byte": 903,
+          "end_byte_exclusive": 1364,
+          "line": 23,
+          "end_line": 29
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver",
+        "raw_declaration": "noncomputable def placeOfPrimeOver (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) : FinitePlace L :=\n  haveI := u.maximalIdeal.isMaximal\n  FinitePlace.mk\n    ⟨P, ((mem_primesOverFinset_iff' u.maximalIdeal.ne_bot).mp hP).1, by\n      obtain ⟨_, _⟩ := (mem_primesOverFinset_iff' u.maximalIdeal.ne_bot).mp hP\n      exact Ideal.ne_bot_of_liesOver_of_ne_bot u.maximalIdeal.ne_bot P⟩",
+        "raw_declaration_sha256": "fc4238ca762d66b1b61651657e34d95a40ecb69353774f84626dd8ba79475649",
+        "raw_signature": "noncomputable def placeOfPrimeOver (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) : FinitePlace L",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every finite place u of F, ideal P of O_L, and proof that P belongs to the finite set of primes of O_L above p_u, this noncomputable definition returns the finite place of L obtained from the height-one prime whose underlying ideal is P. The membership supplies primality and the nonzero condition; no new ideal is chosen.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对 F 的任意有限处 u、O_L 的任意理想 P 以及 P 属于 p_u 上方素理想有限集合的证明，此非可计算定义返回由底层理想为 P 的高度一素理想所对应的 L 的有限处。成员条件提供素性及非零条件；构造没有另选一个理想。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。F の任意の有限素点 u、O_L の任意のイデアル P、および P が p_u の上にある素イデアルの有限集合に属するという証明に対し、この非計算的定義は、台となるイデアルが P である高さ一の素イデアルから得られる L の有限素点を返す。所属条件が素性と非零性を与え、別のイデアルを選ぶ操作はない。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+      "blind_original_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every finite place u of F, ideal P of O_L, and proof that P belongs to the finite set of primes of O_L above p_u, this noncomputable definition returns the finite place of L obtained from the height-one prime whose underlying ideal is P. The membership supplies primality and the nonzero condition; no new ideal is chosen.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对 F 的任意有限处 u、O_L 的任意理想 P 以及 P 属于 p_u 上方素理想有限集合的证明，此非可计算定义返回由底层理想为 P 的高度一素理想所对应的 L 的有限处。成员条件提供素性及非零条件；构造没有另选一个理想。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。F の任意の有限素点 u、O_L の任意のイデアル P、および P が p_u の上にある素イデアルの有限集合に属するという証明に対し、この非計算的定義は、台となるイデアルが P である高さ一の素イデアルから得られる L の有限素点を返す。所属条件が素性と非零性を与え、別のイデアルを選ぶ操作はない。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F) {P : Ideal (NumberField.RingOfIntegers L)}\n  (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L)),\n  (AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver u hP).maximalIdeal.asIdeal = P",
+      "source_span": {
+        "start_line": 31,
+        "end_line": 34
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 1581,
+          "line": 33,
+          "col": 53
+        },
+        "nameText": "placeOfPrimeOver_maximalIdeal",
+        "nameRange": {
+          "start": {
+            "offset": 1372,
+            "line": 31,
+            "col": 6
+          },
+          "end": {
+            "offset": 1401,
+            "line": 31,
+            "col": 35
+          }
+        },
+        "file": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "docstring": null,
+        "declStart": {
+          "offset": 1366,
+          "line": 31,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 1639,
+          "line": 34,
+          "col": 52
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 1366,
+            "line": 31,
+            "col": 0
+          },
+          "end": {
+            "offset": 1639,
+            "line": 34,
+            "col": 52
+          }
+        },
+        "cmdEnd": {
+          "offset": 1639,
+          "line": 34,
+          "col": 52
+        }
+      },
+      "raw_signature": "lemma placeOfPrimeOver_maximalIdeal (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) :\n    (placeOfPrimeOver u hP).maximalIdeal.asIdeal = P",
+      "original_raw_signature": "lemma placeOfPrimeOver_maximalIdeal (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) :\n    (placeOfPrimeOver u hP).maximalIdeal.asIdeal = P",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+        "source_span": {
+          "start_byte": 1366,
+          "end_byte_exclusive": 1639,
+          "line": 31,
+          "end_line": 34
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+        "raw_declaration": "lemma placeOfPrimeOver_maximalIdeal (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) :\n    (placeOfPrimeOver u hP).maximalIdeal.asIdeal = P := by\n  rw [placeOfPrimeOver, FinitePlace.maximalIdeal_mk]",
+        "raw_declaration_sha256": "67d5c007c12aff428e516f3a3c481f842aa698e0d10989ddc0e85d3ffa647fe4",
+        "raw_signature": "lemma placeOfPrimeOver_maximalIdeal (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) :\n    (placeOfPrimeOver u hP).maximalIdeal.asIdeal = P",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every finite place u of F, ideal P of O_L, and proof h that P is in the finite set of primes above p_u, the prime ideal associated with the finite place constructed from u, P, and h is exactly P.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对 F 的任意有限处 u、O_L 的任意理想 P 以及 P 属于 p_u 上方素理想有限集合的证明 h，由 u、P、h 构造的有限处所对应的素理想恰为 P。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。F の任意の有限素点 u、O_L の任意のイデアル P、および P が p_u の上にある素イデアルの有限集合に属する証明 h に対し、u、P、h から構成した有限素点に対応する素イデアルは P に等しい。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+      "blind_original_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every finite place u of F, ideal P of O_L, and proof h that P is in the finite set of primes above p_u, the prime ideal associated with the finite place constructed from u, P, and h is exactly P.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对 F 的任意有限处 u、O_L 的任意理想 P 以及 P 属于 p_u 上方素理想有限集合的证明 h，由 u、P、h 构造的有限处所对应的素理想恰为 P。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。F の任意の有限素点 u、O_L の任意のイデアル P、および P が p_u の上にある素イデアルの有限集合に属する証明 h に対し、u、P、h から構成した有限素点に対応する素イデアルは P に等しい。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F) {P : Ideal (NumberField.RingOfIntegers L)}\n  (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L)),\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver\n    (AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver u hP) u",
+      "source_span": {
+        "start_line": 36,
+        "end_line": 42
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 1848,
+          "line": 38,
+          "col": 44
+        },
+        "nameText": "placeLiesOver_placeOfPrimeOver",
+        "nameRange": {
+          "start": {
+            "offset": 1647,
+            "line": 36,
+            "col": 6
+          },
+          "end": {
+            "offset": 1677,
+            "line": 36,
+            "col": 36
+          }
+        },
+        "file": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "docstring": null,
+        "declStart": {
+          "offset": 1641,
+          "line": 36,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 2017,
+          "line": 42,
+          "col": 67
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 1641,
+            "line": 36,
+            "col": 0
+          },
+          "end": {
+            "offset": 2017,
+            "line": 42,
+            "col": 67
+          }
+        },
+        "cmdEnd": {
+          "offset": 2017,
+          "line": 42,
+          "col": 67
+        }
+      },
+      "raw_signature": "lemma placeLiesOver_placeOfPrimeOver (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) :\n    PlaceLiesOver (placeOfPrimeOver u hP) u",
+      "original_raw_signature": "lemma placeLiesOver_placeOfPrimeOver (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) :\n    PlaceLiesOver (placeOfPrimeOver u hP) u",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+        "source_span": {
+          "start_byte": 1641,
+          "end_byte_exclusive": 2017,
+          "line": 36,
+          "end_line": 42
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+        "raw_declaration": "lemma placeLiesOver_placeOfPrimeOver (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) :\n    PlaceLiesOver (placeOfPrimeOver u hP) u := by\n  haveI := u.maximalIdeal.isMaximal\n  unfold PlaceLiesOver\n  rw [placeOfPrimeOver_maximalIdeal]\n  exact ((mem_primesOverFinset_iff' u.maximalIdeal.ne_bot).mp hP).2",
+        "raw_declaration_sha256": "58e99f8f37dec050d4be7db09df5db76f02f6fb975ff12ae0194a065cbe75802",
+        "raw_signature": "lemma placeLiesOver_placeOfPrimeOver (u : FinitePlace F) {P : Ideal (𝓞 L)}\n    (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L)) :\n    PlaceLiesOver (placeOfPrimeOver u hP) u",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every finite place u of F, ideal P of O_L, and proof h that P is in the finite set of primes above p_u, the finite place of L constructed using the height-one prime with ideal P lies over u: its associated prime ideal has inverse image p_u in O_F.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对 F 的任意有限处 u、O_L 的任意理想 P 以及 P 属于 p_u 上方素理想有限集合的证明 h，利用理想为 P 的高度一素理想构造的 L 的有限处位于 u 上方，即其对应素理想在 O_F 中的原像为 p_u。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。F の任意の有限素点 u、O_L の任意のイデアル P、および P が p_u の上にある素イデアルの有限集合に属する証明 h に対し、イデアルが P である高さ一の素イデアルから構成した L の有限素点は u の上にある。すなわち、その素イデアルの O_F における逆像は p_u である。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+      "blind_original_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every finite place u of F, ideal P of O_L, and proof h that P is in the finite set of primes above p_u, the finite place of L constructed using the height-one prime with ideal P lies over u: its associated prime ideal has inverse image p_u in O_F.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对 F 的任意有限处 u、O_L 的任意理想 P 以及 P 属于 p_u 上方素理想有限集合的证明 h，利用理想为 P 的高度一素理想构造的 L 的有限处位于 u 上方，即其对应素理想在 O_F 中的原像为 p_u。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。F の任意の有限素点 u、O_L の任意のイデアル P、および P が p_u の上にある素イデアルの有限集合に属する証明 h に対し、イデアルが P である高さ一の素イデアルから構成した L の有限素点は u の上にある。すなわち、その素イデアルの O_F における逆像は p_u である。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {M : Type u_3} [inst_5 : AddCommMonoid M] (u : NumberField.FinitePlace F)\n  (g : Ideal (NumberField.RingOfIntegers L) → M),\n  ∑ w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver L u, g w.maximalIdeal.asIdeal =\n    ∑ P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L), g P",
+      "source_span": {
+        "start_line": 44,
+        "end_line": 57
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 2456,
+          "line": 49,
+          "col": 80
+        },
+        "nameText": "sum_placesOver_eq",
+        "nameRange": {
+          "start": {
+            "offset": 2211,
+            "line": 46,
+            "col": 8
+          },
+          "end": {
+            "offset": 2228,
+            "line": 46,
+            "col": 25
+          }
+        },
+        "file": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "docstring": {
+          "start": {
+            "offset": 2019,
+            "line": 44,
+            "col": 0
+          },
+          "end": {
+            "offset": 2202,
+            "line": 45,
+            "col": 86
+          }
+        },
+        "declStart": {
+          "offset": 2019,
+          "line": 44,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 2882,
+          "line": 57,
+          "col": 41
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 2019,
+            "line": 44,
+            "col": 0
+          },
+          "end": {
+            "offset": 2882,
+            "line": 57,
+            "col": 41
+          }
+        },
+        "cmdEnd": {
+          "offset": 2882,
+          "line": 57,
+          "col": 41
+        }
+      },
+      "raw_signature": "theorem sum_placesOver_eq {M : Type*} [AddCommMonoid M] (u : FinitePlace F)\n    (g : Ideal (𝓞 L) → M) :\n    ∑ w ∈ placesOver L u, g w.maximalIdeal.asIdeal =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L), g P",
+      "original_raw_signature": "theorem sum_placesOver_eq {M : Type*} [AddCommMonoid M] (u : FinitePlace F)\n    (g : Ideal (𝓞 L) → M) :\n    ∑ w ∈ placesOver L u, g w.maximalIdeal.asIdeal =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L), g P",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+        "source_span": {
+          "start_byte": 2203,
+          "end_byte_exclusive": 2882,
+          "line": 46,
+          "end_line": 57
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+        "raw_declaration": "theorem sum_placesOver_eq {M : Type*} [AddCommMonoid M] (u : FinitePlace F)\n    (g : Ideal (𝓞 L) → M) :\n    ∑ w ∈ placesOver L u, g w.maximalIdeal.asIdeal =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L), g P := by\n  refine Finset.sum_bij (fun w _ => w.maximalIdeal.asIdeal)\n    (fun w hw => mem_primesOverFinset_of_placeLiesOver (mem_placesOver.mp hw)) ?_ ?_\n    (fun _ _ => rfl)\n  · intro w₁ _ w₂ _ h\n    exact (FinitePlace.maximalIdeal_inj _ _).mp (HeightOneSpectrum.ext h)\n  · intro P hP\n    exact ⟨placeOfPrimeOver u hP, mem_placesOver.mpr (placeLiesOver_placeOfPrimeOver u hP),\n      placeOfPrimeOver_maximalIdeal u hP⟩",
+        "raw_declaration_sha256": "0ac254e898d163393116153e774dd9d94b1a0dbf389ba77549911bf0df2c7b5c",
+        "raw_signature": "theorem sum_placesOver_eq {M : Type*} [AddCommMonoid M] (u : FinitePlace F)\n    (g : Ideal (𝓞 L) → M) :\n    ∑ w ∈ placesOver L u, g w.maximalIdeal.asIdeal =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (𝓞 L), g P",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every type M equipped with an additive commutative monoid structure, finite place u of F, and function g from the ideals of O_L to M, one has $\\sum_{w\\mid u}g(\\mathfrak p_w)=\\sum_{P\\mid\\mathfrak p_u}g(P)$. The left sum runs over the finite set of finite places of L lying over u; the right sum runs over the finite set of prime ideals of O_L above p_u. These are finite monoid sums, with an empty sum interpreted as zero.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对任意带加法交换幺半群结构的类型 M、F 的有限处 u，以及从 O_L 的理想到 M 的任意函数 g，有 Σ_{w 位于 u 上方}g(p_w)=Σ_{P 位于 p_u 上方}g(P)。左侧对 u 上方的 L 的有限处组成的有限集合求和，右侧对 p_u 上方的 O_L 素理想组成的有限集合求和。两侧均为幺半群中的有限和，空和取零。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。加法可換モノイド構造を持つ任意の型 M、F の有限素点 u、および O_L のイデアルから M への任意の関数 g に対して、Σ_{w が u の上にある}g(p_w)=Σ_{P が p_u の上にある}g(P) が成り立つ。左辺は u の上にある L の有限素点の有限集合、右辺は p_u の上にある O_L の素イデアルの有限集合を走る。いずれもモノイドにおける有限和であり、空和は零である。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+      "blind_original_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every type M equipped with an additive commutative monoid structure, finite place u of F, and function g from the ideals of O_L to M, one has $\\sum_{w\\mid u}g(\\mathfrak p_w)=\\sum_{P\\mid\\mathfrak p_u}g(P)$. The left sum runs over the finite set of finite places of L lying over u; the right sum runs over the finite set of prime ideals of O_L above p_u. These are finite monoid sums, with an empty sum interpreted as zero.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对任意带加法交换幺半群结构的类型 M、F 的有限处 u，以及从 O_L 的理想到 M 的任意函数 g，有 Σ_{w 位于 u 上方}g(p_w)=Σ_{P 位于 p_u 上方}g(P)。左侧对 u 上方的 L 的有限处组成的有限集合求和，右侧对 p_u 上方的 O_L 素理想组成的有限集合求和。两侧均为幺半群中的有限和，空和取零。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。加法可換モノイド構造を持つ任意の型 M、F の有限素点 u、および O_L のイデアルから M への任意の関数 g に対して、Σ_{w が u の上にある}g(p_w)=Σ_{P が p_u の上にある}g(P) が成り立つ。左辺は u の上にある L の有限素点の有限集合、右辺は p_u の上にある O_L の素イデアルの有限集合を走る。いずれもモノイドにおける有限和であり、空和は零である。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F),\n  ∑ w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver L u,\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx w u *\n        AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg w u =\n    Module.finrank F L",
+      "source_span": {
+        "start_line": 59,
+        "end_line": 65
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 3075,
+          "line": 61,
+          "col": 78
+        },
+        "nameText": "sum_placesOver_mul_eq_finrank",
+        "nameRange": {
+          "start": {
+            "offset": 2941,
+            "line": 60,
+            "col": 8
+          },
+          "end": {
+            "offset": 2970,
+            "line": 60,
+            "col": 37
+          }
+        },
+        "file": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "docstring": {
+          "start": {
+            "offset": 2884,
+            "line": 59,
+            "col": 0
+          },
+          "end": {
+            "offset": 2932,
+            "line": 59,
+            "col": 43
+          }
+        },
+        "declStart": {
+          "offset": 2884,
+          "line": 59,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 3313,
+          "line": 65,
+          "col": 70
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 2884,
+            "line": 59,
+            "col": 0
+          },
+          "end": {
+            "offset": 3313,
+            "line": 65,
+            "col": 70
+          }
+        },
+        "cmdEnd": {
+          "offset": 3313,
+          "line": 65,
+          "col": 70
+        }
+      },
+      "raw_signature": "theorem sum_placesOver_mul_eq_finrank (u : FinitePlace F) :\n    ∑ w ∈ placesOver L u, placeRamIdx w u * placeInertiaDeg w u = finrank F L",
+      "original_raw_signature": "theorem sum_placesOver_mul_eq_finrank (u : FinitePlace F) :\n    ∑ w ∈ placesOver L u, placeRamIdx w u * placeInertiaDeg w u = finrank F L",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+        "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+        "source_span": {
+          "start_byte": 2933,
+          "end_byte_exclusive": 3313,
+          "line": 60,
+          "end_line": 65
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+        "raw_declaration": "theorem sum_placesOver_mul_eq_finrank (u : FinitePlace F) :\n    ∑ w ∈ placesOver L u, placeRamIdx w u * placeInertiaDeg w u = finrank F L := by\n  haveI := u.maximalIdeal.isMaximal\n  rw [sum_placesOver_eq u (fun P => u.maximalIdeal.asIdeal.ramificationIdx' P *\n    u.maximalIdeal.asIdeal.inertiaDeg' P)]\n  exact Ideal.sum_ramification_inertia (𝓞 L) F L u.maximalIdeal.ne_bot",
+        "raw_declaration_sha256": "b392d350028172156861e89d5cc6edda37554f25dec54513bc6020e2862bcad5",
+        "raw_signature": "theorem sum_placesOver_mul_eq_finrank (u : FinitePlace F) :\n    ∑ w ∈ placesOver L u, placeRamIdx w u * placeInertiaDeg w u = finrank F L",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every finite place u of F, $\\sum_{w\\mid u}e(w\\mid u)f(w\\mid u)=[L:F]$, as an equality of natural numbers. The sum runs over the finite set of finite places of L whose prime ideals have inverse image p_u.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对 F 的任意有限处 u，有自然数等式 Σ_{w 位于 u 上方}e(w|u)f(w|u)=[L:F]。求和遍历 L 中所有对应素理想的原像为 p_u 的有限处组成的有限集合。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。F の任意の有限素点 u に対し、自然数の等式 Σ_{w が u の上にある}e(w|u)f(w|u)=[L:F] が成り立つ。和は、対応する素イデアルの逆像が p_u である L の有限素点の有限集合を走る。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorPlaceDegree.lean",
+      "blind_original_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. For every finite place u of F, $\\sum_{w\\mid u}e(w\\mid u)f(w\\mid u)=[L:F]$, as an equality of natural numbers. The sum runs over the finite set of finite places of L whose prime ideals have inverse image p_u.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。对 F 的任意有限处 u，有自然数等式 Σ_{w 位于 u 上方}e(w|u)f(w|u)=[L:F]。求和遍历 L 中所有对应素理想的原像为 p_u 的有限处组成的有限集合。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。F の任意の有限素点 u に対し、自然数の等式 Σ_{w が u の上にある}e(w|u)f(w|u)=[L:F] が成り立つ。和は、対応する素イデアルの逆像が p_u である L の有限素点の有限集合を走る。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {R : Type u_1} [inst : CommRing R] [IsDedekindDomain R] {P I : Ideal R} [P.IsPrime],\n  P ≠ ⊥ → I ≠ ⊥ → FiniteMultiplicity P I",
+      "source_span": {
+        "start_line": 21,
+        "end_line": 23
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 767,
+          "line": 22,
+          "col": 27
+        },
+        "nameText": "finiteMultiplicity_of_isPrime",
+        "nameRange": {
+          "start": {
+            "offset": 646,
+            "line": 21,
+            "col": 6
+          },
+          "end": {
+            "offset": 675,
+            "line": 21,
+            "col": 35
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "docstring": null,
+        "declStart": {
+          "offset": 640,
+          "line": 21,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 849,
+          "line": 23,
+          "col": 79
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 640,
+            "line": 21,
+            "col": 0
+          },
+          "end": {
+            "offset": 849,
+            "line": 23,
+            "col": 79
+          }
+        },
+        "cmdEnd": {
+          "offset": 849,
+          "line": 23,
+          "col": 79
+        }
+      },
+      "raw_signature": "lemma finiteMultiplicity_of_isPrime {P I : Ideal R} [P.IsPrime] (hP : P ≠ ⊥) (hI : I ≠ ⊥) :\n    FiniteMultiplicity P I",
+      "original_raw_signature": "lemma finiteMultiplicity_of_isPrime {P I : Ideal R} [P.IsPrime] (hP : P ≠ ⊥) (hI : I ≠ ⊥) :\n    FiniteMultiplicity P I",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+        "source_span": {
+          "start_byte": 640,
+          "end_byte_exclusive": 849,
+          "line": 21,
+          "end_line": 23
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime",
+        "raw_declaration": "lemma finiteMultiplicity_of_isPrime {P I : Ideal R} [P.IsPrime] (hP : P ≠ ⊥) (hI : I ≠ ⊥) :\n    FiniteMultiplicity P I :=\n  FiniteMultiplicity.of_prime_left (Ideal.prime_of_isPrime hP inferInstance) hI",
+        "raw_declaration_sha256": "1cfd95f0bf322fe90ccd61dbb308f60542149f69200a986afe6360c76e681ddd",
+        "raw_signature": "lemma finiteMultiplicity_of_isPrime {P I : Ideal R} [P.IsPrime] (hP : P ≠ ⊥) (hI : I ≠ ⊥) :\n    FiniteMultiplicity P I",
+        "readback": {
+          "en": "Let R be a commutative ring that is a Dedekind domain, and let P and I be ideals of R. Assume that P is prime, P is not the zero ideal, and I is not the zero ideal. Then P has finite multiplicity in I: some natural power P^n does not divide I in the ideal monoid, so the exponents of powers of P dividing I are bounded.",
+          "zh-Hans": "设 R 为带交换环结构的 Dedekind 整环，P、I 为 R 的理想。假设 P 为素理想、P 不是零理想，且 I 不是零理想，则 P 在 I 中的重数有限：存在自然数 n，使 P^n 在理想幺半群中不整除 I，因而使 P 的幂整除 I 的指数有上界。",
+          "ja": "R を可換環構造を持つ Dedekind 整域とし、P、I を R のイデアルとする。P が素イデアルであり、P と I がともに零イデアルでないと仮定する。このとき P の I における重複度は有限である。すなわち、ある自然数 n に対して P^n はイデアルのモノイドにおいて I を割らず、I を割る P の冪の指数は有界である。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nattribute [local instance] FractionRing.liftAlgebra FractionRing.isScalarTower_liftAlgebra\nsection Multiplicity\nvariable {R : Type*} [CommRing R] [IsDedekindDomain R]\nStatic active source context only; no compiler was used to infer the exported signature. Single-command omit applies only to this declaration when shown above.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "blind_original_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "en": "Let R be a commutative ring that is a Dedekind domain, and let P and I be ideals of R. Assume that P is prime, P is not the zero ideal, and I is not the zero ideal. Then P has finite multiplicity in I: some natural power P^n does not divide I in the ideal monoid, so the exponents of powers of P dividing I are bounded.",
+      "zh_Hans": "设 R 为带交换环结构的 Dedekind 整环，P、I 为 R 的理想。假设 P 为素理想、P 不是零理想，且 I 不是零理想，则 P 在 I 中的重数有限：存在自然数 n，使 P^n 在理想幺半群中不整除 I，因而使 P 的幂整除 I 的指数有上界。",
+      "ja": "R を可換環構造を持つ Dedekind 整域とし、P、I を R のイデアルとする。P が素イデアルであり、P と I がともに零イデアルでないと仮定する。このとき P の I における重複度は有限である。すなわち、ある自然数 n に対して P^n はイデアルのモノイドにおいて I を割らず、I を割る P の冪の指数は有界である。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {R : Type u_1} [inst : CommRing R] [IsDedekindDomain R] {P I : Ideal R} [P.IsPrime],\n  P ≠ ⊥ → I ≠ ⊥ → ∀ {n : ℕ}, P ^ n ∣ I ↔ n ≤ multiplicity P I",
+      "source_span": {
+        "start_line": 25,
+        "end_line": 28
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 1079,
+          "line": 27,
+          "col": 47
+        },
+        "nameText": "pow_dvd_iff_le_multiplicity",
+        "nameRange": {
+          "start": {
+            "offset": 934,
+            "line": 26,
+            "col": 6
+          },
+          "end": {
+            "offset": 961,
+            "line": 26,
+            "col": 33
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "docstring": {
+          "start": {
+            "offset": 851,
+            "line": 25,
+            "col": 0
+          },
+          "end": {
+            "offset": 927,
+            "line": 25,
+            "col": 68
+          }
+        },
+        "declStart": {
+          "offset": 851,
+          "line": 25,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 1149,
+          "line": 28,
+          "col": 67
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 851,
+            "line": 25,
+            "col": 0
+          },
+          "end": {
+            "offset": 1149,
+            "line": 28,
+            "col": 67
+          }
+        },
+        "cmdEnd": {
+          "offset": 1149,
+          "line": 28,
+          "col": 67
+        }
+      },
+      "raw_signature": "lemma pow_dvd_iff_le_multiplicity {P I : Ideal R} [P.IsPrime] (hP : P ≠ ⊥) (hI : I ≠ ⊥)\n    {n : ℕ} : P ^ n ∣ I ↔ n ≤ multiplicity P I",
+      "original_raw_signature": "lemma pow_dvd_iff_le_multiplicity {P I : Ideal R} [P.IsPrime] (hP : P ≠ ⊥) (hI : I ≠ ⊥)\n    {n : ℕ} : P ^ n ∣ I ↔ n ≤ multiplicity P I",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+        "source_span": {
+          "start_byte": 928,
+          "end_byte_exclusive": 1149,
+          "line": 26,
+          "end_line": 28
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+        "raw_declaration": "lemma pow_dvd_iff_le_multiplicity {P I : Ideal R} [P.IsPrime] (hP : P ≠ ⊥) (hI : I ≠ ⊥)\n    {n : ℕ} : P ^ n ∣ I ↔ n ≤ multiplicity P I :=\n  (finiteMultiplicity_of_isPrime hP hI).pow_dvd_iff_le_multiplicity",
+        "raw_declaration_sha256": "4a00a29c49de8bba91df3181daf6db53d8bc38009dc0efb978e9dc8b286764d9",
+        "raw_signature": "lemma pow_dvd_iff_le_multiplicity {P I : Ideal R} [P.IsPrime] (hP : P ≠ ⊥) (hI : I ≠ ⊥)\n    {n : ℕ} : P ^ n ∣ I ↔ n ≤ multiplicity P I",
+        "readback": {
+          "en": "Let R be a commutative ring that is a Dedekind domain, P and I ideals of R, and n any natural number, including zero. Assume that P is prime and both P and I are nonzero ideals. Then P^n divides I in the ideal monoid if and only if n≤m_P(I), where m_P(I) is the natural-number multiplicity of P in I. In particular n=0 is included, with P^0 the unit ideal.",
+          "zh-Hans": "设 R 为带交换环结构的 Dedekind 整环，P、I 为 R 的理想，n 为任意自然数，包括零。假设 P 为素理想，且 P、I 均不是零理想，则 P^n 在理想幺半群中整除 I，当且仅当 n≤m_P(I)，其中 m_P(I) 是 P 在 I 中的自然数重数。特别地，n=0 也在范围内，此时 P^0 是单位理想。",
+          "ja": "R を可換環構造を持つ Dedekind 整域、P、I をそのイデアル、n を零を含む任意の自然数とする。P が素イデアルであり、P と I がともに非零であると仮定する。このとき、P^n がイデアルのモノイドにおいて I を割ることと、n≤m_P(I) であることは同値である。m_P(I) は P の I における自然数値の重複度である。n=0 も含まれ、この場合 P^0 は単位イデアルである。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nattribute [local instance] FractionRing.liftAlgebra FractionRing.isScalarTower_liftAlgebra\nsection Multiplicity\nvariable {R : Type*} [CommRing R] [IsDedekindDomain R]\nStatic active source context only; no compiler was used to infer the exported signature. Single-command omit applies only to this declaration when shown above.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "blind_original_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "en": "Let R be a commutative ring that is a Dedekind domain, P and I ideals of R, and n any natural number, including zero. Assume that P is prime and both P and I are nonzero ideals. Then P^n divides I in the ideal monoid if and only if n≤m_P(I), where m_P(I) is the natural-number multiplicity of P in I. In particular n=0 is included, with P^0 the unit ideal.",
+      "zh_Hans": "设 R 为带交换环结构的 Dedekind 整环，P、I 为 R 的理想，n 为任意自然数，包括零。假设 P 为素理想，且 P、I 均不是零理想，则 P^n 在理想幺半群中整除 I，当且仅当 n≤m_P(I)，其中 m_P(I) 是 P 在 I 中的自然数重数。特别地，n=0 也在范围内，此时 P^0 是单位理想。",
+      "ja": "R を可換環構造を持つ Dedekind 整域、P、I をそのイデアル、n を零を含む任意の自然数とする。P が素イデアルであり、P と I がともに非零であると仮定する。このとき、P^n がイデアルのモノイドにおいて I を割ることと、n≤m_P(I) であることは同値である。m_P(I) は P の I における自然数値の重複度である。n=0 も含まれ、この場合 P^0 は単位イデアルである。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ne_bot_of_liesOver",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ne_bot_of_liesOver",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L]\n  {𝔭 : Ideal (NumberField.RingOfIntegers F)}, 𝔭 ≠ ⊥ → ∀ (P : Ideal (NumberField.RingOfIntegers L)) [P.LiesOver 𝔭], P ≠ ⊥",
+      "source_span": {
+        "start_line": 41,
+        "end_line": 41
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 1521,
+          "line": 41,
+          "col": 33
+        },
+        "nameText": "ne_bot_of_liesOver",
+        "nameRange": {
+          "start": {
+            "offset": 1490,
+            "line": 41,
+            "col": 6
+          },
+          "end": {
+            "offset": 1508,
+            "line": 41,
+            "col": 24
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "docstring": null,
+        "declStart": {
+          "offset": 1415,
+          "line": 40,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 1566,
+          "line": 41,
+          "col": 75
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 1415,
+            "line": 40,
+            "col": 0
+          },
+          "end": {
+            "offset": 1566,
+            "line": 41,
+            "col": 75
+          }
+        },
+        "cmdEnd": {
+          "offset": 1566,
+          "line": 41,
+          "col": 75
+        }
+      },
+      "raw_signature": "omit [NumberField F] [NumberField L] [𝔭.IsMaximal] [P.IsPrime] in\nlemma ne_bot_of_liesOver : P ≠ ⊥",
+      "original_raw_signature": "lemma ne_bot_of_liesOver : P ≠ ⊥",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+        "source_span": {
+          "start_byte": 1484,
+          "end_byte_exclusive": 1566,
+          "line": 41,
+          "end_line": 41
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ne_bot_of_liesOver",
+        "raw_declaration": "lemma ne_bot_of_liesOver : P ≠ ⊥ := Ideal.ne_bot_of_liesOver_of_ne_bot h𝔭 P",
+        "raw_declaration_sha256": "f3320fe6ea2d5e2a9c8c6807cef627b8e4ba29f3fc3339c89aeaec6c1eb85b84",
+        "raw_signature": "lemma ne_bot_of_liesOver : P ≠ ⊥",
+        "readback": {
+          "en": "Let F and L be fields with an F-algebra structure on L, and let p and P be ideals of their rings of integers O_F and O_L, respectively. Assume p is not the zero ideal and P lies over p, meaning that its inverse image under O_F→O_L equals p. Then P is not the zero ideal. This declaration explicitly omits the number-field, maximality-of-p, and primality-of-P assumptions from the surrounding section.",
+          "zh-Hans": "设 F、L 为域，并在 L 上指定 F 代数结构；p、P 分别为整数环 O_F、O_L 的理想。假设 p 不是零理想，且 P 位于 p 上方，即 P 在 O_F→O_L 下的原像等于 p，则 P 不是零理想。此声明明确省略周围小节中的数域假设、p 的极大性及 P 的素性假设。",
+          "ja": "F、L を体とし、L に F 代数構造を指定する。p、P をそれぞれの整数環 O_F、O_L のイデアルとする。p が零イデアルではなく、P が p の上にある、すなわち O_F→O_L による P の逆像が p に等しいと仮定する。このとき P は零イデアルではない。この宣言では、周囲の節の数体仮定、p の極大性、および P の素性が明示的に省略されている。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nattribute [local instance] FractionRing.liftAlgebra FractionRing.isScalarTower_liftAlgebra\nsection Prime\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nvariable {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal] (h𝔭 : 𝔭 ≠ ⊥) (P : Ideal (𝓞 L)) [P.IsPrime]\n  [P.LiesOver 𝔭]\ninclude h𝔭\nomit [NumberField F] [NumberField L] [𝔭.IsMaximal] [P.IsPrime] in\nStatic active source context only; no compiler was used to infer the exported signature. Single-command omit applies only to this declaration when shown above.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "blind_original_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "en": "Let F and L be fields with an F-algebra structure on L, and let p and P be ideals of their rings of integers O_F and O_L, respectively. Assume p is not the zero ideal and P lies over p, meaning that its inverse image under O_F→O_L equals p. Then P is not the zero ideal. This declaration explicitly omits the number-field, maximality-of-p, and primality-of-P assumptions from the surrounding section.",
+      "zh_Hans": "设 F、L 为域，并在 L 上指定 F 代数结构；p、P 分别为整数环 O_F、O_L 的理想。假设 p 不是零理想，且 P 位于 p 上方，即 P 在 O_F→O_L 下的原像等于 p，则 P 不是零理想。此声明明确省略周围小节中的数域假设、p 的极大性及 P 的素性假设。",
+      "ja": "F、L を体とし、L に F 代数構造を指定する。p、P をそれぞれの整数環 O_F、O_L のイデアルとする。p が零イデアルではなく、P が p の上にある、すなわち O_F→O_L による P の逆像が p に等しいと仮定する。このとき P は零イデアルではない。この宣言では、周囲の節の数体仮定、p の極大性、および P の素性が明示的に省略されている。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_inertiaDeg_mul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_inertiaDeg_mul",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    ∀ (P : Ideal (NumberField.RingOfIntegers L)) [P.LiesOver 𝔭],\n      Real.log ↑(Ideal.absNorm P) = ↑(𝔭.inertiaDeg' P) * Real.log ↑(Ideal.absNorm 𝔭)",
+      "source_span": {
+        "start_line": 44,
+        "end_line": 48
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 1754,
+          "line": 46,
+          "col": 78
+        },
+        "nameText": "log_absNorm_eq_inertiaDeg_mul",
+        "nameRange": {
+          "start": {
+            "offset": 1638,
+            "line": 45,
+            "col": 6
+          },
+          "end": {
+            "offset": 1667,
+            "line": 45,
+            "col": 35
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "docstring": {
+          "start": {
+            "offset": 1588,
+            "line": 44,
+            "col": 0
+          },
+          "end": {
+            "offset": 1631,
+            "line": 44,
+            "col": 36
+          }
+        },
+        "declStart": {
+          "offset": 1568,
+          "line": 43,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 1870,
+          "line": 48,
+          "col": 17
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 1568,
+            "line": 43,
+            "col": 0
+          },
+          "end": {
+            "offset": 1870,
+            "line": 48,
+            "col": 17
+          }
+        },
+        "cmdEnd": {
+          "offset": 1870,
+          "line": 48,
+          "col": 17
+        }
+      },
+      "raw_signature": "omit [P.IsPrime] in\n/-- `log N(P) = f(P|𝔭)·log N(𝔭)`. -/\nlemma log_absNorm_eq_inertiaDeg_mul :\n    Real.log (Ideal.absNorm P) = 𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭)",
+      "original_raw_signature": "lemma log_absNorm_eq_inertiaDeg_mul :\n    Real.log (Ideal.absNorm P) = 𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭)",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+        "source_span": {
+          "start_byte": 1632,
+          "end_byte_exclusive": 1870,
+          "line": 45,
+          "end_line": 48
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_inertiaDeg_mul",
+        "raw_declaration": "lemma log_absNorm_eq_inertiaDeg_mul :\n    Real.log (Ideal.absNorm P) = 𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭) := by\n  rw [Ideal.absNorm_eq_pow_inertiaDeg'_of_liesOver P 𝔭 inferInstance h𝔭, Nat.cast_pow,\n    Real.log_pow]",
+        "raw_declaration_sha256": "3df43b4ca8135c593fbc8aa26adefb7442081231370816bc7a41c3b679d639dd",
+        "raw_signature": "lemma log_absNorm_eq_inertiaDeg_mul :\n    Real.log (Ideal.absNorm P) = 𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭)",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. Let p be a nonzero maximal ideal of O_F, and let P be any ideal of O_L lying over p, meaning P has inverse image p under O_F→O_L. With N(J) denoting the absolute ideal norm and f(P|p) the inertia degree, $\\log N(P)=f(P\\mid p)\\log N(p)$. Norms and the natural-number inertia degree are cast to the real numbers, and log is the real natural logarithm. Primality of P is explicitly omitted as a separate hypothesis.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。设 p 为 O_F 的非零极大理想，P 为 O_L 中位于 p 上方的任意理想，即 P 在 O_F→O_L 下的原像为 p。用 N(J) 表示理想的绝对范数，用 f(P|p) 表示惯性次数，则 $\\log N(P)=f(P\\mid p)\\log N(p)$。范数及自然数惯性次数均转为实数，log 为实自然对数；声明明确不将 P 的素性作为单独假设。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。p を O_F の非零極大イデアル、P を p の上にある O_L の任意のイデアル、すなわち O_F→O_L による逆像が p であるイデアルとする。N(J) をイデアルの絶対ノルム、f(P|p) を惰性次数とすると、$\\log N(P)=f(P\\mid p)\\log N(p)$ である。ノルムと自然数値の惰性次数は実数とみなし、log は実自然対数である。P の素性は独立した仮定としては明示的に省略されている。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nattribute [local instance] FractionRing.liftAlgebra FractionRing.isScalarTower_liftAlgebra\nsection Prime\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nvariable {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal] (h𝔭 : 𝔭 ≠ ⊥) (P : Ideal (𝓞 L)) [P.IsPrime]\n  [P.LiesOver 𝔭]\ninclude h𝔭\nomit [P.IsPrime] in\nStatic active source context only; no compiler was used to infer the exported signature. Single-command omit applies only to this declaration when shown above.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "blind_original_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. Let p be a nonzero maximal ideal of O_F, and let P be any ideal of O_L lying over p, meaning P has inverse image p under O_F→O_L. With N(J) denoting the absolute ideal norm and f(P|p) the inertia degree, $\\log N(P)=f(P\\mid p)\\log N(p)$. Norms and the natural-number inertia degree are cast to the real numbers, and log is the real natural logarithm. Primality of P is explicitly omitted as a separate hypothesis.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。设 p 为 O_F 的非零极大理想，P 为 O_L 中位于 p 上方的任意理想，即 P 在 O_F→O_L 下的原像为 p。用 N(J) 表示理想的绝对范数，用 f(P|p) 表示惯性次数，则 $\\log N(P)=f(P\\mid p)\\log N(p)$。范数及自然数惯性次数均转为实数，log 为实自然对数；声明明确不将 P 的素性作为单独假设。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。p を O_F の非零極大イデアル、P を p の上にある O_L の任意のイデアル、すなわち O_F→O_L による逆像が p であるイデアルとする。N(J) をイデアルの絶対ノルム、f(P|p) を惰性次数とすると、$\\log N(P)=f(P\\mid p)\\log N(p)$ である。ノルムと自然数値の惰性次数は実数とみなし、log は実自然対数である。P の素性は独立した仮定としては明示的に省略されている。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_ramificationIdx'_dvd",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_ramificationIdx'_dvd",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : Field L] [NumberField L] [inst_3 : Algebra F L]\n  {𝔭 : Ideal (NumberField.RingOfIntegers F)} (P : Ideal (NumberField.RingOfIntegers L)),\n  P ^ 𝔭.ramificationIdx' P ∣\n    Ideal.map (Algebra.algebraMap (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L)) 𝔭",
+      "source_span": {
+        "start_line": 51,
+        "end_line": 53
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 2058,
+          "line": 52,
+          "col": 62
+        },
+        "nameText": "pow_ramificationIdx'_dvd",
+        "nameRange": {
+          "start": {
+            "offset": 1955,
+            "line": 51,
+            "col": 6
+          },
+          "end": {
+            "offset": 1979,
+            "line": 51,
+            "col": 30
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "docstring": null,
+        "declStart": {
+          "offset": 1872,
+          "line": 50,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 2113,
+          "line": 53,
+          "col": 52
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 1872,
+            "line": 50,
+            "col": 0
+          },
+          "end": {
+            "offset": 2113,
+            "line": 53,
+            "col": 52
+          }
+        },
+        "cmdEnd": {
+          "offset": 2113,
+          "line": 53,
+          "col": 52
+        }
+      },
+      "raw_signature": "omit h𝔭 [NumberField F] [𝔭.IsMaximal] [P.IsPrime] [P.LiesOver 𝔭] in\nlemma pow_ramificationIdx'_dvd :\n    P ^ 𝔭.ramificationIdx' P ∣ 𝔭.map (algebraMap (𝓞 F) (𝓞 L))",
+      "original_raw_signature": "lemma pow_ramificationIdx'_dvd :\n    P ^ 𝔭.ramificationIdx' P ∣ 𝔭.map (algebraMap (𝓞 F) (𝓞 L))",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+        "source_span": {
+          "start_byte": 1949,
+          "end_byte_exclusive": 2113,
+          "line": 51,
+          "end_line": 53
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_ramificationIdx'_dvd",
+        "raw_declaration": "lemma pow_ramificationIdx'_dvd :\n    P ^ 𝔭.ramificationIdx' P ∣ 𝔭.map (algebraMap (𝓞 F) (𝓞 L)) :=\n  Ideal.dvd_iff_le.mpr Ideal.le_pow_ramificationIdx'",
+        "raw_declaration_sha256": "51c13e27fa18fbe2f4a1c69ce2e827b26f8bf01906ee0267312be69159f0c0c4",
+        "raw_signature": "lemma pow_ramificationIdx'_dvd :\n    P ^ 𝔭.ramificationIdx' P ∣ 𝔭.map (algebraMap (𝓞 F) (𝓞 L))",
+        "readback": {
+          "en": "Let F be a field, L a number field with its field structure, and give L an F-algebra structure. For every ideal p of O_F and ideal P of O_L, P^{e(P|p)} divides the extension ideal p O_L, where e(P|p) is the natural-number ideal ramification index and p O_L is the image ideal under O_F→O_L. The declaration explicitly omits the assumption that F is a number field, that p is nonzero or maximal, and that P is prime or lies over p. Thus zero ideals and a zero exponent are not excluded; exponent zero means the unit ideal.",
+          "zh-Hans": "设 F 为域，L 为带域结构的数域，并在 L 上指定 F 代数结构。对 O_F 的任意理想 p 和 O_L 的任意理想 P，有 P^{e(P|p)} 整除扩张理想 pO_L，其中 e(P|p) 是自然数值的理想分歧指数，pO_L 是 p 经 O_F→O_L 所得的像理想。声明明确省略 F 为数域、p 非零或极大、P 为素理想或位于 p 上方这些假设，因此不排除零理想和零指数；零次幂指单位理想。",
+          "ja": "F を体、L を体構造を持つ数体とし、L に F 代数構造を指定する。O_F の任意のイデアル p と O_L の任意のイデアル P に対し、P^{e(P|p)} は拡大イデアル pO_L を割る。e(P|p) は自然数値のイデアルの分岐指数であり、pO_L は O_F→O_L による像イデアルである。F が数体であること、p が非零または極大であること、および P が素イデアルであることや p の上にあることは明示的に省略されている。したがって零イデアルと零指数は除外されず、零乗は単位イデアルを意味する。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nattribute [local instance] FractionRing.liftAlgebra FractionRing.isScalarTower_liftAlgebra\nsection Prime\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nvariable {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal] (h𝔭 : 𝔭 ≠ ⊥) (P : Ideal (𝓞 L)) [P.IsPrime]\n  [P.LiesOver 𝔭]\ninclude h𝔭\nomit h𝔭 [NumberField F] [𝔭.IsMaximal] [P.IsPrime] [P.LiesOver 𝔭] in\nStatic active source context only; no compiler was used to infer the exported signature. Single-command omit applies only to this declaration when shown above.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "blind_original_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "en": "Let F be a field, L a number field with its field structure, and give L an F-algebra structure. For every ideal p of O_F and ideal P of O_L, P^{e(P|p)} divides the extension ideal p O_L, where e(P|p) is the natural-number ideal ramification index and p O_L is the image ideal under O_F→O_L. The declaration explicitly omits the assumption that F is a number field, that p is nonzero or maximal, and that P is prime or lies over p. Thus zero ideals and a zero exponent are not excluded; exponent zero means the unit ideal.",
+      "zh_Hans": "设 F 为域，L 为带域结构的数域，并在 L 上指定 F 代数结构。对 O_F 的任意理想 p 和 O_L 的任意理想 P，有 P^{e(P|p)} 整除扩张理想 pO_L，其中 e(P|p) 是自然数值的理想分歧指数，pO_L 是 p 经 O_F→O_L 所得的像理想。声明明确省略 F 为数域、p 非零或极大、P 为素理想或位于 p 上方这些假设，因此不排除零理想和零指数；零次幂指单位理想。",
+      "ja": "F を体、L を体構造を持つ数体とし、L に F 代数構造を指定する。O_F の任意のイデアル p と O_L の任意のイデアル P に対し、P^{e(P|p)} は拡大イデアル pO_L を割る。e(P|p) は自然数値のイデアルの分岐指数であり、pO_L は O_F→O_L による像イデアルである。F が数体であること、p が非零または極大であること、および P が素イデアルであることや p の上にあることは明示的に省略されている。したがって零イデアルと零指数は除外されず、零乗は単位イデアルを意味する。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    ∀ (P : Ideal (NumberField.RingOfIntegers L)) [P.IsPrime] [P.LiesOver 𝔭],\n      𝔭.ramificationIdx' P - 1 ≤\n        multiplicity P (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))",
+      "source_span": {
+        "start_line": 55,
+        "end_line": 59
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 2300,
+          "line": 57,
+          "col": 75
+        },
+        "nameText": "ramificationIdx'_sub_one_le_multiplicity",
+        "nameRange": {
+          "start": {
+            "offset": 2171,
+            "line": 56,
+            "col": 6
+          },
+          "end": {
+            "offset": 2211,
+            "line": 56,
+            "col": 46
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "docstring": {
+          "start": {
+            "offset": 2115,
+            "line": 55,
+            "col": 0
+          },
+          "end": {
+            "offset": 2164,
+            "line": 55,
+            "col": 39
+          }
+        },
+        "declStart": {
+          "offset": 2115,
+          "line": 55,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 2473,
+          "line": 59,
+          "col": 78
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 2115,
+            "line": 55,
+            "col": 0
+          },
+          "end": {
+            "offset": 2473,
+            "line": 59,
+            "col": 78
+          }
+        },
+        "cmdEnd": {
+          "offset": 2473,
+          "line": 59,
+          "col": 78
+        }
+      },
+      "raw_signature": "lemma ramificationIdx'_sub_one_le_multiplicity :\n    𝔭.ramificationIdx' P - 1 ≤ multiplicity P (differentIdeal (𝓞 F) (𝓞 L))",
+      "original_raw_signature": "lemma ramificationIdx'_sub_one_le_multiplicity :\n    𝔭.ramificationIdx' P - 1 ≤ multiplicity P (differentIdeal (𝓞 F) (𝓞 L))",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+        "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+        "source_span": {
+          "start_byte": 2165,
+          "end_byte_exclusive": 2473,
+          "line": 56,
+          "end_line": 59
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+        "raw_declaration": "lemma ramificationIdx'_sub_one_le_multiplicity :\n    𝔭.ramificationIdx' P - 1 ≤ multiplicity P (differentIdeal (𝓞 F) (𝓞 L)) :=\n  (pow_dvd_iff_le_multiplicity (ne_bot_of_liesOver h𝔭 P) differentIdeal_ne_bot).mp\n    (pow_sub_one_dvd_differentIdeal (𝓞 F) P _ h𝔭 (pow_ramificationIdx'_dvd P))",
+        "raw_declaration_sha256": "d83b14058e57a9414c4220c1cc1a1f130664ca4597bf4e2bbad84d49d5489a58",
+        "raw_signature": "lemma ramificationIdx'_sub_one_le_multiplicity :\n    𝔭.ramificationIdx' P - 1 ≤ multiplicity P (differentIdeal (𝓞 F) (𝓞 L))",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. Let D be the relative different ideal of O_L over O_F. For a prime P of O_L, let m_P(D) be its ideal multiplicity in D; for an ideal p of O_F, let C_L(p)=Σ_{P over p} m_P(D) log N(P)/[L:Q], where the sum is over the finite set of prime ideals above p and N(P)=#(O_L/P). Let p be a nonzero maximal ideal of O_F and P a prime ideal of O_L whose inverse image in O_F is p. Let e(P|p) be their natural-number ramification index. Then $e(P\\mid p)-1\\le m_P(D)$, as an inequality of natural numbers. Subtraction is natural-number subtraction, truncated at zero, and D is the relative different ideal of O_L over O_F.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。记 O_L 在 O_F 上的相对不同理想为 D。对 O_L 的素理想 P，记 P 在 D 中的理想重数为 m_P(D)；对 O_F 的理想 p，令 C_L(p)=Σ_{P 位于 p 上方} m_P(D) log N(P)/[L:Q]，其中对 p 上方的有限个素理想求和，N(P)=#(O_L/P)。设 p 为 O_F 的非零极大理想，P 为 O_L 的素理想，且 P 在 O_F 中的原像为 p。记两者的自然数分歧指数为 e(P|p)，则有自然数不等式 $e(P\\mid p)-1\\le m_P(D)$。减法为自然数减法，在零处截断；D 是 O_L 在 O_F 上的相对不同理想。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。O_L の O_F 上の相対差積イデアルを D とする。O_L の素イデアル P の D におけるイデアルの重複度を m_P(D) とし、O_F のイデアル p に対して C_L(p)=Σ_{P が p の上にある} m_P(D) log N(P)/[L:Q] と定める。和は p の上にある素イデアルの有限集合を走り、N(P)=#(O_L/P) である。p を O_F の非零極大イデアル、P を O_L の素イデアルで O_F における逆像が p であるものとする。対応する自然数値の分岐指数を e(P|p) とすると、自然数の不等式 $e(P\\mid p)-1\\le m_P(D)$ が成り立つ。減法は零で切り詰める自然数の減法であり、D は O_L の O_F 上の相対差積イデアルである。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionFinitePlaces\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nattribute [local instance] FractionRing.liftAlgebra FractionRing.isScalarTower_liftAlgebra\nsection Prime\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nvariable {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal] (h𝔭 : 𝔭 ≠ ⊥) (P : Ideal (𝓞 L)) [P.IsPrime]\n  [P.LiesOver 𝔭]\ninclude h𝔭\nStatic active source context only; no compiler was used to infer the exported signature. Single-command omit applies only to this declaration when shown above.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "blind_original_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. Let D be the relative different ideal of O_L over O_F. For a prime P of O_L, let m_P(D) be its ideal multiplicity in D; for an ideal p of O_F, let C_L(p)=Σ_{P over p} m_P(D) log N(P)/[L:Q], where the sum is over the finite set of prime ideals above p and N(P)=#(O_L/P). Let p be a nonzero maximal ideal of O_F and P a prime ideal of O_L whose inverse image in O_F is p. Let e(P|p) be their natural-number ramification index. Then $e(P\\mid p)-1\\le m_P(D)$, as an inequality of natural numbers. Subtraction is natural-number subtraction, truncated at zero, and D is the relative different ideal of O_L over O_F.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。记 O_L 在 O_F 上的相对不同理想为 D。对 O_L 的素理想 P，记 P 在 D 中的理想重数为 m_P(D)；对 O_F 的理想 p，令 C_L(p)=Σ_{P 位于 p 上方} m_P(D) log N(P)/[L:Q]，其中对 p 上方的有限个素理想求和，N(P)=#(O_L/P)。设 p 为 O_F 的非零极大理想，P 为 O_L 的素理想，且 P 在 O_F 中的原像为 p。记两者的自然数分歧指数为 e(P|p)，则有自然数不等式 $e(P\\mid p)-1\\le m_P(D)$。减法为自然数减法，在零处截断；D 是 O_L 在 O_F 上的相对不同理想。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。O_L の O_F 上の相対差積イデアルを D とする。O_L の素イデアル P の D におけるイデアルの重複度を m_P(D) とし、O_F のイデアル p に対して C_L(p)=Σ_{P が p の上にある} m_P(D) log N(P)/[L:Q] と定める。和は p の上にある素イデアルの有限集合を走り、N(P)=#(O_L/P) である。p を O_F の非零極大イデアル、P を O_L の素イデアルで O_F における逆像が p であるものとする。対応する自然数値の分岐指数を e(P|p) とすると、自然数の不等式 $e(P\\mid p)-1\\le m_P(D)$ が成り立つ。減法は零で切り詰める自然数の減法であり、D は O_L の O_F 上の相対差積イデアルである。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+      "path": "Solutions/Source_FermatConductorLowerContribution.lean",
+      "module": "Solutions.Source_FermatConductorLowerContribution",
+      "source_sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭 =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (NumberField.RingOfIntegers L),\n        ↑(multiplicity P (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) *\n              ↑(𝔭.inertiaDeg' P) *\n            Real.log ↑(Ideal.absNorm 𝔭) /\n          ↑(Module.finrank ℚ L)",
+      "source_span": {
+        "start_line": 18,
+        "end_line": 25
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 953,
+          "line": 22,
+          "col": 49
+        },
+        "nameText": "diffContrib_eq",
+        "nameRange": {
+          "start": {
+            "offset": 688,
+            "line": 19,
+            "col": 6
+          },
+          "end": {
+            "offset": 702,
+            "line": 19,
+            "col": 20
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLowerContribution.lean",
+        "docstring": {
+          "start": {
+            "offset": 602,
+            "line": 18,
+            "col": 0
+          },
+          "end": {
+            "offset": 681,
+            "line": 18,
+            "col": 73
+          }
+        },
+        "declStart": {
+          "offset": 602,
+          "line": 18,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 1126,
+          "line": 25,
+          "col": 52
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 602,
+            "line": 18,
+            "col": 0
+          },
+          "end": {
+            "offset": 1126,
+            "line": 25,
+            "col": 52
+          }
+        },
+        "cmdEnd": {
+          "offset": 1126,
+          "line": 25,
+          "col": 52
+        }
+      },
+      "raw_signature": "lemma diffContrib_eq (h𝔭 : 𝔭 ≠ ⊥) :\n    diffContrib L 𝔭 = ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n      (multiplicity P (differentIdeal (𝓞 F) (𝓞 L)) : ℝ) * 𝔭.inertiaDeg' P *\n        Real.log (Ideal.absNorm 𝔭) / finrank ℚ L",
+      "original_raw_signature": "lemma diffContrib_eq (h𝔭 : 𝔭 ≠ ⊥) :\n    diffContrib L 𝔭 = ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n      (multiplicity P (differentIdeal (𝓞 F) (𝓞 L)) : ℝ) * 𝔭.inertiaDeg' P *\n        Real.log (Ideal.absNorm 𝔭) / finrank ℚ L",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerContribution.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLowerContribution.lean",
+        "source_sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+        "source_span": {
+          "start_byte": 682,
+          "end_byte_exclusive": 1126,
+          "line": 19,
+          "end_line": 25
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+        "raw_declaration": "lemma diffContrib_eq (h𝔭 : 𝔭 ≠ ⊥) :\n    diffContrib L 𝔭 = ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n      (multiplicity P (differentIdeal (𝓞 F) (𝓞 L)) : ℝ) * 𝔭.inertiaDeg' P *\n        Real.log (Ideal.absNorm 𝔭) / finrank ℚ L := by\n  refine Finset.sum_congr rfl fun P hP => ?_\n  obtain ⟨hPp, hPl⟩ := (mem_primesOverFinset_iff' h𝔭).mp hP\n  rw [log_absNorm_eq_inertiaDeg_mul h𝔭 P, mul_assoc]",
+        "raw_declaration_sha256": "f97fe62bdf8c4699e7ed1ed9100c949b45a23778b16eab3b2c7addb6255c76f3",
+        "raw_signature": "lemma diffContrib_eq (h𝔭 : 𝔭 ≠ ⊥) :\n    diffContrib L 𝔭 = ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n      (multiplicity P (differentIdeal (𝓞 F) (𝓞 L)) : ℝ) * 𝔭.inertiaDeg' P *\n        Real.log (Ideal.absNorm 𝔭) / finrank ℚ L",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. Let D be the relative different ideal of O_L over O_F. For a prime P of O_L, let m_P(D) be its ideal multiplicity in D; for an ideal p of O_F, let C_L(p)=Σ_{P over p} m_P(D) log N(P)/[L:Q], where the sum is over the finite set of prime ideals above p and N(P)=#(O_L/P). For every nonzero maximal ideal p of O_F, C_L(p)=Σ_{P over p} m_P(D) f(P|p) log N(p)/[L:Q], where f(P|p) is the natural-number inertia degree, N(p)=#(O_F/p), and all factors in the summands are real numbers after casting. The sum uses precisely the finite set of prime ideals of O_L lying over p; the logarithm is the real natural logarithm.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。记 O_L 在 O_F 上的相对不同理想为 D。对 O_L 的素理想 P，记 P 在 D 中的理想重数为 m_P(D)；对 O_F 的理想 p，令 C_L(p)=Σ_{P 位于 p 上方} m_P(D) log N(P)/[L:Q]，其中对 p 上方的有限个素理想求和，N(P)=#(O_L/P)。对 O_F 的任意非零极大理想 p，有 C_L(p)=Σ_{P 位于 p 上方}m_P(D) f(P|p) log N(p)/[L:Q]，其中 f(P|p) 为自然数惯性次数，N(p)=#(O_F/p)，各求和因子经转换后视为实数。求和恰好遍历 O_L 中位于 p 上方的素理想有限集合；log 为实自然对数。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。O_L の O_F 上の相対差積イデアルを D とする。O_L の素イデアル P の D におけるイデアルの重複度を m_P(D) とし、O_F のイデアル p に対して C_L(p)=Σ_{P が p の上にある} m_P(D) log N(P)/[L:Q] と定める。和は p の上にある素イデアルの有限集合を走り、N(P)=#(O_L/P) である。O_F の任意の非零極大イデアル p に対して、C_L(p)=Σ_{P が p の上にある}m_P(D) f(P|p) log N(p)/[L:Q] である。f(P|p) は自然数値の惰性次数、N(p)=#(O_F/p) であり、和の各因子は実数とみなす。和は p の上にある O_L の素イデアルの有限集合を走り、log は実自然対数である。"
+        },
+        "section_context": "import Solutions.Source_FermatConductorLowerMultiplicity\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nvariable {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerContribution.lean",
+      "blind_original_sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. Let D be the relative different ideal of O_L over O_F. For a prime P of O_L, let m_P(D) be its ideal multiplicity in D; for an ideal p of O_F, let C_L(p)=Σ_{P over p} m_P(D) log N(P)/[L:Q], where the sum is over the finite set of prime ideals above p and N(P)=#(O_L/P). For every nonzero maximal ideal p of O_F, C_L(p)=Σ_{P over p} m_P(D) f(P|p) log N(p)/[L:Q], where f(P|p) is the natural-number inertia degree, N(p)=#(O_F/p), and all factors in the summands are real numbers after casting. The sum uses precisely the finite set of prime ideals of O_L lying over p; the logarithm is the real natural logarithm.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。记 O_L 在 O_F 上的相对不同理想为 D。对 O_L 的素理想 P，记 P 在 D 中的理想重数为 m_P(D)；对 O_F 的理想 p，令 C_L(p)=Σ_{P 位于 p 上方} m_P(D) log N(P)/[L:Q]，其中对 p 上方的有限个素理想求和，N(P)=#(O_L/P)。对 O_F 的任意非零极大理想 p，有 C_L(p)=Σ_{P 位于 p 上方}m_P(D) f(P|p) log N(p)/[L:Q]，其中 f(P|p) 为自然数惯性次数，N(p)=#(O_F/p)，各求和因子经转换后视为实数。求和恰好遍历 O_L 中位于 p 上方的素理想有限集合；log 为实自然对数。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。O_L の O_F 上の相対差積イデアルを D とする。O_L の素イデアル P の D におけるイデアルの重複度を m_P(D) とし、O_F のイデアル p に対して C_L(p)=Σ_{P が p の上にある} m_P(D) log N(P)/[L:Q] と定める。和は p の上にある素イデアルの有限集合を走り、N(P)=#(O_L/P) である。O_F の任意の非零極大イデアル p に対して、C_L(p)=Σ_{P が p の上にある}m_P(D) f(P|p) log N(p)/[L:Q] である。f(P|p) は自然数値の惰性次数、N(p)=#(O_F/p) であり、和の各因子は実数とみなす。和は p の上にある O_L の素イデアルの有限集合を走り、log は実自然対数である。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+      "path": "Solutions/Source_FermatConductorLowerContribution.lean",
+      "module": "Solutions.Source_FermatConductorLowerContribution",
+      "source_sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (NumberField.RingOfIntegers L),\n        ↑(𝔭.ramificationIdx' P - 1) * ↑(𝔭.inertiaDeg' P) * Real.log ↑(Ideal.absNorm 𝔭) / ↑(Module.finrank ℚ L) ≤\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭",
+      "source_span": {
+        "start_line": 27,
+        "end_line": 37
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 1504,
+          "line": 31,
+          "col": 38
+        },
+        "nameText": "sum_le_diffContrib",
+        "nameRange": {
+          "start": {
+            "offset": 1247,
+            "line": 28,
+            "col": 8
+          },
+          "end": {
+            "offset": 1265,
+            "line": 28,
+            "col": 26
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLowerContribution.lean",
+        "docstring": {
+          "start": {
+            "offset": 1128,
+            "line": 27,
+            "col": 0
+          },
+          "end": {
+            "offset": 1238,
+            "line": 27,
+            "col": 89
+          }
+        },
+        "declStart": {
+          "offset": 1128,
+          "line": 27,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 1873,
+          "line": 37,
+          "col": 62
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 1128,
+            "line": 27,
+            "col": 0
+          },
+          "end": {
+            "offset": 1873,
+            "line": 37,
+            "col": 62
+          }
+        },
+        "cmdEnd": {
+          "offset": 1873,
+          "line": 37,
+          "col": 62
+        }
+      },
+      "raw_signature": "theorem sum_le_diffContrib (h𝔭 : 𝔭 ≠ ⊥) :\n    ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n      ((𝔭.ramificationIdx' P - 1 : ℕ) : ℝ) * 𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭) /\n        finrank ℚ L ≤ diffContrib L 𝔭",
+      "original_raw_signature": "theorem sum_le_diffContrib (h𝔭 : 𝔭 ≠ ⊥) :\n    ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n      ((𝔭.ramificationIdx' P - 1 : ℕ) : ℝ) * 𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭) /\n        finrank ℚ L ≤ diffContrib L 𝔭",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerContribution.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLowerContribution.lean",
+        "source_sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+        "source_span": {
+          "start_byte": 1239,
+          "end_byte_exclusive": 1873,
+          "line": 28,
+          "end_line": 37
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+        "raw_declaration": "theorem sum_le_diffContrib (h𝔭 : 𝔭 ≠ ⊥) :\n    ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n      ((𝔭.ramificationIdx' P - 1 : ℕ) : ℝ) * 𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭) /\n        finrank ℚ L ≤ diffContrib L 𝔭 := by\n  rw [diffContrib_eq h𝔭]\n  refine Finset.sum_le_sum fun P hP => ?_\n  obtain ⟨hPp, hPl⟩ := (mem_primesOverFinset_iff' h𝔭).mp hP\n  refine div_le_div_of_nonneg_right (mul_le_mul_of_nonneg_right\n    (mul_le_mul_of_nonneg_right ?_ (by positivity)) (Real.log_natCast_nonneg _)) (by positivity)\n  exact_mod_cast ramificationIdx'_sub_one_le_multiplicity h𝔭 P",
+        "raw_declaration_sha256": "c9e1dd80e3d8bebcc392f1461a060e1cc44f07376610e52a0ae43a45829cc755",
+        "raw_signature": "theorem sum_le_diffContrib (h𝔭 : 𝔭 ≠ ⊥) :\n    ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n      ((𝔭.ramificationIdx' P - 1 : ℕ) : ℝ) * 𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭) /\n        finrank ℚ L ≤ diffContrib L 𝔭",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. Let D be the relative different ideal of O_L over O_F. For a prime P of O_L, let m_P(D) be its ideal multiplicity in D; for an ideal p of O_F, let C_L(p)=Σ_{P over p} m_P(D) log N(P)/[L:Q], where the sum is over the finite set of prime ideals above p and N(P)=#(O_L/P). For every nonzero maximal ideal p of O_F, Σ_{P over p} ((e(P|p)−1) as a real number) f(P|p) log N(p)/[L:Q]≤C_L(p). Here e(P|p) and f(P|p) are the natural-number ramification index and inertia degree, N(p)=#(O_F/p), and the sum runs over the finite set of prime ideals of O_L above p. The subtraction e−1 is performed in the natural numbers, truncated at zero, before conversion to the real numbers; log is the real natural logarithm.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。记 O_L 在 O_F 上的相对不同理想为 D。对 O_L 的素理想 P，记 P 在 D 中的理想重数为 m_P(D)；对 O_F 的理想 p，令 C_L(p)=Σ_{P 位于 p 上方} m_P(D) log N(P)/[L:Q]，其中对 p 上方的有限个素理想求和，N(P)=#(O_L/P)。对 O_F 的任意非零极大理想 p，有 Σ_{P 位于 p 上方}((e(P|p)−1) 转为实数) f(P|p) log N(p)/[L:Q]≤C_L(p)。其中 e(P|p)、f(P|p) 分别为自然数分歧指数和惯性次数，N(p)=#(O_F/p)，求和遍历 O_L 中位于 p 上方的素理想有限集合。e−1 先在自然数中计算并在零处截断，再转为实数；log 为实自然对数。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。O_L の O_F 上の相対差積イデアルを D とする。O_L の素イデアル P の D におけるイデアルの重複度を m_P(D) とし、O_F のイデアル p に対して C_L(p)=Σ_{P が p の上にある} m_P(D) log N(P)/[L:Q] と定める。和は p の上にある素イデアルの有限集合を走り、N(P)=#(O_L/P) である。O_F の任意の非零極大イデアル p に対して、Σ_{P が p の上にある}((e(P|p)−1) を実数に移した値) f(P|p) log N(p)/[L:Q]≤C_L(p) が成り立つ。e(P|p)、f(P|p) はそれぞれ自然数値の分岐指数と惰性次数、N(p)=#(O_F/p) であり、和は p の上にある O_L の素イデアルの有限集合を走る。e−1 は自然数で零に切り詰めて計算してから実数に移し、log は実自然対数である。"
+        },
+        "section_context": "import Solutions.Source_FermatConductorLowerMultiplicity\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nvariable {F L : Type*} [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L]\nvariable {𝔭 : Ideal (𝓞 F)} [𝔭.IsMaximal]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLowerContribution.lean",
+      "blind_original_sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. Let D be the relative different ideal of O_L over O_F. For a prime P of O_L, let m_P(D) be its ideal multiplicity in D; for an ideal p of O_F, let C_L(p)=Σ_{P over p} m_P(D) log N(P)/[L:Q], where the sum is over the finite set of prime ideals above p and N(P)=#(O_L/P). For every nonzero maximal ideal p of O_F, Σ_{P over p} ((e(P|p)−1) as a real number) f(P|p) log N(p)/[L:Q]≤C_L(p). Here e(P|p) and f(P|p) are the natural-number ramification index and inertia degree, N(p)=#(O_F/p), and the sum runs over the finite set of prime ideals of O_L above p. The subtraction e−1 is performed in the natural numbers, truncated at zero, before conversion to the real numbers; log is the real natural logarithm.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。记 O_L 在 O_F 上的相对不同理想为 D。对 O_L 的素理想 P，记 P 在 D 中的理想重数为 m_P(D)；对 O_F 的理想 p，令 C_L(p)=Σ_{P 位于 p 上方} m_P(D) log N(P)/[L:Q]，其中对 p 上方的有限个素理想求和，N(P)=#(O_L/P)。对 O_F 的任意非零极大理想 p，有 Σ_{P 位于 p 上方}((e(P|p)−1) 转为实数) f(P|p) log N(p)/[L:Q]≤C_L(p)。其中 e(P|p)、f(P|p) 分别为自然数分歧指数和惯性次数，N(p)=#(O_F/p)，求和遍历 O_L 中位于 p 上方的素理想有限集合。e−1 先在自然数中计算并在零处截断，再转为实数；log 为实自然对数。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。O_L の O_F 上の相対差積イデアルを D とする。O_L の素イデアル P の D におけるイデアルの重複度を m_P(D) とし、O_F のイデアル p に対して C_L(p)=Σ_{P が p の上にある} m_P(D) log N(P)/[L:Q] と定める。和は p の上にある素イデアルの有限集合を走り、N(P)=#(O_L/P) である。O_F の任意の非零極大イデアル p に対して、Σ_{P が p の上にある}((e(P|p)−1) を実数に移した値) f(P|p) log N(p)/[L:Q]≤C_L(p) が成り立つ。e(P|p)、f(P|p) はそれぞれ自然数値の分岐指数と惰性次数、N(p)=#(O_F/p) であり、和は p の上にある O_L の素イデアルの有限集合を走る。e−1 は自然数で零に切り詰めて計算してから実数に移し、log は実自然対数である。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finrank_ℚ_pos",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finrank_ℚ_pos",
+      "path": "Solutions/Source_FermatConductorLocalComparison.lean",
+      "module": "Solutions.Source_FermatConductorLocalComparison",
+      "source_sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+      "compiler_type": "∀ (K : Type u_1) [inst : Field K] [inst_1 : NumberField K], 0 < ↑(Module.finrank ℚ K)",
+      "source_span": {
+        "start_line": 16,
+        "end_line": 17
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 601,
+          "line": 16,
+          "col": 82
+        },
+        "nameText": "finrank_ℚ_pos",
+        "nameRange": {
+          "start": {
+            "offset": 519,
+            "line": 16,
+            "col": 6
+          },
+          "end": {
+            "offset": 534,
+            "line": 16,
+            "col": 19
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLocalComparison.lean",
+        "docstring": null,
+        "declStart": {
+          "offset": 513,
+          "line": 16,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 635,
+          "line": 17,
+          "col": 28
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 513,
+            "line": 16,
+            "col": 0
+          },
+          "end": {
+            "offset": 635,
+            "line": 17,
+            "col": 28
+          }
+        },
+        "cmdEnd": {
+          "offset": 635,
+          "line": 17,
+          "col": 28
+        }
+      },
+      "raw_signature": "lemma finrank_ℚ_pos (K : Type*) [Field K] [NumberField K] : (0 : ℝ) < finrank ℚ K",
+      "original_raw_signature": "lemma finrank_ℚ_pos (K : Type*) [Field K] [NumberField K] : (0 : ℝ) < finrank ℚ K",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLocalComparison.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLocalComparison.lean",
+        "source_sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+        "source_span": {
+          "start_byte": 513,
+          "end_byte_exclusive": 635,
+          "line": 16,
+          "end_line": 17
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finrank_ℚ_pos",
+        "raw_declaration": "lemma finrank_ℚ_pos (K : Type*) [Field K] [NumberField K] : (0 : ℝ) < finrank ℚ K := by\n  exact_mod_cast finrank_pos",
+        "raw_declaration_sha256": "c3a149b02970ef1f98cb971100785a0b1951bf3d43e7daeebae74b6dbd0745f3",
+        "raw_signature": "lemma finrank_ℚ_pos (K : Type*) [Field K] [NumberField K] : (0 : ℝ) < finrank ℚ K",
+        "readback": {
+          "en": "For every type K with field and number-field structures, its vector-space dimension [K:Q], viewed as a real number, is strictly positive: $0<[K:\\mathbf Q]$.",
+          "zh-Hans": "对任意带域结构和数域结构的类型 K，将其在有理数域上的向量空间维数 [K:Q] 视为实数后，有严格不等式 $0<[K:\\mathbf Q]$。",
+          "ja": "体構造と数体構造を持つ任意の型 K に対し、有理数体上のベクトル空間次元 [K:Q] を実数とみなすと、狭義不等式 $0<[K:\\mathbf Q]$ が成り立つ。"
+        },
+        "section_context": "import Solutions.Source_FermatConductorLowerContribution\nimport Solutions.Source_FermatConductorPlaceDegree\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLocalComparison.lean",
+      "blind_original_sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+      "en": "For every type K with field and number-field structures, its vector-space dimension [K:Q], viewed as a real number, is strictly positive: $0<[K:\\mathbf Q]$.",
+      "zh_Hans": "对任意带域结构和数域结构的类型 K，将其在有理数域上的向量空间维数 [K:Q] 视为实数后，有严格不等式 $0<[K:\\mathbf Q]$。",
+      "ja": "体構造と数体構造を持つ任意の型 K に対し、有理数体上のベクトル空間次元 [K:Q] を実数とみなすと、狭義不等式 $0<[K:\\mathbf Q]$ が成り立つ。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+      "path": "Solutions/Source_FermatConductorLocalComparison.lean",
+      "module": "Solutions.Source_FermatConductorLocalComparison",
+      "source_sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : NumberField F] (L : Type u_2) [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F),\n  Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm u) / ↑(Module.finrank ℚ F) ≤\n    ∑ w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver L u,\n        Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w) / ↑(Module.finrank ℚ L) +\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L u.maximalIdeal.asIdeal",
+      "source_span": {
+        "start_line": 24,
+        "end_line": 58
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 1102,
+          "line": 29,
+          "col": 45
+        },
+        "nameText": "log_placeNorm_div_le",
+        "nameRange": {
+          "start": {
+            "offset": 894,
+            "line": 26,
+            "col": 8
+          },
+          "end": {
+            "offset": 914,
+            "line": 26,
+            "col": 28
+          }
+        },
+        "file": "Solutions/Source_FermatConductorLocalComparison.lean",
+        "docstring": {
+          "start": {
+            "offset": 754,
+            "line": 24,
+            "col": 0
+          },
+          "end": {
+            "offset": 885,
+            "line": 25,
+            "col": 69
+          }
+        },
+        "declStart": {
+          "offset": 754,
+          "line": 24,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 2845,
+          "line": 58,
+          "col": 73
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 754,
+            "line": 24,
+            "col": 0
+          },
+          "end": {
+            "offset": 2845,
+            "line": 58,
+            "col": 73
+          }
+        },
+        "cmdEnd": {
+          "offset": 2845,
+          "line": 58,
+          "col": 73
+        }
+      },
+      "raw_signature": "theorem log_placeNorm_div_le (u : FinitePlace F) :\n    Real.log (placeNorm u) / finrank ℚ F ≤\n      ∑ w ∈ placesOver L u, Real.log (placeNorm w) / finrank ℚ L +\n        diffContrib L u.maximalIdeal.asIdeal",
+      "original_raw_signature": "theorem log_placeNorm_div_le (u : FinitePlace F) :\n    Real.log (placeNorm u) / finrank ℚ F ≤\n      ∑ w ∈ placesOver L u, Real.log (placeNorm w) / finrank ℚ L +\n        diffContrib L u.maximalIdeal.asIdeal",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLocalComparison.lean",
+        "source_relative_path": "Solutions/Source_FermatConductorLocalComparison.lean",
+        "source_sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+        "source_span": {
+          "start_byte": 886,
+          "end_byte_exclusive": 2845,
+          "line": 26,
+          "end_line": 58
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+        "raw_declaration": "theorem log_placeNorm_div_le (u : FinitePlace F) :\n    Real.log (placeNorm u) / finrank ℚ F ≤\n      ∑ w ∈ placesOver L u, Real.log (placeNorm w) / finrank ℚ L +\n        diffContrib L u.maximalIdeal.asIdeal := by\n  haveI := u.maximalIdeal.isMaximal\n  set 𝔭 := u.maximalIdeal.asIdeal\n  have hsum := sum_placesOver_mul_eq_finrank (L := L) u\n  have hF := finrank_ℚ_pos F\n  have hFL : (0 : ℝ) < finrank F L := by exact_mod_cast finrank_pos\n  calc Real.log (placeNorm u) / finrank ℚ F\n      = ∑ w ∈ placesOver L u, ((placeRamIdx w u * placeInertiaDeg w u : ℕ) : ℝ) *\n          (Real.log (placeNorm u) / finrank ℚ L) := by\n        rw [← Finset.sum_mul, ← Nat.cast_sum, hsum, ← finrank_mul_finrank ℚ F L, Nat.cast_mul]\n        field_simp\n    _ = ∑ w ∈ placesOver L u, (Real.log (placeNorm w) / finrank ℚ L +\n          ((𝔭.ramificationIdx' w.maximalIdeal.asIdeal - 1 : ℕ) : ℝ) *\n            𝔭.inertiaDeg' w.maximalIdeal.asIdeal * Real.log (Ideal.absNorm 𝔭) /\n              finrank ℚ L) := by\n        refine Finset.sum_congr rfl fun w hw => ?_\n        have h := mem_placesOver.mp hw\n        have he : 1 ≤ placeRamIdx w u := Nat.one_le_iff_ne_zero.mpr (placeRamIdx_ne_zero h)\n        rw [log_placeNorm_eq h, Nat.cast_sub he]\n        simp only [placeRamIdx, placeInertiaDeg, placeNorm, Nat.cast_mul, Nat.cast_one]\n        ring\n    _ = ∑ w ∈ placesOver L u, Real.log (placeNorm w) / finrank ℚ L +\n          ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (𝓞 L),\n            ((𝔭.ramificationIdx' P - 1 : ℕ) : ℝ) * 𝔭.inertiaDeg' P *\n              Real.log (Ideal.absNorm 𝔭) / finrank ℚ L := by\n        rw [Finset.sum_add_distrib]\n        congr 1\n        exact sum_placesOver_eq u (fun P => ((𝔭.ramificationIdx' P - 1 : ℕ) : ℝ) *\n          𝔭.inertiaDeg' P * Real.log (Ideal.absNorm 𝔭) / finrank ℚ L)\n    _ ≤ _ := add_le_add le_rfl (sum_le_diffContrib u.maximalIdeal.ne_bot)",
+        "raw_declaration_sha256": "d213864f9ce184ab608f9cd9f92f6b64c907f0201770805d0b3e476a4db51f46",
+        "raw_signature": "theorem log_placeNorm_div_le (u : FinitePlace F) :\n    Real.log (placeNorm u) / finrank ℚ F ≤\n      ∑ w ∈ placesOver L u, Real.log (placeNorm w) / finrank ℚ L +\n        diffContrib L u.maximalIdeal.asIdeal",
+        "readback": {
+          "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. Let D be the relative different ideal of O_L over O_F. For a prime P of O_L, let m_P(D) be its ideal multiplicity in D; for an ideal p of O_F, let C_L(p)=Σ_{P over p} m_P(D) log N(P)/[L:Q], where the sum is over the finite set of prime ideals above p and N(P)=#(O_L/P). For every finite place u of F, $\\log N(u)/[F:\\mathbf Q]\\le\\sum_{w\\mid u}\\log N(w)/[L:\\mathbf Q]+C_L(\\mathfrak p_u)$. The sum runs over the finite set of finite places w of L lying over u, and log is the real natural logarithm. Thus the left term uses the degree of F over Q, while every summand and every term defining C_L uses the degree of L over Q; no extra ramification or good-value hypothesis is imposed on u.",
+          "zh-Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。记 O_L 在 O_F 上的相对不同理想为 D。对 O_L 的素理想 P，记 P 在 D 中的理想重数为 m_P(D)；对 O_F 的理想 p，令 C_L(p)=Σ_{P 位于 p 上方} m_P(D) log N(P)/[L:Q]，其中对 p 上方的有限个素理想求和，N(P)=#(O_L/P)。对 F 的任意有限处 u，有 log N(u)/[F:Q]≤Σ_{w 位于 u 上方}log N(w)/[L:Q]+C_L(p_u)。求和遍历 L 中位于 u 上方的有限处组成的有限集合，log 为实自然对数。左侧按 F 在有理数域上的次数归一化，右侧每个求和项及定义 C_L 的每一项按 L 在有理数域上的次数归一化；对 u 没有另加分歧或良好取值假设。",
+          "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。O_L の O_F 上の相対差積イデアルを D とする。O_L の素イデアル P の D におけるイデアルの重複度を m_P(D) とし、O_F のイデアル p に対して C_L(p)=Σ_{P が p の上にある} m_P(D) log N(P)/[L:Q] と定める。和は p の上にある素イデアルの有限集合を走り、N(P)=#(O_L/P) である。F の任意の有限素点 u に対し、log N(u)/[F:Q]≤Σ_{w が u の上にある}log N(w)/[L:Q]+C_L(p_u) が成り立つ。和は u の上にある L の有限素点の有限集合を走り、log は実自然対数である。左辺は F の有理数体上の次数で、右辺の各和の項と C_L を定義する各項は L の有理数体上の次数で正規化する。u に分岐や良い値に関する追加仮定は課されない。"
+        },
+        "section_context": "import Solutions.Source_FermatConductorLowerContribution\nimport Solutions.Source_FermatConductorPlaceDegree\nset_option autoImplicit false\nopen NumberField IsDedekindDomain Module\nnamespace AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource\nsection Local\nvariable {F : Type*} [Field F] [NumberField F] (L : Type*) [Field L] [NumberField L]\n  [Algebra F L]\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Solutions/Source_FermatConductorLocalComparison.lean",
+      "blind_original_sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+      "en": "Let F and L be number fields, with their field structures and a specified F-algebra structure on L. Write O_F and O_L for their rings of integers, and [B:A] for the finite vector-space dimension of B over A. For a finite place v, let p_v be its associated nonzero prime ideal and let N(v)=#(O/p_v). For finite places w of L and u of F, w lies over u means that the inverse image of p_w under O_F→O_L is p_u; write e(w|u) and f(w|u) for the ramification index and inertia degree of these ideals. Let D be the relative different ideal of O_L over O_F. For a prime P of O_L, let m_P(D) be its ideal multiplicity in D; for an ideal p of O_F, let C_L(p)=Σ_{P over p} m_P(D) log N(P)/[L:Q], where the sum is over the finite set of prime ideals above p and N(P)=#(O_L/P). For every finite place u of F, $\\log N(u)/[F:\\mathbf Q]\\le\\sum_{w\\mid u}\\log N(w)/[L:\\mathbf Q]+C_L(\\mathfrak p_u)$. The sum runs over the finite set of finite places w of L lying over u, and log is the real natural logarithm. Thus the left term uses the degree of F over Q, while every summand and every term defining C_L uses the degree of L over Q; no extra ramification or good-value hypothesis is imposed on u.",
+      "zh_Hans": "设 F、L 为数域，分别带有域结构，并在 L 上指定 F 代数结构。用 O_F、O_L 表示两者的整数环，用 [B:A] 表示 B 在 A 上的有限向量空间维数。对有限处 v，记其对应的非零素理想为 p_v，并令 N(v)=#(O/p_v)。对 L 的有限处 w 和 F 的有限处 u，“w 位于 u 上方”表示 p_w 在 O_F→O_L 下的原像为 p_u；e(w|u)、f(w|u) 分别表示这两个理想的分歧指数和惯性次数。记 O_L 在 O_F 上的相对不同理想为 D。对 O_L 的素理想 P，记 P 在 D 中的理想重数为 m_P(D)；对 O_F 的理想 p，令 C_L(p)=Σ_{P 位于 p 上方} m_P(D) log N(P)/[L:Q]，其中对 p 上方的有限个素理想求和，N(P)=#(O_L/P)。对 F 的任意有限处 u，有 log N(u)/[F:Q]≤Σ_{w 位于 u 上方}log N(w)/[L:Q]+C_L(p_u)。求和遍历 L 中位于 u 上方的有限处组成的有限集合，log 为实自然对数。左侧按 F 在有理数域上的次数归一化，右侧每个求和项及定义 C_L 的每一项按 L 在有理数域上的次数归一化；对 u 没有另加分歧或良好取值假设。",
+      "ja": "F と L をそれぞれ体構造を持つ数体とし、L 上の F 代数構造を指定する。O_F と O_L はそれぞれの整数環を表し、[B:A] は B の A 上の有限ベクトル空間次元を表す。有限素点 v に対応する非零素イデアルを p_v とし、N(v)=#(O/p_v) と置く。L の有限素点 w と F の有限素点 u に対し、w が u の上にあるとは、O_F→O_L による p_w の逆像が p_u であることをいう。対応する分岐指数と惰性次数をそれぞれ e(w|u)、f(w|u) と書く。O_L の O_F 上の相対差積イデアルを D とする。O_L の素イデアル P の D におけるイデアルの重複度を m_P(D) とし、O_F のイデアル p に対して C_L(p)=Σ_{P が p の上にある} m_P(D) log N(P)/[L:Q] と定める。和は p の上にある素イデアルの有限集合を走り、N(P)=#(O_L/P) である。F の任意の有限素点 u に対し、log N(u)/[F:Q]≤Σ_{w が u の上にある}log N(w)/[L:Q]+C_L(p_u) が成り立つ。和は u の上にある L の有限素点の有限集合を走り、log は実自然対数である。左辺は F の有理数体上の次数で、右辺の各和の項と C_L を定義する各項は L の有理数体上の次数で正規化する。u に分岐や良い値に関する追加仮定は課されない。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison",
+      "source_sha256": "2bda59f4242fdfd8b0173c82bc21f2e9a163b199e437edbd39a05f602029d0b0",
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldLocalConductorComparison",
+      "source_span": {
+        "start_line": 17,
+        "end_line": 25
+      },
+      "compiler_parser_span": {
+        "valStart": {
+          "offset": 751,
+          "line": 19,
+          "col": 92
+        },
+        "nameText": "belyiActualFieldLocalConductorComparison",
+        "nameRange": {
+          "start": {
+            "offset": 667,
+            "line": 19,
+            "col": 8
+          },
+          "end": {
+            "offset": 707,
+            "line": 19,
+            "col": 48
+          }
+        },
+        "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+        "docstring": {
+          "start": {
+            "offset": 502,
+            "line": 17,
+            "col": 0
+          },
+          "end": {
+            "offset": 658,
+            "line": 18,
+            "col": 69
+          }
+        },
+        "declStart": {
+          "offset": 502,
+          "line": 17,
+          "col": 0
+        },
+        "declEnd": {
+          "offset": 1098,
+          "line": 25,
+          "col": 65
+        },
+        "cmdStart": {
+          "start": {
+            "offset": 502,
+            "line": 17,
+            "col": 0
+          },
+          "end": {
+            "offset": 1098,
+            "line": 25,
+            "col": 65
+          }
+        },
+        "cmdEnd": {
+          "offset": 1098,
+          "line": 25,
+          "col": 65
+        }
+      },
+      "raw_signature": "theorem belyiActualFieldLocalConductorComparison : BelyiActualFieldLocalConductorComparison",
+      "original_raw_signature": "theorem belyiActualFieldLocalConductorComparison : BelyiActualFieldLocalConductorComparison",
+      "original_blind_row": {
+        "source_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+        "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+        "source_sha256": "2bda59f4242fdfd8b0173c82bc21f2e9a163b199e437edbd39a05f602029d0b0",
+        "source_span": {
+          "start_byte": 659,
+          "end_byte_exclusive": 1098,
+          "line": 19,
+          "end_line": 25
+        },
+        "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+        "raw_declaration": "theorem belyiActualFieldLocalConductorComparison : BelyiActualFieldLocalConductorComparison := by\n  intro N M hRF φ x hgood\n  letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n  letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=\n    (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra\n  intro u\n  exact ConductorExtensionSource.log_placeNorm_div_le x.fieldOf u",
+        "raw_declaration_sha256": "15ef350f00f67ba4a48efc747c3f7e4f92c10aa19c00f057714471db8dbaeac7",
+        "raw_signature": "theorem belyiActualFieldLocalConductorComparison : BelyiActualFieldLocalConductorComparison",
+        "readback": {
+          "en": "Let Qbar be a fixed algebraic closure of Q. For every natural number N, consider any model M consisting of an intermediate field K between Q and an algebraic closure of Q(t), elements a,b∈K such that a is transcendental over Q, a^N+b^N=1, Q(a,b)=K, and K is finite-dimensional of dimension N over Q(a). Assume that every proper valuation subring V of K containing all rational scalars has residue field finite-dimensional over Q. For every φ∈K and point x consisting of such a valuation subring V and a residue-field embedding σ:κ(V)→Qbar, assume that φ∈V and z=σ(residue_V(φ)) is neither zero nor one. Put L=σ(κ(V))⊆Qbar and F=Q(z)⊆L; equip L with its finite-dimensional Q-structure supplied by the residue-finiteness hypothesis and with its F-algebra structure given by this actual inclusion. For every finite place u of F, let p_u be its nonzero prime ideal, let N(v)=#(O/p_v) for any finite place v, and let D be the relative different ideal of O_L over O_F. Then log N(u)/[F:Q]≤Σ_{w over u}log N(w)/[L:Q]+Σ_{P over p_u}m_P(D) log #(O_L/P)/[L:Q]. The first sum is over the finite places of L whose prime ideals have inverse image p_u; the second is over the finite set of prime ideals of O_L with that inverse image, and m_P(D) is ideal multiplicity. All degrees and multiplicities in the displayed inequality are viewed as real numbers, and log is the real natural logarithm. No condition N>3, discrete-valuation hypothesis, affine identification, or Belyi property of φ is an additional premise here; N=0 is syntactically included, but no model can satisfy the stated conditions for N=0. The good-value hypothesis selects the evaluation branch of the total image function, so its fallback value 2 is not used.",
+          "zh-Hans": "固定有理数域的一个代数闭包 Qbar。对任意自然数 N，考虑任意模型 M：它由有理数域与有理函数域 Q(t) 的代数闭包之间的中间域 K，以及 a、b∈K 组成，满足 a 在有理数域上超越、a^N+b^N=1、Q(a,b)=K，并且 K 在 Q(a) 上有限维且维数为 N。假设 K 中每个包含全部有理数标量的真赋值子环 V，其剩余域都在有理数域上有限维。对任意 φ∈K 和点 x，其中 x 由这样的赋值子环 V 及剩余域嵌入 σ:κ(V)→Qbar 组成，假设 φ∈V，且 z=σ(residue_V(φ)) 既不为零也不为一。令 L=σ(κ(V))⊆Qbar、F=Q(z)⊆L；在 L 上使用剩余域有限性给出的有理数有限维结构，并使用实际包含 F⊆L 给出的 F 代数结构。对 F 的任意有限处 u，记其非零素理想为 p_u；对任意有限处 v 令 N(v)=#(O/p_v)，并记 O_L 在 O_F 上的相对不同理想为 D，则 log N(u)/[F:Q]≤Σ_{w 位于 u 上方}log N(w)/[L:Q]+Σ_{P 位于 p_u 上方}m_P(D) log #(O_L/P)/[L:Q]。第一项和遍历对应素理想的原像为 p_u 的 L 的有限处，第二项和遍历原像为 p_u 的 O_L 素理想有限集合；m_P(D) 为理想重数。不等式中的次数和重数均视为实数，log 为实自然对数。这里没有额外假设 N>3、赋值离散、仿射识别或 φ 具有 Belyi 性质；量词在语法上包含 N=0，但此时不存在满足上述条件的模型。良好取值假设选定全定义像函数的取值分支，因此不使用其后备值 2。",
+          "ja": "Qbar を Q の固定した代数閉包とする。任意の自然数 N に対し、次のモデル M を考える。M は Q と有理関数体 Q(t) の代数閉包の間の中間体 K、および a,b∈K からなり、a は Q 上超越的、a^N+b^N=1、Q(a,b)=K であり、K は Q(a) 上有限次元でその次元は N である。K のすべての有理数スカラーを含む任意の真の付値部分環 V の剰余体が Q 上有限次元であると仮定する。任意の φ∈K と、そのような V および剰余体の埋め込み σ:κ(V)→Qbar からなる点 x に対し、φ∈V であり、z=σ(residue_V(φ)) が零でも一でもないと仮定する。L=σ(κ(V))⊆Qbar、F=Q(z)⊆L と置く。L には剰余体の有限性から得られる Q 上の有限次元構造と、実際の包含 F⊆L から得られる F 代数構造を用いる。F の任意の有限素点 u に対応する非零素イデアルを p_u とし、任意の有限素点 v に対して N(v)=#(O/p_v) と置き、O_L の O_F 上の相対差積イデアルを D とする。このとき log N(u)/[F:Q]≤Σ_{w が u の上にある}log N(w)/[L:Q]+Σ_{P が p_u の上にある}m_P(D) log #(O_L/P)/[L:Q] が成り立つ。第一の和は素イデアルの逆像が p_u である L の有限素点を走り、第二の和はその逆像を持つ O_L の素イデアルの有限集合を走る。m_P(D) はイデアルの重複度である。不等式中の次数と重複度は実数とみなし、log は実自然対数である。N>3、付値の離散性、アフィン同一視、または φ の Belyi 性は追加仮定ではない。量化は構文上 N=0 も含むが、この場合には上記の条件を満たすモデルは存在しない。良い値の仮定によって全域的な像関数の評価側の分岐が選ばれ、代替値 2 は使われない。"
+        },
+        "section_context": "import Definitions.Def_FermatBelyiConductorExtensionChildren\nimport Solutions.Source_FermatConductorLocalComparison\nset_option autoImplicit false\nopen NumberField\nopen scoped IntermediateField\nnamespace AbcAdaptation.Tripod.Fermat.Proper\nStatic source context only; variable inclusion, omission, and exported elaborated signatures were not checked by a compiler.",
+        "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature."
+      },
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "44e008d027323158a36e3dc43ee785440be0d69cf8fdd5178f8a8b1dc8c9e4eb",
+      "blind_original_path": "/tmp/p2m-local-conductor-sourceproof-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+      "blind_original_sha256": "2bda59f4242fdfd8b0173c82bc21f2e9a163b199e437edbd39a05f602029d0b0",
+      "en": "Let Qbar be a fixed algebraic closure of Q. For every natural number N, consider any model M consisting of an intermediate field K between Q and an algebraic closure of Q(t), elements a,b∈K such that a is transcendental over Q, a^N+b^N=1, Q(a,b)=K, and K is finite-dimensional of dimension N over Q(a). Assume that every proper valuation subring V of K containing all rational scalars has residue field finite-dimensional over Q. For every φ∈K and point x consisting of such a valuation subring V and a residue-field embedding σ:κ(V)→Qbar, assume that φ∈V and z=σ(residue_V(φ)) is neither zero nor one. Put L=σ(κ(V))⊆Qbar and F=Q(z)⊆L; equip L with its finite-dimensional Q-structure supplied by the residue-finiteness hypothesis and with its F-algebra structure given by this actual inclusion. For every finite place u of F, let p_u be its nonzero prime ideal, let N(v)=#(O/p_v) for any finite place v, and let D be the relative different ideal of O_L over O_F. Then log N(u)/[F:Q]≤Σ_{w over u}log N(w)/[L:Q]+Σ_{P over p_u}m_P(D) log #(O_L/P)/[L:Q]. The first sum is over the finite places of L whose prime ideals have inverse image p_u; the second is over the finite set of prime ideals of O_L with that inverse image, and m_P(D) is ideal multiplicity. All degrees and multiplicities in the displayed inequality are viewed as real numbers, and log is the real natural logarithm. No condition N>3, discrete-valuation hypothesis, affine identification, or Belyi property of φ is an additional premise here; N=0 is syntactically included, but no model can satisfy the stated conditions for N=0. The good-value hypothesis selects the evaluation branch of the total image function, so its fallback value 2 is not used.",
+      "zh_Hans": "固定有理数域的一个代数闭包 Qbar。对任意自然数 N，考虑任意模型 M：它由有理数域与有理函数域 Q(t) 的代数闭包之间的中间域 K，以及 a、b∈K 组成，满足 a 在有理数域上超越、a^N+b^N=1、Q(a,b)=K，并且 K 在 Q(a) 上有限维且维数为 N。假设 K 中每个包含全部有理数标量的真赋值子环 V，其剩余域都在有理数域上有限维。对任意 φ∈K 和点 x，其中 x 由这样的赋值子环 V 及剩余域嵌入 σ:κ(V)→Qbar 组成，假设 φ∈V，且 z=σ(residue_V(φ)) 既不为零也不为一。令 L=σ(κ(V))⊆Qbar、F=Q(z)⊆L；在 L 上使用剩余域有限性给出的有理数有限维结构，并使用实际包含 F⊆L 给出的 F 代数结构。对 F 的任意有限处 u，记其非零素理想为 p_u；对任意有限处 v 令 N(v)=#(O/p_v)，并记 O_L 在 O_F 上的相对不同理想为 D，则 log N(u)/[F:Q]≤Σ_{w 位于 u 上方}log N(w)/[L:Q]+Σ_{P 位于 p_u 上方}m_P(D) log #(O_L/P)/[L:Q]。第一项和遍历对应素理想的原像为 p_u 的 L 的有限处，第二项和遍历原像为 p_u 的 O_L 素理想有限集合；m_P(D) 为理想重数。不等式中的次数和重数均视为实数，log 为实自然对数。这里没有额外假设 N>3、赋值离散、仿射识别或 φ 具有 Belyi 性质；量词在语法上包含 N=0，但此时不存在满足上述条件的模型。良好取值假设选定全定义像函数的取值分支，因此不使用其后备值 2。",
+      "ja": "Qbar を Q の固定した代数閉包とする。任意の自然数 N に対し、次のモデル M を考える。M は Q と有理関数体 Q(t) の代数閉包の間の中間体 K、および a,b∈K からなり、a は Q 上超越的、a^N+b^N=1、Q(a,b)=K であり、K は Q(a) 上有限次元でその次元は N である。K のすべての有理数スカラーを含む任意の真の付値部分環 V の剰余体が Q 上有限次元であると仮定する。任意の φ∈K と、そのような V および剰余体の埋め込み σ:κ(V)→Qbar からなる点 x に対し、φ∈V であり、z=σ(residue_V(φ)) が零でも一でもないと仮定する。L=σ(κ(V))⊆Qbar、F=Q(z)⊆L と置く。L には剰余体の有限性から得られる Q 上の有限次元構造と、実際の包含 F⊆L から得られる F 代数構造を用いる。F の任意の有限素点 u に対応する非零素イデアルを p_u とし、任意の有限素点 v に対して N(v)=#(O/p_v) と置き、O_L の O_F 上の相対差積イデアルを D とする。このとき log N(u)/[F:Q]≤Σ_{w が u の上にある}log N(w)/[L:Q]+Σ_{P が p_u の上にある}m_P(D) log #(O_L/P)/[L:Q] が成り立つ。第一の和は素イデアルの逆像が p_u である L の有限素点を走り、第二の和はその逆像を持つ O_L の素イデアルの有限集合を走る。m_P(D) はイデアルの重複度である。不等式中の次数と重複度は実数とみなし、log は実自然対数である。N>3、付値の離散性、アフィン同一視、または φ の Belyi 性は追加仮定ではない。量化は構文上 N=0 も含むが、この場合には上記の条件を満たすモデルは存在しない。良い値の仮定によって全域的な像関数の評価側の分岐が選ばれ、代替値 2 は使われない。",
+      "proof_notes": "The supplied source contains a proof or defining term. This read-back was made statically from the statement and necessary definitions; no compilation or axiom audit was performed. The section_context records source binders and explicit omit commands, not a compiler-inferred exported signature.",
+      "quotation": null,
+      "reused_parent_meaning": {
+        "en": "The assertion is that Consider every natural number $N$ and every intermediate field $K$ between $\\mathbb Q$ and the fixed algebraic closure of $\\mathbb Q(t)$, equipped with $u,v\\in K$ such that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and $K$ is finite dimensional over $\\mathbb Q(u)$ of degree $N$. Assume that every proper valuation subring $O\\subset K$ containing $\\mathbb Q$ has residue field $\\kappa(O)$ finite dimensional over $\\mathbb Q$. For every point $x=(O,\\sigma)$, with such $O$ and a ring homomorphism $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$, and every $\\varphi\\in K$ regular at $O$ with $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$, put $L=\\sigma(\\kappa(O))$ and $F=\\mathbb Q(a)\\subseteq L$. The finite dimensional structure of $L/\\mathbb Q$ is that obtained from residue finiteness; the $F$-algebra structure on $L$ is induced by this actual inclusion. Write $n_E=[E:\\mathbb Q]$, $D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ and $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$, where $\\Pi_L(\\mathfrak q)$ is the library finite set of prime ideals over the ideal $\\mathfrak q$, and multiplicities and norms are cast to $\\mathbb R$. For a finite place $v$ of $E$, $\\mathfrak p_v$ denotes its associated nonzero prime ideal and $N(v)=|\\mathcal O_E/\\mathfrak p_v|$. For every finite place $u$ of the actual image field $F$, $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$. Here the sum ranges over all finite places of the actual point field $L$ above $u$; the left denominator is $n_F$, while each right denominator is $n_L$.",
+        "zh_Hans": "本声明断言：对每个自然数 $N$，取固定的 $\\mathbb Q(t)$ 的代数闭包中介于 $\\mathbb Q$ 与该闭包之间的域 $K$，并取 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K$ 在 $\\mathbb Q(u)$ 上有限维、次数为 $N$。假设 $K$ 的每个包含 $\\mathbb Q$ 的真赋值子环 $O$ 的剩余域 $\\kappa(O)$ 都在 $\\mathbb Q$ 上有限维。对每个由这种 $O$ 与环同态 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ 组成的点 $x=(O,\\sigma)$，以及每个在 $O$ 中正则、满足 $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ 的 $\\varphi\\in K$，令 $L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$。$L$ 在 $\\mathbb Q$ 上的有限维结构取自剩余域有限性；$L$ 的 $F$ 代数结构由这一实际包含映射诱导。记 $n_E=[E:\\mathbb Q]$，$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（不同理想），并定义 $\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$；其中 $\\Pi_L(\\mathfrak q)$ 是库中给定的位于理想 $\\mathfrak q$ 之上的素理想有限集，重数与范数按代码映入实数。对域 $E$ 的有限处 $v$，$\\mathfrak p_v$ 表示对应的非零素理想，且 $N(v)=|\\mathcal O_E/\\mathfrak p_v|$。对实际像域 $F$ 的每个有限处 $u$，有 $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$。求和遍及实际点域 $L$ 中位于 $u$ 之上的全部有限处；左侧分母是 $n_F$，右侧各项分母是 $n_L$。",
+        "ja": "主張は次のとおりである。任意の自然数 $N$ に対し、固定された $\\mathbb Q(t)$ の代数閉包の中間体 $\\mathbb Q\\subseteq K$ と $u,v\\in K$ をとる。$u$ は $\\mathbb Q$ 上超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$ であり、$K$ は $\\mathbb Q(u)$ 上有限次元で次数が $N$ であるとする。$\\mathbb Q$ を含む $K$ の任意の真の付値部分環 $O$ について剰余体 $\\kappa(O)$ が $\\mathbb Q$ 上有限次元であると仮定する。このような $O$ と環準同型 $\\sigma:\\kappa(O)\\to\\overline{\\mathbb Q}$ からなる任意の点 $x=(O,\\sigma)$、および $O$ で正則で $a=\\sigma(\\operatorname{res}_O\\varphi)\\ne0,1$ を満たす任意の $\\varphi\\in K$ に対し、$L=\\sigma(\\kappa(O))$、$F=\\mathbb Q(a)\\subseteq L$ とおく。$L/\\mathbb Q$ の有限次元構造は剰余体の有限性から得たものとし、$L$ の $F$ 代数構造はこの実際の包含から誘導する。$n_E=[E:\\mathbb Q]$、$D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$（相対デデキント異種イデアル）、$\\delta_{L/F}(\\mathfrak q)=\\sum_{P\\in\\Pi_L(\\mathfrak q)}\\operatorname{multiplicity}_P(D_{L/F})\\log|\\mathcal O_L/P|/n_L$ とおく。ここで $\\Pi_L(\\mathfrak q)$ はイデアル $\\mathfrak q$ の上にある素イデアルからなるライブラリの有限集合であり、重複度とノルムは実数に写して用いる。$E$ の有限素点 $v$ について、$\\mathfrak p_v$ は対応する非零素イデアルを表し、$N(v)=|\\mathcal O_E/\\mathfrak p_v|$ とする。実際の像体 $F$ の任意の有限素点 $u$ について $\\log N(u)/n_F\\le\\sum_{w\\mid u}\\log N(w)/n_L+\\delta_{L/F}(\\mathfrak p_u)$ が成り立つ。和は実際の点の体 $L$ の $u$ 上にあるすべての有限素点にわたり、左辺の分母は $n_F$、右辺の各分母は $n_L$ である。"
+      },
+      "reused_from": ".local/adaptation/conductor-extension-split-20261114/final-readbacks.json",
+      "reused_packet_sha256": "586f12a286b528fa9c7dbe3a9d5b3119e564f1bd336cb96c247abc6956df1c38",
+      "historical_platform_formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison : BelyiActualFieldLocalConductorComparison := by sorry"
+    }
+  ],
+  "blind_readback": true,
+  "compiler_bound": true,
+  "quotations_separate": true,
+  "fresh_binder_review_count": 17,
+  "terminology_confirmation": {
+    "en": "different ideal",
+    "zh-Hans": "不同理想",
+    "status": "User confirmation relayed by parent agent before packet delivery."
+  }
+}

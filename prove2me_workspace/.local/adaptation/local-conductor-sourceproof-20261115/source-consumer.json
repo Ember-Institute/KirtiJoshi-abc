@@ -1,0 +1,2960 @@
+{
+  "status": "exclusive_local_audits_passed_and_exact_direct_proof_ACCEPTED",
+  "target": "Proved",
+  "source_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+  "source_ledger": "draft-SOURCE_LEDGER.md",
+  "license_evidence": "draft-THIRD_PARTY_ATTRIBUTION.md",
+  "production_ledger": {
+    "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+    "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+    "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+  },
+  "upstream_runtime_imports": [],
+  "new_assumptions": [],
+  "deprecations": [],
+  "Fermat_route_preserved": true,
+  "declarations": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "source_sha": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {R : Type u_1} [inst : CommRing R] [IsDedekindDomain R] {P I : Ideal R} [P.IsPrime],\n  P ≠ ⊥ → I ≠ ⊥ → FiniteMultiplicity P I",
+      "source_span": {
+        "start": {
+          "offset": 640,
+          "line": 21,
+          "col": 0
+        },
+        "end": {
+          "offset": 849,
+          "line": 23,
+          "col": 79
+        },
+        "name_range": {
+          "start": {
+            "offset": 646,
+            "line": 21,
+            "col": 6
+          },
+          "end": {
+            "offset": 675,
+            "line": 21,
+            "col": 35
+          }
+        },
+        "value_start": {
+          "offset": 767,
+          "line": 22,
+          "col": 27
+        }
+      },
+      "compiler_span": {
+        "start_line": 21,
+        "end_line": 23
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finiteMultiplicity_of_isPrime",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+          "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 80,
+              "end_line": 82
+            },
+            "source_fidelity": "Exact source statement and proof, with the adaptation namespace."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+          "sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+          "source_span": {
+            "start_line": 21,
+            "end_line": 23
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "source_sha": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {R : Type u_1} [inst : CommRing R] [IsDedekindDomain R] {P I : Ideal R} [P.IsPrime],\n  P ≠ ⊥ → I ≠ ⊥ → ∀ {n : ℕ}, P ^ n ∣ I ↔ n ≤ multiplicity P I",
+      "source_span": {
+        "start": {
+          "offset": 851,
+          "line": 25,
+          "col": 0
+        },
+        "end": {
+          "offset": 1149,
+          "line": 28,
+          "col": 67
+        },
+        "name_range": {
+          "start": {
+            "offset": 934,
+            "line": 26,
+            "col": 6
+          },
+          "end": {
+            "offset": 961,
+            "line": 26,
+            "col": 33
+          }
+        },
+        "value_start": {
+          "offset": 1079,
+          "line": 27,
+          "col": 47
+        }
+      },
+      "compiler_span": {
+        "start_line": 25,
+        "end_line": 28
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_dvd_iff_le_multiplicity",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 85,
+              "end_line": 87
+            },
+            "source_fidelity": "Exact source nonzero-prime power/divisibility equivalence and proof."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+          "sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+          "source_span": {
+            "start_line": 25,
+            "end_line": 28
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ne_bot_of_liesOver",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ne_bot_of_liesOver",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ne_bot_of_liesOver",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ne_bot_of_liesOver",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "source_sha": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : Field L] [inst_2 : Algebra F L]\n  {𝔭 : Ideal (NumberField.RingOfIntegers F)}, 𝔭 ≠ ⊥ → ∀ (P : Ideal (NumberField.RingOfIntegers L)) [P.LiesOver 𝔭], P ≠ ⊥",
+      "source_span": {
+        "start": {
+          "offset": 1415,
+          "line": 40,
+          "col": 0
+        },
+        "end": {
+          "offset": 1566,
+          "line": 41,
+          "col": 75
+        },
+        "name_range": {
+          "start": {
+            "offset": 1490,
+            "line": 41,
+            "col": 6
+          },
+          "end": {
+            "offset": 1508,
+            "line": 41,
+            "col": 24
+          }
+        },
+        "value_start": {
+          "offset": 1521,
+          "line": 41,
+          "col": 33
+        }
+      },
+      "compiler_span": {
+        "start_line": 41,
+        "end_line": 41
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ne_bot_of_liesOver",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Bounds.lean",
+            "sha256": "8113136c146b5f5155da1d2ff3715a63a8d42c50d6b63a59e422cca1ed8f1025",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Bounds.lean.txt",
+            "source_span": {
+              "start_line": 150,
+              "end_line": 150
+            },
+            "source_fidelity": "Exact source specialization of the existing Mathlib nonzero lies-over theorem."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+          "sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+          "source_span": {
+            "start_line": 40,
+            "end_line": 41
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_inertiaDeg_mul",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_inertiaDeg_mul",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_inertiaDeg_mul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_inertiaDeg_mul",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "source_sha": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    ∀ (P : Ideal (NumberField.RingOfIntegers L)) [P.LiesOver 𝔭],\n      Real.log ↑(Ideal.absNorm P) = ↑(𝔭.inertiaDeg' P) * Real.log ↑(Ideal.absNorm 𝔭)",
+      "source_span": {
+        "start": {
+          "offset": 1568,
+          "line": 43,
+          "col": 0
+        },
+        "end": {
+          "offset": 1870,
+          "line": 48,
+          "col": 17
+        },
+        "name_range": {
+          "start": {
+            "offset": 1638,
+            "line": 45,
+            "col": 6
+          },
+          "end": {
+            "offset": 1667,
+            "line": 45,
+            "col": 35
+          }
+        },
+        "value_start": {
+          "offset": 1754,
+          "line": 46,
+          "col": 78
+        }
+      },
+      "compiler_span": {
+        "start_line": 44,
+        "end_line": 48
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_inertiaDeg_mul",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+          "module": "Solutions.Source_FermatConductorLowerContribution",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Bounds.lean",
+            "sha256": "8113136c146b5f5155da1d2ff3715a63a8d42c50d6b63a59e422cca1ed8f1025",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Bounds.lean.txt",
+            "source_span": {
+              "start_line": 154,
+              "end_line": 157
+            },
+            "source_fidelity": "Exact source norm/inertia relation and logarithm proof for the actual prime ideals."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+          "sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+          "source_span": {
+            "start_line": 43,
+            "end_line": 48
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_ramificationIdx'_dvd",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_ramificationIdx'_dvd",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_ramificationIdx'_dvd",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_ramificationIdx'_dvd",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "source_sha": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : Field L] [NumberField L] [inst_3 : Algebra F L]\n  {𝔭 : Ideal (NumberField.RingOfIntegers F)} (P : Ideal (NumberField.RingOfIntegers L)),\n  P ^ 𝔭.ramificationIdx' P ∣\n    Ideal.map (Algebra.algebraMap (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L)) 𝔭",
+      "source_span": {
+        "start": {
+          "offset": 1872,
+          "line": 50,
+          "col": 0
+        },
+        "end": {
+          "offset": 2113,
+          "line": 53,
+          "col": 52
+        },
+        "name_range": {
+          "start": {
+            "offset": 1955,
+            "line": 51,
+            "col": 6
+          },
+          "end": {
+            "offset": 1979,
+            "line": 51,
+            "col": 30
+          }
+        },
+        "value_start": {
+          "offset": 2058,
+          "line": 52,
+          "col": 62
+        }
+      },
+      "compiler_span": {
+        "start_line": 51,
+        "end_line": 53
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.pow_ramificationIdx'_dvd",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Bounds.lean",
+            "sha256": "8113136c146b5f5155da1d2ff3715a63a8d42c50d6b63a59e422cca1ed8f1025",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Bounds.lean.txt",
+            "source_span": {
+              "start_line": 160,
+              "end_line": 162
+            },
+            "source_fidelity": "Exact source mapped-prime-power divisibility statement and proof."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+          "sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+          "source_span": {
+            "start_line": 50,
+            "end_line": 53
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+      "module": "Solutions.Source_FermatConductorLowerMultiplicity",
+      "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+      "source_sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "source_sha": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    ∀ (P : Ideal (NumberField.RingOfIntegers L)) [P.IsPrime] [P.LiesOver 𝔭],\n      𝔭.ramificationIdx' P - 1 ≤\n        multiplicity P (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))",
+      "source_span": {
+        "start": {
+          "offset": 2115,
+          "line": 55,
+          "col": 0
+        },
+        "end": {
+          "offset": 2473,
+          "line": 59,
+          "col": 78
+        },
+        "name_range": {
+          "start": {
+            "offset": 2171,
+            "line": 56,
+            "col": 6
+          },
+          "end": {
+            "offset": 2211,
+            "line": 56,
+            "col": 46
+          }
+        },
+        "value_start": {
+          "offset": 2300,
+          "line": 57,
+          "col": 75
+        }
+      },
+      "compiler_span": {
+        "start_line": 55,
+        "end_line": 59
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.ramificationIdx'_sub_one_le_multiplicity",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "module": "Solutions.Source_FermatConductorLowerContribution",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Bounds.lean",
+            "sha256": "8113136c146b5f5155da1d2ff3715a63a8d42c50d6b63a59e422cca1ed8f1025",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Bounds.lean.txt",
+            "source_span": {
+              "start_line": 169,
+              "end_line": 172
+            },
+            "source_fidelity": "Exact lower different-exponent bound and proof, retaining the source-local FractionRing algebra instances. Uses pow_sub_one_dvd_differentIdeal; no Serre upper bound."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLowerMultiplicity.lean",
+          "sha256": "a60c43390f3cef765fa747dcc9a38af5f92792e170c1e28e46af349252a9b766",
+          "source_span": {
+            "start_line": 55,
+            "end_line": 59
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+      "module": "Solutions.Source_FermatConductorLowerContribution",
+      "path": "Solutions/Source_FermatConductorLowerContribution.lean",
+      "source_sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+      "source_sha": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭 =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (NumberField.RingOfIntegers L),\n        ↑(multiplicity P (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) *\n              ↑(𝔭.inertiaDeg' P) *\n            Real.log ↑(Ideal.absNorm 𝔭) /\n          ↑(Module.finrank ℚ L)",
+      "source_span": {
+        "start": {
+          "offset": 602,
+          "line": 18,
+          "col": 0
+        },
+        "end": {
+          "offset": 1126,
+          "line": 25,
+          "col": 52
+        },
+        "name_range": {
+          "start": {
+            "offset": 688,
+            "line": 19,
+            "col": 6
+          },
+          "end": {
+            "offset": 702,
+            "line": 19,
+            "col": 20
+          }
+        },
+        "value_start": {
+          "offset": 953,
+          "line": 22,
+          "col": 49
+        }
+      },
+      "compiler_span": {
+        "start_line": 18,
+        "end_line": 25
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "module": "Solutions.Source_FermatConductorLowerContribution",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Bounds.lean",
+            "sha256": "8113136c146b5f5155da1d2ff3715a63a8d42c50d6b63a59e422cca1ed8f1025",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Bounds.lean.txt",
+            "source_span": {
+              "start_line": 243,
+              "end_line": 249
+            },
+            "source_fidelity": "Exact source statement and proof expanding the existing actual different contribution using inertia degrees."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLowerContribution.lean",
+          "sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+          "source_span": {
+            "start_line": 18,
+            "end_line": 25
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+      "module": "Solutions.Source_FermatConductorLowerContribution",
+      "path": "Solutions/Source_FermatConductorLowerContribution.lean",
+      "source_sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+      "source_sha": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {𝔭 : Ideal (NumberField.RingOfIntegers F)} [𝔭.IsMaximal],\n  𝔭 ≠ ⊥ →\n    ∑ P ∈ IsDedekindDomain.primesOverFinset 𝔭 (NumberField.RingOfIntegers L),\n        ↑(𝔭.ramificationIdx' P - 1) * ↑(𝔭.inertiaDeg' P) * Real.log ↑(Ideal.absNorm 𝔭) / ↑(Module.finrank ℚ L) ≤\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭",
+      "source_span": {
+        "start": {
+          "offset": 1128,
+          "line": 27,
+          "col": 0
+        },
+        "end": {
+          "offset": 1873,
+          "line": 37,
+          "col": 62
+        },
+        "name_range": {
+          "start": {
+            "offset": 1247,
+            "line": 28,
+            "col": 8
+          },
+          "end": {
+            "offset": 1265,
+            "line": 28,
+            "col": 26
+          }
+        },
+        "value_start": {
+          "offset": 1504,
+          "line": 31,
+          "col": 38
+        }
+      },
+      "compiler_span": {
+        "start_line": 27,
+        "end_line": 37
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_le_diffContrib",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "module": "Solutions.Source_FermatConductorLocalComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Bounds.lean",
+            "sha256": "8113136c146b5f5155da1d2ff3715a63a8d42c50d6b63a59e422cca1ed8f1025",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Bounds.lean.txt",
+            "source_span": {
+              "start_line": 252,
+              "end_line": 261
+            },
+            "source_fidelity": "Same normalized weighted lower inequality and proof. Replaces the source log_absNorm_nonneg alias with exact Mathlib Real.log_natCast_nonneg."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLowerContribution.lean",
+          "sha256": "fc9fe3c539e9da4184af716f0e387d000d4c65c78fc8d63cd3f180d241ac40b6",
+          "source_span": {
+            "start_line": 27,
+            "end_line": 37
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_eq",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_eq",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_eq",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "source_sha": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {w : NumberField.FinitePlace L} {u : NumberField.FinitePlace F},\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver w u →\n    Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w) =\n      ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg w u) *\n        Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm u)",
+      "source_span": {
+        "start": {
+          "offset": 560,
+          "line": 17,
+          "col": 0
+        },
+        "end": {
+          "offset": 832,
+          "line": 20,
+          "col": 53
+        },
+        "name_range": {
+          "start": {
+            "offset": 616,
+            "line": 18,
+            "col": 6
+          },
+          "end": {
+            "offset": 632,
+            "line": 18,
+            "col": 22
+          }
+        },
+        "value_start": {
+          "offset": 773,
+          "line": 19,
+          "col": 74
+        }
+      },
+      "compiler_span": {
+        "start_line": 17,
+        "end_line": 20
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_eq",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "module": "Solutions.Source_FermatConductorLocalComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Places.lean",
+            "sha256": "dba3eebed1323650bc25bbea3a6c8a34766032f41868ae25daebabf99346d43b",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Places.lean.txt",
+            "source_span": {
+              "start_line": 126,
+              "end_line": 128
+            },
+            "source_fidelity": "Exact source logarithmic norm transport statement and proof; activated by the complete local comparison."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+          "sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+          "source_span": {
+            "start_line": 17,
+            "end_line": 20
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "source_sha": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "{F : Type u_1} →\n  {L : Type u_2} →\n    [inst : Field F] →\n      [inst_1 : NumberField F] →\n        [inst_2 : Field L] →\n          [inst_3 : NumberField L] →\n            [inst_4 : Algebra F L] →\n              (u : NumberField.FinitePlace F) →\n                {P : Ideal (NumberField.RingOfIntegers L)} →\n                  P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L) →\n                    NumberField.FinitePlace L",
+      "source_span": {
+        "start": {
+          "offset": 834,
+          "line": 22,
+          "col": 0
+        },
+        "end": {
+          "offset": 1364,
+          "line": 29,
+          "col": 71
+        },
+        "name_range": {
+          "start": {
+            "offset": 921,
+            "line": 23,
+            "col": 18
+          },
+          "end": {
+            "offset": 937,
+            "line": 23,
+            "col": 34
+          }
+        },
+        "value_start": {
+          "offset": 1078,
+          "line": 24,
+          "col": 94
+        }
+      },
+      "compiler_span": {
+        "start_line": 22,
+        "end_line": 29
+      },
+      "kind": "def",
+      "platform_definition_publication": false,
+      "source_helper_definition": true,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": false,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete source helper definition; not a proof, new mathematical target, or platform Definition publication. Used by the closed local comparison proof.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+          "module": "Solutions.Source_FermatConductorPlaceDegree",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver.eq_1",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver.eq_1",
+          "module": "Solutions.Source_FermatConductorPlaceDegree",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+          "module": "Solutions.Source_FermatConductorPlaceDegree",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "module": "Solutions.Source_FermatConductorPlaceDegree",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Places.lean",
+            "sha256": "dba3eebed1323650bc25bbea3a6c8a34766032f41868ae25daebabf99346d43b",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Places.lean.txt",
+            "source_span": {
+              "start_line": 181,
+              "end_line": 187
+            },
+            "source_fidelity": "Exact source construction of the actual finite place from a prime ideal and its lies-over evidence. Source helper definition, not a proof or platform Definition publication."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+          "sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+          "source_span": {
+            "start_line": 22,
+            "end_line": 29
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "source_sha": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F) {P : Ideal (NumberField.RingOfIntegers L)}\n  (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L)),\n  (AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver u hP).maximalIdeal.asIdeal = P",
+      "source_span": {
+        "start": {
+          "offset": 1366,
+          "line": 31,
+          "col": 0
+        },
+        "end": {
+          "offset": 1639,
+          "line": 34,
+          "col": 52
+        },
+        "name_range": {
+          "start": {
+            "offset": 1372,
+            "line": 31,
+            "col": 6
+          },
+          "end": {
+            "offset": 1401,
+            "line": 31,
+            "col": 35
+          }
+        },
+        "value_start": {
+          "offset": 1581,
+          "line": 33,
+          "col": 53
+        }
+      },
+      "compiler_span": {
+        "start_line": 31,
+        "end_line": 34
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver_maximalIdeal",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+          "module": "Solutions.Source_FermatConductorPlaceDegree",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "module": "Solutions.Source_FermatConductorPlaceDegree",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Places.lean",
+            "sha256": "dba3eebed1323650bc25bbea3a6c8a34766032f41868ae25daebabf99346d43b",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Places.lean.txt",
+            "source_span": {
+              "start_line": 189,
+              "end_line": 192
+            },
+            "source_fidelity": "Exact source construction compatibility theorem and proof."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+          "sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+          "source_span": {
+            "start_line": 31,
+            "end_line": 34
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "source_sha": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F) {P : Ideal (NumberField.RingOfIntegers L)}\n  (hP : P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L)),\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.PlaceLiesOver\n    (AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeOfPrimeOver u hP) u",
+      "source_span": {
+        "start": {
+          "offset": 1641,
+          "line": 36,
+          "col": 0
+        },
+        "end": {
+          "offset": 2017,
+          "line": 42,
+          "col": 67
+        },
+        "name_range": {
+          "start": {
+            "offset": 1647,
+            "line": 36,
+            "col": 6
+          },
+          "end": {
+            "offset": 1677,
+            "line": 36,
+            "col": 36
+          }
+        },
+        "value_start": {
+          "offset": 1848,
+          "line": 38,
+          "col": 44
+        }
+      },
+      "compiler_span": {
+        "start_line": 36,
+        "end_line": 42
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeLiesOver_placeOfPrimeOver",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "module": "Solutions.Source_FermatConductorPlaceDegree",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Places.lean",
+            "sha256": "dba3eebed1323650bc25bbea3a6c8a34766032f41868ae25daebabf99346d43b",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Places.lean.txt",
+            "source_span": {
+              "start_line": 222,
+              "end_line": 228
+            },
+            "source_fidelity": "Exact source lies-over statement and proof for the constructed actual finite place."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+          "sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+          "source_span": {
+            "start_line": 36,
+            "end_line": 42
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "source_sha": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] {M : Type u_3} [inst_5 : AddCommMonoid M] (u : NumberField.FinitePlace F)\n  (g : Ideal (NumberField.RingOfIntegers L) → M),\n  ∑ w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver L u, g w.maximalIdeal.asIdeal =\n    ∑ P ∈ IsDedekindDomain.primesOverFinset u.maximalIdeal.asIdeal (NumberField.RingOfIntegers L), g P",
+      "source_span": {
+        "start": {
+          "offset": 2019,
+          "line": 44,
+          "col": 0
+        },
+        "end": {
+          "offset": 2882,
+          "line": 57,
+          "col": 41
+        },
+        "name_range": {
+          "start": {
+            "offset": 2211,
+            "line": 46,
+            "col": 8
+          },
+          "end": {
+            "offset": 2228,
+            "line": 46,
+            "col": 25
+          }
+        },
+        "value_start": {
+          "offset": 2456,
+          "line": 49,
+          "col": 80
+        }
+      },
+      "compiler_span": {
+        "start_line": 44,
+        "end_line": 57
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_eq",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "module": "Solutions.Source_FermatConductorLocalComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+          "module": "Solutions.Source_FermatConductorPlaceDegree",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Places.lean",
+            "sha256": "dba3eebed1323650bc25bbea3a6c8a34766032f41868ae25daebabf99346d43b",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Places.lean.txt",
+            "source_span": {
+              "start_line": 232,
+              "end_line": 243
+            },
+            "source_fidelity": "Exact source finite-place/prime-ideal bijection proof, reusing the existing finite-place carriers."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+          "sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+          "source_span": {
+            "start_line": 44,
+            "end_line": 57
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+      "module": "Solutions.Source_FermatConductorPlaceDegree",
+      "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+      "source_sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "source_sha": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+      "compiler_type": "∀ {F : Type u_1} {L : Type u_2} [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F),\n  ∑ w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver L u,\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeRamIdx w u *\n        AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeInertiaDeg w u =\n    Module.finrank F L",
+      "source_span": {
+        "start": {
+          "offset": 2884,
+          "line": 59,
+          "col": 0
+        },
+        "end": {
+          "offset": 3313,
+          "line": 65,
+          "col": 70
+        },
+        "name_range": {
+          "start": {
+            "offset": 2941,
+            "line": 60,
+            "col": 8
+          },
+          "end": {
+            "offset": 2970,
+            "line": 60,
+            "col": 37
+          }
+        },
+        "value_start": {
+          "offset": 3075,
+          "line": 61,
+          "col": 78
+        }
+      },
+      "compiler_span": {
+        "start_line": 59,
+        "end_line": 65
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.sum_placesOver_mul_eq_finrank",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "module": "Solutions.Source_FermatConductorLocalComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Places.lean",
+            "sha256": "dba3eebed1323650bc25bbea3a6c8a34766032f41868ae25daebabf99346d43b",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Places.lean.txt",
+            "source_span": {
+              "start_line": 246,
+              "end_line": 251
+            },
+            "source_fidelity": "Exact source degree-counting proof using the pinned supported Ideal.sum_ramification_inertia API."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorPlaceDegree.lean",
+          "sha256": "3e94f49dfccd63a3d6c2bf0269ed36fed3064c4d69197141c1b001ef6d8fce31",
+          "source_span": {
+            "start_line": 59,
+            "end_line": 65
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finrank_ℚ_pos",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finrank_ℚ_pos",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finrank_ℚ_pos",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finrank_ℚ_pos",
+      "module": "Solutions.Source_FermatConductorLocalComparison",
+      "path": "Solutions/Source_FermatConductorLocalComparison.lean",
+      "source_sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+      "source_sha": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+      "compiler_type": "∀ (K : Type u_1) [inst : Field K] [inst_1 : NumberField K], 0 < ↑(Module.finrank ℚ K)",
+      "source_span": {
+        "start": {
+          "offset": 513,
+          "line": 16,
+          "col": 0
+        },
+        "end": {
+          "offset": 635,
+          "line": 17,
+          "col": 28
+        },
+        "name_range": {
+          "start": {
+            "offset": 519,
+            "line": 16,
+            "col": 6
+          },
+          "end": {
+            "offset": 534,
+            "line": 16,
+            "col": 19
+          }
+        },
+        "value_start": {
+          "offset": 601,
+          "line": 16,
+          "col": 82
+        }
+      },
+      "compiler_span": {
+        "start_line": 16,
+        "end_line": 17
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.finrank_ℚ_pos",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "module": "Solutions.Source_FermatConductorLocalComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Bounds.lean",
+            "sha256": "8113136c146b5f5155da1d2ff3715a63a8d42c50d6b63a59e422cca1ed8f1025",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Bounds.lean.txt",
+            "source_span": {
+              "start_line": 239,
+              "end_line": 240
+            },
+            "source_fidelity": "Exact source rational-degree positivity proof."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLocalComparison.lean",
+          "sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+          "source_span": {
+            "start_line": 16,
+            "end_line": 17
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+      "module": "Solutions.Source_FermatConductorLocalComparison",
+      "path": "Solutions/Source_FermatConductorLocalComparison.lean",
+      "source_sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+      "source_sha": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : NumberField F] (L : Type u_2) [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (u : NumberField.FinitePlace F),\n  Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm u) / ↑(Module.finrank ℚ F) ≤\n    ∑ w ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placesOver L u,\n        Real.log ↑(AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.placeNorm w) / ↑(Module.finrank ℚ L) +\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L u.maximalIdeal.asIdeal",
+      "source_span": {
+        "start": {
+          "offset": 754,
+          "line": 24,
+          "col": 0
+        },
+        "end": {
+          "offset": 2845,
+          "line": 58,
+          "col": 73
+        },
+        "name_range": {
+          "start": {
+            "offset": 894,
+            "line": 26,
+            "col": 8
+          },
+          "end": {
+            "offset": 914,
+            "line": 26,
+            "col": 28
+          }
+        },
+        "value_start": {
+          "offset": 1102,
+          "line": 29,
+          "col": 45
+        }
+      },
+      "compiler_span": {
+        "start_line": 24,
+        "end_line": 58
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_placeNorm_div_le",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Conductor.lean",
+            "sha256": "f3e186ddac10d05794d2c2b82f7550f6562ce7e5ea822c452fde211bec01db6c",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Conductor.lean.txt",
+            "source_span": {
+              "start_line": 104,
+              "end_line": 136
+            },
+            "source_fidelity": "Complete source local comparison proof, retaining both rational field-degree denominators and actual different contribution. Namespace and imports are adapted; the arithmetic proof is unchanged."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatConductorLocalComparison.lean",
+          "sha256": "131941ce2e5da4c215b35fe826a00c8e4c204bf7ae93941626ac654bfd42108f",
+          "source_span": {
+            "start_line": 24,
+            "end_line": 58
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+      "source_sha256": "2bda59f4242fdfd8b0173c82bc21f2e9a163b199e437edbd39a05f602029d0b0",
+      "source_sha": "2bda59f4242fdfd8b0173c82bc21f2e9a163b199e437edbd39a05f602029d0b0",
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldLocalConductorComparison",
+      "source_span": {
+        "start": {
+          "offset": 502,
+          "line": 17,
+          "col": 0
+        },
+        "end": {
+          "offset": 1098,
+          "line": 25,
+          "col": 65
+        },
+        "name_range": {
+          "start": {
+            "offset": 667,
+            "line": 19,
+            "col": 8
+          },
+          "end": {
+            "offset": 707,
+            "line": 19,
+            "col": 48
+          }
+        },
+        "value_start": {
+          "offset": 751,
+          "line": 19,
+          "col": 92
+        }
+      },
+      "compiler_span": {
+        "start_line": 17,
+        "end_line": 25
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": true,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+      "root_dependency_path": [],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+          "evidence_job_id": "ci-012442-f57679de",
+          "evidence_path": ".local/adaptation/local-conductor-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": false,
+          "evidence_kind": "static_source_reference",
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+          "source_sha256": "de52900f652864c2080ad9bc794cd17aa7b58539f2054e90217ef335c224941b",
+          "source_span": {
+            "start_line": 16,
+            "end_line": 18
+          },
+          "reference_span": {
+            "start_line": 18,
+            "end_line": 18
+          },
+          "passes_parent_to": {
+            "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension_of_local_and_accounting",
+            "slot": "hlocal",
+            "declaration_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+            "source_sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2",
+            "parameter_span": {
+              "start_line": 140,
+              "end_line": 143
+            },
+            "body_consumption_span": {
+              "start_line": 150,
+              "end_line": 156
+            }
+          },
+          "description": "Existing extension wrapper explicitly passes this local comparison theorem to the unchanged conditional composer hlocal slot. This is current source evidence only; no incoming compiler edge is asserted for a module outside this extraction."
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/local-conductor-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "ac0db6af93910220915daab4c00a78cc3497fd081d8b2b06c8f9b89fbc7951a6",
+        "job_id": "ci-012447-fbc9e848",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Conductor.lean",
+            "sha256": "f3e186ddac10d05794d2c2b82f7550f6562ce7e5ea822c452fde211bec01db6c",
+            "archived_reference": ".local/adaptation/local-conductor-sourceproof-20261115/reference/Conductor.lean.txt",
+            "source_span": {
+              "start_line": 104,
+              "end_line": 136
+            },
+            "source_fidelity": "Local actual-field wrapper installs the unchanged prescribed image-field inclusion, then applies the complete pinned local theorem. Original target name, proposition, fields and normalization are retained."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldLocalConductorComparison.lean",
+          "sha256": "2bda59f4242fdfd8b0173c82bc21f2e9a163b199e437edbd39a05f602029d0b0",
+          "source_span": {
+            "start_line": 17,
+            "end_line": 25
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "848aed0acc62385f3d2b850c26d072d996f0ca4b56dee92226c0ffeffaf18d33"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "d8f8410a02166fcf1ae0efd02fe63ccc38e7d373205100022d9437272d3d2007"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/local-conductor-sourceproof-20261115/independent-source-review.json",
+          "sha256": "d971757b345f2a368090f1f3e4282c9d1e525762238c760666f2e6f60a28ebc2"
+        },
+        "license_evidence": {
+          "attribution_path": ".local/adaptation/local-conductor-sourceproof-20261115/draft-THIRD_PARTY_ATTRIBUTION.md",
+          "attribution_sha256": "112e9edbd6fb10377107e90a68ab6a954e62d2485149aa6ae55a2917bb21da23",
+          "original_headers_retained": true,
+          "source_archive_LICENSE_NOTICE_present": false,
+          "standard_license_copy": {
+            "path": ".local/adaptation/local-conductor-sourceproof-20261115/reference/LICENSE.Apache-2.0",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "is_original_archive_license": false
+          },
+          "description": "Supplied source archive lacks LICENSE/NOTICE. The retained standard Apache-2.0 text is a local standard copy, not a recovered upstream LICENSE."
+        },
+        "review_scope": "Static source review plus current compiler receipts. Actual compiler declaration kinds are preserved; no new platform Definition publication or custom axiom is asserted."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation source proof; production source and trust boundary unchanged"
+      }
+    }
+  ],
+  "graph_counts": {
+    "accepted_reductions": 36,
+    "published_children": 83,
+    "dependency_edges": 101,
+    "open_frontier": 16,
+    "direct_closed_children": 42
+  },
+  "parent": "Proved",
+  "local_conductor_child": "Proved",
+  "comparison": "Proved",
+  "automatically_closed_parents": [
+    "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+    "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison"
+  ],
+  "promoted_existing_reductions": [
+    {
+      "parent": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "children": [
+        "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+        "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+        "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity"
+      ],
+      "submission_id": "17e8e4ed-6bde-4f0c-bb55-63ed564059b2",
+      "status": "ACCEPTED"
+    },
+    {
+      "parent": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+      "children": [
+        "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+        "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison"
+      ],
+      "submission_id": "f7b2a434-76d6-4241-94b4-dbbbb329256e",
+      "status": "ACCEPTED"
+    }
+  ],
+  "existing_parent_submission_status_observations": [
+    {
+      "parent": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "submission_id": "17e8e4ed-6bde-4f0c-bb55-63ed564059b2",
+      "before_status": "SKETCH_ACCEPTED",
+      "after_status": "ACCEPTED",
+      "children": [
+        "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+        "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+        "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity"
+      ],
+      "computed_parent_status": "Proved"
+    },
+    {
+      "parent": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+      "submission_id": "f7b2a434-76d6-4241-94b4-dbbbb329256e",
+      "before_status": "SKETCH_ACCEPTED",
+      "after_status": "ACCEPTED",
+      "children": [
+        "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+        "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison"
+      ],
+      "computed_parent_status": "Proved"
+    }
+  ],
+  "pending_database_source_scope": {
+    "replaced_only": {
+      "before": "一般除子高度比较、Belyi 高度关系、除子次数高度比较、像点域上的不同理想／导子比较及尖点导子高度比较已有第一类固定来源；其完整点域、像点域、归一化、统一常数、严格次数比及实际生成元的传递仍须按对应来源拆分。",
+      "after": "尖点导子高度比较仍须按第一类固定来源拆分，保留完整点域、归一化、统一常数与实际生成元。"
+    },
+    "Fermat_specific_first_sentence_unchanged": "`Proper.canonicalHeightIdentification` 的具体 Fermat 特化仍需把实际平面伴随公式、实际超平面高度与固定 `[u:v:1]` 高度连接起来，并对任意明确极除子表示保留统一有界误差。",
+    "completed_nodes": [
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation",
+        "id": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+        "status": "Proved"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison",
+        "id": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+        "status": "Proved"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_principalRelation",
+        "id": "56f42c00-9e1d-4e2a-87db-b149750880dc",
+        "status": "Proved"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+        "id": "0d80f85b-de7c-4f14-999e-b712950af308",
+        "status": "Proved"
+      }
+    ],
+    "retained_nodes": [
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.cuspConductorHeightComparison",
+        "id": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+        "status": "Open"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalHeightIdentification",
+        "id": "c156622d-9654-4f35-bf36-cfa946728557",
+        "status": "Open"
+      }
+    ],
+    "root_scope_evidence": "pending-db-completed-comparison-cleanup.json",
+    "root_scope_evidence_sha256": "4779124d3cfff0a723c5e77e28775cf64dba69e848a986e93ed56097ecf465a4",
+    "after_graph_sha256": "f8669c04f4b542a7fb07d126de042deaac94beef8e052028648f96b1348e885e"
+  },
+  "canonicalEstimate": "Open",
+  "root": "Open",
+  "new_definitions": [],
+  "new_children": [],
+  "new_reductions": [],
+  "new_dependencies": [],
+  "direct_closed_proof": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldLocalConductorComparison",
+    "theorem_id": "38299feb-cbfd-4333-a31b-ccf74776b9d1",
+    "submission_id": "46ebad1b-0c01-48c0-8ee6-97b2b971098d",
+    "status": "ACCEPTED",
+    "mathematical_dependencies": [],
+    "classification": "Direct accepted source proof; standard Lean axioms only"
+  },
+  "production_boundary_changed": false,
+  "definition_retention": {
+    "new_published_definitions": [],
+    "hidden_old_ids": [],
+    "reappeared_preexisting_ids": [],
+    "baseline_readbacks_sha256": "596229e922da84a7362b6d47befc81d31914f45a20a8c7a347401ae227d0ce8b",
+    "retention_readbacks_sha256": "22a6dc4dc738201ecbb56ef1671f21c990fe49547ec309cd58f4581bed4f4068"
+  },
+  "platform_submission": "46ebad1b-0c01-48c0-8ee6-97b2b971098d"
+}
