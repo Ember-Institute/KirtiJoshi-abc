@@ -1,0 +1,12 @@
+[
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence",
+    "preamble": "import Definitions.Def_FermatProperDivisorHeight\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ →\n        ∀ (hfin : (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite)\n          (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR),\n          ∃ (r : ↥M.K),\n            r ≠ 0 ∧\n              ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n                K.D P + (AbcAdaptation.Tripod.Fermat.Proper.cuspDivisor M hDVR φ hfin) P =\n                  AbcAdaptation.Tripod.Fermat.Proper.poleMultiplicity M hDVR φ P +\n                    AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P r := by sorry"
+  },
+  {
+    "theorem_name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_principalRelation",
+    "preamble": "import Definitions.Def_FermatProperDivisorHeight\n\nset_option autoImplicit false",
+    "formal_statement": "theorem AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_principalRelation : ∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (D E : AbcAdaptation.Tripod.Fermat.Proper.Divisor M)\n      (RD : AbcAdaptation.Tripod.Fermat.Proper.PolarPresentation M hDVR D)\n      (RE : AbcAdaptation.Tripod.Fermat.Proper.PolarPresentation M hDVR E) (f r : ↥M.K),\n      r ≠ 0 →\n        (∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n            D P + E P =\n              AbcAdaptation.Tripod.Fermat.Proper.poleMultiplicity M hDVR f P +\n                AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P r) →\n          ∃ (C : ℝ),\n            ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n              |AbcAdaptation.Tripod.Fermat.Proper.divHeight RD x + AbcAdaptation.Tripod.Fermat.Proper.divHeight RE x -\n                    AbcAdaptation.Tripod.Fermat.Proper.functionHeight M f x| ≤\n                C := by sorry"
+  }
+]

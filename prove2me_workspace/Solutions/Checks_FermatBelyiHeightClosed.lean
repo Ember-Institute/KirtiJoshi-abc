@@ -1,0 +1,4 @@
+import Solutions.Source_FermatBelyiHeightComparison
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.functionHeight_eq_htCan_belyiImage
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation_of_children

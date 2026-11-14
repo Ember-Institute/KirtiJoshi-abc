@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-14T09:45:48.777200+00:00",
+  "task": "Exact two-child decomposition draft of existing Proper.belyiHeightRelation",
+  "parent_theorem_id": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+  "status": {
+    "draft_only": true,
+    "compiler_used": false,
+    "mcp_used": false,
+    "api_used": false,
+    "git_used": false,
+    "main_workspace_modified": false,
+    "new_definitions": false,
+    "new_axiom_or_structure_law_fields": false,
+    "act2_proof_filling": false,
+    "new_platform_nodes_created": false
+  },
+  "reference_fidelity": "Exact coefficient and height statements on existing concrete carriers; source proofs remain to be ported.",
+  "source_records": [
+    {
+      "project": "genl",
+      "pinned_commit": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/genl-ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean",
+      "artifact_path": "reference/genl/Genl/Curves/BelyiDescent.lean",
+      "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+      "declaration_lines": {
+        "theorem divHeight_logCanon_add_cusp": 215,
+        "theorem nonempty_belyiDescent": 248
+      }
+    },
+    {
+      "project": "heights",
+      "pinned_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/DivisorHeight.lean",
+      "artifact_path": "reference/heights/Heights/Curve/DivisorHeight.lean",
+      "sha256": "950fd1932c5eae4f74b7f9cfed22c28e78d5d9c44fb3356b2200f23caf96a5f3",
+      "declaration_lines": {
+        "theorem minOrd_pair_one": 51,
+        "theorem minOrd_single": 78,
+        "theorem tupleHeight_single": 86,
+        "theorem divHeight_approx": 112,
+        "theorem divHeight_add": 147,
+        "theorem divHeight_add_div": 185,
+        "theorem divHeight_polar": 135
+      }
+    },
+    {
+      "project": "heights",
+      "pinned_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/LinearEquiv.lean",
+      "artifact_path": "reference/heights/Heights/Curve/LinearEquiv.lean",
+      "sha256": "3f368338e8e835c62b165789cc044a9ad3da86ef6c037295b53425f518f023ce",
+      "declaration_lines": {
+        "theorem minOrd_mul": 30,
+        "theorem minOrd_smul": 48,
+        "theorem abs_tupleHeight_sub_le_of_minOrd_eq": 62,
+        "theorem abs_tupleHeight_sub_sub_le": 74
+      }
+    },
+    {
+      "project": "heights",
+      "pinned_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/TupleHeight.lean",
+      "artifact_path": "reference/heights/Heights/Curve/TupleHeight.lean",
+      "sha256": "63cbbb457a56a44b9c638bdcaf0a724f78a7830fa094a0c6ffda0681ac8485a2",
+      "declaration_lines": {
+        "noncomputable def minOrd": 80,
+        "noncomputable def evalTuple": 110,
+        "noncomputable def tupleHeight": 115,
+        "theorem tupleHeight_smul": 187,
+        "theorem tupleHeight_mul": 221,
+        "theorem tupleHeight_pair_one_of_mem": 249,
+        "theorem tupleHeight_pair_one_of_notMem": 268
+      }
+    },
+    {
+      "project": "heights",
+      "pinned_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/Integrality.lean",
+      "artifact_path": "reference/heights/Heights/Curve/Integrality.lean",
+      "sha256": "03719bc60d81951f109554b32d4e61eb6f5683eee5ce6f2a9db833279e2f8d0c",
+      "declaration_lines": {
+        "theorem exists_integral_eq": 245,
+        "theorem div_mem_of_forall_div_mem": 470,
+        "theorem tupleHeight_le_of_minOrd_le": 493
+      }
+    },
+    {
+      "project": "heights",
+      "pinned_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Absolute/Basic.lean",
+      "artifact_path": "reference/heights/Heights/Absolute/Basic.lean",
+      "sha256": "6c4a3457e93fc70b6973aafeb5e0c1f84757825978221016d99480d8de5f5715",
+      "declaration_lines": {
+        "theorem logHeight_comp_ringHom": 67,
+        "theorem logHeight_one_eq_gen": 204
+      }
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Canonical.lean",
+      "artifact_path": "reference/belyi/Belyi/CurveField/Canonical.lean",
+      "sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+      "declaration_lines": {
+        "theorem canonicalDiv_apply_of_mem": 72,
+        "theorem canonicalDiv_apply_of_notMem": 76,
+        "theorem canonicalDiv_eq_add_div": 144,
+        "theorem exists_canonicalDiv_eq_add_div": 159
+      }
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/BelyiRelation.lean",
+      "artifact_path": "reference/belyi/Belyi/CurveField/BelyiRelation.lean",
+      "sha256": "e5d39478fe8ee58c4fcd43e57bea5aac06147179e5c852f1386098cc4ac7b378",
+      "declaration_lines": {
+        "theorem cuspDivisor_eq_sum": 61,
+        "theorem canonicalDiv_add_cuspDivisor": 85
+      }
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/RamIdx.lean",
+      "artifact_path": "reference/belyi/Belyi/CurveField/RamIdx.lean",
+      "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+      "declaration_lines": {
+        "noncomputable def ramIdx": 190,
+        "theorem ramIdx_of_mem": 195,
+        "theorem ramIdx_of_notMem": 198,
+        "theorem ramIdx_pos": 207,
+        "theorem ramIdx_of_residue_eq": 218,
+        "theorem ord_derivAlong_of_mem": 237,
+        "theorem ord_derivAlong_of_notMem": 257
+      }
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Place.lean",
+      "artifact_path": "reference/belyi/Belyi/CurveField/Place.lean",
+      "sha256": "f68260416b102e3b60c03e42b016833ded7ed476299d0a0e978e2e89965b2572",
+      "declaration_lines": {
+        "abbrev Place": 184,
+        "noncomputable def ord": 293,
+        "theorem ord_mul": 311,
+        "theorem ord_inv": 316
+      }
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_path": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Basic.lean",
+      "artifact_path": "reference/belyi/Belyi/CurveField/Basic.lean",
+      "sha256": "3657b4ad9c4ecd47307afcff0697e326539ba526dcac61fed2c6c91a827d1eca",
+      "declaration_lines": {
+        "class IsCurveField": 36
+      }
+    }
+  ],
+  "current_inputs": [
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean",
+      "sha256": "bfceaae185fc536e913ea8772442f2030a780be865115a6bfbf10ccafa2df048"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiComparisons.lean",
+      "sha256": "c8dd47e099ee4ca6a1715d4034f1c375617d89439130ce8494a720a9359d2813"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCanonicalBelyiComposition.lean",
+      "sha256": "ed9f9030c6a94e163d0b009d5b6aacbf956d2a1766b656b555f4d6d2e07f1793"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+      "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.lean",
+      "sha256": "63616a24dd506f1ef9f67128f61b98f9c260107426a4b6f11d49406493d87c0b"
+    }
+  ],
+  "children": [
+    {
+      "name": "canonicalCuspPolarLinearEquivalence",
+      "proof_status": "one deliberate sorry",
+      "sources": [
+        "Belyi/CurveField/Canonical.lean:159",
+        "Belyi/CurveField/BelyiRelation.lean:85",
+        "Belyi/CurveField/RamIdx.lean:195,198,237,257"
+      ],
+      "consumer": "belyiHeightRelation: actual B.canonical, actual φ, supplied hfin",
+      "witness_recipe": "q = derivAlong φ M.u; r = (φ * (φ - 1)) * q; q ≠ 0 by reciprocal derivative identity.",
+      "missing_proofs": [
+        "Port derivative-along chain rule and nonzero reciprocal derivative for transcendental M.u and φ.",
+        "Transport discrete ord, residue maps and integer ramification index to pinned source formulas.",
+        "Identify every supplied CanonicalDivisorData via its exact coefficient field.",
+        "Prove reduced cusp coefficient equals if P ∈ cusps then 1 else 0, for every supplied finiteness proof.",
+        "Prove Belyi coefficient identity in zero, one, pole and noncusp cases; combine nonzero product orders."
+      ]
+    },
+    {
+      "name": "polarPresentationHeightSum_of_principalRelation",
+      "proof_status": "one deliberate sorry",
+      "sources": [
+        "Heights/Curve/LinearEquiv.lean:74",
+        "Heights/Curve/DivisorHeight.lean:112,147",
+        "Heights/Curve/TupleHeight.lean:249,268",
+        "Heights/Absolute/Basic.lean:204"
+      ],
+      "consumer": "belyiHeightRelation: actual B.canonicalPresentation and B.cuspPresentation; f=φ and geometric witness r",
+      "sign_recipe": "Use r⁻¹, not r, in abs_tupleHeight_sub_sub_le: minOrd(s)+minOrd(u′)=ord(r⁻¹)+(minOrd(u)+minOrd(s′)).",
+      "missing_proofs": [
+        "Port actual tuple normalization, minOrd, evalTuple and tupleHeight on full proper points.",
+        "Port absolute-height normalization and extension invariance; retain actual fieldRange and residue embedding.",
+        "Prove pair-tuple height equals current functionHeight, including pole, regular zero, and minpoly-degree normalization.",
+        "Port Integrality tuple comparison proof, including integral equations, local bounds, finite exceptional places and full-point finite fibers.",
+        "Port LinearEquiv minOrd and Segre/scaling comparison.",
+        "Use the four actual presentation functions and inverse principal witness, then rewrite the exact height sum."
+      ]
+    }
+  ],
+  "composer": {
+    "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.lean",
+    "target_unchanged": "BelyiHeightRelation",
+    "local_sorry_count": 0,
+    "transitive_open_children": 2,
+    "identity_lemma": "functionHeight_eq_htCan_belyiImage",
+    "downstream_consumer": "Definitions/Def_FermatCanonicalBelyiComposition.lean: canonicalEstimate_of_belyi_children, hHeight M hDVR hRF A φ hφ hfin B"
+  },
+  "shape_caveats": [
+    "No Lean elaboration or axiom audit has run. The composer is a complete proof draft, not a checked proof.",
+    "Current ramIdx returns ℤ; pinned ramIdx returns ℕ. Use ramIdx_of_mem/notMem cast formulas; do not assume definitional equality.",
+    "Every x includes its actual σ and full fieldRange. No restriction to selected embeddings or the affine chart occurs in the generic height child.",
+    "The generic functionHeight is projective and equals zero at poles. Ordinary undefined evaluation at a pole cannot replace it.",
+    "Geometry has +ord(r); the pinned minOrd comparison requires the inverse witness.",
+    "Parent retains every original choice field; infinity, adjunction and generators are present although this comparison does not inspect them.",
+    "Copied source files are evidence only. They are not imported by draft Lean modules and are not a complete dependency closure."
+  ]
+}

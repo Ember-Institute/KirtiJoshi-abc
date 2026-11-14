@@ -1,0 +1,88 @@
+{
+  "target": "AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation_of_children",
+  "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiHeightComparison.lean",
+  "sourceSHA": "14023e62311c4fd0d6aace39033d97c7f76fcd5f61730c42d02063ab3288e062",
+  "sourceSHA_algorithm": "SHA-256",
+  "signature": "theorem belyiHeightRelation_of_children\n    (hGeometry : ∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n      (hRF : ResiduesFinite M) (φ : M.K) (hφ : IsBelyi M hDVR φ)\n      (hfin : (cusps M hDVR φ).Finite) (K : CanonicalDivisorData M hDVR),\n      ∃ r : M.K, r ≠ 0 ∧ ∀ P : Place M.K,\n        K.D P + cuspDivisor M hDVR φ hfin P =\n          poleMultiplicity M hDVR φ P + ord M hDVR P r)\n    (hPolarHeights : ∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n      (hRF : ResiduesFinite M) (D E : Divisor M)\n      (RD : PolarPresentation M hDVR D) (RE : PolarPresentation M hDVR E)\n      (f r : M.K) (hr : r ≠ 0)\n      (hrel : ∀ P : Place M.K,\n        D P + E P = poleMultiplicity M hDVR f P + ord M hDVR P r),\n      ∃ C : ℝ, ∀ x : QbarPoint M.K,\n        |divHeight RD x + divHeight RE x - functionHeight M f x| ≤ C) :\n    BelyiHeightRelation",
+  "source_span": {
+    "start_line": 27,
+    "end_line": 51,
+    "signature_start_line": 27,
+    "signature_end_line": 42
+  },
+  "statements": {
+    "en": "Assume the following two universally quantified hypotheses, with the conventions specified here. For each natural number $N$ (with no assumption $N>3$), a model $M$ consists of an intermediate field $K$ between $ℚ$ and the fixed algebraic closure of $ℚ(T)$, elements $u,v∈K$ with $u$ transcendental over $ℚ$, $u^N+v^N=1$, $K=ℚ(u,v)$, and a finite extension $K/ℚ(u)$ of degree exactly $N$. A place $P$ is any proper valuation subring $O_P⊊K$ containing $ℚ$, including places at infinity. The data $h_{\\rm DVR}$ assert that every $O_P$ is a discrete valuation ring; $h_{\\rm RF}$ assert that every residue field $κ(P)$ is finite dimensional over $ℚ$. Write $o_P(a)$ for minus the integer logarithm of the maximal-ideal valuation of $a$, using these discrete valuation rings; this convention has $o_P(0)=0$. Put $δ_a(P)=\\max(0,-o_P(a))$. For a function $a∈K$, put $e_a(P)=o_P(m_{P,a}(a))$ when $a∈O_P$, where $m_{P,a}$ is the minimal polynomial over $ℚ$ of the residue of $a$ in $κ(P)$; otherwise put $e_a(P)=-o_P(a)$. A Belyi function $φ$ means a function transcendental over $ℚ$ for which every place satisfying $e_φ(P)>1$ belongs to $S_φ=\\{P:o_P(φ)≠0 \\text{or} o_P(φ-1)>0\\}$. Whenever a proof $h_{\\rm fin}$ that $S_φ$ is finite is supplied, let $E_φ=\\sum_{P∈S_φ}[P]$, with coefficient one at each such place and zero elsewhere. A divisor is an arbitrary finitely supported integer-valued function on all these places, and canonical divisor data $K_{\\rm can}$ consist of such a divisor $D_{\\rm can}$ with coefficient $e_u(P)-1$ if $u∈O_P$ and $-e_u(P)-1$ otherwise. The first hypothesis is: for every $N,M,h_{\\rm DVR},h_{\\rm RF},φ$, proof that $φ$ is Belyi, proof $h_{\\rm fin}$, and canonical divisor data $K_{\\rm can}$, there exists $r∈K$, $r≠0$, such that, simultaneously for every place $P$, $D_{\\rm can}(P)+E_φ(P)=δ_φ(P)+o_P(r)$. For the second hypothesis, an exact polar presentation $R$ of a divisor $D$ consists of two functions $a_R,b_R∈K$ with $D(P)=δ_{a_R}(P)-δ_{b_R}(P)$ at every place. A geometric algebraic point $x$ consists of a place $P_x$ and a field embedding $σ_x:κ(P_x)→\\overline{ℚ}$, and $a(x)$ denotes $σ_x$ of the residue of $a$ whenever $a∈O_{P_x}$; its full point field is the image of $σ_x$. Define $H(a,x)=0$ if $a∉O_{P_x}$ and otherwise $H(a,x)=L_{ℚ(a(x))}(a(x))/[ℚ(a(x)):ℚ]$, where $L_F(t)$ is the number-field logarithmic height $\\sum_{w {\\rm infinite}}m_w\\log\\max(1,|t|_w)+\\sum_{w {\\rm finite}}\\log\\max(1,|t|_w)$, with standard product-formula absolute values and infinite-place multiplicity $m_w=1$ at a real place and $2$ at a complex place. The denominator is the degree of the actual minimal value field, equivalently the degree of the minimal polynomial of $a(x)$ over $ℚ$, and is positive; it is not the degree of the full point field. Write $h_R(x)=H(a_R,x)-H(b_R,x)$. The second hypothesis is: for every $N,M,h_{\\rm DVR},h_{\\rm RF}$, arbitrary divisors $D,E$, every exact polar presentation $R_D,R_E$ of them, functions $f,r∈K$ with $r≠0$, and coefficient identity $D(P)+E(P)=δ_f(P)+o_P(r)$ for all places $P$, there exists a real constant $C$ such that $|h_{R_D}(x)+h_{R_E}(x)-H(f,x)|≤C$ for every geometric algebraic point $x$. This $C$ may depend on all the preceding data, presentations, and functions, but not on $x$; there is no Belyi, nonzero, or regular-value condition on $f$ in this hypothesis. Under these two global hypotheses, the conclusion is the following: for every $N,M,h_{\\rm DVR},h_{\\rm RF}$, every affine identification $A$, every Belyi function $φ$, every proof $h_{\\rm fin}$ that $S_φ$ is finite, and every package $B$ of arithmetic divisor choices, there exists a real constant $C$, possibly depending on all these preceding data and choices but independent of the point, such that $|h_{B_{\\rm can}}(x_p)+h_{B_{\\rm cusp}}(x_p)-L_{ℚ(z)}(z)/[ℚ(z):ℚ]|≤C$ for every pair $p=(α,β)∈\\overline{ℚ}^{\\,2}$ with $α^N+β^N=1$, $α≠0$, $β≠0$, whenever $φ∈O_{P_{x_p}}$ and $z=φ(x_p)$ is neither zero nor one. Here $A$ is a bijection from the geometric points at which $u,v$ are regular and both values are nonzero to those pairs $p$, taking the two evaluations to $α,β$ and identifying the full point field with $ℚ(α,β)$; $x_p$ is its inverse image with the affine-membership evidence forgotten. The universally quantified package $B$ contains canonical data $D_{\\rm can}$ as above; an infinity divisor $H_\\infty$ with coefficient $\\max(δ_u(P),δ_v(P))$; a specified nonzero function $s∈K$ with $D_{\\rm can}(P)=((N:ℤ)-3)H_\\infty(P)+o_P(s)$ for every $P$; exact polar presentations $B_{\\rm can}$ of $D_{\\rm can}$ and $B_{\\rm cusp}$ of $E_φ$; and a finite set $G⊂K$ containing $φ,φ^{-1},(1-φ)^{-1}$ whose generated $ℚ$-subalgebra is exactly $\\{a∈K:∀P, E_φ(P)=0⇒a∈O_P\\}$. All these choices are inputs, with no assertion of their existence or uniqueness. The last normalized height is precisely the tripod height of the Belyi image, whose value on this good locus is $z$; the total Belyi-image function uses the rational value $2$ off this locus, but the conclusion imposes no inequality there. The first hypothesis has one $r$ for all places, and the second one $C$ for all proper points; neither asserts uniqueness. Both include every place at infinity. The second hypothesis permits zero or negative divisors, zero or constant $f$, zero or constant presentation functions, and all their zeros, poles, and values one; a pole contributes height zero by definition, as do regular values zero and one, while the zero function has zero pole multiplicity. The nonzero functions $r$ and $s$ may themselves have zeros or poles. In the conclusion only $φ$ is required to be regular and avoid zero and one at the lifted point; the presentation functions may still vanish or have poles there. No lower bound on $N$, point-degree bound, positivity requirement on $C$, or existence of any model, choice package, or good point is included; quantification over unavailable data, or the absence of good points, can make the corresponding conditions vacuous.",
+    "zh_Hans": "在以下约定下，假设两个全称量化的命题。自然数 $N$ 不受 $N>3$ 的限制；模型 $M$ 包含固定的 $ℚ(T)$ 的代数闭包中的中间域 $ℚ⊆K$ 以及 $u,v∈K$，其中 $u$ 在 $ℚ$ 上超越，$u^N+v^N=1$，$K=ℚ(u,v)$，且 $K/ℚ(u)$ 是次数恰为 $N$ 的有限扩张。处 $P$ 指包含 $ℚ$ 的任意真赋值子环 $O_P⊊K$，也包括无穷远处。条件 $h_{\\rm DVR}$ 要求所有 $O_P$ 都是离散赋值环；条件 $h_{\\rm RF}$ 要求所有剩余域 $κ(P)$ 都是 $ℚ$ 上的有限维向量空间。记 $o_P(a)$ 为该离散赋值环的极大理想赋值的整数对数的相反数；此约定给出 $o_P(0)=0$。令 $δ_a(P)=\\max(0,-o_P(a))$。当 $a∈O_P$ 时，令 $e_a(P)=o_P(m_{P,a}(a))$，其中 $m_{P,a}$ 是 $a$ 在 $κ(P)$ 中的剩余类在 $ℚ$ 上的极小多项式；当 $a∉O_P$ 时，令 $e_a(P)=-o_P(a)$。所谓 Belyi 函数 $φ$，是指 $φ$ 在 $ℚ$ 上超越，且每个满足 $e_φ(P)>1$ 的处都属于集合 $S_φ=\\{P:o_P(φ)≠0 \\text{或} o_P(φ-1)>0\\}$。给定 $S_φ$ 有限的证明 $h_{\\rm fin}$，令 $E_φ=\\sum_{P∈S_φ}[P]$，即在这些处的系数为一，在其余处为零。除子是所有这些处上的任意有限支撑整数值函数。典范除子资料 $K_{\\rm can}$ 包含除子 $D_{\\rm can}$，其在 $P$ 的系数当 $u∈O_P$ 时为 $e_u(P)-1$，否则为 $-e_u(P)-1$。第一个假设是：对每个 $N,M,h_{\\rm DVR},h_{\\rm RF},φ$、$φ$ 为 Belyi 函数的证明、有限性证明 $h_{\\rm fin}$ 和典范除子资料 $K_{\\rm can}$，都存在非零函数 $r∈K$，使所有处 $P$ 同时满足 $D_{\\rm can}(P)+E_φ(P)=δ_φ(P)+o_P(r)$。第二个假设使用如下定义：除子 $D$ 的精确极除子表示 $R$ 是两个函数 $a_R,b_R∈K$，满足每个处的系数等式 $D(P)=δ_{a_R}(P)-δ_{b_R}(P)$。几何代数点 $x$ 由一个处 $P_x$ 和域嵌入 $σ_x:κ(P_x)→\\overline{ℚ}$ 组成；当 $a∈O_{P_x}$ 时，$a(x)$ 是 $a$ 的剩余类在 $σ_x$ 下的像，完整点域是 $σ_x$ 的像。若 $a∉O_{P_x}$，定义 $H(a,x)=0$；否则定义 $H(a,x)=L_{ℚ(a(x))}(a(x))/[ℚ(a(x)):ℚ]$，其中数域对数高度为 $L_F(t)=\\sum_{w {\\rm 无限处}}m_w\\log\\max(1,|t|_w)+\\sum_{w {\\rm 有限处}}\\log\\max(1,|t|_w)$，绝对值按标准乘积公式归一化，实处的重数 $m_w$ 为一，复处为二。分母是实际最小取值域的次数，等于 $a(x)$ 在 $ℚ$ 上的极小多项式次数且严格为正，并非完整点域的次数。令 $h_R(x)=H(a_R,x)-H(b_R,x)$。第二个假设是：对每个 $N,M,h_{\\rm DVR},h_{\\rm RF}$、任意除子 $D,E$、它们的任意精确极除子表示 $R_D,R_E$、函数 $f,r∈K$，若 $r≠0$ 且所有处 $P$ 均满足 $D(P)+E(P)=δ_f(P)+o_P(r)$，则存在实常数 $C$，使每个几何代数点 $x$ 都满足 $|h_{R_D}(x)+h_{R_E}(x)-H(f,x)|≤C$。该常数可依赖此前的全部资料、表示及函数，但不依赖 $x$；这里不要求 $f$ 是 Belyi 函数、非零函数或在点上具有正则取值。在这两个全局假设下，结论为：对每个 $N,M,h_{\\rm DVR},h_{\\rm RF}$、每个仿射对应 $A$、每个 Belyi 函数 $φ$、每个 $S_φ$ 有限的证明 $h_{\\rm fin}$ 及每组算术除子选择资料 $B$，存在实常数 $C$，可依赖上述全部资料与选择，但与点无关，使每个满足 $α^N+β^N=1$、$α≠0$、$β≠0$ 的代数数对 $p=(α,β)∈\\overline{ℚ}^{\\,2}$ 在 $φ∈O_{P_{x_p}}$ 且 $z=φ(x_p)≠0,1$ 时满足 $|h_{B_{\\rm can}}(x_p)+h_{B_{\\rm cusp}}(x_p)-L_{ℚ(z)}(z)/[ℚ(z):ℚ]|≤C$。这里 $A$ 是从 $u,v$ 均正则且两个取值均非零的几何点到上述数对的双射，将两个取值对应为 $α,β$，并将完整点域与 $ℚ(α,β)$ 相等同；$x_p$ 是该双射的逆像所给的几何点，忘去其仿射成员资格。全称量化的资料组 $B$ 包含上述典范除子 $D_{\\rm can}$；系数为 $\\max(δ_u(P),δ_v(P))$ 的无穷远除子 $H_\\infty$；一个指定的非零函数 $s∈K$，使所有处均满足 $D_{\\rm can}(P)=((N:ℤ)-3)H_\\infty(P)+o_P(s)$；$D_{\\rm can}$ 的精确极除子表示 $B_{\\rm can}$ 和 $E_φ$ 的精确极除子表示 $B_{\\rm cusp}$；以及有限集 $G⊂K$，其包含 $φ,φ^{-1},(1-φ)^{-1}$，且它生成的 $ℚ$ 子代数恰为 $\\{a∈K:∀P, E_φ(P)=0⇒a∈O_P\\}$。这些都是输入选择；结论不声称它们存在或唯一。最后的归一化高度正是 Belyi 像的三脚架高度，在上述良好取值范围内该像的值为 $z$；总定义的 Belyi 像在此范围外取有理数 $2$，但结论不对范围外施加不等式。第一个假设中的同一 $r$ 适用于全部处，第二个假设中的同一 $C$ 适用于全部几何代数点，二者均不要求唯一，并均涵盖无穷远处。第二个假设允许零除子、含负系数的除子、零函数或常函数 $f$、零函数或常函数的表示函数，以及这些函数的全部零点、极点和取值为一的点；极点处高度按定义为零，正则取值为零或一时高度也为零，零函数的极点重数为零。非零函数 $r,s$ 本身仍可有零点或极点。结论只要求 $φ$ 在所提升的点正则且取值异于零和一，表示函数仍可在该点为零或有极点。命题不另加 $N$ 的下界、点次数上界或 $C$ 的正性条件，也不保证模型、选择资料组或良好点存在；缺少相应输入或良好点时，相应条件可能空真。",
+    "ja": "以下の約束の下で、二つの全称命題を仮定する。自然数 $N$ には $N>3$ という条件を課さない。模型 $M$ は、固定した $ℚ(T)$ の代数閉包の中間体 $ℚ⊆K$ と元 $u,v∈K$ からなり、$u$ は $ℚ$ 上超越的で、$u^N+v^N=1$、$K=ℚ(u,v)$ が成り立ち、$K/ℚ(u)$ は次数がちょうど $N$ の有限拡大である。素点 $P$ は $ℚ$ を含む任意の真の付値部分環 $O_P⊊K$ を意味し、無限遠の素点も含む。条件 $h_{\\rm DVR}$ はすべての $O_P$ が離散付値環であることを、条件 $h_{\\rm RF}$ はすべての剰余体 $κ(P)$ が $ℚ$ 上有限次元であることを述べる。$o_P(a)$ はこの離散付値環の極大イデアル付値の整数対数の符号を反転したもので、この約束では $o_P(0)=0$ である。$δ_a(P)=\\max(0,-o_P(a))$ と置く。$a∈O_P$ のときは $e_a(P)=o_P(m_{P,a}(a))$ と置き、ここで $m_{P,a}$ は $a$ の剰余類の $ℚ$ 上の最小多項式である。$a∉O_P$ のときは $e_a(P)=-o_P(a)$ と置く。Belyi 関数 $φ$ とは、$ℚ$ 上超越的で、$e_φ(P)>1$ を満たすすべての素点が $S_φ=\\{P:o_P(φ)≠0 \\text{または} o_P(φ-1)>0\\}$ に属する関数をいう。$S_φ$ の有限性の証明 $h_{\\rm fin}$ が与えられたとき、$E_φ=\\sum_{P∈S_φ}[P]$、すなわちその各素点で係数一、それ以外で係数零の因子とする。因子はこれらすべての素点上の任意の有限台整数値関数である。標準因子データ $K_{\\rm can}$ は、$u∈O_P$ のときの係数が $e_u(P)-1$、それ以外のときの係数が $-e_u(P)-1$ となる因子 $D_{\\rm can}$ を含む。第一の仮定は、任意の $N,M,h_{\\rm DVR},h_{\\rm RF},φ$、$φ$ が Belyi 関数であることの証明、有限性の証明 $h_{\\rm fin}$、標準因子データ $K_{\\rm can}$ に対して、零でない $r∈K$ が存在し、すべての素点 $P$ で同時に $D_{\\rm can}(P)+E_φ(P)=δ_φ(P)+o_P(r)$ が成り立つ、というものである。第二の仮定では次の定義を用いる。因子 $D$ の正確な極因子表示 $R$ は、すべての素点で $D(P)=δ_{a_R}(P)-δ_{b_R}(P)$ を満たす二つの関数 $a_R,b_R∈K$ からなる。幾何学的代数点 $x$ は素点 $P_x$ と体の埋め込み $σ_x:κ(P_x)→\\overline{ℚ}$ からなり、$a∈O_{P_x}$ のとき $a(x)$ は $a$ の剰余類の $σ_x$ による像であり、点の全体の定義体は $σ_x$ の像である。$a∉O_{P_x}$ のとき $H(a,x)=0$ とし、それ以外では $H(a,x)=L_{ℚ(a(x))}(a(x))/[ℚ(a(x)):ℚ]$ とする。ここで数体の対数的高さは $L_F(t)=\\sum_{w {\\rm 無限素点}}m_w\\log\\max(1,|t|_w)+\\sum_{w {\\rm 有限素点}}\\log\\max(1,|t|_w)$ であり、絶対値は通常の積公式に従って正規化し、無限素点の重複度 $m_w$ は実素点で一、複素素点で二である。分母は実際の値が生成する最小の体の次数で、$a(x)$ の $ℚ$ 上の最小多項式の次数に等しく正であり、点の全体の定義体の次数ではない。$h_R(x)=H(a_R,x)-H(b_R,x)$ と書く。第二の仮定は、任意の $N,M,h_{\\rm DVR},h_{\\rm RF}$、任意の因子 $D,E$ とその任意の正確な極因子表示 $R_D,R_E$、関数 $f,r∈K$ に対して、$r≠0$ であり、すべての素点 $P$ で $D(P)+E(P)=δ_f(P)+o_P(r)$ が成り立つならば、実定数 $C$ が存在し、すべての幾何学的代数点 $x$ で $|h_{R_D}(x)+h_{R_E}(x)-H(f,x)|≤C$ が成り立つ、というものである。この $C$ はそれまでのすべてのデータ、表示、関数に依存してよいが、$x$ には依存しない。この仮定では $f$ が Belyi 関数であること、非零であること、点で正則な値を持つことは要求しない。この二つの大域的仮定の下での結論は、任意の $N,M,h_{\\rm DVR},h_{\\rm RF}$、任意のアフィン同定 $A$、任意の Belyi 関数 $φ$、任意の有限性の証明 $h_{\\rm fin}$、任意の算術的因子の選択データ一式 $B$ に対して、それまでのすべてのデータと選択に依存してよく点には依存しない実定数 $C$ が存在し、$α^N+β^N=1$、$α≠0$、$β≠0$ を満たすすべての代数的な組 $p=(α,β)∈\\overline{ℚ}^{\\,2}$ について、$φ∈O_{P_{x_p}}$ かつ $z=φ(x_p)≠0,1$ ならば $|h_{B_{\\rm can}}(x_p)+h_{B_{\\rm cusp}}(x_p)-L_{ℚ(z)}(z)/[ℚ(z):ℚ]|≤C$ が成り立つ、というものである。ここで $A$ は $u,v$ がともに正則で値がともに非零である幾何学的点から上述の組への全単射であり、二つの評価値を $α,β$ に対応させ、点の全体の定義体を $ℚ(α,β)$ と一致させる。$x_p$ はこの全単射の逆像からアフィン部分への所属の証拠を忘れた幾何学的点である。全称量化される一式 $B$ は、上述の標準因子 $D_{\\rm can}$、係数が $\\max(δ_u(P),δ_v(P))$ である無限遠因子 $H_\\infty$、すべての素点で $D_{\\rm can}(P)=((N:ℤ)-3)H_\\infty(P)+o_P(s)$ を満たす指定された非零関数 $s∈K$、$D_{\\rm can}$ の正確な極因子表示 $B_{\\rm can}$、$E_φ$ の正確な極因子表示 $B_{\\rm cusp}$、および有限集合 $G⊂K$ を含む。$G$ は $φ,φ^{-1},(1-φ)^{-1}$ を含み、$G$ が生成する $ℚ$ 部分代数はちょうど $\\{a∈K:∀P, E_φ(P)=0⇒a∈O_P\\}$ である。これらはすべて入力としての選択であり、その存在も一意性も主張しない。最後の正規化された高さは Belyi 像の三脚架の高さそのもので、上述の良い値の領域ではその像の値は $z$ である。全域で定義された Belyi 像はこの領域外では有理数 $2$ を値に取るが、結論は領域外に不等式を課さない。第一の仮定の一つの $r$ はすべての素点に共通で、第二の仮定の一つの $C$ はすべての幾何学的代数点に共通であり、いずれも一意性を要求せず、無限遠の素点も含める。第二の仮定では、零因子、負の係数を持つ因子、零関数または定数関数 $f$、零関数または定数関数である表示関数、およびそれらの零点、極、値一となる点をすべて許す。極では高さを定義により零とし、正則な値が零または一の場合も高さは零で、零関数の極の重複度は零である。非零関数 $r,s$ 自身には零点や極があってよい。結論で持ち上げた点において正則かつ値が零でも一でもないことを要求されるのは $φ$ であり、表示関数はその点で零になっても極を持ってもよい。$N$ の下限、点の次数の上限、$C$ の正値性、模型・選択データ一式・良い点の存在は追加で仮定されておらず、該当する入力や良い点がなければ、対応する条件は空虚に満たされ得る。"
+  },
+  "requested_model": "gpt-6.1-sol",
+  "actual_model": null,
+  "proof_notes": {
+    "scope": "Proposition readback only; one declaration. The two quantified inputs remain explicit hypotheses in every language.",
+    "assessment": "No compiler, proof-status, axiom, or fidelity assessment was performed or asserted.",
+    "translation_lineage": "English is the independent formal readback; simplified Chinese and Japanese are translations of that readback checked against the same formal definitions, not additional independent audits.",
+    "model_note": "Requested model is recorded as requested. The runtime does not expose a reliably verified actual model identifier here.",
+    "terminology_note": "Japanese terms for the local polar-presentation and choice-package constructions are descriptive renderings of their expanded definitions, not claims of quotations from a Japanese reference."
+  },
+  "formatting_provenance": {
+    "original_packet_path": "/tmp/p2m-belyi-height-composer-readback-20261114/readback.json",
+    "original_packet_SHA256": "544f7eb7e1f146b4169926d974c35624589167a5494b3b4a1481f978825f37a9",
+    "operation": "Formatting-only repair of inline LaTeX after JSON parsing; mathematical prose and scope retained. The original packet remains unchanged.",
+    "corrections_by_language": {
+      "en": {
+        "newline-plus-m to TeX roman-font command": 24,
+        "restore max command backslash": 4,
+        "tab-plus-ext to TeX text command": 1,
+        "restore visible cusp-set opening brace": 1,
+        "restore visible cusp-set closing brace": 1,
+        "restore sum command backslash": 3,
+        "restore overline command backslash": 2,
+        "restore log command backslash": 2,
+        "restore thin-space command in superscript": 1,
+        "restore infinity command backslash": 2,
+        "restore visible subalgebra-set opening brace": 1,
+        "restore visible subalgebra-set closing brace": 1
+      },
+      "zh_Hans": {
+        "newline-plus-m to TeX roman-font command": 24,
+        "restore max command backslash": 4,
+        "tab-plus-ext to TeX text command": 1,
+        "restore visible cusp-set opening brace": 1,
+        "restore visible cusp-set closing brace": 1,
+        "restore sum command backslash": 3,
+        "restore overline command backslash": 2,
+        "restore log command backslash": 2,
+        "restore thin-space command in superscript": 1,
+        "restore infinity command backslash": 2,
+        "restore visible subalgebra-set opening brace": 1,
+        "restore visible subalgebra-set closing brace": 1
+      },
+      "ja": {
+        "newline-plus-m to TeX roman-font command": 24,
+        "restore max command backslash": 4,
+        "tab-plus-ext to TeX text command": 1,
+        "restore visible cusp-set opening brace": 1,
+        "restore visible cusp-set closing brace": 1,
+        "restore sum command backslash": 3,
+        "restore overline command backslash": 2,
+        "restore log command backslash": 2,
+        "restore thin-space command in superscript": 1,
+        "restore infinity command backslash": 2,
+        "restore visible subalgebra-set opening brace": 1,
+        "restore visible subalgebra-set closing brace": 1
+      }
+    },
+    "preserved_fields": [
+      "target",
+      "path",
+      "sourceSHA",
+      "sourceSHA_algorithm",
+      "signature",
+      "source_span",
+      "requested_model",
+      "actual_model",
+      "proof_notes"
+    ],
+    "validation": "JSON reserialization and parse succeed. Statements contain no control characters and no newline or tab within inline mathematics. All text outside inline mathematics is unchanged. Formal source SHA, signature, source span, requested model, actual model, and proof notes are unchanged."
+  }
+}

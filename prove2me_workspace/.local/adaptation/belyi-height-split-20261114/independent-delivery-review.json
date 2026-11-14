@@ -1,0 +1,856 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-14T10:33:43.492765+00:00",
+  "artifact_directory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/belyi-height-split-20261114",
+  "review_mode": "Independent read-only pre-delivery review; no compiler, MCP, API, Git, main-workspace edits or extra agents. Only this /tmp report is authored.",
+  "verdict": "PASS_FOR_EXACT_TWO_OPEN_CHILD_SKETCH_DELIVERY",
+  "parent_status": "Original parent and root remain Open. This unit is an exact two-child SKETCH reduction, not proof completion. Both child proofs deliberately contain sorry.",
+  "checks": {
+    "original_parent_type": "PASS: original and current theorem have BelyiHeightRelation unchanged; Definitions.Def_FermatBelyiComparisons SHA unchanged. AuditSolution original_parent_type_equal=true. No new or weakened hypothesis.",
+    "geometry_child": "PASS: every supplied N/model/DVR/residue-finiteness/Belyi phi/finite cusp proof/exact canonical divisor data; one nonzero rational-function r for all proper places with canonical+cusp=pole(phi)+ord(r). Pinned canonical chain rule and Belyi relation give q=du/dphi, r=phi*(phi-1)*q with the stated sign.",
+    "height_child": "PASS: arbitrary signed divisors and all supplied exact polar presentations, arbitrary f including zero, nonzero r and exact coefficient relation at every place; one C for all QbarPoint including all embeddings, infinity and poles. Sign requires inverse r in pinned minOrd comparison. No Belyi or regular-value assumption added.",
+    "explicit_composer": "PASS: closed source imports Definitions only and accepts both exact universally quantified children as explicit hypotheses; no hidden law, circular target assumption, child import, local sorry, new axiom, new Definition, or deprecation. It uses actual B.canonical and both presentations, then restricts uniform full-point bound to affineLift and exact good-value identity.",
+    "readback_binding": "PASS: prior all-five compiler binding retained. Corrected composer packet is rebound with correct SHA, no control characters or inline-math newline/tab in any of 15 texts. Original blind packet SHA unchanged. All text outside inline math is byte-equivalent across original/corrected composer translations; mathematical content and scope unchanged.",
+    "readback_scope": "PASS: identity lemma has no DVR/RF/Belyi premise; parent retains full affine identification and six-field choice package, good value locus, no N>3 or point-degree bound; geometry has one r for all places; height child has one C for all points.",
+    "upload_child_types": "PASS: exact graph-generated upload statements occur literally as PlatformChildType0/1 annotations in immutable AuditSolution source SHA e07229b3d2bc7f3a3cefbf3307193925d783b09efdb1c0b6d56042143ad82991. This SHA equals succeeded ci-011470-30cb952c source receipt and roundtrip evidence. Meta.isDefEq parses and checks both actual annotations. Removed only inappropriate comparison of differently pretty-printed strings; no Lean input or upload type changed.",
+    "self_contained_solution": "PASS: two child imports, then verbatim closed helper source, exact original parent type as solution. No own-parent import, helper import or local sorry; expected transitive sorryAx from children remains.",
+    "source_evidence": "PASS: all 11 archived formal-source SHA256 match ledger; retained original notices including intentional absent header in Absolute.Basic with linter.style.header=false; Mochizuki official PDF hash matches quotation record; paper excerpts remain separate from formal readbacks and are explicitly contextual rather than claims of exact auxiliary statements.",
+    "input_drift": "Six recorded Definitions hashes match. Original parent hash changes only by intended reduction integration, already recorded by independent-source-review integrated_source_review; current four authored source hashes match that review.",
+    "local_graph": "PASS: parent actual valueDeps are exactly composer and the two children; composer consumes identity lemma; all five authored declarations reachable from parent.",
+    "platform_graph": "PASS: both children PUBLISHED and fetched Open; parent submission SKETCH_ACCEPTED; actual merged complete mathematical graph has exactly these two mathematical children into new sketch. One additional incoming edge is pre-existing FermatBelyiComparisons Definition. No new Definition or deprecation. Parent and root remain Open.",
+    "pending_database": "PASS as source-frontier refinement: only Genl BelyiDescent:215 removed; seven underlying pinned source obligations added. Neither new child claimed proved; broad plan checkboxes unchanged.",
+    "axioms": "PASS for classified reduction: closed helper and composer only propext/Classical.choice/Quot.sound; parent and both deliberate open children additionally sorryAx. This is not proof acceptance.",
+    "production_gates": "PASS: ci-011473-030c733f imports ImportAudit, Act1Scene1, AxiomAudit and review.passed=true/no_sorryAx=true.",
+    "diff_check": "NOT independently run (Git operations prohibited for this review). Root must retain its required git diff --check evidence.",
+    "platform_metadata": "PASS: published and fetched child formal_statement, preamble/definitions, trilingual prose and source match payload exactly; parent formal_statement equals original and fetched metadata equals requested patch. All three remain private in original locked mathlib environment.",
+    "complete_frontier": "PASS: all pages fetched, total 20 (previously 19); exactly parent removed and two open children added, remaining frontier unchanged. Complete mathematical graph flag true; nine mathematical drill receipts merged; new sketch has missing_children=[] and has_more_children=false. New child nodes hide existing Definition dependencies only."
+  },
+  "pending_gates": [],
+  "receipts": [
+    {
+      "receipt": "all-constants-leaf-result.json",
+      "job_id": "ci-011463-b0797b8f",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": ".local/adaptation/belyi-height-split-20261114/AuditAllConstants.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/belyi-height-split-20261114/AuditAllConstants.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 87.46581435203552,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 10362916864
+        },
+        "cpu_time_seconds": 86.37,
+        "peak_rss_bytes": 5038153728,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 37.45,
+        "cpu_system_seconds": 48.92,
+        "wall_time_seconds": 87.4340996999963,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "belyiHeightRelation-artifact-result.json",
+      "job_id": "ci-011456-0350e725",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "args": [
+          "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.lean",
+          "-o",
+          ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.olean"
+        ]
+      },
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.lean",
+        "-o",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 40.853147983551025,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 6715858944
+        },
+        "cpu_time_seconds": 40.19,
+        "peak_rss_bytes": 4254638080,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.29,
+        "cpu_system_seconds": 37.9,
+        "wall_time_seconds": 40.81348050000088,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "belyiHeightRelation-leaf-result.json",
+      "job_id": "ci-011455-ea498b6e",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiHeightRelation.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 40.588841676712036,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5444521984
+        },
+        "cpu_time_seconds": 40.24,
+        "peak_rss_bytes": 4317429760,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.82,
+        "cpu_system_seconds": 37.42,
+        "wall_time_seconds": 40.55102150001039,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "canonicalCuspPolarLinearEquivalence-artifact-result.json",
+      "job_id": "ci-011450-4b03821c",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "args": [
+          "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.lean",
+          "-o",
+          ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.olean"
+        ]
+      },
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.lean",
+        "-o",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 41.66260242462158,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5273825280
+        },
+        "cpu_time_seconds": 41.16,
+        "peak_rss_bytes": 4318666752,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.62,
+        "cpu_system_seconds": 38.54,
+        "wall_time_seconds": 41.62621950000175,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "canonicalCuspPolarLinearEquivalence-leaf-result.json",
+      "job_id": "ci-011447-4b982c05",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 39.290584087371826,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4534153216
+        },
+        "cpu_time_seconds": 39.129999999999995,
+        "peak_rss_bytes": 4338032640,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.59,
+        "cpu_system_seconds": 36.54,
+        "wall_time_seconds": 39.260559999995166,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "closed-axioms-review-result.json",
+      "job_id": "ci-011459-136ac14a",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": "Solutions/Checks_FermatBelyiHeightClosed.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        "Solutions/Checks_FermatBelyiHeightClosed.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": {
+        "language": "lean",
+        "passed": true,
+        "checks": {
+          "no_sorryAx": true,
+          "assumptions_reported": true
+        },
+        "violations": [],
+        "assumptions": [
+          "'AbcAdaptation.Tripod.Fermat.Proper.functionHeight_eq_htCan_belyiImage' depends on axioms: [propext,",
+          "'AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation_of_children' depends on axioms: [propext,"
+        ],
+        "diagnostics": [],
+        "output_excerpt": "'AbcAdaptation.Tripod.Fermat.Proper.functionHeight_eq_htCan_belyiImage' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation_of_children' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "compile_time_seconds": 44.066447496414185,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 8368324608
+        },
+        "cpu_time_seconds": 43.4,
+        "peak_rss_bytes": 4257849344,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.64,
+        "cpu_system_seconds": 40.76,
+        "wall_time_seconds": 44.029131200004485,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "composer-source-artifact-result.json",
+      "job_id": "ci-011445-a4fbc33e",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "args": [
+          "Solutions/Source_FermatBelyiHeightComparison.lean",
+          "-o",
+          ".lake/build/lib/lean/Solutions/Source_FermatBelyiHeightComparison.olean"
+        ]
+      },
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_FermatBelyiHeightComparison.lean",
+        "-o",
+        ".lake/build/lib/lean/Solutions/Source_FermatBelyiHeightComparison.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 41.917898416519165,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5669380096
+        },
+        "cpu_time_seconds": 41.370000000000005,
+        "peak_rss_bytes": 4350693376,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.95,
+        "cpu_system_seconds": 38.42,
+        "wall_time_seconds": 41.8818609000009,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "composer-source-leaf-result.json",
+      "job_id": "ci-011441-eddf5ff3",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": "Solutions/Source_FermatBelyiHeightComparison.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        "Solutions/Source_FermatBelyiHeightComparison.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 49.52811884880066,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5783334912
+        },
+        "cpu_time_seconds": 49.160000000000004,
+        "peak_rss_bytes": 4357844992,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.96,
+        "cpu_system_seconds": 46.2,
+        "wall_time_seconds": 49.5000585999951,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "polarPresentationHeightSum_of_principalRelation-artifact-result.json",
+      "job_id": "ci-011454-cabc190c",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "args": [
+          "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.lean",
+          "-o",
+          ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.olean"
+        ]
+      },
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.lean",
+        "-o",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.olean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 44.33701848983765,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 6671228928
+        },
+        "cpu_time_seconds": 44.05,
+        "peak_rss_bytes": 4347740160,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 3.01,
+        "cpu_system_seconds": 41.04,
+        "wall_time_seconds": 44.295581000013044,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "polarPresentationHeightSum_of_principalRelation-leaf-result.json",
+      "job_id": "ci-011451-d7ce2212",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_polarPresentationHeightSum_of_principalRelation.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 42.5103657245636,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 6925160448
+        },
+        "cpu_time_seconds": 42.25,
+        "peak_rss_bytes": 4338008064,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 3.25,
+        "cpu_system_seconds": 39.0,
+        "wall_time_seconds": 42.4626935999986,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "production-gates-review-result.json",
+      "job_id": "ci-011473-030c733f",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": ".local/adaptation/belyi-height-split-20261114/ProductionGates.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/belyi-height-split-20261114/ProductionGates.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": {
+        "language": "lean",
+        "passed": true,
+        "checks": {
+          "no_sorryAx": true,
+          "assumptions_reported": true
+        },
+        "violations": [],
+        "assumptions": [
+          "'JoshiTeich.Prologue.Perfectoid.canonicalPerfectoidData_laws' depends on axioms: [propext, Classical.choice, Quot.sound]"
+        ],
+        "diagnostics": [],
+        "output_excerpt": "'JoshiTeich.Prologue.Perfectoid.canonicalPerfectoidData_laws' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+      },
+      "compile_time_seconds": 99.39598751068115,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 13739040768
+        },
+        "cpu_time_seconds": 98.68,
+        "peak_rss_bytes": 8554369024,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 5.78,
+        "cpu_system_seconds": 92.9,
+        "wall_time_seconds": 99.35569679999026,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "reduction-axioms-leaf-result.json",
+      "job_id": "ci-011460-41240ee7",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": "Solutions/Checks_FermatBelyiHeightReduction.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        "Solutions/Checks_FermatBelyiHeightReduction.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 44.26155066490173,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 9493504000
+        },
+        "cpu_time_seconds": 43.160000000000004,
+        "peak_rss_bytes": 4216418304,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 1.85,
+        "cpu_system_seconds": 41.31,
+        "wall_time_seconds": 44.22144510000362,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "solution-leaf-result.json",
+      "job_id": "ci-011469-cf832a6d",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": ".local/adaptation/belyi-height-split-20261114/Solution_belyiHeightRelation.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/belyi-height-split-20261114/Solution_belyiHeightRelation.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 41.22935247421265,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 10203459584
+        },
+        "cpu_time_seconds": 40.15,
+        "peak_rss_bytes": 4221730816,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.12,
+        "cpu_system_seconds": 38.03,
+        "wall_time_seconds": 41.19618700000865,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "source-graph-leaf-result.json",
+      "job_id": "ci-011461-3e64707b",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": ".local/adaptation/belyi-height-split-20261114/ExtractBelyiHeightGraph.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/belyi-height-split-20261114/ExtractBelyiHeightGraph.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 52.84771203994751,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 10967625728
+        },
+        "cpu_time_seconds": 51.730000000000004,
+        "peak_rss_bytes": 5045469184,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 4.03,
+        "cpu_system_seconds": 47.7,
+        "wall_time_seconds": 52.81779180000012,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "syntax-leaf-result.json",
+      "job_id": "ci-011462-5c4fd938",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": ".local/adaptation/belyi-height-split-20261114/ExtractBelyiHeightSyntax.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/belyi-height-split-20261114/ExtractBelyiHeightSyntax.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 48.74992561340332,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 8985755648
+        },
+        "cpu_time_seconds": 48.28,
+        "peak_rss_bytes": 4992200704,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 3.03,
+        "cpu_system_seconds": 45.25,
+        "wall_time_seconds": 48.71059950000199,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    },
+    {
+      "receipt": "types-leaf-result.json",
+      "job_id": "ci-011470-30cb952c",
+      "status": "succeeded",
+      "exit_code": 0,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "parameters": {
+        "source": ".local/adaptation/belyi-height-split-20261114/AuditSolution.lean"
+      },
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/belyi-height-split-20261114/AuditSolution.lean"
+      ],
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "review": null,
+      "compile_time_seconds": 48.16689443588257,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 8882216960
+        },
+        "cpu_time_seconds": 47.16,
+        "peak_rss_bytes": 4877549568,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.98,
+        "cpu_system_seconds": 44.18,
+        "wall_time_seconds": 48.12734019999334,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null
+      }
+    }
+  ],
+  "reviewed_hashes": {
+    "final-readbacks.json": "ded906bfd9cfef8685252389acf809fd505e9a887a60dc0cffeac0bd9e297630",
+    "normalized-readbacks.json": "8cb203aac8e8e0c8540d7fedf63f16501dd13516147427cd609d118b740b6139",
+    "blind-readback-composer.json": "544f7eb7e1f146b4169926d974c35624589167a5494b3b4a1481f978825f37a9",
+    "source-consumer.json": "5a96a6f508fdb6964341f289246298d97a27b983999c9d9149468dd92ef61b2c",
+    "upload-problem-items.json": "abe8a67ff02863d6584ed58800aa8c6bff9bb17a0fbde5938798197e2a07d42b",
+    "Solution_belyiHeightRelation.lean": "4d592cfa011a05854af4d72412429a1639e2e2f404104891f2fa77ac3499f6b0",
+    "AuditSolution.lean": "e07229b3d2bc7f3a3cefbf3307193925d783b09efdb1c0b6d56042143ad82991",
+    "delivery.py": "5746146b585069cc96247fa5943a418086b3430fbac8147f21774257bb1aae8e",
+    "pending-db-before.md": "c95d7df27b7b4660c80db0c6aac0cb752830cd2dc4f7d52def0065c2ed31f2ed",
+    "pending-db-after.md": "a8884486f70944cdeb9e4bb9cb0cd0396a0d8da364fd6c014d9e5d57c801243b"
+  },
+  "updated_utc": "2026-11-14T10:38:11.130662+00:00",
+  "resolved_delivery_blockers": [
+    {
+      "id": "composer_readback_tex_escape",
+      "severity": "must_fix_before_publication",
+      "file": "final-readbacks.json",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.belyiHeightRelation_of_children",
+      "detail": "Each EN/ZH/JA composer string contains 24 newline characters where TeX rm commands were corrupted, and one tab from text. Examples include h_{newline m DVR}; overline, sum, max commands also lose TeX backslashes. Other four readbacks contain no control characters.",
+      "required_action": "Repair derived composer trilingual text without changing mathematical meaning, preserve original blind packet and lineage, then regenerate final compiler binding and review text hashes.",
+      "status": "resolved_and_independently_rechecked"
+    },
+    {
+      "id": "type_preflight_pp_mismatch",
+      "severity": "must_fix_before_publication",
+      "file": "delivery.py",
+      "detail": "preflight compares type-audit child type strings to graph elaboratedType literally, but current type audit uses default pp options: exists r / exists C versus graph typed binders exists (r : M.K) / exists (C : Real). Compiler Meta.isDefEq passes; string check would still fail.",
+      "required_action": "Use identical pp options and a new MCP-CI audit or record compiler-checked exact upload equality structurally. Do not weaken or alter the upload types.",
+      "status": "resolved_and_independently_rechecked"
+    }
+  ],
+  "delivery_blockers": [],
+  "scope_limitations": [
+    "Both child mathematical proofs remain intentionally Open; parent and root remain Open. SKETCH_ACCEPTED certifies reduction structure, not mathematical proof completion.",
+    "git diff --check was not independently run because Git operations were prohibited for this review; main agent retains responsibility for its required check evidence.",
+    "Graph mathematical closure is complete; existing Definition dependencies can remain hidden by the graph display."
+  ],
+  "platform_evidence": {
+    "children": {
+      "AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence": "d6a1ff14-5bc3-4b24-bdda-966c29d20c2c",
+      "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_principalRelation": "56f42c00-9e1d-4e2a-87db-b149750880dc"
+    },
+    "child_publication_jobs": [
+      {
+        "receipt": "belyi-height-children-ab4b5a7e-ddab-4189-9c97-bc923bd3e7aa-result.json",
+        "job_id": "ab4b5a7e-ddab-4189-9c97-bc923bd3e7aa",
+        "status": "PUBLISHED",
+        "theorem_id": "d6a1ff14-5bc3-4b24-bdda-966c29d20c2c"
+      },
+      {
+        "receipt": "belyi-height-children-db37ebb0-e978-41a7-86b7-9b8acca5d291-result.json",
+        "job_id": "db37ebb0-e978-41a7-86b7-9b8acca5d291",
+        "status": "PUBLISHED",
+        "theorem_id": "56f42c00-9e1d-4e2a-87db-b149750880dc"
+      }
+    ],
+    "parent_id": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+    "parent_submission": "9c3021e8-0e46-423a-84c0-d83bb24cbd86",
+    "parent_submission_status": "SKETCH_ACCEPTED",
+    "actual_incoming_edges": [
+      {
+        "source": "56f42c00-9e1d-4e2a-87db-b149750880dc",
+        "target": "sketch-9c3021e8-0e46-423a-84c0-d83bb24cbd86",
+        "kind": "sketch",
+        "node_status": "Open",
+        "node_name": "AbcAdaptation.Tripod.Fermat.Proper.polarPresentationHeightSum_of_principalRelation"
+      },
+      {
+        "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+        "target": "sketch-9c3021e8-0e46-423a-84c0-d83bb24cbd86",
+        "kind": "sketch",
+        "node_status": "Definition",
+        "node_name": "FermatBelyiComparisons"
+      },
+      {
+        "source": "d6a1ff14-5bc3-4b24-bdda-966c29d20c2c",
+        "target": "sketch-9c3021e8-0e46-423a-84c0-d83bb24cbd86",
+        "kind": "sketch",
+        "node_status": "Open",
+        "node_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence"
+      }
+    ],
+    "node_counts": {
+      "before": 155,
+      "after": 158
+    },
+    "edge_counts": {
+      "before": 470,
+      "after": 474
+    },
+    "frontier_counts": {
+      "before": 19,
+      "after": 20
+    },
+    "frontier_added": [
+      "56f42c00-9e1d-4e2a-87db-b149750880dc",
+      "d6a1ff14-5bc3-4b24-bdda-966c29d20c2c"
+    ],
+    "frontier_removed": [
+      "7cc0a201-c92c-4ff4-8377-f8ee6000a274"
+    ],
+    "mathematical_closure_complete": true,
+    "drills": [
+      "37855299-f638-49fb-ad17-09e409d28aef",
+      "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "9ea35172-fd58-4868-84a0-4d672a037da2",
+      "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "b8119209-2868-48b1-b852-09f51d09a310",
+      "4e9aedd4-c20e-438a-a048-671b7fe4c4e5",
+      "43cb2aa6-3713-4807-b8f4-ec88454dbd2e",
+      "1d2205bc-fb40-4de2-b78f-02b067f0b041"
+    ],
+    "no_unexpanded_sketches": true
+  },
+  "followup_reviewed_hashes": {
+    "blind-readback-composer.json": "544f7eb7e1f146b4169926d974c35624589167a5494b3b4a1481f978825f37a9",
+    "blind-readback-composer-format-corrected.json": "cb6bff4577b8265271e29689903e4937b9c446b3062fa10e432c0cbc4ed3ed97",
+    "final-readbacks.json": "1ad6fbe741d6b4e15c5fc76d6fe68869440128db40b73f7973901cfeb3549ee9",
+    "normalized-readbacks.json": "6a5c682662ced0434996e937a0f85acb78d5036c9e69ffc971707e7af8529a73",
+    "delivery.py": "5746146b585069cc96247fa5943a418086b3430fbac8147f21774257bb1aae8e",
+    "review-findings-resolution.json": "1ce4998244dfbbb81ff30635f3c0551e33c7c18ac8037fcce9435a43302a936a",
+    "type-roundtrip-evidence.json": "850a67a4ef0023bafe2e8ebc6efb83f26ca14bb32d31b1d4faf4396bd5aedab6",
+    "delivery-validation.json": "7f94c1dbc18869563edf4f10e3a626c4a36e5c9d3bf62128044b9ea5d968d2ce",
+    "published-child-ids.json": "8342ebaa46947e09ca9f734c52c0102b7bd060e62763a331c5e53e2bf008a478",
+    "reduce-parent-verify-result.json": "fff440c16c62d46bb41a5a6e730ea0e3711b60b3b0d52f6ce945aa01b197342e",
+    "platform-after-parent.json": "2478756a3a752348a0a8d5cf701658bf0ca9cfd0f98a5c97dfadedf9a25e00d4",
+    "platform-after-canonicalCuspPolarLinearEquivalence.json": "18ff1d381c1c3467bf4018140b7c3c3c3a806aca88cff0a125d259388628e877",
+    "platform-after-polarPresentationHeightSum_of_principalRelation.json": "509a1811fb9ca185a3104c2786566421a3b9cddbae72ce6bc8ac80967d274b30",
+    "direct-graph-evidence.json": "892ec7af279b6fc8731924f0f023b59e0926d5686497290619f0d7a794f14161",
+    "root-graph-after.json": "b4398373b9603109443219b02b28cfa089b278d9c95cc8e9ef4d3b2b85701a65",
+    "root-frontier-after.json": "5356423b36aad7e8dc1ac24c23bed2ae488d1911723fdd88ac0c7648c3dc218b"
+  }
+}
