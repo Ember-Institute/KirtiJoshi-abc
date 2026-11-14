@@ -6,7 +6,6 @@
 - `refer/iut/Iut/Tripod/ClassicalAbc.lean:307`
 - `refer/iut/Iut/Tripod/Main.lean:129`
 - `refer/iut/Iut/Implication/Corollary23.lean:56`
-- `refer/iut/Iut/Tripod/Northcott.lean:183`
 - `refer/iut/Iut/Tripod/Height.lean:603`
 - `refer/iut/Iut/Tripod/Height.lean:791`
 - `refer/iut/Iut/Implication/Corollary22.lean:111`

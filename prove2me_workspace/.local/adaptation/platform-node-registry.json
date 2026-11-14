@@ -141,6 +141,15 @@
       "status": "SKETCH_ACCEPTED"
     },
     {
+      "parent": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+      "children": [
+        "AbcAdaptation.Tripod.northcottFiniteRoots",
+        "AbcAdaptation.Tripod.northcottPolynomialWitness"
+      ],
+      "submission_id": "d8b05c1a-4925-4934-b121-125f14fc4977",
+      "status": "ACCEPTED"
+    },
+    {
       "parent": "AbcAdaptation.Tripod.highHeightEstimate",
       "children": [
         "AbcAdaptation.Tripod.canonicalCorollary22HighHeightEstimate",
@@ -149,6 +158,16 @@
       ],
       "submission_id": "fc4e169e-ab98-4ee7-92d1-d3d5288fddfe",
       "status": "SKETCH_ACCEPTED"
+    },
+    {
+      "parent": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+      "children": [
+        "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+        "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+        "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one"
+      ],
+      "submission_id": "e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+      "status": "ACCEPTED"
     },
     {
       "parent": "AbcAdaptation.Tripod.statementII",
@@ -377,6 +396,18 @@
       "id": "5deab000-c437-4bce-aec4-79896e55e593"
     },
     {
+      "name": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+      "id": "b05f4bdd-3602-4f01-a24d-5264b3633a1c"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+      "id": "aafd00f9-1cab-4d65-aecd-df0421540c2c"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+      "id": "3da8e658-eaac-405d-b57e-0bca0922d8f3"
+    },
+    {
       "name": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
       "id": "bfd60e2f-e299-4833-ab7e-03d2b7ccfd94"
     },
@@ -407,6 +438,14 @@
     {
       "name": "AbcAdaptation.Tripod.logDifferentZeroProjection",
       "id": "7ac3c32b-ac60-4815-8a86-e30399a61e40"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.northcottFiniteRoots",
+      "id": "e2582265-ec67-4a45-be11-01cc545cbeb7"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+      "id": "b5bcbad5-0352-468d-919e-a9113d188c69"
     },
     {
       "name": "AbcAdaptation.Tripod.radicalConductorProjection",
@@ -440,7 +479,6 @@
     "AbcAdaptation.Tripod.radicalConductorProjection",
     "AbcAdaptation.Tripod.Fermat.liftDifferent",
     "AbcAdaptation.Tripod.Fermat.heightNormalization",
-    "AbcAdaptation.Tripod.boundedDegreeFiniteness",
     "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
     "AbcAdaptation.Tripod.Fermat.Proper.modelExists",
     "AbcAdaptation.Tripod.Fermat.Proper.avoidanceRegularity",
@@ -479,7 +517,7 @@
   "files": {
     "AGENTS.md": "b1fd49ac39ff0af166382148288b9bdbd2b47bdccb9794e9e7def61c4fc5228c",
     ".gitignore": "017a1ff4e588451a86e8ed213b18532f90469a658927faeab1001d8042ab7d2f",
-    "docs/Prove2Me适配状态.md": "e3d55a2e1fd352800b2b94f70eea805f4cba19078f0f99bcd0248db9f4181224",
+    "docs/Prove2Me适配状态.md": "a172d65659c904ff1d9ea372aa1fae640e45b25852f58b9db6f3eff04698bb06",
     "prove2me_workspace/.gitignore": "817595d48805ba0be6c618df746a4f00248544ae22c876cf636208555dbb9b7d",
     "prove2me_workspace/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
     "prove2me_workspace/lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
@@ -494,7 +532,7 @@
     "prove2me_workspace/Theorems/Thm_AbcAdaptation_classical.lean": "f30a39b675eeb3448a340539f8e584d01b0d6ed850ce185ca42843fca2ab92c7",
     "prove2me_workspace/Theorems/Thm_AbcAdaptation_classicalInt.lean": "8ddd244139973229f0de2d04061846006260ff2a76a844973758bb92093530c4",
     "prove2me_workspace/Theorems/Thm_AbcAdaptation_rationalHeight.lean": "58d8ecf3597cfc0b6ddc2b61f94f666cd06ab6dc27f835e22fb9a3f56ef63b58",
-    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean": "199d189be897d1e5596c3552ceec57731c202c1612752ba342f842e259f3f59d",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2",
     "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_highHeightEstimate.lean": "92dd6c522cd8752c51e0775600f14892fd3881523ffb98f59cc4143011a51fbf",
     "prove2me_workspace/Solutions/Sol_abc_goal_lt_constant_mul_fix.lean": "047c54d7070166a07338ad7e7c8ec3df7e4e861bdb479b80fbae49a7eaaeedcb",
     "prove2me_workspace/Solutions/Sol_abc_classical.lean": "1504248a8274f3af452e12ddad7aa92769eb3f9340a43e87d639a3a7bfef2882",
@@ -2991,17 +3029,280 @@
     "prove2me_workspace/.local/adaptation/order-index-sourceproof-20261114/unit-ci-summary.json": "de50419a3e090299d44d1370ad88f73101cf9d510852e12fd8680e663d828f6b",
     "prove2me_workspace/.local/adaptation/order-index-sourceproof-20261114/validate.py": "2a1533d336b2c35dbdfc9ca8a285f74e57d4666ebb1732073e25238660a996e4",
     "prove2me_workspace/Definitions/Def_FermatNoncriticalOrderSource.lean": "10eba556c77327cd61ef5a44c1e6e561b2199f484db7793ce3331c6611fbc96a",
-    "prove2me_workspace/Solutions/Checks_FermatOrderIndexSourceProofs.lean": "fdfec6af43bf17cf9b7a51c5fd1294acd2300e03312eb7ab8e101e0a1d67394c"
+    "prove2me_workspace/Solutions/Checks_FermatOrderIndexSourceProofs.lean": "fdfec6af43bf17cf9b7a51c5fd1294acd2300e03312eb7ab8e101e0a1d67394c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/AuditAllDefinitions.lean": "a3862d0a3cdc8dc93bb669ec30572c8afb6fff0f19d425c25d64ed9dc4f43cb7",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/DELIVERY_README.md": "e81e35efe1170432d9d19ad9da53747f2df7bbfc82d94983e01d2489df3fa9fd",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ExtractNorthcottProofGraph.lean": "a8e0102c493f615c695a1e003ca1e9fad48b06db152ac14f2151edb9cc4248b7",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ExtractNorthcottSyntax.lean": "1e2ddea0674eaf6096ca0ca39af9e914cd81247b1fed242f2537f2aca1803639",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ExtractRenameSyntax.lean": "ad260c1429ed3c68f49249d6f7f1bae73777cabf81ea0dd8273eab2db7f3ac84",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.coeff_minpoly_int_mem_Icc-artifact-request.json": "5a62239a12bde5ac3b8b6be6eb2a4dc5c12c20ceae3b902958dc44515c89746d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.coeff_minpoly_int_mem_Icc-artifact-result.json": "6d45667e0a55fca93ed954663e2f989decfc26133e91cf2d093b41914bce551c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.coeff_minpoly_int_mem_Icc-artifact-submit.json": "c0ccf54425041d39025e664a5fe664e873dd981d5687a346e7a4962a574e8bbd",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.coeff_minpoly_int_mem_Icc-leaf-request.json": "5ae33b599aef4bd93d4c46fc54592005095987fabd1555a464a82baf2aa2f876",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.coeff_minpoly_int_mem_Icc-leaf-result.json": "d8fc1b092d45af7264a9d812c49f87a3a001917ba8a7045cc7241820fc1d591c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.coeff_minpoly_int_mem_Icc-leaf-submit.json": "0dd8c168f8d6df1871f10ddaa8acd55a68ebfefe993a8c116903cf2b44599174",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight_one_gen_le-artifact-request.json": "f379e31a68d3d051ac6701a73ca43bb4a1df32447c1391a77cae8e5af8a99092",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight_one_gen_le-artifact-result.json": "24c5e7102ed9be7d85ecc90a65db95fbbb0cf6422367476cb17b156bcb45722d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight_one_gen_le-artifact-submit.json": "858be7ebdf1e2bd2aedad8d41831ebbbd9e0ae69ed7e3666639e5cfd0c185d2f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight_one_gen_le-leaf-request.json": "89e46440bfb393b58b76f5f1a4b093fb60d9021e07971df46af0375451aa9d6b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight_one_gen_le-leaf-result.json": "5b937ab69a9bce00ad17077ed62c57475489df9d597a17defd21e7a4b88fd668",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight_one_gen_le-leaf-submit.json": "3865f8e9cb2ef1499bc1068672dc3dc657a476ad5fbff62cd077e57aa387f532",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight₁_gen_le-artifact-request.json": "12bd03f81cb73a1ba6cbd0f33e7925fa2c9de6090737b2beee9b59d369594925",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight₁_gen_le-artifact-result.json": "e9c23fddf79f59cceb4c315829f096b838a4f587242c4cc74640bbc533cdde48",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight₁_gen_le-artifact-submit.json": "3f9fbba090e9554365fcfdf6b4a6193eb40eb7587f3ce992dbbecf3e0a5d78ba",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight₁_gen_le-leaf-request.json": "b01a9567a365772491579e820b1d12f5256bd5cbb3b3440490513623048b5c0d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight₁_gen_le-leaf-result.json": "3f4f39a201eb892cfb769df9f0ea0b729ac45f0d90a6617e63b1aacf4859bd42",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.mulHeight₁_gen_le-leaf-submit.json": "339591b7e2656b00b34ba17f0cb44886401c3ffa6d23766a04ef07acc839e6c4",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight_one-artifact-request.json": "a7002cecd39d28b243681056ae7b246f42aef8841f063d3fee87820ba8c3183d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight_one-artifact-result.json": "11351be9f8146abbd307eb5a88cdb2e6dbd56222e3ca0e49782c82605a834aa9",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight_one-artifact-submit.json": "a8c4669c1bf968e03f03ec463fdc9da9a526f9c088718b6d1ccc28fed0467573",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight_one-leaf-request.json": "46149a1d449bf281bab98f9994a5a115bbec3aaa716cdb900e3bd2cd00343b4d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight_one-leaf-result.json": "beda0f82399e8d4042c1e59d17c913988fa061ec3f8116ca940ced94e0e9c2cb",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight_one-leaf-submit.json": "e1ec549be757c657849db5d0880961f8ec2c4fe1e21701519c5ddbd0995a827c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight₁-artifact-request.json": "3e5f6ecc8a6f1ceb839e576c0a61d3de7a28a1dc2f7ad6e3d061b70c61b84b35",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight₁-artifact-result.json": "cbdb401c3a4cdbde438d7404afc307552d19d395bfca2c1011e12c4f24881569",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight₁-artifact-submit.json": "63b61c6f325b0425e1bd352bf992df784651d2782fac542d3f13d4a7154613f9",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight₁-leaf-request.json": "c58a69eca7b3bc4b8f85339037820bf1d75a6adac94f3485c5aaa6d988ee2b43",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight₁-leaf-result.json": "8e329952229ac6786b18be2a517aed9e071966b315fb53eab027bdd724004e6c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Northcott.norm_embedding_le_mulHeight₁-leaf-submit.json": "ddedd9129f5ad84dc64ed81663d3f351c7c5d3ecd342dfdc9cc4e1e5afaa13e4",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ProductionGates.lean": "3b08e0bb0b9a1985669816cba5906ebdc8f6fcc81a33790bd79876a972274685",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/README.md": "e81e35efe1170432d9d19ad9da53747f2df7bbfc82d94983e01d2489df3fa9fd",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/SOURCE_LEDGER.md": "5531cab959479d0fef30a38fbc386ebd6005b4d82d552223d6237d0ada58a103",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/SOURCE_MANIFEST.json": "eee9051ca25f9248311433b91ad8ef5b565c49f24d0d7a6974bac789642f1f73",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Solution_Northcott_coeff_minpoly_int_mem_Icc.lean": "9b552e1baf583c076a9aee928f03e9d5961a4539d95417eef3de65bad3a89e72",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Solution_Northcott_mulHeight_one_gen_le.lean": "0a61cebad0f4c95921657b57cd66648751f16705386f9c6b31243741bbea47b6",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Solution_Northcott_norm_embedding_le_mulHeight_one.lean": "a9beb0d6531cd941d98beeba7e185cc0ea4056aff9f3e6e13e21ac1da075c8ab",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Solution_boundedDegreeFiniteness.lean": "ebe9d869b25a9728c2f5a178b4e9afcdc769b4cb752f3f56390aa654c009e42c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Solution_northcottFiniteRoots.lean": "2e59e2f5b8fbf0b84cac62981328ae8286d4e86067d994ac446ddc652a1c4be0",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/Solution_northcottPolynomialWitness.lean": "1fe63cd4fcdd9a0d94363ccef8c36ca64bd2cfcf6e572f1f0d5bd09344873042",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottComposition-artifact-request.json": "f6e464fb055e2b8b16fb76d544120de6a776d9822715aa532b8119edfc1e2daa",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottComposition-artifact-result.json": "c0a44a1b9bd861fcc20c125f8b25716711c51a3c36d8ed8d83218bb75d44225d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottComposition-artifact-submit.json": "d65ec2c0b914c9f900f0ec6b979328a035ba3cbc4d9d2834843a967193109602",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottComposition-leaf-request.json": "f1ee6e9bfb9b10129a06c8c1e9c3f1d7d275e89fb78892861f3d07456a5052d9",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottComposition-leaf-result.json": "2cbe719736570baed4d478593852d4ae7b9b642c64a9acc5f46cdfed4b320fcd",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottComposition-leaf-submit.json": "ad2fc3fe36654bc76090ed3db49963452fb50119147e146bab492c99515765e0",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottInputs-artifact-request.json": "4f1719a6bbba9e87c34b5872f4a2da0038b93b400d6102aa35d73295feb8b14d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottInputs-artifact-result.json": "9be16b1e50f13ad4ae5a25807f68d5dd2461c35365629263bf8a55164430379b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottInputs-artifact-submit.json": "7d4e4746934d3ce437ccb7943547841bc7c9924ecef6ee8f506948f316604b14",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottInputs-leaf-request.json": "40138ea15a09e00f55d2a4e31e7e8b37490b8d1d4fa33e74d291acffce166077",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottInputs-leaf-result.json": "9d7330c3f2e33ab6c9689e5f967e005bfbb748fbd903564515f7f94a4c820359",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/TripodNorthcottInputs-leaf-submit.json": "50be6ed9cf0e5d76972772fc865df750f14cd801ddffd18a80744f7e11687606",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ValidateExistingTypes.lean": "64204aeb808688b9de74e54676c2362ba69e83f13e8c7dc5ab74d3b7a022dd25",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/actual-delivery-states.json": "8fe209f98888e260bc19c4eaa64c05e3737ed28acae82151b936fd97d32aae94",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/all-module-axioms-review-request.json": "57cc2dbff6c41461c983def78caf3d73817569271071be0ead36511c4e2a270f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/all-module-axioms-review-result.json": "83961b50b9a032d52c1e06316758d2b20be8f538aad381a14c5919825d6beb15",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/all-module-axioms-review-submit.json": "8a2c114d2a8a1f1edbc8f1bbd1da39892b360023796b9d92a22d6091487648be",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/all-module-axioms.json": "563b545f316f77cf7f184c10f4c5177f1e459ae8e171ecfc1de8af9556e03d0e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-boundedDegreeFiniteness-artifact-request.json": "e36b0555b27f1f97db0bc9f5223d0df6c4c0d6aaa2161f8e9e19a1e5e25eb943",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-boundedDegreeFiniteness-artifact-result.json": "cb73a80885ed0af8582c62765f3d5f2e478fb93d0f5130cfab1bd4aa0ae8efa5",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-boundedDegreeFiniteness-artifact-submit.json": "c91a51d7d8ece7089caaf220b98f87b1a3396f95de66b057ba70a45f9537099e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-boundedDegreeFiniteness-leaf-request.json": "87ed46904460b7d42c0fd4b765836637eb54fea16d4206e8aa74e629b6a54c00",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-boundedDegreeFiniteness-leaf-result.json": "2d086dbd7dc377bae4fea33ed27a14cdcf21ac3b883b099ff8583795a1d14d83",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-boundedDegreeFiniteness-leaf-submit.json": "005e45a3f05fae637d35905f1ec383b56c98b00157ad3de1afbe08bb2811c577",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-closed-axioms-review-request.json": "3606b87182ea2839a6511f39f952df6e8e00cb79b5f31bb6e4e5c45f197e8ee1",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-closed-axioms-review-result.json": "2fcf699085b397300351091511f8ce896e82b335d67e1d7395b4db034ffbb11f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-closed-axioms-review-submit.json": "1bab82beaa191173dba3827ad391e8bfc8032fe4d480a6cbc4277f012a66217e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-northcottPolynomialWitness-artifact-request.json": "d7a983186785a7e9acb1c08aa8606315ed29d835f65c5cc4567272fe71363f25",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-northcottPolynomialWitness-artifact-result.json": "7c4bb8e5415e001a2cc66a914cc24918dbe727b941892f90ee2bd0d365a079cf",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-northcottPolynomialWitness-artifact-submit.json": "aec9dddfbbc918431edd8c838b0ddae40566865820f420819d9455ac8723b743",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-northcottPolynomialWitness-leaf-request.json": "edea036e5a2925c19cb0532035d049132a409624b2ddb359d03cb4be706d2482",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-northcottPolynomialWitness-leaf-result.json": "17772f4ad4d56b29ea7b3189da11516e58928e80b2a35850e7390a7b23f3c24f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-northcottPolynomialWitness-leaf-submit.json": "af87d8a2188b9d14486024c8362344d33d878e9563d9cad00fbfc0b2869b76af",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-renaming.json": "34d45e09065adc02f13d5790fd2561bfa2f5b1f369810cc6ad5111dad5c69a23",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-source-graph-leaf-request.json": "e1c2e19d214dcb52ddb22fa3cbf81dbc9179d8ac21d1f1f1e7641e86a2957781",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-source-graph-leaf-result.json": "6942ac4b1101e08cca5cfac5b3b7c6d85ad8e66a467b7a9bf79a0993256946ae",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/ascii-source-graph-leaf-submit.json": "89bbf9fd7fb79289e81039e1e4e8ec05bd796af3c564891f512cda86d4d781dc",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/blind-readbacks-original.json": "097ec65ad4219257398cbec9a37f6312eb7ef4a4cf77f96ae0a134a3804f6c8e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/boundedDegreeFiniteness-artifact-request.json": "050eec3819f50478e8e057d0cf0a17be78b1ce10885833c2d6098415f21c061a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/boundedDegreeFiniteness-artifact-result.json": "76cf388d356e61dbdc0604cae32a19477a7d10a2f764b49ea99dd177f7f7cd2f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/boundedDegreeFiniteness-artifact-submit.json": "6085b24a128f58a49d0bf3361f3f3e913bd118af42126fc2222fa8ec3af4644b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/boundedDegreeFiniteness-leaf-request.json": "f471f2adc14693092b320cca1b0afbec924a2ad963e9802638c1b0ac260636bd",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/boundedDegreeFiniteness-leaf-result.json": "ba577fa1996da10e47f12cf359114e00a623ecbe5c65ed1e905f8b9164aee723",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/boundedDegreeFiniteness-leaf-submit.json": "40d0600c3af7a0698547004bf0a05607b40decb347243bde24faaed9a62f0eb2",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/closed-axioms-review-request.json": "04ff5aad1543a3a0f932bb30f62d7ddd14213debc9f1db9c224491c479fa4324",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/closed-axioms-review-result.json": "74a08106d8d67532c0f2450d58bdbadff43e8a6f95f117e6a8b4d5b02430a901",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/closed-axioms-review-submit.json": "83ed5eb7aaa5ccc1cc548e04cd7b10f5ad639770b3ad1e5d55a385971824f57e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/compiler-formals.json": "d4a890e6eee5d09dd2d4e19f30a95971cca807c66e9f8c1a6b3f0c88f5f155fd",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/coordinator.py": "b05eb771d5abd1768f8a2df38bf80d6524e2851ec8bf6e0190716f044c6dcc9c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/current-source-consumer.json": "4fd8d9d08f5b23318a329b73c494b9093767f18797c35feed0c89612a96a5eca",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/decl_graph.jsonl": "59a849e07c0973059f372a8f40fadfb4da31811a3d625241fbd03c4c444dc4b1",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/def-TripodNorthcottComposition-b43a2d01-ba54-4946-8179-686d06c6e42b-result.json": "1af5c9750f371dc1a9bb76e61058c0225c02bf26491d172ed8ef6f582ab8b9f6",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/def-TripodNorthcottComposition-payload.json": "aa595a2b935d3b6dc1dc352aa0d98d0c7e41e5e835fb3ed93449c6768d095725",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/def-TripodNorthcottComposition-publication-requested.json": "9afda010ea89c63238dd378598b8eb54d0e0e9c24fbaf9da405cbef454977754",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/def-TripodNorthcottComposition-submit.json": "574ce6d26cf7a1c17268f1a75db09c676bc6de694c54a7c3fb90f241c9721d0c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/def-TripodNorthcottInputs-864f4b9c-b12a-4ed2-8343-421305090db2-result.json": "8fc412b8b49fd5884b0da59ad4b7b965ff53cf8ed9efbb1cdc6e8322f3feedc4",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/def-TripodNorthcottInputs-payload.json": "aada9e4055b19463da949b0f26f929d494a2d6b0e3725f064e8a3c42bdef5ab0",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/def-TripodNorthcottInputs-publication-requested.json": "4847b59f1d121bad680f5ec74b3832be69be11ac6765ee3ebce214a10f84fc9a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/def-TripodNorthcottInputs-submit.json": "d377302e00ae95e8423647d63ed9fe9ac28c029e56002eb3a3983372375e9a0a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/delivery-plan.json": "f76ddb3c2103bb1b64aa1e77ee77052161b37a4d8803d7412ad4c634aad74b66",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/delivery-static-review.json": "3cb601820af69e04e5312e2750d85bc13aa1fe8bac7679b0486ed1be7b8bcf19",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/delivery-validation.json": "5a05602f168016ac9c30278ada7d810a064f1ae600ca1e4b97ca53e4f23c39ab",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/delivery_common.py": "a3c177b0fbb495e646f219ce0c68e1449091f173853faea9ae91fa753580ce32",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/delivery_draft.py": "7ee54478229e5bf90ae6c27d28ecc8cd1a74a716de86b9e844da67a74ecac154",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/display-formulas.json": "eb8aec5b1f9a658643163cc7404f017072519ec123f186c899bd18ad26f8d4d8",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/existing-types-equal.json": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/existing-types-leaf-request.json": "817b5427a9f310a64824a973f43ded96547a90f210083aead2438d5f07551cb9",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/existing-types-leaf-result.json": "40c23ef7b6fa83242bf533342b2379dba24d48368ab0e2effaae3039d5322aca",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/existing-types-leaf-submit.json": "63f06fd3071f93d001e21f93aca80ff793af133d175ae37f0690234fc0611494",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/final-preflight.json": "59905be8aa629386703bf14bc06c530adf798bd3fa6be4ee618e47246bfe4842",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/final-readbacks.json": "64858f658b13de74e298a0dbf55120340da49bed0c98f883d7e20ec9089074b2",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/finalize.py": "eb7fc44c616b70187d824889391e5895bc8d26b9fc8e98e84ce3311efe8f826d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/graph-count-evidence.json": "d7cc0d646fb5108170a722976abea197fbc44b279353545cfa06c1c602b89ec0",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/graph_completion.py": "8fe93118e8b071f8a013fe4098f38e59c5fa3ab200ab6ad1abdb41e0f41220e6",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/independent-shape-review.json": "ec8a394c1bda9c935453a5902ac8c297a6019a027f5b7d6dd24c4a01ce53e726",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/integrate.py": "86050411ed38b7fe4e6aad245ef58ae1b66737de4f8777773ac25cec6fd8202d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/integration.json": "d15030bb89ff0a25e7d615eef791262bd8dea0c47896eacabd4016028a9b1390",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/licenses/LICENSE.iut": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/licenses/LICENSE.mathlib": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/mochizuki-quotation.md": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcott-children-03d8946c-f531-43e2-9fc4-96e672572ae4-result.json": "61fa848619f98d237898695d3c1cc7e5b5f26dddfd2866439aaae847d1ee1468",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcott-children-07d346a6-d7d9-43ed-bd44-67a5e0e94d74-result.json": "6a3678260d33ad04319c473d4ce32db6b3573707db9cf10d42d7c4d9b91e719f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcott-children-6bbe006c-2397-43d2-bec0-de7929afe2d7-result.json": "8d499153294a95a80513c55c3e85e75f7a4c88b2576ec2735ca796e1a7f6fd55",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcott-children-c3d6a982-a807-4fd7-bf45-267c352208b7-result.json": "562aaaff2a88c0cdbc028399aeeb123c695d614c1e0ee9a185ad9b6541d806fc",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcott-children-e9d30e36-f759-485a-82dd-c00a5916f703-result.json": "84b2c78cde500d4e788387c5d1da0eada3450e89ef967e124d4d024a5db606d8",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcott-children-payload.json": "e37caf8116527f17092e8453a5814f7c30fcaed6020b32da736e54f230daf074",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcott-children-publication-requested.json": "f3378606ca2da798cd7dde9fdd1a6a68007253724f52b0457bd42dc7c244c04c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcott-children-submit.json": "dd07d029f7e261c246910d54d30c20624da6fec26b17a538f86006f66ec730e9",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottFiniteRoots-artifact-request.json": "56e15fe4adf591c470571c6cc28f3c47c7fad87c03581192d73fad5827f1e57e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottFiniteRoots-artifact-result.json": "8a6a16b6702f67eff8dc9cd22412a7a41f761b6cdcaab7d92a9d53fd36106fb2",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottFiniteRoots-artifact-submit.json": "fc412c67d15e5d98a5b79a9f843af884320451ca900c72f85c590d62ada158a7",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottFiniteRoots-leaf-request.json": "e8721c75b13bc60eb351f4f0a3757fe31f4db852112d56b92088348f6c77cd2e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottFiniteRoots-leaf-result.json": "1a5fe3da5bb43aa75af2c3a849e9f09c164e3fc3293247226f35715cef4c4ce6",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottFiniteRoots-leaf-submit.json": "0db18a4ec1eeb8c63393d9d3be94321817520af5f3002de789891f212ae96a47",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottPolynomialWitness-artifact-request.json": "cc40a0dcc8257cd6e8d65c1a8d2501d0fbd631a80bf974954e2729e0db8c28d7",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottPolynomialWitness-artifact-result.json": "61414e7a6a1b7d0bf86f0af78982543121367bc0b51f9aac546484825849537c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottPolynomialWitness-artifact-submit.json": "1fd96c46a70fc382784febfb598387e8fe8d6fb6f2cdd8d2743a433011a9d4ca",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottPolynomialWitness-leaf-request.json": "6045b650bd67ffd2d8a9040694d2792d93b793842fb5aadc8911bbef18f5b1c8",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottPolynomialWitness-leaf-result.json": "5ae5bbc9595ec1963dc1644479cee357bdd40634064e77d1b83a14c90fa6f9ca",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/northcottPolynomialWitness-leaf-submit.json": "824e894b287261aa706d5dbf9baa70650b587b6ab1e1fb779f2a294171fab08b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/parent-metadata-evidence.json": "cc40611fc90939876bb90defe9eaff35c0f930fb90532e2f8bf5cae4243f0871",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/parent-metadata-patch-draft.json": "bb0d672cfbe35c13f6ccec22a562e41fc5e34efe4d6e9b64fae0db62aefa028b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/parent-metadata-patch-request.json": "bb0d672cfbe35c13f6ccec22a562e41fc5e34efe4d6e9b64fae0db62aefa028b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/parent-metadata-patch-response.json": "d7b3f7e310cad3abf1a320a0e4404e5f67c1ab30b54e04e64f3184060fe77485",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-after-Northcott_coeff_minpoly_int_mem_Icc.json": "72be875a54af57ffb01ee5f88d6e038b7af4a89c2fbe4f0b4190a72f71986010",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-after-Northcott_mulHeight_one_gen_le.json": "056781038b5c4aaeed84cab5e25cc65b442f8a2a5772de838534e9049402e69f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-after-Northcott_norm_embedding_le_mulHeight_one.json": "634ec261e141c064b8c83117aca6421ff2a02e7cdc8ec2e8f9ccf10112471180",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-after-northcottFiniteRoots.json": "7f854ada3fbbad1448de6e949d6993f84caf23a7ed5c66c783851b94080ba10b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-after-northcottPolynomialWitness.json": "32f304b27b898b71cb4a9a781d984dbc24e54a3777803597febb22d9d9a819ef",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-after-parent.json": "480f134e308771814c3f10207b66b13ccb8f344b29125b4b364ddbb08977f92d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-before-boundedDegreeFiniteness.json": "d9c24437637ba455e9b9cb20e1b274c51d692679f0e775a4c13d54759975c0df",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-before-parent.json": "d9c24437637ba455e9b9cb20e1b274c51d692679f0e775a4c13d54759975c0df",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/prepare_payloads.py": "cd34401ddfc4106b38903eb85421c22194431654a170273e6b38e9883de5066a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/production-gates-review-request.json": "da21674e6a86699e30f1b8261861672610028b22eff9e4aee85a0329cec94014",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/production-gates-review-result.json": "b8d0dde3e7474d54d61b48e0ada712fc56ac909c0e6bd85a38b7b26d6342268f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/production-gates-review-submit.json": "21425fcf4d78d947ec36faca0acf6979096db13ecab07017e2706ad68ff7def0",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/publish.py": "4980e84aefd3130b4156601a7f81e56490005d8b02b56de8e7df412df2a45872",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/published-child-ids.json": "85f2651ed59f32c342f87e7948b6e988ab9d1233d3ef1c7ac8fdafb61a6e8d3f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/quotation-QUOTES.md": "b629ca88b93806fc8ed8933847e5d9490264af1d27b6b4e9fa7016b7264b066d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/quotation-fetch-log.json": "eefe0ae3e17f2ddf0e7e06e776871163e99f8250239389d1a16a6ded6df58951",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/quotation-source-quotes.json": "a7e6f65681b193ee4b30033eb56902766e34d64532b7b9ef148f3499e2c5795c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/quotation-static-review.json": "1c23584d686778bcaa0e1194868921af641109251e21577bcc3fe17dfcce95b5",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/quote-rendering-normalization.json": "2d5dea8c98446d2b5baf1e886e2d9d55d8586144e3d981687f36177e145f4cdb",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/reference/Basic.lean": "ef9ae664dc1d770221b7153f3ea3c8ab703183233657931b3d26cbbfac9566e4",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/reference/Northcott.lean": "8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/registry-before.json": "66ac440f818fedc51b2443b8fd7add2128f3f264d4157843968945b88b93db0a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename-syntax-boundaries.json": "8847dac4e609dbd3f2b56e6b0bafbb613f93804203b984f1cfcc76aa38526040",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename-syntax-leaf-request.json": "7000031bb03fbf9d58efb5764d96bed655fc73e7802b46a419a3a874e1523bac",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename-syntax-leaf-result.json": "a3e497e7ed8648e5eda5c404e591c87bc678c9be83326da04dcef738ce7ee872",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename-syntax-leaf-submit.json": "8a5221167c6e0e223f2b3167b3b4a71134a8a674cf8666ec796daaf5578e1b3b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename-witness-symbol-facts.json": "ec3ef8f6c8ae9de294f9ec8aaeda0d01bc0dde9aa70c7906f61fbb9ec5bdead6",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename-witness-symbols-request.json": "dde1313f5ceb016187d350020e22d4cb7cae73f0d4079db50ec4a7ab8d14f5e7",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename-witness-symbols-result.json": "38cc7681a2c3d08ba50b60d5281117bcf9bd173bd6e81e5389fad18014b5c101",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename-witness-symbols-submit.json": "a37db92ebffef4e8957909a48bdcbbf003767de6a7062e61d8a2714be90e1ad2",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/rename.py": "41d0722779e1f940b34b4e06cf6682039abc010a272355e94090e9813ef1cae2",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/report.json": "3cb601820af69e04e5312e2750d85bc13aa1fe8bac7679b0486ed1be7b8bcf19",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/resource-estimate-basis.json": "309bb9c83901dd23ca94dd4b9592383c1274bad0abb31926a93931d69970c630",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-frontier-after-page-0.json": "68d88816aa8005a2f32c5fa21fe4248b590180cc953a6fb6f31ffab7ce7389ee",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-frontier-after.json": "b7451c07c2df66da3076de329891ba2d454244aa17319e0d172b13b1d1100405",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-frontier-before-page-0.json": "a76c10bf57dc446a52df180e15617217f77d250a03a1f1c350d7e70cd5466dbb",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-frontier-before.json": "03aba180abbb343f6cd8f6904dc7e7861b5c405165a3ebfe9350e579dc78d658",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after-drill-37855299-f638-49fb-ad17-09e409d28aef.json": "441ff09495fb3a5dcd80b7e8fd82849dcf0a301014c9159b71d7afc8e2dedd66",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after-drill-43cb2aa6-3713-4807-b8f4-ec88454dbd2e.json": "4819710c117165934b80a8755de7d477c94b920c64dc11cd58d99f9ef417a98a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after-drill-90a6f1ba-385c-4416-91f1-b6e764774c0d.json": "795943ebb65c59d14c6c0c54b1f23563215832c64e743f605c03f782d1fae69a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after-drill-9ea35172-fd58-4868-84a0-4d672a037da2.json": "cc4109096c3da80fda34ecf9dc096b8ec14f4f58faafbc6908372a158920b9dc",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after-drill-a6fcc25b-32d0-4414-97aa-f0e02d9ab853.json": "8ed3203a38d4db083c48cf1e3952789eccd667f88db2b2852c9f71915c0349c8",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after-drill-ad423628-d8a1-4e5e-8a80-0950952bedaf.json": "c35ce4e00c18cedcfcd1b75c25ee642baa53c0b82abf20abe9a914d4525f998a",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after-drill-b8119209-2868-48b1-b852-09f51d09a310.json": "a53834956c198d6a3c4426d739850b3b12b05a4931ec3b0d6704c6dfac35cd11",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after-overview.json": "8b8a83127d87aee2b418e77a036834fe3f9e73ae3e68bfdb96fd9548b6021b0d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-after.json": "f9ca46414057d5b2f9db146a24affff6e5010f0745de43de27c0700ba4493a9e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-before-drill-c2a137d1-be1a-403f-8615-f4eaed1c43f6.json": "d0a94cf26d58a1dd142a38f2741b88d2eae728a7b3404d6418b0f6c4f36df0bf",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-before-overview.json": "b95a6c30e1c68eb49f32e37ec7d33a5ab4247043415a8d325c4ea76ced9c031c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/root-graph-before.json": "bc4ade64b0b79197cdb9baa2a5f58459ba0fe23cb55f3e6095b5c2fafc40a826",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/scheduler_common.py": "001be4d271bc7b1ffb5b28caf28934896cd0fc47863a82a75acab3c081843363",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_coeff_minpoly_int_mem_Icc-leaf-request.json": "66db084bd0caf4e2938142052fff7d9d0d1f0d40f6f8854a8dc35b6f452e24b6",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_coeff_minpoly_int_mem_Icc-leaf-result.json": "49a939e491be253366dcd3b7eb643e57dc50c55def638b833278b131e63c724d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_coeff_minpoly_int_mem_Icc-leaf-submit.json": "340b739eb1c3602f2e2bb4157749b92894830313755561a3692418f932a397cd",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_mulHeight_one_gen_le-leaf-request.json": "e43f02d0bf6bbf1a62ad0217e76214720e57b2e25db343deff0e9e1a20533fea",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_mulHeight_one_gen_le-leaf-result.json": "8204744a8fbb6ce2facd45c50ef7b092889d75032bec15a787cedf2af4a74263",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_mulHeight_one_gen_le-leaf-submit.json": "6b23b3b620bb5bedfdf8c2776bda1dee8867e851208bad1066f9c2f21c8a4587",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_norm_embedding_le_mulHeight_one-leaf-request.json": "b1462b38227a7bfed3572be1a6933bee3d3af224f2adb607679653f51232bde5",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_norm_embedding_le_mulHeight_one-leaf-result.json": "454123c134f8758f355738346fd1041c1a4b6099c90009a5f0505ceed2f7c1df",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-Northcott_norm_embedding_le_mulHeight_one-leaf-submit.json": "a431a1035bbfc917c16f689dace3848a69694d0102be5b207c0c1ffe94703b2c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-boundedDegreeFiniteness-leaf-request.json": "13975eb76b6566ca10b42a8ec03aff312d3859cc8b8a9172c9601c54681d70ea",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-boundedDegreeFiniteness-leaf-result.json": "8850728f5ed6d3d258e37f8f37bb396b1a13af1ce5fa3fbb27a0e071c7848765",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-boundedDegreeFiniteness-leaf-submit.json": "c51c88a9fd9b5d0f89d3537eee097cb8f968cee398379034e842843a61911c50",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-northcottFiniteRoots-leaf-request.json": "3bcdf1972527e3059fbb47f5fd471f17d2c43212b69e9a87f74f2a5b9c2af546",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-northcottFiniteRoots-leaf-result.json": "50f9e9a5a89c81908bd828d766638753af3bdd508e185dbc4c0f81ed42fe6ee2",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-northcottFiniteRoots-leaf-submit.json": "c939124c8a683986d8e6c9864c222ddd56c32e064012d1c61a5f764be8682189",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-northcottPolynomialWitness-leaf-request.json": "5092b6a6ef49ed170c3b8dfc98b4b82e2ab8921173e6fb93672ef3955ead2086",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-northcottPolynomialWitness-leaf-result.json": "addf7f9c9c98fea5fadbcb3d8b90aefa055d57daaeed0ea0981eec5be8055c3b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/solution-northcottPolynomialWitness-leaf-submit.json": "a53fd8d837d405bc503f099570fd5d5d0c7a4b616fe7494643abbd9f9bd7c205",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/source-graph-leaf-request.json": "3bf8a361839a422ccc10281d1b66fbe0d2a0a0b9f84790e4be180a6119264231",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/source-graph-leaf-result.json": "1c43e8c34081a5121caef29040ddd468311dfbabcdde1732b830653d23343103",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/source-graph-leaf-submit.json": "2a5438adab76afc81fd9b146483bb2c3ac1cf848373d08f61d9110de8dd25f31",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/source-ledger-link.json": "c2a7789fe4790d300d551af71282557e416b34930361239c8e2c8e2d88971c00",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/source-pin-draft.json": "4a14ea0e4ed2236a83ea26c5c0edd847caf530a11f27188e6521d3c212584de0",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/source-proof-provenance.json": "e87ad20dd70065c480a251f365ead11c7a2f9ed5e23b892fef0e47b5856477e3",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/source-quotes.json": "229a2511204182c98e6562f7e120bb5688589d3d1c5ab3d5db647b49e0e3d6cb",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/syntax-boundaries-leaf-request.json": "482806660852d45861e89c9f6e4aafd6a2fd8b3abca0c88884a0efd6634c48f1",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/syntax-boundaries-leaf-result.json": "6fbeff57a3e9a5b53af2d00e046c0658c007ba23bf29cae61e45d48716d53921",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/syntax-boundaries-leaf-submit.json": "97839910b8ea97f5fc778cbc76e3df77c1cdd43fd296694b655d40336f0c2d07",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/syntax-boundaries.json": "e12ae8b04343c7f5bce4896ef0ec816fdef2783d08ada5953171ac978c872cf4",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/theorem-name-map.json": "8e4c50c997f9225ddf55aa063e5c1c77611c12805721a737158bc769161cf1cc",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/unit-ci-summary.json": "6b614714be013be74f36112a77163749c302dfb94d392b8d6c58266c3b5774df",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/validate.py": "1877cfb8f92cb6419f754170001f0a1227e484fa589e78fb193c438e90814cfb",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_coeff_minpoly_int_mem_Icc-request-draft.json": "4aeba47912d5f3a373df7cb4e5b281a760a4687f0fc97b4e656ffa298e484090",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_coeff_minpoly_int_mem_Icc-result.json": "4bff3913cac0fe3d76c73e666b37de4f73991024e5aff389c6efcf9bf83d1814",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_coeff_minpoly_int_mem_Icc-submit.json": "020727a2bfd276db72fdc9eb384a1036ee2be9e9accfeb8dc2f2dafde485cb6f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_coeff_minpoly_int_mem_Icc-verification-requested.json": "d3113187eea541d86b14210e6958ba92c43592a6534d08d2efdad9ecfef8f941",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_mulHeight_one_gen_le-request-draft.json": "dc5fa6c657d9af40b251b008c087e172ffe2970b3086aacba093fd40c38fcc16",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_mulHeight_one_gen_le-result.json": "b7fd099b782956b392d5df0284340c3b80a81c24ff9415139ae6e54648a1e1d0",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_mulHeight_one_gen_le-submit.json": "07b80fc6364064c2cf295c7058da9544479339ed239a33d7627f2e9f10b62587",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_mulHeight_one_gen_le-verification-requested.json": "cd01b0087303391aebacf719984ead47b959d4d63d5bb5e5d89cccaa97cc6b3c",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_norm_embedding_le_mulHeight_one-request-draft.json": "33af5cb4351ff32fb1856902974094fce445e352aa92711a7d8306a2b14d625f",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_norm_embedding_le_mulHeight_one-result.json": "53e6409f3a7f8a8288f3387385092de283c9f02a50f920bd2f3f6655ea660cdb",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_norm_embedding_le_mulHeight_one-submit.json": "552586bf3b4b0c0df8a78ccc93103b54f362e001d84b30d87323d4da561e5be4",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-Northcott_norm_embedding_le_mulHeight_one-verification-requested.json": "63408c8cdd8eadeda4af8e2b0387de7f6611627834cf2ffb59a03a5131495fdf",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-boundedDegreeFiniteness-request-draft.json": "96fdcab731fd852fc398aea20b4f1392ffb168cf882df47f10aecee317ac02d6",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-boundedDegreeFiniteness-result.json": "5cd49920347a54f8dbf366fe9b3c3e98b5fbd231d8e900735f8e7da10f680d09",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-boundedDegreeFiniteness-submit.json": "b3cb2db5fd286c157dff5ef3996922550a8ba0768fec80b1a4600aa2eeea0723",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-boundedDegreeFiniteness-verification-requested.json": "62664f97189db836bd8f1bfca2ee604d2f6c7207677b4cd8f2781206a045f534",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-northcottFiniteRoots-request-draft.json": "953af9cdc20f35dcbc44743f5cf0a262fac61a95e8f84f9f0d2e4234654047ae",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-northcottFiniteRoots-result.json": "51cfd240606fec914fc1fae60bb27f67c1730e8c493fe6d99aadf556e0d5f8d2",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-northcottFiniteRoots-submit.json": "18afac7ec094ff8018ffb0bda1d83a1a6ca33c838cb14a73d0b0e98496f6a330",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-northcottFiniteRoots-verification-requested.json": "0eb2f357d686bbd5d03448a122173f2775988595fe057877cfdb2a80c19cc68d",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-northcottPolynomialWitness-request-draft.json": "01d53f804c29fe515fb4115d6dabf1e7ca999052ef69360d44a5c59784db6a10",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-northcottPolynomialWitness-result.json": "9dad2830b9ffb9daea2c7db223e9c729b902cee19f4889719d1e4c7e7283136b",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-northcottPolynomialWitness-submit.json": "223dd734595157f4b9c26dd30bd94be95a6ca50cc0f6ab06918f2cfb3acc554e",
+    "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/verify-northcottPolynomialWitness-verification-requested.json": "3e003349d1879a6236c79ca113b25b50e9b754507c258d080aca4753ada9e50a",
+    "prove2me_workspace/Definitions/Def_TripodNorthcottComposition.lean": "2571764c67068b21ba010348772b450f859d7235ac67e0e2f6d3d3021a9e18de",
+    "prove2me_workspace/Definitions/Def_TripodNorthcottInputs.lean": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+    "prove2me_workspace/Solutions/Checks_TripodNorthcottSourceProofs.lean": "55b40f438f64be5efec0ce5819a630859eb117dc6274081a9202cededd9e5e30",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean": "1794d880113c645a22ae77770c9a9e936d89eb1f5abfee2c6f31c65f1e6cf4a0",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight_one_gen_le.lean": "25f11d7f410e0de28e0c171662f054dad82e5866cfbf652c68dae7532903ad6a",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight_one.lean": "e13cb8dddbea6a4b5abc83117181a87a92312eaeb3478e605da6edacddc186b0",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean": "091d803c9134d384ad9ed8f4292ba9ac28246d6bc50bcb7514aac5fa5e8a5dd7",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean": "8a64718f2c2f4a9033f95a4518aeb47ccf9c3e727b6a23ac05ae2f3a854736ce"
   },
-  "recorded_at": "2026-11-13T23:30:33.402889+00:00",
-  "local_open_children_below_root": 28,
-  "published_open_children_below_root": 28,
+  "recorded_at": "2026-11-14T00:19:51.290402+00:00",
+  "local_open_children_below_root": 27,
+  "published_open_children_below_root": 27,
   "local_rational_projection_edge_verified": true,
   "remaining_platform_edges": [
     "Continue noncritical Belyi, Fermat arithmetic comparisons, genuine universal 3.12 and Joshi Scene1/Prologue source decomposition."
   ],
-  "accepted_platform_reductions": 19,
-  "dependency_edges": 62,
+  "accepted_platform_reductions": 21,
+  "dependency_edges": 67,
   "readback_source": "Every newly published node uses an existing independently generated trilingual read-back; platform natural-language fields retain it with Mochizuki source quotations.",
   "local_high_height_children": [
     "AbcAdaptation.Tripod.canonicalLegendreHeightComparison",
@@ -3011,11 +3312,11 @@
   "local_high_height_composition": "AbcAdaptation.Tripod.highHeightEstimate_of_canonical_children",
   "local_high_height_platform_connected": true,
   "graph_counts": {
-    "accepted_reductions": 19,
-    "published_children": 56,
-    "dependency_edges": 62,
-    "open_frontier": 28,
-    "direct_closed_children": 11
+    "accepted_reductions": 21,
+    "published_children": 61,
+    "dependency_edges": 67,
+    "open_frontier": 27,
+    "direct_closed_children": 16
   },
   "revision_policy": {
     "user_authorized_candidate_decomposition": true,
@@ -3079,7 +3380,11 @@
       "child_status": "Proved",
       "proof_type": "prove",
       "proof_receipt": ".local/adaptation/order-index-sourceproof-20261114/prove-noncriticalInverseRamification-verify-result.json"
-    }
+    },
+    "northcott_existing_nodes_and_reductions_preserved": true,
+    "northcott_new_node_count": 5,
+    "northcott_new_dependency_pair_count": 5,
+    "northcott_parent_proved": true
   },
   "direct_closed_proofs": [
     {
@@ -3135,6 +3440,31 @@
     {
       "name": "AbcAdaptation.Tripod.Fermat.Proper.riemannPolarApproximation",
       "submission_id": "673f2a75-4bb8-4615-a0d3-bae1217837a7",
+      "status": "ACCEPTED"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+      "submission_id": "b40d2c08-f311-4bf2-8191-894ecf524a72",
+      "status": "ACCEPTED"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+      "submission_id": "1f7cca94-659f-4492-ac4a-0a0504620ce1",
+      "status": "ACCEPTED"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+      "submission_id": "cfaa3775-6edf-4ac3-a873-28723f9c1320",
+      "status": "ACCEPTED"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.northcottFiniteRoots",
+      "submission_id": "87ea6182-c301-4ee5-94bd-5c6c32e69557",
+      "status": "ACCEPTED"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+      "submission_id": "e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
       "status": "ACCEPTED"
     }
   ],
@@ -3204,7 +3534,7 @@
     "AbcAdaptation.Tripod.Fermat.Proper.divisorDegreeHeightComparison": "Open",
     "AbcAdaptation.Tripod.Fermat.Proper.placesDiscrete": "Proved",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalCompositionRamification": "Proved",
-    "AbcAdaptation.Tripod.boundedDegreeFiniteness": "Open",
+    "AbcAdaptation.Tripod.boundedDegreeFiniteness": "Proved",
     "AbcAdaptation.Tripod.Fermat.Proper.canonicalHeightIdentification": "Open",
     "AbcAdaptation.Tripod.radicalConductorProjection": "Open",
     "AbcAdaptation.Tripod.Fermat.Proper.planeAdjunctionExists": "Open",
@@ -3221,7 +3551,12 @@
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalElementaryCompositionRamification": "Proved",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtRegularPoint": "Proved",
     "AbcAdaptation.Tripod.Fermat.Proper.noncriticalInverseRamification": "Proved",
-    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole": "Proved"
+    "AbcAdaptation.Tripod.Fermat.Proper.noncriticalPolynomialOrderAtPole": "Proved",
+    "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one": "Proved",
+    "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le": "Proved",
+    "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc": "Proved",
+    "AbcAdaptation.Tripod.northcottPolynomialWitness": "Proved",
+    "AbcAdaptation.Tripod.northcottFiniteRoots": "Proved"
   },
   "riemann_sourceproof_unit": {
     "closed_direct": [
@@ -3516,5 +3851,108 @@
     ],
     "all_frontier_pages_fetched": true,
     "source_ledger_link": ".local/adaptation/order-index-sourceproof-20261114/source-ledger-link.json"
+  },
+  "northcott_sourceproof_unit": {
+    "source": "northcott-sourceproof-20261114",
+    "children": {
+      "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one": "3da8e658-eaac-405d-b57e-0bca0922d8f3",
+      "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le": "aafd00f9-1cab-4d65-aecd-df0421540c2c",
+      "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc": "b05f4bdd-3602-4f01-a24d-5264b3633a1c",
+      "AbcAdaptation.Tripod.northcottFiniteRoots": "e2582265-ec67-4a45-be11-01cc545cbeb7",
+      "AbcAdaptation.Tripod.northcottPolynomialWitness": "b5bcbad5-0352-468d-919e-a9113d188c69"
+    },
+    "definition_publications": [
+      {
+        "name": "TripodNorthcottInputs",
+        "job_id": "864f4b9c-b12a-4ed2-8343-421305090db2",
+        "status": "PUBLISHED"
+      },
+      {
+        "name": "TripodNorthcottComposition",
+        "job_id": "b43a2d01-ba54-4946-8179-686d06c6e42b",
+        "status": "PUBLISHED"
+      }
+    ],
+    "closed_direct": [
+      {
+        "name": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+        "submission_id": "cfaa3775-6edf-4ac3-a873-28723f9c1320",
+        "status": "ACCEPTED"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+        "submission_id": "1f7cca94-659f-4492-ac4a-0a0504620ce1",
+        "status": "ACCEPTED"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+        "submission_id": "b40d2c08-f311-4bf2-8191-894ecf524a72",
+        "status": "ACCEPTED"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.northcottFiniteRoots",
+        "submission_id": "87ea6182-c301-4ee5-94bd-5c6c32e69557",
+        "status": "ACCEPTED"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+        "submission_id": "e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+        "status": "ACCEPTED"
+      }
+    ],
+    "parent": {
+      "name": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+      "theorem_id": "bfd60e2f-e299-4833-ab7e-03d2b7ccfd94",
+      "submission_id": "d8b05c1a-4925-4934-b121-125f14fc4977",
+      "status": "SKETCH_ACCEPTED",
+      "receipt": ".local/adaptation/northcott-sourceproof-20261114/verify-boundedDegreeFiniteness-result.json",
+      "platform_status": "Proved"
+    },
+    "new_mathematical_nodes": {
+      "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one": "3da8e658-eaac-405d-b57e-0bca0922d8f3",
+      "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le": "aafd00f9-1cab-4d65-aecd-df0421540c2c",
+      "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc": "b05f4bdd-3602-4f01-a24d-5264b3633a1c",
+      "AbcAdaptation.Tripod.northcottFiniteRoots": "e2582265-ec67-4a45-be11-01cc545cbeb7",
+      "AbcAdaptation.Tripod.northcottPolynomialWitness": "b5bcbad5-0352-468d-919e-a9113d188c69"
+    },
+    "new_reductions": [
+      {
+        "parent": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+        "children": [
+          "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+          "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+          "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one"
+        ],
+        "submission_id": "e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+        "status": "ACCEPTED",
+        "proof_receipt": ".local/adaptation/northcott-sourceproof-20261114/verify-northcottPolynomialWitness-result.json",
+        "parent_status": "Proved",
+        "child_statuses": {
+          "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one": "Proved",
+          "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le": "Proved",
+          "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc": "Proved"
+        }
+      },
+      {
+        "parent": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+        "children": [
+          "AbcAdaptation.Tripod.northcottFiniteRoots",
+          "AbcAdaptation.Tripod.northcottPolynomialWitness"
+        ],
+        "submission_id": "d8b05c1a-4925-4934-b121-125f14fc4977",
+        "status": "ACCEPTED",
+        "proof_receipt": ".local/adaptation/northcott-sourceproof-20261114/verify-boundedDegreeFiniteness-result.json",
+        "parent_status": "Proved",
+        "child_statuses": {
+          "AbcAdaptation.Tripod.northcottFiniteRoots": "Proved",
+          "AbcAdaptation.Tripod.northcottPolynomialWitness": "Proved"
+        }
+      }
+    ],
+    "remaining_new_open": 0,
+    "source_provenance": ".local/adaptation/northcott-sourceproof-20261114/source-proof-provenance.json",
+    "all_frontier_pages_fetched": true,
+    "parent_target_preserved": true,
+    "mathematical_root_proved": false
   }
 }

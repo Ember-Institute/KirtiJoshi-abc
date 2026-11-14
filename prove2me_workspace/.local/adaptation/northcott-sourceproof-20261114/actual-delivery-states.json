@@ -1,0 +1,2278 @@
+{
+  "parent": {
+    "theorem_id": "bfd60e2f-e299-4833-ab7e-03d2b7ccfd94",
+    "theorem_name": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+    "theorem_title": "Northcott finiteness for all bounded-degree tripod points",
+    "status": "Proved",
+    "formal_statement": "theorem AbcAdaptation.Tripod.boundedDegreeFiniteness : AbcAdaptation.Tripod.BoundedDegreeFiniteness := by sorry",
+    "natural_language_statement": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.\n\n**English**\n\n`AbcAdaptation.Tripod.boundedDegreeFiniteness`\n\nFor a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFix an algebraic closure ℚ̄ of ℚ. The points are the algebraic numbers λ ∈ ℚ̄ with λ ≠ 0 and λ ≠ 1. For each point separately, let F_λ = ℚ(λ) ⊆ ℚ̄ be its minimal point field. Put δ(λ) = [F_λ:ℚ], equivalently the degree of the minimal polynomial of λ over ℚ. The canonical generator of F_λ maps to this same λ in ℚ̄. Define its normalized absolute logarithmic height by h(λ) = ℓ_{F_λ}(λ)/δ(λ). The fields F_λ vary with λ; no single containing number field is fixed. The height h is the degree-normalized absolute height, while ℓ_{F_λ} is unnormalized.\n\nFor every d ∈ ℕ and H ∈ ℝ, the set {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d and h(λ) ≤ H} is finite. The statement ranges over actual algebraic points in the fixed algebraic closure, across varying minimal point fields. It is not restricted to elements of one fixed number field, and it does not count only conjugacy classes.\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$\n\n**简体中文**\n\n`AbcAdaptation.Tripod.boundedDegreeFiniteness`\n\n对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n固定 ℚ 的代数闭包 ℚ̄。点是满足 λ ≠ 0 且 λ ≠ 1 的代数数 λ ∈ ℚ̄。对每个点分别取其最小点域 F_λ = ℚ(λ) ⊆ ℚ̄，并记 δ(λ) = [F_λ:ℚ]，它也等于 λ 在 ℚ 上的最小多项式次数。最小点域中的典范生成元在 ℚ̄ 中的像就是同一个 λ。定义归一化绝对对数高度 h(λ) = ℓ_{F_λ}(λ)/δ(λ)。点域 F_λ 随 λ 变化，不固定一个包含所有点的数域。h 是按次数归一化的绝对高度，而 ℓ_{F_λ} 未归一化。\n\n对每个自然数 d 和实数 H，集合 {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d 且 h(λ) ≤ H} 有限。这里对固定代数闭包中的实际代数点作断言，允许最小点域变化；既不限于某个固定数域中的元素，也不是仅计算共轭类。\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$\n\n**日本語**\n\n`AbcAdaptation.Tripod.boundedDegreeFiniteness`\n\n数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\nℚ の代数閉包 ℚ̄ を固定する。点は λ ≠ 0 かつ λ ≠ 1 を満たす代数数 λ ∈ ℚ̄ である。各点について最小の点の定義体 F_λ = ℚ(λ) ⊆ ℚ̄ を取り、δ(λ) = [F_λ:ℚ] とおく。これは λ の ℚ 上の最小多項式の次数でもある。F_λ の標準的な生成元の ℚ̄ における像は、同じ λ である。正規化された絶対対数的高さを h(λ) = ℓ_{F_λ}(λ)/δ(λ) と定める。F_λ は λ に応じて変わり、すべての点を含む一つの数体を固定しない。h は次数で正規化した絶対的高さであり、ℓ_{F_λ} は正規化前の高さである。\n\nすべての自然数 d と実数 H に対し、集合 {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d かつ h(λ) ≤ H} は有限である。対象は固定した代数閉包の中の実際の代数点であり、最小の点の定義体は変化してよい。一つの固定した数体の元に限定せず、共役類だけを数える主張でもない。\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$",
+    "created_at": "2026-11-13T03:37:22.396145+00:00",
+    "vote_count": 0,
+    "tags": [
+      "abc-conjecture",
+      "arithmetic-geometry",
+      "arithmetic-teichmuller-spaces"
+    ],
+    "preamble": "import Definitions.Def_TripodStatementIIInputs\n\nset_option autoImplicit false",
+    "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, §1, Proposition 1.4(iv), p. 6; https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf . This quotation states the bounded-degree finiteness context. It does not assert the exact Lean metric or helper formulas. Exact proof source: local refer/iut/Iut/Tripod/Northcott.lean, SHA256 8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a. Archive path /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean; root repository HEAD snapshot context 151648c34e3f7c48a4d05cc4a84f4a5c889c1176. Iut upstream revision is not independently verified; the historical d9465c citation is not treated as a verified revision pin. The actual minimal point fields, all complex embeddings, and normalized absolute logarithmic point height are retained. No h312 assumption or new open mathematical obligation is added. The mathematical root remains unproved.",
+    "deprecated_at": null,
+    "deprecated_by": null,
+    "visibility": "private",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "audits": [],
+    "readback": null
+  },
+  "new_nodes": [
+    {
+      "theorem_id": "3da8e658-eaac-405d-b57e-0bca0922d8f3",
+      "theorem_name": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+      "theorem_title": "Every complex conjugate is bounded by relative multiplicative height",
+      "status": "Proved",
+      "formal_statement": "theorem AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one {K : Type*} [Field K] [NumberField K] (x : K)\n    (φ : K →+* ℂ) : ‖φ x‖ ≤ Height.mulHeight₁ x := by sorry",
+      "natural_language_statement": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.\n\n**English**\n\n`AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one`\n\nFor a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFor every number field K, every x ∈ K, and every unital ring embedding φ: K → ℂ, the complex norm satisfies |φ(x)| ≤ M_K(x). The quantifier covers every complex embedding, not only one selected embedding. No algebraic-integer assumption on x is required. The right side is the unnormalized height M_K(x), not exp of the normalized absolute height.\n\n$$\n|\\varphi(x)|\\le M_K(x)\n$$\n\n**简体中文**\n\n`AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one`\n\n对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n对任意数域 K、任意 x ∈ K 及每个保单位元环嵌入 φ: K → ℂ，复绝对值满足 |φ(x)| ≤ M_K(x)。量词覆盖全部复嵌入，不仅是某个选定嵌入。不要求 x 为代数整数。右端是未归一化高度 M_K(x)，不是归一化绝对对数高度的指数。\n\n$$\n|\\varphi(x)|\\le M_K(x)\n$$\n\n**日本語**\n\n`AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one`\n\n数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\n任意の数体 K、任意の x ∈ K、およびすべての単位元を保つ環の埋め込み φ: K → ℂ に対し、|φ(x)| ≤ M_K(x) が成り立つ。選んだ一つの埋め込みだけではなく、すべての複素埋め込みを対象とする。x が代数的整数であるという仮定はない。右辺は正規化前の高さ M_K(x) であり、正規化された絶対対数的高さの指数関数ではない。\n\n$$\n|\\varphi(x)|\\le M_K(x)\n$$",
+      "created_at": "2026-11-14T00:11:44.893533+00:00",
+      "vote_count": 0,
+      "tags": [
+        "abc-conjecture",
+        "arithmetic-geometry"
+      ],
+      "preamble": "import Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+      "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, §1, Proposition 1.4(iv), p. 6; https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf . This quotation states the bounded-degree finiteness context. It does not assert the exact Lean metric or helper formulas. Exact proof source: local refer/iut/Iut/Tripod/Northcott.lean, SHA256 8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a. Archive path /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean; root repository HEAD snapshot context 151648c34e3f7c48a4d05cc4a84f4a5c889c1176. Iut upstream revision is not independently verified; the historical d9465c citation is not treated as a verified revision pin. The actual minimal point fields, all complex embeddings, and normalized absolute logarithmic point height are retained. No h312 assumption or new open mathematical obligation is added. The mathematical root remains unproved.",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "visibility": "private",
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "audits": [],
+      "readback": null
+    },
+    {
+      "theorem_id": "aafd00f9-1cab-4d65-aecd-df0421540c2c",
+      "theorem_name": "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+      "theorem_title": "Explicit multiplicative-height bound in the actual minimal point field",
+      "status": "Proved",
+      "formal_statement": "theorem AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le {d : ℕ} {H : ℝ} {x : Pt} (hd : x ∈ ptLE d) (hH : htCan x ≤ H) :\n    Height.mulHeight₁ (gen x.1) ≤ heightBound d H := by sorry",
+      "natural_language_statement": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.\n\n**English**\n\n`AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le`\n\nFor a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFix an algebraic closure ℚ̄ of ℚ. The points are the algebraic numbers λ ∈ ℚ̄ with λ ≠ 0 and λ ≠ 1. For each point separately, let F_λ = ℚ(λ) ⊆ ℚ̄ be its minimal point field. Put δ(λ) = [F_λ:ℚ], equivalently the degree of the minimal polynomial of λ over ℚ. The canonical generator of F_λ maps to this same λ in ℚ̄. Define its normalized absolute logarithmic height by h(λ) = ℓ_{F_λ}(λ)/δ(λ). The fields F_λ vary with λ; no single containing number field is fixed. The height h is the degree-normalized absolute height, while ℓ_{F_λ} is unnormalized.\n\nFor d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor every d ∈ ℕ, H ∈ ℝ, and point λ with δ(λ) ≤ d and h(λ) ≤ H, the unnormalized height satisfies M_{F_λ}(λ) ≤ B(d,H). The height is computed in this point’s own minimal field F_λ, not an arbitrary larger ambient field.\n\n$$\nM_{F_\\lambda}(\\lambda)\\le B(d,H)\n$$\n\n**简体中文**\n\n`AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le`\n\n对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n固定 ℚ 的代数闭包 ℚ̄。点是满足 λ ≠ 0 且 λ ≠ 1 的代数数 λ ∈ ℚ̄。对每个点分别取其最小点域 F_λ = ℚ(λ) ⊆ ℚ̄，并记 δ(λ) = [F_λ:ℚ]，它也等于 λ 在 ℚ 上的最小多项式次数。最小点域中的典范生成元在 ℚ̄ 中的像就是同一个 λ。定义归一化绝对对数高度 h(λ) = ℓ_{F_λ}(λ)/δ(λ)。点域 F_λ 随 λ 变化，不固定一个包含所有点的数域。h 是按次数归一化的绝对高度，而 ℓ_{F_λ} 未归一化。\n\n对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对任意自然数 d、实数 H 及满足 δ(λ) ≤ d 和 h(λ) ≤ H 的点 λ，未归一化高度满足 M_{F_λ}(λ) ≤ B(d,H)。高度在该点自身的最小点域 F_λ 中计算，而非在任意更大的环境数域中计算。\n\n$$\nM_{F_\\lambda}(\\lambda)\\le B(d,H)\n$$\n\n**日本語**\n\n`AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le`\n\n数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\nℚ の代数閉包 ℚ̄ を固定する。点は λ ≠ 0 かつ λ ≠ 1 を満たす代数数 λ ∈ ℚ̄ である。各点について最小の点の定義体 F_λ = ℚ(λ) ⊆ ℚ̄ を取り、δ(λ) = [F_λ:ℚ] とおく。これは λ の ℚ 上の最小多項式の次数でもある。F_λ の標準的な生成元の ℚ̄ における像は、同じ λ である。正規化された絶対対数的高さを h(λ) = ℓ_{F_λ}(λ)/δ(λ) と定める。F_λ は λ に応じて変わり、すべての点を含む一つの数体を固定しない。h は次数で正規化した絶対的高さであり、ℓ_{F_λ} は正規化前の高さである。\n\n自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\nすべての自然数 d、実数 H、および δ(λ) ≤ d と h(λ) ≤ H を満たす点 λ に対し、M_{F_λ}(λ) ≤ B(d,H) が成り立つ。高さはその点自身の最小の定義体 F_λ で計算し、任意のより大きい数体で計算するものではない。\n\n$$\nM_{F_\\lambda}(\\lambda)\\le B(d,H)\n$$",
+      "created_at": "2026-11-14T00:11:43.313197+00:00",
+      "vote_count": 0,
+      "tags": [
+        "abc-conjecture",
+        "arithmetic-geometry"
+      ],
+      "preamble": "import Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+      "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, §1, Proposition 1.4(iv), p. 6; https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf . This quotation states the bounded-degree finiteness context. It does not assert the exact Lean metric or helper formulas. Exact proof source: local refer/iut/Iut/Tripod/Northcott.lean, SHA256 8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a. Archive path /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean; root repository HEAD snapshot context 151648c34e3f7c48a4d05cc4a84f4a5c889c1176. Iut upstream revision is not independently verified; the historical d9465c citation is not treated as a verified revision pin. The actual minimal point fields, all complex embeddings, and normalized absolute logarithmic point height are retained. No h312 assumption or new open mathematical obligation is added. The mathematical root remains unproved.",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "visibility": "private",
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "audits": [],
+      "readback": null
+    },
+    {
+      "theorem_id": "b05f4bdd-3602-4f01-a24d-5264b3633a1c",
+      "theorem_name": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+      "theorem_title": "All integer-minpoly coefficients bounded by all complex conjugates",
+      "status": "Proved",
+      "formal_statement": "theorem AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc {K : Type*} [Field K] [NumberField K] {y : K}\n    (hy : IsIntegral ℤ y) {d : ℕ} (hd : Module.finrank ℚ K ≤ d) {B : ℝ}\n    (hB : ∀ φ : K →+* ℂ, ‖φ y‖ ≤ B) (i : ℕ) :\n    (minpoly ℤ y).coeff i ∈ Set.Icc (-(coeffBoundOf d B : ℤ)) (coeffBoundOf d B) := by sorry",
+      "natural_language_statement": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.\n\n**English**\n\n`AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc`\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nFor every number field K, algebraic integer y ∈ K, natural number d with [K:ℚ] ≤ d, and real b, assume |φ(y)| ≤ b for every unital ring embedding φ: K → ℂ. Write the monic integer minimal polynomial as m_y(X) = ∑_i a_i X^i. Then −C(d,b) ≤ a_i ≤ C(d,b) for every i ∈ ℕ, including coefficients beyond its degree. The premise concerns all complex embeddings of the actual field K. It does not assume only one embedding or only a chosen subset of conjugates.\n\n$$\n-C(d,b)\\le a_i\\le C(d,b)\\qquad(i\\in\\mathbb N)\n$$\n\n**简体中文**\n\n`AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc`\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n对任意数域 K、代数整数 y ∈ K、满足 [K:ℚ] ≤ d 的自然数 d 以及实数 b，假设每个保单位元环嵌入 φ: K → ℂ 都满足 |φ(y)| ≤ b。将首一整数最小多项式写为 m_y(X) = ∑_i a_i X^i。则对每个自然数 i，都有 −C(d,b) ≤ a_i ≤ C(d,b)，其中也包括高于多项式次数的系数。前提覆盖实际数域 K 的全部复嵌入，不只是一个嵌入或选定的一部分共轭元素。\n\n$$\n-C(d,b)\\le a_i\\le C(d,b)\\qquad(i\\in\\mathbb N)\n$$\n\n**日本語**\n\n`AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc`\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\n任意の数体 K、代数的整数 y ∈ K、[K:ℚ] ≤ d を満たす自然数 d、および実数 b を取る。すべての単位元を保つ環の埋め込み φ: K → ℂ について |φ(y)| ≤ b と仮定する。整数係数のモニックな最小多項式を m_y(X) = ∑_i a_i X^i と書く。このときすべての自然数 i に対して −C(d,b) ≤ a_i ≤ C(d,b) である。次数を超える係数も含む。仮定は実際の数体 K のすべての複素埋め込みを対象とし、一つの埋め込みや選んだ共役だけではない。\n\n$$\n-C(d,b)\\le a_i\\le C(d,b)\\qquad(i\\in\\mathbb N)\n$$",
+      "created_at": "2026-11-14T00:11:46.971527+00:00",
+      "vote_count": 0,
+      "tags": [
+        "abc-conjecture",
+        "arithmetic-geometry"
+      ],
+      "preamble": "import Definitions.Def_TripodNorthcottInputs\nimport Mathlib.NumberTheory.NumberField.InfinitePlace.Embeddings\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+      "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, §1, Proposition 1.4(iv), p. 6; https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf . This quotation states the bounded-degree finiteness context. It does not assert the exact Lean metric or helper formulas. Exact proof source: local refer/iut/Iut/Tripod/Northcott.lean, SHA256 8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a. Archive path /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean; root repository HEAD snapshot context 151648c34e3f7c48a4d05cc4a84f4a5c889c1176. Iut upstream revision is not independently verified; the historical d9465c citation is not treated as a verified revision pin. The actual minimal point fields, all complex embeddings, and normalized absolute logarithmic point height are retained. No h312 assumption or new open mathematical obligation is added. The mathematical root remains unproved.",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "visibility": "private",
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "audits": [],
+      "readback": null
+    },
+    {
+      "theorem_id": "e2582265-ec67-4a45-be11-01cc545cbeb7",
+      "theorem_name": "AbcAdaptation.Tripod.northcottFiniteRoots",
+      "theorem_title": "Finite union of roots of the bounded integer polynomials",
+      "status": "Proved",
+      "formal_statement": "theorem AbcAdaptation.Tripod.northcottFiniteRoots : Northcott.FiniteRoots := by sorry",
+      "natural_language_statement": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.\n\n**English**\n\n`AbcAdaptation.Tripod.northcottFiniteRoots`\n\nFor d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\nLet 𝒫(d,H) be the set of all integer polynomials f with natural-number degree at most d and −A(d,H) ≤ a_i ≤ A(d,H) for every coefficient a_i. The natural-number degree of the zero polynomial is defined as zero, so 𝒫(d,H) includes the zero polynomial. No monicity condition is part of this set.\n\nFix an algebraic closure ℚ̄ of ℚ. For an integer polynomial f ≠ 0, let R(f) = {α ∈ ℚ̄ | f(α) = 0}, with coefficients mapped by ℤ → ℚ̄. Define R(0) = ∅. Thus R(f) lists distinct roots of nonzero polynomials; the zero polynomial does not contribute every algebraic number.\n\nFor every d ∈ ℕ and H ∈ ℝ, the set ⋃_{f∈𝒫(d,H)} R(f) is finite.\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$\n\n**简体中文**\n\n`AbcAdaptation.Tripod.northcottFiniteRoots`\n\n对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n记 𝒫(d,H) 为所有满足下述条件的整数系数多项式 f 的集合：自然数次数不超过 d，且每个系数 a_i 都满足 −A(d,H) ≤ a_i ≤ A(d,H)。零多项式的自然数次数约定为零，因此零多项式属于 𝒫(d,H)。该集合的定义不要求多项式首一。\n\n固定 ℚ 的代数闭包 ℚ̄。对非零整数系数多项式 f，令 R(f) = {α ∈ ℚ̄ | f(α) = 0}，系数沿 ℤ → ℚ̄ 映入代数闭包。约定 R(0) = ∅。因此 R(f) 只记录非零多项式的不同根；零多项式不会贡献全部代数数。\n\n对每个自然数 d 和实数 H，集合 ⋃_{f∈𝒫(d,H)} R(f) 都有限。\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$\n\n**日本語**\n\n`AbcAdaptation.Tripod.northcottFiniteRoots`\n\n自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n𝒫(d,H) を、自然数値の次数が d 以下で、すべての係数 a_i が −A(d,H) ≤ a_i ≤ A(d,H) を満たす整数係数多項式 f の集合とする。零多項式の自然数値の次数は零と定めるので、零多項式も 𝒫(d,H) に含まれる。この集合ではモニックであることを要求しない。\n\nℚ の代数閉包 ℚ̄ を固定する。非零整数係数多項式 f に対し、R(f) = {α ∈ ℚ̄ | f(α) = 0} とし、係数は ℤ → ℚ̄ で写す。R(0) = ∅ と定める。したがって R(f) は非零多項式の相異なる根を表し、零多項式がすべての代数数を与えるわけではない。\n\nすべての自然数 d と実数 H に対し、集合 ⋃_{f∈𝒫(d,H)} R(f) は有限である。\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$",
+      "created_at": "2026-11-14T00:11:44.736191+00:00",
+      "vote_count": 0,
+      "tags": [
+        "abc-conjecture",
+        "arithmetic-geometry"
+      ],
+      "preamble": "import Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+      "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, §1, Proposition 1.4(iv), p. 6; https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf . This quotation states the bounded-degree finiteness context. It does not assert the exact Lean metric or helper formulas. Exact proof source: local refer/iut/Iut/Tripod/Northcott.lean, SHA256 8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a. Archive path /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean; root repository HEAD snapshot context 151648c34e3f7c48a4d05cc4a84f4a5c889c1176. Iut upstream revision is not independently verified; the historical d9465c citation is not treated as a verified revision pin. The actual minimal point fields, all complex embeddings, and normalized absolute logarithmic point height are retained. No h312 assumption or new open mathematical obligation is added. The mathematical root remains unproved.",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "visibility": "private",
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "audits": [],
+      "readback": null
+    },
+    {
+      "theorem_id": "b5bcbad5-0352-468d-919e-a9113d188c69",
+      "theorem_name": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+      "theorem_title": "Actual tripod point has a bounded denominator and monic polynomial witness",
+      "status": "Proved",
+      "formal_statement": "theorem AbcAdaptation.Tripod.northcottPolynomialWitness : Northcott.PolynomialWitness := by sorry",
+      "natural_language_statement": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.\n\n**English**\n\n`AbcAdaptation.Tripod.northcottPolynomialWitness`\n\nFor a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFix an algebraic closure ℚ̄ of ℚ. The points are the algebraic numbers λ ∈ ℚ̄ with λ ≠ 0 and λ ≠ 1. For each point separately, let F_λ = ℚ(λ) ⊆ ℚ̄ be its minimal point field. Put δ(λ) = [F_λ:ℚ], equivalently the degree of the minimal polynomial of λ over ℚ. The canonical generator of F_λ maps to this same λ in ℚ̄. Define its normalized absolute logarithmic height by h(λ) = ℓ_{F_λ}(λ)/δ(λ). The fields F_λ vary with λ; no single containing number field is fixed. The height h is the degree-normalized absolute height, while ℓ_{F_λ} is unnormalized.\n\nFor d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\nLet 𝒫(d,H) be the set of all integer polynomials f with natural-number degree at most d and −A(d,H) ≤ a_i ≤ A(d,H) for every coefficient a_i. The natural-number degree of the zero polynomial is defined as zero, so 𝒫(d,H) includes the zero polynomial. No monicity condition is part of this set.\n\nFor every d ∈ ℕ, H ∈ ℝ, and point λ ∈ ℚ̄\\{0,1} with δ(λ) ≤ d and h(λ) ≤ H, there exist n ∈ ℕ and p ∈ 𝒫(d,H) such that n ≠ 0, n ≤ B(d,H), p is monic, and p(nλ) = 0 in ℚ̄. The point nλ in the conclusion is the integer multiple of the same original λ. No choice of one fixed number field for all λ is a premise.\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$\n\n**简体中文**\n\n`AbcAdaptation.Tripod.northcottPolynomialWitness`\n\n对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n固定 ℚ 的代数闭包 ℚ̄。点是满足 λ ≠ 0 且 λ ≠ 1 的代数数 λ ∈ ℚ̄。对每个点分别取其最小点域 F_λ = ℚ(λ) ⊆ ℚ̄，并记 δ(λ) = [F_λ:ℚ]，它也等于 λ 在 ℚ 上的最小多项式次数。最小点域中的典范生成元在 ℚ̄ 中的像就是同一个 λ。定义归一化绝对对数高度 h(λ) = ℓ_{F_λ}(λ)/δ(λ)。点域 F_λ 随 λ 变化，不固定一个包含所有点的数域。h 是按次数归一化的绝对高度，而 ℓ_{F_λ} 未归一化。\n\n对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n记 𝒫(d,H) 为所有满足下述条件的整数系数多项式 f 的集合：自然数次数不超过 d，且每个系数 a_i 都满足 −A(d,H) ≤ a_i ≤ A(d,H)。零多项式的自然数次数约定为零，因此零多项式属于 𝒫(d,H)。该集合的定义不要求多项式首一。\n\n对每个自然数 d、实数 H 及满足 δ(λ) ≤ d 和 h(λ) ≤ H 的点 λ ∈ ℚ̄\\{0,1}，存在自然数 n 和多项式 p ∈ 𝒫(d,H)，使 n ≠ 0、n ≤ B(d,H)、p 首一，且在 ℚ̄ 中有 p(nλ) = 0。结论中的 nλ 是原来同一个点 λ 的整数倍。不要求所有 λ 都属于某一个固定数域。\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$\n\n**日本語**\n\n`AbcAdaptation.Tripod.northcottPolynomialWitness`\n\n数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\nℚ の代数閉包 ℚ̄ を固定する。点は λ ≠ 0 かつ λ ≠ 1 を満たす代数数 λ ∈ ℚ̄ である。各点について最小の点の定義体 F_λ = ℚ(λ) ⊆ ℚ̄ を取り、δ(λ) = [F_λ:ℚ] とおく。これは λ の ℚ 上の最小多項式の次数でもある。F_λ の標準的な生成元の ℚ̄ における像は、同じ λ である。正規化された絶対対数的高さを h(λ) = ℓ_{F_λ}(λ)/δ(λ) と定める。F_λ は λ に応じて変わり、すべての点を含む一つの数体を固定しない。h は次数で正規化した絶対的高さであり、ℓ_{F_λ} は正規化前の高さである。\n\n自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n𝒫(d,H) を、自然数値の次数が d 以下で、すべての係数 a_i が −A(d,H) ≤ a_i ≤ A(d,H) を満たす整数係数多項式 f の集合とする。零多項式の自然数値の次数は零と定めるので、零多項式も 𝒫(d,H) に含まれる。この集合ではモニックであることを要求しない。\n\nすべての自然数 d、実数 H、および δ(λ) ≤ d と h(λ) ≤ H を満たす点 λ ∈ ℚ̄\\{0,1} に対し、自然数 n と多項式 p ∈ 𝒫(d,H) が存在する。それらは n ≠ 0、n ≤ B(d,H)、p はモニック、p(nλ) = 0 を満たす。最後の等式は ℚ̄ の中で成り立つ。nλ は元の同じ点 λ の整数倍である。すべての λ が一つの固定した数体に属するという仮定はない。\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$",
+      "created_at": "2026-11-14T00:11:49.402832+00:00",
+      "vote_count": 0,
+      "tags": [
+        "abc-conjecture",
+        "arithmetic-geometry"
+      ],
+      "preamble": "import Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+      "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, §1, Proposition 1.4(iv), p. 6; https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf . This quotation states the bounded-degree finiteness context. It does not assert the exact Lean metric or helper formulas. Exact proof source: local refer/iut/Iut/Tripod/Northcott.lean, SHA256 8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a. Archive path /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean; root repository HEAD snapshot context 151648c34e3f7c48a4d05cc4a84f4a5c889c1176. Iut upstream revision is not independently verified; the historical d9465c citation is not treated as a verified revision pin. The actual minimal point fields, all complex embeddings, and normalized absolute logarithmic point height are retained. No h312 assumption or new open mathematical obligation is added. The mathematical root remains unproved.",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "visibility": "private",
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "audits": [],
+      "readback": null
+    }
+  ],
+  "root": {
+    "theorem_id": "e33ff731-60a7-43ef-87ae-c12aeba23cb5",
+    "theorem_name": "abc.goal.lt_constant_mul_fix",
+    "theorem_title": "The abc conjecture — abc 猜想 — abc予想",
+    "status": "Open",
+    "formal_statement": "theorem abc.goal.lt_constant_mul_fix (ε : ℝ) (hε : 0 < ε) : ∃ K : ℝ,\n    ∀ (a b c : ℕ), 0 < a → 0 < b → 0 < c →\n      ({a, b, c} : Set ℕ).Pairwise Nat.Coprime → a + b = c →\n      (c : ℝ) < K * ((radical (a * b * c) : ℕ) : ℝ) ^ (1 + ε) := by sorry",
+    "natural_language_statement": "**English**\n\nFor every positive real number $ε$, there exists a real constant $K_{ε}$, depending only on $ε$, such that all positive natural numbers $a,b,c$ with $a+b=c$ and with any two distinct elements of $\\{a,b,c\\}$ coprime satisfy\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\nHere $\\operatorname{rad}_{\\mathbb N}(n)$ is the product of the distinct prime divisors of the natural number $n$. The product $abc$ and its radical are computed in $\\mathbb N$ before the radical and $c$ are cast to $\\mathbb R$; the power is a real power. No positivity hypothesis on $K_{ε}$ is included in the formal statement; the bound for $(1,1,2)$ implies positivity.\n\n**简体中文**\n\n对每个正实数 $ε$，存在只依赖于 $ε$ 的实常数 $K_{ε}$，使得所有满足 $a+b=c$、且集合 $\\{a,b,c\\}$ 中任意两个不同元素互素的正自然数 $a,b,c$ 都满足\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\n这里，$\\operatorname{rad}_{\\mathbb N}(n)$ 是自然数 $n$ 的所有不同素因子的乘积。先在自然数中计算 $abc$ 及其根基，再将根基与 $c$ 转为实数，并使用实数幂。形式陈述没有另行假设常数为正；将界应用于 $(1,1,2)$ 即可推出其为正。\n\n**日本語**\n\n任意の正の実数 $ε$ に対し、$ε$ のみに依存する実定数 $K_{ε}$ が存在し、$a+b=c$ を満たし、集合 $\\{a,b,c\\}$ の相異なるどの二つの元も互いに素であるすべての正の自然数 $a,b,c$ について、\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\nが成り立つ。ここで、$\\operatorname{rad}_{\\mathbb N}(n)$ は自然数 $n$ の相異なる素因数すべての積である。積 $abc$ とその根基を自然数の範囲で計算した後、根基と $c$ を実数に変換し、実数のべき乗を用いる。形式的な命題では定数が正であることを別途仮定しないが、$(1,1,2)$ にこの不等式を適用すると正であることが従う。",
+    "created_at": "2026-11-13T02:05:17.990942+00:00",
+    "vote_count": 0,
+    "tags": [
+      "abc-conjecture",
+      "arithmetic-geometry",
+      "arithmetic-teichmuller-spaces",
+      "number-theory"
+    ],
+    "preamble": "import Mathlib.Analysis.SpecialFunctions.Pow.Real\nimport Mathlib.Data.Set.Pairwise.Basic\nimport Mathlib.RingTheory.Radical.NatInt\n\nset_option autoImplicit false\n\nopen UniqueFactorizationMonoid",
+    "source": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=ABC.abc.variants.lt_constant_mul ; Formal Conjectures, FormalConjectures/Wikipedia/ABC.lean, commit a425ca3eb797fe927cb88c950565fdcbbbbada70, lines 68–75 (theorem ABC.abc.variants.lt_constant_mul), https://github.com/google-deepmind/formal-conjectures/blob/a425ca3eb797fe927cb88c950565fdcbbbbada70/FormalConjectures/Wikipedia/ABC.lean#L68-L75 . Radical definition: lines 30–33 of the same file. The platform declaration is named abc.goal.lt_constant_mul_fix. Its explicit natural-number radical is Mathlib UniqueFactorizationMonoid.radical; Nat.radical_eq_prod_primeFactors identifies it with the source prime-divisor product.",
+    "deprecated_at": null,
+    "deprecated_by": null,
+    "visibility": "private",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "audits": [],
+    "readback": {
+      "readback": "**English**\n\nFor every real number $\\varepsilon$ satisfying $0<\\varepsilon$, there exists a real number $K$, with no separate positivity assumption on $K$, such that for all natural numbers $a,b,c$ satisfying $0<a$, $0<b$, and $0<c$ (so zero is excluded), if every two distinct elements of the set $\\{a,b,c\\}$ are coprime and $a+b=c$, then\n\n$$\nc<K\\,R(abc)^{1+\\varepsilon}.\n$$\n\nHere, for a positive natural number $n$, $R(n)$ is the product of the distinct prime numbers dividing $n$, with the empty product equal to $1$. The sum $a+b$, the product $abc$, and $R(abc)$ are computed in the natural numbers; in the displayed inequality, $c$ and $R(abc)$ are then viewed as real numbers, and multiplication, addition in the exponent, exponentiation, and comparison are over the real numbers. Repeated values among $a,b,c$ are allowed: the coprimality condition applies only to distinct elements of the set and does not require an element to be coprime to itself.\n\n**简体中文**\n\n对于每个满足 $0<\\varepsilon$ 的实数 $\\varepsilon$，存在一个实数 $K$，并未另行要求 $K$ 为正，使得对于所有满足 $0<a$、$0<b$ 和 $0<c$ 的自然数 $a,b,c$（因此排除了零），如果集合 $\\{a,b,c\\}$ 中任意两个不同元素互素，且 $a+b=c$，则有\n\n$$\nc<K\\,R(abc)^{1+\\varepsilon}\n$$\n\n。 这里，对于正自然数 $n$，$R(n)$ 是整除 $n$ 的所有不同素数的乘积，空乘积规定为 $1$。和 $a+b$、积 $abc$ 以及 $R(abc)$ 均在自然数中计算；在所显示的不等式中，再将 $c$ 和 $R(abc)$ 视为实数，乘法、指数中的加法、乘方以及大小比较均在实数中进行。$a,b,c$ 之间允许出现重复值：互素条件仅适用于集合中不同的元素，不要求一个元素与自身互素。\n\n**日本語**\n\n実数 $\\varepsilon$ が $0<\\varepsilon$ を満たすとき、実数 $K$ が存在し、$K$ が正であるという仮定は別途課されず、次が成り立つ。任意の自然数 $a,b,c$ について、$0<a$、$0<b$、$0<c$ を満たし（したがって零は除かれる）、集合 $\\{a,b,c\\}$ の相異なるどの二つの元も互いに素であり、かつ $a+b=c$ ならば、\n\n$$\nc<K\\,R(abc)^{1+\\varepsilon}\n$$\n\nが成り立つ。ここで、正の自然数 $n$ に対し、$R(n)$ は $n$ を割り切る相異なる素数すべての積であり、空積は $1$ とする。和 $a+b$、積 $abc$ および $R(abc)$ は自然数の範囲で計算する。表示した不等式では、$c$ と $R(abc)$ を実数とみなし、乗法、指数内の加法、べき乗および大小比較は実数の範囲で行う。$a,b,c$ の値は重複していてもよい。互いに素であるという条件は集合の相異なる元にのみ適用され、ある元がそれ自身と互いに素であることは要求しない。",
+      "model": "gpt-6.1-sol",
+      "created_at": "2026-11-13T02:05:21.786459+00:00"
+    }
+  },
+  "expected_named_dependency_pairs": {
+    "AbcAdaptation.Tripod.northcottPolynomialWitness": [
+      "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+      "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+      "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc"
+    ],
+    "AbcAdaptation.Tripod.boundedDegreeFiniteness": [
+      "AbcAdaptation.Tripod.northcottFiniteRoots",
+      "AbcAdaptation.Tripod.northcottPolynomialWitness"
+    ]
+  },
+  "graph_edges": [
+    {
+      "source": "19488657-c338-470b-b0b0-eb3eec739d17",
+      "target": "sketch-80c88f89-ed79-4458-96ac-6744400042a5",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-80c88f89-ed79-4458-96ac-6744400042a5",
+      "target": "e33ff731-60a7-43ef-87ae-c12aeba23cb5",
+      "kind": "sketch"
+    },
+    {
+      "source": "503043eb-a419-42ec-95e1-8e2e193a8bcb",
+      "target": "sketch-6857752c-3cc3-4b15-9eec-d3feb963aeb1",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-6857752c-3cc3-4b15-9eec-d3feb963aeb1",
+      "target": "19488657-c338-470b-b0b0-eb3eec739d17",
+      "kind": "sketch"
+    },
+    {
+      "source": "905ccf0a-2831-4751-852f-92b19b256a89",
+      "target": "sketch-d8aeee8d-e34b-47dd-8db7-5bd8865f0627",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-d8aeee8d-e34b-47dd-8db7-5bd8865f0627",
+      "target": "503043eb-a419-42ec-95e1-8e2e193a8bcb",
+      "kind": "sketch"
+    },
+    {
+      "source": "12991d28-2b16-469f-9a8d-6b3029d4311a",
+      "target": "sketch-4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb",
+      "kind": "sketch"
+    },
+    {
+      "source": "29d69993-e4b0-483a-8557-835cf1953b08",
+      "target": "sketch-4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb",
+      "kind": "sketch"
+    },
+    {
+      "source": "420a0f5f-e5da-4fc9-9b52-20b73cac9431",
+      "target": "sketch-4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb",
+      "kind": "sketch"
+    },
+    {
+      "source": "5d9ec91b-90db-4329-999a-74c42e8b2d86",
+      "target": "sketch-4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb",
+      "kind": "sketch"
+    },
+    {
+      "source": "6bf8f896-f600-47d2-a4c7-25f1b1c1789b",
+      "target": "sketch-4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb",
+      "kind": "sketch"
+    },
+    {
+      "source": "7ac3c32b-ac60-4815-8a86-e30399a61e40",
+      "target": "sketch-4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb",
+      "kind": "sketch"
+    },
+    {
+      "source": "d789bc6e-2e85-409f-84e9-a9db251871a9",
+      "target": "sketch-4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb",
+      "target": "905ccf0a-2831-4751-852f-92b19b256a89",
+      "kind": "sketch"
+    },
+    {
+      "source": "37737bd7-bfc7-483a-9d57-bbbfea9628b1",
+      "target": "sketch-56564862-bb67-422f-8ee1-92c737191aed",
+      "kind": "sketch"
+    },
+    {
+      "source": "5deab000-c437-4bce-aec4-79896e55e593",
+      "target": "sketch-56564862-bb67-422f-8ee1-92c737191aed",
+      "kind": "sketch"
+    },
+    {
+      "source": "7037c68a-1315-46ef-91df-2fae1b9d7b0b",
+      "target": "sketch-56564862-bb67-422f-8ee1-92c737191aed",
+      "kind": "sketch"
+    },
+    {
+      "source": "add93f6a-ec47-4b3a-9f2d-1bb35ffc6b66",
+      "target": "sketch-56564862-bb67-422f-8ee1-92c737191aed",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-56564862-bb67-422f-8ee1-92c737191aed",
+      "target": "29d69993-e4b0-483a-8557-835cf1953b08",
+      "kind": "sketch"
+    },
+    {
+      "source": "54209a9c-d508-41f4-b24c-f8a293eacdb9",
+      "target": "sketch-6e2a176e-b41c-430a-aa8b-7f8125292be0",
+      "kind": "sketch"
+    },
+    {
+      "source": "bfd60e2f-e299-4833-ab7e-03d2b7ccfd94",
+      "target": "sketch-6e2a176e-b41c-430a-aa8b-7f8125292be0",
+      "kind": "sketch"
+    },
+    {
+      "source": "f3459077-b313-492d-86fc-93f2a6d8b4b8",
+      "target": "sketch-6e2a176e-b41c-430a-aa8b-7f8125292be0",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-6e2a176e-b41c-430a-aa8b-7f8125292be0",
+      "target": "420a0f5f-e5da-4fc9-9b52-20b73cac9431",
+      "kind": "sketch"
+    },
+    {
+      "source": "7292ba3c-10d1-4324-ae36-ad6c9a7e1acf",
+      "target": "sketch-fc4e169e-ab98-4ee7-92d1-d3d5288fddfe",
+      "kind": "sketch"
+    },
+    {
+      "source": "84dbea7a-d8ba-4240-8676-b0260f50392e",
+      "target": "sketch-fc4e169e-ab98-4ee7-92d1-d3d5288fddfe",
+      "kind": "sketch"
+    },
+    {
+      "source": "c169d22f-3a85-4c88-b48d-cfcfe16e3730",
+      "target": "sketch-fc4e169e-ab98-4ee7-92d1-d3d5288fddfe",
+      "kind": "sketch"
+    },
+    {
+      "source": "ee827c56-06a5-4702-b9a8-163bb4c539d7",
+      "target": "sketch-fc4e169e-ab98-4ee7-92d1-d3d5288fddfe",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-fc4e169e-ab98-4ee7-92d1-d3d5288fddfe",
+      "target": "54209a9c-d508-41f4-b24c-f8a293eacdb9",
+      "kind": "sketch"
+    },
+    {
+      "source": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "c156622d-9654-4f35-bf36-cfa946728557",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "target": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-c3992789-36a2-4251-ab50-2f0d5f42e80e",
+      "target": "7037c68a-1315-46ef-91df-2fae1b9d7b0b",
+      "kind": "sketch"
+    },
+    {
+      "source": "44260d78-deca-4361-ad2b-31e3f307d4d0",
+      "target": "sketch-d8b05c1a-4925-4934-b121-125f14fc4977",
+      "kind": "sketch"
+    },
+    {
+      "source": "b5bcbad5-0352-468d-919e-a9113d188c69",
+      "target": "sketch-d8b05c1a-4925-4934-b121-125f14fc4977",
+      "kind": "sketch"
+    },
+    {
+      "source": "e2582265-ec67-4a45-be11-01cc545cbeb7",
+      "target": "sketch-d8b05c1a-4925-4934-b121-125f14fc4977",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-d8b05c1a-4925-4934-b121-125f14fc4977",
+      "target": "bfd60e2f-e299-4833-ab7e-03d2b7ccfd94",
+      "kind": "sketch"
+    },
+    {
+      "source": "1702032c-63ca-4f0e-ad0e-f338da24c315",
+      "target": "sketch-ac3d5587-ecf1-40d1-9026-6cd06aa42c98",
+      "kind": "sketch"
+    },
+    {
+      "source": "17a37c33-02f5-44a6-bb23-2f3a943f524f",
+      "target": "sketch-ac3d5587-ecf1-40d1-9026-6cd06aa42c98",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-ac3d5587-ecf1-40d1-9026-6cd06aa42c98",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "sketch"
+    },
+    {
+      "source": "37855299-f638-49fb-ad17-09e409d28aef",
+      "target": "sketch-07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+      "kind": "sketch"
+    },
+    {
+      "source": "6d1e4a6b-7142-4bf6-a98a-311b870475dd",
+      "target": "sketch-07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+      "kind": "sketch"
+    },
+    {
+      "source": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "target": "sketch-07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+      "kind": "sketch"
+    },
+    {
+      "source": "9ea35172-fd58-4868-84a0-4d672a037da2",
+      "target": "sketch-07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+      "kind": "sketch"
+    },
+    {
+      "source": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "target": "sketch-07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+      "kind": "sketch"
+    },
+    {
+      "source": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "target": "sketch-07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+      "kind": "sketch"
+    },
+    {
+      "source": "b8119209-2868-48b1-b852-09f51d09a310",
+      "target": "sketch-07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-07dbdf1f-c1b3-458c-9ae6-64aca5ad8554",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "sketch"
+    },
+    {
+      "source": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "target": "sketch-5b1130e5-6b4c-4351-8619-4cf1bec9b76c",
+      "kind": "sketch"
+    },
+    {
+      "source": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "target": "sketch-5b1130e5-6b4c-4351-8619-4cf1bec9b76c",
+      "kind": "sketch"
+    },
+    {
+      "source": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "target": "sketch-5b1130e5-6b4c-4351-8619-4cf1bec9b76c",
+      "kind": "sketch"
+    },
+    {
+      "source": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "target": "sketch-5b1130e5-6b4c-4351-8619-4cf1bec9b76c",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-5b1130e5-6b4c-4351-8619-4cf1bec9b76c",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "sketch"
+    },
+    {
+      "source": "280d62f4-2b48-4612-a66d-3b1c63dfbd56",
+      "target": "sketch-e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+      "kind": "sketch"
+    },
+    {
+      "source": "3da8e658-eaac-405d-b57e-0bca0922d8f3",
+      "target": "sketch-e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+      "kind": "sketch"
+    },
+    {
+      "source": "aafd00f9-1cab-4d65-aecd-df0421540c2c",
+      "target": "sketch-e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+      "kind": "sketch"
+    },
+    {
+      "source": "b05f4bdd-3602-4f01-a24d-5264b3633a1c",
+      "target": "sketch-e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+      "target": "b5bcbad5-0352-468d-919e-a9113d188c69",
+      "kind": "sketch"
+    },
+    {
+      "source": "cb490a88-0789-4bd7-b47e-52f8c16772c1",
+      "target": "19488657-c338-470b-b0b0-eb3eec739d17",
+      "kind": "structural"
+    },
+    {
+      "source": "a8dd9f50-d7da-4034-bdd6-3473df540ec1",
+      "target": "503043eb-a419-42ec-95e1-8e2e193a8bcb",
+      "kind": "structural"
+    },
+    {
+      "source": "1fc58fce-ae29-42be-b663-db2e00e52f43",
+      "target": "905ccf0a-2831-4751-852f-92b19b256a89",
+      "kind": "structural"
+    },
+    {
+      "source": "cb490a88-0789-4bd7-b47e-52f8c16772c1",
+      "target": "a8dd9f50-d7da-4034-bdd6-3473df540ec1",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "12991d28-2b16-469f-9a8d-6b3029d4311a",
+      "kind": "structural"
+    },
+    {
+      "source": "a8dd9f50-d7da-4034-bdd6-3473df540ec1",
+      "target": "1fc58fce-ae29-42be-b663-db2e00e52f43",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "29d69993-e4b0-483a-8557-835cf1953b08",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "420a0f5f-e5da-4fc9-9b52-20b73cac9431",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "5d9ec91b-90db-4329-999a-74c42e8b2d86",
+      "kind": "structural"
+    },
+    {
+      "source": "1fc58fce-ae29-42be-b663-db2e00e52f43",
+      "target": "6bf8f896-f600-47d2-a4c7-25f1b1c1789b",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "6bf8f896-f600-47d2-a4c7-25f1b1c1789b",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "7ac3c32b-ac60-4815-8a86-e30399a61e40",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "d789bc6e-2e85-409f-84e9-a9db251871a9",
+      "kind": "structural"
+    },
+    {
+      "source": "eb8137f5-9361-4ff0-9de9-db6386711a7d",
+      "target": "37737bd7-bfc7-483a-9d57-bbbfea9628b1",
+      "kind": "structural"
+    },
+    {
+      "source": "07a690ae-cf34-4118-a58d-29a35e3755a2",
+      "target": "54209a9c-d508-41f4-b24c-f8a293eacdb9",
+      "kind": "structural"
+    },
+    {
+      "source": "eb8137f5-9361-4ff0-9de9-db6386711a7d",
+      "target": "5deab000-c437-4bce-aec4-79896e55e593",
+      "kind": "structural"
+    },
+    {
+      "source": "eb8137f5-9361-4ff0-9de9-db6386711a7d",
+      "target": "7037c68a-1315-46ef-91df-2fae1b9d7b0b",
+      "kind": "structural"
+    },
+    {
+      "source": "eb8137f5-9361-4ff0-9de9-db6386711a7d",
+      "target": "add93f6a-ec47-4b3a-9f2d-1bb35ffc6b66",
+      "kind": "structural"
+    },
+    {
+      "source": "07a690ae-cf34-4118-a58d-29a35e3755a2",
+      "target": "bfd60e2f-e299-4833-ab7e-03d2b7ccfd94",
+      "kind": "structural"
+    },
+    {
+      "source": "07a690ae-cf34-4118-a58d-29a35e3755a2",
+      "target": "f3459077-b313-492d-86fc-93f2a6d8b4b8",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "07a690ae-cf34-4118-a58d-29a35e3755a2",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "0d80f85b-de7c-4f14-999e-b712950af308",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "0eab95d2-e987-4339-baf2-e495696996f5",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "1ccae664-81a9-411b-b8b5-f030f08407f5",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "2cbac988-6e35-4bf9-8959-6669258ccc4f",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "407d4a34-e821-40e2-8a22-d2b892240bf5",
+      "kind": "structural"
+    },
+    {
+      "source": "280d62f4-2b48-4612-a66d-3b1c63dfbd56",
+      "target": "44260d78-deca-4361-ad2b-31e3f307d4d0",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "51f72add-d8ea-4ee6-a23a-87eb09001ae8",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "52c05add-3438-4d30-9f4c-9de0b1b64452",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "f3283f5f-de3a-45d0-8120-cb173d318850",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "65f07a5a-b6f0-46da-b6a6-e5834f0e5b1a",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "6e513910-16f8-44cf-8f86-b537db510a40",
+      "kind": "structural"
+    },
+    {
+      "source": "9dea390f-8417-45f3-a2b9-d8a2b4591ebe",
+      "target": "7292ba3c-10d1-4324-ae36-ad6c9a7e1acf",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "7cc0a201-c92c-4ff4-8377-f8ee6000a274",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "810a428b-5049-4f55-963e-d99dff19a75c",
+      "kind": "structural"
+    },
+    {
+      "source": "9dea390f-8417-45f3-a2b9-d8a2b4591ebe",
+      "target": "84dbea7a-d8ba-4240-8676-b0260f50392e",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "88c7e52a-8c7d-4c53-aef1-ff49c6bbea28",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "a05e2f26-17a1-4bdc-9d46-ea72ab4169bd",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "a08420b7-ec58-483b-a8b9-69cbbedc4767",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "b1f9a8be-a8d9-4361-b36c-32a33c9d5819",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "b54f7b0a-621d-46b1-ad02-917f6c4341f1",
+      "kind": "structural"
+    },
+    {
+      "source": "280d62f4-2b48-4612-a66d-3b1c63dfbd56",
+      "target": "b5bcbad5-0352-468d-919e-a9113d188c69",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "c156622d-9654-4f35-bf36-cfa946728557",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "c156622d-9654-4f35-bf36-cfa946728557",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "c156622d-9654-4f35-bf36-cfa946728557",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "c156622d-9654-4f35-bf36-cfa946728557",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "c156622d-9654-4f35-bf36-cfa946728557",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "c156622d-9654-4f35-bf36-cfa946728557",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "c156622d-9654-4f35-bf36-cfa946728557",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "c156622d-9654-4f35-bf36-cfa946728557",
+      "kind": "structural"
+    },
+    {
+      "source": "9dea390f-8417-45f3-a2b9-d8a2b4591ebe",
+      "target": "c169d22f-3a85-4c88-b48d-cfcfe16e3730",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "dc331290-299f-40f6-8326-48ac9c4477ce",
+      "kind": "structural"
+    },
+    {
+      "source": "280d62f4-2b48-4612-a66d-3b1c63dfbd56",
+      "target": "e2582265-ec67-4a45-be11-01cc545cbeb7",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "e6835cd2-634e-4bc7-90bb-df92b33386d5",
+      "kind": "structural"
+    },
+    {
+      "source": "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "target": "eb8137f5-9361-4ff0-9de9-db6386711a7d",
+      "kind": "structural"
+    },
+    {
+      "source": "9dea390f-8417-45f3-a2b9-d8a2b4591ebe",
+      "target": "ee827c56-06a5-4702-b9a8-163bb4c539d7",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "kind": "structural"
+    },
+    {
+      "source": "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "target": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "kind": "structural"
+    },
+    {
+      "source": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "target": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "kind": "structural"
+    },
+    {
+      "source": "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "target": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "kind": "structural"
+    },
+    {
+      "source": "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "target": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "fad94e41-faca-49ff-a3e2-22eba5d42ad7",
+      "kind": "structural"
+    },
+    {
+      "source": "1fc04aee-4488-43ea-bd4f-65efe257b5ad",
+      "target": "sketch-b79f5cde-0a93-414a-b0dc-b72e774c05b9",
+      "kind": "sketch"
+    },
+    {
+      "source": "24731147-737a-4074-862f-65dc4af5cdd6",
+      "target": "sketch-b79f5cde-0a93-414a-b0dc-b72e774c05b9",
+      "kind": "sketch"
+    },
+    {
+      "source": "74273265-17b6-4de6-b201-ee00daa9b1a5",
+      "target": "sketch-b79f5cde-0a93-414a-b0dc-b72e774c05b9",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-b79f5cde-0a93-414a-b0dc-b72e774c05b9",
+      "target": "37855299-f638-49fb-ad17-09e409d28aef",
+      "kind": "sketch"
+    },
+    {
+      "source": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "target": "sketch-a88278d7-a158-486c-a62b-d2b26680ac11",
+      "kind": "sketch"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "sketch-a88278d7-a158-486c-a62b-d2b26680ac11",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-a88278d7-a158-486c-a62b-d2b26680ac11",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "sketch"
+    },
+    {
+      "source": "0dd193b0-3f70-4ec3-a54a-5c892c86bb01",
+      "target": "sketch-3ed67172-8a3b-445e-a78e-371a1e99c592",
+      "kind": "sketch"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "sketch-3ed67172-8a3b-445e-a78e-371a1e99c592",
+      "kind": "sketch"
+    },
+    {
+      "source": "77802978-99e9-411f-aba6-b77535bcdc07",
+      "target": "sketch-3ed67172-8a3b-445e-a78e-371a1e99c592",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-3ed67172-8a3b-445e-a78e-371a1e99c592",
+      "target": "9ea35172-fd58-4868-84a0-4d672a037da2",
+      "kind": "sketch"
+    },
+    {
+      "source": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "target": "sketch-63ae56c2-e412-40d4-b4c1-a632f8d38adf",
+      "kind": "sketch"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "sketch-63ae56c2-e412-40d4-b4c1-a632f8d38adf",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-63ae56c2-e412-40d4-b4c1-a632f8d38adf",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "sketch"
+    },
+    {
+      "source": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "target": "sketch-60d61e53-cdc1-4035-858d-f85887dd007f",
+      "kind": "sketch"
+    },
+    {
+      "source": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "target": "sketch-60d61e53-cdc1-4035-858d-f85887dd007f",
+      "kind": "sketch"
+    },
+    {
+      "source": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "target": "sketch-60d61e53-cdc1-4035-858d-f85887dd007f",
+      "kind": "sketch"
+    },
+    {
+      "source": "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "target": "sketch-60d61e53-cdc1-4035-858d-f85887dd007f",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-60d61e53-cdc1-4035-858d-f85887dd007f",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "sketch"
+    },
+    {
+      "source": "42b2b1e3-5314-4fbe-b98c-cfd2d811c886",
+      "target": "sketch-fecf05ee-3916-4cb0-b79a-d9d71c2f1e57",
+      "kind": "sketch"
+    },
+    {
+      "source": "c2a137d1-be1a-403f-8615-f4eaed1c43f6",
+      "target": "sketch-fecf05ee-3916-4cb0-b79a-d9d71c2f1e57",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-fecf05ee-3916-4cb0-b79a-d9d71c2f1e57",
+      "target": "b8119209-2868-48b1-b852-09f51d09a310",
+      "kind": "sketch"
+    },
+    {
+      "source": "6d1e4a6b-7142-4bf6-a98a-311b870475dd",
+      "target": "37855299-f638-49fb-ad17-09e409d28aef",
+      "kind": "structural"
+    },
+    {
+      "source": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "target": "37855299-f638-49fb-ad17-09e409d28aef",
+      "kind": "structural"
+    },
+    {
+      "source": "bcd8f003-20de-430f-a0cc-054c1d519e5e",
+      "target": "37855299-f638-49fb-ad17-09e409d28aef",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "kind": "structural"
+    },
+    {
+      "source": "a6dc5d1a-1d24-455b-9e27-938e2a477b2d",
+      "target": "1fc04aee-4488-43ea-bd4f-65efe257b5ad",
+      "kind": "structural"
+    },
+    {
+      "source": "a6dc5d1a-1d24-455b-9e27-938e2a477b2d",
+      "target": "24731147-737a-4074-862f-65dc4af5cdd6",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "kind": "structural"
+    },
+    {
+      "source": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "target": "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "kind": "structural"
+    },
+    {
+      "source": "bcd8f003-20de-430f-a0cc-054c1d519e5e",
+      "target": "6d1e4a6b-7142-4bf6-a98a-311b870475dd",
+      "kind": "structural"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "kind": "structural"
+    },
+    {
+      "source": "a6dc5d1a-1d24-455b-9e27-938e2a477b2d",
+      "target": "74273265-17b6-4de6-b201-ee00daa9b1a5",
+      "kind": "structural"
+    },
+    {
+      "source": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "607d747b-55d4-4182-80f9-2b257d639d98",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "target": "90a6f1ba-385c-4416-91f1-b6e764774c0d",
+      "kind": "structural"
+    },
+    {
+      "source": "6d1e4a6b-7142-4bf6-a98a-311b870475dd",
+      "target": "9ea35172-fd58-4868-84a0-4d672a037da2",
+      "kind": "structural"
+    },
+    {
+      "source": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "target": "9ea35172-fd58-4868-84a0-4d672a037da2",
+      "kind": "structural"
+    },
+    {
+      "source": "bcd8f003-20de-430f-a0cc-054c1d519e5e",
+      "target": "9ea35172-fd58-4868-84a0-4d672a037da2",
+      "kind": "structural"
+    },
+    {
+      "source": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "607d747b-55d4-4182-80f9-2b257d639d98",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "target": "a6fcc25b-32d0-4414-97aa-f0e02d9ab853",
+      "kind": "structural"
+    },
+    {
+      "source": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "607d747b-55d4-4182-80f9-2b257d639d98",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "target": "ad423628-d8a1-4e5e-8a80-0950952bedaf",
+      "kind": "structural"
+    },
+    {
+      "source": "6d1e4a6b-7142-4bf6-a98a-311b870475dd",
+      "target": "b8119209-2868-48b1-b852-09f51d09a310",
+      "kind": "structural"
+    },
+    {
+      "source": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "target": "b8119209-2868-48b1-b852-09f51d09a310",
+      "kind": "structural"
+    },
+    {
+      "source": "bcd8f003-20de-430f-a0cc-054c1d519e5e",
+      "target": "b8119209-2868-48b1-b852-09f51d09a310",
+      "kind": "structural"
+    },
+    {
+      "source": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "target": "bcd8f003-20de-430f-a0cc-054c1d519e5e",
+      "kind": "structural"
+    },
+    {
+      "source": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "target": "bcd8f003-20de-430f-a0cc-054c1d519e5e",
+      "kind": "structural"
+    },
+    {
+      "source": "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "target": "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "kind": "structural"
+    },
+    {
+      "source": "eb8137f5-9361-4ff0-9de9-db6386711a7d",
+      "target": "f5258bac-b146-442c-99fc-e3832c525225",
+      "kind": "structural"
+    },
+    {
+      "source": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "607d747b-55d4-4182-80f9-2b257d639d98",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "8a03862e-44ab-4810-8934-09e753ebec19",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "target": "316012c3-e7da-48f6-bb43-16975306ad8d",
+      "kind": "structural"
+    },
+    {
+      "source": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "target": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "kind": "structural"
+    },
+    {
+      "source": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "target": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "kind": "structural"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "kind": "structural"
+    },
+    {
+      "source": "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "target": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "kind": "structural"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "kind": "structural"
+    },
+    {
+      "source": "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "target": "607d747b-55d4-4182-80f9-2b257d639d98",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "kind": "structural"
+    },
+    {
+      "source": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "target": "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "kind": "structural"
+    },
+    {
+      "source": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "target": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "kind": "structural"
+    },
+    {
+      "source": "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "target": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "kind": "structural"
+    },
+    {
+      "source": "607d747b-55d4-4182-80f9-2b257d639d98",
+      "target": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "kind": "structural"
+    },
+    {
+      "source": "00f677c5-bb5a-40b2-ade9-2644d2cbb997",
+      "target": "0dd193b0-3f70-4ec3-a54a-5c892c86bb01",
+      "kind": "structural"
+    },
+    {
+      "source": "1e7b279f-a6fe-45a1-babc-f85ffd88759b",
+      "target": "0dd193b0-3f70-4ec3-a54a-5c892c86bb01",
+      "kind": "structural"
+    },
+    {
+      "source": "732f4b77-d13c-46bf-b945-16610e8acb2a",
+      "target": "0dd193b0-3f70-4ec3-a54a-5c892c86bb01",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "0dd193b0-3f70-4ec3-a54a-5c892c86bb01",
+      "kind": "structural"
+    },
+    {
+      "source": "00f677c5-bb5a-40b2-ade9-2644d2cbb997",
+      "target": "77802978-99e9-411f-aba6-b77535bcdc07",
+      "kind": "structural"
+    },
+    {
+      "source": "1e7b279f-a6fe-45a1-babc-f85ffd88759b",
+      "target": "77802978-99e9-411f-aba6-b77535bcdc07",
+      "kind": "structural"
+    },
+    {
+      "source": "732f4b77-d13c-46bf-b945-16610e8acb2a",
+      "target": "77802978-99e9-411f-aba6-b77535bcdc07",
+      "kind": "structural"
+    },
+    {
+      "source": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "target": "77802978-99e9-411f-aba6-b77535bcdc07",
+      "kind": "structural"
+    },
+    {
+      "source": "b80c0047-3ae2-4205-81f6-e5480c4ef14b",
+      "target": "77802978-99e9-411f-aba6-b77535bcdc07",
+      "kind": "structural"
+    },
+    {
+      "source": "f5258bac-b146-442c-99fc-e3832c525225",
+      "target": "77802978-99e9-411f-aba6-b77535bcdc07",
+      "kind": "structural"
+    },
+    {
+      "source": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "607d747b-55d4-4182-80f9-2b257d639d98",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "aee58afd-7504-46aa-ba81-67cb253bbdf5",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "target": "21a196a2-8bae-42ed-b899-dbad329e4529",
+      "kind": "structural"
+    },
+    {
+      "source": "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "607d747b-55d4-4182-80f9-2b257d639d98",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "72d9610a-531f-497b-b5e5-3c14be31f3ae",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "target": "2d0f447c-1931-48a0-b068-3031623bbd3a",
+      "kind": "structural"
+    },
+    {
+      "source": "25a37d47-eae0-4834-a91c-20094093c6d9",
+      "target": "sketch-d7af2915-a048-4d42-b1d7-01809c0800a9",
+      "kind": "sketch"
+    },
+    {
+      "source": "43cb2aa6-3713-4807-b8f4-ec88454dbd2e",
+      "target": "sketch-d7af2915-a048-4d42-b1d7-01809c0800a9",
+      "kind": "sketch"
+    },
+    {
+      "source": "65ba4189-0c22-4326-9303-f4d2d0c44694",
+      "target": "sketch-d7af2915-a048-4d42-b1d7-01809c0800a9",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-d7af2915-a048-4d42-b1d7-01809c0800a9",
+      "target": "c2a137d1-be1a-403f-8615-f4eaed1c43f6",
+      "kind": "sketch"
+    },
+    {
+      "source": "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "target": "42b2b1e3-5314-4fbe-b98c-cfd2d811c886",
+      "kind": "structural"
+    },
+    {
+      "source": "42b2b1e3-5314-4fbe-b98c-cfd2d811c886",
+      "target": "c2a137d1-be1a-403f-8615-f4eaed1c43f6",
+      "kind": "structural"
+    },
+    {
+      "source": "11edfc40-8c71-429e-b300-07a9865f6655",
+      "target": "sketch-35b90120-f420-49b4-9557-3e185b3fbce5",
+      "kind": "sketch"
+    },
+    {
+      "source": "186263af-c212-43e3-a8f1-6b6934f42df9",
+      "target": "sketch-35b90120-f420-49b4-9557-3e185b3fbce5",
+      "kind": "sketch"
+    },
+    {
+      "source": "25a37d47-eae0-4834-a91c-20094093c6d9",
+      "target": "sketch-35b90120-f420-49b4-9557-3e185b3fbce5",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-35b90120-f420-49b4-9557-3e185b3fbce5",
+      "target": "43cb2aa6-3713-4807-b8f4-ec88454dbd2e",
+      "kind": "sketch"
+    },
+    {
+      "source": "11edfc40-8c71-429e-b300-07a9865f6655",
+      "target": "43cb2aa6-3713-4807-b8f4-ec88454dbd2e",
+      "kind": "structural"
+    },
+    {
+      "source": "42b2b1e3-5314-4fbe-b98c-cfd2d811c886",
+      "target": "11edfc40-8c71-429e-b300-07a9865f6655",
+      "kind": "structural"
+    },
+    {
+      "source": "42b2b1e3-5314-4fbe-b98c-cfd2d811c886",
+      "target": "186263af-c212-43e3-a8f1-6b6934f42df9",
+      "kind": "structural"
+    },
+    {
+      "source": "11edfc40-8c71-429e-b300-07a9865f6655",
+      "target": "25a37d47-eae0-4834-a91c-20094093c6d9",
+      "kind": "structural"
+    },
+    {
+      "source": "186263af-c212-43e3-a8f1-6b6934f42df9",
+      "target": "25a37d47-eae0-4834-a91c-20094093c6d9",
+      "kind": "structural"
+    },
+    {
+      "source": "11edfc40-8c71-429e-b300-07a9865f6655",
+      "target": "65ba4189-0c22-4326-9303-f4d2d0c44694",
+      "kind": "structural"
+    },
+    {
+      "source": "186263af-c212-43e3-a8f1-6b6934f42df9",
+      "target": "65ba4189-0c22-4326-9303-f4d2d0c44694",
+      "kind": "structural"
+    }
+  ]
+}

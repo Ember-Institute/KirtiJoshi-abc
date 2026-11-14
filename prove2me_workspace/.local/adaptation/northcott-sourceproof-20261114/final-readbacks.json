@@ -1,0 +1,780 @@
+{
+  "declarations": [
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight_one.lean",
+      "line": 22,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight₁ {K : Type*} [Field K] [NumberField K] (x : K)\n    (φ : K →+* ℂ) : ‖φ x‖ ≤ Height.mulHeight₁ x",
+      "signature": "theorem AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight₁ {K : Type*} [Field K] [NumberField K] (x : K)\n    (φ : K →+* ℂ) : ‖φ x‖ ≤ Height.mulHeight₁ x",
+      "source_file_sha256": "e13cb8dddbea6a4b5abc83117181a87a92312eaeb3478e605da6edacddc186b0",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The proof bounds one infinite-place contribution by the full nonnegative logarithmic-height sum and exponentiates.",
+        "zh_Hans": "证明将单个无穷处的贡献用完整的非负对数高度和界定，再取指数。",
+        "ja": "証明は一つの無限素点の寄与を非負項からなる対数的高さの和で評価し、指数関数を適用する。"
+      },
+      "en": "For a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFor every number field K, every x ∈ K, and every unital ring embedding φ: K → ℂ, the complex norm satisfies |φ(x)| ≤ M_K(x). The quantifier covers every complex embedding, not only one selected embedding. No algebraic-integer assumption on x is required. The right side is the unnormalized height M_K(x), not exp of the normalized absolute height.\n\n$$\n|\\varphi(x)|\\le M_K(x)\n$$",
+      "zh_Hans": "对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n对任意数域 K、任意 x ∈ K 及每个保单位元环嵌入 φ: K → ℂ，复绝对值满足 |φ(x)| ≤ M_K(x)。量词覆盖全部复嵌入，不仅是某个选定嵌入。不要求 x 为代数整数。右端是未归一化高度 M_K(x)，不是归一化绝对对数高度的指数。\n\n$$\n|\\varphi(x)|\\le M_K(x)\n$$",
+      "ja": "数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\n任意の数体 K、任意の x ∈ K、およびすべての単位元を保つ環の埋め込み φ: K → ℂ に対し、|φ(x)| ≤ M_K(x) が成り立つ。選んだ一つの埋め込みだけではなく、すべての複素埋め込みを対象とする。x が代数的整数であるという仮定はない。右辺は正規化前の高さ M_K(x) であり、正規化された絶対対数的高さの指数関数ではない。\n\n$$\n|\\varphi(x)|\\le M_K(x)\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean",
+      "original_candidate_file_sha256": "1c352fd8815d254269bd8d7245fb8257df82174efb12e29d5806f344cbe3ea32",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 23,
+        "end_line": 48,
+        "sha256": "716d91423c1abb52008c85b2884493f992e0de061e8d79bc1592945413bc76a0",
+        "text": "theorem norm_embedding_le_mulHeight₁ {K : Type*} [Field K] [NumberField K] (x : K)\n    (φ : K →+* ℂ) : ‖φ x‖ ≤ Height.mulHeight₁ x := by\n  have h1 : Real.posLog (InfinitePlace.mk φ x) ≤ Height.logHeight₁ x := by\n    rw [logHeight₁_eq]\n    have hfin : 0 ≤ ∑ᶠ v : FinitePlace K, Real.posLog (v x) :=\n      finsum_nonneg fun _ ↦ Real.posLog_nonneg\n    have hinf : Real.posLog (InfinitePlace.mk φ x) ≤\n        ∑ v : InfinitePlace K, (v.mult : ℝ) * Real.posLog (v x) :=\n      calc Real.posLog (InfinitePlace.mk φ x)\n          ≤ ((InfinitePlace.mk φ).mult : ℝ) * Real.posLog (InfinitePlace.mk φ x) :=\n            le_mul_of_one_le_left Real.posLog_nonneg InfinitePlace.one_le_mult\n        _ ≤ _ := Finset.single_le_sum\n            (f := fun v : InfinitePlace K ↦ (v.mult : ℝ) * Real.posLog (v x))\n            (fun v _ ↦ mul_nonneg (Nat.cast_nonneg _) Real.posLog_nonneg) (Finset.mem_univ _)\n    exact hinf.trans (le_add_of_nonneg_right hfin)\n  rw [InfinitePlace.apply, Height.logHeight₁_eq_log_mulHeight₁] at h1\n  have h2 : ‖φ x‖ ≤ Real.exp (Real.posLog ‖φ x‖) := by\n    rcases eq_or_ne (φ x) 0 with h | h\n    · rw [h, norm_zero]\n      exact (Real.exp_pos _).le\n    · calc ‖φ x‖ = Real.exp (Real.log ‖φ x‖) := (Real.exp_log (norm_pos_iff.mpr h)).symm\n        _ ≤ Real.exp (Real.posLog ‖φ x‖) :=\n            Real.exp_le_exp.mpr (by rw [Real.posLog_apply]; exact le_max_right _ _)\n  calc ‖φ x‖ ≤ Real.exp (Real.posLog ‖φ x‖) := h2\n    _ ≤ Real.exp (Real.log (Height.mulHeight₁ x)) := Real.exp_le_exp.mpr h1\n    _ = Height.mulHeight₁ x := Real.exp_log (Height.mulHeight₁_pos x)"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+      "compiler_source_span": {
+        "startLine": 18,
+        "endLine": 47
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] (x : K) (φ : K →+* ℂ), ‖φ x‖ ≤ Height.mulHeight₁ x",
+      "main_formula": "|\\varphi(x)|\\le M_K(x)"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.heightBound",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 20,
+      "kind": "definition",
+      "full_signature_static": "noncomputable def AbcAdaptation.Tripod.Northcott.heightBound (d : ℕ) (H : ℝ) : ℝ",
+      "signature": "noncomputable def AbcAdaptation.Tripod.Northcott.heightBound (d : ℕ) (H : ℝ) : ℝ",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": null,
+        "zh_Hans": null,
+        "ja": null
+      },
+      "en": "For d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\n$$\nB(d,H)=\\exp\\!\\bigl(d\\max(H,0)\\bigr)\n$$",
+      "zh_Hans": "对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n$$\nB(d,H)=\\exp\\!\\bigl(d\\max(H,0)\\bigr)\n$$",
+      "ja": "自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n$$\nB(d,H)=\\exp\\!\\bigl(d\\max(H,0)\\bigr)\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.heightBound",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 52,
+        "end_line": 52,
+        "sha256": "56aac80d098ef3c67c304a279c1144bec662db3205646c21dac65bdc602bbdb4",
+        "text": "noncomputable def heightBound (d : ℕ) (H : ℝ) : ℝ := Real.exp (d * max H 0)"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.heightBound",
+      "compiler_source_span": {
+        "startLine": 18,
+        "endLine": 20
+      },
+      "elaboratedType": "ℕ → ℝ → ℝ",
+      "main_formula": "B(d,H)=\\exp\\!\\bigl(d\\max(H,0)\\bigr)"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.heightBound_pos",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 22,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Northcott.heightBound_pos (d : ℕ) (H : ℝ) : 0 < heightBound d H",
+      "signature": "theorem AbcAdaptation.Tripod.Northcott.heightBound_pos (d : ℕ) (H : ℝ) : 0 < heightBound d H",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": null,
+        "zh_Hans": null,
+        "ja": null
+      },
+      "en": "For d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor every d ∈ ℕ and H ∈ ℝ, B(d,H) > 0.\n\n$$\nB(d,H)>0\n$$",
+      "zh_Hans": "对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对任意自然数 d 和实数 H，都有 B(d,H) > 0。\n\n$$\nB(d,H)>0\n$$",
+      "ja": "自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\nすべての自然数 d と実数 H に対して B(d,H) > 0 である。\n\n$$\nB(d,H)>0\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.heightBound_pos",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 54,
+        "end_line": 54,
+        "sha256": "1456d762055bd2f5860c494c5622e212231e45d41b96a20f345ff48c79c9a463",
+        "text": "theorem heightBound_pos (d : ℕ) (H : ℝ) : 0 < heightBound d H := Real.exp_pos _"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.heightBound_pos",
+      "compiler_source_span": {
+        "startLine": 22,
+        "endLine": 22
+      },
+      "elaboratedType": "∀ (d : ℕ) (H : ℝ), 0 < AbcAdaptation.Tripod.Northcott.heightBound d H",
+      "main_formula": "B(d,H)>0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight_one_gen_le.lean",
+      "line": 20,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Northcott.mulHeight₁_gen_le {d : ℕ} {H : ℝ} {x : Pt} (hd : x ∈ ptLE d) (hH : htCan x ≤ H) :\n    Height.mulHeight₁ (gen x.1) ≤ heightBound d H",
+      "signature": "theorem AbcAdaptation.Tripod.Northcott.mulHeight₁_gen_le {d : ℕ} {H : ℝ} {x : Pt} (hd : x ∈ ptLE d) (hH : htCan x ≤ H) :\n    Height.mulHeight₁ (gen x.1) ≤ heightBound d H",
+      "source_file_sha256": "25f11d7f410e0de28e0c171662f054dad82e5866cfbf652c68dae7532903ad6a",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The proof uses ℓ_{F_λ}(λ) = δ(λ)h(λ), nonnegative height, the two bounds, and exponentiation.",
+        "zh_Hans": "证明使用 ℓ_{F_λ}(λ) = δ(λ)h(λ)、高度非负及两个上界，再取指数。",
+        "ja": "証明は ℓ_{F_λ}(λ) = δ(λ)h(λ)、高さの非負性、および二つの上界を使い、指数関数を適用する。"
+      },
+      "en": "For a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFix an algebraic closure ℚ̄ of ℚ. The points are the algebraic numbers λ ∈ ℚ̄ with λ ≠ 0 and λ ≠ 1. For each point separately, let F_λ = ℚ(λ) ⊆ ℚ̄ be its minimal point field. Put δ(λ) = [F_λ:ℚ], equivalently the degree of the minimal polynomial of λ over ℚ. The canonical generator of F_λ maps to this same λ in ℚ̄. Define its normalized absolute logarithmic height by h(λ) = ℓ_{F_λ}(λ)/δ(λ). The fields F_λ vary with λ; no single containing number field is fixed. The height h is the degree-normalized absolute height, while ℓ_{F_λ} is unnormalized.\n\nFor d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor every d ∈ ℕ, H ∈ ℝ, and point λ with δ(λ) ≤ d and h(λ) ≤ H, the unnormalized height satisfies M_{F_λ}(λ) ≤ B(d,H). The height is computed in this point’s own minimal field F_λ, not an arbitrary larger ambient field.\n\n$$\nM_{F_\\lambda}(\\lambda)\\le B(d,H)\n$$",
+      "zh_Hans": "对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n固定 ℚ 的代数闭包 ℚ̄。点是满足 λ ≠ 0 且 λ ≠ 1 的代数数 λ ∈ ℚ̄。对每个点分别取其最小点域 F_λ = ℚ(λ) ⊆ ℚ̄，并记 δ(λ) = [F_λ:ℚ]，它也等于 λ 在 ℚ 上的最小多项式次数。最小点域中的典范生成元在 ℚ̄ 中的像就是同一个 λ。定义归一化绝对对数高度 h(λ) = ℓ_{F_λ}(λ)/δ(λ)。点域 F_λ 随 λ 变化，不固定一个包含所有点的数域。h 是按次数归一化的绝对高度，而 ℓ_{F_λ} 未归一化。\n\n对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对任意自然数 d、实数 H 及满足 δ(λ) ≤ d 和 h(λ) ≤ H 的点 λ，未归一化高度满足 M_{F_λ}(λ) ≤ B(d,H)。高度在该点自身的最小点域 F_λ 中计算，而非在任意更大的环境数域中计算。\n\n$$\nM_{F_\\lambda}(\\lambda)\\le B(d,H)\n$$",
+      "ja": "数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\nℚ の代数閉包 ℚ̄ を固定する。点は λ ≠ 0 かつ λ ≠ 1 を満たす代数数 λ ∈ ℚ̄ である。各点について最小の点の定義体 F_λ = ℚ(λ) ⊆ ℚ̄ を取り、δ(λ) = [F_λ:ℚ] とおく。これは λ の ℚ 上の最小多項式の次数でもある。F_λ の標準的な生成元の ℚ̄ における像は、同じ λ である。正規化された絶対対数的高さを h(λ) = ℓ_{F_λ}(λ)/δ(λ) と定める。F_λ は λ に応じて変わり、すべての点を含む一つの数体を固定しない。h は次数で正規化した絶対的高さであり、ℓ_{F_λ} は正規化前の高さである。\n\n自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\nすべての自然数 d、実数 H、および δ(λ) ≤ d と h(λ) ≤ H を満たす点 λ に対し、M_{F_λ}(λ) ≤ B(d,H) が成り立つ。高さはその点自身の最小の定義体 F_λ で計算し、任意のより大きい数体で計算するものではない。\n\n$$\nM_{F_\\lambda}(\\lambda)\\le B(d,H)\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean",
+      "original_candidate_file_sha256": "3d208194aa2de97872a4af68dd370ab7649be2c9d8a262f1d7f18125d2d83252",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 58,
+        "end_line": 65,
+        "sha256": "b0712271848b6edf301974c38d57d135f8a9c74c13335bd72489ff60cd028951",
+        "text": "theorem mulHeight₁_gen_le {d : ℕ} {H : ℝ} {x : Pt} (hd : x ∈ ptLE d) (hH : htCan x ≤ H) :\n    Height.mulHeight₁ (gen x.1) ≤ heightBound d H := by\n  rw [heightBound, ← Real.exp_log (Height.mulHeight₁_pos _),\n    ← Height.logHeight₁_eq_log_mulHeight₁]\n  apply Real.exp_le_exp.mpr\n  rw [← deg_mul_htCan x]\n  exact mul_le_mul (by exact_mod_cast hd) (hH.trans (le_max_left _ _)) (htCan_nonneg _)\n    (Nat.cast_nonneg _)"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+      "compiler_source_span": {
+        "startLine": 18,
+        "endLine": 27
+      },
+      "elaboratedType": "∀ {d : ℕ} {H : ℝ} {x : AbcAdaptation.Tripod.Pt},\n  x ∈ AbcAdaptation.Tripod.ptLE d →\n    AbcAdaptation.Tripod.htCan x ≤ H →\n      Height.mulHeight₁ (AbcAdaptation.Tripod.gen ↑x) ≤ AbcAdaptation.Tripod.Northcott.heightBound d H",
+      "main_formula": "M_{F_\\lambda}(\\lambda)\\le B(d,H)"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.natDegree_minpoly_int_le",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 26,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Northcott.natDegree_minpoly_int_le {K : Type*} [Field K] [NumberField K] {y : K}\n    (hy : IsIntegral ℤ y) : (minpoly ℤ y).natDegree ≤ Module.finrank ℚ K",
+      "signature": "theorem AbcAdaptation.Tripod.Northcott.natDegree_minpoly_int_le {K : Type*} [Field K] [NumberField K] {y : K}\n    (hy : IsIntegral ℤ y) : (minpoly ℤ y).natDegree ≤ Module.finrank ℚ K",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The proof identifies the rational minimal polynomial with the coefficient image of the integer minimal polynomial.",
+        "zh_Hans": "证明将有理数域上的最小多项式与整数最小多项式的系数映像相识别。",
+        "ja": "証明は有理数体上の最小多項式を、整数係数の最小多項式の係数の像と同一視する。"
+      },
+      "en": "For every number field K and every algebraic integer y ∈ K, let m_y ∈ ℤ[X] be its monic minimal polynomial over ℤ. Then deg m_y ≤ [K:ℚ]. The field K need not equal ℚ(y), and K is universally quantified.\n\n$$\n\\deg(m_y)\\le [K:\\mathbb Q]\n$$",
+      "zh_Hans": "对任意数域 K 及其中任意代数整数 y，令 m_y ∈ ℤ[X] 为 y 在 ℤ 上的首一最小多项式。则 deg m_y ≤ [K:ℚ]。不要求 K 等于 ℚ(y)，且 K 在全称量词范围内。\n\n$$\n\\deg(m_y)\\le [K:\\mathbb Q]\n$$",
+      "ja": "任意の数体 K と任意の代数的整数 y ∈ K に対し、m_y ∈ ℤ[X] を y の ℤ 上のモニックな最小多項式とする。このとき deg m_y ≤ [K:ℚ] である。K = ℚ(y) である必要はなく、K も全称量化される。\n\n$$\n\\deg(m_y)\\le [K:\\mathbb Q]\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.natDegree_minpoly_int_le",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 69,
+        "end_line": 73,
+        "sha256": "f7f427e9c9ab6dcedd4ead7954035aa19b4ef5e9dc5a9cf942c8d2fbb03ec1f8",
+        "text": "theorem natDegree_minpoly_int_le {K : Type*} [Field K] [NumberField K] {y : K}\n    (hy : IsIntegral ℤ y) : (minpoly ℤ y).natDegree ≤ Module.finrank ℚ K := by\n  rw [← (minpoly.monic hy).natDegree_map (algebraMap ℤ ℚ),\n    ← minpoly.isIntegrallyClosed_eq_field_fractions' ℚ hy]\n  exact minpoly.natDegree_le _"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.natDegree_minpoly_int_le",
+      "compiler_source_span": {
+        "startLine": 24,
+        "endLine": 30
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] {y : K},\n  IsIntegral ℤ y → (minpoly ℤ y).natDegree ≤ Module.finrank ℚ K",
+      "main_formula": "\\deg(m_y)\\le [K:\\mathbb Q]"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.coeffBoundOf",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 34,
+      "kind": "definition",
+      "full_signature_static": "noncomputable def AbcAdaptation.Tripod.Northcott.coeffBoundOf (d : ℕ) (B : ℝ) : ℕ",
+      "signature": "noncomputable def AbcAdaptation.Tripod.Northcott.coeffBoundOf (d : ℕ) (B : ℝ) : ℕ",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": null,
+        "zh_Hans": null,
+        "ja": null
+      },
+      "en": "For d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\n$$\nC(d,b)=\\left\\lceil\\max(b,1)^d\\binom{d}{\\lfloor d/2\\rfloor}\\right\\rceil_{\\mathbb N}\n$$",
+      "zh_Hans": "对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n$$\nC(d,b)=\\left\\lceil\\max(b,1)^d\\binom{d}{\\lfloor d/2\\rfloor}\\right\\rceil_{\\mathbb N}\n$$",
+      "ja": "自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\n$$\nC(d,b)=\\left\\lceil\\max(b,1)^d\\binom{d}{\\lfloor d/2\\rfloor}\\right\\rceil_{\\mathbb N}\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.coeffBoundOf",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 77,
+        "end_line": 77,
+        "sha256": "7fc44267f2389281d0debc9f73bed36a9f0537f139f4792b10f66d0a9144eb43",
+        "text": "noncomputable def coeffBoundOf (d : ℕ) (B : ℝ) : ℕ := ⌈max B 1 ^ d * d.choose (d / 2)⌉₊"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.coeffBoundOf",
+      "compiler_source_span": {
+        "startLine": 32,
+        "endLine": 34
+      },
+      "elaboratedType": "ℕ → ℝ → ℕ",
+      "main_formula": "C(d,b)=\\left\\lceil\\max(b,1)^d\\binom{d}{\\lfloor d/2\\rfloor}\\right\\rceil_{\\mathbb N}"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+      "line": 22,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc {K : Type*} [Field K] [NumberField K] {y : K}\n    (hy : IsIntegral ℤ y) {d : ℕ} (hd : Module.finrank ℚ K ≤ d) {B : ℝ}\n    (hB : ∀ φ : K →+* ℂ, ‖φ y‖ ≤ B) (i : ℕ) :\n    (minpoly ℤ y).coeff i ∈ Set.Icc (-(coeffBoundOf d B : ℤ)) (coeffBoundOf d B)",
+      "signature": "theorem AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc {K : Type*} [Field K] [NumberField K] {y : K}\n    (hy : IsIntegral ℤ y) {d : ℕ} (hd : Module.finrank ℚ K ≤ d) {B : ℝ}\n    (hB : ∀ φ : K →+* ℂ, ‖φ y‖ ≤ B) (i : ℕ) :\n    (minpoly ℤ y).coeff i ∈ Set.Icc (-(coeffBoundOf d B : ℤ)) (coeffBoundOf d B)",
+      "source_file_sha256": "1794d880113c645a22ae77770c9a9e936d89eb1f5abfee2c6f31c65f1e6cf4a0",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The proof extends the bound over every complex embedding to all roots of the rational minimal polynomial, then applies the monic polynomial coefficient bound.",
+        "zh_Hans": "证明将全部复嵌入的上界用于有理数域上最小多项式的全部根，再使用首一多项式的系数上界。",
+        "ja": "証明はすべての複素埋め込みについての上界を、有理数体上の最小多項式のすべての根に適用し、モニック多項式の係数評価を使う。"
+      },
+      "en": "For d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nFor every number field K, algebraic integer y ∈ K, natural number d with [K:ℚ] ≤ d, and real b, assume |φ(y)| ≤ b for every unital ring embedding φ: K → ℂ. Write the monic integer minimal polynomial as m_y(X) = ∑_i a_i X^i. Then −C(d,b) ≤ a_i ≤ C(d,b) for every i ∈ ℕ, including coefficients beyond its degree. The premise concerns all complex embeddings of the actual field K. It does not assume only one embedding or only a chosen subset of conjugates.\n\n$$\n-C(d,b)\\le a_i\\le C(d,b)\\qquad(i\\in\\mathbb N)\n$$",
+      "zh_Hans": "对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n对任意数域 K、代数整数 y ∈ K、满足 [K:ℚ] ≤ d 的自然数 d 以及实数 b，假设每个保单位元环嵌入 φ: K → ℂ 都满足 |φ(y)| ≤ b。将首一整数最小多项式写为 m_y(X) = ∑_i a_i X^i。则对每个自然数 i，都有 −C(d,b) ≤ a_i ≤ C(d,b)，其中也包括高于多项式次数的系数。前提覆盖实际数域 K 的全部复嵌入，不只是一个嵌入或选定的一部分共轭元素。\n\n$$\n-C(d,b)\\le a_i\\le C(d,b)\\qquad(i\\in\\mathbb N)\n$$",
+      "ja": "自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\n任意の数体 K、代数的整数 y ∈ K、[K:ℚ] ≤ d を満たす自然数 d、および実数 b を取る。すべての単位元を保つ環の埋め込み φ: K → ℂ について |φ(y)| ≤ b と仮定する。整数係数のモニックな最小多項式を m_y(X) = ∑_i a_i X^i と書く。このときすべての自然数 i に対して −C(d,b) ≤ a_i ≤ C(d,b) である。次数を超える係数も含む。仮定は実際の数体 K のすべての複素埋め込みを対象とし、一つの埋め込みや選んだ共役だけではない。\n\n$$\n-C(d,b)\\le a_i\\le C(d,b)\\qquad(i\\in\\mathbb N)\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+      "original_candidate_file_sha256": "1794d880113c645a22ae77770c9a9e936d89eb1f5abfee2c6f31c65f1e6cf4a0",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 82,
+        "end_line": 102,
+        "sha256": "767618ff3ac189043fedab90042dda6502e17aa7cb63c8400e7e09304fbe9f6e",
+        "text": "theorem coeff_minpoly_int_mem_Icc {K : Type*} [Field K] [NumberField K] {y : K}\n    (hy : IsIntegral ℤ y) {d : ℕ} (hd : Module.finrank ℚ K ≤ d) {B : ℝ}\n    (hB : ∀ φ : K →+* ℂ, ‖φ y‖ ≤ B) (i : ℕ) :\n    (minpoly ℤ y).coeff i ∈ Set.Icc (-(coeffBoundOf d B : ℤ)) (coeffBoundOf d B) := by\n  have hpQ : minpoly ℚ y = (minpoly ℤ y).map (algebraMap ℤ ℚ) :=\n    minpoly.isIntegrallyClosed_eq_field_fractions' ℚ hy\n  have hpdeg : (minpoly ℚ y).natDegree ≤ d := (minpoly.natDegree_le _).trans hd\n  have h := coeff_bdd_of_roots_le (B := B) (algebraMap ℚ ℂ)\n    (minpoly.monic (Algebra.IsIntegral.isIntegral y))\n    (IsAlgClosed.splits _) hpdeg (fun z hz ↦ ?_) i\n  · rw [hpQ, Polynomial.map_map, coeff_map] at h\n    have hcast : ((algebraMap ℚ ℂ).comp (algebraMap ℤ ℚ)) ((minpoly ℤ y).coeff i) =\n        (((minpoly ℤ y).coeff i : ℤ) : ℂ) := by\n      simp\n    rw [hcast, Complex.norm_intCast] at h\n    rw [Set.mem_Icc, ← abs_le, coeffBoundOf]\n    exact_mod_cast h.trans (Nat.le_ceil _)\n  · classical\n    rw [← Multiset.mem_toFinset] at hz\n    obtain ⟨φ, rfl⟩ := (Embeddings.range_eval_eq_rootSet_minpoly K ℂ y).symm.subset hz\n    exact hB φ"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+      "compiler_source_span": {
+        "startLine": 19,
+        "endLine": 42
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] {y : K},\n  IsIntegral ℤ y →\n    ∀ {d : ℕ},\n      Module.finrank ℚ K ≤ d →\n        ∀ {B : ℝ},\n          (∀ (φ : K →+* ℂ), ‖φ y‖ ≤ B) →\n            ∀ (i : ℕ),\n              (minpoly ℤ y).coeff i ∈\n                Set.Icc (-↑(AbcAdaptation.Tripod.Northcott.coeffBoundOf d B))\n                  ↑(AbcAdaptation.Tripod.Northcott.coeffBoundOf d B)",
+      "main_formula": "-C(d,b)\\le a_i\\le C(d,b)\\qquad(i\\in\\mathbb N)"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.eval₂_minpoly_int_algebraMap",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 39,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.Northcott.eval₂_minpoly_int_algebraMap {K : Type*} [Field K] [NumberField K] (y : K)\n    (L : Type*) [Field L] [Algebra K L] :\n    (minpoly ℤ y).eval₂ (Int.castRingHom L) (algebraMap K L y) = 0",
+      "signature": "theorem AbcAdaptation.Tripod.Northcott.eval₂_minpoly_int_algebraMap {K : Type*} [Field K] [NumberField K] (y : K)\n    (L : Type*) [Field L] [Algebra K L] :\n    (minpoly ℤ y).eval₂ (Int.castRingHom L) (algebraMap K L y) = 0",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The proof transports minimal-polynomial evaluation through the K-algebra structure map.",
+        "zh_Hans": "证明沿 K 代数的结构映射传递最小多项式的求值等式。",
+        "ja": "証明は最小多項式の評価の等式を K 代数の構造写像に沿って移す。"
+      },
+      "en": "For every number field K, element y ∈ K, field L, and unital K-algebra structure on L, let ι: K → L be the structure embedding. Let m_y ∈ ℤ[X] be the integer minimal polynomial, using the convention m_y = 0 when y is not integral over ℤ. Then evaluation in L along the canonical coefficient map ℤ → L gives m_y(ι(y)) = 0. There is no algebraic-integer premise on y, and L need not be a number field. Thus the statement does not assert that m_y is nonzero or monic for every y.\n\n$$\nm_y(\\iota(y))=0\n$$",
+      "zh_Hans": "对任意数域 K、元素 y ∈ K、域 L 及 L 上的保单位元 K 代数结构，记结构嵌入为 ι: K → L。令 m_y ∈ ℤ[X] 为整数最小多项式，并约定当 y 不在 ℤ 上整时 m_y = 0。沿典范系数映射 ℤ → L 在 L 中求值，有 m_y(ι(y)) = 0。这里不要求 y 为代数整数，也不要求 L 是数域。因此声明并不保证每个 y 对应的 m_y 都非零或首一。\n\n$$\nm_y(\\iota(y))=0\n$$",
+      "ja": "任意の数体 K、元 y ∈ K、体 L、および L の単位元を保つ K 代数構造に対し、構造の埋め込みを ι: K → L とする。m_y ∈ ℤ[X] を整数係数の最小多項式とし、y が ℤ 上整でないときは m_y = 0 と定める。標準的な係数写像 ℤ → L に沿って L で評価すると m_y(ι(y)) = 0 である。y が代数的整数であるという仮定はなく、L が数体である必要もない。したがって、すべての y に対して m_y が非零またはモニックであるという主張ではない。\n\n$$\nm_y(\\iota(y))=0\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.eval₂_minpoly_int_algebraMap",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 107,
+        "end_line": 110,
+        "sha256": "4a3083b57aa2c0b001d4cf1c6b6c84b971a28c10dfe8d8600e53400e2024c049",
+        "text": "theorem eval₂_minpoly_int_algebraMap {K : Type*} [Field K] [NumberField K] (y : K)\n    (L : Type*) [Field L] [Algebra K L] :\n    (minpoly ℤ y).eval₂ (Int.castRingHom L) (algebraMap K L y) = 0 := by\n  rw [← algebraMap_int_eq, ← aeval_def, aeval_algebraMap_apply, minpoly.aeval ℤ, map_zero]"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.eval₂_minpoly_int_algebraMap",
+      "compiler_source_span": {
+        "startLine": 36,
+        "endLine": 42
+      },
+      "elaboratedType": "∀ {K : Type u_1} [inst : Field K] [NumberField K] (y : K) (L : Type u_2) [inst_2 : Field L] [inst_3 : Algebra K L],\n  Polynomial.eval₂ (Int.castRingHom L) ((Algebra.algebraMap K L) y) (minpoly ℤ y) = 0",
+      "main_formula": "m_y(\\iota(y))=0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.coeffBound",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 47,
+      "kind": "definition",
+      "full_signature_static": "noncomputable def AbcAdaptation.Tripod.Northcott.coeffBound (d : ℕ) (H : ℝ) : ℕ",
+      "signature": "noncomputable def AbcAdaptation.Tripod.Northcott.coeffBound (d : ℕ) (H : ℝ) : ℕ",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": null,
+        "zh_Hans": null,
+        "ja": null
+      },
+      "en": "For d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\n$$\nA(d,H)=C(d,B(d,H)^2)\n$$",
+      "zh_Hans": "对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n$$\nA(d,H)=C(d,B(d,H)^2)\n$$",
+      "ja": "自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n$$\nA(d,H)=C(d,B(d,H)^2)\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.coeffBound",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 115,
+        "end_line": 116,
+        "sha256": "406cb4b7e42dbdafa0cb30091225c01a32c110dc7a7b0afb04cbedc727c67bdb",
+        "text": "noncomputable def coeffBound (d : ℕ) (H : ℝ) : ℕ :=\n  coeffBoundOf d (heightBound d H * heightBound d H)"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.coeffBound",
+      "compiler_source_span": {
+        "startLine": 44,
+        "endLine": 48
+      },
+      "elaboratedType": "ℕ → ℝ → ℕ",
+      "main_formula": "A(d,H)=C(d,B(d,H)^2)"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.polySet",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 51,
+      "kind": "definition",
+      "full_signature_static": "def AbcAdaptation.Tripod.Northcott.polySet (d : ℕ) (H : ℝ) : Set ℤ[X]",
+      "signature": "def AbcAdaptation.Tripod.Northcott.polySet (d : ℕ) (H : ℝ) : Set ℤ[X]",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": null,
+        "zh_Hans": null,
+        "ja": null
+      },
+      "en": "For d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\nLet 𝒫(d,H) be the set of all integer polynomials f with natural-number degree at most d and −A(d,H) ≤ a_i ≤ A(d,H) for every coefficient a_i. The natural-number degree of the zero polynomial is defined as zero, so 𝒫(d,H) includes the zero polynomial. No monicity condition is part of this set.\n\n$$\n\\mathcal P(d,H)=\\left\\{f\\in\\mathbb Z[X]:\\deg_{\\mathbb N} f\\le d,\\quad\\forall i,\\ -A(d,H)\\le f_i\\le A(d,H)\\right\\}\n$$",
+      "zh_Hans": "对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n记 𝒫(d,H) 为所有满足下述条件的整数系数多项式 f 的集合：自然数次数不超过 d，且每个系数 a_i 都满足 −A(d,H) ≤ a_i ≤ A(d,H)。零多项式的自然数次数约定为零，因此零多项式属于 𝒫(d,H)。该集合的定义不要求多项式首一。\n\n$$\n\\mathcal P(d,H)=\\left\\{f\\in\\mathbb Z[X]:\\deg_{\\mathbb N} f\\le d,\\quad\\forall i,\\ -A(d,H)\\le f_i\\le A(d,H)\\right\\}\n$$",
+      "ja": "自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n𝒫(d,H) を、自然数値の次数が d 以下で、すべての係数 a_i が −A(d,H) ≤ a_i ≤ A(d,H) を満たす整数係数多項式 f の集合とする。零多項式の自然数値の次数は零と定めるので、零多項式も 𝒫(d,H) に含まれる。この集合ではモニックであることを要求しない。\n\n$$\n\\mathcal P(d,H)=\\left\\{f\\in\\mathbb Z[X]:\\deg_{\\mathbb N} f\\le d,\\quad\\forall i,\\ -A(d,H)\\le f_i\\le A(d,H)\\right\\}\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.polySet",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 119,
+        "end_line": 120,
+        "sha256": "2184050913441968f09ba2718bce8a3e46f0063eb911efff6921fba76e8647ce",
+        "text": "def polySet (d : ℕ) (H : ℝ) : Set ℤ[X] :=\n  {f | f.natDegree ≤ d ∧ ∀ i, f.coeff i ∈ Set.Icc (-(coeffBound d H : ℤ)) (coeffBound d H)}"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.polySet",
+      "compiler_source_span": {
+        "startLine": 50,
+        "endLine": 52
+      },
+      "elaboratedType": "ℕ → ℝ → Set (Polynomial ℤ)",
+      "main_formula": "\\mathcal P(d,H)=\\left\\{f\\in\\mathbb Z[X]:\\deg_{\\mathbb N} f\\le d,\\quad\\forall i,\\ -A(d,H)\\le f_i\\le A(d,H)\\right\\}"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.FiniteRoots",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 56,
+      "kind": "proposition_definition",
+      "full_signature_static": "def AbcAdaptation.Tripod.Northcott.FiniteRoots : Prop",
+      "signature": "def AbcAdaptation.Tripod.Northcott.FiniteRoots : Prop",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": null,
+        "zh_Hans": null,
+        "ja": null
+      },
+      "en": "For d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\nLet 𝒫(d,H) be the set of all integer polynomials f with natural-number degree at most d and −A(d,H) ≤ a_i ≤ A(d,H) for every coefficient a_i. The natural-number degree of the zero polynomial is defined as zero, so 𝒫(d,H) includes the zero polynomial. No monicity condition is part of this set.\n\nFix an algebraic closure ℚ̄ of ℚ. For an integer polynomial f ≠ 0, let R(f) = {α ∈ ℚ̄ | f(α) = 0}, with coefficients mapped by ℤ → ℚ̄. Define R(0) = ∅. Thus R(f) lists distinct roots of nonzero polynomials; the zero polynomial does not contribute every algebraic number.\n\nFor every d ∈ ℕ and H ∈ ℝ, the set ⋃_{f∈𝒫(d,H)} R(f) is finite.\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$",
+      "zh_Hans": "对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n记 𝒫(d,H) 为所有满足下述条件的整数系数多项式 f 的集合：自然数次数不超过 d，且每个系数 a_i 都满足 −A(d,H) ≤ a_i ≤ A(d,H)。零多项式的自然数次数约定为零，因此零多项式属于 𝒫(d,H)。该集合的定义不要求多项式首一。\n\n固定 ℚ 的代数闭包 ℚ̄。对非零整数系数多项式 f，令 R(f) = {α ∈ ℚ̄ | f(α) = 0}，系数沿 ℤ → ℚ̄ 映入代数闭包。约定 R(0) = ∅。因此 R(f) 只记录非零多项式的不同根；零多项式不会贡献全部代数数。\n\n对每个自然数 d 和实数 H，集合 ⋃_{f∈𝒫(d,H)} R(f) 都有限。\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$",
+      "ja": "自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n𝒫(d,H) を、自然数値の次数が d 以下で、すべての係数 a_i が −A(d,H) ≤ a_i ≤ A(d,H) を満たす整数係数多項式 f の集合とする。零多項式の自然数値の次数は零と定めるので、零多項式も 𝒫(d,H) に含まれる。この集合ではモニックであることを要求しない。\n\nℚ の代数閉包 ℚ̄ を固定する。非零整数係数多項式 f に対し、R(f) = {α ∈ ℚ̄ | f(α) = 0} とし、係数は ℤ → ℚ̄ で写す。R(0) = ∅ と定める。したがって R(f) は非零多項式の相異なる根を表し、零多項式がすべての代数数を与えるわけではない。\n\nすべての自然数 d と実数 H に対し、集合 ⋃_{f∈𝒫(d,H)} R(f) は有限である。\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.FiniteRoots",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 124,
+        "end_line": 126,
+        "sha256": "17ed95a0e195d8036fab27cab26f30fde5d1434b3cc54b4f9d2c1f00515a3208",
+        "text": "def FiniteRoots : Prop :=\n  ∀ (d : ℕ) (H : ℝ),\n    (⋃ f ∈ polySet d H, ((f.map (Int.castRingHom Qbar)).roots.toFinset : Set Qbar)).Finite"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.FiniteRoots",
+      "compiler_source_span": {
+        "startLine": 55,
+        "endLine": 58
+      },
+      "elaboratedType": "Prop",
+      "main_formula": "\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Northcott.PolynomialWitness",
+      "path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "line": 62,
+      "kind": "proposition_definition",
+      "full_signature_static": "def AbcAdaptation.Tripod.Northcott.PolynomialWitness : Prop",
+      "signature": "def AbcAdaptation.Tripod.Northcott.PolynomialWitness : Prop",
+      "source_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": null,
+        "zh_Hans": null,
+        "ja": null
+      },
+      "en": "For a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFix an algebraic closure ℚ̄ of ℚ. The points are the algebraic numbers λ ∈ ℚ̄ with λ ≠ 0 and λ ≠ 1. For each point separately, let F_λ = ℚ(λ) ⊆ ℚ̄ be its minimal point field. Put δ(λ) = [F_λ:ℚ], equivalently the degree of the minimal polynomial of λ over ℚ. The canonical generator of F_λ maps to this same λ in ℚ̄. Define its normalized absolute logarithmic height by h(λ) = ℓ_{F_λ}(λ)/δ(λ). The fields F_λ vary with λ; no single containing number field is fixed. The height h is the degree-normalized absolute height, while ℓ_{F_λ} is unnormalized.\n\nFor d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\nLet 𝒫(d,H) be the set of all integer polynomials f with natural-number degree at most d and −A(d,H) ≤ a_i ≤ A(d,H) for every coefficient a_i. The natural-number degree of the zero polynomial is defined as zero, so 𝒫(d,H) includes the zero polynomial. No monicity condition is part of this set.\n\nFor every d ∈ ℕ, H ∈ ℝ, and point λ ∈ ℚ̄\\{0,1} with δ(λ) ≤ d and h(λ) ≤ H, there exist n ∈ ℕ and p ∈ 𝒫(d,H) such that n ≠ 0, n ≤ B(d,H), p is monic, and p(nλ) = 0 in ℚ̄. The point nλ in the conclusion is the integer multiple of the same original λ. No choice of one fixed number field for all λ is a premise.\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$",
+      "zh_Hans": "对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n固定 ℚ 的代数闭包 ℚ̄。点是满足 λ ≠ 0 且 λ ≠ 1 的代数数 λ ∈ ℚ̄。对每个点分别取其最小点域 F_λ = ℚ(λ) ⊆ ℚ̄，并记 δ(λ) = [F_λ:ℚ]，它也等于 λ 在 ℚ 上的最小多项式次数。最小点域中的典范生成元在 ℚ̄ 中的像就是同一个 λ。定义归一化绝对对数高度 h(λ) = ℓ_{F_λ}(λ)/δ(λ)。点域 F_λ 随 λ 变化，不固定一个包含所有点的数域。h 是按次数归一化的绝对高度，而 ℓ_{F_λ} 未归一化。\n\n对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n记 𝒫(d,H) 为所有满足下述条件的整数系数多项式 f 的集合：自然数次数不超过 d，且每个系数 a_i 都满足 −A(d,H) ≤ a_i ≤ A(d,H)。零多项式的自然数次数约定为零，因此零多项式属于 𝒫(d,H)。该集合的定义不要求多项式首一。\n\n对每个自然数 d、实数 H 及满足 δ(λ) ≤ d 和 h(λ) ≤ H 的点 λ ∈ ℚ̄\\{0,1}，存在自然数 n 和多项式 p ∈ 𝒫(d,H)，使 n ≠ 0、n ≤ B(d,H)、p 首一，且在 ℚ̄ 中有 p(nλ) = 0。结论中的 nλ 是原来同一个点 λ 的整数倍。不要求所有 λ 都属于某一个固定数域。\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$",
+      "ja": "数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\nℚ の代数閉包 ℚ̄ を固定する。点は λ ≠ 0 かつ λ ≠ 1 を満たす代数数 λ ∈ ℚ̄ である。各点について最小の点の定義体 F_λ = ℚ(λ) ⊆ ℚ̄ を取り、δ(λ) = [F_λ:ℚ] とおく。これは λ の ℚ 上の最小多項式の次数でもある。F_λ の標準的な生成元の ℚ̄ における像は、同じ λ である。正規化された絶対対数的高さを h(λ) = ℓ_{F_λ}(λ)/δ(λ) と定める。F_λ は λ に応じて変わり、すべての点を含む一つの数体を固定しない。h は次数で正規化した絶対的高さであり、ℓ_{F_λ} は正規化前の高さである。\n\n自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n𝒫(d,H) を、自然数値の次数が d 以下で、すべての係数 a_i が −A(d,H) ≤ a_i ≤ A(d,H) を満たす整数係数多項式 f の集合とする。零多項式の自然数値の次数は零と定めるので、零多項式も 𝒫(d,H) に含まれる。この集合ではモニックであることを要求しない。\n\nすべての自然数 d、実数 H、および δ(λ) ≤ d と h(λ) ≤ H を満たす点 λ ∈ ℚ̄\\{0,1} に対し、自然数 n と多項式 p ∈ 𝒫(d,H) が存在する。それらは n ≠ 0、n ≤ B(d,H)、p はモニック、p(nλ) = 0 を満たす。最後の等式は ℚ̄ の中で成り立つ。nλ は元の同じ点 λ の整数倍である。すべての λ が一つの固定した数体に属するという仮定はない。\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.Northcott.PolynomialWitness",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+      "original_blind_source_file_sha256": "f97beae88fd393c854e032edae52b98bef74d7cef9471de5b23b9e837002f8a2",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottInputs.lean",
+      "original_candidate_file_sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 130,
+        "end_line": 133,
+        "sha256": "28cbe3ae50f5e0f4dd2a418cc1188dfed0264256f54be58ee543bc92f22559c8",
+        "text": "def PolynomialWitness : Prop :=\n  ∀ {d : ℕ} {H : ℝ} {x : Pt}, x ∈ ptLE d → htCan x ≤ H →\n    ∃ n : ℕ, n ≠ 0 ∧ (n : ℝ) ≤ heightBound d H ∧ ∃ p ∈ polySet d H, p.Monic ∧\n      p.eval₂ (Int.castRingHom Qbar) ((n : Qbar) * x.1) = 0"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.Northcott.PolynomialWitness",
+      "compiler_source_span": {
+        "startLine": 60,
+        "endLine": 65
+      },
+      "elaboratedType": "Prop",
+      "main_formula": "\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.boundedDegreeFiniteness_of_northcott_children",
+      "path": "Definitions/Def_TripodNorthcottComposition.lean",
+      "line": 20,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.boundedDegreeFiniteness_of_northcott_children\n    (hRoots : Northcott.FiniteRoots)\n    (hWitness : Northcott.PolynomialWitness) : BoundedDegreeFiniteness",
+      "signature": "theorem AbcAdaptation.Tripod.boundedDegreeFiniteness_of_northcott_children\n    (hRoots : Northcott.FiniteRoots)\n    (hWitness : Northcott.PolynomialWitness) : BoundedDegreeFiniteness",
+      "source_file_sha256": "2571764c67068b21ba010348772b450f859d7235ac67e0e2f6d3d3021a9e18de",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The proof forms a finite union of quotients α/n, with α in the finite root set and 1 ≤ n ≤ floor B(d,H). The witness puts each original λ in that finite set.",
+        "zh_Hans": "证明构造有限多个商 α/n 的并集，其中 α 属于有限根集且 1 ≤ n ≤ ⌊B(d,H)⌋。多项式见证使原点 λ 属于该有限集。",
+        "ja": "証明は、有限な根の集合の元 α と 1 ≤ n ≤ ⌊B(d,H)⌋ に対する商 α/n の有限和集合を作る。多項式の存在の主張により、元の点 λ がこの有限集合に属する。"
+      },
+      "en": "For a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFix an algebraic closure ℚ̄ of ℚ. The points are the algebraic numbers λ ∈ ℚ̄ with λ ≠ 0 and λ ≠ 1. For each point separately, let F_λ = ℚ(λ) ⊆ ℚ̄ be its minimal point field. Put δ(λ) = [F_λ:ℚ], equivalently the degree of the minimal polynomial of λ over ℚ. The canonical generator of F_λ maps to this same λ in ℚ̄. Define its normalized absolute logarithmic height by h(λ) = ℓ_{F_λ}(λ)/δ(λ). The fields F_λ vary with λ; no single containing number field is fixed. The height h is the degree-normalized absolute height, while ℓ_{F_λ} is unnormalized.\n\nFor d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\nLet 𝒫(d,H) be the set of all integer polynomials f with natural-number degree at most d and −A(d,H) ≤ a_i ≤ A(d,H) for every coefficient a_i. The natural-number degree of the zero polynomial is defined as zero, so 𝒫(d,H) includes the zero polynomial. No monicity condition is part of this set.\n\nFix an algebraic closure ℚ̄ of ℚ. For an integer polynomial f ≠ 0, let R(f) = {α ∈ ℚ̄ | f(α) = 0}, with coefficients mapped by ℤ → ℚ̄. Define R(0) = ∅. Thus R(f) lists distinct roots of nonzero polynomials; the zero polynomial does not contribute every algebraic number.\n\nAssume both following statements uniformly in every d ∈ ℕ and H ∈ ℝ. First, ⋃_{f∈𝒫(d,H)} R(f) is finite. Second, every point λ with δ(λ) ≤ d and h(λ) ≤ H admits n ∈ ℕ and a monic p ∈ 𝒫(d,H) satisfying n ≠ 0, n ≤ B(d,H), and p(nλ) = 0. Under these two explicit premises, for every d ∈ ℕ and H ∈ ℝ, the set {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d and h(λ) ≤ H} is finite. The conclusion ranges over actual algebraic points across varying minimal point fields, rather than one fixed number field or conjugacy classes.\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$",
+      "zh_Hans": "对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n固定 ℚ 的代数闭包 ℚ̄。点是满足 λ ≠ 0 且 λ ≠ 1 的代数数 λ ∈ ℚ̄。对每个点分别取其最小点域 F_λ = ℚ(λ) ⊆ ℚ̄，并记 δ(λ) = [F_λ:ℚ]，它也等于 λ 在 ℚ 上的最小多项式次数。最小点域中的典范生成元在 ℚ̄ 中的像就是同一个 λ。定义归一化绝对对数高度 h(λ) = ℓ_{F_λ}(λ)/δ(λ)。点域 F_λ 随 λ 变化，不固定一个包含所有点的数域。h 是按次数归一化的绝对高度，而 ℓ_{F_λ} 未归一化。\n\n对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n记 𝒫(d,H) 为所有满足下述条件的整数系数多项式 f 的集合：自然数次数不超过 d，且每个系数 a_i 都满足 −A(d,H) ≤ a_i ≤ A(d,H)。零多项式的自然数次数约定为零，因此零多项式属于 𝒫(d,H)。该集合的定义不要求多项式首一。\n\n固定 ℚ 的代数闭包 ℚ̄。对非零整数系数多项式 f，令 R(f) = {α ∈ ℚ̄ | f(α) = 0}，系数沿 ℤ → ℚ̄ 映入代数闭包。约定 R(0) = ∅。因此 R(f) 只记录非零多项式的不同根；零多项式不会贡献全部代数数。\n\n假设下述两个断言对每个自然数 d 和实数 H 都成立。第一，⋃_{f∈𝒫(d,H)} R(f) 有限。第二，对每个满足 δ(λ) ≤ d 和 h(λ) ≤ H 的点 λ，存在自然数 n 和首一多项式 p ∈ 𝒫(d,H)，使 n ≠ 0、n ≤ B(d,H) 且 p(nλ) = 0。在这两个显式前提下，对每个自然数 d 和实数 H，集合 {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d 且 h(λ) ≤ H} 有限。结论覆盖最小点域变化的实际代数点，而不是仅覆盖某个固定数域或共轭类。\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$",
+      "ja": "数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\nℚ の代数閉包 ℚ̄ を固定する。点は λ ≠ 0 かつ λ ≠ 1 を満たす代数数 λ ∈ ℚ̄ である。各点について最小の点の定義体 F_λ = ℚ(λ) ⊆ ℚ̄ を取り、δ(λ) = [F_λ:ℚ] とおく。これは λ の ℚ 上の最小多項式の次数でもある。F_λ の標準的な生成元の ℚ̄ における像は、同じ λ である。正規化された絶対対数的高さを h(λ) = ℓ_{F_λ}(λ)/δ(λ) と定める。F_λ は λ に応じて変わり、すべての点を含む一つの数体を固定しない。h は次数で正規化した絶対的高さであり、ℓ_{F_λ} は正規化前の高さである。\n\n自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n𝒫(d,H) を、自然数値の次数が d 以下で、すべての係数 a_i が −A(d,H) ≤ a_i ≤ A(d,H) を満たす整数係数多項式 f の集合とする。零多項式の自然数値の次数は零と定めるので、零多項式も 𝒫(d,H) に含まれる。この集合ではモニックであることを要求しない。\n\nℚ の代数閉包 ℚ̄ を固定する。非零整数係数多項式 f に対し、R(f) = {α ∈ ℚ̄ | f(α) = 0} とし、係数は ℤ → ℚ̄ で写す。R(0) = ∅ と定める。したがって R(f) は非零多項式の相異なる根を表し、零多項式がすべての代数数を与えるわけではない。\n\n次の二つの主張が、すべての自然数 d と実数 H に対して成り立つと仮定する。第一に、⋃_{f∈𝒫(d,H)} R(f) は有限である。第二に、δ(λ) ≤ d と h(λ) ≤ H を満たす各点 λ に対して、n ≠ 0、n ≤ B(d,H)、p(nλ) = 0 を満たす自然数 n とモニック多項式 p ∈ 𝒫(d,H) が存在する。この二つの明示された仮定の下で、すべての自然数 d と実数 H に対し、集合 {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d かつ h(λ) ≤ H} は有限である。結論は最小の点の定義体が変化する実際の代数点を対象とし、一つの固定した数体や共役類だけを対象としない。\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.boundedDegreeFiniteness_of_northcott_children",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottComposition.lean",
+      "original_blind_source_file_sha256": "2571764c67068b21ba010348772b450f859d7235ac67e0e2f6d3d3021a9e18de",
+      "original_candidate_path": "Definitions/Def_TripodNorthcottComposition.lean",
+      "original_candidate_file_sha256": "2571764c67068b21ba010348772b450f859d7235ac67e0e2f6d3d3021a9e18de",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 20,
+        "end_line": 38,
+        "sha256": "a4fc000e98fd4b5b0efb25c1c846c1a3f4c65bc16a85c8669230bb02a9286207",
+        "text": "theorem boundedDegreeFiniteness_of_northcott_children\n    (hRoots : Northcott.FiniteRoots)\n    (hWitness : Northcott.PolynomialWitness) : BoundedDegreeFiniteness := by\n  classical\n  intro d H\n  -- the finite set `T` of the quotients `y / n` of the roots `y` of the polynomials of\n  -- `polySet d H` by the integers `1 ≤ n ≤ heightBound d H`\n  have hTfin : (⋃ n ∈ Finset.Icc 1 ⌊heightBound d H⌋₊, (fun y : Qbar ↦ (n : Qbar)⁻¹ * y) ''\n      (⋃ f ∈ polySet d H, ((f.map (Int.castRingHom Qbar)).roots.toFinset : Set Qbar))).Finite :=\n    (Finset.finite_toSet _).biUnion fun n _ ↦ (hRoots d H).image _\n  refine (hTfin.preimage Subtype.val_injective.injOn).subset fun x ⟨hd, hH⟩ ↦ ?_\n  obtain ⟨n, hn0, hnB, p, hp, hpm, hroot⟩ := hWitness hd hH\n  have hn' : (n : Qbar) ≠ 0 := by exact_mod_cast hn0\n  simp only [Set.mem_preimage, Set.mem_iUnion, Set.mem_image, Finset.mem_coe, Finset.mem_Icc,\n    Multiset.mem_toFinset, exists_prop]\n  refine ⟨n, ⟨Nat.one_le_iff_ne_zero.mpr hn0, Nat.le_floor hnB⟩, (n : Qbar) * x.1,\n    ⟨p, hp, ?_⟩, inv_mul_cancel_left₀ hn' _⟩\n  rw [mem_roots (hpm.map (Int.castRingHom Qbar)).ne_zero, IsRoot.def, eval_map]\n  exact hroot"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.boundedDegreeFiniteness_of_northcott_children",
+      "compiler_source_span": {
+        "startLine": 18,
+        "endLine": 38
+      },
+      "elaboratedType": "AbcAdaptation.Tripod.Northcott.FiniteRoots →\n  AbcAdaptation.Tripod.Northcott.PolynomialWitness → AbcAdaptation.Tripod.BoundedDegreeFiniteness",
+      "main_formula": "\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+      "line": 16,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.boundedDegreeFiniteness :\n    AbcAdaptation.Tripod.BoundedDegreeFiniteness",
+      "signature": "theorem AbcAdaptation.Tripod.boundedDegreeFiniteness :\n    AbcAdaptation.Tripod.BoundedDegreeFiniteness",
+      "source_file_sha256": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The source term applies the conditional composition theorem to the two proved children. No extra proposition remains as a premise of this final theorem.",
+        "zh_Hans": "源证明项将两个已证明的子定理代入条件组合定理。最终定理不再将额外命题作为前提。",
+        "ja": "ソースの証明項は、二つの証明された子定理を条件付きの合成定理に適用する。この最終定理には追加の命題の仮定が残らない。"
+      },
+      "en": "For a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFix an algebraic closure ℚ̄ of ℚ. The points are the algebraic numbers λ ∈ ℚ̄ with λ ≠ 0 and λ ≠ 1. For each point separately, let F_λ = ℚ(λ) ⊆ ℚ̄ be its minimal point field. Put δ(λ) = [F_λ:ℚ], equivalently the degree of the minimal polynomial of λ over ℚ. The canonical generator of F_λ maps to this same λ in ℚ̄. Define its normalized absolute logarithmic height by h(λ) = ℓ_{F_λ}(λ)/δ(λ). The fields F_λ vary with λ; no single containing number field is fixed. The height h is the degree-normalized absolute height, while ℓ_{F_λ} is unnormalized.\n\nFor every d ∈ ℕ and H ∈ ℝ, the set {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d and h(λ) ≤ H} is finite. The statement ranges over actual algebraic points in the fixed algebraic closure, across varying minimal point fields. It is not restricted to elements of one fixed number field, and it does not count only conjugacy classes.\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$",
+      "zh_Hans": "对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n固定 ℚ 的代数闭包 ℚ̄。点是满足 λ ≠ 0 且 λ ≠ 1 的代数数 λ ∈ ℚ̄。对每个点分别取其最小点域 F_λ = ℚ(λ) ⊆ ℚ̄，并记 δ(λ) = [F_λ:ℚ]，它也等于 λ 在 ℚ 上的最小多项式次数。最小点域中的典范生成元在 ℚ̄ 中的像就是同一个 λ。定义归一化绝对对数高度 h(λ) = ℓ_{F_λ}(λ)/δ(λ)。点域 F_λ 随 λ 变化，不固定一个包含所有点的数域。h 是按次数归一化的绝对高度，而 ℓ_{F_λ} 未归一化。\n\n对每个自然数 d 和实数 H，集合 {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d 且 h(λ) ≤ H} 有限。这里对固定代数闭包中的实际代数点作断言，允许最小点域变化；既不限于某个固定数域中的元素，也不是仅计算共轭类。\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$",
+      "ja": "数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\nℚ の代数閉包 ℚ̄ を固定する。点は λ ≠ 0 かつ λ ≠ 1 を満たす代数数 λ ∈ ℚ̄ である。各点について最小の点の定義体 F_λ = ℚ(λ) ⊆ ℚ̄ を取り、δ(λ) = [F_λ:ℚ] とおく。これは λ の ℚ 上の最小多項式の次数でもある。F_λ の標準的な生成元の ℚ̄ における像は、同じ λ である。正規化された絶対対数的高さを h(λ) = ℓ_{F_λ}(λ)/δ(λ) と定める。F_λ は λ に応じて変わり、すべての点を含む一つの数体を固定しない。h は次数で正規化した絶対的高さであり、ℓ_{F_λ} は正規化前の高さである。\n\nすべての自然数 d と実数 H に対し、集合 {λ ∈ ℚ̄\\{0,1} | δ(λ) ≤ d かつ h(λ) ≤ H} は有限である。対象は固定した代数閉包の中の実際の代数点であり、最小の点の定義体は変化してよい。一つの固定した数体の元に限定せず、共役類だけを数える主張でもない。\n\n$$\n\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+      "original_blind_source_file_sha256": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2",
+      "original_candidate_path": "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+      "original_candidate_file_sha256": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 16,
+        "end_line": 20,
+        "sha256": "a0509fd4b788b1757a9ccf490b973456220e2edf0f6bf1ac552b65f208101232",
+        "text": "theorem AbcAdaptation.Tripod.boundedDegreeFiniteness :\n    AbcAdaptation.Tripod.BoundedDegreeFiniteness :=\n  AbcAdaptation.Tripod.boundedDegreeFiniteness_of_northcott_children\n    AbcAdaptation.Tripod.northcottFiniteRoots\n    AbcAdaptation.Tripod.northcottPolynomialWitness"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+      "compiler_source_span": {
+        "startLine": 16,
+        "endLine": 20
+      },
+      "elaboratedType": "AbcAdaptation.Tripod.BoundedDegreeFiniteness",
+      "main_formula": "\\#\\{\\lambda\\in\\overline{\\mathbb Q}\\setminus\\{0,1\\}:\\delta(\\lambda)\\le d,\\ h(\\lambda)\\le H\\}<\\aleph_0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.northcottFiniteRoots",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean",
+      "line": 21,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.northcottFiniteRoots : Northcott.FiniteRoots",
+      "signature": "theorem AbcAdaptation.Tripod.northcottFiniteRoots : Northcott.FiniteRoots",
+      "source_file_sha256": "091d803c9134d384ad9ed8f4292ba9ac28246d6bc50bcb7514aac5fa5e8a5dd7",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The proof applies the finite bounded-coefficient polynomial-root-union theorem.",
+        "zh_Hans": "证明使用系数有界多项式的根的并集有限定理。",
+        "ja": "証明は、係数が有界な多項式の根の和集合についての有限性定理を使う。"
+      },
+      "en": "For d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\nLet 𝒫(d,H) be the set of all integer polynomials f with natural-number degree at most d and −A(d,H) ≤ a_i ≤ A(d,H) for every coefficient a_i. The natural-number degree of the zero polynomial is defined as zero, so 𝒫(d,H) includes the zero polynomial. No monicity condition is part of this set.\n\nFix an algebraic closure ℚ̄ of ℚ. For an integer polynomial f ≠ 0, let R(f) = {α ∈ ℚ̄ | f(α) = 0}, with coefficients mapped by ℤ → ℚ̄. Define R(0) = ∅. Thus R(f) lists distinct roots of nonzero polynomials; the zero polynomial does not contribute every algebraic number.\n\nFor every d ∈ ℕ and H ∈ ℝ, the set ⋃_{f∈𝒫(d,H)} R(f) is finite.\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$",
+      "zh_Hans": "对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n记 𝒫(d,H) 为所有满足下述条件的整数系数多项式 f 的集合：自然数次数不超过 d，且每个系数 a_i 都满足 −A(d,H) ≤ a_i ≤ A(d,H)。零多项式的自然数次数约定为零，因此零多项式属于 𝒫(d,H)。该集合的定义不要求多项式首一。\n\n固定 ℚ 的代数闭包 ℚ̄。对非零整数系数多项式 f，令 R(f) = {α ∈ ℚ̄ | f(α) = 0}，系数沿 ℤ → ℚ̄ 映入代数闭包。约定 R(0) = ∅。因此 R(f) 只记录非零多项式的不同根；零多项式不会贡献全部代数数。\n\n对每个自然数 d 和实数 H，集合 ⋃_{f∈𝒫(d,H)} R(f) 都有限。\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$",
+      "ja": "自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n𝒫(d,H) を、自然数値の次数が d 以下で、すべての係数 a_i が −A(d,H) ≤ a_i ≤ A(d,H) を満たす整数係数多項式 f の集合とする。零多項式の自然数値の次数は零と定めるので、零多項式も 𝒫(d,H) に含まれる。この集合ではモニックであることを要求しない。\n\nℚ の代数閉包 ℚ̄ を固定する。非零整数係数多項式 f に対し、R(f) = {α ∈ ℚ̄ | f(α) = 0} とし、係数は ℤ → ℚ̄ で写す。R(0) = ∅ と定める。したがって R(f) は非零多項式の相異なる根を表し、零多項式がすべての代数数を与えるわけではない。\n\nすべての自然数 d と実数 H に対し、集合 ⋃_{f∈𝒫(d,H)} R(f) は有限である。\n\n$$\n\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.northcottFiniteRoots",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean",
+      "original_blind_source_file_sha256": "091d803c9134d384ad9ed8f4292ba9ac28246d6bc50bcb7514aac5fa5e8a5dd7",
+      "original_candidate_path": "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean",
+      "original_candidate_file_sha256": "091d803c9134d384ad9ed8f4292ba9ac28246d6bc50bcb7514aac5fa5e8a5dd7",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 21,
+        "end_line": 23,
+        "sha256": "b4634ca3021eaf142ee71d81baa488946f3b08cc3f2cf2e25e95294a60274be0",
+        "text": "theorem northcottFiniteRoots : Northcott.FiniteRoots := by\n  intro d H\n  exact bUnion_roots_finite (Int.castRingHom Qbar) d (Set.finite_Icc _ _)"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.northcottFiniteRoots",
+      "compiler_source_span": {
+        "startLine": 19,
+        "endLine": 23
+      },
+      "elaboratedType": "AbcAdaptation.Tripod.Northcott.FiniteRoots",
+      "main_formula": "\\#\\!\\left(\\bigcup_{f\\in\\mathcal P(d,H)}R(f)\\right)<\\aleph_0"
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean",
+      "line": 24,
+      "kind": "theorem",
+      "full_signature_static": "theorem AbcAdaptation.Tripod.northcottPolynomialWitness : Northcott.PolynomialWitness",
+      "signature": "theorem AbcAdaptation.Tripod.northcottPolynomialWitness : Northcott.PolynomialWitness",
+      "source_file_sha256": "8a64718f2c2f4a9033f95a4518aeb47ccf9c3e727b6a23ac05ae2f3a854736ce",
+      "source_quotes": [
+        "N1"
+      ],
+      "en_source_quote": "> (iv) Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.\n\n— Shinichi Mochizuki, *Arithmetic Elliptic Curves in General Position*, §1, Proposition 1.4(iv), p. 6.",
+      "en_source_quote_ledger_binding": {
+        "file": "mochizuki-quotation.md",
+        "sha256": "474735ee6733c70092ebb47d6b43e054634dbf5b843f03c4cc4540916a4c211b",
+        "quote_id": "N1",
+        "scope": "Direct general finiteness context; no claim of paper metric identity or numbered polynomial implementation helpers."
+      },
+      "status": "independent_semantics_reused_ASCII_name_mapping_root_compiler_binding_pending",
+      "proof_notes": {
+        "en": "The proof works in the actual minimal point field F_λ = ℚ(λ). It chooses a nonzero natural denominator n ≤ M_{F_λ}(λ) such that nλ is an algebraic integer there. It bounds |φ(nλ)| by B(d,H)^2 for every embedding φ: F_λ → ℂ. It then chooses the monic integer minimal polynomial of nλ, bounds its degree and coefficients, and maps its evaluation back to ℚ̄. The chosen polynomial is this minimal polynomial, although the statement requires only a monic polynomial with the stated bounds.",
+        "zh_Hans": "证明在实际的最小点域 F_λ = ℚ(λ) 中进行。选择非零自然数分母 n ≤ M_{F_λ}(λ)，使 nλ 在该域中成为代数整数。对每个嵌入 φ: F_λ → ℂ，都得到 |φ(nλ)| ≤ B(d,H)^2。随后选择 nλ 的首一整数最小多项式，给出次数和系数上界，并将求值等式映回 ℚ̄。所选多项式确为这个最小多项式，但声明只要求满足这些上界的首一多项式。",
+        "ja": "証明は実際の最小の点の定義体 F_λ = ℚ(λ) で行う。nλ がその体の代数的整数となるように、非零の自然数の分母 n ≤ M_{F_λ}(λ) を選ぶ。すべての埋め込み φ: F_λ → ℂ について |φ(nλ)| ≤ B(d,H)^2 を示す。次に nλ の整数係数のモニックな最小多項式を選び、その次数と係数を評価し、評価の等式を ℚ̄ に戻す。選んだ多項式はこの最小多項式であるが、主張が要求するのは指定の上界を満たすモニック多項式だけである。"
+      },
+      "en": "For a number field K and a ∈ K, let M_K(a) be the unnormalized multiplicative height. Explicitly, M_K(a) = ∏_{v infinite} max(1,|a|_v)^{n_v} · ∏_{v finite} max(1,|a|_v). Here n_v is 1 for a real place and 2 for a complex place. Finite-place absolute values use the norm normalization |a|_v = N(v)^{−ord_v(a)} for a ≠ 0. All absolute values take 0 to 0. The infinite product notation at finite places has only finitely many factors different from 1. The infinite places with these multiplicities account for all complex embeddings. Write ℓ_K(a) = log M_K(a). These field-relative heights do not divide by [K:ℚ].\n\nFix an algebraic closure ℚ̄ of ℚ. The points are the algebraic numbers λ ∈ ℚ̄ with λ ≠ 0 and λ ≠ 1. For each point separately, let F_λ = ℚ(λ) ⊆ ℚ̄ be its minimal point field. Put δ(λ) = [F_λ:ℚ], equivalently the degree of the minimal polynomial of λ over ℚ. The canonical generator of F_λ maps to this same λ in ℚ̄. Define its normalized absolute logarithmic height by h(λ) = ℓ_{F_λ}(λ)/δ(λ). The fields F_λ vary with λ; no single containing number field is fixed. The height h is the degree-normalized absolute height, while ℓ_{F_λ} is unnormalized.\n\nFor d ∈ ℕ and H ∈ ℝ, define B(d,H) = exp(d · max(H,0)). Natural numbers include zero, and H need not be nonnegative.\n\nFor d ∈ ℕ and b ∈ ℝ, define C(d,b) = ⌈max(b,1)^d · binom(d,⌊d/2⌋)⌉_ℕ. Here ⌈r⌉_ℕ is the natural-number ceiling, equal to max(0,⌈r⌉). The quotient d/2 in the binomial index is integer division. No sign condition on b is imposed.\n\nDefine A(d,H) = C(d,B(d,H)^2).\n\nLet 𝒫(d,H) be the set of all integer polynomials f with natural-number degree at most d and −A(d,H) ≤ a_i ≤ A(d,H) for every coefficient a_i. The natural-number degree of the zero polynomial is defined as zero, so 𝒫(d,H) includes the zero polynomial. No monicity condition is part of this set.\n\nFor every d ∈ ℕ, H ∈ ℝ, and point λ ∈ ℚ̄\\{0,1} with δ(λ) ≤ d and h(λ) ≤ H, there exist n ∈ ℕ and p ∈ 𝒫(d,H) such that n ≠ 0, n ≤ B(d,H), p is monic, and p(nλ) = 0 in ℚ̄. The point nλ in the conclusion is the integer multiple of the same original λ. No choice of one fixed number field for all λ is a premise.\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$",
+      "zh_Hans": "对数域 K 及 a ∈ K，记 M_K(a) 为未归一化的乘法高度，具体定义为 M_K(a) = ∏_{v 为无穷处} max(1,|a|_v)^{n_v} · ∏_{v 为有限处} max(1,|a|_v)。实处的 n_v 为 1，复处的 n_v 为 2。有限处的绝对值采用范数归一化：当 a ≠ 0 时，|a|_v = N(v)^{−ord_v(a)}；所有绝对值在零处取零。有限处的乘积仅有有限多个因子不等于 1。无穷处连同这些重数计入全部复嵌入。记 ℓ_K(a) = log M_K(a)。这两个相对于数域的高度均未除以域次数 [K:ℚ]。\n\n固定 ℚ 的代数闭包 ℚ̄。点是满足 λ ≠ 0 且 λ ≠ 1 的代数数 λ ∈ ℚ̄。对每个点分别取其最小点域 F_λ = ℚ(λ) ⊆ ℚ̄，并记 δ(λ) = [F_λ:ℚ]，它也等于 λ 在 ℚ 上的最小多项式次数。最小点域中的典范生成元在 ℚ̄ 中的像就是同一个 λ。定义归一化绝对对数高度 h(λ) = ℓ_{F_λ}(λ)/δ(λ)。点域 F_λ 随 λ 变化，不固定一个包含所有点的数域。h 是按次数归一化的绝对高度，而 ℓ_{F_λ} 未归一化。\n\n对自然数 d 和实数 H，定义 B(d,H) = exp(d · max(H,0))。自然数包括零，不要求 H 非负。\n\n对自然数 d 和实数 b，定义 C(d,b) = ⌈max(b,1)^d · 二项式系数(d,⌊d/2⌋)⌉_ℕ。其中 ⌈r⌉_ℕ 是自然数上取整，等于 max(0,⌈r⌉)；二项式系数下标中的 d/2 采用整数除法。不对 b 加符号条件。\n\n定义 A(d,H) = C(d,B(d,H)^2)。\n\n记 𝒫(d,H) 为所有满足下述条件的整数系数多项式 f 的集合：自然数次数不超过 d，且每个系数 a_i 都满足 −A(d,H) ≤ a_i ≤ A(d,H)。零多项式的自然数次数约定为零，因此零多项式属于 𝒫(d,H)。该集合的定义不要求多项式首一。\n\n对每个自然数 d、实数 H 及满足 δ(λ) ≤ d 和 h(λ) ≤ H 的点 λ ∈ ℚ̄\\{0,1}，存在自然数 n 和多项式 p ∈ 𝒫(d,H)，使 n ≠ 0、n ≤ B(d,H)、p 首一，且在 ℚ̄ 中有 p(nλ) = 0。结论中的 nλ 是原来同一个点 λ 的整数倍。不要求所有 λ 都属于某一个固定数域。\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$",
+      "ja": "数体 K と a ∈ K に対し、M_K(a) を正規化前の乗法的高さとする。具体的には M_K(a) = ∏_{v は無限素点} max(1,|a|_v)^{n_v} · ∏_{v は有限素点} max(1,|a|_v) である。実素点では n_v = 1、複素素点では n_v = 2 とする。有限素点の絶対値は a ≠ 0 に対して |a|_v = N(v)^{−ord_v(a)} と正規化する。すべての絶対値は零を零に写す。有限素点の積で 1 と異なる因子は有限個である。この重複度を持つ無限素点は、すべての複素埋め込みを数える。ℓ_K(a) = log M_K(a) とおく。これらの数体に相対的な高さは [K:ℚ] では割らない。\n\nℚ の代数閉包 ℚ̄ を固定する。点は λ ≠ 0 かつ λ ≠ 1 を満たす代数数 λ ∈ ℚ̄ である。各点について最小の点の定義体 F_λ = ℚ(λ) ⊆ ℚ̄ を取り、δ(λ) = [F_λ:ℚ] とおく。これは λ の ℚ 上の最小多項式の次数でもある。F_λ の標準的な生成元の ℚ̄ における像は、同じ λ である。正規化された絶対対数的高さを h(λ) = ℓ_{F_λ}(λ)/δ(λ) と定める。F_λ は λ に応じて変わり、すべての点を含む一つの数体を固定しない。h は次数で正規化した絶対的高さであり、ℓ_{F_λ} は正規化前の高さである。\n\n自然数 d と実数 H に対し B(d,H) = exp(d · max(H,0)) と定める。自然数には零を含み、H が非負であるとは仮定しない。\n\n自然数 d と実数 b に対し C(d,b) = ⌈max(b,1)^d · 二項係数(d,⌊d/2⌋)⌉_ℕ と定める。⌈r⌉_ℕ は自然数への切り上げであり、max(0,⌈r⌉) に等しい。二項係数の添字の d/2 は整数除算である。b の符号に仮定はない。\n\nA(d,H) = C(d,B(d,H)^2) と定める。\n\n𝒫(d,H) を、自然数値の次数が d 以下で、すべての係数 a_i が −A(d,H) ≤ a_i ≤ A(d,H) を満たす整数係数多項式 f の集合とする。零多項式の自然数値の次数は零と定めるので、零多項式も 𝒫(d,H) に含まれる。この集合ではモニックであることを要求しない。\n\nすべての自然数 d、実数 H、および δ(λ) ≤ d と h(λ) ≤ H を満たす点 λ ∈ ℚ̄\\{0,1} に対し、自然数 n と多項式 p ∈ 𝒫(d,H) が存在する。それらは n ≠ 0、n ≤ B(d,H)、p はモニック、p(nλ) = 0 を満たす。最後の等式は ℚ̄ の中で成り立つ。nλ は元の同じ点 λ の整数倍である。すべての λ が一つの固定した数体に属するという仮定はない。\n\n$$\n\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0\n$$",
+      "original_declaration": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+      "original_blind_path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean",
+      "original_blind_source_file_sha256": "789fbe7fe33b49e32b4eff1cacff8e9afdf7f8a54a2f161e663cc9daeb9d9902",
+      "original_candidate_path": "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean",
+      "original_candidate_file_sha256": "f0c6720fbb7624438bb510af76b8d272c1eb4d69b77d120613f64f83e52dbcb0",
+      "root_compiler_rebinding_required": true,
+      "source_span_original_blind": {
+        "start_line": 21,
+        "end_line": 42,
+        "sha256": "3a0497b509370753db2e82a5c876f1b4fea14b1f1b96dada803906cfbc2c5fbf",
+        "text": "theorem northcottPolynomialWitness : Northcott.PolynomialWitness := by\n  intro d H x hd hH\n  have hmul := mulHeight₁_gen_le hd hH\n  have hB₀_pos := heightBound_pos d H\n  obtain ⟨n, hn0, hnle, hint⟩ := exists_nat_le_mulHeight₁ (gen x.1)\n  have hnB : (n : ℝ) ≤ heightBound d H := hnle.trans hmul\n  have hd' : Module.finrank ℚ (fieldOf x.1) ≤ d := by\n    rw [← deg_eq_finrank]\n    exact hd\n  have hconj : ∀ φ : fieldOf x.1 →+* ℂ,\n      ‖φ ((n : fieldOf x.1) * gen x.1)‖ ≤ heightBound d H * heightBound d H := by\n    intro φ\n    rw [map_mul, norm_mul, map_natCast, Complex.norm_natCast]\n    exact mul_le_mul hnB ((norm_embedding_le_mulHeight₁ _ φ).trans hmul) (norm_nonneg _)\n      hB₀_pos.le\n  refine ⟨n, hn0, hnB, _, ⟨(natDegree_minpoly_int_le hint).trans hd',\n    coeff_minpoly_int_mem_Icc hint hd' hconj⟩, minpoly.monic hint, ?_⟩\n  -- `nλ` is a root of its minimal polynomial\n  have hy : (n : Qbar) * x.1 = algebraMap (fieldOf x.1) Qbar ((n : fieldOf x.1) * gen x.1) := by\n    simp\n  rw [hy]\n  exact eval₂_minpoly_int_algebraMap _ Qbar"
+      },
+      "compiler_name": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+      "compiler_source_span": {
+        "startLine": 21,
+        "endLine": 45
+      },
+      "elaboratedType": "AbcAdaptation.Tripod.Northcott.PolynomialWitness",
+      "main_formula": "\\exists n\\in\\mathbb N_{>0},\\ \\exists p\\in\\mathcal P(d,H),\\quad n\\le B(d,H),\\quad\\operatorname{lc}(p)=1,\\quad p(n\\lambda)=0"
+    }
+  ],
+  "input_file_sha256": {
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight_one.lean": "e13cb8dddbea6a4b5abc83117181a87a92312eaeb3478e605da6edacddc186b0",
+    "Definitions/Def_TripodNorthcottInputs.lean": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight_one_gen_le.lean": "25f11d7f410e0de28e0c171662f054dad82e5866cfbf652c68dae7532903ad6a",
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean": "1794d880113c645a22ae77770c9a9e936d89eb1f5abfee2c6f31c65f1e6cf4a0",
+    "Definitions/Def_TripodNorthcottComposition.lean": "2571764c67068b21ba010348772b450f859d7235ac67e0e2f6d3d3021a9e18de",
+    "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2",
+    "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean": "091d803c9134d384ad9ed8f4292ba9ac28246d6bc50bcb7514aac5fa5e8a5dd7",
+    "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean": "8a64718f2c2f4a9033f95a4518aeb47ccf9c3e727b6a23ac05ae2f3a854736ce"
+  },
+  "candidate_input_file_sha256": {
+    "Definitions/Def_TripodNorthcottComposition.lean": "2571764c67068b21ba010348772b450f859d7235ac67e0e2f6d3d3021a9e18de",
+    "Definitions/Def_TripodNorthcottInputs.lean": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean": "1794d880113c645a22ae77770c9a9e936d89eb1f5abfee2c6f31c65f1e6cf4a0",
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean": "3d208194aa2de97872a4af68dd370ab7649be2c9d8a262f1d7f18125d2d83252",
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean": "1c352fd8815d254269bd8d7245fb8257df82174efb12e29d5806f344cbe3ea32",
+    "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2",
+    "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean": "091d803c9134d384ad9ed8f4292ba9ac28246d6bc50bcb7514aac5fa5e8a5dd7",
+    "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean": "f0c6720fbb7624438bb510af76b8d272c1eb4d69b77d120613f64f83e52dbcb0"
+  },
+  "independent_readback_source": "/tmp/p2m-northcott-blind-20261114/readbacks.json",
+  "independent_readback_sha256": "097ec65ad4219257398cbec9a37f6312eb7ef4a4cf77f96ae0a134a3804f6c8e",
+  "rebind": "Original candidate signatures match blind signatures. Two platform names map to ASCII. Original signatures and prose remain unchanged. Root must supply final compiler owners, spans, types, and source hashes.",
+  "compiler_bound": true
+}

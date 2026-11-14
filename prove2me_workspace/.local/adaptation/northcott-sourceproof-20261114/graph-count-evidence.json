@@ -1,0 +1,70 @@
+{
+  "before": {
+    "accepted_reductions": 19,
+    "published_children": 56,
+    "dependency_edges": 62,
+    "open_frontier": 28,
+    "direct_closed_children": 11
+  },
+  "after": {
+    "accepted_reductions": 21,
+    "published_children": 61,
+    "dependency_edges": 67,
+    "open_frontier": 27,
+    "direct_closed_children": 16
+  },
+  "counts_are_derived_from_actual_graph": true,
+  "new_mathematical_nodes": {
+    "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one": "3da8e658-eaac-405d-b57e-0bca0922d8f3",
+    "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le": "aafd00f9-1cab-4d65-aecd-df0421540c2c",
+    "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc": "b05f4bdd-3602-4f01-a24d-5264b3633a1c",
+    "AbcAdaptation.Tripod.northcottFiniteRoots": "e2582265-ec67-4a45-be11-01cc545cbeb7",
+    "AbcAdaptation.Tripod.northcottPolynomialWitness": "b5bcbad5-0352-468d-919e-a9113d188c69"
+  },
+  "existing_mathematical_nodes_preserved": true,
+  "existing_reduction_identities_preserved": true,
+  "added_mathematical_dependencies": [
+    {
+      "parent": "AbcAdaptation.Tripod.northcottPolynomialWitness",
+      "children": [
+        "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+        "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le",
+        "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one"
+      ],
+      "submission_id": "e29a8981-1463-48fa-9d48-37a9f2d7dfb6",
+      "status": "ACCEPTED",
+      "proof_receipt": ".local/adaptation/northcott-sourceproof-20261114/verify-northcottPolynomialWitness-result.json",
+      "parent_status": "Proved",
+      "child_statuses": {
+        "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one": "Proved",
+        "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le": "Proved",
+        "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc": "Proved"
+      }
+    },
+    {
+      "parent": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+      "children": [
+        "AbcAdaptation.Tripod.northcottFiniteRoots",
+        "AbcAdaptation.Tripod.northcottPolynomialWitness"
+      ],
+      "submission_id": "d8b05c1a-4925-4934-b121-125f14fc4977",
+      "status": "ACCEPTED",
+      "proof_receipt": ".local/adaptation/northcott-sourceproof-20261114/verify-boundedDegreeFiniteness-result.json",
+      "parent_status": "Proved",
+      "child_statuses": {
+        "AbcAdaptation.Tripod.northcottFiniteRoots": "Proved",
+        "AbcAdaptation.Tripod.northcottPolynomialWitness": "Proved"
+      }
+    }
+  ],
+  "removed_dependencies": [],
+  "node_count_delta": 5,
+  "accepted_reduction_count_delta": 2,
+  "dependency_pair_count_delta": 5,
+  "frontier_count_delta": -1,
+  "frontier_all_pages_fetched": true,
+  "parent_before": "Open",
+  "parent_after": "Proved",
+  "root_after": "Open",
+  "direct_closed_proof_count_delta": 5
+}

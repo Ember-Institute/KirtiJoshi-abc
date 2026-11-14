@@ -1,0 +1,69 @@
+{
+  "cause": "Prove2Me conservative ASCII theorem-name rule, references/upload_full_project.md:87",
+  "mapping": {
+    "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight₁": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one",
+    "AbcAdaptation.Tripod.Northcott.mulHeight₁_gen_le": "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le"
+  },
+  "source_edits": {
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean": [
+      {
+        "start": 864,
+        "end": 894,
+        "replacement": "norm_embedding_le_mulHeight_one",
+        "kind": "Lean AST declaration binding",
+        "original": "norm_embedding_le_mulHeight₁"
+      }
+    ],
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean": [
+      {
+        "start": 717,
+        "end": 736,
+        "replacement": "mulHeight_one_gen_le",
+        "kind": "Lean AST declaration binding",
+        "original": "mulHeight₁_gen_le"
+      }
+    ],
+    "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean": [
+      {
+        "start": 1089,
+        "end": 1108,
+        "replacement": "mulHeight_one_gen_le",
+        "kind": "Lean Stage2 resolved constant reference",
+        "original": "mulHeight₁_gen_le"
+      },
+      {
+        "start": 1628,
+        "end": 1658,
+        "replacement": "norm_embedding_le_mulHeight_one",
+        "kind": "Lean Stage2 resolved constant reference",
+        "original": "norm_embedding_le_mulHeight₁"
+      },
+      {
+        "start": 445,
+        "end": 519,
+        "replacement": "Theorems.Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight_one",
+        "kind": "exact structured import module",
+        "original": "Theorems.Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁"
+      },
+      {
+        "start": 527,
+        "end": 590,
+        "replacement": "Theorems.Thm_AbcAdaptation_Tripod_Northcott_mulHeight_one_gen_le",
+        "kind": "exact structured import module",
+        "original": "Theorems.Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le"
+      }
+    ]
+  },
+  "original_sources": {
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nModified adaptation, 2026-11-14: exact concrete Northcott proof from\nrefer/iut/Iut/Tripod/Northcott.lean. Uses the existing independent tripod\ncarrier and Mathlib only. Source hashes and revision status: SOURCE_MANIFEST.json.\n-/\nimport Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\n\nnamespace AbcAdaptation.Tripod.Northcott\n\nopen NumberField Polynomial\n\n/-- Each conjugate `φ(x)` of an element `x` of a number field `K` is bounded in absolute value\nby the multiplicative height `mulHeight₁ x = exp (logHeight₁ x)` of `x`: the contribution\n`mult(v) log⁺ |φ x|` of the infinite place `v` of `φ` to `logHeight₁ x` is at least\n`log⁺ |φ x| ≥ log |φ x|`. -/\ntheorem norm_embedding_le_mulHeight₁ {K : Type*} [Field K] [NumberField K] (x : K)\n    (φ : K →+* ℂ) : ‖φ x‖ ≤ Height.mulHeight₁ x := by\n  have h1 : Real.posLog (InfinitePlace.mk φ x) ≤ Height.logHeight₁ x := by\n    rw [logHeight₁_eq]\n    have hfin : 0 ≤ ∑ᶠ v : FinitePlace K, Real.posLog (v x) :=\n      finsum_nonneg fun _ ↦ Real.posLog_nonneg\n    have hinf : Real.posLog (InfinitePlace.mk φ x) ≤\n        ∑ v : InfinitePlace K, (v.mult : ℝ) * Real.posLog (v x) :=\n      calc Real.posLog (InfinitePlace.mk φ x)\n          ≤ ((InfinitePlace.mk φ).mult : ℝ) * Real.posLog (InfinitePlace.mk φ x) :=\n            le_mul_of_one_le_left Real.posLog_nonneg InfinitePlace.one_le_mult\n        _ ≤ _ := Finset.single_le_sum\n            (f := fun v : InfinitePlace K ↦ (v.mult : ℝ) * Real.posLog (v x))\n            (fun v _ ↦ mul_nonneg (Nat.cast_nonneg _) Real.posLog_nonneg) (Finset.mem_univ _)\n    exact hinf.trans (le_add_of_nonneg_right hfin)\n  rw [InfinitePlace.apply, Height.logHeight₁_eq_log_mulHeight₁] at h1\n  have h2 : ‖φ x‖ ≤ Real.exp (Real.posLog ‖φ x‖) := by\n    rcases eq_or_ne (φ x) 0 with h | h\n    · rw [h, norm_zero]\n      exact (Real.exp_pos _).le\n    · calc ‖φ x‖ = Real.exp (Real.log ‖φ x‖) := (Real.exp_log (norm_pos_iff.mpr h)).symm\n        _ ≤ Real.exp (Real.posLog ‖φ x‖) :=\n            Real.exp_le_exp.mpr (by rw [Real.posLog_apply]; exact le_max_right _ _)\n  calc ‖φ x‖ ≤ Real.exp (Real.posLog ‖φ x‖) := h2\n    _ ≤ Real.exp (Real.log (Height.mulHeight₁ x)) := Real.exp_le_exp.mpr h1\n    _ = Height.mulHeight₁ x := Real.exp_log (Height.mulHeight₁_pos x)\n\nend AbcAdaptation.Tripod.Northcott\n",
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nModified adaptation, 2026-11-14: exact concrete Northcott proof from\nrefer/iut/Iut/Tripod/Northcott.lean. Uses the existing independent tripod\ncarrier and Mathlib only. Source hashes and revision status: SOURCE_MANIFEST.json.\n-/\nimport Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\n\nnamespace AbcAdaptation.Tripod.Northcott\n\nopen NumberField Polynomial\n\n/-- The multiplicative height `exp (logHeight₁ (gen λ))` of a point of degree `≤ d` and height\n`htCan ≤ H` is at most `heightBound d H = exp (d · max H 0)`. -/\ntheorem mulHeight₁_gen_le {d : ℕ} {H : ℝ} {x : Pt} (hd : x ∈ ptLE d) (hH : htCan x ≤ H) :\n    Height.mulHeight₁ (gen x.1) ≤ heightBound d H := by\n  rw [heightBound, ← Real.exp_log (Height.mulHeight₁_pos _),\n    ← Height.logHeight₁_eq_log_mulHeight₁]\n  apply Real.exp_le_exp.mpr\n  rw [← deg_mul_htCan x]\n  exact mul_le_mul (by exact_mod_cast hd) (hH.trans (le_max_left _ _)) (htCan_nonneg _)\n    (Nat.cast_nonneg _)\n\nend AbcAdaptation.Tripod.Northcott\n",
+    "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nModified adaptation, 2026-11-14: exact concrete Northcott proof from\nrefer/iut/Iut/Tripod/Northcott.lean. Uses the existing independent tripod\ncarrier and Mathlib only. Source hashes and revision status: SOURCE_MANIFEST.json.\n-/\nimport Definitions.Def_TripodNorthcottInputs\nimport Theorems.Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁\nimport Theorems.Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le\nimport Theorems.Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc\n\nset_option autoImplicit false\n\nnamespace AbcAdaptation.Tripod\n\nopen NumberField Polynomial Northcott\n\n/-- Source proof of `Iut.Tripod.exists_nat_mem_polySet` (line 157).\nThe denominator and minpoly are constructed in the actual field `ℚ(x.1)`;\nthe conjugate estimate is universal over its complex embeddings. -/\ntheorem northcottPolynomialWitness : Northcott.PolynomialWitness := by\n  intro d H x hd hH\n  have hmul := mulHeight₁_gen_le hd hH\n  have hB₀_pos := heightBound_pos d H\n  obtain ⟨n, hn0, hnle, hint⟩ := exists_nat_le_mulHeight₁ (gen x.1)\n  have hnB : (n : ℝ) ≤ heightBound d H := hnle.trans hmul\n  have hd' : Module.finrank ℚ (fieldOf x.1) ≤ d := by\n    rw [← deg_eq_finrank]\n    exact hd\n  have hconj : ∀ φ : fieldOf x.1 →+* ℂ,\n      ‖φ ((n : fieldOf x.1) * gen x.1)‖ ≤ heightBound d H * heightBound d H := by\n    intro φ\n    rw [map_mul, norm_mul, map_natCast, Complex.norm_natCast]\n    exact mul_le_mul hnB ((norm_embedding_le_mulHeight₁ _ φ).trans hmul) (norm_nonneg _)\n      hB₀_pos.le\n  refine ⟨n, hn0, hnB, _, ⟨(natDegree_minpoly_int_le hint).trans hd',\n    coeff_minpoly_int_mem_Icc hint hd' hconj⟩, minpoly.monic hint, ?_⟩\n  -- `nλ` is a root of its minimal polynomial\n  have hy : (n : Qbar) * x.1 = algebraMap (fieldOf x.1) Qbar ((n : fieldOf x.1) * gen x.1) := by\n    simp\n  rw [hy]\n  exact eval₂_minpoly_int_algebraMap _ Qbar\n\n\nend AbcAdaptation.Tripod\n"
+  },
+  "original_checks": "import Theorems.Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness\n\nset_option autoImplicit false\n\n-- Explicit type checks; this source is only a candidate for main-agent MCP-CI.\nexample : AbcAdaptation.Tripod.Northcott.FiniteRoots :=\n  AbcAdaptation.Tripod.northcottFiniteRoots\nexample : AbcAdaptation.Tripod.Northcott.PolynomialWitness :=\n  AbcAdaptation.Tripod.northcottPolynomialWitness\nexample : ∀ (d : ℕ) (H : ℝ),\n    {x : AbcAdaptation.Tripod.Pt |\n      AbcAdaptation.Tripod.deg x.1 ≤ d ∧ AbcAdaptation.Tripod.htCan x ≤ H}.Finite :=\n  AbcAdaptation.Tripod.boundedDegreeFiniteness\n\n#print axioms AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight₁\n#print axioms AbcAdaptation.Tripod.Northcott.mulHeight₁_gen_le\n#print axioms AbcAdaptation.Tripod.Northcott.natDegree_minpoly_int_le\n#print axioms AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc\n#print axioms AbcAdaptation.Tripod.Northcott.eval₂_minpoly_int_algebraMap\n#print axioms AbcAdaptation.Tripod.northcottFiniteRoots\n#print axioms AbcAdaptation.Tripod.northcottPolynomialWitness\n#print axioms AbcAdaptation.Tripod.boundedDegreeFiniteness_of_northcott_children\n#print axioms AbcAdaptation.Tripod.boundedDegreeFiniteness\n",
+  "all_references_compiler_resolved": true,
+  "no_mathematical_statement_change": true,
+  "deleted_old_active_module_paths": [
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean",
+    "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean"
+  ]
+}

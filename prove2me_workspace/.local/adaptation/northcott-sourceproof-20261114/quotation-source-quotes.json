@@ -1,0 +1,210 @@
+{
+  "scope": "original-paper quotation research only",
+  "works": {
+    "GenEll": {
+      "author": "Shinichi Mochizuki",
+      "title": "Arithmetic Elliptic Curves in General Position",
+      "version": "February 2009",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Arithmetic Elliptic Curves in General Position.pdf",
+      "download": "/tmp/p2m-northcott-mochizuki-quotes-20261114/official-general-position.pdf",
+      "sha256": "b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768",
+      "download_sha256": "b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768",
+      "byte_identical_existing": true,
+      "page_numbering": "one-based PDF page equals printed page at cited locations"
+    },
+    "IUTIV": {
+      "author": "Shinichi Mochizuki",
+      "title": "Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations",
+      "version": "April 2020",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Inter-universal Teichmuller Theory IV.pdf",
+      "download": "/tmp/p2m-northcott-mochizuki-quotes-20261114/official-iut-iv.pdf",
+      "sha256": "5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f",
+      "download_sha256": "5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f",
+      "byte_identical_existing": true,
+      "page_numbering": "one-based PDF page equals printed page at cited locations"
+    }
+  },
+  "quotes": [
+    {
+      "id": "N1",
+      "work": "GenEll",
+      "location": "Section 1, Proposition 1.4(iv)",
+      "printed_pages": [
+        6
+      ],
+      "pdf_pages_one_based": [
+        6
+      ],
+      "full_paragraph_or_item": true,
+      "exact_quote_latex": "(iv) Let (d) be a positive integer, (C\\in\\mathbb R). Suppose further that the line bundle (\\mathcal L_{\\mathbb Q}) is ample on (X_{\\mathbb Q}). Then the set of points (x\\in X(\\overline{\\mathbb Q})^{\\leq d}) [cf. Example 1.3, (i)] such that (\\mathrm{ht}_{\\overline{\\mathcal L}}(x)\\leq C) is finite.",
+      "coverage": "Direct statement of bounded-degree and bounded-height finiteness over varying fields.",
+      "limits": "Not the exact named Lean height or its metric identity; no claim that the formal polynomial implementation appears as a numbered paper lemma.",
+      "visual_page_checks": [
+        {
+          "file": "/tmp/p2m-northcott-mochizuki-quotes-20261114/general-position-page-6.png",
+          "sha256": "32b4696cb8dfa359329c1854b3377d06ff6d09f5f321eaa83bbea43c9c425835",
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "id": "N2",
+      "work": "GenEll",
+      "location": "Section 1, Example 1.3(i)",
+      "printed_pages": [
+        5
+      ],
+      "pdf_pages_one_based": [
+        5
+      ],
+      "full_paragraph_or_item": true,
+      "exact_quote_latex": "(i) If (d\\in\\mathbb N\\cup\\{\\infty\\}), then we shall denote by\n\\[\nX(\\overline{\\mathbb Q})^{\\leq d}\\subseteq X(\\overline{\\mathbb Q})\n\\]\nthe union of the subsets (X(F)\\subseteq X(\\overline{\\mathbb Q})) as (F) ranges over the number fields such that ([F:\\mathbb Q]\\leq d) [so (X(\\overline{\\mathbb Q})^{\\leq\\infty}=X(\\overline{\\mathbb Q}))];\n\\[\nX(\\overline{\\mathbb Q})^{=d}\\overset{\\mathrm{def}}{=}X(\\overline{\\mathbb Q})^{\\leq d}\\setminus X(\\overline{\\mathbb Q})^{\\leq d-1}\\subseteq X(\\overline{\\mathbb Q})\n\\]\n[cf. the discussion in Definition 1.5, (i), below of “minimal fields of definition”]. More generally, if (\\mathcal E\\subseteq X(\\overline{\\mathbb Q})) is any subset, then we shall write (\\mathcal E^{\\leq d}\\overset{\\mathrm{def}}{=}\\mathcal E\\cap X(\\overline{\\mathbb Q})^{\\leq d}), (\\mathcal E^{=d}\\overset{\\mathrm{def}}{=}\\mathcal E\\cap X(\\overline{\\mathbb Q})^{=d}). If (\\mathcal E\\subseteq X(\\overline{\\mathbb Q})) is a subset such that each (\\mathcal E^{\\leq d}) [where (d) ranges over the positive integers] is finite, then we shall say that (\\mathcal E) is Galois-finite.",
+      "coverage": "Defines bounded-degree union over number fields and Galois-finite subsets.",
+      "limits": "Galois-finite is not globally finite unless a degree bound is fixed.",
+      "visual_page_checks": [
+        {
+          "file": "/tmp/p2m-northcott-mochizuki-quotes-20261114/general-position-page-5.png",
+          "sha256": "d374a1c10624182a36171cae27392fea2724eb36d1ad18fd78fa5e55ee94d45b",
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "id": "N3",
+      "work": "GenEll",
+      "location": "Section 3, proof of Lemma 3.7, first paragraph",
+      "printed_pages": [
+        18
+      ],
+      "pdf_pages_one_based": [
+        18
+      ],
+      "full_paragraph_or_item": true,
+      "exact_quote_latex": "Proof. First, observe that if (v) is any local height of (E_L), then (d\\cdot\\underline{\\mathrm{deg}}_{\\infty}([E_L])\\geq v\\cdot\\log(2)). Next, let us observe that by Proposition 3.4, for an appropriate choice of (C), we may assume that (\\mathrm{ht}^{\\mathrm{Falt}}([E_L])+C\\cdot d^{\\epsilon}\\geq\\mathrm{ht}^{\\mathrm{Falt}}([E_L])+C\\geq\\frac1{14}\\cdot\\underline{\\mathrm{deg}}_{\\infty}([E_L])) [i.e., where we take “(12(1+\\epsilon))” to be 14]. Thus, condition (a) implies that\n\\[\nl\\geq\\frac{100d}{14}\\cdot\\underline{\\mathrm{deg}}_{\\infty}([E_L])\\geq\\left(\\frac{100\\cdot\\log(2)}{14}\\right)\\cdot v>v\n\\]\n— i.e., that (l) is (>\\) the local heights of (E_L) at all the primes of multiplicative reduction. On the other hand, if condition (b) is satisfied, and, moreover (E_L) has no primes of multiplicative reduction [so (\\underline{\\mathrm{deg}}_{\\infty}([E_L])=0)], then the fact that ([E_L]\\in\\mathcal K_V) implies that (\\mathrm{ht}_{\\infty}([E_L])) is bounded [independently of (L,E_L,l)], so, by Proposition 1.4, (iv), ([E_L]) belongs to some [fixed] finite exceptional set (\\mathfrak{Exc}_d) [which we think of as (\\mathfrak{Exc}\\cap\\mathcal M_{\\mathrm{ell}}(\\overline{\\mathbb Q})^{\\leq d})], as desired.",
+      "coverage": "Explicit application of Proposition 1.4(iv) to a finite exceptional set.",
+      "limits": "Elliptic-curve moduli with the original Lemma3.7 hypotheses, not the exact tripod carrier.",
+      "visual_page_checks": [
+        {
+          "file": "/tmp/p2m-northcott-mochizuki-quotes-20261114/general-position-page-18.png",
+          "sha256": "5a0a4c77beb6134da6d004f04d8b120c61db7b8e3b40831c19a4462fd122c587",
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "id": "N4",
+      "work": "GenEll",
+      "location": "Section 2, Theorem 2.1(ii)",
+      "printed_pages": [
+        11
+      ],
+      "pdf_pages_one_based": [
+        11
+      ],
+      "full_paragraph_or_item": true,
+      "exact_quote_latex": "(ii) (ABC Conjecture for Σ-Supported Compactly Bounded Subsets) Let (P\\overset{\\mathrm{def}}{=}\\mathbb P^1_{\\mathbb Q}) be the projective line over (\\mathbb Q); (C\\subseteq P) the divisor consisting of the three points “0”, “1”, and “∞”; (U_P\\overset{\\mathrm{def}}{=}P\\setminus C); (d) a positive integer; (\\epsilon\\in\\mathbb R_{>0}) a positive real number; (\\mathcal K_V\\subseteq U_P(\\overline{\\mathbb Q})) a compactly bounded subset [i.e., regarded as a subset of (P(\\overline{\\mathbb Q})) — cf. Example 1.3, (ii)] whose support contains Σ. Write (\\omega_P) for the canonical sheaf on (P). Then the inequality of BD-classes of functions\n\\[\n\\mathrm{ht}_{\\omega_P(C)}\\lesssim(1+\\epsilon)(\\mathrm{log\\text{-}diff}_P+\\mathrm{log\\text{-}cond}_C)\n\\]\nholds on (\\mathcal K_V\\cap U_P(\\overline{\\mathbb Q})^{\\leq d}).",
+      "coverage": "The original-paper Statement II context of the downstream compactly bounded tripod inequality.",
+      "limits": "One statement in an equivalence theorem; N1 does not imply it. BD notation requires IUT IV Remark2.3.1(ii) correction.",
+      "visual_page_checks": [
+        {
+          "file": "/tmp/p2m-northcott-mochizuki-quotes-20261114/general-position-page-11.png",
+          "sha256": "0e30452a689a268613142629fcbc8061609bfb8062b589463580b6be44b1bdde",
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "id": "N5",
+      "work": "IUTIV",
+      "location": "Section 2, proof of Corollary 2.2, discussion of P5",
+      "printed_pages": [
+        46
+      ],
+      "pdf_pages_one_based": [
+        46
+      ],
+      "full_paragraph_or_item": false,
+      "exact_quote_latex": "On the other hand, [by assertion (i); [GenEll], Proposition 1.4, (iv)] this implies that there is only a finite number of possibilities for the (j)-invariant of (E_F).",
+      "coverage": "A complete exact sentence explicitly using [GenEll] Proposition1.4(iv) to obtain finitely many j invariants.",
+      "limits": "This counts j invariants, not all twists or all tripod points; surrounding paragraph includes the height bound.",
+      "visual_page_checks": [
+        {
+          "file": "/tmp/p2m-northcott-mochizuki-quotes-20261114/iut-iv-page-46.png",
+          "sha256": "7cc0fc4643412a97d4e32a95928893ddf178147147e86dd3dbaf585271e25d07",
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "id": "N6",
+      "work": "IUTIV",
+      "location": "Section 2, proof of Corollary 2.3, opening paragraph and list",
+      "printed_pages": [
+        54,
+        55
+      ],
+      "pdf_pages_one_based": [
+        54,
+        55
+      ],
+      "full_paragraph_or_item": true,
+      "exact_quote_latex": "Proof. One verifies immediately that the content of the statement of Corollary 2.3 coincides precisely with the content of [GenEll], Theorem 2.1, (i). Thus, it follows from the equivalence of [GenEll], Theorem 2.1, that, in order to complete the proof of Corollary 2.3, it suffices to verify that [GenEll], Theorem 2.1, (ii), holds. That is to say, we may assume without loss of generality that:\n\n· (X=\\mathbb P^1_{\\mathbb Q}) is the projective line over (\\mathbb Q);\n\n· (D\\subseteq X) is the divisor consisting of the three points “0”, “1”, and “∞”;\n\n· (\\mathcal K_V\\subseteq U_X(\\overline{\\mathbb Q})) is a compactly bounded subset [cf. Remark 2.3.1, (vi), below] whose support contains the nonarchimedean prime “2”;\n\n· (\\mathcal K_V) satisfies the condition “((\\ast_{j\\text{-}\\mathrm{inv}}))” of Corollary 2.2.",
+      "coverage": "The original-paper reduction to [GenEll] Theorem2.1(ii), including compactly bounded domains with support containing2.",
+      "limits": "Context only for the downstream consumer; does not prove Northcott or identify the two formal child lemmas.",
+      "visual_page_checks": [
+        {
+          "file": "/tmp/p2m-northcott-mochizuki-quotes-20261114/iut-iv-page-54.png",
+          "sha256": "ee5843831beb963c52f4866b109ceb76c4e49c120ca05d6df53fc1ff9cdc59e0",
+          "reviewed": true
+        },
+        {
+          "file": "/tmp/p2m-northcott-mochizuki-quotes-20261114/iut-iv-page-55.png",
+          "sha256": "8f6220fb81506ab8a14f13d3c258f5fff6201fc1d0fc44386b1680d3ba64dc3f",
+          "reviewed": true
+        }
+      ]
+    }
+  ],
+  "formal_source_context": [
+    {
+      "file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean",
+      "line": 183,
+      "needle": "theorem northcottHyp",
+      "sha256": "8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean",
+      "line": 150,
+      "needle": "theorem finite_roots_polySet",
+      "sha256": "8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean",
+      "line": 157,
+      "needle": "theorem exists_nat_mem_polySet",
+      "sha256": "8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Corollary22.lean",
+      "line": 299,
+      "needle": "**Northcott finiteness**",
+      "sha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15"
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Corollary23.lean",
+      "line": 76,
+      "needle": "have hExc_fin",
+      "sha256": "9850a3e8ec1c3bb7fef9fd562c9ceedaa67291b97718624596d32b23e4a3cb43"
+    }
+  ],
+  "candidate_source_dir": "/tmp/p2m-northcott-next-20261114",
+  "recommended_primary_quote": "N1",
+  "normalization": "Only line breaks, line-end hyphenation, font emphasis, ligatures and mathematical typesetting are normalized; no hypothesis omitted.",
+  "proof_difference": "Mochizuki Prop1.4(iv) proof uses projective embeddings and symmetric powers; refer/iut candidate uses bounded denominators and integer polynomials.",
+  "blind_readbacks_viewed": false,
+  "compiler_or_MCP_CI_used": false,
+  "main_workspace_modified": false,
+  "platform_used": false
+}

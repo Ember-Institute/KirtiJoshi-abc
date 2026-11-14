@@ -1,0 +1,673 @@
+{
+  "status": "static_shape_audit_passed_kernel_validation_pending",
+  "candidate": "/tmp/p2m-northcott-next-20261114",
+  "report_directory": "/tmp/p2m-northcott-shape-20261114",
+  "current_main_head": "151648c34e3f7c48a4d05cc4a84f4a5c889c1176",
+  "blocking_findings": [],
+  "verdict": {
+    "target_preservation": "pass",
+    "varying_fields_absolute_height": "pass",
+    "full_embedding_family": "pass",
+    "integer_polynomial_and_denominator_bounds": "pass",
+    "source_fidelity": "pass",
+    "necessary_Definitions_helpers": "pass",
+    "import_shape": "pass",
+    "license_and_content_pin": "pass",
+    "kernel_elaboration": "not_run",
+    "axiom_audit": "not_run",
+    "estimate_extraction": "pass",
+    "Definitions_to_Theorems_imports": "none",
+    "eight_file_source_integrity": "pass"
+  },
+  "target": {
+    "byte_exact": true,
+    "signature_sha256": "d2c550048feeab7d3c5b521fd5b7f2e9ba99bd32c126632d4ff94f70ae0118de",
+    "boundary": "From theorem keyword through all bytes before :=."
+  },
+  "mathematical_checks": [
+    {
+      "check": "unchanged_original_target",
+      "result": "pass",
+      "evidence": "The theorem name and every signature byte before := match current main. BoundedDegreeFiniteness still quantifies over all d, H and actual Pt."
+    },
+    {
+      "check": "varying_fields_absolute_height",
+      "result": "pass",
+      "evidence": "The existing height is Height.logHeight₁ of gen x.1 in ℚ(x.1), divided by its positive rational finrank. The argument is uniform as x and its field vary."
+    },
+    {
+      "check": "relative_height_conversion",
+      "result": "pass",
+      "evidence": "deg_mul_htCan gives logHeight₁(gen x.1) = deg(x.1)*htCan(x). Degree and height bounds imply mulHeight₁ ≤ exp(d*max H 0)."
+    },
+    {
+      "check": "all_complex_embeddings",
+      "result": "pass",
+      "evidence": "norm_embedding_le_mulHeight₁ quantifies over each φ : K →+* ℂ. The witness retains every φ : fieldOf x.1 →+* ℂ."
+    },
+    {
+      "check": "infinite_and_finite_place_terms",
+      "result": "pass",
+      "evidence": "The norm bound uses the full infinite-place sum with multiplicities and the nonnegative finite-place sum. It does not discard a negative contribution."
+    },
+    {
+      "check": "actual_bounded_denominator",
+      "result": "pass",
+      "evidence": "Mathlib exists_nat_le_mulHeight₁ constructs n ≠ 0 with n ≤ mulHeight₁ and integrality of n*gen x.1. The witness bounds that same n by heightBound."
+    },
+    {
+      "check": "integer_minpoly_degree_and_monicity",
+      "result": "pass",
+      "evidence": "The witness polynomial is minpoly ℤ of the actual integral element n*gen x.1. It is monic, and its degree is at most the actual field finrank ≤ d."
+    },
+    {
+      "check": "all_roots_and_coefficients",
+      "result": "pass",
+      "evidence": "Embeddings.range_eval_eq_rootSet_minpoly supplies an embedding for each complex root. coeff_bdd_of_roots_le then bounds every integer coefficient by the stated uniform ceiling."
+    },
+    {
+      "check": "actual_Qbar_root_equation",
+      "result": "pass",
+      "evidence": "The equality hy identifies n*x.1 with the image of the same field element. eval₂_minpoly_int_algebraMap proves its integer-polynomial root equation in Qbar."
+    },
+    {
+      "check": "finite_polynomial_root_union",
+      "result": "pass",
+      "evidence": "bUnion_roots_finite applies to the exact degree bound and finite integer coefficient interval. The zero polynomial causes no gap because its Multiset.roots is empty."
+    },
+    {
+      "check": "finite_positive_denominator_quotients",
+      "result": "pass",
+      "evidence": "The composer uses n ≠ 0, Nat.le_floor hnB, and the finite interval from 1 through floor(heightBound). The finite root union remains finite under each quotient map."
+    },
+    {
+      "check": "monicity_and_recovery_consumed",
+      "result": "pass",
+      "evidence": "The composer uses monicity to prove the mapped polynomial nonzero. It uses the root equation for membership and inverse cancellation to recover x.1."
+    },
+    {
+      "check": "boundary_cases",
+      "result": "pass",
+      "evidence": "The proof keeps all natural d and real H. max H 0 gives a valid bound for negative H. Existing positive point degree covers d = 0 without weakening the target."
+    },
+    {
+      "check": "no_fixed_field_or_rational_restriction",
+      "result": "pass",
+      "evidence": "No finite family of number fields, selected embedding, rational-only point carrier, or field-extension height invariance is assumed."
+    },
+    {
+      "check": "source_faithful_decomposition",
+      "result": "pass",
+      "evidence": "The witness and finite quotient composer retain their full source bodies after explicit child substitution. The helper section changes only one final additive-order proof."
+    },
+    {
+      "check": "Definitions_necessary_helpers",
+      "result": "pass",
+      "evidence": "Inputs retains bound definitions, positivity, degree and evaluation bridges, and exact child predicates. The three substantial estimates now reside in separate Theorems modules."
+    },
+    {
+      "check": "no_conclusion_assumption",
+      "result": "pass",
+      "evidence": "The final theorem supplies both child proofs to the composer. No additional hypothesis, free law, new axiom, or mathematical Open node remains."
+    },
+    {
+      "check": "existing_downstream_consumer",
+      "result": "pass",
+      "evidence": "Solutions/Sol_TripodStatementII.lean supplies the unchanged theorem to statementII_of_children, which uses it for its actual low-height exceptional set."
+    },
+    {
+      "check": "moved_estimates_preserve_full_names_and_complete_declarations",
+      "result": "pass",
+      "evidence": "All three declarations keep namespace AbcAdaptation.Tripod.Northcott, full source statements, and complete prior proofs. The existing documented norm-bound tactic replacement remains the only source proof change."
+    },
+    {
+      "check": "moved_estimates_have_actual_theorem_consumers",
+      "result": "pass",
+      "evidence": "northcottPolynomialWitness imports all three estimate modules and directly calls every moved estimate. Definitions imports none of them."
+    },
+    {
+      "check": "eight_file_source_closure",
+      "result": "pass",
+      "evidence": "All ten original source helper declarations match byte for byte after the documented tactic replacement. Witness, finite roots, composer, and original target preserve their source proof content."
+    }
+  ],
+  "producer_consumers": [
+    {
+      "producer": "Northcott.norm_embedding_le_mulHeight₁",
+      "consumers": [
+        "northcottPolynomialWitness: each conjugate of n*gen x.1"
+      ]
+    },
+    {
+      "producer": "Northcott.heightBound",
+      "consumers": [
+        "heightBound_pos",
+        "mulHeight₁_gen_le",
+        "coeffBound",
+        "PolynomialWitness",
+        "boundedDegreeFiniteness_of_northcott_children"
+      ]
+    },
+    {
+      "producer": "Northcott.heightBound_pos",
+      "consumers": [
+        "northcottPolynomialWitness: nonnegative multiplication bound"
+      ]
+    },
+    {
+      "producer": "Northcott.mulHeight₁_gen_le",
+      "consumers": [
+        "northcottPolynomialWitness: denominator and conjugate bounds"
+      ]
+    },
+    {
+      "producer": "Northcott.natDegree_minpoly_int_le",
+      "consumers": [
+        "northcottPolynomialWitness: polySet degree membership"
+      ]
+    },
+    {
+      "producer": "Northcott.coeffBoundOf",
+      "consumers": [
+        "coeff_minpoly_int_mem_Icc",
+        "coeffBound"
+      ]
+    },
+    {
+      "producer": "Northcott.coeff_minpoly_int_mem_Icc",
+      "consumers": [
+        "northcottPolynomialWitness: every coefficient bound"
+      ]
+    },
+    {
+      "producer": "Northcott.eval₂_minpoly_int_algebraMap",
+      "consumers": [
+        "northcottPolynomialWitness: actual root equation"
+      ]
+    },
+    {
+      "producer": "Northcott.coeffBound",
+      "consumers": [
+        "polySet and witness coefficient bound"
+      ]
+    },
+    {
+      "producer": "Northcott.polySet",
+      "consumers": [
+        "FiniteRoots",
+        "PolynomialWitness",
+        "northcottFiniteRoots",
+        "northcottPolynomialWitness",
+        "finite quotient composer"
+      ]
+    },
+    {
+      "producer": "Northcott.FiniteRoots",
+      "consumers": [
+        "northcottFiniteRoots",
+        "finite quotient composer"
+      ]
+    },
+    {
+      "producer": "Northcott.PolynomialWitness",
+      "consumers": [
+        "northcottPolynomialWitness",
+        "finite quotient composer"
+      ]
+    },
+    {
+      "producer": "northcottFiniteRoots",
+      "consumers": [
+        "boundedDegreeFiniteness through composer"
+      ]
+    },
+    {
+      "producer": "northcottPolynomialWitness",
+      "consumers": [
+        "boundedDegreeFiniteness through composer"
+      ]
+    },
+    {
+      "producer": "boundedDegreeFiniteness_of_northcott_children",
+      "consumers": [
+        "boundedDegreeFiniteness"
+      ]
+    }
+  ],
+  "source_comparison": {
+    "candidate_declaration_count": 16,
+    "source_helper_complete_declarations": [
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight₁",
+        "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.heightBound",
+        "owner": "Definitions/Def_TripodNorthcottInputs.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.heightBound_pos",
+        "owner": "Definitions/Def_TripodNorthcottInputs.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.mulHeight₁_gen_le",
+        "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.natDegree_minpoly_int_le",
+        "owner": "Definitions/Def_TripodNorthcottInputs.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.coeffBoundOf",
+        "owner": "Definitions/Def_TripodNorthcottInputs.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+        "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.eval₂_minpoly_int_algebraMap",
+        "owner": "Definitions/Def_TripodNorthcottInputs.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.coeffBound",
+        "owner": "Definitions/Def_TripodNorthcottInputs.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      },
+      {
+        "full_name": "AbcAdaptation.Tripod.Northcott.polySet",
+        "owner": "Definitions/Def_TripodNorthcottInputs.lean",
+        "complete_statement_and_proof_byte_exact_after_documented_transport": true,
+        "complete_statement_and_proof_equal_modulo_whitespace": true
+      }
+    ],
+    "moved_estimates": [
+      {
+        "name": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight₁",
+        "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean",
+        "absent_from_Definitions": true,
+        "imported_by_witness": true,
+        "actual_witness_consumer": true
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Northcott.mulHeight₁_gen_le",
+        "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean",
+        "absent_from_Definitions": true,
+        "imported_by_witness": true,
+        "actual_witness_consumer": true
+      },
+      {
+        "name": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+        "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+        "absent_from_Definitions": true,
+        "imported_by_witness": true,
+        "actual_witness_consumer": true
+      }
+    ],
+    "witness_complete_body_equal_modulo_whitespace": true,
+    "composer_complete_body_equal_after_child_calls": true,
+    "roots_source_rhs_retained": true,
+    "headers_preserved": {
+      "Definitions/Def_TripodNorthcottComposition.lean": true,
+      "Definitions/Def_TripodNorthcottInputs.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean": true,
+      "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean": true
+    },
+    "placeholder_tokens": {
+      "Definitions/Def_TripodNorthcottComposition.lean": [],
+      "Definitions/Def_TripodNorthcottInputs.lean": [],
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean": [],
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean": [],
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean": [],
+      "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean": [],
+      "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean": [],
+      "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean": []
+    },
+    "heartbeat_overrides": {
+      "Definitions/Def_TripodNorthcottComposition.lean": false,
+      "Definitions/Def_TripodNorthcottInputs.lean": false,
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean": false,
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean": false,
+      "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean": false,
+      "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean": false,
+      "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean": false,
+      "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean": false
+    }
+  },
+  "provenance": {
+    "iut_source_content_pin": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean",
+      "sha256": "8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a",
+      "bytes": 11534
+    },
+    "iut_basic_content_pin": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Basic.lean",
+      "sha256": "ef9ae664dc1d770221b7153f3ea3c8ab703183233657931b3d26cbbfac9566e4",
+      "bytes": 23619
+    },
+    "historical_iut_revision": "d9465c111ec4073709f67e9fccec7e3eb374a816",
+    "historical_revision_verified": false,
+    "historical_revision_note": "The local archive has no Git metadata. The candidate states this limit and pins the exact read content by SHA-256.",
+    "mathlib_revision_verified": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "platform_toolchain_verified": "leanprover/lean4:v4.33.1",
+    "manifest_hash_checks": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Northcott.lean",
+        "sha256": "8d34b4c4b9ebb7ead1ab6063492bb8b7e69aab5b04dcd0ccd1922d30cdae8b0a",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Basic.lean",
+        "sha256": "ef9ae664dc1d770221b7153f3ea3c8ab703183233657931b3d26cbbfac9566e4",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+        "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/lean-toolchain",
+        "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/Height/NumberField.lean",
+        "sha256": "e1628937331e7e69f01b96dcc1116da4d3d0ab57cc4f3a1b0a634c8c614a3ed3",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/NumberField/InfinitePlace/Embeddings.lean",
+        "sha256": "1c387b8e514d0511c5a6164bc2c661d9de542114b6b56a67449626d8f2aa0634",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Topology/Algebra/Polynomial.lean",
+        "sha256": "a6268fea61be31c1477a4a4d39f89e5040667fa90b545b14d7da67ba1887924b",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Algebra/Polynomial/Roots.lean",
+        "sha256": "162d86710afc10cc3ed158236994ed020e589f7fa15d5b39a30bd3e1f153080c",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/mathlib4-0df444a/LICENSE",
+        "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+        "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodStatementIIInputs.lean",
+        "sha256": "5ce42a6371d13c7a4fc22dbfcfe7c5d059feb7e7877e9787d53b0eaeb2dee5be",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodFermatInputs.lean",
+        "sha256": "099c3a519d2301b4df515a6503ffd62649d62074716e611b6eb9e360a5b5093a",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodStatementIIComposition.lean",
+        "sha256": "1c210815c31c613be3dbc6bc49a67f7607fd77fb4f7dfdc40e271eb41f23ee10",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_TripodStatementII.lean",
+        "sha256": "47d74a5293d535d9f53639e0888a541b2705a54bf4783e0a8a1a4acaeaec9601",
+        "manifest_matches": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+        "sha256": "199d189be897d1e5596c3552ceec57731c202c1612752ba342f842e259f3f59d",
+        "manifest_matches": true
+      },
+      {
+        "path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottComposition.lean",
+        "sha256": "2571764c67068b21ba010348772b450f859d7235ac67e0e2f6d3d3021a9e18de",
+        "manifest_matches": true
+      },
+      {
+        "path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+        "sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+        "manifest_matches": true
+      },
+      {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+        "sha256": "1794d880113c645a22ae77770c9a9e936d89eb1f5abfee2c6f31c65f1e6cf4a0",
+        "manifest_matches": true
+      },
+      {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean",
+        "sha256": "3d208194aa2de97872a4af68dd370ab7649be2c9d8a262f1d7f18125d2d83252",
+        "manifest_matches": true
+      },
+      {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean",
+        "sha256": "1c352fd8815d254269bd8d7245fb8257df82174efb12e29d5806f344cbe3ea32",
+        "manifest_matches": true
+      },
+      {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+        "sha256": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2",
+        "manifest_matches": true
+      },
+      {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean",
+        "sha256": "091d803c9134d384ad9ed8f4292ba9ac28246d6bc50bcb7514aac5fa5e8a5dd7",
+        "manifest_matches": true
+      },
+      {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean",
+        "sha256": "f0c6720fbb7624438bb510af76b8d272c1eb4d69b77d120613f64f83e52dbcb0",
+        "manifest_matches": true
+      }
+    ]
+  },
+  "license": {
+    "source_header_first_four_lines_preserved": true,
+    "modified_adaptation_notice_present": true,
+    "license_copies_byte_exact": {
+      "iut": true,
+      "mathlib": true
+    },
+    "source_root_notice_files": {
+      "iut": false,
+      "mathlib": false
+    },
+    "fabricated_license_evidence_found": false
+  },
+  "imports": {
+    "local_import_closure": {
+      "Definitions.Def_TripodNorthcottComposition": {
+        "path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottComposition.lean",
+        "sha256": "2571764c67068b21ba010348772b450f859d7235ac67e0e2f6d3d3021a9e18de",
+        "imports": [
+          "Definitions.Def_TripodNorthcottInputs"
+        ]
+      },
+      "Definitions.Def_TripodNorthcottInputs": {
+        "path": "/tmp/p2m-northcott-next-20261114/Definitions/Def_TripodNorthcottInputs.lean",
+        "sha256": "3ce12d44136f9d942c694559706b87a0554a2207c8134afab0d8885578057884",
+        "imports": [
+          "Definitions.Def_TripodStatementIIInputs"
+        ]
+      },
+      "Definitions.Def_TripodStatementIIInputs": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodStatementIIInputs.lean",
+        "sha256": "5ce42a6371d13c7a4fc22dbfcfe7c5d059feb7e7877e9787d53b0eaeb2dee5be",
+        "imports": [
+          "Definitions.Def_AbcTripod"
+        ]
+      },
+      "Definitions.Def_AbcTripod": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+        "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+        "imports": [
+          "Mathlib.FieldTheory.AlgebraicClosure",
+          "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+          "Mathlib.NumberTheory.Height.NumberField",
+          "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+          "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+          "Mathlib.RingTheory.Radical.NatInt"
+        ]
+      },
+      "Theorems.Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc": {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+        "sha256": "1794d880113c645a22ae77770c9a9e936d89eb1f5abfee2c6f31c65f1e6cf4a0",
+        "imports": [
+          "Definitions.Def_TripodNorthcottInputs",
+          "Mathlib.NumberTheory.NumberField.InfinitePlace.Embeddings"
+        ]
+      },
+      "Theorems.Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le": {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean",
+        "sha256": "3d208194aa2de97872a4af68dd370ab7649be2c9d8a262f1d7f18125d2d83252",
+        "imports": [
+          "Definitions.Def_TripodNorthcottInputs"
+        ]
+      },
+      "Theorems.Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁": {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean",
+        "sha256": "1c352fd8815d254269bd8d7245fb8257df82174efb12e29d5806f344cbe3ea32",
+        "imports": [
+          "Definitions.Def_TripodNorthcottInputs"
+        ]
+      },
+      "Theorems.Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness": {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+        "sha256": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2",
+        "imports": [
+          "Definitions.Def_TripodNorthcottComposition",
+          "Theorems.Thm_AbcAdaptation_Tripod_northcottFiniteRoots",
+          "Theorems.Thm_AbcAdaptation_Tripod_northcottPolynomialWitness"
+        ]
+      },
+      "Theorems.Thm_AbcAdaptation_Tripod_northcottFiniteRoots": {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean",
+        "sha256": "091d803c9134d384ad9ed8f4292ba9ac28246d6bc50bcb7514aac5fa5e8a5dd7",
+        "imports": [
+          "Definitions.Def_TripodNorthcottInputs"
+        ]
+      },
+      "Theorems.Thm_AbcAdaptation_Tripod_northcottPolynomialWitness": {
+        "path": "/tmp/p2m-northcott-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean",
+        "sha256": "f0c6720fbb7624438bb510af76b8d272c1eb4d69b77d120613f64f83e52dbcb0",
+        "imports": [
+          "Definitions.Def_TripodNorthcottInputs",
+          "Theorems.Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁",
+          "Theorems.Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le",
+          "Theorems.Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc"
+        ]
+      }
+    },
+    "local_module_count": 10,
+    "cycles": [],
+    "unresolved_imports": [],
+    "forbidden_imports": [],
+    "Definitions_to_Theorems_or_Solutions": []
+  },
+  "static_script_result": "The current eight-file audit/static_check.py passed. Independent complete-declaration, import graph, target-byte, manifest-hash, and license comparisons also passed.",
+  "notes": [
+    {
+      "severity": "information",
+      "topic": "content_pin",
+      "detail": "The exact Iut source content is verified. Its historical upstream revision remains unverified, as the manifest states."
+    },
+    {
+      "severity": "information",
+      "topic": "height_scope",
+      "detail": "This result concerns the existing fixed absolute Weil-height convention. It does not establish comparisons with other auxiliary or arithmeticoid-dependent heights."
+    },
+    {
+      "severity": "information",
+      "topic": "static_limits",
+      "detail": "Namespace resolution, instance synthesis, tactic elaboration, definitional equality, and allowed kernel axioms remain unverified. No static source defect was found."
+    },
+    {
+      "severity": "information",
+      "topic": "v2_layout",
+      "detail": "The layout now has two Definitions modules and six Theorems modules. The three substantial estimates preserve their existing mathematical names and do not add new assumptions."
+    }
+  ],
+  "actions": {
+    "compiler_run": false,
+    "MCP_CI_run": false,
+    "platform_write": false,
+    "main_workspace_edits": false,
+    "cache_edits": false,
+    "publication": false,
+    "writes_limited_to": "/tmp/p2m-northcott-shape-20261114"
+  },
+  "evidence_files": [
+    "evidence-v2.json",
+    "source-comparison-v2.json",
+    "compare-v2.py"
+  ],
+  "report_version": 2,
+  "previous_report": {
+    "path": "/tmp/p2m-northcott-shape-20261114/report.json",
+    "sha256": "503627d7a801b8719b9a6f5a83f10a4cb78dcb16ecb69c0d82b52912649c92f1",
+    "retained_unchanged": true
+  },
+  "scope": "Static re-audit after three complete estimates moved from Definitions to separate Theorems modules.",
+  "candidate_layout": {
+    "candidate_lean_files": 8,
+    "Definitions": 2,
+    "Theorems": 6,
+    "local_import_closure_modules": 10
+  },
+  "moved_estimates": [
+    {
+      "name": "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight₁",
+      "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight₁.lean",
+      "absent_from_Definitions": true,
+      "imported_by_witness": true,
+      "actual_witness_consumer": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Northcott.mulHeight₁_gen_le",
+      "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight₁_gen_le.lean",
+      "absent_from_Definitions": true,
+      "imported_by_witness": true,
+      "actual_witness_consumer": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc",
+      "owner": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+      "absent_from_Definitions": true,
+      "imported_by_witness": true,
+      "actual_witness_consumer": true
+    }
+  ]
+}

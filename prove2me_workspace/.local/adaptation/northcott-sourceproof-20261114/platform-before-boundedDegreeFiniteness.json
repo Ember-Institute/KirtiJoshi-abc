@@ -1,0 +1,23 @@
+{
+  "theorem_id": "bfd60e2f-e299-4833-ab7e-03d2b7ccfd94",
+  "theorem_name": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+  "theorem_title": "Northcott finiteness for all bounded-degree tripod points",
+  "status": "Open",
+  "formal_statement": "theorem AbcAdaptation.Tripod.boundedDegreeFiniteness : AbcAdaptation.Tripod.BoundedDegreeFiniteness := by sorry",
+  "natural_language_statement": "> “Thus, it follows from the equivalence of [GenEll], Theorem 2.1, that, in order to complete the proof of Corollary 2.3, it suffices to verify that [GenEll], Theorem 2.1, (ii), holds.”\n\n— Shinichi Mochizuki, *Inter-universal Teichmüller Theory IV*, §2, proof of Corollary 2.3.\n\n**English**\n\n`AbcAdaptation.Tripod.boundedDegreeFiniteness`\n\nAsserts, with no hypotheses, that for every natural number $d$ and then every real number $H$, the set of all $z\\in\\overline{\\mathbb Q}$ satisfying $z\\ne0$, $z\\ne1$, $n_z\\le d$, and $\\mathrm{Height.logHeight}_1(\\alpha_z)/n_z\\le H$ is finite. Here $F_z=\\mathbb Q(z)$, $\\alpha_z\\in F_z$ is the element mapping to $z$, $n_z=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))=[F_z:\\mathbb Q]>0$, and $\\mathrm{Height.logHeight}_1(\\alpha_z)$ is Mathlib’s relative number-field logarithmic height computed in $F_z$. Thus the height used is that actual relative height divided by the point’s minimal-polynomial degree, and the points range over the entire algebraic closure. Both upper bounds include equality. The quantifiers include $d=0$ and every negative, zero, or positive real $H$; the set is empty if $d=0$ or $H<0$, since this normalized height is nonnegative. Its denominator cannot be zero.\n\n**简体中文**\n\n`AbcAdaptation.Tripod.boundedDegreeFiniteness`\n\n无假设地断言：对每个自然数 $d$，再对每个实数 $H$，所有满足 $z\\ne0$、$z\\ne1$、$n_z\\le d$ 以及 $\\mathrm{Height.logHeight}_1(\\alpha_z)/n_z\\le H$ 的 $z\\in\\overline{\\mathbb Q}$ 组成有限集。这里 $F_z=\\mathbb Q(z)$，$\\alpha_z\\in F_z$ 是映到 $z$ 的元素，$n_z=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))=[F_z:\\mathbb Q]>0$，而 $\\mathrm{Height.logHeight}_1(\\alpha_z)$ 是在 $F_z$ 中计算的 Mathlib 相对数域对数高度。因此实际使用的高度是该相对高度除以点的最小多项式次数，且点遍历整个代数闭包。两个上界都包含等号。量词包含 $d=0$ 以及负、零、正的所有实数 $H$；当 $d=0$ 或 $H<0$ 时，集合为空，因为此归一化高度非负。其分母不可能为零。\n\n**日本語**\n\n`AbcAdaptation.Tripod.boundedDegreeFiniteness`\n\n仮定なしに次を主張する。任意の自然数 $d$、次に任意の実数 $H$ に対し、$z\\ne0$、$z\\ne1$、$n_z\\le d$、および $\\mathrm{Height.logHeight}_1(\\alpha_z)/n_z\\le H$ を満たすすべての $z\\in\\overline{\\mathbb Q}$ からなる集合は有限である。ここで $F_z=\\mathbb Q(z)$、$\\alpha_z\\in F_z$ は $z$ に写る元、$n_z=\\deg(\\operatorname{minpoly}_{\\mathbb Q}(z))=[F_z:\\mathbb Q]>0$ であり、$\\mathrm{Height.logHeight}_1(\\alpha_z)$ は $F_z$ において計算する Mathlib の数体の相対対数高さである。したがって実際に用いる高さは、この相対高さを点の最小多項式の次数で割ったものであり、点は代数閉包全体を動く。二つの上限はいずれも等号を含む。量化には $d=0$ と、負、零、正のすべての実数 $H$ が含まれる。この正規化高さは非負なので、$d=0$ または $H<0$ の場合、集合は空である。分母が零になることはない。",
+  "created_at": "2026-11-13T03:37:22.396145+00:00",
+  "vote_count": 0,
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-geometry",
+    "arithmetic-teichmuller-spaces"
+  ],
+  "preamble": "import Definitions.Def_TripodStatementIIInputs\n\nset_option autoImplicit false",
+  "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Proposition 1.4(iv) and Theorem 2.1(ii); Inter-universal Teichmüller Theory IV, proof of Corollary 2.3. Exact Lean source refer/iut/Iut/Tripod/Northcott.lean:183 and refer/iut/Iut/Implication/Corollary23.lean:56–112. BoundedDegreeFiniteness uses the existing actual normalized height on all algebraic points of bounded degree. HighHeightEstimate is the precise extracted high-height consequence; its arithmetic and height-transfer requirements remain Open children.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

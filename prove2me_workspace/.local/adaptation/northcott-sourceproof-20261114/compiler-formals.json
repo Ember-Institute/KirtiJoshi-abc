@@ -1,0 +1,279 @@
+{
+  "AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one": {
+    "formal_statement": "theorem AbcAdaptation.Tripod.Northcott.norm_embedding_le_mulHeight_one {K : Type*} [Field K] [NumberField K] (x : K)\n    (φ : K →+* ℂ) : ‖φ x‖ ≤ Height.mulHeight₁ x := by sorry",
+    "preamble": "import Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight_one.lean",
+    "syntax": {
+      "valStart": {
+        "offset": 1004,
+        "line": 23,
+        "col": 48
+      },
+      "nameText": "norm_embedding_le_mulHeight_one",
+      "nameRange": {
+        "start": {
+          "offset": 864,
+          "line": 22,
+          "col": 8
+        },
+        "end": {
+          "offset": 895,
+          "line": 22,
+          "col": 39
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_norm_embedding_le_mulHeight_one.lean",
+      "docstring": {
+        "start": {
+          "offset": 541,
+          "line": 18,
+          "col": 0
+        },
+        "end": {
+          "offset": 855,
+          "line": 21,
+          "col": 28
+        }
+      },
+      "declStart": {
+        "offset": 541,
+        "line": 18,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 2533,
+        "line": 47,
+        "col": 69
+      }
+    }
+  },
+  "AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le": {
+    "formal_statement": "theorem AbcAdaptation.Tripod.Northcott.mulHeight_one_gen_le {d : ℕ} {H : ℝ} {x : Pt} (hd : x ∈ ptLE d) (hH : htCan x ≤ H) :\n    Height.mulHeight₁ (gen x.1) ≤ heightBound d H := by sorry",
+    "preamble": "import Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight_one_gen_le.lean",
+    "syntax": {
+      "valStart": {
+        "offset": 864,
+        "line": 21,
+        "col": 50
+      },
+      "nameText": "mulHeight_one_gen_le",
+      "nameRange": {
+        "start": {
+          "offset": 717,
+          "line": 20,
+          "col": 8
+        },
+        "end": {
+          "offset": 737,
+          "line": 20,
+          "col": 28
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_mulHeight_one_gen_le.lean",
+      "docstring": {
+        "start": {
+          "offset": 541,
+          "line": 18,
+          "col": 0
+        },
+        "end": {
+          "offset": 708,
+          "line": 19,
+          "col": 64
+        }
+      },
+      "declStart": {
+        "offset": 541,
+        "line": 18,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 1150,
+        "line": 27,
+        "col": 23
+      }
+    }
+  },
+  "AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc": {
+    "formal_statement": "theorem AbcAdaptation.Tripod.Northcott.coeff_minpoly_int_mem_Icc {K : Type*} [Field K] [NumberField K] {y : K}\n    (hy : IsIntegral ℤ y) {d : ℕ} (hd : Module.finrank ℚ K ≤ d) {B : ℝ}\n    (hB : ∀ φ : K →+* ℂ, ‖φ y‖ ≤ B) (i : ℕ) :\n    (minpoly ℤ y).coeff i ∈ Set.Icc (-(coeffBoundOf d B : ℤ)) (coeffBoundOf d B) := by sorry",
+    "preamble": "import Definitions.Def_TripodNorthcottInputs\nimport Mathlib.NumberTheory.NumberField.InfinitePlace.Embeddings\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+    "syntax": {
+      "valStart": {
+        "offset": 1212,
+        "line": 25,
+        "col": 81
+      },
+      "nameText": "coeff_minpoly_int_mem_Icc",
+      "nameRange": {
+        "start": {
+          "offset": 909,
+          "line": 22,
+          "col": 8
+        },
+        "end": {
+          "offset": 934,
+          "line": 22,
+          "col": 33
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_Northcott_coeff_minpoly_int_mem_Icc.lean",
+      "docstring": {
+        "start": {
+          "offset": 606,
+          "line": 19,
+          "col": 0
+        },
+        "end": {
+          "offset": 900,
+          "line": 21,
+          "col": 91
+        }
+      },
+      "declStart": {
+        "offset": 606,
+        "line": 19,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 2110,
+        "line": 42,
+        "col": 14
+      }
+    }
+  },
+  "AbcAdaptation.Tripod.northcottFiniteRoots": {
+    "formal_statement": "theorem AbcAdaptation.Tripod.northcottFiniteRoots : Northcott.FiniteRoots := by sorry",
+    "preamble": "import Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean",
+    "syntax": {
+      "valStart": {
+        "offset": 751,
+        "line": 21,
+        "col": 53
+      },
+      "nameText": "northcottFiniteRoots",
+      "nameRange": {
+        "start": {
+          "offset": 706,
+          "line": 21,
+          "col": 8
+        },
+        "end": {
+          "offset": 726,
+          "line": 21,
+          "col": 28
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_northcottFiniteRoots.lean",
+      "docstring": {
+        "start": {
+          "offset": 554,
+          "line": 19,
+          "col": 0
+        },
+        "end": {
+          "offset": 697,
+          "line": 20,
+          "col": 68
+        }
+      },
+      "declStart": {
+        "offset": 554,
+        "line": 19,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 842,
+        "line": 23,
+        "col": 73
+      }
+    }
+  },
+  "AbcAdaptation.Tripod.northcottPolynomialWitness": {
+    "formal_statement": "theorem AbcAdaptation.Tripod.northcottPolynomialWitness : Northcott.PolynomialWitness := by sorry",
+    "preamble": "import Definitions.Def_TripodNorthcottInputs\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean",
+    "syntax": {
+      "valStart": {
+        "offset": 1050,
+        "line": 24,
+        "col": 65
+      },
+      "nameText": "northcottPolynomialWitness",
+      "nameRange": {
+        "start": {
+          "offset": 993,
+          "line": 24,
+          "col": 8
+        },
+        "end": {
+          "offset": 1019,
+          "line": 24,
+          "col": 34
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_northcottPolynomialWitness.lean",
+      "docstring": {
+        "start": {
+          "offset": 773,
+          "line": 21,
+          "col": 0
+        },
+        "end": {
+          "offset": 984,
+          "line": 23,
+          "col": 67
+        }
+      },
+      "declStart": {
+        "offset": 773,
+        "line": 21,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 2073,
+        "line": 45,
+        "col": 43
+      }
+    }
+  },
+  "AbcAdaptation.Tripod.boundedDegreeFiniteness": {
+    "formal_statement": "theorem AbcAdaptation.Tripod.boundedDegreeFiniteness :\n    AbcAdaptation.Tripod.BoundedDegreeFiniteness := by sorry",
+    "preamble": "import Definitions.Def_TripodNorthcottComposition\n\nset_option autoImplicit false\nopen NumberField Polynomial\nopen scoped Classical\nopen AbcAdaptation\nopen AbcAdaptation.Tripod\nopen AbcAdaptation.Tripod.Northcott\n\n",
+    "source": "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+    "syntax": {
+      "valStart": {
+        "offset": 709,
+        "line": 17,
+        "col": 49
+      },
+      "nameText": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+      "nameRange": {
+        "start": {
+          "offset": 613,
+          "line": 16,
+          "col": 8
+        },
+        "end": {
+          "offset": 657,
+          "line": 16,
+          "col": 52
+        }
+      },
+      "file": "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+      "docstring": null,
+      "declStart": {
+        "offset": 605,
+        "line": 16,
+        "col": 0
+      },
+      "declEnd": {
+        "offset": 878,
+        "line": 20,
+        "col": 51
+      }
+    }
+  }
+}
