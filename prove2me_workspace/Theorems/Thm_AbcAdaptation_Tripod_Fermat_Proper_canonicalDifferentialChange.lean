@@ -3,10 +3,10 @@ Copyright (c) 2026 The Belyi project contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The Belyi project contributors
 
-DRAFT: exact open source obligation from Belyi/CurveField/Canonical.lean:159,
+Source-proof adaptation from Belyi/CurveField/Canonical.lean:159,
 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8.
 -/
-import Definitions.Def_FermatProperDivisorHeight
+import Solutions.Source_FermatCanonicalDifferentialChange
 
 set_option autoImplicit false
 
@@ -25,6 +25,6 @@ theorem canonicalDifferentialChange {N : ℕ}
       K.D P =
         (if φ ∈ P.1 then ramIdx M hDVR φ P - 1
           else -ramIdx M hDVR φ P - 1) + ord M hDVR P q := by
-  sorry
+  exact canonicalDifferentialChange_source M hDVR hRF φ hφ K
 
 end AbcAdaptation.Tripod.Fermat.Proper

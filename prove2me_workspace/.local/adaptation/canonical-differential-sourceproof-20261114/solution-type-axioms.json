@@ -1,0 +1,4 @@
+{"type":
+ "∀ {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M),\n  ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      Transcendental ℚ φ →\n        ∀ (K : CanonicalDivisorData M hDVR),\n          ∃ q,\n            q ≠ 0 ∧\n              ∀ (P : Place ↥M.K),\n                K.D P = (if φ ∈ ↑P then ramIdx M hDVR φ P - 1 else -ramIdx M hDVR φ P - 1) + ord M hDVR P q",
+ "original_type_equal": true,
+ "axioms": ["propext", "Classical.choice", "Quot.sound"]}

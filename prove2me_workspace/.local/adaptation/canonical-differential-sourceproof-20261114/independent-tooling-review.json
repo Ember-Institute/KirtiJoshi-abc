@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-11-14T11:59:02.115880+00:00",
+  "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/canonical-differential-sourceproof-20261114/delivery.py",
+  "file_sha256": "33cf38b2f5d90e5accdae97739436644c3eed2aeef84ebfb60f8269b0fec1f0e",
+  "verdict": "No confirmed delivery-tool blocker found in the reviewed revision. Root must still complete the gated compiler graph/parser outputs, independent retained-binder audit and direct-solution type/axiom receipts before publish.",
+  "scope": {
+    "read_only_main": true,
+    "delivery_executed": false,
+    "compilation": false,
+    "mcp_ci": false,
+    "api_calls": false,
+    "git_mutations": false
+  },
+  "blocking_findings": [],
+  "resolved_findings": [
+    {
+      "topic": "Historical blind proof/elaboration notes",
+      "detail": "Initial bind implementation attached the original not_performed/unresolved notes as current helper elaboration. Root updated bind during this review. The inspected revision preserves original_blind_elaboration and original_blind_proof_notes separately; current elaboration explicitly records compiler_bound and the actual compiler-qualified name. Wrapper historical proof notes are also preserved separately. No statement or Lean source change was needed."
+    }
+  ],
+  "checks": {
+    "blind_row_binding": {
+      "passed_static": true,
+      "rows": 22,
+      "unique_logical_names": 22,
+      "private_named_rows": 14,
+      "detail": "Every blind original source hash currently matches. bind maps each basename to current Solutions module, matches compiler userName plus module plus nonzero source span exactly once, and stores actual private-mangled compiler name separately from userName. Parser-extracted declaration header must end with the blind raw signature. Twenty-two source rows plus the unchanged wrapper row give 23 final rows."
+    },
+    "section_contexts": {
+      "passed_static": true,
+      "detail": "Full source bodies retain namespace/section/variable/include/omit commands during inlining. Blind source contexts remain recorded; they are not treated as exact inferred binders. The two unramified derivation helpers omit Algebra R S and IsScalarTower R S T, and inv_mem_of_valuation_eq_one omits CharZero; their English readbacks explicitly preserve these omissions. Exact compiler types are bound afterward and preflight requires compiler-readback-type-review.json passed. This separate review remains necessary because raw_signature suffix comparison alone does not validate section-level inferred parameters."
+    },
+    "inline_closure": {
+      "passed_static": true,
+      "helpers_in_order": [
+        "Solutions/Source_FermatDifferentialChain.lean",
+        "Solutions/Source_FermatDifferentialOrder.lean",
+        "Solutions/Source_FermatCanonicalDifferentialChange.lean"
+      ],
+      "external_direct_imports": [
+        "import Definitions.Def_FermatCurveDerivationAdjoin",
+        "import Mathlib.RingTheory.Unramified.Field",
+        "import Definitions.Def_FermatNoncriticalElementarySource",
+        "import Definitions.Def_FermatCurveFieldUniformizer",
+        "import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval",
+        "import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow",
+        "import Definitions.Def_FermatProperDivisorHeight"
+      ],
+      "existing_proved_theorem_import_count": 2,
+      "detail": "The three current source modules are concatenated in dependency order. Mutual Solutions imports are removed; all remaining imports are constrained to Definitions, Mathlib or the two exact named existing theorem modules. No own wrapper import or Solutions import is allowed in the generated code. The actual inspected imports contain exactly the required two Theorems imports. Their direct public dependency statuses are checked before publish. Graph reachability checks require all 22 named authored helpers and both reused theorem declarations to occur in the target proof/type closure."
+    },
+    "raw_target_serialization": {
+      "passed_static": true,
+      "detail": "Target source comes from saved platform formal_statement in raw binder-style Lean text, with only theorem name changed to solution and the exact terminal := by sorry replaced by the body. It does not reconstruct a theorem from compiler pretty-printed forall text. The raw formal begins with the fully qualified target and {N : Nat} and ends with the checked placeholder suffix. Generated original-type theorem repeats the same raw signature, then Lean Meta.isDefEq compares full types."
+    },
+    "type_axiom_and_receipt_gates": {
+      "passed_static": true,
+      "detail": "preflight requires successful root-exclusive exact-path receipts for three source leaves, wrapper, Checks, graph/parser, all-module axioms, direct solution, solution type/axioms, and production gates. checked verifies exit code, absence of sorryAx, current target source hash, exact Lean arguments and exclusive_worktree with null snapshot ID; review jobs also need passed. AuditAllConstants iterates every constant in the four owned modules, including private/compiler auxiliaries, and allows only propext, Classical.choice and Quot.sound. AuditSolution repeats closed-axiom validation for the actual inline upload artifact and checks original type equality. Production-gate input hashes are matched to the current owned Lean sources. The required independent retained-binder review is a separate explicit gate."
+    },
+    "uncertain_post_replay": {
+      "passed_static": true,
+      "detail": "publish writes verification-requested.json before the first verify call. If the HTTP POST result is uncertain and no verify-submit.json was saved, a future call stops with Reconcile prior POST before retry, preventing blind duplicate POST. If a submit receipt exists, the entire current request including source hash/explanation must equal the saved verify request; established verify then reuses the submission ID and resumes polling. Accepted verification followed by metadata failure also resumes from that existing submit receipt. The established protocol is imported by compiling only its verify function AST, so its historical top-level publishing code is not executed."
+    },
+    "platform_mutation_bounds": {
+      "passed_static": true,
+      "detail": "No new-node publication endpoint occurs. Fresh GET checks preserve target raw formal statement, private visibility and pinned environment, and refresh the two existing Proved dependency statuses. After ACCEPTED the script patches only natural-language/source metadata, rechecks the unchanged formal statement and Proved status, then fetches complete graph/frontier and checks the existing canonical-cusp parent."
+    }
+  },
+  "pending_runtime_evidence": [
+    "decl_graph.jsonl and syntax-boundaries.json successful receipt/output inspection, including all 22 exact current compiler types and private names.",
+    "Independent compiler-readback-type-review.json with retained binder findings.",
+    "Actual generated inline artifact direct leaf and original-type/axiom review.",
+    "Complete preflight and required production-gate evidence before any platform publish."
+  ],
+  "limits": "This review parses Python and reads current sources/evidence only. It neither runs delivery.py nor establishes runtime graph/parser output correctness. Root reported closed checks passed with the standard three axioms; final acceptance follows the existing compiler gates."
+}

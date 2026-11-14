@@ -1,0 +1,5 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiCanonicalCuspCoefficientIdentity
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalCuspPolarLinearEquivalence

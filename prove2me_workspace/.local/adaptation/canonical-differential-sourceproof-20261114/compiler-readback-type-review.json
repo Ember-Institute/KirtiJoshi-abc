@@ -1,0 +1,1474 @@
+{
+  "schema_version": "compiler-type-review-v1",
+  "passed": true,
+  "scope": "Binder/type and trilingual-statement review of the 22 source-authored declarations only. Proof correctness was not evaluated.",
+  "requested_model": "gpt-6.1-sol",
+  "actual_backend": null,
+  "original_packet": {
+    "path": "/tmp/p2m-canonical-differential-next-readback-20261114/readbacks.json",
+    "sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+    "preserved": true
+  },
+  "compiler_evidence": {
+    "graph_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/canonical-differential-sourceproof-20261114/decl_graph.jsonl",
+    "graph_sha256": "61693d94b5a496dec014f414010f5def089ae016db9341591c99ef482222a89a",
+    "receipt_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/canonical-differential-sourceproof-20261114/source-graph-leaf-result.json",
+    "receipt_sha256": "265832729ffd5ea968e1a3a1689ac8ca3963c919368a230348a83f0b0dd39d7c",
+    "job_id": "ci-011668-e8f3ddc9",
+    "status": "succeeded",
+    "compiler_type_representation": "Exact elaboratedType strings from the supplied compiler graph; proof arguments may be pretty-printed as ⋯.",
+    "receipt_scope": "Used only as provenance for the compiler graph, not as a proof-correctness assessment."
+  },
+  "summary": {
+    "rows": 22,
+    "private_rows": 14,
+    "public_rows": 8,
+    "unexpected_dropped_section_binders": 0,
+    "extra_implicit_mathematical_binders": 0,
+    "extra_typeclass_assumptions": 0,
+    "trilingual_corrections_required": 0,
+    "formal_code_unchanged_after_comment_finalization": true,
+    "generated_helper_policy": "Compiler-generated _proof helpers at source span 0 are excluded; all 22 source-authored theorem rows are covered."
+  },
+  "formal_context_source_hash_checks": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "original_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "current_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "original_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "current_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "original_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "current_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "original_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "current_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "original_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "current_sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "original_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "current_sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "original_sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+      "current_sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationBasic.lean",
+      "original_sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04",
+      "current_sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationEtale.lean",
+      "original_sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+      "current_sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "original_sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "current_sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldUniformizer.lean",
+      "original_sha256": "c09dd4e8f3558ae72fd0496cb9414c0b41ffd366ddb835b1ca954503b8cf0d4a",
+      "current_sha256": "c09dd4e8f3558ae72fd0496cb9414c0b41ffd366ddb835b1ca954503b8cf0d4a",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "original_sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "current_sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "original_sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "current_sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "unchanged": true
+    }
+  ],
+  "corrected_trilingual_statements": [],
+  "declarations": [
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_zero_of_formallyUnramified",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_zero_of_formallyUnramified",
+      "compiler_type": "∀ {R : Type u_1} {S : Type u_2} {T : Type u_3} [inst : CommRing R] [inst_1 : CommRing S] [inst_2 : CommRing T]\n  [inst_3 : Algebra R T] [inst_4 : Algebra S T] [Algebra.FormallyUnramified S T] (D : Derivation R T T),\n  (∀ (s : S), D ((Algebra.algebraMap S T) s) = 0) → D = 0",
+      "compiler_module": "Solutions.Source_FermatDifferentialChain",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 30,
+        "line_end": 43
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+        "theorem_line_start": 30,
+        "signature_line_end": 31,
+        "raw_signature": "private theorem eq_zero_of_formallyUnramified [Algebra.FormallyUnramified S T]\n    (D : Derivation R T T) (hD : ∀ s : S, D (algebraMap S T s) = 0) : D = 0"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+        "line_start": 30,
+        "line_end": 43,
+        "signature_line_start": 30,
+        "signature_line_end": 31
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "section Extension",
+          "{R S T : Type*} [CommRing R] [CommRing S] [CommRing T]",
+          "[Algebra R S] [Algebra R T] [Algebra S T] [IsScalarTower R S T]"
+        ],
+        "retained_section_binders": [
+          "{R : Type u_1}",
+          "{S : Type u_2}",
+          "{T : Type u_3}",
+          "[CommRing R]",
+          "[CommRing S]",
+          "[CommRing T]",
+          "[Algebra R T]",
+          "[Algebra S T]"
+        ],
+        "dropped_section_binders": [
+          {
+            "binder": "[Algebra R S]",
+            "reason": "Explicit source omit; absent from compiler type."
+          },
+          {
+            "binder": "[IsScalarTower R S T]",
+            "reason": "Explicit source omit; absent from compiler type."
+          }
+        ],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1",
+          "u_2",
+          "u_3"
+        ],
+        "findings": [
+          "The formally-unramified S-algebra hypothesis remains a declaration parameter. The original trilingual wording explicitly does not require the two omitted structures."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.ext_of_formallyUnramified",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.ext_of_formallyUnramified",
+      "compiler_type": "∀ {R : Type u_1} {S : Type u_2} {T : Type u_3} [inst : CommRing R] [inst_1 : CommRing S] [inst_2 : CommRing T]\n  [inst_3 : Algebra R T] [inst_4 : Algebra S T] [Algebra.FormallyUnramified S T] (D₁ D₂ : Derivation R T T),\n  (∀ (s : S), D₁ ((Algebra.algebraMap S T) s) = D₂ ((Algebra.algebraMap S T) s)) → D₁ = D₂",
+      "compiler_module": "Solutions.Source_FermatDifferentialChain",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 46,
+        "line_end": 50
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+        "theorem_line_start": 46,
+        "signature_line_end": 48,
+        "raw_signature": "private theorem ext_of_formallyUnramified [Algebra.FormallyUnramified S T]\n    (D₁ D₂ : Derivation R T T) (h : ∀ s : S, D₁ (algebraMap S T s) = D₂ (algebraMap S T s)) :\n    D₁ = D₂"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+        "line_start": 46,
+        "line_end": 50,
+        "signature_line_start": 46,
+        "signature_line_end": 48
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "section Extension",
+          "{R S T : Type*} [CommRing R] [CommRing S] [CommRing T]",
+          "[Algebra R S] [Algebra R T] [Algebra S T] [IsScalarTower R S T]"
+        ],
+        "retained_section_binders": [
+          "{R : Type u_1}",
+          "{S : Type u_2}",
+          "{T : Type u_3}",
+          "[CommRing R]",
+          "[CommRing S]",
+          "[CommRing T]",
+          "[Algebra R T]",
+          "[Algebra S T]"
+        ],
+        "dropped_section_binders": [
+          {
+            "binder": "[Algebra R S]",
+            "reason": "Explicit source omit; absent from compiler type."
+          },
+          {
+            "binder": "[IsScalarTower R S T]",
+            "reason": "Explicit source omit; absent from compiler type."
+          }
+        ],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1",
+          "u_2",
+          "u_3"
+        ],
+        "findings": [
+          "The formally-unramified S-algebra hypothesis remains a declaration parameter. The original trilingual wording explicitly does not require the two omitted structures."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_self",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_self",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K},\n  Transcendental ℚ t →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K], (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) t = 1",
+      "compiler_module": "Solutions.Source_FermatDifferentialChain",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 56,
+        "line_end": 59
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+        "theorem_line_start": 57,
+        "signature_line_end": 58,
+        "raw_signature": "private theorem derivAlong_self (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K] :\n    derivAlong t t = 1"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+        "line_start": 57,
+        "line_end": 59,
+        "signature_line_start": 57,
+        "signature_line_end": 58
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] {t : K}"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "{t : K}"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "Field and characteristic-zero structure are retained, as stated in all three readbacks. The transcendence and algebraicity assumptions written in the declaration remain present."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivation_ext_of_eq",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivation_ext_of_eq",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K},\n  Transcendental ℚ t → ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K] (D₁ D₂ : Derivation ℚ K K), D₁ t = D₂ t → D₁ = D₂",
+      "compiler_module": "Solutions.Source_FermatDifferentialChain",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 61,
+        "line_end": 68
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+        "theorem_line_start": 61,
+        "signature_line_end": 62,
+        "raw_signature": "private theorem derivation_ext_of_eq (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K]\n    (D₁ D₂ : Derivation ℚ K K) (h : D₁ t = D₂ t) : D₁ = D₂"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+        "line_start": 61,
+        "line_end": 68,
+        "signature_line_start": 61,
+        "signature_line_end": 62
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] {t : K}"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "{t : K}"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "Field and characteristic-zero structure are retained, as stated in all three readbacks. The transcendence and algebraicity assumptions written in the declaration remain present."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_smul_derivAlong",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_smul_derivAlong",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K},\n  Transcendental ℚ t →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K] (D : Derivation ℚ K K),\n      D = D t • AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t",
+      "compiler_module": "Solutions.Source_FermatDifferentialChain",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 70,
+        "line_end": 72
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+        "theorem_line_start": 70,
+        "signature_line_end": 71,
+        "raw_signature": "private theorem eq_smul_derivAlong (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K]\n    (D : Derivation ℚ K K) : D = D t • derivAlong t"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+        "line_start": 70,
+        "line_end": 72,
+        "signature_line_start": 70,
+        "signature_line_end": 71
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] {t : K}"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "{t : K}"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "Field and characteristic-zero structure are retained, as stated in all three readbacks. The transcendence and algebraicity assumptions written in the declaration remain present."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_smul",
+      "passed": true,
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_smul",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K} (s : K),\n  Transcendental ℚ t →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K],\n      AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong s =\n        (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong s) t •\n          AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t",
+      "compiler_module": "Solutions.Source_FermatDifferentialChain",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 74,
+        "line_end": 76
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+        "theorem_line_start": 74,
+        "signature_line_end": 75,
+        "raw_signature": "theorem derivAlong_eq_smul (s : K) (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K] :\n    derivAlong s = derivAlong s t • derivAlong t"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+        "line_start": 74,
+        "line_end": 76,
+        "signature_line_start": 74,
+        "signature_line_end": 75
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] {t : K}"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "{t : K}"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "Field and characteristic-zero structure are retained, as stated in all three readbacks. The transcendence and algebraicity assumptions written in the declaration remain present.",
+          "No transcendence or algebraicity hypothesis on s is added by elaboration. The original wording correctly includes the zero-derivation branch for s through the expanded derivAlong definition."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mul_derivAlong",
+      "passed": true,
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mul_derivAlong",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t s : K},\n  Transcendental ℚ s →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮s⟯) K],\n      Transcendental ℚ t →\n        ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K],\n          (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) s *\n              (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong s) t =\n            1",
+      "compiler_module": "Solutions.Source_FermatDifferentialChain",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 78,
+        "line_end": 83
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+        "theorem_line_start": 78,
+        "signature_line_end": 80,
+        "raw_signature": "theorem derivAlong_mul_derivAlong {s : K} (hs : Transcendental ℚ s) [Algebra.IsAlgebraic ℚ⟮s⟯ K]\n    (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K] :\n    derivAlong t s * derivAlong s t = 1"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+        "line_start": 78,
+        "line_end": 83,
+        "signature_line_start": 78,
+        "signature_line_end": 80
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] {t : K}"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "{t : K}"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "Field and characteristic-zero structure are retained, as stated in all three readbacks. The transcendence and algebraicity assumptions written in the declaration remain present.",
+          "Both s- and t-transcendence assumptions and both algebraicity typeclasses are retained. Their source order differs from the prose order only by reordering universal hypotheses; the product order is unchanged."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.inv_mem_of_valuation_eq_one",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.inv_mem_of_valuation_eq_one",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] {O : ValuationSubring K} {u : K}, O.valuation u = 1 → u⁻¹ ∈ O",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 33,
+        "line_end": 34
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 33,
+        "signature_line_end": 33,
+        "raw_signature": "private theorem inv_mem_of_valuation_eq_one {u : K} (hu : O.valuation u = 1) : u⁻¹ ∈ O"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 33,
+        "line_end": 34,
+        "signature_line_start": 33,
+        "signature_line_end": 33
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] {O : ValuationSubring K}"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "{O : ValuationSubring K}"
+        ],
+        "dropped_section_binders": [
+          {
+            "binder": "[CharZero K]",
+            "reason": "Explicit source omit; absent from compiler type."
+          }
+        ],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "The original trilingual wording correctly permits arbitrary characteristic. The DVR, π and irreducibility variables introduced later in the source are not in scope at this declaration."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_uniformizer",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.Place.ord_uniformizer",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K), P.ord P.uniformizer = 1",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 57,
+        "line_end": 59
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 58,
+        "signature_line_end": 58,
+        "raw_signature": "private theorem ord_uniformizer (P : Place K) : P.ord P.uniformizer = 1"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 58,
+        "line_end": 59,
+        "signature_line_start": 58,
+        "signature_line_end": 58
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "[IsCurveField K]"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "All four source section binders are retained, including characteristic zero and the curve-field typeclass. All three original statements explicitly include these assumptions."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.Place.uniformizer_ne_zero",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.Place.uniformizer_ne_zero",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K), P.uniformizer ≠ 0",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 61,
+        "line_end": 65
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 61,
+        "signature_line_end": 61,
+        "raw_signature": "private theorem uniformizer_ne_zero (P : Place K) : P.uniformizer ≠ 0"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 61,
+        "line_end": 65,
+        "signature_line_start": 61,
+        "signature_line_end": 61
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "[IsCurveField K]"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "All four source section binders are retained, including characteristic zero and the curve-field typeclass. All three original statements explicitly include these assumptions."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.transcendental_of_ord_ne_zero",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.transcendental_of_ord_ne_zero",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {P : AbcAdaptation.Tripod.Fermat.Proper.Place K} {π : K}, P.ord π ≠ 0 → Transcendental ℚ π",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 79,
+        "line_end": 81
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 79,
+        "signature_line_end": 80,
+        "raw_signature": "private theorem transcendental_of_ord_ne_zero {P : Place K} {π : K} (h : P.ord π ≠ 0) :\n    Transcendental ℚ π"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 79,
+        "line_end": 81,
+        "signature_line_start": 79,
+        "signature_line_end": 80
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "[IsCurveField K]"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "All four source section binders are retained, including characteristic zero and the curve-field typeclass. All three original statements explicitly include these assumptions."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.isUnit_iff_ord_eq_zero",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.isUnit_iff_ord_eq_zero",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) (y : ↥↑P), ↑y ≠ 0 → (IsUnit y ↔ P.ord ↑y = 0)",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 83,
+        "line_end": 98
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 83,
+        "signature_line_end": 84,
+        "raw_signature": "private theorem isUnit_iff_ord_eq_zero (P : Place K) (y : P.1) (hy : (y : K) ≠ 0) :\n    IsUnit y ↔ P.ord y = 0"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 83,
+        "line_end": 98,
+        "signature_line_start": 83,
+        "signature_line_end": 84
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "[IsCurveField K]"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "All four source section binders are retained, including characteristic zero and the curve-field typeclass. All three original statements explicitly include these assumptions."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.irreducible_of_ord_eq_one",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.irreducible_of_ord_eq_one",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) {π : K} (hπ : P.ord π = 1), Irreducible ⟨π, ⋯⟩",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 100,
+        "line_end": 116
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 100,
+        "signature_line_end": 101,
+        "raw_signature": "private theorem irreducible_of_ord_eq_one (P : Place K) {π : K} (hπ : P.ord π = 1) :\n    Irreducible (⟨π, P.mem_of_ord_nonneg (by omega)⟩ : P.1)"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 100,
+        "line_end": 116,
+        "signature_line_start": 100,
+        "signature_line_end": 101
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "[IsCurveField K]"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "All four source section binders are retained, including characteristic zero and the curve-field typeclass. All three original statements explicitly include these assumptions.",
+          "The compiler pretty-printer hides the proof component of the subtype element as ⋯. This is the source membership proof from nonnegative order, already explained in the original readbacks, and adds no mathematical hypothesis."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.exists_valuation_aeval_lt_one",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.exists_valuation_aeval_lt_one",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n  ∀ y ∈ ↑P, ∃ (p : Polynomial ℚ), p ≠ 0 ∧ (↑P).valuation ((Polynomial.aeval y) p) < 1",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 118,
+        "line_end": 124
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 118,
+        "signature_line_end": 119,
+        "raw_signature": "private theorem exists_valuation_aeval_lt_one (P : Place K) :\n    ∀ y ∈ P.1, ∃ p : ℚ[X], p ≠ 0 ∧ P.1.valuation (aeval y p) < 1"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 118,
+        "line_end": 124,
+        "signature_line_start": 118,
+        "signature_line_end": 119
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "[IsCurveField K]"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "All four source section binders are retained, including characteristic zero and the curve-field typeclass. All three original statements explicitly include these assumptions.",
+          "IsCurveField K is retained even though no order symbol occurs in the displayed conclusion. The original wording includes it; it has not been inferred away."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.valuation_eq_one_of_ord_eq_zero",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.valuation_eq_one_of_ord_eq_zero",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) {u : K}, u ≠ 0 → P.ord u = 0 → (↑P).valuation u = 1",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 126,
+        "line_end": 131
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 126,
+        "signature_line_end": 127,
+        "raw_signature": "private theorem valuation_eq_one_of_ord_eq_zero (P : Place K) {u : K} (hu0 : u ≠ 0)\n    (hu : P.ord u = 0) : P.1.valuation u = 1"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 126,
+        "line_end": 131,
+        "signature_line_start": 126,
+        "signature_line_end": 127
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "[IsCurveField K]"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "All four source section binders are retained, including characteristic zero and the curve-field typeclass. All three original statements explicitly include these assumptions."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.ord_eq_zero_of_valuation_eq_one",
+      "passed": true,
+      "compiler_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.ord_eq_zero_of_valuation_eq_one",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) {w : K}, (↑P).valuation w = 1 → P.ord w = 0",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": true,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 133,
+        "line_end": 137
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 133,
+        "signature_line_end": 134,
+        "raw_signature": "private theorem ord_eq_zero_of_valuation_eq_one (P : Place K) {w : K} (hw : P.1.valuation w = 1) :\n    P.ord w = 0"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 133,
+        "line_end": 137,
+        "signature_line_start": 133,
+        "signature_line_end": 134
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "[IsCurveField K]"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "All four source section binders are retained, including characteristic zero and the curve-field typeclass. All three original statements explicitly include these assumptions."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_zpow_of_inv",
+      "passed": true,
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_zpow_of_inv",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        (∀ x ∈ O, ∃ (p : Polynomial ℚ), p ≠ 0 ∧ O.valuation ((Polynomial.aeval x) p) < 1) →\n          ∀ [IsDiscreteValuationRing ↥O] (hπO : π ∈ O),\n            Irreducible ⟨π, hπO⟩ →\n              ∀ {t u : K},\n                O.valuation u = 1 →\n                  ∀ {e : ℕ},\n                    1 ≤ e →\n                      t⁻¹ = u * π ^ e →\n                        ∃ (w : K),\n                          O.valuation w = 1 ∧\n                            (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) t = w * π ^ (-(↑e + 1))",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 152,
+        "line_end": 170
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 153,
+        "signature_line_end": 155,
+        "raw_signature": "theorem derivAlong_eq_unit_mul_zpow_of_inv {t : K} {u : K} (hu : O.valuation u = 1) {e : ℕ}\n    (he : 1 ≤ e) (htu : t⁻¹ = u * π ^ e) :\n    ∃ w : K, O.valuation w = 1 ∧ derivAlong π t = w * π ^ (-(e + 1 : ℤ))"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 153,
+        "line_end": 170,
+        "signature_line_start": 153,
+        "signature_line_end": 155
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [
+          "{K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}",
+          "(ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]",
+          "(hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O)",
+          "(hres : ∀ x ∈ O, ∃ p : ℚ[X], p ≠ 0 ∧ O.valuation (aeval x p) < 1)",
+          "[IsDiscreteValuationRing O] (hπO : π ∈ O) (hirr : Irreducible (⟨π, hπO⟩ : O))",
+          "include ht hQ hres hirr"
+        ],
+        "retained_section_binders": [
+          "{K : Type u_1}",
+          "[Field K]",
+          "[CharZero K]",
+          "{O : ValuationSubring K}",
+          "{π : K}",
+          "(ht : Transcendental ℚ π)",
+          "[FiniteDimensional (↥ℚ⟮π⟯) K]",
+          "(hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O)",
+          "(hres : ∀ x ∈ O, ∃ p : ℚ[X], p ≠ 0 ∧ O.valuation (aeval x p) < 1)",
+          "[IsDiscreteValuationRing ↥O]",
+          "(hπO : π ∈ O)",
+          "(hirr : Irreducible (⟨π, hπO⟩ : O))"
+        ],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [
+          "u_1"
+        ],
+        "findings": [
+          "Every source section hypothesis, including ht, hQ, hres and hirr forced by include, is retained. No additional algebraicity assumption is generalized: finite dimensionality is the retained typeclass. The original three-language statement includes all these hypotheses and the natural index e≥1 with integer exponent −(e+1)."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_mem",
+      "passed": true,
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_mem",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n      ψ ∈ ↑P →\n        P.ord ((AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong P.uniformizer) ψ) =\n          AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P - 1",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 178,
+        "line_end": 213
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 179,
+        "signature_line_end": 182,
+        "raw_signature": "theorem ord_derivAlong_of_mem {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) (P : Place M.K) (hψP : ψ ∈ P.1) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (CurveDeriv.derivAlong P.uniformizer ψ) = ramIdx M hDVR ψ P - 1"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 179,
+        "line_end": 213,
+        "signature_line_start": 179,
+        "signature_line_end": 182
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [],
+        "retained_section_binders": [],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [],
+        "findings": [
+          "This declaration has no inherited section binders; its model, index, elements, places and mathematical hypotheses are all declared in its own header. No additional Field, CharZero or IsCurveField parameter is generalized separately from the model.",
+          "The supplied hDVR is retained. The source letI uses M.isCurveField locally and does not add an IsCurveField premise. Integer ramIdx and all-place quantification remain unchanged."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_notMem",
+      "passed": true,
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_notMem",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K) (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n  ψ ∉ ↑P →\n    P.ord ((AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong P.uniformizer) ψ) =\n      -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P - 1",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 215,
+        "line_end": 248
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 216,
+        "signature_line_end": 219,
+        "raw_signature": "theorem ord_derivAlong_of_notMem {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (P : Place M.K) (hψP : ψ ∉ P.1) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (CurveDeriv.derivAlong P.uniformizer ψ) = -ramIdx M hDVR ψ P - 1"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 216,
+        "line_end": 248,
+        "signature_line_start": 216,
+        "signature_line_end": 219
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [],
+        "retained_section_binders": [],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [],
+        "findings": [
+          "This declaration has no inherited section binders; its model, index, elements, places and mathematical hypotheses are all declared in its own header. No additional Field, CharZero or IsCurveField parameter is generalized separately from the model.",
+          "The supplied hDVR is retained. The source letI uses M.isCurveField locally and does not add an IsCurveField premise. Integer ramIdx and all-place quantification remain unchanged.",
+          "There is no separate transcendence hypothesis on ψ; original readback correctly states nonmembership as the premise on ψ."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong",
+      "passed": true,
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n      P.ord ((AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong P.uniformizer) ψ) =\n        if ψ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P - 1\n        else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P - 1",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 250,
+        "line_end": 261
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 251,
+        "signature_line_end": 255,
+        "raw_signature": "theorem ord_derivAlong {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) (P : Place M.K) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (CurveDeriv.derivAlong P.uniformizer ψ) =\n      if ψ ∈ P.1 then ramIdx M hDVR ψ P - 1 else -ramIdx M hDVR ψ P - 1"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 251,
+        "line_end": 261,
+        "signature_line_start": 251,
+        "signature_line_end": 255
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [],
+        "retained_section_binders": [],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [],
+        "findings": [
+          "This declaration has no inherited section binders; its model, index, elements, places and mathematical hypotheses are all declared in its own header. No additional Field, CharZero or IsCurveField parameter is generalized separately from the model.",
+          "The supplied hDVR is retained. The source letI uses M.isCurveField locally and does not add an IsCurveField premise. Integer ramIdx and all-place quantification remain unchanged."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.derivAlong_uniformizer_ne_zero",
+      "passed": true,
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.derivAlong_uniformizer_ne_zero",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n      (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong P.uniformizer) ψ ≠ 0",
+      "compiler_module": "Solutions.Source_FermatDifferentialOrder",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 263,
+        "line_end": 276
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+        "theorem_line_start": 264,
+        "signature_line_end": 267,
+        "raw_signature": "theorem derivAlong_uniformizer_ne_zero {N : ℕ} (M : Model N)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) (P : Place M.K) :\n    letI : IsCurveField M.K := M.isCurveField\n    CurveDeriv.derivAlong P.uniformizer ψ ≠ 0"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "line_start": 264,
+        "line_end": 276,
+        "signature_line_start": 264,
+        "signature_line_end": 267
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [],
+        "retained_section_binders": [],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [],
+        "findings": [
+          "This declaration has no inherited section binders; its model, index, elements, places and mathematical hypotheses are all declared in its own header. No additional Field, CharZero or IsCurveField parameter is generalized separately from the model.",
+          "Neither hDVR nor hRF becomes a parameter. The source letI uses M.isCurveField locally. The original wording states this absence and retains ψ-transcendence."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    },
+    {
+      "qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange_source",
+      "passed": true,
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange_source",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      Transcendental ℚ φ →\n        ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR),\n          ∃ (q : ↥M.K),\n            q ≠ 0 ∧\n              ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n                K.D P =\n                  (if φ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1\n                    else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1) +\n                    AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P q",
+      "compiler_module": "Solutions.Source_FermatCanonicalDifferentialChange",
+      "compiler_is_private": false,
+      "compiler_is_instance": false,
+      "compiler_source_span": {
+        "line_start": 19,
+        "line_end": 50
+      },
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatCanonicalDifferentialChange.lean",
+        "sha256": "437846d75706c9d7a1d0c133e089b66372b3469e20150dc0343770139ccc5b8f",
+        "theorem_line_start": 20,
+        "signature_line_end": 26,
+        "raw_signature": "theorem canonicalDifferentialChange_source {N : ℕ}\n    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)\n    (φ : M.K) (hφ : Transcendental ℚ φ) (K : CanonicalDivisorData M hDVR) :\n    ∃ q : M.K, q ≠ 0 ∧ ∀ P : Place M.K,\n      K.D P =\n        (if φ ∈ P.1 then ramIdx M hDVR φ P - 1\n          else -ramIdx M hDVR φ P - 1) + ord M hDVR P q"
+      },
+      "original_source": {
+        "path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatCanonicalDifferentialChange.lean",
+        "sha256": "3d76a6da0b880f0ca3b9f1df8c7969e092b77affc62eb93278ee3492d2c8a356",
+        "line_start": 20,
+        "line_end": 50,
+        "signature_line_start": 20,
+        "signature_line_end": 26
+      },
+      "binder_findings": {
+        "source_section_namespace_binders": [],
+        "retained_section_binders": [],
+        "dropped_section_binders": [],
+        "unexpected_dropped_section_binders": [],
+        "extra_implicit_mathematical_binders": [],
+        "extra_typeclass_assumptions": [],
+        "universe_parameters": [],
+        "findings": [
+          "This declaration has no inherited section binders; its model, index, elements, places and mathematical hypotheses are all declared in its own header. No additional Field, CharZero or IsCurveField parameter is generalized separately from the model.",
+          "hRF is retained as the proposition ResiduesFinite M, displayed as an unnamed implication premise; its name is erased by pretty-printing, not its assumption. The supplied CanonicalDivisorData is universally quantified. Its actual coefficient contract is expanded in all three original readbacks. One nonzero q is existentially quantified before all places, with +ord(P,q); no formula for q is asserted."
+        ]
+      },
+      "wording_findings": {
+        "added_assumptions": [],
+        "omitted_assumptions": [],
+        "quantifier_or_conclusion_mismatches": [],
+        "languages_reviewed": [
+          "en",
+          "zh-CN",
+          "ja"
+        ],
+        "correction_required": false
+      },
+      "corrected_trilingual_statement": null
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-11-14T11:52:34.409304+00:00",
+  "candidate": "/tmp/p2m-canonical-differential-next-20261114",
+  "review_type": "Independent static source/API and import-graph review; no compilation",
+  "verdict": "No confirmed source/API blocker found. Candidate preserves the exact obligation and is ready for root-controlled MCP-CI elaboration and axiom review.",
+  "scope": {
+    "main_edits": false,
+    "compilation": false,
+    "mcp_ci": false,
+    "api_calls": false,
+    "git_mutations": false,
+    "subagents": false,
+    "explicit_Fermat_route_retained": true
+  },
+  "confirmed_code_issues": [],
+  "metadata_findings": [
+    {
+      "severity": "nonblocking",
+      "file": "/tmp/p2m-canonical-differential-next-20261114/static-check.json",
+      "field": "open_current_child_in_dependency_closure",
+      "reported_value": true,
+      "actual_recursive_import": false,
+      "detail": "The flag is misleading if read as an imported open obligation. The root wrapper appears among checked files and as a current_inputs record with role Exact current child type retained. It is absent from all import edges in the independently reconstructed candidate-overlay graph. All 26 current local dependencies exclude this target.",
+      "recommendation": "Record root_in_checked_files=true and target_in_strict_dependency_closure=false separately; keep source-input/signature evidence distinct from imports."
+    }
+  ],
+  "checks": {
+    "exact_signature": {
+      "passed": true,
+      "detail": "Byte-identical theorem header from theorem canonicalDifferentialChange through the proposition before := by, against both initial current open file and current integrated wrapper. N, M, supplied hDVR and hRF, phi, supplied transcendence proof, supplied K, existential nonzero witness, and forall every Place M.K are preserved."
+    },
+    "canonical_data": {
+      "passed": true,
+      "evidence": {
+        "file": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatCanonicalDifferentialChange.lean",
+        "line": 38
+      },
+      "detail": "The supplied K.D is rewritten via its own coefficient field at arbitrary P. No new canonical divisor, desired-parent equation, degree-only replacement, or model/place restriction is introduced."
+    },
+    "all_places_and_poles": {
+      "passed": true,
+      "detail": "ord_derivAlong splits exactly on psi membership in P.1. Both u and phi use that dispatcher at every arbitrary proper place P; pole formulas have -ramIdx-1. Uniformizer is the actual existing chosen P.uniformizer."
+    },
+    "integer_index": {
+      "passed": true,
+      "detail": "ramIdx remains the existing Int residue-minpoly/pole index. In both local branches e:Nat is introduced with ramIdx = (e:Int), justified by noncriticalRamificationPositive in the regular case or ramIdx=-ord(psi)>0 in the pole case. he1 prevents truncated Nat subtraction. The regular omega goal relates Int(e-1) to Int(e)-1; the pole exponent is -((e:Int)+1). No definitional identification with the pinned Nat ramIdx is assumed."
+    },
+    "nonzero_before_order_and_inverse": {
+      "passed": true,
+      "detail": "Regular aeval(minpoly) is nonzero by transcendence; pi is nonzero by ord(pi)=1; quotient u and w are nonzero before ord_div/ord_mul. Pole psi is nonzero from nonmembership, so its inverse and quotient are nonzero; pi/w and zpow are nonzero before ord_mul. Inverse derivative source proof establishes pi and u nonzero. ord_inv itself has an unconditional current API, consistent with ord(0)=0. Final q=du/dphi and dphi/dpi are nonzero by reciprocal derivatives before final ord_mul."
+    },
+    "chain_and_sign": {
+      "passed": true,
+      "detail": "derivAlong_eq_smul P.uniformizer hphi evaluated at M.u gives du/dpi=(dphi/dpi)*(du/dphi). q is du/dphi, hence K_u(P)=K_phi(P)+ord_P(q), with the required positive principal sign."
+    },
+    "actual_consumer": {
+      "passed": true,
+      "files": [
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatCanonicalCuspComposition.lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.lean"
+      ],
+      "detail": "The source composer hChange type exactly matches this theorem; the existing parent passes canonicalDifferentialChange to that composer. No unused replacement route or deprecation is introduced."
+    },
+    "independent_engineering": {
+      "passed": true,
+      "detail": "Source modules import only current project Definitions, the two existing proved local derivative theorem modules and their closure, and exact Mathlib modules. They do not import Belyi, the current local-obstruction theorem, a parent/canonical-change theorem, or a desired-parent assumption. Public local derivative theorem declarations are byte-identical to their pinned source declarations. Chain/private bridges reuse existing complete private bodies; no proved theorem is converted to an open child."
+    },
+    "source_evidence": {
+      "passed": true,
+      "pin": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "detail": "All six reference files match ledger SHA-256 and byte-match the stated pinned archive files. Source notices are retained. Reviewed Canonical:144-166, Basic:68-95/178-219, Order:41-100, RamIdx:55-159/237-284, and uniformizer bridge references."
+    }
+  },
+  "dependency_graph": {
+    "resolution": "Candidate files override current modules at identical module names; other local modules resolve in prove2me_workspace. Mathlib leaves are external.",
+    "local_modules_including_root": 30,
+    "draft_modules": 4,
+    "current_local_dependencies": 26,
+    "cycles": [],
+    "incoming_target_edges": [],
+    "strict_dependency_has_target": false,
+    "strict_dependencies": [
+      "Definitions.Def_AbcTripod",
+      "Definitions.Def_FermatCurveDerivationAdjoin",
+      "Definitions.Def_FermatCurveDerivationBasic",
+      "Definitions.Def_FermatCurveDerivationEtale",
+      "Definitions.Def_FermatCurveDerivationPolynomial",
+      "Definitions.Def_FermatCurveFieldBasic",
+      "Definitions.Def_FermatCurveFieldChart",
+      "Definitions.Def_FermatCurveFieldPlace",
+      "Definitions.Def_FermatCurveFieldResidue",
+      "Definitions.Def_FermatCurveFieldUniformizer",
+      "Definitions.Def_FermatCurveFieldZerosPoles",
+      "Definitions.Def_FermatNoncriticalElementarySource",
+      "Definitions.Def_FermatNoncriticalFunctions",
+      "Definitions.Def_FermatNoncriticalRamificationPositive",
+      "Definitions.Def_FermatProperCarrier",
+      "Definitions.Def_FermatProperDivisorHeight",
+      "Definitions.Def_TripodFermatInputs",
+      "Solutions.Source_FermatCanonicalDifferentialChange",
+      "Solutions.Source_FermatDifferentialChain",
+      "Solutions.Source_FermatDifferentialOrder",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem",
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one"
+    ],
+    "imports": {
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange": [
+        "Solutions.Source_FermatCanonicalDifferentialChange"
+      ],
+      "Solutions.Source_FermatCanonicalDifferentialChange": [
+        "Definitions.Def_FermatProperDivisorHeight",
+        "Solutions.Source_FermatDifferentialOrder"
+      ],
+      "Definitions.Def_FermatProperDivisorHeight": [
+        "Definitions.Def_FermatProperCarrier"
+      ],
+      "Definitions.Def_FermatProperCarrier": [
+        "Definitions.Def_TripodFermatInputs",
+        "Mathlib.FieldTheory.RatFunc.Basic",
+        "Mathlib.Algebra.Algebra.Hom.Rat",
+        "Mathlib.RingTheory.Valuation.ValuationSubring",
+        "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing",
+        "Mathlib.Data.Finsupp.Basic",
+        "Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure",
+        "Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis"
+      ],
+      "Definitions.Def_TripodFermatInputs": [
+        "Definitions.Def_AbcTripod",
+        "Mathlib.Data.Fin.VecNotation"
+      ],
+      "Definitions.Def_AbcTripod": [
+        "Mathlib.FieldTheory.AlgebraicClosure",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+        "Mathlib.NumberTheory.Height.NumberField",
+        "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+        "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "Mathlib.RingTheory.Radical.NatInt"
+      ],
+      "Solutions.Source_FermatDifferentialOrder": [
+        "Definitions.Def_FermatNoncriticalElementarySource",
+        "Definitions.Def_FermatCurveFieldUniformizer",
+        "Solutions.Source_FermatDifferentialChain",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow"
+      ],
+      "Definitions.Def_FermatNoncriticalElementarySource": [
+        "Definitions.Def_FermatNoncriticalRamificationPositive",
+        "Mathlib.Algebra.Polynomial.Derivative",
+        "Mathlib.FieldTheory.Separable",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.LinearCombination",
+        "Mathlib.Tactic.Ring"
+      ],
+      "Definitions.Def_FermatNoncriticalRamificationPositive": [
+        "Definitions.Def_FermatNoncriticalFunctions",
+        "Mathlib.Algebra.Algebra.Hom.Rat"
+      ],
+      "Definitions.Def_FermatNoncriticalFunctions": [
+        "Definitions.Def_FermatCurveFieldResidue",
+        "Definitions.Def_FermatCurveFieldZerosPoles",
+        "Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure",
+        "Mathlib.FieldTheory.Minpoly.Field",
+        "Mathlib.Algebra.Polynomial.Roots"
+      ],
+      "Definitions.Def_FermatCurveFieldResidue": [
+        "Definitions.Def_FermatCurveFieldPlace",
+        "Mathlib.RingTheory.Jacobson.Ring"
+      ],
+      "Definitions.Def_FermatCurveFieldPlace": [
+        "Definitions.Def_FermatCurveFieldChart",
+        "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing"
+      ],
+      "Definitions.Def_FermatCurveFieldChart": [
+        "Definitions.Def_FermatCurveFieldBasic",
+        "Mathlib.Algebra.Polynomial.FieldDivision",
+        "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+        "Mathlib.RingTheory.DedekindDomain.PID",
+        "Mathlib.RingTheory.Valuation.LocalSubring"
+      ],
+      "Definitions.Def_FermatCurveFieldBasic": [
+        "Definitions.Def_FermatProperCarrier",
+        "Mathlib.Algebra.Algebra.Rat",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+        "Mathlib.RingTheory.AlgebraicIndependent.AlgebraicClosure",
+        "Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis"
+      ],
+      "Definitions.Def_FermatCurveFieldZerosPoles": [
+        "Definitions.Def_FermatCurveFieldPlace",
+        "Mathlib.RingTheory.DedekindDomain.Factorization"
+      ],
+      "Definitions.Def_FermatCurveFieldUniformizer": [
+        "Definitions.Def_FermatCurveFieldPlace"
+      ],
+      "Solutions.Source_FermatDifferentialChain": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.Unramified.Field"
+      ],
+      "Definitions.Def_FermatCurveDerivationAdjoin": [
+        "Definitions.Def_FermatCurveDerivationBasic",
+        "Mathlib.RingTheory.Valuation.ValuationSubring"
+      ],
+      "Definitions.Def_FermatCurveDerivationBasic": [
+        "Definitions.Def_FermatCurveDerivationEtale",
+        "Definitions.Def_FermatCurveDerivationPolynomial"
+      ],
+      "Definitions.Def_FermatCurveDerivationEtale": [
+        "Mathlib.RingTheory.Etale.Kaehler"
+      ],
+      "Definitions.Def_FermatCurveDerivationPolynomial": [
+        "Mathlib.RingTheory.Etale.Field",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra",
+        "Mathlib.RingTheory.Algebraic.Basic",
+        "Mathlib.Algebra.Polynomial.Derivation",
+        "Mathlib.Algebra.Algebra.Rat",
+        "Mathlib.FieldTheory.Separable",
+        "Mathlib.Tactic.Ring"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.Tactic.Positivity",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.LinearCombination",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one": [
+        "Definitions.Def_FermatCurveDerivationAdjoin"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.RingTheory.Valuation.LocalSubring",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div",
+        "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.RingTheory.Valuation.LocalSubring",
+        "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+        "Mathlib.RingTheory.DedekindDomain.Dvr",
+        "Mathlib.Tactic.LinearCombination"
+      ],
+      "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure": [
+        "Definitions.Def_FermatCurveDerivationAdjoin",
+        "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "Mathlib.RingTheory.Valuation.LocalSubring",
+        "Mathlib.RingTheory.DedekindDomain.IntegralClosure",
+        "Mathlib.Tactic.FieldSimp"
+      ]
+    }
+  },
+  "input_drift": {
+    "detail": "During this review the root integrated the wrapper in main and changed only its source-status header relative to the candidate; theorem signature and proof application remain identical. The ledger current open-child hash is therefore historical, not the hash of the now integrated main wrapper. All other recorded current inputs matched at the hash-check time. Root should use a fresh actual workspace manifest for CI.",
+    "current_wrapper_sha256": "14898636f5e678dd0af93cb53288064306a94c2c5cfb2f25db19ddf914d17a8b"
+  },
+  "pending_acceptance": [
+    "MCP-CI elaboration of new source leaf modules and wrapper by root in stable exclusive workspace.",
+    "Required Checks/Axioms, ImportAudit, Act1Scene1 aggregation, AxiomAudit and git diff --check.",
+    "Inspect sorryAx and axiom output; static review alone does not establish Lean elaboration or accepted assumptions."
+  ],
+  "artifact_hashes": {
+    "Solutions/Source_FermatCanonicalDifferentialChange.lean": "3d76a6da0b880f0ca3b9f1df8c7969e092b77affc62eb93278ee3492d2c8a356",
+    "Solutions/Source_FermatDifferentialChain.lean": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+    "Solutions/Source_FermatDifferentialOrder.lean": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+    "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange.lean": "0e0601ec395c75171166d65dc698fc88a91001210f6c5b48e42db5902455e98b"
+  }
+}

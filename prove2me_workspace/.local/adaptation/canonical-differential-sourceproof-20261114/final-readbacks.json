@@ -1,0 +1,984 @@
+{
+  "declarations": [
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_zero_of_formallyUnramified",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_zero_of_formallyUnramified",
+      "path": "Solutions/Source_FermatDifferentialChain.lean",
+      "module": "Solutions.Source_FermatDifferentialChain",
+      "source_sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+      "compiler_type": "∀ {R : Type u_1} {S : Type u_2} {T : Type u_3} [inst : CommRing R] [inst_1 : CommRing S] [inst_2 : CommRing T]\n  [inst_3 : Algebra R T] [inst_4 : Algebra S T] [Algebra.FormallyUnramified S T] (D : Derivation R T T),\n  (∀ (s : S), D ((Algebra.algebraMap S T) s) = 0) → D = 0",
+      "source_span": {
+        "start_line": 30,
+        "end_line": 43
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+      "blind_original_sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem eq_zero_of_formallyUnramified [Algebra.FormallyUnramified S T]\n    (D : Derivation R T T) (hD : ∀ s : S, D (algebraMap S T s) = 0) : D = 0",
+      "section_namespace_binders": [
+        "section Extension",
+        "{R S T : Type*} [CommRing R] [CommRing S] [CommRing T]",
+        "[Algebra R S] [Algebra R T] [Algebra S T] [IsScalarTower R S T]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_zero_of_formallyUnramified",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "For commutative rings $R,S,T$, with $R$- and $S$-algebra structures on $T$, assume that $T$ is formally unramified over $S$. No $R$-algebra structure on $S$ or scalar-tower compatibility is assumed here. For every $R$-derivation $D:T\\to T$, if $D(\\iota(s))=0$ for all $s\\in S$, where $\\iota:S\\to T$ is the structure map, then $D$ is the zero derivation.",
+      "zh_Hans": "设 $R,S,T$ 是交换环，$T$ 带有 $R$-代数及 $S$-代数结构，且 $T$ 在 $S$ 上形式非分歧。这里不假设 $S$ 带有 $R$-代数结构，也不假设标量塔相容。对于任意 $R$-导子 $D:T\\to T$，若对每个 $s\\in S$ 都有 $D(\\iota(s))=0$，其中 $\\iota:S\\to T$ 是结构映射，则 $D$ 是零导子。",
+      "ja": "$R,S,T$ を可換環とし、$T$ に $R$-代数構造と $S$-代数構造を与え、$T$ は $S$ 上形式的に不分岐であると仮定する。ここでは $S$ の $R$-代数構造もスカラー塔の整合性も仮定しない。任意の $R$-導分 $D:T\\to T$ について、すべての $s\\in S$ に対して $D(\\iota(s))=0$ であれば、$D$ は零導分である。ここで $\\iota:S\\to T$ は構造写像である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.ext_of_formallyUnramified",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.ext_of_formallyUnramified",
+      "path": "Solutions/Source_FermatDifferentialChain.lean",
+      "module": "Solutions.Source_FermatDifferentialChain",
+      "source_sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+      "compiler_type": "∀ {R : Type u_1} {S : Type u_2} {T : Type u_3} [inst : CommRing R] [inst_1 : CommRing S] [inst_2 : CommRing T]\n  [inst_3 : Algebra R T] [inst_4 : Algebra S T] [Algebra.FormallyUnramified S T] (D₁ D₂ : Derivation R T T),\n  (∀ (s : S), D₁ ((Algebra.algebraMap S T) s) = D₂ ((Algebra.algebraMap S T) s)) → D₁ = D₂",
+      "source_span": {
+        "start_line": 46,
+        "end_line": 50
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+      "blind_original_sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem ext_of_formallyUnramified [Algebra.FormallyUnramified S T]\n    (D₁ D₂ : Derivation R T T) (h : ∀ s : S, D₁ (algebraMap S T s) = D₂ (algebraMap S T s)) :\n    D₁ = D₂",
+      "section_namespace_binders": [
+        "section Extension",
+        "{R S T : Type*} [CommRing R] [CommRing S] [CommRing T]",
+        "[Algebra R S] [Algebra R T] [Algebra S T] [IsScalarTower R S T]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.ext_of_formallyUnramified",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "For commutative rings $R,S,T$, with $R$- and $S$-algebra structures on $T$, assume that $T$ is formally unramified over $S$. No $R$-algebra structure on $S$ or scalar-tower compatibility is assumed here. For any two $R$-derivations $D_1,D_2:T\\to T$, equality $D_1(\\iota(s))=D_2(\\iota(s))$ for every $s\\in S$ implies $D_1=D_2$.",
+      "zh_Hans": "设 $R,S,T$ 是交换环，$T$ 带有 $R$-代数及 $S$-代数结构，且 $T$ 在 $S$ 上形式非分歧。这里不假设 $S$ 带有 $R$-代数结构，也不假设标量塔相容。任取两个 $R$-导子 $D_1,D_2:T\\to T$，若对每个 $s\\in S$ 都有 $D_1(\\iota(s))=D_2(\\iota(s))$，则 $D_1=D_2$。",
+      "ja": "$R,S,T$ を可換環とし、$T$ に $R$-代数構造と $S$-代数構造を与え、$T$ は $S$ 上形式的に不分岐であると仮定する。ここでは $S$ の $R$-代数構造もスカラー塔の整合性も仮定しない。二つの $R$-導分 $D_1,D_2:T\\to T$ がすべての $s\\in S$ に対し $D_1(\\iota(s))=D_2(\\iota(s))$ を満たすならば、$D_1=D_2$ である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_self",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_self",
+      "path": "Solutions/Source_FermatDifferentialChain.lean",
+      "module": "Solutions.Source_FermatDifferentialChain",
+      "source_sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K},\n  Transcendental ℚ t →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K], (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) t = 1",
+      "source_span": {
+        "start_line": 56,
+        "end_line": 59
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+      "blind_original_sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem derivAlong_self (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K] :\n    derivAlong t t = 1",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] {t : K}"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_self",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero field, let $t\\in K$ be transcendental over $\\mathbb Q$, and assume $K/\\mathbb Q(t)$ is algebraic. Then $\\partial_t(t)=1$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零域，$t\\in K$ 在 $\\mathbb Q$ 上超越，且 $K/\\mathbb Q(t)$ 是代数扩张。则 $\\partial_t(t)=1$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の体、$t\\in K$ を $\\mathbb Q$ 上超越的な元とし、$K/\\mathbb Q(t)$ は代数拡大であると仮定する。このとき $\\partial_t(t)=1$ である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivation_ext_of_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivation_ext_of_eq",
+      "path": "Solutions/Source_FermatDifferentialChain.lean",
+      "module": "Solutions.Source_FermatDifferentialChain",
+      "source_sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K},\n  Transcendental ℚ t → ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K] (D₁ D₂ : Derivation ℚ K K), D₁ t = D₂ t → D₁ = D₂",
+      "source_span": {
+        "start_line": 61,
+        "end_line": 68
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+      "blind_original_sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem derivation_ext_of_eq (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K]\n    (D₁ D₂ : Derivation ℚ K K) (h : D₁ t = D₂ t) : D₁ = D₂",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] {t : K}"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivation_ext_of_eq",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero field, let $t\\in K$ be transcendental over $\\mathbb Q$, and assume $K/\\mathbb Q(t)$ is algebraic. For arbitrary $\\mathbb Q$-derivations $D_1,D_2:K\\to K$, the single equality $D_1(t)=D_2(t)$ implies equality of the derivations $D_1=D_2$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零域，$t\\in K$ 在 $\\mathbb Q$ 上超越，且 $K/\\mathbb Q(t)$ 是代数扩张。对于任意 $\\mathbb Q$-导子 $D_1,D_2:K\\to K$，只要 $D_1(t)=D_2(t)$，就有导子相等 $D_1=D_2$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の体、$t\\in K$ を $\\mathbb Q$ 上超越的な元とし、$K/\\mathbb Q(t)$ は代数拡大であると仮定する。任意の $\\mathbb Q$-導分 $D_1,D_2:K\\to K$ に対し、$D_1(t)=D_2(t)$ ならば導分として $D_1=D_2$ である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_smul_derivAlong",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_smul_derivAlong",
+      "path": "Solutions/Source_FermatDifferentialChain.lean",
+      "module": "Solutions.Source_FermatDifferentialChain",
+      "source_sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K},\n  Transcendental ℚ t →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K] (D : Derivation ℚ K K),\n      D = D t • AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t",
+      "source_span": {
+        "start_line": 70,
+        "end_line": 72
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+      "blind_original_sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem eq_smul_derivAlong (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K]\n    (D : Derivation ℚ K K) : D = D t • derivAlong t",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] {t : K}"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialChain.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.eq_smul_derivAlong",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero field, let $t\\in K$ be transcendental over $\\mathbb Q$, and assume $K/\\mathbb Q(t)$ is algebraic. Every $\\mathbb Q$-derivation $D:K\\to K$ satisfies $D=D(t)\\partial_t$, meaning $D(x)=D(t)\\partial_t(x)$ for every $x\\in K$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零域，$t\\in K$ 在 $\\mathbb Q$ 上超越，且 $K/\\mathbb Q(t)$ 是代数扩张。每个 $\\mathbb Q$-导子 $D:K\\to K$ 都满足 $D=D(t)\\partial_t$，即对每个 $x\\in K$ 都有 $D(x)=D(t)\\partial_t(x)$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の体、$t\\in K$ を $\\mathbb Q$ 上超越的な元とし、$K/\\mathbb Q(t)$ は代数拡大であると仮定する。すべての $\\mathbb Q$-導分 $D:K\\to K$ に対し $D=D(t)\\partial_t$、すなわちすべての $x\\in K$ に対し $D(x)=D(t)\\partial_t(x)$ である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_smul",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_smul",
+      "path": "Solutions/Source_FermatDifferentialChain.lean",
+      "module": "Solutions.Source_FermatDifferentialChain",
+      "source_sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t : K} (s : K),\n  Transcendental ℚ t →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K],\n      AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong s =\n        (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong s) t •\n          AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t",
+      "source_span": {
+        "start_line": 74,
+        "end_line": 76
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+      "blind_original_sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "theorem derivAlong_eq_smul (s : K) (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K] :\n    derivAlong s = derivAlong s t • derivAlong t",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] {t : K}"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_smul",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero field, let $t\\in K$ be transcendental over $\\mathbb Q$, and assume $K/\\mathbb Q(t)$ is algebraic. For every $s\\in K$, with no transcendence or algebraicity assumption on $s$, equality of derivations $\\partial_s=\\partial_s(t)\\partial_t$ holds, that is, $\\partial_s(x)=\\partial_s(t)\\partial_t(x)$ for all $x\\in K$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零域，$t\\in K$ 在 $\\mathbb Q$ 上超越，且 $K/\\mathbb Q(t)$ 是代数扩张。对于任意 $s\\in K$，不另要求 $s$ 超越或相应扩张为代数扩张，都有导子相等 $\\partial_s=\\partial_s(t)\\partial_t$，即对每个 $x\\in K$，$\\partial_s(x)=\\partial_s(t)\\partial_t(x)$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の体、$t\\in K$ を $\\mathbb Q$ 上超越的な元とし、$K/\\mathbb Q(t)$ は代数拡大であると仮定する。$s$ の超越性や対応する拡大の代数性を仮定せず、任意の $s\\in K$ について導分の等式 $\\partial_s=\\partial_s(t)\\partial_t$ が成り立つ。すなわちすべての $x\\in K$ に対し $\\partial_s(x)=\\partial_s(t)\\partial_t(x)$ である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mul_derivAlong",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mul_derivAlong",
+      "path": "Solutions/Source_FermatDifferentialChain.lean",
+      "module": "Solutions.Source_FermatDifferentialChain",
+      "source_sha256": "09cae38f6996a46b52d2ec9f79e215e73f13d87c899add88af150a2023a0afa1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {t s : K},\n  Transcendental ℚ s →\n    ∀ [Algebra.IsAlgebraic (↥ℚ⟮s⟯) K],\n      Transcendental ℚ t →\n        ∀ [Algebra.IsAlgebraic (↥ℚ⟮t⟯) K],\n          (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong t) s *\n              (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong s) t =\n            1",
+      "source_span": {
+        "start_line": 78,
+        "end_line": 83
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialChain.lean",
+      "blind_original_sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "theorem derivAlong_mul_derivAlong {s : K} (hs : Transcendental ℚ s) [Algebra.IsAlgebraic ℚ⟮s⟯ K]\n    (ht : Transcendental ℚ t) [Algebra.IsAlgebraic ℚ⟮t⟯ K] :\n    derivAlong t s * derivAlong s t = 1",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] {t : K}"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_mul_derivAlong",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero field, let $t\\in K$ be transcendental over $\\mathbb Q$, and assume $K/\\mathbb Q(t)$ is algebraic. For every $s\\in K$ transcendental over $\\mathbb Q$ such that $K/\\mathbb Q(s)$ is algebraic, $\\partial_t(s)\\partial_s(t)=1$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零域，$t\\in K$ 在 $\\mathbb Q$ 上超越，且 $K/\\mathbb Q(t)$ 是代数扩张。对于每个在 $\\mathbb Q$ 上超越且使 $K/\\mathbb Q(s)$ 为代数扩张的 $s\\in K$，有 $\\partial_t(s)\\partial_s(t)=1$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の体、$t\\in K$ を $\\mathbb Q$ 上超越的な元とし、$K/\\mathbb Q(t)$ は代数拡大であると仮定する。$\\mathbb Q$ 上超越的で $K/\\mathbb Q(s)$ が代数拡大となるすべての $s\\in K$ に対し、$\\partial_t(s)\\partial_s(t)=1$ である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.inv_mem_of_valuation_eq_one",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.inv_mem_of_valuation_eq_one",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] {O : ValuationSubring K} {u : K}, O.valuation u = 1 → u⁻¹ ∈ O",
+      "source_span": {
+        "start_line": 33,
+        "end_line": 34
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem inv_mem_of_valuation_eq_one {u : K} (hu : O.valuation u = 1) : u⁻¹ ∈ O",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] {O : ValuationSubring K}"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.inv_mem_of_valuation_eq_one",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Let $K$ be a field of arbitrary characteristic and $O\\subseteq K$ a valuation subring. For every $u\\in K$, if $\\nu_O(u)=1$, then $u^{-1}\\in O$. Here $\\nu_O$ is the canonical multiplicative valuation of $O$ and inverse is the total field inverse, with $0^{-1}=0$.",
+      "zh_Hans": "设 $K$ 是任意特征的域，$O\\subseteq K$ 是赋值子环。对于每个 $u\\in K$，若 $\\nu_O(u)=1$，则 $u^{-1}\\in O$。这里 $\\nu_O$ 是 $O$ 的典范乘法赋值，逆元运算采用域上的全函数约定 $0^{-1}=0$。",
+      "ja": "$K$ を任意の標数の体、$O\\subseteq K$ を付値部分環とする。任意の $u\\in K$ について、$\\nu_O(u)=1$ ならば $u^{-1}\\in O$ である。$\\nu_O$ は $O$ の標準的な乗法的付値であり、逆元は $0^{-1}=0$ とする全域的な体の逆元演算である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.Place.ord_uniformizer",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Place.ord_uniformizer",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K), P.ord P.uniformizer = 1",
+      "source_span": {
+        "start_line": 57,
+        "end_line": 59
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem ord_uniformizer (P : Place K) : P.ord P.uniformizer = 1",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.Place.ord_uniformizer",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero curve field and let $P$ be any place of $K$. The chosen uniformizer has integer order $v_P(\\pi_P)=1$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零曲线域，$P$ 是 $K$ 的任意处。选定的素元满足整数阶数等式 $v_P(\\pi_P)=1$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の曲線体、$P$ を $K$ の任意の素点とする。選ばれた素元の整数位数は $v_P(\\pi_P)=1$ である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.Place.uniformizer_ne_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.Place.uniformizer_ne_zero",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K), P.uniformizer ≠ 0",
+      "source_span": {
+        "start_line": 61,
+        "end_line": 65
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem uniformizer_ne_zero (P : Place K) : P.uniformizer ≠ 0",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.Place.uniformizer_ne_zero",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero curve field and let $P$ be any place of $K$. The chosen uniformizer satisfies $\\pi_P\\ne0$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零曲线域，$P$ 是 $K$ 的任意处。选定的素元满足 $\\pi_P\\ne0$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の曲線体、$P$ を $K$ の任意の素点とする。選ばれた素元は $\\pi_P\\ne0$ を満たす。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.transcendental_of_ord_ne_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.transcendental_of_ord_ne_zero",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  {P : AbcAdaptation.Tripod.Fermat.Proper.Place K} {π : K}, P.ord π ≠ 0 → Transcendental ℚ π",
+      "source_span": {
+        "start_line": 79,
+        "end_line": 81
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem transcendental_of_ord_ne_zero {P : Place K} {π : K} (h : P.ord π ≠ 0) :\n    Transcendental ℚ π",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.transcendental_of_ord_ne_zero",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero curve field and let $P$ be any place of $K$. For every $\\pi\\in K$, if $v_P(\\pi)\\ne0$, then $\\pi$ is transcendental over $\\mathbb Q$. The order inequality excludes $\\pi=0$ under the stated total-order convention.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零曲线域，$P$ 是 $K$ 的任意处。对于每个 $\\pi\\in K$，若 $v_P(\\pi)\\ne0$，则 $\\pi$ 在 $\\mathbb Q$ 上超越。按照所述全函数阶数约定，该不等式排除了 $\\pi=0$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の曲線体、$P$ を $K$ の任意の素点とする。任意の $\\pi\\in K$ に対し、$v_P(\\pi)\\ne0$ ならば $\\pi$ は $\\mathbb Q$ 上超越的である。この位数の条件は上記の全域的な規約により $\\pi=0$ を除く。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.isUnit_iff_ord_eq_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.isUnit_iff_ord_eq_zero",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) (y : ↥↑P), ↑y ≠ 0 → (IsUnit y ↔ P.ord ↑y = 0)",
+      "source_span": {
+        "start_line": 83,
+        "end_line": 98
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem isUnit_iff_ord_eq_zero (P : Place K) (y : P.1) (hy : (y : K) ≠ 0) :\n    IsUnit y ↔ P.ord y = 0",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.isUnit_iff_ord_eq_zero",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero curve field and let $P$ be any place of $K$. For every $y\\in O_P$ whose image in $K$ is nonzero, $y$ is a unit of the ring $O_P$ if and only if $v_P(y)=0$. The nonzero hypothesis applies to the image in $K$ and is part of the equivalence statement.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零曲线域，$P$ 是 $K$ 的任意处。对每个在 $K$ 中像非零的 $y\\in O_P$，$y$ 是环 $O_P$ 的单位，当且仅当 $v_P(y)=0$。在 $K$ 中像非零是这条等价命题的前提。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の曲線体、$P$ を $K$ の任意の素点とする。$K$ における像が零でない任意の $y\\in O_P$ について、$y$ が環 $O_P$ の単元であることと $v_P(y)=0$ は同値である。$K$ における像の非零性はこの同値命題の仮定である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.irreducible_of_ord_eq_one",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.irreducible_of_ord_eq_one",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) {π : K} (hπ : P.ord π = 1), Irreducible ⟨π, ⋯⟩",
+      "source_span": {
+        "start_line": 100,
+        "end_line": 116
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem irreducible_of_ord_eq_one (P : Place K) {π : K} (hπ : P.ord π = 1) :\n    Irreducible (⟨π, P.mem_of_ord_nonneg (by omega)⟩ : P.1)",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.irreducible_of_ord_eq_one",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero curve field and let $P$ be any place of $K$. For every $\\pi\\in K$ such that $v_P(\\pi)=1$, the element $\\pi$ regarded as an element of $O_P$ is irreducible in $O_P$: it is not a unit, and in every factorization $\\pi=ab$ with $a,b\\in O_P$, at least one of $a,b$ is a unit. The membership proof for $\\pi\\in O_P$ is obtained from the nonnegative order $v_P(\\pi)=1$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零曲线域，$P$ 是 $K$ 的任意处。对于每个满足 $v_P(\\pi)=1$ 的 $\\pi\\in K$，将 $\\pi$ 视为 $O_P$ 中的元素后，它在 $O_P$ 中不可约：它不是单位，且对任意分解 $\\pi=ab$，其中 $a,b\\in O_P$，至少有一个因子是单位。$\\pi\\in O_P$ 的成员资格由非负阶数 $v_P(\\pi)=1$ 给出。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の曲線体、$P$ を $K$ の任意の素点とする。$v_P(\\pi)=1$ を満たす任意の $\\pi\\in K$ に対し、$\\pi$ を $O_P$ の元とみなすとそれは $O_P$ で既約である。すなわち単元ではなく、$a,b\\in O_P$ による任意の分解 $\\pi=ab$ では少なくとも一方が単元となる。$\\pi\\in O_P$ の証拠には位数が非負であることを用いる。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.exists_valuation_aeval_lt_one",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.exists_valuation_aeval_lt_one",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K),\n  ∀ y ∈ ↑P, ∃ (p : Polynomial ℚ), p ≠ 0 ∧ (↑P).valuation ((Polynomial.aeval y) p) < 1",
+      "source_span": {
+        "start_line": 118,
+        "end_line": 124
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem exists_valuation_aeval_lt_one (P : Place K) :\n    ∀ y ∈ P.1, ∃ p : ℚ[X], p ≠ 0 ∧ P.1.valuation (aeval y p) < 1",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.exists_valuation_aeval_lt_one",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero curve field and let $P$ be any place of $K$. For every $y\\in K$ with $y\\in O_P$, there exists a nonzero polynomial $p\\in\\mathbb Q[X]$, allowed to depend on $y$ and its membership proof, such that $\\nu_{O_P}(p(y))<1$. The argument $y=0$ and the possibility $p(y)=0$ are included; the polynomial itself, rather than its evaluated value, must be nonzero.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零曲线域，$P$ 是 $K$ 的任意处。对于每个满足 $y\\in O_P$ 的 $y\\in K$，存在一个可依赖于 $y$ 及其成员资格证明的非零多项式 $p\\in\\mathbb Q[X]$，使 $\\nu_{O_P}(p(y))<1$。这包括 $y=0$，也允许 $p(y)=0$；要求非零的是多项式本身，而不是它的取值。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の曲線体、$P$ を $K$ の任意の素点とする。$y\\in O_P$ を満たすすべての $y\\in K$ に対し、$y$ とその所属の証拠に依存してよい非零多項式 $p\\in\\mathbb Q[X]$ が存在し、$\\nu_{O_P}(p(y))<1$ を満たす。$y=0$ および $p(y)=0$ も含まれる。非零であると要求されるのは評価値ではなく多項式自体である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.valuation_eq_one_of_ord_eq_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.valuation_eq_one_of_ord_eq_zero",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) {u : K}, u ≠ 0 → P.ord u = 0 → (↑P).valuation u = 1",
+      "source_span": {
+        "start_line": 126,
+        "end_line": 131
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem valuation_eq_one_of_ord_eq_zero (P : Place K) {u : K} (hu0 : u ≠ 0)\n    (hu : P.ord u = 0) : P.1.valuation u = 1",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.valuation_eq_one_of_ord_eq_zero",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero curve field and let $P$ be any place of $K$. For every nonzero $u\\in K$, if $v_P(u)=0$, then $\\nu_{O_P}(u)=1$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零曲线域，$P$ 是 $K$ 的任意处。对于每个非零的 $u\\in K$，若 $v_P(u)=0$，则 $\\nu_{O_P}(u)=1$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の曲線体、$P$ を $K$ の任意の素点とする。任意の非零元 $u\\in K$ に対し、$v_P(u)=0$ ならば $\\nu_{O_P}(u)=1$ である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.ord_eq_zero_of_valuation_eq_one",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.ord_eq_zero_of_valuation_eq_one",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] [inst_2 : AbcAdaptation.Tripod.Fermat.Proper.IsCurveField K]\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place K) {w : K}, (↑P).valuation w = 1 → P.ord w = 0",
+      "source_span": {
+        "start_line": 133,
+        "end_line": 137
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "private theorem ord_eq_zero_of_valuation_eq_one (P : Place K) {w : K} (hw : P.1.valuation w = 1) :\n    P.ord w = 0",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] [IsCurveField K]"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "_private.Solutions.Source_FermatDifferentialOrder.0.AbcAdaptation.Tripod.Fermat.Proper.NoncriticalRegularRamificationSource.ord_eq_zero_of_valuation_eq_one",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero curve field and let $P$ be any place of $K$. For every $w\\in K$, if $\\nu_{O_P}(w)=1$, then $v_P(w)=0$. No separate nonzero hypothesis on $w$ is an explicit argument.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零曲线域，$P$ 是 $K$ 的任意处。对于每个 $w\\in K$，若 $\\nu_{O_P}(w)=1$，则 $v_P(w)=0$。声明没有把 $w$ 非零列为单独的显式前提。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の曲線体、$P$ を $K$ の任意の素点とする。任意の $w\\in K$ に対し、$\\nu_{O_P}(w)=1$ ならば $v_P(w)=0$ である。$w$ の非零性は独立した明示的仮定ではない。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_zpow_of_inv",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_zpow_of_inv",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {O : ValuationSubring K} {π : K},\n  Transcendental ℚ π →\n    ∀ [FiniteDimensional (↥ℚ⟮π⟯) K],\n      (∀ (q : ℚ), (Algebra.algebraMap ℚ K) q ∈ O) →\n        (∀ x ∈ O, ∃ (p : Polynomial ℚ), p ≠ 0 ∧ O.valuation ((Polynomial.aeval x) p) < 1) →\n          ∀ [IsDiscreteValuationRing ↥O] (hπO : π ∈ O),\n            Irreducible ⟨π, hπO⟩ →\n              ∀ {t u : K},\n                O.valuation u = 1 →\n                  ∀ {e : ℕ},\n                    1 ≤ e →\n                      t⁻¹ = u * π ^ e →\n                        ∃ (w : K),\n                          O.valuation w = 1 ∧\n                            (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong π) t = w * π ^ (-(↑e + 1))",
+      "source_span": {
+        "start_line": 152,
+        "end_line": 170
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "theorem derivAlong_eq_unit_mul_zpow_of_inv {t : K} {u : K} (hu : O.valuation u = 1) {e : ℕ}\n    (he : 1 ≤ e) (htu : t⁻¹ = u * π ^ e) :\n    ∃ w : K, O.valuation w = 1 ∧ derivAlong π t = w * π ^ (-(e + 1 : ℤ))",
+      "section_namespace_binders": [
+        "{K : Type*} [Field K] [CharZero K] {O : ValuationSubring K} {π : K}",
+        "(ht : Transcendental ℚ π) [FiniteDimensional ℚ⟮π⟯ K]",
+        "(hQ : ∀ q : ℚ, algebraMap ℚ K q ∈ O)",
+        "(hres : ∀ x ∈ O, ∃ p : ℚ[X], p ≠ 0 ∧ O.valuation (aeval x p) < 1)",
+        "[IsDiscreteValuationRing O] (hπO : π ∈ O) (hirr : Irreducible (⟨π, hπO⟩ : O))",
+        "include ht hQ hres hirr"
+      ],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong_eq_unit_mul_zpow_of_inv",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $K$ be a characteristic-zero field, let $O\\subseteq K$ be a valuation subring that is a discrete valuation ring, and let $\\pi\\in O$ be irreducible as an element of $O$ and transcendental over $\\mathbb Q$. Assume that $K$ is finite dimensional over $\\mathbb Q(\\pi)$, every rational scalar belongs to $O$, and for every $x\\in O$ there exists a nonzero $p\\in\\mathbb Q[X]$ with $\\nu_O(p(x))<1$. For any $t,u\\in K$ and $e\\in\\mathbb N$, if $\\nu_O(u)=1$, $1\\le e$, and $t^{-1}=u\\pi^e$, then there is $w\\in K$ such that $\\nu_O(w)=1$ and \\[\\partial_\\pi(t)=w\\pi^{-(e+1)}.\\] The exponent is the integer $-(e+1)$; $e=0$ is excluded, and $w$ may depend on all the preceding data.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $K$ 是特征零域，赋值子环 $O\\subseteq K$ 是离散赋值环，$\\pi\\in O$ 作为 $O$ 的元素不可约，且在 $\\mathbb Q$ 上超越。假设 $K$ 在 $\\mathbb Q(\\pi)$ 上有限维，全部有理标量都属于 $O$，并且对每个 $x\\in O$ 都存在非零多项式 $p\\in\\mathbb Q[X]$ 使 $\\nu_O(p(x))<1$。对于任意 $t,u\\in K$ 及 $e\\in\\mathbb N$，若 $\\nu_O(u)=1$、$1\\le e$ 且 $t^{-1}=u\\pi^e$，则存在可依赖于全部前述数据的 $w\\in K$，使 $\\nu_O(w)=1$ 且 \\[\\partial_\\pi(t)=w\\pi^{-(e+1)}.\\] 指数是整数 $-(e+1)$，并且前提排除了 $e=0$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $K$ を標数零の体とし、付値部分環 $O\\subseteq K$ は離散付値環であるとする。$\\pi\\in O$ は $O$ の元として既約で、$\\mathbb Q$ 上超越的であるとする。$K$ は $\\mathbb Q(\\pi)$ 上有限次元で、すべての有理数のスカラーが $O$ に属し、各 $x\\in O$ に対して非零多項式 $p\\in\\mathbb Q[X]$ が存在して $\\nu_O(p(x))<1$ を満たすと仮定する。任意の $t,u\\in K$ と $e\\in\\mathbb N$ に対し、$\\nu_O(u)=1$、$1\\le e$、$t^{-1}=u\\pi^e$ ならば、先行するすべてのデータに依存してよい $w\\in K$ が存在し、$\\nu_O(w)=1$ と \\[\\partial_\\pi(t)=w\\pi^{-(e+1)}\\] を満たす。指数は整数 $-(e+1)$ であり、$e=0$ は除かれる。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_mem",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_mem",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n      ψ ∈ ↑P →\n        P.ord ((AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong P.uniformizer) ψ) =\n          AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P - 1",
+      "source_span": {
+        "start_line": 178,
+        "end_line": 213
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "theorem ord_derivAlong_of_mem {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) (P : Place M.K) (hψP : ψ ∈ P.1) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (CurveDeriv.derivAlong P.uniformizer ψ) = ramIdx M hDVR ψ P - 1",
+      "section_namespace_binders": [],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_mem",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $N\\in\\mathbb N$ and let $M$ consist of an intermediate field $F\\subseteq\\overline{\\mathbb Q(T)}$ over $\\mathbb Q$, elements $u,v\\in F$ with $u$ transcendental, $u^N+v^N=1$, $\\mathbb Q(u,v)=F$, and $[F:\\mathbb Q(u)]=N<\\infty$. No separate positivity bound on $N$ is imposed. The hypothesis $h_{\\rm DVR}$ says that $O_P$ is a discrete valuation ring for every place $P$. Write $o_P(f)$ for the integer order obtained from this supplied discrete-valuation-ring structure; its definition is the same negative logarithm of the maximal-ideal valuation and gives $o_P(0)=0$. Define the integer $e_P(f)$ by $e_P(f)=o_P(m_{\\bar f}(f))$ when $f\\in O_P$, where $\\bar f$ is its residue and $m_{\\bar f}\\in\\mathbb Q[X]$ is its minimal polynomial; when $f\\notin O_P$, define $e_P(f)=-o_P(f)$. These are integer indices, with no natural-number truncation. Places range over all the valuation subrings just specified, including those outside an affine chart. For every $\\psi\\in F$ transcendental over $\\mathbb Q$, every place $P$, and a proof that $\\psi\\in O_P$, install the curve-field structure supplied by $M$. Then \\[v_P(\\partial_{\\pi_P}(\\psi))=e_P(\\psi)-1.\\]",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $N\\in\\mathbb N$。模型 $M$ 包含 $\\overline{\\mathbb Q(T)}$ 的一个 $\\mathbb Q$-中间域 $F$ 及元素 $u,v\\in F$，其中 $u$ 超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=F$，且 $[F:\\mathbb Q(u)]=N<\\infty$。没有另加 $N$ 为正的界限。假设 $h_{\\rm DVR}$ 表示每个处 $P$ 的 $O_P$ 都是离散赋值环。以 $o_P(f)$ 表示由这份给定的离散赋值环结构定义的整数阶数；它同样是极大理想赋值的负对数，且 $o_P(0)=0$。定义整数指标 $e_P(f)$：当 $f\\in O_P$ 时，令 $e_P(f)=o_P(m_{\\bar f}(f))$，其中 $\\bar f$ 是剩余类，$m_{\\bar f}\\in\\mathbb Q[X]$ 是它的极小多项式；当 $f\\notin O_P$ 时，令 $e_P(f)=-o_P(f)$。这些是整数指标，不作自然数截断。处遍历上述全部赋值子环，也包括仿射坐标片以外的处。 任取在 $\\mathbb Q$ 上超越的 $\\psi\\in F$、处 $P$ 及 $\\psi\\in O_P$ 的证明，使用 $M$ 所给的曲线域结构，则 \\[v_P(\\partial_{\\pi_P}(\\psi))=e_P(\\psi)-1.\\]",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $N\\in\\mathbb N$ とする。モデル $M$ は $\\overline{\\mathbb Q(T)}$ の $\\mathbb Q$-中間体 $F$ と元 $u,v\\in F$ をもち、$u$ は超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=F$、$[F:\\mathbb Q(u)]=N<\\infty$ を満たす。$N$ に独立の正値条件は課されていない。仮定 $h_{\\rm DVR}$ は、すべての素点 $P$ について $O_P$ が離散付値環であることを意味する。その与えられた構造から定義される整数位数を $o_P(f)$ と書く。これは同じく極大イデアルの付値の負の対数であり、$o_P(0)=0$ である。整数指数 $e_P(f)$ は、$f\\in O_P$ のとき $e_P(f)=o_P(m_{\\bar f}(f))$ と定義する。ここで $\\bar f$ は剰余類、$m_{\\bar f}\\in\\mathbb Q[X]$ はその最小多項式である。$f\\notin O_P$ のときは $e_P(f)=-o_P(f)$ と定義する。指数は整数であり自然数への切り詰めはない。素点は上記のすべての付値部分環を走り、アフィン座標近傍の外側の素点も含む。 $\\mathbb Q$ 上超越的な任意の $\\psi\\in F$、素点 $P$ および $\\psi\\in O_P$ の証拠に対し、$M$ が与える曲線体構造を用いると \\[v_P(\\partial_{\\pi_P}(\\psi))=e_P(\\psi)-1\\] である。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_notMem",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_notMem",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K) (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n  ψ ∉ ↑P →\n    P.ord ((AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong P.uniformizer) ψ) =\n      -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P - 1",
+      "source_span": {
+        "start_line": 215,
+        "end_line": 248
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "theorem ord_derivAlong_of_notMem {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (P : Place M.K) (hψP : ψ ∉ P.1) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (CurveDeriv.derivAlong P.uniformizer ψ) = -ramIdx M hDVR ψ P - 1",
+      "section_namespace_binders": [],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong_of_notMem",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $N\\in\\mathbb N$ and let $M$ consist of an intermediate field $F\\subseteq\\overline{\\mathbb Q(T)}$ over $\\mathbb Q$, elements $u,v\\in F$ with $u$ transcendental, $u^N+v^N=1$, $\\mathbb Q(u,v)=F$, and $[F:\\mathbb Q(u)]=N<\\infty$. No separate positivity bound on $N$ is imposed. The hypothesis $h_{\\rm DVR}$ says that $O_P$ is a discrete valuation ring for every place $P$. Write $o_P(f)$ for the integer order obtained from this supplied discrete-valuation-ring structure; its definition is the same negative logarithm of the maximal-ideal valuation and gives $o_P(0)=0$. Define the integer $e_P(f)$ by $e_P(f)=o_P(m_{\\bar f}(f))$ when $f\\in O_P$, where $\\bar f$ is its residue and $m_{\\bar f}\\in\\mathbb Q[X]$ is its minimal polynomial; when $f\\notin O_P$, define $e_P(f)=-o_P(f)$. These are integer indices, with no natural-number truncation. Places range over all the valuation subrings just specified, including those outside an affine chart. For every $\\psi\\in F$ and every place $P$, if $\\psi\\notin O_P$, then, with the curve-field structure supplied by $M$, \\[v_P(\\partial_{\\pi_P}(\\psi))=-e_P(\\psi)-1.\\] No explicit transcendence hypothesis on $\\psi$ is supplied in this declaration; nonmembership is its hypothesis on $\\psi$.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $N\\in\\mathbb N$。模型 $M$ 包含 $\\overline{\\mathbb Q(T)}$ 的一个 $\\mathbb Q$-中间域 $F$ 及元素 $u,v\\in F$，其中 $u$ 超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=F$，且 $[F:\\mathbb Q(u)]=N<\\infty$。没有另加 $N$ 为正的界限。假设 $h_{\\rm DVR}$ 表示每个处 $P$ 的 $O_P$ 都是离散赋值环。以 $o_P(f)$ 表示由这份给定的离散赋值环结构定义的整数阶数；它同样是极大理想赋值的负对数，且 $o_P(0)=0$。定义整数指标 $e_P(f)$：当 $f\\in O_P$ 时，令 $e_P(f)=o_P(m_{\\bar f}(f))$，其中 $\\bar f$ 是剩余类，$m_{\\bar f}\\in\\mathbb Q[X]$ 是它的极小多项式；当 $f\\notin O_P$ 时，令 $e_P(f)=-o_P(f)$。这些是整数指标，不作自然数截断。处遍历上述全部赋值子环，也包括仿射坐标片以外的处。 对于任意 $\\psi\\in F$ 及任意处 $P$，若 $\\psi\\notin O_P$，则使用 $M$ 所给的曲线域结构，有 \\[v_P(\\partial_{\\pi_P}(\\psi))=-e_P(\\psi)-1.\\] 该声明没有另列 $\\psi$ 的超越性前提；关于 $\\psi$ 的条件是不属于 $O_P$。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $N\\in\\mathbb N$ とする。モデル $M$ は $\\overline{\\mathbb Q(T)}$ の $\\mathbb Q$-中間体 $F$ と元 $u,v\\in F$ をもち、$u$ は超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=F$、$[F:\\mathbb Q(u)]=N<\\infty$ を満たす。$N$ に独立の正値条件は課されていない。仮定 $h_{\\rm DVR}$ は、すべての素点 $P$ について $O_P$ が離散付値環であることを意味する。その与えられた構造から定義される整数位数を $o_P(f)$ と書く。これは同じく極大イデアルの付値の負の対数であり、$o_P(0)=0$ である。整数指数 $e_P(f)$ は、$f\\in O_P$ のとき $e_P(f)=o_P(m_{\\bar f}(f))$ と定義する。ここで $\\bar f$ は剰余類、$m_{\\bar f}\\in\\mathbb Q[X]$ はその最小多項式である。$f\\notin O_P$ のときは $e_P(f)=-o_P(f)$ と定義する。指数は整数であり自然数への切り詰めはない。素点は上記のすべての付値部分環を走り、アフィン座標近傍の外側の素点も含む。 任意の $\\psi\\in F$ と任意の素点 $P$ に対し、$\\psi\\notin O_P$ ならば、$M$ が与える曲線体構造の下で \\[v_P(\\partial_{\\pi_P}(\\psi))=-e_P(\\psi)-1\\] である。この宣言には $\\psi$ の超越性の明示的仮定はなく、$\\psi$ に関する仮定は $O_P$ に属さないことである。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n      P.ord ((AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong P.uniformizer) ψ) =\n        if ψ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P - 1\n        else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR ψ P - 1",
+      "source_span": {
+        "start_line": 250,
+        "end_line": 261
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "theorem ord_derivAlong {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) (P : Place M.K) :\n    letI : IsCurveField M.K := M.isCurveField\n    P.ord (CurveDeriv.derivAlong P.uniformizer ψ) =\n      if ψ ∈ P.1 then ramIdx M hDVR ψ P - 1 else -ramIdx M hDVR ψ P - 1",
+      "section_namespace_binders": [],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.ord_derivAlong",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $N\\in\\mathbb N$ and let $M$ consist of an intermediate field $F\\subseteq\\overline{\\mathbb Q(T)}$ over $\\mathbb Q$, elements $u,v\\in F$ with $u$ transcendental, $u^N+v^N=1$, $\\mathbb Q(u,v)=F$, and $[F:\\mathbb Q(u)]=N<\\infty$. No separate positivity bound on $N$ is imposed. The hypothesis $h_{\\rm DVR}$ says that $O_P$ is a discrete valuation ring for every place $P$. Write $o_P(f)$ for the integer order obtained from this supplied discrete-valuation-ring structure; its definition is the same negative logarithm of the maximal-ideal valuation and gives $o_P(0)=0$. Define the integer $e_P(f)$ by $e_P(f)=o_P(m_{\\bar f}(f))$ when $f\\in O_P$, where $\\bar f$ is its residue and $m_{\\bar f}\\in\\mathbb Q[X]$ is its minimal polynomial; when $f\\notin O_P$, define $e_P(f)=-o_P(f)$. These are integer indices, with no natural-number truncation. Places range over all the valuation subrings just specified, including those outside an affine chart. For every $\\psi\\in F$ transcendental over $\\mathbb Q$ and every place $P$, with the curve-field structure supplied by $M$, \\[v_P(\\partial_{\\pi_P}(\\psi))=\\begin{cases}e_P(\\psi)-1,&\\psi\\in O_P,\\\\-e_P(\\psi)-1,&\\psi\\notin O_P.\\end{cases}\\] This includes every pole place and makes no exception for places outside an affine chart.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $N\\in\\mathbb N$。模型 $M$ 包含 $\\overline{\\mathbb Q(T)}$ 的一个 $\\mathbb Q$-中间域 $F$ 及元素 $u,v\\in F$，其中 $u$ 超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=F$，且 $[F:\\mathbb Q(u)]=N<\\infty$。没有另加 $N$ 为正的界限。假设 $h_{\\rm DVR}$ 表示每个处 $P$ 的 $O_P$ 都是离散赋值环。以 $o_P(f)$ 表示由这份给定的离散赋值环结构定义的整数阶数；它同样是极大理想赋值的负对数，且 $o_P(0)=0$。定义整数指标 $e_P(f)$：当 $f\\in O_P$ 时，令 $e_P(f)=o_P(m_{\\bar f}(f))$，其中 $\\bar f$ 是剩余类，$m_{\\bar f}\\in\\mathbb Q[X]$ 是它的极小多项式；当 $f\\notin O_P$ 时，令 $e_P(f)=-o_P(f)$。这些是整数指标，不作自然数截断。处遍历上述全部赋值子环，也包括仿射坐标片以外的处。 对于每个在 $\\mathbb Q$ 上超越的 $\\psi\\in F$ 及每个处 $P$，使用 $M$ 所给的曲线域结构，有 \\[v_P(\\partial_{\\pi_P}(\\psi))=\\begin{cases}e_P(\\psi)-1,&\\psi\\in O_P,\\\\-e_P(\\psi)-1,&\\psi\\notin O_P.\\end{cases}\\] 这包括全部极点处，不排除仿射坐标片以外的处。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $N\\in\\mathbb N$ とする。モデル $M$ は $\\overline{\\mathbb Q(T)}$ の $\\mathbb Q$-中間体 $F$ と元 $u,v\\in F$ をもち、$u$ は超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=F$、$[F:\\mathbb Q(u)]=N<\\infty$ を満たす。$N$ に独立の正値条件は課されていない。仮定 $h_{\\rm DVR}$ は、すべての素点 $P$ について $O_P$ が離散付値環であることを意味する。その与えられた構造から定義される整数位数を $o_P(f)$ と書く。これは同じく極大イデアルの付値の負の対数であり、$o_P(0)=0$ である。整数指数 $e_P(f)$ は、$f\\in O_P$ のとき $e_P(f)=o_P(m_{\\bar f}(f))$ と定義する。ここで $\\bar f$ は剰余類、$m_{\\bar f}\\in\\mathbb Q[X]$ はその最小多項式である。$f\\notin O_P$ のときは $e_P(f)=-o_P(f)$ と定義する。指数は整数であり自然数への切り詰めはない。素点は上記のすべての付値部分環を走り、アフィン座標近傍の外側の素点も含む。 $\\mathbb Q$ 上超越的なすべての $\\psi\\in F$ とすべての素点 $P$ に対し、$M$ が与える曲線体構造の下で \\[v_P(\\partial_{\\pi_P}(\\psi))=\\begin{cases}e_P(\\psi)-1,&\\psi\\in O_P,\\\\-e_P(\\psi)-1,&\\psi\\notin O_P\\end{cases}\\] である。すべての極の素点を含み、アフィン座標近傍の外側も除かない。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.derivAlong_uniformizer_ne_zero",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.derivAlong_uniformizer_ne_zero",
+      "path": "Solutions/Source_FermatDifferentialOrder.lean",
+      "module": "Solutions.Source_FermatDifferentialOrder",
+      "source_sha256": "58f3b7d67099c4e5c6a6e9e1f0a92472d4c5b5735ce479defe30a1af8c2ae8c1",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (ψ : ↥M.K),\n  Transcendental ℚ ψ →\n    ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n      (AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.derivAlong P.uniformizer) ψ ≠ 0",
+      "source_span": {
+        "start_line": 263,
+        "end_line": 276
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatDifferentialOrder.lean",
+      "blind_original_sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "theorem derivAlong_uniformizer_ne_zero {N : ℕ} (M : Model N)\n    (ψ : M.K) (hψ : Transcendental ℚ ψ) (P : Place M.K) :\n    letI : IsCurveField M.K := M.isCurveField\n    CurveDeriv.derivAlong P.uniformizer ψ ≠ 0",
+      "section_namespace_binders": [],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.DifferentialOrderSource.derivAlong_uniformizer_ne_zero",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $N\\in\\mathbb N$ and let $M$ consist of an intermediate field $F\\subseteq\\overline{\\mathbb Q(T)}$ over $\\mathbb Q$, elements $u,v\\in F$ with $u$ transcendental, $u^N+v^N=1$, $\\mathbb Q(u,v)=F$, and $[F:\\mathbb Q(u)]=N<\\infty$. No separate positivity condition on $N$ is imposed. For every $\\psi\\in F$ transcendental over $\\mathbb Q$ and every place $P$, using the curve-field structure supplied by $M$, $\\partial_{\\pi_P}(\\psi)\\ne0$. No separately supplied discrete-valuation or finite-residue-field hypothesis occurs.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $N\\in\\mathbb N$。模型 $M$ 包含 $\\overline{\\mathbb Q(T)}$ 的一个 $\\mathbb Q$-中间域 $F$ 及元素 $u,v\\in F$，其中 $u$ 超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=F$，且 $[F:\\mathbb Q(u)]=N<\\infty$。没有另加 $N$ 为正的条件。对于每个在 $\\mathbb Q$ 上超越的 $\\psi\\in F$ 及每个处 $P$，使用 $M$ 所给的曲线域结构，有 $\\partial_{\\pi_P}(\\psi)\\ne0$。这里没有另行给定的离散赋值或剩余域有限维假设。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $N\\in\\mathbb N$ とし、モデル $M$ は $\\overline{\\mathbb Q(T)}$ の $\\mathbb Q$-中間体 $F$ と元 $u,v\\in F$ をもち、$u$ は超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=F$、$[F:\\mathbb Q(u)]=N<\\infty$ を満たすとする。$N$ に独立の正値条件は課されていない。$\\mathbb Q$ 上超越的なすべての $\\psi\\in F$ とすべての素点 $P$ に対し、$M$ が与える曲線体構造の下で $\\partial_{\\pi_P}(\\psi)\\ne0$ である。独立に与えられる離散付値や剰余体の有限次元性の仮定はない。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange_source",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange_source",
+      "path": "Solutions/Source_FermatCanonicalDifferentialChange.lean",
+      "module": "Solutions.Source_FermatCanonicalDifferentialChange",
+      "source_sha256": "437846d75706c9d7a1d0c133e089b66372b3469e20150dc0343770139ccc5b8f",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      Transcendental ℚ φ →\n        ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR),\n          ∃ (q : ↥M.K),\n            q ≠ 0 ∧\n              ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n                K.D P =\n                  (if φ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1\n                    else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1) +\n                    AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P q",
+      "source_span": {
+        "start_line": 19,
+        "end_line": 50
+      },
+      "blind_original_path": "/tmp/p2m-canonical-differential-next-20261114/Solutions/Source_FermatCanonicalDifferentialChange.lean",
+      "blind_original_sha256": "3d76a6da0b880f0ca3b9f1df8c7969e092b77affc62eb93278ee3492d2c8a356",
+      "original_packet": "blind-readbacks-source.json",
+      "original_packet_sha256": "5abb74b98825b90680e9437e3b63ba7c8e57613698c4607898724cbb81af0d9f",
+      "raw_signature": "theorem canonicalDifferentialChange_source {N : ℕ}\n    (M : Model N) (hDVR : PlacesDiscrete M) (hRF : ResiduesFinite M)\n    (φ : M.K) (hφ : Transcendental ℚ φ) (K : CanonicalDivisorData M hDVR) :\n    ∃ q : M.K, q ≠ 0 ∧ ∀ P : Place M.K,\n      K.D P =\n        (if φ ∈ P.1 then ramIdx M hDVR φ P - 1\n          else -ramIdx M hDVR φ P - 1) + ord M hDVR P q",
+      "section_namespace_binders": [],
+      "original_blind_elaboration": {
+        "status": "not_performed",
+        "inferred_retained_binders": null,
+        "note": "Source-level binders are recorded conservatively. Exact retained/generalized binders, universe parameters and private name mangling require elaboration. No CharZero assumption is silently omitted."
+      },
+      "elaboration": {
+        "status": "compiler_bound",
+        "compiler_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange_source",
+        "scope": "Current compiler evidence; original blind elaboration limits retained separately"
+      },
+      "en": "Write $\\mathbb Q(t)$ for the intermediate field generated by $t$. For a characteristic-zero field $F$, $\\partial_t$ denotes the specified $\\mathbb Q$-derivation $F\\to F$: if $t$ is transcendental over $\\mathbb Q$ and $F/\\mathbb Q(t)$ is algebraic, it is the formally étale extension of the derivation $p(t)\\mapsto p\\prime(t)$ on $\\mathbb Q[t]$; otherwise it is the zero derivation. Scalar multiplication $a\\partial_t$ means pointwise multiplication by $a$. A place $P$ of $F$ means a valuation subring $O_P\\ne F$ containing every rational scalar, with no restriction to an affine chart. If $F$ is a curve field, meaning that it is finite dimensional over $\\mathbb Q(z)$ for some transcendental $z$, then $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$, where $V_P$ is the valuation of the maximal ideal of the discrete valuation ring $O_P$. This is a total function, with $v_P(0)=0$. The symbol $\\pi_P$ is the chosen element of $F$ with $v_P(\\pi_P)=1$. The canonical multiplicative valuation of an arbitrary valuation subring $O$ is denoted by $\\nu_O$. Let $N\\in\\mathbb N$ and let $M$ consist of an intermediate field $F\\subseteq\\overline{\\mathbb Q(T)}$ over $\\mathbb Q$, elements $u,v\\in F$ with $u$ transcendental, $u^N+v^N=1$, $\\mathbb Q(u,v)=F$, and $[F:\\mathbb Q(u)]=N<\\infty$. No separate positivity bound on $N$ is imposed. The hypothesis $h_{\\rm DVR}$ says that $O_P$ is a discrete valuation ring for every place $P$. Write $o_P(f)$ for the integer order obtained from this supplied discrete-valuation-ring structure; its definition is the same negative logarithm of the maximal-ideal valuation and gives $o_P(0)=0$. Define the integer $e_P(f)$ by $e_P(f)=o_P(m_{\\bar f}(f))$ when $f\\in O_P$, where $\\bar f$ is its residue and $m_{\\bar f}\\in\\mathbb Q[X]$ is its minimal polynomial; when $f\\notin O_P$, define $e_P(f)=-o_P(f)$. These are integer indices, with no natural-number truncation. Places range over all the valuation subrings just specified, including those outside an affine chart. Additionally assume $h_{\\rm RF}$: every residue field $\\kappa(P)=O_P/\\mathfrak m_P$ is finite dimensional over $\\mathbb Q$. For every $\\varphi\\in F$ transcendental over $\\mathbb Q$ and every supplied canonical-divisor datum $C$, meaning a finitely supported integer function $D$ on all places together with the exact coefficient contract \\[D(P)=\\begin{cases}e_P(u)-1,&u\\in O_P,\\\\-e_P(u)-1,&u\\notin O_P,\\end{cases}\\] there exists a single $q\\in F$ with $q\\ne0$ such that for every place $P$, \\[D(P)=\\begin{cases}e_P(\\varphi)-1,&\\varphi\\in O_P,\\\\-e_P(\\varphi)-1,&\\varphi\\notin O_P\\end{cases}+o_P(q).\\] The same $q$ works at all places, including places at infinity; the principal-order term has a plus sign. The statement does not prescribe a formula for the existential witness $q$ and does not replace the supplied divisor by an arbitrary representative of a divisor class.",
+      "zh_Hans": "以 $\\mathbb Q(t)$ 表示由 $t$ 生成的中间域。对于特征零域 $F$，$\\partial_t$ 表示指定的从 $F$ 到 $F$ 的 $\\mathbb Q$-导子：当 $t$ 在 $\\mathbb Q$ 上超越且 $F/\\mathbb Q(t)$ 为代数扩张时，它是 $\\mathbb Q[t]$ 上导子 $p(t)\\mapsto p\\prime(t)$ 的形式平展延拓；否则它是零导子。$a\\partial_t$ 表示逐点乘以 $a$。$F$ 的处 $P$ 是一个包含全部有理标量且不等于 $F$ 的赋值子环 $O_P$，不局限于某个仿射坐标片。曲线域的含义是：存在超越元 $z$，使 $F$ 在 $\\mathbb Q(z)$ 上有限维。此时 $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$，其中 $V_P$ 是离散赋值环 $O_P$ 的极大理想所给的赋值。它是全函数，约定 $v_P(0)=0$。$\\pi_P$ 是选定的满足 $v_P(\\pi_P)=1$ 的 $F$ 中元素。任意赋值子环 $O$ 的典范乘法赋值记为 $\\nu_O$。 设 $N\\in\\mathbb N$。模型 $M$ 包含 $\\overline{\\mathbb Q(T)}$ 的一个 $\\mathbb Q$-中间域 $F$ 及元素 $u,v\\in F$，其中 $u$ 超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=F$，且 $[F:\\mathbb Q(u)]=N<\\infty$。没有另加 $N$ 为正的界限。假设 $h_{\\rm DVR}$ 表示每个处 $P$ 的 $O_P$ 都是离散赋值环。以 $o_P(f)$ 表示由这份给定的离散赋值环结构定义的整数阶数；它同样是极大理想赋值的负对数，且 $o_P(0)=0$。定义整数指标 $e_P(f)$：当 $f\\in O_P$ 时，令 $e_P(f)=o_P(m_{\\bar f}(f))$，其中 $\\bar f$ 是剩余类，$m_{\\bar f}\\in\\mathbb Q[X]$ 是它的极小多项式；当 $f\\notin O_P$ 时，令 $e_P(f)=-o_P(f)$。这些是整数指标，不作自然数截断。处遍历上述全部赋值子环，也包括仿射坐标片以外的处。 另假设 $h_{\\rm RF}$：每个剩余域 $\\kappa(P)=O_P/\\mathfrak m_P$ 都在 $\\mathbb Q$ 上有限维。对于每个在 $\\mathbb Q$ 上超越的 $\\varphi\\in F$，以及任意给定的典范除子数据 $C$，即全部处上的有限支撑整数函数 $D$ 连同精确的系数条件 \\[D(P)=\\begin{cases}e_P(u)-1,&u\\in O_P,\\\\-e_P(u)-1,&u\\notin O_P,\\end{cases}\\] 存在同一个非零元 $q\\in F$，使对每个处 $P$ 都有 \\[D(P)=\\begin{cases}e_P(\\varphi)-1,&\\varphi\\in O_P,\\\\-e_P(\\varphi)-1,&\\varphi\\notin O_P\\end{cases}+o_P(q).\\] 这个 $q$ 同时适用于全部处，包括无穷远处；主阶数项前为加号。声明没有规定存在见证 $q$ 的公式，也没有将给定除子改成除子类的任意代表。",
+      "ja": "$\\mathbb Q(t)$ は $t$ が生成する中間体を表す。標数零の体 $F$ に対し、$\\partial_t$ は指定された $\\mathbb Q$-導分 $F\\to F$ を表す。$t$ が $\\mathbb Q$ 上超越的で $F/\\mathbb Q(t)$ が代数拡大であるとき、これは $\\mathbb Q[t]$ 上の導分 $p(t)\\mapsto p\\prime(t)$ の形式的エタール延長であり、それ以外では零導分である。$a\\partial_t$ は各値に $a$ を掛けることを意味する。$F$ の素点 $P$ とは、すべての有理数のスカラーを含み $F$ と異なる付値部分環 $O_P$ であり、特定のアフィン座標近傍への制限はない。曲線体とは、ある超越元 $z$ に対し $F$ が $\\mathbb Q(z)$ 上有限次元となる体である。このとき $v_P(f)=-\\log(V_P(f))\\in\\mathbb Z$ とし、$V_P$ は離散付値環 $O_P$ の極大イデアルから得られる付値である。これは全域関数であり、$v_P(0)=0$ である。$\\pi_P$ は $v_P(\\pi_P)=1$ を満たす選ばれた $F$ の元である。任意の付値部分環 $O$ の標準的な乗法的付値を $\\nu_O$ と書く。 $N\\in\\mathbb N$ とする。モデル $M$ は $\\overline{\\mathbb Q(T)}$ の $\\mathbb Q$-中間体 $F$ と元 $u,v\\in F$ をもち、$u$ は超越的で、$u^N+v^N=1$、$\\mathbb Q(u,v)=F$、$[F:\\mathbb Q(u)]=N<\\infty$ を満たす。$N$ に独立の正値条件は課されていない。仮定 $h_{\\rm DVR}$ は、すべての素点 $P$ について $O_P$ が離散付値環であることを意味する。その与えられた構造から定義される整数位数を $o_P(f)$ と書く。これは同じく極大イデアルの付値の負の対数であり、$o_P(0)=0$ である。整数指数 $e_P(f)$ は、$f\\in O_P$ のとき $e_P(f)=o_P(m_{\\bar f}(f))$ と定義する。ここで $\\bar f$ は剰余類、$m_{\\bar f}\\in\\mathbb Q[X]$ はその最小多項式である。$f\\notin O_P$ のときは $e_P(f)=-o_P(f)$ と定義する。指数は整数であり自然数への切り詰めはない。素点は上記のすべての付値部分環を走り、アフィン座標近傍の外側の素点も含む。 さらに、すべての剰余体 $\\kappa(P)=O_P/\\mathfrak m_P$ が $\\mathbb Q$ 上有限次元であるという仮定 $h_{\\rm RF}$ を置く。$\\mathbb Q$ 上超越的な任意の $\\varphi\\in F$ と、任意に与えられた標準因子データ $C$ に対する命題である。このデータは、すべての素点上の有限台整数値関数 $D$ と厳密な係数条件 \\[D(P)=\\begin{cases}e_P(u)-1,&u\\in O_P,\\\\-e_P(u)-1,&u\\notin O_P\\end{cases}\\] からなる。このとき、一つの非零元 $q\\in F$ が存在し、すべての素点 $P$ に対して \\[D(P)=\\begin{cases}e_P(\\varphi)-1,&\\varphi\\in O_P,\\\\-e_P(\\varphi)-1,&\\varphi\\notin O_P\\end{cases}+o_P(q)\\] が成り立つ。同じ $q$ が無限遠を含むすべての素点で働き、主因子の位数項の符号は加号である。この命題は存在する $q$ の公式を指定せず、与えられた因子を因子類の任意の代表に置き換えるものでもない。",
+      "original_blind_proof_notes": {
+        "status": "Unelaborated source draft; no compilation or proof audit performed by this auditor.",
+        "inference": "All source section variables are preserved as source context except explicit omit clauses. Exact inferred declaration parameters and private compiler names are unresolved. Source logical qualified names are provided for private named declarations.",
+        "note": "This packet states declaration content only and makes no finding on proof correctness."
+      },
+      "proof_notes": {
+        "scope": "Original blind auditor did not compile or assess proof correctness; its historical notes are retained separately.",
+        "current_binding": "The exact current declaration name, type and source span come from successful compiler graph/parser receipts."
+      },
+      "quotation": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange.lean",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange",
+      "source_sha256": "14898636f5e678dd0af93cb53288064306a94c2c5cfb2f25db19ddf914d17a8b",
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M),\n  AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n    ∀ (φ : ↥M.K),\n      Transcendental ℚ φ →\n        ∀ (K : AbcAdaptation.Tripod.Fermat.Proper.CanonicalDivisorData M hDVR),\n          ∃ (q : ↥M.K),\n            q ≠ 0 ∧\n              ∀ (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n                K.D P =\n                  (if φ ∈ ↑P then AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1\n                    else -AbcAdaptation.Tripod.Fermat.Proper.ramIdx M hDVR φ P - 1) +\n                    AbcAdaptation.Tripod.Fermat.Proper.ord M hDVR P q",
+      "source_span": {
+        "start_line": 17,
+        "end_line": 28
+      },
+      "blind_original_path": "/tmp/p2m-canonical-cusp-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange.lean",
+      "blind_original_sha256": "5fef472c9124cc4549fe843d6af6338634f73a287045eb7f64a762f80a380eb6",
+      "original_packet": "blind-readbacks-original.json",
+      "original_packet_sha256": "1746546439310c1b9b0a30eec2d92f93411e8cf18794b481fa2900d4b6db9884",
+      "en": "Let $N\\in\\mathbb N$ be the implicit parameter, and let the explicit model $M$ consist of an intermediate field $F$ over $\\mathbb Q$ in the fixed algebraic closure $\\Omega=\\overline{\\mathbb Q(T)}$, elements $u,v\\in F$, and proofs that $u$ is transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=F$, and $F/\\mathbb Q(u)$ is finite-dimensional of degree $N$. There is no separate lower-bound hypothesis on $N$; a model with these properties cannot have $N=0$. A place $P$ means any valuation subring $O_P\\subsetneq F$ containing $\\mathbb Q$, with residue field $\\kappa(P)=O_P/\\mathfrak m_P$ and residue map $\\rho_P$. The explicit hypotheses $h_{\\mathrm{DVR}}$ and $h_{\\mathrm{RF}}$ assert, respectively, that every such $O_P$ is a discrete valuation ring and that every $\\kappa(P)$ is finite-dimensional over $\\mathbb Q$. Write $\\nu_P(f)$ for the normalized integer order obtained as minus the discrete logarithm of the maximal-ideal valuation supplied by $O_P$, whose value group is the multiplicative copy of $\\mathbb Z$ with an adjoined zero; its totalized value is $\\nu_P(0)=0$. For any $f\\in F$, put $e_f(P)=\\nu_P(m_{\\rho_P(f)}(f))$ when $f\\in O_P$, where $m_{\\rho_P(f)}\\in\\mathbb Q[X]$ is the minimal polynomial over $\\mathbb Q$ of the residue of $f$; when $f\\notin O_P$, put $e_f(P)=-\\nu_P(f)$. Define $a_f(P)=e_f(P)-1$ in the first branch and $a_f(P)=-e_f(P)-1$ in the second branch; all these subtractions are in $\\mathbb Z$. For every explicitly supplied $\\varphi\\in F$ with explicit proof $h_\\varphi$ that $\\varphi$ is transcendental over $\\mathbb Q$, and for every explicit canonical-divisor datum $\\mathcal K$ consisting of a finitely supported integer divisor $D$ and the equalities $D(P)=a_u(P)$ at every place, there exists $q\\in F$ such that $q\\ne0$ and $D(P)=a_\\varphi(P)+\\nu_P(q)$ for every place $P$. Here $\\varphi$ is not algebraic over $\\mathbb Q$; the nonzero witness $q$ has no uniqueness requirement. The equality ranges over all proper valuative places, including every pole of $u$ or $\\varphi$.",
+      "zh_Hans": "设隐式参数为自然数 $N\\in\\mathbb N$，显式给定模型 $M$：它包含固定代数闭包 $\\Omega=\\overline{\\mathbb Q(T)}$ 中的中间域 $\\mathbb Q\\subseteq F\\subseteq\\Omega$、元素 $u,v\\in F$，以及以下性质的证明：$u$ 在 $\\mathbb Q$ 上超越，$u^N+v^N=1$，$\\mathbb Q(u,v)=F$，且 $F/\\mathbb Q(u)$ 为次数等于 $N$ 的有限维扩张。声明没有另加 $N$ 的下界条件；上述模型条件不能在 $N=0$ 时成立。这里的处 $P$ 遍历所有含 $\\mathbb Q$ 的真赋值子环 $O_P\\subsetneq F$，其剩余域记为 $\\kappa(P)=O_P/\\mathfrak m_P$，剩余映射记为 $\\rho_P$。显式前提 $h_{\\mathrm{DVR}}$ 要求每个 $O_P$ 都是离散赋值环，显式前提 $h_{\\mathrm{RF}}$ 要求每个 $\\kappa(P)$ 在 $\\mathbb Q$ 上有限维。令 $\\nu_P(f)$ 表示由 $O_P$ 的极大理想给出的规范化离散赋值取离散对数再取负得到的整数阶数，该赋值的值群为整数加法群的乘法记法副本并添入零元，并采用全函数约定 $\\nu_P(0)=0$。对任意 $f\\in F$，若 $f\\in O_P$，令 $e_f(P)=\\nu_P(m_{\\rho_P(f)}(f))$，其中 $m_{\\rho_P(f)}\\in\\mathbb Q[X]$ 为 $f$ 的剩余类在 $\\mathbb Q$ 上的最小多项式；若 $f\\notin O_P$，令 $e_f(P)=-\\nu_P(f)$。前一分支定义 $a_f(P)=e_f(P)-1$，后一分支定义 $a_f(P)=-e_f(P)-1$；这些减法均在整数中进行。 对任意显式给定的 $\\varphi\\in F$ 及其在 $\\mathbb Q$ 上超越的显式证明 $h_\\varphi$，以及任意显式给定的典范除子数据 $\\mathcal K$，后者包含有限支集整数值除子 $D$ 和在每个处成立的等式 $D(P)=a_u(P)$，存在 $q\\in F$，使得 $q\\ne0$，且对每个处 $P$ 都有 $D(P)=a_\\varphi(P)+\\nu_P(q)$。这里 $\\varphi$ 不能是在 $\\mathbb Q$ 上代数的元素；非零见证 $q$ 没有唯一性要求。该等式涵盖全部真赋值子环所表示的处，包括 $u$ 或 $\\varphi$ 的每个极点。",
+      "ja": "暗黙の引数を自然数 $N\\in\\mathbb N$ とし、明示的な模型 $M$ は、固定した代数閉包 $\\Omega=\\overline{\\mathbb Q(T)}$ の中間体 $\\mathbb Q\\subseteq F\\subseteq\\Omega$、元 $u,v\\in F$、および $u$ が $\\mathbb Q$ 上超越的であること、$u^N+v^N=1$、$\\mathbb Q(u,v)=F$、$F/\\mathbb Q(u)$ が次数 $N$ の有限次元拡大であることの証明からなるものとする。$N$ の下限について別の仮定はないが、これらの模型条件は $N=0$ では成立しない。素点 $P$ は、$\\mathbb Q$ を含む真の付値部分環 $O_P\\subsetneq F$ のすべてを動き、剰余体と剰余写像をそれぞれ $\\kappa(P)=O_P/\\mathfrak m_P$、$\\rho_P$ と書く。明示的な仮定 $h_{\\mathrm{DVR}}$ はすべての $O_P$ が離散付値環であることを、明示的な仮定 $h_{\\mathrm{RF}}$ はすべての $\\kappa(P)$ が $\\mathbb Q$ 上有限次元であることを表す。$\\nu_P(f)$ は $O_P$ の極大イデアルから得られる正規化された離散付値の離散対数の負値で定まる整数の位数であり、その付値の値群は整数の加法群を乗法的に書いたものに零元を付加したものであり、全域で定義するため $\\nu_P(0)=0$ とする。任意の $f\\in F$ に対して、$f\\in O_P$ ならば $e_f(P)=\\nu_P(m_{\\rho_P(f)}(f))$ と定める。ただし $m_{\\rho_P(f)}\\in\\mathbb Q[X]$ は $f$ の剰余類の $\\mathbb Q$ 上の最小多項式である。$f\\notin O_P$ ならば $e_f(P)=-\\nu_P(f)$ と定める。前者では $a_f(P)=e_f(P)-1$、後者では $a_f(P)=-e_f(P)-1$ とし、これらの減算はすべて整数における減算である。 明示的に与えられた任意の $\\varphi\\in F$ と、その元が $\\mathbb Q$ 上超越的であるという明示的な証明 $h_\\varphi$、および明示的な標準因子のデータ $\\mathcal K$ をとる。後者は有限台をもつ整数値因子 $D$ と、すべての素点における等式 $D(P)=a_u(P)$ からなる。このとき $q\\in F$ が存在して、$q\\ne0$ かつすべての素点 $P$ で $D(P)=a_\\varphi(P)+\\nu_P(q)$ が成立する。ここでは $\\mathbb Q$ 上代数的な $\\varphi$ は含まれず、非零の存在証人 $q$ の一意性は要求されない。この等式はすべての真の付値部分環に対応する素点で成立し、$u$ または $\\varphi$ のすべての極も含む。",
+      "proof_notes": {
+        "scope": "Original blind statement readback unchanged; original_proof_notes describes earlier placeholder.",
+        "current_formal_body": "Exact application of canonicalDifferentialChange_source; no placeholder.",
+        "validation": "Current leaf and closed-axioms CI receipts"
+      },
+      "quotation": null,
+      "reused_from": ".local/adaptation/canonical-cusp-split-20261114/final-readbacks.json",
+      "reused_packet_sha256": "4e546f7c9e7542c578f499f8c304578859fd2fed5f381185327850aa68056187",
+      "reuse_basis": "Unchanged compiler type; independent statement readback reused",
+      "original_proof_notes": {
+        "formal_body": "The formal proof body is `by sorry`."
+      }
+    }
+  ],
+  "blind_readback": true,
+  "compiler_bound": true,
+  "quotations_separate": true,
+  "retained_binder_review": "Independent compiler-type audit required before upload"
+}

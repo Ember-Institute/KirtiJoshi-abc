@@ -1,0 +1,4 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange_source
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.canonicalDifferentialChange

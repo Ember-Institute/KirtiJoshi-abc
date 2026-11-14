@@ -35,12 +35,6 @@
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/TupleHeight.lean:268`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Absolute/Basic.lean:204`
 
-- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveDeriv/Basic.lean:209`
-- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveDeriv/Basic.lean:214`
-- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveDeriv/Order.lean:83`
-- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/RamIdx.lean:237`
-- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/RamIdx.lean:257`
-
 ## 2. Joshi 论文直接列出而尚未拆分的证明义务
 
 ### `th:moccor-Mochizuki-form2`

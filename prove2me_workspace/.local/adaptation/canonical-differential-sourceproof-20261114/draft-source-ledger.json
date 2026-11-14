@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-14T11:41:50.489322+00:00",
+  "task": "Complete candidate source proof of current canonicalDifferentialChange",
+  "scope": {
+    "draft_only": true,
+    "main_workspace_modified": false,
+    "compiler_used": false,
+    "mcp_ci_used": false,
+    "api_used": false,
+    "git_mutations": false,
+    "subagents_used": false,
+    "new_assumptions": false,
+    "new_carriers": false,
+    "new_open_obligations": false,
+    "explicit_Fermat_route_retained": true,
+    "deprecations": false
+  },
+  "source_records": [
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_file": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Canonical.lean",
+      "artifact_file": "reference/Belyi/CurveField/Canonical.lean",
+      "sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b",
+      "copied_bytes_match": true,
+      "uses": [
+        {
+          "lines": "144-166",
+          "consumer": "canonicalDifferentialChange_source",
+          "fidelity": "Coefficient form for supplied actual canonical data; q is derivAlong phi u and the principal sign is positive."
+        }
+      ],
+      "notice_preserved": "/-\nCopyright (c) 2026 The Belyi project contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The Belyi project contributors"
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_file": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveDeriv/Basic.lean",
+      "artifact_file": "reference/Belyi/CurveDeriv/Basic.lean",
+      "sha256": "cf1b11adab96fbd7d7bb5114e7215dcbf8b8cda1a8eda573e9759ac5316f40b2",
+      "copied_bytes_match": true,
+      "uses": [
+        {
+          "lines": "68-95,178-219",
+          "consumer": "CurveDeriv.derivAlong_eq_smul / derivAlong_mul_derivAlong",
+          "fidelity": "Existing private closure copied, chain and reciprocal results exposed publicly in the source layer."
+        }
+      ],
+      "notice_preserved": "/-\nCopyright (c) 2026 The Belyi project contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The Belyi project contributors"
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_file": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveDeriv/Order.lean",
+      "artifact_file": "reference/Belyi/CurveDeriv/Order.lean",
+      "sha256": "bb39cb855e2157e52eb1caeba74b5a9647a9d94799e6631ec9c7f007b8c1b489",
+      "copied_bytes_match": true,
+      "uses": [
+        {
+          "lines": "83-100",
+          "consumer": "CurveDeriv.derivAlong_eq_unit_mul_zpow_of_inv",
+          "fidelity": "Source body retained; its nonzero-of-irreducible helper is inlined."
+        },
+        {
+          "lines": "61-79",
+          "consumer": "DifferentialOrderSource.ord_derivAlong_of_mem via existing public theorem",
+          "fidelity": "Already proved regular local theorem imported, not reintroduced as debt."
+        }
+      ],
+      "notice_preserved": "/-\nCopyright (c) 2026 The Belyi project contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The Belyi project contributors"
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_file": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveDeriv/Local.lean",
+      "artifact_file": "reference/Belyi/CurveDeriv/Local.lean",
+      "sha256": "cb930e45cba81a1377ab8281264d938868ae7834d32c480a9af9d29012eb1aae",
+      "copied_bytes_match": true,
+      "uses": [
+        {
+          "lines": "72-73,118-119",
+          "consumer": "Private inv_mem bridge and inlined irreducible nonzero proof",
+          "fidelity": "Complete short source bodies."
+        }
+      ],
+      "notice_preserved": "/-\nCopyright (c) 2026 The Belyi project contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The Belyi project contributors"
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_file": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/RamIdx.lean",
+      "artifact_file": "reference/Belyi/CurveField/RamIdx.lean",
+      "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6",
+      "copied_bytes_match": true,
+      "uses": [
+        {
+          "lines": "55-75,124-159,237-284",
+          "consumer": "DifferentialOrderSource local formulas and private place bridges",
+          "fidelity": "Current Int ramIdx is retained; positive index is represented by a Nat only to use local power theorems. Unit decomposition uses an explicit quotient, matching the existing proved current closure."
+        }
+      ],
+      "notice_preserved": "/-\nCopyright (c) 2026 The Belyi project contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The Belyi project contributors"
+    },
+    {
+      "project": "belyi",
+      "pinned_commit": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+      "archive_file": "/tmp/p2m-height-general-position-source-audit-20261114/belyi-9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/Extension.lean",
+      "artifact_file": "reference/Belyi/CurveField/Extension.lean",
+      "sha256": "690dcc66979c9da2c21c1b765ce6d53eb41e5e850a71e42de91fa8ffc3839ddb",
+      "copied_bytes_match": true,
+      "uses": [
+        {
+          "lines": "92-105",
+          "consumer": "Private ord_uniformizer and uniformizer_ne_zero",
+          "fidelity": "Actual existing uniformizer choice retained; exact proof bodies already present privately in current theorem."
+        }
+      ],
+      "notice_preserved": "/-\nCopyright (c) 2026 The Belyi project contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The Belyi project contributors"
+    }
+  ],
+  "current_inputs": [
+    {
+      "module": "Definitions.Def_FermatProperDivisorHeight",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatProperCarrier",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_TripodFermatInputs",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodFermatInputs.lean",
+      "sha256": "099c3a519d2301b4df515a6503ffd62649d62074716e611b6eb9e360a5b5093a",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_AbcTripod",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+      "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatNoncriticalElementarySource",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "sha256": "aef871215e64e6d65d9ed46c8eeeefe26b0fd389e892b573bbcc47decaf258c6",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatNoncriticalRamificationPositive",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalRamificationPositive.lean",
+      "sha256": "888a933e2c627cc2892cf7b54db8aeab39b4081c3f7fb8676c4395c5526e6890",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatNoncriticalFunctions",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalFunctions.lean",
+      "sha256": "bb10b218db0d1837c23da15cfe61ea2eac9a5e2d72612c231bcb4cec8f1e07e4",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveFieldResidue",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+      "sha256": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveFieldPlace",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+      "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveFieldChart",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldChart.lean",
+      "sha256": "90aa4d97587e8ce3ade8cd92b8a566028a4d7ba53a381a023d28f2375fa4a8be",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveFieldBasic",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldBasic.lean",
+      "sha256": "7e3b47a5f603c4d6be36686f735ac2b2d7ef9937f12577e2539266a038e9b8b8",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveFieldZerosPoles",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldZerosPoles.lean",
+      "sha256": "884d1811c768d63b8a723ae74e7cb826254651cef5ae5e504bcf3c22ac8c3f29",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveFieldUniformizer",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldUniformizer.lean",
+      "sha256": "c09dd4e8f3558ae72fd0496cb9414c0b41ffd366ddb835b1ca954503b8cf0d4a",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveDerivationAdjoin",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationAdjoin.lean",
+      "sha256": "037ebc54669c50d6e989c28482ca0a6327f59d919fc3193d375188cc6c751303",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveDerivationBasic",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationBasic.lean",
+      "sha256": "21c1e8b255d3f386d85d8e3cbf59e47ace61b02dd9a1263165151d152cd7ad04",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveDerivationEtale",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationEtale.lean",
+      "sha256": "1c7f74fbd78be5f89a3779d909486bdcfe1d4b640ed89b55f5bdbd52cfaa7c28",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Definitions.Def_FermatCurveDerivationPolynomial",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveDerivationPolynomial.lean",
+      "sha256": "aa99b5ea0e9e7fba586669ea496951fc4e1089fa2e47e300e6c25f80c991e16e",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval.lean",
+      "sha256": "7bbf99ee48b6092b6428915eea89fc13abbcd369024695fab0637d0d2927869e",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow.lean",
+      "sha256": "0c3ba6f5931452475ecce7c7a5c88c5b6ed1dcc351a8ea4d2fd825bb0b1070bf",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_mem.lean",
+      "sha256": "5f7d93862e42c481b7a5bde68e4f640090809f3fb871e6ba5c2ba6f9d9fed553",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_succ_mul_derivAlong_not_mem.lean",
+      "sha256": "da5263b83bab9cd39ff2c4cf9ef8cd1649204f7c5887dc7a18607b61dad5c4d0",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_irreducible_valuation_lt_one.lean",
+      "sha256": "bceb7ebce91f53b4aee61ae304ec362e770cb856fc8855b642d66c137c015f9e",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_valuation_aeval_derivative_eq_one.lean",
+      "sha256": "3d206051315d6bab34215db2507cfc47fb06ca401066629b8bdaee88a49f2aac",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem.lean",
+      "sha256": "b0dae97a38ab9f1bbf555d4f36dbb383cc044b233c2c59ef47898631a9a37d55",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_eq_div.lean",
+      "sha256": "dfbc7165ea17d449f887ce32dcf036db62d13dc09910d9b9f4837a8feb50bdd4",
+      "textual_placeholders": []
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure",
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_exists_pow_mul_derivAlong_mem_integralClosure.lean",
+      "sha256": "7f9f69c29dc579a454d5bd644b73d0b031748740de5307f5da92dfd3da73a26c",
+      "textual_placeholders": []
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalRegularRamifiedDerivNotMem.lean",
+      "sha256": "72abfba107ddd5abdea30f471055c92d5a169a1688a4f36e52991976bf869bb0",
+      "role": "Existing complete private proof closure copied as source; the weaker public obstruction is not used as the target."
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange.lean",
+      "sha256": "5fef472c9124cc4549fe843d6af6338634f73a287045eb7f64a762f80a380eb6",
+      "role": "Exact current child type retained."
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatCanonicalCuspComposition.lean",
+      "sha256": "6d439408b0983f6fb2def05584eddecdd17f6d809c9695c282f7c79a293a8c1b",
+      "role": "Actual immediate consumer: exact hChange input."
+    },
+    {
+      "file": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalCuspPolarLinearEquivalence.lean",
+      "sha256": "e9a5c5a746e5c1603d8db60a0f2c2bea89f412444800f59e6947240b6c0a5bf4",
+      "role": "Existing parent remains on the explicit Fermat route."
+    }
+  ],
+  "declarations": [
+    {
+      "name": "CurveDeriv.derivAlong_eq_smul",
+      "source": "CurveDeriv/Basic.lean:209",
+      "consumer": [
+        "CurveDeriv.derivAlong_mul_derivAlong",
+        "canonicalDifferentialChange_source"
+      ],
+      "status": "Complete copied source body with private uniqueness closure; not elaborated."
+    },
+    {
+      "name": "CurveDeriv.derivAlong_mul_derivAlong",
+      "source": "CurveDeriv/Basic.lean:214",
+      "consumer": [
+        "DifferentialOrderSource.derivAlong_uniformizer_ne_zero",
+        "canonicalDifferentialChange_source"
+      ],
+      "status": "Complete copied source body; not elaborated."
+    },
+    {
+      "name": "CurveDeriv.derivAlong_eq_unit_mul_zpow_of_inv",
+      "source": "CurveDeriv/Order.lean:83",
+      "consumer": "DifferentialOrderSource.ord_derivAlong_of_notMem",
+      "status": "Complete source inverse/pole body; existing public unit-mul-pow theorem reused."
+    },
+    {
+      "name": "DifferentialOrderSource.ord_derivAlong_of_mem",
+      "source": "CurveField/RamIdx.lean:237",
+      "consumer": "DifferentialOrderSource.ord_derivAlong",
+      "status": "Complete source calculation using existing proved regular local theorem; no duplicate open debt."
+    },
+    {
+      "name": "DifferentialOrderSource.ord_derivAlong_of_notMem",
+      "source": "CurveField/RamIdx.lean:257",
+      "consumer": "DifferentialOrderSource.ord_derivAlong",
+      "status": "Complete source calculation using inverse/pole body."
+    },
+    {
+      "name": "DifferentialOrderSource.ord_derivAlong",
+      "source": "RamIdx regular/pole cases",
+      "consumer": "canonicalDifferentialChange_source, at u and at phi",
+      "status": "Complete two-case dispatcher over all proper places."
+    },
+    {
+      "name": "DifferentialOrderSource.derivAlong_uniformizer_ne_zero",
+      "source": "CurveField/RamIdx.lean:278",
+      "consumer": "canonicalDifferentialChange_source before Place.ord_mul",
+      "status": "Complete reciprocal-derivative source proof."
+    },
+    {
+      "name": "canonicalDifferentialChange_source",
+      "source": "CurveField/Canonical.lean:144,159",
+      "consumer": "Exact replacement canonicalDifferentialChange theorem",
+      "status": "Complete source chain/order combination."
+    },
+    {
+      "name": "canonicalDifferentialChange",
+      "source": "Exact current obligation type",
+      "consumer": "canonicalCuspPolarLinearEquivalence_of_children exact hChange input",
+      "status": "Exact application of source result."
+    }
+  ],
+  "reused_public_results": [
+    "CurveDeriv.derivAlong_eq_unit_mul_pow_of_aeval",
+    "CurveDeriv.derivAlong_unit_mul_pow",
+    "CurveDeriv.derivAlong_aeval",
+    "Model.isCurveField",
+    "finiteDimensional_adjoin / isAlgebraic_adjoin",
+    "NoncriticalElementarySource.ramIdx_of_mem / ramIdx_of_notMem",
+    "noncriticalRamificationPositive",
+    "ord_eq_placeOrd",
+    "Actual Place.ord arithmetic and residue/minpoly facts"
+  ],
+  "private_closure": {
+    "origin": "Current noncriticalRegularRamifiedDerivNotMem theorem file, itself pinned-source proof transport.",
+    "chain": "Private unramified uniqueness, derivAlong_self and scalar characterization copied; only chain and reciprocal results exported.",
+    "order": "Private inverse-membership, chosen-uniformizer order/nonzero, transcendence, irreducibility and unit/order bridges copied.",
+    "reason": "These proof bodies exist, but their private names cannot serve a new module. No public proved regular theorem is duplicated or made open."
+  },
+  "mathematics": {
+    "witness": "q = CurveDeriv.derivAlong phi M.u = du/dphi",
+    "reciprocal": "q * (dphi/du) = 1, using both supplied phi transcendence and M.transcendental_u.",
+    "chain": "du/dpi = (dphi/dpi) * q",
+    "sign": "K_u(P) = K_phi(P) + ord_P(q)",
+    "regular": "ord_P(dpsi/dpi) = ramIdx(psi,P)-1",
+    "pole": "ord_P(dpsi/dpi) = -ramIdx(psi,P)-1",
+    "nonzero": "q and dphi/dpi are proved nonzero before Place.ord_mul; w and uniformizer powers are proved nonzero in local order formulas.",
+    "integer_index": "Current ramIdx stays Int. A positive index is represented by e:Nat with an explicit cast equality; this does not identify source Nat ramIdx definitionally.",
+    "ord_zero": "ord(0)=0 is respected; no unconditional product-order lemma is used."
+  },
+  "preservation": {
+    "canonical": "Every supplied K retained; its coefficient field identifies the actual du divisor at each place.",
+    "binders": "Every original N, Model, hDVR, hRF, phi, transcendence proof and supplied canonical datum retained verbatim in wrapper.",
+    "all_places": "Every actual Place M.K, including poles of u and phi and places at infinity.",
+    "structure": "Only the existing derived M.isCurveField class is used.",
+    "no_extra_hypothesis": "No new constant-field law, plane adjunction, height premise, desired-parent equality, selected point or model restriction.",
+    "route": "Explicit Fermat route remains unchanged; no deprecation or alternate route introduced."
+  },
+  "missing_mathematical_api": [],
+  "validation_pending": [
+    "Root review of source modules and exact replacement.",
+    "Root MCP-CI elaboration after current coefficient delivery.",
+    "Required checks and axiom audit; absence of textual placeholders is not axiom acceptance."
+  ],
+  "static_checks": {
+    "files": [
+      {
+        "file": "Solutions/Source_FermatCanonicalDifferentialChange.lean",
+        "sha256": "3d76a6da0b880f0ca3b9f1df8c7969e092b77affc62eb93278ee3492d2c8a356",
+        "lines": 52,
+        "imports": [
+          "Definitions.Def_FermatProperDivisorHeight",
+          "Solutions.Source_FermatDifferentialOrder"
+        ],
+        "executable_placeholders": [],
+        "trailing_whitespace_lines": []
+      },
+      {
+        "file": "Solutions/Source_FermatDifferentialChain.lean",
+        "sha256": "ead51373675292ba3deae6b892605af142d7a3b7971cb1cb298446d02e1903c0",
+        "lines": 86,
+        "imports": [
+          "Definitions.Def_FermatCurveDerivationAdjoin",
+          "Mathlib.RingTheory.Unramified.Field"
+        ],
+        "executable_placeholders": [],
+        "trailing_whitespace_lines": []
+      },
+      {
+        "file": "Solutions/Source_FermatDifferentialOrder.lean",
+        "sha256": "9ac3d84193bed07229d082912ce62d5452c8b7c1bdf12bda489319e865674705",
+        "lines": 278,
+        "imports": [
+          "Definitions.Def_FermatNoncriticalElementarySource",
+          "Definitions.Def_FermatCurveFieldUniformizer",
+          "Solutions.Source_FermatDifferentialChain",
+          "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_eq_unit_mul_pow_of_aeval",
+          "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_CurveDeriv_derivAlong_unit_mul_pow"
+        ],
+        "executable_placeholders": [],
+        "trailing_whitespace_lines": []
+      },
+      {
+        "file": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_canonicalDifferentialChange.lean",
+        "sha256": "0e0601ec395c75171166d65dc698fc88a91001210f6c5b48e42db5902455e98b",
+        "lines": 30,
+        "imports": [
+          "Solutions.Source_FermatCanonicalDifferentialChange"
+        ],
+        "executable_placeholders": [],
+        "trailing_whitespace_lines": []
+      }
+    ],
+    "exact_current_child_signature": true,
+    "current_child_sha256": "5fef472c9124cc4549fe843d6af6338634f73a287045eb7f64a762f80a380eb6",
+    "local_current_dependency_count": 26,
+    "missing_local_dependencies": [],
+    "current_dependencies_with_textual_placeholders": [],
+    "upstream_project_imports": [],
+    "open_current_child_in_dependency_closure": true,
+    "compiler_used": false,
+    "axiom_audit_performed": false,
+    "note": "Textual checks do not establish elaboration, type correctness, axiom acceptance or resource usage."
+  },
+  "acceptance_limit": "Complete candidate source bodies, no placeholders in draft. No compiler, axiom or resource receipt exists. This draft does not claim the current parent obligation or Fermat route accepted."
+}
