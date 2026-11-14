@@ -1,0 +1,132 @@
+{
+  "task": "different-accounting-sourceproof-review-next-20261114",
+  "draft_directory": "/tmp/p2m-different-accounting-sourceproof-next-20261114",
+  "review_scope": "Independent static read-only review of Lean draft, existing project carriers, source reference, ledger, and pinned Mathlib APIs. No compilation, MCP-CI job, external API call, Git command, or active-workspace mutation.",
+  "verdict": "static_pass_with_documentation_note; compilation_and_axiom_acceptance_pending",
+  "blocking_findings": [],
+  "findings": [
+    {
+      "id": "LICENSE-EVIDENCE-DISCLOSURE",
+      "severity": "low",
+      "kind": "documentation",
+      "location": "SOURCE_LEDGER.md",
+      "observation": "The draft preserves the source Apache-2.0 copyright/license headers. The pinned source archive has no LICENSE or NOTICE at its root. This draft does not include the existing unit disclosure of that fact or identify the locally supplied standard Apache-2.0 text.",
+      "requested_action": "At integration, retain the existing explicit disclosure that the original archive lacked LICENSE/NOTICE and link/copy the existing standard Apache-2.0 text. Do not describe the standard text as a LICENSE obtained from the source archive.",
+      "existing_license_text": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/belyi-different-conductor-split-20261114/reference/LICENSE.Apache-2.0",
+      "mathematical_impact": "none"
+    }
+  ],
+  "evidence": {
+    "source_pin": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+    "source_checkout": "/tmp/p2m-height-general-position-source-audit-20261114/heights-721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+    "reference_and_checkout_NumberField_sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+    "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "lean_toolchain": "leanprover/lean4:v4.33.1",
+    "draft_source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+    "draft_ledger_sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865",
+    "existing_finite_places_sha256": "3ffa02e76f1ced7994d7ab97d1c66c2ca3415db90eeb1eea3ea1f5d9d1c0468e",
+    "existing_children_sha256": "2282d3f5d9dc037da6f6fe84fc64dcfd4ea31da9c297799deaa8b2dd2d9f8401",
+    "manifest_input_hashes": "The four recorded Mathlib source hashes and both existing project input hashes matched the files read during review."
+  },
+  "checks": {
+    "exact_target": {
+      "result": "pass_static",
+      "predicate": "Definitions/Def_FermatBelyiConductorExtensionChildren.lean:35-48",
+      "wrapper": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean:19",
+      "details": "The unchanged theorem name targets the existing proposition. It installs the exact same point-field FiniteDimensional instance and IntermediateField.inclusion algebra as the proposition. Its pair proves finite support first and the grouped logarithmic norm identity second. The different remains that of the actual image field inside the actual point field; the normalization is finrank Q x.fieldOf."
+    },
+    "existing_carriers": {
+      "result": "pass_static",
+      "details": "The source imports and reuses existing primeBelow, diffContrib, and mem_primesOverFinset_iff'. No carrier is redefined. Their definitions match source NumberField.lean:158-181: primeBelow is comap along the induced integer-ring algebraMap; diffContrib sums multiplicity times log absolute norm over primesOverFinset, divided by the full extension-field rational degree."
+    },
+    "mathematical_chain": {
+      "result": "pass_static",
+      "details": [
+        "differentIdeal_ne_bot' supplies nonzero relative different, so finite factor support and ideal factorization apply.",
+        "log_absNorm_eq_finsum uses exact ideal factorization, zero multiplicity off prime support, norm multiplicativity, and nonzero prime norms to take logarithms. It requires no missing positivity premise.",
+        "diffContrib_eq_sum_filter uses a bijection only on nonzero summands. Nonzero ideals over a nonzero prime give HeightOneSpectrum elements; nonzero contribution forces divisibility by the different. The LiesOver equality identifies the prime below.",
+        "The grouped identity uses finite support of the local ideal terms, distributes division over the finite sum, and groups by primeBelow over the image of the finite different support.",
+        "Finite support of diffContrib is proved separately by containment in that finite image, so the first conjunct is not inferred merely from the existence of a finsum.",
+        "No equality of the image-field and point-field degrees, no unramifiedness, and no local conductor inequality is assumed."
+      ]
+    },
+    "source_fidelity": {
+      "result": "pass_static",
+      "details": "Bodies and statements correspond to NumberField.lean:43,114-148,186-267. Existing carrier definitions correspond to 158-181. The only arithmetic proof adaptations replace the source aliases multiplicity_eq_zero_of_not_dvd and one_lt_absNorm with their pinned Mathlib implementations. Namespace and imports are adapted to the existing project."
+    },
+    "mathlib_api": {
+      "result": "pass_static_not_elaborated",
+      "verified": [
+        "Ideal.finite_factors: RingTheory/DedekindDomain/Factorization.lean:84",
+        "Ideal.finprod_heightOneSpectrum_pow_multiplicity: RingTheory/DedekindDomain/Factorization.lean:891",
+        "multiplicity_eq_zero: RingTheory/Multiplicity.lean:324; unconditional Monoid equivalence, not an unprovided FiniteMultiplicity premise",
+        "finprod_eq_prod_of_mulSupport_subset: Algebra/BigOperators/Finprod.lean:354",
+        "NumberField.HeightOneSpectrum.one_lt_absNorm: NumberTheory/NumberField/Completion/FinitePlace.lean:120",
+        "Ideal.absNorm: RingTheory/Ideal/Norm/AbsNorm.lean:201; a monoid-with-zero homomorphism",
+        "Finset.sum_fiberwise_of_maps_to, sum_bij_ne_zero, and exists_ne_zero_of_sum_ne_zero are generated by to_additive from the corresponding pinned Basic.lean product lemmas at 256,497,518"
+      ]
+    },
+    "producer_consumers": {
+      "result": "pass_static",
+      "edges": {
+        "differentIdeal_ne_bot'": [
+          "diffContrib_eq_sum_filter",
+          "log_absNorm_differentIdeal_div_eq_finsum",
+          "diffContrib_support_finite"
+        ],
+        "primeSupport": [
+          "mem_primeSupport",
+          "log_absNorm_eq_finsum",
+          "diffContrib_eq_sum_filter",
+          "log_absNorm_differentIdeal_div_eq_finsum",
+          "diffContrib_support_finite"
+        ],
+        "mem_primeSupport": [
+          "log_absNorm_eq_finsum",
+          "diffContrib_eq_sum_filter",
+          "log_absNorm_differentIdeal_div_eq_finsum"
+        ],
+        "log_absNorm_eq_finsum": [
+          "log_absNorm_differentIdeal_div_eq_finsum"
+        ],
+        "diffTerm": [
+          "diffContrib_eq_sum_filter",
+          "log_absNorm_differentIdeal_div_eq_finsum"
+        ],
+        "diffContrib_eq_sum_filter": [
+          "log_absNorm_differentIdeal_div_eq_finsum",
+          "diffContrib_support_finite"
+        ],
+        "log_absNorm_differentIdeal_div_eq_finsum": [
+          "belyiActualFieldDifferentAccounting.second_conjunct"
+        ],
+        "diffContrib_support_finite": [
+          "belyiActualFieldDifferentAccounting.first_conjunct"
+        ]
+      },
+      "details": "Every new helper has an actual proof or proposition consumer, and each appears in the draft ledger. The actual-field theorem keeps the name already consumed by the existing conductor-extension composer."
+    },
+    "import_graph": {
+      "result": "pass_static",
+      "reachable_project_modules": 12,
+      "cycle_found": false,
+      "forbidden_project_import_found": false,
+      "details": "The source imports only existing finite-place carriers. The wrapper imports the existing accounting proposition plus the new source. The reachable project closure contains definitions and this source/wrapper, with no new theorem cycle, no raw reference import, and no Scene2/Act2/Prologue.Obligations import."
+    },
+    "admissions_and_assumptions": {
+      "result": "pass_static_axioms_pending",
+      "details": "No sorry, admit, or custom axiom declaration was found in the new source/wrapper or the 12-module project import closure. Generic declarations quantify only number fields and their algebra. Wrapper facts pointField_finiteDimensional and belyiImage_field_le have existing proof bodies. This text review does not replace the required printed axiom audit."
+    },
+    "license": {
+      "result": "headers_preserved_documentation_note",
+      "details": "Original Heights Apache-2.0 headers are retained. Pinned Mathlib files also carry Apache-2.0 headers. Missing archive LICENSE/NOTICE remains the existing documented source-evidence limitation."
+    }
+  },
+  "acceptance_remaining": [
+    "Parent integrates only after the active exclusive CI job has reached a terminal state.",
+    "Parent runs required source/wrapper/Checks, ImportAudit, aggregation, and AxiomAudit gates through MCP-CI; this review ran none.",
+    "Parent inspects terminal receipt arguments, resources, and printed axioms. Generic arithmetic declarations must contain no sorryAx or new nonstandard axiom.",
+    "Parent runs git diff --check and preserves the separate local-conductor child as open."
+  ],
+  "claim_boundary": "The draft is a complete static proof candidate for the existing different-accounting child. Neither compiler acceptance nor the local-conductor child, full conductor extension, or parent mathematical obligation is certified by this review."
+}

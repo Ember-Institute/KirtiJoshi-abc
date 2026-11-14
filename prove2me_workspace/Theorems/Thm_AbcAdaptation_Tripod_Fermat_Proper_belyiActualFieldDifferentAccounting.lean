@@ -6,15 +6,22 @@ Authors: The heights contributors
 Independent source adaptation; see SOURCE_LEDGER.md.
 -/
 import Definitions.Def_FermatBelyiConductorExtensionChildren
+import Solutions.Source_FermatBelyiDifferentAccounting
 
 set_option autoImplicit false
+open NumberField
+open scoped IntermediateField
+
 namespace AbcAdaptation.Tripod.Fermat.Proper
 
-/-- OPEN exact arithmetic port: Heights/Different/NumberField.lean:228 log_absNorm_differentIdeal_div_eq_finsum and
-:256 diffContrib_support_finite. Group actual prime-factor multiplicities by primeBelow.
-The complete pinned proof bodies are in reference/NumberField.lean; retain both conjuncts.
-Actual fields and actual inclusion are fixed by the proposition carrier. -/
+/-- The pinned source grouped norm identity and finite support, for the actual inclusion.
+Both accounting conjuncts and the full point-field normalization are unchanged. -/
 theorem belyiActualFieldDifferentAccounting : BelyiActualFieldDifferentAccounting := by
-  sorry
+  intro N M hRF φ x hgood
+  letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x
+  letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=
+    (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra
+  exact ⟨ConductorExtensionSource.diffContrib_support_finite x.fieldOf,
+    ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum x.fieldOf⟩
 
 end AbcAdaptation.Tripod.Fermat.Proper

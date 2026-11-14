@@ -21,8 +21,6 @@
 - `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/Covering.lean:243`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/CondDivisor.lean:61`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Different/Conductor.lean:104`
-- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Different/NumberField.lean:228`
-- `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Different/NumberField.lean:256`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/KummerPoint.lean:45`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBridge.lean:49`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:155`

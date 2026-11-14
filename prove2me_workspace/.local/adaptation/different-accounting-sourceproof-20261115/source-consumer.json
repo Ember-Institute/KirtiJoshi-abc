@@ -1,0 +1,1545 @@
+{
+  "status": "exclusive_local_audits_passed_and_exact_direct_proof_ACCEPTED",
+  "target": "Proved",
+  "source": "Heights/Different/NumberField.lean:228,256",
+  "source_commit": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+  "source_ledger": "draft-SOURCE_LEDGER.md",
+  "source_license": "source-license-evidence.json",
+  "production_ledger": {
+    "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+    "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+    "scope": "Exact existing adaptation accounting child closed locally; production source and boundary unchanged"
+  },
+  "new_assumptions": [],
+  "upstream_runtime_imports": [],
+  "deprecations": [],
+  "Fermat_route_preserved": true,
+  "declarations": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.differentIdeal_ne_bot'",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.differentIdeal_ne_bot'",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.differentIdeal_ne_bot'",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.differentIdeal_ne_bot'",
+      "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+      "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+      "source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "source_sha": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "compiler_type": "∀ (F : Type u_1) (L : Type u_2) [inst : Field F] [NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L], differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L) ≠ ⊥",
+      "source_span": {
+        "start": {
+          "offset": 648,
+          "line": 21,
+          "col": 0
+        },
+        "end": {
+          "offset": 785,
+          "line": 22,
+          "col": 86
+        },
+        "name_range": {
+          "start": {
+            "offset": 695,
+            "line": 22,
+            "col": 6
+          },
+          "end": {
+            "offset": 717,
+            "line": 22,
+            "col": 28
+          }
+        },
+        "value_start": {
+          "offset": 761,
+          "line": 22,
+          "col": 62
+        }
+      },
+      "compiler_span": {
+        "start_line": 21,
+        "end_line": 22
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.differentIdeal_ne_bot'",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 43,
+              "end_line": 43
+            },
+            "source_fidelity": "Same nonzero-relative-different theorem and proof, in the adaptation namespace."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+          "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+          "source_span": {
+            "start_line": 21,
+            "end_line": 22
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport",
+      "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+      "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+      "source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "source_sha": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "compiler_type": "{K : Type u_1} →\n  [inst : Field K] →\n    [NumberField K] →\n      {I : Ideal (NumberField.RingOfIntegers K)} →\n        I ≠ ⊥ → Finset (IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K))",
+      "source_span": {
+        "start": {
+          "offset": 863,
+          "line": 30,
+          "col": 0
+        },
+        "end": {
+          "offset": 1071,
+          "line": 33,
+          "col": 36
+        },
+        "name_range": {
+          "start": {
+            "offset": 939,
+            "line": 31,
+            "col": 18
+          },
+          "end": {
+            "offset": 951,
+            "line": 31,
+            "col": 30
+          }
+        },
+        "value_start": {
+          "offset": 1032,
+          "line": 32,
+          "col": 37
+        }
+      },
+      "compiler_span": {
+        "start_line": 30,
+        "end_line": 33
+      },
+      "kind": "def",
+      "platform_definition_publication": false,
+      "source_helper_definition": true,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": false,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete source helper definition; not a proof, new mathematical target, or platform Definition publication. Used by the closed accounting proof.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primeSupport",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primeSupport",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport.eq_1",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport.eq_1",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": false
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 114,
+              "end_line": 116
+            },
+            "source_fidelity": "Same finite prime-support definition, using Ideal.finite_factors; source helper definition, not a theorem or new obligation."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+          "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+          "source_span": {
+            "start_line": 30,
+            "end_line": 33
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primeSupport",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primeSupport",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primeSupport",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primeSupport",
+      "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+      "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+      "source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "source_sha": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] {I : Ideal (NumberField.RingOfIntegers K)} (hI : I ≠ ⊥)\n  (P : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K)),\n  P ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport hI ↔ P.asIdeal ∣ I",
+      "source_span": {
+        "start": {
+          "offset": 1073,
+          "line": 35,
+          "col": 0
+        },
+        "end": {
+          "offset": 1242,
+          "line": 37,
+          "col": 21
+        },
+        "name_range": {
+          "start": {
+            "offset": 1079,
+            "line": 35,
+            "col": 6
+          },
+          "end": {
+            "offset": 1095,
+            "line": 35,
+            "col": 22
+          }
+        },
+        "value_start": {
+          "offset": 1215,
+          "line": 36,
+          "col": 40
+        }
+      },
+      "compiler_span": {
+        "start_line": 35,
+        "end_line": 37
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primeSupport",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 118,
+              "end_line": 120
+            },
+            "source_fidelity": "Same prime-support membership theorem and simp proof."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+          "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+          "source_span": {
+            "start_line": 35,
+            "end_line": 37
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+      "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+      "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+      "source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "source_sha": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] {I : Ideal (NumberField.RingOfIntegers K)},\n  I ≠ ⊥ →\n    Real.log ↑(Ideal.absNorm I) =\n      ∑ᶠ (P : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K)),\n        ↑(multiplicity P.asIdeal I) * Real.log ↑(Ideal.absNorm P.asIdeal)",
+      "source_span": {
+        "start": {
+          "offset": 1244,
+          "line": 39,
+          "col": 0
+        },
+        "end": {
+          "offset": 2540,
+          "line": 63,
+          "col": 34
+        },
+        "name_range": {
+          "start": {
+            "offset": 1343,
+            "line": 40,
+            "col": 8
+          },
+          "end": {
+            "offset": 1364,
+            "line": 40,
+            "col": 29
+          }
+        },
+        "value_start": {
+          "offset": 1553,
+          "line": 42,
+          "col": 74
+        }
+      },
+      "compiler_span": {
+        "start_line": 39,
+        "end_line": 63
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 123,
+              "end_line": 146
+            },
+            "source_fidelity": "Substantial factorization-and-logarithm proof reuse. Replaces source aliases multiplicity_eq_zero_of_not_dvd and one_lt_absNorm with exact pinned Mathlib implementations; retains the complete statement and normalized ideal-factor accounting."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+          "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+          "source_span": {
+            "start_line": 39,
+            "end_line": 63
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffTerm",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffTerm",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffTerm",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffTerm",
+      "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+      "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+      "source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "source_sha": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "compiler_type": "(F : Type u_1) →\n  [inst : Field F] →\n    (L : Type u_2) →\n      [inst_1 : Field L] →\n        [NumberField L] → [Algebra F L] → IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers L) → ℝ",
+      "source_span": {
+        "start": {
+          "offset": 2702,
+          "line": 75,
+          "col": 0
+        },
+        "end": {
+          "offset": 2971,
+          "line": 78,
+          "col": 52
+        },
+        "name_range": {
+          "start": {
+            "offset": 2796,
+            "line": 76,
+            "col": 18
+          },
+          "end": {
+            "offset": 2804,
+            "line": 76,
+            "col": 26
+          }
+        },
+        "value_start": {
+          "offset": 2844,
+          "line": 76,
+          "col": 61
+        }
+      },
+      "compiler_span": {
+        "start_line": 75,
+        "end_line": 78
+      },
+      "kind": "def",
+      "platform_definition_publication": false,
+      "source_helper_definition": true,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffTerm",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": false,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete source helper definition; not a proof, new mathematical target, or platform Definition publication. Used by the closed accounting proof.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 186,
+              "end_line": 188
+            },
+            "source_fidelity": "Same actual different multiplicity times log absolute norm, divided by the full extension-field rational degree; source helper definition, not a theorem or new obligation."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+          "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+          "source_span": {
+            "start_line": 75,
+            "end_line": 78
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+      "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+      "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+      "source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "source_sha": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : NumberField F] {L : Type u_2} [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)),\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal =\n    ∑ P ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport ⋯ with\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeBelow L P = 𝔭,\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffTerm F L P",
+      "source_span": {
+        "start": {
+          "offset": 2973,
+          "line": 80,
+          "col": 0
+        },
+        "end": {
+          "offset": 4288,
+          "line": 113,
+          "col": 7
+        },
+        "name_range": {
+          "start": {
+            "offset": 3101,
+            "line": 82,
+            "col": 6
+          },
+          "end": {
+            "offset": 3126,
+            "line": 82,
+            "col": 31
+          }
+        },
+        "value_start": {
+          "offset": 3314,
+          "line": 84,
+          "col": 52
+        }
+      },
+      "compiler_span": {
+        "start_line": 81,
+        "end_line": 113
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 192,
+              "end_line": 223
+            },
+            "source_fidelity": "Same nonzero-summand bijection proof; replaces the source multiplicity_eq_zero_of_not_dvd alias with Mathlib multiplicity_eq_zero.mpr. Reuses existing primeBelow, diffContrib, and prime-fiber membership carriers."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+          "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+          "source_span": {
+            "start_line": 80,
+            "end_line": 113
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+      "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+      "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+      "source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "source_sha": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [NumberField F] (L : Type u_2) [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L],\n  Real.log ↑(Ideal.absNorm (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) /\n      ↑(Module.finrank ℚ L) =\n    ∑ᶠ (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)),\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal",
+      "source_span": {
+        "start": {
+          "offset": 4306,
+          "line": 116,
+          "col": 0
+        },
+        "end": {
+          "offset": 5695,
+          "line": 142,
+          "col": 25
+        },
+        "name_range": {
+          "start": {
+            "offset": 4423,
+            "line": 118,
+            "col": 8
+          },
+          "end": {
+            "offset": 4463,
+            "line": 118,
+            "col": 48
+          }
+        },
+        "value_start": {
+          "offset": 4623,
+          "line": 120,
+          "col": 62
+        }
+      },
+      "compiler_span": {
+        "start_line": 116,
+        "end_line": 142
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 228,
+              "end_line": 252
+            },
+            "source_fidelity": "Same grouped local norm identity and finite-fiber grouping proof, with the exact Mathlib zero-multiplicity fact replacing the source alias."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+          "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+          "source_span": {
+            "start_line": 116,
+            "end_line": 142
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+      "module": "Solutions.Source_FermatBelyiDifferentAccounting",
+      "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+      "source_sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "source_sha": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [NumberField F] (L : Type u_2) [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L],\n  (Function.support fun (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)) =>\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal).Finite",
+      "source_span": {
+        "start": {
+          "offset": 5713,
+          "line": 145,
+          "col": 0
+        },
+        "end": {
+          "offset": 6304,
+          "line": 157,
+          "col": 23
+        },
+        "name_range": {
+          "start": {
+            "offset": 5790,
+            "line": 146,
+            "col": 8
+          },
+          "end": {
+            "offset": 5816,
+            "line": 146,
+            "col": 34
+          }
+        },
+        "value_start": {
+          "offset": 5923,
+          "line": 148,
+          "col": 38
+        }
+      },
+      "compiler_span": {
+        "start_line": 145,
+        "end_line": 157
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": false,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": true,
+          "evidence_kind": "compiler_decl_graph",
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 256,
+              "end_line": 267
+            },
+            "source_fidelity": "Same proof of support containment in the finite image of the actual different prime support; preserves support finiteness independently of the finsum identity."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentAccounting.lean",
+          "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0",
+          "source_span": {
+            "start_line": 145,
+            "end_line": 157
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "declaration": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean",
+      "source_sha256": "4a0f9fcb5c457c5d71704d3081e57c88d51ec4a37730e526deda3bf9254be6ed",
+      "source_sha": "4a0f9fcb5c457c5d71704d3081e57c88d51ec4a37730e526deda3bf9254be6ed",
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentAccounting",
+      "source_span": {
+        "start": {
+          "offset": 469,
+          "line": 17,
+          "col": 0
+        },
+        "end": {
+          "offset": 1152,
+          "line": 25,
+          "col": 80
+        },
+        "name_range": {
+          "start": {
+            "offset": 650,
+            "line": 19,
+            "col": 8
+          },
+          "end": {
+            "offset": 685,
+            "line": 19,
+            "col": 43
+          }
+        },
+        "value_start": {
+          "offset": 724,
+          "line": 19,
+          "col": 82
+        }
+      },
+      "compiler_span": {
+        "start_line": 17,
+        "end_line": 25
+      },
+      "kind": "theorem",
+      "platform_definition_publication": false,
+      "source_helper_definition": false,
+      "isPrivate": false,
+      "authored": true,
+      "fresh_in_this_delivery": true,
+      "root_entry": true,
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "root_dependency_path": [],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "declaration_body_complete": true,
+        "sorryAx": false,
+        "platform_acceptance_claimed": false,
+        "description": "Complete elaborated proof body; standard-axiom audit passes. This status does not claim platform acceptance.",
+        "axiom_audit": {
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+          "evidence_job_id": "ci-012345-5188d0c5",
+          "evidence_path": ".local/adaptation/different-accounting-sourceproof-20261115/closed-axioms-review-result.json",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension",
+          "edge_kinds": [
+            "value"
+          ],
+          "compiler_edge": false,
+          "evidence_kind": "static_source_reference",
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+          "source_sha256": "de52900f652864c2080ad9bc794cd17aa7b58539f2054e90217ef335c224941b",
+          "source_span": {
+            "start_line": 16,
+            "end_line": 18
+          },
+          "reference_span": {
+            "start_line": 18,
+            "end_line": 18
+          },
+          "passes_parent_to": {
+            "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension_of_local_and_accounting",
+            "slot": "haccount",
+            "declaration_path": "Solutions/Source_FermatBelyiConductorExtensionAdapters.lean",
+            "source_sha256": "ec484007037373b75de869e676c54e98ff2e97b8c7e309d33f9c8959a0ce18b2",
+            "parameter_span": {
+              "start_line": 140,
+              "end_line": 143
+            },
+            "body_consumption_span": {
+              "start_line": 150,
+              "end_line": 156
+            }
+          },
+          "description": "Existing extension wrapper explicitly passes the accounting theorem to the unchanged conditional composer haccount slot. The composer destructures and uses both accounting conjuncts. This is current source evidence only; no incoming compiler edge is asserted for a module outside this extraction."
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+        "sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+        "job_id": "ci-012347-5bfec759",
+        "scope": "All direct incoming type/value edges present in this compiler graph. Root external source evidence is explicitly marked compiler_edge=false."
+      },
+      "source_provenance": {
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 228,
+              "end_line": 252
+            },
+            "source_fidelity": "Local actual-field specialization of both complete pinned source proofs. Installs precisely the existing image-field inclusion and returns support finiteness first and grouped normalized identity second, without changing the existing proposition."
+          },
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/different-accounting-sourceproof-20261115/reference/NumberField.lean.txt",
+            "source_span": {
+              "start_line": 256,
+              "end_line": 267
+            },
+            "source_fidelity": "Local actual-field specialization of both complete pinned source proofs. Installs precisely the existing image-field inclusion and returns support finiteness first and grouped normalized identity second, without changing the existing proposition."
+          }
+        ],
+        "pinned_local_input": {
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean",
+          "sha256": "4a0f9fcb5c457c5d71704d3081e57c88d51ec4a37730e526deda3bf9254be6ed",
+          "source_span": {
+            "start_line": 17,
+            "end_line": 25
+          }
+        },
+        "draft_source_ledger": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-SOURCE_LEDGER.md",
+          "sha256": "ae1047485ddde594bbb0aa1a78d7dd6023c6d4a7e7472941ba08afcb72aa9865"
+        },
+        "draft_input_manifest": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/draft-INPUT_MANIFEST.json",
+          "sha256": "85f36ed884321822b50ed2fb6277daacb25e1fdd9ec92fafcef299f2c9733fbe"
+        },
+        "independent_source_review": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/independent-source-review.json",
+          "sha256": "f7c58d6e181c87461294c42901f45899cbc61b0d592575dfd4799ca7eabac067"
+        },
+        "source_license_evidence": {
+          "path": ".local/adaptation/different-accounting-sourceproof-20261115/source-license-evidence.json",
+          "sha256": "9fefcb25a76eb4fc7344c758fb0846c9c1376935c5f69d4609ccbda87f105e0d"
+        },
+        "review_scope": "Static draft source review plus current compiler receipts. Source helper definitions primeSupport and diffTerm retain their actual compiler kind; no new proposition, carrier assumption, or custom axiom is added."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "No production source or boundary changed; exact platform-adaptation arithmetic child refined"
+      }
+    }
+  ],
+  "graph_counts": {
+    "accepted_reductions": 36,
+    "published_children": 83,
+    "dependency_edges": 101,
+    "open_frontier": 17,
+    "direct_closed_children": 41
+  },
+  "parent": "Open",
+  "local_conductor_child": "Open",
+  "comparison": "Open",
+  "canonicalEstimate": "Open",
+  "root": "Open",
+  "new_definitions": [],
+  "new_children": [],
+  "new_reductions": [],
+  "new_dependencies": [],
+  "direct_closed_proof": {
+    "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+    "theorem_id": "d7edb0f4-a7cb-4ab5-8cf1-46eea7d81aa3",
+    "submission_id": "e337cdae-9e9d-4c76-903c-6e53b56ca833",
+    "status": "ACCEPTED",
+    "mathematical_dependencies": [],
+    "classification": "Direct accepted source proof; standard Lean axioms only"
+  },
+  "production_boundary_changed": false,
+  "definition_retention": {
+    "new_published_definitions": [],
+    "hidden_old_ids": [],
+    "reappeared_preexisting_ids": [],
+    "baseline_readbacks_sha256": "596229e922da84a7362b6d47befc81d31914f45a20a8c7a347401ae227d0ce8b",
+    "retention_readbacks_sha256": "22a6dc4dc738201ecbb56ef1671f21c990fe49547ec309cd58f4581bed4f4068"
+  },
+  "platform_submission": "e337cdae-9e9d-4c76-903c-6e53b56ca833"
+}

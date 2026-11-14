@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "passed_semantics": "Mathematical binder/type alignment after applying each supplied corrected_trilingual_statement. This is not a pass for the unmodified original packet: diffTerm has original_trilingual_statement_passed=false. No proof-validity, axiom, compilation, or source-faithfulness verdict is added by this review.",
+  "compiler_evidence": {
+    "graph_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/different-accounting-sourceproof-20261115/decl_graph.jsonl",
+    "graph_sha256": "67ab6d74b55f8bd4e493fc7cbf0a280bbfbf95ac304d2427b832e6b9358fa5d9",
+    "extraction_job_id": "ci-012347-5bfec759",
+    "compiler_type_text_policy": "Each compiler_type is copied byte-for-byte as a decoded string from the graph elaboratedType field, including line breaks and pretty-printer proof elisions; no fresh compiler was run."
+  },
+  "original_packets": [
+    {
+      "path": "blind-readbacks-source.json",
+      "sha256": "00d6e7545a8f2f3b2c8690b7974bd9bb6d78cf7996cd93e7ae115455034ae311"
+    }
+  ],
+  "declarations": [
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.differentIdeal_ne_bot'",
+      "passed": true,
+      "compiler_type": "∀ (F : Type u_1) (L : Type u_2) [inst : Field F] [NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L], differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L) ≠ ⊥",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiDifferentAccounting.lean",
+        "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0"
+      },
+      "original_trilingual_statement_passed": true,
+      "binder_type_review": "The compiler retains explicit F:Type u_1 and L:Type u_2, both Field and NumberField assumptions, and Algebra F L. The two universes are independent. The original trilingual statement accounts for these mathematical assumptions."
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport",
+      "passed": true,
+      "compiler_type": "{K : Type u_1} →\n  [inst : Field K] →\n    [NumberField K] →\n      {I : Ideal (NumberField.RingOfIntegers K)} →\n        I ≠ ⊥ → Finset (IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K))",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiDifferentAccounting.lean",
+        "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0"
+      },
+      "original_trilingual_statement_passed": true,
+      "binder_type_review": "The compiler retains implicit K:Type u_1 at an arbitrary universe, Field K, NumberField K, implicit ideal I, and the explicit nonzero-ideal proof. There is no restriction to the fixed Qbar carrier. The original trilingual definition and its finite-set codomain match these binders."
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.mem_primeSupport",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] {I : Ideal (NumberField.RingOfIntegers K)} (hI : I ≠ ⊥)\n  (P : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K)),\n  P ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport hI ↔ P.asIdeal ∣ I",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiDifferentAccounting.lean",
+        "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0"
+      },
+      "original_trilingual_statement_passed": true,
+      "binder_type_review": "The compiler retains implicit K:Type u_1, Field K, NumberField K, implicit I, explicit hI and P; the original trilingual statement includes these quantifiers and the full iff."
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_eq_finsum",
+      "passed": true,
+      "compiler_type": "∀ {K : Type u_1} [inst : Field K] [inst_1 : NumberField K] {I : Ideal (NumberField.RingOfIntegers K)},\n  I ≠ ⊥ →\n    Real.log ↑(Ideal.absNorm I) =\n      ∑ᶠ (P : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers K)),\n        ↑(multiplicity P.asIdeal I) * Real.log ↑(Ideal.absNorm P.asIdeal)",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiDifferentAccounting.lean",
+        "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0"
+      },
+      "original_trilingual_statement_passed": true,
+      "binder_type_review": "The compiler retains implicit K:Type u_1, Field K, NumberField K, implicit I and the nonzero-ideal hypothesis. The original trilingual statement matches the equality, casts, prime index, and entire-spectrum finsum."
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffTerm",
+      "passed": true,
+      "compiler_type": "(F : Type u_1) →\n  [inst : Field F] →\n    (L : Type u_2) →\n      [inst_1 : Field L] →\n        [NumberField L] → [Algebra F L] → IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers L) → ℝ",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiDifferentAccounting.lean",
+        "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0"
+      },
+      "original_trilingual_statement_passed": false,
+      "binder_type_review": "The compiler drops the section assumption NumberField F while retaining explicit F:Type u_1, Field F, explicit L:Type u_2, Field L, NumberField L, Algebra F L, and the height-one-spectrum argument. The original trilingual statement restricted F to a number field, so all three languages need replacement. The corrected statement uses an arbitrary field F and the generally defined integer ring; no new NumberField F or nonzero-different premise is introduced.",
+      "corrected_trilingual_statement": {
+        "en": "Let $F$ be any field, let $L$ be any number field with its field, characteristic-zero, and finite-dimensional $\\mathbb Q$-vector-space structures, and give $L$ an $F$-algebra structure. The carrier types $F$ and $L$ range independently over arbitrary universe levels. No number-field structure on $F$ is an argument of this definition. Let $\\mathcal O_F$ and $\\mathcal O_L$ be their rings of integers, defined as the integral closures of $\\mathbb Z$ in these fields; use the integer-ring map induced by the given algebra structure. Put $\\mathfrak D=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$, the relative different ideal, and $d=[L:\\mathbb Q]$, the dimension of the full field $L$. For every height-one-spectrum point $P$ of $\\mathcal O_L$, represented by its nonzero prime ideal $\\mathfrak p_P$, define the real number $\\operatorname{diffTerm}(F,L,P)=\\operatorname{multiplicity}(\\mathfrak p_P,\\mathfrak D)\\log N(\\mathfrak p_P)/d$. Here multiplicity is the natural-number ideal multiplicity used by the code, $N(J)=|\\mathcal O_L/J|$ is the absolute ideal norm, and the natural-number multiplicity, norm, and dimension are cast to real numbers for multiplication, the real natural logarithm, and division. This is a noncomputable definition, and zero multiplicity gives a zero term.",
+        "zh_Hans": "设 $F$ 为任意域，$L$ 为任意数域，带有其域结构、特征零结构及作为 $\\mathbb Q$ 上有限维向量空间的结构，并给定 $L$ 的一个 $F$-代数结构。$F,L$ 的载体类型分别处于任意且相互独立的宇宙层级。本定义的参数不包含 $F$ 的数域结构。记 $\\mathcal O_F,\\mathcal O_L$ 为这两个域的整数环，即 $\\mathbb Z$ 在各域中的整闭包，两整数环之间使用由给定代数结构诱导的映射。置相对不同理想 $\\mathfrak D=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$，并令 $d=[L:\\mathbb Q]$ 为完整域 $L$ 的维数。对 $\\mathcal O_L$ 的高度一素谱中的每个点 $P$，以其非零素理想 $\\mathfrak p_P$ 表示，定义实数 $\\operatorname{diffTerm}(F,L,P)=\\operatorname{multiplicity}(\\mathfrak p_P,\\mathfrak D)\\log N(\\mathfrak p_P)/d$。这里重数是代码所用的自然数值理想重数，$N(J)=|\\mathcal O_L/J|$ 为理想的绝对范数；自然数值的重数、范数及维数转为实数，分别用于乘法、实自然对数及除法。这是不可计算定义，重数为零时所得项为零。",
+        "ja": "$F$ を任意の体、$L$ を体構造・標数零構造・有限次元 $\\mathbb Q$-ベクトル空間構造を持つ任意の数体とし、$L$ に $F$-代数構造を与える。$F,L$ の台となる型は、互いに独立した任意の宇宙レベルを動く。この定義の引数には $F$ の数体構造は含まれない。$\\mathcal O_F,\\mathcal O_L$ をそれぞれの体における $\\mathbb Z$ の整閉包として定義される整数環とし、その間には与えられた代数構造から誘導される写像を用いる。相対ディファレント・イデアル（different ideal）を $\\mathfrak D=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$、全体の体 $L$ の次元を $d=[L:\\mathbb Q]$ とする。$\\mathcal O_L$ の高さ一の素スペクトルの各点 $P$ をその非零素イデアル $\\mathfrak p_P$ で表し、実数 $\\operatorname{diffTerm}(F,L,P)=\\operatorname{multiplicity}(\\mathfrak p_P,\\mathfrak D)\\log N(\\mathfrak p_P)/d$ を定義する。ここで重複度はコードが用いる自然数値のイデアル重複度、$N(J)=|\\mathcal O_L/J|$ は絶対イデアルノルムであり、自然数値の重複度・ノルム・次元は実数に移して、それぞれ乗法・実自然対数・除法に用いる。これは非計算的な定義であり、重複度が零なら項は零である。"
+      }
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_eq_sum_filter",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : NumberField F] {L : Type u_2} [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L] (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)),\n  AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal =\n    ∑ P ∈ AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeSupport ⋯ with\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.primeBelow L P = 𝔭,\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffTerm F L P",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiDifferentAccounting.lean",
+        "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0"
+      },
+      "original_trilingual_statement_passed": true,
+      "binder_type_review": "The compiler retains implicit F:Type u_1 and L:Type u_2, Field F, NumberField F, Field L, NumberField L, Algebra F L, and explicit prime p. The original trilingual statement accounts for both number-field hypotheses and the filtered finite sum. The compiler pretty-printer elides the support nonzeroness proof as ⋯; compiler_type preserves that exact text and the unchanged source fixes the proof argument."
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.log_absNorm_differentIdeal_div_eq_finsum",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [NumberField F] (L : Type u_2) [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L],\n  Real.log ↑(Ideal.absNorm (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) /\n      ↑(Module.finrank ℚ L) =\n    ∑ᶠ (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)),\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiDifferentAccounting.lean",
+        "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0"
+      },
+      "original_trilingual_statement_passed": true,
+      "binder_type_review": "The compiler retains implicit F:Type u_1, explicit L:Type u_2, both Field and NumberField assumptions, and Algebra F L. The original trilingual statement accounts for every mathematical hypothesis and the absolute degree of L in both the norm quotient and local contributions."
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib_support_finite",
+      "passed": true,
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [NumberField F] (L : Type u_2) [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L],\n  (Function.support fun (𝔭 : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)) =>\n      AbcAdaptation.Tripod.Fermat.Proper.ConductorExtensionSource.diffContrib L 𝔭.asIdeal).Finite",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_FermatBelyiDifferentAccounting.lean",
+        "sha256": "6b519050aaf974af5da3798db446d3518ca09f92ad3b1895b3d3ff3cab1f7ca0"
+      },
+      "original_trilingual_statement_passed": true,
+      "binder_type_review": "The compiler retains implicit F:Type u_1, explicit L:Type u_2, both Field and NumberField assumptions, and Algebra F L. The original trilingual statement accounts for these hypotheses and identifies support as exactly the nonzero values on the height-one spectrum of the base integer ring."
+    },
+    {
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentAccounting",
+      "passed": true,
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentAccounting",
+      "current_source": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentAccounting.lean",
+        "sha256": "4a0f9fcb5c457c5d71704d3081e57c88d51ec4a37730e526deda3bf9254be6ed"
+      },
+      "original_trilingual_statement_passed": true,
+      "binder_type_review": "The exact compiled type is the closed proposition BelyiActualFieldDifferentAccounting; this theorem has no outer N binder. The original trilingual paragraph expands the internal ∀ {N : ℕ}, M, hRF, φ, x, hgood of that proposition and both letI structures, rather than asserting an additional outer argument. Its model, residue-finiteness, good-value, field-inclusion, finite support, and full-point-field denominator match the current predicate definition."
+    }
+  ]
+}

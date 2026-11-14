@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "blockers": [],
+  "generated_source_preliminary": {
+    "passed": true,
+    "authored": 9,
+    "helper_declarations": 8,
+    "actual_helper_noncomputable_definitions": [
+      "primeSupport",
+      "diffTerm"
+    ],
+    "generated_source_hashes": {
+      ".local/adaptation/different-accounting-sourceproof-20261115/Solution_belyiActualFieldDifferentAccounting.lean": "7ffaa7f14d3bd02555476a1464d05b5b021131fe1e6c2775e1433ff9701d386b",
+      ".local/adaptation/different-accounting-sourceproof-20261115/AuditSolution.lean": "bd09a28adc603e5368dc31142ef0b91bd62cf8f48f8c3d1290ec851fbc2dcfe6"
+    },
+    "full_helper_and_wrapper_scope_preserved": true,
+    "wrapper_only_parser_name_replaced": true,
+    "top_level_solution_exact_original_target": true,
+    "imports_only_existing_Definitions": true,
+    "mathematical_imports": [],
+    "no_new_platform_Definition_or_child": true,
+    "all_authored_consumed_by_target": true,
+    "exact_platform_and_source_type_audit_present": true,
+    "9_current_readback_hash_type_bindings": true,
+    "final_binder_review_pending": false
+  },
+  "tool_static_checks": {
+    "direct_only_API": "Only established verify is AST-extracted; no new node publication path. D1 prevents initial execution until fixed.",
+    "graph": "Only target Open→Proved; reductions/edges/nodes preserved; 36/83/101/18/40→36/83/101/17/41. Existing/direct proof sketches excluded only if actual theorem deps empty.",
+    "Definition_visibility": "Preexisting newly visible Definitions need pre-submission direct GET baseline; symmetric differences get real GET retention; exact original types/code/created_at checked.",
+    "finalizer": "Explicit allowlist, no Git mutation, only three owned Lean files and DB/registry; secret scan before document/registry writes.",
+    "database": "Only first-section NumberField:228 and :256 rows deleted; Conductor:104/BelyiDescent:248 and later sections preserved.",
+    "consumer": "Closed actual accounting target consumed with explicit remaining hLocal in exact canonical route."
+  },
+  "execution": {
+    "compiler_or_CI_calls": false,
+    "API_calls": false,
+    "Git_mutations": false,
+    "main_workspace_edits": false
+  },
+  "pending": [
+    "Private ACCEPTED result, complete after graph, exact finalizer/database and index review."
+  ],
+  "resolved_findings": [
+    {
+      "id": "D1",
+      "file": "delivery.py",
+      "function": "load_verify_protocol",
+      "issue": "context includes globals(), which already contains this module publish function. Therefore assert publish not in context always fails before the actual verify request.",
+      "fix": "Exclude the local publish symbol from the extracted verify context before the assert; preserve verify dependencies.",
+      "status": "Resolved in current main delivery.py: context comprehension excludes local publish; only established verify is injected."
+    }
+  ]
+}
