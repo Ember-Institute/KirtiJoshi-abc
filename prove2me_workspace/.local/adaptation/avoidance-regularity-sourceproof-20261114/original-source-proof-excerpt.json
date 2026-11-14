@@ -1,0 +1,5 @@
+{
+  "source_text": "theorem mem_of_notMem_belyiCusps {φ : K} {P : Place K} (hP : P ∉ belyiCusps φ) :\n    φ ∈ P.1 ∧ φ⁻¹ ∈ P.1 ∧ (1 - φ)⁻¹ ∈ P.1 := by\n  simp only [belyiCusps, Set.mem_setOf_eq, not_or, not_lt, not_not] at hP\n  obtain ⟨hc0, hc1⟩ := hP\n  have hm : φ ∈ P.1 := P.mem_of_ord_nonneg hc0.ge\n  have hm1 : φ - 1 ∈ P.1 := sub_mem hm P.1.one_mem\n  have h1' := P.ord_nonneg_of_mem hm1\n  refine ⟨hm, P.mem_of_ord_nonneg ?_, ?_⟩\n  · rw [Place.ord_inv]; omega\n  · rw [← neg_sub, inv_neg]\n    refine neg_mem (P.mem_of_ord_nonneg ?_)\n    rw [Place.ord_inv]; omega\n\n",
+  "sha256": "e2f79de53a3500e957a3ca8b47cd1cace40bfb41b249384c0885e3634fc27df6",
+  "scope": "Exact originally copied excerpt; full pinned reference remains byte-identical."
+}

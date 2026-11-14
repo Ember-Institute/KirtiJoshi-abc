@@ -1,0 +1,148 @@
+{
+  "purpose": "Mochizuki English original quotation packet for fixed Fermat canonicalDivisorExists and its six finite-support helpers. Parent context only; exact formal proof attribution separately recorded.",
+  "quotations": [
+    {
+      "author": "Shinichi Mochizuki",
+      "title": "Noncritical Belyi Maps",
+      "document_date": "May 2004",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Noncritical%20Belyi%20Maps.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Noncritical Belyi Maps.pdf",
+      "pdf_sha256": "d59b8bf5bbed7fea124345330ad81df284747457c03d7cb07baa0f4ebd38ce2c",
+      "printed_page": 6,
+      "pdf_page": 6,
+      "visual_check": "noncritical-p6.png; printed header 6 and formula typography checked this audit",
+      "quotation_convention": "Author wording retained; PDF line breaks and ligatures normalized, math transcribed as LaTeX; overbars visually checked.",
+      "id": "NBM-T25-P6-CANONICAL-CONTEXT",
+      "location": "Theorem 2.5, proof, first paragraph",
+      "exact_quotation": "Write D \\overset{\\mathrm{def}}{=} \\sum_{t\\in T}[t] for the effective divisor on X obtained by taking the formal sum of the points in T, each with multiplicity one; denote the associated line bundle \\mathcal{O}_X(D) by \\mathcal{L} and the canonical bundle of X by \\omega_X.",
+      "source_paragraph": "Proof. Since X(\\overline{\\mathbb{Q}}) is infinite, we may always adjoin to T extra points of X(\\overline{\\mathbb{Q}}) that do not lie in S; in particular, we may assume, without loss of generality, that T has cardinality \\geq 2g_X+1, where g_X is the genus of X. Write D \\overset{\\mathrm{def}}{=} \\sum_{t\\in T}[t] for the effective divisor on X obtained by taking the formal sum of the points in T, each with multiplicity one; denote the associated line bundle \\mathcal{O}_X(D) by \\mathcal{L} and the canonical bundle of X by \\omega_X. Also, we shall write s_0 \\in \\Gamma(X,\\mathcal{L}) for the section [uniquely determined up to a \\overline{\\mathbb{Q}}^{\\times}-multiple] whose zero divisor is D. Thus, the degree \\deg(\\mathcal{L}) of \\mathcal{L} is \\geq 2g_X+1\\geq 1. In particular, if x\\in X(\\overline{\\mathbb{Q}}), then \\deg(\\omega_X\\otimes\\mathcal{L}^{-1}(x))\\leq(2g_X-2)-(2g_X+1)+1=-2 so \\Gamma(X,\\omega_X\\otimes\\mathcal{L}^{-1}(x))=0. Since, by Serre duality, \\Gamma(X,\\omega_X\\otimes\\mathcal{L}^{-1}(x)) is dual to H^1(X,\\mathcal{L}(-x)), we thus conclude that H^1(X,\\mathcal{L}(-x))=0. Now if we consider the long exact cohomology sequence associated to the exact sequence of coherent sheaves on X 0\\to\\mathcal{L}(-x)\\to\\mathcal{L}\\to\\mathcal{L}\\otimes k(x)\\to 0 [where k(x) is the residue field of X at x] we obtain an exact sequence \\ldots\\to\\Gamma(X,\\mathcal{L})\\to\\mathcal{L}\\otimes k(x)\\to H^1(X,\\mathcal{L}(-x))\\to\\ldots — i.e., we have a surjection \\Gamma(X,\\mathcal{L})\\twoheadrightarrow\\mathcal{L}\\otimes k(x). Since \\overline{\\mathbb{Q}} is infinite, it thus follows that there exists an s_1\\in\\Gamma(X,\\mathcal{L}) such that s_1(t)\\ne0 for all t\\in T. Thus, the linear series determined by the sections s_0, s_1 of \\mathcal{L} has no basepoints, hence determines a finite morphism \\psi:X\\to\\mathbb{P}^1_{\\overline{\\mathbb{Q}}} such that the pull-back by \\psi of the unique [up to isomorphism] line bundle of degree 1 on \\mathbb{P}^1_{\\overline{\\mathbb{Q}}} is isomorphic to \\mathcal{L}; \\psi maps every t\\in T to the point “0” of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}}. Moreover, since every point of the support of D has multiplicity one in D, \\psi is unramified over the point “0” of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}}; since no point of S lies in the support of D, this point “0” of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}} does not lie in the set \\psi(S).",
+      "supports": "A real divisor D on the smooth proper curve, its associated line bundle, and canonical bundle omega_X appear in the parent geometric proof.",
+      "does_not_establish": "No formula for the divisor of du, local e-1 or -e-1 coefficient, finite support of that coefficient function, or Finsupp construction is stated here."
+    },
+    {
+      "author": "Shinichi Mochizuki",
+      "title": "Noncritical Belyi Maps",
+      "document_date": "May 2004",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Noncritical%20Belyi%20Maps.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Noncritical Belyi Maps.pdf",
+      "pdf_sha256": "d59b8bf5bbed7fea124345330ad81df284747457c03d7cb07baa0f4ebd38ce2c",
+      "printed_page": 6,
+      "pdf_page": 6,
+      "visual_check": "noncritical-p6.png; printed header 6 and formula typography checked this audit",
+      "quotation_convention": "Author wording retained; PDF line breaks and ligatures normalized, math transcribed as LaTeX; overbars visually checked.",
+      "id": "NBM-T25-P6-FINITE-MORPHISM",
+      "location": "Theorem 2.5, proof, first paragraph",
+      "exact_quotation": "Thus, the linear series determined by the sections s_0, s_1 of \\mathcal{L} has no basepoints, hence determines a finite morphism \\psi:X\\to\\mathbb{P}^1_{\\overline{\\mathbb{Q}}}",
+      "source_paragraph": "Proof. Since X(\\overline{\\mathbb{Q}}) is infinite, we may always adjoin to T extra points of X(\\overline{\\mathbb{Q}}) that do not lie in S; in particular, we may assume, without loss of generality, that T has cardinality \\geq 2g_X+1, where g_X is the genus of X. Write D \\overset{\\mathrm{def}}{=} \\sum_{t\\in T}[t] for the effective divisor on X obtained by taking the formal sum of the points in T, each with multiplicity one; denote the associated line bundle \\mathcal{O}_X(D) by \\mathcal{L} and the canonical bundle of X by \\omega_X. Also, we shall write s_0 \\in \\Gamma(X,\\mathcal{L}) for the section [uniquely determined up to a \\overline{\\mathbb{Q}}^{\\times}-multiple] whose zero divisor is D. Thus, the degree \\deg(\\mathcal{L}) of \\mathcal{L} is \\geq 2g_X+1\\geq 1. In particular, if x\\in X(\\overline{\\mathbb{Q}}), then \\deg(\\omega_X\\otimes\\mathcal{L}^{-1}(x))\\leq(2g_X-2)-(2g_X+1)+1=-2 so \\Gamma(X,\\omega_X\\otimes\\mathcal{L}^{-1}(x))=0. Since, by Serre duality, \\Gamma(X,\\omega_X\\otimes\\mathcal{L}^{-1}(x)) is dual to H^1(X,\\mathcal{L}(-x)), we thus conclude that H^1(X,\\mathcal{L}(-x))=0. Now if we consider the long exact cohomology sequence associated to the exact sequence of coherent sheaves on X 0\\to\\mathcal{L}(-x)\\to\\mathcal{L}\\to\\mathcal{L}\\otimes k(x)\\to 0 [where k(x) is the residue field of X at x] we obtain an exact sequence \\ldots\\to\\Gamma(X,\\mathcal{L})\\to\\mathcal{L}\\otimes k(x)\\to H^1(X,\\mathcal{L}(-x))\\to\\ldots — i.e., we have a surjection \\Gamma(X,\\mathcal{L})\\twoheadrightarrow\\mathcal{L}\\otimes k(x). Since \\overline{\\mathbb{Q}} is infinite, it thus follows that there exists an s_1\\in\\Gamma(X,\\mathcal{L}) such that s_1(t)\\ne0 for all t\\in T. Thus, the linear series determined by the sections s_0, s_1 of \\mathcal{L} has no basepoints, hence determines a finite morphism \\psi:X\\to\\mathbb{P}^1_{\\overline{\\mathbb{Q}}} such that the pull-back by \\psi of the unique [up to isomorphism] line bundle of degree 1 on \\mathbb{P}^1_{\\overline{\\mathbb{Q}}} is isomorphic to \\mathcal{L}; \\psi maps every t\\in T to the point “0” of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}}. Moreover, since every point of the support of D has multiplicity one in D, \\psi is unramified over the point “0” of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}}; since no point of S lies in the support of D, this point “0” of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}} does not lie in the set \\psi(S).",
+      "supports": "Parent construction of an actual finite morphism from the divisor linear series.",
+      "does_not_establish": "This is not a direct finiteness-of-all-ramified-valuative-places theorem."
+    },
+    {
+      "author": "Shinichi Mochizuki",
+      "title": "Noncritical Belyi Maps",
+      "document_date": "May 2004",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Noncritical%20Belyi%20Maps.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Noncritical Belyi Maps.pdf",
+      "pdf_sha256": "d59b8bf5bbed7fea124345330ad81df284747457c03d7cb07baa0f4ebd38ce2c",
+      "printed_page": 6,
+      "pdf_page": 6,
+      "visual_check": "noncritical-p6.png; printed header 6 and formula typography checked this audit",
+      "quotation_convention": "Author wording retained; PDF line breaks and ligatures normalized, math transcribed as LaTeX; overbars visually checked.",
+      "id": "NBM-T25-P6-BRANCH-CONTEXT",
+      "location": "Theorem 2.5, proof, paragraph beginning Thus, in summary",
+      "exact_quotation": "Thus, in summary, by replacing X by \\mathbb{P}^1_{\\overline{\\mathbb{Q}}}, T by the point “0” of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}}, and S by the union of \\psi(S) and the points of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}} over which \\psi ramifies, we conclude that we may reduce to the case X=\\mathbb{P}^1_{\\overline{\\mathbb{Q}}}, T=\\{\\beta\\}, for some \\beta\\in\\mathbb{P}^1(\\overline{\\mathbb{Q}})\\backslash\\{\\infty\\}.",
+      "source_paragraph": "Thus, in summary, by replacing X by \\mathbb{P}^1_{\\overline{\\mathbb{Q}}}, T by the point “0” of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}}, and S by the union of \\psi(S) and the points of \\mathbb{P}^1_{\\overline{\\mathbb{Q}}} over which \\psi ramifies, we conclude that we may reduce to the case X=\\mathbb{P}^1_{\\overline{\\mathbb{Q}}}, T=\\{\\beta\\}, for some \\beta\\in\\mathbb{P}^1(\\overline{\\mathbb{Q}})\\backslash\\{\\infty\\}. Next, by applying Lemma 2.4, one reduces to the case X=\\mathbb{P}^1_{\\overline{\\mathbb{Q}}}, S\\subseteq\\mathbb{P}^1(\\mathbb{Q}), T=\\{\\beta\\}, for some \\beta\\in\\mathbb{P}^1(\\mathbb{Q})\\backslash\\{\\infty\\}.",
+      "supports": "The parent Belyi proof explicitly uses the branch values of the same finite morphism.",
+      "does_not_establish": "The quoted sentence uses branch values in a reduction; it does not separately state or prove the local formal theorem {P | 1 < ramIdx M hDVR u P}.Finite."
+    },
+    {
+      "id": "GENELL-T21-P11-CANONICAL-CONTEXT",
+      "author": "Shinichi Mochizuki",
+      "title": "Arithmetic Elliptic Curves in General Position",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Arithmetic Elliptic Curves in General Position.pdf",
+      "pdf_sha256": "b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768",
+      "printed_page": 11,
+      "pdf_page": 11,
+      "location": "Theorem 2.1 (i)",
+      "exact_quotation": "Write \\omega_X for the canonical sheaf on X. Suppose that U_X is a hyperbolic curve — i.e., that the degree of the line bundle \\omega_X(D) is positive.",
+      "source_paragraph": "Theorem 2.1.    (Compactly Bounded Subsets and the ABC Conjecture)\nLet Σ be a ﬁnite set of prime numbers.  Then in the terminology of §1 [cf., espe-\ncially, Deﬁnitions 1.2, 1.5; Example 1.3; Remarks 1.4.1, 1.5.1], the following two\nstatements are equivalent:\n\n     (i) (Eﬀective Mordell/ABC/Vojta Conjecture) Let X be a smooth, proper,\ngeometrically connected curve  over a  number  ﬁeld;  D  ⊆  X  a  reduced  divisor;\nUX   def=  X\\D;  d a positive integer;  ϵ ∈  R>0 a positive real number.  Write ωX\nfor the canonical sheaf on X. Suppose that UX is a hyperbolic curve — i.e., that\nthe degree of the line bundle ωX(D) is positive. Then the inequality of BD-classes\nof functions\n                        htωX(D)  ≲  (1 + ϵ)(log-diﬀX + log-condD)\n\nholds on UX(Q)≤d.\n\n     (ii) (ABC Conjecture for Σ-Supported Compactly Bounded Subsets)\nLet P  def=  P1Q be the projective line over  Q; C ⊆ P  the divisor consisting of the\nthree points “0”, “1”, and “∞”;  UP            def=  P\\C;  d a positive integer;  ϵ ∈  R>0 a\npositive real number; KV ⊆ UP(Q) a compactly bounded subset [i.e., regarded\nas a subset of P(Q) — cf. Example 1.3, (ii)] whose support contains Σ. Write\nωP for the canonical sheaf on P. Then the inequality of BD-classes of functions\n\n                        htωP(C)  ≲  (1 + ϵ)(log-diﬀP + log-condC)\n\nholds on KV ⋂ UP(Q)≤d.",
+      "supports": "Downstream parent context: canonical sheaf in the height inequality. This is an optional secondary citation.",
+      "does_not_establish": "It neither constructs the canonical divisor from the actual Fermat coordinate u nor proves its finite support.",
+      "visual_check": "genell-p11.png; printed header 11 checked this audit",
+      "quotation_convention": "Author wording retained; PDF line breaks and ligatures normalized; math transcribed as LaTeX."
+    }
+  ],
+  "primary_recommendation": "NBM-T25-P6-CANONICAL-CONTEXT, optionally NBM-T25-P6-BRANCH-CONTEXT. GenEll is only secondary downstream canonical-sheaf context.",
+  "formal_source": {
+    "revision": "9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8",
+    "files": [
+      {
+        "file": "Belyi/CurveField/Canonical.lean",
+        "sha256": "51f57e279622160feb96400d06cb630e2a6acb10ac954363f6fa09cc22064f5b"
+      },
+      {
+        "file": "Belyi/CurveField/NoncriticalFinite.lean",
+        "sha256": "97605e681191f8a923c7de80df284e327550f708a884b5deb135e469b6a2bbf8"
+      },
+      {
+        "file": "Belyi/CurveField/RamIdx.lean",
+        "sha256": "14ad110ef89ced20c49856589f6c586bb93a7fa6ec7bfb9eb606ba7b023cd4f6"
+      }
+    ],
+    "exact_source_spans": [
+      "Canonical.lean:44-58 finite_setOf_ord_derivAlong_ne_zero",
+      "Canonical.lean:65-78 canonicalDiv construction and local coefficient formulas",
+      "NoncriticalFinite.lean:98 exists_derivAlong_notMem",
+      "NoncriticalFinite.lean:139 finite_setOf_derivAlong_notMem",
+      "NoncriticalFinite.lean:182 finite_setOf_one_lt_ramIdx",
+      "RamIdx.lean:308 finite_setOf_one_lt_ramIdx, parallel source route"
+    ],
+    "local_mapping": [
+      "canonicalCoordinateCoefficient: exact existing parent contract with e-1 in O_P, -e-1 at a pole",
+      "canonicalCoordinateCoefficient_finiteSupport: nonzero support lies in actual poles union actual ramification; positivity gives e=1 at other places",
+      "coordinateCanonicalDivisor: Finsupp.ofSupportFinite on that exact coefficient function",
+      "coordinateCanonicalDivisor_apply: definitional coefficient equality",
+      "coordinateCanonicalData: exact CanonicalDivisorData assembly",
+      "canonicalDivisorExists_of_finiteCoordinateRamification: compose the actual finite-ramification child; existing noncriticalRamificationFinite specialized at u already supplies it"
+    ],
+    "attribution_limit": "These local coefficient and finite-support/Finsupp details are formal-source auxiliary results adapted from pinned Belyi, not quoted Mochizuki theorems."
+  },
+  "search_scope": {
+    "pdfs": [
+      {
+        "file": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Noncritical Belyi Maps.pdf",
+        "sha256": "d59b8bf5bbed7fea124345330ad81df284747457c03d7cb07baa0f4ebd38ce2c",
+        "pages": 9
+      },
+      {
+        "file": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Arithmetic Elliptic Curves in General Position.pdf",
+        "sha256": "b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768",
+        "pages": 25
+      }
+    ],
+    "method": "Extracted all 9 Noncritical pages and all 25 GenEll pages with existing pypdf under /tmp; checked canonical/differential/ramification contexts; visually checked Noncritical p.6 and GenEll p.11.",
+    "finding": "No matching explicit canonical-coefficient finite-support theorem was located in these two papers. Noncritical §1 is Introduction and Belyi-map definition, not a regular-differential/divisor section. The strong matching original passage is parent context in Theorem 2.5 proof, p.6.",
+    "negative_claim_limit": "This is a finding about these inspected documents and matching passages, not a claim that no such theorem occurs anywhere in Mochizuki literature."
+  },
+  "provenance": {
+    "reused_quotation_record": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-noncritical-p1-20261114/mochizuki-source-quotations.json",
+    "reused_quotation_record_sha256": "0be32ee75d02bace8a2e2ab026a6fed33c5398749c79145b2922be75ebd5c059",
+    "reused_official_identity_receipt": {
+      "url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Noncritical%20Belyi%20Maps.pdf",
+      "final_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Noncritical%20Belyi%20Maps.pdf",
+      "status": 200,
+      "bytes": 114455,
+      "sha256": "d59b8bf5bbed7fea124345330ad81df284747457c03d7cb07baa0f4ebd38ce2c"
+    },
+    "official_identity_this_turn": "No new download; current local PDF hash matches existing official-file identity receipt.",
+    "genell_record": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/sources/Mochizuki_GenEll_Theorem2.1.passages.json",
+    "genell_record_sha256": "f198f9bc6cd8c33b0fc95a815aca9bb5d2b4c6fbdbcc6dc98c0603a0e5e6493b",
+    "source_pdf_writes": false,
+    "compiler_called": false,
+    "mcp_ci_called": false,
+    "api_called": false,
+    "git_write": false,
+    "main_workspace_write": false
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "task": "Independent blind readback of the single avoidanceRegularity theorem",
+    "requested_model": "gpt-6.1-sol",
+    "actual_model": null,
+    "actual_model_note": "The backend model identifier is not exposed to this child session; the requested model is not asserted to be the actual model.",
+    "original_readback_language": "en",
+    "translation_languages": [
+      "zh_Hans",
+      "ja"
+    ],
+    "translation_provenance": "The same independent reviewer translated the fixed English readback and checked all three versions against the permitted formal definitions. The translations are not separate independent audits.",
+    "declaration_count": 1,
+    "method": "Static source reading only; no Lean, MCP-CI, API calls, compilation, Git writes, or main-workspace edits.",
+    "excluded_materials": "No README, source-consumer manifest, research paper, reference proof, or other readback was consulted. Source comments were not used as evidence for the mathematical statement.",
+    "inputs": [
+      {
+        "path": "/tmp/p2m-place-structure-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_avoidanceRegularity.lean",
+        "sha256": "5747db3eec7ff3d95ba9758b32314f9f667359870f4017ba66f1a2788627a429"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean",
+        "sha256": "bfceaae185fc536e913ea8772442f2030a780be865115a6bfbf10ccafa2df048"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldResidue.lean",
+        "sha256": "c4511637802e538a108fa11a8ab4e3af6112c038f01b3fe61ec4f76a63518b95"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+        "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatCurveFieldPlace.lean",
+        "sha256": "187c2365d299b66bc2b09d3680e4fbc402b77dd6db9c8a418986a190c70a0b9b"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/docs/三语自然语言读回原则.md",
+        "sha256": "180c67d086707376e296b6e66a0abb54657454e67a700e2fa4444a6d8516c400"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/docs/三语术语名词关键对照.md",
+        "sha256": "c359fefad83c56790fa3c4302eb9306e43c7036c82cab249b9dbf3e3860f8e18"
+      }
+    ],
+    "terminology_notes": {
+      "ja": "Standard mathematical terms 素点, 付値部分環, 離散付値環, 位数, 中間体 are used by ordinary mathematical correspondence, without claiming verification in the project’s Japanese paper references.",
+      "zh_Hans": "No pending TERM-001–TERM-006 terminology is needed by this declaration."
+    }
+  },
+  "declarations": [
+    {
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.avoidanceRegularity",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_avoidanceRegularity",
+      "path": "/tmp/p2m-place-structure-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_avoidanceRegularity.lean",
+      "sha256": "5747db3eec7ff3d95ba9758b32314f9f667359870f4017ba66f1a2788627a429",
+      "source_span": {
+        "start_line": 17,
+        "start_column": 1,
+        "end_line": 31,
+        "end_column": 10,
+        "signature_start_line": 17,
+        "signature_end_line": 18
+      },
+      "static_signature": "theorem avoidanceRegularity {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) : AvoidanceRegularity M hDVR",
+      "static_section_context": {
+        "namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "set_options": {
+          "autoImplicit": false
+        },
+        "imports": [
+          "Definitions.Def_FermatLocalBelyi",
+          "Definitions.Def_FermatCurveFieldResidue"
+        ],
+        "section_variables": [],
+        "implicit_parameters": [
+          "N : ℕ"
+        ],
+        "explicit_parameters": [
+          "M : Model N",
+          "hDVR : PlacesDiscrete M"
+        ],
+        "additional_typeclass_hypotheses": [],
+        "proof_local_instance": "IsCurveField M.K := M.isCurveField is introduced inside the proof; it is not a new theorem hypothesis.",
+        "expanded_conclusion": "∀ (φ : M.K) (P : Place M.K), P ∉ cusps M hDVR φ → φ ∈ P.1 ∧ φ⁻¹ ∈ P.1 ∧ (φ - 1)⁻¹ ∈ P.1",
+        "expanded_cusps": "{P | ord M hDVR P φ ≠ 0 ∨ 0 < ord M hDVR P (φ - 1)}"
+      },
+      "statements": {
+        "en": "Let \\(N\\in\\mathbb N\\), and let \\(M\\) be a model with the following data. Its field \\(K=M.K\\) is an intermediate field between \\(\\mathbb Q\\) and a fixed algebraic closure of \\(\\mathbb Q(t)\\). It has elements \\(u,v\\in K\\), with \\(u\\) transcendental over \\(\\mathbb Q\\), such that \\(u^N+v^N=1\\), \\(\\mathbb Q(u,v)=K\\), and \\(K\\) is finite-dimensional over \\(\\mathbb Q(u)\\), of dimension \\(N\\). Assume \\(h_{\\mathrm{DVR}}\\): every place of \\(K\\) has a discrete valuation ring as its valuation subring. Here a place \\(P\\) is any valuation subring \\(O_P\\subsetneq K\\) containing every rational constant. The quantifier ranges over this entire proper valuative carrier, including places at infinity; it is not restricted to an affine chart.\n\nFor \\(f\\in K\\), write \\(\\operatorname{ord}_P(f)\\in\\mathbb Z\\) for the normalized discrete order constructed from \\(h_{\\mathrm{DVR}}\\), with the formal extension \\(\\operatorname{ord}_P(0)=0\\). For every \\(\\varphi\\in K\\), define\n\\[\nC(\\varphi)=\\{P\\mid \\operatorname{ord}_P(\\varphi)\\ne0\\ \\lor\\ 0<\\operatorname{ord}_P(\\varphi-1)\\}.\n\\]\nThen, for every \\(\\varphi\\in K\\) and every such place \\(P\\),\n\\[\nP\\notin C(\\varphi)\\ \\Longrightarrow\\\n\\varphi\\in O_P\\ \\land\\ \\varphi^{-1}\\in O_P\\ \\land\\ (\\varphi-1)^{-1}\\in O_P.\n\\]\nThe antecedent means exactly \\(\\operatorname{ord}_P(\\varphi)=0\\) and \\(\\operatorname{ord}_P(\\varphi-1)\\le0\\). There is no further assumption that \\(\\varphi\\ne0\\), that \\(\\varphi\\ne1\\), or that \\(\\varphi\\) satisfies the Belyi predicate. In particular, the formal zero-order convention makes \\(C(0)=C(1)=\\varnothing\\): the conclusion still applies to these two constant values. In the field, \\(0^{-1}=0\\), so the three asserted memberships become respectively those of \\(0,0,-1\\) when \\(\\varphi=0\\), and of \\(1,1,0\\) when \\(\\varphi=1\\). Thus these cases assert membership in the valuation ring and do not exclude zero by interpreting the displayed inverses as partial operations.",
+        "zh_Hans": "设 \\(N\\in\\mathbb N\\)，\\(M\\) 是带有以下数据的模型。其域 \\(K=M.K\\) 是 \\(\\mathbb Q\\) 与 \\(\\mathbb Q(t)\\) 的一个固定代数闭包之间的中间域。模型给出 \\(u,v\\in K\\)，其中 \\(u\\) 在 \\(\\mathbb Q\\) 上超越，且 \\(u^N+v^N=1\\)、\\(\\mathbb Q(u,v)=K\\)；此外，\\(K\\) 在 \\(\\mathbb Q(u)\\) 上有限维，维数为 \\(N\\)。假设 \\(h_{\\mathrm{DVR}}\\)：\\(K\\) 的每个赋值处的赋值子环都是离散赋值环。这里，赋值处 \\(P\\) 指任意包含所有有理常数的真赋值子环 \\(O_P\\subsetneq K\\)。量词遍历这一完整的真赋值子环载体，包括无穷远处，并未限制在某个仿射图上。\n\n对 \\(f\\in K\\)，以 \\(\\operatorname{ord}_P(f)\\in\\mathbb Z\\) 表示由 \\(h_{\\mathrm{DVR}}\\) 构造的归一化离散阶，并按形式定义令 \\(\\operatorname{ord}_P(0)=0\\)。对每个 \\(\\varphi\\in K\\)，定义尖点集\n\\[\nC(\\varphi)=\\{P\\mid \\operatorname{ord}_P(\\varphi)\\ne0\\ \\lor\\ 0<\\operatorname{ord}_P(\\varphi-1)\\}.\n\\]\n那么，对每个 \\(\\varphi\\in K\\) 及每个上述赋值处 \\(P\\)，都有\n\\[\nP\\notin C(\\varphi)\\ \\Longrightarrow\\\n\\varphi\\in O_P\\ \\land\\ \\varphi^{-1}\\in O_P\\ \\land\\ (\\varphi-1)^{-1}\\in O_P.\n\\]\n此前提恰好是 \\(\\operatorname{ord}_P(\\varphi)=0\\) 且 \\(\\operatorname{ord}_P(\\varphi-1)\\le0\\)。声明没有另加 \\(\\varphi\\ne0\\)、\\(\\varphi\\ne1\\) 或 \\(\\varphi\\) 满足 Belyi 谓词的前提。特别地，零的阶取零这一形式约定使 \\(C(0)=C(1)=\\varnothing\\)，所以结论也适用于这两个常数值。域中约定 \\(0^{-1}=0\\)，故当 \\(\\varphi=0\\) 时，三个成员关系分别断言 \\(0,0,-1\\) 属于赋值环；当 \\(\\varphi=1\\) 时，分别断言 \\(1,1,0\\) 属于赋值环。这些情形只断言赋值环中的成员关系，不能把所写逆元解释为部分运算，从而排除零。",
+        "ja": "\\(N\\in\\mathbb N\\) とし、\\(M\\) を次のデータを持つモデルとする。その体 \\(K=M.K\\) は、\\(\\mathbb Q\\) と \\(\\mathbb Q(t)\\) の固定された代数閉包との中間体である。\\(M\\) は \\(u,v\\in K\\) を備え、\\(u\\) は \\(\\mathbb Q\\) 上超越的であり、\\(u^N+v^N=1\\) および \\(\\mathbb Q(u,v)=K\\) を満たす。また、\\(K\\) は \\(\\mathbb Q(u)\\) 上有限次元で、その次元は \\(N\\) である。\\(h_{\\mathrm{DVR}}\\) として、\\(K\\) の各素点の付値部分環が離散付値環であることを仮定する。ここで素点 \\(P\\) とは、すべての有理数定数を含む任意の真の付値部分環 \\(O_P\\subsetneq K\\) である。量化の範囲は、無限遠の素点を含むこの真の付値部分環全体であり、特定のアフィン・チャートに制限されない。\n\n\\(f\\in K\\) に対し、\\(h_{\\mathrm{DVR}}\\) から構成される正規化された離散位数を \\(\\operatorname{ord}_P(f)\\in\\mathbb Z\\) と書く。形式的な拡張として \\(\\operatorname{ord}_P(0)=0\\) と定める。各 \\(\\varphi\\in K\\) に対し、尖点集合を\n\\[\nC(\\varphi)=\\{P\\mid \\operatorname{ord}_P(\\varphi)\\ne0\\ \\lor\\ 0<\\operatorname{ord}_P(\\varphi-1)\\}\n\\]\nと定める。このとき、任意の \\(\\varphi\\in K\\) および上記の任意の素点 \\(P\\) について、\n\\[\nP\\notin C(\\varphi)\\ \\Longrightarrow\\\n\\varphi\\in O_P\\ \\land\\ \\varphi^{-1}\\in O_P\\ \\land\\ (\\varphi-1)^{-1}\\in O_P\n\\]\nが成り立つ。前件は、ちょうど \\(\\operatorname{ord}_P(\\varphi)=0\\) かつ \\(\\operatorname{ord}_P(\\varphi-1)\\le0\\) を意味する。\\(\\varphi\\ne0\\)、\\(\\varphi\\ne1\\)、または \\(\\varphi\\) が Belyi 述語を満たすという追加の仮定はない。特に、零の位数を零とする形式上の規約により \\(C(0)=C(1)=\\varnothing\\) となるため、結論はこの二つの定数値にも適用される。体における規約は \\(0^{-1}=0\\) であるから、\\(\\varphi=0\\) の場合、三つの所属関係はそれぞれ \\(0,0,-1\\) が付値環に属することを主張し、\\(\\varphi=1\\) の場合は \\(1,1,0\\) が属することを主張する。これらは付値環への所属に関する主張であり、表示された逆元を部分演算と解釈して零を除外するものではない。"
+      },
+      "quotations": null,
+      "proof_notes": {
+        "status": "The supplied file contains an explicit tactic proof with no visible sorry or axiom declaration. This static readback does not certify elaboration or the axiom closure.",
+        "argument": "After replacing the model order by Place.ord, non-membership in cusps gives ord_P(φ) = 0 and ord_P(φ − 1) ≤ 0. The first equality gives φ ∈ O_P. Subtracting 1 gives φ − 1 ∈ O_P, hence ord_P(φ − 1) ≥ 0. The inverse-order identity then gives nonnegative orders for both displayed inverses, and hence their membership in O_P.",
+        "scope": "The theorem takes only N, M, and hDVR. It does not require ResiduesFinite, an affine identification, cusp finiteness, or IsBelyi. ResiduesFinite, where defined in a permitted dependency, means that each residue field is finite-dimensional over ℚ; it does not mean a finite underlying set.",
+        "boundary": "The formal integer order assigns 0 to the zero field element. At φ = 0 or φ = 1 the cusp set is empty and field inversion is total with 0⁻¹ = 0. Accordingly, regularity in this declaration means the three specified valuation-ring memberships, including these degenerate values.",
+        "validation": "JSON shape, unique declaration count, file hash, and source span were checked with Python only. No compilation or assumption audit was run."
+      }
+    }
+  ]
+}

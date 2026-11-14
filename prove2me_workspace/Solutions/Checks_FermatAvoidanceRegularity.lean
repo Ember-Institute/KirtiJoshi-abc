@@ -1,0 +1,6 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_avoidanceRegularity
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+#check avoidanceRegularity
+#print axioms avoidanceRegularity

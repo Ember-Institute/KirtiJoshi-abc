@@ -1,0 +1,107 @@
+{
+  "verdict": "PASS_STATIC_ORIGINAL_AVOIDANCE_REGULARITY_SOURCE_AND_BLIND_READBACK",
+  "scope": "Read-only static review. No compilation, Lean, MCP-CI, API, Git commands or main-workspace writes. Only this report is written under /tmp. Delivery scripts and compiler/platform evidence are not yet supplied.",
+  "blocking_findings": [],
+  "source_hashes": {
+    "draft": "5747db3eec7ff3d95ba9758b32314f9f667359870f4017ba66f1a2788627a429",
+    "original_target": "5747db3eec7ff3d95ba9758b32314f9f667359870f4017ba66f1a2788627a429",
+    "reference_Genl_BelyiDescent": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+    "blind_readback": "c52d718a55f300f7c0513bac79b370c0411eae8d4432f0172f19f86e268cf46e"
+  },
+  "exact_original_target": {
+    "signature_preserved_verbatim": true,
+    "signature": "theorem avoidanceRegularity {N : ℕ} (M : Model N) (hDVR : PlacesDiscrete M) :\n    AvoidanceRegularity M hDVR",
+    "binders": [
+      "{N : ℕ}",
+      "M : Model N",
+      "hDVR : PlacesDiscrete M"
+    ],
+    "expanded_conclusion": "∀ (φ : M.K) (P : Place M.K), P ∉ cusps M hDVR φ → φ ∈ P.1 ∧ φ⁻¹ ∈ P.1 ∧ (φ - 1)⁻¹ ∈ P.1",
+    "all_proper_places_including_infinity": true,
+    "no_affine_chart_restriction": true,
+    "no_extra_hypotheses": [
+      "IsBelyi",
+      "Transcendental φ",
+      "φ ≠ 0",
+      "φ ≠ 1",
+      "ResiduesFinite",
+      "cusp finiteness"
+    ],
+    "local_IsCurveField_instance": "Derived from M.isCurveField inside proof; not a new theorem premise."
+  },
+  "boundary_review": {
+    "actual_cusp_set": "{P | ord M hDVR P φ ≠ 0 ∨ 0 < ord M hDVR P (φ - 1)}",
+    "avoidance_exactly": [
+      "ord_P(φ) = 0",
+      "ord_P(φ - 1) ≤ 0"
+    ],
+    "proof_chain": [
+      "ord_eq_placeOrd is rfl for the actual Model/PlacesDiscrete normalization.",
+      "ord_P(φ)=0 gives φ ∈ O_P.",
+      "Subring subtraction gives φ−1 ∈ O_P, hence ord_P(φ−1) ≥ 0.",
+      "Combining the two bounds gives ord_P(φ−1)=0.",
+      "The total inverse-order theorem gives nonnegative order for both inverses; mem_of_ord_nonneg gives both required memberships."
+    ],
+    "junk_order_zero": 0,
+    "field_inverse_zero": 0,
+    "phi_zero": {
+      "cusp_set": "empty",
+      "memberships": [
+        "0 ∈ O_P",
+        "0 ∈ O_P",
+        "−1 ∈ O_P"
+      ]
+    },
+    "phi_one": {
+      "cusp_set": "empty",
+      "memberships": [
+        "1 ∈ O_P",
+        "1 ∈ O_P",
+        "0 ∈ O_P"
+      ]
+    },
+    "no_nonzero_condition_in_inverse_order_identity": true,
+    "regularity_means_membership_only_not_nonzero_units": true
+  },
+  "source_fidelity": {
+    "reference_repository": "Genl",
+    "commit": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+    "path": "Genl/Curves/BelyiDescent.lean",
+    "lines": "127–139",
+    "original_third_function": "(1 - φ)⁻¹",
+    "local_third_function": "(φ - 1)⁻¹",
+    "adaptation_legal": true,
+    "reason": "The source first proves regularity of (φ−1)⁻¹, then applies (1−φ)⁻¹ = −(φ−1)⁻¹ and closure under negation. The local consumer requests the intermediate expression directly, so removing only the final negation conversion preserves the argument. This identity also holds at φ=1 because field inversion is total.",
+    "copyright_and_Apache_2_notice_present": true
+  },
+  "actual_consumer": {
+    "path": "Definitions/Def_FermatLocalBelyiComposition.lean",
+    "line": 33,
+    "declaration": "AbcAdaptation.Tripod.Fermat.Proper.boundedBelyiImages_of_children",
+    "call": "hT φ hφ0 hφ1 (fun P hP => hRegular φ P (hφT P hP))",
+    "exact_consumer_requirement": "∀ P ∈ T, φ ∈ P.1 ∧ φ⁻¹ ∈ P.1 ∧ (φ - 1)⁻¹ ∈ P.1",
+    "matches": true,
+    "consumer_Belyi_hypothesis_not_imported_into_target": true
+  },
+  "blind_readback_review": {
+    "passed": true,
+    "one_declaration": true,
+    "all_input_hashes_exact": true,
+    "original_en_and_zh_Hans_ja_match_original_formal_statement": true,
+    "all_quantifiers_and_proper_place_scope_retained": true,
+    "zero_and_one_junk_order_boundaries_explicit": true,
+    "translation_provenance_explicit": "Same blind reviewer translated fixed English text; not three independent audits.",
+    "not_compiler_or_axiom_certificate": true
+  },
+  "unit_scope": {
+    "one_existing_theorem_replaced": true,
+    "new_helpers": 0,
+    "new_definitions": 0,
+    "new_math_nodes_expected": 0,
+    "new_dependency_edges_expected": 0,
+    "expected_frontier_before": 22,
+    "expected_frontier_after": 21,
+    "actual_platform_graph_not_yet_reviewed": true
+  },
+  "remaining_acceptance": "Root must provide direct solution, delivery/finalizer scripts, compiler and axiom audit receipts, and actual platform graph/frontier for later read-only review."
+}
