@@ -1,0 +1,134 @@
+{
+  "review_type": "read-only static source and interface review",
+  "candidate_workspace": "/tmp/p2m-belyi-different-conductor-next-20261114",
+  "main_workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "status": "static decomposition accepted; one explicit source port remains open; no compilation acceptance claimed",
+  "execution": {
+    "main_edited": false,
+    "candidate_edited": false,
+    "compilation": false,
+    "mcp_ci": false,
+    "api_writes": false,
+    "git_mutations": false,
+    "subagents": false,
+    "search_tool": "prove2me_workspace/.local/bin/rg-two-cores"
+  },
+  "checks": [
+    {
+      "name": "exact_parent_signature_and_consumer",
+      "result": "pass_static",
+      "evidence": [
+        "Main Definitions/Def_FermatBelyiComparisons.lean:58 defines the original predicate with every N/M/hDVR/hRF/A/phi/IsBelyi/hfin/G/p/GoodValue quantifier.",
+        "EXACT_WRAPPER_SIGNATURE.lean:14 expands the same predicate. The adapter composer returns the existing predicate without weakening it.",
+        "Main Solutions/Sol_FermatCanonicalEstimate.lean:37 consumes belyiDifferentConductorComparison as the original child of canonicalEstimate_of_belyi_children."
+      ]
+    },
+    {
+      "name": "actual_fields_and_normalizations",
+      "result": "pass_static",
+      "evidence": [
+        "Main QbarPoint.fieldOf is x.sigma.toRatAlgHom.fieldRange, the full residue-image field (Def_FermatProperCarrier.lean:92). QbarPoint.degree is its rational finrank.",
+        "The three children fix F = Tripod.fieldOf (belyiImage M phi x).1 and L = x.fieldOf, with the existing belyiImage_field_le inclusion.",
+        "finiteSetLogCond divides each conductor by its own field finrank. belyiRelativeLogDifferent divides log(absNorm(relative different)) by x.degree. The tower uses these identical fields and inclusion.",
+        "The composer uses affineLift_field_eq and affineLift_degree_eq to identify the full point field with Fermat.fieldOf p. It does not assert F=L or equality of image and point degrees."
+      ]
+    },
+    {
+      "name": "inclusion_and_hidden_assumptions",
+      "result": "pass_static",
+      "evidence": [
+        "BelyiActualFieldConductorExtension quantifies over actual finite sets S and T in the fixed fields and assumes literal image containment under IntermediateField.inclusion.",
+        "The only curve inputs retained are existing Model/ResiduesFinite/GoodValue data. No free height, surrogate number field, field equality, ramification estimate, or new geometric obligation is smuggled into the child predicates.",
+        "Relative different algebra is explicitly derived from belyiImage_field_le. No extra axiom declarations occur in candidate code."
+      ]
+    },
+    {
+      "name": "C_zero_composition",
+      "result": "pass_static",
+      "evidence": [
+        "Adapters:119 chooses C=0.",
+        "Extension supplies cond(F)<=cond(L)+r; tower supplies diff(L)=diff(F)+r; tripod identity and affine full-field identity give the exact parent by linear arithmetic.",
+        "This matches the pinned Genl BelyiDescent.lean logDiff case:398 onwards."
+      ]
+    },
+    {
+      "name": "generator_regular_and_containment",
+      "result": "pass_static",
+      "evidence": [
+        "Adapters:33 derives regularity for every supplied G.G element from G.generate and the proved good-point/non-cusp equivalence.",
+        "Adapters:72 proves containment for phi, phi inverse, and (1-phi) inverse under the actual inclusion, using G.phi_mem/G.inv_phi_mem/G.inv_one_sub_phi_mem.",
+        "Evaluation uses existing noncritical_eval_inv/sub/one and belyiImage_eq at GoodValue points. Extra generators are retained in evaluatedCuspGenerators; all residue embeddings remain quantified.",
+        "Adapters reuse main CuspCoordRingSource.cuspDivisor_apply, pointField_finiteDimensional, and affineLift field/degree APIs."
+      ]
+    },
+    {
+      "name": "definitions_and_import_boundary",
+      "result": "pass_static",
+      "evidence": [
+        "The only new Definitions file defines finite-set conductors, actual generator sets, relative different, and three Prop predicates. It contains no asserted unproved theorem, sorry body, or axiom declaration.",
+        "Its Definitions.Def_FermatBelyiComparisons dependency closure contains Definitions/Mathlib modules only; no Solutions.Source_* or Theorems import enters that closure.",
+        "Solutions.Source_FermatCoordRingSource is imported only in the source adapter. Its existing local import closure has no theorem/source back-edge.",
+        "No artifact named PlatformDefinitions is included; this review checks the proposed Definitions layer rather than an external server payload. EXACT_WRAPPER_SIGNATURE.lean is a source-side record and imports Solutions; do not classify it as PlatformDefinitions."
+      ]
+    },
+    {
+      "name": "open_vs_complete_candidates",
+      "result": "pass_static_with_open_child",
+      "evidence": [
+        "Exactly one executable sorry occurs outside reference/: belyiActualFieldConductorExtension, Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean:18.",
+        "belyiActualFieldDifferentTower and tripodGeneratorConductorIdentity have complete candidate proof bodies. Their proof bodies reuse the pinned tower calculation and local tripod valuation argument.",
+        "The conditional adapter composer is complete. The final wrapper imports the open conductor child, so it remains dependent on sorryAx until that port is closed.",
+        "Checks explicitly print axioms for the composer, both complete candidates, the open child, and the final wrapper; no receipt or successful axiom audit exists for this draft."
+      ]
+    },
+    {
+      "name": "source_pins_hashes_and_license",
+      "result": "pass_static_with_documented_license_limit",
+      "evidence": [
+        "All 7 reference copy SHA-256 hashes match source-ledger.json. All 13 local input hashes match current main. All 11 artifact-manifest hashes match candidate files.",
+        "Pinned revisions: Heights 721496ca4c158e511d25d8ccf6bfe8503eda73c1; Genl ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf; Belyi 9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8.",
+        "Copied sources retain Apache 2.0 attribution headers. Ledger explicitly states supplied archives had no LICENSE/NOTICE file; this is not a completed upstream license-file audit.",
+        "The lower different bound port can select Bounds:150-173 and 239-262 without porting the unrelated upper Serre estimate. Do not import the full Bounds closure, which imports SerreBound.",
+        "Hashes establish consistency with recorded pins, not independent remote revision authenticity."
+      ]
+    },
+    {
+      "name": "duplicate_helpers_and_current_APIs",
+      "result": "pass_static_with_known_wrapper_replacement",
+      "evidence": [
+        "No new helper/predicate name collides with a current main declaration.",
+        "The sole duplicate declaration is the intentional belyiDifferentConductorComparison replacement, already documented in README. Main theorem must be replaced or made the sole declaration site; importing the new Source solution alongside the unchanged original theorem will duplicate the name.",
+        "Current locked Mathlib contains NumberField.natAbs_discr_eq_absNorm_differentIdeal_mul_natAbs_discr_pow and differentIdeal_ne_bot, used by the tower candidate. Existing local evaluation and cusp APIs have the expected argument shapes.",
+        "No definite API or tactic failure was found by reading. Elaboration, instance transport, simp/rw normalization, and possible linter warnings remain untested."
+      ]
+    },
+    {
+      "name": "explicit_Fermat_route",
+      "result": "pass_static",
+      "evidence": [
+        "The candidate keeps Model N, Fermat.Pt N, AffineIdentification M, Fermat.logDiff, and the existing canonical-estimate consumer. No Act2/Joshi/global hidden input is imported."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "severity": "required_before_closure",
+      "title": "Conductor extension is still the genuine open arithmetic port",
+      "location": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean:18",
+      "detail": "Do not report the parent obligation closed or its final axiom audit passed until this source port and required MCP-CI acceptance complete."
+    },
+    {
+      "severity": "integration_requirement",
+      "title": "Keep one declaration site for the original theorem",
+      "location": "Solutions/Source_FermatBelyiDifferentConductorSolution.lean:18",
+      "detail": "Replace the existing theorem body or route its existing theorem module through the new adapters/children without retaining a second same-named declaration."
+    },
+    {
+      "severity": "integration_requirement",
+      "title": "Keep source adapters outside the server definitions payload",
+      "location": "EXACT_WRAPPER_SIGNATURE.lean:2",
+      "detail": "This record imports a Solutions module. Only Def_FermatBelyiDifferentConductorChildren belongs in the definitions layer; source adapters and theorem proofs stay in their respective layers."
+    }
+  ],
+  "next_scope": "Future unit only. Main integration, conductor source port, MCP-CI leaf/check/audit acceptance, and git diff --check are outside this read-only review."
+}

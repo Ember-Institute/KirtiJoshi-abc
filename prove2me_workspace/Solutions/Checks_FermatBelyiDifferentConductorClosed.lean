@@ -1,0 +1,7 @@
+import Solutions.Source_FermatBelyiDifferentConductorAdapters
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity

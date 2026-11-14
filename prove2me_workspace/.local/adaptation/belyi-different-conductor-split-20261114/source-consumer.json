@@ -1,0 +1,2685 @@
+{
+  "status": "exclusive_local_audits_passed_exact_three_child_SKETCH_ACCEPTED",
+  "source_archive": "source-archive.json",
+  "draft_source_ledger": "draft-source-ledger.json",
+  "source_review": "independent-source-review.json",
+  "production_ledger": {
+    "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+    "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+    "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+  },
+  "exact_parent": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+  "children": {
+    "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension": "2383cd37-cc7e-49bd-afc6-838a919d2ce3",
+    "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower": "0883a934-7f26-4a9d-af3f-92995eb0819c",
+    "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity": "512c10d1-7a58-4f63-aa53-667109afb7cf"
+  },
+  "conditional_composer": "belyiDifferentConductorComparison_of_exact_children",
+  "constant": 0,
+  "actual_consumer": "canonicalEstimate_of_belyi_children.hDifferent",
+  "preservation": [
+    "Full residue-image field distinct from actual image field",
+    "Every supplied cusp generator and residue embedding",
+    "Each finite conductor divided by its own rational field degree",
+    "Relative different normalized by full point degree",
+    "Original parent signature and Fermat route"
+  ],
+  "upstream_runtime_imports": [],
+  "new_assumptions": [],
+  "deprecations": [],
+  "Fermat_route_preserved": true,
+  "declarations": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond",
+      "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+      "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+      "source_span": {
+        "start": {
+          "offset": 510,
+          "line": 17,
+          "col": 0
+        },
+        "end": {
+          "offset": 833,
+          "line": 22,
+          "col": 24
+        },
+        "name_range": {
+          "start": {
+            "offset": 604,
+            "line": 18,
+            "col": 18
+          },
+          "end": {
+            "offset": 620,
+            "line": 18,
+            "col": 34
+          }
+        },
+        "value_start": {
+          "offset": 684,
+          "line": 19,
+          "col": 23
+        }
+      },
+      "compiler_span": {
+        "start_line": 17,
+        "end_line": 22
+      },
+      "compiler_type": "{F : Type u_1} → [inst : Field F] → [NumberField F] → Finset F → ℝ",
+      "kind": "def",
+      "isPrivate": false,
+      "inventory_role": "definition",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+          "sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+          "start_line": 17,
+          "end_line": 22
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Conductor.lean",
+            "sha256": "f3e186ddac10d05794d2c2b82f7550f6562ce7e5ea822c452fde211bec01db6c",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Different-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 69,
+              "end_line": 73
+            },
+            "source_fidelity": "Definition adaptation: expands meets and placeNorm in the same normalized finite-place conductor; no proof is asserted."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+          "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+          "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Definition",
+        "is_proof": false,
+        "description": "Data/numeric definition only; not a proof."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.tripodConductorGenerators",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.tripodConductorGenerators",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.tripodConductorGenerators",
+      "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+      "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+      "source_span": {
+        "start": {
+          "offset": 835,
+          "line": 24,
+          "col": 0
+        },
+        "end": {
+          "offset": 1000,
+          "line": 26,
+          "col": 62
+        },
+        "name_range": {
+          "start": {
+            "offset": 853,
+            "line": 24,
+            "col": 18
+          },
+          "end": {
+            "offset": 878,
+            "line": 24,
+            "col": 43
+          }
+        },
+        "value_start": {
+          "offset": 929,
+          "line": 25,
+          "col": 32
+        }
+      },
+      "compiler_span": {
+        "start_line": 24,
+        "end_line": 26
+      },
+      "compiler_type": "(y : AbcAdaptation.Tripod.Pt) → Finset ↥(AbcAdaptation.Tripod.fieldOf ↑y)",
+      "kind": "def",
+      "isPrivate": false,
+      "inventory_role": "definition",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+          "sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+          "start_line": 24,
+          "end_line": 26
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Curve/Conductor.lean",
+            "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Curve-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 23,
+              "end_line": 26
+            },
+            "source_fidelity": "Definition adaptation: the same three distinguished tripod functions, in the existing local actual image field."
+          },
+          {
+            "repo": "Genl",
+            "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+            "path": "Genl/Curves/BelyiDescent.lean",
+            "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Curves-BelyiDescent.lean.txt",
+            "source_span": {
+              "start_line": 420,
+              "end_line": 422
+            },
+            "source_fidelity": "The same three-element generating set is used in the upstream conductor comparison."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+          "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.tripodConductorGenerators.eq_1",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.tripodConductorGenerators.eq_1",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": false
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.tripodConductorGenerators",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Definition",
+        "is_proof": false,
+        "description": "Data/numeric definition only; not a proof."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.evaluatedCuspGenerators",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.evaluatedCuspGenerators",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.evaluatedCuspGenerators",
+      "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+      "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+      "source_span": {
+        "start": {
+          "offset": 1002,
+          "line": 28,
+          "col": 0
+        },
+        "end": {
+          "offset": 1230,
+          "line": 31,
+          "col": 63
+        },
+        "name_range": {
+          "start": {
+            "offset": 1020,
+            "line": 28,
+            "col": 18
+          },
+          "end": {
+            "offset": 1043,
+            "line": 28,
+            "col": 41
+          }
+        },
+        "value_start": {
+          "offset": 1164,
+          "line": 30,
+          "col": 21
+        }
+      },
+      "compiler_span": {
+        "start_line": 28,
+        "end_line": 31
+      },
+      "compiler_type": "{N : ℕ} →\n  {M : AbcAdaptation.Tripod.Fermat.Proper.Model N} →\n    (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K) →\n      (G : Finset ↥M.K) → (∀ g ∈ G, g ∈ ↑x.P) → Finset ↥x.fieldOf",
+      "kind": "def",
+      "isPrivate": false,
+      "inventory_role": "definition",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+          "sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+          "start_line": 28,
+          "end_line": 31
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Curve/Conductor.lean",
+            "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Curve-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 88,
+              "end_line": 101
+            },
+            "source_fidelity": "Definition adaptation: packages regular generator evaluations from meetsAt/logCondOf as a finite set; retains every supplied generator."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.evaluatedCuspGenerators",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Definition",
+        "is_proof": false,
+        "description": "Data/numeric definition only; not a proof."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiRelativeLogDifferent",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiRelativeLogDifferent",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiRelativeLogDifferent",
+      "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+      "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+      "source_span": {
+        "start": {
+          "offset": 1232,
+          "line": 33,
+          "col": 0
+        },
+        "end": {
+          "offset": 1921,
+          "line": 43,
+          "col": 14
+        },
+        "name_range": {
+          "start": {
+            "offset": 1396,
+            "line": 35,
+            "col": 18
+          },
+          "end": {
+            "offset": 1421,
+            "line": 35,
+            "col": 43
+          }
+        },
+        "value_start": {
+          "offset": 1543,
+          "line": 37,
+          "col": 34
+        }
+      },
+      "compiler_span": {
+        "start_line": 33,
+        "end_line": 43
+      },
+      "compiler_type": "{N : ℕ} →\n  (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) →\n    AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M →\n      (φ : ↥M.K) →\n        (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K) → AbcAdaptation.Tripod.Fermat.Proper.GoodValue M x φ → ℝ",
+      "kind": "def",
+      "isPrivate": false,
+      "inventory_role": "definition",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+          "sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+          "start_line": 33,
+          "end_line": 43
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Different-NumberField.lean.txt",
+            "source_span": {
+              "start_line": 54,
+              "end_line": 57
+            },
+            "source_fidelity": "Definition adaptation: isolates the relative-different term from the tower formula and fixes the actual image/full residue-field inclusion; normalizes by full point degree."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+          "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower",
+          "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiRelativeLogDifferent.eq_1",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiRelativeLogDifferent.eq_1",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": false
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiRelativeLogDifferent",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Definition",
+        "is_proof": false,
+        "description": "Data/numeric definition only; not a proof."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+      "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+      "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+      "source_span": {
+        "start": {
+          "offset": 1923,
+          "line": 45,
+          "col": 0
+        },
+        "end": {
+          "offset": 2627,
+          "line": 54,
+          "col": 49
+        },
+        "name_range": {
+          "start": {
+            "offset": 2108,
+            "line": 47,
+            "col": 4
+          },
+          "end": {
+            "offset": 2142,
+            "line": 47,
+            "col": 38
+          }
+        },
+        "value_start": {
+          "offset": 2150,
+          "line": 47,
+          "col": 46
+        }
+      },
+      "compiler_span": {
+        "start_line": 45,
+        "end_line": 54
+      },
+      "compiler_type": "Prop",
+      "kind": "def",
+      "isPrivate": false,
+      "inventory_role": "predicate_definition",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+          "sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+          "start_line": 45,
+          "end_line": 54
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Conductor.lean",
+            "sha256": "f3e186ddac10d05794d2c2b82f7550f6562ce7e5ea822c452fde211bec01db6c",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Different-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 168,
+              "end_line": 197
+            },
+            "source_fidelity": "Predicate definition for an exact source port. Both fields and inclusion are specialized to actual Belyi image and full point fields; no proof is supplied by this definition."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension",
+          "edge_kinds": [
+            "type"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+          "edge_kind": "type"
+        }
+      ],
+      "proof_status": {
+        "status": "Definition",
+        "is_proof": false,
+        "description": "Predicate definition only; does not discharge the named obligation."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower",
+      "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+      "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+      "source_span": {
+        "start": {
+          "offset": 2629,
+          "line": 56,
+          "col": 0
+        },
+        "end": {
+          "offset": 3002,
+          "line": 61,
+          "col": 49
+        },
+        "name_range": {
+          "start": {
+            "offset": 2727,
+            "line": 57,
+            "col": 4
+          },
+          "end": {
+            "offset": 2757,
+            "line": 57,
+            "col": 34
+          }
+        },
+        "value_start": {
+          "offset": 2765,
+          "line": 57,
+          "col": 42
+        }
+      },
+      "compiler_span": {
+        "start_line": 56,
+        "end_line": 61
+      },
+      "compiler_type": "Prop",
+      "kind": "def",
+      "isPrivate": false,
+      "inventory_role": "predicate_definition",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+          "sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+          "start_line": 56,
+          "end_line": 61
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Different-NumberField.lean.txt",
+            "source_span": {
+              "start_line": 54,
+              "end_line": 70
+            },
+            "source_fidelity": "Predicate definition specializes the normalized tower identity to the actual image and full point fields. Defining the predicate is not a proof."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower",
+          "edge_kinds": [
+            "type"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower",
+          "edge_kind": "type"
+        }
+      ],
+      "proof_status": {
+        "status": "Definition",
+        "is_proof": false,
+        "description": "Predicate definition only; does not discharge the named obligation."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+      "module": "Definitions.Def_FermatBelyiDifferentConductorChildren",
+      "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+      "source_span": {
+        "start": {
+          "offset": 3004,
+          "line": 63,
+          "col": 0
+        },
+        "end": {
+          "offset": 3207,
+          "line": 65,
+          "col": 84
+        },
+        "name_range": {
+          "start": {
+            "offset": 3078,
+            "line": 64,
+            "col": 4
+          },
+          "end": {
+            "offset": 3110,
+            "line": 64,
+            "col": 36
+          }
+        },
+        "value_start": {
+          "offset": 3118,
+          "line": 64,
+          "col": 44
+        }
+      },
+      "compiler_span": {
+        "start_line": 63,
+        "end_line": 65
+      },
+      "compiler_type": "Prop",
+      "kind": "def",
+      "isPrivate": false,
+      "inventory_role": "predicate_definition",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+          "sha256": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+          "start_line": 63,
+          "end_line": 65
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Curve/Conductor.lean",
+            "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Curve-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 23,
+              "end_line": 26
+            },
+            "source_fidelity": "Predicate definition identifies the existing tripod conductor with its three-generator finite-set conductor; not a proof."
+          },
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Curve/Conductor.lean",
+            "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Curve-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 40,
+              "end_line": 68
+            },
+            "source_fidelity": "The later proof uses this finite-place equivalence."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "type",
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity",
+          "edge_kinds": [
+            "type"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+          "edge_kind": "type"
+        }
+      ],
+      "proof_status": {
+        "status": "Definition",
+        "is_proof": false,
+        "description": "Predicate definition only; does not discharge the named obligation."
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_notMem_cusps",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_notMem_cusps",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_notMem_cusps",
+      "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+      "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+      "source_span": {
+        "start": {
+          "offset": 671,
+          "line": 21,
+          "col": 0
+        },
+        "end": {
+          "offset": 1196,
+          "line": 29,
+          "col": 27
+        },
+        "name_range": {
+          "start": {
+            "offset": 762,
+            "line": 22,
+            "col": 8
+          },
+          "end": {
+            "offset": 793,
+            "line": 22,
+            "col": 39
+          }
+        },
+        "value_start": {
+          "offset": 951,
+          "line": 24,
+          "col": 53
+        }
+      },
+      "compiler_span": {
+        "start_line": 21,
+        "end_line": 29
+      },
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (φ : ↥M.K),\n  AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ →\n    ∀ (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.GoodValue M x φ → x.P ∉ AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+          "sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+          "start_line": 21,
+          "end_line": 29
+        },
+        "pinned_sources": [
+          {
+            "repo": "Genl",
+            "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+            "path": "Genl/Curves/BelyiDescent.lean",
+            "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Curves-BelyiDescent.lean.txt",
+            "source_span": {
+              "start_line": 140,
+              "end_line": 155
+            },
+            "source_fidelity": "Local API adaptation of the good-evaluation/non-cusp implication, using the already proved local noncritical_cusp_value_iff rather than copying this source proof."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_notMem_cusps",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+      "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+      "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+      "source_span": {
+        "start": {
+          "offset": 1198,
+          "line": 31,
+          "col": 0
+        },
+        "end": {
+          "offset": 1952,
+          "line": 44,
+          "col": 65
+        },
+        "name_range": {
+          "start": {
+            "offset": 1344,
+            "line": 33,
+            "col": 8
+          },
+          "end": {
+            "offset": 1381,
+            "line": 33,
+            "col": 45
+          }
+        },
+        "value_start": {
+          "offset": 1616,
+          "line": 36,
+          "col": 53
+        }
+      },
+      "compiler_span": {
+        "start_line": 31,
+        "end_line": 44
+      },
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  (φ : ↥M.K),\n  AbcAdaptation.Tripod.Fermat.Proper.IsBelyi M hDVR φ →\n    ∀ (hfin : (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite)\n      (G : AbcAdaptation.Tripod.Fermat.Proper.CuspGenerators M hDVR φ hfin)\n      (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K),\n      AbcAdaptation.Tripod.Fermat.Proper.GoodValue M x φ → ∀ g ∈ G.G, g ∈ ↑x.P",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+          "sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+          "start_line": 31,
+          "end_line": 44
+        },
+        "pinned_sources": [
+          {
+            "repo": "Genl",
+            "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+            "path": "Genl/Curves/BelyiDescent.lean",
+            "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Curves-BelyiDescent.lean.txt",
+            "source_span": {
+              "start_line": 307,
+              "end_line": 312
+            },
+            "source_fidelity": "Proof adaptation: coordinate-ring generation implies regularity at every non-cusp point. The local reduced cusp divisor is expanded with existing cuspDivisor_apply."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+      "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+      "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+      "source_span": {
+        "start": {
+          "offset": 1954,
+          "line": 46,
+          "col": 0
+        },
+        "end": {
+          "offset": 3060,
+          "line": 69,
+          "col": 19
+        },
+        "name_range": {
+          "start": {
+            "offset": 2016,
+            "line": 47,
+            "col": 8
+          },
+          "end": {
+            "offset": 2047,
+            "line": 47,
+            "col": 39
+          }
+        },
+        "value_start": {
+          "offset": 2321,
+          "line": 50,
+          "col": 76
+        }
+      },
+      "compiler_span": {
+        "start_line": 46,
+        "end_line": 69
+      },
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K) (G : Finset ↥M.K) (hG : ∀ g ∈ G, g ∈ ↑x.P),\n  AbcAdaptation.Tripod.Fermat.Proper.logCondOf M hRF G x =\n    AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond\n      (AbcAdaptation.Tripod.Fermat.Proper.evaluatedCuspGenerators x G hG)",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+          "sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+          "start_line": 46,
+          "end_line": 69
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Curve/Conductor.lean",
+            "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Curve-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 88,
+              "end_line": 101
+            },
+            "source_fidelity": "Local bridge proof: unfolds the existing logCondOf and proves existential equivalence with the attached image finite set. This bridge is newly proved, not an upstream theorem copied verbatim."
+          },
+          {
+            "repo": "Genl",
+            "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+            "path": "Genl/Curves/BelyiDescent.lean",
+            "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Curves-BelyiDescent.lean.txt",
+            "source_span": {
+              "start_line": 411,
+              "end_line": 416
+            },
+            "source_fidelity": "Supplies the conductor rewrite used at this exact point of the upstream final logDiff case."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+      "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+      "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+      "source_span": {
+        "start": {
+          "offset": 3062,
+          "line": 71,
+          "col": 0
+        },
+        "end": {
+          "offset": 4863,
+          "line": 103,
+          "col": 64
+        },
+        "name_range": {
+          "start": {
+            "offset": 3159,
+            "line": 72,
+            "col": 8
+          },
+          "end": {
+            "offset": 3200,
+            "line": 72,
+            "col": 49
+          }
+        },
+        "value_start": {
+          "offset": 3574,
+          "line": 78,
+          "col": 37
+        }
+      },
+      "compiler_span": {
+        "start_line": 71,
+        "end_line": 103
+      },
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (φ : ↥M.K)\n  (x : AbcAdaptation.Tripod.Fermat.Proper.QbarPoint ↥M.K) (hgood : AbcAdaptation.Tripod.Fermat.Proper.GoodValue M x φ)\n  (G : Finset ↥M.K) (hG : ∀ g ∈ G, g ∈ ↑x.P),\n  φ ∈ G →\n    φ⁻¹ ∈ G →\n      (1 - φ)⁻¹ ∈ G →\n        Finset.image (⇑(IntermediateField.inclusion ⋯))\n            (AbcAdaptation.Tripod.Fermat.Proper.tripodConductorGenerators\n              (AbcAdaptation.Tripod.Fermat.Proper.belyiImage M φ x)) ⊆\n          AbcAdaptation.Tripod.Fermat.Proper.evaluatedCuspGenerators x G hG",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+          "sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+          "start_line": 71,
+          "end_line": 103
+        },
+        "pinned_sources": [
+          {
+            "repo": "Genl",
+            "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+            "path": "Genl/Curves/BelyiDescent.lean",
+            "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Curves-BelyiDescent.lean.txt",
+            "source_span": {
+              "start_line": 417,
+              "end_line": 439
+            },
+            "source_fidelity": "Proof adaptation of the same three evaluation cases under the actual field inclusion; local evaluation APIs replace the upstream point APIs."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_pointLogDiff_affine",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_pointLogDiff_affine",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_pointLogDiff_affine",
+      "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+      "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+      "source_span": {
+        "start": {
+          "offset": 4865,
+          "line": 105,
+          "col": 0
+        },
+        "end": {
+          "offset": 5488,
+          "line": 114,
+          "col": 34
+        },
+        "name_range": {
+          "start": {
+            "offset": 4956,
+            "line": 106,
+            "col": 8
+          },
+          "end": {
+            "offset": 4994,
+            "line": 106,
+            "col": 46
+          }
+        },
+        "value_start": {
+          "offset": 5148,
+          "line": 108,
+          "col": 61
+        }
+      },
+      "compiler_span": {
+        "start_line": 105,
+        "end_line": 114
+      },
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hRF : AbcAdaptation.Tripod.Fermat.Proper.ResiduesFinite M)\n  (A : AbcAdaptation.Tripod.Fermat.Proper.AffineIdentification M) (p : AbcAdaptation.Tripod.Fermat.Pt N),\n  AbcAdaptation.Tripod.Fermat.Proper.pointLogDiff M hRF (AbcAdaptation.Tripod.Fermat.Proper.affineLift M A p) =\n    AbcAdaptation.Tripod.Fermat.logDiff p",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+          "sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+          "start_line": 105,
+          "end_line": 114
+        },
+        "pinned_sources": [
+          {
+            "repo": "Genl",
+            "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+            "path": "Genl/Curves/BelyiDescent.lean",
+            "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Curves-BelyiDescent.lean.txt",
+            "source_span": {
+              "start_line": 411,
+              "end_line": 416
+            },
+            "source_fidelity": "Local Fermat interface bridge needed to express the upstream point-field logDiff in the existing Fermat predicate. This proof is local, not a copied upstream affine lemma."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_pointLogDiff_affine",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+      "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+      "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+      "source_span": {
+        "start": {
+          "offset": 5490,
+          "line": 116,
+          "col": 0
+        },
+        "end": {
+          "offset": 6719,
+          "line": 138,
+          "col": 10
+        },
+        "name_range": {
+          "start": {
+            "offset": 5579,
+            "line": 117,
+            "col": 8
+          },
+          "end": {
+            "offset": 5630,
+            "line": 117,
+            "col": 59
+          }
+        },
+        "value_start": {
+          "offset": 5820,
+          "line": 121,
+          "col": 38
+        }
+      },
+      "compiler_span": {
+        "start_line": 116,
+        "end_line": 138
+      },
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension →\n  AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower →\n    AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity →\n      AbcAdaptation.Tripod.Fermat.Proper.BelyiDifferentConductorComparison",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "conditional_theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+          "sha256": "3f6a6bf380fec674df37a33c50a4552b1b5def89ee7ecf58dc6abf1280b80d24",
+          "start_line": 116,
+          "end_line": 138
+        },
+        "pinned_sources": [
+          {
+            "repo": "Genl",
+            "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+            "path": "Genl/Curves/BelyiDescent.lean",
+            "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Curves-BelyiDescent.lean.txt",
+            "source_span": {
+              "start_line": 395,
+              "end_line": 439
+            },
+            "source_fidelity": "Conditional source adaptation of the final logDiff case with constant 0. Separates the extension comparison, different tower, and tripod identity into explicit hypotheses; retains the exact original local predicate."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiDifferentConductorComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body. The conditional composer is closed under its three explicit hypotheses.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+      "source_sha256": "1ce633c2f72830f0e26c15eeee1503a4991d0de8aa226626336526f3dce07c2b",
+      "source_span": {
+        "start": {
+          "offset": 404,
+          "line": 13,
+          "col": 0
+        },
+        "end": {
+          "offset": 828,
+          "line": 18,
+          "col": 7
+        },
+        "name_range": {
+          "start": {
+            "offset": 743,
+            "line": 17,
+            "col": 8
+          },
+          "end": {
+            "offset": 777,
+            "line": 17,
+            "col": 42
+          }
+        },
+        "value_start": {
+          "offset": 815,
+          "line": 17,
+          "col": 80
+        }
+      },
+      "compiler_span": {
+        "start_line": 13,
+        "end_line": 18
+      },
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "open_theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+          "sha256": "1ce633c2f72830f0e26c15eeee1503a4991d0de8aa226626336526f3dce07c2b",
+          "start_line": 13,
+          "end_line": 18
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/Conductor.lean",
+            "sha256": "f3e186ddac10d05794d2c2b82f7550f6562ce7e5ea822c452fde211bec01db6c",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Different-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 168,
+              "end_line": 197
+            },
+            "source_fidelity": "Open exact source port of cond_le_cond_add. The local body is sorry; this inventory claims no proof reuse or closure."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiDifferentConductorComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Open",
+        "is_proof": true,
+        "description": "Executable sorry at source line 18; sorryAx remains.",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "evidence_job_id": "ci-012098-a24cf47c",
+        "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/reduction-axioms-leaf-result.json"
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.0.AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logDisc_tower",
+      "compiler_name": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.0.AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logDisc_tower",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logDisc_tower",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+      "source_sha256": "61d2f9c12d15c4580a7922bcd4a0dfca2fe6fca8cf8b6cc78c6bdbd75916ed5f",
+      "source_span": {
+        "start": {
+          "offset": 469,
+          "line": 16,
+          "col": 0
+        },
+        "end": {
+          "offset": 1622,
+          "line": 33,
+          "col": 66
+        },
+        "name_range": {
+          "start": {
+            "offset": 559,
+            "line": 17,
+            "col": 16
+          },
+          "end": {
+            "offset": 591,
+            "line": 17,
+            "col": 48
+          }
+        },
+        "value_start": {
+          "offset": 862,
+          "line": 21,
+          "col": 76
+        }
+      },
+      "compiler_span": {
+        "start_line": 16,
+        "end_line": 33
+      },
+      "compiler_type": "∀ (F : Type u_1) (L : Type u_2) [inst : Field F] [inst_1 : NumberField F] [inst_2 : Field L] [inst_3 : NumberField L]\n  [inst_4 : Algebra F L],\n  Real.log |↑(NumberField.discr L)| / ↑(Module.finrank ℚ L) =\n    Real.log |↑(NumberField.discr F)| / ↑(Module.finrank ℚ F) +\n      Real.log ↑(Ideal.absNorm (differentIdeal (NumberField.RingOfIntegers F) (NumberField.RingOfIntegers L))) /\n        ↑(Module.finrank ℚ L)",
+      "kind": "theorem",
+      "isPrivate": true,
+      "inventory_role": "private_theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+          "sha256": "61d2f9c12d15c4580a7922bcd4a0dfca2fe6fca8cf8b6cc78c6bdbd75916ed5f",
+          "start_line": 16,
+          "end_line": 33
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Different-NumberField.lean.txt",
+            "source_span": {
+              "start_line": 54,
+              "end_line": 70
+            },
+            "source_fidelity": "Substantial proof-body reuse. Expands logDisc in the statement and replaces absNorm_differentIdeal_pos by its direct Mathlib proof; retains the normalized tower calculation."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "dependency": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.0.AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logDisc_tower",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+      "source_sha256": "61d2f9c12d15c4580a7922bcd4a0dfca2fe6fca8cf8b6cc78c6bdbd75916ed5f",
+      "source_span": {
+        "start": {
+          "offset": 1624,
+          "line": 35,
+          "col": 0
+        },
+        "end": {
+          "offset": 2260,
+          "line": 43,
+          "col": 84
+        },
+        "name_range": {
+          "start": {
+            "offset": 1717,
+            "line": 36,
+            "col": 8
+          },
+          "end": {
+            "offset": 1747,
+            "line": 36,
+            "col": 38
+          }
+        },
+        "value_start": {
+          "offset": 1781,
+          "line": 36,
+          "col": 72
+        }
+      },
+      "compiler_span": {
+        "start_line": 35,
+        "end_line": 43
+      },
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+          "sha256": "61d2f9c12d15c4580a7922bcd4a0dfca2fe6fca8cf8b6cc78c6bdbd75916ed5f",
+          "start_line": 35,
+          "end_line": 43
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Different/NumberField.lean",
+            "sha256": "76096324b218d39a99a812cdef062bd6684acbb758983bb1387e9823b9f534da",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Different-NumberField.lean.txt",
+            "source_span": {
+              "start_line": 54,
+              "end_line": 70
+            },
+            "source_fidelity": "Local specialization of the private reused tower proof to the actual image/full point fields; uses the existing inclusion and distinct degrees."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiDifferentConductorComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.0.AbcAdaptation.Tripod.Fermat.Proper.exists_one_lt_iff_tripod",
+      "compiler_name": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.0.AbcAdaptation.Tripod.Fermat.Proper.exists_one_lt_iff_tripod",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.exists_one_lt_iff_tripod",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+      "source_sha256": "0d7281432c6d7ebed810279982771a314a27d8fef8d23a6841da28a629d04537",
+      "source_span": {
+        "start": {
+          "offset": 499,
+          "line": 18,
+          "col": 0
+        },
+        "end": {
+          "offset": 1707,
+          "line": 45,
+          "col": 18
+        },
+        "name_range": {
+          "start": {
+            "offset": 587,
+            "line": 19,
+            "col": 16
+          },
+          "end": {
+            "offset": 611,
+            "line": 19,
+            "col": 40
+          }
+        },
+        "value_start": {
+          "offset": 764,
+          "line": 20,
+          "col": 72
+        }
+      },
+      "compiler_span": {
+        "start_line": 18,
+        "end_line": 45
+      },
+      "compiler_type": "∀ {F : Type u_1} [inst : Field F] [inst_1 : NumberField F] (w : NumberField.FinitePlace F) {z : F},\n  z ≠ 0 → z ≠ 1 → (1 < w z ∨ 1 < w z⁻¹ ∨ 1 < w (1 - z)⁻¹ ↔ w z ≠ 1 ∨ w (z - 1) ≠ 1)",
+      "kind": "theorem",
+      "isPrivate": true,
+      "inventory_role": "private_theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+          "sha256": "0d7281432c6d7ebed810279982771a314a27d8fef8d23a6841da28a629d04537",
+          "start_line": 18,
+          "end_line": 45
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Curve/Conductor.lean",
+            "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Curve-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 42,
+              "end_line": 68
+            },
+            "source_fidelity": "Unchanged substantive proof body; declaration is private locally, with the same hypotheses and equivalence."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "dependency": "_private.Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.0.AbcAdaptation.Tripod.Fermat.Proper.exists_one_lt_iff_tripod",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity",
+      "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+      "source_sha256": "0d7281432c6d7ebed810279982771a314a27d8fef8d23a6841da28a629d04537",
+      "source_span": {
+        "start": {
+          "offset": 1714,
+          "line": 49,
+          "col": 0
+        },
+        "end": {
+          "offset": 2309,
+          "line": 62,
+          "col": 43
+        },
+        "name_range": {
+          "start": {
+            "offset": 1722,
+            "line": 49,
+            "col": 8
+          },
+          "end": {
+            "offset": 1754,
+            "line": 49,
+            "col": 40
+          }
+        },
+        "value_start": {
+          "offset": 1790,
+          "line": 49,
+          "col": 76
+        }
+      },
+      "compiler_span": {
+        "start_line": 49,
+        "end_line": 62
+      },
+      "compiler_type": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "theorem",
+      "fresh_declaration": true,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+          "sha256": "0d7281432c6d7ebed810279982771a314a27d8fef8d23a6841da28a629d04537",
+          "start_line": 49,
+          "end_line": 62
+        },
+        "pinned_sources": [
+          {
+            "repo": "Heights",
+            "revision": "721496ca4c158e511d25d8ccf6bfe8503eda73c1",
+            "path": "Heights/Curve/Conductor.lean",
+            "sha256": "08ee97755a4a40cd0726fce4a10e9e05c73ced35ee6d0afb527ba82f75757aaf",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/721496ca4c158e511d25d8ccf6bfe8503eda73c1-Curve-Conductor.lean.txt",
+            "source_span": {
+              "start_line": 42,
+              "end_line": 68
+            },
+            "source_fidelity": "Local finsum congruence proof applies the reused finite-place equivalence to the same three generators and existing Tripod.badPlaces/logCond; not a verbatim upstream theorem."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "module": "Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiDifferentConductorComparison",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_apply",
+      "compiler_name": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_apply",
+      "userName": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_apply",
+      "module": "Solutions.Source_FermatCoordRingSource",
+      "path": "Solutions/Source_FermatCoordRingSource.lean",
+      "source_sha256": "196b2b4a4ecf4d404983b4d2ab62e1af2b12fc6673bc94ae1b93b96a0eb5b699",
+      "source_span": {
+        "start": {
+          "offset": 8403,
+          "line": 176,
+          "col": 0
+        },
+        "end": {
+          "offset": 8808,
+          "line": 184,
+          "col": 37
+        },
+        "name_range": {
+          "start": {
+            "offset": 8489,
+            "line": 177,
+            "col": 8
+          },
+          "end": {
+            "offset": 8506,
+            "line": 177,
+            "col": 25
+          }
+        },
+        "value_start": {
+          "offset": 8648,
+          "line": 179,
+          "col": 70
+        }
+      },
+      "compiler_span": {
+        "start_line": 176,
+        "end_line": 184
+      },
+      "compiler_type": "∀ {N : ℕ} (M : AbcAdaptation.Tripod.Fermat.Proper.Model N) (hDVR : AbcAdaptation.Tripod.Fermat.Proper.PlacesDiscrete M)\n  [AbcAdaptation.Tripod.Fermat.Proper.IsCurveField ↥M.K] (φ : ↥M.K)\n  (hfin : (AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ).Finite)\n  (P : AbcAdaptation.Tripod.Fermat.Proper.Place ↥M.K),\n  (AbcAdaptation.Tripod.Fermat.Proper.cuspDivisor M hDVR φ hfin) P =\n    if P ∈ AbcAdaptation.Tripod.Fermat.Proper.cusps M hDVR φ then 1 else 0",
+      "kind": "theorem",
+      "isPrivate": false,
+      "inventory_role": "existing_theorem",
+      "fresh_declaration": false,
+      "source_provenance": {
+        "pinned_local_input": {
+          "path": "Solutions/Source_FermatCoordRingSource.lean",
+          "sha256": "196b2b4a4ecf4d404983b4d2ab62e1af2b12fc6673bc94ae1b93b96a0eb5b699",
+          "start_line": 176,
+          "end_line": 184
+        },
+        "pinned_sources": [
+          {
+            "repo": "Genl",
+            "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+            "path": "Genl/Curves/BelyiDescent.lean",
+            "sha256": "fab56e0073e8ad10a1cea54552ba10a62df5cef54da2f572136975cffe375596",
+            "archived_reference": ".local/adaptation/belyi-different-conductor-split-20261114/reference/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf-Curves-BelyiDescent.lean.txt",
+            "source_span": {
+              "start_line": 291,
+              "end_line": 312
+            },
+            "source_fidelity": "Contextual provenance only: the existing local source header maps the cusp specialization to this argument. The coefficient identity itself is a local proof by expanding the existing reduced cusp divisor; no exact upstream copy is claimed."
+          }
+        ],
+        "mapping_evidence": [
+          "source-archive.json",
+          "draft-source-ledger.json",
+          "independent-source-review.json",
+          "source-consumer.json",
+          "local source declaration and header"
+        ]
+      },
+      "actual_consumers": [
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_ne_zero",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_ne_zero",
+          "module": "Solutions.Source_FermatCoordRingSource",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": false
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspGenerators_of_polarRealization",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspGenerators_of_polarRealization",
+          "module": "Solutions.Source_FermatCoordRingSource",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": false
+        },
+        {
+          "name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "userName": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "module": "Solutions.Source_FermatBelyiDifferentConductorAdapters",
+          "edge_kinds": [
+            "value"
+          ],
+          "in_root_dependency_closure": true
+        }
+      ],
+      "consumer_evidence": {
+        "path": ".local/adaptation/belyi-different-conductor-split-20261114/decl_graph.jsonl",
+        "sha256": "e8748a80377f2e271f940807af49e1211d0dd1664642bc33c035a222796816df",
+        "job_id": "ci-012101-f11b2172",
+        "scope": "Every direct incoming type/value edge present in this compiler-extracted graph; external consumers not present in this graph are not asserted."
+      },
+      "needed_by_root": true,
+      "root": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+      "root_dependency_path": [
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "edge_kind": "value"
+        },
+        {
+          "consumer": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+          "dependency": "AbcAdaptation.Tripod.Fermat.Proper.CuspCoordRingSource.cuspDivisor_apply",
+          "edge_kind": "value"
+        }
+      ],
+      "proof_status": {
+        "status": "Closed",
+        "is_proof": true,
+        "description": "Complete elaborated proof body; included in the audited closed theorem dependency closure.",
+        "axiom_audit": {
+          "evidence_job_id": "ci-012095-1218bc7e",
+          "evidence_path": ".local/adaptation/belyi-different-conductor-split-20261114/closed-axioms-review-result.json",
+          "audited_enclosing_theorem": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+          "printed_axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "sorryAx": false
+        }
+      },
+      "production_ledger": {
+        "path": "ArithmeticTeichmullerSpaces/SOURCE_LEDGER.md",
+        "sha256": "d6015b0e1acf7ed5e55279c4c5e6220b108f3b5b200230397221ec7097407a60",
+        "scope": "Exact existing adaptation child refined; production and boundary unchanged"
+      }
+    }
+  ],
+  "graph_counts": {
+    "accepted_reductions": 35,
+    "published_children": 81,
+    "dependency_edges": 99,
+    "open_frontier": 17,
+    "direct_closed_children": 40
+  },
+  "open_child": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+  "closed_children": [
+    "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+    "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity"
+  ],
+  "parent": "Open",
+  "canonicalEstimate": "Open",
+  "root": "Open",
+  "production_boundary_changed": false,
+  "definition_retention": {
+    "graph_visible_old_definition_ids": [
+      "00f677c5-bb5a-40b2-ade9-2644d2cbb997",
+      "07a690ae-cf34-4118-a58d-29a35e3755a2",
+      "0cf7bae0-d2cb-4c94-9e60-936423ad46ac",
+      "11edfc40-8c71-429e-b300-07a9865f6655",
+      "1702032c-63ca-4f0e-ad0e-f338da24c315",
+      "17addd94-9832-46b2-8078-e6ff1e47e1ea",
+      "186263af-c212-43e3-a8f1-6b6934f42df9",
+      "1e7b279f-a6fe-45a1-babc-f85ffd88759b",
+      "1fc58fce-ae29-42be-b663-db2e00e52f43",
+      "27eb3eb8-0f32-4842-844d-65d2e82a2d2a",
+      "280d62f4-2b48-4612-a66d-3b1c63dfbd56",
+      "2f7212b0-d971-46b6-a0dc-559fa91fca03",
+      "2fe482b0-827f-4089-bbaf-60b5aa940b03",
+      "3667a479-4f5a-4223-a28e-78c3c10c752e",
+      "36c996a6-cffa-4aa1-a1cd-6bb023d3355a",
+      "37737bd7-bfc7-483a-9d57-bbbfea9628b1",
+      "42b2b1e3-5314-4fbe-b98c-cfd2d811c886",
+      "44260d78-deca-4361-ad2b-31e3f307d4d0",
+      "55fc1aa8-a113-440f-9acc-8f1a95cadc9b",
+      "576dfe58-04a6-40f2-8d4d-6c58f948c707",
+      "605ad3b0-a0e4-4d17-9889-392d36862212",
+      "607d747b-55d4-4182-80f9-2b257d639d98",
+      "6bf8f896-f600-47d2-a4c7-25f1b1c1789b",
+      "6c1b6221-0760-4f7b-a2af-612d1850f526",
+      "6d1e4a6b-7142-4bf6-a98a-311b870475dd",
+      "732f4b77-d13c-46bf-b945-16610e8acb2a",
+      "7425b7e5-7533-4db2-92d8-416f7f68a8f5",
+      "74acbec8-615f-4fdf-9aed-aacfa7e6d189",
+      "8a03862e-44ab-4810-8934-09e753ebec19",
+      "9dea390f-8417-45f3-a2b9-d8a2b4591ebe",
+      "a3467f11-fe83-43e5-a26b-86d862670a5f",
+      "a6dc5d1a-1d24-455b-9e27-938e2a477b2d",
+      "a8dd9f50-d7da-4034-bdd6-3473df540ec1",
+      "aae47f01-3cd2-4ab6-9ced-bc48659fc651",
+      "b2b703fa-f2d1-4c72-a251-9f6883cc9b1d",
+      "b79fbf2c-57e3-47dc-8c70-603201e672e1",
+      "b80c0047-3ae2-4205-81f6-e5480c4ef14b",
+      "bcd8f003-20de-430f-a0cc-054c1d519e5e",
+      "c169d22f-3a85-4c88-b48d-cfcfe16e3730",
+      "c1daf9a9-ba47-447d-b773-d289b4b2af6a",
+      "c944edaf-9930-48e2-af6d-7fa60bc5f6bb",
+      "cb490a88-0789-4bd7-b47e-52f8c16772c1",
+      "dcbf7858-f666-44c4-956d-29dce91b2920",
+      "e11140ed-3e7f-4e3f-8c82-196c32a6eed9",
+      "eb8137f5-9361-4ff0-9de9-db6386711a7d",
+      "f3283f5f-de3a-45d0-8120-cb173d318850",
+      "f3459077-b313-492d-86fc-93f2a6d8b4b8",
+      "f5258bac-b146-442c-99fc-e3832c525225"
+    ],
+    "graph_hidden_old_definition_ids": [
+      "72d9610a-531f-497b-b5e5-3c14be31f3ae",
+      "aee58afd-7504-46aa-ba81-67cb253bbdf5"
+    ],
+    "all_old_definitions_retained": true,
+    "readbacks": "definition-retention-readbacks.json",
+    "readbacks_sha256": "5b0d48e36cc9219e118c3f03386f41e4a1e6b0157baae5c1adf64aa13d623f5c"
+  },
+  "platform_submission": "17e8e4ed-6bde-4f0c-bb55-63ed564059b2",
+  "direct_closed_proofs": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+      "theorem_id": "0883a934-7f26-4a9d-af3f-92995eb0819c",
+      "submission_id": "1a6a28d5-99d8-4b02-a150-94b381e7c8d0",
+      "status": "ACCEPTED",
+      "mathematical_dependencies": [],
+      "classification": "Direct accepted source proof; standard Lean axioms only"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+      "theorem_id": "512c10d1-7a58-4f63-aa53-667109afb7cf",
+      "submission_id": "c433ed47-0078-456f-99a7-00af36a2ac06",
+      "status": "ACCEPTED",
+      "mathematical_dependencies": [],
+      "classification": "Direct accepted source proof; standard Lean axioms only"
+    }
+  ],
+  "current_proof_debt_scope": "Only the exact actual-field conductor-extension child remains Open; the parent, canonicalEstimate and root remain Open."
+}

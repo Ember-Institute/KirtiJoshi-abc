@@ -1,0 +1,4 @@
+import Theorems.Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiDifferentConductorComparison
+
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension
+#print axioms AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison

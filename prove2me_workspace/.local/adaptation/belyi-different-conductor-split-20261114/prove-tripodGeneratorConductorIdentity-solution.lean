@@ -1,0 +1,69 @@
+/-
+Copyright (c) 2026 The heights contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The heights contributors
+
+Independent source adaptation; validation and source mappings are recorded with this unit.
+-/
+import Definitions.Def_FermatBelyiDifferentConductorChildren
+
+set_option autoImplicit false
+open NumberField
+open scoped Classical
+
+namespace AbcAdaptation.Tripod.Fermat.Proper
+
+section
+variable {F : Type*} [Field F] [NumberField F]
+/-- Source Heights/Curve/Conductor.lean:43-74, unchanged proof body. -/
+private theorem exists_one_lt_iff_tripod (w : FinitePlace F) {z : F} (hz0 : z ≠ 0) (hz1 : z ≠ 1) :
+    (1 < w z ∨ 1 < w z⁻¹ ∨ 1 < w (1 - z)⁻¹) ↔ (w z ≠ 1 ∨ w (z - 1) ≠ 1) := by
+  have hwz : 0 < w z := w.pos_iff.mpr hz0
+  have hsub : z - 1 ≠ 0 := sub_ne_zero.mpr hz1
+  have hwz1 : 0 < w (z - 1) := w.pos_iff.mpr hsub
+  have hneg : w (1 - z) = w (z - 1) := by rw [← neg_sub, map_neg_eq_map]
+  rw [map_inv₀, map_inv₀, hneg, one_lt_inv₀ hwz, one_lt_inv₀ hwz1]
+  constructor
+  · rintro (h | h | h)
+    · exact Or.inl h.ne'
+    · exact Or.inl h.ne
+    · exact Or.inr h.ne
+  · rintro (h | h)
+    · rcases lt_or_gt_of_ne h with h' | h'
+      · exact Or.inr (Or.inl h')
+      · exact Or.inl h'
+    · rcases lt_or_gt_of_ne h with h' | h'
+      · exact Or.inr (Or.inr h')
+      · -- `|z − 1|_w > 1` forces `|z|_w > 1`
+        left
+        have hle : w (z - 1) ≤ max (w z) (w (-1 : F)) := by
+          have := w.add_le z (-1)
+          simpa [sub_eq_add_neg] using this
+        rw [map_neg_eq_map, map_one] at hle
+        rcases le_max_iff.mp hle with h1 | h1
+        · linarith
+        · linarith
+
+end
+
+theorem closedTripodGeneratorConductorIdentitySource : TripodGeneratorConductorIdentity := by
+  intro y
+  have hmeet (w : FinitePlace (Tripod.fieldOf y.1)) :
+      (∃ a ∈ tripodConductorGenerators y, 1 < w a) ↔
+        w (Tripod.gen y.1) ≠ 1 ∨ w (Tripod.gen y.1 - 1) ≠ 1 := by
+    simpa [tripodConductorGenerators] using
+      exists_one_lt_iff_tripod w (Tripod.gen_ne_zero y.2.1)
+        (sub_ne_zero.mp (Tripod.gen_sub_one_ne_zero y.2.2))
+  unfold Tripod.logCond finiteSetLogCond
+  rw [Tripod.deg_eq_finrank]
+  congr 1
+  apply finsum_congr
+  intro w
+  simp only [Tripod.mem_badPlaces, hmeet w]
+
+end AbcAdaptation.Tripod.Fermat.Proper
+
+
+open AbcAdaptation.Tripod.Fermat.Proper
+
+theorem solution : TripodGeneratorConductorIdentity := closedTripodGeneratorConductorIdentitySource

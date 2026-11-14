@@ -1,0 +1,1442 @@
+{
+  "schema_version": "independent-trilingual-formal-readback-v1",
+  "package_root": "/tmp/p2m-belyi-different-conductor-next-20261114",
+  "scope": "Only the five specified future-unit Lean files; original solution wrapper and Checks excluded.",
+  "independence": {
+    "semantic_basis": "formal Lean declarations and necessary formal definitions only",
+    "excluded_semantic_sources": [
+      "README",
+      "SOURCE_LEDGER",
+      "source-ledger.json",
+      "artifact-manifest.json",
+      "quotations",
+      "proof narrative",
+      "Solution wrapper",
+      "Checks"
+    ],
+    "formal_source_comments": "not used as mathematical semantic evidence",
+    "original_readback": "English written independently from code; Chinese and Japanese translated from that readback and checked against the same code. They are not three independent audits.",
+    "actual_backend": null,
+    "backend_note": "No exact runtime model/backend identifier was available to this agent; not inferred from recommended models.",
+    "compilation_performed": false,
+    "api_calls_performed": false,
+    "git_operations_performed": false
+  },
+  "source_files": [
+    {
+      "path": "/tmp/p2m-belyi-different-conductor-next-20261114/Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "sha256": "25c91f2e2ee26d143e1c69ba5fd2fe0f39ca81c71f430ffbd77cf4acc9fbc9d6",
+      "bytes": 3218
+    },
+    {
+      "path": "/tmp/p2m-belyi-different-conductor-next-20261114/Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "sha256": "d0578b07897cea19ebef56354d93e6f861e6bbcc732b022a5edbabb33e5eaeba",
+      "bytes": 6481
+    },
+    {
+      "path": "/tmp/p2m-belyi-different-conductor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+      "sha256": "c1a5954ba6f64a6f2fdaf3388a3fe8d0bf42ea66aa9143eb7591a3e6b82af6cc",
+      "bytes": 839
+    },
+    {
+      "path": "/tmp/p2m-belyi-different-conductor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+      "sha256": "a310dde46b28c9ddb2c1981805159150695b23f7ccbfff9630d861180a64e55a",
+      "bytes": 2271
+    },
+    {
+      "path": "/tmp/p2m-belyi-different-conductor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+      "sha256": "6cbfd856e46cebec5a0094af17ae49159d4ae79dcae64725dbc60a19bdd18be8",
+      "bytes": 2381
+    }
+  ],
+  "necessary_formal_dependencies": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatBelyiComparisons.lean",
+      "sha256": "c8dd47e099ee4ca6a1715d4034f1c375617d89439130ce8494a720a9359d2813",
+      "role": "necessary formal definitions or evaluation laws; no claims about compilation or imported proof provenance"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperCarrier.lean",
+      "sha256": "7aa3e4cdd479f9fc87bdc6924c93245508ef2d096dc8e5cb58e699c6cd2b6b63",
+      "role": "necessary formal definitions or evaluation laws; no claims about compilation or imported proof provenance"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatLocalBelyi.lean",
+      "sha256": "bfceaae185fc536e913ea8772442f2030a780be865115a6bfbf10ccafa2df048",
+      "role": "necessary formal definitions or evaluation laws; no claims about compilation or imported proof provenance"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatProperDivisorHeight.lean",
+      "sha256": "a11b77af4ba62f628c25785fc75b07ab90ae9e6a61b47c938c2483ca81a365ec",
+      "role": "necessary formal definitions or evaluation laws; no claims about compilation or imported proof provenance"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean",
+      "sha256": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+      "role": "necessary formal definitions or evaluation laws; no claims about compilation or imported proof provenance"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodFermatInputs.lean",
+      "sha256": "099c3a519d2301b4df515a6503ffd62649d62074716e611b6eb9e360a5b5093a",
+      "role": "necessary formal definitions or evaluation laws; no claims about compilation or imported proof provenance"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_FermatNoncriticalElementarySource.lean",
+      "sha256": "aef871215e64e6d65d9ed46c8eeeefe26b0fd389e892b573bbcc47decaf258c6",
+      "role": "necessary formal definitions or evaluation laws; no claims about compilation or imported proof provenance"
+    }
+  ],
+  "rules_read": [
+    "/home/admin-wsl/Coq/abc/docs/三语自然语言读回原则.md",
+    "/home/admin-wsl/Coq/abc/docs/三语术语名词关键对照.md",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/references/mission_auditor.md"
+  ],
+  "terminology": {
+    "zh-Hans": {
+      "different ideal": "不同理想; also specified by the exact mathematical constructor in each relevant definition",
+      "conductor": "导子",
+      "number field": "数域",
+      "residue field": "剩余域",
+      "finite place": "有限处"
+    },
+    "ja": {
+      "different ideal": "差積イデアル",
+      "conductor": "導手",
+      "number field": "数体",
+      "residue field": "剰余体",
+      "finite place": "有限素点"
+    },
+    "external_terminology_verification": "not performed; no claim of a new site-verified or user-finalized terminology choice"
+  },
+  "declarations": [
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "25c91f2e2ee26d143e1c69ba5fd2fe0f39ca81c71f430ffbd77cf4acc9fbc9d6",
+      "source_span": {
+        "start_line": 18,
+        "end_line": 22,
+        "start_byte": 556,
+        "end_byte_exclusive": 803
+      },
+      "signature_span": {
+        "start_line": 18,
+        "end_line": 19
+      },
+      "raw_signature": "noncomputable def finiteSetLogCond {F : Type*} [Field F] [NumberField F]\n    (S : Finset F) : ℝ ",
+      "raw_declaration": "noncomputable def finiteSetLogCond {F : Type*} [Field F] [NumberField F]\n    (S : Finset F) : ℝ :=\n  (∑ᶠ w : FinitePlace F,\n    if ∃ a ∈ S, 1 < w a then Real.log (Ideal.absNorm w.maximalIdeal.asIdeal) else 0) /\n      Module.finrank ℚ F",
+      "raw_declaration_sha256": "bd17c30602df6d3db151ac3cdfbdb5e0cbd54d0dc7adcabfba50c800dc9fd14e",
+      "declaration_kind": "def",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.finiteSetLogCond",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "finiteSetLogCond",
+      "readback": {
+        "en": "For every type $E$ equipped with a field structure and a number-field structure and every finite set $S\\subset E$, this defines the real number $c_E(S)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in S:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$. The sum ranges over all finite places $w$ of $E$, each contributing the logarithm of the absolute norm of its maximal ideal in $\\mathcal O_E$ exactly when some element of $S$ has $w$-value greater than one, and zero otherwise. It is the finite-support sum, not an archimedean sum. The set is arbitrary, can contain zero and can be empty; the empty set gives zero. No integrality or generating condition is imposed.",
+        "zh-Hans": "对任意带域结构和数域结构的类型 $E$ 及有限集 $S\\subset E$，本定义给出实数 $c_E(S)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in S:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。$w$ 遍及 $E$ 的全部有限处；当且仅当 $S$ 中某个元素的 $w$ 值严格大于一时，该处贡献 $\\mathcal O_E$ 中相应极大理想的绝对范数的对数，否则贡献零。这里使用有限支撑求和，不包含无限处。$S$ 任意，可以含零或为空；空集的值为零。不要求元素为整元，也不要求 $S$ 生成域或环。",
+        "ja": "体構造と数体構造を持つ任意の型 $E$ と有限集合 $S\\subset E$ に対して、実数 $c_E(S)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in S:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ を定義する。$w$ は $E$ のすべての有限素点を走る。$S$ のある元の $w$ 値が一より大きいとき、その素点は $\\mathcal O_E$ の対応する極大イデアルの絶対ノルムの対数を寄与し、それ以外では零を寄与する。有限台和であり、無限素点は含めない。$S$ は任意で、零を含んでも空でもよく、空集合の値は零である。整性や生成条件は課していない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "For every type $E$ equipped with a field structure and a number-field structure and every finite set $S\\subset E$, this defines the real number $c_E(S)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in S:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$. The sum ranges over all finite places $w$ of $E$, each contributing the logarithm of the absolute norm of its maximal ideal in $\\mathcal O_E$ exactly when some element of $S$ has $w$-value greater than one, and zero otherwise. It is the finite-support sum, not an archimedean sum. The set is arbitrary, can contain zero and can be empty; the empty set gives zero. No integrality or generating condition is imposed.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "对任意带域结构和数域结构的类型 $E$ 及有限集 $S\\subset E$，本定义给出实数 $c_E(S)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in S:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。$w$ 遍及 $E$ 的全部有限处；当且仅当 $S$ 中某个元素的 $w$ 值严格大于一时，该处贡献 $\\mathcal O_E$ 中相应极大理想的绝对范数的对数，否则贡献零。这里使用有限支撑求和，不包含无限处。$S$ 任意，可以含零或为空；空集的值为零。不要求元素为整元，也不要求 $S$ 生成域或环。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "体構造と数体構造を持つ任意の型 $E$ と有限集合 $S\\subset E$ に対して、実数 $c_E(S)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in S:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ を定義する。$w$ は $E$ のすべての有限素点を走る。$S$ のある元の $w$ 値が一より大きいとき、その素点は $\\mathcal O_E$ の対応する極大イデアルの絶対ノルムの対数を寄与し、それ以外では零を寄与する。有限台和であり、無限素点は含めない。$S$ は任意で、零を含んでも空でもよく、空集合の値は零である。整性や生成条件は課していない。"
+        }
+      },
+      "proof_notes": "Definition only; it does not assert an estimate or a finite-support theorem.",
+      "proof_status": "definition_only",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "25c91f2e2ee26d143e1c69ba5fd2fe0f39ca81c71f430ffbd77cf4acc9fbc9d6",
+      "source_span": {
+        "start_line": 24,
+        "end_line": 26,
+        "start_byte": 805,
+        "end_byte_exclusive": 970
+      },
+      "signature_span": {
+        "start_line": 24,
+        "end_line": 25
+      },
+      "raw_signature": "noncomputable def tripodConductorGenerators (y : Tripod.Pt) :\n    Finset (Tripod.fieldOf y.1) ",
+      "raw_declaration": "noncomputable def tripodConductorGenerators (y : Tripod.Pt) :\n    Finset (Tripod.fieldOf y.1) :=\n  {Tripod.gen y.1, (Tripod.gen y.1)⁻¹, (1 - Tripod.gen y.1)⁻¹}",
+      "raw_declaration_sha256": "876ffbd0264a6ffd9d0046a8e40ddcea159eacb78aca287f63bf6f61c4148b63",
+      "declaration_kind": "def",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.tripodConductorGenerators",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "tripodConductorGenerators",
+      "readback": {
+        "en": "For every algebraic number $z\\in\\overline{\\mathbb Q}$ with $z\\ne0,1$, regarded as a tripod point $y$, this defines the finite subset $\\{z,z^{-1},(1-z)^{-1}\\}$ of the simple number field $\\mathbb Q(z)$, using its canonical generator whose image in $\\overline{\\mathbb Q}$ is $z$. Repeated elements are identified because this is a finite set, not a list.",
+        "zh-Hans": "对任意 $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$，将其视为点 $y$，本定义在单生成数域 $\\mathbb Q(z)$ 中给出有限集 $\\{z,z^{-1},(1-z)^{-1}\\}$，其中用像为 $z$ 的典范生成元表示 $z$。这是有限集，重复元素只保留一次。",
+        "ja": "任意の代数的数 $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$ を点 $y$ と見たとき、単拡大 $\\mathbb Q(z)$ の中の有限集合 $\\{z,z^{-1},(1-z)^{-1}\\}$ を定義する。ここで $z$ は代数的閉包での像が $z$ である標準生成元で表す。列ではなく集合なので、重複した元は一つにまとめられる。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "For every algebraic number $z\\in\\overline{\\mathbb Q}$ with $z\\ne0,1$, regarded as a tripod point $y$, this defines the finite subset $\\{z,z^{-1},(1-z)^{-1}\\}$ of the simple number field $\\mathbb Q(z)$, using its canonical generator whose image in $\\overline{\\mathbb Q}$ is $z$. Repeated elements are identified because this is a finite set, not a list.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "对任意 $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$，将其视为点 $y$，本定义在单生成数域 $\\mathbb Q(z)$ 中给出有限集 $\\{z,z^{-1},(1-z)^{-1}\\}$，其中用像为 $z$ 的典范生成元表示 $z$。这是有限集，重复元素只保留一次。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "任意の代数的数 $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$ を点 $y$ と見たとき、単拡大 $\\mathbb Q(z)$ の中の有限集合 $\\{z,z^{-1},(1-z)^{-1}\\}$ を定義する。ここで $z$ は代数的閉包での像が $z$ である標準生成元で表す。列ではなく集合なので、重複した元は一つにまとめられる。"
+        }
+      },
+      "proof_notes": "Definition only; noncomputable finite-set construction.",
+      "proof_status": "definition_only",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "25c91f2e2ee26d143e1c69ba5fd2fe0f39ca81c71f430ffbd77cf4acc9fbc9d6",
+      "source_span": {
+        "start_line": 28,
+        "end_line": 31,
+        "start_byte": 972,
+        "end_byte_exclusive": 1200
+      },
+      "signature_span": {
+        "start_line": 28,
+        "end_line": 30
+      },
+      "raw_signature": "noncomputable def evaluatedCuspGenerators {N : ℕ} {M : Model N}\n    (x : QbarPoint M.K) (G : Finset M.K) (hG : ∀ g ∈ G, g ∈ x.P.1) :\n    Finset x.fieldOf ",
+      "raw_declaration": "noncomputable def evaluatedCuspGenerators {N : ℕ} {M : Model N}\n    (x : QbarPoint M.K) (G : Finset M.K) (hG : ∀ g ∈ G, g ∈ x.P.1) :\n    Finset x.fieldOf :=\n  G.attach.image (fun g => evalInPointField x g.1 (hG g.1 g.2))",
+      "raw_declaration_sha256": "6745e9051ae59005fe5f13f3029d0e93e92147923a9989b57b2a36b75b1a9cc3",
+      "declaration_kind": "def",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.evaluatedCuspGenerators",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "evaluatedCuspGenerators",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. For any finite subset $G\\subset K$ and a proof that every $g\\in G$ lies in $P$, this defines the finite subset $\\{g(x):g\\in G\\}\\subset L$. Each value is taken in the full residue-image field $L$. The finite image identifies repeated values; $G$ may be empty and need not generate any ring or contain the three distinguished functions.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。对任意有限集 $G\\subset K$ 及每个 $g\\in G$ 都属于 $P$ 的证明，本定义给出 $L$ 中的有限集 $\\{g(x):g\\in G\\}$。每个取值都位于完整剩余像域 $L$ 中。有限像集将相同取值合并；$G$ 可以为空，不要求生成某个环，也不要求包含三个指定函数。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。任意の有限集合 $G\\subset K$ と、各 $g\\in G$ が $P$ に属することの証明に対して、$L$ の有限部分集合 $\\{g(x):g\\in G\\}$ を定義する。値はすべて剰余体の像全体 $L$ の元として取る。同じ値は一つにまとめられる。$G$ は空でもよく、環の生成や三つの特定の関数の包含は仮定しない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. For any finite subset $G\\subset K$ and a proof that every $g\\in G$ lies in $P$, this defines the finite subset $\\{g(x):g\\in G\\}\\subset L$. Each value is taken in the full residue-image field $L$. The finite image identifies repeated values; $G$ may be empty and need not generate any ring or contain the three distinguished functions.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。对任意有限集 $G\\subset K$ 及每个 $g\\in G$ 都属于 $P$ 的证明，本定义给出 $L$ 中的有限集 $\\{g(x):g\\in G\\}$。每个取值都位于完整剩余像域 $L$ 中。有限像集将相同取值合并；$G$ 可以为空，不要求生成某个环，也不要求包含三个指定函数。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。任意の有限集合 $G\\subset K$ と、各 $g\\in G$ が $P$ に属することの証明に対して、$L$ の有限部分集合 $\\{g(x):g\\in G\\}$ を定義する。値はすべて剰余体の像全体 $L$ の元として取る。同じ値は一つにまとめられる。$G$ は空でもよく、環の生成や三つの特定の関数の包含は仮定しない。"
+        }
+      },
+      "proof_notes": "Definition only; requires regularity witnesses supplied as parameters.",
+      "proof_status": "definition_only",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "25c91f2e2ee26d143e1c69ba5fd2fe0f39ca81c71f430ffbd77cf4acc9fbc9d6",
+      "source_span": {
+        "start_line": 35,
+        "end_line": 43,
+        "start_byte": 1348,
+        "end_byte_exclusive": 1891
+      },
+      "signature_span": {
+        "start_line": 35,
+        "end_line": 37
+      },
+      "raw_signature": "noncomputable def belyiRelativeLogDifferent {N : ℕ} (M : Model N)\n    (hRF : ResiduesFinite M) (φ : M.K) (x : QbarPoint M.K)\n    (hgood : GoodValue M x φ) : ℝ ",
+      "raw_declaration": "noncomputable def belyiRelativeLogDifferent {N : ℕ} (M : Model N)\n    (hRF : ResiduesFinite M) (φ : M.K) (x : QbarPoint M.K)\n    (hgood : GoodValue M x φ) : ℝ := by\n  letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n  letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=\n    (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra\n  exact Real.log (Ideal.absNorm\n    (differentIdeal (𝓞 (Tripod.fieldOf (belyiImage M φ x).1)) (𝓞 x.fieldOf))) /\n      x.degree",
+      "raw_declaration_sha256": "a612f17813291c32027b49d4c912569071e3ffc5789d50dd2d7a561187359b1a",
+      "declaration_kind": "def",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiRelativeLogDifferent",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "belyiRelativeLogDifferent",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. This defines $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, with $\\mathfrak D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ formed with the algebra structure induced by the actual inclusion $i$. The denominator is the full residue-image degree $d_L$, not $d_F$ or $[L:F]$. No Belyi condition or discreteness assumption on the curve places is required.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。本定义给出 $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中 $\\mathfrak D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ 使用实际包含 $i$ 所诱导的代数结构构造，$N_L$ 为理想的绝对范数。分母是完整剩余像域的次数 $d_L$，不是 $d_F$ 或 $[L:F]$。不要求 Belyi 条件，也不要求曲线各处的赋值环离散。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ を定義する。$N_L$ はイデアルの絶対ノルムであり、$\\mathfrak D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ は実際の包含 $i$ による代数構造を用いる。分母は剰余体の像全体の次数 $d_L$ であり、$d_F$ や $[L:F]$ ではない。Belyi 条件や曲線の各付値環の離散性は仮定しない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. This defines $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, with $\\mathfrak D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ formed with the algebra structure induced by the actual inclusion $i$. The denominator is the full residue-image degree $d_L$, not $d_F$ or $[L:F]$. No Belyi condition or discreteness assumption on the curve places is required.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。本定义给出 $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中 $\\mathfrak D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ 使用实际包含 $i$ 所诱导的代数结构构造，$N_L$ 为理想的绝对范数。分母是完整剩余像域的次数 $d_L$，不是 $d_F$ 或 $[L:F]$。不要求 Belyi 条件，也不要求曲线各处的赋值环离散。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ を定義する。$N_L$ はイデアルの絶対ノルムであり、$\\mathfrak D_{L/F}=\\operatorname{differentIdeal}(\\mathcal O_F,\\mathcal O_L)$ は実際の包含 $i$ による代数構造を用いる。分母は剰余体の像全体の次数 $d_L$ であり、$d_F$ や $[L:F]$ ではない。Belyi 条件や曲線の各付値環の離散性は仮定しない。"
+        }
+      },
+      "proof_notes": "Definition only; the local instances are part of its term, not additional independent field inputs.",
+      "proof_status": "definition_only",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "25c91f2e2ee26d143e1c69ba5fd2fe0f39ca81c71f430ffbd77cf4acc9fbc9d6",
+      "source_span": {
+        "start_line": 47,
+        "end_line": 54,
+        "start_byte": 2074,
+        "end_byte_exclusive": 2597
+      },
+      "signature_span": {
+        "start_line": 47,
+        "end_line": 47
+      },
+      "raw_signature": "def BelyiActualFieldConductorExtension : Prop ",
+      "raw_declaration": "def BelyiActualFieldConductorExtension : Prop :=\n  ∀ {N : ℕ} (M : Model N) (hRF : ResiduesFinite M) (φ : M.K)\n    (x : QbarPoint M.K) (hgood : GoodValue M x φ),\n    letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n    ∀ (S : Finset (Tripod.fieldOf (belyiImage M φ x).1)) (T : Finset x.fieldOf),\n      S.image (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)) ⊆ T →\n      finiteSetLogCond S ≤ finiteSetLogCond T +\n        belyiRelativeLogDifferent M hRF φ x hgood",
+      "raw_declaration_sha256": "138125504d2e332d0b5c1f86596856913ed1626ed2e47d69bee0cf90c16165ff",
+      "declaration_kind": "def",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldConductorExtension",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "BelyiActualFieldConductorExtension",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. The proposition says that, universally for the data just described, for every finite $S\\subset F$ and every finite $T\\subset L$, $i(S)\\subseteq T$ implies $c_F(S)\\le c_L(T)+r(L/F)$. The sets are arbitrary, including empty sets; no generating or integrality condition is added. No Belyi or discrete-valuation condition is part of this proposition.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。此命题断言：对上述所有数据，以及任意有限集 $S\\subset F$、$T\\subset L$，若 $i(S)\\subseteq T$，则 $c_F(S)\\le c_L(T)+r(L/F)$。两个集合任意，包括空集，不附加生成或整性条件。此命题不含 Belyi 条件或离散赋值条件。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。この命題は、上述のすべてのデータと任意の有限集合 $S\\subset F$、$T\\subset L$ に対して、$i(S)\\subseteq T$ ならば $c_F(S)\\le c_L(T)+r(L/F)$ となることを述べる。集合は空でもよく、生成条件や整性条件はない。Belyi 条件や離散付値条件も含まない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. The proposition says that, universally for the data just described, for every finite $S\\subset F$ and every finite $T\\subset L$, $i(S)\\subseteq T$ implies $c_F(S)\\le c_L(T)+r(L/F)$. The sets are arbitrary, including empty sets; no generating or integrality condition is added. No Belyi or discrete-valuation condition is part of this proposition.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。此命题断言：对上述所有数据，以及任意有限集 $S\\subset F$、$T\\subset L$，若 $i(S)\\subseteq T$，则 $c_F(S)\\le c_L(T)+r(L/F)$。两个集合任意，包括空集，不附加生成或整性条件。此命题不含 Belyi 条件或离散赋值条件。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。この命題は、上述のすべてのデータと任意の有限集合 $S\\subset F$、$T\\subset L$ に対して、$i(S)\\subseteq T$ ならば $c_F(S)\\le c_L(T)+r(L/F)$ となることを述べる。集合は空でもよく、生成条件や整性条件はない。Belyi 条件や離散付値条件も含まない。"
+        }
+      },
+      "proof_notes": "Defines a universally quantified proposition; defining it does not prove it true.",
+      "proof_status": "definition_only",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "25c91f2e2ee26d143e1c69ba5fd2fe0f39ca81c71f430ffbd77cf4acc9fbc9d6",
+      "source_span": {
+        "start_line": 57,
+        "end_line": 61,
+        "start_byte": 2693,
+        "end_byte_exclusive": 2972
+      },
+      "signature_span": {
+        "start_line": 57,
+        "end_line": 57
+      },
+      "raw_signature": "def BelyiActualFieldDifferentTower : Prop ",
+      "raw_declaration": "def BelyiActualFieldDifferentTower : Prop :=\n  ∀ {N : ℕ} (M : Model N) (hRF : ResiduesFinite M) (φ : M.K)\n    (x : QbarPoint M.K) (hgood : GoodValue M x φ),\n      pointLogDiff M hRF x = Tripod.logDiff (belyiImage M φ x) +\n        belyiRelativeLogDifferent M hRF φ x hgood",
+      "raw_declaration_sha256": "4c794927252cf958da989cb1415eb68ead8f28de94be276a904b7571284e44b2",
+      "declaration_kind": "def",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.BelyiActualFieldDifferentTower",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "BelyiActualFieldDifferentTower",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. The proposition says that, universally for these data, $\\delta(L)=\\delta(F)+r(L/F)$. The image discriminant is normalized by $d_F$ and the full point discriminant and relative different by $d_L$. No equality of the fields or of their degrees is required.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。此命题断言：对上述所有数据，都有 $\\delta(L)=\\delta(F)+r(L/F)$。像域判别式以 $d_F$ 归一化，完整点域判别式及相对不同理想以 $d_L$ 归一化。不要求两个域相等，也不要求其次数相等。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。この命題は、上述のすべてのデータに対して $\\delta(L)=\\delta(F)+r(L/F)$ であることを述べる。像の体の判別式は $d_F$、点の全体の体の判別式と相対差積は $d_L$ で正規化する。体や次数の等しさは仮定しない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. The proposition says that, universally for these data, $\\delta(L)=\\delta(F)+r(L/F)$. The image discriminant is normalized by $d_F$ and the full point discriminant and relative different by $d_L$. No equality of the fields or of their degrees is required.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。此命题断言：对上述所有数据，都有 $\\delta(L)=\\delta(F)+r(L/F)$。像域判别式以 $d_F$ 归一化，完整点域判别式及相对不同理想以 $d_L$ 归一化。不要求两个域相等，也不要求其次数相等。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。この命題は、上述のすべてのデータに対して $\\delta(L)=\\delta(F)+r(L/F)$ であることを述べる。像の体の判別式は $d_F$、点の全体の体の判別式と相対差積は $d_L$ で正規化する。体や次数の等しさは仮定しない。"
+        }
+      },
+      "proof_notes": "Defines a universally quantified proposition; it does not install a tower theorem as an assumption or instance.",
+      "proof_status": "definition_only",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_relative_path": "Definitions/Def_FermatBelyiDifferentConductorChildren.lean",
+      "source_sha256": "25c91f2e2ee26d143e1c69ba5fd2fe0f39ca81c71f430ffbd77cf4acc9fbc9d6",
+      "source_span": {
+        "start_line": 64,
+        "end_line": 65,
+        "start_byte": 3044,
+        "end_byte_exclusive": 3177
+      },
+      "signature_span": {
+        "start_line": 64,
+        "end_line": 64
+      },
+      "raw_signature": "def TripodGeneratorConductorIdentity : Prop ",
+      "raw_declaration": "def TripodGeneratorConductorIdentity : Prop :=\n  ∀ y : Tripod.Pt, Tripod.logCond y = finiteSetLogCond (tripodConductorGenerators y)",
+      "raw_declaration_sha256": "d0c816111535fdcd384c5015a0ce9297d5e3285505f08240648ba54cd3fef205",
+      "declaration_kind": "def",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.TripodGeneratorConductorIdentity",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "TripodGeneratorConductorIdentity",
+      "readback": {
+        "en": "For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. For every $z\\in\\overline{\\mathbb Q}$ with $z\\ne0,1$, put $F=\\mathbb Q(z)$ and regard $z$ as the canonical generator of $F$. The proposition says that $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$. The sum is over every finite place of $F$, the norm is the absolute norm of its prime ideal in $\\mathcal O_F$, false conditions contribute zero, and the finite set removes repetitions.",
+        "zh-Hans": "对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。对每个 $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$，记 $F=\\mathbb Q(z)$，并以 $F$ 的典范生成元表示 $z$。此命题断言 $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$。求和遍及 $F$ 的全部有限处，范数为 $\\mathcal O_F$ 中对应素理想的绝对范数，条件不成立时贡献零，有限集将重复元素合并。",
+        "ja": "数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。任意の $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$ について $F=\\mathbb Q(z)$ とし、$z$ を $F$ の標準生成元で表す。この命題は $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$ を述べる。和は $F$ のすべての有限素点にわたり、ノルムは $\\mathcal O_F$ の対応する素イデアルの絶対ノルムである。条件が偽なら零を寄与し、有限集合は重複を除く。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. For every $z\\in\\overline{\\mathbb Q}$ with $z\\ne0,1$, put $F=\\mathbb Q(z)$ and regard $z$ as the canonical generator of $F$. The proposition says that $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$. The sum is over every finite place of $F$, the norm is the absolute norm of its prime ideal in $\\mathcal O_F$, false conditions contribute zero, and the finite set removes repetitions.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。对每个 $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$，记 $F=\\mathbb Q(z)$，并以 $F$ 的典范生成元表示 $z$。此命题断言 $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$。求和遍及 $F$ 的全部有限处，范数为 $\\mathcal O_F$ 中对应素理想的绝对范数，条件不成立时贡献零，有限集将重复元素合并。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。任意の $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$ について $F=\\mathbb Q(z)$ とし、$z$ を $F$ の標準生成元で表す。この命題は $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$ を述べる。和は $F$ のすべての有限素点にわたり、ノルムは $\\mathcal O_F$ の対応する素イデアルの絶対ノルムである。条件が偽なら零を寄与し、有限集合は重複を除く。"
+        }
+      },
+      "proof_notes": "Defines a proposition; it does not prove the equality.",
+      "proof_status": "definition_only",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "d0578b07897cea19ebef56354d93e6f861e6bbcc732b022a5edbabb33e5eaeba",
+      "source_span": {
+        "start_line": 22,
+        "end_line": 29,
+        "start_byte": 724,
+        "end_byte_exclusive": 1166
+      },
+      "signature_span": {
+        "start_line": 22,
+        "end_line": 24
+      },
+      "raw_signature": "theorem differentConductor_notMem_cusps (M : Model N) (hDVR : PlacesDiscrete M)\n    (φ : M.K) (hB : IsBelyi M hDVR φ) (x : QbarPoint M.K)\n    (hgood : GoodValue M x φ) : x.P ∉ cusps M hDVR φ ",
+      "raw_declaration": "theorem differentConductor_notMem_cusps (M : Model N) (hDVR : PlacesDiscrete M)\n    (φ : M.K) (hB : IsBelyi M hDVR φ) (x : QbarPoint M.K)\n    (hgood : GoodValue M x φ) : x.P ∉ cusps M hDVR φ := by\n  obtain ⟨hφ, h0, h1⟩ := hgood\n  rw [noncritical_cusp_value_iff M hDVR φ hB.1 x]\n  simp only [noncriticalValue, dif_pos hφ, NoncriticalP1.mem_zeroOneInf,\n    Option.some.injEq, reduceCtorEq, false_or]\n  exact not_or.mpr ⟨h0, h1⟩",
+      "raw_declaration_sha256": "8a8d8431e585423f4f94c455afcacd7903758d23e7a1a8fd3801fac8f7d969a8",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_notMem_cusps",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [
+          "variable {N : ℕ}"
+        ],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "differentConductor_notMem_cusps",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Assume each valuation subring $Q$ above is a discrete valuation ring. Its order is $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$, for the maximal-ideal valuation $v_Q$ used by the code. Put $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$. Assume $\\varphi$ is transcendental over $\\mathbb Q$ and, for every $Q$, $e_\\varphi(Q)>1$ implies $Q\\in B_\\varphi$, where $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ if $\\varphi\\in Q$, with $\\alpha=\\operatorname{res}_Q(\\varphi)$ and $m_\\alpha$ its minimal polynomial over $\\mathbb Q$, and $e_\\varphi(Q)=-o_Q(\\varphi)$ otherwise. These conditions include all places at infinity. Then the place $P$ of $x$ does not belong to $B_\\varphi$: explicitly, $o_P(\\varphi)=0$ and it is not the case that $o_P(\\varphi-1)>0$. No residue-finiteness assumption is a parameter of this declaration.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。假设上述每个赋值子环 $Q$ 都是离散赋值环，其阶为 $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$，其中 $v_Q$ 为代码使用的极大理想赋值。令 $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$。假设 $\\varphi$ 在 $\\mathbb Q$ 上超越，并且对每个 $Q$，$e_\\varphi(Q)>1$ 蕴含 $Q\\in B_\\varphi$。当 $\\varphi\\in Q$ 时，令 $\\alpha=\\operatorname{res}_Q(\\varphi)$，并以其在 $\\mathbb Q$ 上的最小多项式 $m_\\alpha$ 定义 $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$；否则定义为 $-o_Q(\\varphi)$。这些条件也包括所有无穷远处。则 $x$ 的处 $P$ 不属于 $B_\\varphi$，即 $o_P(\\varphi)=0$ 且 $o_P(\\varphi-1)$ 不严格大于零。此声明的参数不包含剩余域有限性假设。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。上記のすべての付値部分環 $Q$ が離散付値環であると仮定する。その位数は $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$ であり、$v_Q$ はコードで用いる極大イデアル付値である。$B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$ と置く。$\\varphi$ は $\\mathbb Q$ 上超越的であり、すべての $Q$ に対して $e_\\varphi(Q)>1$ なら $Q\\in B_\\varphi$ と仮定する。$\\varphi\\in Q$ なら $\\alpha=\\operatorname{res}_Q(\\varphi)$ の $\\mathbb Q$ 上の最小多項式 $m_\\alpha$ により $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ と定め、それ以外では $e_\\varphi(Q)=-o_Q(\\varphi)$ とする。無限遠点もこれらの条件に含まれる。このとき $x$ の素点 $P$ は $B_\\varphi$ に属さない。すなわち $o_P(\\varphi)=0$ であり、$o_P(\\varphi-1)>0$ ではない。この宣言は剰余体の有限性を仮定していない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Assume each valuation subring $Q$ above is a discrete valuation ring. Its order is $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$, for the maximal-ideal valuation $v_Q$ used by the code. Put $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$. Assume $\\varphi$ is transcendental over $\\mathbb Q$ and, for every $Q$, $e_\\varphi(Q)>1$ implies $Q\\in B_\\varphi$, where $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ if $\\varphi\\in Q$, with $\\alpha=\\operatorname{res}_Q(\\varphi)$ and $m_\\alpha$ its minimal polynomial over $\\mathbb Q$, and $e_\\varphi(Q)=-o_Q(\\varphi)$ otherwise. These conditions include all places at infinity. Then the place $P$ of $x$ does not belong to $B_\\varphi$: explicitly, $o_P(\\varphi)=0$ and it is not the case that $o_P(\\varphi-1)>0$. No residue-finiteness assumption is a parameter of this declaration.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。假设上述每个赋值子环 $Q$ 都是离散赋值环，其阶为 $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$，其中 $v_Q$ 为代码使用的极大理想赋值。令 $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$。假设 $\\varphi$ 在 $\\mathbb Q$ 上超越，并且对每个 $Q$，$e_\\varphi(Q)>1$ 蕴含 $Q\\in B_\\varphi$。当 $\\varphi\\in Q$ 时，令 $\\alpha=\\operatorname{res}_Q(\\varphi)$，并以其在 $\\mathbb Q$ 上的最小多项式 $m_\\alpha$ 定义 $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$；否则定义为 $-o_Q(\\varphi)$。这些条件也包括所有无穷远处。则 $x$ 的处 $P$ 不属于 $B_\\varphi$，即 $o_P(\\varphi)=0$ 且 $o_P(\\varphi-1)$ 不严格大于零。此声明的参数不包含剩余域有限性假设。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。上記のすべての付値部分環 $Q$ が離散付値環であると仮定する。その位数は $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$ であり、$v_Q$ はコードで用いる極大イデアル付値である。$B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$ と置く。$\\varphi$ は $\\mathbb Q$ 上超越的であり、すべての $Q$ に対して $e_\\varphi(Q)>1$ なら $Q\\in B_\\varphi$ と仮定する。$\\varphi\\in Q$ なら $\\alpha=\\operatorname{res}_Q(\\varphi)$ の $\\mathbb Q$ 上の最小多項式 $m_\\alpha$ により $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ と定め、それ以外では $e_\\varphi(Q)=-o_Q(\\varphi)$ とする。無限遠点もこれらの条件に含まれる。このとき $x$ の素点 $P$ は $B_\\varphi$ に属さない。すなわち $o_P(\\varphi)=0$ であり、$o_P(\\varphi-1)>0$ ではない。この宣言は剰余体の有限性を仮定していない。"
+        }
+      },
+      "proof_notes": "Written proof uses the imported cusp-value equivalence; not compiled or axiom-audited in this readback.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "d0578b07897cea19ebef56354d93e6f861e6bbcc732b022a5edbabb33e5eaeba",
+      "source_span": {
+        "start_line": 33,
+        "end_line": 44,
+        "start_byte": 1306,
+        "end_byte_exclusive": 1922
+      },
+      "signature_span": {
+        "start_line": 33,
+        "end_line": 36
+      },
+      "raw_signature": "theorem differentConductor_generators_regular (M : Model N) (hDVR : PlacesDiscrete M)\n    (φ : M.K) (hB : IsBelyi M hDVR φ) (hfin : (cusps M hDVR φ).Finite)\n    (G : CuspGenerators M hDVR φ hfin) (x : QbarPoint M.K)\n    (hgood : GoodValue M x φ) : ∀ g ∈ G.G, g ∈ x.P.1 ",
+      "raw_declaration": "theorem differentConductor_generators_regular (M : Model N) (hDVR : PlacesDiscrete M)\n    (φ : M.K) (hB : IsBelyi M hDVR φ) (hfin : (cusps M hDVR φ).Finite)\n    (G : CuspGenerators M hDVR φ hfin) (x : QbarPoint M.K)\n    (hgood : GoodValue M x φ) : ∀ g ∈ G.G, g ∈ x.P.1 := by\n  letI : IsCurveField M.K := M.isCurveField\n  intro g hg\n  have hmem : g ∈ coordRing M (cuspDivisor M hDVR φ hfin) := by\n    rw [← G.generate]\n    exact Algebra.subset_adjoin hg\n  apply hmem x.P\n  rw [CuspCoordRingSource.cuspDivisor_apply M hDVR φ hfin x.P,\n    if_neg (differentConductor_notMem_cusps M hDVR φ hB x hgood)]",
+      "raw_declaration_sha256": "92a690a4c5cd3e715b464aa3b610401e9d49fdf08afe00767b32c2afd5cd2cb2",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generators_regular",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [
+          "variable {N : ℕ}"
+        ],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "differentConductor_generators_regular",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Assume each valuation subring $Q$ above is a discrete valuation ring. Its order is $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$, for the maximal-ideal valuation $v_Q$ used by the code. Put $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$. Assume $\\varphi$ is transcendental over $\\mathbb Q$ and, for every $Q$, $e_\\varphi(Q)>1$ implies $Q\\in B_\\varphi$, where $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ if $\\varphi\\in Q$, with $\\alpha=\\operatorname{res}_Q(\\varphi)$ and $m_\\alpha$ its minimal polynomial over $\\mathbb Q$, and $e_\\varphi(Q)=-o_Q(\\varphi)$ otherwise. These conditions include all places at infinity. Assume $B_\\varphi$ is finite. Let $G\\subset K$ be a finite set containing $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ such that the $\\mathbb Q$-subalgebra it generates equals $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$. Additional generators are permitted. Then every $g\\in G$ lies in $P$. This covers all generators of the specified coordinate ring, including any in addition to the three required functions.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。假设上述每个赋值子环 $Q$ 都是离散赋值环，其阶为 $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$，其中 $v_Q$ 为代码使用的极大理想赋值。令 $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$。假设 $\\varphi$ 在 $\\mathbb Q$ 上超越，并且对每个 $Q$，$e_\\varphi(Q)>1$ 蕴含 $Q\\in B_\\varphi$。当 $\\varphi\\in Q$ 时，令 $\\alpha=\\operatorname{res}_Q(\\varphi)$，并以其在 $\\mathbb Q$ 上的最小多项式 $m_\\alpha$ 定义 $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$；否则定义为 $-o_Q(\\varphi)$。这些条件也包括所有无穷远处。假设 $B_\\varphi$ 有限。取包含 $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ 的有限集 $G\\subset K$，使其生成的 $\\mathbb Q$ 子代数等于 $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$。$G$ 可以含有额外生成元。则每个 $g\\in G$ 都属于 $P$。结论覆盖所指定坐标环的所有生成元，包括三个必需函数以外的额外生成元。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。上記のすべての付値部分環 $Q$ が離散付値環であると仮定する。その位数は $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$ であり、$v_Q$ はコードで用いる極大イデアル付値である。$B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$ と置く。$\\varphi$ は $\\mathbb Q$ 上超越的であり、すべての $Q$ に対して $e_\\varphi(Q)>1$ なら $Q\\in B_\\varphi$ と仮定する。$\\varphi\\in Q$ なら $\\alpha=\\operatorname{res}_Q(\\varphi)$ の $\\mathbb Q$ 上の最小多項式 $m_\\alpha$ により $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ と定め、それ以外では $e_\\varphi(Q)=-o_Q(\\varphi)$ とする。無限遠点もこれらの条件に含まれる。$B_\\varphi$ が有限であると仮定する。有限集合 $G\\subset K$ は $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ を含み、それが生成する $\\mathbb Q$ 部分代数は $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$ に等しいとする。追加の生成元も許される。このときすべての $g\\in G$ が $P$ に属する。結論は指定された座標環のすべての生成元に及び、三つの必須の関数以外の追加の生成元も含む。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Assume each valuation subring $Q$ above is a discrete valuation ring. Its order is $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$, for the maximal-ideal valuation $v_Q$ used by the code. Put $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$. Assume $\\varphi$ is transcendental over $\\mathbb Q$ and, for every $Q$, $e_\\varphi(Q)>1$ implies $Q\\in B_\\varphi$, where $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ if $\\varphi\\in Q$, with $\\alpha=\\operatorname{res}_Q(\\varphi)$ and $m_\\alpha$ its minimal polynomial over $\\mathbb Q$, and $e_\\varphi(Q)=-o_Q(\\varphi)$ otherwise. These conditions include all places at infinity. Assume $B_\\varphi$ is finite. Let $G\\subset K$ be a finite set containing $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ such that the $\\mathbb Q$-subalgebra it generates equals $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$. Additional generators are permitted. Then every $g\\in G$ lies in $P$. This covers all generators of the specified coordinate ring, including any in addition to the three required functions.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。假设上述每个赋值子环 $Q$ 都是离散赋值环，其阶为 $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$，其中 $v_Q$ 为代码使用的极大理想赋值。令 $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$。假设 $\\varphi$ 在 $\\mathbb Q$ 上超越，并且对每个 $Q$，$e_\\varphi(Q)>1$ 蕴含 $Q\\in B_\\varphi$。当 $\\varphi\\in Q$ 时，令 $\\alpha=\\operatorname{res}_Q(\\varphi)$，并以其在 $\\mathbb Q$ 上的最小多项式 $m_\\alpha$ 定义 $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$；否则定义为 $-o_Q(\\varphi)$。这些条件也包括所有无穷远处。假设 $B_\\varphi$ 有限。取包含 $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ 的有限集 $G\\subset K$，使其生成的 $\\mathbb Q$ 子代数等于 $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$。$G$ 可以含有额外生成元。则每个 $g\\in G$ 都属于 $P$。结论覆盖所指定坐标环的所有生成元，包括三个必需函数以外的额外生成元。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。上記のすべての付値部分環 $Q$ が離散付値環であると仮定する。その位数は $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$ であり、$v_Q$ はコードで用いる極大イデアル付値である。$B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$ と置く。$\\varphi$ は $\\mathbb Q$ 上超越的であり、すべての $Q$ に対して $e_\\varphi(Q)>1$ なら $Q\\in B_\\varphi$ と仮定する。$\\varphi\\in Q$ なら $\\alpha=\\operatorname{res}_Q(\\varphi)$ の $\\mathbb Q$ 上の最小多項式 $m_\\alpha$ により $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ と定め、それ以外では $e_\\varphi(Q)=-o_Q(\\varphi)$ とする。無限遠点もこれらの条件に含まれる。$B_\\varphi$ が有限であると仮定する。有限集合 $G\\subset K$ は $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ を含み、それが生成する $\\mathbb Q$ 部分代数は $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$ に等しいとする。追加の生成元も許される。このときすべての $g\\in G$ が $P$ に属する。結論は指定された座標環のすべての生成元に及び、三つの必須の関数以外の追加の生成元も含む。"
+        }
+      },
+      "proof_notes": "Written proof passes from adjoin membership to regularity outside the reduced cusp divisor; uncompiled here.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "d0578b07897cea19ebef56354d93e6f861e6bbcc732b022a5edbabb33e5eaeba",
+      "source_span": {
+        "start_line": 47,
+        "end_line": 69,
+        "start_byte": 1978,
+        "end_byte_exclusive": 3030
+      },
+      "signature_span": {
+        "start_line": 47,
+        "end_line": 49
+      },
+      "raw_signature": "theorem differentConductor_logCondOf_eq (M : Model N) (hRF : ResiduesFinite M)\n    (x : QbarPoint M.K) (G : Finset M.K) (hG : ∀ g ∈ G, g ∈ x.P.1) :\n    letI : FiniteDimensional ℚ x.fieldOf ",
+      "raw_declaration": "theorem differentConductor_logCondOf_eq (M : Model N) (hRF : ResiduesFinite M)\n    (x : QbarPoint M.K) (G : Finset M.K) (hG : ∀ g ∈ G, g ∈ x.P.1) :\n    letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n    logCondOf M hRF G x = finiteSetLogCond (evaluatedCuspGenerators x G hG) := by\n  letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n  unfold logCondOf\n  rw [dif_pos hG]\n  unfold finiteSetLogCond evaluatedCuspGenerators QbarPoint.degree\n  congr 1\n  apply finsum_congr\n  intro w\n  have hmeet : (∃ (g : M.K) (hg : g ∈ G),\n      1 < w (evalInPointField x g (hG g hg))) ↔\n      ∃ a ∈ G.attach.image (fun g => evalInPointField x g.1 (hG g.1 g.2)),\n        1 < w a := by\n    constructor\n    · rintro ⟨g, hg, hw⟩\n      exact ⟨evalInPointField x g (hG g hg),\n        Finset.mem_image.mpr ⟨⟨g, hg⟩, Finset.mem_attach _ _, rfl⟩, hw⟩\n    · rintro ⟨a, ha, hw⟩\n      obtain ⟨g, _, rfl⟩ := Finset.mem_image.mp ha\n      exact ⟨g.1, g.2, hw⟩\n  simp only [hmeet]",
+      "raw_declaration_sha256": "91473af374c14496a44accef6bd6da327d6bc0dcc5fbd6a2fcdca84abaca457b",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logCondOf_eq",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [
+          "variable {N : ℕ}"
+        ],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "differentConductor_logCondOf_eq",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. For every finite $G\\subset K$ whose elements all lie in $P$, the quantity $\\operatorname{logCondOf}(M,G,x)$ equals $c_L(\\{g(x):g\\in G\\})$. Here $\\operatorname{logCondOf}$ is zero when some generator is not regular; in the regular branch used here it is $d_L^{-1}\\sum_w^{\\mathrm f}[\\exists g\\in G:w(g(x))>1]\\log N_L(\\mathfrak p_w)$, over all finite places of the full point field. No assumption that $G$ generates a ring is required, and an empty $G$ gives zero on both sides.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。对任意元素都属于 $P$ 的有限集 $G\\subset K$，有 $\\operatorname{logCondOf}(M,G,x)=c_L(\\{g(x):g\\in G\\})$。这里当某个生成元不正则时，$\\operatorname{logCondOf}$ 定义为零；在本声明所用的正则分支中，它等于 $d_L^{-1}\\sum_w^{\\mathrm f}[\\exists g\\in G:w(g(x))>1]\\log N_L(\\mathfrak p_w)$，其中 $w$ 遍及完整点域的全部有限处。不要求 $G$ 生成某个环；$G$ 为空时两边都为零。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。すべての元が $P$ に属する任意の有限集合 $G\\subset K$ に対して、$\\operatorname{logCondOf}(M,G,x)=c_L(\\{g(x):g\\in G\\})$ である。$\\operatorname{logCondOf}$ は正則でない生成元がある場合には零と定義され、ここで用いる正則な場合には $d_L^{-1}\\sum_w^{\\mathrm f}[\\exists g\\in G:w(g(x))>1]\\log N_L(\\mathfrak p_w)$ である。和は点の全体の体のすべての有限素点にわたる。$G$ が環を生成することは不要で、空集合なら両辺とも零である。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. For every finite $G\\subset K$ whose elements all lie in $P$, the quantity $\\operatorname{logCondOf}(M,G,x)$ equals $c_L(\\{g(x):g\\in G\\})$. Here $\\operatorname{logCondOf}$ is zero when some generator is not regular; in the regular branch used here it is $d_L^{-1}\\sum_w^{\\mathrm f}[\\exists g\\in G:w(g(x))>1]\\log N_L(\\mathfrak p_w)$, over all finite places of the full point field. No assumption that $G$ generates a ring is required, and an empty $G$ gives zero on both sides.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。对任意元素都属于 $P$ 的有限集 $G\\subset K$，有 $\\operatorname{logCondOf}(M,G,x)=c_L(\\{g(x):g\\in G\\})$。这里当某个生成元不正则时，$\\operatorname{logCondOf}$ 定义为零；在本声明所用的正则分支中，它等于 $d_L^{-1}\\sum_w^{\\mathrm f}[\\exists g\\in G:w(g(x))>1]\\log N_L(\\mathfrak p_w)$，其中 $w$ 遍及完整点域的全部有限处。不要求 $G$ 生成某个环；$G$ 为空时两边都为零。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。すべての元が $P$ に属する任意の有限集合 $G\\subset K$ に対して、$\\operatorname{logCondOf}(M,G,x)=c_L(\\{g(x):g\\in G\\})$ である。$\\operatorname{logCondOf}$ は正則でない生成元がある場合には零と定義され、ここで用いる正則な場合には $d_L^{-1}\\sum_w^{\\mathrm f}[\\exists g\\in G:w(g(x))>1]\\log N_L(\\mathfrak p_w)$ である。和は点の全体の体のすべての有限素点にわたる。$G$ が環を生成することは不要で、空集合なら両辺とも零である。"
+        }
+      },
+      "proof_notes": "Written proof identifies the two existential conditions in each summand; uncompiled here.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "d0578b07897cea19ebef56354d93e6f861e6bbcc732b022a5edbabb33e5eaeba",
+      "source_span": {
+        "start_line": 72,
+        "end_line": 103,
+        "start_byte": 3121,
+        "end_byte_exclusive": 4833
+      },
+      "signature_span": {
+        "start_line": 72,
+        "end_line": 78
+      },
+      "raw_signature": "theorem differentConductor_generator_image_subset (M : Model N) (φ : M.K)\n    (x : QbarPoint M.K) (hgood : GoodValue M x φ) (G : Finset M.K)\n    (hG : ∀ g ∈ G, g ∈ x.P.1)\n    (hφG : φ ∈ G) (hiG : φ⁻¹ ∈ G) (h1G : (1 - φ)⁻¹ ∈ G) :\n    (tripodConductorGenerators (belyiImage M φ x)).image\n      (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)) ⊆\n      evaluatedCuspGenerators x G hG ",
+      "raw_declaration": "theorem differentConductor_generator_image_subset (M : Model N) (φ : M.K)\n    (x : QbarPoint M.K) (hgood : GoodValue M x φ) (G : Finset M.K)\n    (hG : ∀ g ∈ G, g ∈ x.P.1)\n    (hφG : φ ∈ G) (hiG : φ⁻¹ ∈ G) (h1G : (1 - φ)⁻¹ ∈ G) :\n    (tripodConductorGenerators (belyiImage M φ x)).image\n      (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)) ⊆\n      evaluatedCuspGenerators x G hG := by\n  obtain ⟨hφ, h0, h1⟩ := hgood\n  have hval : (belyiImage M φ x).1 = x.eval φ hφ :=\n    congrArg Subtype.val (belyiImage_eq M φ x hφ h0 h1)\n  intro a ha\n  obtain ⟨b, hb, rfl⟩ := Finset.mem_image.mp ha\n  simp only [tripodConductorGenerators, Finset.mem_insert, Finset.mem_singleton] at hb\n  rcases hb with rfl | rfl | rfl\n  · apply Finset.mem_image.mpr\n    refine ⟨⟨φ, hφG⟩, Finset.mem_attach _ _, ?_⟩\n    apply Subtype.ext\n    simpa only [evalInPointField, IntermediateField.coe_inclusion, Tripod.coe_gen] using hval.symm\n  · apply Finset.mem_image.mpr\n    refine ⟨⟨φ⁻¹, hiG⟩, Finset.mem_attach _ _, ?_⟩\n    apply Subtype.ext\n    change x.eval φ⁻¹ (hG _ hiG) = ((Tripod.gen (belyiImage M φ x).1)⁻¹ : Qbar)\n    rw [x.noncritical_eval_inv hφ (hG _ hiG)]\n    simp only [map_inv₀, Tripod.coe_gen, hval]\n  · apply Finset.mem_image.mpr\n    refine ⟨⟨(1 - φ)⁻¹, h1G⟩, Finset.mem_attach _ _, ?_⟩\n    apply Subtype.ext\n    change x.eval (1 - φ)⁻¹ (hG _ h1G) =\n      ((1 - Tripod.gen (belyiImage M φ x).1)⁻¹ : Qbar)\n    rw [x.noncritical_eval_inv (sub_mem x.P.1.one_mem hφ) (hG _ h1G),\n      x.noncritical_eval_sub x.P.1.one_mem hφ, x.noncritical_eval_one]\n    simp only [map_inv₀, map_sub, map_one, Tripod.coe_gen, hval]",
+      "raw_declaration_sha256": "9616cbb17a2ded51186c9f30ca3d4a2590cce2c5a63df5d9ad04761af5019667",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_generator_image_subset",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [
+          "variable {N : ℕ}"
+        ],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "differentConductor_generator_image_subset",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. For every finite $G\\subset K$ all of whose elements lie in $P$, if $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}\\in G$, then $i(\\{z,z^{-1},(1-z)^{-1}\\})\\subseteq\\{g(x):g\\in G\\}\\subset L$. The left set is formed in $F$ and then mapped by its actual inclusion in the full point field. No coordinate-ring generation, residue-finiteness, Belyi, or discrete-valuation hypothesis is a parameter.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。对任意元素都属于 $P$ 的有限集 $G\\subset K$，若 $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}\\in G$，则 $i(\\{z,z^{-1},(1-z)^{-1}\\})\\subseteq\\{g(x):g\\in G\\}\\subset L$。左边先在 $F$ 中构造有限集，再通过其到完整点域的实际包含映射取像。参数不包含坐标环生成、剩余域有限性、Belyi 条件或离散赋值条件。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。すべての元が $P$ に属する任意の有限集合 $G\\subset K$ について、$\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}\\in G$ ならば $i(\\{z,z^{-1},(1-z)^{-1}\\})\\subseteq\\{g(x):g\\in G\\}\\subset L$ である。左辺の集合はまず $F$ で作り、点の全体の体への実際の包含写像で移す。座標環の生成、剰余体の有限性、Belyi 条件、離散付値条件は仮定しない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. For every finite $G\\subset K$ all of whose elements lie in $P$, if $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}\\in G$, then $i(\\{z,z^{-1},(1-z)^{-1}\\})\\subseteq\\{g(x):g\\in G\\}\\subset L$. The left set is formed in $F$ and then mapped by its actual inclusion in the full point field. No coordinate-ring generation, residue-finiteness, Belyi, or discrete-valuation hypothesis is a parameter.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。对任意元素都属于 $P$ 的有限集 $G\\subset K$，若 $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}\\in G$，则 $i(\\{z,z^{-1},(1-z)^{-1}\\})\\subseteq\\{g(x):g\\in G\\}\\subset L$。左边先在 $F$ 中构造有限集，再通过其到完整点域的实际包含映射取像。参数不包含坐标环生成、剩余域有限性、Belyi 条件或离散赋值条件。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。すべての元が $P$ に属する任意の有限集合 $G\\subset K$ について、$\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}\\in G$ ならば $i(\\{z,z^{-1},(1-z)^{-1}\\})\\subseteq\\{g(x):g\\in G\\}\\subset L$ である。左辺の集合はまず $F$ で作り、点の全体の体への実際の包含写像で移す。座標環の生成、剰余体の有限性、Belyi 条件、離散付値条件は仮定しない。"
+        }
+      },
+      "proof_notes": "Written proof checks the three evaluations individually using inverse and subtraction compatibility; uncompiled here.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "d0578b07897cea19ebef56354d93e6f861e6bbcc732b022a5edbabb33e5eaeba",
+      "source_span": {
+        "start_line": 106,
+        "end_line": 110,
+        "start_byte": 4918,
+        "end_byte_exclusive": 5209
+      },
+      "signature_span": {
+        "start_line": 106,
+        "end_line": 108
+      },
+      "raw_signature": "theorem differentConductor_pointLogDiff_affine (M : Model N) (hRF : ResiduesFinite M)\n    (A : AffineIdentification M) (p : Fermat.Pt N) :\n    pointLogDiff M hRF (affineLift M A p) = Fermat.logDiff p ",
+      "raw_declaration": "theorem differentConductor_pointLogDiff_affine (M : Model N) (hRF : ResiduesFinite M)\n    (A : AffineIdentification M) (p : Fermat.Pt N) :\n    pointLogDiff M hRF (affineLift M A p) = Fermat.logDiff p := by\n  unfold pointLogDiff Fermat.logDiff\n  rw [affineLift_field_eq, affineLift_degree_eq]",
+      "raw_declaration_sha256": "5c2db877b3fe033ef2fc5c33aaee55e0cb804c19af4ba14c2e704f6407a64684",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_pointLogDiff_affine",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [
+          "variable {N : ℕ}"
+        ],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "differentConductor_pointLogDiff_affine",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. An affine identification $A$ is an equivalence from the points $x=(P,\\sigma)$ with $u,v\\in P$ and $u(x),v(x)\\ne0$ to the pairs $p=(a,b)\\in\\overline{\\mathbb Q}^2$ satisfying $a^N+b^N=1$, $a,b\\ne0$; it identifies the two evaluations with $a,b$ for every regularity witness and identifies the full point field with $\\mathbb Q(a,b)$. For such $p$, let $x=A^{-1}(p)$ with its affine proof forgotten. Then $\\operatorname{pointLogDiff}(M,x)=\\operatorname{Fermat.logDiff}(p)$: explicitly, $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(\\mathbb Q(a,b))|/[\\mathbb Q(a,b):\\mathbb Q]$. This uses the full two-coordinate point field and has no good-value or Belyi hypothesis.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。仿射识别 $A$ 是如下两类对象之间的等价：满足 $u,v\\in P$ 且 $u(x),v(x)\\ne0$ 的点 $x=(P,\\sigma)$，以及满足 $a^N+b^N=1$、$a,b\\ne0$ 的代数数对 $p=(a,b)$。它对任意正则性证明将两坐标的取值分别识别为 $a,b$，并将完整点域识别为 $\\mathbb Q(a,b)$。对这样的 $p$，令 $x$ 为 $A^{-1}(p)$ 忘去仿射条件证明后得到的点。则 $\\operatorname{pointLogDiff}(M,x)=\\operatorname{Fermat.logDiff}(p)$，即 $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(\\mathbb Q(a,b))|/[\\mathbb Q(a,b):\\mathbb Q]$。这里使用完整的双坐标点域，不假设良好取值条件或 Belyi 条件。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。アフィン同一視 $A$ は、$u,v\\in P$ かつ $u(x),v(x)\\ne0$ を満たす点 $x=(P,\\sigma)$ と、$a^N+b^N=1$、$a,b\\ne0$ を満たす代数的数の対 $p=(a,b)$ との同値である。任意の正則性の証明に対して二つの座標の値を $a,b$ に同一視し、点の全体の体を $\\mathbb Q(a,b)$ に同一視する。このような $p$ について、$x$ を $A^{-1}(p)$ のアフィン条件の証明を忘れた点とする。このとき $\\operatorname{pointLogDiff}(M,x)=\\operatorname{Fermat.logDiff}(p)$、すなわち $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(\\mathbb Q(a,b))|/[\\mathbb Q(a,b):\\mathbb Q]$ である。二つの座標による点の全体の体を用いており、良い値の条件や Belyi 条件は仮定しない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. An affine identification $A$ is an equivalence from the points $x=(P,\\sigma)$ with $u,v\\in P$ and $u(x),v(x)\\ne0$ to the pairs $p=(a,b)\\in\\overline{\\mathbb Q}^2$ satisfying $a^N+b^N=1$, $a,b\\ne0$; it identifies the two evaluations with $a,b$ for every regularity witness and identifies the full point field with $\\mathbb Q(a,b)$. For such $p$, let $x=A^{-1}(p)$ with its affine proof forgotten. Then $\\operatorname{pointLogDiff}(M,x)=\\operatorname{Fermat.logDiff}(p)$: explicitly, $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(\\mathbb Q(a,b))|/[\\mathbb Q(a,b):\\mathbb Q]$. This uses the full two-coordinate point field and has no good-value or Belyi hypothesis.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。仿射识别 $A$ 是如下两类对象之间的等价：满足 $u,v\\in P$ 且 $u(x),v(x)\\ne0$ 的点 $x=(P,\\sigma)$，以及满足 $a^N+b^N=1$、$a,b\\ne0$ 的代数数对 $p=(a,b)$。它对任意正则性证明将两坐标的取值分别识别为 $a,b$，并将完整点域识别为 $\\mathbb Q(a,b)$。对这样的 $p$，令 $x$ 为 $A^{-1}(p)$ 忘去仿射条件证明后得到的点。则 $\\operatorname{pointLogDiff}(M,x)=\\operatorname{Fermat.logDiff}(p)$，即 $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(\\mathbb Q(a,b))|/[\\mathbb Q(a,b):\\mathbb Q]$。这里使用完整的双坐标点域，不假设良好取值条件或 Belyi 条件。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。アフィン同一視 $A$ は、$u,v\\in P$ かつ $u(x),v(x)\\ne0$ を満たす点 $x=(P,\\sigma)$ と、$a^N+b^N=1$、$a,b\\ne0$ を満たす代数的数の対 $p=(a,b)$ との同値である。任意の正則性の証明に対して二つの座標の値を $a,b$ に同一視し、点の全体の体を $\\mathbb Q(a,b)$ に同一視する。このような $p$ について、$x$ を $A^{-1}(p)$ のアフィン条件の証明を忘れた点とする。このとき $\\operatorname{pointLogDiff}(M,x)=\\operatorname{Fermat.logDiff}(p)$、すなわち $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(\\mathbb Q(a,b))|/[\\mathbb Q(a,b):\\mathbb Q]$ である。二つの座標による点の全体の体を用いており、良い値の条件や Belyi 条件は仮定しない。"
+        }
+      },
+      "proof_notes": "Written proof rewrites equality of the fields and their degrees; uncompiled here.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_relative_path": "Solutions/Source_FermatBelyiDifferentConductorAdapters.lean",
+      "source_sha256": "d0578b07897cea19ebef56354d93e6f861e6bbcc732b022a5edbabb33e5eaeba",
+      "source_span": {
+        "start_line": 113,
+        "end_line": 134,
+        "start_byte": 5292,
+        "end_byte_exclusive": 6440
+      },
+      "signature_span": {
+        "start_line": 113,
+        "end_line": 117
+      },
+      "raw_signature": "theorem belyiDifferentConductorComparison_of_exact_children\n    (hExtension : BelyiActualFieldConductorExtension)\n    (hTower : BelyiActualFieldDifferentTower)\n    (hTripod : TripodGeneratorConductorIdentity) :\n    BelyiDifferentConductorComparison ",
+      "raw_declaration": "theorem belyiDifferentConductorComparison_of_exact_children\n    (hExtension : BelyiActualFieldConductorExtension)\n    (hTower : BelyiActualFieldDifferentTower)\n    (hTripod : TripodGeneratorConductorIdentity) :\n    BelyiDifferentConductorComparison := by\n  intro N M hDVR hRF A φ hB hfin G\n  refine ⟨0, fun p hgood => ?_⟩\n  let x := affineLift M A p\n  letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n  have hG := differentConductor_generators_regular M hDVR φ hB hfin G x hgood\n  have hsub := differentConductor_generator_image_subset M φ x hgood G.G hG\n    G.phi_mem G.inv_phi_mem G.inv_one_sub_phi_mem\n  have he := hExtension M hRF φ x hgood\n    (tripodConductorGenerators (belyiImage M φ x))\n    (evaluatedCuspGenerators x G.G hG) hsub\n  have ht := hTower M hRF φ x hgood\n  rw [← hTripod, ← differentConductor_logCondOf_eq M hRF x G.G hG] at he\n  have hdiff : pointLogDiff M hRF x = Fermat.logDiff p :=\n    differentConductor_pointLogDiff_affine M hRF A p\n  change Tripod.logDiff (belyiImage M φ x) + Tripod.logCond (belyiImage M φ x) ≤\n    Fermat.logDiff p + logCondOf M hRF G.G x + 0\n  linarith",
+      "raw_declaration_sha256": "b407a1069ba7a418ceef3a738ea91ca58eb9b469d0583d6fe7f7cc20e10ab623",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiDifferentConductorComparison_of_exact_children",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [
+          "variable {N : ℕ}"
+        ],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "belyiDifferentConductorComparison_of_exact_children",
+      "readback": {
+        "en": "Assume three universally quantified propositions: (1) for every $N,M,x,\\varphi$ satisfying the model, point, residue-finiteness and good-value conditions specified below, and all finite $S\\subset F$, $T\\subset L$, the inclusion $i(S)\\subseteq T$ implies $c_F(S)\\le c_L(T)+r(L/F)$; (2) for every such $N,M,x,\\varphi$, $\\delta(L)=\\delta(F)+r(L/F)$; and (3) for every algebraic $z\\ne0,1$, its tripod conductor $b(z)=\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]$, with $F=\\mathbb Q(z)$ and $w$ running through all finite places of $F$, equals $c_F(\\{z,z^{-1},(1-z)^{-1}\\})$. The first two premises require neither a Belyi condition nor discrete curve places, and apply to arbitrary finite element sets. For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Assume each valuation subring $Q$ above is a discrete valuation ring. Its order is $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$, for the maximal-ideal valuation $v_Q$ used by the code. Put $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$. Assume $\\varphi$ is transcendental over $\\mathbb Q$ and, for every $Q$, $e_\\varphi(Q)>1$ implies $Q\\in B_\\varphi$, where $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ if $\\varphi\\in Q$, with $\\alpha=\\operatorname{res}_Q(\\varphi)$ and $m_\\alpha$ its minimal polynomial over $\\mathbb Q$, and $e_\\varphi(Q)=-o_Q(\\varphi)$ otherwise. These conditions include all places at infinity. Assume $B_\\varphi$ is finite. Let $G\\subset K$ be a finite set containing $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ such that the $\\mathbb Q$-subalgebra it generates equals $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$. Additional generators are permitted. An affine identification $A$ is an equivalence from the points $x=(P,\\sigma)$ with $u,v\\in P$ and $u(x),v(x)\\ne0$ to the pairs $p=(a,b)\\in\\overline{\\mathbb Q}^2$ satisfying $a^N+b^N=1$, $a,b\\ne0$; it identifies the two evaluations with $a,b$ for every regularity witness and identifies the full point field with $\\mathbb Q(a,b)$. For such $p$, let $x=A^{-1}(p)$ with its affine proof forgotten. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. Then, for every fixed $N,M$, discrete-place proof, residue-finiteness proof, affine identification $A$, function $\\varphi$ with the stated Belyi condition, finite-cusp proof and generator data $G$, there exists a real $C$ such that every $p=(a,b)$ in the indicated Fermat affine set with good evaluation at $x=A^{-1}(p)$ satisfies $\\delta(F)+b(z)\\le\\delta(\\mathbb Q(a,b))+\\operatorname{logCondOf}(M,G,x)+C$. Here $\\operatorname{logCondOf}$ is $c_L(\\{g(x):g\\in G\\})$ if all $g\\in G$ belong to $P$, and zero otherwise. The constant precedes the quantifier on $p$ and may depend on all the fixed data; no restriction such as $N>3$ is present. This is a conditional implication from the three child propositions.",
+        "zh-Hans": "假设三个全称命题：（一）对满足下述模型、点、剩余域有限性及良好取值条件的所有 $N,M,x,\\varphi$，以及任意有限集 $S\\subset F$、$T\\subset L$，包含关系 $i(S)\\subseteq T$ 蕴含 $c_F(S)\\le c_L(T)+r(L/F)$；（二）对每组这样的 $N,M,x,\\varphi$，有 $\\delta(L)=\\delta(F)+r(L/F)$；（三）对每个代数数 $z\\ne0,1$，令 $F=\\mathbb Q(z)$，其导子 $b(z)=\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]$ 等于 $c_F(\\{z,z^{-1},(1-z)^{-1}\\})$，其中 $w$ 遍及 $F$ 的全部有限处。前两个前提不要求 Belyi 条件或曲线各处离散，并适用于任意有限元素集。对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。假设上述每个赋值子环 $Q$ 都是离散赋值环，其阶为 $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$，其中 $v_Q$ 为代码使用的极大理想赋值。令 $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$。假设 $\\varphi$ 在 $\\mathbb Q$ 上超越，并且对每个 $Q$，$e_\\varphi(Q)>1$ 蕴含 $Q\\in B_\\varphi$。当 $\\varphi\\in Q$ 时，令 $\\alpha=\\operatorname{res}_Q(\\varphi)$，并以其在 $\\mathbb Q$ 上的最小多项式 $m_\\alpha$ 定义 $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$；否则定义为 $-o_Q(\\varphi)$。这些条件也包括所有无穷远处。假设 $B_\\varphi$ 有限。取包含 $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ 的有限集 $G\\subset K$，使其生成的 $\\mathbb Q$ 子代数等于 $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$。$G$ 可以含有额外生成元。仿射识别 $A$ 是如下两类对象之间的等价：满足 $u,v\\in P$ 且 $u(x),v(x)\\ne0$ 的点 $x=(P,\\sigma)$，以及满足 $a^N+b^N=1$、$a,b\\ne0$ 的代数数对 $p=(a,b)$。它对任意正则性证明将两坐标的取值分别识别为 $a,b$，并将完整点域识别为 $\\mathbb Q(a,b)$。对这样的 $p$，令 $x$ 为 $A^{-1}(p)$ 忘去仿射条件证明后得到的点。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。则对每组固定的 $N,M$、各处离散性的证明、剩余域有限性的证明、仿射识别 $A$、满足上述 Belyi 条件的函数 $\\varphi$、尖点集有限性的证明及生成元数据 $G$，存在实数 $C$，使每个上述 Fermat 仿射集合中的点 $p=(a,b)$ 在 $x=A^{-1}(p)$ 具有良好取值时满足 $\\delta(F)+b(z)\\le\\delta(\\mathbb Q(a,b))+\\operatorname{logCondOf}(M,G,x)+C$。若所有 $g\\in G$ 都属于 $P$，则 $\\operatorname{logCondOf}=c_L(\\{g(x):g\\in G\\})$，否则定义为零。常数的存在量词位于 $p$ 的全称量词之前，可以依赖所有固定数据；没有 $N>3$ 之类的限制。这是以三个子命题为前提的条件蕴含。",
+        "ja": "三つの全称命題を仮定する。（一）以下に示すモデル、点、剰余体の有限性、良い値の条件を満たすすべての $N,M,x,\\varphi$ と任意の有限集合 $S\\subset F$、$T\\subset L$ に対して、$i(S)\\subseteq T$ ならば $c_F(S)\\le c_L(T)+r(L/F)$ である。（二）このようなすべての $N,M,x,\\varphi$ に対して $\\delta(L)=\\delta(F)+r(L/F)$ である。（三）任意の代数的数 $z\\ne0,1$ に対して、$F=\\mathbb Q(z)$ とすると、導手 $b(z)=\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]$ は $c_F(\\{z,z^{-1},(1-z)^{-1}\\})$ に等しい。$w$ は $F$ のすべての有限素点を走る。最初の二つの仮定には Belyi 条件や曲線の付値の離散性は不要で、任意の有限元集合を許す。数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。上記のすべての付値部分環 $Q$ が離散付値環であると仮定する。その位数は $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$ であり、$v_Q$ はコードで用いる極大イデアル付値である。$B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$ と置く。$\\varphi$ は $\\mathbb Q$ 上超越的であり、すべての $Q$ に対して $e_\\varphi(Q)>1$ なら $Q\\in B_\\varphi$ と仮定する。$\\varphi\\in Q$ なら $\\alpha=\\operatorname{res}_Q(\\varphi)$ の $\\mathbb Q$ 上の最小多項式 $m_\\alpha$ により $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ と定め、それ以外では $e_\\varphi(Q)=-o_Q(\\varphi)$ とする。無限遠点もこれらの条件に含まれる。$B_\\varphi$ が有限であると仮定する。有限集合 $G\\subset K$ は $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ を含み、それが生成する $\\mathbb Q$ 部分代数は $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$ に等しいとする。追加の生成元も許される。アフィン同一視 $A$ は、$u,v\\in P$ かつ $u(x),v(x)\\ne0$ を満たす点 $x=(P,\\sigma)$ と、$a^N+b^N=1$、$a,b\\ne0$ を満たす代数的数の対 $p=(a,b)$ との同値である。任意の正則性の証明に対して二つの座標の値を $a,b$ に同一視し、点の全体の体を $\\mathbb Q(a,b)$ に同一視する。このような $p$ について、$x$ を $A^{-1}(p)$ のアフィン条件の証明を忘れた点とする。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。このとき固定した各 $N,M$、各素点の離散性の証明、剰余体の有限性の証明、アフィン同一視 $A$、上記の Belyi 条件を満たす $\\varphi$、カスプ集合の有限性の証明、生成元データ $G$ に対して、実数 $C$ が存在し、指定された Fermat アフィン集合のすべての点 $p=(a,b)$ のうち $x=A^{-1}(p)$ で良い値を持つものは $\\delta(F)+b(z)\\le\\delta(\\mathbb Q(a,b))+\\operatorname{logCondOf}(M,G,x)+C$ を満たす。$\\operatorname{logCondOf}$ はすべての $g\\in G$ が $P$ に属すれば $c_L(\\{g(x):g\\in G\\})$、それ以外では零である。$C$ の存在量化は $p$ の全称量化に先行し、すべての固定データに依存してよい。$N>3$ などの制限はない。三つの子命題を仮定した条件付きの含意である。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Assume three universally quantified propositions: (1) for every $N,M,x,\\varphi$ satisfying the model, point, residue-finiteness and good-value conditions specified below, and all finite $S\\subset F$, $T\\subset L$, the inclusion $i(S)\\subseteq T$ implies $c_F(S)\\le c_L(T)+r(L/F)$; (2) for every such $N,M,x,\\varphi$, $\\delta(L)=\\delta(F)+r(L/F)$; and (3) for every algebraic $z\\ne0,1$, its tripod conductor $b(z)=\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]$, with $F=\\mathbb Q(z)$ and $w$ running through all finite places of $F$, equals $c_F(\\{z,z^{-1},(1-z)^{-1}\\})$. The first two premises require neither a Belyi condition nor discrete curve places, and apply to arbitrary finite element sets. For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Assume each valuation subring $Q$ above is a discrete valuation ring. Its order is $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$, for the maximal-ideal valuation $v_Q$ used by the code. Put $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$. Assume $\\varphi$ is transcendental over $\\mathbb Q$ and, for every $Q$, $e_\\varphi(Q)>1$ implies $Q\\in B_\\varphi$, where $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ if $\\varphi\\in Q$, with $\\alpha=\\operatorname{res}_Q(\\varphi)$ and $m_\\alpha$ its minimal polynomial over $\\mathbb Q$, and $e_\\varphi(Q)=-o_Q(\\varphi)$ otherwise. These conditions include all places at infinity. Assume $B_\\varphi$ is finite. Let $G\\subset K$ be a finite set containing $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ such that the $\\mathbb Q$-subalgebra it generates equals $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$. Additional generators are permitted. An affine identification $A$ is an equivalence from the points $x=(P,\\sigma)$ with $u,v\\in P$ and $u(x),v(x)\\ne0$ to the pairs $p=(a,b)\\in\\overline{\\mathbb Q}^2$ satisfying $a^N+b^N=1$, $a,b\\ne0$; it identifies the two evaluations with $a,b$ for every regularity witness and identifies the full point field with $\\mathbb Q(a,b)$. For such $p$, let $x=A^{-1}(p)$ with its affine proof forgotten. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. Then, for every fixed $N,M$, discrete-place proof, residue-finiteness proof, affine identification $A$, function $\\varphi$ with the stated Belyi condition, finite-cusp proof and generator data $G$, there exists a real $C$ such that every $p=(a,b)$ in the indicated Fermat affine set with good evaluation at $x=A^{-1}(p)$ satisfies $\\delta(F)+b(z)\\le\\delta(\\mathbb Q(a,b))+\\operatorname{logCondOf}(M,G,x)+C$. Here $\\operatorname{logCondOf}$ is $c_L(\\{g(x):g\\in G\\})$ if all $g\\in G$ belong to $P$, and zero otherwise. The constant precedes the quantifier on $p$ and may depend on all the fixed data; no restriction such as $N>3$ is present. This is a conditional implication from the three child propositions.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "假设三个全称命题：（一）对满足下述模型、点、剩余域有限性及良好取值条件的所有 $N,M,x,\\varphi$，以及任意有限集 $S\\subset F$、$T\\subset L$，包含关系 $i(S)\\subseteq T$ 蕴含 $c_F(S)\\le c_L(T)+r(L/F)$；（二）对每组这样的 $N,M,x,\\varphi$，有 $\\delta(L)=\\delta(F)+r(L/F)$；（三）对每个代数数 $z\\ne0,1$，令 $F=\\mathbb Q(z)$，其导子 $b(z)=\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]$ 等于 $c_F(\\{z,z^{-1},(1-z)^{-1}\\})$，其中 $w$ 遍及 $F$ 的全部有限处。前两个前提不要求 Belyi 条件或曲线各处离散，并适用于任意有限元素集。对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。假设上述每个赋值子环 $Q$ 都是离散赋值环，其阶为 $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$，其中 $v_Q$ 为代码使用的极大理想赋值。令 $B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$。假设 $\\varphi$ 在 $\\mathbb Q$ 上超越，并且对每个 $Q$，$e_\\varphi(Q)>1$ 蕴含 $Q\\in B_\\varphi$。当 $\\varphi\\in Q$ 时，令 $\\alpha=\\operatorname{res}_Q(\\varphi)$，并以其在 $\\mathbb Q$ 上的最小多项式 $m_\\alpha$ 定义 $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$；否则定义为 $-o_Q(\\varphi)$。这些条件也包括所有无穷远处。假设 $B_\\varphi$ 有限。取包含 $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ 的有限集 $G\\subset K$，使其生成的 $\\mathbb Q$ 子代数等于 $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$。$G$ 可以含有额外生成元。仿射识别 $A$ 是如下两类对象之间的等价：满足 $u,v\\in P$ 且 $u(x),v(x)\\ne0$ 的点 $x=(P,\\sigma)$，以及满足 $a^N+b^N=1$、$a,b\\ne0$ 的代数数对 $p=(a,b)$。它对任意正则性证明将两坐标的取值分别识别为 $a,b$，并将完整点域识别为 $\\mathbb Q(a,b)$。对这样的 $p$，令 $x$ 为 $A^{-1}(p)$ 忘去仿射条件证明后得到的点。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。则对每组固定的 $N,M$、各处离散性的证明、剩余域有限性的证明、仿射识别 $A$、满足上述 Belyi 条件的函数 $\\varphi$、尖点集有限性的证明及生成元数据 $G$，存在实数 $C$，使每个上述 Fermat 仿射集合中的点 $p=(a,b)$ 在 $x=A^{-1}(p)$ 具有良好取值时满足 $\\delta(F)+b(z)\\le\\delta(\\mathbb Q(a,b))+\\operatorname{logCondOf}(M,G,x)+C$。若所有 $g\\in G$ 都属于 $P$，则 $\\operatorname{logCondOf}=c_L(\\{g(x):g\\in G\\})$，否则定义为零。常数的存在量词位于 $p$ 的全称量词之前，可以依赖所有固定数据；没有 $N>3$ 之类的限制。这是以三个子命题为前提的条件蕴含。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "三つの全称命題を仮定する。（一）以下に示すモデル、点、剰余体の有限性、良い値の条件を満たすすべての $N,M,x,\\varphi$ と任意の有限集合 $S\\subset F$、$T\\subset L$ に対して、$i(S)\\subseteq T$ ならば $c_F(S)\\le c_L(T)+r(L/F)$ である。（二）このようなすべての $N,M,x,\\varphi$ に対して $\\delta(L)=\\delta(F)+r(L/F)$ である。（三）任意の代数的数 $z\\ne0,1$ に対して、$F=\\mathbb Q(z)$ とすると、導手 $b(z)=\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]$ は $c_F(\\{z,z^{-1},(1-z)^{-1}\\})$ に等しい。$w$ は $F$ のすべての有限素点を走る。最初の二つの仮定には Belyi 条件や曲線の付値の離散性は不要で、任意の有限元集合を許す。数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。上記のすべての付値部分環 $Q$ が離散付値環であると仮定する。その位数は $o_Q(f)=-\\operatorname{WithZero.log}(v_Q(f))$ であり、$v_Q$ はコードで用いる極大イデアル付値である。$B_\\varphi=\\{Q:o_Q(\\varphi)\\ne0\\ \\vee\\ o_Q(\\varphi-1)>0\\}$ と置く。$\\varphi$ は $\\mathbb Q$ 上超越的であり、すべての $Q$ に対して $e_\\varphi(Q)>1$ なら $Q\\in B_\\varphi$ と仮定する。$\\varphi\\in Q$ なら $\\alpha=\\operatorname{res}_Q(\\varphi)$ の $\\mathbb Q$ 上の最小多項式 $m_\\alpha$ により $e_\\varphi(Q)=o_Q(m_\\alpha(\\varphi))$ と定め、それ以外では $e_\\varphi(Q)=-o_Q(\\varphi)$ とする。無限遠点もこれらの条件に含まれる。$B_\\varphi$ が有限であると仮定する。有限集合 $G\\subset K$ は $\\varphi,\\varphi^{-1},(1-\\varphi)^{-1}$ を含み、それが生成する $\\mathbb Q$ 部分代数は $\\{f\\in K:\\forall Q\\notin B_\\varphi,\\ f\\in Q\\}$ に等しいとする。追加の生成元も許される。アフィン同一視 $A$ は、$u,v\\in P$ かつ $u(x),v(x)\\ne0$ を満たす点 $x=(P,\\sigma)$ と、$a^N+b^N=1$、$a,b\\ne0$ を満たす代数的数の対 $p=(a,b)$ との同値である。任意の正則性の証明に対して二つの座標の値を $a,b$ に同一視し、点の全体の体を $\\mathbb Q(a,b)$ に同一視する。このような $p$ について、$x$ を $A^{-1}(p)$ のアフィン条件の証明を忘れた点とする。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。このとき固定した各 $N,M$、各素点の離散性の証明、剰余体の有限性の証明、アフィン同一視 $A$、上記の Belyi 条件を満たす $\\varphi$、カスプ集合の有限性の証明、生成元データ $G$ に対して、実数 $C$ が存在し、指定された Fermat アフィン集合のすべての点 $p=(a,b)$ のうち $x=A^{-1}(p)$ で良い値を持つものは $\\delta(F)+b(z)\\le\\delta(\\mathbb Q(a,b))+\\operatorname{logCondOf}(M,G,x)+C$ を満たす。$\\operatorname{logCondOf}$ はすべての $g\\in G$ が $P$ に属すれば $c_L(\\{g(x):g\\in G\\})$、それ以外では零である。$C$ の存在量化は $p$ の全称量化に先行し、すべての固定データに依存してよい。$N>3$ などの制限はない。三つの子命題を仮定した条件付きの含意である。"
+        }
+      },
+      "proof_notes": "Written proof chooses C = 0, derives generator containment and combines the three supplied child propositions. The statement only claims existence of C. No compilation or assumption audit performed.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+      "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldConductorExtension.lean",
+      "source_sha256": "c1a5954ba6f64a6f2fdaf3388a3fe8d0bf42ea66aa9143eb7591a3e6b82af6cc",
+      "source_span": {
+        "start_line": 17,
+        "end_line": 18,
+        "start_byte": 705,
+        "end_byte_exclusive": 798
+      },
+      "signature_span": {
+        "start_line": 17,
+        "end_line": 17
+      },
+      "raw_signature": "theorem belyiActualFieldConductorExtension : BelyiActualFieldConductorExtension ",
+      "raw_declaration": "theorem belyiActualFieldConductorExtension : BelyiActualFieldConductorExtension := by\n  sorry",
+      "raw_declaration_sha256": "5b5236f1c1b8c77522ac7fe1954920dc1e4909d9df2ff9682cc0bbac89648048",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldConductorExtension",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [],
+        "open_scoped_commands": []
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "belyiActualFieldConductorExtension",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. The proposition says that, universally for the data just described, for every finite $S\\subset F$ and every finite $T\\subset L$, $i(S)\\subseteq T$ implies $c_F(S)\\le c_L(T)+r(L/F)$. The sets are arbitrary, including empty sets; no generating or integrality condition is added. No Belyi or discrete-valuation condition is part of this proposition.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。此命题断言：对上述所有数据，以及任意有限集 $S\\subset F$、$T\\subset L$，若 $i(S)\\subseteq T$，则 $c_F(S)\\le c_L(T)+r(L/F)$。两个集合任意，包括空集，不附加生成或整性条件。此命题不含 Belyi 条件或离散赋值条件。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。この命題は、上述のすべてのデータと任意の有限集合 $S\\subset F$、$T\\subset L$ に対して、$i(S)\\subseteq T$ ならば $c_F(S)\\le c_L(T)+r(L/F)$ となることを述べる。集合は空でもよく、生成条件や整性条件はない。Belyi 条件や離散付値条件も含まない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. The proposition says that, universally for the data just described, for every finite $S\\subset F$ and every finite $T\\subset L$, $i(S)\\subseteq T$ implies $c_F(S)\\le c_L(T)+r(L/F)$. The sets are arbitrary, including empty sets; no generating or integrality condition is added. No Belyi or discrete-valuation condition is part of this proposition.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。此命题断言：对上述所有数据，以及任意有限集 $S\\subset F$、$T\\subset L$，若 $i(S)\\subseteq T$，则 $c_F(S)\\le c_L(T)+r(L/F)$。两个集合任意，包括空集，不附加生成或整性条件。此命题不含 Belyi 条件或离散赋值条件。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。この命題は、上述のすべてのデータと任意の有限集合 $S\\subset F$、$T\\subset L$ に対して、$i(S)\\subseteq T$ ならば $c_F(S)\\le c_L(T)+r(L/F)$ となることを述べる。集合は空でもよく、生成条件や整性条件はない。Belyi 条件や離散付値条件も含まない。"
+        }
+      },
+      "proof_notes": "The theorem body is `by sorry`; it is an open placeholder. The readback states the claimed proposition only; no proof or compilation is certified.",
+      "proof_status": "sorry_placeholder",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+      "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+      "source_sha256": "a310dde46b28c9ddb2c1981805159150695b23f7ccbfff9630d861180a64e55a",
+      "source_span": {
+        "start_line": 17,
+        "end_line": 33,
+        "start_byte": 513,
+        "end_byte_exclusive": 1592
+      },
+      "signature_span": {
+        "start_line": 17,
+        "end_line": 21
+      },
+      "raw_signature": "private theorem differentConductor_logDisc_tower\n    (F L : Type*) [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L] :\n    Real.log |(discr L : ℝ)| / finrank ℚ L =\n      Real.log |(discr F : ℝ)| / finrank ℚ F +\n        Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L ",
+      "raw_declaration": "private theorem differentConductor_logDisc_tower\n    (F L : Type*) [Field F] [NumberField F] [Field L] [NumberField L] [Algebra F L] :\n    Real.log |(discr L : ℝ)| / finrank ℚ L =\n      Real.log |(discr F : ℝ)| / finrank ℚ F +\n        Real.log (Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L))) / finrank ℚ L := by\n  have h := natAbs_discr_eq_absNorm_differentIdeal_mul_natAbs_discr_pow\n    (K := F) (𝒪 := 𝓞 F) (L := L) (𝒪' := 𝓞 L)\n  have hD : Ideal.absNorm (differentIdeal (𝓞 F) (𝓞 L)) ≠ 0 :=\n    Ideal.absNorm_eq_zero_iff.not.mpr differentIdeal_ne_bot\n  have hF : (discr F).natAbs ≠ 0 := Int.natAbs_ne_zero.mpr (discr_ne_zero F)\n  have hFL : (finrank F L : ℝ) ≠ 0 := by exact_mod_cast finrank_pos.ne'\n  rw [← Int.cast_abs, ← Int.cast_abs, ← Nat.cast_natAbs, ← Nat.cast_natAbs, h, Nat.cast_mul,\n    Nat.cast_pow, Real.log_mul (by exact_mod_cast hD)\n    (by positivity), Real.log_pow, ← finrank_mul_finrank ℚ F L, Nat.cast_mul, add_div,\n    add_comm]\n  congr 1\n  rw [mul_comm ((finrank F L : ℕ) : ℝ), mul_div_mul_right _ _ hFL]",
+      "raw_declaration_sha256": "31e1f46eca516d7eefa3c138c3bf7018e98456c7aa50c69b164516bea086f5c6",
+      "declaration_kind": "theorem",
+      "private": true,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.differentConductor_logDisc_tower",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField Module"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not known"
+      },
+      "declaration_name": "differentConductor_logDisc_tower",
+      "readback": {
+        "en": "For every pair of types $F,L$ carrying field structures and number-field structures, and every specified $F$-algebra structure on $L$, $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(F)|/[F:\\mathbb Q]+\\log N_L(\\mathfrak D_{L/F})/[L:\\mathbb Q]$. Here discriminants are the integer number-field discriminants, $\\mathfrak D_{L/F}$ is the different ideal of $\\mathcal O_L$ relative to $\\mathcal O_F$ using the supplied algebra structure, and $N_L$ is absolute ideal norm. The relative term uses the full upper-field degree, while the lower-field discriminant uses the lower-field degree. No equality of these degrees is assumed.",
+        "zh-Hans": "对任意带域结构及数域结构的类型 $F,L$，以及 $L$ 上指定的 $F$ 代数结构，有 $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(F)|/[F:\\mathbb Q]+\\log N_L(\\mathfrak D_{L/F})/[L:\\mathbb Q]$。判别式是数域的整数判别式，$\\mathfrak D_{L/F}$ 是使用所给代数结构构造的 $\\mathcal O_L$ 相对于 $\\mathcal O_F$ 的不同理想，$N_L$ 为理想的绝对范数。相对项使用上层域的完整次数，下层域判别式使用下层域的次数，不假设两者相等。",
+        "ja": "体構造と数体構造を持つ任意の二つの型 $F,L$ と、$L$ 上の指定された $F$ 代数構造に対して、$\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(F)|/[F:\\mathbb Q]+\\log N_L(\\mathfrak D_{L/F})/[L:\\mathbb Q]$ である。判別式は数体の整数判別式であり、$\\mathfrak D_{L/F}$ は与えられた代数構造による $\\mathcal O_F$ に対する $\\mathcal O_L$ の差積イデアル、$N_L$ は絶対イデアルノルムである。相対項は上の体の全次数で、下の体の判別式は下の体の次数で正規化する。二つの次数の等しさは仮定しない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "For every pair of types $F,L$ carrying field structures and number-field structures, and every specified $F$-algebra structure on $L$, $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(F)|/[F:\\mathbb Q]+\\log N_L(\\mathfrak D_{L/F})/[L:\\mathbb Q]$. Here discriminants are the integer number-field discriminants, $\\mathfrak D_{L/F}$ is the different ideal of $\\mathcal O_L$ relative to $\\mathcal O_F$ using the supplied algebra structure, and $N_L$ is absolute ideal norm. The relative term uses the full upper-field degree, while the lower-field discriminant uses the lower-field degree. No equality of these degrees is assumed.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "对任意带域结构及数域结构的类型 $F,L$，以及 $L$ 上指定的 $F$ 代数结构，有 $\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(F)|/[F:\\mathbb Q]+\\log N_L(\\mathfrak D_{L/F})/[L:\\mathbb Q]$。判别式是数域的整数判别式，$\\mathfrak D_{L/F}$ 是使用所给代数结构构造的 $\\mathcal O_L$ 相对于 $\\mathcal O_F$ 的不同理想，$N_L$ 为理想的绝对范数。相对项使用上层域的完整次数，下层域判别式使用下层域的次数，不假设两者相等。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "体構造と数体構造を持つ任意の二つの型 $F,L$ と、$L$ 上の指定された $F$ 代数構造に対して、$\\log|\\operatorname{disc}(L)|/[L:\\mathbb Q]=\\log|\\operatorname{disc}(F)|/[F:\\mathbb Q]+\\log N_L(\\mathfrak D_{L/F})/[L:\\mathbb Q]$ である。判別式は数体の整数判別式であり、$\\mathfrak D_{L/F}$ は与えられた代数構造による $\\mathcal O_F$ に対する $\\mathcal O_L$ の差積イデアル、$N_L$ は絶対イデアルノルムである。相対項は上の体の全次数で、下の体の判別式は下の体の次数で正規化する。二つの次数の等しさは仮定しない。"
+        }
+      },
+      "proof_notes": "Private written proof uses the discriminant/different norm identity and logarithm arithmetic. No elaboration, compilation or axiom audit performed.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+      "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_belyiActualFieldDifferentTower.lean",
+      "source_sha256": "a310dde46b28c9ddb2c1981805159150695b23f7ccbfff9630d861180a64e55a",
+      "source_span": {
+        "start_line": 36,
+        "end_line": 43,
+        "start_byte": 1679,
+        "end_byte_exclusive": 2230
+      },
+      "signature_span": {
+        "start_line": 36,
+        "end_line": 36
+      },
+      "raw_signature": "theorem belyiActualFieldDifferentTower : BelyiActualFieldDifferentTower ",
+      "raw_declaration": "theorem belyiActualFieldDifferentTower : BelyiActualFieldDifferentTower := by\n  intro N M hRF φ x hgood\n  letI : FiniteDimensional ℚ x.fieldOf := pointField_finiteDimensional M hRF x\n  letI : Algebra (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf :=\n    (IntermediateField.inclusion (belyiImage_field_le M φ x hgood)).toRingHom.toAlgebra\n  simpa only [pointLogDiff, Tripod.logDiff, Tripod.deg_eq_finrank,\n    belyiRelativeLogDifferent, QbarPoint.degree] using\n    differentConductor_logDisc_tower (Tripod.fieldOf (belyiImage M φ x).1) x.fieldOf",
+      "raw_declaration_sha256": "70394f80c811fc60e237cfaa1df49d83521eed9f349d620853b315dcfcd97507",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.belyiActualFieldDifferentTower",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField Module"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical IntermediateField"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "belyiActualFieldDifferentTower",
+      "readback": {
+        "en": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. The proposition says that, universally for these data, $\\delta(L)=\\delta(F)+r(L/F)$. The image discriminant is normalized by $d_F$ and the full point discriminant and relative different by $d_L$. No equality of the fields or of their degrees is required.",
+        "zh-Hans": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。此命题断言：对上述所有数据，都有 $\\delta(L)=\\delta(F)+r(L/F)$。像域判别式以 $d_F$ 归一化，完整点域判别式及相对不同理想以 $d_L$ 归一化。不要求两个域相等，也不要求其次数相等。",
+        "ja": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。この命題は、上述のすべてのデータに対して $\\delta(L)=\\delta(F)+r(L/F)$ であることを述べる。像の体の判別式は $d_F$、点の全体の体の判別式と相対差積は $d_L$ で正規化する。体や次数の等しさは仮定しない。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "Let $N$ be any natural number and let $M$ consist of an intermediate field $K$ of $\\Omega=\\overline{\\mathbb Q(t)}$ over $\\mathbb Q$, elements $u,v\\in K$ with $u$ transcendental over $\\mathbb Q$, $u^N+v^N=1$, $\\mathbb Q(u,v)=K$, and a finite extension $K/\\mathbb Q(u)$ of degree $N$. A point $x=(P,\\sigma)$ means a nontrivial valuation subring $P\\subset K$ containing $\\mathbb Q$, together with any residue-field embedding $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$. For $f\\in P$, write $f(x)=\\sigma(\\operatorname{res}_P(f))$; write $L=\\sigma(\\kappa(P))$ for the full point field and $d_L=[L:\\mathbb Q]$. All choices of $P$ and $\\sigma$ are quantified. Assume $\\kappa(Q)$ is finite dimensional over $\\mathbb Q$ for every such valuation subring $Q$ of $K$; this supplies the number-field structure on $L$. Let $\\varphi\\in K$ be regular at $P$ with $z=\\varphi(x)\\ne0,1$. Put $F=\\mathbb Q(z)\\subseteq L$, with its actual inclusion $i:F\\hookrightarrow L$, and $d_F=[F:\\mathbb Q]$. Write $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ and $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$, where the relative different ideal $\\mathfrak D_{L/F}$ is formed from $\\mathcal O_F\\to\\mathcal O_L$ using $i$. The two field degrees are not identified. The proposition says that, universally for these data, $\\delta(L)=\\delta(F)+r(L/F)$. The image discriminant is normalized by $d_F$ and the full point discriminant and relative different by $d_L$. No equality of the fields or of their degrees is required.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "设 $N$ 为任意自然数，$M$ 给出 $\\Omega=\\overline{\\mathbb Q(t)}$ 的一个 $\\mathbb Q$ 上中间域 $K$ 以及 $u,v\\in K$，满足 $u$ 在 $\\mathbb Q$ 上超越、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$，且 $K/\\mathbb Q(u)$ 是次数为 $N$ 的有限扩张。点 $x=(P,\\sigma)$ 由包含 $\\mathbb Q$ 的非平凡赋值子环 $P\\subset K$ 和任意剩余域嵌入 $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ 组成。对 $f\\in P$，记 $f(x)=\\sigma(\\operatorname{res}_P(f))$；完整点域记为 $L=\\sigma(\\kappa(P))$，并记 $d_L=[L:\\mathbb Q]$。量词遍及所有这样的 $P$ 和 $\\sigma$。假设 $K$ 的每个上述赋值子环 $Q$ 的剩余域 $\\kappa(Q)$ 都在 $\\mathbb Q$ 上有限维；由此赋予 $L$ 数域结构。取 $\\varphi\\in K$，要求 $\\varphi\\in P$ 且 $z=\\varphi(x)\\ne0,1$。记 $F=\\mathbb Q(z)\\subseteq L$，$i:F\\hookrightarrow L$ 为实际包含映射，$d_F=[F:\\mathbb Q]$。记 $\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$，$r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$，其中相对不同理想 $\\mathfrak D_{L/F}$ 使用 $i$ 所诱导的 $\\mathcal O_F\\to\\mathcal O_L$ 构造。这里不把两个域的次数视为相等。此命题断言：对上述所有数据，都有 $\\delta(L)=\\delta(F)+r(L/F)$。像域判别式以 $d_F$ 归一化，完整点域判别式及相对不同理想以 $d_L$ 归一化。不要求两个域相等，也不要求其次数相等。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "$N$ を任意の自然数とする。$M$ は $\\Omega=\\overline{\\mathbb Q(t)}$ の $\\mathbb Q$ 上の中間体 $K$ と元 $u,v\\in K$ からなり、$u$ は $\\mathbb Q$ 上超越的、$u^N+v^N=1$、$\\mathbb Q(u,v)=K$、かつ $K/\\mathbb Q(u)$ は次数 $N$ の有限拡大である。点 $x=(P,\\sigma)$ は $\\mathbb Q$ を含む非自明な付値部分環 $P\\subset K$ と任意の剰余体埋め込み $\\sigma:\\kappa(P)\\hookrightarrow\\overline{\\mathbb Q}$ からなる。$f\\in P$ に対して $f(x)=\\sigma(\\operatorname{res}_P(f))$ と置き、点の全体の体を $L=\\sigma(\\kappa(P))$、その次数を $d_L=[L:\\mathbb Q]$ と書く。すべての $P$ と $\\sigma$ が量化されている。$K$ のこのようなすべての付値部分環 $Q$ の剰余体 $\\kappa(Q)$ が $\\mathbb Q$ 上有限次元であると仮定する。これにより $L$ は数体となる。$\\varphi\\in K$ が $P$ で正則であり、$z=\\varphi(x)\\ne0,1$ とする。$F=\\mathbb Q(z)\\subseteq L$ とし、$i:F\\hookrightarrow L$ を実際の包含写像、$d_F=[F:\\mathbb Q]$ をその次数とする。$\\delta(E)=\\log|\\operatorname{disc}(E)|/[E:\\mathbb Q]$ および $r(L/F)=\\log N_L(\\mathfrak D_{L/F})/d_L$ と書く。相対差積イデアル $\\mathfrak D_{L/F}$ は $i$ から定まる $\\mathcal O_F\\to\\mathcal O_L$ によるものである。二つの体の次数を等しいとは仮定しない。この命題は、上述のすべてのデータに対して $\\delta(L)=\\delta(F)+r(L/F)$ であることを述べる。像の体の判別式は $d_F$、点の全体の体の判別式と相対差積は $d_L$ で正規化する。体や次数の等しさは仮定しない。"
+        }
+      },
+      "proof_notes": "Written proof instantiates the private general number-field tower helper at the actual image field and full point field. No elaboration, compilation or axiom audit performed.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+      "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+      "source_sha256": "6cbfd856e46cebec5a0094af17ae49159d4ae79dcae64725dbc60a19bdd18be8",
+      "source_span": {
+        "start_line": 19,
+        "end_line": 45,
+        "start_byte": 541,
+        "end_byte_exclusive": 1677
+      },
+      "signature_span": {
+        "start_line": 19,
+        "end_line": 20
+      },
+      "raw_signature": "private theorem exists_one_lt_iff_tripod (w : FinitePlace F) {z : F} (hz0 : z ≠ 0) (hz1 : z ≠ 1) :\n    (1 < w z ∨ 1 < w z⁻¹ ∨ 1 < w (1 - z)⁻¹) ↔ (w z ≠ 1 ∨ w (z - 1) ≠ 1) ",
+      "raw_declaration": "private theorem exists_one_lt_iff_tripod (w : FinitePlace F) {z : F} (hz0 : z ≠ 0) (hz1 : z ≠ 1) :\n    (1 < w z ∨ 1 < w z⁻¹ ∨ 1 < w (1 - z)⁻¹) ↔ (w z ≠ 1 ∨ w (z - 1) ≠ 1) := by\n  have hwz : 0 < w z := w.pos_iff.mpr hz0\n  have hsub : z - 1 ≠ 0 := sub_ne_zero.mpr hz1\n  have hwz1 : 0 < w (z - 1) := w.pos_iff.mpr hsub\n  have hneg : w (1 - z) = w (z - 1) := by rw [← neg_sub, map_neg_eq_map]\n  rw [map_inv₀, map_inv₀, hneg, one_lt_inv₀ hwz, one_lt_inv₀ hwz1]\n  constructor\n  · rintro (h | h | h)\n    · exact Or.inl h.ne'\n    · exact Or.inl h.ne\n    · exact Or.inr h.ne\n  · rintro (h | h)\n    · rcases lt_or_gt_of_ne h with h' | h'\n      · exact Or.inr (Or.inl h')\n      · exact Or.inl h'\n    · rcases lt_or_gt_of_ne h with h' | h'\n      · exact Or.inr (Or.inr h')\n      · -- `|z − 1|_w > 1` forces `|z|_w > 1`\n        left\n        have hle : w (z - 1) ≤ max (w z) (w (-1 : F)) := by\n          have := w.add_le z (-1)\n          simpa [sub_eq_add_neg] using this\n        rw [map_neg_eq_map, map_one] at hle\n        rcases le_max_iff.mp hle with h1 | h1\n        · linarith\n        · linarith",
+      "raw_declaration_sha256": "6d5e19d59ef0065d3dd0fc56618f3674da4b6ac89f6582da6cd39e9edeadb12a",
+      "declaration_kind": "theorem",
+      "private": true,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.exists_one_lt_iff_tripod",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [
+          {
+            "command": "section",
+            "name": null
+          }
+        ],
+        "variable_commands": [
+          "variable {F : Type*} [Field F] [NumberField F]"
+        ],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not known"
+      },
+      "declaration_name": "exists_one_lt_iff_tripod",
+      "readback": {
+        "en": "For every type $F$ with a field structure and number-field structure, every finite place $w$ of $F$, and every $z\\in F$ with $z\\ne0$ and $z\\ne1$, one has $(1<w(z)\\ \\vee\\ 1<w(z^{-1})\\ \\vee\\ 1<w((1-z)^{-1}))\\iff(w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1)$. The inequalities are strict. The statement concerns a single arbitrary finite place, with both nonvanishing restrictions on $z$ explicitly required.",
+        "zh-Hans": "对任意带域结构及数域结构的类型 $F$、$F$ 的任意有限处 $w$，以及满足 $z\\ne0$、$z\\ne1$ 的任意 $z\\in F$，有 $(1<w(z)\\ \\vee\\ 1<w(z^{-1})\\ \\vee\\ 1<w((1-z)^{-1}))\\iff(w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1)$。不等式均为严格不等式。结论针对任意一个有限处，并明确要求 $z$ 同时不等于零和一。",
+        "ja": "体構造と数体構造を持つ任意の型 $F$、$F$ の任意の有限素点 $w$、および $z\\ne0$、$z\\ne1$ を満たす任意の $z\\in F$ に対して、$(1<w(z)\\ \\vee\\ 1<w(z^{-1})\\ \\vee\\ 1<w((1-z)^{-1}))\\iff(w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1)$ である。不等式はすべて狭義である。任意の一つの有限素点に関する主張であり、$z$ が零でも一でもないという両条件を必要とする。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "For every type $F$ with a field structure and number-field structure, every finite place $w$ of $F$, and every $z\\in F$ with $z\\ne0$ and $z\\ne1$, one has $(1<w(z)\\ \\vee\\ 1<w(z^{-1})\\ \\vee\\ 1<w((1-z)^{-1}))\\iff(w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1)$. The inequalities are strict. The statement concerns a single arbitrary finite place, with both nonvanishing restrictions on $z$ explicitly required.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "对任意带域结构及数域结构的类型 $F$、$F$ 的任意有限处 $w$，以及满足 $z\\ne0$、$z\\ne1$ 的任意 $z\\in F$，有 $(1<w(z)\\ \\vee\\ 1<w(z^{-1})\\ \\vee\\ 1<w((1-z)^{-1}))\\iff(w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1)$。不等式均为严格不等式。结论针对任意一个有限处，并明确要求 $z$ 同时不等于零和一。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "体構造と数体構造を持つ任意の型 $F$、$F$ の任意の有限素点 $w$、および $z\\ne0$、$z\\ne1$ を満たす任意の $z\\in F$ に対して、$(1<w(z)\\ \\vee\\ 1<w(z^{-1})\\ \\vee\\ 1<w((1-z)^{-1}))\\iff(w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1)$ である。不等式はすべて狭義である。任意の一つの有限素点に関する主張であり、$z$ が零でも一でもないという両条件を必要とする。"
+        }
+      },
+      "proof_notes": "Private written proof uses inversion of positive place values and the nonarchimedean triangle inequality. It is inside an anonymous section with F and its field/number-field instances. Unelaborated here.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    },
+    {
+      "source_path": "/tmp/p2m-belyi-different-conductor-next-20261114/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+      "source_relative_path": "Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_tripodGeneratorConductorIdentity.lean",
+      "source_sha256": "6cbfd856e46cebec5a0094af17ae49159d4ae79dcae64725dbc60a19bdd18be8",
+      "source_span": {
+        "start_line": 49,
+        "end_line": 63,
+        "start_byte": 1684,
+        "end_byte_exclusive": 2340
+      },
+      "signature_span": {
+        "start_line": 49,
+        "end_line": 49
+      },
+      "raw_signature": "theorem tripodGeneratorConductorIdentity : TripodGeneratorConductorIdentity ",
+      "raw_declaration": "theorem tripodGeneratorConductorIdentity : TripodGeneratorConductorIdentity := by\n  intro y\n  have hmeet (w : FinitePlace (Tripod.fieldOf y.1)) :\n      (∃ a ∈ tripodConductorGenerators y, 1 < w a) ↔\n        w (Tripod.gen y.1) ≠ 1 ∨ w (Tripod.gen y.1 - 1) ≠ 1 := by\n    simpa [tripodConductorGenerators] using\n      exists_one_lt_iff_tripod w (Tripod.gen_ne_zero y.2.1)\n        (sub_ne_zero.mp (Tripod.gen_sub_one_ne_zero y.2.2))\n  unfold Tripod.logCond finiteSetLogCond\n  rw [Tripod.deg_eq_finrank]\n  congr 1\n  apply finsum_congr\n  intro w\n  change (if w (Tripod.gen y.1) ≠ 1 ∨ w (Tripod.gen y.1 - 1) ≠ 1 then _ else _) = _\n  rw [hmeet w]",
+      "raw_declaration_sha256": "0566249194ec3b5cd9ab5bcdb99c7f95b17112833626ef19ee5a74c2ccb7880f",
+      "declaration_kind": "theorem",
+      "private": false,
+      "logical_qualified_name": "AbcAdaptation.Tripod.Fermat.Proper.tripodGeneratorConductorIdentity",
+      "kernel_qualified_name": null,
+      "scope_context": {
+        "namespace_commands": [
+          "namespace AbcAdaptation.Tripod.Fermat.Proper"
+        ],
+        "logical_namespace": "AbcAdaptation.Tripod.Fermat.Proper",
+        "sections": [],
+        "variable_commands": [],
+        "include_commands": [],
+        "omit_commands": [],
+        "set_options": [
+          "set_option autoImplicit false"
+        ],
+        "open_commands": [
+          "open NumberField"
+        ],
+        "open_scoped_commands": [
+          "open scoped Classical"
+        ]
+      },
+      "elaboration_status": "not_elaborated_by_readback_agent",
+      "unelaborated_parameters": {
+        "raw_binders_preserved": true,
+        "implicit_universe_levels": "not elaborated",
+        "section_parameter_inclusion": "not elaborated; raw section variable commands are recorded, including ambient commands that may not become binders",
+        "generated_instance_names": null,
+        "private_kernel_name": "not applicable"
+      },
+      "declaration_name": "tripodGeneratorConductorIdentity",
+      "readback": {
+        "en": "For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. For every $z\\in\\overline{\\mathbb Q}$ with $z\\ne0,1$, put $F=\\mathbb Q(z)$ and regard $z$ as the canonical generator of $F$. The proposition says that $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$. The sum is over every finite place of $F$, the norm is the absolute norm of its prime ideal in $\\mathcal O_F$, false conditions contribute zero, and the finite set removes repetitions.",
+        "zh-Hans": "对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。对每个 $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$，记 $F=\\mathbb Q(z)$，并以 $F$ 的典范生成元表示 $z$。此命题断言 $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$。求和遍及 $F$ 的全部有限处，范数为 $\\mathcal O_F$ 中对应素理想的绝对范数，条件不成立时贡献零，有限集将重复元素合并。",
+        "ja": "数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。任意の $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$ について $F=\\mathbb Q(z)$ とし、$z$ を $F$ の標準生成元で表す。この命題は $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$ を述べる。和は $F$ のすべての有限素点にわたり、ノルムは $\\mathcal O_F$ の対応する素イデアルの絶対ノルムである。条件が偽なら零を寄与し、有限集合は重複を除く。"
+      },
+      "original_readback_language": "en",
+      "original_readback": "For a number field $E$ and a finite subset $A\\subset E$, define $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$, where $w$ ranges over every finite place of $E$, $\\mathfrak p_w$ is its maximal ideal in $\\mathcal O_E$, $N_E$ is absolute ideal norm, and a false bracket contributes zero. The superscript denotes the formal finite-support sum. For every $z\\in\\overline{\\mathbb Q}$ with $z\\ne0,1$, put $F=\\mathbb Q(z)$ and regard $z$ as the canonical generator of $F$. The proposition says that $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$. The sum is over every finite place of $F$, the norm is the absolute norm of its prime ideal in $\\mathcal O_F$, false conditions contribute zero, and the finite set removes repetitions.",
+      "translations": {
+        "zh-Hans": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "对数域 $E$ 及其有限子集 $A$，定义 $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$。这里 $w$ 遍及 $E$ 的全部有限处，$\\mathfrak p_w$ 是 $\\mathcal O_E$ 中相应的极大理想，$N_E$ 为理想的绝对范数，方括号内条件不成立时该项为零；上标表示形式代码中的有限支撑求和。对每个 $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$，记 $F=\\mathbb Q(z)$，并以 $F$ 的典范生成元表示 $z$。此命题断言 $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$。求和遍及 $F$ 的全部有限处，范数为 $\\mathcal O_F$ 中对应素理想的绝对范数，条件不成立时贡献零，有限集将重复元素合并。"
+        },
+        "ja": {
+          "source": "original_readback",
+          "translator_backend": null,
+          "text": "数体 $E$ と有限部分集合 $A\\subset E$ に対して $c_E(A)=\\bigl(\\sum_w^{\\mathrm f} [\\exists a\\in A:\\ w(a)>1]\\log N_E(\\mathfrak p_w)\\bigr)/[E:\\mathbb Q]$ と定める。$w$ は $E$ のすべての有限素点を走り、$\\mathfrak p_w$ は $\\mathcal O_E$ の対応する極大イデアル、$N_E$ はイデアルの絶対ノルムである。角括弧内の条件が偽ならその項は零とし、上付き記号は形式コードの有限台和を表す。任意の $z\\in\\overline{\\mathbb Q}$、$z\\ne0,1$ について $F=\\mathbb Q(z)$ とし、$z$ を $F$ の標準生成元で表す。この命題は $\\bigl(\\sum_w^{\\mathrm f}[w(z)\\ne1\\ \\vee\\ w(z-1)\\ne1]\\log N_F(\\mathfrak p_w)\\bigr)/[F:\\mathbb Q]=c_F(\\{z,z^{-1},(1-z)^{-1}\\})$ を述べる。和は $F$ のすべての有限素点にわたり、ノルムは $\\mathcal O_F$ の対応する素イデアルの絶対ノルムである。条件が偽なら零を寄与し、有限集合は重複を除く。"
+        }
+      },
+      "proof_notes": "Written proof applies the private placewise equivalence at every finite place and rewrites the degree normalization. No elaboration, compilation or axiom audit performed.",
+      "proof_status": "written_uncompiled",
+      "readback_model": null,
+      "actual_backend": null
+    }
+  ]
+}

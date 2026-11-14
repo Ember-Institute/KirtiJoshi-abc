@@ -1,0 +1,14 @@
+{
+  "stage": "post-verdict graph readback validation",
+  "cause": "Root graph is complete for mathematical dependencies but omits two previously visible Definitions",
+  "affected_ids": [
+    "72d9610a-531f-497b-b5e5-3c14be31f3ae",
+    "aee58afd-7504-46aa-ba81-67cb253bbdf5"
+  ],
+  "original_assertion": "old_defs <= new_defs",
+  "repair": "Require exact new Definition delta; compare visible old definition bodies; require exact missing old-ID set in real direct GET retention receipts and compare full bodies and formal statements",
+  "proof_verdicts_unchanged": true,
+  "Lean_sources_unchanged": true,
+  "new_API_POSTs": 0,
+  "retention_evidence": "definition-retention-readbacks.json"
+}

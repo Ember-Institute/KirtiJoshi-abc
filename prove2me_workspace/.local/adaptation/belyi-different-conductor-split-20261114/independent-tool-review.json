@@ -1,0 +1,110 @@
+{
+  "scope": "Read-only static independent review of draft delivery and finalizer tools; actual generated delivery and terminal CI evidence require a later review.",
+  "passed": true,
+  "files": {
+    "/tmp/p2m-belyi-conductor-split-delivery-tool-20261114/delivery.py": "cb67c9c32f1aa0b52199e9b8e2a63cbd0d2772817d055eae84be299aec8e7362",
+    "/tmp/p2m-belyi-conductor-split-delivery-tool-20261114/README.md": "e1799c5d9f2ba0c1d95a22195928433a6293b066cc3c6f05941aa3ec555aaa2e",
+    "/tmp/p2m-belyi-conductor-split-finalize-tool-20261114/finalize.py": "f26d55e103c7379cac5da059778e38918151346cd526fe39a75699bd5c228b50",
+    "/tmp/p2m-belyi-conductor-split-finalize-tool-20261114/README.md": "24cdfb97f88cc1d1d017d3f54167bf0b8f044e33eb3c869a4c17e6e4da8e5eec"
+  },
+  "actions": {
+    "compiler_or_ci_called": false,
+    "api_called": false,
+    "main_workspace_modified": false,
+    "git_modified": false,
+    "scripts_imported_or_executed": false,
+    "python_ast_parse_only": true
+  },
+  "blockers": [],
+  "static_checks": [
+    {
+      "area": "source extraction",
+      "result": "pass",
+      "evidence": "header/rename_raw use compiler-parser UTF-8 offsets; one_decl is compiler graph-bound; pruned_module removes whole parser command spans and retains lexical scope. Standalone direct proofs copy full source and append a literal top-level theorem solution."
+    },
+    {
+      "area": "compiler closure and exact types",
+      "result": "pass",
+      "evidence": "18 authored declarations must be graph-reachable from parent; retained coordinate-ring declaration set is exactly cuspDivisor_apply. Generated definition audit compares seven types and bodies by isDefEq. Solution audit compares seven exact type pairs and checks expected sorry debt."
+    },
+    {
+      "area": "private API and replay",
+      "result": "pass",
+      "evidence": "Only AST-selected established publish/verify functions execute; payloads request private publication and subsequent states check visibility/env. Mutation intent precedes POST; unknown outcomes stop rather than repeat. Known submission receipts permit polling. Parent PATCH is restricted to prose/source and preserves original type/preamble."
+    },
+    {
+      "area": "graph invariants",
+      "result": "pass",
+      "evidence": "Existing mathematical IDs/types/statuses and reductions remain; only three new children and one new Definition; direct proofs have no mathematical imports. Required after counts are 35 reductions, 81 children, 99 edges, 17 frontier leaves and 40 direct closed records. Open frontier replaces parent with only conductor-extension child; parent/canonicalEstimate/root remain Open."
+    },
+    {
+      "area": "external file and pending DB scope",
+      "result": "pass",
+      "evidence": "Owned external Lean set contains exactly eight paths. Coordinate-ring helper source is hash-preserved and excluded. Pending DB after bytes must equal exactly first-section Conductor.lean:202 to :170 replacement; BelyiDescent.lean:248 and all later sections remain."
+    },
+    {
+      "area": "readbacks, consumers, axioms and receipts",
+      "result": "pass subject to real evidence",
+      "evidence": "Preflight binds 20 readbacks, requires 18 fresh compiler binder reviews, compiler hashes, independent source/consumer review, production gates and actual canonical consumer. All module constants including auxiliaries are audited. Receipt path, argument, source hash, exclusive workspace, exit status and CPU sum are checked; finalizer inventories all terminal attempts and requires leaf RSS <=16GiB."
+    },
+    {
+      "area": "secrets and index preservation",
+      "result": "pass",
+      "evidence": "Explicit reviewed unit-relative file list, safe-path checks, fixed outputs and root-reviewed staging-candidates packet replace recursive staging. Finalizer does not invoke git add or mutate index and checks complete index equality. Credential values and token prefix are checked before registry/document writes."
+    }
+  ],
+  "pending_actual_delivery_checks": [
+    "Main-agent private publication and actual final graph/frontier validation remain outside this prepublication review."
+  ],
+  "other_blockers": [],
+  "resolved_findings": [
+    {
+      "id": "F1",
+      "file": "/tmp/p2m-belyi-conductor-split-finalize-tool-20261114/finalize.py",
+      "line": 370,
+      "issue": "The Git stage list includes every file recursively found under the unit. This is not an explicit reviewed per-file allowlist; any new unit file is automatically staged with git add -f.",
+      "requested_change": "Consume the root-reviewed unit-evidence-allowlist.json, bind listed paths to hashes, reject unsafe paths, and leave Git staging to root as already requested by root.",
+      "status": "Resolved in reviewed finalizer: explicit unit-evidence-allowlist.json; fixed five output files; no recursive directory enumeration or git add; staging-candidates.json is review only; complete index equality is required."
+    }
+  ],
+  "generated_source_preliminary_review": {
+    "passed": true,
+    "blockers": [],
+    "generated_source_hashes": {
+      ".local/adaptation/belyi-different-conductor-split-20261114/Solution_belyiDifferentConductorComparison.lean": "1a75c69eb625bd23e7399d8628be1677168830b5e6bef16da2db57e70821f9ee",
+      ".local/adaptation/belyi-different-conductor-split-20261114/Solution_belyiActualFieldDifferentTower.lean": "a49561f269d8b13dafeef717397a5aba7b1508f64e76d48a6a2776ab029ec1f5",
+      ".local/adaptation/belyi-different-conductor-split-20261114/Solution_tripodGeneratorConductorIdentity.lean": "1c39b1154f3a74072559868f095238221fd5e64996eb65106806660f4b06fd0f",
+      ".local/adaptation/belyi-different-conductor-split-20261114/UploadDefinition.lean": "532cd329c79c27749b64df632f3b781d28d51db6cc545df7bf85f93bbb24ea1a",
+      ".local/adaptation/belyi-different-conductor-split-20261114/AuditDefinition.lean": "02ebf337a6045cbbed417ffb25b112c1a0c208834180cbe756289117e66ebcd6",
+      ".local/adaptation/belyi-different-conductor-split-20261114/AuditSolution.lean": "8183f111735304e69df024d64ca6b45b3fdbe8d91e644e28ea6340c2e1497dc7",
+      ".local/adaptation/belyi-different-conductor-split-20261114/UploadType0.lean": "3d171b5fcfa1aa6b2bf3598c4648fb479393c9db418f6b4352f87a56166dcb96",
+      ".local/adaptation/belyi-different-conductor-split-20261114/UploadType1.lean": "7a7e9b48700691faf08f84572be61e86e0fb0ed78104704c7661b6be08c72c02",
+      ".local/adaptation/belyi-different-conductor-split-20261114/UploadType2.lean": "50f19372f6cede7a163061537feb44e4c999ef40919cfe1b8f91f6818b86151a"
+    },
+    "independently_checked": [
+      "Both direct proofs equal full original source with parser name-span replacement plus namespace-external top-level theorem solution.",
+      "Definition upload equals source bytes.",
+      "27 parser name byte-spans match source text.",
+      "All nine generated SHA-256 and all seven source-closure input hashes match.",
+      "Graph/parser SHA-256 match closure evidence.",
+      "18 authored declarations are compiler-graph reachable from parent.",
+      "20 readback rows match current source hashes and exact compiler types."
+    ],
+    "receipt_acceptance": "Complete: all 28 required receipts passed actual independent review.",
+    "audit_namespace_repair": {
+      "reviewed": true,
+      "changed_source": "AuditDefinition.lean",
+      "change": "Adds open AbcAdaptation before moving exact definitions into audit namespace. No original definition or uploaded definition bytes change.",
+      "failure_job": "ci-012109-eb3e69ec",
+      "retry_job": "ci-012111-c376182d",
+      "retry_receipt_pending": false
+    }
+  },
+  "actual_prepublication_delivery_review": {
+    "passed": true,
+    "report": "/tmp/p2m-conductor-delivery-tool-independent-review-20261114/independent-delivery-review.json",
+    "required_receipts": 28,
+    "all_terminal_succeeded": true,
+    "blockers": []
+  }
+}
