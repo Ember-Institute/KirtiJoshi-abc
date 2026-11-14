@@ -1,0 +1,97 @@
+{
+  "status": "draft; not compiled; requires main-agent integration and exclusive MCP-CI validation",
+  "source": {
+    "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Corollary22.lean",
+    "sha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+    "historical_upstream_revision": "unverified; local reference archive has no own .git; root repository HEAD does not establish upstream revision",
+    "declarations": [
+      {
+        "name": "Iut.log_le_four_mul_sqrt_sqrt",
+        "lines": "57-72",
+        "adaptation": "private helper; proof body unchanged"
+      },
+      {
+        "name": "Iut.log_le_self_of_pos",
+        "lines": "75-76",
+        "adaptation": "private helper; proof body unchanged"
+      },
+      {
+        "name": "Iut.epsilonE_le",
+        "lines": "111-155",
+        "adaptation": "existing public theorem statement retained; intro original predicate binders; copied proof; qualify epsilonE unfold"
+      }
+    ]
+  },
+  "target": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_epsilonELargeHeight.lean",
+    "original_sha256": "319d7367839e4a19ef3167c48846d79d6f631068698ed1d2835f484fe15bfec6",
+    "draft_path": "/tmp/p2m-epsilon-large-height-next-20261114/Thm_AbcAdaptation_Tripod_epsilonELargeHeight.lean",
+    "draft_sha256": "32caca1545f13d62609cce8e60a7ded34c3e06a5c94140bccd30b73a460c02a7",
+    "existing_public_theorem": "AbcAdaptation.Tripod.epsilonELargeHeight",
+    "unchanged_type": "AbcAdaptation.Tripod.EpsilonELargeHeight"
+  },
+  "consumer": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_TripodHighHeightEstimate.lean",
+    "line": 12,
+    "composition_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodCanonicalHighHeightComposition.lean",
+    "composition_declaration": "AbcAdaptation.Tripod.highHeightEstimate_of_canonical_children",
+    "argument": "hEpsilon : EpsilonELargeHeight",
+    "use": "instantiate deltaBound d, auxiliaryHeight x, epsilon to bound the explicit error in the existing HighHeightEstimate composition"
+  },
+  "private_helper_consumers": {
+    "log_le_four_mul_sqrt_sqrt": "epsilonELargeHeight.hlog",
+    "log_le_self_of_pos": "epsilonELargeHeight.hlog"
+  },
+  "local_import_closure": {
+    "Definitions.Def_TripodCanonicalHighHeightInputs": [
+      "Definitions.Def_TripodStatementIIInputs"
+    ],
+    "Definitions.Def_TripodStatementIIInputs": [
+      "Definitions.Def_AbcTripod"
+    ],
+    "Definitions.Def_AbcTripod": [
+      "Mathlib.FieldTheory.AlgebraicClosure",
+      "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic",
+      "Mathlib.NumberTheory.Height.NumberField",
+      "Mathlib.NumberTheory.NumberField.Discriminant.Different",
+      "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+      "Mathlib.RingTheory.Radical.NatInt"
+    ]
+  },
+  "static_review": {
+    "exact_public_theorem_type_retained": true,
+    "source_helpers_copied_verbatim_except_private": true,
+    "source_proof_copied_verbatim_except_qualified_unfold": true,
+    "source_license_preserved": true,
+    "no_sorry_admit_or_axiom_declarations": true,
+    "no_import_iut_genl": true,
+    "local_import_closure_has_no_iut_genl": true,
+    "no_heartbeat_overrides": true,
+    "public_theorem_count": 1,
+    "private_helper_count": 2,
+    "trailing_whitespace_lines": []
+  },
+  "mathlib": {
+    "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+    "platform_pin_from_lakefile": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "imports": [
+      "Mathlib.Analysis.Real.Sqrt",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.Push",
+      "Mathlib.Tactic.Ring"
+    ]
+  },
+  "assumptions": "No new mathematical assumptions. The original concrete predicate is unchanged. Source proof uses standard real-analysis results and arithmetic tactics. Kernel axiom output is pending MCP-CI review.",
+  "scope": "Only the epsilonELargeHeight child is addressed. The other canonical high-height children and the parent HighHeightEstimate obligation are not claimed complete.",
+  "actions_not_performed": [
+    "Lean compilation",
+    "MCP-CI invocation",
+    "main workspace modifications",
+    "Git mutations",
+    "remote API calls"
+  ]
+}

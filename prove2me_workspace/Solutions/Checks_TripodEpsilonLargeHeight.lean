@@ -1,0 +1,2 @@
+import Theorems.Thm_AbcAdaptation_Tripod_epsilonELargeHeight
+#print axioms AbcAdaptation.Tripod.epsilonELargeHeight

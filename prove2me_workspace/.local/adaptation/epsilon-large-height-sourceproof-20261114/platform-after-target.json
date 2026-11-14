@@ -1,0 +1,23 @@
+{
+  "theorem_id": "7292ba3c-10d1-4324-ae36-ad6c9a7e1acf",
+  "theorem_name": "AbcAdaptation.Tripod.epsilonELargeHeight",
+  "theorem_title": "Explicit fourth-power threshold for the Corollary 2.2 error",
+  "status": "Proved",
+  "formal_statement": "theorem AbcAdaptation.Tripod.epsilonELargeHeight : AbcAdaptation.Tripod.EpsilonELargeHeight := by sorry",
+  "natural_language_statement": "> Now let us set\n>\n> $$\n> \\epsilon_E\\overset{\\mathrm{def}}{=}(60\\delta)^2\\cdot h^{-1/2}\\cdot\\log(2\\delta\\cdot h)\\quad(\\geq 5\\cdot\\delta\\cdot h^{-1/2});\n> $$\n>\n> $$\n> \\epsilon_d^*\\overset{\\mathrm{def}}{=}\\frac{1}{16}\\cdot\\epsilon_d\\quad(<\\tfrac{1}{2}\\leq 1)\n> $$\n>\n> — where we apply the estimates $h\\geq 1$, $\\log(2\\delta\\cdot h)\\geq\\log(2\\delta)\\geq\\log(4)\\geq 1$ [cf. the property (E6) in the proof of Theorem 1.10], and $\\epsilon_d\\leq 1$.\n\n— Shinichi Mochizuki, *Inter-universal Teichmüller Theory IV*, proof of Corollary 2.2(ii), p.47.\n\n**English**\n\n`AbcAdaptation.Tripod.epsilonELargeHeight`\n\nFor every triple of real numbers δ, h, and ε, suppose δ ≥ 1, ε > 0, ((60δ)²(2δ + 4)/ε)⁴ ≤ h, and h ≥ 1. Then the error function E(δ,h) = (60δ)² · [log(2δh)/√h] satisfies E(δ,h) ≤ ε; equivalently, (60δ)² log(2δh)/√h ≤ ε. Here log is the natural logarithm, √h is the nonnegative real square root of h, and the ratio inside the brackets is exactly log(2δh)/√h.\n\n$$\n\\frac{(60\\delta)^2\\log(2\\delta h)}{\\sqrt h}\\le\\epsilon\n$$\n\n**简体中文**\n\n`AbcAdaptation.Tripod.epsilonELargeHeight`\n\n对任意三个实数 δ、h 和 ε，假设 δ ≥ 1、ε > 0、((60δ)²(2δ + 4)/ε)⁴ ≤ h，且 h ≥ 1。则误差函数 E(δ,h) = (60δ)² · [log(2δh)/√h] 满足 E(δ,h) ≤ ε；等价地，(60δ)² log(2δh)/√h ≤ ε。这里 log 表示自然对数，√h 表示 h 的非负实平方根，方括号中的比值恰为 log(2δh)/√h。\n\n$$\n\\frac{(60\\delta)^2\\log(2\\delta h)}{\\sqrt h}\\le\\epsilon\n$$\n\n**日本語**\n\n`AbcAdaptation.Tripod.epsilonELargeHeight`\n\n任意の三つの実数 δ、h、ε について、δ ≥ 1、ε > 0、((60δ)²(2δ + 4)/ε)⁴ ≤ h、および h ≥ 1 を仮定する。このとき、誤差関数 E(δ,h) = (60δ)² · [log(2δh)/√h] は E(δ,h) ≤ ε を満たす。すなわち、(60δ)² log(2δh)/√h ≤ ε が成り立つ。ここで log は自然対数、√h は h の非負の実平方根を表し、角括弧内の比は正確に log(2δh)/√h である。\n\n$$\n\\frac{(60\\delta)^2\\log(2\\delta h)}{\\sqrt h}\\le\\epsilon\n$$",
+  "created_at": "2026-11-13T03:57:05.128199+00:00",
+  "vote_count": 0,
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-geometry",
+    "arithmetic-teichmuller-spaces"
+  ],
+  "preamble": "import Definitions.Def_TripodCanonicalHighHeightInputs\n\nset_option autoImplicit false",
+  "source": "Shinichi Mochizuki, Inter-universal Teichmuller Theory IV, Corollary 2.2(ii),(iii), printed pp.42–43 and proof pp.47–48, https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf . The checked original quotation supplies the exact error-function and smallness context. The explicit fourth-power sufficient threshold is the complete formal source proof Iut/Implication/Corollary22.lean::epsilonE_le, with log_le_four_mul_sqrt_sqrt and log_le_self_of_pos. Archive SHA256 ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15. Historical upstream revision is unverified. Complete source proof independently rechecked under Mathlib 0df444a; original licence and author notices retained. No new mathematical node, assumption, Open debt, Iut/Genl runtime dependency or global 3.12 claim.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

@@ -1,0 +1,84 @@
+{
+  "readbacks": [
+    {
+      "declaration": "AbcAdaptation.Tripod.log_le_four_mul_sqrt_sqrt",
+      "visibility": "private",
+      "userName": "AbcAdaptation.Tripod.log_le_four_mul_sqrt_sqrt",
+      "private_userName_identity": {
+        "source_level_userName": "AbcAdaptation.Tripod.log_le_four_mul_sqrt_sqrt",
+        "intended_owner_module": "Theorems.Thm_AbcAdaptation_Tripod_epsilonELargeHeight",
+        "compiler_resolved_userName": null
+      },
+      "intended_owner_module": "Theorems.Thm_AbcAdaptation_Tripod_epsilonELargeHeight",
+      "source_path": "/tmp/p2m-epsilon-large-height-next-20261114/Thm_AbcAdaptation_Tripod_epsilonELargeHeight.lean",
+      "source_sha256": "32caca1545f13d62609cce8e60a7ded34c3e06a5c94140bccd30b73a460c02a7",
+      "generalized_signature": "∀ {h : ℝ}, 1 ≤ h → Real.log h ≤ 4 * Real.sqrt (Real.sqrt h)",
+      "statements": {
+        "English": "For every real number h, if 1 ≤ h, then log(h) ≤ 4√(√h), where log is the natural logarithm and each square root denotes the nonnegative real square root.",
+        "SimplifiedChinese": "对每个实数 h，如果 1 ≤ h，则 log(h) ≤ 4√(√h)，其中 log 表示自然对数，每个平方根均表示非负实平方根。",
+        "Japanese": "任意の実数 h について、1 ≤ h ならば log(h) ≤ 4√(√h) が成り立つ。ここで log は自然対数を表し、それぞれの平方根は非負の実平方根を表す。"
+      },
+      "proof_notes": {
+        "English": "Set s = √(√h). Then s ≥ 1 and s⁴ = h. Rewrite log(h) = 4 log(s), and use log(s) ≤ s − 1 to obtain the stated non-strict inequality.",
+        "SimplifiedChinese": "令 s = √(√h)。则 s ≥ 1 且 s⁴ = h。将 log(h) 改写为 4 log(s)，再用 log(s) ≤ s − 1 得到所述非严格不等式。",
+        "Japanese": "s = √(√h) とおくと、s ≥ 1 かつ s⁴ = h となる。log(h) を 4 log(s) と書き換え、log(s) ≤ s − 1 を使うと、主張の等号を含む不等式を得る。"
+      },
+      "quote": null,
+      "source_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.log_le_self_of_pos",
+      "visibility": "private",
+      "userName": "AbcAdaptation.Tripod.log_le_self_of_pos",
+      "private_userName_identity": {
+        "source_level_userName": "AbcAdaptation.Tripod.log_le_self_of_pos",
+        "intended_owner_module": "Theorems.Thm_AbcAdaptation_Tripod_epsilonELargeHeight",
+        "compiler_resolved_userName": null
+      },
+      "intended_owner_module": "Theorems.Thm_AbcAdaptation_Tripod_epsilonELargeHeight",
+      "source_path": "/tmp/p2m-epsilon-large-height-next-20261114/Thm_AbcAdaptation_Tripod_epsilonELargeHeight.lean",
+      "source_sha256": "32caca1545f13d62609cce8e60a7ded34c3e06a5c94140bccd30b73a460c02a7",
+      "generalized_signature": "∀ {y : ℝ}, 0 < y → Real.log y ≤ y",
+      "statements": {
+        "English": "For every real number y, if 0 < y, then log(y) ≤ y, where log is the natural logarithm.",
+        "SimplifiedChinese": "对每个实数 y，如果 0 < y，则 log(y) ≤ y，其中 log 表示自然对数。",
+        "Japanese": "任意の実数 y について、0 < y ならば log(y) ≤ y が成り立つ。ここで log は自然対数を表す。"
+      },
+      "proof_notes": {
+        "English": "Use log(y) ≤ y − 1 for positive y and then y − 1 ≤ y.",
+        "SimplifiedChinese": "对正数 y 使用 log(y) ≤ y − 1，再使用 y − 1 ≤ y。",
+        "Japanese": "正の y に対して log(y) ≤ y − 1 を使い、さらに y − 1 ≤ y を使う。"
+      },
+      "quote": null,
+      "source_quote": null
+    },
+    {
+      "declaration": "AbcAdaptation.Tripod.epsilonELargeHeight",
+      "visibility": "public",
+      "userName": "AbcAdaptation.Tripod.epsilonELargeHeight",
+      "private_userName_identity": null,
+      "intended_owner_module": "Theorems.Thm_AbcAdaptation_Tripod_epsilonELargeHeight",
+      "source_path": "/tmp/p2m-epsilon-large-height-next-20261114/Thm_AbcAdaptation_Tripod_epsilonELargeHeight.lean",
+      "source_sha256": "32caca1545f13d62609cce8e60a7ded34c3e06a5c94140bccd30b73a460c02a7",
+      "generalized_signature": "∀ (δ h ε : ℝ), 1 ≤ δ → 0 < ε → ((60 * δ) ^ 2 * (2 * δ + 4) / ε) ^ 4 ≤ h → 1 ≤ h → (60 * δ) ^ 2 * Real.log (2 * δ * h) / Real.sqrt h ≤ ε",
+      "referenced_definition": {
+        "source_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodCanonicalHighHeightInputs.lean",
+        "name": "AbcAdaptation.Tripod.EpsilonELargeHeight",
+        "error_function_name": "AbcAdaptation.Tripod.epsilonE",
+        "error_function_formula": "epsilonE(δ,h) = (60δ)² · [log(2δh)/√h]"
+      },
+      "statements": {
+        "English": "For every triple of real numbers δ, h, and ε, suppose δ ≥ 1, ε > 0, ((60δ)²(2δ + 4)/ε)⁴ ≤ h, and h ≥ 1. Then the error function E(δ,h) = (60δ)² · [log(2δh)/√h] satisfies E(δ,h) ≤ ε; equivalently, (60δ)² log(2δh)/√h ≤ ε. Here log is the natural logarithm, √h is the nonnegative real square root of h, and the ratio inside the brackets is exactly log(2δh)/√h.",
+        "SimplifiedChinese": "对任意三个实数 δ、h 和 ε，假设 δ ≥ 1、ε > 0、((60δ)²(2δ + 4)/ε)⁴ ≤ h，且 h ≥ 1。则误差函数 E(δ,h) = (60δ)² · [log(2δh)/√h] 满足 E(δ,h) ≤ ε；等价地，(60δ)² log(2δh)/√h ≤ ε。这里 log 表示自然对数，√h 表示 h 的非负实平方根，方括号中的比值恰为 log(2δh)/√h。",
+        "Japanese": "任意の三つの実数 δ、h、ε について、δ ≥ 1、ε > 0、((60δ)²(2δ + 4)/ε)⁴ ≤ h、および h ≥ 1 を仮定する。このとき、誤差関数 E(δ,h) = (60δ)² · [log(2δh)/√h] は E(δ,h) ≤ ε を満たす。すなわち、(60δ)² log(2δh)/√h ≤ ε が成り立つ。ここで log は自然対数、√h は h の非負の実平方根を表し、角括弧内の比は正確に log(2δh)/√h である。"
+      },
+      "proof_notes": {
+        "English": "Set s = √(√h) and M = (60δ)²(2δ + 4)/ε. The hypotheses give s ≥ 1, s² = √h, and M ≤ s. The two private logarithm bounds yield log(2δh) ≤ 2δ + 4s ≤ (2δ + 4)s. Multiply by (60δ)², rewrite (60δ)²(2δ + 4) = εM, and use M ≤ s to bound the numerator by εs². Divide by √h = s² > 0.",
+        "SimplifiedChinese": "令 s = √(√h)，M = (60δ)²(2δ + 4)/ε。由假设得到 s ≥ 1、s² = √h 和 M ≤ s。两个私有辅助引理给出 log(2δh) ≤ 2δ + 4s ≤ (2δ + 4)s。两边乘以 (60δ)²，利用等式 (60δ)²(2δ + 4) = εM，并用 M ≤ s 将分子估计为不大于 εs²。最后除以正数 √h = s²。",
+        "Japanese": "s = √(√h)、M = (60δ)²(2δ + 4)/ε とおく。仮定から s ≥ 1、s² = √h、M ≤ s を得る。二つの非公開の補題から log(2δh) ≤ 2δ + 4s ≤ (2δ + 4)s を得る。両辺に (60δ)² を掛け、(60δ)²(2δ + 4) = εM と書き換え、M ≤ s を使って分子を εs² 以下に抑える。最後に正の数 √h = s² で割る。"
+      },
+      "quote": null,
+      "source_quote": null
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "theorem_id": "7292ba3c-10d1-4324-ae36-ad6c9a7e1acf",
+  "theorem_name": "AbcAdaptation.Tripod.epsilonELargeHeight",
+  "theorem_title": "Explicit fourth-power threshold for the Corollary 2.2 error",
+  "status": "Open",
+  "formal_statement": "theorem AbcAdaptation.Tripod.epsilonELargeHeight : AbcAdaptation.Tripod.EpsilonELargeHeight := by sorry",
+  "natural_language_statement": "> “But such an inequality follows immediately, in light of the [relevant] equality of BD-classes of Corollary 2.2, (i), from Corollary 2.2, (ii) [cf. condition (C2)], (iii) […]”\n\n— Shinichi Mochizuki, *Inter-universal Teichmüller Theory IV*, §2, proof of Corollary 2.3.\n\n**English**\n\n`AbcAdaptation.Tripod.epsilonELargeHeight`\n\nFor every three real numbers $\\delta,h,\\varepsilon$, if $1\\le\\delta$, $0<\\varepsilon$, $(((60\\delta)^2(2\\delta+4))/\\varepsilon)^4\\le h$, and $1\\le h$, then $(60\\delta)^2\\log(2\\delta h)/\\sqrt h\\le\\varepsilon$. Here the left-hand expression is exactly the definition of $\\operatorname{epsilonE}(\\delta,h)$, $\\log$ is the real natural logarithm, and $\\sqrt h$ is the real square root. Both lower bounds on $h$ are non-strict; no conclusion is imposed for triples not satisfying all four hypotheses. Under these hypotheses $\\varepsilon$ and $\\sqrt h$ are nonzero and $2\\delta h>0$, so the total-function values at zero or negative arguments do not enter this implication.\n\n**简体中文**\n\n`AbcAdaptation.Tripod.epsilonELargeHeight`\n\n对任意三个实数 $\\delta,h,\\varepsilon$，若 $1\\le\\delta$、$0<\\varepsilon$、$(((60\\delta)^2(2\\delta+4))/\\varepsilon)^4\\le h$ 且 $1\\le h$，则 $(60\\delta)^2\\log(2\\delta h)/\\sqrt h\\le\\varepsilon$。这里左端表达式正是所定义的误差函数在 $(\\delta,h)$ 处的值，$\\log$ 为实自然对数，$\\sqrt h$ 为实平方根。$h$ 的两个下界均包括等号；对不同时满足这四个假设的三元组，不要求任何结论。在这些假设下，$\\varepsilon$ 和 $\\sqrt h$ 均非零，且 $2\\delta h>0$，因此此蕴含式不涉及这些全定义函数在零或负自变量处的特殊取值。\n\n**日本語**\n\n`AbcAdaptation.Tripod.epsilonELargeHeight`\n\n任意の三つの実数 $\\delta,h,\\varepsilon$ について、$1\\le\\delta$、$0<\\varepsilon$、$(((60\\delta)^2(2\\delta+4))/\\varepsilon)^4\\le h$、$1\\le h$ が成り立つならば、$(60\\delta)^2\\log(2\\delta h)/\\sqrt h\\le\\varepsilon$ が成り立つ。左辺は関数 $\\operatorname{epsilonE}(\\delta,h)$ の定義そのものであり、$\\log$ は実自然対数、$\\sqrt h$ は実平方根を表す。$h$ に対する二つの下限はいずれも等号を含む。四つの仮定をすべて満たさない三つ組には結論を要求しない。これらの仮定のもとでは $\\varepsilon$ と $\\sqrt h$ は零ではなく、$2\\delta h>0$ であるため、この含意には全域で定義された関数の零や負の引数での特別な値は現れない。",
+  "created_at": "2026-11-13T03:57:05.128199+00:00",
+  "vote_count": 0,
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-geometry",
+    "arithmetic-teichmuller-spaces"
+  ],
+  "preamble": "import Definitions.Def_TripodCanonicalHighHeightInputs\n\nset_option autoImplicit false",
+  "source": "Shinichi Mochizuki, Inter-universal Teichmüller Theory IV, §2, Corollary 2.2(i)–(iii) and proof of Corollary 2.3; https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf . Independently adapted under Apache 2.0; no Iut or Genl imports. Exact Lean source refer/iut/Iut/Implication/Corollary22.lean:107 epsilonE and :111 epsilonE_le. Both the explicit fourth-power threshold and the independent hypothesis 1 <= h are retained.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

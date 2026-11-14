@@ -8,7 +8,6 @@
 - `refer/iut/Iut/Implication/Corollary23.lean:56`
 - `refer/iut/Iut/Tripod/Height.lean:603`
 - `refer/iut/Iut/Tripod/Height.lean:791`
-- `refer/iut/Iut/Implication/Corollary22.lean:111`
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
 - `refer/iut/Iut/Implication/Corollary22.lean:386`
@@ -40,11 +39,7 @@
 
 ## 3. 不属于以上两类来源的证明义务
 
-### 规范高度估计及一般位置传递的剩余分解
-
-`canonicalLegendreHeightComparison` 仍需追踪实际单生成数域上的有限处高度、Legendre 不变量及其与既有高度的两向比较；`epsilonELargeHeight` 仍需把来源中的具体四次幂阈值与基础实分析依赖接成可验收节点。二者的陈述已固定到实际对象和明确公式，尚未完成其向基础定理的依赖闭包。
-
-`canonicalCorollary22HighHeightEstimate` 仍需继续拆出推论二点二的共同算术来源、初始 theta 数据、局部理论、所选素数和定理一点一零输入。有限例外集必须识别为来源 `excCore` 与 `K.set ∩ ptLE d` 的交，统一阈值和常数必须分别识别为 `I.threshold cheb` 与 `40*pnt.η+I.B/3`；保留完整三项结论，不以存在某个数值证书代替真实来源。参考工程的真实基本群及缓和基本群构造可从 `ClassicalAbcGenuineCanLift.lean:40` 的特化入口继续追踪，本地还需独立移植并核对相同数据上的消费者。
+### 尚未对应到现成来源陈述的具体几何义务
 
 `Fermat.heightNormalization` 仍需把实际点域 `ℚ(u,v)` 与 `ℚ(u^N)` 的高度归一化、幂的高度公式，以及 `[u:v:1]` 与 `[u:1]` 的一致比较接到底层节点；不能把 `(N−3)/N` 系数误换成覆盖次数 `N²` 的倒数。`Fermat.liftDifferent` 仍需拆出实际根的存在性、完整点域的 `N²` 次数界，以及相同扩张上的归一化判别式／导子估计；单用子域判别式单调性不能证明完整点域的上界。
 
