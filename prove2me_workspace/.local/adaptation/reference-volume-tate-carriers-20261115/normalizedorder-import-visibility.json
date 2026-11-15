@@ -1,0 +1,417 @@
+{
+  "schema": "normalizedorder-source435-tactic-import-inspection-v1",
+  "status": "verified-public-header-chains-and-builtin-ownership-offline",
+  "importsSha256": "f9f9ec1fac870f1816a4cdce870e75b6514cc1e148f3856d95f1bd84460231fd",
+  "module": "TateCurvesTheta.QParameter.NormalizedOrder",
+  "privateImportsExcluded": true,
+  "originalTatePeerClosureExcluded": true,
+  "implicitInitIncluded": true,
+  "source435ImportsAdditions": [],
+  "reviewEdits": [],
+  "conclusion": "Keep current reviewed imports. Existing public chains cover linarith/nlinarith, by_contra and omega. exact_mod_cast syntax is provided by implicit Init; mod_cast is a builtin term elaborator loaded by the accepted Lean-only driver. No required direct source import edits. Authentic source oracle remains the acceptance gate.",
+  "normCastResolution": {
+    "sourcePublicReexportClaim": false,
+    "macroOwner": "Init.TacticsExtra",
+    "elaboratorOwner": "Lean.Elab.Tactic.NormCast",
+    "registration": "builtin_term_elab modCast; process IO.Ref builtin table",
+    "driverSource": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/ExtractSmallRuntimeOracle.lean",
+    "driverSha256": "3cc6794c48f57185a3cab461b7c8ef7de00e0fb184cc3cd0ce766cea1fb927ea",
+    "driverImports": [
+      "Lean"
+    ],
+    "driverPublicImportsChain": [
+      "Lean",
+      "Lean.Elab",
+      "Lean.Elab.Tactic",
+      "Lean.Elab.Tactic.NormCast"
+    ]
+  },
+  "chains": [
+    {
+      "target": "Batteries.Tactic.Init",
+      "root": "Mathlib.Order.Defs.LinearOrder",
+      "modules": [
+        "Mathlib.Order.Defs.LinearOrder",
+        "Batteries.Tactic.Init"
+      ],
+      "edges": [
+        {
+          "from": "Mathlib.Order.Defs.LinearOrder",
+          "to": "Batteries.Tactic.Init",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Order/Defs/LinearOrder.lean",
+          "sha256": "2df1497aa0a8dd7d91da1c5ff24a617cee9d865ac299a3a6c2ebd0073fdaa23f",
+          "line": 14,
+          "text": "public import Batteries.Tactic.Init"
+        }
+      ]
+    },
+    {
+      "target": "Init.TacticsExtra",
+      "root": "Init",
+      "modules": [
+        "Init",
+        "Init.TacticsExtra"
+      ],
+      "edges": [
+        {
+          "from": "Init",
+          "to": "Init.TacticsExtra",
+          "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Init.lean",
+          "sha256": "28b57970b6f0adef586f14939a95362959b698a68463d4a803f81464ad8e0675",
+          "line": 11,
+          "text": "public import Init.TacticsExtra"
+        }
+      ]
+    },
+    {
+      "target": "Lean.Elab.Tactic.Omega",
+      "root": "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "modules": [
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Analysis.SpecialFunctions.Exp",
+        "Mathlib.Analysis.SpecificLimits.Normed",
+        "Mathlib.Algebra.Algebra.Spectrum.Quasispectrum",
+        "Mathlib.Algebra.Algebra.Spectrum.Basic",
+        "Mathlib.RingTheory.Ideal.Maps",
+        "Mathlib.RingTheory.Ideal.Operations",
+        "Mathlib.Tactic.Order",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "edges": [
+        {
+          "from": "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+          "to": "Mathlib.Analysis.SpecialFunctions.Exp",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean",
+          "sha256": "d0aeb4407a0f1fbb0ae5b54ceb34d743f0a16383bb7f4ffeda0ce8b124f92ce3",
+          "line": 8,
+          "text": "public import Mathlib.Analysis.SpecialFunctions.Exp"
+        },
+        {
+          "from": "Mathlib.Analysis.SpecialFunctions.Exp",
+          "to": "Mathlib.Analysis.SpecificLimits.Normed",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Analysis/SpecialFunctions/Exp.lean",
+          "sha256": "b4b4e814db045c3d22715a20dcdc7b9210b14ba1b49db4191c3ce066f993dd3a",
+          "line": 10,
+          "text": "public import Mathlib.Analysis.SpecificLimits.Normed"
+        },
+        {
+          "from": "Mathlib.Analysis.SpecificLimits.Normed",
+          "to": "Mathlib.Algebra.Algebra.Spectrum.Quasispectrum",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Analysis/SpecificLimits/Normed.lean",
+          "sha256": "96ff519cc6241af4224ca455fe0d8ec9fc7fd7445632c55e818212965f14a004",
+          "line": 8,
+          "text": "public import Mathlib.Algebra.Algebra.Spectrum.Quasispectrum"
+        },
+        {
+          "from": "Mathlib.Algebra.Algebra.Spectrum.Quasispectrum",
+          "to": "Mathlib.Algebra.Algebra.Spectrum.Basic",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Algebra/Spectrum/Quasispectrum.lean",
+          "sha256": "7561300fe7839c74a5d52c5b71b26d237745befd634a2db54bfc438a59645602",
+          "line": 8,
+          "text": "public import Mathlib.Algebra.Algebra.Spectrum.Basic"
+        },
+        {
+          "from": "Mathlib.Algebra.Algebra.Spectrum.Basic",
+          "to": "Mathlib.RingTheory.Ideal.Maps",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Algebra/Spectrum/Basic.lean",
+          "sha256": "1386ab90e19dbd63a4eb59decc6d0c7802fc48990ca1be3176cc6086b8eea2e0",
+          "line": 10,
+          "text": "public import Mathlib.RingTheory.Ideal.Maps"
+        },
+        {
+          "from": "Mathlib.RingTheory.Ideal.Maps",
+          "to": "Mathlib.RingTheory.Ideal.Operations",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/RingTheory/Ideal/Maps.lean",
+          "sha256": "b438fe1a1c95d7b39f3ed2cafd166a9d7296aa8808f4e160e92cafce73339ece",
+          "line": 10,
+          "text": "public import Mathlib.RingTheory.Ideal.Operations"
+        },
+        {
+          "from": "Mathlib.RingTheory.Ideal.Operations",
+          "to": "Mathlib.Tactic.Order",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/RingTheory/Ideal/Operations.lean",
+          "sha256": "317743db7840e871e2b442c7afd9b153c3d70274404dc12b960352421fe8e2c1",
+          "line": 14,
+          "text": "public import Mathlib.Tactic.Order"
+        },
+        {
+          "from": "Mathlib.Tactic.Order",
+          "to": "Lean.Elab.Tactic.Omega",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Tactic/Order.lean",
+          "sha256": "310b1563e89dc2f7e05fa92c80a4d1ab18a80407246636c26cff614221eddb73",
+          "line": 8,
+          "text": "public meta import Lean.Elab.Tactic.Omega"
+        }
+      ]
+    },
+    {
+      "target": "Mathlib.Tactic.Linarith.Frontend",
+      "root": "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+      "modules": [
+        "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+        "Mathlib.Algebra.Order.Archimedean.Basic",
+        "Mathlib.Data.Rat.Floor",
+        "Mathlib.Algebra.Order.Round",
+        "Mathlib.Algebra.Order.Floor.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Linarith.Frontend"
+      ],
+      "edges": [
+        {
+          "from": "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+          "to": "Mathlib.Algebra.Order.Archimedean.Basic",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Order/Archimedean/Real/Basic.lean",
+          "sha256": "422b612cd13cedc8927f36752cd46a10bceb0be792abd2ed5828bb7ab4a46366",
+          "line": 9,
+          "text": "public import Mathlib.Algebra.Order.Archimedean.Basic"
+        },
+        {
+          "from": "Mathlib.Algebra.Order.Archimedean.Basic",
+          "to": "Mathlib.Data.Rat.Floor",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Order/Archimedean/Basic.lean",
+          "sha256": "95471f68ba897f5abdcc702d31e292858a7a77b0dcda1151dd860d77076c0f4b",
+          "line": 10,
+          "text": "public import Mathlib.Data.Rat.Floor"
+        },
+        {
+          "from": "Mathlib.Data.Rat.Floor",
+          "to": "Mathlib.Algebra.Order.Round",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Data/Rat/Floor.lean",
+          "sha256": "af60c69a2f76c0d475b4286341c92b4d0fdfa6ea550562935c7df22a4c049fe2",
+          "line": 8,
+          "text": "public import Mathlib.Algebra.Order.Round"
+        },
+        {
+          "from": "Mathlib.Algebra.Order.Round",
+          "to": "Mathlib.Algebra.Order.Floor.Ring",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Order/Round.lean",
+          "sha256": "f9c458382ab31ce629f4f29ab6f667930380caaac5abd8e549881252659d460d",
+          "line": 8,
+          "text": "public import Mathlib.Algebra.Order.Floor.Ring"
+        },
+        {
+          "from": "Mathlib.Algebra.Order.Floor.Ring",
+          "to": "Mathlib.Tactic.Linarith",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Order/Floor/Ring.lean",
+          "sha256": "abb9df29043aa1f70dd6b855afb2c90ad81a8df5b897e89e62848b08e8af4fee",
+          "line": 12,
+          "text": "public import Mathlib.Tactic.Linarith"
+        },
+        {
+          "from": "Mathlib.Tactic.Linarith",
+          "to": "Mathlib.Tactic.Linarith.Frontend",
+          "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Tactic/Linarith.lean",
+          "sha256": "d26c3a356e96444bde9eca45138b08bfe71eb3b351f38b92579333b83145f043",
+          "line": 9,
+          "text": "public import Mathlib.Tactic.Linarith.Frontend"
+        }
+      ]
+    }
+  ],
+  "ownership": [
+    {
+      "purpose": "linarith/nlinarith syntax",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Tactic/Linarith/Frontend.lean",
+      "sha256": "f3f105a8ba4d444c4b10e851bbcd72a1bd4fbf2f3b5e46c30a0746f830b895af",
+      "lines": [
+        {
+          "line": 477,
+          "text": "syntax (name := linarith) \"linarith\" \"!\"? linarithArgsRest : tactic"
+        },
+        {
+          "line": 505,
+          "text": "syntax (name := nlinarith) \"nlinarith\" \"!\"? linarithArgsRest : tactic"
+        }
+      ]
+    },
+    {
+      "purpose": "by_contra macro",
+      "path": "/home/admin-wsl/Coq/mathlib4/.lake/packages/batteries/Batteries/Tactic/Init.lean",
+      "sha256": "e229147582bc1071219f85a831310e95e70554ec69f84c67a315b32ebe02fd40",
+      "lines": [
+        {
+          "line": 56,
+          "text": "syntax (name := byContra) \"by_contra\" (ppSpace colGt rcasesPatMed)? (\" : \" term)? : tactic"
+        },
+        {
+          "line": 59,
+          "text": "| `(tactic| by_contra $[$pat?]? $[: $ty?]?) => do"
+        }
+      ]
+    },
+    {
+      "purpose": "exact_mod_cast macro",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Init/TacticsExtra.lean",
+      "sha256": "1f028ce33f212c80897ef51b591953a5cc404b2b16c0f31bd99fdf4f249ff241",
+      "lines": [
+        {
+          "line": 91,
+          "text": "macro \"exact_mod_cast \" e:term : tactic => `(tactic| exact mod_cast ($e : _))"
+        }
+      ]
+    },
+    {
+      "purpose": "mod_cast builtin term elaborator",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Lean/Elab/Tactic/NormCast.lean",
+      "sha256": "a5e7d3446b0ff46a38505683ee935d939a4884c3e409a5e2e96be051c5e2e708",
+      "lines": [
+        {
+          "line": 218,
+          "text": "@[builtin_term_elab modCast] def elabModCast : TermElab := fun stx expectedType? => do"
+        }
+      ]
+    },
+    {
+      "purpose": "Lean frontend imports NormCast/Omega",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Lean/Elab/Tactic.lean",
+      "sha256": "912825b0028453b426cc17293adb962d2bc03cac66b68f9c0924eea8d759e03d",
+      "lines": [
+        {
+          "line": 36,
+          "text": "public import Lean.Elab.Tactic.Omega"
+        },
+        {
+          "line": 38,
+          "text": "public import Lean.Elab.Tactic.NormCast"
+        }
+      ]
+    },
+    {
+      "purpose": "Builtin registry uses process IO.Ref",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Lean/KeyedDeclsAttribute.lean",
+      "sha256": "945bbf33346b549166f2c922bdd4862884dcbd95e1d506de488d74ff6af3a04c",
+      "lines": [
+        {
+          "line": 19,
+          "text": "Also creates a second \"builtin\" attribute used for bootstrapping, which saves"
+        },
+        {
+          "line": 20,
+          "text": "the applied declarations in an `IO.Ref` instead of an environment extension."
+        },
+        {
+          "line": 104,
+          "text": "def addBuiltin (attr : KeyedDeclsAttribute γ) (key : Key) (declName : Name) (value : γ) : IO Unit :="
+        },
+        {
+          "line": 105,
+          "text": "  attr.tableRef.modify fun m => m.insert { key, declName, value, isBuiltin := true }"
+        },
+        {
+          "line": 119,
+          "text": "  let tableRef ← IO.mkRef ({} : Table γ)"
+        },
+        {
+          "line": 122,
+          "text": "    mkInitial    := return mkStateOfTable (← tableRef.get)"
+        }
+      ]
+    }
+  ],
+  "ownerEvidence": [
+    {
+      "module": "Mathlib.Order.Defs.LinearOrder",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Order/Defs/LinearOrder.lean",
+      "sha256": "2df1497aa0a8dd7d91da1c5ff24a617cee9d865ac299a3a6c2ebd0073fdaa23f"
+    },
+    {
+      "module": "Batteries.Tactic.Init",
+      "path": "/home/admin-wsl/Coq/mathlib4/.lake/packages/batteries/Batteries/Tactic/Init.lean",
+      "sha256": "e229147582bc1071219f85a831310e95e70554ec69f84c67a315b32ebe02fd40"
+    },
+    {
+      "module": "Init",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Init.lean",
+      "sha256": "28b57970b6f0adef586f14939a95362959b698a68463d4a803f81464ad8e0675"
+    },
+    {
+      "module": "Init.TacticsExtra",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Init/TacticsExtra.lean",
+      "sha256": "1f028ce33f212c80897ef51b591953a5cc404b2b16c0f31bd99fdf4f249ff241"
+    },
+    {
+      "module": "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean",
+      "sha256": "d0aeb4407a0f1fbb0ae5b54ceb34d743f0a16383bb7f4ffeda0ce8b124f92ce3"
+    },
+    {
+      "module": "Mathlib.Analysis.SpecialFunctions.Exp",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Analysis/SpecialFunctions/Exp.lean",
+      "sha256": "b4b4e814db045c3d22715a20dcdc7b9210b14ba1b49db4191c3ce066f993dd3a"
+    },
+    {
+      "module": "Mathlib.Analysis.SpecificLimits.Normed",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Analysis/SpecificLimits/Normed.lean",
+      "sha256": "96ff519cc6241af4224ca455fe0d8ec9fc7fd7445632c55e818212965f14a004"
+    },
+    {
+      "module": "Mathlib.Algebra.Algebra.Spectrum.Quasispectrum",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Algebra/Spectrum/Quasispectrum.lean",
+      "sha256": "7561300fe7839c74a5d52c5b71b26d237745befd634a2db54bfc438a59645602"
+    },
+    {
+      "module": "Mathlib.Algebra.Algebra.Spectrum.Basic",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Algebra/Spectrum/Basic.lean",
+      "sha256": "1386ab90e19dbd63a4eb59decc6d0c7802fc48990ca1be3176cc6086b8eea2e0"
+    },
+    {
+      "module": "Mathlib.RingTheory.Ideal.Maps",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/RingTheory/Ideal/Maps.lean",
+      "sha256": "b438fe1a1c95d7b39f3ed2cafd166a9d7296aa8808f4e160e92cafce73339ece"
+    },
+    {
+      "module": "Mathlib.RingTheory.Ideal.Operations",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/RingTheory/Ideal/Operations.lean",
+      "sha256": "317743db7840e871e2b442c7afd9b153c3d70274404dc12b960352421fe8e2c1"
+    },
+    {
+      "module": "Mathlib.Tactic.Order",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Tactic/Order.lean",
+      "sha256": "310b1563e89dc2f7e05fa92c80a4d1ab18a80407246636c26cff614221eddb73"
+    },
+    {
+      "module": "Lean.Elab.Tactic.Omega",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Lean/Elab/Tactic/Omega.lean",
+      "sha256": "7a81cef2ff724f9f690993d01aef906b200ca11c36f72fb57f9e6e5eaf4ec45e"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Order/Archimedean/Real/Basic.lean",
+      "sha256": "422b612cd13cedc8927f36752cd46a10bceb0be792abd2ed5828bb7ab4a46366"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Archimedean.Basic",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Order/Archimedean/Basic.lean",
+      "sha256": "95471f68ba897f5abdcc702d31e292858a7a77b0dcda1151dd860d77076c0f4b"
+    },
+    {
+      "module": "Mathlib.Data.Rat.Floor",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Data/Rat/Floor.lean",
+      "sha256": "af60c69a2f76c0d475b4286341c92b4d0fdfa6ea550562935c7df22a4c049fe2"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Round",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Order/Round.lean",
+      "sha256": "f9c458382ab31ce629f4f29ab6f667930380caaac5abd8e549881252659d460d"
+    },
+    {
+      "module": "Mathlib.Algebra.Order.Floor.Ring",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Algebra/Order/Floor/Ring.lean",
+      "sha256": "abb9df29043aa1f70dd6b855afb2c90ad81a8df5b897e89e62848b08e8af4fee"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Tactic/Linarith.lean",
+      "sha256": "d26c3a356e96444bde9eca45138b08bfe71eb3b351f38b92579333b83145f043"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Frontend",
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Tactic/Linarith/Frontend.lean",
+      "sha256": "f3f105a8ba4d444c4b10e851bbcd72a1bd4fbf2f3b5e46c30a0746f830b895af"
+    }
+  ],
+  "compilation": "not-run",
+  "CI": "not-called",
+  "Git": "not-called",
+  "mainEdits": "none"
+}

@@ -1,0 +1,49 @@
+{
+  "status": "frozen-parser-and-inventory-draft-no-CI",
+  "plannedMainDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115",
+  "draftDirectory": "/tmp/p2m-volume-tate-inventory-v4-20261115",
+  "moduleOrder": [
+    "Iut.Cor312.ContainerHull",
+    "Iut.Cor312.LogVolume",
+    "TateCurvesTheta.QParameter.PrimeToOrder",
+    "TateCurvesTheta.TateCurve.Weierstrass",
+    "TateCurvesTheta.QParameter.NormalizedOrder"
+  ],
+  "projectPrefixes": [
+    "Iut",
+    "TateCurvesTheta"
+  ],
+  "prefixMap": {
+    "Iut": "AbcAdaptation.Reference.Iut",
+    "TateCurvesTheta": "AbcAdaptation.Reference.TateCurvesTheta"
+  },
+  "parser": {
+    "query": "QueryNextCarrierParserRanges.lean",
+    "config": "parser-config.json",
+    "environmentVariable": "FOUNDATION_PARSER_CONFIG",
+    "firstLeafEstimate": {
+      "expected_duration": "60s",
+      "expected_memory": "16GiB"
+    },
+    "exclusive": true
+  },
+  "export": {
+    "config": "export-config.json",
+    "environmentVariable": "NEXT_CARRIER_EXPORT_CONFIG"
+  },
+  "sourceCommandCandidates": 25,
+  "selectedDeclarationCount": 100,
+  "originalDeclarationCount": 147,
+  "priorMissingConstants": [],
+  "parserRequiredBeforeSlicing": true,
+  "separateOrphanTheoremNodesAllowed": false,
+  "scope": "source carrier preparation; no mathematical field constructions or parent proof completion",
+  "requiredPriorActualNamedCount": 62,
+  "requiredPriorProofValueResolutions": [],
+  "sourceOverrides": [
+    "Iut.Cor312.LogVolume"
+  ],
+  "candidateImportStatus": "all translated target source paths exist; compiler compatibility and exact syntax imports await main CI",
+  "additionalPriorModulesNeeded": [],
+  "additionalSourceRootCandidatesBeyondWholeCommandClosure": []
+}

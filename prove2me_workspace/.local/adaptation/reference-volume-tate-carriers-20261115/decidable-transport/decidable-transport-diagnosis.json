@@ -1,0 +1,181 @@
+{
+  "schema": "volume-tate-decidable435-diagnosis-v1",
+  "status": "executable-candidate-prepared-not-compiled",
+  "failure": {
+    "job_id": "ci-013886-9f466f70",
+    "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/kernel-audit-result.json",
+    "receiptSha256": "2247c397a29674eb97eb1da75853289b4488a761c0c547fa850320d0529fcfe9",
+    "status": "failed",
+    "diagnostic": "(kernel) unknown constant 'Decidable.intro'",
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 9199357952
+      },
+      "cpu_time_seconds": 67.34,
+      "peak_rss_bytes": 4189544448,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 27.92,
+      "cpu_system_seconds": 39.42,
+      "wall_time_seconds": 67.25877059999038,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    }
+  },
+  "actualOccurrences": [
+    {
+      "name": "TateCurvesTheta.OrderedTateParameter.decidable",
+      "selected": true,
+      "occurrences": [
+        {
+          "path": "/valueExpr/body/body/body/body/fn/fn/fn",
+          "constant": "Decidable.intro"
+        }
+      ]
+    },
+    {
+      "name": "TateCurvesTheta.PrimeToOrder.decidable",
+      "selected": true,
+      "occurrences": [
+        {
+          "path": "/valueExpr/body/body/fn/fn/fn",
+          "constant": "Decidable.intro"
+        }
+      ]
+    },
+    {
+      "name": "TateCurvesTheta.OrderedTateParameter.decidable._proof_1",
+      "selected": true,
+      "occurrences": [
+        {
+          "path": "/elaboratedExpr/body/body/body/body/fn/fn",
+          "constant": "Bool.Reflects"
+        }
+      ]
+    },
+    {
+      "name": "TateCurvesTheta.PrimeToOrder.decidable._proof_1",
+      "selected": true,
+      "occurrences": [
+        {
+          "path": "/elaboratedExpr/body/body/fn/fn",
+          "constant": "Bool.Reflects"
+        }
+      ]
+    },
+    {
+      "name": "TateCurvesTheta.TateParameter.orderZ_pos",
+      "selected": true,
+      "occurrences": [
+        {
+          "path": "/valueExpr/body/body/body/body/body/body/body/fn/fn/fn",
+          "constant": "Decidable.byContradiction"
+        }
+      ]
+    },
+    {
+      "name": "TateCurvesTheta.TateParameter.toOrdered._proof_1",
+      "selected": true,
+      "occurrences": [
+        {
+          "path": "/valueExpr/body/body/body/body/body/body/body/fn/arg/body/fn/fn/fn/arg/arg/fn/arg/fn/arg/fn/fn",
+          "constant": "Decidable.decide"
+        },
+        {
+          "path": "/valueExpr/body/body/body/body/body/body/body/arg/body/fn/fn/fn/arg/arg/fn/arg/fn/arg/fn/fn",
+          "constant": "Decidable.decide"
+        }
+      ]
+    },
+    {
+      "name": "TateCurvesTheta.TateParameter.toOrdered._proof_2",
+      "selected": true,
+      "occurrences": [
+        {
+          "path": "/valueExpr/body/body/body/body/body/body/fn/fn/fn",
+          "constant": "Decidable.byContradiction"
+        }
+      ]
+    }
+  ],
+  "installedCompilerSourceFacts": [
+    {
+      "compiler": "4.35.0-rc3",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/src/lean/Init/Prelude.lean",
+      "sha256": "cc9f337a5d8bd00768121701bceb0661ac63e01831a9aa34b282f37c689a6c39",
+      "startLine": 1123,
+      "endLine": 1181,
+      "exactSourceExcerpt": "`b.Reflects p` is propositionally equivalent to `b = true ↔ p` but has the definitional equalities\n`true.Reflects p ↔ p` and `false.Reflects p ↔ ¬p`.\n-/\nabbrev Bool.Reflects : Bool → Prop → Prop\n  | false, p => Not p\n  | true, p => p\n\n/--\nA `Bool` (that is, `decide p`) paired with a proof of `p` if `decide p` is `true` or a proof of `¬p`\nif `decide p` is `false`. The easiest way to extract these proofs is to use `of_decide_eq_true` or\n`of_decide_eq_false`.\n\n`Decidable` instances are primarily used via `if`-expressions and the tactic `decide`. In\nconditional expressions, the `Decidable` instance for the proposition is used to select a branch. At\nrun time, this case distinction code is identical to that which would be generated for a\n`Bool`-based conditional. In proofs, the tactic `decide` synthesizes an instance of `Decidable p`,\nattempts to reduce `decide p` to `true`, and then succeeds with the proof `of_decide_eq_true rfl`\nif it can.\n\nBecause `Decidable` carries data, when writing `@[simp]` lemmas which include a `Decidable` instance\non the LHS, it is best to use `{_ : Decidable p}` rather than `[Decidable p]` so that non-canonical\ninstances can be found via unification rather than instance synthesis.\n-/\nclass Decidable (p : Prop) where\n  /--\n  Introduces `Decidable p` using a boolean `decide` and a proof of `¬p` if `decide` is `false`\n  or `p` if `decide` is `true`.\n  -/\n  intro ::\n  /--\n  Converts a decidable proposition into a `Bool`.\n\n  If `p : Prop` is decidable, then `decide p : Bool` is the Boolean value\n  that is `true` if `p` is true and `false` if `p` is false.\n  -/\n  decide : Bool\n  /--\n  `decide p` reflects `p`, i.e. `decide p` is equivalent to `p`. Reduces to a proof of `p` or `¬p`\n  depending on the value of `decide p`.\n  -/\n  reflects_decide (p) : decide.Reflects p\n\nattribute [implicit_reducible] Decidable.decide\n\n/-- Proves that `p` is decidable by supplying a proof of `¬p` -/\n@[match_pattern] abbrev Decidable.isFalse (h : Not p) : Decidable p := ⟨false, h⟩\n\n/-- Proves that `p` is decidable by supplying a proof of `p` -/\n@[match_pattern] abbrev Decidable.isTrue (h : p) : Decidable p := ⟨true, h⟩\n\n/--\nThe default eliminator for `Decidable`, using `isFalse` and `isTrue`.\n-/\n@[cases_eliminator, induction_eliminator, elab_as_elim]\nabbrev Decidable.falseTrueCases {p : Prop} {motive : Decidable p → Sort u}\n    (isFalse : ∀ h, motive (isFalse h)) (isTrue : ∀ h, motive (isTrue h))\n    (t : Decidable p) : motive t :=\n  t.casesOn fun x => x.casesOn isFalse isTrue\n"
+    },
+    {
+      "compiler": "4.33.1",
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/src/lean/Init/Prelude.lean",
+      "sha256": "56de5780adc4358372fa9cfac270a70f2d03fd4f213a373aea4365483b31a544",
+      "startLine": 954,
+      "endLine": 994,
+      "exactSourceExcerpt": "theorem PULift.up_down {α : Sort u} (b : PULift.{v} α) : Eq (up (down b)) b := rfl\n\n/-- Bijection between `α` and `PULift.{v} α` -/\ntheorem PULift.down_up {α : Sort u} (a : α) : Eq (down (up.{v} a)) a := rfl\n\n/--\nEither a proof that `p` is true or a proof that `p` is false. This is equivalent to a `Bool` paired\nwith a proof that the `Bool` is `true` if and only if `p` is true.\n\n`Decidable` instances are primarily used via `if`-expressions and the tactic `decide`. In\nconditional expressions, the `Decidable` instance for the proposition is used to select a branch. At\nrun time, this case distinction code is identical to that which would be generated for a\n`Bool`-based conditional. In proofs, the tactic `decide` synthesizes an instance of `Decidable p`,\nattempts to reduce it to `isTrue h`, and then succeeds with the proof `h` if it can.\n\nBecause `Decidable` carries data, when writing `@[simp]` lemmas which include a `Decidable` instance\non the LHS, it is best to use `{_ : Decidable p}` rather than `[Decidable p]` so that non-canonical\ninstances can be found via unification rather than instance synthesis.\n-/\nclass inductive Decidable (p : Prop) where\n  /-- Proves that `p` is decidable by supplying a proof of `¬p` -/\n  | isFalse (h : Not p) : Decidable p\n  /-- Proves that `p` is decidable by supplying a proof of `p` -/\n  | isTrue (h : p) : Decidable p\n\n/--\nConverts a decidable proposition into a `Bool`.\n\nIf `p : Prop` is decidable, then `decide p : Bool` is the Boolean value\nthat is `true` if `p` is true and `false` if `p` is false.\n-/\n@[inline_if_reduce, nospecialize, implicit_reducible] def Decidable.decide (p : Prop) [h : Decidable p] : Bool :=\n  h.casesOn (fun _ => false) (fun _ => true)\n\nexport Decidable (isTrue isFalse decide)\n\n/--\nA decidable predicate.\n\nA predicate is decidable if the corresponding proposition is `Decidable` for each possible argument.\n-/"
+    }
+  ],
+  "representationChange": "4.35 Boolean plus reflection structure -> 4.33 two-constructor inductive",
+  "standardRename": false,
+  "classicalReplacement": false,
+  "exactAffectedInstances": [
+    "TateCurvesTheta.OrderedTateParameter.decidable",
+    "TateCurvesTheta.PrimeToOrder.decidable"
+  ],
+  "queryNeeded": [
+    "QueryDecidableStandardOriginalExprs.lean: DECIDABLE_STANDARD_FACTS_OUTPUT",
+    "QueryDecidablePlatformExprs.lean: DECIDABLE_PLATFORM_FACTS_OUTPUT"
+  ],
+  "candidateInputEnv": "DECIDABLE_STANDARD_FACTS_INPUT",
+  "acceptancePending": "genuine source compiler fact export, exact target helper identity diagnosis, and exclusive MCP-CI full audit",
+  "noCompilerOrCIInvoked": true,
+  "mainWorkspaceUnchanged": true,
+  "files": [
+    {
+      "name": "QueryDecidableStandardOriginalExprs.lean",
+      "sha256": "cc0c5dc9d7ca59b1bdbde69c1b1e7343bd7ed93c94273da66cc099f7076f9062",
+      "bytes": 11254
+    },
+    {
+      "name": "QueryDecidablePlatformExprs.lean",
+      "sha256": "322e4b3dbb0dd68d2a4850a5a3f9932f88b049a5299e87a9957ec50b8dc181ff",
+      "bytes": 11669
+    },
+    {
+      "name": "Decidable435Transport.lean.fragment",
+      "sha256": "7652c31981f8195c8c9adc3061aa891e5f1481be7b9f991849386a0d88b39069",
+      "bytes": 12556
+    },
+    {
+      "name": "prepare_decidable_transport_patch.py",
+      "sha256": "f07efd27b3cdfbcfea1091a2913f4e479f2fc1fceb3079bd0bd9d003cbf8769a",
+      "bytes": 3079
+    },
+    {
+      "name": "AuditNextCarriers.Decidable435Transport.lean",
+      "sha256": "e08ee794bdc0aee84a254060da05e8a84e672f029134b23b4e340f2d7918443b",
+      "bytes": 56081
+    },
+    {
+      "name": "decidable-original-occurrences.json",
+      "sha256": "0cd42ab77236038a6c1ef6b00cc6b32e0387dc12927c6cccf5f0f3bf6f00f4de",
+      "bytes": 1882
+    },
+    {
+      "name": "decidable-affected-original-records.json",
+      "sha256": "5a46ea079cfe1e7208deaa5271f76432a21e0e72940eb37ac934ea3f8c04af2d",
+      "bytes": 52715
+    }
+  ],
+  "sourceDecidableShapeValidated": true,
+  "sourcePlatformDecidableApiTypesAndBinderPlacementChecked": true
+}

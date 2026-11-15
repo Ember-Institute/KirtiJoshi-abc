@@ -1,0 +1,185 @@
+{
+  "valueExpr": {
+    "type": {
+      "name": [
+        [],
+        "str",
+        "Nat"
+      ],
+      "levels": [],
+      "kind": "const"
+    },
+    "name": [
+      [],
+      "str",
+      "ℓ"
+    ],
+    "kind": "lam",
+    "body": {
+      "type": {
+        "name": [
+          [],
+          "str",
+          "Nat"
+        ],
+        "levels": [],
+        "kind": "const"
+      },
+      "name": [
+        [],
+        "str",
+        "n"
+      ],
+      "kind": "lam",
+      "body": {
+        "kind": "app",
+        "fn": {
+          "kind": "app",
+          "fn": {
+            "name": [
+              [
+                [],
+                "str",
+                "Nat"
+              ],
+              "str",
+              "instDecidableCoprime"
+            ],
+            "levels": [],
+            "kind": "const"
+          },
+          "arg": {
+            "kind": "bvar",
+            "index": 1
+          }
+        },
+        "arg": {
+          "kind": "bvar",
+          "index": 0
+        }
+      },
+      "binder": "default"
+    },
+    "binder": "default"
+  },
+  "typeExpr": {
+    "type": {
+      "name": [
+        [],
+        "str",
+        "Nat"
+      ],
+      "levels": [],
+      "kind": "const"
+    },
+    "name": [
+      [],
+      "str",
+      "ℓ"
+    ],
+    "kind": "forall",
+    "body": {
+      "type": {
+        "name": [
+          [],
+          "str",
+          "Nat"
+        ],
+        "levels": [],
+        "kind": "const"
+      },
+      "name": [
+        [],
+        "str",
+        "n"
+      ],
+      "kind": "forall",
+      "body": {
+        "kind": "app",
+        "fn": {
+          "name": [
+            [],
+            "str",
+            "Decidable"
+          ],
+          "levels": [],
+          "kind": "const"
+        },
+        "arg": {
+          "kind": "app",
+          "fn": {
+            "kind": "app",
+            "fn": {
+              "name": [
+                [
+                  [
+                    [
+                      [],
+                      "str",
+                      "AbcAdaptation"
+                    ],
+                    "str",
+                    "Reference"
+                  ],
+                  "str",
+                  "TateCurvesTheta"
+                ],
+                "str",
+                "PrimeToOrder"
+              ],
+              "levels": [],
+              "kind": "const"
+            },
+            "arg": {
+              "kind": "bvar",
+              "index": 1
+            }
+          },
+          "arg": {
+            "kind": "bvar",
+            "index": 0
+          }
+        }
+      },
+      "binder": "default"
+    },
+    "binder": "default"
+  },
+  "shape": {
+    "safety": "Lean.DefinitionSafety.safe"
+  },
+  "owner": "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder",
+  "nameExpr": [
+    [
+      [
+        [
+          [
+            [
+              [],
+              "str",
+              "AbcAdaptation"
+            ],
+            "str",
+            "Reference"
+          ],
+          "str",
+          "TateCurvesTheta"
+        ],
+        "str",
+        "PrimeToOrder"
+      ],
+      "str",
+      "decidable"
+    ],
+    "str",
+    "_aux_1"
+  ],
+  "name": "AbcAdaptation.Reference.TateCurvesTheta.PrimeToOrder.decidable._aux_1",
+  "levelParams": [],
+  "kind": "definition",
+  "binderInventory": [
+    "forall:default",
+    "forall:default"
+  ],
+  "axioms": []
+}

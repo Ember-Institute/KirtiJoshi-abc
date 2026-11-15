@@ -1,0 +1,412 @@
+{
+  "schema": "reference-volume-tate-source-context-references-v4",
+  "scope": "Final ledger source metadata, kept separate from original blind readbacks.",
+  "ledger": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/SOURCE_LEDGER.json",
+    "sha256": "7ff82dc00bf50e2fa376fe9e9d2ff3272cd6e6462a1e4c907fa69850d44b5a0d",
+    "role": "final_source_ledger"
+  },
+  "ledger_references_verbatim": {
+    "wrapperReport": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/generated-wrapped/foundation-wrapper-report.json",
+      "sha256": "3153c32f5f88ea453c2692f322e637b3c3cfbc56540fbfde5964449d772845dd"
+    },
+    "acceptedCompilerCorrespondence": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/accepted-compiler-correspondence.json",
+      "sha256": "8714cd6710763ad5f6307bf7afeff4a1076049a99927ed843573934f13059d46",
+      "job_id": "ci-013964-cce30c9e"
+    }
+  },
+  "source_fields": [
+    {
+      "producer": "AbcAdaptation_Reference_Iut_Cor312_ContainerHull",
+      "originalModule": "Iut.Cor312.ContainerHull",
+      "sourceURL": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Cor312/ContainerHull.lean#L43-L110",
+      "sourceProvenance": {
+        "originalSourcePath": "Iut/Cor312/ContainerHull.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": "/home/admin-wsl/Coq/abc/refer/iut/LICENSE",
+        "licenseSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "sourceHeaderSha256": "96ea7a84822ad2877b390f2a9bd1bec9606188bec41a212ced076975774558c9",
+        "sourceSha256": "fe449dedeab6c33724f362f4c34e58a2dd07295e652f1ab8136116cb43cf5467",
+        "sourceGitBlobMatches": true,
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ContainerHull.lean",
+        "upstreamSourceSha256": "fe449dedeab6c33724f362f4c34e58a2dd07295e652f1ab8136116cb43cf5467",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "ab987a80b23b12129bb34a4783d1aeb999c84c4d",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ContainerHull.lean",
+            "sha256": "fe449dedeab6c33724f362f4c34e58a2dd07295e652f1ab8136116cb43cf5467"
+          }
+        ],
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/Iut/Cor312/ContainerHull.lean",
+          "sha256": "fe449dedeab6c33724f362f4c34e58a2dd07295e652f1ab8136116cb43cf5467",
+          "byteLength": 5539
+        }
+      },
+      "wrappedSourceSha256": "35ebd6cc403e74a8cbeeb2f2848e9f326c1eb821912271d576f0b63e0e0eff06",
+      "selectedSourceCommands": [
+        "Iut.ContainerHullSystem",
+        "Iut.ContainerHullSystem.IsAdmissible",
+        "Iut.ContainerHullSystem.hull_integralRegion",
+        "Iut.ContainerHullSystem.hullAdmissible",
+        "Iut.ContainerHullSystem.hullFamily"
+      ],
+      "actualSourceConsumer": "Iut.Theorem110Invariants.theorem110",
+      "sourceCommandsPreserved": true,
+      "rootGraphMembership": false,
+      "canonicalC22Connected": false,
+      "actualScope": "The selected commands are ContainerHullSystem, IsAdmissible, hull_integralRegion, hullAdmissible, and hullFamily. ContainerHullSystem supplies one HullSystem for every packet and label-set index. It also supplies admissibility of each designated integral region. IsAdmissible requires each region to belong to the corresponding supplied admissible class. The integral region is a fixed point of its supplied hull. This proves preservation of the finite-exception condition under the packetwise operation hullAdmissible. That operation is defined on every AdmissibleRegion without an IsAdmissible premise; the premise is needed for the unselected inclusion and monotonicity results. hullFamily applies this operation at every label-set index. These definitions preserve the indices. They do not construct arithmetic hull systems or identify the arbitrary component rings with the paper’s fields. The prerequisite HullSystem has an arbitrary admissible class and a supplied total hull map. Outside that class its values are unconstrained. Its hull class uses unit multipliers and may be smaller than all such regions. Those choices differ from the full-space branch and nonzero field multipliers in the paper. The leastness and admissibility fields are supplied assumptions."
+    },
+    {
+      "producer": "AbcAdaptation_Reference_Iut_Cor312_LogVolume",
+      "originalModule": "Iut.Cor312.LogVolume",
+      "sourceURL": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Cor312/LogVolume.lean",
+      "sourceProvenance": {
+        "originalSourcePath": "Iut/Cor312/LogVolume.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": "/home/admin-wsl/Coq/abc/refer/iut/LICENSE",
+        "licenseSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "sourceHeaderSha256": "96ea7a84822ad2877b390f2a9bd1bec9606188bec41a212ced076975774558c9",
+        "sourceSha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+        "sourceGitBlobMatches": false,
+        "sourceOverridden": true,
+        "originalSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/LogVolume.lean",
+        "upstreamSourceSha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "0415c756966155e5286911d75f26fbd0c8f0366c",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/LogVolume.lean",
+            "sha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/source-overrides/LogVolume.patch",
+            "sha256": "baa01f20308227128779a379384459c7de700946c775642b5965c5c7afbae34d"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-result.json",
+            "sha256": "9195a0e87434c662c2da293875840c4d7ce7dddcb9a3383d0b003fde03a661f0",
+            "job_id": "ci-012771-ee109b3e"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-source-receipt.json",
+            "sha256": "6677a0d0e2ad0903d6347bdea8af083bb07cd0f60d8c662836c7fce709dd02aa"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-build-plan.json",
+            "sha256": "803d3674fa23cf6def0408775cb2869069221be612bbe4962e6012fd9dce463c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/log-volume-instance-repair.json",
+            "sha256": "51ba78dc7f27934a95d87ed4d02519989d84e4e80f3a55e847edca5d06024490"
+          }
+        ],
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/Iut/Cor312/LogVolume.lean",
+          "sha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+          "byteLength": 12067
+        },
+        "frozenUpstreamSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/upstream-sources/Iut/Cor312/LogVolume.lean",
+          "sha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+          "byteLength": 11792
+        },
+        "effectiveSourceOverride": {
+          "upstreamSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/LogVolume.lean",
+          "upstreamSourceSha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+          "upstreamGitObject": "0415c756966155e5286911d75f26fbd0c8f0366c",
+          "effectiveSourceSha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+          "patch": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/source-overrides/LogVolume.patch",
+            "sha256": "baa01f20308227128779a379384459c7de700946c775642b5965c5c7afbae34d"
+          },
+          "acceptance": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-result.json",
+            "sha256": "9195a0e87434c662c2da293875840c4d7ce7dddcb9a3383d0b003fde03a661f0",
+            "job_id": "ci-012771-ee109b3e"
+          },
+          "acceptedGraphSourceReceipt": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-source-receipt.json",
+            "sha256": "6677a0d0e2ad0903d6347bdea8af083bb07cd0f60d8c662836c7fce709dd02aa"
+          },
+          "effectiveSourceLeafAcceptance": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-leaf-result.json",
+            "sha256": "0ffc5d52d521e2838ac834dfc8a8f4784ff0b9dffe7877b094213045ae186e51",
+            "job_id": "ci-012606-3dbf7af3"
+          },
+          "sourceBuildPlan": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-build-plan.json",
+            "sha256": "803d3674fa23cf6def0408775cb2869069221be612bbe4962e6012fd9dce463c"
+          },
+          "effectiveSourceRepairExplanation": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/log-volume-instance-repair.json",
+            "sha256": "51ba78dc7f27934a95d87ed4d02519989d84e4e80f3a55e847edca5d06024490"
+          },
+          "changeScope": "Existing accepted 4.35 source: source lake option mirror (relaxedAutoImplicit=false,maxSynthPendingDepth=3) and elaboration repair (dependent CommRing letI, typed cast/lambda). Complete public structure and fields preserved."
+        }
+      },
+      "wrappedSourceSha256": "3e588f35447cf60bf73d233d39e1bcdfdcc14c1d317e123d2ec995e23ea81c9c",
+      "selectedSourceCommands": [
+        "Iut.LogVolumeData",
+        "Iut.LogVolumeData.globalVol",
+        "Iut.LogVolumeData.processionVol"
+      ],
+      "actualSourceConsumer": "Iut.Theorem110Invariants.theorem110",
+      "sourceCommandsPreserved": true,
+      "rootGraphMembership": false,
+      "canonicalC22Connected": false,
+      "actualScope": "The selected commands are LogVolumeData, globalVol, and processionVol. LogVolumeData supplies real-valued component and packet functions on all subsets. It requires strictly positive place weights whose sum on each fiber is one. It records zero component values on finite-place integral subsets, a +log(p) law for preimages under multiplication by p on unit-scaled integral subsets, and zero on a designated archimedean subset archBall. The type of archBall does not assert that it is a Hermitian ball. The packet integral region has zero value. On a product region with every component nonempty, the packet value is the sum of component values weighted by the product of the place weights over labels. The law includes no compactness, measurability, or finite-positive-measure premise. These are actual interface conditions, not a construction of Haar measure. The functions have values on empty and unbounded sets, but no general monotonicity field is present. globalVol uses a finite sum over all rational places; the region equals the integral region outside a finite set, so the summand vanishes there. processionVol divides the sum of global values by the procession length. A zero length is permitted; Lean’s real division gives zero in that case. The code does not identify its weights with the paper’s degree formulas. In particular, the header’s intended [K_v:Q_vQ]/[K:Q] formula differs from the inverse-extension-degree formula on paper page 94. Positive weights with fiber sum one do not prove this missing arithmetic identification. Global principal-element invariance and equality with arithmetic degree are not fields of this interface.",
+      "sourceURLScope": "Whole upstream Git file; effective compiler line numbers are recorded separately.",
+      "effectiveSourceRanges": {
+        "coordinate": "effective-source-lines",
+        "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/Iut/Cor312/LogVolume.lean",
+        "sourceSha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+        "selectedCommands": [
+          {
+            "sourceCommand": "Iut.LogVolumeData",
+            "startLine": 75,
+            "endLine": 136
+          },
+          {
+            "sourceCommand": "Iut.LogVolumeData.globalVol",
+            "startLine": 177,
+            "endLine": 181
+          },
+          {
+            "sourceCommand": "Iut.LogVolumeData.processionVol",
+            "startLine": 203,
+            "endLine": 212
+          }
+        ]
+      }
+    },
+    {
+      "producer": "AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder",
+      "originalModule": "TateCurvesTheta.QParameter.PrimeToOrder",
+      "sourceURL": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/QParameter/PrimeToOrder.lean#L52-L113",
+      "sourceProvenance": {
+        "originalSourcePath": "TateCurvesTheta/QParameter/PrimeToOrder.lean",
+        "originalAuthors": "The tate-curves-theta contributors",
+        "originalRepository": "https://github.com/lana-agents/tate-curves-theta",
+        "originalCommit": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": null,
+        "licenseSha256": null,
+        "sourceHeaderSha256": "09590c206512cb8ec0f8e642356fe0dbd1247717071fa32e5c97e82a057c8fe5",
+        "sourceSha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32",
+        "sourceGitBlobMatches": true,
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/PrimeToOrder.lean",
+        "upstreamSourceSha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "36125dd8387eb232cfd15e3694ba4f136d19f6f2",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/PrimeToOrder.lean",
+            "sha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32"
+          }
+        ],
+        "licenseEvidence": "Apache 2.0 declaration in exact upstream source header; no LICENSE/COPYING/NOTICE file exists in repository tree",
+        "repositoryLicenseFiles": [],
+        "manifestPackage": {
+          "url": "https://github.com/lana-agents/tate-curves-theta",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "name": "«tate-curves-theta»",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "inherited": false,
+          "configFile": "lakefile.toml"
+        },
+        "upstreamDeclaredToolchain": "leanprover/lean4:v4.32.0",
+        "acceptedCompilerVersion": "4.35.0-rc3",
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/TateCurvesTheta/QParameter/PrimeToOrder.lean",
+          "sha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32",
+          "byteLength": 5593
+        }
+      },
+      "wrappedSourceSha256": "72aedd9084d55c61cf79336d0cc26c0a15ec9ee91f89c2b35c874eac638660a9",
+      "selectedSourceCommands": [
+        "TateCurvesTheta.PrimeToOrder",
+        "TateCurvesTheta.PrimeToOrder.decidable",
+        "TateCurvesTheta.OrderedTateParameter",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.OrderedTateParameter.decidable"
+      ],
+      "actualSourceConsumer": "Iut.Theorem110Invariants.theorem110",
+      "sourceCommandsPreserved": true,
+      "rootGraphMembership": false,
+      "canonicalC22Connected": false,
+      "actualScope": "PrimeToOrder ℓ n is Nat.Coprime ℓ n for arbitrary natural numbers ℓ and n. Its definition does not require that ℓ be prime. OrderedTateParameter extends an arbitrary NormedField TateParameter with a supplied positive natural number orderNat. The structure itself contains no equation relating orderNat to q, a valuation, the series, or the curve. Its PrimeToOrder predicate applies Nat.Coprime to ℓ and orderNat. The selected decidability instances implement these predicates. No theorem here asserts the existence of a suitable prime or proves that a particular prime satisfies the condition. The paper also assumes coprimality with residue characteristics; that is separate from this predicate. The later toOrdered construction supplies a particular norm-based order under a uniformizer assumption, but does not change what an arbitrary OrderedTateParameter contains."
+    },
+    {
+      "producer": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass",
+      "originalModule": "TateCurvesTheta.TateCurve.Weierstrass",
+      "sourceURL": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/Weierstrass.lean#L67-L129",
+      "sourceProvenance": {
+        "originalSourcePath": "TateCurvesTheta/TateCurve/Weierstrass.lean",
+        "originalAuthors": "The tate-curves-theta contributors",
+        "originalRepository": "https://github.com/lana-agents/tate-curves-theta",
+        "originalCommit": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": null,
+        "licenseSha256": null,
+        "sourceHeaderSha256": "09590c206512cb8ec0f8e642356fe0dbd1247717071fa32e5c97e82a057c8fe5",
+        "sourceSha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61",
+        "sourceGitBlobMatches": true,
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/Weierstrass.lean",
+        "upstreamSourceSha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "44c4fbf4c31af79211d13c2f8af75f7c2aaf066d",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/Weierstrass.lean",
+            "sha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61"
+          }
+        ],
+        "licenseEvidence": "Apache 2.0 declaration in exact upstream source header; no LICENSE/COPYING/NOTICE file exists in repository tree",
+        "repositoryLicenseFiles": [],
+        "manifestPackage": {
+          "url": "https://github.com/lana-agents/tate-curves-theta",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "name": "«tate-curves-theta»",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "inherited": false,
+          "configFile": "lakefile.toml"
+        },
+        "upstreamDeclaredToolchain": "leanprover/lean4:v4.32.0",
+        "acceptedCompilerVersion": "4.35.0-rc3",
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/TateCurvesTheta/TateCurve/Weierstrass.lean",
+          "sha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61",
+          "byteLength": 6821
+        }
+      },
+      "wrappedSourceSha256": "b73e8f716e8c8d84b029bc9fe65e7505b8f1d54ac30f1cd54cdeb77a441b3ab5",
+      "selectedSourceCommands": [
+        "TateCurvesTheta.TateParameter.eisenstein",
+        "TateCurvesTheta.TateParameter.a₄",
+        "TateCurvesTheta.TateParameter.a₆",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "actualSourceConsumer": "Iut.Theorem110Invariants.theorem110",
+      "sourceCommandsPreserved": true,
+      "rootGraphMembership": false,
+      "canonicalC22Connected": false,
+      "actualScope": "For a TateParameter t over an arbitrary NormedField K, eisenstein k is the total infinite sum over n≥0 of (n+1)^k q^(n+1)/(1-q^(n+1)). The selected definitions set a₄=-5·eisenstein 3 and a₆=-(5·eisenstein 3+7·eisenstein 5)/12. tateCurve is a WeierstrassCurve with a₁=1, a₂=a₃=0, and these a₄,a₆. The four definitions require neither completeness nor an ultrametric norm. Their infinite sum uses Lean’s total tsum; these definitions alone do not prove convergence. The source file proves summability separately under completeness and an ultrametric norm, but those proofs are not selected here. In characteristics dividing 12, division by the field element 12 follows Lean’s total division convention. There is no characteristic restriction in these definitions. The result is a WeierstrassCurve, with no selected smoothness, discriminant-nonvanishing, elliptic-curve, uniformization, or identity theorem identifying it with GenEll’s E. Calling the declaration tateCurve does not establish those bridges."
+    },
+    {
+      "producer": "AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder",
+      "originalModule": "TateCurvesTheta.QParameter.NormalizedOrder",
+      "sourceURL": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/QParameter/NormalizedOrder.lean#L62-L159",
+      "sourceProvenance": {
+        "originalSourcePath": "TateCurvesTheta/QParameter/NormalizedOrder.lean",
+        "originalAuthors": "The tate-curves-theta contributors",
+        "originalRepository": "https://github.com/lana-agents/tate-curves-theta",
+        "originalCommit": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": null,
+        "licenseSha256": null,
+        "sourceHeaderSha256": "09590c206512cb8ec0f8e642356fe0dbd1247717071fa32e5c97e82a057c8fe5",
+        "sourceSha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45",
+        "sourceGitBlobMatches": true,
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean",
+        "upstreamSourceSha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "ccda057177fbef9c5ec930f8356f233b2d33728a",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean",
+            "sha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45"
+          }
+        ],
+        "licenseEvidence": "Apache 2.0 declaration in exact upstream source header; no LICENSE/COPYING/NOTICE file exists in repository tree",
+        "repositoryLicenseFiles": [],
+        "manifestPackage": {
+          "url": "https://github.com/lana-agents/tate-curves-theta",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "name": "«tate-curves-theta»",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "inherited": false,
+          "configFile": "lakefile.toml"
+        },
+        "upstreamDeclaredToolchain": "leanprover/lean4:v4.32.0",
+        "acceptedCompilerVersion": "4.35.0-rc3",
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/TateCurvesTheta/QParameter/NormalizedOrder.lean",
+          "sha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45",
+          "byteLength": 9108
+        }
+      },
+      "wrappedSourceSha256": "bff1856439a7ac5b7d96f4fe3948c73f4b6289155f95fc1a8a89fbde578c9d82",
+      "selectedSourceCommands": [
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.IsUniformizer.norm_pos",
+        "TateCurvesTheta.IsUniformizer.log_norm_neg",
+        "TateCurvesTheta.TateParameter.exists_norm_q_eq_zpow",
+        "TateCurvesTheta.TateParameter.orderZ",
+        "TateCurvesTheta.TateParameter.norm_q_eq_zpow",
+        "TateCurvesTheta.TateParameter.orderZ_pos",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "actualSourceConsumer": "Iut.Theorem110Invariants.theorem110",
+      "sourceCommandsPreserved": true,
+      "rootGraphMembership": false,
+      "canonicalC22Connected": false,
+      "actualScope": "IsUniformizer π requires π≠0, ‖π‖<1, and an integer exponent representation ‖x‖=‖π‖^n for every unit x. This is a condition on a normed field; the selected statements do not require completeness or an ultrametric norm. The selected lemmas give ‖π‖>0 and log‖π‖<0. For a TateParameter t, exists_norm_q_eq_zpow obtains an exponent from the generation field. orderZ chooses such an integer. norm_q_eq_zpow gives its defining equation, and orderZ_pos proves positivity from the strict norm bounds. toOrdered sets orderNat to the natural-number conversion of this positive integer and preserves t. Positivity makes this conversion exact, although integer-to-natural conversion is generally truncated. This unit does not construct a uniformizer for an arithmetic completion. It does not prove that the norm-derived exponent agrees with the paper’s valuation, a special-fiber component count, or the order of a curve identified with the paper’s E. Those arithmetic identifications require additional input."
+    }
+  ]
+}

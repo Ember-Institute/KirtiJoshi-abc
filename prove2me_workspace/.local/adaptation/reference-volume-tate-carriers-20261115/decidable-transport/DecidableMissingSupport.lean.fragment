@@ -1,0 +1,127 @@
+-- Decode only absent standard definitions/proofs reached by the exact two roots.
+-- Existing native API constants remain native and are checked in the resulting terms.
+partial def installMissingDecidableSupport (rs : Relocations) (rows : Array Json)
+    (original : Name) (stack : Array Name := #[]) : MetaM (Relocations × Array Json) := do
+  if rs.standardExpansions.any (·.1 == original) || (← getEnv).contains original then
+    return (rs, #[])
+  if stack.contains original then throwError "Recursive missing source support {original}"
+  let matches := rows.filter fun r => (stringField r "name").toOption == some original.toString
+  unless matches.size == 1 do throwError "Missing genuine support body {original}"
+  let record := matches[0]!
+  let declarationKind ← checked (stringField record "kind")
+  unless declarationKind == "definition" || declarationKind == "theorem" do
+    throwError "Absent core inductive/constructor/recursor has no body transport {original}"
+  let valueJson ← checked (field record "valueExpr")
+  if valueJson == Json.null then throwError "Absent core support has no genuine value {original}"
+  let rawRs := { rs with standardExpansions := #[] }
+  let rawType ← checked (decodeExpr rawRs (← checked (field record "typeExpr")))
+  unless binderInventory rawType == (← checked (record.getObjValAs? (Array String) "binderInventory")) do
+    throwError "Original core support type BinderInfo changed {original}"
+  let rawValue ← checked (decodeExpr rawRs valueJson)
+  let mut rs := rs
+  let mut reports : Array Json := #[]
+  for dependency in (rawType.getUsedConstants ++ rawValue.getUsedConstants).toList.eraseDups do
+    if rs.projectPrefixes.any (·.isPrefixOf dependency) then
+      throwError "Project dependency in exact standard support {dependency}"
+    let (updated, dependencyReports) ← installMissingDecidableSupport rs rows dependency (stack.push original)
+    rs := updated
+    reports := reports ++ dependencyReports
+  let params ← namesFromJson (← checked (field record "levelParams"))
+  unless params.eraseDups == params do throwError "Duplicate standard support universe parameter {original}"
+  let type ← checked (decodeExpr rs (← checked (field record "typeExpr")))
+  let value ← checked (decodeExpr rs valueJson)
+  let levels := (canonicalLevels params.length).map Level.param
+  let canonicalType := type.instantiateLevelParams params levels
+  let canonicalValue := value.instantiateLevelParams params levels
+  kernelTypeEq s!"genuine absent support value inhabits its exact source type {original}"
+    (← kernelCheck s!"genuine absent core support {original}" canonicalValue) canonicalType
+  let axs ← expressionAxioms canonicalValue
+  ensureStandard s!"genuine absent core support {original}" axs
+  for term in #[canonicalType, canonicalValue] do
+    for dependency in term.getUsedConstants do
+      let some owner := moduleOf (← getEnv) dependency |
+        throwError "Missing expanded core dependency owner {dependency}"
+      unless (`Init).isPrefixOf owner do
+        throwError "Non-Init dependency in exact source core support {dependency}"
+  rs := { rs with standardExpansions := rs.standardExpansions.push (original, (params, value)) }
+  reports := reports.push (Json.mkObj [
+    ("original", encodeName original), ("standaloneTargetIdentity", Json.null),
+    ("method", toJson "inline genuine absent source definition/proof body"),
+    ("sourceRecord", record), ("exactOriginalTypeKernelChecked", toJson true),
+    ("expandedValue", ← checked (encodeExpr value)),
+    ("expandedAxioms", toJson (axs.map Name.toString)), ("hasSorryAx", toJson false)])
+  return (rs, reports)
+
+def boundDecidableEvidence (config : Json) (key : String) : MetaM Json := do
+  let evidence ← checked (field config "decidableStandardCompatibility")
+  let binding ← checked (field evidence key)
+  let actual ← jsonFile (← checked (stringField binding "path"))
+  unless actual == (← checked (field binding "contents")) do
+    throwError "Decidable evidence contents changed after hash binding: {key}"
+  unless (← checked (stringField binding "sha256")).length == 64 do
+    throwError "Missing external SHA256 binding: {key}"
+  return actual
+
+def exactDecidableSourceProofNames : Array Name :=
+  #[`TateCurvesTheta.OrderedTateParameter.decidable._proof_1,
+    `TateCurvesTheta.PrimeToOrder.decidable._proof_1]
+
+def installExactDecidableSourceProofs (rs : Relocations) (allowedOwners : Array Name)
+    (source config : Json) : MetaM (Relocations × Array Json) := do
+  let records ← checked (arrayField source "records")
+  let configured ← checked (arrayField config "proofValueResolutions")
+  unless configured.size == exactDecidableSourceProofNames.size do
+    throwError "Unexpected exact Decidable proof-resolution configuration"
+  let mut rs := rs
+  let mut reports : Array Json := #[]
+  for original in exactDecidableSourceProofNames do
+    let originalRows := records.filter fun r => (stringField r "name").toOption == some original.toString
+    let configRows := configured.filter fun r => (stringField r "original").toOption == some original.toString
+    unless originalRows.size == 1 && configRows.size == 1 do
+      throwError "Missing/duplicate exact source proof record {original}"
+    let record := originalRows[0]!
+    let binding := configRows[0]!
+    unless record == (← checked (field binding "sourceRecord")) do
+      throwError "Exact source proof changed after config binding {original}"
+    unless (← checked (stringField record "constantKind")) == "theorem" &&
+        (← checked (record.getObjValAs? Bool "selected")) &&
+        (← checked (record.getObjValAs? Bool "isProposition")) &&
+        !(← checked (record.getObjValAs? Bool "isInstance")) do
+      throwError "Exact source proof resolution is not a selected non-instance theorem {original}"
+    unless (← checked (field binding "standaloneTargetIdentity")) == Json.null do
+      throwError "A proof-value resolution cannot assert a standalone target identity"
+    let rawType ← checked (decodeExpr { rs with standardExpansions := #[] }
+      (← checked (field record "elaboratedExpr")))
+    unless binderInventory rawType == (← checked (record.getObjValAs? (Array String) "binderInventory")) do
+      throwError "Exact original source proof type BinderInfo changed {original}"
+    let params ← namesFromJson (← checked (field record "levelParams"))
+    unless params.eraseDups == params do throwError "Duplicate original proof universe parameter {original}"
+    let type ← checked (decodeExpr rs (← checked (field record "elaboratedExpr")))
+    let value ← checked (decodeExpr rs (← checked (field record "valueExpr")))
+    let levels := (canonicalLevels params.length).map Level.param
+    let canonicalType := type.instantiateLevelParams params levels
+    let canonicalValue := value.instantiateLevelParams params levels
+    unless (← isProp canonicalType) do throwError "Expanded exact source proof is not propositional {original}"
+    kernelTypeEq s!"genuine source proof inhabits exact original transported type {original}"
+      (← kernelCheck s!"genuine original Decidable proof value {original}" canonicalValue) canonicalType
+    let taxs ← expressionAxioms canonicalType
+    let vaxs ← expressionAxioms canonicalValue
+    ensureStandard s!"exact original proof type {original}" taxs
+    ensureStandard s!"exact original proof value {original}" vaxs
+    for term in #[canonicalType, canonicalValue] do
+      for dependency in term.getUsedConstants do allowedOwner rs allowedOwners dependency
+    rs := { rs with standardExpansions := rs.standardExpansions.push (original, (params, value)) }
+    reports := reports.push (Json.mkObj [
+      ("original", toJson original.toString), ("originalName", encodeName original),
+      ("resolution", toJson "genuine-exported-original-proof-value"),
+      ("standaloneTargetIdentity", Json.null), ("sourceRecord", record),
+      ("originalTypeBinderInfoPreserved", toJson true),
+      ("exactOriginalTypeKernelChecked", toJson true),
+      ("genuineOriginalValueInhabitsExactOriginalType", toJson true),
+      ("expandedType", ← checked (encodeExpr type)), ("expandedValue", ← checked (encodeExpr value)),
+      ("expandedTypeAxioms", toJson (taxs.map Name.toString)),
+      ("expandedValueAxioms", toJson (vaxs.map Name.toString)),
+      ("parentOriginal", ← checked (field binding "parentOriginal")),
+      ("parentWholeValueEqualityRequired", toJson true),
+      ("expandedDependenciesHaveAllowedOwners", toJson true), ("hasSorryAx", toJson false)])
+  return (rs, reports)

@@ -1,0 +1,56 @@
+{
+  "schema": "reference-volume-tate-readback-metadata-required-fields-v4",
+  "template": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/delivery-blind-readbacks.template.json",
+    "sha256": "604706fa5b4e4760ad5504ad5364015c027418aca457981bd332bd8bf40a5986",
+    "role": "required_delivery_schema"
+  },
+  "required_top_level_fields": [
+    "passed",
+    "unconfirmed_chinese_terms_preserved",
+    "bundles",
+    "independent_reviews"
+  ],
+  "required_bundle_fields": [
+    "definition_name",
+    "source_sha256",
+    "definition_title",
+    "source",
+    "en",
+    "zh-Hans",
+    "ja",
+    "passed",
+    "provenance"
+  ],
+  "required_bundle_provenance_fields": [
+    "author_model",
+    "fresh_context",
+    "input_only_formal_code",
+    "input_sha256",
+    "original_artifact",
+    "original_artifact_sha256"
+  ],
+  "required_independent_review_fields": [
+    "reviewer_id",
+    "author_model",
+    "fresh_context",
+    "input_only_formal_code",
+    "original_artifact",
+    "original_artifact_sha256",
+    "passed"
+  ],
+  "bundle_order": [
+    "AbcAdaptation_Reference_Iut_Cor312_ContainerHull",
+    "AbcAdaptation_Reference_Iut_Cor312_LogVolume",
+    "AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder",
+    "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass",
+    "AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder"
+  ],
+  "original_distribution": [
+    2,
+    3
+  ],
+  "readback_copy_policy": "Copy actual original EN/ZH/JA, coverage and ambiguities verbatim. Record original bundle-name mapping and complete original metadata.",
+  "source_policy": "Use only the final SOURCE_LEDGER sourceURL for source. Keep effective/upstream anchors and source context separate.",
+  "acceptance_scope": "Metadata consistency only; no fresh readback or proof acceptance by assembler."
+}

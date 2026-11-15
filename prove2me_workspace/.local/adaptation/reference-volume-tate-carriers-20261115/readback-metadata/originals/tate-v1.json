@@ -1,0 +1,229 @@
+{
+  "author_model": "gpt-6.1-sol",
+  "actual_model": null,
+  "fresh_context": true,
+  "input_only_formal_code": true,
+  "provenance": {
+    "role": "Independent mathematical readback from the supplied formal declarations and necessary pinned Mathlib formal definitions. The Chinese and Japanese texts translate the English readback in the same bundle; they are not independent audits.",
+    "rules_read": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/blind-rules.md",
+    "rules_disclosure": "The supplied excerpt was read in full. Its instructions govern completeness, separation of statements from proof notes, alignment of the translations, and the pending Chinese uniformizer terminology. No external terminology lookup was made because this task restricts inputs to formal code and the excerpt.",
+    "input_scope": "Only the three specified target Lean files, their specified nonstandard Basic dependency, the listed pinned Mathlib files, and the rules excerpt were used as semantic inputs. No project plans, papers, ledgers, prior readbacks, wrapper reports, other agents' outputs, or source-intent narratives were consulted. The search wrapper was used for every rg search.",
+    "incidental_search_output": "A search within permitted pinned Mathlib for Weierstrass definitions also returned Mathlib documentation-comment matches. Those incidental comments were disclosed to the parent and were not used as semantic evidence. The mathematical interpretation uses the actual formal five-field WeierstrassCurve declaration and other formal definitions. This disclosure qualifies input_only_formal_code: that field describes semantic evidence, not a claim that no comment text ever appeared in tool output.",
+    "actions": "Read-only formal inspection and local JSON writing. No compilation, CI job, API call, network access, Git operation, main-workspace edit, or further agent delegation was performed.",
+    "proof_scope": "Proof notes describe the code forms separately. No proof-correctness, source-fidelity, or paper-correctness assessment is made, and no compilation result is asserted.",
+    "language_status": {
+      "en": "Original independent readback.",
+      "zh-Hans": "Translation of this bundle's English; uniformizer uses the required pending-term marker.",
+      "ja": "Translation of this bundle's English; mathematical terminology follows ordinary explanatory Japanese rather than any unconsulted author-specific source."
+    }
+  },
+  "inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/blind-rules.md",
+      "sha256": "e2db03cb81a5cc8b13aedf56fdce092981d3081257ae3e5837c003924efbbc5e"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder.lean",
+      "sha256": "0c3fc552eab91ebcc2d9d9d0302da36f5e143edc26c830eb31419bb5295376fb"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass.lean",
+      "sha256": "9268e705101fa43f9c74802c1308330dd2736aff573da6cb47b112221e65096e"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder.lean",
+      "sha256": "819eeda45f309aab89aad460680c027993a0bbc880b95cfed9cb07e5200aae40"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-packet-field-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic.lean",
+      "sha256": "8d58b4caeb1b22eec3c3c78de72ba994d1f0654ce1cc0ca95610409b117cc8b9"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Analysis/Normed/Field/Basic.lean",
+      "sha256": "26727e95ad0114dc479d15f9361584c70f868da4ded1b13b7a4bb4f40cd7df53"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Algebra/Group/Units/Defs.lean",
+      "sha256": "68658a8ea9fb312da1221654d6acb5e5b30bba815ab6fa6127de00886584a2c5"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/AlgebraicGeometry/EllipticCurve/Weierstrass.lean",
+      "sha256": "471c1e8ec85a9905a58f91e331567ddf14a0cdb6997da1b526861b0120c13b3e"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean",
+      "sha256": "1f36a9802233e878953d809b16e020beaf0ace5afd4c8279d47b52af6ee186bf"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Topology/Algebra/InfiniteSum/Defs.lean",
+      "sha256": "26530f0777b7679b28a386e3e866e4064b11b8284522ec6429cf78a8df833f6e"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Topology/Algebra/InfiniteSum/SummationFilter.lean",
+      "sha256": "64d408fcad46342a6db935ec23714443d1a9f1b10bccde5ba7207f4cb0f4789c"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Analysis/Normed/Module/Basic.lean",
+      "sha256": "f74ee13de05e1692eef64cf489802f9ee696786258db220f49ac5a5707469170"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Topology/MetricSpace/Ultra/Basic.lean",
+      "sha256": "e3f13f4601f5719dc486c6afa41c989e26108293625024664d7b66a1659d10a3"
+    }
+  ],
+  "bundles": [
+    {
+      "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder",
+      "en": "All names below are in AbcAdaptation.Reference.TateCurvesTheta. The types ℕ, ℤ and ℝ denote the natural numbers including zero, the integers, and the real numbers. Whenever a field K occurs, it is a type in an arbitrary universe u, equipped with an implicit instance of NormedField K. This gives a commutative field, a real-valued norm and a compatible metric: d(x,y)=‖−x+y‖ and ‖xy‖=‖x‖‖y‖, together with the field and metric axioms. Completeness, characteristic zero and an ultrametric inequality are not assumed.\n\nNecessary nonstandard dependency. For each such K, TateParameter K is the structure whose fields are q:Kˣ and norm_lt_one:‖q‖<1, where q in a norm means its underlying value in K. A unit in Kˣ contains a value q and a specified inverse q⁻¹, with qq⁻¹=q⁻¹q=1; thus q≠0. The dependency's declaration TateParameter.norm_q_pos says: for every t:TateParameter K, 0<‖t.q‖. In particular, 0<‖t.q‖<1 for every parameter. K is explicit in the structure type; K and its normed-field instance are implicit in norm_q_pos, and t is explicit. These conditions may have no inhabitants for a particular K; for example, a norm that is 1 on every nonzero element admits no TateParameter.\n\nPrimeToOrder. For every pair of explicit natural-number arguments ℓ,n, PrimeToOrder(ℓ,n) is defined to be Nat.Coprime ℓ n, namely gcd(ℓ,n)=1. This predicate has no field parameter and does not assert that ℓ is a prime. Its declaration PrimeToOrder.decidable provides, for every explicit ℓ,n:ℕ, a decision between this proposition and its negation. There is no extra premise. Zero is admitted in both argument positions: PrimeToOrder(0,n) holds exactly when n=1; PrimeToOrder(ℓ,0) holds exactly when ℓ=1. In particular the predicate is false at (0,0), and it holds whenever either argument is 1.\n\nOrderedTateParameter. For every explicit K with its implicit normed-field instance, OrderedTateParameter K extends TateParameter K. It retains the unit q and the strict bound ‖q‖<1, has a projection to that parent structure, and adds the fields orderNat:ℕ and orderNat_pos:0<orderNat. Thus an object is precisely a Tate parameter together with an additional positive natural number and the stated positivity condition. This declaration imposes no equation relating orderNat to q, its norm, a logarithm or an exponent, and does not select a distinguished positive number from q.\n\nOrderedTateParameter.PrimeToOrder. For every t:OrderedTateParameter K and every explicit ℓ:ℕ, t.PrimeToOrder(ℓ) means PrimeToOrder(ℓ,t.orderNat), hence gcd(ℓ,t.orderNat)=1. K and the normed-field instance are implicit, while t and ℓ are explicit. The instance OrderedTateParameter.decidable supplies a decision of this proposition for every such t and ℓ, with the same parameters and without an additional mathematical premise. Since t.orderNat>0, its value cannot be zero. The value 1 is allowed; if t.orderNat=1 then every ℓ, including 0, satisfies the predicate. For an arbitrary ordered parameter, ℓ=0 satisfies it exactly when t.orderNat=1, and ℓ=1 always satisfies it. No primality or lower bound on ℓ is required.",
+      "zh-Hans": "以下名称均位于 AbcAdaptation.Reference.TateCurvesTheta 中。ℕ、ℤ、ℝ 分别表示包含零的自然数、整数和实数。凡出现域 K，K 都是任意宇宙 u 中的类型，并带有隐式的 NormedField K 类型类实例。这提供交换域、实值范数及相容的度量，满足 d(x,y)=‖−x+y‖、‖xy‖=‖x‖‖y‖，以及域和度量的公理。不假设完备性、特征为零或超度量不等式。\n\n必要的非标准依赖。对于每个这样的 K，结构 TateParameter K 的字段为 q:Kˣ 和 norm_lt_one:‖q‖<1；范数中的 q 指其在 K 中的底层值。Kˣ 中的单位包含值 q 及指定的逆元 q⁻¹，满足 qq⁻¹=q⁻¹q=1，因此 q≠0。依赖文件中的声明 TateParameter.norm_q_pos 表示：对于每个 t:TateParameter K，都有 0<‖t.q‖。因此每个参数均满足 0<‖t.q‖<1。在结构类型中 K 是显式参数；在 norm_q_pos 中，K 及赋范域实例是隐式参数，t 是显式参数。对某些 K，这些条件可能没有实例；例如，若每个非零元素的范数均为 1，则不存在 TateParameter。\n\nPrimeToOrder。对于每对显式自然数参数 ℓ,n，PrimeToOrder(ℓ,n) 定义为 Nat.Coprime ℓ n，即 gcd(ℓ,n)=1。这个谓词没有域参数，也不要求 ℓ 为素数。声明 PrimeToOrder.decidable 对每个显式的 ℓ,n:ℕ，给出该命题与其否定之间的判定，不附加其他前提。两个参数位置都允许零：PrimeToOrder(0,n) 当且仅当 n=1 成立；PrimeToOrder(ℓ,0) 当且仅当 ℓ=1 成立。因此该谓词在 (0,0) 处为假，而只要有一个参数为 1，它就成立。\n\nOrderedTateParameter。对于每个显式的 K 及其隐式赋范域实例，OrderedTateParameter K 扩展 TateParameter K。它保留单位 q 及严格界 ‖q‖<1，带有到父结构的投影，并增加字段 orderNat:ℕ 和 orderNat_pos:0<orderNat。因此，一个对象恰好是一个 Tate 参数、一个额外的正自然数以及所述正性条件。这个声明没有用等式把 orderNat 与 q、q 的范数、对数或指数联系起来，也没有根据 q 选出一个特定的正数。\n\nOrderedTateParameter.PrimeToOrder。对于每个 t:OrderedTateParameter K 和每个显式的 ℓ:ℕ，t.PrimeToOrder(ℓ) 表示 PrimeToOrder(ℓ,t.orderNat)，即 gcd(ℓ,t.orderNat)=1。K 及赋范域实例是隐式参数，t 和 ℓ 是显式参数。实例 OrderedTateParameter.decidable 对每个这样的 t 和 ℓ，判定该命题；其参数相同，不增加数学前提。由于 t.orderNat>0，它不能为零，但允许为 1；若 t.orderNat=1，则每个 ℓ 都满足该谓词，包括 0。对于任意带有上述正自然数的参数，ℓ=0 满足该谓词当且仅当 t.orderNat=1，而 ℓ=1 总满足该谓词。这里不要求 ℓ 为素数，也不要求 ℓ 具有其他下界。",
+      "ja": "以下の名前はすべて AbcAdaptation.Reference.TateCurvesTheta に属する。ℕ、ℤ、ℝ は、それぞれ零を含む自然数、整数、実数を表す。体 K が現れる場合、K は任意の宇宙 u に属する型であり、暗黙の型クラスのインスタンス NormedField K を備える。これは可換体、実数値ノルム、および整合的な距離を与え、d(x,y)=‖−x+y‖、‖xy‖=‖x‖‖y‖ と体および距離の公理を満たす。完備性、標数零、超距離不等式は仮定しない。\n\n必要な非標準の依存定義。それぞれの K に対し、TateParameter K は q:Kˣ および norm_lt_one:‖q‖<1 をフィールドとする構造である。ノルムに現れる q は K におけるその値を意味する。Kˣ の単元は値 q と指定された逆元 q⁻¹ を持ち、qq⁻¹=q⁻¹q=1 を満たすので q≠0 である。依存ファイルの宣言 TateParameter.norm_q_pos は、各 t:TateParameter K に対して 0<‖t.q‖ が成立することを述べる。したがって各パラメータは 0<‖t.q‖<1 を満たす。構造の型では K は明示的な引数であり、norm_q_pos では K とノルム体のインスタンスが暗黙の引数、t が明示的な引数である。K によってはこれらの条件を満たす対象が存在しない。例えば、すべての非零元のノルムが 1 ならば TateParameter は存在しない。\n\nPrimeToOrder。明示的な自然数の引数 ℓ,n の各組に対し、PrimeToOrder(ℓ,n) を Nat.Coprime ℓ n、すなわち gcd(ℓ,n)=1 と定義する。この述語は体を引数に取らず、ℓ が素数であるとも主張しない。宣言 PrimeToOrder.decidable は、明示的な各 ℓ,n:ℕ に対し、この命題かその否定かを判定する。追加の前提はない。両方の引数に零を許す。PrimeToOrder(0,n) は n=1 の場合に限って成立し、PrimeToOrder(ℓ,0) は ℓ=1 の場合に限って成立する。特に (0,0) では偽であり、いずれかの引数が 1 ならば成立する。\n\nOrderedTateParameter。明示的な各 K とその暗黙のノルム体のインスタンスに対し、OrderedTateParameter K は TateParameter K を拡張する。単元 q と厳密な上界 ‖q‖<1 を保持し、親構造への射影を持ち、フィールド orderNat:ℕ と orderNat_pos:0<orderNat を追加する。したがって、その対象はちょうど Tate パラメータに追加の正の自然数とその正値性の条件を付したものである。この宣言は orderNat を q、そのノルム、対数、指数と結び付ける等式を課さず、q から特定の正の数を選ぶものでもない。\n\nOrderedTateParameter.PrimeToOrder。各 t:OrderedTateParameter K と明示的な各 ℓ:ℕ に対し、t.PrimeToOrder(ℓ) は PrimeToOrder(ℓ,t.orderNat)、すなわち gcd(ℓ,t.orderNat)=1 を意味する。K とノルム体のインスタンスは暗黙の引数、t と ℓ は明示的な引数である。インスタンス OrderedTateParameter.decidable は、同じ引数を用い、追加の数学的前提なしに各 t と ℓ に対するこの命題を判定する。t.orderNat>0 なのでその値は零ではないが、1 は許される。t.orderNat=1 ならば、0 を含めてすべての ℓ が述語を満たす。一般の対象に対し、ℓ=0 が述語を満たすのは t.orderNat=1 の場合に限り、ℓ=1 は常に述語を満たす。ℓ の素数性や追加の下界は要求されない。",
+      "declaration_coverage": [
+        {
+          "declaration": "TateParameter (required dependency)",
+          "covered": "Arbitrary universe; explicit K; implicit NormedField; q, norm_lt_one, and unit data."
+        },
+        {
+          "declaration": "TateParameter.norm_q_pos (required dependency)",
+          "covered": "Implicit K and instance; explicit t; strict positive norm conclusion."
+        },
+        {
+          "declaration": "PrimeToOrder",
+          "covered": "Both explicit natural arguments; definition as gcd equal to one; zero and one cases."
+        },
+        {
+          "declaration": "PrimeToOrder.decidable",
+          "covered": "Explicit ℓ,n; Decidable conclusion; no field parameter or extra hypothesis."
+        },
+        {
+          "declaration": "OrderedTateParameter",
+          "covered": "Universe, explicit K, implicit instance; parent projection and inherited q and norm_lt_one; orderNat and orderNat_pos."
+        },
+        {
+          "declaration": "OrderedTateParameter.PrimeToOrder",
+          "covered": "Implicit K and instance; explicit t and ℓ; expansion using t.orderNat."
+        },
+        {
+          "declaration": "OrderedTateParameter.decidable",
+          "covered": "Same parameters; decision of the expanded coprimality proposition."
+        }
+      ],
+      "possible_ambiguities": [
+        "The name PrimeToOrder does not impose primality of ℓ.",
+        "In this file orderNat is arbitrary positive data; its relation to an actual norm exponent is not part of OrderedTateParameter.",
+        "The namespace-level variable declarations do not give the field-free predicate PrimeToOrder a hidden K parameter."
+      ],
+      "proof_notes": {
+        "en": "Separate code-form notes: the two decidability instances use inferInstanceAs for Nat.Coprime. The dependency norm_q_pos uses norm_pos_iff and the nonzero property of a unit. No compilation or correctness judgment is included.",
+        "zh-Hans": "单列的代码形式说明：两个可判定性实例均使用 Nat.Coprime 的 inferInstanceAs。依赖中的 norm_q_pos 使用 norm_pos_iff 及单位的非零性。这里不报告编译结果，也不判断证明正确性。",
+        "ja": "独立したコード形式の注記：二つの決定可能性のインスタンスは Nat.Coprime に対する inferInstanceAs を用いる。依存定義の norm_q_pos は norm_pos_iff と単元の非零性を用いる。コンパイル結果や証明の正しさの判断は含めない。"
+      }
+    },
+    {
+      "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass",
+      "en": "All four declarations are in AbcAdaptation.Reference.TateCurvesTheta.TateParameter. Fix a type K in an arbitrary universe u with an implicit NormedField K instance, and an explicit t:TateParameter K. A normed field here is a commutative field with a real-valued multiplicative norm and a compatible metric d(x,y)=‖−x+y‖, satisfying the field and metric axioms. The required nonstandard structure TateParameter K consists of a unit q:Kˣ and the inequality ‖q‖<1. The underlying value of a unit has a specified two-sided inverse and is nonzero; its norm is therefore positive. The dependency's declaration norm_q_pos states 0<‖t.q‖ for each t. Thus 0<‖q‖<1 throughout. K and its normed-field instance are implicit parameters of all four declarations, and t is explicit.\n\nTateParameter.eisenstein. For every explicit k:ℕ, including k=0, define the element of K\n$$E_k(t)=\\sum_{n\\in\\mathbb N}'\\frac{(\\operatorname{cast}_K(n+1))^k\\,q^{n+1}}{1-q^{n+1}}.$$\nHere q denotes the value of t.q in K; n+1 and both exponents are natural numbers, and cast_K is the natural-number map into the field. The indexing starts with n=0, so q always has exponent at least 1. Division is field division, multiplication by the inverse of the denominator. The hypotheses 0<‖q‖<1 imply q^{n+1}≠1 for every index, hence these individual denominators are nonzero.\n\nThe prime on the sum is Mathlib's totalized infinite sum. In this normed, hence Hausdorff, additive group it equals the unique limit of the net of finite subsums, directed by inclusion, when such a limit exists. Finite support gives the corresponding finite sum. When there is no such sum in K it has the default value 0. The definition does not include a summability hypothesis or a summability conclusion. A zero value of E_k(t) therefore need not by itself distinguish an actual sum of value zero from the default value. No completeness, ultrametric or characteristic-zero instance is an argument to this definition. In positive characteristic, cast_K(n+1) may vanish; when k=0 the convention a^0=1 applies even to a=0.\n\nTateParameter.a₄. For every such t, define a₄(t)=−5 E₃(t) in K. The integer numeral 5 is interpreted in K. There is no additional argument or premise.\n\nTateParameter.a₆. For every such t, define\n$$a_6(t)=-\\frac{5E_3(t)+7E_5(t)}{12}\\quad\\text{in }K.$$\nAll numerals are interpreted in K. This is total field division; there is no assumption that 12≠0. If the characteristic is 2 or 3, 12=0 in K, its inverse is 0, and a₆(t)=0 by this definition. Other numeral coefficients may also vanish in the relevant characteristic. These definitions use the totalized E₃(t) and E₅(t) just described.\n\nTateParameter.tateCurve. For every such t, define a member of WeierstrassCurve K by specifying its five coefficient fields:\n$$(a_1,a_2,a_3,a_4,a_6)=(1,0,0,a_4(t),a_6(t)).$$\nThe pinned formal type WeierstrassCurve K is the structure with precisely these five K-valued fields; it does not itself contain a nonzero-discriminant condition. The output of this definition is that coefficient structure. This declaration provides no additional IsElliptic instance, discriminant assertion or map of points. The separate Mathlib predicate IsElliptic, where used, would require the discriminant to be a unit; it is not an assumption or conclusion here.\n\nThe file's Nonarchimedean section locally lists IsUltrametricDist K and CompleteSpace K, meaning respectively d(x,z)≤max(d(x,y),d(y,z)) for all x,y,z and completeness of the metric space. That section contains no declaration and ends before a₄, a₆ and tateCurve. Consequently those local assumptions are not parameters of any of the four definitions. Apart from the total infinite sum's classical selection mechanism, the file introduces no additional selected witness. If K has no TateParameter, there is no t to which these definitions can be applied.",
+      "zh-Hans": "四个声明均位于 AbcAdaptation.Reference.TateCurvesTheta.TateParameter 中。固定任意宇宙 u 中的类型 K，隐式的 NormedField K 实例，以及显式参数 t:TateParameter K。这里的赋范域是带有实值乘法范数及相容度量 d(x,y)=‖−x+y‖ 的交换域，并满足域和度量的公理。必要的非标准结构 TateParameter K 由单位 q:Kˣ 及不等式 ‖q‖<1 组成。单位的底层值带有指定的双侧逆元且非零，因此其范数为正。依赖中的声明 norm_q_pos 对每个 t 给出 0<‖t.q‖。所以始终有 0<‖q‖<1。四个声明中的 K 及赋范域实例均为隐式参数，t 为显式参数。\n\nTateParameter.eisenstein。对于每个显式的 k:ℕ，包括 k=0，定义 K 中的元素\n$$E_k(t)=\\sum_{n\\in\\mathbb N}'\\frac{(\\operatorname{cast}_K(n+1))^k\\,q^{n+1}}{1-q^{n+1}}.$$\n这里 q 表示 t.q 在 K 中的值；n+1 及两个指数都是自然数，cast_K 是从自然数到域的映射。求和从 n=0 开始，因此 q 的指数始终至少为 1。除法是域中的除法，即乘以分母的逆元。条件 0<‖q‖<1 蕴含每个指标下均有 q^{n+1}≠1，所以各项的分母均非零。\n\n求和号上的撇表示 Mathlib 中在所有输入上都有定义的无穷和。在这个赋范、因而为 Hausdorff 的加法群中，若按有限集包含关系定向的有限部分和网有极限，它就等于该唯一极限；若支撑有限，则为相应的有限和。若 K 中不存在这样的和，它的默认值为 0。这个定义既没有可求和性前提，也没有可求和性结论。因此，仅由 E_k(t)=0，不能区分实际的和为零与采用默认值这两种情形。完备性、超度量性质和特征为零都不是这个定义的参数。在正特征下，cast_K(n+1) 可能为零；当 k=0 时，即使底数为零，也采用 a^0=1 的约定。\n\nTateParameter.a₄。对于每个这样的 t，定义 K 中的 a₄(t)=−5 E₃(t)。数码 5 在 K 中解释。没有额外参数或前提。\n\nTateParameter.a₆。对于每个这样的 t，定义\n$$a_6(t)=-\\frac{5E_3(t)+7E_5(t)}{12}\\quad\\text{于 }K.$$\n所有数码均在 K 中解释。这是对所有输入都有定义的域除法，没有假设 12≠0。若特征为 2 或 3，则 K 中的 12=0，其逆元为 0，故由此定义可得 a₆(t)=0。其他数码系数在相应的特征下也可能为零。这些定义使用上述在所有输入上都有定义的 E₃(t) 和 E₅(t)。\n\nTateParameter.tateCurve。对于每个这样的 t，通过指定五个系数字段来定义 WeierstrassCurve K 的一个元素：\n$$(a_1,a_2,a_3,a_4,a_6)=(1,0,0,a_4(t),a_6(t)).$$\n固定版本中的形式类型 WeierstrassCurve K 正是具有这五个 K 值字段的结构，本身不含判别式非零的条件。该定义的输出就是这个系数结构。这个声明不另行提供 IsElliptic 实例、判别式断言或点之间的映射。Mathlib 中另行定义的谓词 IsElliptic 若被使用，会要求判别式为单位；它不是此处的假设或结论。\n\n文件的 Nonarchimedean 节局部列出 IsUltrametricDist K 和 CompleteSpace K，分别表示对所有 x,y,z 均有 d(x,z)≤max(d(x,y),d(y,z))，以及度量空间的完备性。该节不含任何声明，并在 a₄、a₆ 和 tateCurve 之前结束。因此这些局部假设都不是上述四个定义的参数。除了无穷和自身的经典选择机制之外，文件没有引入其他选定的见证。若 K 中不存在 TateParameter，就没有可供这些定义使用的 t。",
+      "ja": "四つの宣言はすべて AbcAdaptation.Reference.TateCurvesTheta.TateParameter に属する。任意の宇宙 u に属する型 K、暗黙の NormedField K のインスタンス、および明示的な引数 t:TateParameter K を固定する。ここでノルム体とは、実数値の乗法的ノルムと整合的な距離 d(x,y)=‖−x+y‖ を備え、体および距離の公理を満たす可換体である。必要な非標準の構造 TateParameter K は、単元 q:Kˣ と不等式 ‖q‖<1 からなる。単元の値は指定された両側逆元を持ち、非零なので、そのノルムは正である。依存定義の宣言 norm_q_pos は各 t に対して 0<‖t.q‖ を述べる。したがって、常に 0<‖q‖<1 である。四つの宣言では K とノルム体のインスタンスが暗黙の引数であり、t は明示的な引数である。\n\nTateParameter.eisenstein。k=0 を含む明示的な各 k:ℕ に対し、K の元を\n$$E_k(t)=\\sum_{n\\in\\mathbb N}'\\frac{(\\operatorname{cast}_K(n+1))^k\\,q^{n+1}}{1-q^{n+1}}$$\nと定義する。q は t.q の K における値、n+1 および二つの指数は自然数、cast_K は自然数から体への写像である。添字は n=0 から始まるので、q の指数は常に 1 以上である。除法は体における除法、すなわち分母の逆元との積である。条件 0<‖q‖<1 より、各添字について q^{n+1}≠1 であり、各項の分母は非零である。\n\n和の記号のプライムは、Mathlib において全入力に値を持つように定義された無限和を表す。このノルム付き、したがって Hausdorff な加法群では、有限集合の包含関係で有向化された有限部分和のネットに極限が存在するとき、その唯一の極限に等しい。台が有限ならば対応する有限和になる。K 内にそのような和が存在しない場合、既定値は 0 である。この定義には総和可能性の仮定も結論も含まれない。したがって E_k(t)=0 という値だけでは、実際の和が零である場合と既定値を取る場合を区別できない。完備性、超距離性、標数零のインスタンスはこの定義の引数ではない。正標数では cast_K(n+1) が零になり得る。k=0 のときは底が零でも a^0=1 という規約を適用する。\n\nTateParameter.a₄。各 t に対し、K における a₄(t)=−5 E₃(t) を定義する。数記号 5 は K の元として解釈する。追加の引数や前提はない。\n\nTateParameter.a₆。各 t に対し、\n$$a_6(t)=-\\frac{5E_3(t)+7E_5(t)}{12}\\quad\\text{in }K$$\nと定義する。すべての数記号は K の元として解釈する。これは全入力で定義された体の除法であり、12≠0 は仮定しない。標数が 2 または 3 ならば K において 12=0 であり、その逆元は 0 なので、この定義では a₆(t)=0 となる。他の数係数も対応する標数で零になり得る。これらの定義は上記の全入力で定義された E₃(t)、E₅(t) を用いる。\n\nTateParameter.tateCurve。各 t に対し、五つの係数フィールドを\n$$(a_1,a_2,a_3,a_4,a_6)=(1,0,0,a_4(t),a_6(t))$$\nと指定して WeierstrassCurve K の元を定義する。固定された版の形式的な型 WeierstrassCurve K は、ちょうどこれら五つの K 値のフィールドを持つ構造であり、それ自体には判別式が非零であるという条件を含まない。この定義の出力はその係数構造である。この宣言は IsElliptic の追加のインスタンス、判別式についての主張、点の写像を与えない。Mathlib の別の述語 IsElliptic を用いる場合は判別式が単元であることを要求するが、ここではその述語を仮定も結論もしない。\n\nファイルの Nonarchimedean 節は、局所的に IsUltrametricDist K と CompleteSpace K を列挙する。これらはそれぞれ、すべての x,y,z に対して d(x,z)≤max(d(x,y),d(y,z)) が成り立つこと、および距離空間の完備性を意味する。この節には宣言がなく、a₄、a₆、tateCurve より前に終了する。したがって、これらの局所的な仮定は四つの定義のいずれの引数にもならない。無限和自体の古典的な選択機構を除き、ファイルは追加の選ばれた証人を導入しない。K に TateParameter が存在しなければ、これらの定義に適用できる t も存在しない。",
+      "declaration_coverage": [
+        {
+          "declaration": "TateParameter (required dependency) and TateParameter.norm_q_pos",
+          "covered": "Full unit and norm conditions, universe and normed-field parameters, and positivity statement."
+        },
+        {
+          "declaration": "TateParameter.eisenstein",
+          "covered": "Implicit K and NormedField; explicit t,k; index set, casts, powers, division, domain and codomain, totalized tsum and degeneracies."
+        },
+        {
+          "declaration": "Nonarchimedean section variables",
+          "covered": "IsUltrametricDist and CompleteSpace are explained; empty section contributes no declaration parameters."
+        },
+        {
+          "declaration": "TateParameter.a₄",
+          "covered": "All parameters, K-valued formula and numeral casts."
+        },
+        {
+          "declaration": "TateParameter.a₆",
+          "covered": "All parameters, K-valued formula, total division and characteristics 2 and 3."
+        },
+        {
+          "declaration": "TateParameter.tateCurve",
+          "covered": "All parameters, WeierstrassCurve output and every one of its five coefficient fields."
+        }
+      ],
+      "possible_ambiguities": [
+        "The word eisenstein is a declaration name; its actual contents are the displayed totalized series, without an attached convergence assertion.",
+        "No ultrametric or completeness hypotheses survive the empty Nonarchimedean section.",
+        "The output type contains coefficient data only; it does not package the separate IsElliptic condition.",
+        "Positive characteristic is not excluded, and division by a zero numeral follows the field convention 0⁻¹=0."
+      ],
+      "proof_notes": {
+        "en": "Separate code-form notes: the target contains four definitions in a noncomputable section and no theorem asserting convergence or ellipticity. The coefficients and output fields are given by the displayed defining expressions. This note describes syntax and does not assess correctness.",
+        "zh-Hans": "单列的代码形式说明：目标文件在 noncomputable 节中包含四个定义，没有断言收敛性或椭圆性的定理。系数与输出字段由上述定义表达式给出。这只说明代码形式，不判断正确性。",
+        "ja": "独立したコード形式の注記：対象ファイルには noncomputable 節内の四つの定義があり、収束や楕円性を主張する定理はない。係数と出力フィールドは上記の定義式で与えられる。これは構文の説明であり、正しさの評価ではない。"
+      }
+    },
+    {
+      "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder",
+      "en": "All declarations below lie in AbcAdaptation.Reference.TateCurvesTheta or its indicated namespaces. Fix a type K in an arbitrary universe u with an implicit NormedField K instance: K is a commutative field with a real-valued multiplicative norm and the compatible metric d(x,y)=‖−x+y‖, satisfying the field and metric axioms. No completeness, ultrametric or characteristic-zero hypothesis is imposed by the declarations below.\n\nNecessary nonstandard dependencies. TateParameter K consists of a unit q:Kˣ and a field norm_lt_one asserting ‖q‖<1, where q is coerced to K. A unit is a value with a specified two-sided inverse, hence is nonzero in a field. The dependency's statement TateParameter.norm_q_pos is: for every explicit t:TateParameter K, 0<‖t.q‖, with K and the normed-field instance implicit. Thus every t satisfies 0<‖t.q‖<1. OrderedTateParameter K extends that structure by an arbitrary natural-number field orderNat and a field orderNat_pos:0<orderNat, with a projection to the parent TateParameter. Its definition alone puts no relation between orderNat and q. The other dependency defines PrimeToOrder(ℓ,n) for ℓ,n:ℕ as gcd(ℓ,n)=1, supplies its decidability, and defines t₀.PrimeToOrder(ℓ) for t₀:OrderedTateParameter K as gcd(ℓ,t₀.orderNat)=1, with decidability. No primality is included. In particular the general predicate admits zero arguments and obeys gcd(0,n)=n and gcd(ℓ,0)=ℓ; for an ordered parameter, ℓ=0 is allowed exactly when orderNat=1. These predicates supply no additional hypothesis to any declaration in this target.\n\nIsUniformizer. For each explicit π:K, with K and NormedField K implicit, IsUniformizer π is a proposition-valued structure with exactly these three fields:\n1. ne_zero: π≠0;\n2. norm_lt_one: ‖π‖<1;\n3. generates: for every unit x:Kˣ, there exists an integer n:ℤ such that ‖x‖=‖π‖^n.\nThe norm of x means the norm of its underlying element in K. The quantifiers in generates are ∀x∈Kˣ ∃n∈ℤ, so n may depend on x. The power is an integer power in ℝ: exponent zero gives 1, positive exponents give ordinary powers, and negative exponents use inverses. The first two fields imply 0<‖π‖<1, so these inverse powers have a nonzero base. This is a condition on the norms of all units, not a statement that each unit itself is a power of π. No valuation ring, ideal, residue field, or distinguished choice of π is part of the structure.\n\nIsUniformizer.norm_pos. For every implicit π:K and explicit hπ:IsUniformizer π, the conclusion is 0<‖π‖. IsUniformizer.log_norm_neg has the same parameters and conclusion Real.log‖π‖<0. Here Real.log is the real natural logarithm on positive real arguments; its total extension at zero or negative numbers is irrelevant because the argument is strictly positive. K and its normed-field instance remain implicit in both lemmas.\n\nTateParameter.exists_norm_q_eq_zpow. For every explicit t:TateParameter K, implicit π:K, and explicit hπ:IsUniformizer π, there exists an integer n such that ‖t.q‖=‖π‖^n. The norm again uses the underlying field value of the unit. The witness is allowed to depend on t, π and the supplied hypothesis. No unique-existence quantifier appears in this statement.\n\nTateParameter.orderZ. Under exactly those parameters, define an integer N=t.orderZ hπ by classical choice of a witness to the preceding existence statement. This is a noncomputable definition; it contains no prescribed finite algorithm for extracting N. The proof hπ is an explicit input, while π is implicit. TateParameter.norm_q_eq_zpow states for every such t,π,hπ that\n$$\\|t.q\\|=\\|\\pi\\|^{\\,t.\\mathrm{orderZ}(h\\pi)}.$$\nIt specifies the property of the selected integer, without adding a further hypothesis.\n\nTateParameter.orderZ_pos. For every such t,π,hπ, the selected integer satisfies the strict inequality 0<t.orderZ hπ. In particular zero and negative exponents cannot be returned under these premises: exponent zero would have norm 1, and negative exponents of the real number 0<‖π‖<1 have value greater than 1, whereas ‖t.q‖<1. The declarations present existence, a selected witness, its norm equation and its positivity; they do not contain a separate theorem with a unique-existence conclusion.\n\nTateParameter.toOrdered. For every such t,π,hπ, define an element of OrderedTateParameter K whose parent TateParameter is exactly t, whose field orderNat is (t.orderZ hπ).toNat, and whose field orderNat_pos asserts that this natural number is strictly positive. The map ℤ→ℕ denoted toNat sends each nonpositive integer to 0 and sends each positive integer to its corresponding natural number. In this construction orderZ_pos excludes the truncated cases; the stored natural number therefore represents the same positive integer N. The underlying q and the bound ‖q‖<1 are preserved, not reselected. This construction selects its order through the chosen integer witness relative to the supplied π and hπ; the type OrderedTateParameter alone does not require every object to have been obtained by this construction.\n\nIf there is no π satisfying IsUniformizer, the declarations with hπ have no applicable input. In particular π=0 and ‖π‖=1 cannot satisfy its fields. If the norm is 1 on every nonzero element, neither an IsUniformizer nor a TateParameter exists. None of these definitions supplies an existence assertion for either kind of input. The final BaseChange section locally introduces a type L in another arbitrary universe v, a NormedField L instance and NormedAlgebra K L. The latter is a K-algebra structure on L with the compatibility bound ‖r • x‖≤‖r‖‖x‖ for every r:K and x:L. That section is empty: it defines no map or assertion, and L and these instances are not arguments or hypotheses of any preceding declaration.",
+      "zh-Hans": "以下声明位于 AbcAdaptation.Reference.TateCurvesTheta 或所指明的子命名空间中。固定任意宇宙 u 中的类型 K，以及隐式的 NormedField K 实例：K 是带有实值乘法范数及相容度量 d(x,y)=‖−x+y‖ 的交换域，并满足域和度量的公理。下列声明不要求完备性、超度量性质或特征为零。\n\n必要的非标准依赖。TateParameter K 由单位 q:Kˣ 以及断言 ‖q‖<1 的字段 norm_lt_one 组成；这里把 q 转为 K 中的值。单位是带有指定双侧逆元的值，因此在域中非零。依赖中的陈述 TateParameter.norm_q_pos 为：对于每个显式的 t:TateParameter K，都有 0<‖t.q‖；K 及赋范域实例是隐式参数。因此每个 t 均满足 0<‖t.q‖<1。OrderedTateParameter K 在此结构上增加任意的自然数字段 orderNat 以及字段 orderNat_pos:0<orderNat，并具有到父结构 TateParameter 的投影。其定义本身没有把 orderNat 与 q 联系起来。另一依赖将 ℓ,n:ℕ 的 PrimeToOrder(ℓ,n) 定义为 gcd(ℓ,n)=1，给出其可判定性，并对 t₀:OrderedTateParameter K 将 t₀.PrimeToOrder(ℓ) 定义为 gcd(ℓ,t₀.orderNat)=1，也给出可判定性。其中不包含素数性要求。特别地，一般谓词允许参数为零，满足 gcd(0,n)=n 和 gcd(ℓ,0)=ℓ；对于带有上述正自然数的参数，ℓ=0 被允许当且仅当 orderNat=1。这些谓词不为本目标中的任何声明增加假设。\n\nIsUniformizer。对于每个显式的 π:K，K 及 NormedField K 为隐式参数，IsUniformizer π 是取值于命题的结构，恰有以下三个字段；此处对象的名称暂用【待定译名：uniformizer】：\n1. ne_zero：π≠0；\n2. norm_lt_one：‖π‖<1；\n3. generates：对于每个单位 x:Kˣ，都存在整数 n:ℤ，使 ‖x‖=‖π‖^n。\nx 的范数指其在 K 中底层值的范数。generates 中量词的顺序为 ∀x∈Kˣ ∃n∈ℤ，所以 n 可以依赖于 x。这里使用 ℝ 中的整数幂：零次幂为 1，正指数给出通常的幂，负指数使用逆元。前两个字段蕴含 0<‖π‖<1，所以这些负整数幂的底数非零。这是关于所有单位的范数的条件，并不表示每个单位本身都是 π 的幂。该结构不包含赋值环、理想、剩余域，也不指定 π 的特殊选择。\n\nIsUniformizer.norm_pos。对于每个隐式的 π:K 和显式的 hπ:IsUniformizer π，结论为 0<‖π‖。IsUniformizer.log_norm_neg 具有同样的参数，结论为 Real.log‖π‖<0。此处 Real.log 在正实数上为实自然对数；由于自变量严格为正，其在零和负数处的全域扩展与这里无关。两个引理中的 K 及赋范域实例仍为隐式参数。\n\nTateParameter.exists_norm_q_eq_zpow。对于每个显式的 t:TateParameter K、隐式的 π:K 以及显式的 hπ:IsUniformizer π，都存在整数 n，使 ‖t.q‖=‖π‖^n。这里仍取单位在域中底层值的范数。见证可以依赖于 t、π 以及所给假设。该陈述中没有唯一存在量词。\n\nTateParameter.orderZ。在完全相同的参数下，通过经典选择，从上述存在陈述中选取一个见证，定义整数 N=t.orderZ hπ。这是不可计算的定义，没有规定提取 N 的有限算法。证明 hπ 是显式输入，π 是隐式输入。TateParameter.norm_q_eq_zpow 对每个这样的 t、π、hπ 陈述\n$$\\|t.q\\|=\\|\\pi\\|^{\\,t.\\mathrm{orderZ}(h\\pi)}.$$\n它给出所选整数的性质，不增加其他假设。\n\nTateParameter.orderZ_pos。对于每个这样的 t、π、hπ，所选整数满足严格不等式 0<t.orderZ hπ。特别地，在这些前提下，不能返回零或负指数：零次幂的值为 1，而实数 0<‖π‖<1 的负整数幂大于 1，与 ‖t.q‖<1 不符。这些声明分别给出存在性、选定的见证、其范数等式和正性，并没有另行包含以唯一存在为结论的定理。\n\nTateParameter.toOrdered。对于每个这样的 t、π、hπ，定义 OrderedTateParameter K 的一个元素，其父 TateParameter 恰为 t，字段 orderNat 为 (t.orderZ hπ).toNat，字段 orderNat_pos 断言这个自然数严格为正。记为 toNat 的映射 ℤ→ℕ 将每个非正整数送到 0，将每个正整数送到相应自然数。在此构造中，orderZ_pos 排除了发生截断的情况，所以存储的自然数表示同一个正整数 N。底层 q 及不等式 ‖q‖<1 得到保留，并未重新选择。该构造通过相对于所给 π 和 hπ 选出的整数见证确定其 orderNat；而 OrderedTateParameter 这个类型本身并不要求每个对象都来自此构造。\n\n如果不存在满足 IsUniformizer 的 π，带有 hπ 的声明就没有适用的输入。特别地，π=0 或 ‖π‖=1 均不能满足其字段。若每个非零元素的范数均为 1，则【待定译名：uniformizer】和 TateParameter 都不存在。这些定义均未给出任一类输入的存在性断言。最后的 BaseChange 节局部引入另一个任意宇宙 v 中的类型 L、NormedField L 实例以及 NormedAlgebra K L。最后一个类型类提供 L 上的 K 代数结构，并对每个 r:K 和 x:L 要求相容界 ‖r • x‖≤‖r‖‖x‖。该节为空：不定义任何映射或断言，L 及这些实例都不是任何前述声明的参数或假设。",
+      "ja": "以下の宣言は AbcAdaptation.Reference.TateCurvesTheta または明記したその名前空間に属する。任意の宇宙 u の型 K と暗黙の NormedField K のインスタンスを固定する。K は実数値の乗法的ノルムと整合的な距離 d(x,y)=‖−x+y‖ を備え、体と距離の公理を満たす可換体である。以下の宣言は完備性、超距離性、標数零を仮定しない。\n\n必要な非標準の依存定義。TateParameter K は単元 q:Kˣ と、‖q‖<1 を主張するフィールド norm_lt_one からなる。ここでは q を K の元として扱う。単元は指定された両側逆元を持つ値なので、体では非零である。依存定義の陳述 TateParameter.norm_q_pos は、明示的な各 t:TateParameter K に対して 0<‖t.q‖ であり、K とノルム体のインスタンスは暗黙の引数である。したがって各 t は 0<‖t.q‖<1 を満たす。OrderedTateParameter K は、この構造を任意の自然数フィールド orderNat とフィールド orderNat_pos:0<orderNat で拡張し、親構造 TateParameter への射影を持つ。その定義自体は orderNat と q の関係を課さない。他方の依存定義は、ℓ,n:ℕ に対する PrimeToOrder(ℓ,n) を gcd(ℓ,n)=1 と定義し、その決定可能性を与える。また、t₀:OrderedTateParameter K に対し t₀.PrimeToOrder(ℓ) を gcd(ℓ,t₀.orderNat)=1 と定義し、その決定可能性も与える。素数性は含まれない。特に一般の述語では零の引数を許し、gcd(0,n)=n および gcd(ℓ,0)=ℓ が成り立つ。orderNat が付いたパラメータについて ℓ=0 を許すのは orderNat=1 の場合に限る。これらの述語は、この対象ファイルのどの宣言にも追加の仮定を与えない。\n\nIsUniformizer。明示的な各 π:K に対し、K と NormedField K を暗黙の引数として、IsUniformizer π はちょうど次の三つのフィールドを持つ命題値の構造である。対象の用語は一様化元（uniformizer）である。\n1. ne_zero：π≠0。\n2. norm_lt_one：‖π‖<1。\n3. generates：すべての単元 x:Kˣ に対し、‖x‖=‖π‖^n を満たす整数 n:ℤ が存在する。\nx のノルムとは K におけるその値のノルムである。generates の量化の順序は ∀x∈Kˣ ∃n∈ℤ であり、n は x に依存してよい。冪は ℝ における整数冪であり、零指数では 1、正指数では通常の冪、負指数では逆元を用いる。初めの二つのフィールドより 0<‖π‖<1 なので、これらの逆数の冪では底は非零である。これはすべての単元のノルムに関する条件であって、各単元そのものが π の冪であるという主張ではない。付値環、イデアル、剰余体、あるいは π の特別な選択は構造に含まれない。\n\nIsUniformizer.norm_pos。暗黙の各 π:K と明示的な各 hπ:IsUniformizer π に対し、結論は 0<‖π‖ である。IsUniformizer.log_norm_neg は同じ引数を持ち、Real.log‖π‖<0 を結論とする。ここで Real.log は正の実数上では実自然対数であり、引数が厳密に正なので、零や負数への全域的な拡張は関係しない。両補題では K とノルム体のインスタンスも暗黙の引数である。\n\nTateParameter.exists_norm_q_eq_zpow。明示的な各 t:TateParameter K、暗黙の各 π:K、明示的な各 hπ:IsUniformizer π に対し、‖t.q‖=‖π‖^n を満たす整数 n が存在する。ここでも単元の体における値のノルムを用いる。証人は t、π、および与えられた仮定に依存してよい。この陳述には一意的存在の量化はない。\n\nTateParameter.orderZ。まったく同じ引数の下で、上記の存在命題の証人を古典的選択で取り、整数 N=t.orderZ hπ を定義する。これは非計算的な定義であり、N を抽出する有限アルゴリズムを指定しない。証明 hπ は明示的な入力であり、π は暗黙の入力である。TateParameter.norm_q_eq_zpow は、そのような各 t,π,hπ に対して\n$$\\|t.q\\|=\\|\\pi\\|^{\\,t.\\mathrm{orderZ}(h\\pi)}$$\nと述べる。追加の仮定なしに、選ばれた整数の性質を指定するものである。\n\nTateParameter.orderZ_pos。そのような各 t,π,hπ に対し、選ばれた整数は厳密な不等式 0<t.orderZ hπ を満たす。特に、これらの前提の下では零や負の指数は返されない。零指数の値は 1 であり、0<‖π‖<1 という実数の負整数冪は 1 より大きいが、‖t.q‖<1 である。これらの宣言は存在、選ばれた証人、そのノルムの等式、正値性を与えるが、一意的存在を結論とする別の定理は含まない。\n\nTateParameter.toOrdered。そのような各 t,π,hπ に対し、親の TateParameter が正確に t であり、フィールド orderNat が (t.orderZ hπ).toNat であり、フィールド orderNat_pos がその自然数の厳密な正値性を主張する OrderedTateParameter K の元を定義する。toNat と書く写像 ℤ→ℕ は非正整数をすべて 0 に送り、正整数を対応する自然数に送る。この構成では orderZ_pos により切り詰めの場合が除外されるため、格納される自然数は同じ正整数 N を表す。元の q と上界 ‖q‖<1 は保存され、選び直されない。この構成は、与えられた π と hπ に関する整数の証人を選ぶことによって orderNat を定める。型 OrderedTateParameter 自体は、すべての対象がこの構成から得られることを要求しない。\n\nIsUniformizer を満たす π が存在しない場合、hπ を取る宣言には適用できる入力がない。特に π=0 や ‖π‖=1 はそのフィールドを満たさない。すべての非零元のノルムが 1 ならば、一様化元も TateParameter も存在しない。これらの定義のいずれも、この二種類の入力の存在を主張しない。最後の BaseChange 節は、別の任意の宇宙 v の型 L、NormedField L のインスタンス、および NormedAlgebra K L を局所的に導入する。最後の型クラスは L 上の K 代数構造と、各 r:K および x:L に対する整合条件 ‖r • x‖≤‖r‖‖x‖ を与える。この節は空であり、写像も命題も定義しない。L とこれらのインスタンスは先行するどの宣言の引数にも仮定にもならない。",
+      "declaration_coverage": [
+        {
+          "declaration": "TateParameter and TateParameter.norm_q_pos (required dependency)",
+          "covered": "Full q unit data, strict norm bound, positivity, universe and all parameters."
+        },
+        {
+          "declaration": "OrderedTateParameter and PrimeToOrder declarations (required dependency)",
+          "covered": "Positive order data and inherited fields; exact coprimality meanings and decisions; no new target premise."
+        },
+        {
+          "declaration": "IsUniformizer",
+          "covered": "Implicit K and instance; explicit π; Prop-valued structure; ne_zero, norm_lt_one, generates and ∀x∃n scope."
+        },
+        {
+          "declaration": "IsUniformizer.norm_pos",
+          "covered": "Implicit K, instance,π; explicit hπ; strict positivity conclusion."
+        },
+        {
+          "declaration": "IsUniformizer.log_norm_neg",
+          "covered": "Same parameters and negative real-log conclusion."
+        },
+        {
+          "declaration": "TateParameter.exists_norm_q_eq_zpow",
+          "covered": "Implicit K, instance,π; explicit t,hπ; existential integer and equality."
+        },
+        {
+          "declaration": "TateParameter.orderZ",
+          "covered": "Same parameters; integer codomain and classical witness selection."
+        },
+        {
+          "declaration": "TateParameter.norm_q_eq_zpow",
+          "covered": "Same parameters; equality for the chosen integer."
+        },
+        {
+          "declaration": "TateParameter.orderZ_pos",
+          "covered": "Same parameters; strictly positive integer conclusion and excluded nonpositive exponents."
+        },
+        {
+          "declaration": "TateParameter.toOrdered",
+          "covered": "Same parameters; parent t, orderNat, positivity field, integer-to-natural truncation and dependence on selected witness."
+        },
+        {
+          "declaration": "BaseChange section variables",
+          "covered": "Arbitrary L universe, NormedField L and NormedAlgebra K L; algebra and norm bound; empty section adds no declaration."
+        }
+      ],
+      "possible_ambiguities": [
+        "Chinese uniformizer terminology remains pending; every substantive condition is stated independently of the placeholder.",
+        "generates concerns the real norms of all units, not equality of field elements with powers of π and not additional valuation-ring data.",
+        "orderZ is a classical witness selection; the file contains no separate unique-existence declaration.",
+        "OrderedTateParameter in general carries independent positive natural data; toOrdered is the particular construction that sets this data from the chosen norm exponent.",
+        "BaseChange is an empty section and does not provide a base-change map or a theorem."
+      ],
+      "proof_notes": {
+        "en": "Separate code-form notes: norm_pos uses norm_pos_iff, log_norm_neg uses Real.log_neg, and exists_norm_q_eq_zpow applies generates to t.q. orderZ uses Classical.choose and norm_q_eq_zpow uses Classical.choose_spec. The orderZ_pos body compares logarithms, rewrites via Real.log_zpow, and uses a contradiction with linear and nonlinear arithmetic. The positivity field of toOrdered uses orderZ_pos and omega. These are descriptions of the written bodies, not proof validation.",
+        "zh-Hans": "单列的代码形式说明：norm_pos 使用 norm_pos_iff，log_norm_neg 使用 Real.log_neg，exists_norm_q_eq_zpow 将 generates 应用于 t.q。orderZ 使用 Classical.choose，norm_q_eq_zpow 使用 Classical.choose_spec。orderZ_pos 的代码比较对数，通过 Real.log_zpow 改写，并结合线性与非线性算术作反证。toOrdered 的正性字段使用 orderZ_pos 和 omega。这些只是对所写代码体的描述，不是证明验证。",
+        "ja": "独立したコード形式の注記：norm_pos は norm_pos_iff、log_norm_neg は Real.log_neg を用い、exists_norm_q_eq_zpow は generates を t.q に適用する。orderZ は Classical.choose、norm_q_eq_zpow は Classical.choose_spec を用いる。orderZ_pos の本体は対数を比較し、Real.log_zpow で書き換え、線形および非線形算術を用いる背理法を記す。toOrdered の正値性のフィールドは orderZ_pos と omega を用いる。これらは記された本体の説明であり、証明の検証ではない。"
+      }
+    }
+  ]
+}

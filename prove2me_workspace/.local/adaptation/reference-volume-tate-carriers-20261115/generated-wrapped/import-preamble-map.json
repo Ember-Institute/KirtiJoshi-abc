@@ -1,0 +1,694 @@
+{
+  "schema": "foundation-import-preamble-map-v1",
+  "bundles": [
+    {
+      "module": "Iut.Cor312.ContainerHull",
+      "definitionName": "AbcAdaptation_Reference_Iut_Cor312_ContainerHull",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ContainerHull",
+      "platformImports": [
+        "Mathlib.Data.Finite.Defs",
+        "Mathlib.Data.Set.Defs",
+        "Mathlib.Data.Set.Finite.Basic",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Container",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_HolomorphicHull",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Procession",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_RationalPlace"
+      ],
+      "sourceImports": [
+        "Init.Core",
+        "Init.Prelude",
+        "Init.SizeOf",
+        "Iut.Cor312.Container",
+        "Iut.Cor312.HolomorphicHull",
+        "Iut.Cor312.PacketPresentation",
+        "Iut.Cor312.Procession",
+        "Iut.Cor312.RationalPlace",
+        "Mathlib.Basic.Finite.Defs",
+        "Mathlib.Data.Set.Defs",
+        "Mathlib.Data.Set.Finite.Basic"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: Iut/Cor312/ContainerHull.lean\nOriginal authors: The iut contributors\nOriginal repository: https://github.com/lana-agents/iut\nOriginal commit: 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.Data.Finite.Defs\nimport Mathlib.Data.Set.Defs\nimport Mathlib.Data.Set.Finite.Basic\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Container\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_HolomorphicHull\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Procession\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_RationalPlace\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "904349914bca08bf62a581198d8401fb24160bab87c2485d806e67c217b6273c",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 28,
+          "col": 0,
+          "offset": 1137
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "Iut/Cor312/ContainerHull.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": "/home/admin-wsl/Coq/abc/refer/iut/LICENSE",
+        "licenseSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "sourceHeaderSha256": "96ea7a84822ad2877b390f2a9bd1bec9606188bec41a212ced076975774558c9",
+        "sourceSha256": "fe449dedeab6c33724f362f4c34e58a2dd07295e652f1ab8136116cb43cf5467",
+        "sourceGitBlobMatches": true,
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ContainerHull.lean",
+        "upstreamSourceSha256": "fe449dedeab6c33724f362f4c34e58a2dd07295e652f1ab8136116cb43cf5467",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "ab987a80b23b12129bb34a4783d1aeb999c84c4d",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ContainerHull.lean",
+            "sha256": "fe449dedeab6c33724f362f4c34e58a2dd07295e652f1ab8136116cb43cf5467"
+          }
+        ],
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/Iut/Cor312/ContainerHull.lean",
+          "sha256": "fe449dedeab6c33724f362f4c34e58a2dd07295e652f1ab8136116cb43cf5467",
+          "byteLength": 5539
+        },
+        "originalNoticeRetained": true
+      }
+    },
+    {
+      "module": "Iut.Cor312.LogVolume",
+      "definitionName": "AbcAdaptation_Reference_Iut_Cor312_LogVolume",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_LogVolume",
+      "platformImports": [
+        "Mathlib.Algebra.BigOperators.Finprod",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+        "Mathlib.Algebra.Group.Defs",
+        "Mathlib.Algebra.Group.Pointwise.Set.Scalar",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Data.Fintype.Defs",
+        "Mathlib.Data.Int.Cast.Defs",
+        "Mathlib.Data.Nat.Cast.Defs",
+        "Mathlib.Data.Nat.Prime.Defs",
+        "Mathlib.Data.Set.Defs",
+        "Mathlib.Data.Set.Operations",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Container",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Procession",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_RationalPlace"
+      ],
+      "sourceImports": [
+        "Init.Core",
+        "Init.Data.Cast",
+        "Init.Data.Zero",
+        "Init.Prelude",
+        "Init.SizeOf",
+        "Iut.Cor312.Container",
+        "Iut.Cor312.PacketPresentation",
+        "Iut.Cor312.Procession",
+        "Iut.Cor312.RationalPlace",
+        "Mathlib.Algebra.BigOperators.Finprod",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+        "Mathlib.Algebra.Group.DivInvMonoid",
+        "Mathlib.Algebra.Group.Pointwise.Set.Scalar",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Basic.Real.Basic",
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Data.Fintype.Defs",
+        "Mathlib.Data.Int.Cast.Defs",
+        "Mathlib.Data.Nat.Cast.Defs",
+        "Mathlib.Data.Nat.Prime.Defs",
+        "Mathlib.Data.Set.Defs",
+        "Mathlib.Data.Set.Operations"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: Iut/Cor312/LogVolume.lean\nOriginal authors: The iut contributors\nOriginal repository: https://github.com/lana-agents/iut\nOriginal commit: 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\nEffective compiler source override: accepted graph ci-012771-ee109b3e; upstream source differs from the compiler input.\nEffective source SHA256: 002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0\nExact upstream/effective patch SHA256: baa01f20308227128779a379384459c7de700946c775642b5965c5c7afbae34d\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.Algebra.BigOperators.Finprod\nimport Mathlib.Algebra.BigOperators.Group.Finset.Defs\nimport Mathlib.Algebra.Group.Defs\nimport Mathlib.Algebra.Group.Pointwise.Set.Scalar\nimport Mathlib.Algebra.Group.Units.Defs\nimport Mathlib.Algebra.Ring.Defs\nimport Mathlib.Analysis.SpecialFunctions.Log.Basic\nimport Mathlib.Data.Real.Basic\nimport Mathlib.Data.Fintype.Basic\nimport Mathlib.Data.Fintype.Defs\nimport Mathlib.Data.Int.Cast.Defs\nimport Mathlib.Data.Nat.Cast.Defs\nimport Mathlib.Data.Nat.Prime.Defs\nimport Mathlib.Data.Set.Defs\nimport Mathlib.Data.Set.Operations\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Container\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Procession\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_RationalPlace\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "38cf4017ebd3616d81beb6777e81be170f0ef93a9194342fbc8885c09528650f",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 42,
+          "col": 0,
+          "offset": 1846
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "Iut/Cor312/LogVolume.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": "/home/admin-wsl/Coq/abc/refer/iut/LICENSE",
+        "licenseSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "sourceHeaderSha256": "96ea7a84822ad2877b390f2a9bd1bec9606188bec41a212ced076975774558c9",
+        "sourceSha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+        "sourceGitBlobMatches": false,
+        "sourceOverridden": true,
+        "originalSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/LogVolume.lean",
+        "upstreamSourceSha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "0415c756966155e5286911d75f26fbd0c8f0366c",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/Iut/Cor312/LogVolume.lean",
+            "sha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/source-overrides/LogVolume.patch",
+            "sha256": "baa01f20308227128779a379384459c7de700946c775642b5965c5c7afbae34d"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-result.json",
+            "sha256": "9195a0e87434c662c2da293875840c4d7ce7dddcb9a3383d0b003fde03a661f0",
+            "job_id": "ci-012771-ee109b3e"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-source-receipt.json",
+            "sha256": "6677a0d0e2ad0903d6347bdea8af083bb07cd0f60d8c662836c7fce709dd02aa"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-build-plan.json",
+            "sha256": "803d3674fa23cf6def0408775cb2869069221be612bbe4962e6012fd9dce463c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/log-volume-instance-repair.json",
+            "sha256": "51ba78dc7f27934a95d87ed4d02519989d84e4e80f3a55e847edca5d06024490"
+          }
+        ],
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/Iut/Cor312/LogVolume.lean",
+          "sha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+          "byteLength": 12067
+        },
+        "frozenUpstreamSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/upstream-sources/Iut/Cor312/LogVolume.lean",
+          "sha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+          "byteLength": 11792
+        },
+        "effectiveSourceOverride": {
+          "upstreamSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/LogVolume.lean",
+          "upstreamSourceSha256": "79f0f12f1c82d6a0b6b83a42197527542fa946e9a5bb8dd4fd3572fd88edaf15",
+          "upstreamGitObject": "0415c756966155e5286911d75f26fbd0c8f0366c",
+          "effectiveSourceSha256": "002f44da071e858c1fe48f3608da4e75f1179d3cd6c3007444bc5453440b7ef0",
+          "patch": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/source-overrides/LogVolume.patch",
+            "sha256": "baa01f20308227128779a379384459c7de700946c775642b5965c5c7afbae34d"
+          },
+          "acceptance": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-result.json",
+            "sha256": "9195a0e87434c662c2da293875840c4d7ce7dddcb9a3383d0b003fde03a661f0",
+            "job_id": "ci-012771-ee109b3e"
+          },
+          "acceptedGraphSourceReceipt": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-source-receipt.json",
+            "sha256": "6677a0d0e2ad0903d6347bdea8af083bb07cd0f60d8c662836c7fce709dd02aa"
+          },
+          "effectiveSourceLeafAcceptance": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/Iut-Cor312-LogVolume-leaf-result.json",
+            "sha256": "0ffc5d52d521e2838ac834dfc8a8f4784ff0b9dffe7877b094213045ae186e51",
+            "job_id": "ci-012606-3dbf7af3"
+          },
+          "sourceBuildPlan": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-build-plan.json",
+            "sha256": "803d3674fa23cf6def0408775cb2869069221be612bbe4962e6012fd9dce463c"
+          },
+          "effectiveSourceRepairExplanation": {
+            "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/log-volume-instance-repair.json",
+            "sha256": "51ba78dc7f27934a95d87ed4d02519989d84e4e80f3a55e847edca5d06024490"
+          },
+          "changeScope": "Existing accepted 4.35 source: source lake option mirror (relaxedAutoImplicit=false,maxSynthPendingDepth=3) and elaboration repair (dependent CommRing letI, typed cast/lambda). Complete public structure and fields preserved."
+        },
+        "originalNoticeRetained": true
+      }
+    },
+    {
+      "module": "TateCurvesTheta.QParameter.PrimeToOrder",
+      "definitionName": "AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder",
+      "platformImports": [
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Analysis.Normed.Field.Basic",
+        "Mathlib.Analysis.Normed.Group.Defs",
+        "Mathlib.Data.Real.Basic",
+        "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic"
+      ],
+      "sourceImports": [
+        "Init.Core",
+        "Init.Data.Nat.Coprime",
+        "Init.Data.Nat.Gcd",
+        "Init.Data.Zero",
+        "Init.Prelude",
+        "Init.SizeOf",
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Analysis.Normed.Field.Basic",
+        "Mathlib.Analysis.Normed.Group.Defs",
+        "Mathlib.Basic.Real.Basic",
+        "TateCurvesTheta.QParameter.Basic"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: TateCurvesTheta/QParameter/PrimeToOrder.lean\nOriginal authors: The tate-curves-theta contributors\nOriginal repository: https://github.com/lana-agents/tate-curves-theta\nOriginal commit: ca6c2279d3cea0690cdb01328e727118d5485d68\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport Mathlib.Algebra.Field.Defs\nimport Mathlib.Algebra.Group.Units.Defs\nimport Mathlib.Algebra.Ring.Defs\nimport Mathlib.Analysis.Normed.Field.Basic\nimport Mathlib.Analysis.Normed.Group.Defs\nimport Mathlib.Data.Real.Basic\nimport Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "fb2157db32544320b1255b036d17977e79c0c2b2047aef80bdfe24fef79b961c",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 27,
+          "col": 0,
+          "offset": 1053
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "TateCurvesTheta/QParameter/PrimeToOrder.lean",
+        "originalAuthors": "The tate-curves-theta contributors",
+        "originalRepository": "https://github.com/lana-agents/tate-curves-theta",
+        "originalCommit": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": null,
+        "licenseSha256": null,
+        "sourceHeaderSha256": "09590c206512cb8ec0f8e642356fe0dbd1247717071fa32e5c97e82a057c8fe5",
+        "sourceSha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32",
+        "sourceGitBlobMatches": true,
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/PrimeToOrder.lean",
+        "upstreamSourceSha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "36125dd8387eb232cfd15e3694ba4f136d19f6f2",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/PrimeToOrder.lean",
+            "sha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32"
+          }
+        ],
+        "licenseEvidence": "Apache 2.0 declaration in exact upstream source header; no LICENSE/COPYING/NOTICE file exists in repository tree",
+        "repositoryLicenseFiles": [],
+        "manifestPackage": {
+          "url": "https://github.com/lana-agents/tate-curves-theta",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "name": "«tate-curves-theta»",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "inherited": false,
+          "configFile": "lakefile.toml"
+        },
+        "upstreamDeclaredToolchain": "leanprover/lean4:v4.32.0",
+        "acceptedCompilerVersion": "4.35.0-rc3",
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/TateCurvesTheta/QParameter/PrimeToOrder.lean",
+          "sha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32",
+          "byteLength": 5593
+        },
+        "originalNoticeRetained": true
+      }
+    },
+    {
+      "module": "TateCurvesTheta.TateCurve.Weierstrass",
+      "definitionName": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass",
+      "platformImports": [
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Group.Basic",
+        "Mathlib.Algebra.Group.Defs",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.GroupWithZero.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass",
+        "Mathlib.Analysis.Normed.Field.Basic",
+        "Mathlib.Analysis.Normed.Ring.Basic",
+        "Mathlib.Data.Int.Cast.Defs",
+        "Mathlib.Data.Nat.Cast.Defs",
+        "Mathlib.Data.Nat.Init",
+        "Mathlib.Topology.Algebra.InfiniteSum.Defs",
+        "Mathlib.Topology.Algebra.InfiniteSum.SummationFilter",
+        "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+        "Mathlib.Topology.UniformSpace.Defs",
+        "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic",
+        "Mathlib.Topology.MetricSpace.Ultra.Basic"
+      ],
+      "sourceImports": [
+        "Init.Data.Cast",
+        "Init.Data.Nat.Basic",
+        "Init.Data.Zero",
+        "Init.Prelude",
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Group.Basic",
+        "Mathlib.Algebra.Group.Defs",
+        "Mathlib.Algebra.Group.DivInvMonoid",
+        "Mathlib.Algebra.Group.Monoid",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.GroupWithZero.Defs",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass",
+        "Mathlib.Analysis.Normed.Field.Basic",
+        "Mathlib.Analysis.Normed.Ring.Basic",
+        "Mathlib.Data.Int.Cast.Defs",
+        "Mathlib.Data.Nat.Cast.Defs",
+        "Mathlib.Data.Nat.Init",
+        "Mathlib.Topology.Algebra.InfiniteSum.Defs",
+        "Mathlib.Topology.Algebra.InfiniteSum.SummationFilter",
+        "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+        "Mathlib.Topology.UniformSpace.Defs",
+        "TateCurvesTheta.QParameter.Basic",
+        "Mathlib.Topology.MetricSpace.Ultra.Basic"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: TateCurvesTheta/TateCurve/Weierstrass.lean\nOriginal authors: The tate-curves-theta contributors\nOriginal repository: https://github.com/lana-agents/tate-curves-theta\nOriginal commit: ca6c2279d3cea0690cdb01328e727118d5485d68\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport Mathlib.Algebra.Field.Defs\nimport Mathlib.Algebra.Group.Basic\nimport Mathlib.Algebra.Group.Defs\nimport Mathlib.Algebra.Group.Units.Defs\nimport Mathlib.Algebra.GroupWithZero.Defs\nimport Mathlib.Algebra.Ring.Defs\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass\nimport Mathlib.Analysis.Normed.Field.Basic\nimport Mathlib.Analysis.Normed.Ring.Basic\nimport Mathlib.Data.Int.Cast.Defs\nimport Mathlib.Data.Nat.Cast.Defs\nimport Mathlib.Data.Nat.Init\nimport Mathlib.Topology.Algebra.InfiniteSum.Defs\nimport Mathlib.Topology.Algebra.InfiniteSum.SummationFilter\nimport Mathlib.Topology.MetricSpace.Pseudo.Defs\nimport Mathlib.Topology.UniformSpace.Defs\nimport Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic\nimport Mathlib.Topology.MetricSpace.Ultra.Basic\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "fd646fa361bc45e72398e83fbf942c9f6cc299ad5fbf45945f2f1cdc469907dd",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 38,
+          "col": 0,
+          "offset": 1534
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "TateCurvesTheta/TateCurve/Weierstrass.lean",
+        "originalAuthors": "The tate-curves-theta contributors",
+        "originalRepository": "https://github.com/lana-agents/tate-curves-theta",
+        "originalCommit": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": null,
+        "licenseSha256": null,
+        "sourceHeaderSha256": "09590c206512cb8ec0f8e642356fe0dbd1247717071fa32e5c97e82a057c8fe5",
+        "sourceSha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61",
+        "sourceGitBlobMatches": true,
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/Weierstrass.lean",
+        "upstreamSourceSha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "44c4fbf4c31af79211d13c2f8af75f7c2aaf066d",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/Weierstrass.lean",
+            "sha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61"
+          }
+        ],
+        "licenseEvidence": "Apache 2.0 declaration in exact upstream source header; no LICENSE/COPYING/NOTICE file exists in repository tree",
+        "repositoryLicenseFiles": [],
+        "manifestPackage": {
+          "url": "https://github.com/lana-agents/tate-curves-theta",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "name": "«tate-curves-theta»",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "inherited": false,
+          "configFile": "lakefile.toml"
+        },
+        "upstreamDeclaredToolchain": "leanprover/lean4:v4.32.0",
+        "acceptedCompilerVersion": "4.35.0-rc3",
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/TateCurvesTheta/TateCurve/Weierstrass.lean",
+          "sha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61",
+          "byteLength": 6821
+        },
+        "originalNoticeRetained": true
+      }
+    },
+    {
+      "module": "TateCurvesTheta.QParameter.NormalizedOrder",
+      "definitionName": "AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder",
+      "wrappedModule": "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder",
+      "platformImports": [
+        "Mathlib.Algebra.CharZero.Defs",
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Group.Basic",
+        "Mathlib.Algebra.Group.Defs",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.GroupWithZero.Defs",
+        "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+        "Mathlib.Algebra.Order.Floor.Defs",
+        "Mathlib.Algebra.Order.Monoid.Defs",
+        "Mathlib.Algebra.Order.Monoid.Unbundled.Basic",
+        "Mathlib.Algebra.Order.Monoid.Unbundled.Defs",
+        "Mathlib.Algebra.Order.Monoid.Unbundled.ExistsOfLE",
+        "Mathlib.Algebra.Order.Ring.Cast",
+        "Mathlib.Algebra.Order.Ring.Defs",
+        "Mathlib.Algebra.Order.Ring.Unbundled.Basic",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Algebra.Ring.Int.Defs",
+        "Mathlib.Algebra.Ring.Nat",
+        "Mathlib.Analysis.Normed.Field.Basic",
+        "Mathlib.Analysis.Normed.Group.Basic",
+        "Mathlib.Analysis.Normed.Group.Defs",
+        "Mathlib.Analysis.Normed.Ring.Basic",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Int.Cast.Basic",
+        "Mathlib.Data.Int.Cast.Defs",
+        "Mathlib.Data.Int.Order.Basic",
+        "Mathlib.Data.Nat.Cast.Defs",
+        "Mathlib.Logic.Function.Defs",
+        "Mathlib.Order.Basic",
+        "Mathlib.Order.Defs.LinearOrder",
+        "Mathlib.Order.Defs.PartialOrder",
+        "Mathlib.Tactic.Linarith.Lemmas",
+        "Mathlib.Tactic.NormNum.Basic",
+        "Mathlib.Tactic.NormNum.Result",
+        "Mathlib.Tactic.Ring.Basic",
+        "Mathlib.Tactic.Ring.Common",
+        "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic",
+        "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder",
+        "Mathlib.Tactic.Linarith",
+        "Lean.Elab.Tactic.NormCast",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "sourceImports": [
+        "Init.Classical",
+        "Init.Core",
+        "Init.Data.Cast",
+        "Init.Data.Int.Basic",
+        "Init.Data.Int.Lemmas",
+        "Init.Data.Int.Order",
+        "Init.Data.Nat.Basic",
+        "Init.Data.Zero",
+        "Init.Omega.Coeffs",
+        "Init.Omega.Constraint",
+        "Init.Omega.Int",
+        "Init.Omega.LinearCombo",
+        "Init.Omega.Logic",
+        "Init.Prelude",
+        "Mathlib.Algebra.CharZero.Defs",
+        "Mathlib.Algebra.Field.Defs",
+        "Mathlib.Algebra.Group.Basic",
+        "Mathlib.Algebra.Group.Defs",
+        "Mathlib.Algebra.Group.DivInvMonoid",
+        "Mathlib.Algebra.Group.Monoid",
+        "Mathlib.Algebra.Group.Semigroup",
+        "Mathlib.Algebra.Group.Units.Defs",
+        "Mathlib.Algebra.GroupWithZero.Defs",
+        "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+        "Mathlib.Algebra.Order.Floor.Defs",
+        "Mathlib.Algebra.Order.Monoid.Defs",
+        "Mathlib.Algebra.Order.Monoid.Unbundled.Basic",
+        "Mathlib.Algebra.Order.Monoid.Unbundled.Defs",
+        "Mathlib.Algebra.Order.Monoid.Unbundled.ExistsOfLE",
+        "Mathlib.Algebra.Order.Ring.Cast",
+        "Mathlib.Algebra.Order.Ring.Defs",
+        "Mathlib.Algebra.Order.Ring.Unbundled.Basic",
+        "Mathlib.Algebra.Ring.Defs",
+        "Mathlib.Algebra.Ring.Int.Defs",
+        "Mathlib.Algebra.Ring.Nat",
+        "Mathlib.Analysis.Normed.Field.Basic",
+        "Mathlib.Analysis.Normed.Group.Basic",
+        "Mathlib.Analysis.Normed.Group.Defs",
+        "Mathlib.Analysis.Normed.Ring.Basic",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Basic.Real.Basic",
+        "Mathlib.Data.Int.Cast.Basic",
+        "Mathlib.Data.Int.Cast.Defs",
+        "Mathlib.Data.Int.Order.Basic",
+        "Mathlib.Data.Nat.Cast.Defs",
+        "Mathlib.Logic.Function.Defs",
+        "Mathlib.Order.Basic",
+        "Mathlib.Order.Defs.LinearOrder",
+        "Mathlib.Order.Defs.PartialOrder",
+        "Mathlib.Tactic.Linarith.Lemmas",
+        "Mathlib.Tactic.NormNum.Basic",
+        "Mathlib.Tactic.NormNum.Result",
+        "Mathlib.Tactic.Ring.Basic",
+        "Mathlib.Tactic.Ring.Common",
+        "TateCurvesTheta.QParameter.Basic",
+        "TateCurvesTheta.QParameter.PrimeToOrder"
+      ],
+      "semanticOptions": [
+        {
+          "name": "relaxedAutoImplicit",
+          "type": "bool",
+          "value": false
+        },
+        {
+          "name": "maxSynthPendingDepth",
+          "type": "nat",
+          "value": 3
+        }
+      ],
+      "wholeSourceNamespaceWrapper": "AbcAdaptation.Reference",
+      "preamble": "/-\nAdaptation provenance: this block was inserted by the adaptation; it is not an original source notice.\nOriginal source path: TateCurvesTheta/QParameter/NormalizedOrder.lean\nOriginal authors: The tate-curves-theta contributors\nOriginal repository: https://github.com/lana-agents/tate-curves-theta\nOriginal commit: ca6c2279d3cea0690cdb01328e727118d5485d68\nOriginal license: Apache-2.0; the original copyright and license notice is retained below.\n-/\n/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport Mathlib.Algebra.CharZero.Defs\nimport Mathlib.Algebra.Field.Defs\nimport Mathlib.Algebra.Group.Basic\nimport Mathlib.Algebra.Group.Defs\nimport Mathlib.Algebra.Group.Units.Defs\nimport Mathlib.Algebra.GroupWithZero.Defs\nimport Mathlib.Algebra.Order.Archimedean.Real.Basic\nimport Mathlib.Algebra.Order.Floor.Defs\nimport Mathlib.Algebra.Order.Monoid.Defs\nimport Mathlib.Algebra.Order.Monoid.Unbundled.Basic\nimport Mathlib.Algebra.Order.Monoid.Unbundled.Defs\nimport Mathlib.Algebra.Order.Monoid.Unbundled.ExistsOfLE\nimport Mathlib.Algebra.Order.Ring.Cast\nimport Mathlib.Algebra.Order.Ring.Defs\nimport Mathlib.Algebra.Order.Ring.Unbundled.Basic\nimport Mathlib.Algebra.Ring.Defs\nimport Mathlib.Algebra.Ring.Int.Defs\nimport Mathlib.Algebra.Ring.Nat\nimport Mathlib.Analysis.Normed.Field.Basic\nimport Mathlib.Analysis.Normed.Group.Basic\nimport Mathlib.Analysis.Normed.Group.Defs\nimport Mathlib.Analysis.Normed.Ring.Basic\nimport Mathlib.Analysis.SpecialFunctions.Log.Basic\nimport Mathlib.Data.Real.Basic\nimport Mathlib.Data.Int.Cast.Basic\nimport Mathlib.Data.Int.Cast.Defs\nimport Mathlib.Data.Int.Order.Basic\nimport Mathlib.Data.Nat.Cast.Defs\nimport Mathlib.Logic.Function.Defs\nimport Mathlib.Order.Basic\nimport Mathlib.Order.Defs.LinearOrder\nimport Mathlib.Order.Defs.PartialOrder\nimport Mathlib.Tactic.Linarith.Lemmas\nimport Mathlib.Tactic.NormNum.Basic\nimport Mathlib.Tactic.NormNum.Result\nimport Mathlib.Tactic.Ring.Basic\nimport Mathlib.Tactic.Ring.Common\nimport Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic\nimport Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder\nimport Mathlib.Tactic.Linarith\nimport Lean.Elab.Tactic.NormCast\nimport Lean.Elab.Tactic.Omega\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n",
+      "preambleSha256": "6f3d1466e72d49d13cab58acb772cd85979bbe2a7a3e059808d91efcdb270d6f",
+      "preambleRange": {
+        "start": {
+          "line": 1,
+          "col": 0,
+          "offset": 0
+        },
+        "end": {
+          "line": 62,
+          "col": 0,
+          "offset": 2467
+        }
+      },
+      "adaptationProvenance": {
+        "insertedByAdaptation": true,
+        "originalSourcePath": "TateCurvesTheta/QParameter/NormalizedOrder.lean",
+        "originalAuthors": "The tate-curves-theta contributors",
+        "originalRepository": "https://github.com/lana-agents/tate-curves-theta",
+        "originalCommit": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": null,
+        "licenseSha256": null,
+        "sourceHeaderSha256": "09590c206512cb8ec0f8e642356fe0dbd1247717071fa32e5c97e82a057c8fe5",
+        "sourceSha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45",
+        "sourceGitBlobMatches": true,
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean",
+        "upstreamSourceSha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "sourceGitObject": "ccda057177fbef9c5ec930f8356f233b2d33728a",
+        "actualGitRepository": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta",
+        "evidence": [
+          {
+            "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+            "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean",
+            "sha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45"
+          }
+        ],
+        "licenseEvidence": "Apache 2.0 declaration in exact upstream source header; no LICENSE/COPYING/NOTICE file exists in repository tree",
+        "repositoryLicenseFiles": [],
+        "manifestPackage": {
+          "url": "https://github.com/lana-agents/tate-curves-theta",
+          "type": "git",
+          "subDir": null,
+          "scope": "",
+          "rev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "name": "«tate-curves-theta»",
+          "manifestFile": "lake-manifest.json",
+          "inputRev": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "inherited": false,
+          "configFile": "lakefile.toml"
+        },
+        "upstreamDeclaredToolchain": "leanprover/lean4:v4.32.0",
+        "acceptedCompilerVersion": "4.35.0-rc3",
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/frozen-sources/TateCurvesTheta/QParameter/NormalizedOrder.lean",
+          "sha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45",
+          "byteLength": 9108
+        },
+        "originalNoticeRetained": true
+      }
+    }
+  ]
+}

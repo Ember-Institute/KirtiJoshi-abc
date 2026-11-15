@@ -70,6 +70,12 @@
 
 四个 Scene1 producer owner 仍分别是 `AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer`：现有跨处 Tate／q 来源和部分规范化、Fontaine 事实只能供应局部前提；纸面 theta locus、Bloch–Kato theta 类与 log-shell 身份、跨 holomorphoid 代表拼接、实际 volume-measure 同一性仍缺少来源构造。显式负面障碍包括：字面 Corollary 3.12 的符号与实际收缩根的负对数相反；raw、全局次数、剩余次数、`2ell`、纸面权重和 `p*` 归一化尚无同一 carrier 上的等式；一般 `L` 情形不能假定度为一；现有选取根集的 q-log 总和严格小于纸面选定处集的总和，且 omitted mass/degree defect 未闭合；实际扭点来源的分歧指数至少为 `ell`，故质数纤维不满足 mass-one；普通 `H¹`／Kummer 类尚非论文的 `H¹_e`／crystalline／Bloch–Kato 输入；固定局部完成域的单位拼接不是论文的跨来源代表拼接；现有实际 raw/Haar 体积界也未识别纸面 theta locus、测度和无穷处归一化。Form2、cor312、G1–G4 均仍开放；不得将既有算术 accounting 的局部通过扩大解释为任何全局 theta 结论。
 
+### 对数体积处权重与局部归一化的来源适配
+
+`refer/iut/Iut/Cor312/LogVolume.lean` 的实际接口给定严格正的实数处权重，要求每条有理处纤维上的权重之和为一，再把标签上的权重相乘。文件说明把预期权重写为局部次数除以全局次数；望月新一《集合论多宇宙间算术 Teichmüller 理论》第三篇注记 3.1.1（二）（印刷及文件第 94 页）使用的系数则为 `1 / ([K_ṽ : (F_mod)_v] · ∑_{w|v_Q} [(F_mod)_w : Q_v_Q])`。当前尚未给出这两种表达在实际处集、扩张和体积归一化上的换算，不能从说明文字直接认定二者相同。
+
+仍需在共同来源的处集上构造满足该接口全部字段的权重和局部体积，并证明标签集对应的数据包体积、标签集递增族上的平均体积及全局体积确实读回所选论文公式。若通过同时调整权重与局部体积建立对应，必须保留并证明素数倍乘的反像使对数体积增加该素数的对数等既有归一化法律，以及纤维重数和张量乘积的组合公式。这项来源身份属于既有体积传递与权重会计义务；参考定义模块的移植不完成它，也不证明两种规范化在所有可能实现中不相容。原文页图、公式及固定源码差异保存在 `prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/paper-context.json`。
+
 ### Prologue 与 Scene1 必要依赖闭包的映射
 
 仍需把最终目标实际需要的基础定义、构造义务和局部结果转为平台节点，确认精确类型、共同来源、实际消费者和无环依赖。已有闭合声明可以逐项机械追溯到固定 Mathlib 版本；条件性局部定理必须保留输入法律，接口及结构字段也不等于真实对象的存在性证明。不能据现有 Prologue 清单断言最终 Joshi 路线的必要叶节点已经全部覆盖。
@@ -77,3 +83,5 @@
 特别需要细化 `ProducerContracts.lean` 中只选择命题的 `xxxLaw : Prop` 槽位；它们既没有给出具体论文法律，也没有给出其证明。四类真实来源义务仍归 Scene1，不通过扩大 Prologue 假设关闭；旧 `Prologue/Obligations/Constructors.lean` 的四个占位构造器也不能作为现成证明导入。定义文件只供应实际定义与已证明结构事实，尚未实现的存在性保持开放；若后续真实构造揭示新的基础需求，按动态边界审计契约处理。
 
 ## 4. 未完成自然语言读回的证明义务
+
+- `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。

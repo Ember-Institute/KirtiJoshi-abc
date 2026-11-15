@@ -1,0 +1,493 @@
+{"schema": "decidable-standard-source-facts-v1",
+ "records":
+ [{"valueExpr": null,
+   "typeExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "forall",
+    "body":
+    {"level": {"kind": "succ", "arg": {"kind": "zero"}}, "kind": "sort"},
+    "binder": "default"},
+   "shape":
+   {"numParams": 1,
+    "numNested": 0,
+    "numIndices": 0,
+    "isUnsafe": false,
+    "isReflexive": false,
+    "isRec": false,
+    "constructors": [[[[], "str", "Decidable"], "str", "intro"]],
+    "all": [[[], "str", "Decidable"]]},
+   "owner": "Init.Prelude",
+   "nameExpr": [[], "str", "Decidable"],
+   "name": "Decidable",
+   "levelParams": [],
+   "kind": "inductive",
+   "binderInventory": ["forall:default"],
+   "axioms": []},
+  {"valueExpr": null,
+   "typeExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "forall",
+    "body":
+    {"type": {"name": [[], "str", "Bool"], "levels": [], "kind": "const"},
+     "name": [[], "str", "decide"],
+     "kind": "forall",
+     "body":
+     {"type":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"name": [[[], "str", "Bool"], "str", "Reflects"],
+         "levels": [],
+         "kind": "const"},
+        "arg": {"kind": "bvar", "index": 0}},
+       "arg": {"kind": "bvar", "index": 1}},
+      "name": [[], "str", "reflects_decide"],
+      "kind": "forall",
+      "body":
+      {"kind": "app",
+       "fn": {"name": [[], "str", "Decidable"], "levels": [], "kind": "const"},
+       "arg": {"kind": "bvar", "index": 2}},
+      "binder": "default"},
+     "binder": "default"},
+    "binder": "implicit"},
+   "shape":
+   {"numParams": 1,
+    "numFields": 2,
+    "isUnsafe": false,
+    "inductive": [[], "str", "Decidable"],
+    "index": 0},
+   "owner": "Init.Prelude",
+   "nameExpr": [[[], "str", "Decidable"], "str", "intro"],
+   "name": "Decidable.intro",
+   "levelParams": [],
+   "kind": "constructor",
+   "binderInventory": ["forall:implicit", "forall:default", "forall:default"],
+   "axioms": []},
+  {"valueExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "lam",
+    "body":
+    {"type":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Decidable"], "levels": [], "kind": "const"},
+      "arg": {"kind": "bvar", "index": 0}},
+     "name": [[], "str", "self"],
+     "kind": "lam",
+     "body":
+     {"name": [[], "str", "Decidable"],
+      "kind": "proj",
+      "index": 0,
+      "body": {"kind": "bvar", "index": 0}},
+     "binder": "instImplicit"},
+    "binder": "default"},
+   "typeExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "forall",
+    "body":
+    {"type":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Decidable"], "levels": [], "kind": "const"},
+      "arg": {"kind": "bvar", "index": 0}},
+     "name": [[], "str", "self"],
+     "kind": "forall",
+     "body": {"name": [[], "str", "Bool"], "levels": [], "kind": "const"},
+     "binder": "instImplicit"},
+    "binder": "default"},
+   "shape": {"safety": "Lean.DefinitionSafety.safe"},
+   "owner": "Init.Prelude",
+   "nameExpr": [[[], "str", "Decidable"], "str", "decide"],
+   "name": "Decidable.decide",
+   "levelParams": [],
+   "kind": "definition",
+   "binderInventory": ["forall:default", "forall:instImplicit"],
+   "axioms": []},
+  {"valueExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "lam",
+    "body":
+    {"type":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Decidable"], "levels": [], "kind": "const"},
+      "arg": {"kind": "bvar", "index": 0}},
+     "name": [[], "str", "self"],
+     "kind": "lam",
+     "body":
+     {"name": [[], "str", "Decidable"],
+      "kind": "proj",
+      "index": 1,
+      "body": {"kind": "bvar", "index": 0}},
+     "binder": "instImplicit"},
+    "binder": "default"},
+   "typeExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "forall",
+    "body":
+    {"type":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Decidable"], "levels": [], "kind": "const"},
+      "arg": {"kind": "bvar", "index": 0}},
+     "name": [[], "str", "self"],
+     "kind": "forall",
+     "body":
+     {"kind": "app",
+      "fn":
+      {"kind": "app",
+       "fn":
+       {"name": [[[], "str", "Bool"], "str", "Reflects"],
+        "levels": [],
+        "kind": "const"},
+       "arg":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"name": [[[], "str", "Decidable"], "str", "decide"],
+          "levels": [],
+          "kind": "const"},
+         "arg": {"kind": "bvar", "index": 1}},
+        "arg": {"kind": "bvar", "index": 0}}},
+      "arg": {"kind": "bvar", "index": 1}},
+     "binder": "instImplicit"},
+    "binder": "default"},
+   "shape": null,
+   "owner": "Init.Prelude",
+   "nameExpr": [[[], "str", "Decidable"], "str", "reflects_decide"],
+   "name": "Decidable.reflects_decide",
+   "levelParams": [],
+   "kind": "theorem",
+   "binderInventory": ["forall:default", "forall:instImplicit"],
+   "axioms": []},
+  {"valueExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "lam",
+    "body":
+    {"type":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Not"], "levels": [], "kind": "const"},
+      "arg": {"kind": "bvar", "index": 0}},
+     "name": [[], "str", "h"],
+     "kind": "lam",
+     "body":
+     {"kind": "app",
+      "fn":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"name": [[[], "str", "Decidable"], "str", "intro"],
+         "levels": [],
+         "kind": "const"},
+        "arg": {"kind": "bvar", "index": 1}},
+       "arg":
+       {"name": [[[], "str", "Bool"], "str", "false"],
+        "levels": [],
+        "kind": "const"}},
+      "arg": {"kind": "bvar", "index": 0}},
+     "binder": "default"},
+    "binder": "implicit"},
+   "typeExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "forall",
+    "body":
+    {"type":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Not"], "levels": [], "kind": "const"},
+      "arg": {"kind": "bvar", "index": 0}},
+     "name": [[], "str", "h"],
+     "kind": "forall",
+     "body":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Decidable"], "levels": [], "kind": "const"},
+      "arg": {"kind": "bvar", "index": 1}},
+     "binder": "default"},
+    "binder": "implicit"},
+   "shape": {"safety": "Lean.DefinitionSafety.safe"},
+   "owner": "Init.Prelude",
+   "nameExpr": [[[], "str", "Decidable"], "str", "isFalse"],
+   "name": "Decidable.isFalse",
+   "levelParams": [],
+   "kind": "definition",
+   "binderInventory": ["forall:implicit", "forall:default"],
+   "axioms": []},
+  {"valueExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "lam",
+    "body":
+    {"type": {"kind": "bvar", "index": 0},
+     "name": [[], "str", "h"],
+     "kind": "lam",
+     "body":
+     {"kind": "app",
+      "fn":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"name": [[[], "str", "Decidable"], "str", "intro"],
+         "levels": [],
+         "kind": "const"},
+        "arg": {"kind": "bvar", "index": 1}},
+       "arg":
+       {"name": [[[], "str", "Bool"], "str", "true"],
+        "levels": [],
+        "kind": "const"}},
+      "arg": {"kind": "bvar", "index": 0}},
+     "binder": "default"},
+    "binder": "implicit"},
+   "typeExpr":
+   {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+    "name": [[], "str", "p"],
+    "kind": "forall",
+    "body":
+    {"type": {"kind": "bvar", "index": 0},
+     "name": [[], "str", "h"],
+     "kind": "forall",
+     "body":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Decidable"], "levels": [], "kind": "const"},
+      "arg": {"kind": "bvar", "index": 1}},
+     "binder": "default"},
+    "binder": "implicit"},
+   "shape": {"safety": "Lean.DefinitionSafety.safe"},
+   "owner": "Init.Prelude",
+   "nameExpr": [[[], "str", "Decidable"], "str", "isTrue"],
+   "name": "Decidable.isTrue",
+   "levelParams": [],
+   "kind": "definition",
+   "binderInventory": ["forall:implicit", "forall:default"],
+   "axioms": []},
+  {"valueExpr":
+   {"type": {"name": [[], "str", "Bool"], "levels": [], "kind": "const"},
+    "name":
+    [[[[[[[[[], "str", "x"], "str", "_@"], "str", "Init"], "str", "Prelude"],
+        "num",
+        3273385309],
+       "str",
+       "_hygCtx"],
+      "str",
+      "_hyg"],
+     "num",
+     7],
+    "kind": "lam",
+    "body":
+    {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+     "name":
+     [[[[[[[[[], "str", "x"], "str", "_@"], "str", "Init"], "str", "Prelude"],
+         "num",
+         3273385309],
+        "str",
+        "_hygCtx"],
+       "str",
+       "_hyg"],
+      "num",
+      8],
+     "kind": "lam",
+     "body":
+     {"kind": "app",
+      "fn":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"kind": "app",
+          "fn":
+          {"name": [[[[], "str", "Bool"], "str", "Reflects"], "str", "match_1"],
+           "levels": [{"kind": "succ", "arg": {"kind": "zero"}}],
+           "kind": "const"},
+          "arg":
+          {"type": {"name": [[], "str", "Bool"], "levels": [], "kind": "const"},
+           "name":
+           [[[[[[[[[[[[[[], "str", "x"], "str", "_@"], "str", "Init"],
+                     "str",
+                     "Prelude"],
+                    "num",
+                    3273385309],
+                   "str",
+                   "_hygCtx"],
+                  "num",
+                  7],
+                 "str",
+                 "Init"],
+                "str",
+                "Prelude"],
+               "num",
+               3273385309],
+              "str",
+              "_hygCtx"],
+             "str",
+             "_hyg"],
+            "num",
+            26],
+           "kind": "lam",
+           "body":
+           {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+            "name":
+            [[[[[[[[[[[[[[], "str", "x"], "str", "_@"], "str", "Init"],
+                      "str",
+                      "Prelude"],
+                     "num",
+                     3273385309],
+                    "str",
+                    "_hygCtx"],
+                   "num",
+                   8],
+                  "str",
+                  "Init"],
+                 "str",
+                 "Prelude"],
+                "num",
+                3273385309],
+               "str",
+               "_hygCtx"],
+              "str",
+              "_hyg"],
+             "num",
+             29],
+            "kind": "lam",
+            "body": {"level": {"kind": "zero"}, "kind": "sort"},
+            "binder": "default"},
+           "binder": "default"}},
+         "arg": {"kind": "bvar", "index": 1}},
+        "arg": {"kind": "bvar", "index": 0}},
+       "arg":
+       {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+        "name": [[], "str", "p"],
+        "kind": "lam",
+        "body":
+        {"kind": "app",
+         "fn": {"name": [[], "str", "Not"], "levels": [], "kind": "const"},
+         "arg": {"kind": "bvar", "index": 0}},
+        "binder": "default"}},
+      "arg":
+      {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+       "name": [[], "str", "p"],
+       "kind": "lam",
+       "body": {"kind": "bvar", "index": 0},
+       "binder": "default"}},
+     "binder": "default"},
+    "binder": "default"},
+   "typeExpr":
+   {"type": {"name": [[], "str", "Bool"], "levels": [], "kind": "const"},
+    "name":
+    [[[[[[], "str", "a"], "str", "_@"], "str", "_internal"], "str", "_hyg"],
+     "num",
+     0],
+    "kind": "forall",
+    "body":
+    {"type": {"level": {"kind": "zero"}, "kind": "sort"},
+     "name":
+     [[[[[[], "str", "a"], "str", "_@"], "str", "_internal"], "str", "_hyg"],
+      "num",
+      0],
+     "kind": "forall",
+     "body": {"level": {"kind": "zero"}, "kind": "sort"},
+     "binder": "default"},
+    "binder": "default"},
+   "shape": {"safety": "Lean.DefinitionSafety.safe"},
+   "owner": "Init.Prelude",
+   "nameExpr": [[[], "str", "Bool"], "str", "Reflects"],
+   "name": "Bool.Reflects",
+   "levelParams": [],
+   "kind": "definition",
+   "binderInventory": ["forall:default", "forall:default"],
+   "axioms": []},
+  {"valueExpr":
+   {"type": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"},
+    "name": [[], "str", "n"],
+    "kind": "lam",
+    "body":
+    {"type": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"},
+     "name": [[], "str", "m"],
+     "kind": "lam",
+     "body":
+     {"kind": "app",
+      "fn":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"name": [[[], "str", "Decidable"], "str", "intro"],
+         "levels": [],
+         "kind": "const"},
+        "arg":
+        {"kind": "app",
+         "fn":
+         {"kind": "app",
+          "fn":
+          {"kind": "app",
+           "fn":
+           {"name": [[], "str", "Eq"],
+            "levels": [{"kind": "succ", "arg": {"kind": "zero"}}],
+            "kind": "const"},
+           "arg": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+          "arg": {"kind": "bvar", "index": 1}},
+         "arg": {"kind": "bvar", "index": 0}}},
+       "arg":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"name": [[[], "str", "Nat"], "str", "beq"],
+          "levels": [],
+          "kind": "const"},
+         "arg": {"kind": "bvar", "index": 1}},
+        "arg": {"kind": "bvar", "index": 0}}},
+      "arg":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"name": [[[[], "str", "Nat"], "str", "decEq"], "str", "_proof_1"],
+         "levels": [],
+         "kind": "const"},
+        "arg": {"kind": "bvar", "index": 1}},
+       "arg": {"kind": "bvar", "index": 0}}},
+     "binder": "default"},
+    "binder": "default"},
+   "typeExpr":
+   {"type": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"},
+    "name": [[], "str", "n"],
+    "kind": "forall",
+    "body":
+    {"type": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"},
+     "name": [[], "str", "m"],
+     "kind": "forall",
+     "body":
+     {"kind": "app",
+      "fn": {"name": [[], "str", "Decidable"], "levels": [], "kind": "const"},
+      "arg":
+      {"kind": "app",
+       "fn":
+       {"kind": "app",
+        "fn":
+        {"kind": "app",
+         "fn":
+         {"name": [[], "str", "Eq"],
+          "levels": [{"kind": "succ", "arg": {"kind": "zero"}}],
+          "kind": "const"},
+         "arg": {"name": [[], "str", "Nat"], "levels": [], "kind": "const"}},
+        "arg": {"kind": "bvar", "index": 1}},
+       "arg": {"kind": "bvar", "index": 0}}},
+     "binder": "default"},
+    "binder": "default"},
+   "shape": {"safety": "Lean.DefinitionSafety.safe"},
+   "owner": "Init.Prelude",
+   "nameExpr": [[[], "str", "Nat"], "str", "decEq"],
+   "name": "Nat.decEq",
+   "levelParams": [],
+   "kind": "definition",
+   "binderInventory": ["forall:default", "forall:default"],
+   "axioms": []}],
+ "compiler": "4.35.0-rc3"}

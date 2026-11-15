@@ -1,0 +1,118 @@
+{
+  "valueExpr": null,
+  "typeExpr": {
+    "type": {
+      "level": {
+        "kind": "zero"
+      },
+      "kind": "sort"
+    },
+    "name": [
+      [],
+      "str",
+      "p"
+    ],
+    "kind": "forall",
+    "body": {
+      "type": {
+        "name": [
+          [],
+          "str",
+          "Bool"
+        ],
+        "levels": [],
+        "kind": "const"
+      },
+      "name": [
+        [],
+        "str",
+        "decide"
+      ],
+      "kind": "forall",
+      "body": {
+        "type": {
+          "kind": "app",
+          "fn": {
+            "kind": "app",
+            "fn": {
+              "name": [
+                [
+                  [],
+                  "str",
+                  "Bool"
+                ],
+                "str",
+                "Reflects"
+              ],
+              "levels": [],
+              "kind": "const"
+            },
+            "arg": {
+              "kind": "bvar",
+              "index": 0
+            }
+          },
+          "arg": {
+            "kind": "bvar",
+            "index": 1
+          }
+        },
+        "name": [
+          [],
+          "str",
+          "reflects_decide"
+        ],
+        "kind": "forall",
+        "body": {
+          "kind": "app",
+          "fn": {
+            "name": [
+              [],
+              "str",
+              "Decidable"
+            ],
+            "levels": [],
+            "kind": "const"
+          },
+          "arg": {
+            "kind": "bvar",
+            "index": 2
+          }
+        },
+        "binder": "default"
+      },
+      "binder": "default"
+    },
+    "binder": "implicit"
+  },
+  "shape": {
+    "numParams": 1,
+    "numFields": 2,
+    "isUnsafe": false,
+    "inductive": [
+      [],
+      "str",
+      "Decidable"
+    ],
+    "index": 0
+  },
+  "owner": "Init.Prelude",
+  "nameExpr": [
+    [
+      [],
+      "str",
+      "Decidable"
+    ],
+    "str",
+    "intro"
+  ],
+  "name": "Decidable.intro",
+  "levelParams": [],
+  "kind": "constructor",
+  "binderInventory": [
+    "forall:implicit",
+    "forall:default",
+    "forall:default"
+  ],
+  "axioms": []
+}

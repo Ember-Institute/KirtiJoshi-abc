@@ -1,0 +1,217 @@
+-- Source-specific representation transport: Lean 4.35's Bool/proof constructor
+-- becomes Lean 4.33's true/false constructors. No decision algorithm is replaced.
+def installDecidable435Transport (rs : Relocations) (config : Json) : MetaM (Relocations × Json) := do
+  let facts ← boundDecidableEvidence config "sourceFacts"
+  let binding ← checked (field (← checked (field config "decidableStandardCompatibility")) "sourceFacts")
+  let path ← checked (stringField binding "path")
+  let closure ← boundDecidableEvidence config "supportClosure"
+  unless (← checked (stringField closure "schema")) == "decidable-standard-source-closure-v1" &&
+      (← checked (stringField closure "compiler")) == "4.35.0-rc3" do
+    throwError "Wrong genuine source standard proof closure"
+  let supportRows ← checked (arrayField closure "records")
+  let platformFacts ← boundDecidableEvidence config "platformFacts"
+  unless (← checked (stringField platformFacts "compiler")) == "4.33.1" &&
+      !(← checked (platformFacts.getObjValAs? Bool "Decidable.intro.present")) &&
+      !(← checked (platformFacts.getObjValAs? Bool "Bool.Reflects.present")) do
+    throwError "Unexpected actual platform core representation facts"
+  for (key, expectedJob) in #[
+      ("sourceReceipt", "ci-013901-2c932c62"), ("platformReceipt", "ci-013907-b9f0843a"),
+      ("supportReceipt", "ci-013924-3a1c20d9")] do
+    let receipt ← boundDecidableEvidence config key
+    unless (← checked (stringField receipt "job_id")) == expectedJob &&
+        (← checked (stringField receipt "status")) == "succeeded" do
+      throwError "Wrong accepted genuine core query receipt {key}"
+    let result ← checked (field receipt "result")
+    unless (← checked (result.getObjValAs? Nat "exit_code")) == 0 do
+      throwError "Genuine core query did not exit successfully {key}"
+    let snapshot ← checked (field result "snapshot")
+    unless (← checked (stringField snapshot "workspace_mode")) == "exclusive_worktree" &&
+        (← checked (field snapshot "snapshot_id")) == Json.null do
+      throwError "Wrong genuine core query workspace mode {key}"
+  unless (← checked (stringField facts "schema")) == "decidable-standard-source-facts-v1" &&
+      (← checked (stringField facts "compiler")) == "4.35.0-rc3" do
+    throwError "Wrong genuine source Decidable facts"
+  let records ← checked (arrayField facts "records")
+  let getRecord := fun n => do
+    let rows := records.filter fun r => (stringField r "name").toOption == some n
+    unless rows.size == 1 do throwError "Missing/duplicate genuine standard source record {n}"
+    pure rows[0]!
+  let decidableRecord ← getRecord "Decidable"
+  let decideRecord ← getRecord "Decidable.decide"
+  let reflectsRecord ← getRecord "Bool.Reflects"
+  let introRecord ← getRecord "Decidable.intro"
+  unless (← checked (stringField reflectsRecord "kind")) == "definition" &&
+      (← checked (stringField introRecord "kind")) == "constructor" do
+    throwError "Unexpected genuine Decidable source declaration kinds"
+  for record in #[reflectsRecord, introRecord] do
+    unless (← checked (arrayField record "levelParams")).isEmpty do
+      throwError "Unexpected universe parameters in exact Decidable compatibility"
+    unless (← checked (field record "owner")) == toJson "Init.Prelude" do
+      throwError "Unexpected source owner in exact Decidable compatibility"
+    unless (← checked (arrayField record "axioms")).isEmpty do
+      throwError "Exact core representation transport expects axiom-free source declarations"
+  let inductiveShape ← checked (field decidableRecord "shape")
+  let constructorShape ← checked (field introRecord "shape")
+  unless (← checked (stringField decidableRecord "kind")) == "inductive" &&
+      (← checked (inductiveShape.getObjValAs? Nat "numParams")) == 1 &&
+      (← checked (inductiveShape.getObjValAs? Nat "numIndices")) == 0 &&
+      (← checked (inductiveShape.getObjValAs? Nat "numNested")) == 0 &&
+      (← checked (field inductiveShape "constructors")) == Json.arr #[encodeName `Decidable.intro] &&
+      !(← checked (inductiveShape.getObjValAs? Bool "isUnsafe")) do
+    throwError "Wrong genuine source Boolean/reflection Decidable structure shape"
+  unless (← checked (field constructorShape "inductive")) == encodeName `Decidable &&
+      (← checked (constructorShape.getObjValAs? Nat "index")) == 0 &&
+      (← checked (constructorShape.getObjValAs? Nat "numParams")) == 1 &&
+      (← checked (constructorShape.getObjValAs? Nat "numFields")) == 2 &&
+      !(← checked (constructorShape.getObjValAs? Bool "isUnsafe")) do
+    throwError "Wrong genuine source Decidable.intro constructor shape"
+  for record in #[decidableRecord, decideRecord] do
+    let n ← checked (decodeName (← checked (field record "nameExpr")))
+    let originalType ← checked (decodeExpr rs (← checked (field record "typeExpr")))
+    let targetType := (← getConstInfo n).type
+    kernelTypeEq s!"Decidable representation API type {n}" originalType targetType
+    unless binderPlacement originalType == binderPlacement targetType do
+      throwError "Decidable representation API type BinderInfo differs {n}"
+  let reflectedType ← checked (decodeExpr rs (← checked (field reflectsRecord "typeExpr")))
+  let (rs, matcherSupport) ← installMissingDecidableSupport rs supportRows `Bool.Reflects.match_1
+  let reflectedValue ← checked (decodeExpr rs (← checked (field reflectsRecord "valueExpr")))
+  kernelTypeEq "genuine Bool.Reflects body has its exact source type"
+    (← kernelCheck "genuine Bool.Reflects body" reflectedValue) reflectedType
+  unless binderInventory reflectedType ==
+      (← checked (reflectsRecord.getObjValAs? (Array String) "binderInventory")) do
+    throwError "Genuine Bool.Reflects type BinderInfo changed"
+  let rs := { rs with standardExpansions := rs.standardExpansions.push (`Bool.Reflects, ([], reflectedValue)) }
+  let introType ← checked (decodeExpr rs (← checked (field introRecord "typeExpr")))
+  let introBridge ← forallTelescope introType fun args result => do
+    unless args.size == 3 do throwError "Expected exact source Decidable.intro p b reflection telescope"
+    let p := args[0]!
+    let b := args[1]!
+    let h := args[2]!
+    unless (← inferType p) == mkSort .zero && (← inferType b).isConstOf ``Bool do
+      throwError "Wrong proposition/Bool arguments of exact Decidable.intro"
+    unless (← isDefEq (← inferType h) (mkApp2 reflectedValue b p)) &&
+        (← isDefEq result (mkApp (mkConst ``Decidable) p)) do
+      throwError "Wrong reflection/result type of exact Decidable.intro"
+    let motive ← withLocalDeclD `flag (mkConst ``Bool) fun flag => do
+      mkLambdaFVars #[flag] (← mkArrow (mkApp2 reflectedValue flag p) result)
+    let falseCase ← withLocalDeclD `reflection (mkApp2 reflectedValue (mkConst ``Bool.false) p) fun hf => do
+      mkLambdaFVars #[hf] (mkApp2 (mkConst ``Decidable.isFalse) p hf)
+    let trueCase ← withLocalDeclD `reflection (mkApp2 reflectedValue (mkConst ``Bool.true) p) fun ht => do
+      mkLambdaFVars #[ht] (mkApp2 (mkConst ``Decidable.isTrue) p ht)
+    let value := mkAppN (mkConst ``Bool.rec [.succ .zero]) #[motive, falseCase, trueCase, b, h]
+    mkLambdaFVars args value
+  requireClosed "exact Decidable.intro representation transport" introBridge
+  kernelTypeEq "transport inhabits exact genuine source constructor type"
+    (← kernelCheck "exact Decidable.intro representation transport" introBridge) introType
+  unless binderPlacement introType == binderPlacement (← inferType introBridge) do
+    throwError "Exact constructor transport type BinderInfo placement changed"
+  -- Prove that the transport preserves the actual original Boolean argument.
+  let bitProof ← forallTelescope introType fun args _ => do
+    let p := args[0]!
+    let b := args[1]!
+    let h := args[2]!
+    let motive ← withLocalDeclD `flag (mkConst ``Bool) fun flag => do
+      let reflected := mkApp2 reflectedValue flag p
+      let goal ← withLocalDeclD `reflection reflected fun reflection => do
+        let bit := mkApp2 (mkConst ``Decidable.decide) p (mkApp3 introBridge p flag reflection)
+        mkForallFVars #[reflection] (← mkEq bit flag)
+      mkLambdaFVars #[flag] goal
+    let falseCase ← withLocalDeclD `reflection (mkApp2 reflectedValue (mkConst ``Bool.false) p) fun hf => do
+      mkLambdaFVars #[hf] (← mkEqRefl (mkConst ``Bool.false))
+    let trueCase ← withLocalDeclD `reflection (mkApp2 reflectedValue (mkConst ``Bool.true) p) fun ht => do
+      mkLambdaFVars #[ht] (← mkEqRefl (mkConst ``Bool.true))
+    let proof := mkAppN (mkConst ``Bool.rec [.zero]) #[motive, falseCase, trueCase, b, h]
+    mkLambdaFVars args proof
+  let bitProof ← instantiateMVars bitProof
+  let expectedBitType ← forallTelescope introType fun args _ => do
+    let bit := mkApp2 (mkConst ``Decidable.decide) args[0]! (mkAppN introBridge args)
+    mkForallFVars args (← mkEq bit args[1]!)
+  kernelTypeEq "constructor transport preserves genuine source decision bit"
+    (← kernelCheck "constructor decision-bit preservation proof" bitProof) expectedBitType
+  let mut axiomNames : Array Name := #[]
+  for term in #[reflectedType, reflectedValue, introType, introBridge, bitProof] do
+    let axs ← expressionAxioms term
+    ensureStandard "Decidable representation transport" axs
+    for ax in axs do
+      unless axiomNames.contains ax do axiomNames := axiomNames.push ax
+    for dependency in term.getUsedConstants do
+      if rs.projectPrefixes.any (·.isPrefixOf dependency) then
+        throwError "Project input in core Decidable representation transport {dependency}"
+      let some owner := moduleOf (← getEnv) dependency |
+        throwError "Missing core transport owner {dependency}"
+      unless (`Init).isPrefixOf owner do
+        throwError "Non-Init dependency in exact core representation transport {dependency}"
+  let rs := { rs with standardExpansions := rs.standardExpansions.push (`Decidable.intro, ([], introBridge)) }
+  let (rs, reflectionProofSupport) ← installMissingDecidableSupport rs supportRows `Nat.instDecidableCoprime._proof_1
+  return (rs, Json.mkObj [
+    ("boundCompatibilityEvidence", ← checked (field config "decidableStandardCompatibility")),
+    ("missingStandardSupportExpansions", Json.arr (matcherSupport ++ reflectionProofSupport)),
+    ("schema", toJson "decidable435-to433-representation-transport-v1"),
+    ("genuineSourceFacts", facts),
+    ("sourceFactFile", toJson path),
+    ("sourceConstructor", toJson "Decidable.intro"),
+    ("translatedConstructorType", ← checked (encodeExpr introType)),
+    ("sourceBoolReflectsBody", ← checked (encodeExpr reflectedValue)),
+    ("inlineConstructorTransport", ← checked (encodeExpr introBridge)),
+    ("exactConstructorTypeKernelChecked", toJson true),
+    ("exactConstructorTypeBinderInfoPreserved", toJson true),
+    ("originalDecisionBitPreserved", toJson true),
+    ("kernelCheckedDecisionBitProof", ← checked (encodeExpr bitProof)),
+    ("decisionBitEquation", ← checked (encodeExpr expectedBitType)),
+    ("axioms", toJson (axiomNames.map Name.toString)),
+    ("classicalDecisionSubstitution", toJson false), ("hasSorryAx", toJson false)])
+
+def exactDecidableTransportInstances : Array Name :=
+  #[`TateCurvesTheta.OrderedTateParameter.decidable, `TateCurvesTheta.PrimeToOrder.decidable]
+
+-- A full equality proof, limited to the two actual source instance values.
+-- Each translated source value still executes its original Boolean computation.
+def proveExactDecidableTransportEquality (rs : Relocations) (allowedOwners : Array Name)
+    (original : Name) (sourceType sourceValue targetValue : Expr) : MetaM Json := do
+  unless exactDecidableTransportInstances.contains original do
+    throwError "No Decidable representation equality permission for {original}"
+  let proof ← forallTelescope sourceType fun args result => do
+    let expectedArgs := if original == `TateCurvesTheta.PrimeToOrder.decidable then 2 else 4
+    unless args.size == expectedArgs && result.getAppFn.isConstOf ``Decidable &&
+        result.getAppArgs.size == 1 do
+      throwError "Unexpected exact prime-to-order decision instance telescope"
+    let left := mkAppN sourceValue args
+    let right := mkAppN targetValue args
+    let pointwise ← mkAppM ``Subsingleton.elim #[left, right]
+    let mut pointwise := pointwise
+    for index in (List.range args.size).reverse do
+      pointwise ← mkFunExt (← mkLambdaFVars #[args[index]!] pointwise)
+    pure pointwise
+  let proof ← instantiateMVars proof
+  let expected ← mkEq sourceValue targetValue
+  kernelTypeEq "exact translated instance full-value equality"
+    (← kernelCheck "exact translated instance full-value equality proof" proof) expected
+  let bitProof ← forallTelescope sourceType fun args result => do
+    let p := result.getAppArgs[0]!
+    -- Apply the full function equation to every actual instance argument.
+    let mut instanceEquality := proof
+    for argument in args do
+      instanceEquality ← mkAppM ``congrFun #[instanceEquality, argument]
+    let bitEquality ← mkAppM ``congrArg #[mkApp (mkConst ``Decidable.decide) p, instanceEquality]
+    mkLambdaFVars args bitEquality
+  let bitProof ← instantiateMVars bitProof
+  let expectedBitType ← forallTelescope sourceType fun args result => do
+    let decide := mkApp (mkConst ``Decidable.decide) result.getAppArgs[0]!
+    mkForallFVars args (← mkEq (mkApp decide (mkAppN sourceValue args))
+      (mkApp decide (mkAppN targetValue args)))
+  kernelTypeEq "exact transported source and target decision bits equal"
+    (← kernelCheck "exact transported instance decision-bit equality" bitProof) expectedBitType
+  for term in #[proof, bitProof] do
+    ensureStandard "exact transported decision equality" (← expressionAxioms term)
+    for dependency in term.getUsedConstants do allowedOwner rs allowedOwners dependency
+  return Json.mkObj [
+    ("method", toJson "constructive subsingleton equality of exact Decidable p results; function extensionality over every instance argument"),
+    ("original", encodeName original), ("definitionalValueEqual", toJson false),
+    ("kernelCheckedPropositionalValueEquality", toJson true),
+    ("exactFullValueEquality", ← checked (encodeExpr expected)),
+    ("kernelCheckedEqualityProof", ← checked (encodeExpr proof)),
+    ("kernelCheckedDecisionBitEquality", ← checked (encodeExpr bitProof)),
+    ("sourceTargetDecisionBitEquation", ← checked (encodeExpr expectedBitType)),
+    ("sourceBooleanComputationTransported", toJson true),
+    ("axioms", toJson ((← expressionAxioms proof).map Name.toString)),
+    ("classicalDecisionSubstitution", toJson false), ("hasSorryAx", toJson false)]

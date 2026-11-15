@@ -1,0 +1,45 @@
+{
+  "reviewed": true,
+  "inventory": "inventory.json",
+  "wrapper_report": "generated-wrapped/foundation-wrapper-report.json",
+  "blind_readbacks": "blind-readbacks.json",
+  "paper_context": "paper-context.json",
+  "paper_validation": "paper-context-validation.json",
+  "source_ledger": "SOURCE_LEDGER.json",
+  "prepublication_review": "final-review/prepublication-review.json",
+  "production_receipt": "production-gates-result.json",
+  "leaf_receipts": [
+    "platform-ContainerHull-leaf-result.json",
+    "platform-ContainerHull-artifact-result.json",
+    "platform-LogVolume-leaf-result.json",
+    "platform-LogVolume-artifact-result.json",
+    "platform-PrimeToOrder-leaf-result.json",
+    "platform-PrimeToOrder-artifact-result.json",
+    "platform-NormalizedOrder-leaf-result.json",
+    "platform-NormalizedOrder-artifact-result.json",
+    "platform-Weierstrass-leaf-v2-result.json",
+    "platform-Weierstrass-artifact-result.json"
+  ],
+  "gate_evidence": {
+    "independent_readbacks": [
+      "blind-originals/volume.json",
+      "blind-originals/tate.json",
+      "readback-metadata/validation.json",
+      "readback-metadata/root-integration.json"
+    ],
+    "source_ledger_consumers": [
+      "SOURCE_LEDGER.json",
+      "SOURCE_LEDGER.md",
+      "accepted-compiler-correspondence.json",
+      "source-review/stage1-source-review.json",
+      "source-review/stage2-wrapper-review.json",
+      "source-review/stage3-eof-readbacks-review.json"
+    ],
+    "existing_mission_scope": [
+      "scope-preflight/mission-list-readback.json",
+      "scope-preflight/mission-root-readback.json",
+      "scope-preflight/root-graph.json",
+      "scope-preflight/scope-review.json"
+    ]
+  }
+}

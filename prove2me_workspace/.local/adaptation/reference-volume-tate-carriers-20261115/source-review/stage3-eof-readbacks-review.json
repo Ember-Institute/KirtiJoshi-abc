@@ -1,0 +1,128 @@
+{
+  "schema": "volume-tate-independent-eof-and-readback-review-stage3-v1",
+  "status": "eof-framing-and-trilingual-semantics-reviewed-target-audit-pending",
+  "concreteBlockers": [],
+  "allOriginalSelectedCommandsByteIdentical": true,
+  "selectedCommandCount": 25,
+  "eofScopeStack": [
+    {
+      "name": null,
+      "syntaxKind": "Lean.Parser.Command.section",
+      "commandIndex": 1
+    }
+  ],
+  "modules": [
+    {
+      "module": "Iut.Cor312.ContainerHull",
+      "sha256": "35ebd6cc403e74a8cbeeb2f2848e9f326c1eb821912271d576f0b63e0e0eff06",
+      "blindSha256": "b3a93847cc950eeee71f2a29b718d6e81c28236436b9abf82905d2575c981add"
+    },
+    {
+      "module": "Iut.Cor312.LogVolume",
+      "sha256": "3e588f35447cf60bf73d233d39e1bcdfdcc14c1d317e123d2ec995e23ea81c9c",
+      "blindSha256": "169c63a36078e4a13c602593dde1db3f943bba432b4ff8b6a22c460c1949dd9a"
+    },
+    {
+      "module": "TateCurvesTheta.QParameter.PrimeToOrder",
+      "sha256": "72aedd9084d55c61cf79336d0cc26c0a15ec9ee91f89c2b35c874eac638660a9",
+      "blindSha256": "0c3fc552eab91ebcc2d9d9d0302da36f5e143edc26c830eb31419bb5295376fb"
+    },
+    {
+      "module": "TateCurvesTheta.TateCurve.Weierstrass",
+      "sha256": "b73e8f716e8c8d84b029bc9fe65e7505b8f1d54ac30f1cd54cdeb77a441b3ab5",
+      "blindSha256": "b0ab17d08c558ace36bfe40858498c9c8d7b8c19065a8f02886ceaaba4ec538e"
+    },
+    {
+      "module": "TateCurvesTheta.QParameter.NormalizedOrder",
+      "sha256": "bff1856439a7ac5b7d96f4fe3948c73f4b6289155f95fc1a8a89fbde578c9d82",
+      "blindSha256": "819eeda45f309aab89aad460680c027993a0bbc880b95cfed9cb07e5200aae40"
+    }
+  ],
+  "readbacks": [
+    {
+      "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder",
+      "languages": [
+        "en",
+        "zh-Hans",
+        "ja"
+      ],
+      "completeSemanticReadPerformed": true
+    },
+    {
+      "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass",
+      "languages": [
+        "en",
+        "zh-Hans",
+        "ja"
+      ],
+      "completeSemanticReadPerformed": true
+    },
+    {
+      "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder",
+      "languages": [
+        "en",
+        "zh-Hans",
+        "ja"
+      ],
+      "completeSemanticReadPerformed": true
+    },
+    {
+      "definition_name": "AbcAdaptation_Reference_Iut_Cor312_ContainerHull",
+      "languages": [
+        "en",
+        "zh-Hans",
+        "ja"
+      ],
+      "completeSemanticReadPerformed": true
+    },
+    {
+      "definition_name": "AbcAdaptation_Reference_Iut_Cor312_LogVolume",
+      "languages": [
+        "en",
+        "zh-Hans",
+        "ja"
+      ],
+      "completeSemanticReadPerformed": true
+    }
+  ],
+  "semanticFindings": [
+    "ContainerHull: supplied local systems and all their fields are expanded; finite support differs from local hull admissibility; hullAdmissible takes no IsAdmissible premise; empty indices remain allowed.",
+    "LogVolume: all eleven structure fields and two definitions are stated. Ring cast/preimage scope, nonempty-product premise, supplied positive fiber weights, real-valued total functions, all-rational-place finsum, finite support and zero-length division are retained.",
+    "PrimeToOrder: natural-number coprimality does not assert primality; zero/one cases, decidability and independently supplied positive orderNat are retained.",
+    "Weierstrass: all four definitions use only NormedField and the Tate parameter. Total tsum, natural casts, positive-characteristic division by 12, all five output coefficients and absent IsElliptic are explicit. Empty section assumptions add no binder.",
+    "NormalizedOrder: all three IsUniformizer fields and quantifier order are explicit. Chosen integer, norm equation, positivity, toNat truncation, retained parent parameter and empty BaseChange scope are stated. Completeness, ultrametricity, and an existence theorem are not added.",
+    "The Chinese and Japanese translations preserve those objects, quantifiers, premises, formulas, and degenerate cases. Pending Chinese terminology is visible and is not described as settled."
+  ],
+  "reviewScope": "Manual comparison with formal code and required dependencies. This reviewer is source-aware and does not claim to be a new blind auditor. The original auditors retain their formal-only provenance disclosures; translations are translations, not independent audits.",
+  "pending": [
+    "accepted actual target kernel correspondence",
+    "final target-owned axiom closure and producer identity check",
+    "final ledger binding to accepted identities"
+  ],
+  "inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/generated-wrapped/foundation-wrapper-report.json",
+      "sha256": "3153c32f5f88ea453c2692f322e637b3c3cfbc56540fbfde5964449d772845dd"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/blind-originals/tate.json",
+      "sha256": "da60a05da396e70c4438b489d08cc7743d1298ce0fa9ffa90d0fe0c8717ff1a6"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/blind-originals/volume.json",
+      "sha256": "d461350f96537988bb84b1c8cb006b175fe5fc77740e31afb360d3dae1ae8391"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/eof-scope-fix/root-integration.json",
+      "sha256": "c6d40e43cdeb19cb6cce254149f50c65ec96cefd3960a05cfe8e6f7114cb0ce0"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/eof-scope-fix/weierstrass-eof-scope.patch",
+      "sha256": "4d45b47a66e33c104055d65ae2f4b295d0ee89b732259a6a2ed91317c803347c"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/eof-scope-fix/offline-validation.json",
+      "sha256": "9ee38aa9ded65d70d49f108f27912cc438d862f2386dd1f08d35b47da7993c53"
+    }
+  ]
+}

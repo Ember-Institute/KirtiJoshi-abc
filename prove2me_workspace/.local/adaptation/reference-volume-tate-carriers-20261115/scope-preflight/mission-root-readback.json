@@ -1,0 +1,28 @@
+{
+  "theorem_id": "e33ff731-60a7-43ef-87ae-c12aeba23cb5",
+  "theorem_name": "abc.goal.lt_constant_mul_fix",
+  "theorem_title": "The abc conjecture — abc 猜想 — abc予想",
+  "status": "Open",
+  "formal_statement": "theorem abc.goal.lt_constant_mul_fix (ε : ℝ) (hε : 0 < ε) : ∃ K : ℝ,\n    ∀ (a b c : ℕ), 0 < a → 0 < b → 0 < c →\n      ({a, b, c} : Set ℕ).Pairwise Nat.Coprime → a + b = c →\n      (c : ℝ) < K * ((radical (a * b * c) : ℕ) : ℝ) ^ (1 + ε) := by sorry",
+  "natural_language_statement": "**English**\n\nFor every positive real number $ε$, there exists a real constant $K_{ε}$, depending only on $ε$, such that all positive natural numbers $a,b,c$ with $a+b=c$ and with any two distinct elements of $\\{a,b,c\\}$ coprime satisfy\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\nHere $\\operatorname{rad}_{\\mathbb N}(n)$ is the product of the distinct prime divisors of the natural number $n$. The product $abc$ and its radical are computed in $\\mathbb N$ before the radical and $c$ are cast to $\\mathbb R$; the power is a real power. No positivity hypothesis on $K_{ε}$ is included in the formal statement; the bound for $(1,1,2)$ implies positivity.\n\n**简体中文**\n\n对每个正实数 $ε$，存在只依赖于 $ε$ 的实常数 $K_{ε}$，使得所有满足 $a+b=c$、且集合 $\\{a,b,c\\}$ 中任意两个不同元素互素的正自然数 $a,b,c$ 都满足\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\n这里，$\\operatorname{rad}_{\\mathbb N}(n)$ 是自然数 $n$ 的所有不同素因子的乘积。先在自然数中计算 $abc$ 及其根基，再将根基与 $c$ 转为实数，并使用实数幂。形式陈述没有另行假设常数为正；将界应用于 $(1,1,2)$ 即可推出其为正。\n\n**日本語**\n\n任意の正の実数 $ε$ に対し、$ε$ のみに依存する実定数 $K_{ε}$ が存在し、$a+b=c$ を満たし、集合 $\\{a,b,c\\}$ の相異なるどの二つの元も互いに素であるすべての正の自然数 $a,b,c$ について、\n\n$$\nc<K_{\\varepsilon}\\,\\operatorname{rad}_{\\mathbb N}(abc)^{1+\\varepsilon}.\n$$\n\nが成り立つ。ここで、$\\operatorname{rad}_{\\mathbb N}(n)$ は自然数 $n$ の相異なる素因数すべての積である。積 $abc$ とその根基を自然数の範囲で計算した後、根基と $c$ を実数に変換し、実数のべき乗を用いる。形式的な命題では定数が正であることを別途仮定しないが、$(1,1,2)$ にこの不等式を適用すると正であることが従う。",
+  "created_at": "2026-11-13T02:05:17.990942+00:00",
+  "vote_count": 0,
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-geometry",
+    "arithmetic-teichmuller-spaces",
+    "number-theory"
+  ],
+  "preamble": "import Mathlib.Analysis.SpecialFunctions.Pow.Real\nimport Mathlib.Data.Set.Pairwise.Basic\nimport Mathlib.RingTheory.Radical.NatInt\n\nset_option autoImplicit false\n\nopen UniqueFactorizationMonoid",
+  "source": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=ABC.abc.variants.lt_constant_mul ; Formal Conjectures, FormalConjectures/Wikipedia/ABC.lean, commit a425ca3eb797fe927cb88c950565fdcbbbbada70, lines 68–75 (theorem ABC.abc.variants.lt_constant_mul), https://github.com/google-deepmind/formal-conjectures/blob/a425ca3eb797fe927cb88c950565fdcbbbbada70/FormalConjectures/Wikipedia/ABC.lean#L68-L75 . Radical definition: lines 30–33 of the same file. The platform declaration is named abc.goal.lt_constant_mul_fix. Its explicit natural-number radical is Mathlib UniqueFactorizationMonoid.radical; Nat.radical_eq_prod_primeFactors identifies it with the source prime-divisor product.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": {
+    "readback": "**English**\n\nFor every real number $\\varepsilon$ satisfying $0<\\varepsilon$, there exists a real number $K$, with no separate positivity assumption on $K$, such that for all natural numbers $a,b,c$ satisfying $0<a$, $0<b$, and $0<c$ (so zero is excluded), if every two distinct elements of the set $\\{a,b,c\\}$ are coprime and $a+b=c$, then\n\n$$\nc<K\\,R(abc)^{1+\\varepsilon}.\n$$\n\nHere, for a positive natural number $n$, $R(n)$ is the product of the distinct prime numbers dividing $n$, with the empty product equal to $1$. The sum $a+b$, the product $abc$, and $R(abc)$ are computed in the natural numbers; in the displayed inequality, $c$ and $R(abc)$ are then viewed as real numbers, and multiplication, addition in the exponent, exponentiation, and comparison are over the real numbers. Repeated values among $a,b,c$ are allowed: the coprimality condition applies only to distinct elements of the set and does not require an element to be coprime to itself.\n\n**简体中文**\n\n对于每个满足 $0<\\varepsilon$ 的实数 $\\varepsilon$，存在一个实数 $K$，并未另行要求 $K$ 为正，使得对于所有满足 $0<a$、$0<b$ 和 $0<c$ 的自然数 $a,b,c$（因此排除了零），如果集合 $\\{a,b,c\\}$ 中任意两个不同元素互素，且 $a+b=c$，则有\n\n$$\nc<K\\,R(abc)^{1+\\varepsilon}\n$$\n\n。 这里，对于正自然数 $n$，$R(n)$ 是整除 $n$ 的所有不同素数的乘积，空乘积规定为 $1$。和 $a+b$、积 $abc$ 以及 $R(abc)$ 均在自然数中计算；在所显示的不等式中，再将 $c$ 和 $R(abc)$ 视为实数，乘法、指数中的加法、乘方以及大小比较均在实数中进行。$a,b,c$ 之间允许出现重复值：互素条件仅适用于集合中不同的元素，不要求一个元素与自身互素。\n\n**日本語**\n\n実数 $\\varepsilon$ が $0<\\varepsilon$ を満たすとき、実数 $K$ が存在し、$K$ が正であるという仮定は別途課されず、次が成り立つ。任意の自然数 $a,b,c$ について、$0<a$、$0<b$、$0<c$ を満たし（したがって零は除かれる）、集合 $\\{a,b,c\\}$ の相異なるどの二つの元も互いに素であり、かつ $a+b=c$ ならば、\n\n$$\nc<K\\,R(abc)^{1+\\varepsilon}\n$$\n\nが成り立つ。ここで、正の自然数 $n$ に対し、$R(n)$ は $n$ を割り切る相異なる素数すべての積であり、空積は $1$ とする。和 $a+b$、積 $abc$ および $R(abc)$ は自然数の範囲で計算する。表示した不等式では、$c$ と $R(abc)$ を実数とみなし、乗法、指数内の加法、べき乗および大小比較は実数の範囲で行う。$a,b,c$ の値は重複していてもよい。互いに素であるという条件は集合の相異なる元にのみ適用され、ある元がそれ自身と互いに素であることは要求しない。",
+    "model": "gpt-6.1-sol",
+    "created_at": "2026-11-13T02:05:21.786459+00:00"
+  }
+}

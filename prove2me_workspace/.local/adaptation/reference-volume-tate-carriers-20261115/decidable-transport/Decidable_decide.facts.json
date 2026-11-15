@@ -1,0 +1,337 @@
+{
+  "valueExpr": {
+    "type": {
+      "level": {
+        "kind": "zero"
+      },
+      "kind": "sort"
+    },
+    "name": [
+      [],
+      "str",
+      "p"
+    ],
+    "kind": "lam",
+    "body": {
+      "type": {
+        "kind": "app",
+        "fn": {
+          "name": [
+            [],
+            "str",
+            "Decidable"
+          ],
+          "levels": [],
+          "kind": "const"
+        },
+        "arg": {
+          "kind": "bvar",
+          "index": 0
+        }
+      },
+      "name": [
+        [],
+        "str",
+        "h"
+      ],
+      "kind": "lam",
+      "body": {
+        "kind": "app",
+        "fn": {
+          "kind": "app",
+          "fn": {
+            "kind": "app",
+            "fn": {
+              "kind": "app",
+              "fn": {
+                "kind": "app",
+                "fn": {
+                  "name": [
+                    [
+                      [],
+                      "str",
+                      "Decidable"
+                    ],
+                    "str",
+                    "casesOn"
+                  ],
+                  "levels": [
+                    {
+                      "kind": "succ",
+                      "arg": {
+                        "kind": "zero"
+                      }
+                    }
+                  ],
+                  "kind": "const"
+                },
+                "arg": {
+                  "kind": "bvar",
+                  "index": 1
+                }
+              },
+              "arg": {
+                "type": {
+                  "kind": "app",
+                  "fn": {
+                    "name": [
+                      [],
+                      "str",
+                      "Decidable"
+                    ],
+                    "levels": [],
+                    "kind": "const"
+                  },
+                  "arg": {
+                    "kind": "bvar",
+                    "index": 1
+                  }
+                },
+                "name": [
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [
+                              [
+                                [],
+                                "str",
+                                "x"
+                              ],
+                              "str",
+                              "_@"
+                            ],
+                            "str",
+                            "Init"
+                          ],
+                          "str",
+                          "Prelude"
+                        ],
+                        "num",
+                        4037422846
+                      ],
+                      "str",
+                      "_hygCtx"
+                    ],
+                    "str",
+                    "_hyg"
+                  ],
+                  "num",
+                  7
+                ],
+                "kind": "lam",
+                "body": {
+                  "name": [
+                    [],
+                    "str",
+                    "Bool"
+                  ],
+                  "levels": [],
+                  "kind": "const"
+                },
+                "binder": "default"
+              }
+            },
+            "arg": {
+              "kind": "bvar",
+              "index": 0
+            }
+          },
+          "arg": {
+            "type": {
+              "kind": "app",
+              "fn": {
+                "name": [
+                  [],
+                  "str",
+                  "Not"
+                ],
+                "levels": [],
+                "kind": "const"
+              },
+              "arg": {
+                "kind": "bvar",
+                "index": 1
+              }
+            },
+            "name": [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [],
+                            "str",
+                            "x"
+                          ],
+                          "str",
+                          "_@"
+                        ],
+                        "str",
+                        "Init"
+                      ],
+                      "str",
+                      "Prelude"
+                    ],
+                    "num",
+                    4037422846
+                  ],
+                  "str",
+                  "_hygCtx"
+                ],
+                "str",
+                "_hyg"
+              ],
+              "num",
+              12
+            ],
+            "kind": "lam",
+            "body": {
+              "name": [
+                [
+                  [],
+                  "str",
+                  "Bool"
+                ],
+                "str",
+                "false"
+              ],
+              "levels": [],
+              "kind": "const"
+            },
+            "binder": "default"
+          }
+        },
+        "arg": {
+          "type": {
+            "kind": "bvar",
+            "index": 1
+          },
+          "name": [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [],
+                          "str",
+                          "x"
+                        ],
+                        "str",
+                        "_@"
+                      ],
+                      "str",
+                      "Init"
+                    ],
+                    "str",
+                    "Prelude"
+                  ],
+                  "num",
+                  4037422846
+                ],
+                "str",
+                "_hygCtx"
+              ],
+              "str",
+              "_hyg"
+            ],
+            "num",
+            19
+          ],
+          "kind": "lam",
+          "body": {
+            "name": [
+              [
+                [],
+                "str",
+                "Bool"
+              ],
+              "str",
+              "true"
+            ],
+            "levels": [],
+            "kind": "const"
+          },
+          "binder": "default"
+        }
+      },
+      "binder": "instImplicit"
+    },
+    "binder": "default"
+  },
+  "typeExpr": {
+    "type": {
+      "level": {
+        "kind": "zero"
+      },
+      "kind": "sort"
+    },
+    "name": [
+      [],
+      "str",
+      "p"
+    ],
+    "kind": "forall",
+    "body": {
+      "type": {
+        "kind": "app",
+        "fn": {
+          "name": [
+            [],
+            "str",
+            "Decidable"
+          ],
+          "levels": [],
+          "kind": "const"
+        },
+        "arg": {
+          "kind": "bvar",
+          "index": 0
+        }
+      },
+      "name": [
+        [],
+        "str",
+        "h"
+      ],
+      "kind": "forall",
+      "body": {
+        "name": [
+          [],
+          "str",
+          "Bool"
+        ],
+        "levels": [],
+        "kind": "const"
+      },
+      "binder": "instImplicit"
+    },
+    "binder": "default"
+  },
+  "shape": {
+    "safety": "Lean.DefinitionSafety.safe"
+  },
+  "owner": "Init.Prelude",
+  "nameExpr": [
+    [
+      [],
+      "str",
+      "Decidable"
+    ],
+    "str",
+    "decide"
+  ],
+  "name": "Decidable.decide",
+  "levelParams": [],
+  "kind": "definition",
+  "binderInventory": [
+    "forall:default",
+    "forall:instImplicit"
+  ],
+  "axioms": []
+}
