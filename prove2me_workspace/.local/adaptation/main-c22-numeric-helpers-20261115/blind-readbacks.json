@@ -1,0 +1,417 @@
+{
+  "schema": "numeric-seven-independent-trilingual-readbacks-v1",
+  "status": "all-seven-code-only-readbacks-bound",
+  "nodes": [
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.log_bound_ell",
+      "en": "For every pair of real numbers $\\delta$ and $h$, both implicit parameters, given the explicit hypotheses $h_\\delta:1\\leq\\delta$ and $h_h:1\\leq h$, the natural logarithm satisfies $\\log(20\\delta^2h^2)\\leq6\\log(2\\delta h)$. Both inequalities in the hypotheses are non-strict, so $\\delta=1$, $h=1$, and their simultaneous occurrence are included; zero and negative values of either parameter are excluded. Under these hypotheses both logarithm arguments are positive. There are no additional parameters or typeclass assumptions. The supplied proof is the placeholder `by sorry`.",
+      "zh-Hans": "对于任意实数 $\\delta$ 和 $h$（二者均为隐式参数），给定显式前提 $h_\\delta:1\\leq\\delta$ 和 $h_h:1\\leq h$，自然对数满足 $\\log(20\\delta^2h^2)\\leq6\\log(2\\delta h)$。两个前提中的不等式均为非严格不等式，因此包括 $\\delta=1$、$h=1$ 以及二者同时成立的情形；任一参数为零或负数的情形均被排除。在这些前提下，两个对数的真数均为正数。没有其他参数或类型类假设。所提供的证明为占位代码 `by sorry`。",
+      "ja": "任意の実数 $\\delta$ と $h$（いずれも暗黙のパラメータ）について、明示的な仮定 $h_\\delta:1\\leq\\delta$ および $h_h:1\\leq h$ のもとで、自然対数は $\\log(20\\delta^2h^2)\\leq6\\log(2\\delta h)$ を満たす。仮定の二つの不等式はいずれも等号を許すため、$\\delta=1$、$h=1$、および両者が同時に成り立つ場合も含まれる。いずれかのパラメータが零または負となる場合は除外される。これらの仮定のもとでは、二つの対数の真数はいずれも正である。ほかのパラメータや型クラスの仮定はない。提示された証明はプレースホルダー `by sorry` である。",
+      "assumptions": {
+        "implicit_parameters": [
+          {
+            "name": "δ",
+            "type": "real number"
+          },
+          {
+            "name": "h",
+            "type": "real number"
+          }
+        ],
+        "explicit_hypotheses": [
+          {
+            "name": "hδ",
+            "proposition": "$1\\leq\\delta$"
+          },
+          {
+            "name": "hh",
+            "proposition": "$1\\leq h$"
+          }
+        ],
+        "typeclass_assumptions": []
+      },
+      "conclusion": "$\\log(20\\delta^2h^2)\\leq6\\log(2\\delta h)$, where $\\log$ denotes the natural logarithm.",
+      "file": "Thm_AbcAdaptation_Reference_Iut_log_bound_ell.lean",
+      "source_sha256": "2bb390cf11ea9707c4ceeeb58ac0d1590f11d81a770bb890943a86d939f296ef",
+      "proof_status": {
+        "status": "placeholder_by_sorry",
+        "literal_proof": "by\n  sorry",
+        "proof_verification_performed": false
+      },
+      "provenance": {
+        "reviewer_id": "numeric-log-blind-v6",
+        "configured_model": "gpt-6.1-sol",
+        "actual_backend": null,
+        "original_readbacks": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/readbacks.json",
+          "sha256": "7d77572121324c1cd3f854deea326d02ff67e8fd8cdcc409da87010372c489d6"
+        },
+        "metadata": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/metadata.json",
+          "sha256": "213b42fe5d435b81452a9ff48bbe3d6c70a0e5435531e060990ec8c9e2320f50"
+        },
+        "fresh_context": true,
+        "input_only_formal_code": true
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.log_le_four_mul_sqrt_sqrt",
+      "en": "For every real number $h$, an implicit parameter, given the explicit hypothesis $h_h:1\\leq h$, the natural logarithm and the nonnegative real square root satisfy $\\log h\\leq4\\sqrt{\\sqrt h}$. The boundary value $h=1$ is included; zero and negative values are excluded. Under the hypothesis, the logarithm argument and both radicands are positive, and both square roots are the nonnegative real square roots. There are no additional parameters or typeclass assumptions. The supplied proof is the placeholder `by sorry`.",
+      "zh-Hans": "对于任意实数 $h$（隐式参数），给定显式前提 $h_h:1\\leq h$，自然对数与非负实平方根满足 $\\log h\\leq4\\sqrt{\\sqrt h}$。包括边界值 $h=1$；零和负数均被排除。在该前提下，对数的真数和两个被开方数均为正数，两个平方根均指非负实平方根。没有其他参数或类型类假设。所提供的证明为占位代码 `by sorry`。",
+      "ja": "任意の実数 $h$（暗黙のパラメータ）について、明示的な仮定 $h_h:1\\leq h$ のもとで、自然対数と非負の実平方根は $\\log h\\leq4\\sqrt{\\sqrt h}$ を満たす。境界値 $h=1$ は含まれ、零および負の値は除外される。この仮定のもとでは、対数の真数と二つの被開平数はいずれも正であり、二つの平方根はいずれも非負の実平方根を表す。ほかのパラメータや型クラスの仮定はない。提示された証明はプレースホルダー `by sorry` である。",
+      "assumptions": {
+        "implicit_parameters": [
+          {
+            "name": "h",
+            "type": "real number"
+          }
+        ],
+        "explicit_hypotheses": [
+          {
+            "name": "hh",
+            "proposition": "$1\\leq h$"
+          }
+        ],
+        "typeclass_assumptions": []
+      },
+      "conclusion": "$\\log h\\leq4\\sqrt{\\sqrt h}$, where $\\log$ is the natural logarithm and each square root is the nonnegative real square root.",
+      "file": "Thm_AbcAdaptation_Reference_Iut_log_le_four_mul_sqrt_sqrt.lean",
+      "source_sha256": "61b012d77331b6092ea5d825f9310a3273794d4813e5477b3961a7e32b1456a7",
+      "proof_status": {
+        "status": "placeholder_by_sorry",
+        "literal_proof": "by\n  sorry",
+        "proof_verification_performed": false
+      },
+      "provenance": {
+        "reviewer_id": "numeric-log-blind-v6",
+        "configured_model": "gpt-6.1-sol",
+        "actual_backend": null,
+        "original_readbacks": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/readbacks.json",
+          "sha256": "7d77572121324c1cd3f854deea326d02ff67e8fd8cdcc409da87010372c489d6"
+        },
+        "metadata": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/metadata.json",
+          "sha256": "213b42fe5d435b81452a9ff48bbe3d6c70a0e5435531e060990ec8c9e2320f50"
+        },
+        "fresh_context": true,
+        "input_only_formal_code": true
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.log_le_half_of_pos",
+      "en": "For every real number $y$, an implicit parameter, given the explicit hypothesis $h_y:0<y$, the natural logarithm satisfies $\\log y\\leq y/2$, where division is in the real numbers. All positive real values are included, in particular $0<y<1$ and $y=1$; $y=0$ and negative values are excluded. The denominator is the nonzero real number $2$, so no division-by-zero case occurs. There are no additional parameters or typeclass assumptions. The supplied proof is the placeholder `by sorry`.",
+      "zh-Hans": "对于任意实数 $y$（隐式参数），给定显式前提 $h_y:0<y$，自然对数满足 $\\log y\\leq y/2$，其中除法为实数除法。包括所有正实数值，特别包括 $0<y<1$ 和 $y=1$；$y=0$ 和负数均被排除。分母为非零实数 $2$，因此不存在除以零的情形。没有其他参数或类型类假设。所提供的证明为占位代码 `by sorry`。",
+      "ja": "任意の実数 $y$（暗黙のパラメータ）について、明示的な仮定 $h_y:0<y$ のもとで、自然対数は $\\log y\\leq y/2$ を満たす。ここで除算は実数の除算である。すべての正の実数値が含まれ、とくに $0<y<1$ および $y=1$ も含まれる。$y=0$ および負の値は除外される。分母は零でない実数 $2$ であるため、零による除算は生じない。ほかのパラメータや型クラスの仮定はない。提示された証明はプレースホルダー `by sorry` である。",
+      "assumptions": {
+        "implicit_parameters": [
+          {
+            "name": "y",
+            "type": "real number"
+          }
+        ],
+        "explicit_hypotheses": [
+          {
+            "name": "hy",
+            "proposition": "$0<y$"
+          }
+        ],
+        "typeclass_assumptions": []
+      },
+      "conclusion": "$\\log y\\leq y/2$, where $\\log$ is the natural logarithm and division is real division.",
+      "file": "Thm_AbcAdaptation_Reference_Iut_log_le_half_of_pos.lean",
+      "source_sha256": "e295027ceb1a6a4ff0836089ea976bc86efec13a8640bd05caf38c828955bd2d",
+      "proof_status": {
+        "status": "placeholder_by_sorry",
+        "literal_proof": "by\n  sorry",
+        "proof_verification_performed": false
+      },
+      "provenance": {
+        "reviewer_id": "numeric-log-blind-v6",
+        "configured_model": "gpt-6.1-sol",
+        "actual_backend": null,
+        "original_readbacks": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/readbacks.json",
+          "sha256": "7d77572121324c1cd3f854deea326d02ff67e8fd8cdcc409da87010372c489d6"
+        },
+        "metadata": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/metadata.json",
+          "sha256": "213b42fe5d435b81452a9ff48bbe3d6c70a0e5435531e060990ec8c9e2320f50"
+        },
+        "fresh_context": true,
+        "input_only_formal_code": true
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.log_le_self_of_pos",
+      "en": "For every real number $y$, an implicit parameter, given the explicit hypothesis $h_y:0<y$, the natural logarithm satisfies $\\log y\\leq y$. All positive real values are included, in particular $0<y<1$ and $y=1$; $y=0$ and negative values are excluded. There are no additional parameters or typeclass assumptions. The supplied proof is the placeholder `by sorry`.",
+      "zh-Hans": "对于任意实数 $y$（隐式参数），给定显式前提 $h_y:0<y$，自然对数满足 $\\log y\\leq y$。包括所有正实数值，特别包括 $0<y<1$ 和 $y=1$；$y=0$ 和负数均被排除。没有其他参数或类型类假设。所提供的证明为占位代码 `by sorry`。",
+      "ja": "任意の実数 $y$（暗黙のパラメータ）について、明示的な仮定 $h_y:0<y$ のもとで、自然対数は $\\log y\\leq y$ を満たす。すべての正の実数値が含まれ、とくに $0<y<1$ および $y=1$ も含まれる。$y=0$ および負の値は除外される。ほかのパラメータや型クラスの仮定はない。提示された証明はプレースホルダー `by sorry` である。",
+      "assumptions": {
+        "implicit_parameters": [
+          {
+            "name": "y",
+            "type": "real number"
+          }
+        ],
+        "explicit_hypotheses": [
+          {
+            "name": "hy",
+            "proposition": "$0<y$"
+          }
+        ],
+        "typeclass_assumptions": []
+      },
+      "conclusion": "$\\log y\\leq y$, where $\\log$ denotes the natural logarithm.",
+      "file": "Thm_AbcAdaptation_Reference_Iut_log_le_self_of_pos.lean",
+      "source_sha256": "73e3be8c8001887a949215c6390ff18f7c8ff61dfa8f40e962585b1ca691498f",
+      "proof_status": {
+        "status": "placeholder_by_sorry",
+        "literal_proof": "by\n  sorry",
+        "proof_verification_performed": false
+      },
+      "provenance": {
+        "reviewer_id": "numeric-log-blind-v6",
+        "configured_model": "gpt-6.1-sol",
+        "actual_backend": null,
+        "original_readbacks": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/readbacks.json",
+          "sha256": "7d77572121324c1cd3f854deea326d02ff67e8fd8cdcc409da87010372c489d6"
+        },
+        "metadata": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/metadata.json",
+          "sha256": "213b42fe5d435b81452a9ff48bbe3d6c70a0e5435531e060990ec8c9e2320f50"
+        },
+        "fresh_context": true,
+        "input_only_formal_code": true
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.log_pi_le_two",
+      "file": "Thm_AbcAdaptation_Reference_Iut_log_pi_le_two.lean",
+      "en": "With no explicit or implicit parameters and no hypotheses, the natural logarithm of the real constant $\\pi$ satisfies $\\ln(\\pi)\\leq 2$, where $2$ is a real number. There is no variable over which a degenerate case can arise. The proof body is `by sorry`, an admitted placeholder.",
+      "zh-Hans": "本声明没有显式或隐式参数，也没有前提；实数常量 $\\pi$ 的自然对数满足 $\\ln(\\pi)\\leq 2$，其中 $2$ 是实数。声明没有可能产生退化情形的变量。证明体为 `by sorry`，即承认结论的占位符。",
+      "ja": "明示的な引数、暗黙の引数および仮定を持たない宣言であり、実定数 $\\pi$ の自然対数について $\\ln(\\pi)\\leq 2$ が成り立つと述べる。ここで $2$ は実数である。退化した場合を生じる変数はない。証明本体は `by sorry` であり、結論を認めるための仮置きである。",
+      "assumptions": {
+        "explicit_parameters": [],
+        "implicit_parameters": [],
+        "hypotheses": [],
+        "universe_parameters": [],
+        "typeclass_parameters": []
+      },
+      "conclusion": "$\\ln(\\pi)\\leq 2$ in $\\mathbb{R}$.",
+      "source_sha256": "eebe641291a6efbee7784061eb2dbe89e3131d7b6ee2afdb7411b807331e5b1b",
+      "proof_status": {
+        "source_proof_body": "by sorry",
+        "status": "admitted placeholder",
+        "compilation_performed": false,
+        "platform_acceptance_checked": false
+      },
+      "provenance": {
+        "reviewer_id": "numeric-pi-sum-blind-v6",
+        "configured_model": "gpt-6.1-sol",
+        "actual_backend": null,
+        "original_readbacks": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/readbacks.json",
+          "sha256": "2727039306f6a2d488910c7ab17bb62545151a99c1a990fe294135bb1b3b83f8"
+        },
+        "metadata": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/metadata.json",
+          "sha256": "13f882020d395e6d9f6e490681d5bf73dcf7a1699b1810d6705e5ba90b50007b"
+        },
+        "fresh_context": true,
+        "input_only_formal_code": true
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.log_pi_nonneg",
+      "file": "Thm_AbcAdaptation_Reference_Iut_log_pi_nonneg.lean",
+      "en": "With no explicit or implicit parameters and no hypotheses, the natural logarithm of the real constant $\\pi$ satisfies $0\\leq\\ln(\\pi)$, where $0$ is the real zero. There is no variable over which a degenerate case can arise. The proof body is `by sorry`, an admitted placeholder.",
+      "zh-Hans": "本声明没有显式或隐式参数，也没有前提；实数常量 $\\pi$ 的自然对数满足 $0\\leq\\ln(\\pi)$，其中 $0$ 是实数零。声明没有可能产生退化情形的变量。证明体为 `by sorry`，即承认结论的占位符。",
+      "ja": "明示的な引数、暗黙の引数および仮定を持たない宣言であり、実定数 $\\pi$ の自然対数について $0\\leq\\ln(\\pi)$ が成り立つと述べる。ここで $0$ は実数の零である。退化した場合を生じる変数はない。証明本体は `by sorry` であり、結論を認めるための仮置きである。",
+      "assumptions": {
+        "explicit_parameters": [],
+        "implicit_parameters": [],
+        "hypotheses": [],
+        "universe_parameters": [],
+        "typeclass_parameters": []
+      },
+      "conclusion": "$0\\leq\\ln(\\pi)$ in $\\mathbb{R}$.",
+      "source_sha256": "c39d3a7f958be030773372ffd5f53b4fa77b3c34b50400c50cd51c240b3fed6f",
+      "proof_status": {
+        "source_proof_body": "by sorry",
+        "status": "admitted placeholder",
+        "compilation_performed": false,
+        "platform_acceptance_checked": false
+      },
+      "provenance": {
+        "reviewer_id": "numeric-pi-sum-blind-v6",
+        "configured_model": "gpt-6.1-sol",
+        "actual_backend": null,
+        "original_readbacks": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/readbacks.json",
+          "sha256": "2727039306f6a2d488910c7ab17bb62545151a99c1a990fe294135bb1b3b83f8"
+        },
+        "metadata": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/metadata.json",
+          "sha256": "13f882020d395e6d9f6e490681d5bf73dcf7a1699b1810d6705e5ba90b50007b"
+        },
+        "fresh_context": true,
+        "input_only_formal_code": true
+      }
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.sum_affine_quadratic",
+      "file": "Thm_AbcAdaptation_Reference_Iut_sum_affine_quadratic.lean",
+      "en": "For every natural number $L$ and every three real numbers $a,b,c$, all four supplied as explicit parameters, with no implicit parameters or hypotheses, the following equality of real numbers is asserted: $$\\sum_{i\\in\\{0,\\ldots,L-1\\}}\\left(a(\\iota(i)+2)+b(\\iota(i)+1)^2+c\\right)=a\\frac{\\iota(L)(\\iota(L)+3)}{2}+b\\frac{\\iota(L)(\\iota(L)+1)(2\\iota(L)+1)}{6}+c\\iota(L).$$ Here $\\iota(n)$ denotes the coercion of a natural number $n$ to a real number. The sum ranges over every element of the finite type with $L$ elements, represented by exactly the natural numbers $i$ satisfying $0\\leq i<L$; each index is first regarded as that natural number and then coerced to a real number. Every occurrence of $L$ on the right is likewise coerced to a real number before the displayed arithmetic; the additions, multiplications, squares, and divisions in the equality are real arithmetic. There are no positivity or nonzero conditions on $L,a,b,c$. In particular, $L=0$ is included: the index set is empty, the sum is the real zero, and both sides are zero for every $a,b,c$. The proof body is `by sorry`, an admitted placeholder.",
+      "zh-Hans": "对于每一个自然数 $L$ 和任意三个实数 $a,b,c$，这四个参数均为显式参数，没有隐式参数或前提，声明断言以下实数等式：$$\\sum_{i\\in\\{0,\\ldots,L-1\\}}\\left(a(\\iota(i)+2)+b(\\iota(i)+1)^2+c\\right)=a\\frac{\\iota(L)(\\iota(L)+3)}{2}+b\\frac{\\iota(L)(\\iota(L)+1)(2\\iota(L)+1)}{6}+c\\iota(L).$$ 这里 $\\iota(n)$ 表示将自然数 $n$ 强制转换为实数。求和遍历恰有 $L$ 个元素的有限类型中的所有元素，这些元素恰由满足 $0\\leq i<L$ 的自然数 $i$ 表示；每个指标先被视为对应的自然数，再被强制转换为实数。右侧每一处 $L$ 也都先被强制转换为实数，再进行所示运算；等式中的加法、乘法、平方和除法均为实数运算。对 $L,a,b,c$ 均没有正性或非零条件。尤其包括 $L=0$ 的情形：指标集为空，和为实数零，且对于任意 $a,b,c$，等式两侧均为零。证明体为 `by sorry`，即承认结论的占位符。",
+      "ja": "任意の自然数 $L$ および任意の三つの実数 $a,b,c$ を四つの明示的な引数とし、暗黙の引数も仮定も置かず、次の実数の等式が成り立つと述べる。$$\\sum_{i\\in\\{0,\\ldots,L-1\\}}\\left(a(\\iota(i)+2)+b(\\iota(i)+1)^2+c\\right)=a\\frac{\\iota(L)(\\iota(L)+3)}{2}+b\\frac{\\iota(L)(\\iota(L)+1)(2\\iota(L)+1)}{6}+c\\iota(L).$$ ここで $\\iota(n)$ は自然数 $n$ の実数への型変換を表す。和は、ちょうど $L$ 個の要素を持つ有限型の全要素にわたるものであり、その要素は $0\\leq i<L$ を満たす自然数 $i$ によって表される。各添字は対応する自然数とみなされた後、実数に型変換される。右辺に現れるすべての $L$ についても、表示された演算より先に実数への型変換が行われる。等式中の加算、乗算、平方および除算はすべて実数の演算である。$L,a,b,c$ に正であることや零でないことを求める条件はない。特に $L=0$ も含まれ、この場合は添字集合が空集合となり、和は実数の零であり、任意の $a,b,c$ に対して両辺が零となる。証明本体は `by sorry` であり、結論を認めるための仮置きである。",
+      "assumptions": {
+        "explicit_parameters": [
+          {
+            "name": "L",
+            "domain": "natural numbers, including zero"
+          },
+          {
+            "name": "a",
+            "domain": "real numbers"
+          },
+          {
+            "name": "b",
+            "domain": "real numbers"
+          },
+          {
+            "name": "c",
+            "domain": "real numbers"
+          }
+        ],
+        "implicit_parameters": [],
+        "hypotheses": [],
+        "universe_parameters": [],
+        "typeclass_parameters": [],
+        "finite_index_range": "Every i : Fin L, represented by the natural numbers satisfying 0 <= i < L; empty when L = 0.",
+        "coercions": [
+          "Each finite index is interpreted as a natural number and coerced to a real number.",
+          "Each occurrence of L in the right-hand side is coerced to a real number; all displayed arithmetic in the equality is real arithmetic."
+        ]
+      },
+      "conclusion": "For all $L\\in\\mathbb{N}$ and $a,b,c\\in\\mathbb{R}$, $\\sum_{0\\leq i<L}(a(\\iota(i)+2)+b(\\iota(i)+1)^2+c)=a\\iota(L)(\\iota(L)+3)/2+b\\iota(L)(\\iota(L)+1)(2\\iota(L)+1)/6+c\\iota(L)$, where $\\iota:\\mathbb{N}\\to\\mathbb{R}$ is the natural-number coercion.",
+      "source_sha256": "df5569476a376de90671f11927c05eb7a4f943d85352729dc16f456e15a7f7e0",
+      "proof_status": {
+        "source_proof_body": "by sorry",
+        "status": "admitted placeholder",
+        "compilation_performed": false,
+        "platform_acceptance_checked": false
+      },
+      "provenance": {
+        "reviewer_id": "numeric-pi-sum-blind-v6",
+        "configured_model": "gpt-6.1-sol",
+        "actual_backend": null,
+        "original_readbacks": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/readbacks.json",
+          "sha256": "2727039306f6a2d488910c7ab17bb62545151a99c1a990fe294135bb1b3b83f8"
+        },
+        "metadata": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/metadata.json",
+          "sha256": "13f882020d395e6d9f6e490681d5bf73dcf7a1699b1810d6705e5ba90b50007b"
+        },
+        "fresh_context": true,
+        "input_only_formal_code": true
+      }
+    }
+  ],
+  "independent_reviews": [
+    {
+      "reviewer_id": "numeric-log-blind-v6",
+      "metadata": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/metadata.json",
+        "sha256": "213b42fe5d435b81452a9ff48bbe3d6c70a0e5435531e060990ec8c9e2320f50"
+      },
+      "unmodified_originals": [
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/log_bound_ell.json",
+          "sha256": "c8bfeb45e94ec90b52dcc17a29078facc9e68966ef20fd39063485cf7cbe97e9"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/log_le_four_mul_sqrt_sqrt.json",
+          "sha256": "ce3c20f917f7048df7b079034865ac4b4e5a173afa650fe982874bd1fe477bb6"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/log_le_half_of_pos.json",
+          "sha256": "b9f930f6e9730b2245d7e85d0ea87c6eca737f649141625b1fed63d650d767b4"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/log_le_self_of_pos.json",
+          "sha256": "3c8234d67880bbf126177654ddb3d24ef54acb0f3c985c582415251bbee74cfe"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/metadata.json",
+          "sha256": "213b42fe5d435b81452a9ff48bbe3d6c70a0e5435531e060990ec8c9e2320f50"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/original_english_readbacks.md",
+          "sha256": "f981b1819db2580ea799fb0d854107d95140ac1932c246c4121732e7f13500f3"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/readbacks.ja.md",
+          "sha256": "343ce213acd2acb7d945e485bac9950faed1b979871ad0a7e39120a4c42d950d"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/readbacks.json",
+          "sha256": "7d77572121324c1cd3f854deea326d02ff67e8fd8cdcc409da87010372c489d6"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/readbacks.zh-Hans.md",
+          "sha256": "98117adf12512a6b879252efd8923b24448ff3f693ade96b7732acb0d2431e55"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/log/write_readbacks.py",
+          "sha256": "4581d8475e161225d49ee1e35b51393faa215316c98d0f58270bf8b96462a751"
+        }
+      ]
+    },
+    {
+      "reviewer_id": "numeric-pi-sum-blind-v6",
+      "metadata": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/metadata.json",
+        "sha256": "13f882020d395e6d9f6e490681d5bf73dcf7a1699b1810d6705e5ba90b50007b"
+      },
+      "unmodified_originals": [
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/Thm_AbcAdaptation_Reference_Iut_log_pi_le_two.json",
+          "sha256": "2bc1126e458b40763181718041b5dedf9d3e36aed04c07b61e4600bf7074a632"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/Thm_AbcAdaptation_Reference_Iut_log_pi_nonneg.json",
+          "sha256": "575d2ea470b55fe1619189a12486106f44ac2a2489ed0f945722e79680d8d30a"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/Thm_AbcAdaptation_Reference_Iut_sum_affine_quadratic.json",
+          "sha256": "43fe38d65b4fc0affae7dd480e0e7c721f4b9630cf830d2835c659bed4e9718a"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/metadata.json",
+          "sha256": "13f882020d395e6d9f6e490681d5bf73dcf7a1699b1810d6705e5ba90b50007b"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/readbacks.en.original.md",
+          "sha256": "c9a87b9478d8cb388197e201b6121c760a2398dafdf23401f1edf0fcc0e7f9b1"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/readbacks.ja.md",
+          "sha256": "e43bf242d6af2a40440eefe2bc89ab9f8ec5e22c5457bcd34defbb054f3ed44e"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/readbacks.json",
+          "sha256": "2727039306f6a2d488910c7ab17bb62545151a99c1a990fe294135bb1b3b83f8"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/readback-originals/pi-sum/readbacks.zh-Hans.md",
+          "sha256": "676e29df58bce2cf877e7399732e015fcc436d3ec5ed96a898e7e1d9c6d8a94d"
+        }
+      ]
+    }
+  ],
+  "formalProofStatusSeparate": true,
+  "platformAccepted": false
+}

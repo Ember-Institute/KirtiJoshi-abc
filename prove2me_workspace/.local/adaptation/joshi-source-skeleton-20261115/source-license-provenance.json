@@ -1,0 +1,63 @@
+{
+  "schema": "joshi-next-three-provenance/1",
+  "method": "Read-only source, Git log and local license registry inspection; no network or rights inference.",
+  "source_head_at_read": "501a1d6f05c2faf55922b6a7c45a99be6c0ced00",
+  "roots": [
+    {
+      "declarations": [
+        "JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum_eq_degree_mul_reference",
+        "JoshiTeich.Act1Scene1.CanonicalActualHull.raw_volume_bound"
+      ],
+      "file": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaActualRawVolumeBound.lean",
+      "sha256": "14baa16d46ec6631d0c8c0983261d0808ded8a3bd11925d7c81126c2d227294b",
+      "latest_file_commit": "d1d6a1a6c3dab7ee03b64ac6cfc32d215fba8a9c",
+      "latest_git_author": "Ember Edison",
+      "latest_git_author_date": "2026-11-12T08:57:43+08:00",
+      "latest_commit_subject": "Migrate project to Lean 4.33.1 and Mathlib 0df444a",
+      "source_id": "JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND",
+      "source_ledger_line": 4056,
+      "source_ledger_fidelity": "actual Tate completion norm/order, residue degree, finite q-pilot sum and ordinary-log Haar identity; keeps general number-field degree; not paper theta identity",
+      "file_license_header_present": false,
+      "license_status": "original-project-license-unselected; do not infer Apache-2.0 from nearby third-party LICENSE text"
+    },
+    {
+      "declarations": [
+        "JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312"
+      ],
+      "file": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullData.lean",
+      "sha256": "c5de46c0f3b6945e04f02e1bf4a7e0c52731e3db1f452b1ff0ab4bd16e8285b6",
+      "latest_file_commit": "6306b6788daed50d91177ba551225156689311dc",
+      "latest_git_author": "Ember Edison",
+      "latest_git_author_date": "2026-10-22T18:10:14+08:00",
+      "latest_commit_subject": "性能优化",
+      "source_id": "JT-SCENE1-CANONICAL-ACTUAL-HULL-DATA",
+      "source_ledger_line": 4045,
+      "source_ledger_fidelity": "same actual D supplies Tate q-index/log terms and ordinary-log hull/cost; remaining analytic laws explicit; paper theta/BK/untilt and representative identities open",
+      "file_license_header_present": false,
+      "license_status": "original-project-license-unselected; do not infer Apache-2.0 from nearby third-party LICENSE text"
+    }
+  ],
+  "license_registry_evidence": {
+    "file": "ArithmeticTeichmullerSpaces/LICENSES.md",
+    "exact_statements": [
+      "本工程的项目许可证尚未在 A0 选择。选择后应在本文件记录许可证名称、版本和适用范围，并在工程根目录放置完整许可证文本。",
+      "IUT 移植使用的 Apache-2.0 正文位于工程根目录 LICENSE；该文件登记移植代码的第三方许可证文本，不决定本工程其余原创文件的项目许可证。"
+    ],
+    "interpretation": "Record original root code license as unselected. A Git author field does not establish copyright ownership or a license grant. Preserve actual third-party headers on the compiled reachable closure, per file."
+  },
+  "mathematical_paper_source": {
+    "file": "refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex",
+    "author": "Kirti Joshi",
+    "labels": ["ss:weighted-vol", "th:moccor-Mochizuki-form2", "cor:cor312"],
+    "line_spans": [[3495, 3557], [3617, 3632], [3647, 3650]],
+    "use": "Mathematical source citation only; local original Joshi TeX is authoritative. Do not attribute the Joshi nodes to a separate Mochizuki paper merely because a Joshi source label contains that name.",
+    "adaptation_limit": "Actual raw degree/Haar chain is an analogue with explicit known paper identity/sign/normalization gaps."
+  },
+  "third_party_dependency_policy": {
+    "mathlib": "Reuse pinned 0df444a360eaa60ab8c11dca51a86af692955474 as environment dependency; do not copy its sources into platform bundles.",
+    "reference_iut": "Existing local port provenance/headers and Apache-2.0 notices remain per file. Do not introduce upstream Iut imports.",
+    "tate_curves_theta": "Original source lock ca6c2279d3cea0690cdb01328e727118d5485d68; reuse audited current adaptation modules where exact types agree; keep actual per-file notices and compatibility patch provenance.",
+    "scope": "No claim that all dependencies in a conservative whole-file import closure must be transplanted. Use actual Env declaration closure."
+  },
+  "publication_metadata_action": "Keep provenance and code-license status accurate while completing the private declaration plan. Do not assign an invented permissive license in a future source field."
+}

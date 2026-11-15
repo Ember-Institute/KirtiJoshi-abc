@@ -1,0 +1,26 @@
+{
+  "schema": "joshi-query-v3-change-record/1",
+  "path": "/tmp/p2m-joshi-next-skeleton-20261115/QueryJoshiNextRoots.v3.lean",
+  "sha256": "4ae338c373ca4451063e3b371b0f080099707b74cc84798c9ab1606fb84b9722",
+  "previous_failed_job": "ci-015147-32563212",
+  "previous_terminal_status": "timeout",
+  "previous_wall_lower_bound_seconds": 360.03729152679443,
+  "changes": [
+    "Pretty-print three root types only; no whole-closure definition-body or type pretty-print.",
+    "Scan constants once to index local-module instances; enqueue each reached module instance set once on module entry.",
+    "Process each declaration with withCurrHeartbeats at default unchanged maxHeartbeats.",
+    "Write actual constant dependency names, API/field projection edges, source ranges, and explicit deferred exact exporter plan.",
+    "Print index progress, per-reached-module progress and each250 processed declarations."
+  ],
+  "preserved": [
+    "All direct type dependencies.",
+    "All definition/opaque-value dependencies; traversal includes theorem names but def-embedded theorem proof closure remains a later explicit stage.",
+    "Structure constructors and all direct field projections.",
+    "Instances of reached participating modules at worklist fixpoint.",
+    "Direct theorem proof dependencies exported as frontier, not recursively traversed.",
+    "Root imports/names, exact source graph module filters, env-selected output directory."
+  ],
+  "compiled": false,
+  "CI_invoked": false,
+  "validation": "Static inspection of Lean code plus hashes only."
+}

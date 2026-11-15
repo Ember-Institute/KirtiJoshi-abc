@@ -1,0 +1,19 @@
+{
+  "theorem_id": "ff4cf3aa-f7a9-4412-9bd1-38e228c9e0bb",
+  "theorem_name": "AbcAdaptation.Reference.Iut.log_pi_le_two",
+  "theorem_title": "log pi le two",
+  "status": "Proved",
+  "formal_statement": "\ntheorem AbcAdaptation.Reference.Iut.log_pi_le_two : Real.log Real.pi ≤ 2 := by\n  sorry",
+  "natural_language_statement": "**Independent formal-code readback**\n\n**English**\n\nWith no explicit or implicit parameters and no hypotheses, the natural logarithm of the real constant $\\pi$ satisfies $\\ln(\\pi)\\leq 2$, where $2$ is a real number. There is no variable over which a degenerate case can arise. The proof body is `by sorry`, an admitted placeholder.\n\n**简体中文**\n\n本声明没有显式或隐式参数，也没有前提；实数常量 $\\pi$ 的自然对数满足 $\\ln(\\pi)\\leq 2$，其中 $2$ 是实数。声明没有可能产生退化情形的变量。证明体为 `by sorry`，即承认结论的占位符。\n\n**日本語**\n\n明示的な引数、暗黙の引数および仮定を持たない宣言であり、実定数 $\\pi$ の自然対数について $\\ln(\\pi)\\leq 2$ が成り立つと述べる。ここで $2$ は実数である。退化した場合を生じる変数はない。証明本体は `by sorry` であり、結論を認めるための仮置きである。\n\n**Paper source context (English; separate from the formal blind readback)**\n\nThis is a proved numerical auxiliary lemma in the reference Lean implementation. It supports the named source-code consumers recorded in the source ledger. The paper quotations below give background for the numerical estimates and their consumers; they do not state this auxiliary lemma verbatim. The lemma constructs no initial theta data. Its private platform proof remains detached from the canonical Corollary 2.2 root.\n\n**Original paper quotations**\n\n> Thus, an upper bound on the component of the log-volume under consideration may be obtained by computing an upper bound for the log-volume of this container. Such an upper bound\n\n$$(j+1)\\cdot\\log(\\pi)$$\n\nfollows immediately from the fact that [in order to ensure compatibility with arithmetic degrees of arithmetic line bundles — cf. [IUTchIII], Proposition 3.9, (iii) — one is obliged to adopt normalizations which imply that] the log-volume of $B_I$ is equal to $0$.\n\n— Shinichi Mochizuki, IUT IV, §1, proof of Theorem 1.10, Step (vii), sentences giving the archimedean bound, printed p. 30\n\nSource paper: https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf",
+  "created_at": "2026-11-15T13:27:05.778951+00:00",
+  "vote_count": 0,
+  "tags": [],
+  "preamble": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\n/- Adaptation draft: exact original declaration retained; imports and surrounding\ncontext reduced to numerical inputs. Compiler semantic identity is pending. -/\nimport Mathlib.Analysis.SpecialFunctions.Log.Basic\nimport Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic\nimport Mathlib.Analysis.Complex.ExponentialBounds\nimport Mathlib.Tactic.Linarith\nimport Mathlib.Tactic.NormNum\nimport Mathlib.Tactic.Ring\n\nnamespace AbcAdaptation.Reference\n\nset_option relaxedAutoImplicit false\n\nset_option maxSynthPendingDepth 3\n\nnamespace Iut\n\nuniverse u v\n\n\n\nend Iut\n\nend AbcAdaptation.Reference\n",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/Theorem110.lean#L63-L70",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

@@ -1,0 +1,328 @@
+{
+  "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaActualRawVolumeBound.lean",
+    "sourceSha256": "14baa16d46ec6631d0c8c0983261d0808ded8a3bd11925d7c81126c2d227294b",
+    "owner": "Scene1/Derived",
+    "sourceIds": [
+      "JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND"
+    ],
+    "literalHeader": "import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLinkSource\nimport ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadHullLogCost\nimport ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaVBadSelectedPaperAccounting\nimport ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalRawTargetAccounting\nimport ArithmeticTeichmullerSpaces.Act1Scene1.Corollary312QProductAccounting\nimport ArithmeticTeichmullerSpaces.Act1Scene1.QFamilyBridge\n\n/-!\nsource-id: JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND\nsource: actual Tate completion norm/order, finite arithmetic-degree sum, and\nordinary-log hull Haar identity; Joshi III 3495--3557 and 3617--3645.\nfidelity: derives raw q-sum accounting and the actual ordinary-log hull bound\nfrom InitialThetaData alone. No Scene1Input, theta/period laws, perfectoid\nbridge, volume identity or target inequality is a theorem parameter. These\nnumeric results do not identify the model with paper theta/BK/untilt loci.\nboundary: Scene1/Derived\n-/\n\nnamespace JoshiTeich.Act1Scene1.InitialThetaRawQ\nopen JoshiTeich.Prologue\nopen scoped BigOperators Classical\nuniverse u\nnoncomputable section\nvariable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}\nvariable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}",
+    "actualJobs": [
+      "ci-015177-d5a5d8e7",
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaBadPlaceFiniteness.lean",
+    "sourceSha256": "5736279393a8e3c5fbabd60a39a53ce33777efedc7660008caf7b513d5115d3f",
+    "owner": "Scene1/Derived",
+    "sourceIds": [
+      "IUT-COR312-INITIAL-THETA-BAD-FINITENESS"
+    ],
+    "literalHeader": "import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBaseQPilotSource\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlaceUnder\n\nnamespace JoshiTeich.Act1Scene1\n\nopen JoshiTeich.Prologue\nopen NumberField IsDedekindDomain IsDedekindDomain.HeightOneSpectrum\nopen WeierstrassCurve\nopen scoped NumberField\n\nuniverse u\n\nnoncomputable section\n\n/-!\nsource-id: IUT-COR312-INITIAL-THETA-BAD-FINITENESS\nsource: `iut`: `refer/iut/Iut/Concrete/CurveArithmeticProved.lean`,\n`EllipticCurveData.badAll_finite`; `refer/iut/Iut/Cor312/ThetaData/GlobalField.lean`,\n`badPlacesOver` and `IsInitialThetaGlobalData.bad_multiplicative`.\nfidelity: derives finiteness of the actual `InitialThetaData` bad-place carrier\nfrom finite multiplicative support of the curve's `j`-invariant, and uses that\nproof to construct its base q-pilot source.\nboundary: Scene1/Derived\n-/",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBaseQPilotSource": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBaseQPilotSource",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaBaseQPilotSource.lean",
+    "sourceSha256": "2760b8619e1f09590b1931538a6105b901a8c40652f9427c1ec9b2bd747f76e2",
+    "owner": "Scene1/Derived",
+    "sourceIds": [
+      "IUT-COR312-INITIAL-THETA-BASE-QPILOT"
+    ],
+    "literalHeader": "import ArithmeticTeichmullerSpaces.Act1Scene1.IutQSourceContract\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic\n\nnamespace JoshiTeich.Act1Scene1\n\nopen JoshiTeich.Prologue\nopen NumberField\nopen scoped NumberField\n\nuniverse u\n\n/-!\nsource-id: IUT-COR312-INITIAL-THETA-BASE-QPILOT\nsource: `iut`: `refer/iut/Iut/Cor312/ThetaData/Basic.lean`,\n`InitialThetaData.prime`; `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`,\n`AdmissiblePrimeData.tate`.\nfidelity: constructs the base-field q-pilot carrier, Tate parameters and\narithmetic weights from an actual admissible-prime datum.\nboundary: Scene1/Derived\n-/\n\n/-- The actual IUT base-field q-pilot carrier and Tate parameters. -/\nnoncomputable def IutBaseQPilotSource.ofAdmissiblePrimeData\n    {F : Type u} [Field F] [NumberField F]",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLinkSource": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaLinkSource",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaLinkSource.lean",
+    "sourceSha256": "21d2c1fc7bb9a67bbcf0986c3448e1d79a197019297b0da0fb525afc89e8f2fb",
+    "owner": "Scene1/Derived",
+    "sourceIds": [
+      "IUT-COR312-INITIAL-THETA-ADELIC-LINK"
+    ],
+    "literalHeader": "import ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness\nimport ArithmeticTeichmullerSpaces.Act1Scene1.QNormTateBridge\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic\n\nnamespace JoshiTeich.Act1Scene1\n\nopen JoshiTeich.Prologue\nopen NumberField\nopen TateCurvesTheta\nopen scoped NumberField\n\nuniverse u\n\nnoncomputable section\n\n/-!\nsource-id: IUT-COR312-INITIAL-THETA-ADELIC-LINK\nsource: `iut`: `refer/iut/Iut/Cor312/ThetaData/Basic.lean`,\n`InitialThetaData.prime`; `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`,\n`AdmissiblePrimeData.tate` and `tateJ_eq`; `refer/iut/Iut/Cor312/ThetaData/GlobalField.lean`,\n`badPlacesOver` and `IsInitialThetaGlobalData.bad_nonempty`.\nfidelity: constructs the finite-place and Tate-parameter fields of an\n`AdelicThetaLinkData` from actual `InitialThetaData`. The independent theta,\npacket/hull, height, ramification, and volume fields remain explicit. This does\nnot construct `PrologueInputLaws` or identify an independently supplied Scene1",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaQRootAccounting",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaQRootAccounting.lean",
+    "sourceSha256": "8e54a07af18aa4450bf074e8235abf9483d2980fdd39fdbac3aaf661ab2665e5",
+    "owner": "Scene1/Derived",
+    "sourceIds": [
+      "IUT-COR312-INITIAL-THETA-QROOT-ACCOUNTING"
+    ],
+    "literalHeader": "import ArithmeticTeichmullerSpaces.Act1Scene1.IutTateFamilyQRootAdapter\nimport ArithmeticTeichmullerSpaces.Act1Scene1.IutQRootAccounting\nimport ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaBadPlaceFiniteness\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.LeftHandSide\n\nnamespace JoshiTeich.Act1Scene1\n\nopen JoshiTeich.Prologue\nopen JoshiTeich.Prologue.Arithmetic\nopen WithZero\nopen scoped BigOperators Classical NumberField Valued\n\nuniverse u\n\nnoncomputable section\n\n/-!\nsource-id: IUT-COR312-INITIAL-THETA-QROOT-ACCOUNTING\nsource: `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean`,\n`thetaLocalData` and `sum_weight_ordp_qroot`; the valuation source is\n`refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`, `unif`,\n`unif_isUniformizer`, `q_order_coprime`, and `qOrder`. The global q-pilot\nformula is `refer/iut/Iut/Cor312/LeftHandSide.lean`, `QPilotData.absLogQ`;\nthe degree weight follows `refer/iut/Iut/Concrete/ThetaRegion.lean`,\n`QPilotInputs.qPilot`.",
+    "actualJobs": [
+      "ci-015177-d5a5d8e7",
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.Act1Scene1.IutQSourceContract": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Act1Scene1.IutQSourceContract",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutQSourceContract.lean",
+    "sourceSha256": "f428bb4dcdadc21ddee5fe720b3ad18ab8c6a6b63fe2c0f3dd234c0e8e0ab46f",
+    "owner": "Scene1/Derived",
+    "sourceIds": [
+      "IUT-COR312-Q-SOURCE-CONTRACT"
+    ],
+    "literalHeader": "import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic\nimport Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas\n\nnamespace JoshiTeich.Act1Scene1\n\nopen JoshiTeich.Prologue\nopen WithZero\nopen scoped NumberField Valued\n\nuniverse u\n\n/-!\nsource-id: IUT-COR312-Q-SOURCE-CONTRACT\nsource: `iut`: `refer/iut/Iut/Cor312/ThetaData/Basic.lean`,\n`refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`,\n`refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean`,\nand `refer/iut/Iut/Concrete/ThetaLocalConstruct/Data.lean`.\nfidelity: records the separate base-field q-pilot and torsion-field q-root\ncarriers. The base completion order is derived from the arithmetic API; source\ndata includes the local parameter and completion comparison map.\nboundary: Scene1/Derived\n-/\n\n/-- The normalized integer order read from a finite-place completion valuation. -/\nnoncomputable def iutCompletionQOrder",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Act1Scene1.IutTateValuation",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutTateValuation.lean",
+    "sourceSha256": "df0bcad87041f01c38c44ad916af4a8269f8d1009f8040f6552f02c8447500ff",
+    "owner": "Scene1/Derived",
+    "sourceIds": [
+      "IUT-COR312-TATE-VALUATION"
+    ],
+    "literalHeader": "import ArithmeticTeichmullerSpaces.Act1Scene1.IutCompletionSource\nimport ArithmeticTeichmullerSpaces.Act1Scene1.IutPlacesOver\n\nnamespace JoshiTeich.Act1Scene1\n\nopen JoshiTeich.Prologue\nopen JoshiTeich.Prologue.Arithmetic\nopen WithZero\nopen scoped NumberField Valued\n\nuniverse u\n\n/-!\nsource-id: IUT-COR312-TATE-VALUATION\nsource: `iut`: `refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean`,\n`valued_eq_of_isUniformizer` and `valued_tateParameter_q`; supporting order\nnormalization: `refer/iut/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean`,\n`TateParameter.norm_q_eq_pow_orderNat`.\nfidelity: the contract is completion-valued and keeps the chosen uniformizer,\nits certificate, and the Tate parameter explicit. It derives the integer\nq-order from the completion valuation, proves the uniformizer norm/order\nequation, and proves the valuation law used by q-root transfer. It does not\nconstruct a real `InitialThetaData`, `TateFamily`, q-root, or `V_p^oss`\nidentification.\nboundary: Scene1/Derived",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Prologue/Arithmetic/Basic.lean",
+    "sourceSha256": "6aa828f147e7d30e614a3eb3a39d5bda8b042137551ffa13898eaf44a467515d",
+    "owner": "Prologue carrier/local law; global producers still Scene1-owned",
+    "sourceIds": [],
+    "literalHeader": "import Mathlib.NumberTheory.NumberField.Discriminant.Different\nimport Mathlib.NumberTheory.NumberField.Completion.FinitePlace\nimport Mathlib.RingTheory.RamificationInertia.Basic\n\nnamespace JoshiTeich.Prologue.Arithmetic\n\nopen scoped BigOperators NumberField\nopen WithZero\n\nvariable {K : Type*} [Field K] [NumberField K]\n\n/-!\nThis finite-place arithmetic API is ported from `iut`'s Corollary 3.12\n`ThetaData/Places` layer and its concrete `Concrete/LocalTheory` layer.  It is\na local definition over the mathlib finite-place carrier; no `iut` module is\nimported as a dependency.\n-/\n\n/-- The ramification index of a finite place over its residue characteristic. -/\nnoncomputable def ramIdx (w : NumberField.FinitePlace K) : ℕ :=\n  Ideal.ramificationIdx w.maximalIdeal.asIdeal ℤ\n\n/-- The residue degree of a finite place over its residue characteristic. -/\nnoncomputable def inertDeg (w : NumberField.FinitePlace K) : ℕ :=\n  Ideal.inertiaDeg w.maximalIdeal.asIdeal ℤ",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.Prologue.Theta.Tate": {
+    "actualModule": "ArithmeticTeichmullerSpaces.Prologue.Theta.Tate",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Prologue/Theta/Tate.lean",
+    "sourceSha256": "df3e5d8f9b4384993d08fd97df4d13d22d8ee720d285038ed494517ff94190c4",
+    "owner": "Prologue carrier/local law; global producers still Scene1-owned",
+    "sourceIds": [],
+    "literalHeader": "import ArithmeticTeichmullerSpaces.Prologue.Arithmetic.Basic\n\nnamespace JoshiTeich.Prologue.Theta\n\n/-!\nThe Tate-parameter boundary records the local parameter function separately\nfrom the theta-link laws.  The source describes a Tate parameter as a\nnonzero element with nontrivial finite-place absolute value; the strict\n`norm_lt_one` condition is the local Tate-uniformization condition.\n-/\n\nstructure TateParameterData (K : Type*) [Field K] [NumberField K] where\n  places : Finset (NumberField.FinitePlace K)\n  /-- The Tate parameter at `w`, as an element of the local completion `K_w`. -/\n  parameter : (w : NumberField.FinitePlace K) → w.maximalIdeal.adicCompletion K\n  norm : NumberField.FinitePlace K → ℝ\n\nstructure TateParameterLaws {K : Type*} [Field K] [NumberField K]\n    (T : TateParameterData K) : Prop where\n  places_nonempty : T.places.Nonempty\n  parameter_nonzero : ∀ w ∈ T.places, T.parameter w ≠ 0\n  norm_eq : ∀ w ∈ T.places, T.norm w = ‖T.parameter w‖\n  norm_pos : ∀ w ∈ T.places, 0 < T.norm w\n  norm_lt_one : ∀ w ∈ T.places, T.norm w < 1\n",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.LeftHandSide": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.LeftHandSide",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/LeftHandSide.lean",
+    "sourceSha256": "f127bbeda3a134eeb3e134865b55014c14344ee4bcedf20cda9949c0dfd8a2da",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/LeftHandSide.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `532b9910e9bf43f443417f256648d5242ea98d48`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic\n\n/-!\n# The left-hand side of the Corollary 3.12 variant (taxis #34)\n\nThe **`q`-pilot side** `−|log(q)|` of the project-owner-specified variant of IUT III,\nCorollary 3.12 (taxis #33), built from the bad-place Tate parameters of the initial\nΘ-data (taxis #38, through the `q`-parameter interface of taxis #37).\n\n## Normalization (documented)\n\nFor initial Θ-data with prime `ℓ` and bad locus `V(F)^bad`:",
+    "actualJobs": [
+      "ci-015177-d5a5d8e7",
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/AdmissiblePrime.lean",
+    "sourceSha256": "59479dcf420d3ba9f441560024ec5a734a26c6e641ef2c851f7a68df183b4da5",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/AdmissiblePrime.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `4395e76c629fb53bb669a54971b51a024af3d7f8`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are narrowed to the required TateCurvesTheta module\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.GlobalField\nimport Mathlib.FieldTheory.KrullTopology\nimport TateCurvesTheta.QParameter.JParametrization\nimport TateCurvesTheta.QParameter.NormalizedOrder\nimport TateCurvesTheta.QParameter.PrimeToOrder\n\n/-!\n# Initial Θ-data: admissible prime and ℓ-torsion field (taxis #40)\n\nThe admissible prime and torsion-field portion of initial Θ-data, IUT I,\nDefinition 3.1(b)–(c), for the Corollary 3.12 variant statement (taxis #33):\n",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Basic",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/Basic.lean",
+    "sourceSha256": "83b8035dabae260eed886ab3930465957633812fc4311f4c51c3defd2d021cc3",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/Basic.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `4395e76c629fb53bb669a54971b51a024af3d7f8`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules;\n`InitialThetaData.towerModK` explicitly uses its `algebraModK` field so the compatibility field\nactually pins that algebra structure\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.LocalConditions\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.TateFamily\n\n/-!\n# Initial Θ-data (taxis #38; IUT I, Definition 3.1)\n\nThe assembled notion of **initial Θ-data**: the tuple\n\n`(F̄/F, X_F, ℓ, C̲_K, V, V_mod^bad, ε)`\n",
+    "actualJobs": [
+      "ci-015177-d5a5d8e7",
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.GlobalField": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.GlobalField",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/GlobalField.lean",
+    "sourceSha256": "fa890bcd6c3165832dd0912b0c84187dcd72e42d1eec4e96a9d8eb7b659e3c84",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/GlobalField.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `4395e76c629fb53bb669a54971b51a024af3d7f8`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Places\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Reduction\n\n/-!\n# Initial Θ-data: global field and punctured elliptic curve (taxis #39)\n\nThe global field and elliptic-curve portion of initial Θ-data, IUT I,\nDefinition 3.1(a)–(b), for the Corollary 3.12 variant statement (taxis #33):\n\n* a number field `F` containing `√−1`, with a chosen algebraic closure `F̄` and absolute\n  Galois group `Gal(F̄/F)` (Mathlib's Krull-topologized `F̄ ≃ₐ[F] F̄`);",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.LocalConditions": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.LocalConditions",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/LocalConditions.lean",
+    "sourceSha256": "874ac0c63684f5ee8ed948eced98623df65cface2f6f60ac4bea18bf8061c3e6",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/LocalConditions.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `4395e76c629fb53bb669a54971b51a024af3d7f8`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Orbicurve\nimport Mathlib.FieldTheory.Galois.Infinite\n\n/-!\n# Initial Θ-data: valuation section and local conditions (taxis #42)\n\nThe valuation-indexed local portion of initial Θ-data, IUT I, Definition 3.1(e) and the\nlocal part of (f), for the Corollary 3.12 variant statement (taxis #33).\n\n## Contents\n\n* The `ℓ`-torsion field `K` is finite over `F` — **proved** from openness of the kernel",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Orbicurve": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Orbicurve",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/Orbicurve.lean",
+    "sourceSha256": "70d9f4f43ae6c9c6e88737f84b7207848f3d1047d20e420818b20485247844e1",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/Orbicurve.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `4395e76c629fb53bb669a54971b51a024af3d7f8`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime\nimport Mathlib.Topology.Algebra.Category.ProfiniteGrp.Basic\n\n/-!\n# Initial Θ-data: ℓ-torsion orbicurves, K-core, and distinguished cusp (taxis #41)\n\nThe global orbicurve, core, covering, and distinguished-cusp portion of initial Θ-data,\nIUT I, Definition 3.1(d) and the global part of (f), for the Corollary 3.12 variant\nstatement (taxis #33).\n\n## The anabelian interface\n",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlaceUnder": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlaceUnder",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/PlaceUnder.lean",
+    "sourceSha256": "6d3a8c1aa11b4b79594a93f284ba0cd20615171ea39bc4cd9837543b06015dd8",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/PlaceUnder.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `e4777b2238f45be2e58c00b4d0213c0cb83405b9`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.ReductionNorm\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.GlobalField\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver\n\n/-!\n# The place below a place, and the global valuation conditions at a multiplicative place\n\n* `JoshiTeich.ReferenceIut.placeUnder w`: the finite place of `k` below a finite place `w` of `K ⊇ k`\n  (the contraction of the prime), with `FinitePlace.LiesOver w (placeUnder w)`.\n* At a place `w` of multiplicative reduction of `E/F` (`JoshiTeich.ReferenceIut.HasMultiplicativeReductionAt`:\n  Mathlib's class over the completed integers for some global change of variables `C • E`),\n  the `w`-adic valuations of the invariants of the model `C • E` satisfy `v_w(c₄) = 1`,",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Places": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Places",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/Places.lean",
+    "sourceSha256": "9007b62e6d1dfd534f2cb2b72f35b3b33f5b6141c759fdf070055ee6d49327c6",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/Places.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `4395e76c629fb53bb669a54971b51a024af3d7f8`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are narrowed to the required Mathlib modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.LinearAlgebra.FreeModule.IdealQuotient\nimport Mathlib.NumberTheory.NumberField.Completion.FinitePlace\nimport Mathlib.NumberTheory.NumberField.InfinitePlace.Basic\n\n/-!\n# Places of number fields for the Θ-data modules (taxis #39–#42)\n\nSmall helper layer over Mathlib's `NumberField.FinitePlace` and\n`NumberField.InfinitePlace`: the combined type `JoshiTeich.ReferenceIut.Place` of all places `V(k)`, the\nresidue characteristic of a finite place, and the \"lies over\" relation between places\nof an extension, all used by the initial Θ-data modules (IUT I, Definition 3.1).\n-/",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/PlacesOver.lean",
+    "sourceSha256": "7e560943a2fed498771064673c85a98c5554dc1cef7c2aa5ab87668753036087",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/PlacesOver.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `76c7866b5bbc4adbd245a30af1a4fd05d32f8c3f`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules;\nthe source snapshot also includes the Mathlib compatibility patch from `07cb1da`\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.Places\nimport Mathlib.RingTheory.Ideal.GoingUp\nimport Mathlib.RingTheory.IntegralClosure.IntegralRestrict\nimport Mathlib.NumberTheory.NumberField.InfinitePlace.Ramification\nimport Mathlib.FieldTheory.KrullTopology\n\n/-!\n# Places of number fields over places of subfields (taxis #1529, #1494)\n\nFor number fields `k ⊆ K`:\n",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PointMap": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PointMap",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/PointMap.lean",
+    "sourceSha256": "d8ef79aa8b30ed26eb8d5b50d214968f0eeb7e3766915d3bdb324ef1a9ed216e",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/PointMap.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `76c7866b5bbc4adbd245a30af1a4fd05d32f8c3f`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point\n\n/-!\n# Points of Weierstrass curves along ring homomorphisms\n\n`JoshiTeich.ReferenceIut.Anabelian.pointMap E f : E(k) →+ (E.map f)(K)` for a ring homomorphism of fields\n`f : k →+* K` (Mathlib's `WeierstrassCurve.Affine.Point.map` for the base change `E.map f`),\nwith its basic properties.\n-/\n\nnamespace JoshiTeich.ReferenceIut.Anabelian\n",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.ReductionNorm": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.ReductionNorm",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/ReductionNorm.lean",
+    "sourceSha256": "32244adf663ab8ac08ff57c58d5094cb26ad2cc25296fc195363fa24adb5dd89",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/ReductionNorm.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `09d74a40f46688fa5e4eba46ead73cb37d6abbe2`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime\n\n/-!\n# Reduction predicates in terms of the norm of the completed local field\n\nMathlib's reduction theory (`WeierstrassCurve.HasMultiplicativeReduction`,\n`WeierstrassCurve.HasSplitMultiplicativeReduction`, …) over a discrete valuation ring `R`\nwith fraction field `k` is phrased through the `maximalIdeal`-adic valuation\n`IsDedekindDomain.HeightOneSpectrum.valuation k (IsDiscreteValuationRing.maximalIdeal R)`.\nFor the completed local fields `F_w = localCompletion w` of a number field, the repo\nworks instead with the norm `‖·‖` induced by the valuation `Valued.v` of the completion.\n",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.TateFamily": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.TateFamily",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/TateFamily.lean",
+    "sourceSha256": "97aa9c27d0c725784e4344f5ce60bb22c9a487296128ae3bb6ea107f34b105c1",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/TateFamily.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `76c7866b5bbc4adbd245a30af1a4fd05d32f8c3f`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are adapted to local modules\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.TateStructure\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PlacesOver\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.AdmissiblePrime\n\n/-!\n# Tate uniformizations of `E` over the completions of the torsion field\n\nThe local conditions of IUT I, Definition 3.1(f) at a place `v ∈ V_mod^bad` are conditions\non the Tate uniformization of `E` over the completion `K_v` of the ℓ-torsion field `K`\n(*The Étale Theta Function*, §1–2: `E` is a Tate curve over `K_v`, with parameter `q_v`).\n`JoshiTeich.ReferenceIut.TateFamily F E F̄ ℓ K V_mod^bad` records these uniformizations as **chosen data**\npinned by the coordinates of the Tate parametrization (`JoshiTeich.ReferenceIut.TateStructure`), one at every",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.TateStructure": {
+    "actualModule": "ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.TateStructure",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Cor312/ThetaData/TateStructure.lean",
+    "sourceSha256": "4ee2a521b0b637274c06d6e49a02a6d49e74354c56f333814f36f3e14bbbaa6b",
+    "owner": "ReferenceIut source carrier/local result",
+    "sourceIds": [],
+    "literalHeader": "/-\noriginal-path: `refer/iut/Iut/Cor312/ThetaData/TateStructure.lean`\noriginal-author: Christian Merten <lana@merten.dev>\noriginal-commit: `76c7866b5bbc4adbd245a30af1a4fd05d32f8c3f`\nsource-snapshot: `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`\nlicense: Apache-2.0 (see project `LICENSE`)\nmodification: copied into the JoshiTeich reference namespace; imports are narrowed to the Tate uniformization dependencies\n-/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport ArithmeticTeichmullerSpaces.ReferenceIut.Iut.Cor312.ThetaData.PointMap\nimport TateCurvesTheta.TateCurve.TateUniformization\nimport Mathlib.Topology.Algebra.Valued.NormedValued\n\n/-!\n# Tate structures on elliptic curves over local fields\n\nA **Tate structure** on an elliptic curve `E` over a complete rank-one valued field `k`\n(`JoshiTeich.ReferenceIut.TateStructure E`) is a Tate uniformization of `E`: a Tate parameter `q` with\n`‖q‖ < 1`, a change of variables `C` with `C • E = E_q` (the Tate curve of\n`lana-agents/tate-curves-theta`), and a group isomorphism `k^×/q^ℤ ≃ E(k)`, **pinned** by\nthe requirement that the point attached to a unit `u ∉ q^ℤ` has, in the model `E_q`, the",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "TateCurvesTheta.QParameter.Basic": {
+    "actualModule": "TateCurvesTheta.QParameter.Basic",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/Basic.lean",
+    "sourceSha256": "5bfb31d316cb847372945449cc291a5643c85a2c7dcf47411480b9395886070d",
+    "owner": "TateCurvesTheta local Tate dependency",
+    "sourceIds": [],
+    "literalHeader": "/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport Mathlib.Analysis.Normed.Field.Basic\nimport Mathlib.Analysis.SpecialFunctions.Log.Basic\nimport Mathlib.Analysis.SpecificLimits.Normed\n\n/-!\n# The Tate `q`-parameter\n\nThis file introduces the *Tate parameter* attached to a Tate elliptic curve: an element\n`q` of the base field with `0 < ‖q‖ < 1`, together with its normalized additive order.\n\nOver a complete nonarchimedean field `K`, a Tate curve is uniformized by the analytic\nquotient `K̄ˣ / qᶻ`, and the multiplicative group generated by `q` is discrete precisely\nbecause `0 < ‖q‖ < 1`. This module isolates the purely metric core of that datum, which\nneeds neither the nonarchimedean (ultrametric) hypothesis nor completeness: those enter in\nthe later files that build the `qᶻ`-action, the analytic quotient and the uniformization.\n\n## Main definitions\n\n* `TateCurvesTheta.TateParameter K`: an element `q : Kˣ` with `‖q‖ < 1`.\n* `TateCurvesTheta.TateParameter.ord`: the normalized additive order `-Real.log ‖q‖`, a",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "TateCurvesTheta.QParameter.NormalizedOrder": {
+    "actualModule": "TateCurvesTheta.QParameter.NormalizedOrder",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/NormalizedOrder.lean",
+    "sourceSha256": "f5c5250bdb458532d141773595abd024383f648ffd30c1ce7a6c9fc74111ee45",
+    "owner": "TateCurvesTheta local Tate dependency",
+    "sourceIds": [],
+    "literalHeader": "/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport TateCurvesTheta.QParameter.BaseChange\nimport TateCurvesTheta.QParameter.PrimeToOrder\n\n/-!\n# The discrete normalized order of the Tate parameter\n\nWhen the norm of `K` is *discrete* — its value group on `Kˣ` is generated by the norm of a\n**uniformizer** `π` (`IsUniformizer`) — the real-valued order `ord q = -log ‖q‖` of a Tate\nparameter refines to a canonical positive integer: the unique `n` with `‖q‖ = ‖π‖ⁿ`. This\nis the **normalized additive order** of the `q`-parameter in the convention of IUT I,\nDefinition 3.1(c): the additive valuation is normalized so that `ord π = 1`, and then\n`ord q = orderZ ∈ ℤ_{>0}` (`ord_eq_orderZ_mul`). It supplies the canonical value for the\n`orderNat` seam of `OrderedTateParameter` (`toOrdered`), on which the Θ-data coprimality\npredicate `PrimeToOrder` operates.\n\n**Local vs. global.** The datum formalized here is the *local* `q`-parameter of a Tate\ncurve over one complete nonarchimedean field, and its normalized local order/height. The\n*global* `q`-pilot object of IUT (a collection of local `q`-parameters at the bad places,\nentering the log-volume computations) is a different, later construction layered on top\nof these local data; only the local convention is fixed in this repository.",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "TateCurvesTheta.QParameter.PrimeToOrder": {
+    "actualModule": "TateCurvesTheta.QParameter.PrimeToOrder",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/QParameter/PrimeToOrder.lean",
+    "sourceSha256": "fd520262871878a1cbfc7f00fc54e689f8308dd113dc9e9746951ac412a82c32",
+    "owner": "TateCurvesTheta local Tate dependency",
+    "sourceIds": [],
+    "literalHeader": "/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport Mathlib.Data.Nat.Prime.Basic\nimport TateCurvesTheta.QParameter.Basic\n\n/-!\n# Coprimality to the order of the Tate `q`-parameter\n\nInitial Θ-data (Mochizuki, *Inter-universal Teichmüller Theory I*, Definition 3.1(c))\nrequires a prime `ℓ` that is *prime to the order of the `q`-parameter*: the multiplicative\norder datum attached to the Tate curve must be coprime to `ℓ`. This file isolates that\npurely arithmetic condition.\n\nThe **order** meant here is the *discrete normalized additive valuation* of `q`, a positive\nnatural number: over a complete nonarchimedean field it equals the number of irreducible\ncomponents of the special fibre of the Tate curve `E_q`. The real-valued order\n`TateParameter.ord` of `TateCurvesTheta.QParameter.Basic` refines to this integer once a\nnormalized additive valuation is fixed; that normalization is supplied by the shared\nvaluation infrastructure and is not yet available in this repository. Until then the\ndiscrete order is carried as data on `OrderedTateParameter`, which is the seam where the\ncanonical value will later be plugged in.\n",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "TateCurvesTheta.TateCurve.JInvariant": {
+    "actualModule": "TateCurvesTheta.TateCurve.JInvariant",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/JInvariant.lean",
+    "sourceSha256": "01709c4ca94989d87a9d4811e2bb0f1498f0fa66578cc35b9396fecad1a3f735",
+    "owner": "TateCurvesTheta local Tate dependency",
+    "sourceIds": [],
+    "literalHeader": "/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport TateCurvesTheta.TateCurve.Discriminant\n\n/-!\n# The `j`-invariant of the Tate curve\n\nThe `j`-invariant of `E_q : y² + xy = x³ + a₄x + a₆` as an explicit element of `K`:\n`tateJ = c₄³/Δ` with `c₄ = 1 - 48a₄`. Ultrametrically the invariants have exact norms\n`‖c₄‖ = 1` and `‖Δ‖ = ‖q‖` (`Discriminant.lean`), so\n\n* `norm_tateJ` : `‖j(E_q)‖ = ‖q‖⁻¹`, in particular\n* `one_lt_norm_tateJ` : `‖j(E_q)‖ > 1` — the Tate curve always has non-integral\n  `j`-invariant, the analytic incarnation of potentially multiplicative reduction.\n\nThis is the input for the existence and uniqueness of the Tate parameter with prescribed\n`j`-invariant (`QParameter/JParametrization.lean`): `q ↦ j(E_q)` is an injective map onto\n`{j : ‖j‖ > 1}`.\n\n## Main definitions and results\n\n* `TateCurvesTheta.TateParameter.tateJ`: the `j`-invariant `c₄³/Δ` of `E_q`.",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "TateCurvesTheta.TateCurve.Parametrization": {
+    "actualModule": "TateCurvesTheta.TateCurve.Parametrization",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/Parametrization.lean",
+    "sourceSha256": "5ba278487e5eafcfbbe8de943edd8c0e3e788065422a3af7e9770cdd71094fd1",
+    "owner": "TateCurvesTheta local Tate dependency",
+    "sourceIds": [],
+    "literalHeader": "/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport Mathlib.Analysis.Normed.Group.Ultra\nimport Mathlib.Topology.Algebra.InfiniteSum.Nonarchimedean\nimport Mathlib.Analysis.SpecialFunctions.Pow.NNReal\nimport Mathlib.Order.Filter.AtTopBot.Ring\nimport TateCurvesTheta.TateCurve.Weierstrass\n\n/-!\n# The Tate parametrization: coordinate series `X(u)`, `Y(u)` and their convergence\n\nFor a Tate parameter `q` over a complete nonarchimedean field `K` (`0 < ‖q‖ < 1`), Tate's\nanalytic parametrization of the curve `E_q` sends a point `u : Kˣ` to the affine point\n`(X(u), Y(u))`, where (Silverman, *Advanced Topics*, Ch. V, Thm 3.1)\n```\nX q u = ∑' n : ℤ, qⁿ u / (1 - qⁿ u)²  - 2 s₁(q),\nY q u = ∑' n : ℤ, (qⁿ u)² / (1 - qⁿ u)³ + s₁(q),\n```\nwith `sₖ(q)` the Eisenstein-type series of `TateCurvesTheta/TateCurve/Weierstrass.lean`.\n\nThis file fixes that normalization, defines the general terms `Xterm`, `Yterm` and the\ncoordinate functions `X`, `Y`, and proves the two defining series are unconditionally",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  },
+  "TateCurvesTheta.TateCurve.Weierstrass": {
+    "actualModule": "TateCurvesTheta.TateCurve.Weierstrass",
+    "source": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/Weierstrass.lean",
+    "sourceSha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61",
+    "owner": "TateCurvesTheta local Tate dependency",
+    "sourceIds": [],
+    "literalHeader": "/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n-/\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass\nimport Mathlib.Analysis.Normed.Group.Ultra\nimport Mathlib.Analysis.Normed.Ring.Ultra\nimport Mathlib.Analysis.Normed.Group.InfiniteSum\nimport Mathlib.Analysis.SpecificLimits.Basic\nimport TateCurvesTheta.QParameter.Basic\n\n/-!\n# The Tate Weierstrass model `E_q`\n\nGiven a Tate parameter `q` over a complete nonarchimedean field `K`, the Tate curve is the\nelliptic curve with the classical Weierstrass equation\n`y² + xy = x³ + a₄(q) x + a₆(q)`, where the coefficients are built from the Eisenstein-type\n`q`-series\n`sₖ(q) = ∑_{m ≥ 1} mᵏ qᵐ / (1 - qᵐ)`\nvia `a₄(q) = -5 s₃(q)` and `a₆(q) = -(5 s₃(q) + 7 s₅(q)) / 12`\n(Silverman, *Advanced Topics*, Ch. V, Thm 3.1).\n\nThis file constructs those coefficients, proves the defining `q`-series converge, and packages\nthe resulting `WeierstrassCurve K`. Upgrading it to an `EllipticCurve K` requires the classical",
+    "actualJobs": [
+      "ci-015284-7aab879b"
+    ]
+  }
+}

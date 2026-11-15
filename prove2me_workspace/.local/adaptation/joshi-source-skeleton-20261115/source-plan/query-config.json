@@ -1,0 +1,31 @@
+{
+  "schema": "joshi-next-env-query/1",
+  "query_source": "/tmp/p2m-joshi-next-skeleton-20261115/QueryJoshiNextRoots.lean",
+  "execution_owner": "root agent through MCP-CI only",
+  "executed": false,
+  "workspace": "/home/admin-wsl/Coq/abc",
+  "source_project": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces",
+  "lean": "v4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "source_imports": [
+    "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound",
+    "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullData"
+  ],
+  "roots": [
+    "JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum_eq_degree_mul_reference",
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.raw_volume_bound",
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312"
+  ],
+  "expected_duration_if_first_leaf": "60s",
+  "expected_memory_if_first_leaf": "16GiB",
+  "exclusive": true,
+  "output_files": ["declgraph.jsonl", "query-summary.json"],
+  "postprocess": [
+    "Keep exact elaborated root types and all constructors/field types.",
+    "Compute type/definition-body closure separately from theorem-proof closure.",
+    "A theorem reached by a definition body requires its closed proof inside Definitions.",
+    "Retain typeclass instances in reached participating modules; do not infer instances from text.",
+    "Drop source-spanless generated companions only after reachability.",
+    "Use the existing Stage 2 extractor for source cuts and rename ranges; no regex declaration splitting."
+  ]
+}

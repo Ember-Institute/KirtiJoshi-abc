@@ -1,0 +1,38 @@
+{
+  "schema": "raw-degree-proof-frontier-draft-handoff/1",
+  "source": "/tmp/p2m-joshi-next-skeleton-20261115/QueryRawDegreeProofFrontier.lean",
+  "sourceSha256": "6ecca8c52e431ed53dc96ca35cea3becb087f09b0ae78ab4f2f175eb9c6e23fd",
+  "config": "/tmp/p2m-joshi-next-skeleton-20261115/raw-degree-proof-frontier-config.json",
+  "configSha256": "486de9b51c26b46b1772289ad1d1296b8e2cec7978e20486212f024db5604f47",
+  "runtimeEnv": {
+    "RAW_DEGREE_FRONTIER_CONFIG": "<root-chosen path to copied config>"
+  },
+  "requiredManifestInputs": [
+    "/tmp/p2m-joshi-next-skeleton-20261115/QueryRawDegreeProofFrontier.lean",
+    "/tmp/p2m-joshi-next-skeleton-20261115/raw-degree-proof-frontier-config.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/joshi-source-skeleton-20261115/query-v3/declgraph.jsonl",
+    "/tmp/p2m-joshi-next-skeleton-20261115/actualgraph-plan-v1/next-minimal-export-unit.json"
+  ],
+  "acceptedGraphSha256": "6fdc7fa212e3eb937237183245d37aa33918883808f380b44738f0c3a5314fab",
+  "shaValidation": "Root must compare actual graph SHA256 and config/selection SHA256 in scheduler input manifest before submit. Lean query binds acceptedGraphSha256 to the literal accepted SHA; it does not invoke shell/hash executables.",
+  "expectedFirstLeafResources": {
+    "expected_duration": "60s",
+    "expected_memory": "16GiB"
+  },
+  "execution": "Root MCP-CI leaf/exclusive only; no compiler invoked by subagent.",
+  "builtLean": "v4.33.1",
+  "builtSourceRoots": [
+    "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/formal-schemes/.lake/build/lib/lean"
+  ],
+  "externalDependency": "Mathlib0df and its existing dependency build paths from accepted v3 request LEAN_PATH; retain current prove2me build path and Lean4.33 core path.",
+  "limitations": [
+    "No source Expr/body export or parser facts.",
+    "No root type reprinting; three accepted actual root types already exist.",
+    "Terminal owner module null is retained as actual Env no-module information, never guessed from name.",
+    "Axioms use Lean.collectAxioms on actual built declarations; adapted-proof axiom audit remains separate."
+  ],
+  "compiled": false,
+  "CIInvoked": false
+}

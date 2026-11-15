@@ -1,0 +1,81 @@
+{
+  "production_reuse": {
+    "path": null,
+    "required_fields": [
+      "receipt",
+      "input_hashes",
+      "configuration_hashes",
+      "source_sha256",
+      "passed"
+    ],
+    "allowed_job_ids": [
+      "ci-013203-76bab44a",
+      "ci-014934"
+    ],
+    "rule": "Bind actual successful ProductionGates receipt and rehash every recorded production input/configuration; unchanged hashes required."
+  },
+  "git_diff_check": {
+    "path": null,
+    "required_fields": [
+      "command",
+      "exit_code",
+      "source_sha256"
+    ],
+    "rule": "Fresh root-produced git diff --check receipt; sources match packet."
+  },
+  "existing_mission_scope": {
+    "path": null,
+    "rule": "Bind existing readonly platform preflight; same private mission/root/env; no root graph mutation."
+  },
+  "all_seven_kernel_and_28_compile_receipts": [
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log-bound-theorem-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_bound_ell-theorem-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_bound_ell-solution-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_bound_ell-solution-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_bound_ell-audit-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_four_mul_sqrt_sqrt-theorem-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_four_mul_sqrt_sqrt-theorem-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_four_mul_sqrt_sqrt-solution-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_four_mul_sqrt_sqrt-solution-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_four_mul_sqrt_sqrt-audit-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_half_of_pos-theorem-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_half_of_pos-theorem-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_half_of_pos-solution-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_half_of_pos-solution-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_half_of_pos-audit-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_self_of_pos-theorem-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_self_of_pos-theorem-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_self_of_pos-solution-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_self_of_pos-solution-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_le_self_of_pos-audit-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_le_two-theorem-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_le_two-theorem-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_le_two-solution-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_le_two-solution-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_le_two-audit-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_nonneg-theorem-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_nonneg-theorem-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_nonneg-solution-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_nonneg-solution-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-log_pi_nonneg-audit-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-sum_affine_quadratic-theorem-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-sum_affine_quadratic-theorem-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-sum_affine_quadratic-solution-leaf-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-sum_affine_quadratic-solution-artifact-result.json",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-c22-numeric-helpers-20261115/numeric-sum_affine_quadratic-audit-result.json"
+  ],
+  "publish_candidates": [
+    "AbcAdaptation.Reference.Iut.log_bound_ell",
+    "AbcAdaptation.Reference.Iut.log_le_four_mul_sqrt_sqrt",
+    "AbcAdaptation.Reference.Iut.log_le_half_of_pos",
+    "AbcAdaptation.Reference.Iut.log_le_self_of_pos",
+    "AbcAdaptation.Reference.Iut.log_pi_le_two",
+    "AbcAdaptation.Reference.Iut.sum_affine_quadratic"
+  ],
+  "inline_helper": {
+    "name": "AbcAdaptation.Reference.Iut.log_pi_nonneg",
+    "published": false,
+    "consumer": "Iut.Theorem110Invariants.theorem110"
+  },
+  "ready_passed": false
+}

@@ -1,0 +1,72 @@
+{
+  "roots": [
+    {
+      "id": "JNEXT-RAW-DEGREE",
+      "name": "JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum_eq_degree_mul_reference",
+      "actualElaboratedType": "∀ {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry.{u} AG}\n  (D : JoshiTeich.ReferenceIut.InitialThetaData.{u} AG TG),\n  @Eq.{1} Real (@JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum.{u} AG TG D)\n    (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n      (@Nat.cast.{0} Real Real.instNatCast\n        (@Module.finrank.{0, u} Rat (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D) Rat.semiring\n          (@Semiring.toAddCommMonoid.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n            (@DivisionSemiring.toSemiring.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n              (@Semifield.toDivisionSemiring.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n                (@Field.toSemifield.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n                  (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D)))))\n          (@Algebra.toModule.{0, u} Rat (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D) Rat.commSemiring\n            (@DivisionSemiring.toSemiring.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n              (@Semifield.toDivisionSemiring.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n                (@Field.toSemifield.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n                  (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D))))\n            (@DivisionRing.toRatAlgebra.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n              (@Field.toDivisionRing.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n                (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D))\n              (@NumberField.to_charZero.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n                (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D)\n                (@JoshiTeich.ReferenceIut.InitialThetaData.numberFieldF.{u} AG TG D))))))\n      (@JoshiTeich.ReferenceIut.QPilotData.absLogQ.{u} AG TG D\n        (@JoshiTeich.Act1Scene1.IutTorsionQRootSource.iutInitialThetaQPilotData.{u} AG TG D)))",
+      "source": {
+        "module": "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound",
+        "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaActualRawVolumeBound.lean",
+        "owner": "Scene1/Derived; existing local construction or contract; no Act2 filling",
+        "startLine": 68,
+        "endLine": 83,
+        "source_ids": [
+          "JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND"
+        ],
+        "sourceSpanAvailable": true
+      },
+      "manualReadback": "Matches planned complete parameterization and formula; no recompiled equivalence of renamed draft claimed.",
+      "signatureClosureWithModuleInstancesCount": 355,
+      "moduleCount": 25
+    },
+    {
+      "id": "JNEXT-RAW-BOUND",
+      "name": "JoshiTeich.Act1Scene1.CanonicalActualHull.raw_volume_bound",
+      "actualElaboratedType": "∀ {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry.{u} AG}\n  (D : JoshiTeich.ReferenceIut.InitialThetaData.{u} AG TG),\n  @GE.ge.{0} Real Real.instLE\n    (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n      (@Neg.neg.{0} Real Real.instNeg\n        (@HDiv.hDiv.{0, 0, 0} Real Real Real (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid))\n          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))\n          (@Nat.cast.{0} Real Real.instNatCast (@JoshiTeich.Act1Scene1.CanonicalActualHull.length.{u} AG TG D))))\n      (@abs.{0} Real Real.lattice Real.instAddGroup\n        (Real.log (@JoshiTeich.Act1Scene1.CanonicalActualHull.hullVolume.{u} AG TG D))))\n    (@Neg.neg.{0} Real Real.instNeg (@JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum.{u} AG TG D))",
+      "source": {
+        "module": "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaActualRawVolumeBound",
+        "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaActualRawVolumeBound.lean",
+        "owner": "Scene1/Derived; existing local construction or contract; no Act2 filling",
+        "startLine": 285,
+        "endLine": 289,
+        "source_ids": [
+          "JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND"
+        ],
+        "sourceSpanAvailable": true
+      },
+      "manualReadback": "Matches planned complete parameterization and formula; no recompiled equivalence of renamed draft claimed.",
+      "signatureClosureWithModuleInstancesCount": 812,
+      "moduleCount": 73
+    },
+    {
+      "id": "JNEXT-COR-COMPOSER",
+      "name": "JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312",
+      "actualElaboratedType": "∀ {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}} {TG : JoshiTeich.ReferenceIut.TemperedGeometry.{u} AG}\n  {O : Type u} [inst : CommRing.{u} O] (p : Nat) [inst_1 : Fact (Nat.Prime p)]\n  [inst_2 :\n    Fact\n      (Not\n        (@IsUnit.{u} O (@Semiring.toMonoid.{u} O (@CommSemiring.toSemiring.{u} O (@CommRing.toCommSemiring.{u} O inst)))\n          (@Nat.cast.{u} O\n            (@AddMonoidWithOne.toNatCast.{u} O\n              (@AddGroupWithOne.toAddMonoidWithOne.{u} O (@Ring.toAddGroupWithOne.{u} O (@CommRing.toRing.{u} O inst))))\n            p)))]\n  [inst_3 :\n    @IsAdicComplete.{u, u} O inst\n      (@Ideal.span.{u} O (@CommSemiring.toSemiring.{u} O (@CommRing.toCommSemiring.{u} O inst))\n        (@Singleton.singleton.{u, u} O (Set.{u} O) (@Set.instSingletonSet.{u} O)\n          (@Nat.cast.{u} O\n            (@AddMonoidWithOne.toNatCast.{u} O\n              (@AddGroupWithOne.toAddMonoidWithOne.{u} O (@Ring.toAddGroupWithOne.{u} O (@CommRing.toRing.{u} O inst))))\n            p)))\n      O (@Ring.toAddCommGroup.{u} O (@CommRing.toRing.{u} O inst))\n      (@Semiring.toModule.{u} O (@CommSemiring.toSemiring.{u} O (@CommRing.toCommSemiring.{u} O inst)))]\n  (D : JoshiTeich.ReferenceIut.InitialThetaData.{u} AG TG)\n  (theta :\n    @JoshiTeich.Prologue.ThetaPilotData.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n      (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D))\n  (route :\n    @JoshiTeich.Act1Scene1.CanonicalActualHull.PositivePacket.{u} AG TG D →\n      @JoshiTeich.Prologue.ThetaPilotData.index.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n        (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D) theta)\n  (thetaBase :\n    @JoshiTeich.Prologue.ThetaPilotData.index.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n      (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D) theta)\n  (heightData :\n    @JoshiTeich.Prologue.Arithmetic.HeightData.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n      (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D)\n      (@JoshiTeich.ReferenceIut.InitialThetaData.numberFieldF.{u} AG TG D))\n  (ramification :\n    @JoshiTeich.Prologue.Arithmetic.RamificationProfile.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n      (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D)\n      (@JoshiTeich.ReferenceIut.InitialThetaData.numberFieldF.{u} AG TG D))\n  (X :\n    @JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput.{u} AG TG O inst p inst_1 inst_2 inst_3 D theta route\n      thetaBase heightData ramification),\n  @JoshiTeich.Act1Scene1.Corollary312.{u} (@JoshiTeich.ReferenceIut.InitialThetaData.F.{u} AG TG D)\n    (@JoshiTeich.ReferenceIut.InitialThetaData.fieldF.{u} AG TG D)\n    (@JoshiTeich.ReferenceIut.InitialThetaData.numberFieldF.{u} AG TG D) O inst p inst_1 inst_2 inst_3\n    (@JoshiTeich.Act1Scene1.CanonicalActualHull.data.{u} AG TG O inst p inst_1 inst_2 inst_3 D theta route thetaBase\n      heightData ramification X)",
+      "source": {
+        "module": "ArithmeticTeichmullerSpaces.Act1Scene1.IutInitialThetaCanonicalActualHullData",
+        "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullData.lean",
+        "owner": "Scene1/Derived; existing local construction or contract; no Act2 filling",
+        "startLine": 258,
+        "endLine": 261,
+        "source_ids": [
+          "JT-SCENE1-CANONICAL-ACTUAL-HULL-DATA"
+        ],
+        "sourceSpanAvailable": true
+      },
+      "manualReadback": "Matches planned complete parameterization and formula; no recompiled equivalence of renamed draft claimed.",
+      "signatureClosureWithModuleInstancesCount": 1047,
+      "moduleCount": 87
+    }
+  ],
+  "AnalyticInputActualSevenFieldAPIs": [
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput.periodMap",
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput.perfectoidBridge",
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput.theta_log_shell",
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput.placeData",
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput.normalization",
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput.bridge",
+    "JoshiTeich.Act1Scene1.CanonicalActualHull.AnalyticInput.thetaScaling"
+  ],
+  "fieldTypeExportState": "Individual full field types still deferred; source definitions and root X binder retained.",
+  "axiomAuditState": "Not performed by Env graph query; remains pending for adapted proofs."
+}

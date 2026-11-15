@@ -1,0 +1,133 @@
+{
+  "schema": "joshi-next-source-skeleton/1",
+  "workspace": "/home/admin-wsl/Coq/abc",
+  "scope": "3 declarations; non-Act2; source-backed local results and exact conditional composer",
+  "platform_root_status": "abc.goal.lt_constant_mul_fix remains Open",
+  "environment": {
+    "lean": "v4.33.1",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "tate_curves_theta_original_lock": "ca6c2279d3cea0690cdb01328e727118d5485d68"
+  },
+  "selected": [
+    {
+      "id": "JNEXT-RAW-DEGREE",
+      "declaration": "JoshiTeich.Act1Scene1.InitialThetaRawQ.logSum_eq_degree_mul_reference",
+      "file": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaActualRawVolumeBound.lean",
+      "span": [
+        68,
+        84
+      ],
+      "type_source_span": [
+        68,
+        71
+      ],
+      "context_span": [
+        19,
+        27
+      ],
+      "kind": "existing_local_identity; platform_open_statement_candidate",
+      "dependencies": [
+        "InitialThetaData",
+        "iutInitialThetaTateParameterData",
+        "IutBaseQPilotSource.ofInitialThetaData",
+        "InitialThetaRawQ.factor/logTerm/logSum",
+        "IutTorsionQRootSource.iutInitialThetaQPilotData",
+        "ReferenceIut.QPilotData.absLogQ",
+        "Module.finrank"
+      ],
+      "consumers": [
+        "InitialThetaRawQ.reference_le_logSum",
+        "CanonicalActualHull.qLogSum_eq_degree_mul_reference",
+        "JNEXT-RAW-BOUND"
+      ],
+      "ledger_source_id": "JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND",
+      "ledger_line": 4056,
+      "exact_declaration_source": "theorem logSum_eq_degree_mul_reference :\n    logSum D = (Module.finrank ℚ D.F : ℝ) *\n      JoshiTeich.ReferenceIut.QPilotData.absLogQ\n        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by\n  let B := IutBaseQPilotSource.ofInitialThetaData D\n  change (∑ w : B.badFinset, logTerm D w) = (Module.finrank ℚ D.F : ℝ) *\n    ((∑ w : B.badFinset, Arithmetic.qPilotWeight w.1 *\n      (D.prime.qOrder w.1 (B.mem_badPlaces w) : ℝ) *\n      Real.log (Arithmetic.residueChar w.1)) / (2 * (D.prime.ℓ : ℝ)))\n  rw [← mul_div_assoc, Finset.mul_sum, Finset.sum_div]\n  apply Finset.sum_congr rfl\n  intro w _\n  rw [logTerm_eq_order_term D w, IutCompletionTateValuation.base_qOrder_eq_initialTheta_qOrder]\n  unfold Arithmetic.qPilotWeight\n  have hdegree : (Module.finrank ℚ D.F : ℝ) ≠ 0 := ne_of_gt Arithmetic.finrank_pos\n  field_simp [hdegree]\n\n",
+      "exact_type_source": "theorem logSum_eq_degree_mul_reference :\n    logSum D = (Module.finrank ℚ D.F : ℝ) *\n      JoshiTeich.ReferenceIut.QPilotData.absLogQ\n        (IutTorsionQRootSource.iutInitialThetaQPilotData D) := by\n",
+      "complete_context_source": "namespace JoshiTeich.Act1Scene1.InitialThetaRawQ\nopen JoshiTeich.Prologue\nopen scoped BigOperators Classical\nuniverse u\nnoncomputable section\nvariable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}\nvariable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}\nvariable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)\n\n",
+      "sha256": "14baa16d46ec6631d0c8c0983261d0808ded8a3bd11925d7c81126c2d227294b",
+      "matches_existing_96map_hash": true,
+      "validation": "Static only; no elaborated-type extraction, compile, axiom audit, platform mutation or proof claim."
+    },
+    {
+      "id": "JNEXT-RAW-BOUND",
+      "declaration": "JoshiTeich.Act1Scene1.CanonicalActualHull.raw_volume_bound",
+      "file": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaActualRawVolumeBound.lean",
+      "span": [
+        286,
+        290
+      ],
+      "type_source_span": [
+        286,
+        287
+      ],
+      "context_span": [
+        258,
+        284
+      ],
+      "kind": "existing_actual_Haar_bound; platform_open_statement_candidate",
+      "dependencies": [
+        "JNEXT-RAW-DEGREE",
+        "InitialThetaRawQ.negAverageAbsLog_actualVolume_ge_neg_logSum",
+        "CanonicalActualHull.length/tuple/tuple_liesOver/collation/cost/hullVolume",
+        "VBadThetaLogCollation.negLog_volume_eq_mul_referenceAbsLogQ"
+      ],
+      "consumers": [
+        "CanonicalActualHull.corollary312",
+        "JNEXT-COR-COMPOSER"
+      ],
+      "ledger_source_id": "JT-SCENE1-ACTUAL-RAW-VOLUME-BOUND",
+      "ledger_line": 4056,
+      "exact_declaration_source": "theorem raw_volume_bound :\n    -(1 / (length D : ℝ)) * |Real.log (hullVolume D)| ≥ -InitialThetaRawQ.logSum D :=\n  InitialThetaRawQ.negAverageAbsLog_actualVolume_ge_neg_logSum\n    D (length D) (tuple D) (tuple_liesOver D) (length_pos D)\n\n",
+      "exact_type_source": "theorem raw_volume_bound :\n    -(1 / (length D : ℝ)) * |Real.log (hullVolume D)| ≥ -InitialThetaRawQ.logSum D :=\n",
+      "complete_context_source": "namespace JoshiTeich.Act1Scene1.CanonicalActualHull\nopen scoped Classical\nuniverse u\nnoncomputable section\nvariable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}\nvariable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}\nvariable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)\n\ndef length : ℕ := (D.prime.ℓ - 1) / 2\n\ntheorem length_pos : 0 < length D := by\n  have h := D.prime.five_le\n  unfold length\n  omega\n\ndef tuple (v : iutInitialThetaVBadModuliFinset D) (_ : Fin (length D)) :\n    (iutInitialThetaOddSupportTorsionQRootSource D).badFinset :=\n  VBadSelectedPaper.sourceAt D v\n\ntheorem tuple_liesOver (v : iutInitialThetaVBadModuliFinset D) (i : Fin (length D)) :\n    Ideal.LiesOver (tuple D v i).1.maximalIdeal.asIdeal v.1.maximalIdeal.asIdeal :=\n  VBadSelectedPaper.sourceAt_liesOver D v\n\nabbrev collation := VBadThetaLogCollation.collation D (length D) (tuple D) (tuple_liesOver D)\nabbrev cost := VBadThetaHullLogCost.cost D (length D) (tuple D) (tuple_liesOver D) (collation D)\nabbrev hullVolume := VBadThetaLogCollation.volume D (length D) (tuple D) (tuple_liesOver D)\n\n",
+      "sha256": "14baa16d46ec6631d0c8c0983261d0808ded8a3bd11925d7c81126c2d227294b",
+      "matches_existing_96map_hash": true,
+      "validation": "Static only; no elaborated-type extraction, compile, axiom audit, platform mutation or proof claim."
+    },
+    {
+      "id": "JNEXT-COR-COMPOSER",
+      "declaration": "JoshiTeich.Act1Scene1.CanonicalActualHull.corollary312",
+      "file": "ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalActualHullData.lean",
+      "span": [
+        259,
+        261
+      ],
+      "type_source_span": [
+        259,
+        260
+      ],
+      "context_span": [
+        23,
+        66
+      ],
+      "kind": "existing_conditional_composer; keep_all_AnalyticInput_parameters",
+      "dependencies": [
+        "JNEXT-RAW-BOUND",
+        "CanonicalActualHull.AnalyticInput",
+        "CanonicalActualHull.data",
+        "CanonicalActualHull.scene1Input/toCanonicalInput",
+        "Corollary312"
+      ],
+      "consumers": [
+        "CanonicalActualHull.corollary312_ofCanonicalGeometricFontaine",
+        "CanonicalActualHull.Summary.ofCanonicalActualHull"
+      ],
+      "ledger_source_id": "JT-SCENE1-CANONICAL-ACTUAL-HULL-DATA",
+      "ledger_line": 4045,
+      "exact_declaration_source": "theorem corollary312 : Corollary312 p\n    (data p D theta route thetaBase heightData ramification X) :=\n  raw_volume_bound D\n",
+      "exact_type_source": "theorem corollary312 : Corollary312 p\n    (data p D theta route thetaBase heightData ramification X) :=\n",
+      "complete_context_source": "open JoshiTeich.Prologue\nopen scoped BigOperators Classical\nuniverse u\nnoncomputable section\nvariable {AG : JoshiTeich.ReferenceIut.AnabelianGeometry.{u}}\nvariable {TG : JoshiTeich.ReferenceIut.TemperedGeometry AG}\nvariable {O : Type u} [CommRing O] (p : ℕ)\nvariable [Fact p.Prime] [Fact (¬ IsUnit (p : O))]\nvariable [IsAdicComplete (Ideal.span {(p : O)}) O]\nvariable (D : JoshiTeich.ReferenceIut.InitialThetaData AG TG)\n\nlocal instance actualHullPrime (v : iutInitialThetaVBadModuliFinset D) :\n    Fact (Arithmetic.residueChar v.1).Prime := ⟨Arithmetic.residueChar_prime v.1⟩\n\nabbrev PositivePacket :=\n  ActualHullCostTransfer.PositivePacket D (length D) (tuple D) (tuple_liesOver D) (collation D)\n\nvariable (theta : ThetaPilotData D.F)\nvariable (route : PositivePacket D → theta.index)\nvariable (thetaBase : theta.index) (heightData : Arithmetic.HeightData D.F)\nvariable (ramification : Arithmetic.RamificationProfile D.F)\n\nabbrev packetHull :=\n  ActualHullCostTransfer.packetHull D (length D) (tuple D) (tuple_liesOver D)\n    (collation D) theta route\n\nabbrev link :=\n  ActualHullCostTransfer.link D (length D) (tuple D) (tuple_liesOver D)\n    (collation D) theta route thetaBase heightData ramification\n\n/-- Only the analytic laws not supplied by the actual arithmetic/Haar producers. -/\nstructure AnalyticInput where\n  placeData : PerfectoidPlaceData D.F O p\n  bridge : PerfectoidBridgeData (link D theta route thetaBase heightData ramification)\n    p placeData\n  thetaScaling : Theta.ThetaPilotScalingLaws theta thetaBase\n  periodMap : ∀ i, theta.period i = theta.liftedLog i\n  normalization : letI := theta.indexFintype\n    cost D = ∑ i, theta.period i\n  perfectoidBridge : PerfectoidBridgeLaws\n    (link D theta route thetaBase heightData ramification) p placeData bridge\n  theta_log_shell : ∀ i, theta.liftedLog i = Real.log (theta.norm i)\n\nvariable (X : AnalyticInput (O := O) p D theta route thetaBase heightData ramification)\n",
+      "sha256": "c5de46c0f3b6945e04f02e1bf4a7e0c52731e3db1f452b1ff0ab4bd16e8285b6",
+      "matches_existing_96map_hash": true,
+      "validation": "Static only; no elaborated-type extraction, compile, axiom audit, platform mutation or proof claim."
+    }
+  ],
+  "definition_closure_gate": {
+    "state": "not_platform_ready",
+    "reason": "Actual InitialThetaRawQ/CanonicalActualHull/ThetaPilotData/Scene1Input/AnalyticInput declarations are absent from current prove2me_workspace/Definitions. Whole-file source closure: 232 tracked local modules, 106 Mathlib frontier modules, 7 TateCurvesTheta frontier modules. This is a conservative source import closure, not an elaborated declaration closure. The seven Tate module names cannot be imported as Mathlib. Existing source imports alone do not provide a pinned-environment platform Definitions payload.",
+    "artifact": "static-import-closure.json",
+    "method_for_next_step": "Use the project-approved declaration/AST extraction under MCP-CI for these three exact declarations; retain reachable definitions, typeclasses and definition-body theorem dependencies only. Reuse existing audited Reference carrier definitions via an explicit namespace map; do not wholesale port all 232 modules."
+  },
+  "paper_source_policy": "All mathematical Joshi source attribution refers to Joshi original TeX III only. Original source labels may contain the author string Mochizuki; these are Joshi document labels, not an independent Mochizuki source citation."
+}

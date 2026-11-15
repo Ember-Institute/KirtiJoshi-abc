@@ -1,0 +1,19 @@
+{
+  "theorem_id": "f99991c1-bb32-42a0-9862-6220a20abaf2",
+  "theorem_name": "AbcAdaptation.Reference.Iut.log_le_half_of_pos",
+  "theorem_title": "log le half of pos",
+  "status": "Open",
+  "formal_statement": "\ntheorem AbcAdaptation.Reference.Iut.log_le_half_of_pos {y : ℝ} (hy : 0 < y) : Real.log y ≤ y / 2 := by\n  sorry",
+  "natural_language_statement": "**Independent formal-code readback**\n\n**English**\n\nFor every real number $y$, an implicit parameter, given the explicit hypothesis $h_y:0<y$, the natural logarithm satisfies $\\log y\\leq y/2$, where division is in the real numbers. All positive real values are included, in particular $0<y<1$ and $y=1$; $y=0$ and negative values are excluded. The denominator is the nonzero real number $2$, so no division-by-zero case occurs. There are no additional parameters or typeclass assumptions. The supplied proof is the placeholder `by sorry`.\n\n**简体中文**\n\n对于任意实数 $y$（隐式参数），给定显式前提 $h_y:0<y$，自然对数满足 $\\log y\\leq y/2$，其中除法为实数除法。包括所有正实数值，特别包括 $0<y<1$ 和 $y=1$；$y=0$ 和负数均被排除。分母为非零实数 $2$，因此不存在除以零的情形。没有其他参数或类型类假设。所提供的证明为占位代码 `by sorry`。\n\n**日本語**\n\n任意の実数 $y$（暗黙のパラメータ）について、明示的な仮定 $h_y:0<y$ のもとで、自然対数は $\\log y\\leq y/2$ を満たす。ここで除算は実数の除算である。すべての正の実数値が含まれ、とくに $0<y<1$ および $y=1$ も含まれる。$y=0$ および負の値は除外される。分母は零でない実数 $2$ であるため、零による除算は生じない。ほかのパラメータや型クラスの仮定はない。提示された証明はプレースホルダー `by sorry` である。\n\n**Paper source context (English; separate from the formal blind readback)**\n\nThis is a proved numerical auxiliary lemma in the reference Lean implementation. It supports the named source-code consumers recorded in the source ledger. The paper quotations below give background for the numerical estimates and their consumers; they do not state this auxiliary lemma verbatim. The lemma constructs no initial theta data. Its private platform proof remains detached from the canonical Corollary 2.2 root.\n\n**Original paper quotations**\n\n> Thus, an upper bound on the component of the log-volume under consideration may be obtained by computing an upper bound for the log-volume of this container. Such an upper bound\n\n$$(j+1)\\cdot\\log(\\pi)$$\n\nfollows immediately from the fact that [in order to ensure compatibility with arithmetic degrees of arithmetic line bundles — cf. [IUTchIII], Proposition 3.9, (iii) — one is obliged to adopt normalizations which imply that] the log-volume of $B_I$ is equal to $0$.\n\n— Shinichi Mochizuki, IUT IV, §1, proof of Theorem 1.10, Step (vii), sentences giving the archimedean bound, printed p. 30\n\nSource paper: https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf",
+  "created_at": "2026-11-15T13:26:46.049205+00:00",
+  "vote_count": 0,
+  "tags": [],
+  "preamble": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\n/- Adaptation draft: exact original declaration retained; imports and surrounding\ncontext reduced to numerical inputs. Compiler semantic identity is pending. -/\nimport Mathlib.Analysis.SpecialFunctions.Log.Basic\nimport Mathlib.Analysis.Real.Sqrt\nimport Mathlib.Tactic.Linarith\nimport Mathlib.Tactic.Ring\n\nnamespace AbcAdaptation.Reference\n\nset_option relaxedAutoImplicit false\n\nset_option maxSynthPendingDepth 3\n\nnamespace Iut\n\nuniverse u v w\n\nopen Finset Real\n\n\n\nend Iut\n\nend AbcAdaptation.Reference\n",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/Corollary22.lean#L78-L87",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}
