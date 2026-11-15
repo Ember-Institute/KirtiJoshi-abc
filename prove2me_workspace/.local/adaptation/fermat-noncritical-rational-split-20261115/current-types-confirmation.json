@@ -1,0 +1,55 @@
+{
+  "frozen_readbacks_unchanged": true,
+  "inputs": [
+    {
+      "path": "/tmp/p2m-fermat-rational-blind-20261115/readback-en.json",
+      "sha256": "8c52424593f577fbe833c495aafba16b8f377774c4c021f3397b2e6963ef8843"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/fermat-noncritical-rational-split-20261115/compiler-types.json",
+      "sha256": "088b40d9820c0bd484230210c5f8620f673ea422ef6dcb1bf3e35e444a831d2d"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1DegreeOneRational.lean",
+      "sha256": "e640bfb1277430869ad796ae3067389a3b84e60ebc890c3f28670fe3add73554"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1RationalBranchSet.lean",
+      "sha256": "534bad9ac63b338796b28da53cb827f9537e81d706a4f7946fdeb239275b3acc"
+    }
+  ],
+  "compiler_types_checked": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1DegreeOneRational",
+      "type": "∀ {x : AbcAdaptation.Tripod.Qbar}, AbcAdaptation.Tripod.deg x ≤ 1 → ∃ (q : ℚ), x = ↑q",
+      "type_utf8_sha256": "5df1721219cb1a8a9f4f49eb73c0fc63c05b58236b587fe5c67834beef9aae10"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1RationalBranchSet",
+      "type": "∀ (T : Finset ℚ) (τ : ℚ),\n  (∀ t ∈ T, |t| ≤ 1) →\n    9 ≤ τ →\n      ∃ (hs : List AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap),\n        AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi hs\n          (Insert.insert Option.none (AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ofRat '' ↑T))\n          (AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ofRat τ)",
+      "type_utf8_sha256": "f926bfa0dcc104bcedf6e69693f5acbd251c63f8b2ef4ced23cb580f688d94f8"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+      "type": "∀ (T : Finset AbcAdaptation.Tripod.Qbar),\n  (∀ y ∈ T, ‖AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ι y‖ ≤ 1) →\n    (∀ y ∈ T, AbcAdaptation.Tripod.deg y ≤ 1) →\n      ∃ (hs : List AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ElemMap),\n        AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.IsNoncriticalBelyi hs\n          (AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.withInf T)\n          (AbcAdaptation.Tripod.Fermat.Proper.NoncriticalP1.ofRat 9)",
+      "type_utf8_sha256": "ba154b66f6ae779491626ddd0e7724f0c22cfb8e41029556856ba4b2bace2bcb"
+    }
+  ],
+  "confirmation": "All three frozen English paragraphs still render the recorded native compiler types literally. The current child signatures agree with those types. In particular, the compiler-resolved AbcAdaptation.Tripod.deg is the natural-number degree of the minimal polynomial over the rationals, as already rendered. No read-back revision is needed.",
+  "declarations": [
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1DegreeOneRational",
+      "unchanged": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1RationalBranchSet",
+      "unchanged": true
+    },
+    {
+      "name": "AbcAdaptation.Tripod.Fermat.Proper.noncriticalP1Rational",
+      "unchanged": true
+    }
+  ],
+  "missing_formal_context": [],
+  "scope": "Formal declaration and type read-back only; no proof completion or compiler validation is asserted."
+}

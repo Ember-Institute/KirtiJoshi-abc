@@ -8,6 +8,8 @@
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
 - `refer/iut/Iut/Implication/Corollary22.lean:386`
 - `refer/iut/Iut/Implication/Theorem110.lean:234`
+- `refer/iut/Iut/Implication/PrimeSelection.lean:171`
+- `refer/iut/Iut/Implication/PrimeSelection.lean:177`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:205`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:52`
@@ -16,11 +18,12 @@
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:170`
 - `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean:248`
 - `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/Covering.lean:243`
+- `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/GeneralPosition/HeightTheory.lean:57`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/CondDivisor.lean:61`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/KummerPoint.lean:45`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBridge.lean:49`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:155`
-- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:201`
+- `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Rational.lean:130`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:219`
 
 ## 2. Joshi 论文直接列出而尚未拆分的证明义务
@@ -91,3 +94,4 @@
 
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：`uniformizer`（待定：素元／一致化元／均匀化元）。
